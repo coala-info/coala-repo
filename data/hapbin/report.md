@@ -1,5 +1,14 @@
 # hapbin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hapbin_ehhbin | PASS |  |
+| hapbin_hapbinconv | PASS |  |
+| hapbin_ihsbin | PASS |  |
+| hapbin_xpehhbin | PASS |  |
+
 ## hapbin_hapbinconv
 
 ### Tool Description

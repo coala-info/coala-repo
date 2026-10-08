@@ -1,5 +1,25 @@
 # gtdbtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gtdbtk_align | Not completed | needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches) |
+| gtdbtk_ani_rep | Not completed | needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches) |
+| gtdbtk_classify | Not completed | needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches) |
+| gtdbtk_classify_wf | Not completed | needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches) |
+| gtdbtk_convert_to_itol | PASS | real GTDB-Tk tree; reference-data directory is a metadata-only stub (these helpers read only metadata) |
+| gtdbtk_convert_to_species | PASS | real archaeal GTDB-Tk tree and real r226 archaeal taxonomy table; reference-data directory is partial (metadata stub plus that table) |
+| gtdbtk_de_novo_wf | Not completed | needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches) |
+| gtdbtk_decorate | PASS | real archaeal GTDB-Tk tree and real r226 archaeal taxonomy table; reference-data directory is partial (metadata stub plus that table) |
+| gtdbtk_export_msa | Not completed | needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches) |
+| gtdbtk_identify | Not completed | needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches) |
+| gtdbtk_infer | PASS | real GTDB-Tk user MSA (3 genomes); reference-data directory is a metadata-only stub |
+| gtdbtk_infer_ranks | Not completed | needs the MRCA RED table from the full GTDB-Tk reference data (about 100 GB) |
+| gtdbtk_remove_labels | PASS | real GTDB-Tk tree; reference-data directory is a metadata-only stub (these helpers read only metadata) |
+| gtdbtk_root | PASS | real archaeal GTDB-Tk tree and real r226 archaeal taxonomy table; reference-data directory is partial (metadata stub plus that table) |
+| gtdbtk_trim_msa | PASS | synthetic data: custom mask file on real GTDB-Tk user MSA; reference-data directory is a metadata-only stub; --reference_mask option needs real data and was not run |
+
 ## gtdbtk_classify_wf
 
 ### Tool Description

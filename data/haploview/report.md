@@ -1,5 +1,11 @@
 # haploview CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haploview | PASS | command-line mode on real 1000 Genomes chr20 genotypes gives the LD table (1770 pairs for 60 markers), checks, blocks, tags and association output; -png, -svg and -indcheck crash visibly (no font setup and no display in the image) |
+
 ## haploview
 
 ### Tool Description

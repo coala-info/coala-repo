@@ -51,12 +51,19 @@ inputs:
       position: 101
       prefix: --threads
   - id: meta_output_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output meta file
     inputBinding:
       position: 102
       prefix: --meta-output
 outputs:
+  - id: output_file
+    type: File
+    doc: Bootstrap output table
+    outputBinding:
+      glob: $(inputs.output)
   - id: meta_output
     type:
       - 'null'

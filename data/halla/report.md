@@ -1,5 +1,11 @@
 # halla CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| halla | Not completed | all_associations matches the Galaxy expected file exactly, but sig_clusters differs (the expected file may come from an older halla), so the cluster output cannot be confirmed. |
+
 ## halla
 
 ### Tool Description

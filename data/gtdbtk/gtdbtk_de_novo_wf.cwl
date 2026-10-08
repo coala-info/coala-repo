@@ -6,6 +6,9 @@ baseCommand:
 label: gtdbtk_de_novo_wf
 doc: "De novo workflow for GTDB-Tk\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
+  - id: gtdbtk_data
+    type: Directory
+    doc: GTDB-Tk reference data directory (sets GTDBTK_DATA_PATH)
   - id: archaea
     type: boolean
     doc: 'process archaeal genomes (default: False)'
@@ -258,6 +261,11 @@ outputs:
     doc: directory to output files
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: GTDBTK_DATA_PATH
+        envValue: $(inputs.gtdbtk_data.path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gtdbtk:2.6.1--pyh1f0d9b5_2

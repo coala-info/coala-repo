@@ -1,5 +1,11 @@
 # gvcfgenotyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gvcfgenotyper | PASS |  |
+
 ## gvcfgenotyper
 
 ### Tool Description

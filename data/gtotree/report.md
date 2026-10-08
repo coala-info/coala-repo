@@ -1,5 +1,26 @@
 # gtotree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gtotree_GToTree | PASS | 5 small real bacterial genomes (NCBI) with the Bacteria SCG HMM set; tree groups the two gamma-proteobacterial endosymbionts together; fixed baseCommand to GToTree and added staging of the genome files |
+| gtotree_gtt-append-fasta-headers | PASS | real Buchnera proteome (577 proteins); headers renamed with the given prefix |
+| gtotree_gtt-count-bases-per-seq | PASS | real Buchnera proteome; lengths table has 577 rows |
+| gtotree_gtt-filter-seqs-by-length | PASS | real Buchnera proteome; kept 172 of 577 sequences between 300 and 500 aa, matches a manual count |
+| gtotree_gtt-gen-itol-map | PASS | five real protein IDs; iToL label and branch color lines written |
+| gtotree_gtt-genbank-to-AA-seqs | PASS | real Buchnera GenBank file; 577 CDS proteins, same count as the NCBI protein file |
+| gtotree_gtt-genbank-to-fasta | PASS | real Buchnera GenBank file; 3 records (chromosome and 2 plasmids) |
+| gtotree_gtt-get-accessions-from-GTDB | Not completed | downloads the full GTDB metadata tables (about 300 MB) at run time and needs network |
+| gtotree_gtt-parse-assembly-summary-file | PASS | head of the real NCBI RefSeq assembly summary; 3 wanted accessions parsed |
+| gtotree_gtt-parse-fasta-by-headers | PASS | real Buchnera proteome; 5 wanted headers kept, --inverse kept the other 572 |
+| gtotree_gtt-parse-gtdb-assembly-summary-file | PASS | GTDB-style table from real r226 archaeal metadata; 3 accessions found, 1 reported as not found |
+| gtotree_gtt-remove-all-gap-seqs-from-alignment | PASS | synthetic data: real GToTree alignment plus one planted all-gap sequence, which was removed |
+| gtotree_gtt-rename-fasta-headers | PASS | real Buchnera proteome; all headers renamed with a running number |
+| gtotree_gtt-reorder-fasta | PASS | real Buchnera proteome; 4 wanted sequences written in the order of the header list |
+| gtotree_gtt-subset-GTDB-accessions | PASS | table built from the real GTDB r226 archaeal metadata (22,343 genomes); one genome per order gave 179 orders; default class subsetting also ran; fixed output prefix default |
+| gtotree_gtt-swap-ids | PASS | real Buchnera proteome; 2 headers swapped using the two-column map |
+
 ## gtotree_GToTree
 
 ### Tool Description
@@ -207,48 +228,6 @@ GToTree v1.8.16
 ```
 
 
-## gtotree_gtt-hmms
-
-### Tool Description
-GToTree pre-packaged HMM SCG-sets. See github.com/AstrobioMike/GToTree/wiki/SCG-sets for more info
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
-- **Homepage**: https://github.com/AstrobioMike/GToTree/wiki/what-is-gtotree%3F
-- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-[0;33m                   GToTree pre-packaged HMM SCG-sets
-[0m   See github.com/AstrobioMike/GToTree/wiki/SCG-sets for more info
-
-   The environment variable [0;32mGToTree_HMM_dir[0m is set to:
-     /usr/local/share/gtotree/hmm_sets/
-
-   The 15 available pre-packaged HMM SCG-sets include:
-
-	   Actinobacteria                    (138 genes)
-	   Alphaproteobacteria               (117 genes)
-	   Archaea                            (76 genes)
-	   Bacteria                           (74 genes)
-	   Bacteria_and_Archaea               (25 genes)
-	   Bacteroidetes                      (90 genes)
-	   Betaproteobacteria                (203 genes)
-	   Chlamydiae                        (286 genes)
-	   Cyanobacteria                     (251 genes)
-	   Epsilonproteobacteria             (260 genes)
-	   Firmicutes                        (119 genes)
-	   Gammaproteobacteria               (172 genes)
-	   Proteobacteria                    (119 genes)
-	   Tenericutes                        (99 genes)
-	   Universal-Hug-et-al                (16 genes)
-
-   Details can be found in: 
-     /usr/local/share/gtotree/hmm_sets/hmm-sources-and-info.tsv
-```
-
-
 ## gtotree_gtt-get-accessions-from-GTDB
 
 ### Tool Description
@@ -401,6 +380,420 @@ Ex. usage: gtt-subset-GTDB-classes -i GTDB-arc-and-bac-refseq-rep-metadata.tsv
 --get-only-individuals-for-the-rank order
 ```
 
+
+## gtotree_gtt-append-fasta-headers
+
+### Tool Description
+Modifies headers of sequences of a multifasta, specific for use in GToTree.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-append-fasta-headers [-h] -i INPUT_FASTA [-w WANTED_NAME]
+                                [-o OUTPUT_FASTA_NAME]
+
+This script will modify headers of sequences of a multifasta, specific for use
+in GToTree.
+
+options:
+  -h, --help            show this help message and exit
+  -w WANTED_NAME, --desired_append WANTED_NAME
+                        Name to append to seqs (default: "Seq"
+  -o OUTPUT_FASTA_NAME, --output_fasta_name OUTPUT_FASTA_NAME
+                        Output fasta file (default: "Renamed.fasta").
+
+required arguments:
+  -i INPUT_FASTA, --input_fasta INPUT_FASTA
+                        Starting fasta file
+```
+
+## gtotree_gtt-count-bases-per-seq
+
+### Tool Description
+Takes a multifasta as input and returns a tab-delimited file with two columns, header and number of bases or amino acids, for each sequence.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-count-bases-per-seq [-h] [-i INPUT_FASTA] [-o OUTPUT_FILE]
+
+This script takes a multifasta as input and returns a tab-delimited file with
+two columns, header and number of bases or amino acids, for each sequence.
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FILE, --output_txt_file OUTPUT_FILE
+                        Name of output txt file (default: "Num_bps.txt")
+
+required arguments:
+  -i INPUT_FASTA, --input_fasta INPUT_FASTA
+                        Original fasta file
+```
+
+## gtotree_gtt-filter-seqs-by-length
+
+### Tool Description
+Takes a multifasta as input and filters out sequences based on length.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-filter-seqs-by-length [-h] [-i INPUT_FASTA] [-m MIN_LEN]
+                                 [-M MAX_LEN] [-o OUTPUT_FILE] [-q]
+
+This script takes a multifasta as input and filters out sequences based on
+length.
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FILE, --output_file OUTPUT_FILE
+                        name of output fasta file (default: "filtered.fasta")
+  -q, --quiet           don't report percentage of retained sequences
+
+required arguments:
+  -i INPUT_FASTA, --input_fasta INPUT_FASTA
+                        Original fasta file
+  -m MIN_LEN, --min_length MIN_LEN
+                        minimum length retained
+  -M MAX_LEN, --max_length MAX_LEN
+                        maximum length retained
+```
+
+## gtotree_gtt-gen-itol-map
+
+### Tool Description
+Creates a standard iToL "label" and/or "branch" color file when given the IDs of the genomes you want to color.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-gen-itol-map [-h] -g TARGET_GENOMES [-w TO_COLOR] [-c COLOR]
+                        [-o OUTPUT_FILE]
+
+This script is for creating a standard iToL "label" and/or "branch" color file
+when given the IDs of the genomes you want to color.
+
+options:
+  -h, --help            show this help message and exit
+  -w TO_COLOR, --what_to_color TO_COLOR
+                        What to color, must be: "branches", "labels", or
+                        "both" (default: "both")
+  -c COLOR, --color COLOR
+                        Color to use of either: "blue", "green", or "red"
+                        (default: "blue", of course, 'cause it's the best)
+  -o OUTPUT_FILE, --output_file OUTPUT_FILE
+                        Output file for iToL (default: "iToL-colors.txt")
+
+required arguments:
+  -g TARGET_GENOMES, --target_genomes TARGET_GENOMES
+                        Single-column file with the genomes to color (need to
+                        match the IDs in the tree file, with no "">")
+```
+
+## gtotree_gtt-genbank-to-AA-seqs
+
+### Tool Description
+Takes a genbank file and returns the amino acid sequences for all coding sequences.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-genbank-to-AA-seqs [-h] -i INPUT_GB [-o OUTPUT_FASTA]
+
+This script takes a genbank file and returns the amino acid sequences for all
+coding sequences.
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FASTA, --output_fasta OUTPUT_FASTA
+                        Output fasta file (default: "clean.faa")
+
+required arguments:
+  -i INPUT_GB, --input_gb INPUT_GB
+                        input Genbank file (e.g. "*.gbk", "*.gb", "*.gbff")
+```
+
+## gtotree_gtt-genbank-to-fasta
+
+### Tool Description
+Takes a genbank file and outputs a flat fasta file of all nucleotides.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-genbank-to-fasta [-h] -i INPUT_GB [-o OUTPUT_FASTA]
+
+This script takes a genbank file and outputs a flat fasta file of all
+nucleotides.
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FASTA, --output_fasta OUTPUT_FASTA
+                        Output fasta file with matching, simplified headers to
+                        be ready for `anvi-gen-contigs-db` (default:
+                        "clean.fa")
+
+required arguments:
+  -i INPUT_GB, --input_gb INPUT_GB
+                        input Genbank file (e.g. "*.gbk", "*.gb", "*.gbff")
+```
+
+## gtotree_gtt-parse-assembly-summary-file
+
+### Tool Description
+Parses NCBI's assembly summary file down to the provided accessions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-parse-assembly-summary-file [-h] -a ALL_ASSEMBLIES -w WANTED_ACCS
+                                       [-o OUTPUT_FILE]
+
+This script is for parsing NCBI's assembly summary file down to the provided
+accessions.
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FILE, --output_file OUTPUT_FILE
+                        Wanted summary info only (default: "Wanted.tsv")
+
+required arguments:
+  -a ALL_ASSEMBLIES, --assembly_summary ALL_ASSEMBLIES
+                        NCBI's assembly summary file
+  -w WANTED_ACCS, --wanted_accessions WANTED_ACCS
+                        Single-column file with wanted accessions
+```
+
+## gtotree_gtt-parse-fasta-by-headers
+
+### Tool Description
+Parses a fasta file by pulling out sequences with the desired headers (or all other sequences with --inverse).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-parse-fasta-by-headers [-h] -i INPUT_FASTA -w WANTED_HEADERS
+                                  [-o OUTPUT_FASTA] [--inverse]
+
+This script is for parsing a fasta file by pulling out sequences with the
+desired headers. If you want all sequences EXCEPT the ones with the headers
+you are providing, add the flag "--inverse".
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FASTA, --output-fasta OUTPUT_FASTA
+                        Output fasta file default: "Wanted.fa"
+  --inverse             Add this flag to pull out all sequences with headers
+                        NOT in the provided header file.
+
+required arguments:
+  -i INPUT_FASTA, --input-fasta INPUT_FASTA
+                        Original fasta file
+  -w WANTED_HEADERS, --wanted-headers WANTED_HEADERS
+                        Single-column file with sequence headers
+```
+
+## gtotree_gtt-parse-gtdb-assembly-summary-file
+
+### Tool Description
+Parses GTDB's assembly metadata file down to the target accessions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-parse-gtdb-assembly-summary-file [-h] -a ALL_ASSEMBLIES -w
+                                            WANTED_ACCS [-o OUTPUT_FILE]
+                                            [-f FOUND_ACCS_OUTPUT_FILE]
+                                            [-n NOT_FOUND_ACCS_OUTPUT_FILE]
+                                            [-t GTDB_TAX_OUTPUT_FILE]
+
+This script is for parsing GTDB's assembly metadata file down to the target
+accessions.
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FILE, --output_file OUTPUT_FILE
+                        Wanted summary info only (default: "target-gtdb.tsv")
+  -f FOUND_ACCS_OUTPUT_FILE, --found_accs_output_file FOUND_ACCS_OUTPUT_FILE
+                        Accessions found in GTDB (default: "gtdb-found-
+                        accs.txt")
+  -n NOT_FOUND_ACCS_OUTPUT_FILE, --not_found_accs_output_file NOT_FOUND_ACCS_OUTPUT_FILE
+                        Accessions not found in GTDB (default: "gtdb-not-
+                        found-accs.tsv")
+  -t GTDB_TAX_OUTPUT_FILE, --gtdb_tax_output_file GTDB_TAX_OUTPUT_FILE
+                        Target GTDB taxonomy table (default: "target-gtdb-
+                        tax.tsv")
+
+required arguments:
+  -a ALL_ASSEMBLIES, --assembly_summary ALL_ASSEMBLIES
+                        GTDB's assembly metadata file
+  -w WANTED_ACCS, --wanted_accessions WANTED_ACCS
+                        Single-column file with wanted accessions
+```
+
+## gtotree_gtt-remove-all-gap-seqs-from-alignment
+
+### Tool Description
+Removes sequences that are entirely gap characters ("-") from an alignment fasta file, specific for use in GToTree.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-remove-all-gap-seqs-from-alignment [-h] -i INPUT_FASTA
+                                              [-o OUTPUT_FASTA]
+
+This script will remove sequences that are entirely gap characters ("-") from
+an alignment fasta file, specific for use in GToTree.
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FASTA, --output_fasta OUTPUT_FASTA
+                        Output fasta file (default: "No-gap-seqs-aln.faa").
+
+required arguments:
+  -i INPUT_FASTA, --input_fasta INPUT_FASTA
+                        Starting fasta file
+```
+
+## gtotree_gtt-rename-fasta-headers
+
+### Tool Description
+Renames all sequences of a multifasta with the same name with an appended number to keep them unique.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-rename-fasta-headers [-h] -i INPUT_FASTA [-w WANTED_NAME]
+                                [-o OUTPUT_FASTA]
+
+This script will rename all sequences of a multifasta with the same name with
+an appended number to keep them unique.
+
+options:
+  -h, --help            show this help message and exit
+  -w WANTED_NAME, --wanted-name WANTED_NAME
+                        Name to give seqs (default: "Seq")
+  -o OUTPUT_FASTA, --output-fasta OUTPUT_FASTA
+                        Output fasta file (default: "Renamed.fasta").
+
+required arguments:
+  -i INPUT_FASTA, --input-fasta INPUT_FASTA
+                        Starting fasta file
+```
+
+## gtotree_gtt-reorder-fasta
+
+### Tool Description
+Takes a multifasta file and reorders the sequences according to the headers provided.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: This script takes a multifasta file and reorders the sequences according to the headers provided.
+       [-h] -i INPUT_FASTA -w ORDERED_HEADERS [-o OUTPUT_FASTA]
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT_FASTA, --output_fasta OUTPUT_FASTA
+                        Reordered output fasta (default: "Reordered.fa").
+
+required arguments:
+  -i INPUT_FASTA, --input_fasta INPUT_FASTA
+                        Original fasta file
+  -w ORDERED_HEADERS, --wanted_sequence_order ORDERED_HEADERS
+                        Single-column file with headers in desired order
+```
+
+## gtotree_gtt-swap-ids
+
+### Tool Description
+Swaps the headers of a fasta file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2
+- **Homepage**: https://github.com/AstrobioMike/GToTree
+- **Package**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtt-swap-ids [-h] -i INPUT_FASTA [-s ID_MAP] [-o OUTPUT_FASTA_NAME]
+
+This script will swap the headers of a fasta file.
+
+options:
+  -h, --help            show this help message and exit
+  -s ID_MAP, --map_of_ids_to_swap ID_MAP
+                        Two column tab-delimited file where column 1 holds the
+                        original headers and column 2 holds the desired
+                        headers. (doesn't need to hold all headers)
+  -o OUTPUT_FASTA_NAME, --output_fasta_name OUTPUT_FASTA_NAME
+                        Output fasta file (default: "Renamed.fasta").
+
+required arguments:
+  -i INPUT_FASTA, --input_fasta INPUT_FASTA
+                        Starting fasta file
+```
 
 ## Metadata
 - **Skill**: generated

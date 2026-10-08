@@ -6,6 +6,9 @@ baseCommand:
 label: gtdbtk_infer
 doc: "Infer phylogenetic trees for GTDB-Tk\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
+  - id: gtdbtk_data
+    type: Directory
+    doc: GTDB-Tk reference data directory (sets GTDBTK_DATA_PATH)
   - id: cpus
     type:
       - 'null'
@@ -78,13 +81,6 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
   - id: out_dir_dir
     type:
       - 'null'
@@ -92,6 +88,11 @@ outputs:
     doc: directory to output files
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: GTDBTK_DATA_PATH
+        envValue: $(inputs.gtdbtk_data.path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gtdbtk:2.6.1--pyh1f0d9b5_2

@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - gsMap
+  - gsmap
   - run_generate_ldscore
 label: gsmap_run_generate_ldscore
 doc: "Generate LD scores for a given sample, chromosome, and genotype data.\n\nTool
@@ -10,7 +10,7 @@ inputs:
   - id: additional_baseline_annotation
     type:
       - 'null'
-      - File
+      - Directory
     doc: Path of additional baseline annotations
     inputBinding:
       position: 101
@@ -109,11 +109,27 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Log messages of the command
+  - id: workdir_out
+    type: Directory
+    doc: The working directory with the files written by the command
+    outputBinding:
+      glob: $(inputs.workdir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0
 stdout: gsmap_run_generate_ldscore.out
+stderr: gsmap_run_generate_ldscore.log

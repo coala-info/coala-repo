@@ -1,5 +1,12 @@
 # gottcha CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gottcha_gottcha.pl | Not completed | needs a GOTTCHA signature database (several GB, download site unreachable); gottcha_db.pl in the image cannot run (missing YAML::XS), so no tiny database could be built |
+| gottcha_splitrim | PASS |  |
+
 ## gottcha_gottcha.pl
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # hapflk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hapflk | PASS |  |
+
 ## hapflk
 
 ### Tool Description

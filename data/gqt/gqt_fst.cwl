@@ -4,44 +4,35 @@ baseCommand:
   - gqt
   - fst
 label: gqt_fst
-doc: "Calculate Fst between populations.\n\nTool homepage: https://github.com/ryanlayer/gqt"
+doc: "Calculate Fst statistic (Weir and Cockerham 1984) between the subpopulations defined by population queries.\n\nTool homepage: https://github.com/ryanlayer/gqt"
 inputs:
   - id: gqt_file
     type: File
-    doc: gqt file
+    secondaryFiles:
+      - ^.vid
+      - ^.off
+      - ^.bim
+    doc: gqt file (needs its .vid, .off and .bim files beside it)
     inputBinding:
       position: 101
       prefix: -i
-  - id: label_db_field_name
-    type:
-      - 'null'
-      - string
-    doc: label db field name (requried for pca-shared)
-    inputBinding:
-      position: 101
-      prefix: -f
-  - id: label_output_file
-    type:
-      - 'null'
-      - File
-    doc: label output file (requried for pca-shared)
-    inputBinding:
-      position: 101
-      prefix: -l
   - id: ped_database_file
     type: File
     doc: ped database file
     inputBinding:
       position: 101
       prefix: -d
-  - id: population_query
+  - id: population_queries
     type:
       type: array
       items: string
-    doc: Each population query defines one subpopulation.
-    inputBinding:
-      position: 101
-      prefix: -p
+      inputBinding:
+        position: 101
+        prefix: -p
+    doc: Each population query defines one subpopulation, for example
+      "Population = 'GBR'". Population queries are based on the PED file
+      associated with the genotypes; any column in that PED file can be part of
+      the query. Give one query per subpopulation.
   - id: tmp_directory
     type:
       - 'null'

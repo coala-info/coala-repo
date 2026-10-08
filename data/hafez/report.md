@@ -1,5 +1,11 @@
 # hafez CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hafez_hafeZ.py | Not completed | needs a large database (PHROGs/pVOGs, 100 MB+ download over the network) and a 570 MB induced-lysate read set; too heavy for a minimal test (baseCommand fixed to hafeZ.py) |
+
 ## hafez_hafeZ.py
 
 ### Tool Description

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsmap_run_latent_to_gene
+baseCommand:
+  - gsmap
+  - run_latent_to_gene
 label: gsmap_run_latent_to_gene
 doc: "Converts latent representations to gene expression.\n\nTool homepage: https://github.com/LeonSong1995/gsMap"
 inputs:
@@ -81,11 +83,27 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Log messages of the command
+  - id: workdir_out
+    type: Directory
+    doc: The working directory with the files written by the command
+    outputBinding:
+      glob: $(inputs.workdir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0
 stdout: gsmap_run_latent_to_gene.out
+stderr: gsmap_run_latent_to_gene.log

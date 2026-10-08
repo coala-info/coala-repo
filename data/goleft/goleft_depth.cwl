@@ -1,12 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: goleft
+baseCommand:
+  - goleft
+  - depth
 label: goleft_depth
 doc: "Calculate depth of coverage for BAM files.\n\nTool homepage: https://github.com/brentp/goleft"
 inputs:
   - id: bam
     type: File
     doc: bam for which to calculate depth
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 1
   - id: bed

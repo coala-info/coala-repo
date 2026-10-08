@@ -1,5 +1,11 @@
 # gtftools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gtftools | PASS | tool repo demo GTF (chr1 first 3 Mb) and SNP list; all 13 outputs checked, counts and merged exon lengths match; added the missing stdout output for cis-SNPs |
+
 ## gtftools
 
 ### Tool Description

@@ -4,75 +4,56 @@ baseCommand:
   - gotree
   - repopulate
 label: gotree_repopulate
-doc: "Re populate the tree with tips that have the same sequences.\n\nTool homepage:
-  https://github.com/fredericlemoine/gotree"
+doc: "Re populate the tree with tips that have the same sequences.\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:
-  - id: input_tree_file
+  - id: id_groups_file
     type: File
-    doc: A input tree
+    doc: "File with groups of identical tips"
     inputBinding:
-      position: 1
-  - id: identical_tips_file
-    type: File
-    doc: A file containing a list of tips that are identical
-    inputBinding:
-      position: 2
-  - id: id_groups
-    type:
-      - 'null'
-      - string
-    doc: File with groups of identical tips
-    inputBinding:
-      position: 103
+      position: 101
       prefix: --id-groups
   - id: input_tree
-    type:
-      - 'null'
-      - File
-    doc: Input tree
+    type: File
+    doc: "Input tree"
     inputBinding:
-      position: 103
+      position: 101
       prefix: --input
-  - id: input_tree_format
+  - id: output_file_path
+    type: string
+    doc: "Renamed tree output file"
+    inputBinding:
+      position: 101
+      prefix: --output
+  - id: tree_format
     type:
       - 'null'
       - string
-    doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
+    doc: "Input tree format (newick, nexus, phyloxml, or nextstrain)"
     inputBinding:
-      position: 103
+      position: 101
       prefix: --format
-  - id: random_seed
+  - id: seed
     type:
       - 'null'
       - int
-    doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
+    doc: "Random Seed: -1 = nano seconds since 1970/01/01 00:00:00"
     inputBinding:
-      position: 103
+      position: 101
       prefix: --seed
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads (Max=20)
+    doc: "Number of threads (Max=20)"
     inputBinding:
-      position: 103
+      position: 101
       prefix: --threads
-  - id: output_file_path
-    type: string
-    doc: Renamed tree output file (default "stdout")
-    inputBinding:
-      position: 104
-      prefix: --output
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Renamed tree output file
+    type: File
+    doc: "Output file written to the path in output_file_path"
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: "$(inputs.output_file_path)"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gotree:0.5.1--he881be0_0

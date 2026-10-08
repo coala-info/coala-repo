@@ -9,7 +9,7 @@ inputs:
   - id: config_file
     type:
       - 'null'
-      - string
+      - File
     doc: Path to config file
     inputBinding:
       position: 101
@@ -31,7 +31,7 @@ inputs:
       position: 101
       prefix: --no-force
   - id: output_dir
-    type: Directory
+    type: string
     doc: Path to the target submission output directory
     inputBinding:
       position: 101
@@ -54,6 +54,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_out
+    type: Directory
+    doc: The downloaded submission (metadata and encrypted files)
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0

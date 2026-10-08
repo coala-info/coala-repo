@@ -6,11 +6,12 @@ baseCommand:
 label: groopm_extract
 doc: "Extract contigs or reads based on bin affiliations\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:
-  - id: dbname
-    type: string
-    doc: name of the database to open
+  - id: database
+    type: File
+    doc: GroopM database file to open (created by groopm parse)
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: data
     type:
       type: array
@@ -110,7 +111,7 @@ inputs:
   - id: out_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: write to this folder (None for current dir)
     inputBinding:
       position: 103
@@ -156,6 +157,13 @@ inputs:
       position: 103
       prefix: -v
 outputs:
+  - id: out_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the extracted contigs or reads
+    outputBinding:
+      glob: $(inputs.out_folder)
   - id: stdout
     type: stdout
     doc: Standard output
@@ -166,6 +174,13 @@ outputs:
     doc: Files written with the prefix given in prefix
     outputBinding:
       glob: $(inputs.prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.database.basename)
+        entry: $(inputs.database)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/groopm:0.3.4--pyhdfd78af_2

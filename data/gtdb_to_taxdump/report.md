@@ -1,5 +1,15 @@
 # gtdb_to_taxdump CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gtdb_to_taxdump_acc2gtdb_tax.py | PASS | two real genomes from the tool repo tests; taxids match names.dmp |
+| gtdb_to_taxdump_gtdb_to_diamond.py | PASS | tarball of two real NCBI protein files named as GTDB reps (1147 sequences all merged); taxids correct |
+| gtdb_to_taxdump_gtdb_to_taxdump.py | PASS | GTDB r95 archaeal and bacterial taxonomy files; node count matches the input lineages plus genomes |
+| gtdb_to_taxdump_lineage2taxid.py | PASS | GTDB-Tk summary of the tool repo mapped against the r95 taxdump; species and genus taxids found |
+| gtdb_to_taxdump_ncbi-gtdb_map.py | Failed | tool bug: with --rename and the default --procs 1 the summary table is empty (lazy map consumed by rename); works without --rename or with --procs 2 |
+
 ## gtdb_to_taxdump_gtdb_to_taxdump.py
 
 ### Tool Description

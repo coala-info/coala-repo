@@ -10,10 +10,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --list
+  - id: gvcf_files
+    type:
+      type: array
+      items: File
+    doc: The gVCF files named in the list file. They are staged in the working
+      directory so the names in the list resolve.
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: logging information
     inputBinding:
       position: 101
@@ -65,8 +76,17 @@ outputs:
     doc: output file name
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: logging information file
+    outputBinding:
+      glob: $(inputs.log_file)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.gvcf_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gvcfgenotyper:2019.02.26--h13024bc_6

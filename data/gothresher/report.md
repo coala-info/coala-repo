@@ -1,11 +1,42 @@
 # gothresher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gothresher | PASS |  |
+| gothresher_prep | PASS |  |
+
 ## gothresher
 
 ### Tool Description
 Gothresher is a tool for filtering and processing GO annotations.
 
+### gothresher_prep
+
+### Tool Description
+Generate the ontology graph and ancestor mapping files that GOThresher needs.
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/gothresher:1.0.29--pyh7cba7a3_0
+- **Homepage**: https://github.com/FriedbergLab/GOThresher
+- **Package**: https://anaconda.org/channels/bioconda/packages/gothresher/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gothresher_prep.py [-h] [--config CONFIG] --input INPUT
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG, -c CONFIG
+                        INI file. gothresher.ini
+  --input INPUT, -i INPUT
+                        path of GO file to be processed
+```
+
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/gothresher:1.0.29--pyh7cba7a3_0
 - **Homepage**: https://github.com/FriedbergLab/GOThresher
 - **Package**: https://anaconda.org/channels/bioconda/packages/gothresher/overview

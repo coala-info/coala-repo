@@ -1,135 +1,123 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ghmap
+baseCommand:
+  - haplomap
+  - ghmap
 label: haplomap_ghmap
-doc: "Output gene-summaried results by default.\n\nTool homepage: https://github.com/zqfang/haplomap"
+doc: "Haplotype association test (ANOVA)\n\nTool homepage: https://github.com/zqfang/haplomap"
 inputs:
   - id: blocks
-    type: string
-    doc: The output file from (eblocks -o)
+    type: File
+    doc: "Haploblocks file, the output file from (eblocks -o)"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --blocks
   - id: categorical
     type:
       - 'null'
       - boolean
-    doc: phenotype (-p) is categorical
+    doc: "phenotype (-p) is categorical"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --categorical
   - id: expression
     type:
       - 'null'
       - File
-    doc: name of file
+    doc: "Gene expression file"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --expression
   - id: filter_coding
     type:
       - 'null'
       - boolean
-    doc: Filter out non-coding blocks
+    doc: "Filter out non-coding blocks"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --filter_coding
   - id: gene
     type:
       - 'null'
-      - boolean
-    doc: "Output gene-summaried results. Default.\nNOTE:: Only write the overlapped
-      halpoblock with best pvalue/Fstat, representing all overlapped blocks. \n  \
-      \    The CodonFlag is an aggregated indicator showing that a gene has blocks
-      with coding change. \n      The best block itself might not contain any coding
-      changes. \n      Run the ghmap with -a/k/m tag will give you all overlapped
-      blocks with correct CodonFlag."
+      - string
+    doc: "Gene name (the code reads an argument for -g; gene-summaried output is the default and needs no flag)"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --gene
   - id: gene_all_blocks
     type:
       - 'null'
       - boolean
-    doc: Output gene-oriented results of all blocks that overalp a gene.
+    doc: "Output gene-oriented results of all blocks that overalp a gene."
     inputBinding:
-      position: 101
+      position: 1
       prefix: --gene_all_blocks
   - id: gene_block
     type:
       - 'null'
       - boolean
-    doc: Output gene-oriented results block by block. almost the same to -a
+    doc: "Output gene-oriented results block by block. almost the same to -a"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --gene_block
   - id: haploblocks
     type:
       - 'null'
       - boolean
-    doc: Output block-oriented results.
+    doc: "Output block-oriented results."
     inputBinding:
-      position: 101
+      position: 1
       prefix: --haploblocks
   - id: name
     type:
       - 'null'
       - string
-    doc: 'NOTE:: Add suffix `_SNP`|`_INDEL`|`_SV`(e.g. MPD123_SNP) can help select
-      correct CodonFlag in the output.'
+    doc: "Name of phenotype dataset; add suffix _SNP|_INDEL|_SV (e.g. MPD123_SNP) to select the correct CodonFlag in the output"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --name
   - id: phenotypes
     type: File
-    doc: The same input file of (eblocks -b)
+    doc: "Phenotype file, the same input file of (eblocks -s)"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --phenotypes
   - id: pvalue_cutoff
     type:
       - 'null'
       - float
-    doc: 'Only write results with pvalue < cutoff. Default: 0.05'
+    doc: "Only write results with pvalue < cutoff. Default: 0.05"
     inputBinding:
-      position: 101
-      prefix: --pvalue_cutoff
+      position: 1
+      prefix: -l
   - id: relation
     type:
       - 'null'
       - File
-    doc: "<.rel> file for population structure analysis.\nn x n matrix with header
-      line (startswith '#') contain sample names."
+    doc: "Genetic relation file (.rel) for population structure analysis; n x n matrix with a header line (starts with #) containing sample names"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --relation
   - id: verbose
     type:
       - 'null'
       - boolean
+    doc: "verbose"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --verbose
   - id: output_path
     type: string
+    doc: "Output file name"
     inputBinding:
-      position: 102
+      position: 1
       prefix: --output
 outputs:
   - id: output
     type: File
-    doc: Output gene-summaried results by default.
+    doc: "Association test results"
     outputBinding:
       glob: $(inputs.output_path)
-  - id: blocks_out
-    type:
-      - 'null'
-      - File
-    doc: The output file from (eblocks -o)
-    outputBinding:
-      glob: $(inputs.blocks)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haplomap:0.1.2--h4656aac_1

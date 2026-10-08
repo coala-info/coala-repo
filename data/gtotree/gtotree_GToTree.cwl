@@ -1,10 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtotree
+baseCommand: GToTree
 label: gtotree_GToTree
 doc: "This program takes input genomes from various sources and ultimately produces
   a phylogenomic tree.\n\nTool homepage: https://github.com/AstrobioMike/GToTree/wiki/what-is-gtotree%3F"
 inputs:
+  - id: staged_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: genome files (fasta, GenBank or amino acid) named in the list files given to -f, -g or -A; they are staged in the working directory so the names in the list files resolve
   - id: add_gtdb_taxonomy
     type:
       - 'null'
@@ -216,6 +222,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: GToTree_output
     doc: Specify the desired output directory.
     inputBinding:
       position: 101
@@ -303,6 +310,10 @@ outputs:
     doc: Specify the desired output directory.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.staged_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gtotree:1.8.16--h9ee0642_2

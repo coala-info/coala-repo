@@ -1,5 +1,15 @@
 # gunc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gunc_download_db | Not completed | downloads the large GUNC reference database (network, several GB) |
+| gunc_merge_checkm | Not completed | needs a GUNC maxCSS table from a real run and CheckM qa output; no small real pair available |
+| gunc_plot | PASS | real GUNC diamond output and gene counts of the tool repo tiny test; interactive HTML created with the expected taxa; added creation of the output directory |
+| gunc_run | Not completed | needs the GUNC reference database (several GB); the small CI test database runs but gives only NaN scores; also gunc 1.0.6 fails with a single input file and --gene_calls (KeyError in gene count lookup); added output directory creation |
+| gunc_summarise | Not completed | needs the maxCSS table and detailed output of a real gunc run, which needs the large reference database |
+
 ## gunc_run
 
 ### Tool Description

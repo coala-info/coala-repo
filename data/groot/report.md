@@ -1,5 +1,14 @@
 # groot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| groot_align | PASS |  |
+| groot_get | Failed | tool bug: the built-in database download URL on GitHub returns 404, so the download and checksum fail |
+| groot_index | PASS |  |
+| groot_report | PASS |  |
+
 ## groot_align
 
 ### Tool Description

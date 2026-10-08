@@ -6,19 +6,11 @@ baseCommand:
 label: gotree_rtt
 doc: "Compute Root To Tip regression.\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:
-  - id: format
+  - id: image_file_path
     type:
       - 'null'
       - string
-    doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
-    inputBinding:
-      position: 101
-      prefix: --format
-  - id: image
-    type:
-      - 'null'
-      - string
-    doc: RTT plot image image output file
+    doc: "RTT plot image image output file"
     inputBinding:
       position: 101
       prefix: --image
@@ -26,7 +18,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: RTT plot image output heigh
+    doc: "RTT plot image output heigh"
     inputBinding:
       position: 101
       prefix: --image-height
@@ -34,15 +26,13 @@ inputs:
     type:
       - 'null'
       - int
-    doc: RTT plot image image output width
+    doc: "RTT plot image image output width"
     inputBinding:
       position: 101
       prefix: --image-width
-  - id: input
-    type:
-      - 'null'
-      - string
-    doc: Input tree(s) file
+  - id: input_tree
+    type: File
+    doc: "Input tree(s) file"
     inputBinding:
       position: 101
       prefix: --input
@@ -50,7 +40,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: include internal nodes
+    doc: "include internal nodes"
     inputBinding:
       position: 101
       prefix: --internal-nodes
@@ -58,7 +48,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Mutation rate higher bound
+    doc: "Mutation rate higher bound"
     inputBinding:
       position: 101
       prefix: --max-rate
@@ -66,7 +56,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Root date
+    doc: "Root date"
     inputBinding:
       position: 101
       prefix: --max-root-date
@@ -74,7 +64,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Mutation rate lower bound
+    doc: "Mutation rate lower bound"
     inputBinding:
       position: 101
       prefix: --min-rate
@@ -82,15 +72,13 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Root date
+    doc: "Root date"
     inputBinding:
       position: 101
       prefix: --min-root-date
-  - id: output
-    type:
-      - 'null'
-      - string
-    doc: RTT output file
+  - id: output_file_path
+    type: string
+    doc: "RTT output file"
     inputBinding:
       position: 101
       prefix: --output
@@ -98,7 +86,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Mutation rate to display on the figure
+    doc: "Mutation rate to display on the figure"
     inputBinding:
       position: 101
       prefix: --rate
@@ -106,15 +94,23 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Root date
+    doc: "Root date"
     inputBinding:
       position: 101
       prefix: --root-date
+  - id: tree_format
+    type:
+      - 'null'
+      - string
+    doc: "Input tree format (newick, nexus, phyloxml, or nextstrain)"
+    inputBinding:
+      position: 101
+      prefix: --format
   - id: seed
     type:
       - 'null'
       - int
-    doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
+    doc: "Random Seed: -1 = nano seconds since 1970/01/01 00:00:00"
     inputBinding:
       position: 101
       prefix: --seed
@@ -122,15 +118,23 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of threads (Max=20)
+    doc: "Number of threads (Max=20)"
     inputBinding:
       position: 101
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: image_file
+    type:
+      - 'null'
+      - File
+    doc: "RTT plot image image output file"
+    outputBinding:
+      glob: "$(inputs.image_file_path)"
+  - id: output_file
+    type: File
+    doc: "Output file written to the path in output_file_path"
+    outputBinding:
+      glob: "$(inputs.output_file_path)"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gotree:0.5.1--he881be0_0
-stdout: gotree_rtt.out

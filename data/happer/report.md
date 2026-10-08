@@ -1,5 +1,11 @@
 # happer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| happer | PASS | haplotype sequences carry the BED alleles for the pico test data; without --out the tool writes a file named '-' instead of stdout, so the CWL requires --out |
+
 ## happer
 
 ### Tool Description

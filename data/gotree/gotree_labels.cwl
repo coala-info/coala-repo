@@ -4,37 +4,43 @@ baseCommand:
   - gotree
   - labels
 label: gotree_labels
-doc: "Lists labels of all tree tips\n\nTool homepage: https://github.com/fredericlemoine/gotree"
+doc: "Lists labels of all tree tips.\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:
-  - id: input_format
-    type:
-      - 'null'
-      - string
-    doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
-    inputBinding:
-      position: 101
-      prefix: --format
   - id: input_tree
-    type:
-      - 'null'
-      - File
-    doc: Input tree
+    type: File
+    doc: "Input tree"
     inputBinding:
       position: 101
       prefix: --input
-  - id: internal_node_labels
+  - id: internal
     type:
       - 'null'
       - boolean
-    doc: Internal node labels are listed
+    doc: "Internal node labels are listed"
     inputBinding:
       position: 101
       prefix: --internal
-  - id: random_seed
+  - id: no_tips
+    type:
+      - 'null'
+      - boolean
+    doc: "Do not apply to tips branches or nodes (passes --tips=false). Original option: Tip labels are listed (--tips=false to cancel)"
+    inputBinding:
+      position: 101
+      prefix: --tips=false
+  - id: tree_format
+    type:
+      - 'null'
+      - string
+    doc: "Input tree format (newick, nexus, phyloxml, or nextstrain)"
+    inputBinding:
+      position: 101
+      prefix: --format
+  - id: seed
     type:
       - 'null'
       - int
-    doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
+    doc: "Random Seed: -1 = nano seconds since 1970/01/01 00:00:00"
     inputBinding:
       position: 101
       prefix: --seed
@@ -42,18 +48,10 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of threads (Max=20)
+    doc: "Number of threads (Max=20)"
     inputBinding:
       position: 101
       prefix: --threads
-  - id: tip_labels
-    type:
-      - 'null'
-      - boolean
-    doc: Tip labels are listed (--tips=false to cancel)
-    inputBinding:
-      position: 101
-      prefix: --tips
 outputs:
   - id: stdout
     type: stdout

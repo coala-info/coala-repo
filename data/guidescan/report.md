@@ -1,5 +1,13 @@
 # guidescan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| guidescan_download | Not completed | downloads data from the guidescan.com web server (network, large precomputed databases) |
+| guidescan_enumerate | PASS | index above and 150 NGG 20-mers cut from the genome (kmers file built with a small script in the manual format); all 150 found as exact matches at their positions; added staging of the index files |
+| guidescan_index | PASS | SARS-CoV-2 genome from nf-core test data; forward, reverse and gs index files collected and used by enumerate; added writable genome staging, index file outputs, required index prefix |
+
 ## guidescan_enumerate
 
 ### Tool Description

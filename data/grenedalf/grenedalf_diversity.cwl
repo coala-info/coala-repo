@@ -744,13 +744,24 @@ inputs:
       position: 101
       prefix: --pileup-quality-encoding
   - id: pool_sizes
-    type: string
+    type:
+      - 'null'
+      - string
     doc: "Pool sizes for all samples that are used (not filtered out). These are the
       number of haploids, so 100 diploid individuals correspond to a pool size of
       200. Either \n(1) a single pool size that is used for all samples, specified
       on the command line, or \n(2) a path to a file that contains a comma- or tab-separated
       list of sample names and pool sizes, with one name/size pair per line, in any
       order of lines."
+    inputBinding:
+      position: 101
+      prefix: --pool-sizes
+  - id: pool_sizes_file
+    type:
+      - 'null'
+      - File
+    doc: File with comma- or tab-separated sample names and pool sizes, one pair
+      per line (alternative to a single pool size in pool_sizes).
     inputBinding:
       position: 101
       prefix: --pool-sizes
@@ -1150,7 +1161,9 @@ inputs:
       position: 101
       prefix: --window-interval-width
   - id: window_queue_count
-    type: int
+    type:
+      - 'null'
+      - int
     doc: 'Required when using `--window-type queue`: Number of positions in the genome
       in each window. This is most commonly used when also filtering for variant positions
       such as (biallelic) SNPs (which most commands do implicitly), so that each window
@@ -1262,10 +1275,10 @@ outputs:
     doc: Files written with the prefix given in file_prefix
     outputBinding:
       glob: $(inputs.file_prefix)*
-  - id: log_file_dir
+  - id: log_file_out
     type:
       - 'null'
-      - Directory
+      - File
     doc: Write all output to a log file, in addition to standard output to the 
       terminal.
     outputBinding:

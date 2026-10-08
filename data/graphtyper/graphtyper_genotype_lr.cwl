@@ -1,104 +1,132 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: graphtyper
+baseCommand:
+  - graphtyper
+  - genotype_lr
 label: graphtyper_genotype_lr
-doc: "GraphTyper\n\nTool homepage: https://github.com/DecodeGenetics/graphtyper"
+doc: "(WIP) Run the camou long-read genotyping pipeline.\n\nTool homepage: https://github.com/DecodeGenetics/graphtyper"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.sam_files)
 inputs:
-  - id: reference_genome
+  - id: reference_fasta
     type: File
-    doc: Reference genome in FASTA format.
+    secondaryFiles:
+      - pattern: .fai
+        required: false
+    doc: "Reference genome in FASTA format."
     inputBinding:
       position: 1
+  - id: log
+    type:
+      - 'null'
+      - string
+    doc: "Set path to log file."
+    inputBinding:
+      position: 10
+      prefix: "--log="
+      separate: false
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Set to output verbose logging."
+    inputBinding:
+      position: 10
+      prefix: "--verbose"
+  - id: vverbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Set to output very verbose logging."
+    inputBinding:
+      position: 10
+      prefix: "--vverbose"
   - id: advanced
     type:
       - 'null'
       - boolean
-    doc: "Set to enable advanced options. See a list of all options (including\n \
-      \     advanced) with 'graphtyper genotype_sv --advanced --help'"
+    doc: "Set to enable advanced options."
     inputBinding:
-      position: 102
-      prefix: --advanced
-  - id: log_file
-    type:
-      - 'null'
-      - File
-    doc: Set path to log file.
+      position: 10
+      prefix: "--advanced"
+  - id: output
+    type: string
+    default: sv_results
+    doc: "Output directory."
     inputBinding:
-      position: 102
-      prefix: --log
+      position: 10
+      prefix: "--output="
+      separate: false
   - id: region
     type:
       - 'null'
       - string
-    doc: Genomic region to genotype.
+    doc: "Genomic region to genotype. Use region_file if you have more than one region."
     inputBinding:
-      position: 102
-      prefix: --region
+      position: 10
+      prefix: "--region="
+      separate: false
   - id: region_file
     type:
       - 'null'
       - File
-    doc: File with genomic regions to genotype.
+    doc: "File with a list of genomic regions to genotype (one per line)."
     inputBinding:
-      position: 102
-      prefix: --region_file
-  - id: sam_file
+      position: 10
+      prefix: "--region_file="
+      separate: false
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: "Max. number of threads to use (default 20). Note that it is not possible to utilize more threads than input BAM/CRAMs."
+    inputBinding:
+      position: 10
+      prefix: "--threads="
+      separate: false
+  - id: sam
     type:
       - 'null'
       - File
-    doc: SAM/BAM/CRAM to analyze.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.bai
+        required: false
+    doc: "Input BAM/CRAM to analyze. If you have more than one file then create a list and use sams instead."
     inputBinding:
-      position: 102
-      prefix: --sam
+      position: 10
+      prefix: "--sam="
+      separate: false
+  - id: sams
+    type:
+      - 'null'
+      - File
+    doc: "File with BAM/CRAM paths to analyze (one per line); list the files in sam_files as well so that the paths resolve."
+    inputBinding:
+      position: 10
+      prefix: "--sams="
+      separate: false
   - id: sam_files
     type:
       - 'null'
       - type: array
         items: File
-    doc: File with SAM/BAM/CRAMs to analyze (one per line).
-    inputBinding:
-      position: 102
-      prefix: --sams
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Max. number of threads to use.
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Set to output verbose logging.
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: very_verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Set to output very verbose logging.
-    inputBinding:
-      position: 102
-      prefix: --vverbose
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 103
-      prefix: --output-dir
+    doc: "BAM/CRAM files (with indices) named in the sams list, staged in the working directory."
 outputs:
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory.
+    type: Directory
+    doc: Output directory with the genotyped VCF files per contig and region
     outputBinding:
-      glob: $(inputs.output_dir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/graphtyper:2.7.7--h7594796_1
+stdout: graphtyper_genotype_lr.out

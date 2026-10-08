@@ -4,6 +4,11 @@ baseCommand: greenhill
 label: greenhill
 doc: "greenhill version: 1.1.0\n\nTool homepage: https://github.com/ShunOuchi/GreenHill"
 inputs:
+  - id: avg_insert_size_lib_id
+    type:
+      - 'null'
+      - int
+    doc: library number glued to the -a option (default 1)
   - id: avg_insert_size
     type:
       - 'null'
@@ -11,7 +16,8 @@ inputs:
     doc: lib_id average_insert_size
     inputBinding:
       position: 101
-      prefix: -a
+      valueFrom: |-
+        ${ if (self === null) { return null; } var l = inputs.avg_insert_size_lib_id || 1; return ["-a" + l, String(self)]; }
   - id: bubble_seq_file
     type:
       - 'null'
@@ -66,6 +72,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -hic
+  - id: inward_pair_file_lib_id
+    type:
+      - 'null'
+      - int
+    doc: library number glued to the -ip option (default 1)
   - id: inward_pair_file
     type:
       - 'null'
@@ -74,7 +85,13 @@ inputs:
     doc: lib_id inward_pair_file (reads in 1 file, fasta or fastq)
     inputBinding:
       position: 101
-      prefix: -ip
+      valueFrom: |-
+        ${ if (self === null) { return null; } var l = inputs.inward_pair_file_lib_id || 1; return ["-ip" + l].concat(self.map(function (f) { return f.path; })); }
+  - id: inward_pair_files_lib_id
+    type:
+      - 'null'
+      - int
+    doc: library number glued to the -IP option (default 1)
   - id: inward_pair_files
     type:
       - 'null'
@@ -83,7 +100,8 @@ inputs:
     doc: lib_id inward_pair_files (reads in 2 files, fasta or fastq)
     inputBinding:
       position: 101
-      prefix: -IP
+      valueFrom: |-
+        ${ if (self === null) { return null; } var l = inputs.inward_pair_files_lib_id || 1; return ["-IP" + l].concat(self.map(function (f) { return f.path; })); }
   - id: long_read_file
     type:
       - 'null'
@@ -119,6 +137,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -L
+  - id: min_insert_size_lib_id
+    type:
+      - 'null'
+      - int
+    doc: library number glued to the -n option (default 1)
   - id: min_insert_size
     type:
       - 'null'
@@ -126,7 +149,8 @@ inputs:
     doc: lib_id minimum_insert_size
     inputBinding:
       position: 101
-      prefix: -n
+      valueFrom: |-
+        ${ if (self === null) { return null; } var l = inputs.min_insert_size_lib_id || 1; return ["-n" + l, String(self)]; }
   - id: min_links_phase
     type:
       - 'null'
@@ -160,6 +184,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -o
+  - id: outward_pair_file_lib_id
+    type:
+      - 'null'
+      - int
+    doc: library number glued to the -op option (default 1)
   - id: outward_pair_file
     type:
       - 'null'
@@ -168,7 +197,13 @@ inputs:
     doc: lib_id outward_pair_file (reads in 1 file, fasta or fastq)
     inputBinding:
       position: 101
-      prefix: -op
+      valueFrom: |-
+        ${ if (self === null) { return null; } var l = inputs.outward_pair_file_lib_id || 1; return ["-op" + l].concat(self.map(function (f) { return f.path; })); }
+  - id: outward_pair_files_lib_id
+    type:
+      - 'null'
+      - int
+    doc: library number glued to the -OP option (default 1)
   - id: outward_pair_files
     type:
       - 'null'
@@ -177,7 +212,8 @@ inputs:
     doc: lib_id outward_pair_files (reads in 2 files, fasta or fastq)
     inputBinding:
       position: 101
-      prefix: -OP
+      valueFrom: |-
+        ${ if (self === null) { return null; } var l = inputs.outward_pair_files_lib_id || 1; return ["-OP" + l].concat(self.map(function (f) { return f.path; })); }
   - id: reduce_redundancy
     type:
       - 'null'
@@ -186,6 +222,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -reduce_redundancy
+  - id: sd_insert_size_lib_id
+    type:
+      - 'null'
+      - int
+    doc: library number glued to the -d option (default 1)
   - id: sd_insert_size
     type:
       - 'null'
@@ -193,7 +234,8 @@ inputs:
     doc: lib_id SD_insert_size
     inputBinding:
       position: 101
-      prefix: -d
+      valueFrom: |-
+        ${ if (self === null) { return null; } var l = inputs.sd_insert_size_lib_id || 1; return ["-d" + l, String(self)]; }
   - id: threads
     type:
       - 'null'
@@ -221,6 +263,8 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/greenhill:1.1.0--h663a4a6_3

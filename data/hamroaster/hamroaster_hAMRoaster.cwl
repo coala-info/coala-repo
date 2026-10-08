@@ -31,8 +31,8 @@ inputs:
   - id: fargene
     type:
       - 'null'
-      - File
-    doc: full path to fARGene output, if included
+      - Directory
+    doc: full path to the fARGene output directory (one subdirectory per model), if included
     inputBinding:
       position: 101
       prefix: --fargene
@@ -54,8 +54,8 @@ inputs:
   - id: shortbred
     type:
       - 'null'
-      - File
-    doc: full path to shortBRED output (tsv), if included
+      - Directory
+    doc: full path to the shortBRED output directory (tsv files), if included
     inputBinding:
       position: 101
       prefix: --shortbred
@@ -67,18 +67,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --shortbred_map
-  - id: ham_out_path
-    type: string
-    doc: output file from hAMRonization (tsv), REQUIRED
-    inputBinding:
-      position: 102
-      prefix: --ham_out
-outputs:
   - id: ham_out
     type: File
     doc: output file from hAMRonization (tsv), REQUIRED
+    inputBinding:
+      position: 101
+      prefix: --ham_out
+outputs:
+  - id: out_dir
+    type: Directory
+    doc: Output directory named after the --name argument, with the hAMRoaster
+      result tables (thanksgiving_ham_<name>.csv, cooked_ham_w_true_pos_<name>.csv, ...)
     outputBinding:
-      glob: $(inputs.ham_out_path)
+      glob: $(inputs.name)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

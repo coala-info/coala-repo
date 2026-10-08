@@ -7,6 +7,9 @@ inputs:
   - id: genome
     type: File
     doc: Reference genome in .fasta format with .fai index file
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 1
   - id: bam_files
@@ -14,10 +17,16 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bam
     doc: Bam/cram alignment file. Repeat for multiple files stacked vertically
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 102
-      prefix: --bam
   - id: command
     type:
       - 'null'
@@ -210,11 +219,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --region
     doc: Region of alignment file to display in window. Repeat to horizontally 
       split window into multiple regions
     inputBinding:
       position: 102
-      prefix: --region
   - id: resume
     type:
       - 'null'
@@ -293,12 +303,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
+        inputBinding:
+          prefix: --track
     doc: Track to display at bottom of window BED/VCF/GFF3/GTF/BEGBID/BIGWIG. 
       Repeat for multiple files stacked vertically
     inputBinding:
       position: 102
-      prefix: --track
   - id: variants_file
     type:
       - 'null'

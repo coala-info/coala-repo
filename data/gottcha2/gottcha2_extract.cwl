@@ -1,12 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gottcha2.py
+baseCommand:
+  - gottcha2
+  - extract
 label: gottcha2_extract
-doc: "Genomic Origin Through Taxonomic CHAllenge (GOTTCHA) is an annotation-independent
-  and signature-based metagenomic taxonomic profiling tool that has significantly
-  smaller FDR than other profiling tools. This program is a wrapper to map input reads
-  to pre-computed signature databases using minimap2 and/or to profile mapped reads
-  in SAM format.\n\nTool homepage: https://github.com/poeli/gottcha2"
+doc: "Extract mapped reads (or reference sequences) of specific taxa from reads or a SAM file profiled with GOTTCHA2.\n\nTool homepage: https://github.com/poeli/gottcha2"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outdir)
+        entry: '$({"class": "Directory", "listing": []})'
+      - $(inputs.database_files)
 inputs:
   - id: acc_exclusion_list
     type:
@@ -18,13 +23,19 @@ inputs:
       position: 101
       prefix: --accExclusionList
   - id: database
-    type:
-      - 'null'
-      - string
-    doc: The path and prefix of the GOTTCHA2 database.
+    type: string
+    doc: "The path and prefix of the GOTTCHA2 database (for example
+      gottcha_db.species.fna; the database files with this prefix must be given
+      in database_files)."
     inputBinding:
       position: 101
       prefix: --database
+  - id: database_files
+    type:
+      type: array
+      items: File
+    doc: Files of the GOTTCHA2 database (.mmi, .stats, .tax.tsv, ...) staged in the
+      working directory so that the database prefix resolves.
   - id: db_level
     type:
       - 'null'
@@ -146,14 +157,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --maxZscore
-  - id: metaphlan_format
-    type:
-      - 'null'
-      - boolean
-    doc: Generate output in MetaPhlAn format.
-    inputBinding:
-      position: 101
-      prefix: --mpa
   - id: min_cov
     type:
       - 'null'
@@ -190,6 +193,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --m2options
+  - id: mpa
+    type:
+      - 'null'
+      - boolean
+    doc: Generate output in MetaPhlAn format.
+    inputBinding:
+      position: 101
+      prefix: --mpa
   - id: nanopore
     type:
       - 'null'
@@ -210,10 +221,9 @@ inputs:
       position: 101
       prefix: --noCutoff
   - id: outdir
-    type:
-      - 'null'
-      - string
-    doc: 'Output directory [default: .]'
+    type: string
+    doc: 'Output directory (created before the run) [default: .]'
+    default: gottcha2_out
     inputBinding:
       position: 101
       prefix: --outdir
@@ -234,7 +244,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --presetx
-  - id: rel_abu_field
+  - id: rel_abu
     type:
       - 'null'
       - string
@@ -313,18 +323,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
   - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: 'Output directory [default: .]'
+    type: Directory
+    doc: 'Output directory with the profile tables, SAM file, log and extracted reads'
     outputBinding:
       glob: $(inputs.outdir)
 hints:

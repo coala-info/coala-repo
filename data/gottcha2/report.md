@@ -1,5 +1,12 @@
 # gottcha2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gottcha2_extract | Failed | tool bug: extraction crashes with a TypeError in gottcha2 2.2.0 (extract_sequences_by_taxonomy gets 11 arguments, takes at most 10) and leaves an empty output |
+| gottcha2_profile | PASS |  |
+
 ## gottcha2_profile
 
 ### Tool Description
@@ -278,44 +285,6 @@ options:
   --verbose             Provide verbose messages.
   --debug               Debug mode. Provide verbose running messages and keep
                         all temporary files.
-```
-
-
-## gottcha2_gottcha2
-
-### Tool Description
-GOTTCHA2 - Genomic Origin Through Taxonomic CHAllenge v2.2.0
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gottcha2:2.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/poeli/gottcha2
-- **Package**: https://anaconda.org/channels/bioconda/packages/gottcha2/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Error: 'gottcha2' is not a valid command
-
-GOTTCHA2 - Genomic Origin Through Taxonomic CHAllenge v2.2.0
-
-Usage:
-    gottcha2 <command> [options]
-
-Commands:
-    profile    Taxonomic profiling of metagenomic reads
-              (Map reads to signature database and classify)
-
-    extract    Extract reads of a specific taxon from profiled results
-
-    version    Display version information
-    
-Examples:
-    gottcha2 profile -i reads.fastq -d database/db_prefix
-
-    gottcha2 extract -s prefix.sam -d database/db_prefix -e 666
-
-For detailed help on a specific command:
-    gottcha2 <command> --help
 ```
 
 

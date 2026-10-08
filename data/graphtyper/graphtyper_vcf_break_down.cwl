@@ -8,62 +8,65 @@ doc: "Break down/decompose a VCF file.\n\nTool homepage: https://github.com/Deco
 inputs:
   - id: graph
     type: File
-    doc: Path to graph.
+    doc: "Path to graph."
     inputBinding:
       position: 1
   - id: vcf
     type: File
-    doc: Path to VCF file to break down.
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+    doc: "Path to VCF file to break down."
     inputBinding:
       position: 2
   - id: log
     type:
       - 'null'
-      - File
-    doc: Set path to log file.
-    inputBinding:
-      position: 103
-      prefix: --log
-  - id: region
-    type:
-      - 'null'
       - string
-    doc: Region to print variant in.
+    doc: "Set path to log file."
     inputBinding:
-      position: 103
-      prefix: --region
+      position: 10
+      prefix: "--log="
+      separate: false
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Set to output verbose logging.
+    doc: "Set to output verbose logging."
     inputBinding:
-      position: 103
-      prefix: --verbose
+      position: 10
+      prefix: "--verbose"
   - id: vverbose
     type:
       - 'null'
       - boolean
-    doc: Set to output very verbose logging.
+    doc: "Set to output very verbose logging."
     inputBinding:
-      position: 103
-      prefix: --vverbose
-  - id: output_file_path
-    type: string
-    doc: '=value or -ovalue [default: -] Output VCF file name.'
-    inputBinding:
-      position: 104
-      prefix: --output
-outputs:
-  - id: output_file
+      position: 10
+      prefix: "--vverbose"
+  - id: output
     type:
       - 'null'
-      - File
-    doc: Output VCF file name.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - string
+    doc: "Output VCF file name (default -, standard output)."
+    inputBinding:
+      position: 10
+      prefix: "--output="
+      separate: false
+  - id: region
+    type:
+      - 'null'
+      - string
+    doc: "Region to print variant in."
+    inputBinding:
+      position: 10
+      prefix: "--region="
+      separate: false
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/graphtyper:2.7.7--h7594796_1
+stdout: graphtyper_vcf_break_down.out

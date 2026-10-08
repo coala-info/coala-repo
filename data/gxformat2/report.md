@@ -1,5 +1,13 @@
 # gxformat2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gxformat2_gxwf-abstract-export | PASS |  |
+| gxformat2_gxwf-lint | PASS |  |
+| gxformat2_gxwf-viz | PASS |  |
+
 ## gxformat2_gxwf-lint
 
 ### Tool Description

@@ -69,8 +69,10 @@ inputs:
       position: 101
       prefix: --hashfunctions
   - id: kmer_size
-    type: int
-    doc: k-mer size
+    type:
+      - 'null'
+      - int
+    doc: k-mer size (either kmer_size or mask is required)
     inputBinding:
       position: 101
       prefix: --kmersize
@@ -83,7 +85,9 @@ inputs:
       position: 101
       prefix: --markweak
   - id: mask
-    type: string
+    type:
+      - 'null'
+      - string
     doc: gapped k-mer mask (quoted string like '#__##_##__#')
     inputBinding:
       position: 101

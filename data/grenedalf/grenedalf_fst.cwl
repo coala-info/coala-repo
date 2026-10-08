@@ -774,6 +774,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pool-sizes
+  - id: pool_sizes_file
+    type:
+      - 'null'
+      - File
+    doc: File with comma- or tab-separated sample names and pool sizes, one pair
+      per line (alternative to a single pool size in pool_sizes).
+    inputBinding:
+      position: 101
+      prefix: --pool-sizes
   - id: reference_genome_dict
     type:
       - 'null'
@@ -1233,10 +1242,10 @@ outputs:
     doc: Files written with the prefix given in file_prefix
     outputBinding:
       glob: $(inputs.file_prefix)*
-  - id: log_file_dir
+  - id: log_file_out
     type:
       - 'null'
-      - Directory
+      - File
     doc: Write all output to a log file, in addition to standard output to the 
       terminal.
     outputBinding:

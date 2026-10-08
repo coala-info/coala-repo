@@ -9,6 +9,7 @@ inputs:
     doc: QueryFile[Fasta]
     inputBinding:
       position: 1
+      prefix: -q
   - id: gnuplot_path
     type:
       - 'null'
@@ -24,6 +25,15 @@ inputs:
     doc: IndexFile Prefix
     inputBinding:
       position: 102
+      prefix: -i
+  - id: index_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Index files made by bwt_index (for example prefix.amb, .ann, .bwt, .pac,
+      .sa); they are staged in the working directory so that the index prefix
+      resolves
   - id: max_indel_size
     type:
       - 'null'
@@ -103,6 +113,7 @@ inputs:
     doc: Reference file
     inputBinding:
       position: 102
+      prefix: -r
   - id: sensitive_mode
     type:
       - 'null'
@@ -138,6 +149,10 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gsalign:1.0.22--hcb620b3_8

@@ -1,5 +1,11 @@
 # hapog CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hapog | PASS | short-read, long-read and BAM modes give outputs identical to the Galaxy tool tests (polished FASTA and changes file) |
+
 ## hapog
 
 ### Tool Description

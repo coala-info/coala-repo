@@ -6,6 +6,9 @@ baseCommand:
 label: gtdbtk_identify
 doc: "Identify GTDB-Tk classifications for genomes.\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
+  - id: gtdbtk_data
+    type: Directory
+    doc: GTDB-Tk reference data directory (sets GTDBTK_DATA_PATH)
   - id: batchfile
     type: File
     doc: path to file describing genomes - tab separated in 2 or 3 columns 
@@ -105,6 +108,10 @@ outputs:
     outputBinding:
       glob: $(inputs.prefix)*
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: GTDBTK_DATA_PATH
+        envValue: $(inputs.gtdbtk_data.path)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

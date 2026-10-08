@@ -6,6 +6,9 @@ baseCommand:
 label: gtdbtk_root
 doc: "Root a tree using a specified outgroup taxon.\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
+  - id: gtdbtk_data
+    type: Directory
+    doc: GTDB-Tk reference data directory (sets GTDBTK_DATA_PATH)
   - id: custom_taxonomy_file
     type:
       - 'null'
@@ -64,6 +67,10 @@ outputs:
     outputBinding:
       glob: $(inputs.output_tree_path)
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: GTDBTK_DATA_PATH
+        envValue: $(inputs.gtdbtk_data.path)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

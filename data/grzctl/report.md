@@ -1,5 +1,23 @@
 # grzctl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grzctl_archive | Not completed | needs an account and S3 or web servers of the German genome data center |
+| grzctl_clean | Not completed | needs an account and S3 or web servers of the German genome data center |
+| grzctl_consent | PASS |  |
+| grzctl_decrypt | PASS |  |
+| grzctl_download | Not completed | needs an account and S3 or web servers of the German genome data center |
+| grzctl_encrypt | PASS |  |
+| grzctl_list | Not completed | needs an account and S3 or web servers of the German genome data center |
+| grzctl_pruefbericht_generate_from-metadata | PASS |  |
+| grzctl_pruefbericht_generate_from-submission-dir | PASS |  |
+| grzctl_pruefbericht_submit | Not completed | needs an account and S3 or web servers of the German genome data center |
+| grzctl_submit | Not completed | needs an account and S3 or web servers of the German genome data center |
+| grzctl_upload | Not completed | needs an account and S3 or web servers of the German genome data center |
+| grzctl_validate | PASS |  |
+
 ## grzctl_validate
 
 ### Tool Description
@@ -209,10 +227,10 @@ Options:
   --help                 Show this message and exit.
 ```
 
-## grzctl_pruefbericht
+## grzctl_decrypt
 
 ### Tool Description
-Generate and submit Prüfberichte.
+Decrypt a submission.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
@@ -222,30 +240,27 @@ Generate and submit Prüfberichte.
 
 ### Original Help Text
 ```text
-/usr/local/lib/python3.13/site-packages/docopt.py:165: SyntaxWarning: invalid escape sequence '\S'
-  name = re.findall('(<\S*?>)', source)[0]
-/usr/local/lib/python3.13/site-packages/docopt.py:166: SyntaxWarning: invalid escape sequence '\['
-  value = re.findall('\[default: (.*)\]', source, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:207: SyntaxWarning: invalid escape sequence '\['
-  matched = re.findall('\[default: (.*)\]', description, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:456: SyntaxWarning: invalid escape sequence '\S'
-  split = re.split('\n *(<\S+?>|-\S+?)', doc)[1:]
-Usage: grzctl pruefbericht [OPTIONS] COMMAND [ARGS]...
+Usage: grzctl decrypt [OPTIONS]
 
-  Generate and submit Prüfberichte.
+  Decrypt a submission.
+
+  Decrypting a submission requires the _private_ key of the original
+  recipient.
 
 Options:
-  --help  Show this message and exit.
-
-Commands:
-  generate  Generate a Prüfbericht JSON from submission metadata.
-  submit    Submit a Prüfbericht JSON to BfArM.
+  --submission-dir PATH  Path to the submission directory containing
+                         'metadata/', 'files/', 'encrypted_files/' and 'logs/'
+                         directories  [required]
+  --config-file STRING   Path to config file
+  --force / --no-force   Overwrite files and ignore cached results
+                         (dangerous!)
+  --help                 Show this message and exit.
 ```
 
-## grzctl_db
+## grzctl_upload
 
 ### Tool Description
-Database operations
+Upload a submission to a GRZ/GDC.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
@@ -255,37 +270,24 @@ Database operations
 
 ### Original Help Text
 ```text
-/usr/local/lib/python3.13/site-packages/docopt.py:165: SyntaxWarning: invalid escape sequence '\S'
-  name = re.findall('(<\S*?>)', source)[0]
-/usr/local/lib/python3.13/site-packages/docopt.py:166: SyntaxWarning: invalid escape sequence '\['
-  value = re.findall('\[default: (.*)\]', source, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:207: SyntaxWarning: invalid escape sequence '\['
-  matched = re.findall('\[default: (.*)\]', description, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:456: SyntaxWarning: invalid escape sequence '\S'
-  split = re.split('\n *(<\S+?>|-\S+?)', doc)[1:]
-Usage: grzctl db [OPTIONS] COMMAND [ARGS]...
+Usage: grzctl upload [OPTIONS]
 
-  Database operations
+  Upload a submission to a GRZ/GDC.
 
 Options:
-  --config-file STRING  Path to config file
-  --help                Show this message and exit.
-
-Commands:
-  init                  Initializes the database schema using Alembic.
-  list                  Lists all submissions in the database with their...
-  list-change-requests  Lists all submissions in the database that have a...
-  should-qc             Check whether a submission should be QCed.
-  submission            Submission operations
-  sync-from-inbox       Synchronize the database with submissions found...
-  tui                   Starts the interactive terminal user interface to...
-  upgrade               Upgrades the database schema using Alembic.
+  --submission-dir PATH  Path to the submission directory containing
+                         'metadata/', 'files/', 'encrypted_files/' and 'logs/'
+                         directories  [required]
+  --config-file STRING   Path to config file
+  --threads INTEGER      Number of threads to use for parallel operations
+                         [default: 4]
+  --help                 Show this message and exit.
 ```
 
-## grzctl_report
+## grzctl_archive
 
 ### Tool Description
-Generate various reports related to GRZ activities.
+Archive a submission within a GRZ/GDC.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
@@ -295,25 +297,119 @@ Generate various reports related to GRZ activities.
 
 ### Original Help Text
 ```text
-/usr/local/lib/python3.13/site-packages/docopt.py:165: SyntaxWarning: invalid escape sequence '\S'
-  name = re.findall('(<\S*?>)', source)[0]
-/usr/local/lib/python3.13/site-packages/docopt.py:166: SyntaxWarning: invalid escape sequence '\['
-  value = re.findall('\[default: (.*)\]', source, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:207: SyntaxWarning: invalid escape sequence '\['
-  matched = re.findall('\[default: (.*)\]', description, flags=re.I)
-/usr/local/lib/python3.13/site-packages/docopt.py:456: SyntaxWarning: invalid escape sequence '\S'
-  split = re.split('\n *(<\S+?>|-\S+?)', doc)[1:]
-Usage: grzctl report [OPTIONS] COMMAND [ARGS]...
+Usage: grzctl archive [OPTIONS]
 
-  Generate various reports related to GRZ activities.
+  Archive a submission within a GRZ/GDC.
 
 Options:
-  --config-file STRING  Path to config file
-  --help                Show this message and exit.
+  --submission-dir PATH  Path to the submission directory containing
+                         'metadata/', 'files/', 'encrypted_files/' and 'logs/'
+                         directories  [required]
+  --config-file STRING   Path to config file
+  --threads INTEGER      Number of threads to use for parallel operations
+                         [default: 4]
+  --help                 Show this message and exit.
+```
 
-Commands:
-  processed  Generate a report of processed submissions.
-  quarterly  Generate the tables for the quarterly report.
+## grzctl_clean
+
+### Tool Description
+Remove all files of a submission from the S3 inbox.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BfArM-MVH/grz-tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/grzctl/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: grzctl clean [OPTIONS]
+
+  Remove all files of a submission from the S3 inbox.
+
+Options:
+  --submission-id STRING  S3 submission ID  [required]
+  --config-file STRING    Path to config file
+  --yes-i-really-mean-it
+  --help                  Show this message and exit.
+```
+
+## grzctl_pruefbericht_submit
+
+### Tool Description
+Submit a Prüfbericht JSON to BfArM.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BfArM-MVH/grz-tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/grzctl/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: grzctl pruefbericht submit [OPTIONS]
+
+  Submit a Prüfbericht JSON to BfArM.
+
+Options:
+  --pruefbericht-file PATH  Path to pruefbericht file  [required]
+  --config-file STRING      Path to config file
+  --token TEXT              Access token to try instead of requesting a new
+                            one.
+  --print-token             Print obtained access token to stdout.
+  --allow-redacted-tan-g    Allow submission of a Prüfbericht with a redacted
+                            TAN.
+  --help                    Show this message and exit.
+```
+
+## grzctl_pruefbericht_generate_from-metadata
+
+### Tool Description
+Generate Prüfbericht from metadata.json
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BfArM-MVH/grz-tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/grzctl/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: grzctl pruefbericht generate from-metadata [OPTIONS] METADATA_FILE
+
+  Generate Prüfbericht from metadata.json
+
+Options:
+  --fail / --pass  Fail an otherwise valid submission (e.g. failed internal
+                   QC)
+  --help           Show this message and exit.
+```
+
+## grzctl_pruefbericht_generate_from-submission-dir
+
+### Tool Description
+Generate Prüfbericht from submission directory.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BfArM-MVH/grz-tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/grzctl/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: grzctl pruefbericht generate from-submission-dir [OPTIONS] PATH
+
+  Generate Prüfbericht from submission directory.
+
+  This is equivalent to `from-metadata
+  ${submission_dir}/metadata/metadata.json`.
+
+Options:
+  --fail / --pass  Fail an otherwise valid submission (e.g. failed internal
+                   QC)
+  --help           Show this message and exit.
 ```
 
 ## Metadata

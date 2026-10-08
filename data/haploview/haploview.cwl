@@ -272,14 +272,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -ldvalues
-  - id: log_file
-    type:
-      - 'null'
-      - File
-    doc: Specify a logfile name
-    inputBinding:
-      position: 101
-      prefix: -log
   - id: map_file
     type:
       - 'null'
@@ -367,7 +359,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Command line output only
+    default: true
+    doc: Command line output only (the GUI cannot run in a container)
     inputBinding:
       position: 101
       prefix: -nogui
@@ -379,14 +372,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -nonSNP
-  - id: output_fileroot
-    type:
-      - 'null'
-      - string
-    doc: Specify a fileroot to be used for all output files
-    inputBinding:
-      position: 101
-      prefix: -out
   - id: panel
     type:
       - 'null'
@@ -508,204 +493,237 @@ inputs:
     inputBinding:
       position: 101
       prefix: -track
-  - id: aggressive_tagging_path
+  - id: output_fileroot
+    type: string
+    doc: Specify a fileroot to be used for all output files
+    inputBinding:
+      position: 101
+      prefix: -out
+  - id: log_file
     type:
       - 'null'
       - string
-    doc: Output or path parameter `aggressive_tagging_path`
+    doc: Specify a logfile name (defaults to haploview.log if no name specified)
     inputBinding:
-      position: 102
-      prefix: --aggressive-tagging
-  - id: assoc_cc_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `assoc_cc_path`
-    inputBinding:
-      position: 103
-      prefix: --assoc-cc
-  - id: assoc_tdt_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `assoc_tdt_path`
-    inputBinding:
-      position: 104
-      prefix: --assoc-tdt
-  - id: compressed_png_path
-    type:
-      - 'null'
-      - string
-    doc: Outputs compressed LD display to <fileroot>.LD.PNG
-    inputBinding:
-      position: 106
-      prefix: -compressedpng
-  - id: ind_check_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `ind_check_path`
-    inputBinding:
-      position: 108
-      prefix: --ind-check
-  - id: male_hets_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `male_hets_path`
-    inputBinding:
-      position: 109
-      prefix: --male-hets
-  - id: pairwise_tagging_path
-    type:
-      - 'null'
-      - string
-    doc: Generates pairwise tagging information in <fileroot>.TAGS and .TESTS
-    inputBinding:
-      position: 111
-      prefix: -pairwiseTagging
-  - id: perm_tests_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `perm_tests_path`
-    inputBinding:
-      position: 112
-      prefix: --perm-tests
-  - id: png_path
-    type:
-      - 'null'
-      - string
-    doc: Outputs LD display to <fileroot>.LD.PNG
-    inputBinding:
-      position: 113
-      prefix: -png
-  - id: svg_path
-    type:
-      - 'null'
-      - string
-    doc: Outputs svg format LD display to <fileroot>.LD.SVG
-    inputBinding:
-      position: 114
-      prefix: -svg
-  - id: check_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 115
-      prefix: -check
-  - id: dprime_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 116
-      prefix: -dprime
-  - id: mendel_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 117
-      prefix: -mendel
-outputs:
-  - id: dprime
-    type:
-      - 'null'
-      - File
-    doc: Outputs LD text to <fileroot>.LD
-    outputBinding:
-      glob: $(inputs.dprime_path)
-  - id: png
-    type:
-      - 'null'
-      - File
-    doc: Outputs LD display to <fileroot>.LD.PNG
-    outputBinding:
-      glob: $(inputs.png_path)
-  - id: compressed_png
-    type:
-      - 'null'
-      - File
-    doc: Outputs compressed LD display to <fileroot>.LD.PNG
-    outputBinding:
-      glob: $(inputs.compressed_png_path)
-  - id: svg
-    type:
-      - 'null'
-      - File
-    doc: Outputs svg format LD display to <fileroot>.LD.SVG
-    outputBinding:
-      glob: $(inputs.svg_path)
-  - id: check
-    type:
-      - 'null'
-      - File
-    doc: Outputs marker checks to <fileroot>.CHECK
-    outputBinding:
-      glob: $(inputs.check_path)
-  - id: ind_check
-    type:
-      - 'null'
-      - File
-    doc: Outputs genotype percent per individual to <fileroot>.INDCHECK
-    outputBinding:
-      glob: $(inputs.ind_check_path)
-  - id: mendel
-    type:
-      - 'null'
-      - File
-    doc: Outputs Mendel error information to <fileroot>.MENDEL
-    outputBinding:
-      glob: $(inputs.mendel_path)
-  - id: male_hets
-    type:
-      - 'null'
-      - File
-    doc: Outputs male heterozygote information to <fileroot>.MALEHETS
-    outputBinding:
-      glob: $(inputs.male_hets_path)
-  - id: assoc_cc
-    type:
-      - 'null'
-      - File
-    doc: Outputs case control association results to <fileroot>.ASSOC and 
-      <fileroot>.HAPASSOC
-    outputBinding:
-      glob: $(inputs.assoc_cc_path)
-  - id: assoc_tdt
-    type:
-      - 'null'
-      - File
-    doc: Outputs trio association results to <fileroot>.ASSOC and 
-      <fileroot>.HAPASSOC
-    outputBinding:
-      glob: $(inputs.assoc_tdt_path)
+      position: 101
+      prefix: -log
   - id: perm_tests
     type:
       - 'null'
-      - File
-    doc: Performs <numtests> permutations on default association tests (or 
-      custom tests if a custom association file is specified) and writes to 
-      <fileroot>.PERMUT
-    outputBinding:
-      glob: $(inputs.perm_tests_path)
+      - int
+    doc: Performs <numtests> permutations on default association tests (or custom tests if a custom association file is specified) and writes to <fileroot>.PERMUT
+    inputBinding:
+      position: 101
+      prefix: -permtests
+  - id: dprime
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs LD text to <fileroot>.LD
+    inputBinding:
+      position: 101
+      prefix: -dprime
+  - id: png
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs LD display to <fileroot>.LD.PNG
+    inputBinding:
+      position: 101
+      prefix: -png
+  - id: compressed_png
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs compressed LD display to <fileroot>.LD.PNG
+    inputBinding:
+      position: 101
+      prefix: -compressedpng
+  - id: svg
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs svg format LD display to <fileroot>.LD.SVG
+    inputBinding:
+      position: 101
+      prefix: -svg
+  - id: check
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs marker checks to <fileroot>.CHECK
+    inputBinding:
+      position: 101
+      prefix: -check
+  - id: ind_check
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs genotype percent per individual to <fileroot>.INDCHECK
+    inputBinding:
+      position: 101
+      prefix: -indcheck
+  - id: mendel
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs Mendel error information to <fileroot>.MENDEL
+    inputBinding:
+      position: 101
+      prefix: -mendel
+  - id: male_hets
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs male heterozygote information to <fileroot>.MALEHETS
+    inputBinding:
+      position: 101
+      prefix: -malehets
+  - id: assoc_cc
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs case control association results to <fileroot>.ASSOC and <fileroot>.HAPASSOC
+    inputBinding:
+      position: 101
+      prefix: -assocCC
+  - id: assoc_tdt
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs trio association results to <fileroot>.ASSOC and <fileroot>.HAPASSOC
+    inputBinding:
+      position: 101
+      prefix: -assocTDT
   - id: pairwise_tagging
     type:
       - 'null'
-      - File
+      - boolean
     doc: Generates pairwise tagging information in <fileroot>.TAGS and .TESTS
-    outputBinding:
-      glob: $(inputs.pairwise_tagging_path)
+    inputBinding:
+      position: 101
+      prefix: -pairwiseTagging
   - id: aggressive_tagging
     type:
       - 'null'
+      - boolean
+    doc: As above but generates 2-marker haplotype tags unless specified otherwise by -aggressiveNumMarkers
+    inputBinding:
+      position: 101
+      prefix: -aggressiveTagging
+outputs:
+  - id: ld_table
+    type:
+      - 'null'
       - File
-    doc: As above but generates 2-marker haplotype tags unless specified 
-      otherwise by -aggressiveNumMarkers
+    doc: Pairwise LD table
     outputBinding:
-      glob: $(inputs.aggressive_tagging_path)
+      glob: $(inputs.output_fileroot).LD
+  - id: ld_png
+    type:
+      - 'null'
+      - File
+    doc: LD display image
+    outputBinding:
+      glob: $(inputs.output_fileroot).LD.PNG
+  - id: ld_svg
+    type:
+      - 'null'
+      - File
+    doc: LD display in SVG format
+    outputBinding:
+      glob: $(inputs.output_fileroot).LD.SVG
+  - id: check_file
+    type:
+      - 'null'
+      - File
+    doc: Marker checks
+    outputBinding:
+      glob: $(inputs.output_fileroot).CHECK
+  - id: ind_check_file
+    type:
+      - 'null'
+      - File
+    doc: Genotype percent per individual
+    outputBinding:
+      glob: $(inputs.output_fileroot).INDCHECK
+  - id: mendel_file
+    type:
+      - 'null'
+      - File
+    doc: Mendel error information
+    outputBinding:
+      glob: $(inputs.output_fileroot).MENDEL
+  - id: male_hets_file
+    type:
+      - 'null'
+      - File
+    doc: Male heterozygote information
+    outputBinding:
+      glob: $(inputs.output_fileroot).MALEHETS
+  - id: assoc_file
+    type:
+      - 'null'
+      - File
+    doc: Association results
+    outputBinding:
+      glob: $(inputs.output_fileroot).ASSOC
+  - id: hap_assoc_file
+    type:
+      - 'null'
+      - File
+    doc: Haplotype association results
+    outputBinding:
+      glob: $(inputs.output_fileroot).HAPASSOC
+  - id: permut_file
+    type:
+      - 'null'
+      - File
+    doc: Permutation test results
+    outputBinding:
+      glob: $(inputs.output_fileroot).PERMUT
+  - id: tags_file
+    type:
+      - 'null'
+      - File
+    doc: Tagging information
+    outputBinding:
+      glob: $(inputs.output_fileroot).TAGS
+  - id: tests_file
+    type:
+      - 'null'
+      - File
+    doc: Tagging tests
+    outputBinding:
+      glob: $(inputs.output_fileroot).TESTS
+  - id: gabriel_blocks
+    type:
+      - 'null'
+      - File
+    doc: Gabriel blocks
+    outputBinding:
+      glob: $(inputs.output_fileroot).GABRIELblocks
+  - id: four_gamete_blocks
+    type:
+      - 'null'
+      - File
+    doc: Four gamete blocks
+    outputBinding:
+      glob: $(inputs.output_fileroot).4GAMblocks
+  - id: spine_blocks
+    type:
+      - 'null'
+      - File
+    doc: Solid spine blocks
+    outputBinding:
+      glob: $(inputs.output_fileroot).SPINEblocks
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

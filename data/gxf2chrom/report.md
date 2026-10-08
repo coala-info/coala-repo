@@ -1,5 +1,11 @@
 # gxf2chrom CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gxf2chrom | PASS |  |
+
 ## gxf2chrom
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # graphanalyzer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| graphanalyzer_graphanalyzer.py | PASS |  |
+
 ## graphanalyzer_graphanalyzer.py
 
 ### Tool Description

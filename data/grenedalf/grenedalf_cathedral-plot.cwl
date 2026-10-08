@@ -75,6 +75,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: '^.json'
+        required: true
     doc: List of csv files or directories to process. For directories, only 
       files with the extension `.csv` are processed. To input more than one file
       or directory, either separate them with spaces, or provide this option 
@@ -107,6 +110,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: '^.csv'
+        required: true
     doc: List of json files or directories to process. For directories, only 
       files with the extension `.json` are processed. To input more than one 
       file or directory, either separate them with spaces, or provide this 
@@ -211,10 +217,10 @@ outputs:
     doc: Files written with the prefix given in file_prefix
     outputBinding:
       glob: $(inputs.file_prefix)*
-  - id: log_file_dir
+  - id: log_file_out
     type:
       - 'null'
-      - Directory
+      - File
     doc: Write all output to a log file, in addition to standard output to the 
       terminal.
     outputBinding:

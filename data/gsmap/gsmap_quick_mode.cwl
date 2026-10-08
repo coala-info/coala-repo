@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsmap_quick_mode
+baseCommand:
+  - gsmap
+  - quick_mode
 label: gsmap_quick_mode
 doc: "Performs a quick mode analysis with gsMap.\n\nTool homepage: https://github.com/LeonSong1995/gsMap"
 inputs:
@@ -125,11 +127,27 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Log messages of the command
+  - id: workdir_out
+    type: Directory
+    doc: The working directory with the files written by the command
+    outputBinding:
+      glob: $(inputs.workdir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0
 stdout: gsmap_quick_mode.out
+stderr: gsmap_quick_mode.log

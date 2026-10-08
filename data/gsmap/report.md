@@ -1,5 +1,19 @@
 # gsmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gsmap_create_slice_mean | Failed | image problem: zarr 3 in the image breaks the tool (Group.array missing argument shape) |
+| gsmap_format_sumstats | Failed | image problem: pandas 3.0 in the image removed delim_whitespace, which the tool uses to read the file |
+| gsmap_quick_mode | Failed | image problem: torch is missing (ModuleNotFoundError) |
+| gsmap_run_cauchy_combination | Not completed | needs LD scores and marker scores from the earlier gsMap steps, which fail in this image, and large reference data |
+| gsmap_run_find_latent_representations | Failed | image problem: torch is missing (ModuleNotFoundError) |
+| gsmap_run_generate_ldscore | Failed | image problem: torch is missing (ModuleNotFoundError) |
+| gsmap_run_latent_to_gene | Failed | image problem: pandas 3.0 in the image breaks the gene-name step (TypeError: string operation on non-string array) |
+| gsmap_run_report | Not completed | needs LD scores and marker scores from the earlier gsMap steps, which fail in this image, and large reference data |
+| gsmap_run_spatial_ldsc | Not completed | needs LD scores and marker scores from the earlier gsMap steps, which fail in this image, and large reference data |
+
 ## gsmap_quick_mode
 
 ### Tool Description
@@ -261,24 +275,6 @@ options:
   --additional_baseline_annotation ADDITIONAL_BASELINE_ANNOTATION
                         Path of additional baseline annotations (default:
                         None)
-```
-
-## gsmap
-### Tool Description
-gsMap: error: argument subcommand: invalid choice: 'Generate' (choose from quick_mode, run_find_latent_representations, run_latent_to_gene, run_generate_ldscore, run_spatial_ldsc, run_cauchy_combination, run_report, format_sumstats, create_slice_mean)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0
-- **Homepage**: https://github.com/LeonSong1995/gsMap
-- **Package**: https://anaconda.org/channels/bioconda/packages/gsmap/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: gsMap [-h] [--version]
-             {quick_mode,run_find_latent_representations,run_latent_to_gene,run_generate_ldscore,run_spatial_ldsc,run_cauchy_combination,run_report,format_sumstats,create_slice_mean}
-             ...
-gsMap: error: argument subcommand: invalid choice: 'Generate' (choose from quick_mode, run_find_latent_representations, run_latent_to_gene, run_generate_ldscore, run_spatial_ldsc, run_cauchy_combination, run_report, format_sumstats, create_slice_mean)
 ```
 
 ## gsmap_run_spatial_ldsc

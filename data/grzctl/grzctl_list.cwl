@@ -14,6 +14,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --config-file
+  - id: hide_cleaned
+    type:
+      - 'null'
+      - boolean
+    doc: Hide cleaned submissions.
+    inputBinding:
+      position: 101
+      prefix: --hide-cleaned
+  - id: json
+    type:
+      - 'null'
+      - boolean
+    doc: Output JSON for machine-readability.
+    inputBinding:
+      position: 101
+      prefix: --json
+  - id: limit
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of submissions to list
+    inputBinding:
+      position: 101
+      prefix: --limit
+  - id: show_cleaned
+    type:
+      - 'null'
+      - boolean
+    doc: Show cleaned submissions.
+    inputBinding:
+      position: 101
+      prefix: --show-cleaned
 outputs:
   - id: stdout
     type: stdout

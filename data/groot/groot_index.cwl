@@ -18,7 +18,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: filename for log file
     inputBinding:
       position: 101

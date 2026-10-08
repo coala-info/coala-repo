@@ -29,10 +29,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --fastq
     doc: FASTQ file(s) to align
     inputBinding:
       position: 101
-      prefix: --fastq
   - id: graph_directory
     type:
       - 'null'
@@ -52,7 +53,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: filename for log file
     inputBinding:
       position: 101

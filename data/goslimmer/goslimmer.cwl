@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - GOSlimmer.jar
+baseCommand: goslimmer
 label: goslimmer
 doc: "converts a set of annotations from GO to a given GOslim version\n\nTool homepage:
   https://github.com/DanFaria/GOSlimmer"
@@ -29,10 +26,10 @@ inputs:
       prefix: --slim
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to the output GOslim annotation file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type: File

@@ -1,5 +1,11 @@
 # graphprot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| graphprot_GraphProt.pl | PASS | wrapper sets CONDA_PREFIX=/usr/local, which GraphProt.pl needs to find its scripts; tested actions ls, train (model identical to the repo model), motif and regression train |
+
 ## graphprot_GraphProt.pl
 
 ### Tool Description

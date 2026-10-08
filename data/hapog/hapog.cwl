@@ -103,19 +103,26 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_dir_path
-    type: string?
-    doc: ' Output directory name'
+    type: string
+    doc: Output directory name
     inputBinding:
       position: 102
       prefix: --output
 outputs:
-  - id: output_dir
+  - id: polished_fasta
     type:
       - 'null'
-      - Directory
-    doc: Output directory name
+      - File
+    doc: Polished assembly (hapog_results/hapog.fasta)
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.output_dir_path)/hapog_results/hapog.fasta
+  - id: changes
+    type:
+      - 'null'
+      - File
+    doc: Report of the changes made (hapog_results/hapog.changes)
+    outputBinding:
+      glob: $(inputs.output_dir_path)/hapog_results/hapog.changes
 requirements:
   - class: InlineJavascriptRequirement
 hints:

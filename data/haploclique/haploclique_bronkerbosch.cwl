@@ -1,14 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haploclique
+baseCommand:
+  - haploclique
+  - bronkerbosch
 label: haploclique_bronkerbosch
 doc: "predicts haplotypes from NGS reads.\n\nTool homepage: https://github.com/cbg-ethz/haploclique"
 inputs:
-  - id: subcommand
-    type: string
-    doc: Subcommand to run. Can be 'clever' or 'bronkerbosch'.
-    inputBinding:
-      position: 1
   - id: bamfile
     type: File
     doc: Input BAM file
@@ -18,7 +15,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Optional output file name or prefix
+    doc: Output prefix; results are written to <output>.fasta (default quasispecies)
     inputBinding:
       position: 3
   - id: allel_frequencies
@@ -27,7 +24,7 @@ inputs:
       - File
     doc: Allele frequencies file
     inputBinding:
-      position: 104
+      position: 1
       prefix: --allel_frequencies
   - id: call_indels
     type:
@@ -35,7 +32,7 @@ inputs:
       - File
     doc: variant calling is not supported yet.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --call_indels
   - id: doc_haplotypes
     type:
@@ -44,7 +41,7 @@ inputs:
     doc: Used in simulation studies with known haplotypes to document which 
       reads contributed to which final cliques (3 or 5).
     inputBinding:
-      position: 104
+      position: 1
       prefix: --doc_haplotypes
   - id: edge_quasi_cutoff_cliques
     type:
@@ -52,7 +49,7 @@ inputs:
       - float
     doc: edge calculator option
     inputBinding:
-      position: 104
+      position: 1
       prefix: --edge_quasi_cutoff_cliques
   - id: edge_quasi_cutoff_mixed
     type:
@@ -60,7 +57,7 @@ inputs:
       - float
     doc: edge calculator option
     inputBinding:
-      position: 104
+      position: 1
       prefix: --edge_quasi_cutoff_mixed
   - id: edge_quasi_cutoff_single
     type:
@@ -68,7 +65,7 @@ inputs:
       - float
     doc: edge calculator option
     inputBinding:
-      position: 104
+      position: 1
       prefix: --edge_quasi_cutoff_single
   - id: filter
     type:
@@ -76,7 +73,7 @@ inputs:
       - float
     doc: Filter out reads with low frequency at the end.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --filter
   - id: frame_shift_merge
     type:
@@ -85,7 +82,7 @@ inputs:
     doc: Reads will be clustered with single nucleotide insertions or deletions.
       Use for PacBio data.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --frame_shift_merge
   - id: indel_edge_sig_level
     type:
@@ -93,7 +90,7 @@ inputs:
       - float
     doc: Indel edge significance level
     inputBinding:
-      position: 104
+      position: 1
       prefix: --indel_edge_sig_level
   - id: iterations
     type:
@@ -101,7 +98,7 @@ inputs:
       - int
     doc: Number of iterations. haploclique will stop if the superreads converge.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --iterations
   - id: limit_clique_size
     type:
@@ -109,7 +106,7 @@ inputs:
       - int
     doc: Set a threshold to limit the size of cliques.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --limit_clique_size
   - id: log
     type:
@@ -117,7 +114,7 @@ inputs:
       - File
     doc: Write log to <file>.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --log
   - id: max_cliques
     type:
@@ -126,7 +123,7 @@ inputs:
     doc: Set a threshold for the maximal number of cliques which should be 
       considered in the next iteration.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --max_cliques
   - id: mean_and_sd_filename
     type:
@@ -134,7 +131,7 @@ inputs:
       - File
     doc: Required for option -I
     inputBinding:
-      position: 104
+      position: 1
       prefix: --mean_and_sd_filename
   - id: min_overlap_cliques
     type:
@@ -142,7 +139,7 @@ inputs:
       - float
     doc: edge calculator option
     inputBinding:
-      position: 104
+      position: 1
       prefix: --min_overlap_cliques
   - id: min_overlap_single
     type:
@@ -150,7 +147,7 @@ inputs:
       - float
     doc: edge calculator option
     inputBinding:
-      position: 104
+      position: 1
       prefix: --min_overlap_single
   - id: no_prob0
     type:
@@ -158,7 +155,7 @@ inputs:
       - boolean
     doc: ignore the tail probabilities during edge calculation in <output>.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --no_prob0
   - id: no_singletons
     type:
@@ -166,7 +163,7 @@ inputs:
       - boolean
     doc: Filter out single read cliques after first iteration.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --no_singletons
   - id: random_overlap_quality
     type:
@@ -174,7 +171,7 @@ inputs:
       - float
     doc: edge calculator option
     inputBinding:
-      position: 104
+      position: 1
       prefix: --random_overlap_quality
   - id: significance
     type:
@@ -182,37 +179,44 @@ inputs:
       - float
     doc: Filter out reads witch are below <num> standard deviations.
     inputBinding:
-      position: 104
+      position: 1
       prefix: --significance
-  - id: bam_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 105
-      prefix: --bam
-  - id: gff_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 106
-      prefix: --gff
-outputs:
-  - id: gff
-    type:
-      - 'null'
-      - File
-    doc: Option to create GFF File from output. <output> is used as prefix.
-    outputBinding:
-      glob: $(inputs.gff_path)
   - id: bam
     type:
       - 'null'
-      - File
+      - boolean
     doc: Option to create BAM File from output. <output> is used as prefix.
+    inputBinding:
+      position: 1
+      prefix: --bam
+  - id: gff
+    type:
+      - 'null'
+      - boolean
+    doc: Option to create GFF File from output. <output> is used as prefix.
+    inputBinding:
+      position: 1
+      prefix: --gff
+outputs:
+  - id: fasta
+    type: File
+    doc: Predicted haplotypes (superreads) in FASTA format
     outputBinding:
-      glob: $(inputs.bam_path)
+      glob: $((inputs.output || 'quasispecies') + '.fasta')
+  - id: gff_file
+    type:
+      - 'null'
+      - File
+    doc: GFF file, written with --gff
+    outputBinding:
+      glob: $((inputs.output || 'quasispecies') + '.gff')
+  - id: bam_file
+    type:
+      - 'null'
+      - File
+    doc: BAM file, written with --bam
+    outputBinding:
+      glob: $((inputs.output || 'quasispecies') + '.bam')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

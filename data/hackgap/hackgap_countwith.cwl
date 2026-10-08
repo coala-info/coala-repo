@@ -15,6 +15,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --files
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: The .hash and .info files of the existing index. They are staged in the
+      working directory so the prefix resolves.
   - id: input_prefix
     type: string
     doc: path/prefix of the existing index which should be used for counting
@@ -62,6 +68,8 @@ outputs:
       glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hackgap:1.0.1--pyhdfd78af_0

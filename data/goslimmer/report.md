@@ -1,5 +1,11 @@
 # goslimmer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| goslimmer | PASS |  |
+
 ## goslimmer
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # gopeaks CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gopeaks | PASS |  |
+
 ## gopeaks
 
 ### Tool Description

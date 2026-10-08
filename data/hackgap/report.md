@@ -1,5 +1,14 @@
 # hackgap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hackgap_count | PASS |  |
+| hackgap_countwith | PASS |  |
+| hackgap_info | PASS |  |
+| hackgap_pycount | PASS |  |
+
 ## hackgap_count
 
 ### Tool Description
@@ -181,23 +190,6 @@ options:
                         summary, details, full)
   --showvalues INT      number of values to show in value statistics (none,
                         all, INT)
-```
-
-## hackgap_counts
-
-### Tool Description
-hackgap: error: argument COMMAND: invalid choice: 'counts' (choose from count, countwith, pycount, info)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hackgap:1.0.1--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/rahmannlab/hackgap
-- **Package**: https://anaconda.org/channels/bioconda/packages/hackgap/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: hackgap [-h] [--version] [--debug] COMMAND ...
-hackgap: error: argument COMMAND: invalid choice: 'counts' (choose from count, countwith, pycount, info)
 ```
 
 ## Metadata

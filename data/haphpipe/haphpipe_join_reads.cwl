@@ -108,6 +108,8 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.outdir_path ? [{entryname: inputs.outdir_path, entry: {class: 'Directory', listing: []}, writable: true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haphpipe:1.0.3--py_0

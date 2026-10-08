@@ -16,6 +16,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --feature
+      itemSeparator: ','
   - id: gfa
     type: File
     doc: Input GFA file

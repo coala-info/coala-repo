@@ -29,6 +29,20 @@ outputs:
     doc: Output report
     outputBinding:
       glob: $(inputs.output_report_path)
+  - id: raw_report_file
+    type:
+      - 'null'
+      - File
+    doc: Raw report (written when --raw is set)
+    outputBinding:
+      glob: $(inputs.output_report_path.replace(/\.[^.\/]*$/, '')).raw.txt
+  - id: html_report
+    type:
+      - 'null'
+      - File
+    doc: HTML report
+    outputBinding:
+      glob: $(inputs.output_report_path.replace(/\.[^.\/]*$/, '')).html
 requirements:
   - class: InlineJavascriptRequirement
 hints:

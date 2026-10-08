@@ -1,5 +1,11 @@
 # guessmylt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| guessmylt_GUESSmyLT | Failed | image problem: the tool unpacks its BUSCO data into its own install folder at start-up, which is read-only (and not writable for a non-root user); removed an invented .fai secondary file |
+
 ## guessmylt_GUESSmyLT
 
 ### Tool Description

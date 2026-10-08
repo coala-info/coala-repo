@@ -479,7 +479,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Write all output to a log file, in addition to standard output to the 
       terminal.
     inputBinding:
@@ -905,6 +905,13 @@ outputs:
     doc: Files written with the prefix given in file_prefix
     outputBinding:
       glob: $(inputs.file_prefix)*
+  - id: log_file_out
+    type:
+      - 'null'
+      - File
+    doc: Log file written with --log-file
+    outputBinding:
+      glob: $(inputs.log_file)
   - id: out_dir_dir
     type:
       - 'null'

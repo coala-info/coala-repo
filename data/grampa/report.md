@@ -1,5 +1,11 @@
 # grampa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grampa | PASS |  |
+
 ## grampa
 
 ### Tool Description

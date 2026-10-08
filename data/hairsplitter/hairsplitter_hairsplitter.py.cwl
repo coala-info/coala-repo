@@ -89,7 +89,7 @@ inputs:
   - id: path_to_medaka
     type:
       - 'null'
-      - File
+      - string
     doc: Path to the executable medaka
     inputBinding:
       position: 101
@@ -97,7 +97,7 @@ inputs:
   - id: path_to_minigraph
     type:
       - 'null'
-      - File
+      - string
     doc: Path to the executable minigraph
     inputBinding:
       position: 101
@@ -105,7 +105,7 @@ inputs:
   - id: path_to_minimap2
     type:
       - 'null'
-      - File
+      - string
     doc: Path to the executable minimap2
     inputBinding:
       position: 101
@@ -113,7 +113,7 @@ inputs:
   - id: path_to_python
     type:
       - 'null'
-      - File
+      - string
     doc: Path to python
     inputBinding:
       position: 101
@@ -121,7 +121,7 @@ inputs:
   - id: path_to_racon
     type:
       - 'null'
-      - File
+      - string
     doc: Path to the executable racon
     inputBinding:
       position: 101
@@ -129,7 +129,7 @@ inputs:
   - id: path_to_raven
     type:
       - 'null'
-      - File
+      - string
     doc: Path to raven
     inputBinding:
       position: 101
@@ -137,7 +137,7 @@ inputs:
   - id: path_to_samtools
     type:
       - 'null'
-      - File
+      - string
     doc: Path to samtools
     inputBinding:
       position: 101

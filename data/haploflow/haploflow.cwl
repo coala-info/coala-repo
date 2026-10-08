@@ -7,8 +7,9 @@ inputs:
   - id: create_dump
     type:
       - 'null'
-      - boolean
-    doc: 'create dump of the deBruijn graph. WARNING: This file may be huge'
+      - string
+    doc: 'create dump of the deBruijn graph (file name to write). WARNING: This file
+      may be huge'
     inputBinding:
       position: 101
       prefix: --create-dump
@@ -48,7 +49,7 @@ inputs:
   - id: from_dump
     type:
       - 'null'
-      - boolean
+      - File
     doc: run from a Haploflow dump of the deBruijn graph.
     inputBinding:
       position: 101
@@ -134,6 +135,20 @@ outputs:
       will get overwritten'
     outputBinding:
       glob: $(inputs.out_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: log file, written when --log is set
+    outputBinding:
+      glob: $(inputs.log)
+  - id: dump_file_out
+    type:
+      - 'null'
+      - File
+    doc: deBruijn graph dump, written when --create-dump is set
+    outputBinding:
+      glob: $(inputs.create_dump)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

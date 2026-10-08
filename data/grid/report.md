@@ -1,5 +1,12 @@
 # grid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grid_multiplex | Failed | image problem: the grid script needs GNU tools (rev, paste, ed, sed first~step) that the busybox-based image lacks, so the run ends with exit 0 and an empty result table |
+| grid_single | Failed | image problem: the grid script needs GNU tools (rev, paste, ed, sed first~step) that the busybox-based image lacks, so the run ends with exit 0 and an empty output directory |
+
 ## grid_single
 
 ### Tool Description

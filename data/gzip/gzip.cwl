@@ -12,6 +12,7 @@ inputs:
     doc: Files to compress or uncompress
     inputBinding:
       position: 1
+      valueFrom: "$(self ? self.map(function(f) { return f.basename; }) : [])"
   - id: stdout
     type:
       - 'null'
@@ -124,6 +125,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --test
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: verbose mode
+    inputBinding:
+      position: 102
+      prefix: --verbose
   - id: fast
     type:
       - 'null'
@@ -144,6 +153,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: compressed_files
+    type:
+      type: array
+      items: File
+    doc: Files compressed in place (name.gz)
+    outputBinding:
+      glob: '*.gz'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gzip:1.11

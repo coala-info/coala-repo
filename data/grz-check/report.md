@@ -1,5 +1,11 @@
 # grz-check CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grz-check | PASS |  |
+
 ## grz-check
 
 ### Tool Description

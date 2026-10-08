@@ -1,5 +1,11 @@
 # graphmb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| graphmb | PASS | wrapper sets PYTHONBREAKPOINT=0 because graphmb 0.2.5 leaves a breakpoint() call that stops every run; tested on the strong100 dataset with 5 epochs |
+
 ## graphmb
 
 ### Tool Description

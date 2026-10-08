@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - Haplotype
-  - Comparison
+baseCommand: hap.py
 label: hap.py
 doc: "Haplotype Comparison\n\nTool homepage: https://github.com/Illumina/hap.py"
 inputs:
@@ -10,7 +8,12 @@ inputs:
     type:
       type: array
       items: File
-    doc: Two VCF files.
+    doc: Two VCF files (truth first, then query).
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 1
   - id: adjust_conf_regions
@@ -191,7 +194,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Write logging information into file rather than to stderr
     inputBinding:
       position: 102

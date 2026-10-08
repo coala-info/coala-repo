@@ -1,66 +1,75 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: annotate
+baseCommand:
+  - haplomap
+  - annotate
 label: haplomap_annotate
 doc: "Convert ensembl-vep to eblocks (-g) input\n\nTool homepage: https://github.com/zqfang/haplomap"
 inputs:
-  - id: in_vep_txt
-    type: File
-    doc: Input ensembl-VEP tab format file name
-    inputBinding:
-      position: 1
   - id: csq
     type:
       - 'null'
-      - boolean
-    doc: Output a annotation with impact score and sample names.
+      - string
+    doc: "Output file name for an annotation with impact score and sample names."
     inputBinding:
-      position: 102
+      position: 1
       prefix: --csq
   - id: prioritize
     type:
       - 'null'
       - boolean
-    doc: Whether aggregate variant annotation by max impact score.
+    doc: "Whether aggregate variant annotation by max impact score. Default: false"
     inputBinding:
-      position: 102
-      prefix: --prioritize
+      position: 1
+      prefix: -p
   - id: samples
     type:
       - 'null'
-      - boolean
-    doc: Only write annotation for the input samples (e.g. eblocks -s).
+      - File
+    doc: "Only write annotation for the input samples (e.g. eblocks -s)."
     inputBinding:
-      position: 102
+      position: 1
       prefix: --samples
   - id: type
     type:
       - 'null'
       - string
-    doc: 'Select variant type: [snp|indel|sv|all].'
+    doc: "Select variant type: [snp|indel|sv|all]. Default: all"
     inputBinding:
-      position: 102
+      position: 1
       prefix: --type
   - id: verbose
     type:
       - 'null'
       - boolean
+    doc: "verbose"
     inputBinding:
-      position: 102
+      position: 1
       prefix: --verbose
   - id: output_path
     type: string
+    doc: "Output file name, for (eblocks -g)"
     inputBinding:
-      position: 103
+      position: 1
       prefix: --output
+  - id: in_vep_txt
+    type: File
+    doc: "Input ensembl-VEP tab format file name"
+    inputBinding:
+      position: 2
 outputs:
   - id: output
     type: File
-    doc: Output file name, for (eblocks -g)
+    doc: "Annotation file for eblocks -g"
     outputBinding:
       glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: csq_out
+    type:
+      - 'null'
+      - File
+    doc: "Annotation with impact score and sample names, written with --csq"
+    outputBinding:
+      glob: $(inputs.csq)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haplomap:0.1.2--h4656aac_1

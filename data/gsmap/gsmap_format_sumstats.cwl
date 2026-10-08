@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsmap_format_sumstats
+baseCommand:
+  - gsmap
+  - format_sumstats
 label: gsmap_format_sumstats
 doc: "Format GWAS summary statistics for use with gsMap.\n\nTool homepage: https://github.com/LeonSong1995/gsMap"
 inputs:
@@ -186,7 +188,7 @@ outputs:
     type: File
     doc: Path to save the formatted gwas data
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path).sumstats.gz
 requirements:
   - class: InlineJavascriptRequirement
 hints:

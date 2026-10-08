@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsmap_run_spatial_ldsc
+baseCommand:
+  - gsmap
+  - run_spatial_ldsc
 label: gsmap_run_spatial_ldsc
 doc: "Run spatial LDSC analysis\n\nTool homepage: https://github.com/LeonSong1995/gsMap"
 inputs:
@@ -20,8 +22,7 @@ inputs:
       \        chunks"
     inputBinding:
       position: 101
-      prefix: --chunk_range
-  - id: chunk_range_start
+  - id: chunk_range_begin
     type:
       - 'null'
       - int
@@ -87,11 +88,27 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Log messages of the command
+  - id: workdir_out
+    type: Directory
+    doc: The working directory with the files written by the command
+    outputBinding:
+      glob: $(inputs.workdir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0
 stdout: gsmap_run_spatial_ldsc.out
+stderr: gsmap_run_spatial_ldsc.log

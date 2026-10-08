@@ -7,6 +7,9 @@ label: gtdbtk_decorate
 doc: "Decorate a tree with GTDB-Tk classifications and custom taxonomy.\n\nTool homepage:
   http://pypi.python.org/pypi/gtdbtk/"
 inputs:
+  - id: gtdbtk_data
+    type: Directory
+    doc: GTDB-Tk reference data directory (sets GTDBTK_DATA_PATH)
   - id: custom_taxonomy_file
     type:
       - 'null'
@@ -57,7 +60,21 @@ outputs:
     doc: path to output the tree
     outputBinding:
       glob: $(inputs.output_tree_path)
+  - id: output_table
+    type: File
+    doc: table of taxon statistics written beside the output tree
+    outputBinding:
+      glob: $(inputs.output_tree_path)-table
+  - id: output_taxonomy
+    type: File
+    doc: inferred taxonomy for each genome written beside the output tree
+    outputBinding:
+      glob: $(inputs.output_tree_path)-taxonomy
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: GTDBTK_DATA_PATH
+        envValue: $(inputs.gtdbtk_data.path)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

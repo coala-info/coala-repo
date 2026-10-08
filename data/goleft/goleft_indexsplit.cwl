@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: goleft
+baseCommand:
+  - goleft
+  - indexsplit
 label: goleft_indexsplit
 doc: "Splits indexed BAM/CRAM files into smaller regions based on a reference FASTA
   index.\n\nTool homepage: https://github.com/brentp/goleft"
@@ -13,10 +15,8 @@ inputs:
     inputBinding:
       position: 1
   - id: fasta_index
-    type:
-      - 'null'
-      - File
-    doc: fasta index file.
+    type: File
+    doc: fasta index file (the tool fails without it).
     inputBinding:
       position: 102
       prefix: --fai

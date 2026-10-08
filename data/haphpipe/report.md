@@ -1,5 +1,31 @@
 # haphpipe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haphpipe_align_reads | Failed | image problem: GATK3 jar is missing in the image (gatk3-register not run), so the default indel realign step crashes; only --no_realign works |
+| haphpipe_assemble_amplicons | PASS |  |
+| haphpipe_assemble_denovo | PASS |  |
+| haphpipe_assemble_scaffold | PASS |  |
+| haphpipe_build_tree_NG | PASS |  |
+| haphpipe_call_variants | Failed | image problem: GATK3 jar is missing in the image (gatk3-register not run), so UnifiedGenotyper cannot start |
+| haphpipe_cliquesnv | Not completed | needs the external clique-snv.jar, which is not in the image and is not downloaded here |
+| haphpipe_demo | Not completed | pipeline, skipped: the demo downloads SRA samples and runs a whole assembly pipeline |
+| haphpipe_ec_reads | PASS |  |
+| haphpipe_extract_pairwise | PASS |  |
+| haphpipe_finalize_assembly | Failed | image problem: GATK3 jar is missing in the image (gatk3-register not run), so the internal align_reads realign step crashes |
+| haphpipe_join_reads | PASS |  |
+| haphpipe_model_test | PASS |  |
+| haphpipe_multiple_align | PASS |  |
+| haphpipe_pairwise_align | PASS |  |
+| haphpipe_ph_parser | Not completed | needs a PredictHaplo output file, and PredictHaplo is not in the image, so no real input exists |
+| haphpipe_predict_haplo | Failed | image problem: PredictHaplo-Paired is not installed in the image, so the stage stops with a missing dependency |
+| haphpipe_sample_reads | PASS |  |
+| haphpipe_summary_stats | PASS |  |
+| haphpipe_trim_reads | PASS |  |
+| haphpipe_vcf_to_consensus | PASS |  |
+
 ## haphpipe_sample_reads
 
 ### Tool Description

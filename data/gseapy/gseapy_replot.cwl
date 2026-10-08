@@ -10,7 +10,8 @@ inputs:
   - id: figsize
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: The figsize keyword argument need two parameters to define.
     inputBinding:
       position: 101
@@ -48,10 +49,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no-plot
-  - id: outdir
+  - id: outdir_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: The GSEApy output directory.
     inputBinding:
       position: 101
@@ -77,6 +78,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir
+    type:
+      - 'null'
+      - Directory
+    doc: The GSEApy output directory
+    outputBinding:
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gseapy:1.1.11--py311h5e00ca1_1

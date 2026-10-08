@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 6220; PASS: 4811; Failed: 796; Not completed: 613
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 6672; PASS: 5168; Failed: 845; Not completed: 659
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -6220,3 +6220,455 @@ gofasta	gofasta_snps	PASS	Real SARS-CoV-2 alignment; SNP lists include known sit
 gofasta	gofasta_updown_list	PASS	Real SARS-CoV-2 alignment; per-sequence SNP and ambiguity lists written.
 gofasta	gofasta_updown_topranking	PASS	Real SARS-CoV-2 alignment; same/up/side neighbours and distances are consistent with the SNP lists.
 gofasta	gofasta_variants	PASS	Real SARS-CoV-2 alignment with the tool's GFF; amino acid changes such as rdrp:P323L and S:D614G found; same as sam variants.
+gogstools	gogstools_gff2embl	PASS	
+gogstools	gogstools_ogs_check	PASS	
+gogstools	gogstools_ogs_merge	PASS	
+goldrush	goldrush_goldpolish	Failed	tool bug: goldpolish-targeted-bfs exits silently while loading the sequence index, so goldpolish hangs on real PacBio HiFi reads.
+goldrush	goldrush_goldrush_path	PASS	
+goleft	goleft_covstats	PASS	
+goleft	goleft_depth	PASS	
+goleft	goleft_depthwed	PASS	
+goleft	goleft_indexcov	PASS	
+goleft	goleft_indexsplit	PASS	
+goleft	goleft_samplename	PASS	
+google-cloud-sdk	google-cloud-sdk_gsutil_cat	PASS	
+google-cloud-sdk	google-cloud-sdk_gsutil_cp	PASS	
+google-cloud-sdk	google-cloud-sdk_gsutil_du	PASS	
+google-cloud-sdk	google-cloud-sdk_gsutil_hash	PASS	
+google-cloud-sdk	google-cloud-sdk_gsutil_ls	PASS	
+google-cloud-sdk	google-cloud-sdk_gsutil_mv	Not completed	needs a Google account: it changes objects in a bucket.
+google-cloud-sdk	google-cloud-sdk_gsutil_rm	Not completed	needs a Google account: it changes objects in a bucket.
+google-cloud-sdk	google-cloud-sdk_gsutil_rsync	PASS	
+gopeaks	gopeaks	PASS	
+goslimmer	goslimmer	PASS	
+gothresher	gothresher	PASS	
+gothresher	gothresher_prep	PASS	
+gotree	gotree_acr	PASS	
+gotree	gotree_annotate	PASS	
+gotree	gotree_asr	PASS	
+gotree	gotree_brlen_add	PASS	
+gotree	gotree_brlen_clear	PASS	
+gotree	gotree_brlen_cut	PASS	
+gotree	gotree_brlen_round	PASS	
+gotree	gotree_brlen_scale	PASS	
+gotree	gotree_brlen_set	PASS	
+gotree	gotree_brlen_setmin	PASS	
+gotree	gotree_brlen_setrand	PASS	
+gotree	gotree_collapse_clade	PASS	
+gotree	gotree_collapse_depth	PASS	
+gotree	gotree_collapse_length	PASS	
+gotree	gotree_collapse_name	PASS	
+gotree	gotree_collapse_single	PASS	synthetic data: a tiny tree with a single-child node was written by hand.
+gotree	gotree_collapse_support	PASS	
+gotree	gotree_comment_clear	PASS	
+gotree	gotree_comment_transfer	PASS	
+gotree	gotree_compare_edges	PASS	synthetic data: compared trees are NNI neighbours made by gotree nni from a real tree.
+gotree	gotree_compare_tips	PASS	
+gotree	gotree_compare_trees	PASS	synthetic data: compared trees are NNI neighbours made by gotree nni from a real tree.
+gotree	gotree_compute_bipartitiontree	PASS	
+gotree	gotree_compute_consensus	PASS	synthetic data: input trees are NNI neighbours made by gotree nni from a real tree.
+gotree	gotree_compute_edgetrees	PASS	
+gotree	gotree_compute_mutations	PASS	ancestral sequences come from gotree asr on a real alignment and tree.
+gotree	gotree_compute_roccurve	Failed	tool bug: every branch is counted as a false positive even when the true tree is identical to the input tree.
+gotree	gotree_compute_support_fbp	PASS	synthetic data: bootstrap trees are NNI neighbours made by gotree nni from a real tree.
+gotree	gotree_compute_support_tbe	PASS	synthetic data: bootstrap trees are NNI neighbours made by gotree nni from a real tree.
+gotree	gotree_cut_date	PASS	
+gotree	gotree_divide	PASS	
+gotree	gotree_download_itol	Not completed	needs an iTOL account tree id from an external server.
+gotree	gotree_download_ncbitax	Not completed	downloads the full NCBI taxonomy from an external server; too heavy to test, and HTTPS fails in this image.
+gotree	gotree_download_panther	Failed	image problem: the image has no CA certificates, so the HTTPS download fails with an unknown authority error.
+gotree	gotree_draw_cyjs	PASS	
+gotree	gotree_draw_png	PASS	
+gotree	gotree_draw_svg	PASS	
+gotree	gotree_draw_text	PASS	
+gotree	gotree_generate_balancedtree	PASS	
+gotree	gotree_generate_caterpillartree	PASS	
+gotree	gotree_generate_startree	PASS	
+gotree	gotree_generate_topologies	PASS	
+gotree	gotree_generate_uniformtree	PASS	
+gotree	gotree_generate_yuletree	PASS	
+gotree	gotree_graft	PASS	
+gotree	gotree_labels	PASS	
+gotree	gotree_ltt	PASS	
+gotree	gotree_matrix	PASS	
+gotree	gotree_merge	PASS	
+gotree	gotree_nni	PASS	
+gotree	gotree_prune	PASS	
+gotree	gotree_reformat_newick	PASS	
+gotree	gotree_reformat_nexus	PASS	
+gotree	gotree_reformat_phyloxml	PASS	
+gotree	gotree_rename	PASS	
+gotree	gotree_repopulate	PASS	
+gotree	gotree_reroot_midpoint	PASS	
+gotree	gotree_reroot_outgroup	PASS	
+gotree	gotree_resolve	PASS	
+gotree	gotree_resolve_named	PASS	
+gotree	gotree_rotate_rand	PASS	
+gotree	gotree_rotate_sort	PASS	
+gotree	gotree_rtt	PASS	
+gotree	gotree_sample	PASS	
+gotree	gotree_shuffletips	PASS	
+gotree	gotree_stats	PASS	
+gotree	gotree_stats_edges	PASS	
+gotree	gotree_stats_monophyletic	PASS	
+gotree	gotree_stats_nodes	PASS	
+gotree	gotree_stats_rooted	PASS	
+gotree	gotree_stats_splits	PASS	
+gotree	gotree_stats_tips	PASS	
+gotree	gotree_subtree	PASS	
+gotree	gotree_support_clear	PASS	
+gotree	gotree_support_round	PASS	
+gotree	gotree_support_scale	PASS	
+gotree	gotree_support_setrand	PASS	
+gotree	gotree_unroot	PASS	
+gotree	gotree_upload_itol	Not completed	uploads a tree to the external iTOL server; skipped.
+gottcha	gottcha_gottcha.pl	Not completed	needs a GOTTCHA signature database (several GB, download site unreachable); gottcha_db.pl in the image cannot run (missing YAML::XS), so no tiny database could be built
+gottcha	gottcha_splitrim	PASS	
+gottcha2	gottcha2_extract	Failed	tool bug: extraction crashes with a TypeError in gottcha2 2.2.0 (extract_sequences_by_taxonomy gets 11 arguments, takes at most 10) and leaves an empty output
+gottcha2	gottcha2_profile	PASS	
+gpsw	gpsw_fetch	PASS	
+gpsw	gpsw_run	Not completed	pipeline, skipped (runs a Snakemake workflow)
+gqt	gqt_calpha	PASS	
+gqt	gqt_convert	PASS	
+gqt	gqt_fst	PASS	
+gqt	gqt_gst	PASS	
+gqt	gqt_pca-shared	PASS	
+gqt	gqt_query	PASS	
+grabix	grabix_check	PASS	
+grabix	grabix_grab	PASS	
+grabix	grabix_index	PASS	
+grabix	grabix_random	PASS	
+grabix	grabix_size	PASS	
+grafimo	grafimo_buildvg	PASS	
+grafimo	grafimo_findmotif	PASS	
+grampa	grampa	PASS	
+grapetree	grapetree	PASS	
+graph2pro-var	graph2pro-var_DBGraph2Pro	PASS	
+graph2pro-var	graph2pro-var_DBGraphPep2Pro	PASS	synthetic data: peptide table built from DBGraph2Pro output on the repo test assembly graph (no real search result in the repo); option -n is accepted but writes no file
+graphanalyzer	graphanalyzer_graphanalyzer.py	PASS	
+graphbin	graphbin	PASS	
+graphbin2	graphbin2	PASS	
+graphembed	graphembed_embedding_hope_precision	PASS	
+graphembed	graphembed_embedding_hope_rank	PASS	
+graphembed	graphembed_embedding_sketching	PASS	
+graphembed	graphembed_validation_hope_precision	PASS	
+graphembed	graphembed_validation_hope_rank	PASS	
+graphembed	graphembed_validation_sketching	PASS	
+graphicsmagick	graphicsmagick_compare	PASS	
+graphicsmagick	graphicsmagick_composite	PASS	
+graphicsmagick	graphicsmagick_conjure	Failed	image problem: this GraphicsMagick build has no MSL coder (conjure reports no decode delegate for the script)
+graphicsmagick	graphicsmagick_convert	PASS	
+graphicsmagick	graphicsmagick_identify	PASS	
+graphicsmagick	graphicsmagick_mogrify	PASS	
+graphicsmagick	graphicsmagick_montage	PASS	
+graphlan	graphlan	PASS	
+graphlan	graphlan_annotate	PASS	
+graphmb	graphmb	PASS	wrapper sets PYTHONBREAKPOINT=0 because graphmb 0.2.5 leaves a breakpoint() call that stops every run; tested on the strong100 dataset with 5 epochs
+graphprot	graphprot_GraphProt.pl	PASS	wrapper sets CONDA_PREFIX=/usr/local, which GraphProt.pl needs to find its scripts; tested actions ls, train (model identical to the repo model), motif and regression train
+graphtyper	graphtyper_bamshrink	PASS	
+graphtyper	graphtyper_check	PASS	
+graphtyper	graphtyper_construct	PASS	
+graphtyper	graphtyper_genotype	PASS	
+graphtyper	graphtyper_genotype_camou	PASS	WIP subcommand; on the nf-core human chr22 test BAM it gives the same genotype record as genotype
+graphtyper	graphtyper_genotype_hla	Not completed	WIP subcommand; needs a VCF of known HLA variants and HLA reads, which are not available in a small test set
+graphtyper	graphtyper_genotype_lr	Not completed	WIP subcommand; the only small human long-read BAM available (17 reads) gives an empty VCF, so there is no output to judge
+graphtyper	graphtyper_genotype_sv	Not completed	synthetic data: planted deletion in the small chr22 test region gives 1/1 FAIL3 with depth 1 although the BAM has about 200x there, so the result cannot be confirmed
+graphtyper	graphtyper_vcf_break_down	Failed	tool bug: option --output is ignored (no file is written; the VCF always goes to standard output)
+graphtyper	graphtyper_vcf_concatenate	PASS	
+graphtyper	graphtyper_vcf_merge	PASS	
+greenhill	greenhill	PASS	
+grenedalf	grenedalf_cathedral-plot	PASS	
+grenedalf	grenedalf_diversity	PASS	
+grenedalf	grenedalf_frequency	PASS	
+grenedalf	grenedalf_fst	PASS	
+grenedalf	grenedalf_fst-cathedral	PASS	
+grenedalf	grenedalf_simulate	PASS	
+grenedalf	grenedalf_sync	PASS	
+grep	grep	PASS	
+gretel	gretel	PASS	
+gretl	gretl_block	Failed	tool bug: the --blocks option is accepted but never used, so it writes no blocks file (main block table is correct)
+gretl	gretl_bootstrap	PASS	
+gretl	gretl_core	PASS	
+gretl	gretl_find	PASS	
+gretl	gretl_id2int	PASS	
+gretl	gretl_node-list	PASS	
+gretl	gretl_nwindow	PASS	
+gretl	gretl_ps	PASS	
+gretl	gretl_stats	PASS	
+gretl	gretl_window	PASS	
+grid	grid_multiplex	Failed	image problem: the grid script needs GNU tools (rev, paste, ed, sed first~step) that the busybox-based image lacks, so the run ends with exit 0 and an empty result table
+grid	grid_single	Failed	image problem: the grid script needs GNU tools (rev, paste, ed, sed first~step) that the busybox-based image lacks, so the run ends with exit 0 and an empty output directory
+grimer	grimer	PASS	
+grinder	grinder	PASS	
+gromacs	gromacs_editconf	PASS	
+gromacs	gromacs_genion	PASS	
+gromacs	gromacs_pdb2gmx	PASS	
+gromacs	gromacs_solvate	PASS	
+gromacs_mddb	gromacs_mddb_gmx_dump	PASS	
+gromacs_mddb	gromacs_mddb_gmx_grompp	PASS	
+gromacs_mddb	gromacs_mddb_gmx_mdrun	PASS	
+gromacs_mddb	gromacs_mddb_gmx_trjconv	PASS	
+gromacs_py	gromacs_py_create_peptide	PASS	
+gromacs_py	gromacs_py_create_top	Failed	image problem: fails on the package's own test protein 1y0m.pdb; the pdb2pqr step names the N-terminal residue TER and gmx pdb2gmx rejects the chain as mixed type
+gromacs_py	gromacs_py_equi_3_step	PASS	
+gromacs_py	gromacs_py_extend	Failed	tool bug: extend.py calls GmxSys.extend_equi_prod, which does not exist in gromacs_py 2.0.3 (AttributeError)
+gromacs_py	gromacs_py_insert_mol_no_vmd	PASS	
+gromacs_py	gromacs_py_minimize_pdb	PASS	
+gromacs_py	gromacs_py_minimize_pdb_and_cyclic	PASS	
+gromacs_py	gromacs_py_production	PASS	
+gromacs_py	gromacs_py_solvate_ions	PASS	
+groopm	groopm_core	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_delete	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_dump	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_explore	Not completed	interactive plot window, and the image cannot open any database (PyTables openFile missing)
+groopm	groopm_extract	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_flyover	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_highlight	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_merge	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_parse	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_plot	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_print	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_recruit	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_refine	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groopm	groopm_split	Failed	image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened
+groot	groot_align	PASS	
+groot	groot_get	Failed	tool bug: the built-in database download URL on GitHub returns 404, so the download and checksum fail
+groot	groot_index	PASS	
+groot	groot_report	PASS	
+group_humann2_uniref_abundances_to_go	group_humann2_uniref_abundances_to_go_group_humann2_uniref_abundances_to_GO.sh	PASS	
+grz-check	grz-check	PASS	
+grz-cli	grz-cli_encrypt	PASS	
+grz-cli	grz-cli_get-id	PASS	
+grz-cli	grz-cli_submit	Not completed	needs an account and an S3 upload server of the German genome data center
+grz-cli	grz-cli_upload	Not completed	needs an account and an S3 upload server of the German genome data center
+grz-cli	grz-cli_validate	PASS	
+grzctl	grzctl_archive	Not completed	needs an account and S3 or web servers of the German genome data center
+grzctl	grzctl_clean	Not completed	needs an account and S3 or web servers of the German genome data center
+grzctl	grzctl_consent	PASS	
+grzctl	grzctl_decrypt	PASS	
+grzctl	grzctl_download	Not completed	needs an account and S3 or web servers of the German genome data center
+grzctl	grzctl_encrypt	PASS	
+grzctl	grzctl_list	Not completed	needs an account and S3 or web servers of the German genome data center
+grzctl	grzctl_pruefbericht_generate_from-metadata	PASS	
+grzctl	grzctl_pruefbericht_generate_from-submission-dir	PASS	
+grzctl	grzctl_pruefbericht_submit	Not completed	needs an account and S3 or web servers of the German genome data center
+grzctl	grzctl_submit	Not completed	needs an account and S3 or web servers of the German genome data center
+grzctl	grzctl_upload	Not completed	needs an account and S3 or web servers of the German genome data center
+grzctl	grzctl_validate	PASS	
+gs-tama	gs-tama_tama_bed_extract_cds.py	PASS	
+gs-tama	gs-tama_tama_cds_regions_bed_add.py	PASS	
+gs-tama	gs-tama_tama_collapse.py	PASS	
+gs-tama	gs-tama_tama_convert_bed_gtf_ensembl_no_cds.py	PASS	
+gs-tama	gs-tama_tama_convert_nanopore_fastq_fasta.py	PASS	
+gs-tama	gs-tama_tama_degradation_signature.py	PASS	
+gs-tama	gs-tama_tama_fasta_splitter.py	PASS	
+gs-tama	gs-tama_tama_filter_primary_transcripts_orf.py	PASS	
+gs-tama	gs-tama_tama_find_model_changes.py	PASS	
+gs-tama	gs-tama_tama_flnc_polya_cleanup.py	PASS	reads taken from the mapped test SAM
+gs-tama	gs-tama_tama_format_gff_to_bed12_cupcake.py	PASS	
+gs-tama	gs-tama_tama_format_gtf_to_bed12_ensembl.py	PASS	
+gs-tama	gs-tama_tama_format_gtf_to_bed12_ncbi.py	PASS	
+gs-tama	gs-tama_tama_format_gtf_to_bed12_stringtie.py	PASS	
+gs-tama	gs-tama_tama_format_id_filter.py	PASS	
+gs-tama	gs-tama_tama_mapped_sam_splitter.py	PASS	test SAM has one chromosome, so one output file
+gs-tama	gs-tama_tama_merge.py	PASS	
+gs-tama	gs-tama_tama_orf_blastp_parser.py	PASS	blastp ran against a database of the same ORFs (no UniRef database)
+gs-tama	gs-tama_tama_orf_seeker.py	PASS	
+gs-tama	gs-tama_tama_read_support_collapse_cluster.py	PASS	no cluster file: the trans_read.bed file served as cluster file
+gs-tama	gs-tama_tama_read_support_levels.py	PASS	
+gs-tama	gs-tama_tama_read_support_merge_collapse.py	PASS	
+gs-tama	gs-tama_tama_remove_fragment_models.py	PASS	
+gs-tama	gs-tama_tama_remove_polya_models_levels.py	PASS	
+gs-tama	gs-tama_tama_remove_single_read_models_levels.py	PASS	
+gs-tama	gs-tama_tama_sampling_saturation_curve.py	PASS	
+gs-tama	gs-tama_tama_variant_caller.py	PASS	
+gsalign	gsalign_GSAlign	PASS	synthetic data: query genome with planted SNPs on a real reference; GSAlign found 91312 of the 91314 planted SNPs.
+gsalign	gsalign_bwt_index	PASS	
+gseapy	gseapy_biomart	Failed	tool bug: the Ensembl BioMart service now answers with redirects and errors, the query crashes with an AttributeError, and --host also crashes
+gseapy	gseapy_enrichr	PASS	
+gseapy	gseapy_gsea	PASS	
+gseapy	gseapy_gsva	PASS	
+gseapy	gseapy_prerank	PASS	
+gseapy	gseapy_replot	Failed	tool bug: replot ignores the documented --graph and --no-plot options
+gseapy	gseapy_ssgsea	PASS	
+gsearch	gsearch_add	PASS	
+gsearch	gsearch_ann	PASS	
+gsearch	gsearch_request	PASS	
+gsearch	gsearch_tohnsw	PASS	
+gsmap	gsmap_create_slice_mean	Failed	image problem: zarr 3 in the image breaks the tool (Group.array missing argument shape)
+gsmap	gsmap_format_sumstats	Failed	image problem: pandas 3.0 in the image removed delim_whitespace, which the tool uses to read the file
+gsmap	gsmap_quick_mode	Failed	image problem: torch is missing (ModuleNotFoundError)
+gsmap	gsmap_run_cauchy_combination	Not completed	needs LD scores and marker scores from the earlier gsMap steps, which fail in this image, and large reference data
+gsmap	gsmap_run_find_latent_representations	Failed	image problem: torch is missing (ModuleNotFoundError)
+gsmap	gsmap_run_generate_ldscore	Failed	image problem: torch is missing (ModuleNotFoundError)
+gsmap	gsmap_run_latent_to_gene	Failed	image problem: pandas 3.0 in the image breaks the gene-name step (TypeError: string operation on non-string array)
+gsmap	gsmap_run_report	Not completed	needs LD scores and marker scores from the earlier gsMap steps, which fail in this image, and large reference data
+gsmap	gsmap_run_spatial_ldsc	Not completed	needs LD scores and marker scores from the earlier gsMap steps, which fail in this image, and large reference data
+gsort	gsort	PASS	
+gtdb_to_taxdump	gtdb_to_taxdump_acc2gtdb_tax.py	PASS	two real genomes from the tool repo tests; taxids match names.dmp
+gtdb_to_taxdump	gtdb_to_taxdump_gtdb_to_diamond.py	PASS	tarball of two real NCBI protein files named as GTDB reps (1147 sequences all merged); taxids correct
+gtdb_to_taxdump	gtdb_to_taxdump_gtdb_to_taxdump.py	PASS	GTDB r95 archaeal and bacterial taxonomy files; node count matches the input lineages plus genomes
+gtdb_to_taxdump	gtdb_to_taxdump_lineage2taxid.py	PASS	GTDB-Tk summary of the tool repo mapped against the r95 taxdump; species and genus taxids found
+gtdb_to_taxdump	gtdb_to_taxdump_ncbi-gtdb_map.py	Failed	tool bug: with --rename and the default --procs 1 the summary table is empty (lazy map consumed by rename); works without --rename or with --procs 2
+gtdbtk	gtdbtk_align	Not completed	needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches)
+gtdbtk	gtdbtk_ani_rep	Not completed	needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches)
+gtdbtk	gtdbtk_classify	Not completed	needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches)
+gtdbtk	gtdbtk_classify_wf	Not completed	needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches)
+gtdbtk	gtdbtk_convert_to_itol	PASS	real GTDB-Tk tree; reference-data directory is a metadata-only stub (these helpers read only metadata)
+gtdbtk	gtdbtk_convert_to_species	PASS	real archaeal GTDB-Tk tree and real r226 archaeal taxonomy table; reference-data directory is partial (metadata stub plus that table)
+gtdbtk	gtdbtk_de_novo_wf	Not completed	needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches)
+gtdbtk	gtdbtk_decorate	PASS	real archaeal GTDB-Tk tree and real r226 archaeal taxonomy table; reference-data directory is partial (metadata stub plus that table)
+gtdbtk	gtdbtk_export_msa	Not completed	needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches)
+gtdbtk	gtdbtk_identify	Not completed	needs the full GTDB-Tk reference data (about 100 GB: marker HMMs, reference MSAs, pplacer packages, skani sketches)
+gtdbtk	gtdbtk_infer	PASS	real GTDB-Tk user MSA (3 genomes); reference-data directory is a metadata-only stub
+gtdbtk	gtdbtk_infer_ranks	Not completed	needs the MRCA RED table from the full GTDB-Tk reference data (about 100 GB)
+gtdbtk	gtdbtk_remove_labels	PASS	real GTDB-Tk tree; reference-data directory is a metadata-only stub (these helpers read only metadata)
+gtdbtk	gtdbtk_root	PASS	real archaeal GTDB-Tk tree and real r226 archaeal taxonomy table; reference-data directory is partial (metadata stub plus that table)
+gtdbtk	gtdbtk_trim_msa	PASS	synthetic data: custom mask file on real GTDB-Tk user MSA; reference-data directory is a metadata-only stub; --reference_mask option needs real data and was not run
+gtfsort	gtfsort	PASS	real GENCODE chr21 and chr1 GTF shuffled; output has the same lines, genes sorted by position; note: orphan exons or gene-only GTF can drop lines or panic
+gtftools	gtftools	PASS	tool repo demo GTF (chr1 first 3 Mb) and SNP list; all 13 outputs checked, counts and merged exon lengths match; added the missing stdout output for cis-SNPs
+gtotree	gtotree_GToTree	PASS	5 small real bacterial genomes (NCBI) with the Bacteria SCG HMM set; tree groups the two gamma-proteobacterial endosymbionts together; fixed baseCommand to GToTree and added staging of the genome files
+gtotree	gtotree_gtt-append-fasta-headers	PASS	real Buchnera proteome (577 proteins); headers renamed with the given prefix
+gtotree	gtotree_gtt-count-bases-per-seq	PASS	real Buchnera proteome; lengths table has 577 rows
+gtotree	gtotree_gtt-filter-seqs-by-length	PASS	real Buchnera proteome; kept 172 of 577 sequences between 300 and 500 aa, matches a manual count
+gtotree	gtotree_gtt-gen-itol-map	PASS	five real protein IDs; iToL label and branch color lines written
+gtotree	gtotree_gtt-genbank-to-AA-seqs	PASS	real Buchnera GenBank file; 577 CDS proteins, same count as the NCBI protein file
+gtotree	gtotree_gtt-genbank-to-fasta	PASS	real Buchnera GenBank file; 3 records (chromosome and 2 plasmids)
+gtotree	gtotree_gtt-get-accessions-from-GTDB	Not completed	downloads the full GTDB metadata tables (about 300 MB) at run time and needs network
+gtotree	gtotree_gtt-parse-assembly-summary-file	PASS	head of the real NCBI RefSeq assembly summary; 3 wanted accessions parsed
+gtotree	gtotree_gtt-parse-fasta-by-headers	PASS	real Buchnera proteome; 5 wanted headers kept, --inverse kept the other 572
+gtotree	gtotree_gtt-parse-gtdb-assembly-summary-file	PASS	GTDB-style table from real r226 archaeal metadata; 3 accessions found, 1 reported as not found
+gtotree	gtotree_gtt-remove-all-gap-seqs-from-alignment	PASS	synthetic data: real GToTree alignment plus one planted all-gap sequence, which was removed
+gtotree	gtotree_gtt-rename-fasta-headers	PASS	real Buchnera proteome; all headers renamed with a running number
+gtotree	gtotree_gtt-reorder-fasta	PASS	real Buchnera proteome; 4 wanted sequences written in the order of the header list
+gtotree	gtotree_gtt-subset-GTDB-accessions	PASS	table built from the real GTDB r226 archaeal metadata (22,343 genomes); one genome per order gave 179 orders; default class subsetting also ran; fixed output prefix default
+gtotree	gtotree_gtt-swap-ids	PASS	real Buchnera proteome; 2 headers swapped using the two-column map
+gubbins	gubbins_alignment_checker	PASS	tool repo alignment; per-sequence base count CSV and reformatted alignment written
+gubbins	gubbins_extract_gubbins_clade	PASS	3-sequence clade from the Gubbins run; alignment, gff and tree written
+gubbins	gubbins_extract_gubbins_clade_statistics	PASS	three clades from the Gubbins run; clade statistics and recombination lengths written
+gubbins	gubbins_generate_ska_alignment	PASS	4 real SARS-CoV-2 genomes from NCBI; alignment has the 29,903 reference length and plausible SNP counts
+gubbins	gubbins_mask_gubbins_aln	PASS	gff from the Gubbins run; 169 masked bases per sequence equals blocks 22-84 plus 110-215
+gubbins	gubbins_plot_gubbins	PASS	tree and gff from the Gubbins run; PNG shows the expected recombination blocks
+gubbins	gubbins_run_gubbins	PASS	tool repo multiple_recombinations alignment (10 sequences); predicted blocks 22-84, 28-84, 29-49 and 110-215 match the repo's expected blocks
+guessmylt	guessmylt_GUESSmyLT	Failed	image problem: the tool unpacks its BUSCO data into its own install folder at start-up, which is read-only (and not writable for a non-root user); removed an invented .fai secondary file
+guide-counter	guide-counter_count	PASS	MAGeCK demo2 library and two real FASTQs (2,500 reads each); 1,485 and 1,499 reads mapped, a little above an independent exact-match count (1,453 and 1,471) as expected with one mismatch allowed; header line added to the library
+guidemaker	guidemaker	PASS	Carsonella ruddii GenBank from the tool repo tests; 944 guides plus 20 controls, every guide and NGG PAM checked against the genome sequence
+guidescan	guidescan_download	Not completed	downloads data from the guidescan.com web server (network, large precomputed databases)
+guidescan	guidescan_enumerate	PASS	index above and 150 NGG 20-mers cut from the genome (kmers file built with a small script in the manual format); all 150 found as exact matches at their positions; added staging of the index files
+guidescan	guidescan_index	PASS	SARS-CoV-2 genome from nf-core test data; forward, reverse and gs index files collected and used by enumerate; added writable genome staging, index file outputs, required index prefix
+gunc	gunc_download_db	Not completed	downloads the large GUNC reference database (network, several GB)
+gunc	gunc_merge_checkm	Not completed	needs a GUNC maxCSS table from a real run and CheckM qa output; no small real pair available
+gunc	gunc_plot	PASS	real GUNC diamond output and gene counts of the tool repo tiny test; interactive HTML created with the expected taxa; added creation of the output directory
+gunc	gunc_run	Not completed	needs the GUNC reference database (several GB); the small CI test database runs but gives only NaN scores; also gunc 1.0.6 fails with a single input file and --gene_calls (KeyError in gene count lookup); added output directory creation
+gunc	gunc_summarise	Not completed	needs the maxCSS table and detailed output of a real gunc run, which needs the large reference database
+gustaf	gustaf	PASS	
+gvcf-regions	gvcf-regions_gvcf_regions.py	PASS	
+gvcf2bed	gvcf2bed	PASS	
+gvcfgenotyper	gvcfgenotyper	PASS	
+gw	gw	Failed	image problem: gw segfaults (exit 139) at start-up when the user id has no passwd entry in the image, as under cwltool --user; works only as root
+gwyddion	gwyddion	Not completed	GUI program: even --check stops with 'cannot open display'; no headless mode and no real data file
+gxf2bed	gxf2bed	PASS	
+gxf2chrom	gxf2chrom	PASS	
+gxformat2	gxformat2_gxwf-abstract-export	PASS	
+gxformat2	gxformat2_gxwf-lint	PASS	
+gxformat2	gxformat2_gxwf-viz	PASS	
+gzip	gzip	PASS	
+gzrt	gzrt_gzrecover	PASS	
+hackgap	hackgap_count	PASS	
+hackgap	hackgap_countwith	PASS	
+hackgap	hackgap_info	PASS	
+hackgap	hackgap_pycount	PASS	
+hafez	hafez_hafeZ.py	Not completed	needs a large database (PHROGs/pVOGs, 100 MB+ download over the network) and a 570 MB induced-lysate read set; too heavy for a minimal test (baseCommand fixed to hafeZ.py)
+hairsplitter	hairsplitter_hairsplitter.py	PASS	
+hal2vg	hal2vg	PASS	
+halfdeep	halfdeep_bam_depth.sh	PASS	
+halfdeep	halfdeep_halfdeep.sh	PASS	
+halla	halla	Not completed	all_associations matches the Galaxy expected file exactly, but sig_clusters differs (the expected file may come from an older halla), so the cluster output cannot be confirmed.
+hamroaster	hamroaster_hAMRoaster	PASS	
+hamronization	hamronization_hamronize_abricate	PASS	
+hamronization	hamronization_hamronize_amrfinderplus	PASS	
+hamronization	hamronization_hamronize_amrplusplus	PASS	
+hamronization	hamronization_hamronize_ariba	PASS	
+hamronization	hamronization_hamronize_csstar	PASS	
+hamronization	hamronization_hamronize_deeparg	PASS	
+hamronization	hamronization_hamronize_fargene	PASS	
+hamronization	hamronization_hamronize_groot	PASS	
+hamronization	hamronization_hamronize_kmerresistance	PASS	
+hamronization	hamronization_hamronize_mykrobe	PASS	
+hamronization	hamronization_hamronize_resfams	PASS	
+hamronization	hamronization_hamronize_resfinder	PASS	
+hamronization	hamronization_hamronize_rgi	PASS	
+hamronization	hamronization_hamronize_srax	PASS	
+hamronization	hamronization_hamronize_srst2	PASS	
+hamronization	hamronization_hamronize_staramr	PASS	
+hamronization	hamronization_hamronize_summarize	PASS	
+hamronization	hamronization_hamronize_tbprofiler	PASS	
+handyreadgenotyper	handyreadgenotyper_classify	PASS	
+handyreadgenotyper	handyreadgenotyper_train	Failed	tool bug: train runs but writes model.pkl as a plain dict, and classify in the same image rejects it ('dict' object has no attribute 'classifiers')
+hap-ibd	hap-ibd	PASS	
+hap.py	hap.py	PASS	
+hapbin	hapbin_ehhbin	PASS	
+hapbin	hapbin_hapbinconv	PASS	
+hapbin	hapbin_ihsbin	PASS	
+hapbin	hapbin_xpehhbin	PASS	
+hapcut2	hapcut2	PASS	
+hapcut2	hapcut2_LinkFragments.py	Not completed	no 10X linked-read BAM (BX tags) with phased variants available as test data
+hapcut2	hapcut2_calculate_haplotype_statistics.py	PASS	
+hapcut2	hapcut2_extractHAIRS	PASS	
+hapflk	hapflk	PASS	
+haphpipe	haphpipe_align_reads	Failed	image problem: GATK3 jar is missing in the image (gatk3-register not run), so the default indel realign step crashes; only --no_realign works
+haphpipe	haphpipe_assemble_amplicons	PASS	
+haphpipe	haphpipe_assemble_denovo	PASS	
+haphpipe	haphpipe_assemble_scaffold	PASS	
+haphpipe	haphpipe_build_tree_NG	PASS	
+haphpipe	haphpipe_call_variants	Failed	image problem: GATK3 jar is missing in the image (gatk3-register not run), so UnifiedGenotyper cannot start
+haphpipe	haphpipe_cliquesnv	Not completed	needs the external clique-snv.jar, which is not in the image and is not downloaded here
+haphpipe	haphpipe_demo	Not completed	pipeline, skipped: the demo downloads SRA samples and runs a whole assembly pipeline
+haphpipe	haphpipe_ec_reads	PASS	
+haphpipe	haphpipe_extract_pairwise	PASS	
+haphpipe	haphpipe_finalize_assembly	Failed	image problem: GATK3 jar is missing in the image (gatk3-register not run), so the internal align_reads realign step crashes
+haphpipe	haphpipe_join_reads	PASS	
+haphpipe	haphpipe_model_test	PASS	
+haphpipe	haphpipe_multiple_align	PASS	
+haphpipe	haphpipe_pairwise_align	PASS	
+haphpipe	haphpipe_ph_parser	Not completed	needs a PredictHaplo output file, and PredictHaplo is not in the image, so no real input exists
+haphpipe	haphpipe_predict_haplo	Failed	image problem: PredictHaplo-Paired is not installed in the image, so the stage stops with a missing dependency
+haphpipe	haphpipe_sample_reads	PASS	
+haphpipe	haphpipe_summary_stats	PASS	
+haphpipe	haphpipe_trim_reads	PASS	
+haphpipe	haphpipe_vcf_to_consensus	PASS	
+haplocheck	haplocheck	PASS	
+haploclique	haploclique_bronkerbosch	Failed	tool bug: --gff silently writes an empty file (printGFF is an unimplemented stub in the source); main FASTA and --bam output are correct
+haploclique	haploclique_clever	Failed	tool bug: --gff silently writes an empty file (printGFF is an unimplemented stub in the source); main FASTA and --bam output are correct
+haploconduct	haploconduct_polyte	PASS	
+haploconduct	haploconduct_polyte-split	PASS	
+haploconduct	haploconduct_savage	PASS	
+haploflow	haploflow	Failed	tool bug: --create-dump is accepted but never writes a dump file (unused in the source), so --from-dump has no input; main assembly gives the 3 expected HIV contigs
+haplogrep	haplogrep_classify	PASS	--write-fasta-msa crashes with a Java exception and leaves an empty file; classify works on vcf, fasta and hsd input
+haplogrep	haplogrep_distance	PASS	synthetic data: a small planted list of real haplogroup pairs; the distances are plausible
+haplogrep3	haplogrep3_align	PASS	aligned FASTA of the tool's L3i2 test sequence has the expected length and the L3i2 header
+haplogrep3	haplogrep3_annotation-index	PASS	index written for a bgzip-compressed real VCF; positions in the index match the VCF
+haplogrep3	haplogrep3_build-tree	Not completed	needs a large Nextstrain tree.json and a variants-of-concern file; no small real input found
+haplogrep3	haplogrep3_classify	PASS	matches the expected H100 results (top 10 hits and qc table) from the tool's own tests
+haplogrep3	haplogrep3_cluster-haplogroups	PASS	5435 haplogroup to super-haplogroup rows for phylotree-rcrs@17.2
+haplogrep3	haplogrep3_distance	PASS	synthetic data: two small planted clade tables; distances 2, 5 and 1 agree with haplogrep v2
+haplomap	haplomap_annotate	PASS	synthetic data: a VEP-style table rebuilt from the real MGP consequence field; annotation format matches the README
+haplomap	haplomap_convert	PASS	synthetic data: real Mouse Genomes Project genotypes (chr19 slice) with AD, PL and MQ fields added; 1272 SNPs and the plink files are correct
+haplomap	haplomap_eblocks	PASS	synthetic data: inputs from the convert and annotate runs above; 73 haploblocks and the variant file are written
+haplomap	haplomap_ghmap	PASS	synthetic data: planted trait values on the eblocks output; the long form --pvalue_cutoff segfaults in the tool, so the CWL uses -l
+haplomap	haplomap_pca	PASS	real mouse genetic relation matrix from the repo example; the long form --dimension segfaults in the tool, so the CWL uses -d
+haplotaglr	haplotaglr_haplotag	Failed	image problem: samtools (and bgzip, tabix) are not installed in the image, and HaplotagLR calls samtools quickcheck on every BAM input, so the run stops with 'could not be read'
+haplotype-lso	haplotype-lso_cli	Failed	image problem: pandas in the image has no DataFrame.append, so the run crashes with AttributeError after BLAST and before any report is written
+haplotype-lso	haplotype-lso_convert	PASS	FASTA files converted and renamed from the file names
+haplotype-lso	haplotype-lso_paste	Failed	tool bug: write_pasted loops over the result dictionary keys, so every run stops with TypeError (string indices must be integers)
+haplotype-lso	haplotype-lso_ref_blast	PASS	NCBI WWW BLAST of one real seed returned 50 Liberibacter hits including the seed itself, same count as the file in the tool repository
+haplotype-lso	haplotype-lso_ref_consensus	Failed	image problem: clustalw is not installed in the image, so the consensus step stops with FileNotFoundError: 'clustalw'
+haplotype-lso	haplotype-lso_ref_download	PASS	downloaded seed FASTA matches the copy shipped in the tool repository
+haploview	haploview	PASS	command-line mode on real 1000 Genomes chr20 genotypes gives the LD table (1770 pairs for 60 markers), checks, blocks, tags and association output; -png, -svg and -indcheck crash visibly (no font setup and no display in the image)
+hapog	hapog	PASS	short-read, long-read and BAM modes give outputs identical to the Galaxy tool tests (polished FASTA and changes file)
+happer	happer	PASS	haplotype sequences carry the BED alleles for the pico test data; without --out the tool writes a file named '-' instead of stdout, so the CWL requires --out
+happy-python	happy-python_autoest	PASS	real SARS-CoV-2 coverage histogram: one curve, peak at 44x, 29.4 kb of collapsed sequence, haploidy score 1.0; plots written
+happy-python	happy-python_coverage	PASS	real SARS-CoV-2 BAM: histogram covers 29467 positions (the genome length); a low-coverage BAM gives an empty histogram by design
+happy-python	happy-python_estimate	Not completed	the code looks for a coverage peak of at least 15000 positions with a 41-bin smoothing window, so it needs a deep BAM of a genome over 500 kb; the small real test data crash it with no peak found
+hapsolo	hapsolo_hapsolo.py	Failed	tool bug: the check 'set != 0' in WriteNewAssembly is always true, so every run prints 'two seperate set of contigs', exits 1 and leaves an empty primary FASTA
+hapsolo	hapsolo_preprocessfasta.py	PASS	synthetic data: the tool's own test assembly with special characters in the headers; cleaned FASTA and one file per contig are written

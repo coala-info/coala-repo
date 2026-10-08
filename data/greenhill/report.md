@@ -1,5 +1,11 @@
 # greenhill CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| greenhill | PASS |  |
+
 ## greenhill
 
 ### Tool Description

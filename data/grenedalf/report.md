@@ -1,5 +1,17 @@
 # grenedalf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grenedalf_cathedral-plot | PASS |  |
+| grenedalf_diversity | PASS |  |
+| grenedalf_frequency | PASS |  |
+| grenedalf_fst | PASS |  |
+| grenedalf_fst-cathedral | PASS |  |
+| grenedalf_simulate | PASS |  |
+| grenedalf_sync | PASS |  |
+
 ## grenedalf_cathedral-plot
 
 ### Tool Description
@@ -1240,36 +1252,6 @@ Global Options:
   --threads UINT=14           Number of threads to use for calculations. If not set, we guess a reasonable number of threads, by looking at the environmental variables (1) `OMP_NUM_THREADS` (OpenMP) and (2) `SLURM_CPUS_PER_TASK` (slurm), as well as (3) the hardware concurrency (number of CPU cores), taking hyperthreads into account, in the given order of precedence.
   --log-file TEXT             Write all output to a log file, in addition to standard output to the terminal.
   --help                      Print this help message and exit.
-
-grenedalf: population genetic statistics for the next generation of pool sequencing
-```
-
-## grenedalf_citation
-
-### Tool Description
-Print references to be cited when using grenedalf.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/grenedalf:0.6.3--hbefcdb2_0
-- **Homepage**: https://github.com/lczech/grenedalf
-- **Package**: https://anaconda.org/channels/bioconda/packages/grenedalf/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Print references to be cited when using grenedalf.
-Usage: grenedalf citation [OPTIONS] [keys...]
-
-Positionals:
-  keys TEXT:{Czech2023-grenedalf,Kofler2011-PoPoolation,Kofler2011-PoPoolation2}=[] ...
-                              Only print the citations for the given keys.
-
-Options:
-  --help                      Print this help message and exit.
-  --format TEXT:{bibtex,markdown,both}=bibtex
-                              Output format for citations.
-  --all                       Print all relevant citations used by commands in grenedalf.
-  --list                      List all available citation keys.
 
 grenedalf: population genetic statistics for the next generation of pool sequencing
 ```

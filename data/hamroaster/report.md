@@ -1,5 +1,11 @@
 # hamroaster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hamroaster_hAMRoaster | PASS |  |
+
 ## hamroaster_hAMRoaster
 
 ### Tool Description

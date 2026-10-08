@@ -74,25 +74,30 @@ inputs:
       prefix: --prefix
   - id: output_path
     type: string
-    doc: path to the output folder  [required]
+    default: graphbin_out
+    doc: path to the output folder (created before the run; the tool appends file
+      names to this path, so the wrapper adds a trailing slash)
     inputBinding:
       position: 102
       prefix: --output
+      valueFrom: $(self)/
 outputs:
   - id: output
     type: Directory
-    doc: path to the output folder
+    doc: Output folder with the refined bins and the unbinned contigs file
     outputBinding:
       glob: $(inputs.output_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/graphbin:1.7.4--pyhdfd78af_0
+stdout: graphbin.out

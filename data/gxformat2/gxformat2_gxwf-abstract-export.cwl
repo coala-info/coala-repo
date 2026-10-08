@@ -15,14 +15,19 @@ inputs:
     doc: input workflow path (.ga/gxwf.yml)
     inputBinding:
       position: 1
+  - id: output_path
+    type: string
+    doc: output workflow path (.cwl)
+    inputBinding:
+      position: 2
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: output workflow path (.cwl)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gxformat2:0.22.0--pyhdfd78af_0

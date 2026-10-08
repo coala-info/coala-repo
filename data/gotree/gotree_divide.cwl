@@ -4,37 +4,33 @@ baseCommand:
   - gotree
   - divide
 label: gotree_divide
-doc: "Divide an input tree file into several tree files\n\nTool homepage: https://github.com/fredericlemoine/gotree"
+doc: "Divide an input tree file into several tree files.\n\nTool homepage: https://github.com/fredericlemoine/gotree"
 inputs:
-  - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: Input tree(s) file
+  - id: input_tree
+    type: File
+    doc: "Input tree(s) file"
     inputBinding:
       position: 101
       prefix: --input
-  - id: input_tree_format
-    type:
-      - 'null'
-      - string
-    doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
-    inputBinding:
-      position: 101
-      prefix: --format
-  - id: output_prefix
-    type:
-      - 'null'
-      - string
-    doc: Divided trees output file prefix
+  - id: out_prefix
+    type: string
+    doc: "Divided trees output file prefix"
     inputBinding:
       position: 101
       prefix: --output
-  - id: random_seed
+  - id: tree_format
+    type:
+      - 'null'
+      - string
+    doc: "Input tree format (newick, nexus, phyloxml, or nextstrain)"
+    inputBinding:
+      position: 101
+      prefix: --format
+  - id: seed
     type:
       - 'null'
       - int
-    doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
+    doc: "Random Seed: -1 = nano seconds since 1970/01/01 00:00:00"
     inputBinding:
       position: 101
       prefix: --seed
@@ -42,21 +38,21 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of threads (Max=20)
+    doc: "Number of threads (Max=20)"
     inputBinding:
       position: 101
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_prefix_files
+  - id: divided_trees
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: "Divided trees written with the given prefix"
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$(inputs.out_prefix)*"
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gotree:0.5.1--he881be0_0

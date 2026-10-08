@@ -1,5 +1,11 @@
 # haploflow CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haploflow | Failed | tool bug: --create-dump is accepted but never writes a dump file (unused in the source), so --from-dump has no input; main assembly gives the 3 expected HIV contigs |
+
 ## haploflow
 
 ### Tool Description

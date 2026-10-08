@@ -1,5 +1,11 @@
 # grimer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grimer | PASS |  |
+
 ## grimer
 
 ### Tool Description

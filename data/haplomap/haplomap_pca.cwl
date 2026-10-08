@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pca
+baseCommand:
+  - haplomap
+  - pca
 label: haplomap_pca
 doc: "Perform reduction on the data dimension (rows)\n\nTool homepage: https://github.com/zqfang/haplomap"
 inputs:
@@ -8,37 +10,36 @@ inputs:
     type:
       - 'null'
       - int
-    doc: dimensions of reduction
+    doc: "dimensions of reduction, default 4."
     inputBinding:
-      position: 101
-      prefix: --dimension
+      position: 1
+      prefix: -d
   - id: input_file
     type: File
-    doc: input file (M x N matrix)
+    doc: "input file (M x N matrix)"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --input
   - id: verbose
     type:
       - 'null'
       - boolean
+    doc: "verbose"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --verbose
   - id: output_file_path
     type: string
-    doc: output file (L x N matrix)
+    doc: "output file (L x N matrix)"
     inputBinding:
-      position: 102
+      position: 1
       prefix: --output
 outputs:
   - id: output_file
     type: File
-    doc: output file (L x N matrix)
+    doc: "Reduced matrix"
     outputBinding:
       glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haplomap:0.1.2--h4656aac_1

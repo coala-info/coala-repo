@@ -8,6 +8,8 @@ doc: "Call variants using HaplotypeCaller.\n\nTool homepage: https://github.com/
 inputs:
   - id: aln_bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: Alignment file.
     inputBinding:
       position: 101
@@ -101,6 +103,10 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.outdir ? [{entryname: inputs.outdir, entry: {class: 'Directory', listing: []}, writable: true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haphpipe:1.0.3--py_0

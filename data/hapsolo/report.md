@@ -1,5 +1,12 @@
 # hapsolo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hapsolo_hapsolo.py | Failed | tool bug: the check 'set != 0' in WriteNewAssembly is always true, so every run prints 'two seperate set of contigs', exits 1 and leaves an empty primary FASTA |
+| hapsolo_preprocessfasta.py | PASS | synthetic data: the tool's own test assembly with special characters in the headers; cleaned FASTA and one file per contig are written |
+
 ## hapsolo_preprocessfasta.py
 
 ### Tool Description

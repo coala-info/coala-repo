@@ -1,5 +1,11 @@
 # graphbin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| graphbin | PASS |  |
+
 ## graphbin
 
 ### Tool Description

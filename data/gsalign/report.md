@@ -1,5 +1,12 @@
 # gsalign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gsalign_GSAlign | PASS | synthetic data: query genome with planted SNPs on a real reference; GSAlign found 91312 of the 91314 planted SNPs. |
+| gsalign_bwt_index | PASS |  |
+
 ## gsalign_GSAlign
 
 ### Tool Description
@@ -38,3 +45,18 @@ Options: -t     INT     number of threads [8]
          -gp    STR     Specify the path of gnuplot
 ```
 
+## gsalign_bwt_index
+
+### Tool Description
+
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gsalign:1.0.22--hcb620b3_8
+- **Homepage**: https://github.com/hsinnan75/GSAlign
+- **Package**: https://anaconda.org/channels/bioconda/packages/gsalign/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: bwt_index Ref_File[ex. ref.fa] Prefix[ex. MyRef]
+```

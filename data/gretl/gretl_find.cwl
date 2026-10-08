@@ -8,7 +8,7 @@ doc: "Find features in the graph and return a BED file for further analysis\n\nT
   homepage: https://github.com/moinsebi/gretl"
 inputs:
   - id: features
-    type: string
+    type: File
     doc: 'Input feature file (one feature per line). Example: 1 (node), 1+ (dirnode),
       1+2+ (edge)'
     inputBinding:
@@ -21,7 +21,7 @@ inputs:
       position: 101
       prefix: --gfa
   - id: length
-    type: string
+    type: int
     doc: Length
     inputBinding:
       position: 101

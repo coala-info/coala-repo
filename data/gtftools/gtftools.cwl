@@ -156,6 +156,9 @@ inputs:
       position: 115
       prefix: --UTR
 outputs:
+  - id: stdout
+    type: stdout
+    doc: cis-SNPs of each gene (printed to standard output when --snp is used)
   - id: merged_exon
     type:
       - 'null'
@@ -271,3 +274,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gtftools:0.9.0--pyh5e36f6f_0
+stdout: gtftools.out

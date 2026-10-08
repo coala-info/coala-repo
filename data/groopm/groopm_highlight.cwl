@@ -6,11 +6,12 @@ baseCommand:
 label: groopm_highlight
 doc: "Highlight contigs in a groopm database.\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:
-  - id: dbname
-    type: string
-    doc: name of the database to open
+  - id: database
+    type: File
+    doc: GroopM database file to open (created by groopm parse)
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: azimuth
     type:
       - 'null'
@@ -72,7 +73,7 @@ inputs:
   - id: file
     type:
       - 'null'
-      - File
+      - string
     doc: name of image file to produce
     inputBinding:
       position: 102
@@ -118,9 +119,23 @@ inputs:
       position: 102
       prefix: --show
 outputs:
+  - id: image_files
+    type:
+      type: array
+      items: File
+    doc: Image written by highlight (name given in file, default gmview)
+    outputBinding:
+      glob: "$(inputs.file ? inputs.file + '*' : 'gmview*')"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.database.basename)
+        entry: $(inputs.database)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/groopm:0.3.4--pyhdfd78af_2

@@ -6,9 +6,13 @@ doc: "Classify reads in BAM file using existing model or train a model from bam 
   \nTool homepage: https://github.com/AntonS-bio/HandyReadGenotyper"
 inputs:
   - id: bams
-    type: File
+    type:
+      - Directory
+      - string
     doc: Directory with, list of, or individual BAM and corresponding BAM index 
-      files (.bai)
+      files (.bai). Give a Directory to classify existing BAMs. Without fastqs it
+      must be a Directory. With fastqs give a string, the name of the directory
+      to which the mapped BAMs are saved.
     inputBinding:
       position: 101
       prefix: --bams
@@ -40,7 +44,7 @@ inputs:
   - id: fastqs
     type:
       - 'null'
-      - File
+      - Directory
     doc: Directory with ONT run results or individual FASTQ file
     inputBinding:
       position: 101
@@ -89,9 +93,8 @@ inputs:
       position: 101
       prefix: --sample_descriptions
   - id: output_file_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: File to store classification results
     inputBinding:
       position: 102
       prefix: --output_file
@@ -103,9 +106,17 @@ inputs:
       position: 103
       prefix: --target_reads_bams
 outputs:
+  - id: mapped_bams
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the BAMs made by mapping the FASTQs (only when bams is a string)
+    outputBinding:
+      glob: |-
+        ${ return (typeof inputs.bams === 'string') ? inputs.bams : null; }
   - id: output_file
     type: File
-    doc: File to store classification results
+    doc: File to store classification results (HTML report; a .tsv with the same name is also written)
     outputBinding:
       glob: $(inputs.output_file_path)
   - id: target_reads_bams

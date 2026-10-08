@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gothresher.py
+baseCommand: gothresher
 label: gothresher
 doc: "Gothresher is a tool for filtering and processing GO annotations.\n\nTool homepage:
   https://github.com/FriedbergLab/GOThresher"
@@ -221,17 +221,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
+    doc: Writes the final outputs to the directory in this path.
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --output
   - id: report_path
     type:
       - 'null'
       - string
+    doc: Name of the report file (the species name is added in front of it).
     inputBinding:
       position: 104
       prefix: --report
+  - id: config_file
+    type: File
+    doc: INI config file (gothresher.ini). It is staged as gothresher.ini in the 
+      working directory, where GOThresher looks for it.
+  - id: onto_dir
+    type: Directory
+    doc: Directory made by gothresher_prep (graph and ancestor map files). It is 
+      staged as onto in the working directory.
 outputs:
   - id: output_dir
     type:
@@ -242,17 +251,29 @@ outputs:
       glob: $(inputs.output_dir_path)
   - id: report
     type:
-      - 'null'
-      - File
-    doc: Provide the path where the report file will be stored. If you are 
-      providing a path please make sure your path ends with a '/'. Otherwise the
-      program will assume the last string after the final '/' as the name of the
-      report file. A single report file will be generated. Information for each 
-      species will be put into individual worksheets.
+      type: array
+      items: File
+    doc: Report file (tab separated), named <species>_<report name>.tsv. A single 
+      report file is generated; information for each species is put into 
+      individual worksheets.
     outputBinding:
-      glob: $(inputs.report_path)
+      glob: '*_$(inputs.report_path)*'
+  - id: filtered_gaf
+    type:
+      type: array
+      items: File
+    doc: Filtered GAF files written in the working directory
+    outputBinding:
+      glob: '*.gaf'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: gothresher.ini
+        entry: $(inputs.config_file)
+      - entryname: onto
+        entry: $(inputs.onto_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gothresher:1.0.29--pyh7cba7a3_0

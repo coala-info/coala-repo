@@ -7,7 +7,7 @@ label: grz-cli_get-id
 doc: "Get ID from metadata\n\nTool homepage: https://pypi.org/project/grz-cli"
 inputs:
   - id: metadata
-    type: string
+    type: File
     doc: Metadata to get ID from
     inputBinding:
       position: 1

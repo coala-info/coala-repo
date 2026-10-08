@@ -10,31 +10,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Parsimony algorithm for resolving ambiguities: acctran, deltran, or downpass'
+    doc: "Parsimony algorithm for resolving ambiguities: acctran, deltran, or downpass"
     inputBinding:
       position: 101
       prefix: --algo
-  - id: align
-    type:
-      - 'null'
-      - File
-    doc: Alignment input file
+  - id: alignment
+    type: File
+    doc: "Alignment input file"
     inputBinding:
       position: 101
       prefix: --align
-  - id: format
-    type:
-      - 'null'
-      - string
-    doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
-    inputBinding:
-      position: 101
-      prefix: --format
-  - id: input
-    type:
-      - 'null'
-      - string
-    doc: Input tree
+  - id: input_tree
+    type: File
+    doc: "Input tree"
     inputBinding:
       position: 101
       prefix: --input
@@ -42,23 +30,29 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Strict phylip input format (only used with -p)
+    doc: "Strict phylip input format (only used with -p)"
     inputBinding:
       position: 101
       prefix: --input-strict
-  - id: log
+  - id: log_file_path
     type:
       - 'null'
       - string
-    doc: Output log file
+    doc: "Output log file"
     inputBinding:
       position: 101
       prefix: --log
+  - id: output_file_path
+    type: string
+    doc: "Output file"
+    inputBinding:
+      position: 101
+      prefix: --output
   - id: phylip
     type:
       - 'null'
       - boolean
-    doc: 'Alignment is in phylip? default : false (Fasta)'
+    doc: "Alignment is in phylip? default : false (Fasta)"
     inputBinding:
       position: 101
       prefix: --phylip
@@ -66,16 +60,23 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: 'Random resolve states when several possibilities in: acctran, deltran, or
-      downpass'
+    doc: "Random resolve states when several possibilities in: acctran, deltran, or downpass"
     inputBinding:
       position: 101
       prefix: --random-resolve
+  - id: tree_format
+    type:
+      - 'null'
+      - string
+    doc: "Input tree format (newick, nexus, phyloxml, or nextstrain)"
+    inputBinding:
+      position: 101
+      prefix: --format
   - id: seed
     type:
       - 'null'
       - int
-    doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
+    doc: "Random Seed: -1 = nano seconds since 1970/01/01 00:00:00"
     inputBinding:
       position: 101
       prefix: --seed
@@ -83,26 +84,23 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of threads (Max=20)
+    doc: "Number of threads (Max=20)"
     inputBinding:
       position: 101
       prefix: --threads
-  - id: output_path
-    type: string
-    doc: Output file (default "stdout")
-    inputBinding:
-      position: 102
-      prefix: --output
 outputs:
-  - id: output
+  - id: log_file
     type:
       - 'null'
       - File
-    doc: Output file
+    doc: "Output log file"
     outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: "$(inputs.log_file_path)"
+  - id: output_file
+    type: File
+    doc: "Output file written to the path in output_file_path"
+    outputBinding:
+      glob: "$(inputs.output_file_path)"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gotree:0.5.1--he881be0_0

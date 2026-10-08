@@ -22,20 +22,16 @@ inputs:
       prefix: --dataset
   - id: filter_name
     type: string
-    doc: Which filter to use. Input filter name, and value. If multi-value 
-      required, separate each value by comma. If value is a txt file, then one 
-      ID per row, exclude header.
+    doc: Which filter to use (the NAME of the NAME VALUE pair).
     inputBinding:
-      position: 101
+      position: 99
       prefix: --filter
   - id: filter_value
     type: string
-    doc: Which filter to use. Input filter name, and value. If multi-value 
-      required, separate each value by comma. If value is a txt file, then one 
-      ID per row, exclude header.
+    doc: Value of the filter. If multi-value required, separate each value by 
+      comma. If value is a txt file, then one ID per row, exclude header.
     inputBinding:
-      position: 101
-      prefix: --filter
+      position: 100
   - id: host
     type:
       - 'null'
@@ -74,6 +70,8 @@ outputs:
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

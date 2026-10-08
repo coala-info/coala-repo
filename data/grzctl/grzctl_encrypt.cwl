@@ -17,7 +17,7 @@ inputs:
   - id: config_file
     type:
       - 'null'
-      - string
+      - File
     doc: Path to config file
     inputBinding:
       position: 101
@@ -34,7 +34,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Check validation logs before encrypting.
+    doc: Do not check validation logs before encrypting.
     inputBinding:
       position: 101
       prefix: --no-check-validation-logs
@@ -42,22 +42,37 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Overwrite files and ignore cached results (dangerous!)
+    doc: Do not overwrite files; use cached results.
     inputBinding:
       position: 101
       prefix: --no-force
   - id: submission_dir
     type: Directory
-    doc: Path to the submission directory containing 'metadata/', 'files/', 
-      'encrypted_files/' and 'logs/' directories
+    doc: Path to the submission directory containing 'metadata/', 'files/', 'encrypted_files/' and 'logs/' directories
     inputBinding:
       position: 101
       prefix: --submission-dir
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Log messages of the command
+  - id: submission_dir_out
+    type: Directory
+    doc: The submission directory with the files the command wrote (logs, encrypted files)
+    outputBinding:
+      glob: $(inputs.submission_dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.submission_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grzctl:1.4.0--pyhdfd78af_0
 stdout: grzctl_encrypt.out
+stderr: grzctl_encrypt.log

@@ -1,5 +1,12 @@
 # handyreadgenotyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| handyreadgenotyper_classify | PASS |  |
+| handyreadgenotyper_train | Failed | tool bug: train runs but writes model.pkl as a plain dict, and classify in the same image rejects it ('dict' object has no attribute 'classifiers') |
+
 ## handyreadgenotyper_train
 
 ### Tool Description

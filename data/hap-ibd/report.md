@@ -1,5 +1,11 @@
 # hap-ibd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hap-ibd | PASS |  |
+
 ## hap-ibd
 
 ### Tool Description

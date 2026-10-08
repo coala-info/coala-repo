@@ -1,5 +1,11 @@
 # gxf2bed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gxf2bed | PASS |  |
+
 ## gxf2bed
 
 ### Tool Description

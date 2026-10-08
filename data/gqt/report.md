@@ -1,5 +1,16 @@
 # gqt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gqt_calpha | PASS |  |
+| gqt_convert | PASS |  |
+| gqt_fst | PASS |  |
+| gqt_gst | PASS |  |
+| gqt_pca-shared | PASS |  |
+| gqt_query | PASS |  |
+
 ## gqt_convert
 
 ### Tool Description
@@ -150,31 +161,6 @@ example, a PED file that includes the "Paternal_ID" and "Gender" fields
 NOTE: gst and fst assume that variants are biallelic.  If your data
 contains multiallelic sites, we recommend decomposing your VCF 
 (see A. Tan, Bioinformatics 2015) prior to indexing.
-```
-
-
-## gqt
-### Tool Description
-gqt, v1.1.3
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gqt:1.1.3--h0263287_3
-- **Homepage**: https://github.com/ryanlayer/gqt
-- **Package**: https://anaconda.org/channels/bioconda/packages/gqt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Unknown command
-gqt, v1.1.3
-usage:   gqt <command> [options]
-         convert    Convert between file types
-         query      Query the index
-         pca-shared Compute the similarity matrix for PCA base
-                    on the number of shared non-reference loci.
-         calpha     Calculate C-alpha paramters (Neal 2011)
-         gst        Calculate Gst statistic (Neil 1973)
-         fst        Calculate Fst statistic (Weir and Cockerham 1984)
 ```
 
 

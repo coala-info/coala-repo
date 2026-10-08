@@ -1,5 +1,17 @@
 # gseapy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gseapy_biomart | Failed | tool bug: the Ensembl BioMart service now answers with redirects and errors, the query crashes with an AttributeError, and --host also crashes |
+| gseapy_enrichr | PASS |  |
+| gseapy_gsea | PASS |  |
+| gseapy_gsva | PASS |  |
+| gseapy_prerank | PASS |  |
+| gseapy_replot | Failed | tool bug: replot ignores the documented --graph and --no-plot options |
+| gseapy_ssgsea | PASS |  |
+
 ## gseapy_gsea
 
 ### Tool Description

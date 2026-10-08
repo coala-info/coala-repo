@@ -8,7 +8,7 @@ doc: "Parse raw data and save to disk\n\nTool homepage: https://ecogenomics.gith
 inputs:
   - id: dbname
     type: string
-    doc: name of the database being created
+    doc: name of the database file being created
     inputBinding:
       position: 1
   - id: reference
@@ -50,6 +50,11 @@ inputs:
       position: 104
       prefix: --threads
 outputs:
+  - id: database
+    type: File
+    doc: The GroopM database written by parse
+    outputBinding:
+      glob: $(inputs.dbname)
   - id: stdout
     type: stdout
     doc: Standard output

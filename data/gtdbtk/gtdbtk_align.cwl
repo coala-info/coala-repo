@@ -6,6 +6,9 @@ baseCommand:
 label: gtdbtk_align
 doc: "Aligns genomes to create a multiple sequence alignment.\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
+  - id: gtdbtk_data
+    type: Directory
+    doc: GTDB-Tk reference data directory (sets GTDBTK_DATA_PATH)
   - id: cols_per_gene
     type:
       - 'null'
@@ -154,6 +157,11 @@ outputs:
     doc: directory to output files
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: GTDBTK_DATA_PATH
+        envValue: $(inputs.gtdbtk_data.path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gtdbtk:2.6.1--pyh1f0d9b5_2

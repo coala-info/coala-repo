@@ -92,6 +92,10 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.outdir ? [{entryname: inputs.outdir, entry: {class: 'Directory', listing: []}, writable: true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haphpipe:1.0.3--py_0

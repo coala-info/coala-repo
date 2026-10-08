@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: goleft
+baseCommand:
+  - goleft
+  - depthwed
 label: goleft_depthwed
 doc: "Aggregate depth.bed files from goleft depth\n\nTool homepage: https://github.com/brentp/goleft"
 inputs:

@@ -8,10 +8,9 @@ doc: "Fetch GPSW code from a specific release from https://github.com/niekwit/gp
   \nTool homepage: https://github.com/niekwit/gps-orfeome"
 inputs:
   - id: directory
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to download the code to target directory
+    type: string
+    default: gpsw_code
+    doc: Directory to download the code to target directory (created by the tool)
     inputBinding:
       position: 101
       prefix: --directory
@@ -33,9 +32,17 @@ inputs:
       position: 101
       prefix: --test-data
 outputs:
+  - id: code_dir
+    type: Directory
+    doc: Directory with the downloaded GPSW code
+    outputBinding:
+      glob: $(inputs.directory)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gpsw:0.9.1--pyhdfd78af_0

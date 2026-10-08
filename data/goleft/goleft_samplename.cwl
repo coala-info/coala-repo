@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: goleft
+baseCommand:
+  - goleft
+  - samplename
 label: goleft_samplename
 doc: "Extract sample name(s) from a BAM file.\n\nTool homepage: https://github.com/brentp/goleft"
 inputs:

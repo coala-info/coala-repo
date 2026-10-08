@@ -25,3 +25,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gxformat2:0.22.0--pyhdfd78af_0
 stdout: gxformat2_gxwf-lint.out
+successCodes:
+  - 0
+  - 1

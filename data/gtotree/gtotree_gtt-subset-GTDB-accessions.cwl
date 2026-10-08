@@ -63,6 +63,7 @@ inputs:
       - string
     doc: output prefix for output subset accessions (*.txt) and GTDB taxonomy 
       files (*.tsv)
+    default: subset-accessions
     inputBinding:
       position: 101
       prefix: --output-prefix

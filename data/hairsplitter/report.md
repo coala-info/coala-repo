@@ -1,5 +1,11 @@
 # hairsplitter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hairsplitter_hairsplitter.py | PASS |  |
+
 ## hairsplitter_hairsplitter.py
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # graphlan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| graphlan | PASS |  |
+| graphlan_annotate | PASS |  |
+
 ## graphlan
 
 ### Tool Description
@@ -55,3 +62,35 @@ optional arguments:
   -v, --version         Prints the current GraPhlAn version and exit
 ```
 
+## graphlan_annotate
+
+### Tool Description
+Adds structural and graphical annotations from an annotation file to an input tree and writes a PhyloXML tree.
+
+### Metadata
+- **Docker Image**: biocontainers/graphlan:v1.1.3-1-deb_cv1
+- **Homepage**: https://bitbucket.org/nsegata/graphlan/wiki/Home
+- **Package**: https://anaconda.org/channels/bioconda/packages/graphlan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: graphlan_annotate [-h] [--annot annotation_file] [-v]
+                         input_tree [output_tree]
+
+GraPhlAn annotate module 1.1.3 (5 June 2018) AUTHORS: Nicola Segata
+(nsegata@hsph.harvard.edu)
+
+positional arguments:
+  input_tree            the input tree in Newick, Nexus, PhyloXML or plain
+                        text format
+  output_tree           the output tree in PhyloXML format containing the
+                        newly added annotations. If not specified, the input
+                        tree file will be overwritten
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --annot annotation_file
+                        specify the annotation file
+  -v, --version         Prints the current GraPhlAn version and exit
+```

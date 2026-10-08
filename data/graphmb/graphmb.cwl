@@ -37,10 +37,8 @@ inputs:
       position: 101
       prefix: --aggtype
   - id: assembly
-    type:
-      - 'null'
-      - string
-    doc: Assembly base path
+    type: Directory
+    doc: Assembly base path (directory with the assembly files)
     inputBinding:
       position: 101
       prefix: --assembly
@@ -143,8 +141,8 @@ inputs:
   - id: depth
     type:
       - 'null'
-      - File
-    doc: Depth file from jgi
+      - string
+    doc: (file name inside the assembly directory) Depth file from jgi
     inputBinding:
       position: 101
       prefix: --depth
@@ -183,8 +181,8 @@ inputs:
   - id: embs
     type:
       - 'null'
-      - File
-    doc: No train, load embs
+      - string
+    doc: (file name inside the assembly directory) No train, load embs
     inputBinding:
       position: 101
       prefix: --embs
@@ -247,8 +245,8 @@ inputs:
   - id: features
     type:
       - 'null'
-      - File
-    doc: Features file mapping contig name to features
+      - string
+    doc: (file name inside the assembly directory) Features file mapping contig name to features
     inputBinding:
       position: 101
       prefix: --features
@@ -263,8 +261,8 @@ inputs:
   - id: graph_file
     type:
       - 'null'
-      - File
-    doc: File name with graph
+      - string
+    doc: (file name inside the assembly directory) File name with graph
     inputBinding:
       position: 101
       prefix: --graph_file
@@ -307,14 +305,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --kmer
-  - id: l
-    type:
-      - 'null'
-      - string
-    doc: Log level
-    inputBinding:
-      position: 101
-      prefix: --loglevel
   - id: labelgraph
     type:
       - 'null'
@@ -326,8 +316,8 @@ inputs:
   - id: labels
     type:
       - 'null'
-      - File
-    doc: File mapping contig to label
+      - string
+    doc: (file name inside the assembly directory) File mapping contig to label
     inputBinding:
       position: 101
       prefix: --labels
@@ -374,8 +364,8 @@ inputs:
   - id: markers
     type:
       - 'null'
-      - File
-    doc: File with precomputed checkm results to eval. If not found, it will 
+      - string
+    doc: (file name inside the assembly directory) File with precomputed checkm results to eval. If not found, it will 
       assume it does not exist.
     inputBinding:
       position: 101
@@ -469,10 +459,9 @@ inputs:
       position: 101
       prefix: --numcores
   - id: outdir
-    type:
-      - 'null'
-      - Directory
-    doc: Output dir (same as input assembly dir if not defined
+    type: string
+    default: graphmb_out
+    doc: Output dir (same as input assembly dir if not defined; created by the tool)
     inputBinding:
       position: 101
       prefix: --outdir
@@ -484,22 +473,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outname
-  - id: outputdir
-    type:
-      - 'null'
-      - Directory
-    doc: Output dir (same as input assembly dir if not defined
-    inputBinding:
-      position: 101
-      prefix: --outputdir
-  - id: outputname
-    type:
-      - 'null'
-      - string
-    doc: Output (experiment) name
-    inputBinding:
-      position: 101
-      prefix: --outputname
   - id: post
     type:
       - 'null'
@@ -636,26 +609,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --writebins
-  - id: zg
-    type:
-      - 'null'
-      - int
-    doc: Output embedding dimension of GNN
-    inputBinding:
-      position: 101
-      prefix: --zg
-  - id: zl
-    type:
-      - 'null'
-      - int
-    doc: Output embedding dimension of VAE
-    inputBinding:
-      position: 101
-      prefix: --zl
 outputs:
+  - id: out_dir
+    type: Directory
+    doc: Output directory with the bins, embeddings and log files
+    outputBinding:
+      glob: $(inputs.outdir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: PYTHONBREAKPOINT
+        envValue: "0"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/graphmb:0.2.5--pyh7cba7a3_0

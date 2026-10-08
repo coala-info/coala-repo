@@ -21,10 +21,11 @@ inputs:
       prefix: --buscos
   - id: input_fasta
     type: File
-    doc: Input Fasta file
+    doc: Input Fasta file (staged in the working directory because the output file names are built from this path)
     inputBinding:
       position: 101
       prefix: --input
+      valueFrom: $(self.basename)
   - id: max_consecutive_zeros
     type:
       - 'null'
@@ -83,14 +84,18 @@ inputs:
       position: 101
       prefix: --niterations
   - id: paf_alignment
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Minimap2 PAF alignnment file. Note. paf file functionality is currently
       experimental
     inputBinding:
       position: 101
       prefix: --paf
   - id: psl_alignment
-    type: File
+    type:
+      - 'null'
+      - File
     doc: BLAT PSL alignnment file
     inputBinding:
       position: 101
@@ -139,6 +144,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: asms
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the primary and secondary assemblies
+    outputBinding:
+      glob: asms
+  - id: bug_report
+    type:
+      - 'null'
+      - File
+    doc: bugreport.log, written when the run aborts
+    outputBinding:
+      glob: bugreport.log
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_fasta)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hapsolo:2021.10.09--py27hdfd78af_0

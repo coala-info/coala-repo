@@ -4,32 +4,45 @@ baseCommand:
   - groopm
   - merge
 label: groopm_merge
-doc: "Merge BAM files based on a database of alignments.\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
+doc: "Merge bins in a GroopM database.\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:
-  - id: dbname
-    type: string
-    doc: Database name for alignment information.
+  - id: database
+    type: File
+    doc: GroopM database file to open (created by groopm parse) and modified in place
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: bids
     type:
       type: array
-      items: File
-    doc: List of BAM files to merge.
+      items: string
+    doc: bin ids to merge.
     inputBinding:
       position: 2
   - id: force
     type:
       - 'null'
       - boolean
-    doc: Force overwrite if output files exist.
+    doc: merge without prompting
     inputBinding:
       position: 103
       prefix: -f
 outputs:
+  - id: database_out
+    type: File
+    doc: The GroopM database after the command ran (updated in place)
+    outputBinding:
+      glob: $(inputs.database.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.database.basename)
+        entry: $(inputs.database)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/groopm:0.3.4--pyhdfd78af_2

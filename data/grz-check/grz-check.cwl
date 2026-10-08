@@ -9,10 +9,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bam
     doc: A single BAM file to validate
     inputBinding:
       position: 101
-      prefix: --bam
   - id: continue_on_error
     type:
       - 'null'
@@ -25,37 +26,40 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: grz_check_fastq_paired
+        inputBinding:
+          prefix: --fastq-paired
     doc: 'A paired-end FASTQ sample. Provide FQ1, FQ2, and minimum mean read length.
       Read Length: >0 for fixed, <0 to skip length check'
     inputBinding:
       position: 101
-      prefix: --fastq-paired
   - id: fastq_single
     type:
       - 'null'
       - type: array
-        items: string
+        items: grz_check_fastq_single
+        inputBinding:
+          prefix: --fastq-single
     doc: 'A single-end FASTQ sample. Provide the file path and minimum mean read length.
       Read Length: >0 for fixed, <0 to skip length check'
     inputBinding:
       position: 101
-      prefix: --fastq-single
   - id: raw
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --raw
     doc: A file for which to only calculate the SHA256 checksum, skipping all 
       other validation
     inputBinding:
       position: 101
-      prefix: --raw
   - id: show_progress
     type:
       - 'null'
-      - boolean
-    doc: Flag to show progress bars during processing
+      - string
+    doc: Flag to show progress bars during processing (true or false)
     inputBinding:
       position: 101
       prefix: --show-progress
@@ -80,6 +84,34 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - name: grz_check_fastq_paired
+        type: record
+        fields:
+          - name: fq1_path
+            type: File
+            inputBinding:
+              position: 1
+          - name: fq2_path
+            type: File
+            inputBinding:
+              position: 2
+          - name: min_mean_read_len
+            type: int
+            inputBinding:
+              position: 3
+      - name: grz_check_fastq_single
+        type: record
+        fields:
+          - name: fq_path
+            type: File
+            inputBinding:
+              position: 1
+          - name: min_mean_read_len
+            type: int
+            inputBinding:
+              position: 2
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grz-check:0.2.1--h3ec5717_0

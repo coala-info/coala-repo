@@ -16,15 +16,13 @@ inputs:
       position: 2
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: "write haplotype sequences to the specified file (required here, because without --out the tool writes a file named '-' instead of stdout)"
     inputBinding:
       position: 101
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: write haplotype sequences to the specified file
     outputBinding:
       glob: $(inputs.output_file_path)

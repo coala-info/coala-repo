@@ -1,5 +1,11 @@
 # grep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grep | PASS |  |
+
 ## grep
 
 ### Tool Description

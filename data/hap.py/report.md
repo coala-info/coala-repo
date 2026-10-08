@@ -1,5 +1,11 @@
 # hap.py CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hap.py | PASS |  |
+
 ## hap.py
 
 ### Tool Description

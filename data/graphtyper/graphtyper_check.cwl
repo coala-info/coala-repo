@@ -8,33 +8,34 @@ doc: "Check a GraphTyper graph (useful for debugging).\n\nTool homepage: https:/
 inputs:
   - id: graph
     type: File
-    doc: Path to graph.
+    doc: "Path to graph."
     inputBinding:
       position: 1
   - id: log
     type:
       - 'null'
       - string
-    doc: Set path to log file.
+    doc: "Set path to log file."
     inputBinding:
-      position: 102
-      prefix: --log
+      position: 10
+      prefix: "--log="
+      separate: false
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Set to output verbose logging.
+    doc: "Set to output verbose logging."
     inputBinding:
-      position: 102
-      prefix: --verbose
+      position: 10
+      prefix: "--verbose"
   - id: vverbose
     type:
       - 'null'
       - boolean
-    doc: Set to output very verbose logging.
+    doc: "Set to output very verbose logging."
     inputBinding:
-      position: 102
-      prefix: --vverbose
+      position: 10
+      prefix: "--vverbose"
 outputs:
   - id: stdout
     type: stdout

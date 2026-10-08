@@ -1,5 +1,11 @@
 # group_humann2_uniref_abundances_to_go CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| group_humann2_uniref_abundances_to_go_group_humann2_uniref_abundances_to_GO.sh | PASS |  |
+
 ## group_humann2_uniref_abundances_to_go_group_humann2_uniref_abundances_to_GO.sh
 
 ### Tool Description

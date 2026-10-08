@@ -6,6 +6,9 @@ baseCommand:
 label: gtdbtk_convert_to_species
 doc: "Convert a tree to a species-resolved tree.\n\nTool homepage: http://pypi.python.org/pypi/gtdbtk/"
 inputs:
+  - id: gtdbtk_data
+    type: Directory
+    doc: GTDB-Tk reference data directory (sets GTDBTK_DATA_PATH)
   - id: all_ranks
     type:
       - 'null'
@@ -50,6 +53,10 @@ outputs:
     outputBinding:
       glob: $(inputs.output_tree_path)
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: GTDBTK_DATA_PATH
+        envValue: $(inputs.gtdbtk_data.path)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

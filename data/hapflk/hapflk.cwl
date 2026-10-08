@@ -4,6 +4,14 @@ baseCommand: hapflk
 label: hapflk
 doc: "hapflk\n\nTool homepage: https://github.com/BertrandServin/hapflk"
 inputs:
+  - id: plink_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The PLINK files (bed, bim, fam or ped, map) named by bfile_prefix or
+      file_prefix. They are staged in the working directory so the prefix
+      resolves.
   - id: bfile_prefix
     type:
       - 'null'
@@ -164,7 +172,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for output files
+    doc: prefix for output files (default hapflk)
+    default: hapflk
     inputBinding:
       position: 101
       prefix: --prefix
@@ -212,6 +221,9 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.plink_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hapflk:1.3.0--py27_0

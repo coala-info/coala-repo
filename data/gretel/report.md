@@ -1,5 +1,11 @@
 # gretel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gretel | PASS |  |
+
 ## gretel
 
 ### Tool Description

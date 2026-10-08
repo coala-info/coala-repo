@@ -74,6 +74,13 @@ outputs:
     doc: directory to save the database to
     outputBinding:
       glob: $(inputs.out)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: EnvVarRequirement
+    envDef:
+      - envName: SSL_CERT_FILE
+        envValue: /usr/local/ssl/cacert.pem
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/groot:1.1.2--h047eeb3_7

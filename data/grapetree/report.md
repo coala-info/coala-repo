@@ -1,5 +1,11 @@
 # grapetree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grapetree | PASS |  |
+
 ## grapetree
 
 ### Tool Description

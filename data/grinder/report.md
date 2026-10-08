@@ -1,5 +1,11 @@
 # grinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grinder | PASS |  |
+
 ## grinder
 
 ### Tool Description

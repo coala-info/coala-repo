@@ -1,5 +1,11 @@
 # hal2vg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hal2vg | PASS |  |
+
 ## hal2vg
 
 ### Tool Description

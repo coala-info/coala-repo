@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: goleft
+baseCommand:
+  - goleft
+  - indexcov
 label: goleft_indexcov
 doc: "Estimate coverage for BAM files\n\nTool homepage: https://github.com/brentp/goleft"
 inputs:
@@ -9,6 +11,13 @@ inputs:
       type: array
       items: File
     doc: bam(s) or crais for which to estimate coverage
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 1
   - id: chrom

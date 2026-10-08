@@ -1,5 +1,15 @@
 # haplomap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haplomap_annotate | PASS | synthetic data: a VEP-style table rebuilt from the real MGP consequence field; annotation format matches the README |
+| haplomap_convert | PASS | synthetic data: real Mouse Genomes Project genotypes (chr19 slice) with AD, PL and MQ fields added; 1272 SNPs and the plink files are correct |
+| haplomap_eblocks | PASS | synthetic data: inputs from the convert and annotate runs above; 73 haploblocks and the variant file are written |
+| haplomap_ghmap | PASS | synthetic data: planted trait values on the eblocks output; the long form --pvalue_cutoff segfaults in the tool, so the CWL uses -l |
+| haplomap_pca | PASS | real mouse genetic relation matrix from the repo example; the long form --dimension segfaults in the tool, so the CWL uses -d |
+
 ## haplomap_convert
 
 ### Tool Description

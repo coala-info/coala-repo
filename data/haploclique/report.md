@@ -1,5 +1,12 @@
 # haploclique CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haploclique_bronkerbosch | Failed | tool bug: --gff silently writes an empty file (printGFF is an unimplemented stub in the source); main FASTA and --bam output are correct |
+| haploclique_clever | Failed | tool bug: --gff silently writes an empty file (printGFF is an unimplemented stub in the source); main FASTA and --bam output are correct |
+
 ## haploclique_clever
 
 ### Tool Description

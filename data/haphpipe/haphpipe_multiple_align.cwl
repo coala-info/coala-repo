@@ -74,7 +74,7 @@ inputs:
   - id: dir_list
     type:
       - 'null'
-      - Directory
+      - File
     doc: List of directories which include either a final.fna or 
       ph_haplotypes.fna file, one on each line
     inputBinding:
@@ -360,6 +360,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weighti
+  - id: sample_dirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Directories named in the dir_list file (each holds final.fna or ph_haplotypes.fna);
+      staged by name so the list entries resolve
   - id: logfile_path
     type:
       - 'null'
@@ -382,7 +389,7 @@ outputs:
       - File
     doc: Name for alignment file
     outputBinding:
-      glob: $(inputs.out_align_path)
+      glob: $((inputs.outdir || '.') + '/hp_alignments/' + (inputs.out_align_path || 'alignment.fasta'))
   - id: logfile
     type:
       - 'null'
@@ -399,6 +406,8 @@ outputs:
       glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$((inputs.outdir ? [{entryname: inputs.outdir, entry: {class: 'Directory', listing: []}, writable: true}] : []).concat(inputs.sample_dirs || []))"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haphpipe:1.0.3--py_0

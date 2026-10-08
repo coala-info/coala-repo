@@ -1,5 +1,13 @@
 # haploconduct CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haploconduct_polyte | PASS |  |
+| haploconduct_polyte-split | PASS |  |
+| haploconduct_savage | PASS |  |
+
 ## haploconduct_savage
 
 ### Tool Description

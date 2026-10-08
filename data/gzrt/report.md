@@ -1,5 +1,11 @@
 # gzrt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gzrt_gzrecover | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

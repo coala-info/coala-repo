@@ -92,6 +92,13 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory)
+        entry: "$({'class': 'Directory', 'listing': []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grid:1.3--0

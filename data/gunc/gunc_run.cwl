@@ -83,7 +83,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Output dir. Default: cwd'
+    doc: 'Output dir (created before the run).'
+    default: gunc_out
     inputBinding:
       position: 101
       prefix: --out_dir
@@ -138,6 +139,12 @@ outputs:
     doc: 'Output dir. Default: cwd'
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.out_dir, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gunc:1.0.6--pyhdfd78af_1

@@ -26,7 +26,7 @@ inputs:
   - id: dir_list
     type:
       - 'null'
-      - Directory
+      - File
     doc: List of directories which include the required files, one on each line
     inputBinding:
       position: 101
@@ -34,12 +34,25 @@ inputs:
   - id: ph_list
     type:
       - 'null'
-      - Directory
+      - File
     doc: List of directories which include haplotype summary files, one on each 
       line
     inputBinding:
       position: 101
       prefix: --ph_list
+  - id: sample_dirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Directories named in the dir_list file; staged writable by name because the
+      tool indexes the BAM and writes depth files inside them
+  - id: ph_dirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Directories named in the ph_list file (each holds ph_summary.txt)
   - id: quiet
     type:
       - 'null'
@@ -57,10 +70,8 @@ inputs:
       position: 102
       prefix: --logfile
   - id: outdir_path
-    type:
-      - 'null'
-      - string
-    doc: 'Output directory (default: .)'
+    type: string
+    doc: Output directory (must be given; the tool fails without it)
     inputBinding:
       position: 103
       prefix: --outdir
@@ -81,6 +92,8 @@ outputs:
       glob: $(inputs.logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$([{entryname: inputs.outdir_path, entry: {class: 'Directory', listing: []}, writable: true}].concat((inputs.sample_dirs || []).concat(inputs.ph_dirs || []).map(function(d) { return {entry: d, writable: true}; })))"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haphpipe:1.0.3--py_0

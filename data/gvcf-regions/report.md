@@ -1,5 +1,11 @@
 # gvcf-regions CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gvcf-regions_gvcf_regions.py | PASS |  |
+
 ## gvcf-regions_gvcf_regions.py
 
 ### Tool Description

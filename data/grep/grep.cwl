@@ -5,8 +5,10 @@ label: grep
 doc: "Search for PATTERNS in each FILE.\n\nTool homepage: https://www.gnu.org/software/grep/"
 inputs:
   - id: patterns
-    type: string
-    doc: Patterns to search for. PATTERNS can contain multiple patterns 
+    type:
+      - 'null'
+      - string
+    doc: Patterns to search for (leave unset when using regexp or pattern_file). PATTERNS can contain multiple patterns 
       separated by newlines.
     inputBinding:
       position: 1
@@ -111,6 +113,8 @@ inputs:
     doc: same as --context=NUM
     inputBinding:
       position: 103
+      prefix: '-'
+      separate: false
   - id: count
     type:
       - 'null'
@@ -372,10 +376,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --regexp
     doc: use PATTERNS for matching
     inputBinding:
       position: 103
-      prefix: --regexp
   - id: silent
     type:
       - 'null'
@@ -416,3 +421,6 @@ hints:
   - class: DockerRequirement
     dockerPull: ubuntu:latest
 stdout: grep.out
+successCodes:
+  - 0
+  - 1

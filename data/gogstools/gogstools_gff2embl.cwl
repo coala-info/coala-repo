@@ -132,6 +132,9 @@ outputs:
     doc: The output embl file, ready for submission to EBI ENA
     outputBinding:
       glob: '$(inputs.out)'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gogstools:0.1.2--py310hdfd78af_0

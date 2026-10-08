@@ -1,5 +1,11 @@
 # gzip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gzip | PASS |  |
+
 ## gzip
 
 ### Tool Description

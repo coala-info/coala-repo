@@ -1,0 +1,78 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand:
+  - grz-cli
+  - encrypt
+label: grz-cli_encrypt
+doc: "Encrypt a submission.\n\nTool homepage: https://github.com/BfArM-MVH/grz-tools"
+inputs:
+  - id: check_validation_logs
+    type:
+      - 'null'
+      - boolean
+    doc: Check validation logs before encrypting.
+    inputBinding:
+      position: 101
+      prefix: --check-validation-logs
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: Path to config file
+    inputBinding:
+      position: 101
+      prefix: --config-file
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: Overwrite files and ignore cached results (dangerous!)
+    inputBinding:
+      position: 101
+      prefix: --force
+  - id: no_check_validation_logs
+    type:
+      - 'null'
+      - boolean
+    doc: Do not check validation logs before encrypting.
+    inputBinding:
+      position: 101
+      prefix: --no-check-validation-logs
+  - id: no_force
+    type:
+      - 'null'
+      - boolean
+    doc: Do not overwrite files; use cached results.
+    inputBinding:
+      position: 101
+      prefix: --no-force
+  - id: submission_dir
+    type: Directory
+    doc: Path to the submission directory containing 'metadata/', 'files/', 'encrypted_files/' and 'logs/' directories
+    inputBinding:
+      position: 101
+      prefix: --submission-dir
+      valueFrom: $(self.basename)
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Log messages of the command
+  - id: submission_dir_out
+    type: Directory
+    doc: The submission directory with the files the command wrote (logs, encrypted files)
+    outputBinding:
+      glob: $(inputs.submission_dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.submission_dir)
+        writable: true
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/grz-cli:1.5.1--pyhdfd78af_0
+stdout: grz-cli_encrypt.out
+stderr: grz-cli_encrypt.log

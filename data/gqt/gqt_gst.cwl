@@ -4,54 +4,35 @@ baseCommand:
   - gqt
   - gst
 label: gqt_gst
-doc: "Calculates GST and FST statistics for subpopulations. NOTE: gst and fst assume
-  that variants are biallelic. If your data contains multiallelic sites, we recommend
-  decomposing your VCF (see A. Tan, Bioinformatics 2015) prior to indexing.\n\nTool
-  homepage: https://github.com/ryanlayer/gqt"
+doc: "Calculate Gst statistic (Nei 1973) between the subpopulations defined by population queries. NOTE: gst and fst assume that variants are biallelic. If your data contains multiallelic sites, we recommend decomposing your VCF (see A. Tan, Bioinformatics 2015) prior to indexing.\n\nTool homepage: https://github.com/ryanlayer/gqt"
 inputs:
   - id: gqt_file
     type: File
-    doc: gqt file
+    secondaryFiles:
+      - ^.vid
+      - ^.off
+      - ^.bim
+    doc: gqt file (needs its .vid, .off and .bim files beside it)
     inputBinding:
       position: 101
       prefix: -i
-  - id: label_db_field_name
-    type:
-      - 'null'
-      - string
-    doc: label db field name (requried for pca-shared)
-    inputBinding:
-      position: 101
-      prefix: -f
-  - id: label_output_file
-    type:
-      - 'null'
-      - File
-    doc: label output file (requried for pca-shared)
-    inputBinding:
-      position: 101
-      prefix: -l
   - id: ped_database_file
     type: File
     doc: ped database file
     inputBinding:
       position: 101
       prefix: -d
-  - id: population_query
+  - id: population_queries
     type:
-      - 'null'
-      - type: array
-        items: string
-    doc: "Each population query defines one subpopulation. For example, to find compare
-      the GBR and YRI subpopulations: -p \"Population = 'GBR'\" -p \"Population =
-      'YRI'\". Population queries are based on the PED file that is associated with
-      the genotypes, and any column in that PED file can be part of the query. For
-      example, a PED file that includes the \"Paternal_ID\" and \"Gender\" fields
-      (where male = 1 and female = 2) could be queried by: -p \"Paternal_ID = 'NA12878'
-      AND Gender = 2\""
-    inputBinding:
-      position: 101
-      prefix: -p
+      type: array
+      items: string
+      inputBinding:
+        position: 101
+        prefix: -p
+    doc: Each population query defines one subpopulation, for example
+      "Population = 'GBR'". Population queries are based on the PED file
+      associated with the genotypes; any column in that PED file can be part of
+      the query. Give one query per subpopulation.
   - id: tmp_directory
     type:
       - 'null'

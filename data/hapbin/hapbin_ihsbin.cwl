@@ -4,14 +4,6 @@ baseCommand: ihsbin
 label: hapbin_ihsbin
 doc: "Calculate iHS values for SNPs based on haplotype data.\n\nTool homepage: https://github.com/evotools/hapbin"
 inputs:
-  - id: ascii
-    type:
-      - 'null'
-      - boolean
-    doc: Output in ASCII format
-    inputBinding:
-      position: 101
-      prefix: --ascii
   - id: ehh_cutoff
     type:
       - 'null'

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: GoPeaks
+baseCommand: gopeaks
 label: gopeaks
 doc: "GoPeaks is a peak caller designed for CUT&TAG/CUT&RUN sequencing\ndata. GoPeaks
   by default works best with narrow peaks such as\nH3K4me3 and transcription factors.
@@ -11,6 +11,11 @@ inputs:
   - id: bam_file
     type: File
     doc: Input BAM file (must be paired-end reads)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam
@@ -35,6 +40,11 @@ inputs:
       - 'null'
       - File
     doc: Input BAM file with control signal to be normalized (e.g. IgG, Input)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: --control
@@ -63,9 +73,8 @@ inputs:
       position: 101
       prefix: --minwidth
   - id: output_prefix
-    type:
-      - 'null'
-      - string
+    type: string
+    default: sample
     doc: Output prefix to write peaks and metrics file.
     inputBinding:
       position: 101

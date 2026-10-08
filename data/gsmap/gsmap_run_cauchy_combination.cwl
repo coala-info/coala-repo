@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gsmap_run_cauchy_combination
+baseCommand:
+  - gsmap
+  - run_cauchy_combination
 label: gsmap_run_cauchy_combination
 doc: "Combines Cauchy results for multiple samples.\n\nTool homepage: https://github.com/LeonSong1995/gsMap"
 inputs:
@@ -39,6 +41,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
   - id: output_file_path
     type: string?
     inputBinding:
@@ -53,8 +56,17 @@ outputs:
       samples.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: workdir_out
+    type: Directory
+    doc: The working directory with the files written by the command
+    outputBinding:
+      glob: $(inputs.workdir.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gsmap:1.73.7--pyhdfd78af_0

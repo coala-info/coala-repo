@@ -1,12 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gottcha2.py
+baseCommand:
+  - gottcha2
+  - profile
 label: gottcha2_profile
-doc: "Genomic Origin Through Taxonomic CHAllenge (GOTTCHA) is an annotation-independent
-  and signature-based metagenomic taxonomic profiling tool that has significantly
-  smaller FDR than other profiling tools. This program is a wrapper to map input reads
-  to pre-computed signature databases using minimap2 and/or to profile mapped reads
-  in SAM format.\n\nTool homepage: https://github.com/poeli/gottcha2"
+doc: "Taxonomic profiling of metagenomic reads: maps reads to a GOTTCHA2 signature database with minimap2 and reports the taxa found.\n\nTool homepage: https://github.com/poeli/gottcha2"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outdir)
+        entry: '$({"class": "Directory", "listing": []})'
+      - $(inputs.database_files)
 inputs:
   - id: acc_exclusion_list
     type:
@@ -18,13 +23,19 @@ inputs:
       position: 101
       prefix: --accExclusionList
   - id: database
-    type:
-      - 'null'
-      - string
-    doc: The path and prefix of the GOTTCHA2 database.
+    type: string
+    doc: "The path and prefix of the GOTTCHA2 database (for example
+      gottcha_db.species.fna; the database files with this prefix must be given
+      in database_files)."
     inputBinding:
       position: 101
       prefix: --database
+  - id: database_files
+    type:
+      type: array
+      items: File
+    doc: Files of the GOTTCHA2 database (.mmi, .stats, .tax.tsv, ...) staged in the
+      working directory so that the database prefix resolves.
   - id: db_level
     type:
       - 'null'
@@ -53,38 +64,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --errorRate
-  - id: extract_full_ref
-    type:
-      - 'null'
-      - boolean
-    doc: "Extract up to 20 sequences per reference from the SAM file and save them
-      to a FASTA file. Equivalent to using: -e 'all:20:fasta'."
-    inputBinding:
-      position: 101
-      prefix: --extractFullRef
-  - id: extract_only
-    type:
-      - 'null'
-      - boolean
-    doc: While --extract is specified, this option will only extract the reads 
-      and not perform any further processing of the SAM file.
-    inputBinding:
-      position: 101
-      prefix: --extractOnly
-  - id: extract_taxon
-    type:
-      - 'null'
-      - string
-    doc: "Extract mapped reads for specific taxa to a FASTA or FASTQ file. You can
-      specify taxa in one of the following ways: - Comma-separated list of taxon IDs:
-      e.g., -e '1234,5678' - File containing a list of taxon IDs (one per line): e.g.,
-      -e '@taxids.txt' - File with read limits and format: e.g., -e '@taxids.txt:1000:fasta'
-      This limits the number of reads extracted per taxon to <NUMBER> and outputs
-      in <FORMAT> (fasta or fastq). Use 'all' to extract all matching taxa/reads.
-      [default: None]"
-    inputBinding:
-      position: 101
-      prefix: --extract
   - id: format
     type:
       - 'null'
@@ -210,10 +189,9 @@ inputs:
       position: 101
       prefix: --noCutoff
   - id: outdir
-    type:
-      - 'null'
-      - string
-    doc: 'Output directory [default: .]'
+    type: string
+    doc: 'Output directory (created before the run) [default: .]'
+    default: gottcha2_out
     inputBinding:
       position: 101
       prefix: --outdir
@@ -313,18 +291,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
   - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: 'Output directory [default: .]'
+    type: Directory
+    doc: 'Output directory with the profile tables, SAM file, log and extracted reads'
     outputBinding:
       glob: $(inputs.outdir)
 hints:

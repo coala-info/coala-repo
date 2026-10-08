@@ -1,5 +1,11 @@
 # gustaf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gustaf | PASS |  |
+
 ## gustaf
 
 ### Tool Description

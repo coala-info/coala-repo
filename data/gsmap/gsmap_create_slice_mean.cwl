@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - gsMap
+  - gsmap
   - create_slice_mean
 label: gsmap_create_slice_mean
 doc: "Calculates the mean expression for each slice across specified samples.\n\n\

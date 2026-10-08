@@ -4,7 +4,7 @@ baseCommand: gsort
 label: gsort
 doc: "Sorts genomic interval files.\n\nTool homepage: https://github.com/brentp/gsort"
 inputs:
-  - id: path
+  - id: input_file
     type:
       - 'null'
       - File

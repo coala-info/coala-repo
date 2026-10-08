@@ -1,5 +1,21 @@
 # graphtyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| graphtyper_bamshrink | PASS |  |
+| graphtyper_check | PASS |  |
+| graphtyper_construct | PASS |  |
+| graphtyper_genotype | PASS |  |
+| graphtyper_genotype_camou | PASS | WIP subcommand; on the nf-core human chr22 test BAM it gives the same genotype record as genotype |
+| graphtyper_genotype_hla | Not completed | WIP subcommand; needs a VCF of known HLA variants and HLA reads, which are not available in a small test set |
+| graphtyper_genotype_lr | Not completed | WIP subcommand; the only small human long-read BAM available (17 reads) gives an empty VCF, so there is no output to judge |
+| graphtyper_genotype_sv | Not completed | synthetic data: planted deletion in the small chr22 test region gives 1/1 FAIL3 with depth 1 although the BAM has about 200x there, so the result cannot be confirmed |
+| graphtyper_vcf_break_down | Failed | tool bug: option --output is ignored (no file is written; the VCF always goes to standard output) |
+| graphtyper_vcf_concatenate | PASS |  |
+| graphtyper_vcf_merge | PASS |  |
+
 ## graphtyper_bamshrink
 
 ### Tool Description
@@ -75,57 +91,6 @@ OPTIONS
 
    --min-num-matching=N or -mN [default: 55]
       Minumum number of matching bases in read.
-
-   --help or -h
-      Show this help.
-
-VERSION
-   2.7.7
-```
-
-## graphtyper_call
-
-### Tool Description
-Call variants of a graph.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/graphtyper:2.7.7--h7594796_1
-- **Homepage**: https://github.com/DecodeGenetics/graphtyper
-- **Package**: https://anaconda.org/channels/bioconda/packages/graphtyper/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-NAME
-   GraphTyper
-
-USAGE
-   graphtyper call [OPTIONS]
-
-SUBCOMMANDS
-   bamshrink       Run bamShrink.
-   call            Call variants of a graph.
-   check           Check a GraphTyper graph (useful for debugging).
-   construct       Construct a graph.
-   genotype        Run the SNP/indel genotyping pipeline.
-   genotype_camou  (WIP) Run the camou SNP/indel genotyping pipeline.
-   genotype_hla    (WIP) Run the HLA genotyping pipeline.
-   genotype_lr     (WIP) Run the camou LR genotyping pipeline.
-   genotype_sv     Run the structural variant (SV) genotyping pipeline.
-   index           (deprecated) Index a graph.
-   vcf_break_down  Break down/decompose a VCF file.
-   vcf_concatenate Concatenate VCF files.
-   vcf_merge       Merge VCF files.
-
-OPTIONS
-   --log=value or -lvalue
-      Set path to log file.
-
-   --verbose or -v
-      Set to output verbose logging.
-
-   --vverbose
-      Set to output very verbose logging.
 
    --help or -h
       Show this help.

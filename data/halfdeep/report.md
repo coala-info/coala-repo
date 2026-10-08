@@ -1,5 +1,12 @@
 # halfdeep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| halfdeep_bam_depth.sh | PASS |  |
+| halfdeep_halfdeep.sh | PASS |  |
+
 ## halfdeep_bam_depth.sh
 
 ### Tool Description

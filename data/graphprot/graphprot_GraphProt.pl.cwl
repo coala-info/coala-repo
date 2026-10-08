@@ -28,8 +28,7 @@ inputs:
   - id: affinities
     type:
       - 'null'
-      - type: array
-        items: string
+      - File
     doc: "list of affinities\n                         one value per line, same order
       as binding sites (fasta)"
     inputBinding:
@@ -100,7 +99,7 @@ inputs:
   - id: model
     type:
       - 'null'
-      - string
+      - File
     doc: GraphProt model
     inputBinding:
       position: 101
@@ -173,9 +172,22 @@ inputs:
       position: 101
       prefix: -R
 outputs:
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Result files written with the prefix (parameters, model, predictions, motif files)
+    outputBinding:
+      glob: '$(inputs.prefix ? inputs.prefix + "*" : "GraphProt*")'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: CONDA_PREFIX
+        envValue: /usr/local
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/graphprot:1.1.7--py36_0

@@ -1,5 +1,13 @@
 # gogstools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gogstools_gff2embl | PASS |  |
+| gogstools_ogs_check | PASS |  |
+| gogstools_ogs_merge | PASS |  |
+
 ## gogstools_ogs_merge
 
 ### Tool Description
@@ -108,6 +116,32 @@ options:
                         EMBL format; embl-ebi-submit=EMBL ready to submit to
                         EBI (some special formating for automatic EBI post-
                         processing)
+```
+
+
+## gogstools_ogs_check
+
+### Tool Description
+Check that an OGS GFF file is ready for release.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gogstools:0.1.2--py310hdfd78af_0
+- **Homepage**: https://github.com/genouest/ogs-tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/gogstools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: ogs_check [-h] [--source SOURCE] [--no-size] [infile] [outfile]
+
+positional arguments:
+  infile
+  outfile
+
+options:
+  -h, --help       show this help message and exit
+  --source SOURCE  Change the source to given value for all features
+  --no-size        Disable CDS and intron size checking
 ```
 
 

@@ -12,9 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: index
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Genomic index prefix.
     inputBinding:
       position: 102
@@ -23,6 +21,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Genomic index files
+    outputBinding:
+      glob: $(inputs.index)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/guidescan:2.2.1--h4ac6f70_2

@@ -1,5 +1,11 @@
 # guidemaker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| guidemaker | PASS | Carsonella ruddii GenBank from the tool repo tests; 944 guides plus 20 controls, every guide and NGG PAM checked against the genome sequence |
+
 ## guidemaker
 
 ### Tool Description

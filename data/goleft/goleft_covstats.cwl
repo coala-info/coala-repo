@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: goleft
+baseCommand:
+  - goleft
+  - covstats
 label: goleft_covstats
 doc: "Estimate coverage statistics from BAM/CRAM files.\n\nTool homepage: https://github.com/brentp/goleft"
 inputs:
@@ -9,6 +11,13 @@ inputs:
       type: array
       items: File
     doc: bams/crams for which to estimate coverage
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 1
   - id: fasta

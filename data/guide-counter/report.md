@@ -1,5 +1,11 @@
 # guide-counter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| guide-counter_count | PASS | MAGeCK demo2 library and two real FASTQs (2,500 reads each); 1,485 and 1,499 reads mapped, a little above an independent exact-match count (1,453 and 1,471) as expected with one mismatch allowed; header line added to the library |
+
 ## guide-counter_count
 
 ### Tool Description
@@ -99,28 +105,6 @@ OPTIONS:
 
     -x, --exact-match
             Perform exact matching only, don't allow mismatches between reads and guides
-```
-
-
-## guide-counter_FASTQs
-
-### Tool Description
-A tool for counting guide RNAs in FASTQ files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/guide-counter:0.1.3--h503566f_4
-- **Homepage**: https://github.com/fulcrumgenomics/guide-counter
-- **Package**: https://anaconda.org/channels/bioconda/packages/guide-counter/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'FASTQs' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    guide-counter <SUBCOMMAND>
-
-For more information try --help
 ```
 
 

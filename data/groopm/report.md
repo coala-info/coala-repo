@@ -1,5 +1,24 @@
 # groopm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| groopm_core | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_delete | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_dump | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_explore | Not completed | interactive plot window, and the image cannot open any database (PyTables openFile missing) |
+| groopm_extract | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_flyover | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_highlight | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_merge | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_parse | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_plot | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_print | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_recruit | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_refine | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+| groopm_split | Failed | image problem: groopm 0.3.4 calls tables.openFile, which PyTables 3.10 in the image no longer has (AttributeError), so no database can be created or opened |
+
 ## groopm_parse
 
 ### Tool Description

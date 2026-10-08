@@ -1,5 +1,11 @@
 # gwyddion CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gwyddion | Not completed | GUI program: even --check stops with 'cannot open display'; no headless mode and no real data file |
+
 ## gwyddion
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # gpsw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gpsw_fetch | PASS |  |
+| gpsw_run | Not completed | pipeline, skipped (runs a Snakemake workflow) |
+
 ## gpsw_fetch
 
 ### Tool Description
@@ -67,29 +74,4 @@ options:
 
 ## Metadata
 - **Skill**: not generated
-
-## gpsw
-
-### Tool Description
-GPSW: A tool for analysing and processing Global Protein Stability Profiling data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gpsw:0.9.1--pyhdfd78af_0
-- **Homepage**: https://github.com/niekwit/gps-orfeome
-- **Package**: https://anaconda.org/channels/bioconda/packages/gpsw/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: gpsw [-h] [--version] {fetch,run} ...
-
-GPSW: A tool for analysing and processing Global Protein Stability Profiling
-data.
-
-positional arguments:
-  {fetch,run}  Sub-command help
-
-options:
-  -h, --help   show this help message and exit
-  --version    show program's version number and exit
-```
 

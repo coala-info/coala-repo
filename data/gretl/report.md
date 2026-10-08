@@ -1,5 +1,20 @@
 # gretl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gretl_block | Failed | tool bug: the --blocks option is accepted but never used, so it writes no blocks file (main block table is correct) |
+| gretl_bootstrap | PASS |  |
+| gretl_core | PASS |  |
+| gretl_find | PASS |  |
+| gretl_id2int | PASS |  |
+| gretl_node-list | PASS |  |
+| gretl_nwindow | PASS |  |
+| gretl_ps | PASS |  |
+| gretl_stats | PASS |  |
+| gretl_window | PASS |  |
+
 ## gretl_block
 
 ### Tool Description

@@ -73,15 +73,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -h2
-  - id: info
-    type:
-      - 'null'
-      - boolean
-    doc: Print some meta information about the program and exit. No other 
-      options required.
-    inputBinding:
-      position: 101
-      prefix: --info
   - id: maps
     type:
       - 'null'
@@ -117,9 +108,8 @@ inputs:
       position: 101
       prefix: --numtrees
   - id: output_dir
-    type:
-      - 'null'
-      - string
+    type: string
+    default: grampa_out
     doc: 'Output directory name. Default: grampa-[current date]-[current time]'
     inputBinding:
       position: 101
@@ -174,15 +164,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --st-only
-  - id: tests
-    type:
-      - 'null'
-      - string
-    doc: Use 'grampa.py --tests' the first time you run grampa to run through 
-      all the options with pre-set input files.
-    inputBinding:
-      position: 101
-      prefix: --tests
   - id: verbosity
     type:
       - 'null'
@@ -199,10 +180,8 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: 'Output directory name. Default: grampa-[current date]-[current time]'
+    type: Directory
+    doc: Output directory with the reconciliation results and the log file
     outputBinding:
       glob: $(inputs.output_dir)
 hints:

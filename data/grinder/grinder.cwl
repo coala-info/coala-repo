@@ -152,7 +152,7 @@ inputs:
   - id: fastq_output
     type:
       - 'null'
-      - boolean
+      - int
     doc: 'Whether to write the generated reads in FASTQ format (with Sanger-encoded
       quality scores) instead of FASTA and QUAL or not (1: yes, 0: no). <qual_levels>
       need to be specified for this option to be effective.'
@@ -181,7 +181,7 @@ inputs:
   - id: homopolymer_dist
     type:
       - 'null'
-      - int
+      - string
     doc: Introduce sequencing errors in the reads under the form of 
       homopolymeric stretches (e.g. AAA, CCCCC) using a specified model where 
       the homopolymer length follows a normal distribution N(mean, standard 
@@ -378,7 +378,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in base_name
     outputBinding:
-      glob: $(inputs.base_name)*
+      glob: "$(inputs.base_name ? inputs.base_name + '*' : 'grinder-*')"
   - id: output_dir_dir
     type:
       - 'null'
@@ -387,6 +387,8 @@ outputs:
       created if needed.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/grinder:v0.5.4-5-deb_cv1

@@ -29,9 +29,7 @@ inputs:
       position: 102
       prefix: --dict
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output file name
     inputBinding:
       position: 103

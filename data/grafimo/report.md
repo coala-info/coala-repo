@@ -1,5 +1,12 @@
 # grafimo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| grafimo_buildvg | PASS |  |
+| grafimo_findmotif | PASS |  |
+
 ## grafimo_findmotif
 
 ### Tool Description

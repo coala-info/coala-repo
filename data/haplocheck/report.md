@@ -1,5 +1,11 @@
 # haplocheck CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haplocheck | PASS |  |
+
 ## haplocheck
 
 ### Tool Description

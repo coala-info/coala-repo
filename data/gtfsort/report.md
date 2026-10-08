@@ -1,5 +1,11 @@
 # gtfsort CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gtfsort | PASS | real GENCODE chr21 and chr1 GTF shuffled; output has the same lines, genes sorted by position; note: orphan exons or gene-only GTF can drop lines or panic |
+
 ## gtfsort
 
 ### Tool Description

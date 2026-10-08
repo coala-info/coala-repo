@@ -6,11 +6,12 @@ baseCommand:
 label: groopm_flyover
 doc: "Visualize the contig binning process.\n\nTool homepage: https://ecogenomics.github.io/GroopM/"
 inputs:
-  - id: dbname
-    type: string
-    doc: name of the database to open
+  - id: database
+    type: File
+    doc: GroopM database file to open (created by groopm parse)
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: bids
     type:
       - 'null'
@@ -103,6 +104,13 @@ outputs:
     doc: Files written with the prefix given in prefix
     outputBinding:
       glob: $(inputs.prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.database.basename)
+        entry: $(inputs.database)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/groopm:0.3.4--pyhdfd78af_2

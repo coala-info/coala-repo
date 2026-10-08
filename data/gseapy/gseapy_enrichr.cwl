@@ -44,7 +44,8 @@ inputs:
   - id: figsize
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: "The figsize keyword argument need two parameters to\n                  \
       \      define. Default: (6.5, 6)"
     inputBinding:
@@ -76,7 +77,7 @@ inputs:
       position: 101
       prefix: --graph
   - id: ids
-    type: string
+    type: File
     doc: Enrichr uses a list of gene names as input.
     inputBinding:
       position: 101
@@ -131,6 +132,8 @@ outputs:
     outputBinding:
       glob: $(inputs.outdir_path)
 requirements:
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

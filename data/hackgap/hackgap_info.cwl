@@ -10,15 +10,13 @@ inputs:
     type: string
     doc: file name of existing hash table (without extension .hash or .info)
     inputBinding:
-      position: 1
-  - id: compilefilter_params
+      position: 200
+  - id: index_files
     type:
-      - 'null'
-      - type: array
-        items: string
-    doc: additional parameters for compilefilter
-    inputBinding:
-      position: 2
+      type: array
+      items: File
+    doc: The .hash and .info files of the existing hash table. They are staged
+      in the working directory so the prefix resolves.
   - id: compilefilter
     type:
       - 'null'
@@ -67,13 +65,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --statistics
-  - id: export_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 104
-      prefix: --export
   - id: outprefix_path
     type:
       - 'null'
@@ -82,6 +73,9 @@ inputs:
       position: 105
       prefix: --outprefix
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (information and statistics about the hash table)
   - id: outprefix
     type:
       - 'null'
@@ -91,17 +85,11 @@ outputs:
       .{key,chc.val}.{txt,data}.
     outputBinding:
       glob: $(inputs.outprefix_path)*
-  - id: export
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: file name prefix of exported data, extended by 
-      .{key,chc.val}.{txt,data}.
-    outputBinding:
-      glob: $(inputs.export_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hackgap:1.0.1--pyhdfd78af_0
+stdout: hackgap_info.out

@@ -1,5 +1,11 @@
 # gvcf2bed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gvcf2bed | PASS |  |
+
 ## gvcf2bed
 
 ### Tool Description

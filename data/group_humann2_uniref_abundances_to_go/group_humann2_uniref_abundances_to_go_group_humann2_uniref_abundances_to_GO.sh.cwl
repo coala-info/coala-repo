@@ -22,14 +22,14 @@ inputs:
       position: 101
       prefix: -s
   - id: biological_process_abundances_file
-    type: File
+    type: string
     doc: Path to file which will contain GO slim term abudances corresponding to
       biological processes
     inputBinding:
       position: 101
       prefix: -b
   - id: cellular_component_abundances_file
-    type: File
+    type: string
     doc: Path to file which will contain GO slim term abudances corresponding to
       cellular components
     inputBinding:
@@ -52,7 +52,7 @@ inputs:
       position: 101
       prefix: -p
   - id: molecular_function_abundances_file
-    type: File
+    type: string
     doc: Path to file which will contain GO slim term abudances corresponding to
       molecular functions
     inputBinding:
@@ -76,6 +76,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: biological_process_abundances
+    type: File
+    doc: GO slim term abundances corresponding to biological processes
+    outputBinding:
+      glob: $(inputs.biological_process_abundances_file)
+  - id: cellular_component_abundances
+    type: File
+    doc: GO slim term abundances corresponding to cellular components
+    outputBinding:
+      glob: $(inputs.cellular_component_abundances_file)
+  - id: molecular_function_abundances
+    type: File
+    doc: GO slim term abundances corresponding to molecular functions
+    outputBinding:
+      glob: $(inputs.molecular_function_abundances_file)
 hints:
   - class: DockerRequirement
     dockerPull: 

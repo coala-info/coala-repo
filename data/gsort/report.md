@@ -1,5 +1,11 @@
 # gsort CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gsort | PASS |  |
+
 ## gsort
 
 ### Tool Description

@@ -6,11 +6,17 @@ doc: "Gretel: A metagenomic haplotyper.\n\nTool homepage: https://github.com/Sam
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Input BAM file
     inputBinding:
       position: 1
   - id: vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     doc: Input VCF file
     inputBinding:
       position: 2
@@ -31,7 +37,7 @@ inputs:
   - id: debugpos
     type:
       - 'null'
-      - string
+      - File
     doc: A newline delimited list of 1-indexed genomic positions to output debug
       data when parsing the BAM
     inputBinding:
@@ -40,7 +46,7 @@ inputs:
   - id: debugreads
     type:
       - 'null'
-      - string
+      - File
     doc: A newline delimited list of read names to output debug data when 
       parsing the BAM
     inputBinding:
@@ -89,7 +95,10 @@ inputs:
   - id: master
     type:
       - 'null'
-      - string
+      - File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: Master sequence (will be used to fill in homogeneous gaps in 
       haplotypes, otherwise --gapchar)
     inputBinding:
@@ -155,6 +164,37 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.out)
+  - id: haplotype_files
+    type:
+      type: array
+      items: File
+    doc: Haplotype FASTA and crumbs files written to the working directory
+      (when out is not set)
+    outputBinding:
+      glob:
+        - '*.fasta'
+        - '*.crumbs'
+  - id: dumpsnps_file
+    type:
+      - 'null'
+      - File
+    doc: SNP positions dumped by dumpsnps
+    outputBinding:
+      glob: $(inputs.dumpsnps)
+  - id: dumpmatrix_file
+    type:
+      - 'null'
+      - File
+    doc: Hansel matrix dumped by dumpmatrix
+    outputBinding:
+      glob: $(inputs.dumpmatrix)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: "$(inputs.out ? inputs.out : 'gretel_out_unused')"
+        entry: "$(inputs.out ? {'class': 'Directory', 'listing': []} : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gretel:0.0.94--pyh864c0ab_1

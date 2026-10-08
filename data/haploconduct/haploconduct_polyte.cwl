@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: polyte.py
+baseCommand:
+  - haploconduct
+  - polyte
 label: haploconduct_polyte
 doc: "POLYTE assembles individual haplotypes from NGS data. It expects as\ninput single-
   and/or paired-end Illumina sequencing reads.\n\nTool homepage: https://github.com/HaploConduct/HaploConduct"
@@ -55,7 +57,7 @@ inputs:
       position: 101
       prefix: --hap_cov
   - id: insert_size
-    type: int
+    type: float
     doc: mean insert size for paired-end input
     inputBinding:
       position: 101
@@ -185,8 +187,6 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: reference genome in fasta format
     inputBinding:
       position: 101
@@ -225,6 +225,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: contigs
+    type:
+      - 'null'
+      - File
+    doc: Assembled contigs (contigs.fasta)
+    outputBinding:
+      glob: contigs.fasta
+  - id: contigs_diploid
+    type:
+      - 'null'
+      - File
+    doc: Contigs of the diploid step (contigs_diploid.fasta; written with --diploid)
+    outputBinding:
+      glob: contigs_diploid.fasta
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.reference ? [{entry: inputs.reference, writable: true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haploconduct:0.2.1--py27h78a066a_0

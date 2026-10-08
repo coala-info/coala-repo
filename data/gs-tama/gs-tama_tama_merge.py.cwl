@@ -71,6 +71,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: -z
+  - id: print_version
+    type:
+      - 'null'
+      - string
+    doc: Prints out version date and exits.
+    inputBinding:
+      position: 101
+      prefix: -v
+  - id: listed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the file list (for example the collapsed bed files); they
+      are staged in the working directory so that the names in the file list resolve
   - id: prime_5_threshold
     type:
       - 'null'
@@ -90,6 +105,10 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.listed_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gs-tama:1.0.3--hdfd78af_0

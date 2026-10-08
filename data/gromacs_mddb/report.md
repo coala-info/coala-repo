@@ -1,79 +1,18 @@
 # gromacs_mddb CWL Generation Report
 
-## gromacs_mddb_gmx_dump
+## Real Data Test
 
-### Tool Description
-Reads a run input file (.tpr), a trajectory (.trr/.xtc/tng), an energy file (.edr), a checkpoint file (.cpt) or topology file (.top) and prints that to standard output in a readable format. This program is essential for checking your run input file in case of problems.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gromacs:2022
-- **Homepage**: https://www.gromacs.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/gromacs_mddb/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-SYNOPSIS
-
-gmx dump [-s <.tpr>] [-f <.xtc/.trr/...>] [-e <.edr>] [-cp <.cpt>]
-         [-p <.top>] [-mtx <.mtx>] [-om <.mdp>] [-[no]nr] [-[no]param]
-         [-[no]sys] [-[no]orgir]
-
-DESCRIPTION
-
-gmx dump reads a run input file (.tpr), a trajectory (.trr/.xtc/tng), an
-energy file (.edr), a checkpoint file (.cpt) or topology file (.top) and
-prints that to standard output in a readable format. This program is essential
-for checking your run input file in case of problems.
-
-OPTIONS
-
-Options to specify input files:
-
- -s      <.tpr>                              (Opt.)
-           Run input file to dump
- -f      <.xtc/.trr/...>                     (Opt.)
-           Trajectory file to dump: xtc trr cpt gro g96 pdb tng
- -e      <.edr>                              (Opt.)
-           Energy file to dump
- -cp     <.cpt>                              (Opt.)
-           Checkpoint file to dump
- -p      <.top>                              (Opt.)
-           Topology file to dump
- -mtx    <.mtx>                              (Opt.)
-           Hessian matrix to dump
-
-Options to specify output files:
-
- -om     <.mdp>                              (Opt.)
-           grompp input file from run input file
-
-Other options:
-
- -[no]nr                    (yes)
-           Show index numbers in output (leaving them out makes comparison
-           easier, but creates a useless topology)
- -[no]param                 (no)
-           Show parameters for each bonded interaction (for comparing dumps,
-           it is useful to combine this with -nonr)
- -[no]sys                   (no)
-           List the atoms and bonded interactions for the whole system instead
-           of for each molecule type
- -[no]orgir                 (no)
-           Show input parameters from tpr as they were written by the version
-           that produced the file, instead of how the current version reads
-           them
-
-KNOWN ISSUES
-
-* The .mdp file produced by -om can not be read by grompp.
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| gromacs_mddb_gmx_dump | PASS |  |
+| gromacs_mddb_gmx_grompp | PASS |  |
+| gromacs_mddb_gmx_mdrun | PASS |  |
+| gromacs_mddb_gmx_trjconv | PASS |  |
 
 ## gromacs_mddb_gmx_grompp
 
 ### Tool Description
-reads a molecular topology file, checks the validity of the file, expands the topology from a molecular description to an atomic description. The topology file contains information about molecule types and the number of molecules, the preprocessor copies each molecule as needed. There is no limitation on the number of molecule types. Bonds and bond-angles can be converted into constraints, separately for hydrogens and heavy atoms. Then a coordinate file is read and velocities can be generated from a Maxwellian distribution if requested. gmx grompp also reads parameters for gmx mdrun (eg. number of MD steps, time step, cut-off). Eventually a binary file is produced that can serve as the sole input file for the MD program.
+Reads a molecular topology, parameter and coordinate file and writes a run input file (.tpr).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gromacs:2022
@@ -83,6 +22,14 @@ reads a molecular topology file, checks the validity of the file, expands the to
 
 ### Original Help Text
 ```text
+:-) GROMACS - gmx help, 2022-conda_forge (-:
+
+Executable:   /usr/local/bin.AVX2_256/gmx
+Data prefix:  /usr/local
+Working dir:  /
+Command line:
+  gmx help grompp
+
 SYNOPSIS
 
 gmx grompp [-f [<.mdp>]] [-c [<.gro/.g96/...>]] [-r [<.gro/.g96/...>]]
@@ -164,7 +111,10 @@ removed. If any constraints remain which involve virtual sites, a fatal error
 will result.
 
 To verify your run input file, please take note of all warnings on the screen,
-and correct where necessary. Do also look at the contents of the mdout.mdp
+and correct where necessary. Do also look a
+GROMACS reminds you: "Fly to the Court of England and Unfold" (Macbeth, Act 3, Scene 6, William Shakespeare)
+
+t the contents of the mdout.mdp
 file; this contains comment lines, as well as the input that gmx grompp has
 read. If in doubt, you can start gmx grompp with the -debug option which will
 give you more information in a file called grompp.log (along with real debug
@@ -233,11 +183,10 @@ Other options:
            Renumber atomtypes and minimize number of atomtypes
 ```
 
-
 ## gromacs_mddb_gmx_mdrun
 
 ### Tool Description
-gmx mdrun is the main computational chemistry engine within GROMACS. Obviously, it performs Molecular Dynamics simulations, but it can also perform Stochastic Dynamics, Energy Minimization, test particle insertion or (re)calculation of energies. Normal mode analysis is another option. In this case mdrun builds a Hessian matrix from single conformation. For usual Normal Modes-like calculations, make sure that the structure provided is properly energy-minimized. The generated matrix can be diagonalized by gmx nmeig.
+The GROMACS molecular dynamics engine: runs a simulation, energy minimization or other jobs from a run input file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gromacs:2022
@@ -247,6 +196,14 @@ gmx mdrun is the main computational chemistry engine within GROMACS. Obviously, 
 
 ### Original Help Text
 ```text
+:-) GROMACS - gmx help, 2022-conda_forge (-:
+
+Executable:   /usr/local/bin.AVX2_256/gmx
+Data prefix:  /usr/local
+Working dir:  /
+Command line:
+  gmx help mdrun
+
 SYNOPSIS
 
 gmx mdrun [-s [<.tpr>]] [-cpi [<.cpt>]] [-table [<.xvg>]] [-tablep [<.xvg>]]
@@ -492,7 +449,10 @@ Other options:
            Check for all bonded interactions with DD
  -rdd    <real>             (0)
            The maximum distance for bonded interactions with DD (nm), 0 is
-           determine from initial coordinates
+           
+GROMACS reminds you: "We Look Pretty Sharp In These Clothes" (F. Zappa)
+
+determine from initial coordinates
  -rcon   <real>             (0)
            Maximum distance for P-LINCS (nm), 0 is estimate
  -dlb    <enum>             (auto)
@@ -543,21 +503,10 @@ Other options:
            Seed for replica exchange, -1 is generate a seed
 ```
 
-
 ## gromacs_mddb_gmx_trjconv
 
 ### Tool Description
-gmx trjconv can convert trajectory files in many ways:
-
-* from one format to another
-* select a subset of atoms
-* change the periodicity representation
-* keep multimeric molecules together
-* center atoms in the box
-* fit atoms to reference structure
-* reduce the number of frames
-* change the timestamps of the frames (-t0 and -timestep)
-* select frames within a certain range of a quantity given in an .xvg file.
+Converts and manipulates trajectory files (format conversion, periodic boundary treatment, subsets).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gromacs:2022
@@ -567,6 +516,14 @@ gmx trjconv can convert trajectory files in many ways:
 
 ### Original Help Text
 ```text
+:-) GROMACS - gmx help, 2022-conda_forge (-:
+
+Executable:   /usr/local/bin.AVX2_256/gmx
+Data prefix:  /usr/local
+Working dir:  /
+Command line:
+  gmx help trjconv
+
 SYNOPSIS
 
 gmx trjconv [-f [<.xtc/.trr/...>]] [-s [<.tpr/.gro/...>]] [-n [<.ndx>]]
@@ -728,7 +685,10 @@ Other options:
            View output .xvg, .xpm, .eps and .pdb files
  -xvg    <enum>             (xmgrace)
            xvg plot formatting: xmgrace, xmgr, none
- -skip   <int>              (1)
+ 
+GROMACS reminds you: "We Look Pretty Sharp In These Clothes" (F. Zappa)
+
+-skip   <int>              (1)
            Only write every nr-th frame
  -dt     <time>             (0)
            Only write frame when t MOD dt = first time (ps)
@@ -786,6 +746,84 @@ Other options:
            visualization of non-standard molecules, e.g. coarse grained ones
 ```
 
+## gromacs_mddb_gmx_dump
+
+### Tool Description
+Prints the contents of a run input, trajectory, energy, checkpoint or topology file in readable text.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gromacs:2022
+- **Homepage**: https://www.gromacs.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/gromacs_mddb/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+:-) GROMACS - gmx help, 2022-conda_forge (-:
+
+Executable:   /usr/local/bin.AVX2_256/gmx
+Data prefix:  /usr/local
+Working dir:  /
+Command line:
+  gmx help dump
+
+GROMACS reminds you: "We Look Pretty Sharp In These Clothes" (F. Zappa)
+
+SYNOPSIS
+
+gmx dump [-s <.tpr>] [-f <.xtc/.trr/...>] [-e <.edr>] [-cp <.cpt>]
+         [-p <.top>] [-mtx <.mtx>] [-om <.mdp>] [-[no]nr] [-[no]param]
+         [-[no]sys] [-[no]orgir]
+
+DESCRIPTION
+
+gmx dump reads a run input file (.tpr), a trajectory (.trr/.xtc/tng), an
+energy file (.edr), a checkpoint file (.cpt) or topology file (.top) and
+prints that to standard output in a readable format. This program is essential
+for checking your run input file in case of problems.
+
+OPTIONS
+
+Options to specify input files:
+
+ -s      <.tpr>                              (Opt.)
+           Run input file to dump
+ -f      <.xtc/.trr/...>                     (Opt.)
+           Trajectory file to dump: xtc trr cpt gro g96 pdb tng
+ -e      <.edr>                              (Opt.)
+           Energy file to dump
+ -cp     <.cpt>                              (Opt.)
+           Checkpoint file to dump
+ -p      <.top>                              (Opt.)
+           Topology file to dump
+ -mtx    <.mtx>                              (Opt.)
+           Hessian matrix to dump
+
+Options to specify output files:
+
+ -om     <.mdp>                              (Opt.)
+           grompp input file from run input file
+
+Other options:
+
+ -[no]nr                    (yes)
+           Show index numbers in output (leaving them out makes comparison
+           easier, but creates a useless topology)
+ -[no]param                 (no)
+           Show parameters for each bonded interaction (for comparing dumps,
+           it is useful to combine this with -nonr)
+ -[no]sys                   (no)
+           List the atoms and bonded interactions for the whole system instead
+           of for each molecule type
+ -[no]orgir                 (no)
+           Show input parameters from tpr as they were written by the version
+           that produced the file, instead of how the current version reads
+           them
+
+KNOWN ISSUES
+
+* The .mdp file produced by -om can not be read by grompp.
+```
 
 ## Metadata
 - **Skill**: not generated

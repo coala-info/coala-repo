@@ -1,5 +1,11 @@
 # gw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gw | Failed | image problem: gw segfaults (exit 139) at start-up when the user id has no passwd entry in the image, as under cwltool --user; works only as root |
+
 ## gw
 
 ### Tool Description

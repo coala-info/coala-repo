@@ -1,5 +1,16 @@
 # goleft CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| goleft_covstats | PASS |  |
+| goleft_depth | PASS |  |
+| goleft_depthwed | PASS |  |
+| goleft_indexcov | PASS |  |
+| goleft_indexsplit | PASS |  |
+| goleft_samplename | PASS |  |
+
 ## goleft_covstats
 
 ### Tool Description

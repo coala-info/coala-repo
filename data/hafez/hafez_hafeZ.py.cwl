@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hafez_hafeZ.py
+baseCommand: hafeZ.py
 label: hafez_hafeZ.py
 doc: "Identify inducible prophages through bacterial genomic read mapping. Minimum
   required input outlined above.\n\nTool homepage: https://github.com/Chrisjrt/hafeZ"
@@ -48,13 +48,17 @@ inputs:
       position: 101
       prefix: --cutoff
   - id: db_path
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: path to the directory containing the pVOGs files
     inputBinding:
       position: 101
       prefix: --db_path
   - id: db_type
-    type: string
+    type:
+      - 'null'
+      - string
     doc: choose which database you want to download, currently available ones 
       are pVOGs or PHROGs
     inputBinding:
@@ -71,7 +75,9 @@ inputs:
       position: 101
       prefix: --expect_mad_zero
   - id: get_db
-    type: Directory
+    type:
+      - 'null'
+      - string
     doc: use this option to get and format pVOGs database in the given directory
     inputBinding:
       position: 101

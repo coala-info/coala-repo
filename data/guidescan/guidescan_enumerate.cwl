@@ -6,6 +6,11 @@ baseCommand:
 label: guidescan_enumerate
 doc: "Enumerates off-targets against a reference.\n\nTool homepage: https://github.com/pritykinlab/guidescan-cli"
 inputs:
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files (.forward, .reverse and .gs) built by guidescan index; they are staged in the working directory so the index prefix resolves
   - id: index
     type: string
     doc: Prefix for index files
@@ -112,6 +117,9 @@ outputs:
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.index_files)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

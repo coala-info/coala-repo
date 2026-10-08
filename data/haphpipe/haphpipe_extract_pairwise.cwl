@@ -45,6 +45,9 @@ inputs:
       position: 102
       prefix: --outfile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: outfile
     type:
       - 'null'
@@ -57,3 +60,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haphpipe:1.0.3--py_0
+stdout: haphpipe_extract_pairwise.out

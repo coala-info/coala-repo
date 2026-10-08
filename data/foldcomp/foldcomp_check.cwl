@@ -1,195 +1,102 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: foldcomp
+baseCommand:
+  - foldcomp
+  - check
 label: foldcomp_check
-doc: "Command-line tool for compressing, decompressing, checking, and comparing protein
-  structure files.\n\nTool homepage: https://github.com/steineggerlab/foldcomp"
+doc: "Check Foldcomp FCZ files (one file, or a directory/tar/database) for errors.\n\nTool homepage: https://github.com/steineggerlab/foldcomp"
 inputs:
-  - id: subcommand
-    type: string
-    doc: The subcommand to execute (compress, decompress, extract, check, rmsd)
-    inputBinding:
-      position: 1
-  - id: input1
-    type: string
-    doc: First input file or directory (e.g., pdb, cif, fcz, tar, dir)
-    inputBinding:
-      position: 2
-  - id: input2
+  - id: input
     type:
-      - 'null'
-      - string
-    doc: Second input file or directory (e.g., fcz, pdb, fasta, dir, tar, db)
+      - File
+      - Directory
+    secondaryFiles:
+      - pattern: .index
+        required: false
+      - pattern: .dbtype
+        required: false
+      - pattern: .lookup
+        required: false
+      - pattern: .source
+        required: false
+    doc: "Input FCZ file, tar, directory, or Foldcomp database (with .index/.dbtype/.lookup beside it), or (with --file) a list of files."
     inputBinding:
-      position: 3
-  - id: alternative_atom_order
-    type:
-      - 'null'
-      - boolean
-    doc: Use alternative atom order
-    inputBinding:
-      position: 104
-      prefix: --alt
-  - id: break_interval
+      position: 10
+  - id: threads
     type:
       - 'null'
       - int
-    doc: Interval size to save absolute atom coordinates
+    doc: "threads for (de)compression of folders/tar files [default=1]"
     inputBinding:
-      position: 104
-      prefix: --break
-  - id: check_fcz
+      position: 1
+      prefix: --threads
+  - id: recursive
     type:
       - 'null'
       - boolean
-    doc: Check FCZ before and skip entries with error (only for batch 
-      decompression)
+    doc: "recursively look for files in directory [default=0]"
     inputBinding:
-      position: 104
-      prefix: --check
-  - id: extract_amino_acid
+      position: 1
+      prefix: --recursive
+  - id: file
     type:
       - 'null'
       - boolean
-    doc: Extract amino acid sequence (only for extraction mode)
+    doc: "input is a list of files [default=0]"
     inputBinding:
-      position: 104
-      prefix: --amino-acid
-  - id: extract_plddt
-    type:
-      - 'null'
-      - boolean
-    doc: Extract pLDDT score (only for extraction mode)
-    inputBinding:
-      position: 104
-      prefix: --plddt
-  - id: extract_sequence
-    type:
-      - 'null'
-      - boolean
-    doc: Extract amino acid sequence (only for extraction mode)
-    inputBinding:
-      position: 104
-      prefix: --fasta
-  - id: file_list
-    type:
-      - 'null'
-      - boolean
-    doc: Input is a list of files
-    inputBinding:
-      position: 104
+      position: 1
       prefix: --file
-  - id: id_list_file
+  - id: id_list
     type:
       - 'null'
       - File
-    doc: A file of id list to be processed (only for database input)
+    doc: "a file of id list to be processed (only for database input)"
     inputBinding:
-      position: 104
+      position: 1
       prefix: --id-list
   - id: id_mode
     type:
       - 'null'
       - int
-    doc: 'ID mode for database input. 0: database keys, 1: names (.lookup)'
+    doc: "id mode for database input. 0: database keys, 1: names (.lookup) [default=1]"
     inputBinding:
-      position: 104
+      position: 1
       prefix: --id-mode
-  - id: measure_time
-    type:
-      - 'null'
-      - boolean
-    doc: Measure time for compression/decompression
-    inputBinding:
-      position: 104
-      prefix: --time
-  - id: no_merge
-    type:
-      - 'null'
-      - boolean
-    doc: Do not merge output files (only for extraction mode)
-    inputBinding:
-      position: 104
-      prefix: --no-merge
-  - id: overwrite
-    type:
-      - 'null'
-      - boolean
-    doc: Overwrite existing files
-    inputBinding:
-      position: 104
-      prefix: --overwrite
-  - id: plddt_digits
-    type:
-      - 'null'
-      - string
-    doc: 'Extract pLDDT score with specified number of digits (only for extraction
-      mode). Options: 1 (single digit, fasta-like), 2 (2-digit, 00-99, tsv), 3 (3-digit),
-      4 (4-digit, max)'
-    inputBinding:
-      position: 104
-      prefix: --plddt-digits
-  - id: recursive
-    type:
-      - 'null'
-      - boolean
-    doc: Recursively look for files in directory
-    inputBinding:
-      position: 104
-      prefix: --recursive
-  - id: save_as_database
-    type:
-      - 'null'
-      - boolean
-    doc: Save as database
-    inputBinding:
-      position: 104
-      prefix: --db
-  - id: save_as_tar
-    type:
-      - 'null'
-      - boolean
-    doc: Save as tar file
-    inputBinding:
-      position: 104
-      prefix: --tar
-  - id: skip_discontinuous
-    type:
-      - 'null'
-      - boolean
-    doc: Skip PDB with discontinuous residues (only batch compression)
-    inputBinding:
-      position: 104
-      prefix: --skip-discontinuous
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads for (de)compression of folders/tar files
-    inputBinding:
-      position: 104
-      prefix: --threads
   - id: use_cache
     type:
       - 'null'
       - boolean
-    doc: Use cached index for database input
+    doc: "use cached index for database input [default=false]"
     inputBinding:
-      position: 104
+      position: 1
       prefix: --use-cache
-  - id: use_title
+  - id: time
     type:
       - 'null'
       - boolean
-    doc: Use TITLE as the output file name (only for extraction mode)
+    doc: "measure time for compression/decompression"
     inputBinding:
-      position: 104
-      prefix: --use-title
+      position: 1
+      prefix: --time
+  - id: listed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: "Structure files named in the --file list (staged in the working directory so the names resolve)."
 outputs:
-  - id: stdout
+  - id: check_report
     type: stdout
-    doc: Standard output
+    doc: "Names of the checked inputs and validity messages."
+  - id: check_errors
+    type: stderr
+    doc: "Error messages for entries that are not valid FCZ files."
+stdout: foldcomp_check.txt
+stderr: foldcomp_check.log
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.listed_files ? inputs.listed_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/foldcomp:1.0.0--h7f5d12c_0
-stdout: foldcomp_check.out

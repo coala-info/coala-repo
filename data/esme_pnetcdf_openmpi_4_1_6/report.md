@@ -1,5 +1,14 @@
 # esme_pnetcdf_openmpi_4_1_6 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| esme_pnetcdf_openmpi_4_1_6_ncoffsets | PASS | Fixed optional switches and -v comma list; prints correct offsets (header 148 bytes, int time(2300) = 9200 bytes) for a netcdf-c CDF-1 test file. |
+| esme_pnetcdf_openmpi_4_1_6_ncvalidator | PASS | Fixed optional switches, writable staging for -x and exit code 1 for invalid files; PnetCDF test files: test_cdf.nc2 valid CDF-2, bad_dimid.nc1 reported invalid. |
+| esme_pnetcdf_openmpi_4_1_6_pnetcdf-config | PASS | Fixed optional switches; --all reports the PnetCDF version and the MPI compilers of this build. |
+| esme_pnetcdf_openmpi_4_1_6_pnetcdf_version | PASS | Rewrote from the help (was invented string positionals and a wrong baseCommand); -v -d -c -b print PnetCDF version, date, configure args and MPI compilers. |
+
 ## esme_pnetcdf_openmpi_4_1_6_ncvalidator
 
 ### Tool Description
@@ -40,7 +49,6 @@ Prints offsets of variables in a netCDF file.
 
 ### Original Help Text
 ```text
-ncoffsets: missing file name
 Usage: ncoffsets [-h] | [-x] | [-sgr] [-v var1[,...]] file
        [-h]            Print help
        [-v var1[,...]] Output for variable(s) <var1>,... only
@@ -122,13 +130,12 @@ PnetCDF Version Information
 
 ### Original Help Text
 ```text
-PnetCDF Version:    	1.14.0
-PnetCDF Release date:	November 11, 2024
-PnetCDF configure: 	--prefix=/usr/local --with-mpi=/usr/local --enable-shared=yes --enable-static=no --disable-dependency-tracking --enable-thread-safe
-MPICC:  /usr/local/bin/mpicc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /usr/local/include -fdebug-prefix-map=/opt/conda/conda-bld/esme_openmpi_4_1_6_1739309926923/work=/usr/local/src/conda/esme_pnetcdf_openmpi_4_1_6-1.14.0 -fdebug-prefix-map=/usr/local=/usr/local/src/conda-prefix
-MPICXX: /usr/local/bin/mpicxx -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /usr/local/include -fdebug-prefix-map=/opt/conda/conda-bld/esme_openmpi_4_1_6_1739309926923/work=/usr/local/src/conda/esme_pnetcdf_openmpi_4_1_6-1.14.0 -fdebug-prefix-map=/usr/local=/usr/local/src/conda-prefix
-MPIF77: /usr/local/bin/mpif77 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /usr/local/include -I/opt/conda/conda-bld/esme_openmpi_4_1_6_1739309926923/_build_env/include -fdebug-prefix-map=/opt/conda/conda-bld/esme_openmpi_4_1_6_1739309926923/work=/usr/local/src/conda/esme_pnetcdf_openmpi_4_1_6-1.14.0 -fdebug-prefix-map=/usr/local=/usr/local/src/conda-prefix -fallow-argument-mismatch
-MPIF90: /usr/local/bin/mpif90 -g -O2 -fallow-argument-mismatch
+Usage: pnetcdf_version [switches]
+       -v  : version number
+       -d  : release date
+       -c  : configure arguments used to build PnetCDF
+       -b  : MPI compilers used
+       -h  : print this help (available command-line options)
 ```
 
 ## Metadata

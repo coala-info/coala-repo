@@ -52,6 +52,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: solver_outputs
+    type:
+      type: array
+      items: File
+    doc: Solver output JSON files, named after the inputs with .out.json.
+    outputBinding:
+      glob: '*.out.json'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.solver_inputs)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mrpast:0.2--py312h8f4af18_0

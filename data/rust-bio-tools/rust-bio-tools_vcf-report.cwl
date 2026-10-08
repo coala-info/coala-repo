@@ -10,6 +10,8 @@ doc: "Creates report from a given VCF file including a visual plot for every var
 inputs:
   - id: fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file containing the reference genome for the visual plot
     inputBinding:
       position: 1
@@ -26,13 +28,19 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: VCF files to include (multi-sample). Group is the name that will be 
-      used in the oncoprint. There needs to be one corresponding BAM file for 
-      each sample of a VCF/BCF file. Please only use VCF/BCF files annotated by 
-      VEP
+    doc: 'BAM files in GROUP:SAMPLE=BAM_FILE form, one per sample of each VCF/BCF
+      file. BAM_FILE is the base name of a file in bam_files.'
     inputBinding:
       position: 102
       prefix: --bams
+  - id: bam_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - .bai
+    doc: Indexed BAM files named in bams; staged in the working directory
   - id: cells
     type:
       - 'null'
@@ -128,23 +136,46 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
-    doc: VCF files to include (multi-sample). Group is the name that will be 
-      used in the oncoprint. There needs to be one corresponding BAM file for 
-      each sample of a VCF/BCF file. Please only use VCF/BCF files annotated by 
-      VEP
+        items: string
+    doc: 'VCF files to include (multi-sample), in GROUP=VCF_FILE form. Group is
+      the name that will be used in the oncoprint. VCF_FILE is the base name of a
+      file in vcf_files. Please only use VCF/BCF files annotated by VEP'
     inputBinding:
       position: 102
       prefix: --vcfs
-outputs:
-  - id: output_path
+  - id: vcf_files
     type:
       - 'null'
-      - Directory
-    doc: Relative output path for the report files. Default value is the current
-      directory
+      - type: array
+        items: File
+    doc: VCF/BCF files named in vcfs; staged in the working directory
+  - id: output_path
+    type: string
+    doc: Relative output path for the report files (a new folder)
+    inputBinding:
+      position: 201
+outputs:
+  - id: report_dir
+    type: Directory
+    doc: Folder with the HTML report files
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_path)
+arguments:
+  - position: 200
+    valueFrom: --
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = [];
+        (inputs.vcf_files || []).forEach(function (f) { l.push(f); });
+        (inputs.bam_files || []).forEach(function (f) {
+          l.push(f);
+          (f.secondaryFiles || []).forEach(function (s) { l.push(s); });
+        });
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0

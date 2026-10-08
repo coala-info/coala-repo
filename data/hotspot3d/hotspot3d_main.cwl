@@ -66,7 +66,7 @@ inputs:
   - id: missense_only
     type:
       - 'null'
-      - string
+      - boolean
     doc: missense mutation only
     inputBinding:
       position: 101
@@ -98,7 +98,7 @@ inputs:
   - id: skip_silent
     type:
       - 'null'
-      - string
+      - boolean
     doc: skip silent mutations
     inputBinding:
       position: 101
@@ -145,25 +145,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weight-header
-  - id: output_dir_path
-    type: string
-    doc: Output directory of proximity files
+  - id: prep_dir
+    type: Directory
+    doc: Output directory of proximity files (the HotSpot3D preprocessing directory;
+      main passes it to search as --prep-dir)
     inputBinding:
       position: 102
       prefix: --output-dir
 outputs:
-  - id: output_dir
-    type: Directory
-    doc: Output directory of proximity files
-    outputBinding:
-      glob: $(inputs.output_dir_path)
   - id: output_prefix_files
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Pairwise, cluster and other result files written with the output prefix
+      (default 3D_Proximity)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $((inputs.output_prefix || '3D_Proximity') + '*')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

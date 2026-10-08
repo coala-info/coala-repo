@@ -1,9 +1,18 @@
 # poppunk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| poppunk_create-db | PASS | Built a database from the 29 S. pneumoniae assemblies of PopPUNK's test set: 406 pairwise core/accessory distances (core up to 0.04) plus fit plots. |
+| poppunk_fit-model | PASS | BGMM fit (K 4) on the test database gives 3 clusters (16, 12, 1 samples) with network score 0.54. |
+| poppunk_qc-db | PASS | QC of the test database with the repo's remove.txt removed all 10 listed samples plus 3 failing zero-distance QC, leaving 16 samples. |
+| poppunk_use-model | PASS | Applying the fitted BGMM model to the test database restores the same cluster assignments as the fit run. |
+
 ## poppunk_create-db
 
 ### Tool Description
-PopPUNK (POPulation Partitioning Using Nucleotide Kmers)
+Create a database of k-mer sketches and pairwise core/accessory distances between reference assemblies (poppunk --create-db).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/poppunk:2.7.8--py310h4d0eb5b_0
@@ -210,7 +219,7 @@ Other options:
 ## poppunk_qc-db
 
 ### Tool Description
-PopPUNK (POPulation Partitioning Using Nucleotide Kmers)
+Run quality control on a PopPUNK reference database and write the passing samples to a new database (poppunk --qc-db).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/poppunk:2.7.8--py310h4d0eb5b_0
@@ -412,7 +421,7 @@ Other options:
 ## poppunk_fit-model
 
 ### Tool Description
-PopPUNK (POPulation Partitioning Using Nucleotide Kmers)
+Fit a model (bgmm, dbscan, refine, lineage or threshold) to a QCed PopPUNK reference database and assign clusters (poppunk --fit-model).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/poppunk:2.7.8--py310h4d0eb5b_0
@@ -614,7 +623,7 @@ Other options:
 ## poppunk_use-model
 
 ### Tool Description
-PopPUNK (POPulation Partitioning Using Nucleotide Kmers)
+Apply a fitted model to a reference database to restore the database files (network and cluster assignments) (poppunk --use-model).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/poppunk:2.7.8--py310h4d0eb5b_0

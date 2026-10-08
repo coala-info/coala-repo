@@ -2,43 +2,58 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ncvalidator
 label: esme_pnetcdf_openmpi_4_1_6_ncvalidator
-doc: "Validate a netCDF file.\n\nTool homepage: https://parallel-netcdf.github.io/"
+doc: "Validate netCDF files\n\nTool homepage: https://parallel-netcdf.github.io/"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.file)
+        writable: true
 inputs:
-  - id: input_file
+  - id: file
     type: File
     doc: Input netCDF file name
     inputBinding:
       position: 1
-  - id: quiet_mode
+  - id: trace
     type:
       - 'null'
       - boolean
-    doc: Quiet mode (exit 1 when fail, 0 success)
+    doc: Turn on tracing mode, printing progress of validation
     inputBinding:
-      position: 102
-      prefix: -q
+      position: 0
+      prefix: -t
   - id: repair_header
     type:
       - 'null'
       - boolean
     doc: Repair in-place the null-byte padding in file header.
     inputBinding:
-      position: 102
+      position: 0
       prefix: -x
-  - id: trace_mode
+  - id: quiet
     type:
       - 'null'
       - boolean
-    doc: Turn on tracing mode, printing progress of validation
+    doc: Quiet mode (exit 1 when fail, 0 success)
     inputBinding:
-      position: 102
-      prefix: -t
+      position: 0
+      prefix: -q
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: repaired_file
+    type:
+      - 'null'
+      - File
+    doc: The input file after in-place repair (only with repair_header)
+    outputBinding:
+      glob: '$(inputs.repair_header ? inputs.file.basename : [])'
 hints:
   - class: DockerRequirement
-    dockerPull: 
-      quay.io/biocontainers/esme_pnetcdf_openmpi_4_1_6:1.14.0--hcc24ad4_0
+    dockerPull: quay.io/biocontainers/esme_pnetcdf_openmpi_4_1_6:1.14.0--hcc24ad4_0
 stdout: esme_pnetcdf_openmpi_4_1_6_ncvalidator.out
+successCodes:
+  - 0
+  - 1

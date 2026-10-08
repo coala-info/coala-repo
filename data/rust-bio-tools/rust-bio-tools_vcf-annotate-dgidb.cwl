@@ -53,7 +53,10 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-stdout: rust-bio-tools_vcf-annotate-dgidb.out
+stdout: annotated.bcf

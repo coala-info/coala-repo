@@ -1,5 +1,18 @@
 # prophyle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prophyle_analyze | PASS |  |
+| prophyle_classify | Failed | image problem: the image has no make, and prophyle runs make to check its binaries before this command, so it exits with error 127. |
+| prophyle_compile | Failed | image problem: the image has no make, and prophyle runs make to check its binaries before this command, so it exits with error 127. |
+| prophyle_compress | Failed | image problem: the image has no make, and prophyle runs make to check its binaries before this command, so it exits with error 127 (archive name and output fixed). |
+| prophyle_decompress | Failed | image problem: the image has no make, and prophyle runs make to check its binaries before this command, so it exits with error 127. |
+| prophyle_download | Not completed | Downloads large NCBI genome libraries over the network; too heavy for a minimal test. |
+| prophyle_footprint | Not completed | Needs a ProPhyle index, which cannot be built because prophyle index fails in this image. |
+| prophyle_index | Failed | image problem: the image has no make, and prophyle runs make to check its binaries before this command, so it exits with error 127. |
+
 ## prophyle_download
 
 ### Tool Description
@@ -248,44 +261,4 @@ optional arguments:
 
 ## Metadata
 - **Skill**: generated
-
-## prophyle_prophyle_classify
-
-### Tool Description
-Classify reads using a prophyle index.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/prophyle:0.3.3.2--py39h746d604_3
-- **Homepage**: https://github.com/karel-brinda/prophyle
-- **Package**: https://anaconda.org/channels/bioconda/packages/prophyle/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: prophyle classify [-h] [-k INT] [-m {h1,c1,h2,c2}] [-f {kraken,sam}]
-                         [-l STR] [-P] [-A] [-L] [-X] [-M] [-C] [-K]
-                         [-c [STR ...]]
-                         <index.dir> <reads1.fq> [<reads2.fq>]
-
-positional arguments:
-  <index.dir>       index directory
-  <reads1.fq>       first file with reads in FASTA/FASTQ (- for standard
-                    input)
-  <reads2.fq>       second file with reads in FASTA/FASTQ
-
-optional arguments:
-  -h, --help        show this help message and exit
-  -k INT            k-mer length [detect automatically from the index]
-  -m {h1,c1,h2,c2}  measure: h1=hit count, c1=coverage, h2=norm.hit count,
-                    c2=norm.coverage [h1]
-  -f {kraken,sam}   output format [sam]
-  -l STR            log file
-  -P                incorporate sequences and qualities into SAM records
-  -A                annotate assignments (using tax. information from NHX)
-  -L                replace read assignments by their LCA
-  -X                replace k-mer matches by their LCA
-  -M                mimic Kraken (equivalent to "-m h1 -f kraken -L -X")
-  -C                use C++ impl. of the assignment algorithm (experimental)
-  -K                force restarted search mode
-  -c [STR ...]      advanced configuration (a JSON dictionary)
-```
 

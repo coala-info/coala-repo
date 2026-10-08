@@ -1,9 +1,18 @@
 # necat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| necat_assemble | PASS | Galaxy test reads give one 12.3 kb contig (N50 12327) for the 13 kb genome. |
+| necat_bridge | PASS | Bridged contig bctg00000000 000000F of 12.3 kb, matching the Galaxy expected line and size. |
+| necat_config | PASS | Writes the default config file with all 23 keys. |
+| necat_correct | PASS | Galaxy test reads (test1.fa): 52 corrected reads, 75 kB, matching the Galaxy expected size (75000 +/- 2000). |
+
 ## necat_correct
 
 ### Tool Description
-necat.pl correct|assemble|bridge|config cfg_fname
+correct rawreads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/necat:0.0.1_update20200803--h5ca1c30_6
@@ -29,7 +38,7 @@ Usage: necat.pl correct|assemble|bridge|config cfg_fname
 ## necat_assemble
 
 ### Tool Description
-NECAT is a tool for assembling long reads.
+generate contigs
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/necat:0.0.1_update20200803--h5ca1c30_6

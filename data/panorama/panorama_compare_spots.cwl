@@ -4,18 +4,17 @@ baseCommand:
   - panorama
   - compare_spots
 label: panorama_compare_spots
-doc: "Compare and identify conserved spots across multiple pangenomes. This analysis
-  identifies genomic regions that are conserved across different pangenomes based
-  on gene family similarity and optionally analyzes systems relationships within these
-  regions.\n\nTool homepage: https://github.com/labgem/panorama"
+doc: "Compare and identify conserved spots across multiple pangenomes. This analysis\
+  \ identifies genomic regions that are conserved across different pangenomes based\
+  \ on gene family similarity and optionally analyzes systems relationships within\
+  \ these regions.\n\nTool homepage: https://github.com/labgem/panorama"
 inputs:
   - id: canonical
     type:
       - 'null'
       - boolean
-    doc: Include canonical versions of systems in the analysis. This provides 
-      additional system representations that may be useful for comprehensive 
-      systems analysis.
+    doc: Include canonical versions of systems in the analysis. This provides additional
+      system representations that may be useful for comprehensive systems analysis.
     inputBinding:
       position: 101
       prefix: --canonical
@@ -23,9 +22,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to tab-separated file with pre-computed clustering results 
-      (cluster_name\tfamiliy_id format). If not provided, clustering will be 
-      performed.
+    doc: Path to tab-separated file with pre-computed clustering results (cluster_name\tfamiliy_id
+      format). If not provided, clustering will be performed.
     inputBinding:
       position: 101
       prefix: --cluster
@@ -107,8 +105,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of sequences per cluster representative (cluster method 
-      only)
+    doc: Maximum number of sequences per cluster representative (cluster method only)
     inputBinding:
       position: 101
       prefix: --cluster_max_seqs
@@ -133,8 +130,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Search sensitivity (cluster method only). Higher values = more 
-      sensitive but slower
+    doc: Search sensitivity (cluster method only). Higher values = more sensitive
+      but slower
     inputBinding:
       position: 101
       prefix: --cluster_sensitivity
@@ -158,9 +155,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: "Minimum ratio of genomes in which a gene family must have multiple copies
-      to be considered 'duplicated'. This affects multigenic family detection for
-      spot border analysis. Range: 0.0-1.0. Default: 0.05 (5%)"
+    doc: 'Minimum ratio of genomes in which a gene family must have multiple copies
+      to be considered ''duplicated''. This affects multigenic family detection for
+      spot border analysis. Range: 0.0-1.0. Default: 0.05 (5%)'
     inputBinding:
       position: 101
       prefix: --dup_margin
@@ -176,8 +173,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "GFRR metric used for spots clustering. 'min_gfrr': conservative metric (shared/smaller_set),
-      'max_gfrr': liberal metric (shared/larger_set). Default: min_gfrr"
+    doc: 'GFRR metric used for spots clustering. ''min_gfrr'': conservative metric
+      (shared/smaller_set), ''max_gfrr'': liberal metric (shared/larger_set). Default:
+      min_gfrr'
     inputBinding:
       position: 101
       prefix: --gfrr_metrics
@@ -195,16 +193,15 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Keep temporary files after completion (useful for debugging and 
-      inspection)
+    doc: Keep temporary files after completion (useful for debugging and inspection)
     inputBinding:
       position: 101
       prefix: --keep_tmp
   - id: log
     type:
       - 'null'
-      - File
-    doc: log output file
+      - string
+    doc: Log output file name
     inputBinding:
       position: 101
       prefix: --log
@@ -212,9 +209,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "MMSeqs2 clustering method selection: 'linclust' - fast linear-time clustering
-      (less sensitive), 'cluster' - slower but more sensitive clustering. Default:
-      linclust"
+    doc: 'MMSeqs2 clustering method selection: ''linclust'' - fast linear-time clustering
+      (less sensitive), ''cluster'' - slower but more sensitive clustering. Default:
+      linclust'
     inputBinding:
       position: 101
       prefix: --method
@@ -223,9 +220,9 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: FRR (Family Relatedness Relationship) cutoff values for similarity 
-      assessment. min_gfrr = shared_families / min(families1, families2), 
-      max_gfrr = shared_families / max(families1, families2) - 0.5 - 0.8
+    doc: FRR (Family Relatedness Relationship) cutoff values for similarity assessment.
+      min_gfrr = shared_families / min(families1, families2), max_gfrr = shared_families
+      / max(families1, families2) - 0.5 - 0.8
     inputBinding:
       position: 101
       prefix: --gfrr_cutoff
@@ -234,18 +231,31 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Path(s) to system model files. Multiple model files can be specified 
-      (space-separated) for different system sources. Must be provided in the 
-      same order as --sources. Required if --systems is used.
+    doc: Path(s) to system model files. Multiple model files can be specified (space-separated)
+      for different system sources. Must be provided in the same order as --sources.
+      Required if --systems is used.
     inputBinding:
       position: 101
       prefix: --models
+  - id: model_json_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: System model .json files named in the model list file(s). They are staged
+      in the working directory, so the list must name them by file name.
   - id: pangenomes
     type: File
     doc: Path to TSV file containing list of pangenome .h5 files to compare
     inputBinding:
       position: 101
       prefix: --pangenomes
+  - id: pangenome_files
+    type:
+      type: array
+      items: File
+    doc: Pangenome .h5 files named in the pangenomes list. They are staged in the
+      working directory, so the list must name them by file name (second column).
   - id: seed
     type:
       - 'null'
@@ -259,9 +269,9 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Name(s) of systems sources corresponding to model files. Multiple 
-      sources can be specified (space-separated). Must be provided in the same 
-      order as --models. Required if --systems is used.
+    doc: Name(s) of systems sources corresponding to model files. Multiple sources
+      can be specified (space-separated). Must be provided in the same order as --models.
+      Required if --systems is used.
     inputBinding:
       position: 101
       prefix: --sources
@@ -269,9 +279,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Enable systems analysis to examine relationships between conserved 
-      spots and detected biological systems. This adds systems linkage graphs 
-      and enriched annotations to the output.
+    doc: Enable systems analysis to examine relationships between conserved spots
+      and detected biological systems. This adds systems linkage graphs and enriched
+      annotations to the output.
     inputBinding:
       position: 101
       prefix: --systems
@@ -287,8 +297,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -303,8 +313,19 @@ outputs:
     doc: Output directory where result files will be written
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (with log)
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pangenome_files)
+      - $(inputs.model_json_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0

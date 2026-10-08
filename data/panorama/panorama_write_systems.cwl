@@ -42,8 +42,8 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
-    doc: log output file
+      - string
+    doc: Log output file name
     inputBinding:
       position: 101
       prefix: --log
@@ -51,19 +51,25 @@ inputs:
     type:
       type: array
       items: File
-    doc: Path to model list file. You can specify multiple models from different
-      source. For that separate the model list files by a space and make sure 
-      you give them in the same order as the sources.
+    doc: Path to model list file. You can specify multiple models from different source.
+      For that separate the model list files by a space and make sure you give them
+      in the same order as the sources.
     inputBinding:
       position: 101
       prefix: --models
+  - id: model_json_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: System model .json files named in the model list file(s). They are staged
+      in the working directory, so the list must name them by file name.
   - id: organisms
     type:
       - 'null'
       - type: array
         items: string
-    doc: List of organisms to write. If not specified, all organisms will be 
-      written.
+    doc: List of organisms to write. If not specified, all organisms will be written.
     inputBinding:
       position: 101
       prefix: --organisms
@@ -77,19 +83,23 @@ inputs:
       position: 101
       prefix: --output_formats
   - id: pangenomes
-    type:
-      type: array
-      items: File
+    type: File
     doc: A list of pangenome .h5 files in .tsv file
     inputBinding:
       position: 101
       prefix: --pangenomes
+  - id: pangenome_files
+    type:
+      type: array
+      items: File
+    doc: Pangenome .h5 files named in the pangenomes list. They are staged in the
+      working directory, so the list must name them by file name (second column).
   - id: partition
     type:
       - 'null'
       - boolean
-    doc: Write a heatmap file with for each organism, partition of the systems. 
-      If organisms are specified, heatmap will be write only for them.
+    doc: Write a heatmap file with for each organism, partition of the systems. If
+      organisms are specified, heatmap will be write only for them.
     inputBinding:
       position: 101
       prefix: --partition
@@ -97,8 +107,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Project the systems on organisms. If organisms are specified, 
-      projection will be done only for them.
+    doc: Project the systems on organisms. If organisms are specified, projection
+      will be done only for them.
     inputBinding:
       position: 101
       prefix: --projection
@@ -107,9 +117,9 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Write a proksee file with systems. If you only want the systems with 
-      genes, gene families and partition, use base value.Write RGPs, spots or 
-      modules -split by `,` - if you want them.
+    doc: Write a proksee file with systems. If you only want the systems with genes,
+      gene families and partition, use base value.Write RGPs, spots or modules -split
+      by `,` - if you want them.
     inputBinding:
       position: 101
       prefix: --proksee
@@ -117,9 +127,8 @@ inputs:
     type:
       type: array
       items: string
-    doc: Name of the systems sources. You can specify multiple sources. For that
-      separate names by a space and make sure you give them in the same order as
-      the sources.
+    doc: Name of the systems sources. You can specify multiple sources. For that separate
+      names by a space and make sure you give them in the same order as the sources.
     inputBinding:
       position: 101
       prefix: --sources
@@ -134,8 +143,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -150,8 +159,19 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (with log)
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pangenome_files)
+      - $(inputs.model_json_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0

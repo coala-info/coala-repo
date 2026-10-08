@@ -1,5 +1,23 @@
 # vpt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vpt_compile-tile-segmentation | PASS | synthetic data: tile result planted from the repo's cells_cellpose.parquet, because the image has no segmentation plugin to make tiles; compiled output is correct. |
+| vpt_convert-geometry | PASS |  |
+| vpt_convert-to-ome | PASS |  |
+| vpt_convert-to-rgb-ome | PASS |  |
+| vpt_derive-entity-metadata | PASS |  |
+| vpt_extract-image-patch | PASS |  |
+| vpt_generate-segmentation-metrics | PASS |  |
+| vpt_partition-transcripts | PASS |  |
+| vpt_prepare-segmentation | PASS |  |
+| vpt_run-segmentation | Failed | image problem: no segmentation plugin (vpt_plugin_watershed, cellpose, stardist) in the image, so the run finishes but finds no cells |
+| vpt_run-segmentation-on-tile | Failed | image problem: no segmentation plugin (vpt_plugin_watershed, cellpose, stardist) in the image, so the tile result has zero cells |
+| vpt_sum-signals | PASS |  |
+| vpt_update-vzg | PASS |  |
+
 ## vpt_run-segmentation
 
 ### Tool Description
@@ -71,40 +89,6 @@ Optional arguments:
   -h, --help            Show this help message and exit
 ```
 
-## vpt_segmentation
-
-### Tool Description
-vpt: error: argument : invalid choice: 'segmentation' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'segmentation' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_minimal
-
-### Tool Description
-vpt: error: argument : invalid choice: 'minimal' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'minimal' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
 ## vpt_prepare-segmentation
 
 ### Tool Description
@@ -168,108 +152,6 @@ Optional arguments:
   -h, --help            Show this help message and exit
 ```
 
-## vpt_Generates
-
-### Tool Description
-vpt: error: argument : invalid choice: 'Generates' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'Generates' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_used
-
-### Tool Description
-vpt: error: argument : invalid choice: 'used' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'used' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_specification
-
-### Tool Description
-vpt: error: argument : invalid choice: 'specification' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'specification' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_algorithm
-
-### Tool Description
-vpt: error: argument : invalid choice: 'algorithm' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'algorithm' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_stain
-
-### Tool Description
-vpt: error: argument : invalid choice: 'stain' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'stain' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_transformation
-
-### Tool Description
-vpt: error: argument : invalid choice: 'transformation' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'transformation' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
 ## vpt_run-segmentation-on-tile
 
 ### Tool Description
@@ -301,40 +183,6 @@ Optional arguments:
   --overwrite           Set flag if you want to use non empty directory and
                         agree that files can be over-written.
   -h, --help            Show this help message and exit
-```
-
-## vpt_Executes
-
-### Tool Description
-vpt: error: argument : invalid choice: 'Executes' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'Executes' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_both
-
-### Tool Description
-vpt: error: argument : invalid choice: 'both' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'both' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
 ```
 
 ## vpt_compile-tile-segmentation
@@ -370,23 +218,6 @@ Optional arguments:
   --help                Show this help message and exit
 ```
 
-## vpt_Combines
-
-### Tool Description
-vpt: error: argument : invalid choice: 'Combines' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'Combines' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
 ## vpt_derive-entity-metadata
 
 ### Tool Description
@@ -419,57 +250,6 @@ Optional arguments:
   --overwrite           Set flag if you want to use non empty directory and
                         agree that files can be over-written.
   -h, --help            Show this help message and exit
-```
-
-## vpt_Uses
-
-### Tool Description
-vpt: error: argument : invalid choice: 'Uses' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'Uses' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_geometric
-
-### Tool Description
-vpt: error: argument : invalid choice: 'geometric' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'geometric' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_include
-
-### Tool Description
-vpt: error: argument : invalid choice: 'include' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'include' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
 ```
 
 ## vpt_partition-transcripts
@@ -513,40 +293,6 @@ Optional arguments:
   --overwrite           Set flag if you want to use non empty directory and
                         agree that files can be over-written.
   -h, --help            Show this help message and exit
-```
-
-## vpt_Outputs
-
-### Tool Description
-vpt: error: argument : invalid choice: 'Outputs' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'Outputs' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_column
-
-### Tool Description
-vpt: error: argument : invalid choice: 'column' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'column' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
 ```
 
 ## vpt_sum-signals
@@ -600,57 +346,6 @@ Optional arguments:
   -h, --help            Show this help message and exit
 ```
 
-## vpt_summed
-
-### Tool Description
-vpt: error: argument : invalid choice: 'summed' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'summed' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_intensity
-
-### Tool Description
-vpt: error: argument : invalid choice: 'intensity' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'intensity' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_effect
-
-### Tool Description
-vpt: error: argument : invalid choice: 'effect' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'effect' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
 ## vpt_update-vzg
 
 ### Tool Description
@@ -693,23 +388,6 @@ Optional arguments:
   --overwrite           Set flag if you want to use non empty directory and
                         agree that files can be over-written.
   -h, --help            Show this help message and exit
-```
-
-## vpt_boundaries
-
-### Tool Description
-vpt: error: argument : invalid choice: 'boundaries' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'boundaries' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
 ```
 
 ## vpt_convert-geometry
@@ -771,57 +449,6 @@ Optional arguments:
   -h, --help            Show this help message and exit
 ```
 
-## vpt_tool
-
-### Tool Description
-vpt: error: argument : invalid choice: 'tool' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'tool' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_assigned
-
-### Tool Description
-vpt: error: argument : invalid choice: 'assigned' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'assigned' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_other
-
-### Tool Description
-vpt: error: argument : invalid choice: 'other' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'other' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
 ## vpt_convert-to-ome
 
 ### Tool Description
@@ -852,23 +479,6 @@ Optional arguments:
   --overwrite           Set flag if you want to use non empty directory and
                         agree that files can be over-written.
   -h, --help            Show this help message and exit
-```
-
-## vpt_produced
-
-### Tool Description
-vpt: error: argument : invalid choice: 'produced' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'produced' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
 ```
 
 ## vpt_convert-to-rgb-ome
@@ -978,40 +588,6 @@ Optional arguments:
   -h, --help            Show this help message and exit
 ```
 
-## vpt_Extracts
-
-### Tool Description
-vpt: error: argument : invalid choice: 'Extracts' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'Extracts' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_MERSCOPE
-
-### Tool Description
-vpt: error: argument : invalid choice: 'MERSCOPE' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'MERSCOPE' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
 ## vpt_generate-segmentation-metrics
 
 ### Tool Description
@@ -1097,142 +673,6 @@ Optional arguments:
   --overwrite           Set flag if you want to use non empty directory and
                         agree that files can be over-written.
   -h, --help            Show this help message and exit
-```
-
-## vpt_Computes
-
-### Tool Description
-vpt: error: argument : invalid choice: 'Computes' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'Computes' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_locally
-
-### Tool Description
-vpt: error: argument : invalid choice: 'locally' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'locally' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_Named
-
-### Tool Description
-vpt: error: argument : invalid choice: 'Named' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'Named' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_AWS
-
-### Tool Description
-vpt: error: argument : invalid choice: 'AWS' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'AWS' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_needed
-
-### Tool Description
-vpt: error: argument : invalid choice: 'needed' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'needed' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_gcloud
-
-### Tool Description
-vpt: error: argument : invalid choice: 'gcloud' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'gcloud' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_crit
-
-### Tool Description
-vpt: error: argument : invalid choice: 'crit' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'crit' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-```
-
-## vpt_written
-
-### Tool Description
-vpt: error: argument : invalid choice: 'written' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/Vizgen/vizgen-postprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: vpt [OPTIONS] COMMAND [arguments]
-vpt: error: argument : invalid choice: 'written' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics')
 ```
 
 ## Metadata

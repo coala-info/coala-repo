@@ -1,35 +1,44 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: met4j
+baseCommand:
+  - met4j
+  - convert.Sbml2Tab
 label: met4j_sbml2tab
-doc: "Create a tabulated file listing reaction attributes from a SBML file\n\nTool
-  homepage: https://forgemia.inra.fr/metexplore/met4j/-/blob/master/met4j-toolbox/README.md"
+doc: "Create a tabulated file listing reaction attributes from a SBML file\n\nTool homepage: https://forgemia.inra.fr/metexplore/met4j/-/blob/master/met4j-toolbox/README.md"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
-  - id: package_function
-    type: string
-    doc: Package and function to execute (e.g., convert.Sbml2Graph)
+  - id: input_sbml
+    type: File
+    doc: Sbml file
     inputBinding:
       position: 1
-  - id: input_sbml_file
-    type: File
-    doc: Input SBML file
+      prefix: -i
+  - id: irreversible_string
+    type: ['null', string]
+    doc: '[-->] String for irreversible reaction (default: -->)'
     inputBinding:
-      position: 102
-      prefix: --input
-  - id: output_file_path
+      position: 2
+      prefix: -irr
+  - id: output
     type: string
-    doc: Output or path parameter `output_file_path`
+    default: out.tsv
+    doc: '[out.tsv] Tabulated file (default: out.tsv)'
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 3
+      prefix: -o
+  - id: reversible_string
+    type: ['null', string]
+    doc: '[<==>] String for reversible reaction (default: <==>)'
+    inputBinding:
+      position: 4
+      prefix: -rev
 outputs:
   - id: output_file
     type: File
-    doc: Output file path
+    doc: Output file written by -o
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/met4j:2.2.2--hdfd78af_0

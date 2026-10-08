@@ -8,7 +8,9 @@ doc: "Analyze classified reads based on an index directory or phylogenetic tree.
   \nTool homepage: https://github.com/karel-brinda/prophyle"
 inputs:
   - id: index_dir_or_tree
-    type: string
+    type:
+      - Directory
+      - File
     doc: index directory or phylogenetic tree
     inputBinding:
       position: 1

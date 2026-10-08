@@ -181,12 +181,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir1
+      valueFrom: $(self.basename)
   - id: workdir2
     type: Directory
     doc: path to working directory of the second HiC data sample to merge
     inputBinding:
       position: 101
       prefix: --workdir2
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
@@ -198,6 +200,13 @@ outputs:
     doc: path to a new output folder
     outputBinding:
       glob: $(inputs.output_folder)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir1)
+        writable: true
+      - entry: $(inputs.workdir2)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tadbit:1.0.1--py310h2a84d7f_1

@@ -43,15 +43,19 @@ inputs:
     inputBinding:
       position: 102
       prefix: --static
+  - id: out
+    type: string
+    doc: write output to FILE; by default, output is written to the terminal (standard output)
+    default: filtered.json
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: write output to FILE; by default, output is written to the terminal 
-      (standard output)
+    type: File
+    doc: Filtered typing result in JSON format
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/microhapulator:0.8.4--pyhdfd78af_0

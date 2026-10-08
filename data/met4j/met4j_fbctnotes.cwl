@@ -1,34 +1,31 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: met4j
+baseCommand:
+  - met4j
+  - convert.FbcToNotes
 label: met4j_fbctnotes
-doc: "Met4j-Toolbox: Applications classified by package.\n\nTool homepage: https://forgemia.inra.fr/metexplore/met4j/-/blob/master/met4j-toolbox/README.md"
+doc: "Convert FBC package annotations to sbml html notes\n\nTool homepage: https://forgemia.inra.fr/metexplore/met4j/-/blob/master/met4j-toolbox/README.md"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
-  - id: package_function
-    type: string
-    doc: Package and function to execute (e.g., convert.Sbml2Graph)
+  - id: input_sbml
+    type: File
+    doc: input SBML file
     inputBinding:
       position: 1
-  - id: input_file
-    type: File
-    doc: Input file
-    inputBinding:
-      position: 102
       prefix: -i
-  - id: output_file_path
+  - id: output
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output SBML file
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 2
+      prefix: -o
 outputs:
   - id: output_file
     type: File
-    doc: Output file
+    doc: Output file written by -o
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/met4j:2.2.2--hdfd78af_0

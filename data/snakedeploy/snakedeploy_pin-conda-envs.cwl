@@ -4,13 +4,16 @@ baseCommand:
   - snakedeploy
   - pin-conda-envs
 label: snakedeploy_pin-conda-envs
-doc: "Pin/lock given conda environment definition files (in YAML format) into a list
+doc: 'Pin/lock given conda environment definition files (in YAML format) into a list
   of explicit package URLs including checksums, stored in a file <prefix>.<platform>.pin.txt
   with prefix being the path to the original definition file and <platform> being
   the name of the platform the pinning was performed on (e.g. linux-64). The resulting
   file will be automatically used by Snakemake to restore exactly the pinned environment.
-  Also you can use it manually, e.g. with 'conda create -f <path-to-pin-file> -n <env-name>'.\n\
-  \nTool homepage: https://github.com/snakemake/snakedeploy"
+  Also you can use it manually, e.g. with ''conda create -f <path-to-pin-file> -n
+  <env-name>''.
+
+
+  Tool homepage: https://github.com/snakemake/snakedeploy'
 inputs:
   - id: envfiles
     type:
@@ -45,9 +48,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Regular expression for deriving an entity name from the environment 
-      file name (will be used for adding a label and for title and description).
-      Has to contain a group 'entity' (e.g. '(?P<entity>.+)/environment.yaml').
+    doc: Regular expression for deriving an entity name from the environment file
+      name (will be used for adding a label and for title and description). Has to
+      contain a group 'entity' (e.g. '(?P<entity>.+)/environment.yaml').
     inputBinding:
       position: 102
       prefix: --entity-regex
@@ -55,8 +58,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Add a label to the PR. Has to be used in combination with 
-      --entity-regex.
+    doc: Add a label to the PR. Has to be used in combination with --entity-regex.
     inputBinding:
       position: 102
       prefix: --pr-add-label
@@ -72,7 +74,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pin_files
+    type:
+      type: array
+      items: File
+    doc: Pinned environments written next to the input files as <prefix>.<platform>.pin.txt
+    outputBinding:
+      glob: '*.pin.txt'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snakedeploy:0.16.0--pyhdfd78af_0
 stdout: snakedeploy_pin-conda-envs.out
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.envfiles)

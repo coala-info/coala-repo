@@ -1,5 +1,14 @@
 # seroba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seroba_createDBs | PASS |  |
+| seroba_getPneumocat | Failed | image problem: the download works but the tool crashes in yaml.load() because the image has a PyYAML version that needs a Loader argument |
+| seroba_runSerotyping | PASS |  |
+| seroba_summary | PASS |  |
+
 ## seroba_getPneumocat
 
 ### Tool Description
@@ -27,23 +36,6 @@ positional arguments:
 
 optional arguments:
   -h, --help    show this help message and exit
-```
-
-## seroba_downloads
-
-### Tool Description
-Seroba command-line tool
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seroba:1.0.2--pyhdfd78af_1
-- **Homepage**: https://github.com/sanger-pathogens/seroba
-- **Package**: https://anaconda.org/channels/bioconda/packages/seroba/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: seroba <command> <options>
-seroba: error: argument : invalid choice: 'downloads' (choose from 'getPneumocat', 'createDBs', 'runSerotyping', 'summary', 'version')
 ```
 
 ## seroba_createDBs
@@ -104,23 +96,6 @@ Other options:
                         report)
   --coverage COVERAGE   threshold for k-mer coverage of the reference sequence
                         , default = 20
-```
-
-## seroba_indetify
-
-### Tool Description
-Seroba command-line tool
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seroba:1.0.2--pyhdfd78af_1
-- **Homepage**: https://github.com/sanger-pathogens/seroba
-- **Package**: https://anaconda.org/channels/bioconda/packages/seroba/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: seroba <command> <options>
-seroba: error: argument : invalid choice: 'indetify' (choose from 'getPneumocat', 'createDBs', 'runSerotyping', 'summary', 'version')
 ```
 
 ## seroba_summary

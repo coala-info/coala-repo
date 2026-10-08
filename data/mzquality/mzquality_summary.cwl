@@ -1,22 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qcli.py
+baseCommand:
+  - summary
 label: mzquality_summary
-doc: "CLI to the mzQuality\n\nmzQuality is a Tool for quality monitoring and reporting
-  of mass spectrometry measurements.\n\nTool homepage: https://github.com/hankemeierlab/mzQuality"
+doc: "Report a summary of the measurements (batches, samples and compounds) as JSON on standard output.\n\nmzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements. The image ENTRYPOINT is /files/mzQuality/qcli.py (not on PATH), so the command words start at the subcommand.\n\nTool homepage: https://github.com/hankemeierlab/mzQuality"
 inputs:
-  - id: method
-    type: string
-    doc: 'The method to run. Supported methods are: measurement summary, blank_effect,
-      rt_shifts, qc_correction, rsd qc, rsd replicates, rsd internal standard(s),
-      plot information compound(s), export results as samples vs. compounds'
+  - id: mea_file
+    type: File
+    doc: Measurements file (tab-separated with columns sample, aliquot, type, injection, replicate, batch, order, datetime, compound, rt, area, compound_is, rt_is, area_is)
     inputBinding:
       position: 1
+      prefix: --mea-file
 outputs:
-  - id: stdout
+  - id: summary_json
     type: stdout
-    doc: Standard output
+    doc: JSON summary
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
-stdout: mzquality_summary.out
+stdout: mzquality_summary.json

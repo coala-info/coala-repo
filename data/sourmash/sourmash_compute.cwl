@@ -4,19 +4,16 @@ baseCommand:
   - sourmash
   - compute
 label: sourmash_compute
-doc: "Create MinHash sketches at k-mer sizes of 21, 31 and 51, for\nall FASTA and
-  FASTQ files in the current directory, and save them in\nsignature files ending in
-  '.sig'. You can rapidly compare these files\nwith `compare` and query them with
-  `search`, among other operations; see the full documentation at http://sourmash.rtfd.io/.\n\
-  The key options for compute are:\n\n * `-k/--ksize <int>[, <int>]: k-mer size(s)
-  to use, e.g. -k 21,31,51\n * `-n/--num <int>` or `--scaled <int>`: set size or resolution
-  of sketches\n * `--track-abundance`: track abundances of hashes (default False)\n\
-  \ * `--dna or --protein`: nucleotide and/or protein signatures (default `--dna`)\n\
-  \ * `--merge <name>`: compute a merged signature across all inputs.\n * `--singleton`:
-  compute individual signatures for each sequence.\n * `--name-from-first`: set name
-  of signature from first sequence in file.\n * `-o/--output`: save all computed signatures
-  to this file.\n\nPlease see -h for all of the options as well as more detailed help.\n\
-  \n---\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
+doc: "Create MinHash sketches at k-mer sizes of 21, 31 and 51, for\nall FASTA and FASTQ files in the current\
+  \ directory, and save them in\nsignature files ending in '.sig'. You can rapidly compare these files\n\
+  with `compare` and query them with `search`, among other operations; see the full documentation at http://sourmash.rtfd.io/.\n\
+  The key options for compute are:\n\n * `-k/--ksize <int>[, <int>]: k-mer size(s) to use, e.g. -k 21,31,51\n\
+  \ * `-n/--num <int>` or `--scaled <int>`: set size or resolution of sketches\n * `--track-abundance`:\
+  \ track abundances of hashes (default False)\n * `--dna or --protein`: nucleotide and/or protein signatures\
+  \ (default `--dna`)\n * `--merge <name>`: compute a merged signature across all inputs.\n * `--singleton`:\
+  \ compute individual signatures for each sequence.\n * `--name-from-first`: set name of signature from\
+  \ first sequence in file.\n * `-o/--output`: save all computed signatures to this file.\n\nPlease see\
+  \ -h for all of the options as well as more detailed help.\n\n---\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
 inputs:
   - id: filenames
     type:
@@ -117,8 +114,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: name the signature generated from each file after the first record in 
-      the file
+    doc: name the signature generated from each file after the first record in the file
     inputBinding:
       position: 102
       prefix: --name-from-first
@@ -374,6 +370,13 @@ outputs:
     doc: output computed signatures to this directory
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: sketches
+    type:
+      type: array
+      items: File
+    doc: signature files written to the working directory
+    outputBinding:
+      glob: '*.sig'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -13,6 +13,13 @@ inputs:
     doc: Specifies yaml config
     inputBinding:
       position: 1
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Graph (GFA) and subset/group files named in the YAML config; staged in the
+      working directory so the names in the config resolve
   - id: dry_run
     type:
       - 'null'
@@ -51,6 +58,10 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.data_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panacus:0.4.1--hc1c3326_0

@@ -1,74 +1,40 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: polap
+baseCommand:
+  - polap
+  - prepare-polishing
 label: polap_prepare-polishing
-doc: "Plant organelle DNA long-read assembly pipeline.\n\nTool homepage: https://github.com/goshng/polap"
+doc: "Prepare short-read polishing with FMLRC (builds the short-read index used by polish).\n\
+  \nTool homepage: https://github.com/goshng/polap"
 inputs:
-  - id: inum
-    type:
-      - 'null'
-      - int
-    doc: Integer parameter
-    inputBinding:
-      position: 101
-      prefix: --inum
-  - id: jnum
-    type:
-      - 'null'
-      - int
-    doc: Integer parameter
-    inputBinding:
-      position: 101
-      prefix: --jnum
-  - id: long_reads
-    type:
-      - 'null'
-      - File
-    doc: Long-read file
-    inputBinding:
-      position: 101
-      prefix: --long-reads
-  - id: outdir
-    type:
-      - 'null'
-      - string
-    doc: Output directory
-    inputBinding:
-      position: 101
-      prefix: --outdir
   - id: short_read1
-    type:
-      - 'null'
-      - File
-    doc: First short-read file
+    type: File
+    doc: Short-read FASTQ file 1.
     inputBinding:
       position: 101
-      prefix: --short-read1
+      prefix: -a
   - id: short_read2
     type:
       - 'null'
       - File
-    doc: Second short-read file
+    doc: Short-read FASTQ file 2.
     inputBinding:
       position: 101
-      prefix: --short-read2
-  - id: single_min
-    type:
-      - 'null'
-      - int
-    doc: Minimum value for single reads
+      prefix: -b
+  - id: outdir
+    type: string
+    doc: Output folder name.
+    default: o
     inputBinding:
       position: 101
-      prefix: --single-min
+      prefix: -o
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
-  - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory
+    doc: Standard output (log).
+  - id: outdir_out
+    type: Directory
+    doc: Output folder with all polap results.
     outputBinding:
       glob: $(inputs.outdir)
 hints:

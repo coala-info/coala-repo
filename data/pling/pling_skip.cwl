@@ -2,32 +2,32 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pling
 label: pling_skip
-doc: "Integerisation method: \"align\" for alignment, \"skip\" to skip integerisation
-  altogether. Make sure to input a unimog file if skipping integerisation.\n\nTool
-  homepage: https://github.com/iqbal-lab-org/pling"
+doc: "Cluster plasmids into communities by containment and DCJ-Indel distance, skipping integerisation\
+  \ and reading the integer gene orders from a given unimog file (integerisation method 'skip').\n\
+  \nTool homepage: https://github.com/iqbal-lab-org/pling"
 inputs:
   - id: genomes_list
     type: File
-    doc: Path to list of fasta file paths.
+    doc: Path to list of fasta file paths. Give each fasta by its file name and pass the files
+      in genome_files.
     inputBinding:
       position: 1
+  - id: genome_files
+    type:
+      type: array
+      items: File
+    doc: Fasta files named in genomes_list; staged in the working directory so the names resolve.
   - id: output_dir
     type: string
     doc: Path to output directory.
     inputBinding:
       position: 2
-  - id: method
-    type: string
-    doc: 'Integerisation method: "align" for alignment, "skip" to skip integerisation
-      altogether. Make sure to input a unimog file if skipping integerisation.'
-    inputBinding:
-      position: 3
   - id: batch_size
     type:
       - 'null'
       - int
-    doc: How many pairs of genomes to run together in one go (for integerisation
-      from alignment and DCJ calculation steps).
+    doc: How many pairs of genomes to run together in one go (for integerisation from alignment
+      and DCJ calculation steps).
     inputBinding:
       position: 104
       prefix: --batch_size
@@ -35,8 +35,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of connections a plasmid need to be considered a hub 
-      plasmid.
+    doc: Minimum number of connections a plasmid need to be considered a hub plasmid.
     inputBinding:
       position: 104
       prefix: --bh_connectivity
@@ -44,8 +43,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Maximum number of edge density between hub plasmid neighbours to label 
-      the plasmid as hub.
+    doc: Maximum number of edge density between hub plasmid neighbours to label the plasmid
+      as hub.
     inputBinding:
       position: 104
       prefix: --bh_neighbours_edge_density
@@ -61,9 +60,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Total number of cores/threads. Put the maximum number of threads you 
-      request in the resources tsv here. (This argument is passed on to 
-      snakemake's --cores argument.)
+    doc: Total number of cores/threads. Put the maximum number of threads you request in the
+      resources tsv here. (This argument is passed on to snakemake's --cores argument.)
     inputBinding:
       position: 104
       prefix: --cores
@@ -87,8 +85,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Threshold for percentage of shared sequence between blocks (for 
-      integerisation from alignment and for containment calculation).
+    doc: Threshold for percentage of shared sequence between blocks (for integerisation from
+      alignment and for containment calculation).
     inputBinding:
       position: 104
       prefix: --identity
@@ -96,27 +94,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: ILP solver to use. Default is GLPK, which is slower but is bundled with
-      pling and is free. If using gurobi, make sure you have a valid license and
-      gurobi_cl is in your PATH.
+    doc: ILP solver to use. Default is GLPK, which is slower but is bundled with pling and
+      is free. If using gurobi, make sure you have a valid license and gurobi_cl is in your
+      PATH.
     inputBinding:
       position: 104
       prefix: --ilp_solver
-  - id: min_indel_size
-    type:
-      - 'null'
-      - int
-    doc: Minimum size for an indel to be treated as a block (for integerisation 
-      from alignment).
-    inputBinding:
-      position: 104
-      prefix: --min_indel_size
   - id: output_type
     type:
       - 'null'
       - string
-    doc: Whether to output networks as html visualisations, cytoscape formatted 
-      json, or both.
+    doc: Whether to output networks as html visualisations, cytoscape formatted json, or both.
     inputBinding:
       position: 104
       prefix: --output_type
@@ -124,8 +112,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Metadata to add beside plasmid ID on the visualisation graph. Must be a
-      tsv with a single column, with data in the same order as in genomes_list.
+    doc: Metadata to add beside plasmid ID on the visualisation graph. Must be a tsv with
+      a single column, with data in the same order as in genomes_list.
     inputBinding:
       position: 104
       prefix: --plasmid_metadata
@@ -141,8 +129,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Cluster regions rather than complete genomes. Assumes regions are taken
-      from circular plasmids.
+    doc: Cluster regions rather than complete genomes. Assumes regions are taken from circular
+      plasmids.
     inputBinding:
       position: 104
       prefix: --regions
@@ -158,8 +146,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Communities with size up to this parameter will be joined to 
-      neighbouring larger subcommunities.
+    doc: Communities with size up to this parameter will be joined to neighbouring larger
+      subcommunities.
     inputBinding:
       position: 104
       prefix: --small_subcommunity_size_threshold
@@ -167,8 +155,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Run sourmash as first filter on which pairs to calculate DCJ on. 
-      Recommended for large and very diverse datasets.
+    doc: Run sourmash as first filter on which pairs to calculate DCJ on. Recommended for
+      large and very diverse datasets.
     inputBinding:
       position: 104
       prefix: --sourmash
@@ -192,32 +180,34 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File stating whether plasmids are circular or linear. Must be a tsv 
-      with two columns, one with plasmid IDs under "plasmid" and one with 
-      "linear" or "circular" as entries under "topology". Without this file, 
-      pling will asume all plasmids are circular.
+    doc: File stating whether plasmids are circular or linear. Must be a tsv with two columns,
+      one with plasmid IDs under "plasmid" and one with "linear" or "circular" as entries
+      under "topology". Without this file, pling will asume all plasmids are circular.
     inputBinding:
       position: 104
       prefix: --topology
   - id: unimog
-    type:
-      - 'null'
-      - File
-    doc: Path to unimog file. Required input if skipping integerisation.
+    type: File
+    doc: Path to unimog file. Required input when skipping integerisation.
     inputBinding:
       position: 104
       prefix: --unimog
+arguments:
+  - position: 3
+    valueFrom: skip
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to output directory.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.genome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pling:2.0.1--pyhdfd78af_0

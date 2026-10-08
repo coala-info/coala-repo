@@ -12,6 +12,12 @@ inputs:
     inputBinding:
       position: 1
 outputs:
+  - id: summary
+    type: File
+    doc: Table with the first line of every pred.tsv (written as summary.tsv in
+      the working directory)
+    outputBinding:
+      glob: summary.tsv
   - id: stdout
     type: stdout
     doc: Standard output

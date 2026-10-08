@@ -1,103 +1,36 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phast_modfreqs
+baseCommand: modFreqs
 label: phast_modfreqs
-doc: "Calculates and displays allele frequency information for a given set of sites.\n\
-  \nTool homepage: http://compgen.cshl.edu/phast/"
+doc: "Change background frequencies of reversible tree model in such a way that reversibility
+  is maintained.\n\nTool homepage: http://compgen.cshl.edu/phast/"
 inputs:
-  - id: input_file
+  - id: tree_mod
     type: File
-    doc: Input file containing site information (e.g., a VCF file).
+    doc: Reversible tree model (.mod format).
     inputBinding:
       position: 1
-  - id: include_missing
+  - id: freqs
     type:
-      - 'null'
-      - boolean
-    doc: Include sites with missing data in the analysis.
+      type: array
+      items: float
+    doc: New background frequencies, either four values (A C G T) or one value (G+C
+      frequency).
     inputBinding:
-      position: 102
-      prefix: --include-missing
-  - id: max_coverage
-    type:
-      - 'null'
-      - int
-    doc: Maximum coverage allowed at a site.
-    inputBinding:
-      position: 102
-      prefix: --max-coverage
-  - id: min_allele_count
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of alleles required to calculate frequency.
-    inputBinding:
-      position: 102
-      prefix: --min-allele-count
-  - id: min_coverage
-    type:
-      - 'null'
-      - int
-    doc: Minimum coverage required at a site.
-    inputBinding:
-      position: 102
-      prefix: --min-coverage
-  - id: reference_allele
+      position: 2
+  - id: output_name
     type:
       - 'null'
       - string
-    doc: Specify the reference allele.
-    inputBinding:
-      position: 102
-      prefix: --reference-allele
-  - id: sites
-    type:
-      - 'null'
-      - string
-    doc: Comma-separated list of site identifiers to include.
-    inputBinding:
-      position: 102
-      prefix: --sites
-  - id: step_size
-    type:
-      - 'null'
-      - int
-    doc: Step size for the sliding window.
-    inputBinding:
-      position: 102
-      prefix: --step-size
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: window_size
-    type:
-      - 'null'
-      - int
-    doc: Size of the sliding window for calculating frequencies.
-    inputBinding:
-      position: 102
-      prefix: --window-size
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
+    doc: Name of the new model file (standard output).
+    default: new.mod
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: File to write the allele frequency information to.
+  - id: new_mod
+    type: File
+    doc: Tree model with the new background frequencies.
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phast:1.9.7--h7eac25e_0
+stdout: $(inputs.output_name)

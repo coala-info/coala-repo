@@ -1,5 +1,18 @@
 # mentalist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mentalist_build_db | Failed | image problem: the Blosc library (libblosc.so) is missing, so MentaLiST crashes while loading its k-mer database code. |
+| mentalist_call | Failed | image problem: libopenblas.so cannot load (libgfortran.so.3 missing), so MentaLiST call crashes while loading the Bio package. |
+| mentalist_db_info | Failed | image problem: the Blosc library (libblosc.so) is missing, so MentaLiST crashes while loading its k-mer database code. |
+| mentalist_download_cgmlst | Failed | image problem: the Blosc library (libblosc.so) is missing, so MentaLiST crashes while loading its k-mer database code. |
+| mentalist_download_enterobase | Failed | image problem: the Blosc library (libblosc.so) is missing, so MentaLiST crashes while loading its k-mer database code. |
+| mentalist_download_pubmlst | Failed | image problem: the Blosc library (libblosc.so) is missing, so MentaLiST crashes while loading its k-mer database code. |
+| mentalist_list_cgmlst | Failed | tool bug: finds 0 schemes on the current cgmlst.org website (outdated page parsing), even with no prefix. |
+| mentalist_list_pubmlst | PASS | Lists the 10 PubMLST Campylobacter schemes, including C. jejuni (id 31). |
+
 ## mentalist_call
 
 ### Tool Description
@@ -56,6 +69,26 @@ You can create a custom DB with 'create_db' or other MentaLiST functions that do
 Examples:
 mentalist call -o my_sample.mlst --db my_scheme.db -1 sample_1.fastq.gz -2 sample_2.fastq.gz # one paired-end sample.
 mentalist call -o all_samples.mlst --db my_scheme.db -1 *.fastq.gz -2 *.fastq.gz # multiple paired-end samples.
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for Dates overwritten in module Compat
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for VERSION overwritten in module Main
 ```
 
 
@@ -86,22 +119,7 @@ optional arguments:
   -p, --profile PROFILE
                         Profile file for known genotypes.
   -h, --help            show this help message and exit
-```
 
-
-## mentalist_FASTA
-
-### Tool Description
-A command-line tool for analyzing microbial genomic data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mentalist:0.2.4--h7b50bb2_8
-- **Homepage**: https://github.com/WGS-TB/MentaLiST
-- **Package**: https://anaconda.org/channels/bioconda/packages/mentalist/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
 WARNING: Error during initialization of module LinAlg:
 ErrorException("could not load library "libopenblas.so"
 libgfortran.so.3: cannot open shared object file: No such file or directory")
@@ -122,9 +140,6 @@ WARNING: Error during initialization of module LinAlg:
 ErrorException("could not load library "libopenblas.so"
 libgfortran.so.3: cannot open shared object file: No such file or directory")
 WARNING: imported binding for VERSION overwritten in module Main
-unknown command: FASTA
-usage: mentalist [-v]
-                 {call|build_db|db_info|list_pubmlst|download_pubmlst|list_cgmlst|download_cgmlst|download_enterobase}
 ```
 
 
@@ -146,22 +161,7 @@ usage: mentalist db_info --db DB [-h]
 optional arguments:
   --db DB     MentaLiST kmer database
   -h, --help  show this help message and exit
-```
 
-
-## mentalist_k-mer
-
-### Tool Description
-A command-line tool for k-mer analysis and database operations.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mentalist:0.2.4--h7b50bb2_8
-- **Homepage**: https://github.com/WGS-TB/MentaLiST
-- **Package**: https://anaconda.org/channels/bioconda/packages/mentalist/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
 WARNING: Error during initialization of module LinAlg:
 ErrorException("could not load library "libopenblas.so"
 libgfortran.so.3: cannot open shared object file: No such file or directory")
@@ -182,9 +182,6 @@ WARNING: Error during initialization of module LinAlg:
 ErrorException("could not load library "libopenblas.so"
 libgfortran.so.3: cannot open shared object file: No such file or directory")
 WARNING: imported binding for VERSION overwritten in module Main
-unknown command: k-mer
-usage: mentalist [-v]
-                 {call|build_db|db_info|list_pubmlst|download_pubmlst|list_cgmlst|download_cgmlst|download_enterobase}
 ```
 
 
@@ -207,6 +204,27 @@ optional arguments:
   -p, --prefix PREFIX  Only list schemes where the species name starts
                        with this prefix.
   -h, --help           show this help message and exit
+
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for Dates overwritten in module Compat
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for VERSION overwritten in module Main
 ```
 
 
@@ -234,22 +252,7 @@ optional arguments:
   -o, --output OUTPUT  Output folder for the scheme Fasta files.
   -s, --scheme SCHEME  Species name or scheme ID.
   -h, --help           show this help message and exit
-```
 
-
-## mentalist_MLST
-
-### Tool Description
-A tool for MLST analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mentalist:0.2.4--h7b50bb2_8
-- **Homepage**: https://github.com/WGS-TB/MentaLiST
-- **Package**: https://anaconda.org/channels/bioconda/packages/mentalist/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
 WARNING: Error during initialization of module LinAlg:
 ErrorException("could not load library "libopenblas.so"
 libgfortran.so.3: cannot open shared object file: No such file or directory")
@@ -270,9 +273,6 @@ WARNING: Error during initialization of module LinAlg:
 ErrorException("could not load library "libopenblas.so"
 libgfortran.so.3: cannot open shared object file: No such file or directory")
 WARNING: imported binding for VERSION overwritten in module Main
-unknown command: MLST
-usage: mentalist [-v]
-                 {call|build_db|db_info|list_pubmlst|download_pubmlst|list_cgmlst|download_cgmlst|download_enterobase}
 ```
 
 
@@ -295,6 +295,27 @@ optional arguments:
   -p, --prefix PREFIX  Only list schemes where the species name starts
                        with this prefix.
   -h, --help           show this help message and exit
+
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for Dates overwritten in module Compat
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for VERSION overwritten in module Main
 ```
 
 
@@ -322,6 +343,27 @@ optional arguments:
   -o, --output OUTPUT  Output folder for the scheme Fasta files.
   -s, --scheme SCHEME  Species name or scheme ID.
   -h, --help           show this help message and exit
+
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for Dates overwritten in module Compat
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for VERSION overwritten in module Main
 ```
 
 
@@ -352,6 +394,27 @@ optional arguments:
   -t, --type TYPE      Choose the type: 'cg' or 'wg' for cgMLST or
                        wgMLST scheme, respectively.
   -h, --help           show this help message and exit
+
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for Dates overwritten in module Compat
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: Error during initialization of module LinAlg:
+ErrorException("could not load library "libopenblas.so"
+libgfortran.so.3: cannot open shared object file: No such file or directory")
+WARNING: imported binding for VERSION overwritten in module Main
 ```
 
 

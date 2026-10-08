@@ -4,8 +4,8 @@ baseCommand:
   - panorama
   - compare_systems
 label: panorama_compare_systems
-doc: "Compare genomic systems among pangenomes using GFRR metrics\n\nTool homepage:
-  https://github.com/labgem/panorama"
+doc: "Compare genomic systems among pangenomes using GFRR metrics\n\nTool homepage:\
+  \ https://github.com/labgem/panorama"
 inputs:
   - id: canonical
     type:
@@ -19,9 +19,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to tab-separated file with pre-computed clustering results 
-      (cluster_name\tfamiliy_id format). If not provided, clustering will be 
-      performed.
+    doc: Path to tab-separated file with pre-computed clustering results (cluster_name\tfamiliy_id
+      format). If not provided, clustering will be performed.
     inputBinding:
       position: 101
       prefix: --cluster
@@ -103,8 +102,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of sequences per cluster representative (cluster method 
-      only)
+    doc: Maximum number of sequences per cluster representative (cluster method only)
     inputBinding:
       position: 101
       prefix: --cluster_max_seqs
@@ -129,8 +127,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Search sensitivity (cluster method only). Higher values = more 
-      sensitive but slower
+    doc: Search sensitivity (cluster method only). Higher values = more sensitive
+      but slower
     inputBinding:
       position: 101
       prefix: --cluster_sensitivity
@@ -163,19 +161,18 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: FRR (Family Relatedness Relationship) cutoff values for similarity 
-      assessment. min_gfrr = shared_families / min(families1, families2), 
-      max_gfrr = shared_families / max(families1, families2) - 0.5 - 0.8
+    doc: FRR (Family Relatedness Relationship) cutoff values for similarity assessment.
+      min_gfrr = shared_families / min(families1, families2), max_gfrr = shared_families
+      / max(families1, families2) - 0.5 - 0.8
     inputBinding:
       position: 101
       prefix: --gfrr_cutoff
   - id: gfrr_metrics
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Similarity metric for clustering conserved systems. Models metrics use 
-      only model gene families, while regular metrics use all families.
+      - string
+    doc: Similarity metric for clustering conserved systems. Models metrics use only
+      model gene families, while regular metrics use all families.
     inputBinding:
       position: 101
       prefix: --gfrr_metrics
@@ -184,9 +181,9 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: GFRR cutoff thresholds for model gene families comparison. min_gfrr = 
-      shared_families / min(families1, families2), max_gfrr = shared_families / 
-      max(families1, families2). - 0.4 - 0.6
+    doc: GFRR cutoff thresholds for model gene families comparison. min_gfrr = shared_families
+      / min(families1, families2), max_gfrr = shared_families / max(families1, families2).
+      - 0.4 - 0.6
     inputBinding:
       position: 101
       prefix: --gfrr_models_cutoff
@@ -204,8 +201,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Generate heatmaps showing normalized system presence distribution 
-      across pangenomes
+    doc: Generate heatmaps showing normalized system presence distribution across
+      pangenomes
     inputBinding:
       position: 101
       prefix: --heatmap
@@ -213,16 +210,15 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Keep temporary files after completion (useful for debugging and 
-      inspection)
+    doc: Keep temporary files after completion (useful for debugging and inspection)
     inputBinding:
       position: 101
       prefix: --keep_tmp
   - id: log
     type:
       - 'null'
-      - File
-    doc: log output file
+      - string
+    doc: Log output file name
     inputBinding:
       position: 101
       prefix: --log
@@ -230,8 +226,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "MMSeqs2 clustering method selection: 'linclust' - fast linear-time clustering
-      (less sensitive), 'cluster' - slower but more sensitive clustering."
+    doc: 'MMSeqs2 clustering method selection: ''linclust'' - fast linear-time clustering
+      (less sensitive), ''cluster'' - slower but more sensitive clustering.'
     inputBinding:
       position: 101
       prefix: --method
@@ -239,17 +235,30 @@ inputs:
     type:
       type: array
       items: File
-    doc: Path(s) to model list files. Multiple models can be specified 
-      corresponding to different sources. Order must match --sources.
+    doc: Path(s) to model list files. Multiple models can be specified corresponding
+      to different sources. Order must match --sources.
     inputBinding:
       position: 101
       prefix: --models
+  - id: model_json_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: System model .json files named in the model list file(s). They are staged
+      in the working directory, so the list must name them by file name.
   - id: pangenomes
     type: File
     doc: Path to TSV file containing list of pangenome .h5 files to compare
     inputBinding:
       position: 101
       prefix: --pangenomes
+  - id: pangenome_files
+    type:
+      type: array
+      items: File
+    doc: Pangenome .h5 files named in the pangenomes list. They are staged in the
+      working directory, so the list must name them by file name (second column).
   - id: seed
     type:
       - 'null'
@@ -262,8 +271,8 @@ inputs:
     type:
       type: array
       items: string
-    doc: Name(s) of the systems sources. Multiple sources can be specified. 
-      Order must match --models argument.
+    doc: Name(s) of the systems sources. Multiple sources can be specified. Order
+      must match --models argument.
     inputBinding:
       position: 101
       prefix: --sources
@@ -279,8 +288,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -295,8 +304,19 @@ outputs:
     doc: Output directory where result files will be written
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (with log)
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pangenome_files)
+      - $(inputs.model_json_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0

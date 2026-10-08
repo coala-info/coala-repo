@@ -1,9 +1,16 @@
 # ntlink CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ntlink_ntLink | PASS |  |
+| ntlink_ntLink_rounds | PASS |  |
+
 ## ntlink_ntLink
 
 ### Tool Description
-GNU Make is a tool which controls the generation of programs and other non-source files from a description file.
+ntLink: Scaffolding assemblies using long reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ntlink:1.3.11--py312h7896c42_1
@@ -11,70 +18,42 @@ GNU Make is a tool which controls the generation of programs and other non-sourc
 - **Package**: https://anaconda.org/channels/bioconda/packages/ntlink/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ntlink/overview
-- **Total Downloads**: 55.8K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/bcgsc/ntLink
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: make [options] [target] ...
+ntLink: Scaffolding assemblies using long reads
+ntLink v1.3.11
+Usage: ntLink scaffold target=<target scaffolds> reads='List of long read files'
+
+To additionally run gap-filling (fill gap regions with raw read sequence):
+Usage: ntLink scaffold gap_fill target=<target scaffolds> reads='List of long read files'
+
 Options:
-  -b, -m                      Ignored for compatibility.
-  -B, --always-make           Unconditionally make all targets.
-  -C DIRECTORY, --directory=DIRECTORY
-                              Change to DIRECTORY before doing anything.
-  -d                          Print lots of debugging information.
-  --debug[=FLAGS]             Print various types of debugging information.
-  -e, --environment-overrides
-                              Environment variables override makefiles.
-  -E STRING, --eval=STRING    Evaluate STRING as a makefile statement.
-  -f FILE, --file=FILE, --makefile=FILE
-                              Read FILE as a makefile.
-  -h, --help                  Print this message and exit.
-  -i, --ignore-errors         Ignore errors from recipes.
-  -I DIRECTORY, --include-dir=DIRECTORY
-                              Search DIRECTORY for included makefiles.
-  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no arg.
-  --jobserver-style=STYLE     Select the style of jobserver to use.
-  -k, --keep-going            Keep going when some targets can't be made.
-  -l [N], --load-average[=N], --max-load[=N]
-                              Don't start multiple jobs unless load is below N.
-  -L, --check-symlink-times   Use the latest mtime between symlinks and target.
-  -n, --just-print, --dry-run, --recon
-                              Don't actually run any recipe; just print them.
-  -o FILE, --old-file=FILE, --assume-old=FILE
-                              Consider FILE to be very old and don't remake it.
-  -O[TYPE], --output-sync[=TYPE]
-                              Synchronize output of parallel jobs by TYPE.
-  -p, --print-data-base       Print make's internal database.
-  -q, --question              Run no recipe; exit status says if up to date.
-  -r, --no-builtin-rules      Disable the built-in implicit rules.
-  -R, --no-builtin-variables  Disable the built-in variable settings.
-  --shuffle[={SEED|random|reverse|none}]
-                              Perform shuffle of prerequisites and goals.
-  -s, --silent, --quiet       Don't echo recipes.
-  --no-silent                 Echo recipes (disable --silent mode).
-  -S, --no-keep-going, --stop
-                              Turns off -k.
-  -t, --touch                 Touch targets instead of remaking them.
-  --trace                     Print tracing information.
-  -v, --version               Print the version number of make and exit.
-  -w, --print-directory       Print the current directory.
-  --no-print-directory        Turn off -w, even if it was turned on implicitly.
-  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
-                              Consider FILE to be infinitely new.
-  --warn-undefined-variables  Warn when an undefined variable is referenced.
+target			Target assembly to be scaffolded in fasta format
+reads			List of long read files (separated by a space)
+prefix			Prefix of intermediate output files [<target>.k<k>.w<w>.z<z>]
+t			Number of threads [4]
+k			K-mer size for minimizers [32]
+w			Window size for minimizers [100]
+n			Minimum graph edge weight [1]
+g			Minimum gap size (bp) [20]
+G			Maximum gap size (bp). -1 indicates no maximum [-1]
+f			Maximum number of contigs in a run for full transitive edge addition [10]
+a			Minimum number of anchored ONT reads required for an edge [1]
+z			Minimum size of contig (bp) to scaffold [1000]
+v			If 1, track time and memory for each step of the pipeline [0]
+paf			If True, outputs read to contig mappings in PAF-like format [False]
+overlap			If True, runs extra step to attempt to identify and trim overlapping joined sequences [True]
+sensitive	        If True, runs mapping in sensitive mode [False]
+soft_mask		If True, gaps are filled with lowercase bases [False]
 
-This program built for x86_64-conda-linux-gnu
-Report bugs to <bug-make@gnu.org>
+Note: 
+	- Ensure all assembly and read files are in the current working directory, making soft links if necessary
 ```
-
 
 ## ntlink_ntLink_rounds
 
 ### Tool Description
-GNU Make is a tool which controls the makeup of large programs that depend on many smaller pieces.  Make takes a description file that says how to build the program and which pieces depend on which other pieces.  It figures out what needs to be rebuilt and issues the commands to rebuild them.  This program built for x86_64-conda-linux-gnu
+ntLink: Scaffolding assemblies using long reads - running iterative rounds of ntLink
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ntlink:1.3.11--py312h7896c42_1
@@ -84,58 +63,23 @@ GNU Make is a tool which controls the makeup of large programs that depend on ma
 
 ### Original Help Text
 ```text
-Usage: make [options] [target] ...
+ntLink: Scaffolding assemblies using long reads - running iterative rounds of ntLink
+ntLink v1.3.11
+Running rounds of ntLink - no gap-filling
+Usage: ntLink_rounds run_rounds target=<target scaffolds> reads='List of long read files' rounds=<Number>
+
+Running rounds of ntLink - with gap-filling
+Usage: ntLink_rounds run_rounds_gaps target=<target scaffolds> reads='List of long read files' rounds=<Number>
+
 Options:
-  -b, -m                      Ignored for compatibility.
-  -B, --always-make           Unconditionally make all targets.
-  -C DIRECTORY, --directory=DIRECTORY
-                              Change to DIRECTORY before doing anything.
-  -d                          Print lots of debugging information.
-  --debug[=FLAGS]             Print various types of debugging information.
-  -e, --environment-overrides
-                              Environment variables override makefiles.
-  -E STRING, --eval=STRING    Evaluate STRING as a makefile statement.
-  -f FILE, --file=FILE, --makefile=FILE
-                              Read FILE as a makefile.
-  -h, --help                  Print this message and exit.
-  -i, --ignore-errors         Ignore errors from recipes.
-  -I DIRECTORY, --include-dir=DIRECTORY
-                              Search DIRECTORY for included makefiles.
-  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no arg.
-  --jobserver-style=STYLE     Select the style of jobserver to use.
-  -k, --keep-going            Keep going when some targets can't be made.
-  -l [N], --load-average[=N], --max-load[=N]
-                              Don't start multiple jobs unless load is below N.
-  -L, --check-symlink-times   Use the latest mtime between symlinks and target.
-  -n, --just-print, --dry-run, --recon
-                              Don't actually run any recipe; just print them.
-  -o FILE, --old-file=FILE, --assume-old=FILE
-                              Consider FILE to be very old and don't remake it.
-  -O[TYPE], --output-sync[=TYPE]
-                              Synchronize output of parallel jobs by TYPE.
-  -p, --print-data-base       Print make's internal database.
-  -q, --question              Run no recipe; exit status says if up to date.
-  -r, --no-builtin-rules      Disable the built-in implicit rules.
-  -R, --no-builtin-variables  Disable the built-in variable settings.
-  --shuffle[={SEED|random|reverse|none}]
-                              Perform shuffle of prerequisites and goals.
-  -s, --silent, --quiet       Don't echo recipes.
-  --no-silent                 Echo recipes (disable --silent mode).
-  -S, --no-keep-going, --stop
-                              Turns off -k.
-  -t, --touch                 Touch targets instead of remaking them.
-  --trace                     Print tracing information.
-  -v, --version               Print the version number of make and exit.
-  -w, --print-directory       Print the current directory.
-  --no-print-directory        Turn off -w, even if it was turned on implicitly.
-  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
-                              Consider FILE to be infinitely new.
-  --warn-undefined-variables  Warn when an undefined variable is referenced.
+rounds       Number of rounds of ntLink [5]
 
-This program built for x86_64-conda-linux-gnu
-Report bugs to <bug-make@gnu.org>
+See main ntLink file for full additional options
+
+Note: 
+	- Ensure all assembly and read files are in the current working directory, making soft links if necessary
+	- The prefix parameter can not be changed from default for running rounds with ntLink_rounds
 ```
-
 
 ## Metadata
 - **Skill**: generated

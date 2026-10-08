@@ -12,7 +12,7 @@ inputs:
       items: File
     doc: Specifies one or more JSON files
     inputBinding:
-      position: 1
+      position: 200
   - id: threads
     type:
       - 'null'

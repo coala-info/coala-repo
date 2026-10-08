@@ -57,6 +57,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: bootstrap_csv
+    type:
+      - 'null'
+      - File
+    doc: Bootstrap parameter table written with --bootstrap.
+    outputBinding:
+      glob: '*.bootstrap.csv'
+  - id: bootstrap_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder of bootstrap solver inputs and outputs written with --bootstrap.
+    outputBinding:
+      glob: '*.bootstrap.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mrpast:0.2--py312h8f4af18_0

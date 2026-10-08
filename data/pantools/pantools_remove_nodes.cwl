@@ -9,7 +9,8 @@ doc: "Remove a selection of nodes and their relationships from the pangenome.\n\
 inputs:
   - id: database_directory
     type: Directory
-    doc: Path to the database root directory.
+    doc: Path to the database root directory. The database is staged writable (the
+      tool changes it) and returned as the output.
     inputBinding:
       position: 1
   - id: exclude
@@ -38,25 +39,38 @@ inputs:
       prefix: --label
   - id: nodes
     type:
-      type: array
-      items: string
-    doc: One or multiple node identifiers, separated by a comma.
+      - 'null'
+      - type: array
+        items: string
+    doc: One or multiple node identifiers (joined with commas).
     inputBinding:
       position: 102
       prefix: --nodes
+      itemSeparator: ','
   - id: selection_file
     type:
       - 'null'
       - File
-    doc: Text file with rules to use a specific set of genomes and sequences. 
-      This automatically lowers the threshold for core genes.
+    doc: Text file with rules to use a specific set of genomes and sequences. This
+      automatically lowers the threshold for core genes.
     inputBinding:
       position: 102
       prefix: --selection-file
 outputs:
+  - id: database
+    type: Directory
+    doc: The updated pangenome database
+    outputBinding:
+      glob: $(inputs.database_directory.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.database_directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pantools:4.3.4--hdfd78af_0

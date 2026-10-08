@@ -4,8 +4,10 @@ baseCommand:
   - singlem
   - condense
 label: singlem_condense
-doc: "Combine OTU tables across different markers into a single taxonomic profile.\n\
-  \nTool homepage: https://github.com/wwood/singlem"
+doc: 'Combine OTU tables across different markers into a single taxonomic profile.
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: debug
     type:
@@ -15,22 +17,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: input_archive_otu_table_list
     type:
       - 'null'
@@ -59,7 +45,7 @@ inputs:
   - id: metapackage
     type:
       - 'null'
-      - string
+      - Directory
     doc: Set of SingleM packages to use
     inputBinding:
       position: 101
@@ -126,9 +112,8 @@ outputs:
     type:
       - 'null'
       - File
-    doc: output OTU table after expectation maximisation has been applied. Note 
-      that this table usually contains multiple rows with the same window 
-      sequence.
+    doc: output OTU table after expectation maximisation has been applied. Note that
+      this table usually contains multiple rows with the same window sequence.
     outputBinding:
       glob: $(inputs.output_after_em_otu_table_path)
 requirements:

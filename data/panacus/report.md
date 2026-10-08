@@ -1,5 +1,20 @@
 # panacus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| panacus_growth | PASS |  |
+| panacus_hist | PASS |  |
+| panacus_info | Failed | tool bug: panacus 0.4.1 info panics ('info subcommand has gfa file') on any GFA |
+| panacus_node-distribution | PASS |  |
+| panacus_ordered-histgrowth | PASS | works with --order; without --order panacus 0.4.1 exits with 'No such file or directory' (tool bug) |
+| panacus_panacus-visualize | PASS |  |
+| panacus_render | Failed | tool bug: renders the same shifted growth chart as report (value for 1 sample shown at 2); histogram is correct |
+| panacus_report | Failed | tool bug: the HTML growth chart is shifted by one (value for 1 sample shown at 2, last point dropped); histogram is correct |
+| panacus_similarity | PASS |  |
+| panacus_table | Failed | tool bug: panacus 0.4.1 table prints nothing ('No instructions supplied') for any input |
+
 ## panacus_render
 
 ### Tool Description
@@ -328,48 +343,6 @@ Options:
   -h, --help             Print help
 ```
 
-## panacus_Due
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/panacus:0.4.1--hc1c3326_0
-- **Homepage**: https://github.com/marschall-lab/panacus
-- **Package**: https://anaconda.org/channels/bioconda/packages/panacus/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Due'
-
-Usage: panacus [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-## panacus_plot
-
-### Tool Description
-Panacus is a tool for analyzing and visualizing genomic data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/panacus:0.4.1--hc1c3326_0
-- **Homepage**: https://github.com/marschall-lab/panacus
-- **Package**: https://anaconda.org/channels/bioconda/packages/panacus/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'plot'
-
-  tip: a similar subcommand exists: 'report'
-
-Usage: panacus [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
 ## panacus_similarity
 
 ### Tool Description
@@ -410,6 +383,52 @@ Options:
                                  0]
   -v, --verbose                  Set the number of threads used (default: use all threads)
   -h, --help                     Print help
+```
+
+## panacus_panacus-visualize
+
+### Tool Description
+Visualize growth stats from a panacus growth/histogram table (deprecated upstream in favour of panacus report).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/panacus:0.4.1--hc1c3326_0
+- **Homepage**: https://github.com/marschall-lab/panacus
+- **Package**: https://anaconda.org/channels/bioconda/packages/panacus/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+WARNING: panacus-visualize is DEPRECATED and will soon be REMOVED. Please use the report command of panacus to generate plots.
+usage: panacus-visualize [-h] [-e]
+                         [-l {lower left,lower right,upper left,upper right}]
+                         [-s FIGSIZE FIGSIZE]
+                         [-f {eps,jpg,jpeg,pdf,pgf,png,ps,raw,rgba,svg,svgz,tif,tiff,webp}]
+                         [--split_subfigures] [--split_prefix SPLIT_PREFIX]
+                         stats
+
+Visualize growth stats. Figures in given (output) format will be plotted to
+stdout, or optionally splitted into in individual files that start with a
+given prefix.
+
+positional arguments:
+  stats                 Growth/Histogram table computed by panacus
+
+options:
+  -h, --help            show this help message and exit
+  -e, --estimate_growth_params
+                        Estimate growth parameters based on least-squares fit
+                        (default: False)
+  -l, --legend_location {lower left,lower right,upper left,upper right}
+                        Estimate growth parameters based on least-squares fit
+                        (default: upper left)
+  -s, --figsize FIGSIZE FIGSIZE
+                        Set size of figure canvas (default: [10, 6])
+  -f, --format {eps,jpg,jpeg,pdf,pgf,png,ps,raw,rgba,svg,svgz,tif,tiff,webp}
+                        Specify the format of the output (default: pdf)
+  --split_subfigures    Split output into multiple files (default: False)
+  --split_prefix SPLIT_PREFIX
+                        Prefix given to the files generated when splitting
+                        into subfigures (default: out_)
 ```
 
 ## Metadata

@@ -1,5 +1,18 @@
 # epydoc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| epydoc_check | PASS |  |
+| epydoc_dvi | Failed | image problem: latex is not in the image, so epydoc writes the .tex files but cannot build api.dvi. |
+| epydoc_html | PASS |  |
+| epydoc_latex | PASS |  |
+| epydoc_pdf | Failed | image problem: latex is not in the image, so epydoc writes the .tex files but cannot build api.pdf. |
+| epydoc_pickle | PASS |  |
+| epydoc_ps | Failed | image problem: latex is not in the image, so epydoc writes the .tex files but cannot build api.ps. |
+| epydoc_text | PASS |  |
+
 ## epydoc_html
 
 ### Tool Description

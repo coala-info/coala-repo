@@ -7,10 +7,13 @@ label: prosic_estimate-mutation-rate
 doc: "Estimate the effective mutation rate of a tumor sample from a VCF/BCF with candidate
   variants from STDIN.\n\nTool homepage: https://prosic.github.io"
 inputs:
+  - id: candidates
+    type: File
+    doc: Allele frequencies of candidate somatic variants, one per line after a header line (read from STDIN)
   - id: fit_file
     type:
       - 'null'
-      - File
+      - string
     doc: Path to file that will observations and the parameters of the fitted 
       model as JSON.
     inputBinding:
@@ -36,7 +39,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: fit
+    type:
+      - 'null'
+      - File
+    doc: Observations and fitted model parameters as JSON
+    outputBinding:
+      glob: $(inputs.fit_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prosic:2.1.2--hc7800f0_1
+stdin: $(inputs.candidates.path)
 stdout: prosic_estimate-mutation-rate.out

@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - seqseqpan.py
+  - seq-seq-pan
   - mapall
 label: seq-seq-pan_mapall
 doc: "Map all positions/coordinates from consensus to sequences\n\nTool homepage:
@@ -9,6 +9,10 @@ doc: "Map all positions/coordinates from consensus to sequences\n\nTool homepage
 inputs:
   - id: consensus
     type: File
+    secondaryFiles:
+      - pattern: .idx
+      - pattern: .blockseparated.fasta
+      - pattern: .blockseparated.idx
     doc: consensus FASTA file used in XMFA
     inputBinding:
       position: 101
@@ -56,6 +60,11 @@ outputs:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path_path)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1

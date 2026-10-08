@@ -7,6 +7,9 @@ label: rust-bio-tools_vcf-to-txt
 doc: "Convert VCF/BCF file from STDIN to tab-separated TXT file at STDOUT. INFO and
   FORMAT tags have to be selected explicitly.\n\nTool homepage: https://github.com/rust-bio/rust-bio-tools"
 inputs:
+  - id: input_vcf
+    type: File
+    doc: VCF/BCF file to convert (read from STDIN)
   - id: fmt
     type:
       - 'null'
@@ -48,4 +51,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-stdout: rust-bio-tools_vcf-to-txt.out
+stdin: $(inputs.input_vcf.path)
+stdout: variants.txt

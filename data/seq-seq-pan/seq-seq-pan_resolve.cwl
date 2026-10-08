@@ -1,17 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - seqseqpan.py
+  - seq-seq-pan
   - resolve
 label: seq-seq-pan_resolve
 doc: "Resolve LCBs stretching over delimiter sequences.\n\nTool homepage: https://gitlab.com/chrjan/seq-seq-pan"
 inputs:
   - id: consensus
     type: File
+    secondaryFiles:
+      - pattern: .idx
+      - pattern: .blockseparated.fasta
+      - pattern: .blockseparated.idx
     doc: consensus FASTA file used in XMFA
     inputBinding:
       position: 101
       prefix: --consensus
+      valueFrom: $(self.basename)
   - id: name
     type: string
     doc: File prefix and sequence header for output FASTA / XFMA file
@@ -21,7 +26,7 @@ inputs:
   - id: order
     type:
       - 'null'
-      - string
+      - int
     doc: Ordering of blocks in XMFA/FASTA output (0,1,2,...)
     inputBinding:
       position: 101
@@ -53,6 +58,12 @@ outputs:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.consensus)
+      - entryname: $(inputs.output_path_path)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1

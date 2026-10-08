@@ -1,194 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: foldcomp
+baseCommand:
+  - foldcomp
+  - rmsd
 label: foldcomp_rmsd
-doc: "Compress and decompress protein structure files (PDB, CIF) and calculate RMSD.\n\
-  \nTool homepage: https://github.com/steineggerlab/foldcomp"
+doc: "Calculate the RMSD between two protein structures (PDB/mmCIF), e.g. an original and its Foldcomp round-trip.\n\nTool homepage: https://github.com/steineggerlab/foldcomp"
 inputs:
-  - id: subcommand
-    type: string
-    doc: The subcommand to execute (compress, decompress, extract, check, rmsd)
+  - id: structure1
+    type: File
+    doc: "First PDB/mmCIF file."
     inputBinding:
-      position: 1
-  - id: input1
-    type: string
-    doc: First input file or directory. Type depends on subcommand.
+      position: 10
+  - id: structure2
+    type: File
+    doc: "Second PDB/mmCIF file."
     inputBinding:
-      position: 2
-  - id: input2
-    type:
-      - 'null'
-      - string
-    doc: Second input file or directory. Type depends on subcommand.
-    inputBinding:
-      position: 3
-  - id: alt
-    type:
-      - 'null'
-      - boolean
-    doc: use alternative atom order
-    inputBinding:
-      position: 104
-      prefix: --alt
-  - id: break_interval
-    type:
-      - 'null'
-      - int
-    doc: interval size to save absolute atom coordinates
-    inputBinding:
-      position: 104
-      prefix: --break
-  - id: check_fcz
-    type:
-      - 'null'
-      - boolean
-    doc: check FCZ before and skip entries with error (only for batch 
-      decompression)
-    inputBinding:
-      position: 104
-      prefix: --check
-  - id: db
-    type:
-      - 'null'
-      - boolean
-    doc: save as database
-    inputBinding:
-      position: 104
-      prefix: --db
-  - id: extract_amino_acid
-    type:
-      - 'null'
-      - boolean
-    doc: extract amino acid sequence (only for extraction mode)
-    inputBinding:
-      position: 104
-      prefix: --amino-acid
-  - id: extract_fasta
-    type:
-      - 'null'
-      - boolean
-    doc: extract amino acid sequence (only for extraction mode)
-    inputBinding:
-      position: 104
-      prefix: --fasta
-  - id: extract_plddt
-    type:
-      - 'null'
-      - boolean
-    doc: extract pLDDT score (only for extraction mode)
-    inputBinding:
-      position: 104
-      prefix: --plddt
-  - id: file
-    type:
-      - 'null'
-      - boolean
-    doc: input is a list of files
-    inputBinding:
-      position: 104
-      prefix: --file
-  - id: id_list
-    type:
-      - 'null'
-      - File
-    doc: a file of id list to be processed (only for database input)
-    inputBinding:
-      position: 104
-      prefix: --id-list
-  - id: id_mode
-    type:
-      - 'null'
-      - int
-    doc: 'id mode for database input. 0: database keys, 1: names (.lookup)'
-    inputBinding:
-      position: 104
-      prefix: --id-mode
-  - id: no_merge
-    type:
-      - 'null'
-      - boolean
-    doc: do not merge output files (only for extraction mode)
-    inputBinding:
-      position: 104
-      prefix: --no-merge
-  - id: overwrite
-    type:
-      - 'null'
-      - boolean
-    doc: overwrite existing files
-    inputBinding:
-      position: 104
-      prefix: --overwrite
-  - id: plddt_digits
-    type:
-      - 'null'
-      - int
-    doc: extract pLDDT score with specified number of digits (only for 
-      extraction mode)
-    inputBinding:
-      position: 104
-      prefix: --plddt-digits
-  - id: recursive
-    type:
-      - 'null'
-      - boolean
-    doc: recursively look for files in directory
-    inputBinding:
-      position: 104
-      prefix: --recursive
-  - id: skip_discontinuous
-    type:
-      - 'null'
-      - boolean
-    doc: skip PDB with with discontinuous residues (only batch compression)
-    inputBinding:
-      position: 104
-      prefix: --skip-discontinuous
-  - id: tar
-    type:
-      - 'null'
-      - boolean
-    doc: save as tar file
-    inputBinding:
-      position: 104
-      prefix: --tar
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: threads for (de)compression of folders/tar files
-    inputBinding:
-      position: 104
-      prefix: --threads
-  - id: time
-    type:
-      - 'null'
-      - boolean
-    doc: measure time for compression/decompression
-    inputBinding:
-      position: 104
-      prefix: --time
-  - id: use_cache
-    type:
-      - 'null'
-      - boolean
-    doc: use cached index for database input
-    inputBinding:
-      position: 104
-      prefix: --use-cache
-  - id: use_title
-    type:
-      - 'null'
-      - boolean
-    doc: use TITLE as the output file name (only for extraction mode)
-    inputBinding:
-      position: 104
-      prefix: --use-title
+      position: 11
 outputs:
-  - id: stdout
+  - id: rmsd_report
     type: stdout
-    doc: Standard output
+    doc: "RMSD report."
+stdout: foldcomp_rmsd.txt
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/foldcomp:1.0.0--h7f5d12c_0
-stdout: foldcomp_rmsd.out

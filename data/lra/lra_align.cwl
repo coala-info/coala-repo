@@ -10,7 +10,12 @@ doc: "Align reads to a genome. The genome should be indexed using the 'lra index
 inputs:
   - id: genome
     type: File
-    doc: Indexed genome FASTA file
+    doc: Genome FASTA file indexed with 'lra index' (.mms and .gli beside it).
+    secondaryFiles:
+      - pattern: .mms
+        required: true
+      - pattern: .gli
+        required: true
     inputBinding:
       position: 1
   - id: reads

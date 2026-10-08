@@ -259,6 +259,5 @@ outputs:
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: 
-      quay.io/biocontainers/esme_pnetcdf_openmpi_4_1_6:1.14.0--hcc24ad4_0
+    dockerPull: quay.io/biocontainers/esme_pnetcdf_openmpi_4_1_6:1.14.0--hcc24ad4_0
 stdout: esme_pnetcdf_openmpi_4_1_6_pnetcdf-config.out

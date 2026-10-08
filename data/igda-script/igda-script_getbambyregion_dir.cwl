@@ -1,45 +1,51 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: getbambyregion_dir
+baseCommand:
+  - getbambyregion_dir
 label: igda-script_getbambyregion_dir
-doc: "Get BAM files by region within a directory\n\nTool homepage: https://github.com/zhixingfeng/shell"
+doc: "Run getbambyregion on every BAM file in a directory.\nUsage: getbambyregion_dir indir outdir chr start end(1-based) nthread logdir\n\nTool homepage: https://github.com/zhixingfeng/shell"
 inputs:
   - id: indir
     type: Directory
-    doc: Input directory containing BAM files
+    doc: "directory with indexed BAM files"
     inputBinding:
       position: 1
-  - id: chr
+  - id: outdir
     type: string
-    doc: Chromosome name
+    doc: "output directory name"
     inputBinding:
       position: 2
-  - id: start
-    type: int
-    doc: Start position (1-based)
+  - id: chr
+    type: string
+    doc: "chromosome"
     inputBinding:
       position: 3
-  - id: end
+  - id: start
     type: int
-    doc: End position (1-based)
+    doc: "region start (1-based)"
     inputBinding:
       position: 4
-  - id: nthread
+  - id: end
     type: int
-    doc: Number of threads to use
+    doc: "region end (1-based)"
     inputBinding:
       position: 5
-  - id: logdir
-    type: Directory
-    doc: Directory for log files
+  - id: nthread
+    type: int
+    doc: "number of threads"
     inputBinding:
       position: 6
+  - id: logdir
+    type: string
+    doc: "log directory name"
+    inputBinding:
+      position: 7
 outputs:
-  - id: outdir
+  - id: out_dir
     type: Directory
-    doc: Output directory for filtered BAM files
+    doc: "directory with one SAM file per BAM"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igda-script:1.0.1--hdfd78af_0

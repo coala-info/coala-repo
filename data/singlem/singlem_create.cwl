@@ -4,7 +4,10 @@ baseCommand:
   - singlem
   - create
 label: singlem_create
-doc: "Create a SingleM package.\n\nTool homepage: https://github.com/wwood/singlem"
+doc: 'Create a SingleM package.
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: target_domains
     type:
@@ -52,7 +55,7 @@ inputs:
       position: 102
       prefix: --hmm-position
   - id: input_graftm_package
-    type: File
+    type: Directory
     doc: "Input GraftM package underlying the new SingleM\n                      \
       \  package. The GraftM package is usually made with\n                      \
       \  'graftM create --no_tree --hmm <your.hmm>' where\n                      \
@@ -92,7 +95,7 @@ inputs:
       prefix: --output-singlem-package
 outputs:
   - id: output_singlem_package
-    type: File
+    type: Directory
     doc: Output package path
     outputBinding:
       glob: $(inputs.output_singlem_package_path)

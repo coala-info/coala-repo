@@ -17,7 +17,13 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta file to extract sequences from
+    secondaryFiles:
+      - pattern: .fai
+        required: false
+      - pattern: .gzi
+        required: false
+    doc: Fasta file to extract sequences from (plain or bgzip, with .fai index;
+      .gzi for bgzip)
     inputBinding:
       position: 101
       prefix: --fasta

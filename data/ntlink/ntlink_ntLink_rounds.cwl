@@ -1,345 +1,116 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: make
+baseCommand: ntLink_rounds
 label: ntlink_ntLink_rounds
-doc: "GNU Make is a tool which controls the makeup of large programs that depend on
-  many smaller pieces.  Make takes a description file that says how to build the program
-  and which pieces depend on which other pieces.  It figures out what needs to be
-  rebuilt and issues the commands to rebuild them.  This program built for x86_64-conda-linux-gnu\n\
-  \nTool homepage: https://github.com/bcgsc/ntLink"
+doc: "ntLink: Scaffolding assemblies using long reads - running iterative rounds of ntLink
+  (run_rounds, or run_rounds_gaps with gap-filling).\n\nTool homepage: https://github.com/bcgsc/ntLink"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.target)
+      - $(inputs.reads)
 inputs:
-  - id: target
+  - id: gap_fill
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Target(s) to build
+      - boolean
+    doc: Run rounds with gap-filling (run_rounds_gaps) instead of run_rounds
     inputBinding:
       position: 1
-  - id: always_make
-    type:
-      - 'null'
-      - boolean
-    doc: Unconditionally make all targets.
+      valueFrom: "$(self ? 'run_rounds_gaps' : 'run_rounds')"
+    default: false
+  - id: target
+    type: File
+    doc: Target assembly to be scaffolded in fasta format
     inputBinding:
-      position: 102
-      prefix: --always-make
-  - id: assume_new
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
-    inputBinding:
-      position: 102
-      prefix: --assume-new
-  - id: assume_old
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be very old and don't remake it.
-    inputBinding:
-      position: 102
-      prefix: --assume-old
-  - id: check_symlink_times
-    type:
-      - 'null'
-      - boolean
-    doc: Use the latest mtime between symlinks and target.
-    inputBinding:
-      position: 102
-      prefix: --check-symlink-times
-  - id: debug
-    type:
-      - 'null'
-      - string
-    doc: Print various types of debugging information.
-    inputBinding:
-      position: 102
-      prefix: --debug=
+      position: 2
+      prefix: target=
       separate: false
-  - id: debug_info
+      valueFrom: $(self.basename)
+  - id: reads
     type:
-      - 'null'
-      - boolean
-    doc: Print lots of debugging information.
+      type: array
+      items: File
+    doc: List of long read files
     inputBinding:
-      position: 102
-      prefix: -d
-  - id: directory
-    type:
-      - 'null'
-      - Directory
-    doc: Change to DIRECTORY before doing anything.
-    inputBinding:
-      position: 102
-      prefix: --directory
-  - id: dry_run
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
-    inputBinding:
-      position: 102
-      prefix: --dry-run
-  - id: environment_overrides
-    type:
-      - 'null'
-      - boolean
-    doc: Environment variables override makefiles.
-    inputBinding:
-      position: 102
-      prefix: --environment-overrides
-  - id: eval
-    type:
-      - 'null'
-      - string
-    doc: Evaluate STRING as a makefile statement.
-    inputBinding:
-      position: 102
-      prefix: --eval
-  - id: ignore_errors
-    type:
-      - 'null'
-      - boolean
-    doc: Ignore errors from recipes.
-    inputBinding:
-      position: 102
-      prefix: --ignore-errors
-  - id: include_dir
-    type:
-      - 'null'
-      - type: array
-        items: Directory
-    doc: Search DIRECTORY for included makefiles.
-    inputBinding:
-      position: 102
-      prefix: --include-dir
-  - id: jobs
+      position: 3
+      valueFrom: "${ return 'reads=' + self.map(function(f){ return f.basename; }).join(' '); }"
+  - id: rounds
     type:
       - 'null'
       - int
-    doc: Allow N jobs at once; infinite jobs with no arg.
+    doc: Number of rounds of ntLink [5]
     inputBinding:
-      position: 102
-      prefix: --jobs=
+      position: 4
+      prefix: rounds=
       separate: false
-  - id: jobserver_style
+  - id: threads
     type:
       - 'null'
-      - string
-    doc: Select the style of jobserver to use.
+      - int
+    doc: Number of threads [4]
     inputBinding:
-      position: 102
-      prefix: --jobserver-style
-  - id: just_print
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
-    inputBinding:
-      position: 102
-      prefix: --just-print
-  - id: keep_going
-    type:
-      - 'null'
-      - boolean
-    doc: Keep going when some targets can't be made.
-    inputBinding:
-      position: 102
-      prefix: --keep-going
-  - id: load_average
-    type:
-      - 'null'
-      - float
-    doc: Don't start multiple jobs unless load is below N.
-    inputBinding:
-      position: 102
-      prefix: --load-average=
+      position: 4
+      prefix: t=
       separate: false
-  - id: makefile
+  - id: k
     type:
       - 'null'
-      - File
-    doc: Read FILE as a makefile.
+      - int
+    doc: K-mer size for minimizers [32]
     inputBinding:
-      position: 102
-      prefix: --file
-  - id: max_load
-    type:
-      - 'null'
-      - float
-    doc: Don't start multiple jobs unless load is below N.
-    inputBinding:
-      position: 102
-      prefix: --max-load=
+      position: 4
+      prefix: k=
       separate: false
-  - id: new_file
+  - id: w
     type:
       - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
+      - int
+    doc: Window size for minimizers [100]
     inputBinding:
-      position: 102
-      prefix: --new-file
-  - id: no_builtin_rules
-    type:
-      - 'null'
-      - boolean
-    doc: Disable the built-in implicit rules.
-    inputBinding:
-      position: 102
-      prefix: --no-builtin-rules
-  - id: no_builtin_variables
-    type:
-      - 'null'
-      - boolean
-    doc: Disable the built-in variable settings.
-    inputBinding:
-      position: 102
-      prefix: --no-builtin-variables
-  - id: no_keep_going
-    type:
-      - 'null'
-      - boolean
-    doc: Turns off -k.
-    inputBinding:
-      position: 102
-      prefix: --no-keep-going
-  - id: no_print_directory
-    type:
-      - 'null'
-      - boolean
-    doc: Turn off -w, even if it was turned on implicitly.
-    inputBinding:
-      position: 102
-      prefix: --no-print-directory
-  - id: no_silent
-    type:
-      - 'null'
-      - boolean
-    doc: Echo recipes (disable --silent mode).
-    inputBinding:
-      position: 102
-      prefix: --no-silent
-  - id: old_file
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be very old and don't remake it.
-    inputBinding:
-      position: 102
-      prefix: --old-file
-  - id: output_sync
-    type:
-      - 'null'
-      - string
-    doc: Synchronize output of parallel jobs by TYPE.
-    inputBinding:
-      position: 102
-      prefix: --output-sync=
+      position: 4
+      prefix: w=
       separate: false
-  - id: print_data_base
+  - id: z
     type:
       - 'null'
-      - boolean
-    doc: Print make's internal database.
+      - int
+    doc: Minimum size of contig (bp) to scaffold [1000]
     inputBinding:
-      position: 102
-      prefix: --print-data-base
-  - id: print_directory
-    type:
-      - 'null'
-      - boolean
-    doc: Print the current directory.
-    inputBinding:
-      position: 102
-      prefix: --print-directory
-  - id: question
-    type:
-      - 'null'
-      - boolean
-    doc: Run no recipe; exit status says if up to date.
-    inputBinding:
-      position: 102
-      prefix: --question
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Don't echo recipes.
-    inputBinding:
-      position: 102
-      prefix: --quiet
-  - id: recon
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
-    inputBinding:
-      position: 102
-      prefix: --recon
-  - id: shuffle
-    type:
-      - 'null'
-      - string
-    doc: Perform shuffle of prerequisites and goals.
-    inputBinding:
-      position: 102
-      prefix: --shuffle=
+      position: 4
+      prefix: z=
       separate: false
-  - id: silent
+  - id: v
+    type:
+      - 'null'
+      - int
+    doc: If 1, track time and memory for each step of the pipeline [0]
+    inputBinding:
+      position: 4
+      prefix: v=
+      separate: false
+  - id: dev
     type:
       - 'null'
       - boolean
-    doc: Don't echo recipes.
+    doc: Development run - retain intermediate files (no clean) [False]
     inputBinding:
-      position: 102
-      prefix: --silent
-  - id: stop
-    type:
-      - 'null'
-      - boolean
-    doc: Turns off -k.
-    inputBinding:
-      position: 102
-      prefix: --stop
-  - id: touch
-    type:
-      - 'null'
-      - boolean
-    doc: Touch targets instead of remaking them.
-    inputBinding:
-      position: 102
-      prefix: --touch
-  - id: trace
-    type:
-      - 'null'
-      - boolean
-    doc: Print tracing information.
-    inputBinding:
-      position: 102
-      prefix: --trace
-  - id: warn_undefined_variables
-    type:
-      - 'null'
-      - boolean
-    doc: Warn when an undefined variable is referenced.
-    inputBinding:
-      position: 102
-      prefix: --warn-undefined-variables
-  - id: what_if
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
-    inputBinding:
-      position: 102
-      prefix: --what-if
+      position: 4
+      valueFrom: "${ return self == null ? null : (self ? 'dev=True' : 'dev=False'); }"
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: scaffolds
+    type: File
+    doc: Final scaffolds after all rounds (<target>.k<k>.w<w>.z<z>.ntLink.<rounds>rounds.fa)
+    outputBinding:
+      glob: $(inputs.target.basename).k*.ntLink.*rounds.fa
+  - id: agp
+    type:
+      type: array
+      items: File
+    doc: AGP files describing the scaffolds
+    outputBinding:
+      glob: '*.agp'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntlink:1.3.11--py312h7896c42_1
-stdout: ntlink_ntLink_rounds.out

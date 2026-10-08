@@ -1,11 +1,25 @@
 # mzquality CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mzquality_blank-effect | PASS | Per-batch blank effect table for PGE1-3 on the tool's example data. |
+| mzquality_export-measurements | PASS | Samples vs. compounds table (228 samples, 3 compounds plus IS columns). |
+| mzquality_internal-standard-rsd | PASS | RSDs for the 2 internal standards of the example data. |
+| mzquality_plot-compound | PASS | Writes the plotly HTML plot PGE2.html. |
+| mzquality_plot-compounds | PASS | Writes one plotly HTML plot per compound (3). |
+| mzquality_plot-compounds-zipped | PASS | Zip file holds the 3 compound HTML plots. |
+| mzquality_qc-correction | PASS | Adds the inter_median_qc_corrected column for all 980 measurements of the example data. |
+| mzquality_qc-rsd | PASS | QC RSD values match an independent pandas computation on the QC corrected data. |
+| mzquality_rep-rsd | PASS | Per-batch replicate RSDs (9-31%) for the 3 compounds. |
+| mzquality_rt-shifts | PASS | One RT shift row per measurement (980 rows); shifts equal rt minus the batch mean. |
+| mzquality_summary | PASS | Example data from the tool's repo (combined.tsv): JSON lists 3 batches, 227 samples, 3 compounds. |
+
 ## mzquality_blank-effect
 
 ### Tool Description
-CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+Calculate the blank effect of each compound.
 
 ### Metadata
 - **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
@@ -13,60 +27,43 @@ mzQuality is a Tool for quality monitoring and reporting of mass spectrometry me
 - **Package**: Not found
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/mzquality/overview
-- **Total Downloads**: N/A
-- **Last updated**: N/A
-- **GitHub**: https://github.com/hankemeierlab/mzQuality
-- **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: The proper way to show help is 'qcli.py -- --help'.
-Showing help anyway.
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        54
+Docstring:   Calculate the blank effect of ... 
 
-Fire trace:
-1. Initial component
-2. Instantiated class "Qcli" (/files/mzQuality/qcli.py:17)
-3. ('Could not consume arg:', 'mzquality')
+Usage:       qcli.py blank-effect MEA_FILE BLANK_EFFECT_FILE [BY_BATCH]
+             qcli.py blank-effect --mea-file MEA_FILE --blank-effect-file BLANK_EFFECT_FILE [--by-batch BY_BATCH]
+```
 
-Type:        Qcli
-String form: <__main__.Qcli object at 0x73c74b723630>
-Docstring:   CLI to the mzQuality
+## mzquality_export-measurements
 
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+### Tool Description
+Exports data as samples vs compounds.
 
-Supported methods are:
+### Metadata
+- **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
+- **Homepage**: https://github.com/hankemeierlab/mzQuality
+- **Package**: Not found
+- **Validation**: PASS
 
-- measurement summary
-- blank_effect
-- rt_shifts
-- qc_correction
-- rsd qc
-- rsd replicates
-- rsd internal standard(s)
-- plot information compound(s)
-- export results as samples vs. compounds
+### Original Help Text
+```text
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        190
+Docstring:   exports data as samples vs compounds
 
-Usage:       qcli.py 
-             qcli.py blank-effect
-             qcli.py export-measurements
-             qcli.py internal-standard-rsd
-             qcli.py plot-compound
-             qcli.py plot-compounds
-             qcli.py plot-compounds-zipped
-             qcli.py qc-correction
-             qcli.py qc-rsd
-             qcli.py rep-rsd
-             qcli.py rt-shifts
-             qcli.py summary
-             qcli.py test-cli
+Usage:       qcli.py export-measurements FILE COLUMN EXPORT_LOCATION [INCLUDE_IS]
+             qcli.py export-measurements --file FILE --column COLUMN --export-location EXPORT_LOCATION [--include-is INCLUDE_IS]
 ```
 
 ## mzquality_internal-standard-rsd
 
 ### Tool Description
-CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+Calculate the Internal Standard RSD's.
 
 ### Metadata
 - **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
@@ -76,53 +73,19 @@ mzQuality is a Tool for quality monitoring and reporting of mass spectrometry me
 
 ### Original Help Text
 ```text
-WARNING: The proper way to show help is 'qcli.py -- --help'.
-Showing help anyway.
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        129
+Docstring:   Calculate the Internal Standard RSD's ... 
 
-Fire trace:
-1. Initial component
-2. Instantiated class "Qcli" (/files/mzQuality/qcli.py:17)
-3. ('Could not consume arg:', 'mzquality')
-
-Type:        Qcli
-String form: <__main__.Qcli object at 0x7bf4d16465c0>
-Docstring:   CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
-
-Supported methods are:
-
-- measurement summary
-- blank_effect
-- rt_shifts
-- qc_correction
-- rsd qc
-- rsd replicates
-- rsd internal standard(s)
-- plot information compound(s)
-- export results as samples vs. compounds
-
-Usage:       qcli.py 
-             qcli.py blank-effect
-             qcli.py export-measurements
-             qcli.py internal-standard-rsd
-             qcli.py plot-compound
-             qcli.py plot-compounds
-             qcli.py plot-compounds-zipped
-             qcli.py qc-correction
-             qcli.py qc-rsd
-             qcli.py rep-rsd
-             qcli.py rt-shifts
-             qcli.py summary
-             qcli.py test-cli
+Usage:       qcli.py internal-standard-rsd QC_CORRECTED_FILE IS_RSD_FILE [BY_BATCH]
+             qcli.py internal-standard-rsd --qc-corrected-file QC_CORRECTED_FILE --is-rsd-file IS_RSD_FILE [--by-batch BY_BATCH]
 ```
 
 ## mzquality_plot-compound
 
 ### Tool Description
-CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+Plot an individual compound.
 
 ### Metadata
 - **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
@@ -132,53 +95,41 @@ mzQuality is a Tool for quality monitoring and reporting of mass spectrometry me
 
 ### Original Help Text
 ```text
-WARNING: The proper way to show help is 'qcli.py -- --help'.
-Showing help anyway.
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        144
+Docstring:   plot an individual compound 
 
-Fire trace:
-1. Initial component
-2. Instantiated class "Qcli" (/files/mzQuality/qcli.py:17)
-3. ('Could not consume arg:', 'mzquality')
+Usage:       qcli.py plot-compound QC_CORRECTED_FILE COMPOUND PLOT_LOCATION
+             qcli.py plot-compound --qc-corrected-file QC_CORRECTED_FILE --compound COMPOUND --plot-location PLOT_LOCATION
+```
 
-Type:        Qcli
-String form: <__main__.Qcli object at 0x756c5b8a5630>
-Docstring:   CLI to the mzQuality
+## mzquality_plot-compounds-zipped
 
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+### Tool Description
+Plot a list of compounds and store them as a zip file.
 
-Supported methods are:
+### Metadata
+- **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
+- **Homepage**: https://github.com/hankemeierlab/mzQuality
+- **Package**: Not found
+- **Validation**: PASS
 
-- measurement summary
-- blank_effect
-- rt_shifts
-- qc_correction
-- rsd qc
-- rsd replicates
-- rsd internal standard(s)
-- plot information compound(s)
-- export results as samples vs. compounds
+### Original Help Text
+```text
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        169
+Docstring:   plot a list of compounds and store them as a zip file 
 
-Usage:       qcli.py 
-             qcli.py blank-effect
-             qcli.py export-measurements
-             qcli.py internal-standard-rsd
-             qcli.py plot-compound
-             qcli.py plot-compounds
-             qcli.py plot-compounds-zipped
-             qcli.py qc-correction
-             qcli.py qc-rsd
-             qcli.py rep-rsd
-             qcli.py rt-shifts
-             qcli.py summary
-             qcli.py test-cli
+Usage:       qcli.py plot-compounds-zipped QC_CORRECTED_FILE ZIP_FILE
+             qcli.py plot-compounds-zipped --qc-corrected-file QC_CORRECTED_FILE --zip-file ZIP_FILE
 ```
 
 ## mzquality_plot-compounds
 
 ### Tool Description
-CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+Plot a list of compounds.
 
 ### Metadata
 - **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
@@ -188,53 +139,19 @@ mzQuality is a Tool for quality monitoring and reporting of mass spectrometry me
 
 ### Original Help Text
 ```text
-WARNING: The proper way to show help is 'qcli.py -- --help'.
-Showing help anyway.
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        156
+Docstring:   plot a list of compounds 
 
-Fire trace:
-1. Initial component
-2. Instantiated class "Qcli" (/files/mzQuality/qcli.py:17)
-3. ('Could not consume arg:', 'mzquality')
-
-Type:        Qcli
-String form: <__main__.Qcli object at 0x7c29327e95c0>
-Docstring:   CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
-
-Supported methods are:
-
-- measurement summary
-- blank_effect
-- rt_shifts
-- qc_correction
-- rsd qc
-- rsd replicates
-- rsd internal standard(s)
-- plot information compound(s)
-- export results as samples vs. compounds
-
-Usage:       qcli.py 
-             qcli.py blank-effect
-             qcli.py export-measurements
-             qcli.py internal-standard-rsd
-             qcli.py plot-compound
-             qcli.py plot-compounds
-             qcli.py plot-compounds-zipped
-             qcli.py qc-correction
-             qcli.py qc-rsd
-             qcli.py rep-rsd
-             qcli.py rt-shifts
-             qcli.py summary
-             qcli.py test-cli
+Usage:       qcli.py plot-compounds QC_CORRECTED_FILE PLOT_LOCATION
+             qcli.py plot-compounds --qc-corrected-file QC_CORRECTED_FILE --plot-location PLOT_LOCATION
 ```
 
 ## mzquality_qc-correction
 
 ### Tool Description
-CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+Calculate the QC corrected data.
 
 ### Metadata
 - **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
@@ -244,53 +161,19 @@ mzQuality is a Tool for quality monitoring and reporting of mass spectrometry me
 
 ### Original Help Text
 ```text
-WARNING: The proper way to show help is 'qcli.py -- --help'.
-Showing help anyway.
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        84
+Docstring:   Calculate the QC corrected data ... 
 
-Fire trace:
-1. Initial component
-2. Instantiated class "Qcli" (/files/mzQuality/qcli.py:17)
-3. ('Could not consume arg:', 'mzquality')
-
-Type:        Qcli
-String form: <__main__.Qcli object at 0x7e281e60d630>
-Docstring:   CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
-
-Supported methods are:
-
-- measurement summary
-- blank_effect
-- rt_shifts
-- qc_correction
-- rsd qc
-- rsd replicates
-- rsd internal standard(s)
-- plot information compound(s)
-- export results as samples vs. compounds
-
-Usage:       qcli.py 
-             qcli.py blank-effect
-             qcli.py export-measurements
-             qcli.py internal-standard-rsd
-             qcli.py plot-compound
-             qcli.py plot-compounds
-             qcli.py plot-compounds-zipped
-             qcli.py qc-correction
-             qcli.py qc-rsd
-             qcli.py rep-rsd
-             qcli.py rt-shifts
-             qcli.py summary
-             qcli.py test-cli
+Usage:       qcli.py qc-correction MEA_FILE QC_CORRECTED_FILE
+             qcli.py qc-correction --mea-file MEA_FILE --qc-corrected-file QC_CORRECTED_FILE
 ```
 
 ## mzquality_qc-rsd
 
 ### Tool Description
-CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+Calculate the QC RSD's.
 
 ### Metadata
 - **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
@@ -300,53 +183,19 @@ mzQuality is a Tool for quality monitoring and reporting of mass spectrometry me
 
 ### Original Help Text
 ```text
-WARNING: The proper way to show help is 'qcli.py -- --help'.
-Showing help anyway.
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        99
+Docstring:   Calculate the QC RSD's ... 
 
-Fire trace:
-1. Initial component
-2. Instantiated class "Qcli" (/files/mzQuality/qcli.py:17)
-3. ('Could not consume arg:', 'mzquality')
-
-Type:        Qcli
-String form: <__main__.Qcli object at 0x7818f8661668>
-Docstring:   CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
-
-Supported methods are:
-
-- measurement summary
-- blank_effect
-- rt_shifts
-- qc_correction
-- rsd qc
-- rsd replicates
-- rsd internal standard(s)
-- plot information compound(s)
-- export results as samples vs. compounds
-
-Usage:       qcli.py 
-             qcli.py blank-effect
-             qcli.py export-measurements
-             qcli.py internal-standard-rsd
-             qcli.py plot-compound
-             qcli.py plot-compounds
-             qcli.py plot-compounds-zipped
-             qcli.py qc-correction
-             qcli.py qc-rsd
-             qcli.py rep-rsd
-             qcli.py rt-shifts
-             qcli.py summary
-             qcli.py test-cli
+Usage:       qcli.py qc-rsd QC_CORRECTED_FILE QC_RSD_FILE [BY_BATCH]
+             qcli.py qc-rsd --qc-corrected-file QC_CORRECTED_FILE --qc-rsd-file QC_RSD_FILE [--by-batch BY_BATCH]
 ```
 
 ## mzquality_rep-rsd
 
 ### Tool Description
-CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+Calculate the Replicate RSD's.
 
 ### Metadata
 - **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
@@ -356,53 +205,41 @@ mzQuality is a Tool for quality monitoring and reporting of mass spectrometry me
 
 ### Original Help Text
 ```text
-WARNING: The proper way to show help is 'qcli.py -- --help'.
-Showing help anyway.
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        114
+Docstring:   Calculate the Replicate RSD's ... 
 
-Fire trace:
-1. Initial component
-2. Instantiated class "Qcli" (/files/mzQuality/qcli.py:17)
-3. ('Could not consume arg:', 'mzquality')
+Usage:       qcli.py rep-rsd QC_CORRECTED_FILE REP_RSD_FILE [BY_BATCH]
+             qcli.py rep-rsd --qc-corrected-file QC_CORRECTED_FILE --rep-rsd-file REP_RSD_FILE [--by-batch BY_BATCH]
+```
 
-Type:        Qcli
-String form: <__main__.Qcli object at 0x7a16a3d9e668>
-Docstring:   CLI to the mzQuality
+## mzquality_rt-shifts
 
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+### Tool Description
+Calculate the RT shifts of each compound per batch.
 
-Supported methods are:
+### Metadata
+- **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
+- **Homepage**: https://github.com/hankemeierlab/mzQuality
+- **Package**: Not found
+- **Validation**: PASS
 
-- measurement summary
-- blank_effect
-- rt_shifts
-- qc_correction
-- rsd qc
-- rsd replicates
-- rsd internal standard(s)
-- plot information compound(s)
-- export results as samples vs. compounds
+### Original Help Text
+```text
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        69
+Docstring:   Calculate the RT shifts of each compound per batch ... 
 
-Usage:       qcli.py 
-             qcli.py blank-effect
-             qcli.py export-measurements
-             qcli.py internal-standard-rsd
-             qcli.py plot-compound
-             qcli.py plot-compounds
-             qcli.py plot-compounds-zipped
-             qcli.py qc-correction
-             qcli.py qc-rsd
-             qcli.py rep-rsd
-             qcli.py rt-shifts
-             qcli.py summary
-             qcli.py test-cli
+Usage:       qcli.py rt-shifts MEA_FILE RT_SHIFTS_FILE
+             qcli.py rt-shifts --mea-file MEA_FILE --rt-shifts-file RT_SHIFTS_FILE
 ```
 
 ## mzquality_summary
 
 ### Tool Description
-CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
+Report a summary of the measurements (batches, samples and compounds) as JSON on standard output.
 
 ### Metadata
 - **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
@@ -412,101 +249,13 @@ mzQuality is a Tool for quality monitoring and reporting of mass spectrometry me
 
 ### Original Help Text
 ```text
-WARNING: The proper way to show help is 'qcli.py -- --help'.
-Showing help anyway.
+Type:        method
+File:        /files/mzQuality/qcli.py
+Line:        35
+Docstring:   Report a summary of the measurements ... 
 
-Fire trace:
-1. Initial component
-2. Instantiated class "Qcli" (/files/mzQuality/qcli.py:17)
-3. ('Could not consume arg:', 'mzquality')
-
-Type:        Qcli
-String form: <__main__.Qcli object at 0x7fb9d2eab668>
-Docstring:   CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
-
-Supported methods are:
-
-- measurement summary
-- blank_effect
-- rt_shifts
-- qc_correction
-- rsd qc
-- rsd replicates
-- rsd internal standard(s)
-- plot information compound(s)
-- export results as samples vs. compounds
-
-Usage:       qcli.py 
-             qcli.py blank-effect
-             qcli.py export-measurements
-             qcli.py internal-standard-rsd
-             qcli.py plot-compound
-             qcli.py plot-compounds
-             qcli.py plot-compounds-zipped
-             qcli.py qc-correction
-             qcli.py qc-rsd
-             qcli.py rep-rsd
-             qcli.py rt-shifts
-             qcli.py summary
-             qcli.py test-cli
-```
-
-## mzquality_test-cli
-
-### Tool Description
-CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
-
-### Metadata
-- **Docker Image**: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
-- **Homepage**: https://github.com/hankemeierlab/mzQuality
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-WARNING: The proper way to show help is 'qcli.py -- --help'.
-Showing help anyway.
-
-Fire trace:
-1. Initial component
-2. Instantiated class "Qcli" (/files/mzQuality/qcli.py:17)
-3. ('Could not consume arg:', 'mzquality')
-
-Type:        Qcli
-String form: <__main__.Qcli object at 0x7d205ceaa5f8>
-Docstring:   CLI to the mzQuality
-
-mzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements.
-
-Supported methods are:
-
-- measurement summary
-- blank_effect
-- rt_shifts
-- qc_correction
-- rsd qc
-- rsd replicates
-- rsd internal standard(s)
-- plot information compound(s)
-- export results as samples vs. compounds
-
-Usage:       qcli.py 
-             qcli.py blank-effect
-             qcli.py export-measurements
-             qcli.py internal-standard-rsd
-             qcli.py plot-compound
-             qcli.py plot-compounds
-             qcli.py plot-compounds-zipped
-             qcli.py qc-correction
-             qcli.py qc-rsd
-             qcli.py rep-rsd
-             qcli.py rt-shifts
-             qcli.py summary
-             qcli.py test-cli
+Usage:       qcli.py summary MEA_FILE
+             qcli.py summary --mea-file MEA_FILE
 ```
 
 ## Metadata

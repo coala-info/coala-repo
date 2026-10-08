@@ -9,6 +9,9 @@ doc: "Annotate for each variant in a VCF/BCF at STDIN whether it is contained in
   are printed as BCF to STDOUT, with an additional INFO tag MATCHING. The two vcfs
   do not have to be sorted.\n\nTool homepage: https://github.com/rust-bio/rust-bio-tools"
 inputs:
+  - id: input_vcf
+    type: File
+    doc: VCF/BCF file with variants to annotate (read from STDIN)
   - id: vcf
     type: File
     doc: VCF/BCF file to match against
@@ -37,4 +40,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-stdout: rust-bio-tools_vcf-match.out
+stdin: $(inputs.input_vcf.path)
+stdout: matching.bcf

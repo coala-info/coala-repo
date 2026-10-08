@@ -7,13 +7,10 @@ label: sfs_create
 doc: "Tools for working with site frequency spectra\n\nTool homepage: https://github.com/malthesr/sfs"
 inputs:
   - id: file
-    type:
-      - 'null'
-      - File
-    doc: "Input VCF/BCF.\n          \n          If no file is provided, stdin will
-      be used. Input may be BGZF-compressed or uncompressed."
-    inputBinding:
-      position: 1
+    type: File
+    doc: "Input VCF/BCF. The file is sent to the tool on standard input, because the
+      tool fails with a file argument when standard input is not a terminal. Input
+      may be BGZF-compressed or uncompressed."
   - id: precision
     type:
       - 'null'
@@ -54,17 +51,19 @@ inputs:
     inputBinding:
       position: 102
       prefix: --project-shape
+      itemSeparator: ','
   - id: quiet
     type:
       - 'null'
       - type: array
         items: boolean
+        inputBinding:
+          prefix: --quiet
     doc: "Suppress log output.\n          \n          By default, information may
       be logged to stderr while running. Set this flag once to silence normal logging
       output, and set twice to silence warnings."
     inputBinding:
       position: 102
-      prefix: --quiet
   - id: samples
     type:
       - 'null'
@@ -115,11 +114,12 @@ inputs:
       - 'null'
       - type: array
         items: boolean
+        inputBinding:
+          prefix: --verbose
     doc: "Log output verbosity.\n          \n          Set this flag times to show
       debug information, and set twice to show trace information."
     inputBinding:
       position: 102
-      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout
@@ -128,3 +128,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sfs:0.1.0--h9ee0642_0
 stdout: sfs_create.out
+stdin: $(inputs.file.path)

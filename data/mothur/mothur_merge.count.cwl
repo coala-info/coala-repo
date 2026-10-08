@@ -1,19 +1,58 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mothur
+baseCommand:
+  - mothur
 label: mothur_merge.count
-doc: "This tool appears to be a command-line interface for the mothur software, specifically
-  designed to process a 'merge.count' batch file. The provided text indicates an error
-  in opening this file, suggesting it's a core input for the operation.\n\nTool homepage:
-  https://www.mothur.org"
+doc: "Merges count tables into one file.\n\nThe merge.count command takes a list of count files separated by dashes and merges them into one file.The merge.count command parameters are count and output.Example merge.count(count=final.count_table-new.count_table, output=complete.count_table).\nThe valid parameters are: count, output, seed, inputdir, and outputdir.\n\nTool homepage: https://www.mothur.org"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - "$(inputs.count ? inputs.count : [])"
 inputs:
-  - id: batch_file
-    type: File
-    doc: The batch file containing commands for mothur. In this case, it's 
-      expected to be 'merge.count'.
-    inputBinding:
-      position: 1
+  - id: count
+    type:
+      type: array
+      items: File
+    doc: "Count tables to merge (mothur parameter count=)"
+  - id: output
+    type: string
+    doc: "Name of the merged count table (mothur parameter output=)"
+  - id: seed
+    type:
+      - 'null'
+      - int
+    doc: "Random number seed (mothur parameter seed=)"
+arguments:
+  - position: 1
+    valueFrom: |-
+      ${
+        var params = [["count", "count"], ["output", "output"], ["seed", "seed"]];
+        var opts = [];
+        params.forEach(function (p) {
+          var v = inputs[p[0]];
+          if (v === null || v === undefined) { return; }
+          if (Array.isArray(v)) { v = v.map(function (f) { return f.basename; }).join('-'); }
+          else if (typeof v === 'object') { v = v.basename; }
+          else if (typeof v === 'boolean') { v = v ? 'T' : 'F'; }
+          opts.push(p[1] + '=' + v);
+        });
+        opts.push('outputdir=' + runtime.outdir + '/');
+        return '#merge.count(' + opts.join(', ') + ')';
+      }
 outputs:
+  - id: merged
+    type: File
+    doc: "Merged count table"
+    outputBinding:
+      glob: "$(inputs.output)"
+  - id: logfile
+    type:
+      - 'null'
+      - File
+    doc: mothur log file
+    outputBinding:
+      glob: mothur.*.logfile
   - id: stdout
     type: stdout
     doc: Standard output

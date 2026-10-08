@@ -4,7 +4,10 @@ baseCommand:
   - singlem
   - seqs
 label: singlem_seqs
-doc: "Find the best window position for a SingleM package\n\nTool homepage: https://github.com/wwood/singlem"
+doc: 'Find the best window position for a SingleM package
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: alignment
     type: File
@@ -27,22 +30,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: hmm
     type:
       - 'null'

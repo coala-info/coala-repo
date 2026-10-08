@@ -1,9 +1,17 @@
 # xhmm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xhmm_matrix | PASS | output identical to the real filtered_centered matrix of the XHMM example run |
+| xhmm_mergegatkdepths | PASS | synthetic data: GATK interval summary files rebuilt from a real read-depth matrix; merged values match it |
+| xhmm_preparetargets | PASS | real exome interval list; shuffled input was sorted and an overlap merged as expected |
+
 ## xhmm_preparetargets
 
 ### Tool Description
-Uses principal component analysis (PCA) normalization and a hidden Markov model (HMM) to detect and genotype copy number variation (CNV) from normalized read-depth data from targeted sequencing experiments.
+Sort all target intervals, merge overlapping ones, and print the resulting interval list
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xhmm:0.0.0.2016_01_04.cc14e52--hedee03e_3
@@ -271,7 +279,7 @@ Options for modes: 'genotype', 'mergeVCFs':
 ## xhmm_mergegatkdepths
 
 ### Tool Description
-Uses principal component analysis (PCA) normalization and a hidden Markov model (HMM) to detect and genotype copy number variation (CNV) from normalized read-depth data from targeted sequencing experiments.
+Merge the output from GATK into a single read depth matrix of samples (rows) by targets (columns)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xhmm:0.0.0.2016_01_04.cc14e52--hedee03e_3
@@ -534,7 +542,7 @@ Options for modes: 'genotype', 'mergeVCFs':
 ## xhmm_matrix
 
 ### Tool Description
-Uses principal component analysis (PCA) normalization and a hidden Markov model (HMM) to detect and genotype copy number variation (CNV) from normalized read-depth data from targeted sequencing experiments.
+Process (filter, center, etc.) a read depth matrix and output the resulting matrix
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xhmm:0.0.0.2016_01_04.cc14e52--hedee03e_3

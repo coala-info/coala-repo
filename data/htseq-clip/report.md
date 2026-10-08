@@ -1,5 +1,18 @@
 # htseq-clip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| htseq-clip_annotation | PASS | Repo test.gff3 with --splitExons gave BED identical to the repo's expected file. |
+| htseq-clip_count | PASS | Repo end sites on W50S20 windows gave counts identical to the repo's expected file. |
+| htseq-clip_creatematrix | PASS | Three repo count files gave a matrix identical to the repo's expected matrix. |
+| htseq-clip_createmaxcountmatrix | PASS | Three repo count files gave a max-count matrix with the same rows and samples as the count matrix. |
+| htseq-clip_createslidingwindows | PASS | Repo flattened BED gave 31,203 windows (w50 s20) with the same coordinates as the expected file. |
+| htseq-clip_extract | PASS | Repo test03.bam end sites have the same lines as the repo's expected BED. |
+| htseq-clip_maptoid | PASS | Repo W50S20 windows gave an ID table identical to the repo's expected file. |
+| htseq-clip_trimannotation | PASS | Repo matrix and ID table gave 2,050 annotation rows, one per matrix row. |
+
 ## htseq-clip_annotation
 
 ### Tool Description
@@ -46,7 +59,7 @@ options:
 ## htseq-clip_createslidingwindows
 
 ### Tool Description
-htseq-clip: error: argument subparser: invalid choice: 'createslidingwindows' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
+createSlidingWindows: creates sliding windows out of the flattened annotation file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/htseq-clip:2.19.0b0--pyh086e186_0
@@ -56,32 +69,25 @@ htseq-clip: error: argument subparser: invalid choice: 'createslidingwindows' (c
 
 ### Original Help Text
 ```text
-usage: htseq-clip [-h] [-v]
-                  {annotation,createSlidingWindows,mapToId,extract,count,createMatrix,createMaxCountMatrix,trimAnnotation}
-                  ...
-htseq-clip: error: argument subparser: invalid choice: 'createslidingwindows' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
+usage: htseq-clip createSlidingWindows [-h] -i input file [-o output file]
+                                       [-w window size] [-s step size]
+                                       [-v Verbose level]
+
+createSlidingWindows: creates sliding windows out of the flattened annotation file
+
+options:
+  -h, --help            show this help message and exit
+  -i input file, --input input file
+                        flattend annotation file, see "htseq-clip annotation -h"
+  -o output file, --output output file
+                        annotation sliding windows file (.bed[.gz], default: print to console)
+  -w window size, --windowSize window size
+                        window size (in number of base pairs) for sliding window (default: 50)
+  -s step size, --windowStep step size
+                        window step size for sliding window (default: 20)
+  -v Verbose level, --verbose Verbose level
+                        Allowed choices: debug, info, warn, quiet (default: info)
 ```
-
-
-## htseq-clip_maptold
-
-### Tool Description
-htseq-clip: error: argument subparser: invalid choice: 'maptold' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/htseq-clip:2.19.0b0--pyh086e186_0
-- **Homepage**: https://github.com/EMBL-Hentze-group/htseq-clip
-- **Package**: https://anaconda.org/channels/bioconda/packages/htseq-clip/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: htseq-clip [-h] [-v]
-                  {annotation,createSlidingWindows,mapToId,extract,count,createMatrix,createMaxCountMatrix,trimAnnotation}
-                  ...
-htseq-clip: error: argument subparser: invalid choice: 'maptold' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
-```
-
 
 ## htseq-clip_extract
 
@@ -186,30 +192,10 @@ options:
 ```
 
 
-## htseq-clip_createmtrix
-
-### Tool Description
-htseq-clip: error: argument subparser: invalid choice: 'createmtrix' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/htseq-clip:2.19.0b0--pyh086e186_0
-- **Homepage**: https://github.com/EMBL-Hentze-group/htseq-clip
-- **Package**: https://anaconda.org/channels/bioconda/packages/htseq-clip/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: htseq-clip [-h] [-v]
-                  {annotation,createSlidingWindows,mapToId,extract,count,createMatrix,createMaxCountMatrix,trimAnnotation}
-                  ...
-htseq-clip: error: argument subparser: invalid choice: 'createmtrix' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
-```
-
-
 ## htseq-clip_createmaxcountmatrix
 
 ### Tool Description
-htseq-clip: error: argument subparser: invalid choice: 'createmaxcountmatrix' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
+createMaxCountMatrix: create R friendly matrix from crosslink_count_position_max column in count function output files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/htseq-clip:2.19.0b0--pyh086e186_0
@@ -219,17 +205,31 @@ htseq-clip: error: argument subparser: invalid choice: 'createmaxcountmatrix' (c
 
 ### Original Help Text
 ```text
-usage: htseq-clip [-h] [-v]
-                  {annotation,createSlidingWindows,mapToId,extract,count,createMatrix,createMaxCountMatrix,trimAnnotation}
-                  ...
-htseq-clip: error: argument subparser: invalid choice: 'createmaxcountmatrix' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
-```
+usage: htseq-clip createMaxCountMatrix [-h] -i input folder
+                                       [-b file name prefix]
+                                       [-e file name postfix] [-o output file]
+                                       [-v Verbose level]
 
+createMaxCountMatrix: create R friendly matrix from `crosslink_count_position_max` column in  "count" function output files
+
+options:
+  -h, --help            show this help message and exit
+  -i input folder, --inputFolder input folder
+                        Folder name with output files from count function, see "htseq-clip count -h ", supports .gz (gzipped files)
+  -b file name prefix, --prefix file name prefix
+                        Use files only with this given file name prefix (default: None)
+  -e file name postfix, --postfix file name postfix
+                        Use files only with this given file name postfix (default: None). WARNING! either "--prefix" or "--postfix" argument must be given!
+  -o output file, --output output file
+                        output junction file (.txt[.gz], default: print to console)
+  -v Verbose level, --verbose Verbose level
+                        Allowed choices: debug, info, warn, quiet (default: info)
+```
 
 ## htseq-clip_trimannotation
 
 ### Tool Description
-htseq-clip: error: argument subparser: invalid choice: 'trimannotation' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
+trimAnnotation: trim down large annotation file based on output from createMatrix
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/htseq-clip:2.19.0b0--pyh086e186_0
@@ -239,12 +239,85 @@ htseq-clip: error: argument subparser: invalid choice: 'trimannotation' (choose 
 
 ### Original Help Text
 ```text
-usage: htseq-clip [-h] [-v]
-                  {annotation,createSlidingWindows,mapToId,extract,count,createMatrix,createMaxCountMatrix,trimAnnotation}
-                  ...
-htseq-clip: error: argument subparser: invalid choice: 'trimannotation' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation')
+usage: htseq-clip trimAnnotation [-h] -i crosslink matrix -a annotation
+                                 [-o output file] [--no_header]
+                                 [-v Verbose level]
+
+trimAnnotation: trim down large annotation file based on output from 'createMatrix' 
+
+options:
+  -h, --help            show this help message and exit
+  -i crosslink matrix, --matrix crosslink matrix
+                        Crosslink count matrix, output from the function 'createMatrix'
+  -a annotation, --annotation annotation
+                        Annotation file, output from the function 'mapToId'
+  -o output file, --output output file
+                        output trimmed annotations to file (.txt[.gz], default: print to console)
+  --no_header           First row in the annotation file is assumed to be header by default. Use this flag if the first row in annotation file is not a header
+  -v Verbose level, --verbose Verbose level
+                        Allowed choices: debug, info, warn, quiet (default: info)
 ```
 
+## htseq-clip_maptoid
+
+### Tool Description
+mapToId: extract "name" column from the annotation file and map the entries to unique id and print out in tab separated format
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/htseq-clip:2.19.0b0--pyh086e186_0
+- **Homepage**: https://github.com/EMBL-Hentze-group/htseq-clip
+- **Package**: https://anaconda.org/channels/bioconda/packages/htseq-clip/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: htseq-clip mapToId [-h] -a annotation file [-o output file]
+                          [-v Verbose level]
+
+mapToId: extract "name" column from the annotation file and map the entries to unique id and print out in tab separated format
+
+options:
+  -h, --help            show this help message and exit
+  -a annotation file, --annotation annotation file
+                        flattened annotation file from "htseq-clip annotation -h" or sliding window file from "htseq-clip createSlidingWindows -h"
+  -o output file, --output output file
+                        region/window annotation mapped to a unique id (.txt[.gz], default: print to console)
+  -v Verbose level, --verbose Verbose level
+                        Allowed choices: debug, info, warn, quiet (default: info)
+```
+
+## htseq-clip_creatematrix
+
+### Tool Description
+createMatrix: create R friendly output matrix file from count function output files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/htseq-clip:2.19.0b0--pyh086e186_0
+- **Homepage**: https://github.com/EMBL-Hentze-group/htseq-clip
+- **Package**: https://anaconda.org/channels/bioconda/packages/htseq-clip/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: htseq-clip createMatrix [-h] -i input folder [-b file name prefix]
+                               [-e file name postfix] [-o output file]
+                               [-v Verbose level]
+
+createMatrix: create R friendly output matrix file from count function output files
+
+options:
+  -h, --help            show this help message and exit
+  -i input folder, --inputFolder input folder
+                        Folder name with output files from count function, see "htseq-clip count -h ", supports .gz (gzipped files)
+  -b file name prefix, --prefix file name prefix
+                        Use files only with this given file name prefix (default: None)
+  -e file name postfix, --postfix file name postfix
+                        Use files only with this given file name postfix (default: None). WARNING! either "--prefix" or "--postfix" argument must be given!
+  -o output file, --output output file
+                        output junction file (.txt[.gz], default: print to console)
+  -v Verbose level, --verbose Verbose level
+                        Allowed choices: debug, info, warn, quiet (default: info)
+```
 
 ## Metadata
 - **Skill**: not generated

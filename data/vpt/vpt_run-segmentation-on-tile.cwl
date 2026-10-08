@@ -31,10 +31,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tile-index
+  - id: input_images
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the mosaic tiff images named in the specification json. 
+      It is staged in the working directory so that relative image paths in the 
+      specification resolve.
 outputs:
+  - id: tile_results
+    type:
+      type: array
+      items: File
+    doc: Per-tile segmentation parquet files, written to the output path of the 
+      specification, in a folder named by run_on_tile_dir.
+    outputBinding:
+      glob: '*/*/*.parquet'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_images)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

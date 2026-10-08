@@ -17,6 +17,12 @@ inputs:
       .trees file extension.
     inputBinding:
       position: 2
+  - id: arg_files
+    type:
+      type: array
+      items: File
+    doc: The tree-sequence (.trees) files that arg_prefix names. They are staged
+      in the working directory so the prefix finds them.
   - id: add_ground_truth
     type:
       - 'null'
@@ -105,7 +111,7 @@ inputs:
   - id: num_times
     type:
       - 'null'
-      - int
+      - string
     doc: Number of time slices to use. Defaults to 20. Use the suffix 'l' or 'L'
       to use left-skewed time slices.
     inputBinding:
@@ -196,6 +202,23 @@ inputs:
       position: 104
       prefix: --out-dir
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: solver_files
+    type:
+      type: array
+      items: File
+    doc: Solver input JSON files (and solver output JSON files with --solve).
+    outputBinding:
+      glob: "$(inputs.out_dir_path ? inputs.out_dir_path + '/' : '')*.solve_in.*.json"
+  - id: coal_files
+    type:
+      type: array
+      items: File
+    doc: Coalescence lists extracted from each ARG.
+    outputBinding:
+      glob: '*-coal.txt'
   - id: out_dir
     type:
       - 'null'
@@ -205,6 +228,16 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = inputs.arg_files.slice();
+        if (inputs.out_dir_path) {
+          l.push({class: 'Directory', basename: inputs.out_dir_path, listing: [], writable: true});
+        }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mrpast:0.2--py312h8f4af18_0
+stdout: mrpast_process.out

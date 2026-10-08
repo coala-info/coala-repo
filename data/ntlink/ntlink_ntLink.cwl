@@ -1,342 +1,208 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: make
+baseCommand:
+  - ntLink
+  - scaffold
 label: ntlink_ntLink
-doc: "GNU Make is a tool which controls the generation of programs and other non-source
-  files from a description file.\n\nTool homepage: https://github.com/bcgsc/ntLink"
+doc: "ntLink: Scaffolding assemblies using long reads. Runs `ntLink scaffold` (optionally
+  with gap filling) on a target assembly and long reads.\n\nTool homepage: https://github.com/bcgsc/ntLink"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.target)
+      - $(inputs.reads)
 inputs:
   - id: target
+    type: File
+    doc: Target assembly to be scaffolded in fasta format
+    inputBinding:
+      position: 2
+      prefix: target=
+      separate: false
+      valueFrom: $(self.basename)
+  - id: reads
+    type:
+      type: array
+      items: File
+    doc: List of long read files
+    inputBinding:
+      position: 3
+      valueFrom: "${ return 'reads=' + self.map(function(f){ return f.basename; }).join(' '); }"
+  - id: gap_fill
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Target(s) to build
+      - boolean
+    doc: Additionally run gap-filling (fill gap regions with raw read sequence)
     inputBinding:
       position: 1
-  - id: always_make
-    type:
-      - 'null'
-      - boolean
-    doc: Unconditionally make all targets.
-    inputBinding:
-      position: 102
-      prefix: --always-make
-  - id: assume_new
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
-    inputBinding:
-      position: 102
-      prefix: --assume-new
-  - id: assume_old
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be very old and don't remake it.
-    inputBinding:
-      position: 102
-      prefix: --assume-old
-  - id: check_symlink_times
-    type:
-      - 'null'
-      - boolean
-    doc: Use the latest mtime between symlinks and target.
-    inputBinding:
-      position: 102
-      prefix: --check-symlink-times
-  - id: debug
+      prefix: gap_fill
+  - id: prefix
     type:
       - 'null'
       - string
-    doc: Print various types of debugging information.
+    doc: Prefix of intermediate output files [<target>.k<k>.w<w>.z<z>]
     inputBinding:
-      position: 102
-      prefix: --debug=
+      position: 4
+      prefix: prefix=
       separate: false
-  - id: debug_info
-    type:
-      - 'null'
-      - boolean
-    doc: Print lots of debugging information.
-    inputBinding:
-      position: 102
-      prefix: -d
-  - id: directory
-    type:
-      - 'null'
-      - Directory
-    doc: Change to DIRECTORY before doing anything.
-    inputBinding:
-      position: 102
-      prefix: --directory
-  - id: dry_run
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
-    inputBinding:
-      position: 102
-      prefix: --dry-run
-  - id: environment_overrides
-    type:
-      - 'null'
-      - boolean
-    doc: Environment variables override makefiles.
-    inputBinding:
-      position: 102
-      prefix: --environment-overrides
-  - id: eval
-    type:
-      - 'null'
-      - string
-    doc: Evaluate STRING as a makefile statement.
-    inputBinding:
-      position: 102
-      prefix: --eval
-  - id: ignore_errors
-    type:
-      - 'null'
-      - boolean
-    doc: Ignore errors from recipes.
-    inputBinding:
-      position: 102
-      prefix: --ignore-errors
-  - id: include_dir
-    type:
-      - 'null'
-      - type: array
-        items: Directory
-    doc: Search DIRECTORY for included makefiles.
-    inputBinding:
-      position: 102
-      prefix: --include-dir
-  - id: jobs
+  - id: threads
     type:
       - 'null'
       - int
-    doc: Allow N jobs at once; infinite jobs with no arg.
+    doc: Number of threads [4]
     inputBinding:
-      position: 102
-      prefix: --jobs=
+      position: 4
+      prefix: t=
       separate: false
-  - id: jobserver_style
+  - id: k
     type:
       - 'null'
-      - string
-    doc: Select the style of jobserver to use.
+      - int
+    doc: K-mer size for minimizers [32]
     inputBinding:
-      position: 102
-      prefix: --jobserver-style
-  - id: just_print
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
-    inputBinding:
-      position: 102
-      prefix: --just-print
-  - id: keep_going
-    type:
-      - 'null'
-      - boolean
-    doc: Keep going when some targets can't be made.
-    inputBinding:
-      position: 102
-      prefix: --keep-going
-  - id: load_average
-    type:
-      - 'null'
-      - float
-    doc: Don't start multiple jobs unless load is below N.
-    inputBinding:
-      position: 102
-      prefix: --load-average=
+      position: 4
+      prefix: k=
       separate: false
-  - id: makefile
+  - id: w
     type:
       - 'null'
-      - File
-    doc: Read FILE as a makefile.
+      - int
+    doc: Window size for minimizers [100]
     inputBinding:
-      position: 102
-      prefix: --file
-  - id: max_load
-    type:
-      - 'null'
-      - float
-    doc: Don't start multiple jobs unless load is below N.
-    inputBinding:
-      position: 102
-      prefix: --max-load=
+      position: 4
+      prefix: w=
       separate: false
-  - id: new_file
+  - id: n
     type:
       - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
+      - int
+    doc: Minimum graph edge weight [1]
     inputBinding:
-      position: 102
-      prefix: --new-file
-  - id: no_builtin_rules
-    type:
-      - 'null'
-      - boolean
-    doc: Disable the built-in implicit rules.
-    inputBinding:
-      position: 102
-      prefix: --no-builtin-rules
-  - id: no_builtin_variables
-    type:
-      - 'null'
-      - boolean
-    doc: Disable the built-in variable settings.
-    inputBinding:
-      position: 102
-      prefix: --no-builtin-variables
-  - id: no_keep_going
-    type:
-      - 'null'
-      - boolean
-    doc: Turns off -k.
-    inputBinding:
-      position: 102
-      prefix: --no-keep-going
-  - id: no_print_directory
-    type:
-      - 'null'
-      - boolean
-    doc: Turn off -w, even if it was turned on implicitly.
-    inputBinding:
-      position: 102
-      prefix: --no-print-directory
-  - id: no_silent
-    type:
-      - 'null'
-      - boolean
-    doc: Echo recipes (disable --silent mode).
-    inputBinding:
-      position: 102
-      prefix: --no-silent
-  - id: old_file
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be very old and don't remake it.
-    inputBinding:
-      position: 102
-      prefix: --old-file
-  - id: output_sync
-    type:
-      - 'null'
-      - string
-    doc: Synchronize output of parallel jobs by TYPE.
-    inputBinding:
-      position: 102
-      prefix: --output-sync=
+      position: 4
+      prefix: n=
       separate: false
-  - id: print_data_base
+  - id: min_gap
     type:
       - 'null'
-      - boolean
-    doc: Print make's internal database.
+      - int
+    doc: Minimum gap size (bp) [20]
     inputBinding:
-      position: 102
-      prefix: --print-data-base
-  - id: print_directory
-    type:
-      - 'null'
-      - boolean
-    doc: Print the current directory.
-    inputBinding:
-      position: 102
-      prefix: --print-directory
-  - id: question
-    type:
-      - 'null'
-      - boolean
-    doc: Run no recipe; exit status says if up to date.
-    inputBinding:
-      position: 102
-      prefix: --question
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Don't echo recipes.
-    inputBinding:
-      position: 102
-      prefix: --quiet
-  - id: recon
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
-    inputBinding:
-      position: 102
-      prefix: --recon
-  - id: shuffle
-    type:
-      - 'null'
-      - string
-    doc: Perform shuffle of prerequisites and goals.
-    inputBinding:
-      position: 102
-      prefix: --shuffle=
+      position: 4
+      prefix: g=
       separate: false
-  - id: silent
+  - id: max_gap
+    type:
+      - 'null'
+      - int
+    doc: Maximum gap size (bp). -1 indicates no maximum [-1]
+    inputBinding:
+      position: 4
+      prefix: G=
+      separate: false
+  - id: f
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of contigs in a run for full transitive edge addition [10]
+    inputBinding:
+      position: 4
+      prefix: f=
+      separate: false
+  - id: a
+    type:
+      - 'null'
+      - int
+    doc: Minimum number of anchored ONT reads required for an edge [1]
+    inputBinding:
+      position: 4
+      prefix: a=
+      separate: false
+  - id: z
+    type:
+      - 'null'
+      - int
+    doc: Minimum size of contig (bp) to scaffold [1000]
+    inputBinding:
+      position: 4
+      prefix: z=
+      separate: false
+  - id: v
+    type:
+      - 'null'
+      - int
+    doc: If 1, track time and memory for each step of the pipeline [0]
+    inputBinding:
+      position: 4
+      prefix: v=
+      separate: false
+  - id: paf
     type:
       - 'null'
       - boolean
-    doc: Don't echo recipes.
+    doc: If True, outputs read to contig mappings in PAF-like format [False]
     inputBinding:
-      position: 102
-      prefix: --silent
-  - id: stop
+      position: 4
+      valueFrom: "${ return self == null ? null : (self ? 'paf=True' : 'paf=False'); }"
+  - id: overlap
     type:
       - 'null'
       - boolean
-    doc: Turns off -k.
+    doc: If True, runs extra step to attempt to identify and trim overlapping joined
+      sequences [True]
     inputBinding:
-      position: 102
-      prefix: --stop
-  - id: touch
+      position: 4
+      valueFrom: "${ return self == null ? null : (self ? 'overlap=True' : 'overlap=False'); }"
+  - id: sensitive
     type:
       - 'null'
       - boolean
-    doc: Touch targets instead of remaking them.
+    doc: If True, runs mapping in sensitive mode [False]
     inputBinding:
-      position: 102
-      prefix: --touch
-  - id: trace
+      position: 4
+      valueFrom: "${ return self == null ? null : (self ? 'sensitive=True' : 'sensitive=False'); }"
+  - id: soft_mask
     type:
       - 'null'
       - boolean
-    doc: Print tracing information.
+    doc: If True, gaps are filled with lowercase bases [False]
     inputBinding:
-      position: 102
-      prefix: --trace
-  - id: warn_undefined_variables
-    type:
-      - 'null'
-      - boolean
-    doc: Warn when an undefined variable is referenced.
-    inputBinding:
-      position: 102
-      prefix: --warn-undefined-variables
-  - id: what_if
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
-    inputBinding:
-      position: 102
-      prefix: --what-if
+      position: 4
+      valueFrom: "${ return self == null ? null : (self ? 'soft_mask=True' : 'soft_mask=False'); }"
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: scaffolds
+    type: File
+    doc: Final post-ntLink scaffolds (<target>.k<k>.w<w>.z<z>.ntLink.scaffolds.fa)
+    outputBinding:
+      glob: $(inputs.target.basename).k*.ntLink.scaffolds.fa
+  - id: gap_filled_scaffolds
+    type:
+      - 'null'
+      - File
+    doc: Gap-filled scaffolds (with gap_fill)
+    outputBinding:
+      glob: $(inputs.target.basename).k*.ntLink.scaffolds.gap_fill.fa
+  - id: agp
+    type:
+      type: array
+      items: File
+    doc: AGP files describing the scaffolds
+    outputBinding:
+      glob: '*.agp'
+  - id: verbose_mapping
+    type:
+      type: array
+      items: File
+    doc: Verbose read-to-contig mappings
+    outputBinding:
+      glob: '*.verbose_mapping.tsv'
+  - id: paf_mappings
+    type:
+      type: array
+      items: File
+    doc: Read to contig mappings in PAF-like format (with paf)
+    outputBinding:
+      glob: '*.paf'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntlink:1.3.11--py312h7896c42_1
-stdout: ntlink_ntLink.out

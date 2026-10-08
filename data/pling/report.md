@@ -1,9 +1,16 @@
 # pling CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pling_align | PASS | Distances for the 4 IncY plasmids from pling's integration test match the repo truth file exactly. |
+| pling_skip | PASS | Toy plasmids with the repo's skip.unimog give DCJ distances 0 for reference vs reverse and put the outlier in its own community, as expected. |
+
 ## pling_align
 
 ### Tool Description
-pling is a tool for reconstructing plasmid relationships from genome assemblies.
+Cluster plasmids by containment and DCJ-Indel distance, with integerisation from pairwise alignments (mode 'align').
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pling:2.0.1--pyhdfd78af_0
@@ -112,7 +119,7 @@ options:
 ## pling_skip
 
 ### Tool Description
-Integerisation method: "align" for alignment, "skip" to skip integerisation altogether. Make sure to input a unimog file if skipping integerisation.
+Cluster plasmids by containment and DCJ-Indel distance, reading gene orders from a unimog file (mode 'skip').
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pling:2.0.1--pyhdfd78af_0

@@ -1,5 +1,13 @@
 # kingfisher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kingfisher_annotate | PASS | JSON metadata for SRR13774710 matches the kingfisher test exactly (added NetworkAccess). |
+| kingfisher_extract | PASS | Extracted the test DRR002803.sra; --unsorted FASTQ md5 matches the kingfisher test, sorted mode gives the same 116 reads. |
+| kingfisher_get | PASS | Downloaded DRR002803.sra via aws-http; identical to the copy in the kingfisher tests (fixed invented --file-format flag, added NetworkAccess and file outputs). |
+
 ## kingfisher_get
 
 ### Tool Description
@@ -102,24 +110,6 @@ Other general options:
 ```
 
 
-## kingfisher_compressed
-
-### Tool Description
-kingfisher: error: argument subparser_name: invalid choice: 'compressed' (choose from 'get', 'extract', 'annotate')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kingfisher:0.4.1--pyh7cba7a3_0
-- **Homepage**: https://github.com/wwood/kingfisher-download
-- **Package**: https://anaconda.org/channels/bioconda/packages/kingfisher/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: kingfisher [-h] {get,extract,annotate} ...
-kingfisher: error: argument subparser_name: invalid choice: 'compressed' (choose from 'get', 'extract', 'annotate')
-```
-
-
 ## kingfisher_annotate
 
 ### Tool Description
@@ -169,24 +159,6 @@ Other general options:
                         print longer help message
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
-```
-
-
-## kingfisher_sequenced
-
-### Tool Description
-kingfisher: error: argument subparser_name: invalid choice: 'sequenced' (choose from 'get', 'extract', 'annotate')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kingfisher:0.4.1--pyh7cba7a3_0
-- **Homepage**: https://github.com/wwood/kingfisher-download
-- **Package**: https://anaconda.org/channels/bioconda/packages/kingfisher/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: kingfisher [-h] {get,extract,annotate} ...
-kingfisher: error: argument subparser_name: invalid choice: 'sequenced' (choose from 'get', 'extract', 'annotate')
 ```
 
 

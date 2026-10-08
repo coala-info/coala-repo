@@ -7,15 +7,22 @@ label: knock-knock_install-example-data
 doc: "Installs example data for a knock-knock project.\n\nTool homepage: https://github.com/jeffhussmann/knock-knock"
 inputs:
   - id: base_dir
-    type: Directory
+    type: string
     doc: the base directory to store input data, reference annotations, and 
       analysis output for a project
     inputBinding:
       position: 1
 outputs:
+  - id: project_dir
+    type: Directory
+    doc: New project directory with example data and strategies.
+    outputBinding:
+      glob: $(inputs.base_dir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/knock-knock:0.8.0--pyhdfd78af_0

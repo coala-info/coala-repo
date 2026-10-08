@@ -81,10 +81,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: index
-    type:
-      type: array
-      items: File
+    type: File
     doc: paths to file(s) with indexed FASTA files of the reference genome.
     inputBinding:
       position: 101
@@ -225,6 +224,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+  - id: workdir_in
+    type:
+      - 'null'
+      - Directory
+    doc: A working directory from a previous run, to add more results to it (for
+      example the second read end). Its name must be the same as the workdir
+      string.
 outputs:
   - id: stdout
     type: stdout
@@ -236,6 +242,13 @@ outputs:
     doc: path to an output folder.
     outputBinding:
       glob: $(inputs.workdir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir_in)
+        writable: true
+      - "$(inputs.genome ? inputs.genome.map(function(f) { return {entryname: f.basename, entry: f, writable: true}; }) : [])"
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tadbit:1.0.1--py310h2a84d7f_1

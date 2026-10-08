@@ -1,45 +1,12 @@
 # itol-config CWL Generation Report
 
-## itol-config_Different
+## Real Data Test
 
-### Tool Description
-Configuration tool for ITOL
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/itol-config:0.1.0--pyhdfd78af_0
-- **Homepage**: https://github.com/jodyphelan/itol-config
-- **Package**: https://anaconda.org/channels/bioconda/packages/itol-config/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/itol-config/overview
-- **Total Downloads**: 4.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/jodyphelan/itol-config
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: itol_config [-h] {colour_strip,text_label,binary_data} ...
-itol_config: error: argument {colour_strip,text_label,binary_data}: invalid choice: 'Different' (choose from 'colour_strip', 'text_label', 'binary_data')
-```
-
-
-## itol-config_sub-command
-
-### Tool Description
-Configuration tool for ITOL
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/itol-config:0.1.0--pyhdfd78af_0
-- **Homepage**: https://github.com/jodyphelan/itol-config
-- **Package**: https://anaconda.org/channels/bioconda/packages/itol-config/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: itol_config [-h] {colour_strip,text_label,binary_data} ...
-itol_config: error: argument {colour_strip,text_label,binary_data}: invalid choice: 'sub-command' (choose from 'colour_strip', 'text_label', 'binary_data')
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| itol-config_binary_data | PASS | 0/1 matrix derived from real nf-core sample metadata gave a correct DATASET_BINARY file; without --colour-conf the tool crashes (tool bug). |
+| itol-config_colour_strip | PASS | Real nf-core sample metadata CSV gave one colour strip file per column with correct sample colours. |
+| itol-config_text_label | PASS | Real nf-core sample metadata CSV gave one text label file per column with the right labels. |
 
 ## itol-config_colour_strip
 

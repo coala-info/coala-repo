@@ -10,11 +10,15 @@ inputs:
   - id: tumor
     type: File
     doc: BAM file with reads from tumor sample.
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 1
   - id: normal
     type: File
     doc: BAM file with reads from normal sample.
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 2
   - id: reference
@@ -110,7 +114,7 @@ inputs:
   - id: obs
     type:
       - 'null'
-      - File
+      - string
     doc: "Optional path where read observations shall be written to. The resulting
       file\n                                          contains a line for each observation
       with tab-separated values."
@@ -230,6 +234,13 @@ outputs:
     doc: BCF file that shall contain the results (if omitted, write to STDOUT).
     outputBinding:
       glob: $(inputs.output_path)
+  - id: observations
+    type:
+      - 'null'
+      - File
+    doc: Read observations written with --obs
+    outputBinding:
+      glob: $(inputs.obs)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

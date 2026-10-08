@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - itol_config
+  - itol-config
   - binary_data
 label: itol-config_binary_data
 doc: "Generates an iTOL configuration file for binary data from a CSV input.\n\nTool
@@ -32,7 +32,7 @@ inputs:
   - id: symbol
     type:
       - 'null'
-      - string
+      - int
     doc: 'The symbol to use for the binary data (1: square, 2: circle, 3: star, 4:
       right triangle, 5: left triangle, 6: checkmark)'
     inputBinding:
@@ -40,16 +40,16 @@ inputs:
       prefix: --symbol
   - id: output_path
     type: string
-    doc: Output file name for the iTOL configuration file
+    doc: Output file name (prefix) for the iTOL configuration file
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
     type: File
-    doc: Output file name for the iTOL configuration file
+    doc: iTOL binary data configuration file (<output>.txt)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path).txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

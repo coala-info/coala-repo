@@ -33,7 +33,7 @@ inputs:
       position: 101
       prefix: -f
   - id: homopolymers_microsatellites_file
-    type: string
+    type: File
     doc: homopolymers and microsatellites file
     inputBinding:
       position: 101
@@ -73,6 +73,13 @@ inputs:
   - id: normal_bam_file
     type: File
     doc: normal bam file with index
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
       prefix: -n
@@ -111,6 +118,9 @@ inputs:
       - 'null'
       - File
     doc: reference file [required if *.cram for -t]
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: -g
@@ -133,6 +143,13 @@ inputs:
   - id: tumor_bam_file
     type: File
     doc: tumor bam file with index
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
       prefix: -t
@@ -140,13 +157,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_path_dir
+  - id: output_files
     type:
-      - 'null'
-      - Directory
-    doc: output path (Ending with a slash is not allowed.)
+      type: array
+      items: File
+    doc: MSI score file (output path) and its detail files (output path with 
+      _dis, _all and _unstable suffixes)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msisensor-pro:1.3.0--hd979922_1

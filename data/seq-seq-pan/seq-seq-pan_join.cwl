@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - seqseqpan.py
+  - seq-seq-pan
   - join
 label: seq-seq-pan_join
 doc: "Join LCBs from 2 XMFA files, assigning genome_ids as in first XMFA file (-x).\n\
@@ -16,7 +16,7 @@ inputs:
   - id: order
     type:
       - 'null'
-      - string
+      - int
     doc: Ordering of blocks in XMFA/FASTA output (0,1,2,...)
     inputBinding:
       position: 101
@@ -54,6 +54,11 @@ outputs:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path_path)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1

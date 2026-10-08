@@ -4,7 +4,10 @@ baseCommand:
   - singlem
   - data
 label: singlem_data
-doc: "Download reference metapackage data\n\nTool homepage: https://github.com/wwood/singlem"
+doc: 'Download reference metapackage data
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: debug
     type:
@@ -14,26 +17,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: output_directory
     type: string?
-    doc: Output directory [required unless SINGLEM_METAPACKAGE_PATH is 
-      specified]
+    doc: Output directory [required unless SINGLEM_METAPACKAGE_PATH is specified]
     inputBinding:
       position: 101
       prefix: --output-directory
@@ -49,8 +35,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Check that the data is up to date and each file has the correct 
-      checksum
+    doc: Check that the data is up to date and each file has the correct checksum
     inputBinding:
       position: 101
       prefix: --verify-only
@@ -62,8 +47,7 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: Output directory [required unless SINGLEM_METAPACKAGE_PATH is 
-      specified]
+    doc: Output directory [required unless SINGLEM_METAPACKAGE_PATH is specified]
     outputBinding:
       glob: $(inputs.output_directory)
 hints:

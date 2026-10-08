@@ -4,8 +4,10 @@ baseCommand:
   - singlem
   - appraise
 label: singlem_appraise
-doc: "How much of the metagenome do the genomes or assembly represent?\n\nTool homepage:
-  https://github.com/wwood/singlem"
+doc: 'How much of the metagenome do the genomes or assembly represent?
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: assembly_archive_otu_tables
     type:
@@ -33,22 +35,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: genome_archive_otu_tables
     type:
       - 'null'
@@ -71,8 +57,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: "use sequence searching to account for genomes that are\nsimilar to those
-      found in the metagenome"
+    doc: 'use sequence searching to account for genomes that are
+
+      similar to those found in the metagenome'
     inputBinding:
       position: 101
       prefix: --imperfect
@@ -97,7 +84,7 @@ inputs:
   - id: metapackage
     type:
       - 'null'
-      - string
+      - Directory
     doc: Metapackage used in the creation of the OTU tables
     inputBinding:
       position: 101
@@ -106,7 +93,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: "Output sample name (genome or assembly) the hit was\nfound in"
+    doc: 'Output sample name (genome or assembly) the hit was
+
+      found in'
     inputBinding:
       position: 101
       prefix: --output-found-in
@@ -122,8 +111,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Output plot SVG filename (marker chosen automatically\nunless --plot-marker
-      is also specified)"
+    doc: 'Output plot SVG filename (marker chosen automatically
+
+      unless --plot-marker is also specified)'
     inputBinding:
       position: 101
       prefix: --plot
@@ -131,8 +121,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Plot visualisation of appraisal results from all\nmarkers to this basename
-      (one SVG per marker)"
+    doc: 'Plot visualisation of appraisal results from all
+
+      markers to this basename (one SVG per marker)'
     inputBinding:
       position: 101
       prefix: --plot-basename
@@ -156,7 +147,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: "sequence identity cutoff to use if --imperfect is\nspecified"
+    doc: 'sequence identity cutoff to use if --imperfect is
+
+      specified'
     inputBinding:
       position: 101
       prefix: --sequence-identity
@@ -164,8 +157,11 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: "Stream input OTU tables, saving RAM. Only works with\n--output-otu-table
-      and transformation options do not\nwork [expert option]."
+    doc: 'Stream input OTU tables, saving RAM. Only works with
+
+      --output-otu-table and transformation options do not
+
+      work [expert option].'
     inputBinding:
       position: 101
       prefix: --stream-inputs
@@ -217,7 +213,9 @@ outputs:
     type:
       - 'null'
       - File
-    doc: "output OTU table of assembled but not binned\npopulations"
+    doc: 'output OTU table of assembled but not binned
+
+      populations'
     outputBinding:
       glob: $(inputs.output_unbinned_otu_table_path)
   - id: output_assembled_otu_table
@@ -238,10 +236,17 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output plot SVG filename (marker chosen automatically unless 
-      --plot-marker is also specified)
+    doc: Output plot SVG filename (marker chosen automatically unless --plot-marker
+      is also specified)
     outputBinding:
       glob: $(inputs.plot)
+  - id: plot_basename_files
+    type:
+      type: array
+      items: File
+    doc: SVG plots (one per marker) written with the basename given in plot_basename
+    outputBinding:
+      glob: $(inputs.plot_basename)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

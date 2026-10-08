@@ -1,5 +1,15 @@
 # foldcomp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| foldcomp_check | Failed | tool bug: check passes a truncated FCZ file without flagging it; valid files are reported correctly |
+| foldcomp_compress | PASS |  |
+| foldcomp_decompress | PASS |  |
+| foldcomp_extract | PASS |  |
+| foldcomp_rmsd | PASS |  |
+
 ## foldcomp_compress
 
 ### Tool Description

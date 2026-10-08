@@ -4,85 +4,72 @@ baseCommand:
   - transit
   - gumbel
 label: transit_gumbel
-doc: "Runs the Gumbel model for transcript analysis.\n\nTool homepage: http://github.com/mad-lab/transit"
+doc: "Bayesian method that estimates the posterior probability of essentiality of each gene from TnSeq data (Gumbel model).\n\nTool homepage: http://github.com/mad-lab/transit"
 inputs:
   - id: wig_files
-    type:
-      type: array
-      items: File
-    doc: Comma-separated .wig files
+    type: File[]
+    doc: "Comma-separated .wig files"
     inputBinding:
       position: 1
       itemSeparator: ','
   - id: annotation_file
     type: File
-    doc: Annotation .prot_table or GFF3 file
+    doc: "Annotation .prot_table or GFF3 file"
     inputBinding:
       position: 2
-  - id: burn_in_samples
-    type:
-      - 'null'
-      - int
-    doc: Number of Burn-in samples.
+  - id: output_filename
+    type: string
+    doc: "Output file name"
     inputBinding:
-      position: 103
-      prefix: -b
-  - id: ignore_c_terminus_percentage
-    type:
-      - 'null'
-      - float
-    doc: Ignore TAs occuring within given percentage (as integer) of the C 
-      terminus.
-    inputBinding:
-      position: 103
-      prefix: -iC
-  - id: ignore_n_terminus_percentage
-    type:
-      - 'null'
-      - float
-    doc: Ignore TAs occuring within given percentage (as integer) of the N 
-      terminus.
-    inputBinding:
-      position: 103
-      prefix: -iN
-  - id: min_read_count
-    type:
-      - 'null'
-      - int
-    doc: Smallest read-count to consider.
-    inputBinding:
-      position: 103
-      prefix: -m
+      position: 3
   - id: num_samples
-    type:
-      - 'null'
-      - int
-    doc: Number of samples.
+    type: ['null', int]
+    doc: "Number of samples. Default: 10000"
     inputBinding:
-      position: 103
+      position: 20
       prefix: -s
-  - id: replicates_handling
-    type:
-      - 'null'
-      - string
-    doc: How to handle replicates. Sum or Mean.
+  - id: burn_in_samples
+    type: ['null', int]
+    doc: "Number of Burn-in samples. Default: 500"
     inputBinding:
-      position: 103
-      prefix: -r
+      position: 20
+      prefix: -b
+  - id: min_read_count
+    type: ['null', int]
+    doc: "Smallest read-count to consider. Default: 1"
+    inputBinding:
+      position: 20
+      prefix: -m
   - id: trim_interval
-    type:
-      - 'null'
-      - int
-    doc: Trims all but every t-th value.
+    type: ['null', int]
+    doc: "Trims all but every t-th value. Default: 1"
     inputBinding:
-      position: 103
+      position: 20
       prefix: -t
+  - id: replicates_handling
+    type: ['null', string]
+    doc: "How to handle replicates. Sum or Mean. Default: Sum"
+    inputBinding:
+      position: 20
+      prefix: -r
+  - id: ignore_n_terminus_percentage
+    type: ['null', float]
+    doc: "Ignore TAs occuring within given percentage (as integer) of the N terminus. Default: 0"
+    inputBinding:
+      position: 20
+      prefix: -iN
+  - id: ignore_c_terminus_percentage
+    type: ['null', float]
+    doc: "Ignore TAs occuring within given percentage (as integer) of the C terminus. Default: 0"
+    inputBinding:
+      position: 20
+      prefix: -iC
 outputs:
   - id: output_file
     type: File
-    doc: Output file
+    doc: "Output file"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_filename)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0

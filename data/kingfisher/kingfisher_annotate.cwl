@@ -33,22 +33,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: output_format
     type:
       - 'null'
@@ -97,6 +81,8 @@ outputs:
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

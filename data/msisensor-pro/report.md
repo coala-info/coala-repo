@@ -1,5 +1,14 @@
 # msisensor-pro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msisensor-pro_baseline | PASS |  |
+| msisensor-pro_msi | PASS |  |
+| msisensor-pro_pro | PASS |  |
+| msisensor-pro_scan | PASS |  |
+
 ## msisensor-pro_scan
 
 ### Tool Description
@@ -88,43 +97,6 @@ Note:
    Beifang Niu*, Kai Ye*, Qunyuan Zhang, Charles Lu, Mingchao Xie, Michael D. McLellan, Michael C. Wendl and Li Ding#.MSIsensor: microsatellite instability detection using paired tumor-normal sequence data. Bioinformatics 30, 1015–1016 (2014).
 ```
 
-## msisensor-pro_evaluate
-
-### Tool Description
-Microsatellite Instability (MSI) detection using high-throughput sequencing data. (Support tumor-normal paired samples and tumor-only samples)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/msisensor-pro:1.3.0--hd979922_1
-- **Homepage**: https://github.com/xjtu-omics/msisensor-pro
-- **Package**: https://anaconda.org/channels/bioconda/packages/msisensor-pro/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-msisensor-pro: Microsatellite Instability (MSI) detection using high-throughput sequencing data. 
-         (Support tumor-normal paired samples and tumor-only samples) 
-
-Version: v1.3.0
-
-Usage: msisensor-pro <command> [options]
-
-Commands:
-
-	 scan
-	   scan the reference genome to get microsatellites information
-
-	 msi
-	   evaluate MSI using paired tumor-normal sequencing data
-
-	 baseline
-	   build baseline for tumor only detection
-
-	 pro
-	   evaluate MSI using single (tumor) sample sequencing data 
-
-    If you have any questions, please open an issue on GitHub (https://github.com/xjtu-omics/msisensor-pro) or contact with Peng Jia (pengjia@xjtu.edu.cn) or Kai Ye (kaiye@xjtu.edu.cn) .
-```
-
 ## msisensor-pro_baseline
 
 ### Tool Description
@@ -163,43 +135,6 @@ Example:
 Note:
 
    If you have any questions, please contact with Peng Jia (pengjia@xjtu.edu.cn).
-```
-
-## msisensor-pro_build
-
-### Tool Description
-Microsatellite Instability (MSI) detection using high-throughput sequencing data. (Support tumor-normal paired samples and tumor-only samples)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/msisensor-pro:1.3.0--hd979922_1
-- **Homepage**: https://github.com/xjtu-omics/msisensor-pro
-- **Package**: https://anaconda.org/channels/bioconda/packages/msisensor-pro/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-msisensor-pro: Microsatellite Instability (MSI) detection using high-throughput sequencing data. 
-         (Support tumor-normal paired samples and tumor-only samples) 
-
-Version: v1.3.0
-
-Usage: msisensor-pro <command> [options]
-
-Commands:
-
-	 scan
-	   scan the reference genome to get microsatellites information
-
-	 msi
-	   evaluate MSI using paired tumor-normal sequencing data
-
-	 baseline
-	   build baseline for tumor only detection
-
-	 pro
-	   evaluate MSI using single (tumor) sample sequencing data 
-
-    If you have any questions, please open an issue on GitHub (https://github.com/xjtu-omics/msisensor-pro) or contact with Peng Jia (pengjia@xjtu.edu.cn) or Kai Ye (kaiye@xjtu.edu.cn) .
 ```
 
 ## msisensor-pro_pro

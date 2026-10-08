@@ -1,22 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfba
+baseCommand:
+  - pyfba
+  - media_compounds
 label: pyfba_media_compounds
 doc: "List the compounds in a media formulation\n\nTool homepage: https://linsalrob.github.io/PyFBA/"
 inputs:
   - id: media
     type: string
-    doc: the name of the media
+    doc: "the name of the media"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --media
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: verbose output
+    doc: "verbose output"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --verbose
 outputs:
   - id: stdout

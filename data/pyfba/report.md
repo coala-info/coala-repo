@@ -1,5 +1,22 @@
 # pyfba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyfba_compare_media | Failed | tool bug: the output should list reactions required for growth, but it lists the removable ones (all 30 added non-essential reactions) and the tool itself reports no growth for that set. |
+| pyfba_create_gaps | PASS | log output glob fixed to logs/<log>; the 1,405-line test reaction list reduces to 202 reactions that still grow on ArgonneLB. |
+| pyfba_fba | PASS |  |
+| pyfba_fluxes | PASS |  |
+| pyfba_gapfill_roles | Failed | tool bug: --roles keeps the line end on each role, so a roles file silently starts from 0 reactions (--assigned_functions gap-fills Citrobacter to growth on ArgonneLB). |
+| pyfba_gapfill_two_media | PASS | a 202-reaction growing model with 3 reactions removed is gap-filled with 7 reactions; fba confirms growth on ArgonneLB and none on the no-growth media. |
+| pyfba_media | PASS |  |
+| pyfba_media_compounds | PASS |  |
+| pyfba_multiple_media | PASS | a 202-reaction growing model with 3 reactions removed is gap-filled to 215 reactions; fba confirms growth on ArgonneLB and none on the negative media (the full Citrobacter model ran over 1 h). |
+| pyfba_reactions_to_aliases | PASS |  |
+| pyfba_reactions_to_roles | PASS |  |
+| pyfba_to_reactions | Failed | tool bug: --roles keeps the line end on each role, so a plain roles file silently gives 0 reactions (--assigned_functions works). |
+
 ## pyfba_fba
 
 ### Tool Description

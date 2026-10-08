@@ -33,11 +33,13 @@ inputs:
   - id: quantiles
     type:
       - 'null'
-      - float
-    doc: Quantiles to calculate
+      - type: array
+        items: float
+        inputBinding:
+          prefix: --quantiles
+    doc: 'Quantiles to calculate [default: 0.5]'
     inputBinding:
       position: 102
-      prefix: --quantiles
   - id: threads
     type:
       - 'null'

@@ -5,11 +5,6 @@ label: wakhan_cna
 doc: "Wakhan plots coverage and copy number profiles from a bam and phased VCF files\n\
   \nTool homepage: https://github.com/KolmogorovLab/Wakhan"
 inputs:
-  - id: mode
-    type: string
-    doc: Run full pipeline, cna or hapcorrect modes
-    inputBinding:
-      position: 1
   - id: bin_size
     type:
       - 'null'
@@ -111,6 +106,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --genome-name
+  - id: hapcorrect_output
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory of a previous hapcorrect run (phase corrected coverage
+      data); it is staged as the output directory, so cna reads and extends it
   - id: hets_ratio
     type:
       - 'null'
@@ -131,6 +132,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Path to normal phased vcf (tumor-normal mode)
     inputBinding:
       position: 102
@@ -185,6 +189,11 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: path to tumor bam file (must be indexed)
     inputBinding:
       position: 102
@@ -201,6 +210,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Path to tumor phased VCF (tumor-only mode)
     inputBinding:
       position: 102
@@ -221,6 +233,9 @@ inputs:
     inputBinding:
       position: 102
       prefix: --without-phasing
+arguments:
+  - position: 1
+    valueFrom: cna
 outputs:
   - id: stdout
     type: stdout
@@ -232,6 +247,12 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.out_dir_plots)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.out_dir_plots)
+        entry: $(inputs.hapcorrect_output)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wakhan:0.4.2--pyhdfd78af_0

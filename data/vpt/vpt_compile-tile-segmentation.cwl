@@ -33,10 +33,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --overwrite
+  - id: segmentation_folder
+    type: Directory
+    doc: Output directory of the earlier steps (the output path named in the 
+      specification json), holding the per-tile results. It is staged writable 
+      in the working directory so that the compiled files are written into it.
 outputs:
+  - id: compiled_results
+    type:
+      type: array
+      items: File
+    doc: Compiled segmentation files written to the output path (mosaic and 
+      micron space parquet files, and cell metadata csv).
+    outputBinding:
+      glob:
+        - '*/*.parquet'
+        - '*/*.csv'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.segmentation_folder)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

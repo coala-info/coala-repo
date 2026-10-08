@@ -1,27 +1,21 @@
 # panorama CWL Generation Report
 
-## panorama_panorama
+## Real Data Test
 
-### Tool Description
-Panorama tool for various bioinformatics tasks.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/labgem/panorama
-- **Package**: https://anaconda.org/channels/bioconda/packages/panorama/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/panorama/overview
-- **Total Downloads**: 153
-- **Last updated**: 2026-01-21
-- **GitHub**: https://github.com/labgem/panorama
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: panorama [-h] [-v]  ...
-panorama: error: argument : invalid choice: 'panorama' (choose from info, annotation, systems, align, cluster, compare_context, compare_systems, compare_spots, write, write_systems, pansystems, utils)
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| panorama_align | PASS |  |
+| panorama_annotation | PASS |  |
+| panorama_cluster | PASS |  |
+| panorama_compare_context | Failed | tool bug: panorama 1.0.0 compare_context crashes in every mode (missing 'identity' argument with --context_results, ppanggolin API mismatch with --families/--sequences) |
+| panorama_compare_spots | PASS | Same conserved spots as the upstream test; only the spot ID numbers differ. |
+| panorama_compare_systems | PASS |  |
+| panorama_info | PASS |  |
+| panorama_pansystems | PASS |  |
+| panorama_systems | PASS |  |
+| panorama_utils | PASS |  |
+| panorama_write | Failed | tool bug: panorama 1.0.0 write always crashes with AttributeError 'Namespace' object has no attribute 'conserved_spots' |
+| panorama_write_systems | PASS |  |
 
 ## panorama_annotation
 
@@ -122,7 +116,7 @@ LABGeM
 ## panorama_systems
 
 ### Tool Description
-PANORAMA (0.6.0) is an opensource bioinformatic tools under CeCILL FREE SOFTWARE LICENSE AGREEMENT
+Detect biological systems in pangenomes from annotated gene families and system models.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0
@@ -259,24 +253,6 @@ LABGeM
 ```
 
 
-## panorama_utility
-
-### Tool Description
-Panorama utility for various bioinformatics tasks.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/labgem/panorama
-- **Package**: https://anaconda.org/channels/bioconda/packages/panorama/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: panorama [-h] [-v]  ...
-panorama: error: argument : invalid choice: 'utility' (choose from info, annotation, systems, align, cluster, compare_context, compare_systems, compare_spots, write, write_systems, pansystems, utils)
-```
-
-
 ## panorama_write_systems
 
 ### Tool Description
@@ -370,7 +346,7 @@ LABGeM
 ## panorama_pansystems
 
 ### Tool Description
-PANORAMA (0.6.0) is an opensource bioinformatic tools under CeCILL FREE SOFTWARE LICENSE AGREEMENT
+Run the whole systems workflow on pangenomes: annotation, systems detection and writing of the systems.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0
@@ -1165,6 +1141,180 @@ PANORAMA (0.6.0) is an opensource bioinformatic tools under CeCILL FREE SOFTWARE
 LABGeM
 ```
 
+
+## panorama_compare_context
+
+### Tool Description
+Comparison of modules and gene contexts among pangenomes
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/labgem/panorama
+- **Package**: https://anaconda.org/channels/bioconda/packages/panorama/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: panorama compare_context [-h] -p PANGENOMES -o OUTPUT
+                                [--cluster CLUSTER]
+                                [--gfrr_cutoff MIN_FRR MAX_FRR]
+                                [--cluster_identity FLOAT]
+                                [--cluster_coverage FLOAT]
+                                [--cluster_cov_mode INT]
+                                [--cluster_eval FLOAT]
+                                [--cluster_sensitivity FLOAT]
+                                [--cluster_max_seqs INT]
+                                [--cluster_comp_bias_corr INT]
+                                [--cluster_kmer_per_seq INT]
+                                [--cluster_align_mode INT]
+                                [--cluster_max_seq_len INT]
+                                [--cluster_max_reject INT]
+                                [--cluster_mode INT]
+                                [--cluster_min_ungapped INT]
+                                [--method {linclust,cluster}] [--seed SEED]
+                                [--graph_formats {gexf,graphml} [{gexf,graphml} ...]]
+                                [--tmpdir TMPDIR] [--keep_tmp] [-c CPUS]
+                                [--synteny_score SYNTENY_SCORE]
+                                (-R CONTEXT_RESULTS | -S SEQUENCES | -F FAMILIES)
+                                [-t TRANSITIVE] [-w WINDOW] [-s JACCARD]
+                                [--graph_format {graphml,gexf}]
+                                [--align_identity FLOAT]
+                                [--align_coverage FLOAT]
+                                [--align_cov_mode INT]
+                                [--translation_table TRANSLATION_TABLE]
+                                [--verbose {0,1,2}] [--log LOG] [-d] [--force]
+
+Comparison of modules and gene contexts among pangenomes
+
+options:
+  -h, --help            show this help message and exit
+
+Required arguments:
+  All of the following arguments are required:
+
+  -p PANGENOMES, --pangenomes PANGENOMES
+                        Path to TSV file containing list of pangenome .h5
+                        files to compare
+  -o OUTPUT, --output OUTPUT
+                        Output directory where result files will be written
+  -R CONTEXT_RESULTS, --context_results CONTEXT_RESULTS
+                        Already computed contexts: Tsv file with two columns:
+                        name of pangenome and path to the corresponding
+                        context results. Results can be a table (tsv) or a
+                        graph (graphml or gexf)
+  -S SEQUENCES, --sequences SEQUENCES
+                        Fasta file with the sequences of interest
+  -F FAMILIES, --families FAMILIES
+                        List of family IDs of interest from the pan
+
+Comparison optional arguments:
+  --cluster CLUSTER     Path to tab-separated file with pre-computed
+                        clustering results (cluster_name\tfamily_id format).
+                        If not provided, clustering will be performed.
+  --gfrr_cutoff MIN_FRR MAX_FRR
+                        FRR (Family Relatedness Relationship) cutoff values
+                        for similarity assessment. min_gfrr = shared_families
+                        / min(families1, families2), max_gfrr =
+                        shared_families / max(families1, families2)Default:
+                        0.5 0.8
+  --synteny_score SYNTENY_SCORE
+                        minimum synteny score used to filter edges between
+                        genomic contexts.
+
+MMseqs2 clustering parameters:
+  MMSeqs2 clustering arguments (used only if --cluster is not provided)
+
+  --cluster_identity FLOAT
+                        Minimum sequence identity threshold (0.0-1.0).
+                        Default: 0.5
+  --cluster_coverage FLOAT
+                        Minimum coverage threshold (0.0-1.0). Default: 0.8
+  --cluster_cov_mode INT
+                        Coverage mode: 0=query, 1=target, 2=shorter seq,
+                        3=longer seq, 4=query and target, 5=shorter and longer
+                        seq. Default: 0
+  --cluster_eval FLOAT  E-value threshold. Default: 0.001
+  --cluster_sensitivity FLOAT
+                        Search sensitivity (cluster method only). Higher
+                        values = more sensitive but slower
+  --cluster_max_seqs INT
+                        Maximum number of sequences per cluster representative
+                        (cluster method only)
+  --cluster_comp_bias_corr INT
+                        Compositional bias correction: 0=disabled, 1=enabled
+  --cluster_kmer_per_seq INT
+                        Number of k-mers per sequence
+  --cluster_align_mode INT
+                        Alignment mode: 0=automatic, 1=only score, 2=only
+                        extended, 3=score+extended, 4=fast+extended
+  --cluster_max_seq_len INT
+                        Maximum sequence length
+  --cluster_max_reject INT
+                        Maximum number of rejected sequences
+  --cluster_mode INT    Clustering mode: 0=Set Cover, 1=Connected Component,
+                        2=Greedy, 3=Greedy Low Memory
+  --cluster_min_ungapped INT
+                        Minimum ungapped alignment score (cluster method only)
+  --method {linclust,cluster}
+                        MMSeqs2 clustering method selection: 'linclust' - fast
+                        linear-time clustering (less sensitive), 'cluster' -
+                        slower but more sensitive clustering. Default:
+                        linclust
+
+PPanGGOLiN search context arguments:
+  Following arguments are used to search context with PPanGGOLiN API:
+
+  -t TRANSITIVE, --transitive TRANSITIVE
+                        Size of the transitive closure used to build the
+                        graph. This indicates the number of non-related genes
+                        allowed in-between two related genes. Increasing it
+                        will improve precision but lower sensitivity a little.
+  -w WINDOW, --window WINDOW
+                        Number of neighboring genes that are considered on
+                        each side of a gene of interest when searching for
+                        conserved genomic contexts.
+  -s JACCARD, --jaccard JACCARD
+                        Minimum Jaccard similarity used to filter edges
+                        between gene families. Increasing it will improve
+                        precision but lower sensitivity a lot.
+  --graph_format {graphml,gexf}
+                        Format of the context graph. Can be gexf or graphml.
+
+MMseqs2 alignment parameters:
+  MMSeqs2 arguments for alignment, only use if --sequences is given
+
+  --align_identity FLOAT
+                        Minimum identity percentage threshold (0.0-1.0).
+                        Default: 0.8
+  --align_coverage FLOAT
+                        Minimum coverage percentage threshold (0.0-1.0).
+                        Default: 0.8
+  --align_cov_mode INT  Coverage mode: 0=query, 1=target, 2=shorter seq,
+                        3=longer seq, 4=query and target, 5=shorter and longer
+                        seq. Default: 0
+  --translation_table TRANSLATION_TABLE
+                        The translation table to use when the input sequences
+                        are nucleotide sequences.
+
+Optional arguments:
+  --seed SEED           Random seed for reproducibility. Default: 42
+  --graph_formats {gexf,graphml} [{gexf,graphml} ...]
+                        Output format(s) for graph files. Multiple formats can
+                        be specified. Supported: gexf (Gephi Exchange Format),
+                        graphml (Graph Markup Language)
+  --tmpdir TMPDIR       Directory for temporary files. Default: /tmp
+  --keep_tmp            Keep temporary files after completion (useful for
+                        debugging and inspection)
+  -c CPUS, --cpus CPUS  Number of CPU threads to use for parallel processing.
+                        Default: 1
+  --verbose {0,1,2}     Indicate verbose level (0 for warning and errors only,
+                        1 for info, 2 for debug)
+  --log LOG             log output file
+  -d, --disable_prog_bar
+                        disables the progress bars
+  --force               Force writing in output directory and in pangenome
+                        output file.
+```
 
 ## Metadata
 - **Skill**: generated

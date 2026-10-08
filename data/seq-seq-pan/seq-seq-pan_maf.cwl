@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - seqseqpan.py
+  - seq-seq-pan
   - maf
 label: seq-seq-pan_maf
 doc: "Write MAF file from XMFA file.\n\nTool homepage: https://gitlab.com/chrjan/seq-seq-pan"
@@ -49,6 +49,11 @@ outputs:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path_path)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1

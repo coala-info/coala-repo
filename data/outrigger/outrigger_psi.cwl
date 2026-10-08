@@ -158,6 +158,11 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({'class': 'Directory', 'basename': inputs.output_path, 'listing': [{'class':
+          'Directory', 'basename': 'junctions', 'listing': []}]})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/outrigger:1.1.1--py35_0

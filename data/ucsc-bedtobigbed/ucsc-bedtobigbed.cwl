@@ -11,9 +11,7 @@ inputs:
     inputBinding:
       position: 1
   - id: chrom_sizes
-    type:
-      - 'null'
-      - File
+    type: File
     doc: 'chrom.sizes is a two-column file/URL: <chromosome name> <size in bases>,
       or a 2bit or chromAlias bigBed file depending on options'
     inputBinding:

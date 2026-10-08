@@ -10,7 +10,10 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Input sam/bam/cram/file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    doc: Input sam/bam/cram/file (indexed BAM needed for --region or --bed)
     inputBinding:
       position: 1
   - id: bed

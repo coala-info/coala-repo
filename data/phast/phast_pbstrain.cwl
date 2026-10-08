@@ -1,87 +1,82 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phast_pbstrain
+baseCommand: pbsTrain
 label: phast_pbstrain
-doc: "Trains a PAML-style substitution model for a given set of sequences.\n\nTool
-  homepage: http://compgen.cshl.edu/phast/"
+doc: "Estimate a discrete encoding scheme for probabilistic biological sequences (PBSs)
+  based on training data. Input is a table of probability vectors with a column of
+  counts (it may be produced with 'prequel --suff-stats'). Output is a code file that
+  can be used with pbsEncode, pbsDecode, etc.\n\nTool homepage: http://compgen.cshl.edu/phast/"
 inputs:
-  - id: input_sequences
-    type: File
-    doc: Input alignment file (e.g., FASTA, PHYLIP, MAF)
-    inputBinding:
-      position: 1
-  - id: epsilon
-    type:
-      - 'null'
-      - float
-    doc: Convergence threshold for EM algorithm
-    inputBinding:
-      position: 102
-      prefix: --epsilon
-  - id: gamma
-    type:
-      - 'null'
-      - boolean
-    doc: Use a gamma distribution for ASRV
-    inputBinding:
-      position: 102
-      prefix: --gamma
-  - id: iterations
+  - id: nrows
     type:
       - 'null'
       - int
-    doc: Number of EM algorithm iterations
+    doc: Number of rows per dimension in the simplex grid. Default is maximum possible
+      for code size.
     inputBinding:
-      position: 102
-      prefix: --iterations
-  - id: model
+      position: 1
+      prefix: --nrows
+  - id: nbytes
+    type:
+      - 'null'
+      - int
+    doc: Number of bytes per encoded probabilistic base (default 1).
+    inputBinding:
+      position: 1
+      prefix: --nbytes
+  - id: no_greedy
+    type:
+      - 'null'
+      - boolean
+    doc: Skip greedy optimization; assign a single representative point to each region
+      of the probability simplex.
+    inputBinding:
+      position: 1
+      prefix: --no-greedy
+  - id: no_train
+    type:
+      - 'null'
+      - int
+    doc: Ignore the data entirely; just use the centroid of each simplex partition.
+      Give the dimension of the simplex; no data file is required.
+    inputBinding:
+      position: 1
+      prefix: --no-train
+  - id: log
     type:
       - 'null'
       - string
-    doc: Substitution model to use (e.g., JC69, K80, HKY85, GTR)
+    doc: Write log of optimization procedure to specified file.
     inputBinding:
-      position: 102
-      prefix: --model
-  - id: rate_categories
-    type:
-      - 'null'
-      - int
-    doc: Number of rate categories for among-site rate variation (ASRV)
-    inputBinding:
-      position: 102
-      prefix: --rate-categories
-  - id: tree
+      position: 1
+      prefix: --log
+  - id: stats_file
     type:
       - 'null'
       - File
-    doc: Phylogenetic tree file (e.g., Newick format)
+    doc: Table of probability vectors with counts (file.stats). Not needed with --no-train.
     inputBinding:
-      position: 102
-      prefix: --tree
-  - id: verbose
+      position: 2
+  - id: output_name
     type:
       - 'null'
-      - boolean
-    doc: Print verbose output
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_model_path
-    type: string
-    doc: Output or path parameter `output_model_path`
-    inputBinding:
-      position: 103
-      prefix: --output-model
+      - string
+    doc: Name of the code file (standard output).
+    default: file.code
 outputs:
-  - id: output_model
+  - id: code
+    type: File
+    doc: Code file for pbsEncode/pbsDecode.
+    outputBinding:
+      glob: $(inputs.output_name)
+  - id: log_file
     type:
       - 'null'
       - File
-    doc: File to write the trained substitution model to
+    doc: Optimization log.
     outputBinding:
-      glob: $(inputs.output_model_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.log)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phast:1.9.7--h7eac25e_0
+stdout: $(inputs.output_name)

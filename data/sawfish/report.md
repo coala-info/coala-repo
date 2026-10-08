@@ -1,5 +1,12 @@
 # sawfish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sawfish_discover | PASS |  |
+| sawfish_joint-call | Not completed | runs only after hand-editing the absolute paths that discover stores in discover.settings.json, and the chrM test data has no SVs, so the empty VCF cannot confirm the calls. |
+
 ## sawfish_discover
 
 ### Tool Description
@@ -180,50 +187,6 @@ Options:
 
   -V, --version
           Print version
-```
-
-## sawfish_Overwrite
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sawfish:2.2.1--h9ee0642_0
-- **Homepage**: https://github.com/PacificBiosciences/sawfish
-- **Package**: https://anaconda.org/channels/bioconda/packages/sawfish/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unexpected argument '--h' found
-
-  tip: a similar argument exists: '--help'
-
-Usage: sawfish --help <COMMAND>
-
-For more information, try '--help'.
-```
-
-## sawfish_Turn
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sawfish:2.2.1--h9ee0642_0
-- **Homepage**: https://github.com/PacificBiosciences/sawfish
-- **Package**: https://anaconda.org/channels/bioconda/packages/sawfish/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unexpected argument '--h' found
-
-  tip: a similar argument exists: '--help'
-
-Usage: sawfish --help <COMMAND>
-
-For more information, try '--help'.
 ```
 
 ## Metadata

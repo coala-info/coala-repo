@@ -14,7 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: index_dir
-    type: Directory
+    type: string
     doc: index directory (will be created)
     inputBinding:
       position: 2
@@ -50,7 +50,7 @@ inputs:
     doc: k-mer length
     inputBinding:
       position: 103
-      prefix: --kmer-length
+      prefix: -k
   - id: library_dir
     type:
       - 'null'
@@ -62,11 +62,11 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log file
     inputBinding:
       position: 103
-      prefix: --log-file
+      prefix: -l
   - id: mask_repeats
     type:
       - 'null'
@@ -135,6 +135,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_directory
+    type: Directory
+    doc: ProPhyle index directory
+    outputBinding:
+      glob: $(inputs.index_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prophyle:0.3.3.2--py39h746d604_3

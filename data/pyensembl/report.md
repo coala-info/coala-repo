@@ -1,5 +1,14 @@
 # pyensembl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyensembl_delete-all-files | PASS |  |
+| pyensembl_delete-index-files | Failed | tool bug: delete_index_files calls the string property local_db_path as a function and crashes with TypeError. |
+| pyensembl_install | Failed | image problem: the yeast Ensembl 110 files download, but indexing crashes because datacache uses numpy.typeDict, which the image's numpy 1.26 lacks. |
+| pyensembl_list | PASS |  |
+
 ## pyensembl_install
 
 ### Tool Description

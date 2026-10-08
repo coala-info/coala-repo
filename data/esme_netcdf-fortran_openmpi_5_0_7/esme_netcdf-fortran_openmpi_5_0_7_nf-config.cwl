@@ -9,7 +9,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Display all configuration options
+    doc: display all options
     inputBinding:
       position: 101
       prefix: --all
@@ -17,7 +17,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Display the C compiler used
+    doc: C compiler
     inputBinding:
       position: 101
       prefix: --cc
@@ -25,7 +25,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Display C compiler flags
+    doc: pre-processor and compiler flags
     inputBinding:
       position: 101
       prefix: --cflags
@@ -33,7 +33,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Display the Fortran compiler used
+    doc: Fortran compiler
     inputBinding:
       position: 101
       prefix: --fc
@@ -41,7 +41,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Display Fortran compiler flags
+    doc: flags needed to compile a Fortran program
     inputBinding:
       position: 101
       prefix: --fflags
@@ -49,15 +49,23 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Display Fortran libraries required to link
+    doc: libraries needed to link a Fortran program
     inputBinding:
       position: 101
       prefix: --flibs
+  - id: has_dap
+    type:
+      - 'null'
+      - boolean
+    doc: whether OPeNDAP is enabled in this build
+    inputBinding:
+      position: 101
+      prefix: --has-dap
   - id: has_f03
     type:
       - 'null'
       - boolean
-    doc: Whether Fortran 2003 is supported
+    doc: whether Fortran 2003 API is enabled in this build
     inputBinding:
       position: 101
       prefix: --has-f03
@@ -65,7 +73,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Whether Fortran 90 is supported
+    doc: whether Fortran 90 API is enabled in this build
     inputBinding:
       position: 101
       prefix: --has-f90
@@ -73,7 +81,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Whether NetCDF-2 is supported
+    doc: whether NetCDF-2 API is enabled
     inputBinding:
       position: 101
       prefix: --has-nc2
@@ -81,7 +89,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Whether NetCDF-4 is supported
+    doc: whether NetCDF-4/HDF-5 is enabled in this build
     inputBinding:
       position: 101
       prefix: --has-nc4
@@ -89,23 +97,15 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Display the header installation directory
+    doc: Include directory
     inputBinding:
       position: 101
       prefix: --includedir
-  - id: libdir
-    type:
-      - 'null'
-      - boolean
-    doc: Display the library installation directory
-    inputBinding:
-      position: 101
-      prefix: --libdir
   - id: prefix
     type:
       - 'null'
       - boolean
-    doc: Display the installation prefix
+    doc: Install prefix
     inputBinding:
       position: 101
       prefix: --prefix
@@ -115,5 +115,5 @@ outputs:
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+    dockerPull: quay.io/biocontainers/esme_netcdf-fortran_openmpi_5_0_7:4.6.1--h3c14a6b_0
 stdout: esme_netcdf-fortran_openmpi_5_0_7_nf-config.out

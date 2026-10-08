@@ -7,14 +7,9 @@ label: sfs_stat
 doc: "Tools for working with site frequency spectra\n\nTool homepage: https://github.com/malthesr/sfs"
 inputs:
   - id: path
-    type:
-      - 'null'
-      - File
-    doc: Input SFS. The input SFS can be provided here or read from stdin. The 
-      SFS will be normalised as required for particular statistics, so the input
-      SFS does not need to be normalised.
-    inputBinding:
-      position: 1
+    type: File
+    doc: "Input SFS. The file is sent to the tool on standard input, because the
+      tool fails with a file argument when standard input is not a terminal."
   - id: delimiter
     type:
       - 'null'
@@ -44,17 +39,19 @@ inputs:
     inputBinding:
       position: 102
       prefix: --precision
+      itemSeparator: ','
   - id: quiet
     type:
       - 'null'
       - type: array
         items: boolean
+        inputBinding:
+          prefix: --quiet
     doc: Suppress log output. By default, information may be logged to stderr 
       while running. Set this flag once to silence normal logging output, and 
       set twice to silence warnings.
     inputBinding:
       position: 102
-      prefix: --quiet
   - id: statistics
     type:
       type: array
@@ -65,16 +62,18 @@ inputs:
     inputBinding:
       position: 102
       prefix: --statistics
+      itemSeparator: ','
   - id: verbose
     type:
       - 'null'
       - type: array
         items: boolean
+        inputBinding:
+          prefix: --verbose
     doc: Log output verbosity. Set this flag times to show debug information, 
       and set twice to show trace information.
     inputBinding:
       position: 102
-      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout
@@ -83,3 +82,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sfs:0.1.0--h9ee0642_0
 stdout: sfs_stat.out
+stdin: $(inputs.path.path)

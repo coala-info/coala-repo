@@ -4,7 +4,10 @@ baseCommand:
   - snakedeploy
   - deploy-workflow
 label: snakedeploy_deploy-workflow
-doc: "Deploy a workflow from a git repository.\n\nTool homepage: https://github.com/snakemake/snakedeploy"
+doc: 'Deploy a workflow from a git repository.
+
+
+  Tool homepage: https://github.com/snakemake/snakedeploy'
 inputs:
   - id: repo
     type: string
@@ -12,7 +15,7 @@ inputs:
     inputBinding:
       position: 1
   - id: dest
-    type: Directory
+    type: string
     doc: Path to create the deploying workflow in.
     inputBinding:
       position: 2
@@ -52,7 +55,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: dest_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The deploying workflow directory created (named by dest)
+    outputBinding:
+      glob: $(inputs.dest)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snakedeploy:0.16.0--pyhdfd78af_0
 stdout: snakedeploy_deploy-workflow.out
+requirements:
+  - class: NetworkAccess
+    networkAccess: true

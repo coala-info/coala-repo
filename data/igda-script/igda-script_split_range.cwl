@@ -1,29 +1,30 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: split_range
+baseCommand:
+  - split_range
 label: igda-script_split_range
-doc: "Splits a range into segments.\n\nTool homepage: https://github.com/zhixingfeng/shell"
+doc: "Split a range into segments of about segsize (segsize must be > 2000) and print start/end pairs.\nUsage: split_range start end segsize\n\nTool homepage: https://github.com/zhixingfeng/shell"
 inputs:
   - id: start
     type: int
-    doc: The start of the range.
+    doc: "range start"
     inputBinding:
       position: 1
   - id: end
     type: int
-    doc: The end of the range.
+    doc: "range end"
     inputBinding:
       position: 2
   - id: segsize
     type: int
-    doc: The size of each segment.
+    doc: "segment size (> 2000)"
     inputBinding:
       position: 3
 outputs:
-  - id: stdout
+  - id: segments
     type: stdout
-    doc: Standard output
+    doc: "tab-separated start and end of each segment"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igda-script:1.0.1--hdfd78af_0
-stdout: igda-script_split_range.out
+stdout: segments.txt

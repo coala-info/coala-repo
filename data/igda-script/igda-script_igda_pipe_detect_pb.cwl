@@ -1,119 +1,135 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igda_pipe_detect_pb
+baseCommand:
+  - igda_pipe_detect_pb
 label: igda-script_igda_pipe_detect_pb
-doc: "Detects potential structural variations in sequencing data.\n\nTool homepage:
-  https://github.com/zhixingfeng/shell"
+doc: "iGDA: detect SNVs in PacBio reads aligned to one reference region.\nUsage: igda_pipe_detect_pb -s seed -n nthread -l min_readlen -r minimal_nreads_in_rsm -c min_condprob -p min_prob -q topn_cmpreads -x exclude_loci_file -f isfast infile(bam or sam file) reffile contextmodel outdir\n\nTool homepage: https://github.com/zhixingfeng/shell"
 inputs:
-  - id: infile
-    type: File
-    doc: Input BAM or SAM file.
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: "Number of threads. [default = 1]"
     inputBinding:
       position: 1
-  - id: reffile
-    type: File
-    doc: Reference file.
-    inputBinding:
-      position: 2
-  - id: contextmodel
-    type: string
-    doc: Context model.
-    inputBinding:
-      position: 3
-  - id: batch_size
+      prefix: -n
+  - id: fast_calculation
     type:
       - 'null'
       - int
-    doc: Batch size for processing.
+    doc: "Is using the fast calculation algorithm. 1 = yes and 0 = no. [default = 1]"
     inputBinding:
-      position: 104
-      prefix: -b
-  - id: distance
+      position: 1
+      prefix: -f
+  - id: min_read_length
     type:
       - 'null'
       - int
-    doc: Distance parameter.
+    doc: "Minimal read length (shorter reads will be excluded). [default = 1000]"
     inputBinding:
-      position: 104
-      prefix: -d
+      position: 1
+      prefix: -l
+  - id: min_depth_snv
+    type:
+      - 'null'
+      - int
+    doc: "Minimal depth for each SNV. [default = 25]"
+    inputBinding:
+      position: 1
+      prefix: -r
+  - id: min_conditional_substitution_rate
+    type:
+      - 'null'
+      - float
+    doc: "Minimal maximal conditional substitution rate. [default = 0.65]"
+    inputBinding:
+      position: 1
+      prefix: -c
+  - id: min_orphan_substitution_rate
+    type:
+      - 'null'
+      - float
+    doc: "Minimal substitution rate for orphan SNVs."
+    inputBinding:
+      position: 1
+      prefix: -p
+  - id: num_similar_reads
+    type:
+      - 'null'
+      - int
+    doc: "Number of most similar reads to construct subspaces. [default = 100]"
+    inputBinding:
+      position: 1
+      prefix: -q
   - id: exclude_loci_file
     type:
       - 'null'
       - File
-    doc: File containing loci to exclude.
+    doc: "The file that list the loci to be excluded."
     inputBinding:
-      position: 104
+      position: 1
       prefix: -x
-  - id: is_fast
+  - id: permutation_seed
     type:
       - 'null'
       - int
-    doc: Flag to enable fast mode.
+    doc: "Seed for permutation test (experimental)."
     inputBinding:
-      position: 104
-      prefix: -f
-  - id: min_condprob
-    type:
-      - 'null'
-      - float
-    doc: Minimum conditional probability.
-    inputBinding:
-      position: 104
-      prefix: -c
-  - id: min_prob
-    type:
-      - 'null'
-      - float
-    doc: Minimum probability.
-    inputBinding:
-      position: 104
-      prefix: -p
-  - id: min_readlen
-    type:
-      - 'null'
-      - int
-    doc: Minimum read length.
-    inputBinding:
-      position: 104
-      prefix: -l
-  - id: minimal_nreads_in_rsm
-    type:
-      - 'null'
-      - int
-    doc: Minimal number of reads in RSM.
-    inputBinding:
-      position: 104
-      prefix: -r
-  - id: nthread
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use.
-    inputBinding:
-      position: 104
-      prefix: -n
-  - id: seed
-    type:
-      - 'null'
-      - int
-    doc: Seed for random number generation.
-    inputBinding:
-      position: 104
+      position: 1
       prefix: -s
-  - id: topn_cmpreads
+  - id: min_depth_orphan_snv
     type:
       - 'null'
       - int
-    doc: Top N comparable reads.
+    doc: "Minimal depth for each orphan SNV. [default = 15]"
     inputBinding:
-      position: 104
-      prefix: -q
-outputs:
-  - id: outdir
+      position: 1
+      prefix: -d
+  - id: min_log_bf_orphan_snv
+    type:
+      - 'null'
+      - float
+    doc: "Minimal log-BF for each orphan SNV. [default = 10]"
+    inputBinding:
+      position: 1
+      prefix: -b
+  - id: auto_select_parameters
+    type:
+      - 'null'
+      - int
+    doc: "Is auto select parameters, 1=yes, 0=no. [default = 1]"
+    inputBinding:
+      position: 1
+      prefix: -a
+  - id: infile
+    type: File
+    doc: "sorted aligned BAM (or SAM) file"
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    inputBinding:
+      position: 2
+  - id: reffile
+    type: File
+    doc: "reference FASTA file"
+    inputBinding:
+      position: 3
+  - id: contextmodel
     type: Directory
-    doc: Output directory.
+    doc: "pretrained context-effect model (https://github.com/zhixingfeng/igda_contextmodel)"
+    inputBinding:
+      position: 4
+  - id: outdir
+    type: string
+    doc: "output directory (must not exist)"
+    inputBinding:
+      position: 5
+outputs:
+  - id: out_dir
+    type: Directory
+    doc: "output directory with detected_snv.vcf and intermediate files"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igda-script:1.0.1--hdfd78af_0

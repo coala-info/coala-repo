@@ -18,6 +18,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Optional query fasta file (with index) to populate the query seq field
     inputBinding:
       position: 102

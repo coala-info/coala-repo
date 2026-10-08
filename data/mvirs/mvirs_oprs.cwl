@@ -40,6 +40,12 @@ inputs:
   - id: reference_database
     type: File
     doc: Reference database file (prefix) created by mvirs index.
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     inputBinding:
       position: 101
       prefix: -db
@@ -64,11 +70,26 @@ inputs:
       position: 102
       prefix: -o
 outputs:
-  - id: output_prefix
-    type: Directory
-    doc: Prefix for output file.
+  - id: bam
+    type: File
+    doc: Alignments of the reads against the reference (<prefix>.bam).
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path).bam
+  - id: oprs
+    type: File
+    doc: Outward-oriented read pairs (<prefix>.oprs).
+    outputBinding:
+      glob: $(inputs.output_prefix_path).oprs
+  - id: clipped
+    type: File
+    doc: Clipped read alignments (<prefix>.clipped).
+    outputBinding:
+      glob: $(inputs.output_prefix_path).clipped
+  - id: prophages_fasta
+    type: File
+    doc: Sequences of the potential prophages (<prefix>.fasta).
+    outputBinding:
+      glob: $(inputs.output_prefix_path).fasta
 requirements:
   - class: InlineJavascriptRequirement
 hints:

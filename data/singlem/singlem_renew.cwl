@@ -4,15 +4,18 @@ baseCommand:
   - singlem
   - renew
 label: singlem_renew
-doc: "Reannotate an OTU table with an updated taxonomy\n\nTool homepage: https://github.com/wwood/singlem"
+doc: 'Reannotate an OTU table with an updated taxonomy
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
-  - id: archive_otu_table
+  - id: archive_otu_table_path
     type:
       - 'null'
-      - File
+      - string
     doc: 'output OTU table in archive format for making DBs etc. [default: unused]'
     inputBinding:
-      position: 101
+      position: 102
       prefix: --archive-otu-table
   - id: assignment_method
     type:
@@ -43,7 +46,7 @@ inputs:
   - id: assignment_singlem_db
     type:
       - 'null'
-      - string
+      - Directory
     doc: 'Use this SingleM DB when assigning taxonomy [default: not set, use the default]'
     inputBinding:
       position: 101
@@ -60,9 +63,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Performance-type arguments to use when calling 'diamond blastx' during the
-      taxonomy assignment step. [default: use setting defined in metapackage when
-      set, otherwise use '--block-size 0.5 --target-indexed -c1']"
+    doc: 'Performance-type arguments to use when calling ''diamond blastx'' during
+      the taxonomy assignment step. [default: use setting defined in metapackage when
+      set, otherwise use ''--block-size 0.5 --target-indexed -c1'']'
     inputBinding:
       position: 101
       prefix: --diamond-taxonomy-assignment-performance-parameters
@@ -91,22 +94,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --filter-minimum-protein
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: ignore_missing_singlem_packages
     type:
       - 'null'
@@ -135,7 +122,7 @@ inputs:
   - id: metapackage
     type:
       - 'null'
-      - string
+      - Directory
     doc: 'Set of SingleM packages to use [default: use the default set]'
     inputBinding:
       position: 101
@@ -158,13 +145,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min-taxon-coverage
-  - id: otu_table
+  - id: otu_table_path
     type:
       - 'null'
-      - File
+      - string
     doc: output OTU table
     inputBinding:
-      position: 101
+      position: 102
       prefix: --otu-table
   - id: output_extras
     type:
@@ -187,8 +174,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Process only this specific chunk number (1-based index). Requires 
-      --sra-files.
+    doc: Process only this specific chunk number (1-based index). Requires --sra-files.
     inputBinding:
       position: 101
       prefix: --read-chunk-number
@@ -196,8 +182,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Size chunk to process at a time (in number of reads). Requires 
-      --sra-files.
+    doc: Size chunk to process at a time (in number of reads). Requires --sra-files.
     inputBinding:
       position: 101
       prefix: --read-chunk-size
@@ -214,7 +199,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: Directory
     doc: 'SingleM packages to use [default: use the set from the default metapackage]'
     inputBinding:
       position: 101
@@ -228,24 +213,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sra-files
-  - id: taxonomic_profile
+  - id: taxonomic_profile_path
     type:
       - 'null'
-      - File
-    doc: output a 'condensed' taxonomic profile for each sample based on the OTU
-      table. Taxonomic profiles output can be further converted to other formats
-      using singlem summarise.
+      - string
+    doc: output a 'condensed' taxonomic profile for each sample based on the OTU table.
+      Taxonomic profiles output can be further converted to other formats using singlem
+      summarise.
     inputBinding:
-      position: 101
+      position: 102
       prefix: --taxonomic-profile
-  - id: taxonomic_profile_krona
+  - id: taxonomic_profile_krona_path
     type:
       - 'null'
-      - File
-    doc: output a 'condensed' taxonomic profile for each sample based on the OTU
-      table
+      - string
+    doc: output a 'condensed' taxonomic profile for each sample based on the OTU table
     inputBinding:
-      position: 101
+      position: 102
       prefix: --taxonomic-profile-krona
   - id: threads
     type:
@@ -279,11 +263,41 @@ outputs:
     type:
       - 'null'
       - File
-    doc: "Output a jplace format file for each singlem package to a file starting
-      with this string, each with one entry per OTU. Requires 'pplacer' as the --assignment_method
-      [default: unused]"
+    doc: 'Output a jplace format file for each singlem package to a file starting
+      with this string, each with one entry per OTU. Requires ''pplacer'' as the --assignment_method
+      [default: unused]'
     outputBinding:
       glob: $(inputs.output_jplace_path)
+  - id: archive_otu_table
+    type:
+      - 'null'
+      - File
+    doc: 'output OTU table in archive format for making DBs etc. [default: unused]'
+    outputBinding:
+      glob: $(inputs.archive_otu_table_path)
+  - id: otu_table
+    type:
+      - 'null'
+      - File
+    doc: output OTU table
+    outputBinding:
+      glob: $(inputs.otu_table_path)
+  - id: taxonomic_profile
+    type:
+      - 'null'
+      - File
+    doc: output a 'condensed' taxonomic profile for each sample based on the OTU table.
+      Taxonomic profiles output can be further converted to other formats using singlem
+      summarise.
+    outputBinding:
+      glob: $(inputs.taxonomic_profile_path)
+  - id: taxonomic_profile_krona
+    type:
+      - 'null'
+      - File
+    doc: output a 'condensed' taxonomic profile for each sample based on the OTU table
+    outputBinding:
+      glob: $(inputs.taxonomic_profile_krona_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

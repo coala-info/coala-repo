@@ -1,40 +1,13 @@
 # lra CWL Generation Report
 
-## lra_index
+## Real Data Test
 
-### Tool Description
-Index global reference
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/lra:1.3.7.2--h5ca1c30_4
-- **Homepage**: https://github.com/ChaissonLab/LRA
-- **Package**: https://anaconda.org/channels/bioconda/packages/lra/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/lra/overview
-- **Total Downloads**: 31.7K
-- **Last updated**: 2025-08-19
-- **GitHub**: https://github.com/ChaissonLab/LRA
-- **Stars**: N/A
-### Original Help Text
-```text
-Usage: lra global file.fa [options]
-Options: 
-   -CCS (flag) Index for aligning CCS reads
-   -CLR (flag) Index for aligning CLR reads
-   -ONT (flag) Index for aligning Nanopore reads
-   -CONTIG (flag) Index for aligning large contigs
-   -W (int) Minimizer window size (10).
-   -F (int) Maximum minimizer frequency. (default: 250 for CLR and ONT reads; 150 for CCS reads, 30 for CONTIG.)
-   -K (int) Word size
-   -h Print help.
-Examples: 
-Index global reference for aligning CCS reads: lra global -CCS ref.fa
-Index global reference for aligning CLR reads: lra global -CLR ref.fa
-Index global reference for aligning Nanopore reads: lra global -ONT ref.fa
-Index global reference for aligning contig: lra global -CONTIG ref.fa
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| lra_align | PASS | Aligned 500 nf-core SARS-CoV-2 nanopore reads; 262 mapped across the genome in SAM (added .mms/.gli secondaryFiles). |
+| lra_global | PASS | Wrote the .mms global index for the nf-core SARS-CoV-2 genome (genome now staged writable and returned with the index). |
+| lra_index | PASS | Rewritten (was a copy of lra_global): indexed the nf-core SARS-CoV-2 genome, writing .mms and .gli used by lra_align. |
+| lra_local | PASS | Rewritten (was a copy of lra_global, wrong options): wrote the .gli local index for the nf-core SARS-CoV-2 genome, same size as the one from lra_index. |
 
 ## lra_align
 
@@ -112,10 +85,10 @@ Index global reference for aligning contig: lra global -CONTIG ref.fa
 ```
 
 
-## lra_local
+## lra_index
 
 ### Tool Description
-Index global reference for aligning reads
+Build global and local indexes on a genome (help text from the LRA source; the binary prints the global help for every index command).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lra:1.3.7.2--h5ca1c30_4
@@ -125,7 +98,7 @@ Index global reference for aligning reads
 
 ### Original Help Text
 ```text
-Usage: lra global file.fa [options]
+Usage: lra index file.fa [options]
 Options: 
    -CCS (flag) Index for aligning CCS reads
    -CLR (flag) Index for aligning CLR reads
@@ -136,10 +109,36 @@ Options:
    -K (int) Word size
    -h Print help.
 Examples: 
-Index global reference for aligning CCS reads: lra global -CCS ref.fa
-Index global reference for aligning CLR reads: lra global -CLR ref.fa
-Index global reference for aligning Nanopore reads: lra global -ONT ref.fa
-Index global reference for aligning contig: lra global -CONTIG ref.fa
+Index reference for aligning CCS reads: lra index -CCS ref.fa
+Index reference for aligning CLR reads: lra index -CLR ref.fa
+Index reference for aligning Nanopore reads: lra index -ONT ref.fa
+Index reference for aligning contig: lra index -CONTIG ref.fa
+```
+
+
+## lra_local
+
+### Tool Description
+Build a local index of a genome (help text from the LRA source; the binary prints the global help).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lra:1.3.7.2--h5ca1c30_4
+- **Homepage**: https://github.com/ChaissonLab/LRA
+- **Package**: https://anaconda.org/channels/bioconda/packages/lra/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: lra local file.fa [options]
+   -w (int) Local minimizer window size (10).
+   -f (int) Local maximum minimizer frequency (5).
+   -k (int) Local word size (10)
+   -h Print help.
+Examples: 
+Index local reference for aligning CCS reads: lra local -CCS ref.fa
+Index local reference for aligning CLR reads: lra local -CLR ref.fa
+Index local reference for aligning Nanopore reads: lra local -ONT ref.fa
+Index local reference for aligning contig: lra local -CONTIG ref.fa
 ```
 
 

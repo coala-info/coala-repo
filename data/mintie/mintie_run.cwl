@@ -1,167 +1,54 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bpipe
+baseCommand:
+  - mintie
+  - -w
 label: mintie_run
-doc: "bpipe [run|test|debug|touch|execute] [options] <pipeline> <in1> <in2>...\n \
-  \            retry [job id] [test]\n             remake <file1> <file2>...\n   \
-  \          resume\n             stop [preallocated]\n             history\n    \
-  \         log [-n <lines>] [job id]\n             jobs\n             checks [options]\n\
-  \             override\n             status\n             cleanup\n            \
-  \ query <file>\n             preallocate\n             archive [--delete] <zip file
-  path>\n             autoarchive\n             preserve\n             register <pipeline>
-  <in1> <in2>...\n             diagram <pipeline> <in1> <in2>...\n             diagrameditor
-  <pipeline> <in1> <in2>...\n\nTool homepage: https://github.com/Oshlack/MINTIE"
+doc: "MINTIE wrapper script. Invokes the MINTIE bpipe pipeline (Method for Inferring\
+  \ Novel Transcripts and Isoforms using Equivalence classes) on case and control\
+  \ FASTQ files.\n\nusage (wrapper): mintie -w -p [params.txt] cases/*.fastq.gz controls/*.fastq.gz\n\
+  \nTool homepage: https://github.com/Oshlack/MINTIE"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: cases
+        entry: "$({class: 'Directory', listing: inputs.case_fastqs})"
+      - entryname: controls
+        entry: "$({class: 'Directory', listing: inputs.control_fastqs})"
 inputs:
-  - id: autoarchive
-    type:
-      - 'null'
-      - string
-    doc: clean up all internal files after run into given archive
+  - id: params_file
+    type: File
+    doc: MINTIE parameter file (bpipe -p lines, as in params.txt), passed with -p
     inputBinding:
-      position: 101
-      prefix: --autoarchive
-  - id: branch
+      position: 1
+      prefix: -p
+  - id: case_fastqs
     type:
-      - 'null'
-      - string
-    doc: Comma separated list of branches to limit execution to
-    inputBinding:
-      position: 101
-      prefix: --branch
-  - id: dir
+      type: array
+      items: File
+    doc: Case sample FASTQ files (staged in cases/)
+  - id: control_fastqs
     type:
-      - 'null'
-      - string
-    doc: output directory
-    inputBinding:
-      position: 101
-      prefix: --dir
-  - id: env
-    type:
-      - 'null'
-      - string
-    doc: "Environment to select from alternate configurations in\n               \
-      \                   bpipe.config"
-    inputBinding:
-      position: 101
-      prefix: --env
-  - id: filename
-    type:
-      - 'null'
-      - string
-    doc: output file name of report
-    inputBinding:
-      position: 101
-      prefix: --filename
-  - id: interval
-    type:
-      - 'null'
-      - string
-    doc: "the default genomic interval to execute pipeline for (samtools\n       \
-      \                           format)"
-    inputBinding:
-      position: 101
-      prefix: --interval
-  - id: memory
-    type:
-      - 'null'
-      - string
-    doc: maximum memory in MB, or specified as <n>GB or <n>MB
-    inputBinding:
-      position: 101
-      prefix: --memory
-  - id: param
-    type:
-      - 'null'
-      - string
-    doc: defines a pipeline parameter, or file of parameters via @<file>
-    inputBinding:
-      position: 101
-      prefix: --param
-  - id: report
-    type:
-      - 'null'
-      - boolean
-    doc: generate an HTML report / documentation for pipeline
-    inputBinding:
-      position: 101
-      prefix: --report
-  - id: report_template
-    type:
-      - 'null'
-      - string
-    doc: generate report using named template
-    inputBinding:
-      position: 101
-      prefix: --report
-  - id: resource
-    type:
-      - 'null'
-      - string
-    doc: place limit on named resource
-    inputBinding:
-      position: 101
-      prefix: --resource
-  - id: source
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Load the given pipeline file(s) before running / executing
-    inputBinding:
-      position: 101
-      prefix: --source
-  - id: test
-    type:
-      - 'null'
-      - boolean
-    doc: test mode
-    inputBinding:
-      position: 101
-      prefix: --test
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: maximum threads
-    inputBinding:
-      position: 101
-      prefix: --threads
-  - id: until
-    type:
-      - 'null'
-      - string
-    doc: run until stage given
-    inputBinding:
-      position: 101
-      prefix: --until
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: print internal logging to standard error
-    inputBinding:
-      position: 101
-      prefix: --verbose
-  - id: yes
-    type:
-      - 'null'
-      - boolean
-    doc: answer yes to any prompts or questions
-    inputBinding:
-      position: 101
-      prefix: --yes
+      type: array
+      items: File
+    doc: Control sample FASTQ files (staged in controls/)
+arguments:
+  - position: 2
+    valueFrom: "$(inputs.case_fastqs.map(function(f){return 'cases/' + f.basename}))"
+  - position: 3
+    valueFrom: "$(inputs.control_fastqs.map(function(f){return 'controls/' + f.basename}))"
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: dir_dir
+  - id: final_results
     type:
       - 'null'
       - Directory
-    doc: output directory
+    doc: MINTIE final output directory
     outputBinding:
-      glob: $(inputs.dir)
+      glob: final
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mintie:0.4.3--hdfd78af_0

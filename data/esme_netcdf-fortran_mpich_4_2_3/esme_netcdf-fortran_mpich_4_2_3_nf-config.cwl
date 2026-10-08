@@ -5,7 +5,7 @@ label: esme_netcdf-fortran_mpich_4_2_3_nf-config
 doc: "Display configuration information for the NetCDF-Fortran library.\n\nTool homepage:
   http://www.unidata.ucar.edu/software/netcdf/"
 inputs:
-  - id: all_options
+  - id: all
     type:
       - 'null'
       - boolean
@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --all
-  - id: c_compiler
+  - id: cc
     type:
       - 'null'
       - boolean
@@ -21,7 +21,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --cc
-  - id: c_flags
+  - id: cflags
     type:
       - 'null'
       - boolean
@@ -29,7 +29,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --cflags
-  - id: fortran_compiler
+  - id: fc
     type:
       - 'null'
       - boolean
@@ -37,7 +37,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fc
-  - id: fortran_flags
+  - id: fflags
     type:
       - 'null'
       - boolean
@@ -45,7 +45,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fflags
-  - id: fortran_libraries
+  - id: flibs
     type:
       - 'null'
       - boolean
@@ -93,7 +93,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --has-nc4
-  - id: include_directory
+  - id: includedir
     type:
       - 'null'
       - boolean
@@ -101,7 +101,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --includedir
-  - id: install_prefix
+  - id: prefix
     type:
       - 'null'
       - boolean
@@ -115,6 +115,5 @@ outputs:
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: 
-      quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+    dockerPull: quay.io/biocontainers/esme_netcdf-fortran_mpich_4_2_3:4.6.1--h02d5891_0
 stdout: esme_netcdf-fortran_mpich_4_2_3_nf-config.out

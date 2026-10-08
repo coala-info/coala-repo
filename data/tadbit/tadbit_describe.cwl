@@ -90,6 +90,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
   - id: output_path
     type: string
     inputBinding:
@@ -104,6 +105,10 @@ outputs:
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.working_directory)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

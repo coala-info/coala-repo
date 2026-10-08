@@ -1,14 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfba_media
+baseCommand:
+  - pyfba
+  - media
 label: pyfba_media
-doc: "List of media components for pyfba\n\nTool homepage: https://linsalrob.github.io/PyFBA/"
-inputs:
-  - id: media_component
-    type: string
-    doc: A media component from the provided list
-    inputBinding:
-      position: 1
+doc: "List the names of all the predefined media\n\nTool homepage: https://linsalrob.github.io/PyFBA/"
+inputs: []
 outputs:
   - id: stdout
     type: stdout

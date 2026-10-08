@@ -66,20 +66,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --3d-distance-cutoff
-  - id: output_dir_path
-    type: string
-    doc: Output directory of proximity files
+  - id: prep_dir
+    type: Directory
+    doc: Output directory of proximity files (the preprocessing directory; it is updated
+      in place)
     inputBinding:
       position: 102
       prefix: --output-dir
+      valueFrom: $(self.basename)
 outputs:
-  - id: output_dir
+  - id: updated_prep_dir
     type: Directory
-    doc: Output directory of proximity files
+    doc: Updated preprocessing directory
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.prep_dir.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.prep_dir)
+        writable: true
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0

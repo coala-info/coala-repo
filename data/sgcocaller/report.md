@@ -1,5 +1,15 @@
 # sgcocaller CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sgcocaller_autophase | PASS | ran on real nf-core 10x chr21 BAM with a het-SNP VCF; wrote genotype matrices, phase and corrected phase files |
+| sgcocaller_phase | PASS | ran on real nf-core 10x chr21 BAM with a het-SNP VCF; genotype matrices and phase files have the expected counts (data are mixed cell lines, so all SNPs stay unphased) |
+| sgcocaller_swphase | PASS | ran on phase output from real nf-core data with a synthetic phase column; corrected phased VCF follows the planted phase |
+| sgcocaller_sxo | PASS | ran on phase output from real nf-core data with a synthetic phase column; count and viterbi matrices have the expected 32 SNP by 500 cell shape |
+| sgcocaller_xo | PASS | ran on real nf-core 10x chr21 BAM with a het-SNP VCF; wrote count matrices and a viterbi segment file for 500 cells |
+
 ## sgcocaller_autophase
 
 ### Tool Description

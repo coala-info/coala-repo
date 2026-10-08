@@ -25,6 +25,9 @@ inputs:
       position: 103
       prefix: --to-demes
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: to_demes
     type:
       - 'null'
@@ -37,3 +40,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mrpast:0.2--py312h8f4af18_0
+stdout: mrpast_model.out

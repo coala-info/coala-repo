@@ -57,7 +57,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: whether OPeNDAP is enabled
+    doc: whether OPeNDAP is enabled in this build
     inputBinding:
       position: 101
       prefix: --has-dap
@@ -65,7 +65,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: whether Fortran 2003 API is enabled
+    doc: whether Fortran 2003 API is enabled in this build
     inputBinding:
       position: 101
       prefix: --has-f03
@@ -73,7 +73,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: whether Fortran 90 API is enabled
+    doc: whether Fortran 90 API is enabled in this build
     inputBinding:
       position: 101
       prefix: --has-f90
@@ -89,15 +89,23 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: whether NetCDF-4 API is enabled
+    doc: whether NetCDF-4/HDF-5 is enabled in this build
     inputBinding:
       position: 101
       prefix: --has-nc4
+  - id: includedir
+    type:
+      - 'null'
+      - boolean
+    doc: Include directory
+    inputBinding:
+      position: 101
+      prefix: --includedir
   - id: prefix
     type:
       - 'null'
       - boolean
-    doc: install prefix
+    doc: Install prefix
     inputBinding:
       position: 101
       prefix: --prefix

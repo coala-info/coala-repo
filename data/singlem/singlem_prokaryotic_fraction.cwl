@@ -4,16 +4,18 @@ baseCommand:
   - singlem
   - prokaryotic_fraction
 label: singlem_prokaryotic_fraction
-doc: "Estimate the fraction of reads from a metagenome that are assigned to Bacteria
-  and Archaea compared to e.g. eukaryote or phage. Also estimate average genome size.\n\
-  \nTool homepage: https://github.com/wwood/singlem"
+doc: 'Estimate the fraction of reads from a metagenome that are assigned to Bacteria
+  and Archaea compared to e.g. eukaryote or phage. Also estimate average genome size.
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: accept_missing_samples
     type:
       - 'null'
       - boolean
-    doc: If a sample is missing from the input-metagenome-sizes file, skip 
-      analysis of it without croaking.
+    doc: If a sample is missing from the input-metagenome-sizes file, skip analysis
+      of it without croaking.
     inputBinding:
       position: 101
       prefix: --accept-missing-samples
@@ -29,11 +31,10 @@ inputs:
     type:
       - 'null'
       - File
-    doc: TSV file with 'sample' and 'num_bases' as a header, where sample 
-      matches the input profile name, and num_reads is the total number 
-      (forward+reverse) of bases in the metagenome that was analysed with 
-      'pipe'. These must be the same reads that were used to generate the input 
-      profile.
+    doc: TSV file with 'sample' and 'num_bases' as a header, where sample matches
+      the input profile name, and num_reads is the total number (forward+reverse)
+      of bases in the metagenome that was analysed with 'pipe'. These must be the
+      same reads that were used to generate the input profile.
     inputBinding:
       position: 101
       prefix: --input-metagenome-sizes
@@ -46,7 +47,7 @@ inputs:
   - id: metapackage
     type:
       - 'null'
-      - string
+      - Directory
     doc: Metapackage containing genome lengths
     inputBinding:
       position: 101
@@ -64,9 +65,9 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: nucleotide read sequence(s) (forward or unpaired) to be searched. Can 
-      be FASTA or FASTQ format, GZIP-compressed or not. These must be the same 
-      ones that were used to generate the input profile.
+    doc: nucleotide read sequence(s) (forward or unpaired) to be searched. Can be
+      FASTA or FASTQ format, GZIP-compressed or not. These must be the same ones that
+      were used to generate the input profile.
     inputBinding:
       position: 101
       prefix: --forward
@@ -75,9 +76,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: reverse reads to be searched. Can be FASTA or FASTQ format, 
-      GZIP-compressed or not. These must be the same reads that were used to 
-      generate the input profile.
+    doc: reverse reads to be searched. Can be FASTA or FASTQ format, GZIP-compressed
+      or not. These must be the same reads that were used to generate the input profile.
     inputBinding:
       position: 101
       prefix: --reverse

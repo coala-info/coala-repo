@@ -1,5 +1,14 @@
 # sfs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sfs_create | PASS |  |
+| sfs_fold | PASS |  |
+| sfs_stat | PASS |  |
+| sfs_view | PASS |  |
+
 ## sfs_create
 
 ### Tool Description
@@ -301,46 +310,6 @@ Options:
 
   -h, --help
           Print help (see a summary with '-h')
-```
-
-## sfs_Suppress
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sfs:0.1.0--h9ee0642_0
-- **Homepage**: https://github.com/malthesr/sfs
-- **Package**: https://anaconda.org/channels/bioconda/packages/sfs/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Suppress'
-
-Usage: sfs [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
-```
-
-## sfs_Set
-
-### Tool Description
-For more information, try '--help'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sfs:0.1.0--h9ee0642_0
-- **Homepage**: https://github.com/malthesr/sfs
-- **Package**: https://anaconda.org/channels/bioconda/packages/sfs/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Set'
-
-Usage: sfs [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
 ```
 
 ## Metadata

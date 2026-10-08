@@ -1,22 +1,34 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qcli.py
+baseCommand:
+  - qc-rsd
 label: mzquality_qc-rsd
-doc: "CLI to the mzQuality\n\nmzQuality is a Tool for quality monitoring and reporting
-  of mass spectrometry measurements.\n\nTool homepage: https://github.com/hankemeierlab/mzQuality"
+doc: "Calculate the QC RSD's.\n\nmzQuality is a Tool for quality monitoring and reporting of mass spectrometry measurements. The image ENTRYPOINT is /files/mzQuality/qcli.py (not on PATH), so the command words start at the subcommand.\n\nTool homepage: https://github.com/hankemeierlab/mzQuality"
 inputs:
-  - id: method
-    type: string
-    doc: 'The method to run. Supported methods are: measurement summary, blank_effect,
-      rt_shifts, qc_correction, rsd qc, rsd replicates, rsd internal standard(s),
-      plot information compound(s), export results as samples vs. compounds'
+  - id: qc_corrected_file
+    type: File
+    doc: QC corrected measurements file (output of qc-correction)
     inputBinding:
       position: 1
+      prefix: --qc-corrected-file
+  - id: qc_rsd_file
+    type: string
+    doc: Output TSV file with the QC RSDs
+    inputBinding:
+      position: 2
+      prefix: --qc-rsd-file
+  - id: by_batch
+    type: ['null', boolean]
+    doc: Calculate per batch instead of over all batches
+    inputBinding:
+      position: 3
+      prefix: --by-batch
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: qc_rsd
+    type: File
+    doc: QC RSD table
+    outputBinding:
+      glob: $(inputs.qc_rsd_file)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/mzquality:phenomenal-v0.9.5_cv0.9.5.15
-stdout: mzquality_qc-rsd.out

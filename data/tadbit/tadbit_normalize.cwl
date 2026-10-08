@@ -253,10 +253,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: workdir_out
+    type: Directory
+    doc: The working directory with the new results.
+    outputBinding:
+      glob: $(inputs.workdir.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.workdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tadbit:1.0.1--py310h2a84d7f_1

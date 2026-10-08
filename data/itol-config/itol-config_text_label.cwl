@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - itol_config
+  - itol-config
   - text_label
 label: itol-config_text_label
 doc: "Generates an iTOL text label configuration file from a CSV file.\n\nTool homepage:
@@ -31,16 +31,19 @@ inputs:
       prefix: --input
   - id: output_path
     type: string
-    doc: Output file name for the iTOL configuration file
+    doc: Output file name (prefix) for the iTOL configuration file
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: File
-    doc: Output file name for the iTOL configuration file
+    type:
+      type: array
+      items: File
+    doc: One iTOL configuration file per metadata column 
+      (<output>.<column>.txt)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path).*.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

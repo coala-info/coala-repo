@@ -16,13 +16,18 @@ inputs:
       prefix: --debug
   - id: fasta
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Location of the genome fasta file for which to get the splice site 
       sequences from
     inputBinding:
       position: 101
       prefix: --fasta
   - id: genome
-    type: string
+    type:
+      - string
+      - File
     doc: Either the genome name (e.g. "mm10" or "hg19") or location of the 
       genome chromosome sizes file for "bedtools flank" to make sure we do not 
       accidentally ask for genome positions that are outside of the defined 

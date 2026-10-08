@@ -1,55 +1,46 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phast_pbsencode
+baseCommand: pbsEncode
 label: phast_pbsencode
-doc: "Encodes a position-specific scoring matrix (PSSM) into a PSSM that is suitable
-  for use with phastCons.\n\nTool homepage: http://compgen.cshl.edu/phast/"
+doc: "Produce an approximate binary encoding of a probabilistic biological sequence
+  (PBS), as defined by a text file with a row for each position in the sequence and
+  a column for each base. The encoding is defined by a code file in the format used
+  by pbsTrain. This program performs the inverse function of pbsDecode.\n\nTool homepage:
+  http://compgen.cshl.edu/phast/"
 inputs:
-  - id: input_pssm
-    type: File
-    doc: Input PSSM file
-    inputBinding:
-      position: 1
-  - id: alphabet
-    type:
-      - 'null'
-      - string
-    doc: 'Alphabet of the PSSM (DNA, RNA, or PROTEIN). Default: DNA.'
-    inputBinding:
-      position: 102
-      prefix: --alphabet
-  - id: background
-    type:
-      - 'null'
-      - string
-    doc: Background frequencies for each base in the alphabet. For DNA, this can
-      be a string of four numbers (e.g., "0.25 0.25 0.25 0.25") or a predefined 
-      string like "equimolar" or "human".
-    inputBinding:
-      position: 102
-      prefix: --background
-  - id: pseudo_count
-    type:
-      - 'null'
-      - float
-    doc: 'Pseudo-count to add to each entry in the PSSM. Default: 0.01.'
-    inputBinding:
-      position: 102
-      prefix: --pseudo-count
-  - id: verbose
+  - id: discard_gaps
     type:
       - 'null'
       - boolean
-    doc: Print verbose output.
+    doc: Discard gaps in the PBS. Gaps in the input data are assumed to be represented
+      by rows consisting of a single "-" character.
     inputBinding:
-      position: 102
-      prefix: --verbose
-outputs:
-  - id: output_pssm
+      position: 1
+      prefix: --discard-gaps
+  - id: input_probs
     type: File
-    doc: Output PSSM file
+    doc: Text file of base probabilities, one row per position and one column per
+      base (for example from prequel).
+    inputBinding:
+      position: 2
+  - id: codefile
+    type: File
+    doc: Code file produced by pbsTrain.
+    inputBinding:
+      position: 3
+  - id: output_name
+    type:
+      - 'null'
+      - string
+    doc: Name of the binary output file (standard output).
+    default: output.bin
+outputs:
+  - id: encoded
+    type: File
+    doc: Binary encoding of the PBS.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phast:1.9.7--h7eac25e_0
+stdout: $(inputs.output_name)

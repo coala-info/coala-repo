@@ -114,6 +114,5 @@ outputs:
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: 
-      quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+    dockerPull: quay.io/biocontainers/esme_mvapich_4_0_ucx:1.0.2--mvapich_ucx_h33124db_0
 stdout: esme_mvapich_4_0_ucx_nf-config.out

@@ -12,15 +12,22 @@ inputs:
     doc: Input VCF/BCF that shall be splitted.
     inputBinding:
       position: 1
-outputs:
   - id: output
     type:
-      - 'null'
-      - File
+      type: array
+      items: string
     doc: BCF files to split into. Breakends are kept together. Each file will 
       contain approximately the same number of records.
+    inputBinding:
+      position: 2
+outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: BCF chunk files
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0

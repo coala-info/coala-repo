@@ -1,14 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plot
+baseCommand:
+  - sourmash
+  - plot
 label: sourmash_plot
-doc: "Generate plots from sourmash compare output.\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
+doc: 'Generate plots from sourmash compare output.
+
+
+  Tool homepage: https://github.com/sourmash-bio/sourmash'
 inputs:
   - id: distances
     type: File
-    doc: output from "sourmash compare"
+    doc: output from "sourmash compare" (the matrix file, with its .labels.txt file beside it)
     inputBinding:
       position: 1
+    secondaryFiles:
+      - pattern: .labels.txt
+        required: true
   - id: force
     type:
       - 'null'
@@ -21,8 +29,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: a CSV file containing label information to use on plot; implies 
-      --labels
+    doc: a CSV file containing label information to use on plot; implies --labels
     inputBinding:
       position: 102
       prefix: --labels-from
@@ -30,17 +37,15 @@ inputs:
     type:
       - 'null'
       - File
-    doc: a CSV file containing label information to use on plot; implies 
-      --labels
+    doc: a CSV file containing label information to use on plot; implies --labels
     inputBinding:
       position: 102
       prefix: --labels-load
   - id: labeltext
     type:
       - 'null'
-      - string
-    doc: filename containing list of labels (overrides signature names); implies
-      --labels
+      - File
+    doc: filename containing list of labels (overrides signature names); implies --labels
     inputBinding:
       position: 102
       prefix: --labeltext
@@ -125,18 +130,19 @@ inputs:
       position: 102
       prefix: --vmin
   - id: csv_output_path
-    type: string
-    doc: Output or path parameter `csv_output_path`
+    type:
+      - 'null'
+      - string
+    doc: write clustered matrix and labels out in CSV format (with column headers) to this file
     inputBinding:
       position: 103
-      prefix: --csv-output
+      prefix: --csv
 outputs:
   - id: csv_output
     type:
       - 'null'
       - File
-    doc: write clustered matrix and labels out in CSV format (with column 
-      headers) to this file
+    doc: write clustered matrix and labels out in CSV format (with column headers) to this file
     outputBinding:
       glob: $(inputs.csv_output_path)
   - id: output_dir_dir
@@ -146,6 +152,17 @@ outputs:
     doc: directory for output plots
     outputBinding:
       glob: $(inputs.output_dir)
+  - id: plots
+    type:
+      type: array
+      items: File
+    doc: plot files (PNG or PDF) written to the working directory or the output directory
+    outputBinding:
+      glob:
+        - '*.png'
+        - '*.pdf'
+        - $(inputs.output_dir)/*.png
+        - $(inputs.output_dir)/*.pdf
 requirements:
   - class: InlineJavascriptRequirement
 hints:

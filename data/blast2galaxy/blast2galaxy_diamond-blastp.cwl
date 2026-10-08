@@ -7,6 +7,13 @@ label: blast2galaxy_diamond-blastp
 doc: "search protein databases using a protein query with DIAMOND\n\nTool homepage:
   https://github.com/IPK-BIT/blast2galaxy"
 inputs:
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: blast2galaxy settings file in TOML format (Galaxy server URL, API key 
+      and profiles); staged into the working directory as .blast2galaxy.toml, 
+      where blast2galaxy looks for it first
   - id: comp_based_stats
     type:
       - 'null'
@@ -189,6 +196,12 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: .blast2galaxy.toml
+        entry: $(inputs.config_file)
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blast2galaxy:1.0.0--pyhdfd78af_0

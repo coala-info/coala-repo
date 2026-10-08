@@ -46,9 +46,20 @@ inputs:
       position: 102
       prefix: --vmax_multiple
 outputs:
+  - id: project_dir
+    type: Directory
+    doc: The project directory with the files written by this command.
+    outputBinding:
+      glob: $(inputs.base_dir.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.base_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/knock-knock:0.8.0--pyhdfd78af_0

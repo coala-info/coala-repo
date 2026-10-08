@@ -12,6 +12,14 @@ inputs:
     doc: index directory
     inputBinding:
       position: 1
+  - id: archive
+    type:
+      - 'null'
+      - string
+    doc: output archive [<index.dir basename>.tar.gz in the output directory]
+    inputBinding:
+      position: 2
+      valueFrom: "$(self ? self : inputs.index_dir.basename + '.tar.gz')"
   - id: advanced_configuration
     type:
       - 'null'
@@ -23,12 +31,12 @@ inputs:
       prefix: -c
 outputs:
   - id: archive_tar_gz
-    type:
-      - 'null'
-      - File
-    doc: output archive [<index.dir>.tar.gz]
+    type: File
+    doc: output archive
     outputBinding:
-      glob: '*.out'
+      glob: "$(inputs.archive ? inputs.archive : inputs.index_dir.basename + '.tar.gz')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prophyle:0.3.3.2--py39h746d604_3

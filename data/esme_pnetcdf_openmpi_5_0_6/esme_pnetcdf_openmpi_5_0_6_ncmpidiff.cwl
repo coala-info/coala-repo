@@ -6,39 +6,38 @@ doc: "Compare the contents of two netCDF files.\n\nTool homepage: https://parall
 inputs:
   - id: file1
     type: File
-    doc: File name of the first input netCDF file to be compared
+    doc: First input netCDF file to be compared
     inputBinding:
       position: 1
   - id: file2
     type: File
-    doc: File name of the second input netCDF file to be compared
+    doc: Second input netCDF file to be compared
     inputBinding:
       position: 2
-  - id: header_only
+  - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Compare header information only, no variables
+    doc: Verbose output
     inputBinding:
-      position: 103
-      prefix: -h
+      position: 0
+      prefix: -b
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: quiet mode (no output if two files are the same)
     inputBinding:
-      position: 103
+      position: 0
       prefix: -q
-  - id: tolerance
+  - id: header_only
     type:
       - 'null'
-      - string
-    doc: 'Tolerance: diff is absolute element-wise difference and ratio is relative
-      element-wise difference defined as |x - y|/max(|x|, |y|)'
+      - boolean
+    doc: Compare header information only, no variables
     inputBinding:
-      position: 103
-      prefix: -t
+      position: 0
+      prefix: -h
   - id: variables
     type:
       - 'null'
@@ -46,22 +45,26 @@ inputs:
         items: string
     doc: Compare variable(s) <var1>,... only
     inputBinding:
-      position: 103
+      position: 0
       prefix: -v
-  - id: verbose
+      itemSeparator: ','
+  - id: tolerance
     type:
       - 'null'
-      - boolean
-    doc: Verbose output
+      - string
+    doc: 'Tolerance "diff,ratio": diff is absolute element-wise difference and ratio
+      is relative element-wise difference defined as |x - y|/max(|x|, |y|)'
     inputBinding:
-      position: 103
-      prefix: -b
+      position: 0
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: 
-      quay.io/biocontainers/esme_pnetcdf_openmpi_5_0_6:1.14.0--h1080dc9_0
+    dockerPull: quay.io/biocontainers/esme_pnetcdf_openmpi_5_0_6:1.14.0--h1080dc9_0
 stdout: esme_pnetcdf_openmpi_5_0_6_ncmpidiff.out
+successCodes:
+  - 0
+  - 1

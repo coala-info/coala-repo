@@ -7,6 +7,9 @@ label: rustybam_add-rg
 doc: "Add RG lines from a source BAM file to the BAM from stdin to the BAM going to
   stdout\n\nTool homepage: https://github.com/mrvollger/rustybam"
 inputs:
+  - id: input_bam
+    type: File
+    doc: BAM file to add the RG lines to (read from STDIN)
   - id: source
     type: File
     doc: Source BAM file to read RG lines from
@@ -44,4 +47,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-stdout: rustybam_add-rg.out
+stdin: $(inputs.input_bam.path)
+stdout: rustybam_add-rg.bam

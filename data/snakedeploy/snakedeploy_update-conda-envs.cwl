@@ -4,8 +4,11 @@ baseCommand:
   - snakedeploy
   - update-conda-envs
 label: snakedeploy_update-conda-envs
-doc: "Update given conda environment definition files (in YAML format) so that all
-  contained packages are set to the latest feasible versions.\n\nTool homepage: https://github.com/snakemake/snakedeploy"
+doc: 'Update given conda environment definition files (in YAML format) so that all
+  contained packages are set to the latest feasible versions.
+
+
+  Tool homepage: https://github.com/snakemake/snakedeploy'
 inputs:
   - id: envfiles
     type:
@@ -40,9 +43,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Regular expression for deriving an entity name from the environment 
-      file name (will be used for adding a label and for title and description).
-      Has to contain a group 'entity' (e.g. '(?P<entity>.+)/environment.yaml').
+    doc: Regular expression for deriving an entity name from the environment file
+      name (will be used for adding a label and for title and description). Has to
+      contain a group 'entity' (e.g. '(?P<entity>.+)/environment.yaml').
     inputBinding:
       position: 102
       prefix: --entity-regex
@@ -58,8 +61,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Add a label to the PR. Has to be used in combination with 
-      --entity-regex.
+    doc: Add a label to the PR. Has to be used in combination with --entity-regex.
     inputBinding:
       position: 102
       prefix: --pr-add-label
@@ -75,7 +77,28 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: updated_envfiles
+    type:
+      type: array
+      items: File
+    doc: The environment definition files, updated in place
+    outputBinding:
+      glob: $(inputs.envfiles.map(function(f){return f.basename;}))
+  - id: pin_files
+    type:
+      type: array
+      items: File
+    doc: Pinned environments (only written with pin_envs)
+    outputBinding:
+      glob: '*.pin.txt'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snakedeploy:0.16.0--pyhdfd78af_0
 stdout: snakedeploy_update-conda-envs.out
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.envfiles)

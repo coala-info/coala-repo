@@ -103,13 +103,27 @@ inputs:
       position: 102
       prefix: --output_file
 outputs:
-  - id: output_file
+  - id: output_json
     type:
       - 'null'
       - File
-    doc: Output JSON file (default=Report)
+    doc: Output JSON file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).json
+  - id: output_txt
+    type:
+      - 'null'
+      - File
+    doc: Tab-delimited result table
+    outputBinding:
+      glob: $(inputs.output_file_path).txt
+  - id: output_gff3
+    type:
+      - 'null'
+      - File
+    doc: GFF3 file of hits (contig input only)
+    outputBinding:
+      glob: $(inputs.output_file_path).gff3
 requirements:
   - class: InlineJavascriptRequirement
 hints:

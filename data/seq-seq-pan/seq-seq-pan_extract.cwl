@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - seqseqpan.py
+  - seq-seq-pan
   - extract
 label: seq-seq-pan_extract
 doc: "Extract sequence for whole genome or genomic interval.\n\nTool homepage: https://gitlab.com/chrjan/seq-seq-pan"
@@ -56,6 +56,11 @@ outputs:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path_path)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1

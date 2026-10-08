@@ -1,0 +1,124 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand:
+  - macrel
+  - get-smorfs
+label: macrel_get-smorfs
+doc: "Predict small ORFs (smORFs) in nucleotide contigs and write them as a peptide FASTA file (no AMP prediction). The --file-output option is not wrapped: macrel 1.6.0 crashes when it is used without --output.\n\nTool homepage: https://github.com/BigDataBiology/macrel"
+inputs:
+  - id: fasta_file
+    type: File
+    doc: "path to the input FASTA file of nucleotide contigs (can be gzipped)"
+    inputBinding:
+      position: 102
+      prefix: --fasta
+  - id: output_dir
+    type: string
+    default: "macrel_out"
+    doc: "path to the output directory (must not exist yet)"
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: cluster
+    type:
+      - 'null'
+      - boolean
+    doc: "Whether to pre-cluster the smORFs (at 100% identity) to avoid repeats"
+    inputBinding:
+      position: 102
+      prefix: --cluster
+  - id: keep_fasta_headers
+    type:
+      - 'null'
+      - boolean
+    doc: "Keep complete FASTA headers"
+    inputBinding:
+      position: 102
+      prefix: --keep-fasta-headers
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: "Number of threads to use"
+    inputBinding:
+      position: 102
+      prefix: --threads
+  - id: outtag
+    type:
+      - 'null'
+      - string
+    doc: "Set output tag (prefix of the output file names; default: macrel.out)"
+    inputBinding:
+      position: 102
+      prefix: --tag
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: "Overwrite the output folder if it already exists"
+    inputBinding:
+      position: 102
+      prefix: --force
+  - id: tmpdir
+    type:
+      - 'null'
+      - string
+    doc: "Temporary directory to use (default: $TMPDIR in the environment or /tmp)"
+    inputBinding:
+      position: 102
+      prefix: --tmpdir
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Print debug information"
+    inputBinding:
+      position: 102
+      prefix: --verbose
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: "Print only errors"
+    inputBinding:
+      position: 102
+      prefix: --quiet
+  - id: log_file
+    type:
+      - 'null'
+      - string
+    doc: "Path to the output logfile"
+    inputBinding:
+      position: 102
+      prefix: --log-file
+  - id: log_append
+    type:
+      - 'null'
+      - boolean
+    doc: "If set, then the log file is appended to (default: overwrite existing file)"
+    inputBinding:
+      position: 102
+      prefix: --log-append
+outputs:
+  - id: output
+    type: Directory
+    doc: "Macrel output directory"
+    outputBinding:
+      glob: $(inputs.output_dir)
+  - id: smorfs
+    type: File
+    doc: "Predicted smORF peptides (FASTA)"
+    outputBinding:
+      glob: $(inputs.output_dir)/*.smorfs.faa
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: "Log file"
+    outputBinding:
+      glob: $(inputs.log_file)
+requirements:
+  - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/macrel:1.6.0--pyh7e72e81_1

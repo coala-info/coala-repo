@@ -103,15 +103,17 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
-  - id: file_format
+  - id: output_format_possibilities
     type:
       - 'null'
       - type: array
         items: string
-    doc: File format(s) to download
+    doc: 'Allowable output formats (sra, fastq, fastq.gz, fasta, fasta.gz). If 
+      more than one is specified, downloaded data will be processed as little as
+      possible [default: fastq fastq.gz].'
     inputBinding:
       position: 101
-      prefix: --file-format
+      prefix: --output-format-possibilities
   - id: force
     type:
       - 'null'
@@ -120,22 +122,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --force
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: Show full help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: Show full help message in roff format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: gcp_project
     type:
       - 'null'
@@ -172,15 +158,16 @@ inputs:
     type:
       type: array
       items: string
-    doc: Download method(s) to use
+    doc: 'How to download the .sra file; each is tried in turn until one works: 
+      aws-http, prefetch, aws-cp, gcp-cp, ena-ascp, ena-ftp [required].'
     inputBinding:
       position: 101
       prefix: -m
   - id: output_directory
     type:
       - 'null'
-      - Directory
-    doc: Directory to download files to
+      - string
+    doc: 'Output directory to write to [default: current working directory]'
     inputBinding:
       position: 101
       prefix: --output-directory
@@ -236,7 +223,22 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (sequences when --stdout is set)
+  - id: sequence_files
+    type:
+      type: array
+      items: File
+    doc: Downloaded or extracted .sra, FASTQ or FASTA files.
+    outputBinding:
+      glob: |-
+        ${
+          var d = inputs.output_directory ? inputs.output_directory + "/" : "";
+          return [d + "*.sra", d + "*.fastq", d + "*.fastq.gz", d + "*.fasta", d + "*.fasta.gz"];
+        }
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kingfisher:0.4.1--pyh7cba7a3_0

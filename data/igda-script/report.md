@@ -1,5 +1,25 @@
 # igda-script CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| igda-script_add_gq_to_vcf | PASS | Sites-only sarscov2 VCF got a GQ FORMAT header and GQ=100 on all 9 records. |
+| igda-script_est_depth | Failed | image problem: samtools is not in the image, so the depth is written as 0. |
+| igda-script_est_depth_dir | Failed | image problem: submitjob needs /usr/bin/bash (absent) and samtools is missing; it also submits cluster jobs. |
+| igda-script_fastq2fasta | Failed | image problem: bioawk is not in the image. |
+| igda-script_getbambyregion | Failed | image problem: samtools is not in the image. |
+| igda-script_getbambyregion_dir | Failed | image problem: samtools is not in the image, so getbambyregion fails for each BAM. |
+| igda-script_igda_pipe_detect | Failed | image problem: the igda binary (and xgboost, samtools) is not in the image, so no SNVs are detected. |
+| igda-script_igda_pipe_detect_ont | Failed | image problem: the igda binary (and xgboost, samtools) is not in the image, so no SNVs are detected. |
+| igda-script_igda_pipe_detect_pb | Failed | image problem: the igda binary (and xgboost, samtools) is not in the image, so no SNVs are detected. |
+| igda-script_igda_pipe_phase | Failed | image problem: the igda binary (and samtools) is not in the image, so no contigs are phased. |
+| igda-script_igda_pipe_phase_diploid | Failed | image problem: the igda binary (and samtools) is not in the image, so no contigs are phased. |
+| igda-script_igda_pipe_phase_ont | Failed | image problem: the igda binary (and samtools) is not in the image, so no contigs are phased. |
+| igda-script_igda_pipe_phase_pb | Failed | image problem: the igda binary (and samtools) is not in the image, so no contigs are phased. |
+| igda-script_igda_pipe_phase_pb_diploid | Failed | image problem: the igda binary (and samtools) is not in the image, so no contigs are phased. |
+| igda-script_split_range | PASS | Range 0-29903 with segsize 5000 gave 6 contiguous segments covering the range. |
+
 ## igda-script_igda_pipe_detect
 
 ### Tool Description

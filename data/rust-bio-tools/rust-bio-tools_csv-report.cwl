@@ -64,15 +64,17 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sort-order
-outputs:
   - id: output_path
-    type:
-      - 'null'
-      - Directory
-    doc: Relative output path for the report files. Default value is the current
-      directory
+    type: string
+    doc: Relative output path for the report files (a new folder)
+    inputBinding:
+      position: 2
+outputs:
+  - id: report_dir
+    type: Directory
+    doc: Folder with the HTML report files
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0

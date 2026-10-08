@@ -1,5 +1,26 @@
 # rustybam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rustybam_add-rg | PASS |  |
+| rustybam_bed-length | PASS |  |
+| rustybam_break-paf | PASS |  |
+| rustybam_fastx-split | PASS |  |
+| rustybam_filter | PASS |  |
+| rustybam_get-fasta | Failed | tool bug: returns one extra base per BED region (end treated as inclusive), e.g. chr1:0-10 gives 11 bases where bedtools gives 10. |
+| rustybam_invert | PASS |  |
+| rustybam_liftover | PASS |  |
+| rustybam_nucfreq | PASS |  |
+| rustybam_orient | PASS |  |
+| rustybam_paf-to-sam | PASS |  |
+| rustybam_repeat | PASS |  |
+| rustybam_seq-stats | Failed | tool bug: 0.1.34 silently skips FASTA/FASTQ input that the help lists; BED and BAM input give correct totals and N50. |
+| rustybam_stats | PASS |  |
+| rustybam_suns | PASS |  |
+| rustybam_trim-paf | PASS |  |
+
 ## rustybam_stats
 
 ### Tool Description
@@ -47,48 +68,6 @@ OPTIONS:
 
     -V, --version
             Print version information
-```
-
-## rustybam_Get
-
-### Tool Description
-A tool for working with BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Get' wasn't recognized
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
-## rustybam_CIGAR
-
-### Tool Description
-A Rust library for reading and writing BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'CIGAR' wasn't recognized
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## rustybam_bed-length
@@ -152,31 +131,6 @@ OPTIONS:
     -V, --version                    Print version information
 ```
 
-## rustybam_Filter
-
-### Tool Description
-A tool for manipulating BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Filter' wasn't recognized
-
-	Did you mean 'filter'?
-
-If you believe you received this message in error, try re-running with 'rustybam -- Filter'
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 ## rustybam_invert
 
 ### Tool Description
@@ -203,31 +157,6 @@ ARGS:
 OPTIONS:
     -h, --help       Print help information
     -V, --version    Print version information
-```
-
-## rustybam_Invert
-
-### Tool Description
-A tool for manipulating BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Invert' wasn't recognized
-
-	Did you mean 'invert'?
-
-If you believe you received this message in error, try re-running with 'rustybam -- Invert'
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## rustybam_liftover
@@ -342,31 +271,6 @@ OPTIONS:
             Print version information
 ```
 
-## rustybam_Trim
-
-### Tool Description
-A tool for manipulating BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Trim' wasn't recognized
-
-	Did you mean 'trim'?
-
-If you believe you received this message in error, try re-running with 'rustybam -- Trim'
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 ## rustybam_orient
 
 ### Tool Description
@@ -415,31 +319,6 @@ OPTIONS:
 
     -V, --version
             Print version information
-```
-
-## rustybam_Orient
-
-### Tool Description
-A tool for manipulating BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Orient' wasn't recognized
-
-	Did you mean 'orient'?
-
-If you believe you received this message in error, try re-running with 'rustybam -- Orient'
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## rustybam_break-paf
@@ -497,31 +376,6 @@ OPTIONS:
     -f, --fasta <FASTA>    Optional query fasta file (with index) to populate the query seq field
     -h, --help             Print help information
     -V, --version          Print version information
-```
-
-## rustybam_Convert
-
-### Tool Description
-A command-line tool for manipulating BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Convert' wasn't recognized
-
-	Did you mean 'invert'?
-
-If you believe you received this message in error, try re-running with 'rustybam -- Convert'
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## rustybam_fastx-split
@@ -646,27 +500,6 @@ OPTIONS:
     -V, --version      Print version information
 ```
 
-## rustybam_Report
-
-### Tool Description
-A tool for working with BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Report' wasn't recognized
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 ## rustybam_suns
 
 ### Tool Description
@@ -694,27 +527,6 @@ OPTIONS:
     -v, --validate                 Confirm all the SUNs (very slow) only for debugging
     -h, --help                     Print help information
     -V, --version                  Print version information
-```
-
-## rustybam_Extract
-
-### Tool Description
-A tool for manipulating BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Extract' wasn't recognized
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## rustybam_add-rg
@@ -748,27 +560,6 @@ OPTIONS:
     -V, --version              Print version information
 ```
 
-## rustybam_Add
-
-### Tool Description
-A tool for manipulating BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Add' wasn't recognized
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 ## rustybam_seq-stats
 
 ### Tool Description
@@ -798,48 +589,6 @@ OPTIONS:
     -g, --genome-size <GENOME_SIZE>    Genome size for NG50 calculation
     -h, --help                         Print help information
     -V, --version                      Print version information
-```
-
-## rustybam_Calculate
-
-### Tool Description
-A Rust library for working with BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'Calculate' wasn't recognized
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
-```
-
-## rustybam_quantiles
-
-### Tool Description
-A tool for processing BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustybam:0.1.34--hf24ce72_0
-- **Homepage**: https://github.com/mrvollger/rustybam
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustybam/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: The subcommand 'quantiles' wasn't recognized
-
-USAGE:
-    rustybam [OPTIONS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## Metadata

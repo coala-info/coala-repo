@@ -1,552 +1,334 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: merlin
+baseCommand:
+  - merlin
 label: merlin_model
-doc: "MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis\n\nTool homepage: http://csg.sph.umich.edu/abecasis/merlin"
+doc: "MERLIN 1.1.2 - Calculate parametric LOD scores using the models in a parametric model table (--model).\n\nTool homepage: http://csg.sph.umich.edu/abecasis/merlin"
 inputs:
-  - id: all
+  - id: data_file
+    type: File
+    doc: "Data file, in linkage or QTDT format (-d)"
+    inputBinding:
+      position: 1
+      prefix: '-d'
+  - id: pedigree_file
+    type: File
+    doc: "Pedigree file, with genotype, phenotype and family structure information (-p)"
+    inputBinding:
+      position: 1
+      prefix: '-p'
+  - id: map_file
+    type: File
+    doc: "Map file with chromosome and centimorgan position for each marker (-m)"
+    inputBinding:
+      position: 1
+      prefix: '-m'
+  - id: missing_value_code
     type:
       - 'null'
-      - boolean
-    doc: 'Haplotyping: all possible haplotypes'
+      - string
+    doc: "Missing value code for quantitative phenotypes and covariates (default -99.999)"
     inputBinding:
-      position: 101
-      prefix: --all
+      position: 1
+      prefix: '-x'
   - id: allele_frequencies
     type:
       - 'null'
       - string
-    doc: Allele Frequencies (a|e|f|m|file)
+    doc: "Source for allele frequencies: a (all individuals), e (equal), f (founders) or m (maximum likelihood); rendered as -fa, -fe, -ff or -fm"
     inputBinding:
-      position: 101
-      prefix: -f
-  - id: ascertainment
-    type:
-      - 'null'
-      - boolean
-    doc: 'VC Linkage: ascertainment correction'
-    inputBinding:
-      position: 101
-      prefix: --ascertainment
-  - id: assoc
-    type:
-      - 'null'
-      - boolean
-    doc: 'Association: standard association test'
-    inputBinding:
-      position: 101
-      prefix: --assoc
-  - id: best
-    type:
-      - 'null'
-      - boolean
-    doc: 'Haplotyping: best-guess haplotypes'
-    inputBinding:
-      position: 101
-      prefix: --best
-  - id: bits
-    type:
-      - 'null'
-      - int
-    doc: 'Limits: bits for calculations'
-    inputBinding:
-      position: 101
-      prefix: --bits
-  - id: cfreq
-    type:
-      - 'null'
-      - boolean
-    doc: 'LD Clusters: cluster by common frequency'
-    inputBinding:
-      position: 101
-      prefix: --cfreq
-  - id: clusters
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: 'LD Clusters: specify clusters'
-    inputBinding:
-      position: 101
-      prefix: --clusters
-  - id: custom
+      position: 1
+      prefix: '-f'
+      separate: false
+  - id: allele_frequency_file
     type:
       - 'null'
       - File
-    doc: 'Association: custom association test with covariates'
+    doc: "File with allele frequencies (-f file)"
     inputBinding:
-      position: 101
-      prefix: --custom
-  - id: data_file
-    type: File
-    doc: Data File
-    inputBinding:
-      position: 101
-      prefix: -dname
-  - id: deviates
-    type:
-      - 'null'
-      - boolean
-    doc: 'NPL Linkage: NPL deviates'
-    inputBinding:
-      position: 101
-      prefix: --deviates
-  - id: distance
-    type:
-      - 'null'
-      - float
-    doc: 'LD Clusters: distance for clustering'
-    inputBinding:
-      position: 101
-      prefix: --distance
-  - id: error
-    type:
-      - 'null'
-      - boolean
-    doc: 'General: error reporting'
-    inputBinding:
-      position: 101
-      prefix: --error
-  - id: exp
-    type:
-      - 'null'
-      - boolean
-    doc: 'NPL Linkage: expected NPL scores'
-    inputBinding:
-      position: 101
-      prefix: --exp
-  - id: extended
-    type:
-      - 'null'
-      - boolean
-    doc: 'IBD States: extended IBD states'
-    inputBinding:
-      position: 101
-      prefix: --extended
-  - id: fast_assoc
-    type:
-      - 'null'
-      - boolean
-    doc: 'Association: fast association test'
-    inputBinding:
-      position: 101
-      prefix: --fastAssoc
-  - id: filter
-    type:
-      - 'null'
-      - boolean
-    doc: 'Association: filter individuals'
-    inputBinding:
-      position: 101
-      prefix: --filter
-  - id: founders
-    type:
-      - 'null'
-      - boolean
-    doc: 'Haplotyping: founder haplotypes'
-    inputBinding:
-      position: 101
-      prefix: --founders
-  - id: frequencies
-    type:
-      - 'null'
-      - boolean
-    doc: 'Output: output allele frequencies'
-    inputBinding:
-      position: 101
-      prefix: --frequencies
-  - id: grid
-    type:
-      - 'null'
-      - boolean
-    doc: 'Positions: analyze on a grid'
-    inputBinding:
-      position: 101
-      prefix: --grid
-  - id: horizontal
-    type:
-      - 'null'
-      - boolean
-    doc: 'Haplotyping: horizontal haplotyping output'
-    inputBinding:
-      position: 101
-      prefix: --horizontal
-  - id: ibd
-    type:
-      - 'null'
-      - boolean
-    doc: 'IBD States: calculate IBD states'
-    inputBinding:
-      position: 101
-      prefix: --ibd
-  - id: infer
-    type:
-      - 'null'
-      - boolean
-    doc: 'Association: infer genotypes'
-    inputBinding:
-      position: 101
-      prefix: --infer
-  - id: information
-    type:
-      - 'null'
-      - boolean
-    doc: 'General: information reporting'
-    inputBinding:
-      position: 101
-      prefix: --information
-  - id: kinship
-    type:
-      - 'null'
-      - boolean
-    doc: 'IBD States: calculate kinship coefficients'
-    inputBinding:
-      position: 101
-      prefix: --kinship
-  - id: likelihood
-    type:
-      - 'null'
-      - boolean
-    doc: 'General: likelihood calculation'
-    inputBinding:
-      position: 101
-      prefix: --likelihood
-  - id: map_file
-    type: File
-    doc: Map File
-    inputBinding:
-      position: 101
-      prefix: -mname
-  - id: marker_names
-    type:
-      - 'null'
-      - boolean
-    doc: 'Output: use marker names'
-    inputBinding:
-      position: 101
-      prefix: --markerNames
-  - id: matrices
-    type:
-      - 'null'
-      - boolean
-    doc: 'IBD States: output IBD matrices'
-    inputBinding:
-      position: 101
-      prefix: --matrices
-  - id: max_step
-    type:
-      - 'null'
-      - int
-    doc: 'Positions: maximum step size'
-    inputBinding:
-      position: 101
-      prefix: --maxStep
-  - id: megabytes
-    type:
-      - 'null'
-      - int
-    doc: 'Limits: memory limit in megabytes'
-    inputBinding:
-      position: 101
-      prefix: --megabytes
-  - id: min_step
-    type:
-      - 'null'
-      - int
-    doc: 'Positions: minimum step size'
-    inputBinding:
-      position: 101
-      prefix: --minStep
-  - id: minutes
-    type:
-      - 'null'
-      - int
-    doc: 'Limits: time limit in minutes'
-    inputBinding:
-      position: 101
-      prefix: --minutes
-  - id: missing_value_code
-    type:
-      - 'null'
-      - float
-    doc: Missing Value Code
-    inputBinding:
-      position: 101
-      prefix: -xname
-  - id: model
-    type:
-      - 'null'
-      - File
-    doc: 'General: model parameter table'
-    inputBinding:
-      position: 101
-      prefix: --model
-  - id: no_couple_bits
-    type:
-      - 'null'
-      - boolean
-    doc: 'Performance: disable couple bits optimization'
-    inputBinding:
-      position: 101
-      prefix: --noCoupleBits
-  - id: npl
-    type:
-      - 'null'
-      - boolean
-    doc: 'NPL Linkage: NPL scores'
-    inputBinding:
-      position: 101
-      prefix: --npl
-  - id: one
-    type:
-      - 'null'
-      - boolean
-    doc: 'Recombination: one recombination rate'
-    inputBinding:
-      position: 101
-      prefix: --one
-  - id: pairs
-    type:
-      - 'null'
-      - boolean
-    doc: 'NPL Linkage: NPL scores for pairs'
-    inputBinding:
-      position: 101
-      prefix: --pairs
-  - id: pdf
-    type:
-      - 'null'
-      - boolean
-    doc: 'Output: output in PDF format'
-    inputBinding:
-      position: 101
-      prefix: --pdf
-  - id: pedigree_file
-    type: File
-    doc: Pedigree File
-    inputBinding:
-      position: 101
-      prefix: -pname
-  - id: per_family
-    type:
-      - 'null'
-      - boolean
-    doc: 'Output: output results per family'
-    inputBinding:
-      position: 101
-      prefix: --perFamily
-  - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: 'Output: output file prefix'
-    inputBinding:
-      position: 101
-      prefix: --prefix
-  - id: qtl
-    type:
-      - 'null'
-      - boolean
-    doc: 'NPL Linkage: QTL analysis'
-    inputBinding:
-      position: 101
-      prefix: --qtl
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: 'Output: suppress output'
-    inputBinding:
-      position: 101
-      prefix: --quiet
+      position: 1
+      prefix: '-f'
   - id: random_seed
     type:
       - 'null'
       - int
-    doc: Random Seed
+    doc: "Random seed for simulation and haplotype sampling (default 123456)"
     inputBinding:
-      position: 101
-      prefix: -r9999
-  - id: reruns
+      position: 1
+      prefix: '-r'
+  - id: model
+    type: File
+    doc: "Parametric model table: trait, allele frequency, penetrances and model label per line"
+    inputBinding:
+      position: 1
+      prefix: '--model'
+  - id: steps
     type:
       - 'null'
       - int
-    doc: 'Simulation: number of reruns'
+    doc: "Analyse at n equally spaced locations between consecutive markers"
     inputBinding:
-      position: 101
-      prefix: --reruns
-  - id: rsq
+      position: 1
+      prefix: '--steps'
+  - id: max_step
     type:
       - 'null'
       - float
-    doc: 'LD Clusters: R-squared threshold'
+    doc: "Maximum distance in cM between consecutive analysis locations"
     inputBinding:
-      position: 101
-      prefix: --rsq
-  - id: sample
+      position: 1
+      prefix: '--maxStep'
+  - id: min_step
     type:
       - 'null'
-      - boolean
-    doc: 'Haplotyping: sample haplotypes'
+      - float
+    doc: "Minimum distance in cM between consecutive analysis locations"
     inputBinding:
-      position: 101
-      prefix: --sample
-  - id: save
+      position: 1
+      prefix: '--minStep'
+  - id: grid
     type:
       - 'null'
-      - boolean
-    doc: 'Simulation: save simulated data'
+      - float
+    doc: "Analyse along an n-cM grid of equally spaced locations"
     inputBinding:
-      position: 101
-      prefix: --save
-  - id: select
-    type:
-      - 'null'
-      - boolean
-    doc: 'IBD States: select individuals based on IBD'
-    inputBinding:
-      position: 101
-      prefix: --select
-  - id: simulate
-    type:
-      - 'null'
-      - boolean
-    doc: 'Simulation: simulate data'
-    inputBinding:
-      position: 101
-      prefix: --simulate
-  - id: singlepoint
-    type:
-      - 'null'
-      - boolean
-    doc: 'Recombination: singlepoint recombination analysis'
-    inputBinding:
-      position: 101
-      prefix: --singlepoint
-  - id: small_swap
-    type:
-      - 'null'
-      - boolean
-    doc: 'Performance: use small swap files'
-    inputBinding:
-      position: 101
-      prefix: --smallSwap
+      position: 1
+      prefix: '--grid'
   - id: start
     type:
       - 'null'
       - float
-    doc: 'Positions: start position'
+    doc: "Start analyses at this position in cM"
     inputBinding:
-      position: 101
-      prefix: --start
-  - id: steps
-    type:
-      - 'null'
-      - boolean
-    doc: 'Positions: analyze by steps'
-    inputBinding:
-      position: 101
-      prefix: --steps
+      position: 1
+      prefix: '--start'
   - id: stop
     type:
       - 'null'
       - float
-    doc: 'Positions: stop position'
+    doc: "Stop analyses at this position in cM"
     inputBinding:
-      position: 101
-      prefix: --stop
-  - id: swap
-    type:
-      - 'null'
-      - boolean
-    doc: 'Performance: swap data to disk'
-    inputBinding:
-      position: 101
-      prefix: --swap
-  - id: tabulate
-    type:
-      - 'null'
-      - boolean
-    doc: 'Output: tabulate results'
-    inputBinding:
-      position: 101
-      prefix: --tabulate
-  - id: three
-    type:
-      - 'null'
-      - boolean
-    doc: 'Recombination: three recombination rates'
-    inputBinding:
-      position: 101
-      prefix: --three
-  - id: trait
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: 'Simulation: specify trait(s) to simulate'
-    inputBinding:
-      position: 101
-      prefix: --trait
-  - id: trim
-    type:
-      - 'null'
-      - boolean
-    doc: 'Performance: trim data'
-    inputBinding:
-      position: 101
-      prefix: --trim
-  - id: two
-    type:
-      - 'null'
-      - boolean
-    doc: 'Recombination: two recombination rates'
-    inputBinding:
-      position: 101
-      prefix: --two
-  - id: unlinked
-    type:
-      - 'null'
-      - float
-    doc: 'VC Linkage: unlinked markers'
-    inputBinding:
-      position: 101
-      prefix: --unlinked
-  - id: use_covariates
-    type:
-      - 'null'
-      - boolean
-    doc: 'VC Linkage: use covariates in VC analysis'
-    inputBinding:
-      position: 101
-      prefix: --useCovariates
-  - id: vc
-    type:
-      - 'null'
-      - boolean
-    doc: 'VC Linkage: variance components analysis'
-    inputBinding:
-      position: 101
-      prefix: --vc
+      position: 1
+      prefix: '--stop'
   - id: zero
     type:
       - 'null'
       - boolean
-    doc: 'Recombination: zero recombination rate'
+    doc: "Assume no recombination between markers"
     inputBinding:
-      position: 101
-      prefix: --zero
+      position: 1
+      prefix: '--zero'
+  - id: one
+    type:
+      - 'null'
+      - boolean
+    doc: "Allow 1 recombination event between consecutive informative markers"
+    inputBinding:
+      position: 1
+      prefix: '--one'
+  - id: two
+    type:
+      - 'null'
+      - boolean
+    doc: "Allow 2 recombination events between consecutive informative markers"
+    inputBinding:
+      position: 1
+      prefix: '--two'
+  - id: three
+    type:
+      - 'null'
+      - boolean
+    doc: "Allow 3 recombination events between consecutive informative markers"
+    inputBinding:
+      position: 1
+      prefix: '--three'
+  - id: singlepoint
+    type:
+      - 'null'
+      - boolean
+    doc: "Consider each marker individually"
+    inputBinding:
+      position: 1
+      prefix: '--singlepoint'
+  - id: clusters
+    type:
+      - 'null'
+      - File
+    doc: "Marker cluster table to model linkage disequilibrium between neighbouring markers"
+    inputBinding:
+      position: 1
+      prefix: '--clusters'
+  - id: distance
+    type:
+      - 'null'
+      - float
+    doc: "Define clusters of markers less than this many cM apart"
+    inputBinding:
+      position: 1
+      prefix: '--distance'
+  - id: rsq
+    type:
+      - 'null'
+      - float
+    doc: "Define clusters of SNPs whose pairwise r2 exceeds this threshold"
+    inputBinding:
+      position: 1
+      prefix: '--rsq'
+  - id: bits
+    type:
+      - 'null'
+      - int
+    doc: "Do not analyse pedigrees of more than this bit complexity (default 24)"
+    inputBinding:
+      position: 1
+      prefix: '--bits'
+  - id: megabytes
+    type:
+      - 'null'
+      - int
+    doc: "Do not allocate more than this many megabytes of memory"
+    inputBinding:
+      position: 1
+      prefix: '--megabytes'
+  - id: minutes
+    type:
+      - 'null'
+      - int
+    doc: "Skip families whose calculations need more than this many minutes"
+    inputBinding:
+      position: 1
+      prefix: '--minutes'
+  - id: trim
+    type:
+      - 'null'
+      - boolean
+    doc: "Trim uninformative individuals from pedigrees"
+    inputBinding:
+      position: 1
+      prefix: '--trim'
+  - id: no_couple_bits
+    type:
+      - 'null'
+      - boolean
+    doc: "Disable founder couple symmetry"
+    inputBinding:
+      position: 1
+      prefix: '--noCoupleBits'
+  - id: swap
+    type:
+      - 'null'
+      - boolean
+    doc: "Use a swap file to reduce memory usage"
+    inputBinding:
+      position: 1
+      prefix: '--swap'
+  - id: small_swap
+    type:
+      - 'null'
+      - boolean
+    doc: "Use an alternative swap strategy that saves disk space"
+    inputBinding:
+      position: 1
+      prefix: '--smallSwap'
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: "Do not output progress reports for large families"
+    inputBinding:
+      position: 1
+      prefix: '--quiet'
+  - id: marker_names
+    type:
+      - 'null'
+      - boolean
+    doc: "Label results with marker names instead of cM positions"
+    inputBinding:
+      position: 1
+      prefix: '--markerNames'
+  - id: per_family
+    type:
+      - 'null'
+      - boolean
+    doc: "Write per-family results to a file"
+    inputBinding:
+      position: 1
+      prefix: '--perFamily'
+  - id: pdf
+    type:
+      - 'null'
+      - boolean
+    doc: "Write LOD score plots to <prefix>.pdf"
+    inputBinding:
+      position: 1
+      prefix: '--pdf'
+  - id: tabulate
+    type:
+      - 'null'
+      - boolean
+    doc: "Write tab-delimited tables of key results"
+    inputBinding:
+      position: 1
+      prefix: '--tabulate'
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: "Prefix for output file names (default merlin)"
+    inputBinding:
+      position: 1
+      prefix: '--prefix'
+  - id: simulate
+    type:
+      - 'null'
+      - boolean
+    doc: "Gene dropping simulation: replace genotypes with simulated genotypes before analysis"
+    inputBinding:
+      position: 1
+      prefix: '--simulate'
+  - id: reruns
+    type:
+      - 'null'
+      - int
+    doc: "Repeat the simulation this many times"
+    inputBinding:
+      position: 1
+      prefix: '--reruns'
+  - id: trait
+    type:
+      - 'null'
+      - string
+    doc: "Trait model for simulation, e.g. AFFECTION,FREQ,PEN(+/+),PEN(+/-),PEN(-/-),POSITION or QTLNAME,SNP,VarQTL,VarPoly,VarEnv"
+    inputBinding:
+      position: 1
+      prefix: '--trait'
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
-  - id: prefix_files
+    doc: "MERLIN report (standard output)"
+  - id: per_family_lod
+    type:
+      - 'null'
+      - File
+    doc: "Per-family parametric LOD scores (--perFamily)"
+    outputBinding:
+      glob: "$(inputs.prefix ? inputs.prefix : 'merlin').par"
+  - id: tables
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: "Tab-delimited result tables (--tabulate)"
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.prefix ? inputs.prefix : 'merlin')*.tbl"
+  - id: pdf_plot
+    type:
+      - 'null'
+      - File
+    doc: "LOD score plots (--pdf)"
+    outputBinding:
+      glob: "$(inputs.prefix ? inputs.prefix : 'merlin').pdf"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merlin:1.1.2--h077b44d_8

@@ -4,9 +4,9 @@ baseCommand:
   - panorama
   - cluster
 label: panorama_cluster
-doc: "Perform gene family clustering across multiple pangenomes using MMseqs2 with
-  support for both fast (linclust) and sensitive (cluster) clustering methods.\n\n\
-  Tool homepage: https://github.com/labgem/panorama"
+doc: "Perform gene family clustering across multiple pangenomes using MMseqs2 with\
+  \ support for both fast (linclust) and sensitive (cluster) clustering methods.\n\
+  \nTool homepage: https://github.com/labgem/panorama"
 inputs:
   - id: cluster_align_mode
     type:
@@ -86,8 +86,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of sequences per cluster representative (cluster method 
-      only)
+    doc: Maximum number of sequences per cluster representative (cluster method only)
     inputBinding:
       position: 101
       prefix: --cluster_max_seqs
@@ -112,8 +111,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Search sensitivity (cluster method only). Higher values = more 
-      sensitive but slower
+    doc: Search sensitivity (cluster method only). Higher values = more sensitive
+      but slower
     inputBinding:
       position: 101
       prefix: --cluster_sensitivity
@@ -145,7 +144,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: log output file
+    doc: Log output file name
     inputBinding:
       position: 101
       prefix: --log
@@ -161,6 +160,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pangenomes
+  - id: pangenome_files
+    type:
+      type: array
+      items: File
+    doc: Pangenome .h5 files named in the pangenomes list. They are staged in the
+      working directory, so the list must name them by file name (second column).
   - id: threads
     type:
       - 'null'
@@ -181,8 +186,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -198,8 +203,18 @@ outputs:
     doc: Output directory where clustering results will be written
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (with log)
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pangenome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0

@@ -35,6 +35,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: jobids
     type:
       - 'null'
@@ -112,17 +113,28 @@ inputs:
       position: 101
       prefix: --type
   - id: working_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: path to working directory (generated with the tool tadbit mapper)
     inputBinding:
       position: 101
       prefix: --workdir
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: workdir_out
+    type: Directory
+    doc: The working directory with the new results.
+    outputBinding:
+      glob: $(inputs.working_directory.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.working_directory)
+        writable: true
+      - "$(inputs.genome ? inputs.genome.map(function(f) { return {entryname: f.basename, entry: f, writable: true}; }) : [])"
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tadbit:1.0.1--py310h2a84d7f_1

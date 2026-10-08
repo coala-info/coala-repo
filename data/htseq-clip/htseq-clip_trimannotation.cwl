@@ -1,29 +1,52 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: htseq-clip
+baseCommand:
+  - htseq-clip
+  - trimAnnotation
 label: htseq-clip_trimannotation
-doc: "htseq-clip: error: argument subparser: invalid choice: 'trimannotation' (choose
-  from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix',
-  'createMaxCountMatrix', 'trimAnnotation')\n\nTool homepage: https://github.com/EMBL-Hentze-group/htseq-clip"
+doc: "trim down large annotation file based on output from 'createMatrix'\n\nTool homepage: https://github.com/EMBL-Hentze-group/htseq-clip"
 inputs:
-  - id: subcommand
-    type: string
-    doc: 'Subcommand to run. Available options: annotation, createSlidingWindows,
-      mapToId, extract, count, createMatrix, createMaxCountMatrix, trimAnnotation'
+  - id: matrix
+    type: File
+    doc: Crosslink count matrix, output from the function 'createMatrix'
     inputBinding:
-      position: 1
-  - id: verbose
+      position: 101
+      prefix: --matrix
+  - id: annotation
+    type: File
+    doc: Annotation file, output from the function 'mapToId'
+    inputBinding:
+      position: 101
+      prefix: --annotation
+  - id: no_header
     type:
       - 'null'
       - boolean
+    doc: Use this flag if the first row in annotation file is not a header
+    inputBinding:
+      position: 101
+      prefix: --no_header
+  - id: verbose_level
+    type:
+      - 'null'
+      - string
+    doc: 'Allowed choices: debug, info, warn, quiet (default: info)'
+    inputBinding:
+      position: 101
+      prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: output file name
     inputBinding:
       position: 102
-      prefix: -v
+      prefix: --output
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: trimmed annotations (.txt[.gz])
+    outputBinding:
+      glob: $(inputs.output_file_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/htseq-clip:2.19.0b0--pyh086e186_0
-stdout: htseq-clip_trimannotation.out
+  

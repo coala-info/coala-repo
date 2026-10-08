@@ -1,22 +1,36 @@
 # esme_pnetcdf_mvapich_4_0 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| esme_pnetcdf_mvapich_4_0_ncmpidiff | PASS | Fixed image (was another package's), flags from the help (-b verbose, -h, -v comma list, -t) and exit code 1 for differences; finds the 360_day vs 365_day calendar difference in two netcdf-c test files. |
+
 ## Metadata
 - **Skill**: generated
 
 ## esme_pnetcdf_mvapich_4_0_ncmpidiff
 
 ### Tool Description
-A tool from the PnetCDF suite used to compare the contents of two netCDF files to identify differences.
+Compare the contents of two netCDF files.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+- **Docker Image**: quay.io/biocontainers/esme_pnetcdf_mvapich_4_0:1.14.1--hf580d27_0
 - **Homepage**: https://parallel-netcdf.github.io/
 - **Package**: https://anaconda.org/channels/bioconda/packages/esme_pnetcdf_mvapich_4_0/overview
 - **Validation**: PASS
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4166598701: no space left on device
+ncmpidiff [-b] [-q] [-h] [-v ...] [-t diff,ratio] file1 file2
+  Compare the contents of two netCDF files.
+  [-b]             Verbose output
+  [-q]             quiet mode (no output if two files are the same)
+  [-h]             Compare header information only, no variables
+  [-v var1[,...]]  Compare variable(s) <var1>,... only
+  [-t diff,ratio]  Tolerance: diff is absolute element-wise difference
+                   and ratio is relative element-wise difference defined
+                   as |x - y|/max(|x|, |y|)
+  file1 file2      File names of two input netCDF files to be compared
+*PnetCDF library version 1.14.1 of July 31, 2025
 ```
 

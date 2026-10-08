@@ -33,6 +33,10 @@ outputs:
     doc: Files written with the prefix given in out_prefix
     outputBinding:
       glob: $(inputs.out_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.ancestral)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mrpast:0.2--py312h8f4af18_0

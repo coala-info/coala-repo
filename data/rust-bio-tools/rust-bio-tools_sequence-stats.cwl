@@ -7,6 +7,9 @@ label: rust-bio-tools_sequence-stats
 doc: "Tool to compute stats on sequence file (from STDIN), output is in YAML with
   fields: min, max, average, median, nb_reads, nb_bases, n50.\n\nTool homepage: https://github.com/rust-bio/rust-bio-tools"
 inputs:
+  - id: sequences
+    type: File
+    doc: FASTA or FASTQ sequence file (read from STDIN)
   - id: fastq
     type:
       - 'null'
@@ -22,4 +25,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-stdout: rust-bio-tools_sequence-stats.out
+stdin: $(inputs.sequences.path)
+stdout: sequence_stats.yaml

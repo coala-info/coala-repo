@@ -41,7 +41,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for the tree and the sequences
     inputBinding:
       position: 102
@@ -50,6 +50,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: library_directory
+    type:
+      - 'null'
+      - Directory
+    doc: directory with the downloaded tree and sequences
+    outputBinding:
+      glob: $(inputs.output_directory)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prophyle:0.3.3.2--py39h746d604_3

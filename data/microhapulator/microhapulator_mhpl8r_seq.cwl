@@ -52,15 +52,19 @@ inputs:
       position: 104
       prefix: --seeds
   - id: out_path
-    type: string
+    type:
+      type: array
+      items: string
+    doc: write simulated paired-end MiSeq reads in FASTQ format to the specified file(s); one name gives interleaved reads, two names give paired files
+    default: [reads.fastq]
     inputBinding:
       position: 105
       prefix: --out
 outputs:
   - id: out
     type:
-      - 'null'
-      - File
+      type: array
+      items: File
     doc: write simulated paired-end MiSeq reads in FASTQ format to the specified
       file(s); if one filename is provided, reads are interleaved and written to
       the file; if two filenames are provided, reads are written to paired 
@@ -68,8 +72,6 @@ outputs:
       (standard output)
     outputBinding:
       glob: $(inputs.out_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/microhapulator:0.8.4--pyhdfd78af_0

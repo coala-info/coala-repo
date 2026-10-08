@@ -1,5 +1,16 @@
 # wgs2ncbi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wgs2ncbi_compress | PASS | real SARS-CoV-2 genome; annotation rewritten as gene/mRNA/CDS records |
+| wgs2ncbi_convert | PASS | real SARS-CoV-2 genome; annotation rewritten as gene/mRNA/CDS records |
+| wgs2ncbi_prepare | PASS | real SARS-CoV-2 genome; annotation rewritten as gene/mRNA/CDS records |
+| wgs2ncbi_process | PASS | real SARS-CoV-2 genome; annotation rewritten as gene/mRNA/CDS records |
+| wgs2ncbi_prune | PASS | real SARS-CoV-2 genome; annotation rewritten as gene/mRNA/CDS records |
+| wgs2ncbi_trim | PASS | synthetic data: N stretches planted at both ends of the real SARS-CoV-2 sequence; trim restored it exactly |
+
 ## wgs2ncbi_prepare
 
 ### Tool Description

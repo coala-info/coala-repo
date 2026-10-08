@@ -4,10 +4,12 @@ baseCommand:
   - sourmash
   - index
 label: sourmash_index
-doc: "Create an on-disk database of signatures that can be searched quickly & in low
-  memory. All signatures must be scaled, and must be the same k-mer size and molecule
-  type; the standard signature selectors (-k/--ksize, --scaled, --dna/--protein) choose
-  which signatures to be added.\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
+doc: 'Create an on-disk database of signatures that can be searched quickly & in low memory. All signatures
+  must be scaled, and must be the same k-mer size and molecule type; the standard signature selectors
+  (-k/--ksize, --scaled, --dna/--protein) choose which signatures to be added.
+
+
+  Tool homepage: https://github.com/sourmash-bio/sourmash'
 inputs:
   - id: index_name
     type: string
@@ -209,16 +211,32 @@ inputs:
     type:
       - 'null'
       - float
-    doc: What percentage of internal nodes will not be saved; ranges from 0.0 
-      (save all nodes) to 1.0 (no nodes saved)
+    doc: What percentage of internal nodes will not be saved; ranges from 0.0 (save all nodes) to 1.0
+      (no nodes saved)
     inputBinding:
       position: 103
       prefix: --sparseness
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: index
+    type:
+      type: array
+      items: File
+    doc: index file written by sourmash (name.sbt.zip, or the name given)
+    outputBinding:
+      glob:
+        - $(inputs.index_name)
+        - $(inputs.index_name).sbt.zip
+  - id: sbt_storage
+    type:
+      type: array
+      items: Directory
+    doc: hidden storage folder (.sbt.<name>) written for SBT indexes named *.sbt.json
+    outputBinding:
+      glob: .sbt.*
+  - id: log
+    type: stderr
+    doc: Standard error (progress messages)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sourmash:4.9.4--hdfd78af_0
-stdout: sourmash_index.out
+stderr: sourmash_index.log.txt

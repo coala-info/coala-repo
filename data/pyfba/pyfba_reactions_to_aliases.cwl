@@ -1,47 +1,49 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfba
+baseCommand:
+  - pyfba
+  - reactions_to_aliases
 label: pyfba_reactions_to_aliases
-doc: "Get the roles associated with a file of reactions\n\nTool homepage: https://linsalrob.github.io/PyFBA/"
+doc: "Given a file with a set of reactions, write a table of the aliases of each reaction\n\nTool homepage: https://linsalrob.github.io/PyFBA/"
 inputs:
   - id: reactions
-    type:
-      - 'null'
-      - File
-    doc: A list of the reactions you have, one per line
+    type: File
+    doc: "A list of the reactions you have, one per line"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --reactions
+  - id: output_path
+    type: string
+    doc: "file to save the reaction alias table to"
+    inputBinding:
+      position: 1
+      prefix: --output
   - id: type
     type:
       - 'null'
       - string
-    doc: organism type for the model (currently allowed are ['gramnegative', 
-      'grampositive', 'microbial', 'mycobacteria', 'plant'])
+    doc: "organism type for the model (currently allowed are ['gramnegative', 'grampositive', 'microbial', 'mycobacteria', 'plant']). Default=gramnegative"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --type
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: verbose output
+    doc: "verbose output"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --verbose
-  - id: output_path
-    type: string
-    inputBinding:
-      position: 102
-      prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output
     type: File
-    doc: file to save new reaction list to
+    doc: "Tab-separated table of reaction aliases"
     outputBinding:
       glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfba:2.62--py38h3df17bf_5
+stdout: pyfba_reactions_to_aliases.out

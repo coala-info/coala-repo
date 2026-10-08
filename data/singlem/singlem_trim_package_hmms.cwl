@@ -4,7 +4,10 @@ baseCommand:
   - singlem
   - trim_package_hmms
 label: singlem_trim_package_hmms
-doc: "Trim the width of HMMs to increase speed (expert mode)\n\nTool homepage: https://github.com/wwood/singlem"
+doc: 'Trim the width of HMMs to increase speed (expert mode)
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: debug
     type:
@@ -14,24 +17,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: input_singlem_package
-    type: File
+    type: Directory
     doc: Input package to trim HMMs from
     inputBinding:
       position: 101
@@ -59,7 +46,7 @@ inputs:
       prefix: --output-singlem-package
 outputs:
   - id: output_singlem_package
-    type: File
+    type: Directory
     doc: Package to be created
     outputBinding:
       glob: $(inputs.output_singlem_package_path)

@@ -1,9 +1,20 @@
 # xyalign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xyalign_analyze_bam | PASS | real NA12878 chr21/chr22 reads; chr21 and chr22 used as stand-in sex chromosomes; window depth matches samtools |
+| xyalign_characterize_sex_chroms | PASS | real NA12878 chr21/chr22 reads; chr21 and chr22 used as stand-in sex chromosomes; depth ratio and tests written |
+| xyalign_chrom_stats | PASS | real NA12878 chr21/chr22 reads; mean depth and mapq match samtools, counts match idxstats |
+| xyalign_prepare_reference | PASS | real chr21/chr22 reference; chr22 fully masked in the noY file and only the bed regions masked in the withY file |
+| xyalign_remapping | PASS | real NA12878 chr21/chr22 reads; chr21 and chr22 used as stand-in sex chromosomes; remapped BAM is valid and has about the same read count |
+| xyalign_strip_reads | PASS | real NA12878 chr21/chr22 reads; paired fastq read counts match the BAM within repair.sh losses |
+
 ## xyalign_prepare_reference
 
 ### Tool Description
-XYalign
+Limit XYalign to only preparing reference fastas for individuals with and without Y chromosomes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xyalign:1.1.5--py_1
@@ -357,7 +368,7 @@ optional arguments:
 ## xyalign_chrom_stats
 
 ### Tool Description
-XYalign
+Limit XYalign to only analyzing provided bam files for depth and mapq across entire chromosomes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xyalign:1.1.5--py_1
@@ -706,7 +717,7 @@ optional arguments:
 ## xyalign_analyze_bam
 
 ### Tool Description
-XYalign
+Limit XYalign to only analyzing the bam file for depth, mapq, and (optionally) read balance and outputting plots
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xyalign:1.1.5--py_1
@@ -1055,7 +1066,7 @@ optional arguments:
 ## xyalign_characterize_sex_chroms
 
 ### Tool Description
-XYalign
+Limit XYalign to the steps required to characterize sex chromosome content
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xyalign:1.1.5--py_1
@@ -1404,7 +1415,7 @@ optional arguments:
 ## xyalign_remapping
 
 ### Tool Description
-XYalign
+Limit XYalign to only the steps required to strip reads and remap to masked references
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xyalign:1.1.5--py_1
@@ -1753,7 +1764,7 @@ optional arguments:
 ## xyalign_strip_reads
 
 ### Tool Description
-XYalign
+Limit XYalign to only the steps required to strip reads from a provided bam file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xyalign:1.1.5--py_1

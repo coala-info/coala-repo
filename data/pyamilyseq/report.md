@@ -1,5 +1,12 @@
 # pyamilyseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyamilyseq_full | Failed | image problem: the image has no cd-hit, so Full mode stops with 'cd-hit is not installed' before clustering. |
+| pyamilyseq_partial | PASS |  |
+
 ## pyamilyseq_full
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # wakhan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wakhan_cna | Not completed | no usable test data: the only real tumor long-read data (COLO829 chr22 subset) has 0.02x coverage and the copy number segmentation step fails on it |
+| wakhan_hapcorrect | PASS |  |
+
 ## wakhan_cna
 
 ### Tool Description

@@ -2,74 +2,100 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - grepq
-  - tune
 label: grepq_tune
-doc: "Tune the regex patterns by analyzing matched substrings\n\nTool homepage: https://github.com/Rbfinch/grepq"
+doc: "Tune the regex patterns by analyzing matched substrings: report the matched patterns (and counts, names and variants) in the first N matches.\n\nTool homepage: https://github.com/Rbfinch/grepq"
+arguments:
+  - position: 4
+    valueFrom: tune
 inputs:
-  - id: patterns
+  - id: output_name
     type: string
-    doc: Regex patterns
+    default: grepq_tune.txt
+    doc: "Name of the file that receives the standard output."
+  - id: read_gzip
+    type:
+      - 'null'
+      - boolean
+    doc: "Read the FASTQ file in gzip compressed format"
     inputBinding:
       position: 1
-  - id: file
+      prefix: --read-gzip
+  - id: read_zstd
+    type:
+      - 'null'
+      - boolean
+    doc: "Read the FASTQ file in zstd compressed format"
+    inputBinding:
+      position: 1
+      prefix: --read-zstd
+  - id: patterns
     type: File
-    doc: File to analyze
+    doc: "Patterns file in plain text (one regex per line) or JSON format."
     inputBinding:
       position: 2
-  - id: include_all_variants
-    type:
-      - 'null'
-      - boolean
-    doc: Include all variants in the output
+  - id: fastq
+    type: File
+    doc: "FASTQ file in plain text, gzip or zstd compressed format."
     inputBinding:
-      position: 103
-      prefix: --all
-  - id: include_count
-    type:
-      - 'null'
-      - boolean
-    doc: Include count of records for matching patterns
-    inputBinding:
-      position: 103
-      prefix: -c
-  - id: include_names
-    type:
-      - 'null'
-      - boolean
-    doc: Include regexSetName and regexName in the output
-    inputBinding:
-      position: 103
-      prefix: --names
+      position: 3
   - id: num_matches
     type: int
-    doc: Total number of matches
+    doc: "Total number of matches"
     inputBinding:
-      position: 103
+      position: 5
       prefix: -n
-  - id: variants
+  - id: count_patterns
     type:
       - 'null'
-      - string
-    doc: Number of top most frequent variants to include in the output
+      - boolean
+    doc: "Include count of records for matching patterns"
     inputBinding:
-      position: 103
-      prefix: --variants
-  - id: json_matches_path
-    type: string?
-    doc: Write the output to a JSON file called matches.json
+      position: 5
+      prefix: -c
+  - id: names
+    type:
+      - 'null'
+      - boolean
+    doc: "Include regexSetName and regexName in the output"
     inputBinding:
-      position: 104
-      prefix: --json-matches
-outputs:
+      position: 5
+      prefix: --names
   - id: json_matches
     type:
       - 'null'
+      - boolean
+    doc: "Write the output to a JSON file called matches.json"
+    inputBinding:
+      position: 5
+      prefix: --json-matches
+  - id: variants
+    type:
+      - 'null'
+      - int
+    doc: "Number of top most frequent variants to include in the output"
+    inputBinding:
+      position: 5
+      prefix: --variants
+  - id: all
+    type:
+      - 'null'
+      - boolean
+    doc: "Include all variants in the output"
+    inputBinding:
+      position: 5
+      prefix: --all
+outputs:
+  - id: output
+    type: stdout
+    doc: "Matched patterns (and counts, names and variants when requested)."
+  - id: matches_json
+    type:
+      - 'null'
       - File
-    doc: Write the output to a JSON file called matches.json
+    doc: "matches.json (with --json-matches)."
     outputBinding:
-      glob: $(inputs.json_matches_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: matches.json
+stdout: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grepq:1.5.4--h6ce8773_0

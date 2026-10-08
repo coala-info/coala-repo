@@ -1,12 +1,18 @@
 # esme_netcdf-fortran_mvapich_4_0_ucx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| esme_netcdf-fortran_mvapich_4_0_ucx_nf-config | PASS | Fixed image to the package's own image; --all reports netCDF-Fortran 4.6.2 with mpicc/mpifort. |
+
 ## esme_netcdf-fortran_mvapich_4_0_ucx_nf-config
 
 ### Tool Description
 Display configuration information for the NetCDF Fortran library.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+- **Docker Image**: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ucx:4.6.2--h6842b15_0
 - **Homepage**: http://www.unidata.ucar.edu/software/netcdf/
 - **Package**: https://anaconda.org/channels/bioconda/packages/esme_netcdf-fortran_mvapich_4_0_ucx/overview
 - **Validation**: PASS

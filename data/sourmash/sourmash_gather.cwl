@@ -4,19 +4,22 @@ baseCommand:
   - sourmash
   - gather
 label: sourmash_gather
-doc: "Selects the best reference genomes to use for a metagenome analysis, by finding
-  the smallest set of non-overlapping matches to the query in a database. This is
-  specifically meant for metagenome and genome bin analysis.\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
+doc: 'Selects the best reference genomes to use for a metagenome analysis, by finding the smallest set
+  of non-overlapping matches to the query in a database. This is specifically meant for metagenome and
+  genome bin analysis.
+
+
+  Tool homepage: https://github.com/sourmash-bio/sourmash'
 inputs:
   - id: query
-    type: string
+    type: File
     doc: query signature
     inputBinding:
       position: 1
   - id: databases
     type:
       type: array
-      items: string
+      items: File
     doc: signatures/SBTs to search
     inputBinding:
       position: 2
@@ -63,8 +66,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: search only signatures that do not match this pattern in name, 
-      filename, or md5
+    doc: search only signatures that do not match this pattern in name, filename, or md5
     inputBinding:
       position: 103
       prefix: --exclude-db-pattern
@@ -96,8 +98,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: search only signatures that match this pattern in name, filename, or 
-      md5
+    doc: search only signatures that match this pattern in name, filename, or md5
     inputBinding:
       position: 103
       prefix: --include-db-pattern
@@ -212,12 +213,11 @@ inputs:
     inputBinding:
       position: 103
       prefix: --num-results
-  - id: output_unassigned
+  - id: output_unassigned_path
     type:
       - 'null'
-      - File
-    doc: output unassigned portions of the query as a signature to the specified
-      file
+      - string
+    doc: output unassigned portions of the query as a signature to the specified file
     inputBinding:
       position: 103
       prefix: --output-unassigned
@@ -261,29 +261,27 @@ inputs:
     inputBinding:
       position: 103
       prefix: --quiet
-  - id: save_matches
+  - id: save_matches_path
     type:
       - 'null'
-      - File
+      - string
     doc: save gather matched signatures from the database to the specified file
     inputBinding:
       position: 103
       prefix: --save-matches
-  - id: save_prefetch
+  - id: save_prefetch_path
     type:
       - 'null'
-      - File
-    doc: save all prefetch-matched signatures from the databases to the 
-      specified file or directory
+      - string
+    doc: save all prefetch-matched signatures from the databases to the specified file or directory
     inputBinding:
       position: 103
       prefix: --save-prefetch
-  - id: save_prefetch_csv
+  - id: save_prefetch_csv_path
     type:
       - 'null'
-      - File
-    doc: save a csv with information from all prefetch-matched signatures to the
-      specified file
+      - string
+    doc: save a csv with information from all prefetch-matched signatures to the specified file
     inputBinding:
       position: 103
       prefix: --save-prefetch-csv
@@ -315,13 +313,14 @@ inputs:
     type:
       - 'null'
       - float
-    doc: reporting threshold (in bp) for estimated overlap with remaining query 
-      (default=50kb)
+    doc: reporting threshold (in bp) for estimated overlap with remaining query (default=50kb)
     inputBinding:
       position: 103
       prefix: --threshold-bp
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output CSV containing matches to this file
     inputBinding:
       position: 104
@@ -334,6 +333,34 @@ outputs:
     doc: output CSV containing matches to this file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_unassigned
+    type:
+      - 'null'
+      - File
+    doc: output unassigned portions of the query as a signature to the specified file
+    outputBinding:
+      glob: $(inputs.output_unassigned_path)
+  - id: save_matches
+    type:
+      - 'null'
+      - File
+    doc: save gather matched signatures from the database to the specified file
+    outputBinding:
+      glob: $(inputs.save_matches_path)
+  - id: save_prefetch
+    type:
+      - 'null'
+      - File
+    doc: save all prefetch-matched signatures from the databases to the specified file or directory
+    outputBinding:
+      glob: $(inputs.save_prefetch_path)
+  - id: save_prefetch_csv
+    type:
+      - 'null'
+      - File
+    doc: save a csv with information from all prefetch-matched signatures to the specified file
+    outputBinding:
+      glob: $(inputs.save_prefetch_csv_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

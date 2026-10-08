@@ -1,5 +1,27 @@
 # singlem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| singlem_appraise | Failed | image problem: busybox sort has no --parallel option, so the run stops when sorting |
+| singlem_chainsaw | PASS | ran on the repo test package; tree files removed from the output package |
+| singlem_condense | PASS | condensed the archive OTU table from the pipe test; profile equals the pipe profile |
+| singlem_create | PASS | ran on the repo test GraftM package; window position 75 and size 63 as in the repo test |
+| singlem_data | Not completed | needs a multi-gigabyte reference download from Zenodo |
+| singlem_get_tree | PASS | ran on a repo test package; printed the existing tree file path |
+| singlem_makedb | Failed | image problem: busybox sort has no --parallel option, so database creation stops |
+| singlem_metapackage | PASS | created a metapackage from the repo test package and described the test metapackage; output matches |
+| singlem_pipe | PASS | ran on the repo test read with the repo test metapackage; OTU table and profile match the repo test expectation |
+| singlem_prokaryotic_fraction | PASS | ran on the repo marine test profile; row matches the repo test expectation for both base-count and read-file inputs |
+| singlem_query | Failed | image problem: busybox sort has no --parallel option, so queries by sequence stop (only --taxonomy and --dump work) |
+| singlem_regenerate | PASS | ran on the repo test data; output FASTA and seqinfo are identical to the expected files |
+| singlem_renew | PASS | ran on the repo test archive table with the test metapackage; profile and OTU table match the repo test expectation |
+| singlem_seqs | PASS | ran on the repo rdrp alignment with its HMM; prints 849 as in the repo test |
+| singlem_summarise | PASS | rewritten from the real options (old file wrapped a wrong tool); species-by-site, with-extras, OTU-table merge and prefix outputs match the docs |
+| singlem_supplement | Failed | image problem: busybox sort has no --parallel option, so building the nucleotide database stops |
+| singlem_trim_package_hmms | PASS | ran on a small real v4 package from the repo tests; the search HMM was rebuilt and the window set (fails on the older toy packages with a NoneType error in the tool) |
+
 ## singlem_data
 
 ### Tool Description
@@ -294,25 +316,6 @@ Other general options:
                         print longer help message
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
-```
-
-## singlem_sequences
-
-### Tool Description
-singlem: error: argument subparser_name: invalid choice: 'sequences' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'sequences' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
 ```
 
 ## singlem_appraise
@@ -644,7 +647,7 @@ Other general options:
 ## singlem_summarise
 
 ### Tool Description
-Summarise single-cell RNA-seq data
+Summarise and transform taxonomic profiles and OTU tables.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
@@ -654,72 +657,137 @@ Summarise single-cell RNA-seq data
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/singlem", line 9, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/singlem/main.py", line 756, in main
-    args = bird_argparser.parse_the_args()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/bird_tool_utils/argparsing.py", line 218, in parse_the_args
-    args = self._child_parser.parse_args()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 1904, in parse_args
-    args, argv = self.parse_known_args(args, namespace)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 1914, in parse_known_args
-    return self._parse_known_args2(args, namespace, intermixed=False)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 1943, in _parse_known_args2
-    namespace, args = self._parse_known_args(args, namespace, intermixed)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 2165, in _parse_known_args
-    positionals_end_index = consume_positionals(start_index)
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 2141, in consume_positionals
-    take_action(action, args)
-  File "/usr/local/lib/python3.12/argparse.py", line 2018, in take_action
-    action(self, namespace, argument_values, option_string)
-  File "/usr/local/lib/python3.12/argparse.py", line 1272, in __call__
-    subnamespace, arg_strings = parser.parse_known_args(arg_strings, None)
-                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 1914, in parse_known_args
-    return self._parse_known_args2(args, namespace, intermixed=False)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 1943, in _parse_known_args2
-    namespace, args = self._parse_known_args(args, namespace, intermixed)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 2184, in _parse_known_args
-    start_index = consume_optional(start_index)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 2113, in consume_optional
-    take_action(action, args, option_string)
-  File "/usr/local/lib/python3.12/argparse.py", line 2018, in take_action
-    action(self, namespace, argument_values, option_string)
-  File "/usr/local/lib/python3.12/argparse.py", line 1148, in __call__
-    parser.print_help()
-  File "/usr/local/lib/python3.12/argparse.py", line 2621, in print_help
-    self._print_message(self.format_help(), file)
-                        ^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 2605, in format_help
-    return formatter.format_help()
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 286, in format_help
-    help = self._root_section.format_help()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 217, in format_help
-    item_help = join([func(*args) for func, args in self.items])
-                      ^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 217, in format_help
-    item_help = join([func(*args) for func, args in self.items])
-                      ^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 546, in _format_action
-    help_text = self._expand_help(action)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/argparse.py", line 640, in _expand_help
-    return self._get_help_string(action) % params
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
-ValueError: unsupported format character ']' (0x5d) at index 109
+NAME
+singlem summarise
+
+SYNOPSIS
+singlem
+summarise [-h] [--input-taxonomic-profiles INPUT_TAXONOMIC_PROFILES [INPUT_TAXONOMIC_PROFILES ...]] [--output-taxonomic-profile FILE] [--output-taxonomic-profile-krona FILE] [--output-species-by-site-relative-abundance FILE] [--output-species-by-site-level {species,genus,family,order,class,phylum,domain}] [--output-species-by-site-relative-abundance-prefix PATH_PREFIX] [--output-filled-taxonomic-profile FILE] [--output-taxonomic-profile-with-extras FILE] [--num-decimal-places INT] [--output-taxonomic-level-coverage FILE] [--input-otu-tables INPUT_OTU_TABLES [INPUT_OTU_TABLES ...]] [--input-otu-tables-list INPUT_OTU_TABLES_LIST] [--input-archive-otu-tables INPUT_ARCHIVE_OTU_TABLES [INPUT_ARCHIVE_OTU_TABLES ...]] [--input-archive-otu-table-list INPUT_ARCHIVE_OTU_TABLE_LIST] [--input-gzip-archive-otu-table-list INPUT_GZIP_ARCHIVE_OTU_TABLE_LIST] [--stream-inputs] [--cluster] [--cluster-id CLUSTER_ID] [--taxonomy TAXONOMY] [--rarefied-output-otu-table RAREFIED_OUTPUT_OTU_TABLE] [--number-to-choose NUMBER_TO_CHOOSE] [--collapse-to-sample-name COLLAPSE_TO_SAMPLE_NAME] [--collapse-coupled] [--collapse-paired-with-unpaired-archive-otu-table COLLAPSE_PAIRED_WITH_UNPAIRED_ARCHIVE_OTU_TABLE] [--output-otu-table OUTPUT_OTU_TABLE] [--output-archive-otu-table OUTPUT_ARCHIVE_OTU_TABLE] [--output-translated-otu-table OUTPUT_TRANSLATED_OTU_TABLE] [--output-extras] [--krona KRONA] [--wide-format-otu-table WIDE_FORMAT_OTU_TABLE] [--strain-overview-table STRAIN_OVERVIEW_TABLE] [--unifrac-by-otu UNIFRAC_BY_OTU] [--unifrac-by-taxonomy UNIFRAC_BY_TAXONOMY] [--clustered-output-otu-table CLUSTERED_OUTPUT_OTU_TABLE] [--exclude-off-target-hits] [--singlem-packages SINGLEM_PACKAGES [SINGLEM_PACKAGES ...]] [--metapackage METAPACKAGE] [--unaligned-sequences-dump-file UNALIGNED_SEQUENCES_DUMP_FILE] [--debug] [--version] [--quiet] [--full-help] [--full-help-roff]
+
+DESCRIPTION
+Summarise and transform taxonomic profiles and OTU tables.
+
+OPTIONS
+
+
+TAXONOMIC PROFILE INPUT
+--input-taxonomic-profiles INPUT_TAXONOMIC_PROFILES [INPUT_TAXONOMIC_PROFILES ...]
+Input taxonomic profiles to be e.g. converted to krona HTML, or concatenated
+
+TAXONOMIC PROFILE OUTPUT
+--output-taxonomic-profile FILE
+Output a single output file containing taxonomic profiles of all input taxonomic profile files. Requires --input-taxonomic-profiles
+--output-taxonomic-profile-krona FILE
+Output taxonomic profile to this file in Krona format.
+--output-species-by-site-relative-abundance FILE
+Output site by species relative abundance to this file
+--output-species-by-site-level {species,genus,family,order,class,phylum,domain}
+Output site by species level to this file. Requires --output-species-by-site-relative-abundance.
+--output-species-by-site-relative-abundance-prefix PATH_PREFIX
+Output site by species relative abundance to this file prefix. One file will be written for each taxonomic level.
+--output-filled-taxonomic-profile FILE
+Output a taxonomic profile where the coverage of each taxon includes the coverage of each of its descendent taxons e.g. the d__Bacteria entry includes the p__Patescibacteria entry.
+--output-taxonomic-profile-with-extras FILE
+Output a taxonomic profile with extra information (coverage, 'filled' coverage, relative abundance, taxonomy level).
+--num-decimal-places INT
+Number of decimal places to report in the coverage column of the --output-taxonomic-profile-with-extras [default: 2].
+--output-taxonomic-level-coverage FILE
+Output summary of how much coverage has been assigned to each taxonomic level in a taxonomic profile to a TSV file.
+
+OTU TABLE INPUT
+--input-otu-tables, --input-otu-table INPUT_OTU_TABLES [INPUT_OTU_TABLES ...]
+Summarise these tables
+--input-otu-tables-list INPUT_OTU_TABLES_LIST
+Summarise the OTU table files newline separated in this file
+--input-archive-otu-tables, --input-archive-otu-table INPUT_ARCHIVE_OTU_TABLES [INPUT_ARCHIVE_OTU_TABLES ...]
+Summarise these tables
+--input-archive-otu-table-list INPUT_ARCHIVE_OTU_TABLE_LIST
+Summarise the archive tables newline separated in this file
+--input-gzip-archive-otu-table-list INPUT_GZIP_ARCHIVE_OTU_TABLE_LIST
+Summarise the list of newline-separated gzip-compressed archive OTU tables specified in this file
+--stream-inputs
+Stream input OTU tables, saving RAM. Only works with --output-otu-table and transformation options do not work [expert option].
+
+OTU TABLE TRANSFORMATION
+--cluster
+Apply sequence clustering to the OTU table. Any dashes in OTU sequences will be replaced by N.
+--cluster-id CLUSTER_ID
+Sequence clustering identity cutoff if --cluster is used [default: 0.9666666666666667 i.e. 96.66666666666667%]
+--taxonomy TAXONOMY
+Restrict analysis to OTUs that have this taxonomy (exact taxonomy or more fully resolved)
+--rarefied-output-otu-table RAREFIED_OUTPUT_OTU_TABLE
+Output rarefied output OTU table, where each gene and sample combination is rarefied
+--number-to-choose NUMBER_TO_CHOOSE
+Rarefy using this many sequences. Sample/gene combinations with an insufficient number of sequences are ignored with a warning [default: maximal number such that all samples have sufficient counts]
+--collapse-to-sample-name COLLAPSE_TO_SAMPLE_NAME
+Merge all OTUs into a single OTU table, using the given sample name. Requires archive OTU table input and output.
+--collapse-coupled
+Merge forward and reverse read OTU tables into a unified table. Sample names of coupled reads must end in '1' and '2' respectively. Read names are ignored, so that if the forward and reverse from a pair contain the same OTU sequence, they will each count separately.
+--collapse-paired-with-unpaired-archive-otu-table COLLAPSE_PAIRED_WITH_UNPAIRED_ARCHIVE_OTU_TABLE
+For archive OTU tables that have both paired and unpaired components, merge these into a single output archive OTU table
+
+OTU TABLE OUTPUT
+--output-otu-table OUTPUT_OTU_TABLE
+Output combined OTU table to this file
+--output-archive-otu-table OUTPUT_ARCHIVE_OTU_TABLE
+Output combined OTU table to this file
+--output-translated-otu-table OUTPUT_TRANSLATED_OTU_TABLE
+Output combined OTU table to this file, with seqeunces translated into amino acids
+--output-extras
+Output extra information in the standard output OTU table
+--krona KRONA
+Name of krona file to generate. Note that this generates a krona file from the OTU table, not the taxonomic profile
+--wide-format-otu-table WIDE_FORMAT_OTU_TABLE
+Name of output species by site CSV file
+--strain-overview-table STRAIN_OVERVIEW_TABLE
+Name of output strains table to generate
+--unifrac-by-otu UNIFRAC_BY_OTU
+Output UniFrac format file where entries are OTU sequences
+--unifrac-by-taxonomy UNIFRAC_BY_TAXONOMY
+Output UniFrac format file where entries are taxonomies (generally used for phylogeny-driven beta diversity when pipe was run with '--assignment_method diamond_example')
+--clustered-output-otu-table CLUSTERED_OUTPUT_OTU_TABLE
+Output an OTU table with extra information about the clusters. To simply cluster an OTU table, use --cluster with --output-otu-table instead.
+--exclude-off-target-hits
+Exclude hits that are not in the target domain of each SingleM package
+--singlem-packages SINGLEM_PACKAGES [SINGLEM_PACKAGES ...]
+Packages used in the creation of the OTU tables
+--metapackage METAPACKAGE
+Metapackage used in the creation of the OTU tables
+--unaligned-sequences-dump-file UNALIGNED_SEQUENCES_DUMP_FILE
+Output unaligned sequences from in put archive OTU table to this file. After each read name '~N' is added which corresponds to the order of the read in the archive OTU table, so that no two sequences have the same read name. N>1 can happen e.g. when the input file contains paired reads. ~0 does not necessarily correspond to the first read in the original input sequence set, but instead to the order in the input archive OTU table.
+
+OTHER GENERAL OPTIONS
+--debug
+output debug information
+--version
+output version information and quit
+--quiet
+only output errors
+--full-help
+print longer help message
+--full-help-roff
+print longer help message in ROFF (manpage) format
+
+AUTHORS
+.P
+.RS 2
+.nf
+Ben J. Woodcroft, Centre for Microbiome Research, School of Biomedical Sciences, Faculty of Health, Queensland University of Technology
+Samuel Aroney, Centre for Microbiome Research, School of Biomedical Sciences, Faculty of Health, Queensland University of Technology
+Raphael Eisenhofer, Centre for Evolutionary Hologenomics, University of Copenhagen, Denmark
+Rossen Zhao, Centre for Microbiome Research, School of Biomedical Sciences, Faculty of Health, Queensland University of Technology
+
+EXAMPLES
+Convert a taxonomic profile to a site-by-species table at the genus level:
+$ singlem summarise --input-taxonomic-profiles <profile1.tsv> <profile2.tsv> \
+    --output-species-by-site-relative-abundance <output.tsv> \
+    --output-species-by-site-level genus
+Create a Krona diagram from a taxonomic profile:
+$ singlem summarise --input-taxonomic-profiles <profile1.tsv> \
+    --output-taxonomic-profile-krona <output.html>
+Add extra coverage and relative abundance information to a taxonomic profile:
+$ singlem summarise --input-taxonomic-profiles <profile1.tsv> \
+    --output-taxonomic-profile-with-extras <output.tsv>
 ```
 
 ## singlem_prokaryotic_fraction
@@ -750,108 +818,6 @@ usage: singlem prokaryotic_fraction [-h] -p INPUT_PROFILE
 Estimate the fraction of reads from a metagenome that are assigned to Bacteria
 and Archaea compared to e.g. eukaryote or phage. Also estimate average genome
 size.
-
-options:
-  -h, --help            show this help message and exit
-
-input:
-  -p INPUT_PROFILE, --input-profile INPUT_PROFILE
-                        Input taxonomic profile file [required]
-
-Read information [1+ args required]:
-  -1 sequence_file [sequence_file ...], --forward sequence_file [sequence_file ...], --reads sequence_file [sequence_file ...], --sequences sequence_file [sequence_file ...]
-                        nucleotide read sequence(s) (forward or unpaired) to
-                        be searched. Can be FASTA or FASTQ format, GZIP-
-                        compressed or not. These must be the same ones that
-                        were used to generate the input profile.
-  -2 sequence_file [sequence_file ...], --reverse sequence_file [sequence_file ...]
-                        reverse reads to be searched. Can be FASTA or FASTQ
-                        format, GZIP-compressed or not. These must be the same
-                        reads that were used to generate the input profile.
-  --input-metagenome-sizes INPUT_METAGENOME_SIZES
-                        TSV file with 'sample' and 'num_bases' as a header,
-                        where sample matches the input profile name, and
-                        num_reads is the total number (forward+reverse) of
-                        bases in the metagenome that was analysed with 'pipe'.
-                        These must be the same reads that were used to
-                        generate the input profile.
-
-database:
-  --taxon-genome-lengths-file TAXON_GENOME_LENGTHS_FILE
-                        TSV file with 'rank' and 'genome_size' as headers
-                        [default: Use genome lengths from the default
-                        metapackage]
-  --metapackage METAPACKAGE
-                        Metapackage containing genome lengths [default: Use
-                        genome lengths from the default metapackage]
-
-other options:
-  --accept-missing-samples
-                        If a sample is missing from the input-metagenome-sizes
-                        file, skip analysis of it without croaking.
-  --output-tsv OUTPUT_TSV
-                        Output file [default: stdout]
-  --output-per-taxon-read-fractions OUTPUT_PER_TAXON_READ_FRACTIONS
-                        Output a fraction for each taxon to this TSV [default:
-                        Do not output anything]
-
-Other general options:
-  --debug               output debug information
-  --version             output version information and quit
-  --quiet               only output errors
-  --full-help, --full_help
-                        print longer help message
-  --full-help-roff, --full_help_roff
-                        print longer help message in ROFF (manpage) format
-```
-
-## singlem_eukaryote
-
-### Tool Description
-singlem: error: argument subparser_name: invalid choice: 'eukaryote' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'eukaryote' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-```
-
-## singlem_microbial_fraction
-
-### Tool Description
-Estimate the fraction of reads from a metagenome that are assigned to Bacteria and Archaea compared to e.g. eukaryote or phage. Also estimate average genome size. [deprecated; use prokaryotic_fraction]
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: singlem microbial_fraction [-h] -p INPUT_PROFILE
-                                  [-1 sequence_file [sequence_file ...]]
-                                  [-2 sequence_file [sequence_file ...]]
-                                  [--input-metagenome-sizes INPUT_METAGENOME_SIZES]
-                                  [--taxon-genome-lengths-file TAXON_GENOME_LENGTHS_FILE]
-                                  [--metapackage METAPACKAGE]
-                                  [--accept-missing-samples]
-                                  [--output-tsv OUTPUT_TSV]
-                                  [--output-per-taxon-read-fractions OUTPUT_PER_TAXON_READ_FRACTIONS]
-                                  [--debug] [--version] [--quiet]
-                                  [--full-help] [--full-help-roff]
-
-Estimate the fraction of reads from a metagenome that are assigned to Bacteria
-and Archaea compared to e.g. eukaryote or phage. Also estimate average genome
-size. [deprecated; use prokaryotic_fraction]
 
 options:
   -h, --help            show this help message and exit
@@ -1456,25 +1422,6 @@ Other general options:
                         print longer help message
   --full-help-roff, --full_help_roff
                         print longer help message in ROFF (manpage) format
-```
-
-## singlem_single
-
-### Tool Description
-singlem: error: argument subparser_name: invalid choice: 'single' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2
-- **Homepage**: https://github.com/wwood/singlem
-- **Package**: https://anaconda.org/channels/bioconda/packages/singlem/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: singlem [-h]
-               {data,pipe,appraise,seqs,makedb,query,summarise,prokaryotic_fraction,microbial_fraction,renew,create,get_tree,regenerate,metapackage,chainsaw,condense,trim_package_hmms,supplement}
-               ...
-singlem: error: argument subparser_name: invalid choice: 'single' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement)
 ```
 
 ## singlem_trim_package_hmms

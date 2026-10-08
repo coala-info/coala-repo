@@ -1,7 +1,7 @@
 ---
 name: eido
-description: Eido is a framework and command-line tool for managing SQLite-based personal knowledge bases and processing Portable Encapsulated Projects. Use when user asks to create tables with schema inference, import JSON data, manage relay service messages, or validate and convert PEP formats.
-homepage: https://github.com/mayneyao/eidos
+description: Eido is the PEP (Portable Encapsulated Project) validation and conversion tool from pepkit. It checks sample metadata against a JSON Schema-based PEP schema, prints a summary of a project or its samples, and converts a PEP into other formats with filters. Use when user asks to validate a PEP or sample sheet against a schema, inspect the samples of a PEP, convert a PEP to CSV or YAML, or write a schema that states the sample attributes a pipeline needs.
+homepage: https://github.com/pepkit/eido
 metadata:
   docker_image: "biocontainers/eido:0.1.9_cv2"
 ---
@@ -9,58 +9,139 @@ metadata:
 # eido
 
 ## Overview
-Eidos is an extensible, local-first framework designed to transform SQLite into a personal knowledge base. This skill facilitates the use of the `eidos` CLI and its associated SDK to automate data management tasks. Use this skill when you need to programmatically interact with Eidos tables, migrate data from JSON sources, or develop custom scripts for data processing and relay handling.
 
-## CLI Usage Patterns
+Eido works on sample metadata stored in the PEP format. A PEP is a YAML project configuration file plus a sample table (CSV) and optional subsample tables. Eido does two jobs. First, it validates a PEP against a schema. The schema uses the JSON Schema vocabulary with a few extra keys for bioinformatics projects. Second, it converts a PEP into another output format with "filters". Pipeline authors write a schema that lists the sample attributes their tool needs. Users then run `eido validate` to check their sample sheet before they start the pipeline. Eido reads PEPs with the `peppy` Python package.
 
-### Table Management
-The `eidos` CLI allows for rapid table creation and data ingestion.
+## Installation and Setup
 
-*   **Create with Schema Inference**: Automatically generate a table structure by piping JSON data.
-    `cat sample.json | eidos table create "My New Table"`
-*   **Explicit Schema Creation**: Define field types during creation.
-    `eidos table create "Tasks" --fields "title:text,done:checkbox,priority:select"`
-*   **Template-based Creation**: Create a new table based on an existing table's structure.
-    `eidos table create "2026 Goals" --template tb_source_id`
-*   **Data Import**: Import JSON files into existing tables.
-    `eidos table import tb_target_id --file data.json`
-    `cat data.json | eidos table tb_target_id`
+Install with pip or conda:
 
-### System Maintenance
-*   **Node Uniqueness**: Ensure "Node name uniqueness validation" is enabled in Space Data Management to use the CLI effectively.
-*   **Repair Tables**: Use the `fix` command in the CMDK (Command Palette) within the UI if tables become unresponsive after schema changes.
+```bash
+pip install eido
+conda install -c conda-forge eido
+```
 
-## Relay Service Integration
-Relay acts as a cloud-based message queue that buffers data (webhooks, IoT, Telegram bots) until the local Eidos instance is online to process it.
+Check the install with `eido -h`. The Docker image `biocontainers/eido:0.1.9_cv2` holds eido 0.1.9.
 
-### Relay Handlers
-To process incoming Relay messages, implement a `relayHandler` script:
+## The PEP format in brief
 
-1.  **Define Metadata**: Specify the channel and function name.
-2.  **Batch Processing**: Relay delivers messages in batches for efficiency.
-3.  **File System Access**: Use `eidos.space.fs` to write processed data directly to local markdown or JSON files.
+A minimal PEP has a configuration file and a sample table:
 
-### Manual Message Pulling
-For custom integrations outside of the Eidos script environment, use the HTTP API:
-*   **Pull**: `POST https://api.eidos.space/v1/relay/channels/{channel}/messages/pull`
-*   **Acknowledge**: `POST https://api.eidos.space/v1/relay/channels/{channel}/messages/ack` (requires `lease_ids`).
+```yaml
+# project_config.yaml
+pep_version: 2.0.0
+sample_table: sample_table.csv
+subsample_table: subsample_table.csv   # optional
+```
 
-## Expert Tips
-*   **Prisma-style SDK**: When writing internal Eidos scripts, use the `eidos.space.table("tableName")` client for type-safe CRUD operations (e.g., `.findMany`, `.create`, `.update`).
-*   **Local-First Performance**: Since data is stored in a local SQLite database, batch your `writeFile` operations in Relay handlers to minimize disk I/O overhead.
-*   **Mounting**: Use the `/@/{mount-name}` pattern to access files outside the standard Eidos workspace via the File System API.
+```text
+sample_name,protocol,file
+frog_1,anySampleType,data/frog1_data.txt
+frog_2,anySampleType,data/frog2_data.txt
+```
 
+- Paths in the configuration file are relative to the configuration file. Keep the sample and subsample tables in the same folder as the configuration (the CWL wrappers stage them there through the `pep_files` input).
+- Samples are identified by the `sample_name` column. Use `--st-index` to pick a different column.
+- A subsample table adds several values for one attribute (for example several FASTQ files for one sample).
 
+## Command Line Usage
 
-## Subcommands
+Eido 0.1.9 has three subcommands: `validate`, `inspect` and `convert`. Each takes the PEP configuration file as its positional argument. Global options are `--verbosity {0,1,2,3}`, `--logging-level` and `--dbg`.
 
-| Command | Description |
-|---------|-------------|
-| eido_convert | Convert PEP format using filters |
-| eido_inspect | Inspect a PEP |
-| eido_validate | Validate a PEP or its components |
+### Validate a PEP against a schema
+
+```bash
+eido validate project_config.yaml -s schema.yaml
+eido validate project_config.yaml -s http://schema.databio.org/pep/2.0.0.yaml -e
+```
+
+- `-s`, `--schema`: the schema file (local path or URL). Required.
+- `-e`, `--exclude-case`: print only the short error message, not the failing object. Use it for large PEPs.
+- `-n`, `--sample-name`: validate only one sample, given by name or index.
+- `-c`, `--just-config`: validate only the project configuration, not the samples.
+- `--st-index`: sample table column that holds the sample names.
+
+On success eido logs `Validation successful` on standard error and exits with 0. On failure it raises `EidoValidationError` ("Validation unsuccessful. N errors found.") and exits with a non-zero code.
+
+### Inspect a PEP
+
+```bash
+eido inspect project_config.yaml
+eido inspect project_config.yaml -n frog_1 frog_2 -l 5
+```
+
+- Without options it prints the project name, the number of samples, the first sample names and the configuration sections.
+- `-n`, `--sample-name`: print the attributes of the named samples.
+- `-l`, `--attr-limit`: number of sample attributes to show (default 10).
+
+### Convert a PEP with filters
+
+```bash
+eido convert --list                                 # list the available filters
+eido convert -f yaml-samples -d                     # describe one filter
+eido convert project_config.yaml -f csv             # processed sample table to stdout
+eido convert project_config.yaml -f yaml-samples -p samples=samples.yaml
+```
+
+- `-f`, `--format`: name of the filter.
+- `-l`, `--list`: list the installed filters. Eido 0.1.9 ships `basic`, `csv`, `yaml` and `yaml-samples`.
+- `-d`, `--describe`: print the documentation of the filter given with `-f`.
+- `-a`, `--args`: pass `key=value` arguments to the filter function.
+- `-p`, `--paths`: write results to files as `key=path` pairs. The key is the name of a result returned by the filter: `project` for `basic` and `yaml`, `samples` for `csv` and `yaml-samples`.
+- `-n`, `--sample-name`: listed in the help, but the 0.1.9 convert code ignores it; all samples are converted.
+
+The filter output always goes to standard output too. Newer eido releases also have an `eido filters` command that lists the filters; in 0.1.9 use `eido convert --list`.
+
+## Writing a schema
+
+An eido schema is a JSON Schema document written in YAML. It has a `config` section for project attributes and a `samples` section for sample attributes:
+
+```yaml
+description: Schema for an example pipeline
+imports:
+  - http://schema.databio.org/pep/2.0.0.yaml
+properties:
+  samples:
+    type: array
+    items:
+      type: object
+      properties:
+        sample_name:
+          type: string
+        read1:
+          type: string
+          description: "FASTQ file for read 1"
+        read_type:
+          type: string
+          enum: ["SINGLE", "PAIRED"]
+      required:
+        - sample_name
+        - read1
+      required_files:
+        - read1
+      files:
+        - read1
+        - read2
+required:
+  - samples
+```
+
+- `imports`: schemas to validate first. Start from the generic PEP schema `http://schema.databio.org/pep/2.0.0.yaml`.
+- `required`: attributes that must be present.
+- `required_files` and `files`: attributes that point to input files (required and optional). Eido 0.1.9 reads these key names; newer documentation calls the required list `tangible` and the optional list `sizing`. The CLI `eido validate` checks the JSON Schema rules only. The file-existence check runs from the Python function `eido.validate_inputs`, which `looper` uses.
+- String, number and boolean sample attributes also accept a list of values. This lets subsample tables pass validation.
+
+## Expert Tips and Best Practices
+
+- Validate every PEP against the generic schema `http://schema.databio.org/pep/2.0.0.yaml` first. Then validate against the pipeline schema.
+- Use `-e` on large projects. Without it each error prints the whole failing sample or project.
+- Use `-c` to check only the configuration while you are still filling in the sample table.
+- Schema URLs need network access. In a container without network, pass a local copy of the schema and of every schema in its `imports` list.
+- Custom filters are Python functions that take a `peppy.Project` and `**kwargs` and return a dict of strings. Register them under the `pep.filters` entry point in `setup.py`. Filters are an experimental feature.
+- Example schemas live at https://schema.databio.org (generic PEP 2.0.0, PEPPRO, PEPATAC, refgenie build).
 
 ## Reference documentation
-- [Eidos Changelog](./references/eidos_space_changelog.md)
-- [Eidos Relay Service](./references/eidos_space_relay.md)
-- [Eidos GitHub Repository](./references/github_com_mayneyao_eidos.md)
+- [eido GitHub Repository and Introduction](./references/github_com_pepkit_eido.md)
+- [eido Command Line Usage](./references/pep_databio_org_eido_cli.md)
+- [eido Filters and Custom Filters](./references/pep_databio_org_eido_filters.md)
+- [How to Write a PEP Schema](./references/pep_databio_org_eido_writing_a_schema.md)

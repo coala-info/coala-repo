@@ -4,8 +4,10 @@ baseCommand:
   - singlem
   - metapackage
 label: singlem_metapackage
-doc: "Create or describe a metapackage (i.e. set of SingleM packages)\n\nTool homepage:
-  https://github.com/wwood/singlem"
+doc: 'Create or describe a metapackage (i.e. set of SingleM packages)
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: calculate_average_num_genes_per_species
     type:
@@ -35,8 +37,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Performance-type arguments to use when calling 'diamond blastx' during 
-      the prefiltering.
+    doc: Performance-type arguments to use when calling 'diamond blastx' during the
+      prefiltering.
     inputBinding:
       position: 101
       prefix: --diamond-prefilter-performance-parameters
@@ -44,33 +46,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Performance-type arguments to use when calling 'diamond blastx' during 
-      the taxonomy assignment.
+    doc: Performance-type arguments to use when calling 'diamond blastx' during the
+      taxonomy assignment.
     inputBinding:
       position: 101
       prefix: --diamond-taxonomy-assignment-performance-parameters
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: makeidx_sensitivity_params
     type:
       - 'null'
       - string
-    doc: DIAMOND sensitivity parameters to use when indexing the prefilter 
-      DIAMOND db.
+    doc: DIAMOND sensitivity parameters to use when indexing the prefilter DIAMOND
+      db.
     inputBinding:
       position: 101
       prefix: --makeidx-sensitivity-params
@@ -79,6 +65,14 @@ inputs:
       - 'null'
       - string
     doc: Path to write generated metapackage to
+    inputBinding:
+      position: 101
+      prefix: --metapackage
+  - id: describe_metapackage
+    type:
+      - 'null'
+      - Directory
+    doc: Existing metapackage to describe (use together with describe)
     inputBinding:
       position: 101
       prefix: --metapackage
@@ -101,7 +95,7 @@ inputs:
   - id: nucleotide_sdb
     type:
       - 'null'
-      - File
+      - Directory
     doc: Nucleotide SingleM database for initial assignment pass
     inputBinding:
       position: 101
@@ -134,7 +128,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: Directory
     doc: Input packages
     inputBinding:
       position: 101
@@ -175,6 +169,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: metapackage_out
+    type:
+      - 'null'
+      - Directory
+    doc: The metapackage directory created (named by metapackage)
+    outputBinding:
+      glob: $(inputs.metapackage)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

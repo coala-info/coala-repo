@@ -1,5 +1,13 @@
 # prosic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prosic_call-tumor-normal | PASS |  |
+| prosic_control-fdr | PASS |  |
+| prosic_estimate-mutation-rate | PASS |  |
+
 ## prosic_call-tumor-normal
 
 ### Tool Description
@@ -73,28 +81,6 @@ ARGS:
 ```
 
 
-## prosic_candidate
-
-### Tool Description
-prosic
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/prosic:2.1.2--hc7800f0_1
-- **Homepage**: https://prosic.github.io
-- **Package**: https://anaconda.org/channels/bioconda/packages/prosic/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'candidate' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    prosic [FLAGS] <SUBCOMMAND>
-
-For more information try --help
-```
-
-
 ## prosic_control-fdr
 
 ### Tool Description
@@ -157,28 +143,6 @@ OPTIONS:
         --fit <FILE>        Path to file that will observations and the parameters of the fitted model as JSON.
     -F, --max-af <FLOAT>    Maximum allele frequency to consider [0.25].
     -f, --min-af <FLOAT>    Minimum allele frequency to consider [0.12].
-```
-
-
-## prosic_variants
-
-### Tool Description
-ProSIc: a tool for predicting the impact of variants on protein stability
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/prosic:2.1.2--hc7800f0_1
-- **Homepage**: https://prosic.github.io
-- **Package**: https://anaconda.org/channels/bioconda/packages/prosic/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'variants' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    prosic [FLAGS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 

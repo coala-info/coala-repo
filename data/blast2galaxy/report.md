@@ -4,14 +4,14 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| blast2galaxy_blastn | Not completed | Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'. |
-| blast2galaxy_blastp | Not completed | Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'. |
-| blast2galaxy_blastx | Not completed | Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'. |
-| blast2galaxy_diamond-blastp | Not completed | Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'. |
-| blast2galaxy_diamond-blastx | Not completed | Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'. |
-| blast2galaxy_list-dbs | Not completed | Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'. |
-| blast2galaxy_list-tools | Not completed | Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'. |
-| blast2galaxy_tblastn | Not completed | Needs a remote Galaxy server and a .blast2galaxy.toml config with an API key; without it the tool stops with 'Could not find the config file'. |
+| blast2galaxy_blastn | Not completed | needs a Galaxy server and API key (pass them in config_file) |
+| blast2galaxy_blastp | Not completed | needs a Galaxy server and API key (pass them in config_file) |
+| blast2galaxy_blastx | Not completed | needs a Galaxy server and API key (pass them in config_file) |
+| blast2galaxy_diamond-blastp | Not completed | needs a Galaxy server and API key (pass them in config_file) |
+| blast2galaxy_diamond-blastx | Not completed | needs a Galaxy server and API key (pass them in config_file) |
+| blast2galaxy_list-dbs | Not completed | needs a Galaxy server and API key (pass them in config_file) |
+| blast2galaxy_list-tools | Not completed | needs a Galaxy server and API key (pass them in config_file) |
+| blast2galaxy_tblastn | Not completed | needs a Galaxy server and API key (pass them in config_file) |
 
 ## blast2galaxy_blastn
 

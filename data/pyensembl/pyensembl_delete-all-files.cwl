@@ -1,79 +1,125 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyensembl
+baseCommand:
+  - pyensembl
+  - delete-all-files
 label: pyensembl_delete-all-files
-doc: "Manipulate pyensembl's local cache.\n\nTool homepage: https://github.com/openvax/pyensembl"
+doc: "Delete all data associated with a genome annotation from the pyensembl cache.\n\nTool homepage: https://github.com/openvax/pyensembl"
 inputs:
-  - id: subcommand
-    type: string
-    doc: 'The subcommand to execute. Options include: install, delete, delete-sequence-cache,
-      delete-all-files, delete-index-files, list.'
-    inputBinding:
-      position: 1
-  - id: gtf
-    type:
-      - 'null'
-      - File
-    doc: Path or URL to the GTF file when installing from source files.
-    inputBinding:
-      position: 102
-      prefix: --gtf
+  - id: cache_dir
+    type: Directory
+    doc: pyensembl cache directory (copied; set as PYENSEMBL_CACHE_DIR)
   - id: overwrite
     type:
       - 'null'
       - boolean
-    doc: Force download and indexing even if files already exist locally.
+    doc: Force download and indexing even if files already exist locally
     inputBinding:
-      position: 102
+      position: 101
       prefix: --overwrite
-  - id: protein_fasta
-    type:
-      - 'null'
-      - File
-    doc: Path or URL to the protein FASTA file when installing from source 
-      files.
-    inputBinding:
-      position: 102
-      prefix: --protein-fasta
-  - id: reference_name
-    type:
-      - 'null'
-      - string
-    doc: Name for the reference genome when installing from source files.
-    inputBinding:
-      position: 102
-      prefix: --reference-name
   - id: release
     type:
       - 'null'
       - type: array
         items: int
-    doc: Ensembl release number(s) to install or manage.
+    doc: Ensembl release version(s) (default is the newest release)
     inputBinding:
-      position: 102
+      position: 101
       prefix: --release
   - id: species
     type:
       - 'null'
       - type: array
         items: string
-    doc: Species for which to install or manage data.
+    doc: Which species to use Ensembl data for (default=human)
     inputBinding:
-      position: 102
+      position: 101
       prefix: --species
-  - id: transcript_fasta
+  - id: custom_mirror
+    type:
+      - 'null'
+      - string
+    doc: URL and directory to use instead of the default Ensembl FTP server
+    inputBinding:
+      position: 101
+      prefix: --custom-mirror
+  - id: reference_name
+    type:
+      - 'null'
+      - string
+    doc: Name of the reference, e.g. GRCh38 (for a genome from source files)
+    inputBinding:
+      position: 101
+      prefix: --reference-name
+  - id: annotation_name
+    type:
+      - 'null'
+      - string
+    doc: Name of annotation source (e.g. refseq), required with source files
+    inputBinding:
+      position: 101
+      prefix: --annotation-name
+  - id: annotation_version
+    type:
+      - 'null'
+      - string
+    doc: Version of annotation database
+    inputBinding:
+      position: 101
+      prefix: --annotation-version
+  - id: gtf
     type:
       - 'null'
       - File
-    doc: Path or URL to the transcript FASTA file when installing from source 
-      files.
+    doc: GTF file containing annotations
     inputBinding:
-      position: 102
-      prefix: --transcript-fasta
+      position: 101
+      prefix: --gtf
+  - id: transcript_fasta
+    type:
+      - 'null'
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --transcript-fasta
+    doc: FASTA file(s) containing the transcript data
+    inputBinding:
+      position: 101
+  - id: protein_fasta
+    type:
+      - 'null'
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --protein-fasta
+    doc: FASTA file(s) containing protein data
+    inputBinding:
+      position: 101
+  - id: shared_prefix
+    type:
+      - 'null'
+      - string
+    doc: Add this prefix to URLs or paths specified by --gtf, --transcript-fasta, --protein-fasta
+    inputBinding:
+      position: 101
+      prefix: --shared-prefix
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (log)
+  - id: cache_directory
+    type: Directory
+    doc: pyensembl cache directory (PYENSEMBL_CACHE_DIR)
+    outputBinding:
+      glob: "$(inputs.cache_dir.basename)"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.cache_dir)
+        writable: true
+  - class: EnvVarRequirement
+    envDef:
+      PYENSEMBL_CACHE_DIR: $(runtime.outdir)/$(inputs.cache_dir.basename)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyensembl:2.3.13--pyh7cba7a3_0

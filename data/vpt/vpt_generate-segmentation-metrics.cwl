@@ -61,8 +61,8 @@ inputs:
       position: 101
       prefix: --input-images
   - id: input_metadata
-    type: string
-    doc: Path to the output csv file where the entity metadata will be stored.
+    type: File
+    doc: Path to the entity metadata csv file (as made by derive-entity-metadata).
     inputBinding:
       position: 101
       prefix: --input-metadata
@@ -136,9 +136,7 @@ inputs:
       position: 102
       prefix: --output-clustering
   - id: output_csv_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 103
       prefix: --output-csv
@@ -162,7 +160,8 @@ outputs:
     doc: Path to the output HTML file, will append .html to the end if not 
       included in file name.
     outputBinding:
-      glob: $(inputs.output_report_path)
+      glob: "$(inputs.output_report_path === null ? null : (inputs.output_report_path.endsWith('.html')
+        ? inputs.output_report_path : inputs.output_report_path + '.html'))"
   - id: output_clustering
     type:
       - 'null'
@@ -171,13 +170,6 @@ outputs:
       will be saved.
     outputBinding:
       glob: $(inputs.output_clustering_path)
-  - id: input_metadata_out
-    type:
-      - 'null'
-      - File
-    doc: Path to the output csv file where the entity metadata will be stored.
-    outputBinding:
-      glob: $(inputs.input_metadata)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

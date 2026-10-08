@@ -4,9 +4,11 @@ baseCommand:
   - sourmash
   - compare
 label: sourmash_compare
-doc: "Compares one or more signatures (created with `sketch`) using estimated Jaccard
-  index [1] or (if signatures are created with `-p abund`) the angular similarity
-  [2]).\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
+doc: 'Compares one or more signatures (created with `sketch`) using estimated Jaccard index [1] or (if
+  signatures are created with `-p abund`) the angular similarity [2]).
+
+
+  Tool homepage: https://github.com/sourmash-bio/sourmash'
 inputs:
   - id: signatures
     type:
@@ -19,8 +21,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: return ANI estimated from jaccard, containment, average containment, or
-      max containment; see https://doi.org/10.1101/2022.01.11.475870
+    doc: return ANI estimated from jaccard, containment, average containment, or max containment; see
+      https://doi.org/10.1101/2022.01.11.475870
     inputBinding:
       position: 102
       prefix: --ANI
@@ -28,8 +30,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: return ANI estimated from jaccard, containment, average containment, or
-      max containment; see https://doi.org/10.1101/2022.01.11.475870
+    doc: return ANI estimated from jaccard, containment, average containment, or max containment; see
+      https://doi.org/10.1101/2022.01.11.475870
     inputBinding:
       position: 102
       prefix: --ani
@@ -85,8 +87,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: return ANI estimated from jaccard, containment, average containment, or
-      max containment; see https://doi.org/10.1101/2022.01.11.475870
+    doc: return ANI estimated from jaccard, containment, average containment, or max containment; see
+      https://doi.org/10.1101/2022.01.11.475870
     inputBinding:
       position: 102
       prefix: --estimate-ani
@@ -94,8 +96,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: search only signatures that do not match this pattern in name, 
-      filename, or md5
+    doc: search only signatures that do not match this pattern in name, filename, or md5
     inputBinding:
       position: 102
       prefix: --exclude-db-pattern
@@ -143,8 +144,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: search only signatures that match this pattern in name, filename, or 
-      md5
+    doc: search only signatures that match this pattern in name, filename, or md5
     inputBinding:
       position: 102
       prefix: --include-db-pattern
@@ -156,18 +156,10 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ksize
-  - id: labels_save
+  - id: labels_to_path
     type:
       - 'null'
-      - File
-    doc: a CSV file containing label information
-    inputBinding:
-      position: 102
-      prefix: --labels-save
-  - id: labels_to
-    type:
-      - 'null'
-      - File
+      - string
     doc: a CSV file containing label information
     inputBinding:
       position: 102
@@ -391,10 +383,12 @@ outputs:
     type:
       - 'null'
       - File
-    doc: file to which output will be written; default is terminal (standard 
-      output)
+    doc: file to which output will be written; default is terminal (standard output)
     outputBinding:
       glob: $(inputs.output_path)
+    secondaryFiles:
+      - pattern: .labels.txt
+        required: false
   - id: csv
     type:
       - 'null'
@@ -402,8 +396,19 @@ outputs:
     doc: write matrix to specified file in CSV format (with column headers)
     outputBinding:
       glob: $(inputs.csv_path)
+  - id: labels_to
+    type:
+      - 'null'
+      - File
+    doc: a CSV file containing label information
+    outputBinding:
+      glob: $(inputs.labels_to_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the matrix is printed here unless --output or --csv is given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sourmash:4.9.4--hdfd78af_0
+stdout: sourmash_compare.stdout.txt

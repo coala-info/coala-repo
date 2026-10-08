@@ -10,6 +10,13 @@ inputs:
   - id: bam_cram_file
     type: File
     doc: bam/cram file of tumor/normal(for baseline building) sample
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
       prefix: -t
@@ -22,7 +29,7 @@ inputs:
       position: 101
       prefix: -c
   - id: homopolymers_microsatellites_file
-    type: string
+    type: File
     doc: homopolymers and microsatellites file
     inputBinding:
       position: 101
@@ -97,6 +104,9 @@ inputs:
       - 'null'
       - File
     doc: reference file [required if *.cram for -t]
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: -g
@@ -124,10 +134,13 @@ inputs:
       prefix: -o
 outputs:
   - id: output_path
-    type: Directory
-    doc: output path (Ending with a slash is not allowed.)
+    type:
+      type: array
+      items: File
+    doc: MSI score file (output path) and its detail files (output path with 
+      _dis, _all and _unstable suffixes)
     outputBinding:
-      glob: $(inputs.output_path_path)
+      glob: $(inputs.output_path_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

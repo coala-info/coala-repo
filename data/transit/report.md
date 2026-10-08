@@ -1,5 +1,33 @@
 # transit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| transit_anova | PASS |  |
+| transit_binomial | PASS |  |
+| transit_cgi | Failed | image problem: R and rpy2 are missing, and this version says CGI moved to Transit2 |
+| transit_convert_gff_to_prot_table | PASS |  |
+| transit_corrplot | Failed | image problem: R and rpy2 are missing |
+| transit_example | PASS |  |
+| transit_export_combined_wig | PASS |  |
+| transit_export_igv | PASS |  |
+| transit_export_mean_counts | PASS |  |
+| transit_gi | PASS |  |
+| transit_griffin | PASS |  |
+| transit_gumbel | PASS |  |
+| transit_heatmap | Failed | image problem: R and rpy2 missing in the image (Error: R and rpy2 (~= 3.0) required to run heatmap) |
+| transit_hmm | PASS |  |
+| transit_normalize | PASS |  |
+| transit_pathway_enrichment | PASS |  |
+| transit_rankproduct | PASS | crashes when control and experimental replicate counts differ (tool bug); works with equal counts |
+| transit_resampling | PASS |  |
+| transit_tn5gaps | PASS |  |
+| transit_tnseq_stats | PASS |  |
+| transit_ttnfitness | Failed | image problem: pandas 0.24 is too old (sort_values ignore_index fails) |
+| transit_utest | PASS |  |
+| transit_zinb | Failed | image problem: R and rpy2 missing in the image (Error: R and rpy2 (~= 3.0) required to run ZINB analysis) |
+
 ## transit_example
 
 ### Tool Description
@@ -262,44 +290,6 @@ python3 /usr/local/bin/transit utest <comma-separated .wig control files> <comma
         -iC <float>     :=  Ignore TAs occuring at given fraction (as integer) of the C terminus. Default: -iC 0
 ```
 
-## transit_gi
-
-### Tool Description
-Transit1 is a tool for analyzing high-throughput sequencing data. This specific invocation seems to be related to selecting a method for analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
-- **Homepage**: http://github.com/mad-lab/transit
-- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-=== Transit1 v3.3.20 ===
-Error: The 'gi' method is unknown.
-Please use one of the known methods (or see documentation to add a new one):
-	 - example
-	 - gumbel
-	 - binomial
-	 - griffin
-	 - hmm
-	 - resampling
-	 - tn5gaps
-	 - rankproduct
-	 - utest
-	 - GI
-	 - anova
-	 - zinb
-	 - normalize
-	 - pathway_enrichment
-	 - tnseq_stats
-	 - corrplot
-	 - heatmap
-	 - ttnfitness
-	 - CGI
-Usage: python /usr/local/bin/transit <method>
-```
-
 ## transit_anova
 
 ### Tool Description
@@ -380,24 +370,6 @@ usage: python3 /usr/local/bin/transit tnseq_stats <file.wig>+ [-o <output_file>]
        python /usr/local/bin/transit tnseq_stats -c <combined_wig> [-o <output_file>]
 ```
 
-## transit_corrplot
-
-### Tool Description
-Generates a correlation plot using R and rpy2.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
-- **Homepage**: http://github.com/mad-lab/transit
-- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-=== Transit1 v3.3.20 ===
-Error: R and rpy2 (~= 3.0) required to run corrplot.
-After installing R, you can install rpy2 using the command "pip install 'rpy2~=3.0'"
-```
-
 ## transit_ttnfitness
 
 ### Tool Description
@@ -414,44 +386,6 @@ Calculates fitness based on transit data.
 === Transit1 v3.3.20 ===
 Error: list index out of range
 python3 /usr/local/bin/transit ttnfitness <comma-separated .wig files> <annotation .prot_table> <genome .fna> <gumbel output file> <output1 file> <output2 file>
-```
-
-## transit_cgi
-
-### Tool Description
-Transit1 v3.3.20
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
-- **Homepage**: http://github.com/mad-lab/transit
-- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-=== Transit1 v3.3.20 ===
-Error: The 'cgi' method is unknown.
-Please use one of the known methods (or see documentation to add a new one):
-	 - example
-	 - gumbel
-	 - binomial
-	 - griffin
-	 - hmm
-	 - resampling
-	 - tn5gaps
-	 - rankproduct
-	 - utest
-	 - GI
-	 - anova
-	 - zinb
-	 - normalize
-	 - pathway_enrichment
-	 - tnseq_stats
-	 - corrplot
-	 - heatmap
-	 - ttnfitness
-	 - CGI
-Usage: python /usr/local/bin/transit <method>
 ```
 
 ## transit_normalize
@@ -480,10 +414,10 @@ python3 /usr/local/bin/transit normalize -c <input combined_wig> <output.wig> [-
         -n <string>     :=  Normalization method. Default: -n TTR
 ```
 
-## transit_convert
+## transit_export_combined_wig
 
 ### Tool Description
-Convert between different data formats. Please use one of the known methods (or see documentation to add a new one).
+Export several wig files as one combined wig file (normalized).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
@@ -493,17 +427,15 @@ Convert between different data formats. Please use one of the known methods (or 
 
 ### Original Help Text
 ```text
-=== Transit1 v3.3.20 ===
-Error: Need to specify the convert method.
-Please use one of the known methods (or see documentation to add a new one):
-	 - gff_to_prot_table
-Usage: python /usr/local/bin/transit convert <method>
+Error: Incorrect number of args. See usage
+python /usr/local/bin/transit export combined_wig <comma-separated .wig files> <annotation .prot_table> <output file> [-n normalization_method]
+default normalization_method=TTR
 ```
 
-## transit_export
+## transit_export_igv
 
 ### Tool Description
-Export data from Transit1. Please use one of the known methods (or see documentation to add a new one).
+Export wig files to the IGV format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
@@ -513,13 +445,170 @@ Export data from Transit1. Please use one of the known methods (or see documenta
 
 ### Original Help Text
 ```text
-=== Transit1 v3.3.20 ===
-Error: Need to specify the export method.
-Please use one of the known methods (or see documentation to add a new one):
-	 - combined_wig
-	 - igv
-	 - mean_counts
-Usage: python /usr/local/bin/transit export <method>
+Error: list index out of range
+python /usr/local/bin/transit export igv <comma-separated .wig files> <annotation .prot_table> <output file>
+```
+
+## transit_export_mean_counts
+
+### Tool Description
+Export the mean insertion counts of each gene from wig files or a combined wig file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
+- **Homepage**: http://github.com/mad-lab/transit
+- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+ARGS=[]
+KWARGS={}
+Error: list index out of range
+python /usr/local/bin/transit export mean_counts <comma-separated .wig files>|<combined_wig> <annotation .prot_table> <output file> [-c]
+ note: append -c if inputing a combined_wig file
+```
+
+## transit_convert_gff_to_prot_table
+
+### Tool Description
+Convert an annotation in GFF format to the .prot_table format used by Transit.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
+- **Homepage**: http://github.com/mad-lab/transit
+- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Error: Please specify Input and Output paths
+python /usr/local/bin/transit convert gff_to_prot_table <annotation in gff format> <output file>
+```
+
+## transit_gi
+
+### Tool Description
+Genetic interaction analysis comparing two strains in two conditions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
+- **Homepage**: http://github.com/mad-lab/transit
+- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Error: list index out of range
+python3 /usr/local/bin/transit GI <wigs_for_strA_cond1> <wigs_for_strA_cond2> <wigs_for_strB_cond1> <wigs_for_strB_cond2> <annotation .prot_table or GFF3> <output file> [Optional Arguments]
+
+        GI performs a comparison among 4 groups of datasets, strain A and B assessed in conditions 1 and 2 (e.g. control vs treatment).
+        It looks for interactions where the response to the treatment (i.e. effect on insertion counts) depends on the strain (output variable: delta_LFC).
+        Provide replicates in each group as a comma-separated list of wig files.
+        HDI is highest density interval for posterior distribution of delta_LFC, which is like a confidence interval on difference of slopes.
+        Genes are sorted by probability of HDI overlapping with ROPE. (genes with the highest abs(mean_delta_logFC) are near the top, approximately)
+        Significant genes are indicated by 'Type of Interaction' column (No Interaction, Aggravating, Alleviating, Suppressive).
+          By default, hits are defined as "Is HDI outside of ROPE?"=TRUE (i.e. non-overlap of delta_LFC posterior distritbuion with Region of Probably Equivalence around 0)
+          Alternative methods for significance: use -signif flag with prob, BFDR, or FWER. These affect 'Type of Interaction' (i.e. which genes are labeled 'No Interaction')
+
+        Optional Arguments:
+        -s <integer>    :=  Number of samples. Default: -s 10000
+        --rope <float>  :=  Region of Practical Equivalence. Area around 0 (i.e. 0 +/- ROPE) that is NOT of interest. Can be thought of similar to the area of the null-hypothesis. Default: --rope 0.5
+        -n <string>     :=  Normalization method. Default: -n TTR
+        -iz             :=  Include rows with zero across conditions.
+        -l              :=  Perform LOESS Correction; Helps remove possible genomic position bias. Default: Turned Off.
+        -iN <float>     :=  Ignore TAs occuring at given percentage (as integer) of the N terminus. Default: -iN 0
+        -iC <float>     :=  Ignore TAs occuring at given percentage (as integer) of the C terminus. Default: -iC 0
+        -signif HDI     :=  (default) Significant if HDI does not overlap ROPE; if HDI overlaps ROPE, 'Type of Interaction' is set to 'No Interaction'
+        -signif prob    :=  Optionally, significant hits are re-defined based on probability (degree) of overlap of HDI with ROPE, prob<0.05 (no adjustment)
+        -signif BFDR    :=  Apply "Bayesian" FDR correction (see doc) to adjust HDI-ROPE overlap probabilities so that significant hits are re-defined as BFDR<0.05
+        -signif FWER    :=  Apply "Bayesian" FWER correction (see doc) to adjust HDI-ROPE overlap probabilities so that significant hits are re-defined as FWER<0.05
+```
+
+## transit_cgi
+
+### Tool Description
+CRISPRi chemical genetic analysis (CRISPRi-DR).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
+- **Homepage**: http://github.com/mad-lab/transit
+- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage (6 sub-commands):
+    python3 ../src/transit.py CGI extract_counts <fastq file> <ids file> > <counts file>
+    python3 ../src/transit.py CGI create_combined_counts <comma seperated headers> <counts file 1> <counts file 2> ... <counts file n> > <combined counts file>
+    python3 ../src/transit.py CGI extract_abund <combined counts file> <metadata file> <control condition> <sgRNA efficiency file> <uninduced ATC file> <drug> <days>  >  <fractional abundundance file>
+    python3 ../src/transit.py CGI run_model <fractional abundundance file>  >  <CRISPRi DR results file>
+    python3 ../src/transit.py CGI visualize <fractional abundance> <gene> <output figure location>
+    note: redirect output from stdout to output files as shown above
+```
+
+## transit_corrplot
+
+### Tool Description
+Correlation plot of the gene means of the samples (needs R and rpy2).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
+- **Homepage**: http://github.com/mad-lab/transit
+- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: python3 transit.py corrplot <gene_means> <output.png> [-anova|-zinb]
+```
+
+## transit_zinb
+
+### Tool Description
+Zero-inflated negative binomial test for differences in essentiality among several conditions (needs R and rpy2).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
+- **Homepage**: http://github.com/mad-lab/transit
+- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+python3 transit.py zinb <combined wig file> <samples_metadata file> <annotation .prot_table> <output file> [Optional Arguments]
+
+        Optional Arguments:
+        -n <string>         :=  Normalization method. Default: -n TTR
+        --exclude-conditions <cond1,cond2> :=  Comma separated list of conditions to exclude, for the analysis.
+        --include-conditions <cond1,cond2> :=  Comma separated list of conditions to include, for the analysis. Conditions not in this list, will be excluded.
+        --ref <cond> := which condition(s) to use as a reference for calculating LFCs (comma-separated if multiple conditions)
+        -iN <float>     := Ignore TAs occuring within given percentage (as integer) of the N terminus. Default: -iN 5
+        -iC <float>     := Ignore TAs occuring within given percentage (as integer) of the C terminus. Default: -iC 5
+        -winz           := winsorize insertion counts for each gene in each condition (replace max cnt with 2nd highest; helps mitigate effect of outliers)
+        -PC <N>         := pseudocounts to use for calculating LFCs. Default: -PC 5
+        --condition     := columnname (in samples_metadata) to use as the Condition. Default: "Condition"
+        --covars <covar1,covar2...>       := Comma separated list of covariates (in metadata file) to include, for the analysis.
+        --interactions <covar1,covar2...> := Comma separated list of covariates to include, that interact with the condition for the analysis. Must be factors
+        --prot_table <filename>           := for appending annotations of genes
+        --gene <RV number or Gene name>   := Run method for one gene and print model output.
+```
+
+## transit_heatmap
+
+### Tool Description
+Heatmap of gene means from the output of the anova or zinb analysis (needs R and rpy2).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transit:3.3.20--pyhdfd78af_0
+- **Homepage**: http://github.com/mad-lab/transit
+- **Package**: https://anaconda.org/channels/bioconda/packages/transit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: python3 transit.py heatmap <anova_or_zinb_output> <heatmap.png> -anova|-zinb [-topk <int>] [-qval <float>] [-low_mean_filter <int>]
+ note: genes are selected based on qval<0.05 by default
 ```
 
 ## Metadata

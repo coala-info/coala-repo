@@ -1,12 +1,18 @@
 # esme_psmpi_5_10_0 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| esme_psmpi_5_10_0_nf-config | PASS | Fixed image to the package's own image; --all reports netCDF-Fortran 4.6.1 with mpicc/mpifort (ParaStation MPI 5.10.0 environment). |
+
 ## esme_psmpi_5_10_0_nf-config
 
 ### Tool Description
 Display configuration information for the Fortran compiler.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+- **Docker Image**: quay.io/biocontainers/esme_psmpi_5_10_0:1.0.1--psmpi_h481cf05_0
 - **Homepage**: https://github.com/j34ni/bioconda-recipes
 - **Package**: https://anaconda.org/channels/bioconda/packages/esme_psmpi_5_10_0/overview
 - **Validation**: PASS

@@ -1,5 +1,26 @@
 # rust-bio-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rust-bio-tools_bam-anonymize | Failed | tool bug: without --keep-only-pairs it writes a corrupt BAM when a read's mate maps to another contig (samtools stops at that record); with --keep-only-pairs the output is valid. |
+| rust-bio-tools_bam-depth | PASS |  |
+| rust-bio-tools_collapse-reads-to-fragments_bam | PASS |  |
+| rust-bio-tools_collapse-reads-to-fragments_fastq | PASS |  |
+| rust-bio-tools_csv-report | PASS |  |
+| rust-bio-tools_fastq-filter | PASS |  |
+| rust-bio-tools_fastq-split | PASS |  |
+| rust-bio-tools_plot-bam | PASS |  |
+| rust-bio-tools_sequence-stats | PASS |  |
+| rust-bio-tools_vcf-annotate-dgidb | Failed | external service gone: the DGIdb v2 JSON API now returns an HTML page, so rbt stops with 'expected value at line 1 column 1'. |
+| rust-bio-tools_vcf-baf | PASS |  |
+| rust-bio-tools_vcf-fix-iupac-alleles | PASS |  |
+| rust-bio-tools_vcf-match | PASS |  |
+| rust-bio-tools_vcf-report | PASS |  |
+| rust-bio-tools_vcf-split | PASS |  |
+| rust-bio-tools_vcf-to-txt | PASS |  |
+
 ## rust-bio-tools_bam-anonymize
 
 ### Tool Description
@@ -38,45 +59,6 @@ ARGS:
     <chr>           chromosome name
     <start>         1-based start position
     <end>           1-based exclusive end position
-```
-
-## rust-bio-tools_collapse-reads-to-fragments
-
-### Tool Description
-Tool to predict maximum likelihood fragment sequence from FASTQ or BAM files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-rbt-collapse-reads-to-fragments 0.42.2
-Johannes Köster <johannes.koester@uni-due.de>, Henning Timm <henning.timm@tu-dortmund.de>, Felix Mölder
-<felix.moelder@uni-due.de>
-Tool to predict maximum likelihood fragment sequence from FASTQ or BAM files.
-
-Requirements: - starcode
-
-USAGE:
-    rbt collapse-reads-to-fragments <SUBCOMMAND>
-
-FLAGS:
-    -h, --help       
-            Prints help information
-
-    -V, --version    
-            Prints version information
-
-SUBCOMMANDS:
-    bam      Tool to merge sets of PCR duplicate reads from a BAM file into one maximum likelihood fragment sequence
-             each with accordingly improved base quality scores
-    fastq    Tool to merge sets of reads from paired FASTQ files that share the UMI and have similar read sequence.
-             The result is a maximum likelihood fragment sequence per set with base quality scores improved
-             accordingly
-    help     Prints this message or the help of the given subcommand(s)
 ```
 
 ## rust-bio-tools_csv-report
@@ -286,27 +268,6 @@ ARGS:
             VCF/BCF file to be extended by dgidb drug entries
 ```
 
-## rust-bio-tools_record
-
-### Tool Description
-A collection of command-line utilities for bioinformatics in Rust.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'record' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
-```
-
 ## rust-bio-tools_vcf-baf
 
 ### Tool Description
@@ -335,27 +296,6 @@ FLAGS:
 
     -V, --version    
             Prints version information
-```
-
-## rust-bio-tools_Reads
-
-### Tool Description
-A set of command-line utilities for bioinformatics, written in Rust.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'Reads' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## rust-bio-tools_vcf-match
@@ -399,27 +339,6 @@ OPTIONS:
 ARGS:
     <vcf>    
             VCF/BCF file to match against
-```
-
-## rust-bio-tools_Results
-
-### Tool Description
-A set of command-line utilities for bioinformatics tasks using the Rust-Bio library.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'Results' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## rust-bio-tools_vcf-report
@@ -500,27 +419,6 @@ ARGS:
 
     <output-path>    
             Relative output path for the report files. Default value is the current directory [default: .]
-```
-
-## rust-bio-tools_using
-
-### Tool Description
-A set of command-line utilities for bioinformatics, written in Rust.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-- **Homepage**: https://github.com/rust-bio/rust-bio-tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'using' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## rust-bio-tools_vcf-split
@@ -610,10 +508,10 @@ OPTIONS:
             Select INFO tags
 ```
 
-## rust-bio-tools_FORMAT
+## rust-bio-tools_bam-depth
 
 ### Tool Description
-A set of command-line utilities for bioinformatics in Rust.
+Print depth of BAM or CRAM file at given positions from STDIN (tab separated: chrom, pos)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
@@ -623,12 +521,205 @@ A set of command-line utilities for bioinformatics in Rust.
 
 ### Original Help Text
 ```text
-error: Found argument 'FORMAT' which wasn't expected, or isn't valid in this context
+rbt-bam-depth 0.42.2
+Johannes Köster <johannes.koester@tu-dortmund.de>
+Print depth of BAM or CRAM file at given positions from STDIN (tab separated: chrom, pos).
+
+Usage: $ rbt bam-depth test.bam < pos.txt > depth.txt
+
+The positions file contains the name of one reference sequence and one position per line (tab separated). Example:
+
+16    1 17    38 17    39
+
+Depths are written to stdout as tab-separated lines, similar to the positions input. Example:
+
+16    1    0 17    38    14 17    39    13
 
 USAGE:
-    rbt [FLAGS] <SUBCOMMAND>
+    rbt bam-depth [OPTIONS] <bam-path>
 
-For more information try --help
+FLAGS:
+    -h, --help       
+            Prints help information
+
+    -V, --version    
+            Prints version information
+
+
+OPTIONS:
+    -e, --excl-flags <exclude-flags>           
+            Skip reads with mask bits set [UNMAP, SECONDARY, QCFAIL, DUP] [default: 1796]
+
+    -i, --incl-flags <include-flags>           
+            Skip reads with mask bits unset [] [default: 0]
+
+    -m, --max-read-length <max-read-length>    
+            Maximum read length to consider. This affects the speed of the involved pileup. Reads longer than this
+            length can be missed when calculating the depth [default: 1000]
+    -q, --min-mapq <min-mapq>                  
+            Minimum mapping quality [default: 0]
+
+
+ARGS:
+    <bam-path>    
+            Path to indexed BAM file
+```
+
+## rust-bio-tools_fastq-split
+
+### Tool Description
+Split FASTQ file from STDIN into N chunks
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
+- **Homepage**: https://github.com/rust-bio/rust-bio-tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+rbt-fastq-split 0.42.2
+Johannes Köster <johannes.koester@tu-dortmund.de>
+Split FASTQ file from STDIN into N chunks.
+
+Example: rbt fastq-split A.fastq B.fastq < test.fastq
+
+USAGE:
+    rbt fastq-split [chunks]...
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+ARGS:
+    <chunks>...    File name(s) for the chunks to create.
+```
+
+## rust-bio-tools_vcf-fix-iupac-alleles
+
+### Tool Description
+Convert any IUPAC codes in alleles into Ns (in order to comply with VCF 4 specs)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
+- **Homepage**: https://github.com/rust-bio/rust-bio-tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+rbt-vcf-fix-iupac-alleles 0.42.2
+Johannes Köster <johannes.koester@tu-dortmund.de>
+Convert any IUPAC codes in alleles into Ns (in order to comply with VCF 4 specs). Reads VCF/BCF from STDIN and writes
+BCF to STDOUT.
+
+Example: rbt vcf-fix-iupac-alleles < test.vcf > fixed.bcf
+
+USAGE:
+    rbt vcf-fix-iupac-alleles
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+```
+
+## rust-bio-tools_collapse-reads-to-fragments_bam
+
+### Tool Description
+Tool to merge sets of PCR duplicate reads from a BAM file into one maximum likelihood fragment sequence each with accordingly improved base quality scores
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
+- **Homepage**: https://github.com/rust-bio/rust-bio-tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+rbt-collapse-reads-to-fragments-bam 0.42.2
+Felix Mölder <felix.moelder@uni-due.de>
+Tool to merge sets of PCR duplicate reads from a BAM file into one maximum likelihood fragment sequence each with
+accordingly improved base quality scores.
+
+Takes a BAM file and returns a BAM file in which all PCR duplicates have been merged into a consensus read. Duplicates
+must be marked by Picard Tools using the TAG_DUPLICATE_SET_MEMBERS option.
+
+Assumptions: - Reads are of equal length - Reads are marked by Picard Tools
+
+USAGE:
+    rbt collapse-reads-to-fragments bam [FLAGS] <bam> <consensus-fq1> <consensus-fq2> <consensus-fq-se> <skipped-bam>
+
+FLAGS:
+        --annotate-record-ids    Add list of reads that were merged for each consensus read. Note that this can yield
+                                 very long FASTQ name lines which cannot be handled by some tools.
+    -h, --help                   Prints help information
+    -V, --version                Prints version information
+
+ARGS:
+    <bam>                Input BAM file with marked duplicates
+    <consensus-fq1>      Output FASTQ file with forward reads
+    <consensus-fq2>      Output FASTQ file with reverse reads
+    <consensus-fq-se>    Output FASTQ file for overlapping consensus reads.
+    <skipped-bam>        Output FASTQ file for overlapping consensus reads.
+```
+
+## rust-bio-tools_collapse-reads-to-fragments_fastq
+
+### Tool Description
+Tool to merge sets of reads from paired FASTQ files that share the UMI and have similar read sequence
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
+- **Homepage**: https://github.com/rust-bio/rust-bio-tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+rbt-collapse-reads-to-fragments-fastq 0.42.2
+Johannes Köster <johannes.koester@uni-due.de>, Henning Timm <henning.timm@tu-dortmund.de>, Felix Mölder
+<felix.moelder@uni-due.de>
+Tool to merge sets of reads from paired FASTQ files that share the UMI and have similar read sequence. The result is a
+maximum likelihood fragment sequence per set with base quality scores improved accordingly.
+
+Takes two FASTQ files (forward and reverse) and returns two FASTQ files in which all PCR duplicates have been merged
+into a consensus read. Duplicates are identified by a Unique Molecular Identifier (UMI).
+
+Assumptions: - Reads are of equal length - UMI is the prefix of the reads
+
+Example: rbt collapse-reads-to-fragments fastq \ reads_1.fq reads_2.fq \    # input files merged_1.fq merged_2.fq \  #
+output files -l 13 \                    # length of UMI -d 1 \                     # max hamming distance of UMIs within
+a cluster -D 2 \                     # max hamming distance of sequences within a cluster --umi-on-reverse           #
+UMI is the prefix of the reverse read
+
+USAGE:
+    rbt collapse-reads-to-fragments fastq [FLAGS] [OPTIONS] <fq1> <fq2> <consensus-fq1> <consensus-fq2> [consensus-fq3]
+
+FLAGS:
+    -h, --help                  Prints help information
+    -u, --umi-on-reverse        Set if UMI is on reverse read
+    -V, --version               Prints version information
+        --verbose-read-names    Add list of reads that were merged for each consensus read. Note that this can yield
+                                very long FASTQ name lines which cannot be handled by some tools.
+
+OPTIONS:
+    -i, --insert-size <insert-size>      Expected insert size of sequenced fragment (Required for calculating
+                                         overlapping consensus only)
+    -D, --max-seq-dist <max-seq-dist>    Maximum hamming distance between the sequences of any pair of reads in the same
+                                         cluster. [default: 2]  [possible values: 1, 2, 3, 4, 5, 6, 7, 8]
+    -d, --max-umi-dist <max-umi-dist>    Maximum hamming distance between the UMIs of any pair of reads in the same
+                                         cluster. [default: 1]
+    -s, --std-dev <std-dev>              Standard deviation of expected insert size. Defines search space of the most
+                                         likely overlap. (Required for calculating overlapping consensus only)
+    -l, --umi-len <umi-len>              Length of UMI in read. [default: 8]
+
+ARGS:
+    <fq1>              Input FASTQ file with forward reads.
+    <fq2>              Input FASTQ file with reverse reads.
+    <consensus-fq1>    Output FASTQ file with forward reads
+    <consensus-fq2>    Output FASTQ file with reverse reads
+    <consensus-fq3>    Output FASTQ file for overlapping consensus reads  (Required for calculating overlapping
+                       consensus only)
 ```
 
 ## Metadata

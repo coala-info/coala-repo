@@ -1,5 +1,17 @@
 # knock-knock CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| knock-knock_build-indices | Failed | tool bug: the CLI calls build_strategies.download_genome_and_build_indices, which does not exist in knock-knock 0.8.0. |
+| knock-knock_build-strategies | Failed | image problem: hits 0.4.5 in the image lacks sw.identify_concordant_primer_alignment_pair, so a real E. coli lacZ amplicon strategy cannot be built. |
+| knock-knock_download-genome | PASS | Downloaded the E. coli MG1655 chromosome (4,641,652 bp) and its .fai into indices/e_coli/fasta (added NetworkAccess and writable project dir). |
+| knock-knock_install-example-data | PASS | Created a project with the packaged example FASTQs, sample sheets and strategy CSVs (base_dir made an output path). |
+| knock-knock_parallel | Failed | image problem: same hits 0.4.5 incompatibility as process-sample on the packaged HDR test project. |
+| knock-knock_process-sample | Failed | image problem: hits 0.4.5 in the image is incompatible (no utilities.rc, Interval + int TypeError) on the packaged HDR and prime-editing test projects. |
+| knock-knock_table | Not completed | Needs processed sample results, which the image cannot produce (process-sample fails), so there is nothing to tabulate. |
+
 ## knock-knock_process-sample
 
 ### Tool Description
@@ -198,44 +210,6 @@ positional arguments:
 
 options:
   -h, --help  show this help message and exit
-```
-
-## knock-knock_install
-
-### Tool Description
-A tool for analyzing knock-knock sequences.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/knock-knock:0.8.0--pyhdfd78af_0
-- **Homepage**: https://github.com/jeffhussmann/knock-knock
-- **Package**: https://anaconda.org/channels/bioconda/packages/knock-knock/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: knock-knock [-h] [--version]
-                   {process-sample,parallel,table,build-strategies,download-genome,build-indices,install-example-data,whos-there}
-                   ...
-knock-knock: error: argument subcommand: invalid choice: 'install' (choose from 'process-sample', 'parallel', 'table', 'build-strategies', 'download-genome', 'build-indices', 'install-example-data', 'whos-there')
-```
-
-## knock-knock_directory
-
-### Tool Description
-A tool for analyzing genomic data, with various subcommands for different tasks.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/knock-knock:0.8.0--pyhdfd78af_0
-- **Homepage**: https://github.com/jeffhussmann/knock-knock
-- **Package**: https://anaconda.org/channels/bioconda/packages/knock-knock/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: knock-knock [-h] [--version]
-                   {process-sample,parallel,table,build-strategies,download-genome,build-indices,install-example-data,whos-there}
-                   ...
-knock-knock: error: argument subcommand: invalid choice: 'directory' (choose from 'process-sample', 'parallel', 'table', 'build-strategies', 'download-genome', 'build-indices', 'install-example-data', 'whos-there')
 ```
 
 ## Metadata

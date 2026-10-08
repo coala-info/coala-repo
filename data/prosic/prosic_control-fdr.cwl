@@ -13,9 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: event
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Event to consider.
     inputBinding:
       position: 102
@@ -45,9 +43,7 @@ inputs:
       position: 102
       prefix: --min-len
   - id: variant_type
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Variant type to consider (SNV, INS, DEL).
     inputBinding:
       position: 102

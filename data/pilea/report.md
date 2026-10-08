@@ -1,5 +1,14 @@
 # pilea CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pilea_fetch | Not completed | Downloads the large pre-built GTDB database from Zenodo; too big for this test. |
+| pilea_index | PASS | Built a 3-genome database (B. fragilis, H. influenzae, Portiera from nf-core) with sketches for each genome. |
+| pilea_profile | PASS | Profiled nf-core B. fragilis paired reads against the 3-genome database; only B. fragilis is reported (filters relaxed for the low-coverage test reads). |
+| pilea_rebuild | Not completed | Rebuilds the database from all GTDB representative genomes; needs a very large download. |
+
 ## pilea_index
 
 ### Tool Description
@@ -43,24 +52,6 @@ Additional Arguments - Sketching:
   -k, --kmer INT        K-mer size. (default: 31)
   -s, --scale INT       Scale for downsampling. (default: 250)
   -w, --window INT      Window size for k-mer grouping. (default: 25000)
-```
-
-
-## pilea_new
-
-### Tool Description
-pilea: error: argument {index,fetch,profile,rebuild}: invalid choice: 'new' (choose from index, fetch, profile, rebuild)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pilea:1.3.7--py312h4711d71_0
-- **Homepage**: https://github.com/xinehc/pilea
-- **Package**: https://anaconda.org/channels/bioconda/packages/pilea/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: pilea [-h] [-v] {index,fetch,profile,rebuild} ...
-pilea: error: argument {index,fetch,profile,rebuild}: invalid choice: 'new' (choose from index, fetch, profile, rebuild)
 ```
 
 
@@ -164,24 +155,6 @@ Additional Arguments - Sketching:
   -k, --kmer INT        K-mer size. (default: 31)
   -s, --scale INT       Scale for downsampling. (default: 250)
   -w, --window INT      Window size for k-mer grouping. (default: 25000)
-```
-
-
-## pilea_bacterial
-
-### Tool Description
-pilea: error: argument {index,fetch,profile,rebuild}: invalid choice: 'bacterial' (choose from index, fetch, profile, rebuild)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pilea:1.3.7--py312h4711d71_0
-- **Homepage**: https://github.com/xinehc/pilea
-- **Package**: https://anaconda.org/channels/bioconda/packages/pilea/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: pilea [-h] [-v] {index,fetch,profile,rebuild} ...
-pilea: error: argument {index,fetch,profile,rebuild}: invalid choice: 'bacterial' (choose from index, fetch, profile, rebuild)
 ```
 
 

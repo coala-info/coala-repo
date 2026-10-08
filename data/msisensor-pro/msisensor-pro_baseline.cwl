@@ -9,7 +9,7 @@ doc: "This module build baseline for MSI detection with pro module using only tu
   \nTool homepage: https://github.com/xjtu-omics/msisensor-pro"
 inputs:
   - id: configure_files
-    type: string
+    type: File
     doc: "configure files for building baseline (text file)\nyou need to provide the
       output (*_all) from pro command \ne.g.\n----------------------------------\n\
       \ case1\t/path/to/case1_sorted_all \n case2\t/path/to/case2_sorted_all \n case3\t\
@@ -17,8 +17,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
+  - id: pro_all_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The *_all files from the pro command that the configure file names. 
+      They are staged in the working directory, so the configure file can name 
+      them by file name.
   - id: homopolymer_microsatellite_file
-    type: string
+    type: File
     doc: homopolymer and microsatellite file
     inputBinding:
       position: 101
@@ -40,12 +48,15 @@ inputs:
       prefix: -o
 outputs:
   - id: output_path
-    type: Directory
+    type: File
     doc: output path for baseline
     outputBinding:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pro_all_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msisensor-pro:1.3.0--hd979922_1

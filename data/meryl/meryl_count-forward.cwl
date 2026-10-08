@@ -1,248 +1,76 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: meryl
+baseCommand:
+  - meryl
+  - count-forward
 label: meryl_count-forward
-doc: "Count the occurrences of forward kmers in the input.\n\nTool homepage: https://github.com/marbl/meryl"
+doc: "Count the occurrences of forward kmers in the input. Writes a meryl database.\n\nTool homepage: https://github.com/marbl/meryl"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input file for counting
-    inputBinding:
-      position: 1
-  - id: compress
-    type:
-      - 'null'
-      - boolean
-    doc: compress homopolymer runs to a single letter.
-    inputBinding:
-      position: 102
-  - id: decrease
-    type:
-      - 'null'
-      - string
-    doc: subtract X from the count of each kmer.
-    inputBinding:
-      position: 102
-  - id: difference
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in the first input, but none of the other 
-      inputs
-    inputBinding:
-      position: 102
-  - id: divide
-    type:
-      - 'null'
-      - string
-    doc: divide the count of each kmer by X.
-    inputBinding:
-      position: 102
-  - id: divide_round
-    type:
-      - 'null'
-      - string
-    doc: divide the count of each kmer by X and round results. count < X will 
-      become 1.
-    inputBinding:
-      position: 102
-  - id: equal_to
-    type:
-      - 'null'
-      - int
-    doc: return kmers that occur exactly N times in the input. accepts exactly 
-      one input.
-    inputBinding:
-      position: 102
-  - id: greater_than
-    type:
-      - 'null'
-      - int
-    doc: return kmers that occur more than N times in the input. accepts exactly
-      one input.
-    inputBinding:
-      position: 102
-  - id: histogram
-    type:
-      - 'null'
-      - boolean
-    doc: display kmer frequency on the screen as 'frequency<tab>count'. accepts 
-      exactly one input.
-    inputBinding:
-      position: 102
-  - id: increase
-    type:
-      - 'null'
-      - string
-    doc: add X to the count of each kmer.
-    inputBinding:
-      position: 102
-  - id: intersect
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in all inputs, set the count to the count in 
-      the first input.
-    inputBinding:
-      position: 102
-  - id: intersect_max
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in all inputs, set the count to the maximum 
-      count.
-    inputBinding:
-      position: 102
-  - id: intersect_min
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in all inputs, set the count to the minimum 
-      count.
-    inputBinding:
-      position: 102
-  - id: intersect_sum
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in all inputs, set the count to the sum of the 
-      counts.
-    inputBinding:
-      position: 102
   - id: k
     type: int
-    doc: create mers of size K bases (mandatory).
+    doc: "create mers of size K bases (mandatory)."
     inputBinding:
-      position: 102
-  - id: less_than
-    type:
-      - 'null'
-      - int
-    doc: return kmers that occur fewer than N times in the input. accepts 
-      exactly one input.
-    inputBinding:
-      position: 102
-  - id: memory
-    type:
-      - 'null'
-      - string
-    doc: use no more than (about) M GB memory.
-    inputBinding:
-      position: 102
-  - id: modulo
-    type:
-      - 'null'
-      - string
-    doc: set the count of each kmer to the remainder of the count divided by X.
-    inputBinding:
-      position: 102
-  - id: multiply
-    type:
-      - 'null'
-      - string
-    doc: multiply the count of each kmer by X.
-    inputBinding:
-      position: 102
+      position: 1
+      prefix: k=
+      separate: false
   - id: n
     type:
       - 'null'
-      - int
-    doc: expect N mers in the input (optional; for precise memory sizing).
+      - long
+    doc: "expect N mers in the input (optional; for precise memory sizing)."
     inputBinding:
-      position: 102
-  - id: not_equal_to
+      position: 1
+      prefix: n=
+      separate: false
+  - id: memory
     type:
       - 'null'
-      - int
-    doc: return kmers that do not occur exactly N times in the input. accepts 
-      exactly one input.
+      - float
+    doc: "use no more than (about) M GB memory."
     inputBinding:
-      position: 102
-  - id: print
-    type:
-      - 'null'
-      - boolean
-    doc: display kmers on the screen as 'kmer<tab>count'. accepts exactly one 
-      input.
-    inputBinding:
-      position: 102
-  - id: statistics
-    type:
-      - 'null'
-      - boolean
-    doc: display total, unique, distinct, present number of the kmers on the 
-      screen. accepts exactly one input.
-    inputBinding:
-      position: 102
-  - id: subtract
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in the first input, substracting counts from 
-      the other inputs
-    inputBinding:
-      position: 102
-  - id: symmetric_difference
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in exactly one input
-    inputBinding:
-      position: 102
+      position: 1
+      prefix: memory=
+      separate: false
   - id: threads
     type:
       - 'null'
       - int
-    doc: use no more than T threads.
+    doc: "use no more than T threads."
     inputBinding:
-      position: 102
-  - id: union
+      position: 1
+      prefix: threads=
+      separate: false
+  - id: compress
     type:
       - 'null'
       - boolean
-    doc: return kmers that occur in any input, set the count to the number of 
-      inputs with this kmer.
+    doc: "compress homopolymer runs to a single letter."
     inputBinding:
-      position: 102
-  - id: union_max
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in any input, set the count to the maximum 
-      count
+      position: 1
+      prefix: compress
+  - id: input_files
+    type: File[]
+    doc: "Input sequence files (FASTA or FASTQ, optionally gzip-compressed)"
     inputBinding:
-      position: 102
-  - id: union_min
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in any input, set the count to the minimum 
-      count
-    inputBinding:
-      position: 102
-  - id: union_sum
-    type:
-      - 'null'
-      - boolean
-    doc: return kmers that occur in any input, set the count to the sum of the 
-      counts
-    inputBinding:
-      position: 102
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 103
-      prefix: --output
-outputs:
+      position: 100
   - id: output
-    type: File
-    doc: "write kmers generated by the present command to an output meryl database
-      O\nmandatory for count operations."
+    type: string
+    default: "reads.meryl"
+    doc: "write kmers generated by the present command to an output meryl database O"
+    inputBinding:
+      position: 200
+      prefix: output
+outputs:
+  - id: database
+    type: Directory
+    doc: "Output meryl database"
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ResourceRequirement
+    coresMin: 1
+    ramMin: 2048
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meryl:1.4.1--h9948957_2

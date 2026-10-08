@@ -1,5 +1,13 @@
 # outrigger CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| outrigger_index | PASS |  |
+| outrigger_psi | PASS |  |
+| outrigger_validate | Failed | image problem: bedtools is missing from the image, so pybedtools flankBed fails |
+
 ## outrigger_index
 
 ### Tool Description
@@ -102,24 +110,6 @@ optional arguments:
 ```
 
 
-## outrigger_database
-
-### Tool Description
-outrigger: error: invalid choice: 'database' (choose from 'index', 'validate', 'psi')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/outrigger:1.1.1--py35_0
-- **Homepage**: https://yeolab.github.io/outrigger
-- **Package**: https://anaconda.org/channels/bioconda/packages/outrigger/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: outrigger [-h] [--version] {index,validate,psi} ...
-outrigger: error: invalid choice: 'database' (choose from 'index', 'validate', 'psi')
-```
-
-
 ## outrigger_validate
 
 ### Tool Description
@@ -170,24 +160,6 @@ optional arguments:
                         standard out
   --low-memory          If set, then use a smaller memory footprint. By
                         default, this is off.
-```
-
-
-## outrigger_correct
-
-### Tool Description
-outrigger: error: invalid choice: 'correct' (choose from 'index', 'validate', 'psi')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/outrigger:1.1.1--py35_0
-- **Homepage**: https://yeolab.github.io/outrigger
-- **Package**: https://anaconda.org/channels/bioconda/packages/outrigger/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: outrigger [-h] [--version] {index,validate,psi} ...
-outrigger: error: invalid choice: 'correct' (choose from 'index', 'validate', 'psi')
 ```
 
 
@@ -275,24 +247,6 @@ optional arguments:
                         means to use as many threads as are available.
   --low-memory          If set, then use a smaller memory footprint. By
                         default, this is off.
-```
-
-
-## outrigger_splicing
-
-### Tool Description
-outrigger: error: invalid choice: 'splicing' (choose from 'index', 'validate', 'psi')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/outrigger:1.1.1--py35_0
-- **Homepage**: https://yeolab.github.io/outrigger
-- **Package**: https://anaconda.org/channels/bioconda/packages/outrigger/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: outrigger [-h] [--version] {index,validate,psi} ...
-outrigger: error: invalid choice: 'splicing' (choose from 'index', 'validate', 'psi')
 ```
 
 

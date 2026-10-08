@@ -4,8 +4,8 @@ baseCommand:
   - panorama
   - pansystems
 label: panorama_pansystems
-doc: "PANORAMA (0.6.0) is an opensource bioinformatic tools under CeCILL FREE SOFTWARE
-  LICENSE AGREEMENT\n\nTool homepage: https://github.com/labgem/panorama"
+doc: "Run the whole systems workflow on pangenomes: annotation, systems detection\
+  \ and writing of the systems.\n\nTool homepage: https://github.com/labgem/panorama"
 inputs:
   - id: association
     type:
@@ -16,11 +16,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --association
-  - id: binary_output
+  - id: only_best_hit
     type:
       - 'null'
       - boolean
-    doc: Output in binary format
+    doc: alias to keep only the best hit for each gene family.
     inputBinding:
       position: 101
       prefix: -b
@@ -49,12 +49,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --hmm
+  - id: hmm_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: HMM files named in the HMM list file. They are staged in the working directory,
+      so the list must name them by file name.
   - id: jaccard
     type:
       - 'null'
       - float
-    doc: minimum jaccard similarity used to filter edges between gene families. 
-      Increasing it will improve precision but lower sensitivity a lot.
+    doc: minimum jaccard similarity used to filter edges between gene families. Increasing
+      it will improve precision but lower sensitivity a lot.
     inputBinding:
       position: 101
       prefix: --jaccard
@@ -77,8 +84,8 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
-    doc: log output file
+      - string
+    doc: Log output file name
     inputBinding:
       position: 101
       prefix: --log
@@ -97,6 +104,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --models
+  - id: model_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: System model .json files named in the model list file(s). They are staged
+      in the working directory, so the list must name them by file name.
   - id: msa
     type:
       - 'null'
@@ -111,6 +125,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pangenomes
+  - id: pangenome_files
+    type:
+      type: array
+      items: File
+    doc: Pangenome .h5 files named in the pangenomes list. They are staged in the
+      working directory, so the list must name them by file name (second column).
   - id: partition
     type:
       - 'null'
@@ -155,12 +175,19 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A list of tab-separated file, containing annotation of gene 
-      families.Expected format is pangenome name in first column and path to the
-      TSV with annotation in second column.
+    doc: A list of tab-separated file, containing annotation of gene families.Expected
+      format is pangenome name in first column and path to the TSV with annotation
+      in second column.
     inputBinding:
       position: 101
       prefix: --table
+  - id: table_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Annotation TSV files named in the --table list. They are staged in the working
+      directory, so the list must name them by file name.
   - id: threads
     type:
       - 'null'
@@ -181,8 +208,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -205,8 +232,29 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_path)
+  - id: pangenomes_out
+    type:
+      type: array
+      items: File
+    doc: Pangenome .h5 files with the annotation and the detected systems
+    outputBinding:
+      glob: $(inputs.pangenome_files.map(function(f){ return f.basename; }))
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (with log)
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.pangenome_files)
+        writable: true
+      - $(inputs.hmm_files)
+      - $(inputs.model_files)
+      - $(inputs.table_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0

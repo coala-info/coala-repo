@@ -1,76 +1,57 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: polap
+baseCommand:
+  - polap
+  - annotate
 label: polap_annotate
-doc: "Plant organelle DNA long-read assembly pipeline.\n\nTool homepage: https://github.com/goshng/polap"
+doc: "Annotate a Flye genome assembly (contigger edges) in a polap output folder with mitochondrial\
+  \ and plastid genes.\n\nTool homepage: https://github.com/goshng/polap"
 inputs:
+  - id: outdir
+    type: Directory
+    doc: Polap output folder holding the Flye genome assembly <inum>; it is updated in place.
+    inputBinding:
+      position: 101
+      prefix: -o
+      valueFrom: $(self.basename)
   - id: inum
     type:
       - 'null'
       - int
-    doc: Number of iterations for assembly
+    doc: Index of the source assembly (folder <outdir>/<inum>); default 0.
     inputBinding:
       position: 101
-      prefix: --inum
-  - id: jnum
+      prefix: -i
+  - id: contigger
     type:
       - 'null'
-      - int
-    doc: Number of jobs for assembly
+      - boolean
+    doc: Annotate the contigger edges (default on).
     inputBinding:
       position: 101
-      prefix: --jnum
-  - id: long_reads
+      prefix: --contigger
+  - id: no_contigger
     type:
       - 'null'
-      - File
-    doc: Long-read file
+      - boolean
+    doc: Do not use the contigger edges (not implemented yet).
     inputBinding:
       position: 101
-      prefix: --long-reads
-  - id: outdir
-    type:
-      - 'null'
-      - string
-    doc: Output directory
-    inputBinding:
-      position: 101
-      prefix: --outdir
-  - id: short_read1
-    type:
-      - 'null'
-      - File
-    doc: First short-read file
-    inputBinding:
-      position: 101
-      prefix: --short-read1
-  - id: short_read2
-    type:
-      - 'null'
-      - File
-    doc: Second short-read file
-    inputBinding:
-      position: 101
-      prefix: --short-read2
-  - id: single_min
-    type:
-      - 'null'
-      - int
-    doc: Minimum length for single reads
-    inputBinding:
-      position: 101
-      prefix: --single-min
+      prefix: --no-contigger
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
-  - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory
+    doc: Standard output (log).
+  - id: outdir_out
+    type: Directory
+    doc: Output folder with all polap results.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.outdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/polap:0.5.3.1--py312hdfd78af_0

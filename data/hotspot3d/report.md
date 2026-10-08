@@ -1,55 +1,24 @@
 # hotspot3d CWL Generation Report
 
-## hotspot3d_Preprocessing
+## Real Data Test
 
-### Tool Description
-3D mutation proximity analysis program. Preprocessing steps include parsing drugport database, updating proximity files, and running ROI generation, statistical calculation, annotation, and prioritization.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
-- **Homepage**: https://github.com/ding-lab/hotspot3d
-- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
-- **Total Downloads**: 11.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/ding-lab/hotspot3d
-- **Stars**: N/A
-### Original Help Text
-```text
-Please give valid sub command ! 
-Program: hotspot3d - 3D mutation proximity analysis program.
-Version: V1.8.2
- Author: Beifang Niu, Adam D Scott, Sohini Sengupta, John Wallis & Amila Weerasinghe
-
-  Usage: hotspot3d <command> [options]
-
-           Preprocessing
-              drugport  --  0) Parse drugport database (OPTIONAL)
-              uppro     --  1) Update proximity files
-              prep      --  2) Run steps 2a-2f of preprocessing
-                  calroi    --  2a) Generate region of interest (ROI) information
-                  statis    --  2b) Calculate p_values for pairs of mutations
-                  anno      --  2c) Add region of interest (ROI) annotation
-                  trans     --  2d) Add transcript annotation 
-                  cosmic    --  2e) Add COSMIC annotation to proximity file
-                  prior     --  2f) Prioritization
-
-           Analysis
-
-              main      --  0) Run steps a-f of analysis (BETA)
-                  search    --  a) 3D mutation proximity searching
-                  cluster   --  b) Determine mutation-mutation and mutation-drug clusters
-                  sigclus   --  c) Determine significance of clusters (BETA)
-                  summary   --  d) Summarize clusters
-                  visual    --  e) Visulization of 3D proximity
-
-           help      --  this message
-
-         SUPPORT
-         For user support please email adamscott@wustl.edu
-```
+| Tool | Result | Reason |
+|---|---|---|
+| hotspot3d_anno | PASS | SMAD2 pairs got MH1/MH2 features from a ROI file of the real UniProt domains. |
+| hotspot3d_calroi | Failed | image problem: LWP::Protocol::https is missing, so the UniProt download fails and the ROI file has only a header. |
+| hotspot3d_cluster | PASS | Demo pairwise and MAF gave clusters equal to the repo's expected file (float last-digit differences only). |
+| hotspot3d_cosmic | PASS | synthetic data: COSMIC-format table built from the demo MAF mutations (real COSMIC needs a licence); annotated SMAD2 pairs such as S276 with p.S276L |
+| hotspot3d_drugport | Failed | image problem: LWP::Protocol::https is missing, so the DrugPort download from EBI (now https only) fails. |
+| hotspot3d_main | Failed | tool bug: AllMain calls a missing outputDir method and dies before search starts. |
+| hotspot3d_prep | Failed | image problem: blat is not in the image, so the trans step stops the run after calroi, statis and anno. |
+| hotspot3d_prior | PASS | Kept 696 SMAD2 pairs, all within distance 20 and p 0.05. |
+| hotspot3d_search | PASS | Demo SMAD2 MAF gave pairwise and ROI files; all pairs are in the repo's expected pairwise. |
+| hotspot3d_sigclus | PASS | SMAD2 clusters got average distances and simulated p-values (100 simulations). |
+| hotspot3d_statis | PASS | SMAD2 proximity file (real UniProt/PDB via calpro) gave 160,987 pairs with p-values. |
+| hotspot3d_summary | PASS | Summary of the demo clusters is identical to the repo's expected summary. |
+| hotspot3d_trans | Failed | image problem: blat is not installed in the image (and UniProt https downloads fail), so trans stops. |
+| hotspot3d_uppro | Failed | image problem: LWP has no https support and the HGNC download URL the tool uses is dead (404), so no gene data is fetched. |
+| hotspot3d_visual | PASS | Wrote a PyMOL script for 1U7V with the demo SMAD2/SMAD4 cluster residues (local PDB file). |
 
 ## hotspot3d_drugport
 
@@ -194,52 +163,6 @@ Usage: hotspot3d prior [options]
 --linear-cutoff              Linear distance cutoff (> peptides), default is 0
 
 --help                       this message
-```
-
-## hotspot3d_Analysis
-
-### Tool Description
-3D mutation proximity analysis program.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
-- **Homepage**: https://github.com/ding-lab/hotspot3d
-- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Please give valid sub command ! 
-Program: hotspot3d - 3D mutation proximity analysis program.
-Version: V1.8.2
- Author: Beifang Niu, Adam D Scott, Sohini Sengupta, John Wallis & Amila Weerasinghe
-
-  Usage: hotspot3d <command> [options]
-
-           Preprocessing
-              drugport  --  0) Parse drugport database (OPTIONAL)
-              uppro     --  1) Update proximity files
-              prep      --  2) Run steps 2a-2f of preprocessing
-                  calroi    --  2a) Generate region of interest (ROI) information
-                  statis    --  2b) Calculate p_values for pairs of mutations
-                  anno      --  2c) Add region of interest (ROI) annotation
-                  trans     --  2d) Add transcript annotation 
-                  cosmic    --  2e) Add COSMIC annotation to proximity file
-                  prior     --  2f) Prioritization
-
-           Analysis
-
-              main      --  0) Run steps a-f of analysis (BETA)
-                  search    --  a) 3D mutation proximity searching
-                  cluster   --  b) Determine mutation-mutation and mutation-drug clusters
-                  sigclus   --  c) Determine significance of clusters (BETA)
-                  summary   --  d) Summarize clusters
-                  visual    --  e) Visulization of 3D proximity
-
-           help      --  this message
-
-         SUPPORT
-         For user support please email adamscott@wustl.edu
 ```
 
 ## hotspot3d_main
@@ -485,10 +408,10 @@ Usage: hotspot3d visual [options]
 Tip: To run an already created .pml file, run pymol <your output-file>
 ```
 
-## hotspot3d_SUPPORT
+## hotspot3d_calroi
 
 ### Tool Description
-3D mutation proximity analysis program.
+Generate region of interest (ROI) information
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
@@ -498,37 +421,75 @@ Tip: To run an already created .pml file, run pymol <your output-file>
 
 ### Original Help Text
 ```text
-Please give valid sub command ! 
-Program: hotspot3d - 3D mutation proximity analysis program.
-Version: V1.8.2
- Author: Beifang Niu, Adam D Scott, Sohini Sengupta, John Wallis & Amila Weerasinghe
+Usage: hotspot3d calroi [options]
 
-  Usage: hotspot3d <command> [options]
+                             REQUIRED
+--output-dir                 Output directory of proximity files
 
-           Preprocessing
-              drugport  --  0) Parse drugport database (OPTIONAL)
-              uppro     --  1) Update proximity files
-              prep      --  2) Run steps 2a-2f of preprocessing
-                  calroi    --  2a) Generate region of interest (ROI) information
-                  statis    --  2b) Calculate p_values for pairs of mutations
-                  anno      --  2c) Add region of interest (ROI) annotation
-                  trans     --  2d) Add transcript annotation 
-                  cosmic    --  2e) Add COSMIC annotation to proximity file
-                  prior     --  2f) Prioritization
+--help                       this message
+```
 
-           Analysis
+## hotspot3d_statis
 
-              main      --  0) Run steps a-f of analysis (BETA)
-                  search    --  a) 3D mutation proximity searching
-                  cluster   --  b) Determine mutation-mutation and mutation-drug clusters
-                  sigclus   --  c) Determine significance of clusters (BETA)
-                  summary   --  d) Summarize clusters
-                  visual    --  e) Visulization of 3D proximity
+### Tool Description
+Calculate p_values for pairs of mutations
 
-           help      --  this message
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
+- **Homepage**: https://github.com/ding-lab/hotspot3d
+- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
+- **Validation**: PASS
 
-         SUPPORT
-         For user support please email adamscott@wustl.edu
+### Original Help Text
+```text
+Usage: hotspot3d statis [options]
+
+                             REQUIRED
+--output-dir                 Output directory of proximity files
+
+--help                       this message
+```
+
+## hotspot3d_anno
+
+### Tool Description
+Add region of interest (ROI) annotation
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
+- **Homepage**: https://github.com/ding-lab/hotspot3d
+- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: hotspot3d anno [options]
+
+                             REQUIRED
+--output-dir                 Output directory of proximity files
+
+--help                       this message
+```
+
+## hotspot3d_cosmic
+
+### Tool Description
+Add COSMIC annotation to proximity file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0
+- **Homepage**: https://github.com/ding-lab/hotspot3d
+- **Package**: https://anaconda.org/channels/bioconda/packages/hotspot3d/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: hotspot3d cosmic [options]
+
+                             REQUIRED
+--output-dir                 Output directory of proximity files
+
+--help                       this message
 ```
 
 ## Metadata

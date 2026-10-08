@@ -1,5 +1,19 @@
 # tadbit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tadbit_bin | PASS |  |
+| tadbit_clean | PASS |  |
+| tadbit_describe | PASS |  |
+| tadbit_filter | PASS |  |
+| tadbit_map | PASS |  |
+| tadbit_merge | PASS |  |
+| tadbit_normalize | PASS |  |
+| tadbit_parse | PASS |  |
+| tadbit_segment | PASS |  |
+
 ## tadbit_map
 
 ### Tool Description
@@ -91,25 +105,6 @@ Descriptive, optional arguments:
   --descr LIST [LIST ...]  extra descriptive fields each filed separated by coma, and inside
                            each, name and value separated by column:
                            --descr=cell:lymphoblast,flowcell:C68AEACXX,index:24nf
-```
-
-## tadbit_working
-
-### Tool Description
-TADbit: a toolkit for the analysis of 3D genome organization.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tadbit:1.0.1--py310h2a84d7f_1
-- **Homepage**: http://sgt.cnag.cat/3dg/tadbit/
-- **Package**: https://anaconda.org/channels/bioconda/packages/tadbit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: tadbit [-h]
-              {map,parse,filter,describe,clean,normalize,bin,merge,segment}
-              ...
-tadbit: error: argument {map,parse,filter,describe,clean,normalize,bin,merge,segment}: invalid choice: 'working' (choose from 'map', 'parse', 'filter', 'describe', 'clean', 'normalize', 'bin', 'merge', 'segment')
 ```
 
 ## tadbit_parse
@@ -582,44 +577,6 @@ General options:
                            trans-chromosomic
   --samtools PATH          path samtools binary
   --tmpdb PATH             if provided uses this directory to manipulate the database
-```
-
-## tadbit_samples
-
-### Tool Description
-A toolkit for analyzing and visualizing Hi-C data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tadbit:1.0.1--py310h2a84d7f_1
-- **Homepage**: http://sgt.cnag.cat/3dg/tadbit/
-- **Package**: https://anaconda.org/channels/bioconda/packages/tadbit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: tadbit [-h]
-              {map,parse,filter,describe,clean,normalize,bin,merge,segment}
-              ...
-tadbit: error: argument {map,parse,filter,describe,clean,normalize,bin,merge,segment}: invalid choice: 'samples' (choose from 'map', 'parse', 'filter', 'describe', 'clean', 'normalize', 'bin', 'merge', 'segment')
-```
-
-## tadbit_generating
-
-### Tool Description
-TADbit: a toolkit for the analysis of chromosome conformation capture sequencing data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tadbit:1.0.1--py310h2a84d7f_1
-- **Homepage**: http://sgt.cnag.cat/3dg/tadbit/
-- **Package**: https://anaconda.org/channels/bioconda/packages/tadbit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: tadbit [-h]
-              {map,parse,filter,describe,clean,normalize,bin,merge,segment}
-              ...
-tadbit: error: argument {map,parse,filter,describe,clean,normalize,bin,merge,segment}: invalid choice: 'generating' (choose from 'map', 'parse', 'filter', 'describe', 'clean', 'normalize', 'bin', 'merge', 'segment')
 ```
 
 ## tadbit_segment

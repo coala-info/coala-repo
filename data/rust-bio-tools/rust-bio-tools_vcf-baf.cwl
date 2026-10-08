@@ -9,9 +9,7 @@ doc: "Annotate b-allele frequency for each single nucleotide variant and sample.
 inputs:
   - id: input_vcf
     type: File
-    doc: Input VCF/BCF file (usually via stdin)
-    inputBinding:
-      position: 1
+    doc: Input VCF/BCF file (read from STDIN)
 outputs:
   - id: stdout
     type: stdout
@@ -19,4 +17,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-stdout: rust-bio-tools_vcf-baf.out
+stdin: $(inputs.input_vcf.path)
+stdout: baf.bcf

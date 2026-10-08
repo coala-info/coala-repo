@@ -18,7 +18,7 @@ inputs:
   - id: cmd_list_submit_file
     type:
       - 'null'
-      - File
+      - string
     doc: Batch jobs file to run calpro step in parallel
     inputBinding:
       position: 101
@@ -86,8 +86,22 @@ outputs:
     doc: Output directory of proximity files
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: cmd_list_submit_file_out
+    type:
+      - 'null'
+      - File
+    doc: Batch jobs file with the calpro commands
+    outputBinding:
+      glob: $(inputs.cmd_list_submit_file || 'cmd_list_submit_file')
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.output_dir_path, "listing":
+          []})'
+        writable: true
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0

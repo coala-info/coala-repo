@@ -11,7 +11,7 @@ doc: "Generates a segmentation specification json file to be used for cell segme
   for each tile.\n\nTool homepage: https://github.com/Vizgen/vizgen-postprocessing"
 inputs:
   - id: input_images
-    type: string
+    type: Directory
     doc: 'Input images can be specified in one of three ways: 1. The path to a directory
       of tiff files, if the files are named by the MERSCOPE convention. Example: /path/to/files/
       2. The path to a directory of tiff files including a python formatting string

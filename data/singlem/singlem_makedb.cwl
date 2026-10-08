@@ -4,8 +4,10 @@ baseCommand:
   - singlem
   - makedb
 label: singlem_makedb
-doc: "Create a searchable OTU sequence database from an OTU table\n\nTool homepage:
-  https://github.com/wwood/singlem"
+doc: 'Create a searchable OTU sequence database from an OTU table
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: archive_otu_table_list
     type:
@@ -38,22 +40,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: gzip_archive_otu_table_list
     type:
       - 'null'
@@ -116,9 +102,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Index sequences using these methods. Note that specifying "scann-naive"
-      means "scann" databases will also be built
-      - smafa-naive
+    doc: Index sequences using these methods. Note that specifying "scann-naive" means
+      "scann" databases will also be built - smafa-naive
     inputBinding:
       position: 101
       prefix: --sequence-database-methods
@@ -127,8 +112,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Index sequences using these types.
-      - nucleotide
+    doc: Index sequences using these types. - nucleotide
     inputBinding:
       position: 101
       prefix: --sequence-database-types
@@ -143,7 +127,7 @@ inputs:
   - id: tmpdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: '[for internal usage] use this directory internally for working'
     inputBinding:
       position: 101
@@ -152,6 +136,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: db_out
+    type: Directory
+    doc: The database directory created (named by db)
+    outputBinding:
+      glob: $(inputs.db)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

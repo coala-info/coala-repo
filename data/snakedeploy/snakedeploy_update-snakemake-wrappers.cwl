@@ -4,8 +4,10 @@ baseCommand:
   - snakedeploy
   - update-snakemake-wrappers
 label: snakedeploy_update-snakemake-wrappers
-doc: "Update all snakemake wrappers in given Snakefiles to their latest versions.\n\
-  \nTool homepage: https://github.com/snakemake/snakedeploy"
+doc: 'Update all snakemake wrappers in given Snakefiles to their latest versions.
+
+
+  Tool homepage: https://github.com/snakemake/snakedeploy'
 inputs:
   - id: snakefiles
     type:
@@ -32,9 +34,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Regular expression for deriving an entity name from the snakefile file 
-      name (will be used for adding a label and for title and description). Has 
-      to contain a group 'entity' (e.g. '(?P<entity>.+)/environment.yaml').
+    doc: Regular expression for deriving an entity name from the snakefile file name
+      (will be used for adding a label and for title and description). Has to contain
+      a group 'entity' (e.g. '(?P<entity>.+)/environment.yaml').
     inputBinding:
       position: 102
       prefix: --entity-regex
@@ -50,8 +52,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Add a label to the PR. Has to be used in combination with 
-      --entity-regex.
+    doc: Add a label to the PR. Has to be used in combination with --entity-regex.
     inputBinding:
       position: 102
       prefix: --pr-add-label
@@ -59,7 +60,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: updated_snakefiles
+    type:
+      type: array
+      items: File
+    doc: The Snakefiles, updated in place
+    outputBinding:
+      glob: $(inputs.snakefiles.map(function(f){return f.basename;}))
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snakedeploy:0.16.0--pyhdfd78af_0
 stdout: snakedeploy_update-snakemake-wrappers.out
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.snakefiles)

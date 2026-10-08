@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - seqseqpan.py
+  - seq-seq-pan
   - merge
 label: seq-seq-pan_merge
 doc: "Add small LCBs to end or beginning of surrounding LCBs. Can only be used with
@@ -24,7 +24,7 @@ inputs:
   - id: order
     type:
       - 'null'
-      - string
+      - int
     doc: Ordering of blocks in XMFA/FASTA output (0,1,2,...)
     inputBinding:
       position: 101
@@ -56,6 +56,11 @@ outputs:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path_path)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1

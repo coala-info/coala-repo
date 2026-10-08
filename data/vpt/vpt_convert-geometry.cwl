@@ -30,12 +30,19 @@ inputs:
   - id: id_mapping_file
     type:
       - 'null'
-      - File
+      - string
     doc: Path to csv file where map from source segmentation entity id to 
       EntityID in result will be saved.
     inputBinding:
       position: 101
       prefix: --id-mapping-file
+  - id: input_boundary_files
+    type:
+      type: array
+      items: File
+    doc: Segmentation files (geojson, hdf5 or parquet) to convert. They are 
+      staged in the working directory, so the regular expression in 
+      input_boundaries must match their file names.
   - id: input_boundaries
     type: string
     doc: Regular expression that matches all input segmentation files (geojson 
@@ -108,8 +115,18 @@ outputs:
       will be saved.
     outputBinding:
       glob: $(inputs.output_boundaries_path)
+  - id: id_mapping
+    type:
+      - 'null'
+      - File
+    doc: Csv file that maps the source segmentation entity ids to the EntityID 
+      of the result.
+    outputBinding:
+      glob: $(inputs.id_mapping_file)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.input_boundary_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

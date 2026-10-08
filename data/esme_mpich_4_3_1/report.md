@@ -1,12 +1,18 @@
 # esme_mpich_4_3_1 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| esme_mpich_4_3_1_nf-config | PASS | Fixed image to the package's own image; --all reports netCDF-Fortran 4.6.2 built with mpicc/mpifort (MPICH 4.3.1 environment). |
+
 ## esme_mpich_4_3_1_nf-config
 
 ### Tool Description
 Display configuration information for the NetCDF-Fortran library.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+- **Docker Image**: quay.io/biocontainers/esme_mpich_4_3_1:1.0.2--mpich_h16966b9_0
 - **Homepage**: https://github.com/j34ni/bioconda-recipes
 - **Package**: https://anaconda.org/channels/bioconda/packages/esme_mpich_4_3_1/overview
 - **Validation**: PASS

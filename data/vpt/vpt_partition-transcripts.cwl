@@ -39,9 +39,7 @@ inputs:
       position: 101
       prefix: --overwrite
   - id: output_entity_by_gene_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output-entity-by-gene

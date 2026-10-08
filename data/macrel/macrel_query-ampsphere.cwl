@@ -1,175 +1,93 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: macrel
+baseCommand:
+  - macrel
+  - query-ampsphere
 label: macrel_query-ampsphere
-doc: "macrel v1.6.0\n\nTool homepage: https://github.com/BigDataBiology/macrel"
+doc: "Query peptide sequences against the AMPSphere database of antimicrobial peptides (web API or local database).\n\nTool homepage: https://github.com/BigDataBiology/macrel"
 inputs:
-  - id: command
-    type: string
-    doc: Macrel command to execute (see documentation)
-    inputBinding:
-      position: 1
-  - id: cache_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to use for caching AMPSphere data
-    inputBinding:
-      position: 102
-      prefix: --cache-dir
-  - id: cluster
-    type:
-      - 'null'
-      - boolean
-    doc: Whether to pre-cluster the smORFs (at 100% identity) to avoid repeats
-    inputBinding:
-      position: 102
-      prefix: --cluster
   - id: fasta_file
-    type:
-      - 'null'
-      - File
-    doc: path to the input FASTA file. This is used in both the peptides command
-      (where the file is expected to contain short amino-acid sequences) and in 
-      the contigs command (where the file is expected to contain longer 
-      nucleotide contigs)
+    type: File
+    doc: "path to the input FASTA file of peptide sequences to query"
     inputBinding:
       position: 102
       prefix: --fasta
-  - id: force
-    type:
-      - 'null'
-      - boolean
-    doc: Force operation
-    inputBinding:
-      position: 102
-      prefix: --force
-  - id: keep_fasta_headers
-    type:
-      - 'null'
-      - boolean
-    doc: Keep complete FASTA headers [get-smorfs command]
-    inputBinding:
-      position: 102
-      prefix: --keep-fasta-headers
-  - id: keep_negatives
-    type:
-      - 'null'
-      - boolean
-    doc: Whether to keep non-AMPs in the output
-    inputBinding:
-      position: 102
-      prefix: --keep-negatives
-  - id: local
-    type:
-      - 'null'
-      - boolean
-    doc: Use local AMPSphere database
-    inputBinding:
-      position: 102
-      prefix: --local
-  - id: log_append
-    type:
-      - 'null'
-      - boolean
-    doc: 'If set, then the log file is appended to (default: overwrite existing file)'
-    inputBinding:
-      position: 102
-      prefix: --log-append
-  - id: log_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the output logfile
-    inputBinding:
-      position: 102
-      prefix: --log-file
-  - id: mem
-    type:
-      - 'null'
-      - string
-    doc: Memory limit
-    inputBinding:
-      position: 102
-      prefix: --mem
-  - id: no_download_database
-    type:
-      - 'null'
-      - boolean
-    doc: Do not download the AMPSphere database
-    inputBinding:
-      position: 102
-      prefix: --no-download-database
   - id: output_dir
-    type:
-      - 'null'
-      - string
-    doc: path to the output directory
+    type: string
+    default: "macrel_out"
+    doc: "path to the output directory (must not exist yet)"
     inputBinding:
       position: 102
       prefix: --output
-  - id: outtag
-    type:
-      - 'null'
-      - string
-    doc: Set output tag
-    inputBinding:
-      position: 102
-      prefix: --tag
   - id: query_mode
     type:
       - 'null'
       - string
-    doc: 'Query mode to use in the AMPSphere query (options: exact, mmseqs, hhm)'
+    doc: "Query mode to use in the AMPSphere query (options: exact, mmseqs, hmmer; default: exact)"
     inputBinding:
       position: 102
       prefix: --query-mode
-  - id: quiet
+  - id: local
     type:
       - 'null'
       - boolean
-    doc: Print only errors
+    doc: "Use local AMPSphere database (downloaded into the cache directory) instead of the AMPSphere web API"
     inputBinding:
       position: 102
-      prefix: -q
+      prefix: --local
   - id: re_download_database
     type:
       - 'null'
       - boolean
-    doc: Download the AMPSphere database even if it already was downloaded 
-      before
+    doc: "Download the AMPSphere database even if it already was downloaded before"
     inputBinding:
       position: 102
       prefix: --re-download-database
-  - id: reads1
+  - id: no_download_database
     type:
       - 'null'
-      - File
-    doc: Path to the first read file
+      - boolean
+    doc: "Do not download the AMPSphere database"
     inputBinding:
       position: 102
-      prefix: --reads1
-  - id: reads2
+      prefix: --no-download-database
+  - id: cache_dir
     type:
       - 'null'
-      - File
-    doc: Path to the second read file
+      - Directory
+    doc: "Directory to use for caching AMPSphere data (an existing cache with the database)"
     inputBinding:
       position: 102
-      prefix: --reads2
+      prefix: --cache-dir
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use
+    doc: "Number of threads to use"
     inputBinding:
       position: 102
       prefix: --threads
+  - id: outtag
+    type:
+      - 'null'
+      - string
+    doc: "Set output tag (prefix of the output file names; default: macrel.out)"
+    inputBinding:
+      position: 102
+      prefix: --tag
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: "Overwrite the output folder if it already exists"
+    inputBinding:
+      position: 102
+      prefix: --force
   - id: tmpdir
     type:
       - 'null'
       - string
-    doc: 'Temporary directory to use (default: $TMPDIR in the environment or /tmp)'
+    doc: "Temporary directory to use (default: $TMPDIR in the environment or /tmp)"
     inputBinding:
       position: 102
       prefix: --tmpdir
@@ -177,32 +95,51 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Print debug information
+    doc: "Print debug information"
     inputBinding:
       position: 102
-      prefix: -V
-  - id: output_file_path
-    type: string?
+      prefix: --verbose
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: "Print only errors"
     inputBinding:
-      position: 103
-      prefix: --file-output
+      position: 102
+      prefix: --quiet
+  - id: log_file
+    type:
+      - 'null'
+      - string
+    doc: "Path to the output logfile"
+    inputBinding:
+      position: 102
+      prefix: --log-file
+  - id: log_append
+    type:
+      - 'null'
+      - boolean
+    doc: "If set, then the log file is appended to (default: overwrite existing file)"
+    inputBinding:
+      position: 102
+      prefix: --log-append
 outputs:
-  - id: output_file
+  - id: output
+    type: Directory
+    doc: "Macrel output directory"
+    outputBinding:
+      glob: $(inputs.output_dir)
+  - id: log
     type:
       - 'null'
       - File
-    doc: path to the output file
+    doc: "Log file"
     outputBinding:
-      glob: $(inputs.output_file_path)
-  - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: path to the output directory
-    outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.log_file)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macrel:1.6.0--pyh7e72e81_1

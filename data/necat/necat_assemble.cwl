@@ -1,24 +1,47 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: necat.pl
+baseCommand:
+  - necat
+  - assemble
 label: necat_assemble
-doc: "NECAT is a tool for assembling long reads.\n\nTool homepage: https://github.com/xiaochuanle/NECAT"
+doc: "generate contigs (runs read correction first when it is not done yet)\n\nUsage: necat.pl correct|assemble|bridge|config cfg_fname. The config file (see necat_config) must name the read list by its file name (ONT_READ_LIST=<read_list basename>), and the read list must name the reads by their file names; the CWL stages the read list and reads in the working directory so these names resolve. The project folder (PROJECT) is written in the working directory; it stores absolute paths, so each command reruns the earlier steps from the reads.\n\nTool homepage: https://github.com/xiaochuanle/NECAT"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.read_list)
+      - $(inputs.reads)
 inputs:
-  - id: command
-    type: string
-    doc: 'Command to execute: correct, assemble, bridge, or config'
+  - id: config_file
+    type: File
+    doc: NECAT config file (cfg_fname)
+    loadContents: true
     inputBinding:
       position: 1
-  - id: cfg_fname
-    type: string
-    doc: Configuration file name
-    inputBinding:
-      position: 2
+  - id: read_list
+    type: File
+    doc: Read list file named by ONT_READ_LIST in the config; one read file name per line
+  - id: reads
+    type:
+      type: array
+      items: File
+    doc: Raw read files (FASTA/FASTQ, may be gzipped) named in the read list
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: project_output
+    type: Directory
+    doc: NECAT project folder
+    outputBinding:
+      glob: "$(inputs.config_file.contents.match(/^\\s*PROJECT=\\s*(\\S+)/m)[1])"
+  - id: contigs
+    type: File
+    doc: Contigs from fsa_assemble
+    outputBinding:
+      glob: "$(inputs.config_file.contents.match(/^\\s*PROJECT=\\s*(\\S+)/m)[1])/4-fsa/contigs.fasta"
+  - id: polished_contigs
+    type: ['null', File]
+    doc: Polished contigs (when POLISH_CONTIGS=true)
+    outputBinding:
+      glob: "$(inputs.config_file.contents.match(/^\\s*PROJECT=\\s*(\\S+)/m)[1])/4-fsa/polished_contigs.fasta"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/necat:0.0.1_update20200803--h5ca1c30_6
-stdout: necat_assemble.out

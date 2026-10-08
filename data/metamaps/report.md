@@ -1,9 +1,18 @@
 # metamaps CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metamaps_classify | Failed | image problem: classify crashes with a Boost regex error ('uninitialized boost::match_results') while reading the NCBI taxonomy of the nf-core MetaMaps test database. |
+| metamaps_index | PASS |  |
+| metamaps_mapagainstindex | Failed | tool bug: mapAgainstIndex hangs with no CPU use (futex wait) right after loading a valid index, even with 30 reads and 1 thread, and writes an empty mapping file. |
+| metamaps_mapdirectly | PASS |  |
+
 ## metamaps_mapdirectly
 
 ### Tool Description
-Simultaneous metagenomic classification and mapping.
+Map long reads directly against a MetaMaps reference database FASTA (first step of simultaneous metagenomic classification and mapping).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metamaps:0.1.98102e9--h21ec9f0_2
@@ -18,24 +27,53 @@ Simultaneous metagenomic classification and mapping.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-MetaMaps v 0.1 
+Available options
+-----------------
+-h, --help
+    Print this help page
 
-  Simultaneous metagenomic classification and mapping.
+-r <value>, --reference <value>
+    an input reference file (fasta/fastq)[.gz]
 
-Usage:
+-k <value>, --kmer <value>
+    kmer size <= 16 [default 16 (DNA)]
 
-  ./metamaps mapDirectly|classify|mapAgainstIndex|index
+-p <value>, --pval <value>
+    p-value cutoff, used to determine window/sketch sizes [default e-03]
 
-Parameters:
+--maxmemory <value>, --mm <value>
+    maximum memory, in GB [default : not active]
 
-   ./metamaps COMMAND -h for help
+-w <value>, --window <value>
+    window size [default : computed using pvalue cutoff]
+    P-value is not considered if a window value is provided. Lower window
+    dow size implies denser sketch
+
+-m <value>, --minReadLen <value>
+    minimum read length to map [default : 1000]
+
+--perc_identity <value>, --pi <value>
+    threshold for identity [default : 80]
+
+-t <value>, --threads <value>
+    count of threads for parallel execution [default : 1]
+
+-q <value>, --query <value>
+    an input query file (fasta/fastq)[.gz]
+
+--all
+    report all the mapping locations for a read, default is to consider few
+    best ones
+
+-o <value>, --output <value>
+    output file
 ```
 
 
 ## metamaps_classify
 
 ### Tool Description
-Classify contigs based on sequence identity and length.
+Classify reads from a metamaps mapDirectly mapping file against a MetaMaps database (EM step).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metamaps:0.1.98102e9--h21ec9f0_2
@@ -68,7 +106,7 @@ Available options
 ## metamaps_mapagainstindex
 
 ### Tool Description
-Simultaneous metagenomic classification and mapping.
+Map long reads against an index built with metamaps index.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metamaps:0.1.98102e9--h21ec9f0_2
@@ -78,24 +116,33 @@ Simultaneous metagenomic classification and mapping.
 
 ### Original Help Text
 ```text
-MetaMaps v 0.1 
+Available options
+-----------------
+-h, --help
+    Print this help page
 
-  Simultaneous metagenomic classification and mapping.
+-i <value>, --index <value> [required]
+    output prefix for
 
-Usage:
+-q <value>, --query <value>
+    an input query file (fasta/fastq)[.gz]
 
-  ./metamaps mapDirectly|classify|mapAgainstIndex|index
+-o <value>, --output <value>
+    output file
 
-Parameters:
+-t <value>, --threads <value>
+    count of threads for parallel execution [default : 1]
 
-   ./metamaps COMMAND -h for help
+--all
+    report all the mapping locations for a read, default is to consider few
+    best ones
 ```
 
 
 ## metamaps_index
 
 ### Tool Description
-Index a reference genome for mapping.
+Build a MetaMaps index of a reference file, for use with metamaps mapAgainstIndex.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metamaps:0.1.98102e9--h21ec9f0_2

@@ -1,76 +1,73 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: polap
+baseCommand:
+  - polap
+  - seeds
 label: polap_seeds
-doc: "Plant organelle DNA long-read assembly pipeline.\n\nTool homepage: https://github.com/goshng/polap"
+doc: "Select seed contigs for organelle-genome assembly from an annotated Flye genome assembly.\n\
+  \nTool homepage: https://github.com/goshng/polap"
 inputs:
+  - id: outdir
+    type: Directory
+    doc: Polap output folder with the annotated assembly graph; it is updated in place.
+    inputBinding:
+      position: 101
+      prefix: -o
+      valueFrom: $(self.basename)
   - id: inum
     type:
       - 'null'
       - int
-    doc: Integer parameter
+    doc: Index of the source assembly (folder <outdir>/<inum>); default 0.
     inputBinding:
       position: 101
-      prefix: --inum
+      prefix: -i
   - id: jnum
     type:
       - 'null'
       - int
-    doc: Integer parameter
+    doc: Index of the target organelle-genome assembly; default 1.
     inputBinding:
       position: 101
-      prefix: --jnum
+      prefix: -j
+  - id: plastid
+    type:
+      - 'null'
+      - boolean
+    doc: Use plastid genes instead of mitochondrial genes.
+    inputBinding:
+      position: 101
+      prefix: --plastid
+  - id: max_seeds
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of seed contigs (seeds-graph selection).
+    inputBinding:
+      position: 101
+      prefix: --max-seeds
   - id: long_reads
     type:
       - 'null'
       - File
-    doc: Long-read file
+    doc: Long-read data file in FASTQ format.
     inputBinding:
       position: 101
-      prefix: --long-reads
-  - id: outdir
-    type:
-      - 'null'
-      - string
-    doc: Output directory
-    inputBinding:
-      position: 101
-      prefix: --outdir
-  - id: short_read1
-    type:
-      - 'null'
-      - File
-    doc: Short-read file 1
-    inputBinding:
-      position: 101
-      prefix: --short-read1
-  - id: short_read2
-    type:
-      - 'null'
-      - File
-    doc: Short-read file 2
-    inputBinding:
-      position: 101
-      prefix: --short-read2
-  - id: single_min
-    type:
-      - 'null'
-      - int
-    doc: Minimum value for single reads
-    inputBinding:
-      position: 101
-      prefix: --single-min
+      prefix: -l
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
-  - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory
+    doc: Standard output (log).
+  - id: outdir_out
+    type: Directory
+    doc: Output folder with all polap results.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.outdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/polap:0.5.3.1--py312hdfd78af_0

@@ -12,6 +12,12 @@ inputs:
       "<vcf_prefix>*.vcf"
     inputBinding:
       position: 1
+  - id: vcf_files
+    type:
+      type: array
+      items: File
+    doc: The VCF (or VCZ) files that vcf_prefix names. They are staged in the 
+      working directory so the prefix finds them.
   - id: arg_prefix
     type: string
     doc: The prefix to use when writing the resulting ARGs to disk (.trees 
@@ -125,6 +131,10 @@ outputs:
     doc: Files written with the prefix given in arg_prefix
     outputBinding:
       glob: $(inputs.arg_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.vcf_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mrpast:0.2--py312h8f4af18_0

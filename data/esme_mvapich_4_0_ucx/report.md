@@ -1,12 +1,18 @@
 # esme_mvapich_4_0_ucx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| esme_mvapich_4_0_ucx_nf-config | PASS | Fixed image to the package's own image; --all reports netCDF-Fortran 4.6.2 built with mpicc/mpifort (MVAPICH 4.0 UCX environment). |
+
 ## esme_mvapich_4_0_ucx_nf-config
 
 ### Tool Description
 Display configuration information for the library.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+- **Docker Image**: quay.io/biocontainers/esme_mvapich_4_0_ucx:1.0.2--mvapich_ucx_h33124db_0
 - **Homepage**: https://github.com/j34ni/bioconda-recipes
 - **Package**: https://anaconda.org/channels/bioconda/packages/esme_mvapich_4_0_ucx/overview
 - **Validation**: PASS

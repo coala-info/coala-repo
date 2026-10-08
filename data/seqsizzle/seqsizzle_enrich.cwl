@@ -2,7 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - seqsizzle
-  - enrich
+arguments:
+  - position: 2
+    valueFrom: enrich
 label: seqsizzle_enrich
 doc: "Find enriched k-mers in the reads. This can be used to identify potential adapter/primer
   sequences\n\nTool homepage: https://github.com/ChangqingW/SeqSizzle"

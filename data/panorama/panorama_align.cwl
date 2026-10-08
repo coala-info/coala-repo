@@ -4,9 +4,9 @@ baseCommand:
   - panorama
   - align
 label: panorama_align
-doc: "Perform sequence alignment between pangenome gene families using MMseqs2 with
-  support for both inter-pangenome and all-against-all alignment modes.\n\nTool homepage:
-  https://github.com/labgem/panorama"
+doc: "Perform sequence alignment between pangenome gene families using MMseqs2 with\
+  \ support for both inter-pangenome and all-against-all alignment modes.\n\nTool\
+  \ homepage: https://github.com/labgem/panorama"
 inputs:
   - id: align_cov_mode
     type:
@@ -34,9 +34,11 @@ inputs:
       position: 101
       prefix: --align_identity
   - id: all_against_all
-    type: boolean
-    doc: Perform all-against-all alignment including intra-pangenome 
-      comparisons. Cannot be used with --inter_pangenomes
+    type:
+      - 'null'
+      - boolean
+    doc: Perform all-against-all alignment including intra-pangenome comparisons.
+      Cannot be used with --inter_pangenomes
     inputBinding:
       position: 101
       prefix: --all_against_all
@@ -57,9 +59,11 @@ inputs:
       position: 101
       prefix: --force
   - id: inter_pangenomes
-    type: boolean
-    doc: Perform inter-pangenome alignment only (exclude intra-pangenome 
-      comparisons). Cannot be used with --all_against_all
+    type:
+      - 'null'
+      - boolean
+    doc: Perform inter-pangenome alignment only (exclude intra-pangenome comparisons).
+      Cannot be used with --all_against_all
     inputBinding:
       position: 101
       prefix: --inter_pangenomes
@@ -74,8 +78,8 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
-    doc: log output file
+      - string
+    doc: Log output file name
     inputBinding:
       position: 101
       prefix: --log
@@ -85,6 +89,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pangenomes
+  - id: pangenome_files
+    type:
+      type: array
+      items: File
+    doc: Pangenome .h5 files named in the pangenomes list. They are staged in the
+      working directory, so the list must name them by file name (second column).
   - id: threads
     type:
       - 'null'
@@ -105,8 +115,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -122,8 +132,18 @@ outputs:
     doc: Output directory where alignment results will be written
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (with log)
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pangenome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0

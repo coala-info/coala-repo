@@ -8,6 +8,11 @@ doc: "Discover SV candidate alleles in one sample\n\nTool homepage: https://gith
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Alignment file for query sample in BAM or CRAM format
     inputBinding:
       position: 101
@@ -144,9 +149,8 @@ inputs:
       position: 101
       prefix: --min-sv-mapq
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: string
+    default: sawfish_discover_output
     doc: Directory for all discover command output (must not already exist)
     inputBinding:
       position: 101
@@ -178,6 +182,11 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
+  - id: output_directory
+    type: Directory
+    doc: Output directory written by the command
+    outputBinding:
+      glob: $(inputs.output_dir)
   - id: stdout
     type: stdout
     doc: Standard output

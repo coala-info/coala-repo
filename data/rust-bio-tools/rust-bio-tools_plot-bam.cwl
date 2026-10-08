@@ -11,7 +11,9 @@ inputs:
     type:
       type: array
       items: File
-    doc: BAM file to be visualized
+    secondaryFiles:
+      - .bai
+    doc: BAM file to be visualized (indexed)
     inputBinding:
       position: 101
       prefix: --bam-path
@@ -44,4 +46,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0
-stdout: rust-bio-tools_plot-bam.out
+stdout: plot.html

@@ -63,6 +63,7 @@ inputs:
     doc: 'Set the number of threads used (default: use all threads)'
     inputBinding:
       position: 102
+      prefix: -t
   - id: verbose
     type:
       - 'null'

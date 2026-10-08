@@ -1,84 +1,79 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igda_pipe_phase_pb
+baseCommand:
+  - igda_pipe_phase_pb_diploid
 label: igda-script_igda_pipe_phase_pb_diploid
-doc: "Phase diploid genomes using long reads\n\nTool homepage: https://github.com/zhixingfeng/shell"
+doc: "iGDA: diploid phasing of SNVs of PacBio reads for one chromosome.\nUsage: igda_pipe_phase_pb_diploid -n nthread -b niter -c min_cvg -t min_nn -m max_nn indir reffile outdir\n\nTool homepage: https://github.com/zhixingfeng/shell"
 inputs:
-  - id: input_directory
-    type: Directory
-    doc: Input directory containing phased reads
-    inputBinding:
-      position: 1
-  - id: reference_file
-    type: File
-    doc: Reference genome file
-    inputBinding:
-      position: 2
-  - id: output_directory
-    type: string
-    doc: Output directory for phased results
-    inputBinding:
-      position: 3
-  - id: max_iterations_ann
-    type:
-      - 'null'
-      - int
-    doc: maximal number of iteration in ANN
-    inputBinding:
-      position: 104
-      prefix: -b
-  - id: max_nearest_neighbors
-    type:
-      - 'null'
-      - int
-    doc: maximal number of nearest neighbors
-    inputBinding:
-      position: 104
-      prefix: -m
   - id: min_coverage
     type:
       - 'null'
       - int
-    doc: minimal coverage of each contig
+    doc: "minimal coverage of each contig"
     inputBinding:
-      position: 104
+      position: 1
       prefix: -c
-  - id: min_jaccard_index
-    type:
-      - 'null'
-      - float
-    doc: minimal jaccard index for find_nccontigs and tred
-    inputBinding:
-      position: 104
-      prefix: -j
   - id: min_nearest_neighbors
     type:
       - 'null'
       - int
-    doc: minimal number of nearest neighbors
+    doc: "minimal number of nearest neighbors. [default = 25]"
     inputBinding:
-      position: 104
+      position: 1
       prefix: -t
+  - id: max_nearest_neighbors
+    type:
+      - 'null'
+      - int
+    doc: "maximal number of nearest neighbors. [default = 50]"
+    inputBinding:
+      position: 1
+      prefix: -m
+  - id: min_jaccard_index
+    type:
+      - 'null'
+      - float
+    doc: "minimal jaccard index for find_nccontigs and tred. [default = 2.0]"
+    inputBinding:
+      position: 1
+      prefix: -j
+  - id: max_ann_iterations
+    type:
+      - 'null'
+      - int
+    doc: "maximal number of iteration in ANN. [default = 1]"
+    inputBinding:
+      position: 1
+      prefix: -b
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of threads
+    doc: "number of threads. [default = 1]"
     inputBinding:
-      position: 104
+      position: 1
       prefix: -n
+  - id: indir
+    type: Directory
+    doc: "per-chromosome detected_snv directory of igda_pipe_detect"
+    inputBinding:
+      position: 2
+  - id: reffile
+    type: File
+    doc: "reference FASTA file of the chromosome"
+    inputBinding:
+      position: 3
+  - id: outdir
+    type: string
+    doc: "output directory"
+    inputBinding:
+      position: 4
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_directory_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory for phased results
+  - id: out_dir
+    type: Directory
+    doc: "output directory with phased contigs"
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igda-script:1.0.1--hdfd78af_0
-stdout: igda-script_igda_pipe_phase_pb_diploid.out

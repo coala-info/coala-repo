@@ -44,9 +44,8 @@ inputs:
       position: 101
       prefix: --min-sv-mapq
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: string
+    default: sawfish_joint-call_output
     doc: Directory for all joint-call command output (must not already exist)
     inputBinding:
       position: 101
@@ -77,6 +76,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample-csv
+  - id: sample_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named inside the sample discover directories (alignment file, its
+      index and the reference). They are staged in the working directory so
+      that relative paths in the discover settings resolve.
   - id: sample_dir
     type:
       - 'null'
@@ -116,9 +123,18 @@ inputs:
       position: 101
       prefix: --treat-single-copy-as-haploid
 outputs:
+  - id: output_directory
+    type: Directory
+    doc: Output directory written by the command
+    outputBinding:
+      glob: $(inputs.output_dir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: ${ return inputs.sample_files || []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sawfish:2.2.1--h9ee0642_0

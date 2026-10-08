@@ -4,19 +4,22 @@ baseCommand:
   - singlem
   - query
 label: singlem_query
-doc: "Find closely related sequences in a SingleM database.\n\nTool homepage: https://github.com/wwood/singlem"
+doc: 'Find closely related sequences in a SingleM database.
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: continue_on_missing_genes
     type:
       - 'null'
       - boolean
-    doc: Continue if a gene is missing from the DB. Only works with 
-      smafa/nuclotide search method.
+    doc: Continue if a gene is missing from the DB. Only works with smafa/nuclotide
+      search method.
     inputBinding:
       position: 101
       prefix: --continue-on-missing-genes
   - id: db
-    type: string
+    type: Directory
     doc: Output from 'makedb' mode
     inputBinding:
       position: 101
@@ -37,28 +40,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dump
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: limit_per_sequence
     type:
       - 'null'
       - string
-    doc: How many entries (samples/genomes from DB with identical sequences) to 
-      report for each distinct, matched sequence (arbitrarily chosen)
+    doc: How many entries (samples/genomes from DB with identical sequences) to report
+      for each distinct, matched sequence (arbitrarily chosen)
     inputBinding:
       position: 101
       prefix: --limit-per-sequence
@@ -66,8 +53,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Report sequences less than or equal to this divergence i.e. number of 
-      different bases/amino acids
+    doc: Report sequences less than or equal to this divergence i.e. number of different
+      bases/amino acids
     inputBinding:
       position: 101
       prefix: --max-divergence
@@ -75,8 +62,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: How many nearest neighbours to report. Each neighbour is a distinct 
-      sequence from the DB.
+    doc: How many nearest neighbours to report. Each neighbour is a distinct sequence
+      from the DB.
     inputBinding:
       position: 101
       prefix: --max-nearest-neighbours
@@ -84,9 +71,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: How many nearest neighbours to search for with approximate nearest 
-      neighbours. Of these hits, only --max-nearest-neighbours will actually be 
-      reported. Ignored for --search-method naive and scann-naive.
+    doc: How many nearest neighbours to search for with approximate nearest neighbours.
+      Of these hits, only --max-nearest-neighbours will actually be reported. Ignored
+      for --search-method naive and scann-naive.
     inputBinding:
       position: 101
       prefix: --max-search-nearest-neighbours
@@ -94,9 +81,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Cache all DB data in python-land instead of querying for it by SQL each
-      time. This is faster particularly for querying many sequences, but uses 
-      more memory and has a larger start-up time for each marker gene.
+    doc: Cache all DB data in python-land instead of querying for it by SQL each time.
+      This is faster particularly for querying many sequences, but uses more memory
+      and has a larger start-up time for each marker gene.
     inputBinding:
       position: 101
       prefix: --preload-db
@@ -104,8 +91,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Query the database with all sequences in archive tables newline 
-      separated in this file
+    doc: Query the database with all sequences in archive tables newline separated
+      in this file
     inputBinding:
       position: 101
       prefix: --query-archive-otu-table-list
@@ -122,20 +109,11 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Query the database with all sequences in gzip'd archive tables newline 
-      separated in this file
+    doc: Query the database with all sequences in gzip'd archive tables newline separated
+      in this file
     inputBinding:
       position: 101
       prefix: --query-gzip-archive-otu-table-list
-  - id: query_otu_table
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Query the database with all sequences in this OTU table
-    inputBinding:
-      position: 101
-      prefix: --query-otu-table
   - id: query_otu_tables
     type:
       - 'null'
@@ -149,8 +127,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Query the database with all sequences in OTU table files newline 
-      separated in this file
+    doc: Query the database with all sequences in OTU table files newline separated
+      in this file
     inputBinding:
       position: 101
       prefix: --query-otu-tables-list
@@ -191,8 +169,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Which sequence types to compare (i.e. protein for blastp, nucleotide 
-      for blastn)
+    doc: Which sequence types to compare (i.e. protein for blastp, nucleotide for
+      blastn)
     inputBinding:
       position: 101
       prefix: --sequence-type

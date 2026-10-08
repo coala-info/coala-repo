@@ -9,29 +9,43 @@ doc: "Tool to build artifical reads from real BAM files with identical propertie
 inputs:
   - id: bam
     type: File
-    doc: Input BAM file
+    secondaryFiles:
+      - .bai
+    doc: Input BAM file (indexed)
     inputBinding:
       position: 1
   - id: input_ref
     type: File
-    doc: Input reference as fasta file
+    secondaryFiles:
+      - .fai
+    doc: Input reference as fasta file (indexed)
     inputBinding:
       position: 2
+  - id: output_bam
+    type: string
+    doc: Output BAM file with artificial reads
+    inputBinding:
+      position: 3
+  - id: output_ref
+    type: string
+    doc: Output fasta file with artificial reference
+    inputBinding:
+      position: 4
   - id: chr
     type: string
     doc: chromosome name
     inputBinding:
-      position: 3
+      position: 5
   - id: start
     type: int
     doc: 1-based start position
     inputBinding:
-      position: 4
+      position: 6
   - id: end
     type: int
     doc: 1-based exclusive end position
     inputBinding:
-      position: 5
+      position: 7
   - id: keep_only_pairs
     type:
       - 'null'
@@ -41,16 +55,16 @@ inputs:
       position: 106
       prefix: --keep-only-pairs
 outputs:
-  - id: output_bam
+  - id: output_bam_file
     type: File
     doc: Output BAM file with artificial reads
     outputBinding:
-      glob: '*.out'
-  - id: output_ref
+      glob: $(inputs.output_bam)
+  - id: output_ref_file
     type: File
     doc: Output fasta file with artificial reference
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_ref)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-bio-tools:0.42.2--h4458251_0

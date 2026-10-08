@@ -5,11 +5,6 @@ label: wakhan_hapcorrect
 doc: "Wakhan plots coverage and copy number profiles from a bam and phased VCF files\n\
   \nTool homepage: https://github.com/KolmogorovLab/Wakhan"
 inputs:
-  - id: mode
-    type: string
-    doc: Run full pipeline, cna or hapcorrect modes
-    inputBinding:
-      position: 1
   - id: bin_size
     type:
       - 'null'
@@ -131,6 +126,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Path to normal phased vcf (tumor-normal mode)
     inputBinding:
       position: 102
@@ -185,6 +183,11 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: path to tumor bam file (must be indexed)
     inputBinding:
       position: 102
@@ -201,6 +204,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Path to tumor phased VCF (tumor-only mode)
     inputBinding:
       position: 102
@@ -221,6 +227,9 @@ inputs:
     inputBinding:
       position: 102
       prefix: --without-phasing
+arguments:
+  - position: 1
+    valueFrom: hapcorrect
 outputs:
   - id: stdout
     type: stdout

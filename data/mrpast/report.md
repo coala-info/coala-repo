@@ -1,5 +1,21 @@
 # mrpast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mrpast_arginfer | Failed | image problem: no ARG inference tool in the image (tsinfer, vcf2zarr, Relate and GNU parallel for SINGER are missing). |
+| mrpast_confidence | PASS |  |
+| mrpast_init | PASS |  |
+| mrpast_model | PASS |  |
+| mrpast_polarize | PASS | Planted ancestral FASTA on an mrpast-simulated VCF flips exactly the 100 planted sites. |
+| mrpast_process | PASS |  |
+| mrpast_select | PASS |  |
+| mrpast_show | PASS |  |
+| mrpast_sim2vcf | PASS | Converts mrpast-simulated ARGs to VCF and popmap; --zarr fails because vcf2zarr is not in the image. |
+| mrpast_simulate | PASS |  |
+| mrpast_solve | PASS |  |
+
 ## mrpast_simulate
 
 ### Tool Description
@@ -435,75 +451,4 @@ options:
 
 ## Metadata
 - **Skill**: generated
-
-## mrpast_mrpast_simulate
-
-### Tool Description
-Simulate demographic histories using mr.py.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mrpast:0.2--py312h8f4af18_0
-- **Homepage**: https://aprilweilab.github.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/mrpast/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: mrpast simulate [-h] [--jobs JOBS] [--seed SEED] [--verbose]
-                       [--replicates REPLICATES] [--seq-len SEQ_LEN]
-                       [--recomb-rate RECOMB_RATE] [--individuals INDIVIDUALS]
-                       [--debug-demo]
-                       model arg_prefix
-
-positional arguments:
-  model                 The input YAML file specifying the model
-  arg_prefix            The prefix for the output tree-sequence files
-
-options:
-  -h, --help            show this help message and exit
-  --jobs JOBS, -j JOBS  Number of jobs (threads) to use. Defaults to 1.
-  --seed SEED           Set the random seed.
-  --verbose, -v         Verbose output, including timing information.
-  --replicates REPLICATES, -r REPLICATES
-                        Number of simulation replications to perform. Defaults
-                        to 20.
-  --seq-len SEQ_LEN, -s SEQ_LEN
-                        Length of sequences in base-pairs. Default to
-                        100000000.
-  --recomb-rate RECOMB_RATE, -e RECOMB_RATE
-                        Rate of recombination, or filename/prefix for
-                        recombination map. A prefix will match
-                        '<prefix>*.txt'. Defaults to 1e-08.
-  --individuals INDIVIDUALS, -n INDIVIDUALS
-                        Number of individuals per population. Defaults to 10.
-  --debug-demo, -d      Output results from msprime demography debugger.
-```
-
-## mrpast_mrpast_solve
-
-### Tool Description
-Solve problems using the mrpast solver.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mrpast:0.2--py312h8f4af18_0
-- **Homepage**: https://aprilweilab.github.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/mrpast/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: mrpast solve [-h] [--timeout TIMEOUT] [--jobs JOBS] [--seed SEED]
-                    [--verbose]
-                    solver_inputs [solver_inputs ...]
-
-positional arguments:
-  solver_inputs         The solver input JSON files. The output filenames will
-                        be derived from the input filenames.
-
-options:
-  -h, --help            show this help message and exit
-  --timeout TIMEOUT     Timeout in seconds. Solver returns the current best
-                        result upon timeout.
-  --jobs JOBS, -j JOBS  Number of jobs (threads) to use. Defaults to 1.
-  --seed SEED           Set the random seed.
-  --verbose, -v         Verbose output, including timing information.
-```
 

@@ -4,25 +4,26 @@ baseCommand:
   - singlem
   - pipe
 label: singlem_pipe
-doc: "Generate a taxonomic profile or OTU table from raw sequences\n\nTool homepage:
-  https://github.com/wwood/singlem"
+doc: 'Generate a taxonomic profile or OTU table from raw sequences
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: assignment_method
     type:
       - 'null'
       - string
-    doc: Method of assigning taxonomy to OTUs and taxonomic profiles. Search for
-      the most similar window sequences <= 3bp different using a brute force 
-      algorithm (using the smafa implementation) over all window sequences in 
-      the database, and if none are found use DIAMOND blastx of all reads from 
-      each OTU.
+    doc: Method of assigning taxonomy to OTUs and taxonomic profiles. Search for the
+      most similar window sequences <= 3bp different using a brute force algorithm
+      (using the smafa implementation) over all window sequences in the database,
+      and if none are found use DIAMOND blastx of all reads from each OTU.
     inputBinding:
       position: 101
       prefix: --assignment-method
   - id: assignment_singlem_db
     type:
       - 'null'
-      - string
+      - Directory
     doc: Use this SingleM DB when assigning taxonomy
     inputBinding:
       position: 101
@@ -46,7 +47,7 @@ inputs:
   - id: diamond_prefilter_db
     type:
       - 'null'
-      - string
+      - File
     doc: Use this DB when running DIAMOND prefilter
     inputBinding:
       position: 101
@@ -55,9 +56,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Performance-type arguments to use when calling 'diamond blastx' during 
-      the prefiltering. By default, SingleM should run in <4GB of RAM except in 
-      very large (>100Gbp) metagenomes.
+    doc: Performance-type arguments to use when calling 'diamond blastx' during the
+      prefiltering. By default, SingleM should run in <4GB of RAM except in very large
+      (>100Gbp) metagenomes.
     inputBinding:
       position: 101
       prefix: --diamond-prefilter-performance-parameters
@@ -65,8 +66,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Performance-type arguments to use when calling 'diamond blastx' during 
-      the taxonomy assignment step.
+    doc: Performance-type arguments to use when calling 'diamond blastx' during the
+      taxonomy assignment step.
     inputBinding:
       position: 101
       prefix: --diamond-taxonomy-assignment-performance-parameters
@@ -90,8 +91,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Ignore reads aligning in less than this many positions to each 
-      nucleotide HMM
+    doc: Ignore reads aligning in less than this many positions to each nucleotide
+      HMM
     inputBinding:
       position: 101
       prefix: --filter-minimum-nucleotide
@@ -99,8 +100,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Ignore reads aligning in less than this many positions to each protein 
-      HMM when using --no-diamond-prefilter
+    doc: Ignore reads aligning in less than this many positions to each protein HMM
+      when using --no-diamond-prefilter
     inputBinding:
       position: 101
       prefix: --filter-minimum-protein
@@ -117,35 +118,18 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: nucleotide read sequence(s) (forward or unpaired) to be searched. Can 
-      be FASTA or FASTQ format, GZIP-compressed or not, short or long (but 
-      Nanopore >=10.4.1 or PacBio HiFi reads recommended).
+    doc: nucleotide read sequence(s) (forward or unpaired) to be searched. Can be
+      FASTA or FASTQ format, GZIP-compressed or not, short or long (but Nanopore >=10.4.1
+      or PacBio HiFi reads recommended).
     inputBinding:
       position: 101
       prefix: --forward
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: genome_fasta_directory
     type:
       - 'null'
       - Directory
-    doc: Directory containing genome FASTA files. Treated identically to 
-      --forward input with higher default values for --min-taxon-coverage and 
-      --min-orf-length.
+    doc: Directory containing genome FASTA files. Treated identically to --forward
+      input with higher default values for --min-taxon-coverage and --min-orf-length.
     inputBinding:
       position: 101
       prefix: --genome-fasta-directory
@@ -153,8 +137,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: File extension of genomes in the directory specified with 
-      -d/--genome-fasta-directory.
+    doc: File extension of genomes in the directory specified with -d/--genome-fasta-directory.
     inputBinding:
       position: 101
       prefix: --genome-fasta-extension
@@ -163,9 +146,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Path(s) to genome FASTA files. These are processed like input given 
-      with --forward, but use higher default values for --min-taxon-coverage and
-      --min-orf-length.
+    doc: Path(s) to genome FASTA files. These are processed like input given with
+      --forward, but use higher default values for --min-taxon-coverage and --min-orf-length.
     inputBinding:
       position: 101
       prefix: --genome-fasta-files
@@ -173,9 +155,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File containing genome FASTA paths, one per line. Behaviour matches 
-      --forward with higher default values for --min-taxon-coverage and 
-      --min-orf-length.
+    doc: File containing genome FASTA paths, one per line. Behaviour matches --forward
+      with higher default values for --min-taxon-coverage and --min-orf-length.
     inputBinding:
       position: 101
       prefix: --genome-fasta-list
@@ -183,8 +164,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Assign each sequence to a SingleM package using HMMSEARCH, and a 
-      sequence may then be assigned to multiple packages.
+    doc: Assign each sequence to a SingleM package using HMMSEARCH, and a sequence
+      may then be assigned to multiple packages.
     inputBinding:
       position: 101
       prefix: --hmmsearch-package-assignment
@@ -192,8 +173,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: print the entirety of the sequences in the OTU table, not just the 
-      aligned nucleotides
+    doc: print the entirety of the sequences in the OTU table, not just the aligned
+      nucleotides
     inputBinding:
       position: 101
       prefix: --include-inserts
@@ -202,8 +183,7 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: OTU tables previously generated with trusted taxonomies for each 
-      sequence
+    doc: OTU tables previously generated with trusted taxonomies for each sequence
     inputBinding:
       position: 101
       prefix: --known-otu-tables
@@ -211,8 +191,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A 2-column "sequence<tab>taxonomy" file specifying some sequences that 
-      have known taxonomy
+    doc: A 2-column "sequence<tab>taxonomy" file specifying some sequences that have
+      known taxonomy
     inputBinding:
       position: 101
       prefix: --known-sequence-taxonomy
@@ -220,15 +200,15 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of different bases acids to allow between a sequence and
-      the best hit in the database so that it is assigned to the species level.
+    doc: Maximum number of different bases acids to allow between a sequence and the
+      best hit in the database so that it is assigned to the species level.
     inputBinding:
       position: 101
       prefix: --max-species-divergence
   - id: metapackage
     type:
       - 'null'
-      - string
+      - Directory
     doc: Set of SingleM packages to use
     inputBinding:
       position: 101
@@ -237,8 +217,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: When predicting ORFs require this many base pairs uninterrupted by a 
-      stop codon
+    doc: When predicting ORFs require this many base pairs uninterrupted by a stop
+      codon
     inputBinding:
       position: 101
       prefix: --min-orf-length
@@ -272,8 +252,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: give extra output for each sequence identified (e.g. the read(s) each 
-      OTU was generated from) in the output OTU table
+    doc: give extra output for each sequence identified (e.g. the read(s) each OTU
+      was generated from) in the output OTU table
     inputBinding:
       position: 101
       prefix: --output-extras
@@ -289,8 +269,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Process only this specific chunk number (1-based index). Requires 
-      --sra-files.
+    doc: Process only this specific chunk number (1-based index). Requires --sra-files.
     inputBinding:
       position: 101
       prefix: --read-chunk-number
@@ -298,8 +277,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Size chunk to process at a time (in number of reads). Requires 
-      --sra-files.
+    doc: Size chunk to process at a time (in number of reads). Requires --sra-files.
     inputBinding:
       position: 101
       prefix: --read-chunk-size
@@ -316,8 +294,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: reverse reads to be searched. Can be FASTA or FASTQ format, 
-      GZIP-compressed or not.
+    doc: reverse reads to be searched. Can be FASTA or FASTQ format, GZIP-compressed
+      or not.
     inputBinding:
       position: 101
       prefix: --reverse
@@ -325,7 +303,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: Directory
     doc: SingleM packages to use
     inputBinding:
       position: 101
@@ -359,13 +337,12 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Codon table for translation. By default, translation table 4 is used, 
-      which is the same as translation table 11 (the usual bacterial/archaeal 
-      one), except that the TGA codon is translated as tryptophan, not as a stop
-      codon. Using table 4 means that the minority of organisms which use table 
-      4 are not biased against, without a significant effect on the majority of 
-      bacteria and archaea that use table 11. See 
-      http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=tgencodes
+    doc: Codon table for translation. By default, translation table 4 is used, which
+      is the same as translation table 11 (the usual bacterial/archaeal one), except
+      that the TGA codon is translated as tryptophan, not as a stop codon. Using table
+      4 means that the minority of organisms which use table 4 are not biased against,
+      without a significant effect on the majority of bacteria and archaea that use
+      table 11. See http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=tgencodes
       for details on specific tables.
     inputBinding:
       position: 101
@@ -373,9 +350,9 @@ inputs:
   - id: working_directory
     type:
       - 'null'
-      - Directory
-    doc: use intermediate working directory at a specified location, and do not 
-      delete it upon completion
+      - string
+    doc: use intermediate working directory at a specified location, and do not delete
+      it upon completion
     inputBinding:
       position: 101
       prefix: --working-directory
@@ -383,8 +360,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: use an intermediate results temporary working directory in /dev/shm 
-      rather than the default
+    doc: use an intermediate results temporary working directory in /dev/shm rather
+      than the default
     inputBinding:
       position: 101
       prefix: --working-directory-dev-shm
@@ -428,17 +405,16 @@ outputs:
     type:
       - 'null'
       - File
-    doc: output a 'condensed' taxonomic profile for each sample based on the OTU
-      table. Taxonomic profiles output can be further converted to other formats
-      using singlem summarise.
+    doc: output a 'condensed' taxonomic profile for each sample based on the OTU table.
+      Taxonomic profiles output can be further converted to other formats using singlem
+      summarise.
     outputBinding:
       glob: $(inputs.taxonomic_profile_path)
   - id: taxonomic_profile_krona
     type:
       - 'null'
       - File
-    doc: output a 'condensed' taxonomic profile for each sample based on the OTU
-      table
+    doc: output a 'condensed' taxonomic profile for each sample based on the OTU table
     outputBinding:
       glob: $(inputs.taxonomic_profile_krona_path)
   - id: otu_table
@@ -459,9 +435,8 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output a jplace format file for each singlem package to a file starting
-      with this string, each with one entry per OTU. Requires 'pplacer' as the 
-      --assignment_method
+    doc: Output a jplace format file for each singlem package to a file starting with
+      this string, each with one entry per OTU. Requires 'pplacer' as the --assignment_method
     outputBinding:
       glob: $(inputs.output_jplace_path)
 requirements:

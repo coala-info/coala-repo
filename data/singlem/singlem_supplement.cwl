@@ -4,8 +4,10 @@ baseCommand:
   - singlem
   - supplement
 label: singlem_supplement
-doc: "Create a new metapackage from a vanilla one plus new genomes\n\nTool homepage:
-  https://github.com/wwood/singlem"
+doc: 'Create a new metapackage from a vanilla one plus new genomes
+
+
+  Tool homepage: https://github.com/wwood/singlem'
 inputs:
   - id: checkm2_max_contamination
     type:
@@ -47,28 +49,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dereplicate-with-galah
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: gene_definitions
     type:
       - 'null'
       - File
-    doc: Tab-separated file of 
-      genome_fasta<TAB>transcript_fasta<TAB>protein_fasta
+    doc: Tab-separated file of genome_fasta<TAB>transcript_fasta<TAB>protein_fasta
     inputBinding:
       position: 101
       prefix: --gene-definitions
@@ -99,7 +84,7 @@ inputs:
   - id: input_metapackage
     type:
       - 'null'
-      - string
+      - Directory
     doc: metapackage to build upon
     inputBinding:
       position: 101
@@ -108,10 +93,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: newline separated file containing taxonomies of new genomes 
-      (path<TAB>taxonomy). Must be fully specified to species level. If not 
-      specified, the taxonomy will be inferred from the new genomes using 
-      GTDB-tk or read from --taxonomy-file
+    doc: newline separated file containing taxonomies of new genomes (path<TAB>taxonomy).
+      Must be fully specified to species level. If not specified, the taxonomy will
+      be inferred from the new genomes using GTDB-tk or read from --taxonomy-file
     inputBinding:
       position: 101
       prefix: --new-fully-defined-taxonomies
@@ -199,8 +183,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: skip check which ensures that GTDBtk assigned taxonomies are concordant
-      with the old metapackage's
+    doc: skip check which ensures that GTDBtk assigned taxonomies are concordant with
+      the old metapackage's
     inputBinding:
       position: 101
       prefix: --skip-taxonomy-check
@@ -208,8 +192,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A 2 column tab-separated file containing each genome's taxonomy as 
-      output by GTDBtk
+    doc: A 2 column tab-separated file containing each genome's taxonomy as output
+      by GTDBtk
     inputBinding:
       position: 101
       prefix: --taxonomy-file
@@ -224,13 +208,15 @@ inputs:
   - id: working_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory
     inputBinding:
       position: 101
       prefix: --working-directory
   - id: output_taxonomies_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output-taxonomies
@@ -239,10 +225,15 @@ outputs:
     type:
       - 'null'
       - File
-    doc: TSV output file of taxonomies of new genomes, whether they are novel 
-      species or not.
+    doc: TSV output file of taxonomies of new genomes, whether they are novel species
+      or not.
     outputBinding:
       glob: $(inputs.output_taxonomies_path)
+  - id: output_metapackage_out
+    type: Directory
+    doc: The metapackage directory created (named by output_metapackage)
+    outputBinding:
+      glob: $(inputs.output_metapackage)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

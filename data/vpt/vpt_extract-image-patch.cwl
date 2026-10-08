@@ -120,7 +120,8 @@ outputs:
     doc: Path to the patch PNG file, will append .png to the end if not included
       in file name.
     outputBinding:
-      glob: $(inputs.output_patch_path)
+      glob: "$(inputs.output_patch_path.endsWith('.png') ? inputs.output_patch_path
+        : inputs.output_patch_path + '.png')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,64 +1,47 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: esme_pnetcdf_openmpi_5_0_6_pnetcdf_version
+baseCommand: pnetcdf_version
 label: esme_pnetcdf_openmpi_5_0_6_pnetcdf_version
-doc: "PnetCDF Version Information\n\nTool homepage: https://parallel-netcdf.github.io/"
+doc: "PnetCDF Version Information: prints the version, release date, configure arguments
+  and MPI compilers of the PnetCDF library.\n\nTool homepage: https://parallel-netcdf.github.io/"
 inputs:
-  - id: pnetcdf_version
+  - id: version_number
     type:
       - 'null'
-      - string
-    doc: PnetCDF Version
+      - boolean
+    doc: version number
     inputBinding:
       position: 1
-  - id: pnetcdf_release_date
+      prefix: -v
+  - id: release_date
     type:
       - 'null'
-      - string
-    doc: PnetCDF Release date
+      - boolean
+    doc: release date
     inputBinding:
-      position: 2
-  - id: pnetcdf_configure
+      position: 1
+      prefix: -d
+  - id: configure_args
     type:
       - 'null'
-      - string
-    doc: PnetCDF configure options
+      - boolean
+    doc: configure arguments used to build PnetCDF
     inputBinding:
-      position: 3
-  - id: mpicc
+      position: 1
+      prefix: -c
+  - id: mpi_compilers
     type:
       - 'null'
-      - string
-    doc: MPICC compiler command
+      - boolean
+    doc: MPI compilers used
     inputBinding:
-      position: 4
-  - id: mpicxx
-    type:
-      - 'null'
-      - string
-    doc: MPICXX compiler command
-    inputBinding:
-      position: 5
-  - id: mpif77
-    type:
-      - 'null'
-      - string
-    doc: MPIF77 compiler command
-    inputBinding:
-      position: 6
-  - id: mpif90
-    type:
-      - 'null'
-      - string
-    doc: MPIF90 compiler command
-    inputBinding:
-      position: 7
+      position: 1
+      prefix: -b
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: 
-      quay.io/biocontainers/esme_pnetcdf_openmpi_5_0_6:1.14.0--h1080dc9_0
+    dockerPull: quay.io/biocontainers/esme_pnetcdf_openmpi_5_0_6:1.14.0--h1080dc9_0
 stdout: esme_pnetcdf_openmpi_5_0_6_pnetcdf_version.out

@@ -1,19 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prefetch
+baseCommand:
+  - sourmash
+  - prefetch
 label: sourmash_prefetch
-doc: "Search for query signatures within specified databases.\n\nTool homepage: https://github.com/sourmash-bio/sourmash"
+doc: 'Search for query signatures within specified databases.
+
+
+  Tool homepage: https://github.com/sourmash-bio/sourmash'
 inputs:
   - id: query
-    type: string
+    type: File
     doc: query signature
     inputBinding:
       position: 1
   - id: databases
     type:
-      - 'null'
-      - type: array
-        items: string
+      type: array
+      items: File
     doc: one or more databases to search
     inputBinding:
       position: 2
@@ -60,8 +64,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: search only signatures that do not match this pattern in name, 
-      filename, or md5
+    doc: search only signatures that do not match this pattern in name, filename, or md5
     inputBinding:
       position: 103
       prefix: --exclude-db-pattern
@@ -77,8 +80,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: search only signatures that match this pattern in name, filename, or 
-      md5
+    doc: search only signatures that match this pattern in name, filename, or md5
     inputBinding:
       position: 103
       prefix: --include-db-pattern
@@ -94,8 +96,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: force linear traversal of indexes to minimize loading time and memory 
-      use
+    doc: force linear traversal of indexes to minimize loading time and memory use
     inputBinding:
       position: 103
       prefix: --linear
@@ -222,8 +223,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: reporting threshold (in bp) for estimated overlap with remaining query 
-      hashes
+    doc: reporting threshold (in bp) for estimated overlap with remaining query hashes
     inputBinding:
       position: 103
       prefix: --threshold-bp
@@ -269,8 +269,7 @@ outputs:
     type:
       - 'null'
       - File
-    doc: save all matching signatures from the databases to the specified file 
-      or directory
+    doc: save all matching signatures from the databases to the specified file or directory
     outputBinding:
       glob: $(inputs.save_matches_path)
   - id: save_unmatched_hashes

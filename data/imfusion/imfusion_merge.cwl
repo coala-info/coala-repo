@@ -2,13 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: imfusion-merge
 label: imfusion_merge
-doc: "Merges multiple samples into a single imfusion object.\n\nTool homepage: https://github.com/iamsh4shank/Imfusion"
+doc: "Merge insertions (and expression) of multiple IM-Fusion samples into single files.\n\nTool homepage: https://github.com/NKI-CCB/imfusion"
 inputs:
   - id: sample_dirs
     type:
       type: array
       items: Directory
-    doc: Directories containing the samples to merge.
+    doc: Path to sample directories (output of imfusion-insertions, with 
+      insertions.txt and optionally expression.txt).
     inputBinding:
       position: 1
       prefix: --sample_dirs
@@ -17,8 +18,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Optional list of names to assign to each sample. If not provided, 
-      sample directory names will be used.
+    doc: Alternative sample names to use for samples in merged dataset.
     inputBinding:
       position: 102
       prefix: --names
@@ -26,23 +26,30 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Optional expression to define the structure of the output imfusion 
-      object. See imfusion documentation for details.
+    doc: Output path for merged expression file. Needs expression.txt in 
+      every sample directory.
     inputBinding:
       position: 102
       prefix: --output_expression
   - id: output_path
     type: string
+    doc: Output path for merged insertion file.
     inputBinding:
       position: 103
       prefix: --output
 outputs:
   - id: output
-    type: Directory
-    doc: Path to the output directory where the merged imfusion object will be 
-      saved.
+    type: File
+    doc: Merged insertion file.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: merged_expression
+    type:
+      - 'null'
+      - File
+    doc: Merged expression file.
+    outputBinding:
+      glob: $(inputs.output_expression)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

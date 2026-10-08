@@ -1,41 +1,49 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: getbambyregion
+baseCommand:
+  - getbambyregion
 label: igda-script_getbambyregion
-doc: "Extract BAM alignments within a specified genomic region.\n\nTool homepage:
-  https://github.com/zhixingfeng/shell"
+doc: "Extract alignments in a region (1-based) of an indexed BAM file to a SAM file with header.\nUsage: getbambyregion inbamfile outsamfile chr start end(1-based) nthread\n\nTool homepage: https://github.com/zhixingfeng/shell"
 inputs:
   - id: inbamfile
     type: File
-    doc: Input BAM file
+    doc: "indexed BAM file"
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
-  - id: chr
+  - id: outsamfile
     type: string
-    doc: Chromosome name
+    doc: "output SAM file name"
     inputBinding:
       position: 2
-  - id: start
-    type: int
-    doc: Start position (1-based)
+  - id: chr
+    type: string
+    doc: "chromosome"
     inputBinding:
       position: 3
-  - id: end
+  - id: start
     type: int
-    doc: End position (1-based)
+    doc: "region start (1-based)"
     inputBinding:
       position: 4
-  - id: nthread
+  - id: end
     type: int
-    doc: Number of threads
+    doc: "region end (1-based)"
     inputBinding:
       position: 5
+  - id: nthread
+    type: int
+    doc: "number of threads"
+    inputBinding:
+      position: 6
 outputs:
-  - id: outsamfile
+  - id: out_sam
     type: File
-    doc: Output SAM file
+    doc: "SAM file of the region"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outsamfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igda-script:1.0.1--hdfd78af_0

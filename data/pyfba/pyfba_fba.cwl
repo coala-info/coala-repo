@@ -1,45 +1,46 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfba
+baseCommand:
+  - pyfba
+  - fba
 label: pyfba_fba
 doc: "Run Flux Balance Analysis and calculate reaction fluxes\n\nTool homepage: https://linsalrob.github.io/PyFBA/"
 inputs:
-  - id: biomass
-    type:
-      - 'null'
-      - string
-    doc: biomass equation to use
-    inputBinding:
-      position: 101
-      prefix: --biomass
-  - id: media
-    type: string
-    doc: media name
-    inputBinding:
-      position: 101
-      prefix: --media
   - id: reactions
     type: File
-    doc: A list of the reactions in this model, one per line
+    doc: "A list of the reactions in this model, one per line"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --reactions
+  - id: media
+    type: string
+    doc: "media name (a predefined PyFBA media name or a media file path)"
+    inputBinding:
+      position: 1
+      prefix: --media
   - id: type
     type:
       - 'null'
       - string
-    doc: organism type for the model (currently allowed are ['gramnegative', 
-      'grampositive', 'microbial', 'mycobacteria', 'plant'])
+    doc: "organism type for the model (currently allowed are ['gramnegative', 'grampositive', 'microbial', 'mycobacteria', 'plant']). Default=gramnegative"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --type
+  - id: biomass
+    type:
+      - 'null'
+      - string
+    doc: "biomass equation to use. Default is the same as --type option"
+    inputBinding:
+      position: 1
+      prefix: --biomass
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: verbose output
+    doc: "verbose output"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --verbose
 outputs:
   - id: stdout

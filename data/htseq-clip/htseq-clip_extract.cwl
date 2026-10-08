@@ -43,6 +43,9 @@ inputs:
   - id: input_file
     type: File
     doc: input file (.bam, MUST be co-ordinate sorted and indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --input

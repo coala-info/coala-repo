@@ -23,22 +23,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --force
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message
-    inputBinding:
-      position: 101
-      prefix: --full-help
-  - id: full_help_roff
-    type:
-      - 'null'
-      - boolean
-    doc: print longer help message in ROFF (manpage) format
-    inputBinding:
-      position: 101
-      prefix: --full-help-roff
   - id: output_directory
     type:
       - 'null'
@@ -102,14 +86,20 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
-  - id: output_directory_dir
+    doc: Standard output (sequences when --stdout is set)
+  - id: sequence_files
     type:
-      - 'null'
-      - Directory
-    doc: Output directory to write to
+      type: array
+      items: File
+    doc: Downloaded or extracted .sra, FASTQ or FASTA files.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: |-
+        ${
+          var d = inputs.output_directory ? inputs.output_directory + "/" : "";
+          return [d + "*.sra", d + "*.fastq", d + "*.fastq.gz", d + "*.fasta", d + "*.fasta.gz"];
+        }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kingfisher:0.4.1--pyh7cba7a3_0

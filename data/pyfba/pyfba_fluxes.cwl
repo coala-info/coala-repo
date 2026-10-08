@@ -1,59 +1,63 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfba
+baseCommand:
+  - pyfba
+  - fluxes
 label: pyfba_fluxes
-doc: "Run Flux Balance Analysis and calculate reaction fluxes\n\nTool homepage: https://linsalrob.github.io/PyFBA/"
+doc: "Given a set of reactions that form a model, run Flux Balance Analysis and report the fluxes through those reactions\n\nTool homepage: https://linsalrob.github.io/PyFBA/"
 inputs:
+  - id: reactions
+    type: File
+    doc: "A list of the reactions in this model, one per line"
+    inputBinding:
+      position: 1
+      prefix: --reactions
+  - id: media
+    type: string
+    doc: "media name (a predefined PyFBA media name or a media file path)"
+    inputBinding:
+      position: 1
+      prefix: --media
   - id: biomass
     type:
       - 'null'
       - string
-    doc: biomass equation to use
+    doc: "biomass equation to use. Default is the same as --type option"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --biomass
-  - id: media
+  - id: output_path
     type: string
-    doc: media name
+    doc: "file to save the fluxes list to"
     inputBinding:
-      position: 101
-      prefix: --media
-  - id: reactions
-    type: File
-    doc: A list of the reactions in this model, one per line
-    inputBinding:
-      position: 101
-      prefix: --reactions
+      position: 1
+      prefix: --output
   - id: type
     type:
       - 'null'
       - string
-    doc: organism type for the model (currently allowed are ['gramnegative', 
-      'grampositive', 'microbial', 'mycobacteria', 'plant'])
+    doc: "organism type for the model (currently allowed are ['gramnegative', 'grampositive', 'microbial', 'mycobacteria', 'plant']). Default=gramnegative"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --type
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: verbose output
+    doc: "verbose output"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --verbose
-  - id: output_path
-    type: string
-    inputBinding:
-      position: 102
-      prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output
     type: File
-    doc: file to save the fluxes list to
+    doc: "Fluxes list"
     outputBinding:
       glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfba:2.62--py38h3df17bf_5
+stdout: pyfba_fluxes.out

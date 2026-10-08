@@ -1,26 +1,25 @@
 # seq-seq-pan CWL Generation Report
 
-## seq-seq-pan_subcommand
+## Real Data Test
 
-### Tool Description
-A tool for pangenome analysis and sequence manipulation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1
-- **Homepage**: https://gitlab.com/chrjan/seq-seq-pan
-- **Package**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
-- **Total Downloads**: 51.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: seqseqpan.py [-h] subcommand ...
-seqseqpan.py: error: argument subcommand: invalid choice: 'subcommand' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
-```
+| Tool | Result | Reason |
+|---|---|---|
+| seq-seq-pan_blockcountsplit | PASS |  |
+| seq-seq-pan_consensus | PASS |  |
+| seq-seq-pan_extract | PASS |  |
+| seq-seq-pan_genomedescription | PASS |  |
+| seq-seq-pan_join | PASS |  |
+| seq-seq-pan_maf | PASS |  |
+| seq-seq-pan_map | PASS |  |
+| seq-seq-pan_mapall | PASS |  |
+| seq-seq-pan_merge | PASS |  |
+| seq-seq-pan_realign | PASS |  |
+| seq-seq-pan_reconstruct | PASS |  |
+| seq-seq-pan_remove | PASS |  |
+| seq-seq-pan_resolve | PASS |  |
+| seq-seq-pan_separate | PASS |  |
+| seq-seq-pan_split | PASS |  |
+| seq-seq-pan_xmfa | PASS |  |
 
 ## seq-seq-pan_blockcountsplit
 
@@ -53,23 +52,6 @@ required arguments:
                         XFMA file
   -x XMFA_F, --xmfa XMFA_F
                         XMFA input file
-```
-
-## seq-seq-pan_genomes
-
-### Tool Description
-A tool for pan-genome analysis and sequence processing.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1
-- **Homepage**: https://gitlab.com/chrjan/seq-seq-pan
-- **Package**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: seqseqpan.py [-h] subcommand ...
-seqseqpan.py: error: argument subcommand: invalid choice: 'genomes' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
 ```
 
 ## seq-seq-pan_extract
@@ -306,23 +288,6 @@ required arguments:
                         XMFA input file
 ```
 
-## seq-seq-pan_only
-
-### Tool Description
-A tool for pan-genome analysis. Note: 'only' is not a valid subcommand; valid subcommands include blockcountsplit, extract, join, maf, map, mapall, merge, realign, reconstruct, remove, resolve, separate, split, and xmfa.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1
-- **Homepage**: https://gitlab.com/chrjan/seq-seq-pan
-- **Package**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: seqseqpan.py [-h] subcommand ...
-seqseqpan.py: error: argument subcommand: invalid choice: 'only' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
-```
-
 ## seq-seq-pan_realign
 
 ### Tool Description
@@ -358,23 +323,6 @@ required arguments:
                         XFMA file
   -x XMFA_F, --xmfa XMFA_F
                         XMFA input file
-```
-
-## seq-seq-pan_be
-
-### Tool Description
-A tool for pan-genome analysis and sequence manipulation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1
-- **Homepage**: https://gitlab.com/chrjan/seq-seq-pan
-- **Package**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: seqseqpan.py [-h] subcommand ...
-seqseqpan.py: error: argument subcommand: invalid choice: 'be' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
 ```
 
 ## seq-seq-pan_reconstruct
@@ -413,23 +361,6 @@ required arguments:
                         XMFA input file
   -c CONSENSUS_F, --consensus CONSENSUS_F
                         consensus FASTA file used in XMFA
-```
-
-## seq-seq-pan_genome
-
-### Tool Description
-A tool for pan-genome analysis and sequence alignment manipulation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1
-- **Homepage**: https://gitlab.com/chrjan/seq-seq-pan
-- **Package**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: seqseqpan.py [-h] subcommand ...
-seqseqpan.py: error: argument subcommand: invalid choice: 'genome' (choose from 'blockcountsplit', 'extract', 'join', 'maf', 'map', 'mapall', 'merge', 'realign', 'reconstruct', 'remove', 'resolve', 'separate', 'split', 'xmfa')
 ```
 
 ## seq-seq-pan_remove
@@ -618,6 +549,49 @@ required arguments:
                         XFMA file
   -x XMFA_F, --xmfa XMFA_F
                         XMFA input file
+```
+
+## seq-seq-pan_consensus
+
+### Tool Description
+Consensus genome construction from a whole genome alignment (XMFA file).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1
+- **Homepage**: https://gitlab.com/chrjan/seq-seq-pan
+- **Package**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+seq-seq-pan - Consensus Genome Construction from WGA
+
+Usage: seq-seq-pan-consensus INPUT.xmfa
+```
+
+## seq-seq-pan_genomedescription
+
+### Tool Description
+Write a genome description file from a list of FASTA files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seq-seq-pan:1.1.0--py_1
+- **Homepage**: https://gitlab.com/chrjan/seq-seq-pan
+- **Package**: https://anaconda.org/channels/bioconda/packages/seq-seq-pan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: genomedescription.py [-h] -i GENOME_LIST -o GENOME_DESC_F [-a ADD_F]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i GENOME_LIST, --input GENOME_LIST
+                        File with list of /paths/to/files.fasta
+  -o GENOME_DESC_F, --output GENOME_DESC_F
+                        name of output file
+  -a ADD_F, --add ADD_F
+                        Add new genome description to this file.
 ```
 
 ## Metadata

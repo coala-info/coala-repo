@@ -1,5 +1,48 @@
 # fastaq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastaq_acgtn_only | PASS |  |
+| fastaq_add_indels | PASS |  |
+| fastaq_caf_to_fastq | PASS |  |
+| fastaq_capillary_to_pairs | PASS |  |
+| fastaq_chunker | PASS |  |
+| fastaq_count_sequences | PASS |  |
+| fastaq_deinterleave | PASS |  |
+| fastaq_enumerate_names | PASS |  |
+| fastaq_expand_nucleotides | PASS |  |
+| fastaq_fasta_to_fastq | PASS |  |
+| fastaq_filter | PASS |  |
+| fastaq_get_ids | PASS |  |
+| fastaq_get_seq_flanking_gaps | PASS |  |
+| fastaq_interleave | PASS |  |
+| fastaq_make_random_contigs | PASS |  |
+| fastaq_merge | PASS |  |
+| fastaq_replace_bases | PASS |  |
+| fastaq_reverse_complement | PASS |  |
+| fastaq_scaffolds_to_contigs | PASS |  |
+| fastaq_search_for_seq | PASS |  |
+| fastaq_sequence_trim | PASS |  |
+| fastaq_sort_by_name | PASS |  |
+| fastaq_sort_by_size | PASS |  |
+| fastaq_split_by_base_count | PASS |  |
+| fastaq_strip_illumina_suffix | PASS |  |
+| fastaq_to_boulderio | PASS |  |
+| fastaq_to_fake_qual | PASS |  |
+| fastaq_to_fasta | PASS |  |
+| fastaq_to_mira_xml | PASS |  |
+| fastaq_to_orfs_gff | PASS |  |
+| fastaq_to_perfect_reads | PASS |  |
+| fastaq_to_random_subset | PASS |  |
+| fastaq_to_tiling_bam | Failed | tool bug: samtools 1.9 in the image rejects the '*' in the PNEXT/TLEN fields that to_tiling_bam writes, so no BAM is made |
+| fastaq_to_unique_by_id | PASS |  |
+| fastaq_translate | PASS |  |
+| fastaq_trim_contigs | PASS |  |
+| fastaq_trim_ends | PASS |  |
+| fastaq_trim_ns_at_end | PASS |  |
+
 ## fastaq_acgtn_only
 
 ### Tool Description
@@ -1073,7 +1116,7 @@ optional arguments:
 ## fastaq_trim_ns_at_end
 
 ### Tool Description
-A collection of commands for manipulating DNA/RNA sequences.
+Trims any Ns off each sequence in input file. Does nothing to gaps in the middle, just trims the ends
 
 ### Metadata
 - **Docker Image**: biocontainers/fastaq:v3.17.0-2-deb_cv1
@@ -1083,59 +1126,17 @@ A collection of commands for manipulating DNA/RNA sequences.
 
 ### Original Help Text
 ```text
-Task "trim_ns_at_end" not recognised. Cannot continue.
+usage: fastaq trim_Ns_at_end <infile> <outfile>
 
-Usage: fastaq <command> [options]
+Trims any Ns off each sequence in input file. Does nothing to gaps in the
+middle, just trims the ends
 
-To get minimal usage for a command use:
-fastaq command
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
 
-To get full help for a command use one of:
-fastaq command -h
-fastaq command --help
-
-
-Available commands:
-
-acgtn_only             Replace every non acgtnACGTN with an N
-add_indels             Deletes or inserts bases at given position(s)
-caf_to_fastq           Converts a CAF file to FASTQ format
-capillary_to_pairs     Converts file of capillary reads to paired and unpaired files
-chunker                Splits sequences into equal sized chunks
-count_sequences        Counts the sequences in input file
-deinterleave           Splits interleaved paired file into two separate files
-enumerate_names        Renames sequences in a file, calling them 1,2,3... etc
-expand_nucleotides     Makes every combination of degenerate nucleotides
-fasta_to_fastq         Convert FASTA and .qual to FASTQ
-filter                 Filter sequences to get a subset of them
-get_ids                Get the ID of each sequence
-get_seq_flanking_gaps  Gets the sequences flanking gaps
-interleave             Interleaves two files, output is alternating between fwd/rev reads
-make_random_contigs    Make contigs of random sequence
-merge                  Converts multi sequence file to a single sequence
-replace_bases          Replaces all occurrences of one letter with another
-reverse_complement     Reverse complement all sequences
-scaffolds_to_contigs   Creates a file of contigs from a file of scaffolds
-search_for_seq         Find all exact matches to a string (and its reverse complement)
-sequence_trim          Trim exact matches to a given string off the start of every sequence
-sort_by_name           Sorts sequences in lexographical (name) order
-sort_by_size           Sorts sequences in length order
-split_by_base_count    Split multi sequence file into separate files
-strip_illumina_suffix  Strips /1 or /2 off the end of every read name
-to_boulderio           Converts to Boulder-IO format, used by primer3
-to_fake_qual           Make fake quality scores file
-to_fasta               Converts a variety of input formats to nicely formatted FASTA format
-to_mira_xml            Create an xml file from a file of reads, for use with Mira assembler
-to_orfs_gff            Writes a GFF file of open reading frames
-to_perfect_reads       Make perfect paired reads from reference
-to_random_subset       Make a random sample of sequences (and optionally mates as well)
-to_tiling_bam          Make a BAM file of reads uniformly spread across the input reference
-to_unique_by_id        Remove duplicate sequences, based on their names. Keep longest seqs
-translate              Translate all sequences in input nucleotide sequences
-trim_Ns_at_end         Trims all Ns at the start/end of all sequences
-trim_contigs           Trims a set number of bases off the end of every contig
-trim_ends              Trim fixed number of bases of start and/or end of every sequence
-version                Print version number and exit
+optional arguments:
+  -h, --help  show this help message and exit
 ```
 
 

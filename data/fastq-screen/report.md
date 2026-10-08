@@ -1,5 +1,11 @@
 # fastq-screen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastq-screen_fastq_screen | PASS |  |
+
 ## fastq-screen_fastq_screen
 
 ### Tool Description

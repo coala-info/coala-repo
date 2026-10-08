@@ -1,5 +1,18 @@
 # fastutils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastutils_cutN | PASS | chr21 slice from nf-core with trailing N bases: contig written without N |
+| fastutils_format | PASS | nf-core sarscov2 reads converted to wrapped fasta with prefix and length filter |
+| fastutils_interleave | PASS | interleaved 2x100 real SARS-CoV-2 read pairs correctly (800 lines, mates alternate); the tool exits 1 after success, so the CWL accepts exit codes 0 and 1. |
+| fastutils_length | PASS | read lengths and running total on nf-core reads |
+| fastutils_revcomp | PASS | reverse complement of nf-core reads checked by hand |
+| fastutils_stat | PASS | 100 reads and 13897 bases reported for nf-core reads |
+| fastutils_subsample | PASS | fixed genome size to string (suffix k, m, g); depth 5 on 1k genome gave 5102 bases |
+| fastutils_subseq | PASS | fixed: region goes last and standard output is collected because the tool ignores -o; 100 bases of the nf-core chr21 slice match |
+
 ## fastutils_stat
 
 ### Tool Description

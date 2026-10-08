@@ -66,6 +66,13 @@ outputs:
     doc: specify an output file
     outputBinding:
       glob: $(inputs.output_path)
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output or temp directory (default ./kallisto)
+    outputBinding:
+      glob: "$(inputs.output_directory ? inputs.output_directory : 'kallisto')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

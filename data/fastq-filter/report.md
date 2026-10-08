@@ -1,5 +1,11 @@
 # fastq-filter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastq-filter | PASS |  |
+
 ## fastq-filter
 
 ### Tool Description

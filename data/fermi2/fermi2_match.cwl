@@ -61,10 +61,11 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum occurrences.
+    doc: Minimum occurrences. The help prints this option as -s, but the program
+      reads it as -O (-s is the sampled suffix array file).
     inputBinding:
       position: 103
-      prefix: -s
+      prefix: -O
   - id: sampled_suffix_array
     type:
       - 'null'

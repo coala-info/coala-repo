@@ -1,5 +1,11 @@
 # feature_merge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| feature_merge | PASS | fixed: input files go after the options, -e and -i are booleans, each -f group gets its own flag, -v removed; repository synthetic.gff3 gives 1 merged group of 11 features as in its unit test |
+
 ## feature_merge
 
 ### Tool Description

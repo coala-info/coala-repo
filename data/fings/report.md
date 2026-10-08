@@ -1,5 +1,11 @@
 # fings CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fings | PASS |  |
+
 ## fings
 
 ### Tool Description

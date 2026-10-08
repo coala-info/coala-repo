@@ -27,7 +27,7 @@ inputs:
   - id: rename_file
     type:
       - 'null'
-      - File
+      - string
     doc: If used, will write a file of old name to new name
     inputBinding:
       position: 102
@@ -49,6 +49,13 @@ inputs:
       position: 102
       prefix: --suffix
 outputs:
+  - id: out_rename_file
+    type:
+      - 'null'
+      - File
+    doc: File of old name to new name
+    outputBinding:
+      glob: $(inputs.rename_file)
   - id: out_outfile
     type: File
     doc: Name of output fasta/q file

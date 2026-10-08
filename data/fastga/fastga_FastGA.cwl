@@ -2,212 +2,176 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: FastGA
 label: fastga_FastGA
-doc: "FastGA is a tool for aligning sequences.\n\nTool homepage: https://github.com/thegenemyers/FASTGA"
+doc: "FastGA is a fast whole-genome aligner. It aligns two genomes (FASTA or 1-code files) and streams PAF or PSL, or writes a 1aln file.\n\nTool homepage: https://github.com/thegenemyers/FASTGA"
+arguments:
+  - position: 100
+    valueFrom: $(inputs.source1.basename)
+  - position: 101
+    valueFrom: '$(inputs.source2 ? inputs.source2.basename : null)'
 inputs:
-  - id: format
-    type: string
-    doc: Output format. Can be -paf[mxsS]*, -psl, or -1:<align:path>[.1aln].
-    inputBinding:
-      position: 1
   - id: source1
     type: File
-    doc: First source sequence file.
-    inputBinding:
-      position: 2
-  - id: source1_precursor
-    type:
-      - 'null'
-      - string
-    doc: Precursor for the first source file (e.g., .gix, .1gdb, .fa, .fna, 
-      .fasta, .gz, or any 1-code sequence file type).
-    inputBinding:
-      position: 3
+    doc: 'First genome (FASTA, .fa/.fna/.fasta with optional .gz, or a 1-code sequence file).'
   - id: source2
     type:
       - 'null'
       - File
-    doc: Second source sequence file.
-    inputBinding:
-      position: 4
-  - id: source2_precursor
+    doc: 'Second genome. If absent, the first genome is aligned against itself.'
+  - id: format
     type:
       - 'null'
       - string
-    doc: Precursor for the second source file (e.g., .gix, .1gdb, .fa, .fna, 
-      .fasta, .gz, or any 1-code sequence file type).
+    doc: 'Output format for the stream on standard output: -paf[mxsS]*, for example -paf, -pafx, -pafm, -pafs, -pafS, or -psl. Default is -paf.'
     inputBinding:
-      position: 5
-  - id: adaptive_seed_count_cutoff
+      position: 1
+  - id: align_output
     type:
       - 'null'
-      - int
-    doc: Adaptive seed count cutoff.
+      - string
+    doc: Write a 1-code alignment file with this name instead of a stream (the .1aln extension is added).
     inputBinding:
-      position: 106
-      prefix: -f
-  - id: generate_1code_output
-    type:
-      - 'null'
-      - File
-    doc: Generate 1-code output to specified file.
-    inputBinding:
-      position: 106
-      prefix: '-1'
-  - id: keep_generated_files
+      position: 101
+      prefix: '-1:'
+      separate: false
+  - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Keep any generated .1gdb's and .gix's.
+    doc: 'Verbose mode, output statistics as proceed.'
     inputBinding:
-      position: 106
-      prefix: -k
+      position: 101
+      prefix: '-v'
+  - id: keep
+    type:
+      - 'null'
+      - boolean
+    doc: 'Keep any generated .1gdb''s and .gix''s.'
+    inputBinding:
+      position: 101
+      prefix: '-k'
+  - id: soft_mask
+    type:
+      - 'null'
+      - boolean
+    doc: Use soft mask information if available.
+    inputBinding:
+      position: 101
+      prefix: '-M'
+  - id: symmetric_seeding
+    type:
+      - 'null'
+      - boolean
+    doc: Use symmetric seeding (not recommended). Seed adaptamers from both genomes.
+    inputBinding:
+      position: 101
+      prefix: '-S'
   - id: log_file
     type:
       - 'null'
       - string
     doc: Output log to specified file.
     inputBinding:
-      position: 106
-      prefix: -L
-  - id: min_alignment_identity
-    type:
-      - 'null'
-      - float
-    doc: Minimum alignment identity.
-    inputBinding:
-      position: 106
-      prefix: -i
-  - id: min_alignment_length
-    type:
-      - 'null'
-      - int
-    doc: Minimum alignment length.
-    inputBinding:
-      position: 106
-      prefix: -l
-  - id: min_seed_chain_coverage
-    type:
-      - 'null'
-      - int
-    doc: Minimum seed chain coverage in both genomes.
-    inputBinding:
-      position: 106
-      prefix: -c
-  - id: seed_adaptamers
-    type:
-      - 'null'
-      - boolean
-    doc: Seed adaptamers from both genomes.
-    inputBinding:
-      position: 106
-      prefix: -S
-  - id: seed_chain_start_threshold
-    type:
-      - 'null'
-      - int
-    doc: Threshold for starting a new seed chain.
-    inputBinding:
-      position: 106
-      prefix: -s
-  - id: stream_paf
-    type:
-      - 'null'
-      - boolean
-    doc: Stream PAF output
-    inputBinding:
-      position: 106
-      prefix: -paf
-  - id: stream_paf_long_cs
-    type:
-      - 'null'
-      - boolean
-    doc: Stream PAF output with CS string in long form
-    inputBinding:
-      position: 106
-      prefix: -pafS
-  - id: stream_paf_short_cs
-    type:
-      - 'null'
-      - boolean
-    doc: Stream PAF output with CS string in short form
-    inputBinding:
-      position: 106
-      prefix: -pafs
-  - id: stream_paf_with_cigar_equals
-    type:
-      - 'null'
-      - boolean
-    doc: Stream PAF output with CIGAR string with ='s
-    inputBinding:
-      position: 106
-      prefix: -pafm
-  - id: stream_paf_with_cigar_x
-    type:
-      - 'null'
-      - boolean
-    doc: Stream PAF output with CIGAR string with X's
-    inputBinding:
-      position: 106
-      prefix: -pafx
-  - id: stream_psl
-    type:
-      - 'null'
-      - boolean
-    doc: Stream PSL output
-    inputBinding:
-      position: 106
-      prefix: -psl
-  - id: symmetric_seeding
-    type:
-      - 'null'
-      - boolean
-    doc: Use symmetric seeding (not recommended).
-    inputBinding:
-      position: 106
-      prefix: -S
-  - id: temp_dir
-    type:
-      - 'null'
-      - string
-    doc: Directory to use for temporary files.
-    inputBinding:
-      position: 106
-      prefix: -P
+      position: 101
+      prefix: '-L:'
+      separate: false
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use.
+    doc: 'Number of threads to use. [default: 8]'
     inputBinding:
-      position: 106
-      prefix: -T
-  - id: use_soft_mask
+      position: 101
+      prefix: '-T'
+      separate: false
+  - id: temp_dir
     type:
       - 'null'
-      - boolean
-    doc: Use soft mask information if available.
+      - string
+    doc: 'Directory to use for temporary files. [default: $TMPDIR]'
     inputBinding:
-      position: 106
-      prefix: -M
-  - id: verbose
+      position: 101
+      prefix: '-P'
+      separate: false
+  - id: adaptive_seed_count_cutoff
     type:
       - 'null'
-      - boolean
-    doc: Verbose mode, output statistics as proceed.
+      - int
+    doc: 'Adaptive seed count cutoff. [default: 10]'
     inputBinding:
-      position: 106
-      prefix: -v
+      position: 101
+      prefix: '-f'
+      separate: false
+  - id: min_seed_chain_coverage
+    type:
+      - 'null'
+      - int
+    doc: 'Minimum seed chain coverage in both genomes. [default: 85]'
+    inputBinding:
+      position: 101
+      prefix: '-c'
+      separate: false
+  - id: seed_chain_start_threshold
+    type:
+      - 'null'
+      - int
+    doc: 'Threshold for starting a new seed chain. [default: 1000]'
+    inputBinding:
+      position: 101
+      prefix: '-s'
+      separate: false
+  - id: min_alignment_length
+    type:
+      - 'null'
+      - int
+    doc: 'Minimum alignment length. [default: 100]'
+    inputBinding:
+      position: 101
+      prefix: '-l'
+      separate: false
+  - id: min_alignment_identity
+    type:
+      - 'null'
+      - float
+    doc: 'Minimum alignment identity. [default: 0.7]'
+    inputBinding:
+      position: 101
+      prefix: '-i'
+      separate: false
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: log_file_out
+  - id: alignment_1aln
     type:
       - 'null'
       - File
-    doc: Output log to specified file.
+    doc: 1-code alignment file written when align_output is set.
+    outputBinding:
+      glob: $(inputs.align_output).1aln
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file written when log_file is set.
     outputBinding:
       glob: $(inputs.log_file)
+  - id: generated_files
+    type:
+      type: array
+      items: File
+    doc: Genome databases and indexes kept when keep is set.
+    outputBinding:
+      glob:
+        - '*.1gdb'
+        - '.*.bps'
+        - '*.gix'
+        - '.*.ktab.*'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.source1)
+      - $(inputs.source2)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0

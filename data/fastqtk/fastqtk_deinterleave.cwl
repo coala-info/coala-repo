@@ -12,17 +12,27 @@ inputs:
     doc: Interleaved input FASTQ file. Use - for STDIN.
     inputBinding:
       position: 1
+  - id: out1_name
+    type: string
+    doc: Name of the output file. Output FASTQ file for the first pair.
+    inputBinding:
+      position: 2
+  - id: out2_name
+    type: string
+    doc: Name of the output file. Output FASTQ file for the second pair.
+    inputBinding:
+      position: 3
 outputs:
   - id: out1_fq
     type: File
     doc: Output FASTQ file for the first pair.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out1_name)'
   - id: out2_fq
     type: File
     doc: Output FASTQ file for the second pair.
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out2_name)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastqtk:0.28--h5ca1c30_0

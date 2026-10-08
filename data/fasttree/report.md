@@ -1,5 +1,11 @@
 # fasttree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fasttree | PASS | fixed: alignment now comes after the options, standard output tree is collected, -expert removed; Galaxy nucleotide test gives a same-size tree (476 of 530 splits shared with the older Galaxy version output); protein run gives a Newick tree |
+
 ## fasttree
 
 ### Tool Description

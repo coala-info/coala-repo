@@ -1,5 +1,11 @@
 # fastlin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastlin | PASS |  |
+
 ## fastlin
 
 ### Tool Description

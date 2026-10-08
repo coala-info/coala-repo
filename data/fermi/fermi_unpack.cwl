@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - unpack
 label: fermi_unpack
-doc: "Unpack a BWT sequence file\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Unpack a BWT sequence file\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: seqs_bwt
     type: File

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./Sreport
+baseCommand: Sreport
 label: fastqpuri_Sreport
 doc: "Uses all *bin files found in a folder (output of Qreport|trimFilter|trimFilterPE)
   and generates a summary report in html format (of Qreport|trimFilter|trimFilterPE).\n\
@@ -20,26 +20,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Prints package version.
-    inputBinding:
-      position: 101
-      prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file prefix (with NO extension); the report is written to
+      <prefix>.html.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
-    type: File
-    doc: Output file (with NO extension).
+    type:
+      type: array
+      items: File
+    doc: Summary report written with the output prefix (.html)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path + '.*')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

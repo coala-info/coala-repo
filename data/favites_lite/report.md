@@ -1,5 +1,11 @@
 # favites_lite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| favites_lite_favites_lite.py | PASS | repository example config: simulated outbreak gives sequences, phylogenies and transmission network |
+
 ## favites_lite_favites_lite.py
 
 ### Tool Description

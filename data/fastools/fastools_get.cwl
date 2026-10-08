@@ -25,7 +25,7 @@ inputs:
   - id: orientation
     type:
       - 'null'
-      - string
+      - int
     doc: orientation (1=forward, 2=reverse)
     inputBinding:
       position: 104
@@ -33,7 +33,7 @@ inputs:
   - id: start
     type:
       - 'null'
-      - string
+      - int
     doc: start of the area of interest
     inputBinding:
       position: 104
@@ -41,7 +41,7 @@ inputs:
   - id: stop
     type:
       - 'null'
-      - string
+      - int
     doc: end of the area of interest
     inputBinding:
       position: 104
@@ -57,6 +57,10 @@ outputs:
     doc: output file
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastools:1.1.5--pyh7cba7a3_0

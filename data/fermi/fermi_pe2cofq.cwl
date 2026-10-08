@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - pe2cofq
 label: fermi_pe2cofq
-doc: "Convert paired-end FASTQ to COFF format\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Convert paired-end FASTQ to COFF format\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: in1_fq
     type: File

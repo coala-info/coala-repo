@@ -1,5 +1,11 @@
 # fegenie CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fegenie_FeGenie.py | PASS | E. coli K-12 genome (NCBI NC_000913.3) gives 68 iron-related genes (siderophore, iron and heme transport, regulation) |
+
 ## fegenie_FeGenie.py
 
 ### Tool Description

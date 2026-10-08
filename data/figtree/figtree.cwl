@@ -5,12 +5,10 @@ label: figtree
 doc: "Tree Figure Drawing Tool\n\nTool homepage: https://github.com/rambaut/figtree"
 inputs:
   - id: tree_file_name
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input tree file name
     inputBinding:
-      position: 1
+      position: 103
   - id: graphic_format
     type:
       - 'null'
@@ -43,14 +41,19 @@ inputs:
     inputBinding:
       position: 102
       prefix: -width
-outputs:
   - id: graphic_file_name
+    type: string
+    doc: Output graphic file name
+    inputBinding:
+      position: 104
+outputs:
+  - id: graphic_file
     type:
       - 'null'
       - File
-    doc: Output graphic file name
+    doc: Output graphic file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.graphic_file_name)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/figtree:v1.4.4-3-deb_cv1

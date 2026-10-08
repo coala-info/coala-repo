@@ -362,6 +362,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type: ['null', Directory]
+    doc: Result folder named after the parameter file (or template file) without extension
+    outputBinding:
+      glob: "$(inputs.input_file ? inputs.input_file.nameroot : inputs.template_file.nameroot)"
+  - id: seed_file
+    type: ['null', File]
+    doc: Seed used by the random number generator
+    outputBinding:
+      glob: seed.txt
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastsimcoal2:27093--hdfd78af_0

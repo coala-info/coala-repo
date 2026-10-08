@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: finaletoolkit-filter-file
+baseCommand:
+  - finaletoolkit
+  - filter-file
 label: finaletoolkit_filter-file
 doc: "Filters a BED/BAM/CRAM file so that all reads/intervals, when applicable,are
   in mapped pairs, exceed a certain MAPQ, are not flagged for quality, are read1,
@@ -9,6 +11,13 @@ doc: "Filters a BED/BAM/CRAM file so that all reads/intervals, when applicable,a
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: .tbi
+        required: false
     doc: Path to BAM file.
     inputBinding:
       position: 1

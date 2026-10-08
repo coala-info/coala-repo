@@ -85,6 +85,12 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.alignment_file)
+        writable: true
+      - entry: $(inputs.fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flaimapper:3.0.0--py36_1

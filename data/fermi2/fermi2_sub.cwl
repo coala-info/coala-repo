@@ -4,7 +4,7 @@ baseCommand:
   - fermi2
   - sub
 label: fermi2_sub
-doc: "Subsample reads from a RLD file.\n\nTool homepage: https://github.com/lh3/fermi2"
+doc: "Subset an FM-index (RLD file) to the reads marked in a bit array.\n\nTool homepage: https://github.com/lh3/fermi2"
 inputs:
   - id: reads_rld
     type: File
@@ -13,17 +13,25 @@ inputs:
       position: 1
   - id: bits_bin
     type: File
-    doc: Input bits file.
+    doc: Bit array written by fermi2 diff or fermi2 occflt (one bit per read).
     inputBinding:
       position: 2
-  - id: cs
+  - id: complement
     type:
       - 'null'
       - boolean
-    doc: Output compressed RLD file.
+    doc: keep the reads that are NOT marked in the bit array (complement of the subset)
     inputBinding:
       position: 103
       prefix: -c
+  - id: single_stranded
+    type:
+      - 'null'
+      - boolean
+    doc: do not add the reverse-complement partner of each selected read
+    inputBinding:
+      position: 103
+      prefix: -s
   - id: threads
     type:
       - 'null'

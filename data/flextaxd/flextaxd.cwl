@@ -13,11 +13,15 @@ inputs:
       position: 101
       prefix: --clean_database
   - id: database
-    type: File
-    doc: FlexTaxD taxonomy sqlite3 database file (fullpath)
+    type:
+      - File
+      - string
+    doc: FlexTaxD taxonomy sqlite3 database file. Give an existing file to read or modify
+      it, or a new file name to create the database from a taxonomy file.
     inputBinding:
       position: 101
       prefix: --database
+      valueFrom: "$(self.class === 'File' ? self.basename : self)"
   - id: dbprogram
     type:
       - 'null'
@@ -79,7 +83,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: change dump prefix reqires two names default(names,nodes)
+    doc: Change dump prefix, requires two names separated by a comma, default (names,nodes)
     inputBinding:
       position: 101
       prefix: --dump_prefix
@@ -96,8 +100,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: use when script is implemented in pipeline to avoid security questions 
-      on overwrite!
+    default: true
+    doc: Use when the script is implemented in a pipeline to avoid security questions
+      on overwrite. Needed when creating a database without a terminal.
     inputBinding:
       position: 101
       prefix: --force
@@ -120,7 +125,7 @@ inputs:
   - id: logs
     type:
       - 'null'
-      - Directory
+      - string
     doc: Specify log directory
     inputBinding:
       position: 101
@@ -327,6 +332,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_out
+    type: File
+    doc: The taxonomy database (new or modified)
+    outputBinding:
+      glob: "$(inputs.database.class === 'File' ? inputs.database.basename : inputs.database)"
+  - id: dump_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Dump files written to the working directory (names.dmp, nodes.dmp, genomes.dmp)
+    outputBinding:
+      glob: "*.dmp"
   - id: outdir_dir
     type:
       - 'null'
@@ -334,6 +352,10 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.database.class === 'File' ? [{'entry': inputs.database, 'writable': true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flextaxd:0.4.4--pyhdfd78af_0

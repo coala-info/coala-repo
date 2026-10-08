@@ -1,5 +1,11 @@
 # filtlong CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| filtlong | PASS |  |
+
 ## filtlong
 
 ### Tool Description

@@ -1,9 +1,15 @@
 # flams CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flams | PASS |  |
+
 ## flams
 
 ### Tool Description
-Fast Local Alignment of Multiple Sequences (FLAMS) is a tool for searching and aligning protein sequences against a database.
+Find Lysine Acylations & other Modification Sites.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/flams:1.1.7--pyhdfd78af_0
@@ -18,9 +24,48 @@ Fast Local Alignment of Multiple Sequences (FLAMS) is a tool for searching and a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/flams:1.1.7--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/bcccb7fbff1695c2c59fe773c9035ccfb21b7e39c4635fcb8d7d65a6531359f43911627762: no space left on device
+usage: FLAMS [-h]
+             (--in inputFilePath | --id UniProtID | --batch batchFilePath)
+             [-p position] [--range errorRange] [-o outputFilePath]
+             [-d dataDir] [-t threadsBLAST] [-e evalueBLAST]
+             [-m modification [modification ...]]
+
+Find Lysine Acylations & other Modification Sites.
+
+options:
+  -h, --help            show this help message and exit
+  --in inputFilePath    Path to input .fasta file.
+  --id UniProtID        UniProt ID of input protein.
+  --batch batchFilePath
+                        Path to tab seperated input file for batch processing
+                        (1st column UniProt ID, 2nd column position). One
+                        query (UniProtID + position) per line.
+  -p position, --pos position
+                        Position in input protein that will be searched for
+                        conserved modifications.
+  --range errorRange    Allowed error range for position. [default: 0]
+  -o outputFilePath, --output outputFilePath
+                        Path to output .tsv file. [default: out.tsv] If FLAMS
+                        is run with --batch, the specified -o/--output is used
+                        as preposition, followed by
+                        '_$UniProtID_$position.tsv'. [default: '']
+  -d dataDir, --data_dir dataDir
+                        Path to directory where intermediate files should be
+                        saved. [default: $PWD/data]
+  -t threadsBLAST, --num_threads threadsBLAST
+                        Number of threads to run BLAST with. [default: 1]
+  -e evalueBLAST, --evalue evalueBLAST
+                        Desired E-value of BLAST run. [default: 0.01]
+  -m modification [modification ...], --modification modification [modification ...]
+                        Space-seperated list of modifications (all lower case)
+                        to search for at the given position. Possible values
+                        are any (combinations) of the CPLM, dbPTM and SCOP3P
+                        modifications. We also provide aggregated combinations
+                        for each amino acid (AA-All), and the CPLM
+                        combinations. For a full list of all supported PTMs,
+                        and how they are named, see the Supported PTM types
+                        section of the README. In general, PTMs are written
+                        all lowercase, and spaces within a PTM name are
+                        replaced by underscores. [default: K-All]
 ```
 

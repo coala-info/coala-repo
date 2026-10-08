@@ -1,5 +1,11 @@
 # fastq-scan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastq-scan | PASS |  |
+
 ## fastq-scan
 
 ### Tool Description

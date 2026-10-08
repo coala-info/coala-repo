@@ -1,5 +1,11 @@
 # fastool CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastool | Failed | tool bug: only the first input file is processed, gzip files give 0 sequences, and FASTQ output gets a '>' header |
+
 ## fastool
 
 ### Tool Description

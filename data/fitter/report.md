@@ -1,9 +1,15 @@
 # fitter CWL Generation Report
 
-## fitter
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fitter_fitdist | PASS |  |
+
+## fitter_fitdist
 
 ### Tool Description
-A tool to fit data to distributions and identify the best-fitting one.
+Fit a column of data to distributions and report the best-fitting one.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fitter:1.4.1--pyh5e36f6f_0
@@ -11,22 +17,19 @@ A tool to fit data to distributions and identify the best-fitting one.
 - **Package**: https://anaconda.org/channels/bioconda/packages/fitter/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/fitter/overview
-- **Total Downloads**: 35.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/cokelaer/fitter
-- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Matplotlib created a temporary config/cache directory at /tmp/matplotlib-uanetq4j because the default path (/user/qianghu/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
-Usage: fitter [OPTIONS] COMMAND [ARGS]...
-Try 'fitter -h' for help.
+Usage: fitter fitdist [OPTIONS] FILENAME
 
-Error: No such option: --h Did you mean --help?
+Options:
+  --column-number INTEGER
+  --delimiter TEXT            look at the first column
+  --distributions TEXT        llist of distribution
+  --tag TEXT                  tag to name output files
+  --progress / --no-progress
+  --verbose / --no-verbose
+  -h, --help                  Show this message and exit.
 ```
-
 
 ## Metadata
 - **Skill**: generated

@@ -1,14 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastppm
+baseCommand: fastppm-cli
 label: fastppm_fastppm-cli
 doc: "FastPPM CLI\n\nTool homepage: https://github.com/elkebir-group/fastppm"
 inputs:
   - id: format
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: Output format, either 'concise' or 'verbose'
     inputBinding:
       position: 101
@@ -16,8 +15,7 @@ inputs:
   - id: loss
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: Loss function L_i(.) to use for optimization
     inputBinding:
       position: 101
@@ -25,8 +23,7 @@ inputs:
   - id: precision
     type:
       - 'null'
-      - type: array
-        items: int
+      - int
     doc: Precision parameter, only used when loss function is 'beta_binomial*'
     inputBinding:
       position: 101
@@ -34,8 +31,7 @@ inputs:
   - id: segments
     type:
       - 'null'
-      - type: array
-        items: int
+      - int
     doc: Number of segments, only used when loss function is '*_pla' or '*_ppla'
     inputBinding:
       position: 101
@@ -61,8 +57,7 @@ inputs:
   - id: weights
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: Path to the weights matrix file
     inputBinding:
       position: 101

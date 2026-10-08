@@ -16,10 +16,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -r
     doc: restriction enzyme (use multiple times for more enzymes)
     inputBinding:
       position: 102
-      prefix: -r
 outputs:
   - id: stdout
     type: stdout

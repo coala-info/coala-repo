@@ -1,5 +1,14 @@
 # flexsweep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flexsweep_cnn | Failed | tool bug: training finishes but the command exits with AssertionError (predict is called without predict data); train plus predict crashes with an attribute error on the region names |
+| flexsweep_fvs-discoal | PASS |  |
+| flexsweep_fvs-vcf | Failed | tool bug: always crashes with TypeError, the fvs_vcf function does not accept the --pop option |
+| flexsweep_simulator | PASS |  |
+
 ## flexsweep_cnn
 
 ### Tool Description

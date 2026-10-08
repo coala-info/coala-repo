@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - correct
 label: fermi_correct
-doc: "Correct errors in reads using an FMD-index.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Correct errors in reads using an FMD-index.\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: reads_fmd
     type: File

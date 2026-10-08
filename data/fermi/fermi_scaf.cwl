@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - scaf
 label: fermi_scaf
-doc: "Scaffold contigs using FMD-index and remapped MAG files.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Scaffold contigs using FMD-index and remapped MAG files.\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: in_fmd
     type: File

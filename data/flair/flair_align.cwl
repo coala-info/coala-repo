@@ -4,8 +4,11 @@ baseCommand:
   - flair
   - align
 label: flair_align
-doc: "FLAIR align outputs an unfiltered bam file and a filtered bed file for use in
-  the downstream pipeline\n\nTool homepage: https://github.com/BrooksLabUCSC/flair"
+doc: 'FLAIR align outputs an unfiltered bam file and a filtered bed file for use in
+  the downstream pipeline
+
+
+  Tool homepage: https://github.com/BrooksLabUCSC/flair'
 inputs:
   - id: filtertype
     type:
@@ -26,12 +29,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+    secondaryFiles:
+      - pattern: .fai
+        required: false
   - id: gtf
     type:
       - 'null'
       - File
-    doc: reference annotation, only used if --remove_internal_priming is 
-      specified, recommended if so
+    doc: reference annotation, only used if --remove_internal_priming is specified,
+      recommended if so
     inputBinding:
       position: 101
       prefix: --gtf
@@ -39,8 +45,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of bases that are at least 75% As required to call read as 
-      internal priming
+    doc: number of bases that are at least 75% As required to call read as internal
+      priming
     inputBinding:
       position: 101
       prefix: --intprimingfracAs
@@ -48,8 +54,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of bases that are at leas 75% As required to call read as 
-      internal priming
+    doc: number of bases that are at leas 75% As required to call read as internal
+      priming
     inputBinding:
       position: 101
       prefix: --intprimingthreshold
@@ -57,8 +63,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: annotated isoforms/junctions bed file for splice site-guided minimap2 
-      genomic alignment
+    doc: annotated isoforms/junctions bed file for splice site-guided minimap2 genomic
+      alignment
     inputBinding:
       position: 101
       prefix: --junction_bed
@@ -82,8 +88,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set level to case-insensitive symbolic value, one of CRITICAL, DEBUG, 
-      ERROR, FATAL, INFO, NOTSET, WARN, WARNING
+    doc: Set level to case-insensitive symbolic value, one of CRITICAL, DEBUG, ERROR,
+      FATAL, INFO, NOTSET, WARN, WARNING
     inputBinding:
       position: 101
       prefix: --log-level
@@ -98,9 +104,9 @@ inputs:
   - id: maxintronlen
     type:
       - 'null'
-      - int
-    doc: maximum intron length in genomic alignment. Longer can help recover 
-      more novel isoforms with long introns
+      - string
+    doc: maximum intron length in genomic alignment. Longer can help recover more
+      novel isoforms with long introns (accepts suffixes such as 350k)
     inputBinding:
       position: 101
       prefix: --maxintronlen
@@ -108,8 +114,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum size of alignment kept, used in minimap -s. More important when
-      doing downstream fusion detection
+    doc: minimum size of alignment kept, used in minimap -s. More important when doing
+      downstream fusion detection
     inputBinding:
       position: 101
       prefix: --minfragmentsize
@@ -125,8 +131,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify this flag to use native-RNA specific alignment parameters for 
-      minimap2
+    doc: specify this flag to use native-RNA specific alignment parameters for minimap2
     inputBinding:
       position: 101
       prefix: --nvrna
@@ -184,13 +189,13 @@ inputs:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: output file name base
+      type: array
+      items: File
+    doc: Output files written with the output name base
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

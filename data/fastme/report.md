@@ -1,5 +1,11 @@
 # fastme CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastme | PASS | fixed joined optional-argument flags (-d, -p, -g, -n) and staged input writable |
+
 ## fastme
 
 ### Tool Description

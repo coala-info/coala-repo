@@ -1,5 +1,11 @@
 # figtree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| figtree | PASS |  |
+
 ## figtree
 
 ### Tool Description

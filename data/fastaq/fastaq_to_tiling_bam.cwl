@@ -54,6 +54,11 @@ outputs:
     doc: Name of output BAM file
     outputBinding:
       glob: '$(inputs.outfile)'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.infile)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

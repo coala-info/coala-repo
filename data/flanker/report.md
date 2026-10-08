@@ -1,5 +1,11 @@
 # flanker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flanker | PASS |  |
+
 ## flanker
 
 ### Tool Description

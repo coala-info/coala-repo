@@ -4,77 +4,39 @@ baseCommand:
   - finaletoolkit
   - mds
 label: finaletoolkit_mds
-doc: "Calculate the frequency of end motifs in fragments.\n\nTool homepage: https://github.com/epifluidlab/FinaleToolkit"
+doc: "Reads k-mer frequencies from a file and calculates a motif diversity score (MDS)
+  using normalized Shannon entropy as described by Jiang et al (2020). The score
+  is printed to standard output.\n\nTool homepage: https://github.com/epifluidlab/FinaleToolkit"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input file containing fragment data.
+  - id: file_path
+    type:
+      - 'null'
+      - File
+    doc: Tab-delimited or similar file containing one column for all k-mers a 
+      one column for frequency. Reads from stdin by default.
     inputBinding:
       position: 1
   - id: header
     type:
       - 'null'
       - int
-    doc: Line number of the header in the input file (0-indexed).
+    doc: Number of header rows to ignore. Default is 0
     inputBinding:
       position: 102
       prefix: --header
-  - id: max_len
-    type:
-      - 'null'
-      - int
-    doc: Maximum fragment length to consider.
-    inputBinding:
-      position: 102
-      prefix: --max-len
-  - id: min_len
-    type:
-      - 'null'
-      - int
-    doc: Minimum fragment length to consider.
-    inputBinding:
-      position: 102
-      prefix: --min-len
-  - id: motif_len
-    type:
-      - 'null'
-      - int
-    doc: Length of the end motifs to analyze.
-    inputBinding:
-      position: 102
-      prefix: --motif-len
   - id: sep
     type:
       - 'null'
       - string
-    doc: Separator used in the input file.
+    doc: Separator used in tabular file.
     inputBinding:
       position: 102
       prefix: --sep
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for computation.
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file to save the motif frequencies.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: Motif diversity score printed to standard output
+stdout: mds.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/finaletoolkit:0.11.0--pyhdfd78af_0

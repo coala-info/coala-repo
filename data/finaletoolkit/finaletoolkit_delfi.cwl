@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: finaletoolkit-delfi
+baseCommand:
+  - finaletoolkit
+  - delfi
 label: finaletoolkit_delfi
 doc: "Calculates DELFI features over genome, returning information about (GC-corrected)
   short fragments, long fragments, DELFI ratio, and total fragments.\n\nTool homepage:
@@ -8,6 +10,13 @@ doc: "Calculates DELFI features over genome, returning information about (GC-cor
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: .tbi
+        required: false
     doc: Path to a BAM/CRAM/Fragment file containing fragment data.
     inputBinding:
       position: 1

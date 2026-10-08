@@ -1,12 +1,18 @@
 # fasta_windows CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fasta_windows | PASS |  |
+
 ## fasta_windows
 
 ### Tool Description
-Splits a FASTA file into smaller files.
+Quickly compute statistics over a fasta file in windows.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fasta-splitter:0.2.6--0
+- **Docker Image**: quay.io/biocontainers/fasta_windows:0.2.4--h7b50bb2_4
 - **Homepage**: https://github.com/tolkit/fasta_windows
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasta_windows/overview
 - **Validation**: PASS
@@ -18,20 +24,22 @@ Splits a FASTA file into smaller files.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/fasta-splitter:0.2.6--0' locally
-0.2.6--0: Pulling from biocontainers/fasta-splitter
-a3ed95caeb02: Already exists
-b0dc45cd432d: Already exists
-3aaade50789a: Already exists
-ddd482ea7b54: Already exists
-7ff999a2256f: Already exists
-e7c454e5167d: Already exists
-dfda3e01f2b6: Already exists
-a3ed95caeb02: Already exists
-10c3bb32200b: Already exists
-c77a4e2e11f4: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob4239086853: no space left on device
+Fasta windows 0.2.4
+Max Brown <mb39@sanger.ac.uk>
+Quickly compute statistics over a fasta file in windows.
 
-Run 'docker run --help' for more information
+USAGE:
+    fasta_windows [OPTIONS] --fasta <fasta> --output <output>
+
+OPTIONS:
+    -d, --description                  Add an extra column to _windows.tsv output with fasta header
+                                       descriptions.
+    -f, --fasta <fasta>                The input fasta file.
+    -h, --help                         Print help information
+    -m, --masked                       Consider only uppercase nucleotides in the calculations.
+    -o, --output <output>              Output filename for the TSV's (without extension).
+    -V, --version                      Print version information
+    -w, --window_size <window_size>    Integer size of window for statistics to be computed over.
+                                       [default: 1000]
 ```
 

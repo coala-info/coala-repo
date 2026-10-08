@@ -1,5 +1,11 @@
 # fastdup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastdup | PASS |  |
+
 ## fastdup
 
 ### Tool Description

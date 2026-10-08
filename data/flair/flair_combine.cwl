@@ -4,9 +4,17 @@ baseCommand:
   - flair
   - combine
 label: flair_combine
-doc: "Combine transcriptomes from multiple samples based on a manifest file.\n\nTool
-  homepage: https://github.com/BrooksLabUCSC/flair"
+doc: 'Combine transcriptomes from multiple samples based on a manifest file.
+
+
+  Tool homepage: https://github.com/BrooksLabUCSC/flair'
 inputs:
+  - id: manifest_files
+    type:
+      type: array
+      items: File
+    doc: Isoform bed, fasta and read-map files named in the manifest (staged by file
+      name; the manifest must use plain file names)
   - id: convert_gtf
     type:
       - 'null'
@@ -19,8 +27,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: window for comparing ends of isoforms with the same intron chain. 
-      Default:200bp
+    doc: window for comparing ends of isoforms with the same intron chain. Default:200bp
     inputBinding:
       position: 101
       prefix: --endwindow
@@ -43,12 +50,11 @@ inputs:
       prefix: --include_se
   - id: manifest
     type: File
-    doc: path to manifest files that points to transcriptomes to combine. Each 
-      line of file should be tab separated with sample name, sample type 
-      (isoform or fusionisoform), path/to/isoforms.bed, path/to/isoforms.fa, 
-      path/to/combined.isoform.read.map.txt. fa and read.map.txt files are not 
-      required, although if .fa files are not provided for each sample a .fa 
-      output will not be generated
+    doc: path to manifest files that points to transcriptomes to combine. Each line
+      of file should be tab separated with sample name, sample type (isoform or fusionisoform),
+      path/to/isoforms.bed, path/to/isoforms.fa, path/to/combined.isoform.read.map.txt.
+      fa and read.map.txt files are not required, although if .fa files are not provided
+      for each sample a .fa output will not be generated
     inputBinding:
       position: 101
       prefix: --manifest
@@ -56,8 +62,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum percent usage required in one sample to keep isoform in 
-      combined transcriptome. Default:10
+    doc: minimum percent usage required in one sample to keep isoform in combined
+      transcriptome. Default:10
     inputBinding:
       position: 101
       prefix: --minpercentusage
@@ -67,15 +73,17 @@ inputs:
       position: 102
       prefix: --output_prefix
 outputs:
-  - id: output_prefix
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: "path to collapsed_output.bed file. default: 'collapsed_flairomes'"
+      type: array
+      items: File
+    doc: Combined isoform bed, counts and map files
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.manifest_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

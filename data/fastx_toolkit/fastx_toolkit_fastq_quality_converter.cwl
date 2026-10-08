@@ -37,12 +37,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -n
+  - id: ascii_offset
+    type:
+      - 'null'
+      - int
+    doc: FASTQ ASCII offset. Default is 33.
+    inputBinding:
+      position: 101
+      prefix: -Q
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -47,6 +47,11 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: FEELNCPATH
+        envValue: /usr/local
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/feelnc:0.2--pl526_0

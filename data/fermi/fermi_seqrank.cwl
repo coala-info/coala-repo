@@ -2,9 +2,9 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - fermi
-  - seqsort
+  - seqrank
 label: fermi_seqrank
-doc: "Sorts an FMD-index for Fermi.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Computes the rank of the sequences in an FMD-index.\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: reads_fmd
     type: File

@@ -4,20 +4,18 @@ baseCommand: flash
 label: flash
 doc: "FLASH (Fast Length Adjustment of SHort reads) is an accurate and fast tool to
   merge paired-end reads that were generated from DNA fragments whose lengths are
-  shorter than twice the length of reads.\n\nTool homepage: https://github.com/Dao-AILab/flash-attention"
+  shorter than twice the length of reads.\n\nTool homepage: https://ccb.jhu.edu/software/FLASH/"
 inputs:
   - id: mates_1
-    type:
-      - 'null'
-      - File
-    doc: First mate FASTQ file
+    type: File
+    doc: First mate FASTQ file (or the single interleaved or tab-delimited input file)
     inputBinding:
       position: 1
   - id: mates_2
     type:
       - 'null'
       - File
-    doc: Second mate FASTQ file
+    doc: Second mate FASTQ file (not used with interleaved or tab-delimited input)
     inputBinding:
       position: 2
   - id: allow_outies
@@ -210,6 +208,9 @@ inputs:
       position: 105
       prefix: --output-prefix
 outputs:
+  - id: log
+    type: stdout
+    doc: Informational messages (or the merged reads with --to-stdout)
   - id: output_prefix
     type:
       - 'null'
@@ -217,7 +218,7 @@ outputs:
         items: File
     doc: Prefix of output files.
     outputBinding:
-      glob: $(inputs.output_prefix_path)*
+      glob: "$(inputs.output_prefix_path ? inputs.output_prefix_path : 'out')*"
   - id: output_directory
     type:
       - 'null'
@@ -230,3 +231,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flash:1.2.11--ha92aebf_2
+stdout: flash.log

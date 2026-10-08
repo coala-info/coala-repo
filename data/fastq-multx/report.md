@@ -1,5 +1,11 @@
 # fastq-multx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastq-multx | PASS |  |
+
 ## fastq-multx
 
 ### Tool Description

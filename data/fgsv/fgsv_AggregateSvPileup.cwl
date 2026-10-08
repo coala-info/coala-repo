@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fgsv
-  - AggregateSvPileup
+baseCommand: fgsv
 label: fgsv_AggregateSvPileup
 doc: "Aggregates and merges pileups that are likely to support the same breakpoint.\n\
   \nTakes as input the file of pileups produced by 'SvPileup'. That file contains
@@ -40,7 +38,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --async-io
   - id: bam_file
     type:
@@ -48,6 +46,9 @@ inputs:
       - File
     doc: "Bam file for allele frequency analysis. Must be coordinate sorted version
       of the file\nthat was input to SvPileup."
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 101
       prefix: --bam
@@ -57,7 +58,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compression
   - id: flank
     type:
@@ -84,7 +85,7 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --log-level
   - id: max_dist
     type:
@@ -121,7 +122,7 @@ inputs:
       - string
     doc: "Validation stringency for SAM/BAM reading. Options:\nSTRICT, LENIENT, SILENT."
     inputBinding:
-      position: 101
+      position: 1
       prefix: --sam-validation-stringency
   - id: targets_bed
     type:
@@ -137,14 +138,17 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --tmp-dir
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
+arguments:
+  - position: 50
+    valueFrom: AggregateSvPileup
 outputs:
   - id: output_file
     type:

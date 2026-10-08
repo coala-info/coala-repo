@@ -4,6 +4,9 @@ baseCommand: fasten_clean
 label: fasten_fasten_clean
 doc: "Trims and filters reads\n\nTool homepage: https://github.com/lskatz/fasten"
 inputs:
+  - id: reads
+    type: File
+    doc: Reads in FASTQ format, read from standard input
   - id: min_avg_quality
     type:
       - 'null'
@@ -60,4 +63,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
+stdin: $(inputs.reads.path)
 stdout: fasten_fasten_clean.out

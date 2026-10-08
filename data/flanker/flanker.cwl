@@ -162,9 +162,39 @@ inputs:
       position: 101
       prefix: --window_stop
 outputs:
+  - id: flank_fasta
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Extracted flanking sequences (one FASTA per isolate and gene)
+    outputBinding:
+      glob: "*_flank.fasta"
+  - id: abricate_output
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Abricate gene search results (one file per input FASTA)
+    outputBinding:
+      glob: "*_resfinder"
+  - id: cluster_output
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Clustering files written with --cluster (prefix set by --outfile)
+    outputBinding:
+      glob: "$(inputs.outfile ? inputs.outfile : 'out')*"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flanker:0.1.5--py_0

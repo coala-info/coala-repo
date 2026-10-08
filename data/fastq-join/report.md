@@ -1,5 +1,11 @@
 # fastq-join CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastq-join | PASS |  |
+
 ## fastq-join
 
 ### Tool Description

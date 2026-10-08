@@ -1,9 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: diffsplice
+baseCommand:
+  - flair
+  - diffsplice
 label: flair_diffsplice
-doc: "Differential splicing analysis using DRIMSeq, taking isoforms and count matrices
-  as input.\n\nTool homepage: https://github.com/BrooksLabUCSC/flair"
+doc: 'Differential splicing analysis using DRIMSeq, taking isoforms and count matrices
+  as input.
+
+
+  Tool homepage: https://github.com/BrooksLabUCSC/flair'
 inputs:
   - id: batch
     type:
@@ -17,9 +22,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Implies --test. Specify one condition corresponding to samples in the 
-      counts_matrix to be compared against condition2; by default, the first two
-      unique conditions are used
+    doc: Implies --test. Specify one condition corresponding to samples in the counts_matrix
+      to be compared against condition2; by default, the first two unique conditions
+      are used
     inputBinding:
       position: 101
       prefix: --conditionA
@@ -27,8 +32,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify another condition corresponding to samples in the counts_matrix
-      to be compared against conditionA
+    doc: Specify another condition corresponding to samples in the counts_matrix to
+      be compared against conditionA
     inputBinding:
       position: 101
       prefix: --conditionB
@@ -42,9 +47,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum number of samples that have coverage over an AS event 
-      inclusion/exclusion for DRIMSeq testing; events with too few samples are 
-      filtered out and not tested (6)
+    doc: The minimum number of samples that have coverage over an AS event inclusion/exclusion
+      for DRIMSeq testing; events with too few samples are filtered out and not tested
+      (6)
     inputBinding:
       position: 101
       prefix: --drim1
@@ -52,8 +57,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum number of samples expressing the inclusion of an AS event; 
-      events with too few samples are filtered out and not tested (3)
+    doc: The minimum number of samples expressing the inclusion of an AS event; events
+      with too few samples are filtered out and not tested (3)
     inputBinding:
       position: 101
       prefix: --drim2
@@ -61,9 +66,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum number of reads covering an AS event inclusion/exclusion 
-      for DRIMSeq testing, events with too few samples are filtered out and not 
-      tested (15)
+    doc: The minimum number of reads covering an AS event inclusion/exclusion for
+      DRIMSeq testing, events with too few samples are filtered out and not tested
+      (15)
     inputBinding:
       position: 101
       prefix: --drim3
@@ -71,8 +76,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum number of reads covering an AS event inclusion for DRIMSeq 
-      testing, events with too few samples are filtered out and not tested (5)
+    doc: The minimum number of reads covering an AS event inclusion for DRIMSeq testing,
+      events with too few samples are filtered out and not tested (5)
     inputBinding:
       position: 101
       prefix: --drim4
@@ -86,8 +91,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Specify this argument to force overwriting of files in an existing 
-      output directory
+    doc: Specify this argument to force overwriting of files in an existing output
+      directory
     inputBinding:
       position: 101
       prefix: --out_dir_force

@@ -11,8 +11,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify if want to allow reads to be assigned to multiple paralogs with
-      equivalent alignment
+    doc: specify if want to allow reads to be assigned to multiple paralogs with equivalent
+      alignment
     inputBinding:
       position: 101
       prefix: --allow_paralogs
@@ -28,9 +28,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: specify transcript fasta that corresponds to transcripts in the gtf to 
-      run annotation-reliant flair collapse; to ask flair to make transcript 
-      sequences given the gtf and genome fa, type --annotation_reliant generate
+    doc: specify transcript fasta that corresponds to transcripts in the gtf to run
+      annotation-reliant flair collapse; to ask flair to make transcript sequences
+      given the gtf and genome fa, type --annotation_reliant generate
     inputBinding:
       position: 101
       prefix: --annotation_reliant
@@ -38,8 +38,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: enforce coverage of 4 out of 6 bp around each splice site and no 
-      insertions greater than 3 bp at the splice site
+    doc: enforce coverage of 4 out of 6 bp around each splice site and no insertions
+      greater than 3 bp at the splice site
     inputBinding:
       position: 101
       prefix: --check_splice
@@ -72,8 +72,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: when specified, TSS/TES for each isoform will be determined 
-      standardized at the gene level
+    doc: when specified, TSS/TES for each isoform will be determined standardized
+      at the gene level
     inputBinding:
       position: 101
       prefix: --gene_tss
@@ -81,8 +81,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify this argument to generate a txt file of read-isoform 
-      assignments
+    doc: specify this argument to generate a txt file of read-isoform assignments
     inputBinding:
       position: 101
       prefix: --generate_map
@@ -92,12 +91,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+    secondaryFiles:
+      - pattern: .fai
+        required: false
   - id: gtf
     type:
       - 'null'
       - File
-    doc: GTF annotation file, used for renaming FLAIR isoforms to annotated 
-      isoforms and adjusting TSS/TESs
+    doc: GTF annotation file, used for renaming FLAIR isoforms to annotated isoforms
+      and adjusting TSS/TESs
     inputBinding:
       position: 101
       prefix: --gtf
@@ -105,8 +107,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: threshold for fraction of As in sequence near read end to call as 
-      internal priming
+    doc: threshold for fraction of As in sequence near read end to call as internal
+      priming
     inputBinding:
       position: 101
       prefix: --intprimingfracAs
@@ -114,8 +116,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of bases that are at least intprimingfracAs% As required to call
-      read as internal priming
+    doc: number of bases that are at least intprimingfracAs% As required to call read
+      as internal priming
     inputBinding:
       position: 101
       prefix: --intprimingthreshold
@@ -123,8 +125,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify if intermediate and temporary files are to be kept for 
-      debugging
+    doc: specify if intermediate and temporary files are to be kept for debugging
     inputBinding:
       position: 101
       prefix: --keep_intermediate
@@ -156,8 +157,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: additional minimap2 arguments when aligning reads first-pass 
-      transcripts; separate args by commas
+    doc: additional minimap2 arguments when aligning reads first-pass transcripts;
+      separate args by commas
     inputBinding:
       position: 101
       prefix: --mm2_args
@@ -165,8 +166,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: when specified, TSS/TES from the gtf provided with -f will not be used 
-      to adjust isoform TSSs/TESs
+    doc: when specified, TSS/TES from the gtf provided with -f will not be used to
+      adjust isoform TSSs/TESs
     inputBinding:
       position: 101
       prefix: --no_gtf_end_adjustment
@@ -229,8 +230,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify if all supporting reads need to be full-length (80% coverage 
-      and spanning 25 bp of the first and last exons)
+    doc: specify if all supporting reads need to be full-length (80% coverage and
+      spanning 25 bp of the first and last exons)
     inputBinding:
       position: 101
       prefix: --stringent
@@ -238,8 +239,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimum number of supporting reads for an isoform; if s < 1, it will be
-      treated as a percentage of expression of the gene
+    doc: minimum number of supporting reads for an isoform; if s < 1, it will be treated
+      as a percentage of expression of the gene
     inputBinding:
       position: 101
       prefix: --support
@@ -271,8 +272,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify if reads are generated from a long read method with minimal 
-      fragmentation
+    doc: specify if reads are generated from a long read method with minimal fragmentation
     inputBinding:
       position: 101
       prefix: --trust_ends
@@ -282,13 +282,13 @@ inputs:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: output file name base for FLAIR isoforms
+      type: array
+      items: File
+    doc: Output files written with the output name base
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

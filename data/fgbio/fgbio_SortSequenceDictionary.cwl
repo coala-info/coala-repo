@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fgbio
-  - SortSequenceDictionary
+baseCommand: fgbio
 label: fgbio_SortSequenceDictionary
 doc: "Sorts a sequence dictionary file in the order of another sequence dictionary.\n\
   \nThe inputs are to two '*.dict' files. One to be sorted, and the other to provide
@@ -22,7 +20,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --async-io
   - id: compression
     type:
@@ -30,7 +28,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compression
   - id: cram_ref_fasta
     type:
@@ -38,7 +36,7 @@ inputs:
       - File
     doc: Reference FASTA for CRAM encoding/decoding.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --cram-ref-fasta
   - id: input
     type: File
@@ -53,7 +51,7 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --log-level
   - id: sam_validation_stringency
     type:
@@ -61,7 +59,7 @@ inputs:
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --sam-validation-stringency
   - id: skip_missing_contigs
     type:
@@ -85,13 +83,16 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --tmp-dir
   - id: output_path
     type: string
     inputBinding:
       position: 102
       prefix: --output
+arguments:
+  - position: 50
+    valueFrom: SortSequenceDictionary
 outputs:
   - id: output
     type: File

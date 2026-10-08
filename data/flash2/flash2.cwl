@@ -1,15 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: flash
+baseCommand: flash2
 label: flash2
 doc: "FLASH (Fast Length Adjustment of SHort reads) is an accurate and fast tool to
   merge paired-end reads that were generated from DNA fragments whose lengths are
   shorter than twice the length of reads.\n\nTool homepage: https://github.com/dstreett/FLASH2"
 inputs:
   - id: mates_1
-    type:
-      - 'null'
-      - File
+    type: File
     doc: First mate FASTQ file (or interleaved/tab-delimited file if flags are 
       set)
     inputBinding:
@@ -239,11 +237,16 @@ inputs:
       position: 103
       prefix: --to-stdout
   - id: output_directory_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 104
       prefix: --output-directory
 outputs:
+  - id: log
+    type: stdout
+    doc: Informational messages (or the merged reads with --to-stdout)
   - id: output_directory
     type:
       - 'null'
@@ -253,13 +256,15 @@ outputs:
       glob: $(inputs.output_directory_path)
   - id: output_prefix_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$(inputs.output_prefix ? inputs.output_prefix : 'out')*"
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flash2:2.2.00--h577a1d6_9
+stdout: flash2.log

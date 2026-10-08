@@ -1,5 +1,11 @@
 # fastq-anonymous CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastq-anonymous | Failed | tool bug: output has a blank line after every FASTQ record, so the FASTQ is malformed |
+
 ## fastq-anonymous
 
 ### Tool Description

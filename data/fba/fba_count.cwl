@@ -21,10 +21,12 @@ inputs:
     type:
       type: array
       items: File
-    doc: specify input files. Multiple '-i' flags can be used.
+      inputBinding:
+        prefix: --input
+    doc: specify input files (output of extract or filter). Each file gets its own
+      '-i' flag.
     inputBinding:
       position: 101
-      prefix: --input
   - id: umi_deduplication_method
     type:
       - 'null'

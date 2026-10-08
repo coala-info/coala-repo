@@ -40,7 +40,7 @@ inputs:
   - id: level
     type:
       - 'null'
-      - string
+      - int
     doc: Max depth to fetch data within accession tree
     inputBinding:
       position: 102
@@ -71,21 +71,37 @@ inputs:
       position: 102
       prefix: --verbose
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: Path to write metadata (default standard output); a directory when
+      split is set
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 102
+      prefix: -o
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: Path to write metadata
+    doc: Metadata file written with -o
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.split ? null : inputs.output_file_path)'
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with one file per accession (split mode)
+    outputBinding:
+      glob: '$(inputs.split ? inputs.output_file_path : null)'
+  - id: stdout
+    type: stdout
+    doc: Metadata printed to standard output (when no output path is given)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ffq:0.3.1--pyhdfd78af_0
+stdout: ffq.out

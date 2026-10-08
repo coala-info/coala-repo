@@ -1,5 +1,11 @@
 # fithic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fithic | PASS |  |
+
 ## fithic
 
 ### Tool Description

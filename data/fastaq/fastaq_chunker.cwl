@@ -47,9 +47,6 @@ inputs:
       position: 105
       prefix: --skip_all_Ns
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: out_files
     type:
       type: array
@@ -60,4 +57,3 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1
-stdout: fastaq_chunker.out

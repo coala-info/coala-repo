@@ -541,7 +541,9 @@ inputs:
       position: 101
       prefix: --low_complexity_filter
   - id: complexity_threshold
-    type: int
+    type:
+      - 'null'
+      - int
     doc: the threshold for low complexity filter (0~100). Default is 30, which 
       means 30% complexity is required.
     inputBinding:

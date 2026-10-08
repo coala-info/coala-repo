@@ -202,7 +202,7 @@ inputs:
   - id: input_file
     type:
       - 'null'
-      - string
+      - File
     doc: read input file name
     inputBinding:
       position: 101
@@ -454,6 +454,36 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_reads
+    type:
+      - 'null'
+      - File
+    doc: read output file name
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: output_failed_out
+    type:
+      - 'null'
+      - File
+    doc: specify the file to store reads that cannot pass the filters.
+    outputBinding:
+      glob: $(inputs.failed_out)
+  - id: output_json
+    type:
+      - 'null'
+      - File
+    doc: the json format report file name
+    outputBinding:
+      glob: "$(inputs.json_report ? inputs.json_report : 'fastplong.json')"
+  - id: output_html
+    type:
+      - 'null'
+      - File
+    doc: the html format report file name
+    outputBinding:
+      glob: "$(inputs.html_report ? inputs.html_report : 'fastplong.html')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastplong:0.4.1--h224cc79_0

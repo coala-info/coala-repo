@@ -1,5 +1,11 @@
 # fastuniq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastuniq | PASS | rewritten from the help (wrong flags fixed, input list built from the FASTQ files); real nf-core reads keep 100 pairs; synthetic data: with 30 planted duplicate pairs 130 pairs reduce to 100 |
+
 ## fastuniq
 
 ### Tool Description

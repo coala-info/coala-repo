@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - chkbwt
 label: fermi_chkbwt
-doc: "Check the BWT index file\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Check the BWT index file\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: idxbase_bwt
     type: File

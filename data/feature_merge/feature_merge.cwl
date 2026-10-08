@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: Input file
     inputBinding:
-      position: 1
+      position: 201
   - id: input_n
     type:
       - 'null'
@@ -16,11 +16,11 @@ inputs:
         items: File
     doc: Additional input files
     inputBinding:
-      position: 2
+      position: 202
   - id: exclude_components
     type:
       - 'null'
-      - string
+      - boolean
     doc: Exclude component features from output
     inputBinding:
       position: 103
@@ -30,12 +30,13 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Comma seperated types of features to merge. Must be terms or accessions
-      from the SOFA sequence ontology, "ALL", or "NONE". (Can be provided more 
-      than once to specify multiple merge groups)
+        inputBinding:
+          prefix: -f
+    doc: Merge groups. Each item is a comma separated list of feature types (terms
+      or accessions from the SOFA sequence ontology, "ALL", or "NONE") and gets its
+      own -f flag.
     inputBinding:
       position: 103
-      prefix: -f
   - id: identical_coordinates
     type:
       - 'null'
@@ -55,7 +56,7 @@ inputs:
   - id: ignore_strand
     type:
       - 'null'
-      - string
+      - boolean
     doc: Ignore strand, merge feature regardless of strand
     inputBinding:
       position: 103
@@ -73,14 +74,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: -m
-  - id: print_version
-    type:
-      - 'null'
-      - boolean
-    doc: Print version and exit
-    inputBinding:
-      position: 103
-      prefix: -v
   - id: threshold_distance
     type:
       - 'null'

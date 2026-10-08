@@ -52,6 +52,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: bloom_filter
+    type:
+      - 'null'
+      - File
+    doc: Bloom filter file (<output>.bf)
+    outputBinding:
+      glob: $(inputs.output + '.bf')
+  - id: bloom_filter_info
+    type:
+      - 'null'
+      - File
+    doc: Bloom filter parameters (<output>.bf.txt)
+    outputBinding:
+      glob: $(inputs.output + '.bf.txt')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastqpuri:1.0.7--r44hb1d24b7_9

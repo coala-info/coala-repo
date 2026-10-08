@@ -4,8 +4,11 @@ baseCommand:
   - flair
   - diffexp
 label: flair_diffexp
-doc: "Differential expression analysis of isoforms using flair. It performs parallel
-  DRIMSeq and filters isoforms based on expression thresholds.\n\nTool homepage: https://github.com/BrooksLabUCSC/flair"
+doc: 'Differential expression analysis of isoforms using flair. It performs parallel
+  DRIMSeq and filters isoforms based on expression thresholds.
+
+
+  Tool homepage: https://github.com/BrooksLabUCSC/flair'
 inputs:
   - id: counts_matrix
     type: File
@@ -17,8 +20,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Read count expression threshold. Isoforms in which both conditions 
-      contain fewer than E reads are filtered out (Default E=10)
+    doc: Read count expression threshold. Isoforms in which both conditions contain
+      fewer than E reads are filtered out (Default E=10)
     inputBinding:
       position: 101
       prefix: --exp_thresh
@@ -26,8 +29,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Specify this argument to force overwriting of files in an existing 
-      output directory
+    doc: Specify this argument to force overwriting of files in an existing output
+      directory
     inputBinding:
       position: 101
       prefix: --out_dir_force

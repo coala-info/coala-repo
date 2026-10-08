@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - contrast
 label: fermi_contrast
-doc: "Contrast two FMD-index based genomes.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Contrast two FMD-index based genomes.\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: idx1_fmd
     type: File
@@ -17,8 +17,8 @@ inputs:
     inputBinding:
       position: 2
   - id: idx1_to_idx2_sub
-    type: File
-    doc: Substitution file from index 1 to index 2
+    type: string
+    doc: Name of the output bit array file (1-2.sub) marking reads of index 1 that are not supported by index 2
     inputBinding:
       position: 3
   - id: idx2_fmd
@@ -32,8 +32,8 @@ inputs:
     inputBinding:
       position: 5
   - id: idx2_to_idx1_sub
-    type: File
-    doc: Substitution file from index 2 to index 1
+    type: string
+    doc: Name of the output bit array file (2-1.sub) marking reads of index 2 that are not supported by index 1
     inputBinding:
       position: 6
   - id: kmer_length
@@ -61,9 +61,21 @@ inputs:
       position: 107
       prefix: -t
 outputs:
+  - id: idx1_sub_array
+    type: File
+    doc: Bit array of the reads selected from the first index (written to the 1-2.sub file name)
+    outputBinding:
+      glob: $(inputs.idx1_to_idx2_sub)
+  - id: idx2_sub_array
+    type: File
+    doc: Bit array of the reads selected from the second index (written to the 2-1.sub file name)
+    outputBinding:
+      glob: $(inputs.idx2_to_idx1_sub)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fermi:1.1_r751_beta--h577a1d6_9

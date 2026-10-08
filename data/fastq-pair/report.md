@@ -1,5 +1,11 @@
 # fastq-pair CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastq-pair | PASS |  |
+
 ## fastq-pair
 
 ### Tool Description

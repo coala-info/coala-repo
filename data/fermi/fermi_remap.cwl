@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - remap
 label: fermi_remap
-doc: "Remap reads to contigs using FMD index\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Remap reads to contigs using FMD index\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: reads_fmd
     type: File

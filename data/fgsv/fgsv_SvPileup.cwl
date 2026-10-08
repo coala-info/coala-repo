@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fgsv
-  - SvPileup
+baseCommand: fgsv
 label: fgsv_SvPileup
 doc: "Collates pileups of reads over breakpoint events.\n\nTool homepage: https://github.com/fulcrumgenomics/fgsv"
 inputs:
@@ -12,7 +10,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --async-io
   - id: compression
     type:
@@ -20,7 +18,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compression
   - id: input_bam
     type: File
@@ -34,7 +32,7 @@ inputs:
       - string
     doc: Minimum severity log-level to emit.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --log-level
   - id: max_aligned_segment_inner_distance
     type:
@@ -88,7 +86,7 @@ inputs:
       - string
     doc: Validation stringency for SAM/BAM reading.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --sam-validation-stringency
   - id: slop
     type:
@@ -122,20 +120,23 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --tmp-dir
+arguments:
+  - position: 50
+    valueFrom: SvPileup
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+  - id: pileup_txt
+    type: File
+    doc: Tab-delimited file describing SV pileups, one line per breakpoint event.
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_prefix).txt
+  - id: pileup_bam
+    type: File
+    doc: SAM/BAM file with the reads that contain SV breakpoint evidence, annotated
+      with the be tag.
+    outputBinding:
+      glob: $(inputs.output_prefix).bam
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fgsv:0.2.1--hdfd78af_1
-stdout: fgsv_SvPileup.out

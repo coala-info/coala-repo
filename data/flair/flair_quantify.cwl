@@ -1,16 +1,27 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: quantify
+baseCommand:
+  - flair
+  - quantify
 label: flair_quantify
-doc: "takes in many long-read RNA-seq reads files and quantifies them against a single
-  transcriptome. A stringent, full-read-match-based approach\n\nTool homepage: https://github.com/BrooksLabUCSC/flair"
+doc: 'takes in many long-read RNA-seq reads files and quantifies them against a single
+  transcriptome. A stringent, full-read-match-based approach
+
+
+  Tool homepage: https://github.com/BrooksLabUCSC/flair'
 inputs:
+  - id: reads_files
+    type:
+      type: array
+      items: File
+    doc: Read files named in the reads manifest (staged by file name; the manifest
+      must use plain file names)
   - id: check_splice
     type:
       - 'null'
       - boolean
-    doc: enforce coverage of 4 out of 6 bp around each splice site and no 
-      insertions greater than 3 bp at the splice site
+    doc: enforce coverage of 4 out of 6 bp around each splice site and no insertions
+      greater than 3 bp at the splice site
     inputBinding:
       position: 101
       prefix: --check_splice
@@ -26,8 +37,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: isoform .bed file, must be specified if --stringent or check_splice is 
-      specified
+    doc: isoform .bed file, must be specified if --stringent or check_splice is specified
     inputBinding:
       position: 101
       prefix: --isoform_bed
@@ -63,8 +73,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Supporting reads must cover 80 percent of their isoform and extend at 
-      least 25 nt into the first and last exons.
+    doc: Supporting reads must cover 80 percent of their isoform and extend at least
+      25 nt into the first and last exons.
     inputBinding:
       position: 101
       prefix: --stringent
@@ -72,8 +82,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: directory to put temporary files. use './' to indicate current 
-      directory
+    doc: directory to put temporary files. use './' to indicate current directory
     inputBinding:
       position: 101
       prefix: --temp_dir
@@ -89,8 +98,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Convert counts matrix to transcripts per million and output as a 
-      separate file named <output>.tpm.tsv
+    doc: Convert counts matrix to transcripts per million and output as a separate
+      file named <output>.tpm.tsv
     inputBinding:
       position: 101
       prefix: --tpm
@@ -98,44 +107,37 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify if reads are generated from a long read method with minimal 
-      fragmentation
+    doc: specify if reads are generated from a long read method with minimal fragmentation
     inputBinding:
       position: 101
       prefix: --trust_ends
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: 'output file name base for FLAIR quantify (default:'
+    type: string
+    doc: 'output file name base for FLAIR quantify (default: flair.quantify)'
     inputBinding:
       position: 102
       prefix: --output
-  - id: output_bam_path
-    type:
-      - 'null'
-      - string
-    doc: whether to output bam file of reads aligned to correct
-    inputBinding:
-      position: 103
-      prefix: --output_bam
-outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: output file name base for FLAIR quantify
-    outputBinding:
-      glob: $(inputs.output_path)
+    default: flair.quantify
   - id: output_bam
     type:
       - 'null'
-      - File
+      - boolean
     doc: whether to output bam file of reads aligned to correct isoforms
+    inputBinding:
+      position: 101
+      prefix: --output_bam
+outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Counts, TPM and optional map/bam files
     outputBinding:
-      glob: $(inputs.output_bam_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

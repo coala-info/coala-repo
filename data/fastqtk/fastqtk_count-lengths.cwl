@@ -14,16 +14,27 @@ inputs:
     inputBinding:
       position: 1
   - id: count_txt
-    type: File
-    doc: Output file for read counts
+    type: string
+    doc: Name of the output text file with the total number of reads
     inputBinding:
       position: 2
-outputs:
   - id: statistics_txt
+    type: string
+    doc: Name of the output text file with the summary statistics of the read
+      lengths
+    inputBinding:
+      position: 3
+outputs:
+  - id: count_out
     type: File
-    doc: Output file for summary statistics
+    doc: Text file with the total number of reads
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.count_txt)
+  - id: statistics_out
+    type: File
+    doc: Text file with the summary statistics of the read lengths
+    outputBinding:
+      glob: $(inputs.statistics_txt)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastqtk:0.28--h5ca1c30_0

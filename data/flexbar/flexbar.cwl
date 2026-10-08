@@ -252,6 +252,326 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zip-output
+  - id: bundle
+    type:
+      - 'null'
+      - int
+    doc: 'Number of (paired) reads per thread. Default: 256.'
+    inputBinding:
+      position: 101
+      prefix: --bundle
+  - id: bundles
+    type:
+      - 'null'
+      - int
+    doc: Process only certain number of bundles for testing.
+    inputBinding:
+      position: 101
+      prefix: --bundles
+  - id: interleaved
+    type:
+      - 'null'
+      - boolean
+    doc: Interleaved format for first input set with paired reads.
+    inputBinding:
+      position: 101
+      prefix: --interleaved
+  - id: iupac
+    type:
+      - 'null'
+      - boolean
+    doc: Accept iupac symbols in reads and convert to N if not ATCG.
+    inputBinding:
+      position: 101
+      prefix: --iupac
+  - id: barcodes2
+    type:
+      - 'null'
+      - File
+    doc: Additional barcodes file for second read set in paired mode.
+    inputBinding:
+      position: 101
+      prefix: --barcodes2
+  - id: barcode_tail_length
+    type:
+      - 'null'
+      - int
+    doc: 'Region size in tail trim-end modes. Default: barcode length.'
+    inputBinding:
+      position: 101
+      prefix: --barcode-tail-length
+  - id: barcode_keep
+    type:
+      - 'null'
+      - boolean
+    doc: Keep barcodes within reads instead of removal.
+    inputBinding:
+      position: 101
+      prefix: --barcode-keep
+  - id: barcode_unassigned
+    type:
+      - 'null'
+      - boolean
+    doc: Include unassigned reads in output generation.
+    inputBinding:
+      position: 101
+      prefix: --barcode-unassigned
+  - id: barcode_match
+    type:
+      - 'null'
+      - int
+    doc: 'Alignment match score. Default: 1.'
+    inputBinding:
+      position: 101
+      prefix: --barcode-match
+  - id: barcode_mismatch
+    type:
+      - 'null'
+      - int
+    doc: 'Alignment mismatch score. Default: -1.'
+    inputBinding:
+      position: 101
+      prefix: --barcode-mismatch
+  - id: barcode_gap
+    type:
+      - 'null'
+      - int
+    doc: 'Alignment gap score. Default: -9.'
+    inputBinding:
+      position: 101
+      prefix: --barcode-gap
+  - id: adapter_seq
+    type:
+      - 'null'
+      - string
+    doc: Single adapter sequence as alternative to adapters option.
+    inputBinding:
+      position: 101
+      prefix: --adapter-seq
+  - id: adapter_tail_length
+    type:
+      - 'null'
+      - int
+    doc: 'Region size for tail trim-end modes. Default: adapter length.'
+    inputBinding:
+      position: 101
+      prefix: --adapter-tail-length
+  - id: adapter_relaxed
+    type:
+      - 'null'
+      - boolean
+    doc: Skip restriction to pass read ends in right and left modes.
+    inputBinding:
+      position: 101
+      prefix: --adapter-relaxed
+  - id: adapter_min_poverlap
+    type:
+      - 'null'
+      - int
+    doc: 'Minimum overlap of paired reads for detection. Default: 40.'
+    inputBinding:
+      position: 101
+      prefix: --adapter-min-poverlap
+  - id: adapter_revcomp
+    type:
+      - 'null'
+      - string
+    doc: Include reverse complements of adapters. One of ON and ONLY.
+    inputBinding:
+      position: 101
+      prefix: --adapter-revcomp
+  - id: adapter_revcomp_end
+    type:
+      - 'null'
+      - string
+    doc: Use different trim-end for reverse complements of adapters.
+    inputBinding:
+      position: 101
+      prefix: --adapter-revcomp-end
+  - id: adapter_add_barcode
+    type:
+      - 'null'
+      - boolean
+    doc: Add reverse complement of detected barcode to adapters.
+    inputBinding:
+      position: 101
+      prefix: --adapter-add-barcode
+  - id: adapter_read_set
+    type:
+      - 'null'
+      - string
+    doc: Consider only single read set for adapters. One of 1 and 2.
+    inputBinding:
+      position: 101
+      prefix: --adapter-read-set
+  - id: adapter_trimmed_out
+    type:
+      - 'null'
+      - string
+    doc: Modify that trimmed reads are kept. One of OFF and ONLY.
+    inputBinding:
+      position: 101
+      prefix: --adapter-trimmed-out
+  - id: adapter_cycles
+    type:
+      - 'null'
+      - int
+    doc: 'Number of adapter removal cycles. Default: 1.'
+    inputBinding:
+      position: 101
+      prefix: --adapter-cycles
+  - id: adapter_match
+    type:
+      - 'null'
+      - int
+    doc: 'Alignment match score. Default: 1.'
+    inputBinding:
+      position: 101
+      prefix: --adapter-match
+  - id: adapter_mismatch
+    type:
+      - 'null'
+      - int
+    doc: 'Alignment mismatch score. Default: -1.'
+    inputBinding:
+      position: 101
+      prefix: --adapter-mismatch
+  - id: adapter_gap
+    type:
+      - 'null'
+      - int
+    doc: 'Alignment gap score. Default: -6.'
+    inputBinding:
+      position: 101
+      prefix: --adapter-gap
+  - id: post_trim_length
+    type:
+      - 'null'
+      - int
+    doc: Trim to specified read length from 3' end after removal.
+    inputBinding:
+      position: 101
+      prefix: --post-trim-length
+  - id: qtrim_win_size
+    type:
+      - 'null'
+      - int
+    doc: 'Region size for sliding window approach. Default: 5.'
+    inputBinding:
+      position: 101
+      prefix: --qtrim-win-size
+  - id: qtrim_post_removal
+    type:
+      - 'null'
+      - boolean
+    doc: Perform quality-based trimming after removal steps.
+    inputBinding:
+      position: 101
+      prefix: --qtrim-post-removal
+  - id: htrim_left
+    type:
+      - 'null'
+      - string
+    doc: Trim specific homopolymers on left read end after removal.
+    inputBinding:
+      position: 101
+      prefix: --htrim-left
+  - id: htrim_min_length2
+    type:
+      - 'null'
+      - int
+    doc: Minimum length for homopolymers specified after first one.
+    inputBinding:
+      position: 101
+      prefix: --htrim-min-length2
+  - id: htrim_max_length
+    type:
+      - 'null'
+      - int
+    doc: Maximum length of homopolymers on left and right read end.
+    inputBinding:
+      position: 101
+      prefix: --htrim-max-length
+  - id: htrim_max_first
+    type:
+      - 'null'
+      - boolean
+    doc: Apply maximum length of homopolymers only for first one.
+    inputBinding:
+      position: 101
+      prefix: --htrim-max-first
+  - id: htrim_adapter
+    type:
+      - 'null'
+      - boolean
+    doc: Trim only in case of adapter removal on same side.
+    inputBinding:
+      position: 101
+      prefix: --htrim-adapter
+  - id: output_reads
+    type:
+      - 'null'
+      - string
+    doc: Output file for reads instead of target prefix usage.
+    inputBinding:
+      position: 101
+      prefix: --output-reads
+  - id: output_reads2
+    type:
+      - 'null'
+      - string
+    doc: Output file for reads2 instead of target prefix usage.
+    inputBinding:
+      position: 101
+      prefix: --output-reads2
+  - id: length_dist
+    type:
+      - 'null'
+      - boolean
+    doc: Generate length distribution for read output files.
+    inputBinding:
+      position: 101
+      prefix: --length-dist
+  - id: single_reads
+    type:
+      - 'null'
+      - boolean
+    doc: Write single reads for too short counterparts in pairs.
+    inputBinding:
+      position: 101
+      prefix: --single-reads
+  - id: single_reads_paired
+    type:
+      - 'null'
+      - boolean
+    doc: Write paired single reads with N for short counterparts.
+    inputBinding:
+      position: 101
+      prefix: --single-reads-paired
+  - id: output_log
+    type:
+      - 'null'
+      - string
+    doc: Output file for logging instead of target prefix usage.
+    inputBinding:
+      position: 101
+      prefix: --output-log
+  - id: number_tags
+    type:
+      - 'null'
+      - boolean
+    doc: Replace read tags by ascending number to save space.
+    inputBinding:
+      position: 101
+      prefix: --number-tags
+  - id: umi_tags
+    type:
+      - 'null'
+      - boolean
+    doc: Capture UMIs in reads at barcode or adapter N positions.
+    inputBinding:
+      position: 101
+      prefix: --umi-tags
   - id: target_path
     type: string
     inputBinding:
@@ -266,6 +586,27 @@ outputs:
     doc: Prefix for output file names or paths.
     outputBinding:
       glob: $(inputs.target_path)*
+  - id: output_reads_file
+    type:
+      - 'null'
+      - File
+    doc: Reads written with --output-reads
+    outputBinding:
+      glob: $(inputs.output_reads)
+  - id: output_reads2_file
+    type:
+      - 'null'
+      - File
+    doc: Reads written with --output-reads2
+    outputBinding:
+      glob: $(inputs.output_reads2)
+  - id: output_log_file
+    type:
+      - 'null'
+      - File
+    doc: Log written with --output-log
+    outputBinding:
+      glob: $(inputs.output_log)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

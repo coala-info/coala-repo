@@ -192,6 +192,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --log_transform
+      valueFrom: "$(self === null ? null : (self ? 'True' : 'False'))"
   - id: model_class
     type:
       - 'null'
@@ -212,7 +213,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Path to the output folder to save the model outputs
+    default: .
+    doc: Path to the output folder to save the model outputs (default here is the
+      working directory so that the results are collected)
     inputBinding:
       position: 101
       prefix: --outdir
@@ -229,6 +232,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: job
     doc: Job prefix to use for output files
     inputBinding:
       position: 101
@@ -345,6 +349,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_loss_weighting
+      valueFrom: "$(self === null ? null : (self ? 'True' : 'False'))"
   - id: user_graph
     type:
       - 'null'
@@ -378,8 +383,9 @@ outputs:
     doc: Standard output
   - id: prefix_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
       glob: $(inputs.prefix)*
@@ -389,7 +395,13 @@ outputs:
       - Directory
     doc: Path to the output folder to save the model outputs
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: "$(inputs.outdir === '.' ? '.flexynesis_no_outdir' : inputs.outdir)"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: flexynesis
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flexynesis:1.1.7--pyhdfd78af_0

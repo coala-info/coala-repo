@@ -9,6 +9,13 @@ doc: "Retrieves fragment length summary statistics over intervals defined in a B
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: .tbi
+        required: false
     doc: Path to a BAM/CRAM/Fragment file containing fragment data.
     inputBinding:
       position: 1

@@ -5,6 +5,9 @@ label: fastq-scan
 doc: "Calculates sequencing coverage and quality statistics from FASTQ files.\n\n\
   Tool homepage: https://github.com/rpetit3/fastq-scan"
 inputs:
+  - id: fastq_in
+    type: File
+    doc: Uncompressed FASTQ file; the tool reads it from standard input
   - id: genome_size
     type:
       - 'null'
@@ -33,8 +36,11 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: JSON with the QC statistics
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastq-scan:1.0.1--h9948957_4
 stdout: fastq-scan.out
+stdin: $(inputs.fastq_in.path)
+requirements:
+  - class: InlineJavascriptRequirement

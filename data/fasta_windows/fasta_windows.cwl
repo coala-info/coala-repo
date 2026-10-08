@@ -1,66 +1,50 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fasta_splitter
+baseCommand: fasta_windows
 label: fasta_windows
-doc: "Splits a FASTA file into smaller files.\n\nTool homepage: https://github.com/tolkit/fasta_windows"
+doc: "Quickly compute statistics over a fasta file in windows.\n\nTool homepage: https://github.com/tolkit/fasta_windows"
 inputs:
-  - id: input_fasta
+  - id: fasta
     type: File
-    doc: Input FASTA file
+    doc: The input fasta file.
     inputBinding:
-      position: 1
-  - id: output_prefix
+      prefix: --fasta
+  - id: output
     type: string
-    doc: Prefix for output files
+    doc: Output filename for the TSV's (without extension).
     inputBinding:
-      position: 2
-  - id: lines_per_file
+      prefix: --output
+  - id: description
+    type:
+      - 'null'
+      - boolean
+    doc: Add an extra column to _windows.tsv output with fasta header descriptions.
+    inputBinding:
+      prefix: --description
+  - id: masked
+    type:
+      - 'null'
+      - boolean
+    doc: Consider only uppercase nucleotides in the calculations.
+    inputBinding:
+      prefix: --masked
+  - id: window_size
     type:
       - 'null'
       - int
-    doc: Number of lines per output file
+    doc: Integer size of window for statistics to be computed over. [default 1000]
     inputBinding:
-      position: 103
-      prefix: --lines-per-file
-  - id: num_files
-    type:
-      - 'null'
-      - int
-    doc: Number of output files to create
-    inputBinding:
-      position: 103
-      prefix: --num-files
-  - id: seqs_per_file
-    type:
-      - 'null'
-      - int
-    doc: Number of sequences per output file
-    inputBinding:
-      position: 103
-      prefix: --seqs-per-file
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 104
-      prefix: --output-dir
+      prefix: --window_size
 outputs:
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to save output files
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_prefix_files
+  - id: output_files
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: TSV files written to the fw_out directory with the prefix given in output
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: fw_out/$(inputs.output)*.tsv
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/fasta-splitter:0.2.6--0
+    dockerPull: quay.io/biocontainers/fasta_windows:0.2.4--h7b50bb2_4

@@ -1,5 +1,12 @@
 # fastkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastkit_format | PASS |  |
+| fastkit_validate | PASS |  |
+
 ## fastkit_format
 
 ### Tool Description

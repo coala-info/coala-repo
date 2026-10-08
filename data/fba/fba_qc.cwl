@@ -146,7 +146,9 @@ outputs:
       - Directory
     doc: specify a output directory. Default (./qc)
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: "$(inputs.output_directory ? inputs.output_directory : 'qc')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fba:0.0.13--pyhdfd78af_0

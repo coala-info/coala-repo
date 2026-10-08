@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - fltuniq
 label: fermi_fltuniq
-doc: "Filter unique sequences from a FASTA file.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Filter unique sequences from a FASTA file.\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: input_fa
     type: File

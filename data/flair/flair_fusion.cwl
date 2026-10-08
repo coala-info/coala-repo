@@ -4,8 +4,11 @@ baseCommand:
   - flair
   - fusion
 label: flair_fusion
-doc: "FLAIR fusion detection module for identifying gene fusions from transcriptomic
-  data.\n\nTool homepage: https://github.com/BrooksLabUCSC/flair"
+doc: 'FLAIR fusion detection module for identifying gene fusions from transcriptomic
+  data.
+
+
+  Tool homepage: https://github.com/BrooksLabUCSC/flair'
 inputs:
   - id: genome
     type: File
@@ -13,6 +16,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+    secondaryFiles:
+      - pattern: .fai
+        required: false
   - id: genome_chimbam
     type: File
     doc: bam file of chimeric reads from genomic alignment from flair align
@@ -21,8 +27,8 @@ inputs:
       prefix: --genomechimbam
   - id: gtf
     type: File
-    doc: GTF annotation file, used for renaming FLAIR isoforms to annotated 
-      isoforms and adjusting TSS/TESs
+    doc: GTF annotation file, used for renaming FLAIR isoforms to annotated isoforms
+      and adjusting TSS/TESs
     inputBinding:
       position: 101
       prefix: --gtf
@@ -30,8 +36,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: max loci detected in fusion. Set higher for detection of 3-gene+ 
-      fusions
+    doc: max loci detected in fusion. Set higher for detection of 3-gene+ fusions
     inputBinding:
       position: 101
       prefix: --maxloci
@@ -39,8 +44,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum size of alignment kept, used in minimap -s. More important when
-      doing downstream fusion detection
+    doc: minimum size of alignment kept, used in minimap -s. More important when doing
+      downstream fusion detection
     inputBinding:
       position: 101
       prefix: --minfragmentsize
@@ -83,13 +88,13 @@ inputs:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: output file name base for FLAIR isoforms
+      type: array
+      items: File
+    doc: Output files written with the output name base
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -11,6 +11,9 @@ inputs:
     doc: Alignment files to include in the coverage plot.
     inputBinding:
       position: 1
+    secondaryFiles:
+      - pattern: .bai
+        required: true
   - id: csv_no_header
     type:
       - 'null'
@@ -42,6 +45,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Specify csv data output filename. Will disable plot output by default, specify output_file_path to re-enable plot output.
     inputBinding:
       position: 103
       prefix: --csv_out
@@ -49,6 +53,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: 'Specify plot output filename. File extension defines the format (default: fastcov_output.pdf)'
     inputBinding:
       position: 104
       prefix: --output_file

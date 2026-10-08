@@ -5,7 +5,7 @@ baseCommand:
   - example
 label: fermi_example
 doc: "Usage: fermi example [-ceU] [-k ecKmer] [-l utgKmer] <in.fq>\n\nTool homepage:
-  https://github.com/quantumlib/OpenFermion"
+  https://github.com/lh3/fermi"
 inputs:
   - id: input_fastq
     type: File
@@ -16,6 +16,7 @@ inputs:
     type:
       - 'null'
       - boolean
+    doc: Skip unitig construction and write the (possibly corrected) reads instead
     inputBinding:
       position: 102
       prefix: -U
@@ -23,6 +24,7 @@ inputs:
     type:
       - 'null'
       - boolean
+    doc: Clean the unitig graph (aggressive bubble popping and graph cleaning)
     inputBinding:
       position: 102
       prefix: -c
@@ -30,6 +32,7 @@ inputs:
     type:
       - 'null'
       - boolean
+    doc: Correct sequencing errors in the reads before assembly
     inputBinding:
       position: 102
       prefix: -e

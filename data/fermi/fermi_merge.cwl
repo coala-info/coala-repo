@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - merge
 label: fermi_merge
-doc: "Merge BWT indexes\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Merge BWT indexes\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: input_bwt_files
     type:

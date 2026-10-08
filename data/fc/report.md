@@ -1,5 +1,11 @@
 # fc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fc_fc-virus | PASS | 29781 bp consensus on the repository test reads; the tool exits 1 after success, so the CWL accepts exit codes 0 and 1. |
+
 ## fc_fc-virus
 
 ### Tool Description

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: finaletoolkit-agg-wps
+baseCommand:
+  - finaletoolkit
+  - agg-bw
 label: finaletoolkit_agg-bw
 doc: "Aggregates a bigWig signal over constant-length intervals defined in a BED file.\n\
   \nTool homepage: https://github.com/epifluidlab/FinaleToolkit"

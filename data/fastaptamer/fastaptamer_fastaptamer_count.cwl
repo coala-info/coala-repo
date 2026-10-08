@@ -17,7 +17,7 @@ inputs:
       position: 101
       prefix: -f
   - id: input_file
-    type: File?
+    type: File
     doc: input file. REQUIRED (FASTQ unless -f specified).
     inputBinding:
       position: 101
@@ -42,18 +42,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `csv_output_path`
+    doc: Output CSV file path (-c)
     inputBinding:
       position: 102
-      prefix: --csv-output
+      prefix: -c
   - id: output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file path (-o)
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

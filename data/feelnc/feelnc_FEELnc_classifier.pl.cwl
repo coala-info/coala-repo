@@ -22,7 +22,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Specify the name for the log file
     inputBinding:
       position: 101
@@ -61,7 +61,19 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Table of lncRNA classes
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file written with --log
+    outputBinding:
+      glob: $(inputs.log_file)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: FEELNCPATH
+        envValue: /usr/local
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/feelnc:0.2--pl526_0

@@ -1,5 +1,31 @@
 # fermi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fermi_bitand | PASS | intersection of two contrast bit arrays written (17544 bytes) |
+| fermi_build | PASS | FM-index of E. coli reads (nf-core) built; same counts as the merge of two half indexes |
+| fermi_chkbwt | PASS | rank check of the portiera index finished with exit 0 and marginal counts on stderr (the tool prints no result to stdout) |
+| fermi_clean | PASS | graph cleaning reduced 2806 unitigs to 436, then 246 with -C -A -o 60 |
+| fermi_contrast | PASS | fixed: the two .sub files are outputs (strings), not inputs; portiera against E. coli reads selects all reads as expected |
+| fermi_correct | PASS | portiera illumina reads (nf-core), 40000 pairs: 73013 of 80000 reads kept after correction |
+| fermi_exact | PASS | 40 portiera reads searched in their own index: full length exact matches found |
+| fermi_example | PASS | single-binary assembler (not a workflow); with -e -c on the collated portiera reads: 334 unitigs (175 kb), 94% of sampled 31-mers in the genome |
+| fermi_fltuniq | PASS | removed reads with unique k-mers from the corrected portiera reads (70120 reads left) |
+| fermi_merge | PASS | two half indexes merged: same size and marginal counts as the index of all reads |
+| fermi_pe2cofq | PASS | portiera illumina reads (nf-core), 40000 pairs: collated fastq with 80000 reads written |
+| fermi_recode | PASS | new CWL for fermi recode; recoded index has the same marginal counts as the source |
+| fermi_remap | PASS | reads remapped to the cleaned unitigs; insert size avg 759 reported in the log |
+| fermi_ropebwt | PASS | fixed baseCommand to fermi ropebwt (bare ropebwt does not exist) and temp file type; FM-index built from the collated portiera reads and checked by chkbwt |
+| fermi_scaf | PASS | 243 scaftigs (133 kb) of which 95% of sampled 31-mers occur in the portiera genome |
+| fermi_seqrank | PASS | fixed baseCommand to the documented seqrank; rank file written for the corrected-read index |
+| fermi_splitfa | PASS | 40000 reads split into 4 files of 10000 reads |
+| fermi_sub | PASS | sub-index from the contrast array: same marginal counts as the source index |
+| fermi_trimseq | PASS | reads trimmed to 63-101 bp with -l 50 -q 10; 39984 of 40000 kept |
+| fermi_unitig | PASS | 2806 unitigs from the corrected portiera reads |
+| fermi_unpack | PASS | read 5 of the portiera index printed |
+
 ## fermi_build
 
 ### Tool Description
@@ -422,6 +448,22 @@ Usage: fermi example [-ceU] [-k ecKmer] [-l utgKmer] <in.fq>
 example: invalid option -- '-'
 example: invalid option -- 'h'
 Usage: fermi example [-ceU] [-k ecKmer] [-l utgKmer] <in.fq>
+```
+
+## fermi_recode
+
+### Tool Description
+Recode FM-Index
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fermi:1.1_r751_beta--h577a1d6_9
+- **Homepage**: https://github.com/lh3/fermi
+- **Package**: https://anaconda.org/channels/bioconda/packages/fermi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: fermi recode <in.rld>
 ```
 
 ## Metadata

@@ -2,21 +2,11 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fasten_shuffle
 label: fasten_fasten_shuffle
-doc: "Interleaves reads from either stdin or file parameters\n\nTool homepage: https://github.com/lskatz/fasten"
+doc: "Interleaves reads from two FASTQ files (use fasten_fasten_deshuffle to split interleaved reads)\n\nTool homepage: https://github.com/lskatz/fasten"
 inputs:
-  - id: deshuffle
-    type:
-      - 'null'
-      - boolean
-    doc: Deshuffle reads from stdin
-    inputBinding:
-      position: 101
-      prefix: --deshuffle
   - id: forward_reads_file
-    type:
-      - 'null'
-      - File
-    doc: Forward reads. If deshuffling, reads are written to this file.
+    type: File
+    doc: Forward reads (1.fastq).
     inputBinding:
       position: 101
       prefix: '-1'
@@ -37,10 +27,8 @@ inputs:
       position: 101
       prefix: --paired-end
   - id: reverse_reads_file
-    type:
-      - 'null'
-      - File
-    doc: Forward reads. If deshuffling, reads are written to this file.
+    type: File
+    doc: Reverse reads (2.fastq).
     inputBinding:
       position: 101
       prefix: '-2'

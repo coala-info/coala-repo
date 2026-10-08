@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./Qreport
+baseCommand: Qreport
 label: fastqpuri_Qreport
 doc: "Reads in a fq file (gz, bz2, z formats also accepted) and creates a quality
   report (html file) along with the necessary data to create it stored in binary format.\n\
@@ -70,16 +70,20 @@ inputs:
       prefix: -l
   - id: output_file_path
     type: string
-    doc: '[-t <NUMBER_OF_TILES>] [-q <MINQ>]'
+    doc: Output file prefix (with NO extension). Qreport writes <prefix>.bin,
+      <prefix>.info and <prefix>.html.
     inputBinding:
       position: 102
       prefix: -o
 outputs:
-  - id: output_file
-    type: File
-    doc: Output file prefix (with NO extension)
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Quality report files written with the output prefix (.bin, .info and
+      .html)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path + '.*')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

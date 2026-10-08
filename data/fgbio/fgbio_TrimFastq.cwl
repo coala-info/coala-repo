@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fgbio
-  - TrimFastq
+baseCommand: fgbio
 label: fgbio_TrimFastq
 doc: "Trims reads in one or more line-matched fastq files to a specific read length.
   The individual fastq files are expected to have the same set of reads, as would
@@ -17,7 +15,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --async-io
   - id: compression_level
     type:
@@ -25,7 +23,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compression
   - id: cram_ref_fasta
     type:
@@ -33,7 +31,7 @@ inputs:
       - File
     doc: Reference FASTA for CRAM encoding/decoding.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --cram-ref-fasta
   - id: exclude_short_reads
     type:
@@ -58,13 +56,13 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --log-level
   - id: output_fastq
     type:
       type: array
-      items: File
-    doc: A matching number of output fastq files.
+      items: string
+    doc: A matching number of output fastq file names.
     inputBinding:
       position: 101
       prefix: --output
@@ -74,7 +72,7 @@ inputs:
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --sam-validation-stringency
   - id: tmp_dir
     type:
@@ -82,7 +80,7 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --tmp-dir
   - id: trim_length
     type:
@@ -93,11 +91,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --length
+arguments:
+  - position: 50
+    valueFrom: TrimFastq
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: trimmed_fastq
+    type:
+      type: array
+      items: File
+    doc: The trimmed fastq files.
+    outputBinding:
+      glob: $(inputs.output_fastq)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
-stdout: fgbio_TrimFastq.out

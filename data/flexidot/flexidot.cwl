@@ -191,13 +191,15 @@ inputs:
   - id: mode
     type:
       - 'null'
-      - int
+      - type: array
+        items: int
+        inputBinding:
+          prefix: --mode
     doc: Mode of FlexiDot dotplotting. 0 = self [default], 1 = paired, 2 = poly 
-      (matrix with all-against-all dotplots). Call -m multiple times to run 
+      (matrix with all-against-all dotplots). Give several values to run 
       multiple modes.
     inputBinding:
       position: 101
-      prefix: --mode
   - id: n_col
     type:
       - 'null'
@@ -361,7 +363,7 @@ outputs:
         items: File
     doc: File prefix to be added to the generated filenames.
     outputBinding:
-      glob: $(inputs.output_prefix_path)*
+      glob: "$(inputs.output_prefix_path ? inputs.output_prefix_path : 'flexidot_output')*"
   - id: outdir
     type:
       - 'null'
@@ -378,6 +380,8 @@ outputs:
       glob: $(inputs.logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.outdir_path ? [{'entryname': inputs.outdir_path, 'entry': {'class': 'Directory', 'basename': inputs.outdir_path, 'listing': []}, 'writable': true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flexidot:2.1.0--pyhdfd78af_0

@@ -2,52 +2,47 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fastool
 label: fastool
-doc: "Convert FASTQ to FASTA and perform other operations.\n\nTool homepage: https://github.com/tobe-fe-dalao/fastool"
+doc: "A simple and quick tool to read huge FastQ and FastA files (both normal and gzipped) and manipulate them: convert FastQ to FastA, reverse complement, append a string to the headers, or convert Casava 1.8+ IDs to Trinity format.\n\nTool homepage: https://github.com/fstrozzi/Fastool"
 inputs:
-  - id: sequences_1
-    type: File
-    doc: First input FASTQ/A file.
-    inputBinding:
-      position: 1
-  - id: sequences_2
-    type:
-      type: array
-      items: File
-    doc: Second input FASTQ/A file (optional, can be multiple).
-    inputBinding:
-      position: 2
-  - id: append
-    type:
-      - 'null'
-      - string
-    doc: String to append to the header.
-    inputBinding:
-      position: 103
-      prefix: --append
-  - id: illumina_trinity
-    type:
-      - 'null'
-      - boolean
-    doc: Format sequences for Illumina Trinity.
-    inputBinding:
-      position: 103
-      prefix: --illumina-trinity
   - id: rev
     type:
       - 'null'
       - boolean
-    doc: Reverse complement the sequences.
+    doc: Reverse complement all the sequences in the dataset (both FastQ and FastA).
     inputBinding:
-      position: 103
+      position: 1
       prefix: --rev
+  - id: append
+    type:
+      - 'null'
+      - string
+    doc: Add a string at the end of each sequence header (both FastQ and FastA).
+    inputBinding:
+      position: 2
+      prefix: --append
   - id: to_fasta
     type:
       - 'null'
       - boolean
-    doc: Convert sequences to FASTA format.
+    doc: Convert FastQ files to FastA format.
     inputBinding:
-      position: 103
+      position: 3
       prefix: --to-fasta
+  - id: illumina_trinity
+    type:
+      - 'null'
+      - boolean
+    doc: Directly convert Casava 1.8+ FastQ ID format to Trinity Fasta input format (appending /1 and /2 for PE reads).
+    inputBinding:
+      position: 4
+      prefix: --illumina-trinity
+  - id: sequences
+    type:
+      type: array
+      items: File
+    doc: Input FastQ/FastA files (plain or gzipped); several files are processed in turn.
+    inputBinding:
+      position: 10
 outputs:
   - id: stdout
     type: stdout

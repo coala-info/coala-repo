@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - unitig
 label: fermi_unitig
-doc: "Generate unitigs from an FMD-index.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Generate unitigs from an FMD-index.\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: reads_fmd
     type: File

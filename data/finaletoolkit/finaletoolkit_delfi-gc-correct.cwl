@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: finaletoolkit-delfi-gc-correct
+baseCommand:
+  - finaletoolkit
+  - delfi-gc-correct
 label: finaletoolkit_delfi-gc-correct
 doc: "Performs gc-correction on raw delfi data. This command is deprecated and will
   be removed in a future version of FinaleToolkit. The delfi command has gc correction

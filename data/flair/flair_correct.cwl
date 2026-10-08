@@ -4,9 +4,11 @@ baseCommand:
   - flair
   - correct
 label: flair_correct
-doc: "take bed file of long RNA-seq reads and filter out those with anomalous splice
-  junctions correct remaining to nearest orthogonally supported splice site\n\nTool
-  homepage: https://github.com/BrooksLabUCSC/flair"
+doc: 'take bed file of long RNA-seq reads and filter out those with anomalous splice
+  junctions correct remaining to nearest orthogonally supported splice site
+
+
+  Tool homepage: https://github.com/BrooksLabUCSC/flair'
 inputs:
   - id: gtf
     type:
@@ -20,8 +22,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: short-read junctions in bed format (can be generated from short-read 
-      alignment with junctions_from_sam)
+    doc: short-read junctions in bed format (can be generated from short-read alignment
+      with junctions_from_sam)
     inputBinding:
       position: 101
       prefix: --junction_bed
@@ -29,9 +31,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: if providing short-read junctions, minimum junction support required to
-      keep junction. If your junctions file is in bed format, the score field 
-      will be used for read support.
+    doc: if providing short-read junctions, minimum junction support required to keep
+      junction. If your junctions file is in bed format, the score field will be used
+      for read support.
     inputBinding:
       position: 101
       prefix: --junction_support
@@ -39,9 +41,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: short-read junctions in SJ.out.tab format. Use this option if you 
-      aligned your short-reads with STAR, STAR will automatically output this 
-      file
+    doc: short-read junctions in SJ.out.tab format. Use this option if you aligned
+      your short-reads with STAR, STAR will automatically output this file
     inputBinding:
       position: 101
       prefix: --junction_tab
@@ -49,8 +50,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify this flag to make the strand of a read consistent with the 
-      annotation during correction
+    doc: specify this flag to make the strand of a read consistent with the annotation
+      during correction
     inputBinding:
       position: 101
       prefix: --nvrna
@@ -82,13 +83,13 @@ inputs:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: output name base
+      type: array
+      items: File
+    doc: Output files written with the output name base
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

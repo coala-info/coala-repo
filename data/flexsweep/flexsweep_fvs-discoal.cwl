@@ -27,6 +27,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: simulations_dir
+    type: Directory
+    doc: Simulation directory with the feature vectors (fvs.parquet) and the neutral
+      expectations written by the tool
+    outputBinding:
+      glob: $(inputs.simulations_path.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.simulations_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flexsweep:1.3--pyhdfd78af_0

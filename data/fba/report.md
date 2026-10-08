@@ -1,5 +1,17 @@
 # fba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fba_count | PASS | fixed: each input file gets its own --input flag; UMI counts matrix for 2 features written |
+| fba_demultiplex | Failed | image problem: demultiplex stops at import with numba SystemError: initialization of _internal failed (umap and numba do not match numpy) |
+| fba_extract | PASS | fba repository test reads with -r2_c 31,51 and 2 mismatches: 3299 valid pairs (the coordinates must hug the barcode) |
+| fba_filter | PASS | filtered the extract output from the fba test reads; all 3299 pairs kept |
+| fba_kallisto_wrapper | Failed | image problem: kallisto and bustools are not installed in the image (FileNotFoundError: kallisto not found in PATH) |
+| fba_map | Failed | image problem: bwa and bowtie2 are not installed in the image (FileNotFoundError: bwa not found in PATH) |
+| fba_qc | PASS | fba repository test reads: feature barcodes found in 3595 of 5000 read pairs, plots and tables written; output directory now collected |
+
 ## fba_extract
 
 ### Tool Description

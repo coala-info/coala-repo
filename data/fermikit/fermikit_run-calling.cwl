@@ -2,18 +2,30 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: run-calling
 label: fermikit_run-calling
-doc: "Calling\n\nTool homepage: https://github.com/lh3/fermikit"
+doc: "Print the shell commands that map assembled unitigs to a reference and call small\
+  \ variants and structural variants (run the output with sh).\n\nTool homepage: https://github.com/lh3/fermikit"
 inputs:
   - id: indexed_ref
     type: File
-    doc: indexed reference
+    doc: reference FASTA indexed with bwa index
+    secondaryFiles:
+      - pattern: .amb
+        required: true
+      - pattern: .ann
+        required: true
+      - pattern: .bwt
+        required: true
+      - pattern: .pac
+        required: true
+      - pattern: .sa
+        required: true
     inputBinding:
-      position: 1
+      position: 201
   - id: unitigs_mag_gz
     type: File
     doc: unitigs.mag.gz
     inputBinding:
-      position: 2
+      position: 202
   - id: bwa_index_prefix
     type:
       - 'null'
@@ -39,16 +51,10 @@ inputs:
       position: 103
       prefix: -t
 outputs:
-  - id: stdout
+  - id: commands
     type: stdout
-    doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
-    outputBinding:
-      glob: $(inputs.output_prefix)*
+    doc: Shell script that maps the unitigs and calls variants; run it with sh
+      to write PREFIX.flt.vcf.gz and PREFIX.sv.vcf.gz
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fermikit:0.14.dev1--pl5321h86e5fe9_2

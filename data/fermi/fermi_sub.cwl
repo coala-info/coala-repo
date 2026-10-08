@@ -5,7 +5,7 @@ baseCommand:
   - sub
 label: fermi_sub
 doc: "Usage: fermi sub [-c] [-t nThreads] <in.fmd> <array.bits>\n\nTool homepage:
-  https://github.com/quantumlib/OpenFermion"
+  https://github.com/lh3/fermi"
 inputs:
   - id: in_fmd
     type: File

@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - splitfa
 label: fermi_splitfa
-doc: "Split a FASTQ file into multiple FASTA files.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Split a FASTQ file into multiple FASTA files.\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: input_fastq
     type: File

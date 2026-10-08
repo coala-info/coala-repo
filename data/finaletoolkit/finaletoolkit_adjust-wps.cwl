@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: finaletoolkit-adjust-wps
+baseCommand:
+  - finaletoolkit
+  - adjust-wps
 label: finaletoolkit_adjust-wps
 doc: "Adjusts raw Windowed Protection Score (WPS) by applying a median filter and
   Savitsky-Golay filter.\n\nTool homepage: https://github.com/epifluidlab/FinaleToolkit"

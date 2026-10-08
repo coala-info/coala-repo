@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fgbio
-  - FastqToBam
+baseCommand: fgbio
 label: fgbio_FastqToBam
 doc: "Generates an unmapped BAM (or SAM or CRAM) file from fastq files. Takes in one
   or more fastq files (optionally gzipped), each representing a different sequencing
@@ -68,9 +66,7 @@ inputs:
       position: 101
       prefix: --input
   - id: library
-    type:
-      - 'null'
-      - string
+    type: string
     doc: The name/ID of the sequenced library.
     inputBinding:
       position: 101
@@ -134,9 +130,7 @@ inputs:
       position: 101
       prefix: --run-date
   - id: sample
-    type:
-      - 'null'
-      - string
+    type: string
     doc: The name of the sequenced sample.
     inputBinding:
       position: 101
@@ -186,7 +180,10 @@ inputs:
     doc: Output or path parameter `output_bam_path`
     inputBinding:
       position: 102
-      prefix: --output-bam
+      prefix: --output
+arguments:
+  - position: 50
+    valueFrom: FastqToBam
 outputs:
   - id: output_bam
     type:

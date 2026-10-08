@@ -142,6 +142,9 @@ outputs:
     doc: Directory to output downloads to.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastq-dl:3.0.1--pyhdfd78af_0

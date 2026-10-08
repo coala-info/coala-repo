@@ -1,5 +1,11 @@
 # fastpca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastpca | PASS |  |
+
 ## fastpca
 
 ### Tool Description

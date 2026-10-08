@@ -1,11 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: finaletoolkit-end-motifs
+baseCommand:
+  - finaletoolkit
+  - end-motifs
 label: finaletoolkit_end-motifs
 doc: "Measures frequency of k-mer 5' end motifs.\n\nTool homepage: https://github.com/epifluidlab/FinaleToolkit"
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: .tbi
+        required: false
     doc: Path to a BAM/CRAM/Fragment file containing fragment data.
     inputBinding:
       position: 1

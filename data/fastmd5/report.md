@@ -1,5 +1,11 @@
 # fastmd5 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastmd5 | PASS | rewrote CWL from help (removed invented flags) |
+
 ## fastmd5
 
 ### Tool Description

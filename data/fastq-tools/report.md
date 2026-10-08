@@ -1,5 +1,12 @@
 # fastq-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastq-tools_fastq-sample | Failed | tool bug: --complement-output loses some reads (sample plus complement had 87 of 100 reads); sampling alone is correct |
+| fastq-tools_fastq-sort | PASS |  |
+
 ## fastq-tools_fastq-sample
 
 ### Tool Description

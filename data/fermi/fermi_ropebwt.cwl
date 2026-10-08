@@ -1,9 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ropebwt
+baseCommand:
+  - fermi
+  - ropebwt
 label: fermi_ropebwt
 doc: "Compresses DNA sequences using the Burrows-Wheeler Transform.\n\nTool homepage:
-  https://github.com/quantumlib/OpenFermion"
+  https://github.com/lh3/fermi"
 inputs:
   - id: input_file
     type: File
@@ -93,8 +95,8 @@ inputs:
   - id: temporary_sequence_file
     type:
       - 'null'
-      - File
-    doc: temporary sequence file name (bcr only)
+      - string
+    doc: temporary sequence file name (bcr only); the tool writes it
     inputBinding:
       position: 102
       prefix: -f

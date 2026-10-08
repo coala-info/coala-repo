@@ -1,5 +1,11 @@
 # fastppm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastppm_fastppm-cli | PASS |  |
+
 ## fastppm_fastppm-cli
 
 ### Tool Description

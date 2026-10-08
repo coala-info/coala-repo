@@ -40,13 +40,15 @@ inputs:
     doc: Suppress summary report.
     inputBinding:
       position: 101
-      prefix: -quiet
+      prefix: -q
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: Output file path (-o)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

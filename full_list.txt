@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 4844; PASS: 3757; Failed: 646; Not completed: 441
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 5295; PASS: 4156; Failed: 689; Not completed: 450
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -4161,6 +4161,457 @@ fastaindex	fastaindex_FastaIndex	Failed	image problem: Python 2 code runs under 
 fastaindex	fastaindex_fasta_stats	Failed	image problem: Python 2 code runs under Python 3.6 and stops with NameError: name 'file' is not defined
 fastan	fastan_FasTAN	PASS	
 fastani	fastani	PASS	
+fastaptamer	fastaptamer_fastaptamer_cluster	PASS	
+fastaptamer	fastaptamer_fastaptamer_compare	PASS	
+fastaptamer	fastaptamer_fastaptamer_count	PASS	
+fastaptamer	fastaptamer_fastaptamer_enrich	PASS	
+fastaptamer	fastaptamer_fastaptamer_search	Failed	tool bug: with several -p patterns the Perl script misses sequences unless the patterns occur in the order listed and do not overlap; single pattern works
+fastaq	fastaq_acgtn_only	PASS	
+fastaq	fastaq_add_indels	PASS	
+fastaq	fastaq_caf_to_fastq	PASS	
+fastaq	fastaq_capillary_to_pairs	PASS	
+fastaq	fastaq_chunker	PASS	
+fastaq	fastaq_count_sequences	PASS	
+fastaq	fastaq_deinterleave	PASS	
+fastaq	fastaq_enumerate_names	PASS	
+fastaq	fastaq_expand_nucleotides	PASS	
+fastaq	fastaq_fasta_to_fastq	PASS	
+fastaq	fastaq_filter	PASS	
+fastaq	fastaq_get_ids	PASS	
+fastaq	fastaq_get_seq_flanking_gaps	PASS	
+fastaq	fastaq_interleave	PASS	
+fastaq	fastaq_make_random_contigs	PASS	
+fastaq	fastaq_merge	PASS	
+fastaq	fastaq_replace_bases	PASS	
+fastaq	fastaq_reverse_complement	PASS	
+fastaq	fastaq_scaffolds_to_contigs	PASS	
+fastaq	fastaq_search_for_seq	PASS	
+fastaq	fastaq_sequence_trim	PASS	
+fastaq	fastaq_sort_by_name	PASS	
+fastaq	fastaq_sort_by_size	PASS	
+fastaq	fastaq_split_by_base_count	PASS	
+fastaq	fastaq_strip_illumina_suffix	PASS	
+fastaq	fastaq_to_boulderio	PASS	
+fastaq	fastaq_to_fake_qual	PASS	
+fastaq	fastaq_to_fasta	PASS	
+fastaq	fastaq_to_mira_xml	PASS	
+fastaq	fastaq_to_orfs_gff	PASS	
+fastaq	fastaq_to_perfect_reads	PASS	
+fastaq	fastaq_to_random_subset	PASS	
+fastaq	fastaq_to_tiling_bam	Failed	tool bug: samtools 1.9 in the image rejects the '*' in the PNEXT/TLEN fields that to_tiling_bam writes, so no BAM is made
+fastaq	fastaq_to_unique_by_id	PASS	
+fastaq	fastaq_translate	PASS	
+fastaq	fastaq_trim_contigs	PASS	
+fastaq	fastaq_trim_ends	PASS	
+fastaq	fastaq_trim_ns_at_end	PASS	
+fasta_windows	fasta_windows	PASS	
+fastcov	fastcov	PASS	
+fastdup	fastdup	PASS	
+fasten	fasten_fasten_clean	PASS	
+fasten	fasten_fasten_combine	PASS	
+fasten	fasten_fasten_convert	PASS	
+fasten	fasten_fasten_deshuffle	PASS	
+fasten	fasten_fasten_head	PASS	
+fasten	fasten_fasten_inspect	PASS	
+fasten	fasten_fasten_kmer	PASS	
+fasten	fasten_fasten_metrics	PASS	
+fasten	fasten_fasten_mutate	PASS	
+fasten	fasten_fasten_normalize	PASS	
+fasten	fasten_fasten_quality_filter	PASS	
+fasten	fasten_fasten_randomize	PASS	
+fasten	fasten_fasten_regex	PASS	
+fasten	fasten_fasten_repair	PASS	
+fasten	fasten_fasten_replace	PASS	
+fasten	fasten_fasten_sample	PASS	
+fasten	fasten_fasten_shuffle	PASS	
+fasten	fasten_fasten_sort	PASS	
+fasten	fasten_fasten_straighten	PASS	
+fasten	fasten_fasten_trim	PASS	
+fastga	fastga_ALNchain	PASS	
+fastga	fastga_ALNplot	PASS	EPS dot plot on standard output is correct; the pdf option crashes visibly because the image has no epstopdf.
+fastga	fastga_ALNreset	PASS	
+fastga	fastga_ALNshow	PASS	
+fastga	fastga_ALNtoPAF	PASS	
+fastga	fastga_ALNtoPSL	PASS	
+fastga	fastga_FAtoGDB	PASS	
+fastga	fastga_FastGA	PASS	PAF numbers match the Galaxy expected file apart from 0.1195 printed as .1195 by this version; PSL identical.
+fastga	fastga_GDBshow	PASS	
+fastga	fastga_GDBstat	PASS	
+fastga	fastga_GDBtoFA	PASS	
+fastga	fastga_GIXcp	PASS	
+fastga	fastga_GIXmake	PASS	
+fastga	fastga_GIXmv	PASS	
+fastga	fastga_GIXrm	PASS	
+fastga	fastga_GIXshow	PASS	
+fastga	fastga_ONEview	PASS	
+fastga	fastga_PAFtoALN	PASS	
+fastga	fastga_PAFtoPSL	PASS	
+fastindep	fastindep	PASS	output matches the outfile.txt example in the tool repository
+fastindep	fastindep_fastindep-symmetry	PASS	
+fastk	fastk_FastK	PASS	
+fastk	fastk_Fastcat	PASS	
+fastk	fastk_Fastcp	PASS	
+fastk	fastk_Fastmerge	PASS	
+fastk	fastk_Fastmv	PASS	
+fastk	fastk_Fastrm	PASS	
+fastk	fastk_Haplex	PASS	synthetic data: a planted heterozygous site is found; the real test data has none (0 sites)
+fastk	fastk_Histex	PASS	
+fastk	fastk_Homex	PASS	
+fastk	fastk_KmerMap	PASS	
+fastk	fastk_Logex	PASS	
+fastk	fastk_Profex	PASS	
+fastk	fastk_Symmex	PASS	
+fastk	fastk_Tabex	PASS	
+fastk	fastk_Vennex	Failed	tool bug: Vennex crashes with a segmentation fault and writes histogram files with corrupted names
+fastkit	fastkit_format	PASS	
+fastkit	fastkit_validate	PASS	
+fastlin	fastlin	PASS	
+fastmd5	fastmd5	PASS	rewrote CWL from help (removed invented flags)
+fastme	fastme	PASS	fixed joined optional-argument flags (-d, -p, -g, -n) and staged input writable
+fastmlst	fastmlst	PASS	rewrote CWL from help; PubMLST database given via HOME because --db_path crashes typing (tool bug in that option only)
+fastoma	fastoma_batch_roothogs	PASS	new CWL, output matches FastOMA test data
+fastoma	fastoma_check_input	PASS	new CWL, output matches FastOMA test data
+fastoma	fastoma_collect_subhogs	PASS	new CWL, output matches FastOMA test data
+fastoma	fastoma_helper_pw_rel	PASS	new CWL, output matches FastOMA test data
+fastoma	fastoma_infer_roothogs	PASS	new CWL, output matches FastOMA test data
+fastoma	fastoma_infer_subhogs	PASS	new CWL, output matches FastOMA test data
+fastool	fastool	Failed	tool bug: only the first input file is processed, gzip files give 0 sequences, and FASTQ output gets a '>' header
+fastools	fastools_add	PASS	
+fastools	fastools_aln	PASS	numbers correct; the tool prints no separator between records
+fastools	fastools_cat	PASS	
+fastools	fastools_collapse	Failed	tool bug: fastools collapse crashes with NameError collapse_fasta is not defined
+fastools	fastools_csv2fa2	PASS	
+fastools	fastools_descr	PASS	
+fastools	fastools_dna2rna	PASS	
+fastools	fastools_edit	PASS	
+fastools	fastools_fa2fq	PASS	
+fastools	fastools_fa2gb	PASS	
+fastools	fastools_famotif2bed	PASS	
+fastools	fastools_fq2fa	PASS	
+fastools	fastools_gb2fa	PASS	
+fastools	fastools_gen	PASS	
+fastools	fastools_get	PASS	fetched MT192765.1 region from NCBI; NetworkAccess added
+fastools	fastools_lenfilt	PASS	
+fastools	fastools_length	PASS	
+fastools	fastools_list_enzymes	PASS	fixed baseCommand to fastools list_enzymes
+fastools	fastools_maln	Failed	tool bug: fastools maln crashes with TypeError (writes an int to stdout)
+fastools	fastools_mangle	PASS	
+fastools	fastools_merge	PASS	
+fastools	fastools_raw2fa	PASS	
+fastools	fastools_restrict	PASS	
+fastools	fastools_reverse	PASS	
+fastools	fastools_rna2dna	PASS	
+fastools	fastools_rselect	PASS	
+fastools	fastools_s2i	PASS	
+fastools	fastools_sanitise	PASS	
+fastools	fastools_select	PASS	
+fastools	fastools_split_fasta	PASS	new CWL for the split_fasta command
+fastools	fastools_splitseq	PASS	
+fastools	fastools_tagcount	PASS	
+fastp	fastp	PASS	
+fastpca	fastpca	PASS	
+fastplong	fastplong	PASS	
+fastppm	fastppm_fastppm-cli	PASS	
+fastq-anonymous	fastq-anonymous	Failed	tool bug: output has a blank line after every FASTQ record, so the FASTQ is malformed
+fastq-dl	fastq-dl	PASS	
+fastq-filter	fastq-filter	PASS	
+fastq-join	fastq-join	PASS	
+fastq-multx	fastq-multx	PASS	
+fastq-pair	fastq-pair	PASS	
+fastq-scan	fastq-scan	PASS	
+fastq-screen	fastq-screen_fastq_screen	PASS	
+fastq-tools	fastq-tools_fastq-sample	Failed	tool bug: --complement-output loses some reads (sample plus complement had 87 of 100 reads); sampling alone is correct
+fastq-tools	fastq-tools_fastq-sort	PASS	
+fastqc	fastqc	PASS	
+fastqc-rs	fastqc-rs_fqc	PASS	
+fastqe	fastqe	PASS	
+fastqmetrics	fastqmetrics	PASS	
+fastqpuri	fastqpuri_Qreport	Failed	image problem: the program crashes with a segmentation fault when it starts the HTML report step (no HTML written)
+fastqpuri	fastqpuri_Sreport	Failed	image problem: the program crashes with a segmentation fault when it starts the HTML report step (no HTML written)
+fastqpuri	fastqpuri_makeBloom	PASS	bloom filter checked with trimFilter (5000 contaminant reads found); runs without -p, -g or -m crash with a memory allocation error
+fastqpuri	fastqpuri_makeTree	Failed	tool bug: the .gz tree file is truncated (corrupt gzip) because the tool does not wait for its gzip child process
+fastqpuri	fastqpuri_trimFilter	Failed	tool bug: default gzip output files are truncated because the tool does not wait for its gzip child process; --gzip n works
+fastqpuri	fastqpuri_trimFilterPE	Failed	tool bug: default gzip output files are truncated because the tool does not wait for its gzip child process; --gzip n works
+fastqsplitter	fastqsplitter	PASS	
+fastqtk	fastqtk_NtoA	PASS	
+fastqtk	fastqtk_compress-id	PASS	
+fastqtk	fastqtk_count	PASS	
+fastqtk	fastqtk_count-lengths	PASS	
+fastqtk	fastqtk_deinterleave	PASS	
+fastqtk	fastqtk_detab	PASS	
+fastqtk	fastqtk_drop-se	PASS	
+fastqtk	fastqtk_drop-short	PASS	
+fastqtk	fastqtk_fa2fq	PASS	
+fastqtk	fastqtk_fq2fa	PASS	
+fastqtk	fastqtk_interleave	PASS	
+fastqtk	fastqtk_lengths	PASS	
+fastqtk	fastqtk_retain-3	PASS	
+fastqtk	fastqtk_retain-5	PASS	
+fastqtk	fastqtk_rev-com	PASS	
+fastqtk	fastqtk_tab-4	PASS	
+fastqtk	fastqtk_tab-8	PASS	
+fastqtk	fastqtk_trim-3	PASS	
+fastqtk	fastqtk_trim-5	PASS	
+fastqtk	fastqtk_trim-id	PASS	
+fastqtk	fastqtk_trim-poly	PASS	
+fastreer	fastreer_DIST2TREE	PASS	
+fastreer	fastreer_FASTA2DIST	PASS	with 1 thread the output matches the Galaxy expected file exactly; with several threads values vary slightly between runs
+fastreer	fastreer_VCF2DIST	PASS	
+fastreer	fastreer_VCF2EMB	Not completed	needs the biofm-eval package (missing in the image), a downloaded BioFM-265M language model and a reference genome
+fastreer	fastreer_VCF2TREE	PASS	
+fastremap-bio	fastremap-bio_FastRemap	PASS	tested on bam from the FastRemap repository; the tool appends the file type to the output name
+fastsimbac	fastsimbac	PASS	rewritten from the real help (positional sample size and length); simulation with trees, recombination, two populations and events gives sites and Newick trees; the -F option could not be tried with a valid frequency file
+fastsimcoal2	fastsimcoal2_fsc27093	PASS	synthetic data: a hand-written two-deme parameter file; Arlequin files and site frequency spectra were written and checked; added result folder and seed outputs
+fastspar	fastspar	PASS	fixed --exclusion_iterations to --exclude_iterations (the tool rejects the help spelling); output matches the Galaxy expected files
+fastspar	fastspar_bootstrap	PASS	10 bootstraps of the Galaxy test table written
+fastspar	fastspar_pvalues	PASS	p-values from 10 bootstrap correlation tables (made with fastspar) have the right shape; values differ from the 50-bootstrap Galaxy file as expected
+fastspar	fastspar_reduce	PASS	filtered tables match the Galaxy expected files exactly
+faststructure	faststructure_chooseK.py	PASS	fixed: the result files are now staged as an input; run on the output files shipped in the fastStructure repository test folder (K=3 chosen)
+faststructure	faststructure_distruct.py	PASS	plot made from the meanQ file shipped in the fastStructure repository test folder
+faststructure	faststructure_structure.py	Failed	image problem: structure.py stops with TypeError: Cannot convert allelefreq.AlleleFreq to allelefreq.AlleleFreq (compiled module mismatch) for every option set
+fasttree	fasttree	PASS	fixed: alignment now comes after the options, standard output tree is collected, -expert removed; Galaxy nucleotide test gives a same-size tree (476 of 530 splits shared with the older Galaxy version output); protein run gives a Newick tree
+fastuniq	fastuniq	PASS	rewritten from the help (wrong flags fixed, input list built from the FASTQ files); real nf-core reads keep 100 pairs; synthetic data: with 30 planted duplicate pairs 130 pairs reduce to 100
+fastutils	fastutils_cutN	PASS	chr21 slice from nf-core with trailing N bases: contig written without N
+fastutils	fastutils_format	PASS	nf-core sarscov2 reads converted to wrapped fasta with prefix and length filter
+fastutils	fastutils_interleave	PASS	interleaved 2x100 real SARS-CoV-2 read pairs correctly (800 lines, mates alternate); the tool exits 1 after success, so the CWL accepts exit codes 0 and 1.
+fastutils	fastutils_length	PASS	read lengths and running total on nf-core reads
+fastutils	fastutils_revcomp	PASS	reverse complement of nf-core reads checked by hand
+fastutils	fastutils_stat	PASS	100 reads and 13897 bases reported for nf-core reads
+fastutils	fastutils_subsample	PASS	fixed genome size to string (suffix k, m, g); depth 5 on 1k genome gave 5102 bases
+fastutils	fastutils_subseq	PASS	fixed: region goes last and standard output is collected because the tool ignores -o; 100 bases of the nf-core chr21 slice match
+fastv	fastv	PASS	fixed: --out1/--out2 flags, report files typed string and collected; nf-core sarscov2 reads with the repository k-mer file give POSITIVE; the image has no default k-mer data so -k is needed
+fastx_toolkit	fastx_toolkit_fasta_clipping_histogram	PASS	PNG histogram made; bar heights match the length counts computed from the input (collapsed IDs weighted)
+fastx_toolkit	fastx_toolkit_fasta_formatter	PASS	output matches the Galaxy expected files for -w 0 and -w 60; -t gives a two-column table
+fastx_toolkit	fastx_toolkit_fasta_nucleotide_changer	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected file (-r and -d tested)
+fastx_toolkit	fastx_toolkit_fastq_masker	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected file (-q, -r, -Q tested)
+fastx_toolkit	fastx_toolkit_fastq_quality_boxplot_graph	Failed	image problem: gnuplot is not installed in the image, so the plot is empty
+fastx_toolkit	fastx_toolkit_fastq_quality_converter	Failed	tool bug: -z writes an empty file; without -z the output matches the fastx_toolkit Galaxy expected files (flag fixed from --output-file to -o, -Q added)
+fastx_toolkit	fastx_toolkit_fastq_quality_filter	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected file (-q, -p, -Q tested)
+fastx_toolkit	fastx_toolkit_fastq_quality_trimmer	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected file (-t, -l, -Q tested)
+fastx_toolkit	fastx_toolkit_fastq_to_fasta	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected files (flag fixed from --output-file to -o)
+fastx_toolkit	fastx_toolkit_fastx_artifacts_filter	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected file (FASTA and FASTQ)
+fastx_toolkit	fastx_toolkit_fastx_barcode_splitter	PASS	per-barcode counts 11/12/9/1 and 9 unmatched match the Galaxy expected summary; --eol, --exact, --quiet also run
+fastx_toolkit	fastx_toolkit_fastx_clipper	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected file (-a, -l, -c, -n tested)
+fastx_toolkit	fastx_toolkit_fastx_collapser	PASS	flag fixed from --output-file to -o; same sequences and counts as the Galaxy expected file (order of equal counts differs)
+fastx_toolkit	fastx_toolkit_fastx_nucleotide_distribution_graph	Failed	image problem: gnuplot is not installed in the image, so the plot is empty
+fastx_toolkit	fastx_toolkit_fastx_nucleotide_distribution_line_graph	Failed	image problem: gnuplot is not installed in the image; the script also rejects the fastx_quality_stats report (header check expects 'cycle count')
+fastx_toolkit	fastx_toolkit_fastx_quality_stats	PASS	output matches the Galaxy expected file (-Q 64); -N gives the new format
+fastx_toolkit	fastx_toolkit_fastx_renamer	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected file (-n SEQ and COUNT tested)
+fastx_toolkit	fastx_toolkit_fastx_reverse_complement	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected file (FASTA and FASTQ)
+fastx_toolkit	fastx_toolkit_fastx_trimmer	Failed	tool bug: -z writes an empty file; without -z the output matches the Galaxy expected files (flag fixed to -o, -t and -m added)
+fastx_toolkit	fastx_toolkit_fastx_uncollapser	PASS	output matches the Galaxy expected files for FASTA and for tabular input with -c 10
+fatslim_biobb	fatslim_biobb_aggregates	PASS	FATSLiM test bilayer: plot and aggregate index files written
+fatslim_biobb	fatslim_biobb_apl	PASS	FATSLiM test bilayer (model_bilayer.gro): raw area per lipid file matches the repository expected file
+fatslim_biobb	fatslim_biobb_membranes	PASS	FATSLiM test bilayer: plot and leaflet index files written
+fatslim_biobb	fatslim_biobb_thickness	PASS	FATSLiM test bilayer: raw thickness file matches the repository expected file
+favites_lite	favites_lite_favites_lite.py	PASS	repository example config: simulated outbreak gives sequences, phylogenies and transmission network
+fba	fba_count	PASS	fixed: each input file gets its own --input flag; UMI counts matrix for 2 features written
+fba	fba_demultiplex	Failed	image problem: demultiplex stops at import with numba SystemError: initialization of _internal failed (umap and numba do not match numpy)
+fba	fba_extract	PASS	fba repository test reads with -r2_c 31,51 and 2 mismatches: 3299 valid pairs (the coordinates must hug the barcode)
+fba	fba_filter	PASS	filtered the extract output from the fba test reads; all 3299 pairs kept
+fba	fba_kallisto_wrapper	Failed	image problem: kallisto and bustools are not installed in the image (FileNotFoundError: kallisto not found in PATH)
+fba	fba_map	Failed	image problem: bwa and bowtie2 are not installed in the image (FileNotFoundError: bwa not found in PATH)
+fba	fba_qc	PASS	fba repository test reads: feature barcodes found in 3595 of 5000 read pairs, plots and tables written; output directory now collected
+fc	fc_fc-virus	PASS	29781 bp consensus on the repository test reads; the tool exits 1 after success, so the CWL accepts exit codes 0 and 1.
+feature_merge	feature_merge	PASS	fixed: input files go after the options, -e and -i are booleans, each -f group gets its own flag, -v removed; repository synthetic.gff3 gives 1 merged group of 11 features as in its unit test
+fec	fec_Fec	PASS	nf-core sarscov2 nanopore reads with minimap2 overlaps: 2558 corrected reads, identity to the reference rose from 93.9% to 99.2%; the PAF is staged writable
+feelnc	feelnc_FEELnc_classifier.pl	PASS	classes table equals the Galaxy expected file except tie choices among non-best partners; log file output fixed
+feelnc	feelnc_FEELnc_codpot.pl	PASS	FEELnc repository test data in shuffle mode: lncRNA and mRNA files match the Galaxy sizes; added FEELNCPATH, writable genome copy and --spethres flag; RF cutoff differs slightly from the repository result
+feelnc	feelnc_FEELnc_filter.pl	PASS	FEELnc repository test data: output has the same lines as the repository expected file (order differs); log file output fixed
+feelnc	feelnc_FEELnc_pipeline.sh	Not completed	pipeline, skipped
+fegenie	fegenie_FeGenie.py	PASS	E. coli K-12 genome (NCBI NC_000913.3) gives 68 iron-related genes (siderophore, iron and heme transport, regulation)
+feht	feht	PASS	feht repository test tables (binary and snp modes, group selection, ratio filter); delimiter fixed to a single string and must be given quoted, e.g. "','"
+fermi	fermi_bitand	PASS	intersection of two contrast bit arrays written (17544 bytes)
+fermi	fermi_build	PASS	FM-index of E. coli reads (nf-core) built; same counts as the merge of two half indexes
+fermi	fermi_chkbwt	PASS	rank check of the portiera index finished with exit 0 and marginal counts on stderr (the tool prints no result to stdout)
+fermi	fermi_clean	PASS	graph cleaning reduced 2806 unitigs to 436, then 246 with -C -A -o 60
+fermi	fermi_contrast	PASS	fixed: the two .sub files are outputs (strings), not inputs; portiera against E. coli reads selects all reads as expected
+fermi	fermi_correct	PASS	portiera illumina reads (nf-core), 40000 pairs: 73013 of 80000 reads kept after correction
+fermi	fermi_exact	PASS	40 portiera reads searched in their own index: full length exact matches found
+fermi	fermi_example	PASS	single-binary assembler (not a workflow); with -e -c on the collated portiera reads: 334 unitigs (175 kb), 94% of sampled 31-mers in the genome
+fermi	fermi_fltuniq	PASS	removed reads with unique k-mers from the corrected portiera reads (70120 reads left)
+fermi	fermi_merge	PASS	two half indexes merged: same size and marginal counts as the index of all reads
+fermi	fermi_pe2cofq	PASS	portiera illumina reads (nf-core), 40000 pairs: collated fastq with 80000 reads written
+fermi	fermi_recode	PASS	new CWL for fermi recode; recoded index has the same marginal counts as the source
+fermi	fermi_remap	PASS	reads remapped to the cleaned unitigs; insert size avg 759 reported in the log
+fermi	fermi_ropebwt	PASS	fixed baseCommand to fermi ropebwt (bare ropebwt does not exist) and temp file type; FM-index built from the collated portiera reads and checked by chkbwt
+fermi	fermi_scaf	PASS	243 scaftigs (133 kb) of which 95% of sampled 31-mers occur in the portiera genome
+fermi	fermi_seqrank	PASS	fixed baseCommand to the documented seqrank; rank file written for the corrected-read index
+fermi	fermi_splitfa	PASS	40000 reads split into 4 files of 10000 reads
+fermi	fermi_sub	PASS	sub-index from the contrast array: same marginal counts as the source index
+fermi	fermi_trimseq	PASS	reads trimmed to 63-101 bp with -l 50 -q 10; 39984 of 40000 kept
+fermi	fermi_unitig	PASS	2806 unitigs from the corrected portiera reads
+fermi	fermi_unpack	PASS	read 5 of the portiera index printed
+fermi-lite	fermi-lite_fml-asm	PASS	
+fermi2	fermi2_assemble	PASS	
+fermi2	fermi2_correct	PASS	
+fermi2	fermi2_count	PASS	
+fermi2	fermi2_diff	PASS	
+fermi2	fermi2_interleave	PASS	
+fermi2	fermi2_match	PASS	
+fermi2	fermi2_occflt	PASS	
+fermi2	fermi2_sa	PASS	
+fermi2	fermi2_simplify	PASS	
+fermi2	fermi2_sub	PASS	
+fermi2	fermi2_unpack	PASS	
+fermikit	fermikit_fermi2.pl_mag2fmr	PASS	
+fermikit	fermikit_fermi2.pl_unitig	PASS	
+fermikit	fermikit_fermi2.pl_utglog	Failed	tool bug: utglog needs raw.fmd.log and ec.fmd.log, which fermi2.pl unitig no longer writes, so it dies on its own logs
+fermikit	fermikit_run-calling	Failed	image problem: k8 cannot load libstdc++.so.6, so the hapdip.js filter step fails and the filtered VCF is empty
+fermikit	fermikit_trimadap-mt	PASS	the program rejects the documented -d option (invalid option); all other options work
+ffindex	ffindex_ffindex_apply	PASS	
+ffindex	ffindex_ffindex_build	PASS	
+ffindex	ffindex_ffindex_from_fasta	PASS	
+ffindex	ffindex_ffindex_from_fasta_with_split	PASS	
+ffindex	ffindex_ffindex_get	PASS	
+ffindex	ffindex_ffindex_modify	PASS	sorting works; the program segfaults with -u (unlink) on this image
+ffindex	ffindex_ffindex_order	PASS	
+ffindex	ffindex_ffindex_reduce	PASS	
+ffindex	ffindex_ffindex_unpack	PASS	
+ffq	ffq	PASS	ran with network access on one small accession; --split combined with a link option crashes in the program
+fgap	fgap_FGAP	PASS	
+fgbio	fgbio_AnnotateBamWithUmis	PASS	
+fgbio	fgbio_AssessPhasing	PASS	
+fgbio	fgbio_CallCodecConsensusReads	Not completed	no CODEC test data; it runs on duplex-seq read pairs, but that output cannot confirm CODEC consensus calls.
+fgbio	fgbio_CallDuplexConsensusReads	PASS	
+fgbio	fgbio_CallMolecularConsensusReads	PASS	
+fgbio	fgbio_ClipBam	PASS	
+fgbio	fgbio_CollectAlternateContigNames	PASS	
+fgbio	fgbio_CollectDuplexSeqMetrics	PASS	
+fgbio	fgbio_CorrectUmis	PASS	
+fgbio	fgbio_DemuxFastqs	PASS	
+fgbio	fgbio_DownsampleAndNormalizeBam	PASS	
+fgbio	fgbio_ErrorRateByReadPosition	PASS	
+fgbio	fgbio_ExtractBasecallingParamsForPicard	PASS	
+fgbio	fgbio_ExtractIlluminaRunInfo	PASS	
+fgbio	fgbio_ExtractUmisFromBam	PASS	
+fgbio	fgbio_FastqToBam	PASS	
+fgbio	fgbio_FilterBam	PASS	
+fgbio	fgbio_FilterConsensusReads	PASS	
+fgbio	fgbio_FilterSomaticVcf	PASS	ran on germline GIAB calls with a matching NA12878 BAM (no somatic test data); ATAP and ERFAP annotations added
+fgbio	fgbio_GroupReadsByUmi	PASS	
+fgbio	fgbio_HardMaskFasta	PASS	
+fgbio	fgbio_SetMateInformation	PASS	
+fgbio	fgbio_SortBam	PASS	
+fgbio	fgbio_SortFastq	PASS	
+fgbio	fgbio_SortSequenceDictionary	PASS	
+fgbio	fgbio_TrimFastq	PASS	
+fgbio	fgbio_TrimPrimers	PASS	synthetic data: primer coordinates planted at the ends of real read pairs; primers trimmed and mate fields updated
+fgbio	fgbio_UpdateFastaContigNames	PASS	
+fgbio	fgbio_UpdateGffContigNames	PASS	
+fgbio	fgbio_UpdateIntervalListContigNames	PASS	
+fgbio	fgbio_UpdateReadGroups	PASS	
+fgbio	fgbio_UpdateVcfContigNames	PASS	
+fgbio	fgbio_ZipperBams	PASS	
+fgbio-minimal	fgbio-minimal_CollectAlternateContigNames	PASS	
+fgbio-minimal	fgbio-minimal_DemuxFastqs	PASS	
+fgbio-minimal	fgbio-minimal_ExtractBasecallingParamsForPicard	PASS	
+fgbio-minimal	fgbio-minimal_ExtractIlluminaRunInfo	PASS	
+fgbio-minimal	fgbio-minimal_FastqToBam	PASS	
+fgbio-minimal	fgbio-minimal_HardMaskFasta	PASS	
+fgbio-minimal	fgbio-minimal_SortFastq	PASS	
+fgbio-minimal	fgbio-minimal_SortSequenceDictionary	PASS	
+fgbio-minimal	fgbio-minimal_TrimFastq	PASS	
+fgbio-minimal	fgbio-minimal_UpdateFastaContigNames	PASS	
+fgbio-minimal	fgbio-minimal_UpdateIntervalListContigNames	PASS	
+fgsv	fgsv_AggregateSvPileup	PASS	
+fgsv	fgsv_AggregateSvPileupToBedPE	PASS	
+fgsv	fgsv_FilterAndMerge	PASS	
+fgsv	fgsv_SvPileup	PASS	
+fibertools-rs	fibertools-rs_add-nucleosomes	PASS	
+fibertools-rs	fibertools-rs_center	PASS	
+fibertools-rs	fibertools-rs_clear-kinetics	PASS	
+fibertools-rs	fibertools-rs_ddda-to-m6a	Not completed	no real DddA-seq BAM available; the tool needs reads with Y/R bases, and the Fiber-seq test BAMs have none.
+fibertools-rs	fibertools-rs_extract	PASS	
+fibertools-rs	fibertools-rs_fire	PASS	
+fibertools-rs	fibertools-rs_footprint	PASS	
+fibertools-rs	fibertools-rs_pg-inject	PASS	
+fibertools-rs	fibertools-rs_pg-lift	Not completed	needs the vg program (not in the image) and a pangenome GBZ graph; no small real graph was used.
+fibertools-rs	fibertools-rs_pg-pansn	PASS	
+fibertools-rs	fibertools-rs_pileup	PASS	
+fibertools-rs	fibertools-rs_predict-m6a	PASS	
+fibertools-rs	fibertools-rs_qc	PASS	
+fibertools-rs	fibertools-rs_strip-basemods	PASS	
+fibertools-rs	fibertools-rs_track-decorators	PASS	
+fibertools-rs	fibertools-rs_validate	PASS	
+figaro	figaro_figaro.py	PASS	
+figtree	figtree	PASS	
+filtlong	filtlong	PASS	
+finaletoolkit	finaletoolkit_adjust-wps	PASS	
+finaletoolkit	finaletoolkit_agg-bw	PASS	
+finaletoolkit	finaletoolkit_breakpoint-motifs	PASS	
+finaletoolkit	finaletoolkit_cleavage-profile	PASS	
+finaletoolkit	finaletoolkit_coverage	PASS	
+finaletoolkit	finaletoolkit_delfi	PASS	
+finaletoolkit	finaletoolkit_delfi-gc-correct	PASS	
+finaletoolkit	finaletoolkit_end-motifs	PASS	
+finaletoolkit	finaletoolkit_filter-file	Failed	image problem: samtools and bedtools are missing in the image, so filtering a BAM or BED file fails with exit 127
+finaletoolkit	finaletoolkit_frag-length-bins	PASS	
+finaletoolkit	finaletoolkit_frag-length-intervals	PASS	
+finaletoolkit	finaletoolkit_gap-bed	PASS	
+finaletoolkit	finaletoolkit_interval-breakpoint-motifs	PASS	
+finaletoolkit	finaletoolkit_interval-end-motifs	PASS	
+finaletoolkit	finaletoolkit_interval-mds	PASS	
+finaletoolkit	finaletoolkit_mds	PASS	
+finaletoolkit	finaletoolkit_wps	PASS	
+find_differential_primers	find_differential_primers	Failed	image problem: the script crashes at its EMBOSS version check (Python 2 str() call) before any work, so no run can finish
+finemap	finemap_cond	Not completed	ran on the FINEMAP example data, but the stepwise search stops after one causal SNP although rs30 has a residual z-score of 11, so the output cannot be confirmed
+finemap	finemap_config	PASS	
+finemap	finemap_sss	PASS	
+fineradstructure	fineradstructure_hapsFromVCF	PASS	
+fineradstructure	fineradstructure_paint	PASS	
+finestructure	finestructure_beagle2chromopainter	PASS	
+finestructure	finestructure_chromopainter2chromopainterv2	PASS	
+finestructure	finestructure_convertrecfile	PASS	
+finestructure	finestructure_fs	Not completed	pipeline, skipped
+finestructure	finestructure_greedy	PASS	
+finestructure	finestructure_impute2chromopainter	PASS	
+finestructure	finestructure_makeuniformrecfile	PASS	
+finestructure	finestructure_msms2cp	PASS	
+finestructure	finestructure_phasescreen	PASS	
+finestructure	finestructure_phasesubsample	PASS	
+finestructure	finestructure_plink2chromopainter	PASS	
+fings	fings	PASS	
+firecloud	firecloud_fissfc	Not completed	needs a Terra/FireCloud account (even the health command wants gcloud credentials)
+fitgcp	fitgcp	Failed	image problem: the script crashes while reading a SAM file (float slice index with the installed numpy), so no fit can be made
+fithic	fithic	PASS	
+fitter	fitter_fitdist	PASS	
+flaimapper	flaimapper	PASS	
+flair	flair_align	PASS	
+flair	flair_bed_to_gtf	PASS	
+flair	flair_bed_to_sequence	PASS	
+flair	flair_collapse	PASS	
+flair	flair_combine	PASS	
+flair	flair_correct	PASS	
+flair	flair_diff_iso_usage	PASS	
+flair	flair_diffexp	Failed	image problem: Rscript (R with DESeq2 and DRIMSeq) is missing in the image, so diffexp stops at the first R step
+flair	flair_diffsplice	PASS	event tables match the expected files; the --test option stops because R is missing in the image
+flair	flair_fusion	PASS	
+flair	flair_gtf_to_bed	PASS	
+flair	flair_junctions_from_sam	PASS	
+flair	flair_mark_intron_retention	Failed	image problem: the entry point cannot import main from the module, so the command exits with an error after writing its files
+flair	flair_partition	Failed	image problem: busybox sort in the image has no --parallel option, so the tool silently writes an empty ranges file
+flair	flair_plot_isoform_usage	PASS	
+flair	flair_predictProductivity	PASS	
+flair	flair_quantify	PASS	
+flair	flair_transcriptome	PASS	
+flair	flair_variants	Not completed	needs a VCF made by longshot, and longshot is not in the image
+flams	flams	PASS	
+flanker	flanker	PASS	
+flash	flash	PASS	
+flash2	flash2	PASS	
+flexbar	flexbar	PASS	
+flexi-formatter	flexi-formatter_main	Failed	tool bug: with current flexiplex read names (BARCODE_UMI#READID) the CB tag is set to the read id instead of the barcode; only names without a UMI give a correct CB
+flexidot	flexidot	PASS	
+flexiformatter	flexiformatter	PASS	
+flexiplex	flexiplex	Failed	tool bug: 1.02.5 silently writes an N-padded UMI when the UMI is placed before the barcode; barcode-then-UMI layout is correct.
+flexiplex	flexiplex_flexiplex-filter	PASS	
+flexsweep	flexsweep_cnn	Failed	tool bug: training finishes but the command exits with AssertionError (predict is called without predict data); train plus predict crashes with an attribute error on the region names
+flexsweep	flexsweep_fvs-discoal	PASS	
+flexsweep	flexsweep_fvs-vcf	Failed	tool bug: always crashes with TypeError, the fvs_vcf function does not accept the --pop option
+flexsweep	flexsweep_simulator	PASS	
+flextaxd	flextaxd	PASS	note: create, modify and dump work; --stats and --validate print the result but exit 1, the visualisation options crash (missing inquirer) and --dump_genome_annotations crashes
+flexynesis	flexynesis	PASS	
 foldcomp	foldcomp_check	Failed	tool bug: check passes a truncated FCZ file without flagging it; valid files are reported correctly
 foldcomp	foldcomp_compress	PASS	
 foldcomp	foldcomp_decompress	PASS	

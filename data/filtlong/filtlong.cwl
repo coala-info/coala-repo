@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: filtlong
 label: filtlong
-doc: "A tool for filtering long reads by quality\n\nTool homepage: http://http://canu.readthedocs.org/"
+doc: "A tool for filtering long reads by quality\n\nTool homepage: https://github.com/rrwick/Filtlong"
 inputs:
   - id: input_reads
     type: File
@@ -36,7 +36,7 @@ inputs:
   - id: min_length
     type:
       - 'null'
-      - int
+      - string
     doc: Remove reads shorter than this
     inputBinding:
       position: 102
@@ -57,26 +57,26 @@ inputs:
     inputBinding:
       position: 102
       prefix: --min_window_q
-  - id: read_1
+  - id: short_1
     type:
       - 'null'
       - File
-    doc: Input reads (alternative to positional input)
+    doc: Reference short reads in FASTQ format
     inputBinding:
       position: 102
-      prefix: --read_1
-  - id: read_2
+      prefix: --short_1
+  - id: short_2
     type:
       - 'null'
       - File
-    doc: External references (e.g. short reads) for quality calibration
+    doc: Reference short reads in FASTQ format
     inputBinding:
       position: 102
-      prefix: --read_2
+      prefix: --short_2
   - id: split
     type:
       - 'null'
-      - int
+      - string
     doc: Split reads at adapter sequences
     inputBinding:
       position: 102
@@ -84,7 +84,7 @@ inputs:
   - id: target_bases
     type:
       - 'null'
-      - int
+      - string
     doc: Keep only the best reads up to this many bases
     inputBinding:
       position: 102
@@ -105,6 +105,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window_q_weight
+  - id: max_length
+    type:
+      - 'null'
+      - string
+    doc: Maximum length threshold (unit suffixes k, kb, m, mb, g, gb)
+    inputBinding:
+      position: 102
+      prefix: --max_length
+  - id: assembly
+    type:
+      - 'null'
+      - File
+    doc: Reference assembly in FASTA format
+    inputBinding:
+      position: 102
+      prefix: --assembly
+  - id: window_size
+    type:
+      - 'null'
+      - int
+    doc: Size of sliding window used when measuring window quality (default 250)
+    inputBinding:
+      position: 102
+      prefix: --window_size
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose output to stderr with info for each read
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

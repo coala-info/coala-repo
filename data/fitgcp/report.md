@@ -1,5 +1,11 @@
 # fitgcp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fitgcp | Failed | image problem: the script crashes while reading a SAM file (float slice index with the installed numpy), so no fit can be made |
+
 ## fitgcp
 
 ### Tool Description

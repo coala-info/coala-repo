@@ -40,6 +40,11 @@ inputs:
       prefix: -m
   - id: normal_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: absolute path to normal BAM
     inputBinding:
       position: 101
@@ -97,6 +102,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: absolute path to faidx indexed reference genome; required if using 
       'repeats' filter
     inputBinding:
@@ -104,12 +112,20 @@ inputs:
       prefix: -r
   - id: tumor_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: absolute path to tumor BAM
     inputBinding:
       position: 101
       prefix: -t
   - id: vcf_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: absolute path to VCF file
     inputBinding:
       position: 101

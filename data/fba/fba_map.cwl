@@ -149,6 +149,13 @@ outputs:
     doc: specify an output file
     outputBinding:
       glob: $(inputs.output_path)
+  - id: output_directory_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output or temp directory (default ./barcode_mapping)
+    outputBinding:
+      glob: "$(inputs.output_directory ? inputs.output_directory : 'barcode_mapping')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

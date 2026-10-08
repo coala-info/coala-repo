@@ -1,5 +1,11 @@
 # fastcov CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastcov | PASS |  |
+
 ## fastcov
 
 ### Tool Description

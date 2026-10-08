@@ -38,7 +38,7 @@ inputs:
       position: 101
       prefix: --fofn
   - id: genome_size
-    type: float
+    type: string
     doc: length of the genome. Accepted suffixes are k,m,g
     inputBinding:
       position: 101

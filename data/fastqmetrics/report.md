@@ -1,5 +1,11 @@
 # fastqmetrics CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastqmetrics | PASS |  |
+
 ## fastqmetrics
 
 ### Tool Description

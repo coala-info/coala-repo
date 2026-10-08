@@ -1,5 +1,11 @@
 # flexidot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flexidot | PASS |  |
+
 ## flexidot
 
 ### Tool Description

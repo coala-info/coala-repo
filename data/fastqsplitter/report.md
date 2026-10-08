@@ -1,5 +1,11 @@
 # fastqsplitter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastqsplitter | PASS |  |
+
 ## fastqsplitter
 
 ### Tool Description

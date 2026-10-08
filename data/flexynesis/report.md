@@ -1,5 +1,11 @@
 # flexynesis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flexynesis | PASS |  |
+
 ## flexynesis
 
 ### Tool Description

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: FastDup
+baseCommand: fastdup
 label: fastdup
 doc: "Identifies duplicate reads. This tool locates and tags duplicate reads in a
   coordinate ordered SAM or BAM file.\nUse the same algorithm as picard MarkDuplicates
@@ -39,7 +39,7 @@ inputs:
       position: 101
       prefix: --input
   - id: metrics
-    type: File
+    type: string
     doc: Metrics file. File to write duplication metrics to.
     inputBinding:
       position: 101
@@ -142,6 +142,18 @@ outputs:
     doc: Output file. SAM or BAM file to write marked records to.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: metrics_file
+    type: File
+    doc: Duplication metrics file.
+    outputBinding:
+      glob: $(inputs.metrics)
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: BAM index written when create_index is set.
+    outputBinding:
+      glob: $(inputs.output_path)*.[bc]*i
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -39,8 +39,7 @@ inputs:
   - id: list
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: list or search available commands and exit
     inputBinding:
       position: 102
@@ -48,14 +47,13 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Emit progressively more detailed feedback during execution, e.g. to 
       confirm when actions have completed or to show URL and parameters of REST 
       calls. Multiple -V may be given.
     inputBinding:
       position: 102
-      prefix: --verbose
+      prefix: -V
   - id: yes
     type:
       - 'null'

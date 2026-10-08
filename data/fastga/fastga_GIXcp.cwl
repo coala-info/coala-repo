@@ -2,55 +2,73 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: GIXcp
 label: fastga_GIXcp
-doc: "Copies GIX database files, with options for verbosity, prompting, and overwriting.\n\
-  \nTool homepage: https://github.com/thegenemyers/FASTGA"
+doc: "Copies a genome database (.1gdb) or genome index (.gix) together with its hidden files.\n\nTool homepage: https://github.com/thegenemyers/FASTGA"
 inputs:
+  - id: source_files
+    type: File[]
+    doc: 'All files of the source database or index: .1gdb with its hidden .bps, and .gix with its hidden .ktab.N files.'
   - id: source
-    type: File
-    doc: Source GIX database file path (e.g., .1gdb or .gix)
+    type: string
+    doc: Name of the source .1gdb or .gix file (as in source_files).
     inputBinding:
-      position: 1
+      position: 100
   - id: target
-    type: File
-    doc: Target GIX database file path (e.g., .1gdb or .gix)
+    type: string
+    doc: Name of the target .1gdb or .gix file.
     inputBinding:
-      position: 2
-  - id: force_quiet
+      position: 101
+  - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Force operation quietly.
+    doc: 'Verbose mode, list what is being deleted.'
     inputBinding:
-      position: 103
-      prefix: -f
-  - id: interactive
+      position: 101
+      prefix: '-v'
+  - id: prompt
     type:
       - 'null'
       - boolean
     doc: Prompt for each deletion.
     inputBinding:
-      position: 103
-      prefix: -i
+      position: 101
+      prefix: '-i'
   - id: no_overwrite
     type:
       - 'null'
       - boolean
     doc: Do not overwrite existing files.
     inputBinding:
-      position: 103
-      prefix: -n
-  - id: verbose
+      position: 101
+      prefix: '-n'
+  - id: force
     type:
       - 'null'
       - boolean
-    doc: Verbose mode, list what is being deleted.
+    doc: Force operation quietly.
     inputBinding:
-      position: 103
-      prefix: -v
+      position: 101
+      prefix: '-f'
 outputs:
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Copied files.
+    outputBinding:
+      glob: |
+        ${
+          var s = inputs.target.replace(/\.(gix|1gdb)$/, '');
+          return [s + '.gix', s + '.1gdb', '.' + s + '.*'];
+        }
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.source_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0

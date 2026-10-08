@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - fermi
+  - fermi2
   - interleave
 label: fermi2_interleave
 doc: "Interleave two FASTQ files\n\nTool homepage: https://github.com/lh3/fermi2"

@@ -1,52 +1,108 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: flams
+baseCommand: FLAMS
 label: flams
-doc: "Fast Local Alignment of Multiple Sequences (FLAMS) is a tool for searching and
-  aligning protein sequences against a database.\n\nTool homepage: https://github.com/hannelorelongin/FLAMS"
+doc: "Find Lysine Acylations & other Modification Sites (FLAMS). Searches whether
+  a modification at a protein position is known in similar proteins.\n\nTool homepage:
+  https://github.com/hannelorelongin/FLAMS"
 inputs:
-  - id: query
-    type: File
-    doc: Input query protein sequence file (FASTA format)
+  - id: input_fasta
+    type:
+      - 'null'
+      - File
+    doc: Path to input .fasta file.
     inputBinding:
       position: 1
-  - id: database
-    type: File
-    doc: Target database file
+      prefix: --in
+  - id: uniprot_id
+    type:
+      - 'null'
+      - string
+    doc: UniProt ID of input protein.
     inputBinding:
       position: 2
-  - id: threads
+      prefix: --id
+  - id: batch_file
+    type:
+      - 'null'
+      - File
+    doc: Path to tab separated input file for batch processing (1st column UniProt
+      ID, 2nd column position). One query (UniProtID + position) per line.
+    inputBinding:
+      position: 3
+      prefix: --batch
+  - id: position
     type:
       - 'null'
       - int
-    doc: Number of threads to use
+    doc: Position in input protein that will be searched for conserved modifications.
     inputBinding:
-      position: 103
-      prefix: --threads
-  - id: verbose
+      position: 4
+      prefix: --pos
+  - id: error_range
     type:
       - 'null'
-      - boolean
-    doc: Enable verbose output
+      - int
+    doc: Allowed error range for position. [default 0]
     inputBinding:
-      position: 103
-      prefix: --verbose
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+      position: 5
+      prefix: --range
+  - id: output_file
+    type:
+      - 'null'
+      - string
+    doc: Path to output .tsv file. [default out.tsv] If FLAMS is run with --batch,
+      the specified -o/--output is used as preposition, followed by '_$UniProtID_$position.tsv'.
     inputBinding:
-      position: 104
+      position: 6
       prefix: --output
+  - id: data_dir
+    type:
+      - 'null'
+      - string
+    doc: Path to directory where intermediate files should be saved. [default $PWD/data]
+    inputBinding:
+      position: 7
+      prefix: --data_dir
+  - id: num_threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to run BLAST with. [default 1]
+    inputBinding:
+      position: 8
+      prefix: --num_threads
+  - id: evalue
+    type:
+      - 'null'
+      - double
+    doc: Desired E-value of BLAST run. [default 0.01]
+    inputBinding:
+      position: 9
+      prefix: --evalue
+  - id: modification
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Space-separated list of modifications (all lower case) to search for at the
+      given position, for example acetylation or CPLM-Acylations. [default K-All]
+    inputBinding:
+      position: 10
+      prefix: --modification
 outputs:
   - id: output
     type:
       - 'null'
-      - File
-    doc: Output file for alignment results
+      - type: array
+        items: File
+    doc: Result tables (.tsv). One file per query when run with --batch.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "*.tsv"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flams:1.1.7--pyhdfd78af_0

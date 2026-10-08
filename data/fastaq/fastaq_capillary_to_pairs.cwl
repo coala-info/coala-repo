@@ -20,9 +20,6 @@ inputs:
     inputBinding:
       position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: outfiles_prefix_files
     type:
       type: array
@@ -33,4 +30,3 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1
-stdout: fastaq_capillary_to_pairs.out

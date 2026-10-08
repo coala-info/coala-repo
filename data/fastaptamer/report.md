@@ -1,5 +1,15 @@
 # fastaptamer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastaptamer_fastaptamer_cluster | PASS |  |
+| fastaptamer_fastaptamer_compare | PASS |  |
+| fastaptamer_fastaptamer_count | PASS |  |
+| fastaptamer_fastaptamer_enrich | PASS |  |
+| fastaptamer_fastaptamer_search | Failed | tool bug: with several -p patterns the Perl script misses sequences unless the patterns occur in the order listed and do not overlap; single pattern works |
+
 ## fastaptamer_fastaptamer_count
 
 ### Tool Description

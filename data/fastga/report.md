@@ -1,5 +1,29 @@
 # fastga CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastga_ALNchain | PASS |  |
+| fastga_ALNplot | PASS | EPS dot plot on standard output is correct; the pdf option crashes visibly because the image has no epstopdf. |
+| fastga_ALNreset | PASS |  |
+| fastga_ALNshow | PASS |  |
+| fastga_ALNtoPAF | PASS |  |
+| fastga_ALNtoPSL | PASS |  |
+| fastga_FAtoGDB | PASS |  |
+| fastga_FastGA | PASS | PAF numbers match the Galaxy expected file apart from 0.1195 printed as .1195 by this version; PSL identical. |
+| fastga_GDBshow | PASS |  |
+| fastga_GDBstat | PASS |  |
+| fastga_GDBtoFA | PASS |  |
+| fastga_GIXcp | PASS |  |
+| fastga_GIXmake | PASS |  |
+| fastga_GIXmv | PASS |  |
+| fastga_GIXrm | PASS |  |
+| fastga_GIXshow | PASS |  |
+| fastga_ONEview | PASS |  |
+| fastga_PAFtoALN | PASS |  |
+| fastga_PAFtoPSL | PASS |  |
+
 ## fastga_FAtoGDB
 
 ### Tool Description
@@ -215,26 +239,6 @@ Usage: GIXmv [-vinfx] <source:path>[.1gdb|.gix] <target:path>[.1gdb|.gix]
 ```
 
 
-## fastga_GDBstat
-
-### Tool Description
-Display histograms of scaffold & contig lengths.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
-- **Homepage**: https://github.com/thegenemyers/FASTGA
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: GDBstat [-h[<int>,<int>]] [-hlog] <source:path>[.1gdb]
-
-      -h: Display histograms of scaffold & contig lengths.
-            int's give bucket sizes for respective histograms if given.
-```
-
-
 ## fastga_ALNshow
 
 ### Tool Description
@@ -318,6 +322,220 @@ Usage: ALNplot [-vSL] [-T<int(4)>] [-p[:<output:path>[.pdf]]]
       -t: line thickness
 ```
 
+
+## fastga_ALNchain
+
+### Tool Description
+Chains the local alignments of a .1aln file into one-to-one global chains.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
+- **Homepage**: https://github.com/thegenemyers/FASTGA
+- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+Usage: ALNchain [-v] [-g<int(10000)>] [-l<int(10000)>] [-p<float(0.1)>] [-q<float(0.1)>]
+                [-z<int(1000)>] [-s<int(10000)>] [-n<int(1)>] [-c<float(0.5)>] [-e<0.0>]
+                [-f<int(1000)>] [-o<output:path>[.1aln]] <alignments:path>[.1aln]
+
+      -g: maximum gap size
+      -l: maximum overlap size
+      -p: a gap of size G cost (-p)*G
+      -q: an overlap of size O cost (-q)*O
+      -z: score drop threshold for breaking a chain
+
+      -s: minimum chain score
+      -n: minimum number of alignment fragments in a chain
+      -c: maximum coverage as a fraction of chain size
+      -e: minimum extension as a fraction of sequence size
+      -f: maximum gap for fuzzy merge
+
+      -o: 1-code output file name
+      -v: verbose mode
+```
+
+## fastga_ALNreset
+
+### Tool Description
+Resets the source genome paths stored in a .1aln alignment file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
+- **Homepage**: https://github.com/thegenemyers/FASTGA
+- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+Usage: ALNreset [-T<int(8)>] <alignments:path>[.1aln]
+                 <source1:path>[.1gdb|<fa_extn>|<1_extn>] [<source2:path>[.1gdb|<fa_extn>|<1_extn>]]
+
+           <fa_extn> = (.fa|.fna|.fasta)[.gz]
+           <1_extn>  = any valid 1-code sequence file type
+
+      -T: Number of threads to use.
+```
+
+## fastga_GDBshow
+
+### Tool Description
+Shows the scaffolds and contigs of a genome database, or the sequence of a selection.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
+- **Homepage**: https://github.com/thegenemyers/FASTGA
+- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: GDBshow [-h] [-w<int(80)>] <source:path>[.1gdb] [ <selection>|<FILE> ]
+
+  <selection> = <range>[+-] [ , <range>[+-] ]*
+
+     <range> = <object/position> [ - <object/position> ]  | @ | .
+
+        <object/position> = @ <scaffold> [ . <contig>] [ : <position> ]
+                          |                . <contig>  [ : <position> ]
+                          |                                <position>
+
+           <scaffold> = # | <int> | <identifier>
+           <contig>   = # | <int>
+           <position> = # | <int> [ . <int> ] [kMG]
+
+      -h: Show only the header lines.
+      -w: Print -w bp per line (default is 80).
+```
+
+## fastga_GDBtoFA
+
+### Tool Description
+Converts a genome database back to a FASTA file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
+- **Homepage**: https://github.com/thegenemyers/FASTGA
+- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: GDBtoFA [-v] [-w<int(80)>] <source:path>[.1gdb] [ @ | <target:path>[<fa_extn>|.1seq] ]
+
+           <fa_extn> = (.fa|.fna|.fasta)[.gz]
+
+      -w: Print -w bp per line (default is 80).
+```
+
+## fastga_GIXshow
+
+### Tool Description
+Shows k-mers and their positions stored in a genome index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
+- **Homepage**: https://github.com/thegenemyers/FASTGA
+- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: GIXshow <source>[.gix] [ <address>[-<address>] ] 
+
+          <address> = <int> | <dna:string>
+```
+
+## fastga_ONEview
+
+### Tool Description
+Shows a 1-code file (for example a .1aln alignment file) as readable text.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
+- **Homepage**: https://github.com/thegenemyers/FASTGA
+- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+ONEview [options] onefile
+  -t --type <abc>           file type, e.g. seq, aln - required if no header
+  -S --schema <schemafile>      schema file name for reading file
+  -h --noHeader                 skip the header in ascii output
+  -H --headerOnly               only write the header (in ascii)
+  -s --writeSchema              write a schema file based on this file
+  -b --binary                   write in binary (default is ascii)
+  -o --output <filename>        output file name (default stdout)
+  -i --index T x[-y](,x[-y])*   write specified objects/groups of type T
+  -v --verbose                  write commentary including timing
+index only works for binary files; '-i A 0-10' outputs first 10 objects of type A
+```
+
+## fastga_PAFtoALN
+
+### Tool Description
+Converts a PAF file with CIGAR strings to a .1aln alignment file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
+- **Homepage**: https://github.com/thegenemyers/FASTGA
+- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+Usage: PAFtoALN [-T<int(8)>] <alignments:path>[.paf]
+                 <source1:path>[.1gdb|<fa_extn>|<1_extn>] [<source2:path>[.1gdb|<fa_extn>|<1_extn>]]
+
+           <fa_extn> = (.fa|.fna|.fasta)[.gz]
+           <1_extn>  = any valid 1-code sequence file type
+
+      -T: Number of threads to use.
+```
+
+## fastga_PAFtoPSL
+
+### Tool Description
+Converts a PAF file with CIGAR strings to PSL format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
+- **Homepage**: https://github.com/thegenemyers/FASTGA
+- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+Usage: PAFtoPSL [-T<int(8)>] [-C<str(cg:Z:)>] <alignments:path>[.paf]
+
+      -T: Number of threads to use.
+      -C: Cigar tag in the PAF file.
+```
+
+## fastga_GDBstat
+
+### Tool Description
+Shows statistics of a genome database.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0
+- **Homepage**: https://github.com/thegenemyers/FASTGA
+- **Package**: https://anaconda.org/channels/bioconda/packages/fastga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: GDBstat [-h[<int>,<int>]] [-hlog] <source:path>[.1gdb]
+
+      -h: Display histograms of scaffold & contig lengths.
+            int's give bucket sizes for respective histograms if given.
+```
 
 ## Metadata
 - **Skill**: generated

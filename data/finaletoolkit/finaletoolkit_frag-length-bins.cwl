@@ -1,12 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: finaletoolkit-frag-length-bins
+baseCommand:
+  - finaletoolkit
+  - frag-length-bins
 label: finaletoolkit_frag-length-bins
 doc: "Retrieves fragment lengths grouped in bins given a BAM/CRAM/Fragment file.\n\
   \nTool homepage: https://github.com/epifluidlab/FinaleToolkit"
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: .tbi
+        required: false
     doc: Path to a BAM/CRAM/Fragment file containing fragment data.
     inputBinding:
       position: 1
@@ -30,7 +39,7 @@ inputs:
   - id: histogram_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to store histogram if specified.
     inputBinding:
       position: 102
@@ -71,7 +80,7 @@ inputs:
   - id: short_fraction
     type:
       - 'null'
-      - float
+      - int
     doc: When specified, a short fraction is included in summary statistics.
     inputBinding:
       position: 102
@@ -125,6 +134,13 @@ outputs:
       the specified bin size.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: histogram
+    type:
+      - 'null'
+      - File
+    doc: Histogram stored at the histogram path, if requested.
+    outputBinding:
+      glob: $(inputs.histogram_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

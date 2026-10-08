@@ -1,5 +1,11 @@
 # fastmlst CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastmlst | PASS | rewrote CWL from help; PubMLST database given via HOME because --db_path crashes typing (tool bug in that option only) |
+
 ## fastmlst
 
 ### Tool Description

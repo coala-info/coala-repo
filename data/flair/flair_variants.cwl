@@ -1,10 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: variants
+baseCommand:
+  - flair
+  - variants
 label: flair_variants
-doc: "FLAIR variants module for calling variants from isoform data.\n\nTool homepage:
-  https://github.com/BrooksLabUCSC/flair"
+doc: 'FLAIR variants module for calling variants from isoform data.
+
+
+  Tool homepage: https://github.com/BrooksLabUCSC/flair'
 inputs:
+  - id: manifest_files
+    type:
+      type: array
+      items: File
+    doc: Bam and vcf files named in the manifest (staged by file name; the manifest
+      must use plain file names)
   - id: bedisoforms
     type:
       - 'null'
@@ -19,6 +29,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+    secondaryFiles:
+      - pattern: .fai
+        required: false
   - id: gtf
     type: File
     doc: GTF annotation file
@@ -35,8 +48,8 @@ inputs:
       prefix: --isoforms
   - id: manifest
     type: File
-    doc: path to manifest files that points to sample names + bam files aligned 
-      to transcriptome. Each line of file should be tab separated.
+    doc: path to manifest files that points to sample names + bam files aligned to
+      transcriptome. Each line of file should be tab separated.
     inputBinding:
       position: 101
       prefix: --manifest
@@ -46,15 +59,17 @@ inputs:
       position: 102
       prefix: --output_prefix
 outputs:
-  - id: output_prefix
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: "path to collapsed_output.bed file. default: 'flair'"
+      type: array
+      items: File
+    doc: Output files written with the output prefix
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.manifest_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

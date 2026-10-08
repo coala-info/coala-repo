@@ -11,7 +11,7 @@ inputs:
     doc: Number of exclusion interations to perform
     inputBinding:
       position: 101
-      prefix: --exclusion_iterations
+      prefix: --exclude_iterations
   - id: iterations
     type:
       - 'null'

@@ -27,7 +27,7 @@ inputs:
   - id: max_cov
     type:
       - 'null'
-      - string
+      - int
     doc: maximum kmer coverage
     inputBinding:
       position: 101

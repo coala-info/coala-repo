@@ -1,5 +1,11 @@
 # fastsimcoal2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastsimcoal2_fsc27093 | PASS | synthetic data: a hand-written two-deme parameter file; Arlequin files and site frequency spectra were written and checked; added result folder and seed outputs |
+
 ## fastsimcoal2_fsc27093
 
 ### Tool Description

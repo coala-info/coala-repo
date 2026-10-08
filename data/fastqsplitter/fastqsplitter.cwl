@@ -8,13 +8,13 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Compression level for output files (0-9).
+    doc: Only applicable when output files have a '.gz' extension. Default=1
     inputBinding:
       position: 101
-      prefix: --compression
+      prefix: --compression-level
   - id: input
     type: File
-    doc: Input fastq file (can be gzipped).
+    doc: The fastq file to be scattered.
     inputBinding:
       position: 101
       prefix: --input
@@ -22,20 +22,45 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of threads to use for compression.
+    doc: Set the number of compression threads per output file. More threads
+      are only useful when using a compression level > 1. Default=1
     inputBinding:
       position: 101
-      prefix: --threads
+      prefix: --threads-per-file
+  - id: cython
+    type:
+      - 'null'
+      - boolean
+    doc: Use the cython version of the file splitting algorithm. (default)
+    inputBinding:
+      position: 101
+      prefix: --cython
+  - id: python
+    type:
+      - 'null'
+      - boolean
+    doc: Use the python version of the file splitting algorithm.
+    inputBinding:
+      position: 101
+      prefix: --python
   - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+    type:
+      type: array
+      items: string
+      inputBinding:
+        prefix: --output
+    doc: Scatter over these output files. The reads are distributed over the
+      files in turn. The extensions determine which compression algorithm
+      will be used. '.gz' for gzip, '.bz2' for bzip2, '.xz' for xz. Other
+      extensions will use no compression.
     inputBinding:
       position: 102
-      prefix: --output
 outputs:
   - id: output
-    type: File
-    doc: Output fastq files (can be gzipped).
+    type:
+      type: array
+      items: File
+    doc: Output fastq files (can be compressed).
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

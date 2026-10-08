@@ -23,7 +23,7 @@ inputs:
     doc: Name of file of sequences to search for at the start of each input 
       sequence
     inputBinding:
-      position: 3
+      position: 5
   - id: min_length
     type:
       - 'null'
@@ -41,17 +41,27 @@ inputs:
     inputBinding:
       position: 104
       prefix: --revcomp
-outputs:
   - id: outfile_1
+    type: string
+    doc: Name of output forward fasta/q file
+    inputBinding:
+      position: 3
+  - id: outfile_2
+    type: string
+    doc: Name of output reverse fasta/q file
+    inputBinding:
+      position: 4
+outputs:
+  - id: out_outfile_1
     type: File
     doc: Name of output forward fasta/q file
     outputBinding:
-      glob: '*.out'
-  - id: outfile_2
+      glob: $(inputs.outfile_1)
+  - id: out_outfile_2
     type: File
     doc: Name of output reverse fasta/q file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outfile_2)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

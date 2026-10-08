@@ -1,5 +1,14 @@
 # feelnc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| feelnc_FEELnc_classifier.pl | PASS | classes table equals the Galaxy expected file except tie choices among non-best partners; log file output fixed |
+| feelnc_FEELnc_codpot.pl | PASS | FEELnc repository test data in shuffle mode: lncRNA and mRNA files match the Galaxy sizes; added FEELNCPATH, writable genome copy and --spethres flag; RF cutoff differs slightly from the repository result |
+| feelnc_FEELnc_filter.pl | PASS | FEELnc repository test data: output has the same lines as the repository expected file (order differs); log file output fixed |
+| feelnc_FEELnc_pipeline.sh | Not completed | pipeline, skipped |
+
 ## feelnc_FEELnc_filter.pl
 
 ### Tool Description

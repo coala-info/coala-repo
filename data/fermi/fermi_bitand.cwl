@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - bitand
 label: fermi_bitand
-doc: "Bitwise AND operation on two or more .bit files.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Bitwise AND operation on two or more .bit files.\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: input_files
     type:

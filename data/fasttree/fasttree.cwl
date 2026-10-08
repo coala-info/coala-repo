@@ -10,9 +10,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Alignment file in fasta or phylip interleaved format
+    doc: Alignment file in fasta or phylip interleaved format (placed after all options)
     inputBinding:
-      position: 1
+      position: 200
   - id: out
     type:
       - 'null'
@@ -198,14 +198,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: -constraints
-  - id: expert
-    type:
-      - 'null'
-      - boolean
-    doc: See more options
-    inputBinding:
-      position: 102
-      prefix: -expert
 outputs:
   - id: output_out
     type:
@@ -221,11 +213,15 @@ outputs:
     doc: Save intermediate trees, settings, and model details
     outputBinding:
       glob: $(inputs.log)
+  - id: tree_stdout
+    type: stdout
+    doc: Newick tree written to standard output when -out is not used
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fasttree:2.2.0--h7b50bb2_1
+stdout: fasttree.out
 s:url: https://morgannprice.github.io/fasttree
 $namespaces:
   s: https://schema.org/

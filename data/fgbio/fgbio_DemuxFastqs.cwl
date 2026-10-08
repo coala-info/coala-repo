@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fgbio
-  - DemuxFastqs
+baseCommand: fgbio
 label: fgbio_DemuxFastqs
 doc: "Performs sample demultiplexing on FASTQs.\n\nPlease see https://github.com/fulcrumgenomics/fqtk
   for a faster and supported replacement\n\nThe sample barcode for each sample in
@@ -185,7 +183,7 @@ inputs:
   - id: metrics
     type:
       - 'null'
-      - File
+      - string
     doc: The file to which per-barcode metrics are written. If none given, a 
       file named 'demux_barcode_metrics.txt' will be written to the output 
       directory.
@@ -347,18 +345,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unmatched
+arguments:
+  - position: 50
+    valueFrom: DemuxFastqs
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: The output directory in which to place sample BAMs.
+    type: Directory
+    doc: The output directory with one file per sample and the metrics file.
     outputBinding:
       glob: $(inputs.output)
+  - id: metrics_file
+    type:
+      - 'null'
+      - File
+    doc: Per-barcode metrics file written with the metrics option.
+    outputBinding:
+      glob: $(inputs.metrics)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
-stdout: fgbio_DemuxFastqs.out

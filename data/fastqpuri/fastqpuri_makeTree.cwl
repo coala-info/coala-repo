@@ -28,7 +28,7 @@ outputs:
     type: File
     doc: Output file. If the extension is not *gz, it is added.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.output_file_path.match(/gz$/) ? inputs.output_file_path : inputs.output_file_path + '.gz')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,9 +1,15 @@
 # figaro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| figaro_figaro.py | PASS |  |
+
 ## figaro_figaro.py
 
 ### Tool Description
-Figaro is a tool for analyzing amplicon sequencing data.
+Figaro finds the best trimming positions for paired-end amplicon reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/figaro:1.1.2--hdfd78af_0
@@ -11,30 +17,38 @@ Figaro is a tool for analyzing amplicon sequencing data.
 - **Package**: https://anaconda.org/channels/bioconda/packages/figaro/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/figaro/overview
-- **Total Downloads**: 3.4K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/Zymo-Research/figaro
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Environment variable parameter ampliconLength was set as required, but no value was passed for it.
-Environment variable parameter forwardPrimerLength was set as required, but no value was passed for it.
-Environment variable parameter reversePrimerLength was set as required, but no value was passed for it.
-Unable to find expected directory for environment variable parameter inputDirectory at /data/input
-Traceback (most recent call last):
-  File "/usr/local/bin/figaro.py", line 211, in <module>
-    parameters = getApplicationParameters()
-  File "/usr/local/bin/figaro.py", line 18, in getApplicationParameters
-    parameters.addParameter("inputDirectory", str, default=default.inputFolder, expectedDirectory=True)
-  File "/usr/local/lib/python3.9/site-packages/figaroSupport/environmentParameterParser.py", line 393, in addParameter
-    parameter = EnvVariable(name, typeRequirement, default, flag, validationList, lowerBound, upperBound, expectedFile, createdFile, expectedDirectory, createdDirectory, logLevel, required, externalValidation)
-  File "/usr/local/lib/python3.9/site-packages/figaroSupport/environmentParameterParser.py", line 52, in __init__
-    self.runValidations()
-  File "/usr/local/lib/python3.9/site-packages/figaroSupport/environmentParameterParser.py", line 87, in runValidations
-    self.validateExpectedDirectoryPath()
-  File "/usr/local/lib/python3.9/site-packages/figaroSupport/environmentParameterParser.py", line 148, in validateExpectedDirectoryPath
-    raise NotADirectoryError("Unable to find expected file %s" %self.value)
-NotADirectoryError: Unable to find expected file /data/input
+usage: figaro.py [-h] [-o OUTPUTDIRECTORY] -a AMPLICONLENGTH -f
+                 FORWARDPRIMERLENGTH -r REVERSEPRIMERLENGTH
+                 [-i INPUTDIRECTORY] [-n OUTPUTFILENAME] [-m MINIMUMOVERLAP]
+                 [-s SUBSAMPLE] [-p PERCENTILE] [-F FILENAMINGSTANDARD]
+                 [-l LOGFILE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTPUTDIRECTORY, --outputDirectory OUTPUTDIRECTORY
+                        Directory for outputs
+  -a AMPLICONLENGTH, --ampliconLength AMPLICONLENGTH
+                        Length of amplicon (not including primers)
+  -f FORWARDPRIMERLENGTH, --forwardPrimerLength FORWARDPRIMERLENGTH
+                        Length of forward primer
+  -r REVERSEPRIMERLENGTH, --reversePrimerLength REVERSEPRIMERLENGTH
+                        Length of reverse primer
+  -i INPUTDIRECTORY, --inputDirectory INPUTDIRECTORY
+                        Directory with Fastq files to analyze
+  -n OUTPUTFILENAME, --outputFileName OUTPUTFILENAME
+                        Output file for trim site JSON
+  -m MINIMUMOVERLAP, --minimumOverlap MINIMUMOVERLAP
+                        Minimum overlap between the paired-end reads
+  -s SUBSAMPLE, --subsample SUBSAMPLE
+                        Subsampling level (will analyze approximately 1/x
+                        reads
+  -p PERCENTILE, --percentile PERCENTILE
+                        Percentile to use for expected error model
+  -F FILENAMINGSTANDARD, --fileNamingStandard FILENAMINGSTANDARD
+                        File naming standard to use
+  -l LOGFILE, --logFile LOGFILE
+                        Log file path
 ```
 

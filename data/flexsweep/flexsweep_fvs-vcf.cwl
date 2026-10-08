@@ -39,6 +39,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: vcf_dir
+    type: Directory
+    doc: Input directory with the feature vectors written by the tool
+    outputBinding:
+      glob: $(inputs.vcf_path.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.vcf_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flexsweep:1.3--pyhdfd78af_0

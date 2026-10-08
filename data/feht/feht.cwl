@@ -22,9 +22,8 @@ inputs:
   - id: delimiter
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Delimiter used for both the metadata and data file
+      - string
+    doc: "Delimiter used for both the metadata and data file, written as a single-quoted\n      character, for example \"','\" (the tool rejects an unquoted comma). Default is tab."
     inputBinding:
       position: 101
       prefix: --delimiter

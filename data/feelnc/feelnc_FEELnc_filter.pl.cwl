@@ -66,7 +66,7 @@ inputs:
   - id: outlog
     type:
       - 'null'
-      - File
+      - string
     doc: Specify the log file of output
     inputBinding:
       position: 101
@@ -98,7 +98,20 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Candidate lncRNA transcripts in GTF format
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file (infile name with .feelncfilter.log unless --outlog is given)
+    outputBinding:
+      glob: "$(inputs.outlog ? inputs.outlog : inputs.infile.nameroot + '.feelncfilter.log')"
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: FEELNCPATH
+        envValue: /usr/local
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/feelnc:0.2--pl526_0

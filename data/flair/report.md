@@ -1,5 +1,29 @@
 # flair CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flair_align | PASS |  |
+| flair_bed_to_gtf | PASS |  |
+| flair_bed_to_sequence | PASS |  |
+| flair_collapse | PASS |  |
+| flair_combine | PASS |  |
+| flair_correct | PASS |  |
+| flair_diff_iso_usage | PASS |  |
+| flair_diffexp | Failed | image problem: Rscript (R with DESeq2 and DRIMSeq) is missing in the image, so diffexp stops at the first R step |
+| flair_diffsplice | PASS | event tables match the expected files; the --test option stops because R is missing in the image |
+| flair_fusion | PASS |  |
+| flair_gtf_to_bed | PASS |  |
+| flair_junctions_from_sam | PASS |  |
+| flair_mark_intron_retention | Failed | image problem: the entry point cannot import main from the module, so the command exits with an error after writing its files |
+| flair_partition | Failed | image problem: busybox sort in the image has no --parallel option, so the tool silently writes an empty ranges file |
+| flair_plot_isoform_usage | PASS |  |
+| flair_predictProductivity | PASS |  |
+| flair_quantify | PASS |  |
+| flair_transcriptome | PASS |  |
+| flair_variants | Not completed | needs a VCF made by longshot, and longshot is not in the image |
+
 ## flair_align
 
 ### Tool Description
@@ -669,6 +693,313 @@ required named arguments:
                         Output directory for tables and plots.
 ```
 
+
+## flair_bed_to_gtf
+
+### Tool Description
+Convert an isoform bed file to GTF.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BrooksLabUCSC/flair
+- **Package**: https://anaconda.org/channels/bioconda/packages/flair/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: bed_to_gtf [-h] [--force] [--add_reference_transcript_id]
+                  [--dontuseCDS]
+                  inputfile
+
+options
+
+positional arguments:
+  inputfile             isoforms in bed format
+
+options:
+  -h, --help            show this help message and exit
+  --force               specify to not split isoform name by underscore into
+                        isoform and gene ids
+  --add_reference_transcript_id
+                        specify to add reference_transcript_id attribute
+  --dontuseCDS
+```
+
+## flair_gtf_to_bed
+
+### Tool Description
+Convert a GTF annotation to bed12.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BrooksLabUCSC/flair
+- **Package**: https://anaconda.org/channels/bioconda/packages/flair/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gtf_to_bed [-h] [--include_gene] gtf bed
+
+converts a gtf to a bed, depending on the output filename extension; gtf exons
+need to be grouped by transcript and sorted by coordinate w/in a transcript
+
+options:
+  -h, --help      show this help message and exit
+  --include_gene  Include gene name in the isoform name
+
+required named arguments:
+  gtf             annotated gtf
+  bed             bed file
+```
+
+## flair_bed_to_sequence
+
+### Tool Description
+Extract isoform sequences for a bed file from a genome FASTA.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BrooksLabUCSC/flair
+- **Package**: https://anaconda.org/channels/bioconda/packages/flair/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: bed_to_sequence [-h] [-v VCF] [--isoform_haplotypes ISOFORM_HAPLOTYPES]
+                       [--vcf_out VCF_OUT]
+                       bed genome outfilename
+
+options
+
+positional arguments:
+  bed                   isoforms in bed format
+  genome                genomic sequence
+  outfilename           Name of output file
+
+options:
+  -h, --help            show this help message and exit
+  -v VCF, --vcf VCF     vcf file with flair phased transcripts
+  --isoform_haplotypes ISOFORM_HAPLOTYPES
+                        isoform haplotype assignments
+  --vcf_out VCF_OUT     vcf output file name
+```
+
+## flair_diff_iso_usage
+
+### Tool Description
+Compare the usage of each isoform between two samples.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BrooksLabUCSC/flair
+- **Package**: https://anaconda.org/channels/bioconda/packages/flair/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: diff_iso_usage [-h] [--log-stderr] [--log-level LOG_LEVEL]
+                      [--log-conf LOG_CONF] [--log-debug]
+                      counts_matrix_tsv colname1 colname2 outfile
+
+Calculates the usage of each isoform as a fraction of the total expression of
+the gene and compares this between samples.
+
+positional arguments:
+  counts_matrix_tsv     counts matrix TSV from flair-quantify
+  colname1              the name of the column of the first sample
+  colname2              the name of the column of the second sample
+  outfile               output filename containing the p-value associated with
+                        differential isoform usage for each isoform
+
+options:
+  -h, --help            show this help message and exit
+  --log-stderr          also log to stderr, even when logging to syslog
+  --log-level LOG_LEVEL
+                        Set level to case-insensitive symbolic value, one of
+                        CRITICAL, DEBUG, ERROR, FATAL, INFO, NOTSET, WARN,
+                        WARNING
+  --log-conf LOG_CONF   Python logging configuration file, see
+                        logging.config.fileConfig()
+  --log-debug           short-cut that that sets --log-stderr and --log-
+                        level=DEBUG
+```
+
+## flair_partition
+
+### Tool Description
+Define non-overlapping regions from BED, SAM/BAM or GTF files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BrooksLabUCSC/flair
+- **Package**: https://anaconda.org/channels/bioconda/packages/flair/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: flair_partition [-h] [--min_partition_items MIN_PARTITION_ITEMS]
+                       [-part_merge_dist PART_MERGE_DIST] [--threads THREADS]
+                       [--bed BED_FILES] [--bam BAM_FILES] [--gtf GTF_FILES]
+                       [--log-stderr] [--log-level LOG_LEVEL]
+                       [--log-conf LOG_CONF] [--log-debug]
+                       ranges_bed
+
+Define non-overlapping regions from BED, SAM/BAM, or GTF files. Partitions are
+made across all input files
+
+positional arguments:
+  ranges_bed            Output ranges BED file, will be compressed if it ends
+                        in .gz
+
+options:
+  -h, --help            show this help message and exit
+  --min_partition_items MIN_PARTITION_ITEMS
+                        Minimum number of input items in a partition
+  -part_merge_dist PART_MERGE_DIST
+                        Combine adjacent non-overlapping partitions separated
+                        by this distance
+  --threads THREADS     Number of cores for parallel sorting
+  --bed BED_FILES       Input BED file, maybe compressed. Maybe repeated
+  --bam BAM_FILES       Input SAM/BAM file. Maybe repeated.
+  --gtf GTF_FILES       Input GTF file. Maybe repeated.
+  --log-stderr          also log to stderr, even when logging to syslog
+  --log-level LOG_LEVEL
+                        Set level to case-insensitive symbolic value, one of
+                        CRITICAL, DEBUG, ERROR, FATAL, INFO, NOTSET, WARN,
+                        WARNING
+  --log-conf LOG_CONF   Python logging configuration file, see
+                        logging.config.fileConfig()
+  --log-debug           short-cut that that sets --log-stderr and --log-
+                        level=DEBUG
+```
+
+## flair_junctions_from_sam
+
+### Tool Description
+Extract splice junctions from SAM/BAM alignments into a BED file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BrooksLabUCSC/flair
+- **Package**: https://anaconda.org/channels/bioconda/packages/flair/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: junctions_from_sam [options]
+
+Options:
+  -h, --help           show this help message and exit
+  -s SAM_FILE          SAM/BAM file of read alignments to junctions and
+                       the genome. More than one file can be listed,
+                       but comma-delimited, e.g file_1.bam,file_2.bam
+  --unique             Only keeps uniquely aligned reads. Looks at NH
+                       tag to be 1 for this information.
+  -n NAME              Name prefixed used for output BED file.
+                       Default=junctions_from_sam
+  -l READ_LENGTH       Expected read length if all reads should be of
+                       the same length
+  -c CONFIDENCE_SCORE  The mininmum entropy score a junction
+                       has to have in order to be considered
+                       confident. The entropy score =
+                       -Shannon Entropy. Default=1.0
+  -j FORCED_JUNCTIONS  File containing intron coordinates
+                       that correspond to junctions that will be
+                       kept regardless of the confidence score.
+  -v                   Will run the program with junction strand ambiguity
+                       messages
+```
+
+## flair_mark_intron_retention
+
+### Tool Description
+Mark intron retention events in an isoform bed file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BrooksLabUCSC/flair
+- **Package**: https://anaconda.org/channels/bioconda/packages/flair/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mark_intron_retention in.bed out_isoforms.bed out_introns.txt
+```
+
+## flair_plot_isoform_usage
+
+### Tool Description
+Plot isoform models and usage proportions for one gene.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BrooksLabUCSC/flair
+- **Package**: https://anaconda.org/channels/bioconda/packages/flair/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: plot_isoform_usage [-h] [-o O] [--min_reads MIN_READS] [-v VCF]
+                          [--palette PALETTE]
+                          isoforms counts_matrix gene_name
+
+The script will produce two images, one of the isoform models and another of
+the usage proportions. The most highly expressed isoforms across all the
+samples will be plotted. The minor isoforms are aggregated into a gray bar.
+You can toggle min_reads or color_palette to plot more isoforms.
+
+positional arguments:
+  isoforms              isoforms in bed format
+  counts_matrix         isoform counts
+  gene_name             Name of gene, must correspond with the gene names in
+                        the isoform and counts matrix files
+
+options:
+  -h, --help            show this help message and exit
+  -o O                  prefix used for output files (default=gene_name)
+  --min_reads MIN_READS
+                        minimum number of total supporting reads for an
+                        isoform to be visualized (default=6)
+  -v VCF, --vcf VCF     VCF containing the isoform names that include each
+                        variant in the last sample column
+  --palette PALETTE     provide a palette file if you would like to visualize
+                        more than 7 isoforms at once or change the palette
+                        used. each line contains a hex color for each isoform
+```
+
+## flair_predictProductivity
+
+### Tool Description
+Predict open reading frames and productivity of isoforms.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/BrooksLabUCSC/flair
+- **Package**: https://anaconda.org/channels/bioconda/packages/flair/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: predictProductivity [-h] -i INPUT_ISOFORMS -g GTF -f GENOME_FASTA -o
+                           OUTPUT [--quiet] [--append_column]
+                           (--firstTIS | --longestORF)
+
+predictProductivity - a tool.
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT_ISOFORMS, --input_isoforms INPUT_ISOFORMS
+                        Input collapsed isoforms in bed12 format.
+  -g GTF, --gtf GTF     Gencode annotation file.
+  -f GENOME_FASTA, --genome_fasta GENOME_FASTA
+                        Fasta file containing transcript sequences.
+  -o OUTPUT, --output OUTPUT
+                        prefix of output files
+  --quiet               Do not display progress
+  --append_column       Append prediction as an additional column in file
+  --firstTIS            Defined ORFs by the first annotated TIS.
+  --longestORF          Defined ORFs by the longest open reading frame.
+```
 
 ## Metadata
 - **Skill**: generated

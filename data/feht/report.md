@@ -1,5 +1,11 @@
 # feht CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| feht | PASS | feht repository test tables (binary and snp modes, group selection, ratio filter); delimiter fixed to a single string and must be given quoted, e.g. "','" |
+
 ## feht
 
 ### Tool Description

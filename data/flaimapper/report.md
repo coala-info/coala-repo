@@ -1,5 +1,11 @@
 # flaimapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flaimapper | PASS |  |
+
 ## flaimapper
 
 ### Tool Description

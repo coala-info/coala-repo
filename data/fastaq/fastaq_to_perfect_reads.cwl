@@ -17,22 +17,22 @@ inputs:
     type: float
     doc: Mean insert size of read pairs
     inputBinding:
-      position: 2
+      position: 3
   - id: insert_std_deviation
     type: float
     doc: Standard devation of insert size
     inputBinding:
-      position: 3
+      position: 4
   - id: mean_coverage
     type: float
     doc: Mean coverage of the reads
     inputBinding:
-      position: 4
+      position: 5
   - id: read_length
     type: int
     doc: Length of each read
     inputBinding:
-      position: 5
+      position: 6
   - id: no_n
     type:
       - 'null'
@@ -58,12 +58,17 @@ inputs:
     inputBinding:
       position: 107
       prefix: --fragments
-outputs:
   - id: outfile
+    type: string
+    doc: Name of output file
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_outfile
     type: File
     doc: Name of output file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outfile)
   - id: fragments_filename
     type:
       - 'null'

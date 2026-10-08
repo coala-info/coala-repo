@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: finaletoolkit-interval-mds
+baseCommand:
+  - finaletoolkit
+  - interval-mds
 label: finaletoolkit_interval-mds
 doc: "Reads k-mer frequencies from a file and calculates a motif diversity score (MDS)
   for each interval using normalized Shannon entropy as described by Jiang et al (2020).\n\
@@ -14,13 +16,18 @@ inputs:
       one column for frequency. Reads from stdin by default.
     inputBinding:
       position: 1
+  - id: file_out
+    type: string
+    doc: Path to the output BED/BEDGraph file containing MDS for each interval.
+    inputBinding:
+      position: 2
   - id: header
     type:
       - 'null'
       - int
-    doc: Number of header rows to ignore.
+    doc: Number of header rows to ignore. Default is 0
     inputBinding:
-      position: 102
+      position: 0
       prefix: --header
   - id: separator
     type:
@@ -28,14 +35,16 @@ inputs:
       - string
     doc: Separator used in tabular file.
     inputBinding:
-      position: 102
+      position: 0
       prefix: --sep
 outputs:
-  - id: file_out
+  - id: output_file
     type: File
     doc: Path to the output BED/BEDGraph file containing MDS for each interval.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.file_out)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/finaletoolkit:0.11.0--pyhdfd78af_0

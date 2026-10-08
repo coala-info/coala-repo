@@ -2,116 +2,160 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: FastK
 label: fastk_FastK
-doc: "FastK is a tool for k-mer counting and analysis.\n\nTool homepage: https://github.com/thegenemyers/FASTK"
+doc: "FastK is a fast k-mer counter for high-quality DNA sequencing data. It reads CRAM, BAM, SAM, FASTA or FASTQ files and writes a histogram (.hist), optionally a sorted k-mer table (.ktab) and sequence count profiles (.prof).\n\nTool homepage: https://github.com/thegenemyers/FASTK"
 inputs:
   - id: source
-    type:
-      type: array
-      items: File
-    doc: Input source file(s) (e.g., .cram, .sam, .bam, .db, .dam, .fasta, 
-      .fastq, .fastq.gz)
+    type: File[]
+    doc: 'Input sequence files (.cram, .bam, .sam, .db, .dam, .fasta, .fastq, optionally .gz).'
     inputBinding:
-      position: 1
-  - id: homopolymer_compress
-    type:
-      - 'null'
-      - boolean
-    doc: Homopolymer compress every sequence
+      position: 100
+  - id: output_prefix
+    type: string
+    doc: 'Name of the output files without extension (FastK -N). The outputs are <name>.hist, <name>.ktab and <name>.prof.'
     inputBinding:
-      position: 102
-      prefix: -c
-  - id: ignore_barcode_prefix
-    type:
-      - 'null'
-      - int
-    doc: Ignore prefix of each read of given length (e.g. bar code)
-    inputBinding:
-      position: 102
-      prefix: -bc
+      position: 50
+      prefix: '-N'
+      separate: false
   - id: kmer_size
     type:
       - 'null'
       - int
-    doc: k-mer size.
+    doc: 'k-mer size. [default: 40]'
     inputBinding:
-      position: 102
-      prefix: -k
-  - id: memory_gb
-    type:
-      - 'null'
-      - int
-    doc: Use -M GB of memory in downstream sorting steps of KMcount.
-    inputBinding:
-      position: 102
-      prefix: -M
-  - id: output_dir_prefix
-    type:
-      - 'null'
-      - string
-    doc: Use given path for output directory and root name prefix.
-    inputBinding:
-      position: 102
-      prefix: -N
-  - id: produce_table
+      position: 50
+      prefix: '-k'
+      separate: false
+  - id: table
     type:
       - 'null'
       - boolean
-    doc: Produce table of sorted k-mers & counts >= level specified
+    doc: 'Produce table of sorted k-mers and counts >= level 1.'
     inputBinding:
-      position: 102
-      prefix: -t
-  - id: profile_table
-    type:
-      - 'null'
-      - File
-    doc: Table file for sequence count profiles.
-    inputBinding:
-      position: 102
-      prefix: -p
-  - id: sequence_count_profiles
-    type:
-      - 'null'
-      - boolean
-    doc: Produce sequence count profiles (w.r.t. table if given)
-    inputBinding:
-      position: 102
-      prefix: -p
-  - id: sort_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Place block level sorts in directory -P.
-    inputBinding:
-      position: 102
-      prefix: -P
+      position: 50
+      prefix: '-t'
   - id: table_level
     type:
       - 'null'
       - int
-    doc: Minimum count level for producing table of sorted k-mers.
+    doc: 'Produce table of sorted k-mers and counts >= the level given.'
     inputBinding:
-      position: 102
-      prefix: -t
-  - id: threads
+      position: 50
+      prefix: '-t'
+      separate: false
+  - id: profile
+    type:
+      - 'null'
+      - boolean
+    doc: Produce sequence count profiles (w.r.t. table if given).
+    inputBinding:
+      position: 50
+      prefix: '-p'
+  - id: profile_table
+    type:
+      - 'null'
+      - string
+    doc: Produce sequence count profiles with respect to the given table.
+    inputBinding:
+      position: 50
+      prefix: '-p:'
+      separate: false
+  - id: barcode_length
     type:
       - 'null'
       - int
-    doc: Use -T threads.
+    doc: Ignore prefix of each read of given length (e.g. bar code).
     inputBinding:
-      position: 102
-      prefix: -T
+      position: 50
+      prefix: '-bc'
+      separate: false
+  - id: homopolymer_compress
+    type:
+      - 'null'
+      - boolean
+    doc: Homopolymer compress every sequence.
+    inputBinding:
+      position: 50
+      prefix: '-c'
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Verbose mode, output statistics as proceed.
+    doc: 'Verbose mode, output statistics as proceed.'
     inputBinding:
-      position: 102
-      prefix: -v
+      position: 50
+      prefix: '-v'
+  - id: sort_dir
+    type:
+      - 'null'
+      - string
+    doc: 'Place block level sorts in directory -P. [default: $TMPDIR]'
+    inputBinding:
+      position: 50
+      prefix: '-P'
+      separate: false
+  - id: memory_gb
+    type:
+      - 'null'
+      - int
+    doc: 'Use -M GB of memory in downstream sorting steps of KMcount. [default: 12]'
+    inputBinding:
+      position: 50
+      prefix: '-M'
+      separate: false
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: 'Use -T threads. [default: 4]'
+    inputBinding:
+      position: 50
+      prefix: '-T'
+      separate: false
 outputs:
+  - id: hist
+    type: File
+    doc: Histogram of k-mer counts.
+    outputBinding:
+      glob: $(inputs.output_prefix).hist
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: ktab
+    type:
+      - 'null'
+      - File
+    doc: k-mer table stub file, written with the table options.
+    outputBinding:
+      glob: $(inputs.output_prefix).ktab
+  - id: ktab_parts
+    type:
+      type: array
+      items: File
+    doc: Hidden table part files.
+    outputBinding:
+      glob: |
+        ${
+          return ['.' + inputs.output_prefix + '.ktab.*'];
+        }
+  - id: prof
+    type:
+      - 'null'
+      - File
+    doc: Profile stub file, written with the profile options.
+    outputBinding:
+      glob: $(inputs.output_prefix).prof
+  - id: prof_parts
+    type:
+      type: array
+      items: File
+    doc: Hidden profile part files.
+    outputBinding:
+      glob: |
+        ${
+          return ['.' + inputs.output_prefix + '.prof.*', '.' + inputs.output_prefix + '.pidx.*'];
+        }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastk:1.2--h71df26d_1

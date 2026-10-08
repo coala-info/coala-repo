@@ -20,17 +20,27 @@ inputs:
     inputBinding:
       position: 102
       prefix: --fasta_out
-outputs:
   - id: out_fwd
+    type: string
+    doc: Name of output fasta/q file of forwards reads
+    inputBinding:
+      position: 2
+  - id: out_rev
+    type: string
+    doc: Name of output fasta/q file of reverse reads
+    inputBinding:
+      position: 3
+outputs:
+  - id: out_out_fwd
     type: File
     doc: Name of output fasta/q file of forwards reads
     outputBinding:
-      glob: '*.out'
-  - id: out_rev
+      glob: $(inputs.out_fwd)
+  - id: out_out_rev
     type: File
     doc: Name of output fasta/q file of reverse reads
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_rev)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

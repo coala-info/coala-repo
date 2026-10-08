@@ -1,5 +1,11 @@
 # fastp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastp | PASS |  |
+
 ## fastp
 
 ### Tool Description

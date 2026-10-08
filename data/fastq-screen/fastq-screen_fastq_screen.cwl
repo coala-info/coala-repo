@@ -266,19 +266,54 @@ inputs:
     inputBinding:
       position: 102
       prefix: --top
+  - id: index_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Bowtie2 (or other aligner) index files of the genomes named in the
+      configuration file. They are staged in the working directory, so the
+      DATABASE paths in the configuration file must be relative to it (for
+      example ./genomeA).
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: add_genome_dir
+  - id: screen_txt
     type:
-      - 'null'
-      - Directory
-    doc: "Edits the file 'fastq_screen.conf' (in the folder where this script is saved)
-      to add a new genome. Specify the additional genome as a comma separated list:
-      'Database name','Genome path and basename','Notes'"
+      type: array
+      items: File
+    doc: Text summary of the mapping results (*_screen.txt)
     outputBinding:
-      glob: $(inputs.add_genome)
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + '*_screen.txt')"
+  - id: screen_html
+    type:
+      type: array
+      items: File
+    doc: HTML report (*_screen.html)
+    outputBinding:
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + '*_screen.html')"
+  - id: screen_png
+    type:
+      type: array
+      items: File
+    doc: Graphical summary (*_screen.png)
+    outputBinding:
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + '*_screen.png')"
+  - id: fastq_out
+    type:
+      type: array
+      items: File
+    doc: Tagged, filtered or no-hit FASTQ files (written with --tag, --filter or
+      --nohits)
+    outputBinding:
+      glob:
+        - "$((inputs.outdir ? inputs.outdir + '/' : '') + '*.tagged*.fastq*')"
+        - "$((inputs.outdir ? inputs.outdir + '/' : '') + '*.no_hits*.fastq*')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastq-screen:0.16.0--pl5321hdfd78af_0

@@ -40,7 +40,7 @@ inputs:
     doc: output file prefix
     inputBinding:
       position: 103
-      prefix: --output
+      prefix: -o
   - id: proportion
     type:
       - 'null'
@@ -75,7 +75,17 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : 'sample') + '*')"
+  - id: complement_files
+    type:
+      type: array
+      items: File
+    doc: Reads not included in the random sample, written with the prefix given
+      in complement_output_prefix
+    outputBinding:
+      glob: "$(inputs.complement_output_prefix ? inputs.complement_output_prefix + '*' : [])"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastq-tools:0.8.3--h1104d80_7

@@ -1,5 +1,27 @@
 # finaletoolkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| finaletoolkit_adjust-wps | PASS |  |
+| finaletoolkit_agg-bw | PASS |  |
+| finaletoolkit_breakpoint-motifs | PASS |  |
+| finaletoolkit_cleavage-profile | PASS |  |
+| finaletoolkit_coverage | PASS |  |
+| finaletoolkit_delfi | PASS |  |
+| finaletoolkit_delfi-gc-correct | PASS |  |
+| finaletoolkit_end-motifs | PASS |  |
+| finaletoolkit_filter-file | Failed | image problem: samtools and bedtools are missing in the image, so filtering a BAM or BED file fails with exit 127 |
+| finaletoolkit_frag-length-bins | PASS |  |
+| finaletoolkit_frag-length-intervals | PASS |  |
+| finaletoolkit_gap-bed | PASS |  |
+| finaletoolkit_interval-breakpoint-motifs | PASS |  |
+| finaletoolkit_interval-end-motifs | PASS |  |
+| finaletoolkit_interval-mds | PASS |  |
+| finaletoolkit_mds | PASS |  |
+| finaletoolkit_wps | PASS |  |
+
 ## finaletoolkit_coverage
 
 ### Tool Description

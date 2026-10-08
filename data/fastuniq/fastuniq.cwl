@@ -2,66 +2,71 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fastuniq
 label: fastuniq
-doc: "FastUniq is a fast de-duplication tool for short reads from Next-Generation
-  Sequencing. It identifies and removes duplicate reads from paired-end or single-end
-  FASTQ files.\n\nTool homepage: https://github.com/matsuoka-601/FastUniq"
+doc: "FastUniq is a tool to identify and remove duplicated read pairs from paired
+  FASTQ files (de novo, without a reference). Reads in the same order in two adjacent
+  files belong to a pair. The tool builds the list file (-i) from the input files.\n\nTool
+  homepage: https://sourceforge.net/projects/fastuniq/"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: fastuniq_input_list.txt
+        entry: |-
+          ${
+            var lines = [];
+            for (var i = 0; i < inputs.fastq_files.length; i++) {
+              lines.push(inputs.fastq_files[i].basename);
+            }
+            return lines.join("\n") + "\n";
+          }
+      - $(inputs.fastq_files)
 inputs:
-  - id: compression_type
-    type:
-      - 'null'
-      - int
-    doc: 'Compression type for output files: 0 for no compression, 1 for gzip, 2 for
-      bzip2.'
+  - id: fastq_files
+    type: 'File[]'
+    doc: Paired FASTQ files in plain text, listed in pairs (read 1 file, read 2 file,
+      then the next pair). Maximum 1000 pairs. Their names are written, one per line,
+      into the input list file given to -i.
+  - id: output_format
+    type: ['null', string]
+    doc: 'Output sequence format: q (FASTQ into two output files), f (FASTA into two
+      output files) or p (FASTA into one output file). Default q.'
     inputBinding:
-      position: 101
-      prefix: -c
-  - id: fastq_format
-    type:
-      - 'null'
-      - string
-    doc: Whether to output in FASTQ format ('t' for true, 'f' for false).
-    inputBinding:
-      position: 101
+      position: 2
       prefix: -t
-  - id: input_list
-    type: File
-    doc: Input list of FASTQ files. For paired-end data, each line should 
-      contain two file names separated by a space or tab.
-    inputBinding:
-      position: 101
-      prefix: -i
   - id: output_1_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_1_path`
+    type: string
+    doc: The first output file
     inputBinding:
-      position: 102
-      prefix: --output-1
+      position: 3
+      prefix: -o
   - id: output_2_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_2_path`
+    type: ['null', string]
+    doc: The second output file. Required when the output format is q or f.
     inputBinding:
-      position: 103
-      prefix: --output-2
+      position: 4
+      prefix: -p
+  - id: description_type
+    type: ['null', int]
+    doc: 'Types of sequence descriptions for output: 0 keeps the raw descriptions,
+      1 assigns new serial numbers (default 0).'
+    inputBinding:
+      position: 5
+      prefix: -c
+arguments:
+  - position: 1
+    prefix: -i
+    valueFrom: fastuniq_input_list.txt
 outputs:
   - id: output_1
     type: File
-    doc: Output file for the first read of paired-end data or for single-end 
-      data.
+    doc: First output file (read 1 without duplicated pairs, or all reads for format p)
     outputBinding:
       glob: $(inputs.output_1_path)
   - id: output_2
-    type:
-      - 'null'
-      - File
-    doc: Output file for the second read of paired-end data.
+    type: ['null', File]
+    doc: Second output file (read 2 without duplicated pairs)
     outputBinding:
       glob: $(inputs.output_2_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastuniq:1.1--h7b50bb2_2

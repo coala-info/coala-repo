@@ -1,28 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastaq
+baseCommand:
+  - fastaq
+  - trim_Ns_at_end
 label: fastaq_trim_ns_at_end
-doc: "A collection of commands for manipulating DNA/RNA sequences.\n\nTool homepage:
-  https://github.com/sanger-pathogens/Fastaq"
+doc: "Trims any Ns off each sequence in input file. Does nothing to gaps in the middle,
+  just trims the ends\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: command
-    type: string
-    doc: The command to execute. Available commands are listed below.
+  - id: infile
+    type: File
+    doc: Name of input file
     inputBinding:
       position: 1
-  - id: options
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Options for the specified command.
+  - id: outfile
+    type: string
+    doc: Name of output file
     inputBinding:
       position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_outfile
+    type: File
+    doc: Name of output file
+    outputBinding:
+      glob: $(inputs.outfile)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1
-stdout: fastaq_trim_ns_at_end.out

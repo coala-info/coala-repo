@@ -1,5 +1,11 @@
 # fastv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastv | PASS | fixed: --out1/--out2 flags, report files typed string and collected; nf-core sarscov2 reads with the repository k-mer file give POSITIVE; the image has no default k-mer data so -k is needed |
+
 ## fastv
 
 ### Tool Description

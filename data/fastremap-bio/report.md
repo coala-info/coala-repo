@@ -1,5 +1,11 @@
 # fastremap-bio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastremap-bio_FastRemap | PASS | tested on bam from the FastRemap repository; the tool appends the file type to the output name |
+
 ## fastremap-bio_FastRemap
 
 ### Tool Description

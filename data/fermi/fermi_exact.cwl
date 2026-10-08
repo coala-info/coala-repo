@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - exact
 label: fermi_exact
-doc: "Exact algorithm for sequence alignment\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Exact algorithm for sequence alignment\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: idxbase_bwt
     type: File

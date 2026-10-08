@@ -1,5 +1,11 @@
 # fastplong CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastplong | PASS |  |
+
 ## fastplong
 
 ### Tool Description

@@ -71,7 +71,8 @@ inputs:
       R(Y) symmetric, (R)Y, (J)C69, (K)2P, F8(1), F8(4) (default), (T)N93, (L)ogDet.'
     inputBinding:
       position: 101
-      prefix: --dna
+      prefix: -d
+      separate: false
   - id: equilibrium
     type:
       - 'null'
@@ -96,7 +97,8 @@ inputs:
       alignment(s).
     inputBinding:
       position: 101
-      prefix: --gamma
+      prefix: -g
+      separate: false
   - id: input_data_file
     type:
       - 'null'
@@ -132,7 +134,8 @@ inputs:
       [NNI] type from: NNI_(B)alME (default) or NNI_(O)LS.'
     inputBinding:
       position: 101
-      prefix: --nni
+      prefix: -n
+      separate: false
   - id: num_digits
     type:
       - 'null'
@@ -161,7 +164,8 @@ inputs:
       (R)tREV, HIV(b), H(I)Vw or FL(U).'
     inputBinding:
       position: 101
-      prefix: --protein
+      prefix: -p
+      separate: false
   - id: remove_gap
     type:
       - 'null'
@@ -200,8 +204,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "\e[00;04moutput bootstrap trees file\e[00;01m, --output_boot=\e[00;04moutput
-      bootstrap trees file\e[00;00m"
+    doc: Output bootstrap trees file.
     inputBinding:
       position: 102
       prefix: -B
@@ -209,8 +212,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "\e[00;04moutput information file\e[00;01m, --output_info=\e[00;04moutput
-      information file\e[00;00m"
+    doc: Output information file.
     inputBinding:
       position: 103
       prefix: -I
@@ -218,8 +220,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "\e[00;04moutput matrix file\e[00;01m, --output_matrix=\e[00;04moutput matrix
-      file\e[00;00m"
+    doc: Output matrix file.
     inputBinding:
       position: 104
       prefix: -O
@@ -227,8 +228,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "\e[00;04moutput tree file\e[00;01m, --output_tree=\e[00;04moutput tree file\e\
-      [00;00m"
+    doc: Output tree file.
     inputBinding:
       position: 105
       prefix: -o
@@ -264,8 +264,17 @@ outputs:
       bootstrap trees file.
     outputBinding:
       glob: $(inputs.output_bootstrap_trees_file_path)
+  - id: default_information_file
+    type:
+      - 'null'
+      - File
+    doc: Default information file written beside the input file when no output information file is given.
+    outputBinding:
+      glob: '*_fastme_stat.txt'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.input_data_file ? [{"entryname": inputs.input_data_file.basename, "entry": inputs.input_data_file, "writable": true}] : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastme:2.1.6.3--h7b50bb2_1

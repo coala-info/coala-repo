@@ -14,7 +14,7 @@ doc: "FASTAptamer-Enrich rapidly calculates fold-enrichment values for each sequ
   homepage: http://burkelab.missouri.edu/fastaptamer.html"
 inputs:
   - id: first_input_file
-    type: File?
+    type: File
     doc: First input file from FASTAptamer-Count or FASTAptamer-Cluster.
     inputBinding:
       position: 101
@@ -37,7 +37,7 @@ inputs:
       position: 101
       prefix: -f
   - id: second_input_file
-    type: File?
+    type: File
     doc: Second input file from FASTAptamer-Count or FASTAptamer-Cluster. *** 
       For two populations only, use -x and -y. ***
     inputBinding:
@@ -54,10 +54,10 @@ inputs:
       prefix: -z
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file path (-o)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

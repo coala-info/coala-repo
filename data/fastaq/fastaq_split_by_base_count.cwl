@@ -32,10 +32,13 @@ inputs:
       position: 104
       prefix: --max_seqs
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_files
+    type:
+      type: array
+      items: File
+    doc: Split output files, named from the output prefix
+    outputBinding:
+      glob: $(inputs.outprefix)*
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1
-stdout: fastaq_split_by_base_count.out

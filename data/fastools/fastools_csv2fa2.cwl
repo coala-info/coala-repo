@@ -11,26 +11,41 @@ inputs:
     doc: input file
     inputBinding:
       position: 1
-  - id: output
-    type:
-      type: array
-      items: File
-    doc: output files
+  - id: output_1
+    type: string
+    doc: first output FASTA file (second CSV column)
     inputBinding:
       position: 2
+  - id: output_2
+    type: string
+    doc: second output FASTA file (third CSV column)
+    inputBinding:
+      position: 3
   - id: skip_first_line
     type:
       - 'null'
       - boolean
     doc: skip the first line of the CSV file
     inputBinding:
-      position: 103
+      position: 4
       prefix: -s
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_output_1
+    type:
+      - 'null'
+      - File
+    doc: First FASTA file.
+    outputBinding:
+      glob: $(inputs.output_1)
+  - id: out_output_2
+    type:
+      - 'null'
+      - File
+    doc: Second FASTA file.
+    outputBinding:
+      glob: $(inputs.output_2)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastools:1.1.5--pyh7cba7a3_0
-stdout: fastools_csv2fa2.out

@@ -1,5 +1,11 @@
 # ffq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ffq | PASS | ran with network access on one small accession; --split combined with a link option crashes in the program |
+
 ## ffq
 
 ### Tool Description

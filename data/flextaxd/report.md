@@ -1,5 +1,11 @@
 # flextaxd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flextaxd | PASS | note: create, modify and dump work; --stats and --validate print the result but exit 1, the visualisation options crash (missing inquirer) and --dump_genome_annotations crashes |
+
 ## flextaxd
 
 ### Tool Description

@@ -69,13 +69,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --idx
-  - id: input_fastq_files
-    type: string
-    doc: 2 fastq input files [*fq|*fq.gz|*fq.bz2] separated by colons, mandatory
-      option.
-    inputBinding:
-      position: 101
-      prefix: --ifq
+  - id: input_fastq_1
+    type: File
+    doc: First fastq input file [*fq|*fq.gz|*fq.bz2], mandatory option.
+  - id: input_fastq_2
+    type: File
+    doc: Second fastq input file [*fq|*fq.gz|*fq.bz2], mandatory option.
   - id: low_quality_percent
     type:
       - 'null'
@@ -151,6 +150,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zeroQ
+  - id: aux_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Adapter FASTA, contamination FASTA and index files named in the
+      --adapter, --idx and --ifa options. They are staged in the working
+      directory, so name them by file name only (for example adapters.fa:2:0.9).
 outputs:
   - id: stdout
     type: stdout
@@ -161,7 +168,15 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : './out') + '*')"
+arguments:
+  - prefix: --ifq
+    position: 101
+    valueFrom: $(inputs.input_fastq_1.path):$(inputs.input_fastq_2.path)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.aux_files ? inputs.aux_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastqpuri:1.0.7--r44hb1d24b7_9

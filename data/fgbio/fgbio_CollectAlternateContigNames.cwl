@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fgbio
-  - CollectAlternateContigNames
+baseCommand: fgbio
 label: fgbio_CollectAlternateContigNames
 doc: "Collates the alternate contig names from an NCBI assembly report.\nThe input
   is to be the '*.assembly_report.txt' obtained from NCBI.\nThe output will be a \"\
@@ -42,7 +40,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --async-io
   - id: compression
     type:
@@ -50,7 +48,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compression
   - id: cram_ref_fasta
     type:
@@ -58,7 +56,7 @@ inputs:
       - File
     doc: Reference FASTA for CRAM encoding/decoding.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --cram-ref-fasta
   - id: existing
     type:
@@ -81,7 +79,7 @@ inputs:
       - string
     doc: Minimum severity log-level to emit.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --log-level
   - id: primary
     type:
@@ -97,7 +95,7 @@ inputs:
       - string
     doc: Validation stringency for SAM/BAM reading.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --sam-validation-stringency
   - id: sequence_roles
     type:
@@ -132,13 +130,16 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --tmp-dir
   - id: output_path
     type: string
     inputBinding:
       position: 102
       prefix: --output
+arguments:
+  - position: 50
+    valueFrom: CollectAlternateContigNames
 outputs:
   - id: output
     type:

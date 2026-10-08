@@ -16,12 +16,17 @@ inputs:
     doc: Name of input quality scores file
     inputBinding:
       position: 2
-outputs:
   - id: fastq_out
+    type: string
+    doc: Name of output FASTQ file
+    inputBinding:
+      position: 3
+outputs:
+  - id: out_fastq_out
     type: File
     doc: Name of output FASTQ file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.fastq_out)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

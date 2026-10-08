@@ -1,5 +1,11 @@
 # firecloud CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| firecloud_fissfc | Not completed | needs a Terra/FireCloud account (even the health command wants gcloud credentials) |
+
 ## firecloud_fissfc
 
 ### Tool Description

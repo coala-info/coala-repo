@@ -1,5 +1,11 @@
 # flexbar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flexbar | PASS |  |
+
 ## flexbar
 
 ### Tool Description

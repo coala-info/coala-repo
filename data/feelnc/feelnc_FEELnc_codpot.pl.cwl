@@ -18,7 +18,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Genome file or directory with chr files (mandatory if input is .GTF)
+    doc: Genome file (mandatory if input is .GTF). The wrapper stages a writable copy because
+      BioPerl writes a .index file beside it.
     inputBinding:
       position: 101
       prefix: --genome
@@ -159,6 +160,7 @@ inputs:
       by a ','
     inputBinding:
       position: 101
+      prefix: --spethres
   - id: testorftype
     type:
       - 'null'
@@ -195,6 +197,15 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome_fa)
+        writable: true
+  - class: EnvVarRequirement
+    envDef:
+      - envName: FEELNCPATH
+        envValue: /usr/local
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/feelnc:0.2--pl526_0

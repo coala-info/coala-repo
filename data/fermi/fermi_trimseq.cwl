@@ -4,7 +4,7 @@ baseCommand:
   - fermi
   - trimseq
 label: fermi_trimseq
-doc: "Trim low-quality bases from the ends of sequences.\n\nTool homepage: https://github.com/quantumlib/OpenFermion"
+doc: "Trim low-quality bases from the ends of sequences.\n\nTool homepage: https://github.com/lh3/fermi"
 inputs:
   - id: input_fastq
     type: File

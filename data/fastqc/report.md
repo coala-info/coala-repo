@@ -1,5 +1,11 @@
 # fastqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastqc | PASS |  |
+
 ## fastqc
 
 ### Tool Description

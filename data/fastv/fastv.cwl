@@ -298,7 +298,7 @@ inputs:
   - id: html_report_file
     type:
       - 'null'
-      - File
+      - string
     doc: the html format report file name
     inputBinding:
       position: 101
@@ -324,7 +324,7 @@ inputs:
   - id: json_report_file
     type:
       - 'null'
-      - File
+      - string
     doc: the json format report file name
     inputBinding:
       position: 101
@@ -675,7 +675,7 @@ inputs:
     doc: Output or path parameter `read1_output_file_path`
     inputBinding:
       position: 102
-      prefix: --read1-output-file
+      prefix: --out1
   - id: read2_output_file_path
     type:
       - 'null'
@@ -683,7 +683,7 @@ inputs:
     doc: Output or path parameter `read2_output_file_path`
     inputBinding:
       position: 103
-      prefix: --read2-output-file
+      prefix: --out2
 outputs:
   - id: read1_output_file
     type:
@@ -699,6 +699,20 @@ outputs:
     doc: file name to store read2 with on-target sequences
     outputBinding:
       glob: $(inputs.read2_output_file_path)
+  - id: json_report
+    type:
+      - 'null'
+      - File
+    doc: JSON report (fastv.json unless --json names another file)
+    outputBinding:
+      glob: "$(inputs.json_report_file ? inputs.json_report_file : 'fastv.json')"
+  - id: html_report
+    type:
+      - 'null'
+      - File
+    doc: HTML report (fastv.html unless --html names another file)
+    outputBinding:
+      glob: "$(inputs.html_report_file ? inputs.html_report_file : 'fastv.html')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

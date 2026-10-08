@@ -1,5 +1,21 @@
 # fermi2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fermi2_assemble | PASS |  |
+| fermi2_correct | PASS |  |
+| fermi2_count | PASS |  |
+| fermi2_diff | PASS |  |
+| fermi2_interleave | PASS |  |
+| fermi2_match | PASS |  |
+| fermi2_occflt | PASS |  |
+| fermi2_sa | PASS |  |
+| fermi2_simplify | PASS |  |
+| fermi2_sub | PASS |  |
+| fermi2_unpack | PASS |  |
+
 ## fermi2_diff
 
 ### Tool Description
@@ -247,37 +263,23 @@ Output format:
 ```
 
 
-## Metadata
-- **Skill**: not generated
-
-## fermi2
+## fermi2_unpack
 
 ### Tool Description
-fermi2 is a tool for sequence assembly and analysis.
+Unpack an FM-index (RLD file) into reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fermi2:r193--h577a1d6_10
 - **Homepage**: https://github.com/lh3/fermi2
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/fermi2/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-Program: fermi2
-Version: r178
-Contact: http://hengli.uservoice.com/
-
-Usage:   fermi2 <command> [arguments]
-
-Command: diff        compare two FMD-indices
-         occflt      pick up reads containing low-occurrence k-mers
-         sub         subset FM-index
-         unpack      unpack FM-index
-         correct     error correction
-         count       k-mer counting (inefficient for long k-mers)
-         interleave  convert 2-file PE fastq to interleaved fastq
-         assemble    assemble reads into a unitig graph
-         simplify    simplify a unitig graph
-         sa          generate sampled suffix array
-         match       exact matches
+[help] fermi2 unpack: ok via fermi2 unpack (--help=flag_rejected, -h=flag_rejected, -help=flag_rejected, (no args)=usage_only)
+Usage: fermi2 unpack <reads.rld> [list|file]
 ```
+
+## Metadata
+- **Skill**: not generated
 

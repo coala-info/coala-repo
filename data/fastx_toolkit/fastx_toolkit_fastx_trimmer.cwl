@@ -46,12 +46,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: trim_end
+    type:
+      - 'null'
+      - int
+    doc: Trim N nucleotides from the end of the read. Cannot be used with -l and -f.
+    inputBinding:
+      position: 101
+      prefix: -t
+  - id: min_length
+    type:
+      - 'null'
+      - int
+    doc: With -t, discard reads shorter than MINLEN.
+    inputBinding:
+      position: 101
+      prefix: -m
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -79,15 +79,21 @@ inputs:
       position: 102
       prefix: --verbose
   - id: output_path
-    type: string
+    type:
+      type: array
+      items: string
+      inputBinding:
+        prefix: --output
+    doc: Output FASTQ file names, one for each input, in the same order. The
+      compression format follows the file extension.
     inputBinding:
       position: 103
-      prefix: --output
 outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output FASTQ files. Compression format automatically determined by file
       extension. Flag can be used multiple times. An output must be given for 
       each input.

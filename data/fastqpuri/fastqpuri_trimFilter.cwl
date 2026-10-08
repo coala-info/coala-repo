@@ -51,7 +51,7 @@ inputs:
   - id: gzip_output
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'gzip output files: yes or no (default yes)'
     inputBinding:
       position: 101
@@ -147,6 +147,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zeroQ
+  - id: aux_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Adapter FASTA, contamination FASTA and index files named in the
+      --adapter, --idx and --ifa options. They are staged in the working
+      directory, so name them by file name only (for example adapters.fa:2:0.9).
 outputs:
   - id: stdout
     type: stdout
@@ -157,7 +165,11 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : './out') + '*')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.aux_files ? inputs.aux_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastqpuri:1.0.7--r44hb1d24b7_9

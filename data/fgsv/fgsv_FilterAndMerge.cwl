@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fgsv
-  - FilterAndMerge
+baseCommand: fgsv
 label: fgsv_FilterAndMerge
 doc: "Filters and merges SVPileup output.\n\nTool homepage: https://github.com/fulcrumgenomics/fgsv"
 inputs:
@@ -12,7 +10,7 @@ inputs:
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --async-io
   - id: compression
     type:
@@ -20,7 +18,7 @@ inputs:
       - int
     doc: Default GZIP compression level, BAM compression level.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --compression
   - id: input
     type: File
@@ -35,7 +33,7 @@ inputs:
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --log-level
   - id: min_post
     type:
@@ -59,7 +57,7 @@ inputs:
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --sam-validation-stringency
   - id: slop
     type:
@@ -75,13 +73,16 @@ inputs:
       - string
     doc: Directory to use for temporary files.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --tmp-dir
   - id: output_path
     type: string
     inputBinding:
       position: 102
       prefix: --output
+arguments:
+  - position: 50
+    valueFrom: FilterAndMerge
 outputs:
   - id: output
     type:

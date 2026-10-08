@@ -1,5 +1,31 @@
 # fastqtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastqtk_NtoA | PASS |  |
+| fastqtk_compress-id | PASS |  |
+| fastqtk_count | PASS |  |
+| fastqtk_count-lengths | PASS |  |
+| fastqtk_deinterleave | PASS |  |
+| fastqtk_detab | PASS |  |
+| fastqtk_drop-se | PASS |  |
+| fastqtk_drop-short | PASS |  |
+| fastqtk_fa2fq | PASS |  |
+| fastqtk_fq2fa | PASS |  |
+| fastqtk_interleave | PASS |  |
+| fastqtk_lengths | PASS |  |
+| fastqtk_retain-3 | PASS |  |
+| fastqtk_retain-5 | PASS |  |
+| fastqtk_rev-com | PASS |  |
+| fastqtk_tab-4 | PASS |  |
+| fastqtk_tab-8 | PASS |  |
+| fastqtk_trim-3 | PASS |  |
+| fastqtk_trim-5 | PASS |  |
+| fastqtk_trim-id | PASS |  |
+| fastqtk_trim-poly | PASS |  |
+
 ## fastqtk_interleave
 
 ### Tool Description

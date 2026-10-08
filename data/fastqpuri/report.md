@@ -1,5 +1,16 @@
 # fastqpuri CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fastqpuri_Qreport | Failed | image problem: the program crashes with a segmentation fault when it starts the HTML report step (no HTML written) |
+| fastqpuri_Sreport | Failed | image problem: the program crashes with a segmentation fault when it starts the HTML report step (no HTML written) |
+| fastqpuri_makeBloom | PASS | bloom filter checked with trimFilter (5000 contaminant reads found); runs without -p, -g or -m crash with a memory allocation error |
+| fastqpuri_makeTree | Failed | tool bug: the .gz tree file is truncated (corrupt gzip) because the tool does not wait for its gzip child process |
+| fastqpuri_trimFilter | Failed | tool bug: default gzip output files are truncated because the tool does not wait for its gzip child process; --gzip n works |
+| fastqpuri_trimFilterPE | Failed | tool bug: default gzip output files are truncated because the tool does not wait for its gzip child process; --gzip n works |
+
 ## fastqpuri_Qreport
 
 ### Tool Description

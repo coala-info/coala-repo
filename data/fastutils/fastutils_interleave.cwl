@@ -18,18 +18,22 @@ inputs:
     type:
       type: array
       items: File
-    doc: fasta/q file containing forward (left) reads
+      inputBinding:
+        prefix: --in1
+    doc: fasta/q file(s) containing forward (left) reads, one file per library, in the same order
+      as the other read file list
     inputBinding:
       position: 101
-      prefix: --in1
   - id: in2
     type:
       type: array
       items: File
-    doc: fasta/q file containing reverse (right) reads
+      inputBinding:
+        prefix: --in2
+    doc: fasta/q file(s) containing reverse (right) reads, one file per library, in the same order
+      as the other read file list
     inputBinding:
-      position: 101
-      prefix: --in2
+      position: 102
   - id: separator
     type:
       - 'null'
@@ -42,7 +46,7 @@ inputs:
     type: string
     doc: output file [stdout]
     inputBinding:
-      position: 102
+      position: 103
       prefix: --out
 outputs:
   - id: out
@@ -52,6 +56,7 @@ outputs:
     doc: output interlaced reads in STR file
     outputBinding:
       glob: $(inputs.out_path)
+successCodes: [0, 1]
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,14 @@
 # fgsv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fgsv_AggregateSvPileup | PASS |  |
+| fgsv_AggregateSvPileupToBedPE | PASS |  |
+| fgsv_FilterAndMerge | PASS |  |
+| fgsv_SvPileup | PASS |  |
+
 ## fgsv_AggregateSvPileup
 
 ### Tool Description

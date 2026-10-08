@@ -1,5 +1,11 @@
 # flash2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flash2 | PASS |  |
+
 ## flash2
 
 ### Tool Description

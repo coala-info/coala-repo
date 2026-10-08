@@ -21,27 +21,21 @@ inputs:
       position: 101
       prefix: --append-tags
   - id: chain_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: A chain file (https://genome.ucsc.edu/goldenPath/help/chain.html) that 
       describes regions of similarity between references.
     inputBinding:
       position: 101
       prefix: --chain-file
   - id: file_type
-    type:
-      - 'null'
-      - string
+    type: string
     doc: "'bam', 'sam', or 'bed' file depending on input file One of bam, sam, and
       bed."
     inputBinding:
       position: 101
       prefix: --file-type
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: '{s,b}am or bed file containing elements to be remapped based on chain file'
     inputBinding:
       position: 101
@@ -73,16 +67,15 @@ inputs:
       position: 101
       prefix: --times
   - id: output_file_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: Output name prefix. FastRemap appends the file type as extension (out gives out.bam,
+      out.sam or out.bed).
     inputBinding:
       position: 102
-      prefix: --output-unmapped
+      prefix: --output
   - id: output_unmapped_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: File containing all the elements that could not be remapped
     inputBinding:
       position: 103
       prefix: --output-unmapped
@@ -93,7 +86,7 @@ outputs:
       - File
     doc: File containing all the remapped elements from the input file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).*
   - id: output_unmapped
     type:
       - 'null'

@@ -179,7 +179,7 @@ inputs:
     doc: Main output will be GTF instead of GFF3
     inputBinding:
       position: 102
-      prefix: --gtf
+      prefix: -T
   - id: tlf
     type:
       - 'null'

@@ -21,10 +21,17 @@ inputs:
     doc: output directory
     inputBinding:
       position: 3
+  - id: genome_dirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: genome directories named in the genomic_file (staged in the working directory
+      so the relative paths in that file resolve)
   - id: genome_list
     type:
       - 'null'
-      - string
+      - File
     doc: restrict selection to genomes in list
     inputBinding:
       position: 104
@@ -96,6 +103,10 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.genome_dirs || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genometreetk:0.1.6--py_2

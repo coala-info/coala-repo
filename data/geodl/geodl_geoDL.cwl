@@ -40,6 +40,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --dry
+  - id: metadata_file
+    type:
+      - 'null'
+      - File
+    doc: "Metadata table for the meta mode (staged in the working directory; give its
+      file name as accession_or_file)"
   - id: samples
     type:
       - 'null'
@@ -54,6 +60,33 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: fastq_files
+    type:
+      type: array
+      items: File
+    doc: Downloaded fastq files
+    outputBinding:
+      glob: '*.fq.gz'
+  - id: metadata_table
+    type:
+      - 'null'
+      - File
+    doc: Metadata table fetched from ENA
+    outputBinding:
+      glob: metadata_*.xls
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Download log
+    outputBinding:
+      glob: geoDL.logs
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.metadata_file ? [inputs.metadata_file] : [])'
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/geodl:1.0b5.1--py36_0

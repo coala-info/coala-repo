@@ -1,5 +1,14 @@
 # genera CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genera_FASTSTEP3R | Not completed | internal genEra helper that needs the temporary DIAMOND split files of a genEra run |
+| genera_genEra | Not completed | needs the NCBI taxonomy dump and a large DIAMOND protein database (nr) or AlphaFold database |
+| genera_hmmEra | Not completed | needs the gene age table from a genEra run and the UniProt database for jackhmmer |
+| genera_tree2ncbitax | PASS |  |
+
 ## genera_genEra
 
 ### Tool Description

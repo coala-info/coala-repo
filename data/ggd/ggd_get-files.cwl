@@ -56,10 +56,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --species
+  - id: version
+    type:
+      - 'null'
+      - string
+    doc: (Optional) pattern to match the version of the file desired. Use '*' for
+      any version
+    inputBinding:
+      position: 102
+      prefix: --version
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggd:1.1.3--pyh3252c3a_0

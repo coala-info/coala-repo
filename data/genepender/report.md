@@ -1,5 +1,11 @@
 # genepender CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genepender | PASS |  |
+
 ## genepender
 
 ### Tool Description

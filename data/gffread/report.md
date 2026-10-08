@@ -1,5 +1,11 @@
 # gffread CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gffread | PASS |  |
+
 ## gffread
 
 ### Tool Description

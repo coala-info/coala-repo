@@ -1,5 +1,11 @@
 # generax CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| generax | Failed | image problem: generax crashes with a segmentation fault during gene tree optimization on two real datasets (the build is compiled without MPI) |
+
 ## generax
 
 ### Tool Description

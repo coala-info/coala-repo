@@ -7,10 +7,11 @@ label: gemini_query
 doc: "Query the GEMINI database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: carrier_summary_by_phenotype
     type:
       - 'null'
@@ -136,10 +137,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-bcolz
+  - id: bcolz_index
+    type:
+      - 'null'
+      - Directory
+    doc: bcolz index directory (<db>.gts) made by gemini bcolz_index, for use with
+      --use-bcolz. It is staged beside the database.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.db)
+      - entry: $(inputs.bcolz_index)
+        entryname: $(inputs.db.basename).gts
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gemini:0.30.2--py27hacb5245_0

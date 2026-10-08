@@ -6,16 +6,19 @@ doc: "GMM-Demux Initialization\n\nTool homepage: https://github.com/CHPGenetics/
 inputs:
   - id: input_path
     type:
-      type: array
-      items: File
-    doc: The input path of mtx files from cellRanger pipeline.
+      - 'null'
+      - Directory
+      - File
+    doc: The input path of mtx files from cellRanger pipeline (a Directory), or
+      the csv file when csv is set. Not needed with skip.
     inputBinding:
       position: 1
   - id: hto_array
     type:
-      type: array
-      items: string
-    doc: Names of the HTO tags, separated by ','.
+      - 'null'
+      - string
+    doc: Names of the HTO tags, separated by ',' without spaces (for example 
+      HTO_1,HTO_2,HTO_3). Not needed with skip.
     inputBinding:
       position: 2
   - id: ambiguous
@@ -57,7 +60,7 @@ inputs:
   - id: full
     type:
       - 'null'
-      - Directory
+      - string
     doc: Generate the full classification report. Requires a path argument.
     inputBinding:
       position: 103
@@ -74,7 +77,7 @@ inputs:
   - id: report
     type:
       - 'null'
-      - File
+      - string
     doc: Store the data summary report. Requires a file argument. Only executes 
       if -u is set.
     inputBinding:
@@ -83,7 +86,7 @@ inputs:
   - id: simplified
     type:
       - 'null'
-      - Directory
+      - string
     doc: Generate the simplified classification report. Requires a path 
       argument.
     inputBinding:
@@ -92,7 +95,7 @@ inputs:
   - id: skip
     type:
       - 'null'
-      - File
+      - Directory
     doc: Load a full classification report and skip the mtx folder. Requires a 
       path argument to the full report folder. When specified, the user no 
       longer needs to provide the mtx folder.
@@ -102,7 +105,7 @@ inputs:
   - id: summary
     type:
       - 'null'
-      - string
+      - int
     doc: Generate the statstic summary of the dataset. Including MSM, SSM rates.
       Requires an estimated total number of cells in the assay as input.
     inputBinding:
@@ -117,12 +120,17 @@ inputs:
       position: 103
       prefix: --threshold
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The path for storing the Same-Sample-Droplets (SSDs).
     inputBinding:
       position: 104
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output
     type:
       - 'null'
@@ -130,9 +138,32 @@ outputs:
     doc: The path for storing the Same-Sample-Droplets (SSDs). SSDs are stored 
       in mtx format. Requires a path argument.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "$(inputs.output_path ? inputs.output_path : 'SSD_mtx')"
+  - id: full_report
+    type:
+      - 'null'
+      - Directory
+    doc: Full classification report folder (written when full is set)
+    outputBinding:
+      glob: "$(inputs.full ? inputs.full : 'no_full_report')"
+  - id: simplified_report
+    type:
+      - 'null'
+      - Directory
+    doc: Simplified classification report folder (written when simplified is 
+      set)
+    outputBinding:
+      glob: "$(inputs.simplified ? inputs.simplified : 'no_simplified_report')"
+  - id: summary_report
+    type:
+      - 'null'
+      - File
+    doc: Data summary report file (written when summary and report are set)
+    outputBinding:
+      glob: "$(inputs.report ? inputs.report : 'no_summary_report')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gmm-demux:0.2.2.3--pyh7e72e81_1
+stdout: gmm-demux.out

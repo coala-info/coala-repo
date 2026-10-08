@@ -1,5 +1,11 @@
 # get_orfs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| get_orfs | PASS | repo seq.fasta: ORF translation of frame +1 checked by hand; genome JQ995537 gives ORFs of at least 100 aa |
+
 ## get_orfs
 
 ### Tool Description

@@ -16,8 +16,9 @@ inputs:
     inputBinding:
       position: 2
   - id: out_database_location
-    type: Directory
-    doc: Location to store the output database
+    type: string
+    doc: Location to store the output database (a directory created in the 
+      working directory)
     inputBinding:
       position: 3
   - id: check_deps
@@ -40,6 +41,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_database
+    type: Directory
+    doc: Database directory holding the downloaded genomes
+    outputBinding:
+      glob: $(inputs.out_database_location)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.out_database_location)
+        entry: '${return {"class": "Directory", "basename": inputs.out_database_location, "listing": []};}'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomebaser:0.1.2--py27_1

@@ -124,7 +124,9 @@ inputs:
       position: 101
       prefix: --prefix
   - id: query
-    type: string
+    type:
+      - File
+      - string
     doc: Download genomes for a given query (organism, taxid, file of 
       accessions)
     inputBinding:
@@ -148,6 +150,10 @@ outputs:
     doc: Directory to save output files
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/goblin:1.0.0--hdfd78af_0

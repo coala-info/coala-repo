@@ -1,5 +1,12 @@
 # glimmerhmm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| glimmerhmm | PASS |  |
+| glimmerhmm_trainGlimmerHMM | PASS |  |
+
 ## glimmerhmm
 
 ### Tool Description
@@ -29,5 +36,21 @@ Options:
 -f               Don't make partial gene predictions
 -h               Display the options of the program
 ```
+## glimmerhmm_trainGlimmerHMM
+
+### Tool Description
+Train GlimmerHMM on a multi-FASTA file and a file of exon coordinates
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/glimmerhmm:3.0.4--pl5321h503566f_10
+- **Homepage**: https://github.com/kblin/glimmerhmm
+- **Package**: https://anaconda.org/channels/bioconda/packages/glimmerhmm/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+```
+
 ## Metadata
 - **Skill**: generated

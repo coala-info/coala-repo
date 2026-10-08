@@ -8,7 +8,7 @@ doc: "Calculate burden statistics for variants in a GEMINI database.\n\nTool hom
   https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1
@@ -82,6 +82,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: permuted_tscores
+    type:
+      - 'null'
+      - File
+    doc: Permuted T-scores, written when --save_tscores is set
+    outputBinding:
+      glob: permutated_t_scores.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gemini:0.30.2--py27hacb5245_0

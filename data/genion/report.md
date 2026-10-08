@@ -1,5 +1,11 @@
 # genion CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genion | PASS |  |
+
 ## genion
 
 ### Tool Description

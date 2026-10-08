@@ -31,11 +31,13 @@ inputs:
   - id: control_file
     type:
       - 'null'
-      - File
-    doc: Input SAM/BAM file(s) for control sample(s)
+      - type: array
+        items: File
+    doc: Input SAM/BAM file(s) for control sample(s) (joined with commas)
     inputBinding:
       position: 101
       prefix: -c
+      itemSeparator: ','
   - id: exclude_chromosomes
     type:
       - 'null'
@@ -49,10 +51,11 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input BED file(s) of genomic regions to exclude
+    doc: Input BED file(s) of genomic regions to exclude (joined with commas)
     inputBinding:
       position: 101
       prefix: -E
+      itemSeparator: ','
   - id: gzip_output
     type:
       - 'null'
@@ -62,11 +65,14 @@ inputs:
       position: 101
       prefix: -z
   - id: input_file
-    type: File
-    doc: Input SAM/BAM file(s) for experimental sample(s)
+    type:
+      type: array
+      items: File
+    doc: Input SAM/BAM file(s) for experimental sample(s) (joined with commas)
     inputBinding:
       position: 101
       prefix: -t
+      itemSeparator: ','
   - id: keep_unpaired
     type:
       - 'null'

@@ -38,7 +38,7 @@ inputs:
       a directory if there are fewer than 100 Chromosomes being added.
     inputBinding:
       position: 102
-      prefix: -d
+      prefix: --directory-mode
   - id: file_mode
     type:
       - 'null'
@@ -49,7 +49,7 @@ inputs:
       single file if there are at least 100 Chromosomes being added.
     inputBinding:
       position: 102
-      prefix: -f
+      prefix: --file-mode
   - id: maskfile
     type:
       - 'null'
@@ -68,14 +68,14 @@ inputs:
       prefix: --name-style
   - id: sequence
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
+      inputBinding:
+        prefix: --sequence
     doc: Add the sequence data in the specified file or files (may use UNIX glob
       wildcard syntax)
     inputBinding:
       position: 102
-      prefix: --sequence
   - id: sizes
     type:
       - 'null'
@@ -86,13 +86,21 @@ inputs:
       prefix: --sizes
   - id: track
     type:
-      - 'null'
-      - type: array
-        items: string
-    doc: 'Add data from FILE as the track NAME, such as: -t signal=signal.wig'
+      type: array
+      items: string
+      inputBinding:
+        prefix: --track
+    doc: 'Add data from FILE as the track NAME, such as: -t signal=signal.wig. The
+      file must be given in track_files so that it is staged next to the job.'
     inputBinding:
       position: 102
-      prefix: --track
+  - id: track_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Track data files named in the track entries (NAME=FILE). They are staged
+      in the working directory, so FILE is the file name only.
   - id: verbose
     type:
       - 'null'
@@ -105,6 +113,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: archive
+    type:
+      - File
+      - Directory
+    doc: The new Genomedata archive (a directory, or a single file in file mode)
+    outputBinding:
+      glob: $(inputs.genomedatafile)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '${ return inputs.track_files ? inputs.track_files : []; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomedata:1.7.4--py311h87bb1fd_0

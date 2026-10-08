@@ -1,5 +1,11 @@
 # gimbleprep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gimbleprep | PASS |  |
+
 ## gimbleprep
 
 ### Tool Description

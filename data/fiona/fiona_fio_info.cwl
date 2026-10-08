@@ -7,8 +7,17 @@ label: fiona_fio_info
 doc: "Print information about a dataset.\n\nTool homepage: https://github.com/Toblerity/Fiona"
 inputs:
   - id: input
-    type: string
-    doc: Input dataset
+    type: File
+    doc: Input dataset (for a shapefile, the .shx, .dbf, .prj and .cpg files are staged beside it)
+    secondaryFiles:
+      - pattern: ^.shx
+        required: false
+      - pattern: ^.dbf
+        required: false
+      - pattern: ^.prj
+        required: false
+      - pattern: ^.cpg
+        required: false
     inputBinding:
       position: 1
   - id: bounds

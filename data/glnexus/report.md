@@ -1,5 +1,11 @@
 # glnexus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| glnexus_glnexus_cli | PASS |  |
+
 ## glnexus_glnexus_cli
 
 ### Tool Description

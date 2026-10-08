@@ -1,5 +1,11 @@
 # genotypy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genotypy | PASS | synthetic data: simulated reads over the KAN locus with a planted barcode; the tool reported strain mut0001 with that barcode. |
+
 ## genotypy
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # gmwi2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gmwi2 | Not completed | Needs large database downloads on first run (MetaPhlAn marker database and human GRCh38 index) into the image folder. |
+
 ## gmwi2
 
 ### Tool Description

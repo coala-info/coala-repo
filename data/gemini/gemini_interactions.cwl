@@ -7,14 +7,14 @@ label: gemini_interactions
 doc: "Query gemini database for interactions\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried
     inputBinding:
       position: 1
   - id: edges
     type:
       - 'null'
-      - string
+      - File
     doc: edges file (default is hprd). Format is geneA|geneB geneA|geneC...
     inputBinding:
       position: 102
@@ -30,7 +30,7 @@ inputs:
   - id: radius
     type:
       - 'null'
-      - string
+      - int
     doc: 'Set filter for BFS: valid numbers starting from 0'
     inputBinding:
       position: 102

@@ -1,5 +1,14 @@
 # ggcat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ggcat_build | PASS |  |
+| ggcat_dump-colors | PASS |  |
+| ggcat_matches | PASS |  |
+| ggcat_query | PASS |  |
+
 ## ggcat_build
 
 ### Tool Description

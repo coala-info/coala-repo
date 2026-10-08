@@ -10,7 +10,7 @@ inputs:
     type: File
     doc: Input GFA file
     inputBinding:
-      position: 1
+      position: 200
   - id: delete_list
     type:
       - 'null'
@@ -47,7 +47,16 @@ inputs:
     type:
       - 'null'
       - File
-    doc: segment list to subset
+    doc: file with a list of segment names to subset (passed as @FILE)
+    inputBinding:
+      position: 102
+      prefix: -l
+      valueFrom: "@$(self.path)"
+  - id: segment_names
+    type:
+      - 'null'
+      - string
+    doc: segment names to subset, as a comma-separated list (use instead of segment_list)
     inputBinding:
       position: 102
       prefix: -l

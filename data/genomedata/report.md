@@ -1,5 +1,21 @@
 # genomedata CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genomedata_genomedata-close-data | PASS |  |
+| genomedata_genomedata-erase-data | Failed | tool bug: crashes with AttributeError 'Namespace' object has no attribute 'archive' before erasing anything |
+| genomedata_genomedata-hardmask | PASS |  |
+| genomedata_genomedata-histogram | Failed | image problem: crashes with a numpy error (histogram() got an unexpected keyword argument 'new'); the image has a numpy version that is too new |
+| genomedata_genomedata-info | PASS |  |
+| genomedata_genomedata-load | PASS |  |
+| genomedata_genomedata-load-data | PASS |  |
+| genomedata_genomedata-load-seq | PASS |  |
+| genomedata_genomedata-open-data | PASS |  |
+| genomedata_genomedata-query | PASS |  |
+| genomedata_genomedata-report | PASS |  |
+
 ## genomedata_genomedata-load-seq
 
 ### Tool Description
@@ -262,6 +278,155 @@ options:
   --verbose   Print status updates and diagnostic messages
 ```
 
+
+## genomedata_genomedata-open-data
+
+### Tool Description
+Open one or more tracks in the specified Genomedata archive.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genomedata:1.7.4--py311h87bb1fd_0
+- **Homepage**: http://genomedata.hoffmanlab.org
+- **Package**: https://anaconda.org/channels/bioconda/packages/genomedata/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: genomedata-open-data [-h] [-v] [--verbose] gdarchive --tracknames TRACKNAMES 
+
+Open one or more tracks in the specified Genomedata archive.
+
+positional arguments:
+  gdarchive             genomedata archive
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --tracknames TRACKNAMES [TRACKNAMES ...]
+                        tracknames to open
+  --verbose             Print status updates and diagnostic messages
+```
+
+## genomedata_genomedata-load-data
+
+### Tool Description
+Load track data (read from standard input) into a Genomedata archive.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genomedata:1.7.4--py311h87bb1fd_0
+- **Homepage**: http://genomedata.hoffmanlab.org
+- **Package**: https://anaconda.org/channels/bioconda/packages/genomedata/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: genomedata-load-data [-h] [-V] [-v] gdarchive trackname
+
+Load data into genomedata format. Takes track data in on stdin
+
+positional arguments:
+  gdarchive      genomedata archive
+  trackname      track name
+
+options:
+  -h, --help     show this help message and exit
+  -V, --version  show program's version number and exit
+  -v, --verbose  Print status and diagnostic messages
+```
+
+## genomedata_genomedata-erase-data
+
+### Tool Description
+Erase tracks from a Genomedata archive so the data can be replaced.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genomedata:1.7.4--py311h87bb1fd_0
+- **Homepage**: http://genomedata.hoffmanlab.org
+- **Package**: https://anaconda.org/channels/bioconda/packages/genomedata/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: genomedata-erase-data [-h] [--version] --trackname TRACKNAME
+                             [TRACKNAME ...] [--verbose]
+                             gdarchive
+
+Erase the specified tracks from the Genomedata archive in such a way that the
+track data can be replaced (via genomedata-load-data).
+
+positional arguments:
+  gdarchive             genomedata archive
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --trackname TRACKNAME [TRACKNAME ...]
+                        tracknames to erase
+  --verbose             Print status updates and diagnostic messages
+```
+
+## genomedata_genomedata-report
+
+### Tool Description
+Print a report of a Genomedata archive.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genomedata:1.7.4--py311h87bb1fd_0
+- **Homepage**: http://genomedata.hoffmanlab.org
+- **Package**: https://anaconda.org/channels/bioconda/packages/genomedata/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: genomedata-report [-h] [--version] gdarchive
+
+positional arguments:
+  gdarchive   genomedata archive
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+```
+
+## genomedata_genomedata-hardmask
+
+### Tool Description
+Permanently mask tracks of a Genomedata archive with a mask file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genomedata:1.7.4--py311h87bb1fd_0
+- **Homepage**: http://genomedata.hoffmanlab.org
+- **Package**: https://anaconda.org/channels/bioconda/packages/genomedata/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: genomedata-hard-mask [-h] [--version] [-t TRACKNAME [TRACKNAME ...]]
+                            [--hardmask OPERATOR] [--no-close] [--dry-run]
+                            [--verbose]
+                            maskfile gdarchive
+
+Permanently mask TRACKNAME(s) from a genomedata archive with MASKFILE using an
+optional filter operator.
+
+positional arguments:
+  maskfile              input mask file
+  gdarchive             genomedata archive
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -t TRACKNAME [TRACKNAME ...], --trackname TRACKNAME [TRACKNAME ...]
+                        Track(s) to be filtered (default: all)
+  --hardmask OPERATOR   Specify a comparison operation on a value to mask out
+                        (e.g. "lt0.5" will mask all values less than 0.5). See
+                        the bash comparison operators for the two letter
+                        operations (default: all values masked)
+  --no-close            Do not close the genomedata archive after masking
+  --dry-run             Do not perform any masking. Useful with verbosity set
+                        to see what regions would be filtered
+  --verbose             Print status and diagnostic messages
+```
 
 ## Metadata
 - **Skill**: generated

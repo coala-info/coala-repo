@@ -1,5 +1,11 @@
 # genomescope2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genomescope2 | PASS |  |
+
 ## genomescope2
 
 ### Tool Description

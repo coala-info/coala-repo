@@ -6,13 +6,17 @@ doc: "Prepare data for GIMBLE\n\nTool homepage: https://github.com/LohseLab/gimb
 inputs:
   - id: bam_dir
     type: Directory
-    doc: Directory containing all BAM files
+    doc: Directory containing all BAM files (each with its .bai index and a
+      readgroup sample ID)
     inputBinding:
       position: 101
       prefix: --bam_dir
   - id: fasta_file
     type: File
     doc: FASTA file
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 101
       prefix: --fasta_file
@@ -49,9 +53,8 @@ inputs:
       position: 101
       prefix: --min_qual
   - id: outprefix
-    type:
-      - 'null'
-      - string
+    type: string
+    default: gimble
     doc: Outprefix
     inputBinding:
       position: 101
@@ -74,14 +77,52 @@ inputs:
       prefix: --threads
   - id: vcf_file
     type: File
-    doc: VCF file (raw)
+    doc: VCF file (raw), bgzip-compressed and tabix-indexed
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     inputBinding:
       position: 101
       prefix: --vcf_file
 outputs:
+  - id: genome_file
+    type: File
+    doc: Genome file (sequence_id, length) based on the FASTA file
+    outputBinding:
+      glob: $(inputs.outprefix).genomefile
+  - id: sample_file
+    type: File
+    doc: Sample file (sample_id) based on the readgroup IDs in the BAM files
+    outputBinding:
+      glob: $(inputs.outprefix).samples.csv
+  - id: coverage_summary
+    type: File
+    doc: Coverage threshold report for each BAM file
+    outputBinding:
+      glob: $(inputs.outprefix).coverage_summary.csv
+  - id: gimble_vcf
+    type: File
+    doc: Filtered VCF file that complies with gimble data requirements
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
+    outputBinding:
+      glob: $(inputs.outprefix).vcf.gz
+  - id: gimble_bed
+    type: File
+    doc: BED file of callable regions with the samples that are covered
+    outputBinding:
+      glob: $(inputs.outprefix).bed
+  - id: log_file
+    type: File
+    doc: Log of executed commands
+    outputBinding:
+      glob: $(inputs.outprefix).log.txt
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gimbleprep:0.0.2--pyhdfd78af_0

@@ -8,10 +8,11 @@ doc: "Set the is_somatic flag for variants in a gemini database.\n\nTool homepag
   https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be updated.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: chrom
     type:
       - 'null'
@@ -105,6 +106,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: db_out
+    type: File
+    doc: The updated database
+    outputBinding:
+      glob: $(inputs.db.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gemini:0.30.2--py27hacb5245_0

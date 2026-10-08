@@ -15,7 +15,8 @@ inputs:
     type:
       type: array
       items: File
-    doc: sequences in FASTA format
+    doc: sequences in FASTA format (with --sizes, files listing sizes; with 
+      --assembly, AGP files)
     inputBinding:
       position: 2
   - id: assembly
@@ -84,6 +85,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: archive
+    type:
+      - File
+      - Directory
+    doc: The new Genomedata archive (a directory, or a single file in file mode)
+    outputBinding:
+      glob: $(inputs.gdarchive)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomedata:1.7.4--py311h87bb1fd_0

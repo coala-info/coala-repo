@@ -7,7 +7,7 @@ label: gemini_mendel_errors
 doc: "Identify mendelian errors in a family structure.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1

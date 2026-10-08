@@ -1,5 +1,11 @@
 # genbank CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genbank_genbank.py | PASS |  |
+
 ## genbank_genbank.py
 
 ### Tool Description

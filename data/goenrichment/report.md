@@ -1,5 +1,11 @@
 # goenrichment CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| goenrichment | PASS | Fixed the command (goenrichment wrapper) and output flag names; with graph format TXT all results match the Galaxy expected MF result. PNG/SVG graphs crash in the image (no Java fonts). |
+
 ## goenrichment
 
 ### Tool Description

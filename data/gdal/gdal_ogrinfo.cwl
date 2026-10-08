@@ -1,13 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gdal_ogrinfo
+baseCommand: ogrinfo
 label: gdal_ogrinfo
-doc: "Prints detailed information about OGR data sources and layers.\n\nTool homepage:
-  https://github.com/OSGeo/gdal"
+doc: "Lists information about an OGR-supported data source.\n\nTool homepage: https://github.com/OSGeo/gdal"
 inputs:
   - id: datasource_name
-    type: string
-    doc: The data source name.
+    type: File
+    doc: "Input datasource (for a shapefile, the .shx, .dbf, .prj and .cpg files are staged beside it)."
+    secondaryFiles:
+      - pattern: ^.shx
+        required: false
+      - pattern: ^.dbf
+        required: false
+      - pattern: ^.prj
+        required: false
+      - pattern: ^.cpg
+        required: false
     inputBinding:
       position: 1
   - id: layers
@@ -15,37 +23,103 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Specific layers to query.
+    doc: "Names of the layers to report."
     inputBinding:
       position: 2
-  - id: all
+  - id: read_only
     type:
       - 'null'
       - boolean
-    doc: List all layers and their contents.
+    doc: "Open the data source in read-only mode."
     inputBinding:
       position: 103
-      prefix: -al
-  - id: dialect
+      prefix: -ro
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: "Quiet verbose reporting of various information, including coordinate system, layer schema, extents, and feature count."
+    inputBinding:
+      position: 103
+      prefix: -q
+  - id: where
     type:
       - 'null'
       - string
-    doc: SQL dialect to use.
+    doc: "Attribute query restricting the features reported (like an SQL WHERE clause)."
     inputBinding:
       position: 103
-      prefix: -dialect
+      prefix: -where
+  - id: spat
+    type:
+      - 'null'
+      - type: array
+        items: float
+    doc: "Spatial query extents: xmin ymin xmax ymax."
+    inputBinding:
+      position: 103
+      prefix: -spat
+  - id: geomfield
+    type:
+      - 'null'
+      - string
+    doc: "Name of the geometry field on which the spatial filter operates."
+    inputBinding:
+      position: 103
+      prefix: -geomfield
   - id: fid
     type:
       - 'null'
       - string
-    doc: Filter features by FID.
+    doc: "If provided, only the feature with this feature id will be reported."
     inputBinding:
       position: 103
+      prefix: -fid
+  - id: sql
+    type:
+      - 'null'
+      - string
+    doc: "Execute the indicated SQL statement and return the result."
+    inputBinding:
+      position: 103
+      prefix: -sql
+  - id: dialect
+    type:
+      - 'null'
+      - string
+    doc: "SQL dialect (OGRSQL, SQLITE, ...)."
+    inputBinding:
+      position: 103
+      prefix: -dialect
+  - id: all
+    type:
+      - 'null'
+      - boolean
+    doc: "List all features of all layers (not only the summary)."
+    inputBinding:
+      position: 103
+      prefix: -al
+  - id: recursive
+    type:
+      - 'null'
+      - boolean
+    doc: "Report the extent and feature count of each layer in a dataset with a layer-by-layer pass (-rl)."
+    inputBinding:
+      position: 103
+      prefix: -rl
+  - id: summary
+    type:
+      - 'null'
+      - boolean
+    doc: "Summary only: suppress listing of features, show only the summary information like projection, schema, feature count and extents."
+    inputBinding:
+      position: 103
+      prefix: -so
   - id: fields
     type:
       - 'null'
       - string
-    doc: Control whether to list fields (YES/NO).
+    doc: "If set to NO, the feature dump will not display field values. Default value is YES."
     inputBinding:
       position: 103
       prefix: -fields=
@@ -54,24 +128,34 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Control whether to list geometry (YES/NO/SUMMARY).
+    doc: "If set to NO, the feature dump will not display the geometry. If SUMMARY, only a summary of the geometry is printed. Default is YES."
     inputBinding:
       position: 103
       prefix: -geom=
       separate: false
-  - id: geomfield
+  - id: open_options
     type:
       - 'null'
-      - string
-    doc: Use the specified geometry field.
+      - type: array
+        items: string
+        inputBinding:
+          prefix: -oo
+    doc: "Open option for the datasource (NAME=VALUE). Repeat as needed."
     inputBinding:
       position: 103
-      prefix: -geomfield
+  - id: no_metadata
+    type:
+      - 'null'
+      - boolean
+    doc: "Suppress metadata printing."
+    inputBinding:
+      position: 103
+      prefix: -nomd
   - id: list_metadata
     type:
       - 'null'
       - boolean
-    doc: List all metadata domains.
+    doc: "List all metadata domains available."
     inputBinding:
       position: 103
       prefix: -listmdd
@@ -80,14 +164,16 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: List specific metadata domains or 'all'.
+        inputBinding:
+          prefix: -mdd
+    doc: "Report metadata for the specified domain; 'all' for all domains. Repeat as needed."
     inputBinding:
       position: 103
   - id: no_count
     type:
       - 'null'
       - boolean
-    doc: Do not count features.
+    doc: "Suppress feature count printing."
     inputBinding:
       position: 103
       prefix: -nocount
@@ -95,81 +181,10 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not calculate extent.
+    doc: "Suppress spatial extent printing."
     inputBinding:
       position: 103
       prefix: -noextent
-  - id: no_metadata
-    type:
-      - 'null'
-      - boolean
-    doc: Do not list metadata.
-    inputBinding:
-      position: 103
-      prefix: -nomd
-  - id: open_options
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Open option NAME=VALUE.
-    inputBinding:
-      position: 103
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Suppress progress messages.
-    inputBinding:
-      position: 103
-      prefix: -q
-  - id: read_only
-    type:
-      - 'null'
-      - boolean
-    doc: Open the data source in read-only mode.
-    inputBinding:
-      position: 103
-      prefix: -ro
-  - id: recursive
-    type:
-      - 'null'
-      - boolean
-    doc: Recursively list layers in subdirectories.
-    inputBinding:
-      position: 103
-      prefix: -rl
-  - id: spat
-    type:
-      - 'null'
-      - string
-    doc: Filter features by spatial extent (xmin ymin xmax ymax).
-    inputBinding:
-      position: 103
-      prefix: -spat
-  - id: sql
-    type:
-      - 'null'
-      - string
-    doc: Execute an SQL statement.
-    inputBinding:
-      position: 103
-  - id: summary
-    type:
-      - 'null'
-      - boolean
-    doc: Print a summary of layers.
-    inputBinding:
-      position: 103
-      prefix: -so
-  - id: where
-    type:
-      - 'null'
-      - string
-    doc: Filter features using a WHERE clause.
-    inputBinding:
-      position: 103
-      prefix: -where
 outputs:
   - id: stdout
     type: stdout

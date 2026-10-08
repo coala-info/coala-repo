@@ -23,7 +23,7 @@ inputs:
       prefix: --config_rename
   - id: fasta_file
     type: File
-    doc: Input FASTA file
+    doc: Input FASTA file (an index file is written next to it)
     inputBinding:
       position: 101
       prefix: --fasta
@@ -85,6 +85,10 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gff3toddbj:0.4.3--pyhdfd78af_0

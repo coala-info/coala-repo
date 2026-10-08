@@ -1,5 +1,15 @@
 # genometester CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genometester_glistcompare | PASS |  |
+| genometester_glistmaker | PASS |  |
+| genometester_glistquery | PASS |  |
+| genometester_gmer_caller | PASS | synthetic data: counts come from a real chrY reference region used as reads |
+| genometester_gmer_counter | PASS | synthetic data: a real chrY reference region stands in for sequencing reads |
+
 ## genometester_gmer_counter
 
 ### Tool Description
@@ -142,6 +152,32 @@ Arguments:
 Cannot read (null)
 ```
 
+
+## genometester_glistmaker
+
+### Tool Description
+Make a list of all unique k-mers and their frequencies from FASTA or FASTQ files.
+
+### Metadata
+- **Docker Image**: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1
+- **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
+- **Package**: https://anaconda.org/channels/bioconda/packages/genometester/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: glistmaker <INPUTFILES> [OPTIONS]
+Options:
+    -v, --version           - print version information and exit
+    -h, --help              - print this usage screen and exit
+    -w, --wordlength NUMBER - specify index wordsize (1-32) (default 16)
+    -c, --cutoff NUMBER     - specify frequency cut-off (default 1)
+    -o, --outputname STRING - specify output name (default "out")
+    --num_threads           - number of threads the program is run on (default MIN(8, num_input_files))
+    --max_tables            - maximum number of temporary tables (default MAX(num_threads, 2))
+    --table_size            - maximum size of the temporary table (default 500000000)
+    -D                      - increase debug level
+```
 
 ## Metadata
 - **Skill**: generated

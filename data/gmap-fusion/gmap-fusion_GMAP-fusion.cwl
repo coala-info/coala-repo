@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gmap-fusion_GMAP-fusion
+baseCommand: GMAP-fusion
 label: gmap-fusion_GMAP-fusion
 doc: "GMAP-Fusion is a tool for detecting gene fusions from RNA-Seq data.\n\nTool
   homepage: https://github.com/GMAP-fusion/GMAP-fusion"
@@ -84,9 +84,8 @@ inputs:
       position: 101
       prefix: --min_sumJS
   - id: output
-    type:
-      - 'null'
-      - string
+    type: string
+    default: GMAP_Fusion
     doc: output directory name
     inputBinding:
       position: 101
@@ -107,7 +106,7 @@ inputs:
       position: 101
       prefix: --split_breakpoint_extend_length
   - id: transcripts
-    type: string
+    type: File
     doc: transcript fasta file
     inputBinding:
       position: 101
@@ -117,13 +116,13 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: output directory name
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gmap-fusion:0.4.0--hdfd78af_3
-stdout: gmap-fusion_GMAP-fusion.out
+stdout: GMAP-fusion.out

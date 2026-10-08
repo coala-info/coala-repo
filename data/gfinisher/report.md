@@ -1,5 +1,11 @@
 # gfinisher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfinisher | Failed | image problem: BLAST+ (makeblastdb, blastn) is not in the image; the run stops with 'Invalid path of Blast' |
+
 ## gfinisher
 
 ### Tool Description

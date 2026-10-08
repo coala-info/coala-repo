@@ -8,12 +8,16 @@ doc: "Annotate a gemini database with information from a TABIX'ed BED file.\n\nT
   homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be updated.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: anno_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     doc: The TABIX'ed BED file containing the annotations
     inputBinding:
       position: 102
@@ -35,6 +39,7 @@ inputs:
       is VCF, then this defaults to the fields specified in `-c`.
     inputBinding:
       position: 102
+      itemSeparator: ','
       prefix: -e
   - id: col_names
     type:
@@ -45,6 +50,7 @@ inputs:
       the input file is a VCF, then this is the name of the info field to pull.
     inputBinding:
       position: 102
+      itemSeparator: ','
       prefix: -c
   - id: col_operations
     type:
@@ -56,6 +62,7 @@ inputs:
       {sum, mean, median, min, max, mode, list, uniq_list, first, last}
     inputBinding:
       position: 102
+      itemSeparator: ','
       prefix: -o
   - id: col_types
     type:
@@ -66,6 +73,7 @@ inputs:
       database? Any of {integer, float, text}
     inputBinding:
       position: 102
+      itemSeparator: ','
       prefix: -t
   - id: region_only
     type:
@@ -82,6 +90,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: db_out
+    type: File
+    doc: The updated database
+    outputBinding:
+      glob: $(inputs.db.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gemini:0.30.2--py27hacb5245_0

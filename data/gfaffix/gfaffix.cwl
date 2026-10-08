@@ -89,8 +89,12 @@ outputs:
     doc: Report identified affixes
     outputBinding:
       glob: $(inputs.output_affixes_path)
+  - id: stdout
+    type: stdout
+    doc: Refined graph (GFA1), written to standard output when output_refined_path is not given.
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gfaffix:0.2.1--hc1c3326_0
+stdout: gfaffix.out

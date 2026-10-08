@@ -7,7 +7,7 @@ label: gemini_qc
 doc: "Run quality control tests on a Gemini database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1

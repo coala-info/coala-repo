@@ -1,5 +1,16 @@
 # genmod CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genmod_annotate | PASS |  |
+| genmod_compound | Not completed | no run could be finished that finds compounds: genmod compound crashes with KeyError on the models and score output of the genmod example VCF (models reorders variants when run with several processes, and drops the header with one) |
+| genmod_filter | PASS |  |
+| genmod_models | Failed | tool bug: with --processes 1 the output VCF loses its header, and with several processes the variants are reordered; the inheritance annotations themselves are added. |
+| genmod_score | PASS |  |
+| genmod_sort | PASS |  |
+
 ## genmod_annotate
 
 ### Tool Description

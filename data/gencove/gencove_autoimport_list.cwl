@@ -4,124 +4,50 @@ baseCommand:
   - gencove
   - basespace
   - autoimports
-  - autoimport_list
+  - list
 label: gencove_autoimport_list
-doc: "List BaseSpace autoimports.\n\nTool homepage: https://docs.gencove.com"
+doc: "Lists periodic import of BaseSpace projects (their Biosamples) jobs.\n\nTool
+  homepage: https://docs.gencove.com"
 inputs:
-  - id: after
+  - id: host
     type:
       - 'null'
       - string
-    doc: Filter by date (YYYY-MM-DD). Only show autoimports created after this 
-      date.
+    doc: Optional Gencove API host, including http/s protocol. Can be passed as
+      GENCOVE_HOST environment variable.
     inputBinding:
-      position: 101
-      prefix: --after
-  - id: before
+      position: 1
+      prefix: --host
+  - id: email
     type:
       - 'null'
       - string
-    doc: Filter by date (YYYY-MM-DD). Only show autoimports created before this 
-      date.
+    doc: Gencove user email to be used in login. Can be passed as GENCOVE_EMAIL
+      environment variable.
     inputBinding:
-      position: 101
-      prefix: --before
-  - id: output_format
+      position: 2
+      prefix: --email
+  - id: password
     type:
       - 'null'
       - string
-    doc: 'Output format. Supported formats: json, tsv.'
+    doc: Gencove user password to be used in login. Can be passed as
+      GENCOVE_PASSWORD environment variable.
     inputBinding:
-      position: 101
-      prefix: --output-format
-  - id: page_size
-    type:
-      - 'null'
-      - int
-    doc: Number of items to return per page.
-    inputBinding:
-      position: 101
-      prefix: --page-size
-  - id: page_token
+      position: 3
+      prefix: --password
+  - id: api_key
     type:
       - 'null'
       - string
-    doc: Page token for pagination.
+    doc: Gencove api key. Can be passed as GENCOVE_API_KEY environment variable.
     inputBinding:
-      position: 101
-      prefix: --page-token
-  - id: project_id
-    type:
-      - 'null'
-      - string
-    doc: Filter by project ID.
-    inputBinding:
-      position: 101
-      prefix: --project-id
-  - id: project_name
-    type:
-      - 'null'
-      - string
-    doc: Filter by project name.
-    inputBinding:
-      position: 101
-      prefix: --project-name
-  - id: run_id
-    type:
-      - 'null'
-      - string
-    doc: Filter by run ID.
-    inputBinding:
-      position: 101
-      prefix: --run-id
-  - id: run_name
-    type:
-      - 'null'
-      - string
-    doc: Filter by run name.
-    inputBinding:
-      position: 101
-      prefix: --run-name
-  - id: sample_id
-    type:
-      - 'null'
-      - string
-    doc: Filter by sample ID.
-    inputBinding:
-      position: 101
-      prefix: --sample-id
-  - id: sample_name
-    type:
-      - 'null'
-      - string
-    doc: Filter by sample name.
-    inputBinding:
-      position: 101
-      prefix: --sample-name
-  - id: status
-    type:
-      - 'null'
-      - string
-    doc: 'Filter by status. Supported statuses: pending, imported, failed.'
-    inputBinding:
-      position: 101
-      prefix: --status
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 102
-      prefix: --output-file
+      position: 4
+      prefix: --api-key
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file path.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: List of BaseSpace autoimport jobs.
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gencove:4.2.0--pyhdfd78af_0

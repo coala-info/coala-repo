@@ -23,11 +23,16 @@ inputs:
       position: 101
       prefix: --custom_colors
   - id: db
-    type: string
-    doc: genview database created by genview-create-db
+    type: File
+    doc: genview database (genview_database.db) created by genview-makedb
     inputBinding:
       position: 101
       prefix: -db
+      valueFrom: $(runtime.outdir + "/" + self.basename)
+  - id: flanks_file
+    type: File
+    doc: all_flanks.csv_tmp from the genview-makedb output folder (the tool reads it
+      from the folder of the database)
   - id: force
     type:
       - 'null'
@@ -79,6 +84,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: analysis_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Result folder <gene>_<id>_analysis (alignment, tree, tables and interactive_visualisation.html)
+    outputBinding:
+      glob: $(inputs.gene.toLowerCase() + "_" + inputs.id + "_analysis")
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db)
+        writable: true
+      - entry: $(inputs.flanks_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genview:0.2--pyhdfd78af_0

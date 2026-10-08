@@ -1,5 +1,11 @@
 # gfviewer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfviewer | PASS |  |
+
 ## gfviewer
 
 ### Tool Description

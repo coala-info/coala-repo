@@ -1,5 +1,11 @@
 # gff3toembl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gff3toembl_gff3_to_embl | PASS | repo single_feature.gff gives the expected EMBL record (same lines, qualifier order differs) and the expected chromosome list; input now staged writable, chromosome_list is a string, output default added |
+
 ## gff3toembl_gff3_to_embl
 
 ### Tool Description

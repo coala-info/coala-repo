@@ -1,13 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gpp-gerpcol
+baseCommand: gerpcol
 label: gerp_gerpcol
-doc: "gpp-gerpcol options:\n\nTool homepage: http://mendel.stanford.edu/SidowLab/downloads/gerp/index.html"
+doc: "gerpcol options:\n\nTool homepage: http://mendel.stanford.edu/SidowLab/downloads/gerp/index.html"
 inputs:
   - id: alignment_filename
-    type:
-      - 'null'
-      - File
+    type: File
     doc: alignment filename
     inputBinding:
       position: 101
@@ -69,9 +67,7 @@ inputs:
       position: 101
       prefix: -r
   - id: tree_filename
-    type:
-      - 'null'
-      - File
+    type: File
     doc: evolutionary tree
     inputBinding:
       position: 101
@@ -100,7 +96,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.alignment_filename)
+        writable: true
 outputs:
+  - id: rates_file
+    type: File
+    doc: per-column neutral rate and RS score file (alignment file name plus the suffix)
+    outputBinding:
+      glob: $(inputs.alignment_filename.basename)$(inputs.output_files_suffix || '.rates')
   - id: stdout
     type: stdout
     doc: Standard output

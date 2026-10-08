@@ -603,7 +603,7 @@ inputs:
   - id: output_format
     type:
       - 'null'
-      - int
+      - string
     doc: 'Other format for output (also note the -A and -S options and other options
       listed under Output types): mask_introns, mask_utr_introns, psl (or 1) = PSL
       (BLAT) format, gff3_gene (or 2) = GFF3 gene format, gff3_match_cdna (or 3) =

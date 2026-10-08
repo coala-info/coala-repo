@@ -249,7 +249,7 @@ outputs:
   - id: out_format_dir
     type:
       - 'null'
-      - Directory
+      - File
     doc: Outputs selected sequences. If more than the extension is provided the 
       output is written to the specified file (e.g. out.fasta.gz). Multiple file
       outputs can be given at once.

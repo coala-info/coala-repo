@@ -7,7 +7,7 @@ label: genometreetk_pd
 doc: "Calculate phylogenetic diversity of specified taxa.\n\nTool homepage: http://pypi.python.org/pypi/genometreetk/"
 inputs:
   - id: tree
-    type: string
+    type: File
     doc: newick tree
     inputBinding:
       position: 1
@@ -19,7 +19,7 @@ inputs:
   - id: per_taxa_pg_file
     type:
       - 'null'
-      - File
+      - string
     doc: file to record phylogenetic gain of each ingroup taxa relative to the 
       outgroup
     inputBinding:
@@ -34,6 +34,13 @@ inputs:
       position: 103
       prefix: --silent
 outputs:
+  - id: out_per_taxa_pg_file
+    type:
+      - 'null'
+      - File
+    doc: phylogenetic gain of each ingroup taxon
+    outputBinding:
+      glob: $(inputs.per_taxa_pg_file)
   - id: stdout
     type: stdout
     doc: Standard output

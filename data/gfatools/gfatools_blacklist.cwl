@@ -11,7 +11,7 @@ inputs:
     type: File
     doc: Input GFA file
     inputBinding:
-      position: 1
+      position: 200
   - id: include_both_strands
     type:
       - 'null'

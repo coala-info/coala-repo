@@ -8,7 +8,11 @@ doc: "Query a graph with k-mers\n\nTool homepage: https://github.com/algbio/ggca
 inputs:
   - id: input_graph
     type: File
-    doc: The input graph
+    doc: The input graph (fasta written by ggcat build; for colored queries the .colors.dat
+      file must sit next to it)
+    secondaryFiles:
+      - pattern: ^.colors.dat
+        required: false
     inputBinding:
       position: 1
   - id: input_query
@@ -98,9 +102,9 @@ inputs:
       position: 103
       prefix: --minimizer-length
   - id: output_file_prefix
-    type:
-      - 'null'
-      - string
+    type: string
+    default: output
+    doc: Prefix of the output files
     inputBinding:
       position: 103
       prefix: --output-file-prefix
@@ -135,10 +139,22 @@ inputs:
       position: 103
       prefix: --threads-count
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: query_results
+    type:
+      type: array
+      items: File
+    doc: Query results (CSV, or JSON lines for colored queries)
+    outputBinding:
+      glob:
+        - $(inputs.output_file_prefix).csv
+        - $(inputs.output_file_prefix).jsonl
+  - id: stats_log
+    type:
+      - 'null'
+      - File
+    doc: Statistics log
+    outputBinding:
+      glob: $(inputs.output_file_prefix).stats.log
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggcat:2.0.0--ha96b9cd_0
-stdout: ggcat_query.out

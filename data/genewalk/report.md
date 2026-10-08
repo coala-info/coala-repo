@@ -1,5 +1,11 @@
 # genewalk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genewalk | PASS |  |
+
 ## genewalk
 
 ### Tool Description

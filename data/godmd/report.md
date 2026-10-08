@@ -1,5 +1,11 @@
 # godmd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| godmd_discrete | PASS | Fixed the command to the real program 'discrete' and made the output files and alignment tables correct; on the GOdMD example the RMSD to the target fell from 4.70 to 0.45 A. |
+
 ## godmd_discrete
 
 ### Tool Description

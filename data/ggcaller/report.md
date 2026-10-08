@@ -1,5 +1,11 @@
 # ggcaller CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ggcaller | PASS |  |
+
 ## ggcaller
 
 ### Tool Description

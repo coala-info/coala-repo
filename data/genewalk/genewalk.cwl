@@ -17,12 +17,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --alpha_fdr
+  - id: resource_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Resource files (go.obo, goa_human.gaf and others) placed in the
+      resources folder of the base folder; GeneWalk then skips downloading them.
   - id: base_folder
     type:
       - 'null'
       - string
     doc: 'The base folder used to store GeneWalk temporary and result files for a
       given project. Default: /root/genewalk'
+    default: genewalk_base
     inputBinding:
       position: 101
       prefix: --base_folder
@@ -144,6 +152,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_dir
+    type: Directory
+    doc: Project folder inside the base folder with the intermediate and final
+      results (genewalk_results.csv, figures).
+    outputBinding:
+      glob: $(inputs.base_folder)/$(inputs.project)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.resource_files ? inputs.resource_files.map(function(f) { return {entry: f, entryname: inputs.base_folder + '/resources/' + f.basename, writable: true}; }) : [])"
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genewalk:1.6.3--pyh7e72e81_0

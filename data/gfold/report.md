@@ -1,5 +1,12 @@
 # gfold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfold_count | PASS |  |
+| gfold_diff | PASS |  |
+
 ## gfold_count
 
 ### Tool Description

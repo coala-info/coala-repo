@@ -1,5 +1,16 @@
 # gdal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gdal_gdal_translate | PASS |  |
+| gdal_gdalbuildvrt | PASS |  |
+| gdal_gdalinfo | PASS |  |
+| gdal_gdalwarp | PASS |  |
+| gdal_ogr2ogr | PASS |  |
+| gdal_ogrinfo | PASS |  |
+
 ## gdal_gdalinfo
 
 ### Tool Description

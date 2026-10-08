@@ -1,5 +1,11 @@
 # gencore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gencore | Failed | tool bug: the BAM output is right (900 consensus pairs from 936 on yeast data), but the JSON and HTML report show after_processing counts of 0 and mismatch_rate -nan because the report is written before the last reads are flushed |
+
 ## gencore
 
 ### Tool Description

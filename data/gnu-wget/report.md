@@ -1,5 +1,11 @@
 # gnu-wget CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gnu-wget_wget | PASS |  |
+
 ## gnu-wget_wget
 
 ### Tool Description

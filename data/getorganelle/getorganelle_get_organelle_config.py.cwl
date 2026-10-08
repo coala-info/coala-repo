@@ -34,7 +34,7 @@ inputs:
   - id: config_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory where the default databases were placed. The default 
       value also can be changed by adding 'export GETORG_PATH=your_favor' to the
       shell script (e.g. ~/.bash_profile or ~/.bashrc)
@@ -106,7 +106,7 @@ inputs:
   - id: which_blast
     type:
       - 'null'
-      - File
+      - string
     doc: 'Assign the path to BLAST binary files if not added to the path. Default:
       try "/GetOrganelleDep/linux/ncbi-blast" first, then $PATH'
     inputBinding:
@@ -115,16 +115,27 @@ inputs:
   - id: which_bowtie2
     type:
       - 'null'
-      - File
+      - string
     doc: 'Assign the path to Bowtie2 binary files if not added to the path. Default:
       try "/GetOrganelleDep/linux/bowtie2" first, then $PATH'
     inputBinding:
       position: 101
       prefix: --which-bowtie2
 outputs:
+  - id: config_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: The database directory given by config_dir, with the added databases.
+    outputBinding:
+      glob: $(inputs.config_dir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0

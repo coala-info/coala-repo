@@ -1,11 +1,72 @@
 # geofetch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| geofetch | PASS | Real GEO series GSE67303 with --just-metadata; 4 samples found in the sample sheet and project config. |
+| geofetch_sraconvert | Failed | image problem: sra-tools (fasterq-dump, prefetch) is not in the image, so the conversion fails. |
+
 ## geofetch
 
 ### Tool Description
 Automatic GEO and SRA data downloader
 
+### geofetch_sraconvert
+
+### Tool Description
+Wrapper around sra-tools to convert or delete sra data in fastq or bam format.
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/geofetch:0.12.10--pyhdfd78af_0
+- **Homepage**: https://github.com/pepkit/geofetch
+- **Package**: https://anaconda.org/channels/bioconda/packages/geofetch/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: sraconvert [-h] [-m {convert,delete_sra,delete_bam,delete_fq}]
+                  [-f {fastq,bam}] [-b BAMFOLDER] [-q FQFOLDER] [-s SRAFOLDER]
+                  [--keep-sra] [-S SAMPLE_NAME [SAMPLE_NAME ...]] [-V]
+                  -r SRR [SRR ...] [-C CONFIG_FILE] [--silent] [--verbosity V]
+                  [--logdev] [-O PARENT_OUTPUT_FOLDER] [-R]
+
+The SRA data converter is a wrapper around sra-tools that provides convenience
+functions for converting or deleting sra data in various formats.
+
+options:
+  -h, --help            show this help message and exit
+  -m, --mode {convert,delete_sra,delete_bam,delete_fq}
+                        What do you want to do? Default: convert
+  -f, --format {fastq,bam}
+                        Convert to what format? Default: fastq
+  -b, --bamfolder BAMFOLDER
+                        Optional: Specify a location to store bam files
+                        [Default: $SRABAM:]
+  -q, --fqfolder FQFOLDER
+                        Optional: Specify a location to store fastq files
+                        [Default: $SRAFQ:]
+  -s, --srafolder SRAFOLDER
+                        Optional: Specify a location to store pipeline output
+                        [Default: $SRARAW:]
+  --keep-sra            On convert mode, keep original sra data?
+  -S, --sample-name SAMPLE_NAME [SAMPLE_NAME ...]
+                        Name for sample to run
+  -V, --version         show program's version number and exit
+  -r, --srr SRR [SRR ...]
+                        SRR files
+  -C, --config CONFIG_FILE
+                        Pipeline configuration file (YAML). Relative paths are
+                        with respect to the pipeline script.
+  --silent              Silence logging. Overrides verbosity.
+  --verbosity V         Set logging level (1-5 or logging module level name)
+  --logdev              Expand content of logging message format.
+  -O, --output-parent PARENT_OUTPUT_FOLDER
+                        Parent output directory of project
+  -R, --recover         Overwrite locks to recover from previous failed run
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/geofetch:0.12.10--pyhdfd78af_0
 - **Homepage**: https://github.com/pepkit/geofetch/
 - **Package**: https://anaconda.org/channels/bioconda/packages/geofetch/overview

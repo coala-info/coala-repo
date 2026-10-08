@@ -1,5 +1,11 @@
 # gff3sort CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gff3sort | PASS | nf-core genome.gff3: precise mode removes all children-before-parent cases and chr_order alphabet/natural/original work; extract_FASTA output identical to input FASTA (FASTA block appended by hand); invented --extract_child replaced |
+
 ## gff3sort
 
 ### Tool Description

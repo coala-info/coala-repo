@@ -1,5 +1,11 @@
 # genclust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genclust | PASS |  |
+
 ## genclust
 
 ### Tool Description

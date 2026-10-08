@@ -41,7 +41,7 @@ inputs:
   - id: bam_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Optional: Specify folder of bam files. Geofetch will not download sra files
       when corresponding bam files already exist.'
     inputBinding:
@@ -122,7 +122,7 @@ inputs:
   - id: fq_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Optional: Specify folder of fastq files. Geofetch will not download sra
       files when corresponding fastq files already exist.'
     inputBinding:
@@ -131,7 +131,7 @@ inputs:
   - id: geo_folder
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Optional: Specify a location to store processed GEO files. Ignored unless
       'processed' flag is set."
     inputBinding:
@@ -304,6 +304,30 @@ outputs:
       will be added as a subfolder
     outputBinding:
       glob: $(inputs.metadata_root)
+  - id: bam_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: folder with bam files
+    outputBinding:
+      glob: $(inputs.bam_folder)
+  - id: fq_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: folder with fastq files
+    outputBinding:
+      glob: $(inputs.fq_folder)
+  - id: geo_folder_dir
+    type:
+      - 'null'
+      - Directory
+    doc: folder with processed GEO data
+    outputBinding:
+      glob: $(inputs.geo_folder)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/geofetch:0.12.10--pyhdfd78af_0

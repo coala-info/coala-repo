@@ -1,5 +1,11 @@
 # get_mnv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| get_mnv | Failed | tool bug: v1.0.0 gives wrong amino acid changes for minus-strand genes (Rv0387c 467516 reported Pro162Arg, codon check gives Ser162Ser); CWL fixed to collect the .MNV.tsv |
+
 ## get_mnv
 
 ### Tool Description

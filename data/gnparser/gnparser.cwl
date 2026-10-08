@@ -5,7 +5,9 @@ label: gnparser
 doc: "Parses scientific names into their semantic elements.\n\nTool homepage: https://parser.globalnames.org/"
 inputs:
   - id: file_or_name
-    type: string
+    type:
+      - File
+      - string
     doc: A file containing names (one per line) or a single scientific name.
     inputBinding:
       position: 1

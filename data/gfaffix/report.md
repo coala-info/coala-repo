@@ -1,5 +1,11 @@
 # gfaffix CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfaffix | PASS | Galaxy tiny.gfa gives the expected collapsed affix (gcat), walks and transformation; 469-segment graph shrinks to 465 |
+
 ## gfaffix
 
 ### Tool Description

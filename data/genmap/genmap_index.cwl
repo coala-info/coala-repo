@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genmap_index
+baseCommand:
+  - genmap
+  - index
 label: genmap_index
 doc: "GenMap is a tool for fast and exact computation of genome mappability and can
   also be used for multiple genomes, e.g., to search for marker sequences.\n\nTool
@@ -52,7 +54,7 @@ inputs:
   - id: version_check
     type:
       - 'null'
-      - boolean
+      - string
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
     inputBinding:
@@ -65,10 +67,8 @@ inputs:
       prefix: --index
 outputs:
   - id: index
-    type:
-      - 'null'
-      - File
-    doc: Path to the index.
+    type: Directory
+    doc: Path to the index (a directory of index files).
     outputBinding:
       glob: $(inputs.index_path)
 requirements:

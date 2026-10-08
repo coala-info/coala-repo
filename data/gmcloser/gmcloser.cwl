@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: GMcloser
+baseCommand: gmcloser
 label: gmcloser
 doc: "GMcloser ver. 1.5\n\nTool homepage: https://sourceforge.net/projects/gmcloser/"
 inputs:
@@ -303,7 +303,14 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix_out
     outputBinding:
-      glob: $(inputs.prefix_out)*
+      glob: $(inputs.prefix_out)*.*
+  - id: bowtie_align_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the read alignments (SAM files) made by the run
+    outputBinding:
+      glob: $(inputs.prefix_out)-bowtie_align
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gmcloser:1.6.2--0

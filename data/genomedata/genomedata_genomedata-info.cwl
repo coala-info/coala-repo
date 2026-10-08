@@ -10,7 +10,9 @@ inputs:
     inputBinding:
       position: 1
   - id: gdarchive
-    type: File
+    type:
+      - File
+      - Directory
     doc: genomedata archive
     inputBinding:
       position: 2

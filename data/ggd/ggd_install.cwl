@@ -39,12 +39,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --file
     doc: A file with a list of ggd data packages to install. One package per 
       line. Can use more than one (e.g. ggd install --file <file_1> --file 
       <file_2> )
     inputBinding:
       position: 102
-      prefix: --file
   - id: meta_recipe_id
     type:
       - 'null'
@@ -71,6 +72,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggd:1.1.3--pyh3252c3a_0

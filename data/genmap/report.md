@@ -1,5 +1,12 @@
 # genmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genmap_index | PASS |  |
+| genmap_map | PASS |  |
+
 ## genmap_index
 
 ### Tool Description

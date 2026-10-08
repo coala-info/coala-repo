@@ -1,5 +1,11 @@
 # gfmix CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfmix | PASS |  |
+
 ## gfmix
 
 ### Tool Description

@@ -36,6 +36,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: supermatrix
     doc: Prefix for output supermatrix files
     inputBinding:
       position: 101
@@ -56,9 +57,10 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: Supermatrix files (FASTA, partition, occupancy) written with the prefix
+      given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_dir)/$(inputs.prefix)*
   - id: output_dir_dir
     type:
       - 'null'

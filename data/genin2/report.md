@@ -1,5 +1,11 @@
 # genin2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genin2 | PASS |  |
+
 ## genin2
 
 ### Tool Description

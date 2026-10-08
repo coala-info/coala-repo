@@ -11,19 +11,17 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --drug
     doc: The drug for which resistance should be predicted. If you want 
       predictions for several drugs, use the argument several times,i.e., -d AMK
       -d DCS -d STR. If the flag is not set, predictions for all drugs will be 
       performed.
     inputBinding:
       position: 101
-      prefix: --drug
   - id: fastq_dir
     type: Directory
     doc: Path to the directory were the FASTQ files are located.
-    inputBinding:
-      position: 101
-      prefix: --fastq-dir
   - id: preprocess
     type:
       - 'null'
@@ -58,8 +56,16 @@ outputs:
     doc: Path to the directory were the final output files shall be stored.
     outputBinding:
       glob: $(inputs.output_dir_path)
+arguments:
+  - position: 101
+    prefix: --fastq-dir
+    valueFrom: $(inputs.fastq_dir.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fastq_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/geno2phenotb:1.0.1--pyhdfd78af_1

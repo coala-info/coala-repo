@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genmap_map
+baseCommand:
+  - genmap
+  - map
 label: genmap_map
 doc: "Tool for computing the mappability/frequency on nucleotide sequences. It supports
   multi-fasta files with DNA or RNA alphabets (A, C, G, T/U, N). Frequency is the
@@ -65,7 +67,7 @@ inputs:
       position: 101
       prefix: --frequency-small
   - id: index_file
-    type: File
+    type: Directory
     doc: Path to the index
     inputBinding:
       position: 101
@@ -146,7 +148,7 @@ inputs:
   - id: version_check
     type:
       - 'null'
-      - boolean
+      - string
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
     inputBinding:
@@ -166,16 +168,19 @@ inputs:
     type: string
     inputBinding:
       position: 102
-      prefix: --index
+      prefix: --output
 outputs:
-  - id: output_file
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: Path to output directory (or path to filename if only a single fasta 
-      files has been indexed)
+      type: array
+      items: File
+    doc: Mappability files. With a single indexed fasta file, files named
+      <output>.<ext> are written (.txt, .wig, .bedgraph, .map, .csv); with
+      several fasta files, files are written inside the output directory.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob:
+        - $(inputs.output_file_path).*
+        - $(inputs.output_file_path)/*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

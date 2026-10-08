@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genoflu_genoflu.py
+baseCommand: genoflu.py
 label: genoflu_genoflu.py
 doc: "FASTA files with formated headers are used to build BLAST database. The input
   FASTA is BLASTed against the database. The top hit for each segment is used to determine
@@ -38,6 +38,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fasta
+      valueFrom: $(self.basename)
   - id: fasta_dir
     type:
       - 'null'
@@ -64,9 +65,28 @@ inputs:
       position: 101
       prefix: --sample_name
 outputs:
+  - id: stats_tsv
+    type:
+      - 'null'
+      - File
+    doc: Genotype call table (tab-separated).
+    outputBinding:
+      glob: '*_stats.tsv'
+  - id: stats_xlsx
+    type:
+      - 'null'
+      - File
+    doc: Genotype call table (Excel).
+    outputBinding:
+      glob: '*_stats.xlsx'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fasta)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genoflu:1.06--hdfd78af_0

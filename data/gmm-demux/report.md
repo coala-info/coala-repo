@@ -1,5 +1,11 @@
 # gmm-demux CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gmm-demux_GMM-demux | PASS | main droplet classification is correct; the -u/--summary option (and -r, -e that need it) crashes visibly with 'no viable solution' because the image's scipy comb() rejects a positional argument. |
+
 ## gmm-demux_GMM-demux
 
 ### Tool Description

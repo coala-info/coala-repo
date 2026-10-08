@@ -1,5 +1,31 @@
 # genometreetk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genometreetk_append | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_arb_records | Failed | tool bug: opens the metadata CSV in binary mode, which crashes on Python 3.8. |
+| genometreetk_bootstrap | Failed | tool bug: Python 2 code (dict_keys indexing) crashes replicate creation on Python 3.8. |
+| genometreetk_combine | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_derep_tree | Failed | tool bug: Python 2 code (generator .next()) crashes on Python 3.8 in the image. |
+| genometreetk_fill_ranks | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_jk_markers | Failed | tool bug: calls FastTree.run with a missing argument, so replicate trees are never made. |
+| genometreetk_jk_taxa | Failed | tool bug: the replicate step is commented out in the code, so no replicate trees exist and it crashes. |
+| genometreetk_lsu_tree | Failed | tool bug: without a genome list it keeps no genomes (representative flag compared with 't' after parsing to True) and the taxonomy filter crashes; only works with a genome list plus disable_tax_filter. |
+| genometreetk_midpoint | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_outgroup | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_pd | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_pd_clade | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_propagate | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_prune | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_pull | PASS | synthetic data: tiny decorated tree; the --no_validation option crashes (Python 2 code in the tool), the main mode works. |
+| genometreetk_rm_support | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+| genometreetk_rna_dump | PASS | synthetic data: planted GTDB-style genome folders (random sequences); output files and taxonomy checked. |
+| genometreetk_rna_tree | PASS | Real 16S and 23S alignments from 5 genomes with a hand-decorated tree; concatenated tree groups the species correctly. |
+| genometreetk_ssu_tree | Failed | tool bug: without a genome list it keeps no genomes (representative flag compared with 't' after parsing to True) and the taxonomy filter crashes; only works with a genome list plus disable_tax_filter. |
+| genometreetk_strip | PASS | synthetic data: tiny planted tree/taxonomy; output checked by hand. |
+
 ## genometreetk_ssu_tree
 
 ### Tool Description

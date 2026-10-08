@@ -33,8 +33,6 @@ inputs:
   - id: reference
     type: File
     doc: Reference sequence, in fasta format
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference

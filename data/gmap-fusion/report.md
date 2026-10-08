@@ -1,5 +1,11 @@
 # gmap-fusion CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gmap-fusion_GMAP-fusion | Not completed | needs a large human CTAT genome library (several GB) that is not available here |
+
 ## gmap-fusion_GMAP-fusion
 
 ### Tool Description

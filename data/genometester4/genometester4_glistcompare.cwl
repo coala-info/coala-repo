@@ -2,11 +2,11 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: glistcompare
 label: genometester4_glistcompare
-doc: "Compares lists of k-mers.\n\nTool homepage: https://github.com/bioinfo-ut/GenomeTester4"
+doc: "Compares lists of genomic elements.\n\nTool homepage: https://github.com/bioinfo-ut/GenomeTester4"
 inputs:
   - id: input_list1
     type: File
-    doc: First input list of k-mers
+    doc: First input list file
     inputBinding:
       position: 1
   - id: input_list2
@@ -14,15 +14,9 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Additional input lists of k-mers
+    doc: Additional input list files
     inputBinding:
       position: 2
-  - id: method
-    type: string
-    doc: Comparison method (union, intersection, difference, double_difference, 
-      diff_union)
-    inputBinding:
-      position: 3
   - id: count_only
     type:
       - 'null'
@@ -100,6 +94,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: out
     doc: specify output name (default "out")
     inputBinding:
       position: 104
@@ -120,16 +115,15 @@ inputs:
       - string
     doc: make subset with given method (rand, rand_unique)
     inputBinding:
-      position: 104
+      position: 105
       prefix: --subset
   - id: subset_size
     type:
       - 'null'
       - int
-    doc: make subset with given size
+    doc: make subset with given size (used together with subset_method)
     inputBinding:
-      position: 104
-      prefix: --subset
+      position: 106
   - id: union
     type:
       - 'null'
@@ -142,6 +136,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_lists
+    type:
+      type: array
+      items: File
+    doc: Resulting k-mer list files (named after output_name)
+    outputBinding:
+      glob: $(inputs.output_name)*.list
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genometester4:4.0--hec16e2b_4

@@ -1,5 +1,19 @@
 # genomad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genomad_aggregated-classification | PASS |  |
+| genomad_annotate | PASS |  |
+| genomad_download-database | Not completed | downloads the full geNomad database (over 1 GB); too large for this test, a small subset database was used for the other modules |
+| genomad_end-to-end | PASS |  |
+| genomad_find-proviruses | PASS |  |
+| genomad_marker-classification | PASS |  |
+| genomad_nn-classification | PASS |  |
+| genomad_score-calibration | PASS |  |
+| genomad_summary | PASS |  |
+
 ## genomad_download-database
 
 ### Tool Description
@@ -482,6 +496,235 @@ Usage: genomad marker-classification [OPTIONS] INPUT OUTPUT DATABASE
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+
+## genomad_nn-classification
+
+### Tool Description
+Classify the sequences in the INPUT file using the geNomad neural network.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genomad:1.11.2--pyhdfd78af_0
+- **Homepage**: https://portal.nersc.gov/genomad/
+- **Package**: https://anaconda.org/channels/bioconda/packages/genomad/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+ Usage: genomad nn-classification [OPTIONS] INPUT OUTPUT
+
+ Classify the sequences in the INPUT file (FASTA format) using the geNomad neural network and write the
+ results to the OUTPUT directory.
+
+╭─ Basic options ────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --cleanup                   Delete intermediate files after execution.                                    │
+│  --restart                   Overwrite existing intermediate files.                                        │
+│  --threads           -t      Number of threads to use. [default: 20] (INTEGER)                             │
+│  --verbose/--quiet   -v/-q   Display the execution log. [default: verbose]                                 │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Advanced options ─────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --single-window   Use only the first window (6,000 bases) of each sequence to perform the                 │
+│                    classification. This will make execution faster and reduce memory usage, but the        │
+│                    classification accuracy will decrease.                                                  │
+│  --batch-size      Number of data points per batch of prediction. Use a smaller value to reduce memory     │
+│                    comsumption at the cost of speed. [default: 128] (INTEGER)                              │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Other ────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --help      -h   Show this message and exit.                                                              │
+│  --version        Show the version and exit.                                                               │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  *   INPUT    [required] (PATH)                                                                            │
+│  *   OUTPUT   [required] (PATH)                                                                            │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+## genomad_aggregated-classification
+
+### Tool Description
+Aggregate the results of the marker-classification and nn-classification modules.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genomad:1.11.2--pyhdfd78af_0
+- **Homepage**: https://portal.nersc.gov/genomad/
+- **Package**: https://anaconda.org/channels/bioconda/packages/genomad/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+ Usage: genomad aggregated-classification [OPTIONS] INPUT OUTPUT
+
+ Aggregate the results of the marker-classification and nn-classification modules to classify the sequences
+ in the INPUT file (FASTA format) and write the results to the OUTPUT directory.
+
+╭─ Basic options ────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --restart                   Overwrite existing intermediate files.                                        │
+│  --verbose/--quiet   -v/-q   Display the execution log. [default: verbose]                                 │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Other ────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --help      -h   Show this message and exit.                                                              │
+│  --version        Show the version and exit.                                                               │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  *   INPUT    [required] (PATH)                                                                            │
+│  *   OUTPUT   [required] (PATH)                                                                            │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+## genomad_score-calibration
+
+### Tool Description
+Calibrate classification scores using the batch correction method.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genomad:1.11.2--pyhdfd78af_0
+- **Homepage**: https://portal.nersc.gov/genomad/
+- **Package**: https://anaconda.org/channels/bioconda/packages/genomad/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+ Usage: genomad score-calibration [OPTIONS] INPUT OUTPUT
+
+ Performs score calibration of the sequences in the INPUT file (FASTA format) using the batch correction
+ method and write the results to the OUTPUT directory. This module requires that at least one of the
+ classification modules was executed previously (marker-classification, nn-classification,
+ aggregated-classification).
+
+╭─ Basic options ────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --composition               Method for estimating sample composition. [default: auto]                     │
+│                              (auto|metagenome|virome)                                                      │
+│  --verbose/--quiet   -v/-q   Display the execution log. [default: verbose]                                 │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Advanced options ─────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --force-auto   Force automatic composition estimation regardless of the sample size.                      │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Other ────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --help      -h   Show this message and exit.                                                              │
+│  --version        Show the version and exit.                                                               │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  *   INPUT    [required] (PATH)                                                                            │
+│  *   OUTPUT   [required] (PATH)                                                                            │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+## genomad_summary
+
+### Tool Description
+Apply post-classification filters and write classification reports.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genomad:1.11.2--pyhdfd78af_0
+- **Homepage**: https://portal.nersc.gov/genomad/
+- **Package**: https://anaconda.org/channels/bioconda/packages/genomad/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+ Usage: genomad summary [OPTIONS] INPUT OUTPUT
+
+ Applies post-classification filters, generates classification reports for the sequences in the INPUT file
+ (FASTA format), and writes them to the OUTPUT directory. This module requires that at least one of the base
+ classification modules was executed previously (marker-classification, nn-classification).
+
+╭─ Filtering presets ────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --conservative/--relaxed   After classification, sequences are further filtered to remove possible false  │
+│                             positives. The --conservative preset makes those filters even more             │
+│                             aggressive, resulting in more restricted sets of plasmid and virus,            │
+│                             containing only sequences whose classification is strongly supported. The      │
+│                             --relaxed preset disables all post-classification filters.                     │
+│                             These presets cannot be used together with the following parameters:           │
+│                             --min-score, --max-fdr, --min-number-genes, --min-plasmid-marker-enrichment,   │
+│                             --min-virus-marker-enrichment, --min-plasmid-hallmarks,                        │
+│                             --min-plasmid-hallmarks-short-seqs, --min-virus-hallmarks,                     │
+│                             --min-virus-hallmarks-short-seqs, and --max-uscg.                              │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Filtering options ────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --min-score                          Minimum score to flag a sequence as virus or plasmid. [default:      │
+│                                       0.7] (FLOAT RANGE 0.0<=x<=1.0)                                       │
+│  --max-fdr                            Maximum accepted false discovery rate. This option will be ignored   │
+│                                       if the scores were not calibrated. [default: 0.1] (FLOAT RANGE       │
+│                                       0.0<=x<=1.0)                                                         │
+│  --min-number-genes                   The minimum number of genes a sequence must encode to be considered  │
+│                                       for classification as a plasmid or virus. [default: 1] (INTEGER      │
+│                                       RANGE x>=0)                                                          │
+│  --min-plasmid-marker-enrichment      Minimum allowed value for the plasmid marker enrichment score,       │
+│                                       which represents the total enrichment of plasmid markers in the      │
+│                                       sequence. Sequences with multiple plasmid markers will have higher   │
+│                                       values than the ones that encode few or no markers. This option      │
+│                                       will be ignored if the annotation module was not executed.           │
+│                                       [default: 0.1] (FLOAT)                                               │
+│  --min-virus-marker-enrichment        Minimum allowed value for the virus marker enrichment score, which   │
+│                                       represents the total enrichment of virus markers in the sequence.    │
+│                                       Sequences with multiple virus markers will have higher values than   │
+│                                       the ones that encode few or no markers. This option will be ignored  │
+│                                       if the annotation module was not executed. [default: 0.0] (FLOAT)    │
+│  --min-plasmid-hallmarks              Minimum number of plasmid hallmarks in the identified plasmids.      │
+│                                       This option will be ignored if the annotation module was not         │
+│                                       executed. [default: 0] (INTEGER RANGE x>=0)                          │
+│  --min-plasmid-hallmarks-short-seqs   Minimum number of plasmid hallmarks in plasmids shorter than 2,500   │
+│                                       bp. This option will be ignored if the annotation module was not     │
+│                                       executed. [default: 1] (INTEGER RANGE x>=0)                          │
+│  --min-virus-hallmarks                Minimum number of virus hallmarks in the identified viruses. This    │
+│                                       option will be ignored if the annotation module was not executed.    │
+│                                       [default: 0] (INTEGER RANGE x>=0)                                    │
+│  --min-virus-hallmarks-short-seqs     Minimum number of virus hallmarks in viruses shorter than 2,500 bp.  │
+│                                       This option will be ignored if the annotation module was not         │
+│                                       executed. [default: 1] (INTEGER RANGE x>=0)                          │
+│  --max-uscg                           Maximum allowed number of universal single copy genes (USCGs) in a   │
+│                                       virus or a plasmid. Sequences with more than this number of USCGs    │
+│                                       will not be classified as viruses or plasmids, regardless of their   │
+│                                       score. This option will be ignored if the annotation module was not  │
+│                                       executed. [default: 4] (INTEGER)                                     │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Basic options ────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --verbose/--quiet   -v/-q   Display the execution log. [default: verbose]                                 │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Other ────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  --help      -h   Show this message and exit.                                                              │
+│  --version        Show the version and exit.                                                               │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                            │
+│  *   INPUT    [required] (PATH)                                                                            │
+│  *   OUTPUT   [required] (PATH)                                                                            │
+│                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
 
 ## Metadata
 - **Skill**: generated

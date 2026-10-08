@@ -1,5 +1,11 @@
 # gene-fetch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gene-fetch | Not completed | needs a personal NCBI API key (a required option); NCBI rejects a dummy key with HTTP 400 |
+
 ## gene-fetch
 
 ### Tool Description

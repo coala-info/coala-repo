@@ -1,5 +1,11 @@
 # genesplicer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genesplicer | Failed | image problem: the training files in the image are mode 640 root-only, so genesplicer run as a normal user prints 'Could not open file config_file' and gives empty output |
+
 ## genesplicer
 
 ### Tool Description

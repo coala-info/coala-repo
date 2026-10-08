@@ -13,26 +13,16 @@ inputs:
       position: 101
       prefix: -config
   - id: contigs_scaffolds_input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: contigs/scaffolds input file
     inputBinding:
       position: 101
       prefix: -i
-  - id: create_config_template
-    type:
-      - 'null'
-      - boolean
-    doc: generate template config file
-    inputBinding:
-      position: 101
-      prefix: -config -create
   - id: dataset_files
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: dataset files names (one or more separated by comma)
     inputBinding:
       position: 101

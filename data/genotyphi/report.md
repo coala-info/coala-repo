@@ -1,11 +1,42 @@
 # genotyphi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genotyphi | PASS | synthetic data: planted VCF with 2 defining SNPs and a gyrA SNP; called 4.3.1 and gyrA-S83F. BAM mode not tested. |
+| genotyphi_parse_typhi_mykrobe | PASS | synthetic data: planted mykrobe JSON; species, lineage0 and gyrA_S83F call parsed correctly. |
+
 ## genotyphi
 
 ### Tool Description
 VCF to Typhi genotypes
 
+### genotyphi_parse_typhi_mykrobe
+
+### Tool Description
+Parse mykrobe predict JSON files (Typhi genotype, AMR and plasmid calls) into one table.
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/genotyphi:2.0--hdfd78af_0
+- **Homepage**: https://github.com/typhoidgenomics/genotyphi
+- **Package**: https://anaconda.org/channels/bioconda/packages/genotyphi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: parse_typhi_mykrobe.py [-h] --jsons JSONS [JSONS ...] --prefix PREFIX
+
+Parse mykrobe predict JSON files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --jsons JSONS [JSONS ...]
+                        JSON files output from mykrobe predict
+  --prefix PREFIX       prefix for output files
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/genotyphi:2.0--hdfd78af_0
 - **Homepage**: https://github.com/katholt/genotyphi
 - **Package**: https://anaconda.org/channels/bioconda/packages/genotyphi/overview

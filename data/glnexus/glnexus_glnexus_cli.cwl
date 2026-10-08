@@ -86,11 +86,19 @@ inputs:
     inputBinding:
       position: 102
       prefix: --trim-uncalled-alleles
+  - id: output_name
+    type: string
+    default: glnexus.bcf
+    doc: Name of the multi-sample BCF file that receives the standard output
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type: File
+    doc: Multi-sample BCF file with the joint calls
+    outputBinding:
+      glob: $(inputs.output_name)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/glnexus:1.4.1--h17e8430_5
-stdout: glnexus_glnexus_cli.out
+stdout: $(inputs.output_name)

@@ -1,5 +1,11 @@
 # genericrepeatfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genericrepeatfinder_grf-main | PASS |  |
+
 ## genericrepeatfinder_grf-main
 
 ### Tool Description

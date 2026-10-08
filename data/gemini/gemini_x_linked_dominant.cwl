@@ -8,7 +8,7 @@ doc: "Identify candidate variants for X-linked dominant inheritance.\n\nTool hom
   https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1
@@ -77,7 +77,7 @@ inputs:
     doc: name of X chrom (if not default 'chrX' or 'X')
     inputBinding:
       position: 102
-      prefix: X
+      prefix: -X
 outputs:
   - id: stdout
     type: stdout

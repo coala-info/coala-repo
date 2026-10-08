@@ -78,14 +78,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -miss
-  - id: num_threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads for parallel computing.
-    inputBinding:
-      position: 101
-      prefix: -thread
   - id: phenotype_column
     type:
       - 'null'
@@ -104,10 +96,27 @@ inputs:
       prefix: -p
   - id: output_prefix_path
     type: string
-    doc: Output or path parameter `output_prefix_path`
+    doc: Specify output file prefix (default "result").
     inputBinding:
       position: 102
-      prefix: --output-prefix
+      prefix: -o
+  - id: output_directory
+    type:
+      - 'null'
+      - string
+    doc: Specify output directory path (default "./output/").
+    default: output
+    inputBinding:
+      position: 103
+      prefix: -outdir
+  - id: covariates_file
+    type:
+      - 'null'
+      - File
+    doc: Specify input covariates file name (optional).
+    inputBinding:
+      position: 101
+      prefix: -c
 outputs:
   - id: output_prefix
     type:
@@ -116,7 +125,7 @@ outputs:
         items: File
     doc: Specify output file prefix.
     outputBinding:
-      glob: $(inputs.output_prefix_path)*
+      glob: $(inputs.output_directory)/$(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

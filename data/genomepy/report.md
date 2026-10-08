@@ -1,5 +1,14 @@
 # genomepy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genomepy_annotation | Not completed | needs a provider with annotation: Ensembl and UCSC could not be reached, and NCBI reports no annotation for small genomes, so the output stays empty |
+| genomepy_genomes | Not completed | listing needs the Ensembl, GENCODE or UCSC servers, which time out or refuse connections from this machine, and the NCBI list is too large |
+| genomepy_install | PASS |  |
+| genomepy_search | PASS |  |
+
 ## genomepy_annotation
 
 ### Tool Description
@@ -32,33 +41,6 @@ Options:
   -p, --provider TEXT  only search this provider
   -n, --lines INTEGER  number of lines to print
   -h, --help           Show this message and exit.
-```
-
-## genomepy_config
-
-### Tool Description
-Manage configuration
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genomepy:0.16.3--pyh7e72e81_0
-- **Homepage**: https://github.com/vanheeringen-lab/genomepy
-- **Package**: https://anaconda.org/channels/bioconda/packages/genomepy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: genomepy config [OPTIONS] COMMAND
-
-  Manage configuration
-
-  genomepy config file        return config filepath
-
-  genomepy config show        return config content
-
-  genomepy config generate    create new config file
-
-Options:
-  -h, --help  Show this message and exit.
 ```
 
 ## genomepy_genomes
@@ -145,33 +127,6 @@ Provider specific options:
                                   this is not in the same directory as the
                                   fasta file
   -h, --help                      Show this message and exit.
-```
-
-## genomepy_plugin
-
-### Tool Description
-Enable or disable plugins.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genomepy:0.16.3--pyh7e72e81_0
-- **Homepage**: https://github.com/vanheeringen-lab/genomepy
-- **Package**: https://anaconda.org/channels/bioconda/packages/genomepy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: genomepy plugin [OPTIONS] COMMAND [NAME]...
-
-  Enable or disable plugins.
-
-  genomepy plugin list                 show plugins and status
-
-  genomepy plugin enable  [NAME(S)]    enable plugins
-
-  genomepy plugin disable [NAME(S)]    disable plugins
-
-Options:
-  -h, --help  Show this message and exit.
 ```
 
 ## genomepy_search

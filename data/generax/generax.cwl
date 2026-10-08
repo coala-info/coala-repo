@@ -21,11 +21,19 @@ inputs:
       position: 101
       prefix: --dup-rate
   - id: families_information
-    type: string
-    doc: FAMILIES_INFORMATION
+    type: File
+    doc: Families information file (a [FAMILIES] list; files it names are
+      staged from family_files).
     inputBinding:
       position: 101
       prefix: --families
+  - id: family_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Alignments, starting gene trees and mapping files named in the families
+      file; staged in the working directory so the relative names resolve.
   - id: gene_search_strategy
     type:
       - 'null'
@@ -138,13 +146,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+  - id: output_prefix_dir
+    type: Directory
+    doc: Output directory named by output_prefix (results, gene trees, reconciliations).
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.family_files ? inputs.family_files : [])"
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/generax:2.1.3--hf316886_3

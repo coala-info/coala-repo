@@ -33,6 +33,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -p
+      valueFrom: $(self.path)/
   - id: debug_chars
     type:
       - 'null'
@@ -61,14 +62,14 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output format (ISO8859_1 TeX HTML XML UTF8 ASCII)
+    doc: output format (ISO8859_1 TeX HTML XML UTF8 ASCII); gocr misreads the arguments after -f, so it is placed last
     inputBinding:
-      position: 102
+      position: 110
       prefix: -f
   - id: progress_fifo
     type:
       - 'null'
-      - File
+      - string
     doc: progress output to fifo (see manual)
     inputBinding:
       position: 102
@@ -122,6 +123,9 @@ inputs:
       position: 104
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Recognized text (standard output, when -o is not given)
   - id: output_file
     type:
       - 'null'
@@ -141,3 +145,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gocr:0.52--h7b50bb2_0
+stdout: gocr.out

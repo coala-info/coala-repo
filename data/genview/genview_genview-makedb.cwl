@@ -163,6 +163,14 @@ outputs:
     doc: path to output directory
     outputBinding:
       glob: $(inputs.target_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.database)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genview:0.2--pyhdfd78af_0

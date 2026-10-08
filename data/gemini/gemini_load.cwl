@@ -142,6 +142,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: db_out
+    type:
+      - 'null'
+      - File
+    doc: The database that was created
+    outputBinding:
+      glob: $(inputs.db)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gemini:0.30.2--py27hacb5245_0

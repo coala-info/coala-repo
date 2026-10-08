@@ -22,7 +22,7 @@ inputs:
     inputBinding:
       position: 3
   - id: output_tree
-    type: File
+    type: string
     doc: output tree
     inputBinding:
       position: 4
@@ -43,6 +43,11 @@ inputs:
       position: 105
       prefix: --support_type
 outputs:
+  - id: out_output_tree
+    type: File
+    doc: output tree
+    outputBinding:
+      glob: $(inputs.output_tree)
   - id: stdout
     type: stdout
     doc: Standard output

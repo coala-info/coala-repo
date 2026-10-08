@@ -1,13 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: get_homologues_plot_pancore_matrix.pl
+baseCommand: plot_pancore_matrix.pl
 label: get_homologues_plot_pancore_matrix.pl
 doc: "Plot pancore matrix\n\nTool homepage: https://github.com/eead-csic-compbio/get_homologues"
 inputs:
   - id: animation_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'save snapshots for animations in dir (optional, example: -a animation)'
     inputBinding:
       position: 101
@@ -35,7 +35,27 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 outputs:
+  - id: animation_snapshots
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the snapshots for animations, when animation_dir is given.
+    outputBinding:
+      glob: $(inputs.animation_dir)
+  - id: plot_files
+    type:
+      type: array
+      items: File
+    doc: Plots (png, pdf, svg) and fit results written next to the input file.
+    outputBinding:
+      glob: $(inputs.input_file.basename)_*
   - id: stdout
     type: stdout
     doc: Standard output

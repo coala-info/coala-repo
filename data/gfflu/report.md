@@ -1,5 +1,11 @@
 # gfflu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfflu | PASS |  |
+
 ## gfflu
 
 ### Tool Description

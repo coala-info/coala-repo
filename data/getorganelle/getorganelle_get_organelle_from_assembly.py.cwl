@@ -101,6 +101,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --expected-max-size
+      itemSeparator: ','
   - id: expected_min_size
     type:
       - 'null'
@@ -112,6 +113,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --expected-min-size
+      itemSeparator: ','
   - id: genes
     type:
       - 'null'

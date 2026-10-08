@@ -147,8 +147,6 @@ inputs:
       prefix: --raw
   - id: reference_sequence
     type: File
-    secondaryFiles:
-      - .fai
     doc: fasta file which contains genome sequence(s).
     inputBinding:
       position: 101

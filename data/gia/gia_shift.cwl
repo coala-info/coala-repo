@@ -71,7 +71,7 @@ inputs:
       position: 101
       prefix: --percent
   - id: output_file_path
-    type: string?
+    type: string
     doc: ' Output BED file to write to (default=stdout)'
     inputBinding:
       position: 102

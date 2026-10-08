@@ -1,5 +1,11 @@
 # gndiff CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gndiff | PASS | Ran the tool's own issue-17 test files; best matches equal the expected ones in its Go test. |
+
 ## gndiff
 
 ### Tool Description

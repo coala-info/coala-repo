@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 5848; PASS: 4525; Failed: 755; Not completed: 568
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 6220; PASS: 4811; Failed: 796; Not completed: 613
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -5848,3 +5848,375 @@ xyalign	xyalign_chrom_stats	PASS	real NA12878 chr21/chr22 reads; mean depth and 
 xyalign	xyalign_prepare_reference	PASS	real chr21/chr22 reference; chr22 fully masked in the noY file and only the bed regions masked in the withY file
 xyalign	xyalign_remapping	PASS	real NA12878 chr21/chr22 reads; chr21 and chr22 used as stand-in sex chromosomes; remapped BAM is valid and has about the same read count
 xyalign	xyalign_strip_reads	PASS	real NA12878 chr21/chr22 reads; paired fastq read counts match the BAM within repair.sh losses
+ffmpeg	ffmpeg	PASS	
+file	file	PASS	
+fiona	fiona_fio_bounds	PASS	
+fiona	fiona_fio_calc	Failed	image problem: shapely cannot load libc (OSError), so fio calc crashes
+fiona	fiona_fio_cat	PASS	
+fiona	fiona_fio_collect	PASS	
+fiona	fiona_fio_distrib	PASS	
+fiona	fiona_fio_dump	PASS	
+fiona	fiona_fio_filter	Failed	image problem: shapely cannot load libc (OSError), so fio filter crashes
+fiona	fiona_fio_info	PASS	
+fiona	fiona_fio_load	PASS	
+fiona	fiona_fio_ls	PASS	
+fiona	fiona_fio_rm	PASS	
+gawk	gawk	PASS	
+gdal	gdal_gdal_translate	PASS	
+gdal	gdal_gdalbuildvrt	PASS	
+gdal	gdal_gdalinfo	PASS	
+gdal	gdal_gdalwarp	PASS	
+gdal	gdal_ogr2ogr	PASS	
+gdal	gdal_ogrinfo	PASS	
+gemini	gemini_actionable_mutations	PASS	
+gemini	gemini_amend	PASS	
+gemini	gemini_annotate	PASS	
+gemini	gemini_autosomal_dominant	PASS	
+gemini	gemini_autosomal_recessive	PASS	
+gemini	gemini_bcolz_index	PASS	
+gemini	gemini_browser	Not completed	long-running web server, skipped
+gemini	gemini_burden	PASS	
+gemini	gemini_comp_hets	PASS	
+gemini	gemini_db_info	PASS	
+gemini	gemini_de_novo	PASS	
+gemini	gemini_dump	Failed	image problem: --variants and --genotypes crash with a SQLAlchemy 1.3.5 TypeError in the image; only --samples and --tfam work
+gemini	gemini_fusions	Not completed	needs a database with structural-variant fusion calls; gemini load needs the large annotation download, so no such database could be built
+gemini	gemini_gene_wise	PASS	
+gemini	gemini_interactions	PASS	synthetic data: small planted edges file (real HPRD edges need the annotation download), real genotypes from the GEMINI test database
+gemini	gemini_load	Not completed	gemini load needs the GEMINI annotation download (gemini update --dataonly); the image has no config or annotation files and fails at start
+gemini	gemini_load_chunk	Not completed	gemini load needs the GEMINI annotation download (gemini update --dataonly); the image has no config or annotation files and fails at start
+gemini	gemini_lof_interactions	PASS	synthetic data: small planted edges file (real HPRD edges need the annotation download), real genotypes from the GEMINI test database
+gemini	gemini_lof_sieve	PASS	
+gemini	gemini_mendel_errors	PASS	
+gemini	gemini_merge_chunks	Not completed	gemini load needs the GEMINI annotation download (gemini update --dataonly); the image has no config or annotation files and fails at start
+gemini	gemini_pathways	Not completed	needs the GEMINI annotation data (ensembl pathway files) from gemini update --dataonly
+gemini	gemini_qc	Not completed	sex check needs chrX variants; no X-chromosome database could be built without the annotation download
+gemini	gemini_query	PASS	
+gemini	gemini_region	PASS	
+gemini	gemini_roh	PASS	
+gemini	gemini_set_somatic	Not completed	needs a tumor/normal database; the only database available has no somatic scores (0 variants set), so the result cannot be judged
+gemini	gemini_stats	PASS	
+gemini	gemini_update	Not completed	needs the large GEMINI annotation download
+gemini	gemini_windower	PASS	
+gemini	gemini_x_linked_de_novo	Not completed	no X-chromosome database with sample sex; one could not be built because gemini load needs the annotation download
+gemini	gemini_x_linked_dominant	Not completed	no X-chromosome database with sample sex; one could not be built because gemini load needs the annotation download
+gemini	gemini_x_linked_recessive	Not completed	no X-chromosome database with sample sex; one could not be built because gemini load needs the annotation download
+gemma	gemma	PASS	
+gempipe	gempipe_autopilot	Not completed	pipeline, skipped
+gempipe	gempipe_derive	PASS	
+gempipe	gempipe_recon	Not completed	needs large databases (eggNOG, BUSCO, BiGG) downloaded at run time; too heavy for this machine
+genbank	genbank_genbank.py	PASS	
+genclust	genclust	PASS	
+gencore	gencore	Failed	tool bug: the BAM output is right (900 consensus pairs from 936 on yeast data), but the JSON and HTML report show after_processing counts of 0 and mismatch_rate -nan because the report is written before the last reads are flushed
+gencove	gencove_autoimport_list	Not completed	needs a Gencove account and API key; the image also crashes at import (pydantic field_validator missing)
+gencove	gencove_basespace_autoimports_create	Not completed	needs a Gencove account and API key; the image also crashes at import (pydantic field_validator missing)
+gencube	gencube_annotation	PASS	search and metadata mode checked on real NCBI records; downloads not tested because NCBI FTP times out inside the Docker bridge network on this machine.
+gencube	gencube_crossgenome	PASS	search and metadata mode checked on real NCBI records; downloads not tested because NCBI FTP times out inside the Docker bridge network on this machine.
+gencube	gencube_geneset	Not completed	needs NCBI FTP, which times out inside the Docker bridge network on this machine (works with host network)
+gencube	gencube_genome	PASS	search and metadata mode checked on real NCBI records; downloads not tested because NCBI FTP times out inside the Docker bridge network on this machine.
+gencube	gencube_seqmeta	PASS	
+gencube	gencube_sequence	Not completed	needs NCBI FTP, which times out inside the Docker bridge network on this machine (works with host network)
+gene-fetch	gene-fetch	Not completed	needs a personal NCBI API key (a required option); NCBI rejects a dummy key with HTTP 400
+genefuse	genefuse	PASS	
+genepender	genepender	PASS	
+genepop	genepop	PASS	
+genera	genera_FASTSTEP3R	Not completed	internal genEra helper that needs the temporary DIAMOND split files of a genEra run
+genera	genera_genEra	Not completed	needs the NCBI taxonomy dump and a large DIAMOND protein database (nr) or AlphaFold database
+genera	genera_hmmEra	Not completed	needs the gene age table from a genEra run and the UniProt database for jackhmmer
+genera	genera_tree2ncbitax	PASS	
+generax	generax	Failed	image problem: generax crashes with a segmentation fault during gene tree optimization on two real datasets (the build is compiled without MPI)
+genericrepeatfinder	genericrepeatfinder_grf-main	PASS	
+genesplicer	genesplicer	Failed	image problem: the training files in the image are mode 640 root-only, so genesplicer run as a normal user prints 'Could not open file config_file' and gives empty output
+genewalk	genewalk	PASS	
+genform	genform	PASS	
+genin2	genin2	PASS	
+genion	genion	PASS	
+genmap	genmap_index	PASS	
+genmap	genmap_map	PASS	
+genmod	genmod_annotate	PASS	
+genmod	genmod_compound	Not completed	no run could be finished that finds compounds: genmod compound crashes with KeyError on the models and score output of the genmod example VCF (models reorders variants when run with several processes, and drops the header with one)
+genmod	genmod_filter	PASS	
+genmod	genmod_models	Failed	tool bug: with --processes 1 the output VCF loses its header, and with several processes the variants are reordered; the inheritance annotations themselves are added.
+genmod	genmod_score	PASS	
+genmod	genmod_sort	PASS	
+geno2phenotb	geno2phenotb_run	PASS	
+genodsp	genodsp	PASS	
+genoflu	genoflu_genoflu.py	PASS	
+genomad	genomad_aggregated-classification	PASS	
+genomad	genomad_annotate	PASS	
+genomad	genomad_download-database	Not completed	downloads the full geNomad database (over 1 GB); too large for this test, a small subset database was used for the other modules
+genomad	genomad_end-to-end	PASS	
+genomad	genomad_find-proviruses	PASS	
+genomad	genomad_marker-classification	PASS	
+genomad	genomad_nn-classification	PASS	
+genomad	genomad_score-calibration	PASS	
+genomad	genomad_summary	PASS	
+genome2tree	genome2tree_genome2tree.py	PASS	
+genomebaser	genomebaser_GenomeBaser	Failed	image problem: rsync, prokka, cd-hit and BLAST+ are missing from the image, so no genomes are downloaded and the database stays empty
+genomedata	genomedata_genomedata-close-data	PASS	
+genomedata	genomedata_genomedata-erase-data	Failed	tool bug: crashes with AttributeError 'Namespace' object has no attribute 'archive' before erasing anything
+genomedata	genomedata_genomedata-hardmask	PASS	
+genomedata	genomedata_genomedata-histogram	Failed	image problem: crashes with a numpy error (histogram() got an unexpected keyword argument 'new'); the image has a numpy version that is too new
+genomedata	genomedata_genomedata-info	PASS	
+genomedata	genomedata_genomedata-load	PASS	
+genomedata	genomedata_genomedata-load-data	PASS	
+genomedata	genomedata_genomedata-load-seq	PASS	
+genomedata	genomedata_genomedata-open-data	PASS	
+genomedata	genomedata_genomedata-query	PASS	
+genomedata	genomedata_genomedata-report	PASS	
+genomepy	genomepy_annotation	Not completed	needs a provider with annotation: Ensembl and UCSC could not be reached, and NCBI reports no annotation for small genomes, so the output stays empty
+genomepy	genomepy_genomes	Not completed	listing needs the Ensembl, GENCODE or UCSC servers, which time out or refuse connections from this machine, and the NCBI list is too large
+genomepy	genomepy_install	PASS	
+genomepy	genomepy_search	PASS	
+genomescope2	genomescope2	PASS	
+genometester	genometester_glistcompare	PASS	
+genometester	genometester_glistmaker	PASS	
+genometester	genometester_glistquery	PASS	
+genometester	genometester_gmer_caller	PASS	synthetic data: counts come from a real chrY reference region used as reads
+genometester	genometester_gmer_counter	PASS	synthetic data: a real chrY reference region stands in for sequencing reads
+genometester4	genometester4_glistcompare	PASS	
+genometester4	genometester4_glistmaker	PASS	
+genometester4	genometester4_glistquery	PASS	
+genometester4	genometester4_gmer_caller	PASS	synthetic data: counts come from a real chrY reference region used as reads
+genometester4	genometester4_gmer_counter	PASS	synthetic data: a real chrY reference region stands in for sequencing reads
+genomethreader	genomethreader_gth	PASS	
+genometreetk	genometreetk_append	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_arb_records	Failed	tool bug: opens the metadata CSV in binary mode, which crashes on Python 3.8.
+genometreetk	genometreetk_bootstrap	Failed	tool bug: Python 2 code (dict_keys indexing) crashes replicate creation on Python 3.8.
+genometreetk	genometreetk_combine	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_derep_tree	Failed	tool bug: Python 2 code (generator .next()) crashes on Python 3.8 in the image.
+genometreetk	genometreetk_fill_ranks	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_jk_markers	Failed	tool bug: calls FastTree.run with a missing argument, so replicate trees are never made.
+genometreetk	genometreetk_jk_taxa	Failed	tool bug: the replicate step is commented out in the code, so no replicate trees exist and it crashes.
+genometreetk	genometreetk_lsu_tree	Failed	tool bug: without a genome list it keeps no genomes (representative flag compared with 't' after parsing to True) and the taxonomy filter crashes; only works with a genome list plus disable_tax_filter.
+genometreetk	genometreetk_midpoint	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_outgroup	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_pd	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_pd_clade	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_propagate	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_prune	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_pull	PASS	synthetic data: tiny decorated tree; the --no_validation option crashes (Python 2 code in the tool), the main mode works.
+genometreetk	genometreetk_rm_support	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genometreetk	genometreetk_rna_dump	PASS	synthetic data: planted GTDB-style genome folders (random sequences); output files and taxonomy checked.
+genometreetk	genometreetk_rna_tree	PASS	Real 16S and 23S alignments from 5 genomes with a hand-decorated tree; concatenated tree groups the species correctly.
+genometreetk	genometreetk_ssu_tree	Failed	tool bug: without a genome list it keeps no genomes (representative flag compared with 't' after parsing to True) and the taxonomy filter crashes; only works with a genome list plus disable_tax_filter.
+genometreetk	genometreetk_strip	PASS	synthetic data: tiny planted tree/taxonomy; output checked by hand.
+genomics-data-index	genomics-data-index_gdi_analysis	Not completed	pipeline, skipped (runs a Snakemake pipeline with conda).
+genomics-data-index	genomics-data-index_gdi_build_alignment	PASS	Alignment of 3 samples plus the reference made from loaded variants.
+genomics-data-index	genomics-data-index_gdi_build_tree	PASS	IQ-TREE tree of 3 samples plus the reference made from loaded variants.
+genomics-data-index	genomics-data-index_gdi_db_size	Failed	image problem: the image has BusyBox du, which lacks --block-size, so the command crashes.
+genomics-data-index	genomics-data-index_gdi_export_tree	PASS	Exported the stored tree as Newick and as ASCII.
+genomics-data-index	genomics-data-index_gdi_init	PASS	Created an empty project folder.
+genomics-data-index	genomics-data-index_gdi_input	PASS	Table of 3 assemblies written.
+genomics-data-index	genomics-data-index_gdi_input-split-file	PASS	A 3-sequence FASTA was split into 3 files with a sample table.
+genomics-data-index	genomics-data-index_gdi_list_genomes	PASS	Listed the loaded reference genome.
+genomics-data-index	genomics-data-index_gdi_list_samples	PASS	Listed the 3 loaded samples.
+genomics-data-index	genomics-data-index_gdi_load_kmer	Failed	tool bug: after making the sketch it copies the file onto itself (SameFileError) and the sketch is not registered.
+genomics-data-index	genomics-data-index_gdi_load_mlst-chewbbaca	PASS	Real chewBBACA table from the tool repository; 2 new samples listed.
+genomics-data-index	genomics-data-index_gdi_load_mlst-sistr	PASS	Real SISTR table from the tool repository; 2 new samples listed.
+genomics-data-index	genomics-data-index_gdi_load_mlst-tseemann	PASS	Real mlst table from the tool repository; 4 new samples listed.
+genomics-data-index	genomics-data-index_gdi_load_snippy	PASS	Real snippy results from the tool repository; query found the expected mutation in 1 of 3 samples.
+genomics-data-index	genomics-data-index_gdi_load_vcf	PASS	Real VCFs from the tool repository; 3 samples loaded and listed.
+genomics-data-index	genomics-data-index_gdi_load_vcf-kmer	PASS	Real VCFs and sourmash sketches from the tool repository; 3 sketches stored.
+genomics-data-index	genomics-data-index_gdi_query	PASS	Query for one known mutation found it in 1 of 3 samples; feature summary also works.
+genomics-data-index	genomics-data-index_gdi_rebuild_tree	PASS	Tree rebuilt and stored; export tree then showed it.
+genotyphi	genotyphi	PASS	synthetic data: planted VCF with 2 defining SNPs and a gyrA SNP; called 4.3.1 and gyrA-S83F. BAM mode not tested.
+genotyphi	genotyphi_parse_typhi_mykrobe	PASS	synthetic data: planted mykrobe JSON; species, lineage0 and gyrA_S83F call parsed correctly.
+genotypy	genotypy	PASS	synthetic data: simulated reads over the KAN locus with a planted barcode; the tool reported strain mut0001 with that barcode.
+genrich	genrich_Genrich	PASS	Galaxy CTCF ChIP vs control test data; peak, bedgraph and BED outputs match the Galaxy expected files.
+genview	genview_genview-makedb	PASS	Real plasmids (pBR322, pUC19, pACYC184) searched for TEM-1 (bla); 2 hits stored in the database; downloads NCBI taxonomy (network needed).
+genview	genview_genview-visualize	PASS	Used the makedb output: 2 bla contexts extracted, aligned, tree and interactive HTML made.
+geodl	geodl_geoDL	Failed	image problem: wget in the image is BusyBox and rejects -nH, so no fastq is downloaded; the geo and ena modes also use outdated GEO/ENA web addresses.
+geofetch	geofetch	PASS	Real GEO series GSE67303 with --just-metadata; 4 samples found in the sample sheet and project config.
+geofetch	geofetch_sraconvert	Failed	image problem: sra-tools (fasterq-dump, prefetch) is not in the image, so the conversion fails.
+gerp	gerp_gerpcol	PASS	synthetic data: simulated alignment, command fixed from gpp-gerpcol to gerpcol
+gerp	gerp_gerpelem	PASS	synthetic data: planted conserved block 200-400 found; command fixed to gerpelem
+get_fasta_info	get_fasta_info	PASS	gaps.fna from the tool repo gives the gap fractions 0.47 and 0.37 shown in its README
+get_fasta_info	get_fasta_info_get_fastq_info	PASS	repo fastq.fastq: 4 reads of 150 bp with average quality 36
+get_homologues	get_homologues_compare_clusters.pl	PASS	repo plasmid BDBH and COG cluster dirs give 24 intersection clusters, venn files and pangenome matrix
+get_homologues	get_homologues_get_homologues-est.pl	Failed	image problem: busybox sort has no --buffer-size, so the BLAST result sort step fails
+get_homologues	get_homologues_get_homologues.pl	Failed	image problem: busybox sort has no --buffer-size, so the BLAST result sort step fails
+get_homologues	get_homologues_parse_pangenome_matrix.pl	PASS	core and soft-core lists equal the expected lists in the tool repo
+get_homologues	get_homologues_plot_pancore_matrix.pl	PASS	synthetic data: core-genome curves computed from the repo sample matrix; fits and plots written
+get_mnv	get_mnv	Failed	tool bug: v1.0.0 gives wrong amino acid changes for minus-strand genes (Rv0387c 467516 reported Pro162Arg, codon check gives Ser162Ser); CWL fixed to collect the .MNV.tsv
+get_orfs	get_orfs	PASS	repo seq.fasta: ORF translation of frame +1 checked by hand; genome JQ995537 gives ORFs of at least 100 aa
+getorganelle	getorganelle_fastg_to_gfa.py	PASS	SPAdes graph from the plastome run converted; segment counts match
+getorganelle	getorganelle_get_organelle_config.py	PASS	downloaded the embplant_pt databases (config_dir now a string, network access added)
+getorganelle	getorganelle_get_organelle_from_assembly.py	PASS	slimmed and disentangled the SPAdes graph into a 154478 bp plastome (expected sizes now comma-joined)
+getorganelle	getorganelle_get_organelle_from_reads.py	PASS	Galaxy Arabidopsis reads assembled a complete 154478 bp plastome (run with -s and --genes from one database type)
+getorganelle	getorganelle_gfa_to_fasta.py	PASS	SPAdes graph from the plastome run converted; segment counts match
+getorganelle	getorganelle_gfa_to_fastg.py	PASS	SPAdes graph from the plastome run converted; segment counts match
+getorganelle	getorganelle_plastome_arch_info.py	PASS	assembled plastome gives LSC 84170, SSC 17780, IR 26264
+getorganelle	getorganelle_reconstruct_graph_from_fasta.py	PASS	plastome fasta rebuilt into a GFA graph
+getorganelle	getorganelle_rm_low_coverage_duplicated_contigs.py	Failed	tool bug: script crashes with AttributeError treat_no_hits for any input
+getorganelle	getorganelle_slim_graph.py	PASS	SPAdes graph slimmed with the embplant_pt label fasta; hit contigs and csv written
+getorganelle	getorganelle_summary_get_organelle_output.py	PASS	summary csv of the plastome run has organelle type, length 154478 and coverage
+gfa1	gfa1_falcon2gfa	Not completed	no usable test data (needs a real FALCON, fermi or Supernova assembly graph)
+gfa1	gfa1_fastg2gfa	PASS	SPAdes FASTG with 3 contigs gives 3 GFA segments
+gfa1	gfa1_gfaview	PASS	nf-core B-3106.gfa (469 segments): unitig, bubble, tip, transitive, subgraph and delete options give plausible graphs; option order fixed, segment lists need a leading comma
+gfa1	gfa1_mag2gfa	Not completed	no usable test data (needs a real FALCON, fermi or Supernova assembly graph)
+gfa1	gfa1_supernova2gfa	Not completed	no usable test data (needs a real FALCON, fermi or Supernova assembly graph)
+gfaffix	gfaffix	PASS	Galaxy tiny.gfa gives the expected collapsed affix (gcat), walks and transformation; 469-segment graph shrinks to 465
+gfainject	gfainject	PASS	synthetic data: BAM and PAF reads cut from the nf-core pangenome path sequences map to the right nodes and offsets
+gfapy	gfapy_gfapy-convert	PASS	nf-core assembly.gfa converts to GFA2 with 6 S, 2 E and 5 O lines
+gfapy	gfapy_gfapy-mergelinear	PASS	nf-core B-3106.gfa goes from 469 to 465 segments; vlevel is now an integer
+gfapy	gfapy_gfapy-renumber	PASS	nf-core assembly.gfa segments renumbered 1 to 6 by size
+gfapy	gfapy_gfapy-validate	PASS	nf-core assembly.gfa is accepted with no message; a link to a missing segment is reported
+gfastats	gfastats	Failed	tool bug: --line-length repeats earlier sequences in every FASTA record; the other 117 of 118 repo validation tests match
+gfatools	gfatools_asm	PASS	repo test/MT.gfa (8 segments, 11 links): reduction, tip, bubble, overlap and unitig options change the graph; options now ordered and repeatable
+gfatools	gfatools_blacklist	PASS	repo test/MT.gfa (8 segments, 11 links): three regions reported
+gfatools	gfatools_bubble	PASS	repo test/MT.gfa (8 segments, 11 links): three bubble-like regions with sequences
+gfatools	gfatools_gfa2bed	PASS	repo test/MT.gfa (8 segments, 11 links): 8 BED intervals match the segment tags
+gfatools	gfatools_gfa2fa	PASS	repo test/MT.gfa (8 segments, 11 links): 8 FASTA records with 60 bp lines
+gfatools	gfatools_paf2gfa	PASS	overlaps of nf-core HiFi reads (minimap2 ava-pb) give 30 unitigs with sequences
+gfatools	gfatools_sql	PASS	repo test/MT.gfa (8 segments, 11 links): 8 CREATE TABLE and 59 INSERT statements
+gfatools	gfatools_stat	PASS	repo test/MT.gfa (8 segments, 11 links): counts and rank-0 length 16569 match the graph
+gfatools	gfatools_view	PASS	repo test/MT.gfa (8 segments, 11 links): subset by list file, names, radius, delete and region give expected counts; list file now passed as @file
+gff2aplot	gff2aplot	PASS	image example mhcregion gives a valid PostScript plot (title, 4 genes, alignment, percent box) after rewriting the invented flags from the help
+gff2aplot	gff2aplot_ali2gff	PASS	image example hs-mm.sim gives the same GFF records as the example hs-mm.sim.gff
+gff2aplot	gff2aplot_blat2gff	Not completed	no usable test data (needs a BLAT PSL file)
+gff2aplot	gff2aplot_sim2gff	PASS	image example hs-mm.sim gives 700 alignment records plus seqbounds, the same fragments as ali2gff
+gff3sort	gff3sort	PASS	nf-core genome.gff3: precise mode removes all children-before-parent cases and chr_order alphabet/natural/original work; extract_FASTA output identical to input FASTA (FASTA block appended by hand); invented --extract_child replaced
+gff3toddbj	gff3toddbj_compare-ddbj	PASS	repo augustus.ann and maker.ann give a mismatch statistics report
+gff3toddbj	gff3toddbj_genbank-to-ddbj	PASS	NCBI NC_045512.2 GenBank record converts to a DDBJ annotation with source and CDS entries
+gff3toddbj	gff3toddbj_gff3-to-ddbj	PASS	repo augustus golden test: output identical to the expected augustus.ann; FASTA now staged writable for its index
+gff3toddbj	gff3toddbj_list-products	Failed	tool bug: prints a generator object instead of the product list
+gff3toddbj	gff3toddbj_normalize-entry-names	PASS	synthetic data: one entry name in the repo augustus.ann changed to dbj\\\|AB1\\\|loc 4 is renamed to dbj:AB1:loc:4
+gff3toddbj	gff3toddbj_split-fasta	PASS	synthetic data: repo augustus GFF3 plus an appended FASTA block; split GFF3 equals the original and the FASTA is intact
+gff3toembl	gff3toembl_gff3_to_embl	PASS	repo single_feature.gff gives the expected EMBL record (same lines, qualifier order differs) and the expected chromosome list; input now staged writable, chromosome_list is a string, output default added
+gffcompare	gffcompare	PASS	Galaxy test sets give the expected counts (7 super-loci, 6 with reference, 21 for in4 vs in5, combined GTF sizes); CWL rewritten from the help (wrong -M/-R/-N meanings and invented --output-prefix removed)
+gfflu	gfflu	PASS	
+gffmunger	gffmunger_move_polypeptide_annot	PASS	
+gffread	gffread	PASS	
+gfftk	gfftk_compare	Failed	tool bug: AED value 1.169 above the documented 0-1 range for one gene pair
+gfftk	gfftk_consensus	PASS	synthetic data: the repeat file is a one-line planted BED (the tool crashes without one); gene predictions are real and the consensus models are correct.
+gfftk	gfftk_convert	PASS	
+gfftk	gfftk_rename	PASS	
+gfftk	gfftk_sanitize	PASS	
+gfftk	gfftk_sort	PASS	
+gfftk	gfftk_stats	PASS	
+gfinisher	gfinisher	Failed	image problem: BLAST+ (makeblastdb, blastn) is not in the image; the run stops with 'Invalid path of Blast'
+gfmix	gfmix	PASS	
+gfold	gfold_count	PASS	
+gfold	gfold_diff	PASS	
+gfviewer	gfviewer	PASS	
+ggcaller	ggcaller	PASS	
+ggcat	ggcat_build	PASS	
+ggcat	ggcat_dump-colors	PASS	
+ggcat	ggcat_matches	PASS	
+ggcat	ggcat_query	PASS	
+ggd	ggd_check-recipe	Not completed	needs conda-build with a writable conda root and package resolution from conda channels (gsort, htslib could not be resolved in the container)
+ggd	ggd_get-files	Not completed	needs an installed ggd data package, and ggd install does not work in the read-only container
+ggd	ggd_install	Failed	image problem: ggd install must write into the conda root (/usr/local) and its post-link script needs a writable conda install, which the read-only container does not allow
+ggd	ggd_list	Not completed	needs an installed ggd data package, and ggd install does not work in the read-only container
+ggd	ggd_make-meta-recipe	PASS	
+ggd	ggd_make-recipe	PASS	
+ggd	ggd_pkg-info	Not completed	needs an installed ggd data package, and ggd install does not work in the read-only container
+ggd	ggd_predict-path	PASS	
+ggd	ggd_search	PASS	
+ggd	ggd_show-env	Not completed	needs an installed ggd data package, and ggd install does not work in the read-only container
+ggd	ggd_uninstall	Not completed	needs an installed ggd data package, and ggd install does not work in the read-only container
+gget	gget_alphafold	Not completed	needs gget setup alphafold (extra packages and about 4 GB of model weights, GPU advised), not in the image
+gget	gget_archs4	PASS	
+gget	gget_bgee	PASS	
+gget	gget_blast	Not completed	NCBI BLAST service did not return a result within the 8 minute limit even for a 21-residue peptide
+gget	gget_blat	Not completed	UCSC blocks automated queries with a bot check (CAPTCHA), so no result is returned
+gget	gget_cbio_plot	Failed	image problem: bravado package missing in the image; the data download fails with error 'actions' and no figure is made
+gget	gget_cbio_search	Failed	image problem: bravado package missing in the image, so the search returns an empty list
+gget	gget_cellxgene	Failed	image problem: cellxgene-census dependencies are missing in the image (gget setup cellxgene was not run)
+gget	gget_cosmic	Not completed	COSMIC now requires an account and licence; the query page returns no data and gget crashes with IndexError
+gget	gget_diamond	Failed	image problem: the DIAMOND binary bundled in the image crashes with a segmentation fault (also as root)
+gget	gget_elm	Failed	image problem: ELM database files are not in the image (gget setup elm was not run) and the bundled DIAMOND binary crashes
+gget	gget_enrichr	PASS	
+gget	gget_info	PASS	
+gget	gget_muscle	Failed	image problem: gget muscle runs chmod on its own muscle binary, which fails for the non-root user in the read-only image, so no alignment is written
+gget	gget_mutate	PASS	synthetic data: mutations written by hand on a real gene fragment; both changes appear in the output
+gget	gget_opentargets	PASS	default diseases mode works; drugs, pharmacogenetics and expression crash with HTTP 400 from the Open Targets API
+gget	gget_pdb	PASS	
+gget	gget_ref	PASS	
+gget	gget_search	Failed	image problem: gget search cannot connect to the Ensembl MySQL server because the mysql_native_password plugin is missing in the image
+gget	gget_seq	PASS	
+gia	gia_bam_convert	PASS	bed conversion works; the fastq option fails visibly because the tool does not implement it
+gia	gia_bam_coverage	PASS	
+gia	gia_bam_filter	PASS	
+gia	gia_bcf_filter	PASS	
+gia	gia_closest	PASS	
+gia	gia_cluster	PASS	
+gia	gia_complement	PASS	
+gia	gia_coverage	PASS	
+gia	gia_extend	PASS	
+gia	gia_flank	PASS	
+gia	gia_get-fasta	PASS	
+gia	gia_intersect	PASS	
+gia	gia_join	PASS	
+gia	gia_merge	PASS	
+gia	gia_random	PASS	
+gia	gia_sample	PASS	
+gia	gia_segment	PASS	
+gia	gia_shift	PASS	
+gia	gia_sort	PASS	
+gia	gia_spacing	PASS	
+gia	gia_subtract	PASS	
+gia	gia_unionbedg	PASS	
+gia	gia_window	PASS	
+gifrop	gifrop	PASS	
+gimbleprep	gimbleprep	PASS	
+gimmemotifs-minimal	gimmemotifs-minimal_background	PASS	
+gimmemotifs-minimal	gimmemotifs-minimal_cluster	PASS	
+gimmemotifs-minimal	gimmemotifs-minimal_diff	Failed	tool bug: gimme diff is wired to the logo command in cli.py, so it always crashes
+gimmemotifs-minimal	gimmemotifs-minimal_location	PASS	works when the size option is given; without it the tool crashes (zip object is not subscriptable)
+gimmemotifs-minimal	gimmemotifs-minimal_logo	PASS	
+gimmemotifs-minimal	gimmemotifs-minimal_maelstrom	PASS	
+gimmemotifs-minimal	gimmemotifs-minimal_match	PASS	
+gimmemotifs-minimal	gimmemotifs-minimal_motif2factors	Not completed	needs genome and annotation downloads for several assemblies; too heavy
+gimmemotifs-minimal	gimmemotifs-minimal_motifs	PASS	
+gimmemotifs-minimal	gimmemotifs-minimal_prediction	PASS	works for MDmodule and found the AP-1 motif; the params file option crashes (PyYAML load needs a Loader)
+gimmemotifs-minimal	gimmemotifs-minimal_scan	PASS	
+gimmemotifs-minimal	gimmemotifs-minimal_threshold	PASS	
+glam2	glam2	PASS	
+glam2	glam2_glam2-purge	PASS	
+glam2	glam2_glam2format	PASS	
+glam2	glam2_glam2mask	PASS	
+glam2	glam2_glam2scan	PASS	
+glimmerhmm	glimmerhmm	PASS	
+glimmerhmm	glimmerhmm_trainGlimmerHMM	PASS	
+glimpse-bio	glimpse-bio_GLIMPSE2_chunk	PASS	
+glimpse-bio	glimpse-bio_GLIMPSE2_concordance	PASS	
+glimpse-bio	glimpse-bio_GLIMPSE2_ligate	PASS	
+glimpse-bio	glimpse-bio_GLIMPSE2_phase	PASS	
+glimpse-bio	glimpse-bio_GLIMPSE2_split_reference	PASS	
+glnexus	glnexus_glnexus_cli	PASS	
+gmap	gmap	PASS	
+gmap	gmap_gmap_build	PASS	
+gmap	gmap_gsnap	PASS	
+gmap-fusion	gmap-fusion_GMAP-fusion	Not completed	needs a large human CTAT genome library (several GB) that is not available here
+gmcloser	gmcloser	PASS	synthetic data: planted 50 bp gap in SARS-CoV-2 scaffold; real reads; gap closed to the exact reference.
+gmcloser	gmcloser_gmvalue_contig	PASS	synthetic data: planted chimeric contig; it was flagged and good contigs kept.
+gmcloser	gmcloser_gmvalue_scaf	PASS	synthetic data: planted inverted join was reported as a mislink.
+gmcloser	gmcloser_gmvalue_subcon	PASS	synthetic data: planted scaffolds; subcontigs checked against the reference. Option -e used because the wrapper rejects --error_correct.
+gmgc-mapper	gmgc-mapper	PASS	Needs internet (online GMGC web service); added NetworkAccess. Ran on E. coli genome part and gene files.
+gmm-demux	gmm-demux_GMM-demux	PASS	main droplet classification is correct; the -u/--summary option (and -r, -e that need it) crashes visibly with 'no viable solution' because the image's scipy comb() rejects a positional argument.
+gmove	gmove	PASS	Real STX16 gene region from nf-core minigenome with annotated exons as RNA evidence; the model has the known 9 exons and a 978 nt CDS. Removed the .fai requirement the tool does not use.
+gmsc-mapper	gmsc-mapper	PASS	Ran with a local diamond database built from the SARS-CoV-2 proteome (annotation steps disabled); 7 of 9 query proteins aligned.
+gmsc-mapper	gmsc-mapper_createdb	PASS	Built a diamond database from the SARS-CoV-2 proteome; the mapper used it.
+gmsc-mapper	gmsc-mapper_downloaddb	Not completed	Needs a download of many GB (about 11 GB FASTA plus index files).
+gmwi2	gmwi2	Not completed	Needs large database downloads on first run (MetaPhlAn marker database and human GRCh38 index) into the image folder.
+gnali	gnali	Failed	image problem: the default gnomAD mode writes the tabix index into the install folder (site-packages/gnali/data), which is not writable; PermissionError even with network access added.
+gndiff	gndiff	PASS	Ran the tool's own issue-17 test files; best matches equal the expected ones in its Go test.
+gnparser	gnparser	PASS	Parsed a names file and a single name; canonical forms and authorship are correct. Made the input accept a File.
+gnu-wget	gnu-wget_wget	PASS	
+gnuvid	gnuvid_GNUVID_Predict.py	Failed	image problem: the compressed database (254 MB, GNUVID_08312021_comp_db.joblib) is missing from the image and the tool tries to download it into its install folder, which is not writable.
+go-figure	go-figure_gofigure.py	PASS	Ran the tool's own example input; clusters (cell cycle, chromosome segregation) and a PNG plot were written.
+goblin	goblin	Failed	image problem: the bundled ncbi-genome-download 0.3.1 crashes (KeyError 'assembly_accession') on the current NCBI assembly summary, for taxid, genus and accession-file queries; added NetworkAccess and File input.
+gocr	gocr	PASS	synthetic data: text rendered with ImageMagick; output matches except one 0 read as O
+godmd	godmd_discrete	PASS	Fixed the command to the real program 'discrete' and made the output files and alignment tables correct; on the GOdMD example the RMSD to the target fell from 4.70 to 0.45 A.
+goenrichment	goenrichment	PASS	Fixed the command (goenrichment wrapper) and output flag names; with graph format TXT all results match the Galaxy expected MF result. PNG/SVG graphs crash in the image (no Java fonts).
+gofasta	gofasta_closest	PASS	Real SARS-CoV-2 genomes aligned to MN908947.3; distances agree with the SNP lists.
+gofasta	gofasta_sam_indels	PASS	Real SARS-CoV-2 SAM; the 5 and 10 base deletions in the CIGARs were reported at the right positions. The subcommand is deprecated upstream.
+gofasta	gofasta_sam_toMultiAlign	PASS	Real SARS-CoV-2 SAM; five sequences of 29903 bases written.
+gofasta	gofasta_sam_toPairAlign	PASS	Real SARS-CoV-2 SAM; one pairwise alignment file per sequence (5 files).
+gofasta	gofasta_sam_variants	PASS	Real SARS-CoV-2 SAM with the tool's GFF; same variants as the alignment-based variants command.
+gofasta	gofasta_snps	PASS	Real SARS-CoV-2 alignment; SNP lists include known sites (C241T, C3037T); removed an unneeded .fai requirement.
+gofasta	gofasta_updown_list	PASS	Real SARS-CoV-2 alignment; per-sequence SNP and ambiguity lists written.
+gofasta	gofasta_updown_topranking	PASS	Real SARS-CoV-2 alignment; same/up/side neighbours and distances are consistent with the SNP lists.
+gofasta	gofasta_variants	PASS	Real SARS-CoV-2 alignment with the tool's GFF; amino acid changes such as rdrp:P323L and S:D614G found; same as sam variants.

@@ -17,12 +17,6 @@ inputs:
     doc: Additional input list files
     inputBinding:
       position: 2
-  - id: method
-    type: string
-    doc: Comparison method (union, intersection, difference, double_difference, 
-      diff_union)
-    inputBinding:
-      position: 3
   - id: count_only
     type:
       - 'null'
@@ -34,7 +28,7 @@ inputs:
   - id: cutoff
     type:
       - 'null'
-      - string
+      - int
     doc: specify frequency cut-off (default 1)
     inputBinding:
       position: 104
@@ -100,6 +94,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: out
     doc: specify output name (default "out")
     inputBinding:
       position: 104
@@ -120,16 +115,15 @@ inputs:
       - string
     doc: make subset with given method (rand, rand_unique)
     inputBinding:
-      position: 104
+      position: 105
       prefix: --subset
   - id: subset_size
     type:
       - 'null'
       - int
-    doc: make subset with given size
+    doc: make subset with given size (used together with subset_method)
     inputBinding:
-      position: 104
-      prefix: --subset
+      position: 106
   - id: union
     type:
       - 'null'
@@ -142,6 +136,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_lists
+    type:
+      type: array
+      items: File
+    doc: Resulting k-mer list files (named after output_name)
+    outputBinding:
+      glob: $(inputs.output_name)*.list
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1

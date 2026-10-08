@@ -1,5 +1,11 @@
 # gnali CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gnali | Failed | image problem: the default gnomAD mode writes the tabix index into the install folder (site-packages/gnali/data), which is not writable; PermissionError even with network access added. |
+
 ## gnali
 
 ### Tool Description

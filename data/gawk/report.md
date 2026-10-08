@@ -1,5 +1,11 @@
 # gawk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gawk | PASS |  |
+
 ## gawk
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # genomethreader CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genomethreader_gth | PASS |  |
+
 ## genomethreader_gth
 
 ### Tool Description

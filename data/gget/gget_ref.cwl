@@ -55,7 +55,7 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the directory the FTPs will be saved in, e.g. 
       path/to/directory.
     inputBinding:
@@ -107,6 +107,7 @@ inputs:
       prefix: --which
   - id: out_path
     type: string
+    default: results.json
     doc: Path to the file the results will be saved in, e.g. 
       path/to/directory/results.json.
     inputBinding:
@@ -121,8 +122,17 @@ outputs:
       path/to/directory/results.json.
     outputBinding:
       glob: $(inputs.out_path)
+  - id: download_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory the FTPs were downloaded to (when download and out_dir are set)
+    outputBinding:
+      glob: $(inputs.out_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gget:0.29.0--pyhdfd78af_0

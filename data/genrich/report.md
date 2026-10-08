@@ -1,5 +1,11 @@
 # genrich CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genrich_Genrich | PASS | Galaxy CTCF ChIP vs control test data; peak, bedgraph and BED outputs match the Galaxy expected files. |
+
 ## genrich_Genrich
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # genefuse CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genefuse | PASS |  |
+
 ## genefuse
 
 ### Tool Description

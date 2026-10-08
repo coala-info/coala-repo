@@ -36,7 +36,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - boolean
+      - string
     doc: write logs to file
     inputBinding:
       position: 101
@@ -108,10 +108,9 @@ inputs:
       position: 101
       prefix: --repeat-overlap
   - id: repeats
-    type:
-      - 'null'
-      - File
-    doc: repeat alignments in BED or GFF3 format
+    type: File
+    doc: repeat alignments in BED or GFF3 format (required in practice; gfftk 26.2.12
+      crashes with a None path error when no repeat file is given)
     inputBinding:
       position: 101
       prefix: --repeats
@@ -153,6 +152,13 @@ outputs:
     doc: output in GFF3 format
     outputBinding:
       glob: $(inputs.out_path)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: write logs to file
+    outputBinding:
+      glob: $(inputs.logfile)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

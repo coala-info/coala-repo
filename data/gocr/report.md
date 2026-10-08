@@ -1,5 +1,11 @@
 # gocr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gocr | PASS | synthetic data: text rendered with ImageMagick; output matches except one 0 read as O |
+
 ## gocr
 
 ### Tool Description

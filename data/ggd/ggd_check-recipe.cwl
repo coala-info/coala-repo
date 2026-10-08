@@ -8,7 +8,7 @@ doc: "Convert a ggd recipe created from `ggd make-recipe` into a data package. T
   both ggd data recipe and data package\n\nTool homepage: https://github.com/gogetdata/ggd-cli"
 inputs:
   - id: recipe_path
-    type: File
+    type: Directory
     doc: path to recipe directory (can also be path to the .bz2)
     inputBinding:
       position: 1
@@ -44,6 +44,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.recipe_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggd:1.1.3--pyh3252c3a_0

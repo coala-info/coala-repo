@@ -13,7 +13,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Increase debug level.
+    doc: increase debug level
     inputBinding:
       position: 102
       prefix: -D
@@ -21,7 +21,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Print distribution up to MAX.
+    doc: print distribution up to MAX
     inputBinding:
       position: 102
       prefix: -distribution
@@ -29,7 +29,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: List file made by glistmaker.
+    doc: list file made by glistmaker
     inputBinding:
       position: 102
       prefix: --listfile
@@ -37,7 +37,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum frequency of the printed words.
+    doc: maximum frequency of the printed words
     inputBinding:
       position: 102
       prefix: --maxfreq
@@ -45,7 +45,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum frequency of the printed words.
+    doc: minimum frequency of the printed words
     inputBinding:
       position: 102
       prefix: --minfreq
@@ -53,7 +53,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Specify number of mismatches.
+    doc: specify number of mismatches
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -61,7 +61,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Specify number of 3' perfect matches.
+    doc: specify number of 3' perfect matches
     inputBinding:
       position: 102
       prefix: --perfectmatch
@@ -69,23 +69,23 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: In case of mismatches prints all found words.
+    doc: in case of mismatches prints all found words
     inputBinding:
       position: 102
       prefix: -all
-  - id: print_gc_content
+  - id: print_gc
     type:
       - 'null'
       - boolean
-    doc: Print average GC content of all words.
+    doc: print average GC content of all words
     inputBinding:
       position: 102
       prefix: -gc
-  - id: print_median_stats
+  - id: print_median
     type:
       - 'null'
       - boolean
-    doc: Print min/max/median/average and exit.
+    doc: print min/max/median/average and exit
     inputBinding:
       position: 102
       prefix: -median
@@ -93,31 +93,31 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Print statistics of the list file and exit.
+    doc: print statistics of the list file and exit
     inputBinding:
       position: 102
       prefix: -stat
+  - id: query
+    type:
+      - 'null'
+      - string
+    doc: single query word
+    inputBinding:
+      position: 102
+      prefix: --query
   - id: query_file
     type:
       - 'null'
       - File
-    doc: A list of query words in a file.
+    doc: list of query words in a file
     inputBinding:
       position: 102
       prefix: --queryfile
-  - id: query_word
-    type:
-      - 'null'
-      - string
-    doc: A single query word.
-    inputBinding:
-      position: 102
-      prefix: --query
   - id: seq_file
     type:
       - 'null'
       - File
-    doc: FastA/FastQ file.
+    doc: FastA/FastQ file
     inputBinding:
       position: 102
       prefix: --seqfile

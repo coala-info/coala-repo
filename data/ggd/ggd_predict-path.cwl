@@ -16,7 +16,9 @@ inputs:
       position: 101
       prefix: --channel
   - id: dir_path
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: Whether or not to get the predicted directory path rather then the 
       predicted file path. If both --file-name and --dir- path are provided the 
       --file-name will be used and --dir-path will be ignored
@@ -24,7 +26,9 @@ inputs:
       position: 101
       prefix: --dir-path
   - id: file_name
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The name of the file to predict that path for. It is best if you give 
       the full and correct name of the file to predict the path for. If not, ggd
       will try to identify the right file, but won't guarantee that it is the 
@@ -62,6 +66,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggd:1.1.3--pyh3252c3a_0

@@ -1,5 +1,15 @@
 # genometester4 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genometester4_glistcompare | PASS |  |
+| genometester4_glistmaker | PASS |  |
+| genometester4_glistquery | PASS |  |
+| genometester4_gmer_caller | PASS | synthetic data: counts come from a real chrY reference region used as reads |
+| genometester4_gmer_counter | PASS | synthetic data: a real chrY reference region stands in for sequencing reads |
+
 ## genometester4_gmer_counter
 
 ### Tool Description
@@ -104,6 +114,65 @@ Options:
     -max, --maxfreq NUMBER    - maximum frequency of the printed words (default MAX_UINT)
     -all                      - in case of mismatches prints all found words
     -D                        - increase debug level
+```
+
+## genometester4_glistmaker
+
+### Tool Description
+Make a list of all unique k-mers and their frequencies from FASTA or FASTQ files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genometester4:4.0--hec16e2b_4
+- **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
+- **Package**: https://anaconda.org/channels/bioconda/packages/genometester4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: glistmaker <INPUTFILES> [OPTIONS]
+Options:
+    -v, --version           - print version information and exit
+    -h, --help              - print this usage screen and exit
+    -w, --wordlength NUMBER - specify index wordsize (1-32) (default 16)
+    -c, --cutoff NUMBER     - specify frequency cut-off (default 1)
+    -o, --outputname STRING - specify output name (default "out")
+    --num_threads           - number of threads the program is run on (default MIN(8, num_input_files))
+    --max_tables            - maximum number of temporary tables (default MAX(num_threads, 2))
+    --table_size            - maximum size of the temporary table (default 500000000)
+    -D                      - increase debug level
+```
+
+## genometester4_gmer_caller
+
+### Tool Description
+Call genotypes from k-mer counts made by gmer_counter (FastGT).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genometester4:4.0--hec16e2b_4
+- **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
+- **Package**: https://anaconda.org/channels/bioconda/packages/genometester4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+No input file specified
+Usage:
+  gmer_caller ARGUMENTS COUNTS_FILE
+Arguments:
+    --training_size NUM - Use NUM markers for training (default 100000)
+    --runs NUMBER       - Perfom NUMBER runs of model training (use 0 for no training)
+    --num_threads NUM   - Use NUM threads (min 1, max 32, default 16)
+    --header            - Print table header
+    --non_canonical     - Output non-canonical genotypes
+    --prob_cutoff       - probability cutoff for calling genotype (default 0)
+    --alternatives      - Print probabilities of all alternative genotypes
+    --info              - Print information about individual
+    --no_genotypes      - Print only summary information, not actual genotypes
+    --model TYPE        - Model type (full, diploid, haploid)
+    --params PARAMS     - Model parameters (error, p0, p1, p2, coverage, size, size2)
+    --coverage NUM      - Average coverage of reads
+    -D                  - increase debug level
+Cannot read (null)
 ```
 
 ## Metadata

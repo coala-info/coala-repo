@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/glimmerhmm
+baseCommand: glimmerhmm
 label: glimmerhmm
 doc: GlimmerHMM gene finder for eukaryotic genomes
 inputs:
@@ -10,9 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: training_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Training directory for genome
     inputBinding:
       position: 2
@@ -34,9 +32,8 @@ inputs:
       position: 103
       prefix: -d
   - id: output_file
-    type:
-      - 'null'
-      - string
+    type: string
+    default: glimmerhmm_out.txt
     doc: Print output in file_name; if n>1 for top best predictions, output is 
       in file_name.1, file_name.2, ... , file_name.n
     inputBinding:
@@ -76,13 +73,11 @@ inputs:
       prefix: -f
 outputs:
   - id: output_output_file
-    type:
-      - 'null'
-      - File
+    type: File[]
     doc: Print output in file_name; if n>1 for top best predictions, output is 
       in file_name.1, file_name.2, ... , file_name.n
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

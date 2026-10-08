@@ -1,8 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gpp-gerpelem
+baseCommand: gerpelem
 label: gerp_gerpelem
-doc: "gpp-gerpelem options:\n\nTool homepage: http://mendel.stanford.edu/SidowLab/downloads/gerp/index.html"
+doc: "gerpelem options:\n\nTool homepage: http://mendel.stanford.edu/SidowLab/downloads/gerp/index.html"
 inputs:
   - id: acceptable_false_positive_rate
     type:
@@ -28,9 +28,7 @@ inputs:
       position: 101
       prefix: -c
   - id: column_scores_filename
-    type:
-      - 'null'
-      - File
+    type: File
     doc: column scores filename
     inputBinding:
       position: 101
@@ -131,7 +129,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.column_scores_filename)
+        writable: true
 outputs:
+  - id: elements_file
+    type: File
+    doc: constrained elements file (column scores file name plus the suffix)
+    outputBinding:
+      glob: $(inputs.column_scores_filename.basename)$(inputs.output_files_suffix || '.elems')
+  - id: exclusion_regions_file
+    type: ['null', File]
+    doc: exclusion region file, written only when an exclusion suffix is given
+    outputBinding:
+      glob: $(inputs.column_scores_filename.basename)$(inputs.exclusion_region_file_suffix || '.none_x')
   - id: stdout
     type: stdout
     doc: Standard output

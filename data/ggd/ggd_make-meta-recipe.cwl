@@ -55,11 +55,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --dependency
     doc: any software dependencies (in bioconda, conda-forge) or data-dependency
       (in ggd). May be as many times as needed.
     inputBinding:
       position: 102
-      prefix: --dependency
   - id: extra_scripts
     type:
       - 'null'
@@ -83,12 +84,13 @@ inputs:
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --keyword
     doc: A keyword to associate with the recipe. May be specified more that 
       once. Please add enough keywords to better describe and distinguish the 
       recipe
     inputBinding:
       position: 102
-      prefix: --keyword
   - id: name
     type: string
     doc: The sub-name of the recipe being created. (e.g. cpg-islands, 
@@ -129,9 +131,18 @@ inputs:
       position: 102
       prefix: --summary
 outputs:
+  - id: recipe_dir
+    type: Directory
+    doc: Meta-recipe directory (meta-recipe, name, data provider and package version
+      joined, for example meta-recipe-geo-accession-geo-v1)
+    outputBinding:
+      glob: meta-recipe-$(inputs.name)-*-v$(inputs.package_version)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggd:1.1.3--pyh3252c3a_0

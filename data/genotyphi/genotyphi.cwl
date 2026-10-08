@@ -86,8 +86,11 @@ inputs:
       position: 101
       prefix: --vcf
   - id: output_path
-    type: string?
-    doc: Location and name for output file.
+    type:
+      - 'null'
+      - string
+    doc: Location and name for output file. The tool adds a time stamp in front of
+      the name.
     inputBinding:
       position: 102
       prefix: --output
@@ -98,7 +101,7 @@ outputs:
       - File
     doc: Location and name for output file.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $("*" + (inputs.output_path || "genotypes.txt"))
 requirements:
   - class: InlineJavascriptRequirement
 hints:

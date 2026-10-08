@@ -25,11 +25,15 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --cadd-file
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Specify the path to a bgzipped cadd file (with index) with variant 
-      scores.
+      scores. Can be given several times.
     inputBinding:
       position: 102
-      prefix: --cadd-file
   - id: cadd_raw
     type:
       - 'null'
@@ -42,6 +46,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Specify the path to a bgzipped vcf file (with index) with COSMIC 
       variants.
     inputBinding:
@@ -51,6 +58,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Specify the path to a bgzipped vcf file (with index) with exac 
       variants.
     inputBinding:
@@ -92,6 +102,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Specify the path to a bgzipped tsv file (with index) with spidex 
       information.
     inputBinding:
@@ -100,7 +113,7 @@ inputs:
   - id: temp_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to tempdir
     inputBinding:
       position: 102
@@ -109,6 +122,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Specify the path to a bgzipped vcf file (with index) with 1000g 
       variants
     inputBinding:

@@ -1,5 +1,11 @@
 # gnparser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gnparser | PASS | Parsed a names file and a single name; canonical forms and authorship are correct. Made the input accept a File. |
+
 ## gnparser
 
 ### Tool Description

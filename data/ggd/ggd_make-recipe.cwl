@@ -7,7 +7,7 @@ label: ggd_make-recipe
 doc: "Make a ggd data recipe from a bash script\n\nTool homepage: https://github.com/gogetdata/ggd-cli"
 inputs:
   - id: script
-    type: string
+    type: File
     doc: bash script that contains the commands to obtain and process the data
     inputBinding:
       position: 1
@@ -57,21 +57,23 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --dependency
     doc: any software dependencies (in bioconda, conda-forge) or data-dependency
       (in ggd). May be as many times as needed.
     inputBinding:
       position: 102
-      prefix: --dependency
   - id: extra_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --extra-file
     doc: any files that the recipe creates that are not a *.gz and *.gz.tbi pair
       or *.fa and *.fai pair. May be used more than once
     inputBinding:
       position: 102
-      prefix: --extra-file
   - id: genome_build
     type: string
     doc: The genome build the recipe is for
@@ -82,12 +84,13 @@ inputs:
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --keyword
     doc: A keyword to associate with the recipe. May be specified more that 
       once. Please add enough keywords to better describe and distinguish the 
       recipe
     inputBinding:
       position: 102
-      prefix: --keyword
   - id: name
     type: string
     doc: The sub-name of the recipe being created. (e.g. cpg- islands, 
@@ -126,9 +129,18 @@ inputs:
       position: 102
       prefix: --summary
 outputs:
+  - id: recipe_dir
+    type: Directory
+    doc: Recipe directory (genome build, name, data provider and package version
+      joined, for example hg19-cpg-islands-ucsc-v1)
+    outputBinding:
+      glob: $(inputs.genome_build)-$(inputs.name)-*-v$(inputs.package_version)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggd:1.1.3--pyh3252c3a_0

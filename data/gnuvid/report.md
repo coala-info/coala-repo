@@ -1,5 +1,11 @@
 # gnuvid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gnuvid_GNUVID_Predict.py | Failed | image problem: the compressed database (254 MB, GNUVID_08312021_comp_db.joblib) is missing from the image and the tool tries to download it into its install folder, which is not writable. |
+
 ## gnuvid_GNUVID_Predict.py
 
 ### Tool Description

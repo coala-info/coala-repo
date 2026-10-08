@@ -1,5 +1,11 @@
 # gfastats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfastats | Failed | tool bug: --line-length repeats earlier sequences in every FASTA record; the other 117 of 118 repo validation tests match |
+
 ## gfastats
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # go-figure CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| go-figure_gofigure.py | PASS | Ran the tool's own example input; clusters (cell cycle, chromosome segregation) and a PNG plot were written. |
+
 ## go-figure_gofigure.py
 
 ### Tool Description

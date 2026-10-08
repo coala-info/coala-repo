@@ -120,6 +120,10 @@ outputs:
     doc: Name of output directory.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gnali:1.1.0--pyhdfd78af_0

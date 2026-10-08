@@ -179,6 +179,9 @@ outputs:
     doc: create output directory here
     outputBinding:
       glob: $(inputs.genomes_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomepy:0.16.3--pyh7e72e81_0

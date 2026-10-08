@@ -1,93 +1,66 @@
 # genodsp CWL Generation Report
 
-## genodsp_sum
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genodsp | PASS |  |
+
+## genodsp
 
 ### Tool Description
-Summate genotype data across specified regions.
+General workbench for processing signals along genomic intervals.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
-- **Homepage**: https://github.com/rsharris/genodsp
-- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
-- **Total Downloads**: 1.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/rsharris/genodsp
-- **Stars**: N/A
-### Original Help Text
-```text
-"sum" contains no chromosome length
-(expected "chromosome:length" or "chromosome:start:end")
-```
-
-## genodsp_slidingsum
-
-### Tool Description
-Calculates the sum of values within sliding windows along a genome.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
-- **Homepage**: https://github.com/rsharris/genodsp
+- **Homepage**: https://github.com/richard-burhans/genodsp
 - **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-"slidingsum" contains no chromosome length
-(expected "chromosome:length" or "chromosome:start:end")
-```
+usage: [cat <file>] | genodsp --chromosomes=<filename> [options] [operations]
 
-## genodsp_smooth
+  --chromosomes=<filename>  (required) read chromosome names and lengths from
+                            a file
+  --value=<col>             input intervals contain a value in the specified
+                            column;  by default we assume this is in column 4
+  --novalue                 input intervals have no value (value given is 1)
+  --nooutputvalue           don't write value with output intervals
+  --precision=<number>      number of digits to round output values to
+                            (by default, output is rounded to integers)
+  --nocollapse              in output, don't collapse runs of identical values
+                            to intervals
+  --uncovered:hide          don't output intervals that have no coverage
+                            (this is the default)
+  --uncovered:show          in output, include intervals that have no coverage
+  --uncovered:NA            in output, mark uncovered intervals as NA
+  --cliptochromosome        clip interals to chromosome length
+                            (default is to report such intervals as errors)
+  --origin=one              input/output intervals are origin-one, closed
+  --origin=zero             input/output intervals are origin-zero, half-open
+                            (this is the default)
+  --nooutput                don't output the resulting intervals/values
+                            (by default these are written to stdout)
+  --window=<length>         (W=) size of window
+                            (for operators that have a window size)
+  --help[=<operator>]       get detail about a particular operator
+  ?                         list available operators with brief descriptions
+  ?<operator>               same as --help=<operator>
+  --report=comments         copy comments from the input to stderr. Comments
+                            are lines beginning with a "#". This can be
+                            helpful in tracking progress during a long run.
+  --progress=input:<n>      report processing of every nth input line
+  --progress=operations     report each operation as it begins
+  --version                 report the program version and quit
 
-### Tool Description
-Smooths genomic data, but requires chromosome length information.
+Note that if input intervals overlap, their values are summed.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
-- **Homepage**: https://github.com/rsharris/genodsp
-- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
-- **Validation**: PASS
+Input is usually piped in on stdin. However, if the first operator is "input"
+stdin is ignored.
 
-### Original Help Text
-```text
-"smooth" contains no chromosome length
-(expected "chromosome:length" or "chromosome:start:end")
-```
-
-## genodsp_cumulativesum
-
-### Tool Description
-Calculates the cumulative sum of values across a genome, potentially considering chromosome lengths and regions.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
-- **Homepage**: https://github.com/rsharris/genodsp
-- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-"cumulativesum" contains no chromosome length
-(expected "chromosome:length" or "chromosome:start:end")
-```
-
-## genodsp_clump
-
-### Tool Description
-Clumps regions based on proximity. Requires chromosome lengths or explicit start/end coordinates.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
-- **Homepage**: https://github.com/rsharris/genodsp
-- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-"clump" contains no chromosome length
-(expected "chromosome:length" or "chromosome:start:end")
+For a list of available operations, do "genodsp ?".
+For more detailed descriptions of the operations, do "genodsp --help".
 ```
 
 ## Metadata

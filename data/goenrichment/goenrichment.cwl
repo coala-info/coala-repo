@@ -1,17 +1,12 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - GOEnrichment.jar
+baseCommand: goenrichment
 label: goenrichment
 doc: "GOEnrichment analyses a set of gene products for GO term enrichment\n\nTool
   homepage: https://github.com/DanFaria/GOEnrichment"
 inputs:
   - id: annotation_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to the tabular annotation file (GAF, BLAST2GO or 2-column table 
       format
     inputBinding:
@@ -44,9 +39,7 @@ inputs:
       position: 101
       prefix: --exclude_singletons
   - id: go_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to the Gene Ontology OBO or OWL file
     inputBinding:
       position: 101
@@ -95,50 +88,50 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bp_graph_file_path`
+    doc: Name of the output BP GRAPH file
     inputBinding:
       position: 102
-      prefix: --bp-graph-file
+      prefix: --bp_graph
   - id: bp_result_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bp_result_file_path`
+    doc: Name of the output BP RESULT file
     inputBinding:
       position: 103
-      prefix: --bp-result-file
+      prefix: --bp_result
   - id: cc_graph_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cc_graph_file_path`
+    doc: Name of the output CC GRAPH file
     inputBinding:
       position: 104
-      prefix: --cc-graph-file
+      prefix: --cc_graph
   - id: cc_result_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `cc_result_file_path`
+    doc: Name of the output CC RESULT file
     inputBinding:
       position: 105
-      prefix: --cc-result-file
+      prefix: --cc_result
   - id: mf_graph_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mf_graph_file_path`
+    doc: Name of the output MF GRAPH file
     inputBinding:
       position: 106
-      prefix: --mf-graph-file
+      prefix: --mf_graph
   - id: mf_result_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `mf_result_file_path`
+    doc: Name of the output MF RESULT file
     inputBinding:
       position: 107
-      prefix: --mf-result-file
+      prefix: --mf_result
 outputs:
   - id: mf_result_file
     type:

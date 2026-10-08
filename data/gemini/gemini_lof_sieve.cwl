@@ -7,7 +7,7 @@ label: gemini_lof_sieve
 doc: "Queries the database for LOF variants.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried
     inputBinding:
       position: 1

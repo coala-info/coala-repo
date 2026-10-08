@@ -284,7 +284,7 @@ inputs:
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type:

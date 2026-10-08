@@ -1,5 +1,21 @@
 # ggd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ggd_check-recipe | Not completed | needs conda-build with a writable conda root and package resolution from conda channels (gsort, htslib could not be resolved in the container) |
+| ggd_get-files | Not completed | needs an installed ggd data package, and ggd install does not work in the read-only container |
+| ggd_install | Failed | image problem: ggd install must write into the conda root (/usr/local) and its post-link script needs a writable conda install, which the read-only container does not allow |
+| ggd_list | Not completed | needs an installed ggd data package, and ggd install does not work in the read-only container |
+| ggd_make-meta-recipe | PASS |  |
+| ggd_make-recipe | PASS |  |
+| ggd_pkg-info | Not completed | needs an installed ggd data package, and ggd install does not work in the read-only container |
+| ggd_predict-path | PASS |  |
+| ggd_search | PASS |  |
+| ggd_show-env | Not completed | needs an installed ggd data package, and ggd install does not work in the read-only container |
+| ggd_uninstall | Not completed | needs an installed ggd data package, and ggd install does not work in the read-only container |
+
 ## ggd_search
 
 ### Tool Description

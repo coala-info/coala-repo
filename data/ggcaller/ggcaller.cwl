@@ -42,11 +42,11 @@ inputs:
       position: 101
       prefix: --annotation
   - id: balrog_db
-    type:
-      - 'null'
-      - File
-    doc: Path to save BALROG and default annotation databases. If not specified 
-      will downloadautomatically on first run.
+    type: Directory
+    doc: Directory holding the ggCaller database (ggCallerdb.tar.bz2 and the extracted
+      ggCallerdb folder, about 300 MB, from https://ftp.ebi.ac.uk/pub/databases/pp_dbs/ggCallerdb.tar.bz2).
+      The directory is copied into the working directory so that the tool can unpack
+      the Balrog models.
     inputBinding:
       position: 101
       prefix: --balrog-db
@@ -343,8 +343,7 @@ inputs:
   - id: query
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: List of unitig sequences to query (either FASTA or one sequence per 
       line)
     inputBinding:
@@ -369,8 +368,7 @@ inputs:
   - id: reads
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: List of read files (one file path per line).
     inputBinding:
       position: 101
@@ -387,8 +385,7 @@ inputs:
   - id: refs
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: List of reference genomes (one file path per line).
     inputBinding:
       position: 101
@@ -454,6 +451,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --truncation-threshold
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Genome or read files named in the --refs / --reads list files. They are
+      staged in the working directory, so list them by file name only.
   - id: out_path
     type: string?
     doc: Output directory
@@ -468,8 +472,28 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.out_path)
+  - id: graph_out
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Bifrost graph (GFA) and colours files written next to the list file name
+    outputBinding:
+      glob:
+        - '*.gfa'
+        - '*.bfg_colors'
+        - '*.color.bfg'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = (inputs.genome_files || []).slice();
+        l.push({entry: inputs.balrog_db, writable: true});
+        if (inputs.refs) { l.push({entry: inputs.refs, writable: true}); }
+        if (inputs.reads) { l.push({entry: inputs.reads, writable: true}); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggcaller:1.4.3--py39h3961c5e_0

@@ -1,5 +1,17 @@
 # gfftk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfftk_compare | Failed | tool bug: AED value 1.169 above the documented 0-1 range for one gene pair |
+| gfftk_consensus | PASS | synthetic data: the repeat file is a one-line planted BED (the tool crashes without one); gene predictions are real and the consensus models are correct. |
+| gfftk_convert | PASS |  |
+| gfftk_rename | PASS |  |
+| gfftk_sanitize | PASS |  |
+| gfftk_sort | PASS |  |
+| gfftk_stats | PASS |  |
+
 ## gfftk_consensus
 
 ### Tool Description
@@ -252,6 +264,34 @@ Other arguments:
   --version          show program's version number and exit
 ```
 
+
+## gfftk_sort
+
+### Tool Description
+sort GFF3 file properly [maintain feature order: gene, mrna, exon, cds].
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gfftk:26.2.12--pyh1f0d9b5_0
+- **Homepage**: https://github.com/nextgenusfs/gfftk
+- **Package**: https://anaconda.org/channels/bioconda/packages/gfftk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gfftk sort -g  [-o] [-h] [--version]
+
+sort GFF3 file properly [maintain feature order: gene, mrna, exon, cds].
+
+Required arguments:
+  -g , --gff3   GFF3 file to sort
+
+Optional arguments:
+  -o , --out    write sorted output to file (default: stdout)
+
+Other arguments:
+  -h, --help    show this help message and exit
+  --version     show program's version number and exit
+```
 
 ## Metadata
 - **Skill**: generated

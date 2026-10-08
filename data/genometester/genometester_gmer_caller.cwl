@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gmer_caller
 label: genometester_gmer_caller
-doc: "No input file specified\n\nTool homepage: https://github.com/bioinfo-ut/GenomeTester4"
+doc: "Call genotypes from k-mer counts made by gmer_counter (FastGT).\n\nTool homepage: https://github.com/bioinfo-ut/GenomeTester4"
 inputs:
   - id: counts_file
     type: File

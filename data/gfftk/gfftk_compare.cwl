@@ -28,22 +28,19 @@ inputs:
       prefix: --query
   - id: reference
     type: File
-    doc: query annotation in GFF3 format
-    secondaryFiles:
-      - .fai
+    doc: reference annotation in GFF3 format
     inputBinding:
       position: 101
       prefix: --reference
   - id: out_path
     type: string
+    doc: 'write converted output to file (default: stdout)'
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: out
-    type:
-      - 'null'
-      - File
+    type: File
     doc: write converted output to file
     outputBinding:
       glob: $(inputs.out_path)

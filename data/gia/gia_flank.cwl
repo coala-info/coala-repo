@@ -11,7 +11,7 @@ inputs:
   - id: both
     type:
       - 'null'
-      - string
+      - float
     doc: Amount to apply to function on both sides of intervals
     inputBinding:
       position: 101
@@ -69,7 +69,7 @@ inputs:
   - id: left
     type:
       - 'null'
-      - string
+      - float
     doc: Amount to apply to function on the left side of intervals
     inputBinding:
       position: 101
@@ -85,7 +85,7 @@ inputs:
   - id: right
     type:
       - 'null'
-      - string
+      - float
     doc: Amount to apply to function on the right side of intervals
     inputBinding:
       position: 101

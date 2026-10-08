@@ -1,5 +1,11 @@
 # geodl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| geodl_geoDL | Failed | image problem: wget in the image is BusyBox and rejects -nH, so no fastq is downloaded; the geo and ena modes also use outdated GEO/ENA web addresses. |
+
 ## geodl_geoDL
 
 ### Tool Description

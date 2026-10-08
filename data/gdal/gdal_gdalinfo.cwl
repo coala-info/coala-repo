@@ -2,50 +2,106 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gdalinfo
 label: gdal_gdalinfo
-doc: "Prints information about a GDAL dataset.\n\nTool homepage: https://github.com/OSGeo/gdal"
+doc: "Lists information about a raster dataset.\n\nTool homepage: https://github.com/OSGeo/gdal"
 inputs:
   - id: datasetname
-    type: string
-    doc: The GDAL dataset name
+    type: File
+    doc: "The GDAL dataset to report on."
     inputBinding:
       position: 1
-  - id: checksum
-    type:
-      - 'null'
-      - boolean
-    doc: Report checksum of the file
-    inputBinding:
-      position: 102
-      prefix: -checksum
-  - id: compute_histogram
-    type:
-      - 'null'
-      - boolean
-    doc: Compute and display histogram for each band
-    inputBinding:
-      position: 102
-      prefix: -hist
-  - id: compute_stats
-    type:
-      - 'null'
-      - boolean
-    doc: Compute and display statistics for each band
-    inputBinding:
-      position: 102
-      prefix: -stats
   - id: json
     type:
       - 'null'
       - boolean
-    doc: Output in JSON format
+    doc: "Display the output in json format."
     inputBinding:
       position: 102
       prefix: -json
+  - id: mm
+    type:
+      - 'null'
+      - boolean
+    doc: "Force computation of the actual min/max values for each band in the dataset."
+    inputBinding:
+      position: 102
+      prefix: -mm
+  - id: compute_stats
+    type:
+      - 'null'
+      - boolean
+    doc: "Read and display image statistics, computing them if not already present."
+    inputBinding:
+      position: 102
+      prefix: -stats
+  - id: compute_histogram
+    type:
+      - 'null'
+      - boolean
+    doc: "Report histogram information for all bands."
+    inputBinding:
+      position: 102
+      prefix: -hist
+  - id: no_gcp
+    type:
+      - 'null'
+      - boolean
+    doc: "Suppress ground control points list printing."
+    inputBinding:
+      position: 102
+      prefix: -nogcp
+  - id: no_md
+    type:
+      - 'null'
+      - boolean
+    doc: "Suppress metadata printing."
+    inputBinding:
+      position: 102
+      prefix: -nomd
+  - id: no_rat
+    type:
+      - 'null'
+      - boolean
+    doc: "Suppress printing of raster attribute table."
+    inputBinding:
+      position: 102
+      prefix: -norat
+  - id: no_ct
+    type:
+      - 'null'
+      - boolean
+    doc: "Suppress printing of color table."
+    inputBinding:
+      position: 102
+      prefix: -noct
+  - id: no_fl
+    type:
+      - 'null'
+      - boolean
+    doc: "Only display the first file of the file list."
+    inputBinding:
+      position: 102
+      prefix: -nofl
+  - id: checksum
+    type:
+      - 'null'
+      - boolean
+    doc: "Force computation of the checksum for each band in the dataset."
+    inputBinding:
+      position: 102
+      prefix: -checksum
+  - id: proj4
+    type:
+      - 'null'
+      - boolean
+    doc: "Report a PROJ.4 string corresponding to the file's coordinate system."
+    inputBinding:
+      position: 102
+      prefix: -proj4
   - id: list_mdd
     type:
       - 'null'
       - boolean
-    doc: List all metadata domains
+    doc: "List all metadata domains available for the dataset."
     inputBinding:
       position: 102
       prefix: -listmdd
@@ -55,87 +111,28 @@ inputs:
       - type: array
         items: string
         inputBinding:
-          prefix: --mdd
-          separate: true
-    doc: Metadata domain to report. Can be specified multiple times or 'all'.
+          prefix: -mdd
+    doc: "Report metadata for the specified domain. 'all' reports all domains. Repeat for several domains."
     inputBinding:
       position: 102
-  - id: mm
+  - id: subdataset
     type:
       - 'null'
-      - boolean
-    doc: Report minimum/maximum pixel values
+      - string
+    doc: "Use the subdataset of the specified index (starting at 1) instead of the base dataset."
     inputBinding:
       position: 102
-      prefix: -mm
-  - id: no_ct
-    type:
-      - 'null'
-      - boolean
-    doc: Do not report Color Table
-    inputBinding:
-      position: 102
-      prefix: -noct
-  - id: no_fl
-    type:
-      - 'null'
-      - boolean
-    doc: Do not report File List
-    inputBinding:
-      position: 102
-      prefix: -nofl
-  - id: no_gcp
-    type:
-      - 'null'
-      - boolean
-    doc: Do not report Georeferencing Control Points
-    inputBinding:
-      position: 102
-      prefix: -nogcp
-  - id: no_md
-    type:
-      - 'null'
-      - boolean
-    doc: Do not report metadata
-    inputBinding:
-      position: 102
-      prefix: -nomd
-  - id: no_rat
-    type:
-      - 'null'
-      - boolean
-    doc: Do not report Raster Attribute Table
-    inputBinding:
-      position: 102
-      prefix: -norat
-  - id: options
+      prefix: -sd
+  - id: open_options
     type:
       - 'null'
       - type: array
         items: string
         inputBinding:
-          prefix: --oo
-          separate: true
-    doc: Format-specific dataset opening option. Can be specified multiple 
-      times.
+          prefix: -oo
+    doc: "Dataset open option (format specific), NAME=VALUE. Repeat for several options."
     inputBinding:
       position: 102
-  - id: proj4
-    type:
-      - 'null'
-      - boolean
-    doc: Report projection in Proj4 format
-    inputBinding:
-      position: 102
-      prefix: -proj4
-  - id: subdataset
-    type:
-      - 'null'
-      - string
-    doc: Select a subdataset to report on
-    inputBinding:
-      position: 102
-      prefix: -sd
 outputs:
   - id: stdout
     type: stdout

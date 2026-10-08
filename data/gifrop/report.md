@@ -1,5 +1,11 @@
 # gifrop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gifrop | PASS |  |
+
 ## gifrop
 
 ### Tool Description

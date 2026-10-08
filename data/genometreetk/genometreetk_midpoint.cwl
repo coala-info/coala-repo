@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_tree
-    type: File
+    type: string
     doc: output tree
     inputBinding:
       position: 2
@@ -25,6 +25,11 @@ inputs:
       position: 103
       prefix: --silent
 outputs:
+  - id: out_output_tree
+    type: File
+    doc: output tree
+    outputBinding:
+      glob: $(inputs.output_tree)
   - id: stdout
     type: stdout
     doc: Standard output

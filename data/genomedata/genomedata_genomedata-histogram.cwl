@@ -5,7 +5,9 @@ label: genomedata_genomedata-histogram
 doc: "Print a histogram of values from a genomedata archive\n\nTool homepage: http://genomedata.hoffmanlab.org"
 inputs:
   - id: gdarchive
-    type: string
+    type:
+      - File
+      - Directory
     doc: genomedata archive
     inputBinding:
       position: 1

@@ -40,7 +40,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.vcf_file)
+        writable: true
 outputs:
+  - id: mnv_table
+    type: File
+    doc: Annotated variants table written next to the VCF as <VCF name without extension>.MNV.tsv.
+    outputBinding:
+      glob: $(inputs.vcf_file.nameroot).MNV.tsv
   - id: stdout
     type: stdout
     doc: Standard output

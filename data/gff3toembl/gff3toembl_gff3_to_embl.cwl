@@ -11,7 +11,7 @@ inputs:
     inputBinding:
       position: 1
   - id: taxonid
-    type: string
+    type: int
     doc: Taxon id
     inputBinding:
       position: 2
@@ -41,7 +41,7 @@ inputs:
   - id: chromosome_list
     type:
       - 'null'
-      - File
+      - string
     doc: Create a chromosome list file, and use the supplied name
     inputBinding:
       position: 106
@@ -95,11 +95,20 @@ inputs:
       position: 106
       prefix: --translation_table
   - id: output_filename_path
-    type: string?
+    type: string
+    default: output.embl
+    doc: Output filename
     inputBinding:
       position: 107
       prefix: --output_filename
 outputs:
+  - id: chromosome_list_file
+    type:
+      - 'null'
+      - File
+    doc: Chromosome list file, written when chromosome_list is given.
+    outputBinding:
+      glob: $(inputs.chromosome_list)
   - id: output_filename
     type:
       - 'null'
@@ -109,6 +118,10 @@ outputs:
       glob: $(inputs.output_filename_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gff3toembl:1.1.4--pyh864c0ab_2

@@ -1,5 +1,11 @@
 # gmove CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gmove | PASS | Real STX16 gene region from nf-core minigenome with annotated exons as RNA evidence; the model has the known 9 exons and a 978 nt CDS. Removed the .fai requirement the tool does not use. |
+
 ## gmove
 
 ### Tool Description

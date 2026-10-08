@@ -20,7 +20,7 @@ inputs:
   - id: compare
     type:
       - 'null'
-      - string
+      - File
     doc: Compares the CDS of two genbank files
     inputBinding:
       position: 102

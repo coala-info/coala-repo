@@ -20,18 +20,9 @@ inputs:
     inputBinding:
       position: 102
       prefix: --force
-  - id: install_completion
-    type:
-      - 'null'
-      - boolean
-    doc: Install completion for the current shell.
-    inputBinding:
-      position: 102
-      prefix: --install-completion
   - id: outdir
-    type:
-      - 'null'
-      - string
+    type: string
+    default: gfflu-outdir
     doc: Output directory
     inputBinding:
       position: 102
@@ -44,15 +35,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --prefix
-  - id: show_completion
-    type:
-      - 'null'
-      - boolean
-    doc: Show completion for the current shell, to copy it or customize the 
-      installation.
-    inputBinding:
-      position: 102
-      prefix: --show-completion
   - id: verbose
     type:
       - 'null'
@@ -64,17 +46,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
   - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)

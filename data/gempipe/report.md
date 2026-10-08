@@ -1,5 +1,13 @@
 # gempipe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gempipe_autopilot | Not completed | pipeline, skipped |
+| gempipe_derive | PASS |  |
+| gempipe_recon | Not completed | needs large databases (eggNOG, BUSCO, BiGG) downloaded at run time; too heavy for this machine |
+
 ## gempipe_recon
 
 ### Tool Description
@@ -276,42 +284,4 @@ options:
 
 ## Metadata
 - **Skill**: not generated
-
-## gempipe
-
-### Tool Description
-gempipe v1.38.5. Full documentation available at
-https://gempipe.readthedocs.io/en/latest/index.html. Please cite: "Lazzari G.,
-Felis G. E., Salvetti E., Calgaro M., Di Cesare F., Teusink B., Vitulo N.
-Gempipe: a tool for drafting, curating, and analyzing pan and multi-strain
-genome-scale metabolic models. mSystems. December 2025.
-https://doi.org/10.1128/msystems.01007-25".
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gempipe:1.38.5--pyhdfd78af_0
-- **Homepage**: https://github.com/lazzarigioele/gempipe
-- **Package**: https://anaconda.org/channels/bioconda/packages/gempipe/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: gempipe [-h] [-v] {recon,derive,autopilot} ...
-
-gempipe v1.38.5. Full documentation available at
-https://gempipe.readthedocs.io/en/latest/index.html. Please cite: "Lazzari G.,
-Felis G. E., Salvetti E., Calgaro M., Di Cesare F., Teusink B., Vitulo N.
-Gempipe: a tool for drafting, curating, and analyzing pan and multi-strain
-genome-scale metabolic models. mSystems. December 2025.
-https://doi.org/10.1128/msystems.01007-25".
-
-options:
-  -h, --help            Show this help message and exit.
-  -v, --version         Show version number and exit.
-
-gempipe subcommands:
-  {recon,derive,autopilot}
-    recon               Reconstruct a draft pan-model and a PAM.
-    derive              Derive strain- and species-specific models.
-    autopilot           Run recon + derive, with automated pan-model gap-
-                        filling. Use with consciousness!
-```
 

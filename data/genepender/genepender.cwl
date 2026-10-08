@@ -13,9 +13,8 @@ inputs:
       position: 1
   - id: vcfs
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: VCF files to process
     inputBinding:
       position: 2
@@ -39,10 +38,12 @@ inputs:
     type:
       - 'null'
       - string
+    default: genepender_out
     doc: Root output folder, source folder otherwise
     inputBinding:
       position: 103
-      prefix: --output-folder
+      prefix: --output-folder=
+      separate: false
   - id: prefix_extract
     type:
       - 'null'
@@ -51,7 +52,8 @@ inputs:
       root of output folder otherwise.
     inputBinding:
       position: 103
-      prefix: --prefix-extract
+      prefix: --prefix-extract=
+      separate: false
 outputs:
   - id: stdout
     type: stdout
@@ -63,6 +65,12 @@ outputs:
     doc: Root output folder, source folder otherwise
     outputBinding:
       glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.output_folder, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genepender:v2.6--h470a237_1

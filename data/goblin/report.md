@@ -1,5 +1,11 @@
 # goblin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| goblin | Failed | image problem: the bundled ncbi-genome-download 0.3.1 crashes (KeyError 'assembly_accession') on the current NCBI assembly summary, for taxid, genus and accession-file queries; added NetworkAccess and File input. |
+
 ## goblin
 
 ### Tool Description

@@ -78,23 +78,23 @@ inputs:
     type:
       - 'null'
       - File
-    doc: file with .faa/.gbk files in -d to be included (takes all by default, 
-      requires -d)
+    doc: file with .faa/.gbk file names in -d to be included (takes all by default, 
+      requires input_files)
     inputBinding:
       position: 101
       prefix: -I
-  - id: input_directory
+  - id: input_files
     type:
       - 'null'
-      - Directory
-    doc: directory with input FASTA files ( .faa / .fna ), (overrides -i, 
-      GenBank files ( .gbk ), 1 per genome, or a subdirectory ( subdir.clusters 
-      / subdir_ ) with pre-clustered sequences ( .faa / .fna ); allows for new 
-      files to be added later; creates output folder named 
-      'directory_homologues'
-    inputBinding:
-      position: 101
-      prefix: -d
+      - type: array
+        items: File
+    doc: Input FASTA (.faa/.fna) or GenBank (.gbk) files, 1 per genome. They are
+      copied into a writable input directory (-d) and the output folder
+      '<input_dir_name>_homologues' is created next to it.
+  - id: input_dir_name
+    type: string
+    default: genomes
+    doc: Name of the input directory (-d) built from input_files.
   - id: input_file
     type:
       - 'null'
@@ -175,11 +175,12 @@ inputs:
     type:
       - 'null'
       - File
-    doc: reference proteome .faa/.gbk file (by default takes file with least 
-      sequences; with BDBH sets first taxa to start adding genes)
+    doc: reference proteome .faa/.gbk file, one of input_files (by default takes
+      file with least sequences; with BDBH sets first taxa to start adding genes)
     inputBinding:
       position: 101
       prefix: -r
+      valueFrom: $(self.basename)
   - id: report_clusters_min_taxa
     type:
       - 'null'
@@ -260,10 +261,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: -M
+arguments:
+  - position: 100
+    prefix: -d
+    valueFrom: "$(inputs.input_files ? inputs.input_dir_name : null)"
 outputs:
+  - id: homologues_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder '<input_dir_name>_homologues' (from input_files).
+    outputBinding:
+      glob: $(inputs.input_dir_name)_homologues
+  - id: input_file_homologues_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder '<input_file>_homologues' (from input_file).
+    outputBinding:
+      glob: "$(inputs.input_file ? inputs.input_file.basename + '_homologues' : 'none_homologues')"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.input_dir_name)
+        entry: "$(inputs.input_files ? {class: 'Directory', basename: inputs.input_dir_name, listing: inputs.input_files} : null)"
+        writable: true
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/get_homologues:3.8.1--hdfd78af_0

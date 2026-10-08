@@ -1,5 +1,11 @@
 # gmgc-mapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gmgc-mapper | PASS | Needs internet (online GMGC web service); added NetworkAccess. Ran on E. coli genome part and gene files. |
+
 ## gmgc-mapper
 
 ### Tool Description

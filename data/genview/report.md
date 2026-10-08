@@ -1,5 +1,12 @@
 # genview CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genview_genview-makedb | PASS | Real plasmids (pBR322, pUC19, pACYC184) searched for TEM-1 (bla); 2 hits stored in the database; downloads NCBI taxonomy (network needed). |
+| genview_genview-visualize | PASS | Used the makedb output: 2 bla contexts extracted, aligned, tree and interactive HTML made. |
+
 ## genview_genview-makedb
 
 ### Tool Description

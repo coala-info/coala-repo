@@ -7,7 +7,7 @@ label: gemini_db_info
 doc: "Show information about a GEMINI database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be updated.
     inputBinding:
       position: 1

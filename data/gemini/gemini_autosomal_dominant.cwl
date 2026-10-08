@@ -8,7 +8,7 @@ doc: "Identify candidate variants for autosomal dominant inheritance.\n\nTool ho
   https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1

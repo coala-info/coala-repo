@@ -1,5 +1,43 @@
 # gemini CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gemini_actionable_mutations | PASS |  |
+| gemini_amend | PASS |  |
+| gemini_annotate | PASS |  |
+| gemini_autosomal_dominant | PASS |  |
+| gemini_autosomal_recessive | PASS |  |
+| gemini_bcolz_index | PASS |  |
+| gemini_browser | Not completed | long-running web server, skipped |
+| gemini_burden | PASS |  |
+| gemini_comp_hets | PASS |  |
+| gemini_db_info | PASS |  |
+| gemini_de_novo | PASS |  |
+| gemini_dump | Failed | image problem: --variants and --genotypes crash with a SQLAlchemy 1.3.5 TypeError in the image; only --samples and --tfam work |
+| gemini_fusions | Not completed | needs a database with structural-variant fusion calls; gemini load needs the large annotation download, so no such database could be built |
+| gemini_gene_wise | PASS |  |
+| gemini_interactions | PASS | synthetic data: small planted edges file (real HPRD edges need the annotation download), real genotypes from the GEMINI test database |
+| gemini_load | Not completed | gemini load needs the GEMINI annotation download (gemini update --dataonly); the image has no config or annotation files and fails at start |
+| gemini_load_chunk | Not completed | gemini load needs the GEMINI annotation download (gemini update --dataonly); the image has no config or annotation files and fails at start |
+| gemini_lof_interactions | PASS | synthetic data: small planted edges file (real HPRD edges need the annotation download), real genotypes from the GEMINI test database |
+| gemini_lof_sieve | PASS |  |
+| gemini_mendel_errors | PASS |  |
+| gemini_merge_chunks | Not completed | gemini load needs the GEMINI annotation download (gemini update --dataonly); the image has no config or annotation files and fails at start |
+| gemini_pathways | Not completed | needs the GEMINI annotation data (ensembl pathway files) from gemini update --dataonly |
+| gemini_qc | Not completed | sex check needs chrX variants; no X-chromosome database could be built without the annotation download |
+| gemini_query | PASS |  |
+| gemini_region | PASS |  |
+| gemini_roh | PASS |  |
+| gemini_set_somatic | Not completed | needs a tumor/normal database; the only database available has no somatic scores (0 variants set), so the result cannot be judged |
+| gemini_stats | PASS |  |
+| gemini_update | Not completed | needs the large GEMINI annotation download |
+| gemini_windower | PASS |  |
+| gemini_x_linked_de_novo | Not completed | no X-chromosome database with sample sex; one could not be built because gemini load needs the annotation download |
+| gemini_x_linked_dominant | Not completed | no X-chromosome database with sample sex; one could not be built because gemini load needs the annotation download |
+| gemini_x_linked_recessive | Not completed | no X-chromosome database with sample sex; one could not be built because gemini load needs the annotation download |
+
 ## gemini_actionable_mutations
 
 ### Tool Description

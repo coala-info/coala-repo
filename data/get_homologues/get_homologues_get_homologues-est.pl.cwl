@@ -81,17 +81,17 @@ inputs:
     inputBinding:
       position: 101
       prefix: -I
-  - id: input_directory
-    type: Directory
-    doc: directory with input FASTA files (.fna , optionally .faa),  (use of 
-      pre-clustered sequences 1 per sample, or subdirectories 
-      (subdir.clusters/subdir_) with pre-clustered sequences (.faa/.fna ). Files
-      matching tag 'flcdna' are handled as full-length transcripts. Allows for 
-      files to be added later. Creates output folder named 
-      'directory_est_homologues')
-    inputBinding:
-      position: 101
-      prefix: -d
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: Input transcript FASTA files (.fna, optionally .faa), 1 per sample.
+      They are copied into a writable input directory (-d) and the output
+      folder '<input_dir_name>_est_homologues' is created next to it.
+  - id: input_dir_name
+    type: string
+    default: transcripts
+    doc: Name of the input directory (-d) built from input_files.
   - id: max_evalue
     type:
       - 'null'
@@ -155,11 +155,12 @@ inputs:
     type:
       - 'null'
       - File
-    doc: reference transcriptome .fna file (by default takes file with least 
-      sequences; with BDBH sets first taxa to start adding genes)
+    doc: reference transcriptome .fna file, one of input_files (by default takes
+      file with least sequences; with BDBH sets first taxa to start adding genes)
     inputBinding:
       position: 101
       prefix: -r
+      valueFrom: $(self.basename)
   - id: report_clusters_min_taxa
     type:
       - 'null'
@@ -204,10 +205,26 @@ inputs:
     inputBinding:
       position: 101
       prefix: -M
+arguments:
+  - position: 100
+    prefix: -d
+    valueFrom: $(inputs.input_dir_name)
 outputs:
+  - id: est_homologues_dir
+    type: Directory
+    doc: Output folder '<input_dir_name>_est_homologues'.
+    outputBinding:
+      glob: $(inputs.input_dir_name)_est_homologues
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.input_dir_name)
+        entry: "$({class: 'Directory', basename: inputs.input_dir_name, listing: inputs.input_files})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/get_homologues:3.8.1--hdfd78af_0

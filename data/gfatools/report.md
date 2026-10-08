@@ -1,5 +1,19 @@
 # gfatools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfatools_asm | PASS | repo test/MT.gfa (8 segments, 11 links): reduction, tip, bubble, overlap and unitig options change the graph; options now ordered and repeatable |
+| gfatools_blacklist | PASS | repo test/MT.gfa (8 segments, 11 links): three regions reported |
+| gfatools_bubble | PASS | repo test/MT.gfa (8 segments, 11 links): three bubble-like regions with sequences |
+| gfatools_gfa2bed | PASS | repo test/MT.gfa (8 segments, 11 links): 8 BED intervals match the segment tags |
+| gfatools_gfa2fa | PASS | repo test/MT.gfa (8 segments, 11 links): 8 FASTA records with 60 bp lines |
+| gfatools_paf2gfa | PASS | overlaps of nf-core HiFi reads (minimap2 ava-pb) give 30 unitigs with sequences |
+| gfatools_sql | PASS | repo test/MT.gfa (8 segments, 11 links): 8 CREATE TABLE and 59 INSERT statements |
+| gfatools_stat | PASS | repo test/MT.gfa (8 segments, 11 links): counts and rank-0 length 16569 match the graph |
+| gfatools_view | PASS | repo test/MT.gfa (8 segments, 11 links): subset by list file, names, radius, delete and region give expected counts; list file now passed as @file |
+
 ## gfatools_view
 
 ### Tool Description
@@ -152,6 +166,51 @@ Options:
 Note: the order of options matters; one option may be applied >1 times.
 ```
 
+
+## gfatools_sql
+
+### Tool Description
+Export an rGFA graph to SQLite statements (written to standard output).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gfatools:0.5.5--h577a1d6_0
+- **Homepage**: https://github.com/lh3/gfatools
+- **Package**: https://anaconda.org/channels/bioconda/packages/gfatools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: gfatools sql <in.gfa>
+Options:
+  -s      write sequence
+```
+
+## gfatools_paf2gfa
+
+### Tool Description
+Build a miniasm-like string graph (GFA) from all-vs-all read overlaps in PAF format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gfatools:0.5.5--h577a1d6_0
+- **Homepage**: https://github.com/lh3/gfatools
+- **Package**: https://anaconda.org/channels/bioconda/packages/gfatools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: paf2gfa [options] <in.paf>
+Options:
+  -n INT      threshold for tips and small bubbles [3]
+  -b          both directions of an arc are present in input
+  -U          keep unidirectional edges (effective with -b)
+  -f          cut and filter initial hits
+  -h NUM      max overhang length [100]
+  -o NUM      min overlap length [500]
+  -c          apply graph cleaning (up to 3)
+  -r FLOAT    max edge cut ratio (between 0.5 and 1) [0.9]
+  -u          generate unitigs
+  -i FILE     input reads []
+```
 
 ## Metadata
 - **Skill**: generated

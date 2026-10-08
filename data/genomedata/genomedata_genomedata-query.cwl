@@ -6,7 +6,9 @@ doc: "print data from genomedata archive in specified trackname and coordinates\
   Tool homepage: http://genomedata.hoffmanlab.org"
 inputs:
   - id: gdarchive
-    type: string
+    type:
+      - File
+      - Directory
     doc: genomedata archive
     inputBinding:
       position: 1

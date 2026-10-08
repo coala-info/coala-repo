@@ -13,7 +13,16 @@ inputs:
     type:
       type: array
       items: File
-    doc: Input datasets
+    doc: Input datasets (for a shapefile, the .shx, .dbf, .prj and .cpg files are staged beside it)
+    secondaryFiles:
+      - pattern: ^.shx
+        required: false
+      - pattern: ^.dbf
+        required: false
+      - pattern: ^.prj
+        required: false
+      - pattern: ^.cpg
+        required: false
     inputBinding:
       position: 1
   - id: bbox

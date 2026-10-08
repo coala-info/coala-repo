@@ -1,5 +1,11 @@
 # gfainject CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gfainject | PASS | synthetic data: BAM and PAF reads cut from the nf-core pangenome path sequences map to the right nodes and offsets |
+
 ## gfainject
 
 ### Tool Description

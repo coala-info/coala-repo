@@ -1,5 +1,11 @@
 # gemma CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gemma | PASS |  |
+
 ## gemma
 
 ### Tool Description

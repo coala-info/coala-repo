@@ -14,8 +14,8 @@ inputs:
   - id: features
     type:
       type: array
-      items: string
-    doc: Input GeoJSON features
+      items: File
+    doc: Input GeoJSON features (GeoJSON feature collection or feature sequence files)
     inputBinding:
       position: 2
   - id: dst_crs
@@ -51,9 +51,6 @@ inputs:
       position: 103
       prefix: --src-crs
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_out
     type:
       - 'null'
@@ -64,4 +61,3 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fiona:1.8.6
-stdout: fiona_fio_load.out

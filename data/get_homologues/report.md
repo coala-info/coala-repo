@@ -1,5 +1,15 @@
 # get_homologues CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| get_homologues_compare_clusters.pl | PASS | repo plasmid BDBH and COG cluster dirs give 24 intersection clusters, venn files and pangenome matrix |
+| get_homologues_get_homologues-est.pl | Failed | image problem: busybox sort has no --buffer-size, so the BLAST result sort step fails |
+| get_homologues_get_homologues.pl | Failed | image problem: busybox sort has no --buffer-size, so the BLAST result sort step fails |
+| get_homologues_parse_pangenome_matrix.pl | PASS | core and soft-core lists equal the expected lists in the tool repo |
+| get_homologues_plot_pancore_matrix.pl | PASS | synthetic data: core-genome curves computed from the repo sample matrix; fits and plots written |
+
 ## get_homologues_get_homologues.pl
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # genoflu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genoflu_genoflu.py | PASS |  |
+
 ## genoflu_genoflu.py
 
 ### Tool Description

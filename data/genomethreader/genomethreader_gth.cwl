@@ -13,20 +13,25 @@ inputs:
     doc: specify input files containing genomic sequences
     inputBinding:
       position: 1
+      prefix: -genomic
   - id: cdna_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: specify input files containing cDNA/EST sequences
     inputBinding:
       position: 2
+      prefix: -cdna
   - id: protein_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: specify input files containing protein sequences
     inputBinding:
       position: 3
+      prefix: -protein
   - id: align_cdna_forward_strand
     type:
       - 'null'
@@ -298,6 +303,14 @@ inputs:
     inputBinding:
       position: 104
       prefix: -xmlout
+  - id: skip_alignment_output
+    type:
+      - 'null'
+      - boolean
+    doc: skip output of spliced alignments (required together with -gff3out)
+    inputBinding:
+      position: 104
+      prefix: -skipalignmentout
   - id: output_file_path
     type: string
     doc: 'redirect output to specified file default: undefined'
@@ -314,6 +327,12 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var all = inputs.genomic_files.concat(inputs.cdna_files || []).concat(inputs.protein_files || []);
+        return all.map(function(f) { return {"entry": f, "writable": true}; });
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomethreader:1.7.1--h87f3376_4

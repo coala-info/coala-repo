@@ -40,7 +40,7 @@ inputs:
   - id: genome_list
     type:
       - 'null'
-      - string
+      - File
     doc: explicit list of genomes to use
     inputBinding:
       position: 104

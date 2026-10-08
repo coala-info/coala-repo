@@ -223,10 +223,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: add metadata
+        inputBinding:
+          prefix: -metadata
+    doc: add metadata (key=value); repeat the option for each entry
     inputBinding:
       position: 104
-      prefix: -metadata
   - id: muxers
     type:
       - 'null'

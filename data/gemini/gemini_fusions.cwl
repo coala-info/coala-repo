@@ -7,7 +7,7 @@ label: gemini_fusions
 doc: "Query the database for fusion events.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1

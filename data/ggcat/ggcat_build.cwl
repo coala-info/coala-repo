@@ -8,8 +8,9 @@ doc: "Builds a k-mer graph from input files.\n\nTool homepage: https://github.co
 inputs:
   - id: input_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: The input files
     inputBinding:
       position: 1
@@ -25,7 +26,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: The lists of input files with colors in format 
       <COLOR_NAME><TAB><FILE_PATH>
     inputBinding:
@@ -124,7 +125,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: The lists of input files
     inputBinding:
       position: 102
@@ -187,12 +188,19 @@ inputs:
       position: 102
       prefix: --minimizer-length
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: string
+    default: output.fasta.lz4
     inputBinding:
       position: 102
       prefix: --output-file
+  - id: listed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Sequence files named in the list files of input_lists and colored_input_lists.
+      They are staged in the working directory next to the (copied) list files, so
+      name them by file name only in the lists.
   - id: pathtigs
     type:
       - 'null'
@@ -232,10 +240,36 @@ inputs:
       position: 102
       prefix: --threads-count
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: unitigs
+    type: File
+    doc: Output graph (maximal unitigs or the selected tig type); lz4 compressed when
+      the name ends in .lz4
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: stats_log
+    type:
+      - 'null'
+      - File
+    doc: Statistics log written next to the output file
+    outputBinding:
+      glob: '*.stats.log'
+  - id: colors_file
+    type:
+      - 'null'
+      - File
+    doc: Colors map written when colors are enabled
+    outputBinding:
+      glob: '*.colors.dat'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = (inputs.listed_files || []).slice();
+        var lists = (inputs.input_lists || []).concat(inputs.colored_input_lists || []);
+        for (var i = 0; i < lists.length; i++) { l.push({entry: lists[i], writable: true}); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggcat:2.0.0--ha96b9cd_0
-stdout: ggcat_build.out

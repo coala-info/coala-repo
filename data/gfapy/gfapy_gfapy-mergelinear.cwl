@@ -45,7 +45,7 @@ inputs:
   - id: vlevel
     type:
       - 'null'
-      - string
+      - int
     doc: validation level
     inputBinding:
       position: 102

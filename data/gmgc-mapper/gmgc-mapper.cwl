@@ -17,8 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input genome FASTA file.
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --input
@@ -43,6 +41,8 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gmgc-mapper:0.2.0--pyh864c0ab_1

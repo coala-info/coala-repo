@@ -10,7 +10,7 @@ inputs:
     type: File
     doc: Input GFA file
     inputBinding:
-      position: 1
+      position: 200
   - id: line_length
     type:
       - 'null'

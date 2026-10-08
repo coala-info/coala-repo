@@ -2,20 +2,20 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gfaview
 label: gfa1_gfaview
-doc: "View and simplify a GFA graph.\n\nTool homepage: https://github.com/lh3/gfa1"
+doc: "View and simplify a GFA graph. The operations run in a fixed order: extract (-s), delete (-d), transitive reduction (-r), tip trimming (-t), bubble popping (-b), dropping shorter overlaps (-o), misc trimming (-m), unitig graph (-u).\n\nTool homepage: https://github.com/lh3/gfa1"
 inputs:
   - id: input_gfa
     type: File
     doc: Input GFA file
     inputBinding:
-      position: 1
+      position: 200
   - id: delete_segments
     type:
       - 'null'
       - string
-    doc: list of segment names to delete
+    doc: "list of segment names to delete: a comma-led list such as ,seg1,seg2 or the name of a file with one name per line"
     inputBinding:
-      position: 102
+      position: 112
       prefix: -d
   - id: drop_shorter_overlaps
     type:
@@ -23,7 +23,7 @@ inputs:
       - boolean
     doc: drop shorter overlaps
     inputBinding:
-      position: 102
+      position: 116
       prefix: -o
   - id: dropped_longest_ratio
     type:
@@ -31,15 +31,15 @@ inputs:
       - float
     doc: dropped/longest<FLOAT, for -o
     inputBinding:
-      position: 102
+      position: 101
       prefix: -O
   - id: extract_segments
     type:
       - 'null'
       - string
-    doc: list of segment names to extract
+    doc: "list of segment names to extract: a comma-led list such as ,seg1,seg2 or the name of a file with one name per line"
     inputBinding:
-      position: 102
+      position: 111
       prefix: -s
   - id: fuzzy_length_transitive_reduction
     type:
@@ -47,7 +47,7 @@ inputs:
       - int
     doc: fuzzy length for -r
     inputBinding:
-      position: 102
+      position: 101
       prefix: -R
   - id: generate_unitig_graph
     type:
@@ -55,7 +55,7 @@ inputs:
       - boolean
     doc: generate unitig graph (unambiguous merge)
     inputBinding:
-      position: 102
+      position: 118
       prefix: -u
   - id: include_neighbors_radius
     type:
@@ -63,7 +63,7 @@ inputs:
       - int
     doc: include neighbors in a radius
     inputBinding:
-      position: 102
+      position: 101
       prefix: -S
   - id: max_bubble_dist_pop_bubbles
     type:
@@ -71,7 +71,7 @@ inputs:
       - int
     doc: max bubble dist for -b
     inputBinding:
-      position: 102
+      position: 101
       prefix: -B
   - id: misc_trimming
     type:
@@ -79,7 +79,7 @@ inputs:
       - boolean
     doc: misc trimming
     inputBinding:
-      position: 102
+      position: 117
       prefix: -m
   - id: output_cigar_m_only
     type:
@@ -87,7 +87,7 @@ inputs:
       - boolean
     doc: only output CIGAR-M operators (for compatibility)
     inputBinding:
-      position: 102
+      position: 101
       prefix: '-1'
   - id: pop_bubbles
     type:
@@ -95,7 +95,7 @@ inputs:
       - boolean
     doc: pop bubbles
     inputBinding:
-      position: 102
+      position: 115
       prefix: -b
   - id: tip_length_trim_tips
     type:
@@ -103,7 +103,7 @@ inputs:
       - int
     doc: tip length for -t
     inputBinding:
-      position: 102
+      position: 101
       prefix: -T
   - id: transitive_reduction
     type:
@@ -111,7 +111,7 @@ inputs:
       - boolean
     doc: transitive reduction
     inputBinding:
-      position: 102
+      position: 113
       prefix: -r
   - id: trim_tips
     type:
@@ -119,7 +119,7 @@ inputs:
       - boolean
     doc: trim tips
     inputBinding:
-      position: 102
+      position: 114
       prefix: -t
   - id: verbose_level
     type:
@@ -127,7 +127,7 @@ inputs:
       - int
     doc: verbose level
     inputBinding:
-      position: 102
+      position: 101
       prefix: -v
 outputs:
   - id: stdout

@@ -38,8 +38,8 @@ inputs:
   - id: append_output
     type:
       - 'null'
-      - File
-    doc: append messages to FILE
+      - string
+    doc: append messages to FILE (name of the log file to write)
     inputBinding:
       position: 102
       prefix: --append-output
@@ -722,8 +722,8 @@ inputs:
   - id: output_file
     type:
       - 'null'
-      - File
-    doc: log messages to FILE
+      - string
+    doc: log messages to FILE (name of the log file to write)
     inputBinding:
       position: 102
       prefix: --output-file
@@ -1195,12 +1195,36 @@ outputs:
   - id: warc_file
     type:
       - 'null'
-      - File
-    doc: save request/response data to a .warc.gz file
+      - type: array
+        items: File
+    doc: save request/response data to a .warc.gz file (and the .cdx file with --warc-cdx)
     outputBinding:
-      glob: $(inputs.warc_file_path)
+      glob: $(inputs.warc_file_path).warc*
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: log messages written with --output-file
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: appended_log_file
+    type:
+      - 'null'
+      - File
+    doc: log messages written with --append-output
+    outputBinding:
+      glob: $(inputs.append_output)
+  - id: directory_prefix_out
+    type:
+      - 'null'
+      - Directory
+    doc: directory with the saved files (--directory-prefix)
+    outputBinding:
+      glob: $(inputs.directory_prefix)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gnu-wget:1.18--hb829ee6_10

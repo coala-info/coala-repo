@@ -1,5 +1,15 @@
 # glimpse-bio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| glimpse-bio_GLIMPSE2_chunk | PASS |  |
+| glimpse-bio_GLIMPSE2_concordance | PASS |  |
+| glimpse-bio_GLIMPSE2_ligate | PASS |  |
+| glimpse-bio_GLIMPSE2_phase | PASS |  |
+| glimpse-bio_GLIMPSE2_split_reference | PASS |  |
+
 ## glimpse-bio_GLIMPSE2_chunk
 
 ### Tool Description
@@ -7,24 +17,20 @@ Split chromosomes into chunks
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
-- **Homepage**: https://odelaneau.github.io/GLIMPSE/
+- **Homepage**: https://github.com/odelaneau/GLIMPSE
 - **Package**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
-- **Total Downloads**: 13.8K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
 ### Original Help Text
 ```text
+
 [GLIMPSE2] Split chromosomes into chunks
   * Authors              : Simone RUBINACCI & Olivier DELANEAU, University of Lausanne
   * Contact              : simone.rubinacci@unil.ch & olivier.delaneau@unil.ch
   * Version       	 : GLIMPSE2_chunk v2.0.0 / commit = 2.0.1 / release = 2024-12-15
   * Citation	         : BiorXiv, (2022). DOI: https://doi.org/10.1101/2022.11.28.518213
   *         	         : Nature Genetics 53, 120–126 (2021). DOI: https://doi.org/10.1038/s41588-020-00756-0
-  * Run date      	 : 25/02/2026 - 17:16:12
+  * Run date      	 : 08/10/2026 - 20:30:30
 
 Basic options:
   --help                             Produces help message
@@ -59,7 +65,6 @@ Output files:
   --log arg                          Log file
 ```
 
-
 ## glimpse-bio_GLIMPSE2_split_reference
 
 ### Tool Description
@@ -67,19 +72,20 @@ Split reference panel into binary GLIMPSE2 files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
-- **Homepage**: https://odelaneau.github.io/GLIMPSE/
+- **Homepage**: https://github.com/odelaneau/GLIMPSE
 - **Package**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
+
 [GLIMPSE2] Split reference panel into binary GLIMPSE2 files
   * Authors              : Simone RUBINACCI & Olivier DELANEAU, University of Lausanne
   * Contact              : simone.rubinacci@unil.ch & olivier.delaneau@unil.ch
   * Version       	 : GLIMPSE2_split_reference v2.0.0 / commit = 2.0.1 / release = 2024-12-15
   * Citation	         : BiorXiv, (2022). DOI: https://doi.org/10.1101/2022.11.28.518213
   *         	         : Nature Genetics 53, 120–126 (2021). DOI: https://doi.org/10.1038/s41588-020-00756-0
-  * Run date      	 : 25/02/2026 - 17:16:34
+  * Run date      	 : 08/10/2026 - 20:30:31
 
 Basic parameters:
   --help                             Produces help message
@@ -103,27 +109,27 @@ Output parameters:
   --log arg                          Log file
 ```
 
-
 ## glimpse-bio_GLIMPSE2_phase
 
 ### Tool Description
-[GLIMPSE2] Phase and impute low coverage sequencing data
+Phase and impute low coverage sequencing data
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
-- **Homepage**: https://odelaneau.github.io/GLIMPSE/
+- **Homepage**: https://github.com/odelaneau/GLIMPSE
 - **Package**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
+
 [GLIMPSE2] Phase and impute low coverage sequencing data
   * Authors              : Simone RUBINACCI & Olivier DELANEAU, University of Lausanne
   * Contact              : simone.rubinacci@unil.ch & olivier.delaneau@unil.ch
   * Version       	 : GLIMPSE2_phase v2.0.0 / commit = 2.0.1 / release = 2024-12-15
   * Citation	         : BiorXiv, (2022). DOI: https://doi.org/10.1101/2022.11.28.518213
   *         	         : Nature Genetics 53, 120–126 (2021). DOI: https://doi.org/10.1038/s41588-020-00756-0
-  * Run date      	 : 25/02/2026 - 17:16:58
+  * Run date      	 : 08/10/2026 - 20:30:31
 
 Basic parameters:
   --help                               Produces help message
@@ -306,7 +312,6 @@ Output parameters:
   --log arg                            Log file
 ```
 
-
 ## glimpse-bio_GLIMPSE2_ligate
 
 ### Tool Description
@@ -314,19 +319,20 @@ Ligate multiple output files into chromosome-wide files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
-- **Homepage**: https://odelaneau.github.io/GLIMPSE/
+- **Homepage**: https://github.com/odelaneau/GLIMPSE
 - **Package**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
+
 [GLIMPSE2] Ligate multiple output files into chromosome-wide files
   * Authors              : Simone RUBINACCI & Olivier DELANEAU, University of Lausanne
   * Contact              : simone.rubinacci@unil.ch & olivier.delaneau@unil.ch
   * Version       	 : GLIMPSE2_ligate v2.0.0 / commit = 2.0.1 / release = 2024-12-15
   * Citation	         : BiorXiv, (2022). DOI: https://doi.org/10.1101/2022.11.28.518213
   *         	         : Nature Genetics 53, 120–126 (2021). DOI: https://doi.org/10.1038/s41588-020-00756-0
-  * Run date      	 : 25/02/2026 - 17:17:45
+  * Run date      	 : 08/10/2026 - 20:30:30
 
 Basic options:
   --help                  Produces help message
@@ -343,6 +349,90 @@ Output files:
                           GLIMPSE2 for random access to genomic regions
 ```
 
+## glimpse-bio_GLIMPSE2_concordance
+
+### Tool Description
+Check concordance of imputed data
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
+- **Homepage**: https://github.com/odelaneau/GLIMPSE
+- **Package**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+[GLIMPSE2] Check concordance of imputed data
+  * Authors              : Simone RUBINACCI & Olivier DELANEAU, University of Lausanne
+  * Contact              : simone.rubinacci@unil.ch & olivier.delaneau@unil.ch
+  * Version       	 : GLIMPSE2_concordance v2.0.0 / commit = 2.0.1 / release = 2024-12-15
+  * Citation	         : BiorXiv, (2022). DOI: https://doi.org/10.1101/2022.11.28.518213
+  *         	         : Nature Genetics 53, 120–126 (2021). DOI: https://doi.org/10.1038/s41588-020-00756-0
+  * Run date      	 : 08/10/2026 - 20:30:31
+
+Basic options:
+  --help                  Produces help message
+  --seed arg (=15052011)  Seed of the random number generator
+  --threads arg (=1)      Number of threads
+
+Input parameters:
+  --input arg             File with four columns listing in order: regions 
+                          frequencies validation and imputed dataset. For 
+                          genome-wide concordance, add more lines specifying 
+                          different chromosomes.
+  --samples arg           List of samples to process, one sample ID per line
+  --gt-val                Uses hard called genotypes rather than phread-scaled 
+                          likelihoods for the validation dataset, reading them 
+                          from FORMAT/GT field.
+  --gt-tar                Uses FORMAT/GT field to determine the best-guess 
+                          genotype rather than the FORMAT/GP (default). 
+                          FORMAT/DS are FORMAT/GP fields are still required for
+                          calibration and rsquared calculations.
+
+Other parameters:
+  --af-tag arg (=AF)      Allele frequency INFO tag to use for binning. By 
+                          default the allele frequency is estimated from the 
+                          INFO/AF tag.
+  --use-alt-af            If specified, the metrics work on the ALT allele 
+                          frequency (range [0,1]), rather than minor allele 
+                          frequency (range [0,0.5]).
+  --bins arg              Allele frequency bins used for rsquared computations.
+                          By default they should as MAF bins [0-0.5], while 
+                          they should take the full range [0-1] if 
+                          --use-ref-alt is used.
+  --ac-bins arg           User-defined allele count bins used for rsquared 
+                          computations.
+  --allele-counts         Default allele count bins used for rsquared 
+                          computations. AN field must be defined in the 
+                          frequency file.
+  --min-val-gl arg        Minimum genotype likelihood probability P(G|R) in 
+                          validation data [set to zero to have no filter of if 
+                          using --gt-validation]
+  --min-val-dp arg        Minimum coverage in validation data. If FORMAT/DP is 
+                          missing and --minDP > 0, the program exits with an 
+                          error. [set to zero to have no filter of if using 
+                          --gt-validation]
+  --min-tar-gp arg        Minimum GP probabilities to be used as a filter. By 
+                          default it looks at the GP field to specify the 
+                          filter, but will try to use FORMAT/PL if gt-tar 
+                          option is specified. Leave empty if no filter is 
+                          used.
+  --out-r2-per-site       Output r2 at each site.
+  --out-rej-sites         Output sites where that cannot be used for the 
+                          concordance.
+  --out-conc-sites        Output sites where all target genotypes are 
+                          concordant with the truth.
+  --out-disc-sites        Output sites where at least one target genotype is 
+                          diconcordant with the truth.
+  --groups arg            Alternative to frequency bins: group bins are user 
+                          defined, provided in a file.
+
+Output files:
+  -O [ --output ] arg     Prefix of the output files (extensions are 
+                          automatically added)
+  --log arg               Log file
+```
 
 ## Metadata
 - **Skill**: generated

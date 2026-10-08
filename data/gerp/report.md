@@ -1,5 +1,12 @@
 # gerp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gerp_gerpcol | PASS | synthetic data: simulated alignment, command fixed from gpp-gerpcol to gerpcol |
+| gerp_gerpelem | PASS | synthetic data: planted conserved block 200-400 found; command fixed to gerpelem |
+
 ## gerp_gerpcol
 
 ### Tool Description

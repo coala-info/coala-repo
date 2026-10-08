@@ -1,5 +1,14 @@
 # gmcloser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gmcloser | PASS | synthetic data: planted 50 bp gap in SARS-CoV-2 scaffold; real reads; gap closed to the exact reference. |
+| gmcloser_gmvalue_contig | PASS | synthetic data: planted chimeric contig; it was flagged and good contigs kept. |
+| gmcloser_gmvalue_scaf | PASS | synthetic data: planted inverted join was reported as a mislink. |
+| gmcloser_gmvalue_subcon | PASS | synthetic data: planted scaffolds; subcontigs checked against the reference. Option -e used because the wrapper rejects --error_correct. |
+
 ## gmcloser
 
 ### Tool Description
@@ -62,6 +71,108 @@ Usage:
        --min_qalign or -mq <INT>       minimum number of queries that are aligned to either 5'- or 3'-terminus of a target subcontig [default: 1]
        --iterate or -it <INT>          number of iteration [default: 3]
        --alignq or -aq <STR>           BLASTn alignment file for query against query [optional]
+```
+
+
+## gmcloser_gmvalue_contig
+
+### Tool Description
+GMvalue: find misassemblies in contig and optionally write an error-free set.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gmcloser:1.6.2--0
+- **Homepage**: https://sourceforge.net/projects/gmcloser/
+- **Package**: https://anaconda.org/channels/bioconda/packages/gmcloser/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+      GMvalue ver. 1.3
+  
+      Usage: gmvalue contig -r [reference.fasta] -q [contig.fasta] -p [prefix name of output] [other options]
+      Options:
+       --query or -q <STR>      input contig fasta file (e.g., contig1.fa)
+       --ref or -r <STR>        input reference file (e.g., ref.fa)
+       --min_id or -mi <INT>    minimum alignment identity (%) [default: 97]
+       --min_cov or -mc <INT>   minimum coverage (%) of query (contig) aligned to a reference [default: 99]
+       --min_align or -ma <INT> minimum alignment overlap length with the maximum allowable size of indels [default: 200]
+       --min_len or -ml <INT>   minimum contig length to be considered [default: 200]
+       --prefix or -p <STR>     prefix name of output files
+       --error_correct or -e    output an error-corrected contig set [default: false]
+       --nuc_len or -l <INT>    minimum exact match length for specifying nucmer option -l [default: 30]
+       --max_indel or -is <INT> maximum allowable size of indels (or distance between break points of a local misassembly) [default: 100]
+       --thread or -n           number of threads to run [default: 1]
+       --help or -h             output help message
+```
+
+
+## gmcloser_gmvalue_subcon
+
+### Tool Description
+GMvalue: find misassemblies in subcon and optionally write an error-free set.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gmcloser:1.6.2--0
+- **Homepage**: https://sourceforge.net/projects/gmcloser/
+- **Package**: https://anaconda.org/channels/bioconda/packages/gmcloser/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+      GMvalue ver. 1.3
+  
+      Usage: gmvalue subcon -r [reference.fasta] -q [scaffold.fasta] -p [prefix name of output] [other options]
+      Options:
+       --query or -q <STR>      input scaffold fasta file (e.g., scaf1.fa)
+       --ref or -r <STR>        input reference file (e.g., ref.fa)
+       --min_id or -mi <INT>    minimum alignment identity (%) [default: 97]
+       --min_cov or -mc <INT>   minimum coverage (%) of query (contig) aligned to a reference [default: 99]
+       --min_align or -ma <INT> minimum alignment overlap length with the maximum allowable size of indels [default: 200]
+       --min_len or -ml <INT>   minimum contig length to be considered [default: 200]
+       --prefix or -p <STR>     prefix name of output files
+       --error_correct or -e    output an error-corrected contig set [default: false]
+       --nuc_len or -l <INT>    minimum exact match length for specifying nucmer option -l [default: 30]
+       --min_gap or -g <INT>    minimum gap size in query scaffolds to split into subcontigs [default: 1]
+       --max_indel or -is <INT> maximum allowable size of indels in subcontigs (or distance between break points of a local misassembly) [default: 100]
+       --thread or -n           number of threads to run [default: 1]
+       --help or -h             output help message
+```
+
+
+## gmcloser_gmvalue_scaf
+
+### Tool Description
+GMvalue: find misassemblies in scaf and optionally write an error-free set.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gmcloser:1.6.2--0
+- **Homepage**: https://sourceforge.net/projects/gmcloser/
+- **Package**: https://anaconda.org/channels/bioconda/packages/gmcloser/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+      GMvalue ver. 1.3
+
+      Usage: gmvalue scaf -r [reference.fasta] -q [scaffold.fasta] -p [prefix name of output] [other options]
+      Options:
+       --query or -q <STR>      input scaffold fasta file (e.g., scaf1.fa)
+       --ref or -r <STR>        input reference file (e.g., ref.fa)
+       --min_id or -mi <INT>    minimum alignment identity (%) [default: 97]
+       --min_cov or -mc <INT>   minimum coverage (%) of query (contig) aligned to a reference [default: 99]
+       --min_align or -ma <INT> minimum alignment overlap length with the maximum allowable size of indels [default: 200]
+       --min_len or -ml <INT>   minimum contig length to be considered [default: 200]
+       --prefix or -p <STR>     prefix name of output files
+       --error_correct or -e    output an error-corrected contig set [default: false]
+       --nuc_len or -l <INT>    minimum exact match length for specifying nucmer option -l [default: 30]
+       --min_gap or -mg <INT>   minimum gap size in query scaffolds to split into subcontigs [default: 1]
+       --max_gap or -mg <INT>   maximum length of gaps contained in the scaffolds [default: 50000]
+       --max_indel or -is <INT> maximum allowable size of indels in subcontigs (or distance between break points of a local misassembly) [default: 100]
+       --thread or -n           number of threads to run [default: 1]
+       --help or -h             output help message
 ```
 
 

@@ -142,9 +142,7 @@ inputs:
       position: 101
       prefix: --min_spacer_len
   - id: min_terminal_repeat_length
-    type:
-      - 'null'
-      - int
+    type: int
     doc: Minimum length of the terminal repeats; must >= 5.
     inputBinding:
       position: 101

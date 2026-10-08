@@ -28,6 +28,9 @@ inputs:
       \      \n          If the file ends with .gz, it will be treated as a BGZIP
       compressed file and decompressed on-the-fly. It will expect a corresponding
       .fai index and a gzip index file."
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 101
       prefix: --fasta
@@ -76,7 +79,7 @@ inputs:
       position: 101
       prefix: --stranded
   - id: output_file_path
-    type: string?
+    type: string
     doc: ' Output BED file to write to (default=stdout)'
     inputBinding:
       position: 102

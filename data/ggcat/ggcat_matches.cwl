@@ -4,11 +4,16 @@ baseCommand:
   - ggcat
   - matches
 label: ggcat_matches
-doc: "ggcat-matches 2.0.0\n\nTool homepage: https://github.com/algbio/ggcat"
+doc: "Debug print the matches of a color index in a colored graph written by ggcat
+  build.\n\nTool homepage: https://github.com/algbio/ggcat"
 inputs:
   - id: input_file
     type: File
-    doc: Input fasta file with associated colors file (in the same folder)
+    secondaryFiles:
+      - pattern: ^.colors.dat
+        required: true
+    doc: Input fasta file with associated colors file (same name with the extension
+      .colors.dat, in the same folder)
     inputBinding:
       position: 1
   - id: match_color

@@ -7,7 +7,7 @@ label: gemini_windower
 doc: "Window a database for analysis.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be updated.
     inputBinding:
       position: 1
@@ -30,7 +30,7 @@ inputs:
   - id: step_size
     type:
       - 'null'
-      - string
+      - int
     doc: The step size for the windows in bp.
     inputBinding:
       position: 102
@@ -38,7 +38,7 @@ inputs:
   - id: window_size
     type:
       - 'null'
-      - string
+      - int
     doc: The name of the column to be added to the variant table.
     inputBinding:
       position: 102

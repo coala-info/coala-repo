@@ -7,7 +7,7 @@ label: gemini_gene_wise
 doc: "Perform gene-wise analysis on a GEMINI database.\n\nTool homepage: https://github.com/arq5x/gemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: Path to the GEMINI database file.
     inputBinding:
       position: 1

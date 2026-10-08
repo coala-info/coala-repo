@@ -71,7 +71,8 @@ inputs:
   - id: json_report
     type:
       - 'null'
-      - File
+      - string
+    default: gencore.json
     doc: the json format report file name
     inputBinding:
       position: 101
@@ -106,7 +107,7 @@ inputs:
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: output bam/sam file. STDOUT will be written to if it's not specified
     inputBinding:
       position: 101
@@ -175,12 +176,29 @@ inputs:
       position: 101
       prefix: --umi_prefix
   - id: html_report_path
-    type: string
+    type:
+      - 'null'
+      - string
+    default: gencore.html
     doc: the html format report file name (string [=gencore.html])
     inputBinding:
       position: 102
       prefix: --html
 outputs:
+  - id: out_alignment
+    type:
+      - 'null'
+      - File
+    doc: output bam/sam file
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: json_report_out
+    type:
+      - 'null'
+      - File
+    doc: the json format report file
+    outputBinding:
+      glob: $(inputs.json_report)
   - id: html_report
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # genome2tree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genome2tree_genome2tree.py | PASS |  |
+
 ## genome2tree_genome2tree.py
 
 ### Tool Description

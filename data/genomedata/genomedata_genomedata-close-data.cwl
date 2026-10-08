@@ -7,9 +7,10 @@ doc: "Compute summary statistics for data in Genomedata archive and ready for ac
 inputs:
   - id: gdarchive
     type: Directory
-    doc: genomedata archive
+    doc: "genomedata archive (directory mode). It is copied to the working directory and modified there."
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: verbose
     type:
       - 'null'
@@ -22,6 +23,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: archive
+    type: Directory
+    doc: The modified Genomedata archive
+    outputBinding:
+      glob: $(inputs.gdarchive.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.gdarchive)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomedata:1.7.4--py311h87bb1fd_0

@@ -1,5 +1,11 @@
 # genomebaser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| genomebaser_GenomeBaser | Failed | image problem: rsync, prokka, cd-hit and BLAST+ are missing from the image, so no genomes are downloaded and the database stays empty |
+
 ## genomebaser_GenomeBaser
 
 ### Tool Description

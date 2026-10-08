@@ -1,5 +1,21 @@
 # getorganelle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| getorganelle_fastg_to_gfa.py | PASS | SPAdes graph from the plastome run converted; segment counts match |
+| getorganelle_get_organelle_config.py | PASS | downloaded the embplant_pt databases (config_dir now a string, network access added) |
+| getorganelle_get_organelle_from_assembly.py | PASS | slimmed and disentangled the SPAdes graph into a 154478 bp plastome (expected sizes now comma-joined) |
+| getorganelle_get_organelle_from_reads.py | PASS | Galaxy Arabidopsis reads assembled a complete 154478 bp plastome (run with -s and --genes from one database type) |
+| getorganelle_gfa_to_fasta.py | PASS | SPAdes graph from the plastome run converted; segment counts match |
+| getorganelle_gfa_to_fastg.py | PASS | SPAdes graph from the plastome run converted; segment counts match |
+| getorganelle_plastome_arch_info.py | PASS | assembled plastome gives LSC 84170, SSC 17780, IR 26264 |
+| getorganelle_reconstruct_graph_from_fasta.py | PASS | plastome fasta rebuilt into a GFA graph |
+| getorganelle_rm_low_coverage_duplicated_contigs.py | Failed | tool bug: script crashes with AttributeError treat_no_hits for any input |
+| getorganelle_slim_graph.py | PASS | SPAdes graph slimmed with the embplant_pt label fasta; hit contigs and csv written |
+| getorganelle_summary_get_organelle_output.py | PASS | summary csv of the plastome run has organelle type, length 154478 and coverage |
+
 ## getorganelle_get_organelle_config.py
 
 ### Tool Description
@@ -637,6 +653,358 @@ options:
   --help                print verbose introduction for all options.
 ```
 
+
+## getorganelle_fastg_to_gfa.py
+
+### Tool Description
+Convert a SPAdes FASTG assembly graph to GFA.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: fastg2gfa.py *.fastg
+```
+
+## getorganelle_gfa_to_fasta.py
+
+### Tool Description
+Convert a GFA assembly graph to FASTA (one record per segment).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: gfa2fasta.py *.gfa
+```
+
+## getorganelle_gfa_to_fastg.py
+
+### Tool Description
+Convert a GFA assembly graph to FASTG.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: gfa2fastg.py *.gfa
+```
+
+## getorganelle_plastome_arch_info.py
+
+### Tool Description
+Count the LSC, SSC and IR/DR lengths of plastome sequences from fasta files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: plastome_arch_info.py fasta_format_sequence_file(s)
+
+## This script helps you count the LSC/SSC/IR-DR lengths from a batch of
+plastome sequences. ## Jianjun
+
+positional arguments:
+  sequences         Input fasta format sequences (split the files by spaces).
+
+options:
+  -h, --help        show this help message and exit
+  -o OUTPUT         output file.
+  -r MIN_IR_LENGTH  The minimum repeat length treated as the IR region of
+                    plastome. Default: [5000]
+  -v VALID_BASES    Valid bases. Default: ATGCRMYKHBDVatgcrmykhbdv
+  --version         show program's version number and exit
+```
+
+## getorganelle_reconstruct_graph_from_fasta.py
+
+### Tool Description
+Convert sequences back into an assembly graph (GFA, or FASTG when the output name ends with .fastg) using a naive De Bruijn approach.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: reconstruct_graph_from_fasta.py -i fasta_file -o out.gfa
+
+This script uses an naive De Bruijn approach to convert sequence back into an
+assembly graph file, such as a gfa (Graphical Fragment Assembly) or a fastg
+file.
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT              Input fasta file.
+  -o OUTPUT             Output graph file. The output format is GFA by
+                        default, but FASTG only when indicated with postfix
+                        '.fastg'.
+  -L OVERLAP, --overlap OVERLAP
+                        overlap for reconstructing De Bruijn graph. Default:55
+  -c CIRCULAR, --circular CIRCULAR
+                        Sequences in input fasta file are all circular
+                        (yes/no/auto). The auto mode enables detection by
+                        checking the existence of '(circular)' in the end of
+                        the header of each sequence. Default:auto
+  --single-chain        The input sequence(s) was by default treated as DNA
+                        double-chain with its complementary sequence. Choose
+                        this flag to turn off.
+  --out-kg OUT_KG       Output kmer node graph.
+  -v, --version         show program's version number and exit
+```
+
+## getorganelle_rm_low_coverage_duplicated_contigs.py
+
+### Tool Description
+Remove low-coverage contigs that duplicate higher-coverage contigs in FASTG assembly graphs, found by blastn.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: Usage: rm_low_coverage_duplicated_contigs.py *.fastg
+
+positional arguments:
+  assemblies            Input FASTG format assembly graph files (split the
+                        files by spaces).
+
+options:
+  -h, --help            show this help message and exit
+  --cov-t COVERAGE_THRESHOLD
+                        With ratio (coverage of query/coverage of subject)
+                        below which, the query would be exposed to discarded.
+                        Default: 0.12
+  --len-t LENGTH_THRESHOLD
+                        With overlap (length of hit of query/ length of query)
+                        above which, the query would be exposed to discarded.
+                        Default: 0.9
+  --blur                Replace hit low-coverage bases with N.
+  --keep-temp           Keep temp blast files.
+  --which-blast WHICH_BLAST
+                        Assign the path to BLAST binary files if not added to
+                        the path.
+  -o OUTPUT_DIR         Output directory. Default: along with the original
+                        file
+  -t THREADS, --threads THREADS
+                        Threads of blastn.
+  -v, --version         show program's version number and exit
+```
+
+## getorganelle_summary_get_organelle_output.py
+
+### Tool Description
+Summarize the output folders of get_organelle_from_reads.py into one csv table.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: summary_get_organelle_output.py list_of_folders -o tab_file
+
+positional arguments:
+  output         Input a list of folders generated by
+                 get_organelle_from_reads.py.Please split the files by spaces.
+
+options:
+  -h, --help     show this help message and exit
+  -o OUTPUT      Output csv file.
+  -v, --version  show program's version number and exit
+```
+
+## getorganelle_slim_graph.py
+
+### Tool Description
+Exclude certain contigs from an assembly graph (fastg, gfa or fasta) by blast against label databases.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: python slim_graph.py assembly_graph_files -F embplant_pt -E embplant_mt
+
+GetOrganelle v1.7.7.1 slim_graph.py is a script for excluding certain contigs
+from assembly graph file (*.fastg/*.fasta) by blast
+
+positional arguments:
+  assemblies            Input assembly (graph) files (.fasta or .gfa or
+                        .fastg). Please split the files by spaces.
+
+options:
+  -h, --help            show this help message and exit
+  -F ORGANELLE_TYPES    followed with mode embplant_pt, other_pt, embplant_mt,
+                        embplant_nr, animal_mt, fungus_mt, fungus_nr (which
+                        means embryophyta plastome, non-embryophyta plastome,
+                        plant mitochondrion, plant nuclear ribosomal RNA,
+                        animal mitochondrion, fungus mitochondrion, fungus
+                        nuclear ribosomal RNA separately), or a combination of
+                        above split by comma(s) (corresponds to certain
+                        arguments as following listed). embplant_pt "
+                        --include-priority
+                        /root/.GetOrganelle/LabelDatabase/embplant_pt.fasta"
+                        other_pt " --include-priority
+                        /root/.GetOrganelle/LabelDatabase/other_pt.fasta"
+                        embplant_mt " --include-priority
+                        /root/.GetOrganelle/LabelDatabase/embplant_mt.fasta"
+                        embplant_nr " --include-priority
+                        /root/.GetOrganelle/LabelDatabase/embplant_nr.fasta"
+                        animal_mt " --include-priority
+                        /root/.GetOrganelle/LabelDatabase/animal_mt.fasta"
+                        fungus_mt " --include-priority
+                        /root/.GetOrganelle/LabelDatabase/fungus_mt.fasta"
+                        fungus_nr " --include-priority
+                        /root/.GetOrganelle/LabelDatabase/fungus_nr.fasta"
+                        other_pt,embplant_mt,fungus_mt " --include-priority /r
+                        oot/.GetOrganelle/LabelDatabase/other_pt.fasta,/root/.
+                        GetOrganelle/LabelDatabase/embplant_mt.fasta,/root/.Ge
+                        tOrganelle/LabelDatabase/fungus_mt.fasta"For easy
+                        usage and compatibility of old versions, following
+                        redirection would be automatically fulfilled without
+                        warning: plant_cp->embplant_pt; plant_pt->embplant_pt;
+                        plant_mt->embplant_mt; plant_nr->embplant_nr
+  -E EXCLUDE_ORGANELLE_TYPES
+                        followed with mode embplant_pt, other_pt, embplant_mt,
+                        embplant_nr, animal_mt, fungus_mt,fungus_nr (which
+                        means embryophyta plastome, non-embryophyta plastome,
+                        plant mitochondrion, plant nuclear ribosomal RNA,
+                        animal mitochondrion, fungus mitochondrion, fungus
+                        nuclear ribosomal RNA separately), or a combination of
+                        above split by comma(s) (be similar to -F and
+                        corresponds to certain arguments as following listed).
+                        embplant_pt " --exclude
+                        /root/.GetOrganelle/LabelDatabase/embplant_pt.fasta"
+                        embplant_mt " --exclude
+                        /root/.GetOrganelle/LabelDatabase/embplant_mt.fasta"
+                        embplant_nr " --exclude
+                        /root/.GetOrganelle/LabelDatabase/embplant_nr.fasta"
+                        animal_mt " --exclude
+                        /root/.GetOrganelle/LabelDatabase/animal_mt.fasta"
+                        fungus_mt " --exclude
+                        /root/.GetOrganelle/LabelDatabase/fungus_mt.fasta"
+                        fungus_nr " --exclude
+                        /root/.GetOrganelle/LabelDatabase/fungus_nr.fasta"
+                        embplant_mt,embplant_nr " --exclude /root/.GetOrganell
+                        e/LabelDatabase/embplant_mt.fasta,/root/.GetOrganelle/
+                        LabelDatabase/embplant_nr.fasta"
+                        ------------------------------------------------------
+                        For easy usage and compatibility of old versions,
+                        following redirection would be automatically fulfilled
+                        without warning: plant_cp->embplant_pt;
+                        plant_pt->embplant_pt; plant_mt->embplant_mt;
+                        plant_nr->embplant_nr
+  --no-hits TREAT_NO_HITS
+                        Provide treatment for non-hitting contigs. ex_no_con
+                        keep those connect with hitting-include contigs.
+                        (Default) ex_no_hit exclude all. keep_all keep all
+  --max-slim-extending-len MAX_SLIM_EXTENDING_LEN
+                        This is used to limit the extending length, below
+                        which a "non-hit contig" is allowed to be distant from
+                        a "hit contig" to be kept. This distance is measured
+                        by the shortest distance connecting those two contigs,
+                        weighted by the depth of the "hit contig". This is
+                        used only when "--no-hits ex_no_con" was chosen.
+                        Should be a single INTEGER number or inf (meaning
+                        infinite). It is supposed to be half of the maximum
+                        expected genome size to be safe, but could be much
+                        smaller if the LabelDatabse is closely related.
+                        Default: 15000 (-F embplant_pt), 50000 (-F
+                        embplant_mt/fungus_mt/other_pt), 12500 (-F
+                        embplant_nr/fungus_nr/animal_mt),
+                        maximum_of_type1_type2 (-F type1,type2), inf (cases
+                        without using -F)
+  --significant SIGNIFICANT
+                        Within a contig, if the query-score of hitting A is
+                        more than given times (Default: 3.0) of the query-
+                        score of hitting B, this contig would be treated as
+                        only A related, rather than both.
+  --depth-cutoff DEPTH_CUTOFF
+                        After detection for target coverage, those beyond
+                        certain times (depth cutoff) of the detected coverage
+                        would be excluded. Default: 10000.0
+  --min-depth MIN_DEPTH
+                        Input a float or integer number. Filter fastg file by
+                        a minimum depth. Default: 0.0.
+  --max-depth MAX_DEPTH
+                        Input a float or integer number. filter fastg file by
+                        a maximum depth. Default: inf.
+  --merge               Merge all possible contigs.
+  --include INCLUDE     followed by Blastn database(s)
+  --include-priority INCLUDE_PRIORITY
+                        followed by Blastn database(s).
+  --exclude EXCLUDE     followed by Blastn database(s).
+  --exclude-priority EXCLUDE_PRIORITY
+                        followed by Blastn database(s)
+  --no-hits-labeled-tab
+                        Choose to disable producing tab file
+  --keep-temp           Choose to disable deleting temp files produced by
+                        blast and this script
+  -o OUT_DIR, --out-dir OUT_DIR
+                        By default the output would be along with the input
+                        fastg file. But you could assign a new directory with
+                        this option.
+  -e EVALUE, --evalue EVALUE
+                        blastn evalue threshold. Default: 1e-25
+  --percent PERCENT_IDENTITY, --perc-identity PERCENT_IDENTITY
+                        blastn percent identity threshold. Default unset.
+  --blast-options BLAST_OPTIONS
+                        other blastn options. e.g. --blast-options "-word_size
+                        13".
+  --prefix PREFIX       Add prefix to the output basename. Conflict with "--
+                        out-base".
+  --out-base OUT_BASE   By default the output basename would be modified based
+                        on the input fastg file. But you could assign a new
+                        basename with this option. Conflict with "--prefix".
+                        Conflict with multiple input files!
+  --log                 Generate log file.
+  --wrapper             Wrapper mode logging when called by get_organelle*.py.
+                        Default: False
+  --verbose             For debug usage.
+  --continue            Specified for calling from get_organelle_from_reads.py
+  --no-overwrite        Overwrite existing output result.
+  --which-blast WHICH_BLAST
+                        Assign the path to BLAST binary files if not added to
+                        the path. Default: try
+                        "/tmp/GetOrganelleDep/linux/ncbi-blast" first, then
+                        $PATH
+  --config-dir GET_ORGANELLE_PATH
+                        The directory where the default databases were placed.
+                        The default value also can be changed by adding
+                        'export GETORG_PATH=your_favor' to the shell script
+                        (e.g. ~/.bash_profile or ~/.bashrc) Default:
+                        /root/.GetOrganelle
+  -t THREADS, --threads THREADS
+                        Threads for blastn.
+  -v, --version         show program's version number and exit
+```
 
 ## Metadata
 - **Skill**: generated

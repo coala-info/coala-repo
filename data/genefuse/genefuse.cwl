@@ -14,7 +14,7 @@ inputs:
       position: 101
       prefix: --deletion
   - id: fusion
-    type: string
+    type: File
     doc: fusion file name, in CSV format
     inputBinding:
       position: 101
@@ -38,7 +38,7 @@ inputs:
       position: 101
       prefix: --output_untranslated_fusions
   - id: read1
-    type: string
+    type: File
     doc: read1 file name
     inputBinding:
       position: 101
@@ -46,7 +46,7 @@ inputs:
   - id: read2
     type:
       - 'null'
-      - string
+      - File
     doc: read2 file name
     inputBinding:
       position: 101
@@ -88,6 +88,9 @@ inputs:
       position: 103
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Plain text fusion report printed to standard output.
   - id: html
     type:
       - 'null'
@@ -102,6 +105,7 @@ outputs:
     doc: file name to store JSON report
     outputBinding:
       glob: $(inputs.json_path)
+stdout: genefuse.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

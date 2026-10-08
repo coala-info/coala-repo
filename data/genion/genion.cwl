@@ -31,7 +31,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: 'logfile path (default: output_path + .log)'
     inputBinding:
       position: 101
@@ -93,10 +93,17 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: Directory
-    doc: Output path for an existing path
+    type: File
+    doc: Fusion calls (tab-separated table).
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file with the genomic positions of the supporting reads.
+    outputBinding:
+      glob: "$(inputs.log ? inputs.log : inputs.output_path + '.log')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

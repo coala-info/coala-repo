@@ -14,6 +14,12 @@ inputs:
     doc: Input FASTA file
     inputBinding:
       position: 1
+  - id: annotate_dir
+    type: Directory
+    doc: Output directory of a previous 'genomad annotate' run on the same 
+      INPUT. It is copied to the OUTPUT directory (named by 'output') before 
+      this module runs, because this module reads the annotate results from 
+      there.
   - id: output
     type: string
     doc: Output directory for results
@@ -62,6 +68,13 @@ outputs:
     doc: Output directory for results
     outputBinding:
       glob: '$(inputs.output)'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.annotate_dir)
+        entryname: $(inputs.output)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genomad:1.11.2--pyhdfd78af_0

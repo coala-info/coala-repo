@@ -87,7 +87,7 @@ inputs:
   - id: output_nf
     type:
       - 'null'
-      - File
+      - string
     doc: Name of the pipeline file
     inputBinding:
       position: 101
@@ -145,6 +145,44 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pipeline_nf
+    type:
+      - 'null'
+      - File
+    doc: The generated Nextflow pipeline file
+    outputBinding:
+      glob: $(inputs.output_nf)
+  - id: pipeline_files
+    type:
+      type: array
+      items: File
+    doc: Generated pipeline reports and configuration files
+    outputBinding:
+      glob:
+        - '*.config'
+        - '*.html'
+        - .*.json
+  - id: lib_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Groovy helper classes written next to the pipeline
+    outputBinding:
+      glob: lib
+  - id: templates_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Process templates written next to the pipeline
+    outputBinding:
+      glob: templates
+  - id: bin_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Helper scripts written next to the pipeline
+    outputBinding:
+      glob: bin
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flowcraft:1.4.1--py_1

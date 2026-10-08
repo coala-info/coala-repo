@@ -43,7 +43,7 @@ inputs:
   - id: break_swarms
     type:
       - 'null'
-      - boolean
+      - int
     doc: do not extend cluster when the new amplicon has a larger abundance than
       the current subseed
     inputBinding:

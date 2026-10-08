@@ -8,7 +8,7 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Alternate directory for your databases
+    doc: Alternate directory for your databases; it must hold the databases in a db/ subfolder (db/k6, db/k7), made by unzipping the db.zip shipped with focus. Give it when the image cannot unpack db.zip itself (read-only file system).
     inputBinding:
       position: 101
       prefix: --alternate_directory
@@ -31,7 +31,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: Path to log file
     inputBinding:
       position: 101
@@ -45,7 +45,9 @@ inputs:
       position: 101
       prefix: --output_prefix
   - id: query
-    type: File
+    type:
+      - File
+      - Directory
     doc: Path to FAST(A/Q) file or directory with these files.
     inputBinding:
       position: 101
@@ -69,13 +71,13 @@ outputs:
     doc: Path to output files
     outputBinding:
       glob: $(inputs.output_directory_path)
-  - id: output_prefix_files
+  - id: log_file
     type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+      - 'null'
+      - File
+    doc: Log file written when the log option is given
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

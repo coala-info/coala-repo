@@ -1,5 +1,11 @@
 # gap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gap | PASS | synthetic data: a short GAP script that computes the order (7920) and classes of the Mathieu group M11 |
+
 ## gap
 
 ### Tool Description
@@ -7,14 +13,14 @@ run the Groups, Algorithms and Programming system, Version 4.8.10
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gap:4.8.10--0
-- **Homepage**: https://github.com/MacGapProject/MacGap1
+- **Homepage**: https://www.gap-system.org/
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/gap/overview
 - **Total Downloads**: 321.1K
 - **Last updated**: 2026-01-28
-- **GitHub**: https://github.com/MacGapProject/MacGap1
+- **GitHub**: https://www.gap-system.org/
 - **Stars**: N/A
 ### Original Help Text
 ```text

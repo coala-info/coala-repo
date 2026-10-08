@@ -23,10 +23,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: gatk_config_file
     type:
       - 'null'
@@ -94,7 +95,9 @@ inputs:
       position: 101
       prefix: --tmp-dir
   - id: tumor_segmentation
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The output table containing segmentation of the tumor by minor allele 
       fraction
     inputBinding:

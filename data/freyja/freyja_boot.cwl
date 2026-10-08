@@ -4,8 +4,8 @@ baseCommand:
   - freyja
   - boot
 label: freyja_boot
-doc: "Perform bootstrapping method for freyja using VARIANTS and DEPTHS\n\nTool homepage:
-  https://github.com/andersen-lab/Freyja"
+doc: "Perform bootstrapping method for freyja using VARIANTS and DEPTHS\n\nTool homepage:\
+  \ https://github.com/andersen-lab/Freyja"
 inputs:
   - id: variants
     type: File
@@ -28,7 +28,7 @@ inputs:
   - id: barcodes
     type:
       - 'null'
-      - string
+      - File
     doc: custom barcode file
     inputBinding:
       position: 103
@@ -61,8 +61,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: exclude sites with coverage depth below this value andgroup identical 
-      barcodes
+    doc: exclude sites with coverage depth below this value andgroup identical barcodes
     inputBinding:
       position: 103
       prefix: --depthcutoff
@@ -85,7 +84,7 @@ inputs:
   - id: lineageyml
     type:
       - 'null'
-      - string
+      - File
     doc: lineage hierarchy file in yaml format
     inputBinding:
       position: 103
@@ -93,7 +92,7 @@ inputs:
   - id: meta
     type:
       - 'null'
-      - string
+      - File
     doc: custom lineage to variant metadata file
     inputBinding:
       position: 103
@@ -142,8 +141,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: for use with depth cutoff,clusters are assigned robust mrca to handle 
-      outliers
+    doc: for use with depth cutoff,clusters are assigned robust mrca to handle outliers
     inputBinding:
       position: 103
       prefix: --relaxedmrca

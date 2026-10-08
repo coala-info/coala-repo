@@ -1,5 +1,12 @@
 # galah CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| galah_cluster | PASS | 5 genomes from the galah repo tests: the 500kb genome joins its parent 1mbp genome and 3 archaeal genomes form one cluster; representative FASTA folder holds real files (CWL fixed: symlinks are copied) |
+| galah_cluster-validate | Failed | tool bug: galah 0.4.2 cluster-validate panics at start (clap threads type mismatch), even with only --cluster-file |
+
 ## galah_cluster-validate
 
 ### Tool Description

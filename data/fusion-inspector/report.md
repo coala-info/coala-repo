@@ -1,5 +1,11 @@
 # fusion-inspector CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fusion-inspector_FusionInspector | Not completed | needs a large CTAT genome library (tens of GB); no tiny real resource exists |
+
 ## fusion-inspector_FusionInspector
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # floco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| floco | Failed | image problem: gurobipy is missing in the image, so floco stops with 'Please install gurobipy and obtain corresponding license' (it also needs a Gurobi licence) |
+
 ## floco
 
 ### Tool Description

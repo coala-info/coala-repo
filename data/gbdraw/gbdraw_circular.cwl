@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gbdraw
+baseCommand:
+  - gbdraw
+  - circular
 label: gbdraw_circular
 doc: "Generate genome diagrams in PNG/PDF/SVG/PS/EPS. Diagrams for multiple entries
   are saved separately.\n\nTool homepage: https://github.com/satoshikawato/gbdraw"
@@ -51,7 +53,7 @@ inputs:
   - id: default_colors
     type:
       - 'null'
-      - string
+      - File
     doc: TSV file that overrides the color palette (optional)
     inputBinding:
       position: 101
@@ -313,7 +315,7 @@ inputs:
   - id: table
     type:
       - 'null'
-      - string
+      - File
     doc: color table (optional)
     inputBinding:
       position: 101
@@ -345,7 +347,10 @@ outputs:
       items: File
     doc: Files written with the prefix given in output
     outputBinding:
-      glob: $(inputs.output)*
+      glob: |
+        ${ return inputs.output ? inputs.output + '*' : ['*.svg', '*.png', '*.pdf', '*.eps', '*.ps']; }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gbdraw:0.8.0--pyhdfd78af_0

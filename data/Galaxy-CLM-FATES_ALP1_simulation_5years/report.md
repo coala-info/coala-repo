@@ -1,5 +1,11 @@
 # CLM-FATES_ALP1_simulation_5years CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| CLM-FATES_ALP1_simulation_5years | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://workflowhub.eu/workflows/65

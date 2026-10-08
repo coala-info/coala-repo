@@ -8,12 +8,21 @@ doc: Collects Illumina Basecalling metrics for a sequencing run. This tool will
   produce per-barcode and per-lane basecall metrics for each sequencing run. 
   Mean values for each metric are determined using data from all of the tiles.
 inputs:
-  - id: basecalls_dir
+  - id: run_directory
     type: Directory
-    doc: The Illumina basecalls output directory from which data are read
+    doc: The Illumina run directory (the folder with Data/Intensities and 
+      InterOp). It is staged whole because the tool looks for position and 
+      tile files in the parent folders of the basecalls directory.
+  - id: basecalls_dir
+    type:
+      - 'null'
+      - string
+    default: Data/Intensities/BaseCalls
+    doc: The basecalls output directory, relative to the run directory.
     inputBinding:
       position: 101
       prefix: --BASECALLS_DIR
+      valueFrom: $(inputs.run_directory.basename)/$(self)
   - id: lane
     type: int
     doc: The lane whose data will be read
@@ -32,10 +41,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: barcodes_dir
     type:
       - 'null'
@@ -107,6 +117,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -115,12 +126,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -165,6 +177,9 @@ outputs:
     outputBinding:
       glob: $(inputs.output)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.run_directory)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

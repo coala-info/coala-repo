@@ -1,5 +1,11 @@
 # fpocket CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fpocket | PASS | found pockets in RCSB 3TGI and 4CHA; rewrote wrong flags from the help and stage the input writable; the file list option (-F) fails in the tool itself with 'Invalid pdb name' |
+
 ## fpocket
 
 ### Tool Description

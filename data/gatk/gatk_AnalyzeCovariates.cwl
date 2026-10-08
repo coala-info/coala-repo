@@ -7,7 +7,9 @@ label: gatk_AnalyzeCovariates
 doc: Evaluate and compare base quality score recalibration (BQSR) tables
 inputs:
   - id: after_report_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: file containing the BQSR second-pass report file
     inputBinding:
       position: 101
@@ -17,10 +19,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: before_report_file
     type:
       - 'null'
@@ -74,13 +77,17 @@ inputs:
       position: 101
       prefix: --ignore-last-modification-times
   - id: intermediate_csv_file
-    type: string
+    type:
+      - 'null'
+      - string
     doc: location of the csv intermediate file
     inputBinding:
       position: 101
       prefix: --intermediate-csv-file
   - id: plots_report_file
-    type: string
+    type:
+      - 'null'
+      - string
     doc: location of the output report
     inputBinding:
       position: 101

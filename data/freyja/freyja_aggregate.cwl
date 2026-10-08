@@ -8,9 +8,11 @@ doc: "Aggregates all demix data in RESULTS directory\n\nTool homepage: https://g
 inputs:
   - id: results
     type: Directory
-    doc: Directory containing demix data
+    doc: Directory with the demix result files to aggregate (freyja joins file names
+      to the directory path with a trailing slash)
     inputBinding:
       position: 1
+      valueFrom: $(self.path + "/")
   - id: ext
     type:
       - 'null'

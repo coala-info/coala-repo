@@ -1,5 +1,11 @@
 # gbmunge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gbmunge | Failed | tool bug: country columns are NA for current GenBank records because they use geo_loc_name instead of country; other columns match the expected table |
+
 ## gbmunge
 
 ### Tool Description

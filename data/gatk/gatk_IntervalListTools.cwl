@@ -11,12 +11,13 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --INPUT
     doc: One or more interval lists. If multiple interval lists are provided the
       output is theresult of merging the inputs. Supported formats are 
       interval_list and VCF.
     inputBinding:
       position: 101
-      prefix: --INPUT
   - id: action
     type:
       - 'null'
@@ -31,10 +32,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: break_bands_at_multiples_of
     type:
       - 'null'
@@ -49,10 +51,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --COMMENT
     doc: One or more lines of comment to add to the header of the output file.
     inputBinding:
       position: 101
-      prefix: --COMMENT
   - id: compression_level
     type:
       - 'null'
@@ -62,7 +65,9 @@ inputs:
       position: 101
       prefix: --COMPRESSION_LEVEL
   - id: count_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: File to which to print count of bases or intervals in final output 
       interval list.
     inputBinding:
@@ -161,6 +166,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -187,10 +193,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --SECOND_INPUT
     doc: Second set of intervals for SUBTRACT and DIFFERENCE operations.
     inputBinding:
       position: 101
-      prefix: --SECOND_INPUT
   - id: sort
     type:
       - 'null'
@@ -211,12 +218,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: unique
     type:
       - 'null'

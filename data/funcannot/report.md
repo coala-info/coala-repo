@@ -1,5 +1,11 @@
 # funcannot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| funcannot | PASS | synthetic data: planted SNVs on a random sequence; codon and protein changes match hand calculation (CWL fixed: joined --geneid=, '+' list, folders as strings) |
+
 ## funcannot
 
 ### Tool Description

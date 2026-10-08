@@ -1,5 +1,14 @@
 # fq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fq_filter | Failed | tool bug: --names gives an empty output even when every read name is listed (checked with the tool directly); --sequence-pattern works |
+| fq_generate | PASS | 200 random read pairs of length 75 made; fixed output path types |
+| fq_lint | PASS | passes the real nf-core SARS-CoV-2 pair and reports the errors of the real broken nf-core FASTQ; fixed disable-validator option |
+| fq_subsample | PASS | 20 of 100 real read pairs kept with matching names |
+
 ## fq_filter
 
 ### Tool Description

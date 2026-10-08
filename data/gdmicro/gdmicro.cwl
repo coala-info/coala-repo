@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: GDmicro.py
+baseCommand: gdmicro
 label: gdmicro
 doc: "Use GCN and domain adaptation to predict disease based on microbiome data.\n\
   \nTool homepage: https://github.com/liaoherui/GDmicro"
@@ -59,7 +59,7 @@ inputs:
   - id: input_file
     type:
       - 'null'
-      - Directory
+      - File
     doc: The directory of the input csv file.
     inputBinding:
       position: 101
@@ -84,7 +84,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Output directory of test results.
     inputBinding:
       position: 101
@@ -120,6 +120,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory of test results
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gdmicro:1.0.10--pyhdfd78af_0

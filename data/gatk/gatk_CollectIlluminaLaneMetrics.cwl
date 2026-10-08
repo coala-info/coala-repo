@@ -24,7 +24,6 @@ inputs:
       prefix: --OUTPUT_PREFIX
   - id: run_directory
     type:
-      - 'null'
       - Directory
     doc: The Illumina run directory of the run for which the lane metrics are to
       be generated
@@ -36,10 +35,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -107,6 +107,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -115,12 +116,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -167,8 +169,13 @@ outputs:
     doc: The prefix to be prepended to the file name of the output file; an 
       appropriate suffix will be applied
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_directory)/$(inputs.output_prefix)*
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

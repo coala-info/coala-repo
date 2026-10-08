@@ -11,13 +11,14 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --input
     doc: Input TSV or HDF5 files containing integer read counts in genomic 
       intervals for all samples in the panel of normals (output of 
       CollectReadCounts). Intervals must be identical and in the same order for 
       all samples. This argument must be specified at least once.
     inputBinding:
       position: 101
-      prefix: --input
   - id: output
     type: string
     doc: Output file for the panel of normals.
@@ -39,20 +40,22 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: conf
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --conf
     doc: Spark properties to set on the Spark context in the format 
       <property>=<value>
     inputBinding:
       position: 101
-      prefix: --conf
   - id: do_impute_zeros
     type:
       - 'null'
@@ -226,6 +229,10 @@ outputs:
       glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      SPARK_LOCAL_IP: 127.0.0.1
+      SPARK_LOCAL_HOSTNAME: localhost
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:latest

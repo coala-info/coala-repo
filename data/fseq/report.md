@@ -1,5 +1,11 @@
 # fseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fseq | PASS | read pile-up from a BAM converted to BED; peaks only with threshold 0 because the data covers a 40 kb region |
+
 ## fseq
 
 ### Tool Description

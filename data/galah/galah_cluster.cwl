@@ -108,8 +108,13 @@ outputs:
     doc: File to output cluster definitions
     outputBinding:
       glob: $(inputs.output_cluster_definition_path)
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: "${ var d = inputs.output_representative_fasta_directory_path; if (!d) { return ''; } return '&& for f in ' + d + '/*; do if [ -L \"$f\" ]; then cp -L \"$f\" \"$f.tmp\" && mv \"$f.tmp\" \"$f\"; fi; done'; }"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/galah:0.4.2--hc1c3326_2

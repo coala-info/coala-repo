@@ -1,5 +1,11 @@
 # Population and community metrics calculation from Biodiversity data CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| Galaxy-Workflow-Population_and_community_metrics_calculation_from_Biodiversity_data | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://www.pndb.fr/

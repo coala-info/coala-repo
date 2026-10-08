@@ -152,7 +152,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items:
+          - string
+          - File
     doc: Downloads assembly_summary files to extract target information. 
       [refseq, genbank, refseq_historical, genbank_historical or one or more 
       assembly_summary files from https://ftp.ncbi.nlm.nih.gov/genomes/]
@@ -163,7 +165,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items:
+          - string
+          - File
     doc: Uses NCBI e-utils webservices or downloads accession2taxid files to 
       extract target information. [eutils, nucl_gb, nucl_wgs, nucl_est, 
       nucl_gss, pdb, prot, dead_nucl, dead_wgs, dead_prot or one or more 
@@ -254,6 +258,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_files
+    type:
+      type: array
+      items: File
+    doc: Database files written with the prefix given in db_prefix
+    outputBinding:
+      glob: $(inputs.db_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ganon:2.2.0--py312hfc6b275_0

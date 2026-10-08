@@ -4,12 +4,13 @@ baseCommand:
   - freyja
   - extract
 label: freyja_extract
-doc: "Extracts reads from INPUT_BAM containing one or more QUERY_MUTATIONS\n\nTool
-  homepage: https://github.com/andersen-lab/Freyja"
+doc: "Extracts reads from INPUT_BAM containing one or more QUERY_MUTATIONS\n\nTool\
+  \ homepage: https://github.com/andersen-lab/Freyja"
 inputs:
   - id: query_mutations
-    type: string
-    doc: Query mutations
+    type: File
+    doc: File with the query mutations, e.g. a single comma-separated line such as
+      C75T,G230A,A543C
     inputBinding:
       position: 1
   - id: input_bam
@@ -17,6 +18,9 @@ inputs:
     doc: Input BAM file
     inputBinding:
       position: 2
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: same_read
     type:
       - 'null'

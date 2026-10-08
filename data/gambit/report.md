@@ -1,5 +1,15 @@
 # gambit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gambit_dist | PASS |  |
+| gambit_query | PASS |  |
+| gambit_signatures_create | PASS |  |
+| gambit_signatures_info | PASS |  |
+| gambit_tree | PASS |  |
+
 ## gambit_dist
 
 ### Tool Description
@@ -105,6 +115,63 @@ Options:
   -c, --cores INTEGER RANGE   Number of CPU cores to use.  [x>=1]
   --progress / --no-progress  Show/don't show progress meter.
   --help                      Show this message and exit.
+```
+
+## gambit_signatures_create
+
+### Tool Description
+Create k-mer signatures from genome sequences.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gambit:1.1.0--py39hbcbf7aa_2
+- **Homepage**: https://github.com/jlumpe/gambit
+- **Package**: https://anaconda.org/channels/bioconda/packages/gambit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: gambit signatures create [OPTIONS] GENOMES...
+
+  Create k-mer signatures from genome sequences.
+
+Options:
+  -l LISTFILE                 File containing paths to genome files, one per
+                              line.
+  --ldir DIRECTORY            Parent directory of paths in LISTFILE.
+  -k INTEGER                  Number of nucleotides to recognize AFTER prefix.
+  -p, --prefix NUCS           K-mer prefix.
+  -o, --output FILE           File path to write to.  [required]
+  -m, --meta-json FILENAME    JSON file containing metadata to attach.
+  -i, --ids FILENAME          File containing genome IDs (one per line).
+  -d, --db-params             Use k/prefix from reference database.
+  --progress / --no-progress  Show/don't show progress meter.
+  -c, --cores INTEGER RANGE   Number of CPU cores to use.  [x>=1]
+  --help                      Show this message and exit.
+```
+
+## gambit_signatures_info
+
+### Tool Description
+Inspect GAMBIT signature (.gs) files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gambit:1.1.0--py39hbcbf7aa_2
+- **Homepage**: https://github.com/jlumpe/gambit
+- **Package**: https://anaconda.org/channels/bioconda/packages/gambit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: gambit signatures info [OPTIONS] [FILE]
+
+  Inspect GAMBIT signature (.gs) files.
+
+Options:
+  -j, --json    Write output in JSON format.
+  -p, --pretty  Prettify JSON output.
+  -i, --ids     Write IDs of signatures in file, one per line.
+  -d            Use signatures from reference database.
+  --help        Show this message and exit.
 ```
 
 ## Metadata

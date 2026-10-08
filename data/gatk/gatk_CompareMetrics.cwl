@@ -6,25 +6,27 @@ baseCommand:
 label: gatk_CompareMetrics
 doc: Compare two metrics files. This tool compares the metrics and histograms 
   generated from metric tools to determine if the generated results are 
-  identical.
+  identical. Exit code 4 means the metrics differ.
 inputs:
   - id: input
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --INPUT
     doc: Metric files to compare. This argument must be specified at least once.
     inputBinding:
       position: 101
-      prefix: --INPUT
   - id: arguments_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -64,11 +66,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --KEY
     doc: Columns to use as keys for matching metrics rows that should agree. If 
       not specified, it is assumed that rows should be in the same order.
     inputBinding:
       position: 101
-      prefix: --KEY
   - id: max_records_in_ram
     type:
       - 'null'
@@ -83,31 +86,35 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --METRIC_ALLOWABLE_RELATIVE_CHANGE
     doc: Metric Allowable Relative Change. A colon separate pair of metric name 
       and an absolute relative change.
     inputBinding:
       position: 101
-      prefix: --METRIC_ALLOWABLE_RELATIVE_CHANGE
   - id: metrics_not_required
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --METRICS_NOT_REQUIRED
     doc: Metrics which are not required. Any metrics specified here may be 
       missing from either of the files in the comparison, and this will not 
       affect the result of the comparison.
     inputBinding:
       position: 101
-      prefix: --METRICS_NOT_REQUIRED
   - id: metrics_to_ignore
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --METRICS_TO_IGNORE
     doc: Metrics to ignore. Any metrics specified here will be excluded from 
       comparison by the tool.
     inputBinding:
       position: 101
-      prefix: --METRICS_TO_IGNORE
   - id: output
     type: string
     doc: Output file to write comparison results to.
@@ -115,7 +122,9 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: output_table
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output file to write table of differences to.
     inputBinding:
       position: 101
@@ -134,6 +143,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -142,12 +152,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -203,6 +214,9 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:latest
+successCodes:
+  - 0
+  - 4
 s:url: https://www.broadinstitute.org/gatk/
 $namespaces:
   s: https://schema.org/

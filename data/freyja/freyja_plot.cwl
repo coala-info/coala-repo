@@ -7,14 +7,14 @@ label: freyja_plot
 doc: "Create plot from AGG_RESULTS\n\nTool homepage: https://github.com/andersen-lab/Freyja"
 inputs:
   - id: agg_results
-    type: string
+    type: File
     doc: AGG_RESULTS
     inputBinding:
       position: 1
   - id: config
     type:
       - 'null'
-      - string
+      - File
     doc: allows users to control the colors and grouping of lineages in the plot
     inputBinding:
       position: 102
@@ -23,8 +23,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: define whether the intervals are calculated daily D or monthly M use 
-      with --windowsize
+    doc: define whether the intervals are calculated daily D or monthly M use with
+      --windowsize
     inputBinding:
       position: 102
       prefix: --interval
@@ -39,7 +39,7 @@ inputs:
   - id: lineageyml
     type:
       - 'null'
-      - string
+      - File
     doc: Custom lineage hierarchy file
     inputBinding:
       position: 102
@@ -71,9 +71,9 @@ inputs:
   - id: times
     type:
       - 'null'
-      - string
-    doc: provide sample collection information,check data/times_metadata.csv for
-      additional information
+      - File
+    doc: provide sample collection information,check data/times_metadata.csv for additional
+      information
     inputBinding:
       position: 102
       prefix: --times

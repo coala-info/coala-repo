@@ -76,7 +76,7 @@ inputs:
   - id: parameters
     type:
       - 'null'
-      - string
+      - File
     doc: parameters file, by default json
     inputBinding:
       position: 101
@@ -106,8 +106,8 @@ inputs:
       position: 101
       prefix: --state-file
   - id: workflow
-    type: string
-    doc: Workflow to run
+    type: File
+    doc: Galaxy workflow file (JSON) to run
     inputBinding:
       position: 101
       prefix: --workflow
@@ -128,6 +128,11 @@ outputs:
     doc: Path to output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ if (inputs.output_dir) { return [{class: "Directory", basename: inputs.output_dir, listing: []}]; } else { return []; } }'
 hints:
   - class: DockerRequirement
     dockerPull: 

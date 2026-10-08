@@ -9,8 +9,9 @@ doc: Compares the base qualities of two SAM/BAM/CRAM files. The reads in the two
 inputs:
   - id: input_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Input SAM/BAM/CRAM files to compare. At least 2 positional arguments 
       must be specified.
     inputBinding:
@@ -20,10 +21,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 102
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -104,6 +106,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 102
@@ -170,11 +173,12 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --static-quantized-quals
     doc: Use static quantized quality scores to a given number of levels (with 
       --bqsr-recal-file)
     inputBinding:
       position: 102
-      prefix: --static-quantized-quals
 outputs:
   - id: output_output
     type:

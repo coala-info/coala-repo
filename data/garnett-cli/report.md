@@ -1,5 +1,17 @@
 # garnett-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| garnett-cli_garnett_check_markers.R | Failed | image problem: monocle3 and SingleCellExperiment do not match (reducedDims is not a slot), so the example cell data set cannot be read |
+| garnett-cli_garnett_classify_cells.R | Not completed | needs a trained classifier or classified data set, and garnett_train_classifier.R fails in this image |
+| garnett-cli_garnett_get_feature_genes.R | Not completed | needs a trained classifier or classified data set, and garnett_train_classifier.R fails in this image |
+| garnett-cli_garnett_get_std_output.R | Not completed | needs a trained classifier or classified data set, and garnett_train_classifier.R fails in this image |
+| garnett-cli_garnett_train_classifier.R | Failed | image problem: monocle3 and SingleCellExperiment do not match (reducedDims is not a slot), so the example cell data set cannot be read |
+| garnett-cli_transform_marker_file.R | PASS | synthetic data: a small marker table built from the Garnett example markers |
+| garnett-cli_update_marker_file.R | PASS | synthetic data: a small marker check table with one bad and one ambiguous marker |
+
 ## garnett-cli_transform_marker_file.R
 
 ### Tool Description

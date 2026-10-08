@@ -4,8 +4,8 @@ baseCommand:
   - freyja
   - update
 label: freyja_update
-doc: "Update to the most recent barcodes and curated lineage data\n\nTool homepage:
-  https://github.com/andersen-lab/Freyja"
+doc: "Update to the most recent barcodes and curated lineage data\n\nTool homepage:\
+  \ https://github.com/andersen-lab/Freyja"
 inputs:
   - id: buildlocal
     type:
@@ -24,11 +24,10 @@ inputs:
       position: 101
       prefix: --noncl
   - id: outdir
-    type:
-      - 'null'
-      - string
-    doc: Output directory to save updated files.if this option is used, the 
-      barcodes are onlydownloaded to the directory specified.
+    type: string
+    doc: Output directory to save updated files. The barcodes are only downloaded
+      to this directory (without it freyja writes into its own install folder, which
+      is read-only in the container).
     inputBinding:
       position: 101
       prefix: --outdir
@@ -45,14 +44,18 @@ outputs:
     type: stdout
     doc: Standard output
   - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory to save updated files.if this option is used, the 
-      barcodes are onlydownloaded to the directory specified.
+    type: Directory
+    doc: Directory with the downloaded barcodes and lineage data
     outputBinding:
       glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/freyja:2.0.3--pyhdfd78af_0
 stdout: freyja_update.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing: '${ return [{"entryname": inputs.outdir, "entry": {"class": "Directory",
+      "listing": []}, "writable": true}]; }'

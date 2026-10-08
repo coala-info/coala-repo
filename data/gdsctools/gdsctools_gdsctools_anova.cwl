@@ -16,7 +16,7 @@ inputs:
   - id: drug
     type:
       - 'null'
-      - string
+      - int
     doc: The name of a valid drug identifier to be found in the header of the 
       IC50 matrix
     inputBinding:
@@ -127,7 +127,7 @@ inputs:
   - id: save_settings
     type:
       - 'null'
-      - File
+      - string
     doc: Save settings into a json file
     inputBinding:
       position: 101
@@ -170,6 +170,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: settings_output
+    type:
+      - 'null'
+      - File
+    doc: Settings written with --save-settings
+    outputBinding:
+      glob: $(inputs.save_settings)
   - id: output_directory_dir
     type:
       - 'null'
@@ -177,6 +184,11 @@ outputs:
     doc: directory where to save images and HTML files.
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: gdsctools
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gdsctools:1.0.1--py_0

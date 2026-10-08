@@ -1,5 +1,12 @@
 # forwardgenomics CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| forwardgenomics_forwardGenomics.R | PASS | matches the repo example output (111 elements, relative difference below 1e-13); options now use --name=value as the tool needs; the image lacks the default lookUpData files, so weights and expected-percent-id files from the repo are passed |
+| forwardgenomics_tree_doctor | PASS | pruned the repo example tree to 5 species and labeled branches; fixed the label-branches option |
+
 ## forwardgenomics_forwardGenomics.R
 
 ### Tool Description

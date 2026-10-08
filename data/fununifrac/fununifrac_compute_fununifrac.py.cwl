@@ -127,6 +127,11 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.out_dir_path)
+        entry: "$({class: 'Directory', basename: inputs.out_dir_path, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fununifrac:0.0.1--pyh7cba7a3_0

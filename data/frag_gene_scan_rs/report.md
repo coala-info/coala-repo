@@ -1,5 +1,11 @@
 # frag_gene_scan_rs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| frag_gene_scan_rs | PASS |  |
+
 ## frag_gene_scan_rs
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # fraposa-pgsc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fraposa-pgsc_fraposa | PASS |  |
+| fraposa-pgsc_fraposa_plot | Failed | tool bug: fraposa_plot reads the .pcs file written by fraposa without skipping its header line and stops with ValueError could not convert string to float PC1 |
+| fraposa-pgsc_fraposa_pred | Failed | tool bug: fraposa_pred reads the .pcs file written by fraposa without skipping its header line and stops with ValueError could not convert string to float PC1 |
+
 ## fraposa-pgsc_fraposa
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # gapmm2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gapmm2 | PASS |  |
+
 ## gapmm2
 
 ### Tool Description

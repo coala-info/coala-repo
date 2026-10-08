@@ -101,7 +101,7 @@ inputs:
   - id: model
     type:
       - 'null'
-      - File
+      - Directory
     doc: The path to an alternative CRF model to use (obtained with `gecco 
       train`).
     inputBinding:

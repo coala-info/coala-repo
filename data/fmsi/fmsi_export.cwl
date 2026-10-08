@@ -7,10 +7,17 @@ label: fmsi_export
 doc: "Export data from an FMS index.\n\nTool homepage: https://github.com/OndrejSladky/fmsi"
 inputs:
   - id: index_prefix
-    type: string
+    type: File
+    secondaryFiles:
+      - .fmsi.ac
+      - .fmsi.ac_gt
+      - .fmsi.gt
+      - .fmsi.mask
+      - .fmsi.misc
+      - .fmsi.klcp?
     doc: Prefix of the FMS index files to export from.
     inputBinding:
-      position: 1
+      position: 200
 outputs:
   - id: stdout
     type: stdout

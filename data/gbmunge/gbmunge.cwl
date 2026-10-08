@@ -27,21 +27,17 @@ inputs:
       position: 101
       prefix: -t
   - id: metadata_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `metadata_output_path`
+    type: string
+    doc: Output file for the metadata table
     inputBinding:
       position: 102
-      prefix: --metadata-output
+      prefix: -o
   - id: sequence_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `sequence_output_path`
+    type: string
+    doc: Output file for the sequences
     inputBinding:
       position: 103
-      prefix: --sequence-output
+      prefix: -f
 outputs:
   - id: sequence_output
     type: File

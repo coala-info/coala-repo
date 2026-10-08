@@ -1,5 +1,12 @@
 # galaxy-ie-helpers CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| galaxy-ie-helpers_get | Not completed | needs a running Galaxy server with an API key and history; CWL fixed (-i / -p prefixes added) |
+| galaxy-ie-helpers_put | Not completed | needs a running Galaxy server with an API key and history; CWL fixed (-i / -p prefixes added) |
+
 ## galaxy-ie-helpers_get
 
 ### Tool Description

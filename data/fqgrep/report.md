@@ -1,5 +1,11 @@
 # fqgrep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fqgrep | PASS | real SARS-CoV-2 reads; match, count, invert, multiple patterns, paired and reverse-complement counts equal an independent grep; replaced invented flags with the documented ones |
+
 ## fqgrep
 
 ### Tool Description

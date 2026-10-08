@@ -11,11 +11,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --input
     doc: an output of GetNormalArtifactData  This argument must be specified at 
       least once.
     inputBinding:
       position: 101
-      prefix: --input
   - id: output
     type: string
     doc: output
@@ -27,11 +28,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line  This
       argument may be specified 0 or more times.
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: gatk_config_file
     type:
       - 'null'

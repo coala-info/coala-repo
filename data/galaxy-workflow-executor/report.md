@@ -1,5 +1,12 @@
 # galaxy-workflow-executor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| galaxy-workflow-executor_generate_params_from_workflow.py | Not completed | needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection |
+| galaxy-workflow-executor_run_galaxy_workflow.py | Not completed | needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection |
+
 ## galaxy-workflow-executor_generate_params_from_workflow.py
 
 ### Tool Description

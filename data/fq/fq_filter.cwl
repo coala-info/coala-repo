@@ -17,8 +17,8 @@ inputs:
   - id: names
     type:
       - 'null'
-      - string
-    doc: Allowlist of record names
+      - File
+    doc: Allowlist of record names (one per line)
     inputBinding:
       position: 102
       prefix: --names
@@ -32,14 +32,20 @@ inputs:
       position: 102
       prefix: --sequence-pattern
   - id: dsts_path
-    type: string
+    type:
+      type: array
+      items: string
+      inputBinding:
+        prefix: --dsts
+    doc: Filtered FASTQ destinations, one per source (output is gzipped if the name ends in .gz)
     inputBinding:
       position: 103
-      prefix: --dsts
 outputs:
   - id: dsts
-    type: File
-    doc: Filtered FASTQ destinations
+    type:
+      type: array
+      items: File
+    doc: Filtered FASTQ files
     outputBinding:
       glob: $(inputs.dsts_path)
 requirements:

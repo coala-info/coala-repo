@@ -1,5 +1,11 @@
 # fuma CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fuma | PASS |  |
+
 ## fuma
 
 ### Tool Description

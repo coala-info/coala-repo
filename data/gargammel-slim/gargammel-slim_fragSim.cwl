@@ -9,9 +9,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
     doc: Input chromosome fasta file
     inputBinding:
-      position: 1
+      position: 200
   - id: base_composition_file
     type:
       - 'null'
@@ -146,7 +148,7 @@ inputs:
       - boolean
     doc: Make sure that the fragment names are unique by appending a suffix
     inputBinding:
-      position: 102
+      position: 105
       prefix: -uniq
   - id: output_bam_file_path
     type:
@@ -165,6 +167,9 @@ inputs:
       position: 104
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Fragments in fasta format (when no -o or -b output is given)
   - id: output_bam_file
     type:
       - 'null'
@@ -184,3 +189,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gargammel-slim:1.1.2--hf107e4d_6
+stdout: gargammel-slim_fragSim.out

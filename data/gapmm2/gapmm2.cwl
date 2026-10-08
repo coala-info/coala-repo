@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: query
-    type: string
+    type: File
     doc: transcipts in FASTA or FASTQ
     inputBinding:
       position: 2
@@ -60,8 +60,8 @@ inputs:
   - id: out_paf
     type:
       - 'null'
-      - boolean
-    doc: output in PAF format
+      - string
+    doc: output file name (PAF format by default, see out_format); stdout if omitted
     inputBinding:
       position: 103
       prefix: --out
@@ -77,6 +77,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Alignment file written to the path given in out_paf
+    outputBinding:
+      glob: $(inputs.out_paf)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gapmm2:25.8.12--pyhdfd78af_0

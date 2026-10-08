@@ -1,72 +1,189 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fqtools_find
+baseCommand: fqtools
 label: fqtools_find
-doc: "Find FASTQ reads containing specific sequences.\n\nTool homepage: https://github.com/alastair-droop/fqtools"
+doc: "Find FASTQ reads containing specific sequences.
+
+Tool homepage: https://github.com/alastair-droop/fqtools"
 inputs:
-  - id: input_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: The fastq file(s) to view. If no input file is specified, input will be
-      read from stdin.
-    inputBinding:
-      position: 1
-  - id: output_stem
-    type:
-      - 'null'
-      - string
-    doc: Output file stem (default "output%"). The file stem to use for output 
-      files (without file extension). Any instances of the single character 
-      specified using the -p global argument will be replaced with the pair 
-      number, or removed for single output files. If the -o option is not 
-      specified, single file output will be written to stdout and paired file 
-      output to the default stem (output%).
-    inputBinding:
-      position: 102
-      prefix: -o
-  - id: preserve_secondary_headers
+  - id: dna_bases
     type:
       - 'null'
       - boolean
-    doc: Preserve secondary headers (if present).
+    doc: "Allow DNA sequence bases (ACGTN)"
     inputBinding:
-      position: 102
-      prefix: -k
+      position: 1
+      prefix: -d
+  - id: rna_bases
+    type:
+      - 'null'
+      - boolean
+    doc: "Allow RNA sequence bases (ACGUN)"
+    inputBinding:
+      position: 2
+      prefix: -r
+  - id: ambiguous_bases
+    type:
+      - 'null'
+      - boolean
+    doc: "Allow ambiguous sequence bases (RYKMSWBDHV)"
+    inputBinding:
+      position: 3
+      prefix: -a
+  - id: mask_base
+    type:
+      - 'null'
+      - boolean
+    doc: "Allow the mask sequence base (X)"
+    inputBinding:
+      position: 4
+      prefix: -m
+  - id: uppercase_bases
+    type:
+      - 'null'
+      - boolean
+    doc: "Allow uppercase sequence bases"
+    inputBinding:
+      position: 5
+      prefix: -u
+  - id: lowercase_bases
+    type:
+      - 'null'
+      - boolean
+    doc: "Allow lowercase sequence bases"
+    inputBinding:
+      position: 6
+      prefix: -l
+  - id: pair_character
+    type:
+      - 'null'
+      - string
+    doc: "Set the pair replacement character (default %)"
+    inputBinding:
+      position: 7
+      prefix: -p
+  - id: input_buffer_size
+    type:
+      - 'null'
+      - string
+    doc: "Set the input buffer size (suffixes b, k, M, G)"
+    inputBinding:
+      position: 8
+      prefix: -b
+  - id: output_buffer_size
+    type:
+      - 'null'
+      - string
+    doc: "Set the output buffer size (suffixes b, k, M, G)"
+    inputBinding:
+      position: 9
+      prefix: -B
+  - id: quality_type
+    type:
+      - 'null'
+      - string
+    doc: "Set the quality score encoding: u (none), s (Sanger), o (Solexa), i (Illumina)"
+    inputBinding:
+      position: 10
+      prefix: -q
+  - id: input_format
+    type:
+      - 'null'
+      - string
+    doc: "Set the input file format: F (fastq), f (fastq.gz), b (bam), s (sam), u (infer from extension)"
+    inputBinding:
+      position: 11
+      prefix: -f
+  - id: output_format
+    type:
+      - 'null'
+      - string
+    doc: "Set the output file format: F (fastq), f (fastq.gz), b (bam), s (sam), u (infer from extension)"
+    inputBinding:
+      position: 12
+      prefix: -F
+  - id: interleaved_input
+    type:
+      - 'null'
+      - boolean
+    doc: "Read interleaved input file pairs"
+    inputBinding:
+      position: 13
+      prefix: -i
+  - id: interleaved_output
+    type:
+      - 'null'
+      - boolean
+    doc: "Write interleaved output file pairs"
+    inputBinding:
+      position: 14
+      prefix: -I
   - id: require_all_sequences
     type:
       - 'null'
       - boolean
-    doc: Require all sequences for a match.
+    doc: "Require all sequences for a match"
     inputBinding:
-      position: 102
+      position: 100
       prefix: -a
   - id: sequence
     type:
       - 'null'
       - type: array
         items: string
-    doc: Sequence to match against. Multiple sequences are permitted. If -a is 
-      specified, all specified sequences must be present for a read to match, 
-      otherwise the presence of any one is sufficient. If no sequences are 
-      specified, all reads are returned.
+        inputBinding:
+          prefix: -s
+    doc: "An exact sequence to look for in the read; may be given several times"
     inputBinding:
-      position: 102
-      prefix: -s
+      position: 101
   - id: sequence_file
     type:
       - 'null'
       - File
-    doc: Read match sequences from file. If specified with -f, sequences are 
-      read one per line from file. Empty lines are ignored.
+    doc: "Read match sequences from a file, one per line"
     inputBinding:
       position: 102
       prefix: -f
+  - id: output_stem
+    type:
+      - 'null'
+      - string
+    doc: "Output file stem (default output%); with a stem the reads are written to files instead of standard output"
+    inputBinding:
+      position: 103
+      prefix: -o
+  - id: preserve_secondary_headers
+    type:
+      - 'null'
+      - boolean
+    doc: "Preserve secondary headers (if present)"
+    inputBinding:
+      position: 104
+      prefix: -k
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: "The FASTQ file(s) to process: one file, or two files for a read pair (standard input is read when no file is given)"
+    inputBinding:
+      position: 200
+arguments:
+  - position: 50
+    valueFrom: find
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written when an output stem is given
+    outputBinding:
+      glob: "$(inputs.output_stem ? inputs.output_stem.replace(/%/g, '*') + '*' : 'output*')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fqtools:2.0--h577a1d6_15

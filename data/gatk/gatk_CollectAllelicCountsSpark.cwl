@@ -10,18 +10,37 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --input
+    secondaryFiles:
+      - pattern: '.bai'
+        required: false
+      - pattern: '^.bai'
+        required: false
     doc: BAM/SAM/CRAM file containing reads
     inputBinding:
       position: 101
-      prefix: --input
   - id: intervals
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --intervals
     doc: One or more genomic intervals over which to operate
     inputBinding:
       position: 101
-      prefix: --intervals
+  - id: intervals_file
+    type:
+      - 'null'
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --intervals
+    doc: One or more interval files (interval_list, BED or VCF) over which to 
+      operate. Use this instead of intervals when the intervals are in a file.
+    inputBinding:
+      position: 101
   - id: output
     type: string
     doc: Output file for allelic counts.
@@ -30,10 +49,10 @@ inputs:
       prefix: --output
   - id: reference
     type:
-      - 'null'
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file
     inputBinding:
       position: 101
@@ -51,10 +70,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: bam_partition_size
     type:
       - 'null'
@@ -69,11 +89,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --conf
     doc: Spark properties to set on the Spark context in the format 
       <property>=<value>
     inputBinding:
       position: 101
-      prefix: --conf
   - id: create_output_bam_index
     type:
       - 'null'
@@ -104,10 +125,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --disable-read-filter
     doc: Read filters to be disabled before analysis
     inputBinding:
       position: 101
-      prefix: --disable-read-filter
   - id: disable_sequence_dictionary_validation
     type:
       - 'null'
@@ -122,10 +144,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exclude-intervals
     doc: One or more genomic intervals to exclude from processing
     inputBinding:
       position: 101
-      prefix: --exclude-intervals
   - id: gatk_config_file
     type:
       - 'null'
@@ -188,11 +211,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --inverted-read-filter
     doc: Inverted (with flipped acceptance/failure conditions) read filters 
       applied before analysis
     inputBinding:
       position: 101
-      prefix: --inverted-read-filter
   - id: max_depth_per_sample
     type:
       - 'null'
@@ -249,19 +273,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --read-filter
     doc: Read filters to be applied before analysis
     inputBinding:
       position: 101
-      prefix: --read-filter
   - id: read_index
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --read-index
     doc: Indices to use for the read inputs.
     inputBinding:
       position: 101
-      prefix: --read-index
   - id: read_shard_size
     type:
       - 'null'
@@ -377,6 +403,8 @@ outputs:
     outputBinding:
       glob: $(inputs.output)
 requirements:
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --CHAIN
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The input interval list to be lifted over.
     inputBinding:
       position: 101
@@ -30,9 +28,7 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: sequence_dictionary
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Sequence dictionary to place in the output interval list. (This should 
       be any file from which the dictionary of the target reference can be 
       extracted.)
@@ -44,10 +40,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -105,12 +102,15 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
   - id: reject
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Interval List file for intervals that were rejected
     inputBinding:
       position: 101
@@ -119,12 +119,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

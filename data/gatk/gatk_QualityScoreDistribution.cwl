@@ -10,15 +10,15 @@ doc: Chart the distribution of quality scores. This tool is used for determining
   corresponding to those scores.
 inputs:
   - id: chart_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: A file (with .pdf extension) to write the chart to.
     inputBinding:
       position: 101
       prefix: --CHART_OUTPUT
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input SAM/BAM/CRAM file.
     inputBinding:
       position: 101
@@ -42,10 +42,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: assume_sorted
     type:
       - 'null'
@@ -119,6 +120,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -135,12 +137,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -178,7 +181,9 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_chart_output
-    type: File
+    type:
+      - 'null'
+      - File
     doc: A file (with .pdf extension) to write the chart to.
     outputBinding:
       glob: $(inputs.chart_output)

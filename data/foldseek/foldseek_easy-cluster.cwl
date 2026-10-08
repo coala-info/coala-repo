@@ -9,7 +9,9 @@ inputs:
   - id: input_files
     type:
       type: array
-      items: File
+      items:
+        - File
+        - Directory
     doc: Input PDB or mmCIF files
     inputBinding:
       position: 1

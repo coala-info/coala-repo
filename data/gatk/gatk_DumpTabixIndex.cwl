@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: --output
   - id: tabix_index
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Tabix index file.
     inputBinding:
       position: 101
@@ -25,10 +23,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: gatk_config_file
     type:
       - 'null'

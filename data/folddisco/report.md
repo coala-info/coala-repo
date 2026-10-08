@@ -1,5 +1,12 @@
 # folddisco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| folddisco_index | PASS | indexed 8 RCSB structures; fixed the structure input type, index outputs and relative path staging |
+| folddisco_query | PASS | serine protease triad query B57,B102,C195 on 4CHA found the protease structures and not adenylate kinase; fixed index secondary files and structure staging |
+
 ## folddisco_index
 
 ### Tool Description

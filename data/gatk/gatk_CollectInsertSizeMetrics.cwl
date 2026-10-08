@@ -10,14 +10,15 @@ doc: Collect metrics about the insert size distribution of a paired-end library.
   libraries.
 inputs:
   - id: histogram_file
-    type: string
+    type:
+      - 'null'
+      - string
     doc: File to write insert size Histogram chart to.
     inputBinding:
       position: 101
       prefix: --Histogram_FILE
   - id: input
     type:
-      - 'null'
       - File
     doc: Input SAM/BAM/CRAM file.
     inputBinding:
@@ -34,10 +35,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: assume_sorted
     type:
       - 'null'
@@ -113,11 +115,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --METRIC_ACCUMULATION_LEVEL
     doc: 'The level(s) at which to accumulate metrics. Possible values: {ALL_READS,
       SAMPLE, LIBRARY, READ_GROUP}'
     inputBinding:
       position: 101
-      prefix: --METRIC_ACCUMULATION_LEVEL
   - id: min_histogram_width
     type:
       - 'null'
@@ -149,6 +152,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -165,12 +169,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -208,7 +213,9 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_histogram_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: File to write insert size Histogram chart to.
     outputBinding:
       glob: $(inputs.histogram_file)

@@ -57,7 +57,7 @@ inputs:
       position: 101
       prefix: --geneAnno
   - id: gene_dataset
-    type: string
+    type: File
     doc: Gene Expression dataset.
     inputBinding:
       position: 101
@@ -134,7 +134,7 @@ inputs:
       position: 101
       prefix: --metAnno
   - id: met_dataset
-    type: string
+    type: File
     doc: Metabolomic Datset.
     inputBinding:
       position: 101
@@ -228,7 +228,7 @@ inputs:
       position: 101
       prefix: --sigmaNum
   - id: threshold
-    type: string
+    type: float
     doc: Threshold to cut the sPLS output file.
     inputBinding:
       position: 101
@@ -240,7 +240,7 @@ inputs:
     doc: Output or path parameter `mmc_out_path`
     inputBinding:
       position: 104
-      prefix: --mmc-out
+      prefix: --mmcOut
   - id: pana_out_path
     type:
       - 'null'
@@ -248,19 +248,15 @@ inputs:
     doc: Output or path parameter `pana_out_path`
     inputBinding:
       position: 105
-      prefix: --pana-out
+      prefix: --panaOut
   - id: spls_out_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output or path parameter `spls_out_path`
     inputBinding:
       position: 106
-      prefix: --spls-out
+      prefix: --splsOut
   - id: figure1_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 107
       prefix: --figure1

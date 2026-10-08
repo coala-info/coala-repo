@@ -4,71 +4,69 @@ baseCommand:
   - freyja
   - barcode-build
 label: freyja_barcode-build
-doc: "Builds a barcode reference from a FASTA file.\n\nTool homepage: https://github.com/andersen-lab/Freyja"
+doc: "Build barcodes from a custom protobuf tree.\n\nTool homepage: https://github.com/andersen-lab/Freyja"
 inputs:
-  - id: input_fasta
+  - id: pb
     type: File
-    doc: Input FASTA file containing sequences to build barcodes from.
+    doc: protobuf tree
     inputBinding:
       position: 1
-  - id: force
-    type:
-      - 'null'
-      - boolean
-    doc: Force overwrite of existing files, even if they are not identical.
-    inputBinding:
-      position: 102
-      prefix: --force
-  - id: max_len
-    type:
-      - 'null'
-      - int
-    doc: Maximum length of barcodes to consider.
-    inputBinding:
-      position: 102
-      prefix: --max-len
-  - id: min_len
-    type:
-      - 'null'
-      - int
-    doc: Minimum length of barcodes to consider.
-    inputBinding:
-      position: 102
-      prefix: --min-len
-  - id: output_dir
+      prefix: --pb
+  - id: outdir
     type: string
-    doc: Directory to save the barcode reference files.
+    doc: Output directory save updated files
     inputBinding:
-      position: 102
-      prefix: --output-dir
+      position: 2
+      prefix: --outdir
   - id: redo
     type:
       - 'null'
       - boolean
-    doc: If set, will overwrite existing files in the output directory.
+    doc: Allow for overwriting of output directory
     inputBinding:
-      position: 102
+      position: 3
       prefix: --redo
-  - id: threads
+  - id: noncl
     type:
       - 'null'
-      - int
-    doc: Number of threads to use for parallel processing.
+      - boolean
+    doc: 'only include lineages that are confirmed by cov-lineages [default: True]'
     inputBinding:
-      position: 102
-      prefix: --threads
+      position: 4
+      prefix: --noncl
+  - id: pathogen
+    type:
+      - 'null'
+      - string
+    doc: 'Pathogen of interest: SARS-CoV-2, MPX, H5Nx, H5Nx-cattle, H1N1, FLU-B-VIC,
+      H3N2, MEASLESgenome, RSVa, RSVb, DENV1, DENV2, DENV3, DENV4, MTB or manual [default:
+      SARS-CoV-2]'
+    inputBinding:
+      position: 5
+      prefix: --pathogen
+  - id: format
+    type:
+      - 'null'
+      - string
+    doc: 'Output format: feather or csv [default: feather]'
+    inputBinding:
+      position: 6
+      prefix: --format
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to save the barcode reference files.
+  - id: outdir_dir
+    type: Directory
+    doc: Directory with the built barcodes
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/freyja:2.0.3--pyhdfd78af_0
 stdout: freyja_barcode-build.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '${ return [{"entryname": inputs.outdir, "entry": {"class": "Directory",
+      "listing": []}, "writable": true}]; }'

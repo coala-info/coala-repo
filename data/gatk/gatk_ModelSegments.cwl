@@ -26,29 +26,32 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --allelic-counts
     doc: Input files containing allelic counts (output of CollectAllelicCounts).
     inputBinding:
       position: 101
-      prefix: --allelic-counts
   - id: arguments_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: denoised_copy_ratios
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --denoised-copy-ratios
     doc: Input files containing denoised copy ratios (output of 
       DenoiseReadCounts).
     inputBinding:
       position: 101
-      prefix: --denoised-copy-ratios
   - id: gatk_config_file
     type:
       - 'null'
@@ -282,10 +285,11 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --window-size
     doc: Window sizes to use for calculating local changepoint costs.
     inputBinding:
       position: 101
-      prefix: --window-size
   - id: segments
     type:
       - 'null'
@@ -313,7 +317,7 @@ outputs:
     type: File[]
     doc: Prefix for output filenames.
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output)/$(inputs.output_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

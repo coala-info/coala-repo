@@ -1,5 +1,13 @@
 # fununifrac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fununifrac_compute_edges.py | Failed | image problem: the package data file data/kegg/brites.txt is missing in the image, so the tool stops at start (CWL also fixed: .labels.txt secondary file, output folder created) |
+| fununifrac_compute_fununifrac.py | Failed | image problem: the package data file data/kegg/brites.txt is missing in the image, so the tool stops at start (CWL also fixed: .labels.txt secondary file, output folder created) |
+| fununifrac_create_edge_matrix.py | Failed | image problem: the package data file data/kegg/brites.txt is missing in the image, so the tool stops at start (CWL also fixed: .labels.txt secondary file, output folder created) |
+
 ## fununifrac_compute_edges.py
 
 ### Tool Description
@@ -114,6 +122,42 @@ optional arguments:
                         saved.
 ```
 
+
+## fununifrac_create_edge_matrix.py
+
+### Tool Description
+Creates the edge matrix of the KEGG hierarchy subtree for the least squares inference of edge lengths.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fununifrac:0.0.1--pyh7cba7a3_0
+- **Homepage**: https://github.com/KoslickiLab/FunUniFrac
+- **Package**: https://anaconda.org/channels/bioconda/packages/fununifrac/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] create_edge_matrix.py: ok via create_edge_matrix.py --help (--help=ok, -h=ok, -help=ok, (no args)=usage_only)
+usage: create_edge_matrix.py [-h] -e EDGE_FILE -d DISTANCE_FILE -o OUT_DIR -b
+                             BRITE_ID
+
+Given the KEGG hierarchy, first this will select the subtree consisting of all
+the ancestors of the given brite_id. Then, it will create a matrix where the
+(i,j) entry will be 1 iff for the ith pair of KOs in the --distances file:
+(KO1, KO2), edge j is on the shortest path from KO1 to KO2
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -e EDGE_FILE, --edge_file EDGE_FILE
+                        Input edge list file of the KEGG hierarchy
+  -d DISTANCE_FILE, --distance_file DISTANCE_FILE
+                        File containing all pairwise distances between KOs.
+                        Use sourmash compare
+  -o OUT_DIR, --out_dir OUT_DIR
+                        Output directory
+  -b BRITE_ID, --brite_id BRITE_ID
+                        Brite ID of the KEGG hierarchy you want to focus on.
+                        Eg. ko00001
+```
 
 ## Metadata
 - **Skill**: generated

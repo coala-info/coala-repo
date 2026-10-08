@@ -4,8 +4,8 @@ baseCommand:
   - freyja
   - variants
 label: freyja_variants
-doc: "Perform variant calling using samtools and iVar on a BAMFILE\n\nTool homepage:
-  https://github.com/andersen-lab/Freyja"
+doc: "Perform variant calling using samtools and iVar on a BAMFILE\n\nTool homepage:\
+  \ https://github.com/andersen-lab/Freyja"
 inputs:
   - id: bamfile
     type: File
@@ -36,6 +36,9 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ref
+    secondaryFiles:
+      - pattern: .fai
+        required: false
   - id: refname
     type:
       - 'null'

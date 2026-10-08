@@ -8,14 +8,15 @@ doc: Collect metrics regarding GC bias. This tool collects information about the
   relative proportions of guanine (G) and cytosine (C) nucleotides in a sample.
 inputs:
   - id: chart_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The PDF file to render the chart to.
     inputBinding:
       position: 101
       prefix: --CHART_OUTPUT
   - id: input
     type:
-      - 'null'
       - File
     doc: Input SAM/BAM/CRAM file.
     inputBinding:
@@ -48,10 +49,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: assume_sorted
     type:
       - 'null'
@@ -108,11 +110,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --METRIC_ACCUMULATION_LEVEL
     doc: 'The level(s) at which to accumulate metrics. Possible values: {ALL_READS,
       SAMPLE, LIBRARY, READ_GROUP}'
     inputBinding:
       position: 101
-      prefix: --METRIC_ACCUMULATION_LEVEL
   - id: minimum_genome_fraction
     type:
       - 'null'
@@ -136,6 +139,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -161,12 +165,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -204,7 +209,9 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_chart_output
-    type: File
+    type:
+      - 'null'
+      - File
     doc: The PDF file to render the chart to.
     outputBinding:
       glob: $(inputs.chart_output)

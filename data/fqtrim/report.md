@@ -1,5 +1,11 @@
 # fqtrim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fqtrim | PASS |  |
+
 ## fqtrim
 
 ### Tool Description

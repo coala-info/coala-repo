@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./gem-mapper
+baseCommand: gem-mapper
 label: gem3-mapper_gem-mapper
 doc: "GEM3 mapper\n\nTool homepage: https://github.com/smarco/gem3-mapper"
 inputs:
@@ -213,7 +213,7 @@ inputs:
   - id: report_file
     type:
       - 'null'
-      - File
+      - string
     doc: Report file name
     inputBinding:
       position: 101
@@ -221,7 +221,7 @@ inputs:
   - id: sam_compact
     type:
       - 'null'
-      - boolean
+      - string
     doc: Use compact SAM format ('true' or 'false')
     inputBinding:
       position: 101
@@ -261,14 +261,24 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (the alignments when no output prefix is given)
+  - id: report_output
+    type:
+      - 'null'
+      - File
+    doc: Report file written with --report-file
+    outputBinding:
+      glob: $(inputs.report_file)
   - id: output_prefix_files
     type:
       type: array
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: |
+        ${ return inputs.output_prefix ? inputs.output_prefix + '*' : []; }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gem3-mapper:3.6.1--hb1d24b7_13

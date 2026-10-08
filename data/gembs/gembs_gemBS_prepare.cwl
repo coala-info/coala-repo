@@ -78,10 +78,18 @@ inputs:
       position: 101
       prefix: --text-metadata
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output
+  - id: project_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the configuration and metadata files (for example the reference FASTA and the FASTQ files), staged in the working directory
 outputs:
   - id: output
     type:
@@ -90,8 +98,17 @@ outputs:
     doc: Output JSON file. See documentation for description of file format.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: gemBS_state
+    type:
+      - 'null'
+      - Directory
+    doc: The .gemBS project directory (database and JSON file) used by the later gemBS steps
+    outputBinding:
+      glob: .gemBS
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.project_files ? inputs.project_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gembs:3.5.5_IHEC--py39h6859054_8

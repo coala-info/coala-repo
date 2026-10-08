@@ -29,10 +29,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: check_md5
     type:
       - 'null'
@@ -56,11 +57,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --field
     doc: 'A field to include, default: all. Possible values: {QNAME, FLAG, RNAME,
       POS, MAPQ, CIGAR, RNEXT, PNEXT, TLEN, SEQ, QUAL}'
     inputBinding:
       position: 101
-      prefix: --field
   - id: format
     type:
       - 'null'
@@ -108,10 +110,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --notag
     doc: A tag which should be excluded.
     inputBinding:
       position: 101
-      prefix: --notag
   - id: quiet
     type:
       - 'null'
@@ -125,10 +128,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tag
     doc: A tag which should be included.
     inputBinding:
       position: 101
-      prefix: --tag
   - id: tmp_dir
     type:
       - 'null'
@@ -179,6 +183,8 @@ outputs:
       glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:latest

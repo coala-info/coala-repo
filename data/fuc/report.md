@@ -1,5 +1,53 @@
 # fuc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fuc_bam-aldepth | PASS |  |
+| fuc_bam-depth | PASS |  |
+| fuc_bam-head | PASS |  |
+| fuc_bam-index | PASS |  |
+| fuc_bam-rename | PASS |  |
+| fuc_bam-slice | PASS |  |
+| fuc_bed-intxn | PASS |  |
+| fuc_bed-sum | PASS |  |
+| fuc_cov-concat | PASS | axis 1 output writes positions and depths as floats (121.0), same values |
+| fuc_cov-rename | PASS |  |
+| fuc_fa-filter | PASS |  |
+| fuc_fq-count | Failed | image problem: fuc fq-count calls bc, which is missing from the image (bc: command not found), so it prints nothing |
+| fuc_fq-sum | PASS |  |
+| fuc_fuc-bgzip | Failed | tool bug: fuc-bgzip crashes with io.UnsupportedOperation: read when its standard output is a file or pipe (Biopython BgzfWriter) |
+| fuc_fuc-compf | PASS |  |
+| fuc_fuc-demux | Not completed | needs a bcl2fastq Reports directory, and no small public one is available |
+| fuc_fuc-exist | PASS |  |
+| fuc_fuc-find | PASS |  |
+| fuc_fuc-undetm | PASS |  |
+| fuc_maf-maf2vcf | Failed | tool bug: maf-maf2vcf stops with TypeError (unsupported operand dict and list) in pymaf.to_vcf on the TCGA MAF file |
+| fuc_maf-oncoplt | PASS |  |
+| fuc_maf-sumplt | Failed | image problem: maf-sumplt stops with a seaborn ValueError (Could not interpret value index for y); library versions in the image do not match the tool |
+| fuc_maf-vcf2maf | PASS |  |
+| fuc_ngs-bam2fq | Not completed | pipeline, skipped |
+| fuc_ngs-fq2bam | Not completed | pipeline, skipped |
+| fuc_ngs-hc | Not completed | pipeline, skipped |
+| fuc_ngs-m2 | Not completed | pipeline, skipped |
+| fuc_ngs-pon | Not completed | pipeline, skipped |
+| fuc_ngs-quant | Not completed | pipeline, skipped |
+| fuc_ngs-trim | Not completed | pipeline, skipped |
+| fuc_tabix-index | PASS |  |
+| fuc_tabix-slice | PASS |  |
+| fuc_tbl-merge | PASS |  |
+| fuc_tbl-sum | PASS |  |
+| fuc_vcf-call | PASS |  |
+| fuc_vcf-filter | PASS |  |
+| fuc_vcf-index | PASS |  |
+| fuc_vcf-merge | PASS |  |
+| fuc_vcf-rename | PASS |  |
+| fuc_vcf-slice | PASS |  |
+| fuc_vcf-split | PASS |  |
+| fuc_vcf-vcf2bed | PASS |  |
+| fuc_vcf-vep | PASS |  |
+
 ## fuc_bam-aldepth
 
 ### Tool Description

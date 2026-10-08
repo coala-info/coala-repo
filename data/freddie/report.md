@@ -1,5 +1,14 @@
 # freddie CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| freddie_freddie_cluster.py | Failed | image problem: freddie_cluster.py stops with ModuleNotFoundError: No module named gurobipy |
+| freddie_freddie_isoforms.py | Not completed | needs the freddie_cluster.py output, and the cluster step cannot run because gurobipy is missing from the image |
+| freddie_freddie_segment.py | PASS |  |
+| freddie_freddie_split.py | PASS |  |
+
 ## freddie_freddie_split.py
 
 ### Tool Description
@@ -138,6 +147,58 @@ options:
                         Number of threads to use
   -o OUTPUT, --output OUTPUT
                         Path to output file. Default: freddie_isoforms.gtf
+```
+
+## freddie_freddie_cluster.py
+
+### Tool Description
+Cluster segmented reads into isoforms with an integer linear program (needs the Gurobi solver).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/freddie:0.4--hdfd78af_0
+- **Homepage**: https://github.com/vpc-ccg/freddie
+- **Package**: https://anaconda.org/channels/bioconda/packages/freddie/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: freddie_cluster.py [-h] -s SEGMENT_DIR [-rm RECYCLE_MODEL]
+                          [-go GAP_OFFSET] [-e EPSILON] [-mr MAX_ROUNDS]
+                          [-is MIN_ISOFORM_SIZE] [-mi MAX_ILP] [-to TIMEOUT]
+                          [-t THREADS] [-l LOGS_DIR] [-o OUTDIR]
+
+options:
+  -h, --help            show this help message and exit
+  -s SEGMENT_DIR, --segment-dir SEGMENT_DIR
+                        Path to Freddie segment directory of the reads
+  -rm RECYCLE_MODEL, --recycle-model RECYCLE_MODEL
+                        Model type: constant, exons, introns, relative.
+                        Default: constant
+  -go GAP_OFFSET, --gap-offset GAP_OFFSET
+                        Slack +- value for exons and the unaligned gaps.
+                        Default: 20
+  -e EPSILON, --epsilon EPSILON
+                        Epsilon percent value for how much can unaligned gaps
+                        can cover. Default: 0.2
+  -mr MAX_ROUNDS, --max-rounds MAX_ROUNDS
+                        Maximum number of ILP rounds. Default 30
+  -is MIN_ISOFORM_SIZE, --min-isoform-size MIN_ISOFORM_SIZE
+                        Minimum isoform size in terms of number supporting
+                        reads. Default 3
+  -mi MAX_ILP, --max-ilp MAX_ILP
+                        Maximum number of unique reads allowed for an ILP
+                        instance. ILP instances with more reads will have
+                        their input broken into evenly sized problems, each
+                        with less than the max. Default 1000
+  -to TIMEOUT, --timeout TIMEOUT
+                        Gurobi time-out in minutes. Default: 1
+  -t THREADS, --threads THREADS
+                        Number of threads to use
+  -l LOGS_DIR, --logs-dir LOGS_DIR
+                        Directory path where logs will be outputted. Default:
+                        No log
+  -o OUTDIR, --outdir OUTDIR
+                        Path to output directory. Default: freddie_cluster/
 ```
 
 ## Metadata

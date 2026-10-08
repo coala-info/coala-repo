@@ -2,18 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - gambit
-  - query
 label: gambit_query
 doc: "Predict taxonomy of microbial samples from genome sequences.\n\nTool homepage:
   https://github.com/jlumpe/gambit"
 inputs:
+  - id: db
+    type:
+      - 'null'
+      - Directory
+    doc: Directory containing GAMBIT database files (global option, given before the subcommand).
+    inputBinding:
+      position: 1
+      prefix: --db
   - id: genomes
     type:
       type: array
       items: File
     doc: Genome sequences to query
     inputBinding:
-      position: 1
+      position: 3
   - id: cores
     type:
       - 'null'
@@ -71,12 +78,20 @@ inputs:
       position: 102
       prefix: --sigfile
   - id: output_filename_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: File path to write to. If omitted will write to stdout.
     inputBinding:
       position: 103
       prefix: --output
+arguments:
+  - position: 2
+    valueFrom: query
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (results when --output is omitted)
   - id: output_filename
     type:
       - 'null'
@@ -89,3 +104,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gambit:1.1.0--py39hbcbf7aa_2
+stdout: gambit_query.out

@@ -11,7 +11,8 @@ inputs:
       'tail -n +2 globalPercentID.file | cut -f1 -d " "
     inputBinding:
       position: 101
-      prefix: --elementIDs
+      prefix: --elementIDs=
+      separate: false
   - id: expected_per_i_ds
     type:
       - 'null'
@@ -21,7 +22,8 @@ inputs:
       Use lookUpData/expPercentID_CNE.txt for non-coding genomic regions."
     inputBinding:
       position: 101
-      prefix: --expectedPerIDs
+      prefix: --expectedPerIDs=
+      separate: false
   - id: global_pid
     type:
       - 'null'
@@ -31,7 +33,8 @@ inputs:
       ID. The first line must start with 'species'."
     inputBinding:
       position: 101
-      prefix: --globalPid
+      prefix: --globalPid=
+      separate: false
   - id: list_pheno
     type: File
     doc: File listing the phenotype for all species (all leaves in the tree). 
@@ -39,7 +42,8 @@ inputs:
       trait is lost and 1 means trait is present.
     inputBinding:
       position: 101
-      prefix: --listPheno
+      prefix: --listPheno=
+      separate: false
   - id: local_pid
     type:
       - 'null'
@@ -49,7 +53,8 @@ inputs:
       branch."
     inputBinding:
       position: 101
-      prefix: --localPid
+      prefix: --localPid=
+      separate: false
   - id: method
     type:
       - 'null'
@@ -58,7 +63,8 @@ inputs:
       perfect-match method. Default is all.
     inputBinding:
       position: 101
-      prefix: --method
+      prefix: --method=
+      separate: false
   - id: min_losses
     type:
       - 'null'
@@ -68,7 +74,8 @@ inputs:
       with %id values. Can be used to exclude lineage-specific losses. Default 2
     inputBinding:
       position: 101
-      prefix: --minLosses
+      prefix: --minLosses=
+      separate: false
   - id: out_path
     type:
       - 'null'
@@ -78,7 +85,8 @@ inputs:
       effect. Default directory '.'
     inputBinding:
       position: 101
-      prefix: --outPath
+      prefix: --outPath=
+      separate: false
   - id: threshold_conserved
     type:
       - 'null'
@@ -89,7 +97,8 @@ inputs:
       Default: 0.5'
     inputBinding:
       position: 101
-      prefix: --thresholdConserved
+      prefix: --thresholdConserved=
+      separate: false
   - id: transf
     type:
       - 'null'
@@ -98,7 +107,8 @@ inputs:
       differences in evolutionary rates. Default normalized
     inputBinding:
       position: 101
-      prefix: --transf
+      prefix: --transf=
+      separate: false
   - id: tree
     type: File
     doc: Phylogenetic tree with branch lengths in newick format. The species 
@@ -106,15 +116,17 @@ inputs:
       must be named (otherwise use tree_doctor -a)
     inputBinding:
       position: 101
-      prefix: --tree
+      prefix: --tree=
+      separate: false
   - id: verbose
     type:
       - 'null'
-      - boolean
+      - string
     doc: Show much more info and create plots for each element. Default is FALSE
     inputBinding:
       position: 101
-      prefix: --verbose
+      prefix: --verbose=
+      separate: false
   - id: weights
     type:
       - 'null'
@@ -124,14 +136,16 @@ inputs:
       for non-coding genomic regions."
     inputBinding:
       position: 101
-      prefix: --weights
+      prefix: --weights=
+      separate: false
   - id: out_file_path
     type: string
     doc: = filename Output file that will contain the element ID and the 
       P-values from the methods.
     inputBinding:
       position: 102
-      prefix: --outFile
+      prefix: --outFile=
+      separate: false
 outputs:
   - id: out_file
     type: File

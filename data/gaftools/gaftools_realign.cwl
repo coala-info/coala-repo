@@ -19,6 +19,9 @@ inputs:
       position: 2
   - id: fasta_file
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: FASTA file of the read
     inputBinding:
       position: 3

@@ -11,6 +11,9 @@ inputs:
     doc: Input alignment file.
     inputBinding:
       position: 1
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: sites
     type: File
     doc: "TSV file containing two columns, chromosome and position. This\n       \

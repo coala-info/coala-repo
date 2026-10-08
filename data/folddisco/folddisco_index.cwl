@@ -64,11 +64,14 @@ inputs:
       position: 101
       prefix: --multiple-bins
   - id: pdbs_dir_or_db
-    type: File
-    doc: Directory or Foldcomp DB containing PDB files
+    type:
+      - Directory
+      - File
+    doc: Directory or Foldcomp DB containing PDB files. It is staged in the working directory and given by its relative name, because the index stores this path and folddisco query must find the structures under the same relative path (stage the same directory in the query too).
     inputBinding:
       position: 101
       prefix: --pdbs
+      valueFrom: $(self.basename)
   - id: recursive
     type:
       - 'null'
@@ -101,12 +104,19 @@ inputs:
       prefix: --index
 outputs:
   - id: index_path
-    type: Directory
-    doc: Path to save the index table
+    type: File
+    doc: Index table; the .lookup, .offset and .type files are secondary files
     outputBinding:
       glob: $(inputs.index_path_path)
+    secondaryFiles:
+      - .lookup
+      - .offset
+      - .type
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.pdbs_dir_or_db)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/folddisco:1.7514114--ha6fb395_0

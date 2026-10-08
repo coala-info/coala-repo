@@ -7,7 +7,7 @@ label: gatk_CheckDuplicateMarking
 doc: 'This tool checks that all reads with the same queryname have their duplicate
   marking flags set the same way. NOTE: This tool does NOT check that the duplicate
   marking is correct. The ONLY thing that it checks is that the 0x400 bit-flags of
-  records with the same queryname are equal.'
+  records with the same queryname are equal. Exit code 4 means inconsistent duplicate flags were found.'
 inputs:
   - id: input
     type: File
@@ -20,10 +20,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -87,6 +88,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -95,12 +97,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -149,6 +152,9 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:latest
+successCodes:
+  - 0
+  - 4
 s:url: https://www.broadinstitute.org/gatk/
 $namespaces:
   s: https://schema.org/

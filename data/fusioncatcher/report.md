@@ -1,5 +1,11 @@
 # fusioncatcher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fusioncatcher | Not completed | needs the large FusionCatcher human Ensembl data build (tens of GB); no tiny real resource exists |
+
 ## fusioncatcher
 
 ### Tool Description

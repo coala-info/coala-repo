@@ -9,20 +9,29 @@ inputs:
   - id: input_pdb_or_mmcif_files
     type:
       type: array
-      items: File
+      items:
+        - File
+        - Directory
     doc: Input PDB or mmCIF files
     inputBinding:
       position: 1
   - id: input_target_fasta_or_db
-    type: string
+    type:
+      - File
+      - Directory
     doc: Input target FASTA file or target database
     inputBinding:
       position: 2
+  - id: alignment_file_path
+    type: string
+    doc: Name of the output alignment file
+    inputBinding:
+      position: 3
   - id: tmp_dir
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 3
+      position: 4
   - id: add_backtrace
     type:
       - 'null'
@@ -689,7 +698,9 @@ outputs:
     type: File
     doc: Output alignment file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.alignment_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/foldseek:10.941cd33--h5021889_1

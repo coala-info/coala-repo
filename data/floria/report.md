@@ -1,5 +1,11 @@
 # floria CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| floria | PASS | added missing .bai secondaryFiles on the BAM input |
+
 ## floria
 
 ### Tool Description

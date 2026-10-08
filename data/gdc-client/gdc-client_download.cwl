@@ -8,8 +8,9 @@ doc: "Download files from the GDC\n\nTool homepage: https://gdc.cancer.gov/acces
 inputs:
   - id: file_id
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
     doc: The GDC UUID of the file(s) to download
     inputBinding:
       position: 1
@@ -40,7 +41,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to download files to. Defaults to current directory
     inputBinding:
       position: 102
@@ -64,7 +65,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Save logs to file. Amount logged affected by --debug
     inputBinding:
       position: 102
@@ -179,6 +180,29 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: downloads
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the downloaded files
+    outputBinding:
+      glob: $(inputs.dir)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file written with --log-file
+    outputBinding:
+      glob: $(inputs.log_file)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: '$(inputs.dir ? inputs.dir : ".download_dir_unused")'
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gdc-client:2.3--pyhdfd78af_1

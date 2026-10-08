@@ -1,5 +1,11 @@
 # Palladium-Catalyzed CO Oxidation CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| 6f06eaf80b70511e.abstract | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://eurosciencegateway.eu/

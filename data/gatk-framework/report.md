@@ -1,5 +1,11 @@
 # gatk-framework CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gatk-framework | PASS |  |
+
 ## gatk-framework
 
 ### Tool Description

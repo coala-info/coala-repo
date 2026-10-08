@@ -1,5 +1,12 @@
 # gecko CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gecko_frags2align.sh | PASS | alignments equal the expected Galaxy test output |
+| gecko_workflow.sh | PASS | CSV equals the expected Galaxy test output |
+
 ## gecko_workflow.sh
 
 ### Tool Description

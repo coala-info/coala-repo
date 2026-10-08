@@ -9,24 +9,30 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: BAM files to be analyzed
+    doc: BAM files to be analyzed (indexed with .bai when --region or --targets is
+      used)
     inputBinding:
       position: 1
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: add_bam_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --bam
     doc: Add FILE to the set of BAM files to be analyzed.
-    inputBinding:
-      position: 102
-      prefix: --bam
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: allele_balance_priors_off
     type:
       - 'null'
       - boolean
-    doc: Disable use of aggregate probability of observation balance between 
-      alleles as a component of the priors.
+    doc: Disable use of aggregate probability of observation balance between alleles
+      as a component of the priors.
     inputBinding:
       position: 102
       prefix: --allele-balance-priors-off
@@ -50,9 +56,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable incorporation of prior expectations about observations. Uses 
-      read placement probability, strand balance probability, and read position 
-      (5'-3') probability.
+    doc: Disable incorporation of prior expectations about observations. Uses read
+      placement probability, strand balance probability, and read position (5'-3')
+      probability.
     inputBinding:
       position: 102
       prefix: --binomial-obs-priors-off
@@ -72,9 +78,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: "A file containing per-sample estimates of contamination, such as those generated
+    doc: 'A file containing per-sample estimates of contamination, such as those generated
       by VerifyBamID. The format should be: sample p(read=R|genotype=AR) p(read=A|genotype=AA)
-      Sample '*' can be used to set default contamination estimates."
+      Sample ''*'' can be used to set default contamination estimates.'
     inputBinding:
       position: 102
       prefix: --contamination-estimates
@@ -93,7 +99,7 @@ inputs:
     doc: Print more verbose debugging output (requires "make DEBUG")
     inputBinding:
       position: 102
-      prefix: --debug
+      prefix: -dd
   - id: dont_left_align_indels
     type:
       - 'null'
@@ -114,8 +120,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Calculate the marginal probability of genotypes and report as GQ in 
-      each sample field in the VCF output.
+    doc: Calculate the marginal probability of genotypes and report as GQ in each
+      sample field in the VCF output.
     inputBinding:
       position: 102
       prefix: --genotype-qualities
@@ -123,8 +129,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Limit posterior integration to samples where the second-best genotype likelihood
-      is no more than log(N) from the highest genotype likelihood for the sample.'
+    doc: Limit posterior integration to samples where the second-best genotype likelihood
+      is no more than log(N) from the highest genotype likelihood for the sample.
     inputBinding:
       position: 102
       prefix: --genotype-variant-threshold
@@ -132,7 +138,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'Integrate no deeper than the Nth best genotype by likelihood when genotyping.'
+    doc: Integrate no deeper than the Nth best genotype by likelihood when genotyping.
     inputBinding:
       position: 102
       prefix: --genotyping-max-banddepth
@@ -163,10 +169,10 @@ inputs:
   - id: gvcf_dont_use_chunk
     type:
       - 'null'
-      - boolean
-    doc: When writing the gVCF output emit a record for all bases if set to 
-      "true" , will also route an int to --gvcf-chunk similar to --output-mode 
-      EMIT_ALL_SITES from GATK
+      - string
+    doc: When writing the gVCF output emit a record for all bases if set to "true",
+      will also route an int to --gvcf-chunk similar to --output-mode EMIT_ALL_SITES
+      from GATK
     inputBinding:
       position: 102
       prefix: --gvcf-dont-use-chunk
@@ -174,8 +180,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: When specified, only variant alleles provided in this input VCF will be
-      used for the construction of complex or haplotype alleles.
+    doc: When specified, only variant alleles provided in this input VCF will be used
+      for the construction of complex or haplotype alleles.
     inputBinding:
       position: 102
       prefix: --haplotype-basis-alleles
@@ -192,8 +198,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use a weighted sum of base qualities around an indel, scaled by the 
-      distance from the indel. By default use a minimum BQ in flanking sequence.
+    doc: Use a weighted sum of base qualities around an indel, scaled by the distance
+      from the indel. By default use a minimum BQ in flanking sequence.
     inputBinding:
       position: 102
       prefix: --harmonic-indel-quality
@@ -201,8 +207,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable estimation of the probability of the combination arising under 
-      HWE given the allele frequency as estimated by observation frequency.
+    doc: Disable estimation of the probability of the combination arising under HWE
+      given the allele frequency as estimated by observation frequency.
     inputBinding:
       position: 102
       prefix: --hwe-priors-off
@@ -218,7 +224,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'Downsample per-sample coverage to this level if greater than this coverage.'
+    doc: Downsample per-sample coverage to this level if greater than this coverage.
     inputBinding:
       position: 102
       prefix: --limit-coverage
@@ -345,9 +351,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Exclude observations which do not fully span the dynamically-determined
-      detection window. (default, use all observations, dividing partial support
-      across matching haplotypes when generating haplotypes.)
+    doc: Exclude observations which do not fully span the dynamically-determined detection
+      window. (default, use all observations, dividing partial support across matching
+      haplotypes when generating haplotypes.)
     inputBinding:
       position: 102
       prefix: --no-partial-observations
@@ -355,8 +361,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Equivalent to --pooled-discrete --hwe-priors-off and removal of Ewens 
-      Sampling Formula component of priors.
+    doc: Equivalent to --pooled-discrete --hwe-priors-off and removal of Ewens Sampling
+      Formula component of priors.
     inputBinding:
       position: 102
       prefix: --no-population-priors
@@ -364,9 +370,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Read length-dependent allele observation biases from FILE. The format 
-      is [length] [alignment efficiency relative to reference] where the 
-      efficiency is 1 if there is no relative observation bias.
+    doc: Read length-dependent allele observation biases from FILE. The format is
+      [length] [alignment efficiency relative to reference] where the efficiency is
+      1 if there is no relative observation bias.
     inputBinding:
       position: 102
       prefix: --observation-bias
@@ -374,9 +380,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Only provide variant calls and genotype likelihoods for sites and 
-      alleles which are provided in the VCF input, and provide output in the VCF
-      for all input alleles, not just those which have support in the data.
+    doc: Only provide variant calls and genotype likelihoods for sites and alleles
+      which are provided in the VCF input, and provide output in the VCF for all input
+      alleles, not just those which have support in the data.
     inputBinding:
       position: 102
       prefix: --only-use-input-alleles
@@ -392,8 +398,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output all alleles which pass input filters, regardles of genotyping 
-      outcome or model.
+    doc: Output all alleles which pass input filters, regardles of genotyping outcome
+      or model.
     inputBinding:
       position: 102
       prefix: --pooled-continuous
@@ -401,10 +407,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Assume that samples result from pooled sequencing. Model pooled samples
-      using discrete genotypes across pools. When using this flag, set --ploidy 
-      to the number of alleles in each sample or use the --cnv-map to define 
-      per-sample ploidy.
+    doc: Assume that samples result from pooled sequencing. Model pooled samples using
+      discrete genotypes across pools. When using this flag, set --ploidy to the number
+      of alleles in each sample or use the --cnv-map to define per-sample ploidy.
     inputBinding:
       position: 102
       prefix: --pooled-discrete
@@ -412,9 +417,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Each line of FILE should list a sample and a population which it is 
-      part of. The population-based bayesian inference model will then be 
-      partitioned on the basis of the populations.
+    doc: Each line of FILE should list a sample and a population which it is part
+      of. The population-based bayesian inference model will then be partitioned on
+      the basis of the populations.
     inputBinding:
       position: 102
       prefix: --populations
@@ -492,11 +497,10 @@ inputs:
   - id: reference_fasta
     type: File
     secondaryFiles:
-      - .fai
-    doc: Use FILE as the reference sequence for analysis. An index file 
-      (FILE.fai) will be created if none exists. If neither --targets nor 
-      --region are specified, FreeBayes will analyze every position in this 
-      reference.
+      - pattern: .fai
+        required: false
+    doc: Use FILE as the reference sequence for analysis. An index file (FILE.fai)
+      should sit beside it, or freebayes tries to create one.
     inputBinding:
       position: 102
       prefix: --fasta-reference
@@ -513,9 +517,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Limit analysis to the specified region, 0-base coordinates, 
-      end_position not included (same as BED format). Either '-' or '..' maybe 
-      used as a separator.
+    doc: Limit analysis to the specified region, 0-base coordinates, end_position
+      not included (same as BED format). Either '-' or '..' maybe used as a separator.
     inputBinding:
       position: 102
       prefix: --region
@@ -523,8 +526,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: At sites where genotypes are made over haplotype alleles, provide 
-      information about all alleles in output, not only those which are called.
+    doc: At sites where genotypes are made over haplotype alleles, provide information
+      about all alleles in output, not only those which are called.
     inputBinding:
       position: 102
       prefix: --report-all-haplotype-alleles
@@ -532,8 +535,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Report genotypes using the maximum-likelihood estimate provided from 
-      genotype likelihoods.
+    doc: Report genotypes using the maximum-likelihood estimate provided from genotype
+      likelihoods.
     inputBinding:
       position: 102
       prefix: --report-genotype-likelihood-max
@@ -541,9 +544,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Report even loci which appear to be monomorphic, and report all 
-      considered alleles, even those which are not in called genotypes. Loci 
-      which do not have any potential alternates have '.' for ALT.
+    doc: Report even loci which appear to be monomorphic, and report all considered
+      alleles, even those which are not in called genotypes. Loci which do not have
+      any potential alternates have '.' for ALT.
     inputBinding:
       position: 102
       prefix: --report-monomorphic
@@ -551,8 +554,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Limit analysis to samples listed (one per line) in the FILE. By default
-      FreeBayes will analyze all samples in its input BAM files.
+    doc: Limit analysis to samples listed (one per line) in the FILE. By default FreeBayes
+      will analyze all samples in its input BAM files.
     inputBinding:
       position: 102
       prefix: --samples
@@ -570,8 +573,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use stringent input base and mapping quality filters Equivalent to -m 
-      30 -q 20 -R 0 -S 0
+    doc: Use stringent input base and mapping quality filters Equivalent to -m 30
+      -q 20 -R 0 -S 0
     inputBinding:
       position: 102
       prefix: --standard-filters
@@ -679,8 +682,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: This flag includes the reference allele in the analysis as if it is 
-      another sample from the same population.
+    doc: This flag includes the reference allele in the analysis as if it is another
+      sample from the same population.
     inputBinding:
       position: 102
       prefix: --use-reference-allele
@@ -688,20 +691,30 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Use variants reported in VCF file as input to the algorithm. Variants 
-      in this file will included in the output even if there is not enough 
-      support in the data to pass input filters.
+    doc: Use variants reported in VCF file as input to the algorithm. Variants in
+      this file will included in the output even if there is not enough support in
+      the data to pass input filters.
     inputBinding:
       position: 102
       prefix: --variant-input
-outputs:
-  - id: output_vcf
+  - id: vcf_output
     type:
       - 'null'
-      - File
-    doc: 'Output VCF-format results to FILE. (default: stdout)'
+      - string
+    doc: 'Output VCF-format results to FILE. (default: stdout, collected as freebayes.vcf)'
+    inputBinding:
+      position: 103
+      prefix: --vcf
+outputs:
+  - id: output_vcf
+    type: File
+    doc: VCF-format variant calls (the --vcf file, or standard output)
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: '${ return inputs.vcf_output ? inputs.vcf_output : ''freebayes.vcf'';
+        }'
+stdout: freebayes.vcf
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/freebayes:1.3.10--hbefcdb2_0

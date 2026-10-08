@@ -9,11 +9,15 @@ inputs:
   - id: feature
     type:
       type: array
-      items: string
+      items: File
+      inputBinding:
+        prefix: --feature
     doc: Undocumented option
     inputBinding:
       position: 101
-      prefix: --feature
+    secondaryFiles:
+      - .tbi?
+      - .idx?
   - id: add_output_sam_program_record
     type:
       - 'null'
@@ -32,12 +36,14 @@ inputs:
       prefix: --add-output-vcf-command-line
   - id: arguments_file
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: cloud_index_prefetch_buffer
     type:
       - 'null'
@@ -102,10 +108,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --disable-read-filter
     doc: Read filters to be disabled before analysis
     inputBinding:
       position: 101
-      prefix: --disable-read-filter
   - id: disable_sequence_dictionary_validation
     type:
       - 'null'
@@ -119,11 +126,15 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals to exclude from processing
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --exclude-intervals
+    doc: One or more genomic intervals to exclude from processing (interval 
+      strings, or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --exclude-intervals
   - id: gatk_config_file
     type:
       - 'null'
@@ -154,10 +165,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --input
     doc: BAM/SAM/CRAM file containing reads
     inputBinding:
       position: 101
-      prefix: --input
   - id: interval_exclusion_padding
     type:
       - 'null'
@@ -194,21 +206,26 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals over which to operate
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --intervals
+    doc: One or more genomic intervals over which to operate (interval strings, 
+      or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --intervals
   - id: inverted_read_filter
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --inverted-read-filter
     doc: Inverted (with flipped acceptance/failure conditions) read filters 
       applied before analysis
     inputBinding:
       position: 101
-      prefix: --inverted-read-filter
   - id: lenient
     type:
       - 'null'
@@ -239,19 +256,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --read-filter
     doc: Read filters to be applied before analysis
     inputBinding:
       position: 101
-      prefix: --read-filter
   - id: read_index
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --read-index
     doc: Indices to use for the read inputs.
     inputBinding:
       position: 101
-      prefix: --read-index
   - id: read_validation_stringency
     type:
       - 'null'
@@ -267,6 +286,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence
     inputBinding:
       position: 101
@@ -386,28 +406,34 @@ inputs:
       prefix: --min-fragment-length
   - id: keep_intervals
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --keep-intervals
     doc: One or more genomic intervals to keep
     inputBinding:
       position: 101
-      prefix: --keep-intervals
   - id: read_filter_expression
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --read-filter-expression
     doc: One or more JEXL expressions used to filter
     inputBinding:
       position: 101
-      prefix: --read-filter-expression
   - id: library
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --library
     doc: Name of the library to keep
     inputBinding:
       position: 101
-      prefix: --library
   - id: maximum_mapping_quality
     type:
       - 'null'
@@ -452,36 +478,46 @@ inputs:
       prefix: --filter-too-short
   - id: platform_filter_name
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --platform-filter-name
     doc: Platform attribute (PL) to match
     inputBinding:
       position: 101
-      prefix: --platform-filter-name
   - id: black_listed_lanes
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --black-listed-lanes
     doc: Platform unit (PU) to filter out
     inputBinding:
       position: 101
-      prefix: --black-listed-lanes
   - id: read_group_black_list
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --read-group-black-list
     doc: A read group filter expression in the form "attribute:value"
     inputBinding:
       position: 101
-      prefix: --read-group-black-list
   - id: keep_read_group
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The name of the read group to keep
     inputBinding:
       position: 101
       prefix: --keep-read-group
   - id: max_read_length
-    type: int
+    type:
+      - 'null'
+      - int
     doc: Keep only reads with length at most equal to the specified value
     inputBinding:
       position: 101
@@ -496,20 +532,26 @@ inputs:
       prefix: --min-read-length
   - id: read_name
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --read-name
     doc: Keep only reads with this read name
     inputBinding:
       position: 101
-      prefix: --read-name
   - id: keep_reverse_strand_only
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: Keep only reads on the reverse strand
     inputBinding:
       position: 101
       prefix: --keep-reverse-strand-only
   - id: read_filter_tag
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Look for this tag in read
     inputBinding:
       position: 101
@@ -532,12 +574,14 @@ inputs:
       prefix: --read-filter-tag-op
   - id: sample
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --sample
     doc: The name of the sample(s) to keep, filtering out all others
     inputBinding:
       position: 101
-      prefix: --sample
   - id: max_soft_clipped_leading_trailing_ratio
     type:
       - 'null'

@@ -11,10 +11,13 @@ doc: Generate FASTQ file(s) from Illumina basecall read data. This tool
 inputs:
   - id: basecalls_dir
     type: Directory
-    doc: The Illumina basecalls directory.
+    doc: The Illumina Data/Intensities directory. It holds the BaseCalls folder 
+      and the lane position files (L001/*.locs), which the tool reads from the 
+      parent of BaseCalls.
     inputBinding:
       position: 101
       prefix: --BASECALLS_DIR
+      valueFrom: $(self.path + '/BaseCalls')
   - id: lane
     type:
       type: array
@@ -63,10 +66,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ADAPTERS_TO_CHECK
     doc: Which adapters to look for in the reads.
     inputBinding:
       position: 101
-      prefix: --ADAPTERS_TO_CHECK
   - id: apply_eamss_filter
     type:
       - 'null'
@@ -81,10 +85,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: barcodes_dir
     type:
       - 'null'
@@ -240,7 +245,9 @@ inputs:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
   - id: metrics_file
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Per-barcode and per-lane metrics written to this file.
     inputBinding:
       position: 101
@@ -310,6 +317,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -342,12 +350,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: trimming_quality
     type:
       - 'null'

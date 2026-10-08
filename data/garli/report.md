@@ -1,5 +1,11 @@
 # garli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| garli | PASS |  |
+
 ## garli
 
 ### Tool Description

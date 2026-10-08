@@ -8,19 +8,19 @@ doc: "Calculates relative growth rates for each lineage using AGG_RESULTS and ME
   \nTool homepage: https://github.com/andersen-lab/Freyja"
 inputs:
   - id: agg_results
-    type: string
+    type: File
     doc: AGG_RESULTS
     inputBinding:
       position: 1
   - id: metadata
-    type: string
+    type: File
     doc: METADATA
     inputBinding:
       position: 2
   - id: config
     type:
       - 'null'
-      - string
+      - File
     doc: control the colors and grouping of lineages in the plot
     inputBinding:
       position: 103
@@ -44,7 +44,7 @@ inputs:
   - id: lineageyml
     type:
       - 'null'
-      - string
+      - File
     doc: lineage hierarchy file
     inputBinding:
       position: 103

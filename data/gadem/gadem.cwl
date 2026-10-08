@@ -146,7 +146,7 @@ inputs:
   - id: output_file
     type:
       - 'null'
-      - File
+      - string
     doc: Name of main GADEM output file.
     inputBinding:
       position: 101
@@ -154,7 +154,7 @@ inputs:
   - id: output_pwm_file
     type:
       - 'null'
-      - File
+      - string
     doc: Name of output PWM file in STAMP format.
     inputBinding:
       position: 101
@@ -219,7 +219,34 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: motif_report
+    type:
+      - 'null'
+      - File
+    doc: Main GADEM output file (default gadem.txt)
+    outputBinding:
+      glob: "$(inputs.output_file ? inputs.output_file : 'gadem.txt')"
+  - id: pwm_file
+    type:
+      - 'null'
+      - File
+    doc: PWM file in STAMP format (default observedPWMs.txt)
+    outputBinding:
+      glob: "$(inputs.output_pwm_file ? inputs.output_pwm_file : 'observedPWMs.txt')"
+  - id: other_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Other files written by GADEM, such as the pos and mx files
+    outputBinding:
+      glob: ['*.pos', '*.mx', '*.fa']
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gadem:1.3.1--h7b50bb2_8
 stdout: gadem.out
+successCodes:
+  - 0
+  - 1

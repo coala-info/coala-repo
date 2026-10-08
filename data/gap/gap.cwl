@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: gap
 label: gap
 doc: "run the Groups, Algorithms and Programming system, Version 4.8.10\n\nTool homepage:
-  https://github.com/MacGapProject/MacGap1"
+  https://www.gap-system.org/"
 inputs:
   - id: files
     type:

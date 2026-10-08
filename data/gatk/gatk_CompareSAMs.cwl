@@ -11,12 +11,13 @@ doc: Compare two input SAM/BAM/CRAM files. This tool initially compares the
   mapping quality < LOW_MQ_THRESHOLD are allowed to have different alignments, 
   duplicate marks are allowed to differ to account for ambiguities in selecting 
   the representative read of a duplicate set, and some differences in headers is
-  allowed. Results of comparison are summarised in an output metrics file.
+  allowed. Results of comparison are summarised in an output metrics file. Exit code 4 means the files differ.
 inputs:
   - id: input_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Exactly two input SAM/BAM/CRAM files to compare to one another.
     inputBinding:
       position: 1
@@ -25,10 +26,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 102
-      prefix: --arguments_file
   - id: compare_mq
     type:
       - 'null'
@@ -140,6 +142,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 102
@@ -148,12 +151,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 102
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -202,6 +206,9 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:latest
+successCodes:
+  - 0
+  - 4
 s:url: https://www.broadinstitute.org/gatk/
 $namespaces:
   s: https://schema.org/

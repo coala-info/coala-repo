@@ -1,5 +1,11 @@
 # gamma CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gamma_GAMMA.py | PASS |  |
+
 ## gamma_GAMMA.py
 
 ### Tool Description

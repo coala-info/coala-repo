@@ -11,7 +11,7 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: 'Input file to be compressed (default: stdin).'
+    doc: 'Input file to be compressed (default: stdin). Only the first file is compressed.'
     inputBinding:
       position: 1
 outputs:

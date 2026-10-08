@@ -1,5 +1,11 @@
 # galru CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| galru | PASS |  |
+
 ## galru
 
 ### Tool Description

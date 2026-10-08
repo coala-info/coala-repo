@@ -1,14 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: galaxy-parsec_parsec
+baseCommand:
+  - parsec
+  - init
 label: galaxy-parsec_parsec_init
-doc: "Initialize Galaxy parsec connection.\n\nTool homepage: https://github.com/galaxy-iuc/parsec"
+doc: "Help initialize global configuration (in home directory). Writes the Galaxy
+  URL and API key to the parsec configuration file.\n\nTool homepage: https://github.com/galaxy-iuc/parsec"
 inputs:
-  - id: galaxy_url
-    type: string
-    doc: Galaxy's URL
+  - id: url
+    type:
+      - 'null'
+      - string
+    doc: your Galaxy's URL
     inputBinding:
       position: 1
+      prefix: --url
+  - id: api_key
+    type:
+      - 'null'
+      - string
+    doc: your Galaxy API Key
+    inputBinding:
+      position: 2
+      prefix: --api_key
 outputs:
   - id: stdout
     type: stdout

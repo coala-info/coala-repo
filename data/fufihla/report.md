@@ -1,5 +1,11 @@
 # fufihla CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fufihla | Failed | image problem: the image has no zgrep, so FuFiHLA.sh stops with exit 127 (also, the CWL now collects the .out and .err files) |
+
 ## fufihla
 
 ### Tool Description

@@ -1,5 +1,14 @@
 # gb_taxonomy_tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gb_taxonomy_tools_gid-taxid | PASS | synthetic data: the mapping file was built from the repo's expected test.taxid; output equals it |
+| gb_taxonomy_tools_taxonomy-reader | PASS | synthetic data: input lines planted; names and nodes are a small real NCBI taxdump subset from nf-core; lineages are correct |
+| gb_taxonomy_tools_taxonomy2tree | PASS |  |
+| gb_taxonomy_tools_tree2ps | PASS |  |
+
 ## gb_taxonomy_tools_gid-taxid
 
 ### Tool Description

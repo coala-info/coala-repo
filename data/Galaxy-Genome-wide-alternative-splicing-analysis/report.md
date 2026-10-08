@@ -1,5 +1,11 @@
 # Genome-wide alternative splicing analysis CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| main_workflow | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://training.galaxyproject.org

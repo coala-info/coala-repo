@@ -1,79 +1,50 @@
 # fqtools CWL Generation Report
 
-## fqtools_view
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fqtools_basetab | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_count | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_fasta | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_find | Failed | tool bug: returns reads that do not contain the pattern for self-overlapping patterns (AAAC gives 52 reads, grep finds 46; TTTT 66 against 62) |
+| fqtools_head | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_header | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_header2 | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_lengthtab | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_quality | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_qualmap | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_qualtab | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_sequence | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_trim | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_type | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_validate | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+| fqtools_view | PASS | real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand |
+
+## fqtools_basetab
 
 ### Tool Description
-View FASTQ files.
+Tabulate FASTQ base frequencies.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
 - **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
-- **Total Downloads**: 14.5K
-- **Last updated**: 2025-07-08
-- **GitHub**: https://github.com/alastair-droop/fqtools
-- **Stars**: N/A
-### Original Help Text
-```text
-View FASTQ files.
-
-view options:
-  -h               Show this help message and exit.
-  -k               Preserve secondary headers (if present).
-  -o STEM          Output file stem (default "output%").
-  FILE             The fastq file(s) to view.
-
-STEM:
-    The file stem to use for output files (without file extension). Any
-    instances of the single character specified using the -p global argument
-    will be replaced with the pair number, or removed for single output
-    files. If the -o option is not specified, single file output will
-    be written to stdout and paired file output to the default stem (output%).
-
-FILE:
-    If no input file is specified, input will be read from stdin.
-```
-
-
-## fqtools_head
-
-### Tool Description
-View the first reads in FASTQ files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-View the first reads in FASTQ files.
+Tabulate FASTQ base frequencies.
 
-view options:
+basetab options:
   -h               Show this help message and exit.
-  -k               Preserve secondary headers (if present).
-  -n NUMBER        The number of reads to display (default 10).
-  -o STEM          Output file stem (default "output%").
-  FILE             The fastq file(s) to view.
-
-NUMBER:
-    The number of reads to return from the top of the file(s).
-
-STEM:
-    The file stem to use for output files (without file extension). Any
-    instances of the single character specified using the -p global argument
-    will be replaced with the pair number, or removed for single output
-    files. If the -o option is not specified, single file output will
-    be written to stdout and paired file output to the default stem (output%).
+  -a               Show all valid base frequencies, even if zero.
+  -s               Sort returned base frequencies (otherwise alphabetical).
+  FILE             The fastq file(s) to count.
 
 FILE:
     If no input file is specified, input will be read from stdin.
 ```
-
 
 ## fqtools_count
 
@@ -83,7 +54,7 @@ Count FASTQ file reads.
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
 - **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
 - **Validation**: PASS
 
 ### Original Help Text
@@ -98,103 +69,6 @@ FILE:
     If no input file is specified, input will be read from stdin.
 ```
 
-
-## fqtools_header
-
-### Tool Description
-View FASTQ file header data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-View FASTQ file header data.
-
-header options:
-  -h               Show this help message and exit.
-  FILE             The fastq file(s) to view.
-
-FILE:
-    If no input file is specified, input will be read from stdin.
-```
-
-
-## fqtools_sequence
-
-### Tool Description
-View FASTQ file sequence data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-View FASTQ file sequence data.
-
-sequence options:
-  -h               Show this help message and exit.
-  FILE             The fastq file(s) to view.
-
-FILE:
-    If no input file is specified, input will be read from stdin.
-```
-
-
-## fqtools_quality
-
-### Tool Description
-View FASTQ file quality data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-View FASTQ file quality data.
-
-quality options:
-  -h               Show this help message and exit.
-  FILE             The fastq file(s) to view.
-
-FILE:
-    If no input file is specified, input will be read from stdin.
-```
-
-
-## fqtools_header2
-
-### Tool Description
-View FASTQ file secondary header data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-View FASTQ file secondary header data.
-
-secondary header options:
-  -h               Show this help message and exit.
-  FILE             The fastq file(s) to view.
-
-FILE:
-    If no input file is specified, input will be read from stdin.
-```
-
-
 ## fqtools_fasta
 
 ### Tool Description
@@ -203,7 +77,7 @@ Convert FASTQ files to FASTA format.
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
 - **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
 - **Validation**: PASS
 
 ### Original Help Text
@@ -232,138 +106,6 @@ FILE:
     If no input file is specified, input will be read from stdin.
 ```
 
-
-## fqtools_basetab
-
-### Tool Description
-Tabulate FASTQ base frequencies.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Tabulate FASTQ base frequencies.
-
-basetab options:
-  -h               Show this help message and exit.
-  -a               Show all valid base frequencies, even if zero.
-  -s               Sort returned base frequencies (otherwise alphabetical).
-  FILE             The fastq file(s) to count.
-
-FILE:
-    If no input file is specified, input will be read from stdin.
-```
-
-
-## fqtools_qualtab
-
-### Tool Description
-Tabulate FASTQ quality character frequencies.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Tabulate FASTQ quality character frequencies.
-
-basetab options:
-  -h               Show this help message and exit.
-  FILE             The fastq file(s) to count.
-FILE:
-    If no input file is specified, input will be read from stdin.
-
-The output depends on the specified quality type (-q). If no quality
-type is specified, then the ASCII characters in the quality strings
-are tabulated for all possible characters (33-127). If a quality type
-is specified, the quality score and approximate probability of error
-are returned for only the valid characters.
-```
-
-
-## fqtools_lengthtab
-
-### Tool Description
-Tabulate FASTQ read lengths.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Tabulate FASTQ read lengths.
-
-lengthtab options:
-  -h               Show this help message and exit.
-  FILE             The fastq file(s) to count.
-FILE:
-    If no input file is specified, input will be read from stdin.
-```
-
-
-## fqtools_type
-
-### Tool Description
-Attempt to guess the FASTQ quality encoding type.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Attempt to guess the FASTQ quality encoding type.
-
-type options:
-  -h               Show this help message and exit.
-  FILE             The fastq file(s) to count.
-
-FILE:
-    If no input file is specified, input will be read from stdin.
-
-The file type is guessed from the quality data as follows:
-  1) if MIN(offset) < 59 then the file is fastq-sanger encoded;
-  2) if 59 <= MIN(offset) < 64 then the file is fastq-solexa encoded;
-  3) otherwise, the file is fastq-illumina encoded.
-```
-
-
-## fqtools_validate
-
-### Tool Description
-Validate FASTQ file.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
-- **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Validate FASTQ file.
-
-validate options:
-  -h               Show this help message and exit.
-  FILE             The fastq file(s) to count.
-
-FILE:
-    If no input file is specified, input will be read from stdin.
-```
-
-
 ## fqtools_find
 
 ### Tool Description
@@ -372,7 +114,7 @@ Find FASTQ reads containing specific sequences.
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
 - **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
 - **Validation**: PASS
 
 ### Original Help Text
@@ -408,29 +150,30 @@ FILE:
     If no input file is specified, input will be read from stdin.
 ```
 
-
-## fqtools_trim
+## fqtools_head
 
 ### Tool Description
-View FASTQ files.
+View the first reads in FASTQ files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
 - **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-View FASTQ files.
+View the first reads in FASTQ files.
 
 view options:
   -h               Show this help message and exit.
   -k               Preserve secondary headers (if present).
+  -n NUMBER        The number of reads to display (default 10).
   -o STEM          Output file stem (default "output%").
-  -s LENGTH        Trim LENGTH bases from the read start.
-  -l LENGTH        Trim the read to a maximum length of LENGTH.
   FILE             The fastq file(s) to view.
+
+NUMBER:
+    The number of reads to return from the top of the file(s).
 
 STEM:
     The file stem to use for output files (without file extension). Any
@@ -441,11 +184,98 @@ STEM:
 
 FILE:
     If no input file is specified, input will be read from stdin.
-
-LENGTH:
-    If LENGTH is not specified, no trimming is performed.
 ```
 
+## fqtools_header
+
+### Tool Description
+View FASTQ file header data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+View FASTQ file header data.
+
+header options:
+  -h               Show this help message and exit.
+  FILE             The fastq file(s) to view.
+
+FILE:
+    If no input file is specified, input will be read from stdin.
+```
+
+## fqtools_header2
+
+### Tool Description
+View FASTQ file secondary header data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+View FASTQ file secondary header data.
+
+secondary header options:
+  -h               Show this help message and exit.
+  FILE             The fastq file(s) to view.
+
+FILE:
+    If no input file is specified, input will be read from stdin.
+```
+
+## fqtools_lengthtab
+
+### Tool Description
+Tabulate FASTQ read lengths.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Tabulate FASTQ read lengths.
+
+lengthtab options:
+  -h               Show this help message and exit.
+  FILE             The fastq file(s) to count.
+FILE:
+    If no input file is specified, input will be read from stdin.
+```
+
+## fqtools_quality
+
+### Tool Description
+View FASTQ file quality data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+View FASTQ file quality data.
+
+quality options:
+  -h               Show this help message and exit.
+  FILE             The fastq file(s) to view.
+
+FILE:
+    If no input file is specified, input will be read from stdin.
+```
 
 ## fqtools_qualmap
 
@@ -455,7 +285,7 @@ Translate quality values using a mapping file.
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
 - **Homepage**: https://github.com/alastair-droop/fqtools
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
 - **Validation**: PASS
 
 ### Original Help Text
@@ -485,6 +315,176 @@ FILE:
     If no input file is specified, input will be read from stdin.
 ```
 
+## fqtools_qualtab
+
+### Tool Description
+Tabulate FASTQ quality character frequencies.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Tabulate FASTQ quality character frequencies.
+
+basetab options:
+  -h               Show this help message and exit.
+  FILE             The fastq file(s) to count.
+FILE:
+    If no input file is specified, input will be read from stdin.
+
+The output depends on the specified quality type (-q). If no quality
+type is specified, then the ASCII characters in the quality strings
+are tabulated for all possible characters (33-127). If a quality type
+is specified, the quality score and approximate probability of error
+are returned for only the valid characters.
+```
+
+## fqtools_sequence
+
+### Tool Description
+View FASTQ file sequence data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+View FASTQ file sequence data.
+
+sequence options:
+  -h               Show this help message and exit.
+  FILE             The fastq file(s) to view.
+
+FILE:
+    If no input file is specified, input will be read from stdin.
+```
+
+## fqtools_trim
+
+### Tool Description
+View FASTQ files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+View FASTQ files.
+
+view options:
+  -h               Show this help message and exit.
+  -k               Preserve secondary headers (if present).
+  -o STEM          Output file stem (default "output%").
+  -s LENGTH        Trim LENGTH bases from the read start.
+  -l LENGTH        Trim the read to a maximum length of LENGTH.
+  FILE             The fastq file(s) to view.
+
+STEM:
+    The file stem to use for output files (without file extension). Any
+    instances of the single character specified using the -p global argument
+    will be replaced with the pair number, or removed for single output
+    files. If the -o option is not specified, single file output will
+    be written to stdout and paired file output to the default stem (output%).
+
+FILE:
+    If no input file is specified, input will be read from stdin.
+
+LENGTH:
+    If LENGTH is not specified, no trimming is performed.
+```
+
+## fqtools_type
+
+### Tool Description
+Attempt to guess the FASTQ quality encoding type.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Attempt to guess the FASTQ quality encoding type.
+
+type options:
+  -h               Show this help message and exit.
+  FILE             The fastq file(s) to count.
+
+FILE:
+    If no input file is specified, input will be read from stdin.
+
+The file type is guessed from the quality data as follows:
+  1) if MIN(offset) < 59 then the file is fastq-sanger encoded;
+  2) if 59 <= MIN(offset) < 64 then the file is fastq-solexa encoded;
+  3) otherwise, the file is fastq-illumina encoded.
+```
+
+## fqtools_validate
+
+### Tool Description
+Validate FASTQ file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Validate FASTQ file.
+
+validate options:
+  -h               Show this help message and exit.
+  FILE             The fastq file(s) to count.
+
+FILE:
+    If no input file is specified, input will be read from stdin.
+```
+
+## fqtools_view
+
+### Tool Description
+View FASTQ files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fqtools:2.0--h577a1d6_15
+- **Homepage**: https://github.com/alastair-droop/fqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/fqtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+View FASTQ files.
+
+view options:
+  -h               Show this help message and exit.
+  -k               Preserve secondary headers (if present).
+  -o STEM          Output file stem (default "output%").
+  FILE             The fastq file(s) to view.
+
+STEM:
+    The file stem to use for output files (without file extension). Any
+    instances of the single character specified using the -p global argument
+    will be replaced with the pair number, or removed for single output
+    files. If the -o option is not specified, single file output will
+    be written to stdout and paired file output to the default stem (output%).
+
+FILE:
+    If no input file is specified, input will be read from stdin.
+```
 
 ## Metadata
 - **Skill**: generated

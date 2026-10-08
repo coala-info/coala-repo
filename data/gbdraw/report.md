@@ -1,5 +1,12 @@
 # gbdraw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gbdraw_circular | PASS |  |
+| gbdraw_linear | PASS |  |
+
 ## gbdraw_circular
 
 ### Tool Description

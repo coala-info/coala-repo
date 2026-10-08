@@ -1,5 +1,11 @@
 # galaxy-job-config-init CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| galaxy-job-config-init | PASS | generated job config YAML parses, defaults to slurm, with docker enabled and the extra volumes |
+
 ## galaxy-job-config-init
 
 ### Tool Description

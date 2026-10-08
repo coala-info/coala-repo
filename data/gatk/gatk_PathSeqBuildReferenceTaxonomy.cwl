@@ -15,19 +15,16 @@ inputs:
       position: 101
       prefix: --output
   - id: reference
-    type:
-      - 'null'
-      - File
+    type: File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file
     inputBinding:
       position: 101
       prefix: --reference
   - id: tax_dump
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Local path to taxonomy dump tarball (taxdump.tar.gz available at 
       ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/)
     inputBinding:
@@ -38,10 +35,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: gatk_config_file
     type:
       - 'null'

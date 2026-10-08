@@ -8,21 +8,23 @@ doc: "Slice a BAM file.\n\nTool homepage: https://github.com/sbslee/fuc"
 inputs:
   - id: bam
     type: File
-    doc: Input BAM file. It must be already indexed to allow random access. You 
-      can index a BAM file with the bam-index command.
+    doc: Input BAM file. It must be already indexed to allow random access. You can
+      index a BAM file with the bam-index command.
     inputBinding:
       position: 1
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: regions
     type:
       type: array
       items: string
-    doc: One or more regions to be sliced. Each region must have the format 
-      chrom:start-end and be a half-open interval with (start, end]. This means,
-      for example, chr1:100-103 will extract positions 101, 102, and 103. 
-      Alternatively, you can provide a BED file (compressed or uncompressed) to 
-      specify regions. Note that the 'chr' prefix in contig names (e.g. 'chr1' 
-      vs. '1') will be automatically added or removed as necessary to match the 
-      input BED's contig names.
+    doc: One or more regions to be sliced. Each region must have the format chrom:start-end
+      and be a half-open interval with (start, end]. This means, for example, chr1:100-103
+      will extract positions 101, 102, and 103. Alternatively, you can provide a BED
+      file (compressed or uncompressed) to specify regions. Note that the 'chr' prefix
+      in contig names (e.g. 'chr1' vs. '1') will be automatically added or removed
+      as necessary to match the input BED's contig names.
     inputBinding:
       position: 2
   - id: fasta

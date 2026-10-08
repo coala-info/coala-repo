@@ -77,9 +77,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --freq-filter
+  - id: structure_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The directory of structures that was indexed (folddisco index --pdbs). It is staged in the working directory under its own name so that the relative paths stored in the index resolve; needed to match residues (not with --skip-match).
   - id: index_file
     type: File
     doc: Path of index table to load
+    secondaryFiles:
+      - .lookup
+      - .offset
+      - .type
     inputBinding:
       position: 101
       prefix: --index
@@ -128,7 +137,9 @@ inputs:
       position: 101
       prefix: --partial-fit
   - id: pdb_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path of PDB file to query
     inputBinding:
       position: 101
@@ -300,6 +311,11 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.index_file)
+        writable: true
+      - $(inputs.structure_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/folddisco:1.7514114--ha6fb395_0

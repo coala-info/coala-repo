@@ -1,5 +1,11 @@
 # gdmicro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gdmicro | Failed | image problem: the tool opens allmeta.tsv from the working directory, but the file exists only inside the package folder |
+
 ## gdmicro
 
 ### Tool Description

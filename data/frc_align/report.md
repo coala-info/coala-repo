@@ -1,37 +1,43 @@
 # frc_align CWL Generation Report
 
-## frc_align
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| frc_align_FRC | PASS |  |
+
+## frc_align_FRC
 
 ### Tool Description
-Feature Response Curve (FRC) tool for assembly evaluation, used to compute and visualize assembly quality features from alignment data.
+Feature Response Curve (FRC) computes assembly quality features and the FRC from paired-end and mate-pair read alignments against an assembly.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/frc:5b3f53e--boost1.64_0
 - **Homepage**: https://github.com/vezzi/FRC_align
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/frc_align/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/frc_align/overview
-- **Total Downloads**: N/A
-- **Last updated**: N/A
-- **GitHub**: https://github.com/vezzi/FRC_align
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/frc:5b3f53e--boost1.64_0' locally
-5b3f53e--boost1.64_0: Pulling from biocontainers/frc
-a3ed95caeb02: Already exists
-b0dc45cd432d: Already exists
-3aaade50789a: Already exists
-ddd482ea7b54: Already exists
-7ff999a2256f: Already exists
-e7c454e5167d: Already exists
-dfda3e01f2b6: Already exists
-a3ed95caeb02: Already exists
-10c3bb32200b: Already exists
-14c05e7b0144: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob2036210244: no space left on device
+FRC version 1.3.0
 
-Run 'docker run --help' for more information
+Allowed options:
+  --help                produce help message
+  --pe-sam arg          paired end alignment file (in sam or bam format). 
+                        Orientation must be -> <-
+  --pe-max-insert arg   maximum allowed insert size for PE (to filter out 
+                        outleyers)
+  --mp-sam arg          mate pairs alignment file. (in sam or bam format). 
+                        Orientation must be <- ->
+  --mp-max-insert arg   maximum allowed insert size for MP (to filter out 
+                        outleyers)
+  --genome-size arg     estimated genome size (if not supplied genome size is 
+                        believed to be assembly length
+  --output arg          Header output file names (default FRC.txt and 
+                        Features.txt)
+  --CEstats-PE-min arg  minimum allowed CE_stats in PE library
+  --CEstats-PE-max arg  maximum allowed CE_stats in PE library
+  --CEstats-MP-min arg  minimum allowed CE_stats in MP library
+  --CEstats-MP-max arg  maximum allowed CE_stats in MP library
 ```
 

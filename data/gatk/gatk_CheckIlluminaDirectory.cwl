@@ -6,23 +6,33 @@ baseCommand:
 label: gatk_CheckIlluminaDirectory
 doc: Asserts the validity for specified Illumina basecalling data. This tool 
   will check that the basecall directory and the internal files are available, 
-  exist, and are reasonably sized for every tile and cycle.
+  exist, and are reasonably sized for every tile and cycle. Exit code 4 means problems (such as missing files) were found in the directory.
 inputs:
-  - id: basecalls_dir
+  - id: run_directory
     type: Directory
-    doc: The basecalls output directory.
+    doc: The Illumina run directory (the folder with Data/Intensities and 
+      InterOp). It is staged whole because the tool looks for position and 
+      tile files in the parent folders of the basecalls directory.
+  - id: basecalls_dir
+    type:
+      - 'null'
+      - string
+    default: Data/Intensities/BaseCalls
+    doc: The basecalls output directory, relative to the run directory.
     inputBinding:
       position: 101
       prefix: --BASECALLS_DIR
+      valueFrom: $(inputs.run_directory.basename)/$(self)
   - id: lanes
     type:
       type: array
       items: int
+      inputBinding:
+        prefix: --LANES
     doc: The number of the lane(s) to check. This argument must be specified at 
       least once.
     inputBinding:
       position: 101
-      prefix: --LANES
   - id: read_structure
     type: string
     doc: A description of the logical structure of clusters in an Illumina Run, 
@@ -36,10 +46,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -70,11 +81,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --DATA_TYPES
     doc: 'The data types that should be checked for each tile/cycle. Possible values:
       {Position, BaseCalls, QualityScores, PF, Barcodes}'
     inputBinding:
       position: 101
-      prefix: --DATA_TYPES
   - id: fake_files
     type:
       - 'null'
@@ -116,6 +128,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -125,20 +138,22 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --TILE_NUMBERS
     doc: The number(s) of the tile(s) to check.
     inputBinding:
       position: 101
-      prefix: --TILE_NUMBERS
   - id: tmp_dir
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -178,10 +193,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.run_directory)
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:latest
 stdout: gatk_CheckIlluminaDirectory.out
+successCodes:
+  - 0
+  - 4
 s:url: https://www.broadinstitute.org/gatk/
 $namespaces:
   s: https://schema.org/

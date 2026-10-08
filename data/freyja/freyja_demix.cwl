@@ -4,8 +4,8 @@ baseCommand:
   - freyja
   - demix
 label: freyja_demix
-doc: "Generate relative lineage abundances from VARIANTS and DEPTHS\n\nTool homepage:
-  https://github.com/andersen-lab/Freyja"
+doc: "Generate relative lineage abundances from VARIANTS and DEPTHS\n\nTool homepage:\
+  \ https://github.com/andersen-lab/Freyja"
 inputs:
   - id: variants
     type: File
@@ -69,8 +69,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: exclude sites with coverage depth below this value and group identical 
-      barcodes
+    doc: exclude sites with coverage depth below this value and group identical barcodes
     inputBinding:
       position: 103
       prefix: --depthcutoff
@@ -93,7 +92,7 @@ inputs:
   - id: lineageyml
     type:
       - 'null'
-      - string
+      - File
     doc: lineage hierarchy file in a yaml format
     inputBinding:
       position: 103
@@ -102,15 +101,14 @@ inputs:
     type:
       - 'null'
       - int
-    doc: maximum number of threads for multithreaded demix solvers (0 to choose 
-      automatically)
+    doc: maximum number of threads for multithreaded demix solvers (0 to choose automatically)
     inputBinding:
       position: 103
       prefix: --max-solver-threads
   - id: meta
     type:
       - 'null'
-      - string
+      - File
     doc: custom lineage to variant metadata file
     inputBinding:
       position: 103
@@ -126,9 +124,9 @@ inputs:
   - id: region_of_interest
     type:
       - 'null'
-      - string
-    doc: JSON file containing region(s) of interest for which to compute 
-      additional coverage estimates
+      - File
+    doc: JSON file containing region(s) of interest for which to compute additional
+      coverage estimates
     inputBinding:
       position: 103
       prefix: --region_of_interest
@@ -136,8 +134,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: for use with depth cutoff, clusters are assigned robust mrca to handle 
-      outliers
+    doc: for use with depth cutoff, clusters are assigned robust mrca to handle outliers
     inputBinding:
       position: 103
       prefix: --relaxedmrca

@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "The distance formula to use. [default: fst]  [possible values: fst, gst,
-      nei,\nchord, bray-curtis, jost_d, reynolds, rogers]"
+    doc: "The distance formula to use. [default: fst]  [possible values: fst, gst,\
+      \ nei,\nchord, bray-curtis, jost_d, reynolds, rogers]"
     inputBinding:
       position: 101
       prefix: --formula

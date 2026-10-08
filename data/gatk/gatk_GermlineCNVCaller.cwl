@@ -17,12 +17,13 @@ inputs:
   - id: input
     type:
       type: array
-      items: string
+      items: File
+      inputBinding:
+        prefix: --input
     doc: Input paths for read-count files containing integer read counts in 
       genomic intervals for all samples.
     inputBinding:
       position: 101
-      prefix: --input
   - id: output
     type: string
     doc: Output directory. This will be created if it does not exist.
@@ -81,10 +82,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: caller_external_admixing_rate
     type:
       - 'null'
@@ -207,11 +209,15 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals to exclude from processing
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --exclude-intervals
+    doc: One or more genomic intervals to exclude from processing (interval 
+      strings, or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --exclude-intervals
   - id: gatk_config_file
     type:
       - 'null'
@@ -307,11 +313,15 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals over which to operate
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --intervals
+    doc: One or more genomic intervals over which to operate (interval strings, 
+      or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --intervals
   - id: learning_rate
     type:
       - 'null'
@@ -523,10 +533,10 @@ outputs:
     outputBinding:
       glob: $(inputs.output)
   - id: output_output_prefix
-    type: File[]
+    type: Directory[]
     doc: Prefix for output filenames.
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output)/$(inputs.output_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # fragpipe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fragpipe | Not completed | pipeline, skipped; it needs academic licence keys for MSFragger and IonQuant and prints only the licence text without them |
+
 ## fragpipe
 
 ### Tool Description

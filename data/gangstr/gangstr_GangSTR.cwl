@@ -9,6 +9,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Comma separated list of input BAM files
     inputBinding:
       position: 101
@@ -227,6 +230,8 @@ inputs:
       prefix: --readlength
   - id: ref
     type: File
+    secondaryFiles:
+      - pattern: .fai
     doc: FASTA file for the reference genome
     inputBinding:
       position: 101
@@ -290,7 +295,7 @@ inputs:
   - id: str_info
     type:
       - 'null'
-      - string
+      - File
     doc: Tab file with additional per-STR info (see docs)
     inputBinding:
       position: 101

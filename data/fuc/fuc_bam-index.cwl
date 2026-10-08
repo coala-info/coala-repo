@@ -15,7 +15,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: bai
+    type: File
+    doc: BAM index written beside the input (<bam>.bai)
+    outputBinding:
+      glob: $(inputs.bam.basename).bai
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fuc:0.38.0--pyh7e72e81_0
 stdout: fuc_bam-index.out
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam)
+        writable: true
+  - class: InlineJavascriptRequirement

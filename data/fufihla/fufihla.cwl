@@ -61,6 +61,20 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.out_path)
+  - id: result_out
+    type:
+      - 'null'
+      - File
+    doc: Result output file (<out>.out)
+    outputBinding:
+      glob: $(inputs.out_path).out
+  - id: stderr_log
+    type:
+      - 'null'
+      - File
+    doc: Stderr log (<out>.err)
+    outputBinding:
+      glob: $(inputs.out_path).err
 requirements:
   - class: InlineJavascriptRequirement
 hints:

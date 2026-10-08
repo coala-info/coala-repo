@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fmlrc2
 label: fmlrc2
-doc: "FM-index Long Read Corrector - Rust implementation\n\nTool homepage: https://github.com/HudsonAlpha/rust-fmlrc"
+doc: "FM-index Long Read Corrector - Rust implementation\n\nTool homepage: https://github.com/HudsonAlpha/fmlrc2"
 inputs:
   - id: compressed_msbwt_file
     type: File
@@ -14,6 +14,11 @@ inputs:
     doc: The FASTX file with uncorrected reads
     inputBinding:
       position: 2
+  - id: corrected_reads_path
+    type: string
+    doc: The FASTA file to write corrected reads to
+    inputBinding:
+      position: 3
   - id: begin_index
     type:
       - 'null'
@@ -51,12 +56,11 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: k-mer sizes for correction, can be specified multiple times
-      - 21
-      - 59
+        inputBinding:
+          prefix: -k
+    doc: k-mer sizes for correction, can be specified multiple times (default 21 and 59)
     inputBinding:
       position: 103
-      prefix: --K
   - id: min_count
     type:
       - 'null'
@@ -92,9 +96,11 @@ inputs:
 outputs:
   - id: corrected_reads_file
     type: File
-    doc: The FASTA file to write corrected reads to
+    doc: The FASTA file with corrected reads
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.corrected_reads_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fmlrc2:0.1.8--h7f95895_0

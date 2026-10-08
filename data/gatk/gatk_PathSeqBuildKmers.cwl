@@ -15,11 +15,10 @@ inputs:
       position: 101
       prefix: --output
   - id: reference
-    type:
-      - 'null'
-      - File
+    type: File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference FASTA file path on local disk
     inputBinding:
       position: 101
@@ -29,10 +28,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: bloom_false_positive_probability
     type:
       - 'null'
@@ -140,7 +140,7 @@ outputs:
     doc: File for k-mer set output. Extension will be automatically added if not
       present (.hss for hash set or .bfi for Bloom filter)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

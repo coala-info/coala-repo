@@ -1,5 +1,19 @@
 # gaftools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gaftools_find_path | PASS | output FASTA identical to the repo expected file |
+| gaftools_gfa2rgfa | PASS | rGFA matches the repo expected reference-graph-seqfile.gfa (same records; only the SN and SR tag order on S lines differs) |
+| gaftools_index | PASS | index equals the repo expected customgraph-unstable.gvi |
+| gaftools_order_gfa | PASS | BO and NO tags of all 33 nodes equal the repo expected customgraph-ordered.gfa |
+| gaftools_phase | Failed | tool bug: gaftools 1.3.1 writes a stray tab and 'NM:i::0'-style double colons and wrong ps values; output differs from the repo expected tagged.gaf |
+| gaftools_realign | PASS | repo GraphAligner GAF realigned with WFA: the 2 reads keep their positions and the split deletion becomes one 15D; CWL fixed (reads FASTA needs .fai) |
+| gaftools_sort | PASS | repo test GAF is reordered by the BO tag of its lowest node and the .gsi index is written (the repo has no expected file) |
+| gaftools_stat | PASS | 19 alignments, 17 reads and 710 aligned bases match the repo test GAF |
+| gaftools_view | PASS | stable-format conversion is identical to the repo expected customgraph-stable.gaf; the --node and --region subsetting crash inside gaftools 1.3.1 (TypeError, tool bug); CWL fixed so -n/-r repeat per value |
+
 ## gaftools_find_path
 
 ### Tool Description

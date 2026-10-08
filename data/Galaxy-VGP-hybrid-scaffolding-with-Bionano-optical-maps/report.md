@@ -1,5 +1,11 @@
 # VGP hybrid scaffolding with Bionano optical maps CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| bionano | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://usegalaxy.eu

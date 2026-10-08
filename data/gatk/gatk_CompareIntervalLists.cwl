@@ -7,14 +7,14 @@ label: gatk_CompareIntervalLists
 doc: Compare two interval lists to see if they are equal
 inputs:
   - id: interval_list_1
-    type: string
-    doc: Undocumented option
+    type: File
+    doc: First interval list (interval_list, BED or VCF file)
     inputBinding:
       position: 101
       prefix: --L
   - id: interval_list_2
-    type: string
-    doc: Undocumented option
+    type: File
+    doc: Second interval list (interval_list, BED or VCF file)
     inputBinding:
       position: 101
       prefix: --L2
@@ -22,6 +22,7 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file
     inputBinding:
       position: 101
@@ -31,10 +32,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: gatk_config_file
     type:
       - 'null'
@@ -105,6 +107,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:latest

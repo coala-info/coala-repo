@@ -7,10 +7,17 @@ label: fmsi_lookup
 doc: "Look up sequences in an FMSI index.\n\nTool homepage: https://github.com/OndrejSladky/fmsi"
 inputs:
   - id: index_prefix
-    type: string
-    doc: Prefix of the FMSI index files
+    type: File
+    secondaryFiles:
+      - .fmsi.ac
+      - .fmsi.ac_gt
+      - .fmsi.gt
+      - .fmsi.mask
+      - .fmsi.misc
+      - .fmsi.klcp?
+    doc: Masked superstring file that was indexed with fmsi index (the index files sit beside it as <file>.fmsi.*)
     inputBinding:
-      position: 1
+      position: 200
   - id: kmer_size
     type:
       - 'null'

@@ -2,18 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - gambit
-  - tree
 label: gambit_tree
 doc: "Estimate a relatedness tree for a set of genomes and output in Newick format.\n\
   \nTool homepage: https://github.com/jlumpe/gambit"
 inputs:
+  - id: db
+    type:
+      - 'null'
+      - Directory
+    doc: Directory containing GAMBIT database files (global option, given before the subcommand).
+    inputBinding:
+      position: 1
+      prefix: --db
   - id: genomes
     type:
       type: array
       items: File
     doc: Genomes to process
     inputBinding:
-      position: 1
+      position: 3
   - id: cores
     type:
       - 'null'
@@ -78,6 +85,9 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sigfile
+arguments:
+  - position: 2
+    valueFrom: tree
 outputs:
   - id: stdout
     type: stdout

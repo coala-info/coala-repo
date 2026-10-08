@@ -1,5 +1,11 @@
 # gafpack CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gafpack | PASS | synthetic data: real gaftools test graph and GAF, with node names changed to numbers (gafpack reads numeric ids); node coverage matches the GAF paths (e.g. node 1 = 4 reads x 10 bp = 40) |
+
 ## gafpack
 
 ### Tool Description

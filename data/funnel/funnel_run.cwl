@@ -23,11 +23,12 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items: string
+        inputBinding:
+          prefix: --content
     doc: Include input file content from a file e.g. varname=/path/to/in.txt
     inputBinding:
       position: 102
-      prefix: --content
   - id: cpu
     type:
       - 'null'
@@ -57,10 +58,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --env
     doc: Environment variables, e.g. envvar=foo
     inputBinding:
       position: 102
-      prefix: --env
   - id: exec
     type:
       - 'null'
@@ -73,20 +75,22 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --in-dir
     doc: Input directory e.g. varname=/path/to/dir
     inputBinding:
       position: 102
-      prefix: --in-dir
   - id: in_file
     type:
       - 'null'
       - type: array
-        items: File
+        items: string
+        inputBinding:
+          prefix: --in
     doc: Input file e.g. varname=/path/to/input.txt
     inputBinding:
       position: 102
-      prefix: --in
   - id: name
     type:
       - 'null'
@@ -147,7 +151,7 @@ inputs:
   - id: stdin_file
     type:
       - 'null'
-      - File
+      - string
     doc: File to write to stdin to the command.
     inputBinding:
       position: 102
@@ -157,19 +161,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tag
     doc: Arbitrary key-value tags, e.g. tagname=tagvalue
     inputBinding:
       position: 102
-      prefix: --tag
   - id: vol
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --vol
     doc: Define a volume on the container.
     inputBinding:
       position: 102
-      prefix: --vol
   - id: wait
     type:
       - 'null'
@@ -183,14 +189,15 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --wait-for
     doc: Wait for the given task IDs before running the task.
     inputBinding:
       position: 102
-      prefix: --wait-for
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Containter working directory.
     inputBinding:
       position: 102
@@ -200,10 +207,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --zone
     doc: Require task be scheduled in certain zones.
     inputBinding:
       position: 102
-      prefix: --zone
   - id: out_file_path
     type:
       - 'null'
@@ -236,6 +244,9 @@ inputs:
       position: 107
       prefix: --out-dir
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the task JSON with --print, otherwise the task ID)
   - id: out_file
     type:
       - 'null'
@@ -269,3 +280,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/funnel:0.9.0--0
+stdout: funnel_run.out

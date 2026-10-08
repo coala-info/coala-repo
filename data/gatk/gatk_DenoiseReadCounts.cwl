@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: --denoised-copy-ratios
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input TSV or HDF5 file containing integer read counts in genomic 
       intervals for a single case sample (output of CollectReadCounts).
     inputBinding:
@@ -44,10 +42,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: count_panel_of_normals
     type:
       - 'null'

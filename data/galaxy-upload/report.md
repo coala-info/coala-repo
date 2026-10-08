@@ -1,5 +1,11 @@
 # galaxy-upload CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| galaxy-upload | Not completed | needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection |
+
 ## galaxy-upload
 
 ### Tool Description

@@ -17,8 +17,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
-    doc: annotation_alias:filename * file in BED format
+        items: string
+    doc: annotation_alias:filename * file in BED format (the file must be listed
+      in input_files so that it is staged in the working directory)
     inputBinding:
       position: 101
       prefix: --add-gene-annotation
@@ -26,7 +27,8 @@ inputs:
     type:
       type: array
       items: string
-    doc: 'sample_alias:format:filename (available formats: fuma --formats)'
+    doc: 'sample_alias:format:filename (available formats: fuma --formats); the file
+      must be listed in input_files so that it is staged in the working directory'
     inputBinding:
       position: 101
       prefix: --add-sample
@@ -111,6 +113,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: Sample and BED files named in add_sample and add_gene_annotation. They are
+      staged in the working directory so that the file names resolve.
   - id: output_path
     type: string
     inputBinding:
@@ -126,6 +134,8 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fuma:4.0.0--pyhb7b1952_0

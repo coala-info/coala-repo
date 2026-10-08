@@ -12,14 +12,14 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --BAIT_INTERVALS
     doc: An interval list file that contains the locations of the baits used. 
       This argument must be specified at least once.
     inputBinding:
       position: 101
-      prefix: --BAIT_INTERVALS
   - id: input
     type:
-      - 'null'
       - File
     doc: An aligned SAM/BAM/CRAM file.
     inputBinding:
@@ -33,33 +33,35 @@ inputs:
       prefix: --OUTPUT
   - id: target_intervals
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
+      inputBinding:
+        prefix: --TARGET_INTERVALS
     doc: An interval list file that contains the locations of the targets. This 
       argument must be specified at least once.
     inputBinding:
       position: 101
-      prefix: --TARGET_INTERVALS
   - id: allele_fraction
     type:
       - 'null'
       - type: array
         items: float
+        inputBinding:
+          prefix: --ALLELE_FRACTION
     doc: Allele fraction for which to calculate theoretical sensitivity. This 
       argument may be specified 0 or more times.
     inputBinding:
       position: 101
-      prefix: --ALLELE_FRACTION
   - id: arguments_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: bait_set_name
     type:
       - 'null'
@@ -134,10 +136,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --METRIC_ACCUMULATION_LEVEL
     doc: The level(s) at which to accumulate metrics.
     inputBinding:
       position: 101
-      prefix: --METRIC_ACCUMULATION_LEVEL
   - id: minimum_base_quality
     type:
       - 'null'
@@ -165,13 +168,17 @@ inputs:
       position: 101
       prefix: --NEAR_DISTANCE
   - id: per_base_coverage
-    type: string
+    type:
+      - 'null'
+      - string
     doc: An optional file to output per base coverage information to.
     inputBinding:
       position: 101
       prefix: --PER_BASE_COVERAGE
   - id: per_target_coverage
-    type: string
+    type:
+      - 'null'
+      - string
     doc: An optional file to output per target coverage information to.
     inputBinding:
       position: 101
@@ -190,6 +197,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -203,7 +211,9 @@ inputs:
       position: 101
       prefix: --SAMPLE_SIZE
   - id: theoretical_sensitivity_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output for Theoretical Sensitivity metrics where the allele fractions 
       are provided by the ALLELE_FRACTION argument.
     inputBinding:
@@ -213,12 +223,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

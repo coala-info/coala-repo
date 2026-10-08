@@ -1,5 +1,20 @@
 # gembs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gembs_gemBS_call | PASS | BCF with 316979 sites written for the mapped E. coli reads |
+| gembs_gemBS_call-report | PASS | HTML calling report written for the E. coli sample |
+| gembs_gemBS_db-sync | PASS | database lists the mapping, calling and extract results |
+| gembs_gemBS_extract | PASS | methylation files written; the CpG table is empty with default filters at this low coverage and has 84035 lines with phred 0 and heterozygous sites allowed |
+| gembs_gemBS_index | PASS | indexed the E. coli genome; steps now take project_dirs and project_files inputs to carry the .gemBS project |
+| gembs_gemBS_map | PASS | E. coli bisulfite read pairs: 20000 reads, 10352 mapped (51.8 percent) |
+| gembs_gemBS_map-report | PASS | HTML mapping report written for the E. coli sample |
+| gembs_gemBS_merge-bams | PASS | two datasets of one sample merged into one BAM with 40000 reads |
+| gembs_gemBS_merge-bcfs | PASS | pool BCF merged into one sample BCF with index and MD5 |
+| gembs_gemBS_prepare | PASS | real E. coli bisulfite reads of nf-core; the JSON holds the config and the sample; later steps need the new project_files input |
+
 ## gembs_gemBS_prepare
 
 ### Tool Description
@@ -450,6 +465,169 @@ optional arguments:
   --ignore-dep          Ignore dependencies for --dry-run and --json commands
 ```
 
+
+## gembs_gemBS_merge-bams
+
+### Tool Description
+Merges all BAM alignments of a gemBS project, or of one sample, into one BAM per sample, then indexes the BAM and calculates its MD5 sum.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gembs:3.5.5_IHEC--py39h6859054_8
+- **Homepage**: https://github.com/heathsc/gemBS
+- **Package**: https://anaconda.org/channels/bioconda/packages/gembs/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gemBS merge-bams [-h] [-t THREADS] [-n SAMPLE] [-b SAMPLE] [-r]
+                        [--dry-run] [--json JSON FILE] [--ignore-db]
+                        [--benchmark-mode]
+
+Merges all bam alignments involved in a given Bisulfite project or for a given
+sample. The resulting merged BAMs are then indexed and the MD5 singatures
+calculated. This is normally performed automatically during the mapping stage,
+but may be required if gemBS is being run on a non-shared file system or the
+different datasets for a given sample are mapped by different instances of
+gemBS in different directories. If the option --remove is set or
+'remove_individual_bams' is set to True in the configuration file then the
+individual BAM files will be deleted after the merge step has been
+successfully completed. By default gemBS will attempt the merge for all
+samples, and can be restricted to a single sample using the options '-n
+<SAMPLE NAME>' or '-b <SAMPLE_BARCODE>. The --dry-run option will output a
+list of the merging operations that would be run by the merge-bam command
+without executing any of the commands. The --json <JSON OUTPUT> options is
+similar to --dry-run, but writes the commands to be executed in JSON format to
+the supplied output file, including information about the input and output
+files for the commands. The --ignore-db option modifies the --dry-run and
+--json options such that the database is not consulted (i.e., gemBS assumes
+that nothing has already been completed.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t THREADS, --threads THREADS
+                        Number of threads, Default: 1
+  -n SAMPLE, --sample_name SAMPLE
+                        Sample to be merged
+  -b SAMPLE, --barcode SAMPLE
+                        Sample to be merged
+  -r, --remove          Remove individual BAM files after merging.
+  --dry-run             Output mapping commands without execution
+  --json JSON FILE      Output JSON file with details of pending commands
+  --ignore-db           Ignore database for --dry-run and --json commands
+  --benchmark-mode      Omit dates etc. to make file comparison simpler
+```
+
+## gembs_gemBS_merge-bcfs
+
+### Tool Description
+Merges the BCF files of the contig pools of a gemBS project, or of one sample, into one BCF per sample, then indexes it and calculates its MD5 sum.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gembs:3.5.5_IHEC--py39h6859054_8
+- **Homepage**: https://github.com/heathsc/gemBS
+- **Package**: https://anaconda.org/channels/bioconda/packages/gembs/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gemBS merge-bcfs [-h] [-n SAMPLE] [-b BARCODE] [-t THREADS]
+                        [--merge-threads THREADS] [-r] [-j JOBS] [--dry-run]
+                        [--json JSON FILE] [--ignore-db] [--ignore-dep]
+                        [--benchmark-mode]
+
+Merges all BCF call files involved in a given Bisulfite project or for a given
+sample. The resulting merged BCFs are then indexed and the MD5 singatures
+calculated. This is normally performed automatically during the calling stage,
+but may be required if gemBS is being run on a non-shared file system or the
+different datasets for a given sample are mapped by different instances of
+gemBS in different directories. If the option --remove is set or
+'remove_individual_bams' is set to True in the configuration file then the
+individual BAM files will be deleted after the merge step has been
+successfully completed. By default gemBS will attempt the merge for all
+samples, and can be restricted to a single sample using the options '-n
+<SAMPLE NAME>' or '-b <SAMPLE_BARCODE>. The --dry-run option will output a
+list of the merging operations that would be run by the merge-bcfs command
+without executing any of the commands. The --json <JSON OUTPUT> options is
+similar to --dry-run, but writes the commands to be executed in JSON format to
+the supplied output file, including information about the input and output
+files for the commands. The --ignore-db option modifies the --dry-run and
+--json options such that the database is not consulted (i.e., gemBS assumes
+that no calling has already been completed but that all dependencies (i.e.,
+BAM files) are available. The --ignore-dep option is similar - it ignores
+dependencies, but does check whether a task has already been completed.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n SAMPLE, --sample-name SAMPLE
+                        Nmae of sample to be merged
+  -b BARCODE, --sample-barcode BARCODE
+                        Barcode of sample to be merged
+  -t THREADS, --threads THREADS
+                        Number of threads
+  --merge-threads THREADS
+                        Number of threads for merge step
+  -r, --remove          Remove individual BAM files after merging.
+  -j JOBS, --jobs JOBS  Number of parallel jobs
+  --dry-run             Output mapping commands without execution
+  --json JSON FILE      Output JSON file with details of pending commands
+  --ignore-db           Ignore database for --dry-run and --json commands
+  --ignore-dep          Ignore dependencies for --dry-run and --json commands
+  --benchmark-mode      Omit dates etc. to make file comparison simpler
+```
+
+## gembs_gemBS_map-report
+
+### Tool Description
+Bisulfite mapping report generation. Builds an HTML and a SPHINX report per dataset and sample.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gembs:3.5.5_IHEC--py39h6859054_8
+- **Homepage**: https://github.com/heathsc/gemBS
+- **Package**: https://anaconda.org/channels/bioconda/packages/gembs/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gemBS map-report [-h] [-p PROJECT] [-o PATH]
+
+Bisulfite mapping report generation. Builds a HTML and SPHINX report per
+dataset and sample
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PROJECT, --project PROJECT
+                        Output title for report (project name)
+  -o PATH, --output-dir PATH
+                        Output directory to store html mapping report.
+```
+
+## gembs_gemBS_call-report
+
+### Tool Description
+Bisulfite calling report generation. Builds an HTML and a SPHINX report per sample.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gembs:3.5.5_IHEC--py39h6859054_8
+- **Homepage**: https://github.com/heathsc/gemBS
+- **Package**: https://anaconda.org/channels/bioconda/packages/gembs/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gemBS call-report [-h] [-p PROJECT] [-o PATH] [-t THREADS]
+
+BS call report generation. Builds a HTML and SPHINX report per Sample
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PROJECT, --project PROJECT
+                        Output title for report (project name)
+  -o PATH, --output-dir PATH
+                        Output directory to store html and Sphinx Variants
+                        report.
+  -t THREADS, --threads THREADS
+                        Number of jobs to run in parallel.
+```
 
 ## Metadata
 - **Skill**: generated

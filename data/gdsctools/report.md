@@ -1,5 +1,11 @@
 # gdsctools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gdsctools_gdsctools_anova | PASS | one drug against 47 features from the package data; the tool takes an integer drug ID |
+
 ## gdsctools_gdsctools_anova
 
 ### Tool Description

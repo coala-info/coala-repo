@@ -1,5 +1,11 @@
 # galitime CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| galitime | PASS |  |
+
 ## galitime
 
 ### Tool Description

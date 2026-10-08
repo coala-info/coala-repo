@@ -5,19 +5,24 @@ label: gadma
 doc: "GADMA is a tool for demographic inference.\n\nTool homepage: https://github.com/ctlab/GADMA"
 inputs:
   - id: extra_params_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Extra parameters file
     inputBinding:
       position: 101
       prefix: --extra
   - id: input_data
     type:
-      type: array
-      items: string
-    doc: input data for demographic inference (AFS, dadi format or VCF).
+      - 'null'
+      - type: array
+        items: File
+    doc: input data for demographic inference (AFS or dadi format file, or a VCF file followed by
+      its popmap file).
     inputBinding:
       position: 101
       prefix: --input
+      itemSeparator: ','
   - id: only_models
     type:
       - 'null'
@@ -27,7 +32,9 @@ inputs:
       position: 101
       prefix: --only_models
   - id: params_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Parameters file
     inputBinding:
       position: 101

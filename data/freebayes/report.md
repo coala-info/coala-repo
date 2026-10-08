@@ -1,5 +1,11 @@
 # freebayes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| freebayes | PASS |  |
+
 ## freebayes
 
 ### Tool Description

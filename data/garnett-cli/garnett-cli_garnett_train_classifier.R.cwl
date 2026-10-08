@@ -15,7 +15,7 @@ inputs:
   - id: cds_object
     type:
       - 'null'
-      - string
+      - File
     doc: CDS object with expression data for training
     inputBinding:
       position: 101
@@ -128,7 +128,7 @@ outputs:
   - id: output_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Path to the output file
     outputBinding:
       glob: $(inputs.output_path_path)

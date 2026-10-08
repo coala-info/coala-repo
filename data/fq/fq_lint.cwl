@@ -23,10 +23,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --disable-validator
     doc: Disable validators by code. Use multiple times to disable more than one
     inputBinding:
       position: 103
-      prefix: --disable-validator
   - id: lint_mode
     type:
       - 'null'

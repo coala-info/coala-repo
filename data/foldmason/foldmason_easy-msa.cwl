@@ -14,11 +14,6 @@ inputs:
     doc: Input PDB or mmCIF files
     inputBinding:
       position: 1
-  - id: input_stdin
-    type: File
-    doc: Input from stdin
-    inputBinding:
-      position: 2
   - id: tmp_dir
     type: string
     doc: Temporary directory
@@ -408,15 +403,19 @@ inputs:
       prefix: --write-mapping
   - id: alignment_file_path
     type: string
-    doc: Output alignment file
+    doc: Output prefix for the alignment files
     inputBinding:
       position: 3
 outputs:
-  - id: alignment_file
-    type: File
-    doc: Output alignment file
+  - id: alignment_files
+    type:
+      type: array
+      items: File
+    doc: Alignment FASTA files written with the output prefix (<prefix>_aa.fa and <prefix>_3di.fa; with a report mode also the report)
     outputBinding:
-      glob: '$(inputs.alignment_file_path)'
+      glob: $(inputs.alignment_file_path)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/foldmason:4.dd3c235--h5021889_0

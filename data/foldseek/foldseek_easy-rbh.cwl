@@ -8,20 +8,29 @@ doc: "By Eli Levy Karin & Martin Steinegger <martin.steinegger@snu.ac.kr>\n\nToo
   homepage: https://github.com/steineggerlab/foldseek"
 inputs:
   - id: query_fasta_file1
-    type: File
+    type:
+      - File
+      - Directory
     doc: Query FASTA file 1 (can be gzipped or bz2 compressed)
     inputBinding:
       position: 1
   - id: target_fasta_file_or_db
-    type: string
+    type:
+      - File
+      - Directory
     doc: Target FASTA file (can be gzipped or bz2 compressed) or target database
     inputBinding:
       position: 2
+  - id: alignment_file_path
+    type: string
+    doc: Name of the output alignment file
+    inputBinding:
+      position: 3
   - id: tmp_dir
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 3
+      position: 4
   - id: add_backtrace
     type:
       - 'null'
@@ -710,7 +719,9 @@ outputs:
     type: File
     doc: Output alignment file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.alignment_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/foldseek:10.941cd33--h5021889_1

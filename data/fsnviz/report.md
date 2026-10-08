@@ -1,5 +1,12 @@
 # fsnviz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fsnviz_fusioncatcher | PASS | tested on the tool's own FusionCatcher 0.99 test file; the tool cannot read current FusionCatcher output columns |
+| fsnviz_star-fusion | PASS | tested on the tool's own STAR-Fusion 0.6 test file; the tool cannot read current STAR-Fusion output columns |
+
 ## fsnviz_fusioncatcher
 
 ### Tool Description

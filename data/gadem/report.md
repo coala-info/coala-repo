@@ -1,5 +1,11 @@
 # gadem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gadem | PASS | yeast promoters from nf-core data: the unseeded run and a seeded run both report the known poly(A) promoter motif; CWL fixed (output names as strings, outputs collected, exit code 1 is normal for gadem so successCodes 0 and 1) |
+
 ## gadem
 
 ### Tool Description

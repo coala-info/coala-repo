@@ -71,7 +71,7 @@ inputs:
     inputBinding:
       position: 9
   - id: fixed_bg
-    type: boolean
+    type: string
     doc: Whether the background component should be kept fixed. Options are 
       TRUE/T or FALSE/F. Setting "TRUE" keeps this component fixed, whereas 
       setting "FALSE" lets it be reestimated during training. In general, if the
@@ -82,7 +82,40 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+  - id: footprint_results
+    type: File
+    doc: Table with the log-likelihood ratio and component posteriors for every motif site
+    outputBinding:
+      glob: $(inputs.bam_file.basename + '.1bp.sorted.bam.' + inputs.factor_name + '.cut_matrix.RESULTS')
+  - id: footprint_params
+    type: File
+    doc: Learned mixture model parameters
+    outputBinding:
+      glob: $(inputs.bam_file.basename + '.1bp.sorted.bam.' + inputs.factor_name + '.cut_matrix.PARAM')
+  - id: footprint_plots
+    type:
+      type: array
+      items: File
+    doc: Plots of the learned footprint profiles
+    outputBinding:
+      glob: $(inputs.bam_file.basename + '.1bp.sorted.bam.' + inputs.factor_name + '.cut_matrix.plot*.png')
+  - id: one_bp_bam
+    type:
+      - 'null'
+      - File
+    doc: Sorted 1-bp cut-site BAM made from the input BAM
+    outputBinding:
+      glob: $(inputs.bam_file.basename + '.1bp.sorted.bam')
+    secondaryFiles:
+      - .bai
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_file)
+        writable: true
+      - entry: $(inputs.motif_coords)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/footprint:1.0.1--pl5321r41hdfd78af_0

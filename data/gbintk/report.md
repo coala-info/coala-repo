@@ -1,5 +1,13 @@
 # gbintk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gbintk_evaluate | PASS |  |
+| gbintk_prepare | PASS |  |
+| gbintk_visualise | PASS |  |
+
 ## gbintk_prepare
 
 ### Tool Description

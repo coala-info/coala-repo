@@ -10,16 +10,15 @@ inputs:
   - id: calls_shard_path
     type:
       type: array
-      items: File
+      items: Directory
+      inputBinding:
+        prefix: --calls-shard-path
     doc: List of paths to GermlineCNVCaller call directories. This argument must
       be specified at least once.
     inputBinding:
       position: 101
-      prefix: --calls-shard-path
   - id: contig_ploidy_calls
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to contig-ploidy calls directory (output of 
       DetermineGermlineContigPloidy).
     inputBinding:
@@ -27,14 +26,14 @@ inputs:
       prefix: --contig-ploidy-calls
   - id: model_shard_path
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: Directory
+      inputBinding:
+        prefix: --model-shard-path
     doc: List of paths to GermlineCNVCaller model directories. This argument 
       must be specified at least once.
     inputBinding:
       position: 101
-      prefix: --model-shard-path
   - id: output_denoised_copy_ratios
     type: string
     doc: Output denoised copy ratio file.
@@ -74,20 +73,22 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --allosomal-contig
     doc: Contigs to treat as allosomal (i.e. choose their reference copy-number 
       allele according to the sample karyotype).
     inputBinding:
       position: 101
-      prefix: --allosomal-contig
   - id: arguments_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: autosomal_ref_copy_number
     type:
       - 'null'
@@ -168,10 +169,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --disable-read-filter
     doc: Read filters to be disabled before analysis
     inputBinding:
       position: 101
-      prefix: --disable-read-filter
   - id: disable_sequence_dictionary_validation
     type:
       - 'null'
@@ -193,11 +195,15 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals to exclude from processing
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --exclude-intervals
+    doc: One or more genomic intervals to exclude from processing (interval 
+      strings, or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --exclude-intervals
   - id: gatk_config_file
     type:
       - 'null'
@@ -244,10 +250,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --input
     doc: BAM/SAM/CRAM file containing reads
     inputBinding:
       position: 101
-      prefix: --input
   - id: input_intervals_vcf
     type:
       - 'null'
@@ -292,21 +299,26 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals over which to operate
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --intervals
+    doc: One or more genomic intervals over which to operate (interval strings, 
+      or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --intervals
   - id: inverted_read_filter
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --inverted-read-filter
     doc: Inverted (with flipped acceptance/failure conditions) read filters 
       applied before analysis
     inputBinding:
       position: 101
-      prefix: --inverted-read-filter
   - id: lenient
     type:
       - 'null'
@@ -337,19 +349,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --read-filter
     doc: Read filters to be applied before analysis
     inputBinding:
       position: 101
-      prefix: --read-filter
   - id: read_index
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --read-index
     doc: Indices to use for the read inputs.
     inputBinding:
       position: 101
-      prefix: --read-index
   - id: read_validation_stringency
     type:
       - 'null'
@@ -365,6 +379,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence
     inputBinding:
       position: 101
@@ -452,13 +467,15 @@ inputs:
       prefix: --showHidden
   - id: sample
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --sample
     doc: The name of the sample(s) to keep, filtering out all others 
       (Conditional on SampleReadFilter)
     inputBinding:
       position: 101
-      prefix: --sample
 outputs:
   - id: output_output_denoised_copy_ratios
     type: File

@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fml-asm
 label: fml-asm
-doc: "fml-asm is a de novo assembler for long reads.\n\nTool homepage: https://github.com/HurriKane/skyfactory-2.4-faults"
+doc: "fml-asm is the fermi-lite de novo assembler for short reads; it writes unitigs in FASTQ-like format to standard output.\n\nTool homepage: https://github.com/lh3/fermi-lite"
 inputs:
   - id: input_fq
     type: File

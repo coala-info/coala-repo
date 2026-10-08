@@ -9,9 +9,10 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input file(s)
+    doc: Input read files in BED format (one file per chromosome, named after the
+      chromosome, e.g. chr22.bed)
     inputBinding:
-      position: 1
+      position: 200
   - id: background_dir
     type:
       - 'null'
@@ -23,7 +24,7 @@ inputs:
   - id: feature_length
     type:
       - 'null'
-      - string
+      - int
     doc: feature length
     inputBinding:
       position: 102
@@ -31,7 +32,7 @@ inputs:
   - id: fragment_size
     type:
       - 'null'
-      - string
+      - int
     doc: fragment size
     inputBinding:
       position: 102
@@ -39,7 +40,7 @@ inputs:
   - id: genomic_count
     type:
       - 'null'
-      - string
+      - int
     doc: genomic count of sequence reads
     inputBinding:
       position: 102
@@ -56,7 +57,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output directory
+    doc: output directory (default=current directory); it is created before the run
     inputBinding:
       position: 102
       prefix: -o
@@ -64,7 +65,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output format
+    doc: 'output format: wig, bed or npf (default wig)'
     inputBinding:
       position: 102
       prefix: -of
@@ -95,7 +96,7 @@ inputs:
   - id: wg_threshold_set
     type:
       - 'null'
-      - string
+      - float
     doc: wg threshold set
     inputBinding:
       position: 102
@@ -103,7 +104,7 @@ inputs:
   - id: wiggle_step
     type:
       - 'null'
-      - string
+      - int
     doc: wiggle track step
     inputBinding:
       position: 102
@@ -123,3 +124,9 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fseq:1.84--py35pl5.22.0_0
 stdout: fseq.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '${ if (inputs.output_dir) { return [{"entryname": inputs.output_dir,
+      "entry": {"class": "Directory", "listing": []}, "writable": true}]; } return
+      []; }'

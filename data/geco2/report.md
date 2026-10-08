@@ -1,5 +1,12 @@
 # geco2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| geco2_GeCo2 | PASS | compressed the SARS-CoV-2 genome to 7.2 KB; GeDe2 restores the exact sequence |
+| geco2_GeDe2 | PASS | round trip gives the original sequence; headers are not stored |
+
 ## geco2_GeCo2
 
 ### Tool Description
@@ -146,6 +153,76 @@ DESCRIPTION
       [FILE]                                                            
            Input sequence filename (to compress) -- MANDATORY.          
            File(s) to compress (last argument).                         
+           For more files use splitting ":" characters.               
+           Example: file1.txt:file2.txt:file3.txt.                      
+                                                                        
+COPYRIGHT                                                               
+      Copyright (C) 2014-2019, IEETA, University of Aveiro.             
+      This is a Free software, under GPLv3. You may redistribute        
+      copies of it under the terms of the GNU - General Public          
+      License v3 <http://www.gnu.org/licenses/gpl.html>. There          
+      is NOT ANY WARRANTY, to the extent permitted by law.
+```
+
+## geco2_GeDe2
+
+### Tool Description
+GeDe2 v1.1: decompresses genomic sequences compressed by GeCo2.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/geco2:1.1--h7b50bb2_5
+- **Homepage**: https://github.com/cobilab/geco2
+- **Package**: https://anaconda.org/channels/bioconda/packages/geco2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                                                        
+                                                                        
+             ██████╗ ███████╗██████╗ ███████╗██████╗                    
+            ██╔════╝ ██╔════╝██╔══██╗██╔════╝╚════██╗                   
+            ██║  ███╗█████╗  ██║  ██║█████╗   █████╔╝                   
+            ██║   ██║██╔══╝  ██║  ██║██╔══╝  ██╔═══╝                    
+            ╚██████╔╝███████╗██████╔╝███████╗███████╗                   
+             ╚═════╝ ╚══════╝╚═════╝ ╚══════╝╚══════╝                   
+                                                                        
+NAME                                                                    
+      GeDe2 v1.1,                                                     
+      decompress a genomic sequence compressed by GeCo2.                
+                                                                        
+AUTHORS                                                                 
+      Diogo Pratas        pratas@ua.pt                                  
+      Morteza Hosseini    seyedmorteza@ua.pt                            
+      Armando J. Pinho    ap@ua.pt                                      
+                                                                        
+SYNOPSIS                                                                
+      ./GeDe2 [OPTION]... -r [FILE] [FILE]:[FILE]:[FILE]:[...]          
+                                                                        
+SAMPLE                                                                  
+      Run Decompression:  ./GeDe2 -v sequence.txt.co                    
+                                                                        
+DESCRIPTION                                                             
+      Decompress genomic sequences for compressed by GeCo2.             
+                                                                        
+      -h,  --help                                                       
+           usage guide (help menu).                                     
+                                                                        
+      -V,  --version                                                    
+           Display program and version information.                     
+                                                                        
+      -F,  --force                                                      
+           force mode. Overwrites old files.                            
+                                                                        
+      -v,  --verbose                                                    
+           verbose mode (more information).                             
+                                                                        
+      -r [FILE], --reference [FILE]                                     
+           Reference sequence filename ("-rm" are trainned here).     
+           Example: -r file1.txt.                                       
+                                                                        
+      [FILE]                                                            
+           Input compressed filename (to decompress) -- MANDATORY.      
+           File(s) to decompress (last argument).                       
            For more files use splitting ":" characters.               
            Example: file1.txt:file2.txt:file3.txt.                      
                                                                         

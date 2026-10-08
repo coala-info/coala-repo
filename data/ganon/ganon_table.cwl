@@ -32,7 +32,9 @@ inputs:
       position: 101
       prefix: --input
   - id: input_extension
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Required if --input contains folder(s). Wildcards/Shell Expansions not 
       supported (e.g. *).
     inputBinding:

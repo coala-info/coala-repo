@@ -1,5 +1,11 @@
 # Galaxy workflow demonstrating the usage of EODIE Galaxy Tool CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://gitlab.com/fgi_nls/public/EODIE

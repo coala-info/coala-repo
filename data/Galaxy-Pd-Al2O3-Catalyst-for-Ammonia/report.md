@@ -1,5 +1,11 @@
 # Pd-Al2O3 Catalyst for Ammonia CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| eac4157620e0fcac.abstract | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://eurosciencegateway.eu/

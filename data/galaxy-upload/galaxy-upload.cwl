@@ -117,7 +117,7 @@ inputs:
   - id: storage
     type:
       - 'null'
-      - Directory
+      - string
     doc: Store URLs to resume here
     inputBinding:
       position: 102

@@ -3,8 +3,14 @@ class: CommandLineTool
 baseCommand: garli
 label: garli
 doc: "GARLI (Genetic Algorithm for Rapid Likelihood Inference) is a program for phylogenetic
-  inference using maximum likelihood.\n\nTool homepage: https://github.com/guillaumepotier/Garlic.js"
+  inference using maximum likelihood.\n\nTool homepage: https://code.google.com/archive/p/garli/"
 inputs:
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the config file (data matrix, starting tree, constraint file), staged in the working directory so the names resolve
   - id: config_filename
     type:
       - 'null'
@@ -50,6 +56,23 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the output prefix (ofprefix) of the config file
+    outputBinding:
+      glob:
+        - "*.log*.log"
+        - "*.best*.tre"
+        - "*.best*.phy"
+        - "*.boot.tre"
+        - "*.screen.log"
+        - "*.sitelikes.log"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.data_files || [])
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/garli:v2.1-3-deb_cv1

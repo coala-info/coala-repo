@@ -1,5 +1,11 @@
 # fml-asm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fml-asm | PASS | fixed wrong homepage and description |
+
 ## fml-asm
 
 ### Tool Description
@@ -7,14 +13,14 @@ fml-asm is a de novo assembler for long reads.
 
 ### Metadata
 - **Docker Image**: biocontainers/fml-asm:v0.1-5-deb_cv1
-- **Homepage**: https://github.com/HurriKane/skyfactory-2.4-faults
+- **Homepage**: https://github.com/lh3/fermi-lite
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fml-asm/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
-- **GitHub**: https://github.com/HurriKane/skyfactory-2.4-faults
+- **GitHub**: https://github.com/lh3/fermi-lite
 - **Stars**: N/A
 ### Original Help Text
 ```text

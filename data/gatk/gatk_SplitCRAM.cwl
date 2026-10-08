@@ -18,10 +18,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: gatk_config_file
     type:
       - 'null'
@@ -121,7 +122,7 @@ outputs:
     doc: output cram file template. should contain %d, which will be replaced by
       shard index
     outputBinding:
-      glob: $(inputs.output)*
+      glob: "$(inputs.output ? inputs.output.replace(/%0?[0-9]*d/, '*') : 'output_*.cram')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

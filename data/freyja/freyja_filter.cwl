@@ -4,12 +4,13 @@ baseCommand:
   - freyja
   - filter
 label: freyja_filter
-doc: "Excludes reads from INPUT_BAM containing one or more QUERY_MUTATIONS between
-  MIN_SITE and MAX_SITE (genomic coordinates)\n\nTool homepage: https://github.com/andersen-lab/Freyja"
+doc: "Excludes reads from INPUT_BAM containing one or more QUERY_MUTATIONS between\
+  \ MIN_SITE and MAX_SITE (genomic coordinates)\n\nTool homepage: https://github.com/andersen-lab/Freyja"
 inputs:
   - id: query_mutations
-    type: string
-    doc: Query mutations
+    type: File
+    doc: File with the query mutations, e.g. a single comma-separated line such as
+      C75T,G230A,A543C
     inputBinding:
       position: 1
   - id: input_bam
@@ -17,17 +18,20 @@ inputs:
     doc: Input BAM file
     inputBinding:
       position: 2
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: min_site
     type:
       - 'null'
-      - string
+      - int
     doc: Minimum genomic coordinate
     inputBinding:
       position: 3
   - id: max_site
     type:
       - 'null'
-      - string
+      - int
     doc: Maximum genomic coordinate
     inputBinding:
       position: 4

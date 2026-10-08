@@ -1,5 +1,11 @@
 # flumut CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flumut | PASS |  |
+
 ## flumut
 
 ### Tool Description

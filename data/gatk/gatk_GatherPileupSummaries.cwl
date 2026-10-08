@@ -11,10 +11,11 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --I
     doc: an output of PileupSummaryTable
     inputBinding:
       position: 101
-      prefix: --I
   - id: output
     type: string
     doc: output
@@ -22,9 +23,7 @@ inputs:
       position: 101
       prefix: --O
   - id: sequence_dictionary
-    type:
-      - 'null'
-      - File
+    type: File
     doc: sequence dictionary file
     inputBinding:
       position: 101
@@ -34,10 +33,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: gatk_config_file
     type:
       - 'null'

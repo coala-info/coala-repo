@@ -15,11 +15,17 @@ inputs:
       position: 101
       prefix: --f
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Output directory (statistics and plots are written there instead of STDOUT)
     inputBinding:
       position: 102
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Statistics written to STDOUT when no output directory is given
   - id: output
     type:
       - 'null'
@@ -33,3 +39,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gaas:1.2.0--pl5321r42hdfd78af_1
+stdout: gaas_gaas_fasta_statistics.pl.out

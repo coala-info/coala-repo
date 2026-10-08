@@ -1,5 +1,12 @@
 # fmlrc2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fmlrc2 | PASS | fixed output path, k-mer option and homepage; 21-mer match to the genome rose from 0.35 to 0.82 on nanopore reads |
+| fmlrc2_convert | PASS |  |
+
 ## fmlrc2
 
 ### Tool Description
@@ -7,14 +14,14 @@ FM-index Long Read Corrector - Rust implementation
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fmlrc2:0.1.8--h7f95895_0
-- **Homepage**: https://github.com/HudsonAlpha/rust-fmlrc
+- **Homepage**: https://github.com/HudsonAlpha/fmlrc2
 - **Package**: https://anaconda.org/channels/bioconda/packages/fmlrc2/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fmlrc2/overview
 - **Total Downloads**: 12.5K
 - **Last updated**: 2025-07-10
-- **GitHub**: https://github.com/HudsonAlpha/rust-fmlrc
+- **GitHub**: https://github.com/HudsonAlpha/fmlrc2
 - **Stars**: N/A
 ### Original Help Text
 ```text
@@ -46,5 +53,36 @@ ARGS:
     <COMP_MSBWT.NPY>        The compressed BWT file with high accuracy reads
     <LONG_READS.FA>         The FASTX file with uncorrected reads
     <CORRECTED_READS.FA>    The FASTA file to write corrected reads to
+```
+
+## fmlrc2_convert
+
+### Tool Description
+FMLRC2 BWT converter: convert a raw BWT of short reads into the compressed multi-string BWT (.npy) used by fmlrc2.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fmlrc2:0.1.8--h7f95895_0
+- **Homepage**: https://github.com/HudsonAlpha/fmlrc2
+- **Package**: https://anaconda.org/channels/bioconda/packages/fmlrc2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+FMLRC2 BWT Converter 0.1.8
+J. Matthew Holt <jholt@hudsonalpha.org>
+FMLCR BWT Converter - Rust implementation
+
+USAGE:
+    fmlrc2-convert [OPTIONS] <COMP_MSBWT.NPY>
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -i, --input <in_fn>    The raw BWT (default: stdin)
+
+ARGS:
+    <COMP_MSBWT.NPY>    The location to store the compressed BWT
 ```
 

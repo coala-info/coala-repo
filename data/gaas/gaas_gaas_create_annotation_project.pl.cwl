@@ -9,7 +9,7 @@ inputs:
   - id: assembly_version
     type:
       - 'null'
-      - string
+      - int
     doc: assembly version
     inputBinding:
       position: 101
@@ -32,6 +32,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Project folder tree (the script writes it under ~/test_annotation)
+    outputBinding:
+      glob: test_annotation
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gaas:1.2.0--pl5321r42hdfd78af_1

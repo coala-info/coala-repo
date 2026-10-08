@@ -1,5 +1,11 @@
 # flye CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flye | PASS |  |
+
 ## flye
 
 ### Tool Description

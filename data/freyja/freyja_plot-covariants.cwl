@@ -7,7 +7,7 @@ label: freyja_plot-covariants
 doc: "Plot COVARIANTS output as a heatmap\n\nTool homepage: https://github.com/andersen-lab/Freyja"
 inputs:
   - id: covariants
-    type: string
+    type: File
     doc: COVARIANTS output
     inputBinding:
       position: 1

@@ -1,5 +1,11 @@
 # gangstr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gangstr_GangSTR | PASS |  |
+
 ## gangstr_GangSTR
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # Cheminformatics - Enumerate ligands for docking CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| Cheminformatics-1-Ligand_enumeration | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://github.com/galaxyproject/SARS-CoV-2

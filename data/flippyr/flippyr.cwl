@@ -88,9 +88,17 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Files written with the prefix given in output_prefix (default is the bim file name without extension)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$(inputs.output_prefix ? inputs.output_prefix + '*' : inputs.bim.nameroot + '.*')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta)
+        writable: true
+      - entry: $(inputs.bim)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flippyr:0.6.1--pyh7e72e81_0

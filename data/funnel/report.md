@@ -1,65 +1,19 @@
 # funnel CWL Generation Report
 
-## funnel_aws
+## Real Data Test
 
-### Tool Description
-Development utilities for creating funnel resources on AWS
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
-- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
-- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/funnel/overview
-- **Total Downloads**: 9.7K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
-### Original Help Text
-```text
-Development utilities for creating funnel resources on AWS
-
-Usage:
-  funnel aws [command]
-
-Available Commands:
-  batch       Utilities for managing funnel resources on AWS Batch
-
-Flags:
-  -h, --help   help for aws
-
-Use "funnel aws [command] --help" for more information about a command.
-```
-
-
-## funnel_completion
-
-### Tool Description
-Generate shell completion code
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
-- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
-- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Generate shell completion code
-
-Usage:
-  funnel completion [command]
-
-Available Commands:
-  bash        Generate bash completion code
-
-Flags:
-  -h, --help   help for completion
-
-Use "funnel completion [command] --help" for more information about a command.
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| funnel_dashboard | Not completed | long-running server or terminal dashboard that needs a Funnel server; skipped |
+| funnel_node | Not completed | long-running server or terminal dashboard that needs a Funnel server; skipped |
+| funnel_run | Not completed | needs a running Funnel server to run tasks; only --print was checked (the task JSON is correct; CWL fixed so each --in/--env/--tag/--vol/--zone is repeated) |
+| funnel_server | Not completed | long-running server or terminal dashboard that needs a Funnel server; skipped |
+| funnel_storage_get | PASS | local file storage; output equals the input file / expected JSON |
+| funnel_storage_list | PASS | local file storage; output equals the input file / expected JSON |
+| funnel_storage_put | PASS | local file storage; output equals the input file / expected JSON |
+| funnel_storage_stat | PASS | local file storage; output equals the input file / expected JSON |
+| funnel_storage_stat-task | PASS | local file storage; output equals the input file / expected JSON |
+| funnel_worker | Not completed | long-running server or terminal dashboard that needs a Funnel server; skipped |
 
 ## funnel_dashboard
 
@@ -82,62 +36,6 @@ Usage:
 Flags:
   -h, --help            help for dashboard
   -S, --server string   (default "http://localhost:8000")
-```
-
-
-## funnel_examples
-
-### Tool Description
-A simple hello world example that demonstrates the full CWL functionality.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
-- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
-- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-full-hello
-md5sum
-resource-request
-pbs-template
-capture-stdout-stderr
-gridengine-template
-log-streaming
-s3
-google-storage
-input-content
-default-config
-hello-world
-slurm-template
-htcondor-template
-```
-
-
-## funnel_gce
-
-### Tool Description
-Manage GCE resources for funnel
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
-- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
-- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage:
-  funnel gce [command]
-
-Available Commands:
-  run         
-
-Flags:
-  -h, --help   help for gce
-
-Use "funnel gce [command] --help" for more information about a command.
 ```
 
 
@@ -401,76 +299,6 @@ Use "funnel server [command] --help" for more information about a command.
 ```
 
 
-## funnel_storage
-
-### Tool Description
-Access storage via Funnel's client libraries.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
-- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
-- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Access storage via Funnel's client libraries.
-
-Usage:
-  funnel storage [command]
-
-Available Commands:
-  get         Get the object at the given URL.
-  list        List objects at the given URL.
-  put         Put the local file to the given URL.
-  stat        Returns information about the object at the given URL.
-  stat-task   Returns information about inputs/outputs of the task.
-
-Flags:
-  -c, --config string   Config File
-  -h, --help            help for storage
-
-Use "funnel storage [command] --help" for more information about a command.
-```
-
-
-## funnel_task
-
-### Tool Description
-Make API calls to a TES server.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
-- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
-- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Make API calls to a TES server.
-
-Usage:
-  funnel task [command]
-
-Aliases:
-  task, tasks
-
-Available Commands:
-  cancel      Cancel one or more tasks by ID.
-  create      Create one or more tasks to run on the server.
-  get         Get one or more tasks by ID.
-  list        List all tasks.
-  wait        Wait for one or more tasks to complete.
-
-
-Flags:
-  -h, --help            help for task
-  -S, --server string   (default "http://localhost:8000")
-
-Use "funnel task [command] --help" for more information about a command.
-```
-
-
 ## funnel_worker
 
 ### Tool Description
@@ -544,6 +372,131 @@ Flags:
 Use "funnel worker [command] --help" for more information about a command.
 ```
 
+
+## funnel_storage_get
+
+### Tool Description
+Get the object at the given URL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
+- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
+- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Get the object at the given URL.
+
+Usage:
+  funnel storage get [url] [path] [flags]
+
+Flags:
+  -h, --help   help for get
+
+Global Flags:
+  -c, --config string   Config File
+```
+
+## funnel_storage_list
+
+### Tool Description
+List objects at the given URL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
+- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
+- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+List objects at the given URL.
+
+Usage:
+  funnel storage list [url] [flags]
+
+Flags:
+  -h, --help   help for list
+
+Global Flags:
+  -c, --config string   Config File
+```
+
+## funnel_storage_put
+
+### Tool Description
+Put the local file to the given URL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
+- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
+- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Put the local file to the given URL.
+
+Usage:
+  funnel storage put [path] [url] [flags]
+
+Flags:
+  -h, --help   help for put
+
+Global Flags:
+  -c, --config string   Config File
+```
+
+## funnel_storage_stat
+
+### Tool Description
+Returns information about the object at the given URL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
+- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
+- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Returns information about the object at the given URL.
+
+Usage:
+  funnel storage stat [url] [flags]
+
+Flags:
+  -h, --help   help for stat
+
+Global Flags:
+  -c, --config string   Config File
+```
+
+## funnel_storage_stat-task
+
+### Tool Description
+Returns information about inputs/outputs of the task.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/funnel:0.9.0--0
+- **Homepage**: https://ohsu-comp-bio.github.io/funnel/
+- **Package**: https://anaconda.org/channels/bioconda/packages/funnel/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Returns information about inputs/outputs of the task.
+
+Usage:
+  funnel storage stat-task [task file] [flags]
+
+Flags:
+  -h, --help   help for stat-task
+
+Global Flags:
+  -c, --config string   Config File
+```
 
 ## Metadata
 - **Skill**: generated

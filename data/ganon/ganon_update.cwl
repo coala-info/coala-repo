@@ -6,6 +6,16 @@ baseCommand:
 label: ganon_update
 doc: "Update an existing Ganon database.\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:
+  - id: database_files
+    type:
+      type: array
+      items: File
+    doc: Existing database files (<db_prefix>.hibf/.ibf, .tax, ...) staged in the working directory so db_prefix resolves
+  - id: work_files_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Working folder of the original build (<db_prefix>_files)
   - id: db_prefix
     type: string
     doc: Existing database input prefix
@@ -66,6 +76,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: updated_files
+    type:
+      type: array
+      items: File
+    doc: Updated database files (<output_db_prefix or db_prefix>.*)
+    outputBinding:
+      glob: '${ return (inputs.output_db_prefix || inputs.db_prefix) + ".*"; }'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.database_files)
+      - '${ return inputs.work_files_dir ? [{class: "Directory", basename: inputs.work_files_dir.basename, listing: inputs.work_files_dir.listing, writable: true}] : []; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ganon:2.2.0--py312hfc6b275_0

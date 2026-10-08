@@ -20,8 +20,8 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
-    doc: output (filename/stderr/stdout)
+      - string
+    doc: output (filename/stderr/stdout) [stderr]
     inputBinding:
       position: 102
       prefix: --log
@@ -37,6 +37,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Benchmark log written to the file given by log_file
+    outputBinding:
+      glob: $(inputs.log_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/galitime:0.2.0--pyhdfd78af_0

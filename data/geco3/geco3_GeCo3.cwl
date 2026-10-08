@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./GeCo3
+baseCommand: GeCo3
 label: geco3_GeCo3
 doc: "efficient compression and analysis of genomic sequences.\n\nTool homepage: https://github.com/cobilab/geco3"
 inputs:
@@ -11,7 +11,8 @@ inputs:
     doc: 'Input sequence filename (to compress) -- MANDATORY. File(s) to compress
       (last argument). For more files use splitting ":" characters. Example: file1.txt:file2.txt:file3.txt.'
     inputBinding:
-      position: 1
+      position: 200
+      itemSeparator: ':'
   - id: compression_level
     type:
       - 'null'
@@ -143,6 +144,25 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: compressed_files
+    type:
+      type: array
+      items: File
+    doc: Compressed files (.co) written next to the input files
+    outputBinding:
+      glob: '*.co'
+  - id: information_files
+    type:
+      type: array
+      items: File
+    doc: Information content files (.iae) written with --estimate
+    outputBinding:
+      glob: '*.iae'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/geco3:1.0--h7b50bb2_5

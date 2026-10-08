@@ -1,5 +1,11 @@
 # gargammel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gargammel | PASS |  |
+
 ## gargammel
 
 ### Tool Description

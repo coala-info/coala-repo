@@ -1,5 +1,13 @@
 # gargammel-slim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gargammel-slim_adptSim | PASS |  |
+| gargammel-slim_deamSim | PASS |  |
+| gargammel-slim_fragSim | PASS |  |
+
 ## gargammel-slim_fragSim
 
 ### Tool Description

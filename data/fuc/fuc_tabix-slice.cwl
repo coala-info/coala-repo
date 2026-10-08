@@ -11,6 +11,9 @@ inputs:
     doc: File to be sliced.
     inputBinding:
       position: 1
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
   - id: regions
     type:
       type: array

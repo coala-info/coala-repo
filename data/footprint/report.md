@@ -1,5 +1,11 @@
 # footprint CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| footprint_find_footprints.sh | PASS | real yeast ATAC-seq reads (nf-core, aligned with bwa) with motif sites and peak windows from a TTACCCG scan; 776 sites scored; fixed fixed_bg type, writable inputs and outputs |
+
 ## footprint_find_footprints.sh
 
 ### Tool Description

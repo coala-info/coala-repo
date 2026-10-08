@@ -9,6 +9,8 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        itemSeparator: +
     doc: VCF file, or list seperated with '+' (NO SPACES)
     inputBinding:
       position: 1
@@ -28,24 +30,35 @@ inputs:
     inputBinding:
       position: 4
   - id: geneid_identifier
-    type:
-      - 'null'
-      - string
+    type: string
     doc: specifies common genelist identifier in VCF file(s)
     inputBinding:
-      position: 105
-      prefix: --geneid
-outputs:
+      position: 5
+      prefix: --geneid=
+      separate: false
   - id: annotated_folder
+    type: string
+    doc: each of the annotated VCF files will be placed here
+    inputBinding:
+      position: 6
+  - id: rejects_folder
+    type: string
+    doc: each of the corresponding rejects will be placed here
+    inputBinding:
+      position: 7
+outputs:
+  - id: annotated_dir
     type: Directory
     doc: each of the annotated VCF files will be placed here
     outputBinding:
-      glob: '*.out'
-  - id: rejects_folder
+      glob: $(inputs.annotated_folder)
+  - id: rejects_dir
     type: Directory
     doc: each of the corresponding rejects will be placed here
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.rejects_folder)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/funcannot:v2.8--0

@@ -80,6 +80,36 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: gamma_file
+    type:
+      - 'null'
+      - File
+    doc: Gene match table (<output>.gamma)
+    outputBinding:
+      glob: $(inputs.output).gamma
+  - id: psl_file
+    type:
+      - 'null'
+      - File
+    doc: Blat search result (<output>.psl)
+    outputBinding:
+      glob: $(inputs.output).psl
+  - id: gff_file
+    type:
+      - 'null'
+      - File
+    doc: Gene matches as GFF (<output>.gff, with --gff)
+    outputBinding:
+      glob: $(inputs.output).gff
+  - id: fasta_file
+    type:
+      - 'null'
+      - File
+    doc: Gene matches as FASTA (<output>.fasta, with --fasta)
+    outputBinding:
+      glob: $(inputs.output).fasta
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gamma:2.2--hdfd78af_1

@@ -12,7 +12,7 @@ inputs:
       - File
     doc: BAM/fasta file
     inputBinding:
-      position: 1
+      position: 200
   - id: append_name
     type:
       - 'null'
@@ -98,18 +98,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `read_bam_output_paired_end_path`
+    doc: Read BAM and write output as a paired-end BAM (-bp)
     inputBinding:
       position: 107
-      prefix: --read-bam-output-paired-end
+      prefix: -bp
   - id: read_bam_output_single_end_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `read_bam_output_single_end_path`
+    doc: Read BAM and write output as a single-end BAM (-bs)
     inputBinding:
       position: 108
-      prefix: --read-bam-output-single-end
+      prefix: -bs
 outputs:
   - id: output_art_single_end
     type:
@@ -151,7 +151,7 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Read BAM and write output as a single-end BAM
+    doc: Read BAM and write output as a paired-end BAM
     outputBinding:
       glob: $(inputs.read_bam_output_paired_end_path)
 requirements:

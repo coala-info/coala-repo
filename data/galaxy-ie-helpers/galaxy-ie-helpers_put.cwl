@@ -11,6 +11,7 @@ inputs:
     doc: Specify the path to the files that should be uploaded to Galaxy.
     inputBinding:
       position: 1
+      prefix: --filepath
   - id: filetype
     type:
       - 'null'

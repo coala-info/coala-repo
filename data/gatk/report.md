@@ -1,5 +1,143 @@
 # gatk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gatk_ASEReadCounter | PASS |  |
+| gatk_AccumulateQualityYieldMetrics | PASS |  |
+| gatk_AccumulateVariantCallingMetrics | PASS |  |
+| gatk_AddFlowBaseQuality | Not completed | flow-based (Ultima) tool; no flow-based test data available |
+| gatk_AddFlowSNVQuality | Not completed | flow-based (Ultima) tool; no flow-based test data available |
+| gatk_AnalyzeCovariates | PASS |  |
+| gatk_AnalyzeSaturationMutagenesis | Not completed | needs paired-end saturation mutagenesis amplicon reads with codon coordinates; no matching test data |
+| gatk_AnnotateIntervals | PASS |  |
+| gatk_BamIndexStats | PASS |  |
+| gatk_BedToIntervalList | PASS |  |
+| gatk_BpmToNormalizationManifestCsv | Not completed | needs an Illumina array BPM manifest file; no test data available |
+| gatk_CalcMetadataSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user |
+| gatk_CalculateAverageCombinedAnnotations | PASS | synthetic data: planted RAW_GT_COUNT and SUM_QD annotations; the average is correct (30 / 5 = 6) |
+| gatk_CalculateContamination | PASS |  |
+| gatk_CalculateFingerprintMetrics | PASS |  |
+| gatk_CalculateReadGroupChecksum | PASS |  |
+| gatk_CallCopyRatioSegments | PASS | synthetic data: a header row was added to the nf-core copy-ratio table and ModelSegments (same image) made the .cr.seg input |
+| gatk_CallableLoci | PASS |  |
+| gatk_CheckDuplicateMarking | PASS | synthetic data: planted inconsistent duplicate flag; exit 4 (accepted as success) and the read name is listed |
+| gatk_CheckFingerprint | PASS | synthetic data: one planted genotype at the single haplotype-map site; LOD is positive and the haplotype matches |
+| gatk_CheckIlluminaDirectory | PASS | the test flowcell holds only tile 1101, so the tool correctly reports the other tiles as missing (exit 4, accepted as success) |
+| gatk_CheckPileup | PASS |  |
+| gatk_CheckTerminatorBlock | PASS |  |
+| gatk_ClusterCrosscheckMetrics | PASS | input made by CrosscheckFingerprints from the two test BAMs in the same image |
+| gatk_CollectAlignmentSummaryMetrics | PASS |  |
+| gatk_CollectAllelicCounts | PASS |  |
+| gatk_CollectAllelicCountsSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user |
+| gatk_CollectArraysVariantCallingMetrics | Not completed | needs an Illumina genotyping-array VCF with array annotations; no test data available |
+| gatk_CollectBaseDistributionByCycle | PASS |  |
+| gatk_CollectBaseDistributionByCycleSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user |
+| gatk_CollectF1R2Counts | PASS |  |
+| gatk_CollectGcBiasMetrics | PASS |  |
+| gatk_CollectHiSeqXPfFailMetrics | PASS |  |
+| gatk_CollectHsMetrics | PASS |  |
+| gatk_CollectIlluminaBasecallingMetrics | PASS |  |
+| gatk_CollectIlluminaLaneMetrics | PASS |  |
+| gatk_CollectIndependentReplicateMetrics | PASS | contig renamed in copies of the reference and VCF to match the UMI test BAM |
+| gatk_CollectInsertSizeMetrics | PASS |  |
+| gatk_CollectInsertSizeMetricsSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user |
+| gatk_CollectJumpingLibraryMetrics | PASS |  |
+| gatk_CollectMultipleMetrics | PASS |  |
+| gatk_CollectMultipleMetricsSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user |
+| gatk_CollectOxoGMetrics | PASS |  |
+| gatk_CollectQualityYieldMetrics | PASS |  |
+| gatk_CollectQualityYieldMetricsFlow | Not completed | flow-based (Ultima) tool; no flow-based test data available |
+| gatk_CollectQualityYieldMetricsSNVQ | Not completed | flow-based (Ultima) tool; no flow-based test data available |
+| gatk_CollectQualityYieldMetricsSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); works only with cwltool --no-match-user |
+| gatk_CollectRawWgsMetrics | PASS |  |
+| gatk_CollectReadCounts | PASS |  |
+| gatk_CollectRnaSeqMetrics | PASS |  |
+| gatk_CollectRrbsMetrics | Not completed | needs bisulfite (RRBS) aligned reads; no small RRBS test data available |
+| gatk_CollectSamErrorMetrics | PASS |  |
+| gatk_CollectSequencingArtifactMetrics | PASS |  |
+| gatk_CollectTargetedPcrMetrics | PASS |  |
+| gatk_CollectUmiPrevalenceMetrics | PASS | contig renamed in a copy of the reference to match the UMI test BAM |
+| gatk_CollectVariantCallingMetrics | PASS |  |
+| gatk_CollectWgsMetrics | PASS |  |
+| gatk_CollectWgsMetricsWithNonZeroCoverage | PASS |  |
+| gatk_CombineGenotypingArrayVcfs | Not completed | needs genotyping-array VCFs from Illumina GTC files; no test data available |
+| gatk_CombineSegmentBreakpoints | PASS | synthetic data: two small planted segment tables; the combined breakpoints are correct |
+| gatk_CompareBaseQualities | PASS |  |
+| gatk_CompareDuplicatesSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user |
+| gatk_CompareGtcFiles | Not completed | needs Illumina GTC genotype files; no test data available |
+| gatk_CompareIntervalLists | Failed | tool bug: crashes with NoSuchElementException whenever the two interval lists differ, which is the tool's main use; only identical lists compare. |
+| gatk_CompareMetrics | PASS | different metric files give exit 4 (accepted as success) with the differences listed |
+| gatk_CompareSAMs | PASS | different BAMs give exit 4 (accepted as success) and ARE_EQUAL N with the correct missing-read counts |
+| gatk_ConvertHaplotypeDatabaseToVcf | PASS |  |
+| gatk_ConvertSequencingArtifactToOxoG | PASS |  |
+| gatk_CountBases | PASS |  |
+| gatk_CountBasesSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user |
+| gatk_CountReads | PASS |  |
+| gatk_CountReadsSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); works only with cwltool --no-match-user |
+| gatk_CreateBafRegressMetricsFile | Not completed | no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets |
+| gatk_CreateExtendedIlluminaManifest | Not completed | no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets |
+| gatk_CreateReadCountPanelOfNormals | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); works only with cwltool --no-match-user |
+| gatk_CreateVerifyIDIntensityContaminationMetricsFile | Not completed | no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets |
+| gatk_CrosscheckFingerprints | PASS | exit code 4 (fingerprint mismatch found by design) is accepted as success |
+| gatk_DenoiseReadCounts | PASS |  |
+| gatk_DepthOfCoverage | PASS |  |
+| gatk_DetermineGermlineContigPloidy | PASS |  |
+| gatk_DumpTabixIndex | PASS |  |
+| gatk_EstimateLibraryComplexity | PASS |  |
+| gatk_ExampleMultiFeatureWalker | Not completed | example developer tool: the run finishes but it writes no output to check |
+| gatk_ExtractFingerprint | PASS |  |
+| gatk_ExtractIlluminaBarcodes | PASS | synthetic data: barcode list taken from the first 8 bases of the real reads |
+| gatk_FilterIntervals | PASS |  |
+| gatk_FlagStat | PASS |  |
+| gatk_FlagStatSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user |
+| gatk_FlowFeatureMapper | Not completed | experimental flow-based (Ultima) tool: no matching flow-sequencing test data |
+| gatk_FlowPairHMMAlignReadsToHaplotypes | Not completed | experimental flow-based (Ultima) tool: no matching flow-sequencing test data |
+| gatk_GatherNormalArtifactData | PASS |  |
+| gatk_GatherPileupSummaries | PASS |  |
+| gatk_GeneExpressionEvaluation | Not completed | runs, but the counts (fractional, near zero) cannot be confirmed: the annotation had to be shifted by hand to fit the small test slice |
+| gatk_GermlineCNVCaller | PASS |  |
+| gatk_GetNormalArtifactData | PASS |  |
+| gatk_GetPileupSummaries | PASS |  |
+| gatk_GetSampleName | PASS |  |
+| gatk_GroundTruthReadsBuilder | Not completed | experimental flow-based (Ultima) tool: no matching flow-sequencing test data |
+| gatk_GroundTruthScorer | Not completed | experimental flow-based (Ultima) tool: no matching flow-sequencing test data |
+| gatk_GtcToVcf | Not completed | no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets |
+| gatk_HtsgetReader | Not completed | needs a reachable htsget server and record id; no public endpoint could be reached from this machine |
+| gatk_IdentifyContaminant | PASS |  |
+| gatk_IlluminaBasecallsToFastq | PASS |  |
+| gatk_IlluminaBasecallsToSam | PASS |  |
+| gatk_IntervalListToBed | PASS |  |
+| gatk_IntervalListTools | PASS |  |
+| gatk_LiftOverHaplotypeMap | PASS | synthetic data: target dictionary made by renaming chr22 to chrY to match the nf-core chain file |
+| gatk_LiftOverIntervalList | PASS | synthetic data: target dictionary made by renaming chr22 to chrY to match the nf-core chain file |
+| gatk_LocalAssembler | PASS |  |
+| gatk_MarkIlluminaAdapters | PASS |  |
+| gatk_MeanQualityByCycle | PASS |  |
+| gatk_MeanQualityByCycleSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user |
+| gatk_MergeAnnotatedRegions | PASS |  |
+| gatk_MergeAnnotatedRegionsByAnnotation | Not completed | runs to success, but the only real input gives one segment, so nothing is merged and the merge cannot be confirmed. |
+| gatk_MergePedIntoVcf | Not completed | no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets |
+| gatk_ModelSegments | PASS |  |
+| gatk_PathSeqBuildKmers | PASS |  |
+| gatk_PathSeqBuildReferenceTaxonomy | Not completed | needs the NCBI taxonomy dump and RefSeq catalog (large downloads); no small real set |
+| gatk_Pileup | PASS |  |
+| gatk_PileupSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user |
+| gatk_PlotDenoisedCopyRatios | PASS |  |
+| gatk_PlotModeledSegments | PASS |  |
+| gatk_PostprocessGermlineCNVCalls | PASS |  |
+| gatk_PreprocessIntervals | PASS |  |
+| gatk_QualityScoreDistribution | PASS |  |
+| gatk_QualityScoreDistributionSpark | Failed | image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user |
+| gatk_SplitCRAM | PASS |  |
+| gatk_SplitIntervals | PASS |  |
+| gatk_TagGermlineEvents | PASS |  |
+| gatk_ValidateSamFile | PASS |  |
+| gatk_VariantEval | PASS |  |
+| gatk_VcfToAdpc | Not completed | no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets |
+| gatk_ViewSam | PASS |  |
+
 ## gatk_CheckIlluminaDirectory
 
 ### Tool Description

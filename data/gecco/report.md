@@ -1,5 +1,17 @@
 # gecco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gecco_annotate | Failed | image problem: gene annotation crashes with a pyhmmer TypeError (name must be bytes), so the image has an incompatible pyhmmer |
+| gecco_convert_clusters | PASS | needs the cluster GenBank files beside the clusters table |
+| gecco_convert_gbk | PASS |  |
+| gecco_cv | PASS | 2-fold cross-validation on the small MIBiG tables of the repo; table has 632 cluster genes |
+| gecco_predict | PASS | same cluster, coordinates, type and probabilities as the expected table of the repo; the model option takes a directory |
+| gecco_run | Failed | image problem: gene annotation crashes with a pyhmmer TypeError (name must be bytes), so the image has an incompatible pyhmmer |
+| gecco_train | PASS | trained on the small MIBiG tables of the repo; the model works in gecco predict |
+
 ## gecco_annotate
 
 ### Tool Description
@@ -440,10 +452,10 @@ Output:
 ```
 
 
-## gecco_convert
+## gecco_convert_gbk
 
 ### Tool Description
-Convert the GenBank records to a different format.
+Convert the GenBank records written by GECCO to a different format (bigslice, fna or faa).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gecco:0.10.2--pyhdfd78af_0
@@ -453,25 +465,46 @@ Convert the GenBank records to a different format.
 
 ### Original Help Text
 ```text
-Usage: gecco convert [-h] [-V] [-j JOBS] [-v] [-q] [--no-color] [--no-markup]
-                     INPUT ...
-
-Positional Arguments:
-  INPUT
-    gbk            Convert the GenBank records to a different format.
-    clusters       Convert the clusters table to a different format.
+Usage: gecco convert gbk [-h] -i INPUT_DIR [-o OUTPUT_DIR]
+                         -f {bigslice,fna,faa}
 
 Options:
-  -h, --help       Show this help message and exit.
-  -V, --version    Show the program version number and exit.
-  -j, --jobs JOBS  The number of jobs to use for multithreading. Use 0 to use
-                   all available CPUs.
-  -v, --verbose    Increase the console output
-  -q, --quiet      Reduce or disable the console output
-  --no-color       Disable the console color (default: True)
-  --no-markup      Disable the console markup (default: True)
+  -h, --help            show this help message and exit
+  -i, --input-dir INPUT_DIR
+                        The path to the input directory containing files to
+                        convert. (default: None)
+  -o, --output-dir OUTPUT_DIR
+                        The path to the directory where to write converted
+                        files. (default: None)
+  -f, --format {bigslice,fna,faa}
+                        The output format to write. (default: None)
 ```
 
+## gecco_convert_clusters
+
+### Tool Description
+Convert the clusters table written by GECCO to a different format (gff).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gecco:0.10.2--pyhdfd78af_0
+- **Homepage**: https://gecco.embl.de/
+- **Package**: https://anaconda.org/channels/bioconda/packages/gecco/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: gecco convert clusters [-h] -i INPUT_DIR [-o OUTPUT_DIR] -f {gff}
+
+Options:
+  -h, --help            show this help message and exit
+  -i, --input-dir INPUT_DIR
+                        The path to the input directory containing files to
+                        convert. (default: None)
+  -o, --output-dir OUTPUT_DIR
+                        The path to the directory where to write converted
+                        files. (default: None)
+  -f, --format {gff}    The output format to write. (default: None)
+```
 
 ## Metadata
 - **Skill**: generated

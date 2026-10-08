@@ -24,7 +24,7 @@ inputs:
   - id: cds_object
     type:
       - 'null'
-      - string
+      - File
     doc: CDS object with expression data
     inputBinding:
       position: 101
@@ -78,7 +78,7 @@ inputs:
   - id: plot_output_path
     type:
       - 'null'
-      - File
+      - string
     doc: Optional. If you would like to make a marker plot, provide a name 
       (path) for it.
     inputBinding:
@@ -109,6 +109,13 @@ inputs:
       position: 102
       prefix: --marker-output-path
 outputs:
+  - id: plot_output
+    type:
+      - 'null'
+      - File
+    doc: Marker plot written to the path given in plot_output_path
+    outputBinding:
+      glob: $(inputs.plot_output_path)
   - id: marker_output_path
     type:
       - 'null'

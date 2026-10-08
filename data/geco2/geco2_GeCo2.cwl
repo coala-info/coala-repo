@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./GeCo2
+baseCommand: GeCo2
 label: geco2_GeCo2
 doc: "Compress and decompress genomic sequences for storage purposes. Measure an upper
   bound of the sequences entropy. Compute information profiles of genomic sequences.\n\
@@ -13,7 +13,8 @@ inputs:
     doc: 'Input sequence filename (to compress) -- MANDATORY. File(s) to compress
       (last argument). For more files use splitting ":" characters. Example: file1.txt:file2.txt:file3.txt.'
     inputBinding:
-      position: 1
+      position: 200
+      itemSeparator: ':'
   - id: compression_level
     type:
       - 'null'
@@ -125,6 +126,25 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: compressed_files
+    type:
+      type: array
+      items: File
+    doc: Compressed files (.co) written next to the input files
+    outputBinding:
+      glob: '*.co'
+  - id: information_files
+    type:
+      type: array
+      items: File
+    doc: Information content files (.iae) written with --estimate
+    outputBinding:
+      glob: '*.iae'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/geco2:1.1--h7b50bb2_5

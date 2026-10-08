@@ -1,5 +1,25 @@
 # freyja CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| freyja_aggregate | PASS |  |
+| freyja_ampliconstat | PASS |  |
+| freyja_barcode-build | Not completed | needs a UShER protobuf tree, and no small public tree exists (the SARS-CoV-2 tree is several hundred MB) |
+| freyja_boot | PASS |  |
+| freyja_covariants | Failed | image problem: freyja covariants needs the covar program, which is missing from the image (FileNotFoundError: covar) |
+| freyja_dash | Failed | image problem: crashes with a pandas 3.0 TypeError (Invalid value for dtype str) in the freyja dashboard code |
+| freyja_demix | PASS | matches the Galaxy expected abundances (A 57.5 percent, AY.48 37.9 percent); the --region_of_interest option crashes with UnboundLocalError df_depth |
+| freyja_extract | PASS |  |
+| freyja_filter | PASS |  |
+| freyja_get-lineage-def | PASS |  |
+| freyja_plot | Failed | image problem: crashes with a pandas 3.0 TypeError (Invalid value for dtype str), also on the example data shipped in the image |
+| freyja_plot-covariants | PASS |  |
+| freyja_relgrowthrate | Failed | image problem: crashes with a pandas 3.0 TypeError (Invalid value for dtype str) |
+| freyja_update | PASS |  |
+| freyja_variants | PASS |  |
+
 ## freyja_aggregate
 
 ### Tool Description

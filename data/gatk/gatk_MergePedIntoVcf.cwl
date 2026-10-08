@@ -14,9 +14,7 @@ inputs:
       position: 101
       prefix: --MAP_FILE
   - id: original_vcf
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The vcf containing the original autocall genotypes.
     inputBinding:
       position: 101
@@ -28,17 +26,13 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: ped_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: PED file to be merged into VCF.
     inputBinding:
       position: 101
       prefix: --PED_FILE
   - id: zcall_thresholds_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The zcall thresholds file.
     inputBinding:
       position: 101
@@ -54,10 +48,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -106,6 +101,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -114,12 +110,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

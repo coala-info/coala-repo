@@ -32,7 +32,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: --lsep
-  - id: on
+  - id: on_columns
     type:
       - 'null'
       - type: array

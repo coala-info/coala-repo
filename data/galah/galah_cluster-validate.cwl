@@ -51,10 +51,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Genome FASTA files named in the cluster file. They are staged in the working
+      directory, so relative paths in the cluster file resolve.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.genome_files || [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/galah:0.4.2--hc1c3326_2

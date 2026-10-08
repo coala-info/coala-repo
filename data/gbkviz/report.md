@@ -1,5 +1,11 @@
 # gbkviz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gbkviz_gbkviz_webapp | Not completed | long-running web server (Streamlit), not a batch command |
+
 ## gbkviz_gbkviz_webapp
 
 ### Tool Description

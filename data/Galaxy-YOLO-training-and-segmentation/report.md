@@ -1,5 +1,11 @@
 # YOLO training and segmentation CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| yolo-training-wf | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://www.embl.org/about/info/data-science-centre/bioimage-analysis-services/

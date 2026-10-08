@@ -6,6 +6,12 @@ baseCommand:
 label: ganon_report
 doc: "Report generation from Ganon classification results.\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:
+  - id: database_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Database files (only the <db_prefix>.tax file is required) staged in the working directory so db_prefix resolves
   - id: db_prefix
     type:
       - 'null'
@@ -246,6 +252,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Report files (<output_prefix>*.tre) written by the tool
+    outputBinding:
+      glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.database_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ganon:2.2.0--py312hfc6b275_0

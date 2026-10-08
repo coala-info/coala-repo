@@ -35,7 +35,7 @@ inputs:
       position: 101
       prefix: --dpi
   - id: final
-    type: Directory
+    type: File
     doc: path to the final binning result
     inputBinding:
       position: 101
@@ -63,7 +63,7 @@ inputs:
       position: 101
       prefix: --imgtype
   - id: initial
-    type: Directory
+    type: File
     doc: path to the initial binning result
     inputBinding:
       position: 101

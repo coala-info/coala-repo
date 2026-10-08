@@ -1,5 +1,11 @@
 # focus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| focus | PASS | needs its database passed as alternate_directory (db.zip unzipped from the image) because the image cannot unpack it on a read-only file system; fixed log type and output globs |
+
 ## focus
 
 ### Tool Description

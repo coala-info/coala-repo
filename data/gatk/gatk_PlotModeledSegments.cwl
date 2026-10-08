@@ -20,17 +20,13 @@ inputs:
       position: 101
       prefix: --output-prefix
   - id: segments
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input file containing modeled segments (output of ModelSegments).
     inputBinding:
       position: 101
       prefix: --segments
   - id: sequence_dictionary
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File containing a sequence dictionary, which specifies the contigs to 
       be plotted and their relative lengths.
     inputBinding:
@@ -50,10 +46,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: denoised_copy_ratios
     type:
       - 'null'
@@ -171,7 +168,7 @@ outputs:
     type: File[]
     doc: Prefix for output filenames.
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output)/$(inputs.output_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

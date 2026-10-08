@@ -1,5 +1,12 @@
 # geco3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| geco3_GeCo3 | PASS | compressed the SARS-CoV-2 genome to 7.1 KB; GeDe3 restores the exact sequence |
+| geco3_GeDe3 | PASS | round trip gives the original sequence; headers are not stored |
+
 ## geco3_GeCo3
 
 ### Tool Description

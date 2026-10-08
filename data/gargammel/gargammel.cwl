@@ -7,13 +7,18 @@ doc: "This script is a wrapper to run the different programs to create a set of 
   contaminant from the same species and the bacterial contamination.\n\nTool homepage:
   https://github.com/grenaud/gargammel"
 inputs:
-  - id: input_directory
+  - id: matrix_files
     type:
       - 'null'
-      - Directory
-    doc: Directory with fasta directories (bact/, cont/, endo/)
+      - type: array
+        items: File
+    doc: Matrix files of substitutions (<prefix>5.dat and <prefix>3.dat) staged in the working directory so the matrix file prefixes resolve
+  - id: input_directory
+    type: Directory
+    doc: Directory with fasta directories (bact/, cont/, endo/). It is staged writable because the tool writes fasta indexes next to the fasta files.
     inputBinding:
-      position: 1
+      position: 200
+      valueFrom: $(self.basename)/
   - id: briggs_parameters
     type:
       - 'null'
@@ -35,10 +40,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Human contaminant Briggs parameters (v,l,d,s)
+    doc: Human contaminant Briggs parameters (v,l,d,s). The help names this option -damagecd, but the tool only accepts -damagec.
     inputBinding:
       position: 102
-      prefix: -damagecd
+      prefix: -damagec
   - id: briggs_parameters_endogenous
     type:
       - 'null'
@@ -107,39 +112,63 @@ inputs:
   - id: mapdamage_bacterial
     type:
       - 'null'
-      - string
-    doc: Bacterial mapDamage misincorporation file. [protocol] can be either 
-      "single" or "double"
+      - File
+    doc: Bacterial mapDamage misincorporation file (mis.txt); give the protocol in mapdamage_bacterial_protocol
     inputBinding:
       position: 102
       prefix: -mapdamageb
+  - id: mapdamage_bacterial_protocol
+    type:
+      - 'null'
+      - string
+    doc: Protocol for -mapdamageb, either single or double (single has C->T damage on both ends, double has C->T at the 5' end and G->A at the 3' end)
+    inputBinding:
+      position: 102
   - id: mapdamage_contaminant
     type:
       - 'null'
-      - string
-    doc: Human contaminant mapDamage misincorporation file. [protocol] can be 
-      either "single" or "double"
+      - File
+    doc: Human contaminant mapDamage misincorporation file (mis.txt); give the protocol in mapdamage_contaminant_protocol
     inputBinding:
       position: 102
       prefix: -mapdamagec
+  - id: mapdamage_contaminant_protocol
+    type:
+      - 'null'
+      - string
+    doc: Protocol for -mapdamagec, either single or double (single has C->T damage on both ends, double has C->T at the 5' end and G->A at the 3' end)
+    inputBinding:
+      position: 102
   - id: mapdamage_endogenous
     type:
       - 'null'
-      - string
-    doc: Endogenous mapDamage misincorporation file. [protocol] can be either 
-      "single" or "double"
+      - File
+    doc: Endogenous mapDamage misincorporation file (mis.txt); give the protocol in mapdamage_endogenous_protocol
     inputBinding:
       position: 102
       prefix: -mapdamagee
-  - id: mapdamage_file
+  - id: mapdamage_endogenous_protocol
     type:
       - 'null'
       - string
-    doc: Read the miscorporation file produced by mapDamage. [protocol] can be 
-      either "single" or "double"
+    doc: Protocol for -mapdamagee, either single or double (single has C->T damage on both ends, double has C->T at the 5' end and G->A at the 3' end)
+    inputBinding:
+      position: 102
+  - id: mapdamage_file
+    type:
+      - 'null'
+      - File
+    doc: Read the miscorporation file produced by mapDamage (mis.txt); give the protocol in mapdamage_file_protocol
     inputBinding:
       position: 102
       prefix: -mapdamage
+  - id: mapdamage_file_protocol
+    type:
+      - 'null'
+      - string
+    doc: Protocol for -mapdamage, either single or double (single has C->T damage on both ends, double has C->T at the 5' end and G->A at the 3' end)
+    inputBinding:
+      position: 102
   - id: matrix_file_prefix
     type:
       - 'null'
@@ -268,17 +297,15 @@ inputs:
       position: 102
       prefix: -n
   - id: output_prefix
-    type:
-      - 'null'
-      - string
-    doc: Output prefix
+    type: string
+    doc: Output prefix (the tool default [input dir]/simadna is inside the input directory, so a prefix is required here)
     inputBinding:
       position: 102
       prefix: -o
   - id: quality_score_factor
     type:
       - 'null'
-      - float
+      - int
     doc: Increase error rate for forward reads by a factor of 
       1/(10^([factor]/10))
     inputBinding:
@@ -287,7 +314,7 @@ inputs:
   - id: quality_score_factor_reverse
     type:
       - 'null'
-      - float
+      - int
     doc: Increase error rate for reverse reads by a factor of 
       1/(10^([factor]/10))
     inputBinding:
@@ -344,6 +371,13 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_directory)
+        writable: true
+      - $(inputs.matrix_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0

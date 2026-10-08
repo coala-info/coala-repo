@@ -1,5 +1,11 @@
 # Investigation of lockdown effect on air quality between January 2019 to May 2021. CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| Galaxy-Workflow-Investigation_of_lockdown_effect_on_air_quality_between_January_2019_to_May_2021 | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://workflowhub.eu/workflows/251

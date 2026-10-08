@@ -1,5 +1,13 @@
 # flowcraft CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flowcraft_build | PASS | ran with three tasks; wrote a valid Nextflow pipeline with 12 processes and its config, lib, templates and bin; fixed -o type and outputs |
+| flowcraft_inspect | Not completed | interactive curses viewer that needs a Nextflow trace and log from a running pipeline; pipeline runs are skipped |
+| flowcraft_report | Not completed | needs the report JSON written by a Nextflow pipeline run and broadcasts to a server; pipeline runs are skipped |
+
 ## flowcraft_build
 
 ### Tool Description

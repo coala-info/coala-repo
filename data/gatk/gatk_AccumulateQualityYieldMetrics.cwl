@@ -12,11 +12,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --INPUT
     doc: Input QualityYieldMetrics files to merge. This argument must be 
       specified at least once.
     inputBinding:
       position: 101
-      prefix: --INPUT
   - id: output
     type: string
     doc: Output QualityYieldMetric file to write.
@@ -28,10 +29,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -80,6 +82,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -88,12 +91,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

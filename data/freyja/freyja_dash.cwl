@@ -17,13 +17,13 @@ inputs:
     inputBinding:
       position: 2
   - id: title
-    type: string
-    doc: Title for the dashboard
+    type: File
+    doc: Text file with the dashboard title
     inputBinding:
       position: 3
   - id: intro
-    type: string
-    doc: Introductory text for the dashboard
+    type: File
+    doc: Text file with the introduction text of the dashboard
     inputBinding:
       position: 4
   - id: body_color
@@ -37,7 +37,7 @@ inputs:
   - id: config
     type:
       - 'null'
-      - string
+      - File
     doc: control the colors and grouping of lineages in the plot
     inputBinding:
       position: 105

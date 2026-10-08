@@ -1,5 +1,12 @@
 # galaxy-parsec CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| galaxy-parsec_parsec | Not completed | needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection |
+| galaxy-parsec_parsec_init | Not completed | needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection |
+
 ## galaxy-parsec_parsec
 
 ### Tool Description

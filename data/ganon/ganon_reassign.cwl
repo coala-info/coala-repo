@@ -6,6 +6,11 @@ baseCommand:
 label: ganon_reassign
 doc: "Reassigns sequences based on EM algorithm.\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:
+  - id: classify_files
+    type:
+      type: array
+      items: File
+    doc: Files from ganon classify (<input_prefix>.all and optionally <input_prefix>.rep) staged in the working directory so input_prefix resolves
   - id: input_prefix
     type: string
     doc: Input prefix to find files from ganon classify (.all and optionally 
@@ -74,6 +79,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_prefix_files
+    type:
+      type: array
+      items: File
+    doc: Reassigned files (<output_prefix>.one and optionally .rep)
+    outputBinding:
+      glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.classify_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ganon:2.2.0--py312hfc6b275_0

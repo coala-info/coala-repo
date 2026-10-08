@@ -247,6 +247,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_files
+    type:
+      type: array
+      items: File
+    doc: Database files written with the prefix given in db_prefix (.hibf/.ibf, .tax, ...)
+    outputBinding:
+      glob: $(inputs.db_prefix).*
+  - id: work_files_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Working folder of the build (download state, needed by ganon update)
+    outputBinding:
+      glob: $(inputs.db_prefix)_files
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ganon:2.2.0--py312hfc6b275_0

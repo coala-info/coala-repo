@@ -9,11 +9,15 @@ inputs:
   - id: intervals
     type:
       type: array
-      items: string
-    doc: One or more genomic intervals over which to operate
+      items:
+        - string
+        - File
+      inputBinding:
+        prefix: --intervals
+    doc: One or more genomic intervals over which to operate (interval strings, 
+      or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --intervals
   - id: output
     type: string
     doc: Output Picard interval-list file containing the filtered intervals.
@@ -34,19 +38,24 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: exclude_intervals
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals to exclude from processing
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --exclude-intervals
+    doc: One or more genomic intervals to exclude from processing (interval 
+      strings, or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --exclude-intervals
   - id: extreme_count_filter_maximum_percentile
     type:
       - 'null'
@@ -101,11 +110,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --input
     doc: Input TSV or HDF5 files containing integer read counts in genomic 
       intervals (output of CollectReadCounts).
     inputBinding:
       position: 101
-      prefix: --input
   - id: interval_exclusion_padding
     type:
       - 'null'

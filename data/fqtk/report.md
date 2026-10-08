@@ -1,5 +1,11 @@
 # fqtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fqtk_demux | PASS | real nf-core simulated 4-read run (100000 read pairs, 24 samples): 94871 matched at about 4 percent per sample and 5129 unmatched; tool needs at least 5 threads; removed a bogus output |
+
 ## fqtk_demux
 
 ### Tool Description

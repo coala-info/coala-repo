@@ -10,7 +10,7 @@ inputs:
     type: File
     doc: Path to the masked superstring
     inputBinding:
-      position: 1
+      position: 200
   - id: kmer_size
     type:
       - 'null'
@@ -31,6 +31,23 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index
+    type: File
+    doc: The masked superstring with its FMS index files (<file>.fmsi.*) as secondary files
+    outputBinding:
+      glob: $(inputs.masked_superstring_input.basename)
+    secondaryFiles:
+      - .fmsi.ac
+      - .fmsi.ac_gt
+      - .fmsi.gt
+      - .fmsi.mask
+      - .fmsi.misc
+      - .fmsi.klcp?
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.masked_superstring_input)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fmsi:0.4.0--h077b44d_0

@@ -2,11 +2,18 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - gambit
-  - dist
 label: gambit_dist
 doc: "Calculate the GAMBIT distances between a set of query geneomes and a set of
   reference genomes.\n\nTool homepage: https://github.com/jlumpe/gambit"
 inputs:
+  - id: db
+    type:
+      - 'null'
+      - Directory
+    doc: Directory containing GAMBIT database files (global option, given before the subcommand).
+    inputBinding:
+      position: 1
+      prefix: --db
   - id: calculate_square_matrix
     type:
       - 'null'
@@ -139,6 +146,9 @@ inputs:
     inputBinding:
       position: 102
       prefix: -o
+arguments:
+  - position: 2
+    valueFrom: dist
 outputs:
   - id: output_file
     type: File

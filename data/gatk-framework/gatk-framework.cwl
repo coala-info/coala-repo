@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - gatk-framework.jar
+  - gatk-framework
 label: gatk-framework
 doc: "The Genome Analysis Toolkit (GATK) v3.6-24-g59fd391\n\nTool homepage: https://gatk.broadinstitute.org/"
 inputs:
@@ -142,10 +140,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --excludeIntervals
     doc: One or more genomic intervals to exclude from processing
-    inputBinding:
-      position: 101
-      prefix: --excludeIntervals
   - id: fix_misencoded_quality_scores
     type:
       - 'null'
@@ -173,11 +170,18 @@ inputs:
   - id: input_file
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --input_file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: Input file containing sequence data (BAM or CRAM)
     inputBinding:
       position: 101
-      prefix: --input_file
   - id: interval_merging
     type:
       - 'null'
@@ -208,10 +212,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --intervals
     doc: One or more genomic intervals over which to operate
-    inputBinding:
-      position: 101
-      prefix: --intervals
   - id: keep_program_records
     type:
       - 'null'
@@ -294,6 +297,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --num_threads
+  - id: out
+    type:
+      - 'null'
+      - string
+    doc: Output file written by the walker (for example the BAM written by PrintReads)
+    inputBinding:
+      position: 101
+      prefix: --out
   - id: pedigree
     type:
       - 'null'
@@ -381,6 +392,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file
     inputBinding:
       position: 101
@@ -487,6 +499,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_file
+    type:
+      - 'null'
+      - File
+    secondaryFiles:
+      - pattern: ^.bai
+        required: false
+      - pattern: .idx
+        required: false
+      - pattern: .tbi
+        required: false
+    doc: Output file written by the walker
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gatk-framework:3.6.24--4

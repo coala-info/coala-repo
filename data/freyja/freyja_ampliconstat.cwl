@@ -4,44 +4,59 @@ baseCommand:
   - freyja
   - ampliconstat
 label: freyja_ampliconstat
-doc: "Calculate amplicon statistics from a FASTA file.\n\nTool homepage: https://github.com/andersen-lab/Freyja"
+doc: "Provides a summary of amplicon dropouts based on the provided primer file.\n\
+  \nTool homepage: https://github.com/andersen-lab/Freyja"
 inputs:
   - id: primer
     type: File
-    doc: BED file containing primer locations.
+    doc: 'Primer bed file used for amplicon sequencing. Primer name format example:
+      SARS-CoV-2_1_RIGHT. Primer sequence must be included in the bed file.'
     inputBinding:
-      position: 101
+      position: 1
       prefix: --primer
-  - id: threads
+  - id: input_depth
+    type: File
+    doc: Depths file of reads aligned to the reference
+    inputBinding:
+      position: 2
+      prefix: --input_depth
+  - id: min_depth
     type:
       - 'null'
       - int
-    doc: Number of threads to use.
+    doc: Minimum coverage depth to define amplicon dropout
     inputBinding:
-      position: 101
-      prefix: --threads
-  - id: verbose
+      position: 3
+      prefix: --min_depth
+  - id: output_plot
     type:
       - 'null'
-      - boolean
-    doc: Enable verbose output.
+      - string
+    doc: 'Output name for the amplicon dropout plots [default: amplicon_dropout_plot.png]'
     inputBinding:
-      position: 101
-      prefix: --verbose
-  - id: output_path
-    type: string
-    doc: 'name for aggregated results  [default: aggregated_result.tsv]'
+      position: 4
+      prefix: --output_plot
+  - id: output_csv
+    type:
+      - 'null'
+      - string
+    doc: 'Output name for the amplicon dropout CSV file [default: amplicon_dropout.csv]'
     inputBinding:
-      position: 102
-      prefix: --output
+      position: 5
+      prefix: --output_csv
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: Output file for statistics.
+  - id: plot
+    type: File
+    doc: Amplicon dropout plot
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: '${ return inputs.output_plot ? inputs.output_plot : ''amplicon_dropout_plot.png'';
+        }'
+  - id: csv
+    type: File
+    doc: Amplicon dropout table
+    outputBinding:
+      glob: '${ return inputs.output_csv ? inputs.output_csv : ''amplicon_dropout.csv'';
+        }'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

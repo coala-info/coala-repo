@@ -1,5 +1,11 @@
 # fstic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fstic | PASS | table mode ran on real iVar variant tables reformatted into fstic table columns; VCF mode ran on the tool tutorial VCFs (synthetic data) |
+
 ## fstic
 
 ### Tool Description

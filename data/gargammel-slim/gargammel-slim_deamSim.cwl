@@ -6,13 +6,19 @@ doc: "Reads a fasta (default) or BAM file containing aDNA fragments and adds dea
   according to a certain model file. Some model files are found in the models/ directory.
   If the input is fasta, the output will be fasta as well.\n\nTool homepage: https://github.com/grenaud/gargammel"
 inputs:
+  - id: matrix_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Matrix files of substitutions (<prefix>5.dat and <prefix>3.dat) staged in the working directory so the matrix file prefixes resolve
   - id: input_file
     type:
       - 'null'
       - File
     doc: fasta or BAM file
     inputBinding:
-      position: 1
+      position: 200
   - id: ancient_dna_matrix
     type:
       - 'null'
@@ -51,7 +57,6 @@ inputs:
       at the 5' end and G->A damage at the 3' end"
     inputBinding:
       position: 102
-      prefix: -mapdamage
   - id: matfile_prefix
     type:
       - 'null'
@@ -82,8 +87,8 @@ inputs:
   - id: output_bam
     type:
       - 'null'
-      - boolean
-    doc: 'Read BAM and write output as a BAM (default: fasta)'
+      - string
+    doc: 'Read BAM and write output as a BAM with this name (default: fasta)'
     inputBinding:
       position: 102
       prefix: -b
@@ -123,15 +128,33 @@ inputs:
   - id: zipped_fasta_out
     type:
       - 'null'
-      - boolean
-    doc: Write fasta output as a zipped fasta
+      - string
+    doc: Write fasta output as a zipped fasta with this name
     inputBinding:
       position: 102
       prefix: -o
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (fasta when no -o or -b output is given)
+  - id: output_bam_file
+    type:
+      - 'null'
+      - File
+    doc: BAM written with -b
+    outputBinding:
+      glob: $(inputs.output_bam)
+  - id: output_zipped_fasta_file
+    type:
+      - 'null'
+      - File
+    doc: Zipped fasta written with -o
+    outputBinding:
+      glob: $(inputs.zipped_fasta_out)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.matrix_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gargammel-slim:1.1.2--hf107e4d_6

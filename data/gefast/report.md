@@ -1,5 +1,11 @@
 # gefast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gefast_GeFaST | PASS | lev and qlev modes give the same clusters as the repo examples |
+
 ## gefast_GeFaST
 
 ### Tool Description

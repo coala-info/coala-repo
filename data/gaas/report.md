@@ -1,5 +1,12 @@
 # gaas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gaas_gaas_create_annotation_project.pl | Failed | tool bug: the script runs mv on the genome before it creates the Genome folder, so genome.fa is never placed (the empty folder tree is made); the root is fixed to ~/test_annotation |
+| gaas_gaas_fasta_statistics.pl | PASS | SARS-CoV-2 genome: 1 sequence, 29,829 nt, GC 38%, N50 29,829 match the FASTA; CWL fixed so the output folder is optional and STDOUT is collected |
+
 ## gaas_gaas_create_annotation_project.pl
 
 ### Tool Description

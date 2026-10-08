@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 5295; PASS: 4156; Failed: 689; Not completed: 450
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 5848; PASS: 4525; Failed: 755; Not completed: 568
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -3082,6 +3082,12 @@ cwl-Tissue-segmentation-workflow	tissue_segmentation_workflow	Not completed	pipe
 cwl-Use-Case-13-Novel-Cell-Surface-Targets-for-Individual-Cancer-Patients-Analyzed-with-Common-Fund-Datasets	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
 cwl-VariantCaller_GATK3.6	workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
 cwl-WRF-EMEP-Linear-Workflow	wrf_emep_full_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-[DTC-AGEF]-WF8101-Forecasting-the-long-range-responses-of-georeservoirs	WF8101	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-[DTC-AGEF]-WF8102-Forecasting-of-late-responses-of-georeservoirs	WF8102	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-[DTC-AGEF]-WF8103-Forecasting-maximum-magnitude	WF8103	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-[DTC-AGEF]-WF8104-Forecasting-induced-shake-map	WF8104	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-[DTC-E4]-WF7401-Dynamic-Source-Inversion-Workflow	WF7401	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+cwl-[DTC-V4]-WF5401-Volcanic-gas-dispersal-and-deposition	WF5401	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
 cwl2wdl	cwl2wdl	Failed	tool bug: on its own test CWLs it writes invalid WDL (prefixes unquoted as ${-unc + unc}, item prefixes dropped, import steps crash), and --validate fails because the image lacks the wdl module.
 cwltest	cwltest	PASS	
 cwltool	cwltool	PASS	
@@ -4612,16 +4618,563 @@ flexsweep	flexsweep_fvs-vcf	Failed	tool bug: always crashes with TypeError, the 
 flexsweep	flexsweep_simulator	PASS	
 flextaxd	flextaxd	PASS	note: create, modify and dump work; --stats and --validate print the result but exit 1, the visualisation options crash (missing inquirer) and --dump_genome_annotations crashes
 flexynesis	flexynesis	PASS	
+flippyr	flippyr	PASS	
+flock	flock_cent_adjust	PASS	
+flock	flock_flock1	PASS	
+flock	flock_flock2	PASS	
+floco	floco	Failed	image problem: gurobipy is missing in the image, so floco stops with 'Please install gurobipy and obtain corresponding license' (it also needs a Gurobi licence)
+floria	floria	PASS	added missing .bai secondaryFiles on the BAM input
+flowcraft	flowcraft_build	PASS	ran with three tasks; wrote a valid Nextflow pipeline with 12 processes and its config, lib, templates and bin; fixed -o type and outputs
+flowcraft	flowcraft_inspect	Not completed	interactive curses viewer that needs a Nextflow trace and log from a running pipeline; pipeline runs are skipped
+flowcraft	flowcraft_report	Not completed	needs the report JSON written by a Nextflow pipeline run and broadcasts to a server; pipeline runs are skipped
+flumut	flumut	PASS	
+flye	flye	PASS	
+fml-asm	fml-asm	PASS	fixed wrong homepage and description
+fmlrc	fmlrc	PASS	rewrote flags from the help; 21-mer match to the genome rose from 0.35 to 0.82 on nanopore reads
+fmlrc	fmlrc_convert	PASS	
+fmlrc2	fmlrc2	PASS	fixed output path, k-mer option and homepage; 21-mer match to the genome rose from 0.35 to 0.82 on nanopore reads
+fmlrc2	fmlrc2_convert	PASS	
+fmsi	fmsi_compact	PASS	synthetic data: compacted a merged index of a real SARS-CoV-2 superstring and a derived second set; queries match the union
+fmsi	fmsi_diff	Not completed	synthetic data only: on two real-derived sets, 22 to 48 k-mer answers differ from an independent set computation for k-mers that occur twice, so the output cannot be confirmed
+fmsi	fmsi_export	PASS	real SARS-CoV-2 masked superstring from the fmsi repo; output checked against an independent k-mer computation; fixed argument order and index file handling
+fmsi	fmsi_index	PASS	real SARS-CoV-2 masked superstring from the fmsi repo; output checked against an independent k-mer computation; fixed argument order and index file handling
+fmsi	fmsi_inter	Not completed	synthetic data only: on two real-derived sets, 22 to 48 k-mer answers differ from an independent set computation for k-mers that occur twice, so the output cannot be confirmed
+fmsi	fmsi_lookup	PASS	real SARS-CoV-2 masked superstring from the fmsi repo; output checked against an independent k-mer computation; fixed argument order and index file handling
+fmsi	fmsi_merge	PASS	synthetic data: second set made by switching off half of the real SARS-CoV-2 masked superstring mask; result matches an independent k-mer computation
+fmsi	fmsi_query	PASS	real SARS-CoV-2 masked superstring from the fmsi repo; output checked against an independent k-mer computation; fixed argument order and index file handling
+fmsi	fmsi_symdiff	Not completed	synthetic data only: on two real-derived sets, 22 to 48 k-mer answers differ from an independent set computation for k-mers that occur twice, so the output cannot be confirmed
+fmsi	fmsi_union	PASS	synthetic data: second set made by switching off half of the real SARS-CoV-2 masked superstring mask; result matches an independent k-mer computation
+focus	focus	PASS	needs its database passed as alternate_directory (db.zip unzipped from the image) because the image cannot unpack it on a read-only file system; fixed log type and output globs
 foldcomp	foldcomp_check	Failed	tool bug: check passes a truncated FCZ file without flagging it; valid files are reported correctly
 foldcomp	foldcomp_compress	PASS	
 foldcomp	foldcomp_decompress	PASS	
 foldcomp	foldcomp_extract	PASS	
 foldcomp	foldcomp_rmsd	PASS	
+folddisco	folddisco_index	PASS	indexed 8 RCSB structures; fixed the structure input type, index outputs and relative path staging
+folddisco	folddisco_query	PASS	serine protease triad query B57,B102,C195 on 4CHA found the protease structures and not adenylate kinase; fixed index secondary files and structure staging
+foldmason	foldmason_convertalis	PASS	converted a foldseek search result on the foldmason database to a table with amino acid and 3Di alignment columns
+foldmason	foldmason_createdb	PASS	5 RCSB serine protease PDB files gave a 12-chain database used by all later steps
+foldmason	foldmason_easy-msa	PASS	aligned 5 RCSB serine protease structures; removed the wrong stdin input and fixed the output prefix glob
+foldmason	foldmason_msa2lddt	PASS	average MSA LDDT 0.557 over 249 columns printed for the structure alignment
+foldmason	foldmason_msa2lddtjson	PASS	wrote JSON with 12 entries, per-column scores and MSA LDDT 0.557
+foldmason	foldmason_msa2lddtreport	PASS	wrote the HTML report (5 MB) for the structure alignment
+foldmason	foldmason_refinemsa	Failed	tool bug: refinemsa writes the refined alignment then aborts with an invalid pointer error (exit code 134); with zero refinement iterations it writes nothing
+foldmason	foldmason_structuremsa	PASS	aligned 12 chains with a sensible guide tree; run with threads 1 because more threads hang or crash this build
+foldmason	foldmason_structuremsacluster	PASS	aligned the chains of a foldseek cluster database; run with threads 1 because more threads hang or crash this build
+foldseek	foldseek_cluster	PASS	clustered the 12 chains; identical chains and the serine proteases grouped together
+foldseek	foldseek_convertalis	PASS	converted the search result to a table with TM-score and LDDT columns; values match the search
+foldseek	foldseek_createdb	PASS	5 RCSB serine protease PDB files gave a 12-chain database with sequence, 3Di, C-alpha and header files
+foldseek	foldseek_createindex	PASS	built the k-mer index files for the 5-structure database; the index is about 900 MB because of the fixed k-mer table
+foldseek	foldseek_createtsv	PASS	cluster database written as a table, with and without the optional target database
+foldseek	foldseek_easy-cluster	PASS	serine proteases clustered together; directory input allowed
+foldseek	foldseek_easy-multimercluster	PASS	5PTP and 2PTN clustered together; directory input allowed
+foldseek	foldseek_easy-multimersearch	PASS	same five RCSB structures; added the missing output positional and directory targets
+foldseek	foldseek_easy-rbh	PASS	same five RCSB structures; added the missing output positional and directory targets
+foldseek	foldseek_easy-search	PASS	searched RCSB serine protease structures against each other; self hits and homologs found; added the missing output positional and directory targets
+foldseek	foldseek_rbh	PASS	2 query structures against 5PTP; the reciprocal best hit 1HNE_E to 5PTP found
+foldseek	foldseek_result2msa	PASS	built an aligned FASTA database from the search result; serine protease sequences aligned
+foldseek	foldseek_search	PASS	searched the 5-structure database against itself; self hits and trypsin/chymotrypsin homologs found (5PTP and 2PTN at 99.5 percent identity)
+foldseek	foldseek_structurealign	PASS	aligned the pairs listed in a search result database; scores match the search
+foldseek	foldseek_tmalign	PASS	TM-aligned the pairs listed in a search result database; self TM-score 1.0 and trypsin pairs high
+footprint	footprint_find_footprints.sh	PASS	real yeast ATAC-seq reads (nf-core, aligned with bwa) with motif sites and peak windows from a TTACCCG scan; 776 sites scored; fixed fixed_bg type, writable inputs and outputs
+forwardgenomics	forwardgenomics_forwardGenomics.R	PASS	matches the repo example output (111 elements, relative difference below 1e-13); options now use --name=value as the tool needs; the image lacks the default lookUpData files, so weights and expected-percent-id files from the repo are passed
+forwardgenomics	forwardgenomics_tree_doctor	PASS	pruned the repo example tree to 5 species and labeled branches; fixed the label-branches option
+fpocket	fpocket	PASS	found pockets in RCSB 3TGI and 4CHA; rewrote wrong flags from the help and stage the input writable; the file list option (-F) fails in the tool itself with 'Invalid pdb name'
+fq	fq_filter	Failed	tool bug: --names gives an empty output even when every read name is listed (checked with the tool directly); --sequence-pattern works
+fq	fq_generate	PASS	200 random read pairs of length 75 made; fixed output path types
+fq	fq_lint	PASS	passes the real nf-core SARS-CoV-2 pair and reports the errors of the real broken nf-core FASTQ; fixed disable-validator option
+fq	fq_subsample	PASS	20 of 100 real read pairs kept with matching names
+fqgrep	fqgrep	PASS	real SARS-CoV-2 reads; match, count, invert, multiple patterns, paired and reverse-complement counts equal an independent grep; replaced invented flags with the documented ones
+fqtk	fqtk_demux	PASS	real nf-core simulated 4-read run (100000 read pairs, 24 samples): 94871 matched at about 4 percent per sample and 5129 unmatched; tool needs at least 5 threads; removed a bogus output
+fqtools	fqtools_basetab	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_count	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_fasta	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_find	Failed	tool bug: returns reads that do not contain the pattern for self-overlapping patterns (AAAC gives 52 reads, grep finds 46; TTTT 66 against 62)
+fqtools	fqtools_head	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_header	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_header2	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_lengthtab	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_quality	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_qualmap	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_qualtab	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_sequence	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_trim	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_type	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_validate	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtools	fqtools_view	PASS	real nf-core SARS-CoV-2 pair; output equals an independent Python computation; baseCommand fixed and global options moved before the subcommand
+fqtrim	fqtrim	PASS	
+fraggenescan	fraggenescan_FragGeneScan	PASS	last gene end differs by 1 base from the Galaxy expected file, 687 of 688 genes identical
+fraggenescan	fraggenescan_run_FragGeneScan.pl	PASS	
+fragpipe	fragpipe	Not completed	pipeline, skipped; it needs academic licence keys for MSFragger and IonQuant and prints only the licence text without them
+frag_gene_scan_rs	frag_gene_scan_rs	PASS	
+fraposa-pgsc	fraposa-pgsc_fraposa	PASS	
+fraposa-pgsc	fraposa-pgsc_fraposa_plot	Failed	tool bug: fraposa_plot reads the .pcs file written by fraposa without skipping its header line and stops with ValueError could not convert string to float PC1
+fraposa-pgsc	fraposa-pgsc_fraposa_pred	Failed	tool bug: fraposa_pred reads the .pcs file written by fraposa without skipping its header line and stops with ValueError could not convert string to float PC1
+frc_align	frc_align_FRC	PASS	
+freddie	freddie_freddie_cluster.py	Failed	image problem: freddie_cluster.py stops with ModuleNotFoundError: No module named gurobipy
+freddie	freddie_freddie_isoforms.py	Not completed	needs the freddie_cluster.py output, and the cluster step cannot run because gurobipy is missing from the image
+freddie	freddie_freddie_segment.py	PASS	
+freddie	freddie_freddie_split.py	PASS	
+freebayes	freebayes	PASS	
+freyja	freyja_aggregate	PASS	
+freyja	freyja_ampliconstat	PASS	
+freyja	freyja_barcode-build	Not completed	needs a UShER protobuf tree, and no small public tree exists (the SARS-CoV-2 tree is several hundred MB)
+freyja	freyja_boot	PASS	
+freyja	freyja_covariants	Failed	image problem: freyja covariants needs the covar program, which is missing from the image (FileNotFoundError: covar)
+freyja	freyja_dash	Failed	image problem: crashes with a pandas 3.0 TypeError (Invalid value for dtype str) in the freyja dashboard code
+freyja	freyja_demix	PASS	matches the Galaxy expected abundances (A 57.5 percent, AY.48 37.9 percent); the --region_of_interest option crashes with UnboundLocalError df_depth
+freyja	freyja_extract	PASS	
+freyja	freyja_filter	PASS	
+freyja	freyja_get-lineage-def	PASS	
+freyja	freyja_plot	Failed	image problem: crashes with a pandas 3.0 TypeError (Invalid value for dtype str), also on the example data shipped in the image
+freyja	freyja_plot-covariants	PASS	
+freyja	freyja_relgrowthrate	Failed	image problem: crashes with a pandas 3.0 TypeError (Invalid value for dtype str)
+freyja	freyja_update	PASS	
+freyja	freyja_variants	PASS	
+frogs	frogs_affiliation_filters	PASS	
+frogs	frogs_affiliation_postprocess	PASS	
+frogs	frogs_affiliation_report	PASS	
+frogs	frogs_biom_to_stdBiom	PASS	
+frogs	frogs_biom_to_tsv	PASS	
+frogs	frogs_cluster_asv_report	PASS	
+frogs	frogs_cluster_filters	PASS	the contaminant option crashes because makeblastdb is missing from the image; all other filters work
+frogs	frogs_clustering	Failed	image problem: swarm is missing from the image
+frogs	frogs_demultiplex	PASS	
+frogs	frogs_deseq2_preprocess	Failed	image problem: Rscript (R and the phyloseq packages) is missing from the image
+frogs	frogs_deseq2_visualisation	Failed	image problem: Rscript (R and the phyloseq packages) is missing from the image
+frogs	frogs_frogsfunc_functions	Failed	image problem: PICRUSt2 and the Python module ete3 are missing from the image
+frogs	frogs_frogsfunc_pathways	Failed	image problem: PICRUSt2 pathway_pipeline.py is missing from the image
+frogs	frogs_frogsfunc_placeseqs	Failed	image problem: PICRUSt2 and the Python module ete3 are missing from the image
+frogs	frogs_itsx.py	Failed	image problem: itsx.py stops with FileNotFoundError because the ITSx program is missing from the image
+frogs	frogs_normalisation	PASS	
+frogs	frogs_phyloseq_alpha_diversity	Failed	image problem: Rscript (R and the phyloseq packages) is missing from the image
+frogs	frogs_phyloseq_beta_diversity	Failed	image problem: Rscript (R and the phyloseq packages) is missing from the image
+frogs	frogs_phyloseq_clustering	Failed	image problem: Rscript (R and the phyloseq packages) is missing from the image
+frogs	frogs_phyloseq_composition	Failed	image problem: Rscript (R and the phyloseq packages) is missing from the image
+frogs	frogs_phyloseq_import_data	Failed	image problem: Rscript (R and the phyloseq packages) is missing from the image
+frogs	frogs_phyloseq_manova	Failed	image problem: Rscript (R and the phyloseq packages) is missing from the image
+frogs	frogs_phyloseq_structure	Failed	image problem: Rscript (R and the phyloseq packages) is missing from the image
+frogs	frogs_reads_processing	Failed	image problem: vsearch is missing from the image
+frogs	frogs_remove_chimera	Failed	image problem: vsearch is missing from the image
+frogs	frogs_taxonomic_affiliation	Failed	image problem: blastn and the NeedleAll aligner are missing from the image
+frogs	frogs_tree	Failed	image problem: mafft is missing from the image
+frogs	frogs_tsv_to_biom	PASS	
+fsa	fsa	PASS	
+fseq	fseq	PASS	read pile-up from a BAM converted to BED; peaks only with threshold 0 because the data covers a 40 kb region
+fsnviz	fsnviz_fusioncatcher	PASS	tested on the tool's own FusionCatcher 0.99 test file; the tool cannot read current FusionCatcher output columns
+fsnviz	fsnviz_star-fusion	PASS	tested on the tool's own STAR-Fusion 0.6 test file; the tool cannot read current STAR-Fusion output columns
+fstic	fstic	PASS	table mode ran on real iVar variant tables reformatted into fstic table columns; VCF mode ran on the tool tutorial VCFs (synthetic data)
+fuc	fuc_bam-aldepth	PASS	
+fuc	fuc_bam-depth	PASS	
+fuc	fuc_bam-head	PASS	
+fuc	fuc_bam-index	PASS	
+fuc	fuc_bam-rename	PASS	
+fuc	fuc_bam-slice	PASS	
+fuc	fuc_bed-intxn	PASS	
+fuc	fuc_bed-sum	PASS	
+fuc	fuc_cov-concat	PASS	axis 1 output writes positions and depths as floats (121.0), same values
+fuc	fuc_cov-rename	PASS	
+fuc	fuc_fa-filter	PASS	
+fuc	fuc_fq-count	Failed	image problem: fuc fq-count calls bc, which is missing from the image (bc: command not found), so it prints nothing
+fuc	fuc_fq-sum	PASS	
+fuc	fuc_fuc-bgzip	Failed	tool bug: fuc-bgzip crashes with io.UnsupportedOperation: read when its standard output is a file or pipe (Biopython BgzfWriter)
+fuc	fuc_fuc-compf	PASS	
+fuc	fuc_fuc-demux	Not completed	needs a bcl2fastq Reports directory, and no small public one is available
+fuc	fuc_fuc-exist	PASS	
+fuc	fuc_fuc-find	PASS	
+fuc	fuc_fuc-undetm	PASS	
+fuc	fuc_maf-maf2vcf	Failed	tool bug: maf-maf2vcf stops with TypeError (unsupported operand dict and list) in pymaf.to_vcf on the TCGA MAF file
+fuc	fuc_maf-oncoplt	PASS	
+fuc	fuc_maf-sumplt	Failed	image problem: maf-sumplt stops with a seaborn ValueError (Could not interpret value index for y); library versions in the image do not match the tool
+fuc	fuc_maf-vcf2maf	PASS	
+fuc	fuc_ngs-bam2fq	Not completed	pipeline, skipped
+fuc	fuc_ngs-fq2bam	Not completed	pipeline, skipped
+fuc	fuc_ngs-hc	Not completed	pipeline, skipped
+fuc	fuc_ngs-m2	Not completed	pipeline, skipped
+fuc	fuc_ngs-pon	Not completed	pipeline, skipped
+fuc	fuc_ngs-quant	Not completed	pipeline, skipped
+fuc	fuc_ngs-trim	Not completed	pipeline, skipped
+fuc	fuc_tabix-index	PASS	
+fuc	fuc_tabix-slice	PASS	
+fuc	fuc_tbl-merge	PASS	
+fuc	fuc_tbl-sum	PASS	
+fuc	fuc_vcf-call	PASS	
+fuc	fuc_vcf-filter	PASS	
+fuc	fuc_vcf-index	PASS	
+fuc	fuc_vcf-merge	PASS	
+fuc	fuc_vcf-rename	PASS	
+fuc	fuc_vcf-slice	PASS	
+fuc	fuc_vcf-split	PASS	
+fuc	fuc_vcf-vcf2bed	PASS	
+fuc	fuc_vcf-vep	PASS	
+fufihla	fufihla	Failed	image problem: the image has no zgrep, so FuFiHLA.sh stops with exit 127 (also, the CWL now collects the .out and .err files)
+fuma	fuma	PASS	
+funcannot	funcannot	PASS	synthetic data: planted SNVs on a random sequence; codon and protein changes match hand calculation (CWL fixed: joined --geneid=, '+' list, folders as strings)
+funnel	funnel_dashboard	Not completed	long-running server or terminal dashboard that needs a Funnel server; skipped
+funnel	funnel_node	Not completed	long-running server or terminal dashboard that needs a Funnel server; skipped
+funnel	funnel_run	Not completed	needs a running Funnel server to run tasks; only --print was checked (the task JSON is correct; CWL fixed so each --in/--env/--tag/--vol/--zone is repeated)
+funnel	funnel_server	Not completed	long-running server or terminal dashboard that needs a Funnel server; skipped
+funnel	funnel_storage_get	PASS	local file storage; output equals the input file / expected JSON
+funnel	funnel_storage_list	PASS	local file storage; output equals the input file / expected JSON
+funnel	funnel_storage_put	PASS	local file storage; output equals the input file / expected JSON
+funnel	funnel_storage_stat	PASS	local file storage; output equals the input file / expected JSON
+funnel	funnel_storage_stat-task	PASS	local file storage; output equals the input file / expected JSON
+funnel	funnel_worker	Not completed	long-running server or terminal dashboard that needs a Funnel server; skipped
+fununifrac	fununifrac_compute_edges.py	Failed	image problem: the package data file data/kegg/brites.txt is missing in the image, so the tool stops at start (CWL also fixed: .labels.txt secondary file, output folder created)
+fununifrac	fununifrac_compute_fununifrac.py	Failed	image problem: the package data file data/kegg/brites.txt is missing in the image, so the tool stops at start (CWL also fixed: .labels.txt secondary file, output folder created)
+fununifrac	fununifrac_create_edge_matrix.py	Failed	image problem: the package data file data/kegg/brites.txt is missing in the image, so the tool stops at start (CWL also fixed: .labels.txt secondary file, output folder created)
+fusion-inspector	fusion-inspector_FusionInspector	Not completed	needs a large CTAT genome library (tens of GB); no tiny real resource exists
+fusion-report	fusion-report_download	PASS	ran with --no-cosmic --no-fusiongdb2: the Mitelman database was built (57,782 rows); the FusionGDB2 download returns an invalid file, so it was not used
+fusion-report	fusion-report_run	Not completed	needs the COSMIC database (account) or FusionGDB2 (download fails); with Mitelman only the tool crashes with a division by zero, as the db flags are swapped in the code
+fusion-report	fusion-report_sync	Not completed	needs COSMIC credentials (account)
+fusioncatcher	fusioncatcher	Not completed	needs the large FusionCatcher human Ensembl data build (tens of GB); no tiny real resource exists
+fwdpy11	fwdpy11	PASS	build helper: prints the C++ include paths and mako header; the printed header folders exist in the image
+fxtract	fxtract	PASS	counts and extracted reads match a Python check on nf-core SARS-CoV-2 reads (CWL fixed: options before positionals, pattern optional for -f)
+gaas	gaas_gaas_create_annotation_project.pl	Failed	tool bug: the script runs mv on the genome before it creates the Genome folder, so genome.fa is never placed (the empty folder tree is made); the root is fixed to ~/test_annotation
+gaas	gaas_gaas_fasta_statistics.pl	PASS	SARS-CoV-2 genome: 1 sequence, 29,829 nt, GC 38%, N50 29,829 match the FASTA; CWL fixed so the output folder is optional and STDOUT is collected
+gadem	gadem	PASS	yeast promoters from nf-core data: the unseeded run and a seeded run both report the known poly(A) promoter motif; CWL fixed (output names as strings, outputs collected, exit code 1 is normal for gadem so successCodes 0 and 1)
+gadma	gadma	PASS	GADMA repo YRI_CEU spectrum: short run (structure 1,1) finished with model code files; CWL fixed (input data as File list joined by comma, params files optional)
+gadma	gadma_gadma-get_confidence_intervals	PASS	confidence intervals from the 10 bootstrap result table contain the known YRI_CEU values
+gadma	gadma_gadma-get_confidence_intervals_for_ld	Not completed	needs the output of a full momentsLD GADMA run; the only real example file refers to the author's local data path
+gadma	gadma_gadma-precompute_ld_data	PASS	repo small VCF with population map: preprocessed_data.bp is written and added to the params file (CWL stages inputs writable)
+gadma	gadma_gadma-run_ls_on_boot_data	PASS	10 repo bootstrap spectra of YRI_CEU with the repo moments model: estimates (nu1F about 1.9, nu2B about 0.07, m about 0.9) match the known values
+gafpack	gafpack	PASS	synthetic data: real gaftools test graph and GAF, with node names changed to numbers (gafpack reads numeric ids); node coverage matches the GAF paths (e.g. node 1 = 4 reads x 10 bp = 40)
+gaftools	gaftools_find_path	PASS	output FASTA identical to the repo expected file
+gaftools	gaftools_gfa2rgfa	PASS	rGFA matches the repo expected reference-graph-seqfile.gfa (same records; only the SN and SR tag order on S lines differs)
+gaftools	gaftools_index	PASS	index equals the repo expected customgraph-unstable.gvi
+gaftools	gaftools_order_gfa	PASS	BO and NO tags of all 33 nodes equal the repo expected customgraph-ordered.gfa
+gaftools	gaftools_phase	Failed	tool bug: gaftools 1.3.1 writes a stray tab and 'NM:i::0'-style double colons and wrong ps values; output differs from the repo expected tagged.gaf
+gaftools	gaftools_realign	PASS	repo GraphAligner GAF realigned with WFA: the 2 reads keep their positions and the split deletion becomes one 15D; CWL fixed (reads FASTA needs .fai)
+gaftools	gaftools_sort	PASS	repo test GAF is reordered by the BO tag of its lowest node and the .gsi index is written (the repo has no expected file)
+gaftools	gaftools_stat	PASS	19 alignments, 17 reads and 710 aligned bases match the repo test GAF
+gaftools	gaftools_view	PASS	stable-format conversion is identical to the repo expected customgraph-stable.gaf; the --node and --region subsetting crash inside gaftools 1.3.1 (TypeError, tool bug); CWL fixed so -n/-r repeat per value
+gait-gm	gait-gm_add_kegg_anno_info.py	Failed	tool bug: the tool reads the KEGG REST list format of the past; the current format has extra columns, so no gene matches (98 of 98 unmatched) and metabolite ids and scores differ from the Galaxy expected file
+gait-gm	gait-gm_add_kegg_pathway_info.py	Failed	tool bug: the current KEGG pathway name list has no 'path:' prefix, so pathway names are not joined (NA) and the metabolite table differs from the Galaxy expected file
+gait-gm	gait-gm_add_pval_flags.py	PASS	output and flags files are identical to the Galaxy expected files
+gait-gm	gait-gm_all_by_all_correlation.py	PASS	300 genes of the Galaxy test data: all correlation coefficients equal the Galaxy expected table for the same pairs (p-value filtering differs with fewer tests); matrix and PDF written
+gait-gm	gait-gm_ensembl2symbol.py	PASS	100 rat genes of the Galaxy test data: symbols such as Lrp11, Pcmt1, Nup43 are correct; 86 of 101 equal the Galaxy expected file (the online gene database has changed since)
+gait-gm	gait-gm_sPLS.py	PASS	Galaxy test data: the PANA table equals the Galaxy expected table (sorted) and the sPLS tables differ from the expected files in a few tied rows (Galaxy allows this); CWL fixed (output flags --splsOut and the like, dataset inputs as File)
+gait-gm	gait-gm_split_wide_dataset.py	PASS	wide, design and annotation files are identical to the Galaxy expected files
+galah	galah_cluster	PASS	5 genomes from the galah repo tests: the 500kb genome joins its parent 1mbp genome and 3 archaeal genomes form one cluster; representative FASTA folder holds real files (CWL fixed: symlinks are copied)
+galah	galah_cluster-validate	Failed	tool bug: galah 0.4.2 cluster-validate panics at start (clap threads type mismatch), even with only --cluster-file
+Galaxy-Catalysts-in-gasoline-particulate-filters	0a07785dca20180d.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Cheminformatics-Active-site-generation	Cheminformatics-2-Active_site_generation	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Cheminformatics-Docking	Cheminformatics-3-Docking	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Cheminformatics-Enumerate-ligands-for-docking	Cheminformatics-1-Ligand_enumeration	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Cheminformatics-Filter-results	Cheminformatics-5-Filter_results	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Cheminformatics-SuCOS-scoring	Cheminformatics-4-SuCOS_scoring	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Cheminformatics-TransFS-scoring	Cheminformatics-4-TransFS_scoring	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Cheminformatics-XChem-combined	Cheminformatics-0-XChem_combined	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Climate-Climate-101	climate_101_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-CLM-FATES_ALP1_simulation_5years	CLM-FATES_ALP1_simulation_5years	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Copernicus-Essential-Climate-Variable-select-and-plot	Copernicus_Essential_Climate_Variable_-_select_and_plot	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Diphosphine-ligands-in-iron	1967248db44ca916.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Full-Analyse-Argo-data	b1ce68db35b2a222.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Galaxy-workflow-demonstrating-the-usage-of-EODIE-Galaxy-Tool	Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genome-wide-alternative-splicing-analysis	main_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genome-wide-alternative-splicing-analysis-v.2	main_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genome-wide-alternative-splicing-analysis-v.2	main_workflow_formatted	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genomics-Analysis-of-S-protein-polymorphism	Genomics-5-S-analysis	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genomics-Assembly-of-the-genome-sequence	Genomics-2-Assembly	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genomics-MRCA-analysis	Genomics-3-MRCA	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genomics-PE-Variation	Genomics-4-PE_Variation	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genomics-Read-pre-processing	Genomics-1-PreProcessing_with_download	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genomics-Read-pre-processing-without-downloading-from-SRA	Genomics-1-PreProcessing_without_downloading_from_SRA	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genomics-Recombination-and-selection-analysis	Genomics-6-RecombinationSelection	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Genomics-SE-Variation	Genomics-4-SE_Variation	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+galaxy-ie-helpers	galaxy-ie-helpers_get	Not completed	needs a running Galaxy server with an API key and history; CWL fixed (-i / -p prefixes added)
+galaxy-ie-helpers	galaxy-ie-helpers_put	Not completed	needs a running Galaxy server with an API key and history; CWL fixed (-i / -p prefixes added)
+Galaxy-Investigation-of-lockdown-effect-on-air-quality-between-January-2019-to-May-2021.	Galaxy-Workflow-Investigation_of_lockdown_effect_on_air_quality_between_January_2019_to_May_2021	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+galaxy-job-config-init	galaxy-job-config-init	PASS	generated job config YAML parses, defaults to slurm, with docker enabled and the extra volumes
+Galaxy-LaMnO3-catalytic-behaviour	f06ca0d3d213b10e.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-MoOx-Al2O3-Cyclic-Operation	cb2662dd4cc05baf.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-N2O-decomposition-on-LaMnO3	5bfd0ef990bc80c4.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Palladium-Catalyzed-CO-Oxidation	6f06eaf80b70511e.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Pangeo-101-for-everyone-introduction-to-Xarray	main_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+galaxy-parsec	galaxy-parsec_parsec	Not completed	needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection
+galaxy-parsec	galaxy-parsec_parsec_init	Not completed	needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection
+Galaxy-PATH2XNAT-ST-workflow-Xenium-non-diseased-lung-test-data-analysis	Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Pd-Al2O3-Catalyst-for-Ammonia	eac4157620e0fcac.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Population-and-community-metrics-calculation-from-Biodiversity-data	Galaxy-Workflow-Population_and_community_metrics_calculation_from_Biodiversity_data	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Pt3Sn-nanoparticle-electrocatalysts	bf972370cf6dfa23.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-StringTie-workflow	main_workflow	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-Ultra-dilute-Au-colloids	1a5c6ad02e8082a6.abstract	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+galaxy-upload	galaxy-upload	Not completed	needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection
+Galaxy-VGP-genome-profile-analysis	genome_profiling	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-VGP-HiFi-phased-assembly-with-hifiasm-and-HiC-data	hifiasm	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-VGP-HiFi-phased-assembly-with-hifiasm-and-HiC-data-318	hifiasm	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-VGP-hybrid-scaffolding-with-Bionano-optical-maps	bionano	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-VGP-hybrid-scaffolding-with-HiC-data	hic	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-VGP-purge-assembly-with-purge_dups-pipeline	purge_dups	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+galaxy-workflow-executor	galaxy-workflow-executor_generate_params_from_workflow.py	Not completed	needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection
+galaxy-workflow-executor	galaxy-workflow-executor_run_galaxy_workflow.py	Not completed	needs a Galaxy server and API key; CWL fixed and the command line reaches the server connection
+Galaxy-Workflow-for-running-the-Community-Earth-System-Model-in-fully-coupled-mode	Galaxy-Workflow-Workflow_for_running_a_fully_coupled_CESM_B1850_f19_g17	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
+Galaxy-YOLO-training-and-segmentation	yolo-training-wf	Not completed	pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool
 galileo	galileo_daemon	Not completed	Long-running sync daemon that needs a Fitbit USB dongle and tracker.
 galileo	galileo_firmware	Not completed	Needs a Fitbit USB dongle, a tracker and the Fitbit server to update firmware.
 galileo	galileo_interactive	Not completed	Interactive shell that needs a Fitbit USB dongle and tracker.
 galileo	galileo_pair	Not completed	Needs a Fitbit USB dongle, a new tracker and the Fitbit server to pair.
 galileo	galileo_sync	Not completed	Needs a Fitbit USB dongle, a tracker and the Fitbit server; the run stops with 'No dongle connected'.
+galitime	galitime	PASS	
+galru	galru	PASS	
+gambit	gambit_dist	PASS	
+gambit	gambit_query	PASS	
+gambit	gambit_signatures_create	PASS	
+gambit	gambit_signatures_info	PASS	
+gambit	gambit_tree	PASS	
+gambitcore	gambitcore	Not completed	needs the full GAMBIT database with RefSeq accessions; the small test database lacks them and the tool crashes
+gambitcore	gambitcore_gambitcore-species	Not completed	needs the full GAMBIT database with RefSeq accessions; the small test database lacks them and the tool crashes
+gamma	gamma_GAMMA.py	PASS	
+gangstr	gangstr_GangSTR	PASS	
+ganon	ganon_build	Failed	tool bug: the genome_updater step in the image builds an empty file name in the download URL from the current NCBI assembly summary, so no genome downloads
+ganon	ganon_build-custom	PASS	
+ganon	ganon_classify	PASS	
+ganon	ganon_reassign	PASS	
+ganon	ganon_report	PASS	
+ganon	ganon_table	PASS	
+ganon	ganon_update	Not completed	needs a database made by ganon build (its download step fails); a build-custom database has no update folder
+gap	gap	PASS	synthetic data: a short GAP script that computes the order (7920) and classes of the Mathieu group M11
+gapless	gapless_extend	PASS	synthetic data: planted 100 bp gaps in a real bacterial genome (nf-core test data) with real nanopore reads
+gapless	gapless_finish	PASS	synthetic data: planted 100 bp gaps in a real bacterial genome (nf-core test data) with real nanopore reads
+gapless	gapless_gapless.sh	Failed	image problem: minimap2, racon and seqtk are missing in the image, so the pipeline crashes at the scaffold step
+gapless	gapless_scaffold	PASS	synthetic data: planted 100 bp gaps in a real genome with real nanopore reads; the --stats plot option crashes in the image and --minLenBreak is rejected by the tool
+gapless	gapless_split	PASS	synthetic data: planted 100 bp gaps in a real bacterial genome (nf-core test data)
+gapless	gapless_visualize	Failed	tool bug: it loads a font from the relative path Pillow/Tests/fonts/FreeMono.ttf, which does not exist, so no PDF is written
+gapmm2	gapmm2	PASS	
+gappa	gappa_analyze_correlation	PASS	
+gappa	gappa_analyze_dispersion	PASS	
+gappa	gappa_analyze_edgepca	PASS	
+gappa	gappa_analyze_imbalance-kmeans	PASS	
+gappa	gappa_analyze_krd	PASS	
+gappa	gappa_analyze_phylogenetic-kmeans	PASS	
+gappa	gappa_analyze_placement-factorization	PASS	
+gappa	gappa_analyze_squash	PASS	
+gappa	gappa_edit_accumulate	PASS	
+gappa	gappa_edit_extract	PASS	
+gappa	gappa_edit_filter	PASS	
+gappa	gappa_edit_merge	PASS	
+gappa	gappa_edit_multiplicity	PASS	
+gappa	gappa_edit_split	PASS	
+gappa	gappa_examine_assign	PASS	synthetic data: taxon file planted on the real gappa test tree and jplace sample.
+gappa	gappa_examine_edpl	PASS	
+gappa	gappa_examine_graft	PASS	
+gappa	gappa_examine_heat-tree	PASS	
+gappa	gappa_examine_info	PASS	
+gappa	gappa_examine_lwr-distribution	PASS	
+gappa	gappa_examine_lwr-histogram	PASS	
+gappa	gappa_examine_lwr-list	PASS	
+gappa	gappa_prepare_chunkify	PASS	
+gappa	gappa_prepare_clean-tree	PASS	
+gappa	gappa_prepare_phat	PASS	synthetic data: taxonomy planted on a real epa-ng test alignment.
+gappa	gappa_prepare_taxonomy-tree	PASS	synthetic data: small planted taxonomy.
+gappa	gappa_prepare_unchunkify	PASS	
+gappa	gappa_simulate_random-alignment	PASS	
+gappa	gappa_simulate_random-placements	PASS	
+gappa	gappa_simulate_random-tree	PASS	
+gapseq	gapseq_adapt	PASS	toy data shipped with gapseq (E. coli core proteome and toy models)
+gapseq	gapseq_doall	Not completed	too heavy for this machine: it searches all pathways and ran over 25 minutes on a 38 KB proteome without finishing
+gapseq	gapseq_draft	PASS	toy data shipped with gapseq (E. coli core proteome and toy models)
+gapseq	gapseq_fill	PASS	toy data shipped with gapseq (E. coli core proteome and toy models)
+gapseq	gapseq_find	PASS	toy data shipped with gapseq (E. coli core proteome and toy models)
+gapseq	gapseq_find-transport	PASS	toy data shipped with gapseq (E. coli core proteome and toy models)
+gapseq	gapseq_medium	PASS	toy data shipped with gapseq (E. coli core proteome and toy models)
+gapseq	gapseq_pan	PASS	toy data shipped with gapseq (E. coli core proteome and toy models)
+gargammel	gargammel	PASS	
+gargammel-slim	gargammel-slim_adptSim	PASS	
+gargammel-slim	gargammel-slim_deamSim	PASS	
+gargammel-slim	gargammel-slim_fragSim	PASS	
+garli	garli	PASS	
+garli-mpi	garli-mpi	PASS	
+garnett-cli	garnett-cli_garnett_check_markers.R	Failed	image problem: monocle3 and SingleCellExperiment do not match (reducedDims is not a slot), so the example cell data set cannot be read
+garnett-cli	garnett-cli_garnett_classify_cells.R	Not completed	needs a trained classifier or classified data set, and garnett_train_classifier.R fails in this image
+garnett-cli	garnett-cli_garnett_get_feature_genes.R	Not completed	needs a trained classifier or classified data set, and garnett_train_classifier.R fails in this image
+garnett-cli	garnett-cli_garnett_get_std_output.R	Not completed	needs a trained classifier or classified data set, and garnett_train_classifier.R fails in this image
+garnett-cli	garnett-cli_garnett_train_classifier.R	Failed	image problem: monocle3 and SingleCellExperiment do not match (reducedDims is not a slot), so the example cell data set cannot be read
+garnett-cli	garnett-cli_transform_marker_file.R	PASS	synthetic data: a small marker table built from the Garnett example markers
+garnett-cli	garnett-cli_update_marker_file.R	PASS	synthetic data: a small marker check table with one bad and one ambiguous marker
+gatk	gatk_ASEReadCounter	PASS	
+gatk	gatk_AccumulateQualityYieldMetrics	PASS	
+gatk	gatk_AccumulateVariantCallingMetrics	PASS	
+gatk	gatk_AddFlowBaseQuality	Not completed	flow-based (Ultima) tool; no flow-based test data available
+gatk	gatk_AddFlowSNVQuality	Not completed	flow-based (Ultima) tool; no flow-based test data available
+gatk	gatk_AnalyzeCovariates	PASS	
+gatk	gatk_AnalyzeSaturationMutagenesis	Not completed	needs paired-end saturation mutagenesis amplicon reads with codon coordinates; no matching test data
+gatk	gatk_AnnotateIntervals	PASS	
+gatk	gatk_BamIndexStats	PASS	
+gatk	gatk_BedToIntervalList	PASS	
+gatk	gatk_BpmToNormalizationManifestCsv	Not completed	needs an Illumina array BPM manifest file; no test data available
+gatk	gatk_CalcMetadataSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user
+gatk	gatk_CalculateAverageCombinedAnnotations	PASS	synthetic data: planted RAW_GT_COUNT and SUM_QD annotations; the average is correct (30 / 5 = 6)
+gatk	gatk_CalculateContamination	PASS	
+gatk	gatk_CalculateFingerprintMetrics	PASS	
+gatk	gatk_CalculateReadGroupChecksum	PASS	
+gatk	gatk_CallCopyRatioSegments	PASS	synthetic data: a header row was added to the nf-core copy-ratio table and ModelSegments (same image) made the .cr.seg input
+gatk	gatk_CallableLoci	PASS	
+gatk	gatk_CheckDuplicateMarking	PASS	synthetic data: planted inconsistent duplicate flag; exit 4 (accepted as success) and the read name is listed
+gatk	gatk_CheckFingerprint	PASS	synthetic data: one planted genotype at the single haplotype-map site; LOD is positive and the haplotype matches
+gatk	gatk_CheckIlluminaDirectory	PASS	the test flowcell holds only tile 1101, so the tool correctly reports the other tiles as missing (exit 4, accepted as success)
+gatk	gatk_CheckPileup	PASS	
+gatk	gatk_CheckTerminatorBlock	PASS	
+gatk	gatk_ClusterCrosscheckMetrics	PASS	input made by CrosscheckFingerprints from the two test BAMs in the same image
+gatk	gatk_CollectAlignmentSummaryMetrics	PASS	
+gatk	gatk_CollectAllelicCounts	PASS	
+gatk	gatk_CollectAllelicCountsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user
+gatk	gatk_CollectArraysVariantCallingMetrics	Not completed	needs an Illumina genotyping-array VCF with array annotations; no test data available
+gatk	gatk_CollectBaseDistributionByCycle	PASS	
+gatk	gatk_CollectBaseDistributionByCycleSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user
+gatk	gatk_CollectF1R2Counts	PASS	
+gatk	gatk_CollectGcBiasMetrics	PASS	
+gatk	gatk_CollectHiSeqXPfFailMetrics	PASS	
+gatk	gatk_CollectHsMetrics	PASS	
+gatk	gatk_CollectIlluminaBasecallingMetrics	PASS	
+gatk	gatk_CollectIlluminaLaneMetrics	PASS	
+gatk	gatk_CollectIndependentReplicateMetrics	PASS	contig renamed in copies of the reference and VCF to match the UMI test BAM
+gatk	gatk_CollectInsertSizeMetrics	PASS	
+gatk	gatk_CollectInsertSizeMetricsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user
+gatk	gatk_CollectJumpingLibraryMetrics	PASS	
+gatk	gatk_CollectMultipleMetrics	PASS	
+gatk	gatk_CollectMultipleMetricsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user
+gatk	gatk_CollectOxoGMetrics	PASS	
+gatk	gatk_CollectQualityYieldMetrics	PASS	
+gatk	gatk_CollectQualityYieldMetricsFlow	Not completed	flow-based (Ultima) tool; no flow-based test data available
+gatk	gatk_CollectQualityYieldMetricsSNVQ	Not completed	flow-based (Ultima) tool; no flow-based test data available
+gatk	gatk_CollectQualityYieldMetricsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); works only with cwltool --no-match-user
+gatk	gatk_CollectRawWgsMetrics	PASS	
+gatk	gatk_CollectReadCounts	PASS	
+gatk	gatk_CollectRnaSeqMetrics	PASS	
+gatk	gatk_CollectRrbsMetrics	Not completed	needs bisulfite (RRBS) aligned reads; no small RRBS test data available
+gatk	gatk_CollectSamErrorMetrics	PASS	
+gatk	gatk_CollectSequencingArtifactMetrics	PASS	
+gatk	gatk_CollectTargetedPcrMetrics	PASS	
+gatk	gatk_CollectUmiPrevalenceMetrics	PASS	contig renamed in a copy of the reference to match the UMI test BAM
+gatk	gatk_CollectVariantCallingMetrics	PASS	
+gatk	gatk_CollectWgsMetrics	PASS	
+gatk	gatk_CollectWgsMetricsWithNonZeroCoverage	PASS	
+gatk	gatk_CombineGenotypingArrayVcfs	Not completed	needs genotyping-array VCFs from Illumina GTC files; no test data available
+gatk	gatk_CombineSegmentBreakpoints	PASS	synthetic data: two small planted segment tables; the combined breakpoints are correct
+gatk	gatk_CompareBaseQualities	PASS	
+gatk	gatk_CompareDuplicatesSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user
+gatk	gatk_CompareGtcFiles	Not completed	needs Illumina GTC genotype files; no test data available
+gatk	gatk_CompareIntervalLists	Failed	tool bug: crashes with NoSuchElementException whenever the two interval lists differ, which is the tool's main use; only identical lists compare.
+gatk	gatk_CompareMetrics	PASS	different metric files give exit 4 (accepted as success) with the differences listed
+gatk	gatk_CompareSAMs	PASS	different BAMs give exit 4 (accepted as success) and ARE_EQUAL N with the correct missing-read counts
+gatk	gatk_ConvertHaplotypeDatabaseToVcf	PASS	
+gatk	gatk_ConvertSequencingArtifactToOxoG	PASS	
+gatk	gatk_CountBases	PASS	
+gatk	gatk_CountBasesSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
+gatk	gatk_CountReads	PASS	
+gatk	gatk_CountReadsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); works only with cwltool --no-match-user
+gatk	gatk_CreateBafRegressMetricsFile	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_CreateExtendedIlluminaManifest	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_CreateReadCountPanelOfNormals	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); works only with cwltool --no-match-user
+gatk	gatk_CreateVerifyIDIntensityContaminationMetricsFile	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_CrosscheckFingerprints	PASS	exit code 4 (fingerprint mismatch found by design) is accepted as success
+gatk	gatk_DenoiseReadCounts	PASS	
+gatk	gatk_DepthOfCoverage	PASS	
+gatk	gatk_DetermineGermlineContigPloidy	PASS	
+gatk	gatk_DumpTabixIndex	PASS	
+gatk	gatk_EstimateLibraryComplexity	PASS	
+gatk	gatk_ExampleMultiFeatureWalker	Not completed	example developer tool: the run finishes but it writes no output to check
+gatk	gatk_ExtractFingerprint	PASS	
+gatk	gatk_ExtractIlluminaBarcodes	PASS	synthetic data: barcode list taken from the first 8 bases of the real reads
+gatk	gatk_FilterIntervals	PASS	
+gatk	gatk_FlagStat	PASS	
+gatk	gatk_FlagStatSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
+gatk	gatk_FlowFeatureMapper	Not completed	experimental flow-based (Ultima) tool: no matching flow-sequencing test data
+gatk	gatk_FlowPairHMMAlignReadsToHaplotypes	Not completed	experimental flow-based (Ultima) tool: no matching flow-sequencing test data
+gatk	gatk_GatherNormalArtifactData	PASS	
+gatk	gatk_GatherPileupSummaries	PASS	
+gatk	gatk_GeneExpressionEvaluation	Not completed	runs, but the counts (fractional, near zero) cannot be confirmed: the annotation had to be shifted by hand to fit the small test slice
+gatk	gatk_GermlineCNVCaller	PASS	
+gatk	gatk_GetNormalArtifactData	PASS	
+gatk	gatk_GetPileupSummaries	PASS	
+gatk	gatk_GetSampleName	PASS	
+gatk	gatk_GroundTruthReadsBuilder	Not completed	experimental flow-based (Ultima) tool: no matching flow-sequencing test data
+gatk	gatk_GroundTruthScorer	Not completed	experimental flow-based (Ultima) tool: no matching flow-sequencing test data
+gatk	gatk_GtcToVcf	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_HtsgetReader	Not completed	needs a reachable htsget server and record id; no public endpoint could be reached from this machine
+gatk	gatk_IdentifyContaminant	PASS	
+gatk	gatk_IlluminaBasecallsToFastq	PASS	
+gatk	gatk_IlluminaBasecallsToSam	PASS	
+gatk	gatk_IntervalListToBed	PASS	
+gatk	gatk_IntervalListTools	PASS	
+gatk	gatk_LiftOverHaplotypeMap	PASS	synthetic data: target dictionary made by renaming chr22 to chrY to match the nf-core chain file
+gatk	gatk_LiftOverIntervalList	PASS	synthetic data: target dictionary made by renaming chr22 to chrY to match the nf-core chain file
+gatk	gatk_LocalAssembler	PASS	
+gatk	gatk_MarkIlluminaAdapters	PASS	
+gatk	gatk_MeanQualityByCycle	PASS	
+gatk	gatk_MeanQualityByCycleSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
+gatk	gatk_MergeAnnotatedRegions	PASS	
+gatk	gatk_MergeAnnotatedRegionsByAnnotation	Not completed	runs to success, but the only real input gives one segment, so nothing is merged and the merge cannot be confirmed.
+gatk	gatk_MergePedIntoVcf	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_ModelSegments	PASS	
+gatk	gatk_PathSeqBuildKmers	PASS	
+gatk	gatk_PathSeqBuildReferenceTaxonomy	Not completed	needs the NCBI taxonomy dump and RefSeq catalog (large downloads); no small real set
+gatk	gatk_Pileup	PASS	
+gatk	gatk_PileupSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
+gatk	gatk_PlotDenoisedCopyRatios	PASS	
+gatk	gatk_PlotModeledSegments	PASS	
+gatk	gatk_PostprocessGermlineCNVCalls	PASS	
+gatk	gatk_PreprocessIntervals	PASS	
+gatk	gatk_QualityScoreDistribution	PASS	
+gatk	gatk_QualityScoreDistributionSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
+gatk	gatk_SplitCRAM	PASS	
+gatk	gatk_SplitIntervals	PASS	
+gatk	gatk_TagGermlineEvents	PASS	
+gatk	gatk_ValidateSamFile	PASS	
+gatk	gatk_VariantEval	PASS	
+gatk	gatk_VcfToAdpc	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_ViewSam	PASS	
+gatk-framework	gatk-framework	PASS	
+gbdraw	gbdraw_circular	PASS	
+gbdraw	gbdraw_linear	PASS	
+gbintk	gbintk_evaluate	PASS	
+gbintk	gbintk_prepare	PASS	
+gbintk	gbintk_visualise	PASS	
+gbkviz	gbkviz_gbkviz_webapp	Not completed	long-running web server (Streamlit), not a batch command
+gbmunge	gbmunge	Failed	tool bug: country columns are NA for current GenBank records because they use geo_loc_name instead of country; other columns match the expected table
+gbsx	gbsx_BarcodeDiscovery	PASS	
+gbsx	gbsx_BarcodeGenerator	PASS	
+gbsx	gbsx_DNAComplement	PASS	
+gbsx	gbsx_Demultiplexer	PASS	
+gbsx	gbsx_GBSsimulator	PASS	works with a sample/barcode/enzyme table like the example barcode_list.txt; crashes with the raw BarcodeGenerator output
+gb_taxonomy_tools	gb_taxonomy_tools_gid-taxid	PASS	synthetic data: the mapping file was built from the repo's expected test.taxid; output equals it
+gb_taxonomy_tools	gb_taxonomy_tools_taxonomy-reader	PASS	synthetic data: input lines planted; names and nodes are a small real NCBI taxdump subset from nf-core; lineages are correct
+gb_taxonomy_tools	gb_taxonomy_tools_taxonomy2tree	PASS	
+gb_taxonomy_tools	gb_taxonomy_tools_tree2ps	PASS	
+gdc-client	gdc-client_download	PASS	downloaded one open-access file; content equals the file from the GDC data endpoint; the GDC server sometimes resets the connection
+gdc-client	gdc-client_upload	Not completed	needs a GDC submission token and project; upload cannot be tested without an account
+gdmicro	gdmicro	Failed	image problem: the tool opens allmeta.tsv from the working directory, but the file exists only inside the package folder
+gdsctools	gdsctools_gdsctools_anova	PASS	one drug against 47 features from the package data; the tool takes an integer drug ID
+gecco	gecco_annotate	Failed	image problem: gene annotation crashes with a pyhmmer TypeError (name must be bytes), so the image has an incompatible pyhmmer
+gecco	gecco_convert_clusters	PASS	needs the cluster GenBank files beside the clusters table
+gecco	gecco_convert_gbk	PASS	
+gecco	gecco_cv	PASS	2-fold cross-validation on the small MIBiG tables of the repo; table has 632 cluster genes
+gecco	gecco_predict	PASS	same cluster, coordinates, type and probabilities as the expected table of the repo; the model option takes a directory
+gecco	gecco_run	Failed	image problem: gene annotation crashes with a pyhmmer TypeError (name must be bytes), so the image has an incompatible pyhmmer
+gecco	gecco_train	PASS	trained on the small MIBiG tables of the repo; the model works in gecco predict
+gecko	gecko_frags2align.sh	PASS	alignments equal the expected Galaxy test output
+gecko	gecko_workflow.sh	PASS	CSV equals the expected Galaxy test output
+geco2	geco2_GeCo2	PASS	compressed the SARS-CoV-2 genome to 7.2 KB; GeDe2 restores the exact sequence
+geco2	geco2_GeDe2	PASS	round trip gives the original sequence; headers are not stored
+geco3	geco3_GeCo3	PASS	compressed the SARS-CoV-2 genome to 7.1 KB; GeDe3 restores the exact sequence
+geco3	geco3_GeDe3	PASS	round trip gives the original sequence; headers are not stored
+gefast	gefast_GeFaST	PASS	lev and qlev modes give the same clusters as the repo examples
+gem3-mapper	gem3-mapper_gem-indexer	PASS	indexed the SARS-CoV-2 genome (index is 56 MB)
+gem3-mapper	gem3-mapper_gem-mapper	PASS	single-end: 100 of 100 reads mapped; paired-end: 200 of 200 mapped, close to the minimap2 BAM of nf-core
+gem3-mapper	gem3-mapper_gem-retriever	PASS	forward and reverse regions equal the genome sequence
+gembs	gembs_gemBS_call	PASS	BCF with 316979 sites written for the mapped E. coli reads
+gembs	gembs_gemBS_call-report	PASS	HTML calling report written for the E. coli sample
+gembs	gembs_gemBS_db-sync	PASS	database lists the mapping, calling and extract results
+gembs	gembs_gemBS_extract	PASS	methylation files written; the CpG table is empty with default filters at this low coverage and has 84035 lines with phred 0 and heterozygous sites allowed
+gembs	gembs_gemBS_index	PASS	indexed the E. coli genome; steps now take project_dirs and project_files inputs to carry the .gemBS project
+gembs	gembs_gemBS_map	PASS	E. coli bisulfite read pairs: 20000 reads, 10352 mapped (51.8 percent)
+gembs	gembs_gemBS_map-report	PASS	HTML mapping report written for the E. coli sample
+gembs	gembs_gemBS_merge-bams	PASS	two datasets of one sample merged into one BAM with 40000 reads
+gembs	gembs_gemBS_merge-bcfs	PASS	pool BCF merged into one sample BCF with index and MD5
+gembs	gembs_gemBS_prepare	PASS	real E. coli bisulfite reads of nf-core; the JSON holds the config and the sample; later steps need the new project_files input
+gemf_favites	gemf_favites_GEMF	PASS	output equals the output of GEMF_FAVITES.py for the same parameter file
+gemf_favites	gemf_favites_GEMF_FAVITES.py	PASS	SEIR example of the repo: 10 persons simulated; transmission network and events written
 grepq	grepq	PASS	
 grepq	grepq_inverted	PASS	
 grepq	grepq_summarise	PASS	

@@ -2,15 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: itsx.py
 label: frogs_itsx.py
-doc: "Uses ITSx to detect/extracts ITS1 or ITS2 regions from ITS sequences.\n\nTool
-  homepage: https://github.com/geraldinepascal/FROGS"
+doc: "Uses ITSx to detect/extracts ITS1 or ITS2 regions from ITS sequences.\n\nTool\
+  \ homepage: https://github.com/geraldinepascal/FROGS"
 inputs:
   - id: check_its_only
     type:
       - 'null'
       - boolean
-    doc: Check only if sequences seem to be an ITS (mutually exclusive with 
-      --region)
+    doc: Check only if sequences seem to be an ITS (mutually exclusive with --region)
     inputBinding:
       position: 101
       prefix: --check-its-only
@@ -57,8 +56,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Which fungal ITS region is targeted and trimmed: either ITS1 or ITS2. (mutually
-      exclusive with --check-its-only)'
+    doc: 'Which fungal ITS region is targeted and trimmed: either ITS1 or ITS2 (mutually
+      exclusive with --check-its-only; one of the two is required)'
     inputBinding:
       position: 101
       prefix: --region
@@ -104,40 +103,45 @@ outputs:
     type:
       - 'null'
       - File
-    doc: 'sequences file out from ITSx (format: FASTA).'
+    doc: 'sequences file out from ITSx (format: FASTA). [Default: itsx.fasta]'
     outputBinding:
-      glob: $(inputs.output_fasta_path)
+      glob: '${ return inputs.output_fasta_path ? inputs.output_fasta_path : ''itsx.fasta'';
+        }'
   - id: output_biom
     type:
       - 'null'
       - File
-    doc: 'Abundance file without chimera (format: BIOM ).'
+    doc: 'Abundance file without chimera (format: BIOM). Written when input_biom is
+      given. [Default: itsx_abundance.biom]'
     outputBinding:
-      glob: $(inputs.output_biom_path)
+      glob: '${ return inputs.output_biom_path ? inputs.output_biom_path : ''itsx_abundance.biom'';
+        }'
   - id: output_removed_sequences
     type:
       - 'null'
       - File
-    doc: 'sequences file removed (format: FASTA).'
+    doc: 'sequences file removed (format: FASTA). [Default: itsx_removed.fasta]'
     outputBinding:
-      glob: $(inputs.output_removed_sequences_path)
+      glob: '${ return inputs.output_removed_sequences_path ? inputs.output_removed_sequences_path
+        : ''itsx_removed.fasta''; }'
   - id: html
     type:
       - 'null'
       - File
-    doc: The HTML file containing the graphs.
+    doc: 'The HTML file containing the graphs. [Default: itsx.html]'
     outputBinding:
-      glob: $(inputs.html_path)
+      glob: '${ return inputs.html_path ? inputs.html_path : ''itsx.html''; }'
   - id: log_file
     type:
       - 'null'
       - File
-    doc: This output file will contain several informations on executed 
-      commands.
+    doc: Log file with several informations on executed commands (--log-file)
     outputBinding:
-      glob: $(inputs.log_file_path)
+      glob: '${ return inputs.log_file_path ? inputs.log_file_path : ''itsx_stdout.txt'';
+        }'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/frogs:5.1.0--h9ee0642_0
+stdout: itsx_stdout.txt

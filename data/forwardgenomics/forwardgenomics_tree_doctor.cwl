@@ -74,12 +74,12 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Add a label to the branches listed. Branches are named by the name of 
-      the node which descends from that branch. See --label-subtree above for 
-      more information.
+        inputBinding:
+          prefix: --label-branches
+          separate: true
+    doc: 'Add a label to the branches listed, as "branch1,branch2,...:label". Branches are named by the name of the node which descends from that branch. May be given several times.'
     inputBinding:
       position: 102
-      prefix: --label-branches
   - id: label_subtree
     type:
       - 'null'

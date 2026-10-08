@@ -23,7 +23,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: tbi
+    type: File
+    doc: Tabix index written beside the input (<file>.tbi)
+    outputBinding:
+      glob: $(inputs.file.basename).tbi
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fuc:0.38.0--pyh7e72e81_0
 stdout: fuc_tabix-index.out
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.file)
+        writable: true
+  - class: InlineJavascriptRequirement

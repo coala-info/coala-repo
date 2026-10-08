@@ -16,7 +16,7 @@ inputs:
   - id: cds_object
     type:
       - 'null'
-      - string
+      - File
     doc: Query CDS object holding expression data to be classified
     inputBinding:
       position: 101
@@ -24,7 +24,7 @@ inputs:
   - id: classifier_object
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the object of class garnett_classifier, which is either trained
       via garnett_train_classifier.R or obtained previously
     inputBinding:
@@ -90,15 +90,15 @@ outputs:
     doc: Output path for cds object holding predicted labels on query data
     outputBinding:
       glob: $(inputs.cds_output_obj_path)
-  - id: plot_output_path_dir
+  - id: plot_output_files
     type:
-      - 'null'
-      - Directory
+      type: array
+      items: File
     doc: output path for the t-SNE plots. In case --cluster-extend tag is 
       provided, two plots will be made. If no path is provided, plots will not 
       be produced.
     outputBinding:
-      glob: $(inputs.plot_output_path)
+      glob: '${ return inputs.plot_output_path ? inputs.plot_output_path + "*" : []; }'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

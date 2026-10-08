@@ -28,7 +28,9 @@ inputs:
       position: 103
       prefix: --path
   - id: galaxy_instance
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Name of instance in /root/.parsec.yml. This parameter can also be set 
       via the environment variable PARSEC_GALAXY_INSTANCE
     inputBinding:

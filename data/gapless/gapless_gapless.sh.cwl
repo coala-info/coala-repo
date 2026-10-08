@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: long_reads.fq
     inputBinding:
-      position: 1
+      position: 200
   - id: input_assembly
     type:
       - 'null'

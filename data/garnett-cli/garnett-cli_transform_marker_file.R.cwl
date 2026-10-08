@@ -33,7 +33,7 @@ inputs:
   - id: marker_list
     type:
       - 'null'
-      - File
+      - string
     doc: Path to a serialised object containing marker genes
     inputBinding:
       position: 101
@@ -60,6 +60,13 @@ inputs:
       position: 102
       prefix: --garnett-marker-file
 outputs:
+  - id: marker_list_object
+    type:
+      - 'null'
+      - File
+    doc: Serialised marker gene list written to the path given in marker_list
+    outputBinding:
+      glob: $(inputs.marker_list)
   - id: garnett_marker_file
     type:
       - 'null'

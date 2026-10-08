@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./gem-indexer
+baseCommand: gem-indexer
 label: gem3-mapper_gem-indexer
 doc: "Index a genome for GEM mapper\n\nTool homepage: https://github.com/smarco/gem3-mapper"
 inputs:

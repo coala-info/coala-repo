@@ -1,5 +1,11 @@
 # [DTC-AGEF] WF8103: Forecasting maximum magnitude CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| WF8103 | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://dtgeo.eu/

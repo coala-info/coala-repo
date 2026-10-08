@@ -1,5 +1,11 @@
 # Workflow for running the Community Earth System Model in fully coupled mode CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| Galaxy-Workflow-Workflow_for_running_a_fully_coupled_CESM_B1850_f19_g17 | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://www.cesm.ucar.edu/

@@ -1,5 +1,11 @@
 # flippyr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| flippyr | PASS |  |
+
 ## flippyr
 
 ### Tool Description

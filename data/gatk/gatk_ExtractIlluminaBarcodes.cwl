@@ -10,17 +10,21 @@ doc: Tool determines the barcode for each read in an Illumina lane. This tool
 inputs:
   - id: barcode
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --BARCODE
     doc: Barcode sequence. These must be unique, and all the same length. This 
       cannot be used with reads that have more than one barcode; use 
       BARCODE_FILE in that case. This argument must be specified at least once. 
       Required. Cannot be used in conjunction with argument(s) BARCODE_FILE
     inputBinding:
       position: 101
-      prefix: --BARCODE
   - id: barcode_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Tab-delimited file of barcode sequences, barcode name and, optionally, 
       library name. Barcodes must be unique and all the same length. Column 
       headers must be 'barcode_sequence' (or 'barcode_sequence_1'), 
@@ -30,13 +34,14 @@ inputs:
       position: 101
       prefix: --BARCODE_FILE
   - id: basecalls_dir
-    type:
-      - 'null'
-      - Directory
-    doc: The Illumina basecalls directory.
+    type: Directory
+    doc: The Illumina Data/Intensities directory. It holds the BaseCalls folder 
+      and the lane position files (L001/*.locs), which the tool reads from the 
+      parent of BaseCalls.
     inputBinding:
       position: 101
       prefix: --BASECALLS_DIR
+      valueFrom: $(self.path + '/BaseCalls')
   - id: lane
     type:
       type: array
@@ -61,10 +66,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compress_outputs
     type:
       - 'null'
@@ -147,7 +153,9 @@ inputs:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
   - id: metrics_file
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Per-barcode and per-lane metrics written to this file.
     inputBinding:
       position: 101
@@ -207,6 +215,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -215,12 +224,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -273,6 +283,11 @@ outputs:
       glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:latest

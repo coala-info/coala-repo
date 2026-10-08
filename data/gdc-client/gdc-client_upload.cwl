@@ -8,8 +8,9 @@ doc: "Upload files to the GDC.\n\nTool homepage: https://gdc.cancer.gov/access-d
 inputs:
   - id: file_id
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
     doc: The GDC UUID of the file(s) to upload
     inputBinding:
       position: 1
@@ -72,7 +73,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Save logs to file. Amount logged affected by --debug
     inputBinding:
       position: 102
@@ -101,7 +102,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --part-size
-  - id: path
+  - id: upload_path
     type:
       - 'null'
       - Directory
@@ -159,6 +160,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file written with --log-file
+    outputBinding:
+      glob: $(inputs.log_file)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gdc-client:2.3--pyhdfd78af_1

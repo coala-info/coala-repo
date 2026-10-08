@@ -89,10 +89,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --hmm
     doc: The path to one or more alternative HMM file to use (in HMMER format).
-    inputBinding:
-      position: 101
-      prefix: --hmm
   - id: jobs
     type:
       - 'null'
@@ -132,7 +131,7 @@ inputs:
   - id: model
     type:
       - 'null'
-      - File
+      - Directory
     doc: The path to an alternative CRF model to use (obtained with `gecco 
       train`).
     inputBinding:

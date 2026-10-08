@@ -6,6 +6,11 @@ baseCommand:
 label: ganon_classify
 doc: "Classify reads against a database.\n\nTool homepage: https://github.com/pirovc/ganon"
 inputs:
+  - id: database_files
+    type:
+      type: array
+      items: File
+    doc: Database files (<db_prefix>.hibf/.ibf, .tax, ...) staged in the working directory so db_prefix resolves
   - id: binning
     type:
       - 'null'
@@ -216,7 +221,11 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: '${ return inputs.output_prefix ? inputs.output_prefix + "*" : []; }'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.database_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ganon:2.2.0--py312hfc6b275_0

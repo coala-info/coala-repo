@@ -8,6 +8,8 @@ inputs:
   - id: bam_file
     type: File
     doc: Indexed and sorted bam file to phase.
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: -b

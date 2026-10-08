@@ -7,7 +7,9 @@ label: gatk_CrosscheckFingerprints
 doc: Checks the odds that all data in the set of input files come from the same 
   individual. Can be used to cross-check readgroups, libraries, samples, or 
   files. Acceptable inputs include BAM/SAM/CRAM and VCF/GVCF files. Output 
-  delivers LOD scores in the form of a CrosscheckMetric file.
+  delivers LOD scores in the form of a CrosscheckMetric file. Exit code 4 means
+  the tool found a fingerprint mismatch, so it is accepted as success; the
+  metrics file is still written.
 inputs:
   - id: haplotype_map
     type: File
@@ -19,12 +21,13 @@ inputs:
   - id: input
     type:
       type: array
-      items: string
+      items: File
+      inputBinding:
+        prefix: --INPUT
     doc: One or more input files (or lists of files) with which to compare 
       fingerprints.
     inputBinding:
       position: 101
-      prefix: --INPUT
   - id: allow_duplicate_reads
     type:
       - 'null'
@@ -38,10 +41,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: calculate_tumor_aware_results
     type:
       - 'null'
@@ -175,7 +179,9 @@ inputs:
       position: 101
       prefix: --LOSS_OF_HET_RATE
   - id: matrix_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Optional output file to write matrix of LOD scores to.
     inputBinding:
       position: 101
@@ -207,7 +213,9 @@ inputs:
       position: 101
       prefix: --NUM_THREADS
   - id: output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Optional output file to write metrics to. Default is to write to 
       stdout.
     inputBinding:
@@ -236,6 +244,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -262,12 +271,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
+        inputBinding:
+          prefix: --SECOND_INPUT
     doc: A second set of input files (or lists of files) with which to compare 
       fingerprints.
     inputBinding:
       position: 101
-      prefix: --SECOND_INPUT
   - id: second_input_index_map
     type:
       - 'null'
@@ -291,12 +301,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -350,6 +361,9 @@ outputs:
       glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
+successCodes:
+  - 0
+  - 4
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:latest

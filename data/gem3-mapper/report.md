@@ -1,5 +1,13 @@
 # gem3-mapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gem3-mapper_gem-indexer | PASS | indexed the SARS-CoV-2 genome (index is 56 MB) |
+| gem3-mapper_gem-mapper | PASS | single-end: 100 of 100 reads mapped; paired-end: 200 of 200 mapped, close to the minimap2 BAM of nf-core |
+| gem3-mapper_gem-retriever | PASS | forward and reverse regions equal the genome sequence |
+
 ## gem3-mapper_gem-indexer
 
 ### Tool Description
@@ -92,6 +100,22 @@ USAGE: ./gem-mapper [ARGS]...
       --help|-h  (print usage)
 ```
 
+
+## gem3-mapper_gem-retriever
+
+### Tool Description
+Retrieve sequence regions from a GEM index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gem3-mapper:3.6.1--hb1d24b7_13
+- **Homepage**: https://github.com/smarco/gem3-mapper
+- **Package**: https://anaconda.org/channels/bioconda/packages/gem3-mapper/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+```
 
 ## Metadata
 - **Skill**: generated

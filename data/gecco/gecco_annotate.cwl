@@ -63,10 +63,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --hmm
     doc: The path to one or more alternative HMM file to use (in HMMER format).
-    inputBinding:
-      position: 101
-      prefix: --hmm
   - id: jobs
     type:
       - 'null'

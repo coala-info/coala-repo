@@ -1,5 +1,12 @@
 # gambitcore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| gambitcore | Not completed | needs the full GAMBIT database with RefSeq accessions; the small test database lacks them and the tool crashes |
+| gambitcore_gambitcore-species | Not completed | needs the full GAMBIT database with RefSeq accessions; the small test database lacks them and the tool crashes |
+
 ## gambitcore
 
 ### Tool Description
@@ -47,5 +54,49 @@ options:
                         all). Dont change this. (default: 1)
   --verbose, -v         Turn on verbose output (default: False)
   --version             show program's version number and exit
+```
+
+## gambitcore_gambitcore-species
+
+### Tool Description
+Kmer statistics for all species in a database. Warning it can take a long time to run.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gambitcore:0.0.2--py310h1fe012e_0
+- **Homepage**: https://github.com/gambit-suite/gambitcore
+- **Package**: https://anaconda.org/channels/bioconda/packages/gambitcore/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gambitcore-species [options]
+
+Kmer statistics for all species in a database. Warning it can take a long time
+to run.
+
+positional arguments:
+  gambit_directory      A directory containing GAMBIT files (database and
+                        signatures)
+
+options:
+  -h, --help            show this help message and exit
+  --species SPECIES, -s SPECIES
+                        Provide the name of species to target (comma
+                        delimited), default is to use everything in the
+                        database (default: None)
+  --cpus CPUS, -p CPUS  Number of cpus to use (default: 1)
+  --kmer KMER, -k KMER  Length of the k-mer to use (default: 11)
+  --kmer_prefix KMER_PREFIX, -f KMER_PREFIX
+                        Kmer prefix (default: ATGAC)
+  --max_species_genomes MAX_SPECIES_GENOMES, -t MAX_SPECIES_GENOMES
+                        Max number of genomes in a species to consider, ignore
+                        all others above this (default: 500)
+  --core_proportion CORE_PROPORTION, -c CORE_PROPORTION
+                        Proportion of genomes a kmer must be in for a species
+                        to be considered core (default: 0.98)
+  --num_genomes_per_species NUM_GENOMES_PER_SPECIES, -r NUM_GENOMES_PER_SPECIES
+                        Number of genomes to keep for a species (0 means keep
+                        all) (default: 1)
+  --verbose, -v         Turn on verbose output (default: False)
 ```
 

@@ -1,5 +1,17 @@
 # ganon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ganon_build | Failed | tool bug: the genome_updater step in the image builds an empty file name in the download URL from the current NCBI assembly summary, so no genome downloads |
+| ganon_build-custom | PASS |  |
+| ganon_classify | PASS |  |
+| ganon_reassign | PASS |  |
+| ganon_report | PASS |  |
+| ganon_table | PASS |  |
+| ganon_update | Not completed | needs a database made by ganon build (its download step fails); a build-custom database has no update folder |
+
 ## ganon_build
 
 ### Tool Description

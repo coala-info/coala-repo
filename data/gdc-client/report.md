@@ -1,40 +1,11 @@
 # gdc-client CWL Generation Report
 
-## gdc-client
-### Tool Description
-The Genomic Data Commons Command Line Client
+## Real Data Test
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gdc-client:2.3--pyhdfd78af_1
-- **Homepage**: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
-- **Package**: https://anaconda.org/channels/bioconda/packages/gdc-client/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/gdc-client/overview
-- **Total Downloads**: 22.8K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/NCI-GDC/gdc-client
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: gdc-client [-h] [--version] {download,upload,settings} ...
-
-The Genomic Data Commons Command Line Client
-
-options:
-  -h, --help            show this help message and exit
-  --version             show program's version number and exit
-
-commands:
-  {download,upload,settings}
-                        for more information, specify -h after a command
-    download            download data from the GDC
-    upload              upload data to the GDC
-    settings            display default settings
-
-gdc-client error: argument command: invalid choice: 'for' (choose from download, upload, settings)
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| gdc-client_download | PASS | downloaded one open-access file; content equals the file from the GDC data endpoint; the GDC server sometimes resets the connection |
+| gdc-client_upload | Not completed | needs a GDC submission token and project; upload cannot be tested without an account |
 
 ## gdc-client_download
 
@@ -159,35 +130,6 @@ options:
   --config FILE         Path to INI-type config file
 
 gdc-client error: A token is required in order to upload.
-```
-
-
-## gdc-client_settings
-
-### Tool Description
-Manage gdc-client settings
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gdc-client:2.3--pyhdfd78af_1
-- **Homepage**: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
-- **Package**: https://anaconda.org/channels/bioconda/packages/gdc-client/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: gdc-client settings [-h] [--config FILE] {download,upload} ...
-
-options:
-  -h, --help         show this help message and exit
-  --config FILE      Path to INI-type config file. See what settings will look
-                     like if a custom config file is used
-
-Settings to display:
-  {download,upload}
-    download         Display download settings
-    upload           Display upload settings
-
-gdc-client error: the following arguments are required: section
 ```
 
 

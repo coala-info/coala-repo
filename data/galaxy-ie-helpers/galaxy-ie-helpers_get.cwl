@@ -12,6 +12,7 @@ inputs:
       search all files in the history
     inputBinding:
       position: 1
+      prefix: --id
   - id: history_id
     type:
       - 'null'

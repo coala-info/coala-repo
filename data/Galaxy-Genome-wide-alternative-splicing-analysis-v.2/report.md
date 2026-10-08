@@ -1,24 +1,11 @@
 # Genome-wide alternative splicing analysis v.2 CWL Workflow Report
 
-### Metadata
-- **Docker Image**: N/A
-- **Homepage**: https://training.galaxyproject.org
-- **Package**: https://workflowhub.eu/workflows/482
-- **Validation**: N/A
+## Real Data Test
 
-- **RO-Crate download**: https://workflowhub.eu/workflows/482/ro_crate?version=7
-- **Conda**: N/A
-- **Total Downloads**: 3.6K
-- **Last updated**: 2023-06-11
-- **GitHub**: N/A
-- **Stars**: N/A
-- **Version**: 7
-- **License**: CC-BY-NC-4.0
-- **Workflow type**: Galaxy
-- **Main workflow (WorkflowHub):** `main_workflow.ga` (Main Workflow)
-- **Project**: Galaxy Training Network
-- **Views**: 13222
-- **Creators**: Cristóbal Gallardo
+| Tool | Result | Reason |
+|---|---|---|
+| main_workflow | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+| main_workflow_formatted | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
 
 ## Description
 

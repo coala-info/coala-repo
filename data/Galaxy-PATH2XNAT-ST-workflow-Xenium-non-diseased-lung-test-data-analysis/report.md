@@ -1,5 +1,11 @@
 # PATH2XNAT ST workflow Xenium non-diseased lung test data analysis CWL Workflow Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis | Not completed | pipeline, skipped: WorkflowHub CWL workflow package, not a single command-line tool |
+
 ### Metadata
 - **Docker Image**: N/A
 - **Homepage**: https://erasmusmc-bioinformatics.github.io/

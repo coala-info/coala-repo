@@ -1,5 +1,11 @@
 # fxtract CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fxtract | PASS | counts and extracted reads match a Python check on nf-core SARS-CoV-2 reads (CWL fixed: options before positionals, pattern optional for -f) |
+
 ## fxtract
 
 ### Tool Description

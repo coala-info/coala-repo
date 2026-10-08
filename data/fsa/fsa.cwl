@@ -15,8 +15,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: randomized fraction of all (n choose 2) pairs of sequences to consider 
-      during alignment inference (default is 1)
+    doc: randomized fraction of all (n choose 2) pairs of sequences to consider during
+      alignment inference (default is 1)
     inputBinding:
       position: 102
       prefix: --alignment-fraction
@@ -24,8 +24,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: total number of (randomized) pairs of sequences to consider during 
-      alignment inference
+    doc: total number of (randomized) pairs of sequences to consider during alignment
+      inference
     inputBinding:
       position: 102
       prefix: --alignment-number
@@ -65,8 +65,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: use --degree number of pairwise comparisons between closest sequences 
-      (default is 0)
+    doc: use --degree number of pairwise comparisons between closest sequences (default
+      is 0)
     inputBinding:
       position: 102
       prefix: --degree
@@ -74,8 +74,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: (default) enable dynamic edge re-weighting (--nodynamicweights to 
-      disable)
+    doc: (default) enable dynamic edge re-weighting (--nodynamicweights to disable)
     inputBinding:
       position: 102
       prefix: --dynamicweights
@@ -108,8 +107,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: gap factor; 0 for highest sensitivity (the internal effective minimum 
-      is 0.01); >1 for higher specificity (default is 1)
+    doc: gap factor; 0 for highest sensitivity (the internal effective minimum is
+      0.01); >1 for higher specificity (default is 1)
     inputBinding:
       position: 102
       prefix: --gapfactor
@@ -141,8 +140,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: use two sets of indel states in Pair HMM (use --noindel2 to use 1 set 
-      only)
+    doc: use two sets of indel states in Pair HMM (use --noindel2 to use 1 set only)
     inputBinding:
       position: 102
       prefix: --indel2
@@ -158,8 +156,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: (default for proteins) estimate emission probabilities averaged over 
-      all sequences (--nolearnemit-all to disable)
+    doc: (default for proteins) estimate emission probabilities averaged over all
+      sequences (--nolearnemit-all to disable)
     inputBinding:
       position: 102
       prefix: --learnemit-all
@@ -167,8 +165,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: (default for DNA and RNA) estimate emission probabilities for each pair
-      of sequences (--nolearnemit-bypair to disable)
+    doc: (default for DNA and RNA) estimate emission probabilities for each pair of
+      sequences (--nolearnemit-bypair to disable)
     inputBinding:
       position: 102
       prefix: --learnemit-bypair
@@ -176,17 +174,17 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: estimate indel probabilities for each pair of sequences (--nolearngap 
-      to disable)
+    doc: estimate indel probabilities for each pair of sequences (--nolearngap to
+      disable)
     inputBinding:
       position: 102
       prefix: --learngap
   - id: load_probs
     type:
       - 'null'
-      - string
-    doc: load pairwise posterior probabilities from a file rather than 
-      performing inference with Pair HMM
+      - File
+    doc: load pairwise posterior probabilities from a file rather than performing
+      inference with Pair HMM
     inputBinding:
       position: 102
       prefix: --load-probs
@@ -201,7 +199,7 @@ inputs:
   - id: logcopy
     type:
       - 'null'
-      - File
+      - string
     doc: log to file and standard error
     inputBinding:
       position: 102
@@ -217,7 +215,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: log to file
     inputBinding:
       position: 102
@@ -265,7 +263,7 @@ inputs:
   - id: mercator
     type:
       - 'null'
-      - string
+      - File
     doc: input Mercator constraints
     inputBinding:
       position: 102
@@ -274,8 +272,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum amount of sequence data (# of aligned pairs of characters) for 
-      training emission probs
+    doc: minimum amount of sequence data (# of aligned pairs of characters) for training
+      emission probs
     inputBinding:
       position: 102
       prefix: --minemitdata
@@ -283,8 +281,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum amount of sequence data (# of aligned pairs of characters) for 
-      training gap probs
+    doc: minimum amount of sequence data (# of aligned pairs of characters) for training
+      gap probs
     inputBinding:
       position: 102
       prefix: --mingapdata
@@ -292,8 +290,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimum fractional increase in log-likelihood per round of EM (default 
-      is 0.1)
+    doc: minimum fractional increase in log-likelihood per round of EM (default is
+      0.1)
     inputBinding:
       position: 102
       prefix: --mininc
@@ -318,8 +316,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: build --mst-max maximum spanning trees on input sequences for pairwise 
-      comparisons (default is 0)
+    doc: build --mst-max maximum spanning trees on input sequences for pairwise comparisons
+      (default is 0)
     inputBinding:
       position: 102
       prefix: --mst-max
@@ -327,8 +325,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: build --mst-min minimum spanning trees on input sequences for pairwise 
-      comparisons (default is 3)
+    doc: build --mst-min minimum spanning trees on input sequences for pairwise comparisons
+      (default is 3)
     inputBinding:
       position: 102
       prefix: --mst-min
@@ -336,8 +334,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: build --mst-palm minimum spanning palm trees on input sequences for 
-      pairwise comparisons (default is 0)
+    doc: build --mst-palm minimum spanning palm trees on input sequences for pairwise
+      comparisons (default is 0)
     inputBinding:
       position: 102
       prefix: --mst-palm
@@ -409,8 +407,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: align input nucleotide sequences (must all be nucleotide) in protein 
-      space
+    doc: align input nucleotide sequences (must all be nucleotide) in protein space
     inputBinding:
       position: 102
       prefix: --nucprot
@@ -418,8 +415,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: alignment to a reference sequence only (reference must be first 
-      sequence in file)
+    doc: alignment to a reference sequence only (reference must be first sequence
+      in file)
     inputBinding:
       position: 102
       prefix: --refalign
@@ -451,8 +448,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: (default) regularize learned emission and gap probabilities with 
-      Dirichlet prior (--noregularize to disable)
+    doc: (default) regularize learned emission and gap probabilities with Dirichlet
+      prior (--noregularize to disable)
     inputBinding:
       position: 102
       prefix: --regularize
@@ -460,8 +457,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: require that there be some detectable homology between all input 
-      sequences
+    doc: require that there be some detectable homology between all input sequences
     inputBinding:
       position: 102
       prefix: --require-homology
@@ -508,8 +504,32 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Alignment (multi-FASTA, or Stockholm with --stockholm)
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: Log file written with --logfile or --logcopy
+    outputBinding:
+      glob: '${ var f = inputs.logfile ? inputs.logfile : inputs.logcopy; return f
+        ? f : []; }'
+  - id: params_files
+    type:
+      type: array
+      items: File
+    doc: Learned emission and transition parameters written with --write-params
+    outputBinding:
+      glob: params.*
+  - id: posterior_files
+    type:
+      type: array
+      items: File
+    doc: Pairwise posterior probability files written with --write-posteriors
+    outputBinding:
+      glob: posterior.*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fsa:1.15.9--h5ca1c30_5
 stdout: fsa.out
+requirements:
+  - class: InlineJavascriptRequirement

@@ -38,15 +38,13 @@ inputs:
   - id: seed
     type:
       - 'null'
-      - string
+      - int
     doc: Seed to use for the random number generator
     inputBinding:
       position: 103
       prefix: --seed
   - id: r1_dst_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Read 1 destination. Output will be gzipped if ends in `.gz`
     inputBinding:
       position: 104

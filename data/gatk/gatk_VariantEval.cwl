@@ -16,12 +16,13 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --eval
     secondaryFiles:
       - .tbi?
     doc: Input evaluation file(s)
     inputBinding:
       position: 101
-      prefix: --eval
   - id: output
     type: string
     doc: File to which variants should be written
@@ -29,9 +30,7 @@ inputs:
       position: 101
       prefix: --output
   - id: reference
-    type:
-      - 'null'
-      - File
+    type: File
     secondaryFiles:
       - .fai
       - ^.dict
@@ -68,10 +67,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: cloud_index_prefetch_buffer
     type:
       - 'null'
@@ -94,10 +94,14 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --comparison
     doc: Input comparison file(s)
     inputBinding:
       position: 101
-      prefix: --comparison
+    secondaryFiles:
+      - .tbi?
+      - .idx?
   - id: create_output_bam_index
     type:
       - 'null'
@@ -182,19 +186,24 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --eval-module
     doc: One or more specific eval modules to apply to the eval track(s)
     inputBinding:
       position: 101
-      prefix: --eval-module
   - id: exclude_intervals
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals to exclude from processing
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --exclude-intervals
+    doc: One or more genomic intervals to exclude from processing (interval 
+      strings, or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --exclude-intervals
   - id: gatk_config_file
     type:
       - 'null'
@@ -229,15 +238,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --gold-standard
+    secondaryFiles:
+      - .tbi?
+      - .idx?
   - id: input
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --input
     doc: BAM/SAM/CRAM file containing reads
     inputBinding:
       position: 101
-      prefix: --input
   - id: interval_exclusion_padding
     type:
       - 'null'
@@ -274,11 +287,15 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals over which to operate
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --intervals
+    doc: One or more genomic intervals over which to operate (interval strings, 
+      or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --intervals
   - id: keep_ac0
     type:
       - 'null'
@@ -297,16 +314,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --known-cnvs
+    secondaryFiles:
+      - .tbi?
+      - .idx?
   - id: known_names
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --knownNames
     doc: Name of feature bindings containing variant sites that should be 
       treated as known when splitting eval features into known and novel subsets
     inputBinding:
       position: 101
-      prefix: --knownNames
   - id: lenient
     type:
       - 'null'
@@ -387,10 +408,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --read-index
     doc: Indices to use for the read inputs.
     inputBinding:
       position: 101
-      prefix: --read-index
   - id: read_validation_stringency
     type:
       - 'null'
@@ -414,10 +436,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample
     doc: Derive eval and comp contexts using only these sample genotypes
     inputBinding:
       position: 101
-      prefix: --sample
   - id: sample_ploidy
     type:
       - 'null'
@@ -439,19 +462,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --selectExps
     doc: One or more stratifications to use when evaluating the data
     inputBinding:
       position: 101
-      prefix: --selectExps
   - id: select_names
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --selectNames
     doc: Names to use for the list of stratifications (must be a 1-to-1 mapping)
     inputBinding:
       position: 101
-      prefix: --selectNames
   - id: sequence_dictionary
     type:
       - 'null'
@@ -478,16 +503,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --strat-intervals
+    secondaryFiles:
+      - .tbi?
+      - .idx?
   - id: stratification_module
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --stratification-module
     doc: One or more specific stratification modules to apply to the eval 
       track(s)
     inputBinding:
       position: 101
-      prefix: --stratification-module
   - id: tmp_dir
     type:
       - 'null'

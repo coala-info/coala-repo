@@ -2,26 +2,28 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: freddie_split.py
 label: freddie_freddie_split.py
-doc: "Extract alignment information from BAM/SAM file and splits reads into distinct
-  transcriptional intervals\n\nTool homepage: https://github.com/vpc-ccg/freddie"
+doc: "Extract alignment information from BAM/SAM file and splits reads into distinct\
+  \ transcriptional intervals\n\nTool homepage: https://github.com/vpc-ccg/freddie"
 inputs:
   - id: reads
     type:
       type: array
       items: File
-    doc: Space separated paths to reads in FASTQ or FASTA format used to extract
-      polyA tail information. If the file ends with .gz, it will be read using 
-      gzip
+    doc: Space separated paths to reads in FASTQ or FASTA format used to extract polyA
+      tail information. If the file ends with .gz, it will be read using gzip
     inputBinding:
-      position: 1
       prefix: --reads
+      position: 101
   - id: bam
     type: File
-    doc: Path to sorted and indexed BAM file of reads. Assumes splice aligner is
-      used to the genome. Prefers deSALT
+    doc: Path to sorted and indexed BAM file of reads. Assumes splice aligner is used
+      to the genome. Prefers deSALT
     inputBinding:
       position: 102
       prefix: --bam
+    secondaryFiles:
+      - pattern: .bai
+        required: true
   - id: consider_nonspliced
     type:
       - 'null'

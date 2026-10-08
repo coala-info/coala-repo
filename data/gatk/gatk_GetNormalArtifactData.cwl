@@ -10,19 +10,21 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --input
     doc: BAM/SAM/CRAM file containing reads
     inputBinding:
       position: 101
-      prefix: --input
   - id: normal_sample
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --normal-sample
     doc: BAM sample name of normal. May be URL-encoded as output by 
       GetSampleName with -encode argument.
     inputBinding:
       position: 101
-      prefix: --normal-sample
   - id: output
     type: string
     doc: The output table
@@ -30,11 +32,10 @@ inputs:
       position: 101
       prefix: --output
   - id: reference
-    type:
-      - 'null'
-      - File
+    type: File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file
     inputBinding:
       position: 101
@@ -60,10 +61,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: cloud_index_prefetch_buffer
     type:
       - 'null'
@@ -127,10 +129,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --disable-read-filter
     doc: Read filters to be disabled before analysis
     inputBinding:
       position: 101
-      prefix: --disable-read-filter
   - id: disable_sequence_dictionary_validation
     type:
       - 'null'
@@ -152,11 +155,15 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals to exclude from processing
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --exclude-intervals
+    doc: One or more genomic intervals to exclude from processing (interval 
+      strings, or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --exclude-intervals
   - id: gatk_config_file
     type:
       - 'null'
@@ -218,21 +225,26 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: One or more genomic intervals over which to operate
+        items:
+          - string
+          - File
+        inputBinding:
+          prefix: --intervals
+    doc: One or more genomic intervals over which to operate (interval strings, 
+      or interval list / BED / VCF files)
     inputBinding:
       position: 101
-      prefix: --intervals
   - id: inverted_read_filter
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --inverted-read-filter
     doc: Inverted (with flipped acceptance/failure conditions) read filters 
       applied before analysis (after regular read filters).
     inputBinding:
       position: 101
-      prefix: --inverted-read-filter
   - id: lenient
     type:
       - 'null'
@@ -272,19 +284,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --read-filter
     doc: Read filters to be applied before analysis
     inputBinding:
       position: 101
-      prefix: --read-filter
   - id: read_index
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --read-index
     doc: Indices to use for the read inputs.
     inputBinding:
       position: 101
-      prefix: --read-index
   - id: read_validation_stringency
     type:
       - 'null'

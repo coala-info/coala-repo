@@ -46,21 +46,23 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --node
     doc: Nodes to search. Multiple can be provided (Eg. gaftools view .... -n s1
       -n s2 -n s3 .....).
     inputBinding:
       position: 102
-      prefix: --node
   - id: region
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --region
     doc: Regions to search. Multiple can be provided (Eg. gaftools view .... -r 
       chr1:10-20 -r chr1:50-60 .....).
     inputBinding:
       position: 102
-      prefix: --region
   - id: output_path
     type: string
     inputBinding:

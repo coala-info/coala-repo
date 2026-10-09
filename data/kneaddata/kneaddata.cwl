@@ -97,7 +97,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: log file
     inputBinding:
       position: 101
@@ -200,11 +200,10 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: location of reference database (additional arguments add databases)
-    inputBinding:
-      position: 101
-      prefix: --reference-db
+        items: Directory
+        inputBinding:
+          prefix: --reference-db
+    doc: directory holding the bowtie2 index files of a reference database (one entry per database; each is passed with its own --reference-db)
   - id: remove_intermediate_output
     type:
       - 'null'
@@ -347,13 +346,6 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
-    outputBinding:
-      glob: $(inputs.output_prefix)*
   - id: output_dir_dir
     type:
       - 'null'

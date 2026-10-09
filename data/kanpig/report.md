@@ -1,5 +1,14 @@
 # kanpig CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kanpig_gt | PASS |  |
+| kanpig_mosaic | PASS |  |
+| kanpig_plup | PASS |  |
+| kanpig_trio | PASS |  |
+
 ## kanpig_plup
 
 ### Tool Description

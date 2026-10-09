@@ -1,5 +1,11 @@
 # komb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| komb | PASS | ran on nf-core SARS-CoV-2 paired reads; wrote unitigs, edge list and anomaly tables; fixed reads to a staged File[] and added MPI env settings |
+
 ## komb
 
 ### Tool Description

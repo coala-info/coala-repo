@@ -10,7 +10,7 @@ inputs:
   - id: input_files
     type:
       type: array
-      items: string
+      items: File
     doc: Tab-delimited file with taxonomy IDs and (optionally) query IDs, 
       magnitudes and scores. Lines beginning with "#" will be ignored. By 
       default, separate datasets will be created for each input (see [-c]).
@@ -94,9 +94,8 @@ inputs:
       position: 102
       prefix: -d
   - id: output_file
-    type:
-      - 'null'
-      - string
+    type: string
+    default: taxonomy.krona.html
     doc: Output file name.
     inputBinding:
       position: 102
@@ -154,6 +153,11 @@ inputs:
       position: 102
       prefix: -t
 outputs:
+  - id: krona_html
+    type: File
+    doc: Krona chart
+    outputBinding:
+      glob: $(inputs.output_file)
   - id: stdout
     type: stdout
     doc: Standard output

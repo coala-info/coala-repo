@@ -1,5 +1,11 @@
 # jgoslin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jgoslin | PASS | image command is jgoslin (jgoslin-cli does not exist); fixed |
+
 ## jgoslin
 
 ### Tool Description

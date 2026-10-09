@@ -1,5 +1,17 @@
 # kmercamel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kmercamel_compute | PASS | repo S. pneumoniae genome, k=31: masked superstring represents exactly the 2145215 input k-mers (checked in Python); -M mask also valid |
+| kmercamel_lowerbound | PASS | lower bound 2161146 is below the computed superstring length 2161259 |
+| kmercamel_maskopt | PASS | maxone mask applied to the superstring still represents exactly the 2145215 input k-mers |
+| kmercamel_ms2mssep | PASS | mask and superstring files written and rejoined by mssep2ms to the identical sequence |
+| kmercamel_ms2spss | PASS | simplitigs contain exactly the 2145215 input k-mers (checked in Python) |
+| kmercamel_mssep2ms | PASS | mask and superstring files from ms2mssep rejoin to the identical masked superstring |
+| kmercamel_spss2ms | PASS | repo simplitigs-k31.fa converted to a masked superstring with exactly its 2145215 k-mers |
+
 ## kmercamel_compute
 
 ### Tool Description

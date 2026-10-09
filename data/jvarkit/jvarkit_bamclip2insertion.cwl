@@ -4,70 +4,51 @@ baseCommand:
   - jvarkit
   - bamclip2insertion
 label: jvarkit_bamclip2insertion
-doc: "Clip reads to a given insertion point and output them as BAM.\n\nTool homepage:
-  https://github.com/lindenb/jvarkit"
+doc: "Convert the soft-clipped parts of reads into insertions in a BAM file.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:
-  - id: input_bam
-    type: File
-    doc: Input BAM file
-    inputBinding:
-      position: 1
-  - id: clip_after
+  - id: bam_files
     type:
-      - 'null'
-      - boolean
-    doc: Clip reads that end after the insertion point
+      type: array
+      items: File
+    doc: Input BAM/CRAM files
     inputBinding:
-      position: 102
-      prefix: --clip-after
-  - id: clip_before
-    type:
-      - 'null'
-      - boolean
-    doc: Clip reads that start before the insertion point
-    inputBinding:
-      position: 102
-      prefix: --clip-before
-  - id: pos
+      position: 100
+  - id: bam_compression
     type:
       - 'null'
       - int
-    doc: Position (1-based)
+    doc: "Compression Level. 0: no compression. 9: max compression (default: 5)"
     inputBinding:
-      position: 102
-      prefix: --pos
-  - id: ref
+      position: 1
+      prefix: --bamcompression
+  - id: out
     type:
       - 'null'
       - string
-    doc: Reference name
+    doc: "Output file. Optional. Default: stdout"
     inputBinding:
-      position: 102
-      prefix: --ref
-  - id: reference_dict
+      position: 2
+      prefix: --out
+  - id: sam_output_format
     type:
       - 'null'
-      - File
-    doc: Reference dictionary file (.dict)
+      - string
+    doc: "Sam output format. One of BAM, SAM, CRAM (default: SAM)"
     inputBinding:
-      position: 102
-      prefix: --reference-dict
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 103
-      prefix: --output
+      position: 3
+      prefix: --samoutputformat
 outputs:
-  - id: output
+  - id: output_file
     type:
       - 'null'
       - File
-    doc: Output BAM file
+    doc: Output file, when the output option is given
     outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result, when no output file is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jvarkit:2024.08.25--hdfd78af_2
+stdout: jvarkit_bamclip2insertion.out

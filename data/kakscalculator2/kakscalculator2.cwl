@@ -9,13 +9,13 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'Genetic code table (e.g., 1: Standard, 2: Vertebrate Mitochondrial)'
+    doc: 'Genetic code table (default 1: Standard Code; 2: Vertebrate Mitochondrial, 3: Yeast Mitochondrial, 4: Mold Mitochondrial, 5: Invertebrate Mitochondrial, 6: Ciliate, Dasycladacean and Hexamita, 9: Echinoderm and Flatworm Mitochondrial, 10: Euplotid Nuclear, 11: Bacterial and Plant Plastid, 12: Alternative Yeast Nuclear, 13: Ascidian Mitochondrial, 14: Alternative Flatworm Mitochondrial, 15: Blepharisma Nuclear, 16: Chlorophycean Mitochondrial, 21: Trematode Mitochondrial, 22: Scenedesmus obliquus mitochondrial, 23: Thraustochytrium Mitochondrial)'
     inputBinding:
       position: 101
       prefix: -c
   - id: input_file
     type: File
-    doc: Name of input file in AXT format
+    doc: Axt file name for calculating Ka & Ks.
     inputBinding:
       position: 101
       prefix: -i
@@ -23,29 +23,21 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Method for calculating Ka and Ks: NG, LWL, LPB, MLWL, MLPB, GY, YN, MYN,
-      MA, MS, GYN'
+    doc: 'Methods for estimating Ka and Ks (default MA): NG, LWL, LPB, MLWL, MLPB, GY, YN, MYN,
+      MS (model selection according to the AICc), MA (model averaging), GNG, GLWL, GLPB, GMLWL, GMLPB, GYN, GMYN'
     inputBinding:
       position: 101
       prefix: -m
-  - id: show_details
-    type:
-      - 'null'
-      - boolean
-    doc: Output details of each codon
-    inputBinding:
-      position: 101
-      prefix: -d
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name for saving results.
     inputBinding:
-      position: 102
-      prefix: --output-file
+      position: 101
+      prefix: -o
 outputs:
   - id: output_file
     type: File
-    doc: Name of output file
+    doc: Results table (Ka, Ks, Ka/Ks and more)
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:

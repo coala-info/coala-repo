@@ -1,5 +1,11 @@
 # jmodeltest CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jmodeltest | Failed | image problem: the jmodeltest wrapper script fails because /usr/lib/java-wrappers/java-wrappers.sh is missing |
+
 ## jmodeltest
 
 ### Tool Description

@@ -4,64 +4,58 @@ baseCommand:
   - jvarkit
   - backlocate
 label: jvarkit_backlocate
-doc: "Backlocate sequences to genomic coordinates.\n\nTool homepage: https://github.com/lindenb/jvarkit"
+doc: "Map a mutation on a protein back to the genomic coordinates.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:
-  - id: files
+  - id: mutation_files
     type:
       type: array
       items: File
-    doc: Files to process
+    doc: Text files with one mutation per line (gene name and protein mutation)
+    inputBinding:
+      position: 100
+  - id: gtf
+    type: File
+    doc: "A GTF (General Transfer Format) file. See https://www.ensembl.org/info/website/upload/gff.html . Please note that CDS are only detected if a start and stop codons are defined."
     inputBinding:
       position: 1
-  - id: gtf_file
-    type: File
-    doc: A GTF (General Transfer Format) file. See 
-      https://www.ensembl.org/info/website/upload/gff.html . Please note that 
-      CDS are only detected if a start and stop codons are defined.
-    inputBinding:
-      position: 102
       prefix: --gtf
-  - id: help_format
+  - id: out
     type:
       - 'null'
       - string
-    doc: What kind of help. One of [usage,markdown,xml].
+    doc: "Output file. Optional. Default: stdout"
     inputBinding:
-      position: 102
-      prefix: --helpFormat
+      position: 2
+      prefix: --out
   - id: print_seq
     type:
       - 'null'
       - boolean
-    doc: print mRNA & protein sequences
+    doc: "print mRNA & protein sequences"
     inputBinding:
-      position: 102
+      position: 3
       prefix: --printSeq
   - id: reference
     type: File
+    doc: Indexed fasta Reference file. This file must be indexed with samtools faidx and with picard/gatk CreateSequenceDictionary or samtools dict
     secondaryFiles:
       - .fai
-    doc: Indexed fasta Reference file. This file must be indexed with samtools 
-      faidx and with picard/gatk CreateSequenceDictionary or samtools dict
+      - "^.dict"
     inputBinding:
-      position: 102
+      position: 4
       prefix: --reference
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: 'Output file. Optional . Default: stdout'
+    doc: Output file, when the output option is given
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result, when no output file is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jvarkit:2024.08.25--hdfd78af_2
+stdout: jvarkit_backlocate.out

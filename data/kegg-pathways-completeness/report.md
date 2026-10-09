@@ -1,5 +1,12 @@
 # kegg-pathways-completeness CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kegg-pathways-completeness_give_completeness | PASS |  |
+| kegg-pathways-completeness_plot_modules_graphs | PASS | the -m and pydot modes draw correct module graphs; the -l modules file option crashes in the tool because -s must also be given and argparse forbids both |
+
 ## kegg-pathways-completeness_give_completeness
 
 ### Tool Description

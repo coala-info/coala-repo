@@ -1,37 +1,13 @@
 # kbo-cli CWL Generation Report
 
-## kbo-cli_kbo
+## Real Data Test
 
-### Tool Description
-kbo
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kbo-cli:0.2.1--h4349ce8_0
-- **Homepage**: https://docs.rs/kbo
-- **Package**: https://anaconda.org/channels/bioconda/packages/kbo-cli/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/kbo-cli/overview
-- **Total Downloads**: 543
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/tmaklin/kbo-cli
-- **Stars**: N/A
-### Original Help Text
-```text
-Usage: kbo [COMMAND]
-
-Commands:
-  build  
-  call   
-  find   
-  map    
-  help   Print this message or the help of the given subcommand(s)
-
-Options:
-  -h, --help     Print help
-  -V, --version  Print version
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| kbo-cli_kbo_build | PASS |  |
+| kbo-cli_kbo_call | PASS |  |
+| kbo-cli_kbo_find | PASS | reference mode checked; the --index mode crashes with a Rust panic (tool bug) |
+| kbo-cli_kbo_map | PASS |  |
 
 ## kbo-cli_kbo_call
 

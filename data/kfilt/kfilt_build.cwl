@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --kmer-size
   - id: kmers
-    type:
-      - 'null'
-      - string
+    type: File
     doc: Input k-mer file (meryl print output)
     inputBinding:
       position: 101

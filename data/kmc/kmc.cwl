@@ -2,214 +2,214 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: kmc
 label: kmc
-doc: "K-Mer Counter\n\nTool homepage: https://github.com/refresh-bio/kmc"
+doc: "K-Mer Counter (KMC) counts the k-mers of FASTA, FASTQ, BAM or KMC inputs.\n\nTool homepage: https://github.com/refresh-bio/KMC"
 inputs:
-  - id: input_file_name
-    type: string
-    doc: single file in specified (-f switch) format (gziped or not)
+  - id: input_file
+    type: ['null', File]
+    doc: "Single input file in the format given by input_format (gzipped or not)"
     inputBinding:
-      position: 1
+      position: 10
+  - id: input_list
+    type: ['null', File]
+    doc: "Text file listing input files, one per line (given to kmc as @list); the listed files must be given in input_list_files"
+    inputBinding:
+      position: 10
+      valueFrom: $("@" + self.basename)
+  - id: input_list_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: "Files named in input_list, staged next to the list file"
   - id: output_file_name
     type: string
-    doc: output file name
+    doc: "Output name prefix (kmc writes <name>.kmc_pre and <name>.kmc_suf, or <name>.kff)"
     inputBinding:
-      position: 2
+      position: 11
   - id: working_directory
-    type: Directory
-    doc: working directory
+    type: string
+    default: "kmc_tmp"
+    doc: "Working directory for temporary files (created before the run)"
     inputBinding:
-      position: 3
-  - id: canonical_form
-    type:
-      - 'null'
-      - boolean
-    doc: turn off transformation of k-mers into canonical form
-    inputBinding:
-      position: 104
-      prefix: -b
-  - id: count_homopolymer_compressed
-    type:
-      - 'null'
-      - boolean
-    doc: count homopolymer compressed k-mers (approximate and experimental)
-    inputBinding:
-      position: 104
-      prefix: -hc
-  - id: estimate_histogram
-    type:
-      - 'null'
-      - boolean
-    doc: only estimate histogram of k-mers occurrences instead of exact k-mer 
-      counting
-    inputBinding:
-      position: 104
-      prefix: -e
-  - id: exclude_less_than_count
-    type:
-      - 'null'
-      - int
-    doc: exclude k-mers occurring less than <value> times
-    inputBinding:
-      position: 104
-      prefix: -ci
-  - id: exclude_more_than_count
-    type:
-      - 'null'
-      - float
-    doc: exclude k-mers occurring more of than <value> times
-    inputBinding:
-      position: 104
-      prefix: -cx
-  - id: execution_summary_json
-    type:
-      - 'null'
-      - File
-    doc: file name with execution summary in JSON format
-    inputBinding:
-      position: 104
-      prefix: -j
-  - id: fastq_reading_threads
-    type:
-      - 'null'
-      - int
-    doc: number of FASTQ reading threads
-    inputBinding:
-      position: 104
-      prefix: -sf
-  - id: hide_percentage_progress
-    type:
-      - 'null'
-      - boolean
-    doc: hide percentage progress
-    inputBinding:
-      position: 104
-      prefix: -hp
-  - id: input_format
-    type:
-      - 'null'
-      - string
-    doc: input in FASTA format (-fa), FASTQ format (-fq), multi FASTA (-fm) or 
-      BAM (-fbam) or KMC (-fkmc)
-    inputBinding:
-      position: 104
-      prefix: -f
-  - id: kmer_length
-    type:
-      - 'null'
-      - int
-    doc: k-mer length (k from 1 to 256)
-    inputBinding:
-      position: 104
-      prefix: -k
-  - id: max_counter_value
-    type:
-      - 'null'
-      - int
-    doc: maximal value of a counter
-    inputBinding:
-      position: 104
-      prefix: -cs
-  - id: max_ram_gb
-    type:
-      - 'null'
-      - int
-    doc: max amount of RAM in GB (from 1 to 1024)
-    inputBinding:
-      position: 104
-      prefix: -m
-  - id: num_bins
-    type:
-      - 'null'
-      - int
-    doc: number of bins
-    inputBinding:
-      position: 104
-      prefix: -n
-  - id: optimize_output_size
-    type:
-      - 'null'
-      - boolean
-    doc: optimize output database size (may increase running time)
-    inputBinding:
-      position: 104
-      prefix: --opt-out-size
-  - id: output_format
-    type:
-      - 'null'
-      - string
-    doc: output in KMC of KFF format
-    inputBinding:
-      position: 104
-      prefix: -o
-  - id: ram_only_mode
-    type:
-      - 'null'
-      - boolean
-    doc: turn on RAM-only mode
-    inputBinding:
-      position: 104
-      prefix: -r
-  - id: signature_length
-    type:
-      - 'null'
-      - int
-    doc: signature length (5, 6, 7, 8, 9, 10, 11)
-    inputBinding:
-      position: 104
-      prefix: -p
-  - id: splitting_threads
-    type:
-      - 'null'
-      - int
-    doc: number of splitting threads
-    inputBinding:
-      position: 104
-      prefix: -sp
-  - id: strict_memory_mode
-    type:
-      - 'null'
-      - boolean
-    doc: use strict memory mode (memory limit from -m<n> switch will not be 
-      exceeded)
-    inputBinding:
-      position: 104
-      prefix: -sm
-  - id: threads_2nd_stage
-    type:
-      - 'null'
-      - int
-    doc: number of threads for 2nd stage
-    inputBinding:
-      position: 104
-      prefix: -sr
-  - id: total_threads
-    type:
-      - 'null'
-      - int
-    doc: 'total number of threads (default: no. of CPU cores)'
-    inputBinding:
-      position: 104
-      prefix: -t
+      position: 12
   - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: verbose mode (shows all parameter settings)
+    type: ['null', boolean]
+    doc: "Verbose mode (shows all parameter settings)"
     inputBinding:
-      position: 104
-      prefix: -v
+      position: 1
+      prefix: "-v"
+  - id: kmer_length
+    type: ['null', int]
+    doc: "k-mer length (k from 1 to 256; default: 25)"
+    inputBinding:
+      position: 1
+      prefix: "-k"
+      separate: false
+  - id: max_ram_gb
+    type: ['null', int]
+    doc: "Max amount of RAM in GB (from 1 to 1024); default: 12"
+    inputBinding:
+      position: 1
+      prefix: "-m"
+      separate: false
+  - id: strict_memory_mode
+    type: ['null', boolean]
+    doc: "Use strict memory mode (memory limit from -m will not be exceeded)"
+    inputBinding:
+      position: 1
+      prefix: "-sm"
+  - id: count_homopolymer_compressed
+    type: ['null', boolean]
+    doc: "Count homopolymer compressed k-mers (approximate and experimental)"
+    inputBinding:
+      position: 1
+      prefix: "-hc"
+  - id: signature_length
+    type: ['null', int]
+    doc: "Signature length (5, 6, 7, 8, 9, 10, 11); default: 9"
+    inputBinding:
+      position: 1
+      prefix: "-p"
+      separate: false
+  - id: input_format
+    type: ['null', string]
+    doc: "Input format: a = FASTA, q = FASTQ (default), m = multi FASTA, bam = BAM, kmc = KMC database (given to kmc as -f<value>)"
+    inputBinding:
+      position: 1
+      prefix: "-f"
+      separate: false
+  - id: exclude_less_than_count
+    type: ['null', int]
+    doc: "Exclude k-mers occurring less than this many times (default: 2)"
+    inputBinding:
+      position: 1
+      prefix: "-ci"
+      separate: false
+  - id: max_counter_value
+    type: ['null', int]
+    doc: "Maximal value of a counter (default: 255)"
+    inputBinding:
+      position: 1
+      prefix: "-cs"
+      separate: false
+  - id: exclude_more_than_count
+    type: ['null', int]
+    doc: "Exclude k-mers occurring more than this many times (default: 1e9)"
+    inputBinding:
+      position: 1
+      prefix: "-cx"
+      separate: false
+  - id: turn_off_canonical_form
+    type: ['null', boolean]
+    doc: "Turn off transformation of k-mers into canonical form"
+    inputBinding:
+      position: 1
+      prefix: "-b"
+  - id: ram_only_mode
+    type: ['null', boolean]
+    doc: "Turn on RAM-only mode"
+    inputBinding:
+      position: 1
+      prefix: "-r"
+  - id: num_bins
+    type: ['null', int]
+    doc: "Number of bins"
+    inputBinding:
+      position: 1
+      prefix: "-n"
+      separate: false
+  - id: total_threads
+    type: ['null', int]
+    doc: "Total number of threads (default: no. of CPU cores)"
+    inputBinding:
+      position: 1
+      prefix: "-t"
+      separate: false
+  - id: fastq_reading_threads
+    type: ['null', int]
+    doc: "Number of FASTQ reading threads"
+    inputBinding:
+      position: 1
+      prefix: "-sf"
+      separate: false
+  - id: splitting_threads
+    type: ['null', int]
+    doc: "Number of splitting threads"
+    inputBinding:
+      position: 1
+      prefix: "-sp"
+      separate: false
+  - id: threads_2nd_stage
+    type: ['null', int]
+    doc: "Number of threads for 2nd stage"
+    inputBinding:
+      position: 1
+      prefix: "-sr"
+      separate: false
+  - id: execution_summary_json
+    type: ['null', string]
+    doc: "File name for the execution summary in JSON format"
+    inputBinding:
+      position: 1
+      prefix: "-j"
+      separate: false
   - id: without_output
-    type:
-      - 'null'
-      - boolean
-    doc: without output
+    type: ['null', boolean]
+    doc: "Without output"
     inputBinding:
-      position: 104
-      prefix: -w
+      position: 1
+      prefix: "-w"
+  - id: output_format
+    type: ['null', string]
+    doc: "Output in KMC or KFF format: kmc (default) or kff (given to kmc as -o<value>)"
+    inputBinding:
+      position: 1
+      prefix: "-o"
+      separate: false
+  - id: hide_percentage_progress
+    type: ['null', boolean]
+    doc: "Hide percentage progress (default: false)"
+    inputBinding:
+      position: 1
+      prefix: "-hp"
+  - id: estimate_histogram
+    type: ['null', boolean]
+    doc: "Only estimate histogram of k-mer occurrences instead of exact k-mer counting"
+    inputBinding:
+      position: 1
+      prefix: "-e"
+  - id: optimize_output_size
+    type: ['null', boolean]
+    doc: "Optimize output database size (may increase running time)"
+    inputBinding:
+      position: 1
+      prefix: "--opt-out-size"
 outputs:
+  - id: kmc_database
+    type:
+      type: array
+      items: File
+    doc: "K-mer database files (<name>.kmc_pre and <name>.kmc_suf, or <name>.kff)"
+    outputBinding:
+      glob:
+        - "$(inputs.output_file_name).kmc_*"
+        - "$(inputs.output_file_name).kff"
+  - id: summary_json
+    type: ['null', File]
+    doc: "Execution summary written with -j"
+    outputBinding:
+      glob: $(inputs.execution_summary_json)
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: "Standard output"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.working_directory, "listing": []})'
+        writable: true
+      - $(inputs.input_list_files)
+      - $(inputs.input_list)
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmc:3.2.4--h5ca1c30_4

@@ -1,5 +1,11 @@
 # kast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kast | PASS | search and pairwise modes checked (self hit scores 0); the tool crashes with --distance-type all (tool bug) |
+
 ## kast
 
 ### Tool Description

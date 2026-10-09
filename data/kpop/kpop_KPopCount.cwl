@@ -2,119 +2,107 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: KPopCount
 label: kpop_KPopCount
-doc: "KPopCount version 14 (18-Mar-2024)\n\nTool homepage: https://github.com/PaoloRibeca/KPop"
+doc: "Computes k-mer spectra from FASTA or FASTQ files.\n\nTool homepage: https://github.com/PaoloRibeca/KPop"
 inputs:
-  - id: content
+  - id: fasta
     type:
       - 'null'
-      - string
-    doc: "how file contents should be interpreted.\n    When content is 'DNA-ss' or
-      'protein', the sequence is hashed;\n    when content is 'DNA-ds', both sequence
-      and reverse complement are hashed.\n    'DNA-ss' prevents automatic matching
-      of reverse-complemented sequences;\n    use it only when comparing a set of
-      single, homogeneus sequences"
+      - type: array
+        items: File
+        inputBinding:
+          prefix: -f
+    doc: FASTA input file containing sequences. More than one FASTA input can
+      be given, but not FASTA and FASTQ together.
     inputBinding:
-      position: 101
-      prefix: --content
-  - id: fasta_file
+      position: 2
+  - id: single_end
     type:
       - 'null'
-      - File
-    doc: "FASTA input file containing sequences.\n    You can specify more than one
-      FASTA input, but not FASTA and FASTQ inputs\n    at the same time. Contents
-      are expected to be homogeneous across inputs"
+      - type: array
+        items: File
+        inputBinding:
+          prefix: -s
+    doc: FASTQ input file containing single-end sequencing reads. More than one
+      input can be given, but not FASTQ and FASTA together.
     inputBinding:
-      position: 101
-      prefix: --fasta
+      position: 3
+  - id: paired_end
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Two FASTQ input files (read 1 and read 2) containing paired-end
+      sequencing reads.
+    inputBinding:
+      position: 4
+      prefix: '-p'
   - id: k_mer_length
     type:
       - 'null'
       - int
-    doc: "k-mer length\n    (must be positive, and <= 30 for DNA or <= 12 for protein)"
+    doc: k-mer length (must be positive, and <= 30 for DNA or <= 12 for
+      protein; default 12).
     inputBinding:
-      position: 101
-      prefix: --k-mer-size
+      position: 5
+      prefix: '-k'
   - id: max_results_size
     type:
       - 'null'
       - int
-    doc: "maximum number of k-mer hashes to be kept in memory at any given time.\n\
-      \    If more are present, the ones corresponding to the lowest cardinality\n\
-      \    will be removed from memory and printed out, and there will be\n    repeated
-      hashes in the output"
+    doc: Maximum number of k-mer hashes to be kept in memory at any given time
+      (default 16777216).
     inputBinding:
-      position: 101
-      prefix: --max-results-size
+      position: 6
+      prefix: '-M'
+  - id: content
+    type:
+      - 'null'
+      - string
+    doc: "How file contents should be interpreted: DNA-ss, DNA-single-stranded,
+      DNA-ds, DNA-double-stranded or protein (default DNA-ds)."
+    inputBinding:
+      position: 7
+      prefix: '-C'
+  - id: label
+    type:
+      - 'null'
+      - string
+    doc: Label to be given to the k-mer spectrum in the output file. Either
+      label or one_spectrum_per_sequence is mandatory.
+    inputBinding:
+      position: 8
+      prefix: '-l'
   - id: one_spectrum_per_sequence
-    type: boolean
-    doc: "output one spectrum per input sequence, using the sequence name as label.\n\
-      \    Sequence names must not contain double quote \" characters.\n    Either
-      option '-l' or option '-L' is mandatory"
-    inputBinding:
-      position: 101
-      prefix: --one-spectrum-per-sequence
-  - id: output_vector_label
-    type: string
-    doc: "label to be given to the k-mer spectrum in the output file.\n    It must
-      not contain double quote \" characters.\n    Either option '-l' or option '-L'
-      is mandatory"
-    inputBinding:
-      position: 101
-      prefix: --label
-  - id: paired_end_fastq1
     type:
       - 'null'
-      - type: array
-        items: File
-    doc: "FASTQ input files containing paired-end sequencing reads\n    You can specify
-      more than one FASTQ input, but not FASTQ and FASTA inputs\n    at the same time.
-      Contents are expected to be homogeneous across inputs"
+      - boolean
+    doc: Output one spectrum per input sequence, using the sequence name as
+      label.
     inputBinding:
-      position: 101
-      prefix: --paired-end
-  - id: paired_end_fastq2
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: "FASTQ input files containing paired-end sequencing reads\n    You can specify
-      more than one FASTQ input, but not FASTQ and FASTA inputs\n    at the same time.
-      Contents are expected to be homogeneous across inputs"
-    inputBinding:
-      position: 101
-      prefix: --paired-end
-  - id: single_end_fastq
-    type:
-      - 'null'
-      - File
-    doc: "FASTQ input file containing single-end sequencing reads\n    You can specify
-      more than one FASTQ input, but not FASTQ and FASTA inputs\n    at the same time.
-      Contents are expected to be homogeneous across inputs"
-    inputBinding:
-      position: 101
-      prefix: --single-end
+      position: 9
+      prefix: '-L'
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: set verbose execution
+    doc: Set verbose execution.
     inputBinding:
-      position: 101
-      prefix: --verbose
+      position: 10
+      prefix: '-v'
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Name of the generated output file.
     inputBinding:
-      position: 102
-      prefix: --output-file
+      position: 11
+      prefix: '-o'
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: name of generated output file
+    doc: k-mer spectra table written by KPopCount
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.output_file_path)'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

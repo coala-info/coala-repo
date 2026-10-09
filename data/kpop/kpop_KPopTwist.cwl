@@ -1,140 +1,117 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: KPopTwist_
+baseCommand: KPopTwist
 label: kpop_KPopTwist
-doc: "This is KPopTwist version 20 [29-Feb-2024]\n\nTool homepage: https://github.com/PaoloRibeca/KPop"
+doc: "Generates an unsupervised coordinate transformation (twister) from a database of k-mer spectra and the twisted spectra.\n\nTool homepage: https://github.com/PaoloRibeca/KPop"
 inputs:
+  - id: input_db
+    type: File
+    doc: k-mer database (file with extension .KPopCounter) to twist.
+    inputBinding:
+      position: 1
+      prefix: '-i'
+      valueFrom: '${ return self.path.replace(/\.KPopCounter$/, ""); }'
+  - id: output_prefix
+    type: string
+    doc: Prefix for the generated twister and twisted files (extensions
+      .KPopTwister and .KPopTwisted).
+    inputBinding:
+      position: 2
+      prefix: '-o'
   - id: fraction
     type:
       - 'null'
       - float
-    doc: fraction of the k-mers to be considered and resampled before twisting
+    doc: Fraction of the k-mers to be considered and resampled before twisting
+      (default 1).
     inputBinding:
-      position: 101
-      prefix: --fraction
-  - id: input_prefix
-    type: string
-    doc: "load the specified k-mer database in the register and twist it.\n    File
-      extension is automatically determined\n     (will be .KPopCounter).\n    The
-      prefix is then re-used for output\n     (and the output files will be given
-      extensions\n      .KPopTwister and .KPopTwisted)"
-    inputBinding:
-      position: 101
-      prefix: --input
-  - id: keep_temporaries
-    type:
-      - 'null'
-      - boolean
-    doc: keep temporary files rather than deleting them in the end
-    inputBinding:
-      position: 101
-      prefix: --keep-temporaries
-  - id: normalize
-    type:
-      - 'null'
-      - boolean
-    doc: whether to normalize spectra after transformation and before twisting
-    inputBinding:
-      position: 101
-      prefix: --normalize
-  - id: normalize_counts
-    type:
-      - 'null'
-      - boolean
-    doc: whether to normalize spectra after transformation and before twisting
-    inputBinding:
-      position: 101
-      prefix: --normalize-counts
-  - id: output_prefix
-    type: string
-    doc: "use this prefix when dumping generated twister and twisted sequences.\n\
-      \    File extensions are automatically determined\n     (will be .KPopTwister
-      and .KPopTwisted)"
-    inputBinding:
-      position: 101
-      prefix: --output
-  - id: power
-    type:
-      - 'null'
-      - float
-    doc: "raise counts to this power before transforming them.\n    A power of 0 when
-      the 'pseudocounts' method is used\n    performs a logarithmic transformation"
-    inputBinding:
-      position: 101
-      prefix: --power
-  - id: sampling
-    type:
-      - 'null'
-      - float
-    doc: fraction of the k-mers to be considered and resampled before twisting
-    inputBinding:
-      position: 101
-      prefix: --sampling
-  - id: sampling_fraction
-    type:
-      - 'null'
-      - float
-    doc: fraction of the k-mers to be considered and resampled before twisting
-    inputBinding:
-      position: 101
-      prefix: --sampling-fraction
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: number of concurrent computing threads to be spawned
-    inputBinding:
-      position: 101
-      prefix: --threads
+      position: 3
+      prefix: '-f'
   - id: threshold_counts
     type:
       - 'null'
       - float
-    doc: "set to zero all counts that are less than this threshold\n    before transforming
-      them.\n    A fractional threshold between 0. and 1. is taken as a relative one\n\
-      \    with respect to the sum of all counts in the spectrum"
+    doc: Set to zero all counts that are less than this threshold before
+      transforming them (default 1).
     inputBinding:
-      position: 101
-      prefix: --threshold-counts
-  - id: threshold_kmers
+      position: 4
+      prefix: '--threshold-counts'
+  - id: power
     type:
       - 'null'
-      - int
-    doc: "compute the sum of all transformed (and possibly normalized) counts\n  \
-      \  for each k-mer, and eliminate k-mers such that the corresponding sum\n  \
-      \  is less than the largest sum rescaled by this threshold.\n    This filters
-      out k-mers having low frequencies across all spectra"
+      - float
+    doc: Raise counts to this power before transforming them (default 1).
     inputBinding:
-      position: 101
-      prefix: --threshold-kmers
+      position: 5
+      prefix: '--power'
   - id: transform
     type:
       - 'null'
       - string
-    doc: transformation to apply to table elements
+    doc: "Transformation applied to table elements: binary, power, pseudocounts
+      or clr (default power)."
     inputBinding:
-      position: 101
-      prefix: --transform
-  - id: transformation
+      position: 6
+      prefix: '--transform'
+  - id: normalize
     type:
       - 'null'
-      - string
-    doc: transformation to apply to table elements
+      - boolean
+    doc: Whether to normalize spectra after transformation and before twisting
+      (default true).
     inputBinding:
-      position: 101
-      prefix: --transformation
+      position: 7
+      prefix: '--normalize'
+      valueFrom: '${ return self ? "true" : "false"; }'
+  - id: threshold_kmers
+    type:
+      - 'null'
+      - float
+    doc: Eliminate k-mers whose summed transformed counts are below the largest
+      sum rescaled by this threshold (default 0).
+    inputBinding:
+      position: 8
+      prefix: '--threshold-kmers'
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of concurrent computing threads to be spawned.
+    inputBinding:
+      position: 9
+      prefix: '-T'
+  - id: keep_temporaries
+    type:
+      - 'null'
+      - boolean
+    doc: Keep temporary files rather than deleting them in the end.
+    inputBinding:
+      position: 10
+      prefix: '--keep-temporaries'
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: set verbose execution
+    doc: Set verbose execution.
     inputBinding:
-      position: 101
-      prefix: --verbose
+      position: 11
+      prefix: '-v'
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: twister
+    type: File
+    doc: Twister (coordinate transformation)
+    outputBinding:
+      glob: '$(inputs.output_prefix).KPopTwister'
+  - id: twisted
+    type: File
+    doc: Twisted spectra
+    outputBinding:
+      glob: '$(inputs.output_prefix).KPopTwisted'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpop:1.1.1--h9ee0642_1

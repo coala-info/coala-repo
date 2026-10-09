@@ -1,5 +1,14 @@
 # k-slam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| k-slam_SLAM | PASS |  |
+| k-slam_parse_fasta | PASS |  |
+| k-slam_parse_genbank | PASS |  |
+| k-slam_parse_taxonomy | PASS |  |
+
 ## k-slam_SLAM
 
 ### Tool Description
@@ -49,5 +58,58 @@ Allowed options:
   --just-align                          only perform alignments, not 
                                         metagenomics
   --no-pseudo-assembly                  do not link alignments together
+```
+
+## k-slam_parse_fasta
+
+### Tool Description
+Build a k-SLAM index from FASTA files (SLAM --parse-fasta).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/k-slam:1.0--1
+- **Homepage**: https://github.com/aindj/k-SLAM
+- **Package**: https://anaconda.org/channels/bioconda/packages/k-slam/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Build k-SLAM's index from any number of FASTA files (from the k-SLAM README):
+  mkdir custom_db && cd custom_db
+  SLAM --output-file database --parse-fasta file1.fa file2.fa file3.fa ...
+Note: databases produced from FASTA files must be analysed using the "--just-align" flag.
+```
+
+## k-slam_parse_genbank
+
+### Tool Description
+Build a k-SLAM index from GenBank files (SLAM --parse-genbank).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/k-slam:1.0--1
+- **Homepage**: https://github.com/aindj/k-SLAM
+- **Package**: https://anaconda.org/channels/bioconda/packages/k-slam/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Build k-SLAM's index from any number of Genbank files (from the k-SLAM README):
+  SLAM --output-file database --parse-genbank file1.gbk file2.gbk file3.gbk ...
+The taxonomy database (taxDB) must exist in the working directory.
+```
+
+## k-slam_parse_taxonomy
+
+### Tool Description
+Build a k-SLAM taxonomy database from NCBI names.dmp and nodes.dmp (SLAM --parse-taxonomy).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/k-slam:1.0--1
+- **Homepage**: https://github.com/aindj/k-SLAM
+- **Package**: https://anaconda.org/channels/bioconda/packages/k-slam/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+parses NCBI names.dmp and nodes.dmp file to produce a SLAM taxonomy database, usage SLAM --parse-taxonomy names.dmp nodes.dmp --output-file taxonomy
 ```
 

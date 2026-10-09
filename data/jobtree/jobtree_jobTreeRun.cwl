@@ -95,9 +95,8 @@ inputs:
       position: 101
       prefix: --jobTime
   - id: job_tree
-    type:
-      - 'null'
-      - string
+    type: string
+    default: jobTree
     doc: Directory in which to place job management files and the global 
       accessed temporary file directories(this needs to be globally accessible 
       by all machines running jobs). If you pass an existing directory it will 
@@ -239,6 +238,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: job_tree_out
+    type: Directory
+    doc: The job tree directory with job management files and statistics
+    outputBinding:
+      glob: $(inputs.job_tree)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jobtree:09.04.2017--py_2

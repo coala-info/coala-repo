@@ -1,5 +1,11 @@
 # kmergenie CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kmergenie | PASS | 100k real SARS-CoV-2 reads (ENA ERR5069949): histograms, report and table written; predicted genomic k-mers 27772 at k=61 for a 30 kb genome, best k 61 |
+
 ## kmergenie
 
 ### Tool Description

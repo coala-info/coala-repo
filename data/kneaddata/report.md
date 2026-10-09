@@ -1,5 +1,14 @@
 # kneaddata CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kneaddata | PASS |  |
+| kneaddata_bowtie2_discordant_pairs | PASS |  |
+| kneaddata_build_database | PASS |  |
+| kneaddata_read_count_table | PASS |  |
+
 ## kneaddata
 
 ### Tool Description
@@ -143,5 +152,110 @@ trf arguments:
 fastqc arguments:
   --fastqc FASTQC_PATH  path to fastqc
                         [ DEFAULT : $PATH ]
+```
+
+## kneaddata_read_count_table
+
+### Tool Description
+usage: kneaddata_read_count_table [-h] --input INPUT --output OUTPUT
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kneaddata:0.12.4--pyhdfd78af_0
+- **Homepage**: https://huttenhower.sph.harvard.edu/kneaddata
+- **Package**: https://anaconda.org/channels/bioconda/packages/kneaddata/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: kneaddata_read_count_table [-h] --input INPUT --output OUTPUT
+
+Create a table of read counts for all samples
+
+options:
+  -h, --help       show this help message and exit
+  --input INPUT    the input folder with kneaddata log files
+  --output OUTPUT  the output file to write
+```
+
+## kneaddata_bowtie2_discordant_pairs
+
+### Tool Description
+usage: kneaddata_bowtie2_discordant_pairs [-h] -1 PAIR1 -2 PAIR2 -x INDEX
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kneaddata:0.12.4--pyhdfd78af_0
+- **Homepage**: https://huttenhower.sph.harvard.edu/kneaddata
+- **Package**: https://anaconda.org/channels/bioconda/packages/kneaddata/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: kneaddata_bowtie2_discordant_pairs [-h] -1 PAIR1 -2 PAIR2 -x INDEX
+                                          --un-pair UN_PAIR --al-pair AL_PAIR
+                                          --un-single UN_SINGLE
+                                          --al-single AL_SINGLE [-U ORPHAN]
+                                          [-S SAM] [--bowtie2 BOWTIE2]
+                                          [--threads THREADS]
+                                          [--bowtie2-options BOWTIE2_OPTIONS]
+                                          [--mode {strict,unpaired}]
+                                          [--cat-pairs] [--reorder]
+
+Kneaddata bowtie2 discordant pairs
+
+options:
+  -h, --help            show this help message and exit
+  -1 PAIR1              the fastq file of pair1 reads
+  -2 PAIR2              the fastq file of pair2 reads
+  -x INDEX              the database index file
+  --un-pair UN_PAIR     the name of the output files for the paired reads without any alignments
+  --al-pair AL_PAIR     the name of the output files for the paired reads with concordant alignments
+  --un-single UN_SINGLE
+                        the name of the output files for the orphan reads without alignments
+  --al-single AL_SINGLE
+                        the name of the output files for the orphan reads with alignments
+  -U ORPHAN             the fastq files of orphan reads in comma-delimited list
+  -S SAM                the file to write the sam output
+  --bowtie2 BOWTIE2     the path to the bowtie2 executable
+  --threads THREADS     the number of threads to use
+  --bowtie2-options BOWTIE2_OPTIONS
+                        the bowtie2 options to apply
+  --mode {strict,unpaired}
+                        the run mode
+  --cat-pairs           concatenate pair files before aligning so reads are aligned as single end
+  --reorder             print the sequences in the same order as the input files
+```
+
+## kneaddata_build_database
+
+### Tool Description
+usage: kneaddata_build_database [-h] [-o OUTPUT_PREFIX] [-b BMTOOL_PATH]
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kneaddata:0.12.4--pyhdfd78af_0
+- **Homepage**: https://huttenhower.sph.harvard.edu/kneaddata
+- **Package**: https://anaconda.org/channels/bioconda/packages/kneaddata/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: kneaddata_build_database [-h] [-o OUTPUT_PREFIX] [-b BMTOOL_PATH]
+                                [-s SRPRISM_PATH] [-m MAKEBLASTDB_PATH]
+                                [-l LOGDIR]
+                                fasta
+
+positional arguments:
+  fasta                 input FASTA file
+
+options:
+  -h, --help            show this help message and exit
+  -o, --output-prefix OUTPUT_PREFIX
+                        prefix for all output files
+  -b, --bmtool-path BMTOOL_PATH
+                        path to bmtool executable
+  -s, --srprism-path SRPRISM_PATH
+                        path to srprism executable
+  -m, --makeblastdb-path MAKEBLASTDB_PATH
+                        path to makeblastdb executable
+  -l, --logdir LOGDIR   location to store log files
 ```
 

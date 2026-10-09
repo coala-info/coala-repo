@@ -69,6 +69,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: histograms
     doc: prefix of the output files
     inputBinding:
       position: 102

@@ -31,7 +31,7 @@ inputs:
       position: 101
       prefix: --fast
   - id: fastx
-    type: string
+    type: File
     doc: Input fasta/q file (supports gz/bzip2) containing the sequence(s) to 
       query.
     inputBinding:
@@ -46,7 +46,7 @@ inputs:
       position: 101
       prefix: --format
   - id: index
-    type: string
+    type: Directory
     doc: Global index path.
     inputBinding:
       position: 101
@@ -106,9 +106,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: Directory
     doc: Output directory.
     outputBinding:
       glob: $(inputs.output_path)

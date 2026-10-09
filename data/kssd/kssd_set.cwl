@@ -4,18 +4,18 @@ baseCommand:
   - kssd
   - set
 label: kssd_set
-doc: "The set doc prefix.\n\nTool homepage: https://github.com/yhg926/public_kssd"
+doc: "Sketch union, intersection and subtraction.\n\nTool homepage: https://github.com/yhg926/public_kssd"
 inputs:
   - id: combined_sketch
-    type: File
-    doc: combined sketch
+    type: Directory
+    doc: "Combined sketch directory"
     inputBinding:
-      position: 1
+      position: 200
   - id: combin_pan
     type:
       - 'null'
       - boolean
-    doc: combine pan files to combco file.
+    doc: "combine pan files to combco file"
     inputBinding:
       position: 102
       prefix: --combin_pan
@@ -23,15 +23,15 @@ inputs:
     type:
       - 'null'
       - File
-    doc: grouping genomes by input category file.
+    doc: "grouping genomes by input category file (.tsv)"
     inputBinding:
       position: 102
       prefix: --grouping
   - id: intsect
     type:
       - 'null'
-      - File
-    doc: intersect with the pan-sketch for all input sketches.
+      - Directory
+    doc: "intersect with the pan-sketch for all input sketches"
     inputBinding:
       position: 102
       prefix: --intsect
@@ -39,15 +39,15 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: print genome names.
+    doc: "print genome names"
     inputBinding:
       position: 102
       prefix: --print
   - id: subtract
     type:
       - 'null'
-      - File
-    doc: subtract the pan-sketch from all input sketches.
+      - Directory
+    doc: "subtract the pan-sketch from all input sketches"
     inputBinding:
       position: 102
       prefix: --subtract
@@ -55,7 +55,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of threads.
+    doc: "number of threads"
     inputBinding:
       position: 102
       prefix: --threads
@@ -63,7 +63,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: get union set of the sketches.
+    doc: "get union set of the sketches"
     inputBinding:
       position: 102
       prefix: --union
@@ -71,13 +71,15 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: get uniq union set of the sketches.
+    doc: "get uniq union set of the sketches"
     inputBinding:
       position: 102
       prefix: --uniq_union
   - id: output_directory_path
-    type: string
-    doc: specify the output directory.
+    type:
+      - 'null'
+      - string
+    doc: "specify the output directory"
     inputBinding:
       position: 103
       prefix: --outdir
@@ -86,9 +88,13 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: specify the output directory.
+    doc: "Output directory"
     outputBinding:
       glob: $(inputs.output_directory_path)
+  - id: stdout_out
+    type: stdout
+    doc: "Standard output"
+stdout: kssd_set.out
 requirements:
   - class: InlineJavascriptRequirement
 hints:

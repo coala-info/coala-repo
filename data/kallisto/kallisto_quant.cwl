@@ -14,9 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: index
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Filename for the kallisto index to be used for quantification
     inputBinding:
       position: 102
@@ -103,8 +101,8 @@ inputs:
   - id: priors
     type:
       - 'null'
-      - boolean
-    doc: Priors for the EM algorithm, either as raw counts or as probabilities
+      - File
+    doc: Priors for the EM algorithm, either as raw counts or as probabilities. Pseudocounts are added to raw reads to prevent zero valued priors. Supplied in the same order as the transcripts in the transcriptome
     inputBinding:
       position: 102
       prefix: --priors
@@ -149,6 +147,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Print out progress information every 1M proccessed reads
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
   - id: output_output_dir
     type:

@@ -1,24 +1,31 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jmespath
+baseCommand: jp.py
 label: jmespath
-doc: "JMESPath command line interface for querying JSON data.\n\nTool homepage: https://github.com/jmespath/jmespath.py"
+doc: "JMESPath command line interface for querying JSON data. The program installed in the image is jp.py.\n\nTool homepage: https://github.com/jmespath/jmespath.py"
 inputs:
+  - id: expression
+    type: string
+    doc: The JMESPath expression to evaluate
+    inputBinding:
+      position: 2
   - id: filename
     type:
       - 'null'
       - File
-    doc: The JSON file to query. If not provided, data is read from stdin.
+    doc: The filename containing the input data. If a filename is not given then
+      data is read from stdin.
     inputBinding:
       position: 1
-  - id: expression
+      prefix: --filename
+  - id: ast
     type:
       - 'null'
-      - string
-    doc: The JMESPath expression to evaluate
+      - boolean
+    doc: Pretty print the AST, do not search the data.
     inputBinding:
-      position: 102
-      prefix: --expression
+      position: 1
+      prefix: --ast
 outputs:
   - id: stdout
     type: stdout

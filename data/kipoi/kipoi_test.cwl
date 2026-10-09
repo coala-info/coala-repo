@@ -9,7 +9,9 @@ doc: "script to test model zoo submissions. Example usage: `kipoi test\nmodel/di
   \nTool homepage: https://github.com/kipoi/kipoi"
 inputs:
   - id: model
-    type: string
+    type:
+      - string
+      - Directory
     doc: Model name.
     inputBinding:
       position: 1
@@ -72,6 +74,8 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kipoi:0.8.6--pyh5e36f6f_0

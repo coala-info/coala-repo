@@ -1,5 +1,11 @@
 # kractor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kractor | PASS | ran on nf-core SARS-CoV-2 reads with their Kraken2 output and report; single and paired reads, children and FASTA output give the right 100 reads; --exclude of all reads exits 1 by design; output is now a list of files |
+
 ## kractor
 
 ### Tool Description

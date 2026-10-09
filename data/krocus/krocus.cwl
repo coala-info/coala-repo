@@ -28,7 +28,7 @@ inputs:
   - id: filtered_reads_file
     type:
       - 'null'
-      - File
+      - string
     doc: Filename to save matching reads to
     inputBinding:
       position: 103
@@ -115,7 +115,10 @@ inputs:
       position: 103
       prefix: --verbose
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Output file [STDOUT]
     inputBinding:
       position: 104
       prefix: --output_file
@@ -127,6 +130,17 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: filtered_reads
+    type:
+      - 'null'
+      - File
+    doc: Reads matching the MLST loci
+    outputBinding:
+      glob: $(inputs.filtered_reads_file)
+  - id: stdout_out
+    type: stdout
+    doc: Result printed to standard output when no output file is given
+stdout: krocus.out
 requirements:
   - class: InlineJavascriptRequirement
 hints:

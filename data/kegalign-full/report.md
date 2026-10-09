@@ -1,5 +1,14 @@
 # kegalign-full CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kegalign-full_diagonal_partition.py | PASS | synthetic data: planted segment file with 30 lines was split into 3 chunks of 10 and 3 lastz commands were printed |
+| kegalign-full_faToTwoBit | PASS |  |
+| kegalign-full_kegalign | Not completed | needs a GPU, none on this machine (kegalign stops with No GPU device found); also the run_kegalign script in the image has Windows line endings and cannot start |
+| kegalign-full_runner.py | Not completed | needs a GPU: runner.py calls kegalign, which stops with No GPU device found |
+
 ## kegalign-full_faToTwoBit
 
 ### Tool Description

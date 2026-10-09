@@ -1,5 +1,11 @@
 # kmerinshort CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kmerinshort_KmerInShort | PASS | SARS-CoV-2 genome, k=6: counts equal an independent Python count (forward mode exact, canonical mode as pair sums); -freq and -perSeq work; -kval output not checked |
+
 ## kmerinshort_KmerInShort
 
 ### Tool Description

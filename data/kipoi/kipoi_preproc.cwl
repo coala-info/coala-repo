@@ -7,7 +7,9 @@ label: kipoi_preproc
 doc: "Run the dataloader and save the output to an hdf5 file.\n\nTool homepage: https://github.com/kipoi/kipoi"
 inputs:
   - id: dataloader
-    type: string
+    type:
+      - string
+      - Directory
     doc: Dataloader name.
     inputBinding:
       position: 1
@@ -68,6 +70,8 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kipoi:0.8.6--pyh5e36f6f_0

@@ -1,5 +1,11 @@
 # keggcharter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| keggcharter | PASS | needs network access to the KEGG web service; map 00680 was drawn from 40 rows of the tool's example table |
+
 ## keggcharter
 
 ### Tool Description

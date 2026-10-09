@@ -1,5 +1,20 @@
 # kcftools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kcftools_cohort | PASS |  |
+| kcftools_findIBS | PASS |  |
+| kcftools_getAttributes | PASS |  |
+| kcftools_getVariations | PASS |  |
+| kcftools_increaseWindow | PASS |  |
+| kcftools_kcf2gt | PASS |  |
+| kcftools_kcf2plink | PASS |  |
+| kcftools_kcf2tsv | PASS |  |
+| kcftools_scoreRecalc | PASS |  |
+| kcftools_splitKCF | PASS |  |
+
 ## kcftools_getVariations
 
 ### Tool Description

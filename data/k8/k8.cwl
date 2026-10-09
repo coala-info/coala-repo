@@ -4,6 +4,53 @@ baseCommand: k8
 label: k8
 doc: "V8 JavaScript engine command-line tool\n\nTool homepage: https://github.com/attractivechaos/k8"
 inputs:
+  - id: script
+    type:
+      - 'null'
+      - File
+    doc: JavaScript file to run (<script.js>)
+    inputBinding:
+      position: 100
+  - id: script_args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments passed to the script (available as the arguments array in JavaScript)
+    inputBinding:
+      position: 102
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input files passed to the script after the other arguments (staged so the script can open them)
+    inputBinding:
+      position: 103
+  - id: execute
+    type:
+      - 'null'
+      - string
+    doc: execute STR
+    inputBinding:
+      position: 1
+      prefix: -e
+  - id: execute_print
+    type:
+      - 'null'
+      - string
+    doc: execute STR and print results
+    inputBinding:
+      position: 1
+      prefix: -E
+  - id: old_space_mbytes
+    type:
+      - 'null'
+      - int
+    doc: v8 max size of the old space (in Mbytes) [16384]
+    inputBinding:
+      position: 1
+      prefix: -m
   - id: abort_on_contradictory_flags
     type:
       - 'null'

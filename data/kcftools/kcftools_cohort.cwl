@@ -15,6 +15,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+      itemSeparator: ','
   - id: list_file
     type:
       - 'null'

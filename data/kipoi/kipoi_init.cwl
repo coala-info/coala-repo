@@ -1,16 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kipoi_init
+baseCommand:
+  - kipoi
+  - init
 label: kipoi_init
 doc: "Initializing a new Kipoi model\n\nTool homepage: https://github.com/kipoi/kipoi"
-inputs:
-  - id: model_name
-    type:
-      - 'null'
-      - string
-    doc: Name of the new Kipoi model
-    inputBinding:
-      position: 101
+inputs: []
 outputs:
   - id: stdout
     type: stdout

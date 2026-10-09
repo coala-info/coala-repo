@@ -1,67 +1,41 @@
 # julia CWL Generation Report
 
-## julia_git
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| julia | Failed | image problem: julia cannot start, libz.so.1 is missing in the image |
+
+## julia
 
 ### Tool Description
-These are common Git commands used in various situations:
+The Julia language runtime: runs a program file or evaluates an expression.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/julia:1.10
 - **Homepage**: https://github.com/JuliaLang/julia
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/julia/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/julia/overview
-- **Total Downloads**: 1.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/JuliaLang/julia
-- **Stars**: N/A
 ### Original Help Text
 ```text
-usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
-           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
-           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
-           <command> [<args>]
-
-These are common Git commands used in various situations:
-
-start a working area (see also: git help tutorial)
-   clone     Clone a repository into a new directory
-   init      Create an empty Git repository or reinitialize an existing one
-
-work on the current change (see also: git help everyday)
-   add       Add file contents to the index
-   mv        Move or rename a file, a directory, or a symlink
-   restore   Restore working tree files
-   rm        Remove files from the working tree and from the index
-
-examine the history and state (see also: git help revisions)
-   bisect    Use binary search to find the commit that introduced a bug
-   diff      Show changes between commits, commit and working tree, etc
-   grep      Print lines matching a pattern
-   log       Show commit logs
-   show      Show various types of objects
-   status    Show the working tree status
-
-grow, mark and tweak your common history
-   branch    List, create, or delete branches
-   commit    Record changes to the repository
-   merge     Join two or more development histories together
-   rebase    Reapply commits on top of another base tip
-   reset     Reset current HEAD to the specified state
-   switch    Switch branches
-   tag       Create, list, delete or verify a tag object signed with GPG
-
-collaborate (see also: git help workflows)
-   fetch     Download objects and refs from another repository
-   pull      Fetch from and integrate with another repository or a local branch
-   push      Update remote refs along with associated objects
-
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help <command>' or 'git help <concept>'
-to read about a specific subcommand or concept.
-See 'git help git' for an overview of the system.
+julia [switches] -- [programfile] [args...]
+ -v, --version             Display version information
+ -h, --help                Print this message
+ -e, --eval <expr>         Evaluate <expr>
+ -E, --print <expr>        Evaluate <expr> and display the result
+ -L, --load <file>         Load <file> immediately on all processors
+ -t, --threads {N|auto}    Enable N threads; "auto" tries to infer a useful default number
+ -p, --procs {N|auto}      Integer value N launches N additional local worker processes
+ --machine-file <file>     Run processes on hosts listed in <file>
+ -i                        Interactive mode; REPL runs and isinteractive() is true
+ -q, --quiet               Quiet startup: no banner, suppress REPL warnings
+ --project[={<dir>|@.}]    Set <dir> as the home project/environment
+ -J, --sysimage <file>     Start up with the given system image file
+ -H, --home <dir>          Set location of julia executable
+ --startup-file={yes|no}   Load JULIA_DEPOT_PATH/config/startup.jl
+ -O, --optimize={0,1,2,3}  Set the optimization level
+ -g <level>                Enable / Set the level of debug info generation
+ (abridged; the image's julia binary cannot start, see Real Data Test)
 ```
 

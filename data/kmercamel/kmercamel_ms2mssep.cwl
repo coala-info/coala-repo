@@ -4,46 +4,42 @@ baseCommand:
   - kmercamel
   - ms2mssep
 label: kmercamel_ms2mssep
-doc: "Converts MS/MS spectra to MS2 format.\n\nTool homepage: https://github.com/OndrejSladky/kmercamel/"
+doc: "Split a masked superstring into a mask file and a superstring file\n\nTool homepage: https://github.com/OndrejSladky/kmercamel"
 inputs:
-  - id: ms_file
-    type: File
-    doc: Input MS/MS spectra file
+  - id: mask_file_out
+    type: ['null', string]
+    default: "ms2mssep_mask.txt"
+    doc: "Output file with mask"
     inputBinding:
       position: 1
-  - id: output_mask_file_path
-    type:
-      - 'null'
-      - string
-    doc: '- output file with mask'
+      prefix: "-m"
+  - id: superstring_file_out
+    type: ['null', string]
+    default: "ms2mssep_superstring.txt"
+    doc: "Output file with superstring"
     inputBinding:
-      position: 101
-      prefix: -m
-  - id: output_superstring_file_path
-    type:
-      - 'null'
-      - string
-    doc: '- output file with superstring'
+      position: 1
+      prefix: "-s"
+  - id: ms
+    type: File
+    doc: "Input masked superstring (FASTA)"
     inputBinding:
-      position: 102
-      prefix: -s
+      position: 10
 outputs:
-  - id: output_mask_file
-    type:
-      - 'null'
-      - File
-    doc: Output file with mask
+  - id: mask_out
+    type: ['null', File]
+    doc: "Mask file written with -m"
     outputBinding:
-      glob: $(inputs.output_mask_file_path)
-  - id: output_superstring_file
-    type:
-      - 'null'
-      - File
-    doc: Output file with superstring
+      glob: $(inputs.mask_file_out)
+  - id: superstring_out
+    type: ['null', File]
+    doc: "Superstring file written with -s"
     outputBinding:
-      glob: $(inputs.output_superstring_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.superstring_file_out)
+  - id: stdout
+    type: stdout
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmercamel:2.2.0--ha119d93_0
+stdout: kmercamel_ms2mssep.out

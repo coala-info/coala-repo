@@ -1,163 +1,147 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kalign2
+baseCommand: kalign
 label: kalign2_kalign
-doc: "Kalign is free software. You can redistribute it and/or modify it under the
-  terms of the GNU General Public License as published by the Free Software Foundation.\n\
-  \nTool homepage: http://msa.sbc.su.se/cgi-bin/msa.cgi"
+doc: "Kalign 2: fast multiple sequence alignment (guide tree from Wu-Manber or pairwise distances, then progressive alignment).\n\nTool homepage: http://msa.sbc.su.se/cgi-bin/msa.cgi"
 inputs:
-  - id: input_file
+  - id: gap_open
     type:
       - 'null'
-      - File
-    doc: The input file.
+      - float
+    doc: "Gap open penalty"
     inputBinding:
       position: 1
+      prefix: -gapopen
+  - id: gap_extension
+    type:
+      - 'null'
+      - float
+    doc: "Gap extension penalty"
+    inputBinding:
+      position: 2
+      prefix: -gapextension
+  - id: terminal_gap_extension_penalty
+    type:
+      - 'null'
+      - float
+    doc: "Terminal gap penalties"
+    inputBinding:
+      position: 3
+      prefix: -tgpe
+  - id: matrix_bonus
+    type:
+      - 'null'
+      - float
+    doc: "A constant added to the substitution matrix."
+    inputBinding:
+      position: 4
+      prefix: -bonus
+  - id: sort
+    type:
+      - 'null'
+      - string
+    doc: "The order in which the sequences appear in the output alignment: input, tree, gaps"
+    inputBinding:
+      position: 5
+      prefix: -sort
+  - id: feature
+    type:
+      - 'null'
+      - string
+    doc: "Selects feature mode and specifies which features are to be used: e.g. all, maxplp, STRUCT, PFAM-A...."
+    inputBinding:
+      position: 6
+      prefix: -feature
+  - id: same_feature_score
+    type:
+      - 'null'
+      - float
+    doc: "Score for aligning same features"
+    inputBinding:
+      position: 7
+      prefix: -same_feature_score
   - id: diff_feature_score
     type:
       - 'null'
       - float
-    doc: Penalty for aligning different features
+    doc: "Penalty for aligning different features"
     inputBinding:
-      position: 102
+      position: 8
       prefix: -diff_feature_score
   - id: distance
     type:
       - 'null'
       - string
-    doc: Distance method.
+    doc: "Distance method: wu, pair"
     inputBinding:
-      position: 102
+      position: 9
       prefix: -distance
-  - id: feature
-    type:
-      - 'null'
-      - string
-    doc: Selects feature mode and specifies which features are to be used
-    inputBinding:
-      position: 102
-      prefix: -feature
-  - id: format
-    type:
-      - 'null'
-      - string
-    doc: The output format
-    inputBinding:
-      position: 102
-      prefix: -format
-  - id: gap_extension
-    type:
-      - 'null'
-      - float
-    doc: Gap extension penalty
-    inputBinding:
-      position: 102
-      prefix: -gapextension
-  - id: gap_inc
-    type:
-      - 'null'
-      - float
-    doc: Parameter increases gap penalties depending on the number of existing 
-      gaps
-    inputBinding:
-      position: 102
-      prefix: -gap_inc
-  - id: gap_open
-    type:
-      - 'null'
-      - float
-    doc: Gap open penalty
-    inputBinding:
-      position: 102
-      prefix: -gapopen
   - id: guide_tree
     type:
       - 'null'
       - string
-    doc: Guide tree method.
+    doc: "Guide tree method: nj, upgma"
     inputBinding:
-      position: 102
-      prefix: -guide-tree
-  - id: infile
-    type:
-      - 'null'
-      - File
-    doc: The input file.
-    inputBinding:
-      position: 102
-      prefix: -input
-  - id: matrix_bonus
-    type:
-      - 'null'
-      - float
-    doc: A constant added to the substitution matrix.
-    inputBinding:
-      position: 102
-      prefix: -matrix_bonus
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Print nothing to STDERR. Read nothing from STDIN
-    inputBinding:
-      position: 102
-      prefix: -quiet
-  - id: same_feature_score
-    type:
-      - 'null'
-      - float
-    doc: Score for aligning same features
-    inputBinding:
-      position: 102
-      prefix: -same_feature_score
-  - id: sort
-    type:
-      - 'null'
-      - string
-    doc: The order in which the sequences appear in the output alignment.
-    inputBinding:
-      position: 102
-      prefix: -sort
-  - id: terminal_gap_extension_penalty
-    type:
-      - 'null'
-      - float
-    doc: Terminal gap penalties
-    inputBinding:
-      position: 102
-      prefix: -terminal_gap_extension_penalty
+      position: 10
+      prefix: -tree
   - id: zcutoff
     type:
       - 'null'
       - float
-    doc: Parameter used in the wu-manber based distance calculation
+    doc: "Parameter used in the wu-manber based distance calculation"
     inputBinding:
-      position: 102
+      position: 11
       prefix: -zcutoff
-  - id: outfile_path
+  - id: input_file
+    type: File
+    doc: "The input file."
+    inputBinding:
+      position: 12
+      prefix: -input
+  - id: output_path
     type:
       - 'null'
       - string
+    doc: "The output file."
     inputBinding:
-      position: 103
-      prefix: -outfile
+      position: 13
+      prefix: -output
+  - id: gap_inc
+    type:
+      - 'null'
+      - float
+    doc: "Parameter increases gap penalties depending on the number of existing gaps"
+    inputBinding:
+      position: 14
+      prefix: -gap_inc
+  - id: format
+    type:
+      - 'null'
+      - string
+    doc: "The output format: fasta, msf, aln, clu, macsim"
+    inputBinding:
+      position: 15
+      prefix: -format
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: "Print nothing to STDERR. Read nothing from STDIN"
+    inputBinding:
+      position: 16
+      prefix: -quiet
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: The output file.
+    doc: "Alignment written to the output file"
     outputBinding:
-      glob: '*.out'
-  - id: outfile
-    type:
-      - 'null'
-      - File
-    doc: The output file.
-    outputBinding:
-      glob: $(inputs.outfile_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the alignment when no output file is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kalign2:2.04--h7b50bb2_8
+stdout: kalign2_kalign.out

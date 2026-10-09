@@ -1,5 +1,11 @@
 # krakmeopen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| krakmeopen | PASS |  |
+
 ## krakmeopen
 
 ### Tool Description

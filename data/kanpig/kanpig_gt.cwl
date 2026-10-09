@@ -190,6 +190,11 @@ inputs:
       prefix: --ploidy-bed
   - id: reads
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Reads to genotype (indexed .bam, .cram, or .plup.gz)
     inputBinding:
       position: 101
@@ -199,6 +204,8 @@ inputs:
     doc: Reference genome
     secondaryFiles:
       - .fai
+      - pattern: .gzi
+        required: false
     inputBinding:
       position: 101
       prefix: --reference
@@ -267,7 +274,8 @@ inputs:
       position: 101
       prefix: --threads
   - id: out_path
-    type: string?
+    type: string
+    default: kanpig_gt.vcf
     doc: 'Output VCF (unsorted, uncompressed) [default: stdout]'
     inputBinding:
       position: 102

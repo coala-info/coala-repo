@@ -1,5 +1,11 @@
 # koeken CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| koeken_koeken.py | PASS | synthetic data: QIIME test OTU table with a planted Time column; summarize_taxa and LEfSe steps ran and wrote per-timepoint results (no significant markers). Fixed class/subclass types and a bad output; added MPLBACKEND=Agg |
+
 ## koeken_koeken.py
 
 ### Tool Description

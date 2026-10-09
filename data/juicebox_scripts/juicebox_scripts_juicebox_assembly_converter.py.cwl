@@ -61,7 +61,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: '$((inputs.output_prefix === null ? inputs.assembly_file.nameroot : inputs.output_prefix) + "*")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

@@ -6,6 +6,9 @@ doc: "ksnp\n\nTool homepage: https://github.com/zhouqiansolab/KSNP"
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: aligned reads in BAM format (indexed required)
     inputBinding:
       position: 101
@@ -20,6 +23,9 @@ inputs:
       prefix: -c
   - id: fasta_file
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: reference sequence for allele realignment in FASTA format (indexed 
       required)
     inputBinding:

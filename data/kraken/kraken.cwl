@@ -10,7 +10,7 @@ inputs:
       items: File
     doc: Input filename(s)
     inputBinding:
-      position: 1
+      position: 200
   - id: bzip2_compressed
     type:
       - 'null'
@@ -28,11 +28,9 @@ inputs:
     inputBinding:
       position: 102
       prefix: --check-names
-  - id: db_name
-    type:
-      - 'null'
-      - string
-    doc: Name for Kraken DB
+  - id: db
+    type: Directory
+    doc: Kraken DB folder (with database.kdb, database.idx and taxonomy)
     inputBinding:
       position: 102
       prefix: --db
@@ -148,6 +146,9 @@ inputs:
       position: 105
       prefix: --unclassified-out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Kraken output (empty when --output is used)
   - id: unclassified_out
     type:
       - 'null'
@@ -174,3 +175,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/kraken:v1.1-3-deb_cv1
+stdout: kraken.out

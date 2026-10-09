@@ -10,9 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: right
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Right/R2 paired file
     inputBinding:
       position: 2
@@ -72,11 +70,15 @@ outputs:
     doc: Output filename
     outputBinding:
       glob: $(inputs.output)
+  - id: stdout
+    type: stdout
+    doc: Interleaved reads written to standard output (when --output is not given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/khmer:3.0.0a1--py36hfc679d8_0
+stdout: khmer_interleave-reads.py.out
 s:url: https://khmer.readthedocs.io/
 $namespaces:
   s: https://schema.org/

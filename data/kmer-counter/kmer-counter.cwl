@@ -7,8 +7,8 @@ inputs:
   - id: collapse
     type:
       - 'null'
-      - boolean
-    doc: Canonicalize k-mers (default 1 = True
+      - int
+    doc: Canonicalize k-mers (default 1 = True)
     inputBinding:
       position: 101
       prefix: --collapse
@@ -21,8 +21,9 @@ inputs:
   - id: ids
     type:
       - 'null'
-      - File
-    doc: File to write identifiers to
+      - string
+    default: ids.txt
+    doc: File to write identifiers to (default ids.txt)
     inputBinding:
       position: 101
       prefix: --ids
@@ -36,6 +37,7 @@ inputs:
       prefix: --klength
   - id: out_path
     type: string
+    default: counter_output.npy
     doc: 'Output file name. [default: counter_output.npy]'
     inputBinding:
       position: 102
@@ -48,6 +50,13 @@ outputs:
     doc: Output file name.
     outputBinding:
       glob: $(inputs.out_path)
+  - id: ids_out
+    type:
+      - 'null'
+      - File
+    doc: File with the sequence identifiers
+    outputBinding:
+      glob: $(inputs.ids)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

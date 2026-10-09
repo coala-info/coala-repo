@@ -4,45 +4,35 @@ baseCommand: KmerStreamJoin
 label: kmerstream_KmerStreamJoin
 doc: "Creates union of many stream estimates\n\nTool homepage: https://github.com/pmelsted/KmerStream"
 inputs:
-  - id: files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Output files
+  - id: output_path
+    type: ['null', string]
+    doc: "Filename for output (the merged sketch)"
     inputBinding:
       position: 1
-  - id: merged_file
-    type:
-      - 'null'
-      - File
-    doc: Merged file
-    inputBinding:
-      position: 2
+      prefix: "--output"
   - id: verbose
+    type: ['null', boolean]
+    doc: "Print output at the end"
+    inputBinding:
+      position: 1
+      prefix: "--verbose"
+  - id: files
     type:
-      - 'null'
-      - boolean
-    doc: Print output at the end
+      type: array
+      items: File
+    doc: "KmerStream binary sketch files (_Q_<q>_k_<k>) to join, or one merged file to print"
     inputBinding:
-      position: 103
-      prefix: --verbose
-  - id: output_path
-    type: string
-    doc: Filename for output
-    inputBinding:
-      position: 104
-      prefix: --output
+      position: 50
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: Filename for output
+    type: ['null', File]
+    doc: "Merged sketch written with --output"
     outputBinding:
       glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmerstream:1.1--h077b44d_6
+stdout: kmerstream_join.out

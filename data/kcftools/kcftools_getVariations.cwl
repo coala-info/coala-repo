@@ -30,11 +30,14 @@ inputs:
       position: 101
       prefix: --wi
   - id: kmc
-    type: string
-    doc: KMC database prefix
+    type: File
+    doc: KMC database (<prefix>.kmc_pre); the <prefix>.kmc_suf file must sit beside it
+    secondaryFiles:
+      - ^.kmc_suf
     inputBinding:
       position: 101
       prefix: --kmc
+      valueFrom: $(self.path.replace(/\.kmc_pre$/, ''))
   - id: kmer_ratio_weight
     type:
       - 'null'
@@ -62,11 +65,10 @@ inputs:
   - id: reference
     type: File
     doc: Reference file name
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference
+      valueFrom: $(self.basename)
   - id: sample
     type: string
     doc: Sample name
@@ -118,6 +120,10 @@ outputs:
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

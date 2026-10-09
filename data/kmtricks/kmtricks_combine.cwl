@@ -21,6 +21,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fof
+  - id: run_dirs
+    type:
+      type: array
+      items: Directory
+    doc: kmtricks run directories named in the input fof; staged next to it so the names resolve.
   - id: threads
     type:
       - 'null'
@@ -50,6 +55,14 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fof)
+      - |
+        ${
+          return inputs.run_dirs.map(function(d) { return {"entry": d, "writable": true}; });
+        }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmtricks:1.5.1--h22625ea_0
+    dockerOutputDirectory: /kmtricks_work

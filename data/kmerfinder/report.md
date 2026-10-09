@@ -1,5 +1,11 @@
 # kmerfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kmerfinder_kmerfinder.py | PASS | synthetic data: tiny custom 3-genome KMA database with a hand-written taxonomy file (H. influenzae, S. pneumoniae, K. pneumoniae); a real 1 Mb S. pneumoniae contig hits only S. pneumoniae. |
+
 ## kmerfinder_kmerfinder.py
 
 ### Tool Description

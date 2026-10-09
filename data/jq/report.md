@@ -1,5 +1,11 @@
 # jq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jq | PASS | 13 options tested; outputs identical to the Galaxy expected files; rewrote --arg style inputs as name/value records |
+
 ## jq
 
 ### Tool Description

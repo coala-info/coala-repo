@@ -1,13 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: updateTaxonomy.sh
+baseCommand: ktUpdateTaxonomy.sh
 label: krona_ktUpdateTaxonomy.sh
 doc: "Update the Krona taxonomy database.\n\nTool homepage: https://github.com/marbl/Krona"
 inputs:
   - id: custom_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Taxonomy will be built in this directory instead of the directory 
       specified during installation. This custom directory can be referred to 
       with -tax in import scripts.
@@ -29,6 +29,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --only-fetch
+  - id: accessions
+    type:
+      - 'null'
+      - boolean
+    doc: Also build the accession-to-taxonomy ID mapping files.
+    inputBinding:
+      position: 102
+      prefix: --accessions
   - id: preserve
     type:
       - 'null'
@@ -38,6 +46,13 @@ inputs:
       position: 102
       prefix: --preserve
 outputs:
+  - id: taxonomy_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the built taxonomy
+    outputBinding:
+      glob: $(inputs.custom_dir)
   - id: stdout
     type: stdout
     doc: Standard output

@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - perl
-  - knotinframe
+baseCommand: knotinframe
 label: knotinframe
 doc: "predict ribosomal -1 frameshift sites with a simple pseudoknot as secondary
   structure in DNA and RNA sequences. The prediction is based on a comparison between
@@ -11,7 +9,9 @@ doc: "predict ribosomal -1 frameshift sites with a simple pseudoknot as secondar
   [2].\n\nTool homepage: https://bibiserv.cebitec.uni-bielefeld.de/knotinframe"
 inputs:
   - id: input
-    type: string
+    type:
+      - File
+      - string
     doc: fasta file name or RNA sequence
     inputBinding:
       position: 1
@@ -118,13 +118,18 @@ inputs:
       position: 102
       prefix: --windowSize
   - id: varna_output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: ': Provide a file name to which a HTML formatted version of the output should
       be saved in.'
     inputBinding:
       position: 103
       prefix: --varna
 outputs:
+  - id: stdout
+    type: stdout
+    doc: predicted frameshift sites (slippery sequence, knotted and nested structures)
   - id: varna_output_file
     type:
       - 'null'
@@ -135,6 +140,13 @@ outputs:
       glob: $(inputs.varna_output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |
+        ${
+          return inputs.varna_output_file_path ? [{"entryname": inputs.varna_output_file_path, "entry": " ", "writable": true}] : [];
+        }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/knotinframe:2.3.2--h9948957_2
+stdout: knotinframe.out

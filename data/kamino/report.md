@@ -1,5 +1,11 @@
 # kamino CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kamino | PASS |  |
+
 ## kamino
 
 ### Tool Description

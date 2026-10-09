@@ -1,5 +1,11 @@
 # kinship-read CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kinship-read | PASS | READv2 example Srubnaya data: 91 pairs classified, 2 first degree |
+
 ## kinship-read
 
 ### Tool Description

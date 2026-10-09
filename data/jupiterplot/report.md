@@ -1,9 +1,15 @@
 # jupiterplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jupiterplot_jupiter | PASS |  |
+
 ## jupiterplot_jupiter
 
 ### Tool Description
-GNU Make is a tool which controls the generation of programs and other non-source files from a description file.
+Jupiter Plot: draws a Circos plot of the alignment of a scaffold or contig assembly to a reference genome.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jupiterplot:1.1--hdfd78af_0
@@ -11,59 +17,31 @@ GNU Make is a tool which controls the generation of programs and other non-sourc
 - **Package**: https://anaconda.org/channels/bioconda/packages/jupiterplot/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/jupiterplot/overview
-- **Total Downloads**: 920
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/JustinChu/JupiterPlot
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: make [options] [target] ...
-Options:
-  -b, -m                      Ignored for compatibility.
-  -B, --always-make           Unconditionally make all targets.
-  -C DIRECTORY, --directory=DIRECTORY
-                              Change to DIRECTORY before doing anything.
-  -d                          Print lots of debugging information.
-  --debug[=FLAGS]             Print various types of debugging information.
-  -e, --environment-overrides
-                              Environment variables override makefiles.
-  -E STRING, --eval=STRING    Evaluate STRING as a makefile statement.
-  -f FILE, --file=FILE, --makefile=FILE
-                              Read FILE as a makefile.
-  -h, --help                  Print this message and exit.
-  -i, --ignore-errors         Ignore errors from recipes.
-  -I DIRECTORY, --include-dir=DIRECTORY
-                              Search DIRECTORY for included makefiles.
-  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no arg.
-  -k, --keep-going            Keep going when some targets can't be made.
-  -l [N], --load-average[=N], --max-load[=N]
-                              Don't start multiple jobs unless load is below N.
-  -L, --check-symlink-times   Use the latest mtime between symlinks and target.
-  -n, --just-print, --dry-run, --recon
-                              Don't actually run any recipe; just print them.
-  -o FILE, --old-file=FILE, --assume-old=FILE
-                              Consider FILE to be very old and don't remake it.
-  -O[TYPE], --output-sync[=TYPE]
-                              Synchronize output of parallel jobs by TYPE.
-  -p, --print-data-base       Print make's internal database.
-  -q, --question              Run no recipe; exit status says if up to date.
-  -r, --no-builtin-rules      Disable the built-in implicit rules.
-  -R, --no-builtin-variables  Disable the built-in variable settings.
-  -s, --silent, --quiet       Don't echo recipes.
-  --no-silent                 Echo recipes (disable --silent mode).
-  -S, --no-keep-going, --stop
-                              Turns off -k.
-  -t, --touch                 Touch targets instead of remaking them.
-  --trace                     Print tracing information.
-  -v, --version               Print the version number of make and exit.
-  -w, --print-directory       Print the current directory.
-  --no-print-directory        Turn off -w, even if it was turned on implicitly.
-  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
-                              Consider FILE to be infinitely new.
-  --warn-undefined-variables  Warn when an undefined variable is referenced.
-
-This program built for x86_64-conda-linux-gnu
-Report bugs to <bug-make@gnu.org>
+Usage: jupiter name=<output prefix> ref=<reference.fa> fa=<scaffolds.fa> [options]
+(jupiter is a wrapper around a makefile; options are name=value pairs)
+Required:
+  name=            output file prefix
+  ref=             FASTA reference file
+  fa=              FASTA contigs/scaffolds file
+General:
+  t=4              number of threads to use for minimap2
+  sam=             use this SAM file instead of running minimap2
+Karyotype options:
+  m=100000         only use genomic reference chromosomes larger than this value
+  ng=75            use largest scaffolds that are equal to 75% of the genome (0 = all)
+  maxScaff=-1      instead of ng, filter by this number of scaffolds
+  i=0              increment for colouring chromosomes (HSV colour shift 0-360; >360 = random)
+  g=1              minimum gap size in reference to render
+  gScaff=100000    minimum gap size in scaffolds to render
+  labels=ref       show reference chromosome name "ref", scaffolds "scaf" or "both"
+Link options:
+  maxGap=100000        maximum alignment gap allowed to consider a region contiguous
+  minBundleSize=50000  minimum size of a contiguous region to render
+  MAPQ=50              maximum mapping quality allowed when filtering
+  linkAlpha=5          alpha of links 1 = 17%, 2 = 33%, 3 = 50%, 4 = 67% and 5 = 83%
+  profile=1            print run time of each step
+(options taken from /usr/local/bin/jupiterplot/makefile in the image)
 ```
 

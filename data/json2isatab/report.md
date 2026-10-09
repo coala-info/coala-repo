@@ -1,5 +1,11 @@
 # json2isatab CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| json2isatab | PASS | the image entrypoint is run_json2tab.py, so baseCommand was removed; input staged writable; BII-S-3 ISA-JSON gave the investigation, study and two assay tables |
+
 ## json2isatab
 
 ### Tool Description

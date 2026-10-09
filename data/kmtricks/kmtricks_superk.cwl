@@ -34,6 +34,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --run-dir
+  - id: sequence_files
+    type:
+      type: array
+      items: File
+    doc: Sequence files named in the run's input fof (kmtricks.fof); staged in the working directory so the names resolve.
   - id: threads
     type:
       - 'null'
@@ -54,7 +59,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: run_dir_out
+    type: Directory
+    doc: kmtricks runtime directory with the new files.
+    outputBinding:
+      glob: $(inputs.run_dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.run_dir)
+        writable: true
+      - $(inputs.sequence_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmtricks:1.5.1--h22625ea_0
+    dockerOutputDirectory: /kmtricks_work
 stdout: kmtricks_superk.out

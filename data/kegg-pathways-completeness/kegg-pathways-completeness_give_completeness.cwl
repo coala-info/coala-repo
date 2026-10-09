@@ -47,19 +47,25 @@ inputs:
       position: 101
       prefix: --include-weights
   - id: input_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Each line = pathway
     inputBinding:
       position: 101
       prefix: --input
   - id: input_list
-    type: File
+    type:
+      - 'null'
+      - File
     doc: File with KOs comma separated
     inputBinding:
       position: 101
       prefix: --input-list
   - id: list_separator
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Separator for list option
     inputBinding:
       position: 101
@@ -104,19 +110,10 @@ inputs:
       prefix: --outdir
 outputs:
   - id: outdir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: output directory
     outputBinding:
       glob: $(inputs.outdir_path)
-  - id: outprefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in outprefix
-    outputBinding:
-      glob: $(inputs.outprefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

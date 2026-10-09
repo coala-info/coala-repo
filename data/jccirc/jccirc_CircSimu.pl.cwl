@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jccirc_CircSimu.pl
+baseCommand: CircSimu.pl
 label: jccirc_CircSimu.pl
 doc: "a simulation tool for circRNAs.\n\nTool homepage: https://github.com/cbbzhang/JCcirc"
 inputs:
@@ -11,7 +11,7 @@ inputs:
       position: 101
       prefix: -G
   - id: circrna_coverage
-    type: string
+    type: int
     doc: set coverage or max coverage (when choosing -R 2) for circRNAs
     inputBinding:
       position: 101
@@ -29,7 +29,9 @@ inputs:
       position: 101
       prefix: -M
   - id: insert_length_avg_minor
-    type: int
+    type:
+      - 'null'
+      - int
     doc: average(mu/bp) of insert length (minor normal distribution) (e.g. 550)
     inputBinding:
       position: 101
@@ -41,13 +43,15 @@ inputs:
       position: 101
       prefix: -S
   - id: insert_length_std_dev_minor
-    type: int
+    type:
+      - 'null'
+      - int
     doc: standard deviation(sigma/bp) of insert length (e.g. 70)
     inputBinding:
       position: 101
       prefix: -S2
   - id: linear_transcript_coverage
-    type: string
+    type: int
     doc: set coverage or max coverage (when choosing -LR 2) for linear 
       transcripts
     inputBinding:
@@ -61,7 +65,9 @@ inputs:
       position: 101
       prefix: -LR
   - id: minor_distribution_percentage
-    type: int
+    type:
+      - 'null'
+      - int
     doc: percentage of minor normal distribution in total distribution (e.g. 10;
       0 for no minor distribution)
     inputBinding:
@@ -87,7 +93,7 @@ inputs:
       position: 101
       prefix: -D
   - id: sequencing_error_percentage
-    type: float
+    type: int
     doc: percentage of sequencing error (e.g. 2)
     inputBinding:
       position: 101
@@ -105,7 +111,7 @@ inputs:
       position: 101
       prefix: -SE
   - id: splice_in_percentage_for_skipping_exon
-    type: float
+    type: int
     doc: percentage of splice in for skipping exon(-SE should be 1)
     inputBinding:
       position: 101

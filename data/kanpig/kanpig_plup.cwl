@@ -8,6 +8,11 @@ doc: "BAM/CRAM to Pileup Index\n\nTool homepage: https://github.com/ACEnglish/ka
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Input BAM/CRAM file
     inputBinding:
       position: 101
@@ -51,6 +56,8 @@ inputs:
     doc: Reference file for CRAMs
     secondaryFiles:
       - .fai
+      - pattern: .gzi
+        required: false
     inputBinding:
       position: 101
       prefix: --reference
@@ -79,7 +86,8 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_path
-    type: string?
+    type: string
+    default: kanpig_plup.plup
     doc: 'Output plup (unsorted, uncompressed) [default: stdout]'
     inputBinding:
       position: 102

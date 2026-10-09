@@ -108,6 +108,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the given basename, such as the tree and the p-distances
+    outputBinding:
+      glob: $(inputs.output_basename)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jolytree:2.1--hdfd78af_0

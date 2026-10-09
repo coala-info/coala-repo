@@ -21,6 +21,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --attributes
+      itemSeparator: ','
   - id: input_file
     type: File
     doc: KCF file name

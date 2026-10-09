@@ -1,67 +1,23 @@
 # kmcp CWL Generation Report
 
-## kmcp_autocompletion
+## Real Data Test
 
-### Tool Description
-Generate shell autocompletion script
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
-- **Homepage**: https://github.com/shenwei356/kmcp
-- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
-- **Total Downloads**: 23.7K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/shenwei356/kmcp
-- **Stars**: N/A
-### Original Help Text
-```text
-Generate shell autocompletion script
-
-Supported shell: bash|zsh|fish|powershell
-
-Bash:
-
-    # generate completion shell
-    kmcp autocompletion --shell bash
-
-    # configure if never did.
-    # install bash-completion if the "complete" command is not found.
-    echo "for bcfile in ~/.bash_completion.d/* ; do source \$bcfile; done" >> ~/.bash_completion
-    echo "source ~/.bash_completion" >> ~/.bashrc
-
-Zsh:
-
-    # generate completion shell
-    kmcp autocompletion --shell zsh --file ~/.zfunc/_kmcp
-
-    # configure if never did
-    echo 'fpath=( ~/.zfunc "${fpath[@]}" )' >> ~/.zshrc
-    echo "autoload -U compinit; compinit" >> ~/.zshrc
-
-fish:
-
-    kmcp autocompletion --shell fish --file ~/.config/fish/completions/kmcp.fish
-
-Usage:
-  kmcp autocompletion [flags] 
-
-Flags:
-      --file string    autocompletion file (default "/root/.bash_completion.d/kmcp.sh")
-  -h, --help           help for autocompletion
-      --shell string   autocompletion type (bash|zsh|fish|powershell) (default "bash")
-
-Global Flags:
-  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
-                             appended to files from CLI arguments.
-      --log string           ► Log file.
-  -q, --quiet                ► Do not print any verbose information. But you can write them to file
-                             with --log.
-  -j, --threads int          ► Number of CPUs cores to use. (default 20)
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| kmcp_compute | PASS | 3 genomes (2 SARS-CoV-2 and H. influenzae) split into 5 chunks each; k-mer counts match _info.txt |
+| kmcp_index | PASS | database built from the 15 chunks; note: --threads below the file count crashes on tiny inputs (divide by zero), so run it without --threads |
+| kmcp_merge | PASS | merged results from a SARS-CoV-2 DB and an H. influenzae DB equal the search on the joint DB (192 hits) |
+| kmcp_profile | PASS | profile reports SARS-CoV-2 (taxid 2697049) at 100% with the mini taxdump; CAMI, MetaPhlAn and binning reports written |
+| kmcp_search | PASS | nf-core SARS-CoV-2 read pairs: 96 of 100 match only the SARS-CoV-2 genomes, none H. influenzae |
+| kmcp_utils_cov2simi | PASS | coverage 0.9 gives similarity 98.74, equal to the documented polynomial |
+| kmcp_utils_filter | PASS | all 192 SARS-CoV-2 hits kept as species-specific |
+| kmcp_utils_index_density | PASS | per-bin counts table (64 bins) and a JPEG density image written |
+| kmcp_utils_index_info | PASS | both index blocks listed with k=21 and the right genome names |
+| kmcp_utils_merge_regions | PASS | synthetic data: 100 bp sliding windows cut from the real SARS-CoV-2 genome give species-specific regions covering positions 0 to 29820 |
+| kmcp_utils_query_fpr | PASS | false positive rate and Chernoff bound printed for default parameters |
+| kmcp_utils_ref_info | PASS | 15 reference chunks listed with k-mer counts and false positive rate near 0.1 |
+| kmcp_utils_split_genomes | PASS | SARS-CoV-2 genome split into 3 chunk files |
+| kmcp_utils_unik_info | PASS | k=21 and k-mer counts 5962 and 359075 match _info.txt |
 
 ## kmcp_compute
 
@@ -748,10 +704,10 @@ Global Flags:
 ```
 
 
-## kmcp_utils
+## kmcp_utils_cov2simi
 
 ### Tool Description
-Some utilities
+Convert k-mer coverage to sequence similarity
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
@@ -761,58 +717,21 @@ Some utilities
 
 ### Original Help Text
 ```text
-Some utilities
+Convert k-mer coverage to sequence similarity
+
+The polynomial model of degree 3 is fitted based on simulated 150-bp E.coli reads.
+Visit https://github.com/shenwei356/kmcp/tree/main/analysis/kmer-similarity
+
+    similarity = 87.456 + 26.410*qcov - 22.008*qcov*qcov + 7.325*qcov*qcov*qcov
 
 Usage:
-  kmcp utils [command] 
-
-Available Commands:
-  cov2simi      Convert k-mer coverage to sequence similarity
-  filter        Filter search results and find species/assembly-specific queries
-  index-density Plot the element density of bloom filters for an index file
-  index-info    Print information of index files
-  merge-regions Merge species/assembly-specific regions
-  query-fpr     Compute the false positive rate of a query
-  ref-info      Print information of reference chunks in a database
-  split-genomes Split genomes into chunks
-  unik-info     Print information of .unik files
+  kmcp utils cov2simi [flags] 
 
 Flags:
-  -h, --help   help for utils
-
-Global Flags:
-  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
-                             appended to files from CLI arguments.
-      --log string           ► Log file.
-  -q, --quiet                ► Do not print any verbose information. But you can write them to file
-                             with --log.
-  -j, --threads int          ► Number of CPUs cores to use. (default 20)
-
-Use "kmcp utils [command] --help" for more information about a command.
-```
-
-
-## kmcp_version
-
-### Tool Description
-Print version information and check for update
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
-- **Homepage**: https://github.com/shenwei356/kmcp
-- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Print version information and check for update
-
-Usage:
-  kmcp version [flags] 
-
-Flags:
-  -u, --check-update   check update
-  -h, --help           help for version
+  -h, --help              help for cov2simi
+  -o, --out-file string   ► Out file, supports a ".gz" suffix ("-" for stdout). (default "-")
+  -t, --query-cov float   ► K-mer query coverage, i.e., proportion of matched k-mers and unique k-mers
+                          of a query. range: [0, 1]
 
 Global Flags:
   -i, --infile-list string   ► File of input files list (one file per line). If given, they are
@@ -823,6 +742,420 @@ Global Flags:
   -j, --threads int          ► Number of CPUs cores to use. (default 20)
 ```
 
+## kmcp_utils_filter
+
+### Tool Description
+Filter search results and find species/assembly-specific queries
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/kmcp
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Filter search results and find species/assembly-specific queries
+
+Taxonomy data:
+  1. Mapping references IDs to TaxIds: -T/--taxid-map
+  2. NCBI taxonomy dump files: -X/--taxdump
+
+Performance notes:
+  1. Searching results are parsed in parallel, and the number of
+     lines proceeded by a thread can be set by the flag --line-chunk-size.
+  2. However using a lot of threads does not always accelerate
+     processing, 4 threads with a chunk size of 500-5000 is fast enough.
+
+Usage:
+  kmcp utils filter [flags] 
+
+Flags:
+  -h, --help                  help for filter
+      --level string          ► Level to filter. available values: species, strain/assembly. (default
+                              "species")
+      --line-chunk-size int   ► Number of lines to process for each thread, and 4 threads is fast
+                              enough. Type "kmcp utils filter" for details. (default 5000)
+  -f, --max-fpr float         ► Maximum false positive rate of a read in search result. (default 0.05)
+  -t, --min-query-cov float   ► Minimum query coverage of a read in search result. (default 0.55)
+  -H, --no-header-row         ► Do not print header row.
+  -o, --out-file string       ► Out file, supports and recommends a ".gz" suffix ("-" for stdout).
+                              (default "-")
+  -X, --taxdump string        ► Directory of NCBI taxonomy dump files: names.dmp, nodes.dmp, optional
+                              with merged.dmp and delnodes.dmp.
+  -T, --taxid-map strings     ► Tabular two-column file(s) mapping reference IDs to TaxIds.
+
+Global Flags:
+  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+  -q, --quiet                ► Do not print any verbose information. But you can write them to file
+                             with --log.
+  -j, --threads int          ► Number of CPUs cores to use. (default 20)
+```
+
+## kmcp_utils_index_density
+
+### Tool Description
+Plot the element density of bloom filters for an index file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/kmcp
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Plot the element density of bloom filters for an index file
+
+Purposes:
+  1. Checking whether elements (Ones) in bloom filters are uniformly distributed
+     via an intuitive grayscale image.
+
+Outputs:
+  1. default output (a TSV file), columns:
+      1) target:   reference id
+      2) chunkIdx: the index of genome chunk
+      3) bins:     the number of bins in bloom filters for counting 1s
+      4) binSize:  the size/width of a bin
+      5) counts:   comma-seperated counts in each bin
+  2. the density image (a grayscale JPEG image):
+      - X: bins. The width is the number of bins
+      - Y: bloom filters, with each representing a genome (chunk).
+        The height is the number of names (genome or genome chunks)
+      - greyscale/darkness of a pixel: the density of a bin, calculated as:
+            255 - 255 * ${the number of 1s in the bin} / ${bin-size}
+
+Examples:
+  1. common use:
+      kmcp utils index-density gtdb.kmcp/R001/_block001.uniki \
+          --bins 1024  --out-file t.tsv --out-img t.jpg
+  2. export every bit of each position, the image could fail to create:
+      kmcp utils index-density gtdb.kmcp/R001/_block001.uniki \
+          --bin-size 1 --out-file t.tsv
+
+Usage:
+  kmcp utils index-density [flags] 
+
+Flags:
+  -s, --bin-size int      ► bin size/width
+  -b, --bins int          ► number of bins for counting the number of 1s. (default 1024)
+  -h, --help              help for index-density
+  -o, --out-file string   ► Out file, supports and recommends a ".gz" suffix ("-" for stdout).
+                          (default "-")
+      --out-img string    ► Out density image, in format of jpeg
+
+Global Flags:
+  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+  -q, --quiet                ► Do not print any verbose information. But you can write them to file
+                             with --log.
+  -j, --threads int          ► Number of CPUs cores to use. (default 20)
+```
+
+## kmcp_utils_index_info
+
+### Tool Description
+Print information of index files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/kmcp
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Print information of index files
+
+Usage:
+  kmcp utils index-info [flags] 
+
+Flags:
+  -a, --all               ► Show all information.
+  -b, --basename          ► Only output basenames of files.
+  -h, --help              help for index-info
+  -o, --out-file string   ► Out file, supports a ".gz" suffix ("-" for stdout). (default "-")
+
+Global Flags:
+  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+  -q, --quiet                ► Do not print any verbose information. But you can write them to file
+                             with --log.
+  -j, --threads int          ► Number of CPUs cores to use. (default 20)
+```
+
+## kmcp_utils_merge_regions
+
+### Tool Description
+Merge species/assembly-specific regions
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/kmcp
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Merge species/assembly-specific regions
+
+Steps:
+  # 1. Simulating reads and searching on one or more databases.
+  seqkit sliding --step 10 --window 100 ref.fna.gz \
+      | kmcp search -d db1.kmcp -o ref.fna.gz.kmcp@db1.tsv.gz
+  seqkit sliding --step 10 --window 100 ref.fna.gz \
+      | kmcp search -d db2.kmcp -o ref.fna.gz.kmcp@db2.tsv.gz
+  
+  # 2. Merging and filtering searching results
+  kmcp merge ref.fna.gz.kmcp@*.tsv.gz \
+      | kmcp utils filter -X taxdump -T taxid.map \
+            -o ref.fna.gz.kmcp.uniq.tsv.gz
+  
+  # 3. Merging regions.
+  # Here the value of --min-overlap should be k-1.
+  kmcp utils merge-regions --min-overlap 20 ref.fna.gz.kmcp.uniq.tsv.gz \
+      -o ref.fna.gz.kmcp.uniq.tsv.gz.bed
+
+Output (BED6 format):
+  1. chrom      - chromosome name
+  2. chromStart - starting position (0-based)
+  3. chromEnd   - ending position (0-based)
+  4. name       - "species-specific" or "assembly-specific"
+  5. score      - 0-1000, 1000 for "assembly-specific", others for ""species-specific"
+  6. strand     - "."
+
+Performance notes:
+  1. Searching results are parsed in parallel, and the number of
+     lines proceeded by a thread can be set by the flag --line-chunk-size.
+  2. However using a lot of threads does not always accelerate
+     processing, 4 threads with a chunk size of 500-5000 is fast enough.
+
+Usage:
+  kmcp utils merge-regions [flags] 
+
+Flags:
+  -h, --help                   help for merge-regions
+  -I, --ignore-type            ► Merge species and assembly-specific regions.
+      --line-chunk-size int    ► Number of lines to process for each thread, and 4 threads is fast
+                               enough. Type "kmcp utils merge-regions -h" for details. (default 5000)
+  -f, --max-fpr float          ► Maximum false positive rate of a read in search result. (default 0.05)
+  -g, --max-gap int            ► Maximum distance of starting positions of two adjacent regions, 0 for
+                               no limitation, 1 for no merging.
+  -l, --min-overlap int        ► Minimum overlap of two adjacent regions, recommend K-1. (default 1)
+  -t, --min-query-cov float    ► Minimum query coverage of a read in search result. (default 0.55)
+  -a, --name-assembly string   ► Name of assembly-specific regions. (default "assembly-specific")
+  -s, --name-species string    ► Name of species-specific regions. (default "species-specific")
+  -o, --out-file string        ► Out file, supports and recommends a ".gz" suffix ("-" for stdout).
+                               (default "-")
+  -r, --regexp string          ► Regular expression for extract reference name and query locations.
+                               (default "^(.+)_sliding:(\\d+)\\-(\\d+)$")
+
+Global Flags:
+  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+  -q, --quiet                ► Do not print any verbose information. But you can write them to file
+                             with --log.
+  -j, --threads int          ► Number of CPUs cores to use. (default 20)
+```
+
+## kmcp_utils_query_fpr
+
+### Tool Description
+Compute the false positive rate of a query
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/kmcp
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Compute the false positive rate of a query
+
+When the flag '-a/--all' is given, the Chernoff bound (column 'cbound')
+is also output along with input parameters.
+
+> Given K ≥ p, Solomon and Kingsford also apply a Chernoff bound and
+show that the false positive probability for a query to be detected
+in a document is ≤ exp(−l(K − p)^2 /(2(1 − p)))
+
+Reference:
+  1. Theorem 2 in https://doi.org/10.1038/nbt.3442
+  2. Theorem 1 in https://arxiv.org/abs/1905.09624v2
+
+Usage:
+  kmcp utils query-fpr [flags] 
+
+Flags:
+  -H, --add-header                  ► Add header line (column names
+  -a, --all                         ► Also show the value of -f, -n, and -t
+  -f, --false-positive-rate float   ► False positive rate of a single k-mer, i.e., FPR of the bloom
+                                    filters in the database. range: (0, 1) (default 0.3)
+  -h, --help                        help for query-fpr
+  -m, --matched-kmers int           ► The number of matched k-mers of a query. (default 35)
+  -n, --num-kmers int               ► Number of unique k-mers of the query. (default 70)
+  -o, --out-file string             ► Out file, supports a ".gz" suffix ("-" for stdout). (default "-")
+
+Global Flags:
+  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+  -q, --quiet                ► Do not print any verbose information. But you can write them to file
+                             with --log.
+  -j, --threads int          ► Number of CPUs cores to use. (default 20)
+```
+
+## kmcp_utils_ref_info
+
+### Tool Description
+Print information of reference chunks in a database
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/kmcp
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Print information of reference chunks in a database
+
+Columns:
+
+    file,     the base name of index file
+    i,        the idx of a reference chunk in the index file, 1-based
+    target,   reference name
+    chunkIdx, the idx of the chunk, 0-based
+    chunks,   the number of chunks of the reference
+    kmers,    the number of k-mers of the chunk
+    fpr,      the actual false-positive rate of the chunk
+
+Usage:
+  kmcp utils ref-info [flags] 
+
+Flags:
+  -d, --db-dir string     ► Database directory created by "kmcp index".
+  -h, --help              help for ref-info
+  -H, --no-header-row     ► Do not print header row.
+  -o, --out-file string   ► Out file, supports and recommends a ".gz" suffix ("-" for stdout).
+                          (default "-")
+
+Global Flags:
+  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+  -q, --quiet                ► Do not print any verbose information. But you can write them to file
+                             with --log.
+  -j, --threads int          ► Number of CPUs cores to use. (default 20)
+```
+
+## kmcp_utils_split_genomes
+
+### Tool Description
+Split genomes into chunks
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/kmcp
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Split genomes into chunks
+
+This command acts like 'kmcp compute' with many same options/flags shared,
+but it only performs genome splitting and does not compute k-mers. Genome
+chunks will be saved into the output directory with one file for a chunk.
+
+One single input file or a directory with one single genome file is preferred.
+
+Warning (experimental feature):
+  If more than one genome files are given, the "reference genome" with the least
+and longest sequence(s) will be chosen and split into chunks. Then other genomes
+are fragmented and each genome fragment is assigned to the most similar genome
+chunk of the reference genome.
+
+Usage:
+  kmcp utils split-genomes [flags] [-k <k>] [-n <chunks>] [-l <overlap>] {[-I <seqs dir>] | <seq files>} -O <out dir>
+
+Flags:
+      --circular                  ► Input sequences are circular. Note that it only applies to genomes
+                                  with a single chromosome.
+  -r, --file-regexp string        ► Regular expression for matching sequence files in -I/--in-dir,
+                                  case ignored. (default "\\.(f[aq](st[aq])?|fna)(.gz)?$")
+      --force                     ► Overwrite existed output directory.
+  -f, --frag-size int             ► size of sequence fragments to be assigned to the reference genome
+                                  chunks. (default 100)
+  -h, --help                      help for split-genomes
+  -I, --in-dir string             ► Directory containing FASTA files. Directory symlinks are followed.
+      --info-file string          ► An extra output file to show which chunk(s) are assigned to for
+                                  each genome fragment.
+  -k, --kmer int                  ► K-mer size. (default 21)
+  -O, --out-dir string            ► Output directory.
+  -B, --seq-name-filter strings   ► List of regular expressions for filtering out sequences by
+                                  header/name, case ignored.
+  -m, --split-min-ref int         ► Only splitting sequences >= X bp. (default 1000)
+  -n, --split-number int          ► Chunk number for splitting sequences, incompatible with
+                                  -s/--split-size.
+  -l, --split-overlap int         ► Chunk overlap for splitting sequences. The default value will be
+                                  set to k-1 unless you change it.
+
+Global Flags:
+  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+  -q, --quiet                ► Do not print any verbose information. But you can write them to file
+                             with --log.
+  -j, --threads int          ► Number of CPUs cores to use. (default 20)
+```
+
+## kmcp_utils_unik_info
+
+### Tool Description
+Print information of .unik files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/kmcp
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmcp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Print information of .unik files
+
+Tips:
+  1. For lots of small files (especially on SDD), use big value of '-j' to
+     parallelize counting.
+
+Usage:
+  kmcp utils unik-info [flags] 
+
+Flags:
+  -a, --all                   ► All information, including the number of k-mers.
+  -b, --basename              ► Only output basename of files.
+  -h, --help                  help for unik-info
+  -o, --out-file string       ► Out file, supports a ".gz" suffix ("-" for stdout). (default "-")
+  -e, --skip-err              ► Skip error, only show warning message.
+      --symbol-false string   ► Smybol for false. (default "✕")
+      --symbol-true string    ► Smybol for true. (default "✓")
+  -T, --tabular               ► Output in machine-friendly tabular format.
+
+Global Flags:
+  -i, --infile-list string   ► File of input files list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+  -q, --quiet                ► Do not print any verbose information. But you can write them to file
+                             with --log.
+  -j, --threads int          ► Number of CPUs cores to use. (default 20)
+```
 
 ## Metadata
 - **Skill**: generated

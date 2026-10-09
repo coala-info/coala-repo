@@ -58,11 +58,15 @@ outputs:
     doc: The name of the output FASTA sequence file.
     outputBinding:
       glob: $(inputs.output)
+  - id: stdout
+    type: stdout
+    doc: FASTA written to standard output (when --output is not given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/khmer:3.0.0a1--py36hfc679d8_0
+stdout: khmer_fastq-to-fasta.py.out
 s:url: https://khmer.readthedocs.io/
 $namespaces:
   s: https://schema.org/

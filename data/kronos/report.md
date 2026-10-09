@@ -1,5 +1,15 @@
 # kronos CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kronos_init | PASS | no biological data; made a pipeline script from a config made by make_config |
+| kronos_make_component | PASS | no biological data; template made by kronos itself, USER set in the CWL |
+| kronos_make_config | PASS | no biological data; run on components made by make_component, USER and PYTHONPATH set in the CWL |
+| kronos_run | Not completed | pipeline, skipped |
+| kronos_update_config | PASS | no biological data; run on two configs made by make_config |
+
 ## kronos_make_component
 
 ### Tool Description

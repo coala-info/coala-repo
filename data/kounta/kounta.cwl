@@ -12,6 +12,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fofn
+  - id: fofn_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the file of filenames (staged in the working directory so
+      the names resolve)
   - id: kmer
     type:
       - 'null'
@@ -58,6 +65,15 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Genome contigs (FASTA) or reads (FASTQ, gzip allowed) to count, as
+      positional arguments
+    inputBinding:
+      position: 200
 outputs:
   - id: out
     type:
@@ -68,6 +84,8 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.fofn_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kounta:0.2.3--0

@@ -8,7 +8,7 @@ inputs:
   - id: blast_outputs
     type:
       type: array
-      items: string
+      items: File
     doc: File containing BLAST results in tabular format. Can optionally include
       magnitudes and a name for the dataset.
     inputBinding:
@@ -167,10 +167,11 @@ inputs:
       prefix: -p
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    default: blast.krona.html
+    doc: Output file name
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

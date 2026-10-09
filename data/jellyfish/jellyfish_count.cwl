@@ -154,9 +154,8 @@ inputs:
       position: 102
       prefix: --out-counter-len
   - id: output_file
-    type:
-      - 'null'
-      - string
+    type: string
+    default: mer_counts.jf
     doc: Output file
     inputBinding:
       position: 102
@@ -196,7 +195,7 @@ inputs:
   - id: timing_file
     type:
       - 'null'
-      - File
+      - string
     doc: Print timing information
     inputBinding:
       position: 102
@@ -210,10 +209,20 @@ inputs:
       position: 102
       prefix: --upper-count
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: counts_file
+    type: File
+    doc: Binary k-mer counts database
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: timing_output
+    type:
+      - 'null'
+      - File
+    doc: Timing information
+    outputBinding:
+      glob: '$(inputs.timing_file === null ? [] : inputs.timing_file)'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/jellyfish:v2.2.10-2-deb_cv1
-stdout: jellyfish_count.out

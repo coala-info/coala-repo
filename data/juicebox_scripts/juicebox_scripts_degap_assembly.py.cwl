@@ -1,32 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: juicebox_scripts_degap_assembly.py
+baseCommand: degap_assembly.py
 label: juicebox_scripts_degap_assembly.py
-doc: "Removes gaps from an assembly file.\n\nTool homepage: https://github.com/phasegenomics/juicebox_scripts"
+doc: "Removes the hic_gap entries from a Juicebox assembly file and prints the result to standard output.\n\nTool homepage: https://github.com/phasegenomics/juicebox_scripts"
 inputs:
   - id: assembly_file
     type: File
-    doc: Path to the assembly file.
+    doc: Juicebox assembly file
     inputBinding:
       position: 1
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 101
-      prefix: --output-file
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the output file. If not specified, output will be written to 
-      stdout.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: Assembly without gap entries
 hints:
   - class: DockerRequirement
-    dockerPull: 
-      quay.io/biocontainers/juicebox_scripts:0.1.0gita7ae991--hdfd78af_0
+    dockerPull: quay.io/biocontainers/juicebox_scripts:0.1.0gita7ae991--hdfd78af_0
+stdout: degapped.assembly

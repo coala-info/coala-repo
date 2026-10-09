@@ -61,6 +61,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: subset_files
+    type: Directory
+    doc: kodoja_search results directory with the new subset_files/ sub-directory
+    outputBinding:
+      glob: $(inputs.file_dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.file_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kodoja:0.0.10--0

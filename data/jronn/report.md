@@ -1,5 +1,11 @@
 # jronn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jronn | PASS | command is jronn (not java -jar JRONN_JAR_NAME); fixed; 3 UniProt proteins predicted; the tool prints usage and stops when all five options are given together (tool bug) |
+
 ## jronn
 
 ### Tool Description

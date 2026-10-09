@@ -1,5 +1,13 @@
 # kmerstream CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kmerstream_KmerStream | PASS | real SARS-CoV-2 reads (ENA ERR5069949): total k-mer count F1 exact, F0 distinct estimate runs 7-17% below the exact count (about 1% off on simulated error-free reads); FASTA input and -o with --binary misbehave in the tool (segfault, odd file name) |
+| kmerstream_KmerStreamEstimate.py | PASS | table from KmerStream --tsv gets genome size, error rate and coverage columns (about 25k genome size for a 30 kb genome sample) |
+| kmerstream_KmerStreamJoin | PASS | two binary sketches joined: F1 11111315 equals the sum of both inputs, F0 79030 close to a direct run on both files |
+
 ## kmerstream_KmerStream
 
 ### Tool Description
@@ -63,6 +71,22 @@ Usage: KmerStreamJoin -o output files ...
     --verbose            Print output at the end
 ```
 
+
+## kmerstream_KmerStreamEstimate.py
+
+### Tool Description
+Estimates genome size, error rate and coverage from the TSV output of KmerStream.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmerstream:1.1--h077b44d_6
+- **Homepage**: https://github.com/pmelsted/KmerStream
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmerstream/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: estimate.py TSV-FILE
+```
 
 ## Metadata
 - **Skill**: generated

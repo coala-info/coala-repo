@@ -1,5 +1,21 @@
 # jvarkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jvarkit_addlinearindextobed | PASS |  |
+| jvarkit_backlocate | PASS |  |
+| jvarkit_bam2haplotypes | PASS |  |
+| jvarkit_bam2raster | PASS |  |
+| jvarkit_bam2sql | PASS |  |
+| jvarkit_bam2svg | PASS |  |
+| jvarkit_bam2xml | PASS |  |
+| jvarkit_bamclip2insertion | Failed | tool bug: never changes a soft clip to an insertion; the code compares an insertion base (reference index -1) with a clipped base, so no read is converted (real and planted data tested) |
+| jvarkit_bamcmpcoverage | PASS |  |
+| jvarkit_bamliftover | PASS | synthetic data: a planted chain file on a real BAM; reads moved by the expected offset |
+| jvarkit_bammatrix | PASS |  |
+
 ## jvarkit_addlinearindextobed
 
 ### Tool Description

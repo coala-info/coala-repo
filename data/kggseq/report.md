@@ -1,5 +1,11 @@
 # kggseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kggseq | Not completed | needs resource databases (HgncGene.txt and others) that kggseq downloads from its website, which cannot be reached; CWL rewritten with the real --vcf-file/--out style options |
+
 ## kggseq
 
 ### Tool Description

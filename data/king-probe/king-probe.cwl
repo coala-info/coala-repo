@@ -1,17 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: probe
+baseCommand: king-probe
 label: king-probe
 doc: "Calculates probe-based interactions and surfaces for molecular structures.\n\
   \nTool homepage: http://people.virginia.edu/~wc9c/KING/"
 inputs:
-  - id: input_pdb
-    type:
-      - 'null'
-      - File
-    doc: Input PDB file for direct output redirection.
-    inputBinding:
-      position: 1
   - id: src_pattern
     type:
       - 'null'
@@ -28,9 +21,8 @@ inputs:
       position: 3
   - id: pdbfiles
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: Input PDB files for processing.
     inputBinding:
       position: 4
@@ -40,7 +32,7 @@ inputs:
       - boolean
     doc: 'Same as: -drop -rad0.0 -add1.4 -out (note: user supplies pattern).'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -ACCESS
   - id: add_lens_keyword
     type:
@@ -48,7 +40,7 @@ inputs:
       - boolean
     doc: Add lens keyword to kin file.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -LENs
   - id: add_vdw_offset
     type:
@@ -56,15 +48,16 @@ inputs:
       - float
     doc: Offset added to Van der Waals radii (default 0.0).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -ADDvdw
+      separate: false
   - id: asurface
     type:
       - 'null'
       - boolean
     doc: 'Same as: -drop -rad0.0 -add1.4 -out "not water".'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -ASurface
   - id: atom_color
     type:
@@ -72,7 +65,7 @@ inputs:
       - boolean
     doc: Color dots by atom type.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -ATOMcolor
   - id: autobondrot_file
     type:
@@ -80,7 +73,7 @@ inputs:
       - File
     doc: Read and process an autobondrot file.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -AUTObondrot
   - id: base_color
     type:
@@ -88,7 +81,7 @@ inputs:
       - boolean
     doc: Color dots by nucleic acid base type.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -BASEcolor
   - id: both_intersection
     type:
@@ -96,7 +89,7 @@ inputs:
       - boolean
     doc: 'Intersect both ways: src <=> targ.'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -Both
   - id: bump_scoring_weight
     type:
@@ -104,15 +97,16 @@ inputs:
       - float
     doc: Set relative scale for scoring bumps (default 10.0).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -BUMPWeight
+      separate: false
   - id: color_base_gap
     type:
       - 'null'
       - boolean
     doc: Color dots by gap and nucleic acid base type.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -COLORBase
   - id: condensed_unformatted_output
     type:
@@ -122,7 +116,7 @@ inputs:
       Also gives the dot count for that interaction. Works only with -Unformated
       flag.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -CONdense
   - id: coscale_vdw
     type:
@@ -130,15 +124,16 @@ inputs:
       - float
     doc: Scale C=O carbon Van der Waals radii (default 0.94).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -COSCale
+      separate: false
   - id: count_dots
     type:
       - 'null'
       - boolean
     doc: Produce a count of dots-not a dotlist.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -Countdots
   - id: defaults
     type:
@@ -146,7 +141,7 @@ inputs:
       - boolean
     doc: 'Same as: -4H -mc -het -self "altA ogt33", but allows some other flags.'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DEFAULTs
   - id: display_changes
     type:
@@ -154,7 +149,7 @@ inputs:
       - boolean
     doc: Display a list of program changes.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -CHANGEs
   - id: display_reference
     type:
@@ -162,7 +157,7 @@ inputs:
       - boolean
     doc: Display reference string.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -REFerence
   - id: division_high_contact
     type:
@@ -170,39 +165,43 @@ inputs:
       - float
     doc: Division for Contact categories (default 0.25).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DIVHigh
+      separate: false
   - id: division_low_bump
     type:
       - 'null'
       - float
     doc: Division for Bump categories (default -0.4).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DIVLow
+      separate: false
   - id: division_worse_clash
     type:
       - 'null'
       - float
     doc: Division for regarding a clash as a worse clash (default -0.5).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DIVWorse
+      separate: false
   - id: dot_density
     type:
       - 'null'
       - int
     doc: Set dot density (default 16 dots/sq A).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DEnsity
+      separate: false
   - id: dotmaster_group
     type:
       - 'null'
       - boolean
     doc: Group name used as extra master={name} on lists.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DOTMASTER
   - id: drop_nonselected
     type:
@@ -210,7 +209,7 @@ inputs:
       - boolean
     doc: Drop nonselected atoms.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DRop
   - id: dump_atom_info
     type:
@@ -218,7 +217,7 @@ inputs:
       - boolean
     doc: 'Count the atoms in the selection: src.'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DUMPAtominfo
   - id: dump_dots_examine
     type:
@@ -226,7 +225,7 @@ inputs:
       - boolean
     doc: Dump dot info while doing examineDots().
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DOTDUMP
   - id: dump_water_h_vectors
     type:
@@ -234,7 +233,7 @@ inputs:
       - boolean
     doc: Include water H? vectorlist in output.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DUMPH2O
   - id: element_master_buttons
     type:
@@ -242,7 +241,7 @@ inputs:
       - boolean
     doc: Add master buttons for different elements in kin output.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -ELEMent
   - id: exclude_het_dots
     type:
@@ -250,7 +249,7 @@ inputs:
       - boolean
     doc: Exclude dots to non-water HET groups.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOHETs
   - id: exclude_water_dots
     type:
@@ -258,23 +257,15 @@ inputs:
       - boolean
     doc: Exclude dots to water.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOWATers
-  - id: expanded_help
-    type:
-      - 'null'
-      - boolean
-    doc: Show expanded help notice (includes other flags).
-    inputBinding:
-      position: 105
-      prefix: -Help
   - id: explicit_hydrogens
     type:
       - 'null'
       - boolean
     doc: Explicit hydrogens (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -Explicit
   - id: exposed
     type:
@@ -282,7 +273,7 @@ inputs:
       - boolean
     doc: 'Same as: -drop -rad1.4 -out (note: user supplies pattern).'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -EXPOsed
   - id: extend_bond_chain_h
     type:
@@ -290,7 +281,7 @@ inputs:
       - boolean
     doc: Extend bond chain dot removal to 4 for H (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -4H
   - id: external_surface
     type:
@@ -298,7 +289,7 @@ inputs:
       - boolean
     doc: External van der Waals surface of src (solvent contact surface).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -OUt
   - id: filter_nearest
     type:
@@ -307,7 +298,7 @@ inputs:
     doc: Apply 3rd selection on neighbor. e.g. -nearest -filternearest patt1 all
       patt3.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -FILTERnearest
   - id: gap_bins
     type:
@@ -315,7 +306,7 @@ inputs:
       - boolean
     doc: 2nd pointmaster character, -.5...0...+.5.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -GAPBINs
   - id: gap_color
     type:
@@ -323,7 +314,7 @@ inputs:
       - boolean
     doc: Color dots by gap amount (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -GAPcolor
   - id: gap_scoring_weight
     type:
@@ -331,15 +322,16 @@ inputs:
       - float
     doc: Set weight for scoring gaps (default 0.25).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -GAPWeight
+      separate: false
   - id: group_name
     type:
       - 'null'
       - string
     doc: Specify the group name (default "dots").
     inputBinding:
-      position: 105
+      position: 0
       prefix: -Name
   - id: hbond_scoring_weight
     type:
@@ -347,15 +339,16 @@ inputs:
       - float
     doc: Set relative scale for scoring Hbonds (default 4.0).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -HBWeight
+      separate: false
   - id: ignore_pattern
     type:
       - 'null'
       - string
     doc: 'Explicit drop: ignore atoms selected by pattern.'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -IGNORE
   - id: implicit_hydrogens
     type:
@@ -363,7 +356,7 @@ inputs:
       - boolean
     doc: Implicit hydrogens.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -Implicit
   - id: include_het_dots
     type:
@@ -371,7 +364,7 @@ inputs:
       - boolean
     doc: Include dots to non-water HET groups (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -HETs
   - id: include_mainchain_interactions
     type:
@@ -379,7 +372,7 @@ inputs:
       - boolean
     doc: Include mainchain->mainchain interactions.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -MC
   - id: include_water_dots
     type:
@@ -387,7 +380,7 @@ inputs:
       - boolean
     doc: Include dots to water (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -WATers
   - id: keep_nonselected
     type:
@@ -395,7 +388,7 @@ inputs:
       - boolean
     doc: Keep nonselected atoms (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -Keep
   - id: kinemage_header
     type:
@@ -403,7 +396,7 @@ inputs:
       - boolean
     doc: Add @kinemage 1 statement to top of .kin format output.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -KINemage
   - id: limit_bond_chain_h_to_1
     type:
@@ -411,7 +404,7 @@ inputs:
       - boolean
     doc: Limit bond chain dot removal to 1.
     inputBinding:
-      position: 105
+      position: 0
       prefix: '-1'
   - id: limit_bond_chain_h_to_2
     type:
@@ -419,7 +412,7 @@ inputs:
       - boolean
     doc: Limit bond chain dot removal to 2.
     inputBinding:
-      position: 105
+      position: 0
       prefix: '-2'
   - id: limit_bond_chain_h_to_3
     type:
@@ -427,7 +420,7 @@ inputs:
       - boolean
     doc: Limit bond chain dot removal to 3.
     inputBinding:
-      position: 105
+      position: 0
       prefix: '-3'
   - id: limit_bump_dots
     type:
@@ -435,7 +428,7 @@ inputs:
       - boolean
     doc: Limit bump dots to max dist when kissing (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -LIMit
   - id: max_overlap_charged_hbonds
     type:
@@ -443,31 +436,34 @@ inputs:
       - float
     doc: Max overlap for charged Hbonds (default=0.8).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -HBCharged
+      separate: false
   - id: max_overlap_regular_hbonds
     type:
       - 'null'
       - float
     doc: Max overlap for regular Hbonds (default=0.6).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -HBRegular
+      separate: false
   - id: min_occupancy
     type:
       - 'null'
       - float
     doc: Occupancy below this is same as zero (default 0.02).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -MINOCCupancy
+      separate: false
   - id: nearest_neighbor
     type:
       - 'null'
       - boolean
     doc: Apply selection only on nearest neighbor.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NEAREST
   - id: no_alt_filter
     type:
@@ -475,7 +471,7 @@ inputs:
       - boolean
     doc: Final filter exclude any alts.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOALTfilter
   - id: no_clash_output
     type:
@@ -483,7 +479,7 @@ inputs:
       - boolean
     doc: Do not output contacts for clashes.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOCLASHOUT
   - id: no_face_hbond
     type:
@@ -491,7 +487,7 @@ inputs:
       - boolean
     doc: Do not identify HBonds to aromatic faces.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOFACEhbond
   - id: no_group_statement
     type:
@@ -499,7 +495,7 @@ inputs:
       - boolean
     doc: Do not generate @group statement in .kin format output.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOGroup
   - id: no_hbond_output
     type:
@@ -507,7 +503,7 @@ inputs:
       - boolean
     doc: Do not output contacts for HBonds.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOHBOUT
   - id: no_lens_keyword
     type:
@@ -515,7 +511,7 @@ inputs:
       - boolean
     doc: Do not add lens keyword to kin file (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOLENs
   - id: no_limit_bump_dots
     type:
@@ -523,7 +519,7 @@ inputs:
       - boolean
     doc: Do not limit bump dots.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOLIMit
   - id: no_parent_bonding
     type:
@@ -531,7 +527,7 @@ inputs:
       - boolean
     doc: Do not bond hydrogens based on table of parent heavy atoms.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOPARENT
   - id: no_polar_hydrogens
     type:
@@ -539,7 +535,7 @@ inputs:
       - boolean
     doc: Do not shorten radii of polar hydrogens.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOPolarH
   - id: no_residue_ticker
     type:
@@ -547,7 +543,7 @@ inputs:
       - boolean
     doc: Do not display the residue name ticker during processing.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOTICKs
   - id: no_spike
     type:
@@ -555,7 +551,7 @@ inputs:
       - boolean
     doc: Draw only dots.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOSpike
   - id: no_vdw_output
     type:
@@ -563,7 +559,7 @@ inputs:
       - boolean
     doc: Do not output contacts for van der Waals interactions.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NOVDWOUT
   - id: nuclear_vdw_radii
     type:
@@ -571,7 +567,7 @@ inputs:
       - boolean
     doc: Use nuclear position vdW radii (default is electron cloud positions).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -NUClear
   - id: occ1_filter
     type:
@@ -579,7 +575,7 @@ inputs:
       - boolean
     doc: Final filter exclude any w occ < 1.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -OCC1filter
   - id: oformat_output
     type:
@@ -587,7 +583,7 @@ inputs:
       - boolean
     doc: Output dot info formatted for display in O.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -OFORMAT
   - id: old_u_output
     type:
@@ -595,7 +591,7 @@ inputs:
       - boolean
     doc: 'Generate old style -u output: kissEdge2BullsEye, etc.'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -OLDU
   - id: once_intersection
     type:
@@ -603,7 +599,7 @@ inputs:
       - boolean
     doc: 'Single intersection: src -> targ.'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -ONce
   - id: onedot_each
     type:
@@ -612,7 +608,7 @@ inputs:
     doc: 'Output one dot for each src-to-neighbor. With -Unformated flag: for H gives
       angle parent-src-cause.'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -ONEDOTeach
   - id: oneline_output
     type:
@@ -620,15 +616,7 @@ inputs:
       - boolean
     doc: Output one line :contacts:by:severity:type:.
     inputBinding:
-      position: 105
-      prefix: -ONELINE
-  - id: oneline_summary
-    type:
-      - 'null'
-      - boolean
-    doc: Output summary list on oneline.
-    inputBinding:
-      position: 105
+      position: 0
       prefix: -ONELINE
   - id: only_bad_clashes_output
     type:
@@ -636,7 +624,7 @@ inputs:
       - boolean
     doc: Onlybadout output bad clashes (severe overlap contacts).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -ONLYBADOUT
   - id: outcolor_name
     type:
@@ -644,7 +632,7 @@ inputs:
       - string
     doc: Specify the point color for -OUT (default "gray").
     inputBinding:
-      position: 105
+      position: 0
       prefix: -OUTCOLor
   - id: polar_hydrogens
     type:
@@ -652,7 +640,7 @@ inputs:
       - boolean
     doc: Use short radii of polar hydrogens (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -PolarH
   - id: probe_radius
     type:
@@ -660,15 +648,16 @@ inputs:
       - float
     doc: Set probe radius (default 0.25 A).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -Radius
+      separate: false
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Quiet mode.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -Quiet
   - id: recognize_cho_hbonds
     type:
@@ -676,7 +665,7 @@ inputs:
       - boolean
     doc: Recognize CH..O Hbonds.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -DOCHO
   - id: scale_cho_hbond_score
     type:
@@ -684,23 +673,25 @@ inputs:
       - float
     doc: Scale factor for CH..O Hbond score (default=0.5).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -CHO
+      separate: false
   - id: scale_vdw
     type:
       - 'null'
       - float
     doc: Scale factor for Van der Waals radii (default 1.0).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SCALEvdw
+      separate: false
   - id: scan0
     type:
       - 'null'
       - boolean
     doc: 'Same as: -4H -mc -self "alta blt40 ogt33".'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SCAN0
   - id: scan1
     type:
@@ -708,7 +699,7 @@ inputs:
       - boolean
     doc: 'Same as: -4H -once "sc alta blt40 ogt33" "alta blt40 ogt65,(not water ogt33)".'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SCAN1
   - id: scsurface
     type:
@@ -716,7 +707,7 @@ inputs:
       - boolean
     doc: 'Same as: -drop -rad1.4 -out "not water".'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SCSurface
   - id: self_intersection
     type:
@@ -724,7 +715,7 @@ inputs:
       - boolean
     doc: 'Self intersection: src -> src (default).'
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SElf
   - id: separate_worse_clashes
     type:
@@ -733,7 +724,7 @@ inputs:
     doc: To separate bad overlaps and worse overlaps (default false, if true, 
       deafult value to separate the worse clashes is -0.5).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SEPWORSE
   - id: show_water_dots
     type:
@@ -741,7 +732,7 @@ inputs:
       - boolean
     doc: Show dots between waters.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -WAT2wat
   - id: spike
     type:
@@ -749,7 +740,7 @@ inputs:
       - boolean
     doc: Draw spike instead of dots (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SPike
   - id: spike_scale
     type:
@@ -757,15 +748,16 @@ inputs:
       - float
     doc: Set spike scale (default=0.5).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SPike
+      separate: false
   - id: standard_bonding_patterns
     type:
       - 'null'
       - boolean
     doc: Assume only standard bonding patterns in standard residues.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -STDBONDs
   - id: summary_output
     type:
@@ -773,7 +765,7 @@ inputs:
       - boolean
     doc: Output summary list of contacts and clashes.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SUMMARY
   - id: unformatted_output
     type:
@@ -781,7 +773,7 @@ inputs:
       - boolean
     doc: Output raw dot info.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -Unformated
   - id: use_segid
     type:
@@ -789,7 +781,7 @@ inputs:
       - boolean
     doc: Use the PDB SegID field to discriminate between residues.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -SEGID
   - id: verbose
     type:
@@ -797,7 +789,7 @@ inputs:
       - boolean
     doc: Verbose mode (default).
     inputBinding:
-      position: 105
+      position: 0
       prefix: -VErbose
   - id: xvformat_output
     type:
@@ -805,7 +797,7 @@ inputs:
       - boolean
     doc: Output dot info formatted for display in XtalView.
     inputBinding:
-      position: 105
+      position: 0
       prefix: -XVFORMAT
 outputs:
   - id: stdout

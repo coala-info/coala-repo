@@ -111,19 +111,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: output_path
-    type: string
+  - id: output_paths
+    type:
+      type: array
+      items: string
+    doc: Output file path(s). Accepts up to 2 files (for paired-end reads)
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: File
-    doc: Output file path(s). Accepts up to 2 files (for paired-end reads)
+    type:
+      type: array
+      items: File
+    doc: Output file(s) with the extracted reads (one per input file)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_paths)
+  - id: summary_json
+    type: stdout
+    doc: JSON summary written to standard output (with --summary)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kractor:4.0.0--h4349ce8_0
+stdout: kractor_summary.json

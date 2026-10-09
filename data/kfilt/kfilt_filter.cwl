@@ -42,7 +42,7 @@ inputs:
   - id: index
     type:
       - 'null'
-      - string
+      - File
     doc: Index file
     inputBinding:
       position: 101
@@ -98,7 +98,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - File
+      - string
     doc: Verbose per-read output file (optional)
     inputBinding:
       position: 101
@@ -110,6 +110,13 @@ inputs:
       position: 102
       prefix: --output
 outputs:
+  - id: verbose_file
+    type:
+      - 'null'
+      - File
+    doc: Verbose per-read output file (when verbose is set)
+    outputBinding:
+      glob: "$(inputs.verbose ? inputs.verbose : [])"
   - id: output
     type:
       - 'null'

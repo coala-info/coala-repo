@@ -1,5 +1,11 @@
 # kalign2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kalign2_kalign | PASS |  |
+
 ## kalign2_kalign
 
 ### Tool Description

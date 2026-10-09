@@ -40,12 +40,17 @@ inputs:
     inputBinding:
       position: 102
       prefix: --profiles
-outputs:
   - id: output
+    type: string
+    doc: output k-mer profile file
+    inputBinding:
+      position: 2
+outputs:
+  - id: out_output
     type: File
     doc: output k-mer profile file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpal:2.1.1--py27_0

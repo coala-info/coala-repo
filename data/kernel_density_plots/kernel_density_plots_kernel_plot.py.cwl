@@ -83,9 +83,7 @@ inputs:
       position: 101
       prefix: --no-annotations
   - id: outputdir
-    type:
-      - 'null'
-      - Directory
+    type: string
     doc: "Output directory (default: creates folder next to\n                    \
       \    input file)"
     inputBinding:
@@ -116,6 +114,11 @@ inputs:
       position: 101
       prefix: --width
 outputs:
+  - id: output_directory
+    type: Directory
+    doc: Directory with the plots and tables written by the tool
+    outputBinding:
+      glob: $(inputs.outputdir)
   - id: stdout
     type: stdout
     doc: Standard output

@@ -1,5 +1,11 @@
 # kestrel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kestrel | PASS | synthetic data: reads simulated from a 2 kb SARS-CoV-2 region with a planted SNP and a 3 bp deletion; both variants were called |
+
 ## kestrel
 
 ### Tool Description

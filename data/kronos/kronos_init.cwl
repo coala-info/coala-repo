@@ -34,10 +34,47 @@ inputs:
     inputBinding:
       position: 101
       prefix: --setup_file
+  - id: component_dirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Component directories staged into the working directory so the components can be imported
 outputs:
+  - id: pipeline_script
+    type:
+      - 'null'
+      - File
+    doc: The generated pipeline script
+    outputBinding:
+      glob: $(inputs.pipeline_name).py
+  - id: updated_config
+    type:
+      - 'null'
+      - File
+    doc: The updated config file
+    outputBinding:
+      glob: "*_kronos.yaml"
+  - id: intermediate_pipeline_scripts
+    type:
+      - 'null'
+      - Directory
+    doc: Per-sample pipeline scripts
+    outputBinding:
+      glob: intermediate_pipeline_scripts
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.component_dirs ? inputs.component_dirs : [])"
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: kronos
+      - envName: PYTHONPATH
+        envValue: $(runtime.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kronos:2.3.0--py_0

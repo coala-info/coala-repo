@@ -1,5 +1,11 @@
 # k8 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| k8 | PASS |  |
+
 ## k8
 
 ### Tool Description

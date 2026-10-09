@@ -16,14 +16,6 @@ inputs:
     doc: Kaptive JSON lines file or - for stdin
     inputBinding:
       position: 2
-  - id: formats
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Formats to convert to
-    inputBinding:
-      position: 3
   - id: loci_filter
     type:
       - 'null'
@@ -97,7 +89,7 @@ inputs:
     doc: Output or path parameter `faa_output_path`
     inputBinding:
       position: 105
-      prefix: --faa-output
+      prefix: --faa
   - id: ffn_output_path
     type:
       - 'null'
@@ -105,7 +97,7 @@ inputs:
     doc: Output or path parameter `ffn_output_path`
     inputBinding:
       position: 106
-      prefix: --ffn-output
+      prefix: --ffn
   - id: fna_output_path
     type:
       - 'null'
@@ -113,7 +105,7 @@ inputs:
     doc: Output or path parameter `fna_output_path`
     inputBinding:
       position: 107
-      prefix: --fna-output
+      prefix: --fna
   - id: json_output_path
     type:
       - 'null'
@@ -121,7 +113,7 @@ inputs:
     doc: Output or path parameter `json_output_path`
     inputBinding:
       position: 108
-      prefix: --json-output
+      prefix: --json
   - id: plot_output_dir_path
     type:
       - 'null'
@@ -129,7 +121,7 @@ inputs:
     doc: Output or path parameter `plot_output_dir_path`
     inputBinding:
       position: 109
-      prefix: --plot-output-dir
+      prefix: --plot
   - id: tsv_output_path
     type:
       - 'null'
@@ -137,7 +129,7 @@ inputs:
     doc: Output or path parameter `tsv_output_path`
     inputBinding:
       position: 110
-      prefix: --tsv-output
+      prefix: --tsv
 outputs:
   - id: tsv_output
     type:
@@ -183,6 +175,10 @@ outputs:
     outputBinding:
       glob: $(inputs.plot_output_dir_path)
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: MPLCONFIGDIR
+        envValue: /tmp
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

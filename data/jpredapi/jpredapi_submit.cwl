@@ -133,6 +133,9 @@ outputs:
     doc: Path to directory where to save archive with results.
     outputBinding:
       glob: $(inputs.results)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jpredapi:1.5.6--py_0

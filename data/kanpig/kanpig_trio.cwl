@@ -16,6 +16,11 @@ inputs:
       prefix: --debug
   - id: father_reads
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Paternal reads to genotype (indexed .bam, .cram, or .plup.gz)
     inputBinding:
       position: 101
@@ -236,6 +241,11 @@ inputs:
       prefix: --sizemin
   - id: mother_reads
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Maternal reads to genotype (indexed .bam, .cram, or .plup.gz)
     inputBinding:
       position: 101
@@ -266,6 +276,11 @@ inputs:
       prefix: --passonly
   - id: proband_reads
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Proband reads to genotype (indexed .bam, .cram, or .plup.gz)
     inputBinding:
       position: 101
@@ -281,6 +296,10 @@ inputs:
   - id: reference_genome
     type: File
     doc: Reference genome
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     inputBinding:
       position: 101
       prefix: --reference
@@ -333,7 +352,8 @@ inputs:
       position: 101
       prefix: --XYploidy-bed
   - id: output_vcf_path
-    type: string?
+    type: string
+    default: kanpig_trio.vcf
     doc: ' Output VCF (unsorted, uncompressed) [default: stdout]'
     inputBinding:
       position: 102

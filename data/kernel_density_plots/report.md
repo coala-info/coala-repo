@@ -1,5 +1,11 @@
 # kernel_density_plots CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kernel_density_plots_kernel_plot.py | PASS |  |
+
 ## kernel_density_plots_kernel_plot.py
 
 ### Tool Description

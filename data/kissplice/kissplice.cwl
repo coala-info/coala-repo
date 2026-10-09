@@ -248,10 +248,9 @@ inputs:
       position: 101
       prefix: --output-context
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: path to store the results and the summary log file
+    type: ['null', string]
+    default: results
+    doc: path to store the results and the summary log file (default = ./results)
     inputBinding:
       position: 101
       prefix: -o
@@ -279,11 +278,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -r
     doc: input fasta/q read files or compressed (.gz) fasta/q files (mutiple, 
       such as "-r file1 -r file2...")
     inputBinding:
       position: 101
-      prefix: -r
   - id: stranded
     type:
       - 'null'
@@ -347,6 +347,11 @@ inputs:
       position: 101
       prefix: -v
 outputs:
+  - id: results_dir
+    type: Directory
+    doc: Result directory with the bubbles (results_*.fa) and the summary log
+    outputBinding:
+      glob: $(inputs.output_dir)
   - id: stdout
     type: stdout
     doc: Standard output

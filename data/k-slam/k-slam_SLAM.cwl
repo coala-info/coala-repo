@@ -18,8 +18,8 @@ inputs:
     inputBinding:
       position: 2
   - id: database
-    type: File
-    doc: SLAM database file which reads will be aligned against
+    type: Directory
+    doc: SLAM database directory (with the files database and taxDB) which reads will be aligned against
     inputBinding:
       position: 103
       prefix: --db
@@ -138,13 +138,17 @@ inputs:
       position: 105
       prefix: --sam-file
 outputs:
-  - id: output_file
+  - id: output_files
     type:
       - 'null'
-      - File
-    doc: write to this file instead of stdout
+      - type: array
+        items: File
+    doc: Result files written with the --output-file name as prefix (summary XML, per-read taxonomy, abbreviated taxonomy)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: sam_file
     type:
       - 'null'
@@ -157,3 +161,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/k-slam:1.0--1
+stdout: k-slam_SLAM.out

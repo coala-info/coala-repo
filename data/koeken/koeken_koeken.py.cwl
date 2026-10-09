@@ -15,8 +15,9 @@ inputs:
       position: 101
       prefix: --clade
   - id: classid
-    type: File
-    doc: Location of the OTU Table for main analysis. (Must be .biom format)
+    type: string
+    doc: Name of the column in the mapping file that holds the class (group) of
+      each sample.
     inputBinding:
       position: 101
       prefix: --class
@@ -118,7 +119,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Directory to place all the files.
+    doc: Name of the column in the mapping file that holds the subclass of each
+      sample.
     inputBinding:
       position: 101
       prefix: --subclass
@@ -142,15 +144,12 @@ outputs:
       exist, the program will create it.
     outputBinding:
       glob: $(inputs.outputdir_path)
-  - id: subclassid_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to place all the files.
-    outputBinding:
-      glob: $(inputs.subclassid)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: MPLBACKEND
+        envValue: Agg
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/koeken:0.2.6--py27h24bf2e0_1

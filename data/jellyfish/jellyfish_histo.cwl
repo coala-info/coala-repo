@@ -7,7 +7,7 @@ label: jellyfish_histo
 doc: "Create an histogram of k-mer occurrences\n\nTool homepage: http://www.genome.umd.edu/jellyfish.html"
 inputs:
   - id: input_db_path
-    type: string
+    type: File
     doc: db:path
     inputBinding:
       position: 1
@@ -67,9 +67,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)

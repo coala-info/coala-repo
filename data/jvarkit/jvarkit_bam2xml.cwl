@@ -4,189 +4,81 @@ baseCommand:
   - jvarkit
   - bam2xml
 label: jvarkit_bam2xml
-doc: "Convert BAM to XML\n\nTool homepage: https://github.com/lindenb/jvarkit"
+doc: "Convert a BAM file to XML.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:
-  - id: input_bam
-    type: File
-    doc: input BAM file
+  - id: bam_files
+    type:
+      type: array
+      items: File
+    doc: Input BAM/CRAM files
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    inputBinding:
+      position: 100
+  - id: bam_compression
+    type:
+      - 'null'
+      - int
+    doc: "Compression Level. 0: no compression. 9: max compression (default: 5)"
     inputBinding:
       position: 1
-  - id: no_attributes
+      prefix: --bamcompression
+  - id: out
     type:
       - 'null'
-      - boolean
-    doc: Do not print the attributes
+      - string
+    doc: "Output file. Optional. Default: stdout"
     inputBinding:
-      position: 102
-      prefix: --no-attributes
-  - id: no_comments
-    type:
-      - 'null'
-      - boolean
-    doc: Do not print the comments
-    inputBinding:
-      position: 102
-      prefix: --no-comments
-  - id: no_header
-    type:
-      - 'null'
-      - boolean
-    doc: Do not print the header
-    inputBinding:
-      position: 102
-      prefix: --no-header
-  - id: no_program
-    type:
-      - 'null'
-      - boolean
-    doc: Do not print the program list
-    inputBinding:
-      position: 102
-      prefix: --no-program
-  - id: no_quality
-    type:
-      - 'null'
-      - boolean
-    doc: Do not print the quality
-    inputBinding:
-      position: 102
-      prefix: --no-quality
-  - id: no_read_groups
-    type:
-      - 'null'
-      - boolean
-    doc: Do not print the read groups
-    inputBinding:
-      position: 102
-      prefix: --no-read-groups
-  - id: no_ref_dict
-    type:
-      - 'null'
-      - boolean
-    doc: Do not print the reference dictionary
-    inputBinding:
-      position: 102
-      prefix: --no-ref-dict
-  - id: no_sequence
-    type:
-      - 'null'
-      - boolean
-    doc: Do not print the sequence
-    inputBinding:
-      position: 102
-      prefix: --no-sequence
-  - id: no_sequence_dictionary
-    type:
-      - 'null'
-      - boolean
-    doc: Do not print the sequence dictionary
-    inputBinding:
-      position: 102
-      prefix: --no-sequence-dictionary
-  - id: sequence_dictionary
+      position: 2
+      prefix: --out
+  - id: reference
     type:
       - 'null'
       - File
-    doc: Sequence dictionary (SAMtools dict)
+    doc: Indexed fasta Reference file. This file must be indexed with samtools faidx and with picard/gatk CreateSequenceDictionary or samtools dict
+    secondaryFiles:
+      - .fai
+      - "^.dict"
     inputBinding:
-      position: 102
-      prefix: --sequence-dictionary
-  - id: sequence_dictionary_file
-    type:
-      - 'null'
-      - File
-    doc: Sequence dictionary file
-    inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-file
-  - id: sequence_dictionary_json
+      position: 3
+      prefix: --reference
+  - id: regions
     type:
       - 'null'
       - string
-    doc: Sequence dictionary JSON
+    doc: "Limit analysis to this interval. A source of intervals. The following suffixes are recognized: vcf, vcf.gz bed, bed.gz, gtf, gff, gff.gz, gtf.gz. Otherwise it could be an empty string (no interval) or a list of plain interval separated by '[ \\t\\n;,]'"
     inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-json
-  - id: sequence_dictionary_json_file
-    type:
-      - 'null'
-      - File
-    doc: Sequence dictionary JSON file
-    inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-json-file
-  - id: sequence_dictionary_json_string
+      position: 4
+      prefix: --regions
+  - id: sam_output_format
     type:
       - 'null'
       - string
-    doc: Sequence dictionary JSON string
+    doc: "Sam output format. One of BAM, SAM, CRAM (default: SAM)"
     inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-json-string
-  - id: sequence_dictionary_json_string_file
-    type:
-      - 'null'
-      - File
-    doc: Sequence dictionary JSON string file
-    inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-json-string-file
-  - id: sequence_dictionary_json_string_string
+      position: 5
+      prefix: --samoutputformat
+  - id: validation_stringency
     type:
       - 'null'
       - string
-    doc: Sequence dictionary JSON string string
+    doc: "SAM Reader Validation Stringency. One of STRICT, LENIENT, SILENT (default: LENIENT)"
     inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-json-string-string
-  - id: sequence_dictionary_json_string_url
-    type:
-      - 'null'
-      - string
-    doc: Sequence dictionary JSON string URL
-    inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-json-string-url
-  - id: sequence_dictionary_json_url
-    type:
-      - 'null'
-      - string
-    doc: Sequence dictionary JSON URL
-    inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-json-url
-  - id: sequence_dictionary_string
-    type:
-      - 'null'
-      - string
-    doc: Sequence dictionary string
-    inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-string
-  - id: sequence_dictionary_url
-    type:
-      - 'null'
-      - string
-    doc: Sequence dictionary URL
-    inputBinding:
-      position: 102
-      prefix: --sequence-dictionary-url
-  - id: output_xml_path
-    type: string
-    doc: Output or path parameter `output_xml_path`
-    inputBinding:
-      position: 103
-      prefix: --output-xml
+      position: 6
+      prefix: --validation-stringency
 outputs:
-  - id: output_xml
+  - id: output_file
     type:
       - 'null'
       - File
-    doc: 'output XML file. Default: stdout'
+    doc: Output file, when the output option is given
     outputBinding:
-      glob: $(inputs.output_xml_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result, when no output file is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jvarkit:2024.08.25--hdfd78af_2
+stdout: jvarkit_bam2xml.out

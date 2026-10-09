@@ -5,9 +5,7 @@ label: jobtree_jobTreeStatus
 doc: "Prints the status of a job tree.\n\nTool homepage: https://github.com/benedictpaten/jobTree"
 inputs:
   - id: job_tree_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory containing the job tree. The jobTree location can also be 
       specified as the argument to the script.
     inputBinding:

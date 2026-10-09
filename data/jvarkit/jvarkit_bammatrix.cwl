@@ -4,164 +4,158 @@ baseCommand:
   - jvarkit
   - bammatrix
 label: jvarkit_bammatrix
-doc: "Create a matrix of read counts per region.\n\nTool homepage: https://github.com/lindenb/jvarkit"
+doc: "Draw a matrix of the reads shared between two regions of a BAM file.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:
-  - id: input_files
+  - id: bam_files
     type:
       type: array
       items: File
-    doc: Input files
+    doc: Input BAM/CRAM files
+    secondaryFiles:
+      - .bai
     inputBinding:
-      position: 1
+      position: 100
   - id: color_scale
     type:
       - 'null'
       - string
-    doc: Color scale
+    doc: "Color scale. One of LINEAR, LOG (default: LOG)"
     inputBinding:
-      position: 102
+      position: 1
       prefix: --color-scale
   - id: distance
     type:
       - 'null'
       - int
-    doc: "Don't evaluate a point if the distance between the regions is lower than
-      'd'. Negative: don't consider distance."
+    doc: "Don't evaluate a point if the distance between the regions is lower than 'd'. Negative: don't consider distance (default: -1)"
     inputBinding:
-      position: 102
+      position: 2
       prefix: --distance
-  - id: gtf_file
+  - id: gtf
     type:
       - 'null'
       - File
-    doc: Optional gtf file to draw the exons. A GTF (General Transfer Format) 
-      file. See https://www.ensembl.org/info/website/upload/gff.html . Please 
-      note that CDS are only detected if a start and stop codons are defined.
+    doc: Optional gtf file to draw the exons. A GTF (General Transfer Format) file. Please note that CDS are only detected if a start and stop codons are defined.
     inputBinding:
-      position: 102
+      position: 3
       prefix: --gtf
-  - id: highlight_regions
+  - id: higligth
     type:
       - 'null'
       - File
     doc: Optional Bed file to hightlight regions of interest
     inputBinding:
-      position: 102
+      position: 4
       prefix: --higligth
-  - id: matrix_size
+  - id: mapq
     type:
       - 'null'
       - int
-    doc: matrix size in pixel
+    doc: "minimal mapping quality (default: 30)"
     inputBinding:
-      position: 102
-      prefix: --size
+      position: 5
+      prefix: --mapq
   - id: min_common
     type:
       - 'null'
       - int
-    doc: Don't print a point if there are less than 'c' common names at the 
-      intersection
+    doc: "Don't print a point if there are less than 'c' common names at the intersection (default: 0)"
     inputBinding:
-      position: 102
+      position: 6
       prefix: --min-common
-  - id: min_mapping_quality
+  - id: name
     type:
       - 'null'
-      - int
-    doc: minimal mapping quality
+      - string
+    doc: "user read name or use 'BX:Z:'/'MI:i:' attribute from 10x genomics as the read name. One of READ_NAME, BX, MI (default: READ_NAME)"
     inputBinding:
-      position: 102
-      prefix: --mapq
+      position: 7
+      prefix: --name
   - id: no_coverage
     type:
       - 'null'
       - boolean
-    doc: Don't print coverage
+    doc: "Don't print coverage"
     inputBinding:
-      position: 102
+      position: 8
       prefix: --no-coverage
-  - id: pixel_size
-    type:
-      - 'null'
-      - float
-    doc: pixel size. Each dot at intersection will have the following size
-    inputBinding:
-      position: 102
-      prefix: --pixel
-  - id: read_name_source
+  - id: output
     type:
       - 'null'
       - string
-    doc: user read name or use 'BX:Z:'/'MI:i:' attribute from 10x genomics as 
-      the read name. "Chromium barcode sequence that is error-corrected and 
-      confirmed against a list of known-good barcode sequences.". See 
-      https://support.10xgenomics.com/genome-exome/software/pipelines/latest/output/bam
+    doc: "Output file. Optional. Default: stdout"
     inputBinding:
-      position: 102
-      prefix: --name
-  - id: reference_file
+      position: 9
+      prefix: --output
+  - id: pixel
+    type:
+      - 'null'
+      - int
+    doc: "pixel size. Each dot at intersection will have the following size (default: 1)"
+    inputBinding:
+      position: 10
+      prefix: --pixel
+  - id: reference
     type:
       - 'null'
       - File
-    doc: Indexed fasta Reference file. This file must be indexed with samtools 
-      faidx and with picard/gatk CreateSequenceDictionary or samtools dict
+    doc: Indexed fasta Reference file. This file must be indexed with samtools faidx and with picard/gatk CreateSequenceDictionary or samtools dict
+    secondaryFiles:
+      - .fai
+      - "^.dict"
     inputBinding:
-      position: 102
+      position: 11
       prefix: --reference
-  - id: region1
-    type:
-      - 'null'
-      - string
-    doc: 'first region.An interval as the following syntax : "chrom:start-end" or
-      "chrom:middle+extend" or "chrom:start-end+extend" or "chrom:start-end+extend-percent%".A
-      program might use a Reference sequence to fix the chromosome name (e.g: 1->chr1)'
+  - id: region
+    type: string
+    doc: "first region. An interval as the following syntax : \"chrom:start-end\" or \"chrom:middle+extend\" or \"chrom:start-end+extend\" or \"chrom:start-end+extend-percent%\". A program might use a Reference sequence to fix the chromosome name (e.g: 1->chr1)"
     inputBinding:
-      position: 102
+      position: 12
       prefix: --region
   - id: region2
     type:
       - 'null'
       - string
-    doc: '2nd region. Default: use first region. An interval as the following syntax
-      : "chrom:start-end" or "chrom:middle+extend" or "chrom:start-end+extend" or
-      "chrom:start-end+extend-percent%".A program might use a Reference sequence to
-      fix the chromosome name (e.g: 1->chr1)'
+    doc: "2nd region. Default: use first region. An interval as the following syntax : \"chrom:start-end\" or \"chrom:middle+extend\" or \"chrom:start-end+extend\" or \"chrom:start-end+extend-percent%\". A program might use a Reference sequence to fix the chromosome name (e.g: 1->chr1)"
     inputBinding:
-      position: 102
+      position: 13
       prefix: --region2
-  - id: use_sa_alignments
+  - id: sa
     type:
       - 'null'
       - boolean
-    doc: Use other canonical alignements from the 'SA:Z:*' attribute
+    doc: "Use other canonical alignements from the 'SA:Z:*' attribute"
     inputBinding:
-      position: 102
+      position: 14
       prefix: --sa
-  - id: use_supplementary_alignments
+  - id: size
+    type:
+      - 'null'
+      - int
+    doc: "matrix size in pixel (default: 1000)"
+    inputBinding:
+      position: 15
+      prefix: --size
+  - id: supplementary
     type:
       - 'null'
       - boolean
     doc: Use other supplementary alignements
     inputBinding:
-      position: 102
+      position: 16
       prefix: --supplementary
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: 'Output file. Optional . Default: stdout'
+    doc: Output file, when the output option is given
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result, when no output file is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jvarkit:2024.08.25--hdfd78af_2
+stdout: jvarkit_bammatrix.out

@@ -10,7 +10,7 @@ inputs:
       items: File
     doc: Input filename(s)
     inputBinding:
-      position: 1
+      position: 200
   - id: bzip2_compressed
     type:
       - 'null'
@@ -27,11 +27,9 @@ inputs:
     inputBinding:
       position: 102
       prefix: --confidence
-  - id: db_name
-    type:
-      - 'null'
-      - string
-    doc: Name for Kraken 2 DB
+  - id: db
+    type: Directory
+    doc: Kraken 2 DB folder (with hash.k2d, opts.k2d and taxo.k2d)
     inputBinding:
       position: 102
       prefix: --db
@@ -137,10 +135,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: Print output to filename (default stdout); "-" will suppress normal output
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --output
   - id: report_file_path
     type:
       - 'null'
@@ -157,6 +155,9 @@ inputs:
       position: 106
       prefix: --unclassified-out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Kraken 2 output (empty when --output is used)
   - id: unclassified_out
     type:
       - 'null'
@@ -190,3 +191,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kraken2:2.17.1--pl5321h077b44d_0
+stdout: kraken2.out

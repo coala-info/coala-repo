@@ -75,10 +75,7 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Path to taxonomy directory
-    inputBinding:
-      position: 101
-      prefix: --kraken_tax
+    doc: Taxonomy directory (the files of a kraken taxonomy folder). It is staged writable at <output_dir>/krakenDB[_<db_tag>]/taxonomy, where kodoja_build.py finds and fills it, because --kraken_tax would only make a symlink to the input folder. Without it kodoja_build.py downloads the NCBI taxonomy.
   - id: no_download
     type:
       - 'null'
@@ -112,6 +109,18 @@ outputs:
     doc: Output directory path, required
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - |
+        ${
+          if (!inputs.kraken_tax) { return []; }
+          var db = inputs.output_dir + "/krakenDB" + (inputs.db_tag ? "_" + inputs.db_tag : "") + "/taxonomy";
+          return [{"entryname": db, "entry": inputs.kraken_tax, "writable": true}];
+        }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kodoja:0.0.10--0

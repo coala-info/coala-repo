@@ -66,9 +66,8 @@ inputs:
       position: 102
       prefix: --Generators
   - id: output_file
-    type:
-      - 'null'
-      - string
+    type: string
+    default: mer_bloom_filter
     doc: Output file
     inputBinding:
       position: 102
@@ -92,16 +91,26 @@ inputs:
   - id: timing_file
     type:
       - 'null'
-      - File
+      - string
     doc: Print timing information
     inputBinding:
       position: 102
       prefix: --timing
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: bloom_filter
+    type: File
+    doc: Bloom filter file
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: timing_output
+    type:
+      - 'null'
+      - File
+    doc: Timing information
+    outputBinding:
+      glob: '$(inputs.timing_file === null ? [] : inputs.timing_file)'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/jellyfish:v2.2.10-2-deb_cv1
-stdout: jellyfish_bc.out

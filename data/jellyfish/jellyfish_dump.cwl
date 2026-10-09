@@ -7,7 +7,7 @@ label: jellyfish_dump
 doc: "Dump k-mer counts\n\nTool homepage: http://www.genome.umd.edu/jellyfish.html"
 inputs:
   - id: db_path
-    type: string
+    type: File
     doc: Path to the k-mer database
     inputBinding:
       position: 1
@@ -22,7 +22,7 @@ inputs:
   - id: lower_count
     type:
       - 'null'
-      - string
+      - int
     doc: Don't output k-mer with count < lower-count
     inputBinding:
       position: 102
@@ -38,7 +38,7 @@ inputs:
   - id: upper_count
     type:
       - 'null'
-      - string
+      - int
     doc: Don't output k-mer with count > upper-count
     inputBinding:
       position: 102
@@ -51,9 +51,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)

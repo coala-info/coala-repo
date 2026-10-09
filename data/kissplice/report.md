@@ -1,5 +1,11 @@
 # kissplice CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kissplice | PASS |  |
+
 ## kissplice
 
 ### Tool Description

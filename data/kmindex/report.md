@@ -1,5 +1,19 @@
 # kmindex CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kmindex_build | PASS |  |
+| kmindex_compress | PASS |  |
+| kmindex_index-infos | PASS |  |
+| kmindex_merge | PASS |  |
+| kmindex_query | PASS |  |
+| kmindex_query2 | PASS |  |
+| kmindex_register | PASS |  |
+| kmindex_sum-index | PASS |  |
+| kmindex_sum-query | PASS |  |
+
 ## kmindex_build
 
 ### Tool Description
@@ -367,23 +381,6 @@ OPTIONS
     -h --help    - Show this message and exit. [⚑]
        --version - Show version and exit. [⚑]
     -v --verbose - Verbosity level [debug|info|warning|error]. {info}
-```
-
-
-## kmindex_reports
-
-### Tool Description
-Reports on kmindex files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kmindex:0.6.0--h668145b_1
-- **Homepage**: https://github.com/tlemane/kmindex
-- **Package**: https://anaconda.org/channels/bioconda/packages/kmindex/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-[2026-02-25 08:10:20.616] [error] [UnknownCmdError] -> Unknown command: reports, choices -> [build|register|query|query2|merge|index-infos|compress|sum-index|sum-query]
 ```
 
 

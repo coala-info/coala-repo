@@ -1,5 +1,14 @@
 # kpop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kpop_KPopCount | PASS | rewritten from the help (-f/-s/-p/-l/-L/-o); ran on the KPop primer FASTA, SARS-CoV-2 genome (spectrum sums match sequence length) and paired reads (totals match) |
+| kpop_KPopCountDB | PASS | rewritten with actions in a fixed order; built a 500-spectrum database from KPop primer k-mer tables, added metadata, combined a class, wrote database and table |
+| kpop_KPopTwist | PASS | rewritten from the help; twisted the 500-spectrum KPop primer database and wrote the twister and twisted files |
+| kpop_KPopTwistDB | PASS | rewritten with actions in a fixed order; twisted 500 test sequences and summarized distances: all 500 nearest training sequences have the right class |
+
 ## kpop_KPopCount
 
 ### Tool Description

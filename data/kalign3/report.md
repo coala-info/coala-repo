@@ -1,5 +1,11 @@
 # kalign3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kalign3 | PASS |  |
+
 ## kalign3
 
 ### Tool Description

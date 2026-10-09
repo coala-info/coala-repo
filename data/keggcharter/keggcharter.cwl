@@ -100,9 +100,10 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: IDs of metabolic maps to output
+    doc: IDs of metabolic maps to output (joined with commas)
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --metabolic-maps
   - id: number_of_taxa
     type:
@@ -121,12 +122,13 @@ inputs:
     doc: Names of columns with quantification
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --quantification-columns
   - id: resources_directory
     type:
       - 'null'
-      - Directory
-    doc: Directory for storing KGML and CSV files.
+      - string
+    doc: Directory for storing KGML and CSV files (created by the tool in the working directory).
     inputBinding:
       position: 101
       prefix: --resources-directory
@@ -196,6 +198,8 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/keggcharter:1.1.2--hdfd78af_0

@@ -1,5 +1,11 @@
 # kcalign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kcalign_kc-align | PASS | genome mode checked; the mixed mode crashes with a TypeError (tool bug) |
+
 ## kcalign_kc-align
 
 ### Tool Description

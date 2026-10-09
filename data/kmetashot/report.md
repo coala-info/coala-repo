@@ -1,33 +1,10 @@
 # kmetashot CWL Generation Report
 
-## kmetashot_kMetaShot_test.py
+## Real Data Test
 
-### Tool Description
-kMetaShot installation test
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kmetashot:2.0--pyh7e72e81_1
-- **Homepage**: https://github.com/gdefazio/kMetaShot
-- **Package**: https://anaconda.org/channels/bioconda/packages/kmetashot/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/kmetashot/overview
-- **Total Downloads**: 306
-- **Last updated**: 2025-10-31
-- **GitHub**: https://github.com/gdefazio/kMetaShot
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: kMetaShot_test.py [-h] -r REFERENCE
-
-kMetaShot installation test
-
-options:
-  -h, --help            show this help message and exit
-  -r, --reference REFERENCE
-                        Path to HDF5 file containing reference
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| kmetashot_kMetaShot_classifier_NV.py | Not completed | needs the 22 GB kMetaShot HDF5 reference database; removed the wrong .fai secondaryFiles on the reference |
 
 ## kmetashot_kMetaShot_classifier_NV.py
 

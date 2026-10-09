@@ -50,7 +50,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: name of the output files
+    default: psq_out
+    doc: name of the output files (a directory created by the tool)
     inputBinding:
       position: 104
       prefix: --out
@@ -59,9 +60,7 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: take junctions with rMATS fdr within this threshold
-      - 0
-      - 1
+    doc: take junctions with rMATS fdr within this threshold [default 0 1]
     inputBinding:
       position: 104
       prefix: --qvalue
@@ -77,6 +76,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Output directory with the translated protein sequence files
+    outputBinding:
+      glob: $(inputs.output_files)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.gtf_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jcast:0.3.5--pyhdfd78af_0

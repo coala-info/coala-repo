@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - JRONN_JAR_NAME
+baseCommand: jronn
 label: jronn
 doc: "JRONN is a Java implementation of RONN. JRONN is based on RONN and uses the
   same model data, therefore gives the same predictions. Main motivation behind JRONN
@@ -41,7 +38,7 @@ inputs:
   - id: statistics_file
     type:
       - 'null'
-      - File
+      - string
     doc: the file name to write execution statistics to.
     inputBinding:
       position: 101
@@ -59,22 +56,35 @@ inputs:
       prefix: -n=
       separate: false
   - id: output_file_path
-    type: string
-    doc: =output file
+    type:
+      - 'null'
+      - string
+    doc: full path to the output file, if not specified standard out is used
     inputBinding:
       position: 102
       prefix: -o=
       separate: false
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Predictions written to standard output when no output file is given
   - id: output_file
     type:
       - 'null'
       - File
-    doc: full path to the output file, if not specified standard out is used
+    doc: Predictions written to the output file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.output_file_path === null ? [] : inputs.output_file_path)'
+  - id: statistics_output
+    type:
+      - 'null'
+      - File
+    doc: Execution statistics
+    outputBinding:
+      glob: '$(inputs.statistics_file === null ? [] : inputs.statistics_file)'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jronn:7.1.0--hdfd78af_1
+stdout: jronn.out

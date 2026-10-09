@@ -64,6 +64,20 @@ outputs:
     doc: Output KCF file name
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: summary_tsv
+    type:
+      - 'null'
+      - File
+    doc: Summary TSV file (written with summary_file)
+    outputBinding:
+      glob: '*.summary.tsv'
+  - id: bed_files
+    type:
+      type: array
+      items: File
+    doc: BED files (written with bed_file)
+    outputBinding:
+      glob: '*.bed'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

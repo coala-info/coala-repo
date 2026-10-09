@@ -1,5 +1,16 @@
 # krepp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| krepp_dist | PASS |  |
+| krepp_index | PASS |  |
+| krepp_inspect | PASS |  |
+| krepp_place | PASS | main mode and --nwk-file work; --lineage-file crashes the tool (segmentation fault) with this build |
+| krepp_seek | PASS |  |
+| krepp_sketch | PASS |  |
+
 ## krepp_index
 
 ### Tool Description

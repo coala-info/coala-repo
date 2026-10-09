@@ -9,13 +9,13 @@ inputs:
   - id: from_file
     type:
       - 'null'
-      - string
+      - File
     doc: A tab-separated file with index_name<tab>index_path per line.
     inputBinding:
       position: 101
       prefix: --from-file
   - id: global_index
-    type: string
+    type: Directory
     doc: Global index path.
     inputBinding:
       position: 101
@@ -23,7 +23,7 @@ inputs:
   - id: index_path
     type:
       - 'null'
-      - string
+      - Directory
     doc: Index path (a kmtricks run). (ignored with --from-file)
     inputBinding:
       position: 101
@@ -56,6 +56,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_out
+    type: Directory
+    doc: Global index directory with the registered index.
+    outputBinding:
+      glob: $(inputs.global_index.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.global_index)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmindex:0.6.0--h668145b_1

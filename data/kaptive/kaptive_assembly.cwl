@@ -29,8 +29,8 @@ inputs:
   - id: fasta_output
     type:
       - 'null'
-      - File
-    doc: Turn on fasta output. Accepts a single file or a directory
+      - string
+    doc: Turn on fasta output. Name of the directory to write to (created by the tool)
     inputBinding:
       position: 103
       prefix: --fasta
@@ -53,7 +53,7 @@ inputs:
   - id: json_output
     type:
       - 'null'
-      - File
+      - string
     doc: Turn on JSON lines output. Optionally choose file (can be existing)
     inputBinding:
       position: 103
@@ -110,7 +110,7 @@ inputs:
   - id: plot_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Plot results to "./{assembly}_kaptive_results.{fmt}". Optionally choose
       a directory
     inputBinding:
@@ -165,9 +165,8 @@ inputs:
       position: 103
       prefix: --weight-metric
   - id: output_file_path
-    type:
-      - 'null'
-      - string
+    type: string
+    default: kaptive_results.tsv
     doc: 'Output file to write/append tabular results to (default: stdout)'
     inputBinding:
       position: 104
@@ -197,7 +196,32 @@ outputs:
       Optionally choose file (can be existing)
     outputBinding:
       glob: $(inputs.scores_file_path)
+  - id: fasta_output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the locus fasta files (when fasta_output is set)
+    outputBinding:
+      glob: $(inputs.fasta_output)
+  - id: json_output_file
+    type:
+      - 'null'
+      - File
+    doc: JSON lines results (when json_output is set)
+    outputBinding:
+      glob: $(inputs.json_output)
+  - id: plot_output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the locus plots (when plot_dir is set)
+    outputBinding:
+      glob: $(inputs.plot_dir)
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: MPLCONFIGDIR
+        envValue: /tmp
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

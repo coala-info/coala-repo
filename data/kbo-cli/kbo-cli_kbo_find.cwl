@@ -9,11 +9,18 @@ doc: "Finds sequences in query files based on a reference or index.\n\nTool home
 inputs:
   - id: query_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Query file(s) with sequence data.
     inputBinding:
       position: 1
+  - id: list_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Sequence files named in input_list; staged in the working directory so that the paths in the list resolve
   - id: dedup_batches
     type:
       - 'null'
@@ -29,16 +36,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --detailed
-  - id: index_prefix
+  - id: index
     type:
       - 'null'
-      - string
-    doc: Prefix for prebuilt <prefix>.sbwt and <prefix>.lcs (excludes -r).
+      - File
+    doc: Prebuilt index file <prefix>.sbwt; <prefix>.lcs must sit beside it (excludes -r).
+    secondaryFiles:
+      - ^.lcs
     inputBinding:
       position: 102
       prefix: --index
+      valueFrom: $(self.path.replace(/\.sbwt$/, ''))
   - id: input_list
-    type: File
+    type:
+      - 'null'
+      - File
     doc: File with paths or tab separated name and path on each line.
     inputBinding:
       position: 102
@@ -50,6 +62,7 @@ inputs:
     doc: k-mer size, larger values are slower and use more space.
     inputBinding:
       position: 102
+      prefix: -k
   - id: max_error_prob
     type:
       - 'null'
@@ -122,12 +135,17 @@ inputs:
       position: 102
       prefix: --verbose
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Write output to a file instead of printing.
     inputBinding:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Alignments table when no output file is given
   - id: output_file
     type:
       - 'null'
@@ -136,7 +154,11 @@ outputs:
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.list_files)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kbo-cli:0.2.1--h4349ce8_0
+stdout: kbo-cli_kbo_find.out

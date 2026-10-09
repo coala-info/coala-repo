@@ -25,9 +25,15 @@ outputs:
     type: File
     doc: a name for the output file
     outputBinding:
-      glob: $(inputs.output_filename_path)
+      glob: $(inputs.output_filename_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: kronos
+      - envName: PYTHONPATH
+        envValue: $(runtime.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kronos:2.3.0--py_0

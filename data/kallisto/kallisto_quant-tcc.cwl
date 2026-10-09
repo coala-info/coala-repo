@@ -87,8 +87,8 @@ inputs:
   - id: priors
     type:
       - 'null'
-      - boolean
-    doc: Priors for the EM algorithm, either as raw counts or as probabilities.
+      - File
+    doc: Priors for the EM algorithm, either as raw counts or as probabilities. Pseudocounts are added to raw reads to prevent zero valued priors. Supplied in the same order as the transcripts in the transcriptome
     inputBinding:
       position: 102
       prefix: --priors

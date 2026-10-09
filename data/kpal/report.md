@@ -1,5 +1,27 @@
 # kpal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kpal_balance | PASS | ran on one profile; output balance is 0 and counts double as expected |
+| kpal_cat | PASS | ran on two profile files; output holds all four profiles with the right counts |
+| kpal_convert | PASS | synthetic data: old-format text written from real 4-mer counts of a viral genome; converted profile has the same counts; added missing OUTPUT argument |
+| kpal_count | PASS | ran on two real viral genomes (k=4); profile counts match the genome (ACGT count checked); added missing OUTPUT argument |
+| kpal_distance | PASS | ran on two profiles of one file; value matches the matrix output |
+| kpal_distr | PASS | ran on a k=4 profile; count distribution written per profile |
+| kpal_getcount | PASS | ran on a k=4 profile; counts of ACGT (9 and 8) match a direct count of the genomes |
+| kpal_info | PASS | ran on a k=4 profile of two viral genomes; counts and k-mer numbers are correct |
+| kpal_matrix | PASS | ran on four k=4 profiles; 4x4 lower-triangle matrix, A-B value equals the distance output |
+| kpal_merge | PASS | ran on the same file twice; counts doubled as expected |
+| kpal_positive | PASS | ran on two profiles; left profile lost the k-mer that is zero in the right one; added missing output arguments |
+| kpal_scale | PASS | ran on two profiles; left profile scaled towards the right total (integer rounding); added missing output arguments |
+| kpal_showbalance | PASS | ran on a k=4 profile of two viral genomes; balance values are plausible |
+| kpal_shrink | PASS | ran on k=4 profiles; output is k=3 with unchanged totals |
+| kpal_shuffle | PASS | ran on k=4 profiles; totals and k-mer number unchanged |
+| kpal_smooth | PASS | ran on two profiles with threshold 40; non-zero counts collapsed (256 to 163) and totals kept; added missing output arguments |
+| kpal_stats | PASS | ran on a k=4 profile; mean 12271/256 matches |
+
 ## kpal_convert
 
 ### Tool Description

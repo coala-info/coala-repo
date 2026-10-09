@@ -42,6 +42,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --key
+  - id: key_files
+    type:
+      type: array
+      items: File
+    doc: Sequence files named in the key fof; staged next to it so the names resolve.
   - id: out_types
     type:
       - 'null'
@@ -87,6 +92,13 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.key)
+      - entry: $(inputs.in_matrix)
+        writable: true
+      - $(inputs.key_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmtricks:1.5.1--h22625ea_0
+    dockerOutputDirectory: /kmtricks_work

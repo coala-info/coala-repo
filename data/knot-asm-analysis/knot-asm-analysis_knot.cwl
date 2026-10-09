@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: KNOT
+baseCommand: knot
 label: knot-asm-analysis_knot
 doc: "KNOT is a tool for analyzing contigs and their assembly graphs.\n\nTool homepage:
   https://github.com/natir/knot"
@@ -35,14 +35,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --correct-reads
-  - id: help_all
-    type:
-      - 'null'
-      - boolean
-    doc: show knot help and snakemake help
-    inputBinding:
-      position: 101
-      prefix: --help-all
   - id: output
     type: string
     doc: output prefix
@@ -85,13 +77,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_files
+  - id: aag
     type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output
+      - 'null'
+      - File
+    doc: assembly-assembly graph written as <output>_AAG.csv
     outputBinding:
-      glob: $(inputs.output)*
+      glob: $(inputs.output)_AAG.csv
+  - id: knot_dir
+    type:
+      - 'null'
+      - Directory
+    doc: intermediate files written to <output>_knot
+    outputBinding:
+      glob: $(inputs.output)_knot
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/knot-asm-analysis:1.3.0--py_0

@@ -7,7 +7,7 @@ label: jellyfish_stats
 doc: "Display some statistics about the k-mers in the hash:\n\nTool homepage: http://www.genome.umd.edu/jellyfish.html"
 inputs:
   - id: db_path
-    type: string
+    type: File
     doc: path to the k-mer hash database
     inputBinding:
       position: 1
@@ -43,9 +43,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)

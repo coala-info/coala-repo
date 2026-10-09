@@ -10,7 +10,7 @@ inputs:
       items: File
     doc: Input sequence file.
     inputBinding:
-      position: 1
+      position: 200
   - id: alpha
     type:
       - 'null'
@@ -528,6 +528,9 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample=
+          separate: false
     doc: Set the name of the sample that the next sample files are assigned to. 
       If the argument (SAMPLE_NAME) is given, the name of the sample is set to 
       this name. If the argument is not given, then the sample name is assigned 
@@ -538,7 +541,6 @@ inputs:
       automatically grouped.
     inputBinding:
       position: 102
-      prefix: --sample
   - id: scanlimitfactor
     type:
       - 'null'

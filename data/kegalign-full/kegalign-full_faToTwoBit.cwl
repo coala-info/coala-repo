@@ -11,6 +11,11 @@ inputs:
     doc: Input FASTA files
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: Output 2bit file name
+    inputBinding:
+      position: 3
   - id: ignore_dups
     type:
       - 'null'
@@ -18,7 +23,7 @@ inputs:
     doc: Convert first sequence only if there are duplicate sequence names. Use 
       'twoBitDup' to find duplicate sequences.
     inputBinding:
-      position: 102
+      position: 0
       prefix: -ignoreDups
   - id: name_prefix
     type:
@@ -26,7 +31,7 @@ inputs:
       - string
     doc: add XX. to start of sequence name in 2bit.
     inputBinding:
-      position: 102
+      position: 0
       prefix: -namePrefix=
       separate: false
   - id: no_mask
@@ -35,7 +40,7 @@ inputs:
       - boolean
     doc: Ignore lower-case masking in fa file.
     inputBinding:
-      position: 102
+      position: 0
       prefix: -noMask
   - id: strip_version
     type:
@@ -43,7 +48,7 @@ inputs:
       - boolean
     doc: Strip off version number after '.' for GenBank accessions.
     inputBinding:
-      position: 102
+      position: 0
       prefix: -stripVersion
   - id: use_long_offsets
     type:
@@ -52,14 +57,14 @@ inputs:
     doc: use 64-bit offsets for index. Allow for twoBit to contain more than 4Gb
       of sequence. NOT COMPATIBLE WITH OLDER CODE.
     inputBinding:
-      position: 102
+      position: 0
       prefix: -long
 outputs:
-  - id: output_file
+  - id: output_2bit
     type: File
     doc: Output 2bit file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kegalign-full:0.1.2.8--hdfd78af_0

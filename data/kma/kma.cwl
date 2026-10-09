@@ -214,14 +214,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -mi
-  - id: min_length_trimming
-    type:
-      - 'null'
-      - int
-    doc: Minimum length
-    inputBinding:
-      position: 101
-      prefix: -ml
   - id: min_mapping_quality_chaining
     type:
       - 'null'
@@ -398,14 +390,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -penalty
-  - id: penalty_local_chain_opening
-    type:
-      - 'null'
-      - int
-    doc: Penalty for opening a local chain
-    inputBinding:
-      position: 101
-      prefix: -localopen
   - id: penalty_local_opening
     type:
       - 'null'
@@ -574,11 +558,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: -tmp
+  - id: template_db_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files of the indexed template database (*.comp.b, *.index.b, *.length.b,
+      *.name, *.seq.b); they are staged in the working directory so that
+      template_db can name them
   - id: template_db
     type:
       - 'null'
       - string
-    doc: Template DB
+    doc: Template DB (prefix of the staged template_db_files, for example "ecoli_b0842_1to5")
     inputBinding:
       position: 101
       prefix: -t_db
@@ -689,6 +681,10 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.template_db_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kma:1.6.8--h577a1d6_0

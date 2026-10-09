@@ -64,6 +64,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: "File to output the complete kmer tally table for each\ntax ID to. Optional."
     inputBinding:
       position: 102
       prefix: --kmer_tally_table

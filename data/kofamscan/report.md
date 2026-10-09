@@ -1,5 +1,11 @@
 # kofamscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kofamscan | PASS | ran on the Galaxy tools-iuc test profiles (3 KOs); found ADH1_MOUSE and 2 other hits as expected; fixed -o prefix and added missing options |
+
 ## kofamscan
 
 ### Tool Description

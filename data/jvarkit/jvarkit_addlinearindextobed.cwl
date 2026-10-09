@@ -4,57 +4,41 @@ baseCommand:
   - jvarkit
   - addlinearindextobed
 label: jvarkit_addlinearindextobed
-doc: "Add linear index to BED file\n\nTool homepage: https://github.com/lindenb/jvarkit"
+doc: "Add a linear index to a BED file.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:
-  - id: files
+  - id: bed_files
     type:
       type: array
       items: File
     doc: Input BED files
     inputBinding:
-      position: 1
-  - id: dict
+      position: 100
+  - id: reference
     type: File
-    doc: "A SAM Sequence dictionary source: it can be a *.dict file, a fasta file
-      indexed with 'picard CreateSequenceDictionary' or 'samtools dict', or any hts
-      file containing a dictionary (VCF, BAM, CRAM, intervals...)"
+    doc: "A SAM Sequence dictionary source: it can be a *.dict file, a fasta file indexed with 'picard CreateSequenceDictionary' or 'samtools dict', or any hts file containing a dictionary (VCF, BAM, CRAM, intervals...). The option is also named --dict."
     inputBinding:
-      position: 102
-      prefix: --dict
-  - id: help_format
+      position: 1
+      prefix: --reference
+  - id: out
     type:
       - 'null'
       - string
-    doc: What kind of help. One of [usage,markdown,xml].
+    doc: "Output file. Optional. Default: stdout"
     inputBinding:
-      position: 102
-      prefix: --helpFormat
-  - id: reference
-    type: File
-    secondaryFiles:
-      - .fai
-    doc: "A SAM Sequence dictionary source: it can be a *.dict file, a fasta file
-      indexed with 'picard CreateSequenceDictionary' or 'samtools dict', or any hts
-      file containing a dictionary (VCF, BAM, CRAM, intervals...)"
-    inputBinding:
-      position: 102
-      prefix: --reference
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 2
+      prefix: --out
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: Output file. Optional .
+    doc: Output file, when the output option is given
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result, when no output file is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jvarkit:2024.08.25--hdfd78af_2
+stdout: jvarkit_addlinearindextobed.out

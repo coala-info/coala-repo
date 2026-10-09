@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jgoslin-cli
+baseCommand: jgoslin
 label: jgoslin
 doc: "Parses lipid names using various grammars.\n\nTool homepage: https://github.com/lifs-tools/jgoslin"
 inputs:
@@ -40,22 +40,26 @@ inputs:
     inputBinding:
       position: 101
       prefix: --stripWhitespace
-  - id: output_file_path
-    type: string
+  - id: output_file
+    type:
+      - 'null'
+      - boolean
     doc: Write output to file 'goslin-out.tsv' instead of to std out.
     inputBinding:
       position: 102
       prefix: --outputFile
 outputs:
-  - id: output_file
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: output_tsv
     type:
       - 'null'
       - File
-    doc: Write output to file 'goslin-out.tsv' instead of to std out.
+    doc: Parsed lipid table, written when output_file is true
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: goslin-out.tsv
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jgoslin:2.2.0--hdfd78af_0
+stdout: jgoslin.out

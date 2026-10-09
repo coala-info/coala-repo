@@ -1,5 +1,11 @@
 # ksnp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ksnp | PASS | output identical to the repository expected VCF |
+
 ## ksnp
 
 ### Tool Description

@@ -5,9 +5,7 @@ label: jobtree_jobTreeStats
 doc: "Prints statistics about a jobTree.\n\nTool homepage: https://github.com/benedictpaten/jobTree"
 inputs:
   - id: job_tree_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory containing the job tree. Can also be specified as the single 
       argument to the script.
     inputBinding:
@@ -161,9 +159,7 @@ inputs:
       prefix: --outputFile
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File in which to write results
     outputBinding:
       glob: $(inputs.output_file_path)

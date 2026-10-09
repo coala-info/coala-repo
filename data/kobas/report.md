@@ -1,5 +1,12 @@
 # kobas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kobas_kobas-annotate | Not completed | needs the large KOBAS annotation databases (sqlite3 and seq_pep); no small database available and the download site is not reachable |
+| kobas_kobas-identify | Not completed | needs the large KOBAS annotation databases (sqlite3 and seq_pep); no small database available and the download site is not reachable |
+
 ## kobas_kobas-annotate
 
 ### Tool Description

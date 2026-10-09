@@ -6,6 +6,11 @@ baseCommand:
 label: jupyter_nbconvert
 doc: "This application is used to convert notebook files (*.ipynb) to various other\n\
   formats.\n\nTool homepage: https://github.com/jakevdp/PythonDataScienceHandbook"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.notebooks)
+        writable: true
 inputs:
   - id: notebooks
     type:
@@ -70,7 +75,7 @@ inputs:
   - id: log_level
     type:
       - 'null'
-      - int
+      - string
     doc: Set the log level by value or name.
     inputBinding:
       position: 102
@@ -173,6 +178,30 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: converted
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Converted notebook files written to the working directory
+    outputBinding:
+      glob:
+        - '*.html'
+        - '*.md'
+        - '*.rst'
+        - '*.py'
+        - '*.tex'
+        - '*.pdf'
+        - '*.nbconvert.ipynb'
+        - $(inputs.output).*
+  - id: converted_files_dirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Folders with figures extracted from the notebooks (name_files)
+    outputBinding:
+      glob: '*_files'
   - id: output_dir_dir
     type:
       - 'null'

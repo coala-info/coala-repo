@@ -11,14 +11,6 @@ inputs:
     doc: Kaptive database path or keyword
     inputBinding:
       position: 1
-  - id: formats
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Formats to extract
-    inputBinding:
-      position: 2
   - id: filter
     type:
       - 'null'

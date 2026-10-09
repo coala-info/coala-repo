@@ -26,6 +26,7 @@ inputs:
     doc: contig sequences (required).
     inputBinding:
       position: 101
+      prefix: --contig
   - id: difference
     type:
       - 'null'
@@ -44,7 +45,7 @@ inputs:
       position: 101
       prefix: --genome
   - id: output_dir
-    type: Directory
+    type: string
     doc: directory of output (required).
     inputBinding:
       position: 101
@@ -77,6 +78,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory
+    type: Directory
+    doc: Output directory with fragment_final.txt and circ_full_seq.fa
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jccirc:1.0.0--hdfd78af_1

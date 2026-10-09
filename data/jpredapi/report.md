@@ -1,5 +1,15 @@
 # jpredapi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jpredapi_check_rest_version | Not completed | needs the remote JPred web server; the server answered v.1.5 but this only queries the server version |
+| jpredapi_get_results | Not completed | needs the remote JPred web server (job submission or account data); not tested |
+| jpredapi_quota | Not completed | needs the remote JPred web server (job submission or account data); not tested |
+| jpredapi_status | Not completed | needs the remote JPred web server (job submission or account data); not tested |
+| jpredapi_submit | Not completed | needs the remote JPred web server (job submission or account data); not tested |
+
 ## jpredapi_submit
 
 ### Tool Description

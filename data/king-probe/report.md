@@ -1,5 +1,11 @@
 # king-probe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| king-probe | PASS | ran on PDB 1UBQ: dot list, -once with two patterns and dot count, and the one-line summary all gave plausible contacts; baseCommand fixed to king-probe, numeric options glued to their flag, -ONELINE and -SUMMARY take no patterns |
+
 ## king-probe
 
 ### Tool Description

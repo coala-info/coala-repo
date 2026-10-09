@@ -135,8 +135,8 @@ inputs:
   - id: repart_from
     type:
       - 'null'
-      - string
-    doc: use repartition from another kmtricks run.
+      - Directory
+    doc: use repartition from another kmtricks run (staged writable in the working directory; its name must differ from run_dir).
     inputBinding:
       position: 101
       prefix: --repart-from
@@ -165,8 +165,8 @@ inputs:
       position: 101
       prefix: --restrict-to-list
   - id: run_dir
-    type: Directory
-    doc: kmtricks runtime directory.
+    type: string
+    doc: kmtricks runtime directory to create.
     inputBinding:
       position: 101
       prefix: --run-dir
@@ -210,11 +210,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: sequence_files
+    type:
+      type: array
+      items: File
+    doc: Sequence files named in the input file; staged next to it so the names resolve.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: run_dir_out
+    type: Directory
+    doc: kmtricks runtime directory.
+    outputBinding:
+      glob: $(inputs.run_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.file)
+      - $(inputs.sequence_files)
+      - entry: $(inputs.repart_from)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmtricks:1.5.1--h22625ea_0
+    dockerOutputDirectory: /kmtricks_work
 stdout: kmtricks_pipeline.out

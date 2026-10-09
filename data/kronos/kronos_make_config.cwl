@@ -13,6 +13,12 @@ inputs:
     doc: list of component names
     inputBinding:
       position: 1
+  - id: component_dirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Component directories (made with make_component) staged into the working directory so the components can be imported
   - id: output_filename_path
     type: string
     inputBinding:
@@ -23,9 +29,17 @@ outputs:
     type: File
     doc: a name for the resultant config file
     outputBinding:
-      glob: $(inputs.output_filename_path)
+      glob: $(inputs.output_filename_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.component_dirs ? inputs.component_dirs : [])"
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: kronos
+      - envName: PYTHONPATH
+        envValue: $(runtime.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kronos:2.3.0--py_0

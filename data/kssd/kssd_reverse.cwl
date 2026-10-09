@@ -4,18 +4,18 @@ baseCommand:
   - kssd
   - reverse
 label: kssd_reverse
-doc: "The reverse doc prefix.\n\nTool homepage: https://github.com/yhg926/public_kssd"
+doc: "Reverse kssd sketches to k-mer sets.\n\nTool homepage: https://github.com/yhg926/public_kssd"
 inputs:
   - id: co_dir
     type: Directory
-    doc: co dir
+    doc: "Sketch directory (co dir)"
     inputBinding:
-      position: 1
+      position: 200
   - id: byreads
     type:
       - 'null'
       - boolean
-    doc: recover k-mer from sketched reads .
+    doc: "recover k-mer from sketched reads"
     inputBinding:
       position: 102
       prefix: --byreads
@@ -23,7 +23,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: provide .shuf file.
+    doc: "provide .shuf file"
     inputBinding:
       position: 102
       prefix: --shufFile
@@ -31,26 +31,32 @@ inputs:
     type:
       - 'null'
       - int
-    doc: threads num.
+    doc: "threads num"
     inputBinding:
       position: 102
       prefix: --threads
   - id: outdir_path
     type: string
-    doc: path for recovered k-mer files.
+    doc: "path for recovered k-mer files (created before the run)"
     inputBinding:
       position: 103
       prefix: --outdir
 outputs:
   - id: outdir
-    type:
-      - 'null'
-      - Directory
-    doc: path for recovered k-mer files.
+    type: Directory
+    doc: "Recovered k-mer files"
     outputBinding:
       glob: $(inputs.outdir_path)
+  - id: stdout_out
+    type: stdout
+    doc: "Standard output"
+stdout: kssd_reverse.out
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.outdir_path, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kssd:2.21--h577a1d6_3

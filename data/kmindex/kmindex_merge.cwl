@@ -15,7 +15,7 @@ inputs:
       position: 101
       prefix: --delete-old
   - id: index
-    type: string
+    type: Directory
     doc: Global index path.
     inputBinding:
       position: 101
@@ -28,7 +28,7 @@ inputs:
       prefix: --new-name
   - id: new_path
     type: string
-    doc: Output path.
+    doc: Output path (use a path inside the global index directory so the result is collected with it).
     inputBinding:
       position: 101
       prefix: --new-path
@@ -79,13 +79,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: new_path_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output path.
+  - id: index_out
+    type: Directory
+    doc: Global index directory with the merged sub-index.
     outputBinding:
-      glob: $(inputs.new_path)
+      glob: $(inputs.index.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.index)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmindex:0.6.0--h668145b_1

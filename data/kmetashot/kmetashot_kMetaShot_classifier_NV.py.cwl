@@ -29,8 +29,6 @@ inputs:
   - id: reference
     type: File
     doc: Path to HDF5 file containing reference
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference

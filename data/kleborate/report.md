@@ -1,5 +1,11 @@
 # kleborate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kleborate | PASS | NCBI K. pneumoniae NTUH-K2044 genome typed as ST23, K1, ybt, iro, rmp (known hypervirulent strain) |
+
 ## kleborate
 
 ### Tool Description

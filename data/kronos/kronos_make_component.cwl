@@ -12,9 +12,19 @@ inputs:
     inputBinding:
       position: 1
 outputs:
+  - id: component_dir
+    type: Directory
+    doc: The generated component template directory
+    outputBinding:
+      glob: $(inputs.component_name)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: kronos
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kronos:2.3.0--py_0

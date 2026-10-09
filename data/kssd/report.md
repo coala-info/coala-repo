@@ -1,5 +1,15 @@
 # kssd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kssd_composite | Not completed | needs a species-specific pan unique k-mer reference database (GTDB scale); no tiny test database exists |
+| kssd_dist | PASS | sketched 3 bacterial genomes, indexed them and searched B. fragilis contigs; best hit was B. fragilis |
+| kssd_reverse | PASS |  |
+| kssd_set | PASS |  |
+| kssd_shuffle | PASS |  |
+
 ## kssd_shuffle
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # krocus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| krocus | PASS |  |
+
 ## krocus
 
 ### Tool Description

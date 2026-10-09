@@ -1,321 +1,163 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: make
+baseCommand: jupiter
 label: jupiterplot_jupiter
-doc: "GNU Make is a tool which controls the generation of programs and other non-source
-  files from a description file.\n\nTool homepage: https://github.com/JustinChu/JupiterPlot"
+doc: "Jupiter Plot: draws a Circos plot of the alignment of a scaffold or contig assembly to a reference genome.\n\nTool homepage: https://github.com/JustinChu/JupiterPlot"
 inputs:
-  - id: target
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Target(s) to build
+  - id: name
+    type: string
+    doc: Output file prefix
     inputBinding:
       position: 1
-  - id: always_make
-    type:
-      - 'null'
-      - boolean
-    doc: Unconditionally make all targets.
-    inputBinding:
-      position: 102
-      prefix: --always-make
-  - id: assume_new
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
-    inputBinding:
-      position: 102
-      prefix: --assume-new
-  - id: assume_old
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be very old and don't remake it.
-    inputBinding:
-      position: 102
-      prefix: --assume-old
-  - id: check_symlink_times
-    type:
-      - 'null'
-      - boolean
-    doc: Use the latest mtime between symlinks and target.
-    inputBinding:
-      position: 102
-      prefix: --check-symlink-times
-  - id: debug
-    type:
-      - 'null'
-      - string
-    doc: Print various types of debugging information.
-    inputBinding:
-      position: 102
-      prefix: --debug=
+      prefix: name=
       separate: false
-  - id: debug_info
-    type:
-      - 'null'
-      - boolean
-    doc: Print lots of debugging information.
+  - id: ref
+    type: File
+    doc: Reference genome FASTA file
     inputBinding:
-      position: 102
-      prefix: -d
-  - id: directory
-    type:
-      - 'null'
-      - Directory
-    doc: Change to DIRECTORY before doing anything.
-    inputBinding:
-      position: 102
-      prefix: --directory
-  - id: dry_run
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
-    inputBinding:
-      position: 102
-      prefix: --dry-run
-  - id: environment_overrides
-    type:
-      - 'null'
-      - boolean
-    doc: Environment variables override makefiles.
-    inputBinding:
-      position: 102
-      prefix: --environment-overrides
-  - id: eval
-    type:
-      - 'null'
-      - string
-    doc: Evaluate STRING as a makefile statement.
-    inputBinding:
-      position: 102
-      prefix: --eval
-  - id: ignore_errors
-    type:
-      - 'null'
-      - boolean
-    doc: Ignore errors from recipes.
-    inputBinding:
-      position: 102
-      prefix: --ignore-errors
-  - id: include_dir
-    type:
-      - 'null'
-      - type: array
-        items: Directory
-    doc: Search DIRECTORY for included makefiles.
-    inputBinding:
-      position: 102
-      prefix: --include-dir
-  - id: jobs
-    type:
-      - 'null'
-      - int
-    doc: Allow N jobs at once; infinite jobs with no arg.
-    inputBinding:
-      position: 102
-      prefix: --jobs=
+      position: 2
+      prefix: ref=
       separate: false
-  - id: just_print
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
+  - id: fa
+    type: File
+    doc: FASTA file of the contigs or scaffolds to compare with the reference
     inputBinding:
-      position: 102
-      prefix: --just-print
-  - id: keep_going
-    type:
-      - 'null'
-      - boolean
-    doc: Keep going when some targets can't be made.
-    inputBinding:
-      position: 102
-      prefix: --keep-going
-  - id: load_average
-    type:
-      - 'null'
-      - float
-    doc: Don't start multiple jobs unless load is below N.
-    inputBinding:
-      position: 102
-      prefix: --load-average=
+      position: 3
+      prefix: fa=
       separate: false
-  - id: makefile
-    type:
-      - 'null'
-      - File
-    doc: Read FILE as a makefile.
+  - id: sam
+    type: ['null', File]
+    doc: Use this SAM alignment instead of running minimap2
     inputBinding:
-      position: 102
-      prefix: --file
-  - id: max_load
-    type:
-      - 'null'
-      - float
-    doc: Don't start multiple jobs unless load is below N.
-    inputBinding:
-      position: 102
-      prefix: --max-load=
+      position: 4
+      prefix: sam=
       separate: false
-  - id: new_file
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
+  - id: t
+    type: ['null', int]
+    doc: Number of threads to use for minimap2 (default 4)
     inputBinding:
-      position: 102
-      prefix: --new-file
-  - id: no_builtin_rules
-    type:
-      - 'null'
-      - boolean
-    doc: Disable the built-in implicit rules.
-    inputBinding:
-      position: 102
-      prefix: --no-builtin-rules
-  - id: no_builtin_variables
-    type:
-      - 'null'
-      - boolean
-    doc: Disable the built-in variable settings.
-    inputBinding:
-      position: 102
-      prefix: --no-builtin-variables
-  - id: no_keep_going
-    type:
-      - 'null'
-      - boolean
-    doc: Turns off -k.
-    inputBinding:
-      position: 102
-      prefix: --no-keep-going
-  - id: no_print_directory
-    type:
-      - 'null'
-      - boolean
-    doc: Turn off -w, even if it was turned on implicitly.
-    inputBinding:
-      position: 102
-      prefix: --no-print-directory
-  - id: no_silent
-    type:
-      - 'null'
-      - boolean
-    doc: Echo recipes (disable --silent mode).
-    inputBinding:
-      position: 102
-      prefix: --no-silent
-  - id: old_file
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be very old and don't remake it.
-    inputBinding:
-      position: 102
-      prefix: --old-file
-  - id: output_sync
-    type:
-      - 'null'
-      - string
-    doc: Synchronize output of parallel jobs by TYPE.
-    inputBinding:
-      position: 102
-      prefix: --output-sync=
+      position: 5
+      prefix: t=
       separate: false
-  - id: print_data_base
-    type:
-      - 'null'
-      - boolean
-    doc: Print make's internal database.
+  - id: m
+    type: ['null', int]
+    doc: Only use reference chromosomes larger than this value (default 100000)
     inputBinding:
-      position: 102
-      prefix: --print-data-base
-  - id: print_directory
-    type:
-      - 'null'
-      - boolean
-    doc: Print the current directory.
+      position: 6
+      prefix: m=
+      separate: false
+  - id: ng
+    type: ['null', int]
+    doc: Use the largest scaffolds that cover this percent of the genome; 0 uses all scaffolds (default 75)
     inputBinding:
-      position: 102
-      prefix: --print-directory
-  - id: question
-    type:
-      - 'null'
-      - boolean
-    doc: Run no recipe; exit status says if up to date.
+      position: 7
+      prefix: ng=
+      separate: false
+  - id: max_scaff
+    type: ['null', int]
+    doc: Instead of ng, filter by this number of scaffolds (default -1)
     inputBinding:
-      position: 102
-      prefix: --question
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Don't echo recipes.
+      position: 8
+      prefix: maxScaff=
+      separate: false
+  - id: i
+    type: ['null', int]
+    doc: Increment for colouring chromosomes, HSV colour shift 0-360; above 360 gives random colours (default 0)
     inputBinding:
-      position: 102
-      prefix: --quiet
-  - id: recon
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
+      position: 9
+      prefix: i=
+      separate: false
+  - id: g
+    type: ['null', int]
+    doc: Minimum gap size in the reference to render (default 1)
     inputBinding:
-      position: 102
-      prefix: --recon
-  - id: silent
-    type:
-      - 'null'
-      - boolean
-    doc: Don't echo recipes.
+      position: 10
+      prefix: g=
+      separate: false
+  - id: g_scaff
+    type: ['null', int]
+    doc: Minimum gap size in scaffolds to render (default 100000)
     inputBinding:
-      position: 102
-      prefix: --silent
-  - id: stop
-    type:
-      - 'null'
-      - boolean
-    doc: Turns off -k.
+      position: 11
+      prefix: gScaff=
+      separate: false
+  - id: labels
+    type: ['null', string]
+    doc: Show reference chromosome names (ref), scaffold names (scaf) or both (default ref)
     inputBinding:
-      position: 102
-      prefix: --stop
-  - id: touch
-    type:
-      - 'null'
-      - boolean
-    doc: Touch targets instead of remaking them.
+      position: 12
+      prefix: labels=
+      separate: false
+  - id: max_gap
+    type: ['null', int]
+    doc: Maximum alignment gap allowed to consider a region contiguous (default 100000)
     inputBinding:
-      position: 102
-      prefix: --touch
-  - id: trace
-    type:
-      - 'null'
-      - boolean
-    doc: Print tracing information.
+      position: 13
+      prefix: maxGap=
+      separate: false
+  - id: min_bundle_size
+    type: ['null', int]
+    doc: Minimum size of a contiguous region to render (default 50000)
     inputBinding:
-      position: 102
-      prefix: --trace
-  - id: warn_undefined_variables
-    type:
-      - 'null'
-      - boolean
-    doc: Warn when an undefined variable is referenced.
+      position: 14
+      prefix: minBundleSize=
+      separate: false
+  - id: mapq
+    type: ['null', int]
+    doc: Maximum mapping quality allowed when filtering (default 50)
     inputBinding:
-      position: 102
-      prefix: --warn-undefined-variables
-  - id: what_if
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
+      position: 15
+      prefix: MAPQ=
+      separate: false
+  - id: link_alpha
+    type: ['null', int]
+    doc: Alpha of links, 1 = 17%, 2 = 33%, 3 = 50%, 4 = 67%, 5 = 83% (default 5)
     inputBinding:
-      position: 102
-      prefix: --what-if
+      position: 16
+      prefix: linkAlpha=
+      separate: false
+  - id: profile
+    type: ['null', boolean]
+    doc: Print the run time of each step
+    inputBinding:
+      position: 20
+      prefix: profile=1
 outputs:
+  - id: svg
+    type: File
+    doc: Circos plot of the alignment (SVG)
+    outputBinding:
+      glob: $(inputs.name).svg
+  - id: png
+    type: ['null', File]
+    doc: Circos plot of the alignment (PNG), when written
+    outputBinding:
+      glob: $(inputs.name).png
+  - id: conf
+    type: ['null', File]
+    doc: Circos configuration file
+    outputBinding:
+      glob: $(inputs.name).conf
+  - id: karyotype
+    type: ['null', File]
+    doc: Circos karyotype file
+    outputBinding:
+      glob: $(inputs.name).karyotype
+  - id: links_final
+    type: ['null', File]
+    doc: Bundled alignment links used for the plot
+    outputBinding:
+      glob: $(inputs.name).links.final
+  - id: agp
+    type: ['null', File]
+    doc: AGP file describing the scaffolds
+    outputBinding:
+      glob: $(inputs.name).agp
+  - id: seq_order
+    type: ['null', File]
+    doc: Order of the scaffolds in the plot
+    outputBinding:
+      glob: $(inputs.name).seqOrder.txt
   - id: stdout
     type: stdout
     doc: Standard output

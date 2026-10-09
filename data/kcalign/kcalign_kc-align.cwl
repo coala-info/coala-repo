@@ -26,7 +26,7 @@ inputs:
   - id: end
     type:
       - 'null'
-      - int
+      - string
     doc: 1-based end position (required in genome mode)
     inputBinding:
       position: 101
@@ -47,13 +47,13 @@ inputs:
       position: 101
       prefix: --mode
   - id: reference
-    type: string
+    type: File
     doc: Reference sequence
     inputBinding:
       position: 101
       prefix: --reference
   - id: sequences
-    type: string
+    type: File
     doc: Other sequences to align
     inputBinding:
       position: 101
@@ -61,7 +61,7 @@ inputs:
   - id: start
     type:
       - 'null'
-      - int
+      - string
     doc: 1-based start position (required in genome mode)
     inputBinding:
       position: 101
@@ -87,6 +87,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: codon_alignment
+    type:
+      - 'null'
+      - File
+    doc: Codon-aware alignment in FASTA format
+    outputBinding:
+      glob: codon_align.fasta
+  - id: clustal_alignment
+    type:
+      - 'null'
+      - File
+    doc: Codon-aware alignment in Clustal format
+    outputBinding:
+      glob: codon_align.clustal
+  - id: pre_align
+    type:
+      - 'null'
+      - File
+    doc: Translated pre-alignment sequences (only with keep)
+    outputBinding:
+      glob: pre_align.fasta
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kcalign:1.0.2--py_0

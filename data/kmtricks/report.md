@@ -1,5 +1,19 @@
 # kmtricks CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kmtricks_aggregate | PASS |  |
+| kmtricks_combine | Failed | tool bug: combine drops the last k-mer of a partition when it exists in only one input matrix (567 of 569 k-mers kept) |
+| kmtricks_count | PASS |  |
+| kmtricks_dump | PASS |  |
+| kmtricks_filter | PASS |  |
+| kmtricks_merge | PASS |  |
+| kmtricks_pipeline | PASS |  |
+| kmtricks_repart | PASS |  |
+| kmtricks_superk | PASS |  |
+
 ## kmtricks_pipeline
 
 ### Tool Description
@@ -408,54 +422,6 @@ OPTIONS
     -h --help    - show this message and exit. [⚑]
        --version - show version and exit. [⚑]
     -v --verbose - verbosity level [debug|info|warning|error]. {info}
-```
-
-
-## kmtricks_infos
-
-### Tool Description
-Display build and configuration information for kmtricks.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kmtricks:1.5.1--h22625ea_0
-- **Homepage**: https://github.com/tlemane/kmtricks
-- **Package**: https://anaconda.org/channels/bioconda/packages/kmtricks/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-kmtricks v1.5.1
-
-- HOST -
-build host: Linux-6.8.0-1041-azure
-run host: Linux 6.8.0-100-generic
-
-- BUILD -
-c compiler: GNU 12.4.0
-cxx compiler: GNU 12.4.0
-conda: ON
-static: OFF
-native: OFF
-modules: ON
-dev: OFF
-kmer: 32,64,96,128,160,192,224,256
-max_c: 4294967295
-
-- GIT SHA1 / VERSION -
-kmtricks: 
-bcli: 
-fmt: 
-kff: 
-lz4: 
-spdlog: 
-xxhash: 
-gtest: 
-robin-hood-hasing: 
-turbop: 
-cfrcat: 
-indicators: 
-
-Contact: teo.lemane@genoscope.cns.fr
 ```
 
 

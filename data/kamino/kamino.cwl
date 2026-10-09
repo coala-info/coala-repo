@@ -21,17 +21,28 @@ inputs:
       position: 101
       prefix: --depth
   - id: input_directory
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: Input directory with FASTA proteomes (plain or .gz)
     inputBinding:
       position: 101
       prefix: --input-directory
   - id: input_file
-    type: File
-    doc: Tab-delimited file mapping species name to proteome path
+    type:
+      - 'null'
+      - File
+    doc: Tab-delimited file mapping species name to proteome path (paths relative to this file; the file is staged in the working directory)
     inputBinding:
       position: 101
       prefix: --input-file
+      valueFrom: $(self.basename)
+  - id: proteomes
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Proteome FASTA files named in the input file, staged beside it
   - id: k
     type:
       - 'null'
@@ -43,7 +54,7 @@ inputs:
   - id: length_middle
     type:
       - 'null'
-      - string
+      - int
     doc: Maximum number of middle positions per variant group
     inputBinding:
       position: 101
@@ -73,9 +84,8 @@ inputs:
       position: 101
       prefix: --nj
   - id: output
-    type:
-      - 'null'
-      - string
+    type: string
+    default: kamino
     doc: Output prefix
     inputBinding:
       position: 101
@@ -107,6 +117,11 @@ outputs:
     doc: Files written with the prefix given in output
     outputBinding:
       glob: $(inputs.output)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_file)
+      - $(inputs.proteomes)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kamino:0.7.0--h4349ce8_0

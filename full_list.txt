@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 7373; PASS: 5686; Failed: 917; Not completed: 770
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 7772; PASS: 6026; Failed: 954; Not completed: 792
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -7261,7 +7261,7 @@ irida-staramr-results	irida-staramr-results	Not completed	needs a running IRIDA 
 irida-uploader	irida-uploader	Not completed	needs a running IRIDA server to upload to
 irma	irma_IRMA	PASS	
 irma	irma_LABEL	Failed	image problem: hmmscore segfaults as a non-root user without a passwd entry (works only with cwltool --no-match-user)
-is6110	is6110	PASS	
+is6110	is6110	PASS	synthetic data: an IS6110 insertion planted in a real M. tuberculosis region; the insertion site is reported at the planted position.
 isa2w4m	isa2w4m	PASS	
 isaac4	isaac4_isaac-align	Not completed	needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make)
 isaac4	isaac4_isaac-merge-references	Not completed	needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make)
@@ -7373,3 +7373,402 @@ jass	jass_list-phenotypes	PASS
 jass	jass_plot-manhattan	PASS	
 jass	jass_plot-quadrant	PASS	
 jass	jass_qq-plot	PASS	
+jcast	jcast	PASS	
+jccirc	jccirc_CircSimu.pl	PASS	
+jccirc	jccirc_JCcirc.pl	PASS	
+jclusterfunk	jclusterfunk_annotate	Failed	tool bug: --field-delimiter is silently ignored (the source reads it under the misspelled name 'field-delimeter'), so labels are always split on '|'; annotation with the default delimiter works.
+jclusterfunk	jclusterfunk_assign	Failed	tool bug: --field-delimiter is ignored (option name typo in the tool source), so tip labels are always split on the default delimiter; main mode works
+jclusterfunk	jclusterfunk_cluster	PASS	
+jclusterfunk	jclusterfunk_collapse	PASS	
+jclusterfunk	jclusterfunk_convert	PASS	
+jclusterfunk	jclusterfunk_divide	PASS	
+jclusterfunk	jclusterfunk_extract	Failed	tool bug: --field-delimiter is ignored (option name typo in the tool source); main mode works
+jclusterfunk	jclusterfunk_insert	Failed	tool bug: --field-delimiter is ignored (option name typo in the tool source); main mode ran on synthetic data (insert list planted from real tip names)
+jclusterfunk	jclusterfunk_merge	Failed	tool bug: --add-columns is ignored (all columns of the second table are merged); main mode works
+jclusterfunk	jclusterfunk_prune	Failed	tool bug: --field-delimiter is ignored (option name typo in the tool source); main mode works
+jclusterfunk	jclusterfunk_reorder	Failed	tool bug: --sort-by crashes (not implemented), --field-delimiter is ignored, and --increasing/--decreasing give the reverse clade-size order
+jclusterfunk	jclusterfunk_reroot	Failed	tool bug: --field-delimiter and --id-field are ignored (option name mismatch in the tool source); outgroup and midpoint rooting work
+jclusterfunk	jclusterfunk_sample	Failed	tool bug: --field-delimiter is ignored (option name typo in the tool source); main mode works
+jclusterfunk	jclusterfunk_scale	PASS	
+jclusterfunk	jclusterfunk_split	Failed	tool bug: --output-metadata is ignored (no metadata file is written); main mode works
+jclusterfunk	jclusterfunk_statistics	Failed	tool bug: output file is always empty (writer is never closed)
+je-suite	je-suite_clip	PASS	
+je-suite	je-suite_debarcode	PASS	single-end run works; paired-end two-barcode and extended barcode files crash with a Java NullPointerException in the tool
+je-suite	je-suite_demultiplex	PASS	
+je-suite	je-suite_demultiplex-illu	PASS	
+je-suite	je-suite_dropseq	PASS	real reads reused in the drop-seq layout; barcode and UMI moved into the read 2 header correctly
+je-suite	je-suite_markdupes	PASS	
+je-suite	je-suite_retag	PASS	
+jellyfish	jellyfish_bc	PASS	
+jellyfish	jellyfish_count	PASS	output binary database size matches the Galaxy expected file
+jellyfish	jellyfish_dump	PASS	output identical to the Galaxy expected file
+jellyfish	jellyfish_histo	PASS	output identical to the Galaxy expected file
+jellyfish	jellyfish_info	PASS	
+jellyfish	jellyfish_mem	PASS	
+jellyfish	jellyfish_merge	PASS	
+jellyfish	jellyfish_query	PASS	
+jellyfish	jellyfish_stats	PASS	
+jgoslin	jgoslin	PASS	image command is jgoslin (jgoslin-cli does not exist); fixed
+jmespath	jmespath	PASS	image command is jp.py (jmespath does not exist); fixed, filter output matches Python
+jmodeltest	jmodeltest	Failed	image problem: the jmodeltest wrapper script fails because /usr/lib/java-wrappers/java-wrappers.sh is missing
+jmztab-m	jmztab-m	PASS	command is jmztab-m (jmztabm-cli does not exist); fixed; valid file passes and an invalid file reports errors
+jobtree	jobtree_jobTreeRun	PASS	synthetic data: ran a trivial shell command as the job; the command ran and the job tree was written
+jobtree	jobtree_jobTreeStats	PASS	synthetic data: stats of the job tree from the trivial run
+jobtree	jobtree_jobTreeStatus	PASS	synthetic data: status of the job tree from the trivial run
+jolytree	jolytree_JolyTree.sh	Failed	image problem: bc is missing from the image, so the sketch size is not computed and all distances and branch lengths are 0
+jpredapi	jpredapi_check_rest_version	Not completed	needs the remote JPred web server; the server answered v.1.5 but this only queries the server version
+jpredapi	jpredapi_get_results	Not completed	needs the remote JPred web server (job submission or account data); not tested
+jpredapi	jpredapi_quota	Not completed	needs the remote JPred web server (job submission or account data); not tested
+jpredapi	jpredapi_status	Not completed	needs the remote JPred web server (job submission or account data); not tested
+jpredapi	jpredapi_submit	Not completed	needs the remote JPred web server (job submission or account data); not tested
+jq	jq	PASS	13 options tested; outputs identical to the Galaxy expected files; rewrote --arg style inputs as name/value records
+jronn	jronn	PASS	command is jronn (not java -jar JRONN_JAR_NAME); fixed; 3 UniProt proteins predicted; the tool prints usage and stops when all five options are given together (tool bug)
+json2isatab	json2isatab	PASS	the image entrypoint is run_json2tab.py, so baseCommand was removed; input staged writable; BII-S-3 ISA-JSON gave the investigation, study and two assay tables
+juicebox_scripts	juicebox_scripts_agp2assembly.py	PASS	AGP made by the converter gave back the original assembly file
+juicebox_scripts	juicebox_scripts_degap_assembly.py	PASS	synthetic data: a hic_gap entry planted in a test assembly was removed correctly
+juicebox_scripts	juicebox_scripts_juicebox_assembly_converter.py	PASS	fasta, agp and bed identical to the expected files of the tool tests
+juicebox_scripts	juicebox_scripts_juicebox_assembly_purger.py	PASS	new CWL; output identical to the expected files of the tool tests
+juicebox_scripts	juicebox_scripts_makeAgpFromFasta.py	PASS	AGP lists every contig of the test FASTA
+julia	julia	Failed	image problem: julia cannot start, libz.so.1 is missing in the image
+jupiterplot	jupiterplot_jupiter	PASS	
+jupyter	jupyter_console	Not completed	interactive console, needs a terminal and a kernel session
+jupyter	jupyter_kernelspec_install	PASS	
+jupyter	jupyter_kernelspec_list	PASS	
+jupyter	jupyter_migrate	PASS	synthetic data: a small planted ~/.ipython folder with a kernel and a notebook config; both were migrated
+jupyter	jupyter_nbconvert	PASS	
+jupyter	jupyter_notebook	Not completed	long-running notebook server, skipped
+jupyter	jupyter_trust	PASS	
+jvarkit	jvarkit_addlinearindextobed	PASS	
+jvarkit	jvarkit_backlocate	PASS	
+jvarkit	jvarkit_bam2haplotypes	PASS	
+jvarkit	jvarkit_bam2raster	PASS	
+jvarkit	jvarkit_bam2sql	PASS	
+jvarkit	jvarkit_bam2svg	PASS	
+jvarkit	jvarkit_bam2xml	PASS	
+jvarkit	jvarkit_bamclip2insertion	Failed	tool bug: never changes a soft clip to an insertion; the code compares an insertion base (reference index -1) with a clipped base, so no read is converted (real and planted data tested)
+jvarkit	jvarkit_bamcmpcoverage	PASS	
+jvarkit	jvarkit_bamliftover	PASS	synthetic data: a planted chain file on a real BAM; reads moved by the expected offset
+jvarkit	jvarkit_bammatrix	PASS	
+k-slam	k-slam_SLAM	PASS	
+k-slam	k-slam_parse_fasta	PASS	
+k-slam	k-slam_parse_genbank	PASS	
+k-slam	k-slam_parse_taxonomy	PASS	
+k8	k8	PASS	
+kaiju	kaiju_kaiju	PASS	
+kaiju	kaiju_kaiju-addTaxonNames	PASS	
+kaiju	kaiju_kaiju-convertNR	PASS	synthetic data: real RefSeq proteins with a planted accession-to-taxon table; all 12 records converted with the taxon ID
+kaiju	kaiju_kaiju-convertRefSeq	PASS	synthetic data: real WP_ RefSeq proteins with a planted accession-to-taxon table; all 5 records converted with the taxon ID
+kaiju	kaiju_kaiju-gbk2faa	PASS	
+kaiju	kaiju_kaiju-mergeOutputs	PASS	
+kaiju	kaiju_kaiju-mkbwt	PASS	
+kaiju	kaiju_kaiju-mkfmi	PASS	
+kaiju	kaiju_kaiju-multi	PASS	
+kaiju	kaiju_kaiju2krona	PASS	
+kaiju	kaiju_kaiju2table	PASS	
+kaiju	kaiju_kaijup	PASS	
+kaiju	kaiju_kaijux	PASS	
+kakscalculator2	kakscalculator2	PASS	
+kakscalculator2	kakscalculator2_AXTConvertor	PASS	
+kalign	kalign	PASS	
+kalign2	kalign2_kalign	PASS	
+kalign3	kalign3	PASS	
+kallisto	kallisto_bus	PASS	
+kallisto	kallisto_h5dump	PASS	
+kallisto	kallisto_index	PASS	
+kallisto	kallisto_inspect	PASS	
+kallisto	kallisto_quant	PASS	
+kallisto	kallisto_quant-tcc	PASS	input TCC matrix made with bustools from the real bus output (identity transcript-to-gene map)
+kamino	kamino	PASS	
+kanpig	kanpig_gt	PASS	
+kanpig	kanpig_mosaic	PASS	
+kanpig	kanpig_plup	PASS	
+kanpig	kanpig_trio	PASS	
+kaptive	kaptive_assembly	PASS	
+kaptive	kaptive_convert	PASS	
+kaptive	kaptive_extract	PASS	
+kart	kart	PASS	
+kart	kart_bwt_index	PASS	
+kast	kast	PASS	search and pairwise modes checked (self hit scores 0); the tool crashes with --distance-type all (tool bug)
+kat	kat_cold	Failed	image problem: kat crashes with signal 11 when its embedded Python exits after plotting and hangs; outputs are written but the process never ends
+kat	kat_comp	Failed	image problem: kat crashes with signal 11 when its embedded Python exits after plotting and hangs; outputs are written but the process never ends
+kat	kat_filter_kmer	PASS	
+kat	kat_filter_seq	PASS	
+kat	kat_gcp	Failed	image problem: kat crashes with signal 11 when its embedded Python exits after plotting and hangs; outputs are written but the process never ends
+kat	kat_hist	Failed	image problem: kat crashes with signal 11 when its embedded Python exits after plotting and hangs; outputs are written but the process never ends
+kat	kat_plot_cold	Failed	image problem: kat crashes with signal 11 when its embedded Python exits and then hangs; the plot file is written but the process never ends
+kat	kat_plot_density	PASS	
+kat	kat_plot_profile	PASS	
+kat	kat_plot_spectra-cn	PASS	
+kat	kat_plot_spectra-hist	PASS	
+kat	kat_plot_spectra-mx	PASS	
+kat	kat_sect	PASS	
+kb-python	kb-python_kb_count	Failed	image problem: the bundled kallisto cannot run (libstdc++.so.6 missing), so kb stops with UnsupportedOSError
+kb-python	kb-python_kb_extract	Failed	image problem: the bundled kallisto cannot run (libstdc++.so.6 missing), so kb stops with UnsupportedOSError
+kb-python	kb-python_kb_ref	Failed	image problem: the bundled kallisto cannot run (libstdc++.so.6 missing), so kb stops with UnsupportedOSError
+kbo-cli	kbo-cli_kbo_build	PASS	
+kbo-cli	kbo-cli_kbo_call	PASS	
+kbo-cli	kbo-cli_kbo_find	PASS	reference mode checked; the --index mode crashes with a Rust panic (tool bug)
+kbo-cli	kbo-cli_kbo_map	PASS	
+kcalign	kcalign_kc-align	PASS	genome mode checked; the mixed mode crashes with a TypeError (tool bug)
+kcftools	kcftools_cohort	PASS	
+kcftools	kcftools_findIBS	PASS	
+kcftools	kcftools_getAttributes	PASS	
+kcftools	kcftools_getVariations	PASS	
+kcftools	kcftools_increaseWindow	PASS	
+kcftools	kcftools_kcf2gt	PASS	
+kcftools	kcftools_kcf2plink	PASS	
+kcftools	kcftools_kcf2tsv	PASS	
+kcftools	kcftools_scoreRecalc	PASS	
+kcftools	kcftools_splitKCF	PASS	
+kegalign-full	kegalign-full_diagonal_partition.py	PASS	synthetic data: planted segment file with 30 lines was split into 3 chunks of 10 and 3 lastz commands were printed
+kegalign-full	kegalign-full_faToTwoBit	PASS	
+kegalign-full	kegalign-full_kegalign	Not completed	needs a GPU, none on this machine (kegalign stops with No GPU device found); also the run_kegalign script in the image has Windows line endings and cannot start
+kegalign-full	kegalign-full_runner.py	Not completed	needs a GPU: runner.py calls kegalign, which stops with No GPU device found
+kegg-pathways-completeness	kegg-pathways-completeness_give_completeness	PASS	
+kegg-pathways-completeness	kegg-pathways-completeness_plot_modules_graphs	PASS	the -m and pydot modes draw correct module graphs; the -l modules file option crashes in the tool because -s must also be given and argparse forbids both
+keggcharter	keggcharter	PASS	needs network access to the KEGG web service; map 00680 was drawn from 40 rows of the tool's example table
+kernel_density_plots	kernel_density_plots_kernel_plot.py	PASS	
+kestrel	kestrel	PASS	synthetic data: reads simulated from a 2 kb SARS-CoV-2 region with a planted SNP and a 3 bp deletion; both variants were called
+kfilt	kfilt_build	PASS	k-mer list made with meryl from a 5 kb SARS-CoV-2 region
+kfilt	kfilt_filter	PASS	kept 13 read pairs, the same as an independent k-mer count
+kggseq	kggseq	Not completed	needs resource databases (HgncGene.txt and others) that kggseq downloads from its website, which cannot be reached; CWL rewritten with the real --vcf-file/--out style options
+khipu-metabolomics	khipu-metabolomics_khipu	PASS	annotated 3600 features of the E. coli example table into 624 empirical compounds
+khmer	khmer_abundance-dist-single.py	PASS	histogram of sarscov2 test_1 k-mers (9146 distinct, bins 1-5) equals an independent count; countgraph saved
+khmer	khmer_abundance-dist.py	PASS	histogram of test_1 k-mers from the countgraph of both read files; every bin equals an independent k-mer count
+khmer	khmer_count-median.py	PASS	sarscov2 test_1 reads against the load-into-counting countgraph; median, average and length of the first read match an independent count
+khmer	khmer_do-partition.py	PASS	khmer random-20-a.fa partitioned; the annotated .part file is identical to the Galaxy expected output
+khmer	khmer_extract-long-sequences.py	PASS	sarscov2 test_1 reads of at least 140 bp: 77 kept, equal to an awk count
+khmer	khmer_extract-paired-reads.py	PASS	khmer paired-mixed.fa split into 3 read pairs (.pe) and 5 orphans (.se), 11 reads in total
+khmer	khmer_fastq-to-fasta.py	PASS	100 reads from the khmer test data converted to FASTA
+khmer	khmer_filter-abund-single.py	PASS	khmer test reads trimmed at cutoff 2; all 1001 trimmed reads equal an independent calculation
+khmer	khmer_filter-abund.py	PASS	countgraph built with load-into-counting.py in the same image; the single-copy read was trimmed to the abundant k-mers
+khmer	khmer_interleave-reads.py	PASS	khmer paired test reads interleaved
+khmer	khmer_load-graph.py	PASS	200 sarscov2 reads at k=20: nodegraph, tagset and info written; 12787 unique k-mers, equal to an independent count
+khmer	khmer_load-into-counting.py	PASS	100 paired sarscov2 Illumina reads (2 files) loaded at k=20; the countgraph info shows 12787 unique k-mers, equal to an independent count
+khmer	khmer_normalize-by-median.py	PASS	khmer test reads at k=17: kept counts matched the Galaxy expected report (1001 reads, 1 or 2 kept by cutoff; 6 paired reads, 2 kept with paired mode)
+khmer	khmer_partition-graph.py	PASS	nodegraph and tagset built with load-graph.py in the same image; subset pmap file written
+khmer	khmer_readstats.py	PASS	sarscov2 test_1 and test_2: 100 reads each, 13897 and 13748 bp, equal to an independent count
+khmer	khmer_sample-reads-randomly.py	PASS	20 of 100 sarscov2 reads sampled (one and two samples), all taken from the input; note: with more than one input file the tool stops with an AssertionError (tool bug)
+khmer	khmer_split-paired-reads.py	PASS	sarscov2 reads interleaved with khmer, then split again: 100 left and 100 right reads with the original names; orphan file empty
+khmer	khmer_trim-low-abund.py	PASS	100 sarscov2 reads at k=20: 40 reads kept, no kept k-mer below the cutoff; summary table and countgraph written
+khmer	khmer_unique-kmers.py	PASS	sarscov2 reads at k=20: estimated 12821 unique k-mers, within 0.3% of the exact 12787; report file written
+kid	kid	PASS	synthetic data: small hand-written Kid template rendered with a title argument; options had to come before the template file
+kin	kin	PASS	synthetic data: the KIN toy example from the tool repo plus interval.txt and target_samples.txt (the two small files kingaroo writes); all 18 parent-child and 2 identical pairs were called correctly
+kin	kin_kingaroo	PASS	synthetic data: two nf-core human BAMs with the contig renamed to 1 and a bed of 1040 sites; window counts, hmm_parameters and hbd_results were written, 574 overlapping sites
+king-probe	king-probe	PASS	ran on PDB 1UBQ: dot list, -once with two patterns and dot count, and the one-line summary all gave plausible contacts; baseCommand fixed to king-probe, numeric options glued to their flag, -ONELINE and -SUMMARY take no patterns
+kinship-read	kinship-read	PASS	READv2 example Srubnaya data: 91 pairs classified, 2 first degree
+kipoi	kipoi_env_export	PASS	exported the conda environment file of the HAL model from a local model directory
+kipoi	kipoi_get-example	PASS	downloaded the HAL example chr22 FASTA and GTF (70 MB); needs network access and a local model directory because the image has no git
+kipoi	kipoi_info	PASS	printed model and dataloader information for the local HAL model directory (--source dir); the default kipoi source needs git, which the image lacks
+kipoi	kipoi_init	Not completed	interactive: kipoi init asks questions through cookiecutter and aborts without a terminal; baseCommand fixed to kipoi init
+kipoi	kipoi_list_plugins	PASS	lists kipoi plugins; baseCommand fixed to kipoi list_plugins and invented inputs removed
+kipoi	kipoi_ls	Failed	image problem: kipoi ls clones the model source and the image has no git
+kipoi	kipoi_predict	Failed	image problem: the image has no conda and none of the model dependencies (HAL needs pysam, maxentpy, pytorch), so the dataloader cannot be imported
+kipoi	kipoi_preproc	Failed	image problem: the image has no conda and none of the model dependencies (HAL dataloader needs pysam), so the dataloader cannot be imported
+kipoi	kipoi_pull	Failed	image problem: kipoi pull clones the model source and the image has no git
+kipoi	kipoi_test	Failed	image problem: the image has no conda and none of the model dependencies (HAL needs pysam), so the model cannot be imported
+kipoi	kipoi_test-source	Failed	image problem: the image has no git (and no conda) to fetch and test the models of a source
+kipoi_veff	kipoi_veff_create_mutation_map	Failed	image problem: the image has no sklearn, keras or tensorflow, so the dataloader and model cannot be imported
+kipoi_veff	kipoi_veff_plot_mutation_map	Failed	image problem: shapely cannot find libc in the image (OSError: Could not find lib c), so the plot step crashes
+kipoi_veff	kipoi_veff_score_variants	Failed	image problem: the image has no sklearn, keras or tensorflow, so the dataloader and model cannot be imported
+kissplice	kissplice	PASS	
+kitsune	kitsune_dmatrix	Failed	image problem: every kitsune command crashes on import (cannot import name 'packaging' from pkg_resources)
+kitsune	kitsune_kopt	Failed	image problem: every kitsune command crashes on import (cannot import name 'packaging' from pkg_resources)
+kleborate	kleborate	PASS	NCBI K. pneumoniae NTUH-K2044 genome typed as ST23, K1, ybt, iro, rmp (known hypervirulent strain)
+kled	kled	PASS	kled repo test CRAM: 86 SV calls identical to the expected answer VCF
+kma	kma	PASS	Galaxy test reads against a kma-built E. coli b0842 DB: b0842_3 at 99.84% identity, depth 30, as expected
+kma	kma_cmp	PASS	merged DB and full DB compare as matching hashmaps
+kma	kma_db	PASS	DB statistics list 5 templates and 6240 nucleotides as expected
+kma	kma_dist	PASS	5x5 distance matrix for the 5 alleles, plausible values
+kma	kma_index	PASS	indexed the 5 Galaxy test alleles; mapping on the index gives the expected hit
+kma	kma_merge	PASS	merging a (2 alleles) and b (3 alleles) gives name and seq files identical to the full DB
+kma	kma_seq2fasta	PASS	templates 3 and 5 printed from the index match the input FASTA
+kma	kma_trim	PASS	Galaxy reads trimmed: 544 reads in, 534 out, 5 bases cut from the 5 prime end
+kma	kma_update	Not completed	needs a database made by KMA 0.14 (only 0.14 to 0.15 conversion exists); none available, current DB gives Conversion error
+kmc	kmc	PASS	nf-core SARS-CoV-2 reads, k=21: 9101 unique k-mers and 11897 total, identical to an independent Python count
+kmc	kmc_dump	PASS	text dump of 1916 k-mers with count at least 2, matches the histogram
+kmc	kmc_tools_complex	PASS	set1 * set2 gives the same 8201-k-mer database as the simple intersect
+kmc	kmc_tools_filter	PASS	reads with all k-mers in the genome DB: 68 of 100 kept, equal to a Python count
+kmc	kmc_tools_simple	PASS	reads vs genome k-mers: intersect 8201, union 30709, subtract 900, all equal to a Python set count
+kmc	kmc_tools_transform	PASS	histogram, dump and reduce outputs agree with an independent count (9101 k-mers, 1916 with count at least 2)
+kmcp	kmcp_compute	PASS	3 genomes (2 SARS-CoV-2 and H. influenzae) split into 5 chunks each; k-mer counts match _info.txt
+kmcp	kmcp_index	PASS	database built from the 15 chunks; note: --threads below the file count crashes on tiny inputs (divide by zero), so run it without --threads
+kmcp	kmcp_merge	PASS	merged results from a SARS-CoV-2 DB and an H. influenzae DB equal the search on the joint DB (192 hits)
+kmcp	kmcp_profile	PASS	profile reports SARS-CoV-2 (taxid 2697049) at 100% with the mini taxdump; CAMI, MetaPhlAn and binning reports written
+kmcp	kmcp_search	PASS	nf-core SARS-CoV-2 read pairs: 96 of 100 match only the SARS-CoV-2 genomes, none H. influenzae
+kmcp	kmcp_utils_cov2simi	PASS	coverage 0.9 gives similarity 98.74, equal to the documented polynomial
+kmcp	kmcp_utils_filter	PASS	all 192 SARS-CoV-2 hits kept as species-specific
+kmcp	kmcp_utils_index_density	PASS	per-bin counts table (64 bins) and a JPEG density image written
+kmcp	kmcp_utils_index_info	PASS	both index blocks listed with k=21 and the right genome names
+kmcp	kmcp_utils_merge_regions	PASS	synthetic data: 100 bp sliding windows cut from the real SARS-CoV-2 genome give species-specific regions covering positions 0 to 29820
+kmcp	kmcp_utils_query_fpr	PASS	false positive rate and Chernoff bound printed for default parameters
+kmcp	kmcp_utils_ref_info	PASS	15 reference chunks listed with k-mer counts and false positive rate near 0.1
+kmcp	kmcp_utils_split_genomes	PASS	SARS-CoV-2 genome split into 3 chunk files
+kmcp	kmcp_utils_unik_info	PASS	k=21 and k-mer counts 5962 and 359075 match _info.txt
+kmer-counter	kmer-counter	PASS	SARS-CoV-2 transcript FASTA (11 entries), k=4: count matrix (11 x 136) identical to an independent Python count
+kmer-db	kmer-db_all2all	PASS	synth.db table identical to repo expected a2a; 12-genome table equals the repo k18.csv
+kmer-db	kmer-db_all2all-parts	PASS	two database parts: 66 sparse entries, all equal to the full dense table
+kmer-db	kmer-db_all2all-sp	PASS	sparse table identical to the repo expected a2a-sparse
+kmer-db	kmer-db_build	PASS	repo test sets: synthetic synth.fa and 12 real SARS-CoV-2 genomes; databases give counts equal to the repo expected tables, and -extend equals a full build
+kmer-db	kmer-db_distance	PASS	mash and ani tables and a sparse min/max filtered table identical to the repo expected files
+kmer-db	kmer-db_minhash	PASS	minhash files then build -from-minhash give the same table as a direct build with -f 0.1 -k 25 (3017 k-mers for NC_045512, as in the repo)
+kmer-db	kmer-db_new2all	PASS	synth n2a identical to repo expected; 4 new real genomes vs 12-genome DB equal k18.csv values
+kmer-db	kmer-db_one2all	PASS	MT253710 vs 12-genome DB: row equals the repo k18.csv row
+kmercamel	kmercamel_compute	PASS	repo S. pneumoniae genome, k=31: masked superstring represents exactly the 2145215 input k-mers (checked in Python); -M mask also valid
+kmercamel	kmercamel_lowerbound	PASS	lower bound 2161146 is below the computed superstring length 2161259
+kmercamel	kmercamel_maskopt	PASS	maxone mask applied to the superstring still represents exactly the 2145215 input k-mers
+kmercamel	kmercamel_ms2mssep	PASS	mask and superstring files written and rejoined by mssep2ms to the identical sequence
+kmercamel	kmercamel_ms2spss	PASS	simplitigs contain exactly the 2145215 input k-mers (checked in Python)
+kmercamel	kmercamel_mssep2ms	PASS	mask and superstring files from ms2mssep rejoin to the identical masked superstring
+kmercamel	kmercamel_spss2ms	PASS	repo simplitigs-k31.fa converted to a masked superstring with exactly its 2145215 k-mers
+kmerfinder	kmerfinder_kmerfinder.py	PASS	synthetic data: tiny custom 3-genome KMA database with a hand-written taxonomy file (H. influenzae, S. pneumoniae, K. pneumoniae); a real 1 Mb S. pneumoniae contig hits only S. pneumoniae.
+kmergenie	kmergenie	PASS	100k real SARS-CoV-2 reads (ENA ERR5069949): histograms, report and table written; predicted genomic k-mers 27772 at k=61 for a 30 kb genome, best k 61
+kmerinshort	kmerinshort_KmerInShort	PASS	SARS-CoV-2 genome, k=6: counts equal an independent Python count (forward mode exact, canonical mode as pair sums); -freq and -perSeq work; -kval output not checked
+kmerstream	kmerstream_KmerStream	PASS	real SARS-CoV-2 reads (ENA ERR5069949): total k-mer count F1 exact, F0 distinct estimate runs 7-17% below the exact count (about 1% off on simulated error-free reads); FASTA input and -o with --binary misbehave in the tool (segfault, odd file name)
+kmerstream	kmerstream_KmerStreamEstimate.py	PASS	table from KmerStream --tsv gets genome size, error rate and coverage columns (about 25k genome size for a 30 kb genome sample)
+kmerstream	kmerstream_KmerStreamJoin	PASS	two binary sketches joined: F1 11111315 equals the sum of both inputs, F0 79030 close to a direct run on both files
+kmertools	kmertools_comp_cgr	PASS	
+kmertools	kmertools_comp_oligo	PASS	
+kmertools	kmertools_cov	PASS	
+kmertools	kmertools_ctr	PASS	
+kmertools	kmertools_min	PASS	
+kmetashot	kmetashot_kMetaShot_classifier_NV.py	Not completed	needs the 22 GB kMetaShot HDF5 reference database; removed the wrong .fai secondaryFiles on the reference
+kmindex	kmindex_build	PASS	
+kmindex	kmindex_compress	PASS	
+kmindex	kmindex_index-infos	PASS	
+kmindex	kmindex_merge	PASS	
+kmindex	kmindex_query	PASS	
+kmindex	kmindex_query2	PASS	
+kmindex	kmindex_register	PASS	
+kmindex	kmindex_sum-index	PASS	
+kmindex	kmindex_sum-query	PASS	
+kmtricks	kmtricks_aggregate	PASS	
+kmtricks	kmtricks_combine	Failed	tool bug: combine drops the last k-mer of a partition when it exists in only one input matrix (567 of 569 k-mers kept)
+kmtricks	kmtricks_count	PASS	
+kmtricks	kmtricks_dump	PASS	
+kmtricks	kmtricks_filter	PASS	
+kmtricks	kmtricks_merge	PASS	
+kmtricks	kmtricks_pipeline	PASS	
+kmtricks	kmtricks_repart	PASS	
+kmtricks	kmtricks_superk	PASS	
+kneaddata	kneaddata	PASS	
+kneaddata	kneaddata_bowtie2_discordant_pairs	PASS	
+kneaddata	kneaddata_build_database	PASS	
+kneaddata	kneaddata_read_count_table	PASS	
+knot-asm-analysis	knot-asm-analysis_knot	Not completed	pipeline, skipped: knot runs a Snakemake workflow; baseCommand fixed from KNOT to knot
+knot-asm-analysis	knot-asm-analysis_knot.analysis	PASS	
+knot-asm-analysis	knot-asm-analysis_knot.analysis.classifications	PASS	
+knot-asm-analysis	knot-asm-analysis_knot.analysis.hamilton_path	PASS	
+knot-asm-analysis	knot-asm-analysis_knot.extremity_search	PASS	
+knot-asm-analysis	knot-asm-analysis_knot.filter_tig	PASS	
+knot-asm-analysis	knot-asm-analysis_knot.path_search	PASS	
+knot-asm-analysis	knot-asm-analysis_knot.sg_generation	PASS	
+knotinframe	knotinframe	PASS	
+kobas	kobas_kobas-annotate	Not completed	needs the large KOBAS annotation databases (sqlite3 and seq_pep); no small database available and the download site is not reachable
+kobas	kobas_kobas-identify	Not completed	needs the large KOBAS annotation databases (sqlite3 and seq_pep); no small database available and the download site is not reachable
+kodoja	kodoja_kodoja_build.py	PASS	
+kodoja	kodoja_kodoja_retrieve.py	PASS	
+kodoja	kodoja_kodoja_search.py	PASS	
+koeken	koeken_koeken.py	PASS	synthetic data: QIIME test OTU table with a planted Time column; summarize_taxa and LEfSe steps ran and wrote per-timepoint results (no significant markers). Fixed class/subclass types and a bad output; added MPLBACKEND=Agg
+kofamscan	kofamscan	PASS	ran on the Galaxy tools-iuc test profiles (3 KOs); found ADH1_MOUSE and 2 other hits as expected; fixed -o prefix and added missing options
+komb	komb	PASS	ran on nf-core SARS-CoV-2 paired reads; wrote unitigs, edge list and anomaly tables; fixed reads to a staged File[] and added MPI env settings
+konezumiaid	konezumiaid	PASS	new CWL for the default gene search (--name); Rp1 gRNAs match the README example
+konezumiaid	konezumiaid_batch	PASS	ran on a 2-gene list (Rp1, Xkr4); Rp1 gRNAs match the README example; added dataset input and output folder
+konezumiaid	konezumiaid_preprocess	PASS	ran on the repo example refFlat (Xkr4, Rp1) with real mm39 chr1 sequence (truncated prefix from UCSC); wrote the dataset pickles; added required .fai index and dataset output
+kounta	kounta	Failed	image problem: the image has no join and paste commands, so kounta stops with 'Could not find needed tool join'; CWL fixed to take positional input files and a staged fofn list
+koverage	koverage_config	PASS	wrote the default config, profile and log into the output folder
+koverage	koverage_run	Not completed	pipeline, skipped: koverage run is a Snakemake pipeline that builds conda environments
+koverage	koverage_test	Not completed	pipeline, skipped: koverage test runs the whole Snakemake pipeline on built-in data
+kpal	kpal_balance	PASS	ran on one profile; output balance is 0 and counts double as expected
+kpal	kpal_cat	PASS	ran on two profile files; output holds all four profiles with the right counts
+kpal	kpal_convert	PASS	synthetic data: old-format text written from real 4-mer counts of a viral genome; converted profile has the same counts; added missing OUTPUT argument
+kpal	kpal_count	PASS	ran on two real viral genomes (k=4); profile counts match the genome (ACGT count checked); added missing OUTPUT argument
+kpal	kpal_distance	PASS	ran on two profiles of one file; value matches the matrix output
+kpal	kpal_distr	PASS	ran on a k=4 profile; count distribution written per profile
+kpal	kpal_getcount	PASS	ran on a k=4 profile; counts of ACGT (9 and 8) match a direct count of the genomes
+kpal	kpal_info	PASS	ran on a k=4 profile of two viral genomes; counts and k-mer numbers are correct
+kpal	kpal_matrix	PASS	ran on four k=4 profiles; 4x4 lower-triangle matrix, A-B value equals the distance output
+kpal	kpal_merge	PASS	ran on the same file twice; counts doubled as expected
+kpal	kpal_positive	PASS	ran on two profiles; left profile lost the k-mer that is zero in the right one; added missing output arguments
+kpal	kpal_scale	PASS	ran on two profiles; left profile scaled towards the right total (integer rounding); added missing output arguments
+kpal	kpal_showbalance	PASS	ran on a k=4 profile of two viral genomes; balance values are plausible
+kpal	kpal_shrink	PASS	ran on k=4 profiles; output is k=3 with unchanged totals
+kpal	kpal_shuffle	PASS	ran on k=4 profiles; totals and k-mer number unchanged
+kpal	kpal_smooth	PASS	ran on two profiles with threshold 40; non-zero counts collapsed (256 to 163) and totals kept; added missing output arguments
+kpal	kpal_stats	PASS	ran on a k=4 profile; mean 12271/256 matches
+kpop	kpop_KPopCount	PASS	rewritten from the help (-f/-s/-p/-l/-L/-o); ran on the KPop primer FASTA, SARS-CoV-2 genome (spectrum sums match sequence length) and paired reads (totals match)
+kpop	kpop_KPopCountDB	PASS	rewritten with actions in a fixed order; built a 500-spectrum database from KPop primer k-mer tables, added metadata, combined a class, wrote database and table
+kpop	kpop_KPopTwist	PASS	rewritten from the help; twisted the 500-spectrum KPop primer database and wrote the twister and twisted files
+kpop	kpop_KPopTwistDB	PASS	rewritten with actions in a fixed order; twisted 500 test sequences and summarized distances: all 500 nearest training sequences have the right class
+kractor	kractor	PASS	ran on nf-core SARS-CoV-2 reads with their Kraken2 output and report; single and paired reads, children and FASTA output give the right 100 reads; --exclude of all reads exits 1 by design; output is now a list of files
+kraken	kraken	PASS	ran on nf-core SARS-CoV-2 reads with the nf-core KrakenUniq test database (Kraken 1 format); all 100 reads classified as taxid 2697049, same as the Kraken2 output; paired and quick modes also work; database is now a Directory input
+kraken	kraken_build	Failed	image problem: kraken-build stops with 'Can't locate Getopt/Std.pm' (Perl module missing in the image)
+kraken	kraken_filter	PASS	new CWL; threshold 0.8 turned low-confidence reads into unclassified lines with P scores; same database files as kraken_report
+kraken	kraken_mpa_report	PASS	new CWL; MetaPhlAn-style lineage lines with 100 reads at each rank, header line and intermediate ranks work; same database files as kraken_report
+kraken	kraken_report	PASS	new CWL; ran on Kraken output of 100 SARS-CoV-2 reads: lineage counts match the Kraken2 report; database taxonomy names rebuilt from that report (synthetic taxonomy names), kdb/idx from the nf-core KrakenUniq test database
+kraken	kraken_translate	PASS	new CWL; each read ID got its full lineage names; same database files as kraken_report
+kraken-biom	kraken-biom	PASS	ran on two real Kraken2 reports of SARS-CoV-2 reads (100 and 97 reads); BIOM (hdf5, json) and TSV tables have the right counts; fixed -o flag, removed invented flags, added --max/--min/--metadata/--otu_fp/-k
+kraken2	kraken2	PASS	ran on nf-core SARS-CoV-2 reads with the nf-core kraken2 test database; all 100 reads classified as taxid 2697049 and the report matches the nf-core one; also correct on a database built here; database is now a Directory input and --output flag fixed
+kraken2	kraken2_build	PASS	new CWL; built a 2-genome database (SARS-CoV-2 and Haemophilus influenzae) with add-to-library and build; reads and genome chunks classify to the right taxa (needed a newline added to the nf-core accession map)
+kraken2	kraken2_inspect	PASS	new CWL; inspect lists both species of the built database with sensible minimizer counts, and the nf-core database (9958 minimizers, one species)
+krakenhll	krakenhll	PASS	ran on nf-core SARS-CoV-2 reads with the nf-core KrakenUniq test database (same format); all 100 reads classified as taxid 2697049 with a full report; also right on a database built here; database is now a staged writable Directory because krakenhll writes database.kdb.counts into it
+krakenhll	krakenhll_build	PASS	new CWL; built a 2-genome database (SARS-CoV-2 and Haemophilus influenzae, minimizer length 10) with add-to-library and build; reads and genome chunks classify to the right taxa; add-to-library exits 255 by design so 255 is a success code
+krakenhll	krakenhll_extract_reads	PASS	new CWL; extracted the 100 SARS-CoV-2 reads for taxid 2697049 from single-end and paired-end files (FASTA output for pairs gives 200 records)
+krakenhll	krakenhll_filter	PASS	new CWL; ran on KrakenHLL output of 100 reads and added P scores (all reads stay classified at threshold 0.8)
+krakenhll	krakenhll_mpa_report	PASS	new CWL; MetaPhlAn-style lines with 100 reads at each rank (rank names empty because the nf-core test database has no names)
+krakenhll	krakenhll_report	PASS	new CWL; report lists 100 classified reads along the lineage down to 2697049 (names empty because the nf-core test database has no names)
+krakenhll	krakenhll_translate	PASS	new CWL; every read got its lineage and species name (ancestor names empty because the nf-core test database has no names)
+krakentools	krakentools_alpha_diversity.py	PASS	
+krakentools	krakentools_beta_diversity.py	PASS	
+krakentools	krakentools_combine_kreports.py	PASS	
+krakentools	krakentools_combine_mpa.py	PASS	
+krakentools	krakentools_extract_kraken_reads.py	PASS	
+krakentools	krakentools_filter_bracken.out.py	PASS	
+krakentools	krakentools_fix_unmapped.py	PASS	
+krakentools	krakentools_kreport2krona.py	PASS	
+krakentools	krakentools_kreport2mpa.py	PASS	
+krakentools	krakentools_make_kreport.py	PASS	
+krakentools	krakentools_make_ktaxonomy.py	PASS	
+krakenuniq	krakenuniq	PASS	
+krakenuniq	krakenuniq_extract_reads	PASS	
+krakenuniq	krakenuniq_filter	PASS	
+krakenuniq	krakenuniq_mpa_report	PASS	
+krakenuniq	krakenuniq_report	PASS	
+krakenuniq	krakenuniq_translate	PASS	
+krakmeopen	krakmeopen	PASS	
+krepp	krepp_dist	PASS	
+krepp	krepp_index	PASS	
+krepp	krepp_inspect	PASS	
+krepp	krepp_place	PASS	main mode and --nwk-file work; --lineage-file crashes the tool (segmentation fault) with this build
+krepp	krepp_seek	PASS	
+krepp	krepp_sketch	PASS	
+krocus	krocus	PASS	
+krona	krona_ktClassifyBLAST	Not completed	has no -tax option, so it needs the taxonomy database inside the image, which is missing (Taxonomy not found); cannot be tested
+krona	krona_ktGetContigMagnitudes	PASS	real ACE file from a CAP3 assembly of real reads; contig magnitudes 3, 5, 2, 2, 2, 2 match the file header
+krona	krona_ktGetLCA	PASS	full NCBI taxonomy built from taxdump; accession plus taxon 562 give 562; streaming mode also run
+krona	krona_ktGetTaxIDFromAcc	PASS	full NCBI taxonomy and a small accession list; MT192765.1 gives 2697049, NC_000913.3 gives 511145; stdin, -f and -p also run
+krona	krona_ktGetTaxInfo	PASS	full NCBI taxonomy and a small accession list; SARS-CoV-2 and Homo sapiens lineage lines correct; stdin, -f and -a also run
+krona	krona_ktImportBLAST	PASS	BLAST table made with blastn from real reads; tiny taxonomy and accession file
+krona	krona_ktImportDiskUsage	PASS	small test folder; chart lists the folder, sub-folder and files with their sizes
+krona	krona_ktImportEC	PASS	25 real E. coli EC numbers from UniProt; counts match per EC class (for example 8 transferases); also run with column options
+krona	krona_ktImportFCP	PASS	synthetic data: planted FCP table with real taxon names; counts 12, 8, 5 and 3 match
+krona	krona_ktImportGalaxy	PASS	synthetic data: planted Galaxy taxonomic representation with real taxon names; counts match
+krona	krona_ktImportKrona	PASS	real BLAST Krona chart re-imported; renamed root shows 50 reads
+krona	krona_ktImportMGRAST	PASS	synthetic data: planted MG-RAST table export (live MG-RAST service did not answer); abundances 40 and 25 match
+krona	krona_ktImportPhymmBL	PASS	synthetic data: planted PhymmBL results.03 table; counts 6 and 4 match
+krona	krona_ktImportRDP	PASS	real RDP Classifier output for three NCBI 16S rRNA sequences; E. coli, Bacillus and Pseudomonas genera found; also run with minimum confidence
+krona	krona_ktImportTaxonomy	PASS	taxonomy database was the tiny nf-core krona_taxonomy.tab
+krona	krona_ktImportText	PASS	
+krona	krona_ktImportXML	PASS	XML taken from a real BLAST Krona chart; chart has root with 50 reads and the SARS-CoV-2 lineage
+krona	krona_ktUpdateTaxonomy.sh	Not completed	needs download of the NCBI taxonomy (large, network); baseCommand fixed to ktUpdateTaxonomy.sh
+kronos	kronos_init	PASS	no biological data; made a pipeline script from a config made by make_config
+kronos	kronos_make_component	PASS	no biological data; template made by kronos itself, USER set in the CWL
+kronos	kronos_make_config	PASS	no biological data; run on components made by make_component, USER and PYTHONPATH set in the CWL
+kronos	kronos_run	Not completed	pipeline, skipped
+kronos	kronos_update_config	PASS	no biological data; run on two configs made by make_config
+ksnp	ksnp	PASS	output identical to the repository expected VCF
+kssd	kssd_composite	Not completed	needs a species-specific pan unique k-mer reference database (GTDB scale); no tiny test database exists
+kssd	kssd_dist	PASS	sketched 3 bacterial genomes, indexed them and searched B. fragilis contigs; best hit was B. fragilis
+kssd	kssd_reverse	PASS	
+kssd	kssd_set	PASS	
+kssd	kssd_shuffle	PASS	

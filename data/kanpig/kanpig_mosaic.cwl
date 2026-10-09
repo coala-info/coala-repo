@@ -222,6 +222,11 @@ inputs:
           separate: true
     doc: Reads to genotype (indexed .bam, .cram, or .plup.gz; can be specified 
       multiple times)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
   - id: reference
@@ -229,6 +234,8 @@ inputs:
     doc: Reference genome
     secondaryFiles:
       - .fai
+      - pattern: .gzi
+        required: false
     inputBinding:
       position: 101
       prefix: --reference
@@ -309,7 +316,8 @@ inputs:
       position: 101
       prefix: --threads
   - id: out_path
-    type: string?
+    type: string
+    default: kanpig_mosaic.vcf
     doc: 'Output VCF (unsorted, uncompressed) [default: stdout]'
     inputBinding:
       position: 102

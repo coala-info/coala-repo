@@ -31,10 +31,10 @@ inputs:
       prefix: --include-children
   - id: kraken_file
     type: File
-    doc: Kraken output file
+    doc: Kraken output file to parse
     inputBinding:
       position: 101
-      prefix: --kraken
+      prefix: -k
   - id: max_reads
     type:
       - 'null'
@@ -73,22 +73,44 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxid
-  - id: output_file_path
+  - id: include_parents
     type:
       - 'null'
-      - string
-    doc: Output or path parameter `output_file_path`
+      - boolean
+    doc: Include reads classified at parent levels of the specified taxids
+    inputBinding:
+      position: 101
+      prefix: --include-parents
+  - id: append
+    type:
+      - 'null'
+      - boolean
+    doc: Append the sequences to the end of the output FASTA file specified
+    inputBinding:
+      position: 101
+      prefix: --append
+  - id: noappend
+    type:
+      - 'null'
+      - boolean
+    doc: Create a new FASTA file containing sample sequences and IDs (rewrite if existing) [default]
+    inputBinding:
+      position: 101
+      prefix: --noappend
+  - id: output_file_path
+    type: string
+    doc: Output FASTA/Q file containing the reads and sample IDs
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
   - id: output_file2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file2_path`
+    doc: Output FASTA/Q file containing the second pair of reads [required for paired input]
     inputBinding:
       position: 103
-      prefix: --output-file2
+      prefix: -o2
 outputs:
   - id: output_file
     type: File

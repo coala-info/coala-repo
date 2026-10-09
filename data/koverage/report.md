@@ -1,5 +1,13 @@
 # koverage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| koverage_config | PASS | wrote the default config, profile and log into the output folder |
+| koverage_run | Not completed | pipeline, skipped: koverage run is a Snakemake pipeline that builds conda environments |
+| koverage_test | Not completed | pipeline, skipped: koverage test runs the whole Snakemake pipeline on built-in data |
+
 ## koverage_run
 
 ### Tool Description

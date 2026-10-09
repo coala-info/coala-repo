@@ -14,9 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: index
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Filename for the kallisto index to be used for pseudoalignment
     inputBinding:
       position: 102
@@ -35,14 +33,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --technology
-  - id: list
-    type:
-      - 'null'
-      - boolean
-    doc: List all single-cell technologies supported
-    inputBinding:
-      position: 102
-      prefix: --list
   - id: batch
     type:
       - 'null'
@@ -189,6 +179,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --chromosomes
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Print out progress information every 1M proccessed reads
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
   - id: output_output_dir
     type:

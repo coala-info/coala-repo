@@ -1,5 +1,18 @@
 # kmer-db CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kmer-db_all2all | PASS | synth.db table identical to repo expected a2a; 12-genome table equals the repo k18.csv |
+| kmer-db_all2all-parts | PASS | two database parts: 66 sparse entries, all equal to the full dense table |
+| kmer-db_all2all-sp | PASS | sparse table identical to the repo expected a2a-sparse |
+| kmer-db_build | PASS | repo test sets: synthetic synth.fa and 12 real SARS-CoV-2 genomes; databases give counts equal to the repo expected tables, and -extend equals a full build |
+| kmer-db_distance | PASS | mash and ani tables and a sparse min/max filtered table identical to the repo expected files |
+| kmer-db_minhash | PASS | minhash files then build -from-minhash give the same table as a direct build with -f 0.1 -k 25 (3017 k-mers for NC_045512, as in the repo) |
+| kmer-db_new2all | PASS | synth n2a identical to repo expected; 4 new real genomes vs 12-genome DB equal k18.csv values |
+| kmer-db_one2all | PASS | MT253710 vs 12-genome DB: row equals the repo k18.csv row |
+
 ## kmer-db_build
 
 ### Tool Description

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/kaiju2krona
+baseCommand: kaiju2krona
 label: kaiju_kaiju2krona
 doc: Convert Kaiju output to Krona format
 inputs:
@@ -17,17 +17,13 @@ inputs:
       position: 101
       prefix: -o
   - id: nodes_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Name of nodes.dmp file
     inputBinding:
       position: 101
       prefix: -t
   - id: names_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Name of names.dmp file
     inputBinding:
       position: 101
@@ -51,6 +47,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -u
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Enable verbose output.
+    inputBinding:
+      position: 101
+      prefix: -v
 outputs:
   - id: output_output_file
     type: File

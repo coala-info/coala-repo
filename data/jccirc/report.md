@@ -1,5 +1,12 @@
 # jccirc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jccirc_CircSimu.pl | PASS |  |
+| jccirc_JCcirc.pl | PASS |  |
+
 ## jccirc_JCcirc.pl
 
 ### Tool Description

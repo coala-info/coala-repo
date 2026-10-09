@@ -1,48 +1,12 @@
 # kaptive CWL Generation Report
 
-## kaptive
-### Tool Description
-In silico serotyping
+## Real Data Test
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kaptive:3.1.0--pyhdfd78af_0
-- **Homepage**: https://kaptive.readthedocs.io/en/latest
-- **Package**: https://anaconda.org/channels/bioconda/packages/kaptive/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/kaptive/overview
-- **Total Downloads**: 54.8K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/klebgenomics/Kaptive
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: kaptive <command>
-
-[1;36m  _  __    _    ____ _____ _____     _______ 
- | |/ /   / \  |  _ \_   _|_ _\ \   / / ____|
- | ' /   / _ \ | |_) || |  | | \ \ / /|  _|  
- | . \  / ___ \|  __/ | |  | |  \ V / | |___ 
- |_|\_\/_/   \_\_|    |_| |___|  \_/  |_____|                                   
-
-            In silico serotyping           [0m
-
-[1mCommand[0m:
-  
-    assembly      In silico serotyping of assemblies
-    extract       Extract entries from a Kaptive database
-    convert       Convert Kaptive results into different formats
-
-[1mOther options[0m:
-
-  -V, --verbose   Print debug messages to stderr
-  -v, --version   Show version number and exit
-  -h, --help      Show this help message and exit
-
-For more help, visit: [1mhttps://kaptive.readthedocs.io/en/latest/[0m
-2026-02-25 05:52:33           parse_args] [1;31m  ERROR] Unknown command "In"; choose from {assembly,extract,convert}[0m
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| kaptive_assembly | PASS |  |
+| kaptive_convert | PASS |  |
+| kaptive_extract | PASS |  |
 
 ## kaptive_assembly
 

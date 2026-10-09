@@ -1,5 +1,11 @@
 # jolytree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jolytree_JolyTree.sh | Failed | image problem: bc is missing from the image, so the sketch size is not computed and all distances and branch lengths are 0 |
+
 ## jolytree_JolyTree.sh
 
 ### Tool Description

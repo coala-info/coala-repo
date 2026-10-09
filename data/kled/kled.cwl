@@ -8,7 +8,12 @@ inputs:
     type:
       type: array
       items: File
-    doc: Input BAM files
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+    doc: Input BAM or CRAM files
     inputBinding:
       position: 1
   - id: always_calculate_pos_std
@@ -92,7 +97,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --DelClusterLengthRatio2
-  - id: del_cluster_min_length_endurance
+  - id: del_cluster_min_length_edurance
     type:
       - 'null'
       - int
@@ -253,7 +258,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --DupClusterLengthRatio2
-  - id: dup_cluster_min_length_endurance
+  - id: dup_cluster_min_length_edurance
     type:
       - 'null'
       - int
@@ -424,7 +429,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --InsClusterLengthRatio2
-  - id: ins_cluster_min_length_endurance
+  - id: ins_cluster_min_length_edurance
     type:
       - 'null'
       - int
@@ -601,7 +606,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --InvClusterLengthRatio2
-  - id: inv_cluster_min_length_endurance
+  - id: inv_cluster_min_length_edurance
     type:
       - 'null'
       - int
@@ -900,7 +905,12 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kled:1.2.10--h4f462e4_0
-stdout: kled.out
+stdout: kled.vcf

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jmztabm-cli
+baseCommand: jmztab-m
 label: jmztab-m
 doc: "Command-line interface for mzTab validation and conversion.\n\nTool homepage:
   https://github.com/lifs-tools/jmztab-m"
@@ -58,23 +58,42 @@ inputs:
       position: 101
       prefix: --level
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'Example: -o "output.txt". Record validation messages into outfile. If not
       set, print validation messages to stdout/stderr.'
     inputBinding:
       position: 102
       prefix: --outFile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: json_output
+    type:
+      - 'null'
+      - File
+    doc: JSON or mzTab file written next to the input by --toJson or --fromJson
+    outputBinding:
+      glob: '*.json'
   - id: output_file
     type:
       - 'null'
       - File
-    doc: Record validation messages into outfile. If not set, print validation 
-      messages to stdout/stderr.
+    doc: Validation messages written to the output path
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.output_file_path === null ? [] : inputs.output_file_path)'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.check_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jmztab-m:1.0.6--hdfd78af_1
+stdout: jmztab-m.out
+successCodes:
+  - 0
+  - 1

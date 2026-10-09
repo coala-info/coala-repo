@@ -1,35 +1,14 @@
 # kmertools CWL Generation Report
 
-## kmertools_comp
+## Real Data Test
 
-### Tool Description
-Generate sequence composition based features
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kmertools:0.2.1--h5e00ca1_0
-- **Homepage**: https://github.com/anuradhawick/kmertools
-- **Package**: https://anaconda.org/channels/bioconda/packages/kmertools/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/kmertools/overview
-- **Total Downloads**: 12.5K
-- **Last updated**: 2025-09-24
-- **GitHub**: https://github.com/anuradhawick/kmertools
-- **Stars**: N/A
-### Original Help Text
-```text
-Generate sequence composition based features
-
-Usage: kmertools comp <COMMAND>
-
-Commands:
-  oligo  Generate oligonucleotide frequency vectors
-  cgr    Generates Chaos Game Representations
-  help   Print this message or the help of the given subcommand(s)
-
-Options:
-  -h, --help  Print help
-```
+| Tool | Result | Reason |
+|---|---|---|
+| kmertools_comp_cgr | PASS |  |
+| kmertools_comp_oligo | PASS |  |
+| kmertools_cov | PASS |  |
+| kmertools_ctr | PASS |  |
+| kmertools_min | PASS |  |
 
 ## kmertools_cov
 
@@ -200,6 +179,62 @@ Options:
 
   -h, --help
           Print help (see a summary with '-h')
+```
+
+## kmertools_comp_oligo
+
+### Tool Description
+Generate oligonucleotide frequency vectors
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmertools:0.2.1--h5e00ca1_0
+- **Homepage**: https://github.com/anuradhawick/kmertools
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmertools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Generate oligonucleotide frequency vectors
+
+Usage: kmertools comp oligo [OPTIONS] --input <INPUT> --output <OUTPUT>
+
+Options:
+  -i, --input <INPUT>      Input file path
+  -o, --output <OUTPUT>    Output vectors path
+  -c, --counts             Disable normalisation and output raw counts
+  -k, --k-size <K_SIZE>    Set k-mer size [default: 3]
+  -r, --raw-count          Raw counts
+  -p, --preset <PRESET>    Output type to write [default: spc] [possible values: csv, tsv, spc]
+  -H, --header             Include header (with k-mer in ACGT format)
+  -t, --threads <THREADS>  Thread count for computations 0=auto [default: 0]
+  -h, --help               Print help (see more with '--help')
+```
+
+## kmertools_comp_cgr
+
+### Tool Description
+Generates Chaos Game Representations
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kmertools:0.2.1--h5e00ca1_0
+- **Homepage**: https://github.com/anuradhawick/kmertools
+- **Package**: https://anaconda.org/channels/bioconda/packages/kmertools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Generates Chaos Game Representations
+
+Usage: kmertools comp cgr [OPTIONS] --input <INPUT> --output <OUTPUT>
+
+Options:
+  -i, --input <INPUT>        Input file path
+  -o, --output <OUTPUT>      Output vectors path
+  -c, --counts               Disable normalisation and output raw counts (only with k-mer mode)
+  -k, --k-size <K_SIZE>      Set k-mer size or default to full sequence CGR
+  -v, --vec-size <VEC_SIZE>  Set vector size (output will be a square matrix with N=vecsize)
+  -t, --threads <THREADS>    Thread count for computations 0=auto [default: 0]
+  -h, --help                 Print help
 ```
 
 ## Metadata

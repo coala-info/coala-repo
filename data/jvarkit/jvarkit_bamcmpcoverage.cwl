@@ -4,104 +4,93 @@ baseCommand:
   - jvarkit
   - bamcmpcoverage
 label: jvarkit_bamcmpcoverage
-doc: "Calculate coverage statistics for BAM files.\n\nTool homepage: https://github.com/lindenb/jvarkit"
+doc: "Compare the coverage of two or more BAM files and draw it as an image.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:
-  - id: files
+  - id: bam_files
     type:
       type: array
       items: File
-    doc: Input BAM files
+    doc: Input BAM files (at least two)
+    secondaryFiles:
+      - .bai
     inputBinding:
-      position: 1
-  - id: bed_file
+      position: 100
+  - id: bed
     type:
       - 'null'
-      - boolean
+      - File
     doc: restrict to region
     inputBinding:
-      position: 102
+      position: 1
       prefix: --bed
   - id: filter
     type:
       - 'null'
       - string
-    doc: A JEXL Expression that will be used to filter out some sam-records (see
-      https://software.broadinstitute.org/gatk/documentation/article.php?id=1255).
-      An expression should return a boolean value (true=exclude, false=keep the 
-      read). An empty expression keeps everything. The variable 'record' is the 
-      current observed read, an instance of SAMRecord 
-      (https://samtools.github.io/htsjdk/javadoc/htsjdk/htsjdk/samtools/SAMRecord.html).
-      record.getReadFailsVendorQualityCheckFlag() || 
-      record.isSecondaryOrSupplementary()
+    doc: "A JEXL Expression that will be used to filter out some sam-records. An expression should return a boolean value (true=exclude, false=keep the read). An empty expression keeps everything. The variable 'record' is the current observed read, an instance of SAMRecord."
     inputBinding:
-      position: 102
+      position: 2
       prefix: --filter
   - id: groupby
     type:
       - 'null'
       - string
-    doc: 'Group Reads by. Data partitioning using the SAM Read Group (see https://gatkforums.broadinstitute.org/gatk/discussion/6472/
-      ). It can be any combination of sample, library.... Possible Values: [readgroup,
-      sample, library, platform, center, sample_by_platform, sample_by_center, sample_by_platform_by_center,
-      any]'
+    doc: "Group Reads by. Data partitioning using the SAM Read Group. It can be any combination of sample, library.... One of readgroup, sample, library, platform, center, sample_by_platform, sample_by_center, sample_by_platform_by_center, any (default: sample)"
     inputBinding:
-      position: 102
+      position: 3
       prefix: --groupby
-  - id: help_format
-    type:
-      - 'null'
-      - string
-    doc: What kind of help. One of [usage,markdown,xml].
-    inputBinding:
-      position: 102
-      prefix: --helpFormat
   - id: max_depth
     type:
       - 'null'
       - int
-    doc: max depth
+    doc: "max depth (default: 1000)"
     inputBinding:
-      position: 102
+      position: 4
       prefix: --maxDepth
   - id: min_depth
     type:
       - 'null'
       - int
-    doc: min depth
+    doc: "min depth (default: 0)"
     inputBinding:
-      position: 102
+      position: 5
       prefix: --minDepth
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: "Output file. Optional. Default: stdout"
+    inputBinding:
+      position: 6
+      prefix: --output
   - id: region
     type:
       - 'null'
       - string
     doc: restrict to region
     inputBinding:
-      position: 102
+      position: 7
       prefix: --region
   - id: width
     type:
       - 'null'
       - int
-    doc: image width
+    doc: "image width (default: 1000)"
     inputBinding:
-      position: 102
+      position: 8
       prefix: --width
-  - id: output_path
-    type: string
-    inputBinding:
-      position: 103
-      prefix: --output
 outputs:
-  - id: output
+  - id: output_file
     type:
       - 'null'
       - File
-    doc: 'Output file. Optional . Default: stdout'
+    doc: Output file, when the output option is given
     outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result, when no output file is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jvarkit:2024.08.25--hdfd78af_2
+stdout: jvarkit_bamcmpcoverage.out

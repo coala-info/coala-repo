@@ -7,14 +7,14 @@ label: kmindex_sum-query
 doc: "Query a summarized index. (experimental)\n\nTool homepage: https://github.com/tlemane/kmindex"
 inputs:
   - id: fastx
-    type: string
+    type: File
     doc: Input fasta/q file (supports gz/bzip2) containing the sequence(s) to 
       query.
     inputBinding:
       position: 101
       prefix: --fastx
   - id: global_index
-    type: string
+    type: Directory
     doc: Global index path.
     inputBinding:
       position: 101
@@ -58,9 +58,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory.
     outputBinding:
       glob: $(inputs.output_path)

@@ -37,11 +37,21 @@ inputs:
       position: 101
       prefix: --cpr
   - id: fof_file
-    type: string
-    doc: kmtricks input file.
+    type: File
+    doc: kmtricks input file (lines of sample name and path); the listed sequence files are staged from sequence_files.
     inputBinding:
       position: 101
       prefix: --fof
+  - id: sequence_files
+    type:
+      type: array
+      items: File
+    doc: Sequence files named in the input file; staged next to it so the names resolve.
+  - id: existing_index
+    type:
+      - 'null'
+      - Directory
+    doc: Existing global index directory (named like index_path) to add the new sub-index to; staged writable. Needed with --from.
   - id: from_index
     type:
       - 'null'
@@ -139,6 +149,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_out
+    type: Directory
+    doc: Global index directory.
+    outputBinding:
+      glob: $(inputs.index_path)
+  - id: run_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: kmtricks runtime directory (empty when --run-dir is '@inplace').
+    outputBinding:
+      glob: $(inputs.run_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fof_file)
+      - $(inputs.sequence_files)
+      - entry: $(inputs.existing_index)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmindex:0.6.0--h668145b_1

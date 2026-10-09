@@ -9,7 +9,7 @@ inputs:
   - id: input
     type:
       type: array
-      items: string
+      items: File
     doc: Input jellyfish databases
     inputBinding:
       position: 1
@@ -31,15 +31,14 @@ inputs:
       prefix: --upper-count
   - id: output_path
     type: string
+    default: mer_counts_merged.jf
     doc: Output file (mer_counts_merged.jf)
     inputBinding:
       position: 103
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file
     outputBinding:
       glob: $(inputs.output_path)

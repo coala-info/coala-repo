@@ -4,36 +4,37 @@ baseCommand:
   - jvarkit
   - bamliftover
 label: jvarkit_bamliftover
-doc: "LiftOver BAM/SAM/CRAM files to a new reference genome.\n\nTool homepage: https://github.com/lindenb/jvarkit"
+doc: "Lift over the coordinates of the reads of a BAM/SAM/CRAM file with a chain file.\n\nTool homepage: https://github.com/lindenb/jvarkit"
 inputs:
-  - id: files
+  - id: bam_files
     type:
       type: array
       items: File
-    doc: Input BAM/SAM/CRAM files
+    doc: Input BAM/CRAM files
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
-      position: 1
+      position: 100
   - id: bam_compression
     type:
       - 'null'
       - int
-    doc: 'Compression Level. 0: no compression. 9: max compression'
+    doc: "Compression Level. 0: no compression. 9: max compression (default: 5)"
     inputBinding:
-      position: 102
+      position: 1
       prefix: --bamcompression
   - id: chain
     type: File
-    doc: LiftOver file
+    doc: LiftOver file.
     inputBinding:
-      position: 102
+      position: 2
       prefix: --chain
   - id: destination_dict
     type: File
-    doc: "A SAM Sequence dictionary source: it can be a *.dict file, a fasta file
-      indexed with 'picard CreateSequenceDictionary' or 'samtools dict', or any hts
-      file containing a dictionary (VCF, BAM, CRAM, intervals...)"
+    doc: "A SAM Sequence dictionary source: it can be a *.dict file, a fasta file indexed with 'picard CreateSequenceDictionary' or 'samtools dict', or any hts file containing a dictionary (VCF, BAM, CRAM, intervals...)"
     inputBinding:
-      position: 102
+      position: 3
       prefix: --destination-dict
   - id: drop_seq
     type:
@@ -41,45 +42,50 @@ inputs:
       - boolean
     doc: drop SEQ and QUAL
     inputBinding:
-      position: 102
+      position: 4
       prefix: --drop-seq
-  - id: min_match
+  - id: minmatch
     type:
       - 'null'
       - float
-    doc: lift over min-match
+    doc: "lift over min-match (default: 0.95)"
     inputBinding:
-      position: 102
+      position: 5
       prefix: --minmatch
+  - id: out
+    type:
+      - 'null'
+      - string
+    doc: "Output file. Optional. Default: stdout"
+    inputBinding:
+      position: 6
+      prefix: --out
   - id: reference
     type:
       - 'null'
       - File
+    doc: Indexed fasta Reference file. This file must be indexed with samtools faidx and with picard/gatk CreateSequenceDictionary or samtools dict
     secondaryFiles:
       - .fai
-    doc: Indexed fasta Reference file. This file must be indexed with samtools 
-      faidx and with picard/gatk CreateSequenceDictionary or samtools dict
+      - "^.dict"
     inputBinding:
-      position: 102
+      position: 7
       prefix: --reference
   - id: regions
     type:
       - 'null'
       - string
-    doc: "Limit analysis to this interval. A source of intervals. The following suffixes
-      are recognized: vcf, vcf.gz bed, bed.gz, gtf, gff, gff.gz, gtf.gz.Otherwise
-      it could be an empty string (no interval) or a list of plain interval separated
-      by '[ \t\n;,]'"
+    doc: "Limit analysis to this interval. A source of intervals. The following suffixes are recognized: vcf, vcf.gz bed, bed.gz, gtf, gff, gff.gz, gtf.gz. Otherwise it could be an empty string (no interval) or a list of plain interval separated by '[ \\t\\n;,]'"
     inputBinding:
-      position: 102
+      position: 8
       prefix: --regions
   - id: sam_output_format
     type:
       - 'null'
       - string
-    doc: Sam output format
+    doc: "Sam output format. One of BAM, SAM, CRAM (default: SAM)"
     inputBinding:
-      position: 102
+      position: 9
       prefix: --samoutputformat
   - id: save_position
     type:
@@ -87,7 +93,7 @@ inputs:
       - boolean
     doc: Save original position in SMA attribute
     inputBinding:
-      position: 102
+      position: 10
       prefix: --save-position
   - id: unmapped
     type:
@@ -95,32 +101,28 @@ inputs:
       - boolean
     doc: discard unmapped reads/unlifted reads
     inputBinding:
-      position: 102
+      position: 11
       prefix: --unmapped
   - id: validation_stringency
     type:
       - 'null'
       - string
-    doc: SAM Reader Validation Stringency
+    doc: "SAM Reader Validation Stringency. One of STRICT, LENIENT, SILENT (default: LENIENT)"
     inputBinding:
-      position: 102
+      position: 12
       prefix: --validation-stringency
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: 'Output file. Optional . Default: stdout'
+    doc: Output file, when the output option is given
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result, when no output file is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jvarkit:2024.08.25--hdfd78af_2
+stdout: jvarkit_bamliftover.out

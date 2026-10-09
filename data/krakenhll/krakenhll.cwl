@@ -10,7 +10,7 @@ inputs:
       items: File
     doc: Input filenames
     inputBinding:
-      position: 1
+      position: 200
   - id: bzip2_compressed
     type:
       - 'null'
@@ -28,14 +28,10 @@ inputs:
     inputBinding:
       position: 102
       prefix: --check-names
-  - id: db_name
-    type:
-      - 'null'
-      - string
-    doc: Name for Kraken DB
-    inputBinding:
-      position: 102
-      prefix: --db
+  - id: db
+    type: Directory
+    doc: Kraken DB folder (with database.kdb, database.idx and taxDB); it is staged
+      writable because krakenhll writes database.kdb.counts into it
   - id: fasta_input
     type:
       - 'null'
@@ -153,6 +149,9 @@ inputs:
       position: 105
       prefix: --unclassified-out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Kraken output (empty when --output is used)
   - id: unclassified_out
     type:
       - 'null'
@@ -181,8 +180,18 @@ outputs:
     doc: Output file for the report
     outputBinding:
       glob: $(inputs.report_file)
+arguments:
+  - position: 102
+    prefix: --db
+    valueFrom: krakenhll_db
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db)
+        entryname: krakenhll_db
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/krakenhll:0.4.8--pl5.22.0_0
+stdout: krakenhll.out

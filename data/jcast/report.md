@@ -1,5 +1,11 @@
 # jcast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jcast | PASS |  |
+
 ## jcast
 
 ### Tool Description

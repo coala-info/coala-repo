@@ -46,8 +46,6 @@ inputs:
   - id: reference
     type: File
     doc: Reference sequence to call variants in.
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 102
       prefix: --reference
@@ -73,6 +71,9 @@ inputs:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Variants in VCF format when no output file is given
   - id: output_file
     type:
       - 'null'
@@ -85,3 +86,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kbo-cli:0.2.1--h4349ce8_0
+stdout: kbo-cli_kbo_call.out

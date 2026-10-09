@@ -3,7 +3,16 @@ class: CommandLineTool
 baseCommand: partition-graph.py
 label: khmer_partition-graph.py
 doc: Partition a sequence graph based upon waypoint connectivity
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.graph_files)
 inputs:
+  - id: graph_files
+    type:
+      type: array
+      items: File
+    doc: Nodegraph and tagset files (for example x and x.tagset from load-graph.py); their names must start with basename.
   - id: basename
     type: string
     doc: basename of the input k-mer nodegraph + tagset files
@@ -58,6 +67,13 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
+  - id: pmap_files
+    type:
+      type: array
+      items: File
+    doc: Partition maps saved as ${basename}.subset.#.pmap
+    outputBinding:
+      glob: $(inputs.basename).subset.*.pmap
   - id: stdout
     type: stdout
     doc: Standard output

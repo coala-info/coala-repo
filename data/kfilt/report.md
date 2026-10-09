@@ -1,5 +1,12 @@
 # kfilt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kfilt_build | PASS | k-mer list made with meryl from a 5 kb SARS-CoV-2 region |
+| kfilt_filter | PASS | kept 13 read pairs, the same as an independent k-mer count |
+
 ## kfilt_build
 
 ### Tool Description

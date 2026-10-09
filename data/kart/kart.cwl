@@ -4,12 +4,18 @@ baseCommand: kart
 label: kart
 doc: "kart v2.5.6 (Hsin-Nan Lin & Wen-Lian Hsu)\n\nTool homepage: https://github.com/hsinnan75/Kart"
 inputs:
-  - id: index_prefix
-    type: string
-    doc: Index_Prefix
+  - id: index
+    type: File
+    doc: BWT index file (<prefix>.bwt) made by bwt_index; the .amb, .ann, .pac and .sa files must sit beside it
+    secondaryFiles:
+      - ^.amb
+      - ^.ann
+      - ^.pac
+      - ^.sa
     inputBinding:
       position: 101
       prefix: -i
+      valueFrom: $(self.path.replace(/\.bwt$/, ''))
   - id: max_gaps
     type:
       - 'null'
@@ -71,10 +77,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bam_path`
+    doc: alignment filename in BAM format
     inputBinding:
       position: 102
-      prefix: --output-bam
+      prefix: -bo
   - id: output_sam_path
     type:
       - 'null'
@@ -90,7 +96,7 @@ outputs:
       - File
     doc: alignment filename in SAM format
     outputBinding:
-      glob: $(inputs.output_sam_path)
+      glob: $(inputs.output_sam_path || 'output.sam')
   - id: output_bam
     type:
       - 'null'

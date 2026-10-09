@@ -1,5 +1,12 @@
 # kitsune CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kitsune_dmatrix | Failed | image problem: every kitsune command crashes on import (cannot import name 'packaging' from pkg_resources) |
+| kitsune_kopt | Failed | image problem: every kitsune command crashes on import (cannot import name 'packaging' from pkg_resources) |
+
 ## kitsune_dmatrix
 
 ### Tool Description

@@ -7,7 +7,9 @@ label: kipoi_pull
 doc: "Downloads the directory associated with the model.\n\nTool homepage: https://github.com/kipoi/kipoi"
 inputs:
   - id: model
-    type: string
+    type:
+      - string
+      - Directory
     doc: Model name. <model> can also refer to a model-group - e.g. if you 
       specify MaxEntScan then the dependencies for MaxEntScan/5prime and 
       MaxEntScan/3prime will be installed
@@ -27,6 +29,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kipoi:0.8.6--pyh5e36f6f_0

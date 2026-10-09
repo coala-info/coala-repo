@@ -34,6 +34,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: kleborate_out
     doc: Directory for storing output files
     inputBinding:
       position: 101
@@ -67,9 +68,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory for storing output files
     outputBinding:
       glob: $(inputs.outdir)

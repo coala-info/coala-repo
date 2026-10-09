@@ -12,9 +12,8 @@ inputs:
       position: 1
   - id: input_sequence_filename
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: Input FAST[AQ] sequence filename
     inputBinding:
       position: 2
@@ -108,6 +107,13 @@ outputs:
       instead of creating a new file for each input file.
     outputBinding:
       glob: $(inputs.output)
+  - id: trimmed_sequences
+    type:
+      type: array
+      items: File
+    doc: Trimmed sequences, one ${input_sequence_filename}.abundfilt file per input file (when --output is not given)
+    outputBinding:
+      glob: '*.abundfilt'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

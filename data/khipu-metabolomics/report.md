@@ -1,5 +1,11 @@
 # khipu-metabolomics CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| khipu-metabolomics_khipu | PASS | annotated 3600 features of the E. coli example table into 624 empirical compounds |
+
 ## khipu-metabolomics_khipu
 
 ### Tool Description

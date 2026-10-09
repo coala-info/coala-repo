@@ -2,364 +2,308 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: KPopCountDB
 label: kpop_KPopCountDB
-doc: "KPopCountDB version 41 (18-Mar-2024)\n\nTool homepage: https://github.com/PaoloRibeca/KPop"
+doc: "Manipulates databases of k-mer spectra: builds them from k-mer tables, adds metadata, combines or deletes spectra, computes distances and writes tables. The actions run in a fixed order: load or empty database, metadata, k-mer files, settings, selection actions, summary and distances, database output, table output.\n\nTool homepage: https://github.com/PaoloRibeca/KPop"
 inputs:
-  - id: add_combined_selection
+  - id: threads
     type:
       - 'null'
-      - string
-    doc: combine the spectra whose labels are in the selection register and add 
-      the result (or replace it if a spectrum named <spectrum_label> already 
-      exists) to the database present in the database register
+      - int
+    doc: Number of concurrent computing threads to be spawned.
     inputBinding:
-      position: 101
-      prefix: --add-combined-selection
-  - id: add_kmer_files
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: add to the database present in the register k-mers from the specified 
-      files
-    inputBinding:
-      position: 101
-      prefix: --add-kmer-files
-  - id: add_kmers
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: add to the database present in the register k-mers from the specified 
-      files
-    inputBinding:
-      position: 101
-      prefix: --add-kmers
-  - id: add_metadata
-    type:
-      - 'null'
-      - File
-    doc: add to the database present in the register metadata from the specified
-      file. Metadata field names and values must not contain double quote " 
-      characters
-    inputBinding:
-      position: 101
-      prefix: --add-metadata
-  - id: combination_criterion
-    type:
-      - 'null'
-      - string
-    doc: set the criterion used to combine the k-mer frequencies of selected 
-      spectra. To avoid rounding issues, each k-mer frequency is also rescaled 
-      by the largest normalization across spectra ('mean' averages frequencies 
-      across spectra; 'median' computes the median across spectra)
-    inputBinding:
-      position: 101
-      prefix: --selection-combination-criterion
-  - id: compute_distances
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: select two sets of spectra from the register and compute and output 
-      distances between all possible pairs (metadata fields must match the 
-      regexps specified in the selector; an empty metadata field makes the 
-      regexp match labels. The result will have extension .KPopDMatrix)
-    inputBinding:
-      position: 101
-      prefix: --distances
-  - id: compute_spectral_distances
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: select two sets of spectra from the register and compute and output 
-      distances between all possible pairs (metadata fields must match the 
-      regexps specified in the selector; an empty metadata field makes the 
-      regexp match labels. The result will have extension .KPopDMatrix)
-    inputBinding:
-      position: 101
-      prefix: --compute-spectral-distances
-  - id: delete
+      position: 1
+      prefix: '-T'
+  - id: verbose
     type:
       - 'null'
       - boolean
-    doc: drop the spectra whose labels are in the selection register from the 
-      database present in the register
+    doc: Set verbose execution.
     inputBinding:
-      position: 101
-      prefix: --delete
-  - id: distance_function
-    type:
-      - 'null'
-      - string
-    doc: set the function to be used when computing distances. The parameter for
-      'minkowski()' is the power (default='euclidean')
-    inputBinding:
-      position: 101
-      prefix: --distance
+      position: 2
+      prefix: '-v'
   - id: empty
     type:
       - 'null'
       - boolean
-    doc: put an empty database into the register
+    doc: Put an empty database into the register.
     inputBinding:
-      position: 101
-      prefix: --empty
-  - id: input_file
+      position: 10
+      prefix: '-e'
+  - id: input_db
     type:
       - 'null'
       - File
-    doc: load into the register the database present in the specified file 
-      (which must have extension .KPopCounter)
+    doc: Database (file with extension .KPopCounter) to load into the register.
     inputBinding:
-      position: 101
-      prefix: --input
-  - id: kmer_table_file_name
+      position: 11
+      prefix: '-i'
+      valueFrom: '${ return self.path.replace(/\.KPopCounter$/, ""); }'
+  - id: metadata
+    type:
+      - 'null'
+      - File
+    doc: Metadata table file to add to the database in the register.
+    inputBinding:
+      position: 20
+      prefix: '-m'
+  - id: kmer_files
     type:
       - 'null'
       - type: array
-        items: string
-    doc: add to the database present in the register k-mers from the specified 
-      files
+        items: File
+    doc: k-mer table files (made by KPopCount) to add to the database in the
+      register.
     inputBinding:
-      position: 101
-      prefix: --kmers
-  - id: metadata_table_file_name
-    type:
-      - 'null'
-      - File
-    doc: add to the database present in the register metadata from the specified
-      file. Metadata field names and values must not contain double quote " 
-      characters
-    inputBinding:
-      position: 101
-      prefix: --metadata
-  - id: normalize_distances
-    type:
-      - 'null'
-      - boolean
-    doc: whether spectra should be normalized prior to computing distances
-    inputBinding:
-      position: 101
-      prefix: --distance-normalize
-  - id: selection_clear
-    type:
-      - 'null'
-      - boolean
-    doc: purge the selection register
-    inputBinding:
-      position: 101
-      prefix: --selection-clear
-  - id: selection_combine_and_add
+      position: 30
+      prefix: '-k'
+      itemSeparator: ','
+  - id: distance_function
     type:
       - 'null'
       - string
-    doc: combine the spectra whose labels are in the selection register and add 
-      the result (or replace it if a spectrum named <spectrum_label> already 
-      exists) to the database present in the database register
+    doc: "Function used to compute distances: euclidean or
+      minkowski(<non_negative_float>) (default euclidean)."
     inputBinding:
-      position: 101
-      prefix: --selection-combine-and-add
-  - id: selection_delete
+      position: 40
+      prefix: '--distance'
+  - id: distance_normalize
     type:
       - 'null'
       - boolean
-    doc: drop the spectra whose labels are in the selection register from the 
-      database present in the register
+    doc: Whether spectra are normalized before computing distances.
     inputBinding:
-      position: 101
-      prefix: --selection-delete
+      position: 41
+      prefix: '--distance-normalize'
+      valueFrom: '${ return self ? "true" : "false"; }'
+  - id: table_output_row_names
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to output row names when writing the database as a table
+      (default true).
+    inputBinding:
+      position: 42
+      prefix: '--table-output-row-names'
+      valueFrom: '${ return self ? "true" : "false"; }'
+  - id: table_output_col_names
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to output column names when writing the database as a table
+      (default true).
+    inputBinding:
+      position: 43
+      prefix: '--table-output-col-names'
+      valueFrom: '${ return self ? "true" : "false"; }'
+  - id: table_output_metadata
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to output metadata when writing the database as a table
+      (default false).
+    inputBinding:
+      position: 44
+      prefix: '--table-output-metadata'
+      valueFrom: '${ return self ? "true" : "false"; }'
+  - id: table_transpose
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to transpose the database before writing it as a table
+      (default false).
+    inputBinding:
+      position: 45
+      prefix: '--table-transpose'
+      valueFrom: '${ return self ? "true" : "false"; }'
+  - id: table_threshold
+    type:
+      - 'null'
+      - float
+    doc: Set to zero all counts that are less than this threshold before
+      transforming and outputting them (default 1).
+    inputBinding:
+      position: 46
+      prefix: '--table-threshold'
+  - id: table_power
+    type:
+      - 'null'
+      - float
+    doc: Raise counts to this power before transforming and outputting them
+      (default 1).
+    inputBinding:
+      position: 47
+      prefix: '--table-power'
+  - id: table_transform
+    type:
+      - 'null'
+      - string
+    doc: "Transformation applied to table elements: binary, power, pseudocounts
+      or clr (default power)."
+    inputBinding:
+      position: 48
+      prefix: '--table-transform'
+  - id: table_output_zero_rows
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to output rows whose elements are all zero when writing the
+      table (default false).
+    inputBinding:
+      position: 49
+      prefix: '--table-output-zero-rows'
+      valueFrom: '${ return self ? "true" : "false"; }'
+  - id: table_precision
+    type:
+      - 'null'
+      - int
+    doc: Number of precision digits used when outputting counts (default 15).
+    inputBinding:
+      position: 50
+      prefix: '--table-precision'
+  - id: combination_criterion
+    type:
+      - 'null'
+      - string
+    doc: "Criterion used to combine the k-mer frequencies of selected spectra:
+      mean or median (default mean)."
+    inputBinding:
+      position: 51
+      prefix: '--selection-combination-criterion'
   - id: selection_from_labels
     type:
       - 'null'
       - type: array
         items: string
-    doc: put into the selection register the specified labels
+    doc: Spectrum labels to put into the selection register.
     inputBinding:
-      position: 101
-      prefix: --selection-from-labels
+      position: 52
+      prefix: '-L'
+      itemSeparator: ','
   - id: selection_from_regexps
     type:
       - 'null'
       - type: array
         items: string
-    doc: put into the selection register the labels of the spectra whose 
-      metadata fields match the specified regexps and where regexps are defined 
-      according to <https://ocaml.org/api/Str.html>. An empty metadata field 
-      makes the regexp match labels
+    doc: Selectors <metadata_field>~<regexp> that put the labels of the
+      matching spectra into the selection register.
     inputBinding:
-      position: 101
-      prefix: --regexps
+      position: 53
+      prefix: '-R'
+      itemSeparator: ','
   - id: selection_negate
     type:
       - 'null'
       - boolean
-    doc: negate the labels that are present in the selection register
+    doc: Negate the labels that are present in the selection register.
     inputBinding:
-      position: 101
-      prefix: --selection-negate
+      position: 54
+      prefix: '-N'
   - id: selection_print
     type:
       - 'null'
       - boolean
-    doc: print the labels that are present in the selection register
+    doc: Print the labels that are present in the selection register.
     inputBinding:
-      position: 101
-      prefix: --selection-print
+      position: 55
+      prefix: '-P'
+  - id: add_combined_selection
+    type:
+      - 'null'
+      - string
+    doc: Combine the selected spectra and add the result to the database under
+      this label.
+    inputBinding:
+      position: 56
+      prefix: '-A'
+  - id: selection_delete
+    type:
+      - 'null'
+      - boolean
+    doc: Drop the spectra whose labels are in the selection register from the
+      database.
+    inputBinding:
+      position: 57
+      prefix: '-D'
   - id: selection_to_table_filter
     type:
       - 'null'
       - boolean
-    doc: filter out spectra whose labels are present in the selection register 
-      when writing the database as a tab-separated file
+    doc: Filter out spectra whose labels are in the selection register when
+      writing the table.
     inputBinding:
-      position: 101
-      prefix: --selection-to-table-filter
-  - id: spectrum_label
+      position: 58
+      prefix: '-F'
+  - id: selection_clear
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: put into the selection register the specified labels
+      - boolean
+    doc: Purge the selection register.
     inputBinding:
-      position: 101
-      prefix: --labels
+      position: 59
+      prefix: '-C'
   - id: summary
     type:
       - 'null'
       - boolean
-    doc: print a summary of the database present in the register
+    doc: Print a summary of the database in the register.
     inputBinding:
-      position: 101
-      prefix: --summary
-  - id: table_output_col_names
+      position: 70
+      prefix: '--summary'
+  - id: compute_distances
     type:
       - 'null'
-      - boolean
-    doc: whether to output column names for the database present in the register
-      when writing it as a tab-separated file
+      - type: array
+        items: string
+    doc: "Three values: two selectors <metadata_field>~<regexp> and the output
+      prefix of the distance matrix (written with extension .KPopDMatrix)."
     inputBinding:
-      position: 101
-      prefix: --table-output-col-names
-  - id: table_output_file
-    type:
-      - 'null'
-      - File
-    doc: write the database present in the register as a tab-separated file 
-      (rows are k-mer names, columns are spectrum names; the file will be given 
-      extension .KPopCounter.txt)
-    inputBinding:
-      position: 101
-      prefix: --table
-  - id: table_output_metadata
-    type:
-      - 'null'
-      - boolean
-    doc: whether to output metadata for the database present in the register 
-      when writing it as a tab-separated file
-    inputBinding:
-      position: 101
-      prefix: --table-output-metadata
-  - id: table_output_row_names
-    type:
-      - 'null'
-      - boolean
-    doc: whether to output row names for the database present in the register 
-      when writing it as a tab-separated file
-    inputBinding:
-      position: 101
-      prefix: --table-output-row-names
-  - id: table_output_zero_rows
-    type:
-      - 'null'
-      - boolean
-    doc: whether to output rows whose elements are all zero when writing the 
-      database as a tab-separated file
-    inputBinding:
-      position: 101
-      prefix: --table-output-zero-rows
-  - id: table_power
-    type:
-      - 'null'
-      - float
-    doc: raise counts to this power before transforming and outputting them. A 
-      power of 0 when the 'pseudocounts' method is used performs a logarithmic 
-      transformation
-    inputBinding:
-      position: 101
-      prefix: --table-power
-  - id: table_precision
-    type:
-      - 'null'
-      - int
-    doc: set the number of precision digits to be used when outputting counts
-    inputBinding:
-      position: 101
-      prefix: --table-precision
-  - id: table_threshold
-    type:
-      - 'null'
-      - float
-    doc: set to zero all counts that are less than this threshold before 
-      transforming and outputting them. A fractional threshold between 0. and 1.
-      is taken as a relative one with respect to the sum of all counts in the 
-      spectrum
-    inputBinding:
-      position: 101
-      prefix: --table-threshold
-  - id: table_transform
+      position: 71
+      prefix: '-d'
+  - id: output_prefix
     type:
       - 'null'
       - string
-    doc: transformation to apply to table elements before outputting them
+    doc: Prefix of the file the database in the register is dumped to (written
+      with extension .KPopCounter).
     inputBinding:
-      position: 101
-      prefix: --table-transform
-  - id: table_transpose
+      position: 80
+      prefix: '-o'
+  - id: table_prefix
     type:
       - 'null'
-      - boolean
-    doc: "whether to transpose the database present in the register before writing
-      it as a tab-separated file (if 'true': rows are spectrum names, columns [metadata
-      and] k-mer names; if 'false': rows are [metadata and] k-mer names, columns spectrum
-      names)"
+      - string
+    doc: Prefix of the tab-separated table file written from the database
+      (extension .KPopCounter.txt).
     inputBinding:
-      position: 101
-      prefix: --table-transpose
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: number of concurrent computing threads to be spawned (default 
-      automatically detected from your configuration)
-    inputBinding:
-      position: 101
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: set verbose execution
-    inputBinding:
-      position: 101
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 102
-      prefix: --output-file
+      position: 81
+      prefix: '-t'
 outputs:
-  - id: output_file
+  - id: stdout
+    type: stdout
+    doc: Standard output (summary and selection printouts)
+  - id: output_db
     type:
       - 'null'
       - File
-    doc: dump the database present in the register to the specified file (which 
-      will be given extension .KPopCounter)
+    doc: Database written with -o
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '$(inputs.output_prefix).KPopCounter'
+  - id: output_table
+    type:
+      - 'null'
+      - File
+    doc: Tab-separated table written with -t
+    outputBinding:
+      glob: '$(inputs.table_prefix).KPopCounter.txt'
+  - id: distance_matrix
+    type:
+      - 'null'
+      - File
+    doc: Distance matrix written with -d
+    outputBinding:
+      glob: '$(inputs.compute_distances ? inputs.compute_distances[2] + ".KPopDMatrix" : "__none__")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpop:1.1.1--h9ee0642_1
+stdout: kpop_KPopCountDB.out

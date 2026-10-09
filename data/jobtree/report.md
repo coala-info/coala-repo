@@ -1,5 +1,13 @@
 # jobtree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jobtree_jobTreeRun | PASS | synthetic data: ran a trivial shell command as the job; the command ran and the job tree was written |
+| jobtree_jobTreeStats | PASS | synthetic data: stats of the job tree from the trivial run |
+| jobtree_jobTreeStatus | PASS | synthetic data: status of the job tree from the trivial run |
+
 ## jobtree_jobTreeStatus
 
 ### Tool Description

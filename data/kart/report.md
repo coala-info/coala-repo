@@ -1,5 +1,12 @@
 # kart CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kart | PASS |  |
+| kart_bwt_index | PASS |  |
+
 ## kart
 
 ### Tool Description
@@ -35,3 +42,18 @@ Options: -t INT        number of threads [4]
          -v            version
 ```
 
+## kart_bwt_index
+
+### Tool Description
+Build the BWT index of a reference FASTA file for Kart
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kart:2.5.6--h13024bc_6
+- **Homepage**: https://github.com/hsinnan75/Kart
+- **Package**: https://anaconda.org/channels/bioconda/packages/kart/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: bwt_index Ref_File[ex. ref.fa] Prefix[ex. MyRef]
+```

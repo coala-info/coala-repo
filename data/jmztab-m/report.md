@@ -1,5 +1,11 @@
 # jmztab-m CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jmztab-m | PASS | command is jmztab-m (jmztabm-cli does not exist); fixed; valid file passes and an invalid file reports errors |
+
 ## jmztab-m
 
 ### Tool Description

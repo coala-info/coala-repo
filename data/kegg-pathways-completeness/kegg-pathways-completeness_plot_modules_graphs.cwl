@@ -5,10 +5,8 @@ label: kegg-pathways-completeness_plot_modules_graphs
 doc: "Script generates plots for each contig\n\nTool homepage: https://github.com/EBI-Metagenomics/kegg-pathways-completeness-tool"
 inputs:
   - id: graphs
-    type:
-      - 'null'
-      - File
-    doc: graphs in pickle format
+    type: File
+    doc: graphs in pickle format (graphs.pkl from the package; the built-in relative default path does not resolve)
     inputBinding:
       position: 101
       prefix: --graphs
@@ -46,10 +44,8 @@ inputs:
       position: 101
       prefix: --modules
   - id: pathways
-    type:
-      - 'null'
-      - File
-    doc: Pathways of kos
+    type: File
+    doc: Pathways of kos (all_pathways.txt from the package; the built-in relative default path does not resolve)
     inputBinding:
       position: 101
       prefix: --definitions

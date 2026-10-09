@@ -29,14 +29,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fasta
-  - id: ignore_rest
-    type:
-      - 'null'
-      - boolean
-    doc: Ignores the rest of the labeled arguments following this flag.
-    inputBinding:
-      position: 101
-      prefix: --ignore_rest
   - id: kmer
     type:
       - 'null'
@@ -70,11 +62,13 @@ inputs:
       position: 101
       prefix: --readlen
   - id: reads
-    type: string
-    doc: Paired-read file separated by ','
+    type: File[]
+    doc: Paired-read files (read 1 and read 2), passed as a comma-separated list
     inputBinding:
       position: 101
       prefix: --reads
+      itemSeparator: ','
+
   - id: spades
     type:
       - 'null'
@@ -102,6 +96,13 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: OMPI_MCA_plm_rsh_agent
+        envValue: /bin/false
+      - envName: OMPI_MCA_rmaps_base_oversubscribe
+        envValue: '1'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/komb:1.0--py310h590eda1_5

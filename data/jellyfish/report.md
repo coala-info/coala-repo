@@ -1,5 +1,19 @@
 # jellyfish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jellyfish_bc | PASS |  |
+| jellyfish_count | PASS | output binary database size matches the Galaxy expected file |
+| jellyfish_dump | PASS | output identical to the Galaxy expected file |
+| jellyfish_histo | PASS | output identical to the Galaxy expected file |
+| jellyfish_info | PASS |  |
+| jellyfish_mem | PASS |  |
+| jellyfish_merge | PASS |  |
+| jellyfish_query | PASS |  |
+| jellyfish_stats | PASS |  |
+
 ## jellyfish_count
 
 ### Tool Description
@@ -328,46 +342,6 @@ Options (default value in (), *required):
  -h, --help                               This message
      --full-help                          Detailed help
  -V, --version                            Version
-```
-
-## jellyfish_jf
-
-### Tool Description
-Count k-mers in DNA, RNA or protein sequences.
-
-### Metadata
-- **Docker Image**: biocontainers/jellyfish:v2.2.10-2-deb_cv1
-- **Homepage**: http://www.genome.umd.edu/jellyfish.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/jellyfish/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-.......
-          ..........      .....
-       ....                   ....
-      ..     /-+       +---\     ...
-      .     /--|       +----\      ...
-     ..                              ...
-     .                                 .
-     ..      +----------------+         .
-      .      |. AAGATGGAGCGC .|         ..
-      .      |---.        .--/           .
-     ..          \--------/     .        .
-     .     .            ..     ..        .
-     .    ... .....   .....    ..        ..
-     .   .. . .   .  ..   .   ....        .
-     .  ..  . ..   . .    ..  .  .         .
-     . ..   .  .   ...     . ..  ..        .
-    ....    . ..   ..      ...    ..       .
-   .. .     ...     .      ..      ..      .
-   . ..      .      .       .       ...    ..
-   ...       .      .      ..         ...   .
-   .         ..     .      ..           .....
-  ____  ____  ._    __   _  _  ____  ____  ___  _   _
- (_  _)( ___)(  )  (  ) ( \/ )( ___)(_  _)/ __)( )_( )
-.-_)(   )__)  )(__  )(__ \  /  )__)  _)(_ \__ \ ) _ ( 
-\____) (____)(____)(____)(__) (__)  (____)(___/(_) (_)
 ```
 
 ## Metadata

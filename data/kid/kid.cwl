@@ -24,7 +24,7 @@ inputs:
       - string
     doc: Specify the output character encoding.
     inputBinding:
-      position: 103
+      position: 0
       prefix: --encoding
   - id: server
     type:
@@ -33,13 +33,13 @@ inputs:
     doc: Specify the server address if you want to start the HTTP server. 
       Instead of the Kid template, you can specify a base directory.
     inputBinding:
-      position: 103
+      position: 0
       prefix: --server
   - id: output_file_path
     type: string
     doc: 'outfile, --output=outfile Specify the output file. Default: standard output'
     inputBinding:
-      position: 104
+      position: 0
       prefix: -o
 outputs:
   - id: output_file

@@ -1,5 +1,11 @@
 # knotinframe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| knotinframe | PASS |  |
+
 ## knotinframe
 
 ### Tool Description

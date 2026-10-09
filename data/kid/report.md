@@ -1,5 +1,11 @@
 # kid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kid | PASS | synthetic data: small hand-written Kid template rendered with a title argument; options had to come before the template file |
+
 ## kid
 
 ### Tool Description

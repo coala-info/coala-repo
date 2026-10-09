@@ -1,100 +1,89 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kmerinshort
+baseCommand: KmerInShort
 label: kmerinshort_KmerInShort
-doc: "KmerInShort tool\n\nTool homepage: https://github.com/rizkg/KmerInShort"
+doc: "KmerInShort counts k-mers (k < 15) from a FASTA/FASTQ file and writes the counts to a text file\n\nTool homepage: https://github.com/rizkg/KmerInShort"
 inputs:
-  - id: dont_reverse
-    type:
-      - 'null'
-      - boolean
-    doc: do not reverse kmers, count forward and reverse complement separately
+  - id: nb_cores
+    type: ['null', int]
+    doc: "Number of cores [default 0]"
     inputBinding:
-      position: 101
-      prefix: -dont-reverse
-  - id: freq
-    type:
-      - 'null'
-      - boolean
-    doc: output frequency
+      position: 1
+      prefix: "-nb-cores"
+  - id: verbose
+    type: ['null', int]
+    doc: "Verbosity level [default 1]"
     inputBinding:
-      position: 101
-      prefix: -freq
+      position: 1
+      prefix: "-verbose"
   - id: input_file
     type: File
-    doc: input file
+    doc: "Input file (FASTA or FASTQ, gzipped or not)"
     inputBinding:
-      position: 101
-      prefix: -file
+      position: 1
+      prefix: "-file"
   - id: kmer_size
     type: int
-    doc: ksize
+    doc: "k-mer size (k < 15)"
     inputBinding:
-      position: 101
-      prefix: -kmer-size
-  - id: kval
-    type:
-      - 'null'
-      - File
-    doc: file with kmer values
+      position: 1
+      prefix: "-kmer-size"
+  - id: output_file_name
+    type: ['null', string]
+    default: "kmerinshort_counts.txt"
+    doc: "Output file"
     inputBinding:
-      position: 101
-      prefix: -kval
-  - id: nb_cores
-    type:
-      - 'null'
-      - int
-    doc: number of cores
-    inputBinding:
-      position: 101
-      prefix: -nb-cores
+      position: 1
+      prefix: "-out"
   - id: offset
-    type:
-      - 'null'
-      - int
-    doc: starting offset
+    type: ['null', int]
+    doc: "Starting offset [default 0]"
     inputBinding:
-      position: 101
-      prefix: -offset
-  - id: per_seq
-    type:
-      - 'null'
-      - boolean
-    doc: one output file and count per fasta sequence
-    inputBinding:
-      position: 101
+      position: 1
+      prefix: "-offset"
   - id: step
-    type:
-      - 'null'
-      - int
-    doc: step
+    type: ['null', int]
+    doc: "Step [default 1]"
     inputBinding:
-      position: 101
-      prefix: -step
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: verbosity level
+      position: 1
+      prefix: "-step"
+  - id: kval
+    type: ['null', File]
+    doc: "File with kmer values"
     inputBinding:
-      position: 101
-      prefix: -verbose
-  - id: output_file_path
-    type: string
-    doc: one output file and count per fasta sequence
+      position: 1
+      prefix: "-kval"
+  - id: dont_reverse
+    type: ['null', boolean]
+    doc: "Do not reverse kmers, count forward and reverse complement separately"
     inputBinding:
-      position: 102
-      prefix: -perSeq
+      position: 1
+      prefix: "-dont-reverse"
+  - id: freq
+    type: ['null', boolean]
+    doc: "Output frequency"
+    inputBinding:
+      position: 1
+      prefix: "-freq"
+  - id: per_seq
+    type: ['null', boolean]
+    doc: "One output file and count per fasta sequence"
+    inputBinding:
+      position: 1
+      prefix: "-perSeq"
 outputs:
-  - id: output_file
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: output file
+      type: array
+      items: File
+    doc: "Output file(s) written with -out (several with -perSeq)"
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob:
+        - $(inputs.output_file_name)*
+  - id: stdout
+    type: stdout
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmerinshort:1.0.1--0
+stdout: kmerinshort.out

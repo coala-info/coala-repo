@@ -1,5 +1,11 @@
 # kmer-counter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kmer-counter | PASS | SARS-CoV-2 transcript FASTA (11 entries), k=4: count matrix (11 x 136) identical to an independent Python count |
+
 ## kmer-counter
 
 ### Tool Description

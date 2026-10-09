@@ -1,5 +1,11 @@
 # kled CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kled | PASS | kled repo test CRAM: 86 SV calls identical to the expected answer VCF |
+
 ## kled
 
 ### Tool Description

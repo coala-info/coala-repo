@@ -9,13 +9,17 @@ inputs:
     doc: Input FASTA file
     inputBinding:
       position: 1
-outputs:
   - id: agp_out_file
+    type: string
+    doc: Output AGP file name
+    inputBinding:
+      position: 2
+outputs:
+  - id: agp_output
     type: File
-    doc: Output AGP file
+    doc: AGP file written to the path given in agp_out_file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.agp_out_file)
 hints:
   - class: DockerRequirement
-    dockerPull: 
-      quay.io/biocontainers/juicebox_scripts:0.1.0gita7ae991--hdfd78af_0
+    dockerPull: quay.io/biocontainers/juicebox_scripts:0.1.0gita7ae991--hdfd78af_0

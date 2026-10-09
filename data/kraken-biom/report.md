@@ -1,5 +1,11 @@
 # kraken-biom CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kraken-biom | PASS | ran on two real Kraken2 reports of SARS-CoV-2 reads (100 and 97 reads); BIOM (hdf5, json) and TSV tables have the right counts; fixed -o flag, removed invented flags, added --max/--min/--metadata/--otu_fp/-k |
+
 ## kraken-biom
 
 ### Tool Description

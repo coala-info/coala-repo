@@ -1,5 +1,11 @@
 # kounta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kounta | Failed | image problem: the image has no join and paste commands, so kounta stops with 'Could not find needed tool join'; CWL fixed to take positional input files and a staged fofn list |
+
 ## kounta
 
 ### Tool Description

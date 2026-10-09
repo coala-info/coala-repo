@@ -8,11 +8,18 @@ doc: "Build a k-mer index\n\nTool homepage: https://docs.rs/kbo"
 inputs:
   - id: seq_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Sequence data file(s).
     inputBinding:
       position: 1
+  - id: list_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Sequence files named in input_list; staged in the working directory so that the paths in the list resolve
   - id: dedup_batches
     type:
       - 'null'
@@ -22,7 +29,9 @@ inputs:
       position: 102
       prefix: --dedup-batches
   - id: input_list
-    type: File
+    type:
+      - 'null'
+      - File
     doc: File with paths or tab separated name and path on each line.
     inputBinding:
       position: 102
@@ -91,6 +100,11 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.list_files)
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kbo-cli:0.2.1--h4349ce8_0

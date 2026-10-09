@@ -3,15 +3,27 @@ class: CommandLineTool
 baseCommand: kinship-read
 label: kinship-read
 doc: "Calculate kinship coefficients from genotype data.\n\nTool homepage: https://bitbucket.org/tguenther/read/src/master/"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.plink_files)
 inputs:
+  - id: plink_files
+    type:
+      type: array
+      items: File
+    doc: Plink .bed, .bim and .fam files; they are staged in the working directory
+      and input_file is their common prefix.
   - id: input_file
     type: string
-    doc: Prefix of input Plink bed/bim/fam files
+    doc: Prefix of input Plink bed/bim/fam files (relative to the working directory)
     inputBinding:
       position: 101
       prefix: --input
   - id: norm_method
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Normalization method (either 'mean', 'median', 'max' or 'value')
     inputBinding:
       position: 101
@@ -50,6 +62,27 @@ inputs:
       position: 101
       prefix: --window_size
 outputs:
+  - id: read_results
+    type:
+      - 'null'
+      - File
+    doc: Pairwise relatedness classification
+    outputBinding:
+      glob: Read_Results.tsv
+  - id: means_p0
+    type:
+      - 'null'
+      - File
+    doc: Normalized mean P0 values per pair
+    outputBinding:
+      glob: meansP0_AncientDNA_normalized_READv2
+  - id: read_plot
+    type:
+      - 'null'
+      - File
+    doc: Plot of the normalized P0 values
+    outputBinding:
+      glob: READ.pdf
   - id: stdout
     type: stdout
     doc: Standard output

@@ -7,7 +7,7 @@ label: kmindex_index-infos
 doc: "Print index informations.\n\nTool homepage: https://github.com/tlemane/kmindex"
 inputs:
   - id: index
-    type: string
+    type: Directory
     doc: Global index path.
     inputBinding:
       position: 101
@@ -24,6 +24,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmindex:0.6.0--h668145b_1

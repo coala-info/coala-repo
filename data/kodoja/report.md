@@ -1,5 +1,13 @@
 # kodoja CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kodoja_kodoja_build.py | PASS |  |
+| kodoja_kodoja_retrieve.py | PASS |  |
+| kodoja_kodoja_search.py | PASS |  |
+
 ## kodoja_kodoja_build.py
 
 ### Tool Description

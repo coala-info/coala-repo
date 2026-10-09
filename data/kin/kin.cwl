@@ -30,7 +30,7 @@ inputs:
   - id: roh_file_location
     type:
       - 'null'
-      - File
+      - Directory
     doc: ROH files location
     inputBinding:
       position: 101
@@ -38,7 +38,7 @@ inputs:
   - id: threshold
     type:
       - 'null'
-      - float
+      - int
     doc: "Minimum number of sites in a window for ROH\nimplementation"
     inputBinding:
       position: 101

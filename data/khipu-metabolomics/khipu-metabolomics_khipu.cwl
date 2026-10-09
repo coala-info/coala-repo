@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: --end
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input file as feature table
     inputBinding:
       position: 101

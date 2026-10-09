@@ -1,5 +1,21 @@
 # kipoi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kipoi_env_export | PASS | exported the conda environment file of the HAL model from a local model directory |
+| kipoi_get-example | PASS | downloaded the HAL example chr22 FASTA and GTF (70 MB); needs network access and a local model directory because the image has no git |
+| kipoi_info | PASS | printed model and dataloader information for the local HAL model directory (--source dir); the default kipoi source needs git, which the image lacks |
+| kipoi_init | Not completed | interactive: kipoi init asks questions through cookiecutter and aborts without a terminal; baseCommand fixed to kipoi init |
+| kipoi_list_plugins | PASS | lists kipoi plugins; baseCommand fixed to kipoi list_plugins and invented inputs removed |
+| kipoi_ls | Failed | image problem: kipoi ls clones the model source and the image has no git |
+| kipoi_predict | Failed | image problem: the image has no conda and none of the model dependencies (HAL needs pysam, maxentpy, pytorch), so the dataloader cannot be imported |
+| kipoi_preproc | Failed | image problem: the image has no conda and none of the model dependencies (HAL dataloader needs pysam), so the dataloader cannot be imported |
+| kipoi_pull | Failed | image problem: kipoi pull clones the model source and the image has no git |
+| kipoi_test | Failed | image problem: the image has no conda and none of the model dependencies (HAL needs pysam), so the model cannot be imported |
+| kipoi_test-source | Failed | image problem: the image has no git (and no conda) to fetch and test the models of a source |
+
 ## kipoi_ls
 
 ### Tool Description
@@ -265,43 +281,6 @@ options:
 ```
 
 
-## kipoi_env
-
-### Tool Description
-Kipoi model-zoo command line tool
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kipoi:0.8.6--pyh5e36f6f_0
-- **Homepage**: https://github.com/kipoi/kipoi
-- **Package**: https://anaconda.org/channels/bioconda/packages/kipoi/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: kipoi env <command> [-h] ...
-
-    # Available sub-commands:
-    export       Export the environment.yaml file for a specific model
-    create       Create a conda environment for a model
-    cleanup      Remove environments that failed during installation
-    remove       Remove environment compatible with a model
-    list         List all kipoi-induced conda environments
-    get          Get environment name for given model
-    get_cli      Get path to Kipoi CLI for a given model
-    install      Install all the dependencies for a model into the current conda environment
-    
-
-Kipoi model-zoo command line tool
-
-positional arguments:
-  command     Subcommand to run; possible commands: export, create, cleanup,
-              remove, list, get, get_cli, install, name
-
-options:
-  -h, --help  show this help message and exit
-```
-
-
 ## kipoi_init
 
 ### Tool Description
@@ -430,3 +409,54 @@ options:
 
 ## Metadata
 - **Skill**: generated
+
+## kipoi_env_export
+
+### Tool Description
+Export the environment.yaml file for a specific model.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kipoi:0.8.6--pyh5e36f6f_0
+- **Homepage**: https://github.com/kipoi/kipoi
+- **Package**: https://anaconda.org/channels/bioconda/packages/kipoi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: kipoi env export [-h] [--source {kipoi,github-permalink,dir}]
+                        [--dataloader DATALOADER [DATALOADER ...]] [--vep VEP]
+                        [--interpret] [--gpu] -o OUTPUT [-e ENV]
+                        model [model ...]
+
+Export the environment.yaml file for a specific model.
+
+positional arguments:
+  model                 Model name(s). You can use <source>::<model> to use
+                        models from different sources. <model> can also refer
+                        to a model-group - e.g. if you specify MaxEntScan then
+                        the dependencies for MaxEntScan/5prime and
+                        MaxEntScan/3prime will be installed
+
+options:
+  -h, --help            show this help message and exit
+  --source {kipoi,github-permalink,dir}
+                        Model source to use (default=kipoi). Specified in
+                        ~/.kipoi/config.yaml under model_sources. When 'dir'
+                        is used, use the local directory path when specifying
+                        the model/dataloader.
+  --dataloader DATALOADER [DATALOADER ...]
+                        Dataloader name(s). If not specified, the model's
+                        default Dataloader will be used. You can use
+                        <source>::<dataloader> to use dataloaders from
+                        different sources As for the --model tag, you can
+                        specify whole dataloader groups.
+  --vep VEP             This argument is deprecated. Please use
+                        https://github.com/kipoi/kipoi-veff2 directly
+  --interpret           Include also the dependencies for the kipoi-interpret
+                        package
+  --gpu                 Use gpu-compatible dependencies. Example: instead of
+                        using 'tensorflow', 'tensorflow-gpu' will be used
+  -o OUTPUT, --output OUTPUT
+                        Output file name
+  -e ENV, --env ENV     Environment name
+```

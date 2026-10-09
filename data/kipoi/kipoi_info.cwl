@@ -7,7 +7,9 @@ label: kipoi_info
 doc: "Prints dataloader keyword arguments.\n\nTool homepage: https://github.com/kipoi/kipoi"
 inputs:
   - id: model
-    type: string
+    type:
+      - string
+      - Directory
     doc: Model name.
     inputBinding:
       position: 1
@@ -43,6 +45,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kipoi:0.8.6--pyh5e36f6f_0

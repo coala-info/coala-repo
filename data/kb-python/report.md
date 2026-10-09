@@ -1,41 +1,12 @@
 # kb-python CWL Generation Report
 
-## kb-python_kb
+## Real Data Test
 
-### Tool Description
-kb_python 0.30.0
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kb-python:0.30.0--pyh7e72e81_0
-- **Homepage**: https://github.com/pachterlab/kb_python
-- **Package**: https://anaconda.org/channels/bioconda/packages/kb-python/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/kb-python/overview
-- **Total Downloads**: 40.0K
-- **Last updated**: 2025-10-30
-- **GitHub**: https://github.com/pachterlab/kb_python
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: kb [-h] [--list] <CMD> ...
-
-kb_python 0.30.0
-
-positional arguments:
-  <CMD>
-    info      Display package and citation information
-    compile   Compile `kallisto` and `bustools` binaries from source
-    ref       Build a kallisto index and transcript-to-gene mapping
-    count     Generate count matrices from a set of single-cell FASTQ files
-    extract   Extract sequencing reads that were pseudoaligned to specific
-              genes/transcripts (or extract all reads that were / were not
-              pseudoaligned)
-
-options:
-  -h, --help  Show this help message and exit
-  --list      Display list of supported single-cell technologies
-```
+| Tool | Result | Reason |
+|---|---|---|
+| kb-python_kb_count | Failed | image problem: the bundled kallisto cannot run (libstdc++.so.6 missing), so kb stops with UnsupportedOSError |
+| kb-python_kb_extract | Failed | image problem: the bundled kallisto cannot run (libstdc++.so.6 missing), so kb stops with UnsupportedOSError |
+| kb-python_kb_ref | Failed | image problem: the bundled kallisto cannot run (libstdc++.so.6 missing), so kb stops with UnsupportedOSError |
 
 ## kb-python_kb_ref
 
@@ -278,10 +249,10 @@ optional arguments for `BULK` and `SMARTSEQ2` technologies:
                         across multiple directories
 ```
 
-## kb-python_kb_--list
+## kb-python_kb_extract
 
 ### Tool Description
-List of supported single-cell technologies
+Extract sequencing reads that were pseudoaligned to specific genes/transcripts
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kb-python:0.30.0--pyh7e72e81_0
@@ -291,35 +262,67 @@ List of supported single-cell technologies
 
 ### Original Help Text
 ```text
-List of supported single-cell technologies
+usage: kb extract [-h] [--tmp TMP] [--keep-tmp] [--verbose] -i INDEX
+                  [-ts TARGETS [TARGETS ...]] [-ttype TYPE] [--extract_all]
+                  [--extract_all_fast] [--extract_all_unmapped] [--mm]
+                  [-g T2G] [-o OUT] [-t THREADS]
+                  [-s {unstranded,forward,reverse}] [--aa] [-N NUMREADS]
+                  [--kallisto KALLISTO] [--bustools BUSTOOLS] [--opt-off]
+                  FASTQ
 
-Positions syntax: `input file index, start position, end position`
-When start & end positions are None, refers to the entire file
-Custom technologies may be defined by providing a kallisto-supported technology string
-(see https://pachterlab.github.io/kallisto/manual)
+Extract sequencing reads that were pseudoaligned to specific genes/transcripts
+(or extract all reads that were / were not pseudoaligned).
 
-name            description                            on-list    barcode                    umi        cDNA                       
-------------    -----------------------------------    -------    -----------------------    -------    -----------------------    
-10XV1           10x version 1                          yes        0,0,14                     1,0,10     2,None,None                
-10XV2           10x version 2                          yes        0,0,16                     0,16,26    1,None,None                
-10XV3           10x version 3                          yes        0,0,16                     0,16,28    1,None,None                
-10XV3_ULTIMA    10x version 3 sequenced with Ultima    yes        0,22,38                    0,38,50    0,62,None                  
-10XV4           10x version 4                          yes        0,0,16                     0,16,28    1,None,None                
-BDWTA           BD Rhapsody                            yes        0,0,9 0,21,30 0,43,52      0,52,60    1,None,None                
-BULK            Bulk (single or paired)                                                                 0,None,None 1,None,None    
-CELSEQ          CEL-Seq                                           0,0,8                      0,8,12     1,None,None                
-CELSEQ2         CEL-SEQ version 2                                 0,6,12                     0,0,6      1,None,None                
-DROPSEQ         DropSeq                                           0,0,12                     0,12,20    1,None,None                
-INDROPSV1       inDrops version 1                                 0,0,11 0,30,38             0,42,48    1,None,None                
-INDROPSV2       inDrops version 2                                 1,0,11 1,30,38             1,42,48    0,None,None                
-INDROPSV3       inDrops version 3                      yes        0,0,8 1,0,8                1,8,14     2,None,None                
-SCRUBSEQ        SCRB-Seq                                          0,0,6                      0,6,16     1,None,None                
-SMARTSEQ2       Smart-seq2  (single or paired)                                                          0,None,None 1,None,None    
-SMARTSEQ3       Smart-seq3                                                                   0,11,19    0,11,None 1,None,None      
-SPLIT-SEQ       SPLiT-seq (version 2)                  yes        1,10,18 1,48,56 1,78,86    1,0,10     0,None,None                
-STORMSEQ        STORM-seq                                                                    1,0,8      0,None,None 1,14,None      
-SURECELL        SureCell for ddSEQ                                0,0,6 0,21,27 0,42,48      0,51,59    1,None,None                
-Visium          10x Visium                             yes        0,0,16                     0,16,28    1,None,None
+options:
+  -h, --help            Show this help message and exit
+  --tmp TMP             Override default temporary directory
+  --keep-tmp            Do not delete the tmp directory
+  --verbose             Print debugging information
+  -ttype TYPE, --target_type TYPE
+                        'gene' (default) or 'transcript' -> Defines whether
+                        targets are gene or transcript names
+  --extract_all         Extracts all reads that pseudo-aligned to any gene or
+                        transcript (as defined by target_type) (breaks down
+                        output by gene/transcript). Using extract_all might
+                        take a long time to run when there are a large number
+                        of genes/transcripts in the index.
+  --extract_all_fast    Extracts all reads that pseudo-aligned (does not break
+                        down output by gene/transcript; output saved in the
+                        "all" folder).
+  --extract_all_unmapped
+                        Extracts all unmapped reads (output saved in the
+                        "all_unmapped" folder).
+  --mm                  Also extract reads that multi-mapped to more than one
+                        gene.
+  -g T2G                Path to transcript-to-gene mapping file (required when
+                        mm = False, target_type = "gene" (and extract_all_fast
+                        and extract_all_unmapped = False), OR extract_all =
+                        True).
+  -o OUT                Path to output directory (default: current directory)
+  -t THREADS            Number of threads to use (default: 8)
+  -s {unstranded,forward,reverse}, --strand {unstranded,forward,reverse}
+                        Strandedness (default: 'unstranded')
+  --aa                  Map to index generated from FASTA-file containing
+                        amino acid sequences
+  -N NUMREADS           Maximum number of reads to process from supplied fastq
+  --kallisto KALLISTO   Path to kallisto binary to use (default:
+                        /usr/local/lib/python3.12/site-
+                        packages/kb_python/bins/linux/kallisto/kallisto)
+  --bustools BUSTOOLS   Path to bustools binary to use (default:
+                        /usr/local/lib/python3.12/site-
+                        packages/kb_python/bins/linux/bustools/bustools)
+  --opt-off             Disable performance optimizations
+
+required arguments:
+  FASTQ                 Single fastq file containing the sequencing reads
+                        (e.g. in case of 10x data, provide the R2 file).
+                        Sequencing technology will be treated as bulk here
+                        since barcode and UMI tracking is not necessary to
+                        extract reads.
+  -i INDEX              Path to kallisto index
+  -ts TARGETS [TARGETS ...], --targets TARGETS [TARGETS ...]
+                        Gene or transcript names for which to extract the raw
+                        reads that align to the index
 ```
 
 ## Metadata

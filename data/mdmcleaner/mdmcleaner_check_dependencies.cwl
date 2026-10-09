@@ -4,98 +4,25 @@ baseCommand:
   - mdmcleaner
   - check_dependencies
 label: mdmcleaner_check_dependencies
-doc: "Checks if all required dependencies for MDMcleaner are met.\n\nTool homepage:
-  https://github.com/KIT-IBG-5/mdmcleaner"
+doc: "Checks if all required dependencies for MDMcleaner are met.\n\nTool homepage: https://github.com/KIT-IBG-5/mdmcleaner"
 inputs:
-  - id: aragorn
-    type:
-      - 'null'
-      - string
-    doc: Path to the aragorn executable.
-    inputBinding:
-      position: 101
-  - id: barrnap
-    type:
-      - 'null'
-      - string
-    doc: Path to the barrnap executable.
-    inputBinding:
-      position: 101
-  - id: blacklistfile
+  - id: config_file
     type:
       - 'null'
       - File
-    doc: Path to the blacklist file.
+    doc: local config file with basic settings (such as the location of database-files); default looks for mdmcleaner.config in the current working directory
     inputBinding:
       position: 101
-  - id: blastdbcmd
-    type:
-      - 'null'
-      - string
-    doc: Path to the blastdbcmd executable.
-    inputBinding:
-      position: 101
-  - id: blastn
-    type:
-      - 'null'
-      - string
-    doc: Path to the blastn executable.
-    inputBinding:
-      position: 101
-  - id: blastp
-    type:
-      - 'null'
-      - string
-    doc: Path to the blastp executable.
-    inputBinding:
-      position: 101
-  - id: db_type
-    type:
-      - 'null'
-      - string
-    doc: Type of database to use.
-    inputBinding:
-      position: 101
-  - id: diamond
-    type:
-      - 'null'
-      - string
-    doc: Path to the diamond executable.
-    inputBinding:
-      position: 101
-  - id: hmmsearch
-    type:
-      - 'null'
-      - string
-    doc: Path to the hmmsearch executable.
-    inputBinding:
-      position: 101
-  - id: makeblastdb
-    type:
-      - 'null'
-      - string
-    doc: Path to the makeblastdb executable.
-    inputBinding:
-      position: 101
-  - id: prodigal
-    type:
-      - 'null'
-      - string
-    doc: Path to the prodigal executable.
-    inputBinding:
-      position: 101
-  - id: threads
-    type:
-      - 'null'
-      - string
-    doc: Number of threads to use.
-    inputBinding:
-      position: 101
+      prefix: --config
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error, where mdmcleaner prints its report
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mdmcleaner:0.8.7--pyh7cba7a3_0
 stdout: mdmcleaner_check_dependencies.out
+stderr: mdmcleaner_check_dependencies.err

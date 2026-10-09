@@ -1,5 +1,11 @@
 # memopair CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| memopair | PASS | synthetic data: planted 6mA pileup on real SARS-CoV-2 genome; output has all 59 GATC sites with the planted counts; fixed output to a Directory and dropped the unused .fai |
+
 ## memopair
 
 ### Tool Description

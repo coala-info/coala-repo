@@ -1,8 +1,27 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: validate_magetab.pl
+baseCommand:
+  - sh
+  - -c
 label: magetab-curation-scripts_validate_magetab.pl
 doc: "Validates MAGE-TAB files.\n\nTool homepage: https://github.com/ebi-gene-expression-group/perl-curation-scripts"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.adf_file)
+        writable: true
+      - entry: $(inputs.idf_file)
+        writable: true
+      - entry: $(inputs.merged_file)
+        writable: true
+      - entry: $(inputs.data_directory)
+        writable: true
+arguments:
+  - position: -1
+    valueFrom: 'mkdir -p atlas_cfg; for f in /usr/local/atlasprod/supporting_files/*.default; do cp "$f" "atlas_cfg/`basename "$f" .default`"; done; export ATLAS_META_CONFIG=$PWD/atlas_cfg; exec validate_magetab.pl "$@"'
+  - position: 0
+    valueFrom: validate_magetab.pl
 inputs:
   - id: adf_file
     type:
@@ -12,6 +31,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -a
+      valueFrom: $(self.basename)
   - id: data_directory
     type:
       - 'null'
@@ -21,6 +41,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -d
+      valueFrom: $(self.basename)
   - id: full_curator_checking
     type:
       - 'null'
@@ -38,6 +59,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
+      valueFrom: $(self.basename)
   - id: merged_file
     type:
       - 'null'
@@ -50,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -m
+      valueFrom: $(self.basename)
   - id: skip_data_file_checks
     type:
       - 'null'
@@ -70,6 +93,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log_files
+    type:
+      type: array
+      items: File
+    doc: Validation log files written beside the checked file
+    outputBinding:
+      glob: '*.log'
+successCodes:
+  - 0
+  - 1
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/magetab-curation-scripts:1.1.0--hdfd78af_0

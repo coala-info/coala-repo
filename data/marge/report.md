@@ -1,5 +1,11 @@
 # marge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| marge_init | PASS | writes a Snakefile and config.json scaffold; the pipeline itself was not run |
+
 ## marge_init
 
 ### Tool Description

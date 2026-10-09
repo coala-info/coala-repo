@@ -1,143 +1,142 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: merfin
+baseCommand:
+  - merfin
+  - -polish
 label: merfin_polish
-doc: "Predict the kmer consequences of variant calls <input.vcf> given the consensus
-  sequence <seq.fasta> and lookup the k-mer multiplicity in the consensus sequence
-  <seq.meryl> and in the reads <read.meryl>.\n\nTool homepage: https://github.com/arangrhie/merfin"
+doc: "Score each variant, or variants within distance k and their combinations by k*. Assumes the reference (-sequence) is from the same individual.\n\nTool homepage: https://github.com/arangrhie/merfin"
 inputs:
-  - id: report_type
-    type: string
-    doc: Exactly one report type must be specified.
+  - id: sequence
+    type: File
+    doc: "Consensus sequence FASTA or FASTQ file (uncompressed, gz, bz2 or xz compressed)"
     inputBinding:
-      position: 1
+      position: 102
+      prefix: -sequence
+  - id: readmers
+    type: Directory
+    doc: "Read k-mer database (meryl database directory built from the reads)"
+    inputBinding:
+      position: 102
+      prefix: -readmers
+  - id: peak
+    type: float
+    doc: "Haploid peak: hard sets copy 1 and infers multiplicity to copy number (recommended)"
+    inputBinding:
+      position: 102
+      prefix: -peak
+  - id: vcf
+    type: File
+    doc: "Input VCF file (FASTA or FASTQ style compressed inputs allowed)"
+    inputBinding:
+      position: 102
+      prefix: -vcf
+  - id: output
+    type: string
+    doc: "Output file prefix"
+    inputBinding:
+      position: 102
+      prefix: -output
+  - id: seqmers
+    type:
+      - 'null'
+      - Directory
+    doc: "Optional input for a pre-built sequence meryl database (by default <seq.fasta>.meryl is generated)"
+    inputBinding:
+      position: 102
+      prefix: -seqmers
   - id: comb
     type:
       - 'null'
       - int
-    doc: set the max N of combinations of variants to be evaluated
+    doc: "Set the max N of combinations of variants to be evaluated (default: 15)"
     inputBinding:
       position: 102
       prefix: -comb
-  - id: debug
-    type:
-      - 'null'
-      - boolean
-    doc: output a debug log
-    inputBinding:
-      position: 102
-      prefix: -debug
-  - id: max_kmer_value
-    type:
-      - 'null'
-      - int
-    doc: Ignore kmers with value above m
-    inputBinding:
-      position: 102
-      prefix: -max
-  - id: memory
-    type:
-      - 'null'
-      - string
-    doc: Don't use more than m GB memory for loading mers
-    inputBinding:
-      position: 102
-      prefix: -memory
-  - id: min_kmer_value
-    type:
-      - 'null'
-      - int
-    doc: Ignore kmers with value below m
-    inputBinding:
-      position: 102
-      prefix: -min
   - id: nosplit
     type:
       - 'null'
       - boolean
-    doc: without this options combinations larger than N are split
+    doc: "Without this option combinations larger than N are split"
     inputBinding:
       position: 102
       prefix: -nosplit
-  - id: output
-    type: string
-    doc: Base name for output files
-    inputBinding:
-      position: 102
-      prefix: -output
-  - id: peak
-    type:
-      - 'null'
-      - File
-    doc: Required input to hard set copy 1 and infer multiplicity to copy number
-      (recommended).
-    inputBinding:
-      position: 102
-      prefix: -peak
   - id: prob
     type:
       - 'null'
       - File
-    doc: Optional input vector of probabilities. Adjust multiplicity to copy 
-      number
+    doc: "Optional input vector of probabilities; adjusts multiplicity to copy number (takes priority over -peak for the multiplicities listed)"
     inputBinding:
       position: 102
       prefix: -prob
-  - id: readmers
-    type: File
-    doc: Read meryl database file
-    inputBinding:
-      position: 102
-      prefix: -readmers
-  - id: seqmers
-    type:
-      - 'null'
-      - File
-    doc: Optional input for pre-built sequence meryl db
-    inputBinding:
-      position: 102
-      prefix: -seqmers
-  - id: sequence
-    type: File
-    doc: Consensus sequence file (FASTA or FASTQ; uncompressed, gz, bz2 or xz 
-      compressed)
-    inputBinding:
-      position: 102
-      prefix: -sequence
-  - id: skip_missing
+  - id: debug
     type:
       - 'null'
       - boolean
-    doc: skip the missing kmer sites to be printed
+    doc: "Output a debug log, into <output>.THREAD_ID.debug.gz"
     inputBinding:
       position: 102
-      prefix: -skipMissing
+      prefix: -debug
+  - id: min_kmer_value
+    type:
+      - 'null'
+      - int
+    doc: "Ignore kmers with value below m"
+    inputBinding:
+      position: 102
+      prefix: -min
+  - id: max_kmer_value
+    type:
+      - 'null'
+      - int
+    doc: "Ignore kmers with value above m"
+    inputBinding:
+      position: 102
+      prefix: -max
   - id: threads
     type:
       - 'null'
       - int
-    doc: Multithreading for meryl lookup table construction, dump and hist.
+    doc: "Multithreading for meryl lookup table construction, dump and hist"
     inputBinding:
       position: 102
       prefix: -threads
-  - id: vcf
-    type: File
-    doc: Input VCF file
+  - id: memory
+    type:
+      - 'null'
+      - float
+    doc: "Do not use more than m GB memory for loading mers"
     inputBinding:
       position: 102
-      prefix: -vcf
+      prefix: -memory
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_files
+  - id: stderr_log
+    type: stderr
+    doc: Standard error (progress, QV or completeness report)
+  - id: result
     type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output
+      - 'null'
+      - File
+    doc: "Variants chosen (VCF)"
     outputBinding:
-      glob: $(inputs.output)*
+      glob: $(inputs.output).polish.vcf
+  - id: debug_logs
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Debug logs written with -debug
+    outputBinding:
+      glob: $(inputs.output).*.debug.gz
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.sequence)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merfin:1.0--h9948957_3
 stdout: merfin_polish.out
+stderr: merfin_polish.err

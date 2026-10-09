@@ -1,5 +1,14 @@
 # mendelscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mendelscan_rhro | PASS | author example VCF and pedigree: 203 RareHet, 871 RuleOut markers and 16 windows with plausible calls; fixed baseCommand to mendelscan |
+| mendelscan_score | Not completed | runs to success on the author's example trio data, but only 98% of well-covered rows match the example output (the rest differ by a x0.8 segregation factor, probably a newer version), so the scores cannot be fully confirmed. |
+| mendelscan_sibd | Not completed | needs a BEAGLE FastIBD output and markers file; no real data available |
+| mendelscan_trio | Not completed | runs and reads the VCF, pedigree and VEP file, but recessive and de novo outputs stay empty even for planted trio variants (synthetic data), so the result cannot be confirmed |
+
 ## mendelscan_score
 
 ### Tool Description

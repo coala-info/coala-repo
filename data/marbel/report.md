@@ -1,5 +1,11 @@
 # marbel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| marbel | Failed | image problem: the bundled data files (parquet, pangenome) are 133-byte git-lfs pointers, so marbel stops with 'The file must end with PAR1' |
+
 ## marbel
 
 ### Tool Description

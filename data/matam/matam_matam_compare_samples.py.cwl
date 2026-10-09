@@ -14,17 +14,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --samples_file
-  - id: ouput_comparaison_table_path
+  - id: sample_files
     type:
-      - 'null'
-      - string
+      type: array
+      items: File
+    doc: The fasta and rdp files named in the samples file, staged in the working
+      directory so that relative paths resolve.
+  - id: ouput_comparaison_table_path
+    type: string
     inputBinding:
       position: 102
       prefix: --ouput_comparaison_table
   - id: ouput_contingency_table_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 103
       prefix: --ouput_contingency_table
@@ -41,6 +43,8 @@ outputs:
       glob: $(inputs.ouput_comparaison_table_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.sample_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/matam:1.6.2--haf24da9_0

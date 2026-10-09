@@ -1,5 +1,16 @@
 # mantis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mantis_build | PASS |  |
+| mantis_mst | PASS |  |
+| mantis_query | PASS |  |
+| mantis_stats | PASS |  |
+| mantis_validate | PASS |  |
+| mantis_validatemst | PASS |  |
+
 ## mantis_build
 
 ### Tool Description

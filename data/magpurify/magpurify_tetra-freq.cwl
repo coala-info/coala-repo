@@ -36,6 +36,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_out
+    type: Directory
+    doc: Output directory to store results and intermediate files
+    outputBinding:
+      glob: '$(inputs.out)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/magpurify:2.1.2--pyhdfd78af_2

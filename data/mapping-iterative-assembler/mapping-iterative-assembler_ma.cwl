@@ -9,7 +9,8 @@ inputs:
     type: File
     doc: maln input file
     inputBinding:
-      position: 1
+      position: 101
+      prefix: -M
   - id: assembly_id
     type:
       - 'null'
@@ -21,7 +22,7 @@ inputs:
   - id: color_format_6_output
     type:
       - 'null'
-      - string
+      - boolean
     doc: Color format 6 output -> don't pipe this output to file!
     inputBinding:
       position: 102

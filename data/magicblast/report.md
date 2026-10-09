@@ -1,5 +1,11 @@
 # magicblast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| magicblast | PASS |  |
+
 ## magicblast
 
 ### Tool Description

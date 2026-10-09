@@ -122,7 +122,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: use <file> for logging messages
     inputBinding:
       position: 101
@@ -141,10 +141,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -O
     doc: output data to host <h> and port <p> (MUTLIPLE outputs supported)
     inputBinding:
       position: 101
-      prefix: -O
   - id: num_volumes
     type:
       - 'null'
@@ -274,12 +275,24 @@ inputs:
       position: 101
       prefix: -v
   - id: output_file_path
-    type: string
-    doc: ': use <file> for output (this option can be passed MULTIPLE times)'
+    type:
+      - 'null'
+      - string
+    doc: use <file> for output (standard output when not given)
     inputBinding:
       position: 102
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the data, when no output file is given)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log_file)
   - id: output_file
     type:
       - 'null'
@@ -292,3 +305,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mbuffer:20160228--h7b50bb2_8
+stdout: mbuffer.out

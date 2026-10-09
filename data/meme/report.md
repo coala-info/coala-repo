@@ -1,5 +1,21 @@
 # meme CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| meme | PASS |  |
+| meme_ame | Failed | image problem: ame writes its TSV files but exits 1 with 'Template does not contain data section' when making the HTML report. |
+| meme_centrimo | Failed | image problem: centrimo exits 1 with 'Template does not contain data section' when making the HTML report and writes no centrimo.tsv. |
+| meme_dreme | PASS |  |
+| meme_fasta-get-markov | PASS |  |
+| meme_fimo | PASS |  |
+| meme_glam2 | Failed | image problem: glam2 finds the correct motif but exits 1 because glam2html and glam2psfm cannot execute (required file not found). |
+| meme_mast | PASS |  |
+| meme_sea | Failed | image problem: sea writes its TSV files but exits 1 with 'Template does not contain data section' when making the HTML report; only --text works. |
+| meme_streme | PASS |  |
+| meme_tomtom | PASS |  |
+
 ## meme_glam2
 
 ### Tool Description

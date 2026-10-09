@@ -1,5 +1,11 @@
 # mashmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mashmap | PASS |  |
+
 ## mashmap
 
 ### Tool Description

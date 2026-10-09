@@ -1,8 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - sdbg_builder
-  - read2sdbg
+  - megagta
+  - buildgraph
 label: megagta_buildgraph
 doc: "Builds a de Bruijn graph from sequencing reads.\n\nTool homepage: https://github.com/HKU-BAL/MegaGTA"
 inputs:
@@ -89,11 +89,18 @@ inputs:
       position: 101
       prefix: --output_prefix
   - id: read_lib_file
-    type: File
-    doc: input fast[aq] file, can be gzip'ed. "-" for stdin.
+    type: string
+    doc: prefix of the read library built by megagta buildlib (<prefix>.bin and
+      <prefix>.lib_info must be in the working directory)
     inputBinding:
       position: 101
       prefix: --read_lib_file
+  - id: read_lib_files
+    type:
+      type: array
+      items: File
+    doc: library files written by megagta buildlib (<prefix>.bin and
+      <prefix>.lib_info), staged in the working directory
 outputs:
   - id: stdout
     type: stdout
@@ -102,9 +109,14 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Succinct de Bruijn graph files (<prefix>.sdbg.*, <prefix>.sdbg_info)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob:
+        - '*.sdbg.*'
+        - '*.sdbg_info'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.read_lib_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/megagta:0.1_alpha--0

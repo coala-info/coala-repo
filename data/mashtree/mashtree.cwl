@@ -60,8 +60,8 @@ inputs:
   - id: save_sketches
     type:
       - 'null'
-      - Directory
-    doc: If a directory is supplied, then sketches will be saved in it.
+      - string
+    doc: If a directory name is supplied, then sketches will be saved in it.
     inputBinding:
       position: 102
       prefix: --save-sketches
@@ -101,7 +101,7 @@ inputs:
   - id: tempdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: If specified, this directory will not be removed at the end of the 
       script and can be used to cache results for future analyses. script
     inputBinding:
@@ -147,6 +147,20 @@ outputs:
       Log messages will still go to stderr.
     outputBinding:
       glob: $(inputs.outtree_path)
+  - id: tempdir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Temporary directory kept by --tempdir
+    outputBinding:
+      glob: $(inputs.tempdir)
+  - id: sketches_out
+    type:
+      - 'null'
+      - Directory
+    doc: Directory of sketches saved by --save-sketches
+    outputBinding:
+      glob: $(inputs.save_sketches)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

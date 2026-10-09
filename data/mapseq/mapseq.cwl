@@ -6,7 +6,9 @@ doc: "Classify a fasta file containing sequence reads to the default NCBI taxono
   and OTU classifications.\n\nTool homepage: https://github.com/jfmrod/MAPseq"
 inputs:
   - id: input_fa
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input fasta file
     inputBinding:
       position: 1

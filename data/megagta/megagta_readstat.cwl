@@ -1,16 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: readstat
+baseCommand:
+  - megagta
+  - readstat
 label: megagta_readstat
-doc: "Reads FASTQ files from standard input.\n\nTool homepage: https://github.com/HKU-BAL/MegaGTA"
+doc: "Get sequence statistics (number of reads, total size, longest, shortest and
+  average length) from a FASTQ or FASTA file read on standard input.\n\nTool homepage: https://github.com/HKU-BAL/MegaGTA"
 inputs:
   - id: input_fastq
-    type:
-      type: array
-      items: File
-    doc: FASTQ files to read from standard input.
-    inputBinding:
-      position: 1
+    type: File
+    doc: FASTQ or FASTA file, passed to the program on standard input
 outputs:
   - id: stdout
     type: stdout
@@ -18,4 +17,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/megagta:0.1_alpha--0
+stdin: $(inputs.input_fastq.path)
 stdout: megagta_readstat.out

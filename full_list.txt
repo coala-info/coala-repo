@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 8079; PASS: 6269; Failed: 993; Not completed: 817
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 8339; PASS: 6470; Failed: 1017; Not completed: 852
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -8079,3 +8079,263 @@ madre	madre_read-classification	PASS	synthetic data: reads simulated from three 
 maegatk	maegatk_bcall	PASS	real maegatk repo MAESTER test BAM with built-in rCRS genome: genotype tables for 10 passing barcodes; per-barcode read counts match the BAM; baseCommand now includes bcall and the BAM index is required
 maelstrom-core	maelstrom-core_bam-collect-doc	PASS	real maelstrom-core repo example BAM: coverage and fragment-count VCF files identical to the repo expected files; --regions now repeats the flag per region and the BAM index is required
 maf2synteny	maf2synteny	PASS	real SibeliaZ GFF blocks of phage T7 vs T3 genomes: synteny blocks match the input block coordinates; flags fixed to -o, -s, -b (the old --out-dir, --simplify, --block-sizes did not exist); MAF input not tested
+maffilter	maffilter	PASS	
+mafft	mafft	PASS	
+magcluster	magcluster_clinker	PASS	
+magcluster	magcluster_mgc_screen	PASS	
+magcluster	magcluster_prokka	PASS	
+mageck	mageck_RRA	PASS	
+mageck	mageck_count	PASS	
+mageck	mageck_mageckGSEA	PASS	
+mageck	mageck_mle	PASS	
+mageck	mageck_pathway	PASS	
+mageck	mageck_plot	Failed	image problem: Rscript is not installed in the image, so mageck plot makes no PDF plots
+mageck	mageck_test	PASS	
+mageck-vispr	mageck-vispr_annotate-library	PASS	
+mageck-vispr	mageck-vispr_init	PASS	
+magetab-curation-scripts	magetab-curation-scripts_gal2adf.pl	PASS	
+magetab-curation-scripts	magetab-curation-scripts_magetab_insert_array.pl	Not completed	needs the ArrayExpress Submissions Tracking database and a submitter account
+magetab-curation-scripts	magetab-curation-scripts_validate_magetab.pl	PASS	experiment mode (-i) works; ADF mode (-a) crashes after the checks on an empty site-config path
+magicblast	magicblast	PASS	
+magmax	magmax	PASS	dereplication works with --qual; bin merging and reassembly needs CheckM2, which is not in the image
+magneto	magneto_run	Not completed	pipeline, skipped
+magphi	magphi_Magphi	PASS	
+magpurify	magpurify_clade-markers	Not completed	needs the large MAGpurify reference database
+magpurify	magpurify_clean-bin	PASS	
+magpurify	magpurify_conspecific	Failed	tool bug: align_contigs reuses one BLAST cache file for every reference genome, so only the first genome is used
+magpurify	magpurify_coverage	PASS	synthetic data: simulated reads mapped to the example bin
+magpurify	magpurify_gc-content	Failed	image problem: Biopython 1.85 in the image has no SeqUtils.GC, so the module crashes
+magpurify	magpurify_known-contam	PASS	synthetic data: tiny phiX and chrM BLAST database and a spiked query
+magpurify	magpurify_phylo-markers	Not completed	needs the large MAGpurify reference database
+magpurify	magpurify_tetra-freq	PASS	
+magus-msa	magus-msa_magus	PASS	
+make_prg	make_prg_from_msa	PASS	
+make_prg	make_prg_update	PASS	
+makehub	makehub_make_hub.py	PASS	
+maker	maker	PASS	
+malder	malder	PASS	synthetic data: simulated admixed population with 3 references; fitted decay 32 generations against 30 planted
+malva	malva_MALVA	PASS	
+malva	malva_kmc	PASS	
+malva	malva_malva-geno_call	PASS	
+malva	malva_malva-geno_index	PASS	
+mameshiba	mameshiba_shiba.py	Not completed	pipeline, skipped
+mamotif	mamotif_integrate	PASS	synthetic data: MAnorm result of real H3K4me3 peaks with a planted motif site table; the planted motif ranked first
+mamotif	mamotif_run	Not completed	needs MotifScan genome and motif data installed in advance (large downloads)
+manorm	manorm	PASS	
+manormfast	manormfast_MAnormFast	Failed	image problem: the MAnormFast script is Python 2 code and gives SyntaxError on the image's Python 3.6
+manta	manta_configManta.py	PASS	ran the Manta demo region; the workflow run from the configured folder gave the expected somatic SV calls
+manta	manta_convertInversion.py	PASS	
+manta	manta_denovo_scoring.py	PASS	synthetic data: small trio VCF with planted de novo records
+mantis	mantis_build	PASS	
+mantis	mantis_mst	PASS	
+mantis	mantis_query	PASS	
+mantis	mantis_stats	PASS	
+mantis	mantis_validate	PASS	
+mantis	mantis_validatemst	PASS	
+mantis-msi2	mantis-msi2	PASS	nf-core sarek tumor/normal BAMs on a small reference; read counts at the loci match a direct pysam count when the quality filters are off
+mantis-msi2	mantis-msi2_mantis-msi2-repeat-finder	PASS	
+mapad	mapad_index	PASS	
+mapad	mapad_map	PASS	mapped 98 of 100 SARS-CoV-2 test reads
+mapad	mapad_worker	Not completed	worker process needs a running dispatcher over the network; long-running server mode
+mapcaller	mapcaller_MapCaller	PASS	toy data from the tool repo: 221 of 229 planted variants found
+mapcaller	mapcaller_index	PASS	
+mapgl	mapgl_mapGL.py	PASS	output matches the expected results of the tool example for default, no_prune and full_labels runs
+mapping-iterative-assembler	mapping-iterative-assembler_ma	PASS	
+mapping-iterative-assembler	mapping-iterative-assembler_mia	PASS	
+mapsembler2	mapsembler2_extend	PASS	
+mapsembler2	mapsembler2_extremities	PASS	
+mapsembler2	mapsembler2_pipeline	PASS	
+mapseq	mapseq	PASS	
+mapula	mapula_count	PASS	
+mapula	mapula_merge	PASS	
+maq	maq_assemble	PASS	
+maq	maq_bfq2fastq	PASS	
+maq	maq_cns2fq	PASS	
+maq	maq_cns2ref	PASS	
+maq	maq_cns2snp	PASS	
+maq	maq_cns2view	PASS	
+maq	maq_cns2win	PASS	
+maq	maq_csmap2nt	PASS	synthetic data: real reads recoded to colour space (maq fasta2csfa reference), mapped with -c, then converted back; 3795 reads
+maq	maq_fakemut	PASS	synthetic mutations made by fakemut on the SARS-CoV-2 genome; output has the mutated FASTA and the mutation list
+maq	maq_fasta2bfa	PASS	
+maq	maq_fasta2csfa	PASS	
+maq	maq_fastq2bfq	PASS	
+maq	maq_glfgen	PASS	
+maq	maq_indelpe	PASS	
+maq	maq_indelsoa	PASS	
+maq	maq_map	PASS	
+maq	maq_mapass2maq	Not completed	needs a map file from the retired mapass2 program; none is available and none can be made
+maq	maq_mapcheck	PASS	
+maq	maq_mapmerge	PASS	
+maq	maq_mapstat	PASS	
+maq	maq_mapvalidate	PASS	
+maq	maq_mapview	PASS	
+maq	maq_pileup	PASS	
+maq	maq_rmdup	PASS	
+maq	maq_simucns	PASS	synthetic data: consensus from simulated reads checked against the true SNPs; error table is plausible
+maq	maq_simulate	PASS	synthetic data: reads simulated from the SARS-CoV-2 genome; true SNP list and read files written
+maq	maq_simustat	Failed	tool bug: maq simustat aborts with 'buffer overflow detected' on valid simulated alignments
+maq	maq_simutrain	PASS	trained on the real maq example reads; parameter file written
+maq	maq_snpreg	PASS	
+maq	maq_sol2sanger	PASS	
+maq	maq_submap	PASS	
+maq	maq_subpos	PASS	
+maracluster	maracluster_batch	PASS	
+maracluster	maracluster_cluster	PASS	
+maracluster	maracluster_consensus	PASS	
+maracluster	maracluster_index	PASS	
+maracluster	maracluster_overlap	Not completed	overlap needs at least two precursor m/z batches; the small test data gives one, and the tool exits 1 with an empty result
+maracluster	maracluster_pvalue	PASS	
+maracluster	maracluster_search	PASS	self-search of one real mzML file against itself; binary p-value file written
+marbel	marbel	Failed	image problem: the bundled data files (parquet, pangenome) are 133-byte git-lfs pointers, so marbel stops with 'The file must end with PAR1'
+marge	marge_init	PASS	writes a Snakefile and config.json scaffold; the pipeline itself was not run
+mark-nonconverted-reads	mark-nonconverted-reads_mark-nonconverted-reads.py	PASS	
+marker-magu	marker-magu_markermagu	Not completed	needs the large Marker-MAGu marker gene database (several GB), which is not in the image
+markitdown	markitdown	PASS	
+marti	marti	PASS	
+marvel	marvel	Failed	image problem: BioPerl (Bio::Root::Version) is missing, so the bundled Prokka script marvel_prokka cannot start
+mash	mash_bounds	PASS	
+mash	mash_dist	PASS	
+mash	mash_info	PASS	
+mash	mash_paste	PASS	
+mash	mash_screen	PASS	
+mash	mash_sketch	PASS	
+mash	mash_taxscreen	PASS	synthetic data: reference-to-taxon mapping file planted on real sarscov2 reads and taxonomy
+mash	mash_triangle	PASS	
+mashmap	mashmap	PASS	
+mashpit	mashpit_build	PASS	
+mashpit	mashpit_query	PASS	
+mashpit	mashpit_update	Failed	tool bug: for accession databases update_accession calls import_metadata without the connection argument (TypeError)
+mashtree	mashtree	PASS	
+maskrc-svg	maskrc-svg_maskrc-svg.py	PASS	
+mason	mason_mason_frag_sequencing	PASS	
+mason	mason_mason_genome	PASS	
+mason	mason_mason_materializer	PASS	
+mason	mason_mason_methylation	PASS	
+mason	mason_mason_simulator	PASS	
+mason	mason_mason_splicing	PASS	
+mason	mason_mason_variator	PASS	
+massdash	massdash_gui	Not completed	interactive web GUI (Streamlit server), no batch mode to test
+massiveqc	massiveqc_IsoDetect	Not completed	needs the feature tables written by the MassiveQC pipeline (SRA download, Hisat2, Picard), which was skipped
+massiveqc	massiveqc_MultiQC	Not completed	pipeline, skipped
+massiveqc	massiveqc_SingleQC	Not completed	pipeline, skipped
+masurca	masurca	Failed	image problem: BusyBox gzip has no -l option and the file command is missing, so the CABOG overlap store step fails and no assembly is made (the script generation and -g work)
+matam	matam_index_default_ssu_rrna_db.py	Not completed	needs the large default SILVA database download (host bioinfo.univ-lille.fr unreachable) and indexing
+matam	matam_matam_assembly.py	Failed	image problem: the image has sortmerna 4 without indexdb_rna, so matam_assembly.py stops at start with 'No valid binary found for indexdb_rna'
+matam	matam_matam_compare_samples.py	PASS	synthetic data: two samples cut from the tool's own test sample (odd record removed, second sample a subset)
+matchtigs	matchtigs	PASS	
+matlock	matlock_bam2	PASS	
+matlock	matlock_bamfilt	PASS	tool bug noted: matlock segfaults when -x is omitted, so the wrapper passes an empty exclude list by default; Hi-C reads aligned with bwa mem for the test
+matlock	matlock_cutsites	PASS	
+maude	maude	PASS	
+mauve	mauve_mauveAligner	Failed	image problem: mauveAligner aborts at start with undefined symbol standardizePathString in libMems-1.6.so.1
+mauve	mauve_progressiveMauve	Failed	image problem: progressiveMauve aborts at start with undefined symbol standardizePathString in libMems-1.6.so.1
+mavis	mavis_annotate	PASS	
+mavis	mavis_cluster	PASS	
+mavis	mavis_convert	PASS	
+mavis	mavis_overlay	PASS	
+mavis	mavis_pairing	PASS	
+mavis	mavis_setup	PASS	
+mavis	mavis_summary	PASS	
+mavis	mavis_validate	PASS	
+mawk	mawk	PASS	
+maxalign-rs	maxalign-rs	PASS	
+maxbin2	maxbin2	PASS	
+maxit	maxit	PASS	
+maxquant	maxquant	Failed	image problem: analysis runs stop with '.NET Core 3.1 needs to be installed' (only --create works); fixed baseCommand to maxquant
+mbg	mbg_MBG	PASS	
+mbgc	mbgc_a	PASS	
+mbgc	mbgc_c	PASS	
+mbgc	mbgc_d	PASS	extracting a 2-file archive segfaults with more than 1 thread (works with -t 1 and for 3+ files)
+mbgc	mbgc_i	PASS	
+mbgc	mbgc_r	PASS	repack of one remaining file segfaults in the tool; multi-file repack works
+mbuffer	mbuffer	PASS	
+mcl	mcl	PASS	
+mcroni	mcroni	PASS	
+mcscanx	mcscanx_MCScanX	PASS	
+mcscanx	mcscanx_MCScanX_h	PASS	
+md5sum	md5sum	PASS	
+mdasim	mdasim	PASS	options now use the --name=value form the tool needs
+mdmcleaner	mdmcleaner_acc2taxpath	Not completed	needs the MDMcleaner reference database (tens of GB, db_basedir); none available here
+mdmcleaner	mdmcleaner_check_dependencies	PASS	
+mdmcleaner	mdmcleaner_clean	Not completed	needs the MDMcleaner reference database (tens of GB, db_basedir); none available here
+mdmcleaner	mdmcleaner_completeness	PASS	
+mdmcleaner	mdmcleaner_get_markers	PASS	
+mdmcleaner	mdmcleaner_makedb	Not completed	downloads the reference database (over 100 GB), too big for this machine
+mdmcleaner	mdmcleaner_refdb_contams	Not completed	needs the MDMcleaner reference database (tens of GB, db_basedir); none available here
+mdmcleaner	mdmcleaner_set_configs	PASS	
+mdmcleaner	mdmcleaner_show_configs	PASS	
+mdtraj	mdtraj_mdconvert	PASS	
+mdust	mdust	PASS	
+mea	mea	PASS	
+medcon	medcon	PASS	
+medicc2	medicc2	PASS	
+medusa	medusa	Failed	image problem: MUMmer (nucmer, show-coords) is missing and the scripts need Python 2 (cPickle), so scaffolding stops with network construction failed.
+megadepth	megadepth	PASS	
+megagta	megagta_buildgraph	PASS	
+megagta	megagta_buildlib	PASS	
+megagta	megagta_denovo	PASS	
+megagta	megagta_filterbylen	PASS	
+megagta	megagta_findstart	PASS	
+megagta	megagta_readstat	PASS	
+megagta	megagta_search	PASS	
+megagta	megagta_translate	PASS	
+megahit	megahit	PASS	
+megalodon	megalodon	Not completed	needs the Guppy basecaller server (licensed, not in the image) and a basecalling model.
+megapath	megapath_runMegaPath-Amplicon.sh	Not completed	pipeline, skipped (also needs the large MegaPath databases, not in the image)
+megapath	megapath_runMegaPath.sh	Not completed	pipeline, skipped (also needs the large MegaPath databases, not in the image)
+megapath-nano	megapath-nano_megapath_nano.py	Not completed	pipeline, skipped; needs large reference databases (RefSeq/NT, AMR) not in the image
+megapath-nano	megapath-nano_megapath_nano_amr.py	Not completed	pipeline, skipped; needs large reference databases (RefSeq/NT, AMR) not in the image
+megapath-nano	megapath-nano_runMegaPath-Nano-Amplicon.sh	Not completed	pipeline, skipped; needs large reference databases (RefSeq/NT, AMR) not in the image
+mehari	mehari_annotate_seqvars	PASS	
+mehari	mehari_annotate_strucvars	PASS	
+mehari	mehari_db_check	Not completed	needs HGNC JSON, disease-gene, known-issue and ClinVar count tables that are not available as small test files.
+mehari	mehari_db_create	PASS	
+mehari	mehari_db_dump	PASS	
+mehari	mehari_db_merge	PASS	
+mehari	mehari_db_subset	PASS	
+mehari	mehari_verify_seqvars	Not completed	needs a full genome reference FASTA and VEP output for the matching database; no small real input available.
+melon	melon	Not completed	ran fine, but the only small Melon test database is too small to assign any species (real Bacteroides fragilis reads gave 17 marker reads but no species), so the answer cannot be confirmed.
+melting	melting	Failed	image problem: the thermodynamic parameter files (Data folder, NN_PATH) are missing from the image, so every run prints 'Cannot find where the thermodynamic parameters are located'.
+meme	meme	PASS	
+meme	meme_ame	Failed	image problem: ame writes its TSV files but exits 1 with 'Template does not contain data section' when making the HTML report.
+meme	meme_centrimo	Failed	image problem: centrimo exits 1 with 'Template does not contain data section' when making the HTML report and writes no centrimo.tsv.
+meme	meme_dreme	PASS	
+meme	meme_fasta-get-markov	PASS	
+meme	meme_fimo	PASS	
+meme	meme_glam2	Failed	image problem: glam2 finds the correct motif but exits 1 because glam2html and glam2psfm cannot execute (required file not found).
+meme	meme_mast	PASS	
+meme	meme_sea	Failed	image problem: sea writes its TSV files but exits 1 with 'Template does not contain data section' when making the HTML report; only --text works.
+meme	meme_streme	PASS	
+meme	meme_tomtom	PASS	
+memopair	memopair	PASS	synthetic data: planted 6mA pileup on real SARS-CoV-2 genome; output has all 59 GATC sites with the planted counts; fixed output to a Directory and dropped the unused .fai
+memote	memote_history	Not completed	needs a git repository with commit history in the working directory; none exists in the container run
+memote	memote_new	Not completed	interactive template questions and a git clone of the cookiecutter template from GitHub; Docker has no network here
+memote	memote_online	Not completed	needs a GitHub account, token and network; uploads a repository to GitHub
+memote	memote_report_diff	PASS	E. coli core and iAB_RBC_283 SBML models: HTML diff report written and names both models
+memote	memote_report_history	Not completed	needs a git repository with commit history in the working directory; none exists in the container run
+memote	memote_report_snapshot	PASS	E. coli core SBML model: HTML report written and holds the model name and biomass flux 0.8739
+memote	memote_run	PASS	E. coli core SBML model: result.json.gz holds 77 tests and the biomass flux 0.8739 matches the known value
+mencal	mencal	PASS	synthetic data: planted cycle dates; calendar marks the right days, saved config file is correct and re-reads; fixed the -c config options
+mendelscan	mendelscan_rhro	PASS	author example VCF and pedigree: 203 RareHet, 871 RuleOut markers and 16 windows with plausible calls; fixed baseCommand to mendelscan
+mendelscan	mendelscan_score	Not completed	runs to success on the author's example trio data, but only 98% of well-covered rows match the example output (the rest differ by a x0.8 segregation factor, probably a newer version), so the scores cannot be fully confirmed.
+mendelscan	mendelscan_sibd	Not completed	needs a BEAGLE FastIBD output and markers file; no real data available
+mendelscan	mendelscan_trio	Not completed	runs and reads the VCF, pedigree and VEP file, but recessive and de novo outputs stay empty even for planted trio variants (synthetic data), so the result cannot be confirmed
+meningotype	meningotype	PASS	Galaxy test genome: PorA 21-15,16, FetA F1-7, fHbp 27, NHBA 798 and NadA 0 match the Galaxy expected output; six allele FASTA files written
+mercat	mercat	Failed	tool bug: repeated k-mers are over-counted (AAA counted 10 times, true count 4; SARS-CoV-2 genome counts are squared); CWL fixed to stage the input writable and collect mercat_results
+mercat2	mercat2_mercat2.py	Failed	image problem: the image has busybox sed without the '~' step, so FASTQ input gives an empty FASTA and no counts; -fgs crashes on a read-only site-packages; FASTA and protein input work with correct counts
+merfin	merfin_completeness	PASS	SARS-CoV-2 genome with real amplicon reads: completeness and total k-mer counts reported; new CWL for -completeness
+merfin	merfin_dump	PASS	SARS-CoV-2 genome with real amplicon reads: 29809 per-k-mer rows (readK, asmK, k*) for the whole genome; rewrote the wrapper for -dump
+merfin	merfin_filter	PASS	SARS-CoV-2 genome, real amplicon reads and nf-core VCF: 3 of 9 variants kept, debug log written; rewrote the wrapper for -filter
+merfin	merfin_hist	PASS	SARS-CoV-2 genome with real amplicon reads (meryl k=21 database): k* histogram and QV 35.4 reported; rewrote the generic wrapper for -hist (peak is a number, readmers a meryl directory)
+merfin	merfin_polish	PASS	SARS-CoV-2 genome, real amplicon reads and nf-core VCF: 3 of 9 variants kept in a valid VCF; rewrote the wrapper for -polish
+merfishtools	merfishtools_diffexp	Failed	tool bug: cannot read PMF files (header is cell/feat/expr but the reader needs feature/expression); fails on the repo test PMFs
+merfishtools	merfishtools_est-error-rates	PASS	repo test codebook and real 140-gene readouts (3-column TSV, first 20000 lines): 16 per-position error rates that match an independent calculation of the documented formula; raw data fixed to a File
+merfishtools	merfishtools_exp	Failed	tool bug: output is always empty (header only) on the repo test data because load_counts never stores the counts
+merfishtools	merfishtools_gen-mhd2	PASS	140 gene names from the repo test codebook: 140 unique 16-bit codewords, all 4 one-bits, minimum Hamming distance 2; added the missing names input (standard input)
+merfishtools	merfishtools_gen-mhd4	PASS	140 gene names from the repo test codebook: 140 unique 16-bit codewords, all 4 one-bits, minimum Hamming distance 4, --not-expressed marks 10 features; added the missing names input (standard input)
+merfishtools	merfishtools_multidiffexp	Failed	tool bug: cannot read PMF files (header is cell/feat/expr but the reader needs feature/expression); fails on the repo test PMFs
+merge-gbk-records	merge-gbk-records	PASS	NCBI phiX174 and lambda GenBank files: merged record is 54888 bp (5386 + 1 kbp spacer + 48502) with all 84 CDS features; note --spacer stop crashes with a float-times-sequence error in the tool
+mergenotcombined	mergenotcombined_mergeNotCombined	PASS	nf-core SARS-CoV-2 paired Illumina reads: all 100 pairs merged as forward + NNN + reverse complement with matching qualities
+mergevcf	mergevcf	PASS	nf-core human chr21 HaplotypeCaller and Mutect2 VCFs: 1356 merged records (union), the 47 shared calls carry both caller labels and PASS, the rest are LOWSUPPORT; (tool skips MT contigs, so the SARS-CoV-2 VCFs gave empty output)
+merqury	merqury_merqury.sh	PASS	SARS-CoV-2 genome with a meryl k=21 database of real amplicon reads: QV 35.38 (equals merfin QV), completeness 97.5%, spectra plots and histograms written; fixed meryl inputs to Directory and outputs to files plus directories

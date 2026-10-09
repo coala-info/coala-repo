@@ -1,5 +1,11 @@
 # manormfast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| manormfast_MAnormFast | Failed | image problem: the MAnormFast script is Python 2 code and gives SyntaxError on the image's Python 3.6 |
+
 ## manormfast_MAnormFast
 
 ### Tool Description

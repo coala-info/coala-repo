@@ -1,5 +1,13 @@
 # megapath-nano CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| megapath-nano_megapath_nano.py | Not completed | pipeline, skipped; needs large reference databases (RefSeq/NT, AMR) not in the image |
+| megapath-nano_megapath_nano_amr.py | Not completed | pipeline, skipped; needs large reference databases (RefSeq/NT, AMR) not in the image |
+| megapath-nano_runMegaPath-Nano-Amplicon.sh | Not completed | pipeline, skipped; needs large reference databases (RefSeq/NT, AMR) not in the image |
+
 ## megapath-nano_megapath_nano.py
 
 ### Tool Description

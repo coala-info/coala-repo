@@ -1,5 +1,18 @@
 # magpurify CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| magpurify_clade-markers | Not completed | needs the large MAGpurify reference database |
+| magpurify_clean-bin | PASS |  |
+| magpurify_conspecific | Failed | tool bug: align_contigs reuses one BLAST cache file for every reference genome, so only the first genome is used |
+| magpurify_coverage | PASS | synthetic data: simulated reads mapped to the example bin |
+| magpurify_gc-content | Failed | image problem: Biopython 1.85 in the image has no SeqUtils.GC, so the module crashes |
+| magpurify_known-contam | PASS | synthetic data: tiny phiX and chrM BLAST database and a spiked query |
+| magpurify_phylo-markers | Not completed | needs the large MAGpurify reference database |
+| magpurify_tetra-freq | PASS |  |
+
 ## magpurify_phylo-markers
 
 ### Tool Description

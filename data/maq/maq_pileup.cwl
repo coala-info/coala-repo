@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - pileup
 label: maq_pileup
-doc: "Generate pileup from Maq alignments\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Generate pileup from Maq alignments\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: chr_bfa
     type: File

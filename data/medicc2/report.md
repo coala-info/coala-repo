@@ -1,5 +1,11 @@
 # medicc2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| medicc2 | PASS |  |
+
 ## medicc2
 
 ### Tool Description

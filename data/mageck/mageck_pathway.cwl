@@ -45,6 +45,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --output-prefix
+    default: sample1
   - id: pathway_alpha
     type:
       - 'null'

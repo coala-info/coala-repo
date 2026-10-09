@@ -5,10 +5,15 @@ label: mcl
 doc: "Performs Markov Cluster Algorithm (MCL) for graph clustering.\n\nTool homepage:
   https://micans.org/mcl/"
 inputs:
+  - id: input_graph
+    type: File
+    doc: Input graph (abc, sif, etc, or native matrix format)
+    inputBinding:
+      position: 1
   - id: abc_neg_log10_transform
     type:
       - 'null'
-      - string
+      - boolean
     doc: log10-transform label value, negate sign
     inputBinding:
       position: 101
@@ -16,7 +21,7 @@ inputs:
   - id: abc_neg_log_transform
     type:
       - 'null'
-      - string
+      - boolean
     doc: log-transform label value, negate sign
     inputBinding:
       position: 101
@@ -48,7 +53,7 @@ inputs:
   - id: assume_expanded_input_inflation
     type:
       - 'null'
-      - string
+      - float
     doc: assume expanded input, inflate with parameter <num>
     inputBinding:
       position: 101
@@ -80,7 +85,7 @@ inputs:
   - id: dump_iterands_to_screen
     type:
       - 'null'
-      - string
+      - boolean
     doc: (small graphs only [#<20]) dump iterands to *screen*
     inputBinding:
       position: 101
@@ -109,18 +114,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: -dump-stem
-  - id: estimated_ram_nodes
-    type:
-      - 'null'
-      - int
-    doc: show estimated RAM usage for graphs with <int> nodes
-    inputBinding:
-      position: 101
-      prefix: -how-much-ram
   - id: estimated_sparse_matrix_vector_overhead
     type:
       - 'null'
-      - string
+      - float
     doc: estimated sparse matrix-vector overhead per summand (default 10)
     inputBinding:
       position: 101
@@ -136,7 +133,7 @@ inputs:
   - id: expect_abc_format
     type:
       - 'null'
-      - string
+      - boolean
     doc: expect abc-format (label input), write label output
     inputBinding:
       position: 101
@@ -144,7 +141,7 @@ inputs:
   - id: expect_etc_format
     type:
       - 'null'
-      - string
+      - boolean
     doc: expect etc-format (label input), write label output
     inputBinding:
       position: 101
@@ -152,7 +149,7 @@ inputs:
   - id: expect_sif_format
     type:
       - 'null'
-      - string
+      - boolean
     doc: expect sif-format (label input), write label output
     inputBinding:
       position: 101
@@ -160,7 +157,7 @@ inputs:
   - id: expect_values
     type:
       - 'null'
-      - string
+      - boolean
     doc: accept extended SIF or ETC format (label:weight fields)
     inputBinding:
       position: 101
@@ -184,7 +181,7 @@ inputs:
   - id: increase_loop_weights
     type:
       - 'null'
-      - int
+      - float
     doc: increase loop-weights <num>-fold
     inputBinding:
       position: 101
@@ -248,7 +245,7 @@ inputs:
   - id: preprocess_inflation_parameter
     type:
       - 'null'
-      - string
+      - float
     doc: preprocess by applying inflation with parameter <num>
     inputBinding:
       position: 101
@@ -272,7 +269,7 @@ inputs:
   - id: recovery_mass_percentage
     type:
       - 'null'
-      - string
+      - float
     doc: try recovery if mass is less than <pct>
     inputBinding:
       position: 101
@@ -280,7 +277,7 @@ inputs:
   - id: rigid_pruning_threshold
     type:
       - 'null'
-      - string
+      - float
     doc: the rigid pruning threshold
     inputBinding:
       position: 101
@@ -293,38 +290,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -S
-  - id: show_constructed_output_filename
+  - id: sum_loops
     type:
       - 'null'
-      - string
-    doc: show output file name mcl would construct
+      - boolean
+    doc: Set loops to the sum of the other arc weights (in the mcl manual, not in -h)
     inputBinding:
       position: 101
-      prefix: -az
-  - id: show_constructed_suffix
-    type:
-      - 'null'
-      - string
-    doc: show the suffix mcl constructs from parameters
-    inputBinding:
-      position: 101
-      prefix: -ax
-  - id: show_default_settings
-    type:
-      - 'null'
-      - string
-    doc: show some of the default settings
-    inputBinding:
-      position: 101
-      prefix: -z
-  - id: show_jury_synopsis
-    type:
-      - 'null'
-      - string
-    doc: show the meaning of the jury pruning synopsis
-    inputBinding:
-      position: 101
-      prefix: --jury-charter
+      prefix: --sum-loops
   - id: show_log
     type:
       - 'null'
@@ -333,14 +306,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -show-log
-  - id: show_schemes
-    type:
-      - 'null'
-      - string
-    doc: show the preset -scheme options
-    inputBinding:
-      position: 101
-      prefix: --show-schemes
   - id: silent_mode
     type:
       - 'null'
@@ -376,7 +341,7 @@ inputs:
   - id: use_automatic_naming_and_input_dir
     type:
       - 'null'
-      - string
+      - boolean
     doc: use automatic naming and use input directory for output
     inputBinding:
       position: 101
@@ -392,7 +357,7 @@ inputs:
   - id: use_three_digits_encode_inflation
     type:
       - 'null'
-      - string
+      - boolean
     doc: use three digits to encode inflation
     inputBinding:
       position: 101
@@ -416,7 +381,7 @@ inputs:
   - id: warn_pruning_mass_reduction_percentage
     type:
       - 'null'
-      - string
+      - float
     doc: warn if pruning reduces mass to <pct> weight
     inputBinding:
       position: 101
@@ -424,7 +389,7 @@ inputs:
   - id: write_binary
     type:
       - 'null'
-      - string
+      - boolean
     doc: write binary output
     inputBinding:
       position: 101
@@ -432,7 +397,7 @@ inputs:
   - id: write_input_matrix
     type:
       - 'null'
-      - File
+      - string
     doc: write input matrix to file
     inputBinding:
       position: 101
@@ -440,7 +405,7 @@ inputs:
   - id: write_limit
     type:
       - 'null'
-      - string
+      - boolean
     doc: output the limit matrix
     inputBinding:
       position: 101
@@ -448,7 +413,7 @@ inputs:
   - id: write_transformed_matrix
     type:
       - 'null'
-      - File
+      - string
     doc: write transformed matrix to file
     inputBinding:
       position: 101
@@ -465,7 +430,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: '!  write output to file <fname>'
+    doc: write output to file <fname>
     inputBinding:
       position: 103
       prefix: -o
@@ -478,6 +443,20 @@ inputs:
       position: 104
       prefix: -write-expanded
 outputs:
+  - id: written_input_matrix
+    type:
+      - 'null'
+      - File
+    doc: input matrix written to file
+    outputBinding:
+      glob: $(inputs.write_input_matrix)
+  - id: written_transformed_matrix
+    type:
+      - 'null'
+      - File
+    doc: transformed matrix written to file
+    outputBinding:
+      glob: $(inputs.write_transformed_matrix)
   - id: output_file
     type:
       - 'null'

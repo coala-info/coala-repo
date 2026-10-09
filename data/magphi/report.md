@@ -1,5 +1,11 @@
 # magphi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| magphi_Magphi | PASS |  |
+
 ## magphi_Magphi
 
 ### Tool Description

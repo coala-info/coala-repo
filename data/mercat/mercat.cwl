@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: mercat
 label: mercat
 doc: "MerCat: a k-mer based tool for microbial community analysis\n\nTool homepage:
-  https://www.gnu.org/software/coreutils/"
+  https://github.com/pnnl/mercat"
 inputs:
   - id: cores
     type:
@@ -87,6 +87,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type:
+      - 'null'
+      - Directory
+    doc: The mercat_results directory with the k-mer summary CSV files, 
+      diversity metrics and plots
+    outputBinding:
+      glob: mercat_results
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
+      - entry: $(inputs.input_folder)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mercat:0.2--py_1

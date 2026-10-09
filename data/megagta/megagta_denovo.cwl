@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: denovo
+baseCommand:
+  - megagta
+  - denovo
 label: megagta_denovo
 doc: "no succinct de Bruijn graph name!\n\nTool homepage: https://github.com/HKU-BAL/MegaGTA"
 inputs:
@@ -52,10 +54,16 @@ inputs:
       prefix: --output_prefix
   - id: sdbg_name
     type: string
-    doc: succinct de Bruijn graph name
+    doc: succinct de Bruijn graph name (prefix of the graph files)
     inputBinding:
       position: 101
       prefix: --sdbg_name
+  - id: sdbg_files
+    type:
+      type: array
+      items: File
+    doc: succinct de Bruijn graph files (<name>.sdbg.*, <name>.sdbg_info)
+      written by megagta buildgraph, staged in the working directory
 outputs:
   - id: stdout
     type: stdout
@@ -64,9 +72,14 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Contig files (<prefix>.contigs.fa and <prefix>.contigs.fa.info)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob:
+        - $(inputs.output_prefix).contigs.fa
+        - $(inputs.output_prefix).contigs.fa.info
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.sdbg_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/megagta:0.1_alpha--0

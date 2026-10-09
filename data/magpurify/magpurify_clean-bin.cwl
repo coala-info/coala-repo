@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: out
-    type: string
+    type: Directory
     doc: Output directory to store results and intermediate files
     inputBinding:
       position: 2

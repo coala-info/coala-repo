@@ -257,39 +257,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --w
-  - id: output_dir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 102
-      prefix: --output-dir
-  - id: output_dir_overwrite_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_dir_overwrite_path`
-    inputBinding:
-      position: 103
-      prefix: --output-dir-overwrite
-outputs:
   - id: output_dir
+    type:
+      - 'null'
+      - string
+    default: streme_out
+    doc: output directory (replaced if it exists)
+    inputBinding:
+      position: 150
+      prefix: --oc
+outputs:
+  - id: output_dir_out
     type:
       - 'null'
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir_overwrite
-    type:
-      - 'null'
-      - Directory
-    doc: allow overwriting output directory
-    outputBinding:
-      glob: $(inputs.output_dir_overwrite_path)
+      glob: $(inputs.output_dir)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0
+stdout: meme_streme.out

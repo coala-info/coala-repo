@@ -1,5 +1,11 @@
 # mapseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mapseq | PASS |  |
+
 ## mapseq
 
 ### Tool Description

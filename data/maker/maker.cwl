@@ -6,19 +6,36 @@ doc: "MAKER is a program that produces gene annotations in GFF3 format using evi
   such as EST alignments and protein homology. MAKER can be used to produce gene annotations
   for new genomes as well as update annotations from existing genome databases.\n\n\
   Tool homepage: http://www.yandell-lab.org/software/maker.html"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.evidence_files || [])
 inputs:
+  - id: evidence_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Evidence and model files (ESTs, proteins, GFF3, SNAP HMM) that the control
+      files name by bare file name. They are staged in the working directory.
   - id: maker_opts
-    type: string
+    type:
+      - 'null'
+      - File
     doc: Control file for MAKER options
     inputBinding:
       position: 1
   - id: maker_bopts
-    type: string
+    type:
+      - 'null'
+      - File
     doc: Control file for MAKER BLAST options
     inputBinding:
       position: 2
   - id: maker_exe
-    type: string
+    type:
+      - 'null'
+      - File
     doc: Control file for MAKER executable options
     inputBinding:
       position: 3
@@ -191,6 +208,20 @@ inputs:
       position: 104
       prefix: -tries
 outputs:
+  - id: maker_output
+    type:
+      - 'null'
+      - Directory
+    doc: MAKER output directory (<base>.maker.output) with the datastore and GFF3 results
+    outputBinding:
+      glob: '*.maker.output'
+  - id: control_files
+    type:
+      type: array
+      items: File
+    doc: Control files written by -CTL, -OPTS, -BOPTS or -EXE
+    outputBinding:
+      glob: '*.ctl'
   - id: stdout
     type: stdout
     doc: Standard output

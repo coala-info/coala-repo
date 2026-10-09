@@ -1,5 +1,11 @@
 # marti CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| marti | PASS |  |
+
 ## marti
 
 ### Tool Description

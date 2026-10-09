@@ -71,7 +71,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ignore-git
-  - id: location
+  - id: results_location
     type:
       - 'null'
       - string

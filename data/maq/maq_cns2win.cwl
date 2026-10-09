@@ -4,34 +4,34 @@ baseCommand:
   - maq
   - cns2win
 label: maq_cns2win
-doc: "Convert consensus sequences to windowed format.\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Convert consensus sequences to windowed format.\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: input_cns
     type: File
     doc: Input consensus sequence file
     inputBinding:
       position: 1
-  - id: consensus_type
+  - id: chromosome
     type:
       - 'null'
       - string
-    doc: Consensus type
+    doc: Name of the sequence (chromosome) to report; default is all
     inputBinding:
       position: 102
       prefix: -c
-  - id: min_base_quality
+  - id: begin_position
     type:
       - 'null'
       - int
-    doc: Minimum base quality
+    doc: Begin position of the region
     inputBinding:
       position: 102
       prefix: -b
-  - id: min_error_rate
+  - id: end_position
     type:
       - 'null'
       - int
-    doc: Minimum error rate
+    doc: End position of the region
     inputBinding:
       position: 102
       prefix: -e
@@ -39,7 +39,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum mapping quality
+    doc: Minimum quality
     inputBinding:
       position: 102
       prefix: -q

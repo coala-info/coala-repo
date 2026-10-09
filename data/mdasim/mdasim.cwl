@@ -11,7 +11,8 @@ inputs:
     doc: normalized number of primers attached in each step
     inputBinding:
       position: 101
-      prefix: --alpha
+      prefix: --alpha=
+      separate: false
   - id: attach_num
     type:
       - 'null'
@@ -21,7 +22,8 @@ inputs:
       attachNum / (input reference length * primerNo))
     inputBinding:
       position: 101
-      prefix: --attachNum
+      prefix: --attachNum=
+      separate: false
   - id: coverage
     type:
       - 'null'
@@ -29,7 +31,8 @@ inputs:
     doc: expected average coverage
     inputBinding:
       position: 101
-      prefix: --coverage
+      prefix: --coverage=
+      separate: false
   - id: frg_length
     type:
       - 'null'
@@ -37,22 +40,25 @@ inputs:
     doc: average number of synthesized bases per phi29
     inputBinding:
       position: 101
-      prefix: --frgLngth
+      prefix: --frgLngth=
+      separate: false
   - id: input_fasta
     type: File
     doc: file name of reference DNA sequence
     inputBinding:
       position: 101
-      prefix: --input
+      prefix: --input=
+      separate: false
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: file name for a log file of all single nucleotide errors that happen 
       during amplification
     inputBinding:
       position: 101
-      prefix: --log
+      prefix: --log=
+      separate: false
   - id: mutation_rate
     type:
       - 'null'
@@ -60,7 +66,8 @@ inputs:
     doc: chance of a nucleotide substitution
     inputBinding:
       position: 101
-      prefix: --mutationrate
+      prefix: --mutationrate=
+      separate: false
   - id: output_fragments
     type:
       - 'null'
@@ -78,13 +85,15 @@ inputs:
     doc: average number of initial available primers
     inputBinding:
       position: 101
-      prefix: --primerNo
+      prefix: --primerNo=
+      separate: false
   - id: primers_fasta
     type: File
     doc: file name of input primers in fasta format
     inputBinding:
       position: 101
-      prefix: --primers
+      prefix: --primers=
+      separate: false
   - id: read_length
     type:
       - 'null'
@@ -92,7 +101,8 @@ inputs:
     doc: minimum length of output amplicons
     inputBinding:
       position: 101
-      prefix: --readLength
+      prefix: --readLength=
+      separate: false
   - id: single_strand
     type:
       - 'null'
@@ -108,7 +118,8 @@ inputs:
     doc: number of synthesized bases per phi29 in each step
     inputBinding:
       position: 101
-      prefix: --stepSize
+      prefix: --stepSize=
+      separate: false
   - id: verbose
     type:
       - 'null'
@@ -119,12 +130,19 @@ inputs:
       prefix: --verbose
   - id: output_prefix_path
     type: string
-    doc: '= output files prefix , `Amplicons.fasta` will be appended to the prefix
-      (default: out)'
+    doc: output files prefix, `Amplicons.fasta` will be appended to the prefix (default is out)
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: --output=
+      separate: false
 outputs:
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: log of all single nucleotide errors that happen during amplification
+    outputBinding:
+      glob: $(inputs.log_file)
   - id: output_prefix
     type:
       type: array

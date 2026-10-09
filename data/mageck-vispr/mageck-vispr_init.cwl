@@ -8,7 +8,7 @@ doc: "MAGeCK-VISPR is a comprehensive quality control, analysis and visualizatio
   pipeline for CRISPR/Cas9 screens.\n\nTool homepage: https://bitbucket.org/liulab/mageck-vispr"
 inputs:
   - id: directory
-    type: Directory
+    type: string
     doc: Path to the directory where the workflow shall be initialized.
     inputBinding:
       position: 1
@@ -35,6 +35,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: workflow_dir
+    type: Directory
+    doc: The initialized workflow directory (config.yaml and related files)
+    outputBinding:
+      glob: $(inputs.directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mageck-vispr:0.5.6--py_0

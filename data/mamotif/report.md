@@ -1,5 +1,12 @@
 # mamotif CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mamotif_integrate | PASS | synthetic data: MAnorm result of real H3K4me3 peaks with a planted motif site table; the planted motif ranked first |
+| mamotif_run | Not completed | needs MotifScan genome and motif data installed in advance (large downloads) |
+
 ## mamotif_run
 
 ### Tool Description

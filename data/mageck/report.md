@@ -1,5 +1,17 @@
 # mageck CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mageck_RRA | PASS |  |
+| mageck_count | PASS |  |
+| mageck_mageckGSEA | PASS |  |
+| mageck_mle | PASS |  |
+| mageck_pathway | PASS |  |
+| mageck_plot | Failed | image problem: Rscript is not installed in the image, so mageck plot makes no PDF plots |
+| mageck_test | PASS |  |
+
 ## mageck_count
 
 ### Tool Description
@@ -548,6 +560,99 @@ Optional arguments for the Bayes estimation of gene essentiality (experimental):
                         sgRNA will be viewed independently.
 ```
 
+
+## mageck_RRA
+
+### Tool Description
+Robust Rank Aggregation of sgRNA values by gene.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mageck:0.5.9.5--py310h184ae93_8
+- **Homepage**: http://mageck.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/mageck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+RRA - Robust Rank Aggreation v 0.5.9.
+usage:
+-i <input data file>. Format: <item id> <group id> <list id> <value> [<probability>] [<chosen>]
+-o <output file>. Format: <group id> <number of items in the group> <lo-value> <false discovery rate>
+-p <maximum percentile>. RRA only consider the items with percentile smaller than this parameter. Default=0.1
+-P <minimum percentile>. RRA only consider the items with percentile greater than this parameter. Default=-1.0
+--control <control_sgrna list>. A list of control sgRNA names.
+--permutation <int>. The number of rounds of permutation. Increase this value if the number of genes is small. Default 100.
+--no-permutation-by-group. By default, gene permutation is performed separately, by their number of sgRNAs. Turning this option will perform permutation on all genes together. This makes the program faster, but the p value estimation is accurate only if the number of sgRNAs per gene is approximately the same.
+--skip-gene <gene_name>. Genes to skip from doing permutation. Specify it multiple times if you need to skip more than 1 genes.
+--min-percentage-goodsgrna <min percentage>. Filter genes that have too few percentage of 'good sgrnas', or sgrnas that fall below the -p threshold. Must be a number between 0-1. Default 0 (do not filter genes).
+--min-number-goodsgrna <min number>. Filter genes that have too few number of 'good sgrnas', or sgrnas that fall below the -p threshold. Must be an integer. Default 0 (do not filter genes). 
+--max-sgrnapergene-permutation <max number>. Only permute genes by group if the number of sgRNAs per gene is smaller than this number. This will save a lot of time if some regions are targeted by a large number of sgRNAs (usually hundreds). Must be an integer. Default 100. 
+example:
+RRA -i input.txt -o output.txt -p 0.1
+```
+
+## mageck_mageckGSEA
+
+### Tool Description
+A fast implementation of GSEA enrichment test.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mageck:0.5.9.5--py310h184ae93_8
+- **Homepage**: http://mageck.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/mageck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+USAGE: 
+
+   mageckGSEA  [-e] [-s] [-c <score_column>] [-p <perm_time>] [-n
+               <pathway_name>] [-o <output_file>] -r <rank_file> -g
+               <gmt_file> [--] [--version] [-h]
+
+
+Where: 
+
+   -e,  --reverse_value
+     Reverse the order of the gene.
+
+   -s,  --sort_byp
+     Sort the pathways by p value.
+
+   -c <score_column>,  --score_column <score_column>
+     The column for gene scores. If you just want to use the ranking of the
+     gene (located at the 1st column), use 0. The column number starts from
+     0. Default: 0.
+
+   -p <perm_time>,  --perm_time <perm_time>
+     Permutations, default 1000.
+
+   -n <pathway_name>,  --pathway_name <pathway_name>
+     Name of the pathway to be tested. If not found, will test all
+     pathways.
+
+   -o <output_file>,  --output_file <output_file>
+     The name of the output file. Use - to print to standard output.
+
+   -r <rank_file>,  --rank_file <rank_file>
+     (required)  Rank file. The first column of the rank file must be the
+     gene name.
+
+   -g <gmt_file>,  --gmt_file <gmt_file>
+     (required)  The pathway annotation in GMT format.
+
+   --,  --ignore_rest
+     Ignores the rest of the labeled arguments following this flag.
+
+   --version
+     Displays version information and exits.
+
+   -h,  --help
+     Displays usage information and exits.
+
+
+   mageckGSEA: A fast implementation of GSEA enrichment test.
+```
 
 ## Metadata
 - **Skill**: generated

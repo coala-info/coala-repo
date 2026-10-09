@@ -1,5 +1,12 @@
 # mauve CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mauve_mauveAligner | Failed | image problem: mauveAligner aborts at start with undefined symbol standardizePathString in libMems-1.6.so.1 |
+| mauve_progressiveMauve | Failed | image problem: progressiveMauve aborts at start with undefined symbol standardizePathString in libMems-1.6.so.1 |
+
 ## mauve_progressiveMauve
 
 ### Tool Description

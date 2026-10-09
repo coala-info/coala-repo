@@ -1,5 +1,11 @@
 # masurca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| masurca | Failed | image problem: BusyBox gzip has no -l option and the file command is missing, so the CABOG overlap store step fails and no assembly is made (the script generation and -g work) |
+
 ## masurca
 
 ### Tool Description

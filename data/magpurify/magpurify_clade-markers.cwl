@@ -20,7 +20,7 @@ inputs:
   - id: db
     type:
       - 'null'
-      - string
+      - Directory
     doc: Path to reference database. By default, the MAGPURIFY environmental 
       variable is used
     inputBinding:
@@ -72,7 +72,7 @@ inputs:
   - id: min_genes
     type:
       - 'null'
-      - string
+      - int
     doc: Min number of genes that agree with consensus taxonomy 
       (default=rank-specific-cutoffs)
     inputBinding:

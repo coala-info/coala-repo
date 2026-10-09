@@ -1,5 +1,12 @@
 # mcscanx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mcscanx_MCScanX | PASS |  |
+| mcscanx_MCScanX_h | PASS |  |
+
 ## mcscanx_MCScanX
 
 ### Tool Description

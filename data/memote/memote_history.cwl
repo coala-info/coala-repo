@@ -46,7 +46,7 @@ inputs:
       precedence over '--skip'.
     inputBinding:
       position: 104
-  - id: location
+  - id: results_location
     type:
       - 'null'
       - string

@@ -29,6 +29,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -abund3
+  - id: abund4
+    type:
+      - 'null'
+      - File
+    doc: Fourth abundance file
+    inputBinding:
+      position: 101
+      prefix: -abund4
   - id: abund_list
     type:
       - 'null'
@@ -51,6 +59,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -markerset
+  - id: max_iteration
+    type:
+      - 'null'
+      - int
+    doc: Maximum Expectation-Maximization algorithm iteration number (default 50)
+    inputBinding:
+      position: 101
+      prefix: -max_iteration
   - id: min_contig_length
     type:
       - 'null'
@@ -91,6 +107,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -reads2
+  - id: reads3
+    type:
+      - 'null'
+      - File
+    doc: Third reads file
+    inputBinding:
+      position: 101
+      prefix: -reads3
+  - id: reads4
+    type:
+      - 'null'
+      - File
+    doc: Fourth reads file
+    inputBinding:
+      position: 101
+      prefix: -reads4
   - id: reads_list
     type:
       - 'null'
@@ -99,6 +131,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -reads_list
+  - id: preserve_intermediate
+    type:
+      - 'null'
+      - boolean
+    doc: Preserve intermediate files (debug)
+    inputBinding:
+      position: 101
+      prefix: -preserve_intermediate
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose output (debug)
+    inputBinding:
+      position: 101
+      prefix: -verbose
   - id: thread
     type:
       - 'null'
@@ -109,16 +157,18 @@ inputs:
       prefix: -thread
   - id: out_path
     type: string
-    doc: Output or path parameter `out_path`
+    doc: Output file prefix
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: -out
 outputs:
   - id: out
-    type: File
-    doc: Output file prefix
+    type:
+      type: array
+      items: File
+    doc: Output files (bins, summary, log, marker, noclass, tooshort, ...)
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

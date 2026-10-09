@@ -1,5 +1,11 @@
 # mcl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mcl | PASS |  |
+
 ## mcl
 
 ### Tool Description

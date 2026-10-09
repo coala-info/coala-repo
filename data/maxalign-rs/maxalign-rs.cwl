@@ -12,6 +12,13 @@ inputs:
     doc: Input FASTA file
     inputBinding:
       position: 1
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output FASTA file
+    inputBinding:
+      position: 2
   - id: excluded_seqs_threshold
     type:
       - 'null'
@@ -67,24 +74,32 @@ inputs:
   - id: report
     type:
       - 'null'
-      - File
+      - string
     doc: Report file path
     inputBinding:
       position: 102
       prefix: --report
-  - id: verbosity
+  - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
-    doc: Verbosity level (-v for normal logging, -vv for detailed logging)
+      - boolean
+    doc: Normal logging
     inputBinding:
       position: 102
-      prefix: --verbosity
+      prefix: -v
+  - id: very_verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Detailed logging
+    inputBinding:
+      position: 102
+      prefix: -vv
   - id: excluded_sequences_path
     type:
       - 'null'
       - string
+    doc: Write a list of excluded sequences to file
     inputBinding:
       position: 103
       prefix: --excluded-sequences
@@ -92,6 +107,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Write a list of retained sequences to file
     inputBinding:
       position: 104
       prefix: --retained-sequences
@@ -102,7 +118,14 @@ outputs:
       - File
     doc: Output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_path)
+  - id: report_file
+    type:
+      - 'null'
+      - File
+    doc: Report file
+    outputBinding:
+      glob: $(inputs.report)
   - id: retained_sequences
     type:
       - 'null'

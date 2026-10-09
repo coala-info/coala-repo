@@ -1,5 +1,13 @@
 # magcluster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| magcluster_clinker | PASS |  |
+| magcluster_mgc_screen | PASS |  |
+| magcluster_prokka | PASS |  |
+
 ## magcluster_prokka
 
 ### Tool Description

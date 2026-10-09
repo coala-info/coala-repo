@@ -30,6 +30,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -C
+      separate: false
   - id: consensus_calling_code
     type:
       - 'null'
@@ -113,6 +114,7 @@ inputs:
       - 'null'
       - string
     doc: root file name for maln output file(s) (assembly.maln.iter)
+    default: assembly.maln.iter
     inputBinding:
       position: 101
       prefix: -m
@@ -134,8 +136,6 @@ inputs:
       prefix: -F
   - id: reference_sequence
     type: File
-    secondaryFiles:
-      - .fai
     doc: reference sequence
     inputBinding:
       position: 101
@@ -191,6 +191,14 @@ inputs:
       position: 101
       prefix: -M
 outputs:
+  - id: maln_output_files
+    type:
+      type: array
+      items: File
+    doc: maln assembly files, one per iteration (root name plus iteration number)
+    outputBinding:
+      glob:
+        - $(inputs.maln_output_root_file).*
   - id: stdout
     type: stdout
     doc: Standard output

@@ -9,18 +9,27 @@ doc: "Create the assembly script from a MaSuRCA configuration file. A sample con
   reads (Nanopore/PacBio) file use -i switch, setting the number of threads with -t:\n\
   \nTool homepage: http://masurca.blogspot.co.uk/"
 inputs:
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: MaSuRCA configuration file (the assembly script assemble.sh is created
+      from it). Paths inside it must be absolute.
+    inputBinding:
+      position: 1
   - id: generate
     type:
       - 'null'
-      - boolean
-    doc: Generate example configuration file
+      - string
+    doc: Generate example configuration file (name of the file to write)
     inputBinding:
       position: 101
       prefix: --generate
   - id: illumina
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: Run assembly without creating configuration file, argument can be 
       illumina_paired_end_forward_reads or 
       illumina_paired_end_forward_reads,illumina_paired_end_reverse_reads. 
@@ -30,6 +39,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --illumina
+      itemSeparator: ','
   - id: ld_library_path
     type:
       - 'null'
@@ -57,7 +67,7 @@ inputs:
   - id: reads
     type:
       - 'null'
-      - string
+      - File
     doc: ONLY to use with -i option, single long reads file for hybrid assembly,
       can be Nanopore or PacBio, fasta or fastq, can be gzipped
     inputBinding:
@@ -80,9 +90,25 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
+  - id: example_config
+    type:
+      - 'null'
+      - File
+    doc: Example configuration file written by --generate
+    outputBinding:
+      glob: $(inputs.generate)
+  - id: assembly_script
+    type:
+      - 'null'
+      - File
+    doc: Assembly script (assemble.sh, or the name given with --output)
+    outputBinding:
+      glob: "$(inputs.output ? inputs.output : 'assemble.sh')"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/masurca:4.1.4--h6b3f7d6_0

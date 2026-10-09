@@ -8,11 +8,16 @@ doc: "MARGE is a free software to predict key regulated genes and cis-regulatory
   in human or mouse.\n\nTool homepage: http://cistrome.org/MARGE"
 inputs:
   - id: directory
-    type: Directory
+    type: string
     doc: Path to the directory where the workflow shall be initialized.
     inputBinding:
       position: 1
 outputs:
+  - id: workflow_dir
+    type: Directory
+    doc: Directory with the initialized workflow (Snakefile and config.json)
+    outputBinding:
+      glob: $(inputs.directory)
   - id: stdout
     type: stdout
     doc: Standard output

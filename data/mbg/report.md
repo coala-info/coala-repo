@@ -1,5 +1,11 @@
 # mbg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mbg_MBG | PASS |  |
+
 ## mbg_MBG
 
 ### Tool Description

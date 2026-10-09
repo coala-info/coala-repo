@@ -84,7 +84,8 @@ inputs:
     doc: crop image dimensions
     inputBinding:
       position: 101
-      prefix: --crop-images
+      prefix: -crop=
+      separate: false
   - id: database
     type:
       - 'null'
@@ -229,7 +230,8 @@ inputs:
     doc: force  mosaic by predefined stamps layout
     inputBinding:
       position: 101
-      prefix: --force-mosaic
+      prefix: -fmosaic=
+      separate: false
   - id: force_rescale
     type:
       - 'null'
@@ -238,15 +240,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -si=
-      separate: false
-  - id: force_window_center_width
-    type:
-      - 'null'
-      - string
-    doc: force window center/width contrast
-    inputBinding:
-      position: 101
-      prefix: -cw=
       separate: false
   - id: hack_acrtags
     type:
@@ -673,6 +666,26 @@ inputs:
       position: 101
       prefix: --write-without-meta
 outputs:
+  - id: converted_files
+    type:
+      type: array
+      items: File
+    doc: converted image files written by medcon
+    outputBinding:
+      glob:
+        - '*.asc'
+        - '*.bin'
+        - '*.ima'
+        - '*.hdr'
+        - '*.img'
+        - '*.dcm'
+        - '*.v'
+        - '*.gif'
+        - '*.h33'
+        - '*.i33'
+        - '*.im'
+        - '*.nii'
+        - '*.png'
   - id: stdout
     type: stdout
     doc: Standard output

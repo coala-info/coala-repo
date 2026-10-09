@@ -10,8 +10,9 @@ inputs:
   - id: directory
     type:
       - 'null'
-      - Directory
-    doc: Create a new model repository in the given directory.
+      - string
+    doc: Create a new model repository in the given directory (the directory 
+      must exist; it is created empty before the run).
     inputBinding:
       position: 101
       prefix: --directory
@@ -30,6 +31,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: repository
+    type:
+      - 'null'
+      - Directory
+    doc: The new model repository directory.
+    outputBinding:
+      glob: $(inputs.directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.directory)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/memote:0.17.0--pyhdfd78af_0

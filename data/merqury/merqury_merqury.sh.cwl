@@ -6,21 +6,21 @@ doc: "Generates k-mer counts for read sets and assemblies to assess assembly qua
   \nTool homepage: https://github.com/marbl/merqury"
 inputs:
   - id: read_db_meryl
-    type: File
-    doc: k-mer counts of the read set
+    type: Directory
+    doc: k-mer counts of the read set (meryl database directory)
     inputBinding:
       position: 1
   - id: mat_meryl
     type:
       - 'null'
-      - File
+      - Directory
     doc: k-mer counts of the maternal haplotype (ex. mat.hapmer.meryl)
     inputBinding:
       position: 2
   - id: pat_meryl
     type:
       - 'null'
-      - File
+      - Directory
     doc: k-mer counts of the paternal haplotype (ex. pat.hapmer.meryl)
     inputBinding:
       position: 3
@@ -48,8 +48,10 @@ outputs:
   - id: out_files
     type:
       type: array
-      items: File
-    doc: Files written with the prefix given in out
+      items:
+        - File
+        - Directory
+    doc: Files and directories written with the prefix given in out
     outputBinding:
       glob: $(inputs.out)*
 hints:

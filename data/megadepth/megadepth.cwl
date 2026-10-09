@@ -5,8 +5,11 @@ label: megadepth
 doc: "BAM and BigWig utility.\n\nTool homepage: https://github.com/ChristopherWilks/megadepth"
 inputs:
   - id: input_file
-    type: string
-    doc: Input BAM, BigWig, or '-' for STDIN
+    type: File
+    doc: Input BAM (with its .bai index beside it when --annotation is used), CRAM, or BigWig
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: add_chr_prefix
@@ -40,6 +43,7 @@ inputs:
     type:
       - 'null'
       - File
+      - string
     doc: Only output the regions in this BED file, applying the argument to --op
       to them. Can also specify a contiguous region size in bp.
     inputBinding:
@@ -362,24 +366,36 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unsorted
-  - id: bigwig_output_path
-    type: string
-    doc: Output coverage as BigWig file(s).  Writes to <prefix>.bw
+  - id: bigwig
+    type:
+      - 'null'
+      - boolean
+    doc: Output coverage as BigWig file(s).  Writes to <prefix>.bw (also 
+      <prefix>.unique.bw when --min-unique-qual is specified). Requires 
+      libBigWig.
     inputBinding:
       position: 103
       prefix: --bigwig
 outputs:
-  - id: bigwig_output
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: Output coverage as BigWig file(s). Writes to <prefix>.bw (also 
-      <prefix>.unique.bw when --min-unique-qual is specified). Requires 
-      libBigWig.
+      type: array
+      items: File
+    doc: Output files written by megadepth (<prefix>.bw, .auc.tsv, .annotation.tsv,
+      .coverage.tsv, .jxs.tsv, .alts.tsv, .starts.tsv, .ends.tsv, .frags.tsv and
+      gzipped coverage)
     outputBinding:
-      glob: $(inputs.bigwig_output_path)
+      glob:
+        - '*.bw'
+        - '*.tsv'
+        - '*.csv'
+        - '*.gz'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/megadepth:1.2.0--h5ca1c30_7
+stdout: megadepth.out

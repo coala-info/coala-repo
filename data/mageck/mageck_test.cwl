@@ -63,6 +63,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-gene
+      itemSeparator: ','
   - id: control_id
     type:
       - 'null'
@@ -85,6 +86,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-sgrna
+      itemSeparator: ','
   - id: count_table
     type: File
     doc: Provide a tab-separated count table instead of sam files. Each line in 
@@ -94,7 +96,9 @@ inputs:
       position: 101
       prefix: --count-table
   - id: day0_label
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Specify the label for control sample (usually day 0 or plasmid). For 
       every other sample label, the module will treat it as a treatment 
       condition and compare with control sample.
@@ -159,6 +163,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --output-prefix
+    default: sample1
   - id: paired
     type:
       - 'null'
@@ -201,10 +206,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --skip-gene
     doc: Skip genes in the report. By default, "NA" or "na" will be skipped.
     inputBinding:
       position: 101
-      prefix: --skip-gene
   - id: sort_criteria
     type:
       - 'null'
@@ -216,8 +222,9 @@ inputs:
       prefix: --sort-criteria
   - id: treatment_id
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
     doc: Sample label or sample index (0 as the first sample) in the count table
       as treatment experiments, separated by comma (,). If sample label is 
       provided, the labels must match the labels in the first line of the count 

@@ -1,5 +1,11 @@
 # magneto CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| magneto_run | Not completed | pipeline, skipped |
+
 ## magneto_run
 
 ### Tool Description

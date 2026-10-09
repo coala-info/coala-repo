@@ -87,8 +87,8 @@ inputs:
   - id: limit_lookup
     type:
       - 'null'
-      - boolean
-    doc: Remove word seeds with high frequency in the searched database
+      - string
+    doc: Remove word seeds with high frequency in the searched database (true or false)
     inputBinding:
       position: 101
       prefix: -limit_lookup
@@ -221,8 +221,8 @@ inputs:
   - id: parse_deflines
     type:
       - 'null'
-      - boolean
-    doc: Should the query and subject defline(s) be parsed?
+      - string
+    doc: Should the query and subject defline(s) be parsed? (true or false)
     inputBinding:
       position: 101
       prefix: -parse_deflines
@@ -294,8 +294,8 @@ inputs:
   - id: splice
     type:
       - 'null'
-      - boolean
-    doc: Search for spliced alignments
+      - string
+    doc: Search for spliced alignments (true or false)
     inputBinding:
       position: 101
       prefix: -splice
@@ -376,8 +376,8 @@ inputs:
   - id: validate_seqs
     type:
       - 'null'
-      - boolean
-    doc: Reject low quality sequences
+      - string
+    doc: Reject low quality sequences (true or false)
     inputBinding:
       position: 101
       prefix: -validate_seqs
@@ -396,7 +396,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -out
   - id: out_unaligned_path
     type:
       - 'null'

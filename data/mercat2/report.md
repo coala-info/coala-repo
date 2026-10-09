@@ -1,5 +1,11 @@
 # mercat2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mercat2_mercat2.py | Failed | image problem: the image has busybox sed without the '~' step, so FASTQ input gives an empty FASTA and no counts; -fgs crashes on a read-only site-packages; FASTA and protein input work with correct counts |
+
 ## mercat2_mercat2.py
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # marvel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| marvel | Failed | image problem: BioPerl (Bio::Root::Version) is missing, so the bundled Prokka script marvel_prokka cannot start |
+
 ## marvel
 
 ### Tool Description

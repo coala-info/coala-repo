@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - fasta2bfa
 label: maq_fasta2bfa
-doc: "\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: in_fasta
     type: File

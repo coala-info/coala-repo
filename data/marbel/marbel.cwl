@@ -20,7 +20,7 @@ inputs:
       set when you have knowledge of DESeq2 dispersion.'
     inputBinding:
       position: 101
-      prefix: --deseq-dispersion-gene-mean
+      prefix: --deseq-dispersion-parameter-a1
   - id: deseq_dispersion_general
     type:
       - 'null'
@@ -29,7 +29,7 @@ inputs:
       when you have knowledge of DESeq2 dispersion.'
     inputBinding:
       position: 101
-      prefix: --deseq-dispersion-general
+      prefix: --deseq-dispersion-parameter-a0
   - id: dge_ratio
     type:
       - 'null'
@@ -67,15 +67,7 @@ inputs:
       with a lot of threads. Takes a long time.
     inputBinding:
       position: 101
-      prefix: --group-orthologs
-  - id: install_completion
-    type:
-      - 'null'
-      - boolean
-    doc: Install completion for the current shell.
-    inputBinding:
-      position: 101
-      prefix: --install-completion
+      prefix: --group-orthology-level
   - id: library_size
     type:
       - 'null'
@@ -101,7 +93,7 @@ inputs:
       phylogenetic distance.
     inputBinding:
       position: 101
-      prefix: --max-phylo-dist
+      prefix: --max-phylo-distance
   - id: min_identity
     type:
       - 'null'
@@ -145,10 +137,8 @@ inputs:
       - type: array
         items: int
     doc: Number of samples to be created for the metatranscriptome in silico 
-      datasetthe first number is the number of samples for group 1 andthe second
-      number is the number of samples for group 2
-      - 10
-      - 10
+      dataset. The first number is the number of samples for group 1 and the second
+      number is the number of samples for group 2 (default 10 10).
     inputBinding:
       position: 101
       prefix: --n-samples
@@ -203,15 +193,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seed
-  - id: show_completion
-    type:
-      - 'null'
-      - boolean
-    doc: Show completion for the current shell, to copy it or customize the 
-      installation.
-    inputBinding:
-      position: 101
-      prefix: --show-completion
   - id: threads
     type:
       - 'null'

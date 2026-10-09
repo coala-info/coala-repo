@@ -1,5 +1,11 @@
 # mcroni CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mcroni | PASS |  |
+
 ## mcroni
 
 ### Tool Description

@@ -8,7 +8,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Files to process
     inputBinding:
       position: 1
@@ -120,7 +120,7 @@ inputs:
   - id: xml_log
     type:
       - 'null'
-      - File
+      - string
     doc: Set file in which to produce an xml log
     inputBinding:
       position: 102
@@ -130,6 +130,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: xml_log_file
+    type:
+      - 'null'
+      - File
+    doc: XML log file
+    outputBinding:
+      glob: $(inputs.xml_log)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maude:v2.7-2b1-deb_cv1

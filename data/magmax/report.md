@@ -1,5 +1,11 @@
 # magmax CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| magmax | PASS | dereplication works with --qual; bin merging and reassembly needs CheckM2, which is not in the image |
+
 ## magmax
 
 ### Tool Description

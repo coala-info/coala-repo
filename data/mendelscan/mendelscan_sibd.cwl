@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - MendelScan.jar
+  - mendelscan
   - sibd
 label: mendelscan_sibd
 doc: "Calculates IBD segments for sibling pairs.\n\nTool homepage: https://github.com/genome/mendelscan"

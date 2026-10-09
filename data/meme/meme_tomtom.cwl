@@ -9,14 +9,14 @@ inputs:
     type: File
     doc: Query motif database file
     inputBinding:
-      position: 1
+      position: 200
   - id: target_files
     type:
       type: array
       items: File
     doc: One or more target motif database files
     inputBinding:
-      position: 2
+      position: 201
   - id: background_file
     type:
       - 'null'
@@ -175,21 +175,27 @@ inputs:
     inputBinding:
       position: 103
       prefix: -verbosity
-outputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
-    doc: Name of directory for output files; will not replace existing directory
-    outputBinding:
-      glob: $(inputs.output_dir)
-  - id: output_dir_replace
+      - string
+    default: tomtom_out
+    doc: output directory (replaced if it exists)
+    inputBinding:
+      position: 150
+      prefix: -oc
+outputs:
+  - id: output_dir_out
     type:
       - 'null'
       - Directory
-    doc: Name of directory for output files; will replace existing directory
+    doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir_replace)
+      glob: $(inputs.output_dir)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0
+stdout: meme_tomtom.out

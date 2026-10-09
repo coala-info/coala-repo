@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - MendelScan.jar
+  - mendelscan
   - score
 label: mendelscan_score
 doc: "Score variants using MendelScan.\n\nTool homepage: https://github.com/genome/mendelscan"

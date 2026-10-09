@@ -12,7 +12,7 @@ inputs:
       - File
     doc: Input FASTA file of sequences. Reads standard input if not specified.
     inputBinding:
-      position: 1
+      position: 200
   - id: alphabet_file
     type:
       - 'null'
@@ -105,12 +105,9 @@ inputs:
       prefix: -rna
 outputs:
   - id: background_file
-    type:
-      - 'null'
-      - File
-    doc: Output file for the Markov model. Writes standard output if not specified.
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Markov model (background frequencies) written to standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0
+stdout: background.txt

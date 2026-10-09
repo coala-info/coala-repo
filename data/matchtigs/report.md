@@ -1,5 +1,11 @@
 # matchtigs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| matchtigs | PASS |  |
+
 ## matchtigs
 
 ### Tool Description

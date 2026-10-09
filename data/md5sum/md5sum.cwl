@@ -3,6 +3,11 @@ class: CommandLineTool
 baseCommand: md5sum
 label: md5sum
 doc: "Print or check MD5 (128-bit) checksums.\n\nTool homepage: https://www.gnu.org/software/coreutils/"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.checked_files || [])
 inputs:
   - id: files
     type:
@@ -13,6 +18,12 @@ inputs:
       read standard input.
     inputBinding:
       position: 1
+  - id: checked_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the checksum list when --check is used, staged in the working directory so the names in the list resolve.
   - id: binary
     type:
       - 'null'

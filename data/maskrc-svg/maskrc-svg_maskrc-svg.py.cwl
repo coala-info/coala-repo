@@ -10,6 +10,13 @@ inputs:
     doc: prefix used for CFML/Gubbins input files (required)
     inputBinding:
       position: 1
+  - id: prefix_files
+    type:
+      type: array
+      items: File
+    doc: The ClonalFrameML (PREFIX.labelled_tree.newick, PREFIX.importation_status.txt)
+      or Gubbins (PREFIX.final_tree.tre, PREFIX.recombination_predictions.gff) files
+      named by the prefix, staged in the working directory.
   - id: aln
     type: File
     doc: multiFASTA alignment used as input for CFML (required)
@@ -112,6 +119,8 @@ outputs:
       glob: $(inputs.regions)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.prefix_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/maskrc-svg:0.5--0

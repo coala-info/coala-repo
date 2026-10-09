@@ -1,5 +1,42 @@
 # maq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maq_assemble | PASS |  |
+| maq_bfq2fastq | PASS |  |
+| maq_cns2fq | PASS |  |
+| maq_cns2ref | PASS |  |
+| maq_cns2snp | PASS |  |
+| maq_cns2view | PASS |  |
+| maq_cns2win | PASS |  |
+| maq_csmap2nt | PASS | synthetic data: real reads recoded to colour space (maq fasta2csfa reference), mapped with -c, then converted back; 3795 reads |
+| maq_fakemut | PASS | synthetic mutations made by fakemut on the SARS-CoV-2 genome; output has the mutated FASTA and the mutation list |
+| maq_fasta2bfa | PASS |  |
+| maq_fasta2csfa | PASS |  |
+| maq_fastq2bfq | PASS |  |
+| maq_glfgen | PASS |  |
+| maq_indelpe | PASS |  |
+| maq_indelsoa | PASS |  |
+| maq_map | PASS |  |
+| maq_mapass2maq | Not completed | needs a map file from the retired mapass2 program; none is available and none can be made |
+| maq_mapcheck | PASS |  |
+| maq_mapmerge | PASS |  |
+| maq_mapstat | PASS |  |
+| maq_mapvalidate | PASS |  |
+| maq_mapview | PASS |  |
+| maq_pileup | PASS |  |
+| maq_rmdup | PASS |  |
+| maq_simucns | PASS | synthetic data: consensus from simulated reads checked against the true SNPs; error table is plausible |
+| maq_simulate | PASS | synthetic data: reads simulated from the SARS-CoV-2 genome; true SNP list and read files written |
+| maq_simustat | Failed | tool bug: maq simustat aborts with 'buffer overflow detected' on valid simulated alignments |
+| maq_simutrain | PASS | trained on the real maq example reads; parameter file written |
+| maq_snpreg | PASS |  |
+| maq_sol2sanger | PASS |  |
+| maq_submap | PASS |  |
+| maq_subpos | PASS |  |
+
 ## maq_fasta2bfa
 
 ### Tool Description
@@ -418,6 +455,196 @@ Simulate consensus sequences from true SNPs.
 ### Original Help Text
 ```text
 Usage: maq simucns <in.cns> <in.true.snp>
+```
+
+## maq_mapstat
+
+### Tool Description
+Statistics about a .map file
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: maq mapstat <in.map>
+```
+
+## maq_cns2snp
+
+### Tool Description
+Extract details from a CNS file at the SNP sites
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: maq cns2snp <in.cns>
+```
+
+## maq_cns2view
+
+### Tool Description
+Extract details from a CNS file at all sites
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: maq cns2view <in.cns>
+```
+
+## maq_cns2ref
+
+### Tool Description
+Extract the reference sequences from a CNS file
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: maq cns2ref <in.cns>
+```
+
+## maq_fasta2csfa
+
+### Tool Description
+Convert FASTA to colour-space FASTA
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: maq fasta2csfa <in.fasta>
+```
+
+## maq_mapvalidate
+
+### Tool Description
+Validate a .map file
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: maq mapvalidate <in.map>
+```
+
+## maq_fakemut
+
+### Tool Description
+Simulate references by randomly generating mutations
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: maq fakemut [-r 0.001] [-R 0.1] <in.fasta>
+```
+
+## maq_simustat
+
+### Tool Description
+Evaluate alignment based on simulation
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: maq simustat <simu_align.map> [<Q>=100]
+```
+
+## maq_subpos
+
+### Tool Description
+Extract a subset of positions
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: maq subpos <in.cns> <.snp>
+```
+
+## maq_submap
+
+### Tool Description
+Extract a region from a map file
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:   maq submap [options] <out.map> <in.map>
+
+Options: -q INT      minimum mapping quality [10]
+         -Q INT      maximum sum of errors [60]
+         -m INT      maximum number of mismatches [3]
+         -p          correctly paired reads only
+```
+
+## maq_simulate
+
+### Tool Description
+Simulate reads by randomly generating sequencing errors
+
+### Metadata
+- **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
+- **Homepage**: http://maq.sourceforge.net/
+- **Package**: https://packages.debian.org/maq
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:   maq simulate [options] <read1.out> <read2.out> <ref.fasta> <simupar.dat>
+
+Options: -d INT        outer distance between the two ends [170]
+         -s INT        standard deviation [20]
+         -N INT        number of read pairs [1000000]
+         -1 INT        length of the first read
+         -2 INT        length of the second read
+         -r FLOAT      rate of mutations [0.001]
+         -R FLOAT      fraction of 1bp indels [0.1]
+         -h            haploid mode
 ```
 
 ## Metadata

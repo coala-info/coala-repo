@@ -1,6 +1,5 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: markitdown
 label: markitdown
 doc: "Convert various file formats to markdown.\n\nTool homepage: https://github.com/microsoft/markitdown"
 inputs:
@@ -89,6 +88,41 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-plugins
+  - id: use_cu
+    type:
+      - 'null'
+      - boolean
+    doc: Use Azure Content Understanding to extract text. Requires --cu-endpoint.
+    inputBinding:
+      position: 102
+      prefix: --use-cu
+  - id: cu_endpoint
+    type:
+      - 'null'
+      - string
+    doc: Content Understanding Endpoint. Required if using --use-cu. Defaults to
+      the MARKITDOWN_CU_ENDPOINT environment variable.
+    inputBinding:
+      position: 102
+      prefix: --cu-endpoint
+  - id: cu_analyzer
+    type:
+      - 'null'
+      - string
+    doc: Content Understanding analyzer ID. If not specified, auto-selects by 
+      file type.
+    inputBinding:
+      position: 102
+      prefix: --cu-analyzer
+  - id: cu_file_types
+    type:
+      - 'null'
+      - string
+    doc: Comma-separated list of file types to route to Content Understanding 
+      (e.g., pdf,jpeg,mp4). If omitted, all supported types are routed.
+    inputBinding:
+      position: 102
+      prefix: --cu-file-types
 outputs:
   - id: output
     type:

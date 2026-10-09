@@ -1,5 +1,11 @@
 # mencal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mencal | PASS | synthetic data: planted cycle dates; calendar marks the right days, saved config file is correct and re-reads; fixed the -c config options |
+
 ## mencal
 
 ### Tool Description

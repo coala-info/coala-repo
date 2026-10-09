@@ -35,6 +35,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --beta-labels
+      itemSeparator: ','
   - id: cell_line
     type:
       - 'null'
@@ -75,6 +76,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-gene
+      itemSeparator: ','
   - id: control_sgrna
     type:
       - 'null'
@@ -85,6 +87,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-sgrna
+      itemSeparator: ','
   - id: count_table
     type: File
     doc: Provide a tab-separated count table. Each line in the table should 
@@ -150,6 +153,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --include-samples
+      itemSeparator: ','
   - id: max_sgrnapergene_permutation
     type:
       - 'null'
@@ -171,6 +175,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --negative-control
+      itemSeparator: ','
   - id: no_permutation_by_group
     type:
       - 'null'
@@ -201,6 +206,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --output-prefix
+    default: sample1
   - id: permutation_round
     type:
       - 'null'

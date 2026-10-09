@@ -1,5 +1,12 @@
 # make_prg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| make_prg_from_msa | PASS |  |
+| make_prg_update | PASS |  |
+
 ## make_prg_from_msa
 
 ### Tool Description

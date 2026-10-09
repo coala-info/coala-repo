@@ -1,5 +1,11 @@
 # maxit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maxit | PASS |  |
+
 ## maxit
 
 ### Tool Description

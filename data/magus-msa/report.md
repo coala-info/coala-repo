@@ -1,5 +1,11 @@
 # magus-msa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| magus-msa_magus | PASS |  |
+
 ## magus-msa_magus
 
 ### Tool Description

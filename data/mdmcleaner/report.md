@@ -1,5 +1,19 @@
 # mdmcleaner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mdmcleaner_acc2taxpath | Not completed | needs the MDMcleaner reference database (tens of GB, db_basedir); none available here |
+| mdmcleaner_check_dependencies | PASS |  |
+| mdmcleaner_clean | Not completed | needs the MDMcleaner reference database (tens of GB, db_basedir); none available here |
+| mdmcleaner_completeness | PASS |  |
+| mdmcleaner_get_markers | PASS |  |
+| mdmcleaner_makedb | Not completed | downloads the reference database (over 100 GB), too big for this machine |
+| mdmcleaner_refdb_contams | Not completed | needs the MDMcleaner reference database (tens of GB, db_basedir); none available here |
+| mdmcleaner_set_configs | PASS |  |
+| mdmcleaner_show_configs | PASS |  |
+
 ## mdmcleaner_clean
 
 ### Tool Description

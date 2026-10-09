@@ -46,6 +46,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bindir
+      valueFrom: $(self.basename)
   - id: completeness
     type:
       - 'null'
@@ -142,6 +143,10 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bindir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/magmax:1.3.0--ha6fb395_0

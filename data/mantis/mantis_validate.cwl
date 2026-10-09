@@ -1,156 +1,47 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mantis
+baseCommand:
+  - mantis
+  - validate
 label: mantis_validate
-doc: "Mantis is a k-mer based sequence analysis tool.\n\nTool homepage: https://github.com/splatlab/mantis"
+doc: 'Check a mantis index against the original Squeakr CQF files by querying a set
+  of sequences.
+
+
+  Tool homepage: https://github.com/splatlab/mantis'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.cqf_files)
 inputs:
-  - id: command
-    type: string
-    doc: The subcommand to run (build, mst, validatemst, query, validate, stats,
-      help, -v)
-    inputBinding:
-      position: 1
-  - id: query
-    type: string
-    doc: Prefix of input files.
-    inputBinding:
-      position: 2
-  - id: query_file
-    type: string
-    doc: Query file.
-    inputBinding:
-      position: 3
-  - id: build_output
-    type: string
-    doc: directory where results should be written
-    inputBinding:
-      position: 104
-  - id: dbg_prefix
-    type: Directory
-    doc: Directory containing the mantis dbg.
-    inputBinding:
-      position: 104
-  - id: delete_rrr
-    type:
-      - 'null'
-      - boolean
-    doc: Remove the previous color class RRR representation.
-    inputBinding:
-      position: 104
-      prefix: --delete-RRR
-  - id: eqclass_dist
-    type:
-      - 'null'
-      - boolean
-    doc: write the eqclass abundance distribution
-    inputBinding:
-      position: 104
-      prefix: --eqclass_dist
-  - id: index_prefix
-    type: Directory
-    doc: The directory where the index is stored.
-    inputBinding:
-      position: 104
   - id: input_list
     type: File
-    doc: file containing list of input filters
+    doc: file containing the list of input filters (Squeakr CQF file names, resolved
+      from the job directory)
     inputBinding:
-      position: 104
-  - id: json
+      position: 1
+      prefix: -i
+  - id: cqf_files
     type:
-      - 'null'
-      - boolean
-    doc: Write the output in JSON format
+      type: array
+      items: File
+    doc: Squeakr CQF files named in the input list; they are staged in the job directory
+  - id: dbg_prefix
+    type: Directory
+    doc: Directory containing the mantis dbg
     inputBinding:
-      position: 104
-      prefix: --json
-  - id: keep_rrr
-    type:
-      - 'null'
-      - boolean
-    doc: Keep the previous color class RRR representation.
+      position: 2
+      prefix: -p
+      valueFrom: $(self.path)/
+  - id: query
+    type: File
+    doc: Query file with one sequence per line
     inputBinding:
-      position: 104
-      prefix: --keep-RRR
-  - id: kmer
-    type:
-      - 'null'
-      - int
-    doc: size of k for kmer.
-    inputBinding:
-      position: 104
-  - id: log_slots
-    type: string
-    doc: log of number of slots in the output CQF
-    inputBinding:
-      position: 104
-  - id: num_experiments
-    type: int
-    doc: Number of experiments.
-    inputBinding:
-      position: 104
-  - id: num_threads
-    type:
-      - 'null'
-      - int
-    doc: number of threads
-    inputBinding:
-      position: 104
-  - id: number_of_samples
-    type: int
-    doc: Number of experiments.
-    inputBinding:
-      position: 104
-  - id: query_prefix
-    type: string
-    doc: Prefix of input files.
-    inputBinding:
-      position: 104
-  - id: size_of_jmer
-    type:
-      - 'null'
-      - int
-    doc: 'value of j for constituent jmers of a kmer (default: 23).'
-    inputBinding:
-      position: 104
-  - id: stats_type
-    type:
-      - 'null'
-      - string
-    doc: 'what stats? (mono, cc_density, color_dist, jmerkmer), default: mono'
-    inputBinding:
-      position: 104
-  - id: use_colorclasses
-    type:
-      - 'null'
-      - boolean
-    doc: Use color classes as the color info representation instead of MST
-    inputBinding:
-      position: 104
-      prefix: --use-colorclasses
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 105
-      prefix: --output-file
+      position: 3
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Where to write query output.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-  - id: build_output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: directory where results should be written
-    outputBinding:
-      glob: $(inputs.build_output)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mantis:0.2--h4a1dfb3_4
+stdout: mantis_validate.out

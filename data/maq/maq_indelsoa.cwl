@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - indelsoa
 label: maq_indelsoa
-doc: "Detect indel candidates from alignments.\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Detect indel candidates from alignments.\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: ref_bfa
     type: File

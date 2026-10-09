@@ -1,5 +1,11 @@
 # megalodon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| megalodon | Not completed | needs the Guppy basecaller server (licensed, not in the image) and a basecalling model. |
+
 ## megalodon
 
 ### Tool Description

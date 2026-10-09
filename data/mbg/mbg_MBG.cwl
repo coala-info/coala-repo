@@ -57,11 +57,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --in
     doc: Input reads. Multiple files can be input with -i file1.fa -i file2.fa 
       etc
     inputBinding:
       position: 101
-      prefix: --in
   - id: keep_gaps
     type:
       - 'null'
@@ -133,7 +134,7 @@ inputs:
     doc: Maximum k-mer size for multiplex DBG resolution
     inputBinding:
       position: 101
-      prefix: --resolve-maxk
+      prefix: -r
   - id: resolve_maxk_allowgaps
     type:
       - 'null'
@@ -141,7 +142,7 @@ inputs:
     doc: Allow multiplex resolution to add gaps up to this k-mer size
     inputBinding:
       position: 101
-      prefix: --resolve-maxk-allowgaps
+      prefix: -R
   - id: resolve_palindromes_global
     type:
       - 'null'
@@ -166,6 +167,7 @@ inputs:
     doc: Number of threads
     inputBinding:
       position: 101
+      prefix: -t
   - id: unitig_abundance
     type:
       - 'null'
@@ -183,9 +185,7 @@ inputs:
       position: 101
       prefix: -w
   - id: output_graph_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output graph (required)
     inputBinding:
       position: 102
@@ -194,6 +194,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Output a list of homologous k-mer locations
     inputBinding:
       position: 103
       prefix: --output-homology-map
@@ -201,6 +202,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: Output the paths of the input sequences to a file (.gaf)
     inputBinding:
       position: 104
       prefix: --output-sequence-paths

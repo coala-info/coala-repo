@@ -1,5 +1,11 @@
 # marker-magu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| marker-magu_markermagu | Not completed | needs the large Marker-MAGu marker gene database (several GB), which is not in the image |
+
 ## marker-magu_markermagu
 
 ### Tool Description

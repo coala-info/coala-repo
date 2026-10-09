@@ -1,11 +1,74 @@
 # mapula CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mapula_count | PASS |  |
+| mapula_merge | PASS |  |
+
 ## mapula_count
 
 ### Tool Description
 Count mapping stats from a SAM/BAM file
 
+### mapula_merge
+
+### Tool Description
+Combine .json outputs from mapula count
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/mapula:2.1.2--pyhdfd78af_0
+- **Homepage**: https://github.com/epi2me-labs/mapula
+- **Package**: https://anaconda.org/channels/bioconda/packages/mapula/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mapula [-h] [-c] [-f] [-n] [...]
+
+Combine .json outputs from mapula count
+
+positional arguments:
+              Input .json files from mapula count. (Default: [stdin]).
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -c          Expected counts CSV. Required columns: reference,expected_count.
+  -f          Sets the format(s) in which to output results. [Choices: csv,
+              json, all] (Default: csv).
+  -n          Prefix of the output files, if there are any.
+```
+
+## mapula_merge
+
+### Tool Description
+Combine .json outputs from mapula count
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mapula:2.1.2--pyhdfd78af_0
+- **Homepage**: https://github.com/epi2me-labs/mapula
+- **Package**: https://anaconda.org/channels/bioconda/packages/mapula/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mapula [-h] [-c] [-f] [-n] [...]
+
+Combine .json outputs from mapula count
+
+positional arguments:
+              Input .json files from mapula count. (Default: [stdin]).
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -c          Expected counts CSV. Required columns: reference,expected_count.
+  -f          Sets the format(s) in which to output results. [Choices: csv,
+              json, all] (Default: csv).
+  -n          Prefix of the output files, if there are any.
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/mapula:2.1.2--pyhdfd78af_0
 - **Homepage**: https://github.com/epi2me-labs/mapula
 - **Package**: https://anaconda.org/channels/bioconda/packages/mapula/overview

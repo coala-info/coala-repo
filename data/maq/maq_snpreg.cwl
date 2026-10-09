@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - snpreg
 label: maq_snpreg
-doc: "Call SNPs using consensus and SNP information.\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Call SNPs using consensus and SNP information.\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: input_cns
     type: File
@@ -54,7 +54,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Region statistics (maq writes them to standard error)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maq:v0.7.1-8-deb_cv1
 stdout: maq_snpreg.out
+stderr: maq_snpreg.err

@@ -1,5 +1,11 @@
 # mashtree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mashtree | PASS |  |
+
 ## mashtree
 
 ### Tool Description

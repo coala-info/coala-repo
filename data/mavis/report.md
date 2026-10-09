@@ -1,5 +1,18 @@
 # mavis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mavis_annotate | PASS |  |
+| mavis_cluster | PASS |  |
+| mavis_convert | PASS |  |
+| mavis_overlay | PASS |  |
+| mavis_pairing | PASS |  |
+| mavis_setup | PASS |  |
+| mavis_summary | PASS |  |
+| mavis_validate | PASS |  |
+
 ## mavis_annotate
 
 ### Tool Description

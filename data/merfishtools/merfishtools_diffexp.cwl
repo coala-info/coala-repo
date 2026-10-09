@@ -43,12 +43,17 @@ inputs:
       position: 103
       prefix: --threads
   - id: cdf_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Path to write CDFs of log2 fold changes to.
     inputBinding:
       position: 104
       prefix: --cdf
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: cdf_file
     type:
       - 'null'
@@ -61,3 +66,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merfishtools:1.5.0--py312h9d36253_3
+stdout: merfishtools_diffexp.out

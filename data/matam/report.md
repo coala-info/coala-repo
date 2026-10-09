@@ -1,5 +1,13 @@
 # matam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| matam_index_default_ssu_rrna_db.py | Not completed | needs the large default SILVA database download (host bioinfo.univ-lille.fr unreachable) and indexing |
+| matam_matam_assembly.py | Failed | image problem: the image has sortmerna 4 without indexdb_rna, so matam_assembly.py stops at start with 'No valid binary found for indexdb_rna' |
+| matam_matam_compare_samples.py | PASS | synthetic data: two samples cut from the tool's own test sample (odd record removed, second sample a subset) |
+
 ## matam_index_default_ssu_rrna_db.py
 
 ### Tool Description

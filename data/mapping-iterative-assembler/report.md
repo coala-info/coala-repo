@@ -1,5 +1,12 @@
 # mapping-iterative-assembler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mapping-iterative-assembler_ma | PASS |  |
+| mapping-iterative-assembler_mia | PASS |  |
+
 ## mapping-iterative-assembler_mia
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # maxquant CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maxquant | Failed | image problem: analysis runs stop with '.NET Core 3.1 needs to be installed' (only --create works); fixed baseCommand to maxquant |
+
 ## maxquant
 
 ### Tool Description

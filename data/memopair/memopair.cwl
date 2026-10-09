@@ -7,8 +7,6 @@ inputs:
   - id: reference
     type: File
     doc: File path to the fasta file with references
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 1
   - id: pileup
@@ -59,7 +57,7 @@ inputs:
       prefix: --verbosity
   - id: out_path
     type: string
-    doc: 'Output file path [default: memopair]'
+    doc: 'Output directory path (created by the tool, must not exist) [default: memopair]'
     inputBinding:
       position: 105
       prefix: --out
@@ -67,8 +65,8 @@ outputs:
   - id: out
     type:
       - 'null'
-      - File
-    doc: Output file path
+      - Directory
+    doc: Output directory with one TSV file per contig
     outputBinding:
       glob: $(inputs.out_path)
 requirements:

@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - fastq2bfq
 label: maq_fastq2bfq
-doc: "Convert FASTQ to bfq format\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Convert FASTQ to bfq format\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: input_fastq
     type: File
@@ -20,7 +20,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of reads to convert
+    doc: number of reads per output file (the output is split into <prefix>@<first read>.bfq files)
     inputBinding:
       position: 103
       prefix: -n

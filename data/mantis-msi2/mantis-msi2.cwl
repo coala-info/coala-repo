@@ -2,8 +2,10 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mantis-msi2
 label: mantis-msi2
-doc: "Microsatellite Analysis for Normal-Tumor InStability (v2.0.0)\n\nTool homepage:
-  https://github.com/nh13/MANTIS2/"
+doc: 'Microsatellite Analysis for Normal-Tumor InStability (v2.0.0)
+
+
+  Tool homepage: https://github.com/nh13/MANTIS2/'
 inputs:
   - id: bedfile
     type:
@@ -25,7 +27,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: "Default difference threshold value for calling a\nsample unstable."
+    doc: 'Default difference threshold value for calling a
+
+      sample unstable.'
     inputBinding:
       position: 101
       prefix: --difference-threshold
@@ -33,7 +37,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: "Default dissimilarity threshold value for calling a\nsample unstable."
+    doc: 'Default dissimilarity threshold value for calling a
+
+      sample unstable.'
     inputBinding:
       position: 101
       prefix: --dissimilarity-threshold
@@ -41,7 +47,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: "Default distance threshold value for calling a sample\nunstable."
+    doc: 'Default distance threshold value for calling a sample
+
+      unstable.'
     inputBinding:
       position: 101
       prefix: --distance-threshold
@@ -53,11 +61,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+    secondaryFiles:
+      - pattern: .fai
+        required: false
   - id: min_locus_coverage
     type:
       - 'null'
       - int
-    doc: "Minimum coverage required for each of the normal and\ntumor results."
+    doc: 'Minimum coverage required for each of the normal and
+
+      tumor results.'
     inputBinding:
       position: 101
       prefix: --min-locus-coverage
@@ -99,11 +112,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --normal
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
   - id: standard_deviations
     type:
       - 'null'
       - float
-    doc: "Standard deviations from mean before repeat count is\nconsidered an outlier"
+    doc: 'Standard deviations from mean before repeat count is
+
+      considered an outlier'
     inputBinding:
       position: 101
       prefix: --standard-deviations
@@ -121,6 +143,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tumor
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
   - id: output_path
     type: string
     inputBinding:
@@ -134,6 +163,16 @@ outputs:
     doc: Output filename.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: intermediate_files
+    type:
+      type: array
+      items: File
+    doc: Intermediate k-mer count files and status files written beside the output
+      file
+    outputBinding:
+      glob:
+        - '*.kmer_counts*'
+        - '*.status*'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

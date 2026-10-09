@@ -4,7 +4,15 @@ baseCommand:
   - mapad
   - index
 label: mapad_index
-doc: "Indexes a genome file\n\nTool homepage: https://github.com/mpieva/mapAD"
+doc: 'Indexes a genome file
+
+
+  Tool homepage: https://github.com/mpieva/mapAD'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
 inputs:
   - id: port
     type:
@@ -16,12 +24,12 @@ inputs:
       prefix: --port
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
-    doc: FASTA file containing the genome to be indexed
+    doc: FASTA file containing the genome to be indexed; copied into the job directory
+      because the index files are written beside it
     inputBinding:
       position: 101
       prefix: --reference
+      valueFrom: $(self.basename)
   - id: seed
     type:
       - 'null'
@@ -34,8 +42,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of threads. If 0, mapAD will select the number of 
-      threads automatically.
+    doc: Maximum number of threads. If 0, mapAD will select the number of threads
+      automatically.
     inputBinding:
       position: 101
       prefix: --threads
@@ -44,11 +52,19 @@ inputs:
       - 'null'
       - type: array
         items: boolean
+        inputBinding:
+          prefix: -v
     doc: Sets the level of verbosity
     inputBinding:
       position: 101
-      prefix: -v
 outputs:
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files written beside the FASTA (.tbw, .tle, .toc, .tpi, .trt, .tsa)
+    outputBinding:
+      glob: $(inputs.reference.basename).t*
   - id: stdout
     type: stdout
     doc: Standard output

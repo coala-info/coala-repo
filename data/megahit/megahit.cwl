@@ -199,29 +199,35 @@ inputs:
   - id: pe1
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: 'comma-separated list of fasta/q paired-end #1 files, paired with files in
       <pe2>'
     inputBinding:
       position: 101
       prefix: '-1'
+      itemSeparator: ','
   - id: pe12
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: comma-separated list of interleaved fasta/q paired-end files
     inputBinding:
       position: 101
       prefix: --12
+      itemSeparator: ','
   - id: pe2
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: 'comma-separated list of fasta/q paired-end #2 files, paired with files in
       <pe1>'
     inputBinding:
       position: 101
       prefix: '-2'
+      itemSeparator: ','
   - id: presets
     type:
       - 'null'
@@ -253,11 +259,13 @@ inputs:
   - id: se
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: comma-separated list of fasta/q single-end files
     inputBinding:
       position: 101
       prefix: --read
+      itemSeparator: ','
   - id: test
     type:
       - 'null'

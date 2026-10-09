@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - assemble
 label: maq_assemble
-doc: "Assemble genome sequences\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Assemble genome sequences\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: output_cns
     type: string

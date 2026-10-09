@@ -4,8 +4,14 @@ baseCommand:
   - mantis
   - build
 label: mantis_build
-doc: "Build a CQF (Compressed Quotient Filter) from input filters.\n\nTool homepage:
-  https://github.com/splatlab/mantis"
+doc: 'Build a colored de Bruijn graph index (mantis index) from a collection of Squeakr
+  counting quotient filter (CQF) files.
+
+
+  Tool homepage: https://github.com/splatlab/mantis'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.cqf_files)
 inputs:
   - id: eqclass_dist
     type:
@@ -13,34 +19,42 @@ inputs:
       - boolean
     doc: write the eqclass abundance distribution
     inputBinding:
-      position: 101
-      prefix: --eqclass_dist
-  - id: input_list
-    type: File
-    doc: file containing list of input filters
-    inputBinding:
-      position: 101
-      prefix: -i
+      position: 1
+      prefix: -e
   - id: log_slots
-    type: string
+    type: int
     doc: log of number of slots in the output CQF
     inputBinding:
-      position: 101
+      position: 2
       prefix: -s
-  - id: build_output_path
-    type: string
-    doc: Output or path parameter `build_output_path`
+  - id: input_list
+    type: File
+    doc: file containing the list of input filters (one Squeakr CQF file name per
+      line, resolved from the job directory)
     inputBinding:
-      position: 102
-      prefix: --build-output
-outputs:
+      position: 3
+      prefix: -i
+  - id: cqf_files
+    type:
+      type: array
+      items: File
+    doc: Squeakr CQF files named in the input list; they are staged in the job directory
   - id: build_output
-    type: Directory
+    type: string
     doc: directory where results should be written
+    inputBinding:
+      position: 4
+      prefix: -o
+outputs:
+  - id: index_dir
+    type: Directory
+    doc: Mantis index directory
     outputBinding:
-      glob: $(inputs.build_output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.build_output)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mantis:0.2--h4a1dfb3_4
+stdout: mantis_build.out

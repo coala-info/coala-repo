@@ -2,7 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: MapCaller
 label: mapcaller_MapCaller
-doc: "MapCaller v0.9.9.41\n\nTool homepage: https://github.com/hsinnan75/MapCaller"
+doc: 'MapCaller v0.9.9.41
+
+
+  Tool homepage: https://github.com/hsinnan75/MapCaller'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files || [])
+  - class: InlineJavascriptRequirement
 inputs:
   - id: apply_variant_filters
     type:
@@ -15,7 +22,7 @@ inputs:
   - id: bam_output_file
     type:
       - 'null'
-      - File
+      - string
     doc: BAM output filename
     inputBinding:
       position: 101
@@ -53,8 +60,11 @@ inputs:
       position: 101
       prefix: -gvcf
   - id: index_prefix
-    type: string
-    doc: BWT_Index_Prefix
+    type:
+      - 'null'
+      - string
+    doc: BWT index prefix (the prefix used with MapCaller index); the index files
+      are given in index_files
     inputBinding:
       position: 101
       prefix: -i
@@ -69,8 +79,8 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
-    doc: log filename
+      - string
+    doc: log filename [job.log]
     inputBinding:
       position: 101
       prefix: -log
@@ -190,7 +200,7 @@ inputs:
   - id: sam_output_file
     type:
       - 'null'
-      - File
+      - string
     doc: SAM output filename
     inputBinding:
       position: 101
@@ -214,12 +224,47 @@ inputs:
   - id: vcf_output_file
     type:
       - 'null'
-      - File
-    doc: VCF output filename
+      - string
+    doc: VCF output filename [output.vcf]
     inputBinding:
       position: 101
       prefix: -vcf
+  - id: index_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Index files made by MapCaller index; staged in the job directory next to
+      the index prefix
 outputs:
+  - id: vcf
+    type:
+      - 'null'
+      - File
+    doc: Variant calls in VCF format
+    outputBinding:
+      glob: $(inputs.vcf_output_file || "output.vcf")
+  - id: sam
+    type:
+      - 'null'
+      - File
+    doc: SAM output
+    outputBinding:
+      glob: $(inputs.sam_output_file)
+  - id: bam
+    type:
+      - 'null'
+      - File
+    doc: BAM output
+    outputBinding:
+      glob: $(inputs.bam_output_file)
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log_file || "job.log")
   - id: stdout
     type: stdout
     doc: Standard output

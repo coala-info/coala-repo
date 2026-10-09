@@ -1,15 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: MaxQuantCmd.exe
+baseCommand: maxquant
 label: maxquant
 doc: "Complete run of an existing mqpar.xml file\n\nTool homepage: http://www.coxdocs.org/doku.php?id=maxquant:start"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_files || [])
 inputs:
   - id: mqpar_file
-    type: File
-    doc: Path to the mqpar.xml file. If you do not have an mqpar.xml, you can 
-      generate one using the MaxQuant GUI or use --create option.
+    type: string
+    doc: Name of the mqpar.xml file (read, or written with --create). If you do 
+      not have an mqpar.xml, you can generate one using the MaxQuant GUI or use
+      --create option. An existing file is staged through input_files.
     inputBinding:
       position: 1
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the mqpar.xml (mqpar.xml itself, fasta files, raw files).
+      They are staged in the working directory so relative paths resolve.
   - id: change_folder
     type:
       - 'null'
@@ -60,6 +73,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: created_mqpar
+    type:
+      - 'null'
+      - File
+    doc: The template parameter file written by --create
+    outputBinding:
+      glob: $(inputs.mqpar_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1

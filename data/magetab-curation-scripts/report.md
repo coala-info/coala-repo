@@ -1,5 +1,13 @@
 # magetab-curation-scripts CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| magetab-curation-scripts_gal2adf.pl | PASS |  |
+| magetab-curation-scripts_magetab_insert_array.pl | Not completed | needs the ArrayExpress Submissions Tracking database and a submitter account |
+| magetab-curation-scripts_validate_magetab.pl | PASS | experiment mode (-i) works; ADF mode (-a) crashes after the checks on an empty site-config path |
+
 ## magetab-curation-scripts_validate_magetab.pl
 
 ### Tool Description

@@ -31,6 +31,9 @@ outputs:
     doc: Output dir.
     outputBinding:
       glob: $(inputs.ref_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/matam:1.6.2--haf24da9_0

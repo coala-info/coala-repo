@@ -1,5 +1,11 @@
 # md5sum CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| md5sum | PASS |  |
+
 ## md5sum
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # maxalign-rs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maxalign-rs | PASS |  |
+
 ## maxalign-rs
 
 ### Tool Description

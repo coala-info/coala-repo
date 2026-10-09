@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - csmap2nt
 label: maq_csmap2nt
-doc: "Convert cs.map to nt.map\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Convert cs.map to nt.map\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: out_nt_map
     type: string

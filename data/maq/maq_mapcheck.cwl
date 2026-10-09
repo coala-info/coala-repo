@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - mapcheck
 label: maq_mapcheck
-doc: "Check mapping quality of reads.\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Check mapping quality of reads.\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: chr_bfa
     type: File

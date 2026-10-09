@@ -1,5 +1,11 @@
 # medcon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| medcon | PASS |  |
+
 ## medcon
 
 ### Tool Description

@@ -13,7 +13,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log file
     inputBinding:
       position: 101
@@ -26,16 +26,23 @@ inputs:
       prefix: -o
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -output
 outputs:
   - id: output_file
     type: File
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # maude CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maude | PASS |  |
+
 ## maude
 
 ### Tool Description

@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - bfq2fastq
 label: maq_bfq2fastq
-doc: "Convert .bfq files to .fastq files\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Convert .bfq files to .fastq files\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: input_bfq
     type: File

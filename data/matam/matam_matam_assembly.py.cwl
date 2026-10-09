@@ -194,10 +194,17 @@ inputs:
     inputBinding:
       position: 101
       prefix: --read_correction
+  - id: ref_db_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The index files of the MATAM reference database (made by
+      matam_db_preprocessing.py), staged in the working directory.
   - id: ref_db
     type:
       - 'null'
-      - Directory
+      - string
     doc: "MATAM ref db. Default is\n                                             \
       \                            $MATAM_DIR/db/SILVA_128_SSURef_NR95"
     inputBinding:
@@ -272,6 +279,10 @@ outputs:
     doc: Output directory.Default will be "matam_assembly"
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "${ return inputs.ref_db_files ? inputs.ref_db_files : []; }"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/matam:1.6.2--haf24da9_0

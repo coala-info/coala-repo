@@ -1,5 +1,11 @@
 # mbuffer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mbuffer | PASS |  |
+
 ## mbuffer
 
 ### Tool Description

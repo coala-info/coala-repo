@@ -10,14 +10,18 @@ inputs:
   - id: assume_no_untemplated
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols: ['True', 'False']
     doc: If True, assume no untemplated insertions. If False, do not make this 
       assumption.
     inputBinding:
       position: 101
       prefix: --assume_no_untemplated
   - id: file_type
-    type: string
+    type:
+      type: enum
+      symbols: [arriba, breakdancer, breakseq, chimerascan, cnvnator, defuse, delly,
+        manta, mavis, pindel, starfusion, straglr, strelka, transabyss, vcf]
     doc: Indicates the input file type to be parsed
     inputBinding:
       position: 101
@@ -33,7 +37,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: redirect stdout to a log file
     inputBinding:
       position: 101
@@ -49,7 +53,8 @@ inputs:
   - id: strand_specific
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols: ['True', 'False']
     doc: If True, assume strand specificity. If False, do not assume strand 
       specificity.
     inputBinding:
@@ -66,6 +71,13 @@ outputs:
     doc: path to the outputfile
     outputBinding:
       glob: $(inputs.outputfile_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: log file
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

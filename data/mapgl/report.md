@@ -1,5 +1,11 @@
 # mapgl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mapgl_mapGL.py | PASS | output matches the expected results of the tool example for default, no_prune and full_labels runs |
+
 ## mapgl_mapGL.py
 
 ### Tool Description

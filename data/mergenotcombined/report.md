@@ -1,5 +1,11 @@
 # mergenotcombined CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mergenotcombined_mergeNotCombined | PASS | nf-core SARS-CoV-2 paired Illumina reads: all 100 pairs merged as forward + NNN + reverse complement with matching qualities |
+
 ## mergenotcombined_mergeNotCombined
 
 ### Tool Description

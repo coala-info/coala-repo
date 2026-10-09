@@ -20,7 +20,7 @@ inputs:
   - id: db
     type:
       - 'null'
-      - File
+      - Directory
     doc: "Path to reference database. By default, the IMAGEN_DB\n                \
       \     environmental variable is used"
     inputBinding:

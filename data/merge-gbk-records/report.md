@@ -1,5 +1,11 @@
 # merge-gbk-records CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| merge-gbk-records | PASS | NCBI phiX174 and lambda GenBank files: merged record is 54888 bp (5386 + 1 kbp spacer + 48502) with all 84 CDS features; note --spacer stop crashes with a float-times-sequence error in the tool |
+
 ## merge-gbk-records
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # melon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| melon | Not completed | ran fine, but the only small Melon test database is too small to assign any species (real Bacteroides fragilis reads gave 17 marker reads but no species), so the answer cannot be confirmed. |
+
 ## melon
 
 ### Tool Description

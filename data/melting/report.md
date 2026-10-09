@@ -1,5 +1,11 @@
 # melting CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| melting | Failed | image problem: the thermodynamic parameter files (Data folder, NN_PATH) are missing from the image, so every run prints 'Cannot find where the thermodynamic parameters are located'. |
+
 ## melting
 
 ### Tool Description

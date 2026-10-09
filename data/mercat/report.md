@@ -1,5 +1,11 @@
 # mercat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mercat | Failed | tool bug: repeated k-mers are over-counted (AAA counted 10 times, true count 4; SARS-CoV-2 genome counts are squared); CWL fixed to stage the input writable and collect mercat_results |
+
 ## mercat
 
 ### Tool Description

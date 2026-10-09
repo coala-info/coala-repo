@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maq_glfgen
+baseCommand:
+  - maq
+  - glfgen
 label: maq_glfgen
-doc: "Generate GLF file from maq assembly\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Generate GLF file from maq assembly\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
-  - id: output_cns
+  - id: output_glz_name
     type: string
-    doc: Output consensus file
+    doc: Output .glz file
     inputBinding:
       position: 1
   - id: chr_bfa
@@ -87,13 +89,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_cns_out
-    type:
-      - 'null'
-      - File
-    doc: Output consensus file
+  - id: output_glz
+    type: File
+    doc: Output .glz file
     outputBinding:
-      glob: $(inputs.output_cns)
+      glob: $(inputs.output_glz_name)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maq:v0.7.1-8-deb_cv1

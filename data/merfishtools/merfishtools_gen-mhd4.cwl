@@ -6,6 +6,9 @@ baseCommand:
 label: merfishtools_gen-mhd4
 doc: "Generate MERFISH MHD4 codebook with given parameters.\n\nTool homepage: https://merfishtools.github.io"
 inputs:
+  - id: transcript_names
+    type: File
+    doc: List of transcript (feature) names, one per line, read from standard input.
   - id: not_expressed
     type:
       - 'null'
@@ -30,3 +33,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merfishtools:1.5.0--py312h9d36253_3
 stdout: merfishtools_gen-mhd4.out
+stdin: $(inputs.transcript_names.path)

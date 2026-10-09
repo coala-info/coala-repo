@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - MendelScan.jar
+  - mendelscan
   - trio
 label: mendelscan_trio
 doc: "MendelScan trio analysis\n\nTool homepage: https://github.com/genome/mendelscan"

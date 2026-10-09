@@ -1,5 +1,14 @@
 # malva CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| malva_MALVA | PASS |  |
+| malva_kmc | PASS |  |
+| malva_malva-geno_call | PASS |  |
+| malva_malva-geno_index | PASS |  |
+
 ## malva_MALVA
 
 ### Tool Description
@@ -90,10 +99,10 @@ kmc -k27 -m24 @files.lst NA.res /data/kmc_tmp_dir/
 ```
 
 
-## malva_malva-geno
+## malva_malva-geno_index
 
 ### Tool Description
-Top notch description of this tool
+Build the MALVA index of the known variants.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/malva:2.0.0--h7071971_4
@@ -103,7 +112,6 @@ Top notch description of this tool
 
 ### Original Help Text
 ```text
-malva missing arguments
 Usage: malva-geno [-k KMER-SIZE] [-r REF-KMER-SIZE] [-c MAX-COV] <reference.fa> <variants.vcf> <kmc_output_prefix>
 
 Top notch description of this tool
@@ -122,6 +130,36 @@ Top notch description of this tool
       -1, --haploid                     run MALVA in haploid mode (default: false)
 ```
 
+## malva_malva-geno_call
+
+### Tool Description
+Genotype the known variants from KMC k-mer counts of a sample.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/malva:2.0.0--h7071971_4
+- **Homepage**: https://algolab.github.io/malva/
+- **Package**: https://anaconda.org/channels/bioconda/packages/malva/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: malva-geno [-k KMER-SIZE] [-r REF-KMER-SIZE] [-c MAX-COV] <reference.fa> <variants.vcf> <kmc_output_prefix>
+
+Top notch description of this tool
+
+      -h, --help                        display this help and exit
+      -k, --kmer-size                   size of the kmers to index (default:35)
+      -r, --ref-kmer-size               size of the reference kmers to index (default:43)
+      -e, --error-rate                  expected sample error rate (default:0.001)
+      -s, --samples                     file containing the list of (VCF) samples to consider (default:-, i.e. all samples)
+      -f, --freq-key                    a priori frequency key in the INFO column of the input VCF (default:AF)
+      -c, --max-coverage                maximum coverage for variant alleles (default:200)
+      -b, --bf-size                     bloom filter size in GB (default:4)
+      -p, --strip-chr                   strip "chr" from sequence names (default:false)
+      -u, --uniform                     use uniform a priori probabilities (default:false)
+      -v, --verbose                     output COVS and GTS in INFO column (default: false)
+      -1, --haploid                     run MALVA in haploid mode (default: false)
+```
 
 ## Metadata
 - **Skill**: generated

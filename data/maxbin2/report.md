@@ -1,5 +1,11 @@
 # maxbin2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maxbin2 | PASS |  |
+
 ## maxbin2
 
 ### Tool Description

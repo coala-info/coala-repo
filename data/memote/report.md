@@ -1,5 +1,17 @@
 # memote CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| memote_history | Not completed | needs a git repository with commit history in the working directory; none exists in the container run |
+| memote_new | Not completed | interactive template questions and a git clone of the cookiecutter template from GitHub; Docker has no network here |
+| memote_online | Not completed | needs a GitHub account, token and network; uploads a repository to GitHub |
+| memote_report_diff | PASS | E. coli core and iAB_RBC_283 SBML models: HTML diff report written and names both models |
+| memote_report_history | Not completed | needs a git repository with commit history in the working directory; none exists in the container run |
+| memote_report_snapshot | PASS | E. coli core SBML model: HTML report written and holds the model name and biomass flux 0.8739 |
+| memote_run | PASS | E. coli core SBML model: result.json.gz holds 77 tests and the biomass flux 0.8739 matches the known value |
+
 ## memote_history
 
 ### Tool Description
@@ -125,33 +137,6 @@ Options:
 ```
 
 
-## memote_report
-
-### Tool Description
-Generate one of three different types of reports.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/memote:0.17.0--pyhdfd78af_0
-- **Homepage**: https://memote.readthedocs.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/memote/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: memote report [OPTIONS] COMMAND [ARGS]...
-
-  Generate one of three different types of reports.
-
-Options:
-  -h, --help  Show this message and exit.
-
-Commands:
-  diff      Take a snapshot of all the supplied models and generate a...
-  history   Generate a report over a model's git commit history.
-  snapshot  Take a snapshot of a model's state and generate a report.
-```
-
-
 ## memote_run
 
 ### Tool Description
@@ -213,6 +198,152 @@ Options:
                                   was not changed.
 ```
 
+
+## memote_report_snapshot
+
+### Tool Description
+Take a snapshot of a model's state and generate a report.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/memote:0.17.0--pyhdfd78af_0
+- **Homepage**: https://memote.readthedocs.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/memote/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: memote report snapshot [OPTIONS] MODEL
+
+  Take a snapshot of a model's state and generate a report.
+
+  MODEL: Path to model file. Can also be supplied via the environment variable
+  MEMOTE_MODEL or configured in 'setup.cfg' or 'memote.ini'.
+
+Options:
+  -h, --help                      Show this message and exit.
+  --filename PATH                 Path for the HTML report output.  [default:
+                                  index.html]
+  -a, --pytest-args TEXT          Any additional arguments you want to pass to
+                                  pytest. Should be given as one continuous
+                                  string.
+  --exclusive TEST                The name of a test or test module to be run
+                                  exclusively. All other tests are skipped.
+                                  This option can be used multiple times and
+                                  takes precedence over '--skip'.
+  --skip TEST                     The name of a test or test module to be
+                                  skipped. This option can be used multiple
+                                  times.
+  --solver [glpk|cplex|gurobi|glpk_exact|hybrid]
+                                  Set the solver to be used.  [default: glpk]
+  --solver-timeout INTEGER        Timeout in seconds to set on the
+                                  mathematical optimization solver.
+  --experimental FILE             Define additional tests using experimental
+                                  data.
+  --custom-tests DIRECTORY        A path to a directory containing custom test
+                                  modules. Please refer to the documentation
+                                  for more information on how to write custom
+                                  tests. May be specified multiple times.
+  --custom-config FILE            A path to a report configuration file that
+                                  will be merged into the default
+                                  configuration. It's primary use is to
+                                  configure the placement and scoring of
+                                  custom tests but it can also alter the
+                                  default behavior. Please refer to the
+                                  documentation for the expected YAML format
+                                  used. This option can be specified multiple
+                                  times.
+```
+
+## memote_report_diff
+
+### Tool Description
+Take a snapshot of all the supplied models and generate a diff report.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/memote:0.17.0--pyhdfd78af_0
+- **Homepage**: https://memote.readthedocs.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/memote/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: memote report diff [OPTIONS] [MODELS]...
+
+  Take a snapshot of all the supplied models and generate a diff report.
+
+  MODELS: List of paths to two or more model files.
+
+Options:
+  -h, --help                      Show this message and exit.
+  --filename PATH                 Path for the HTML report output.  [default:
+                                  index.html]
+  -a, --pytest-args TEXT          Any additional arguments you want to pass to
+                                  pytest. Should be given as one continuous
+                                  string.
+  --exclusive TEST                The name of a test or test module to be run
+                                  exclusively. All other tests are skipped.
+                                  This option can be used multiple times and
+                                  takes precedence over '--skip'.
+  --skip TEST                     The name of a test or test module to be
+                                  skipped. This option can be used multiple
+                                  times.
+  --solver [glpk|cplex|gurobi|glpk_exact|hybrid]
+                                  Set the solver to be used.  [default: glpk]
+  --solver-timeout INTEGER        Timeout in seconds to set on the
+                                  mathematical optimization solver.
+  --experimental FILE             Define additional tests using experimental
+                                  data.
+  --custom-tests DIRECTORY        A path to a directory containing custom test
+                                  modules. Please refer to the documentation
+                                  for more information on how to write custom
+                                  tests (memote.readthedocs.io). This option
+                                  can be specified multiple times.
+  --custom-config FILE            A path to a report configuration file that
+                                  will be merged into the default
+                                  configuration. It's primary use is to
+                                  configure the placement and scoring of
+                                  custom tests but it can also alter the
+                                  default behavior. Please refer to the
+                                  documentation for the expected YAML format
+                                  used (memote.readthedocs.io). This option
+                                  can be specified multiple times.
+```
+
+## memote_report_history
+
+### Tool Description
+Generate a report over a model's git commit history.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/memote:0.17.0--pyhdfd78af_0
+- **Homepage**: https://memote.readthedocs.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/memote/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: memote report history [OPTIONS]
+
+  Generate a report over a model's git commit history.
+
+Options:
+  -h, --help            Show this message and exit.
+  --location TEXT       Location of test results. Can either by a directory or
+                        an rfc1738 compatible database URL.
+  --model TEXT          The path of the model file. Used to check if it was
+                        modified.
+  --filename PATH       Path for the HTML report output.  [default:
+                        index.html]
+  --deployment TEXT     Results will be read from and committed to the given
+                        branch.  [default: gh-pages]
+  --custom-config FILE  A path to a report configuration file that will be
+                        merged into the default configuration. It's primary
+                        use is to configure the placement and scoring of
+                        custom tests but it can also alter the default
+                        behavior. Please refer to the documentation for the
+                        expected YAML format used. This option can be
+                        specified multiple times.
+```
 
 ## Metadata
 - **Skill**: generated

@@ -6,6 +6,10 @@ baseCommand:
 label: magpurify_conspecific
 doc: "Find contigs that fail to align to closely related genomes.\n\nTool homepage:
   https://github.com/snayfach/MAGpurify"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.ref_genomes)
 inputs:
   - id: fna
     type: File
@@ -22,6 +26,10 @@ inputs:
     doc: Path to Mash sketch of reference genomes
     inputBinding:
       position: 3
+  - id: ref_genomes
+    type: Directory
+    doc: Directory with the reference genome FASTA files named in the Mash sketch;
+      staged in the working directory so the relative names in the sketch resolve
   - id: contig_aln
     type:
       - 'null'
@@ -91,6 +99,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_out
+    type: Directory
+    doc: Output directory to store results and intermediate files
+    outputBinding:
+      glob: '$(inputs.out)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/magpurify:2.1.2--pyhdfd78af_2

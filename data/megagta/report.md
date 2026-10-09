@@ -1,5 +1,18 @@
 # megagta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| megagta_buildgraph | PASS |  |
+| megagta_buildlib | PASS |  |
+| megagta_denovo | PASS |  |
+| megagta_filterbylen | PASS |  |
+| megagta_findstart | PASS |  |
+| megagta_readstat | PASS |  |
+| megagta_search | PASS |  |
+| megagta_translate | PASS |  |
+
 ## megagta_buildlib
 
 ### Tool Description
@@ -122,6 +135,38 @@ Reads FASTQ files from standard input.
 ### Original Help Text
 ```text
 Usage: cat *.fq | readstat
+```
+
+## megagta_filterbylen
+
+### Tool Description
+Filter contigs by length (FASTA on standard input).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/megagta:0.1_alpha--0
+- **Homepage**: https://github.com/HKU-BAL/MegaGTA
+- **Package**: https://anaconda.org/channels/bioconda/packages/megagta/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: cat contigs.fa | filterbylen <min_len>
+```
+
+## megagta_translate
+
+### Tool Description
+Translate DNA sequences of a FASTA file to protein.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/megagta:0.1_alpha--0
+- **Homepage**: https://github.com/HKU-BAL/MegaGTA
+- **Package**: https://anaconda.org/channels/bioconda/packages/megagta/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: translate <nucl_seq>
 ```
 
 ## Metadata

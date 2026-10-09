@@ -1,11 +1,42 @@
 # mantis-msi2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mantis-msi2 | PASS | nf-core sarek tumor/normal BAMs on a small reference; read counts at the loci match a direct pysam count when the quality filters are off |
+| mantis-msi2_mantis-msi2-repeat-finder | PASS |  |
+
 ## mantis-msi2
 
 ### Tool Description
 Microsatellite Analysis for Normal-Tumor InStability (v2.0.0)
 
+### mantis-msi2_mantis-msi2-repeat-finder
+
+### Tool Description
+RepeatFinder: find microsatellite loci in a FASTA file and write them as a BED-like file for mantis-msi2.
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/mantis-msi2:2.0.0--h9948957_3
+- **Homepage**: https://github.com/nh13/MANTIS2/
+- **Package**: https://anaconda.org/channels/bioconda/packages/mantis-msi2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+RepeatFinder 1.0
+	-m: minimum number of bases a repeat region must span to be called a microsatellite. Default: 10
+	-M: maximum number of bases a repeat region must span to be called a microsatellite. Default: 100
+	-r: minimum number of repeats for a microsatellite to be called. Default: 3
+	-l: minimum k-mer length. Default: 1
+	-L: maximum k-mer length. Default: 5
+
+	-i: input FASTA file
+	-o: output microsatellites file
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/mantis-msi2:2.0.0--h9948957_3
 - **Homepage**: https://github.com/nh13/MANTIS2/
 - **Package**: https://anaconda.org/channels/bioconda/packages/mantis-msi2/overview

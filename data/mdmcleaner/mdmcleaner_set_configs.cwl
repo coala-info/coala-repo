@@ -9,7 +9,7 @@ inputs:
   - id: aragorn
     type:
       - 'null'
-      - File
+      - string
     doc: path to aragorn binaries (if not in PATH)
     inputBinding:
       position: 101
@@ -17,7 +17,7 @@ inputs:
   - id: barrnap
     type:
       - 'null'
-      - File
+      - string
     doc: path to barrnap binaries (if not in PATH)
     inputBinding:
       position: 101
@@ -25,7 +25,7 @@ inputs:
   - id: blastn
     type:
       - 'null'
-      - File
+      - string
     doc: path to blastn binaries (if not in PATH)
     inputBinding:
       position: 101
@@ -33,7 +33,7 @@ inputs:
   - id: blastp
     type:
       - 'null'
-      - File
+      - string
     doc: path to blastp binaries (if not in PATH)
     inputBinding:
       position: 101
@@ -41,7 +41,7 @@ inputs:
   - id: db_basedir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to basedirectory for reference database
     inputBinding:
       position: 101
@@ -49,7 +49,7 @@ inputs:
   - id: diamond
     type:
       - 'null'
-      - File
+      - string
     doc: path to diamond binaries (if not in PATH)
     inputBinding:
       position: 101
@@ -57,7 +57,7 @@ inputs:
   - id: hmmsearch
     type:
       - 'null'
-      - File
+      - string
     doc: path to hmmsearch binaries (if not in PATH)
     inputBinding:
       position: 101
@@ -81,6 +81,13 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: The local mdmcleaner.config file written by set_configs (scope local)
+    outputBinding:
+      glob: mdmcleaner.config
   - id: stdout
     type: stdout
     doc: Standard output

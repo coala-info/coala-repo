@@ -1,5 +1,11 @@
 # mdust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mdust | PASS |  |
+
 ## mdust
 
 ### Tool Description

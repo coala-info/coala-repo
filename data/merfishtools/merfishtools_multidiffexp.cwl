@@ -40,12 +40,17 @@ inputs:
       position: 102
       prefix: --threads
   - id: cdf_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Path to write CDFs of CVs to.
     inputBinding:
       position: 103
       prefix: --cdf
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: cdf_file
     type:
       - 'null'
@@ -58,3 +63,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merfishtools:1.5.0--py312h9d36253_3
+stdout: merfishtools_multidiffexp.out

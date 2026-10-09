@@ -30,8 +30,8 @@ inputs:
   - id: mapping_file
     type:
       - 'null'
-      - string
-    doc: Mapping file from reference name to taxonomy ID
+      - File
+    doc: Mapping file from reference name to taxonomy ID (lines of taxonomy ID, tab, reference name)
     inputBinding:
       position: 103
       prefix: -m

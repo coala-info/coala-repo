@@ -1,5 +1,11 @@
 # mdasim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mdasim | PASS | options now use the --name=value form the tool needs |
+
 ## mdasim
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # mapad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mapad_index | PASS |  |
+| mapad_map | PASS | mapped 98 of 100 SARS-CoV-2 test reads |
+| mapad_worker | Not completed | worker process needs a running dispatcher over the network; long-running server mode |
+
 ## mapad_index
 
 ### Tool Description

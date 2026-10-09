@@ -1,5 +1,11 @@
 # manorm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| manorm | PASS |  |
+
 ## manorm
 
 ### Tool Description

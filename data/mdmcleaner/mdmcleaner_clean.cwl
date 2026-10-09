@@ -71,7 +71,7 @@ inputs:
   - id: outblacklist
     type:
       - 'null'
-      - File
+      - string
     doc: Outputfile for new blacklist additions. If a preexisting file is 
       selected, additions will be appended to end of that file
     inputBinding:
@@ -102,6 +102,13 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
+  - id: outblacklist_file
+    type:
+      - 'null'
+      - File
+    doc: new blacklist additions
+    outputBinding:
+      glob: $(inputs.outblacklist)
   - id: stdout
     type: stdout
     doc: Standard output

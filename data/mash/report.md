@@ -1,5 +1,18 @@
 # mash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mash_bounds | PASS |  |
+| mash_dist | PASS |  |
+| mash_info | PASS |  |
+| mash_paste | PASS |  |
+| mash_screen | PASS |  |
+| mash_sketch | PASS |  |
+| mash_taxscreen | PASS | synthetic data: reference-to-taxon mapping file planted on real sarscov2 reads and taxonomy |
+| mash_triangle | PASS |  |
+
 ## mash_bounds
 
 ### Tool Description

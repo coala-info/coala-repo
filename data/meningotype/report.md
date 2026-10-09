@@ -1,5 +1,11 @@
 # meningotype CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| meningotype | PASS | Galaxy test genome: PorA 21-15,16, FetA F1-7, fHbp 27, NHBA 798 and NadA 0 match the Galaxy expected output; six allele FASTA files written |
+
 ## meningotype
 
 ### Tool Description

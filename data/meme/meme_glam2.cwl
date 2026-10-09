@@ -9,12 +9,12 @@ inputs:
     type: string
     doc: p = proteins, n = nucleotides, other = alphabet file
     inputBinding:
-      position: 1
+      position: 200
   - id: sequences
     type: File
     doc: Input sequence file (e.g., my_seqs.fa)
     inputBinding:
-      position: 2
+      position: 201
   - id: both_strands
     type:
       - 'null'
@@ -207,39 +207,29 @@ inputs:
     inputBinding:
       position: 103
       prefix: -X
-  - id: output_dir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 104
-      prefix: --output-dir
-  - id: output_dir_clobber_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_dir_clobber_path`
-    inputBinding:
-      position: 105
-      prefix: --output-dir-clobber
-outputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
-    doc: output directory; will not clobber existing files
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir_clobber
+      - string
+    default: glam2_out
+    doc: output directory (replaced if it exists)
+    inputBinding:
+      position: 150
+      prefix: -O
+outputs:
+  - id: output_dir_out
     type:
       - 'null'
       - Directory
-    doc: output directory; allow clobbering
+    doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir_clobber_path)
+      glob: $(inputs.output_dir)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0
+stdout: meme_glam2.out

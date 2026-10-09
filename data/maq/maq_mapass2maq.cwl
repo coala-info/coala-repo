@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - mapass2maq
 label: maq_mapass2maq
-doc: "Convert mapass2.map to maq.map format\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Convert mapass2.map to maq.map format\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: mapass2_map_file
     type: File

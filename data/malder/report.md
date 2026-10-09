@@ -1,5 +1,11 @@
 # malder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| malder | PASS | synthetic data: simulated admixed population with 3 references; fitted decay 32 generations against 30 planted |
+
 ## malder
 
 ### Tool Description

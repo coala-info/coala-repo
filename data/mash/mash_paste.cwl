@@ -27,6 +27,13 @@ inputs:
       position: 103
       prefix: -l
 outputs:
+  - id: pasted_sketch
+    type:
+      - 'null'
+      - File
+    doc: Pasted sketch file (<out_prefix>.msh)
+    outputBinding:
+      glob: $(inputs.out_prefix).msh
   - id: stdout
     type: stdout
     doc: Standard output

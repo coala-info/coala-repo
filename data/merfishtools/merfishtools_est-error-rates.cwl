@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: raw_data
-    type: string
+    type: File
     doc: 'Raw data containing molecule assignments to positions. If given as TSV file
       (ending on .tsv), the following columns are expected: cell, feature, readout.
       Otherwise, the official MERFISH binary format is expected.'

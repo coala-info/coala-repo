@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - mapview
 label: maq_mapview
-doc: "View alignments in a map file\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "View alignments in a map file\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: input_map_file
     type: File

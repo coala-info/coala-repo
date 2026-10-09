@@ -1,5 +1,17 @@
 # mason CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mason_mason_frag_sequencing | PASS |  |
+| mason_mason_genome | PASS |  |
+| mason_mason_materializer | PASS |  |
+| mason_mason_methylation | PASS |  |
+| mason_mason_simulator | PASS |  |
+| mason_mason_splicing | PASS |  |
+| mason_mason_variator | PASS |  |
+
 ## mason_mason_variator
 
 ### Tool Description
@@ -606,6 +618,662 @@ VERSION
     SeqAn version: 2.5.2
 ```
 
+
+## mason_mason_frag_sequencing
+
+### Tool Description
+Given a FASTA file with fragments, simulate sequencing thereof.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mason:2.0.13--h7f3286b_0
+- **Homepage**: https://www.seqan.de/apps/mason.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/mason/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+mason_frag_sequencing - Fragment Sequencing Simulation
+======================================================
+
+SYNOPSIS
+    mason_frag_sequencing [OPTIONS] -i IN.fa -o OUT.{fa,fq} [-or OUT2.{fa,fq}]
+
+DESCRIPTION
+    Given a FASTA file with fragments, simulate sequencing thereof.
+
+    This program is a more lightweight version of mason_sequencing without
+    support for the application of VCF and fragment sampling. Output of SAM is
+    also not available. However, it uses the same code for the simulation of
+    the reads as the more powerful mason_simulator.
+
+    You can use mason_frag_sequencing if you want to implement you rown
+    fragmentation behaviour, e.g. if you have implemented your own bias
+    models.
+
+OPTIONS
+    -h, --help
+          Display the help message.
+    --version-check BOOL
+          Turn this option off to disable version update notifications of the
+          application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
+          Default: 1.
+    --version
+          Display version information.
+    -q, --quiet
+          Low verbosity.
+    -v, --verbose
+          Higher verbosity.
+    -vv, --very-verbose
+          Highest verbosity.
+    --seed UINT64
+          Seed to use for random number generator. Default: 0.
+    -i, --in INPUT_FILE
+          Path to input file. Valid filetypes are: .sam[.*], .raw[.*],
+          .gbk[.*], .frn[.*], .fq[.*], .fna[.*], .ffn[.*], .fastq[.*],
+          .fasta[.*], .fas[.*], .faa[.*], .fa[.*], .embl[.*], and .bam, where
+          * is any of the following extensions: gz, bz2, and bgzf for
+          transparent (de)compression.
+    -o, --out OUTPUT_FILE
+          Output of single-end/left end reads. Valid filetypes are: .sam[.*],
+          .raw[.*], .frn[.*], .fq[.*], .fna[.*], .ffn[.*], .fastq[.*],
+          .fasta[.*], .fas[.*], .faa[.*], .fa[.*], and .bam, where * is any of
+          the following extensions: gz, bz2, and bgzf for transparent
+          (de)compression.
+    -or, --out-right OUTPUT_FILE
+          Output of right reads. Giving this options enables paired-end
+          simulation. Valid filetypes are: .sam[.*], .raw[.*], .frn[.*],
+          .fq[.*], .fna[.*], .ffn[.*], .fastq[.*], .fasta[.*], .fas[.*],
+          .faa[.*], .fa[.*], and .bam, where * is any of the following
+          extensions: gz, bz2, and bgzf for transparent (de)compression.
+    --force-single-end
+          Force single-end simulation although --out-right is given.
+
+  Global Read Simulation Options:
+    --seq-technology STRING
+          Set sequencing technology to simulate. One of illumina, 454, and
+          sanger. Default: illumina.
+    --seq-mate-orientation STRING
+          Orientation for paired reads. See section Read Orientation below.
+          One of FR, RF, FF, and FF2. Default: FR.
+    --seq-strands STRING
+          Strands to simulate from, only applicable to paired sequencing
+          simulation. One of forward, reverse, and both. Default: both.
+    --embed-read-info
+          Whether or not to embed read information.
+    --read-name-prefix STRING
+          Read names will have this prefix. Default: simulated..
+
+  BS-Seq Options:
+    --enable-bs-seq
+          Enable BS-seq simulation.
+    --bs-seq-protocol STRING
+          Protocol to use for BS-Seq simulation. One of directional and
+          undirectional. Default: directional.
+    --bs-seq-conversion-rate DOUBLE
+          Conversion rate for unmethylated Cs to become Ts. In range [0..1].
+          Default: 0.99.
+
+  Illumina Options:
+    --illumina-read-length INTEGER
+          Read length for Illumina simulation. In range [1..inf]. Default:
+          100.
+    --illumina-error-profile-file INPUT_FILE
+          Path to file with Illumina error profile. The file must be a text
+          file with floating point numbers separated by space, each giving a
+          positional error rate. Valid filetype is: .txt.
+    --illumina-prob-insert DOUBLE
+          Insert per-base probability for insertion in Illumina sequencing. In
+          range [0..1]. Default: 0.00005.
+    --illumina-prob-deletion DOUBLE
+          Insert per-base probability for deletion in Illumina sequencing. In
+          range [0..1]. Default: 0.00005.
+    --illumina-prob-mismatch-scale DOUBLE
+          Scaling factor for Illumina mismatch probability. In range [0..inf].
+          Default: 1.0.
+    --illumina-prob-mismatch DOUBLE
+          Average per-base mismatch probability in Illumina sequencing. In
+          range [0.0..1.0]. Default: 0.004.
+    --illumina-prob-mismatch-begin DOUBLE
+          Per-base mismatch probability of first base in Illumina sequencing.
+          In range [0.0..1.0]. Default: 0.002.
+    --illumina-prob-mismatch-end DOUBLE
+          Per-base mismatch probability of last base in Illumina sequencing.
+          In range [0.0..1.0]. Default: 0.012.
+    --illumina-position-raise DOUBLE
+          Point where the error curve raises in relation to read length. In
+          range [0.0..1.0]. Default: 0.66.
+    --illumina-quality-mean-begin DOUBLE
+          Mean PHRED quality for non-mismatch bases of first base in Illumina
+          sequencing. Default: 40.0.
+    --illumina-quality-mean-end DOUBLE
+          Mean PHRED quality for non-mismatch bases of last base in Illumina
+          sequencing. Default: 39.5.
+    --illumina-quality-stddev-begin DOUBLE
+          Standard deviation of PHRED quality for non-mismatch bases of first
+          base in Illumina sequencing. Default: 0.05.
+    --illumina-quality-stddev-end DOUBLE
+          Standard deviation of PHRED quality for non-mismatch bases of last
+          base in Illumina sequencing. Default: 10.0.
+    --illumina-mismatch-quality-mean-begin DOUBLE
+          Mean PHRED quality for mismatch bases of first base in Illumina
+          sequencing. Default: 40.0.
+    --illumina-mismatch-quality-mean-end DOUBLE
+          Mean PHRED quality for mismatch bases of last base in Illumina
+          sequencing. Default: 30.0.
+    --illumina-mismatch-quality-stddev-begin DOUBLE
+          Standard deviation of PHRED quality for mismatch bases of first base
+          in Illumina sequencing. Default: 3.0.
+    --illumina-mismatch-quality-stddev-end DOUBLE
+          Standard deviation of PHRED quality for mismatch bases of last base
+          in Illumina sequencing. Default: 15.0.
+    --illumina-left-template-fastq INPUT_FILE
+          FASTQ file to use for a template for left-end reads. Valid filetypes
+          are: .sam[.*], .raw[.*], .gbk[.*], .frn[.*], .fq[.*], .fna[.*],
+          .ffn[.*], .fastq[.*], .fasta[.*], .fas[.*], .faa[.*], .fa[.*],
+          .embl[.*], and .bam, where * is any of the following extensions: gz,
+          bz2, and bgzf for transparent (de)compression.
+    --illumina-right-template-fastq INPUT_FILE
+          FASTQ file to use for a template for right-end reads. Valid
+          filetypes are: .sam[.*], .raw[.*], .gbk[.*], .frn[.*], .fq[.*],
+          .fna[.*], .ffn[.*], .fastq[.*], .fasta[.*], .fas[.*], .faa[.*],
+          .fa[.*], .embl[.*], and .bam, where * is any of the following
+          extensions: gz, bz2, and bgzf for transparent (de)compression.
+
+  Sanger Sequencing Options:
+    --sanger-read-length-model STRING
+          The model to use for sampling the Sanger read length. One of normal
+          and uniform. Default: normal.
+    --sanger-read-length-min INTEGER
+          The minimal read length when the read length is sampled uniformly.
+          In range [0..inf]. Default: 400.
+    --sanger-read-length-max INTEGER
+          The maximal read length when the read length is sampled uniformly.
+          In range [0..inf]. Default: 600.
+    --sanger-read-length-mean DOUBLE
+          The mean read length when the read length is sampled with normal
+          distribution. In range [0..inf]. Default: 400.
+    --sanger-read-length-error DOUBLE
+          The read length standard deviation when the read length is sampled
+          uniformly. In range [0..inf]. Default: 40.
+    --sanger-prob-mismatch-scale DOUBLE
+          Scaling factor for Sanger mismatch probability. In range [0..inf].
+          Default: 1.0.
+    --sanger-prob-mismatch-begin DOUBLE
+          Per-base mismatch probability of first base in Sanger sequencing. In
+          range [0.0..1.0]. Default: 0.005.
+    --sanger-prob-mismatch-end DOUBLE
+          Per-base mismatch probability of last base in Sanger sequencing. In
+          range [0.0..1.0]. Default: 0.001.
+    --sanger-prob-insertion-begin DOUBLE
+          Per-base insertion probability of first base in Sanger sequencing.
+          In range [0.0..1.0]. Default: 0.0025.
+    --sanger-prob-insertion-end DOUBLE
+          Per-base insertion probability of last base in Sanger sequencing. In
+          range [0.0..1.0]. Default: 0.005.
+    --sanger-prob-deletion-begin DOUBLE
+          Per-base deletion probability of first base in Sanger sequencing. In
+          range [0.0..1.0]. Default: 0.0025.
+    --sanger-prob-deletion-end DOUBLE
+          Per-base deletion probability of last base in Sanger sequencing. In
+          range [0.0..1.0]. Default: 0.005.
+    --sanger-quality-match-start-mean DOUBLE
+          Mean PHRED quality for non-mismatch bases of first base in Sanger
+          sequencing. Default: 40.0.
+    --sanger-quality-match-end-mean DOUBLE
+          Mean PHRED quality for non-mismatch bases of last base in Sanger
+          sequencing. Default: 39.5.
+    --sanger-quality-match-start-stddev DOUBLE
+          Mean PHRED quality for non-mismatch bases of first base in Sanger
+          sequencing. Default: 0.1.
+    --sanger-quality-match-end-stddev DOUBLE
+          Mean PHRED quality for non-mismatch bases of last base in Sanger
+          sequencing. Default: 2.
+    --sanger-quality-error-start-mean DOUBLE
+          Mean PHRED quality for erroneous bases of first base in Sanger
+          sequencing. Default: 30.
+    --sanger-quality-error-end-mean DOUBLE
+          Mean PHRED quality for erroneous bases of last base in Sanger
+          sequencing. Default: 20.
+    --sanger-quality-error-start-stddev DOUBLE
+          Mean PHRED quality for erroneous bases of first base in Sanger
+          sequencing. Default: 2.
+    --sanger-quality-error-end-stddev DOUBLE
+          Mean PHRED quality for erroneous bases of last base in Sanger
+          sequencing. Default: 5.
+
+  454 Sequencing Options:
+    --454-read-length-model STRING
+          The model to use for sampling the 454 read length. One of normal and
+          uniform. Default: normal.
+    --454-read-length-min INTEGER
+          The minimal read length when the read length is sampled uniformly.
+          In range [0..inf]. Default: 10.
+    --454-read-length-max INTEGER
+          The maximal read length when the read length is sampled uniformly.
+          In range [0..inf]. Default: 600.
+    --454-read-length-mean DOUBLE
+          The mean read length when the read length is sampled with normal
+          distribution. In range [0..inf]. Default: 400.
+    --454-read-length-stddev DOUBLE
+          The read length standard deviation when the read length is sampled
+          with normal distribution. In range [0..inf]. Default: 40.
+    --454-no-sqrt-in-std-dev
+          For error model, if set then (sigma = k * r)) is used, otherwise
+          (sigma = k * sqrt(r)).
+    --454-proportionality-factor DOUBLE
+          Proportionality factor for calculating the standard deviation
+          proportional to the read length. In range [0..inf]. Default: 0.15.
+    --454-background-noise-mean DOUBLE
+          Mean of lognormal distribution to use for the noise. In range
+          [0..inf]. Default: 0.23.
+    --454-background-noise-stddev DOUBLE
+          Standard deviation of lognormal distribution to use for the noise.
+          In range [0..inf]. Default: 0.15.
+
+SEQUENCING SIMULATION
+    Simulation of base qualities is disabled when writing out FASTA files.
+    Simulation of paired-end sequencing is enabled when specifying two output
+    files.
+
+READ ORIENTATION
+    You can use the --mate-orientation to set the relative orientation when
+    doing paired-end sequencing. The valid values are given in the following.
+
+    FR    Reads are inward-facing, the same as Illumina paired-end reads: R1
+          --> <-- R2.
+    RF    Reads are outward-facing, the same as Illumina mate-pair reads: R1
+          <-- --> R2.
+    FF    Reads are on the same strand: R1 --> --> R2.
+    FF2   Reads are on the same strand but the "right" reads are sequenced to
+          the left of the "left" reads, same as 454 paired: R2 --> --> R1.
+
+PARALLELISM
+    General
+          The contigs are processed sequentially. For each contig, the
+          fragments/reads are simulated in parallel by `--num-threads` many
+          threads. The threads simulate batches of `chunks-size` many
+          fragments each. This is done until no more fragments are left to be
+          simulated.
+    CPU-Utilization
+          When the number of fragments to simulate per contig is low, it may
+          happen that not all threads are utilized. For example, when there
+          are 20,000 fragments to simulate for a contig, 32 threads are
+          available, and each thread simulates batches of 1000
+          (`--chunk-size`) fragments, only 20 threads are utilized. Hence,
+          `--chunk-size` affects CPU-utilization. However, very low
+          chunk-sizes also lead to a large overhead, especially when using
+          only one thread. While we set a sensible default, perfomance gains
+          may be achieved by trying different chunk-sizes.
+    Randomization
+          Both `--chunk-size` and `--num-threads` affect randomization.
+          Different values for these parameters yield different results.
+
+VERSION
+    Last update: 
+    mason_frag_sequencing version: 2.0.13 [tarball]
+    SeqAn version: 2.5.2
+```
+
+## mason_mason_genome
+
+### Tool Description
+Simulate a random genome to the output file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mason:2.0.13--h7f3286b_0
+- **Homepage**: https://www.seqan.de/apps/mason.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/mason/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+mason_genome - Random Genome Simulation
+=======================================
+
+SYNOPSIS
+    mason_genome [OPTIONS] [-l LEN]+ -o OUT.fa
+
+DESCRIPTION
+    Simulate a random genome to the output file. For each -l/--contig-length
+    entry, a contig with the given length will be simulated.
+
+OPTIONS
+    -h, --help
+          Display the help message.
+    --version-check BOOL
+          Turn this option off to disable version update notifications of the
+          application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
+          Default: 1.
+    --version
+          Display version information.
+    -q, --quiet
+          Set verbosity to a minimum.
+    -v, --verbose
+          Enable verbose output.
+    -vv, --very-verbose
+          Enable very verbose output.
+
+  Simulation Configuration:
+    -l, --contig-length List of INT64's
+          Length of the contig to simulate. Give one -l value for each contig
+          to simulate. In range [1..inf].
+    -s, --seed INTEGER
+          The seed to use for the random number generator. Default: 42.
+
+  Output Options:
+    -o, --out-file OUTPUT_FILE
+          Output file. Valid filetypes are: .sam[.*], .raw[.*], .frn[.*],
+          .fq[.*], .fna[.*], .ffn[.*], .fastq[.*], .fasta[.*], .fas[.*],
+          .faa[.*], .fa[.*], and .bam, where * is any of the following
+          extensions: gz, bz2, and bgzf for transparent (de)compression.
+
+EXAMPLES
+    mason_genome -l 1000 -l 4000 -o genome.fa
+          Simulate a genome with two contigs of lengths 1000 and 4000 and
+          write it to genome.fa.
+
+VERSION
+    Last update: 
+    mason_genome version: 2.0.13 [tarball]
+    SeqAn version: 2.5.2
+```
+
+## mason_mason_materializer
+
+### Tool Description
+Apply variants from IN.vcf to IN.fa and write the results to out.fa.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mason:2.0.13--h7f3286b_0
+- **Homepage**: https://www.seqan.de/apps/mason.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/mason/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+mason_materializer - VCF Materialization
+========================================
+
+SYNOPSIS
+    mason_materializer [OPTIONS] -ir IN.fa -iv IN.vcf -o OUT.fa
+
+DESCRIPTION
+    Apply variants from IN.vcf to IN.fa and write the results to out.fa.
+
+OPTIONS
+    -h, --help
+          Display the help message.
+    --version-check BOOL
+          Turn this option off to disable version update notifications of the
+          application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
+          Default: 1.
+    --version
+          Display version information.
+    -q, --quiet
+          Low verbosity.
+    -v, --verbose
+          Higher verbosity.
+    -vv, --very-verbose
+          Highest verbosity.
+    --seed UINT64
+          Seed for random number generation. Default: 0.
+    --meth-seed UINT64
+          Seed for methylation simulation random number generation. Default:
+          0.
+    -o, --out OUTPUT_FILE
+          Output of materialized contigs. Valid filetypes are: .sam[.*],
+          .raw[.*], .frn[.*], .fq[.*], .fna[.*], .ffn[.*], .fastq[.*],
+          .fasta[.*], .fas[.*], .faa[.*], .fa[.*], and .bam, where * is any of
+          the following extensions: gz, bz2, and bgzf for transparent
+          (de)compression.
+    --out-breakpoints OUTPUT_FILE
+          TSV file to write breakpoints in variants to. Valid filetypes are:
+          .txt and .tsv.
+    --haplotype-name-sep STRING
+          String separating contig name from haplotype number. Default: /.
+    --meth-fasta-in INPUT_FILE
+          FASTA file with methylation levels of the input file. Valid
+          filetypes are: .sam[.*], .raw[.*], .gbk[.*], .frn[.*], .fq[.*],
+          .fna[.*], .ffn[.*], .fastq[.*], .fasta[.*], .fas[.*], .faa[.*],
+          .fa[.*], .embl[.*], and .bam, where * is any of the following
+          extensions: gz, bz2, and bgzf for transparent (de)compression.
+    --meth-fasta-out OUTPUT_FILE
+          FASTA file with methylation levels of the output file. Valid
+          filetypes are: .sam[.*], .raw[.*], .frn[.*], .fq[.*], .fna[.*],
+          .ffn[.*], .fastq[.*], .fasta[.*], .fas[.*], .faa[.*], .fa[.*], and
+          .bam, where * is any of the following extensions: gz, bz2, and bgzf
+          for transparent (de)compression.
+
+  Apply VCF Variants to Reference:
+    -ir, --input-reference INPUT_FILE
+          Path to FASTA file to read the reference from. Many contigs in a
+          reference might be a problem due to many file handles that need to
+          be opened. Check the hard limit of file handles with 'ulimit -Hn'
+          and increase the soft limit to the hard limit with 'ulimit -Sn
+          <number>' if necessary. Valid filetypes are: .sam[.*], .raw[.*],
+          .gbk[.*], .frn[.*], .fq[.*], .fna[.*], .ffn[.*], .fastq[.*],
+          .fasta[.*], .fas[.*], .faa[.*], .fa[.*], .embl[.*], and .bam, where
+          * is any of the following extensions: gz, bz2, and bgzf for
+          transparent (de)compression.
+    -iv, --input-vcf INPUT_FILE
+          Path to the VCF file with variants to apply. Valid filetype is:
+          .vcf[.*], where * is any of the following extensions: gz, bz2, and
+          bgzf for transparent (de)compression.
+
+  Methylation Level Simulation:
+    --methylation-levels
+          Enable methylation level simulation.
+    --meth-cg-mu DOUBLE
+          Median of beta distribution for methylation level of CpG loci. In
+          range [0..1]. Default: 0.6.
+    --meth-cg-sigma DOUBLE
+          Standard deviation of beta distribution for methylation level of CpG
+          loci. In range [0..1]. Default: 0.03.
+    --meth-chg-mu DOUBLE
+          Median of beta distribution for methylation level of CHG loci. In
+          range [0..1]. Default: 0.08.
+    --meth-chg-sigma DOUBLE
+          Standard deviation of beta distribution for methylation level of CHG
+          loci. In range [0..1]. Default: 0.008.
+    --meth-chh-mu DOUBLE
+          Median of beta distribution for methylation level of CHH loci. In
+          range [0..1]. Default: 0.05.
+    --meth-chh-sigma DOUBLE
+          Standard deviation of beta distribution for methylation level of CHH
+          loci. In range [0..1]. Default: 0.005.
+
+VCF VARIANT NOTES
+    If the option --input-vcf/-iv is given then the given VCF file is read and
+    the variants are applied to the input reference file. If it is not given
+    then the input reference file is taken verbatimly for simulating reads.
+
+    There are some restrictions on the VCF file and the application of the
+    variants to the reference will fail if the VCF file is non-conforming. VCF
+    files from the mason_variator program are guaranteed to be read.
+
+    Only the haplotypes of the first individual will be generated.
+
+VERSION
+    Last update: 
+    mason_materializer version: 2.0.13 [tarball]
+    SeqAn version: 2.5.2
+```
+
+## mason_mason_methylation
+
+### Tool Description
+Simulate methylation levels for IN.fa and write them to OUT.fa.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mason:2.0.13--h7f3286b_0
+- **Homepage**: https://www.seqan.de/apps/mason.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/mason/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+mason_methylation - Methylation Level Simulation
+================================================
+
+SYNOPSIS
+    mason_methylation [OPTIONS] -i IN.fa -o OUT.fa
+
+DESCRIPTION
+    Simulate methylation levels for IN.fa and write them to OUT.fa.
+
+OPTIONS
+    -h, --help
+          Display the help message.
+    --version-check BOOL
+          Turn this option off to disable version update notifications of the
+          application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
+          Default: 1.
+    --version
+          Display version information.
+    -q, --quiet
+          Low verbosity.
+    -v, --verbose
+          Higher verbosity.
+    -vv, --very-verbose
+          Highest verbosity.
+    --seed UINT64
+          Seed for RNG. Default: 0.
+    -i, --in INPUT_FILE
+          Input FASTA file with genome. Valid filetypes are: .sam[.*],
+          .raw[.*], .gbk[.*], .frn[.*], .fq[.*], .fna[.*], .ffn[.*],
+          .fastq[.*], .fasta[.*], .fas[.*], .faa[.*], .fa[.*], .embl[.*], and
+          .bam, where * is any of the following extensions: gz, bz2, and bgzf
+          for transparent (de)compression.
+    -o, --out INPUT_FILE
+          Input FASTA file with genome. Valid filetypes are: .sam[.*],
+          .raw[.*], .frn[.*], .fq[.*], .fna[.*], .ffn[.*], .fastq[.*],
+          .fasta[.*], .fas[.*], .faa[.*], .fa[.*], and .bam, where * is any of
+          the following extensions: gz, bz2, and bgzf for transparent
+          (de)compression.
+
+  Methylation Level Simulation:
+    --methylation-levels
+          Enable methylation level simulation.
+    --meth-cg-mu DOUBLE
+          Median of beta distribution for methylation level of CpG loci. In
+          range [0..1]. Default: 0.6.
+    --meth-cg-sigma DOUBLE
+          Standard deviation of beta distribution for methylation level of CpG
+          loci. In range [0..1]. Default: 0.03.
+    --meth-chg-mu DOUBLE
+          Median of beta distribution for methylation level of CHG loci. In
+          range [0..1]. Default: 0.08.
+    --meth-chg-sigma DOUBLE
+          Standard deviation of beta distribution for methylation level of CHG
+          loci. In range [0..1]. Default: 0.008.
+    --meth-chh-mu DOUBLE
+          Median of beta distribution for methylation level of CHH loci. In
+          range [0..1]. Default: 0.05.
+    --meth-chh-sigma DOUBLE
+          Standard deviation of beta distribution for methylation level of CHH
+          loci. In range [0..1]. Default: 0.005.
+
+VERSION
+    Last update: 
+    mason_methylation version: 2.0.13 [tarball]
+    SeqAn version: 2.5.2
+```
+
+## mason_mason_splicing
+
+### Tool Description
+Create transcripts from IN.fa using the annotations from IN.gff.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mason:2.0.13--h7f3286b_0
+- **Homepage**: https://www.seqan.de/apps/mason.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/mason/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+mason_splicing - Generating Transcripts
+=======================================
+
+SYNOPSIS
+    mason_splicing [OPTIONS] -ir IN.fa -ig IN.gff [-iv IN.vcf] -o OUT.fa
+
+DESCRIPTION
+    Create transcripts from IN.fa using the annotations from IN.gff. The
+    resulting transcripts are written to OUT.fa.
+
+    You can pass an optional VCF file IN.vcf and the transcripts will be
+    created from the haplotypes stored in the VCF file.
+
+OPTIONS
+    -h, --help
+          Display the help message.
+    --version-check BOOL
+          Turn this option off to disable version update notifications of the
+          application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
+          Default: 1.
+    --version
+          Display version information.
+    -q, --quiet
+          Low verbosity.
+    -v, --verbose
+          Higher verbosity.
+    -vv, --very-verbose
+          Highest verbosity.
+    --seed UINT64
+          Seed for random number generation. Default: 0.
+    -o, --out OUTPUT_FILE
+          Output of materialized contigs. Valid filetypes are: .sam[.*],
+          .raw[.*], .frn[.*], .fq[.*], .fna[.*], .ffn[.*], .fastq[.*],
+          .fasta[.*], .fas[.*], .faa[.*], .fa[.*], and .bam, where * is any of
+          the following extensions: gz, bz2, and bgzf for transparent
+          (de)compression.
+    --haplotype-name-sep STRING
+          String separating contig name from haplotype number. Default: /.
+    -ig, --in-gff INPUT_FILE
+          Path to input GFF or GTF file, must be sorted by reference name.
+          Valid filetypes are: .gtf[.*], .gff[.*], .gff3[.*], and .gff, where
+          * is any of the following extensions: gz, bz2, and bgzf for
+          transparent (de)compression.
+    --gff-type INPUT_FILE
+          Splicing will filter to the records that have this type. Default:
+          exon.
+    --gff-group-by INPUT_FILE
+          Assign features to their parent using the tag with this name.
+          Default: Parent.
+
+  Apply VCF Variants to Reference:
+    -ir, --input-reference INPUT_FILE
+          Path to FASTA file to read the reference from. Many contigs in a
+          reference might be a problem due to many file handles that need to
+          be opened. Check the hard limit of file handles with 'ulimit -Hn'
+          and increase the soft limit to the hard limit with 'ulimit -Sn
+          <number>' if necessary. Valid filetypes are: .sam[.*], .raw[.*],
+          .gbk[.*], .frn[.*], .fq[.*], .fna[.*], .ffn[.*], .fastq[.*],
+          .fasta[.*], .fas[.*], .faa[.*], .fa[.*], .embl[.*], and .bam, where
+          * is any of the following extensions: gz, bz2, and bgzf for
+          transparent (de)compression.
+    -iv, --input-vcf INPUT_FILE
+          Path to the VCF file with variants to apply. Valid filetype is:
+          .vcf[.*], where * is any of the following extensions: gz, bz2, and
+          bgzf for transparent (de)compression.
+
+VCF VARIANT NOTES
+    If the option --input-vcf/-iv is given then the given VCF file is read and
+    the variants are applied to the input reference file. If it is not given
+    then the input reference file is taken verbatimly for simulating reads.
+
+    There are some restrictions on the VCF file and the application of the
+    variants to the reference will fail if the VCF file is non-conforming. VCF
+    files from the mason_variator program are guaranteed to be read.
+
+    Only the haplotypes of the first individual will be generated.
+
+VERSION
+    Last update: 
+    mason_splicing version: 2.0.13 [tarball]
+    SeqAn version: 2.5.2
+```
 
 ## Metadata
 - **Skill**: not generated

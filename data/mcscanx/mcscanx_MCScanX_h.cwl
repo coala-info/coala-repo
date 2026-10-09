@@ -3,12 +3,28 @@ class: CommandLineTool
 baseCommand: MCScanX_h
 label: mcscanx_MCScanX_h
 doc: "MCScanX_h prefix_fn [options]\n\nTool homepage: https://github.com/wyp1125/MCScanX"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.prefix_fn).homology
+        entry: $(inputs.homology_file)
+        writable: true
+      - entryname: $(inputs.prefix_fn).gff
+        entry: $(inputs.gff_file)
+        writable: true
+  - class: InlineJavascriptRequirement
 inputs:
   - id: prefix_fn
     type: string
-    doc: prefix_fn
+    doc: Prefix of the input files (xyz for xyz.homology and xyz.gff)
     inputBinding:
       position: 1
+  - id: homology_file
+    type: File
+    doc: Tab-delimited homology file (gene1, gene2, score), staged as <prefix_fn>.homology
+  - id: gff_file
+    type: File
+    doc: Gene position file (chromosome, gene, start, end), staged as <prefix_fn>.gff
   - id: build_collinearity_file
     type:
       - 'null'
@@ -87,6 +103,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: collinearity
+    type:
+      - 'null'
+      - File
+    doc: Collinear blocks (.collinearity file)
+    outputBinding:
+      glob: $(inputs.prefix_fn).collinearity
+  - id: html
+    type:
+      - 'null'
+      - Directory
+    doc: HTML view of the collinear blocks per chromosome
+    outputBinding:
+      glob: $(inputs.prefix_fn).html
+  - id: other_outputs
+    type:
+      type: array
+      items: File
+    doc: Other result files written with the prefix (.tandem, .synteny, ...)
+    outputBinding:
+      glob: ['$(inputs.prefix_fn).tandem', '$(inputs.prefix_fn).synteny']
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mcscanx:1.0.0--h9948957_0

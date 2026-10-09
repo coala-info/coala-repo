@@ -1,5 +1,11 @@
 # maffilter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maffilter | PASS |  |
+
 ## maffilter
 
 ### Tool Description

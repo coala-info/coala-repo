@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - simucns
 label: maq_simucns
-doc: "Simulate consensus sequences from true SNPs.\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Simulate consensus sequences from true SNPs.\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: input_cns
     type: File

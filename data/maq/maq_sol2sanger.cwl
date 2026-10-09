@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - sol2sanger
 label: maq_sol2sanger
-doc: "Convert Sanger FASTQ to MAQ FASTQ\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Convert Sanger FASTQ to MAQ FASTQ\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: input_fastq
     type: File

@@ -1,5 +1,16 @@
 # merfishtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| merfishtools_diffexp | Failed | tool bug: cannot read PMF files (header is cell/feat/expr but the reader needs feature/expression); fails on the repo test PMFs |
+| merfishtools_est-error-rates | PASS | repo test codebook and real 140-gene readouts (3-column TSV, first 20000 lines): 16 per-position error rates that match an independent calculation of the documented formula; raw data fixed to a File |
+| merfishtools_exp | Failed | tool bug: output is always empty (header only) on the repo test data because load_counts never stores the counts |
+| merfishtools_gen-mhd2 | PASS | 140 gene names from the repo test codebook: 140 unique 16-bit codewords, all 4 one-bits, minimum Hamming distance 2; added the missing names input (standard input) |
+| merfishtools_gen-mhd4 | PASS | 140 gene names from the repo test codebook: 140 unique 16-bit codewords, all 4 one-bits, minimum Hamming distance 4, --not-expressed marks 10 features; added the missing names input (standard input) |
+| merfishtools_multidiffexp | Failed | tool bug: cannot read PMF files (header is cell/feat/expr but the reader needs feature/expression); fails on the repo test PMFs |
+
 ## merfishtools_exp
 
 ### Tool Description

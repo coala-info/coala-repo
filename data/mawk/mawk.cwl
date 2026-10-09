@@ -8,9 +8,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Program text
+    doc: Program text (not used when program_file or exec_file is given)
     inputBinding:
-      position: 1
+      position: 110
   - id: files
     type:
       - 'null'
@@ -18,7 +18,7 @@ inputs:
         items: File
     doc: Input files
     inputBinding:
-      position: 2
+      position: 111
   - id: dump
     type:
       - 'null'
@@ -26,14 +26,14 @@ inputs:
     doc: show assembler-like listing of program and exit.
     inputBinding:
       position: 103
-      prefix: -W dump
+      prefix: -Wdump
   - id: end_of_options
     type:
       - 'null'
       - boolean
     doc: unambiguous end of options.
     inputBinding:
-      position: 103
+      position: 109
       prefix: --
   - id: exec_file
     type:
@@ -42,7 +42,7 @@ inputs:
     doc: use file as program as well as last option.
     inputBinding:
       position: 103
-      prefix: -W exec
+      prefix: -Wexec
   - id: field_separator
     type:
       - 'null'
@@ -58,7 +58,7 @@ inputs:
     doc: set unbuffered output, line-buffered input.
     inputBinding:
       position: 103
-      prefix: -W interactive
+      prefix: -Winteractive
   - id: posix_space
     type:
       - 'null'
@@ -66,17 +66,18 @@ inputs:
     doc: do not consider "\n" a space.
     inputBinding:
       position: 103
-      prefix: -W posix_space
+      prefix: -Wposix_space
   - id: program_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -f
     doc: Program text is read from file instead of from the command-line. 
       Multiple -f options are accepted.
     inputBinding:
       position: 103
-      prefix: -f
   - id: random_seed
     type:
       - 'null'
@@ -84,7 +85,7 @@ inputs:
     doc: set initial random seed.
     inputBinding:
       position: 103
-      prefix: -W random=
+      prefix: -Wrandom=
       separate: false
   - id: sprintf_buffer_size
     type:
@@ -93,17 +94,18 @@ inputs:
     doc: adjust size of sprintf buffer.
     inputBinding:
       position: 103
-      prefix: -W sprintf=
+      prefix: -Wsprintf=
       separate: false
   - id: variable_assignment
     type:
       - 'null'
       - type: array
         items: string
-    doc: assigns value to program variable var.
+        inputBinding:
+          prefix: -v
+    doc: assigns value to program variable var (var=value).
     inputBinding:
       position: 103
-      prefix: -v
 outputs:
   - id: stdout
     type: stdout

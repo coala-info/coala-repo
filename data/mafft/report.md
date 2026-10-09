@@ -1,5 +1,11 @@
 # mafft CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mafft | PASS |  |
+
 ## mafft
 
 ### Tool Description

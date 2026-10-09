@@ -1,5 +1,11 @@
 # megahit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| megahit | PASS |  |
+
 ## megahit
 
 ### Tool Description

@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - indelpe
 label: maq_indelpe
-doc: "Estimate indel polymorphism rate\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Estimate indel polymorphism rate\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: input_reference_bfa
     type: File

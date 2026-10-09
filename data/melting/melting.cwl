@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: melting
 label: melting
-doc: "MELTING 5 help\n\nTool homepage: https://github.com/google-deepmind/meltingpot"
+doc: "MELTING 5 help\n\nTool homepage: http://www.ebi.ac.uk/compneur-srv/melting/"
 inputs:
   - id: agent_concentrations
     type: string
@@ -43,14 +43,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -azo
-  - id: calorimetric_tables_path
-    type:
-      - 'null'
-      - boolean
-    doc: Return path where to find the calorimetric tables.
-    inputBinding:
-      position: 101
-      prefix: -p
   - id: cng_repeat_model
     type:
       - 'null'
@@ -208,14 +200,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -ion
-  - id: legal_info
-    type:
-      - 'null'
-      - boolean
-    doc: Displays legal information and quit.
-    inputBinding:
-      position: 101
-      prefix: -L
   - id: locked_nucleic_acid_model
     type:
       - 'null'
@@ -423,12 +407,18 @@ inputs:
       position: 101
       prefix: -v
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: To write the results in an output file. filename is the name or the 
+      pathway of the file.
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -O
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_file
     type:
       - 'null'
@@ -436,9 +426,10 @@ outputs:
     doc: To write the results in an output file. filename is the name or the 
       pathway of the file.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path || 'melting_no_output_file')
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/melting:v5.2.0-1-deb_cv1
+stdout: melting.out

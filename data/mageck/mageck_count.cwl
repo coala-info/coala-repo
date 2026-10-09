@@ -16,6 +16,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-gene
+      itemSeparator: ','
   - id: control_sgrna
     type:
       - 'null'
@@ -26,6 +27,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-sgrna
+      itemSeparator: ','
   - id: count_n
     type:
       - 'null'
@@ -44,7 +46,9 @@ inputs:
       position: 101
       prefix: --count-pair
   - id: count_table
-    type: File
+    type:
+      - 'null'
+      - File
     doc: The read count table file. Only 1 file is accepted.
     inputBinding:
       position: 101
@@ -62,8 +66,9 @@ inputs:
       prefix: --day0-label
   - id: fastq
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Sample fastq files (or fastq.gz files, or SAM/BAM files after v0.5.5), 
       separated by space; use comma (,) to indicate technical replicates of the 
       same sample. For example, "--fastq 
@@ -101,7 +106,9 @@ inputs:
       position: 101
       prefix: --keep-tmp
   - id: list_seq
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'A file containing the list of sgRNA names, their sequences and associated
       genes. Support file format: csv and txt. Provide an empty file for collecting
       all possible sgRNA counts.'
@@ -127,6 +134,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --output-prefix
+    default: sample1
   - id: pdf_report
     type:
       - 'null'

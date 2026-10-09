@@ -9,14 +9,14 @@ inputs:
     type: File
     doc: file of sequences in FASTA format
     inputBinding:
-      position: 1
+      position: 200
   - id: motif_files
     type:
       type: array
       items: File
     doc: file(s) of motifs in MEME format
     inputBinding:
-      position: 2
+      position: 201
   - id: bfile
     type:
       - 'null'
@@ -185,39 +185,29 @@ inputs:
     inputBinding:
       position: 103
       prefix: --xalph
-  - id: output_dir_path
+  - id: output_dir
     type:
       - 'null'
       - string
-    doc: 'output directory; default: ame_out'
+    default: ame_out
+    doc: output directory (replaced if it exists)
     inputBinding:
-      position: 104
-      prefix: --o
-  - id: output_dir_overwrite_path
-    type:
-      - 'null'
-      - string
-    doc: 'overwrite output; default: ame_out'
-    inputBinding:
-      position: 105
+      position: 150
       prefix: --oc
 outputs:
-  - id: output_dir
+  - id: output_dir_out
     type:
       - 'null'
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir_overwrite
-    type:
-      - 'null'
-      - Directory
-    doc: overwrite output directory
-    outputBinding:
-      glob: $(inputs.output_dir_overwrite_path)
+      glob: $(inputs.output_dir)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0
+stdout: meme_ame.out

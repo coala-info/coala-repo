@@ -4,7 +4,14 @@ baseCommand:
   - mapad
   - map
 label: mapad_map
-doc: "Maps reads to an indexed genome\n\nTool homepage: https://github.com/mpieva/mapAD"
+doc: 'Maps reads to an indexed genome
+
+
+  Tool homepage: https://github.com/mpieva/mapAD'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
 inputs:
   - id: align_score_cutoff
     type:
@@ -38,8 +45,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Run in dispatcher mode for distributed computing in a network. Needs 
-      workers to be spawned externally to distribute work among them.
+    doc: Run in dispatcher mode for distributed computing in a network. Needs workers
+      to be spawned externally to distribute work among them.
     inputBinding:
       position: 101
       prefix: --dispatcher
@@ -77,8 +84,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Gap extension penalty as a fraction of the representative mismatch 
-      penalty
+    doc: Gap extension penalty as a fraction of the representative mismatch penalty
     inputBinding:
       position: 101
       prefix: -x
@@ -108,8 +114,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum probability of the number of mismatches under `-D` base error 
-      rate
+    doc: Minimum probability of the number of mismatches under `-D` base error rate
     inputBinding:
       position: 101
       prefix: -p
@@ -117,12 +122,11 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Mapping of reads which are particularly difficult to align can exceed 
-      the limits of the internal search space. By default, mapAD attempts to 
-      recover from these cases by discarding the lowest scoring sub-alignments. 
-      If this flag is set, these reads are instead immediately reported as 
-      unmapped, which slightly increases the mapping speed at the cost of 
-      decreasing sensitivity.
+    doc: Mapping of reads which are particularly difficult to align can exceed the
+      limits of the internal search space. By default, mapAD attempts to recover from
+      these cases by discarding the lowest scoring sub-alignments. If this flag is
+      set, these reads are instead immediately reported as unmapped, which slightly
+      increases the mapping speed at the cost of decreasing sensitivity.
     inputBinding:
       position: 101
       prefix: --no_search_limit_recovery
@@ -152,8 +156,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Read group SAM header line. The given read group ID will be added to every
-      read in the output file. Example: '@RG\tID:identifier1\tSM:sample2'."
+    doc: "Read group SAM header line. The given read group ID will be added to every\
+      \ read in the output file. Example: '@RG\tID:identifier1\tSM:sample2'."
     inputBinding:
       position: 101
       prefix: --read_group
@@ -166,16 +170,16 @@ inputs:
       position: 101
       prefix: -e
   - id: reads
-    type: string
-    doc: BAM/CRAM/FASTQ or FASTQ.GZ file that contains the reads to be aligned. 
-      Specify "-" for reading from stdin.
+    type: File
+    doc: BAM/CRAM/FASTQ or FASTQ.GZ file that contains the reads to be aligned. Specify
+      "-" for reading from stdin.
     inputBinding:
       position: 101
       prefix: --reads
   - id: reference
     type: string
-    doc: Prefix of the file names of the index files. The reference FASTA file 
-      itself does not need to be present.
+    doc: Prefix of the file names of the index files (the FASTA file name used with
+      mapad index). The index files are given in index_files.
     inputBinding:
       position: 101
       prefix: --reference
@@ -191,8 +195,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of threads. If 0, mapAD will select the number of 
-      threads automatically.
+    doc: Maximum number of threads. If 0, mapAD will select the number of threads
+      automatically.
     inputBinding:
       position: 101
       prefix: --threads
@@ -200,25 +204,30 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: boolean
+        inputBinding:
+          prefix: -v
     doc: Sets the level of verbosity
     inputBinding:
       position: 101
-      prefix: -v
   - id: output_path
     type: string
     doc: Path to output BAM file
     inputBinding:
       position: 102
       prefix: --output
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files made by mapad index (.tbw, .tle, .toc, .tos, .tpi, .trt, .tsa);
+      staged in the job directory next to the reference prefix
 outputs:
   - id: output
     type: File
     doc: Path to output BAM file
     outputBinding:
       glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mapad:0.45.0--ha96b9cd_1

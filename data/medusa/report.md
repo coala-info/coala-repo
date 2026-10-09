@@ -1,5 +1,11 @@
 # medusa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| medusa | Failed | image problem: MUMmer (nucmer, show-coords) is missing and the scripts need Python 2 (cPickle), so scaffolding stops with network construction failed. |
+
 ## medusa
 
 ### Tool Description

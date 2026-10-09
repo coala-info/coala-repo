@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - MendelScan.jar
+  - mendelscan
   - rhro
 label: mendelscan_rhro
 doc: "MendelScan RHRO analysis\n\nTool homepage: https://github.com/genome/mendelscan"

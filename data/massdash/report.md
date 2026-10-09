@@ -1,5 +1,11 @@
 # massdash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| massdash_gui | Not completed | interactive web GUI (Streamlit server), no batch mode to test |
+
 ## massdash_gui
 
 ### Tool Description

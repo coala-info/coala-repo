@@ -3,6 +3,12 @@ class: CommandLineTool
 baseCommand: mcroni
 label: mcroni
 doc: "Analyse the local genomic context of mcr-1.\n\nTool homepage: https://github.com/liampshaw/mcroni"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fasta_files || [])
+      - $(inputs.fasta)
 inputs:
   - id: append
     type:
@@ -16,10 +22,11 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta file
+    doc: Fasta file (staged in the working directory, because mcroni builds a BLAST database beside it)
     inputBinding:
       position: 101
       prefix: --fasta
+      valueFrom: $(self.basename)
   - id: filelist
     type:
       - 'null'
@@ -28,6 +35,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --filelist
+  - id: fasta_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The fasta files named in filelist, staged in the working directory so the names in the list resolve.
   - id: force
     type:
       - 'null'

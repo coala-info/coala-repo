@@ -175,22 +175,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: -verbosity
+  - id: output_dir
+    type:
+      - 'null'
+      - string
+    default: dreme_out
+    doc: output directory (replaced if it exists)
+    inputBinding:
+      position: 150
+      prefix: -oc
 outputs:
-  - id: output_directory
+  - id: output_dir_out
     type:
       - 'null'
       - Directory
-    doc: create the specified output directory and write all output to files in that
-      directory
+    doc: output directory
     outputBinding:
-      glob: $(inputs.output_directory)
-  - id: output_directory_overwrite
-    type:
-      - 'null'
-      - Directory
-    doc: 'create the specified output directory overwritting it if it already exists;'
-    outputBinding:
-      glob: $(inputs.output_directory_overwrite)
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0

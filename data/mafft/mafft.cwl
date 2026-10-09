@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: Input sequences
     inputBinding:
-      position: 1
+      position: 200
   - id: auto
     type:
       - 'null'
@@ -115,12 +115,9 @@ inputs:
       prefix: --thread
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: Output alignment
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Output alignment (written to standard output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mafft:7.525--h031d066_1
+stdout: mafft.out

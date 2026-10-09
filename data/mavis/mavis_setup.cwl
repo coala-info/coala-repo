@@ -5,6 +5,11 @@ baseCommand:
   - setup
 label: mavis_setup
 doc: "Setup Mavis\n\nTool homepage: https://github.com/bcgsc/mavis.git"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.reference_files || [])
 inputs:
   - id: config
     type: File
@@ -12,10 +17,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --config
+  - id: reference_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the config file (reference genome, annotations, BAM files
+      and their indexes, ...). They are staged in the working directory so the 
+      relative paths in the config resolve.
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: redirect stdout to a log file
     inputBinding:
       position: 101
@@ -39,8 +52,13 @@ outputs:
     doc: path to the outputfile
     outputBinding:
       glob: $(inputs.outputfile_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: log file
+    outputBinding:
+      glob: $(inputs.log)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mavis:3.1.2--pyhdfd78af_0

@@ -1,5 +1,11 @@
 # maskrc-svg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maskrc-svg_maskrc-svg.py | PASS |  |
+
 ## maskrc-svg_maskrc-svg.py
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # mergevcf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mergevcf | PASS | nf-core human chr21 HaplotypeCaller and Mutect2 VCFs: 1356 merged records (union), the 47 shared calls carry both caller labels and PASS, the rest are LOWSUPPORT; (tool skips MT contigs, so the SARS-CoV-2 VCFs gave empty output) |
+
 ## mergevcf
 
 ### Tool Description

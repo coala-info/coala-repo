@@ -9,12 +9,12 @@ inputs:
     type: File
     doc: File containing one or more motifs
     inputBinding:
-      position: 1
+      position: 200
   - id: sequence_file
     type: File
     doc: File containing sequences to search
     inputBinding:
-      position: 2
+      position: 201
   - id: alpha
     type:
       - 'null'
@@ -151,39 +151,29 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbosity
-  - id: output_dir_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 104
-      prefix: --output-dir
-  - id: output_dir_clobber_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_dir_clobber_path`
-    inputBinding:
-      position: 105
-      prefix: --output-dir-clobber
-outputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
-    doc: Name of output directory
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir_clobber
+      - string
+    default: fimo_out
+    doc: output directory (replaced if it exists)
+    inputBinding:
+      position: 150
+      prefix: --oc
+outputs:
+  - id: output_dir_out
     type:
       - 'null'
       - Directory
-    doc: Name of output directory, allowing overwriting
+    doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir_clobber_path)
+      glob: $(inputs.output_dir)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0
+stdout: meme_fimo.out

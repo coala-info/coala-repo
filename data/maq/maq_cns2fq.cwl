@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - cns2fq
 label: maq_cns2fq
-doc: "Convert consensus sequence to FASTQ format.\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Convert consensus sequence to FASTQ format.\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: input_cns
     type: File

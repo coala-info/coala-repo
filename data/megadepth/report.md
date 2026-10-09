@@ -1,5 +1,11 @@
 # megadepth CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| megadepth | PASS |  |
+
 ## megadepth
 
 ### Tool Description

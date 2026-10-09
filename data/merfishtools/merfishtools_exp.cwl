@@ -94,6 +94,9 @@ inputs:
       position: 105
       prefix: --stats
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: estimate_output
     type:
       - 'null'
@@ -116,3 +119,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merfishtools:1.5.0--py312h9d36253_3
+stdout: merfishtools_exp.out

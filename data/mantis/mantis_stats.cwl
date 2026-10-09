@@ -1,39 +1,66 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mantis
+baseCommand:
+  - mantis
+  - stats
 label: mantis_stats
-doc: "Mantis is a k-mer based de Bruijn graph construction and querying tool.\n\n\
-  Tool homepage: https://github.com/splatlab/mantis"
+doc: 'Compute statistics of a mantis index (mono, cc_density, color_dist or jmerkmer).
+  The mono and color_dist statistics are written to mcc_dist.out and color_dist.out
+  inside the index directory; cc_density prints to standard output.
+
+
+  Tool homepage: https://github.com/splatlab/mantis'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.index_prefix)
+        writable: true
 inputs:
   - id: index_prefix
     type: Directory
-    doc: The directory where the index is stored.
+    doc: The directory where the index is stored; staged writable because the statistics
+      files are written into it
     inputBinding:
-      position: 101
-      prefix: --index_prefix
+      position: 2
+      prefix: -p
+      valueFrom: $(self.basename)/
   - id: number_of_samples
     type: int
-    doc: Number of experiments.
+    doc: Number of experiments (samples) in the index
     inputBinding:
-      position: 101
-      prefix: --number_of_samples
-  - id: size_of_jmer
-    type:
-      - 'null'
-      - int
-    doc: value of j for constituent jmers of a kmer
-    inputBinding:
-      position: 101
-      prefix: --size-of-jmer
+      position: 3
+      prefix: -n
   - id: stats_type
     type:
       - 'null'
       - string
-    doc: what stats? (mono, cc_density, color_dist, jmerkmer)
+    doc: 'what stats? (mono, cc_density, color_dist, jmerkmer), default: mono'
     inputBinding:
-      position: 101
-      prefix: --type
+      position: 4
+      prefix: -t
+  - id: size_of_jmer
+    type:
+      - 'null'
+      - int
+    doc: 'value of j for constituent jmers of a kmer (default: 23)'
+    inputBinding:
+      position: 5
+      prefix: -j
 outputs:
+  - id: mcc_dist
+    type:
+      - 'null'
+      - File
+    doc: Statistics of the mono type
+    outputBinding:
+      glob: $(inputs.index_prefix.basename)/mcc_dist.out
+  - id: color_dist
+    type:
+      - 'null'
+      - File
+    doc: Statistics of the color_dist type
+    outputBinding:
+      glob: $(inputs.index_prefix.basename)/color_dist.out
   - id: stdout
     type: stdout
     doc: Standard output

@@ -4,7 +4,7 @@ baseCommand:
   - maq
   - map
 label: maq_map
-doc: "Map reads to a reference genome\n\nTool homepage: https://github.com/maqetta/maqetta"
+doc: "Map reads to a reference genome\n\nTool homepage: http://maq.sourceforge.net/"
 inputs:
   - id: output_map
     type: string
@@ -127,8 +127,8 @@ inputs:
   - id: multiple_hits_file
     type:
       - 'null'
-      - File
-    doc: dump multiple/all 01-mismatch hits to FILE
+      - string
+    doc: dump multiple/all 01-mismatch hits to this file
     inputBinding:
       position: 105
       prefix: -H
@@ -151,12 +151,26 @@ inputs:
   - id: unmapped_reads_file
     type:
       - 'null'
-      - File
-    doc: dump unmapped and poorly aligned reads to FILE
+      - string
+    doc: dump unmapped and poorly aligned reads to this file
     inputBinding:
       position: 105
       prefix: -u
 outputs:
+  - id: output_multiple_hits
+    type:
+      - 'null'
+      - File
+    doc: Dumped multiple/all 01-mismatch hits
+    outputBinding:
+      glob: $(inputs.multiple_hits_file)
+  - id: output_unmapped_reads
+    type:
+      - 'null'
+      - File
+    doc: Dumped unmapped and poorly aligned reads
+    outputBinding:
+      glob: $(inputs.unmapped_reads_file)
   - id: stdout
     type: stdout
     doc: Standard output

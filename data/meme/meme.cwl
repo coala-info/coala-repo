@@ -10,18 +10,6 @@ inputs:
     doc: file containing sequences in FASTA format
     inputBinding:
       position: 1
-  - id: output_dir
-    type: string
-    doc: name of directory for output files; will not replace existing directory
-    inputBinding:
-      position: 102
-      prefix: -o
-  - id: output_dir_replace
-    type: string
-    doc: name of directory for output files; will replace existing directory
-    inputBinding:
-      position: 102
-      prefix: -oc
   - id: text_format
     type:
       - 'null'
@@ -424,21 +412,26 @@ inputs:
     inputBinding:
       position: 102
       prefix: -sf
+  - id: output_dir
+    type:
+      - 'null'
+      - string
+    default: meme_out
+    doc: output directory (replaced if it exists)
+    inputBinding:
+      position: 150
+      prefix: -oc
 outputs:
-  - id: output_output_dir
+  - id: output_dir_out
     type:
       - 'null'
       - Directory
-    doc: name of directory for output files; will not replace existing directory
+    doc: output directory
     outputBinding:
       glob: $(inputs.output_dir)
-  - id: output_output_dir_replace
-    type:
-      - 'null'
-      - Directory
-    doc: name of directory for output files; will replace existing directory
-    outputBinding:
-      glob: $(inputs.output_dir_replace)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
@@ -447,3 +440,4 @@ hints:
 s:url: https://meme-suite.org
 $namespaces:
   s: https://schema.org/
+stdout: meme.out

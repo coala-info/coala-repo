@@ -33,11 +33,13 @@ inputs:
       position: 102
       prefix: --threads
   - id: out_blacklist_path
-    type: string
-    doc: Output or path parameter `out_blacklist_path`
+    type:
+      - 'null'
+      - string
+    doc: Output file for new blacklist additions
     inputBinding:
       position: 103
-      prefix: --out-blacklist
+      prefix: --outblacklist
 outputs:
   - id: out_blacklist
     type:

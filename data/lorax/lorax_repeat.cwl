@@ -8,6 +8,8 @@ doc: "Finds tandem repeats in a reference genome.\n\nTool homepage: https://gith
 inputs:
   - id: ref_fa
     type: File
+    secondaryFiles:
+      - .fai
     doc: Reference genome FASTA file
     inputBinding:
       position: 1
@@ -52,6 +54,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --repeats
+      itemSeparator: ','
   - id: window_length
     type:
       - 'null'

@@ -2,10 +2,10 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: lastz
 label: lastz
-doc: "Search for PATTERN in each FILE.\n\nTool homepage: http://www.bx.psu.edu/~rsharris/lastz/"
+doc: "LASTZ: Local Alignment Search Tool, blastZ-like.\n\nTool homepage: http://www.bx.psu.edu/~rsharris/lastz/"
 inputs:
   - id: target
-    type: string
+    type: File
     doc: spec/file containing target sequence (fasta, fastq, nib, 2bit or hsx); 
       [start..end] defines a subrange of the file
     inputBinding:
@@ -13,7 +13,7 @@ inputs:
   - id: query
     type:
       - 'null'
-      - string
+      - File
     doc: spec/file containing query sequences; if absent, queries come from 
       stdin (if needed)
     inputBinding:
@@ -25,7 +25,8 @@ inputs:
     doc: space for trace-back information
     inputBinding:
       position: 103
-      prefix: --allocate:traceback
+      prefix: --allocate:traceback=
+      separate: false
   - id: ambiguous
     type:
       - 'null'
@@ -33,7 +34,8 @@ inputs:
     doc: treat N as an ambiguous nucleotide
     inputBinding:
       position: 103
-      prefix: --ambiguous
+      prefix: --ambiguous=
+      separate: false
   - id: chain
     type:
       - 'null'
@@ -49,7 +51,8 @@ inputs:
     doc: perform chaining with given penalties for diagonal and anti-diagonal
     inputBinding:
       position: 103
-      prefix: --chain
+      prefix: --chain=
+      separate: false
   - id: coverage
     type:
       - 'null'
@@ -59,7 +62,8 @@ inputs:
       coverage filtering)
     inputBinding:
       position: 103
-      prefix: --coverage
+      prefix: --coverage=
+      separate: false
   - id: entropy
     type:
       - 'null'
@@ -76,7 +80,8 @@ inputs:
       rather than high scoring pairs (replaces --hspthresh)
     inputBinding:
       position: 103
-      prefix: --exact
+      prefix: --exact=
+      separate: false
   - id: format
     type:
       - 'null'
@@ -85,7 +90,8 @@ inputs:
       general
     inputBinding:
       position: 103
-      prefix: --format
+      prefix: --format=
+      separate: false
   - id: gap
     type:
       - 'null'
@@ -93,7 +99,8 @@ inputs:
     doc: set gap open and extend penalties
     inputBinding:
       position: 103
-      prefix: --gap
+      prefix: --gap=
+      separate: false
   - id: gapped
     type:
       - 'null'
@@ -112,7 +119,8 @@ inputs:
       use same value as --hspthresh)
     inputBinding:
       position: 103
-      prefix: --gappedthresh
+      prefix: --gappedthresh=
+      separate: false
   - id: gfextend
     type:
       - 'null'
@@ -131,7 +139,8 @@ inputs:
       base count
     inputBinding:
       position: 103
-      prefix: --hspthresh
+      prefix: --hspthresh=
+      separate: false
   - id: identity
     type:
       - 'null'
@@ -140,7 +149,8 @@ inputs:
       HSPs) outside min..max are discarded (default is no identity filtering)
     inputBinding:
       position: 103
-      prefix: --identity
+      prefix: --identity=
+      separate: false
   - id: inner
     type:
       - 'null'
@@ -149,7 +159,8 @@ inputs:
       interpolation)
     inputBinding:
       position: 103
-      prefix: --inner
+      prefix: --inner=
+      separate: false
   - id: masking
     type:
       - 'null'
@@ -158,7 +169,8 @@ inputs:
       masking (default is no masking)
     inputBinding:
       position: 103
-      prefix: --masking
+      prefix: --masking=
+      separate: false
   - id: match
     type:
       - 'null'
@@ -166,7 +178,8 @@ inputs:
     doc: scores are +R/-P for match/mismatch
     inputBinding:
       position: 103
-      prefix: --match
+      prefix: --match=
+      separate: false
   - id: no_entropy
     type:
       - 'null'
@@ -245,7 +258,8 @@ inputs:
     doc: report processing of every nth query
     inputBinding:
       position: 103
-      prefix: --progress
+      prefix: --progress=
+      separate: false
   - id: scores
     type:
       - 'null'
@@ -253,7 +267,8 @@ inputs:
     doc: read substitution scores from a file
     inputBinding:
       position: 103
-      prefix: --scores
+      prefix: --scores=
+      separate: false
   - id: seed
     type:
       - 'null'
@@ -261,7 +276,8 @@ inputs:
     doc: use a word with no gaps instead of a seed pattern
     inputBinding:
       position: 103
-      prefix: --seed
+      prefix: --seed=
+      separate: false
   - id: self
     type:
       - 'null'
@@ -277,7 +293,8 @@ inputs:
     doc: set step length
     inputBinding:
       position: 103
-      prefix: --step
+      prefix: --step=
+      separate: false
   - id: strand
     type:
       - 'null'
@@ -285,7 +302,8 @@ inputs:
     doc: search both strands
     inputBinding:
       position: 103
-      prefix: --strand
+      prefix: --strand=
+      separate: false
   - id: transition
     type:
       - 'null'
@@ -294,7 +312,8 @@ inputs:
       allowed)
     inputBinding:
       position: 103
-      prefix: --transition
+      prefix: --transition=
+      separate: false
   - id: xdrop
     type:
       - 'null'
@@ -302,7 +321,8 @@ inputs:
     doc: set x-drop threshold
     inputBinding:
       position: 103
-      prefix: --xdrop
+      prefix: --xdrop=
+      separate: false
   - id: ydrop
     type:
       - 'null'
@@ -310,7 +330,8 @@ inputs:
     doc: set y-drop threshold
     inputBinding:
       position: 103
-      prefix: --ydrop
+      prefix: --ydrop=
+      separate: false
   - id: axt_path
     type:
       - 'null'
@@ -318,7 +339,8 @@ inputs:
     doc: create an output file in AXT format.
     inputBinding:
       position: 104
-      prefix: --axt
+      prefix: --axt=
+      separate: false
   - id: maf_path
     type:
       - 'null'
@@ -326,7 +348,8 @@ inputs:
     doc: create an output file in MAF format.
     inputBinding:
       position: 105
-      prefix: --maf
+      prefix: --maf=
+      separate: false
   - id: output_path
     type:
       - 'null'
@@ -334,7 +357,8 @@ inputs:
     doc: specify output alignment file;  otherwise alignments
     inputBinding:
       position: 106
-      prefix: --output
+      prefix: --output=
+      separate: false
   - id: rdotplot_path
     type:
       - 'null'
@@ -344,6 +368,9 @@ inputs:
       position: 107
       prefix: --rdotplot
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Alignments written to standard output (empty when --output is used)
   - id: output
     type:
       - 'null'
@@ -378,3 +405,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lastz:1.04.52--h7b50bb2_1
+stdout: lastz.out

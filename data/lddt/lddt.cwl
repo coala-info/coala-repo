@@ -7,29 +7,24 @@ doc: "Calculate the Local Distance Difference Test (LDDT) score for a given mode
 inputs:
   - id: mod1
     type: File
-    doc: First model file
+    doc: Model structure file (PDB)
     inputBinding:
       position: 1
   - id: mod2
     type:
       - 'null'
       - File
-    doc: Second model file (optional)
+    doc: Second model structure file (optional)
     inputBinding:
       position: 2
-  - id: re1
-    type: string
-    doc: Reference structure identifier (e.g., PDB ID or file path)
+  - id: references
+    type:
+      type: array
+      items: File
+    doc: Reference structure file(s); several references are joined with commas
     inputBinding:
       position: 3
-  - id: ref2
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Additional reference structure identifiers (optional)
-    inputBinding:
-      position: 4
+      itemSeparator: ','
   - id: angle_tolerance
     type:
       - 'null'

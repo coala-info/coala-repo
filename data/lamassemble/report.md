@@ -1,5 +1,11 @@
 # lamassemble CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lamassemble | PASS |  |
+
 ## lamassemble
 
 ### Tool Description

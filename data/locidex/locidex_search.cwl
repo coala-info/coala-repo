@@ -207,6 +207,10 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: root
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/locidex:0.4.0--pyhdfd78af_0

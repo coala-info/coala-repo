@@ -1,5 +1,11 @@
 # libis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| libis_LiBis | Not completed | bisulfite pipeline (BSMAP mapping, clipping, plotting); the example whole-genome reads need a full human reference genome (about 3 GB), too heavy here |
+
 ## libis_LiBis
 
 ### Tool Description

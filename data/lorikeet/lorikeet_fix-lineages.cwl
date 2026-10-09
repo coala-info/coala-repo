@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - lorikeet.jar
+  - lorikeet
   - fix-lineages
 label: lorikeet_fix-lineages
 doc: "Fixes lineages based on input lineage information, phylogenetic tree, and SNP
@@ -26,7 +24,7 @@ inputs:
       position: 101
       prefix: --fraction
   - id: input
-    type: string
+    type: File
     doc: Input lineage information. (Output of merge-spoligotypes)
     inputBinding:
       position: 101
@@ -56,6 +54,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: JAVA_TOOL_OPTIONS
+        envValue: -XX:-UseContainerSupport
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lorikeet:20--hdfd78af_1

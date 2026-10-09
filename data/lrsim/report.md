@@ -1,5 +1,11 @@
 # lrsim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lrsim | PASS | fixed -g (comma list of haploid FASTAs) and the reference/prefix flags and output collection; E. coli with 2 haplotypes gives 500k barcoded read pairs per haplotype (-g and -r modes); -r hangs if duplications or translocations are asked on a one-contig genome |
+
 ## lrsim
 
 ### Tool Description

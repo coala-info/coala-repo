@@ -22,24 +22,24 @@ inputs:
   - id: descentfile
     type:
       - 'null'
-      - string
-    doc: Output descent file
+      - File
+    doc: Descent (inheritance flow) file written by the linkage program, e.g. merlin.flow
     inputBinding:
       position: 104
       prefix: -d
   - id: haplofile
     type:
       - 'null'
-      - string
-    doc: Output haplotype file
+      - File
+    doc: Haplotype file written by the linkage program, e.g. merlin.chr
     inputBinding:
       position: 104
       prefix: -h
   - id: lodfile
     type:
       - 'null'
-      - string
-    doc: Output LOD file
+      - File
+    doc: LOD score file or output of the linkage program, e.g. the Merlin parametric analysis output
     inputBinding:
       position: 104
       prefix: -l
@@ -51,23 +51,23 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output descent file
+    doc: Allegro descent file (linkage.allegro_descent)
     outputBinding:
-      glob: $(inputs.descentfile)
+      glob: linkage.allegro_descent
   - id: haplofile_out
     type:
       - 'null'
       - File
-    doc: Output haplotype file
+    doc: Allegro haplotype file (linkage.allegro_haplo)
     outputBinding:
-      glob: $(inputs.haplofile)
+      glob: linkage.allegro_haplo
   - id: lodfile_out
     type:
       - 'null'
       - File
-    doc: Output LOD file
+    doc: Allegro LOD file (linkage.allegro_lod)
     outputBinding:
-      glob: $(inputs.lodfile)
+      glob: linkage.allegro_lod
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/linkage2allegro:2017.3--py35_0

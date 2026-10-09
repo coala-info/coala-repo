@@ -1,5 +1,11 @@
 # linkedsv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| linkedsv_linkedsv.py | Not completed | no usable test data: needs a 10x Longranger linked-read BAM with barcode tags and a human reference, none small enough is published |
+
 ## linkedsv_linkedsv.py
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # lima CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lima | PASS |  |
+
 ## lima
 
 ### Tool Description

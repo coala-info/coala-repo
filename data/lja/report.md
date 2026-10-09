@@ -1,5 +1,11 @@
 # lja CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lja | Failed | tool crash: the run_polishing child process crashes at the homopolymer uncompression step on three real HiFi datasets, so no assembly.fasta is written |
+
 ## lja
 
 ### Tool Description

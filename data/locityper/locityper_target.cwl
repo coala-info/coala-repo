@@ -12,6 +12,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --database
+  - id: allele_fastas
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Allele FASTA files named in --locus (third argument) or in the fifth
+      column of the --loci BED file. They are staged in the working directory
+      so the names resolve.
   - id: expand
     type:
       - 'null'
@@ -156,6 +164,10 @@ outputs:
     doc: Output database directory.
     outputBinding:
       glob: $(inputs.database)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "${ return inputs.allele_fastas ? inputs.allele_fastas : []; }"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/locityper:1.3.4--ha6fb395_0

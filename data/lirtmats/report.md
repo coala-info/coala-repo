@@ -1,5 +1,11 @@
 # lirtmats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lirtmats_cli | PASS |  |
+
 ## lirtmats_cli
 
 ### Tool Description

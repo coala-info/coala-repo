@@ -1,5 +1,11 @@
 # maf2synteny CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maf2synteny | PASS | real SibeliaZ GFF blocks of phage T7 vs T3 genomes: synteny blocks match the input block coordinates; flags fixed to -o, -s, -b (the old --out-dir, --simplify, --block-sizes did not exist); MAF input not tested |
+
 ## maf2synteny
 
 ### Tool Description

@@ -2,57 +2,52 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - compose
 label: lyner_compose
-doc: "Compose a pipeline from a list of transformations.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "'Inverse' of `decompose`. Assumes `decompose` has been executed already.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX decompose compose show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: transformations
-    type:
-      type: array
-      items: string
-    doc: List of transformations to compose.
-    inputBinding:
-      position: 1
-  - id: config_file
-    type:
-      - 'null'
-      - File
-    doc: Configuration file for the pipeline.
-    inputBinding:
-      position: 102
-      prefix: --config
-  - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: Input file to the pipeline.
-    inputBinding:
-      position: 102
-      prefix: --input
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Enable verbose output.
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 2
+  - id: decompose_mode
     type:
       - 'null'
-      - File
-    doc: Output file from the pipeline.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - string
+    doc: "Method of the preceding `decompose` step: PCA, KPCA, NMF, TSNE or ICA (default PCA)"
+    inputBinding:
+      position: 5
+      prefix: --mode
+  - id: decompose_num_components
+    type:
+      - 'null'
+      - int
+    doc: "Number of components of the preceding `decompose` step (default 2)"
+    inputBinding:
+      position: 5
+      prefix: --num-components
+outputs:
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 4
+    valueFrom: decompose
+  - position: 10
+    valueFrom: compose
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_compose.out

@@ -1,5 +1,11 @@
 # legsta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| legsta | PASS | ran on Legionella pneumophila Paris genome NC_006368; got ST1 (1,4,3,1,1,1,1) as in the tool README |
+
 ## legsta
 
 ### Tool Description

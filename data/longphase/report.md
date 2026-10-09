@@ -1,5 +1,13 @@
 # longphase CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| longphase_haplotag | PASS |  |
+| longphase_modcall | PASS |  |
+| longphase_phase | PASS |  |
+
 ## longphase_phase
 
 ### Tool Description

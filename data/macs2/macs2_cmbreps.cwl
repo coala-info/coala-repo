@@ -54,7 +54,7 @@ outputs:
     type: File
     doc: Output BEDGraph filename for combined scores.
     outputBinding:
-      glob: $(inputs.ofile_path)
+      glob: "$(inputs.outdir_path ? inputs.outdir_path + '/' + inputs.ofile_path : inputs.ofile_path)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

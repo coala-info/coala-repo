@@ -1,5 +1,11 @@
 # longbow CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| longbow | PASS |  |
+
 ## longbow
 
 ### Tool Description

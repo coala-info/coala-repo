@@ -7,13 +7,13 @@ label: localhgt_bkp
 doc: "Detect HGT breakpoints from metagenomic sequencing data.\n\nTool homepage: https://github.com/samtools/samtools"
 inputs:
   - id: fq1
-    type: File?
+    type: File
     doc: Uncompressed fastq 1 file.
     inputBinding:
       position: 101
       prefix: --fq1
   - id: fq2
-    type: File?
+    type: File
     doc: Uncompressed fastq 2 file.
     inputBinding:
       position: 101
@@ -29,9 +29,8 @@ inputs:
   - id: include_read_info
     type:
       - 'null'
-      - boolean
-    doc: 1 indicates including reads info, 0 indicates not (just for 
-      evaluation).
+      - int
+    doc: 1 includes reads info, 0 does not (just for evaluation). Default 1.
     inputBinding:
       position: 101
       prefix: --read_info
@@ -76,25 +75,27 @@ inputs:
       position: 101
       prefix: -e
   - id: reference_file
-    type: File?
+    type: File
     doc: Uncompressed reference file, which contains the representative genome 
-      of each concerned bacteria.
+      of each concerned bacteria. It is staged writable, because localhgt writes
+      index files beside it.
     inputBinding:
       position: 101
       prefix: -r
+      valueFrom: $(self.basename)
   - id: refine_fastq
     type:
       - 'null'
-      - boolean
-    doc: 1 indicates refine the input fastq file using fastp (recommended).
+      - int
+    doc: 1 refines the input fastq file using fastp (recommended), 0 does not. Default 0.
     inputBinding:
       position: 101
       prefix: --refine_fq
   - id: retain_xa_tag
     type:
       - 'null'
-      - boolean
-    doc: 1 indicates retain reads with XA tag.
+      - int
+    doc: 1 retains reads with the XA tag, 0 does not. Default 1.
     inputBinding:
       position: 101
       prefix: -a
@@ -132,15 +133,14 @@ inputs:
   - id: use_kmer
     type:
       - 'null'
-      - boolean
-    doc: 1 means using kmer to extract HGT-related segment, 0 means using 
-      original reference.
+      - int
+    doc: 1 uses kmers to extract the HGT-related segment, 0 uses the original reference. Default 1.
     inputBinding:
       position: 101
       prefix: --use_kmer
   - id: output_folder_path
     type: string?
-    doc: "\b             <str> Output folder. (default: ./)"
+    doc: Output folder.
     inputBinding:
       position: 102
       prefix: -o
@@ -152,6 +152,10 @@ outputs:
       glob: $(inputs.output_folder_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/localhgt:1.0.1--h9948957_3

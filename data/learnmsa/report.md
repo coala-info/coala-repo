@@ -1,5 +1,11 @@
 # learnmsa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| learnmsa_learnMSA | PASS | ran on BAliBASE BB11001 (4 HMG proteins) on CPU; the A3M alignment is plausible |
+
 ## learnmsa_learnMSA
 
 ### Tool Description

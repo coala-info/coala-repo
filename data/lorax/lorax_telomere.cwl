@@ -7,18 +7,19 @@ label: lorax_telomere
 doc: "Identify telomeric repeats in BAM or FASTA files.\n\nTool homepage: https://github.com/tobiasrausch/lorax"
 inputs:
   - id: reads_fasta
-    type: File
-    doc: reads FASTA file
+    type:
+      - 'null'
+      - File
+    doc: reads FASTA file (use instead of tumor_bam and genome)
     inputBinding:
       position: 1
-  - id: ref_fa
-    type: File
-    doc: genome fasta file
-    inputBinding:
-      position: 2
   - id: tumor_bam
-    type: File
-    doc: tumor BAM file
+    type:
+      - 'null'
+      - File
+    secondaryFiles:
+      - .bai
+    doc: tumor BAM file (use together with genome)
     inputBinding:
       position: 3
   - id: chrlen
@@ -33,6 +34,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: genome fasta file
     inputBinding:
       position: 104

@@ -12,6 +12,8 @@ inputs:
       prefix: --annotation_file
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: BAM file
     inputBinding:
       position: 101

@@ -205,9 +205,9 @@ outputs:
     type:
       type: array
       items: File
-    doc: Output name for the database files
+    doc: Database files written by lastdb (.bck, .des, .prj, .sds, .ssp, .suf, .tis, ...)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/last:1650--h5ca1c30_0

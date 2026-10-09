@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: lima
+requirements:
+  - class: InlineJavascriptRequirement
 label: lima
 doc: "Lima, Demultiplex Barcoded PacBio Data and Clip Barcodes\n\nTool homepage: https://github.com/PacificBiosciences/barcoding"
 inputs:
@@ -16,9 +18,9 @@ inputs:
     inputBinding:
       position: 2
   - id: output_file
-    type: File
-    doc: Subread or CCS BAM, SubreadSet or ConsensusReadSet XML, CCS FASTA/FASTQ
-      [.gz]
+    type: string
+    doc: Output name (Subread or CCS BAM, SubreadSet or ConsensusReadSet XML, CCS
+      FASTA/FASTQ [.gz]). Lima writes <prefix>.<barcodes>.<ext> and <prefix>.lima.* files.
     inputBinding:
       position: 3
   - id: bad_adapter_ratio
@@ -172,7 +174,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log to a file, instead of stderr.
     inputBinding:
       position: 104
@@ -508,6 +510,20 @@ inputs:
       position: 104
       prefix: --window-size-multi
 outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Demultiplexed output files and the lima reports, all files starting with the output prefix.
+    outputBinding:
+      glob: $(inputs.output_file.replace(/\.(bam|xml|fasta|fa|fastq|fq)(\.gz)?$/i, '') + '*')
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file, written with log_file.
+    outputBinding:
+      glob: $(inputs.log_file)
   - id: stdout
     type: stdout
     doc: Standard output

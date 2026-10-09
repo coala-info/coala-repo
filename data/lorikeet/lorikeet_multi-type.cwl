@@ -1,56 +1,51 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - lorikeet.jar
-  - multi-typing
+  - lorikeet
+  - multi-type
 label: lorikeet_multi-type
-doc: "Performs multi-typing analysis using spoligotype files.\n\nTool homepage: https://github.com/AbeelLab/lorikeet"
+doc: "Merge multiple spoligotype files together in a single file, renormalizing across multiple libraries when needed.\n\nTool homepage: https://github.com/AbeelLab/lorikeet"
 inputs:
-  - id: file_pattern
-    type:
-      - 'null'
-      - string
-    doc: File name pattern for the input files.
-    inputBinding:
-      position: 101
-      prefix: --pattern
   - id: input_directory
     type:
       type: array
       items: Directory
-    doc: Input directory that contains all spoligotype files. You can specify 
-      multiple -i arguments
+      inputBinding:
+        prefix: --input
+    doc: Input directory that contains all spoligotype files. You can specify multiple -i arguments
     inputBinding:
-      position: 101
-      prefix: --input
+      position: 1
   - id: output_prefix
     type: string
     doc: Output prefix
     inputBinding:
-      position: 101
+      position: 2
       prefix: --output
-  - id: recursive
-    type:
-      - 'null'
-      - boolean
-    doc: Search input directories recursively
-    inputBinding:
-      position: 101
-      prefix: --recursive
   - id: threshold
     type:
       - 'null'
       - float
     doc: Minimum threshold
     inputBinding:
-      position: 101
+      position: 5
       prefix: --threshold
+  - id: recursive
+    type:
+      - 'null'
+      - boolean
+    doc: Search input directories recursively [Default=true]
+    inputBinding:
+      position: 3
+      prefix: --recursive
+  - id: file_pattern
+    type:
+      - 'null'
+      - string
+    doc: File name pattern for the input files. [Default=".*.spoligotype]"
+    inputBinding:
+      position: 4
+      prefix: --pattern
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_prefix_files
     type:
       type: array
@@ -58,7 +53,12 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: JAVA_TOOL_OPTIONS
+        envValue: -XX:-UseContainerSupport
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lorikeet:20--hdfd78af_1
-stdout: lorikeet_multi-type.out

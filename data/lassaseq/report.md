@@ -1,5 +1,11 @@
 # lassaseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lassaseq | PASS |  |
+
 ## lassaseq
 
 ### Tool Description

@@ -2,111 +2,73 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - dist-graph
 label: lyner_dist-graph
-doc: "Generates a distance graph from a distance matrix.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Build a threshold graph, presumes pairwise_distances.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX pairwise-distances dist-graph`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input_matrix
-    type: File
-    doc: Path to the input distance matrix file.
-    inputBinding:
-      position: 1
-  - id: color_by
-    type:
-      - 'null'
-      - string
-    doc: Attribute to use for coloring nodes (e.g., cluster_id).
-    inputBinding:
-      position: 102
-      prefix: --color-by
-  - id: color_map
-    type:
-      - 'null'
-      - string
-    doc: Colormap to use for node coloring (e.g., viridis, plasma).
-    inputBinding:
-      position: 102
-      prefix: --color-map
-  - id: edge_width
-    type:
-      - 'null'
-      - float
-    doc: Width of the edges in the graph.
-    inputBinding:
-      position: 102
-      prefix: --edge-width
-  - id: iterations
-    type:
-      - 'null'
-      - int
-    doc: Maximum number of iterations for the layout algorithm.
-    inputBinding:
-      position: 102
-      prefix: --iterations
-  - id: k
-    type:
-      - 'null'
-      - int
-    doc: Parameter for the spring layout (number of iterations).
-    inputBinding:
-      position: 102
-      prefix: --k
-  - id: labels
-    type:
-      - 'null'
-      - boolean
-    doc: Whether to display node labels.
-    inputBinding:
-      position: 102
-      prefix: --labels
-  - id: layout
-    type:
-      - 'null'
-      - string
-    doc: Layout algorithm for the graph (e.g., spring, circular, spectral).
-    inputBinding:
-      position: 102
-      prefix: --layout
-  - id: no_labels
-    type:
-      - 'null'
-      - boolean
-    doc: Whether to hide node labels.
-    inputBinding:
-      position: 102
-      prefix: --no-labels
-  - id: node_size
-    type:
-      - 'null'
-      - float
-    doc: Size of the nodes in the graph.
-    inputBinding:
-      position: 102
-      prefix: --node-size
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Enable verbose output.
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_graph_path
-    type: string
-    doc: Output or path parameter `output_graph_path`
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 103
-      prefix: --output-graph
+      position: 2
+  - id: pairwise_metric
+    type:
+      - 'null'
+      - string
+    doc: "Distance metric of the preceding `pairwise-distances` step (default euclidean)"
+    inputBinding:
+      position: 5
+      prefix: --metric
+  - id: threshold
+    type:
+      - 'null'
+      - float
+    doc: "Edge weight threshold (default: median weight)"
+    inputBinding:
+      position: 20
+      prefix: --threshold
+  - id: layout
+    type:
+      - 'null'
+      - string
+    doc: "Graph layout: fruchterman_reingold or kamada_kawai (default fruchterman_reingold)"
+    inputBinding:
+      position: 20
+      prefix: --layout
+  - id: cliques
+    type:
+      - 'null'
+      - boolean
+    doc: "Build the maximal clique graph"
+    inputBinding:
+      position: 20
+      prefix: --cliques
 outputs:
-  - id: output_graph
+  - id: graph_html
     type:
       - 'null'
       - File
-    doc: Path to save the output graph file.
+    doc: Interactive plotly figure of the graph
     outputBinding:
-      glob: $(inputs.output_graph_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: temp-plot.html
+  - id: stdout
+    type: stdout
+    doc: "Minimum, median and maximum edge weight"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 4
+    valueFrom: pairwise-distances
+  - position: 10
+    valueFrom: dist-graph
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_dist-graph.out

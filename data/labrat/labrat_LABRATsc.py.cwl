@@ -74,6 +74,39 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: psis_cellbycell
+    type:
+      - 'null'
+      - File
+    doc: Psi values per cell, written in cellbycell mode
+    outputBinding:
+      glob: psis.cellbycell.txt.gz
+  - id: results_cellbycell
+    type:
+      - 'null'
+      - File
+    doc: Delta psi test results, written in cellbycell mode
+    outputBinding:
+      glob: results.cellbycell.txt
+  - id: results_subsampleclusters
+    type:
+      - 'null'
+      - File
+    doc: Delta psi test results, written in subsampleClusters mode
+    outputBinding:
+      glob: results.subsampleclusters.txt
+  - id: position_factor_counts
+    type:
+      - 'null'
+      - File
+    doc: Number of position factors per gene
+    outputBinding:
+      glob: numberofposfactors.txt
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.gff)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/labrat:0.3.0--pyhdfd78af_1

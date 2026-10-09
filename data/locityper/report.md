@@ -1,5 +1,16 @@
 # locityper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| locityper_align | PASS | synthetic data: real 8 kb reference slice plus two planted mutated copies; mismatch counts match |
+| locityper_genotype | Not completed | needs a database and a preprocessed whole-genome dataset (preproc could not be completed on small data); fixed the --databases flag |
+| locityper_preproc | Not completed | needs whole-genome reads with enough depth and a background region over 3 Mb; the only small real long-read set (17 reads on a 150 kb mini reference) fails with a k-mer counting error |
+| locityper_prune | PASS | synthetic data: database and alignments built from the planted alleles |
+| locityper_recruit | PASS |  |
+| locityper_target | PASS | synthetic data: real mini-reference locus with planted allele FASTA |
+
 ## locityper_target
 
 ### Tool Description

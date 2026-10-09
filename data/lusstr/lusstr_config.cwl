@@ -27,7 +27,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Input file or directory
+    doc: Input file or directory, as a path or name that the later strs or snps
+      step can see (it is only written into the config file)
     inputBinding:
       position: 101
       prefix: --input
@@ -159,25 +160,28 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory to add config file; default is current working directory
     inputBinding:
       position: 101
       prefix: --workdir
   - id: output_path
-    type: string?
-    doc: Output file/directory name
+    type:
+      - 'null'
+      - string
+    doc: Output file/directory name (written into the config file as the output
+      name of later steps)
     inputBinding:
       position: 102
       prefix: --out
 outputs:
-  - id: output
+  - id: config_file
     type:
       - 'null'
       - File
-    doc: Output file/directory name
+    doc: The config file written by lusstr (config.yaml, or snp_config.yaml with --snps)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "$((inputs.workdir ? inputs.workdir : '.') + '/' + (inputs.snps ? 'snp_config.yaml' : 'config.yaml'))"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

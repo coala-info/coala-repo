@@ -1,5 +1,11 @@
 # lepwrap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lepwrap_LepWrap | Not completed | pipeline, skipped (LepWrap is a Snakemake pipeline) |
+
 ## lepwrap_LepWrap
 
 ### Tool Description

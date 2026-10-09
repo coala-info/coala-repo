@@ -1,5 +1,11 @@
 # lua CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lua | PASS | ran a base-count script on the SARS-CoV-2 genome (counts match shell counts) and -e |
+
 ## lua
 
 ### Tool Description
@@ -7,14 +13,14 @@ Execute Lua scripts or enter interactive mode
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lua:5.3.4
-- **Homepage**: https://github.com/luanti-org/luanti
+- **Homepage**: https://www.lua.org
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/main/packages/lua/overview
 - **Total Downloads**: 162
 - **Last updated**: 2025-06-17
-- **GitHub**: https://github.com/luanti-org/luanti
+- **GitHub**: https://www.lua.org
 - **Stars**: N/A
 ### Original Help Text
 ```text

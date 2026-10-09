@@ -92,7 +92,7 @@ outputs:
     doc: Output bedGraph file name. If not specified, will write to standard 
       output.
     outputBinding:
-      glob: $(inputs.outputfile)
+      glob: "$(inputs.outdir ? inputs.outdir + '/' + inputs.outputfile : inputs.outputfile)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

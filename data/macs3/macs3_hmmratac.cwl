@@ -25,7 +25,9 @@ inputs:
       position: 101
       prefix: --binsize
   - id: blacklist
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Filename of blacklisted regions to exclude.
     inputBinding:
       position: 101
@@ -129,10 +131,6 @@ inputs:
         items: float
     doc: Initial mean values for the fragment distribution for short fragments, 
       mono-, di-, and tri-nucleosomal fragments.
-      - 50
-      - 200
-      - 400
-      - 600
     inputBinding:
       position: 101
       prefix: --means
@@ -264,10 +262,6 @@ inputs:
         items: float
     doc: Initial standard deviation values for fragment distribution for short 
       fragments, mono-, di-, and tri-nucleosomal fragments.
-      - 20
-      - 20
-      - 20
-      - 20
     inputBinding:
       position: 101
       prefix: --stddevs
@@ -281,7 +275,9 @@ inputs:
       position: 101
       prefix: --training-flanking
   - id: training_regions
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Filename of training regions to use for training HMM.
     inputBinding:
       position: 101
@@ -295,6 +291,14 @@ inputs:
       position: 101
       prefix: --upper
 outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the experiment name (accessible regions, and optional
+      model, training regions, states and likelihood files).
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')$(inputs.name ? inputs.name : 'NA')_*"
   - id: output_outdir
     type:
       - 'null'

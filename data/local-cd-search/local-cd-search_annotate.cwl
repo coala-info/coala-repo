@@ -92,7 +92,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: PATH                Path to write functional site        │
+    doc: Path to write functional site annotations.
     inputBinding:
       position: 104
       prefix: --sites-output

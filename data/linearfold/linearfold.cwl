@@ -5,6 +5,10 @@ label: linearfold
 doc: "Predict RNA secondary structure using the LinearFold algorithm.\n\nTool homepage:
   https://github.com/LinearFold/LinearFold"
 inputs:
+  - id: sequences
+    type: File
+    doc: Input read from standard input. One RNA sequence per line (FASTA with fasta);
+      with constraints or eval, each sequence is followed by a line holding the structure.
   - id: beamsize
     type:
       - 'null'
@@ -104,3 +108,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/linearfold:1.0.1.dev20220829--h9948957_2
 stdout: linearfold.out
+stdin: $(inputs.sequences.path)

@@ -1,5 +1,12 @@
 # localhgt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| localhgt_bkp | PASS | synthetic data: the tool's own simulated test set |
+| localhgt_event | PASS | synthetic data: the tool's own simulated test set |
+
 ## localhgt_bkp
 
 ### Tool Description

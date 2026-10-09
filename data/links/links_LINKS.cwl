@@ -3,6 +3,18 @@ class: CommandLineTool
 baseCommand: LINKS
 label: links_LINKS
 doc: "v2.0.1\n\nTool homepage: https://github.com/bcgsc/LINKS"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.long_sequence_reads_or_mpet_pairs)
+      - entryname: reads.fof
+        entry: |
+          $(inputs.long_sequence_reads_or_mpet_pairs.map(function(f) { return f.basename; }).join('\n') + '\n')
+arguments:
+  - position: 101
+    prefix: -s
+    valueFrom: reads.fof
 inputs:
   - id: bloom_filter_false_positive_rate
     type:
@@ -54,12 +66,12 @@ inputs:
       position: 101
       prefix: -k
   - id: long_sequence_reads_or_mpet_pairs
-    type: File
-    doc: file-of-filenames, full path to long sequence reads or MPET pairs [see 
-      below] (Multi-FASTA/fastq format, required)
-    inputBinding:
-      position: 101
-      prefix: -s
+    type:
+      type: array
+      items: File
+    doc: Long sequence reads or MPET pairs (Multi-FASTA/fastq format, optionally gzip'ed).
+      The files are staged in the working directory and a file-of-filenames
+      (reads.fof) naming them is passed to -s.
   - id: maximum_link_ratio
     type:
       - 'null'
@@ -96,10 +108,9 @@ inputs:
       position: 101
       prefix: -o
   - id: output_base_name
-    type:
-      - 'null'
-      - string
-    doc: base name for your output files (optional)
+    type: string
+    default: links_output
+    doc: base name for your output files
     inputBinding:
       position: 101
       prefix: -b
@@ -132,17 +143,16 @@ inputs:
   - id: turn_off_bloom_filter
     type:
       - 'null'
-      - boolean
-    doc: Turn off Bloom filter functionality (-x 1 = yes, default = no, 
-      optional)
+      - int
+    doc: Turn off Bloom filter functionality (1 = yes, default = no)
     inputBinding:
       position: 101
       prefix: -x
   - id: verbose_mode
     type:
       - 'null'
-      - boolean
-    doc: Runs in verbose mode (-v 1 = yes, default = no, optional)
+      - int
+    doc: Runs in verbose mode (1 = yes, default = no)
     inputBinding:
       position: 101
       prefix: -v

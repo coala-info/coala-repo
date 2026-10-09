@@ -1,5 +1,22 @@
 # lorax CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lorax_amplicon | PASS | synthetic data: simulated PacBio toy set from the longshot repo with a made-up amplicon BED; copy numbers near 2 and no discordant reads, as expected |
+| lorax_components | PASS |  |
+| lorax_convert | Failed | tool bug: the output is plain SAM text and the CIGAR misses the trailing soft clip, so samtools rejects the records |
+| lorax_ecov | PASS | synthetic data: handmade GAF walking real edges of a real graph; edge supports 8, 5 and 3 match |
+| lorax_extract | PASS |  |
+| lorax_gfa2dot | PASS |  |
+| lorax_ncov | PASS | node coverage matches the GAF match counts per segment (minigraph alignments of real haplotype sequences) |
+| lorax_pct | PASS |  |
+| lorax_repeat | PASS |  |
+| lorax_stats | PASS |  |
+| lorax_telomere | PASS |  |
+| lorax_tithreads | Not completed | ran on a real tumor and normal pair (5 percent chr22 subset) but found no templated insertion threads, so the output has only headers and cannot be checked |
+
 ## lorax_tithreads
 
 ### Tool Description
@@ -178,6 +195,150 @@ Options:
   -n [ --nomix ]                        do not mix repeat units
 ```
 
+
+## lorax_stats
+
+### Tool Description
+Basic statistics of a pan-genome graph (GFA).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lorax:0.5.1--h4d20210_0
+- **Homepage**: https://github.com/tobiasrausch/lorax
+- **Package**: https://anaconda.org/channels/bioconda/packages/lorax/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+lorax stats [OPTIONS] <pangenome.hg38.gfa.gz>
+
+Generic options:
+  -? [ --help ]          show help message
+  -o [ --outfile ] arg   output file
+```
+
+## lorax_components
+
+### Tool Description
+Connected components of a pan-genome graph.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lorax:0.5.1--h4d20210_0
+- **Homepage**: https://github.com/tobiasrausch/lorax
+- **Package**: https://anaconda.org/channels/bioconda/packages/lorax/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+lorax components [OPTIONS] <pangenome.hg38.gfa.gz>
+
+Generic options:
+  -? [ --help ]          show help message
+  -p [ --prefix ] arg    output prefix to split graph into components
+  -o [ --outfile ] arg   output file
+```
+
+## lorax_gfa2dot
+
+### Tool Description
+Convert a pan-genome graph (GFA) to dot (graphviz) format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lorax:0.5.1--h4d20210_0
+- **Homepage**: https://github.com/tobiasrausch/lorax
+- **Package**: https://anaconda.org/channels/bioconda/packages/lorax/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: loraxgfa2dot [OPTIONS] <pangenome.hg38.gfa.gz>
+Convert entire graph: lorax gfa2dot [OPTIONS] -s all <pangenome.hg38.gfa.gz>
+Convert a subgraph: lorax gfa2dot [OPTIONS] -s s103 -r 1 <pangenome.hg38.gfa.gz>
+Convert a connected component: lorax gfa2dot [OPTIONS] -s comp -c 20 <pangenome.hg38.gfa.gz>
+
+Generic options:
+  -? [ --help ]                show help message
+  -r [ --radius ] arg (=1)     radius around selected node
+  -c [ --component ] arg (=0)  select a component of the graph
+  -s [ --segment ] arg (=all)  segment to plot (all: all segments, comp: 
+                               connected component of the graph)
+  -o [ --outfile ] arg         output dot file
+```
+
+## lorax_convert
+
+### Tool Description
+Convert a pan-genome graph alignment (GAF) to BAM.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lorax:0.5.1--h4d20210_0
+- **Homepage**: https://github.com/tobiasrausch/lorax
+- **Package**: https://anaconda.org/channels/bioconda/packages/lorax/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+Using BAM/CRAM: lorax convert [OPTIONS] -g <pangenome.gfa.gz> -r <genome.fasta> -a <align.bam> <sample.gaf.gz>
+Using FASTQ: lorax convert [OPTIONS] -g <pangenome.gfa.gz> -f <reads.fa.gz> <sample.gaf.gz>
+
+Generic options:
+  -? [ --help ]                       show help message
+  -c [ --chunk ] arg (=500000)        chunk size [0: all at once]
+  -g [ --graph ] arg                  GFA pan-genome graph
+  -r [ --reference ] arg              FASTA reference
+  -a [ --align ] arg                  BAM/CRAM file
+  -f [ --fastq ] arg                  FASTA/FASTQ file
+  -s [ --sequences ] arg (="out.fa")  output sequences
+  -o [ --outfile ] arg                output alignments
+```
+
+## lorax_ncov
+
+### Tool Description
+Node coverage of a pan-genome graph from graph alignments (GAF).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lorax:0.5.1--h4d20210_0
+- **Homepage**: https://github.com/tobiasrausch/lorax
+- **Package**: https://anaconda.org/channels/bioconda/packages/lorax/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+lorax ncov [OPTIONS] -g <pangenome.gfa.gz> <sample.gaf.gz>
+
+Generic options:
+  -? [ --help ]          show help message
+  -g [ --graph ] arg     GFA pan-genome graph
+  -o [ --outfile ] arg   output statistics
+  -n [ --name ] arg      sample name
+```
+
+## lorax_ecov
+
+### Tool Description
+Edge coverage of a pan-genome graph from graph alignments (GAF).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lorax:0.5.1--h4d20210_0
+- **Homepage**: https://github.com/tobiasrausch/lorax
+- **Package**: https://anaconda.org/channels/bioconda/packages/lorax/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+lorax ecov [OPTIONS] -g <pangenome.hg38.gfa.gz> <sample.gaf>
+
+Generic options:
+  -? [ --help ]          show help message
+  -g [ --graph ] arg     GFA pan-genome graph
+  -o [ --outfile ] arg   output statistics
+  -n [ --name ] arg      sample name
+```
 
 ## Metadata
 - **Skill**: generated

@@ -1,5 +1,11 @@
 # libis_moabs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| libis_moabs | Not completed | MOABS pipeline runner (BSMAP, MCALL, MCOMP) that needs a full human reference genome for the LiBis example reads, too heavy here |
+
 ## libis_moabs
 
 ### Tool Description

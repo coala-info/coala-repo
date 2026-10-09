@@ -2,88 +2,72 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - dendro
 label: lyner_dendro
-doc: "Plot a dendrogram from a distance matrix.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Build a dendrogram based on the results of chosen decomposition methods.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX dendro`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input_matrix
-    type: File
-    doc: Path to the distance matrix file.
-    inputBinding:
-      position: 1
-  - id: color_threshold
-    type:
-      - 'null'
-      - float
-    doc: Color branches below this threshold.
-    inputBinding:
-      position: 102
-      prefix: --color-threshold
-  - id: labels
-    type:
-      - 'null'
-      - File
-    doc: Optional file containing labels for the dendrogram.
-    inputBinding:
-      position: 102
-      prefix: --labels
-  - id: leaf_font_size
-    type:
-      - 'null'
-      - int
-    doc: Font size for leaf labels.
-    inputBinding:
-      position: 102
-      prefix: --leaf-font-size
-  - id: leaf_rotation
-    type:
-      - 'null'
-      - int
-    doc: Rotation angle for leaf labels.
-    inputBinding:
-      position: 102
-      prefix: --leaf-rotation
-  - id: linkage
-    type:
-      - 'null'
-      - string
-    doc: Type of linkage to use for clustering (e.g., 'single', 'complete', 
-      'average', 'weighted').
-    inputBinding:
-      position: 102
-      prefix: --linkage
-  - id: no_labels
+  - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Do not display labels on the dendrogram.
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 102
-      prefix: --no-labels
-  - id: orientation
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
+    inputBinding:
+      position: 2
+  - id: axis
+    type:
+      - 'null'
+      - int
+    doc: "Axis to cluster: 0 clusters samples, 1 clusters features (default 0)"
+    inputBinding:
+      position: 20
+      prefix: --axis
+  - id: methods
     type:
       - 'null'
       - string
-    doc: Orientation of the dendrogram ('top', 'bottom', 'left', 'right').
+    doc: "Comma separated decomposition methods: NMF, RPCA, PCA, ICA, TSNE (default PCA)"
     inputBinding:
-      position: 102
-      prefix: --orientation
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 20
+      prefix: --methods
+  - id: mode
     type:
       - 'null'
-      - File
-    doc: Path to save the dendrogram image.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - string
+    doc: "each or consensus (default each)"
+    inputBinding:
+      position: 20
+      prefix: --mode
+  - id: num_components
+    type:
+      - 'null'
+      - string
+    doc: "Numbers of components to try, for example 2-6 or 2,3 (default 2-6)"
+    inputBinding:
+      position: 20
+      prefix: --num-components
+  - id: num_runs
+    type:
+      - 'null'
+      - int
+    doc: "Number of runs (default 1)"
+    inputBinding:
+      position: 20
+      prefix: --num-runs
+outputs:
+  - id: stdout
+    type: stdout
+    doc: "Clusters found by the chosen decomposition methods"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: dendro
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_dendro.out

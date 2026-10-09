@@ -1,5 +1,11 @@
 # lemur CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lemur | PASS | ran on the lemur example reads and database; output equals the expected Listeria monocytogenes profile; log_file typed as string output |
+
 ## lemur
 
 ### Tool Description

@@ -2,19 +2,38 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - seed
 label: lyner_seed
-doc: "Try \"lyner seed --help\" for help.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Sets both numpy and tensorflow seed.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX seed show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: seed
-    type: string
-    doc: SEED
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 1
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
+    inputBinding:
+      position: 2
+  - id: seed
+    type: int
+    doc: "Random seed"
+    inputBinding:
+      position: 20
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: seed
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0

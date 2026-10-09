@@ -87,10 +87,8 @@ inputs:
       position: 102
       prefix: --check-names
   - id: db_name
-    type:
-      - 'null'
-      - string
-    doc: Name for Kraken DB
+    type: Directory
+    doc: Kraken database directory (the --db NAME)
     inputBinding:
       position: 102
       prefix: --db
@@ -189,6 +187,9 @@ inputs:
       position: 105
       prefix: --unclassified-out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Kraken classification output (used when output_path is not set).
   - id: unclassified_out
     type:
       - 'null'
@@ -215,3 +216,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/livekraken:1.0--pl5321h9948957_12
+stdout: livekraken.out

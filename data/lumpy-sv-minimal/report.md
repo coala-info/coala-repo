@@ -1,5 +1,12 @@
 # lumpy-sv-minimal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lumpy-sv-minimal_lumpy | PASS |  |
+| lumpy-sv-minimal_lumpyexpress | Failed | image problem: the image has no samtools or sambamba, so lumpyexpress exits with an error before calling variants |
+
 ## lumpy-sv-minimal_lumpyexpress
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # lightstringgraph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lightstringgraph_graph2asqg | Not completed | needs BEETL BWT, LCP and end-position files as input, and BEETL is not in the image or any bioconda image |
+| lightstringgraph_lsg | Not completed | needs BEETL BWT, LCP and end-position files as input, and BEETL is not in the image or any bioconda image |
+| lightstringgraph_redbuild | Not completed | needs BEETL BWT, LCP and end-position files as input, and BEETL is not in the image or any bioconda image |
+
 ## lightstringgraph_lsg
 
 ### Tool Description

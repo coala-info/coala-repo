@@ -1,9 +1,51 @@
 # lyner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lyner_astype | PASS |  |
+| lyner_autoencode | Failed | image problem: lyner calls tensorflow set_random_seed, which does not exist in tensorflow 2.0.0 of the image |
+| lyner_center | PASS |  |
+| lyner_changes | Failed | tool bug: needs lyner estimate first, which crashes with NameError (pandas is not imported in lyner/commands/stats.py) |
+| lyner_cluster | PASS |  |
+| lyner_cluster-agglomerative | PASS |  |
+| lyner_cluster-from | PASS |  |
+| lyner_cluster-hierarchical | PASS |  |
+| lyner_compose | PASS |  |
+| lyner_correlate | PASS |  |
+| lyner_decompose | PASS |  |
+| lyner_dendro | PASS | default components verified; --num-components 2-3 crashes with an IndexError (tool bug) |
+| lyner_design | Failed | tool bug: lyner design gives samples the wrong labels (data stay in input column order) when the design file is not ordered by sorted class name |
+| lyner_dist-graph | PASS |  |
+| lyner_estimate | Failed | tool bug: lyner estimate crashes with NameError (pandas is not imported in lyner/commands/stats.py) |
+| lyner_filter | PASS |  |
+| lyner_frequent-sets | PASS |  |
+| lyner_mmr | PASS |  |
+| lyner_normalise | PASS | quantile, scale and unit methods verified; the deseq and identity methods crash (tool bug: DataFrame has no normalize) |
+| lyner_pairwise-distances | PASS |  |
+| lyner_plot | PASS | heatmap html written; the tool strips trailing letters h, t, m, l and dots from the output name before adding .html |
+| lyner_read | PASS |  |
+| lyner_read-annotation | PASS |  |
+| lyner_reindex | PASS |  |
+| lyner_seed | Failed | tool bug: lyner seed always crashes (seed() got multiple values for argument 'seed'); its tensorflow set_random_seed import also fails with tensorflow 2.0.0 |
+| lyner_select | PASS |  |
+| lyner_show | PASS |  |
+| lyner_sort | PASS |  |
+| lyner_sort-index | PASS |  |
+| lyner_store | PASS |  |
+| lyner_summarise | PASS |  |
+| lyner_supplement | PASS |  |
+| lyner_targets | PASS |  |
+| lyner_threshold | PASS |  |
+| lyner_transform | PASS |  |
+| lyner_transpose | PASS |  |
+| lyner_uncluster | Failed | tool bug: lyner uncluster crashes (TypeError) on the integer cluster labels made by cluster-hierarchical |
+
 ## lyner_astype
 
 ### Tool Description
-Convert data to a specified type.
+Convert data to given type.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -19,15 +61,49 @@ Convert data to a specified type.
 ### Original Help Text
 ```text
 Usage: lyner astype [OPTIONS] TYPE
-Try "lyner astype --help" for help.
 
-Error: no such option: --h  Did you mean --help?
+  Convert data to given type.
+
+Options:
+  --help  Show this message and exit.
+```
+
+## lyner_autoencode
+
+### Tool Description
+Build and train an autoencoder.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
+- **Homepage**: https://github.com/tedil/lyner
+- **Package**: https://anaconda.org/channels/bioconda/packages/lyner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: lyner autoencode [OPTIONS]
+
+  Build and train an autoencoder.
+
+Options:
+  -l, --layer-config DICT
+  -f, --from-file FILE
+  -s, --store-model PATH
+  --loss [kld|mae|mape|mse|msle|binary_crossentropy|categorical_crossentropy|categorical_hinge|cosine|cosine_proximity|hinge|logcosh|poisson|sparse_categorical_crossentropy|squared_hinge]
+  -o, --optimiser [adadelta|adagrad|adam|adamax|nadam|rmsprop|sgd]
+  -e, --epochs INTEGER
+  -b, --batch-size INTEGER
+  -s, --shuffle BOOLEAN
+  -v, --validation-split FLOAT RANGE
+  -w, --adjust-weights FLOAT
+  -m, --mode [discard|nodes|weights]
+  --help                          Show this message and exit.
 ```
 
 ## lyner_center
 
 ### Tool Description
-Center the matrix.
+Center features around their respective median or mean.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -37,40 +113,41 @@ Center the matrix.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/transform.py", line 66, in center
-    data = getattr(pipe, pipe.selection, pipe.matrix)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: selection
+Usage: lyner center [OPTIONS]
+
+  Center features around their respective median or mean.
+
+Options:
+  -m, --method [mean|median]
+  --help                      Show this message and exit.
+```
+
+## lyner_changes
+
+### Tool Description
+Calculate differences between sample groups.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
+- **Homepage**: https://github.com/tedil/lyner
+- **Package**: https://anaconda.org/channels/bioconda/packages/lyner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: lyner changes [OPTIONS]
+
+  Calculate differences between sample groups.
+
+Options:
+  -m, --mode [likelihood|cdf]
+  --help                       Show this message and exit.
 ```
 
 ## lyner_cluster
 
 ### Tool Description
-Cluster cells based on their expression profiles.
+Clustering via k_mean / dbscan / mean_shift.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -80,40 +157,21 @@ Cluster cells based on their expression profiles.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/cluster.py", line 36, in cluster
-    centroids, labels, *_ = clustering(pipe.matrix.values, **mode_config)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner cluster [OPTIONS]
+
+  Clustering via k_mean / dbscan / mean_shift.
+
+Options:
+  -m, --method [dbscan|k_means|mean_shift]
+  -n, --num-clusters INTEGER      The exact number of clusters to build.
+  -c, --mode-config DICT
+  --help                          Show this message and exit.
 ```
 
 ## lyner_cluster-agglomerative
 
 ### Tool Description
-Agglomerative clustering of cells
+Agglomerative clustering.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -123,40 +181,30 @@ Agglomerative clustering of cells
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/cluster.py", line 60, in cluster_agglomerative
-    matrix = pipe.matrix
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner cluster-agglomerative [OPTIONS]
+
+  Agglomerative clustering.
+
+Options:
+  -b, --by LIST                Any comma separated combination of: 'trend',
+                               'mean', 'median', 'mad', 'var', 'ontology'.
+                               Order is relevant.
+  -l, --min-nclusters INTEGER  The minimum number of clusters to build. NOTE:
+                               This option is mutually exclusive with:
+                               [nclusters].
+  -u, --max-nclusters INTEGER  The maximum number of clusters to build. NOTE:
+                               This option is mutually exclusive with:
+                               [nclusters].
+  -n, --nclusters INTEGER      The exact number of clusters to build. NOTE:
+                               This option is mutually exclusive with:
+                               [max_nclusters, min_nclusters].
+  --help                       Show this message and exit.
 ```
 
 ## lyner_cluster-from
 
 ### Tool Description
-Cluster sequences from a file.
+Use cluster indices from file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -167,15 +215,17 @@ Cluster sequences from a file.
 ### Original Help Text
 ```text
 Usage: lyner cluster-from [OPTIONS] FILE
-Try "lyner cluster-from --help" for help.
 
-Error: no such option: --h  Did you mean --help?
+  Use cluster indices from file.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## lyner_cluster-hierarchical
 
 ### Tool Description
-Hierarchical clustering of samples.
+Hierarchical clustering
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -185,40 +235,22 @@ Hierarchical clustering of samples.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/cluster.py", line 110, in cluster_hierarchical
-    l = linkage(pipe.matrix.values, method=method, metric=distance_metric)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner cluster-hierarchical [OPTIONS]
+
+  Hierarchical clustering
+
+Options:
+  -m, --method [single|complete|average|weighted|centroid|median|ward]
+  -d, --distance-metric [braycurtis|canberra|chebyshev|cityblock|correlation|cosine|dice|euclidean|hamming|jaccard|kulsinski|mahalanobis|matching|minkowski|rogerstanimoto|russellrao|seuclidean|sokalmichener|sokalsneath|sqeuclidean|yule]
+  -c, --criterion [inconsistent|distance|maxclust|monocrit|maxclust_monocrit]
+  -t, --threshold FLOAT
+  --help                          Show this message and exit.
 ```
 
 ## lyner_compose
 
 ### Tool Description
-Compose a pipeline from a list of transformations.
+'Inverse' of `decompose`. Assumes `decompose` has been executed already.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -228,38 +260,18 @@ Compose a pipeline from a list of transformations.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/transform.py", line 354, in compose
-    assert hasattr(pipe, 'decomposition')
-AssertionError
+Usage: lyner compose [OPTIONS]
+
+  'Inverse' of `decompose`. Assumes `decompose` has been executed already.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## lyner_correlate
 
 ### Tool Description
-Calculate pairwise Pearson correlation coefficients between columns of a matrix.
+Correlate features using either of pearson, kendall or spearman correlation.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -269,40 +281,20 @@ Calculate pairwise Pearson correlation coefficients between columns of a matrix.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/transform.py", line 79, in correlate
-    pipe.matrix = pipe.matrix.corr(method=method)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner correlate [OPTIONS]
+
+  Correlate features using either of pearson, kendall or spearman
+  correlation.
+
+Options:
+  -m, --method [pearson|kendall|spearman]
+  --help                          Show this message and exit.
 ```
 
 ## lyner_decompose
 
 ### Tool Description
-Decompose a matrix into its constituent parts.
+Decomposition/dimensionality reduction (PCA, ICA, …)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -312,40 +304,22 @@ Decompose a matrix into its constituent parts.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/transform.py", line 91, in decompose
-    matrix = pipe.matrix.copy()
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner decompose [OPTIONS]
+
+  Decomposition/dimensionality reduction (PCA, ICA, …)
+
+Options:
+  -m, --mode [PCA|KPCA|NMF|BMF|TSNE|ICA]
+  -d, --decode
+  -n, --num-components INTEGER
+  -c, --mode-config DICT
+  --help                          Show this message and exit.
 ```
 
 ## lyner_dendro
 
 ### Tool Description
-Plot a dendrogram from a distance matrix.
+Build a dendrogram based on the results of chosen decomposition methods.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -355,34 +329,17 @@ Plot a dendrogram from a distance matrix.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/plot.py", line 44, in dendro
-    matrix = pipe.matrix
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner dendro [OPTIONS]
+
+  Build a dendrogram based on the results of chosen decomposition methods.
+
+Options:
+  -a, --axis INTEGER RANGE
+  -m, --methods LIST
+  --mode [consensus|each]
+  -c, --num-components LIST
+  -r, --num-runs INTEGER
+  --help                     Show this message and exit.
 ```
 
 ## lyner_design
@@ -409,7 +366,7 @@ Options:
 ## lyner_dist-graph
 
 ### Tool Description
-Generates a distance graph from a distance matrix.
+Build a threshold graph, presumes pairwise_distances.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -419,40 +376,21 @@ Generates a distance graph from a distance matrix.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/cluster.py", line 197, in dist_graph
-    assert pipe.matrix.index.values.shape == pipe.matrix.columns.values.shape, "call pdist first"
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner dist-graph [OPTIONS]
+
+  Build a threshold graph, presumes pairwise_distances.
+
+Options:
+  -t, --threshold FLOAT
+  -l, --layout [fruchterman_reingold|kamada_kawai]
+  -c, --cliques
+  --help                          Show this message and exit.
 ```
 
 ## lyner_estimate
 
 ### Tool Description
-Estimate gene expression levels from RNA-Seq data.
+Fit the given distribution to each target(-cluster) and each (design-)group.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -462,34 +400,16 @@ Estimate gene expression levels from RNA-Seq data.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/stats.py", line 27, in estimate
-    matrix = pipe.matrix
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner estimate [OPTIONS]
+
+  Fit the given distribution to each target(-cluster) and each
+  (design-)group.
+
+Options:
+  -d, --distribution TEXT  May be any of ['negbinom', 'gamma', 'laisson', 't',
+                           'norm', 'cauchy', 'lognorm'] as well as any
+                           distribution in `scipy.stats.rv_continuous`.
+  --help                   Show this message and exit.
 ```
 
 ## lyner_filter
@@ -532,7 +452,7 @@ Options:
 ## lyner_frequent-sets
 
 ### Tool Description
-Find frequent itemsets in a binary matrix.
+Calculate frequent sets using the apriori algorithm. Assumes one-hot encoded matrix.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -542,40 +462,65 @@ Find frequent itemsets in a binary matrix.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/cluster.py", line 166, in frequent_sets
-    df = pipe.matrix.astype(np.bool)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner frequent-sets [OPTIONS]
+
+  Calculate frequent sets using the apriori algorithm. Assumes one-hot
+  encoded matrix.
+
+Options:
+  -l, --min-support FLOAT
+  --help                   Show this message and exit.
+```
+
+## lyner_mmr
+
+### Tool Description
+Calculate columnwise differences (of order `order`)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
+- **Homepage**: https://github.com/tedil/lyner
+- **Package**: https://anaconda.org/channels/bioconda/packages/lyner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: lyner mmr [OPTIONS]
+
+  Calculate columnwise differences (of order `order`)
+
+Options:
+  -o, --order INTEGER
+  --help               Show this message and exit.
+```
+
+## lyner_normalise
+
+### Tool Description
+Normalize data using one of the following methods: quantile, deseq, identity, scale, unit, tanh.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
+- **Homepage**: https://github.com/tedil/lyner
+- **Package**: https://anaconda.org/channels/bioconda/packages/lyner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: lyner normalise [OPTIONS] [[quantile|deseq|identity|scale|unit|tanh]]
+
+  Normalize data using one of the following methods: quantile, deseq,
+  identity, scale, unit, tanh.
+
+Options:
+  -a, --axis INTEGER RANGE
+  --help                    Show this message and exit.
 ```
 
 ## lyner_pairwise-distances
 
 ### Tool Description
-Compute pairwise distances between samples.
+Calculate pairwise distances between rows of the data matrix.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -585,40 +530,48 @@ Compute pairwise distances between samples.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/cluster.py", line 183, in pairwise_distances
-    d = squareform(pdist(pipe.matrix.values, metric=metric))
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner pairwise-distances [OPTIONS]
+
+  Calculate pairwise distances between rows of the data matrix.
+
+Options:
+  -m, --metric [braycurtis|canberra|chebyshev|cityblock|correlation|cosine|dice|euclidean|hamming|jaccard|jensenshannon|kulsinski|mahalanobis|matching|minkowski|rogerstanimoto|russellrao|seuclidean|sokalmichener|sokalsneath|sqeuclidean|yule]
+  --help                          Show this message and exit.
+```
+
+## lyner_plot
+
+### Tool Description
+Visualize current selection in different ways, depending on context.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
+- **Homepage**: https://github.com/tedil/lyner
+- **Package**: https://anaconda.org/channels/bioconda/packages/lyner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: lyner plot [OPTIONS]
+
+  Visualize current selection in different ways, depending on context.
+
+Options:
+  -o, --outfile FILE
+  -d, --directory DIRECTORY
+  --with-annotation
+  --annotation-split FLOAT RANGE
+  --colorscale [Greys|YlGnBu|Greens|YlOrRed|Bluered|RdBu|Reds|Blues|Picnic|Rainbow|Portland|Jet|Hot|Blackbody|Earth|Electric|Viridis|Cividis]
+  -m, --mode LIST
+  -c, --mode-config DICT
+  -a, --auto-open
+  --help                          Show this message and exit.
 ```
 
 ## lyner_read
 
 ### Tool Description
-Read abundance/count matrix from MATRIX (tsv format).
+Read abundance/count matrix from `MATRIX` (tsv format).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -660,7 +613,7 @@ Options:
 ## lyner_reindex
 
 ### Tool Description
-Reindex the matrix.
+Sort and reindex.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -670,40 +623,18 @@ Reindex the matrix.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/transform.py", line 324, in reindex
-    pipe.matrix = pipe.matrix.reindex(index=natsorted(pipe.matrix.index))
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner reindex [OPTIONS]
+
+  Sort and reindex.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## lyner_seed
 
 ### Tool Description
-Try "lyner seed --help" for help.
+Sets both numpy and tensorflow seed.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -714,9 +645,11 @@ Try "lyner seed --help" for help.
 ### Original Help Text
 ```text
 Usage: lyner seed [OPTIONS] SEED
-Try "lyner seed --help" for help.
 
-Error: no such option: -h
+  Sets both numpy and tensorflow seed.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## lyner_select
@@ -744,7 +677,7 @@ Options:
 ## lyner_show
 
 ### Tool Description
-Show the content of a lyner pipe.
+Prints current selection to stdout, in tsv format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -754,40 +687,18 @@ Show the content of a lyner pipe.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/io.py", line 40, in show
-    data = getattr(pipe, pipe.selection, pipe.matrix)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: selection
+Usage: lyner show [OPTIONS]
+
+  Prints current selection to stdout, in tsv format.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## lyner_sort
 
 ### Tool Description
-Sorts the matrix by columns.
+Sort values by columns.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -797,40 +708,18 @@ Sorts the matrix by columns.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/transform.py", line 308, in sort
-    pipe.matrix.sort_values(by=pipe.matrix.columns.values.tolist(), axis=0, inplace=True)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner sort [OPTIONS]
+
+  Sort values by columns.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## lyner_sort-index
 
 ### Tool Description
-Sorts and indexes a matrix.
+Sort index.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -840,40 +729,40 @@ Sorts and indexes a matrix.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/transform.py", line 316, in sort_index
-    pipe.matrix.sort_index(kind='mergesort', inplace=True)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner sort-index [OPTIONS]
+
+  Sort index.
+
+Options:
+  --help  Show this message and exit.
+```
+
+## lyner_store
+
+### Tool Description
+Save current selection in given file; in tsv format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
+- **Homepage**: https://github.com/tedil/lyner
+- **Package**: https://anaconda.org/channels/bioconda/packages/lyner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: lyner store [OPTIONS] [OUT]
+
+  Save current selection in given file; in tsv format.
+
+Options:
+  -m, --mode [csv|pickle|auto]
+  --help                        Show this message and exit.
 ```
 
 ## lyner_summarise
 
 ### Tool Description
-Summarise a lyner matrix
+Calculate either of median/mean/min/max for each group.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -883,34 +772,12 @@ Summarise a lyner matrix
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/transform.py", line 371, in summarise
-    m: pd.DataFrame = pipe.matrix
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: matrix
+Usage: lyner summarise [OPTIONS] [[median|mean|min|max]]
+
+  Calculate either of median/mean/min/max for each group.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## lyner_supplement
@@ -937,7 +804,7 @@ Options:
 ## lyner_targets
 
 ### Tool Description
-Specify targets for lyner
+Include only/exclude all genes in the given file. One feature per line.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -947,32 +814,15 @@ Specify targets for lyner
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/io.py", line 97, in targets
-    raise ValueError("No targets specified.")
-ValueError: No targets specified.
+Usage: lyner targets [OPTIONS]
+
+  Include only/exclude all genes in the given file. One feature per line.
+
+Options:
+  -t, --targets LIST
+  -f, --from-file FILENAME
+  -m, --mode [exclude|intersect]
+  --help                          Show this message and exit.
 ```
 
 ## lyner_threshold
@@ -996,10 +846,10 @@ Options:
   --help  Show this message and exit.
 ```
 
-## lyner_transpose
+## lyner_transform
 
 ### Tool Description
-Transpose a matrix or a selection of columns from a matrix.
+Apply a transformation to the current selection.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -1009,40 +859,39 @@ Transpose a matrix or a selection of columns from a matrix.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/transform.py", line 345, in transpose
-    data = getattr(pipe, pipe.selection, pipe.matrix)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: selection
+Usage: lyner transform [OPTIONS] [[log2|log10|log|exp|log1p|expm1|transpose]]
+
+  Apply a transformation to the current selection.
+
+Options:
+  --help  Show this message and exit.
+```
+
+## lyner_transpose
+
+### Tool Description
+Transpose current selection if it is a matrix
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
+- **Homepage**: https://github.com/tedil/lyner
+- **Package**: https://anaconda.org/channels/bioconda/packages/lyner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: lyner transpose [OPTIONS]
+
+  Transpose current selection if it is a matrix
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## lyner_uncluster
 
 ### Tool Description
-Uncluster sequences
+Remove grouping of samples/features into clusters.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lyner:0.4.3--py_0
@@ -1052,34 +901,12 @@ Uncluster sequences
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/lyner", line 10, in <module>
-    sys.exit(main())
-  File "/usr/local/lib/python3.7/site-packages/lyner/main.py", line 109, in main
-    rnax()
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 764, in __call__
-    return self.main(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 717, in main
-    rv = self.invoke(ctx)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 1163, in invoke
-    rv.append(sub_ctx.command.invoke(sub_ctx))
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 956, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/decorators.py", line 64, in new_func
-    return ctx.invoke(f, obj, *args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 213, in new_func
-    return ctx.invoke(f, pipe, *args[1:], **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/click/core.py", line 555, in invoke
-    return callback(*args, **kwargs)
-  File "/usr/local/lib/python3.7/site-packages/lyner/commands/cluster.py", line 238, in uncluster
-    if pipe.is_clustered:
-  File "/usr/local/lib/python3.7/site-packages/lyner/click_extras.py", line 189, in __getattr__
-    raise AttributeError(f"No such attribute: {name}")
-AttributeError: No such attribute: is_clustered
+Usage: lyner uncluster [OPTIONS]
+
+  Remove grouping of samples/features into clusters.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## Metadata

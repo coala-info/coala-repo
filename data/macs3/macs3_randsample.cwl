@@ -35,14 +35,18 @@ inputs:
       position: 101
       prefix: --ifile
   - id: number
-    type: float
+    type:
+      - 'null'
+      - float
     doc: Number of tags you want to keep. Input 8000000 or 8e+6 for 8 million. 
       This option can't be used at the same time with -p/--percent.
     inputBinding:
       position: 101
       prefix: --number
   - id: outdir
-    type: string
+    type:
+      - 'null'
+      - string
     doc: If specified all output files will be written to that directory.
     inputBinding:
       position: 101
@@ -86,7 +90,7 @@ outputs:
       - File
     doc: Output BED file name. If not specified, will write to standard output.
     outputBinding:
-      glob: $(inputs.outputfile)
+      glob: "$(inputs.outdir ? inputs.outdir + '/' + inputs.outputfile : inputs.outputfile)"
   - id: output_outdir
     type:
       - 'null'

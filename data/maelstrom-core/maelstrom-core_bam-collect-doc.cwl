@@ -24,6 +24,9 @@ inputs:
       prefix: --force
   - id: in
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Path to input BAM file
     inputBinding:
       position: 101
@@ -67,10 +70,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Optional list of regions to call
+        inputBinding:
+          prefix: --regions
+    doc: Optional list of regions to call (repeat --regions for each region)
     inputBinding:
       position: 101
-      prefix: --regions
   - id: verbose
     type:
       - 'null'

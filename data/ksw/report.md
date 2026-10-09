@@ -1,5 +1,11 @@
 # ksw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ksw | PASS |  |
+
 ## ksw
 
 ### Tool Description

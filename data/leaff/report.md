@@ -1,5 +1,11 @@
 # leaff CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| leaff | PASS | ran on human transcript FASTA; -e range and -S ID range give correct sequences; the -u option prints usage in this image version |
+
 ## leaff
 
 ### Tool Description

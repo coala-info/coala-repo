@@ -1,43 +1,13 @@
 # lorikeet-genome CWL Generation Report
 
-## lorikeet-genome_lorikeet
+## Real Data Test
 
-### Tool Description
-Variant calling and strain genotyping analysis for metagenomics
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/lorikeet-genome:0.8.2--h8e1a5b0_0
-- **Homepage**: https://github.com/rhysnewell/Lorikeet
-- **Package**: https://anaconda.org/channels/bioconda/packages/lorikeet-genome/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/lorikeet-genome/overview
-- **Total Downloads**: 38.8K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/rhysnewell/Lorikeet
-- **Stars**: N/A
-### Original Help Text
-```text
-Variant calling and strain genotyping analysis for metagenomics
-
-Usage: lorikeet <subcommand> ...
-
-Main subcommands:
-	call      	Performs variant calling on the provides genomes
-	consensus 	Creates consensus genomes for each input reference and for each sample
-
-Utility subcommands:
-	summarise 	Calculate microdiversity statistics for a given set of VCF files
-	shell-completion  	Generate shell completion scripts
-
-Experimental subcommands:
-	genotype  	Report strain-level genotypes and abundances from metagenomes
-
-Other options:
-	-V, --version	Print version information
-
-Rhys J. P. Newell <rhys.newell near hdr.qut.edu.au>
-```
+| Tool | Result | Reason |
+|---|---|---|
+| lorikeet-genome_lorikeet_call | PASS |  |
+| lorikeet-genome_lorikeet_consensus | PASS |  |
+| lorikeet-genome_lorikeet_genotype | Failed | tool bug: lorikeet genotype panics on every run (clap argument mismatch for min-variant-depth-for-genotyping) |
+| lorikeet-genome_lorikeet_summarise | PASS |  |
 
 ## lorikeet-genome_lorikeet_call
 
@@ -124,10 +94,10 @@ Usage: lorikeet consensus --read1 <read1>... --read2 <read2>... --coupled <coupl
 For more information, try '--help'.
 ```
 
-## lorikeet-genome_lorikeet_shell-completion
+## lorikeet-genome_lorikeet_summarise
 
 ### Tool Description
-Generate a shell completion script for lorikeet
+Summarizes ANI values of a given set of VCF files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lorikeet-genome:0.8.2--h8e1a5b0_0
@@ -137,16 +107,21 @@ Generate a shell completion script for lorikeet
 
 ### Original Help Text
 ```text
-Generate a shell completion script for lorikeet
+Summarizes ANI values of a given set of VCF files
 
-Usage: lorikeet shell-completion [OPTIONS] --output-file <output-file> --shell <shell>
+Usage: lorikeet summarise [OPTIONS]
 
 Options:
-  -v, --verbose                    Print extra debug logging information
-      --quiet                      Unless there is an error, do not print logging information
-  -o, --output-file <output-file>  
-      --shell <shell>              [possible values: bash, elvish, fish, powershell, zsh]
-  -h, --help                       Print help
+      --full-help                                          
+      --full-help-roff                                     
+  -i, --vcfs <vcfs>...                                     
+  -o, --output-directory <output>                          [default: ./]
+  -t, --threads <threads>                                  [default: 8]
+      --qual-by-depth-filter <qual-by-depth-filter>        [default: 25.0]
+      --qual-threshold <qual-threshold>                    [default: 150.0]
+      --depth-per-sample-filter <depth-per-sample-filter>  [default: 5]
+  -v, --verbose                                            
+  -h, --help                                               Print help
 ```
 
 ## Metadata

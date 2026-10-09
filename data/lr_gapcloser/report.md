@@ -1,5 +1,11 @@
 # lr_gapcloser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lr_gapcloser_LR_Gapcloser.sh | Failed | image problem: LR_Gapcloser.sh calls 'split -n', but the image only has BusyBox split, which has no -n option, so no tag files are made and the run exits with status 1 |
+
 ## lr_gapcloser_LR_Gapcloser.sh
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # lucy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lucy | PASS | rewritten from the man page (two -output names, optional cdna and debug values, positional files last); the real lucy test set gives a cleavage table identical to the shipped lucy.debug |
+
 ## lucy
 
 ### Tool Description
@@ -7,14 +13,14 @@ Less Useful Chunks Yank (lucy)
 
 ### Metadata
 - **Docker Image**: biocontainers/lucy:v1.20-1-deb_cv1
-- **Homepage**: https://github.com/DecartAI/Lucy-Edit-ComfyUI
+- **Homepage**: https://lucy.sourceforge.net/
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lucy/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
-- **GitHub**: https://github.com/DecartAI/Lucy-Edit-ComfyUI
+- **GitHub**: https://lucy.sourceforge.net/
 - **Stars**: N/A
 ### Original Help Text
 ```text

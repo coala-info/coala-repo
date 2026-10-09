@@ -1,5 +1,11 @@
 # lddt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lddt | PASS |  |
+
 ## lddt
 
 ### Tool Description

@@ -107,6 +107,8 @@ inputs:
     inputBinding:
       position: 102
       prefix: --multisample-fasta
+      valueFrom: |-
+        ${ return (self === null) ? null : (self ? "true" : "false"); }
   - id: out_filter
     type:
       - 'null'
@@ -132,6 +134,8 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-in-percent
+      valueFrom: |-
+        ${ return (self === null) ? null : (self ? "true" : "false"); }
   - id: out_type
     type:
       - 'null'

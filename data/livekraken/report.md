@@ -1,5 +1,11 @@
 # livekraken CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| livekraken | Failed | tool bug: the --output option writes an empty file, while classification to standard output works (tested on a tiny custom SARS-CoV-2 database) |
+
 ## livekraken
 
 ### Tool Description

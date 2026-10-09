@@ -1,5 +1,13 @@
 # lusstr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lusstr_config | PASS |  |
+| lusstr_snps | PASS |  |
+| lusstr_strs | PASS |  |
+
 ## lusstr_config
 
 ### Tool Description

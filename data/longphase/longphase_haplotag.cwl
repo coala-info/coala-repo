@@ -1,17 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: haplotag
+baseCommand:
+  - longphase
+  - haplotag
 label: longphase_haplotag
 doc: "Tag alignments with haplotype information based on SNP and SV data.\n\nTool
   homepage: https://github.com/twolinin/longphase"
 inputs:
-  - id: reads_file
-    type: File
-    doc: Input reads file (e.g., BAM or CRAM).
-    inputBinding:
-      position: 1
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: input bam file.
     inputBinding:
       position: 102
@@ -71,6 +70,8 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
+      - pattern: .gzi
+        required: false
     doc: reference fasta.
     inputBinding:
       position: 102
@@ -106,7 +107,7 @@ inputs:
     doc: relative difference threshold for read to support a SV.
     inputBinding:
       position: 102
-      prefix: --sv-threshold
+      prefix: --svThreshold
   - id: sv_window
     type:
       - 'null'
@@ -114,7 +115,7 @@ inputs:
     doc: window size for evaluating surrounding CIGAR operations.
     inputBinding:
       position: 102
-      prefix: --sv-window
+      prefix: --svWindow
   - id: tag_supplementary
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # ldblockshow CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ldblockshow | Failed | image problem: ShowLDSVG, which LDBlockShow calls to draw the SVG/PNG/PDF figure, cannot run (shebang /usr/bin/perl is missing in the image); only the .site, .blocks and .TriangleV tables are written |
+
 ## ldblockshow
 
 ### Tool Description

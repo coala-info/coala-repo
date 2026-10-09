@@ -78,7 +78,7 @@ outputs:
     doc: Output bedGraph file name. If not specified, will write to standard 
       output.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.outdir_path ? inputs.outdir_path + '/' + inputs.output_file_path : inputs.output_file_path)"
   - id: outdir
     type:
       - 'null'

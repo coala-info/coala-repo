@@ -1,5 +1,11 @@
 # libssw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| libssw_ssw_test | PASS | ran on the libssw demo DNA and protein files; alignment (score 40 for pRef/pRead, 168 for protein) and SAM output (with -c) are correct |
+
 ## libssw_ssw_test
 
 ### Tool Description

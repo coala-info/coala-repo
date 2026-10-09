@@ -47,6 +47,10 @@ outputs:
     doc: Directory to store downloaded databases
     outputBinding:
       glob: $(inputs.db_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/local-cd-search:0.3.1--pyhdfd78af_0

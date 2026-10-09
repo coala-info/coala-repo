@@ -1,5 +1,11 @@
 # kyototycoon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kyototycoon_ktserver | Not completed | long-running server; it never exits, so a cwltool run cannot finish |
+
 ## kyototycoon_ktserver
 
 ### Tool Description

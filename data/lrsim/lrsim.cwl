@@ -7,20 +7,24 @@ label: lrsim
 doc: "Simulate linked reads based on reference genome and variants.\n\nTool homepage:
   https://github.com/aquaskyline/LRSIM"
 inputs:
-  - id: reference_or_haplotypes
-    type: string
-    doc: Reference genome or haplotypes
+  - id: reference
+    type:
+      - 'null'
+      - File
+    doc: Reference genome (FASTA). Either this or the haploid FASTAs are required.
     inputBinding:
       position: 1
+      prefix: -r
   - id: output_prefix
     type: string
     doc: Output prefix
     inputBinding:
       position: 2
+      prefix: -p
   - id: barcodes_list
     type:
       - 'null'
-      - string
+      - File
     doc: Barcodes list
     inputBinding:
       position: 103
@@ -62,7 +66,7 @@ inputs:
   - id: fragment_sizes_list
     type:
       - 'null'
-      - string
+      - File
     doc: Input a list of fragment sizes
     inputBinding:
       position: 103
@@ -70,11 +74,13 @@ inputs:
   - id: haploid_fastas
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: Haploid FASTAs separated by comma. Overrides -r and -d.
     inputBinding:
       position: 103
       prefix: -g
+      itemSeparator: ','
   - id: haplotypes_to_simulate
     type:
       - 'null'
@@ -190,7 +196,7 @@ inputs:
   - id: read1_error_rate
     type:
       - 'null'
-      - float
+      - string
     doc: Per base error rate of the first read
     inputBinding:
       position: 103
@@ -198,7 +204,7 @@ inputs:
   - id: read2_error_rate
     type:
       - 'null'
-      - float
+      - string
     doc: Per base error rate of the second read
     inputBinding:
       position: 103
@@ -223,13 +229,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
+  - id: reads
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Simulated linked reads (barcoded FASTQ, one R1/R2 pair per haplotype)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_prefix)_S1_L00*_R*_001.fastq.gz
+  - id: status_log
+    type:
+      - 'null'
+      - File
+    doc: Progress log of the simulation
+    outputBinding:
+      glob: $(inputs.output_prefix).status
+  - id: variant_files
+    type:
+      type: array
+      items: File
+    doc: Simulated variant files (BED and SURVIVOR parameter file), written when haplotypes are simulated from a reference
+    outputBinding:
+      glob: [$(inputs.output_prefix).hap.parameter, $(inputs.output_prefix).hap.*.bed]
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lrsim:1.0--pl5321hbcd995c_0

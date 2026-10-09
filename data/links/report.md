@@ -1,5 +1,11 @@
 # links CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| links_LINKS | PASS |  |
+
 ## links_LINKS
 
 ### Tool Description

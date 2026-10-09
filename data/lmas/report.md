@@ -1,5 +1,11 @@
 # lmas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lmas_LMAS | Not completed | pipeline, skipped |
+
 ## lmas_LMAS
 
 ### Tool Description

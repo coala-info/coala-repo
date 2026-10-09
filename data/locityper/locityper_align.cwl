@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locityper
+baseCommand:
+  - locityper
+  - align
 label: locityper_align
 doc: "Align medium-size sequence to each other.\n\nTool homepage: https://github.com/tprodanov/locityper"
 inputs:
@@ -84,11 +86,10 @@ inputs:
       - type: array
         items: string
     doc: Find alignments for these pairs (two names separated by comma), many 
-      pairs allowed.
+      pairs allowed. Give each pair as one item, for example name1,name2.
     inputBinding:
       position: 101
       prefix: --pairs
-      itemSeparator: ','
   - id: pairs_file
     type:
       - 'null'

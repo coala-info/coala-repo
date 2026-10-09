@@ -1,5 +1,13 @@
 # longcallr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| longcallr_longcallR | PASS |  |
+| longcallr_longcallR-ase | PASS |  |
+| longcallr_longcallR-asj | PASS |  |
+
 ## longcallr_longcallR
 
 ### Tool Description

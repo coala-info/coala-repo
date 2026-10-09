@@ -7,9 +7,7 @@ label: ldhelmet_pade
 doc: "Compute Pade coefficients for LDHelmet\n\nTool homepage: http://sourceforge.net/projects/ldhelmet/"
 inputs:
   - id: conf_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Two-site configuration file.
     inputBinding:
       position: 101
@@ -39,9 +37,7 @@ inputs:
       position: 101
       prefix: --num_threads
   - id: theta
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Theta value.
     inputBinding:
       position: 101
@@ -54,9 +50,7 @@ inputs:
       prefix: --output_file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Name for output file.
     outputBinding:
       glob: $(inputs.output_file_path)

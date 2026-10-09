@@ -7,6 +7,9 @@ doc: "Linked-reads based structural variant caller with barcode indexing\n\nTool
 inputs:
   - id: bamFile
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: 'BAM file to analyze. Warning: the associated .bai file must exist'
     inputBinding:
       position: 101
@@ -20,7 +23,7 @@ inputs:
   - id: candidates_file
     type:
       - 'null'
-      - File
+      - string
     doc: File where to store valid SV candidates
     inputBinding:
       position: 101
@@ -150,16 +153,23 @@ inputs:
       prefix: --threads
   - id: output_vcf_path
     type: string
-    doc: Output or path parameter `output_vcf_path`
+    doc: VCF file where to ouput the SVs
     inputBinding:
       position: 102
-      prefix: --output-vcf
+      prefix: -o
 outputs:
   - id: output_vcf
     type: File
     doc: VCF file where to ouput the SVs
     outputBinding:
       glob: $(inputs.output_vcf_path)
+  - id: candidates_out
+    type:
+      - 'null'
+      - File
+    doc: File with the valid SV candidates, written when candidates_file is set
+    outputBinding:
+      glob: $(inputs.candidates_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

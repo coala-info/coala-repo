@@ -7,9 +7,7 @@ label: ldhelmet_max_lk
 doc: "Maximum likelihood estimation of recombination rate\n\nTool homepage: http://sourceforge.net/projects/ldhelmet/"
 inputs:
   - id: lk_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Two-site likelihood table.
     inputBinding:
       position: 101
@@ -39,9 +37,7 @@ inputs:
       position: 101
       prefix: --max_lk_start
   - id: mut_mat_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Mutation matrix.
     inputBinding:
       position: 101
@@ -55,9 +51,7 @@ inputs:
       position: 101
       prefix: --num_threads
   - id: pade_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Pade coefficients.
     inputBinding:
       position: 101
@@ -95,9 +89,7 @@ inputs:
       position: 101
       prefix: --prior_file
   - id: seq_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Sequence file.
     inputBinding:
       position: 101

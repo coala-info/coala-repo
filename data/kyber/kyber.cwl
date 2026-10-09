@@ -13,6 +13,7 @@ inputs:
       samtools view -h
     inputBinding:
       position: 1
+      prefix: --input
   - id: background
     type:
       - 'null'

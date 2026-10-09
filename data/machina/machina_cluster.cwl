@@ -5,7 +5,7 @@ label: machina_cluster
 doc: "Cluster mutations based on their co-occurrence patterns.\n\nTool homepage: https://github.com/raphael-group/machina"
 inputs:
   - id: read_matrix
-    type: string
+    type: File
     doc: Read matrix
     inputBinding:
       position: 1
@@ -20,7 +20,7 @@ inputs:
   - id: clustering_filename
     type:
       - 'null'
-      - string
+      - File
     doc: Clustering input filename
     inputBinding:
       position: 102

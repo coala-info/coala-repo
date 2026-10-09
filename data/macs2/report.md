@@ -1,5 +1,22 @@
 # macs2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| macs2_bdgbroadcall | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_bdgcmp | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_bdgdiff | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_bdgopt | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_bdgpeakcall | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_callpeak | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_cmbreps | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_filterdup | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_pileup | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_predictd | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_randsample | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+| macs2_refinepeak | Failed | image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed |
+
 ## macs2_callpeak
 
 ### Tool Description

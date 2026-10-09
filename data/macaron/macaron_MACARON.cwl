@@ -25,6 +25,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fields
+      itemSeparator: ','
   - id: gatk
     type:
       - 'null'

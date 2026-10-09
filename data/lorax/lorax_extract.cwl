@@ -9,14 +9,16 @@ doc: "Extracts reads from a BAM file based on a list of reads and a reference ge
 inputs:
   - id: contig_bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: contig BAM file
     inputBinding:
       position: 1
   - id: fafile
     type:
       - 'null'
-      - File
-    doc: gzipped fasta/q file
+      - string
+    doc: gzipped fasta/q output file name [default out.fa.gz]
     inputBinding:
       position: 102
       prefix: --fafile
@@ -30,6 +32,8 @@ inputs:
       prefix: --fastq
   - id: genome
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference fasta file
     inputBinding:
       position: 102
@@ -43,7 +47,7 @@ inputs:
       position: 102
       prefix: --hashes
   - id: reads
-    type: string
+    type: File
     doc: list of reads
     inputBinding:
       position: 102
@@ -61,6 +65,13 @@ outputs:
     doc: gzipped match file
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: fasta_out
+    type:
+      - 'null'
+      - File
+    doc: gzipped fasta/q file with the extracted reads
+    outputBinding:
+      glob: "$(inputs.fafile ? inputs.fafile : 'out.fa.gz')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

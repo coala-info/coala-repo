@@ -2,80 +2,44 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - uncluster
 label: lyner_uncluster
-doc: "Uncluster sequences\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Remove grouping of samples/features into clusters.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX cluster-hierarchical uncluster show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input_sequences
-    type: File
-    doc: Input sequences (FASTA/FASTQ)
-    inputBinding:
-      position: 1
-  - id: cluster_threshold
-    type:
-      - 'null'
-      - float
-    doc: Clustering threshold (e.g., 0.95 for 95% identity)
-    inputBinding:
-      position: 102
-      prefix: --cluster-threshold
-  - id: min_cluster_size
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of sequences in a cluster to be considered clustered
-    inputBinding:
-      position: 102
-      prefix: --min-cluster-size
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    inputBinding:
-      position: 102
-      prefix: --threads
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Enable verbose output
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_clusters_path
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
+    inputBinding:
+      position: 2
+  - id: cluster_threshold
     type:
       - 'null'
-      - string
-    doc: Output or path parameter `output_clusters_path`
+      - float
+    doc: "Threshold of the preceding `cluster-hierarchical` step (default 0.8)"
     inputBinding:
-      position: 103
-      prefix: --output-clusters
-  - id: output_sequences_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_sequences_path`
-    inputBinding:
-      position: 104
-      prefix: --output-sequences
+      position: 5
+      prefix: --threshold
 outputs:
-  - id: output_sequences
-    type:
-      - 'null'
-      - File
-    doc: Output sequences (FASTA/FASTQ)
-    outputBinding:
-      glob: $(inputs.output_sequences_path)
-  - id: output_clusters
-    type:
-      - 'null'
-      - File
-    doc: Output clusters (TSV)
-    outputBinding:
-      glob: $(inputs.output_clusters_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 4
+    valueFrom: cluster-hierarchical
+  - position: 10
+    valueFrom: uncluster
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_uncluster.out

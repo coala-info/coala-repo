@@ -1,5 +1,12 @@
 # local-cd-search CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| local-cd-search_annotate | PASS |  |
+| local-cd-search_download | PASS |  |
+
 ## local-cd-search_annotate
 
 ### Tool Description

@@ -35,14 +35,19 @@ inputs:
       position: 101
       prefix: --o-prefix
   - id: ofile
-    type: string
+    type:
+      - 'null'
+      - type: array
+        items: string
     doc: Output filename. Mutually exclusive with --o-prefix. The number and the
       order of arguments for --ofile must be the same as for -m.
     inputBinding:
       position: 101
       prefix: --ofile
   - id: outdir
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'If specified all output files will be written to that directory. Default:
       the current working directory'
     inputBinding:
@@ -82,14 +87,20 @@ outputs:
       the current working directory'
     outputBinding:
       glob: $(inputs.outdir)
-  - id: output_ofile
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: Output filename. Mutually exclusive with --o-prefix. The number and the
-      order of arguments for --ofile must be the same as for -m.
+      type: array
+      items: File
+    doc: Output bedGraph files written with --ofile names or with the --o-prefix prefix.
     outputBinding:
-      glob: $(inputs.ofile)
+      glob: |
+        ${
+          var d = inputs.outdir ? inputs.outdir + '/' : '';
+          var g = [];
+          if (inputs.ofile) { inputs.ofile.forEach(function (f) { g.push(d + f); }); }
+          if (inputs.o_prefix) { g.push(d + inputs.o_prefix + '_*.bdg'); }
+          return g;
+        }
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,17 @@
 # longreadsum CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| longreadsum_bam | PASS |  |
+| longreadsum_f5 | PASS |  |
+| longreadsum_f5s | PASS | main mode works; option --readCount (-R) crashes in the tool with a TypeError for f5s |
+| longreadsum_fa | PASS |  |
+| longreadsum_fq | PASS |  |
+| longreadsum_rrms | PASS | synthetic data: decision CSV made from the real BAM read ids; accepted and rejected read counts match |
+| longreadsum_seqtxt | PASS |  |
+
 ## longreadsum_fa
 
 ### Tool Description

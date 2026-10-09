@@ -2,20 +2,42 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - supplement
 label: lyner_supplement
-doc: "Supply additional data which may be used for plot colors, for example.\n\nTool
-  homepage: https://github.com/tedil/lyner"
+doc: "Supply additional data which may be used for plot colors, for example.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX supplement select supplement show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: supplementary_data
-    type: string
-    doc: Supplementary data
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 1
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
+    inputBinding:
+      position: 2
+  - id: supplementary_data
+    type: File
+    doc: "tsv file with a header; first column: sample name; lines starting with # are comments"
+    inputBinding:
+      position: 20
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: supplement
+  - position: 50
+    valueFrom: select
+  - position: 51
+    valueFrom: supplement
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0

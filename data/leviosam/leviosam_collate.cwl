@@ -43,9 +43,6 @@ inputs:
       position: 101
       prefix: -V
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_prefix_files
     type:
       type: array
@@ -56,4 +53,3 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/leviosam:5.2.1--h4ac6f70_2
-stdout: leviosam_collate.out

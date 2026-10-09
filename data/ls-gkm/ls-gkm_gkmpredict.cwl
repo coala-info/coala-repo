@@ -2,41 +2,45 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gkmpredict
 label: ls-gkm_gkmpredict
-doc: "Predict functional genomic elements using gapped k-mer SVM (ls-gkm).\n\nTool
-  homepage: https://github.com/Dongwon-Lee/lsgkm"
+doc: "Score test sequences using a gkm-SVM model trained with gkmtrain.\n\nTool homepage: https://github.com/Dongwon-Lee/lsgkm"
 inputs:
-  - id: test_seq_file
+  - id: test_seqfile
     type: File
-    doc: Sequence file for testing (fasta format)
+    doc: Sequence file for test (FASTA format)
     inputBinding:
       position: 1
   - id: model_file
     type: File
-    doc: Model file
+    doc: Model file, output of gkmtrain
     inputBinding:
       position: 2
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Set number of threads
+  - id: output_file
+    type: string
+    doc: Name of output file
     inputBinding:
-      position: 103
-      prefix: -t
+      position: 3
   - id: verbosity
     type:
       - 'null'
       - int
-    doc: Set verbosity level (0-4)
+    doc: 'Set the level of verbosity, 0 to 4 (default: 2)'
     inputBinding:
       position: 103
       prefix: -v
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: 'Set the number of threads for parallel calculation: 1, 4, or 16 (default: 1)'
+    inputBinding:
+      position: 103
+      prefix: -T
 outputs:
-  - id: output_file
+  - id: predictions
     type: File
-    doc: Output file name
+    doc: Scores of the test sequences
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ls-gkm:0.1.1--h9948957_0

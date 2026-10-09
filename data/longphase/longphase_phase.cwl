@@ -1,17 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phase
+baseCommand:
+  - longphase
+  - phase
 label: longphase_phase
 doc: "Phases genomic reads using SNP and optionally SV information.\n\nTool homepage:
   https://github.com/twolinin/longphase"
 inputs:
-  - id: reads_file
-    type: File
-    doc: Input reads file (e.g., FASTQ)
-    inputBinding:
-      position: 1
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input BAM file
     inputBinding:
       position: 102
@@ -33,6 +32,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --connectAdjacent
+  - id: disable_gnn
+    type:
+      - 'null'
+      - boolean
+    doc: Disable the GNN (graph neural network) step of phasing. Not shown in the help, but accepted by the tool.
+    inputBinding:
+      position: 102
+      prefix: --disableGNN
   - id: distance
     type:
       - 'null'
@@ -152,6 +159,8 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
+      - pattern: .gzi
+        required: false
     doc: Reference FASTA file
     inputBinding:
       position: 102
@@ -186,7 +195,7 @@ inputs:
     doc: Relative difference threshold for read to support a SV
     inputBinding:
       position: 102
-      prefix: --sv-threshold
+      prefix: --svThreshold
   - id: sv_window
     type:
       - 'null'
@@ -194,7 +203,7 @@ inputs:
     doc: Window size for evaluating surrounding CIGAR operations
     inputBinding:
       position: 102
-      prefix: --sv-window
+      prefix: --svWindow
   - id: threads
     type:
       - 'null'

@@ -1,5 +1,20 @@
 # machina CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| machina_cluster | PASS | real Sanborn patient A read counts: 124 mutations pooled into 4 clusters; options -C, -r, -A also checked |
+| machina_generatemigrationtrees | PASS | 6 sites give 1296 migration trees (6^4 as expected); fixed sites input to a list |
+| machina_generatemutationtrees | PASS | new CWL; real Hoadley A7 frequencies give the 2 mutation trees the README reports |
+| machina_ms | PASS | new CWL; real Hoadley A7 frequencies are reported as a monoclonal single-source pattern, as in the paper |
+| machina_pmh | Not completed | needs a Gurobi licence (the tool aborts with GRBException); inputs fixed to File and output folder is created |
+| machina_pmh_sankoff | PASS | real McPherson patient1 matches the README labeling counts; output folder is now created |
+| machina_pmh_ti | Not completed | needs a Gurobi licence (the tool aborts with GRBException); inputs fixed to File and output folder is created |
+| machina_pmh_tr | Not completed | needs a Gurobi licence (the tool aborts with GRBException); inputs fixed to File and output folder is created |
+| machina_visualizeclonetree | PASS | fixed flags to -c and -l; DOT output equals the pmh_sankoff tree file |
+| machina_visualizemigrationgraph | PASS | fixed flag to -c; DOT output equals the pmh_sankoff migration graph file |
+
 ## machina_cluster
 
 ### Tool Description
@@ -343,6 +358,74 @@ Where:
      Color map file
 ```
 
+
+## machina_generatemutationtrees
+
+### Tool Description
+Generates all mutation trees given a frequency matrix.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/machina:1.2--h21ec9f0_7
+- **Homepage**: https://github.com/raphael-group/machina
+- **Package**: https://anaconda.org/channels/bioconda/packages/machina/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+  generatemutationtrees [--help|-h|-help] [-C] [-l int] [-o str] [-t int]
+     [-tl int] frequencies
+Where:
+  frequencies
+     Frequencies
+  --help|-h|-help
+     Print a short help message
+  -C
+     Output canonical clone trees
+  -l int
+     Maximum number of mutation trees to enumerate (default: -1, unlimited)
+  -o str
+     Output directory
+  -t int
+     Number of threads (default: 1)
+  -tl int
+     Time limit in seconds (default: -1, unlimited)
+```
+
+## machina_ms
+
+### Tool Description
+Enumerates mutation trees of a frequency matrix and reports the migration pattern that can generate it.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/machina:1.2--h21ec9f0_7
+- **Homepage**: https://github.com/raphael-group/machina
+- **Package**: https://anaconda.org/channels/bioconda/packages/machina/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+  ms [--help|-h|-help] [-c str] [-g] [-l int] [-o str] -p str [-s str]
+     frequencies
+Where:
+  frequencies
+     Frequencies
+  --help|-h|-help
+     Print a short help message
+  -c str
+     Color map file
+  -g
+     Output search graph
+  -l int
+     Maxim number of mutation trees to enumerate (default: -1, unlimited)
+  -o str
+     Output prefix
+  -p str
+     Primary tumor
+  -s str
+     Migration tree file
+```
 
 ## Metadata
 - **Skill**: generated

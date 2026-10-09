@@ -86,7 +86,7 @@ inputs:
       position: 101
       prefix: --outdir
   - id: ofile_path
-    type: string
+    type: ['null', string]
     inputBinding:
       position: 102
       prefix: --ofile
@@ -97,7 +97,7 @@ outputs:
       - File
     doc: Output file name. Mutually exclusive with --o-prefix.
     outputBinding:
-      glob: $(inputs.ofile_path)
+      glob: "$(inputs.outdir ? inputs.outdir + '/' + inputs.ofile_path : inputs.ofile_path)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -97,14 +97,14 @@ outputs:
       - File
     doc: Output file name. Mutually exclusive with --o-prefix.
     outputBinding:
-      glob: $(inputs.ofile_path)
+      glob: "$(inputs.outdir_path ? inputs.outdir_path + '/' + inputs.ofile_path : inputs.ofile_path)"
   - id: o_prefix
     type:
       - 'null'
       - File
     doc: Output file prefix. Mutually exclusive with -o/--ofile.
     outputBinding:
-      glob: $(inputs.o_prefix_path)
+      glob: "$(inputs.outdir_path ? inputs.outdir_path + '/' + inputs.o_prefix_path : inputs.o_prefix_path)*"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

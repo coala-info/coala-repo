@@ -1,18 +1,26 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lumpy-sv-minimal_lumpy
+baseCommand: lumpy
 label: lumpy-sv-minimal_lumpy
 doc: "Find structural variations in various signals.\n\nTool homepage: https://github.com/arq5x/lumpy-sv"
 inputs:
+  - id: staged_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named inside the -sr, -pe and -bedpe option strings (BAM, histogram, bedpe). They are staged
+      in the working directory, so refer to them by file name only.
   - id: bedpe_input
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -bedpe
     doc: bedpe_file:<bedpe file>, id:<sample name>, weight:<sample weight>
     inputBinding:
       position: 101
-      prefix: -bedpe
   - id: exclude_file
     type:
       - 'null'
@@ -66,6 +74,8 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -pe
     doc: bam_file:<file name>, id:<sample name>, histo_file:<file name>, 
       mean:<value>, stdev:<value>, read_length:<length>, 
       min_non_overlap:<length>, discordant_z:<z value>, 
@@ -73,7 +83,6 @@ inputs:
       weight:<sample weight>, read_group:<string>
     inputBinding:
       position: 101
-      prefix: -pe
   - id: show_evidence
     type:
       - 'null'
@@ -87,12 +96,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -sr
     doc: bam_file:<file name>, id:<sample name>, back_distance:<distance>, 
       min_mapping_threshold:<mapping quality>, weight:<sample weight>, 
       min_clip:<minimum clip length>, read_group:<string>
     inputBinding:
       position: 101
-      prefix: -sr
   - id: temp_file_prefix
     type:
       - 'null'
@@ -121,6 +131,10 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.staged_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lumpy-sv-minimal:0.3.1--h5ca1c30_7

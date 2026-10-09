@@ -9,11 +9,15 @@ doc: "Tells you the ploidy of a tumor sample based on its BAM file.\n\nTool home
 inputs:
   - id: tumor_bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: tumor BAM file
     inputBinding:
       position: 1
   - id: control_bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: matched control BAM
     inputBinding:
       position: 102

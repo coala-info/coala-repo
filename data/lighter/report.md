@@ -1,5 +1,11 @@
 # lighter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lighter | PASS |  |
+
 ## lighter
 
 ### Tool Description

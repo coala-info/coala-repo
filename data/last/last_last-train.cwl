@@ -4,6 +4,11 @@ baseCommand: last-train
 label: last_last-train
 doc: Try to find suitable score parameters for aligning the given sequences.
 inputs:
+  - id: lastdb_files
+    type:
+      type: array
+      items: File
+    doc: Files of the lastdb database (.bck, .des, .prj, .sds, .ssp, .suf, .tis, ...), staged next to the lastdb name
   - id: lastdb_name
     type: string
     doc: lastdb-name
@@ -260,6 +265,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.lastdb_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/last:1650--h5ca1c30_0

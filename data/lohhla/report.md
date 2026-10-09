@@ -1,5 +1,11 @@
 # lohhla CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lohhla | Failed | image problem: the image entrypoint env-execute fails on every command (activate script syntax error under /bin/sh); also rewrote the CWL, whose flags were invented, from the real lohhla help |
+
 ## lohhla
 
 ### Tool Description

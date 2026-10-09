@@ -2,105 +2,66 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - cluster-hierarchical
 label: lyner_cluster-hierarchical
-doc: "Hierarchical clustering of samples.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Hierarchical clustering\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX cluster-hierarchical show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input
-    type: File
-    doc: Input matrix file
-    inputBinding:
-      position: 1
-  - id: distance_metric
+  - id: verbose
     type:
       - 'null'
-      - string
-    doc: "Distance metric to use. Options: 'euclidean', 'manhattan', 'correlation',
-      'cosine'"
+      - boolean
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 102
-      prefix: --distance-metric
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
+    inputBinding:
+      position: 2
   - id: method
     type:
       - 'null'
       - string
-    doc: "Clustering method to use. Options: 'average', 'complete', 'centroid', 'ward'"
+    doc: "Linkage method: single, complete, average, weighted, centroid, median or ward (default ward)"
     inputBinding:
-      position: 102
+      position: 20
       prefix: --method
-  - id: n_clusters
-    type:
-      - 'null'
-      - int
-    doc: Number of clusters to form
-    inputBinding:
-      position: 102
-      prefix: --n-clusters
-  - id: plot
-    type:
-      - 'null'
-      - boolean
-    doc: Generate and save dendrogram plot
-    inputBinding:
-      position: 102
-      prefix: --plot
-  - id: plot_dpi
-    type:
-      - 'null'
-      - int
-    doc: DPI of the dendrogram plot
-    inputBinding:
-      position: 102
-      prefix: --plot-dpi
-  - id: plot_height
-    type:
-      - 'null'
-      - int
-    doc: Height of the dendrogram plot in inches
-    inputBinding:
-      position: 102
-      prefix: --plot-height
-  - id: plot_width
-    type:
-      - 'null'
-      - int
-    doc: Width of the dendrogram plot in inches
-    inputBinding:
-      position: 102
-      prefix: --plot-width
-  - id: output_clusters_path
+  - id: distance_metric
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_clusters_path`
+    doc: "Distance metric, for example euclidean, cityblock, correlation or cosine (default euclidean)"
     inputBinding:
-      position: 103
-      prefix: --output-clusters
-  - id: output_tree_path
+      position: 20
+      prefix: --distance-metric
+  - id: criterion
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_tree_path`
+    doc: "Cluster formation criterion: inconsistent, distance, maxclust, monocrit or maxclust_monocrit (default inconsistent)"
     inputBinding:
-      position: 104
-      prefix: --output-tree
+      position: 20
+      prefix: --criterion
+  - id: threshold
+    type:
+      - 'null'
+      - float
+    doc: "Threshold for the criterion (default 0.8)"
+    inputBinding:
+      position: 20
+      prefix: --threshold
 outputs:
-  - id: output_tree
-    type:
-      - 'null'
-      - File
-    doc: Output tree file
-    outputBinding:
-      glob: $(inputs.output_tree_path)
-  - id: output_clusters
-    type:
-      - 'null'
-      - File
-    doc: Output clusters file
-    outputBinding:
-      glob: $(inputs.output_clusters_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: cluster-hierarchical
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_cluster-hierarchical.out

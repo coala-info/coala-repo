@@ -1,5 +1,11 @@
 # lovis4u CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lovis4u | Failed | image problem: default mode needs the post-install step 'lovis4u --linux' (unzips mmseqs into the image), which cannot run in the read-only container; only works with --mmseqs-off |
+
 ## lovis4u
 
 ### Tool Description

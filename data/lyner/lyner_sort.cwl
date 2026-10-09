@@ -2,56 +2,34 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - sort
 label: lyner_sort
-doc: "Sorts the matrix by columns.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Sort values by columns.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX sort show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input_file
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
+    inputBinding:
+      position: 0
+      prefix: -v
+  - id: matrix
     type: File
-    doc: Input file path
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 1
-  - id: ascending
-    type:
-      - 'null'
-      - boolean
-    doc: Sort in ascending order. If not specified, descending order is used.
-    inputBinding:
-      position: 102
-      prefix: --ascending
-  - id: inplace
-    type:
-      - 'null'
-      - boolean
-    doc: Sort the matrix in place. If not specified, a new matrix is returned.
-    inputBinding:
-      position: 102
-      prefix: --inplace
-  - id: sort_by
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: List of columns to sort by. If not specified, all columns are used.
-    inputBinding:
-      position: 102
-      prefix: --sort-by
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 2
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file path
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: sort
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_sort.out

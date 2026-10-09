@@ -13,6 +13,8 @@ inputs:
       prefix: --annotation
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: phased BAM file
     inputBinding:
       position: 101

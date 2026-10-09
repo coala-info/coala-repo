@@ -95,8 +95,7 @@ inputs:
   - id: quiet
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: '`-q` only show errors and warnings. `-qq` only show errors. `-qqq` shows
       nothing'
     inputBinding:
@@ -146,8 +145,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: '`-v` show debug output. `-vv` show trace output'
     inputBinding:
       position: 102

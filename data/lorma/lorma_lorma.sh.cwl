@@ -2,45 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: lorma.sh
 label: lorma_lorma.sh
-doc: "Processes FASTA files with LoRDEC steps.\n\nTool homepage: https://www.cs.helsinki.fi/u/lmsalmel/LoRMA/"
+doc: "Runs the LoRDEC iterations and the LoRMA step to correct long reads in a FASTA file. The corrected reads are written to final.fasta.\n\nTool homepage: https://www.cs.helsinki.fi/u/lmsalmel/LoRMA/"
 inputs:
-  - id: fasta_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input FASTA files
-    inputBinding:
-      position: 1
-  - id: end
-    type:
-      - 'null'
-      - int
-    doc: End value for processing
-    inputBinding:
-      position: 102
-  - id: friends
-    type:
-      - 'null'
-      - int
-    doc: Number of friends
-    inputBinding:
-      position: 102
-      prefix: -friends
-  - id: k
-    type:
-      - 'null'
-      - int
-    doc: K-mer size
-    inputBinding:
-      position: 102
   - id: save_intermediate_data
     type:
       - 'null'
       - boolean
     doc: saves the sequence data of intermediate LoRDEC steps
     inputBinding:
-      position: 102
+      position: 1
       prefix: -s
   - id: skip_lordec_steps
     type:
@@ -48,37 +18,76 @@ inputs:
       - boolean
     doc: skips LoRDEC steps
     inputBinding:
-      position: 102
+      position: 2
       prefix: -n
   - id: start
     type:
       - 'null'
       - int
-    doc: Start value for processing
+    doc: First k-mer size of the LoRDEC iterations [default 19]
     inputBinding:
-      position: 102
+      position: 3
       prefix: -start
+  - id: end
+    type:
+      - 'null'
+      - int
+    doc: Last k-mer size of the LoRDEC iterations [default 61]
+    inputBinding:
+      position: 4
+      prefix: -end
   - id: step
     type:
       - 'null'
       - int
-    doc: Step size for processing
+    doc: Step between the k-mer sizes of the LoRDEC iterations [default 21]
     inputBinding:
-      position: 102
+      position: 5
       prefix: -step
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use
+    doc: Number of threads [default 6]
     inputBinding:
-      position: 102
+      position: 6
       prefix: -threads
+  - id: friends
+    type:
+      - 'null'
+      - int
+    doc: Number of friends [default 7]
+    inputBinding:
+      position: 7
+      prefix: -friends
+  - id: kmer_length
+    type:
+      - 'null'
+      - int
+    doc: k-mer size of the LoRMA step [default 19]
+    inputBinding:
+      position: 8
+      prefix: -k
+  - id: fasta_file
+    type: File
+    doc: Input long reads in FASTA format
+    inputBinding:
+      position: 9
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: final_reads
+    type: File
+    doc: Corrected reads
+    outputBinding:
+      glob: final.fasta
+  - id: intermediate_reads
+    type:
+      type: array
+      items: File
+    doc: Intermediate LoRDEC read files and logs (reads-k*.fasta, lordec-*.log, trim.fasta)
+    outputBinding:
+      glob: ['reads-k*.fasta', 'lordec-*.log', 'trim.fasta', 'discarded.fasta']
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lorma:0.4--2
-stdout: lorma_lorma.sh.out

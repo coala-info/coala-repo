@@ -1,5 +1,11 @@
 # maelstrom-core CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maelstrom-core_bam-collect-doc | PASS | real maelstrom-core repo example BAM: coverage and fragment-count VCF files identical to the repo expected files; --regions now repeats the flag per region and the BAM index is required |
+
 ## maelstrom-core_bam-collect-doc
 
 ### Tool Description
@@ -66,34 +72,4 @@ OPTIONS:
 
 ## Metadata
 - **Skill**: generated
-
-## maelstrom-core
-
-### Tool Description
-Tools for processing of NGS data
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/maelstrom-core:0.1.1--he3973ca_3
-- **Homepage**: https://github.com/bihealth/maelstrom-core
-- **Package**: https://anaconda.org/channels/bioconda/packages/maelstrom-core/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-maelstrom-core 0.1.1
-Manuel Holtgrewe <manuel.holtgrewe@bih-charite.de>
-Tools for processing of NGS data
-
-USAGE:
-    maelstrom-core [OPTIONS] <SUBCOMMAND>
-
-OPTIONS:
-    -h, --help       Print help information
-    -q, --quiet      Less output per occurrence
-    -v, --verbose    More output per occurrence
-    -V, --version    Print version information
-
-SUBCOMMANDS:
-    bam-collect-doc    Create contigs with synthetic sequence
-    help               Print this message or the help of the given subcommand(s)
-```
 

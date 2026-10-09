@@ -153,10 +153,13 @@ inputs:
       position: 103
       prefix: -s
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_output_name
+    type:
+      type: array
+      items: File
+    doc: Database files written by lastdb (.bck, .des, .prj, .sds, .ssp, .suf, .tis, ...)
+    outputBinding:
+      glob: $(inputs.output_name).*
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/last-align:v963-2-deb_cv1
-stdout: last-align_lastdb.out

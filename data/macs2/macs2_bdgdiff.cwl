@@ -121,7 +121,7 @@ outputs:
       regions in condition 1; 2. file for unique regions in condition 2; 3. file for
       common regions in both conditions. Note: mutually exclusive with --o-prefix.'
     outputBinding:
-      glob: $(inputs.ofile_path)
+      glob: "$(inputs.outdir_path ? inputs.outdir_path + '/' + inputs.ofile_path : inputs.ofile_path)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

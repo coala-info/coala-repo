@@ -94,6 +94,9 @@ inputs:
       position: 101
       prefix: --tsize
 outputs:
+  - id: log
+    type: stderr
+    doc: Log with the predicted fragment length and the alternative fragment lengths
   - id: output_outdir
     type:
       - 'null'
@@ -108,12 +111,13 @@ outputs:
         items: File
     doc: PREFIX of filename of R script for drawing X-correlation figure.
     outputBinding:
-      glob: $(inputs.rfile)*
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')$(inputs.rfile ? inputs.rfile : 'predictd')*"
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+stderr: macs3_predictd.err
 s:url: https://pypi.org/project/MACS3/
 $namespaces:
   s: https://schema.org/

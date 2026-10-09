@@ -1,5 +1,11 @@
 # macaron CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| macaron_MACARON | Not completed | needs the hg19 reference genome and the SnpEff GRCh37.75 database (over 1 GB); fixed --fields to a comma-joined list |
+
 ## macaron_MACARON
 
 ### Tool Description

@@ -23,13 +23,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --chainAlg
-  - id: index_file
-    type: File
-    doc: Path to the reference genome file in FASTA format which is supposed to 
-      be indexed.
-    inputBinding:
-      position: 101
-      prefix: --index
   - id: max_ref_hit
     type:
       - 'null'
@@ -80,7 +73,20 @@ inputs:
       prefix: --readGroup
   - id: search_file
     type: File
-    doc: Path to the reference genome file in FASTA format.
+    secondaryFiles:
+      - pattern: .amb
+        required: true
+      - pattern: .ann
+        required: true
+      - pattern: .bwt
+        required: true
+      - pattern: .cache
+        required: true
+      - pattern: .pac
+        required: true
+      - pattern: .sa
+        required: true
+    doc: Path to the reference genome file in FASTA format; the index files made by lordfast --index must sit beside it.
     inputBinding:
       position: 101
       prefix: --search
@@ -100,15 +106,13 @@ inputs:
       prefix: --threads
   - id: output_file_path
     type: string
-    doc: ' Write output to STR file rather than standard output. [stdout]'
+    doc: Write output to this file rather than standard output.
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Write output to file rather than standard output.
     outputBinding:
       glob: $(inputs.output_file_path)

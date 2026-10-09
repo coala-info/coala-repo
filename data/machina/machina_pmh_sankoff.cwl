@@ -6,19 +6,19 @@ doc: "Performs the Sankoff algorithm on a phylogenetic tree with leaf labelings.
   \nTool homepage: https://github.com/raphael-group/machina"
 inputs:
   - id: clone_tree
-    type: string
+    type: File
     doc: Clone tree
     inputBinding:
       position: 1
   - id: leaf_labeling
-    type: string
+    type: File
     doc: Leaf labeling
     inputBinding:
       position: 2
   - id: color_map_file
     type:
       - 'null'
-      - string
+      - File
     doc: Color map file
     inputBinding:
       position: 103
@@ -27,7 +27,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output prefix
+    doc: Output prefix. To write into a folder, give the folder name with a trailing
+      slash (for example out/); the folder is created before the run.
     inputBinding:
       position: 103
       prefix: -o
@@ -44,6 +45,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Summary of the enumerated labelings (the tool prints it to standard error)
   - id: output_prefix_files
     type:
       type: array
@@ -51,7 +55,21 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: |
+          ${
+            if (inputs.output_prefix && /\/$/.test(inputs.output_prefix)) {
+              return inputs.output_prefix.replace(/\/+$/, "");
+            }
+            return ".unused_output_dir";
+          }
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/machina:1.2--h21ec9f0_7
 stdout: machina_pmh_sankoff.out
+stderr: machina_pmh_sankoff.err

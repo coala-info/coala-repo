@@ -60,7 +60,9 @@ inputs:
       position: 101
       prefix: --min-length
   - id: no_trackline
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: Tells MACS not to include trackline with bedGraph files. The trackline 
       is required by UCSC.
     inputBinding:
@@ -75,26 +77,37 @@ inputs:
       position: 101
       prefix: --o-prefix
   - id: ofile
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output file name. Mutually exclusive with --o-prefix.
     inputBinding:
       position: 101
       prefix: --ofile
   - id: outdir
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'If specified all output files will be written to that directory. Default:
       the current working directory'
     inputBinding:
       position: 101
       prefix: --outdir
 outputs:
-  - id: output_ofile
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: Output file name. Mutually exclusive with --o-prefix.
+      type: array
+      items: File
+    doc: Output files written with the --ofile names or with the --o-prefix prefix.
     outputBinding:
-      glob: $(inputs.ofile)
+      glob: |
+        ${
+          var d = inputs.outdir ? inputs.outdir + '/' : '';
+          var g = [];
+          if (inputs.ofile) { g.push(d + inputs.ofile); }
+          if (inputs.o_prefix) { g.push(d + inputs.o_prefix + '*'); }
+          return g;
+        }
 requirements:
   - class: InlineJavascriptRequirement
 hints:

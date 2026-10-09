@@ -267,12 +267,10 @@ inputs:
       prefix: --unbridged-color
 outputs:
   - id: out_output_plot
-    type:
-      type: array
-      items: File
+    type: File
     doc: Output dotplot image (e.g., dotplot.png, gif, etc.)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_plot)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/last:1650--h5ca1c30_0

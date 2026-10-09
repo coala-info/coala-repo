@@ -2,71 +2,58 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - cluster
 label: lyner_cluster
-doc: "Cluster cells based on their expression profiles.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Clustering via k_mean / dbscan / mean_shift.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX cluster show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input_matrix
-    type: File
-    doc: Path to the input expression matrix (e.g., CSV, TSV).
-    inputBinding:
-      position: 1
-  - id: clustering_method
-    type:
-      - 'null'
-      - string
-    doc: Clustering algorithm to use (e.g., kmeans, leiden).
-    inputBinding:
-      position: 102
-      prefix: --method
-  - id: n_clusters
-    type:
-      - 'null'
-      - int
-    doc: Number of clusters to generate (required for some methods).
-    inputBinding:
-      position: 102
-      prefix: --n-clusters
-  - id: random_state
-    type:
-      - 'null'
-      - int
-    doc: Seed for random number generator for reproducible results.
-    inputBinding:
-      position: 102
-      prefix: --random-state
-  - id: resolution
-    type:
-      - 'null'
-      - float
-    doc: Resolution parameter for Leiden clustering.
-    inputBinding:
-      position: 102
-      prefix: --resolution
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Enable verbose output.
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 103
-      prefix: --output-dir
-outputs:
-  - id: output_dir
+      position: 2
+  - id: method
     type:
       - 'null'
-      - Directory
-    doc: Directory to save clustering results.
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - string
+    doc: "Clustering method: dbscan, k_means or mean_shift (default k_means)"
+    inputBinding:
+      position: 20
+      prefix: --method
+  - id: num_clusters
+    type:
+      - 'null'
+      - int
+    doc: "The exact number of clusters to build (default 4; used by k_means)"
+    inputBinding:
+      position: 20
+      prefix: --num-clusters
+  - id: mode_config
+    type:
+      - 'null'
+      - string
+    doc: "Extra parameters of the clustering function as key=value pairs separated by commas"
+    inputBinding:
+      position: 20
+      prefix: --mode-config
+outputs:
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: cluster
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_cluster.out

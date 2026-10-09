@@ -4,6 +4,9 @@ baseCommand: ksw
 label: ksw
 doc: "klib smith-waterman\n\nTool homepage: https://github.com/nh13/ksw"
 inputs:
+  - id: sequence_pairs
+    type: File
+    doc: Text file read from standard input, one sequence per line (query line, then target line, repeated)
   - id: add_header_line
     type:
       - 'null'
@@ -116,3 +119,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ksw:0.2.3--h43eeafb_0
 stdout: ksw.out
+stdin: $(inputs.sequence_pairs.path)

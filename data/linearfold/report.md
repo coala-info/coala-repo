@@ -1,5 +1,11 @@
 # linearfold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| linearfold | PASS |  |
+
 ## linearfold
 
 ### Tool Description

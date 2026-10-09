@@ -3,7 +3,19 @@ class: CommandLineTool
 baseCommand: ldsc.py
 label: ldsc_ldsc.py
 doc: "LD Score regression\n\nTool homepage: https://github.com/bulik/ldsc/"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.prefix_files)
 inputs:
+  - id: prefix_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files that the prefix inputs name (Plink .bed/.bim/.fam for bfile, 
+      .annot, .frq, .l2.ldscore.gz, .l2.M, .sumstats.gz files for annot, 
+      frqfile_chr, ref_ld, ref_ld_chr, w_ld, w_ld_chr, rg). They are staged in 
+      the working directory so that the prefixes resolve.
   - id: M
     type:
       - 'null'
@@ -140,6 +152,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --intercept-gencov
+      itemSeparator: ','
   - id: intercept_h2
     type:
       - 'null'
@@ -260,6 +273,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: ldsc
     doc: Output filename prefix. If --out is not set, LDSC will use ldsc as the 
       defualt output filename prefix.
     inputBinding:

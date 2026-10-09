@@ -2,9 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: lordec-trim-split
 label: lordec_lordec-trim-split
-doc: "Scan a set of corrected long reads (in FASTA format) and output as sequence
-  their regions that have indeed been corrected (which are in uppercase).\n\nTool
-  homepage: http://www.atgc-montpellier.fr/lordec/"
+doc: "Scan a set of corrected long reads (in FASTA format) and output as sequence their regions that have indeed been corrected (which are in uppercase).\n\nTool homepage: http://www.atgc-montpellier.fr/lordec/"
 inputs:
   - id: input_file
     type: File
@@ -14,10 +12,10 @@ inputs:
       prefix: -i
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output-file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

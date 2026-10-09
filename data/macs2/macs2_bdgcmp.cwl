@@ -88,7 +88,7 @@ outputs:
     doc: Output filename. Mutually exclusive with --o-prefix. The number and the
       order of arguments for --ofile must be the same as for -m.
     outputBinding:
-      glob: $(inputs.ofile_path)
+      glob: "$(inputs.outdir_path ? inputs.outdir_path + '/' + inputs.ofile_path : inputs.ofile_path)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -10,6 +10,11 @@ inputs:
     doc: MAF or tabular alignments
     inputBinding:
       position: 1
+  - id: output_plot
+    type: string
+    doc: Output dotplot image file name (png, gif, ...)
+    inputBinding:
+      position: 2
   - id: bed1
     type:
       - 'null'
@@ -313,7 +318,7 @@ outputs:
     type: File
     doc: Output dotplot file (png or gif)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_plot)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/last-align:v963-2-deb_cv1

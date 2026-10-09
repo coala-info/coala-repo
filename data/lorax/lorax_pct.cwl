@@ -8,18 +8,26 @@ doc: "Calculate and output statistics about the alignment of a sample to a refer
   genome or pan-genome graph.\n\nTool homepage: https://github.com/tobiasrausch/lorax"
 inputs:
   - id: sample_bam
-    type: File
+    type:
+      - 'null'
+      - File
+    secondaryFiles:
+      - .bai
     doc: sample BAM file (when using linear reference)
     inputBinding:
       position: 1
   - id: sample_gaf_gz
-    type: File
+    type:
+      - 'null'
+      - File
     doc: sample GAF.GZ file (when using pan-genome graph)
     inputBinding:
       position: 2
   - id: reference
-    type: File
-    doc: genome fasta file
+    type:
+      - 'null'
+      - File
+    doc: genome fasta file (linear reference mode)
     secondaryFiles:
       - .fai
     inputBinding:

@@ -1,5 +1,11 @@
 # lexmapr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lexmapr | PASS | ran on the lexmapr small_simple test input; matches (breast, frozen) agree with the repo expected output; --full and --bucket columns also written |
+
 ## lexmapr
 
 ### Tool Description

@@ -1,14 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: modcall
+baseCommand:
+  - longphase
+  - modcall
 label: longphase_modcall
 doc: "modcall\n\nTool homepage: https://github.com/twolinin/longphase"
 inputs:
-  - id: reads_file
-    type: File
-    doc: modified sorted bam file.
-    inputBinding:
-      position: 1
   - id: all
     type:
       - 'null'
@@ -19,10 +16,12 @@ inputs:
       prefix: --all
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: modified sorted bam file.
     inputBinding:
       position: 102
-      prefix: --bam-file
+      prefix: -b
   - id: connectAdjacent
     type:
       - 'null'
@@ -79,6 +78,8 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
+      - pattern: .gzi
+        required: false
     doc: reference fasta.
     inputBinding:
       position: 102

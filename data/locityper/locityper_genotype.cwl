@@ -15,7 +15,7 @@ inputs:
       but must contain unique loci names.
     inputBinding:
       position: 101
-      prefix: --database[s]
+      prefix: --databases
   - id: debug
     type:
       - 'null'

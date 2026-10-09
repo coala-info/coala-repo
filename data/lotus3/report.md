@@ -1,5 +1,11 @@
 # lotus3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lotus3 | PASS |  |
+
 ## lotus3
 
 ### Tool Description

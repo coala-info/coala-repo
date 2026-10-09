@@ -2,39 +2,34 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - reindex
 label: lyner_reindex
-doc: "Reindex the matrix.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Sort and reindex.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX reindex show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input_matrix
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
+    inputBinding:
+      position: 0
+      prefix: -v
+  - id: matrix
     type: File
-    doc: Input matrix file
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 1
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: output_matrix_path
-    type: string
-    doc: Output or path parameter `output_matrix_path`
-    inputBinding:
-      position: 103
-      prefix: --output-matrix
+      position: 2
 outputs:
-  - id: output_matrix
-    type:
-      - 'null'
-      - File
-    doc: Output matrix file
-    outputBinding:
-      glob: $(inputs.output_matrix_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: reindex
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_reindex.out

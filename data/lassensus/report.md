@@ -1,5 +1,12 @@
 # lassensus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lassensus_consensus | PASS |  |
+| lassensus_reference-selection | PASS |  |
+
 ## lassensus_reference-selection
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # lorma CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lorma_LoRMA | PASS |  |
+| lorma_lorma.sh | PASS |  |
+
 ## lorma_lorma.sh
 
 ### Tool Description

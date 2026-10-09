@@ -2,71 +2,66 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - decompose
 label: lyner_decompose
-doc: "Decompose a matrix into its constituent parts.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Decomposition/dimensionality reduction (PCA, ICA, …)\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX decompose show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input_matrix
-    type: File
-    doc: Input matrix file (e.g., CSV, TSV).
-    inputBinding:
-      position: 1
-  - id: center
-    type:
-      - 'null'
-      - boolean
-    doc: Center the matrix before decomposition.
-    inputBinding:
-      position: 102
-      prefix: --center
-  - id: decomposition_method
-    type:
-      - 'null'
-      - string
-    doc: Method for decomposition (e.g., 'svd', 'pca', 'nmf').
-    inputBinding:
-      position: 102
-      prefix: --method
-  - id: n_components
-    type:
-      - 'null'
-      - int
-    doc: Number of components to keep.
-    inputBinding:
-      position: 102
-      prefix: --n-components
-  - id: scale
-    type:
-      - 'null'
-      - boolean
-    doc: Scale the matrix before decomposition.
-    inputBinding:
-      position: 102
-      prefix: --scale
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Enable verbose output.
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 103
-      prefix: --output-dir
-outputs:
-  - id: output_dir
+      position: 2
+  - id: mode
     type:
       - 'null'
-      - Directory
-    doc: Directory to save decomposed matrices.
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - string
+    doc: "Method: PCA, KPCA, NMF, BMF, TSNE or ICA (default PCA)"
+    inputBinding:
+      position: 20
+      prefix: --mode
+  - id: decode
+    type:
+      - 'null'
+      - boolean
+    doc: "Apply the inverse transformation after decomposition"
+    inputBinding:
+      position: 20
+      prefix: --decode
+  - id: num_components
+    type:
+      - 'null'
+      - int
+    doc: "Number of components (default 2)"
+    inputBinding:
+      position: 20
+      prefix: --num-components
+  - id: mode_config
+    type:
+      - 'null'
+      - string
+    doc: "Extra parameters of the decomposition as key=value pairs separated by commas"
+    inputBinding:
+      position: 20
+      prefix: --mode-config
+outputs:
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: decompose
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_decompose.out

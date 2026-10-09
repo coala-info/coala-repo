@@ -24,6 +24,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Input file in BAM format. BAM file must be sorted and indexed using 
       samTools. Replicates separated by comma(',') e.g. "-i 
       rep1.bam,rep2.bam,rep3.bam"

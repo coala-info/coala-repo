@@ -11,7 +11,7 @@ inputs:
       - File
     doc: read actions from 'file'
     inputBinding:
-      position: 101
+      position: 2
       prefix: -A
   - id: complement
     type:
@@ -48,7 +48,7 @@ inputs:
     doc: Print only the bases from position 'beg' to position 'end' (space 
       based, relative to the FORWARD sequence!)
     inputBinding:
-      position: 101
+      position: 110
       prefix: -e
   - id: extract_end
     type:
@@ -57,31 +57,22 @@ inputs:
     doc: Print only the bases from position 'beg' to position 'end' (space 
       based, relative to the FORWARD sequence!)
     inputBinding:
-      position: 101
-      prefix: -e
+      position: 111
   - id: fasta_file
     type:
       - 'null'
       - File
     doc: use sequence in 'file'
     inputBinding:
-      position: 101
+      position: 1
       prefix: -f
-  - id: help_topic
-    type:
-      - 'null'
-      - string
-    doc: analysis or examples
-    inputBinding:
-      position: 101
-      prefix: -help
   - id: index_name
     type:
       - 'null'
       - string
     doc: print an index, labelling the source 'name'
     inputBinding:
-      position: 101
+      position: 51
       prefix: -i
   - id: length_range_max
     type:
@@ -89,15 +80,14 @@ inputs:
       - int
     doc: print all sequences such that s <= length < l
     inputBinding:
-      position: 101
-      prefix: -L
+      position: 211
   - id: length_range_min
     type:
       - 'null'
       - int
     doc: print all sequences such that s <= length < l
     inputBinding:
-      position: 101
+      position: 210
       prefix: -L
   - id: line_break_interval
     type:
@@ -116,8 +106,7 @@ inputs:
     doc: print all sequences such that l <= % N composition < h (NOTE 0.0 <= l <
       h < 100.0)
     inputBinding:
-      position: 101
-      prefix: -N
+      position: 221
   - id: n_composition_min
     type:
       - 'null'
@@ -125,7 +114,7 @@ inputs:
     doc: print all sequences such that l <= % N composition < h (NOTE 0.0 <= l <
       h < 100.0)
     inputBinding:
-      position: 101
+      position: 220
       prefix: -N
   - id: no_defline
     type:
@@ -141,7 +130,7 @@ inputs:
       - boolean
     doc: print all sequences (do the whole file)
     inputBinding:
-      position: 101
+      position: 250
       prefix: -W
   - id: print_sequence_count
     type:
@@ -149,7 +138,7 @@ inputs:
       - boolean
     doc: print the number of sequences in the fasta
     inputBinding:
-      position: 101
+      position: 50
       prefix: -d
   - id: random_pick_num
     type:
@@ -157,7 +146,7 @@ inputs:
       - int
     doc: print 'num' randomly picked sequences
     inputBinding:
-      position: 101
+      position: 251
       prefix: -r
   - id: random_sequences_count
     type:
@@ -165,7 +154,7 @@ inputs:
       - int
     doc: print n randomly generated sequences, 0 < s <= length <= l
     inputBinding:
-      position: 101
+      position: 240
       prefix: -G
   - id: random_sequences_max_len
     type:
@@ -173,16 +162,14 @@ inputs:
       - int
     doc: print n randomly generated sequences, 0 < s <= length <= l
     inputBinding:
-      position: 101
-      prefix: -G
+      position: 242
   - id: random_sequences_min_len
     type:
       - 'null'
       - int
     doc: print n randomly generated sequences, 0 < s <= length <= l
     inputBinding:
-      position: 101
-      prefix: -G
+      position: 241
   - id: reverse
     type:
       - 'null'
@@ -197,7 +184,7 @@ inputs:
       - File
     doc: print sequences from the seqid list in 'file'
     inputBinding:
-      position: 101
+      position: 253
       prefix: -q
   - id: seqid_range_end
     type:
@@ -205,15 +192,14 @@ inputs:
       - string
     doc: print all the sequences from ID 'f' to 'l' (inclusive)
     inputBinding:
-      position: 101
-      prefix: -S
+      position: 231
   - id: seqid_range_start
     type:
       - 'null'
       - string
     doc: print all the sequences from ID 'f' to 'l' (inclusive)
     inputBinding:
-      position: 101
+      position: 230
       prefix: -S
   - id: single_seqid
     type:
@@ -221,7 +207,7 @@ inputs:
       - string
     doc: print the single sequence 'seqid'
     inputBinding:
-      position: 101
+      position: 252
       prefix: -s
   - id: uppercase
     type:

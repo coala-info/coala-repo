@@ -52,7 +52,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Multiple comma-separated input filepaths
     inputBinding:
       position: 101

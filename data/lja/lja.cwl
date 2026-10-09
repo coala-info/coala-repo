@@ -41,12 +41,13 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --reads
     doc: Name of file that contains reads in fasta or fastq format. This option 
       can be used any number of times in the same command line. In this case 
       reads from all specified files will be used as an input.
     inputBinding:
       position: 101
-      prefix: --reads
   - id: threads
     type:
       - 'null'

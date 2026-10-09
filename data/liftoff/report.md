@@ -1,5 +1,11 @@
 # liftoff CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| liftoff | PASS | synthetic data: yeast chrI 100 kb with its GFF as reference and a copy with a 2 kb deletion as target; genes shift by 2000 and GPB2 is truncated as expected; fixed read-only staging (GFF and target now writable), optional db/gff and -f as a types file |
+
 ## liftoff
 
 ### Tool Description

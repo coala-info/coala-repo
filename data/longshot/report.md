@@ -1,5 +1,11 @@
 # longshot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| longshot | PASS | synthetic data: the tool's own simulated example set; 703 of 714 truth variants found with 1 extra call |
+
 ## longshot
 
 ### Tool Description

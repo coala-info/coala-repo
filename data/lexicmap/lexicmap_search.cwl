@@ -119,7 +119,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log file.
     inputBinding:
       position: 102
@@ -251,6 +251,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --taxids
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'
@@ -274,8 +275,15 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out-file
 outputs:
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: Log file, written when log_file is set
+    outputBinding:
+      glob: $(inputs.log_file)
   - id: output_file
     type:
       - 'null'

@@ -86,13 +86,17 @@ inputs:
       position: 101
       prefix: --o-prefix
   - id: ofile
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output file name. Mutually exclusive with --o-prefix.
     inputBinding:
       position: 101
       prefix: --ofile
   - id: outdir
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'If specified all output files will be written to that directory. Default:
       the current working directory'
     inputBinding:
@@ -107,20 +111,20 @@ outputs:
       the current working directory'
     outputBinding:
       glob: $(inputs.outdir)
-  - id: output_ofile
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: Output file name. Mutually exclusive with --o-prefix.
+      type: array
+      items: File
+    doc: Output files written with the --ofile names or with the --o-prefix prefix.
     outputBinding:
-      glob: $(inputs.ofile)
-  - id: output_o_prefix
-    type:
-      - 'null'
-      - File
-    doc: Output file prefix. Mutually exclusive with -o/--ofile.
-    outputBinding:
-      glob: $(inputs.o_prefix)
+      glob: |
+        ${
+          var d = inputs.outdir ? inputs.outdir + '/' : '';
+          var g = [];
+          if (inputs.ofile) { g.push(d + inputs.ofile); }
+          if (inputs.o_prefix) { g.push(d + inputs.o_prefix + '*'); }
+          return g;
+        }
 requirements:
   - class: InlineJavascriptRequirement
 hints:

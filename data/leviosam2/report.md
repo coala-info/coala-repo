@@ -1,9 +1,19 @@
 # leviosam2 CWL Generation Report
 
-## leviosam2_lift
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| leviosam2_bed | PASS | fixed invented flags (-b -C -p); lifted two BED intervals through a chain index and the coordinates are plausible |
+| leviosam2_collate | PASS | ran on lifted committed and deferred BAMs; wrote collated BAMs and paired FASTQs |
+| leviosam2_index | PASS | new CWL; built a ChainMap index from the repo hg38-to-hg19 chain and fai |
+| leviosam2_lift | PASS | rewritten from the junk group wrapper; lifted HG002 GRCh38 reads to GRCh37 and positions equal the expected GRCh37 alignments |
+| leviosam2_reconcile | PASS | rewritten with -s label:file pairs; reconciled lifted and direct GRCh37 alignments and kept the best pair |
+
+## leviosam2_bed
 
 ### Tool Description
-lift over alignments using a chain file
+Lift over a BED file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/leviosam2:0.5.0--h9948957_1
@@ -11,18 +21,85 @@ lift over alignments using a chain file
 - **Package**: https://anaconda.org/channels/bioconda/packages/leviosam2/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/leviosam2/overview
-- **Total Downloads**: 18.5K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/milkschen/leviosam2
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Program: leviosam2 (lift over alignments using a chain file)
+Lift over a BED file
 Version: 0.5.0
-Usage:   leviosam2 <command> [options]
+Usage:   leviosam2 bed [options] -b <bed> -C <clft> -p <prefix>
 
-Commands: index       Build a levioSAM2 index of a chain file.
+Inputs:  -b string   Path to the input BED.
+         -C string   Path to an indexed ChainMap. See `leviosam2 index` for details.
+         -p string   Prefix to the output files.
+Options: -h          Print detailed usage.
+         -G INT      Number of allowed gaps for an interval. [500]
+         -V INT      Verbose level [0].
+```
+
+## leviosam2_collate
+
+### Tool Description
+Collate alignments to make sure reads are paired
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviosam2:0.5.0--h9948957_1
+- **Homepage**: https://github.com/milkschen/leviosam2
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviosam2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Collate alignments to make sure reads are paired
+Version: 0.5.0
+Usage:   leviosam2 collate [options] -a <bam> {-b <bam> | -q <fastq>} -p <prefix>
+
+Inputs:  -a string   Path to the input SAM/BAM.
+         -b string   Path to the input deferred SAM/BAM.
+         -q string   Path to the input singleton FASTQ.
+         -p string   Prefix to the output files (1 BAM and a pair of gzipped FASTQs).
+Options: -h          Print detailed usage.
+         -V INT      Verbose level [0].
+```
+
+## leviosam2_reconcile
+
+### Tool Description
+Reconcile alignments to select the one with higher confidence.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviosam2:0.5.0--h9948957_1
+- **Homepage**: https://github.com/milkschen/leviosam2
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviosam2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Reconcile alignments to select the one with higher confidence
+Version: 0.5.0
+Usage: leviosam2 reconcile [options] -s <label:input> -o <out>
+
+Inputs:  -s string:string  Input label and file; separated by a colon, e.g.
+                           `-s foo:foo.bam -s bar:bar.bam`
+         -o string Path to the output SAM/BAM file
+Options: -h        Print detailed usage.
+         -c        Set to use conservative MAPQ [false]
+         -m        Set to perform merging in pairs [false]
+         -r INT    Random seed used by the program [0]
+```
+
+## leviosam2_index
+
+### Tool Description
+Build a levioSAM2 index of a chain file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviosam2:0.5.0--h9948957_1
+- **Homepage**: https://github.com/milkschen/leviosam2
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviosam2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Build a levioSAM2 index of a chain file.
           lift        Lift alignments in SAM/BAM/CRAM formats.
           bed         Lift intervals in BED format.
           collate     Collate lifted paired-end alignments.
@@ -38,8 +115,21 @@ Usage:   leviosam2 index -c <chain> -p <out_prefix> -F <fai>
 Inputs:  -c path   Path to the chain file to index.
          -F path   Path to the FAI (FASTA index) file of the target reference.
          -p string Prefix of the output file.
+```
 
+## leviosam2_lift
 
+### Tool Description
+Lift over alignments in SAM/BAM/CRAM formats using a levioSAM2 chain index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviosam2:0.5.0--h9948957_1
+- **Homepage**: https://github.com/milkschen/leviosam2
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviosam2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
 Lift over using leviosam2.
 Usage:   leviosam2 lift [options] -C <clft>
 
@@ -82,92 +172,6 @@ Options: -a path   Path to the SAM/BAM/CRAM file to be lifted.
                      If > 1: consider >`-B`-bp overlap
                      If 1>=`-B`>0: consider overlap with a fraction of >`-B` of the alignment.
 ```
-
-
-## leviosam2_bed
-
-### Tool Description
-Lift over a BED file
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/leviosam2:0.5.0--h9948957_1
-- **Homepage**: https://github.com/milkschen/leviosam2
-- **Package**: https://anaconda.org/channels/bioconda/packages/leviosam2/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-[E::lift_bed_run] Argument -b/--bed_fname is required
-
-Lift over a BED file
-Version: 0.5.0
-Usage:   leviosam2 bed [options] -b <bed> -C <clft> -p <prefix>
-
-Inputs:  -b string   Path to the input BED.
-         -C string   Path to an indexed ChainMap. See `leviosam2 index` for details.
-         -p string   Prefix to the output files.
-Options: -h          Print detailed usage.
-         -G INT      Number of allowed gaps for an interval. [500]
-         -V INT      Verbose level [0].
-```
-
-
-## leviosam2_collate
-
-### Tool Description
-Collate alignments to make sure reads are paired
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/leviosam2:0.5.0--h9948957_1
-- **Homepage**: https://github.com/milkschen/leviosam2
-- **Package**: https://anaconda.org/channels/bioconda/packages/leviosam2/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-[E::collate_run] required argument missed.
-
-Collate alignments to make sure reads are paired
-Version: 0.5.0
-Usage:   leviosam2 collate [options] -a <bam> {-b <bam> | -q <fastq>} -p <prefix>
-
-Inputs:  -a string   Path to the input SAM/BAM.
-         -b string   Path to the input deferred SAM/BAM.
-         -q string   Path to the input singleton FASTQ.
-         -p string   Prefix to the output files (1 BAM and a pair of gzipped FASTQs).
-Options: -h          Print detailed usage.
-         -V INT      Verbose level [0].
-```
-
-
-## leviosam2_reconcile
-
-### Tool Description
-Reconcile alignments to select the one with higher confidence
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/leviosam2:0.5.0--h9948957_1
-- **Homepage**: https://github.com/milkschen/leviosam2
-- **Package**: https://anaconda.org/channels/bioconda/packages/leviosam2/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-[E::reconcile_run] required argument missed.
-
-Reconcile alignments to select the one with higher confidence
-Version: 0.5.0
-Usage: leviosam2 reconcile [options] -s <label:input> -o <out>
-
-Inputs:  -s string:string  Input label and file; separated by a colon, e.g.
-                           `-s foo:foo.bam -s bar:bar.bam`
-         -o string Path to the output SAM/BAM file
-Options: -h        Print detailed usage.
-         -c        Set to use conservative MAPQ [false]
-         -m        Set to perform merging in pairs [false]
-         -r INT    Random seed used by the program [0]
-```
-
 
 ## Metadata
 - **Skill**: generated

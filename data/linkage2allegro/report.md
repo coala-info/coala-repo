@@ -1,5 +1,11 @@
 # linkage2allegro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| linkage2allegro | Failed | tool bug: on real Merlin output the marker column of the LOD file stays blank, because the closest-marker search skips markers that sit exactly on a LOD position |
+
 ## linkage2allegro
 
 ### Tool Description

@@ -7,9 +7,7 @@ label: ldhelmet_table_gen
 doc: "Generate tables for LDHelmet\n\nTool homepage: http://sourceforge.net/projects/ldhelmet/"
 inputs:
   - id: conf_file
-    type:
-      - 'null'
-      - string
+    type: File
     doc: Two-site configuration file.
     inputBinding:
       position: 101
@@ -24,17 +22,14 @@ inputs:
       prefix: --num_threads
   - id: rhos
     type:
-      - 'null'
-      - type: array
-        items: float
+      type: array
+      items: float
     doc: Rho values.
     inputBinding:
       position: 101
       prefix: --rhos
   - id: theta
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Theta value.
     inputBinding:
       position: 101
@@ -47,9 +42,7 @@ inputs:
       prefix: --output_file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Name for output file.
     outputBinding:
       glob: $(inputs.output_file_path)

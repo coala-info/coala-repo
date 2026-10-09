@@ -1,5 +1,11 @@
 # longgf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| longgf_LongGF | PASS | synthetic data: planted BCR-EWSR1 fusion reads built from real chr22 sequence; the fusion was found |
+
 ## longgf_LongGF
 
 ### Tool Description

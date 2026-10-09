@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 7772; PASS: 6026; Failed: 954; Not completed: 792
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 8079; PASS: 6269; Failed: 993; Not completed: 817
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -7772,3 +7772,310 @@ kssd	kssd_dist	PASS	sketched 3 bacterial genomes, indexed them and searched B. f
 kssd	kssd_reverse	PASS	
 kssd	kssd_set	PASS	
 kssd	kssd_shuffle	PASS	
+ksw	ksw	PASS	
+kwip	kwip	PASS	
+kyber	kyber	PASS	
+kyototycoon	kyototycoon_ktserver	Not completed	long-running server; it never exits, so a cwltool run cannot finish
+labrat	labrat_LABRAT.py	Failed	image problem: salmon in the image cannot start (libtbb.so.2 missing), so runSalmon and calculatepsi do nothing; makeTFfasta alone works on real GENCODE chr22 data
+labrat	labrat_LABRAT_danRer.py	Failed	image problem: salmon in the image cannot start (libtbb.so.2 missing), so runSalmon and calculatepsi do nothing; makeTFfasta alone works
+labrat	labrat_LABRAT_dm6annotation.py	Failed	tool bug: makeTFfasta and calculatepsi crash with AttributeError (script reads args.librarytype, which it never defines); salmon in the image also cannot start (libtbb.so.2 missing)
+labrat	labrat_LABRAT_rn6annotation.py	Failed	tool bug: makeTFfasta and calculatepsi crash with AttributeError (script reads args.librarytype, which it never defines); salmon in the image also cannot start (libtbb.so.2 missing)
+labrat	labrat_LABRATsc.py	Not completed	needs alevin single-cell output; no small real alevin data, and salmon in the image cannot start (libtbb.so.2 missing)
+lamassemble	lamassemble	PASS	
+lambda-align2	lambda-align2_mkindexn	PASS	
+lambda-align2	lambda-align2_mkindexp	PASS	
+lambda-align2	lambda-align2_searchn	PASS	
+lambda-align2	lambda-align2_searchp	PASS	
+lassaseq	lassaseq	PASS	
+lassensus	lassensus_consensus	PASS	
+lassensus	lassensus_reference-selection	PASS	
+last	last_last-dotplot	PASS	
+last	last_last-train	PASS	
+last	last_lastal	PASS	
+last	last_lastdb	PASS	
+last	last_maf-convert	PASS	
+last-align	last-align_last-dotplot	PASS	
+last-align	last-align_last-train	PASS	
+last-align	last-align_lastal	PASS	
+last-align	last-align_lastdb	PASS	
+last-align	last-align_maf-convert	PASS	
+lastz	lastz	PASS	
+ldblockshow	ldblockshow	Failed	image problem: ShowLDSVG, which LDBlockShow calls to draw the SVG/PNG/PDF figure, cannot run (shebang /usr/bin/perl is missing in the image); only the .site, .blocks and .TriangleV tables are written
+lddt	lddt	PASS	
+ldhelmet	ldhelmet_convert_table	PASS	
+ldhelmet	ldhelmet_find_confs	PASS	
+ldhelmet	ldhelmet_max_lk	PASS	
+ldhelmet	ldhelmet_pade	PASS	
+ldhelmet	ldhelmet_post_to_text	PASS	
+ldhelmet	ldhelmet_rjmcmc	PASS	
+ldhelmet	ldhelmet_table_gen	PASS	
+ldsc	ldsc_ldsc.py	PASS	
+ldsc	ldsc_munge_sumstats.py	PASS	ran on the ldsc test sumstats and output matches the expected file; the --merge-alleles option crashes with a pandas error inside the tool
+leaff	leaff	PASS	ran on human transcript FASTA; -e range and -S ID range give correct sequences; the -u option prints usage in this image version
+learnmsa	learnmsa_learnMSA	PASS	ran on BAliBASE BB11001 (4 HMG proteins) on CPU; the A3M alignment is plausible
+lefse	lefse_lefse2circlader.py	PASS	converted the HMP LEfSe result to Circlader input (1091 rows)
+lefse	lefse_lefse_format_input.py	PASS	ran on the HMP aerobiosis example table; formatted file feeds lefse_run
+lefse	lefse_lefse_plot_cladogram.py	PASS	baseCommand fixed (plot_cladogram.py does not exist); cladogram of the HMP result is correct
+lefse	lefse_lefse_plot_features.py	PASS	ran on the HMP example data; one image per biomarker (51 files)
+lefse	lefse_lefse_plot_res.py	PASS	ran on the HMP example result; bar plot of 51 biomarkers is correct
+lefse	lefse_lefse_run.py	Failed	tool bug: the -o option writes no text file; the main run finds the same 51 biomarkers and classes as the expected HMP result
+lefse	lefse_qiime2lefse.py	PASS	synthetic data: small QIIME OTU table and metadata cut from the HMP example; output has class rows and taxa rows
+legsta	legsta	PASS	ran on Legionella pneumophila Paris genome NC_006368; got ST1 (1,4,3,1,1,1,1) as in the tool README
+lemur	lemur	PASS	ran on the lemur example reads and database; output equals the expected Listeria monocytogenes profile; log_file typed as string output
+lepwrap	lepwrap_LepWrap	Not completed	pipeline, skipped (LepWrap is a Snakemake pipeline)
+leviathan	leviathan_LEVIATHAN	PASS	ran on the LEVIATHAN example BAM; 30 SVs (INV/DUP/DEL); fixed -o flag, .bai secondary file and candidates output
+leviathan	leviathan_LRez_compare	PASS	ran on the example BAM; shared barcodes for region pairs match the LEVIATHAN candidates (7)
+leviathan	leviathan_LRez_extract	PASS	ran on the example BAM region; 806 barcodes
+leviathan	leviathan_LRez_index_bam	PASS	ran on the LEVIATHAN example BAM; positions and offsets indexes built and used by later runs
+leviathan	leviathan_LRez_index_fastq	PASS	synthetic data: FASTQ made from example BAM reads with BX tags; index built
+leviathan	leviathan_LRez_query_bam	PASS	ran on the example BAM; alignments of the query barcode returned as SAM with header
+leviathan	leviathan_LRez_query_fastq	PASS	synthetic data: FASTQ made from example BAM reads; 16 reads of the query barcode returned
+leviathan	leviathan_LRez_stats	PASS	ran on the example BAM; barcode and read counts look right
+leviosam	leviosam_bed	PASS	fixed invented flags (-b -C -p); lifted two BED intervals through a chain index and the coordinates are plausible
+leviosam	leviosam_collate	PASS	ran on lifted committed and deferred BAMs; wrote collated BAMs and paired FASTQs
+leviosam	leviosam_index	PASS	new CWL; built a chain index from the repo hg38-to-hg19 chain and fai
+leviosam	leviosam_lift	PASS	rewritten from the junk group wrapper; lifted HG002 GRCh38 reads to GRCh37 and positions equal the expected GRCh37 alignments
+leviosam	leviosam_reconcile	PASS	rewritten with -s label:file pairs; reconciled lifted and direct GRCh37 alignments and kept the best pair
+leviosam2	leviosam2_bed	PASS	fixed invented flags (-b -C -p); lifted two BED intervals through a chain index and the coordinates are plausible
+leviosam2	leviosam2_collate	PASS	ran on lifted committed and deferred BAMs; wrote collated BAMs and paired FASTQs
+leviosam2	leviosam2_index	PASS	new CWL; built a ChainMap index from the repo hg38-to-hg19 chain and fai
+leviosam2	leviosam2_lift	PASS	rewritten from the junk group wrapper; lifted HG002 GRCh38 reads to GRCh37 and positions equal the expected GRCh37 alignments
+leviosam2	leviosam2_reconcile	PASS	rewritten with -s label:file pairs; reconciled lifted and direct GRCh37 alignments and kept the best pair
+lexicmap	lexicmap_index	PASS	added the missing positional genome files; indexed 3 demo genomes and the index works for search
+lexicmap	lexicmap_search	PASS	fixed --out-file flag; E. coli 16S query against 3 genomes gives the same hits as the expected demo result
+lexicmap	lexicmap_utils_2blast	PASS	converted a search -a result to Blast-style alignments
+lexicmap	lexicmap_utils_edit_genome_ids	PASS	renamed genome IDs in a writable index copy with a regex; genomes lists the new IDs
+lexicmap	lexicmap_utils_genomes	PASS	listed the 3 genome IDs of the demo index
+lexicmap	lexicmap_utils_kmers	PASS	listed 99 k-mers of mask 1
+lexicmap	lexicmap_utils_masks	PASS	exported the 20000 masks of the demo index
+lexicmap	lexicmap_utils_merge_search_results	PASS	merged two search result files into one table
+lexicmap	lexicmap_utils_reindex_seeds	PASS	re-indexed the seeds of a writable index copy with 1024 partitions
+lexicmap	lexicmap_utils_remerge	Not completed	needs an unfinished index with a .tmp folder, which cannot be made here (tool reports tmp directory not found on a finished index)
+lexicmap	lexicmap_utils_seed_pos	PASS	ran on an index built with --save-seed-pos; seed distance table and two histogram plots written
+lexicmap	lexicmap_utils_subseq	PASS	extracted subsequences from search results and by genome, sequence and region; E. coli 16S sequence correct
+lexmapr	lexmapr	PASS	ran on the lexmapr small_simple test input; matches (breast, frozen) agree with the repo expected output; --full and --bucket columns also written
+libis	libis_LiBis	Not completed	bisulfite pipeline (BSMAP mapping, clipping, plotting); the example whole-genome reads need a full human reference genome (about 3 GB), too heavy here
+libis_moabs	libis_moabs	Not completed	MOABS pipeline runner (BSMAP, MCALL, MCOMP) that needs a full human reference genome for the LiBis example reads, too heavy here
+libssw	libssw_ssw_test	PASS	ran on the libssw demo DNA and protein files; alignment (score 40 for pRef/pRead, 168 for protein) and SAM output (with -c) are correct
+liftoff	liftoff	PASS	synthetic data: yeast chrI 100 kb with its GFF as reference and a copy with a 2 kb deletion as target; genes shift by 2000 and GPB2 is truncated as expected; fixed read-only staging (GFF and target now writable), optional db/gff and -f as a types file
+liftofftools	liftofftools_all	PASS	same synthetic yeast pair; clusters, variants and synteny results all written
+liftofftools	liftofftools_clusters	PASS	same synthetic yeast pair; all genes fall in 1:1 clusters; dangling mmseqs links removed so the output folder collects
+liftofftools	liftofftools_synteny	PASS	same synthetic yeast pair; gene order table with edit distance 0 and a PDF plot
+liftofftools	liftofftools_variants	PASS	synthetic data: yeast chrI 100 kb lifted by Liftoff to a copy with a 2 kb deletion; GPB2 reported as inframe_deletion (0.28), 44 genes identical
+lightassembler	lightassembler_LightAssembler	PASS	
+lighter	lighter	PASS	
+lightstringgraph	lightstringgraph_graph2asqg	Not completed	needs BEETL BWT, LCP and end-position files as input, and BEETL is not in the image or any bioconda image
+lightstringgraph	lightstringgraph_lsg	Not completed	needs BEETL BWT, LCP and end-position files as input, and BEETL is not in the image or any bioconda image
+lightstringgraph	lightstringgraph_redbuild	Not completed	needs BEETL BWT, LCP and end-position files as input, and BEETL is not in the image or any bioconda image
+lima	lima	PASS	
+linearfold	linearfold	PASS	
+linkage2allegro	linkage2allegro	Failed	tool bug: on real Merlin output the marker column of the LOD file stays blank, because the closest-marker search skips markers that sit exactly on a LOD position
+linkedsv	linkedsv_linkedsv.py	Not completed	no usable test data: needs a 10x Longranger linked-read BAM with barcode tags and a human reference, none small enough is published
+links	links_LINKS	PASS	
+linkstats	linkstats_cov_gap_hist_data	PASS	
+linkstats	linkstats_coverage_data	PASS	
+linkstats	linkstats_mol_len_hist_data	PASS	
+linkstats	linkstats_molecule_data	PASS	
+linkstats	linkstats_sam_data	PASS	
+liqa	liqa_diff	Failed	image problem: perl is not installed and the R package gcmr is missing in the image
+liqa	liqa_novel	PASS	
+liqa	liqa_quantify	PASS	
+liqa	liqa_refgene	Failed	image problem: perl is not installed in the image, but the PreProcess_gtf.pl and PreProcess.pl scripts need it
+lirtmats	lirtmats_cli	PASS	
+lissero	lissero	PASS	
+livekraken	livekraken	Failed	tool bug: the --output option writes an empty file, while classification to standard output works (tested on a tiny custom SARS-CoV-2 database)
+lja	lja	Failed	tool crash: the run_polishing child process crashes at the homopolymer uncompression step on three real HiFi datasets, so no assembly.fasta is written
+lmas	lmas_LMAS	Not completed	pipeline, skipped
+local-cd-search	local-cd-search_annotate	PASS	
+local-cd-search	local-cd-search_download	PASS	
+localhgt	localhgt_bkp	PASS	synthetic data: the tool's own simulated test set
+localhgt	localhgt_event	PASS	synthetic data: the tool's own simulated test set
+locarna	locarna	PASS	
+locidex	locidex_build	PASS	
+locidex	locidex_extract	PASS	
+locidex	locidex_format	PASS	
+locidex	locidex_manifest	PASS	
+locidex	locidex_merge	PASS	
+locidex	locidex_report	PASS	
+locidex	locidex_search	PASS	
+locityper	locityper_align	PASS	synthetic data: real 8 kb reference slice plus two planted mutated copies; mismatch counts match
+locityper	locityper_genotype	Not completed	needs a database and a preprocessed whole-genome dataset (preproc could not be completed on small data); fixed the --databases flag
+locityper	locityper_preproc	Not completed	needs whole-genome reads with enough depth and a background region over 3 Mb; the only small real long-read set (17 reads on a 150 kb mini reference) fails with a k-mer counting error
+locityper	locityper_prune	PASS	synthetic data: database and alignments built from the planted alleles
+locityper	locityper_recruit	PASS	
+locityper	locityper_target	PASS	synthetic data: real mini-reference locus with planted allele FASTA
+lohhla	lohhla	Failed	image problem: the image entrypoint env-execute fails on every command (activate script syntax error under /bin/sh); also rewrote the CWL, whose flags were invented, from the real lohhla help
+longbow	longbow	PASS	
+longcallr	longcallr_longcallR	PASS	
+longcallr	longcallr_longcallR-ase	PASS	
+longcallr	longcallr_longcallR-asj	PASS	
+longdust	longdust	PASS	
+longgf	longgf_LongGF	PASS	synthetic data: planted BCR-EWSR1 fusion reads built from real chr22 sequence; the fusion was found
+longphase	longphase_haplotag	PASS	
+longphase	longphase_modcall	PASS	
+longphase	longphase_phase	PASS	
+longqc	longqc_runqc	Not completed	needs a raw sequencing run folder (PacBio or Nanopore run files), no small real run folder available; the image has the same missing sdust problem
+longqc	longqc_sampleqc	Failed	image problem: longQC.py looks for sdust inside a minimap2-coverage folder that does not exist in the image, so the sdust table is empty and the run crashes (the script also has no shebang line, so the CWL runs it through python)
+longreadsum	longreadsum_bam	PASS	
+longreadsum	longreadsum_f5	PASS	
+longreadsum	longreadsum_f5s	PASS	main mode works; option --readCount (-R) crashes in the tool with a TypeError for f5s
+longreadsum	longreadsum_fa	PASS	
+longreadsum	longreadsum_fq	PASS	
+longreadsum	longreadsum_rrms	PASS	synthetic data: decision CSV made from the real BAM read ids; accepted and rejected read counts match
+longreadsum	longreadsum_seqtxt	PASS	
+longshot	longshot	PASS	synthetic data: the tool's own simulated example set; 703 of 714 truth variants found with 1 extra call
+lorax	lorax_amplicon	PASS	synthetic data: simulated PacBio toy set from the longshot repo with a made-up amplicon BED; copy numbers near 2 and no discordant reads, as expected
+lorax	lorax_components	PASS	
+lorax	lorax_convert	Failed	tool bug: the output is plain SAM text and the CIGAR misses the trailing soft clip, so samtools rejects the records
+lorax	lorax_ecov	PASS	synthetic data: handmade GAF walking real edges of a real graph; edge supports 8, 5 and 3 match
+lorax	lorax_extract	PASS	
+lorax	lorax_gfa2dot	PASS	
+lorax	lorax_ncov	PASS	node coverage matches the GAF match counts per segment (minigraph alignments of real haplotype sequences)
+lorax	lorax_pct	PASS	
+lorax	lorax_repeat	PASS	
+lorax	lorax_stats	PASS	
+lorax	lorax_telomere	PASS	
+lorax	lorax_tithreads	Not completed	ran on a real tumor and normal pair (5 percent chr22 subset) but found no templated insertion threads, so the output has only headers and cannot be checked
+lordec	lordec_lordec-build-SR-graph	PASS	
+lordec	lordec_lordec-correct	PASS	
+lordec	lordec_lordec-stat	PASS	
+lordec	lordec_lordec-trim	PASS	
+lordec	lordec_lordec-trim-split	PASS	
+lordfast	lordfast	PASS	
+lordfast	lordfast_index	PASS	
+lorikeet	lorikeet_fix-lineages	Not completed	no real tree and SNP matrix; a planted case runs but makes no correction, so the result cannot be confirmed
+lorikeet	lorikeet_merge-spoligotypes	PASS	
+lorikeet	lorikeet_multi-type	PASS	
+lorikeet	lorikeet_spoligotype	PASS	
+lorikeet-genome	lorikeet-genome_lorikeet_call	PASS	
+lorikeet-genome	lorikeet-genome_lorikeet_consensus	PASS	
+lorikeet-genome	lorikeet-genome_lorikeet_genotype	Failed	tool bug: lorikeet genotype panics on every run (clap argument mismatch for min-variant-depth-for-genotyping)
+lorikeet-genome	lorikeet-genome_lorikeet_summarise	PASS	
+lorma	lorma_LoRMA	PASS	
+lorma	lorma_lorma.sh	PASS	
+lotus2	lotus2	PASS	
+lotus3	lotus3	PASS	
+lovis4u	lovis4u	Failed	image problem: default mode needs the post-install step 'lovis4u --linux' (unzips mmseqs into the image), which cannot run in the read-only container; only works with --mmseqs-off
+lr_gapcloser	lr_gapcloser_LR_Gapcloser.sh	Failed	image problem: LR_Gapcloser.sh calls 'split -n', but the image only has BusyBox split, which has no -n option, so no tag files are made and the run exits with status 1
+lrge	lrge	PASS	
+lrsim	lrsim	PASS	fixed -g (comma list of haploid FASTAs) and the reference/prefix flags and output collection; E. coli with 2 haplotypes gives 500k barcoded read pairs per haplotype (-g and -r modes); -r hangs if duplications or translocations are asked on a one-contig genome
+ls-gkm	ls-gkm_gkmpredict	PASS	
+ls-gkm	ls-gkm_gkmtrain	PASS	
+ls-gkm	ls-gkm_gkmtrain-svr	PASS	scores in the test table are synthetic (GC fraction) on real training sequences; the model file is written and parses
+lsabgc	lsabgc_lsaBGC-Pan	Not completed	pipeline, skipped (also needs 4 or more genomes, GECCO/antiSMASH results and OrthoFinder/Panaroo)
+lua	lua	PASS	ran a base-count script on the SARS-CoV-2 genome (counts match shell counts) and -e
+luciphor2	luciphor2	PASS	baseCommand fixed to the luciphor2 wrapper; 8 real OpenMS test PSMs scored, all 8 localisations equal the OpenMS expected result
+lucy	lucy	PASS	rewritten from the man page (two -output names, optional cdna and debug values, positional files last); the real lucy test set gives a cleavage table identical to the shipped lucy.debug
+luigi	luigi	Failed	image problem: the image ENTRYPOINT is luigid, so 'luigi --module ...' is passed to luigid as arguments (luigid: error: unrecognized arguments: luigi ...)
+luigi	luigi_luigid	Not completed	long-running scheduler server; also the image ENTRYPOINT is already luigid, so the command word luigid is passed to it as an argument
+lukasa	lukasa_lukasa.py	Not completed	pipeline, skipped: lukasa.py only launches the lukasa CWL workflow with cwltool and nested containers
+lumpy-sv	lumpy-sv_extractSplitReads_BwaMem	PASS	nf-core bwa-mem chr22 SAM: the 2 split reads (4 alignments with SA tags) are written in lumpy format
+lumpy-sv	lumpy-sv_lumpy	PASS	pe+sr run on the lumpy test data: 263 of 276 calls match simulated deletions, like the shipped result; VCF mode also checked
+lumpy-sv	lumpy-sv_lumpy_filter	PASS	lumpy test BAM gives a valid discordant BAM with 2288 reads; split BAM is empty because that old bwa-aln BAM has no split alignments
+lumpy-sv	lumpy-sv_lumpyexpress	PASS	rewritten from the help; run on the lumpy simulated paired-end BAM (read group added with samtools addreplacerg): 30 deletion calls, all match simulated deletions
+lumpy-sv	lumpy-sv_pairend_distro.py	PASS	lumpy test reads give mean 499.95 and stdev 50.16, as simulated
+lumpy-sv-minimal	lumpy-sv-minimal_lumpy	PASS	
+lumpy-sv-minimal	lumpy-sv-minimal_lumpyexpress	Failed	image problem: the image has no samtools or sambamba, so lumpyexpress exits with an error before calling variants
+lusstr	lusstr_config	PASS	
+lusstr	lusstr_snps	PASS	
+lusstr	lusstr_strs	PASS	
+lyner	lyner_astype	PASS	
+lyner	lyner_autoencode	Failed	image problem: lyner calls tensorflow set_random_seed, which does not exist in tensorflow 2.0.0 of the image
+lyner	lyner_center	PASS	
+lyner	lyner_changes	Failed	tool bug: needs lyner estimate first, which crashes with NameError (pandas is not imported in lyner/commands/stats.py)
+lyner	lyner_cluster	PASS	
+lyner	lyner_cluster-agglomerative	PASS	
+lyner	lyner_cluster-from	PASS	
+lyner	lyner_cluster-hierarchical	PASS	
+lyner	lyner_compose	PASS	
+lyner	lyner_correlate	PASS	
+lyner	lyner_decompose	PASS	
+lyner	lyner_dendro	PASS	default components verified; --num-components 2-3 crashes with an IndexError (tool bug)
+lyner	lyner_design	Failed	tool bug: lyner design gives samples the wrong labels (data stay in input column order) when the design file is not ordered by sorted class name
+lyner	lyner_dist-graph	PASS	
+lyner	lyner_estimate	Failed	tool bug: lyner estimate crashes with NameError (pandas is not imported in lyner/commands/stats.py)
+lyner	lyner_filter	PASS	
+lyner	lyner_frequent-sets	PASS	
+lyner	lyner_mmr	PASS	
+lyner	lyner_normalise	PASS	quantile, scale and unit methods verified; the deseq and identity methods crash (tool bug: DataFrame has no normalize)
+lyner	lyner_pairwise-distances	PASS	
+lyner	lyner_plot	PASS	heatmap html written; the tool strips trailing letters h, t, m, l and dots from the output name before adding .html
+lyner	lyner_read	PASS	
+lyner	lyner_read-annotation	PASS	
+lyner	lyner_reindex	PASS	
+lyner	lyner_seed	Failed	tool bug: lyner seed always crashes (seed() got multiple values for argument 'seed'); its tensorflow set_random_seed import also fails with tensorflow 2.0.0
+lyner	lyner_select	PASS	
+lyner	lyner_show	PASS	
+lyner	lyner_sort	PASS	
+lyner	lyner_sort-index	PASS	
+lyner	lyner_store	PASS	
+lyner	lyner_summarise	PASS	
+lyner	lyner_supplement	PASS	
+lyner	lyner_targets	PASS	
+lyner	lyner_threshold	PASS	
+lyner	lyner_transform	PASS	
+lyner	lyner_transpose	PASS	
+lyner	lyner_uncluster	Failed	tool bug: lyner uncluster crashes (TypeError) on the integer cluster labels made by cluster-hierarchical
+lz-ani	lz-ani_all2all	PASS	
+m-party	m-party	Not completed	pipeline, skipped: m-party runs a Snakemake workflow (needs a protein database and HMM models)
+maaslin2	maaslin2_Maaslin2.R	PASS	matches the Galaxy test (610 results, residuals size identical); option --cores above 1 crashes in the tool
+macaron	macaron_MACARON	Not completed	needs the hg19 reference genome and the SnpEff GRCh37.75 database (over 1 GB); fixed --fields to a comma-joined list
+mace	mace_mace.py	PASS	real Cbf1 ChIP-exo data: 910 border pairs, 30 percent near the CACGTG Cbf1 motif (about 1 percent at random); added outputs and required inputs
+mace	mace_preprocessor.py	PASS	real yeast Cbf1 ChIP-exo reads aligned with hisat2; wig and bigwig files have plausible signal; added .bai secondaryFiles
+mace	mace_wigToBigWig	PASS	converted the real ChIP-exo wig; bigwig values match the preprocessor output
+machina	machina_cluster	PASS	real Sanborn patient A read counts: 124 mutations pooled into 4 clusters; options -C, -r, -A also checked
+machina	machina_generatemigrationtrees	PASS	6 sites give 1296 migration trees (6^4 as expected); fixed sites input to a list
+machina	machina_generatemutationtrees	PASS	new CWL; real Hoadley A7 frequencies give the 2 mutation trees the README reports
+machina	machina_ms	PASS	new CWL; real Hoadley A7 frequencies are reported as a monoclonal single-source pattern, as in the paper
+machina	machina_pmh	Not completed	needs a Gurobi licence (the tool aborts with GRBException); inputs fixed to File and output folder is created
+machina	machina_pmh_sankoff	PASS	real McPherson patient1 matches the README labeling counts; output folder is now created
+machina	machina_pmh_ti	Not completed	needs a Gurobi licence (the tool aborts with GRBException); inputs fixed to File and output folder is created
+machina	machina_pmh_tr	Not completed	needs a Gurobi licence (the tool aborts with GRBException); inputs fixed to File and output folder is created
+machina	machina_visualizeclonetree	PASS	fixed flags to -c and -l; DOT output equals the pmh_sankoff tree file
+machina	machina_visualizemigrationgraph	PASS	fixed flag to -c; DOT output equals the pmh_sankoff migration graph file
+macs2	macs2_bdgbroadcall	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_bdgcmp	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_bdgdiff	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_bdgopt	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_bdgpeakcall	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_callpeak	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_cmbreps	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_filterdup	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_pileup	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_predictd	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_randsample	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs2	macs2_refinepeak	Failed	image problem: macs2 2.2.9.1 image fails on import (ImportError undefined symbol __log_finite in ScoreTrack); wrapper checked against the same MACS3 commands, outputs paths fixed
+macs3	macs3_bdgbroadcall	PASS	MACS repo FE track: same 6710 broad regions as the standard result (a few scores differ by version); ofile and o-prefix are now alternatives
+macs3	macs3_bdgcmp	PASS	MACS repo bedGraph data: ppois and FE tracks identical to the standard results; --ofile is now a list and files are collected
+macs3	macs3_bdgdiff	PASS	MACS repo callpeak bedGraph tracks: same regions as the standard cond1, cond2 and common files (only region names differ by version)
+macs3	macs3_bdgopt	PASS	MACS repo bedGraph: min and max results identical to the standard results; output path now follows --outdir
+macs3	macs3_bdgpeakcall	PASS	MACS repo FE track: narrowPeak identical to the standard result; cutoff analysis also checked; ofile and o-prefix are now alternatives
+macs3	macs3_callpeak	PASS	MACS repo CTCF chr22 test data: peaks, summits and bedGraph files identical to the repo standard results (narrow and broad); output files are now collected
+macs3	macs3_callvar	PASS	MACS repo CTCF paired-end BAMs: VCF identical to the standard result; the tool ignores --outdir for the VCF
+macs3	macs3_cmbreps	PASS	MACS repo bedGraph tracks: max and fisher results identical to the standard results; output path now follows --outdir
+macs3	macs3_filterdup	PASS	MACS repo CTCF test data: BED and BEDPE output identical to the standard results; output path now follows --outdir
+macs3	macs3_hmmratac	PASS	yeast ATAC BEDPE from the MACS repo: poisson model gives 1167 accessible regions matching the standard result; gaussian default differs from the repo result; required inputs made optional
+macs3	macs3_pileup	PASS	MACS repo CTCF test data: bedGraph identical to the standard result for BED and BEDPE; output path now follows --outdir
+macs3	macs3_predictd	PASS	MACS repo CTCF test data: fragment length 229 (single end) and 253 (BEDPE) as in the standard results; the log is now captured
+macs3	macs3_randsample	PASS	MACS repo CTCF test data: 9999 of 10000 requested tags and 10 percent of the pairs for BEDPE; number is now optional (alternative to percentage)
+macs3	macs3_refinepeak	PASS	MACS repo narrowPeak and CTCF reads: refined peaks identical to the standard results with --ofile and --o-prefix
+macsyfinder	macsyfinder	PASS	real macsyfinder repo test data (small model package): all four result tables identical to the repo expected files; the sequence file is now staged writable so the index can be built
+macsylib	macsylib_msl_data_available	PASS	
+macsylib	macsylib_msl_data_check	PASS	
+macsylib	macsylib_msl_data_definition	PASS	
+macsylib	macsylib_msl_data_download	Failed	tool bug: msl_data download always crashes with AttributeError (code reads args.package, option is model_package)
+macsylib	macsylib_msl_data_freeze	Failed	tool bug: --models-dir is ignored, so freeze prints nothing for packages outside the default folder
+macsylib	macsylib_msl_data_info	PASS	
+macsylib	macsylib_msl_data_init	PASS	
+macsylib	macsylib_msl_data_install	PASS	
+macsylib	macsylib_msl_data_list	PASS	
+macsylib	macsylib_msl_data_search	PASS	
+macsylib	macsylib_msl_data_show	PASS	
+macsylib	macsylib_msl_data_uninstall	PASS	
+madre	madre	Not completed	pipeline, skipped: madre runs assembly, mapping and reduction steps and needs a large reference database
+madre	madre_calculate-abundances	PASS	synthetic data: read counts 120, 180 and 100 match the simulated reads; estimated abundances are plausible
+madre	madre_database-reduction	PASS	synthetic data: contigs from three real phage genomes; the reduced database keeps the three source genomes and drops the T7 variant
+madre	madre_read-classification	PASS	synthetic data: reads simulated from three real phage genomes; the 400 reads are classified to the right genomes (100, 180, 120) and clustered
+maegatk	maegatk_bcall	PASS	real maegatk repo MAESTER test BAM with built-in rCRS genome: genotype tables for 10 passing barcodes; per-barcode read counts match the BAM; baseCommand now includes bcall and the BAM index is required
+maelstrom-core	maelstrom-core_bam-collect-doc	PASS	real maelstrom-core repo example BAM: coverage and fragment-count VCF files identical to the repo expected files; --regions now repeats the flag per region and the BAM index is required
+maf2synteny	maf2synteny	PASS	real SibeliaZ GFF blocks of phage T7 vs T3 genomes: synteny blocks match the input block coordinates; flags fixed to -o, -s, -b (the old --out-dir, --simplify, --block-sizes did not exist); MAF input not tested

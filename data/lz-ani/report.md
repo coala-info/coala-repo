@@ -1,5 +1,11 @@
 # lz-ani CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lz-ani_all2all | PASS |  |
+
 ## lz-ani_all2all
 
 ### Tool Description

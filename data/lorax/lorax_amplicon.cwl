@@ -8,6 +8,8 @@ doc: "Amplicon analysis tool\n\nTool homepage: https://github.com/tobiasrausch/l
 inputs:
   - id: tumor_bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: tumor BAM file
     inputBinding:
       position: 1
@@ -35,6 +37,8 @@ inputs:
       prefix: --wincov
   - id: genome
     type: File
+    secondaryFiles:
+      - .fai
     doc: genome fasta file
     inputBinding:
       position: 102
@@ -81,7 +85,9 @@ inputs:
       prefix: --sample
   - id: vcffile
     type: File
-    doc: input VCF/BCF file
+    secondaryFiles:
+      - .csi
+    doc: input VCF/BCF file (needs a .csi index, a .tbi index is not accepted)
     inputBinding:
       position: 102
       prefix: --vcffile

@@ -179,7 +179,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output directory
+    doc: Translation table to use (default 11)
     inputBinding:
       position: 101
       prefix: --protein_coding
@@ -187,7 +187,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output directory
+    doc: Translation table to use (default 11)
     inputBinding:
       position: 101
       prefix: --translation_table
@@ -203,22 +203,12 @@ outputs:
     doc: Output directory to put results
     outputBinding:
       glob: $(inputs.outdir_path)
-  - id: protein_coding_dir
-    type:
-      - 'null'
-      - Directory
-    doc: output directory
-    outputBinding:
-      glob: $(inputs.protein_coding)
-  - id: translation_table_dir
-    type:
-      - 'null'
-      - Directory
-    doc: output directory
-    outputBinding:
-      glob: $(inputs.translation_table)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: root
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/locidex:0.4.0--pyhdfd78af_0

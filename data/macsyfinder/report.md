@@ -1,5 +1,11 @@
 # macsyfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| macsyfinder | PASS | real macsyfinder repo test data (small model package): all four result tables identical to the repo expected files; the sequence file is now staged writable so the index can be built |
+
 ## macsyfinder
 
 ### Tool Description

@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: lordec-trim
 label: lordec_lordec-trim
-doc: "LoRDEC v0.9\n\nTool homepage: http://www.atgc-montpellier.fr/lordec/"
+doc: "Scan a set of corrected long reads and output them trimmed to the regions that have been corrected.\n\nTool homepage: http://www.atgc-montpellier.fr/lordec/"
 inputs:
   - id: input_file
     type: File
@@ -12,10 +12,10 @@ inputs:
       prefix: -i
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output-file
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type: File

@@ -5,6 +5,11 @@ label: last-align_last-train
 doc: "Try to find suitable score parameters for aligning the given sequences.\n\n\
   Tool homepage: https://gitlab.com/mcfrith/last"
 inputs:
+  - id: lastdb_files
+    type:
+      type: array
+      items: File
+    doc: Files of the lastdb database (.bck, .des, .prj, .sds, .ssp, .suf, .tis, ...), staged next to the lastdb name
   - id: lastdb_name
     type: string
     doc: lastdb-name
@@ -221,6 +226,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.lastdb_files)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/last-align:v963-2-deb_cv1

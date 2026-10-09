@@ -1,5 +1,11 @@
 # lastz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lastz | PASS |  |
+
 ## lastz
 
 ### Tool Description

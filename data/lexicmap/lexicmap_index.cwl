@@ -6,6 +6,16 @@ baseCommand:
 label: lexicmap_index
 doc: "Generate an index from FASTA/Q sequences\n\nTool homepage: https://github.com/shenwei356/LexicMap"
 inputs:
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input FASTA/Q files, one genome per file (plain or gzip/xz/zstd/bzip2 
+      compressed). The file base names (without FASTA/Q extensions) become the 
+      genome identifiers.
+    inputBinding:
+      position: 1
   - id: batch_size
     type:
       - 'null'
@@ -97,7 +107,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: Log file.
     inputBinding:
       position: 101
@@ -246,6 +256,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seq-name-filter
+      itemSeparator: ','
   - id: skip_file_check
     type:
       - 'null'
@@ -263,9 +274,6 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: big_genomes_out
     type:
       - 'null'
@@ -275,6 +283,13 @@ outputs:
       too_large_genome, too_many_seqs.'
     outputBinding:
       glob: $(inputs.big_genomes)
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: Log file, written when log is set
+    outputBinding:
+      glob: $(inputs.log)
   - id: out_dir_dir
     type:
       - 'null'
@@ -285,4 +300,3 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
-stdout: lexicmap_index.out

@@ -1,17 +1,33 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./LightAssembler
+baseCommand: LightAssembler
 label: lightassembler_LightAssembler
 doc: "Light Version of an assembly algorithm for short reads in FASTA/FASTQ/FASTA.gz/FASTQ.gz
   formats.\n\nTool homepage: https://github.com/SaraEl-Metwally/LightAssembler"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        return inputs.input_files.map(function(f, i) {
+          return {class: 'File', location: f.location, basename: 'r' + i + f.basename.replace(/^[^.]*/, '')};
+        });
+      }
+arguments:
+  - position: 1
+    valueFrom: |
+      ${
+        return inputs.input_files.map(function(f, i) {
+          return 'r' + i + f.basename.replace(/^[^.]*/, '');
+        });
+      }
 inputs:
   - id: input_files
     type:
       type: array
       items: File
-    doc: FASTA/FASTQ/FASTA.gz/FASTQ.gz files
-    inputBinding:
-      position: 1
+    doc: FASTA/FASTQ/FASTA.gz/FASTQ.gz files (staged in the working directory with short names,
+      because LightAssembler cannot read file paths longer than about 15 characters)
   - id: expected_error_rate
     type:
       - 'null'
@@ -69,6 +85,13 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
+  - id: contigs
+    type:
+      - 'null'
+      - File
+    doc: Assembled contigs in FASTA format (<output_file>.contigs.fasta).
+    outputBinding:
+      glob: '*.contigs.fasta'
   - id: stdout
     type: stdout
     doc: Standard output

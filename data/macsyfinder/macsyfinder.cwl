@@ -336,6 +336,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sequence-db
+      valueFrom: $(self.basename)
   - id: timeout
     type:
       - 'null'
@@ -397,6 +398,10 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.sequence_db)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macsyfinder:2.1.6--pyhdfd78af_0

@@ -104,7 +104,7 @@ outputs:
       - File
     doc: Output BED file name. If not specified, will write to standard output.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: "$(inputs.outdir ? inputs.outdir + '/' + inputs.output_file : inputs.output_file)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

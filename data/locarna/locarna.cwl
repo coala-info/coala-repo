@@ -97,14 +97,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --free-endgaps
-  - id: galaxy_xml
-    type:
-      - 'null'
-      - boolean
-    doc: Print galaxy xml wrapper.
-    inputBinding:
-      position: 103
-      prefix: --galaxy-xml
   - id: indel_opening_score
     type:
       - 'null'
@@ -543,26 +535,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `clustal_output_file_path`
+    doc: Write alignment in ClustalW (aln) format to the given file.
     inputBinding:
       position: 104
-      prefix: --clustal-output-file
+      prefix: --clustal
   - id: pp_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `pp_output_file_path`
+    doc: Write alignment in PP format to the given file.
     inputBinding:
       position: 105
-      prefix: --pp-output-file
+      prefix: --pp
   - id: stockholm_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `stockholm_output_file_path`
+    doc: Write alignment in Stockholm format to the given file.
     inputBinding:
       position: 106
-      prefix: --stockholm-output-file
+      prefix: --stockholm
   - id: write_arcmatch_scores_file_path
     type:
       - 'null'
@@ -588,6 +580,9 @@ inputs:
       position: 109
       prefix: --write-trace-probs
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Alignment and score printed to standard output.
   - id: clustal_output_file
     type:
       - 'null'
@@ -635,3 +630,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/locarna:2.0.1--pl5321h4ac6f70_0
+stdout: locarna.out

@@ -1,5 +1,11 @@
 # maaslin2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| maaslin2_Maaslin2.R | PASS | matches the Galaxy test (610 results, residuals size identical); option --cores above 1 crashes in the tool |
+
 ## maaslin2_Maaslin2.R
 
 ### Tool Description

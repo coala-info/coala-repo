@@ -1,5 +1,11 @@
 # locarna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| locarna | PASS |  |
+
 ## locarna
 
 ### Tool Description

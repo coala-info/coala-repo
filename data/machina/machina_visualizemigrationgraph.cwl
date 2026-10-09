@@ -5,28 +5,28 @@ label: machina_visualizemigrationgraph
 doc: "Visualize the migration graph of a clone tree.\n\nTool homepage: https://github.com/raphael-group/machina"
 inputs:
   - id: clone_tree
-    type: string
+    type: File
     doc: Clone tree
     inputBinding:
       position: 1
   - id: leaf_labeling
-    type: string
+    type: File
     doc: Leaf labeling
     inputBinding:
       position: 2
   - id: vertex_labeling
-    type: string
+    type: File
     doc: Vertex labeling
     inputBinding:
       position: 3
   - id: color_map_file
     type:
       - 'null'
-      - string
+      - File
     doc: Color map file
     inputBinding:
       position: 104
-      prefix: --color-map-file
+      prefix: -c
 outputs:
   - id: stdout
     type: stdout

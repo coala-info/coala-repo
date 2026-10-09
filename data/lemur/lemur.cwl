@@ -53,7 +53,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: File for logging
     inputBinding:
       position: 101
@@ -171,6 +171,13 @@ outputs:
     doc: Folder where the Mob output will be stored
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_file_out
+    type:
+      - 'null'
+      - File
+    doc: Log file, written when log_file is set
+    outputBinding:
+      glob: $(inputs.log_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

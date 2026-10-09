@@ -1,5 +1,11 @@
 # lsabgc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lsabgc_lsaBGC-Pan | Not completed | pipeline, skipped (also needs 4 or more genomes, GECCO/antiSMASH results and OrthoFinder/Panaroo) |
+
 ## lsabgc_lsaBGC-Pan
 
 ### Tool Description

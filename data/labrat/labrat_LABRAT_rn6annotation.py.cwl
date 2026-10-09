@@ -113,6 +113,64 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: tf_fasta
+    type:
+      - 'null'
+      - File
+    doc: Terminal fragment sequences written by makeTFfasta with --lasttwoexons
+    outputBinding:
+      glob: TFseqs.fasta
+  - id: whole_transcript_fasta
+    type:
+      - 'null'
+      - File
+    doc: Whole transcript sequences written by makeTFfasta without --lasttwoexons
+    outputBinding:
+      glob: wholetranscriptseqs.fasta
+  - id: salmon_index
+    type:
+      - 'null'
+      - Directory
+    doc: Salmon index written by runSalmon
+    outputBinding:
+      glob: txfasta.idx
+  - id: salmon_output
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: One Salmon output directory per sample name, written by runSalmon
+    outputBinding:
+      glob: $(inputs.samplename)
+  - id: position_factor_counts
+    type:
+      - 'null'
+      - File
+    doc: Number of position factors per gene, written by calculatepsi
+    outputBinding:
+      glob: numberofposfactors.txt
+  - id: psi_table
+    type:
+      - 'null'
+      - File
+    doc: Psi value of every gene in every sample, written by calculatepsi
+    outputBinding:
+      glob: LABRATpsis.3end.python3.txt
+  - id: delta_psi_table
+    type:
+      - 'null'
+      - File
+    doc: Psi table with delta psi, p value and FDR, written by LME mode beside the psi file
+    outputBinding:
+      glob: "$(inputs.psifile ? inputs.psifile.basename + '.pval' : 'no_psifile.pval')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.gff)
+        writable: true
+      - entry: $(inputs.psifile)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/labrat:0.3.0--pyhdfd78af_1

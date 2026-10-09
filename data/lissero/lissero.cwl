@@ -23,7 +23,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Save log to a file instead of printing to stderr
     inputBinding:
       position: 102
@@ -53,6 +53,13 @@ inputs:
       position: 102
       prefix: --serotype_db
 outputs:
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file, written with logfile.
+    outputBinding:
+      glob: $(inputs.logfile)
   - id: stdout
     type: stdout
     doc: Standard output

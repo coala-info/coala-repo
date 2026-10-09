@@ -1,5 +1,15 @@
 # labrat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| labrat_LABRAT.py | Failed | image problem: salmon in the image cannot start (libtbb.so.2 missing), so runSalmon and calculatepsi do nothing; makeTFfasta alone works on real GENCODE chr22 data |
+| labrat_LABRAT_danRer.py | Failed | image problem: salmon in the image cannot start (libtbb.so.2 missing), so runSalmon and calculatepsi do nothing; makeTFfasta alone works |
+| labrat_LABRAT_dm6annotation.py | Failed | tool bug: makeTFfasta and calculatepsi crash with AttributeError (script reads args.librarytype, which it never defines); salmon in the image also cannot start (libtbb.so.2 missing) |
+| labrat_LABRAT_rn6annotation.py | Failed | tool bug: makeTFfasta and calculatepsi crash with AttributeError (script reads args.librarytype, which it never defines); salmon in the image also cannot start (libtbb.so.2 missing) |
+| labrat_LABRATsc.py | Not completed | needs alevin single-cell output; no small real alevin data, and salmon in the image cannot start (libtbb.so.2 missing) |
+
 ## labrat_LABRAT.py
 
 ### Tool Description

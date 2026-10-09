@@ -1,5 +1,12 @@
 # ldsc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ldsc_ldsc.py | PASS |  |
+| ldsc_munge_sumstats.py | PASS | ran on the ldsc test sumstats and output matches the expected file; the --merge-alleles option crashes with a pandas error inside the tool |
+
 ## ldsc_munge_sumstats.py
 
 ### Tool Description

@@ -1,40 +1,17 @@
 # leviathan CWL Generation Report
 
-## leviathan_LRez
+## Real Data Test
 
-### Tool Description
-LRez allows to work with barcoded Linked-Reads, and offers various barcode management functionalities.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/leviathan:1.0.2--h9948957_4
-- **Homepage**: https://github.com/morispi/LEVIATHAN
-- **Package**: https://anaconda.org/channels/bioconda/packages/leviathan/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/leviathan/overview
-- **Total Downloads**: 10.5K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/morispi/LEVIATHAN
-- **Stars**: N/A
-### Original Help Text
-```text
-LRez v2.2.4
-Pierre Morisse <pierre.morisse@inria.fr>
-LRez allows to work with barcoded Linked-Reads, and offers various barcode management functionalities.
-
-USAGE:
-	LRez [SUBCOMMAND]
-
-SUBCOMMANDS:
-	compare		 Compute the number of common barcodes between pairs of regions, or between pairs of contigs' extremities
-	extract		 Extract the barcodes from a given region of a BAM file
-	stats		 Retrieve general stats from a BAM file
-	index bam	 Index the offsets or occurrences positions of the barcodes contained in a BAM file
-	query bam	 Query the barcodes index to retrieve alignments in a BAM file, given a barcode or list of barcodes
-	index fastq	 Index the offsets of the barcodes contained in a fastq file
-	query fastq	 Query the barcodes index to retrieve alignments in a fastq file, given a barcode or list of barcodes
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| leviathan_LEVIATHAN | PASS | ran on the LEVIATHAN example BAM; 30 SVs (INV/DUP/DEL); fixed -o flag, .bai secondary file and candidates output |
+| leviathan_LRez_compare | PASS | ran on the example BAM; shared barcodes for region pairs match the LEVIATHAN candidates (7) |
+| leviathan_LRez_extract | PASS | ran on the example BAM region; 806 barcodes |
+| leviathan_LRez_index_bam | PASS | ran on the LEVIATHAN example BAM; positions and offsets indexes built and used by later runs |
+| leviathan_LRez_index_fastq | PASS | synthetic data: FASTQ made from example BAM reads with BX tags; index built |
+| leviathan_LRez_query_bam | PASS | ran on the example BAM; alignments of the query barcode returned as SAM with header |
+| leviathan_LRez_query_fastq | PASS | synthetic data: FASTQ made from example BAM reads; 16 reads of the query barcode returned |
+| leviathan_LRez_stats | PASS | ran on the example BAM; barcode and read counts look right |
 
 ## leviathan_LEVIATHAN
 
@@ -80,6 +57,214 @@ OPTIONS:
 	-C, --candidates:         File where to store valid SV candidates (default: "candidates.bedpe")
 ```
 
+
+## leviathan_LRez_compare
+
+### Tool Description
+compute the number of common barcodes between all possibles pairs of a given list of regions, or between a given contig's extremities and all other contigs' extremities
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviathan:1.0.2--h9948957_4
+- **Homepage**: https://github.com/morispi/LEVIATHAN
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviathan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+LRez v2.2.4
+Pierre Morisse <pierre.morisse@inria.fr>
+LRez compare allows to compute the number of common barcodes between all possibles pairs of a given list of regions, or between a given contig's extremities and all other contigs' extremities
+
+USAGE:
+	LRez compare [ARGS]
+
+ARGS:
+	-b, --bam	 BAM file containing the alignments
+	-i, --index	 Barcodes offsets index built with the index bam subcommand
+	-r, --regions	 File containing regions of interest in format chromosome:startPosition-endPosition
+	-c, --contig	 Contig of interest
+	-C, --contigs	 File containing a list of contigs of interest
+	-s, --size	 Size of contigs' extremities to consider (optional, default: 1000)
+	-o, --output	 File where to output the results (optional, default: stdout)
+	-t, --threads	 Number of threads to use when comparing a list of contigs (optional, default: 1)
+```
+
+## leviathan_LRez_extract
+
+### Tool Description
+extract the list of barcodes in a given region of a BAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviathan:1.0.2--h9948957_4
+- **Homepage**: https://github.com/morispi/LEVIATHAN
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviathan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+LRez v2.2.4
+Pierre Morisse <pierre.morisse@inria.fr>
+LRez extract allows to extract the list of barcodes in a given region of a BAM file.
+
+USAGE:
+	LRez extract [ARGS]
+
+ARGS:
+	-b, --bam		 BAM file to extract barcodes from
+	-r, --region		 Region of interest in format chromosome:startPosition-endPosition
+	-a, --all		 Extract all barcodes
+	-o, --output		 File where to output the extracted barcodes (optional, default: stdout)
+	-d, --duplicates	 Include duplicate barcodes (optional, default: false)
+	-t, --threads	 Number of threads to use when comparing a list of contigs (optional, default: 1)
+```
+
+## leviathan_LRez_stats
+
+### Tool Description
+retrieve general stats from a BAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviathan:1.0.2--h9948957_4
+- **Homepage**: https://github.com/morispi/LEVIATHAN
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviathan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+LRez v2.2.4
+Pierre Morisse <pierre.morisse@inria.fr>
+LRez stats allows to retrieve general stats from a BAM file.
+
+USAGE:
+	LRez stats [ARGS]
+
+ARGS:
+	-b, --bam	 BAM file to retrieve stats from
+	-r, --regions	 Number of regions to consider to define stats (optional, default: 1000)
+	-s, --size	 Size of the regions to consider (optional, default: 1000) 
+	-o, --output	 File where to output the extracted reads (optional, default: stdout)
+	-t, --threads	 Number of threads to use when comparing a list of contigs (optional, default: 1)
+```
+
+## leviathan_LRez_index_bam
+
+### Tool Description
+index the offsets or occurrences positions of the barcodes contained in a BAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviathan:1.0.2--h9948957_4
+- **Homepage**: https://github.com/morispi/LEVIATHAN
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviathan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+LRez v2.2.4
+Pierre Morisse <pierre.morisse@inria.fr>
+LRez index bam allows to index the offsets or occurrences positions of the barcodes contained in a BAM file.
+
+USAGE:
+	LRez index bam [ARGS]
+
+ARGS:
+	-b, --bam	 BAM file to index
+	-o, --output	 File where to store the index
+	-f, --offsets	 Index the offsets of the barcodes in the BAM file
+	-p, --positions	 Index the (chromosome, begPosition) occurrences positions of the barcodes
+	-r, --primary	 Only index barcodes that appear in a primary alignment (optional, default: false)
+	-q, --quality	 Only index barcodes that appear in an alignment of quality higher than this number (optional, default: 0)
+	-t, --threads	 Number of threads to use to build the index (optional, default: 1)
+```
+
+## leviathan_LRez_index_fastq
+
+### Tool Description
+index the offsets of the barcodes contained in a fastq file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviathan:1.0.2--h9948957_4
+- **Homepage**: https://github.com/morispi/LEVIATHAN
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviathan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+LRez v2.2.4
+Pierre Morisse <pierre.morisse@inria.fr>
+LRez index fastq allows to index the offsets of the barcodes contained in a fastq file.
+
+USAGE:
+	LRez index fastq [ARGS]
+
+ARGS:
+	-f, --fastq	 Fastq file to index
+	-o, --output	 File where to store the index
+	-g, --gzip	 Fastq file is gzipped (optional, default: false)
+	-t, --threads	 Number of threads to use to build the index (optional, default: 1)
+```
+
+## leviathan_LRez_query_bam
+
+### Tool Description
+query a barcodes index and a BAM file to retrieve alignments containing the query barcodes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviathan:1.0.2--h9948957_4
+- **Homepage**: https://github.com/morispi/LEVIATHAN
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviathan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+LRez v2.2.4
+Pierre Morisse <pierre.morisse@inria.fr>
+LRez query bam allows to query a barcodes index and a BAM file to retrieve alignments containing the query barcodes.
+Matched alignments are returned in SAM format.
+
+USAGE:
+	LRez query bam [ARGS]
+
+ARGS:
+	-b, --bam	 BAM file to search
+	-i, --index	 Barcodes offsets index, built with the index bam subcommand.
+	-q, --query	 Query barcode to search in the BAM / index
+	-l, --list	 File containing a list of barcodes to search in the BAM / index
+	-o, --output	 File where to output the extracted alignments (optional, default: stdout)
+	-H, --header	 Output SAM header (optional, default: false)
+	-t, --threads	 Number of threads to use when querying with a list of barcodes (optional, default: 1)
+```
+
+## leviathan_LRez_query_fastq
+
+### Tool Description
+query a barcodes index and a fastq file to retrieve alignments containing the query barcodes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/leviathan:1.0.2--h9948957_4
+- **Homepage**: https://github.com/morispi/LEVIATHAN
+- **Package**: https://anaconda.org/channels/bioconda/packages/leviathan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+LRez v2.2.4
+Pierre Morisse <pierre.morisse@inria.fr>
+LRez query fastq allows to query a barcodes index and a fastq file to retrieve alignments containing the query barcodes.
+Matched alignments are returned in SAM format.
+
+USAGE:
+	LRez query fastq [ARGS]
+
+ARGS:
+	-f, --fastq	 Fastq file to search
+	-i, --index	 Barcodes index, built with the index fastq subcommand
+	-q, --query	 Query barcode to search in the fastq file and the index
+	-l, --list	 File containing a list of barcodes to search in the fastq file and the index
+	-c, --collectionOfLists	 File of files (FOF) e.g. file containing files' names of lists of barcodes to search in the fastq file and the index
+	-o, --output	 File where to output the extracted reads (optional, default: stdout)
+	-g, --gzip	 Fastq file is gzipped (optional, default: false)
+	-t, --threads	 Number of threads to use when querying with a list of barcodes (optional, default: 1)
+```
 
 ## Metadata
 - **Skill**: generated

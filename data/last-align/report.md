@@ -1,5 +1,15 @@
 # last-align CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| last-align_last-dotplot | PASS |  |
+| last-align_last-train | PASS |  |
+| last-align_lastal | PASS |  |
+| last-align_lastdb | PASS |  |
+| last-align_maf-convert | PASS |  |
+
 ## last-align_lastdb
 
 ### Tool Description

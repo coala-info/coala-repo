@@ -2,64 +2,45 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - estimate
 label: lyner_estimate
-doc: "Estimate gene expression levels from RNA-Seq data.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Fit the given distribution to each target(-cluster) and each (design-)group.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX estimate select estimate show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input_matrix
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
+    inputBinding:
+      position: 0
+      prefix: -v
+  - id: matrix
     type: File
-    doc: Input gene expression matrix (e.g., counts, TPM).
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 1
-  - id: log_transform
+      position: 2
+  - id: distribution
     type:
       - 'null'
-      - boolean
-    doc: Apply log transformation to the data.
+      - string
+    doc: "Distribution to fit: negbinom, gamma, laisson, t, norm, cauchy, lognorm or any scipy.stats continuous distribution (default t)"
     inputBinding:
-      position: 102
-      prefix: --log-transform
-  - id: min_counts
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of counts for a gene to be considered.
-    inputBinding:
-      position: 102
-      prefix: --min-counts
-  - id: normalize
-    type:
-      - 'null'
-      - boolean
-    doc: Normalize the input matrix before estimation.
-    inputBinding:
-      position: 102
-      prefix: --normalize
-  - id: output_dir
-    type: string
-    doc: Directory to save the estimation results.
-    inputBinding:
-      position: 102
-      prefix: --output-dir
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for computation.
-    inputBinding:
-      position: 102
-      prefix: --threads
+      position: 20
+      prefix: --distribution
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
-  - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to save the estimation results.
-    outputBinding:
-      glob: $(inputs.output_dir)
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: estimate
+  - position: 50
+    valueFrom: select
+  - position: 51
+    valueFrom: estimate
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0

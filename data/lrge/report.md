@@ -1,5 +1,11 @@
 # lrge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lrge | PASS |  |
+
 ## lrge
 
 ### Tool Description

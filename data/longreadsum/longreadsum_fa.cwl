@@ -50,11 +50,13 @@ inputs:
   - id: inputs
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: Multiple comma-separated input filepaths
     inputBinding:
       position: 101
       prefix: --inputs
+      itemSeparator: ','
   - id: log
     type:
       - 'null'

@@ -160,10 +160,19 @@ inputs:
       prefix: -W
 outputs:
   - id: output_consensus_fa
-    type: File
-    doc: Output consensus FASTA file
+    type: stdout
+    doc: Output consensus sequence (or alignment) on standard output
+  - id: mafft_inputs
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: MAFFT input files written with --out
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_base + '*')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lamassemble:1.7.2--pyh7cba7a3_0
+stdout: lamassemble.out

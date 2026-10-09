@@ -2,35 +2,42 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - correlate
 label: lyner_correlate
-doc: "Calculate pairwise Pearson correlation coefficients between columns of a matrix.\n\
-  \nTool homepage: https://github.com/tedil/lyner"
+doc: "Correlate features using either of pearson, kendall or spearman correlation.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX correlate show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
+    inputBinding:
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
+    inputBinding:
+      position: 2
   - id: method
     type:
       - 'null'
       - string
-    doc: 'Correlation method to use. Options: pearson, kendall, spearman.'
+    doc: "Correlation method: pearson, kendall or spearman (default pearson)"
     inputBinding:
-      position: 101
+      position: 20
       prefix: --method
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 102
-      prefix: --output
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: Path to the output correlation matrix file.
-    outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: correlate
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_correlate.out

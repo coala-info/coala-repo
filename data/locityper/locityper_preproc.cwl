@@ -120,6 +120,127 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: bg_region
+    type:
+      - 'null'
+      - string
+    doc: Preprocess WGS data based on this background region, preferably >3 Mb and without many duplications. Default regions are defined for CHM13, GRCh38 and GRCh37.
+    inputBinding:
+      position: 101
+      prefix: --bg-region
+  - id: skip_recruit
+    type:
+      - 'null'
+      - boolean
+    doc: Skip read recruitment before read mapping.
+    inputBinding:
+      position: 101
+      prefix: --skip-recruit
+  - id: recr_threads
+    type:
+      - 'null'
+      - float
+    doc: Number of threads used for read recruitment [0.4]. Fraction of the total number of threads, if under 1.
+    inputBinding:
+      position: 101
+      prefix: --recr-threads
+  - id: min_mapq
+    type:
+      - 'null'
+      - int
+    doc: Ignore reads with mapping quality less than INT [30].
+    inputBinding:
+      position: 101
+      prefix: --min-mapq
+  - id: max_clipping
+    type:
+      - 'null'
+      - float
+    doc: Ignore reads with soft/hard clipping > NUM * read length [0.02].
+    inputBinding:
+      position: 101
+      prefix: --max-clipping
+  - id: pval_thresh
+    type:
+      - 'null'
+      - type: array
+        items: float
+    doc: Two p-value thresholds for filtering recruited reads - on insert size [0.001] and on edit distance [0.01].
+    inputBinding:
+      position: 101
+      prefix: --pval-thresh
+  - id: ploidy
+    type:
+      - 'null'
+      - int
+    doc: Specie ploidy [2].
+    inputBinding:
+      position: 101
+      prefix: --ploidy
+  - id: window
+    type:
+      - 'null'
+      - int
+    doc: Count read depth in windows of this size [auto]. Default - half of the mean read length.
+    inputBinding:
+      position: 101
+      prefix: --window
+  - id: boundary
+    type:
+      - 'null'
+      - int
+    doc: Skip INT bp near the edge of the background region [1k].
+    inputBinding:
+      position: 101
+      prefix: --boundary
+  - id: kmer_perc
+    type:
+      - 'null'
+      - float
+    doc: Ignore windows where less than NUM% k-mers are unique [90].
+    inputBinding:
+      position: 101
+      prefix: --kmer-perc
+  - id: frac_windows
+    type:
+      - 'null'
+      - float
+    doc: This fraction of all windows is used in LOESS during read depth estimation [0.5].
+    inputBinding:
+      position: 101
+      prefix: --frac-windows
+  - id: filesize
+    type:
+      - 'null'
+      - boolean
+    doc: Estimate read depth by comparing file sizes with similar dataset (--like). Use with extreme care.
+    inputBinding:
+      position: 101
+      prefix: --filesize
+  - id: subsample
+    type:
+      - 'null'
+      - float
+    doc: Subsample input reads by this fraction [1].
+    inputBinding:
+      position: 101
+      prefix: --subsample
+  - id: seed
+    type:
+      - 'null'
+      - int
+    doc: Subsampling seed (optional).
+    inputBinding:
+      position: 101
+      prefix: --seed
+  - id: head
+    type:
+      - 'null'
+      - int
+    doc: Instead of the full preprocessing, map first INT reads to the reference and extract insert sizes and error profiles from them.
+    inputBinding:
+      position: 101
+      prefix: --head
   - id: output_dir_path
     type: string
     doc: DIR    Output directory.

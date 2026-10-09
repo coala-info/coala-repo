@@ -1,68 +1,21 @@
 # lexicmap CWL Generation Report
 
-## lexicmap_autocompletion
+## Real Data Test
 
-### Tool Description
-Generate shell autocompletion scripts
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
-- **Homepage**: https://github.com/shenwei356/LexicMap
-- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
-- **Total Downloads**: 4.8K
-- **Last updated**: 2025-12-20
-- **GitHub**: https://github.com/shenwei356/LexicMap
-- **Stars**: N/A
-### Original Help Text
-```text
-Generate shell autocompletion scripts
-
-Supported shell: bash|zsh|fish|powershell
-
-Bash:
-
-    # generate completion shell
-    lexicmap autocompletion --shell bash
-
-    # configure if never did.
-    # install bash-completion if the "complete" command is not found.
-    echo "for bcfile in ~/.bash_completion.d/* ; do source \$bcfile; done" >> ~/.bash_completion
-    echo "source ~/.bash_completion" >> ~/.bashrc
-
-Zsh:
-
-    # generate completion shell
-    lexicmap autocompletion --shell zsh --file ~/.zfunc/_lexicmap
-
-    # configure if never did
-    echo 'fpath=( ~/.zfunc "${fpath[@]}" )' >> ~/.zshrc
-    echo "autoload -U compinit; compinit" >> ~/.zshrc
-
-fish:
-
-    lexicmap autocompletion --shell fish --file ~/.config/fish/completions/lexicmap.fish
-
-Usage:
-  lexicmap autocompletion [flags] 
-
-Flags:
-      --file string    autocompletion file (default "/root/.bash_completion.d/lexicmap.sh")
-  -h, --help           help for autocompletion
-      --shell string   autocompletion type (bash|zsh|fish|powershell) (default "bash")
-
-Global Flags:
-  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
-                             appended to files from CLI arguments.
-      --log string           ► Log file.
-      --quiet                ► Do not print any verbose information. But you can write them to a file
-                             with --log.
-  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
-                             (default 20)
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| lexicmap_index | PASS | added the missing positional genome files; indexed 3 demo genomes and the index works for search |
+| lexicmap_search | PASS | fixed --out-file flag; E. coli 16S query against 3 genomes gives the same hits as the expected demo result |
+| lexicmap_utils_2blast | PASS | converted a search -a result to Blast-style alignments |
+| lexicmap_utils_edit_genome_ids | PASS | renamed genome IDs in a writable index copy with a regex; genomes lists the new IDs |
+| lexicmap_utils_genomes | PASS | listed the 3 genome IDs of the demo index |
+| lexicmap_utils_kmers | PASS | listed 99 k-mers of mask 1 |
+| lexicmap_utils_masks | PASS | exported the 20000 masks of the demo index |
+| lexicmap_utils_merge_search_results | PASS | merged two search result files into one table |
+| lexicmap_utils_reindex_seeds | PASS | re-indexed the seeds of a writable index copy with 1024 partitions |
+| lexicmap_utils_remerge | Not completed | needs an unfinished index with a .tmp folder, which cannot be made here (tool reports tmp directory not found on a finished index) |
+| lexicmap_utils_seed_pos | PASS | ran on an index built with --save-seed-pos; seed distance table and two histogram plots written |
+| lexicmap_utils_subseq | PASS | extracted subsequences from search results and by genome, sequence and region; E. coli 16S sequence correct |
 
 ## lexicmap_index
 
@@ -408,10 +361,10 @@ Global Flags:
 ```
 
 
-## lexicmap_utils
+## lexicmap_utils_2blast
 
 ### Tool Description
-Some utilities
+Convert the tabular search result of \"lexicmap search -a\" to a Blast-style alignment format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
@@ -421,25 +374,20 @@ Some utilities
 
 ### Original Help Text
 ```text
-Some utilities
-
 Usage:
-  lexicmap utils [command] 
-
-Available Commands:
-  2blast               Convert the default search output to blast-style format
-  edit-genome-ids      Edit genome IDs in the index via a regular expression
-  genomes              View genome IDs in the index
-  kmers                View k-mers captured by the masks
-  masks                View masks of the index or generate new masks randomly
-  merge-search-results Merge a query's search results from multiple indexes
-  reindex-seeds        Recreate indexes of k-mer-value (seeds) data
-  remerge              Rerun the merging step for an unfinished index
-  seed-pos             Extract and plot seed positions via reference name(s)
-  subseq               Extract subsequence via 1) reference name, sequence ID, position and strand, or 2) search result
+  lexicmap utils 2blast [flags] 
 
 Flags:
-  -h, --help   help for utils
+  -b, --buffer-size string      ► Size of buffer, supported unit: K, M, G. You need increase the value
+                                when "bufio.Scanner: token too long" error reported (default "20M")
+  -h, --help                    help for 2blast
+  -i, --ignore-case             ► Ignore cases of sgenome and sseqid
+  -g, --kv-file-genome string   ► Two-column tabular file for mapping the target genome ID (sgenome)
+                                to the corresponding value
+  -s, --kv-file-seq string      ► Two-column tabular file for mapping the target sequence ID (sseqid)
+                                to the corresponding value
+  -o, --out-file string         ► Out file, supports and recommends a ".gz" suffix ("-" for stdout).
+                                (default "-")
 
 Global Flags:
   -X, --infile-list string   ► File of input file list (one file per line). If given, they are
@@ -449,10 +397,393 @@ Global Flags:
                              with --log.
   -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
                              (default 20)
-
-Use "lexicmap utils [command] --help" for more information about a command.
 ```
 
+## lexicmap_utils_edit_genome_ids
+
+### Tool Description
+Edit genome IDs in the index via a regular expression.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/LexicMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Edit genome IDs in the index via a regular expression
+
+Use cases:
+  In the 'lexicmap index' command, users might forget to use the flag
+  -N/--ref-name-regexp to extract the genome ID from the sequence file.
+  A genome file from NCBI looks like:
+
+    GCF_009818595.1_ASM981859v1_genomic.fna.gz
+
+  In this case, the genome ID would be GCF_009818595.1_ASM981859v1_genomic,
+  which is too long. So we can use this command to extract the assembly
+  accession via:
+
+    lexicmap utils edit-genome-ids -d t.lmi/ -p '^(\w{3}_\d{9}\.\d+).*' -r '$1'
+
+Tips:
+  - A backup file (genomes.map.bin.bak) will be created on the first run.
+
+Usage:
+  lexicmap utils edit-genome-ids [flags] 
+
+Flags:
+  -h, --help                 help for edit-genome-ids
+  -d, --index string         ► Index directory created by "lexicmap index".
+  -p, --pattern string       ► Search regular expression".
+  -r, --replacement string   ► Replacement. Supporting capture variables.  e.g. $1 represents the text
+                             of the first submatch. ATTENTION: for *nix OS, use SINGLE quote NOT double
+                             quotes or use the \ escape character.
+
+Global Flags:
+  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+      --quiet                ► Do not print any verbose information. But you can write them to a file
+                             with --log.
+  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
+                             (default 20)
+```
+
+## lexicmap_utils_genomes
+
+### Tool Description
+View genome IDs in the index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/LexicMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+View genome IDs in the index
+
+Usage:
+  lexicmap utils genomes [flags] 
+
+Flags:
+  -h, --help              help for genomes
+  -d, --index string      ► Index directory created by "lexicmap index".
+  -o, --out-file string   ► Out file, supports the ".gz" suffix ("-" for stdout). (default "-")
+
+Global Flags:
+  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+      --quiet                ► Do not print any verbose information. But you can write them to a file
+                             with --log.
+  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
+                             (default 20)
+```
+
+## lexicmap_utils_kmers
+
+### Tool Description
+View k-mers captured by the masks of the index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/LexicMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+  lexicmap utils kmers [flags] -d <index path> [-m <mask index>] [-o out.tsv.gz]
+
+Flags:
+  -h, --help              help for kmers
+  -d, --index string      ► Index directory created by "lexicmap index".
+  -m, --mask int          ► View k-mers captured by Xth mask. (0 for all) (default 1)
+  -f, --only-forward      ► Only output forward k-mers.
+  -o, --out-file string   ► Out file, supports and recommends a ".gz" suffix ("-" for stdout).
+                          (default "-")
+
+Global Flags:
+  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+      --quiet                ► Do not print any verbose information. But you can write them to a file
+                             with --log.
+  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
+                             (default 20)
+```
+
+## lexicmap_utils_masks
+
+### Tool Description
+View masks of the index or generate new masks randomly.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/LexicMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+View masks of the index or generate new masks randomly
+
+Usage:
+  lexicmap utils masks [flags] { -d <index path> | [-k <k>] [-n <masks>] [-s <seed>] } [-o out.tsv.gz]
+
+Flags:
+  -h, --help              help for masks
+  -d, --index string      ► Index directory created by "lexicmap index".
+  -k, --kmer int          ► Maximum k-mer size. K needs to be <= 32. (default 31)
+  -m, --masks int         ► Number of masks. (default 40000)
+  -o, --out-file string   ► Out file, supports and recommends a ".gz" suffix ("-" for stdout).
+                          (default "-")
+  -p, --prefix int        ► Length of mask k-mer prefix for checking low-complexity (0 for no
+                          checking). (default 15)
+  -s, --seed int          ► The seed for generating random masks. (default 1)
+
+Global Flags:
+  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+      --quiet                ► Do not print any verbose information. But you can write them to a file
+                             with --log.
+  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
+                             (default 20)
+```
+
+## lexicmap_utils_merge_search_results
+
+### Tool Description
+Merge search results from multiple indexes (several files for the same queries).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/LexicMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+  lexicmap utils merge-search-results [flags] 
+
+Flags:
+  -b, --buffer-size string   ► Size of buffer, supported unit: K, M, G. You need increase the value
+                             when "bufio.Scanner: token too long" error reported (default "20M")
+  -h, --help                 help for merge-search-results
+  -o, --out-file string      ► Out file, supports the ".gz" suffix ("-" for stdout). (default "-")
+  -q, --query string         ► Query ID to merge
+
+Global Flags:
+  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+      --quiet                ► Do not print any verbose information. But you can write them to a file
+                             with --log.
+  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
+                             (default 20)
+```
+
+## lexicmap_utils_reindex_seeds
+
+### Tool Description
+Recreate indexes of k-mer-value (seeds) data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/LexicMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Recreate indexes of k-mer-value (seeds) data
+
+Usage:
+  lexicmap utils reindex-seeds [flags] 
+
+Flags:
+  -h, --help             help for reindex-seeds
+  -d, --index string     ► Index directory created by "lexicmap index".
+      --partitions int   ► Number of partitions for re-indexing seeds (k-mer-value data) files. The
+                         value needs to be the power of 4. (default 4096)
+
+Global Flags:
+  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+      --quiet                ► Do not print any verbose information. But you can write them to a file
+                             with --log.
+  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
+                             (default 20)
+```
+
+## lexicmap_utils_remerge
+
+### Tool Description
+Rerun the merging step for an unfinished index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/LexicMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Rerun the merging step for an unfinished index
+
+When to use this command?
+
+- Only one thread is used for merging indexes, which happens when there are
+  a lot (>200 batches) of batches ($inpu_files / --batch-size) and the value
+  of --max-open-files is not big enough. E.g.,
+
+  22:54:24.420 [INFO] merging 297 indexes...
+  22:54:24.455 [INFO]   [round 1]
+  22:54:24.455 [INFO]     batch 1/1, merging 297 indexes to xxx.lmi.tmp/r1_b1 with 1 threads...
+
+  ► Then you can run this command with a bigger --max-open-files (e.g., 4096) and 
+  -J/--seed-data-threads (e.g., 12. 12 needs be <= 4096/(297+2)=13.7).
+  And you need to set a bigger 'ulimit -n' if the value of --max-open-files is bigger than 1024.
+
+- The Slurm/PBS job time limit is almost reached and the merging step won't be finished before that.
+
+- Disk quota is reached in the merging step.
+
+Usage:
+  lexicmap utils remerge [flags] [flags] -d <index path>
+
+Flags:
+  -h, --help                    help for remerge
+  -d, --index string            ► Index directory created by "lexicmap index".
+      --max-open-files int      ► Maximum opened files, used in merging indexes. If there are >100
+                                batches, please increase this value and set a bigger "ulimit -n" in
+                                shell. (default 1024)
+  -J, --seed-data-threads int   ► Number of threads for writing seed data and merging seed chunks from
+                                all batches, the value should be in range of [1, -c/--chunks]. If there
+                                are >100 batches, please also increase the value of --max-open-files and
+                                set a bigger "ulimit -n" in shell. (default 8)
+
+Global Flags:
+  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+      --quiet                ► Do not print any verbose information. But you can write them to a file
+                             with --log.
+  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
+                             (default 20)
+```
+
+## lexicmap_utils_seed_pos
+
+### Tool Description
+Extract and plot the distance and positions of seeds (k-mers) in the index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/LexicMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+  lexicmap utils seed-pos [flags] 
+
+Flags:
+  -a, --all-refs             ► Output for all reference genomes. This would take a long time for an
+                             index with a lot of genomes.
+  -b, --bins int             ► Number of bins in histograms. (default 100)
+      --color-index int      ► Color index (1-7). (default 1)
+      --force                ► Overwrite existing output directory.
+      --height float         ► Histogram height (unit: inch). (default 4)
+  -h, --help                 help for seed-pos
+  -d, --index string         ► Index directory created by "lexicmap index".
+      --max-open-files int   ► Maximum opened files, used for extracting sequences. (default 512)
+  -D, --min-dist int         ► Only output records with seed distance >= this value.
+  -o, --out-file string      ► Out file, supports and recommends a ".gz" suffix ("-" for stdout).
+                             (default "-")
+  -O, --plot-dir string      ► Output directory for 1) histograms of seed distances, 2) histograms of
+                             numbers of seeds in sliding windows.
+      --plot-ext string      ► Histogram plot file extention. (default ".png")
+  -n, --ref-name strings     ► Reference name(s).
+  -s, --slid-step int        ► The step size of sliding windows for counting the number of seeds
+                             (default 100)
+  -w, --slid-window int      ► The window size of sliding windows for counting the number of seeds
+                             (default 250)
+  -v, --verbose              ► Show more columns including position of the previous seed and sequence
+                             between the two seeds. Warning: it's slow to extract the sequences,
+                             recommend set -D 1000 or higher values to filter results 
+      --width float          ► Histogram width (unit: inch). (default 6)
+
+Global Flags:
+  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+      --quiet                ► Do not print any verbose information. But you can write them to a file
+                             with --log.
+  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
+                             (default 20)
+```
+
+## lexicmap_utils_subseq
+
+### Tool Description
+Extract subsequences from the index by genome ID, sequence ID and region, or from search results.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1
+- **Homepage**: https://github.com/shenwei356/LexicMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/lexicmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+  lexicmap utils subseq [flags] 
+
+Flags:
+  -b, --buffer-size string     ► Size of buffer, supported unit: K, M, G. You need increase the value
+                               when "bufio.Scanner: token too long" error reported (default "20M")
+  -D, --downstream int         ► Extract extra N bp on the downstream of the aligned/specified region.
+  -h, --help                   help for subseq
+  -e, --ignore-err             ► Ignore errors such as 'reference name not found' or 'failed to
+                               extract subsequence'. Switch on this flag if search results are merged
+                               from multiple indexes.
+  -d, --index string           ► Index directory created by "lexicmap index".
+  -w, --line-width int         ► Line width of sequence (0 for no wrap). (default 60)
+      --max-open-files int     ► Maximum opened files. It mainly affects candidate subsequence
+                               extraction. Increase this value if you have hundreds of genome batches or
+                               have multiple queries, and do not forgot to set a bigger "ulimit -n" in
+                               shell if the value is > 1024. (default 1024)
+  -H, --no-header-row          ► The search result file has no header row, this happens when using
+                               tools like awk to filter the file.
+  -o, --out-file string        ► Out file, supports the ".gz" suffix ("-" for stdout). (default "-")
+  -n, --ref-name string        ► Reference name.
+  -r, --region string          ► Region of the subsequence (1-based).
+  -R, --revcom                 ► Extract subsequence on the negative strand.
+  -f, --search-result string   ► Use search result file from "lexicmap search" as input. It can be "-"
+                               to accept filtered result from stdin
+  -s, --seq-id string          ► Sequence ID. If the value is empty, the positions in the region are
+                               treated as that in the concatenated sequence.
+  -U, --upstream int           ► Extract extra N bp on the upstream of the aligned/specified region.
+
+Global Flags:
+  -X, --infile-list string   ► File of input file list (one file per line). If given, they are
+                             appended to files from CLI arguments.
+      --log string           ► Log file.
+      --quiet                ► Do not print any verbose information. But you can write them to a file
+                             with --log.
+  -j, --threads int          ► Number of CPU cores to use. By default, it uses all available cores.
+                             (default 20)
+```
 
 ## Metadata
 - **Skill**: generated

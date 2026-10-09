@@ -37,9 +37,7 @@ inputs:
       prefix: --output_file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Name for output file.
     outputBinding:
       glob: $(inputs.output_file_path)

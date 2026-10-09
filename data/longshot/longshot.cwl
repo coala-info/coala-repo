@@ -25,6 +25,8 @@ inputs:
       prefix: --auto_max_cov
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: sorted, indexed BAM file with error-prone reads
     inputBinding:
       position: 101
@@ -232,6 +234,8 @@ inputs:
       prefix: --potential_variants
   - id: ref
     type: File
+    secondaryFiles:
+      - .fai
     doc: indexed FASTA reference that BAM file is aligned to
     inputBinding:
       position: 101
@@ -284,7 +288,7 @@ inputs:
   - id: variant_debug_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: write out current information about variants at each step of algorithm 
       to files in this directory
     inputBinding:
@@ -320,6 +324,13 @@ outputs:
       assigned to each haplotype, any existing HP and PS tags are removed
     outputBinding:
       glob: $(inputs.out_bam_path)
+  - id: debug_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory written when variant_debug_dir is given.
+    outputBinding:
+      glob: $(inputs.variant_debug_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

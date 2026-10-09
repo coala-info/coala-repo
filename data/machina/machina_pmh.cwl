@@ -5,12 +5,12 @@ label: machina_pmh
 doc: "Machina PMH tool for phylogenetic analysis.\n\nTool homepage: https://github.com/raphael-group/machina"
 inputs:
   - id: clone_tree
-    type: string
+    type: File
     doc: Clone tree
     inputBinding:
       position: 1
   - id: leaf_labeling
-    type: string
+    type: File
     doc: Leaf labeling
     inputBinding:
       position: 2
@@ -24,7 +24,7 @@ inputs:
       position: 103
       prefix: -m
   - id: color_map_file
-    type: string
+    type: File
     doc: Color map file
     inputBinding:
       position: 103
@@ -48,7 +48,7 @@ inputs:
   - id: migration_graphs_file
     type:
       - 'null'
-      - string
+      - File
     doc: Optional file with migration graphs
     inputBinding:
       position: 103
@@ -57,7 +57,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output prefix
+    doc: Output prefix. To write into a folder, give the folder name with a trailing
+      slash (for example out/); the folder is created before the run.
     inputBinding:
       position: 103
       prefix: -o
@@ -134,6 +135,19 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: |
+          ${
+            if (inputs.output_prefix && /\/$/.test(inputs.output_prefix)) {
+              return inputs.output_prefix.replace(/\/+$/, "");
+            }
+            return ".unused_output_dir";
+          }
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/machina:1.2--h21ec9f0_7

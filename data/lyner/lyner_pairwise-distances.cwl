@@ -2,64 +2,42 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - pairwise-distances
 label: lyner_pairwise-distances
-doc: "Compute pairwise distances between samples.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Calculate pairwise distances between rows of the data matrix.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX pairwise-distances show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input
-    type: File
-    doc: Input matrix file (e.g. TSV, CSV)
-    inputBinding:
-      position: 1
-  - id: metric
-    type:
-      - 'null'
-      - string
-    doc: 'Distance metric to use. Options: euclidean, manhattan, cosine, correlation,
-      hamming, jaccard. Default: euclidean.'
-    inputBinding:
-      position: 102
-      prefix: --metric
-  - id: output_format
-    type:
-      - 'null'
-      - string
-    doc: 'Output format. Options: square, condensed. Default: square.'
-    inputBinding:
-      position: 102
-      prefix: --output-format
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: 'Number of threads to use. Default: 1.'
-    inputBinding:
-      position: 102
-      prefix: --threads
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Enable verbose output.
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 103
-      prefix: --output
-outputs:
-  - id: output
+      position: 2
+  - id: metric
     type:
       - 'null'
-      - File
-    doc: 'Output distance matrix file (e.g. TSV, CSV). Default: stdout.'
-    outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - string
+    doc: "Distance metric, for example euclidean, cityblock, correlation, cosine or jaccard (default euclidean)"
+    inputBinding:
+      position: 20
+      prefix: --metric
+outputs:
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: pairwise-distances
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_pairwise-distances.out

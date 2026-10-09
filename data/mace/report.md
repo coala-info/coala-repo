@@ -1,5 +1,13 @@
 # mace CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mace_mace.py | PASS | real Cbf1 ChIP-exo data: 910 border pairs, 30 percent near the CACGTG Cbf1 motif (about 1 percent at random); added outputs and required inputs |
+| mace_preprocessor.py | PASS | real yeast Cbf1 ChIP-exo reads aligned with hisat2; wig and bigwig files have plausible signal; added .bai secondaryFiles |
+| mace_wigToBigWig | PASS | converted the real ChIP-exo wig; bigwig values match the preprocessor output |
+
 ## mace_preprocessor.py
 
 ### Tool Description

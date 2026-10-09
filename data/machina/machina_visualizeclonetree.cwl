@@ -6,31 +6,31 @@ doc: "Visualize a clone tree with optional leaf and vertex labeling, and custom 
   maps.\n\nTool homepage: https://github.com/raphael-group/machina"
 inputs:
   - id: clone_tree
-    type: string
+    type: File
     doc: Clone tree
     inputBinding:
       position: 1
   - id: leaf_labeling
-    type: string
+    type: File
     doc: Leaf labeling
     inputBinding:
       position: 2
   - id: color_map_file
     type:
       - 'null'
-      - string
+      - File
     doc: Color map file
     inputBinding:
       position: 103
-      prefix: --color_map_file
+      prefix: -c
   - id: vertex_labeling
     type:
       - 'null'
-      - string
+      - File
     doc: Vertex labeling
     inputBinding:
       position: 103
-      prefix: --vertex_labeling
+      prefix: -l
 outputs:
   - id: stdout
     type: stdout

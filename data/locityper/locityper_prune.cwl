@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: locityper
+baseCommand:
+  - locityper
+  - prune
 label: locityper_prune
 doc: "Remove similar target haplotypes.\n\nTool homepage: https://github.com/tprodanov/locityper"
 inputs:
@@ -84,7 +86,7 @@ inputs:
     doc: Output or path parameter `output_db_path`
     inputBinding:
       position: 102
-      prefix: --output-db
+      prefix: --output
 outputs:
   - id: output_db
     type: Directory

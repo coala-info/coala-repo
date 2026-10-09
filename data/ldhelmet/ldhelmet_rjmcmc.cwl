@@ -24,9 +24,7 @@ inputs:
       position: 101
       prefix: --burn_in
   - id: lk_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Two-site likelihood table.
     inputBinding:
       position: 101
@@ -57,9 +55,7 @@ inputs:
       position: 101
       prefix: --max_lk_start
   - id: mut_mat_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Mutation matrix.
     inputBinding:
       position: 101
@@ -89,9 +85,7 @@ inputs:
       position: 101
       prefix: --overlap_length
   - id: pade_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Pade coefficients.
     inputBinding:
       position: 101
@@ -153,9 +147,7 @@ inputs:
       position: 101
       prefix: --seed
   - id: seq_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Sequence file.
     inputBinding:
       position: 101
@@ -192,9 +184,7 @@ inputs:
       prefix: --output_file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Name of output file.
     outputBinding:
       glob: $(inputs.output_file_path)

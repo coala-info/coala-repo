@@ -1,9 +1,19 @@
 # linkstats CWL Generation Report
 
-## linkstats_LinkStats
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| linkstats_cov_gap_hist_data | PASS |  |
+| linkstats_coverage_data | PASS |  |
+| linkstats_mol_len_hist_data | PASS |  |
+| linkstats_molecule_data | PASS |  |
+| linkstats_sam_data | PASS |  |
+
+## linkstats_sam_data
 
 ### Tool Description
-Collect and process statistics from aligned linked-reads.
+Read SAM/BAM/CRAM data from PATH.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/linkstats:0.1.3--py310h82d6cb0_6
@@ -11,45 +21,114 @@ Collect and process statistics from aligned linked-reads.
 - **Package**: https://anaconda.org/channels/bioconda/packages/linkstats/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/linkstats/overview
-- **Total Downloads**: 8.0K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/wtsi-hpag/LinkStats
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: LinkStats [OPTIONS] COMMAND1 [ARGS]... [COMMAND2 [ARGS]...]...
+Usage: LinkStats sam-data [OPTIONS] PATH
 
-  LinkStats 0.1.3
+  Read SAM/BAM/CRAM data from PATH.
 
-  Collect and process statistics from aligned linked-reads.
+  Creates summary and molecular data-sets for each sample-name (SM:Z tag or RG:Z SAM tag).
 
-  Copyright (c) 2022 Ed Harry, Wellcome Sanger Institute, Genome Research Limited.
-
-  
-  Usage Example, read SAM/BAM/CRAM from <stdin> and save the summary and molecule data in csv format. Analyse molecules grouped by 5 and 10 minimum reads per molecule.
-  -------------
-  ...<sam/bam/cram> | LinkStats -t 16 -m 5 -m 10 sam-data - save-csvs results/csvs/
-
-  Usage Example, combine histogram data from multiple sources into summary plots.
-  -------------
-  LinkStats -t 16 hist-data results/dataset_1_molecular_length_histograms.csv.bz2 hist-data results/dataset_2_molecular_length_histograms.csv.bz2 hist-data results/dataset_3_molecular_length_histograms.csv.bz2 save-plots results/plots/
+  Alignments must have BX:Z (barcode) SAM tags.
 
 Options:
-  -t, --threads INTEGER RANGE    Number of threads to use. Default=4.  [x>=1]
-  -m, --min_reads INTEGER RANGE  Minimum reads per molecule for analysis,
-                                 multiple values possible. Default=(1, 3, 5,
-                                 10).  [x>=1]
-  --version                      Show the version and exit.
-  --help                         Show this message and exit.
-
-Commands:
-  cov-gap-hist-data  Read in coverage gap histogram data from a CSV FILE.
-  coverage-data      Read in coverage gap data from a CSV FILE.
-  mol-len-hist-data  Read in molecule length histogram data from a CSV FILE.
-  molecule-data      Read in molecular data from a CSV FILE.
-  sam-data           Read SAM/BAM/CRAM data from PATH.
-  save-csvs          Saves summary, molecule or histogram data to CSV...
-  save-plots         Generates plots from any histogram data and saves...
+  -r, --reference PATH     FASTA reference for CRAM decoding.
+  -n, --name TEXT          Sample name, overrides name from SM or RG tags.
+  --mi / --no-mi           Group by MI:I as well as BX:Z SAM tags.
+                           Default=False.
+  -t, --threshold INTEGER  Maximum allowed separation between alignments
+                           grouped to the same molecule.
+  --help                   Show this message and exit.
 ```
 
+## linkstats_molecule_data
+
+### Tool Description
+Read in molecular data from a CSV FILE.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/linkstats:0.1.3--py310h82d6cb0_6
+- **Homepage**: https://github.com/wtsi-hpag/LinkStats
+- **Package**: https://anaconda.org/channels/bioconda/packages/linkstats/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: LinkStats molecule-data [OPTIONS] FILE
+
+  Read in molecular data from a CSV FILE.
+
+  Use to re-calculate histogram data.
+
+Options:
+  --help  Show this message and exit.
+```
+
+## linkstats_coverage_data
+
+### Tool Description
+Read in coverage gap data from a CSV FILE.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/linkstats:0.1.3--py310h82d6cb0_6
+- **Homepage**: https://github.com/wtsi-hpag/LinkStats
+- **Package**: https://anaconda.org/channels/bioconda/packages/linkstats/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: LinkStats coverage-data [OPTIONS] FILE
+
+  Read in coverage gap data from a CSV FILE.
+
+  Use to re-calculate histogram data.
+
+Options:
+  --help  Show this message and exit.
+```
+
+## linkstats_mol_len_hist_data
+
+### Tool Description
+Read in molecule length histogram data from a CSV FILE.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/linkstats:0.1.3--py310h82d6cb0_6
+- **Homepage**: https://github.com/wtsi-hpag/LinkStats
+- **Package**: https://anaconda.org/channels/bioconda/packages/linkstats/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: LinkStats mol-len-hist-data [OPTIONS] FILE
+
+  Read in molecule length histogram data from a CSV FILE.
+
+  Use to re-generate or create combined plots.
+
+Options:
+  --help  Show this message and exit.
+```
+
+## linkstats_cov_gap_hist_data
+
+### Tool Description
+Read in coverage gap histogram data from a CSV FILE.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/linkstats:0.1.3--py310h82d6cb0_6
+- **Homepage**: https://github.com/wtsi-hpag/LinkStats
+- **Package**: https://anaconda.org/channels/bioconda/packages/linkstats/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: LinkStats cov-gap-hist-data [OPTIONS] FILE
+
+  Read in coverage gap histogram data from a CSV FILE.
+
+  Use to re-generate or create combined plots.
+
+Options:
+  --help  Show this message and exit.
+```

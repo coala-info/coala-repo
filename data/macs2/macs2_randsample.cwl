@@ -94,7 +94,7 @@ outputs:
       Note, if the input format is BAMPE or BEDPE, the output will be in BEDPE 
       format.
     outputBinding:
-      glob: $(inputs.outputfile_path)
+      glob: "$(inputs.outdir_path ? inputs.outdir_path + '/' + inputs.outputfile_path : inputs.outputfile_path)"
   - id: outdir
     type:
       - 'null'

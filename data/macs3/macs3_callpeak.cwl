@@ -80,7 +80,9 @@ inputs:
       position: 101
       prefix: --max-count
   - id: outdir
-    type: string
+    type:
+      - 'null'
+      - string
     doc: If specified all output files will be written to that directory.
     inputBinding:
       position: 101
@@ -322,6 +324,14 @@ inputs:
       position: 101
       prefix: --buffer-size
 outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the experiment name (peaks, summits, model script, bedGraph
+      tracks and cutoff analysis).
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/' : '')$(inputs.name ? inputs.name : 'NA')_*"
   - id: output_outdir
     type:
       - 'null'

@@ -1,14 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: maegatk
+baseCommand: [maegatk, bcall]
 label: maegatk_bcall
 doc: "a Maester genome toolkit.\n\nTool homepage: https://github.com/caleblareau/maegatk"
 inputs:
-  - id: mode
-    type: string
-    doc: MODE = ['bcall', 'support']
-    inputBinding:
-      position: 1
   - id: alignment_quality
     type:
       - 'null'
@@ -67,6 +62,9 @@ inputs:
       prefix: --ignore-samples
   - id: input
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Input; a singular, indexed bam file.
     inputBinding:
       position: 102

@@ -27,6 +27,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Optional control file in BAM format, sorted by coordinates. Make sure 
       the .bai file is avaiable in the same directory.
     inputBinding:
@@ -124,6 +127,9 @@ inputs:
       prefix: --top2alleles-mratio
   - id: treatment_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: ChIP-seq/ATAC-seq treatment file in BAM format, sorted by coordinates. 
       Make sure the .bai file is avaiable in the same directory.
     inputBinding:

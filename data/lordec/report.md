@@ -1,5 +1,15 @@
 # lordec CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lordec_lordec-build-SR-graph | PASS |  |
+| lordec_lordec-correct | PASS |  |
+| lordec_lordec-stat | PASS |  |
+| lordec_lordec-trim | PASS |  |
+| lordec_lordec-trim-split | PASS |  |
+
 ## lordec_lordec-correct
 
 ### Tool Description
@@ -118,6 +128,30 @@ lordec-build-SR-graph [-T <number of threads>] [-O <GATB graph creation temporar
          reads the <FASTA/Q file(s)> of short reads, then builds and save their de Bruijn graph for k-mers of length <k-mer size> and occurring at least <abundance threshold> time; the graph is saved in an external file named <out graph file>
 ```
 
+
+## lordec_lordec-stat
+
+### Tool Description
+Builds the de Bruijn graph of short reads and writes solid k-mer statistics for each long read.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lordec:0.9--h77376b9_3
+- **Homepage**: http://www.atgc-montpellier.fr/lordec/
+- **Package**: https://anaconda.org/channels/bioconda/packages/lordec/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+LoRDEC v0.9
+using GATB v1.4.1
+website : http://www.atgc-montpellier.fr/lordec/
+FAQ : https://www.lirmm.fr/~rivals/lordec/FAQ/
+
+Usage :
+
+lordec-stat -i <long read FASTA/Q file> -2 <short read FASTA/Q file(s)> -k <k-mer size> -s <solid k-mer abundance threshold> -S <out statistics file> [-T <threads>]
+         reads the <FASTA/Q file(s)> of short reads, then builds and save their de Bruijn graph for k-mers of length <k-mer size> and occurring at least <abundance threshold> time
+```
 
 ## Metadata
 - **Skill**: generated

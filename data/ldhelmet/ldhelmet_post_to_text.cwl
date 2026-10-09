@@ -24,11 +24,12 @@ inputs:
       - 'null'
       - type: array
         items: float
+        inputBinding:
+          prefix: --perc
     doc: Percentile value. Specify option multiple times for multiple 
       percentiles.
     inputBinding:
       position: 102
-      prefix: --perc
   - id: output_file_path
     type: string
     doc: Name of output file.
@@ -37,9 +38,7 @@ inputs:
       prefix: --output_file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Name of output file.
     outputBinding:
       glob: $(inputs.output_file_path)

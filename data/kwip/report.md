@@ -1,5 +1,11 @@
 # kwip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| kwip | PASS |  |
+
 ## kwip
 
 ### Tool Description

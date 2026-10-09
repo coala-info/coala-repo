@@ -1,5 +1,11 @@
 # m-party CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| m-party | Not completed | pipeline, skipped: m-party runs a Snakemake workflow (needs a protein database and HMM models) |
+
 ## m-party
 
 ### Tool Description

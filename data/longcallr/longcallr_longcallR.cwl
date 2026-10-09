@@ -15,6 +15,9 @@ inputs:
       prefix: --annotation
   - id: bam_path
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Input BAM file (must be sorted and indexed)
     inputBinding:
       position: 101
@@ -247,6 +250,9 @@ inputs:
       prefix: --preset
   - id: ref_path
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Reference FASTA file
     inputBinding:
       position: 101

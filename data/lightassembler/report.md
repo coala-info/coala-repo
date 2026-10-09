@@ -1,5 +1,11 @@
 # lightassembler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| lightassembler_LightAssembler | PASS |  |
+
 ## lightassembler_LightAssembler
 
 ### Tool Description

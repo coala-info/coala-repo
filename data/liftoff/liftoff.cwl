@@ -7,6 +7,8 @@ inputs:
   - id: target
     type: File
     doc: target fasta genome to lift genes to
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 1
   - id: reference
@@ -44,7 +46,9 @@ inputs:
       position: 103
       prefix: -a
   - id: db
-    type: string
+    type:
+      - 'null'
+      - File
     doc: name of feature database; if not specified, the -g argument must be 
       provided and a database will be built automatically
     inputBinding:
@@ -74,9 +78,8 @@ inputs:
   - id: feature_types
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: list of feature types to lift over
+      - File
+    doc: text file with the feature types to lift over, one per line
     inputBinding:
       position: 103
       prefix: -f
@@ -107,7 +110,9 @@ inputs:
       position: 103
       prefix: -gap_open
   - id: gff_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: annotation file to lift over in GFF or GTF format
     inputBinding:
       position: 103
@@ -259,6 +264,12 @@ outputs:
       glob: $(inputs.unmapped_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.gff_file)
+        writable: true
+      - entry: $(inputs.target)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/liftoff:1.6.3--pyhdfd78af_2

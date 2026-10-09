@@ -2,79 +2,42 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - center
 label: lyner_center
-doc: "Center the matrix.\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Center features around their respective median or mean.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX center show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
+    inputBinding:
+      position: 0
+      prefix: -v
+  - id: matrix
     type: File
-    doc: Input matrix file
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 1
-  - id: center_type
+      position: 2
+  - id: method
     type:
       - 'null'
       - string
-    doc: Type of centering to perform (mean, median)
+    doc: "Centering method: mean or median (default median)"
     inputBinding:
-      position: 102
-      prefix: --center-type
-  - id: log
-    type:
-      - 'null'
-      - boolean
-    doc: Log transform the data before centering
-    inputBinding:
-      position: 102
-      prefix: --log
-  - id: log_base
-    type:
-      - 'null'
-      - float
-    doc: Base of the log transform
-    inputBinding:
-      position: 102
-      prefix: --log-base
-  - id: scale
-    type:
-      - 'null'
-      - boolean
-    doc: Scale the data after centering
-    inputBinding:
-      position: 102
-      prefix: --scale
-  - id: scale_type
-    type:
-      - 'null'
-      - string
-    doc: Type of scaling to perform (std, mad)
-    inputBinding:
-      position: 102
-      prefix: --scale-type
-  - id: selection
-    type:
-      - 'null'
-      - string
-    doc: Selection of rows/columns to center
-    inputBinding:
-      position: 102
-      prefix: --selection
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 103
-      prefix: --output
+      position: 20
+      prefix: --method
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: Output matrix file
-    outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: center
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_center.out

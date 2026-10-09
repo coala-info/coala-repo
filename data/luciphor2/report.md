@@ -1,5 +1,11 @@
 # luciphor2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| luciphor2 | PASS | baseCommand fixed to the luciphor2 wrapper; 8 real OpenMS test PSMs scored, all 8 localisations equal the OpenMS expected result |
+
 ## luciphor2
 
 ### Tool Description

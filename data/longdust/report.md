@@ -1,5 +1,11 @@
 # longdust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| longdust | PASS |  |
+
 ## longdust
 
 ### Tool Description

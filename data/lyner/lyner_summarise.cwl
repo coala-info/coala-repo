@@ -2,66 +2,49 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - lyner
-  - summarise
 label: lyner_summarise
-doc: "Summarise a lyner matrix\n\nTool homepage: https://github.com/tedil/lyner"
+doc: "Calculate either of median/mean/min/max for each group.\n\nLyner commands are chained and pass one matrix from command to command, so this CWL file runs `lyner read MATRIX summarise show`.\n\nTool homepage: https://github.com/tedil/lyner"
 inputs:
-  - id: input_matrix
-    type: File
-    doc: Input lyner matrix file
-    inputBinding:
-      position: 1
-  - id: agg_funcs
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Aggregation functions to apply (e.g., 'sum', 'mean', 'count')
-    inputBinding:
-      position: 102
-      prefix: --agg-funcs
-  - id: columns
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Columns to aggregate
-    inputBinding:
-      position: 102
-      prefix: --columns
-  - id: group_by
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Column(s) to group by
-    inputBinding:
-      position: 102
-      prefix: --group-by
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Enable verbose output
+    doc: "Verbose logging (global lyner option -v, written to standard error)"
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+      position: 0
+      prefix: -v
+  - id: matrix
+    type: File
+    doc: "Abundance or count matrix in tsv format (first column: feature names; other columns: samples), read with `lyner read`"
     inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 2
+  - id: design_file
     type:
       - 'null'
       - File
-    doc: Output file for summarised matrix
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+    doc: "Experiment design (tsv with columns Sample, Class). Passed to `lyner design` before the command, so samples are grouped by class (optional). List the samples of each class together and the classes in alphabetical order: lyner design mislabels samples otherwise"
+    inputBinding:
+      position: 3
+      prefix: design
+  - id: method
+    type:
+      - 'null'
+      - string
+    doc: "Summary method: median, mean, min or max (default mean)"
+    inputBinding:
+      position: 20
+outputs:
+  - id: stdout
+    type: stdout
+    doc: "Resulting matrix in tsv format (lyner show)"
+arguments:
+  - position: 1
+    valueFrom: read
+  - position: 10
+    valueFrom: summarise
+  - position: 100
+    valueFrom: show
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0
+stdout: lyner_summarise.out

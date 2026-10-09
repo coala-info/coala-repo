@@ -1,5 +1,24 @@
 # macs3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| macs3_bdgbroadcall | PASS | MACS repo FE track: same 6710 broad regions as the standard result (a few scores differ by version); ofile and o-prefix are now alternatives |
+| macs3_bdgcmp | PASS | MACS repo bedGraph data: ppois and FE tracks identical to the standard results; --ofile is now a list and files are collected |
+| macs3_bdgdiff | PASS | MACS repo callpeak bedGraph tracks: same regions as the standard cond1, cond2 and common files (only region names differ by version) |
+| macs3_bdgopt | PASS | MACS repo bedGraph: min and max results identical to the standard results; output path now follows --outdir |
+| macs3_bdgpeakcall | PASS | MACS repo FE track: narrowPeak identical to the standard result; cutoff analysis also checked; ofile and o-prefix are now alternatives |
+| macs3_callpeak | PASS | MACS repo CTCF chr22 test data: peaks, summits and bedGraph files identical to the repo standard results (narrow and broad); output files are now collected |
+| macs3_callvar | PASS | MACS repo CTCF paired-end BAMs: VCF identical to the standard result; the tool ignores --outdir for the VCF |
+| macs3_cmbreps | PASS | MACS repo bedGraph tracks: max and fisher results identical to the standard results; output path now follows --outdir |
+| macs3_filterdup | PASS | MACS repo CTCF test data: BED and BEDPE output identical to the standard results; output path now follows --outdir |
+| macs3_hmmratac | PASS | yeast ATAC BEDPE from the MACS repo: poisson model gives 1167 accessible regions matching the standard result; gaussian default differs from the repo result; required inputs made optional |
+| macs3_pileup | PASS | MACS repo CTCF test data: bedGraph identical to the standard result for BED and BEDPE; output path now follows --outdir |
+| macs3_predictd | PASS | MACS repo CTCF test data: fragment length 229 (single end) and 253 (BEDPE) as in the standard results; the log is now captured |
+| macs3_randsample | PASS | MACS repo CTCF test data: 9999 of 10000 requested tags and 10 percent of the pairs for BEDPE; number is now optional (alternative to percentage) |
+| macs3_refinepeak | PASS | MACS repo narrowPeak and CTCF reads: refined peaks identical to the standard results with --ofile and --o-prefix |
+
 ## macs3_callpeak
 
 ### Tool Description

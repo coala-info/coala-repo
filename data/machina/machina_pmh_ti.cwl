@@ -15,7 +15,7 @@ inputs:
       position: 101
       prefix: -m
   - id: color_map_file
-    type: string
+    type: File
     doc: Color map file
     inputBinding:
       position: 101
@@ -37,7 +37,7 @@ inputs:
       position: 101
       prefix: -e
   - id: frequencies_file
-    type: string
+    type: File
     doc: Frequencies file
     inputBinding:
       position: 101
@@ -53,7 +53,7 @@ inputs:
   - id: migration_graphs_file
     type:
       - 'null'
-      - string
+      - File
     doc: Optional file with migration graphs
     inputBinding:
       position: 101
@@ -67,7 +67,7 @@ inputs:
       position: 101
       prefix: -mutTreeIdx
   - id: mutation_trees
-    type: string
+    type: File
     doc: Mutation trees
     inputBinding:
       position: 101
@@ -92,7 +92,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output prefix
+    doc: Output prefix. To write into a folder, give the folder name with a trailing
+      slash (for example out/); the folder is created before the run.
     inputBinding:
       position: 101
       prefix: -o
@@ -177,6 +178,19 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: |
+          ${
+            if (inputs.output_prefix && /\/$/.test(inputs.output_prefix)) {
+              return inputs.output_prefix.replace(/\/+$/, "");
+            }
+            return ".unused_output_dir";
+          }
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/machina:1.2--h21ec9f0_7

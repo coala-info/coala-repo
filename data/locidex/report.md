@@ -1,5 +1,17 @@
 # locidex CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| locidex_build | PASS |  |
+| locidex_extract | PASS |  |
+| locidex_format | PASS |  |
+| locidex_manifest | PASS |  |
+| locidex_merge | PASS |  |
+| locidex_report | PASS |  |
+| locidex_search | PASS |  |
+
 ## locidex_search
 
 ### Tool Description

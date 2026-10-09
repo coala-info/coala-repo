@@ -173,7 +173,9 @@ inputs:
       position: 101
       prefix: --find-variable-off
   - id: gb_folder
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: Path to a folder containing genbank files.
     inputBinding:
       position: 101
@@ -204,7 +206,9 @@ inputs:
       position: 101
       prefix: --get-hmms
   - id: gff_folder
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: Path to a folder containing extended gff files. Each gff file should 
       contain corresponding nucleotide sequence. (designed to handle pharokka 
       produced annotation files).
@@ -348,9 +352,7 @@ inputs:
       position: 101
       prefix: --only-mine-hmms
   - id: output_dir
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'Output dir name. It will be created if it does not exist. [default: lovis4u_{current_date};
       e.g. uorf4u_2022_07_25-20_41]'
     inputBinding:
@@ -544,9 +546,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: 'Output dir name. It will be created if it does not exist. [default: lovis4u_{current_date};
       e.g. uorf4u_2022_07_25-20_41]'
     outputBinding:

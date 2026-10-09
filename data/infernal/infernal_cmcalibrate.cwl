@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: Input CM file to calibrate
     inputBinding:
-      position: 1
+      position: 200
   - id: length
     type:
       - 'null'
@@ -290,8 +290,17 @@ outputs:
     doc: with --part, save scores to file <f>
     outputBinding:
       glob: $(inputs.pfile)
+  - id: calibrated_cmfile
+    type: File
+    doc: Calibrated CM file (cmcalibrate rewrites the CM file in place)
+    outputBinding:
+      glob: $(inputs.cmfile.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.cmfile)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/infernal:1.1.5--pl5321h7b50bb2_4

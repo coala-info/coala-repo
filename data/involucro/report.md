@@ -1,5 +1,11 @@
 # involucro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| involucro | Not completed | needs Docker-in-Docker: involucro needs the Docker socket and fails without it |
+
 ## involucro
 
 ### Tool Description

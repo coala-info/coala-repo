@@ -1,5 +1,11 @@
 # isescan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isescan_isescan.py | PASS |  |
+
 ## isescan_isescan.py
 
 ### Tool Description

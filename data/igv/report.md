@@ -1,5 +1,11 @@
 # igv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| igv | Not completed | GUI program: batch mode throws HeadlessException because the image has no X display server; fixed --batch prefix typo, optional data files and igvDirectory type |
+
 ## igv
 
 ### Tool Description

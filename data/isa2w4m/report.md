@@ -1,5 +1,11 @@
 # isa2w4m CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isa2w4m | PASS |  |
+
 ## isa2w4m
 
 ### Tool Description

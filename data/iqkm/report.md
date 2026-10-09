@@ -1,5 +1,11 @@
 # iqkm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| iqkm | Not completed | needs the large Kofam HMM database (help_dir, Google Drive download) |
+
 ## iqkm
 
 ### Tool Description

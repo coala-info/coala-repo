@@ -4,39 +4,38 @@ baseCommand:
   - igvtools
   - sort
 label: igvtools_sort
-doc: "Sorts an alignment file by start position. The input file must be a .sam, .bam,
-  .aligned, or .vcf file.\n\nTool homepage: http://www.broadinstitute.org/igv/"
+doc: "Sort a .bed, .gff, .cn, .igv, .sam or .bam file by start position.\n\nTool homepage: http://www.broadinstitute.org/igv/"
 inputs:
   - id: input_file
     type: File
-    doc: The input file (SAM, BAM, aligned, or VCF) to be sorted.
+    doc: "Input file to sort"
+    inputBinding:
+      position: 10
+  - id: output_name
+    type: string
+    doc: "Output file name"
+    inputBinding:
+      position: 11
+  - id: tmp_dir
+    type: ['null', string]
+    doc: "Temporary working directory for intermediate sort results"
     inputBinding:
       position: 1
+      prefix: --tmpDir
   - id: max_records
-    type:
-      - 'null'
-      - int
-    doc: Maximum number of records to keep in memory before spilling to disk.
+    type: ['null', int]
+    doc: "Maximum number of records kept in memory during the sort (default 500000)"
     inputBinding:
-      position: 102
-      prefix: -m
-  - id: temp_dir
-    type:
-      - 'null'
-      - string
-    doc: Directory for temporary files created during sorting.
-    inputBinding:
-      position: 102
-      prefix: -t
+      position: 1
+      prefix: --maxRecords
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: The output file name. If not specified, the tool typically appends 
-      '.sorted' to the input filename.
+    type: File
+    doc: "Sorted output file"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igvtools:2.17.3--hdfd78af_0

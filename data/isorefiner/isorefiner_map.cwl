@@ -4,75 +4,72 @@ baseCommand:
   - isorefiner
   - map
 label: isorefiner_map
-doc: "Map reads to a reference genome using minimap2 and sort the output.\n\nTool
-  homepage: https://github.com/rkajitani/IsoRefiner"
+doc: "Map reads to the reference genome using Minimap2, and sort BAM files.\n\nTool homepage: https://github.com/rkajitani/IsoRefiner"
 inputs:
+  - id: reads
+    type: File[]
+    doc: "Reads (FASTQ or FASTA, gzip allowed)."
+    inputBinding:
+      position: 1
+      prefix: --reads
   - id: genome
     type: File
-    doc: Reference genome (FASTA, mandatory)
+    doc: "Reference genome (FASTA)."
     inputBinding:
-      position: 101
+      position: 2
       prefix: --genome
-  - id: mm2_option
-    type:
-      - 'null'
-      - string
-    doc: Option for minimap2 (quoted string)
-    inputBinding:
-      position: 101
-      prefix: --mm2_option
   - id: out_prefix
-    type:
-      - 'null'
-      - string
-    doc: Prefix of output BAM files
+    type: string
+    default: isorefiner_mapped
+    doc: "Prefix of output BAM files."
     inputBinding:
-      position: 101
+      position: 3
       prefix: --out_prefix
-  - id: reads
-    type:
-      type: array
-      items: File
-    doc: Reads (FASTQ or FASTA, gzip allowed, mandatory)
+  - id: mm2_option
+    type: ['null', string]
+    doc: "Option for minimap2 (quoted string). Default: -x splice -ub -k14 --secondary=no"
     inputBinding:
-      position: 101
-      prefix: --reads
+      position: 4
+      prefix: --mm2_option
   - id: sort_option
-    type:
-      - 'null'
-      - string
-    doc: Option for samtools sort (quoted string)
+    type: ['null', string]
+    doc: "Option for samtools sort (quoted string). Default: -m 2G"
     inputBinding:
-      position: 101
+      position: 5
       prefix: --sort_option
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads
-    inputBinding:
-      position: 101
-      prefix: --threads
   - id: work_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Working directory containing intermediate and log files
+    type: string
+    default: isorefiner_map_work
+    doc: "Working directory containing intermediate and log files."
     inputBinding:
-      position: 101
+      position: 6
       prefix: --work_dir
+  - id: threads
+    type: ['null', int]
+    doc: "Number of threads."
+    inputBinding:
+      position: 6
+      prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: out_prefix_files
+  - id: mapped_bam
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in out_prefix
+    doc: "Sorted BAM files."
     outputBinding:
-      glob: $(inputs.out_prefix)*
+      glob: $(inputs.out_prefix)*.bam
+  - id: mapped_bam_index
+    type:
+      type: array
+      items: File
+    doc: "BAM index files."
+    outputBinding:
+      glob: $(inputs.out_prefix)*.bam.bai
+  - id: log_file
+    type: ['null', File]
+    doc: "Log file of the run (in the working directory)."
+    outputBinding:
+      glob: $(inputs.work_dir)/log.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isorefiner:0.1.0--pyh7e72e81_1
-stdout: isorefiner_map.out

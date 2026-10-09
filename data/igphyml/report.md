@@ -1,5 +1,11 @@
 # igphyml CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| igphyml | PASS | fixed -t prefix (was --omega), removed duplicate hotness input, staged input writable and collected result files; GY tree and stats for the bundled 18-sequence example, fixed ts/tv 2.0 honoured |
+
 ## igphyml
 
 ### Tool Description

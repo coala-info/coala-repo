@@ -15,8 +15,8 @@ inputs:
       position: 1
       prefix: --phenotypes
   - id: worktable_path
-    type: File
-    doc: path to the worktable file to generate
+    type: string
+    doc: path of the worktable file (HDF5) to generate
     inputBinding:
       position: 2
       prefix: --worktable-path
@@ -135,11 +135,19 @@ inputs:
       position: 103
       prefix: --sumz
   - id: csv_file_path_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: path of the results file in csv format to generate
     inputBinding:
       position: 104
       prefix: --csv-file-path
 outputs:
+  - id: worktable
+    type: File
+    doc: The worktable (HDF5) with the joint analysis results
+    outputBinding:
+      glob: $(inputs.worktable_path)
   - id: csv_file_path
     type:
       - 'null'
@@ -148,6 +156,10 @@ outputs:
     outputBinding:
       glob: $(inputs.csv_file_path_path)
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: JASS_PROJECTS_DIR
+        envValue: $(runtime.outdir)/jass_projects
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

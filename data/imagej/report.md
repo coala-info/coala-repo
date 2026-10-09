@@ -1,5 +1,11 @@
 # imagej CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| imagej | Failed | image problem: ImageJ 1.51 throws HeadlessException in batch macro mode (-b) without a display, and the image has no X server. |
+
 ## imagej
 
 ### Tool Description

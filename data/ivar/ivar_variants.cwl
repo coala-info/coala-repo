@@ -6,6 +6,9 @@ baseCommand:
 label: ivar_variants
 doc: "Call variants from a mpileup file\n\nTool homepage: https://andersen-lab.github.io/ivar/html/"
 inputs:
+  - id: pileup
+    type: File
+    doc: Output of samtools mpileup (for example samtools mpileup -aa -A -d 0 -Q 0 input.bam), read from standard input
   - id: count_gaps
     type:
       - 'null'
@@ -76,7 +79,10 @@ outputs:
     doc: Files written with the prefix given in prefix
     outputBinding:
       glob: $(inputs.prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ivar:1.4.4--h077b44d_0
+stdin: $(inputs.pileup.path)
 stdout: ivar_variants.out

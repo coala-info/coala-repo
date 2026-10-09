@@ -1,5 +1,11 @@
 # itsx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| itsx_ITSx | PASS |  |
+
 ## itsx_ITSx
 
 ### Tool Description

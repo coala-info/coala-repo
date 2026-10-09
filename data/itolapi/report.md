@@ -1,5 +1,11 @@
 # itolapi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| itolapi_itolexport.py | Not completed | needs an iTOL account and uploads to the iTOL server |
+
 ## Metadata
 - **Skill**: generated
 

@@ -1,5 +1,11 @@
 # jarvis3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jarvis3_JARVIS3 | Failed | tool bug: compression works, but --estimate writes no .iae file as documented, and -d decompression writes the correct file then exits 1 with 'unknown numerical symbol' |
+
 ## jarvis3_JARVIS3
 
 ### Tool Description

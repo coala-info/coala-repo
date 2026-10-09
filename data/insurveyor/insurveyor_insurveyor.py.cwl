@@ -6,12 +6,17 @@ doc: "INSurVeyor, an insertion caller [1.1.2].\n\nTool homepage: https://github.
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: Input bam file.
     inputBinding:
       position: 1
   - id: workdir
-    type: Directory
-    doc: Working directory for Surveyor to use.
+    type: string
+    doc: Name of the working directory for Surveyor to use (created before the run; holds all results).
     inputBinding:
       position: 2
   - id: reference
@@ -134,6 +139,31 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: workdir_out
+    type: Directory
+    doc: Working directory with the results (out.vcf.gz, out.pass.vcf.gz and intermediate files)
+    outputBinding:
+      glob: $(inputs.workdir)
+  - id: pass_vcf
+    type:
+      - 'null'
+      - File
+    doc: Insertions that pass all filters
+    outputBinding:
+      glob: $(inputs.workdir)/out.pass.vcf.gz
+  - id: all_vcf
+    type:
+      - 'null'
+      - File
+    doc: All called insertions, with the FILTER field filled in
+    outputBinding:
+      glob: $(inputs.workdir)/out.vcf.gz
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.workdir, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/insurveyor:1.1.3--h077b44d_2

@@ -92,7 +92,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output folder for partition files
+    doc: Output folder for partition files (created before the run)
+    default: partition_out
     inputBinding:
       position: 101
       prefix: --output-folder
@@ -229,6 +230,14 @@ outputs:
     doc: Output folder for partition files
     outputBinding:
       glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.sequence_files)
+      - entryname: '$(inputs.output_folder ? inputs.output_folder : "partition_out")'
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/impg:0.3.3--hdb3fbb7_0

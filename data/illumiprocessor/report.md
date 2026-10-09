@@ -1,5 +1,11 @@
 # illumiprocessor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| illumiprocessor | PASS |  |
+
 ## illumiprocessor
 
 ### Tool Description

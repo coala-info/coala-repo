@@ -1,5 +1,11 @@
 # ipyrad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ipyrad | PASS |  |
+
 ## ipyrad
 
 ### Tool Description

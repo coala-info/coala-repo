@@ -54,9 +54,9 @@ inputs:
   - id: allow_gt_match
     type:
       - 'null'
-      - boolean
-    doc: allow the GT match (gt matching weight must follow immediately after 
-      the switch)
+      - int
+    doc: allow the GT match; the value is the gt matching weight, given after the
+      switch
     inputBinding:
       position: 110
       prefix: -gt
@@ -221,6 +221,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Repeat tables (.html, .txt.html) and data files (.dat), masked sequence and flanking files, named after the input file and the parameters
+    outputBinding:
+      glob: $(inputs.file.basename).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/irf:3.09--h7b50bb2_0

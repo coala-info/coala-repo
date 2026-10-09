@@ -1,5 +1,11 @@
 # indelible CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| indelible | PASS | synthetic data: the tool is a sequence simulator; the control file is a small hand-made example and the output tree, lengths and divergence check out. |
+
 ## indelible
 
 ### Tool Description
@@ -7,14 +13,14 @@ INDELible V1.03 by Will Fletcher: Simulation began at Wed Feb 25 00:46:21 2026
 
 ### Metadata
 - **Docker Image**: biocontainers/indelible:v1.03-4-deb_cv1
-- **Homepage**: https://github.com/HurlesGroupSanger/indelible
+- **Homepage**: http://abacus.gene.ucl.ac.uk/software/indelible/
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/indelible/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
-- **GitHub**: https://github.com/HurlesGroupSanger/indelible
+- **GitHub**: http://abacus.gene.ucl.ac.uk/software/indelible/
 - **Stars**: N/A
 ### Original Help Text
 ```text

@@ -5,10 +5,17 @@ label: illumina-utils_iu-merge-pairs
 doc: "Merge Overlapping Paired-End Illumina Reads\n\nTool homepage: https://github.com/meren/illumina-utils"
 inputs:
   - id: config_file
-    type: string
+    type: File
     doc: User configuration to run
     inputBinding:
       position: 1
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTQ or FASTA files named in the config file, staged in the working
+      directory so that the relative names resolve.
   - id: compute_qual_dicts
     type:
       - 'null'
@@ -219,6 +226,10 @@ outputs:
     doc: Files written with the prefix given in output_file_prefix
     outputBinding:
       glob: $(inputs.output_file_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0

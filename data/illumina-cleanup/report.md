@@ -1,5 +1,11 @@
 # illumina-cleanup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| illumina-cleanup | Not completed | pipeline, skipped: the tool is a Nextflow pipeline. |
+
 ## illumina-cleanup
 
 ### Tool Description

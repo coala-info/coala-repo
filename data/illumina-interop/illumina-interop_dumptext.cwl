@@ -16,15 +16,16 @@ inputs:
     doc: Number of metrics to subsample
     inputBinding:
       position: 102
-      prefix: --subset
+      prefix: --subset=
+      separate: false
   - id: metric
     type:
       - 'null'
       - type: array
         items: string
         inputBinding:
-          prefix: --metric
-          separate: true
+          prefix: --metric=
+          separate: false
     doc: Name of metric to load, e.g. --metric=Tile to load TileMetricsOut.bin
     inputBinding:
       position: 102

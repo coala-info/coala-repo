@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igfinder.py
+baseCommand: igfinder
 label: igfinder
 doc: "ver 1.0 filtering fasta file for Ig analysis\n\nTool homepage: https://tx.bioreg.kyushu-u.ac.jp/igfinder"
 inputs:
@@ -25,7 +25,9 @@ inputs:
       position: 101
       prefix: -r
   - id: output_dir_path
-    type: string?
+    type:
+      - 'null'
+      - string
     doc: output_dir
     inputBinding:
       position: 102
@@ -37,7 +39,7 @@ outputs:
       - Directory
     doc: output_dir
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: "$(inputs.output_dir_path ? inputs.output_dir_path : inputs.input_filename.nameroot)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -9,14 +9,12 @@ inputs:
     type: string
     doc: Output covariance model file
     inputBinding:
-      position: 1
+      position: 200
   - id: msafile
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input multiple sequence alignment file
     inputBinding:
-      position: 2
+      position: 201
   - id: name
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # iqtree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| iqtree | PASS |  |
+
 ## iqtree
 
 ### Tool Description

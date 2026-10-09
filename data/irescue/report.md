@@ -1,5 +1,11 @@
 # irescue CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| irescue | PASS |  |
+
 ## irescue
 
 ### Tool Description

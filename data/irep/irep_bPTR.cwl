@@ -9,82 +9,128 @@ inputs:
     type:
       type: array
       items: File
-    doc: fasta file(s) (comma separated)
+    doc: fasta file(s) of complete genomes
     inputBinding:
-      position: 101
+      position: 1
       prefix: -f
-      itemSeparator: ','
-  - id: mapping_file
-    type:
-      - 'null'
-      - File
-    doc: mapping file (output from iRep)
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: max_scaffolds
-    type:
-      - 'null'
-      - int
-    doc: maximum number of scaffolds
-    inputBinding:
-      position: 101
-      prefix: -M
-  - id: min_length
-    type:
-      - 'null'
-      - int
-    doc: minimum length of scaffold
-    inputBinding:
-      position: 101
-      prefix: -L
-  - id: min_reads
-    type:
-      - 'null'
-      - int
-    doc: minimum number of reads
-    inputBinding:
-      position: 101
-      prefix: -n
-  - id: plot_ptr
-    type:
-      - 'null'
-      - boolean
-    doc: plot PTR (pdf)
-    inputBinding:
-      position: 101
-      prefix: -plot
   - id: sam_files
     type:
       type: array
       items: File
-    doc: sam file(s) (comma separated) - must be in the same order as fasta
+    doc: sorted sam file(s) for each sample (e.g. bowtie2 --reorder)
     inputBinding:
-      position: 101
+      position: 2
       prefix: -s
-      itemSeparator: ','
+  - id: method
+    type: string
+    doc: method for detecting Ori/Ter of replication, gc_skew or coverage
+    inputBinding:
+      position: 3
+      prefix: -m
+  - id: output_table
+    type: string
+    doc: filename for output table
+    inputBinding:
+      position: 4
+      prefix: -o
+  - id: precomputed_pickle
+    type:
+      - 'null'
+      - File
+    doc: pre-computed data from growth_ptr.py (pickle file)
+    inputBinding:
+      position: 5
+      prefix: -c
+  - id: output_pickle
+    type:
+      - 'null'
+      - string
+    doc: filename for output pickle file
+    inputBinding:
+      position: 6
+      prefix: -pickle
+  - id: plot_file
+    type:
+      - 'null'
+      - string
+    doc: 'filename for coverage profile plots (default: no plots)'
+    inputBinding:
+      position: 7
+      prefix: -plot
+  - id: max_mismatches
+    type:
+      - 'null'
+      - int
+    doc: 'maximum number of mapping mismatches allowed (default: no limit)'
+    inputBinding:
+      position: 8
+      prefix: -mm
+  - id: permutations
+    type:
+      - 'null'
+      - int
+    doc: 'number of permutations to perform (default: None)'
+    inputBinding:
+      position: 9
+      prefix: -p
+  - id: sort_sam
+    type:
+      - 'null'
+      - boolean
+    doc: sort the sam file
+    inputBinding:
+      position: 10
+      prefix: --sort
+  - id: sort_memory_gb
+    type:
+      - 'null'
+      - int
+    doc: 'max memory (GB) for sorting sam (default: 100)'
+    inputBinding:
+      position: 11
+      prefix: -b
+  - id: overwrite
+    type:
+      - 'null'
+      - boolean
+    doc: overwrite files
+    inputBinding:
+      position: 12
+      prefix: -ff
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of threads
+    doc: 'threads (default: 6)'
     inputBinding:
-      position: 101
+      position: 13
       prefix: -t
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 102
-      prefix: --output-file
 outputs:
-  - id: output_file
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: output_table_file
     type: File
-    doc: output file
+    doc: output table of peak-to-trough ratios
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_table)
+  - id: plot_output
+    type:
+      - 'null'
+      - File
+    doc: coverage profile plots (pdf)
+    outputBinding:
+      glob: $(inputs.plot_file || "bptr_no_plot_requested")
+  - id: pickle_output
+    type:
+      - 'null'
+      - File
+    doc: output pickle file
+    outputBinding:
+      glob: $(inputs.output_pickle || "bptr_no_pickle_requested")
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/irep:1.1.7--pyh24bf2e0_1
+stdout: bPTR.out

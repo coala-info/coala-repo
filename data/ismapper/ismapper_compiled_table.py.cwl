@@ -43,8 +43,6 @@ inputs:
       prefix: --query
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: gbk file of reference
     inputBinding:
       position: 101
@@ -61,8 +59,8 @@ inputs:
   - id: tables
     type:
       type: array
-      items: string
-    doc: tables to compile
+      items: File
+    doc: tables to compile (the *_table.txt files written by ismap)
     inputBinding:
       position: 101
       prefix: --tables
@@ -95,6 +93,13 @@ outputs:
     doc: Files written with the prefix given in out_prefix
     outputBinding:
       glob: $(inputs.out_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
+      - entry: $(inputs.query)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ismapper:2.0.2--pyhdfd78af_1

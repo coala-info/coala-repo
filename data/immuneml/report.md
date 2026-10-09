@@ -1,5 +1,11 @@
 # immuneml CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| immuneml_immune-ml | PASS |  |
+
 ## immuneml_immune-ml
 
 ### Tool Description

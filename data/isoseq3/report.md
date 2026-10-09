@@ -1,5 +1,20 @@
 # isoseq3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isoseq3_bcstats | PASS | synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available) |
+| isoseq3_cluster | PASS |  |
+| isoseq3_cluster2 | PASS |  |
+| isoseq3_collapse | PASS |  |
+| isoseq3_correct | PASS | synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available) |
+| isoseq3_dedup | PASS | synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available) |
+| isoseq3_groupdedup | PASS | synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available) |
+| isoseq3_refine | PASS |  |
+| isoseq3_summarize | PASS |  |
+| isoseq3_tag | PASS | synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available) |
+
 ## isoseq3_refine
 
 ### Tool Description
@@ -435,7 +450,6 @@ Copyright (C) 2004-2023     Pacific Biosciences of California, Inc.
 This program comes with ABSOLUTELY NO WARRANTY; it is intended for
 Research Use Only and not for use in diagnostic procedures.
 ```
-
 
 ## Metadata
 - **Skill**: generated

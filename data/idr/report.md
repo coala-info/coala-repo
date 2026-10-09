@@ -1,5 +1,11 @@
 # idr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| idr | PASS | rewrote CWL from help (removed invented flags, added all options); Galaxy replicate peak test matches expected output apart from decimal rounding |
+
 ## idr
 
 ### Tool Description

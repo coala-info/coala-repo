@@ -6,8 +6,9 @@ doc: "Space delimited list of data files to load\n\nTool homepage: http://www.br
 inputs:
   - id: data_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Space delimited list of data files to load
     inputBinding:
       position: 1
@@ -18,7 +19,7 @@ inputs:
     doc: Path or url to a batch command file
     inputBinding:
       position: 102
-      prefix: --batch.
+      prefix: --batch
   - id: coverage_file
     type:
       - 'null'
@@ -65,7 +66,7 @@ inputs:
   - id: igv_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to the local igv directory. Defaults to <user home>/igv
     inputBinding:
       position: 102

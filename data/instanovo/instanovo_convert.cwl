@@ -8,8 +8,8 @@ doc: "Convert data to SpectrumDataFrame and save as *.parquet file(s).\n\nTool h
   https://github.com/instadeepai/instanovo"
 inputs:
   - id: source
-    type: string
-    doc: Source file(s)
+    type: File
+    doc: Source file (mgf, mzML, mzXML, csv, parquet, ...)
     inputBinding:
       position: 1
   - id: target
@@ -66,12 +66,16 @@ outputs:
     type: stdout
     doc: Standard output
   - id: target_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Target folder to save data shards
     outputBinding:
       glob: $(inputs.target)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.target, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/instanovo:1.2.2--pyhdfd78af_1

@@ -1,5 +1,11 @@
 # isajson-validator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isajson-validator | PASS |  |
+
 ## isajson-validator
 
 ### Tool Description

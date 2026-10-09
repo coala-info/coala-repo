@@ -1,12 +1,18 @@
 # idba_subasm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| idba_subasm | PASS | image changed to bioconda idba_subasm (deb image lacks the tool), seed_contig made required and missing flags added; assembled the reads into 8 contigs |
+
 ## idba_subasm
 
 ### Tool Description
 Iterative De Bruijn Graph Assembler for assembling sub-reads.
 
 ### Metadata
-- **Docker Image**: biocontainers/idba:v1.1.3-3-deb_cv1
+- **Docker Image**: quay.io/biocontainers/idba_subasm:1.1.3a2--py311pl5321h8ddd9a4_9
 - **Homepage**: https://github.com/abishara/idba
 - **Package**: https://anaconda.org/channels/bioconda/packages/idba_subasm/overview
 - **Validation**: PASS

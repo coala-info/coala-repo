@@ -1,5 +1,11 @@
 # itsxpress CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| itsxpress | PASS |  |
+
 ## itsxpress
 
 ### Tool Description

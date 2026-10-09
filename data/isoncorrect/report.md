@@ -1,5 +1,12 @@
 # isoncorrect CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isoncorrect_isONcorrect | Failed | image problem: spoa (required consensus program) is not in the image, the run stops with FileNotFoundError 'spoa' |
+| isoncorrect_run_isoncorrect | Failed | image problem: spoa (required consensus program) is not in the image, the run stops with FileNotFoundError 'spoa' |
+
 ## isoncorrect_isONcorrect
 
 ### Tool Description

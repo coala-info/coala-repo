@@ -14,6 +14,13 @@ inputs:
     doc: Output directory path.
     inputBinding:
       position: 2
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Dataset and other files that the specification names with relative
+      paths. They are staged in the working directory.
   - id: logging
     type:
       - 'null'
@@ -43,6 +50,10 @@ outputs:
     doc: Output directory path.
     outputBinding:
       glob: $(inputs.result_path)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.data_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/immuneml:3.0.17--pyhdfd78af_0

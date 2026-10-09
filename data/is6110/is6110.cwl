@@ -7,6 +7,9 @@ inputs:
   - id: bam_file
     type: File
     doc: Input BAM file.
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 101
       prefix: --bam
@@ -35,11 +38,14 @@ inputs:
       position: 101
       prefix: --gff
   - id: is_sequences
-    type:
-      - 'null'
-      - File
-    doc: "Custom FASTA file containing IS sequences. If not\n                    \
-      \    provided, uses the default IS.fasta."
+    type: File
+    doc: "FASTA file containing the IS sequences (for example IS6110; the package
+      file is src/is6110/data/IS.fasta). The tool indexes it with samtools faidx, so
+      a .fai index must exist beside it: the default IS.fasta inside the read-only
+      container cannot be indexed."
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 101
       prefix: --is-sequences
@@ -70,6 +76,9 @@ inputs:
   - id: reference_genome
     type: File
     doc: Reference genome file.
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 101
       prefix: --ref

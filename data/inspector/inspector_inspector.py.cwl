@@ -131,18 +131,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thread
-  - id: output_dict_path
+  - id: outpath_path
     type: string
-    doc: Output or path parameter `output_dict_path`
+    doc: output directory
     inputBinding:
       position: 102
-      prefix: --output-dict
+      prefix: --outpath
 outputs:
-  - id: output_dict
+  - id: outpath
     type: Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dict_path)
+      glob: $(inputs.outpath_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

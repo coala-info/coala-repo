@@ -1,5 +1,18 @@
 # jannovar-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jannovar-cli_jannovar_annotate-csv | PASS |  |
+| jannovar-cli_jannovar_annotate-pos | PASS |  |
+| jannovar-cli_jannovar_annotate-vcf | PASS |  |
+| jannovar-cli_jannovar_hgvs-to-vcf | PASS |  |
+| jannovar-cli_jannovar_statistics | PASS |  |
+| jannovar-cli_jannovar_vardb-annotate | PASS |  |
+| jannovar-cli_jannovar_vardb-import | PASS |  |
+| jannovar-cli_jannovar_vardb-list | PASS | note: the tool lists the database name and version as fixed placeholders |
+
 ## jannovar-cli_jannovar_annotate-vcf
 
 ### Tool Description
@@ -235,5 +248,400 @@ Proxy Options:
   --https-proxy HTTPS_PROXY
                          Set HTTPS proxy to use, if any
   --ftp-proxy FTP_PROXY  Set FTP proxy to use, if any
+```
+
+## jannovar-cli_jannovar_annotate-pos
+
+### Tool Description
+Perform annotation of genomic changes given on the command line
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/jannovar-cli:0.36--hdfd78af_0
+- **Homepage**: https://github.com/charite/jannovar
+- **Package**: https://anaconda.org/channels/bioconda/packages/jannovar-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: jannovar-cli annotate-pos [-h] -d DATABASE -c GENOMIC_CHANGE
+                    [--show-all] [--no-3-prime-shifting]
+                    [--3-letter-amino-acids] [--version]
+                    [--report-no-progress] [-v] [-vv]
+                    [--http-proxy HTTP_PROXY] [--https-proxy HTTPS_PROXY]
+                    [--ftp-proxy FTP_PROXY]
+
+Perform annotation of genomic changes given on the command line
+
+optional arguments:
+  -h, --help             show this help message and exit
+  --version              Show Jannovar version
+
+Required arguments:
+  -d DATABASE, --database DATABASE
+                         Path to database .ser file
+  -c GENOMIC_CHANGE, --genomic-change GENOMIC_CHANGE
+                         Genomic change to annotate,  you can give multiple
+                         ones
+
+Optional Arguments:
+  --show-all             Show all effects
+  --no-3-prime-shifting  Disable shifting towards 3' of transcript
+  --3-letter-amino-acids
+                         Enable usage of 3 letter amino acid codes
+
+Verbosity Options:
+  --report-no-progress   Disable progress report, more quiet mode
+  -v, --verbose          Enable verbose mode
+  -vv, --very-verbose    Enable very verbose mode
+
+Proxy Options:
+  Configuration related to Proxy,  note  that environment variables *_proxy
+  and *_PROXY are also interpreted
+
+  --http-proxy HTTP_PROXY
+                         Set HTTP proxy to use, if any
+  --https-proxy HTTPS_PROXY
+                         Set HTTPS proxy to use, if any
+  --ftp-proxy FTP_PROXY  Set FTP proxy to use, if any
+
+Example: java -jar Jannovar.jar  annotate-pos  -d hg19_refseq.ser -c 'chr1:
+12345C>A'
+```
+
+## jannovar-cli_jannovar_annotate-csv
+
+### Tool Description
+Perform annotation of genomic changes given in a CSV file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/jannovar-cli:0.36--hdfd78af_0
+- **Homepage**: https://github.com/charite/jannovar
+- **Package**: https://anaconda.org/channels/bioconda/packages/jannovar-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: jannovar-cli annotate-csv [-h] -d DATABASE -i INPUT -c CHR -p POS
+                    -r REF -a ALT [-t {Default,TDF,RFC4180,Excel,MySQL}]
+                    [--header] [--show-all] [--no-3-prime-shifting]
+                    [--3-letter-amino-acids] [--version]
+                    [--report-no-progress] [-v] [-vv]
+                    [--http-proxy HTTP_PROXY] [--https-proxy HTTPS_PROXY]
+                    [--ftp-proxy FTP_PROXY]
+
+Perform annotation of genomic changes given on the command line
+
+optional arguments:
+  -h, --help             show this help message and exit
+  --version              Show Jannovar version
+
+Required arguments:
+  -d DATABASE, --database DATABASE
+                         Path to database .ser file
+  -i INPUT, --input INPUT
+                         CSV file
+  -c CHR, --chr CHR      Column of chr (1 based)
+  -p POS, --pos POS      Column of pos (1 based)
+  -r REF, --ref REF      Column of ref (1 based)
+  -a ALT, --alt ALT      Column of alt (1 based)
+
+Additional CSV arguments (optional):
+  -t {Default,TDF,RFC4180,Excel,MySQL}, --type {Default,TDF,RFC4180,Excel,MySQL}
+                         Type of csv file. 
+  --header               Set if the file contains a header. 
+
+Optional Arguments:
+  --show-all             Show all effects
+  --no-3-prime-shifting  Disable shifting towards 3' of transcript
+  --3-letter-amino-acids
+                         Enable usage of 3 letter amino acid codes
+
+Verbosity Options:
+  --report-no-progress   Disable progress report, more quiet mode
+  -v, --verbose          Enable verbose mode
+  -vv, --very-verbose    Enable very verbose mode
+
+Proxy Options:
+  Configuration related to Proxy,  note  that environment variables *_proxy
+  and *_PROXY are also interpreted
+
+  --http-proxy HTTP_PROXY
+                         Set HTTP proxy to use, if any
+  --https-proxy HTTPS_PROXY
+                         Set HTTPS proxy to use, if any
+  --ftp-proxy FTP_PROXY  Set FTP proxy to use, if any
+
+Example: java -jar Jannovar.jar annotate-csv -d hg19_refseq.ser -c 1 -p 2 -
+r 3 -r 4 -t TDF --header -i input.csv
+```
+
+## jannovar-cli_jannovar_statistics
+
+### Tool Description
+Compute statistics about variants in a VCF file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/jannovar-cli:0.36--hdfd78af_0
+- **Homepage**: https://github.com/charite/jannovar
+- **Package**: https://anaconda.org/channels/bioconda/packages/jannovar-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: jannovar-cli statistics [-h] -i INPUT_VCF -o OUTPUT_REPORT
+                    -d DATABASE [--version] [--report-no-progress] [-v]
+                    [-vv] [--http-proxy HTTP_PROXY]
+                    [--https-proxy HTTPS_PROXY] [--ftp-proxy FTP_PROXY]
+
+Compute statistics about variants in VCF file
+
+optional arguments:
+  -h, --help             show this help message and exit
+  --version              Show Jannovar version
+
+Required arguments:
+  -i INPUT_VCF, --input-vcf INPUT_VCF
+                         Path to input VCF file
+  -o OUTPUT_REPORT, --output-report OUTPUT_REPORT
+                         Path to output report TXT file
+  -d DATABASE, --database DATABASE
+                         Path to database .ser file
+
+Verbosity Options:
+  --report-no-progress   Disable progress report, more quiet mode
+  -v, --verbose          Enable verbose mode
+  -vv, --very-verbose    Enable very verbose mode
+
+Proxy Options:
+  Configuration related to Proxy,  note  that environment variables *_proxy
+  and *_PROXY are also interpreted
+
+  --http-proxy HTTP_PROXY
+                         Set HTTP proxy to use, if any
+  --https-proxy HTTPS_PROXY
+                         Set HTTPS proxy to use, if any
+  --ftp-proxy FTP_PROXY  Set FTP proxy to use, if any
+```
+
+## jannovar-cli_jannovar_vardb-import
+
+### Tool Description
+Import variants from VCF files into a Jannovar H2 vardb file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/jannovar-cli:0.36--hdfd78af_0
+- **Homepage**: https://github.com/charite/jannovar
+- **Package**: https://anaconda.org/channels/bioconda/packages/jannovar-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: jannovar-cli vardb-import [-h] --genome-build GENOME_BUILD
+                    --database-file DATABASE_FILE
+                    --vcf-files VCF_FILES [VCF_FILES ...]
+                    --table-name TABLE_NAME --db-name DB_NAME
+                    --db-version DB_VERSION --default-prefix DEFAULT_PREFIX
+                    --vcf-info-fields VCF_INFO_FIELDS [VCF_INFO_FIELDS ...]
+                    [--truncate-table] [--version] [--report-no-progress]
+                    [-v] [-vv] [--http-proxy HTTP_PROXY]
+                    [--https-proxy HTTPS_PROXY] [--ftp-proxy FTP_PROXY]
+
+Import into Jannovar H2 vardb file
+
+optional arguments:
+  -h, --help             show this help message and exit
+  --version              Show Jannovar version
+
+Required arguments:
+  --genome-build GENOME_BUILD
+                         String to use for genome build
+  --database-file DATABASE_FILE
+                         Path to database file
+  --vcf-files VCF_FILES [VCF_FILES ...]
+                         Path to VCF file(s)
+  --table-name TABLE_NAME
+                         Name of table after import
+  --db-name DB_NAME      Datbase name
+  --db-version DB_VERSION
+                         Database version
+  --default-prefix DEFAULT_PREFIX
+                         Default prefix for annotating
+  --vcf-info-fields VCF_INFO_FIELDS [VCF_INFO_FIELDS ...]
+                         INFO fields to import
+  --truncate-table       Truncate table before first import
+
+Verbosity Options:
+  --report-no-progress   Disable progress report, more quiet mode
+  -v, --verbose          Enable verbose mode
+  -vv, --very-verbose    Enable very verbose mode
+
+Proxy Options:
+  Configuration related to Proxy,  note  that environment variables *_proxy
+  and *_PROXY are also interpreted
+
+  --http-proxy HTTP_PROXY
+                         Set HTTP proxy to use, if any
+  --https-proxy HTTPS_PROXY
+                         Set HTTPS proxy to use, if any
+  --ftp-proxy FTP_PROXY  Set FTP proxy to use, if any
+```
+
+## jannovar-cli_jannovar_vardb-list
+
+### Tool Description
+List contents of a Jannovar H2 vardb file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/jannovar-cli:0.36--hdfd78af_0
+- **Homepage**: https://github.com/charite/jannovar
+- **Package**: https://anaconda.org/channels/bioconda/packages/jannovar-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: jannovar-cli vardb-list [-h] --database-file DATABASE_FILE
+                    [--version] [--report-no-progress] [-v] [-vv]
+                    [--http-proxy HTTP_PROXY] [--https-proxy HTTPS_PROXY]
+                    [--ftp-proxy FTP_PROXY]
+
+List contents of vardb file
+
+optional arguments:
+  -h, --help             show this help message and exit
+  --version              Show Jannovar version
+
+Required arguments:
+  --database-file DATABASE_FILE
+                         Path to database file
+
+Verbosity Options:
+  --report-no-progress   Disable progress report, more quiet mode
+  -v, --verbose          Enable verbose mode
+  -vv, --very-verbose    Enable very verbose mode
+
+Proxy Options:
+  Configuration related to Proxy,  note  that environment variables *_proxy
+  and *_PROXY are also interpreted
+
+  --http-proxy HTTP_PROXY
+                         Set HTTP proxy to use, if any
+  --https-proxy HTTPS_PROXY
+                         Set HTTPS proxy to use, if any
+  --ftp-proxy FTP_PROXY  Set FTP proxy to use, if any
+```
+
+## jannovar-cli_jannovar_vardb-annotate
+
+### Tool Description
+Annotate a VCF file using a Jannovar H2 vardb file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/jannovar-cli:0.36--hdfd78af_0
+- **Homepage**: https://github.com/charite/jannovar
+- **Package**: https://anaconda.org/channels/bioconda/packages/jannovar-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: jannovar-cli vardb-annotate [-h] --genome-build GENOME_BUILD
+                    --database-file DATABASE_FILE --input-vcf INPUT_VCF
+                    --output-vcf OUTPUT_VCF
+                    --table-names TABLE_NAMES [TABLE_NAMES ...] [--version]
+                    [--report-no-progress] [-v] [-vv]
+                    [--http-proxy HTTP_PROXY] [--https-proxy HTTPS_PROXY]
+                    [--ftp-proxy FTP_PROXY]
+
+Annotate using Jannovar H2 vardb file
+
+optional arguments:
+  -h, --help             show this help message and exit
+  --version              Show Jannovar version
+
+Required arguments:
+  --genome-build GENOME_BUILD
+                         String to use for genome build
+  --database-file DATABASE_FILE
+                         Path to database file
+  --input-vcf INPUT_VCF  Path to input VCF file
+  --output-vcf OUTPUT_VCF
+                         Name to output VCf file
+  --table-names TABLE_NAMES [TABLE_NAMES ...]
+                         Names of tables to use for annotating
+
+Verbosity Options:
+  --report-no-progress   Disable progress report, more quiet mode
+  -v, --verbose          Enable verbose mode
+  -vv, --very-verbose    Enable very verbose mode
+
+Proxy Options:
+  Configuration related to Proxy,  note  that environment variables *_proxy
+  and *_PROXY are also interpreted
+
+  --http-proxy HTTP_PROXY
+                         Set HTTP proxy to use, if any
+  --https-proxy HTTPS_PROXY
+                         Set HTTPS proxy to use, if any
+  --ftp-proxy FTP_PROXY  Set FTP proxy to use, if any
+```
+
+## jannovar-cli_jannovar_hgvs-to-vcf
+
+### Tool Description
+Project transcript-level changes (HGVS) to chromosome-level changes in a VCF file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/jannovar-cli:0.36--hdfd78af_0
+- **Homepage**: https://github.com/charite/jannovar
+- **Package**: https://anaconda.org/channels/bioconda/packages/jannovar-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: jannovar-cli hgvs-to-vcf [-h] -r REFERENCE_FASTA -d DATABASE
+                    -i INPUT_TXT -o OUTPUT_VCF [--show-all SHOW_ALL]
+                    [--no-3-prime-shifting] [--3-letter-amino-acids]
+                    [--version] [--report-no-progress] [-v] [-vv]
+                    [--http-proxy HTTP_PROXY] [--https-proxy HTTPS_PROXY]
+                    [--ftp-proxy FTP_PROXY]
+
+Project transcript-level changes to chromosome level ones
+
+optional arguments:
+  -h, --help             show this help message and exit
+  --version              Show Jannovar version
+
+Required arguments:
+  -r REFERENCE_FASTA, --reference-fasta REFERENCE_FASTA
+                         Path to reference FASTA file
+  -d DATABASE, --database DATABASE
+                         Path to database .ser file
+  -i INPUT_TXT, --input-txt INPUT_TXT
+                         Input file  with  HGVS  transcript-level  changes,
+                         line-by-line
+  -o OUTPUT_VCF, --output-vcf OUTPUT_VCF
+                         Output VCF file with chromosome-level changes
+
+Optional Arguments:
+  --show-all SHOW_ALL    Show all effects
+  --no-3-prime-shifting  Disable shifting towards 3' of transcript
+  --3-letter-amino-acids
+                         Enable usage of 3 letter amino acid codes
+
+Verbosity Options:
+  --report-no-progress   Disable progress report, more quiet mode
+  -v, --verbose          Enable verbose mode
+  -vv, --very-verbose    Enable very verbose mode
+
+Proxy Options:
+  Configuration related to Proxy,  note  that environment variables *_proxy
+  and *_PROXY are also interpreted
+
+  --http-proxy HTTP_PROXY
+                         Set HTTP proxy to use, if any
+  --https-proxy HTTPS_PROXY
+                         Set HTTPS proxy to use, if any
+  --ftp-proxy FTP_PROXY  Set FTP proxy to use, if any
+
+Example: java -jar Jannovar.jar tx-to-chrom -i in.txt -o out.vcf
 ```
 

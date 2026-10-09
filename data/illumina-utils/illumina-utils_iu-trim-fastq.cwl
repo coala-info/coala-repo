@@ -9,6 +9,11 @@ inputs:
     doc: FASTQ file to be trimmed
     inputBinding:
       position: 1
+  - id: output_file_name
+    type: string
+    doc: 'Where trimmed sequences will be written (default: [-i]-TRIMMED-TO-[-l])'
+    inputBinding:
+      position: 2
   - id: trim_from
     type:
       - 'null'
@@ -30,7 +35,9 @@ outputs:
     type: File
     doc: 'Where trimmed sequences will be written (default: [-i]-TRIMMED-TO-[-l])'
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file_name)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0

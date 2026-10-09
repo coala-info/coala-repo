@@ -1,5 +1,11 @@
 # isonform CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isonform_isONform_parallel | PASS |  |
+
 ## isonform_isONform_parallel
 
 ### Tool Description

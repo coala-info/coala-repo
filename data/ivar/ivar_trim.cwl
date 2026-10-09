@@ -37,7 +37,7 @@ inputs:
   - id: min_length
     type:
       - 'null'
-      - string
+      - int
     doc: 'Minimum length of read to retain after trimming (Default: 50% average length
       of the first 1000 reads)'
     inputBinding:

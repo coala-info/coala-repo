@@ -1,5 +1,11 @@
 # isatab2json CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isatab2json | PASS |  |
+
 ## isatab2json
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # imseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| imseq | PASS |  |
+
 ## imseq
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # isatab-validator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isatab-validator | PASS |  |
+
 ## isatab-validator
 
 ### Tool Description

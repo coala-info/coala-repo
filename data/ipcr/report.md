@@ -1,5 +1,11 @@
 # ipcr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ipcr | PASS |  |
+
 ## ipcr
 
 ### Tool Description

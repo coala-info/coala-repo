@@ -1,5 +1,20 @@
 # isorefiner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isorefiner_filter | PASS | synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation |
+| isorefiner_map | PASS | synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation |
+| isorefiner_refine | PASS | synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation |
+| isorefiner_run_bambu | PASS | synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation |
+| isorefiner_run_espresso | Failed | image problem: ESPRESSO_S.pl calls sort --buffer-size, but the image only has BusyBox sort, so the run stops with exit status 25 |
+| isorefiner_run_isoquant | PASS | synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation |
+| isorefiner_run_rnabloom | PASS | synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation |
+| isorefiner_run_stringtie | PASS | synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation |
+| isorefiner_trans_struct_wf | Not completed | pipeline, skipped |
+| isorefiner_trim | PASS | synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation |
+
 ## isorefiner_trans_struct_wf
 
 ### Tool Description

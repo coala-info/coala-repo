@@ -6,43 +6,43 @@ doc: "Iterative Refinement Meta-Assembler (IRMA)\n\nTool homepage: https://wonde
 inputs:
   - id: module_or_config
     type: string
-    doc: MODULE or MODULE-CONFIG
+    doc: MODULE (for example FLU, FLU-avian, FLU-utr, FLU-pacbio, CoV, EBOLA, RSV) or MODULE-CONFIG
     inputBinding:
       position: 1
-  - id: fastq_gz_or_fastq
+  - id: reads_1
     type: File
-    doc: fastq or fastq.gz (for single-end)
+    doc: R1.fastq.gz or R1.fastq for paired-end, or the single fastq or fastq.gz file for single-end
     inputBinding:
       position: 2
-  - id: r1_fastq_gz_or_fastq
-    type: File
-    doc: R1.fastq.gz or R1.fastq (for paired-end)
-    inputBinding:
-      position: 3
-  - id: r2_fastq_gz_or_fastq
+  - id: reads_2
     type:
       - 'null'
       - File
-    doc: R2.fastq.gz or R2.fastq (for paired-end)
+    doc: R2.fastq.gz or R2.fastq (paired-end only)
     inputBinding:
-      position: 4
+      position: 3
   - id: sample_name
     type: string
-    doc: Sample name (optionally with path)
+    doc: Sample name (optionally with path). IRMA writes its results into a directory with this name.
     inputBinding:
-      position: 5
+      position: 4
   - id: external_config
     type:
       - 'null'
-      - string
+      - File
     doc: Path to a valid configuration file
     inputBinding:
-      position: 106
+      position: 5
       prefix: --external-config
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_directory
+    type: Directory
+    doc: IRMA results directory (consensus, amended consensus, tables, logs)
+    outputBinding:
+      glob: $(inputs.sample_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/irma:1.2.0--pl5321hdfd78af_0

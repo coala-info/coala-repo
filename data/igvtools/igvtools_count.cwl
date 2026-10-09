@@ -4,90 +4,106 @@ baseCommand:
   - igvtools
   - count
 label: igvtools_count
-doc: "The count command computes alignment coverage of an alignment file. The output
-  is a .tdf file, which can be loaded into IGV for viewing.\n\nTool homepage: http://www.broadinstitute.org/igv/"
+doc: "Compute average feature density (coverage) over a window across the genome for an alignment or bed file. Output is a .tdf and/or .wig file.\n\nTool homepage: http://www.broadinstitute.org/igv/"
 inputs:
   - id: input_file
     type: File
-    doc: 'Input file (supported formats: .bam, .sam, .alignment, .psl, .bed, .gff)'
+    doc: "Input file (.sam, .bam, .aligned, .sorted.txt, .bed or .bam.list); must be sorted by start position"
+    inputBinding:
+      position: 10
+  - id: output_name
+    type: string
+    doc: "Output file name: .tdf, .wig, or both separated by a comma (outputBinary.tdf,outputText.wig)"
+    inputBinding:
+      position: 11
+  - id: genome
+    type: [File, string]
+    doc: "Genome id or path to a chrom.sizes, .genome or genome json file (a FASTA file also works)"
+    secondaryFiles:
+      - pattern: .fai
+        required: false
+    inputBinding:
+      position: 12
+  - id: max_zoom
+    type: ['null', int]
+    doc: "Maximum zoom level to precompute"
     inputBinding:
       position: 1
-  - id: genome
-    type: string
-    doc: Genome ID (e.g., hg19) or path to a .genome file
-    inputBinding:
-      position: 2
-  - id: ext_factor
-    type:
-      - 'null'
-      - int
-    doc: The distance to extend each read
-    inputBinding:
-      position: 103
-      prefix: --extFactor
-  - id: functions
-    type:
-      - 'null'
-      - string
-    doc: Comma-separated list of window functions (min, max, mean, median, p2, 
-      p10, p90, p98)
-    inputBinding:
-      position: 103
-      prefix: --functions
-  - id: include_duplicates
-    type:
-      - 'null'
-      - boolean
-    doc: Include duplicate reads in the coverage calculation
-    inputBinding:
-      position: 103
-      prefix: --includeDuplicates
-  - id: max_zoom
-    type:
-      - 'null'
-      - int
-    doc: The maximum zoom level to compute coverage for
-    inputBinding:
-      position: 103
       prefix: --maxZoom
-  - id: min_map_quality
-    type:
-      - 'null'
-      - int
-    doc: Minimum mapping quality to include a read
-    inputBinding:
-      position: 103
-      prefix: --minMapQuality
-  - id: pairs
-    type:
-      - 'null'
-      - boolean
-    doc: Compute coverage using paired-end fragments
-    inputBinding:
-      position: 103
-      prefix: --pairs
-  - id: strands
-    type:
-      - 'null'
-      - string
-    doc: Compute coverage for strands separately (read, first, second)
-    inputBinding:
-      position: 103
-      prefix: --strands
   - id: window_size
-    type:
-      - 'null'
-      - int
-    doc: The window size over which coverage is averaged
+    type: ['null', int]
+    doc: "Window size over which coverage is averaged (default 25 bp)"
     inputBinding:
-      position: 103
+      position: 1
       prefix: --windowSize
+  - id: ext_factor
+    type: ['null', int]
+    doc: "Extend the read or feature by this distance (bp) before counting"
+    inputBinding:
+      position: 1
+      prefix: --extFactor
+  - id: pre_ext_factor
+    type: ['null', int]
+    doc: "Extend the read upstream from the 5' end by this distance"
+    inputBinding:
+      position: 1
+      prefix: --preExtFactor
+  - id: post_ext_factor
+    type: ['null', int]
+    doc: "Downstream extent from the 5' end (overrides read length)"
+    inputBinding:
+      position: 1
+      prefix: --postExtFactor
+  - id: window_functions
+    type: ['null', string]
+    doc: "Comma delimited window functions: min, max, mean, median, p2, p10, p90, p98"
+    inputBinding:
+      position: 1
+      prefix: --windowFunctions
+  - id: strands
+    type: ['null', string]
+    doc: "Count each strand separately: read or first"
+    inputBinding:
+      position: 1
+      prefix: --strands
+  - id: query
+    type: ['null', string]
+    doc: "Only count a region, chr:start-end (input must be indexed)"
+    inputBinding:
+      position: 1
+      prefix: --query
+  - id: min_map_quality
+    type: ['null', int]
+    doc: "Minimum mapping quality of reads to include (default 0)"
+    inputBinding:
+      position: 1
+      prefix: --minMapQuality
+  - id: bases
+    type: ['null', boolean]
+    doc: "Count the occurrence of each base (A,G,C,T,N)"
+    inputBinding:
+      position: 1
+      prefix: --bases
+  - id: include_duplicates
+    type: ['null', boolean]
+    doc: "Include duplicate alignments in count"
+    inputBinding:
+      position: 1
+      prefix: --includeDuplicates
+  - id: pairs
+    type: ['null', boolean]
+    doc: "Compute coverage from paired alignments counting the entire insert as covered (proper pairs only)"
+    inputBinding:
+      position: 1
+      prefix: --pairs
 outputs:
   - id: output_file
-    type: File
-    doc: Output file (must end in .tdf or .wig)
+    type: File[]
+    doc: "Coverage output (.tdf or .wig)"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name.split(','))
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igvtools:2.17.3--hdfd78af_0

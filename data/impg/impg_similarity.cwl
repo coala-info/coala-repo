@@ -287,6 +287,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.sequence_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/impg:0.3.3--hdb3fbb7_0

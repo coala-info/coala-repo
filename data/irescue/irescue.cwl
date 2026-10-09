@@ -8,6 +8,9 @@ inputs:
   - id: bam_file
     type: File
     doc: sc-RNA-seq reads aligned to a reference genome (required).
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 101
       prefix: --bam
@@ -199,7 +202,9 @@ outputs:
       - Directory
     doc: 'Output directory name (default: irescue_out).'
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir || "irescue_out")
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/irescue:1.2.0--pyhdfd78af_0

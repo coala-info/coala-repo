@@ -30,16 +30,22 @@ inputs:
       position: 101
       prefix: --table-key
   - id: tsv_path
-    type: File
-    doc: path to the tsv table
+    type: string
+    doc: path of the tsv table to write
     inputBinding:
       position: 101
       prefix: --tsv-path
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: tsv
+    type: File
+    doc: The extracted table in tsv format
+    outputBinding:
+      glob: $(inputs.tsv_path)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: JASS_PROJECTS_DIR
+        envValue: $(runtime.outdir)/jass_projects
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jass:2.3--pyhca03a8a_0
-stdout: jass_extract-tsv.out

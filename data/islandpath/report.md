@@ -1,5 +1,11 @@
 # islandpath CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| islandpath | PASS |  |
+
 ## islandpath
 
 ### Tool Description

@@ -10,6 +10,8 @@ inputs:
     type: File
     doc: Input BAM file  trimmed with ‘ivar trim’. Must be sorted which can be 
       done using `samtools sort`.
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: -i

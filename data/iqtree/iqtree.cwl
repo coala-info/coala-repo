@@ -116,14 +116,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --mdef
-  - id: alisim_model
-    type:
-      - 'null'
-      - string
-    doc: Specify the evolutionary model. See Manual for more detail
-    inputBinding:
-      position: 101
-      prefix: --m
   - id: alisim_no_copy_gaps
     type:
       - 'null'
@@ -469,30 +461,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --cmin
-  - id: complex_model_ascertainment
-    type:
-      - 'null'
-      - boolean
-    doc: Ascertainment bias correction
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: complex_model_freq_mixture
-    type:
-      - 'null'
-      - string
-    doc: Frequency mixture model with K components
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: complex_model_mixture
-    type:
-      - 'null'
-      - string
-    doc: Mixture model with K components
-    inputBinding:
-      position: 101
-      prefix: -m
   - id: compute_connet
     type:
       - 'null'
@@ -661,79 +629,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -n
-  - id: freq_empirical
-    type:
-      - 'null'
-      - boolean
-    doc: Empirically counted frequencies from alignment
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: freq_equal
-    type:
-      - 'null'
-      - boolean
-    doc: Equal frequencies
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: freq_f1x4
-    type:
-      - 'null'
-      - boolean
-    doc: Equal NT frequencies over three codon positions
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: freq_f3x4
-    type:
-      - 'null'
-      - boolean
-    doc: Unequal NT frequencies over three codon positions
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: freq_fabcd
-    type:
-      - 'null'
-      - string
-    doc: "4-digit constraint on ACGT frequency\n                       (e.g. +F1221
-      means f_A=f_T, f_C=f_G)"
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: freq_fmk
-    type:
-      - 'null'
-      - boolean
-    doc: For DNA, freq(A+C)=1/2=freq(G+T)
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: freq_fry
-    type:
-      - 'null'
-      - boolean
-    doc: For DNA, freq(A+G)=1/2=freq(C+T)
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: freq_fu
-    type:
-      - 'null'
-      - boolean
-    doc: Amino-acid frequencies given protein matrix
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: freq_fws
-    type:
-      - 'null'
-      - boolean
-    doc: For DNA, freq(A+T)=1/2=freq(C+G)
-    inputBinding:
-      position: 101
-      prefix: -m
   - id: freq_max
     type:
       - 'null'
@@ -742,14 +637,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --freq-max
-  - id: freq_optimized
-    type:
-      - 'null'
-      - boolean
-    doc: Optimized frequencies by maximum-likelihood
-    inputBinding:
-      position: 101
-      prefix: -m
   - id: gamma_median
     type:
       - 'null'
@@ -930,6 +817,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --madd
+      itemSeparator: ','
   - id: mdef_file
     type:
       - 'null'
@@ -1015,6 +903,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --mfreq
+      itemSeparator: ','
   - id: mix_optimize
     type:
       - 'null'
@@ -1023,78 +912,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --mix-opt
-  - id: model_extended
-    type:
-      - 'null'
-      - boolean
-    doc: Extended model selection with FreeRate heterogeneity
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: model_extended_infer
-    type:
-      - 'null'
-      - boolean
-    doc: Extended model selection followed by tree inference
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: model_lie_markov
-    type:
-      - 'null'
-      - string
-    doc: Additionally test Lie Markov models
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: model_lie_markov_mk
-    type:
-      - 'null'
-      - string
-    doc: Additionally test Lie Markov models with MK symmetry
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: model_lie_markov_ry
-    type:
-      - 'null'
-      - string
-    doc: Additionally test Lie Markov models with RY symmetry
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: model_lie_markov_ss
-    type:
-      - 'null'
-      - string
-    doc: Additionally test strand-symmetric models
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: model_lie_markov_ws
-    type:
-      - 'null'
-      - string
-    doc: Additionally test Lie Markov models with WS symmetry
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: model_test_infer
-    type:
-      - 'null'
-      - boolean
-    doc: Standard model selection followed by tree inference
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: model_testonly
-    type:
-      - 'null'
-      - boolean
-    doc: Standard model selection (like jModelTest, ProtTest)
-    inputBinding:
-      position: 101
-      prefix: -m
   - id: modelomatic
     type:
       - 'null'
@@ -1113,6 +930,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --mrate
+      itemSeparator: ','
   - id: mset_list
     type:
       - 'null'
@@ -1238,6 +1056,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -o
+      itemSeparator: ','
   - id: partition_dir
     type:
       - 'null'
@@ -1345,58 +1164,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
-  - id: pomo_gamma
-    type:
-      - 'null'
-      - int
-    doc: Discrete Gamma rate with n categories (default n=4)
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: pomo_model
-    type:
-      - 'null'
-      - string
-    doc: DNA substitution model (see above) used with PoMo
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: pomo_popsize
-    type:
-      - 'null'
-      - int
-    doc: 'Virtual population size (default: 9)'
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: pomo_s
-    type:
-      - 'null'
-      - boolean
-    doc: Sampled sampling
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: pomo_wb
-    type:
-      - 'null'
-      - boolean
-    doc: Weighted binomial sampling
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: pomo_wh
-    type:
-      - 'null'
-      - boolean
-    doc: Weighted hypergeometric sampling
-    inputBinding:
-      position: 101
-      prefix: -m
   - id: prefix
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'Prefix for all output files (default: aln/partition)'
     inputBinding:
       position: 101
@@ -1449,78 +1218,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rand
-  - id: rate_freerate
-    type:
-      - 'null'
-      - int
-    doc: FreeRate model with n categories (default n=4)
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: rate_freerate_unlinked
-    type:
-      - 'null'
-      - int
-    doc: FreeRate model with unlinked model parameters
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: rate_gamma
-    type:
-      - 'null'
-      - int
-    doc: Discrete Gamma model with n categories (default n=4)
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: rate_gamma_unlinked
-    type:
-      - 'null'
-      - int
-    doc: Discrete Gamma model with unlinked model parameters
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: rate_heterotachy
-    type:
-      - 'null'
-      - int
-    doc: Heterotachy model with n classes
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: rate_heterotachy_unlinked
-    type:
-      - 'null'
-      - int
-    doc: Heterotachy model with n classes and unlinked parameters
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: rate_invariable
-    type:
-      - 'null'
-      - boolean
-    doc: A proportion of invariable sites
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: rate_invariable_freerate
-    type:
-      - 'null'
-      - int
-    doc: Invariable sites plus FreeRate model with n categories
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: rate_invariable_gamma
-    type:
-      - 'null'
-      - int
-    doc: Invariable sites plus Gamma model with n categories
-    inputBinding:
-      position: 101
-      prefix: -m
   - id: rcluster_max_pairs
     type:
       - 'null'
@@ -1733,7 +1430,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Model name string (e.g. GTR+F+I+G)
+    doc: 'Model name string (e.g. GTR+F+I+G), or MFP, MF, TEST, TESTONLY for ModelFinder; also the AliSim model'
     inputBinding:
       position: 101
       prefix: -m

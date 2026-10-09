@@ -21,8 +21,8 @@ inputs:
   - id: conta_samples
     type:
       - 'null'
-      - float
-    doc: Contamination parameter for the AberrantSamples function
+      - string
+    doc: Contamination parameter for the AberrantSamples function (auto or a number; default auto)
     inputBinding:
       position: 101
       prefix: --contaSamples
@@ -91,15 +91,15 @@ inputs:
   - id: save_results
     type:
       - 'null'
-      - boolean
-    doc: A boolean, if True, saves the results in a .tsv file
+      - string
+    doc: A boolean given as a value (any non-empty text means True), if True, saves the results in a .tsv file
     inputBinding:
       position: 101
       prefix: --save
   - id: score_threshold
     type:
       - 'null'
-      - float
+      - int
     doc: Threshold on the localisation score
     inputBinding:
       position: 101
@@ -138,8 +138,8 @@ inputs:
       prefix: -rm
 outputs:
   - id: output_report
-    type: File
-    doc: Path to the output report
+    type: Directory
+    doc: Output report directory (run.html plus one html page per detected region)
     outputBinding:
       glob: $(inputs.output_report_path)
   - id: reads_matrix_output

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: jamm_JAMM.sh
+baseCommand: JAMM.sh
 label: jamm_JAMM.sh
 doc: "Welcome to JAMM v1.0.7rev5 (GNU GPLv3). Copyright (C) 2014-2020  Mahmoud Ibrahim.\n\
   \nThis program comes with ABSOLUTELY NO WARRANTY; for details visit http://www.gnu.org/licenses/gpl.html.
@@ -119,11 +119,14 @@ inputs:
       prefix: -e
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output directory (required)
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output with the JAMM log
   - id: output_dir
     type: Directory
     doc: Output directory (required)
@@ -134,3 +137,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jamm:1.0.8.0--hdfd78af_1
+stdout: jamm_JAMM.sh.out

@@ -2,372 +2,327 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: jasmine
 label: jasminesv_jasmine
-doc: "Merge variants from multiple VCF files.\n\nTool homepage: https://github.com/mkirsche/Jasmine"
+doc: "Jasmine merges structural variants (SVs) from multiple VCF files.\n\nTool homepage: https://github.com/mkirsche/Jasmine"
 inputs:
-  - id: allow_intrasample
+  - id: staged_files
     type:
       - 'null'
-      - boolean
-    doc: allow variants in the same sample to be merged
-    inputBinding:
-      position: 101
-      prefix: --allow_intrasample
-  - id: bam_list
-    type:
-      - 'null'
-      - File
-    doc: a file listing paths to BAMs in the same order as the VCFs
-    inputBinding:
-      position: 101
-  - id: centroid_merging
-    type:
-      - 'null'
-      - boolean
-    doc: require every group to have a centroid which is within the distance 
-      threshold of each variant
-    inputBinding:
-      position: 101
-      prefix: --centroid_merging
-  - id: chr_norm_file
-    type:
-      - 'null'
-      - File
-    doc: the path to a file containing chromosome name mappings, if they are 
-      being normalized
-    inputBinding:
-      position: 101
-  - id: clique_merging
-    type:
-      - 'null'
-      - boolean
-    doc: require every group to have each pair within in it be mergeable
-    inputBinding:
-      position: 101
-      prefix: --clique_merging
-  - id: comma_filelist
-    type:
-      - 'null'
-      - boolean
-    doc: input VCFs are given comma-separated instead of providing a txt file
-    inputBinding:
-      position: 101
-      prefix: --comma_filelist
-  - id: default_zero_genotype
-    type:
-      - 'null'
-      - boolean
-    doc: marks genotype as 0|0 instead of ./. for any samples in which a merged 
-      variant is absent
-    inputBinding:
-      position: 101
-      prefix: --default_zero_genotype
-  - id: dup_to_ins
-    type:
-      - 'null'
-      - boolean
-    doc: convert duplications to insertions for SV merging and then convert them
-      back
-    inputBinding:
-      position: 101
-      prefix: --dup_to_ins
+      - type: array
+        items: File
+    doc: Files named in file_list, bam_list or sample_dists (the VCFs and BAMs), staged in the working directory so the names resolve.
   - id: file_list
     type: File
-    doc: a file listing paths to unzipped VCF files to merge (on separate lines)
+    doc: "a file listing paths to unzipped VCF files to merge (on separate lines)"
     inputBinding:
       position: 101
+      prefix: file_list=
+      separate: false
+  - id: out_file
+    type: string
+    doc: "the name of the file to output the merged variants to"
+    inputBinding:
+      position: 101
+      prefix: out_file=
+      separate: false
+  - id: max_dist_linear
+    type: ['null', float]
+    doc: "the proportion of the length of each variant to set distance threshold to (default 0.5)"
+    inputBinding:
+      position: 101
+      prefix: max_dist_linear=
+      separate: false
+  - id: max_dist
+    type: ['null', int]
+    doc: "the maximum distance variants can be apart when being merged (default inf)"
+    inputBinding:
+      position: 101
+      prefix: max_dist=
+      separate: false
+  - id: min_dist
+    type: ['null', int]
+    doc: "the minimum distance threshold a variant can have when using max_dist_linear (default 100)"
+    inputBinding:
+      position: 101
+      prefix: min_dist=
+      separate: false
+  - id: kd_tree_norm
+    type: ['null', int]
+    doc: "the power to use in kd-tree distances (1 is Manhattan, 2 is Euclidean, etc.) (default 2)"
+    inputBinding:
+      position: 101
+      prefix: kd_tree_norm=
+      separate: false
+  - id: min_seq_id
+    type: ['null', float]
+    doc: "the minimum sequence identity for two insertions to be merged (default 0)"
+    inputBinding:
+      position: 101
+      prefix: min_seq_id=
+      separate: false
+  - id: k_jaccard
+    type: ['null', int]
+    doc: "the kmer size to use when computing Jaccard similarity of insertions (default 9)"
+    inputBinding:
+      position: 101
+      prefix: k_jaccard=
+      separate: false
+  - id: max_dup_length
+    type: ['null', int]
+    doc: "the maximum length of duplication that can be converted to an insertion (default 10k)"
+    inputBinding:
+      position: 101
+      prefix: max_dup_length=
+      separate: false
+  - id: min_support
+    type: ['null', int]
+    doc: "the minimum number of callsets a variant must be in to be output (default 1)"
+    inputBinding:
+      position: 101
+      prefix: min_support=
+      separate: false
+  - id: threads
+    type: ['null', int]
+    doc: "the number of threads to use for merging the variants (default 1)"
+    inputBinding:
+      position: 101
+      prefix: threads=
+      separate: false
+  - id: spec_reads
+    type: ['null', int]
+    doc: "the minimum number of reads a variant needs to be in the specific callset (default 10)"
+    inputBinding:
+      position: 101
+      prefix: spec_reads=
+      separate: false
+  - id: spec_len
+    type: ['null', int]
+    doc: "the minimum length a variant needs to be in the specific callset (default 30)"
+    inputBinding:
+      position: 101
+      prefix: spec_len=
+      separate: false
   - id: genome_file
-    type:
-      - 'null'
-      - File
-    doc: the reference genome being used
+    type: ['null', File]
+    doc: "the reference genome being used"
     inputBinding:
       position: 101
-  - id: ignore_merged_inputs
-    type:
-      - 'null'
-      - boolean
-    doc: ignore merging info such as support vectors which is already present in
-      the inputs
+      prefix: genome_file=
+      separate: false
+  - id: bam_list
+    type: ['null', File]
+    doc: "a file listing paths to BAMs in the same order as the VCFs"
     inputBinding:
       position: 101
-      prefix: --ignore_merged_inputs
+      prefix: bam_list=
+      separate: false
+  - id: iris_args
+    type: ['null', string]
+    doc: "a comma-separated list of optional arguments to pass to Iris"
+    inputBinding:
+      position: 101
+      prefix: iris_args=
+      separate: false
+  - id: out_dir
+    type: ['null', string]
+    doc: "the directory where intermediate files go (default output)"
+    inputBinding:
+      position: 101
+      prefix: out_dir=
+      separate: false
+  - id: samtools_path
+    type: ['null', string]
+    doc: "the path to the samtools executable used for coverting duplications (default samtools)"
+    inputBinding:
+      position: 101
+      prefix: samtools_path=
+      separate: false
+  - id: chr_norm_file
+    type: ['null', File]
+    doc: "the path to a file containing chromosome name mappings, if they are being normalized"
+    inputBinding:
+      position: 101
+      prefix: chr_norm_file=
+      separate: false
+  - id: sample_dists
+    type: ['null', File]
+    doc: "the path to a file containing distance thresholds for each sample, one per line"
+    inputBinding:
+      position: 101
+      prefix: sample_dists=
+      separate: false
+  - id: min_overlap
+    type: ['null', float]
+    doc: "the minimum reciprocal overlap for DEL/INV/DUP SVs (default 0)"
+    inputBinding:
+      position: 101
+      prefix: min_overlap=
+      separate: false
   - id: ignore_strand
-    type:
-      - 'null'
-      - boolean
-    doc: allow variants with different strands to be merged
+    type: ['null', boolean]
+    doc: "allow variants with different strands to be merged"
     inputBinding:
-      position: 101
+      position: 102
       prefix: --ignore_strand
   - id: ignore_type
-    type:
-      - 'null'
-      - boolean
-    doc: allow variants with different types to be merged
+    type: ['null', boolean]
+    doc: "allow variants with different types to be merged"
     inputBinding:
-      position: 101
+      position: 102
       prefix: --ignore_type
-  - id: iris_args
-    type:
-      - 'null'
-      - string
-    doc: a comma-separated list of optional arguments to pass to Iris
+  - id: dup_to_ins
+    type: ['null', boolean]
+    doc: "convert duplications to insertions for SV merging and then convert them back"
     inputBinding:
-      position: 101
-  - id: k_jaccard
-    type:
-      - 'null'
-      - int
-    doc: the kmer size to use when computing Jaccard similarity of insertions
-    inputBinding:
-      position: 101
-  - id: kd_tree_norm
-    type:
-      - 'null'
-      - int
-    doc: the power to use in kd-tree distances (1 is Manhattan, 2 is Euclidean, 
-      etc.)
-    inputBinding:
-      position: 101
-  - id: keep_var_ids
-    type:
-      - 'null'
-      - boolean
-    doc: don't change variant IDs (should only be used if input IDs are unique 
-      across samples)
-    inputBinding:
-      position: 101
-      prefix: --keep_var_ids
-  - id: leave_breakpoints
-    type:
-      - 'null'
-      - boolean
-    doc: leave breakpoints as they are even if they are inconsistent
-    inputBinding:
-      position: 101
-      prefix: --leave_breakpoints
+      position: 102
+      prefix: --dup_to_ins
   - id: mark_specific
-    type:
-      - 'null'
-      - boolean
-    doc: mark calls in the original VCF files that have enough support to called
-      specific
+    type: ['null', boolean]
+    doc: "mark calls in the original VCF files that have enough support to called specific"
     inputBinding:
-      position: 101
+      position: 102
       prefix: --mark_specific
-  - id: max_dist
-    type:
-      - 'null'
-      - int
-    doc: the maximum distance variants can be apart when being merged
+  - id: run_iris
+    type: ['null', boolean]
+    doc: "run Iris before merging for refining the sequences of insertions"
     inputBinding:
-      position: 101
-  - id: max_dist_linear
-    type:
-      - 'null'
-      - float
-    doc: the proportion of the length of each variant to set distance threshold 
-      to
+      position: 102
+      prefix: --run_iris
+  - id: pre_normalize
+    type: ['null', boolean]
+    doc: "run type normalization before merging"
     inputBinding:
-      position: 101
-  - id: max_dup_length
-    type:
-      - 'null'
-      - string
-    doc: the maximum length of duplication that can be converted to an insertion
+      position: 102
+      prefix: --pre_normalize
+  - id: use_edit_dist
+    type: ['null', boolean]
+    doc: "use edit distance for comparing insertion sequences instead of Jaccard"
     inputBinding:
-      position: 101
-  - id: min_dist
-    type:
-      - 'null'
-      - int
-    doc: the minimum distance threshold a variant can have when using 
-      max_dist_linear
+      position: 102
+      prefix: --use_edit_dist
+  - id: preprocess_only
+    type: ['null', boolean]
+    doc: "only run the preprocessing and not the actual merging or post-processing"
     inputBinding:
-      position: 101
-  - id: min_overlap
-    type:
-      - 'null'
-      - float
-    doc: the minimum reciprocal overlap for DEL/INV/DUP SVs
+      position: 102
+      prefix: --preprocess_only
+  - id: postprocess_only
+    type: ['null', boolean]
+    doc: "only run the postprocessing and not the actual merging or pre-processing"
     inputBinding:
-      position: 101
-  - id: min_seq_id
-    type:
-      - 'null'
-      - float
-    doc: the minimum sequence identity for two insertions to be merged
+      position: 102
+      prefix: --postprocess_only
+  - id: keep_var_ids
+    type: ['null', boolean]
+    doc: "don't change variant IDs (should only be used if input IDs are unique across samples)"
     inputBinding:
-      position: 101
-  - id: min_support
-    type:
-      - 'null'
-      - int
-    doc: the minimum number of callsets a variant must be in to be output
+      position: 102
+      prefix: --keep_var_ids
+  - id: use_end
+    type: ['null', boolean]
+    doc: "use the end coordinate as the second coordinate instead of the variant length"
     inputBinding:
-      position: 101
-  - id: non_mutual_distance
-    type:
-      - 'null'
-      - boolean
-    doc: no longer require a pair of points to be within both of their distance 
-      thresholds
+      position: 102
+      prefix: --use_end
+  - id: output_genotypes
+    type: ['null', boolean]
+    doc: "print the genotypes of the consensus variants in all of the samples they came from"
     inputBinding:
-      position: 101
-      prefix: --non_mutual_distance
-  - id: nonlinear_dist
-    type:
-      - 'null'
-      - boolean
-    doc: disable distance threshold depending on variant length and use max_dist
-      instead
+      position: 102
+      prefix: --output_genotypes
+  - id: ignore_merged_inputs
+    type: ['null', boolean]
+    doc: "ignore merging info such as support vectors which is already present in the inputs"
     inputBinding:
-      position: 101
-      prefix: --nonlinear_dist
-  - id: normalize_chrs
-    type:
-      - 'null'
-      - boolean
-    doc: normalize chromosome names (to NCBI standards - without "chr" - by 
-      default)
+      position: 102
+      prefix: --ignore_merged_inputs
+  - id: centroid_merging
+    type: ['null', boolean]
+    doc: "require every group to have a centroid which is within the distance threshold of each variant"
     inputBinding:
-      position: 101
-      prefix: --normalize_chrs
+      position: 102
+      prefix: --centroid_merging
+  - id: clique_merging
+    type: ['null', boolean]
+    doc: "require every group to have each pair within in it be mergeable"
+    inputBinding:
+      position: 102
+      prefix: --clique_merging
+  - id: allow_intrasample
+    type: ['null', boolean]
+    doc: "allow variants in the same sample to be merged"
+    inputBinding:
+      position: 102
+      prefix: --allow_intrasample
   - id: normalize_type
-    type:
-      - 'null'
-      - boolean
-    doc: convert all variants to INS/DEL/DUP/INV/TRA
+    type: ['null', boolean]
+    doc: "convert all variants to INS/DEL/DUP/INV/TRA"
     inputBinding:
-      position: 101
+      position: 102
       prefix: --normalize_type
-  - id: out_dir
+  - id: leave_breakpoints
+    type: ['null', boolean]
+    doc: "leave breakpoints as they are even if they are inconsistent"
+    inputBinding:
+      position: 102
+      prefix: --leave_breakpoints
+  - id: require_first_sample
+    type: ['null', boolean]
+    doc: "only output merged variants which include a variant from the first sample"
+    inputBinding:
+      position: 102
+      prefix: --require_first_sample
+  - id: comma_filelist
+    type: ['null', boolean]
+    doc: "input VCFs are given comma-separated instead of providing a txt file"
+    inputBinding:
+      position: 102
+      prefix: --comma_filelist
+  - id: normalize_chrs
+    type: ['null', boolean]
+    doc: "normalize chromosome names (to NCBI standards - without \"chr\" - by default)"
+    inputBinding:
+      position: 102
+      prefix: --normalize_chrs
+  - id: non_mutual_distance
+    type: ['null', boolean]
+    doc: "no longer require a pair of points to be within both of their distance thresholds"
+    inputBinding:
+      position: 102
+      prefix: --non_mutual_distance
+  - id: default_zero_genotype
+    type: ['null', boolean]
+    doc: "marks genotype as 0|0 instead of ./. for any samples in which a merged variant is absent"
+    inputBinding:
+      position: 102
+      prefix: --default_zero_genotype
+  - id: nonlinear_dist
+    type: ['null', boolean]
+    doc: "disable distance threshold depending on variant length and use max_dist instead"
+    inputBinding:
+      position: 102
+      prefix: --nonlinear_dist
+outputs:
+  - id: merged_vcf
+    type: File
+    doc: the merged variants
+    outputBinding:
+      glob: $(inputs.out_file)
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: out_dir_output
     type:
       - 'null'
       - Directory
-    doc: the directory where intermediate files go
-    inputBinding:
-      position: 101
-  - id: output_genotypes
-    type:
-      - 'null'
-      - boolean
-    doc: print the genotypes of the consensus variants in all of the samples 
-      they came from
-    inputBinding:
-      position: 101
-      prefix: --output_genotypes
-  - id: postprocess_only
-    type:
-      - 'null'
-      - boolean
-    doc: only run the postprocessing and not the actual merging or 
-      pre-processing
-    inputBinding:
-      position: 101
-      prefix: --postprocess_only
-  - id: pre_normalize
-    type:
-      - 'null'
-      - boolean
-    doc: run type normalization before merging
-    inputBinding:
-      position: 101
-      prefix: --pre_normalize
-  - id: preprocess_only
-    type:
-      - 'null'
-      - boolean
-    doc: only run the preprocessing and not the actual merging or 
-      post-processing
-    inputBinding:
-      position: 101
-      prefix: --preprocess_only
-  - id: require_first_sample
-    type:
-      - 'null'
-      - boolean
-    doc: only output merged variants which include a variant from the first 
-      sample
-    inputBinding:
-      position: 101
-      prefix: --require_first_sample
-  - id: run_iris
-    type:
-      - 'null'
-      - boolean
-    doc: run Iris before merging for refining the sequences of insertions
-    inputBinding:
-      position: 101
-      prefix: --run_iris
-  - id: sample_dists
-    type:
-      - 'null'
-      - File
-    doc: the path to a file containing distance thresholds for each sample, one 
-      per line
-    inputBinding:
-      position: 101
-  - id: samtools_path
-    type:
-      - 'null'
-      - string
-    doc: the path to the samtools executable used for coverting duplications
-    inputBinding:
-      position: 101
-  - id: spec_len
-    type:
-      - 'null'
-      - int
-    doc: the minimum length a variant needs to be in the specific callset
-    inputBinding:
-      position: 101
-  - id: spec_reads
-    type:
-      - 'null'
-      - int
-    doc: the minimum number of reads a variant needs to be in the specific 
-      callset
-    inputBinding:
-      position: 101
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: the number of threads to use for merging the variants
-    inputBinding:
-      position: 101
-  - id: use_edit_dist
-    type:
-      - 'null'
-      - boolean
-    doc: use edit distance for comparing insertion sequences instead of Jaccard
-    inputBinding:
-      position: 101
-      prefix: --use_edit_dist
-  - id: use_end
-    type:
-      - 'null'
-      - boolean
-    doc: use the end coordinate as the second coordinate instead of the variant 
-      length
-    inputBinding:
-      position: 101
-      prefix: --use_end
-  - id: out_file_path
-    type: string
-    doc: Output or path parameter `out_file_path`
-    inputBinding:
-      position: 102
-      prefix: --out-file
-outputs:
-  - id: out_file
-    type: File
-    doc: the name of the file to output the merged variants to
+    doc: the directory with intermediate files
     outputBinding:
-      glob: $(inputs.out_file_path)
+      glob: $(inputs.out_dir || 'output')
 requirements:
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${ return inputs.staged_files ? inputs.staged_files : []; }
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jasminesv:1.1.5--hdfd78af_0
+stdout: jasminesv_jasmine.out

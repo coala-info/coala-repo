@@ -221,6 +221,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written when --output-basename is given (one per output format
+      and region).
+    outputBinding:
+      glob: '$(inputs.output_basename ? inputs.output_basename + "*" : "__no_output_basename__")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.sequence_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/impg:0.3.3--hdb3fbb7_0

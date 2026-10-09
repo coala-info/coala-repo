@@ -1,5 +1,12 @@
 # inspector CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| inspector_inspector-correct.py | Failed | tool bug: structural error correction with Flye silently does nothing because denovo_correct.py never imports multiprocessing.dummy (base error correction works) |
+| inspector_inspector.py | PASS |  |
+
 ## inspector_inspector.py
 
 ### Tool Description

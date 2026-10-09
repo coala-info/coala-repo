@@ -4,29 +4,27 @@ baseCommand:
   - igdiscover
   - commonv
 label: igdiscover_commonv
-doc: "Find common V genes between two different antibody libraries.\n\nTool homepage:
-  https://igdiscover.se/"
+doc: "Find common V genes between two or more antibody libraries. The result is written to standard output.\n\nTool homepage: https://igdiscover.se/"
 inputs:
   - id: tables
     type:
       type: array
       items: File
-    doc: Tables with parsed and filtered IgBLAST results (give at least two)
+    doc: "Tables with parsed and filtered IgBLAST results (give at least two)"
     inputBinding:
       position: 1
   - id: minimum_frequency
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of datasets in which sequence must occur (default is no.
-      of files divided by two)
+    type: ['null', int]
+    doc: "Minimum number of datasets in which sequence must occur (default is no. of files divided by two)"
     inputBinding:
-      position: 102
+      position: 2
       prefix: --minimum-frequency
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: "FASTA of the common V genes"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igdiscover:0.15.1--pyhdfd78af_2

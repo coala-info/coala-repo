@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - jannovar-cli
+  - jannovar
   - annotate-vcf
 label: jannovar-cli_jannovar_annotate-vcf
 doc: "Perform annotation of a single VCF file\n\nTool homepage: https://github.com/charite/jannovar"

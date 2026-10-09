@@ -1,5 +1,35 @@
 # iobrpy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| iobrpy_IPS | PASS |  |
+| iobrpy_LR_cal | PASS |  |
+| iobrpy_anno_eset | PASS |  |
+| iobrpy_batch_salmon | PASS |  |
+| iobrpy_batch_star_count | PASS |  |
+| iobrpy_bayesprism | PASS |  |
+| iobrpy_calculate_sig_score | PASS |  |
+| iobrpy_cibersort | PASS |  |
+| iobrpy_count2tpm | PASS |  |
+| iobrpy_deside | Failed | image problem: deside installs tensorflow 2.11.1 and llvmlite 0.39.1 at run time, which cannot install on the image's Python 3.12 |
+| iobrpy_epic | PASS |  |
+| iobrpy_estimate | PASS |  |
+| iobrpy_fastq_qc | PASS |  |
+| iobrpy_log2_eset | PASS |  |
+| iobrpy_mcpcounter | PASS |  |
+| iobrpy_merge_salmon | PASS |  |
+| iobrpy_merge_star_count | PASS |  |
+| iobrpy_mouse2human_eset | PASS |  |
+| iobrpy_nmf | PASS |  |
+| iobrpy_prepare_salmon | PASS | synthetic data: reads simulated from real GENCODE transcripts |
+| iobrpy_quantiseq | PASS |  |
+| iobrpy_runall | Not completed | pipeline, skipped |
+| iobrpy_tme_cluster | PASS |  |
+| iobrpy_tme_profile | PASS |  |
+| iobrpy_trust4 | PASS | ran on the TRUST4 example BAM; same CDR3 clones as the TRUST4 example report, a few V/J allele calls differ |
+
 ## iobrpy_prepare_salmon
 
 ### Tool Description
@@ -726,6 +756,79 @@ options:
                         using a custom single-cell reference via --sc_dat;
                         defaults to 'Malignant_cells' when the bundled
                         reference is used.
+```
+
+## iobrpy_IPS
+
+### Tool Description
+Calculate the Immunophenoscore (IPS) from an expression matrix.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0
+- **Homepage**: https://github.com/IOBR/IOBRpy
+- **Package**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iobrpy IPS [-h] -i INPUT_PATH -o OUTPUT_PATH
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT_PATH, --input INPUT_PATH
+                        Path to expression matrix file (e.g., EXPR.txt)
+  -o OUTPUT_PATH, --output OUTPUT_PATH
+                        Path to save IPS results (e.g., IPS_results.txt)
+```
+
+## iobrpy_LR_cal
+
+### Tool Description
+Compute ligand-receptor interaction scores from an expression matrix.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0
+- **Homepage**: https://github.com/IOBR/IOBRpy
+- **Package**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iobrpy LR_cal [-h] -i INPUT -o OUTPUT [--data_type {count,tpm}]
+                     [--id_type ID_TYPE] [--cancer_type CANCER_TYPE]
+                     [--verbose]
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Path to input expression matrix (genes x samples)
+  -o OUTPUT, --output OUTPUT
+                        Path to save LR scores
+  --data_type {count,tpm}
+                        Type of input data: count or tpm
+  --id_type ID_TYPE     Gene ID type.Choices: ensembl, entrez, symbol, mgi.
+  --cancer_type CANCER_TYPE
+                        Cancer type network
+  --verbose             Enable verbose output
+```
+
+## iobrpy_trust4
+
+### Tool Description
+Run TRUST4 (TCR/BCR reconstruction) with IOBRpy defaults for the V/D/J/C reference files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0
+- **Homepage**: https://github.com/IOBR/IOBRpy
+- **Package**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iobrpy trust4 [-h]
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## Metadata

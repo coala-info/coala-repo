@@ -223,7 +223,9 @@ inputs:
       position: 102
       prefix: --update-indiv-ids
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The output file to produce.
     inputBinding:
       position: 103
@@ -236,6 +238,10 @@ outputs:
     doc: The output file to produce.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: stdout_text
+    type: stdout
+    doc: Text written to standard output (--info, --stats, --alleles, --lists, --individuals, --variants)
+stdout: igdtools_stdout.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,14 @@
 # imods CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| imods_imc | PASS |  |
+| imods_imode_gcc | PASS |  |
+| imods_imodview | PASS |  |
+| imods_imove | PASS |  |
+
 ## imods_imove
 
 ### Tool Description
@@ -420,6 +429,309 @@ Where:
    Monte-Carlo program based on normal modes.
 ```
 
+
+## imods_imode_gcc
+
+### Tool Description
+iMODE: Internal coordinates normal MODE analysis tool (NMA in internal coordinates).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/imods:1.0.4--h9ee0642_3
+- **Homepage**: https://chaconlab.org/multiscale-simulations/imod
+- **Package**: https://anaconda.org/channels/bioconda/packages/imods/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+imode>
+imode> Welcome to the NMA in Internal Coordinates tool v1.20
+imode>
+
+USAGE: 
+
+   imode  <pdb> [-m <int>] [-o <string>] [-d] [-r <float>] [-f <string>]
+          [-P <int>] [-K <string>] [-n <int/float>] [-x] [-S <string>]
+          [--ss <string>] [--save_fixfile] [--save_cart] [--save_wcart]
+          [--save_ca] [--save_Kfile] [--save_SSfile] [--save_covar]
+          [--save_dcovar] [--save_covar_text] [--k0_c <float>] [--k0_k
+          <float>] [--k0_x0 <float>] [--k0_p <float>] [--k1_c <float>]
+          [--k1_k <float>] [--k2_c <float>] [--nomodel] [--nomass]
+          [--notors] [--norm] [--func <string>] [--model_out <int>]
+          [--chi_out] [--save_covar_out] [-T <double>] [--seed <unsigned
+          int>] [--keep_hydrogens] [--keep_waters] [--delete_heteros]
+          [--verb <int>] [-R <float>] [--save_matrices] [--just_matrices]
+          [--swapmatrix_mem <float>] [--hessian <int>] [--kinetic <int>]
+          [--convert <int>] [--debug <int>] [--fixIC <string>] [--nthreads
+          <int>] [--eigensolver <int>] [--inter_molec <float>] [--inevec
+          <string>] [--dc <double>] [--] [-v] [-h]
+
+
+Where: 
+
+   <pdb>
+      PDB input file (required)  
+
+   -m <int>,  --model <int>
+      Coarse-Grained model: 0=CA, 1=C5, 2=Heavy-Atom (default=2). 
+
+   -o <string>,  --name <string>
+      Output files basename (default=imode). 
+
+   -d,  --deform
+      Turn on deformability calculations. CAUTION, only suitable for
+     CA-model. (default=disabled). 
+
+   -r <float>,  --fixRand <float>
+      Randomly fixed ratio of Dihedral Coordinates (default=disabled).
+     Example: 0.7 = 70% of dihedrals will be randomly removed.
+     Rotational/translational coords. always mobile. 
+
+   -f <string>,  --fixFile <string>
+      ASCII file defining the ICs to be fixed with the format:
+
+     Protein:     "n phi chi psi"
+
+     NAcid:       "n alpha beta gamma chi epsilon zeta"
+
+     Inter-chain: "n 6D"
+
+     Where "n" is the residue index (0,1,..) and the coordinate name (phi,
+     psi, etc...) can be set to 0(fixed) or 1(mobile). Each one of the 6
+     inter-chain variables should be specified on separate lines in the
+     following order: x,y,z,Rx,Ry,Rz. Note "n" is just the sequential
+     residue index (starting with 0) and NOT the PDB's residue index.
+
+     A demo file can be generated using the --save_fixfile option. 
+
+   -P <int>,  --potential <int>
+      Pairwise interaction potential: (default=0)
+
+     0= Sigmoid function (= k/(1+(x/x0)^p), if x < c, else k=0).
+
+     1= Tirion's cutoff (= k, if x < c, else k=0).
+
+     2= Hinsen's function.
+
+     3= Topology & Secondary Structure (--func is mandatory).
+
+     4= edNMA formalism (CA-model only).
+
+     By default an extra torsional potential will be added. 
+
+   -K <string>,  --Kfile <string>
+      Force constants ASCII file with 3 cols.: <i-atom> <j-atom> <K>
+
+     Where <i/j-atom> are the corresponding atomic indices (1,2,...)
+
+     A demo file can be generated using --save_Kfile option. 
+
+   -n <int/float>,  --nevs <int/float>
+      Used modes range, either number [1,N] <integer>, or ratio [0,1)
+     <float> (default=20). 
+
+   -x,  --chi
+      Considers first CHI dihedral angle (default=disabled). 
+
+   -S <string>,  --fixSS <string>
+      All dihedral coordinates with a given secondary structure (SS) will
+     be removed (see --ss). Ex: "HE" will fix the dihedrals corresponding
+     to alpha-helices and beta-sheets. 
+
+   --ss <string>
+      Secondary Structure ASCII file with 2 cols.: <n> <char>
+
+     Where <n> is the corresponding residue index (0,1,...), and <char> is
+     the single character SS identifier. By default SS will be computed
+     internally (H=helix, E=strand, C=coil). 
+
+   --save_fixfile
+      Save fixation file as <basename.fix> (to be used with -r or -S
+     options; otherwise a fully mobile file will be generated)
+     (default=disabled) 
+
+   --save_cart
+      Save Cartesian modes as <basename_cart.evec> (default=disabled) 
+
+   --save_wcart
+      Save Mass-weighted Cartesian modes as <basename_wcart.evec>
+     (default=disabled) 
+
+   --save_ca
+      Save CA-based Cartesian modes as <basename_ca.evec>
+     (default=disabled) 
+
+   --save_Kfile
+      Save atom-pairwise force constants file as <basename_Kfile.dat> (to
+     be used with -K option) (default=disabled) 
+
+   --save_SSfile
+      Save secondary structure file as <basename.ss> (to be used with -S or
+     -P=2 options) (default=disabled). 
+
+   --save_covar
+      Saves the predicted covariance matrix at selected Temperature in
+     binary packed storage format as <basename_covar.bin>. If --save_wcart
+     selected, then mass-weighted covariance matrix will be computed
+     instead (default=disabled). 
+
+   --save_dcovar
+      Saves the CA-based distance-covariance matrix at selected Temperature
+
+   --save_covar_text
+      Enables plain text output for the covariance matrices
+     (default=disabled). 
+
+   --k0_c <float>
+      Sigmoid function distance cutoff (default=10A). 
+
+   --k0_k <float>
+      Sigmoid function stiffness constant (default=1.0). 
+
+   --k0_x0 <float>
+      Sigmoid function inflexion point (default=3.8A). 
+
+   --k0_p <float>
+      Sigmoid function power term (default=6). 
+
+   --k1_c <float>
+      Tirion's method distance cutoff (default=10A). 
+
+   --k1_k <float>
+      Tirion's method stiffness constant (default=1.0). 
+
+   --k2_c <float>
+      Non-bonding distance cutoff applied to --func option (default=10A). 
+
+   --nomodel
+      Disables PDB model building. Warning: introduced PDB model must match
+     the CG selected with the -m option (default=disabled). 
+
+   --nomass
+      Disables mass weighting (default=disabled). 
+
+   --notors
+      Disables extra torsional potential (default=disabled). 
+
+   --norm
+      Enables (norm=1) eigenvector normalization. Note this does not change
+     vector direction (default=disabled). 
+
+   --func <string>
+      ASCII file defining the force constant functions to be applied
+     according to Topology and/or Secondary Structure. The 5 cols. format
+     is: <SS> <t> <k> <x0> <pow>
+
+     Where <SS> is the two character pairwise interaction identifier, <t>
+     is the topology, and <k>,<x0>,<pow> are the corresponding sigmoid
+     function parameters. If --ss is not specified, the XX pairwise
+     interaction identifier must be introduced. This way, only topologies
+     will be considered. If <t> is "-1", any previously not-matched
+     topology will be considered. 
+
+   --model_out <int>
+      Output Coarse-Graining model: 0=CA, 1=C5, 2=Heavy-Atom
+     (default=disabled). 
+
+   --chi_out
+      Considers first CHI dihedral angle in output modes
+     (default=disabled). 
+
+   --save_covar_out
+      Computes and Saves the predicted covariance matrix for the output
+     model at selected Temperature in binary packed storage format as
+     <basename_covarf.bin>. If --save_wcart selected, then mass-weighted
+     covariance matrix will be computed instead (default=disabled). 
+
+   -T <double>,  --temperature <double>
+      Temperature [K] for covariance matrix computation (default=300). 
+
+   --seed <unsigned int>
+      Pre-define the random number generator SEED (Mersenne Twister)
+     (default=random-seed from /dev/urandom) 
+
+   --keep_hydrogens
+      Disables Hydrogen atoms deletion (default=disabled). 
+
+   --keep_waters
+      Disables Water molecules deletion (default=disabled). 
+
+   --delete_heteros
+      Delete Hetero-atoms, including waters (default=disabled). 
+
+   --verb <int>
+      Verbose level (0=low, 1=medium, 2=high) (default=0). 
+
+   -R <float>,  --fixRand2 <float>
+      Randomly fixed ratio of Internal Coordinates (default=disabled).
+     Example: 0.7 = 70% of the ICs will be randomly fixed (DEVELOPER's). 
+
+   --save_matrices
+      Saves both Hessian and Kinetic energy matrices in binary packed
+     storage format (default=disabled) (DEVELOPER's). 
+
+   --just_matrices
+      Just computes and saves both matrices, then exit...
+     (default=disabled) (DEVELOPER's). 
+
+   --swapmatrix_mem <float>
+      Amount of RAM memory (in GB) to be used during Hessian matrix
+     swapping (default=1GB) (DEVELOPER's). 
+
+   --hessian <int>
+      Hessian matrix building method (DEVELOPER's) (default=2). 
+
+   --kinetic <int>
+      Kinetic energy matrix building method (DEVELOPER's) (default=2). 
+
+   --convert <int>
+      Conversion method from ICS to CCS: 0=K-matrix, 1=VW-arrays
+     (DEVELOPER's) (default=1). 
+
+   --debug <int>
+      Debug code <int> (default=disabled). 
+
+   --fixIC <string>
+      Plain-text file defining the fixed Internal Coordinates. Each line
+     will contain the index (0,1,...) of the ICs to be removed
+     (DEVELOPER's). 
+
+   --nthreads <int>
+      Number of threads for parallel processing (experimental) 
+
+   --eigensolver <int>
+      Eigensolver (pay attention to this option specially for large
+     systems):
+
+     0= LAPACK/BLAS, fastest if more than 10% modes requested [DSPGVX],
+
+     1= ARPACK, fastest if less than 5% modes requested
+     [dsdrv1_AP_BP_W_mon] (default),
+
+     2= ARPACK-square, [dsdrv1_A_B_W_mon] (experimental). 
+
+   --inter_molec <float>
+      Sets the inter-molecular force constant factor (default=disabled) 
+
+   --inevec <string>
+      Input IC Eigenvectors/values file (.evec). This disables Hessian and
+     Kinetic energy matrices calculation and diagonalization. 
+
+   --dc <double>
+      Characteristic Distance of the Hardy's Quadric Interpolation used in
+     Deformability computations (default=15). It should be > 0. 
+
+   --,  --ignore_rest
+      Ignores the rest of the labeled arguments following this flag. 
+
+   -v,  --version
+      Displays version information and exits. 
+
+   -h,  --help
+      Displays usage information and exits. 
+
+
+   iMODE: Internal coordinates normal MODE analysis tool.
+```
 
 ## Metadata
 - **Skill**: generated

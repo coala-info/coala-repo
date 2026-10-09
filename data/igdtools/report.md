@@ -1,5 +1,11 @@
 # igdtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| igdtools | PASS | output made optional and stdout captured; nf-core phased VCF converted to IGD (836 variants), info and stats match, merge gives 1672 variants; --contig options crash with an ascending-position error on a two-contig VCF |
+
 ## igdtools
 
 ### Tool Description

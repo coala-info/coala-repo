@@ -6,6 +6,9 @@ baseCommand:
 label: ivar_consensus
 doc: "Generates a consensus sequence from pileup data.\n\nTool homepage: https://andersen-lab.github.io/ivar/html/"
 inputs:
+  - id: pileup
+    type: File
+    doc: Output of samtools mpileup (for example samtools mpileup -aa -A -d 0 -Q 0 input.bam), read from standard input
   - id: fasta_header_name
     type:
       - 'null'
@@ -83,7 +86,10 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ivar:1.4.4--h077b44d_0
+stdin: $(inputs.pileup.path)
 stdout: ivar_consensus.out

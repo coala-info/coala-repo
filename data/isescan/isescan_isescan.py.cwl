@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isescan
+baseCommand: isescan.py
 label: isescan_isescan.py
 doc: "ISEScan is a python pipeline to identify Insertion Sequence elements (both complete
   and incomplete IS elements) in genom. A typical invocation would be:\npython3 isescan.py

@@ -12,6 +12,9 @@ inputs:
         items: File
     doc: sorted and indexed BAM file(s), each file will be treated as a separate
       sample
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam
@@ -100,6 +103,9 @@ inputs:
       - type: array
         items: File
     doc: sorted and indexed file(s) with Illumina reads from the same sample
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --illumina_bam
@@ -146,7 +152,8 @@ inputs:
       - File
     doc: reference genome in FASTA format (can be gzipped)
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --reference
@@ -223,6 +230,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isoquant:3.10.0--hdfd78af_0

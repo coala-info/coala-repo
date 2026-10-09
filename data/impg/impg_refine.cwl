@@ -197,6 +197,9 @@ inputs:
       position: 102
       prefix: --support-output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (refined regions in BED format)
   - id: support_output
     type:
       - 'null'
@@ -209,3 +212,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/impg:0.3.3--hdb3fbb7_0
+stdout: impg_refine.out

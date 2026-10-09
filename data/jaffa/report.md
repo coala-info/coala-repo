@@ -1,5 +1,12 @@
 # jaffa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jaffa_jaffa-assembly | Not completed | pipeline, skipped; needs large reference and annotation files |
+| jaffa_jaffa-hybrid | Not completed | pipeline, skipped; needs large reference and annotation files |
+
 ## jaffa_jaffa-assembly
 
 ### Tool Description

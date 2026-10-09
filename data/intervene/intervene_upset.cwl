@@ -28,7 +28,8 @@ inputs:
   - id: figsize
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: Figure size for the output plot (width,height). e.g. --figsize 14 8
     inputBinding:
       position: 101

@@ -109,14 +109,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -u
-  - id: window_increment
-    type:
-      - 'null'
-      - int
-    doc: increment sliding window by NUM positions
-    inputBinding:
-      position: 101
-      prefix: -c
   - id: window_width
     type:
       - 'null'
@@ -125,12 +117,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -w
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+  - id: window_increment
+    type:
+      - 'null'
+      - int
+    doc: increment sliding window by NUM positions (must come after -w, so it is bound at a later position)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -c
+  - id: output_file_path
+    type: string
+    doc: write output to FILE
+    inputBinding:
+      position: 102
+      prefix: -o
 outputs:
   - id: output_file
     type:

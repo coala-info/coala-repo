@@ -1,9 +1,30 @@
 # isoformcheck CWL Generation Report
 
-## isoformcheck_IsoformCheck
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isoformcheck_addgroup | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_addsample | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_addsamples | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_chisquare | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_comparesamples | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_contingencytable | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_exportallelesets | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_exportisoforms | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_initialize | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_liftover | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_listgroups | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_listsamples | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_removegroup | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_rename | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_stats | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+| isoformcheck_validate | PASS | chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps. |
+
+## isoformcheck_addgroup
 
 ### Tool Description
-Protein isoform analysis from de novo genome assemblies.
+Add a sample to a group
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
@@ -11,32 +32,27 @@ Protein isoform analysis from de novo genome assemblies.
 - **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
-- **Total Downloads**: 55
-- **Last updated**: 2025-11-14
-- **GitHub**: https://github.com/maickrau/IsoformCheck
-- **Stars**: N/A
 ### Original Help Text
 ```text
-usage: IsoformCheck [-h] [--version]
-                    {initialize,liftover,addsample,addsamples,listsamples,addgroup,removegroup,listgroups,rename,stats,validate,contingencytable,chisquare,exportallelesets,exportisoforms,comparesamples}
-                    ...
+usage: IsoformCheck addgroup [-h] [--verbose [VERBOSE ...]] -db DATABASE
+                             --sample SAMPLE --group GROUP
 
-Protein isoform analysis from de novo genome assemblies.
-
-positional arguments:
-  {initialize,liftover,addsample,addsamples,listsamples,addgroup,removegroup,listgroups,rename,stats,validate,contingencytable,chisquare,exportallelesets,exportisoforms,comparesamples}
+Add a sample to a group
 
 options:
   -h, --help            show this help message and exit
-  --version             show program's version number and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+  --sample SAMPLE       Name of sample (required)
+  --group GROUP         Name of group (required)
 ```
 
-
-## isoformcheck_liftoff
+## isoformcheck_addsample
 
 ### Tool Description
-Lift features from one genome assembly to another
+Add a new sample
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
@@ -46,87 +62,464 @@ Lift features from one genome assembly to another
 
 ### Original Help Text
 ```text
-usage: liftoff [-h] (-g GFF | -db DB) [-o FILE] [-u FILE] [-exclude_partial]
-               [-dir DIR] [-mm2_options =STR] [-a A] [-s S] [-d D] [-flank F]
-               [-V] [-p P] [-m PATH] [-f TYPES] [-infer_genes]
-               [-infer_transcripts] [-chroms TXT] [-unplaced TXT] [-copies]
-               [-sc SC] [-overlap O] [-mismatch M] [-gap_open GO]
-               [-gap_extend GE] [-polish] [-cds]
-               target reference
+usage: IsoformCheck addsample [-h] [--verbose [VERBOSE ...]] -i INPUT --name
+                              NAME --haplotype HAPLOTYPE -db DATABASE
+                              [--liftoff LIFTOFF] [--agc AGC] [-t THREADS]
 
-Lift features from one genome assembly to another
+Add a new sample
 
-Required input (sequences):
-  target              target fasta genome to lift genes to
-  reference           reference fasta genome to lift genes from
-
-Required input (annotation):
-  -g GFF              annotation file to lift over in GFF or GTF format
-  -db DB              name of feature database; if not specified, the -g
-                      argument must be provided and a database will be built
-                      automatically
-
-Output:
-  -o FILE             write output to FILE in same format as input; by
-                      default, output is written to terminal (stdout)
-  -u FILE             write unmapped features to FILE; default is
-                      "unmapped_features.txt"
-  -exclude_partial    write partial mappings below -s and -a threshold to
-                      unmapped_features.txt; if true partial/low sequence
-                      identity mappings will be included in the gff file with
-                      partial_mapping=True, low_identity=True in comments
-  -dir DIR            name of directory to save intermediate fasta and SAM
-                      files; default is "intermediate_files"
-
-Alignments:
-  -mm2_options =STR   space delimited minimap2 parameters. By default ="-a
-                      --end-bonus 5 --eqx -N 50 -p 0.5"
-  -a A                designate a feature mapped only if it aligns with
-                      coverage ≥A; by default A=0.5
-  -s S                designate a feature mapped only if its child features
-                      (usually exons/CDS) align with sequence identity ≥S; by
-                      default S=0.5
-  -d D                distance scaling factor; alignment nodes separated by
-                      more than a factor of D in the target genome will not be
-                      connected in the graph; by default D=2.0
-  -flank F            amount of flanking sequence to align as a fraction
-                      [0.0-1.0] of gene length. This can improve gene
-                      alignment where gene structure differs between target
-                      and reference; by default F=0.0
-
-Miscellaneous settings:
-  -h, --help          show this help message and exit
-  -V, --version       show program version
-  -p P                use p parallel processes to accelerate alignment; by
-                      default p=1
-  -m PATH             Minimap2 path
-  -f TYPES            list of feature types to lift over
-  -infer_genes        use if annotation file only includes transcripts,
-                      exon/CDS features
-  -infer_transcripts  use if annotation file only includes exon/CDS features
-                      and does not include transcripts/mRNA
-  -chroms TXT         comma seperated file with corresponding chromosomes in
-                      the reference,target sequences
-  -unplaced TXT       text file with name(s) of unplaced sequences to map
-                      genes from after genes from chromosomes in chroms.txt
-                      are mapped; default is "unplaced_seq_names.txt"
-  -copies             look for extra gene copies in the target genome
-  -sc SC              with -copies, minimum sequence identity in exons/CDS for
-                      which a gene is considered a copy; must be greater than
-                      -s; default is 1.0
-  -overlap O          maximum fraction [0.0-1.0] of overlap allowed by 2
-                      features; by default O=0.1
-  -mismatch M         mismatch penalty in exons when finding best mapping; by
-                      default M=2
-  -gap_open GO        gap open penalty in exons when finding best mapping; by
-                      default GO=2
-  -gap_extend GE      gap extend penalty in exons when finding best mapping;
-                      by default GE=1
-  -polish
-  -cds                annotate status of each CDS (partial, missing start,
-                      missing stop, inframe stop codon)
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -i INPUT, --input INPUT
+                        Sequence file (required)
+  --name NAME           Sample name
+  --haplotype HAPLOTYPE
+                        Sample haplotype
+  -db DATABASE, --database DATABASE
+                        Database folder
+  --liftoff LIFTOFF     Path to liftoff
+  --agc AGC             Path to agc
+  -t THREADS, --threads THREADS
+                        Number of threads
 ```
 
+## isoformcheck_addsamples
+
+### Tool Description
+Add multiple new samples
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck addsamples [-h] [--verbose [VERBOSE ...]] -i INPUT -db
+                               DATABASE [--liftoff LIFTOFF] [--agc AGC]
+                               [-t THREADS] [--force]
+
+Add multiple new samples
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -i INPUT, --input INPUT
+                        Sample table file (required)
+  -db DATABASE, --database DATABASE
+                        Database folder
+  --liftoff LIFTOFF     Path to liftoff
+  --agc AGC             Path to agc
+  -t THREADS, --threads THREADS
+                        Number of threads
+  --force               Force insert samples even if validation fails
+```
+
+## isoformcheck_chisquare
+
+### Tool Description
+Calculate chi squared P-values of group vs allele set
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck chisquare [-h] [--verbose [VERBOSE ...]] -db DATABASE
+                              [--transcript TRANSCRIPT] [--group [GROUP ...]]
+                              [--table TABLE] [-o OUTPUT]
+                              [--include-gene-info]
+
+Calculate chi squared P-values of group vs allele set
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+  --transcript TRANSCRIPT
+                        Name of transcript. If no transcript is given, all
+                        transcripts will be used.
+  --group [GROUP ...]   Names of groups to include
+  --table TABLE         Table with samples per group to include
+  -o OUTPUT, --output OUTPUT
+                        Output file (- for stdout) (default -)
+  --include-gene-info   Include information about gene in the output table.
+```
+
+## isoformcheck_comparesamples
+
+### Tool Description
+Compare samples to database
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck comparesamples [-h] [--verbose [VERBOSE ...]] -db DATABASE
+                                   --table TABLE [-o OUTPUT] [-t THREADS]
+                                   [--liftoff LIFTOFF] [--force]
+
+Compare samples to database
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+  --table TABLE         Table with novel samples to include
+  -o OUTPUT, --output OUTPUT
+                        Output prefix (default "result")
+  -t THREADS, --threads THREADS
+                        Number of threads
+  --liftoff LIFTOFF     Path to liftoff
+  --force               Force compare samples even if validation fails
+```
+
+## isoformcheck_contingencytable
+
+### Tool Description
+Create contingency tables
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck contingencytable [-h] [--verbose [VERBOSE ...]] -db
+                                     DATABASE [--transcript TRANSCRIPT]
+                                     [--group GROUP [GROUP ...]]
+                                     [--table TABLE] [-o OUTPUT]
+                                     [--include-gene-info]
+
+Create contingency tables
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+  --transcript TRANSCRIPT
+                        Name of transcript. If no transcript is given, all
+                        transcripts will be used.
+  --group GROUP [GROUP ...]
+                        Names of groups (at least two required, multiple
+                        possible)
+  --table TABLE         Table with samples per group to include
+  -o OUTPUT, --output OUTPUT
+                        Output file (- for stdout) (default -)
+  --include-gene-info   Include information about gene in the output table.
+```
+
+## isoformcheck_exportallelesets
+
+### Tool Description
+Export per-sample allele set table
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck exportallelesets [-h] [--verbose [VERBOSE ...]] -db
+                                     DATABASE [--transcript TRANSCRIPT]
+                                     [-o OUTPUT] [--include-gene-info]
+
+Export per-sample allele set table
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+  --transcript TRANSCRIPT
+                        Name of transcript. If no transcript is given, all
+                        transcripts will be used.
+  -o OUTPUT, --output OUTPUT
+                        Output file (- for stdout) (default -)
+  --include-gene-info   Include information about gene in the output table.
+```
+
+## isoformcheck_exportisoforms
+
+### Tool Description
+Export isoform table
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck exportisoforms [-h] [--verbose [VERBOSE ...]] -db DATABASE
+                                   [--transcript TRANSCRIPT] [-o OUTPUT]
+                                   [--include-gene-info]
+
+Export isoform table
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+  --transcript TRANSCRIPT
+                        Name of transcript. If no transcript is given, all
+                        transcripts will be used.
+  -o OUTPUT, --output OUTPUT
+                        Output file (- for stdout) (default -)
+  --include-gene-info   Include information about gene in the output table.
+```
+
+## isoformcheck_initialize
+
+### Tool Description
+Create new database
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck initialize [-h] [--verbose [VERBOSE ...]] -r
+                               REFERENCE_GENOME -a ANNOTATION -db DATABASE
+                               [--liftoff LIFTOFF] [--agc AGC] [-t THREADS]
+
+Create new database
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -r REFERENCE_GENOME, --reference-genome REFERENCE_GENOME
+                        Reference genome file (required)
+  -a ANNOTATION, --annotation ANNOTATION
+                        Reference annotation gff3 (required)
+  -db DATABASE, --database DATABASE
+                        Output database folder
+  --liftoff LIFTOFF     Path to liftoff
+  --agc AGC             Path to agc
+  -t THREADS, --threads THREADS
+                        Number of threads
+```
+
+## isoformcheck_liftover
+
+### Tool Description
+Lift over annotations to one haplotype
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck liftover [-h] [--verbose [VERBOSE ...]] -i INPUT -o OUTPUT
+                             -db DATABASE [--liftoff LIFTOFF] [-t THREADS]
+
+Lift over annotations to one haplotype
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -i INPUT, --input INPUT
+                        Haplotype sequence file (required)
+  -o OUTPUT, --output OUTPUT
+                        Output annotation file
+  -db DATABASE, --database DATABASE
+                        Database folder
+  --liftoff LIFTOFF     Path to liftoff
+  -t THREADS, --threads THREADS
+                        Number of threads
+```
+
+## isoformcheck_listgroups
+
+### Tool Description
+List all groups per samples
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck listgroups [-h] [--verbose [VERBOSE ...]] -db DATABASE
+                               [-o OUTPUT]
+
+List all groups per samples
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder
+  -o OUTPUT, --output OUTPUT
+                        Output file (- for stdout) (default -)
+```
+
+## isoformcheck_listsamples
+
+### Tool Description
+List all samples
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck listsamples [-h] [--verbose [VERBOSE ...]] -db DATABASE
+                                [-o OUTPUT]
+
+List all samples
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder
+  -o OUTPUT, --output OUTPUT
+                        Output file (- for stdout) (default -)
+```
+
+## isoformcheck_removegroup
+
+### Tool Description
+Remove a sample from a group
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck removegroup [-h] [--verbose [VERBOSE ...]] -db DATABASE
+                                --sample SAMPLE --group GROUP
+
+Remove a sample from a group
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+  --sample SAMPLE       Name of sample (required)
+  --group GROUP         Name of group (required)
+```
+
+## isoformcheck_rename
+
+### Tool Description
+Rename isoforms according to coverage
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck rename [-h] [--verbose [VERBOSE ...]] -db DATABASE
+
+Rename isoforms according to coverage
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+```
+
+## isoformcheck_stats
+
+### Tool Description
+Print basic statistics about database
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck stats [-h] [--verbose [VERBOSE ...]] -db DATABASE
+
+Print basic statistics about database
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+```
+
+## isoformcheck_validate
+
+### Tool Description
+Check sample haplotype validity
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isoformcheck:1.0.0--hdfd78af_0
+- **Homepage**: https://github.com/maickrau/IsoformCheck
+- **Package**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: IsoformCheck validate [-h] [--verbose [VERBOSE ...]] -db DATABASE
+
+Check sample haplotype validity
+
+options:
+  -h, --help            show this help message and exit
+  --verbose [VERBOSE ...]
+                        Print debug information
+  -db DATABASE, --database DATABASE
+                        Database folder (required)
+```
 
 ## Metadata
 - **Skill**: generated

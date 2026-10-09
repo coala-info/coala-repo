@@ -1,5 +1,12 @@
 # jamm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jamm_JAMM.sh | Failed | image problem: peak calling stops with the R error 'EXPR must be a length 1 vector' from mclust (checkModelName) on real ChIP-seq reads, and the peak file is empty |
+| jamm_SignalGenerator.sh | PASS |  |
+
 ## jamm_JAMM.sh
 
 ### Tool Description
@@ -40,5 +47,35 @@ OPTIONS:
    -t	   Type, single or paired (default: single, requires BED files. paired requires BEDPE files)
    -p	   Number of processors used by R scripts (default: 1)
    -T      Directory where the temporary working repository will be created. This directory will be deleted after JAMM is done (default: a new directory is created in /tmp folder).
+```
+
+## jamm_SignalGenerator.sh
+
+### Tool Description
+JAMM Signal Generator Script: generates read signal tracks for given regions from sample (and control) read files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/jamm:1.0.8.0--hdfd78af_1
+- **Homepage**: https://github.com/mahmoudibrahim/JAMM
+- **Package**: https://anaconda.org/channels/bioconda/packages/jamm/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Welcome to JAMM v1.0.7rev5 Signal Generator Script (GNU GPLv3). Copyright (C) 2014-2019  Mahmoud Ibrahim.
+
+This program comes with ABSOLUTELY NO WARRANTY; for details visit http://www.gnu.org/licenses/gpl.html. This is free software, and you are welcome to redistribute it under certain conditions; visit http://www.gnu.org/licenses/gpl.html for details.
+
+OPTIONS:
+   -s      Directory containing sample files (required)
+   -g      Genome size file (required)
+   -o      Output Directory (required)
+   -c      directory containing input or Control files
+   -r 	   file with Regions to get signal for (required)
+   -b      Bin size for signal generation (default: 10)
+   -f      Fragment lengths (required if -t is "single")
+   -p	   Number of processors used by R scripts (default: 1)
+   -t	   Alignment type, paired or single (default: single)
+   -n	   Normalization method, chromAverage or depth (default: chromAverage)
 ```
 

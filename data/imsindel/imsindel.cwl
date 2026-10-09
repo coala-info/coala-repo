@@ -13,7 +13,9 @@ inputs:
       prefix: --alt-read-depth
   - id: bam
     type: File
-    doc: /path/to/foo.bam
+    secondaryFiles:
+      - .bai
+    doc: /path/to/foo.bam (coordinate sorted, with .bai index)
     inputBinding:
       position: 101
       prefix: --bam
@@ -25,9 +27,7 @@ inputs:
       position: 101
       prefix: --baseq
   - id: chr
-    type:
-      - 'null'
-      - string
+    type: string
     doc: chromosome
     inputBinding:
       position: 101
@@ -62,10 +62,9 @@ inputs:
       position: 101
       prefix: --glsearch-mat
   - id: indelsize
-    type:
-      - 'null'
-      - int
-    doc: maximal indel-size
+    type: int
+    doc: maximal indel-size (the reference window around a candidate is this
+      long, so it must be larger than the read length)
     inputBinding:
       position: 101
       prefix: --indelsize
@@ -91,10 +90,10 @@ inputs:
       position: 101
       prefix: --pair-within
   - id: reffa
-    type:
-      - 'null'
-      - File
-    doc: /path/to/ref.fa
+    type: File
+    secondaryFiles:
+      - .fai
+    doc: /path/to/ref.fa (with .fai index)
     inputBinding:
       position: 101
       prefix: --reffa
@@ -122,7 +121,9 @@ inputs:
   - id: temp
     type:
       - 'null'
-      - Directory
+      - string
+    default: /tmp
+    doc: Temporary directory (must exist)
     inputBinding:
       position: 101
       prefix: --temp
@@ -141,9 +142,8 @@ inputs:
       position: 101
       prefix: --within
   - id: outd_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: /path/to/outoput-dir
     inputBinding:
       position: 102
       prefix: --outd
@@ -171,6 +171,14 @@ outputs:
       glob: $(inputs.output_consensus_seq_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outd_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
+      - entryname: '$(inputs.output_consensus_seq_path ? inputs.output_consensus_seq_path : "unused_consensus_dir")'
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/imsindel:1.0.2--hdfd78af_1

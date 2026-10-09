@@ -36,7 +36,13 @@ outputs:
       items: File
     doc: Files written with the prefix given in project
     outputBinding:
-      glob: $(inputs.project)*
+      glob: $(inputs.path_salmon.basename)/$(inputs.project)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.path_salmon)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0

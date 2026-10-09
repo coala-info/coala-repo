@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./JARVIS3
+baseCommand: JARVIS3
 label: jarvis3_JARVIS3
 doc: "Lossless compression and decompression of genomic\n      sequences for minimal
   storage and analysis purposes.\n      Measure an upper bound of the sequence complexity.\n\
@@ -11,7 +11,8 @@ inputs:
     doc: "Input sequence filename (to compress) -- MANDATORY.\n           File to
       compress is the last argument."
     inputBinding:
-      position: 1
+      position: 200
+      valueFrom: $(self.basename)
   - id: compression_level
     type:
       - 'null'
@@ -126,7 +127,18 @@ outputs:
     doc: Compressed/decompressed output filename.
     outputBinding:
       glob: $(inputs.output_filename_path)
+  - id: iae
+    type:
+      - 'null'
+      - File
+    doc: Information content file written with --estimate
+    outputBinding:
+      glob: $(inputs.input_file.basename).iae
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

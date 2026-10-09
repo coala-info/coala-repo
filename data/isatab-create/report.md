@@ -1,5 +1,11 @@
 # isatab-create CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isatab-create | PASS |  |
+
 ## isatab-create
 
 ### Tool Description

@@ -1,5 +1,16 @@
 # isaac4 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isaac4_isaac-align | Not completed | needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make) |
+| isaac4_isaac-merge-references | Not completed | needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make) |
+| isaac4_isaac-pack-reference | Not completed | needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make) |
+| isaac4_isaac-reorder-reference | Not completed | needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make) |
+| isaac4_isaac-sort-reference | Failed | image problem: the image has no make, so isaac-sort-reference cannot build the reference |
+| isaac4_isaac-unpack-reference | Not completed | needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make) |
+
 ## isaac4_isaac-align
 
 ### Tool Description
@@ -807,3 +818,215 @@ std::exception::what:
    *** The 'reference-genome' option is required ***
 ```
 
+## isaac4_isaac-sort-reference
+
+### Tool Description
+Sort a reference FASTA and build the Isaac reference directory needed by isaac-align.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isaac4:04.18.11.09--h07bff40_0
+- **Homepage**: https://github.com/Illumina/Isaac4
+- **Package**: https://anaconda.org/channels/bioconda/packages/isaac4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+readlink: invalid option -- 'e'
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: readlink [-fnv] FILE
+
+Display the value of a symlink
+
+	-f	Canonicalize by following all symlinks
+	-n	Don't add newline
+	-v	Verbose
+
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: dirname FILENAME
+
+Strip non-directory suffix from FILENAME
+
+**Usage**
+
+isaac-sort-reference [options]
+
+**Options**
+
+    -g [ --genome-file ] arg                              Path to fasta file containing the reference contigs 
+    -h [ --help ]                                         Print this message
+    -n [ --dry-run ]                                      Don't actually run any commands; just print them
+    -o [ --output-directory ] arg (./IsaacIndex.20261009) Location where the results are stored
+    -q [ --quiet ]                                        Avoid excessive logging
+    -v [ --version ]                                      Only print version information
+    --target arg (all)                                    Individual target to make
+ERROR: --output-directory and --genome-file arguments are mandatory
+```
+
+## isaac4_isaac-reorder-reference
+
+### Tool Description
+Reorder the contigs of an Isaac sorted reference and write a new reference XML descriptor.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isaac4:04.18.11.09--h07bff40_0
+- **Homepage**: https://github.com/Illumina/Isaac4
+- **Package**: https://anaconda.org/channels/bioconda/packages/isaac4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+2026-10-09 01:21:18 	[7118d89e4740]	Forcing LC_ALL to C
+isaac-reorder-reference
+
+Command line options:
+  -h [ --help ]                 produce help message and exit
+  --help-defaults               produce tab-delimited list of command line 
+                                options and their default values
+  --help-md                     produce help message pre-formatted as a 
+                                markdown file section and exit
+  --order arg                   Comma-separated list of contig names in the 
+                                order in which they will appear in the new .fa 
+                                file.
+  -d [ --output-directory ] arg Path for the reordered fasta and annotation 
+                                files.
+  -x [ --output-xml ] arg       Path for the new xml file.
+  -r [ --reference-genome ] arg Full path to the reference genome XML 
+                                descriptor.
+  --response-file arg           file with more command line arguments
+  -v [ --version ]              print program version information
+```
+
+## isaac4_isaac-merge-references
+
+### Tool Description
+Merge several Isaac sorted references into one reference directory.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isaac4:04.18.11.09--h07bff40_0
+- **Homepage**: https://github.com/Illumina/Isaac4
+- **Package**: https://anaconda.org/channels/bioconda/packages/isaac4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+readlink: invalid option -- 'e'
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: readlink [-fnv] FILE
+
+Display the value of a symlink
+
+	-f	Canonicalize by following all symlinks
+	-n	Don't add newline
+	-v	Verbose
+
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: dirname FILENAME
+
+Strip non-directory suffix from FILENAME
+
+**Usage**
+
+isaac-merge-references [options]
+
+**Options**
+
+    -h [ --help ]                                         Print this message
+    -v [ --version ]                                      Only print version information
+
+    -i [ --input-file ] arg                               Path to sorted-reference.xml to be merged. 
+                                                          Multiple entries allowed.
+    -o [ --output-directory ] arg (./IsaacIndex.20261009) Location where the results are stored
+```
+
+## isaac4_isaac-pack-reference
+
+### Tool Description
+Pack an Isaac sorted reference directory into a tar.gz archive.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isaac4:04.18.11.09--h07bff40_0
+- **Homepage**: https://github.com/Illumina/Isaac4
+- **Package**: https://anaconda.org/channels/bioconda/packages/isaac4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+readlink: invalid option -- 'e'
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: readlink [-fnv] FILE
+
+Display the value of a symlink
+
+	-f	Canonicalize by following all symlinks
+	-n	Don't add newline
+	-v	Verbose
+
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: dirname FILENAME
+
+Strip non-directory suffix from FILENAME
+
+**Usage**
+
+isaac-pack-reference [options]
+
+**Options**
+
+    -h [ --help ]                                         Print this message
+    -n [ --dry-run ]                                      Don't actually run any commands; just print them
+    -v [ --version ]                                      Only print version information
+    -j [ --jobs ] arg (=20)                               Maximum number of parallel operations
+
+    -r [ --reference-genome ] arg                         Path to sorted-reference.xml 
+    -o [ --output-file ] arg (./packed-reference.tar.gz)  Archive path
+```
+
+## isaac4_isaac-unpack-reference
+
+### Tool Description
+Unpack an Isaac reference archive made by isaac-pack-reference.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/isaac4:04.18.11.09--h07bff40_0
+- **Homepage**: https://github.com/Illumina/Isaac4
+- **Package**: https://anaconda.org/channels/bioconda/packages/isaac4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+readlink: invalid option -- 'e'
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: readlink [-fnv] FILE
+
+Display the value of a symlink
+
+	-f	Canonicalize by following all symlinks
+	-n	Don't add newline
+	-v	Verbose
+
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: dirname FILENAME
+
+Strip non-directory suffix from FILENAME
+
+**Usage**
+
+isaac-unpack-reference [options]
+
+**Options**
+
+    -h [ --help ]                                        Print this message
+    -i [ --input-file ] arg                              Archive path
+    --make-movable                                       Store relative paths in sorted-reference.xml so that the entire
+                                                         folder can be copied elsewhere
+    -n [ --dry-run ]                                     Don't actually run any commands; just print them
+    -v [ --version ]                                     Only print version information
+```

@@ -44,9 +44,7 @@ inputs:
       position: 101
       prefix: --exact_instance_limit
   - id: fastq
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to input fastq file with reads
     inputBinding:
       position: 101
@@ -166,17 +164,16 @@ inputs:
       position: 101
       prefix: --xmin
   - id: outfolder_path
-    type: string?
+    type: string
+    default: isONcorrect_out
+    doc: Output folder for the corrected reads.
     inputBinding:
       position: 102
       prefix: --outfolder
 outputs:
   - id: outfolder
-    type:
-      - 'null'
-      - File
-    doc: A fasta file with transcripts that are shared between samples and have 
-      perfect illumina support.
+    type: Directory
+    doc: Output folder with the corrected reads.
     outputBinding:
       glob: $(inputs.outfolder_path)
 requirements:

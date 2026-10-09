@@ -1,5 +1,11 @@
 # ir CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ir | PASS |  |
+
 ## ir
 
 ### Tool Description

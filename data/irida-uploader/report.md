@@ -1,5 +1,11 @@
 # irida-uploader CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| irida-uploader | Not completed | needs a running IRIDA server to upload to |
+
 ## irida-uploader
 
 ### Tool Description

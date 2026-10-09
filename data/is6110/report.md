@@ -1,5 +1,11 @@
 # is6110 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| is6110 | PASS | synthetic data: an IS6110 insertion planted in a real M. tuberculosis region; the insertion site is reported at the planted position. |
+
 ## is6110
 
 ### Tool Description

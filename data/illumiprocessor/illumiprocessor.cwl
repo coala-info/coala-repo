@@ -29,7 +29,7 @@ inputs:
   - id: log_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to a directory to hold logs.
     inputBinding:
       position: 101
@@ -51,7 +51,7 @@ inputs:
       position: 101
       prefix: --no-merge
   - id: output
-    type: Directory
+    type: string
     doc: The output directory of clean reads to create.
     inputBinding:
       position: 101
@@ -106,9 +106,29 @@ inputs:
       prefix: --verbosity
 outputs:
   - id: stdout
-    type: stdout
+    type: File
     doc: Standard output
+    outputBinding:
+      glob: illumiprocessor.out
+  - id: output_dir
+    type: Directory
+    doc: The output directory of clean reads.
+    outputBinding:
+      glob: $(inputs.output)
+  - id: log_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The directory that holds the logs.
+    outputBinding:
+      glob: $(inputs.log_path)
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: '> illumiprocessor.out && rm -rf $(inputs.output)/*/raw-reads'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/illumiprocessor:2.10--py_0
-stdout: illumiprocessor.out

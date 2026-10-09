@@ -1,5 +1,20 @@
 # jass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jass_add-gene-annotation | PASS |  |
+| jass_clean-project-data | PASS | synthetic data: a project built with the jass Python API from the real MAGIC example data and backdated; the old project is removed and recent ones kept. |
+| jass_create-inittable | PASS |  |
+| jass_create-project-data | PASS |  |
+| jass_create-worktable | PASS |  |
+| jass_extract-tsv | PASS |  |
+| jass_list-phenotypes | PASS |  |
+| jass_plot-manhattan | PASS |  |
+| jass_plot-quadrant | PASS |  |
+| jass_qq-plot | PASS |  |
+
 ## jass_list-phenotypes
 
 ### Tool Description

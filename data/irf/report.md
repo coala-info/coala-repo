@@ -1,5 +1,11 @@
 # irf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| irf | PASS |  |
+
 ## irf
 
 ### Tool Description

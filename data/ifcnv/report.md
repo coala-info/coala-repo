@@ -1,5 +1,11 @@
 # ifcnv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ifcnv_ifCNV | PASS | output report typed Directory (was File), --save and --contaSamples and --scoreThreshold types fixed; real SARS-CoV-2 BAMs give a valid read matrix; synthetic data: a planted 0.5x loss in one sample is the top hit (score 8.0) in the report |
+
 ## ifcnv_ifCNV
 
 ### Tool Description

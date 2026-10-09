@@ -1,5 +1,11 @@
 # irida-staramr-results CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| irida-staramr-results | Not completed | needs a running IRIDA server with StarAMR results |
+
 ## irida-staramr-results
 
 ### Tool Description

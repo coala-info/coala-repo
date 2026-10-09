@@ -1,5 +1,12 @@
 # instanovo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| instanovo_convert | PASS |  |
+| instanovo_predict | Not completed | needs model weights downloaded from GitHub (380 MB to 1.1 GB), over the test data size limit |
+
 ## instanovo_predict
 
 ### Tool Description

@@ -77,7 +77,7 @@ inputs:
     doc: The ID of the project to get data from.
     inputBinding:
       position: 101
-      prefix: --projectId
+      prefix: -p
   - id: rename_existing
     type:
       - 'null'
@@ -92,11 +92,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample
     doc: A sample id to get sequence files for. Multiple samples may be listed 
       as -s 1 -s 2 -s 3...
     inputBinding:
       position: 101
-      prefix: --sample
   - id: username
     type:
       - 'null'

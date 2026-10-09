@@ -70,9 +70,7 @@ inputs:
       position: 101
       prefix: --metadata
   - id: output_dir
-    type:
-      - 'null'
-      - string
+    type: string
     doc: The output directory. If not exists, it will be created
     inputBinding:
       position: 101
@@ -133,12 +131,13 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: The output directory. If not exists, it will be created
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iseq:1.9.8--hdfd78af_0

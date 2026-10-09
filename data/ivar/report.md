@@ -1,5 +1,16 @@
 # ivar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ivar_consensus | PASS |  |
+| ivar_filtervariants | Failed | tool bug: ivar 1.4.4 filtervariants rejects the output of its own ivar variants (header check expects 19 columns, the table has 20) and writes an empty table |
+| ivar_getmasked | PASS |  |
+| ivar_removereads | PASS |  |
+| ivar_trim | PASS |  |
+| ivar_variants | PASS |  |
+
 ## ivar_trim
 
 ### Tool Description

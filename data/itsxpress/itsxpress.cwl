@@ -2,84 +2,163 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: itsxpress
 label: itsxpress
-doc: "ITSxpress: A tool to rapidly trim ITS regions from FASTQ files.\n\nTool homepage:
-  http://github.com/usda-ars-gbru/itsxpress"
+doc: "ITSxpress: A python module to rapidly trim ITS amplicon sequences from Fastq
+  files.\n\nTool homepage: http://github.com/usda-ars-gbru/itsxpress"
 inputs:
-  - id: mode
-    type: string
-    doc: 'Analysis mode: fastq, single_end, or interleaved'
-    inputBinding:
-      position: 1
-  - id: cluster_id
-    type:
-      - 'null'
-      - float
-    doc: The percent identity for clustering with VSEARCH
-    inputBinding:
-      position: 102
-      prefix: --cluster_id
   - id: fastq
+    type: File
+    doc: A .fastq, .fq, .fastq.gz or .fq.gz file. Interleaved or not.
+    inputBinding:
+      position: 101
+      prefix: --fastq
+  - id: single_end
     type:
       - 'null'
-      - File
-    doc: Input FASTQ file (forward reads or single-end)
+      - boolean
+    doc: A flag to specify that the FASTQ file is single-ended (not paired). Default is false.
     inputBinding:
-      position: 102
-      prefix: --fastq
+      position: 101
+      prefix: --single_end
   - id: fastq2
     type:
       - 'null'
       - File
-    doc: Input FASTQ file (reverse reads)
+    doc: A .fastq, .fq, .fastq.gz or .fq.gz file. representing read 2 (optional)
     inputBinding:
-      position: 102
+      position: 101
       prefix: --fastq2
-  - id: log
-    type:
-      - 'null'
-      - File
-    doc: Log file
+  - id: outfile
+    type: string
+    doc: the trimmed Fastq file, if it ends in 'gz' it will be gzipped
     inputBinding:
-      position: 102
-      prefix: --log
-  - id: region
+      position: 101
+      prefix: --outfile
+  - id: outfile2
     type:
       - 'null'
       - string
-    doc: 'ITS region to trim: ITS1, ITS2, or ALL'
+    doc: the trimmed read 2 Fastq file, if it ends in 'gz' it will be gzipped. If provided, reads will be returned unmerged.
     inputBinding:
-      position: 102
+      position: 101
+      prefix: --outfile2
+  - id: tempdir
+    type:
+      - 'null'
+      - string
+    doc: The temp file directory
+    inputBinding:
+      position: 101
+      prefix: --tempdir
+  - id: allow_staggered_reads
+    type:
+      - 'null'
+      - string
+    doc: Allow merging of staggered reads with --fastq_allowmergestagger for Vsearch
+      --fastq_mergepairs. See Vsearch documentation. (Optional) Default is true.
+    inputBinding:
+      position: 101
+      prefix: --allow_staggered_reads
+  - id: keeptemp
+    type:
+      - 'null'
+      - boolean
+    doc: Should intermediate files be kept?
+    inputBinding:
+      position: 101
+      prefix: --keeptemp
+  - id: region
+    type:
+      type: enum
+      symbols:
+        - ITS2
+        - ITS1
+        - ALL
+    doc: The ITS region to extract
+    inputBinding:
+      position: 101
       prefix: --region
   - id: taxa
     type:
       - 'null'
-      - string
-    doc: Taxon group (e.g., Fungi, Algae, Bryophyta, etc.)
+      - type: enum
+        symbols:
+          - Alveolata
+          - Bryophyta
+          - Bacillariophyta
+          - Amoebozoa
+          - Euglenozoa
+          - Fungi
+          - Chlorophyta
+          - Rhodophyta
+          - Phaeophyceae
+          - Marchantiophyta
+          - Metazoa
+          - Oomycota
+          - Haptophyceae
+          - Raphidophyceae
+          - Rhizaria
+          - Synurophyceae
+          - Tracheophyta
+          - Eustigmatophyceae
+          - Parabasalia
+          - All
+    doc: The taxonomic group sequenced.
     inputBinding:
-      position: 102
+      position: 101
       prefix: --taxa
+  - id: cluster_id
+    type:
+      - 'null'
+      - float
+    doc: The percent identity for clustering reads range [0.99-1.0], set to 1 for exact dereplication.
+    inputBinding:
+      position: 101
+      prefix: --cluster_id
+  - id: reversed_primers
+    type:
+      - 'null'
+      - boolean
+    doc: Primers are in reverse orientation as in Taylor et al. 2016, DOI:10.1128/AEM.02576-16.
+      If selected ITSxpress returns trimmed reads flipped to the forward orientation
+    inputBinding:
+      position: 101
+      prefix: --reversed_primers
+  - id: log
+    type:
+      - 'null'
+      - string
+    doc: Log file
+    inputBinding:
+      position: 101
+      prefix: --log
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of processor threads to use
+    doc: Number of processor threads to use.
     inputBinding:
-      position: 102
+      position: 101
       prefix: --threads
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 103
-      prefix: --output
 outputs:
-  - id: output
+  - id: trimmed_reads
+    type: File
+    doc: Trimmed FASTQ file
+    outputBinding:
+      glob: $(inputs.outfile)
+  - id: trimmed_reads2
     type:
       - 'null'
       - File
-    doc: Output trimmed FASTQ file
+    doc: Trimmed read 2 FASTQ file (only with outfile2)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.outfile2)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

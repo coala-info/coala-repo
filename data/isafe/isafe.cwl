@@ -8,7 +8,7 @@ inputs:
   - id: aa
     type:
       - 'null'
-      - string
+      - File
     doc: "<string>: Path to the Ancestral Allele (AA) file in FASTA (.fa) format.\n\
       \  * This is strongly recommended  in --format vcf. However, if the ancestral
       allele file is not available the program raises a warning and assumes reference
@@ -52,9 +52,14 @@ inputs:
       position: 101
       prefix: --IgnoreGaps
   - id: input
-    type: string
+    type: File
     doc: "<string>: Path to the input (case population).\n  * Input positions must
       be sorted numerically, in increasing order."
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 101
       prefix: --input
@@ -159,7 +164,7 @@ inputs:
   - id: sample_case
     type:
       - 'null'
-      - string
+      - File
     doc: "<string>: Path to the file containing sample ID's of the case population.\n\
       \  * This option is only available in --format vcf.\n  * When this option is
       not used all the samples in the --input are considered as the case samples.\n\
@@ -176,7 +181,7 @@ inputs:
   - id: sample_cont
     type:
       - 'null'
-      - string
+      - File
     doc: "<string>: Path to the file containing sample ID's of the control population(s).\n\
       \  * This option is only available in --format vcf.\n  * When this option is
       not used all the samples in the --vcf-cont are considered as the control samples.\n\
@@ -217,7 +222,7 @@ inputs:
   - id: vcf_cont
     type:
       - 'null'
-      - string
+      - File
     doc: "<string>: Path to the phased control population.\n  * only accepts indexed
       bgzipped VCF (vcf.gz with index file) or indexed bcf files (.bcf with index
       file).\n  * This is optional but recommended for capturing fixed sweeps.\n \
@@ -229,6 +234,11 @@ inputs:
       use 1000 Genome Project populations as control.\n    - Download link of phased
       VCF files of 1000GP (GRCh37/hg19): http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/\n\
       \    - Download link of phased VCF files of 1000GP (GRCh38/hg38): http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/supporting/GRCh38_positions/"
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 101
       prefix: --vcf-cont
@@ -254,13 +264,13 @@ inputs:
       position: 102
       prefix: --output
 outputs:
-  - id: output
-    type: File
-    doc: "<string>: Path to the output(s).\n  * iSAFE generates <OUTPUT>.iSAFE.out\n\
-      \  * When --OutputPsi is set, iSAFE generates <OUTPUT>.Psi.out in addition to
-      <OUTPUT>.iSAFE.out"
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: "iSAFE results: <OUTPUT>.iSAFE.out, and <OUTPUT>.Psi.out when --OutputPsi is set"
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

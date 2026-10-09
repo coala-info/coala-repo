@@ -8,7 +8,10 @@ inputs:
   - id: add_date_stamp
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Adds a date and time stamp to the output directory, off (F) by default
     inputBinding:
       position: 101
@@ -16,7 +19,10 @@ inputs:
   - id: allow_reorder
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Allows profiles to be in the wrong order on extracted sequences, off 
       (F) by default
     inputBinding:
@@ -42,18 +48,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --anchor
-  - id: bugs
-    type:
-      - 'null'
-      - boolean
-    doc: displays the bug fixes and known bugs in this version of ITSx
-    inputBinding:
-      position: 101
-      prefix: --bugs
   - id: check_complement
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Checks both DNA strands against the database, creating reverse 
       complements, on (T) by default
     inputBinding:
@@ -98,14 +99,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
-  - id: license
-    type:
-      - 'null'
-      - boolean
-    doc: displays licensing information
-    inputBinding:
-      position: 101
-      prefix: --license
   - id: min_domains
     type:
       - 'null'
@@ -127,7 +120,10 @@ inputs:
   - id: multi_thread_hmmer
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Multi-thread the HMMER-search, on (T) if number of CPUs (--cpu option >
       1), else off (F) by default
     inputBinding:
@@ -136,7 +132,10 @@ inputs:
   - id: output_concatenated
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Saves a FASTA-file with concatenated ITS sequences (with 5.8S removed),
       off (F) by default
     inputBinding:
@@ -145,7 +144,10 @@ inputs:
   - id: output_detailed_results
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Saves a tab-separated list of all results, off (F) by default
     inputBinding:
       position: 101
@@ -153,7 +155,10 @@ inputs:
   - id: output_fasta
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: FASTA-format output of extracted ITS sequences, on (T) by default
     inputBinding:
       position: 101
@@ -161,7 +166,10 @@ inputs:
   - id: output_graphical
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: "'Graphical' output, on (T) by default"
     inputBinding:
       position: 101
@@ -169,7 +177,10 @@ inputs:
   - id: output_not_found
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Saves a list of non-found entries, on (T) by default
     inputBinding:
       position: 101
@@ -177,7 +188,10 @@ inputs:
   - id: output_only_full
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: If true, output is limited to full-length regions, off (F) by default
     inputBinding:
       position: 101
@@ -185,7 +199,10 @@ inputs:
   - id: output_positions
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Table format output containing the positions ITS sequences were found 
       in, on (T) by default
     inputBinding:
@@ -194,7 +211,10 @@ inputs:
   - id: output_summary
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Summary of results output, on (T) by default
     inputBinding:
       position: 101
@@ -202,7 +222,10 @@ inputs:
   - id: output_table
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Table format output of sequences containing probable ITS sequences, off
       (F) by default
     inputBinding:
@@ -220,7 +243,10 @@ inputs:
   - id: preserve_headers
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Preserve sequence headers in input file instead of printing out ITSx 
       headers, off (F) by default
     inputBinding:
@@ -257,7 +283,10 @@ inputs:
   - id: reset_db
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Re-creates the HMM-database before ITSx is run, off (F) by default
     inputBinding:
       position: 101
@@ -265,7 +294,10 @@ inputs:
   - id: save_raw_data
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Saves all raw data for searches etc. instead of removing it on finish, 
       off (F) by default
     inputBinding:
@@ -310,7 +342,10 @@ inputs:
   - id: suppress_progress
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Supresses printing progress info to stderr, off (F) by default
     inputBinding:
       position: 101
@@ -326,7 +361,10 @@ inputs:
   - id: truncate_fasta
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Truncates the FASTA output to only contain the actual ITS sequences 
       found, on (T) by default
     inputBinding:
@@ -335,7 +373,10 @@ inputs:
   - id: use_heuristics
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Selects whether to use HMMER's heuristic filtering, off (F) by default
     inputBinding:
       position: 101
@@ -343,21 +384,15 @@ inputs:
   - id: use_nhmmer
     type:
       - 'null'
-      - boolean
+      - type: enum
+        symbols:
+          - 'T'
+          - 'F'
     doc: Selects whether to use nhmmer instead of hmmsearch for HMMER searches, 
       off (F) by default
     inputBinding:
       position: 101
       prefix: --nhmmer
-  - id: use_stdin
-    type:
-      - 'null'
-      - boolean
-    doc: Use input from standard input instead of an input file, off (F) by 
-      default
-    inputBinding:
-      position: 101
-      prefix: --stdin
   - id: output_file_path
     type: string
     doc: '{file} : Base for the names of output file(s)'
@@ -365,11 +400,13 @@ inputs:
       position: 102
       prefix: -o
 outputs:
-  - id: output_file
-    type: File
-    doc: Base for the names of output file(s)
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: All files written with the output base name
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

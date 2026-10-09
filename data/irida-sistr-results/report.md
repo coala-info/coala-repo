@@ -1,5 +1,11 @@
 # irida-sistr-results CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| irida-sistr-results | Not completed | needs a running IRIDA server with SISTR results |
+
 ## irida-sistr-results
 
 ### Tool Description

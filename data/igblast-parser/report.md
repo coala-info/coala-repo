@@ -1,5 +1,11 @@
 # igblast-parser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| igblast-parser | PASS | fixed baseCommand (igblast-parser, not python) and options; IgBLAST output for 100 real airrflow BCR reads (made with igblastn from the igdiscover image) gives 100 rows with matching V/D/J calls; note: the tool drops the first character of each query id |
+
 ## igblast-parser
 
 ### Tool Description

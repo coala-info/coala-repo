@@ -28,16 +28,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --products
-  - id: examples
+  - id: forward_primer
     type:
       - 'null'
-      - boolean
-    doc: Show quickstart examples and exit
-    inputBinding:
-      position: 101
-      prefix: --examples
-  - id: forward_primer
-    type: string
+      - string
     doc: Forward primer sequence (5'→3')
     inputBinding:
       position: 101
@@ -109,7 +103,7 @@ inputs:
   - id: primers_file
     type:
       - 'null'
-      - string
+      - File
     doc: Primer TSV (id fwd rev [min] [max])
     inputBinding:
       position: 101
@@ -123,7 +117,9 @@ inputs:
       position: 101
       prefix: --quiet
   - id: reverse_primer
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Reverse primer sequence (5'→3')
     inputBinding:
       position: 101
@@ -139,20 +135,22 @@ inputs:
   - id: self
     type:
       - 'null'
-      - boolean
-    doc: Allow single-oligo amplification (A×rc(A), B×rc(B))
+      - string
+    doc: 'Allow single-oligo amplification (A×rc(A), B×rc(B)): true or false (default true)'
     inputBinding:
       position: 101
-      prefix: --self
+      prefix: --self=
+      separate: false
   - id: sequences
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --sequences
     doc: FASTA file(s) (repeatable) or '-' for STDIN
     inputBinding:
       position: 101
-      prefix: --sequences
   - id: sort_output
     type:
       - 'null'

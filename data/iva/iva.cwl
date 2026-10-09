@@ -347,4 +347,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iva:1.0.11--py_0
-stdout: iva.out
+stdout: iva_stdout.txt

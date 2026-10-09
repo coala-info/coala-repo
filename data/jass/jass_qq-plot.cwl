@@ -24,6 +24,10 @@ outputs:
     outputBinding:
       glob: $(inputs.plot_path_path)
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: JASS_PROJECTS_DIR
+        envValue: $(runtime.outdir)/jass_projects
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

@@ -87,11 +87,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --project
     doc: Projects to scan for SISTR results. If left blank will scan all 
       projects the user has access to.
     inputBinding:
       position: 101
-      prefix: --project
   - id: reportable_serovars_file
     type:
       - 'null'
@@ -139,11 +140,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --workflow
     doc: Only include results of these workflow versions (or uuids) ['0.1', 
       '0.2', '0.3'] [all versions]
     inputBinding:
       position: 101
-      prefix: --workflow
   - id: output_excel_path
     type:
       - 'null'

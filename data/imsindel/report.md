@@ -1,5 +1,11 @@
 # imsindel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| imsindel | PASS |  |
+
 ## imsindel
 
 ### Tool Description

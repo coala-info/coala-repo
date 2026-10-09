@@ -1,5 +1,11 @@
 # jarvis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| jarvis_JARVIS | Failed | tool bug: JARVIS 1.1 loops forever and writes endless output on FASTA input; plain ACGT text compresses, but -d decompression writes a correct .jd file and then exits 1 with an error |
+
 ## jarvis_JARVIS
 
 ### Tool Description

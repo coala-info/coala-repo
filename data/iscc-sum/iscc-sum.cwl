@@ -9,8 +9,10 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
-    doc: Files to compute checksums for
+        items:
+          - File
+          - Directory
+    doc: Files to compute checksums for (directories with --tree)
     inputBinding:
       position: 1
   - id: check
@@ -112,21 +114,27 @@ inputs:
       position: 102
       prefix: --zero
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Write checksums to FILE instead of stdout
     inputBinding:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Checksums printed to standard output
   - id: output
     type:
       - 'null'
       - File
     doc: Write checksums to FILE instead of stdout (ensures UTF-8, LF encoding)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path || "iscc_sum_no_output_file")
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iscc-sum:0.1.0--py314hc1c3326_0
+stdout: iscc-sum.out

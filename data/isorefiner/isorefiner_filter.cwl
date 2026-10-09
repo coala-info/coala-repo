@@ -4,99 +4,87 @@ baseCommand:
   - isorefiner
   - filter
 label: isorefiner_filter
-doc: "Filter transcript structures based on read alignments.\n\nTool homepage: https://github.com/rkajitani/IsoRefiner"
+doc: "Filter transcript isoforms.\n\nTool homepage: https://github.com/rkajitani/IsoRefiner"
 inputs:
-  - id: genome
-    type: File
-    doc: Reference genome (FASTA, mandatory)
-    inputBinding:
-      position: 101
-      prefix: --genome
   - id: input_gtf
     type: File
-    doc: Input transcript isoform structures (GTF, mandatory)
+    doc: "Input transcript isoform structures (GTF)."
     inputBinding:
-      position: 101
+      position: 1
       prefix: --input_gtf
-  - id: max_clip
-    type:
-      - 'null'
-      - int
-    doc: Max clip (unaligned) length for read mapping
-    inputBinding:
-      position: 101
-      prefix: --max_clip
-  - id: max_indel
-    type:
-      - 'null'
-      - int
-    doc: Max indel for read mapping
-    inputBinding:
-      position: 101
-      prefix: --max_indel
-  - id: min_cov
-    type:
-      - 'null'
-      - float
-    doc: Min coverage for filtering [0-1]
-    inputBinding:
-      position: 101
-      prefix: --min_cov
-  - id: min_idt
-    type:
-      - 'null'
-      - float
-    doc: Min identity for read mapping [0-1]
-    inputBinding:
-      position: 101
-      prefix: --min_idt
-  - id: min_mean_depth
-    type:
-      - 'null'
-      - float
-    doc: Min mean coverage depth for filtering
-    inputBinding:
-      position: 101
-      prefix: --min_mean_depth
   - id: reads
-    type:
-      type: array
-      items: File
-    doc: Reads (FASTQ or FASTA, gzip allowed, mandatory)
+    type: File[]
+    doc: "Reads (FASTQ or FASTA, gzip allowed)."
     inputBinding:
-      position: 101
+      position: 2
       prefix: --reads
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads
+  - id: genome
+    type: File
+    doc: "Reference genome (FASTA)."
     inputBinding:
-      position: 101
-      prefix: --threads
-  - id: work_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Working directory containing intermediate and log files
-    inputBinding:
-      position: 101
-      prefix: --work_dir
-  - id: out_gtf_path
-    type: string
-    inputBinding:
-      position: 102
-      prefix: --out_gtf
-outputs:
+      position: 3
+      prefix: --genome
   - id: out_gtf
-    type:
-      - 'null'
-      - File
-    doc: Final output file name (GTF)
+    type: string
+    default: isorefiner_filtered.gtf
+    doc: "Final output file name (GTF)."
+    inputBinding:
+      position: 4
+      prefix: --out_gtf
+  - id: max_indel
+    type: ['null', int]
+    doc: "Max indel for read mapping."
+    inputBinding:
+      position: 6
+      prefix: --max_indel
+  - id: max_clip
+    type: ['null', int]
+    doc: "Max clip (unaligned) length for read mapping."
+    inputBinding:
+      position: 7
+      prefix: --max_clip
+  - id: min_idt
+    type: ['null', float]
+    doc: "Min identity for read mapping [0-1]."
+    inputBinding:
+      position: 8
+      prefix: --min_idt
+  - id: min_cov
+    type: ['null', float]
+    doc: "Min coverage for filtering [0-1]."
+    inputBinding:
+      position: 9
+      prefix: --min_cov
+  - id: min_mean_depth
+    type: ['null', float]
+    doc: "Min mean coverage depth for filtering."
+    inputBinding:
+      position: 10
+      prefix: --min_mean_depth
+  - id: work_dir
+    type: string
+    default: isorefiner_filter_work
+    doc: "Working directory containing intermediate and log files."
+    inputBinding:
+      position: 5
+      prefix: --work_dir
+  - id: threads
+    type: ['null', int]
+    doc: "Number of threads."
+    inputBinding:
+      position: 5
+      prefix: --threads
+outputs:
+  - id: output_gtf
+    type: File
+    doc: "Filtered transcript isoform structures."
     outputBinding:
-      glob: $(inputs.out_gtf_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out_gtf)
+  - id: log_file
+    type: ['null', File]
+    doc: "Log file of the run (in the working directory)."
+    outputBinding:
+      glob: $(inputs.work_dir)/log.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isorefiner:0.1.0--pyh7e72e81_1

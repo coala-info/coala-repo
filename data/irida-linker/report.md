@@ -1,5 +1,11 @@
 # irida-linker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| irida-linker_ngsArchiveLinker.pl | Not completed | needs a running IRIDA server (also needs a config file); long option --projectId is rejected by the tool, so -p is used |
+
 ## irida-linker_ngsArchiveLinker.pl
 
 ### Tool Description

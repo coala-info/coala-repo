@@ -1,5 +1,11 @@
 # isafe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| isafe | PASS |  |
+
 ## isafe
 
 ### Tool Description

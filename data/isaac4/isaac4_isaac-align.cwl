@@ -104,16 +104,19 @@ inputs:
     type:
       type: array
       items: Directory
+      inputBinding:
+        prefix: --base-calls
     doc: Full path to the base calls. Multiple entries allowed. Path should 
       point either to a directory or a file depending on --base-calls-format
     inputBinding:
       position: 101
-      prefix: --base-calls
   - id: base_calls_format
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --base-calls-format
     doc: "Multiple entries allowed. Each entry is applied to the corresponding base-calls.
       Last entry is applied to all --base-calls that don't have --base-calls-format
       specified. - bam : --base-calls points to a Bam file. All data found in bam
@@ -129,7 +132,6 @@ inputs:
       data."
     inputBinding:
       position: 101
-      prefix: --base-calls-format
   - id: base_quality_cutoff
     type:
       - 'null'
@@ -208,11 +210,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --cluster
     doc: Restrict the alignment to the specified cluster Id (multiple entries 
       allowed)
     inputBinding:
       position: 101
-      prefix: --cluster
   - id: clusters_at_a_time
     type:
       - 'null'
@@ -240,6 +243,8 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --default-adapters
     doc: "Multiple entries allowed. Each entry is associated with the corresponding
       base-calls. Flowcells that don't have default-adapters provided, don't get adapters
       clipped in the data. Each entry is a comma-separated list of adapter sequences
@@ -257,7 +262,6 @@ inputs:
       NexteraMp : Nextera mate-pair. Same as CTGTCTCTTATACACATCT,AGATGTGTATAAGAGACAG"
     inputBinding:
       position: 101
-      prefix: --default-adapters
       itemSeparator: ','
   - id: description
     type:
@@ -653,6 +657,8 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --reference-name
     doc: "Unique symbolic name of the reference. Multiple entries allowed. Each entry
       is associated with the corresponding --reference-genome and will be matched
       against the 'reference' column in the sample sheet. Special names: - unknown
@@ -661,7 +667,6 @@ inputs:
       column."
     inputBinding:
       position: 101
-      prefix: --reference-name
   - id: remap_qscores
     type:
       - 'null'
@@ -703,13 +708,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample-sheet
     doc: 'Multiple entries allowed. Each entry is applied to the corresponding base-calls.
       - none : process flowcell as if there is no sample sheet - default : use <base-calls>/SampleSheet.csv
       if it exists. This is the default behavior. - <file path> : use <file path>
       as sample sheet for the flowcell.'
     inputBinding:
       position: 101
-      prefix: --sample-sheet
   - id: scatter_repeats
     type:
       - 'null'
@@ -873,6 +879,8 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tiles
     doc: "Comma-separated list of regular expressions to select only a subset of the
       tiles available in the flow-cell. - to select all the tiles ending with '5'
       in all lanes: --tiles [0-9][0-9][0-9]5 - to select tile 2 in lane 1 and all
@@ -880,7 +888,6 @@ inputs:
       each applies to the corresponding base-calls."
     inputBinding:
       position: 101
-      prefix: --tiles
       itemSeparator: ','
   - id: tls
     type:

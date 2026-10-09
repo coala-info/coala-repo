@@ -1,5 +1,12 @@
 # ismapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ismapper_compiled_table.py | PASS |  |
+| ismapper_ismap | PASS |  |
+
 ## ismapper_ismap
 
 ### Tool Description

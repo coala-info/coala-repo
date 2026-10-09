@@ -1,5 +1,13 @@
 # iucn_sim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| iucn_sim_get_iucn_data | PASS |  |
+| iucn_sim_run_sim | PASS |  |
+| iucn_sim_transition_rates | PASS |  |
+
 ## iucn_sim_get_iucn_data
 
 ### Tool Description

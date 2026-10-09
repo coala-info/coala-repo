@@ -18,6 +18,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: JASS_PROJECTS_DIR
+        envValue: $(runtime.outdir)/jass_projects
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jass:2.3--pyhca03a8a_0

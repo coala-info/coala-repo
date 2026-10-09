@@ -1,9 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ipyrad
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.staged_files || [])
 label: ipyrad
 doc: "ipyrad is a tool for assembling RAD-seq data.\n\nTool homepage: http://github.com/dereneaton/ipyrad"
 inputs:
+  - id: staged_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input files named by relative path in the params file (fastq files, barcodes file, reference, population file). They are staged in the working directory.
   - id: branch
     type:
       - 'null'
@@ -125,6 +135,47 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: new_params_file
+    type:
+      - 'null'
+      - File
+    doc: params file written by -n or -b
+    outputBinding:
+      glob: params-*.txt
+  - id: assembly_json
+    type:
+      type: array
+      items: File
+    doc: Assembly state files (JSON)
+    outputBinding:
+      glob: '*.json'
+  - id: step_directories
+    type:
+      type: array
+      items: Directory
+    doc: Output directories of the assembly steps (fastqs, edits, clust, consens, outfiles, refmap)
+    outputBinding:
+      glob:
+        - '*_fastqs'
+        - '*_edits'
+        - '*_clust_*'
+        - '*_consens'
+        - '*_outfiles'
+        - '*_refmap'
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: ipyrad log file
+    outputBinding:
+      glob: ipyrad_log.txt
+  - id: downloaded_fastqs
+    type:
+      type: array
+      items: Directory
+    doc: Directory of fastq files fetched by --download
+    outputBinding:
+      glob: '$(inputs.download && inputs.download.length > 1 ? inputs.download[1] : "ipyrad_no_download")'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ipyrad:0.9.108--pyhdfd78af_0

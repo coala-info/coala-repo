@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isonform_parallel
+baseCommand: isONform_parallel
 label: isonform_isONform_parallel
 doc: "De novo reconstruction of long-read transcriptome reads\n\nTool homepage: https://github.com/aljpetri/isONform"
 inputs:
@@ -57,9 +57,7 @@ inputs:
       position: 101
       prefix: --exact_instance_limit
   - id: fastq_folder
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to input fastq folder with reads in clusters
     inputBinding:
       position: 101
@@ -115,14 +113,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --t
-  - id: outfolder
-    type:
-      - 'null'
-      - Directory
-    doc: Outfolder with all corrected reads.
-    inputBinding:
-      position: 101
-      prefix: --outfolder
+  - id: outfolder_path
+    type: string
+    default: isONform_out
+    doc: Outfolder with all corrected reads. It is passed as an absolute path inside the working directory, because the tool fails when it cleans up a relative output folder.
   - id: set_w_dynamically
     type:
       - 'null'
@@ -193,7 +187,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xmin
+arguments:
+  - prefix: --outfolder
+    position: 101
+    valueFrom: $(runtime.outdir)/$(inputs.outfolder_path)
 outputs:
+  - id: outfolder
+    type: Directory
+    doc: Output folder with the reconstructed transcriptome.
+    outputBinding:
+      glob: $(inputs.outfolder_path)
   - id: stdout
     type: stdout
     doc: Standard output

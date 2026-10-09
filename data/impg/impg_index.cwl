@@ -15,7 +15,7 @@ inputs:
       position: 101
       prefix: --force-reindex
   - id: index
-    type: File
+    type: string
     doc: Path to the IMPG index file
     inputBinding:
       position: 101
@@ -57,6 +57,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_file
+    type: File
+    doc: The IMPG index file that was written.
+    outputBinding:
+      glob: $(inputs.index)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/impg:0.3.3--hdb3fbb7_0

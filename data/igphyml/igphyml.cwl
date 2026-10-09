@@ -32,15 +32,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --hotness
-  - id: hotness_param
-    type:
-      - 'null'
-      - string
-    doc: Set number hot- and coldspot rates to estimate. May specify multiple 
-      values according to --motifs option. 'e,e,e,e,e,e' is default.
-    inputBinding:
-      position: 101
-      prefix: --hotness
   - id: min_seq
     type:
       - 'null'
@@ -136,6 +127,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
+      valueFrom: $(self.basename)
   - id: threads
     type:
       - 'null'
@@ -151,7 +143,7 @@ inputs:
     doc: Set the transition/transversion ratio.
     inputBinding:
       position: 101
-      prefix: --omega
+      prefix: -t
   - id: user_tree_file
     type:
       - 'null'
@@ -164,6 +156,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type: File[]
+    doc: Result files written beside the input (stats, trees, parameter files)
+    outputBinding:
+      glob: '*_igphyml_*'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.sequence_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igphyml:1.1.5--h7b50bb2_2

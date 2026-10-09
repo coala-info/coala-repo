@@ -92,6 +92,9 @@ outputs:
     doc: Provide path to outdir where results will be saved.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iucn_sim:2.2.0--pyr40_0

@@ -1,5 +1,11 @@
 # iscc-sum CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| iscc-sum | PASS |  |
+
 ## iscc-sum
 
 ### Tool Description

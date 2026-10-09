@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: run_isoncorrect
 label: isoncorrect_run_isoncorrect
-doc: "De novo clustering of long-read transcriptome reads\n\nTool homepage: https://github.com/ksahlin/isONcorrect"
+doc: "De novo error correction of long-read transcriptome reads in clusters (runs isONcorrect on every cluster fastq file of a folder)\n\nTool homepage: https://github.com/ksahlin/isONcorrect"
 inputs:
   - id: exact_instance_limit
     type:
@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: --exact_instance_limit
   - id: fastq_folder
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to input fastq folder with reads in clusters
     inputBinding:
       position: 101
@@ -65,10 +63,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --t
-  - id: outfolder
-    type:
-      - 'null'
-      - Directory
+  - id: outfolder_path
+    type: string
+    default: isONcorrect_out
     doc: Outfolder with all corrected reads.
     inputBinding:
       position: 101
@@ -173,6 +170,11 @@ inputs:
       position: 101
       prefix: --xmin
 outputs:
+  - id: outfolder
+    type: Directory
+    doc: Output folder with the corrected reads of each cluster.
+    outputBinding:
+      glob: $(inputs.outfolder_path)
   - id: stdout
     type: stdout
     doc: Standard output

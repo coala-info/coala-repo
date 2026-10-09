@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 7098; PASS: 5469; Failed: 884; Not completed: 745
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 7373; PASS: 5686; Failed: 917; Not completed: 770
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -6810,6 +6810,18 @@ hictk	hictk_rename-chromosomes	PASS	New CWL. Renamed seq1/seq2 to chrseq1/chrseq
 hictk	hictk_validate	PASS	Validated the test .cool with index and pixel checks; report says valid cooler. CWL fixed: uri typed File.
 hictk	hictk_zoomify	PASS	Made a .mcool with 1, 2 and 5 kb resolutions from the test .cool; each level keeps all 10000 contacts. CWL fixed: stdout removed.
 hicup	hicup	PASS	
+hicup	hicup2fithic	PASS	
+hicup	hicup2gothic	PASS	
+hicup	hicup2hicpipe	PASS	
+hicup	hicup2homer	Failed	tool bug: hicup2homer 0.9.2 crashes with Undefined subroutine get_csome_position (not exported by hicup_module) and writes an empty file
+hicup	hicup2juicer	PASS	
+hicup	hicup2ncc	PASS	
+hicup	hicup_capture	PASS	synthetic data: baits planted on two regions of the real yeast Hi-C di-tags
+hicup	hicup_deduplicator	PASS	
+hicup	hicup_digester	PASS	
+hicup	hicup_filter	PASS	
+hicup	hicup_mapper	PASS	
+hicup	hicup_truncater	PASS	
 hiddendomains	hiddendomains_binReads.pl	Failed	image problem: samtools in the image lacks libcrypto.so.1.0.0, so the default BAM input gives empty output; BED input (-B) works
 hiddendomains	hiddendomains_domainsMergeToBed.pl	PASS	
 hiddendomains	hiddendomains_domainsToBed.pl	PASS	
@@ -7098,3 +7110,266 @@ ibridges	ibridges_upload	Not completed	needs an iRODS server and account
 icescreen	icescreen	PASS	
 iclipro	iclipro_iCLIPro	Failed	image problem: iCLIPro crashes in the read overlap heatmap step (matplotlib 2.2.2 rejects shading='faceted') and writes no report
 iclipro	iclipro_iCLIPro_bam_splitter	PASS	
+idba	idba_fq2fa	PASS	fixed image (bioconda idba), baseCommand fq2fa, output name; --merge of two methylated mate files gave 20000 FASTA records
+idba	idba_idba_ud	PASS	assembled 20000 merged bisulfite SARS-CoV-2 reads (maxk 60) into 7 contigs; image is bioconda idba, where the original deb image has no fq2fa
+idba_subasm	idba_subasm	PASS	image changed to bioconda idba_subasm (deb image lacks the tool), seed_contig made required and missing flags added; assembled the reads into 8 contigs
+idemux	idemux	PASS	demultiplexed the idemux end-to-end test set (9600 read pairs) into 96 samples with 100 reads each
+idr	idr	PASS	rewrote CWL from help (removed invented flags, added all options); Galaxy replicate peak test matches expected output apart from decimal rounding
+ifcnv	ifcnv_ifCNV	PASS	output report typed Directory (was File), --save and --contaSamples and --scoreThreshold types fixed; real SARS-CoV-2 BAMs give a valid read matrix; synthetic data: a planted 0.5x loss in one sample is the top hit (score 8.0) in the report
+ig-checkflowtypes	ig-checkflowtypes_checkFCS.R	PASS	new CWL; flowCore example FCS file gives TRUE, an RDS file gives the invalid message
+ig-checkflowtypes	ig-checkflowtypes_checkFlowSOM.R	PASS	new CWL; synthetic data: an empty object with class FlowSOM gives TRUE (FlowSOM is not in the image), a flowSet RDS gives the invalid message
+ig-checkflowtypes	ig-checkflowtypes_checkFlowSet.R	PASS	fixed baseCommand to checkFlowSet.R; flowCore example flowSet RDS gives TRUE, a flowFrame RDS gives the invalid message
+ig-checkflowtypes	ig-checkflowtypes_checkFlowframe.R	PASS	new CWL; flowFrame RDS from flowCore example data gives TRUE, a flowSet RDS gives the invalid message
+igblast-parser	igblast-parser	PASS	fixed baseCommand (igblast-parser, not python) and options; IgBLAST output for 100 real airrflow BCR reads (made with igblastn from the igdiscover image) gives 100 rows with matching V/D/J calls; note: the tool drops the first character of each query id
+igdiscover	igdiscover_augment	PASS	stdout table and stats captured; igblastwrap AIRR table of 100 real airrflow BCR reads gives 100 augmented rows (86 CDR3s found) and renamed ids
+igdiscover	igdiscover_clonoquery	PASS	filtered table queried against itself gives matching rows and summary; note: using the assigned table as query crashes with a TypeError on rows without V alignment
+igdiscover	igdiscover_clonotypes	PASS	real BCR table from igdiscover run (1438 sequences) gives a clonotype table and members file, largest group first
+igdiscover	igdiscover_clusterplot	PASS	directory made a string input with the plots collected; 32 clustermap PNG files for V genes with at least 5 sequences
+igdiscover	igdiscover_commonv	Failed	tool bug: igdiscover 0.15.1 commonv fails with KeyError 'V_nt' on the filtered tables written by igdiscover run (two real BCR libraries)
+igdiscover	igdiscover_config	PASS	rewrote CWL with --file and --set pairs; iterations and sequence_type set in a real igdiscover.yaml, and the config is printed when nothing is set
+igdiscover	igdiscover_count	PASS	V gene expression counts and PNG plot from the real BCR filtered table (IGHV1-18*01 count 12)
+igdiscover	igdiscover_dbdiff	PASS	successCodes 0 and 1 added; real IMGT human IGHV set vs a copy with 3 records removed and one base changed reports 3 lost and 1 similar
+igdtools	igdtools	PASS	output made optional and stdout captured; nf-core phased VCF converted to IGD (836 variants), info and stats match, merge gives 1672 variants; --contig options crash with an ascending-position error on a two-contig VCF
+igfinder	igfinder	PASS	fixed baseCommand (igfinder, not igfinder.py) and output glob; 1000 real airrflow BCR reads with an IGHJ anchor table built from IMGT gave 110 selected reads whose protein ends in WGQG...VSS
+igphyml	igphyml	PASS	fixed -t prefix (was --omega), removed duplicate hotness input, staged input writable and collected result files; GY tree and stats for the bundled 18-sequence example, fixed ts/tv 2.0 honoured
+igua	igua	PASS	replaced junk 'docker run' wrapper with a real igua CWL; 4 GenBank files (human and moth mitogenomes, 2 assemblies) gave 12 gene cluster families, with both mitogenomes grouped together
+igv	igv	Not completed	GUI program: batch mode throws HeadlessException because the image has no X display server; fixed --batch prefix typo, optional data files and igvDirectory type
+igv-reports	igv-reports	PASS	fixed baseCommand (real command is create_report) and added all options; report for the nf-core SARS-CoV-2 VCF with a BAM track lists all 9 variants with DP and MQ columns
+igvtools	igvtools_count	PASS	rewrote CWL from the readme (output name and genome as inputs); coverage wig from a SARS-CoV-2 paired-end BAM; genome given as FASTA because this igvtools build crashes on chrom.sizes files
+igvtools	igvtools_formatexp	PASS	rewrote CWL; log2/median/MAD normalized the nf-core P53 gct (9096 rows) into a valid gct
+igvtools	igvtools_index	Failed	tool bug: igvtools index on a BAM exits 0 but writes no .sai file (BED gives .idx and SAM gives .sai)
+igvtools	igvtools_sort	PASS	rewrote CWL; sorted a real unsorted BED and a name-sorted BAM (200 records, coordinate order)
+igvtools	igvtools_toTDF	PASS	rewrote CWL; converted the nf-core SARS-CoV-2 wig to a valid TDF4 file with a FASTA genome
+illumina-cleanup	illumina-cleanup	Not completed	pipeline, skipped: the tool is a Nextflow pipeline.
+illumina-interop	illumina-interop_aggregate	PASS	
+illumina-interop	illumina-interop_dumpbin	PASS	
+illumina-interop	illumina-interop_dumptext	PASS	
+illumina-interop	illumina-interop_imaging_table	PASS	
+illumina-interop	illumina-interop_index-summary	Not completed	no usable test data: the available run folders have no index metrics, so the output is empty.
+illumina-interop	illumina-interop_plot_by_cycle	PASS	
+illumina-interop	illumina-interop_plot_by_lane	PASS	
+illumina-interop	illumina-interop_plot_flowcell	PASS	
+illumina-interop	illumina-interop_plot_qscore_heatmap	PASS	
+illumina-interop	illumina-interop_plot_qscore_histogram	PASS	
+illumina-interop	illumina-interop_plot_sample_qc	Not completed	no usable test data: the available run folders have no index metrics, so the output is empty.
+illumina-interop	illumina-interop_summary	PASS	
+illumina-utils	illumina-utils_iu-deinterleave-fastq	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-demultiplex	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-fasta-to-fastq	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-fastq-to-fasta	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-filter-merged-reads	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-filter-quality-bokulich	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-filter-quality-minoche	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-gen-configs	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-gen-matching-fastq-files	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-interleave-fastq	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-merge-pairs	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-remove-ids-from-fastq	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-subsample-fastq	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-trim-V6-primers	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumina-utils	illumina-utils_iu-trim-fastq	Failed	image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode).
+illumiprocessor	illumiprocessor	PASS	
+im2deep	im2deep	PASS	
+imagej	imagej	Failed	image problem: ImageJ 1.51 throws HeadlessException in batch macro mode (-b) without a display, and the image has no X server.
+immuneml	immuneml_immune-ml	PASS	
+imods	imods_imc	PASS	
+imods	imods_imode_gcc	PASS	
+imods	imods_imodview	PASS	
+imods	imods_imove	PASS	
+impg	impg_index	PASS	
+impg	impg_lace	PASS	
+impg	impg_partition	PASS	
+impg	impg_query	PASS	
+impg	impg_refine	PASS	
+impg	impg_similarity	PASS	
+impg	impg_stats	PASS	
+impute2	impute2	PASS	
+imseq	imseq	PASS	
+imsindel	imsindel	PASS	
+indelible	indelible	PASS	synthetic data: the tool is a sequence simulator; the control file is a small hand-made example and the output tree, lengths and divergence check out.
+infernal	infernal_cmalign	PASS	
+infernal	infernal_cmbuild	PASS	
+infernal	infernal_cmcalibrate	PASS	
+infernal	infernal_cmconvert	PASS	
+infernal	infernal_cmemit	PASS	
+infernal	infernal_cmfetch	PASS	
+infernal	infernal_cmpress	PASS	
+infernal	infernal_cmscan	PASS	
+infernal	infernal_cmsearch	PASS	
+infernal	infernal_cmstat	PASS	
+insilicosv	insilicosv	PASS	
+inspector	inspector_inspector-correct.py	Failed	tool bug: structural error correction with Flye silently does nothing because denovo_correct.py never imports multiprocessing.dummy (base error correction works)
+inspector	inspector_inspector.py	PASS	
+instanovo	instanovo_convert	PASS	
+instanovo	instanovo_predict	Not completed	needs model weights downloaded from GitHub (380 MB to 1.1 GB), over the test data size limit
+instrain	instrain_compare	PASS	
+instrain	instrain_filter_reads	PASS	
+instrain	instrain_genome_wide	PASS	
+instrain	instrain_parse_annotations	PASS	synthetic data: the gene annotation table is made up (real gene IDs, invented K numbers); the profile is real
+instrain	instrain_plot	PASS	
+instrain	instrain_profile	PASS	
+instrain	instrain_profile_genes	PASS	
+instrain	instrain_quick_profile	Failed	image problem: coverm is not installed in the image, so inStrain quick_profile stops with Cannot find coverm and writes nothing
+insurveyor	insurveyor_insurveyor.py	PASS	
+intarna	intarna_IntaRNA	PASS	
+integron-finder	integron-finder	Failed	image problem: integron_finder stops at start with an ImportError because pandas 0.24.2 needs numpy 1.12 or newer but the image has numpy 1.11.0
+integron_finder	integron_finder	Failed	image problem: integron_finder stops at start with an ImportError because pandas 0.24.2 needs numpy 1.12 or newer but the image has numpy 1.11.0
+interleafq	interleafq	PASS	
+interproscan	interproscan	PASS	tested with the Coils and PROSITE patterns member databases on the 6 bundled test proteins; full member databases are not in the image
+intervene	intervene_pairwise	PASS	
+intervene	intervene_upset	PASS	
+intervene	intervene_venn	PASS	
+involucro	involucro	Not completed	needs Docker-in-Docker: involucro needs the Docker socket and fails without it
+iobrpy	iobrpy_IPS	PASS	
+iobrpy	iobrpy_LR_cal	PASS	
+iobrpy	iobrpy_anno_eset	PASS	
+iobrpy	iobrpy_batch_salmon	PASS	
+iobrpy	iobrpy_batch_star_count	PASS	
+iobrpy	iobrpy_bayesprism	PASS	
+iobrpy	iobrpy_calculate_sig_score	PASS	
+iobrpy	iobrpy_cibersort	PASS	
+iobrpy	iobrpy_count2tpm	PASS	
+iobrpy	iobrpy_deside	Failed	image problem: deside installs tensorflow 2.11.1 and llvmlite 0.39.1 at run time, which cannot install on the image's Python 3.12
+iobrpy	iobrpy_epic	PASS	
+iobrpy	iobrpy_estimate	PASS	
+iobrpy	iobrpy_fastq_qc	PASS	
+iobrpy	iobrpy_log2_eset	PASS	
+iobrpy	iobrpy_mcpcounter	PASS	
+iobrpy	iobrpy_merge_salmon	PASS	
+iobrpy	iobrpy_merge_star_count	PASS	
+iobrpy	iobrpy_mouse2human_eset	PASS	
+iobrpy	iobrpy_nmf	PASS	
+iobrpy	iobrpy_prepare_salmon	PASS	synthetic data: reads simulated from real GENCODE transcripts
+iobrpy	iobrpy_quantiseq	PASS	
+iobrpy	iobrpy_runall	Not completed	pipeline, skipped
+iobrpy	iobrpy_tme_cluster	PASS	
+iobrpy	iobrpy_tme_profile	PASS	
+iobrpy	iobrpy_trust4	PASS	ran on the TRUST4 example BAM; same CDR3 clones as the TRUST4 example report, a few V/J allele calls differ
+ionquant	ionquant	Not completed	needs a licence key from an online agreement; the wrapper had only the key input and was rewritten from the IonQuant jar help
+ipcr	ipcr	PASS	
+ipyrad	ipyrad	PASS	
+iqkm	iqkm	Not completed	needs the large Kofam HMM database (help_dir, Google Drive download)
+iqtree	iqtree	PASS	
+ir	ir	PASS	
+irep	irep_bPTR	Not completed	runs and gives plausible PTR 1.906, but differs from the repo sample output (ORI/TER and PTR 1.887), which may be outdated
+irep	irep_iRep	PASS	
+irescue	irescue	PASS	
+irf	irf	PASS	
+irida-linker	irida-linker_ngsArchiveLinker.pl	Not completed	needs a running IRIDA server (also needs a config file); long option --projectId is rejected by the tool, so -p is used
+irida-sistr-results	irida-sistr-results	Not completed	needs a running IRIDA server with SISTR results
+irida-staramr-results	irida-staramr-results	Not completed	needs a running IRIDA server with StarAMR results
+irida-uploader	irida-uploader	Not completed	needs a running IRIDA server to upload to
+irma	irma_IRMA	PASS	
+irma	irma_LABEL	Failed	image problem: hmmscore segfaults as a non-root user without a passwd entry (works only with cwltool --no-match-user)
+is6110	is6110	PASS	
+isa2w4m	isa2w4m	PASS	
+isaac4	isaac4_isaac-align	Not completed	needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make)
+isaac4	isaac4_isaac-merge-references	Not completed	needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make)
+isaac4	isaac4_isaac-pack-reference	Not completed	needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make)
+isaac4	isaac4_isaac-reorder-reference	Not completed	needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make)
+isaac4	isaac4_isaac-sort-reference	Failed	image problem: the image has no make, so isaac-sort-reference cannot build the reference
+isaac4	isaac4_isaac-unpack-reference	Not completed	needs a sorted reference made by isaac-sort-reference, which cannot run (image has no make)
+isafe	isafe	PASS	
+isajson-validator	isajson-validator	PASS	
+isatab-create	isatab-create	PASS	
+isatab-validator	isatab-validator	PASS	
+isatab2json	isatab2json	PASS	
+iscc-sum	iscc-sum	PASS	
+iseq	iseq	PASS	
+isescan	isescan_isescan.py	PASS	
+islandpath	islandpath	PASS	
+ismapper	ismapper_compiled_table.py	PASS	
+ismapper	ismapper_ismap	PASS	
+iso2flux	iso2flux	Not completed	no usable test data: the example files named in the image test script are on a login-protected Google Drive; CWL extended to wrap all options
+isocor	isocor_isocorcli	PASS	
+isoformcheck	isoformcheck_addgroup	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_addsample	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_addsamples	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_chisquare	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_comparesamples	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_contingencytable	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_exportallelesets	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_exportisoforms	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_initialize	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_liftover	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_listgroups	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_listsamples	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_removegroup	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_rename	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_stats	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isoformcheck	isoformcheck_validate	PASS	chained run on real Ensembl sequence: human INS/SST/IAPP regions as reference and chimp, gorilla and orangutan orthologous regions as sample haplotypes (repo has no test data); output content consistent across steps.
+isonclust2	isonclust2_cluster	PASS	
+isonclust2	isonclust2_dump	PASS	
+isonclust2	isonclust2_info	PASS	
+isonclust2	isonclust2_sort	PASS	
+isonclust3	isonclust3_isONclust3	PASS	
+isoncorrect	isoncorrect_isONcorrect	Failed	image problem: spoa (required consensus program) is not in the image, the run stops with FileNotFoundError 'spoa'
+isoncorrect	isoncorrect_run_isoncorrect	Failed	image problem: spoa (required consensus program) is not in the image, the run stops with FileNotFoundError 'spoa'
+isonform	isonform_isONform_parallel	PASS	
+isoquant	isoquant_isoquant.py	PASS	
+isorefiner	isorefiner_filter	PASS	synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation
+isorefiner	isorefiner_map	PASS	synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation
+isorefiner	isorefiner_refine	PASS	synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation
+isorefiner	isorefiner_run_bambu	PASS	synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation
+isorefiner	isorefiner_run_espresso	Failed	image problem: ESPRESSO_S.pl calls sort --buffer-size, but the image only has BusyBox sort, so the run stops with exit status 25
+isorefiner	isorefiner_run_isoquant	PASS	synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation
+isorefiner	isorefiner_run_rnabloom	PASS	synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation
+isorefiner	isorefiner_run_stringtie	PASS	synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation
+isorefiner	isorefiner_trans_struct_wf	Not completed	pipeline, skipped
+isorefiner	isorefiner_trim	PASS	synthetic data: simulated ONT reads from the IsoQuant test set on a real 4 Mb mouse chr9 region and its annotation
+isoseq3	isoseq3_bcstats	PASS	synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available)
+isoseq3	isoseq3_cluster	PASS	
+isoseq3	isoseq3_cluster2	PASS	
+isoseq3	isoseq3_collapse	PASS	
+isoseq3	isoseq3_correct	PASS	synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available)
+isoseq3	isoseq3_dedup	PASS	synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available)
+isoseq3	isoseq3_groupdedup	PASS	synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available)
+isoseq3	isoseq3_refine	PASS	
+isoseq3	isoseq3_summarize	PASS	
+isoseq3	isoseq3_tag	PASS	synthetic data: real PacBio FL reads, but the cell barcodes and UMIs are cut from read ends and the barcode truth list is taken from them (no single-cell data available)
+itero	itero_assemble_local	PASS	
+itero	itero_assemble_mpi	Not completed	needs mpirun with at least two MPI processes; one process fails
+itolapi	itolapi_itolexport.py	Not completed	needs an iTOL account and uploads to the iTOL server
+itolparser	itolparser	PASS	
+itsx	itsx_ITSx	PASS	
+itsxpress	itsxpress	PASS	
+iucn_sim	iucn_sim_get_iucn_data	PASS	
+iucn_sim	iucn_sim_run_sim	PASS	
+iucn_sim	iucn_sim_transition_rates	PASS	
+iva	iva	PASS	
+ivar	ivar_consensus	PASS	
+ivar	ivar_filtervariants	Failed	tool bug: ivar 1.4.4 filtervariants rejects the output of its own ivar variants (header check expects 19 columns, the table has 20) and writes an empty table
+ivar	ivar_getmasked	PASS	
+ivar	ivar_removereads	PASS	
+ivar	ivar_trim	PASS	
+ivar	ivar_variants	PASS	
+jaeger-bio	jaeger-bio_run	PASS	
+jaffa	jaffa_jaffa-assembly	Not completed	pipeline, skipped; needs large reference and annotation files
+jaffa	jaffa_jaffa-hybrid	Not completed	pipeline, skipped; needs large reference and annotation files
+jali	jali	PASS	
+jali	jscan	PASS	
+jali	jsearch	PASS	
+jamm	jamm_JAMM.sh	Failed	image problem: peak calling stops with the R error 'EXPR must be a length 1 vector' from mclust (checkModelName) on real ChIP-seq reads, and the peak file is empty
+jamm	jamm_SignalGenerator.sh	PASS	
+jannovar-cli	jannovar-cli_jannovar_annotate-csv	PASS	
+jannovar-cli	jannovar-cli_jannovar_annotate-pos	PASS	
+jannovar-cli	jannovar-cli_jannovar_annotate-vcf	PASS	
+jannovar-cli	jannovar-cli_jannovar_hgvs-to-vcf	PASS	
+jannovar-cli	jannovar-cli_jannovar_statistics	PASS	
+jannovar-cli	jannovar-cli_jannovar_vardb-annotate	PASS	
+jannovar-cli	jannovar-cli_jannovar_vardb-import	PASS	
+jannovar-cli	jannovar-cli_jannovar_vardb-list	PASS	note: the tool lists the database name and version as fixed placeholders
+jarvis	jarvis_JARVIS	Failed	tool bug: JARVIS 1.1 loops forever and writes endless output on FASTA input; plain ACGT text compresses, but -d decompression writes a correct .jd file and then exits 1 with an error
+jarvis3	jarvis3_JARVIS3	Failed	tool bug: compression works, but --estimate writes no .iae file as documented, and -d decompression writes the correct file then exits 1 with 'unknown numerical symbol'
+jasminesv	jasminesv_igv_jasmine	PASS	
+jasminesv	jasminesv_jasmine	PASS	
+jass	jass_add-gene-annotation	PASS	
+jass	jass_clean-project-data	PASS	synthetic data: a project built with the jass Python API from the real MAGIC example data and backdated; the old project is removed and recent ones kept.
+jass	jass_create-inittable	PASS	
+jass	jass_create-project-data	PASS	
+jass	jass_create-worktable	PASS	
+jass	jass_extract-tsv	PASS	
+jass	jass_list-phenotypes	PASS	
+jass	jass_plot-manhattan	PASS	
+jass	jass_plot-quadrant	PASS	
+jass	jass_qq-plot	PASS	

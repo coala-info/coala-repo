@@ -1,6 +1,5 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: isa2w4m.py
 label: isa2w4m
 doc: "Script for extracting assays from ISATab data and outputing in W4M format.\n\
   \nTool homepage: https://github.com/workflow4metabolomics/isa2w4m"
@@ -8,8 +7,8 @@ inputs:
   - id: all_assays
     type:
       - 'null'
-      - boolean
-    doc: Extract all assays.
+      - string
+    doc: Extract all assays. Takes a value, for example true.
     inputBinding:
       position: 101
       prefix: -a
@@ -102,13 +101,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir_dir
+  - id: w4m_files
     type:
-      - 'null'
-      - Directory
-    doc: Set output directory. Default is "."
+      type: array
+      items: File
+    doc: W4M tables (sample metadata, variable metadata, sample x variable matrix)
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $((inputs.output_dir || ".") + "/*.tsv")
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/isa2w4m:phenomenal-v1.1.0_cv1.4.11

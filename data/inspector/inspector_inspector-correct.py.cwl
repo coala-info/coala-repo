@@ -12,6 +12,7 @@ inputs:
       (pacbio-raw, pacbio-hifi, nano-raw,pacbio-corr, nano-corr)
     inputBinding:
       position: 101
+      prefix: --datatype
   - id: flyetimeout
     type:
       - 'null'

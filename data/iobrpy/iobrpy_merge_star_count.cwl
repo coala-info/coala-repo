@@ -22,6 +22,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: merged_counts
+    type: File
+    doc: Merged STAR count matrix, written as <project>.STAR.count.tsv.gz in the input folder
+    outputBinding:
+      glob: $(inputs.path.basename)/$(inputs.project).STAR.count.tsv.gz
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iobrpy:0.1.7--pyhdfd78af_0

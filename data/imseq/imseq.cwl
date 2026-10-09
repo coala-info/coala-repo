@@ -9,21 +9,20 @@ doc: "imseq is a tool for the analysis of T- and B-cell receptor chain\n    sequ
   latter read has do cover only a small fraction of\n    the V-segment, sufficient
   for the localization of the Cys-104 motif.\n\nTool homepage: http://www.imtools.org/"
 inputs:
-  - id: v_reads
+  - id: reads
     type: File
-    doc: V reads
+    doc: VDJ reads (single-read mode), or V reads in paired-end mode (FASTA/FASTQ,
+      optionally gzip compressed).
     inputBinding:
       position: 1
-  - id: vdj_reads
-    type: File
-    doc: VDJ reads
+  - id: paired_vdj_reads
+    type:
+      - 'null'
+      - File
+    doc: VDJ reads in paired-end mode (second positional argument, after the V
+      reads).
     inputBinding:
       position: 2
-  - id: vdj_reads_paired
-    type: File
-    doc: VDJ reads
-    inputBinding:
-      position: 3
   - id: barcode_err_rate
     type:
       - 'null'
@@ -228,8 +227,6 @@ inputs:
   - id: reference
     type: File
     doc: FASTA file with gene segment reference sequences.
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 104
       prefix: --reference

@@ -1,5 +1,25 @@
 # illumina-utils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| illumina-utils_iu-deinterleave-fastq | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-demultiplex | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-fasta-to-fastq | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-fastq-to-fasta | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-filter-merged-reads | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-filter-quality-bokulich | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-filter-quality-minoche | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-gen-configs | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-gen-matching-fastq-files | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-interleave-fastq | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-merge-pairs | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-remove-ids-from-fastq | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-subsample-fastq | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-trim-V6-primers | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+| illumina-utils_iu-trim-fastq | Failed | image problem: Python 3.12 in the image fails on open mode 'rU' when reading FASTQ/FASTA (ValueError: invalid mode). |
+
 ## illumina-utils_iu-demultiplex
 
 ### Tool Description
@@ -236,6 +256,411 @@ options:
                         Trim to
 ```
 
+
+## illumina-utils_iu-deinterleave-fastq
+
+### Tool Description
+De-interleave an interleaved FASTQ file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-deinterleave-fastq [-h] -1 R1 FASTQ -2 R2 FASTQ INPUT
+
+De-interleave an interleaved FASTQ file
+
+positional arguments:
+  INPUT                 FASTQ file to be de-interleaved
+
+options:
+  -h, --help            show this help message and exit
+  -1 R1 FASTQ, --output-r1 R1 FASTQ
+                        Read 1s
+  -2 R2 FASTQ, --output-r2 R2 FASTQ
+                        Read 2s
+```
+
+## illumina-utils_iu-fasta-to-fastq
+
+### Tool Description
+Convert FASTA to FASTQ
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-fasta-to-fastq [-h] [-n NUMBER] [-o OUTPUT] [-r] INPUT
+
+Convert FASTA to FASTQ
+
+positional arguments:
+  INPUT                 FASTA file to be converted
+
+options:
+  -h, --help            show this help message and exit
+  -n NUMBER, --number-of-sequences NUMBER
+                        Number of sequences to be converted (by default the
+                        everything will be processed)
+  -o OUTPUT, --output OUTPUT
+                        FASTQ output file name (default: [-i]-FASTA-[-n]
+  -r, --rev-comp        When set, during the conversion reads will be reverse
+                        complemented.
+```
+
+## illumina-utils_iu-fastq-to-fasta
+
+### Tool Description
+Convert FASTQ to FASTA
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-fastq-to-fasta [-h] [-n NUMBER] [-o OUTPUT] [-r] [-u] INPUT
+
+Convert FastQ to FASTA
+
+positional arguments:
+  INPUT                 FASTQ file to be converted
+
+options:
+  -h, --help            show this help message and exit
+  -n NUMBER, --number-of-sequences NUMBER
+                        Number of sequences to be converted
+  -o OUTPUT, --output OUTPUT
+                        FASTA output (default: [-i]-FASTA-[-n]
+  -r, --rev-comp        When set, during the conversion reads will be reverse
+                        complemented.
+  -u, --uppercase       When set, all nucleotides are converted to uppercase,
+                        removing mismatch information from merged sequences.
+```
+
+## illumina-utils_iu-filter-merged-reads
+
+### Tool Description
+Filter reads from a merged file based on maximum mismatches at the overlapped region
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-filter-merged-reads [-h] [-o FILE_PATH] [-m INT] FILE_PATH
+
+Filter reads from a merged file based on maximum mismatches at the overlapped
+region
+
+positional arguments:
+  FILE_PATH             FASTA file to be filtered
+
+options:
+  -h, --help            show this help message and exit
+  -o FILE_PATH, --output FILE_PATH
+                        Where filtered reads will be written (default:
+                        [-i]-MAX-MISMATCH-[-m]
+  -m INT, --max-mismatches INT
+                        Maximum number of mismatches allowed in the overlapped
+                        region
+```
+
+## illumina-utils_iu-filter-quality-bokulich
+
+### Tool Description
+Implementation of \"http://www.nature.com/nmeth/journal/v10/n1/full/nmeth.2276.html\"
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-filter-quality-bokulich [-h] [-p FLOAT] [-q INTEGER] [-r INTEGER]
+                                  [-n INTEGER] [--ignore-deflines]
+                                  [--visualize-quality-curves]
+                                  [--limit-num-pairs INTEGER]
+                                  [--print-qual-scores] [--store-read-fate]
+                                  CONFIG_FILE
+
+Implementation of
+"http://www.nature.com/nmeth/journal/v10/n1/full/nmeth.2276.html"
+
+positional arguments:
+  CONFIG_FILE           User configuration to run. See the source code to see
+                        an example.
+
+options:
+  -h, --help            show this help message and exit
+  -p FLOAT              Minimal high-quality read length (default: 0.75)
+  -q INTEGER            Minimum PHRED score to identify low quality bases
+                        (default: 3)
+  -r INTEGER            Maximum of consecutive low-quality calls (default: 3)
+  -n INTEGER            Maximum of ambiguous calls allowed (default: 0)
+  --ignore-deflines     If FASTQ files are not CASAVA outputs, parsing the
+                        header info may go wrong. This flag tells the software
+                        to skip parsing deflines.
+  --visualize-quality-curves
+                        When set, mean quality score for individual bases will
+                        be stored and visualized for each group of reads.
+  --limit-num-pairs INTEGER
+                        Put a limit to the number of pairs to analyze. For
+                        testing purposes.
+  --print-qual-scores   When set, the script will print out the Q-scores the
+                        way it sees it in the FASTQ file. This flag will
+                        generate a lot of useless output to the stdout, and
+                        you should not use it if you are not testing
+                        something.
+  --store-read-fate     As it goes through your raw reads, this program keeps
+                        track of the read fate so you can learn what happened
+                        to a given read ID in your raw input data once the
+                        analysis is done. This output can become extremely
+                        large, and often is utterly useless to you unless you
+                        have a very specific benchmarking or debugging
+                        interestes, hence, it is not stored by default. You
+                        can change that behavior by using this flag, and ask
+                        illumina-utils to store this data on your disk.
+```
+
+## illumina-utils_iu-filter-quality-minoche
+
+### Tool Description
+Implementation of \"http://genomebiology.com/content/12/11/R112\"
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-filter-quality-minoche [-h] [-p FLOAT] [--ignore-deflines]
+                                 [--visualize-quality-curves]
+                                 [--limit-num-pairs INTEGER]
+                                 [--print-qual-scores] [--store-read-fate]
+                                 CONFIG_FILE
+
+Implementation of "http://genomebiology.com/content/12/11/R112"
+
+positional arguments:
+  CONFIG_FILE           User configuration to run. See the source code to see
+                        an example.
+
+options:
+  -h, --help            show this help message and exit
+  -p FLOAT              Minimum high-quality read length (default: 0.75)
+  --ignore-deflines     If FASTQ files are not CASAVA outputs, parsing the
+                        header info may go wrong. This flag tells the software
+                        to skip parsing deflines.
+  --visualize-quality-curves
+                        When set, mean quality score for individual bases will
+                        be stored and visualized for each group of reads.
+  --limit-num-pairs INTEGER
+                        Put a limit to the number of pairs to analyze. For
+                        testing purposes.
+  --print-qual-scores   When set, the script will print out the Q-scores the
+                        way it sees it in the FASTQ file. This flag will
+                        generate a lot of useless output to the stdout, and
+                        you should not use it if you are not testing
+                        something.
+  --store-read-fate     As it goes through your raw reads, this program keeps
+                        track of the read fate so you can learn what happened
+                        to a given read ID in your raw input data once the
+                        analysis is done. This output can become extremely
+                        large, and often is utterly useless to you unless you
+                        have a very specific benchmarking or debugging
+                        interestes, hence, it is not stored by default. You
+                        can change that behavior by using this flag, and ask
+                        illumina-utils to store this data on your disk.
+```
+
+## illumina-utils_iu-gen-matching-fastq-files
+
+### Tool Description
+Recover matching ids in two FASTQ files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-gen-matching-fastq-files [-h] --r1 FILE_PATH --r2 FILE_PATH
+                                   [--identifier-code PYTHON CODE]
+                                   [--identifier-tested] [--sequential]
+
+Recover matching ids in two FASTQ files
+
+options:
+  -h, --help            show this help message and exit
+  --r1 FILE_PATH        R1
+  --r2 FILE_PATH        R2
+  --identifier-code PYTHON CODE
+                        Lambda function to parse the header. Default:
+                        '''lambda defline: defline.split()[0]'''.
+  --identifier-tested   Use this flag to indicate that you tested your
+                        identifier.
+  --sequential          Your identifier code parses an integer value that can
+                        link pairs, and is incremental throughout the file.
+```
+
+## illumina-utils_iu-interleave-fastq
+
+### Tool Description
+Interleave two FASTQ files (read 1 and read 2) into one
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-interleave-fastq [-h] -1 R1 FASTQ -2 R2 FASTQ -o OUTPUT_FILE_PATH
+
+Remove reads from FASTQ File
+
+options:
+  -h, --help            show this help message and exit
+  -1 R1 FASTQ, --input-r1 R1 FASTQ
+                        Read 1
+  -2 R2 FASTQ, --input-r2 R2 FASTQ
+                        Read 1
+  -o OUTPUT_FILE_PATH, --output-file-path OUTPUT_FILE_PATH
+                        Interleaved FASTQ file path (give it a good name).
+```
+
+## illumina-utils_iu-remove-ids-from-fastq
+
+### Tool Description
+Remove reads from a FASTQ file by ID list; writes .survived and .removed files beside the input
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-remove-ids-from-fastq [-h] -i FASTQ_FILE_PATH -l IDS_FILE_PATH
+                                [-d CHARACTER] [-G] [-K]
+
+Remove reads from FASTQ File. Creates two output file that have the same path
+and name as the input FASTQ file, but with the added suffix of ".survived",
+and ".removed".
+
+options:
+  -h, --help            show this help message and exit
+  -i FASTQ_FILE_PATH, --input-fastq FASTQ_FILE_PATH
+                        Sequences file from which reads will be removed in
+                        FASTQ format
+  -l IDS_FILE_PATH, --ids-file-path IDS_FILE_PATH
+                        Input file that contains the list of ids for removal
+  -d CHARACTER, --delimiter CHARACTER
+                        By default this script will perform exact match match
+                        for IDs you listed in the IDs file. But using this
+                        parameter, you can ask the script to "split" the IDs
+                        found in the FASTQ file, and then try to match the
+                        first part of the resulting ID to those you listed in
+                        the IDs file.
+  -G, --generate-output-for-survived-only
+                        If provided then only one output file (the file with
+                        "survived" ids) will be produced.
+  -K, --keep-ids        If provided, then instead of removing the ids in the
+                        list, only the ids in the list will be kept (and the
+                        rest would be removed).
+```
+
+## illumina-utils_iu-subsample-fastq
+
+### Tool Description
+Randomly subsample (without replacement) a FASTQ, or a pair of forward and reverse FASTQs
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-subsample-fastq [-h] --r1 FILE_PATH [--r2 FILE_PATH]
+                          [--output1 FILEPATH] [--output2 FILEPATH] -n INT
+
+Randomly subsample (without replacement) a FASTQ, or a pair of forward and
+reverse FASTQs.
+
+options:
+  -h, --help            show this help message and exit
+  --r1 FILE_PATH        FASTQ file to be subsampled. If you are subsampling a
+                        merged FASTQ or you don't have reverse reads, provide
+                        the filepath here and do not supply an argument for
+                        --r2. If you have forward and reverse reads, supply
+                        the filepaths as the arguments for --r1 and --r2,
+                        respectively.
+  --r2 FILE_PATH        FASTQ file for the reverse reads. Should be provided
+                        only if you are subsampling forward and reverse reads.
+  --output1 FILEPATH    The output filepath for the forward read. By default,
+                        the suffix "_{n}randomreads" is appended to the input
+                        filename
+  --output2 FILEPATH    The output filepath for the reverse read. By default,
+                        the suffix "_{n}randomreads" is appended to the input
+                        filename, where {n} is the argument of --num-reads. If
+                        you do not provide an argument for --r2 do not provide
+                        an argument for --output2.
+  -n INT, --num-reads INT
+                        Number of FASTQ entries to randomly sample
+```
+
+## illumina-utils_iu-trim-V6-primers
+
+### Tool Description
+Trim V6 primers from the V6 complete overlap workflow (merged FASTA)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/illumina-utils:2.13--pyhdfd78af_0
+- **Homepage**: https://github.com/meren/illumina-utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: iu-trim-V6-primers [-h] [--archaea] [--debug] INPUT_FASTA
+
+A program to trim V6 primers from V6 complete overlap workflow
+
+positional arguments:
+  INPUT_FASTA  FASTA file that contain archaeal or bacterial V6 sequences with
+               primers. This file is expected to be the result of iu-merge-
+               pairs analysis with these flags and parameter: "--marker-gene-
+               stringent --retain-only-overlap --max-num-mismatches 0".
+
+options:
+  -h, --help   show this help message and exit
+  --archaea    When set, primers for arhacea is used instead of bacteria.
+  --debug      Turn on debug prints.
+```
 
 ## Metadata
 - **Skill**: generated

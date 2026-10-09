@@ -1,5 +1,11 @@
 # integron-finder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| integron-finder | Failed | image problem: integron_finder stops at start with an ImportError because pandas 0.24.2 needs numpy 1.12 or newer but the image has numpy 1.11.0 |
+
 ## integron-finder
 
 ### Tool Description

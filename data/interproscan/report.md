@@ -1,5 +1,11 @@
 # interproscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| interproscan | PASS | tested with the Coils and PROSITE patterns member databases on the 6 bundled test proteins; full member databases are not in the image |
+
 ## interproscan
 
 ### Tool Description

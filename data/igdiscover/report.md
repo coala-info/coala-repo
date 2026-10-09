@@ -1,5 +1,18 @@
 # igdiscover CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| igdiscover_augment | PASS | stdout table and stats captured; igblastwrap AIRR table of 100 real airrflow BCR reads gives 100 augmented rows (86 CDR3s found) and renamed ids |
+| igdiscover_clonoquery | PASS | filtered table queried against itself gives matching rows and summary; note: using the assigned table as query crashes with a TypeError on rows without V alignment |
+| igdiscover_clonotypes | PASS | real BCR table from igdiscover run (1438 sequences) gives a clonotype table and members file, largest group first |
+| igdiscover_clusterplot | PASS | directory made a string input with the plots collected; 32 clustermap PNG files for V genes with at least 5 sequences |
+| igdiscover_commonv | Failed | tool bug: igdiscover 0.15.1 commonv fails with KeyError 'V_nt' on the filtered tables written by igdiscover run (two real BCR libraries) |
+| igdiscover_config | PASS | rewrote CWL with --file and --set pairs; iterations and sequence_type set in a real igdiscover.yaml, and the config is printed when nothing is set |
+| igdiscover_count | PASS | V gene expression counts and PNG plot from the real BCR filtered table (IGHV1-18*01 count 12) |
+| igdiscover_dbdiff | PASS | successCodes 0 and 1 added; real IMGT human IGHV set vs a copy with 3 records removed and one base changed reports 3 lost and 1 similar |
+
 ## igdiscover_augment
 
 ### Tool Description

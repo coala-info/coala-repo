@@ -1,5 +1,11 @@
 # igfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| igfinder | PASS | fixed baseCommand (igfinder, not igfinder.py) and output glob; 1000 real airrflow BCR reads with an IGHJ anchor table built from IMGT gave 110 selected reads whose protein ends in WGQG...VSS |
+
 ## igfinder
 
 ### Tool Description

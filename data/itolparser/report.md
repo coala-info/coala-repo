@@ -1,5 +1,11 @@
 # itolparser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| itolparser | PASS |  |
+
 ## itolparser
 
 ### Tool Description

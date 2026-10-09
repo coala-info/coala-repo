@@ -1,5 +1,11 @@
 # idemux CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| idemux | PASS | demultiplexed the idemux end-to-end test set (9600 read pairs) into 96 samples with 100 reads each |
+
 ## idemux
 
 ### Tool Description

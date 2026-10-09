@@ -1,5 +1,11 @@
 # iso2flux CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| iso2flux | Not completed | no usable test data: the example files named in the image test script are on a login-protected Google Drive; CWL extended to wrap all options |
+
 ## iso2flux
 
 ### Tool Description

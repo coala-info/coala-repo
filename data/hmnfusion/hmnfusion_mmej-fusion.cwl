@@ -32,12 +32,16 @@ inputs:
   - id: input_reference_fasta
     type: File
     doc: Reference, fasta file
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --input-reference-fasta
   - id: input_sample_bam
     type: File
     doc: Bam file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --input-sample-bam

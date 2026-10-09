@@ -31,11 +31,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --additional-attr
     doc: 'Additional feature attributes (default: none, suitable for Ensembl GTF files:
       gene_name). Use multiple times for each different attribute'
     inputBinding:
       position: 103
-      prefix: --additional-attr
   - id: cell_barcode
     type:
       - 'null'
@@ -185,12 +186,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --type
     doc: 'Feature type (3rd column in GTF file) to be used, all features of other
       type are ignored (default, suitable forEnsembl GTF files: exon). You can call
       this option multiple times. Features of all specified types will be included.'
     inputBinding:
       position: 103
-      prefix: --type
   - id: umi
     type:
       - 'null'
@@ -215,6 +217,9 @@ inputs:
       position: 105
       prefix: --samout
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the counts, unless a counts output file is given)
   - id: samout
     type:
       - 'null'
@@ -236,3 +241,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/htseq:2.1.2--py311hb6b0eea_0
+stdout: htseq_htseq-count-barcodes.out

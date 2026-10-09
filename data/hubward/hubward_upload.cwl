@@ -9,7 +9,7 @@ doc: "Creates a track hub and uploads to configured host. Track hub files includ
   these files will be uploaded to the host configured in the group config file. Otherwise,
   these files and all of the configured data files (bigBed, bigWig, BAM, and VCF files)
   from individual studies are uploaded via rsync to their respective configured locations
-  on the remote host.\n\nTool homepage: https://github.com/lh3/bwa"
+  on the remote host.\n\nTool homepage: https://github.com/daler/hubward"
 inputs:
   - id: filename
     type: File
@@ -35,7 +35,7 @@ inputs:
   - id: hub_remote
     type:
       - 'null'
-      - File
+      - string
     doc: Remote filename for the top-level hub file. Overrides 
       [server][hub_remote] in the config file.
     inputBinding:

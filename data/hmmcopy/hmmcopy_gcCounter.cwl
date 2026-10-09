@@ -2,47 +2,58 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gcCounter
 label: hmmcopy_gcCounter
-doc: "Calculates GC content for a given FASTA file. (Note: The provided input text
-  contained a system error message rather than help text; arguments are derived from
-  standard tool documentation).\n\nTool homepage: http://compbio.bccrc.ca/software/hmmcopy/"
+doc: "Calculate the GC content of non-overlapping windows of a FASTA reference and write it in WIG (or SEG) format to standard output.\n\nTool homepage: http://compbio.bccrc.ca/software/hmmcopy/"
 inputs:
-  - id: input_fasta
+  - id: fasta_reference
     type: File
-    doc: The input FASTA file to calculate GC content from.
+    secondaryFiles:
+      - pattern: .fai
+        required: false
+    doc: "FASTA reference"
     inputBinding:
-      position: 1
-  - id: chromosomes
+      position: 2
+  - id: seg
     type:
       - 'null'
-      - string
-    doc: Comma-separated list of chromosomes to process.
+      - boolean
+    doc: "Outputs in SEG format"
     inputBinding:
-      position: 102
-      prefix: --chromosomes
+      position: 1
+      prefix: --seg
   - id: window
     type:
       - 'null'
       - int
-    doc: The window size for calculating GC content.
+    doc: "Specify the size of non-overlapping windows [1000]"
     inputBinding:
-      position: 102
+      position: 1
       prefix: --window
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+  - id: list
     type:
       - 'null'
-      - File
-    doc: Output file for GC content results.
-    outputBinding:
-      glob: $(inputs.output_file_path)
+      - boolean
+    doc: "List all chromosomes in the input file"
+    inputBinding:
+      position: 1
+      prefix: --list
+  - id: chromosome
+    type:
+      - 'null'
+      - string
+    doc: "Specify the entries and order of sequences to analyze [ALL], a comma-delimited list (no spaces)"
+    inputBinding:
+      position: 1
+      prefix: --chromosome
+outputs:
+  - id: gc_wig
+    type: stdout
+    doc: GC content per window (WIG, or SEG with --seg)
 requirements:
-  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta_reference)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmmcopy:0.1.1--h5b0a936_12
+stdout: hmmcopy_gcCounter.wig

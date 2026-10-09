@@ -37,10 +37,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --fastq
     doc: FASTQ file(s) to sketch (can also pipe in STDIN)
     inputBinding:
       position: 101
-      prefix: --fastq
   - id: interval
     type:
       - 'null'
@@ -115,11 +116,8 @@ inputs:
       position: 101
       prefix: --windowSize
   - id: out_file_path
-    type:
-      - 'null'
-      - string
-    doc: string   directory and basename for saving the outfile(s) (default 
-      "./hulk-20260224171520")
+    type: string
+    doc: directory and basename for saving the outfile(s)
     inputBinding:
       position: 103
       prefix: --outFile
@@ -141,11 +139,11 @@ outputs:
       glob: $(inputs.log_path)
   - id: out_file
     type:
-      - 'null'
-      - File
-    doc: directory and basename for saving the outfile(s)
+      type: array
+      items: File
+    doc: output file(s) written as <outFile>.<extension> (sketch .json files, or the .hulk-matrix.csv and .banner-matrix.csv distance matrices)
     outputBinding:
-      glob: $(inputs.out_file_path)
+      glob: $(inputs.out_file_path + ".*")
 requirements:
   - class: InlineJavascriptRequirement
 hints:

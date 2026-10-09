@@ -1,5 +1,12 @@
 # hsdfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hsdfinder | Not completed | runs to success on the tutorial input, but only 238 of 279 shared lines match the tutorial output (the tutorial used extra manual threshold curation), so the result cannot be confirmed. |
+| hsdfinder_hsd_to_kegg | Failed | image problem: script uses __location__ before it is defined, so it always raises NameError |
+
 ## hsdfinder
 
 ### Tool Description
@@ -28,5 +35,22 @@ or use hsdfinder --input_file=<input file> --percentage_identity=<percentage ide
 -o or --output_file	output file name
 
 Try other command: hsd_to_kegg -h
+```
+
+## hsdfinder_hsd_to_kegg
+
+### Tool Description
+Annotate HSDs (highly similar duplicates) found by hsdfinder with KEGG KO categories
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hsdfinder:1.1.1--hdfd78af_0
+- **Homepage**: https://github.com/zx0223winner/HSDFinder
+- **Package**: https://anaconda.org/channels/bioconda/packages/hsdfinder/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+KEGG.py -i <HSD file> -k <Gene list file with KO annotation> -n <species name> -o <output file name>
+or use KEGG.py --input_file=<HSD file> --ko_file=<Gene list file with KO annotation> --species_name=<species name> --output_file <output file name>
 ```
 

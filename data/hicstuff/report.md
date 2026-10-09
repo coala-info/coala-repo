@@ -1,5 +1,22 @@
 # hicstuff CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hicstuff_convert | PASS | Converted the graal test matrix to .cool (303 pixels, 304 contacts, same as mat.cool); the --genome option crashes when the fragment table already has gc_content. CWL fixed: baseCommand hicstuff convert. |
+| hicstuff_cutsite | PASS | Cut 10000 read pairs at DpnII/HinfI sites into 10166 pairs in digested_R1/R2.fq.gz. CWL fixed: baseCommand, outputs. |
+| hicstuff_digest | Failed | tool bug: the gc_content column is 100 times too small (gc_fraction divided by 100 again); other columns and info_contigs.txt match the repo test data. |
+| hicstuff_distancelaw | PASS | Computed the distance law from the filtered pairs and plotted it (table and image); also ran with a distance table and centromeres. CWL fixed: baseCommand, labels as string, comma list for dist-tbl. |
+| hicstuff_filter | PASS | Filtered valid_idx.pairs to 309 pairs, identical to the repo's valid_idx_filtered.pairs; plots written. |
+| hicstuff_iteralign | PASS | Aligned 10000 test reads iteratively, 98.3% mapped in iter.bam. CWL fixed: baseCommand, genome staged with its bowtie2 index files. |
+| hicstuff_missview | Failed | tool bug: crashes after mapping because it looks for abs_fragments_contacts_weighted.txt while the inner pipeline now writes .cool. CWL fixed: baseCommand, output image argument, required read length. |
+| hicstuff_pipeline | Not completed | pipeline, skipped |
+| hicstuff_rebin | PASS | Rebinned the graal and bg2 matrices to 1 kb with all 304 contacts kept; .cool input crashes (cooler 'size' column error). CWL fixed: baseCommand, binning as string. |
+| hicstuff_stats | PASS | Printed the mapping statistics of a pipeline log; numbers match the log (10000 pairs, 17442 mapped reads). CWL fixed: baseCommand. |
+| hicstuff_subsample | PASS | Subsampled mat.cool with --prop 0.5 to 152 of 304 contacts. CWL fixed: baseCommand, output files collected. |
+| hicstuff_view | PASS | Drew the contact map of mat.cool as a PNG with chromosome lines and log2 scale. CWL fixed: baseCommand. |
+
 ## hicstuff_convert
 
 ### Tool Description

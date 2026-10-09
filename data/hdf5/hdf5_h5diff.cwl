@@ -8,26 +8,26 @@ inputs:
     type: File
     doc: File name of the first HDF5 file
     inputBinding:
-      position: 1
+      position: 201
   - id: file2
     type: File
     doc: File name of the second HDF5 file
     inputBinding:
-      position: 2
+      position: 202
   - id: obj1
     type:
       - 'null'
       - string
     doc: Name of an HDF5 object, in absolute path
     inputBinding:
-      position: 3
+      position: 203
   - id: obj2
     type:
       - 'null'
       - string
     doc: Name of an HDF5 object, in absolute path
     inputBinding:
-      position: 4
+      position: 204
   - id: avoid_nan
     type:
       - 'null'
@@ -51,7 +51,8 @@ inputs:
     doc: Print differences up to C. C must be a positive integer.
     inputBinding:
       position: 105
-      prefix: --count
+      prefix: --count=
+      separate: false
   - id: delta
     type:
       - 'null'
@@ -61,7 +62,8 @@ inputs:
       Can not use with '-p' or '--use-system-epsilon'.
     inputBinding:
       position: 105
-      prefix: --delta
+      prefix: --delta=
+      separate: false
   - id: enable_error_stack
     type:
       - 'null'
@@ -75,12 +77,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exclude-path
     doc: Exclude the specified path to an object when comparing files or groups.
       If a group is excluded, all member objects will also be excluded. The 
       specified path is excluded wherever it occurs.
     inputBinding:
       position: 105
-      prefix: --exclude-path
   - id: follow_symlinks
     type:
       - 'null'
@@ -119,7 +122,8 @@ inputs:
       Can not use with '-d' or '--use-system-epsilon'.
     inputBinding:
       position: 105
-      prefix: --relative
+      prefix: --relative=
+      separate: false
   - id: report_mode
     type:
       - 'null'
@@ -143,7 +147,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - string
+      - boolean
     doc: Verbose mode. Print differences information and list of objects.
     inputBinding:
       position: 105
@@ -155,7 +159,8 @@ inputs:
     doc: Verbose mode with level. Print differences and list of objects.
     inputBinding:
       position: 105
-      prefix: --verbose
+      prefix: --verbose=
+      separate: false
 outputs:
   - id: stdout
     type: stdout
@@ -164,3 +169,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hdf5:1.10.4
 stdout: hdf5_h5diff.out
+successCodes:
+  - 0
+  - 1

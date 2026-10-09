@@ -1,5 +1,11 @@
 # hymet2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hymet2_hymet | Not completed | interactive prompt (input directory read from standard input); stops because the Mash sketch databases (sketch1-3.msh, about 2.3 GB) are not in the image |
+
 ## hymet2_hymet
 
 ### Tool Description

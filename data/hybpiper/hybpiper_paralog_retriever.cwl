@@ -170,7 +170,9 @@ inputs:
       position: 102
       prefix: --sample_text_size
   - id: targetfile_aa
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing amino-acid target sequences for each gene. Used to
       extract unique gene names for paralog recovery. The fasta headers must follow
       the naming convention: >TaxonID-geneName'
@@ -178,7 +180,9 @@ inputs:
       position: 102
       prefix: --targetfile_aa
   - id: targetfile_dna
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing DNA target sequences for each gene. Used to extract
       unique gene names for paralog recovery. The fasta headers must follow the naming
       convention: >TaxonID-geneName'
@@ -195,7 +199,7 @@ outputs:
       - Directory
     doc: Specify directory for output FASTA files (ALL).
     outputBinding:
-      glob: $(inputs.fasta_dir_all)
+      glob: "$(inputs.fasta_dir_all ? inputs.fasta_dir_all : 'paralogs_all')"
   - id: fasta_dir_no_chimeras_dir
     type:
       - 'null'
@@ -203,8 +207,31 @@ outputs:
     doc: Specify directory for output FASTA files (no putative chimeric 
       sequences).
     outputBinding:
-      glob: $(inputs.fasta_dir_no_chimeras)
+      glob: "$(inputs.fasta_dir_no_chimeras ? inputs.fasta_dir_no_chimeras : 'paralogs_no_chimeras')"
+  - id: reports
+    type:
+      type: array
+      items: File
+    doc: Paralog report tables and gene lists.
+    outputBinding:
+      glob:
+        - '*.tsv'
+        - '*.txt'
+  - id: heatmap
+    type:
+      type: array
+      items: File
+    doc: Heatmap image(s) written to the working directory.
+    outputBinding:
+      glob:
+        - '*.png'
+        - '*.pdf'
+        - '*.eps'
+        - '*.tiff'
+        - '*.svg'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0
 stdout: hybpiper_paralog_retriever.out
+requirements:
+  - class: InlineJavascriptRequirement

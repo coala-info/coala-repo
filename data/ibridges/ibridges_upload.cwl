@@ -7,7 +7,9 @@ label: ibridges_upload
 doc: "Upload a data object or collection to an iRODS server.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:
   - id: local_path
-    type: string
+    type:
+      - File
+      - Directory
     doc: Local path to upload the data object/collection from.
     inputBinding:
       position: 1
@@ -29,7 +31,7 @@ inputs:
   - id: metadata
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the metadata json.
     inputBinding:
       position: 103

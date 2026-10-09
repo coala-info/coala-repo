@@ -1,5 +1,11 @@
 # hat-phasing CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hat-phasing_HAT | PASS |  |
+
 ## hat-phasing_HAT
 
 ### Tool Description

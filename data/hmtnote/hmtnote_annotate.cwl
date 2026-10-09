@@ -59,10 +59,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --variab
-  - id: csv_path
+  - id: csv
     type:
       - 'null'
-      - string
+      - boolean
+    doc: Produce an additional annotated CSV file (same base name and path as the output VCF)
     inputBinding:
       position: 103
       prefix: --csv
@@ -72,15 +73,17 @@ outputs:
     doc: Output annotated VCF file
     outputBinding:
       glob: '$(inputs.output_vcf)'
-  - id: csv
+  - id: out_csv
     type:
       - 'null'
       - File
-    doc: Produce an additional annotated CSV file
+    doc: Additional annotated CSV file (written when --csv is set)
     outputBinding:
-      glob: $(inputs.csv_path)
+      glob: $(inputs.output_vcf.replace(/\.vcf$/, "") + ".csv")
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmtnote:0.7.2--pyhdfd78af_1

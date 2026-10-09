@@ -1,5 +1,11 @@
 # hcluster_sg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hcluster_sg | PASS | synthetic data: a small planted weighted edge list; clusters match the expected grouping. |
+
 ## hcluster_sg
 
 ### Tool Description

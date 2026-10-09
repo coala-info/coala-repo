@@ -1,9 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hyphy_meme
+baseCommand:
+  - hyphy
+  - meme
 label: hyphy_meme
 doc: "Available analysis command line options\n\nTool homepage: http://hyphy.org/"
 inputs:
+  - id: cpu
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use (HyPhy CPU= argument).
+    inputBinding:
+      position: 100
+      prefix: CPU=
+      separate: false
   - id: alignment
     type: File
     doc: An in-frame codon alignment in one of the formats supported by HyPhy
@@ -46,7 +57,7 @@ inputs:
   - id: intermediate_fits
     type:
       - 'null'
-      - File
+      - string
     doc: Use/save parameter estimates from 'initial-guess' model fits to a JSON 
       file (default is not to save)
     inputBinding:

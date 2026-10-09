@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicstuff_rebin
+baseCommand:
+  - hicstuff
+  - rebin
 label: hicstuff_rebin
 doc: "Rebins a Hi-C matrix and modifies its fragment and chrom files accordingly.\n\
   \    Output files are in the same format as the input files (cool, graal or bg2).\n\
@@ -19,9 +21,9 @@ inputs:
   - id: binning
     type:
       - 'null'
-      - int
-    doc: "Subsampling factor or fix value in\n                                   \
-      \      basepairs to use for binning"
+      - string
+    doc: 'Subsampling factor or fix value in basepairs to use for binning, as INT
+      or INT[bp|kb|Mb|Gb] (for example 1kb). [default: 1]'
     inputBinding:
       position: 103
       prefix: --binning
@@ -59,9 +61,6 @@ inputs:
       position: 103
       prefix: --frags
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: out_prefix_files
     type:
       type: array
@@ -72,4 +71,3 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicstuff:3.2.4--pyhdfd78af_0
-stdout: hicstuff_rebin.out

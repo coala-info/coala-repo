@@ -44,12 +44,15 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: A .hap file containing sorted and indexed haplotypes and variants
+    type: File
+    doc: The bgzipped, sorted .hap file (name given by output_path)
     outputBinding:
       glob: $(inputs.output_path)
+  - id: output_index
+    type: File
+    doc: The tabix index (.tbi) of the output .hap file
+    outputBinding:
+      glob: $(inputs.output_path).tbi
 requirements:
   - class: InlineJavascriptRequirement
 hints:

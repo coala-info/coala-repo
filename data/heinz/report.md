@@ -1,5 +1,11 @@
 # heinz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| heinz | PASS |  |
+
 ## heinz
 
 ### Tool Description

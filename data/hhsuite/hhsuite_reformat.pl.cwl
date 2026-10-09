@@ -9,37 +9,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Input format (e.g., fas, a2m, a3m, sto, psi, clu)
+    doc: Input format (fas, a2m, a3m, sto, psi, clu). If no input or output format is given the file extension is interpreted as format specification ('aln' as 'clu').
     inputBinding:
       position: 1
   - id: outformat
     type:
       - 'null'
       - string
-    doc: Output format (e.g., fas, a2m, a3m, sto, psi, clu)
+    doc: Output format (fas, a2m, a3m, sto, psi, clu)
     inputBinding:
       position: 2
-  - id: fileglob
-    type:
-      - 'null'
-      - string
-    doc: File glob pattern for input files
+  - id: infile
+    type: File
+    doc: Input alignment file
     inputBinding:
       position: 3
-  - id: infile
-    type:
-      - 'null'
-      - File
-    doc: Input file
+  - id: outfile_path
+    type: string
+    doc: Output alignment file
     inputBinding:
       position: 4
-  - id: output_extension
-    type:
-      - 'null'
-      - string
-    doc: Extension for output files
-    inputBinding:
-      position: 5
   - id: add_number_prefix
     type:
       - 'null'
@@ -65,24 +54,14 @@ inputs:
     inputBinding:
       position: 106
       prefix: -lc
-  - id: match_columns_with_gap_percentage
+  - id: match_columns
     type:
       - 'null'
-      - int
-    doc: make all columns with less than X% gaps match columns (for output 
-      format a2m or a3m)
+      - string
+    doc: "'first' makes all columns with residue in first sequence match columns (default for output format a2m or a3m); an integer X makes all columns with less than X% gaps match columns (for output format a2m or a3m)"
     inputBinding:
       position: 106
       prefix: -M
-  - id: match_residue_in_first_sequence
-    type:
-      - 'null'
-      - boolean
-    doc: make all columns with residue in first sequence match columns (default 
-      for output format a2m or a3m)
-    inputBinding:
-      position: 106
-      prefix: -M first
   - id: max_nameline_characters
     type:
       - 'null'
@@ -104,7 +83,7 @@ inputs:
       - 'null'
       - boolean
     doc: remove all lower case residues (insert states) (AFTER -M option has 
-      been processed)
+      been processed). Do not combine with remove_lowercase_columns_with_gap_percentage.
     inputBinding:
       position: 106
       prefix: -r
@@ -127,11 +106,11 @@ inputs:
   - id: suppress_gaps
     type:
       - 'null'
-      - string
-    doc: suppress all gaps
+      - boolean
+    doc: suppress all gaps (-g '')
     inputBinding:
       position: 106
-      prefix: -g ''
+      valueFrom: '$(self ? ["-g", ""] : [])'
   - id: uppercase_residues
     type:
       - 'null'
@@ -152,19 +131,19 @@ inputs:
   - id: write_gaps_as_dash
     type:
       - 'null'
-      - string
-    doc: write all gaps as '-'
+      - boolean
+    doc: write all gaps as '-' (-g '-')
     inputBinding:
       position: 106
-      prefix: -g '-'
+      valueFrom: '$(self ? ["-g", "-"] : [])'
 outputs:
   - id: outfile
-    type:
-      - 'null'
-      - File
-    doc: Output file
+    type: File
+    doc: Output alignment file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hhsuite:3.3.0--h503566f_15

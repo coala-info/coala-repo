@@ -9,12 +9,12 @@ inputs:
     type: File
     doc: Query protein sequence file
     inputBinding:
-      position: 1
+      position: 201
   - id: seqdb
     type: File
     doc: Target protein database file
     inputBinding:
-      position: 2
+      position: 202
   - id: cpu
     type:
       - 'null'
@@ -454,7 +454,7 @@ inputs:
     doc: Output or path parameter `alignment_output_path`
     inputBinding:
       position: 104
-      prefix: --alignment-output
+      prefix: -A
   - id: output_file_path
     type:
       - 'null'
@@ -526,17 +526,19 @@ outputs:
   - id: chkhmm
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: save HMM checkpoints to files <f>-<iteration>.hmm
     outputBinding:
-      glob: $(inputs.chkhmm_path)
+      glob: $(inputs.chkhmm_path)-*.hmm
   - id: chkali
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: save alignment checkpoints to files <f>-<iteration>.sto
     outputBinding:
-      glob: $(inputs.chkali_path)
+      glob: $(inputs.chkali_path)-*.sto
 requirements:
   - class: InlineJavascriptRequirement
 hints:

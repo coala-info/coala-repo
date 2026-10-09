@@ -68,6 +68,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: report
+    type:
+      type: array
+      items: File
+    doc: Target file report and fix_targetfile control file.
+    outputBinding:
+      glob:
+        - '*.txt'
+        - '*.ctl'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0

@@ -68,11 +68,18 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: "database name (e.g. uniprot20_29Feb2012)\nMultiple databases may be specified
+        inputBinding:
+          prefix: -d
+    doc: "database name, the common file name prefix of the database files (e.g. uniprot20_29Feb2012)\nMultiple databases may be specified
       with '-d <db1> -d <db2> ...'"
     inputBinding:
       position: 101
-      prefix: -d
+  - id: database_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: the HH-suite database files (e.g. pfam_hhm.ffdata, pfam_hhm.ffindex, pfam_a3m.ffdata, pfam_a3m.ffindex, pfam_cs219.ffdata, pfam_cs219.ffindex), staged in the working directory so that the database name resolves
   - id: disable_add_filter
     type:
       - 'null'
@@ -809,7 +816,7 @@ inputs:
     doc: Output or path parameter `output_a3m_path`
     inputBinding:
       position: 102
-      prefix: --output-a3m
+      prefix: -oa3m
   - id: output_alis_path
     type:
       - 'null'
@@ -817,7 +824,7 @@ inputs:
     doc: Output or path parameter `output_alis_path`
     inputBinding:
       position: 103
-      prefix: --output-alis
+      prefix: -oalis
   - id: output_blasttab_path
     type:
       - 'null'
@@ -835,7 +842,7 @@ inputs:
     doc: Output or path parameter `output_fasta_path`
     inputBinding:
       position: 105
-      prefix: --output-fasta
+      prefix: -Ofas
   - id: output_hhm_path
     type:
       - 'null'
@@ -843,7 +850,7 @@ inputs:
     doc: Output or path parameter `output_hhm_path`
     inputBinding:
       position: 106
-      prefix: --output-hhm
+      prefix: -ohhm
   - id: output_psi_path
     type:
       - 'null'
@@ -851,7 +858,7 @@ inputs:
     doc: Output or path parameter `output_psi_path`
     inputBinding:
       position: 107
-      prefix: --output-psi
+      prefix: -opsi
   - id: output_standard_path
     type:
       - 'null'
@@ -859,7 +866,7 @@ inputs:
     doc: Output or path parameter `output_standard_path`
     inputBinding:
       position: 108
-      prefix: --output-standard
+      prefix: -o
   - id: output_tabular_alignments_path
     type:
       - 'null'
@@ -867,7 +874,23 @@ inputs:
     doc: Output or path parameter `output_tabular_alignments_path`
     inputBinding:
       position: 109
-      prefix: --output-tabular-alignments
+      prefix: -atab
+  - id: output_a2m_alignments_path
+    type:
+      - 'null'
+      - string
+    doc: write pairwise alignments in A2M format
+    inputBinding:
+      position: 105
+      prefix: -Oa2m
+  - id: output_a3m_alignments_path
+    type:
+      - 'null'
+      - string
+    doc: write pairwise alignments in A3M format
+    inputBinding:
+      position: 105
+      prefix: -Oa3m
   - id: scores_file_path
     type:
       - 'null'
@@ -877,6 +900,20 @@ inputs:
       position: 110
       prefix: -scores
 outputs:
+  - id: output_a2m_alignments
+    type:
+      - 'null'
+      - File
+    doc: pairwise alignments in A2M format
+    outputBinding:
+      glob: $(inputs.output_a2m_alignments_path)
+  - id: output_a3m_alignments
+    type:
+      - 'null'
+      - File
+    doc: pairwise alignments in A3M format
+    outputBinding:
+      glob: $(inputs.output_a3m_alignments_path)
   - id: output_standard
     type:
       - 'null'
@@ -946,6 +983,8 @@ outputs:
       glob: $(inputs.output_tabular_alignments_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.database_files ? inputs.database_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hhsuite:3.3.0--h503566f_15

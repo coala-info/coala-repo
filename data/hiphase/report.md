@@ -1,5 +1,11 @@
 # hiphase CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hiphase | PASS | real HG002 long reads at low coverage (0.7x), so only 183 variants phased; run needed ignore_read_groups |
+
 ## hiphase
 
 ### Tool Description

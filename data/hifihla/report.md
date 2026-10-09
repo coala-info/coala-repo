@@ -1,5 +1,14 @@
 # hifihla CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hifihla_align-imgt | PASS |  |
+| hifihla_call-consensus | PASS |  |
+| hifihla_call-contigs | PASS | real HiFi amplicon consensus sequences used in place of assembly contigs (no small real contig set); HLA calls are written for each sequence. |
+| hifihla_call-reads | PASS |  |
+
 ## hifihla_call-reads
 
 ### Tool Description
@@ -182,30 +191,4 @@ Research Use Only and not for use in diagnostic procedures.
 
 ## Metadata
 - **Skill**: generated
-
-## hifihla
-
-### Tool Description
-Call HLA loci from an aligned BAM of HiFi reads
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hifihla:0.3.1--hdfd78af_0
-- **Homepage**: https://github.com/PacificBiosciences/hifihla
-- **Package**: https://anaconda.org/channels/bioconda/packages/hifihla/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-Usage: hifihla <COMMAND>
-
-Commands:
-  call-reads      Call HLA loci from an aligned BAM of HiFi reads
-  call-contigs    Extract HLA loci from assembled MHC contigs & call star alleles on extracted sequences
-  call-consensus  Call HLA Star (*) alleles from consensus sequences
-  align-imgt      Align queries to IMGT/HLA genomic accession sequences
-  help            Print this message or the help of the given subcommand(s)
-
-Options:
-  -h, --help     Print help
-  -V, --version  Print version
-```
 

@@ -7,6 +7,11 @@ doc: "A tool for jointly phasing small, structural, and tandem repeat variants f
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input alignment file in BAM format
     inputBinding:
       position: 101
@@ -206,6 +211,11 @@ inputs:
       prefix: --threads
   - id: vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input variant file in VCF format
     inputBinding:
       position: 101
@@ -213,8 +223,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101
@@ -265,11 +274,21 @@ outputs:
       - 'null'
       - File
     doc: Output haplotagged alignment file in BAM format
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .csi
+        required: false
     outputBinding:
       glob: $(inputs.output_bam_path)
   - id: output_vcf
     type: File
     doc: Output phased variant file in VCF format
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     outputBinding:
       glob: $(inputs.output_vcf_path)
   - id: summary_file

@@ -1,5 +1,12 @@
 # humanfilt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| humanfilt_run | Failed | image problem: fastuniq, bbduk.sh, dedupe.sh, kraken2 and seqkit are missing from the image, and the human references are not available |
+| humanfilt_setup | Not completed | downloads several GB of human reference bundles from Zenodo, too large to test |
+
 ## humanfilt_setup
 
 ### Tool Description

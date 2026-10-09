@@ -1,5 +1,11 @@
 # haslr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haslr_haslr.py | PASS |  |
+
 ## haslr_haslr.py
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # hs-blastn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hs-blastn_align | PASS |  |
+| hs-blastn_index | PASS |  |
+
 ## hs-blastn_align
 
 ### Tool Description
@@ -106,5 +113,31 @@ OPTIONAL ARGUMENTS
  -num_threads <Integer, >=1>
     Number of threads (CPUs) to use in the search
     Default = '1'
+```
+
+## hs-blastn_index
+
+### Tool Description
+Build an FMD-index of a nucleotide database (FASTA) for hs-blastn align
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hs-blastn:0.0.5--h9948957_6
+- **Homepage**: https://github.com/chenying2016/queries
+- **Package**: https://anaconda.org/channels/bioconda/packages/hs-blastn/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+HS-BLASTN: A nucleotide database search tool.
+Usage:
+	1) Build an FMD-index:
+	  hs-blastn index database
+
+	2) Search the database:
+	  hs-blastn align -h
+	  or
+	  hs-blastn align -help
+
+See README for more details.
 ```
 

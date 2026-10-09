@@ -15,7 +15,9 @@ inputs:
       position: 101
       prefix: --exact
   - id: fasta
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Fasta with query sequence(s)
     inputBinding:
       position: 101
@@ -34,10 +36,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Comma-sep query IDs
+    doc: Comma-sep query IDs (IMGT/HLA accession IDs, used instead of a fasta)
     inputBinding:
       position: 101
       prefix: --qids
+      itemSeparator: ','
   - id: targets
     type:
       - 'null'
@@ -47,6 +50,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --targets
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'
@@ -64,11 +68,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tnames
+      itemSeparator: ','
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101

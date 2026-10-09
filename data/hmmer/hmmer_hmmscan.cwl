@@ -6,14 +6,19 @@ doc: "search sequence(s) against a profile database\n\nTool homepage: http://hmm
 inputs:
   - id: hmmdb
     type: File
-    doc: HMM profile database
+    doc: HMM profile database (pressed with hmmpress)
+    secondaryFiles:
+      - .h3f
+      - .h3i
+      - .h3m
+      - .h3p
     inputBinding:
-      position: 1
+      position: 201
   - id: seqfile
     type: File
     doc: Sequence file to search
     inputBinding:
-      position: 2
+      position: 202
   - id: acc
     type:
       - 'null'

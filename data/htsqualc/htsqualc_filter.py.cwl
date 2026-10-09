@@ -115,7 +115,7 @@ inputs:
   - id: trim_opt
     type:
       - 'null'
-      - boolean
+      - string
     doc: If trim option set to True, the reads with low quality (as defined by 
       option --qthr) will be trimmed instead of discarding [True|False]
     inputBinding:
@@ -124,7 +124,7 @@ inputs:
   - id: vis_opt
     type:
       - 'null'
-      - boolean
+      - string
     doc: No figures will be produced [True|False]
     inputBinding:
       position: 101
@@ -142,6 +142,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: filtering_out
+    type:
+      type: array
+      items: Directory
+    doc: one output folder per input file (<input name>_filtering_out) with the filtered reads and quality reports
+    outputBinding:
+      glob: '*_filtering_out'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_files_1)
+        writable: true
+      - entry: $(inputs.input_files_2)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/htsqualc:1.1--pyhfa5458b_0

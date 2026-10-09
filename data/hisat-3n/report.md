@@ -1,5 +1,13 @@
 # hisat-3n CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hisat-3n | PASS |  |
+| hisat-3n_hisat-3n-build | PASS |  |
+| hisat-3n_hisat-3n-table | PASS |  |
+
 ## hisat-3n
 
 ### Tool Description
@@ -170,3 +178,84 @@ Command: /usr/local/bin/hisat2-align-s --wrapper basic-0 --h --3N
 (ERR): hisat2-align exited with value 1
 ```
 
+## hisat-3n_hisat-3n-build
+
+### Tool Description
+Build a HISAT-3N index from a set of DNA sequences.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hisat-3n:0.0.3--h503566f_0
+- **Homepage**: https://github.com/fulcrumgenomics/hisat-3n
+- **Package**: https://anaconda.org/channels/bioconda/packages/hisat-3n/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+HISAT2 version 2.2.1-3n-0.0.3 by Daehwan Kim (infphilo@gmail.com, http://www.ccb.jhu.edu/people/infphilo)
+Usage: hisat2-build [options]* <reference_in> <ht2_index_base>
+    reference_in            comma-separated list of files with ref sequences
+    hisat2_index_base       write ht2 data to files with this dir/basename
+Options:
+    -c                      reference sequences given on cmd line (as
+                            <reference_in>)
+    --large-index           force generated index to be 'large', even if ref
+                            has fewer than 4 billion nucleotides
+    -a/--noauto             disable automatic -p/--bmax/--dcv memory-fitting
+    -p <int>                number of threads
+    --bmax <int>            max bucket sz for blockwise suffix-array builder
+    --bmaxdivn <int>        max bucket sz as divisor of ref len (default: 4)
+    --dcv <int>             diff-cover period for blockwise (default: 1024)
+    --nodc                  disable diff-cover (algorithm becomes quadratic)
+    -r/--noref              don't build .3/.4.ht2 (packed reference) portion
+    -3/--justref            just build .3/.4.ht2 (packed reference) portion
+    -o/--offrate <int>      SA is sampled every 2^offRate BWT chars (default: 5)
+    -t/--ftabchars <int>    # of chars consumed in initial lookup (default: 10)
+    --localoffrate <int>    SA (local) is sampled every 2^offRate BWT chars (default: 3)
+    --localftabchars <int>  # of chars consumed in initial lookup in a local index (default: 6)
+    --snp <path>            SNP file name
+    --haplotype <path>      haplotype file name
+    --ss <path>             Splice site file name
+    --exon <path>           Exon file name
+    --repeat-ref <path>     Repeat reference file name
+    --repeat-info <path>    Repeat information file name
+    --repeat-snp <path>     Repeat snp file name
+    --repeat-haplotype <path>   Repeat haplotype file name
+    --seed <int>            seed for random number generator
+    --base-change <chr,chr>     the converted nucleotide and converted to nucleotide (default:C,T)
+    --repeat-index<int>-<int>[,<int>-<int>]  automatically build repeat database and repeat index, enter the minimum-maximum repeat length pairs (default: 100-300)
+    -q/--quiet              disable verbose output (for debugging)
+    -h/--help               print detailed description of tool and its options
+    --usage                 print this usage message
+    --version               print version information and quit
+```
+
+## hisat-3n_hisat-3n-table
+
+### Tool Description
+Generate a 3N-conversion table from a sorted HISAT-3N SAM alignment.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hisat-3n:0.0.3--h503566f_0
+- **Homepage**: https://github.com/fulcrumgenomics/hisat-3n
+- **Package**: https://anaconda.org/channels/bioconda/packages/hisat-3n/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+hisat-3n-table developed by Yun (Leo) Zhang
+Usage:
+hisat-3n-table [options]* --alignments <alignmentFile> --ref <refFile> --output-name <outputFile> --base-change <char1,char2>
+  <alignmentFile>           SORTED SAM filename. Please enter '-' for standard input.
+  <refFile>                 reference file (should be FASTA format).
+  <outputFile>              file name to save the 3n table (tsv format). By default, alignments are written to the “standard out” or “stdout” filehandle (i.e. the console).
+  <chr1,chr2>               the char1 is the nucleotide converted from, the char2 is the nucleotide converted to.
+Options (defaults in parentheses):
+ Input:
+  -u/--unique-only          only count the base which is in unique mapped reads.
+  -m/--multiple-only        only count the base which is in multiple mapped reads.
+  -c/--CG-only              only count CG and ignore CH in reference.
+  --added-chrname           please add this option if you use --add-chrname during HISAT-3N alignment.
+  --removed-chrname         please add this option if you use --remove-chrname during HISAT-3N alignment.
+  -p/--threads <int>        number of threads to launch (1).
+  -h/--help                 print this usage message.
+```

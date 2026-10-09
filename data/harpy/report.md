@@ -1,35 +1,22 @@
 # harpy CWL Generation Report
 
-## harpy_align
+## Real Data Test
 
-### Tool Description
-Align sequences to a reference genome. Provide an additional subcommand bwa or strobe to get more information on using those aligners. Both have comparable performance, but strobe is typically faster. The aligners are not linked-read aware, but the workflows ensure linked-read information is carried over to the alignment records.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Total Downloads**: 1.9M
-- **Last updated**: 2026-02-05
-- **GitHub**: https://github.com/pdimens/harpy
-- **Stars**: N/A
-### Original Help Text
-```text
-Usage: harpy align [OPTIONS] COMMAND [ARGS]...                                  
-                                                                                
-Align sequences to a reference genome                                           
-Provide an additional subcommand bwa or strobe to get more information on using 
-those aligners. Both have comparable performance, but strobe is typically       
-faster. The aligners are not linked-read aware, but the workflows ensure        
-linked-read information is carried over to the alignment records.               
-                                                                                
-Commands:                                                                       
-  bwa     Align sequences to reference genome using BWA MEM2                    
-  strobe  Align sequences to reference genome using strobealign
-```
+| Tool | Result | Reason |
+|---|---|---|
+| harpy_assembly | Not completed | pipeline, skipped |
+| harpy_deconvolve | Not completed | pipeline, skipped |
+| harpy_impute | Not completed | pipeline, skipped |
+| harpy_metassembly | Not completed | pipeline, skipped |
+| harpy_phase | Not completed | pipeline, skipped |
+| harpy_qc | Not completed | pipeline, skipped |
+| harpy_resume | Not completed | pipeline, skipped |
+| harpy_template_groupings | PASS |  |
+| harpy_template_hpc_generic | PASS |  |
+| harpy_template_hpc_googlebatch | PASS |  |
+| harpy_template_hpc_lsf | PASS |  |
+| harpy_template_hpc_slurm | PASS |  |
+| harpy_template_impute | PASS |  |
 
 ## harpy_assembly
 
@@ -97,35 +84,6 @@ Workflow Options:
   --snakemake         Additional Snakemake parameters, in quotes                
                                                                                 
 Documentation: https://pdimens.github.io/harpy/workflows/assembly
-```
-
-## harpy_demultiplex
-
-### Tool Description
-Demultiplex haplotagged FASTQ files. Check that you are using the correct haplotagging method/technology, since the different barcoding approaches have very different demultiplexing strategies.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: harpy demultiplex COMMAND [ARGS]...                                      
-                                                                                
-Demultiplex haplotagged FASTQ files                                             
-Check that you are using the correct haplotagging method/technology, since the  
-different barcoding approaches have very different demultiplexing strategies.   
-                                                                                
-Haplotagging Technologies                                                       
-                                                                                
- • meier2021: the original haplotagging barcode strategy                        
-    • Meier et al. (2021) doi: 10.1073/pnas.2015005118                          
-                                                                                
-Commands:                                                                       
-  meier2021  Demultiplex FASTQ files haplotagged with the Meier et al. 2021     
-             protocol
 ```
 
 ## harpy_impute
@@ -343,119 +301,6 @@ Workflow Options:
 Documentation: https://pdimens.github.io/harpy/workflows/qc
 ```
 
-## harpy_simulate
-
-### Tool Description
-Simulate genomic variants. To simulate genomic variants, provide an additional subcommand {snpindel,inversion,cnv,translocation} to get more information about that workflow. The variant simulator (simuG) can only simulate one type of variant at a time, so you may need to run it a few times if you want multiple variant types.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: harpy simulate COMMAND [ARGS]...                                         
-                                                                                
-Simulate genomic variants                                                       
-To simulate genomic variants, provide an additional subcommand                  
-{snpindel,inversion,cnv,translocation} to get more information about that       
-workflow. The variant simulator (simuG) can only simulate one type of variant at
-a time, so you may need to run it a few times if you want multiple variant      
-types.                                                                          
-                                                                                
-Linked Read Sequences:                                                          
-  linkedreads  Create linked reads using genome haplotypes                      
-               [deprecated]                                                     
-                                                                                
-Genomic Variants:                                                               
-  cnv            Introduce copy number variants into a genome                   
-  inversion      Introduce inversions into a genome                             
-  snpindel       Introduce snps and/or indels into a genome                     
-  translocation  Introduce translocations into a genome
-```
-
-## harpy_snp
-
-### Tool Description
-Call SNPs and small indels from alignments. Provide an additional subcommand mpileup or freebayes to get more information on using those variant callers. They are both robust variant callers, but freebayes is recommended when ploidy is greater than 2.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: harpy snp COMMAND [ARGS]...                                              
-                                                                                
-Call SNPs and small indels from alignments                                      
-Provide an additional subcommand mpileup or freebayes to get more information on
-using those variant callers. They are both robust variant callers, but freebayes
-is recommended when ploidy is greater than 2.                                   
-                                                                                
-Commands:                                                                       
-  freebayes  Call variants using freebayes                                      
-  mpileup    Call variants from using bcftools mpileup
-```
-
-## harpy_sv
-
-### Tool Description
-Call inversions, deletions, and duplications from alignments using LEVIATHAN or NAIBR.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: harpy sv [OPTIONS] COMMAND [ARGS]...                                     
-                                                                                
-Call inversions, deletions, and duplications from alignments                    
-                                                                                
-                                                                                
- caller     inversions  duplications  deletions  breakends                      
- ─────────────────────────────────────────────────────────                      
- leviathan      ✔            ✔            ✔          ✔                          
- naibr          ✔            ✔            ✔          🗙                          
-                                                                                
-                                                                                
-Provide the subcommand leviathan or naibr to get more information on using those
-variant callers. NAIBR tends to call variants better, but requires more user    
-preprocessing.                                                                  
-                                                                                
-Commands:                                                                       
-  leviathan  Call structural variants using LEVIATHAN                           
-  naibr      Call structural variants using NAIBR
-```
-
-## harpy_convert
-
-### Tool Description
-[deprecated] Convert between linked-read formats. This module of Harpy has been deprecated and its function has been moved to the Djinn package.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: harpy convert [OPTIONS] COMMAND [ARGS]...                                
-                                                                                
-[deprecated]                                                                    
-Convert between linked-read formats                                             
-This module of Harpy has been deprecated and its function has been moved to the 
-Djinn package, which should be provided with the standard conda-based Harpy     
-installation.
-```
-
 ## harpy_deconvolve
 
 ### Tool Description
@@ -503,82 +348,6 @@ Workflow Options:
 Documentation: https://pdimens.github.io/harpy/workflows/deconvolve
 ```
 
-## harpy_template
-
-### Tool Description
-Create files and HPC configs for workflows. All commands write to stdout. Use hpc-* and impute without arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: harpy template [OPTIONS] COMMAND [ARGS]...                               
-                                                                                
-Create files and HPC configs for workflows                                      
-All commands write to stdout. Use hpc-* and impute without arguments.           
-                                                                                
-Input Files:                                                                    
-  groupings  Create a template sample-grouping file                             
-  impute     Create a template imputation parameter file                        
-                                                                                
-HPC Configurations:                                                             
-  hpc-generic      Create a template config for a generic scheduler             
-  hpc-googlebatch  Create a template config for Google Batch                    
-  hpc-lsf          Create a template config for LSF                             
-  hpc-slurm        Create a template config for SLURM
-```
-
-## harpy_deps
-
-### Tool Description
-Locally install workflow dependencies. These commands are intended only for situations on HPCs where conda cannot be installed or the worker nodes do not have internet access to download conda/apptainer workflow dependencies.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: harpy deps COMMAND [ARGS]...                                             
-                                                                                
-Locally install workflow dependencies                                           
-These commands are intended only for situations on HPCs where conda cannot be   
-installed or the worker nodes do not have internet access to download           
-conda/apptainer workflow dependencies.                                          
-                                                                                
-Commands:                                                                       
-  conda      Install workflow dependencies via conda                            
-  container  Install workflow dependency containers
-```
-
-## harpy_diagnose
-
-### Tool Description
-Attempt to resolve workflow errors
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
-- **Homepage**: https://github.com/pdimens/harpy/
-- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: harpy diagnose COMMAND [ARGS]...                                         
-                                                                                
-Attempt to resolve workflow errors                                              
-                                                                                
-Commands:                                                                       
-  rule   Directly run the first rule that caused the workflow failure           
-  stall  Run the Snakemake debugger to identify why a workflow stalled
-```
-
 ## harpy_resume
 
 ### Tool Description
@@ -616,10 +385,10 @@ Options:
 Documentation: https://pdimens.github.io/harpy/workflows/other
 ```
 
-## harpy_validate
+## harpy_template_groupings
 
 ### Tool Description
-File format checks for linked-read data. This is useful to make sure your input files are formatted correctly for the processing pipeline before you are surprised by errors hours into an analysis.
+Create a template sample-grouping file from a directory of FASTQ or BAM files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
@@ -629,22 +398,23 @@ File format checks for linked-read data. This is useful to make sure your input 
 
 ### Original Help Text
 ```text
-Usage: harpy validate COMMAND [ARGS]...                                         
-                                                                                
-File format checks for linked-read data                                         
-This is useful to make sure your input files are formatted correctly for the    
-processing pipeline before you are surprised by errors hours into an analysis.  
-Provide an additional command fastq or bam to see more information and options. 
-                                                                                
-Commands:                                                                       
-  bam    Validate linked-read BAM file format                                   
-  fastq  Validate linked-read FASTQ file format
+Usage: harpy template groupings [OPTIONS] INPUTDIR
+
+Create a template sample-grouping file
+This command generates a sample grouping file, like the kind optional for
+variant calling. Provide the input fastq/bam directory at the end of the
+command. Writes to stdout. Note that Harpy cannot reliably infer populations
+from filenames, therefore all samples will be assigned to pop1. Please modify
+this file with appropriate population designations.
+
+Documentation:
+https://pdimens.github.io/harpy/workflows/snp/#sample-grouping-file
 ```
 
-## harpy_view
+## harpy_template_impute
 
 ### Tool Description
-View a workflow's components. These convenient commands let you view/edit the latest workflow log file, snakefile, snakemake parameter file, workflow config file in a directory that was used for the output of a Harpy run.
+Create a template STITCH imputation parameter file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
@@ -654,19 +424,120 @@ View a workflow's components. These convenient commands let you view/edit the la
 
 ### Original Help Text
 ```text
-Usage: harpy view COMMAND [ARGS]...                                             
-                                                                                
-View a workflow's components                                                    
-These convenient commands let you view/edit the latest workflow log file,       
-snakefile, snakemake parameter file, workflow config file in a directory that   
-was used for the output of a Harpy run.                                         
-                                                                                
-Commands:                                                                       
-  config        View/edit a workflow's config file                              
-  environments  View the Snakemake-managed conda environments                   
-  log           View a workflow's Snakemake log file                            
-  snakefile     View/edit a workflow's Snakefile                                
-  snakeparams   View/edit a workflow's Snakemake configurations
+╭─ Notice ────────────────────────────────────────────────────────────────╮
+│ Modify the model parameters as needed, but do not add/remove columns.   │
+╰─────────────────────────────────────────────────────────────────────────╯
+name	model	usebx	bxlimit	k	s	ngen
+k10_ng50	diploid	TRUE	50000	10	1	50
+k1_ng30	diploid	TRUE	50000	5	1	30
+high_ngen	diploid	TRUE	50000	15	1	100
+```
+
+## harpy_template_hpc_generic
+
+### Tool Description
+Create a template Snakemake profile for a generic HPC scheduler.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
+- **Homepage**: https://github.com/pdimens/harpy/
+- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+╭─ Notice ────────────────────────────────────────────────────────────────╮
+│ Using this scheduler requires installing a Snakemake plugin which       │
+│ wasn't detected in this environment. It can be installed with:          │
+│                                                                         │
+│                                                                         │
+│  conda install -c bioconda snakemake-executor-plugin-cluster-generic    │
+│                                                                         │
+╰─────────────────────────────────────────────────────────────────────────╯
+__use_yte__: true
+executor: cluster-generic
+default-resources:
+  mem_mb: attempt * 3200
+```
+
+## harpy_template_hpc_googlebatch
+
+### Tool Description
+Create a template Snakemake profile for Google Batch.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
+- **Homepage**: https://github.com/pdimens/harpy/
+- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+__use_yte__: true
+executor: googlebatch
+jobs: 50
+latency-wait: 45
+retries: 1
+default-resources:
+## YOU MAY NOT NEED ALL OF THESE! ##
+# The name of the Google Project
+  googlebatch_project: Harpy
+
+# The name of the Google Project region (e.g., 'us-central1')
+  googlebatch_region: 'us-central1'
+```
+
+## harpy_template_hpc_lsf
+
+### Tool Description
+Create a template Snakemake profile for LSF.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
+- **Homepage**: https://github.com/pdimens/harpy/
+- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+__use_yte__: true
+executor: lsf
+default-resources:
+  lsf_queue:
+  walltime: 60 # minutes per job
+  mem_mb: attempt * 2000
+  # other args to pass to bsub
+  lsf_extra: VALUE
+jobs: 50
+latency-wait: 60
+retries: 1
+```
+
+## harpy_template_hpc_slurm
+
+### Tool Description
+Create a template Snakemake profile for SLURM.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
+- **Homepage**: https://github.com/pdimens/harpy/
+- **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+╭─ Notice ────────────────────────────────────────────────────────────────╮
+│ Using this scheduler requires installing a Snakemake plugin which       │
+│ wasn't detected in this environment. It can be installed with:          │
+│                                                                         │
+│                                                                         │
+│  conda install -c bioconda snakemake-executor-plugin-slurm              │
+│                                                                         │
+╰─────────────────────────────────────────────────────────────────────────╯
+__use_yte__: true
+executor: slurm
+default-resources:
+  slurm_account: $USER
 ```
 
 ## Metadata

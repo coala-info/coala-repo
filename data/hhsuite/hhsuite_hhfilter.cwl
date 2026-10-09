@@ -97,18 +97,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `append_outfile_path`
+    doc: append to output file in A3M format
     inputBinding:
       position: 102
-      prefix: --append-outfile
+      prefix: -a
   - id: outfile_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `outfile_path`
+    type: string
+    doc: write to output file in A3M format
     inputBinding:
       position: 103
-      prefix: --outfile
+      prefix: -o
 outputs:
   - id: outfile
     type: File

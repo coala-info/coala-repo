@@ -1,5 +1,27 @@
 # hdf5 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hdf5_gif2h5 | PASS | synthetic data: a small generated GIF converted to HDF5; the image dataset has the right size. |
+| hdf5_h52gif | PASS |  |
+| hdf5_h5c++ | Failed | image problem: the image has no g++ compiler, so h5c++ cannot compile; only -show works |
+| hdf5_h5cc | Failed | image problem: the image has no gcc compiler, so h5cc cannot compile; only -show works |
+| hdf5_h5clear | PASS |  |
+| hdf5_h5copy | PASS |  |
+| hdf5_h5diff | PASS |  |
+| hdf5_h5dump | PASS |  |
+| hdf5_h5format_convert | PASS |  |
+| hdf5_h5import | PASS | synthetic data: ASCII values plus an h5import config; the HDF5 dataset holds the input values. |
+| hdf5_h5jam | PASS |  |
+| hdf5_h5ls | PASS |  |
+| hdf5_h5mkgrp | PASS |  |
+| hdf5_h5repack | PASS |  |
+| hdf5_h5repart | PASS |  |
+| hdf5_h5stat | PASS |  |
+| hdf5_h5unjam | PASS |  |
+
 ## hdf5_h5ls
 
 ### Tool Description
@@ -676,6 +698,706 @@ usage: h5c++ [OPTIONS] <compile line>
  is located may link your program with that other hdf5 library version.
 ```
 
+
+## hdf5_h5copy
+
+### Tool Description
+Copies an HDF5 object from one file to another.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+usage: h5copy [OPTIONS] [OBJECTS...]
+   OBJECTS
+      -i, --input        input file name
+      -o, --output       output file name
+      -s, --source       source object name
+      -d, --destination  destination object name
+   OPTIONS
+      -h, --help         Print a usage message and exit
+      -p, --parents      No error if existing, make parent groups as needed
+      -v, --verbose      Print information about OBJECTS and OPTIONS
+      -V, --version      Print version number and exit
+      --enable-error-stack
+                  Prints messages from the HDF5 error stack as they occur.
+      -f, --flag         Flag type
+
+      Flag type is one of the following strings:
+
+      shallow     Copy only immediate members for groups
+
+      soft        Expand soft links into new objects
+
+      ext         Expand external links into new objects
+
+      ref         Copy references and any referenced objects, i.e., objects
+                  that the references point to.
+                    Referenced objects are copied in addition to the objects
+                  specified on the command line and reference datasets are
+                  populated with correct reference values. Copies of referenced
+                  datasets outside the copy range specified on the command line
+                  will normally have a different name from the original.
+                    (Default:Without this option, reference value(s) in any
+                  reference datasets are set to NULL and referenced objects are
+                  not copied unless they are otherwise within the copy range
+                  specified on the command line.)
+
+      noattr      Copy object without copying attributes
+
+      allflags    Switches all flags from the default to the non-default setting
+
+      These flag types correspond to the following API symbols
+
+      H5O_COPY_SHALLOW_HIERARCHY_FLAG
+      H5O_COPY_EXPAND_SOFT_LINK_FLAG
+      H5O_COPY_EXPAND_EXT_LINK_FLAG
+      H5O_COPY_EXPAND_REFERENCE_FLAG
+      H5O_COPY_WITHOUT_ATTR_FLAG
+      H5O_COPY_ALL
+```
+
+## hdf5_h5stat
+
+### Tool Description
+Prints statistics about an HDF5 file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: h5stat [OPTIONS] file
+
+      OPTIONS
+     -h, --help            Print a usage message and exit
+     -V, --version         Print version number and exit
+     -f, --file            Print file information
+     -F, --filemetadata    Print file space information for file's metadata
+     -g, --group           Print group information
+     -l N, --links=N       Set the threshold for the # of links when printing
+                           information for small groups.  N is an integer greater
+                           than 0.  The default threshold is 10.
+     -G, --groupmetadata   Print file space information for groups' metadata
+     -d, --dset            Print dataset information
+     -m N, --dims=N        Set the threshold for the dimension sizes when printing
+                           information for small datasets.  N is an integer greater
+                           than 0.  The default threshold is 10.
+     -D, --dsetmetadata    Print file space information for datasets' metadata
+     -T, --dtypemetadata   Print datasets' datatype information
+     -A, --attribute       Print attribute information
+     -a N, --numattrs=N    Set the threshold for the # of attributes when printing
+                           information for small # of attributes.  N is an integer greater
+                           than 0.  The default threshold is 10.
+     -s, --freespace       Print free space information
+     -S, --summary         Print summary of file space information
+     --enable-error-stack  Prints messages from the HDF5 error stack as they occur
+```
+
+## hdf5_h5mkgrp
+
+### Tool Description
+Creates new groups in an existing HDF5 file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: h5mkgrp [OPTIONS] FILE GROUP...
+   OPTIONS
+      -h, --help         Print a usage message and exit
+      -l, --latest       Use latest version of file format to create groups
+      -p, --parents      No error if existing, make parent groups as needed
+      -v, --verbose      Print information about OBJECTS and OPTIONS
+      -V, --version      Print version number and exit
+```
+
+## hdf5_h5clear
+
+### Tool Description
+Clears status flags in the superblock of an HDF5 file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: h5clear [OPTIONS] file_name
+  OPTIONS
+   -h, --help                Print a usage message and exit
+   -V, --version             Print version number and exit
+   -s, --status              Clear the status_flags field in the file's superblock
+   -m, --image               Remove the metadata cache image from the file
+   --filesize                Print the file's EOA and EOF
+   --increment=C             Set the file's EOA to the maximum of (EOA, EOF) + C for the file <file_name>
+                             C is >= 0; C is optional and will default to 1M when not set
+Examples of use:
+
+h5clear -s file_name
+  Clear the status_flags field in the superblock of the HDF5 file <file_name>.
+
+h5clear -m file_name
+  Remove the metadata cache image from the HDF5 file <file_name>.
+
+h5clear --increment file_name
+  Set the EOA to the maximum of (EOA, EOF) + 1M for the file <file_name>.
+
+h5clear --increment=512 file_name
+  Set the EOA to the maximum of (EOA, EOF) + 512 for the file <file_name>.
+```
+
+## hdf5_h5format_convert
+
+### Tool Description
+Converts the chunk index type or layout version of datasets in an HDF5 file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: h5format_convert [OPTIONS] file_name
+  OPTIONS
+   -h, --help                Print a usage message and exit
+   -V, --version             Print version number and exit
+   -v, --verbose             Turn on verbose mode
+   -d dname, --dname=dataset_name    Pathname for the dataset
+   -n, --noop                Perform all the steps except the actual conversion
+
+Examples of use:
+
+h5format_convert -d /group/dataset file_name
+  Convert the dataset </group/dataset> in the HDF5 file <file_name>:
+    a. chunked dataset: convert the chunk indexing type to version 1 B-tree
+    b. compact/contiguous dataset: downgrade the layout version to 3
+    c. virtual dataset: no action
+
+h5format_convert file_name
+  Convert all datasets in the HDF5 file <file_name>:
+    a. chunked dataset: convert the chunk indexing type to version 1 B-tree
+    b. compact/contiguous dataset: downgrade the layout version to 3
+    c. virtual dataset: no action
+
+h5format_convert -n -d /group/dataset file_name
+  Go through all the steps except the actual conversion when 
+  converting the dataset </group/dataset> in the HDF5 file <file_name>.
+```
+
+## hdf5_h5jam
+
+### Tool Description
+Adds a user block to the front of an HDF5 file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: h5jam -i <in_file.h5> -u <in_user_file> [-o <out_file.h5>] [--clobber]
+
+Adds user block to front of an HDF5 file and creates a new concatenated file.
+
+OPTIONS
+  -i in_file.h5    Specifies the input HDF5 file.
+  -u in_user_file  Specifies the file to be inserted into the user block.
+                   Can be any file format except an HDF5 format.
+  -o out_file.h5   Specifies the output HDF5 file.
+                   If not specified, the user block will be concatenated in
+                   place to the input HDF5 file.
+  --clobber        Wipes out any existing user block before concatenating
+                   the given user block.
+                   The size of the new user block will be the larger of;
+                    - the size of existing user block in the input HDF5 file
+                    - the size of user block required by new input user file
+                   (size = 512 x 2N,  N is positive integer.)
+
+  -h               Prints a usage message and exits.
+  -V               Prints the HDF5 library version and exits.
+
+Exit Status:
+   0   Succeeded.
+   >0  An error occurred.
+```
+
+## hdf5_h5unjam
+
+### Tool Description
+Splits a user block file and an HDF5 file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: h5unjam -i <in_file.h5>  [-o <out_file.h5> ] [-u <out_user_file> | --delete]
+
+Splits user file and HDF5 file into two files: user block data and HDF5 data.
+
+OPTIONS
+  -i in_file.h5   Specifies the HDF5 as input.  If the input HDF5 file
+                  contains no user block, exit with an error message.
+  -o out_file.h5  Specifies output HDF5 file without a user block.
+                  If not specified, the user block will be removed from the
+                  input HDF5 file.
+  -u out_user_file
+                  Specifies the output file containing the data from the
+                  user block.
+                  Cannot be used with --delete option.
+  --delete        Remove the user block from the input HDF5 file. The content
+                  of the user block is discarded.
+                  Cannot be used with the -u option.
+
+  -h              Prints a usage message and exits.
+  -V              Prints the HDF5 library version and exits.
+
+  If neither --delete nor -u is specified, the user block from the input file
+  will be displayed to stdout.
+
+Exit Status:
+  0      Succeeded.
+  >0    An error occurred.
+```
+
+## hdf5_h5import
+
+### Tool Description
+Converts ASCII or binary data into an HDF5 dataset.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Name:
+
+	h5import
+
+	  TOOL NAME:
+	   h5import
+	   SYNTAX:
+	   h5import -h[elp], OR
+	   h5import <infile> -c[onfig] <configfile> [<infile> -c[config] <configfile>...]				      -o[utfile] <outfile>
+
+	   PURPOSE:
+	   To convert data stored in one or more ASCII or binary files
+	  into one or more datasets (in accordance with the 
+	  user-specified type and storage properties) in an existing 
+	  or new HDF5 file.
+
+	   DESCRIPTION:
+	  The primary objective of the utility is to convert floating
+	  point or integer data stored in ASCII text or binary form 
+	  into a data-set according to the type and storage properties
+	  specified by the user. The utility can also accept ASCII
+	  text files and store the contents in a compact form as an
+	  array of one-dimensional strings.
+
+	  The input data to be written as a data-set can be provided
+	  to the utility in one of the following forms:
+	  1. ASCII text file with numeric data (floating point or 
+	  integer data). 
+	  2. Binary file with native floating point data (32-bit or 
+	  64-bit) 
+	  3. Binary file with native integer (signed or unsigned)
+	  data (8-bit or 16-bit or 32-bit or 64-bit). 
+	  4. ASCII text file containing strings (text data).
+	    
+	  Every input file is associated with a configuration file 
+	  also provided as an input to the utility. (See Section 
+	  "CONFIGURATION FILE" to know how it is to be organized).
+	  The class, size and dimensions of the input data is 
+	  specified in this configuration file. A point to note is
+	  that the floating point data in the ASCII text file may be
+	  organized in the fixed floating form (for example 323.56)
+	  or in a scientific notation (for example 3.23E+02). A 
+	  different input-class specification is to be used for both
+	  forms.
+
+	  The utility extracts the input data from the input file 
+	  according to the specified parameters and saves it into 
+	  an H5 dataset. 
+
+	  The user can specify output type and storage properties in 
+	  the configuration file. The user is required to specify the 
+	  path of the dataset. If the groups in the path leading to 
+	  the data-set do not exist, the groups will be created by the
+	  utility. If no group is specified, the dataset will be
+	  created under the root group.
+
+	  In addition to the name, the user is also required to 
+	  provide the class and size of output data to be written to 
+	  the dataset and may optionally specify the output-architecture,
+	  and the output-byte-order. If output-architecture is not 
+	  specified the default is NATIVE. Output-byte-orders are fixed
+	  for some architectures and may be specified only if output-
+	  architecture is IEEE, UNIX or STD.
+
+	   Also, layout and other storage properties such as 
+	  compression, external storage and extendible data-sets may be
+	  optionally specified.  The layout and storage properties 
+	  denote how raw data is to be organized on the disk. If these 
+	  options are not specified the default is Contiguous layout 
+	  and storage.
+
+	  The dataset can be organized in any of the following ways:
+	  1. Contiguous.
+	  2. Chunked.
+	  3. External Storage File    (has to be contiguous)
+	  4. Extendible data sets     (has to be chunked)
+	  5. Compressed.        (has to be chunked)
+	  6. Compressed & Extendible  (has to be chunked)
+
+	  If the user wants to store raw data in a non-HDF file then 
+	  the external storage file option is to be used and the name 
+	  of the file is to be specified. 
+
+	  If the user wants the dimensions of the data-set to be
+	  unlimited, the extendible data set option can be chosen. 
+
+	  The user may also specify the type of compression and the 
+	  level to which the data set must be compresses by setting 
+	  the compressed option.
+
+	   SYNOPSIS:
+	  h5import -h[elp], OR
+	  h5import <infile> -c[onfig] <configfile>                     [<infile> -c[config] <confile2>...] -o[utfile] <outfile>
+
+	   -h[elp]:
+	           Prints this summary of usage, and exits.
+
+	   <infile(s)>:
+	           Name of the Input file(s), containing a 
+	    single n-dimensional floating point or integer array 
+	    in either ASCII text, native floating point(32-bit 
+	    or 64-bit) or native integer(8-bit or 16-bit or 
+	    32-bit or 64-bit). Data to be specified in the order
+	    of fastest changing dimensions first.
+
+	  -c[config] <configfile>:
+	    Every input file should be associated with a 
+	    configuration file and this is done by the -c option.
+	    <configfile> is the name of the configuration file.
+	    (See Section "CONFIGURATION FILE")
+
+	   -o[utfile] <outfile>:
+	           Name of the HDF5 output file. Data from one or more 
+	    input files are stored as one or more data sets in 
+	    <outfile>. The output file may be an existing file or 
+	    it maybe new in which case it will be created.
+
+
+	   CONFIGURATION FILE:
+	  The configuration file is an ASCII text file and must be 
+	  the ddl formatted file (without data values) produced by h5dump 
+	  when used with the options '-o outfilename -b' of a single dataset (-d) 
+	  OR organized as "CONFIG-KEYWORD VALUE" pairs, one pair on each 
+	  line.
+
+	   The configuration file may have the following keywords each 
+	   followed by an acceptable value.
+
+	  Required KEYWORDS:
+	    PATH
+	    INPUT-CLASS
+	    INPUT-SIZE
+	    INPUT-BYTE-ORDER
+	    RANK
+	    DIMENSION-SIZES
+	    OUTPUT-CLASS
+	    OUTPUT-SIZE
+
+	  Optional KEYWORDS:
+	    OUTPUT-ARCHITECTURE
+	    OUTPUT-BYTE-ORDER
+	    CHUNKED-DIMENSION-SIZES
+	    COMPRESSION-TYPE
+	    COMPRESSION-PARAM
+	    EXTERNAL-STORAGE
+	    MAXIMUM-DIMENSIONS
+
+
+	    Values for keywords:
+	    PATH:
+	      Strings separated by spaces to represent
+	      the path of the data-set. If the groups in
+	      the path do not exist, they will be created. 
+	      For example,
+	        PATH grp1/grp2/dataset1
+	        PATH: keyword
+	        grp1: group under the root. If
+	              non-existent will be created.
+	        grp2: group under grp1. If 
+	              non-existent will be created 
+	              under grp1.
+	        dataset1: the name of the data-set 
+	            to be created.
+
+	               INPUT-CLASS:
+	      String denoting the type of input data.
+	      ("TEXTIN", "TEXTFP", "FP", "IN", 
+	      "STR", "TEXTUIN", "UIN"). 
+	      INPUT-CLASS "TEXTIN" denotes an ASCII text 
+	      file with signed integer data in ASCII form,
+	      INPUT-CLASS "TEXTUIN" denotes an ASCII text 
+	      file with unsigned integer data in ASCII form,
+	      "TEXTFP" denotes an ASCII text file containing
+	      floating point data in the fixed notation
+	      (325.34),
+	      "FP" denotes a floating point binary file,
+	      "IN" denotes a signed integer binary file,
+	      "UIN" denotes an unsigned integer binary file,
+	       & "STR" denotes an ASCII text file the 
+	      contents of which should be stored as an 1-D 
+	      array of strings.
+	      If INPUT-CLASS is "STR", then RANK, 
+	      DIMENSION-SIZES, OUTPUT-CLASS, OUTPUT-SIZE, 
+	      OUTPUT-ARCHITECTURE and OUTPUT-BYTE-ORDER 
+	      will be ignored.
+
+
+	    INPUT-SIZE:
+	      Integer denoting the size of the input data 
+	      (8, 16, 32, 64). 
+
+	      For floating point,
+	      INPUT-SIZE can be 32 or 64.
+	      For integers (signed and unsigned)
+	      INPUT-SIZE can be 8, 16, 32 or 64.
+
+	    RANK:
+	      Integer denoting the number of dimensions.
+
+	    DIMENSION-SIZES:
+	            Integers separated by spaces to denote the 
+	      dimension sizes for the no. of dimensions 
+	      determined by rank.
+
+	    OUTPUT-CLASS:
+	      String dentoting data type of the dataset to 
+	      be written ("IN","FP", "UIN")
+
+	    OUTPUT-SIZE:
+	      Integer denoting the size of the data in the 
+	      output dataset to be written.
+	      If OUTPUT-CLASS is "FP", OUTPUT-SIZE can be 
+	      32 or 64.
+	      If OUTPUT-CLASS is "IN" or "UIN", OUTPUT-SIZE
+	      can be 8, 16, 32 or 64.
+
+	    OUTPUT-ARCHITECTURE:
+	      STRING denoting the type of output 
+	      architecture. Can accept the following values
+	      STD
+	      IEEE
+	      INTEL
+	      CRAY
+	      MIPS
+	      ALPHA
+	      NATIVE (default)
+	      UNIX
+
+	    OUTPUT-BYTE-ORDER:
+	      String denoting the output-byte-order. Ignored
+	      if the OUTPUT-ARCHITECTURE is not specified or
+	      if it is IEEE, UNIX or STD. Can accept the 
+	      following values.
+	      BE (default)
+	      LE
+
+	    CHUNKED-DIMENSION-SIZES:
+	      Integers separated by spaces to denote the 
+	      dimension sizes of the chunk for the no. of 
+	      dimensions determined by rank. Required field
+	      to denote that the dataset will be stored with
+	      chunked storage. If this field is absent the
+	      dataset will be stored with contiguous storage.
+
+	    COMPRESSION-TYPE:
+	      String denoting the type of compression to be
+	      used with the chunked storage. Requires the
+	      CHUNKED-DIMENSION-SIZES to be specified. The only 
+	      currently supported compression method is GZIP. 
+	      Will accept the following value
+	      GZIP
+
+	    COMPRESSION-PARAM:
+	      Integer used to denote compression level and 
+	      this option is to be always specified when 
+	      the COMPRESSION-TYPE option is specified. The
+	      values are applicable only to GZIP 
+	      compression.
+	      Value 1-9: The level of Compression. 
+	        1 will result in the fastest 
+	        compression while 9 will result in 
+	        the best compression ratio. The default
+	        level of compression is 6.
+
+	    EXTERNAL-STORAGE:
+	      String to denote the name of the non-HDF5 file 
+	      to store data to. Cannot be used if CHUNKED-
+	      DIMENSIONS or COMPRESSION-TYPE or EXTENDIBLE-
+	      DATASET is specified.
+	      Value <external-filename>: the name of the 
+	      external file as a string to be used.
+
+	    MAXIMUM-DIMENSIONS:
+	      Integers separated by spaces to denote the 
+	      maximum dimension sizes of all the 
+	      dimensions determined by rank. Requires the
+	      CHUNKED-DIMENSION-SIZES to be specified. A value of 
+	      -1 for any dimension implies UNLIMITED 
+	      DIMENSION size for that particular dimension.
+
+	   EXAMPLES:
+	  1. Configuration File may look like:
+
+	    PATH work h5 pkamat First-set
+	    INPUT-CLASS TEXTFP
+	    RANK 3
+	    DIMENSION-SIZES 5 2 4
+	    OUTPUT-CLASS FP
+	    OUTPUT-SIZE 64
+	    OUTPUT-ARCHITECTURE IEEE
+	    OUTPUT-BYTE-ORDER LE
+	      CHUNKED-DIMENSION-SIZES 2 2 2 
+
+	  The above configuration will accept a floating point array 
+	  (5 x 2 x 4)  in an ASCII file with the rank and dimension sizes 
+	  specified and will save it in a chunked data-set (of pattern 
+	  2 X 2 X 2) of 64-bit floating point in the little-endian order 
+	  and IEEE architecture. The dataset will be stored at
+	  "/work/h5/pkamat/First-set"
+
+	  2. Another configuration could be:
+
+	    PATH Second-set
+	    INPUT-CLASS IN  
+	    RANK 5
+	    DIMENSION-SIZES 6 3 5 2 4
+	    OUTPUT-CLASS IN
+	    OUTPUT-SIZE 32
+	      CHUNKED-DIMENSION-SIZES 2 2 2 2 2
+	    EXTENDIBLE-DATASET 1 3 
+	    COMPRESSION-TYPE GZIP
+	    COMPRESSION-PARAM 7
+
+
+	  The above configuration will accept an integer array 
+	  (6 X 3 X 5 x 2 x 4)  in a binary file with the rank and 
+	  dimension sizes specified and will save it in a chunked data-set
+	  (of pattern 2 X 2 X 2 X 2 X 2) of 32-bit floating point in 
+	  native format (as output-architecture is not specified). The 
+	  first and the third dimension will be defined as unlimited. The 
+	  data-set will be compressed using GZIP and a compression level 
+	  of 7.
+	  The dataset will be stored at "/Second-set"
+```
+
+## hdf5_h5repart
+
+### Tool Description
+Repartitions a file or family of files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: h5repart [-v] [-V] [-[b|m] N[g|m|k]] [-family_to_sec2] SRC DST
+   -v     Produce verbose output
+   -V     Print a version number and exit
+   -b N   The I/O block size, defaults to 1kB
+   -m N   The destination member size or 1GB
+   -family_to_sec2   Change file driver from family to sec2
+   SRC    The name of the source file
+   DST	The name of the destination files
+Sizes may be suffixed with `g' for GB, `m' for MB or `k' for kB.
+File family names include an integer printf format such as `%d'
+usage: h5repart [-v] [-V] [-[b|m] N[g|m|k]] [-family_to_sec2] SRC DST
+   -v     Produce verbose output
+   -V     Print a version number and exit
+   -b N   The I/O block size, defaults to 1kB
+   -m N   The destination member size or 1GB
+   -family_to_sec2   Change file driver from family to sec2
+   SRC    The name of the source file
+   DST	The name of the destination files
+Sizes may be suffixed with `g' for GB, `m' for MB or `k' for kB.
+File family names include an integer printf format such as `%d'
+```
+
+## hdf5_h52gif
+
+### Tool Description
+Converts an HDF5 image dataset into a GIF file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: h52gif <h5_file> <gif_file> -i <h5_image>
+       h52gif -V 
+        Print HDF5 library version and exit
+h52gif expects *at least* one h5_image.
+Usage: h52gif <h5_file> <gif_file> -i <h5_image>
+       h52gif -V 
+        Print HDF5 library version and exit
+h52gif expects *at least* one h5_image.
+```
+
+## hdf5_gif2h5
+
+### Tool Description
+Converts a GIF file into an HDF5 file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hdf5:1.10.4
+- **Homepage**: https://github.com/HDFGroup/hdf5
+- **Package**: https://anaconda.org/channels/main/packages/hdf5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: gif2h5 <GIFFILE> <HDFFILE>
+       gif2h5 -V 
+        Print HDF5 library version and exit
+Usage: gif2h5 <GIFFILE> <HDFFILE>
+       gif2h5 -V 
+        Print HDF5 library version and exit
+```
 
 ## Metadata
 - **Skill**: generated

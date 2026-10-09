@@ -1,5 +1,11 @@
 # icescreen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| icescreen | PASS |  |
+
 ## icescreen
 
 ### Tool Description

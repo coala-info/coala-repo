@@ -1,5 +1,14 @@
 # haystac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haystac_analyse | Not completed | pipeline, skipped (Snakemake workflow that builds conda environments and needs NCBI downloads) |
+| haystac_config | PASS |  |
+| haystac_database | Not completed | pipeline, skipped (Snakemake workflow that builds conda environments and needs NCBI downloads) |
+| haystac_sample | Not completed | pipeline, skipped (Snakemake workflow that builds conda environments and needs NCBI downloads) |
+
 ## haystac_config
 
 ### Tool Description
@@ -243,30 +252,6 @@ Common arguments:
                         restart (default: False)
   --debug               Enable debugging mode (default: False)
   --snakemake '<json>'  Pass additional flags to the `snakemake` scheduler.
-```
-
-
-## haystac
-### Tool Description
-The haystac commands are:
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/haystac:0.4.12--pyhcf36b3e_0
-- **Homepage**: https://github.com/antonisdim/haystac
-- **Package**: https://anaconda.org/channels/bioconda/packages/haystac/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: haystac <command> [<args>]
-
-The haystac commands are:
-   config         Configuration options
-   database       Build a database of target species
-   sample         Prepare a sample for analysis
-   analyse        Analyse a sample against a database
-   
-haystac: error: argument command: invalid choice: 'Command' (choose from 'config', 'database', 'sample', 'analyse')
 ```
 
 

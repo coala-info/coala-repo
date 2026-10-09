@@ -1,5 +1,11 @@
 # hyplas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hyplas | Not completed | pipeline, skipped: hybrid plasmid assembly pipeline that also needs the large Platon database |
+
 ## hyplas
 
 ### Tool Description

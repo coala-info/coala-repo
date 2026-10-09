@@ -44,7 +44,7 @@ inputs:
   - id: gene_read_counts_filename
     type:
       - 'null'
-      - File
+      - string
     doc: File name for the gene read counts *.tsv file.
     inputBinding:
       position: 103
@@ -68,7 +68,7 @@ inputs:
   - id: heatmap_filename
     type:
       - 'null'
-      - File
+      - string
     doc: Filename for the output heatmap, saved by default as a *.png file.
     inputBinding:
       position: 103
@@ -135,7 +135,7 @@ inputs:
   - id: seq_lengths_filename
     type:
       - 'null'
-      - File
+      - string
     doc: File name for the sequence lengths *.tsv file.
     inputBinding:
       position: 103
@@ -143,20 +143,24 @@ inputs:
   - id: stats_filename
     type:
       - 'null'
-      - File
+      - string
     doc: File name for the stats *.tsv file.
     inputBinding:
       position: 103
       prefix: --stats_filename
   - id: targetfile_aa
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing amino-acid target sequences for each gene. The fasta
       headers must follow the naming convention: >TaxonID-geneName'
     inputBinding:
       position: 103
       prefix: --targetfile_aa
   - id: targetfile_dna
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing DNA target sequences for each gene. The fasta headers
       must follow the naming convention: >TaxonID-geneName'
     inputBinding:
@@ -166,6 +170,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: tables
+    type:
+      type: array
+      items: File
+    doc: Statistics tables (stats, sequence lengths, gene read counts) written 
+      to the working directory.
+    outputBinding:
+      glob: '*.tsv'
+  - id: heatmap
+    type:
+      type: array
+      items: File
+    doc: Heatmap image(s) written to the working directory.
+    outputBinding:
+      glob:
+        - '*.png'
+        - '*.pdf'
+        - '*.eps'
+        - '*.tiff'
+        - '*.svg'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0

@@ -13,7 +13,9 @@ inputs:
     inputBinding:
       position: 1
   - id: denylist
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'Text file containing gene-sample combinations to omit. The format of the
       file should be one gene per line, a tab, and then a comma-delimited list of
       samples to disallow: gene[tab]sample1,sample2,sample3'
@@ -57,7 +59,9 @@ inputs:
       position: 102
       prefix: --run_profiler
   - id: seq_lengths_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Filename for the seq_lengths file (output of the "hybpiper stats" 
       command), with a list of genes in the first row, mean target lengths in 
       the second row, and sample recovery in other rows.
@@ -75,11 +79,15 @@ inputs:
       position: 102
       prefix: --sequence_dir
   - id: filtered_dir_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 103
       prefix: --filtered_dir
 outputs:
+  - id: stdout
+    type: stdout
   - id: filtered_dir
     type:
       - 'null'
@@ -88,8 +96,21 @@ outputs:
       to the current working directory
     outputBinding:
       glob: $(inputs.filtered_dir_path)
+  - id: filtered_files
+    type:
+      type: array
+      items: File
+    doc: Filtered FASTA files and the deny list written to the working 
+      directory.
+    outputBinding:
+      glob:
+        - '*.FNA'
+        - '*.FAA'
+        - '*.fasta'
+        - '*.txt'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0
+stdout: hybpiper_filter_by_length.out

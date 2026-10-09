@@ -1,5 +1,11 @@
 # humid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| humid | PASS |  |
+
 ## humid
 
 ### Tool Description

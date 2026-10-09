@@ -9,12 +9,12 @@ inputs:
     type: File
     doc: query hmmfile, alignfile, or seqfile
     inputBinding:
-      position: 1
+      position: 201
   - id: target_seqfile
     type: File
     doc: target sequence database file
     inputBinding:
-      position: 2
+      position: 202
   - id: acc
     type:
       - 'null'
@@ -359,7 +359,7 @@ inputs:
     doc: Output or path parameter `alignment_output_path`
     inputBinding:
       position: 104
-      prefix: --alignment-output
+      prefix: -A
   - id: output_file_path
     type:
       - 'null'

@@ -10,7 +10,7 @@ inputs:
   - id: alignerbwa
     type:
       - 'null'
-      - File
+      - string
     doc: Path to your BWA aligner, required when your input file(s) is in fastq 
       format, ignore when you input a bam file.
     inputBinding:
@@ -20,6 +20,17 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .amb
+        required: false
+      - pattern: .ann
+        required: false
+      - pattern: .bwt
+        required: false
+      - pattern: .pac
+        required: false
+      - pattern: .sa
+        required: false
     doc: Path to BWA Index if your input file is fastq format, ignore if your 
       input is bam file.
     inputBinding:
@@ -28,7 +39,7 @@ inputs:
   - id: coolerpath
     type:
       - 'null'
-      - File
+      - string
     doc: Path to cooler tool, required when the format is cool via cooler
     inputBinding:
       position: 101
@@ -92,8 +103,9 @@ inputs:
       position: 101
       prefix: --outformat
   - id: pairtoolspath
-    type: File
-    doc: Path to pairtools
+    type: string
+    default: /usr/local/bin/pairtools
+    doc: Path to pairtools inside the container, e.g. /usr/local/bin/pairtools
     inputBinding:
       position: 101
       prefix: --pairtoolspath
@@ -114,8 +126,9 @@ inputs:
       position: 101
       prefix: --resolution
   - id: samtoolspath
-    type: File
-    doc: Path to samtools, e.g./n/app/samtools/1.3.1/bin/samtools
+    type: string
+    default: /usr/local/bin/samtools
+    doc: Path to samtools inside the container, e.g. /usr/local/bin/samtools
     inputBinding:
       position: 101
       prefix: --samtoolspath

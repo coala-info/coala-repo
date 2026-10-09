@@ -152,8 +152,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: write pairwise alignments in FASTA xor A2M (-Oa2m) xor A3M (-Oa3m) 
-      format
+    doc: write pairwise alignments in FASTA format to this file (FASTA xor A2M (-Oa2m) xor A3M (-Oa3m))
     inputBinding:
       position: 101
       prefix: -Ofas
@@ -187,6 +186,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_a2m_alignments_path
+    type:
+      - 'null'
+      - string
+    doc: write pairwise alignments in A2M format
+    inputBinding:
+      position: 105
+      prefix: -Oa2m
+  - id: output_a3m_alignments_path
+    type:
+      - 'null'
+      - string
+    doc: write pairwise alignments in A3M format
+    inputBinding:
+      position: 105
+      prefix: -Oa3m
+  - id: output_psi_file_path
+    type:
+      - 'null'
+      - string
+    doc: write query alignment in PSI-BLAST format to file
+    inputBinding:
+      position: 105
+      prefix: -opsi
+  - id: append_psi_file_path
+    type:
+      - 'null'
+      - string
+    doc: append query alignment in PSI-BLAST format to file
+    inputBinding:
+      position: 105
+      prefix: -apsi
   - id: append_a3m_file_path
     type:
       - 'null'
@@ -203,7 +234,7 @@ inputs:
     doc: Output or path parameter `output_a3m_file_path`
     inputBinding:
       position: 103
-      prefix: --output-a3m-file
+      prefix: -oa3m
   - id: output_file_path
     type:
       - 'null'
@@ -211,8 +242,43 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
+  - id: output_fasta_alignments
+    type:
+      - 'null'
+      - File
+    doc: pairwise alignments in FASTA format (output_fasta_format)
+    outputBinding:
+      glob: $(inputs.output_fasta_format)
+  - id: output_a2m_alignments
+    type:
+      - 'null'
+      - File
+    doc: pairwise alignments in A2M format
+    outputBinding:
+      glob: $(inputs.output_a2m_alignments_path)
+  - id: output_a3m_alignments
+    type:
+      - 'null'
+      - File
+    doc: pairwise alignments in A3M format
+    outputBinding:
+      glob: $(inputs.output_a3m_alignments_path)
+  - id: output_psi_file
+    type:
+      - 'null'
+      - File
+    doc: query alignment in PSI-BLAST format
+    outputBinding:
+      glob: $(inputs.output_psi_file_path)
+  - id: append_psi_file
+    type:
+      - 'null'
+      - File
+    doc: query alignment appended in PSI-BLAST format
+    outputBinding:
+      glob: $(inputs.append_psi_file_path)
   - id: output_file
     type:
       - 'null'

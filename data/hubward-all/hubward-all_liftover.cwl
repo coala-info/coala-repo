@@ -1,0 +1,49 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand:
+  - hubward
+  - liftover
+label: hubward-all_liftover
+doc: "Lift over coordinates from one assembly to another, in bulk. For all configured
+  tracks in <dirname>/metadata.yaml, if the configured track genome matches <from_assembly>
+  then perform the liftover to a temporary directory and then move the result to <newdir>
+  when complete.\n\nTool homepage: https://github.com/daler/hubward"
+inputs:
+  - id: dirname
+    type: Directory
+    doc: Single study to liftover
+    inputBinding:
+      position: 1
+  - id: newdir
+    type: string
+    doc: Destination directory
+    inputBinding:
+      position: 2
+  - id: from_assembly
+    type:
+      - 'null'
+      - string
+    doc: Source assembly
+    inputBinding:
+      position: 102
+      prefix: --from_assembly
+  - id: to_assembly
+    type:
+      - 'null'
+      - string
+    doc: Destination assembly
+    inputBinding:
+      position: 102
+      prefix: --to_assembly
+outputs:
+  - id: out_newdir
+    type: Directory
+    doc: Destination directory
+    outputBinding:
+      glob: '$(inputs.newdir)'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/hubward-all:0.2.1--1

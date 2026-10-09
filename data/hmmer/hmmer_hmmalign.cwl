@@ -8,12 +8,12 @@ inputs:
     type: File
     doc: Input profile HMM file
     inputBinding:
-      position: 1
+      position: 201
   - id: seqfile
     type: File
     doc: Input sequence file
     inputBinding:
-      position: 2
+      position: 202
   - id: amino
     type:
       - 'null'

@@ -41,6 +41,8 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnfusion:1.5.1--pyh7e72e81_0

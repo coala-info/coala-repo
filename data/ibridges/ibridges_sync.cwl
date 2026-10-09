@@ -7,7 +7,9 @@ label: ibridges_sync
 doc: "Synchronize files/directories between local and remote.\n\nTool homepage: https://github.com/iBridges-for-iRODS/iBridges"
 inputs:
   - id: source
-    type: string
+    type:
+      - string
+      - Directory
     doc: Source path to synchronize from (collection on irods server or local 
       directory).
     inputBinding:

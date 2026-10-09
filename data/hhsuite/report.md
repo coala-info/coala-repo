@@ -1,5 +1,18 @@
 # hhsuite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hhsuite_cstranslate | PASS |  |
+| hhsuite_hhalign | PASS |  |
+| hhsuite_hhblits | PASS |  |
+| hhsuite_hhconsensus | PASS |  |
+| hhsuite_hhfilter | PASS |  |
+| hhsuite_hhmake | PASS |  |
+| hhsuite_hhsearch | PASS |  |
+| hhsuite_reformat.pl | PASS |  |
+
 ## hhsuite_hhblits
 
 ### Tool Description
@@ -637,6 +650,75 @@ Examples: reformat.pl 1hjra.a3m 1hjra.a2m
           reformat.pl fas sto '*.fasta' .stockholm
 ```
 
+
+## hhsuite_hhconsensus
+
+### Tool Description
+Calculate the consensus sequence for an A3M/FASTA input file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hhsuite:3.3.0--h503566f_15
+- **Homepage**: https://github.com/soedinglab/hh-suite
+- **Package**: https://anaconda.org/channels/bioconda/packages/hhsuite/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+HHconsensus 3.3.0
+Calculate the consensus sequence for an A3M/FASTA input file.   
+(c) The HH-suite development team
+Steinegger M, Meier M, Mirdita M, Vöhringer H, Haunsberger S J, and Söding J (2019)
+HH-suite3 for fast remote homology detection and deep protein annotation.
+BMC Bioinformatics, doi:10.1186/s12859-019-3019-7
+
+Usage: hhconsensus -i <file> [options]                           
+ -i <file>     query alignment (A2M, A3M, or FASTA), or query HMM          
+
+Output options:                                                            
+ -s <file>     append consensus sequence in FASTA (default=<infile.seq>)   
+ -o <file>     write alignment with consensus sequence in A3M              
+ -oa3m <file>  same                                                        
+ -oa2m <file>  write alignment with consensus sequence in A2M              
+ -ofas <file>  write alignment with consensus sequence in FASTA            
+ -v <int>      verbose mode: 0:no screen output  1:only warings  2: verbose
+
+Filter input alignment (options can be combined):                         
+ -id   [0,100] maximum pairwise sequence identity (%) (def=100)   
+ -diff [0,inf[ filter most diverse set of sequences, keeping at least this    
+               many sequences in each block of >50 columns (def=0)
+ -cov  [0,100] minimum coverage with query (%) (def=0) 
+ -qid  [0,100] minimum sequence identity with query (%) (def=0) 
+ -qsc  [0,100] minimum score per column with query  (def=-20.0)
+
+Input alignment format:                                                    
+ -M a2m        use A2M/A3M (default): upper case = Match; lower case = Insert;
+               '-' = Delete; '.' = gaps aligned to inserts (may be omitted)   
+ -M first      use FASTA: columns with residue in 1st sequence are match states
+ -M [0,100]    use FASTA: columns with fewer than X% gaps are match states   
+
+Other options:                                                               
+ -maxseq <int>  max number of input rows (def=65535)
+ -maxres <int> max number of HMM columns (def=20001)
+
+Example: hhconsensus -i stdin -s stdout
+```
+
+## hhsuite_cstranslate
+
+### Tool Description
+Translate a sequence/alignment into an abstract state alphabet.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hhsuite:3.3.0--h503566f_15
+- **Homepage**: https://github.com/soedinglab/hh-suite
+- **Package**: https://anaconda.org/channels/bioconda/packages/hhsuite/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+ERROR: No input file provided!
+```
 
 ## Metadata
 - **Skill**: generated

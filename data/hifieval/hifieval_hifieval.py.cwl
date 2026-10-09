@@ -1,58 +1,77 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hifieval_hifieval.py
+baseCommand: hifieval.py
 label: hifieval_hifieval.py
-doc: "HIFI-eval is a tool for evaluating the quality of HiFi reads.\n\nTool homepage:
-  https://github.com/magspho/hifieval"
+doc: "HiFi-eval evaluates read error correction of PacBio HiFi reads from the PAF
+  alignments of raw and corrected reads against a reference genome (over-correction,
+  under-correction, correct-correction; optional homopolymer and regional
+  evaluation).\n\nTool homepage: https://github.com/magspho/hifieval"
 inputs:
-  - id: bam_input
+  - id: output_prefix
+    type:
+      - 'null'
+      - string
+    doc: Output file prefix
+    inputBinding:
+      position: 1
+      prefix: -o
+  - id: reference_fasta
+    type:
+      - 'null'
+      - File
+    doc: FASTA file with the reference genome for evaluation in homopolymer
+      regions
+    inputBinding:
+      position: 1
+      prefix: -h
+  - id: specified_regions_evaluation
     type:
       - 'null'
       - boolean
-    doc: Input is in BAM format
+    doc: Evaluate specified regions; give the three position files (over-corrected,
+      under-corrected, correctly corrected) as region_files
     inputBinding:
-      position: 101
+      position: 1
       prefix: -b
-  - id: coverage_threshold
-    type:
-      - 'null'
-      - int
-    doc: Coverage threshold for evaluation
-    inputBinding:
-      position: 101
-      prefix: -c
-  - id: reads_file
+  - id: raw_paf
     type:
       - 'null'
       - File
-    doc: Input reads FASTA/FASTQ file
+    doc: PAF file aligned between raw reads and the reference genome
     inputBinding:
-      position: 101
+      position: 1
       prefix: -r
-  - id: reference_genome
+  - id: corrected_paf
     type:
       - 'null'
       - File
-    doc: Reference genome FASTA file
+    doc: PAF file aligned between corrected reads and the reference genome
     inputBinding:
-      position: 101
-      prefix: -h
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+      position: 1
+      prefix: -c
+  - id: region_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Position files for the regional evaluation (used with
+      specified_regions_evaluation)
     inputBinding:
-      position: 102
-      prefix: --output-file
+      position: 2
 outputs:
-  - id: output_file
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: Output file for results
+      type: array
+      items: File
+    doc: Files written with the output prefix
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_prefix || 'prefix')*
+  - id: stderr_log
+    type: stderr
+    doc: Per-chromosome correction statistics printed to standard error
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hifieval:0.4.0--pyh7cba7a3_0
+stderr: hifieval.log

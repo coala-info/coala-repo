@@ -93,6 +93,33 @@ inputs:
       position: 101
       prefix: -t
 outputs:
+  - id: domains
+    type: File
+    doc: Text file with all of the enriched domains and posterior probabilities
+    outputBinding:
+      glob: $(inputs.output_prefix)_domains.txt
+  - id: vis_bed
+    type: File
+    doc: BED file for visualization, one line per significantly enriched bin
+    outputBinding:
+      glob: $(inputs.output_prefix)_vis.bed
+  - id: analysis_bed
+    type: File
+    doc: BED file for analysis, merging consecutive significant bins
+    outputBinding:
+      glob: $(inputs.output_prefix)_analysis.bed
+  - id: treatment_bins
+    type: File
+    doc: Read counts per bin for the treatment reads
+    outputBinding:
+      glob: $(inputs.output_prefix)_treatment_bins.txt
+  - id: control_bins
+    type:
+      - 'null'
+      - File
+    doc: Read counts per bin for the control reads
+    outputBinding:
+      glob: $(inputs.output_prefix)_control_bins.txt
   - id: stdout
     type: stdout
     doc: Standard output

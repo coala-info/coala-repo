@@ -11,6 +11,14 @@ inputs:
     doc: input GTF file (use "-" for stdin)
     inputBinding:
       position: 1
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: also print some statistics to stderr
+    inputBinding:
+      position: 0
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

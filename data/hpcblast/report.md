@@ -1,5 +1,11 @@
 # hpcblast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hpcblast_hpc-blast | PASS |  |
+
 ## hpcblast_hpc-blast
 
 ### Tool Description

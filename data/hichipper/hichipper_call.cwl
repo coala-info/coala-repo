@@ -2,15 +2,21 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: hichipper
 label: hichipper_call
-doc: "a preprocessing and QC pipeline for HiChIP data.\n\nTool homepage: https://github.com/aryeelab/hichipper"
+doc: 'a preprocessing and QC pipeline for HiChIP data.
+
+
+  Tool homepage: https://github.com/aryeelab/hichipper'
 inputs:
   - id: mode
     type: string
-    doc: "hichipper mode: [call, *.yaml] ^ either specify the word `call` and feed\n\
-      in a valid interactions file OR specify the .yaml format for options to be\n\
-      parsed from a manifest file (see documentation)"
+    doc: 'hichipper mode: [call, *.yaml] ^ either specify the word `call` and feed
+
+      in a valid interactions file OR specify the .yaml format for options to be
+
+      parsed from a manifest file (see documentation)'
     inputBinding:
       position: 1
+    default: call
   - id: basic_qc
     type:
       - 'null'
@@ -23,7 +29,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Path to bedtools; by default, assumes that\nbedtools is in PATH"
+    doc: 'Path to bedtools; by default, assumes that
+
+      bedtools is in PATH'
     inputBinding:
       position: 102
       prefix: --bedtools-path
@@ -31,7 +39,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Path to macs2; by default, assumes that bgzip\nis in PATH"
+    doc: 'Path to macs2; by default, assumes that bgzip
+
+      is in PATH'
     inputBinding:
       position: 102
       prefix: --bgzip-path
@@ -40,8 +50,9 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: "Comma separated list of sample names to\nignore; NONE (special string) by
-      default"
+    doc: 'Comma separated list of sample names to
+
+      ignore; NONE (special string) by default'
     inputBinding:
       position: 102
       prefix: --ignore-samples
@@ -50,19 +61,22 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: "Comma-separted list of interactions files for\nloop calling; option valid
-      only in `call`\nmode"
+        items: File
+    doc: 'Comma-separted list of interactions files for
+
+      loop calling; option valid only in `call`
+
+      mode'
     inputBinding:
       position: 102
       prefix: --input-vi
+      itemSeparator: ','
   - id: keep_samples
     type:
       - 'null'
       - type: array
         items: string
-    doc: Comma separated list of sample names to keep; ALL (special string) by 
-      default
+    doc: Comma separated list of sample names to keep; ALL (special string) by default
     inputBinding:
       position: 102
       prefix: --keep-samples
@@ -79,8 +93,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Argument to pass to the -g variable in MACS2\n(mm for mouse genome; hs for
-      human genome);\ndefault = \"hs\""
+    doc: 'Argument to pass to the -g variable in MACS2
+
+      (mm for mouse genome; hs for human genome);
+
+      default = "hs"'
     inputBinding:
       position: 102
       prefix: --macs2-genome
@@ -88,7 +105,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Path to macs2; by default, assumes that macs2\nis in PATH"
+    doc: 'Path to macs2; by default, assumes that macs2
+
+      is in PATH'
     inputBinding:
       position: 102
       prefix: --macs2-path
@@ -96,8 +115,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "String of arguments to pass to MACS2; only is\ncalled when peaks are set
-      to be called;\ndefault = \"-q 0.01 --extsize 147 --nomodel\""
+    doc: 'String of arguments to pass to MACS2; only is
+
+      called when peaks are set to be called;
+
+      default = "-q 0.01 --extsize 147 --nomodel"'
     inputBinding:
       position: 102
       prefix: --macs2-string
@@ -105,8 +127,13 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: "Make additional output files that can support\nviewing in UCSC genome browser;
-      requires\ntabix and bgzip; does the same thing as\n--make-washu."
+    doc: 'Make additional output files that can support
+
+      viewing in UCSC genome browser; requires
+
+      tabix and bgzip; does the same thing as
+
+      --make-washu.'
     inputBinding:
       position: 102
       prefix: --make-ucsc
@@ -114,8 +141,13 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: "Make additional output files that can support\nviewing in WashU genome browser;
-      requires\ntabix and bgzip; does the same thing as\n--make-ucsc."
+    doc: 'Make additional output files that can support
+
+      viewing in WashU genome browser; requires
+
+      tabix and bgzip; does the same thing as
+
+      --make-ucsc.'
     inputBinding:
       position: 102
       prefix: --make-washu
@@ -123,7 +155,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Maximum distance for loop calls; default =\n2000000"
+    doc: 'Maximum distance for loop calls; default =
+
+      2000000'
     inputBinding:
       position: 102
       prefix: --max-dist
@@ -131,7 +165,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Merge nearby peaks (after all padding is\ncomplete; default = 500"
+    doc: 'Merge nearby peaks (after all padding is
+
+      complete; default = 500'
     inputBinding:
       position: 102
       prefix: --merge-gap
@@ -139,7 +175,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Minimum distance for loop calls; default =\n5000"
+    doc: 'Minimum distance for loop calls; default =
+
+      5000'
     inputBinding:
       position: 102
       prefix: --min-dist
@@ -147,14 +185,19 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: "Completely skip anchor merging; will affect\nsummary statistics. Not recommended
-      unless\nunderstood what is happening."
+    doc: 'Completely skip anchor merging; will affect
+
+      summary statistics. Not recommended unless
+
+      understood what is happening.'
     inputBinding:
       position: 102
       prefix: --no-merge
   - id: out
     type: string
-    doc: "Output directory name; must not be already\nexisting"
+    doc: 'Output directory name; must not be already
+
+      existing'
     inputBinding:
       position: 102
       prefix: --out
@@ -162,7 +205,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Peak padding width (applied on both left and\nright); default = 500"
+    doc: 'Peak padding width (applied on both left and
+
+      right); default = 500'
     inputBinding:
       position: 102
       prefix: --peak-pad
@@ -170,8 +215,11 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Either 1 of 4 peak logic strings or a valid\nfilepath to a .bed (or similary
-      formatted)\nfile; defers to what is in the .yaml"
+    doc: 'Either 1 of 4 peak logic strings or a valid
+
+      filepath to a .bed (or similary formatted)
+
+      file; defers to what is in the .yaml'
     inputBinding:
       position: 102
       prefix: --peaks
@@ -179,7 +227,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Path to R; by default, assumes that R is in\nPATH"
+    doc: 'Path to R; by default, assumes that R is in
+
+      PATH'
     inputBinding:
       position: 102
       prefix: --r-path
@@ -187,7 +237,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Length of reads from sequencing runs; default\n= 75"
+    doc: 'Length of reads from sequencing runs; default
+
+      = 75'
     inputBinding:
       position: 102
       prefix: --read-length
@@ -195,8 +247,11 @@ inputs:
     type:
       - 'null'
       - File
-    doc: "Filepath to restriction fragment files; will\noverwrite specification of
-      this file when a\n.yaml is supplied for mode"
+    doc: 'Filepath to restriction fragment files; will
+
+      overwrite specification of this file when a
+
+      .yaml is supplied for mode'
     inputBinding:
       position: 102
       prefix: --restriction-frags
@@ -204,7 +259,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: "Skip restriction fragment aware background\ncorrection?"
+    doc: 'Skip restriction fragment aware background
+
+      correction?'
     inputBinding:
       position: 102
       prefix: --skip-background-correction
@@ -212,7 +269,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: "Skip analyses in diffloop (e.g. Mango loop\ncalling; .rds generation)"
+    doc: 'Skip analyses in diffloop (e.g. Mango loop
+
+      calling; .rds generation)'
     inputBinding:
       position: 102
       prefix: --skip-diffloop
@@ -228,10 +287,21 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "Path to samtools; by default, assumes that\ntabix is in PATH"
+    doc: 'Path to samtools; by default, assumes that
+
+      tabix is in PATH'
     inputBinding:
       position: 102
       prefix: --tabix-path
+  - id: peaks_file
+    type:
+      - 'null'
+      - File
+    doc: Peaks as a valid .bed (or similarly formatted) file, such as a narrowPeak
+      file. Use peaks for the 4 peak logic strings.
+    inputBinding:
+      position: 102
+      prefix: --peaks
 outputs:
   - id: stdout
     type: stdout

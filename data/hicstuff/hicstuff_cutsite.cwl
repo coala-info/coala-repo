@@ -1,14 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicstuff_cutsite
+baseCommand:
+  - hicstuff
+  - cutsite
 label: hicstuff_cutsite
-doc: "Generates new gzipped fastq files from original fastq. The function will cut
+doc: 'Generates new gzipped fastq files from original fastq. The function will cut
   the reads at their religation sites and creates new pairs of reads with the different
-  fragments obtained after cutting at the digestion sites.\n\nThere are three choices
-  to how combine the fragments. 1. \"for_vs_rev\": All the combinations are made between
-  one forward fragment and one reverse fragment. 2. \"all\": All 2-combinations are
-  made. 3. \"pile\": Only combinations between adjacent fragments in the initial reads
-  are made.\n\nTool homepage: https://github.com/koszullab/hicstuff"
+  fragments obtained after cutting at the digestion sites.
+
+
+  There are three choices to how combine the fragments. 1. "for_vs_rev": All the combinations
+  are made between one forward fragment and one reverse fragment. 2. "all": All 2-combinations
+  are made. 3. "pile": Only combinations between adjacent fragments in the initial
+  reads are made.
+
+
+  Tool homepage: https://github.com/koszullab/hicstuff'
 inputs:
   - id: enzyme
     type: string
@@ -37,8 +44,8 @@ inputs:
       prefix: --mode
   - id: prefix
     type: string
-    doc: Prefix of the path where to write the digested gzipped fastq files. 
-      Filenames will be added the suffix "_R{1,2}.fq.gz".
+    doc: Prefix of the path where to write the digested gzipped fastq files. Filenames
+      will be added the suffix "_R{1,2}.fq.gz".
     inputBinding:
       position: 101
       prefix: --prefix
@@ -52,8 +59,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum size of a read. (i.e. seed size used in mapping as reads 
-      smaller won't be mapped.)
+    doc: Minimum size of a read. (i.e. seed size used in mapping as reads smaller
+      won't be mapped.)
     inputBinding:
       position: 101
       prefix: --seed-size
@@ -66,10 +73,18 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: forward_digested
+    type: File
+    doc: Digested forward reads (gzipped fastq).
+    outputBinding:
+      glob: $(inputs.prefix)_R1.fq.gz
+  - id: reverse_digested
+    type: File
+    doc: Digested reverse reads (gzipped fastq).
+    outputBinding:
+      glob: $(inputs.prefix)_R2.fq.gz
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicstuff:3.2.4--pyhdfd78af_0
-stdout: hicstuff_cutsite.out
+requirements:
+  - class: InlineJavascriptRequirement

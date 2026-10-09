@@ -13,6 +13,8 @@ inputs:
       - type: array
         items: File
     doc: Bam file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --input-sample-bam

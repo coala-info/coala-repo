@@ -1,5 +1,11 @@
 # hifieval CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hifieval_hifieval.py | PASS |  |
+
 ## hifieval_hifieval.py
 
 ### Tool Description

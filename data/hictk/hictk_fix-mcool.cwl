@@ -4,13 +4,21 @@ baseCommand:
   - hictk
   - fix-mcool
 label: hictk_fix-mcool
-doc: "Fix corrupted .mcool files.\n\nTool homepage: https://github.com/paulsengroup/hictk"
+doc: 'Fix corrupted .mcool files.
+
+
+  Tool homepage: https://github.com/paulsengroup/hictk'
 inputs:
   - id: input
     type: File
     doc: Path to a corrupted .mcool file.
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Path where to store the restored .mcool.
+    inputBinding:
+      position: 2
   - id: check_base_resolution
     type:
       - 'null'
@@ -23,8 +31,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of interactions to process at once during balancing. Ignored 
-      when using --in-memory.
+    doc: Number of interactions to process at once during balancing. Ignored when
+      using --in-memory.
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -32,8 +40,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Compression level used to compress temporary files using ZSTD (only 
-      applies to the balancing stage).
+    doc: Compression level used to compress temporary files using ZSTD (only applies
+      to the balancing stage).
     inputBinding:
       position: 102
       prefix: --compression-lvl
@@ -49,8 +57,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Store all interactions in memory while balancing (greatly improves 
-      performance).
+    doc: Store all interactions in memory while balancing (greatly improves performance).
     inputBinding:
       position: 102
       prefix: --in-memory
@@ -66,8 +73,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of parallel threads to spawn (only applies to the 
-      balancing stage).
+    doc: Maximum number of parallel threads to spawn (only applies to the balancing
+      stage).
     inputBinding:
       position: 102
       prefix: --threads
@@ -88,11 +95,11 @@ inputs:
       position: 102
       prefix: --verbosity
 outputs:
-  - id: output
+  - id: output_file
     type: File
-    doc: Path where to store the restored .mcool.
+    doc: Restored .mcool file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0

@@ -1,5 +1,11 @@
 # hg-color CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hg-color_HG-CoLoR | Failed | image problem: HG-CoLoR looks for its helper scripts in /usr/local/bin/bin/, which does not exist (they are in /usr/local/bin) |
+
 ## hg-color_HG-CoLoR
 
 ### Tool Description

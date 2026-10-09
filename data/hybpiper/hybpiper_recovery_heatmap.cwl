@@ -104,6 +104,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: heatmap
+    type:
+      type: array
+      items: File
+    doc: Heatmap image(s) written to the working directory.
+    outputBinding:
+      glob:
+        - '*.png'
+        - '*.pdf'
+        - '*.eps'
+        - '*.tiff'
+        - '*.svg'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0

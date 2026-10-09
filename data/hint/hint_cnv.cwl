@@ -8,7 +8,7 @@ doc: "prediction of copy number information, as well as segmentation from Hi-C.\
   Tool homepage: https://github.com/suwangbio/HiNT_py3"
 inputs:
   - id: bicseq
-    type: File
+    type: Directory
     doc: /path/to/bicseqDir/
     inputBinding:
       position: 101

@@ -1,5 +1,11 @@
 # hificnv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hificnv | PASS |  |
+
 ## hificnv
 
 ### Tool Description

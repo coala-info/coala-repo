@@ -4,10 +4,13 @@ baseCommand:
   - hictk
   - metadata
 label: hictk_metadata
-doc: "Print file metadata to stdout.\n\nTool homepage: https://github.com/paulsengroup/hictk"
+doc: 'Print file metadata to stdout.
+
+
+  Tool homepage: https://github.com/paulsengroup/hictk'
 inputs:
   - id: uri
-    type: string
+    type: File
     doc: Path to a .hic or .[ms]cool file (Cooler URI syntax supported).
     inputBinding:
       position: 1
@@ -39,8 +42,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Print metadata for each resolution or cell contained in a 
-      multi-resolution or single-cell file.
+    doc: Print metadata for each resolution or cell contained in a multi-resolution
+      or single-cell file.
     inputBinding:
       position: 102
       prefix: --recursive

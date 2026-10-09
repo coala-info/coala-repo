@@ -1,5 +1,11 @@
 # hicbrowser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hicbrowser_runBrowser | Not completed | web server, long-running (runBrowser starts a Flask server) |
+
 ## hicbrowser_runBrowser
 
 ### Tool Description

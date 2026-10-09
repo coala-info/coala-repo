@@ -13,6 +13,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haystack_bio:0.5.5--0

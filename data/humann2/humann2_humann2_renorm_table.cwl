@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: humann2_renorm_table
 label: humann2_humann2_renorm_table
-doc: "Renormalize a HUMAnN2 table to relative abundance or other units.\n\nTool homepage:
-  http://huttenhower.sph.harvard.edu/humann2"
+doc: "Renormalize a HUMAnN2 table to relative abundance or copies per million (CPM)
+  units.\n\nTool homepage: http://huttenhower.sph.harvard.edu/humann2"
 inputs:
   - id: input
     type: File
@@ -15,7 +15,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'The normalization mode [choices: community, gene]'
+    doc: 'Normalize all levels by community total or levelwise totals: community or
+      levelwise (default community)'
     inputBinding:
       position: 101
       prefix: --mode
@@ -23,8 +24,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Include the special features (UNMAPPED, UNINTEGRATED, and UNGROUPED) [choices:
-      y, n]'
+    doc: 'Include the special features UNMAPPED, UNINTEGRATED, and UNGROUPED: y or
+      n (default y)'
     inputBinding:
       position: 101
       prefix: --special
@@ -32,7 +33,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'The units to normalize to [choices: copies, relab]'
+    doc: 'Normalization scheme: copies per million (cpm) or relative abundance (relab);
+      default cpm'
     inputBinding:
       position: 101
       prefix: --units
@@ -40,7 +42,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Update the sample names in the output table
+    doc: Update the suffix of the sample names to reflect the new units
     inputBinding:
       position: 101
       prefix: --update-snames

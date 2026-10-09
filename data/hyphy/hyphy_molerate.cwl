@@ -1,9 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hyphy_molerate
+baseCommand:
+  - hyphy
+  - molerate
 label: hyphy_molerate
 doc: "Available analysis command line options\n\nTool homepage: http://hyphy.org/"
 inputs:
+  - id: cpu
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use (HyPhy CPU= argument).
+    inputBinding:
+      position: 100
+      prefix: CPU=
+      separate: false
   - id: alignment
     type: File
     doc: A protein multiple sequence alignment in one of the formats supported 
@@ -14,22 +25,26 @@ inputs:
   - id: branch_level_analysis
     type:
       - 'null'
-      - boolean
-    doc: Perform test clade branch-level testing
+      - string
+    doc: 'Perform test clade branch-level testing: Yes or No (default: No).'
     inputBinding:
       position: 101
       prefix: --branch-level-analysis
   - id: branches
-    type: string
-    doc: Designated lineages to test
+    type:
+      type: array
+      items: string
+      inputBinding:
+        prefix: --branches
+    doc: Designated lineages to test; each branch name is passed as its own 
+      --branches option.
     inputBinding:
       position: 101
-      prefix: --branches
   - id: full_model
     type:
       - 'null'
-      - boolean
-    doc: Fit the full unconstrained model
+      - string
+    doc: 'Fit the full unconstrained model: Yes or No (default: Yes).'
     inputBinding:
       position: 101
       prefix: --full-model

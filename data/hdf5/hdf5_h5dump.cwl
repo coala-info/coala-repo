@@ -10,7 +10,7 @@ inputs:
       items: File
     doc: Input HDF5 files
     inputBinding:
-      position: 1
+      position: 200
   - id: any_path
     type:
       - 'null'
@@ -19,7 +19,8 @@ inputs:
       P can be the absolute path or just a relative path.
     inputBinding:
       position: 102
-      prefix: --any_path
+      prefix: --any_path=
+      separate: false
   - id: attribute
     type:
       - 'null'
@@ -28,7 +29,8 @@ inputs:
       (/), escape the slash with a preceding backslash (\).
     inputBinding:
       position: 102
-      prefix: --attribute
+      prefix: --attribute=
+      separate: false
   - id: binary
     type:
       - 'null'
@@ -36,7 +38,8 @@ inputs:
     doc: Binary file output, of form B
     inputBinding:
       position: 102
-      prefix: --binary
+      prefix: --binary=
+      separate: false
   - id: block
     type:
       - 'null'
@@ -45,7 +48,8 @@ inputs:
       are equal to the number of dimensions in the dataspace being queried.
     inputBinding:
       position: 102
-      prefix: --block
+      prefix: --block=
+      separate: false
   - id: contents
     type:
       - 'null'
@@ -64,7 +68,8 @@ inputs:
       being queried.
     inputBinding:
       position: 102
-      prefix: --count
+      prefix: --count=
+      separate: false
   - id: dataset
     type:
       - 'null'
@@ -72,7 +77,8 @@ inputs:
     doc: Print the specified dataset
     inputBinding:
       position: 102
-      prefix: --dataset
+      prefix: --dataset=
+      separate: false
   - id: datatype
     type:
       - 'null'
@@ -80,7 +86,8 @@ inputs:
     doc: Print the specified named datatype
     inputBinding:
       position: 102
-      prefix: --datatype
+      prefix: --datatype=
+      separate: false
   - id: enable_error_stack
     type:
       - 'null'
@@ -105,7 +112,8 @@ inputs:
     doc: Specify which driver to open the file with
     inputBinding:
       position: 102
-      prefix: --filedriver
+      prefix: --filedriver=
+      separate: false
   - id: format
     type:
       - 'null'
@@ -113,7 +121,8 @@ inputs:
     doc: Set the floating point output format
     inputBinding:
       position: 102
-      prefix: --format
+      prefix: --format=
+      separate: false
   - id: group
     type:
       - 'null'
@@ -121,7 +130,8 @@ inputs:
     doc: Print the specified group and all members
     inputBinding:
       position: 102
-      prefix: --group
+      prefix: --group=
+      separate: false
   - id: header
     type:
       - 'null'
@@ -174,7 +184,8 @@ inputs:
       and length is the number of bits of the mask.
     inputBinding:
       position: 102
-      prefix: --packedbits
+      prefix: --packedbits=
+      separate: false
   - id: properties
     type:
       - 'null'
@@ -198,7 +209,8 @@ inputs:
     doc: Print the value(s) of the specified soft link
     inputBinding:
       position: 102
-      prefix: --soft-link
+      prefix: --soft-link=
+      separate: false
   - id: sort_by
     type:
       - 'null'
@@ -206,7 +218,8 @@ inputs:
     doc: Sort groups and attributes by index Q
     inputBinding:
       position: 102
-      prefix: --sort_by
+      prefix: --sort_by=
+      separate: false
   - id: sort_order
     type:
       - 'null'
@@ -214,7 +227,8 @@ inputs:
     doc: Sort groups and attributes by order Z
     inputBinding:
       position: 102
-      prefix: --sort_order
+      prefix: --sort_order=
+      separate: false
   - id: start
     type:
       - 'null'
@@ -224,7 +238,8 @@ inputs:
       being queried.
     inputBinding:
       position: 102
-      prefix: --start
+      prefix: --start=
+      separate: false
   - id: stride
     type:
       - 'null'
@@ -233,7 +248,8 @@ inputs:
       to the number of dimensions in the dataspace being queried.
     inputBinding:
       position: 102
-      prefix: --stride
+      prefix: --stride=
+      separate: false
   - id: string
     type:
       - 'null'
@@ -265,7 +281,8 @@ inputs:
     doc: Set the missing file gap size, N=non-negative integers
     inputBinding:
       position: 102
-      prefix: --vds-gap-size
+      prefix: --vds-gap-size=
+      separate: false
   - id: vds_view_first_missing
     type:
       - 'null'
@@ -282,7 +299,8 @@ inputs:
       number of columns to the maximum (65535). Default width is 80 columns.
     inputBinding:
       position: 102
-      prefix: --width
+      prefix: --width=
+      separate: false
   - id: xml
     type:
       - 'null'
@@ -298,7 +316,8 @@ inputs:
     doc: Use the DTD or schema at U
     inputBinding:
       position: 102
-      prefix: --xml-dtd
+      prefix: --xml-dtd=
+      separate: false
   - id: xml_ns
     type:
       - 'null'
@@ -306,7 +325,8 @@ inputs:
     doc: '(XML Schema) Use qualified names n the XML ":" no namespace, default: "hdf5:"'
     inputBinding:
       position: 102
-      prefix: --xml-ns
+      prefix: --xml-ns=
+      separate: false
   - id: ddl_path
     type:
       - 'null'
@@ -314,7 +334,8 @@ inputs:
     doc: Output ddl text into file F
     inputBinding:
       position: 103
-      prefix: --ddl
+      prefix: --ddl=
+      separate: false
   - id: output_path
     type:
       - 'null'
@@ -322,8 +343,12 @@ inputs:
     doc: Output raw data into file F
     inputBinding:
       position: 104
-      prefix: --output
+      prefix: --output=
+      separate: false
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the DDL text dump)
   - id: output
     type:
       - 'null'
@@ -344,3 +369,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hdf5:1.10.4
+stdout: hdf5_h5dump.out

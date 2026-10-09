@@ -128,6 +128,13 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
+  - id: bgzf_index
+    type:
+      - 'null'
+      - File
+    doc: BGZF index file written with --index or --reindex
+    outputBinding:
+      glob: '$(inputs.index_name ? inputs.index_name : inputs.output + ".gzi")'
   - id: output_output
     type:
       - 'null'

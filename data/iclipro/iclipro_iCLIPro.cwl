@@ -9,8 +9,11 @@ inputs:
   - id: input_bam
     type: File
     doc: Input BAM file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
-      position: 1
+      position: 200
   - id: flanking_distance_overlap_ratio
     type:
       - 'null'
@@ -53,25 +56,22 @@ inputs:
       position: 102
       prefix: -r
   - id: output_folder
-    type:
-      - 'null'
-      - string
+    type: string
     doc: output folder (default is cwd - current working directory)
     inputBinding:
       position: 102
       prefix: -o
   - id: read_len_groups
-    type:
-      - 'null'
-      - string
-    doc: 'read len groups (e.g.: "A:16-39,A1:16-25,A2:26-32,A3:33-39,L:20,B:42")'
+    type: string
+    default: A:16-39,A1:16-25,A2:26-32,A3:33-39,L:20,B:42
+    doc: 'read len groups (e.g.: "A:16-39,A1:16-25,A2:26-32,A3:33-39,L:20,B:42").
+      The tool stops with an error when it is empty.'
     inputBinding:
       position: 102
       prefix: -g
   - id: read_overlap_comparisons
-    type:
-      - 'null'
-      - string
+    type: string
+    default: A1-A3,A2-A3,A1-B,A2-B,A3-B,L-B,A-B
     doc: 'generate read overlap maps based on these comparisons (e.g.: "A1-A3,A2-A3,A1-B,A2-B,A3-B,L-B,A-B")'
     inputBinding:
       position: 102
@@ -80,6 +80,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_folder_dir
+    type: Directory
+    doc: Output folder with the report, graphs and bed files
+    outputBinding:
+      glob: $(inputs.output_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iclipro:0.1.1--py27_0

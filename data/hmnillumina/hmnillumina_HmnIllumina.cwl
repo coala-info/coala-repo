@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: IlluminaSav
+baseCommand: HmnIllumina
 label: hmnillumina_HmnIllumina
 doc: "Extract Illumina SAV (Sequence Analysis Viewer) Interop data\n\nTool homepage:
   https://github.com/guillaume-gricourt/HmnIllumina"

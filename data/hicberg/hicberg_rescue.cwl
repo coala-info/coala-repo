@@ -8,50 +8,57 @@ doc: "Reallocate ambiguous reads to the most plausible position according to\n  
   \nTool homepage: https://github.com/sebgra/hicberg"
 inputs:
   - id: genome
-    type: string
-    doc: genome
+    type: File
+    doc: Genome FASTA file.
     inputBinding:
       position: 1
-  - id: cpus
-    type:
-      - 'null'
-      - int
-    doc: Threads to use for analysis.
+  - id: output_folder
+    type: Directory
+    doc: Result folder created by hicberg create-folder (and filled by the earlier
+      stages). It is staged writable; the stage adds its files to it.
     inputBinding:
-      position: 102
-      prefix: --cpus
+      position: 100
+      prefix: --output
+      valueFrom: $(runtime.outdir)/$(inputs.output_folder.basename)
   - id: enzyme
     type:
       - 'null'
-      - string
-    doc: Enzymes to use for genome digestion.
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --enzyme
+    doc: Enzymes to use for genome digestion (restriction enzyme names such as DpnII,
+      or a number for Micro-C fragment size). Give one or more.
     inputBinding:
-      position: 102
-      prefix: --enzyme
+      position: 104
   - id: mode
     type:
       - 'null'
       - string
     doc: Statistical model to use for ambiguous reads assignment.
     inputBinding:
-      position: 102
+      position: 104
       prefix: --mode
-  - id: output_folder_path
-    type: string
-    doc: Output folder to save results.
-    inputBinding:
-      position: 103
-      prefix: --output
-outputs:
-  - id: output_folder
+  - id: cpus
     type:
       - 'null'
-      - Directory
-    doc: Output folder to save results.
+      - int
+    doc: Threads to use for analysis.
+    inputBinding:
+      position: 104
+      prefix: --cpus
+outputs:
+  - id: output_folder_out
+    type: Directory
+    doc: The same result folder with the files this stage wrote.
     outputBinding:
-      glob: $(inputs.output_folder_path)
+      glob: $(inputs.output_folder.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.output_folder)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicberg:1.0.1--py312hcf36b3e_0

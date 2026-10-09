@@ -36,9 +36,10 @@ inputs:
       position: 6
   - id: output_dir
     type: string
-    doc: output directory
+    doc: output directory (created in the working directory; a trailing slash is added)
     inputBinding:
       position: 7
+      valueFrom: $(self.replace(/\/+$/, '') + '/')
   - id: haplotype_assembly
     type:
       - 'null'
@@ -67,7 +68,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: the location in the chromosome which is phased
+    doc: the location in the chromosome which is phased, given as start,end
     inputBinding:
       position: 108
       prefix: --phasing_location
@@ -119,16 +120,23 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output
+    doc: Files written with the output prefix inside the output directory
     outputBinding:
-      glob: $(inputs.output)*
+      glob: $(inputs.output_dir.replace(/\/+$/, '') + '/' + inputs.output + '*')
   - id: output_dir_dir
     type:
       - 'null'
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir.replace(/\/+$/, ''))
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir.replace(/\/+$/, ''))
+        entry: '$({"class": "Directory", "basename": inputs.output_dir.replace(/\/+$/, ""), "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hat-phasing:0.1.8--pyh5e36f6f_0

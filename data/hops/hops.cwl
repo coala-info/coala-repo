@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: HOPS
+baseCommand: hops
 label: hops
 doc: "HOPS (Heuristic Operations for Pathogen Screening) is a tool for screening and
   analyzing ancient DNA data.\n\nTool homepage: https://github.com/rhuebler/HOPS/"

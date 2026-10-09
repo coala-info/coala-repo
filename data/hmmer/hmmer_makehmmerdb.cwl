@@ -9,12 +9,12 @@ inputs:
     type: File
     doc: Input sequence file
     inputBinding:
-      position: 1
+      position: 201
   - id: binaryfile
     type: string
     doc: Output HMMER binary-formatted database file
     inputBinding:
-      position: 2
+      position: 202
   - id: bin_length
     type:
       - 'null'

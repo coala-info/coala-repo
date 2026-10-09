@@ -1,5 +1,12 @@
 # hivtrace CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hivtrace | Failed | image problem: tn93 is not installed in the image, and the first run writes LANL.FASTA into the install directory, which fails for a non-root user |
+| hivtrace_hivtrace_strip_drams | PASS |  |
+
 ## hivtrace
 
 ### Tool Description
@@ -66,3 +73,29 @@ optional arguments:
                         Prior network configuration
 ```
 
+## hivtrace_hivtrace_strip_drams
+
+### Tool Description
+Replace DRAMS with gaps in ALIGNED pol sequences.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hivtrace:1.5.0--py_0
+- **Homepage**: https://github.com/veg/hivtrace
+- **Package**: https://anaconda.org/channels/bioconda/packages/hivtrace/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hivtrace_strip_drams [-h] -i INPUT [-o OUTPUT] -d {lewis,wheeler}
+
+Replace DRAMS with gaps in ALIGNED pol sequences
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        The input FASTA file
+  -o OUTPUT, --output OUTPUT
+                        Output
+  -d {lewis,wheeler}, --dram {lewis,wheeler}
+                        Use this list of DRAMs
+```

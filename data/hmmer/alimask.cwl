@@ -8,7 +8,12 @@ inputs:
     type: File
     doc: Input multiple sequence alignment file
     inputBinding:
-      position: 1
+      position: 201
+  - id: postmsafile
+    type: string
+    doc: Output multiple sequence alignment file with the mask
+    inputBinding:
+      position: 202
   - id: ali2model
     type:
       - 'null'
@@ -181,16 +186,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `summary_output_path`
+    doc: direct summary output to file <f>, not stdout
     inputBinding:
       position: 103
-      prefix: --summary-output
+      prefix: -o
 outputs:
-  - id: postmsafile
-    type: File
+  - id: out_postmsafile
+    type:
+      - 'null'
+      - File
     doc: Output multiple sequence alignment file with mask
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.postmsafile)
   - id: summary_output
     type:
       - 'null'

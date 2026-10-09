@@ -33,10 +33,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --additional-attr
     doc: Additional feature attributes used as annotations in the output.
     inputBinding:
       position: 103
-      prefix: --additional-attr
   - id: append_output
     type:
       - 'null'
@@ -84,10 +85,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --idattr
     doc: GTF attribute to be used as feature ID.
     inputBinding:
       position: 103
-      prefix: --idattr
   - id: max_reads_in_buffer
     type:
       - 'null'
@@ -186,11 +188,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --type
     doc: Feature type (3rd column in GTF file) to be used, all features of other
       type are ignored.
     inputBinding:
       position: 103
-      prefix: --type
   - id: with_header
     type:
       - 'null'
@@ -215,6 +218,9 @@ inputs:
       position: 105
       prefix: --samout
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the counts, unless a counts output file is given)
   - id: samout
     type:
       - 'null'
@@ -235,3 +241,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/htseq:2.1.2--py311hb6b0eea_0
+stdout: htseq_htseq-count.out

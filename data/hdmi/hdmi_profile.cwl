@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hdmi_profile
+baseCommand:
+  - HDMI
+  - profile
 label: hdmi_profile
 doc: "Profile HDMI sequencing data\n\nTool homepage: https://github.com/HaoranPeng21/HDMI"
 inputs:

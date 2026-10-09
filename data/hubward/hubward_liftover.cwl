@@ -7,7 +7,7 @@ label: hubward_liftover
 doc: "Lift over coordinates from one assembly to another, in bulk. For all configured
   tracks in <dirname>/metadata.yaml, if the configured track genome matches <from_assembly>
   then perform the liftover to a temporary directory and then move the result to <newdir>
-  when complete.\n\nTool homepage: https://github.com/lh3/bwa"
+  when complete.\n\nTool homepage: https://github.com/daler/hubward"
 inputs:
   - id: dirname
     type: Directory
@@ -41,6 +41,9 @@ outputs:
     doc: Destination directory
     outputBinding:
       glob: '$(inputs.newdir)'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hubward:0.2.2--py27_1

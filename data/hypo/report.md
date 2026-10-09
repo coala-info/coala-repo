@@ -1,5 +1,11 @@
 # hypo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hypo | PASS |  |
+
 ## hypo
 
 ### Tool Description

@@ -1,172 +1,162 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: howdesbt_makebf
+baseCommand:
+  - howdesbt
+  - makebf
 label: howdesbt_makebf
 doc: "convert a sequence file to a bloom filter\n\nTool homepage: https://github.com/medvedevgroup/HowDeSBT"
 inputs:
-  - id: filenames
+  - id: sequence_files
     type:
       type: array
       items: File
-    doc: a sequence file, e.g. fasta, fastq, or kmers (one bloom filter is 
-      created, for the union of the sequence files)
+    doc: "a sequence file, e.g. fasta, fastq, or kmers (one bloom filter is created, for the union of the sequence files)"
     inputBinding:
       position: 1
-  - id: asper_file
-    type:
-      - 'null'
-      - File
-    doc: name of an existing bloom filter file to extract settings from; that 
-      file's --k, --hashes, --seed, --modulus, --bits and compression type will 
-      be used if they are not otherwise specified on the command line
+  - id: out
+    type: string
+    doc: "name for bloom filter file (by default this is derived from first sequence filename)"
     inputBinding:
       position: 102
-      prefix: --asper
-  - id: hash_seed_1
-    type:
-      - 'null'
-      - int
-    doc: the hash function's 56-bit seed
-    inputBinding:
-      position: 102
-      prefix: --seed
-  - id: hash_seed_2
-    type:
-      - 'null'
-      - int
-    doc: the second hash function seed (only used if more than one hash function
-      is being used)
-    inputBinding:
-      position: 102
-      prefix: --seed
-  - id: kmer_size
-    type:
-      - 'null'
-      - int
-    doc: kmer size (number of nucleotides in a kmer)
-    inputBinding:
-      position: 102
-      prefix: --k
+      prefix: "--out="
+      separate: false
   - id: kmersin
     type:
       - 'null'
       - boolean
-    doc: input files are kmers (by default input files are expected to be fasta 
-      or fastq)
+    doc: "input files are kmers (by default input files are expected to be fasta or fastq)"
     inputBinding:
-      position: 102
-      prefix: --kmersin
+      position: 103
+      prefix: "--kmersin"
   - id: list_file
     type:
       - 'null'
       - File
-    doc: file containing a list of bloom filters to create; this is used in 
-      place of the <filename>s on the command line; the file format is described
-      below
+    doc: "file containing a list of bloom filters to create; this is used in place of the sequence files on the command line"
     inputBinding:
-      position: 102
-      prefix: --list
-  - id: min_occurrence
+      position: 104
+      prefix: "--list="
+      separate: false
+  - id: asper
+    type:
+      - 'null'
+      - File
+    doc: "name of an existing bloom filter file to extract settings from; that file's --k, --hashes, --seed, --modulus, --bits and compression type will be used if they are not otherwise specified on the command line"
+    inputBinding:
+      position: 105
+      prefix: "--asper="
+      separate: false
+  - id: k
     type:
       - 'null'
       - int
-    doc: kmers occuring fewer than N times are left out of the bloom filter; 
-      this does not apply when --kmersin is used
+    doc: "kmer size (number of nucleotides in a kmer) (default is 20)"
     inputBinding:
-      position: 102
-      prefix: --min
-  - id: modulus
+      position: 106
+      prefix: "--k="
+      separate: false
+  - id: min
     type:
       - 'null'
       - int
-    doc: set the hash modulus, if larger than the number of bits (by default 
-      this is the same as the number of bits)
+    doc: "kmers occuring fewer than N times are left out of the bloom filter; this does not apply when --kmersin is used (default is 1)"
     inputBinding:
-      position: 102
-      prefix: --modulus
-  - id: num_bits
-    type:
-      - 'null'
-      - int
-    doc: number of bits in the bloom filter
-    inputBinding:
-      position: 102
-      prefix: --bits
-  - id: num_hashes
-    type:
-      - 'null'
-      - int
-    doc: how many hash functions to use for the filter
-    inputBinding:
-      position: 102
-      prefix: --hashes
-  - id: roar_compressed
-    type:
-      - 'null'
-      - boolean
-    doc: make the filter with roar-compressed bit vector(s)
-    inputBinding:
-      position: 102
-      prefix: --roar
-  - id: rrr_compressed
-    type:
-      - 'null'
-      - boolean
-    doc: make the filter with RRR-compressed bit vector(s)
-    inputBinding:
-      position: 102
-      prefix: --rrr
+      position: 107
+      prefix: "--min="
+      separate: false
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of threads to use during kmerization
+    doc: "number of threads to use during kmerization (default is 1)"
     inputBinding:
-      position: 102
-      prefix: --threads
+      position: 108
+      prefix: "--threads="
+      separate: false
+  - id: hashes
+    type:
+      - 'null'
+      - int
+    doc: "how many hash functions to use for the filter (default is 1)"
+    inputBinding:
+      position: 109
+      prefix: "--hashes="
+      separate: false
+  - id: seed
+    type:
+      - 'null'
+      - string
+    doc: "the hash function's 56-bit seed; either one number or two numbers separated by a comma (the second seed is only used if more than one hash function is being used)"
+    inputBinding:
+      position: 110
+      prefix: "--seed="
+      separate: false
+  - id: modulus
+    type:
+      - 'null'
+      - int
+    doc: "set the hash modulus, if larger than the number of bits (by default this is the same as the number of bits)"
+    inputBinding:
+      position: 111
+      prefix: "--modulus="
+      separate: false
+  - id: bits
+    type:
+      - 'null'
+      - int
+    doc: "number of bits in the bloom filter (default is 500000)"
+    inputBinding:
+      position: 112
+      prefix: "--bits="
+      separate: false
   - id: uncompressed
     type:
       - 'null'
       - boolean
-    doc: make the filter with uncompressed bit vector(s) (this is the default)
+    doc: "make the filter with uncompressed bit vector(s) (this is the default)"
     inputBinding:
-      position: 102
-      prefix: --uncompressed
-  - id: output_filename_path
+      position: 113
+      prefix: "--uncompressed"
+  - id: rrr
+    type:
+      - 'null'
+      - boolean
+    doc: "make the filter with RRR-compressed bit vector(s)"
+    inputBinding:
+      position: 114
+      prefix: "--rrr"
+  - id: roar
+    type:
+      - 'null'
+      - boolean
+    doc: "make the filter with roar-compressed bit vector(s)"
+    inputBinding:
+      position: 115
+      prefix: "--roar"
+  - id: stats
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_filename_path`
+    doc: "name of a text file to write bloom filter stats to"
     inputBinding:
-      position: 103
-      prefix: --output-filename
-  - id: stats_file_path
-    type:
-      - 'null'
-      - string
-    doc: '[=<filename>] write bloom filter stats to a text file (if no filename is
-      given this is derived from the bloom filter filename)'
-    inputBinding:
-      position: 104
-      prefix: --stats=
+      position: 116
+      prefix: "--stats="
       separate: false
 outputs:
-  - id: output_filename
+  - id: bloom_filter
     type:
       - 'null'
       - File
-    doc: name for bloom filter file (by default this is derived from first 
-      sequence filename)
+    doc: "bloom filter file"
     outputBinding:
-      glob: $(inputs.output_filename_path)
+      glob: $(inputs.out)
   - id: stats_file
     type:
       - 'null'
       - File
-    doc: write bloom filter stats to a text file (if no filename is given this 
-      is derived from the bloom filter filename)
+    doc: "bloom filter stats text file"
     outputBinding:
-      glob: $(inputs.stats_file_path)
+      glob: $(inputs.stats)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

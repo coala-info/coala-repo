@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hdmi_detect
+baseCommand:
+  - HDMI
+  - detect
 label: hdmi_detect
 doc: "Directory containing genome FASTA files\n\nTool homepage: https://github.com/HaoranPeng21/HDMI"
 inputs:

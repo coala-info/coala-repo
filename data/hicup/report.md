@@ -1,5 +1,11 @@
 # hicup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hicup | PASS |  |
+
 ## hicup
 
 ### Tool Description

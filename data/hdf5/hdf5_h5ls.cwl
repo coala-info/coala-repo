@@ -3,16 +3,23 @@ class: CommandLineTool
 baseCommand: h5ls
 label: hdf5_h5ls
 doc: "List the contents of an HDF5 file\n\nTool homepage: https://github.com/HDFGroup/hdf5"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: files
     type:
       type: array
-      items: string
-    doc: HDF5 file name optionally followed by a slash and an object name within
-      the file. The file name may include a printf(3C) integer format such as 
-      "%05d" to open a file family.
+      items: File
+    doc: HDF5 file name. An object name inside the file can be added with object_name.
     inputBinding:
-      position: 1
+      position: 200
+      valueFrom: |-
+        ${ return self.map(function(f){ return f.path + (inputs.object_name ? "/" + inputs.object_name : ""); }); }
+  - id: object_name
+    type:
+      - 'null'
+      - string
+    doc: Object name within the file (appended to each file name as file/OBJECT), without a leading slash.
   - id: address
     type:
       - 'null'
@@ -159,7 +166,8 @@ inputs:
     doc: Set the number of columns of output
     inputBinding:
       position: 102
-      prefix: --width
+      prefix: --width=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

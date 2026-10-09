@@ -33,13 +33,10 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: 'Provide three space-separated arguments: 1) column of the stats_file to
-      filter by, 2) "greater" or "smaller", 3) a threshold - either an integer (raw
-      number of genes) or float (percentage of genes in analysis). This parameter
+    doc: 'Each entry holds three space-separated words: 1) column of the stats_file
+      to filter by, 2) "greater" or "smaller", 3) a threshold - either an integer
+      (raw number of genes) or float (percentage of genes in analysis). This parameter
       can be supplied more than once to filter by multiple criteria.'
-    inputBinding:
-      position: 102
-      prefix: --filter_by
   - id: hybpiper_dir
     type:
       - 'null'
@@ -59,13 +56,17 @@ inputs:
       position: 102
       prefix: --run_profiler
   - id: sample_names
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Text file with names of HybPiper output directories, one per line.
     inputBinding:
       position: 102
       prefix: --sample_names
   - id: single_sample_name
-    type: string
+    type:
+      - 'null'
+      - string
     doc: A single sample name to recover sequences for
     inputBinding:
       position: 102
@@ -90,14 +91,18 @@ inputs:
       position: 102
       prefix: --stats_file
   - id: targetfile_aa
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing amino-acid target sequences for each gene. The fasta
       headers must follow the naming convention: >TaxonID-geneName'
     inputBinding:
       position: 102
       prefix: --targetfile_aa
   - id: targetfile_dna
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing DNA target sequences for each gene. The fasta headers
       must follow the naming convention: >TaxonID-geneName'
     inputBinding:
@@ -114,7 +119,23 @@ outputs:
     doc: Specify directory for output FASTA files.
     outputBinding:
       glob: $(inputs.fasta_dir)
+  - id: fasta_files
+    type:
+      type: array
+      items: File
+    doc: Retrieved FASTA files written to the working directory.
+    outputBinding:
+      glob:
+        - '*.FNA'
+        - '*.FAA'
+        - '*.fasta'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0
 stdout: hybpiper_retrieve_sequences.out
+arguments:
+  - position: 102
+    valueFrom: "$(inputs.filter_by ? [].concat.apply([], inputs.filter_by.map(function(f){return
+      ['--filter_by'].concat(f.trim().split(/\\s+/));})) : [])"
+requirements:
+  - class: InlineJavascriptRequirement

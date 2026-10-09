@@ -1,9 +1,15 @@
 # ibdne CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ibdne | Not completed | runs to success on real simulated Browning-lab chr1 IBD segments and writes Ne estimates with CIs, but the Ne values could not be checked against a known answer. |
+
 ## ibdne
 
 ### Tool Description
-Calculates Identity By Descent (IBD) segments between individuals.
+Estimates historical effective population size from IBD segments.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ibdne:04Sep15.e78--0

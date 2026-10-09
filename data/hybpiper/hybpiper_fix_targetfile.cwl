@@ -8,7 +8,7 @@ doc: "Fixes DNA and amino-acid target files by testing for open reading frames, 
   stop codons, and filtering sequences.\n\nTool homepage: https://github.com/mossmatters/HybPiper"
 inputs:
   - id: control_file
-    type: string
+    type: File
     doc: The *.ctl file, as output by the command "hybpiper check_targetfile".
     inputBinding:
       position: 1
@@ -105,14 +105,18 @@ inputs:
       position: 102
       prefix: --run_profiler
   - id: targetfile_aa
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing amino-acid target sequences for each gene. The fasta
       headers must follow the naming convention: >TaxonID-geneName'
     inputBinding:
       position: 102
       prefix: --targetfile_aa
   - id: targetfile_dna
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing DNA target sequences for each gene. The fasta headers
       must follow the naming convention: >TaxonID-geneName'
     inputBinding:
@@ -150,6 +154,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: fixed_files
+    type:
+      type: array
+      items: File
+    doc: Fixed target file(s), logs and reports written to the working 
+      directory.
+    outputBinding:
+      glob:
+        - '*.fasta'
+        - '*.FAA'
+        - '*.log'
+        - '*.txt'
+        - '*.tsv'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0

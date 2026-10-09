@@ -1,10 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicstuff_digest
+baseCommand:
+  - hicstuff
+  - digest
 label: hicstuff_digest
-doc: "Digests a fasta file into fragments based on a restriction enzyme or a fixed
-  chunk size. Generates two output files into the target directory named \"info_contigs.txt\"\
-  \ and \"fragments_list.txt\"\n\nTool homepage: https://github.com/koszullab/hicstuff"
+doc: 'Digests a fasta file into fragments based on a restriction enzyme or a fixed
+  chunk size. Generates two output files into the target directory named "info_contigs.txt"
+  and "fragments_list.txt"
+
+
+  Tool homepage: https://github.com/koszullab/hicstuff'
 inputs:
   - id: fasta
     type: File
@@ -24,8 +29,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: A restriction enzyme or an integer representing fixed chunk sizes (in 
-      bp). Multiple comma-separated enzymes can be given.
+    doc: A restriction enzyme or an integer representing fixed chunk sizes (in bp).
+      Multiple comma-separated enzymes can be given.
     inputBinding:
       position: 102
       prefix: --enzyme
@@ -33,9 +38,9 @@ inputs:
   - id: figdir
     type:
       - 'null'
-      - Directory
-    doc: Path to directory of the output figure. By default, the figure is only 
-      shown but not saved.
+      - string
+    doc: Path to directory of the output figure (created before the run). By default,
+      the figure is only shown but not saved.
     inputBinding:
       position: 102
       prefix: --figdir
@@ -50,9 +55,9 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
-    doc: Directory where the fragments and contigs files will be written. 
-      Defaults to current directory.
+      - string
+    doc: Directory where the fragments and contigs files will be written. Defaults
+      to current directory.
     inputBinding:
       position: 102
       prefix: --outdir
@@ -73,10 +78,31 @@ inputs:
       position: 102
       prefix: --size
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: fragments_list
+    type: File
+    doc: Information about restriction fragments (or chunks).
+    outputBinding:
+      glob: '${ return (inputs.outdir ? inputs.outdir + ''/'' : '''') + ''fragments_list.txt'';
+        }'
+  - id: info_contigs
+    type: File
+    doc: Information about contigs or chromosomes.
+    outputBinding:
+      glob: '${ return (inputs.outdir ? inputs.outdir + ''/'' : '''') + ''info_contigs.txt'';
+        }'
+  - id: figure_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Figure directory (set with figdir).
+    outputBinding:
+      glob: $(inputs.figdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicstuff:3.2.4--pyhdfd78af_0
-stdout: hicstuff_digest.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return inputs.figdir ? {entryname: inputs.figdir, writable: true, entry:
+        {class: ''Directory'', basename: inputs.figdir, listing: []}} : null; }'

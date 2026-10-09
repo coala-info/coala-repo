@@ -1,5 +1,12 @@
 # hulk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hulk_sketch | PASS |  |
+| hulk_smash | PASS |  |
+
 ## hulk_sketch
 
 ### Tool Description

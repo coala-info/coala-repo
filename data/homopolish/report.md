@@ -1,5 +1,14 @@
 # homopolish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| homopolish_make_train_data | Not completed | needs a Mash sketch (download URL is gone) and homolog downloads from NCBI; the -l local database option is ignored |
+| homopolish_modpolish | Not completed | needs Nanopore reads of the draft genome and a Mash sketch (download URL is gone); no usable test data |
+| homopolish_polish | Not completed | needs a 3.3 GB Mash sketch (download URL is gone) or a 1.5 GB NCBI assembly list; the -l local database option crashes (tool bug: name ani is shadowed by an int) |
+| homopolish_train | Not completed | needs alignment dataframes made by make_train_data, which could not run |
+
 ## homopolish_polish
 
 ### Tool Description

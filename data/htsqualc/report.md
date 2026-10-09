@@ -1,5 +1,11 @@
 # htsqualc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| htsqualc_filter.py | PASS |  |
+
 ## htsqualc_filter.py
 
 ### Tool Description

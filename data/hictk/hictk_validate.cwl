@@ -4,10 +4,13 @@ baseCommand:
   - hictk
   - validate
 label: hictk_validate
-doc: "Validate .hic and Cooler files.\n\nTool homepage: https://github.com/paulsengroup/hictk"
+doc: 'Validate .hic and Cooler files.
+
+
+  Tool homepage: https://github.com/paulsengroup/hictk'
 inputs:
   - id: uri
-    type: string
+    type: File
     doc: Path to a .hic or .[ms]cool file (Cooler URI syntax supported).
     inputBinding:
       position: 1
@@ -23,8 +26,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: When processing multi-resolution or single-cell files, do not fail as 
-      soon as the first error is detected.
+    doc: When processing multi-resolution or single-cell files, do not fail as soon
+      as the first error is detected.
     inputBinding:
       position: 102
       prefix: --exhaustive
@@ -32,8 +35,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: When processing multi-resolution or single-cell files, do not fail as 
-      soon as the first error is detected.
+    doc: When processing multi-resolution or single-cell files, do not fail as soon
+      as the first error is detected.
     inputBinding:
       position: 102
       prefix: --fail-fast
@@ -58,8 +61,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Don't print anything to stdout. Success/failure is reported through 
-      exit codes.
+    doc: Don't print anything to stdout. Success/failure is reported through exit
+      codes.
     inputBinding:
       position: 102
       prefix: --quiet

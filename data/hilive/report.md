@@ -1,5 +1,12 @@
 # hilive CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hilive | PASS | synthetic data: BCL files written from 55 real SARS-CoV-2 Illumina reads; 51 reads aligned, positions match the BWA alignment (reads below 3 threads hang the tool) |
+| hilive_hilive-build | PASS |  |
+
 ## hilive
 
 ### Tool Description
@@ -117,6 +124,52 @@ Technical settings:
                                 threads are not idle [Default: half of -n]
 ```
 
+
+## hilive_hilive-build
+
+### Tool Description
+Build the k-mer index (*.kix) of reference genomes for HiLive.
+
+### Metadata
+- **Docker Image**: biocontainers/hilive:v1.1-2-deb_cv1
+- **Homepage**: https://gitlab.com/SimonHTausch/HiLive
+- **Package**: https://anaconda.org/channels/bioconda/packages/hilive/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+------
+HiLive Index Builder v1.1 - Build Index for Realtime Alignment of Illumina Reads
+------
+
+Copyright (c) 2015-2017, Martin S. Lindner and the HiLive contributors. See CONTRIBUTORS for more info.
+All rights reserved
+
+HiLive is open-source software. Check with --license for details.
+
+Usage: 
+  hilive-build INPUT KMER_WEIGHT [options]
+
+Required:
+  INPUT                 Reference genomes in (multi-) FASTA format.
+  KMER_WEIGHT           Number of non-gap positions in a k-mer (For ungapped k-mers this is the k-mer size).
+
+General:
+  -h [ --help ]               Print this help message and exit
+  --license                   Print licensing information and exit
+
+Options:
+  -o [ --outfile ] arg        Set output file name [Default: INPUT.kix]
+  -t [ --trim ] arg (=0)      Ignore k-mers with more than t occurrences. 
+                              [Default: no limit]
+  -p [ --gap-positions ] arg  Gap positions in the k-mer pattern (example: -p 3
+                              6 7 for 1101100111 with k=7). [Default: ungapped]
+  --do-not-convert-spaces     Do not convert all spaces in reference ids to 
+                              underscores [Default: converting is on]
+  --trim-after-space          Trim all reference ids after first space 
+                              [Default: false]
+```
 
 ## Metadata
 - **Skill**: not generated

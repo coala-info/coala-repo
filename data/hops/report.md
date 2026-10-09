@@ -1,5 +1,11 @@
 # hops CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hops | Not completed | baseCommand fixed to hops; full run needs a MALT index database and ancient DNA references, too large to test |
+
 ## hops
 
 ### Tool Description

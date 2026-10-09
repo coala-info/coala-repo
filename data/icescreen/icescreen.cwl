@@ -57,10 +57,9 @@ inputs:
       position: 101
       prefix: --jobs
   - id: output_dir
-    type:
-      - 'null'
-      - string
-    doc: Path to where ICEscreen results will be written
+    type: string
+    doc: Path to where ICEscreen results will be written (default /root, which
+      is read-only in a container, so always set it)
     inputBinding:
       position: 101
       prefix: --outdir
@@ -93,12 +92,17 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to where ICEscreen results will be written
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir)
+        entry: '${return {"class": "Directory", "listing": []};}'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/icescreen:1.3.3--py312h7e72e81_0

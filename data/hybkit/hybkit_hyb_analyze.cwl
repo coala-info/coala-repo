@@ -2,281 +2,260 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: hyb_analyze
 label: hybkit_hyb_analyze
-doc: "Read hyb / vienna files and analyze the fold information in the contained hybrid
-  sequences.\n\nTool homepage: https://github.com/RenneLab/hybkit"
+doc: "Read hyb / vienna files and analyze the fold information in the contained hybrid sequences.\n\nTool homepage: https://github.com/RenneLab/hybkit"
 inputs:
   - id: in_hyb
     type:
       type: array
       items: File
-    doc: path to one or more hyb-format files with a ".hyb" suffix for use in 
-      the evaluation.
+    doc: "Path to one or more hyb-format files with a \".hyb\" suffix."
     inputBinding:
       position: 1
+      prefix: -i
   - id: in_fold
     type:
-      type: array
-      items: File
-    doc: path to one or more RNA secondary-structure files with a ".vienna" or 
-      ".ct" suffix for use in the evaluation.
+      - 'null'
+      - type: array
+        items: File
+    doc: "Path to one or more RNA secondary-structure files with a \".vienna\" or \".ct\" suffix."
     inputBinding:
       position: 2
+      prefix: -f
   - id: out_basename
     type:
       - 'null'
       - type: array
         items: string
-    doc: Optional path to one or more basename prefixes to use for output. The 
-      appropriate suffix will be added based on the specific name. If not 
-      provided, the output for input file "PATH_TO/MY_FILE.HYB" will be used as 
-      a template for the basename "OUT_DIR/MY_FILE".
+    doc: "Basename prefixes to use for output; the appropriate suffix is added. Defaults to the input file name."
     inputBinding:
       position: 3
-  - id: allow_undefined_flags
-    type:
-      - 'null'
-      - boolean
-    doc: Allow use of flags not defined in the hybkit- specification order when 
-      reading and writing hyb records. As the preferred alternative to using 
-      this setting, the --custom_flags argument can be be used to supply custom 
-      allowed flags.
-    inputBinding:
-      position: 104
-      prefix: --allow_undefined_flags
-  - id: allow_unknown_seg_types
-    type:
-      - 'null'
-      - boolean
-    doc: Allow unknown segment types when assigning segment types.
-    inputBinding:
-      position: 104
-      prefix: --allow_unknown_seg_types
-  - id: allowed_mismatches
-    type:
-      - 'null'
-      - int
-    doc: For DynamicFoldRecords, allowed number of mismatches with a HybRecord.
-    inputBinding:
-      position: 104
-      prefix: --allowed_mismatches
-  - id: analysis_name
+      prefix: -o
+  - id: out_dir
     type:
       - 'null'
       - string
-    doc: Name / title of analysis data.
+    doc: "Name of a directory for output files (created before the run). Defaults to the current working directory."
     inputBinding:
-      position: 104
-      prefix: --analysis_name
+      position: 3
+      prefix: -d
+  - id: out_suffix
+    type:
+      - 'null'
+      - string
+    doc: "Suffix to add to the name of output files, before any file-type suffix (default: none)."
+    inputBinding:
+      position: 3
+      prefix: -u
   - id: analysis_types
     type:
       - 'null'
       - type: array
         items: string
-    doc: Analysis to perform on input hyb and fold files.
-      - fold
+    doc: "Analysis to perform on input hyb and fold files (energy, type, mirna, target, fold; default: fold)."
     inputBinding:
-      position: 104
-      prefix: --analysis_types
-  - id: custom_flags
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Custom flags to allow in addition to those specified in the hybkit 
-      specification.
-    inputBinding:
-      position: 104
-      prefix: --custom_flags
-  - id: error_checks
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: 'Error checks for simultaneous HybFile and FoldFile parsing. Options: "hybrecord_indel":
-      Error for HybRecord objects where one/both sequences have insertions/deletions
-      in alignment, which prevents matching of sequences; "foldrecord_nofold": Error
-      when failure in reading a fold_record object; "max_mismatch": Error when mismatch
-      between hybrecord and foldrecord sequences is greater than FoldRecord "allowed_mismatches"
-      setting; "energy_mismatch": Error when a mismatch exists between HybRecord and
-      FoldRecord energy values.'
-    default:
-      - hybrecord_indel
-      - foldrecord_nofold
-      - max_mismatch
-      - energy_mismatch
-    inputBinding:
-      position: 104
-      prefix: --error_checks
-  - id: error_mode
+      position: 3
+      prefix: -a
+  - id: analysis_name
     type:
       - 'null'
       - string
-    doc: "Mode for handling errors during reading of HybFiles (overridden by HybFoldIter.settings['iter_error_mode']
-      when using HybFoldIter). Options: \"raise\": Raise an error when encountered
-      and exit program ; \"warn_return\": Print a warning and return the error_value
-      ; \"return\": Return the error value with no program output. record is encountered."
+    doc: "Name / title of analysis data."
     inputBinding:
-      position: 104
-      prefix: --error_mode
-  - id: fold_placeholder
-    type:
-      - 'null'
-      - string
-    doc: Placeholder character/string for missing data for reading/writing fold 
-      records.
-    inputBinding:
-      position: 104
-      prefix: --fold_placeholder
-  - id: hyb_placeholder
-    type:
-      - 'null'
-      - string
-    doc: placeholder character/string for missing data in hyb files.
-    inputBinding:
-      position: 104
-      prefix: --hyb_placeholder
-  - id: hybformat_id
-    type:
-      - 'null'
-      - boolean
-    doc: 'The Hyb Software Package places further information in the "id" field of
-      the hybrid record that can be used to infer the number of contained read counts.
-      When set to True, the identifiers will be parsed as: "<read_id>_<read_count>"'
-    inputBinding:
-      position: 104
-      prefix: --hybformat_id
-  - id: hybformat_ref
-    type:
-      - 'null'
-      - boolean
-    doc: 'The Hyb Software Package uses a reference database with identifiers that
-      contain sequence type and other sequence information. When set to True, all
-      hyb file identifiers will be parsed as: "<gene_id>_<transcript_id>_<gene_name>_<seg_type>"'
-    inputBinding:
-      position: 104
-      prefix: --hybformat_ref
-  - id: iter_error_mode
-    type:
-      - 'null'
-      - string
-    doc: 'Mode for handling errors found during error checks. Overrides HybRecord
-      "error_mode" setting when using HybFoldIter. Options: "raise": Raise an error
-      when encountered; "warn_return": Print a warning and return the value; "warn_skip":
-      Print a warning and continue to the next iteration; "skip": Continue to the
-      next iteration without any output; "return": return the value without any error
-      output;'
-    inputBinding:
-      position: 104
-      prefix: --iter_error_mode
+      position: 3
+      prefix: -n
   - id: make_plots
     type:
       - 'null'
-      - boolean
-    doc: Create plots of analysis output.
+      - {type: enum, symbols: ["True", "False"]}
+    doc: "Create plots of analysis output: True or False (default: True)."
     inputBinding:
-      position: 104
-      prefix: --make_plots
-  - id: max_sequential_skips
+      position: 3
+      prefix: -p
+  - id: quant_mode
     type:
       - 'null'
-      - int
-    doc: Maximum number of record(-pairs) to skip in a row. Limited as several 
-      sequential skips usually indicates an issue with record formatting or a 
-      desynchronization between files.
+      - {type: enum, symbols: ["single", "reads", "records"]}
+    doc: "Method for counting records (default: single)."
     inputBinding:
-      position: 104
-      prefix: --max_sequential_skips
+      position: 3
+      prefix: --quant_mode
+  - id: out_delim
+    type:
+      - 'null'
+      - string
+    doc: "Delimiter-string to place between fields in analysis output (default: ,)."
+    inputBinding:
+      position: 3
+      prefix: --out_delim
   - id: mirna_types
     type:
       - 'null'
       - type: array
         items: string
-    doc: '"seg_type" fields identifying a miRNA'
-    default:
-      - miRNA
-      - microRNA
+    doc: "\"seg_type\" fields identifying a miRNA (default: miRNA, microRNA)"
     inputBinding:
-      position: 104
+      position: 103
       prefix: --mirna_types
-  - id: out_delim
+  - id: custom_flags
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: "Custom flags to allow in addition to those specified in the hybkit specification."
+    inputBinding:
+      position: 103
+      prefix: --custom_flags
+  - id: hyb_placeholder
     type:
       - 'null'
       - string
-    doc: Delimiter-string to place between fields in analysis output.
+    doc: "Placeholder character/string for missing data in hyb files (default: .)."
     inputBinding:
-      position: 104
-      prefix: --out_delim
-  - id: out_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Path to directory for output of files. Defaults to the current working 
-      directory.
-    inputBinding:
-      position: 104
-      prefix: --out_dir
-  - id: out_suffix
-    type:
-      - 'null'
-      - string
-    doc: Suffix to add to the name of output files, before any file- or 
-      analysis-specific suffixes. The file-type appropriate suffix will be added
-      automatically.
-    inputBinding:
-      position: 104
-      prefix: --out_suffix
-  - id: quant_mode
-    type:
-      - 'null'
-      - string
-    doc: 'Method for counting records. Options: "single": Count each record as a single
-      entry; "reads": Use the number of reads per hyb record as the count (may contain
-      PCR duplicates); "records": Count the number of records represented by each
-      hyb record entry (1 for "unmerged" records, >= 1 for "merged" records)'
-    inputBinding:
-      position: 104
-      prefix: --quant_mode
+      position: 103
+      prefix: --hyb_placeholder
   - id: reorder_flags
     type:
       - 'null'
-      - boolean
-    doc: Re-order flags to the hybkit-specification order when writing hyb 
-      records.
+      - {type: enum, symbols: ["True", "False"]}
+    doc: "Re-order flags to the hybkit-specification order when writing hyb records: True or False (default: True)."
     inputBinding:
-      position: 104
+      position: 103
       prefix: --reorder_flags
-  - id: seq_type
+  - id: allow_undefined_flags
+    type:
+      - 'null'
+      - {type: enum, symbols: ["True", "False"]}
+    doc: "Allow use of flags not defined in the hybkit-specification order when reading and writing hyb records: True or False (default: False)."
+    inputBinding:
+      position: 103
+      prefix: --allow_undefined_flags
+  - id: allow_unknown_seg_types
+    type:
+      - 'null'
+      - {type: enum, symbols: ["True", "False"]}
+    doc: "Allow unknown segment types when assigning segment types: True or False (default: False)."
+    inputBinding:
+      position: 103
+      prefix: --allow_unknown_seg_types
+  - id: hybformat_id
+    type:
+      - 'null'
+      - {type: enum, symbols: ["True", "False"]}
+    doc: "Parse hyb record identifiers as \"<read_id>_<read_count>\": True or False (default: False)."
+    inputBinding:
+      position: 103
+      prefix: --hybformat_id
+  - id: hybformat_ref
+    type:
+      - 'null'
+      - {type: enum, symbols: ["True", "False"]}
+    doc: "Parse hyb file identifiers as \"<gene_id>_<transcript_id>_<gene_name>_<seg_type>\": True or False (default: False)."
+    inputBinding:
+      position: 103
+      prefix: --hybformat_ref
+  - id: allowed_mismatches
+    type:
+      - 'null'
+      - int
+    doc: "For DynamicFoldRecords, allowed number of mismatches with a HybRecord (default: 0)."
+    inputBinding:
+      position: 103
+      prefix: --allowed_mismatches
+  - id: fold_placeholder
     type:
       - 'null'
       - string
-    doc: 'Type of fold record object to use. Options: "static": FoldRecord, requires
-      an exact sequence match to be paired with a HybRecord; "dynamic": DynamicFoldRecord,
-      requires a sequence match to the "dynamic" annotated regions of a HybRecord,
-      and may be shorter/longer than the original sequence.'
+    doc: "Placeholder character/string for missing data for reading/writing fold records (default: .)."
     inputBinding:
-      position: 104
-      prefix: --seq_type
-  - id: silent
+      position: 103
+      prefix: --fold_placeholder
+  - id: seq_type
     type:
       - 'null'
-      - boolean
-    doc: Print no output during run.
+      - {type: enum, symbols: ["static", "dynamic"]}
+    doc: "Type of fold record object to use: \"static\" (exact sequence match) or \"dynamic\" (default: static)."
     inputBinding:
-      position: 104
-      prefix: --silent
+      position: 103
+      prefix: --seq_type
+  - id: error_mode
+    type:
+      - 'null'
+      - {type: enum, symbols: ["raise", "warn_return", "return"]}
+    doc: "Mode for handling errors during reading of HybFiles (default: raise)."
+    inputBinding:
+      position: 103
+      prefix: --error_mode
+  - id: error_checks
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: "Error checks for simultaneous HybFile and FoldFile parsing: hybrecord_indel, foldrecord_nofold, max_mismatch, energy_mismatch."
+    inputBinding:
+      position: 103
+      prefix: --error_checks
+  - id: iter_error_mode
+    type:
+      - 'null'
+      - {type: enum, symbols: ["raise", "warn_return", "warn_skip", "skip", "return"]}
+    doc: "Mode for handling errors found during error checks (default: warn_skip)."
+    inputBinding:
+      position: 103
+      prefix: --iter_error_mode
+  - id: max_sequential_skips
+    type:
+      - 'null'
+      - int
+    doc: "Maximum number of record(-pairs) to skip in a row (default: 100)."
+    inputBinding:
+      position: 103
+      prefix: --max_sequential_skips
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Print verbose output during run.
+    doc: "Print verbose output during run."
     inputBinding:
-      position: 104
+      position: 103
       prefix: --verbose
+  - id: silent
+    type:
+      - 'null'
+      - boolean
+    doc: "Print no output during run."
+    inputBinding:
+      position: 103
+      prefix: --silent
 outputs:
-  - id: stdout
+  - id: out_csv
+    type:
+      type: array
+      items: File
+    doc: Analysis tables written to the working directory.
+    outputBinding:
+      glob: '*.csv'
+  - id: out_plots
+    type:
+      type: array
+      items: File
+    doc: Plots written to the working directory.
+    outputBinding:
+      glob: '*.png'
+  - id: out_directory
+    type:
+      - 'null'
+      - Directory
+    doc: The directory given with out_dir, with all output files.
+    outputBinding:
+      glob: $(inputs.out_dir)
+  - id: log
     type: stdout
-    doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.out_dir ? {'class': 'Directory', 'basename': inputs.out_dir, 'listing': []} : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybkit:0.3.6--pyhdfd78af_0
-stdout: hybkit_hyb_analyze.out

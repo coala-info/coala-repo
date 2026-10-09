@@ -2,68 +2,82 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: humann2_regroup_table
 label: humann2_humann2_regroup_table
-doc: "Regroup HUMAnN2 table features (e.g. convert UniRef50 gene families to GO terms
-  or KO groups).\n\nTool homepage: http://huttenhower.sph.harvard.edu/humann2"
+doc: "HUMAnN utility for regrouping table features. Given a table of feature values and a mapping of groups to component features, produce a new table with group values in place of feature values.\n\nTool homepage: http://huttenhower.sph.harvard.edu/humann2"
 inputs:
-  - id: custom
-    type:
-      - 'null'
-      - File
-    doc: A custom groups file
+  - id: input
+    type: File
+    doc: "Original output table (tsv or biom format)"
     inputBinding:
       position: 101
-      prefix: --custom
-  - id: function
-    type:
-      - 'null'
-      - string
-    doc: The function to use for regrouping (sum, mean, max)
-    inputBinding:
-      position: 101
-      prefix: --function
+      prefix: "--input"
   - id: groups
     type:
       - 'null'
       - string
-    doc: The built-in groups to use (e.g., uniprot50, uniprot90, infogo1000, 
-      eggnog, ko, level2, pathway)
+    doc: "Built-in grouping options: uniref90_rxn or uniref50_rxn (needs the utility mapping databases)"
     inputBinding:
-      position: 101
-      prefix: --groups
-  - id: input
-    type: File
-    doc: The HUMAnN2 table to regroup
-    inputBinding:
-      position: 101
-      prefix: --input
-  - id: precision
+      position: 102
+      prefix: "--groups"
+  - id: custom
     type:
       - 'null'
-      - boolean
-    doc: If set, print the output with more decimal places
+      - File
+    doc: "Custom groups file (.tsv or .tsv.gz format)"
     inputBinding:
-      position: 101
-      prefix: --precision
+      position: 103
+      prefix: "--custom"
   - id: reversed
     type:
       - 'null'
       - boolean
-    doc: If set, the groups file is reversed (mapping from group to feature)
+    doc: "Custom groups file is reversed: mapping from features to groups"
     inputBinding:
-      position: 101
-      prefix: --reversed
+      position: 104
+      prefix: "--reversed"
+  - id: function
+    type:
+      - 'null'
+      - string
+    doc: "How to combine grouped features: sum or mean (default sum)"
+    inputBinding:
+      position: 105
+      prefix: "--function"
+  - id: precision
+    type:
+      - 'null'
+      - int
+    doc: "Decimal places to round to after applying function (default: don't round)"
+    inputBinding:
+      position: 106
+      prefix: "--precision"
+  - id: ungrouped
+    type:
+      - 'null'
+      - string
+    doc: "Include an 'UNGROUPED' group to capture features that did not belong to other groups: Y or N (default Y)"
+    inputBinding:
+      position: 107
+      prefix: "--ungrouped"
+  - id: protected
+    type:
+      - 'null'
+      - string
+    doc: "Carry through protected features, such as 'UNMAPPED': Y or N (default Y)"
+    inputBinding:
+      position: 108
+      prefix: "--protected"
   - id: output_path
     type: string
-    doc: Output or path parameter `output_path`
+    doc: "Path for modified output table"
     inputBinding:
-      position: 102
-      prefix: --output
+      position: 109
+      prefix: "--output"
 outputs:
   - id: output
     type: File
-    doc: The path to write the new regrouped table
+    doc: "regrouped table"
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: '$(inputs.output_path)'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

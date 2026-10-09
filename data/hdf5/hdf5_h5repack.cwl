@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: Input HDF5 File
     inputBinding:
-      position: 1
+      position: 201
   - id: alignment
     type:
       - 'null'
@@ -16,7 +16,8 @@ inputs:
     doc: Alignment value for H5Pset_alignment
     inputBinding:
       position: 102
-      prefix: --alignment
+      prefix: --alignment=
+      separate: false
   - id: block_size
     type:
       - 'null'
@@ -24,7 +25,8 @@ inputs:
     doc: Size of user block to be added
     inputBinding:
       position: 102
-      prefix: --block
+      prefix: --block=
+      separate: false
   - id: compact
     type:
       - 'null'
@@ -32,7 +34,8 @@ inputs:
     doc: Maximum number of links in header messages
     inputBinding:
       position: 102
-      prefix: --compact
+      prefix: --compact=
+      separate: false
   - id: enable_error_stack
     type:
       - 'null'
@@ -46,10 +49,12 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Filter type
+        inputBinding:
+          prefix: --filter=
+          separate: false
+    doc: Filter type, for example GZIP=1 or SHUF. Repeat to add several filters.
     inputBinding:
       position: 102
-      prefix: --filter
   - id: filter_file
     type:
       - 'null'
@@ -57,7 +62,8 @@ inputs:
     doc: Name of file E with the -f and -l options
     inputBinding:
       position: 102
-      prefix: --file
+      prefix: --file=
+      separate: false
   - id: fs_pagesize
     type:
       - 'null'
@@ -65,7 +71,8 @@ inputs:
     doc: File space page size for H5Pset_file_space_page_size
     inputBinding:
       position: 102
-      prefix: --fs_pagesize
+      prefix: --fs_pagesize=
+      separate: false
   - id: fs_persist
     type:
       - 'null'
@@ -73,7 +80,8 @@ inputs:
     doc: Persisting or not persisting free-space for H5Pset_file_space_strategy
     inputBinding:
       position: 102
-      prefix: --fs_persist
+      prefix: --fs_persist=
+      separate: false
   - id: fs_strategy
     type:
       - 'null'
@@ -81,7 +89,8 @@ inputs:
     doc: File space management strategy for H5Pset_file_space_strategy
     inputBinding:
       position: 102
-      prefix: --fs_strategy
+      prefix: --fs_strategy=
+      separate: false
   - id: fs_threshold
     type:
       - 'null'
@@ -89,7 +98,8 @@ inputs:
     doc: Free-space section threshold for H5Pset_file_space_strategy
     inputBinding:
       position: 102
-      prefix: --fs_threshold
+      prefix: --fs_threshold=
+      separate: false
   - id: high_bound
     type:
       - 'null'
@@ -98,7 +108,8 @@ inputs:
       objects in the file
     inputBinding:
       position: 102
-      prefix: --high
+      prefix: --high=
+      separate: false
   - id: indexed
     type:
       - 'null'
@@ -106,7 +117,8 @@ inputs:
     doc: Minimum number of links in the indexed format
     inputBinding:
       position: 102
-      prefix: --indexed
+      prefix: --indexed=
+      separate: false
   - id: latest
     type:
       - 'null'
@@ -123,7 +135,8 @@ inputs:
     doc: Layout type
     inputBinding:
       position: 102
-      prefix: --layout
+      prefix: --layout=
+      separate: false
   - id: low_bound
     type:
       - 'null'
@@ -132,7 +145,8 @@ inputs:
       in the file
     inputBinding:
       position: 102
-      prefix: --low
+      prefix: --low=
+      separate: false
   - id: metadata_block_size
     type:
       - 'null'
@@ -140,7 +154,8 @@ inputs:
     doc: Metadata block size for H5Pset_meta_block_size
     inputBinding:
       position: 102
-      prefix: --metadata_block_size
+      prefix: --metadata_block_size=
+      separate: false
   - id: minimum_dataset_size
     type:
       - 'null'
@@ -148,7 +163,8 @@ inputs:
     doc: Do not apply the filter to datasets smaller than M
     inputBinding:
       position: 102
-      prefix: --minimum
+      prefix: --minimum=
+      separate: false
   - id: native
     type:
       - 'null'
@@ -164,7 +180,8 @@ inputs:
     doc: Sort groups and attributes by index Q
     inputBinding:
       position: 102
-      prefix: --sort_by
+      prefix: --sort_by=
+      separate: false
   - id: sort_order
     type:
       - 'null'
@@ -172,7 +189,8 @@ inputs:
     doc: Sort groups and attributes by order Z
     inputBinding:
       position: 102
-      prefix: --sort_order
+      prefix: --sort_order=
+      separate: false
   - id: ssize
     type:
       - 'null'
@@ -180,7 +198,8 @@ inputs:
     doc: Shared object header message minimum size
     inputBinding:
       position: 102
-      prefix: --ssize
+      prefix: --ssize=
+      separate: false
   - id: threshold
     type:
       - 'null'
@@ -188,7 +207,8 @@ inputs:
     doc: Threshold value for H5Pset_alignment
     inputBinding:
       position: 102
-      prefix: --threshold
+      prefix: --threshold=
+      separate: false
   - id: ublock_file
     type:
       - 'null'
@@ -196,7 +216,8 @@ inputs:
     doc: Name of file U with user block data to be added
     inputBinding:
       position: 102
-      prefix: --ublock
+      prefix: --ublock=
+      separate: false
   - id: verbose
     type:
       - 'null'
@@ -205,12 +226,17 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output HDF5 file name
+    inputBinding:
+      position: 202
 outputs:
   - id: output_file
     type: File
     doc: Output HDF5 File
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hdf5:1.10.4

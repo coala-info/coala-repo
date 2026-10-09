@@ -67,6 +67,23 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: downloaded
+    type:
+      - 'null'
+      - File
+      - Directory
+    doc: Downloaded data object or collection
+    outputBinding:
+      glob: $(inputs.local_path)
+  - id: metadata_file
+    type:
+      - 'null'
+      - File
+    doc: Metadata file that is created with --metadata
+    outputBinding:
+      glob: $(inputs.metadata)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ibridges:2.0.1--pyhdfd78af_0

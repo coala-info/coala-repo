@@ -1,5 +1,16 @@
 # hybran CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hybran | PASS |  |
+| hybran_compare | Failed | tool bug: crashes with a TypeError (None joined in a report line) when the two annotations differ; works only on identical annotations |
+| hybran_defuse | PASS |  |
+| hybran_onegene | PASS | ran on a single reference (no duplicate genes), so the unifications table is empty and the annotation is copied unchanged |
+| hybran_standardize | PASS |  |
+| hybran_synergize | Failed | tool bug: on a hybran output directory it crashes with AttributeError 'function' object has no attribute 'glob'; the GenBank mode fails with KeyError 'gene' on hybran's own reference files |
+
 ## hybran
 
 ### Tool Description
@@ -150,3 +161,191 @@ Prokka Options:
   --evalue EVALUE       Similarity e-value cut-off (default: 1e-09)
 ```
 
+## hybran_standardize
+
+### Tool Description
+Apply standard naming conventions to Hybran output.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hybran:1.10--pyhdfd78af_0
+- **Homepage**: https://gitlab.com/LPCDRP/hybran
+- **Package**: https://anaconda.org/channels/bioconda/packages/hybran/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hybran standardize [-h] [-p ORF_PREFIX] [-o OUTPUT]
+                          [-u UNIFICATIONS_FILE] [-r]
+                          annotations [annotations ...]
+
+positional arguments:
+  annotations           Directory, space-separated list of GBKs, or a FOFN
+                        containing all annotated genomes. If you pass a hybran
+                        output directory here, no other arguments will be
+                        required. Otherwise, you will need to provide the
+                        location of the unifications file via
+                        -u/--unifications-file.
+
+options:
+  -h, --help            show this help message and exit
+  -p ORF_PREFIX, --orf-prefix ORF_PREFIX
+                        prefix for generic gene names (*not* locus tags)
+                        (default: HYBRA)
+  -o OUTPUT, --output OUTPUT
+                        Directory to output all new annotation files.
+                        (default: .)
+  -u UNIFICATIONS_FILE, --unifications-file UNIFICATIONS_FILE
+                        reference annotation's unifications.tsv file produced
+                        by hybran onegene. (default: None)
+  -r, --ref-names-only  Do not use gene names supplied by the ab initio
+                        caller. (default: False)
+```
+
+## hybran_onegene
+
+### Tool Description
+Unify names of gene duplicates.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hybran:1.10--pyhdfd78af_0
+- **Homepage**: https://gitlab.com/LPCDRP/hybran
+- **Package**: https://anaconda.org/channels/bioconda/packages/hybran/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hybran onegene [-h] [-p ORF_PREFIX] [-o OUTPUT] [-i IDENTITY_THRESHOLD]
+                      [-c COVERAGE_THRESHOLD] [-t FIRST_GBK]
+                      annotations [annotations ...]
+
+positional arguments:
+  annotations           Directory, space-separated list of GBKs, or a FOFN
+                        containing all annotated genomes.
+
+options:
+  -h, --help            show this help message and exit
+  -p ORF_PREFIX, --orf-prefix ORF_PREFIX
+                        prefix for unifying gene names (*not* locus tags).
+                        Such names will be applied to all sets of highly
+                        conserved genes if they don't already have a name or
+                        if they have discrepant names. Whatever you pass here
+                        will be sandwiched by REF and X. (i.e., the default
+                        HYBRA will be transformed into REFHYBRAX and then
+                        used). (default: HYBRA)
+  -o OUTPUT, --output OUTPUT
+                        Directory to output all new annotation files.
+                        (default: .)
+  -i IDENTITY_THRESHOLD, --identity-threshold IDENTITY_THRESHOLD
+                        Percent sequence identity threshold to use for
+                        considering sequences as redundant. (default: 99)
+  -c COVERAGE_THRESHOLD, --coverage-threshold COVERAGE_THRESHOLD
+                        Percent alignment coverage threshold to use for
+                        considering sequences as redundant. (default: 99)
+  -t FIRST_GBK, --first-reference FIRST_GBK
+                        Reference name or file name whose locus tags should be
+                        used as unified names for conserved copies in the
+                        others. Default is the annotation with the most named
+                        CDSs. If you specify a file here that is not in your
+                        input list, it will be added. (default: None)
+```
+
+## hybran_compare
+
+### Tool Description
+Compare two annotations of the same genome.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hybran:1.10--pyhdfd78af_0
+- **Homepage**: https://gitlab.com/LPCDRP/hybran
+- **Package**: https://anaconda.org/channels/bioconda/packages/hybran/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hybran compare [-h] [-o OUTDIR] annotations annotations
+
+positional arguments:
+  annotations           The two annotation files to compare, in genbank
+                        format.
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTDIR, --outdir OUTDIR
+                        Directory to output the results of the comparison.
+                        (default: .)
+```
+
+## hybran_synergize
+
+### Tool Description
+Correct annotations using hints from discordant synteny (experimental).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hybran:1.10--pyhdfd78af_0
+- **Homepage**: https://gitlab.com/LPCDRP/hybran
+- **Package**: https://anaconda.org/channels/bioconda/packages/hybran/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hybran synergize [-h] [-r [REFERENCES ...]] [-s SEQ_DIR] [-o OUTDIR]
+                        [-n NPROC] [-d] [-i BLAST_MIN_IDENTITY]
+                        [-c BLAST_MIN_COVERAGE]
+                        annotations [annotations ...]
+
+positional arguments:
+  annotations           hybran output directory, blocks_coords BED file,
+                        Genbank annotation files, or the directory/directories
+                        containing them.If you pass a hybran output directory,
+                        you will not need to pass -r/--references, -s/--seq-
+                        dir, or --genetic-code.
+
+options:
+  -h, --help            show this help message and exit
+  -r [REFERENCES ...], --references [REFERENCES ...]
+                        Directory, a space-separated list of GBKs, or a FOFN
+                        containing Genbank files of reference
+                        annotations.Required if not using hybran output
+                        directory. (default: None)
+  -s SEQ_DIR, --seq-dir SEQ_DIR
+                        Directory containing corresponding genome sequence
+                        files in fasta format. (default: None)
+  -o OUTDIR, --outdir OUTDIR
+                        Directory to output the results of the correction.
+                        (default: .)
+  -n NPROC, --nproc NPROC
+                        number of parallel processes to use (default: 1)
+  -d, --debug           write debug logs (default: False)
+  -i BLAST_MIN_IDENTITY, --blast-min-identity BLAST_MIN_IDENTITY
+                        Minimum percent sequence identity for matching genes
+                        (default: 80)
+  -c BLAST_MIN_COVERAGE, --blast-min-coverage BLAST_MIN_COVERAGE
+                        Minimum percent sequence alignment coverage for
+                        matching genes (default: 80)
+```
+
+## hybran_defuse
+
+### Tool Description
+Separate gene fusion annotations into single gene annotations.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hybran:1.10--pyhdfd78af_0
+- **Homepage**: https://gitlab.com/LPCDRP/hybran
+- **Package**: https://anaconda.org/channels/bioconda/packages/hybran/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hybran defuse [-h] [-o OUTPUT] annotations_dir
+
+positional arguments:
+  annotations_dir       Results directory from the Hybran run whose gene
+                        fusions you wish to defuse.
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        Directory to output all new annotation files.
+                        (default: .)
+```

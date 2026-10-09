@@ -1,5 +1,15 @@
 # hmnqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hmnqc_depthmin | PASS |  |
+| hmnqc_depthtarget | PASS |  |
+| hmnqc_extractvcf | PASS |  |
+| hmnqc_infersexe | Failed | tool bug: hmnqc 0.5.1 crashes with AttributeError on a misspelled option name (paramter_simple) |
+| hmnqc_quality | PASS | matches expected json except three samtools flagstat keys the installed version does not emit |
+
 ## hmnqc_quality
 
 ### Tool Description

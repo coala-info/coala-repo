@@ -1,5 +1,12 @@
 # iclipro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| iclipro_iCLIPro | Failed | image problem: iCLIPro crashes in the read overlap heatmap step (matplotlib 2.2.2 rejects shading='faceted') and writes no report |
+| iclipro_iCLIPro_bam_splitter | PASS |  |
+
 ## iclipro_iCLIPro
 
 ### Tool Description

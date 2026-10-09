@@ -1,5 +1,11 @@
 # hla-asm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hla-asm_HLA-ASM.pl | Not completed | needs the HLA*ASM reference data package (large Dropbox download) and a human MHC assembly; not available here |
+
 ## hla-asm_HLA-ASM.pl
 
 ### Tool Description

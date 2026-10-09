@@ -8,6 +8,9 @@ doc: "Call HLA loci from an aligned BAM of HiFi reads\n\nTool homepage: https://
 inputs:
   - id: aligned_reads
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Input assembly aligned to GRCh38 (no alts)
     inputBinding:
       position: 101
@@ -37,6 +40,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --loci
+      itemSeparator: ','
   - id: log_level
     type:
       - 'null'
@@ -81,7 +85,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output prefix
+    doc: Output prefix, with a directory part (for example ./sample); the directory must exist
     inputBinding:
       position: 101
       prefix: --out_prefix
@@ -120,8 +124,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101

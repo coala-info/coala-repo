@@ -1,5 +1,30 @@
 # hyphy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hyphy_absrel | PASS |  |
+| hyphy_bgm | PASS |  |
+| hyphy_busted | PASS |  |
+| hyphy_contrast-fel | PASS |  |
+| hyphy_fade | PASS |  |
+| hyphy_fel | PASS |  |
+| hyphy_fubar | PASS |  |
+| hyphy_gard | PASS | needs ENV=TOLERATE_NUMERICAL_ERRORS=1; set through the env input, otherwise it stops with an internal numerical error |
+| hyphy_mcc | PASS | synthetic data: real alignment with clade labels (Clade1, Clade2) added by hand to a real tree, as the tool requires |
+| hyphy_mclk | PASS |  |
+| hyphy_meme | PASS |  |
+| hyphy_mgvsgy | PASS |  |
+| hyphy_molerate | PASS |  |
+| hyphy_mss | PASS | synthetic data: NEXUS alignment files assembled by hand from real galaxy test sequences and trees, because the tool needs the tree inside each alignment file |
+| hyphy_mss-ga | PASS | synthetic data: NEXUS alignment files assembled by hand from real galaxy test sequences and trees, because the tool needs the tree inside each alignment file |
+| hyphy_mss-ga-processor | PASS |  |
+| hyphy_mt | Failed | tool bug: hyphy mt crashes with a glibc heap corruption error (exit 139) after the first model on every input tried |
+| hyphy_prime | PASS |  |
+| hyphy_relax | PASS | single-alignment mode only; the multiple-files mode was not tested |
+| hyphy_slac | PASS |  |
+
 ## hyphy_meme
 
 ### Tool Description
@@ -742,6 +767,843 @@ full-model
 branch-level-analysis
 	Perform test clade branch-level testing
 	default value: No
+```
+
+## hyphy_fel
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+alignment [required]
+	An in-frame codon alignment in one of the formats supported by HyPhy
+
+tree [conditionally required]
+	A phylogenetic tree (optionally annotated with {})
+	applies to: Please select a tree file for the data:
+
+branches
+	Branches to test. Options: 'All' (default), 'Internal', 'Leaves', 'Unlabeled', 'fg' (labeled branches), comma-separated branch names (e.g. 'Node1,Node2'), or regex patterns (e.g. '/^human/i')
+	default value: All
+
+srv
+	Include synonymous rate variation in the model
+	default value: Yes
+
+multiple-hits
+	Include support for multiple nucleotide substitutions
+	default value: None
+
+pvalue
+	The p-value threshold to use when testing for selection
+	default value: 0.1
+
+ci
+	Compute profile likelihood confidence intervals for each variable site
+	default value: No
+
+limit-to-sites
+	Only analyze sites whose 1-based indices match the following list (null to skip)
+	default value: null
+
+save-lf-for-sites
+	For sites whose 1-based indices match the following list, write out likelihood function snapshots (null to skip)
+	default value: null
+
+resample
+	[Advanced setting, will result in MUCH SLOWER run time] Perform parametric bootstrap resampling to derive site-level null LRT distributions up to this many replicates per site. Recommended use for small to medium (<30 sequences) datasets
+	default value: 0
+
+output
+	Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'FEL.json')
+	default value: fel.codon_data_info[terms.json.json] [computed at run time]
+
+site-multihit
+	Estimate multiple hit rates for each site
+	default value: Estimate
+
+precision
+	Optimization precision settings for preliminary fits
+	default value: standard
+
+intermediate-fits
+	Use/save parameter estimates from 'initial-guess' model fits to a JSON file (default is not to save)
+	default value: /dev/null
+
+kill-zero-lengths
+	Automatically delete internal zero-length branches for computational efficiency (will not affect results otherwise)
+	default value: Yes
+
+full-model
+	Perform branch length re-optimization under the full codon model
+	default value: Yes
+```
+
+## hyphy_slac
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+alignment [required]
+	An in-frame codon alignment in one of the formats supported by HyPhy
+
+tree [conditionally required]
+	A phylogenetic tree (optionally annotated with {})
+	applies to: Please select a tree file for the data:
+
+branches
+	Branches to test
+	default value: All
+
+samples
+	number of samples to assess ancestral reconstruction uncertainty
+	default value: 100
+
+pvalue
+	The p-value threshold to use when testing for selection
+	default value: 0.1
+
+output
+	Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'SLAC.json')
+	default value: slac.codon_data_info[terms.json.json] [computed at run time]
+
+intermediate-fits
+	Use/save parameter estimates from 'initial-guess' model fits to a JSON file (default is not to save)
+	default value: /dev/null
+
+kill-zero-lengths
+	Automatically delete internal zero-length branches for computational efficiency (will not affect results otherwise)
+	default value: Yes
+```
+
+## hyphy_fubar
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+alignment [required]
+	An in-frame codon alignment in one of the formats supported by HyPhy
+
+tree [conditionally required]
+	A phylogenetic tree (optionally annotated with {})
+	applies to: Please select a tree file for the data:
+
+cache
+	Save FUBAR cache to [default is alignment+.FUBAR.cache]
+	default value: fubar.path.base+".FUBAR.cache" [computed at run time]
+
+output
+	Save FUBAR results (JSON) to [default is alignment+.FUBAR.json]
+	default value: fubar.codon_data_info[terms.data.file]+".FUBAR.json" [computed at run time]
+
+grid
+	The number of grid points
+	default value: 20
+
+method
+	Inference method to use
+	default value: `terms.fubar.methods.VB0`
+
+chains
+	How many MCMC chains to run
+	default value: fubar.run_settings["chains"] [computed at run time]
+
+chain-length
+	MCMC chain length
+	default value: fubar.run_settings["chain-length"] [computed at run time]
+
+burn-in
+	MCMC chain burn in
+	default value: fubar.run_settings["chain-length"]$2 [computed at run time]
+
+samples
+	MCMC samples to draw
+	default value: fubar.run_settings["samples"] [computed at run time]
+
+concentration_parameter
+	The concentration parameter of the Dirichlet prior
+	default value: fubar.run_settings["concentration"] [computed at run time]
+
+non-zero
+	Enforce non-zero synonymous rates on the grid to enable dN/dS calculations
+	default value: No
+
+intermediate-fits
+	Use/save parameter estimates from 'initial-guess' model fits to a JSON file (default is not to save)
+	default value: /dev/null
+
+kill-zero-lengths
+	Automatically delete internal zero-length branches for computational efficiency (will not affect results otherwise)
+	default value: Yes
+```
+
+## hyphy_busted
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+alignment [required]
+	An in-frame codon alignment in one of the formats supported by HyPhy
+
+tree [conditionally required]
+	A phylogenetic tree (optionally annotated with {})
+	applies to: Please select a tree file for the data:
+
+branches
+	Branches to test
+	default value: All
+
+srv
+	Include synonymous rate variation in the model
+	default value: Yes
+
+rates
+	The number omega rate classes to include in the model [1-10, default 3]
+	default value: busted.rate_classes [computed at run time]
+
+multiple-hits
+	Include support for multiple nucleotide substitutions
+	default value: None
+
+mss
+	Include support for multiple synonymous rate class substitutions
+	default value: No
+
+mss-type
+	How to partition synonymous codons into classes
+	default value: File
+
+mss-reference-rate
+	Normalize relative to these rates
+	default value: synonymous
+
+mss-classes [required]
+	How many codon rate classes
+
+mss-file [required]
+	File defining the model partition
+
+mss-neutral [required]
+	Designation for the neutral substitution rate
+
+mss-file [required]
+	File defining the model partition
+
+mss-neutral [required]
+	Designation for the neutral substitution rate
+
+mss-file [required]
+	File defining empirical rates for each pair of codons
+
+syn-rates
+	The number alpha rate classes to include in the model [1-10, default 3]
+	default value: busted.synonymous_rate_classes [computed at run time]
+
+error-sink
+	Include a rate class to capture misalignment artifacts
+	default value: No
+
+error-sink-bound
+	[Advanced setting] Set the lower bound for error-class dN/dS
+	default value: 100
+
+error-sink-weight
+	[Advanced setting] Set the maximum weight for error-class dN/dS
+	default value: 0.01
+
+grid-size
+	The number of points in the initial distributional guess for likelihood fitting
+	default value: 250 [computed at run time]
+
+starting-points
+	The number of initial random guesses to seed rate values optimization
+	default value: 1 [computed at run time]
+
+output
+	Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'BUSTED.json')
+	default value: busted.codon_data_info[terms.json.json] [computed at run time]
+
+intermediate-fits
+	Use/save parameter estimates from 'initial-guess' model fits to a JSON file (default is not to save)
+	default value: /dev/null
+
+kill-zero-lengths
+	Automatically delete internal zero-length branches for computational efficiency (will not affect results otherwise)
+	default value: Yes
+
+save-fit
+	Save BUSTED model fit to this file (default is not to save)
+	default value: /dev/null
+```
+
+## hyphy_absrel
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+blb
+	[Advanced option] Bag of little bootstrap alignment resampling rate
+	default value: 1.0 [computed at run time]
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+alignment [required]
+	An in-frame codon alignment in one of the formats supported by HyPhy
+
+tree [conditionally required]
+	A phylogenetic tree (optionally annotated with {})
+	applies to: Please select a tree file for the data:
+
+branches
+	Branches to test
+	default value: All
+
+multiple-hits
+	Include support for multiple nucleotide substitutions
+	default value: None
+
+srv
+	Include synonymous rate variation
+	default value: No
+
+syn-rates
+	The number alpha rate classes to include in the model [1-10, default 3]
+	default value: absrel.synonymous_rate_classes [computed at run time]
+
+output
+	Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'ABSREL.json')
+	default value: absrel.codon_data_info[terms.json.json] [computed at run time]
+
+intermediate-fits
+	Use/save parameter estimates from 'initial-guess' model fits to a JSON file (default is not to save)
+	default value: /dev/null
+
+kill-zero-lengths
+	Automatically delete internal zero-length branches for computational efficiency (will not affect results otherwise)
+	default value: Yes
+
+save-fit
+	Save full adaptive aBSREL model fit to this file (default is not to save)
+	default value: /dev/null
+```
+
+## hyphy_relax
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+multiple-files
+	Use multiple files as input
+	default value: No
+
+filelist [required]
+	A line list of file paths for the alignments to include in this analysis
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+alignment [required]
+	An in-frame codon alignment in one of the formats supported by HyPhy
+
+tree [conditionally required]
+	A phylogenetic tree (optionally annotated with {})
+	applies to: Please select a tree file for the data:
+
+mode
+	Run mode
+	default value: Classic mode
+	applies to: Group test mode
+
+test [conditionally required]
+	Branches to use as the test set
+	applies to: Choose the set of branches to use as the _test_ set
+
+reference [conditionally required]
+	Branches to use as the reference set
+	applies to: Choose the set of branches to use as the _reference_ set
+
+output
+	Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'RELAX.json')
+	default value: relax.default_output [computed at run time]
+
+grid-size
+	The number of points in the initial distributional guess for likelihood fitting
+	default value: 250 [computed at run time]
+
+starting-points
+	The number of initial random guesses to seed rate values optimization
+	default value: 1 [computed at run time]
+
+multiple-hits
+	Include support for multiple nucleotide substitutions
+	default value: None
+
+reference-group [required]
+	Branches to use as the reference group
+
+rates
+	The number omega rate classes to include in the model [2-10, default 3]
+	default value: relax.rate_classes [computed at run time]
+
+models
+	Which version of the test to run (All or Minimal)
+	default value: All
+
+srv
+	Include synonymous rate variation
+	default value: No
+
+syn-rates
+	The number alpha rate classes to include in the model [1-10, default 3]
+	default value: relax.synonymous_rate_classes [computed at run time]
+
+intermediate-fits
+	Use/save parameter estimates from 'initial-guess' model fits to a JSON file (default is not to save)
+	default value: /dev/null
+
+kill-zero-lengths
+	Automatically delete internal zero-length branches for computational efficiency (will not affect results otherwise)
+	default value: Yes
+
+save-fit
+	Save RELAX alternative model fit to this file (default is not to save)
+	default value: /dev/null
+```
+
+## hyphy_gard
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+type
+	The type of data to perform screening on
+	default value: nucleotide
+
+code
+	Genetic code to use (for codon alignments)
+	default value: Universal
+	applies to: Choose Genetic Code
+
+alignment [required]
+	Sequence alignment to screen for recombination
+
+model
+	The substitution model to use
+	default value: JTT
+
+rv
+	Site to site rate variation
+	default value: None
+
+max-breakpoints
+	Maximum number of breakpoints to consider
+	default value: 10000
+
+rate-classes
+	How many site rate classes to use
+	default value: 4
+
+output
+	Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'GARD.json')
+	default value: gard.defaultJsonFilePath [computed at run time]
+
+mode
+	Run mode (Normal or Faster)
+	default value: Normal
+
+output-lf
+	Write the best fitting HyPhy analysis snapshot to (default is to save to the same path as the alignment file + 'best-gard')
+	default value: gard.defaultFitFilePath [computed at run time]
+```
+
+## hyphy_bgm
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+type
+	nucleotide, amino-acid or codon
+	default value: codon
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+alignment [required]
+	An in-frame codon alignment in one of the formats supported by HyPhy
+
+baseline_model
+	Which amino acid substitution model should be used
+	default value: LG
+
+output
+	Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'FEL.json')
+	default value: bgm.alignment_info[terms.json.json] [computed at run time]
+
+tree [conditionally required]
+	A phylogenetic tree (optionally annotated with {})
+	applies to: Please select a tree file for the data:
+
+branches
+	Branches to test
+	default value: All
+
+steps
+	The number of MCMC steps to sample
+	default value: 100000 [computed at run time]
+
+burn-in
+	The number of MCMC steps to discard as burn-in
+	default value: 10000 [computed at run time]
+
+samples
+	The number of steps to extract from the chain sample
+	default value: 100 [computed at run time]
+
+max-parents
+	The maximum number of parents allowed per node
+	default value: 1 [computed at run time]
+
+min-subs
+	The minimum number of substitutions per site to include it in the analysis
+	default value: 1 [computed at run time]
+```
+
+## hyphy_fade
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+alignment [required]
+	Protein alignment to screen for directional selection
+
+output
+	Save FADE results (JSON) to [default is alignment+.FADE.json]
+	default value: fade.alignment_info[terms.data.file]+".FADE.json" [computed at run time]
+
+cache
+	Save FADE cache to [default is alignment+.FADE.cache]
+	default value: fade.path.base+".FADE.cache" [computed at run time]
+
+tree [conditionally required]
+	A rooted phylogenetic tree
+	applies to: Please select a tree file for the data:
+
+branches
+	The branches to test
+	default value: All
+
+grid
+	The number of grid points
+	default value: 20
+
+model
+	The substitution model to use
+	default value: GTR
+
+method
+	Inference method to use
+	default value: `terms.fade.methods.VB0`
+
+chains
+	How many MCMC chains to run
+	default value: fade.run_settings["chains"] [computed at run time]
+
+chain-length
+	MCMC chain length
+	default value: fade.run_settings["chain-length"] [computed at run time]
+
+burn-in
+	MCMC chain burn in
+	default value: fade.run_settings["chain-length"]$2 [computed at run time]
+
+samples
+	MCMC samples to draw
+	default value: fade.run_settings["samples"] [computed at run time]
+
+concentration_parameter
+	The concentration parameter of the Dirichlet prior
+	default value: fade.run_settings["concentration"] [computed at run time]
+```
+
+## hyphy_contrast-fel
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+alignment [required]
+	An in-frame codon alignment in one of the formats supported by HyPhy
+
+tree [conditionally required]
+	A phylogenetic tree (optionally annotated with {})
+	applies to: Please select a tree file for the data:
+
+branch-set [required]
+	The set of branches to use for testing
+
+srv
+	Include synonymous rate variation in the model
+	default value: Yes
+
+permutations
+	Perform permutation significance tests
+	default value: Yes
+
+p-value
+	Significance value for site-tests
+	default value: 0.05
+
+q-value
+	Significance value for FDR reporting
+	default value: 0.20
+
+output
+	Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'FEL.json')
+	default value: fel.codon_data_info[terms.json.json] [computed at run time]
+
+limit-to-sites
+	Only analyze sites whose 1-based indices match the following list (null to skip)
+	default value: null
+
+save-lf-for-sites
+	For sites whose 1-based indices match the following list, write out likelihood function snapshots (null to skip)
+	default value: null
+
+intermediate-fits
+	Use/save parameter estimates from 'initial-guess' model fits to a JSON file (default is not to save)
+	default value: /dev/null
+
+kill-zero-lengths
+	Automatically delete internal zero-length branches for computational efficiency (will not affect results otherwise)
+	default value: Yes
+```
+
+## hyphy_prime
+
+### Tool Description
+Available analysis command line options
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hyphy:2.5.94--h5837470_0
+- **Homepage**: http://hyphy.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Available analysis command line options
+---------------------------------------
+Use --option VALUE syntax to invoke
+If a [reqired] option is not provided on the command line, the analysis will prompt for its value
+[conditionally required] options may or not be required based on the values of other options
+
+code
+	Which genetic code should be used
+	default value: Universal
+
+alignment [required]
+	An in-frame codon alignment in one of the formats supported by HyPhy
+
+tree [conditionally required]
+	A phylogenetic tree (optionally annotated with {})
+	applies to: Please select a tree file for the data:
+
+branches
+	Branches to test
+	default value: All
+
+pvalue
+	The p-value threshold to use when testing for selection
+	default value: 0.1
+
+impute-states
+	Use site-level model fits to impute likely character states for each sequence
+	default value: No
+
+property-set
+	How to partition synonymous codons into classes
+	default value: 3PROP
+
+property-file [required]
+	JSON file which defines amino-acid properties
+
+output
+	Write the resulting JSON to this file (default is to save to the same path as the alignment file + 'prime.json')
+	default value: prime.codon_data_info[terms.json.json] [computed at run time]
+
+intermediate-fits
+	Use/save parameter estimates from 'initial-guess' model fits to a JSON file (default is not to save)
+	default value: /dev/null
+
+kill-zero-lengths
+	Automatically delete internal zero-length branches for computational efficiency (will not affect results otherwise)
+	default value: Yes
 ```
 
 ## Metadata

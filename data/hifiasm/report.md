@@ -1,5 +1,11 @@
 # hifiasm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hifiasm | PASS |  |
+
 ## hifiasm
 
 ### Tool Description

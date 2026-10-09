@@ -1,134 +1,150 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - ibdne.04Sep15.e78.jar
+  - zcat
+  - -f
 label: ibdne
-doc: "Calculates Identity By Descent (IBD) segments between individuals.\n\nTool homepage:
-  https://github.com/hennlab/AS-IBDNe"
+doc: "Estimates historical effective population size from identity by descent (IBD)
+  segments. The IBD files (plain or gzip) are concatenated with zcat -f (same as cat for plain files) and piped into ibdne.\n\nTool
+  homepage: https://faculty.washington.edu/browning/ibdne.html"
 inputs:
-  - id: input_ibd_files
+  - id: ibd_files
     type:
       type: array
       items: File
-    doc: A space-separated list of Beagle-format IBD files piped from stdin.
+    doc: Beagle-format IBD files, concatenated and piped to ibdne
     inputBinding:
       position: 1
-  - id: filter_samples
-    type:
-      - 'null'
-      - boolean
-    doc: Whether to filter samples
-    inputBinding:
-      position: 102
-      prefix: filtersamples
-  - id: genetic_map
+  - id: map
     type: File
     doc: PLINK-format genetic map with cM distances
     inputBinding:
-      position: 102
+      position: 11
       prefix: map=
       separate: false
-  - id: max_generations
-    type:
-      - 'null'
-      - string
-    doc: Max number of generations before present (default depends on minibd)
-    inputBinding:
-      position: 102
-      prefix: gmax=
-      separate: false
-  - id: min_ibd_length
-    type:
-      - 'null'
-      - float
-    doc: Minimum cM length of an IBD segment
-    inputBinding:
-      position: 102
-      prefix: minibd=
-      separate: false
-  - id: min_region_length
-    type:
-      - 'null'
-      - float
-    doc: Minimum cM length of a continuous region
-    inputBinding:
-      position: 102
-      prefix: minregion=
-      separate: false
-  - id: num_bootstrap_samples
-    type:
-      - 'null'
-      - int
-    doc: Number of bootstrap samples
-    inputBinding:
-      position: 102
-      prefix: nboots
-  - id: num_iterations
-    type:
-      - 'null'
-      - int
-    doc: Number of iterations
-    inputBinding:
-      position: 102
-      prefix: nits=
-      separate: false
-  - id: num_random_starts
-    type:
-      - 'null'
-      - int
-    doc: Number of random starts
-    inputBinding:
-      position: 102
-      prefix: nstarts=
-      separate: false
-  - id: num_threads
-    type:
-      - 'null'
-      - int
-    doc: Number of computational threads
-    inputBinding:
-      position: 102
-      prefix: nthreads=
-      separate: false
-  - id: output_prefix
+  - id: out_prefix
     type: string
     doc: Output file prefix
     inputBinding:
-      position: 102
+      position: 12
       prefix: out=
       separate: false
-  - id: random_seed
+  - id: jvm_memory
     type:
       - 'null'
-      - int
-    doc: Seed for random number generator
+      - string
+    doc: Java memory option passed to the ibdne wrapper script (for example -Xmx4g)
     inputBinding:
-      position: 102
-      prefix: seed=
-      separate: false
-  - id: trim_ends
+      position: 10
+  - id: minibd
     type:
       - 'null'
       - float
-    doc: cM to trim from ends of each region
+    doc: Min cM length of an IBD segment (default 4.0)
     inputBinding:
-      position: 102
+      position: 13
+      prefix: minibd=
+      separate: false
+  - id: minregion
+    type:
+      - 'null'
+      - float
+    doc: Min cM length of a continuous region (default 50.0)
+    inputBinding:
+      position: 14
+      prefix: minregion=
+      separate: false
+  - id: filtersamples
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to filter samples (default true)
+    inputBinding:
+      position: 15
+      valueFrom: '$(self === null ? null : "filtersamples=" + self)'
+  - id: trim
+    type:
+      - 'null'
+      - float
+    doc: cM to trim from ends of each region (default 0.2)
+    inputBinding:
+      position: 16
       prefix: trim=
       separate: false
-outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_prefix_files
+  - id: nits
     type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+      - 'null'
+      - int
+    doc: Number of iterations (default 50)
+    inputBinding:
+      position: 17
+      prefix: nits=
+      separate: false
+  - id: nstarts
+    type:
+      - 'null'
+      - int
+    doc: Number of random starts (default 50)
+    inputBinding:
+      position: 18
+      prefix: nstarts=
+      separate: false
+  - id: nboots
+    type:
+      - 'null'
+      - int
+    doc: Number of bootstrap samples (default 80)
+    inputBinding:
+      position: 19
+      prefix: nboots=
+      separate: false
+  - id: gmax
+    type:
+      - 'null'
+      - int
+    doc: Max number of generations before present (default depends on minibd)
+    inputBinding:
+      position: 20
+      prefix: gmax=
+      separate: false
+  - id: seed
+    type:
+      - 'null'
+      - int
+    doc: Seed for random number generator (default -99999)
+    inputBinding:
+      position: 21
+      prefix: seed=
+      separate: false
+  - id: nthreads
+    type:
+      - 'null'
+      - int
+    doc: Number of computational threads (default 1)
+    inputBinding:
+      position: 22
+      prefix: nthreads=
+      separate: false
+outputs:
+  - id: ne_estimates
+    type: File
+    doc: Effective population size estimates per generation
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.out_prefix).ne
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.out_prefix).log
+requirements:
+  - class: ShellCommandRequirement
+  - class: InlineJavascriptRequirement
+arguments:
+  - position: 2
+    shellQuote: false
+    valueFrom: "| ibdne"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ibdne:04Sep15.e78--0
-stdout: ibdne.out

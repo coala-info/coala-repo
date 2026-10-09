@@ -1,5 +1,18 @@
 # hybpiper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hybpiper_assemble | PASS |  |
+| hybpiper_check_targetfile | PASS |  |
+| hybpiper_filter_by_length | PASS |  |
+| hybpiper_fix_targetfile | PASS |  |
+| hybpiper_paralog_retriever | PASS |  |
+| hybpiper_recovery_heatmap | PASS |  |
+| hybpiper_retrieve_sequences | PASS |  |
+| hybpiper_stats | PASS |  |
+
 ## hybpiper_assemble
 
 ### Tool Description
@@ -695,48 +708,6 @@ options:
                         in the saved heatmap figure
   --run_profiler        If supplied, run the subcommand using cProfile. Saves
                         a *.csv file of results
-```
-
-
-## hybpiper_check_dependencies
-
-### Tool Description
-Checks for external dependencies required by HybPiper.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0
-- **Homepage**: https://github.com/mossmatters/HybPiper
-- **Package**: https://anaconda.org/channels/bioconda/packages/hybpiper/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-T
-                                                        T
-                                         C  G
- _    _            _       _____      T        G        A
-| |  | |          | |     |  _  \  A              A  A
-| |__| | __    __ | |___  | |_| |  _   _____   _____   _____
-|  __  | \ \  / / |  _  \ |  ___/ | | |  _  \ |  _  | |  _  \
-| |  | |  \ \/ /  | |_| | | |     | | | |_| | |  __/  | |  --
-|_|  |_|   \  /   |_____/ |_|     |_| |  ___/ |_____| |_|
-           / /                        | |
-          /_/                         |_|
-
-
-[INFO]:    Checking for external dependencies:
-
-blastx               found at /usr/local/bin/blastx
-exonerate            found at /usr/local/bin/exonerate
-parallel             found at /usr/local/bin/parallel
-makeblastdb          found at /usr/local/bin/makeblastdb
-spades.py            found at /usr/local/bin/spades.py
-bwa                  found at /usr/local/bin/bwa
-samtools             found at /usr/local/bin/samtools
-bbmap.sh             found at /usr/local/bin/bbmap.sh
-bbmerge.sh           found at /usr/local/bin/bbmerge.sh
-diamond              found at /usr/local/bin/diamond
-mafft                found at /usr/local/bin/mafft
 ```
 
 

@@ -1,25 +1,15 @@
 # hymet CWL Generation Report
 
-## hymet_init
+## Real Data Test
 
-### Tool Description
-Initialize hymet project
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hymet:1.3.0--hdfd78af_0
-- **Homepage**: https://github.com/inesbmartins02/HYMET
-- **Package**: https://anaconda.org/channels/bioconda/packages/hymet/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: hymet init [-h] [--quiet] [--skip-taxonomy]
-
-options:
-  -h, --help       show this help message and exit
-  --quiet, -q      Don't exit with error on missing files
-  --skip-taxonomy  Skip automatic NCBI taxonomy download
-```
+| Tool | Result | Reason |
+|---|---|---|
+| hymet_ablation | Not completed | pipeline, skipped: reference ablation workflow needing the HYMET databases and case data |
+| hymet_bench | Not completed | pipeline, skipped: CAMI benchmark harness needing CAMI data and large databases |
+| hymet_case | Not completed | pipeline, skipped: case-study harness needing downloaded MGnify/Zymo data and large databases |
+| hymet_legacy | Not completed | legacy entry point of the same classifier; needs the HYMET Mash sketches (about 2.3 GB) and NCBI taxonomy files, which are not in the image |
+| hymet_run | Not completed | needs the HYMET Mash sketches (about 2.3 GB from Zenodo, not in the image) and NCBI genome downloads; too heavy for this machine |
+| hymet_truth_build-zymo | Not completed | needs NCBI taxonomy files (taxonomy_files/nodes.dmp) that are not in the image and cannot be passed on the command line; the tool stops with FileNotFoundError |
 
 ## hymet_run
 
@@ -168,29 +158,6 @@ options:
   --dry-run             Show commands without executing them
 ```
 
-## hymet_truth
-
-### Tool Description
-Build Zymo mock community truth tables
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hymet:1.3.0--hdfd78af_0
-- **Homepage**: https://github.com/inesbmartins02/HYMET
-- **Package**: https://anaconda.org/channels/bioconda/packages/hymet/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: hymet truth [-h] {build-zymo} ...
-
-positional arguments:
-  {build-zymo}
-    build-zymo  Build Zymo mock community truth tables
-
-options:
-  -h, --help    show this help message and exit
-```
-
 ## hymet_legacy
 
 ### Tool Description
@@ -213,25 +180,35 @@ HYMET now ships with a unified CLI (bin/hymet). For batch runs try:
 Please enter the path to the input directory (containing .fna files): [hymet] (/usr/local/share/hymet) $ perl /usr/local/share/hymet/main.pl
 ```
 
-## hymet_artifacts
+## Metadata
+- **Skill**: generated
+
+## hymet_truth_build-zymo
 
 ### Tool Description
-Show commands without executing them
+Build Zymo mock community truth tables.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hymet:1.3.0--hdfd78af_0
-- **Homepage**: https://github.com/inesbmartins02/HYMET
+- **Homepage**: https://github.com/ieeta-pt/HYMET
 - **Package**: https://anaconda.org/channels/bioconda/packages/hymet/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-usage: hymet artifacts [-h] [--dry-run]
+usage: hymet truth build-zymo [-h] --contigs CONTIGS --paf PAF
+                              [--seqmap SEQMAP] --out-contigs OUT_CONTIGS
+                              --out-profile OUT_PROFILE [--dry-run]
 
 options:
-  -h, --help  show this help message and exit
-  --dry-run   Show commands without executing them
+  -h, --help            show this help message and exit
+  --contigs CONTIGS     Input contigs FASTA
+  --paf PAF             PAF alignment against curated references
+  --seqmap SEQMAP       SeqID→TaxID map (default
+                        case/truth/zymo_refs/seqid2taxid.tsv)
+  --out-contigs OUT_CONTIGS
+                        Output contig truth TSV
+  --out-profile OUT_PROFILE
+                        Output CAMI profile TSV
+  --dry-run             Show command without executing it
 ```
-
-## Metadata
-- **Skill**: generated

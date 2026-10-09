@@ -41,6 +41,8 @@ inputs:
   - id: input_reference_fasta
     type: File
     doc: Reference fasta file (hg19)
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --input-reference-fasta
@@ -55,6 +57,8 @@ inputs:
   - id: input_sample_bam
     type: File
     doc: Bam file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --input-sample-bam

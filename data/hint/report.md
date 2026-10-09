@@ -1,5 +1,13 @@
 # hint CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hint_cnv | Not completed | needs the HiNT reference directory (large Dropbox download of hg19/hg38/mm10 files, human or mouse Hi-C data) that cannot be fetched here |
+| hint_pre | Not completed | needs the HiNT reference directory (large Dropbox download of hg19/hg38/mm10 files, human or mouse Hi-C data) that cannot be fetched here |
+| hint_tl | Not completed | needs the HiNT reference directory (large Dropbox download of hg19/hg38/mm10 files, human or mouse Hi-C data) that cannot be fetched here |
+
 ## hint_pre
 
 ### Tool Description

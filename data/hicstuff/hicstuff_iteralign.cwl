@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicstuff_iteralign
+baseCommand:
+  - hicstuff
+  - iteralign
 label: hicstuff_iteralign
 doc: "Truncate reads from a fastq file to 20 basepairs and iteratively extend and\n\
   \    re-align the unmapped reads to optimize the proportion of uniquely aligned\n\
@@ -15,19 +17,44 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Choose alignment software between bowtie2, minimap2 or bwa. minimap2 
-      should only be used for reads > 100 bp.
+    doc: Choose alignment software between bowtie2, minimap2 or bwa. minimap2 should
+      only be used for reads > 100 bp.
     inputBinding:
       position: 102
       prefix: --aligner
   - id: genome
     type: File
-    doc: "The genome on which to map the reads. Must be\n                        \
-      \         the path to the bowtie2/bwa index if using bowtie2/bwa\n         \
-      \                        or to the genome in fasta format if using minimap2."
+    doc: Genome FASTA on which to map the reads, with its bowtie2 index files (same
+      prefix, e.g. seq.fa with seq.1.bt2 ...) beside it for bowtie2, or its bwa index
+      files for bwa. minimap2 only needs the FASTA.
     inputBinding:
       position: 102
       prefix: --genome
+      valueFrom: '${ return (inputs.aligner == ''bwa'' || inputs.aligner == ''minimap2'')
+        ? self.path : self.path.replace(/\.[^.\/]*$/, ''''); }'
+    secondaryFiles:
+      - pattern: ^.1.bt2
+        required: false
+      - pattern: ^.2.bt2
+        required: false
+      - pattern: ^.3.bt2
+        required: false
+      - pattern: ^.4.bt2
+        required: false
+      - pattern: ^.rev.1.bt2
+        required: false
+      - pattern: ^.rev.2.bt2
+        required: false
+      - pattern: .amb
+        required: false
+      - pattern: .ann
+        required: false
+      - pattern: .bwt
+        required: false
+      - pattern: .pac
+        required: false
+      - pattern: .sa
+        required: false
   - id: min_len
     type:
       - 'null'

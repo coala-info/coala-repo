@@ -1,5 +1,23 @@
 # hicberg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hicberg_alignment | PASS | Aligned 100000 read pairs of the hicberg test data; sorted BAMs match the repo test data (106038 records). CWL fixed: genome typed File, result folder passed as writable Directory. |
+| hicberg_benchmark | PASS | Ran one iteration on the test data and wrote benchmark.csv with the original, depleted and rescued maps and a PDF. CWL fixed: needs the folder, chunks and an original_map.cool (new optional input original_matrix). |
+| hicberg_build-matrix | PASS | Built unrescued_map.cool (2 kb bins, 4805 contacts) and, with --recover, rescued_map.cool (5900 contacts). |
+| hicberg_build-pairs | PASS | Built group1.pairs with 4805 pairs; with --recover it built all_group.pairs. |
+| hicberg_chunk | PASS | Split group2 BAMs into chunks; read counts add up to 2764; also works into a result folder. |
+| hicberg_classify | PASS | Split the alignments into 3 groups (4805 unique pairs, 2764 multi-mapped); counts match the tool log. |
+| hicberg_create-folder | PASS | Made the result folder tree with the 12 expected sub-folders (the output is only empty folders). |
+| hicberg_get-tables | PASS | Wrote chromosome_sizes.npy and a 520-bin table for the 1 Mb test genome. |
+| hicberg_pipeline | Not completed | pipeline, skipped |
+| hicberg_plot | PASS | Wrote the contact map, coverage, P(s), d1d2 and couple PDFs; the density plot fails visibly because density_map.npy is missing. CWL fixed: genome staged writable so the FASTA index can be built. |
+| hicberg_rescue | PASS | Rescued 1095 of 2764 ambiguous reads with -m standard; -m full fails because the CLI never writes density_map.npy. |
+| hicberg_statistics | PASS | Wrote the restriction map, coverage, d1d2 and other .npy files in the default mode; -m full/density crashes in this version (no balanced matrix), also tested with a blacklist. |
+| hicberg_tidy | PASS | Moved the result files into the alignments, statistics, contacts and plots sub-folders. |
+
 ## hicberg_alignment
 
 ### Tool Description

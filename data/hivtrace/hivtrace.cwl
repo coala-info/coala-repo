@@ -65,7 +65,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write logs to specified directory
     inputBinding:
       position: 101
@@ -85,10 +85,10 @@ inputs:
       position: 101
       prefix: --prior
   - id: reference
-    type: File
-    doc: reference to align to
-    secondaryFiles:
-      - .fai
+    type:
+      - string
+      - File
+    doc: reference to align to (a built-in name such as HXB2_prrt, or a FASTA file)
     inputBinding:
       position: 101
       prefix: --reference

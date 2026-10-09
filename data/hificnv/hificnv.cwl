@@ -7,6 +7,11 @@ doc: "Copy number variant caller and depth visualization utility for PacBio HiFi
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: Alignment file for the query sample in BAM format. BAM file must be 
       indexed
     inputBinding:
@@ -73,6 +78,9 @@ inputs:
       prefix: --output-prefix
   - id: ref
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Genome reference in FASTA format
     inputBinding:
       position: 101
@@ -95,7 +103,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_prefix || 'hificnv')*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hificnv:1.0.1--h9ee0642_0

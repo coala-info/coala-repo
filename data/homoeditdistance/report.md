@@ -1,5 +1,11 @@
 # homoeditdistance CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| homoeditdistance_hed | PASS |  |
+
 ## homoeditdistance_hed
 
 ### Tool Description

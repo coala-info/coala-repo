@@ -5,13 +5,18 @@ label: haystack_bio_haystack_hotspots
 doc: "HAYSTACK Parameters\n\nTool homepage: https://github.com/rfarouni/haystack_bio"
 inputs:
   - id: samples_filename_or_bam_folder
-    type: string
-    doc: "A tab delimited file with in each row (1) a sample\n                   \
-      \     name, (2) the path to the corresponding bam or bigwig\n              \
-      \          filename. Alternatively it is possible to specify a\n           \
-      \             folder containing some .bam files to analyze."
+    type: File
+    doc: "A tab delimited file with in each row (1) a sample name, (2) the path to
+      the corresponding bam or bigwig filename (file names without a directory; the
+      files are staged in the working directory by the signal_files input)."
     inputBinding:
       position: 1
+  - id: signal_files
+    type:
+      type: array
+      items: File
+    doc: The BAM (or bigwig) files named in the samples file, staged in the working
+      directory
   - id: genome_name
     type: string
     doc: "Genome assembly to use from UCSC (for example hg19,\n                  \
@@ -186,6 +191,11 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.signal_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haystack_bio:0.5.5--0

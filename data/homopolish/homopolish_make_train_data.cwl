@@ -57,8 +57,8 @@ inputs:
   - id: local_db_path
     type:
       - 'null'
-      - Directory
-    doc: Path to your local DB
+      - File
+    doc: Path to your local DB (a fasta file of closely-related genomes)
     inputBinding:
       position: 101
       prefix: --local_DB_path
@@ -133,6 +133,8 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/homopolish:0.4.2--pyhdfd78af_0

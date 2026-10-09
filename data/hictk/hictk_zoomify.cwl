@@ -4,8 +4,10 @@ baseCommand:
   - hictk
   - zoomify
 label: hictk_zoomify
-doc: "Convert single-resolution Cooler and .hic files to multi-resolution by coarsening.\n\
-  \nTool homepage: https://github.com/paulsengroup/hictk"
+doc: 'Convert single-resolution Cooler and .hic files to multi-resolution by coarsening.
+
+
+  Tool homepage: https://github.com/paulsengroup/hictk'
 inputs:
   - id: input_file
     type: File
@@ -14,17 +16,16 @@ inputs:
       position: 1
   - id: output_file
     type: string
-    doc: Output path. When zoomifying Cooler files, providing a single 
-      resolution through --resolutions and specifying --no-copy-base-resolution,
-      the output file will be in .cool format.
+    doc: Output path. When zoomifying Cooler files, providing a single resolution
+      through --resolutions and specifying --no-copy-base-resolution, the output file
+      will be in .cool format.
     inputBinding:
       position: 2
   - id: chunk_size
     type:
       - 'null'
       - int
-    doc: Number of pixels to buffer in memory. Only used when zoomifying .hic 
-      files.
+    doc: Number of pixels to buffer in memory. Only used when zoomifying .hic files.
     inputBinding:
       position: 103
       prefix: --chunk-size
@@ -32,8 +33,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Compression level used to compress interactions. Defaults to 6 and 10 
-      for .mcool and .hic files, respectively.
+    doc: Compression level used to compress interactions. Defaults to 6 and 10 for
+      .mcool and .hic files, respectively.
     inputBinding:
       position: 103
       prefix: --compression-lvl
@@ -57,8 +58,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use nice or power of two steps to automatically generate the list of 
-      resolutions.
+    doc: Use nice or power of two steps to automatically generate the list of resolutions.
     inputBinding:
       position: 103
       prefix: --nice-steps
@@ -74,8 +74,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not generate All vs All matrix. Has no effect when zoomifying .cool 
-      files.
+    doc: Do not generate All vs All matrix. Has no effect when zoomifying .cool files.
     inputBinding:
       position: 103
       prefix: --no-skip-all-vs-all
@@ -83,8 +82,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use nice or power of two steps to automatically generate the list of 
-      resolutions.
+    doc: Use nice or power of two steps to automatically generate the list of resolutions.
     inputBinding:
       position: 103
       prefix: --pow2-steps
@@ -101,8 +99,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not generate All vs All matrix. Has no effect when zoomifying .cool 
-      files.
+    doc: Do not generate All vs All matrix. Has no effect when zoomifying .cool files.
     inputBinding:
       position: 103
       prefix: --skip-all-vs-all
@@ -110,8 +107,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of parallel threads to spawn. When zoomifying 
-      interactions from a .cool file, only a single thread will be used.
+    doc: Maximum number of parallel threads to spawn. When zoomifying interactions
+      from a .cool file, only a single thread will be used.
     inputBinding:
       position: 103
       prefix: --threads
@@ -132,19 +129,13 @@ inputs:
       position: 103
       prefix: --verbosity
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_file_out
-    type:
-      - 'null'
-      - File
-    doc: Output path. When zoomifying Cooler files, providing a single 
-      resolution through --resolutions and specifying --no-copy-base-resolution,
-      the output file will be in .cool format.
+    type: File
+    doc: Output path. When zoomifying Cooler files, providing a single resolution
+      through --resolutions and specifying --no-copy-base-resolution, the output file
+      will be in .cool format.
     outputBinding:
       glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0
-stdout: hictk_zoomify.out

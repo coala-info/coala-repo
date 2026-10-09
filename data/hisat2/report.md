@@ -1,5 +1,19 @@
 # hisat2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hisat2 | PASS | output matches the Galaxy test result for paired phiX reads with trimming |
+| hisat2-build | PASS |  |
+| hisat2-inspect | PASS |  |
+| hisat2_extract_exons.py | PASS |  |
+| hisat2_extract_snps_haplotypes_UCSC.py | Not completed | no usable test data: needs a UCSC snp table (large download) that is not available here |
+| hisat2_extract_snps_haplotypes_VCF.py | PASS |  |
+| hisat2_extract_splice_sites.py | PASS |  |
+| hisat2_read_statistics.py | PASS |  |
+| hisat2_simulate_reads.py | Failed | image problem: the script calls Random.shuffle(random=...), which Python 3.11 in the image no longer accepts |
+
 ## hisat2
 
 ### Tool Description
@@ -242,4 +256,247 @@ positional arguments:
 options:
   -h, --help     show this help message and exit
   -v, --verbose  also print some statistics to stderr
+```
+
+## hisat2-inspect
+
+### Tool Description
+Inspect a HISAT2 index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hisat2:2.2.3--h8471819_0
+- **Homepage**: https://daehwankimlab.github.io/hisat2
+- **Package**: https://anaconda.org/channels/bioconda/packages/hisat2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+HISAT2 version 2.2.3 by Daehwan Kim (infphilo@gmail.com, http://www.ccb.jhu.edu/people/infphilo)
+Usage: hisat2-inspect [options]* <ht2_base>
+  <ht2_base>         ht2 filename minus trailing .1.ht2/.2.ht2
+
+  By default, prints FASTA records of the indexed nucleotide sequences to
+  standard out.  With -n, just prints names.  With -s, just prints a summary of
+  the index parameters and sequences.  With -e, preserves colors if applicable.
+
+Options:
+  --large-index      force inspection of the 'large' index, even if a
+                     'small' one is present.
+  -a/--across <int>  Number of characters across in FASTA output (default: 60)
+  -s/--summary       Print summary incl. ref names, lengths, index properties
+  -n/--names         Print reference sequence names only
+  --snp              Print SNPs
+  --ss               Print splice sites
+  --ss-all           Print splice sites including those not in the global index
+  --exon             Print exons
+  -e/--ht2-ref       Reconstruct reference from .ht2 (slow, preserves colors)
+  -v/--verbose       Verbose output (for debugging)
+  -h/--help          print detailed description of tool and its options
+  --usage            print this usage message
+```
+
+## hisat2_extract_splice_sites.py
+
+### Tool Description
+Extract splice junctions from a GTF file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hisat2:2.2.3--h8471819_0
+- **Homepage**: https://daehwankimlab.github.io/hisat2
+- **Package**: https://anaconda.org/channels/bioconda/packages/hisat2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hisat2_extract_splice_sites.py [-h] [-v] [gtf_file]
+
+Extract splice junctions from a GTF file
+
+positional arguments:
+  gtf_file       input GTF file (use "-" for stdin)
+
+options:
+  -h, --help     show this help message and exit
+  -v, --verbose  also print some statistics to stderr
+```
+
+## hisat2_extract_snps_haplotypes_VCF.py
+
+### Tool Description
+Extract SNPs and haplotypes from VCF files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hisat2:2.2.3--h8471819_0
+- **Homepage**: https://daehwankimlab.github.io/hisat2
+- **Package**: https://anaconda.org/channels/bioconda/packages/hisat2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hisat2_extract_snps_haplotypes_VCF.py [-h]
+                                             [--reference-type REFERENCE_TYPE]
+                                             [--inter-gap INTER_GAP]
+                                             [--intra-gap INTRA_GAP]
+                                             [--non-rs]
+                                             [--genotype-vcf GENOTYPE_VCF]
+                                             [--genotype-gene-list GENOTYPE_GENE_LIST]
+                                             [--extra-files] [-v]
+                                             [genome_file] [VCF_fnames]
+                                             [base_fname]
+
+Extract SNPs and haplotypes from VCF files
+
+positional arguments:
+  genome_file           input genome file (e.g. genome.fa)
+  VCF_fnames            A comma-seperated VCF files (plain text or gzipped
+                        file is accepted: GRCh38_dbSNP_no_SVs.vcf or
+                        GRCh38_dbSNP_no_SVs.vcf.gz
+  base_fname            base filename for SNPs and haplotypes
+
+options:
+  -h, --help            show this help message and exit
+  --reference-type REFERENCE_TYPE
+                        Reference type: gene, chromosome, and genome (default:
+                        genome)
+  --inter-gap INTER_GAP
+                        Maximum distance for variants to be in the same
+                        haplotype (default: 30)
+  --intra-gap INTRA_GAP
+                        Break a haplotype into several haplotypes (default:
+                        50)
+  --non-rs              Allow SNP IDs not beginning with rs
+  --genotype-vcf GENOTYPE_VCF
+                        VCF file name for genotyping (default: empty)
+  --genotype-gene-list GENOTYPE_GENE_LIST
+                        A comma-separated list of genes to be genotyped
+                        (default: empty)
+  --extra-files         Output extra files such as _backbone.fa and .ref
+  -v, --verbose         also print some statistics to stderr
+```
+
+## hisat2_extract_snps_haplotypes_UCSC.py
+
+### Tool Description
+Extract SNPs and haplotypes from a SNP file downloaded from UCSC.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hisat2:2.2.3--h8471819_0
+- **Homepage**: https://daehwankimlab.github.io/hisat2
+- **Package**: https://anaconda.org/channels/bioconda/packages/hisat2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hisat2_extract_snps_haplotypes_UCSC.py [-h] [--inter-gap INTER_GAP]
+                                              [--intra-gap INTRA_GAP] [-v]
+                                              [--testset]
+                                              [genome_file] [snp_fname]
+                                              [base_fname]
+
+Extract SNPs and haplotypes from a SNP file downloaded from UCSC (e.g.
+http://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/snp144.txt.gz)
+
+positional arguments:
+  genome_file           input genome file (e.g. genome.fa)
+  snp_fname             input snp file downloaded from UCSC (plain text or
+                        gzipped file is accepted: snp144Common.txt or
+                        snp144Common.txt.gz)
+  base_fname            base filename for SNPs and haplotypes
+
+options:
+  -h, --help            show this help message and exit
+  --inter-gap INTER_GAP
+                        Maximum distance for variants to be in the same
+                        haplotype
+  --intra-gap INTRA_GAP
+                        Break a haplotype into several haplotypes
+  -v, --verbose         also print some statistics to stderr
+  --testset             print test reads
+```
+
+## hisat2_read_statistics.py
+
+### Tool Description
+Compute statistics of reads.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hisat2:2.2.3--h8471819_0
+- **Homepage**: https://daehwankimlab.github.io/hisat2
+- **Package**: https://anaconda.org/channels/bioconda/packages/hisat2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hisat2_read_statistics.py [-h] [-n READ_COUNT] [read_file]
+
+Compute statistics of reads. Show number of reads and minimum, maximum,
+average length of reads
+
+positional arguments:
+  read_file      reads file
+
+options:
+  -h, --help     show this help message and exit
+  -n READ_COUNT  reads count (default: 10000)
+```
+
+## hisat2_simulate_reads.py
+
+### Tool Description
+Simulate reads from GENOME (fasta) and GTF files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hisat2:2.2.3--h8471819_0
+- **Homepage**: https://daehwankimlab.github.io/hisat2
+- **Package**: https://anaconda.org/channels/bioconda/packages/hisat2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/hisat2_simulate_reads.py:565: SyntaxWarning: "\d" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\d"? A raw string is also an option.
+  cigar_re = re.compile('\d+\w')
+usage: hisat2_simulate_reads.py [-h] [-d] [--single-end] [-r READ_LEN]
+                                [-f FRAG_LEN] [-n NUM_FRAG] [-e EXPR_PROFILE]
+                                [--repeat-info REPEAT_FNAME]
+                                [--error-rate ERROR_RATE]
+                                [--max-mismatch MAX_MISMATCH]
+                                [--random-seed RANDOM_SEED]
+                                [--snp-prob SNP_PROB] [--sanity-check] [-v]
+                                [--version]
+                                [genome_file] [gtf_file] [snp_file]
+                                [base_fname]
+
+Simulate reads from GENOME (fasta) and GTF files
+
+positional arguments:
+  genome_file           input GENOME file
+  gtf_file              input GTF file
+  snp_file              input SNP file
+  base_fname            output base filename
+
+options:
+  -h, --help            show this help message and exit
+  -d, --dna             DNA-seq reads (default: RNA-seq reads)
+  --single-end          single-end reads (default: paired-end reads)
+  -r, --read-length READ_LEN
+                        read length (default: 100)
+  -f, --fragment-length FRAG_LEN
+                        fragment length (default: 250)
+  -n, --num-fragment NUM_FRAG
+                        number of fragments (default: 1000000)
+  -e, --expr-profile EXPR_PROFILE
+                        expression profile: flux or constant (default: flux)
+  --repeat-info REPEAT_FNAME
+                        repeat information filename
+  --error-rate ERROR_RATE
+                        per-base sequencing error rate (%) (default: 0.0)
+  --max-mismatch MAX_MISMATCH
+                        max mismatches due to sequencing errors (default: 3)
+  --random-seed RANDOM_SEED
+                        random seeding value (default: 0)
+  --snp-prob SNP_PROB   probability of a read including a snp when the read
+                        spans the snp ranging from 0.0 to 1.0 (default: 1.0)
+  --sanity-check        sanity check
+  -v, --verbose         also print some statistics to stderr
+  --version             show program's version number and exit
 ```

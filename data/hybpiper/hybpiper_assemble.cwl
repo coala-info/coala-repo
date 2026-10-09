@@ -464,14 +464,18 @@ inputs:
       position: 101
       prefix: --target
   - id: targetfile_aa
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing amino-acid target sequences for each gene. The fasta
       headers must follow the naming convention: >TaxonID-geneName'
     inputBinding:
       position: 101
       prefix: --targetfile_aa
   - id: targetfile_dna
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'FASTA file containing DNA target sequences for each gene. The fasta headers
       must follow the naming convention: >TaxonID-geneName'
     inputBinding:
@@ -551,9 +555,12 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: Folder for HybPiper output. Default is None.
+    doc: Folder for HybPiper output (the folder given with hybpiper_output, else
+      the prefix folder).
     outputBinding:
-      glob: $(inputs.hybpiper_output)
+      glob: "$(inputs.hybpiper_output ? inputs.hybpiper_output : inputs.prefix)"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hybpiper:2.3.4--pyhdfd78af_0

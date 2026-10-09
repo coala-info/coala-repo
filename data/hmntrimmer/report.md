@@ -1,5 +1,11 @@
 # hmntrimmer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hmntrimmer_HmnTrimmer | PASS |  |
+
 ## hmntrimmer_HmnTrimmer
 
 ### Tool Description

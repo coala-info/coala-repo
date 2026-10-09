@@ -2,77 +2,70 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: binReads.pl
 label: hiddendomains_binReads.pl
-doc: "Binning reads.\n\nTool homepage: http://hiddendomains.sourceforge.net/"
+doc: "Bin aligned reads (BAM or BED) into fixed-width bins and write the counts per
+  bin to standard output.\n\nTool homepage: http://hiddendomains.sourceforge.net/"
 inputs:
-  - id: program_args
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: PROGRAM_ARG1 ...
+  - id: reads_file
+    type: File
+    doc: Aligned reads in BAM format (default) or BED format (with -B)
     inputBinding:
-      position: 1
+      position: 2
   - id: bin_width
     type:
       - 'null'
       - int
-    doc: 'binWidth: 1000 (change with -b option)'
+    doc: The width of the bin. Default is 1000bp.
     inputBinding:
-      position: 102
+      position: 1
       prefix: -b
-  - id: ignore_header
+  - id: input_is_bed
     type:
       - 'null'
       - boolean
-    doc: 'Boolean (without arguments): -h -m -M -H -B'
+    doc: The input file is in BED format (the default is BAM)
     inputBinding:
-      position: 102
-      prefix: -H
-  - id: min_qual_score
+      position: 1
+      prefix: -B
+  - id: min_mapq
     type:
       - 'null'
       - int
-    doc: 'minQualScore: 30 (change with -q option)'
+    doc: The minimum MAPQ score. Default is 30.
     inputBinding:
-      position: 102
+      position: 1
       prefix: -q
-  - id: output_bam
+  - id: mouse_chromosomes
     type:
       - 'null'
       - boolean
-    doc: 'Boolean (without arguments): -h -m -M -H -B'
+    doc: Assume all bins should be on mouse chromosomes. This is the default.
     inputBinding:
-      position: 102
-      prefix: -B
-  - id: use_custom_chromosomes
+      position: 1
+      prefix: -M
+  - id: human_chromosomes
     type:
       - 'null'
       - boolean
-    doc: 'Default: Using mouse chromosomes. Change this with -m, -h or -c'
+    doc: Assume all bins should be on human chromosomes.
     inputBinding:
-      position: 102
+      position: 1
+      prefix: -H
+  - id: chromosomes
+    type:
+      - 'null'
+      - string
+    doc: Bin reads only from the specified chromosomes, a space separated list
+      such as "chr1 chr2".
+    inputBinding:
+      position: 1
       prefix: -c
-  - id: use_human_chromosomes
-    type:
-      - 'null'
-      - boolean
-    doc: 'Default: Using mouse chromosomes. Change this with -m, -h or -c'
-    inputBinding:
-      position: 102
-      prefix: -h
-  - id: use_mouse_chromosomes
-    type:
-      - 'null'
-      - boolean
-    doc: 'Default: Using mouse chromosomes. Change this with -m, -h or -c'
-    inputBinding:
-      position: 102
-      prefix: -m
 outputs:
-  - id: stdout
+  - id: binned_reads
     type: stdout
-    doc: Standard output
+    doc: Table of read counts per bin (id, chr, pos, count)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hiddendomains:3.1--pl526r36_0
-stdout: hiddendomains_binReads.pl.out
+stdout: $(inputs.reads_file.nameroot)_binned_reads.txt

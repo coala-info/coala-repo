@@ -7,6 +7,12 @@ doc: HISAT2 is a fast and sensitive alignment program for mapping
   next-generation sequencing reads (both DNA and RNA) to a population of human 
   genomes as well as to a single reference genome.
 inputs:
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: HISAT2 index files (.ht2), staged in the working directory so that the
+      index prefix resolves
   - id: index
     type: string
     doc: Index filename prefix (minus trailing .X.ht2).
@@ -22,8 +28,8 @@ inputs:
       .gz) or bzip2'ed (extension: .bz2)."
     inputBinding:
       position: 101
-      prefix: '-1'
       itemSeparator: ','
+      prefix: '-1'
   - id: mate2
     type:
       - 'null'
@@ -33,8 +39,8 @@ inputs:
       .gz) or bzip2'ed (extension: .bz2)."
     inputBinding:
       position: 101
-      prefix: '-2'
       itemSeparator: ','
+      prefix: '-2'
   - id: unpaired_reads
     type:
       - 'null'
@@ -44,8 +50,8 @@ inputs:
       (extension: .bz2)."
     inputBinding:
       position: 101
-      prefix: -U
       itemSeparator: ','
+      prefix: -U
   - id: output_sam
     type:
       - 'null'
@@ -701,11 +707,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --rg
     doc: 'add <text> ("lab:value") to @RG line of SAM header. Note: @RG line only
       printed when --rg-id is set.'
     inputBinding:
       position: 101
-      prefix: --rg
   - id: omit_sec_seq
     type:
       - 'null'
@@ -924,6 +931,8 @@ outputs:
       glob: $(inputs.temp_directory)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hisat2:2.2.3--h8471819_0

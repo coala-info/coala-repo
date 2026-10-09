@@ -17,7 +17,7 @@ inputs:
   - id: conda_prefix
     type:
       - 'null'
-      - File
+      - string
     doc: Custom conda env directory
     inputBinding:
       position: 102

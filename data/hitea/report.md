@@ -1,5 +1,11 @@
 # hitea CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hitea | Failed | image problem: the image lacks the file command (and lscpu), so hitea cannot read its built-in gzipped TE annotation and stops at the precheck step |
+
 ## hitea
 
 ### Tool Description

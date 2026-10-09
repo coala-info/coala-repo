@@ -41,13 +41,23 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: outprefix_files
+  - id: loom_files
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in outprefix
+    doc: Downloaded loom matrix files (named by project uuid and species, or by outprefix)
     outputBinding:
-      glob: $(inputs.outprefix)*
+      glob: '*.loom'
+  - id: mtx_dirs
+    type:
+      type: array
+      items: Directory
+    doc: Downloaded Matrix Market folders (named by project uuid and species, or by outprefix)
+    outputBinding:
+      glob: '*.mtx'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hca-matrix-downloader:0.0.4--py_0

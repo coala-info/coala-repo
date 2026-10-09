@@ -1,5 +1,22 @@
 # hictk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hictk_balance_ice | PASS | New CWL. ICE weights written into the .cool; balanced row sums are 1.0 (sd 0.0003). |
+| hictk_balance_scale | PASS | New CWL. SCALE weights written with a custom name; balanced row sums are constant (mean 154, sd 0.26). |
+| hictk_balance_vc | PASS | New CWL. VC weights written to the .cool, and with --stdout 80 weights printed to stdout. |
+| hictk_convert | PASS | Converted .hic to .cool (identical pixels, genome name applied) and .cool to .hic (344 pixels, 10000 contacts). CWL fixed: output argument added. |
+| hictk_dump | PASS | Dumped pixels, chroms and a range from the .cool and the .hic; counts (344 pixels, 10000 contacts, 6 trans) match the raw pairs. |
+| hictk_fix-mcool | Not completed | runs to success on a healthy real .mcool, but with no corrupted file to repair the fix itself cannot be confirmed. |
+| hictk_load | PASS | Loaded 10000 hicstuff test pairs (4dn format) into .cool and .hic at 1 kb; 344 pixels, 10000 contacts, checked against the raw pairs. CWL fixed: output path argument added. |
+| hictk_merge | PASS | Merged two half-sized .cool files; the merged pixels are identical to the .cool built from all pairs. |
+| hictk_metadata | PASS | Printed metadata of the .cool (yaml, nbins 80, sum 10000) and the .hic (json). CWL fixed: uri typed File. |
+| hictk_rename-chromosomes | PASS | New CWL. Renamed seq1/seq2 to chrseq1/chrseq2 with --add-chr-prefix and to chrA/chrB with a mapping file; pixels unchanged. |
+| hictk_validate | PASS | Validated the test .cool with index and pixel checks; report says valid cooler. CWL fixed: uri typed File. |
+| hictk_zoomify | PASS | Made a .mcool with 1, 2 and 5 kb resolutions from the test .cool; each level keeps all 10000 contacts. CWL fixed: stdout removed. |
+
 ## hictk_convert
 
 ### Tool Description
@@ -433,10 +450,10 @@ OPTIONS:
                               Set verbosity of output to the console.
 ```
 
-## hictk_multi-resolution
+## hictk_balance_ice
 
 ### Tool Description
-Blazing fast tools to work with .hic and .cool files.
+Balance Hi-C files using ICE.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0
@@ -446,40 +463,214 @@ Blazing fast tools to work with .hic and .cool files.
 
 ### Original Help Text
 ```text
-Blazing fast tools to work with .hic and .cool files. 
+Balance Hi-C files using ICE. 
 
-hictk [OPTIONS] [SUBCOMMANDS]
+
+hictk balance ice [OPTIONS] input
+
+
+POSITIONALS:
+  input TEXT:((.[ms]cool) OR (.hic)) AND (NOT .scool) REQUIRED
+                              Path to the .hic, .cool or .mcool file to be balanced. 
 
 OPTIONS:
   -h,     --help              Print this help message and exit 
-  -V,     --version           Display program version information and exit 
-[Option Group: help]
-  
-  [At most 1 of the following options are allowed] 
-  
-  
-OPTIONS:
-          --help-cite         Print hictk's citation in Bibtex format and exit. 
-          --help-build-meta   Print information regarding hictk's build options and third-party 
-                              dependencies, and exit. 
-          --help-docs         Print the URL to hictk's documentation and exit. 
-          --help-license      Print the hictk license and exit. 
-          --help-telemetry    Print information regarding telemetry collection and exit. 
+          --mode TEXT:{gw,trans,cis} [gw]  
+                              Balance matrix using: 
+                              - genome-wide interactions (gw) 
+                              - trans-only interactions (trans) 
+                              - cis-only interactions (cis) 
+          --tmpdir TEXT:DIR   Path to a folder where to store temporary data. 
+          --ignore-diags UINT [2]  
+                              Number of diagonals (including the main diagonal) to mask before 
+                              balancing. 
+          --mad-max FLOAT:NONNEGATIVE [5]  
+                              Mask bins using the MAD-max filter. 
+                              Bins whose log marginal sum is less than --mad-max median 
+                              absolute deviations below the median log marginal sum of all the 
+                              bins in the same chromosome. 
+          --min-nnz UINT [10]  
+                              Mask rows with fewer than --min-nnz non-zero entries. 
+          --min-count UINT [0]  
+                              Mask rows with fewer than --min-count interactions. 
+          --tolerance FLOAT:NONNEGATIVE [1e-05]  
+                              Threshold of the variance of marginals used to determine whether 
+                              the algorithm has converged. 
+          --max-iters UINT:POSITIVE [500]  
+                              Maximum number of iterations. 
+          --rescale-weights, --no-rescale-weights{false} 
+                              Rescale weights such that rows sum approximately to 2. 
+          --name TEXT         Name to use when writing weights to file. 
+                              Defaults to ICE, INTER_ICE and GW_ICE when --mode is cis, trans 
+                              and gw, respectively. 
+          --create-weight-link, --no-create-weight-link{false} 
+                              Create a symbolic link to the balancing weights at 
+                              clr::/bins/weight. 
+                              Ignored when balancing .hic files 
+          --in-memory         Store all interactions in memory (greatly improves performance). 
+          --stdout            Write balancing weights to stdout instead of writing them to the 
+                              input file. 
+          --chunk-size UINT:POSITIVE [10000000]  
+                              Number of interactions to process at once. Ignored when using 
+                              --in-memory. 
+  -v,     --verbosity INT:INT in [1 - 4] [3]  
+                              Set verbosity of output to the console. 
+  -t,     --threads UINT:UINT in [1 - 20] [1]  
+                              Maximum number of parallel threads to spawn. 
+  -l,     --compression-lvl INT:INT in [0 - 19] [3]  
+                              Compression level used to compress temporary files using ZSTD. 
+  -f,     --force             Overwrite existing files and datasets (if any).
+```
 
-SUBCOMMANDS:
-  balance                     Balance Hi-C files using ICE, SCALE, or VC. 
-  convert                     Convert Hi-C files between different formats. 
-  dump                        Read interactions and other kinds of data from .hic and Cooler 
-                              files and write them to stdout. 
-  fix-mcool                   Fix corrupted .mcool files. 
-  load                        Build .cool and .hic files from interactions in various text 
-                              formats. 
-  merge                       Merge multiple Cooler or .hic files into a single file. 
-  metadata                    Print file metadata to stdout. 
-  rename-chromosomes, rename-chromsRename chromosomes found in Cooler files. 
-  validate                    Validate .hic and Cooler files. 
-  zoomify                     Convert single-resolution Cooler and .hic files to 
-                              multi-resolution by coarsening.
+## hictk_balance_scale
+
+### Tool Description
+Balance Hi-C files using SCALE.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0
+- **Homepage**: https://github.com/paulsengroup/hictk
+- **Package**: https://anaconda.org/channels/bioconda/packages/hictk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Balance Hi-C files using SCALE. 
+
+
+hictk balance scale [OPTIONS] input
+
+
+POSITIONALS:
+  input TEXT:((.[ms]cool) OR (.hic)) AND (NOT .scool) REQUIRED
+                              Path to the .hic, .cool or .mcool file to be balanced. 
+
+OPTIONS:
+  -h,     --help              Print this help message and exit 
+          --mode TEXT:{gw,trans,cis} [gw]  
+                              Balance matrix using: 
+                              - genome-wide interactions (gw) 
+                              - trans-only interactions (trans) 
+                              - cis-only interactions (cis) 
+          --tmpdir TEXT       Path to a folder where to store temporary data. 
+          --max-percentile FLOAT [10]  
+                              Percentile used to compute the maximum number of nnz values that 
+                              cause a row to be masked. 
+          --max-row-sum-err FLOAT:NONNEGATIVE [0.05]  
+                              Row sum threshold used to determine whether convergence has been 
+                              achieved. 
+          --tolerance FLOAT:NONNEGATIVE [0.0001]  
+                              Threshold of the variance of marginals used to determine whether 
+                              the algorithm has converged. 
+          --max-iters UINT:POSITIVE [500]  
+                              Maximum number of iterations. 
+          --rescale-weights, --no-rescale-weights{false} 
+                              Rescale weights such that the sum of the balanced matrix is 
+                              similar to that of the input matrix. 
+          --name TEXT         Name to use when writing weights to file. 
+                              Defaults to SCALE, INTER_SCALE and GW_SCALE when --mode is cis, 
+                              trans and gw, respectively. 
+          --create-weight-link, --no-create-weight-link{false} 
+                              Create a symbolic link to the balancing weights at 
+                              clr::/bins/weight. 
+                              Ignored when balancing .hic files 
+          --in-memory         Store all interactions in memory (greatly improves performance). 
+          --stdout            Write balancing weights to stdout instead of writing them to the 
+                              input file. 
+          --chunk-size UINT:POSITIVE [10000000]  
+                              Number of interactions to process at once. Ignored when using 
+                              --in-memory. 
+  -v,     --verbosity INT:INT in [1 - 4] [3]  
+                              Set verbosity of output to the console. 
+  -t,     --threads UINT:UINT in [1 - 20] [1]  
+                              Maximum number of parallel threads to spawn. 
+  -l,     --compression-lvl INT:INT in [0 - 19] [3]  
+                              Compression level used to compress temporary files using ZSTD. 
+  -f,     --force             Overwrite existing files and datasets (if any).
+```
+
+## hictk_balance_vc
+
+### Tool Description
+Balance Hi-C matrices using VC.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0
+- **Homepage**: https://github.com/paulsengroup/hictk
+- **Package**: https://anaconda.org/channels/bioconda/packages/hictk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Balance Hi-C matrices using VC. 
+
+
+hictk balance vc [OPTIONS] input
+
+
+POSITIONALS:
+  input TEXT:((.[ms]cool) OR (.hic)) AND (NOT .scool) REQUIRED
+                              Path to the .hic, .cool or .mcool file to be balanced. 
+
+OPTIONS:
+  -h,     --help              Print this help message and exit 
+          --mode TEXT:{gw,trans,cis} [gw]  
+                              Balance matrix using: 
+                              - genome-wide interactions (gw) 
+                              - trans-only interactions (trans) 
+                              - cis-only interactions (cis) 
+          --rescale-weights, --no-rescale-weights{false} 
+                              Rescale weights such that the sum of the balanced matrix is 
+                              similar to that of the input matrix. 
+          --name TEXT         Name to use when writing weights to file. 
+                              Defaults to VC, INTER_VC and GW_VC when --mode is cis, trans and 
+                              gw, respectively. 
+          --create-weight-link, --no-create-weight-link{false} 
+                              Create a symbolic link to the balancing weights at 
+                              clr::/bins/weight. 
+                              Ignored when balancing .hic files 
+          --stdout            Write balancing weights to stdout instead of writing them to the 
+                              input file. 
+  -v,     --verbosity INT:INT in [1 - 4] [3]  
+                              Set verbosity of output to the console. 
+  -f,     --force             Overwrite existing files and datasets (if any).
+```
+
+## hictk_rename-chromosomes
+
+### Tool Description
+Rename chromosomes found in Cooler files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0
+- **Homepage**: https://github.com/paulsengroup/hictk
+- **Package**: https://anaconda.org/channels/bioconda/packages/hictk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Rename chromosomes found in Cooler files. 
+
+
+hictk rename-chromosomes [OPTIONS] uri
+
+
+POSITIONALS:
+  uri TEXT:.[ms]cool REQUIRED Path to a .[ms]cool file (Cooler URI syntax supported). 
+
+OPTIONS:
+  -h,     --help              Print this help message and exit 
+          --name-mappings TEXT Excludes: --add-chr-prefix --remove-chr-prefix 
+                              Path to a two column TSV with pairs of chromosomes to be renamed. 
+                              The first column should contain the original chromosome name, 
+                              while the second column should contain the destination name to 
+                              use when renaming. 
+          --add-chr-prefix Excludes: --name-mappings --remove-chr-prefix 
+                              Prefix chromosome names with "chr". 
+          --remove-chr-prefix Excludes: --name-mappings --add-chr-prefix 
+                              Remove prefix "chr" from chromosome names. 
+  -v,     --verbosity INT:INT in [1 - 4] [3]  
+                              Set verbosity of output to the console.
 ```
 
 ## Metadata

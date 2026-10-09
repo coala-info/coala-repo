@@ -15,8 +15,8 @@ inputs:
       position: 101
       prefix: --data-dir
   - id: input
-    type: File
-    doc: Input file
+    type: Directory
+    doc: Input directory with paired-end FASTQ files (for example sample_R1.fastq.gz and sample_R2.fastq.gz)
     inputBinding:
       position: 101
       prefix: --input
@@ -38,7 +38,7 @@ inputs:
       prefix: --kraken2-db
   - id: mode
     type: string
-    doc: Mode of operation (wgs or rna-seq)
+    doc: Mode of operation, wgs or rna-seq (rna-seq is not implemented yet)
     inputBinding:
       position: 101
       prefix: --mode
@@ -76,23 +76,25 @@ inputs:
       prefix: --trim-quality
   - id: output_path
     type: string
+    doc: Output directory for the cleaned FASTQ files
     inputBinding:
       position: 102
       prefix: --output
   - id: report_path
     type: string
+    doc: Output CSV report with per-step read counts
     inputBinding:
       position: 103
       prefix: --report
 outputs:
   - id: output
-    type: File
-    doc: Output file
+    type: Directory
+    doc: Output directory with the cleaned FASTQ files
     outputBinding:
       glob: $(inputs.output_path)
   - id: report
     type: File
-    doc: Report file
+    doc: CSV report with per-step read counts
     outputBinding:
       glob: $(inputs.report_path)
 requirements:

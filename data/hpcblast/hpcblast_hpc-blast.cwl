@@ -5,10 +5,20 @@ label: hpcblast_hpc-blast
 doc: "hpc-blast <OPTIONS> <blast command>\n\nTool homepage: https://github.com/yodeng/hpc-blast"
 inputs:
   - id: blast_command
-    type: string
-    doc: blast command, required
+    type:
+      type: array
+      items: string
+    doc: blast command (for example blastn -query q.fa -db db -out result.tsv), required;
+      it is placed after all hpc-blast options
     inputBinding:
-      position: 1
+      position: 200
+  - id: staged_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: files used by the blast command (query, database files); they are placed
+      in the working directory under their own names
   - id: cpu
     type:
       - 'null'
@@ -76,11 +86,18 @@ inputs:
       position: 102
       prefix: --tempdir
   - id: log_path
-    type: string
-    doc: append hpc-blast log info to file, sys.stdout by
+    type:
+      - 'null'
+      - string
+    doc: append hpc-blast log info to file, sys.stdout by default
     inputBinding:
       position: 103
       prefix: --log
+  - id: blast_output
+    type:
+      - 'null'
+      - string
+    doc: name of the result file written by the blast command (its -out file)
 outputs:
   - id: log
     type:
@@ -89,8 +106,18 @@ outputs:
     doc: append hpc-blast log info to file, sys.stdout by default
     outputBinding:
       glob: $(inputs.log_path)
+  - id: blast_result
+    type:
+      - 'null'
+      - File
+    doc: result file written by the blast command
+    outputBinding:
+      glob: $(inputs.blast_output)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.staged_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hpcblast:1.0.2--pyhdfd78af_0

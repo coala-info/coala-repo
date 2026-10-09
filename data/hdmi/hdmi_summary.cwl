@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hdmi_summary
+baseCommand:
+  - HDMI
+  - summary
 label: hdmi_summary
 doc: "Generates a summary of HDMI validation results.\n\nTool homepage: https://github.com/HaoranPeng21/HDMI"
 inputs:

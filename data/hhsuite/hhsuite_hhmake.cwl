@@ -10,23 +10,7 @@ inputs:
       - 'null'
       - string
     doc: "use A2M/A3M (default): upper case = Match; lower case = Insert; '-' = Delete;
-      '.' = gaps aligned to inserts (may be omitted)"
-    inputBinding:
-      position: 101
-      prefix: -M
-  - id: alignment_format_first
-    type:
-      - 'null'
-      - boolean
-    doc: 'use FASTA: columns with residue in 1st sequence are match states'
-    inputBinding:
-      position: 101
-      prefix: -M
-  - id: alignment_format_gap_percentage
-    type:
-      - 'null'
-      - float
-    doc: 'use FASTA: columns with fewer than X% gaps are match states'
+      '.' = gaps aligned to inserts (may be omitted). Use 'first' for FASTA with columns that have a residue in the first sequence as match states, or a number 0-100 for FASTA with columns with fewer than X% gaps as match states."
     inputBinding:
       position: 101
       prefix: -M
@@ -226,7 +210,7 @@ inputs:
     doc: Output or path parameter `output_hmm_file_path`
     inputBinding:
       position: 102
-      prefix: --output-hmm-file
+      prefix: -o
 outputs:
   - id: output_hmm_file
     type: File

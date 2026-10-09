@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: Input HMM file
     inputBinding:
-      position: 1
+      position: 201
   - id: output_file
     type: string
     doc: send sequence output to file <f>, not stdout

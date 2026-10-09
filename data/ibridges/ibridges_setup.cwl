@@ -30,12 +30,17 @@ inputs:
       position: 102
       prefix: --overwrite
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Store the environment to a file.
     inputBinding:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output
     type:
       - 'null'
@@ -48,3 +53,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ibridges:2.0.1--pyhdfd78af_0
+stdout: ibridges_setup.out

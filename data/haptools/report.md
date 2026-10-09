@@ -1,5 +1,17 @@
 # haptools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haptools_clump | PASS |  |
+| haptools_index | PASS |  |
+| haptools_karyogram | PASS |  |
+| haptools_ld | PASS |  |
+| haptools_simgenotype | PASS |  |
+| haptools_simphenotype | PASS |  |
+| haptools_transform | PASS |  |
+
 ## haptools_clump
 
 ### Tool Description

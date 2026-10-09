@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - ./hera
+  - hera
   - quant
 label: hera_quant
 doc: "Hera is a program developed by BioTuring for RNA-Seq analysis.\n\nTool homepage:
@@ -11,17 +11,18 @@ inputs:
     type: Directory
     doc: Path to index directory
     inputBinding:
-      position: 1
+      position: 101
+      prefix: -i
   - id: r1_fq
     type: File
     doc: R1 fastq file
     inputBinding:
-      position: 2
+      position: 201
   - id: r2_fq
     type: File
     doc: R2 fastq file
     inputBinding:
-      position: 3
+      position: 202
   - id: compress_level
     type:
       - 'null'
@@ -49,7 +50,7 @@ inputs:
   - id: output_bam_file
     type:
       - 'null'
-      - boolean
+      - int
     doc: 'Output bam file 0:true, 1: false'
     inputBinding:
       position: 104
@@ -58,7 +59,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output directory
+    doc: Output directory (the tool default is the current directory)
     inputBinding:
       position: 104
       prefix: -o
@@ -82,13 +83,6 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
-    outputBinding:
-      glob: $(inputs.output_prefix)*
   - id: output_directory_dir
     type:
       - 'null'

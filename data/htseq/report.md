@@ -1,5 +1,13 @@
 # htseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| htseq_htseq-count | PASS |  |
+| htseq_htseq-count-barcodes | PASS |  |
+| htseq_htseq-qa | PASS |  |
+
 ## htseq_htseq-count
 
 ### Tool Description

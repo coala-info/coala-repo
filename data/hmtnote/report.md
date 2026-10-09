@@ -1,5 +1,11 @@
 # hmtnote CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hmtnote_annotate | Not completed | needs the HmtVar web service (www.hmtvar.uniba.it), which times out from this machine; offline mode needs a database dumped from the same service |
+
 ## hmtnote_annotate
 
 ### Tool Description

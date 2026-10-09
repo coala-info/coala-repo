@@ -1,5 +1,26 @@
 # hmmer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| alimask | PASS |  |
+| hmmer_hmmalign | PASS |  |
+| hmmer_hmmbuild | PASS |  |
+| hmmer_hmmconvert | PASS |  |
+| hmmer_hmmemit | PASS |  |
+| hmmer_hmmfetch | PASS |  |
+| hmmer_hmmlogo | PASS |  |
+| hmmer_hmmpress | PASS |  |
+| hmmer_hmmscan | PASS |  |
+| hmmer_hmmsearch | PASS |  |
+| hmmer_hmmstat | PASS |  |
+| hmmer_jackhmmer | PASS |  |
+| hmmer_makehmmerdb | PASS |  |
+| hmmer_nhmmer | PASS |  |
+| hmmer_nhmmscan | PASS |  |
+| hmmer_phmmer | PASS |  |
+
 ## hmmer_hmmbuild
 
 ### Tool Description
@@ -673,3 +694,152 @@ Other options::
   --seed <n> : set RNG seed to <n>  [0]  (n>=0)
 ```
 
+## hmmer_hmmconvert
+
+### Tool Description
+convert profile file to a HMMER format
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hmmer:3.4--hb6cb901_4
+- **Homepage**: http://hmmer.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hmmer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+# hmmconvert :: convert profile file to a HMMER format
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Usage: hmmconvert [-options] <hmmfile>
+
+Options:
+  -h           : show brief help on version and usage
+  -a           : ascii:  output models in HMMER3 ASCII format  [default]
+  -b           : binary: output models in HMMER3 binary format
+  -2           : HMMER2: output backward compatible HMMER2 ASCII format (ls mode)
+  --outfmt <s> : choose output legacy 3.x file formats by name, such as '3/a'
+```
+
+## hmmer_hmmfetch
+
+### Tool Description
+retrieve profile HMM(s) from a file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hmmer:3.4--hb6cb901_4
+- **Homepage**: http://hmmer.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hmmer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+# hmmfetch :: retrieve profile HMM(s) from a file
+# Easel 0.49 (Aug 2023)
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Usage: hmmfetch [options] <hmmfile> <key>         (retrieves HMM named <key>)
+Usage: hmmfetch [options] -f <hmmfile> <keyfile>  (retrieves all HMMs in <keyfile>)
+Usage: hmmfetch [options] --index <hmmfile>       (indexes <hmmfile>)
+
+Options:
+  -h      : help; show brief info on version and usage
+  -f      : second cmdline arg is a file of names to retrieve
+  -o <f>  : output HMM to file <f> instead of stdout
+  -O      : output HMM to file named <key>
+  --index : index the <hmmfile>, creating <hmmfile>.ssi
+```
+
+## hmmer_hmmlogo
+
+### Tool Description
+given an hmm, produce data required to build an hmm logo
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hmmer:3.4--hb6cb901_4
+- **Homepage**: http://hmmer.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hmmer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+# hmmlogo :: given an hmm, produce data required to build an hmm logo
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Usage: hmmlogo [options] <hmmfile>
+
+Options:
+  -h                      : show brief help on version and usage
+  --height_relent_all     : total height = relative entropy ; all letters shown (default)
+  --height_relent_abovebg : total height = relative entropy ; only letters >bg shown
+  --height_score          : total height = sums of (pos|neg) scores; residue height = score
+  --no_indel              : don't provide indel rate values
+```
+
+## hmmer_nhmmscan
+
+### Tool Description
+search DNA sequence(s) against a DNA profile database
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hmmer:3.4--hb6cb901_4
+- **Homepage**: http://hmmer.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hmmer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+# nhmmscan :: search DNA sequence(s) against a DNA profile database
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Usage: nhmmscan [-options] <hmmdb> <seqfile>
+
+Basic options:
+  -h : show brief help on version and usage
+
+Options controlling output:
+  -o <f>           : direct output to file <f>, not stdout
+  --tblout <f>     : save parseable table of per-sequence hits to file <f>
+  --dfamtblout <f> : save table of hits to file, in Dfam format <f>
+  --acc            : prefer accessions over names in output
+  --noali          : don't output alignments, so output is smaller
+  --notextw        : unlimit ASCII text output line width
+  --textw <n>      : set max width of ASCII text output lines  [120]  (n>=120)
+
+Options controlling reporting thresholds:
+  -E <x> : report models <= this E-value threshold in output  [10.0]  (x>0)
+  -T <x> : report models >= this score threshold in output
+
+Options controlling inclusion (significance) thresholds:
+  --incE <x> : consider models <= this E-value threshold as significant  [0.01]
+  --incT <x> : consider models >= this score threshold as significant
+
+Options for model-specific thresholding:
+  --cut_ga : use profile's GA gathering cutoffs to set all thresholding
+  --cut_nc : use profile's NC noise cutoffs to set all thresholding
+  --cut_tc : use profile's TC trusted cutoffs to set all thresholding
+
+Options controlling acceleration heuristics:
+  --max    : Turn all heuristic filters off (less speed, more power)
+  --F1 <x> : MSV threshold: promote hits w/ P <= F1  [0.02]
+  --F2 <x> : Vit threshold: promote hits w/ P <= F2  [3e-3]
+  --F3 <x> : Fwd threshold: promote hits w/ P <= F3  [3e-5]
+  --nobias : turn off composition bias filter
+
+Other expert options:
+  --qformat <s>  : assert input <seqfile> is in format <s>
+  --nonull2      : turn off biased composition score corrections
+  -Z <x>         : set # of comparisons done, for E-value calculation
+  --seed <n>     : set RNG seed to <n> (if 0: one-time arbitrary seed)  [42]
+  --w_beta <x>   : tail mass at which window length is determined
+  --w_length <n> : window length - essentially max expected hit length 
+  --watson       : only search the top strand
+  --crick        : only search the bottom strand
+  --cpu <n>      : number of parallel CPU workers to use for multithreads  [0]
+```

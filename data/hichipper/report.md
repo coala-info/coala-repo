@@ -1,5 +1,11 @@
 # hichipper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hichipper_call | Failed | image problem: bedtools (and R, tabix) is missing from the image, hichipper stops with 'cannot find bedtools'. CWL fixed: input_vi typed File[] joined with commas, peaks_file added. |
+
 ## hichipper_call
 
 ### Tool Description

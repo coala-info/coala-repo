@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 6672; PASS: 5168; Failed: 845; Not completed: 659
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 7098; PASS: 5469; Failed: 884; Not completed: 745
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -6672,3 +6672,429 @@ happy-python	happy-python_coverage	PASS	real SARS-CoV-2 BAM: histogram covers 29
 happy-python	happy-python_estimate	Not completed	the code looks for a coverage peak of at least 15000 positions with a 41-bin smoothing window, so it needs a deep BAM of a genome over 500 kb; the small real test data crash it with no peak found
 hapsolo	hapsolo_hapsolo.py	Failed	tool bug: the check 'set != 0' in WriteNewAssembly is always true, so every run prints 'two seperate set of contigs', exits 1 and leaves an empty primary FASTA
 hapsolo	hapsolo_preprocessfasta.py	PASS	synthetic data: the tool's own test assembly with special characters in the headers; cleaned FASTA and one file per contig are written
+haptools	haptools_clump	PASS	
+haptools	haptools_index	PASS	
+haptools	haptools_karyogram	PASS	
+haptools	haptools_ld	PASS	
+haptools	haptools_simgenotype	PASS	
+haptools	haptools_simphenotype	PASS	
+haptools	haptools_transform	PASS	
+hardklor	hardklor	PASS	
+hardklor	hardklor_cmd	Failed	tool bug: -xml 1 with -algorithm Version2 writes only a spectrum header and no features
+harpy	harpy_assembly	Not completed	pipeline, skipped
+harpy	harpy_deconvolve	Not completed	pipeline, skipped
+harpy	harpy_impute	Not completed	pipeline, skipped
+harpy	harpy_metassembly	Not completed	pipeline, skipped
+harpy	harpy_phase	Not completed	pipeline, skipped
+harpy	harpy_qc	Not completed	pipeline, skipped
+harpy	harpy_resume	Not completed	pipeline, skipped
+harpy	harpy_template_groupings	PASS	
+harpy	harpy_template_hpc_generic	PASS	
+harpy	harpy_template_hpc_googlebatch	PASS	
+harpy	harpy_template_hpc_lsf	PASS	
+harpy	harpy_template_hpc_slurm	PASS	
+harpy	harpy_template_impute	PASS	
+harvesttools	harvesttools	Failed	tool bug: Gingr (.hvt) file written with -o cannot be read back (Premature EOF) and -V from a Gingr input crashes; other conversions work
+haslr	haslr_haslr.py	PASS	
+hat-phasing	hat-phasing_HAT	PASS	
+hatchet	hatchet_cluster_bins	PASS	
+hatchet	hatchet_cluster_bins_gmm	PASS	
+hatchet	hatchet_combine_counts	PASS	
+hatchet	hatchet_combine_counts_fw	PASS	
+hatchet	hatchet_compute_cn	Not completed	needs the Gurobi solver library and licence (libgurobi90.so is missing in the image)
+hatchet	hatchet_count_alleles	Not completed	no usable test data: needs matched normal and tumor BAMs aligned to a full human reference; the tool crashes on a one-chromosome genome
+hatchet	hatchet_count_reads	Not completed	no usable test data: needs matched normal and tumor BAMs aligned to a full human reference; the tool crashes on a one-chromosome genome
+hatchet	hatchet_count_reads_fw	Not completed	no usable test data: needs matched normal and tumor BAMs aligned to a full human reference; the tool crashes on a one-chromosome genome
+hatchet	hatchet_genotype_snps	Not completed	no usable test data: needs matched normal and tumor BAMs aligned to a full human reference; the tool crashes on a one-chromosome genome
+hatchet	hatchet_phase_snps	Not completed	needs shapeit, picard and a large reference panel
+hatchet	hatchet_plot_bins	PASS	
+hatchet	hatchet_plot_bins_1d2d	PASS	
+hatchet	hatchet_plot_cn	PASS	
+hatchet	hatchet_plot_cn_1d2d	PASS	
+haystac	haystac_analyse	Not completed	pipeline, skipped (Snakemake workflow that builds conda environments and needs NCBI downloads)
+haystac	haystac_config	PASS	
+haystac	haystac_database	Not completed	pipeline, skipped (Snakemake workflow that builds conda environments and needs NCBI downloads)
+haystac	haystac_sample	Not completed	pipeline, skipped (Snakemake workflow that builds conda environments and needs NCBI downloads)
+haystack_bio	haystack_bio_haystack_download_genome	Failed	image problem: the genome is written into the read-only package folder inside the image (Read-only file system), so it cannot be kept for other tools
+haystack_bio	haystack_bio_haystack_hotspots	Not completed	needs the hg19 genome (about 800 MB) that the tool can only store inside the read-only image folder
+haystack_bio	haystack_bio_haystack_motifs	Not completed	needs a UCSC genome (hg19 about 800 MB) that the tool can only store inside the read-only image folder
+haystack_bio	haystack_bio_haystack_tf_activity_plane	Not completed	no usable test data: needs the output folder of haystack_motifs, which cannot be made without the genome
+hca-matrix-downloader	hca-matrix-downloader	Not completed	the EBI FTP server (ftp.ebi.ac.uk) resets every connection from this machine, so no matrix could be downloaded
+hcluster_sg	hcluster_sg	PASS	synthetic data: a small planted weighted edge list; clusters match the expected grouping.
+hdf5	hdf5_gif2h5	PASS	synthetic data: a small generated GIF converted to HDF5; the image dataset has the right size.
+hdf5	hdf5_h52gif	PASS	
+hdf5	hdf5_h5c++	Failed	image problem: the image has no g++ compiler, so h5c++ cannot compile; only -show works
+hdf5	hdf5_h5cc	Failed	image problem: the image has no gcc compiler, so h5cc cannot compile; only -show works
+hdf5	hdf5_h5clear	PASS	
+hdf5	hdf5_h5copy	PASS	
+hdf5	hdf5_h5diff	PASS	
+hdf5	hdf5_h5dump	PASS	
+hdf5	hdf5_h5format_convert	PASS	
+hdf5	hdf5_h5import	PASS	synthetic data: ASCII values plus an h5import config; the HDF5 dataset holds the input values.
+hdf5	hdf5_h5jam	PASS	
+hdf5	hdf5_h5ls	PASS	
+hdf5	hdf5_h5mkgrp	PASS	
+hdf5	hdf5_h5repack	PASS	
+hdf5	hdf5_h5repart	PASS	
+hdf5	hdf5_h5stat	PASS	
+hdf5	hdf5_h5unjam	PASS	
+hdmi	hdmi_detect	Failed	image problem: HDMI detect crashes with ModuleNotFoundError: Bio.Blast.Applications (Biopython in the image is too new)
+hdmi	hdmi_index	Not completed	needs the HGT events table from hdmi detect, which crashes in this image, so the step could not be tested
+hdmi	hdmi_profile	Not completed	needs the HGT events table from hdmi detect, which crashes in this image, so the step could not be tested
+hdmi	hdmi_summary	Not completed	needs the HGT events table from hdmi detect, which crashes in this image, so the step could not be tested
+heasoft	heasoft_fkeyprint	PASS	
+heasoft	heasoft_punlearn	PASS	
+hecatomb	hecatomb_add-host	Not completed	pipeline, skipped
+hecatomb	hecatomb_combine	Not completed	pipeline, skipped
+hecatomb	hecatomb_config	PASS	
+hecatomb	hecatomb_list-hosts	Not completed	lists installed host genomes; none are installed without the large hecatomb install database download, so the output is empty
+hecatomb	hecatomb_run	Not completed	pipeline, skipped
+heinz	heinz	PASS	
+heliano	heliano	Failed	image problem: the image has only busybox sort, which rejects --parallel, so the sort steps fail and all result tables are empty
+hera	hera_hera_build	Failed	image problem: hera_build crashes with NameError: name 'os' is not defined (missing import in the script)
+hera	hera_quant	Not completed	needs an index from hera_build, which crashes in this image, so quant could not be tested
+hesslab-gambit	hesslab-gambit_dist	PASS	
+hesslab-gambit	hesslab-gambit_query	PASS	
+hesslab-gambit	hesslab-gambit_signatures_create	PASS	
+hesslab-gambit	hesslab-gambit_signatures_info	PASS	
+hg-color	hg-color_HG-CoLoR	Failed	image problem: HG-CoLoR looks for its helper scripts in /usr/local/bin/bin/, which does not exist (they are in /usr/local/bin)
+hhsuite	hhsuite_cstranslate	PASS	
+hhsuite	hhsuite_hhalign	PASS	
+hhsuite	hhsuite_hhblits	PASS	
+hhsuite	hhsuite_hhconsensus	PASS	
+hhsuite	hhsuite_hhfilter	PASS	
+hhsuite	hhsuite_hhmake	PASS	
+hhsuite	hhsuite_hhsearch	PASS	
+hhsuite	hhsuite_reformat.pl	PASS	
+hic2cool	hic2cool_convert	PASS	
+hic2cool	hic2cool_extract-norms	PASS	
+hic2cool	hic2cool_update	PASS	
+hicap	hicap	PASS	
+hicberg	hicberg_alignment	PASS	Aligned 100000 read pairs of the hicberg test data; sorted BAMs match the repo test data (106038 records). CWL fixed: genome typed File, result folder passed as writable Directory.
+hicberg	hicberg_benchmark	PASS	Ran one iteration on the test data and wrote benchmark.csv with the original, depleted and rescued maps and a PDF. CWL fixed: needs the folder, chunks and an original_map.cool (new optional input original_matrix).
+hicberg	hicberg_build-matrix	PASS	Built unrescued_map.cool (2 kb bins, 4805 contacts) and, with --recover, rescued_map.cool (5900 contacts).
+hicberg	hicberg_build-pairs	PASS	Built group1.pairs with 4805 pairs; with --recover it built all_group.pairs.
+hicberg	hicberg_chunk	PASS	Split group2 BAMs into chunks; read counts add up to 2764; also works into a result folder.
+hicberg	hicberg_classify	PASS	Split the alignments into 3 groups (4805 unique pairs, 2764 multi-mapped); counts match the tool log.
+hicberg	hicberg_create-folder	PASS	Made the result folder tree with the 12 expected sub-folders (the output is only empty folders).
+hicberg	hicberg_get-tables	PASS	Wrote chromosome_sizes.npy and a 520-bin table for the 1 Mb test genome.
+hicberg	hicberg_pipeline	Not completed	pipeline, skipped
+hicberg	hicberg_plot	PASS	Wrote the contact map, coverage, P(s), d1d2 and couple PDFs; the density plot fails visibly because density_map.npy is missing. CWL fixed: genome staged writable so the FASTA index can be built.
+hicberg	hicberg_rescue	PASS	Rescued 1095 of 2764 ambiguous reads with -m standard; -m full fails because the CLI never writes density_map.npy.
+hicberg	hicberg_statistics	PASS	Wrote the restriction map, coverage, d1d2 and other .npy files in the default mode; -m full/density crashes in this version (no balanced matrix), also tested with a blacklist.
+hicberg	hicberg_tidy	PASS	Moved the result files into the alignments, statistics, contacts and plots sub-folders.
+hicbrowser	hicbrowser_runBrowser	Not completed	web server, long-running (runBrowser starts a Flask server)
+hichipper	hichipper_call	Failed	image problem: bedtools (and R, tabix) is missing from the image, hichipper stops with 'cannot find bedtools'. CWL fixed: input_vi typed File[] joined with commas, peaks_file added.
+hicstuff	hicstuff_convert	PASS	Converted the graal test matrix to .cool (303 pixels, 304 contacts, same as mat.cool); the --genome option crashes when the fragment table already has gc_content. CWL fixed: baseCommand hicstuff convert.
+hicstuff	hicstuff_cutsite	PASS	Cut 10000 read pairs at DpnII/HinfI sites into 10166 pairs in digested_R1/R2.fq.gz. CWL fixed: baseCommand, outputs.
+hicstuff	hicstuff_digest	Failed	tool bug: the gc_content column is 100 times too small (gc_fraction divided by 100 again); other columns and info_contigs.txt match the repo test data.
+hicstuff	hicstuff_distancelaw	PASS	Computed the distance law from the filtered pairs and plotted it (table and image); also ran with a distance table and centromeres. CWL fixed: baseCommand, labels as string, comma list for dist-tbl.
+hicstuff	hicstuff_filter	PASS	Filtered valid_idx.pairs to 309 pairs, identical to the repo's valid_idx_filtered.pairs; plots written.
+hicstuff	hicstuff_iteralign	PASS	Aligned 10000 test reads iteratively, 98.3% mapped in iter.bam. CWL fixed: baseCommand, genome staged with its bowtie2 index files.
+hicstuff	hicstuff_missview	Failed	tool bug: crashes after mapping because it looks for abs_fragments_contacts_weighted.txt while the inner pipeline now writes .cool. CWL fixed: baseCommand, output image argument, required read length.
+hicstuff	hicstuff_pipeline	Not completed	pipeline, skipped
+hicstuff	hicstuff_rebin	PASS	Rebinned the graal and bg2 matrices to 1 kb with all 304 contacts kept; .cool input crashes (cooler 'size' column error). CWL fixed: baseCommand, binning as string.
+hicstuff	hicstuff_stats	PASS	Printed the mapping statistics of a pipeline log; numbers match the log (10000 pairs, 17442 mapped reads). CWL fixed: baseCommand.
+hicstuff	hicstuff_subsample	PASS	Subsampled mat.cool with --prop 0.5 to 152 of 304 contacts. CWL fixed: baseCommand, output files collected.
+hicstuff	hicstuff_view	PASS	Drew the contact map of mat.cool as a PNG with chromosome lines and log2 scale. CWL fixed: baseCommand.
+hictk	hictk_balance_ice	PASS	New CWL. ICE weights written into the .cool; balanced row sums are 1.0 (sd 0.0003).
+hictk	hictk_balance_scale	PASS	New CWL. SCALE weights written with a custom name; balanced row sums are constant (mean 154, sd 0.26).
+hictk	hictk_balance_vc	PASS	New CWL. VC weights written to the .cool, and with --stdout 80 weights printed to stdout.
+hictk	hictk_convert	PASS	Converted .hic to .cool (identical pixels, genome name applied) and .cool to .hic (344 pixels, 10000 contacts). CWL fixed: output argument added.
+hictk	hictk_dump	PASS	Dumped pixels, chroms and a range from the .cool and the .hic; counts (344 pixels, 10000 contacts, 6 trans) match the raw pairs.
+hictk	hictk_fix-mcool	Not completed	runs to success on a healthy real .mcool, but with no corrupted file to repair the fix itself cannot be confirmed.
+hictk	hictk_load	PASS	Loaded 10000 hicstuff test pairs (4dn format) into .cool and .hic at 1 kb; 344 pixels, 10000 contacts, checked against the raw pairs. CWL fixed: output path argument added.
+hictk	hictk_merge	PASS	Merged two half-sized .cool files; the merged pixels are identical to the .cool built from all pairs.
+hictk	hictk_metadata	PASS	Printed metadata of the .cool (yaml, nbins 80, sum 10000) and the .hic (json). CWL fixed: uri typed File.
+hictk	hictk_rename-chromosomes	PASS	New CWL. Renamed seq1/seq2 to chrseq1/chrseq2 with --add-chr-prefix and to chrA/chrB with a mapping file; pixels unchanged.
+hictk	hictk_validate	PASS	Validated the test .cool with index and pixel checks; report says valid cooler. CWL fixed: uri typed File.
+hictk	hictk_zoomify	PASS	Made a .mcool with 1, 2 and 5 kb resolutions from the test .cool; each level keeps all 10000 contacts. CWL fixed: stdout removed.
+hicup	hicup	PASS	
+hiddendomains	hiddendomains_binReads.pl	Failed	image problem: samtools in the image lacks libcrypto.so.1.0.0, so the default BAM input gives empty output; BED input (-B) works
+hiddendomains	hiddendomains_domainsMergeToBed.pl	PASS	
+hiddendomains	hiddendomains_domainsToBed.pl	PASS	
+hiddendomains	hiddendomains_hiddenDomains	Failed	image problem: samtools in the image lacks libcrypto.so.1.0.0, so the default BAM input fails; BED input (-B) works
+hiddendomains	hiddendomains_peakCenters	PASS	
+hifiasm	hifiasm	PASS	
+hificnv	hificnv	PASS	
+hifieval	hifieval_hifieval.py	PASS	
+hifihla	hifihla_align-imgt	PASS	
+hifihla	hifihla_call-consensus	PASS	
+hifihla	hifihla_call-contigs	PASS	real HiFi amplicon consensus sequences used in place of assembly contigs (no small real contig set); HLA calls are written for each sequence.
+hifihla	hifihla_call-reads	PASS	
+hiline	hiline_align-one-read	PASS	read names shortened to the first word because the SRA length= field breaks samtools import
+hiline	hiline_align-sam-reads	PASS	read names shortened to the first word because the SRA length= field breaks samtools import
+hiline	hiline_align-two-reads	PASS	read names shortened to the first word because the SRA length= field breaks samtools import
+hiline	hiline_index-only	PASS	
+hiline	hiline_read-sam	PASS	read names shortened to the first word because the SRA length= field breaks samtools import
+hilive	hilive	PASS	synthetic data: BCL files written from 55 real SARS-CoV-2 Illumina reads; 51 reads aligned, positions match the BWA alignment (reads below 3 threads hang the tool)
+hilive	hilive_hilive-build	PASS	
+hint	hint_cnv	Not completed	needs the HiNT reference directory (large Dropbox download of hg19/hg38/mm10 files, human or mouse Hi-C data) that cannot be fetched here
+hint	hint_pre	Not completed	needs the HiNT reference directory (large Dropbox download of hg19/hg38/mm10 files, human or mouse Hi-C data) that cannot be fetched here
+hint	hint_tl	Not completed	needs the HiNT reference directory (large Dropbox download of hg19/hg38/mm10 files, human or mouse Hi-C data) that cannot be fetched here
+hiphase	hiphase	PASS	real HG002 long reads at low coverage (0.7x), so only 183 variants phased; run needed ignore_read_groups
+hippunfold	hippunfold_group	Not completed	pipeline, skipped
+hippunfold	hippunfold_participant	Not completed	pipeline, skipped
+hippunfold	hippunfold_participant_create_template	Not completed	pipeline, skipped
+hippunfold-dev	hippunfold-dev_hippunfold	Not completed	pipeline, skipped
+hisat-3n	hisat-3n	PASS	
+hisat-3n	hisat-3n_hisat-3n-build	PASS	
+hisat-3n	hisat-3n_hisat-3n-table	PASS	
+hisat2	hisat2	PASS	output matches the Galaxy test result for paired phiX reads with trimming
+hisat2	hisat2-build	PASS	
+hisat2	hisat2-inspect	PASS	
+hisat2	hisat2_extract_exons.py	PASS	
+hisat2	hisat2_extract_snps_haplotypes_UCSC.py	Not completed	no usable test data: needs a UCSC snp table (large download) that is not available here
+hisat2	hisat2_extract_snps_haplotypes_VCF.py	PASS	
+hisat2	hisat2_extract_splice_sites.py	PASS	
+hisat2	hisat2_read_statistics.py	PASS	
+hisat2	hisat2_simulate_reads.py	Failed	image problem: the script calls Random.shuffle(random=...), which Python 3.11 in the image no longer accepts
+hisat2-pipeline	hisat2-pipeline	Not completed	pipeline, skipped
+hitea	hitea	Failed	image problem: the image lacks the file command (and lscpu), so hitea cannot read its built-in gzipped TE annotation and stops at the precheck step
+hivtrace	hivtrace	Failed	image problem: tn93 is not installed in the image, and the first run writes LANL.FASTA into the install directory, which fails for a non-root user
+hivtrace	hivtrace_hivtrace_strip_drams	PASS	
+hla-asm	hla-asm_HLA-ASM.pl	Not completed	needs the HLA*ASM reference data package (large Dropbox download) and a human MHC assembly; not available here
+hla-la	hla-la_HLA-LA.pl	Not completed	needs the large PRG_MHC_GRCh38_withIMGT graph (not in the image, large download) and human MHC reads
+hlama	hlama	Not completed	pipeline, skipped (writes and runs a Snakemake workflow)
+hlaprofiler	hlaprofiler_build	Failed	tool bug: HLAProfiler.pl passes an extra argument to createDistractome and stops with Can't use string as a symbol ref (line 902)
+hlaprofiler	hlaprofiler_build_taxonomy	Failed	tool bug: same createDistractome crash as the build module (line 902)
+hlaprofiler	hlaprofiler_count_reads	PASS	
+hlaprofiler	hlaprofiler_create_profiles	Failed	tool bug: DetermineProfile.pm cannot load /modules/SequenceFunctions.pm (scripts_dir unset), so no profile is written
+hlaprofiler	hlaprofiler_create_taxonomy	PASS	output files are identical to the expected outputs of the HLAProfiler tests
+hlaprofiler	hlaprofiler_filter	PASS	
+hlaprofiler	hlaprofiler_predict	PASS	used the prebuilt database from the HLAProfiler test data; calls the expected HLA-A alleles
+hlaprofiler	hlaprofiler_predict_only	PASS	expected HLA-A alleles called from the filtered and counted reads
+hmftools-bwa-plus	hmftools-bwa-plus_index	PASS	
+hmftools-bwa-plus	hmftools-bwa-plus_mem	PASS	197 of 200 SARS-CoV-2 read positions agree with the bwa mem alignment from nf-core test data
+hmmcopy	hmmcopy_fastaToRead	PASS	
+hmmcopy	hmmcopy_gcCounter	PASS	
+hmmcopy	hmmcopy_generateMap.pl	PASS	
+hmmcopy	hmmcopy_mapCounter	PASS	
+hmmcopy	hmmcopy_readCounter	PASS	
+hmmer	alimask	PASS	
+hmmer	hmmer_hmmalign	PASS	
+hmmer	hmmer_hmmbuild	PASS	
+hmmer	hmmer_hmmconvert	PASS	
+hmmer	hmmer_hmmemit	PASS	
+hmmer	hmmer_hmmfetch	PASS	
+hmmer	hmmer_hmmlogo	PASS	
+hmmer	hmmer_hmmpress	PASS	
+hmmer	hmmer_hmmscan	PASS	
+hmmer	hmmer_hmmsearch	PASS	
+hmmer	hmmer_hmmstat	PASS	
+hmmer	hmmer_jackhmmer	PASS	
+hmmer	hmmer_makehmmerdb	PASS	
+hmmer	hmmer_nhmmer	PASS	
+hmmer	hmmer_nhmmscan	PASS	
+hmmer	hmmer_phmmer	PASS	
+hmmratac	hmmratac_HMMRATAC	PASS	
+hmnfusion	hmnfusion_download-zenodo	PASS	crashes when a Zenodo file name contains a folder; flat record downloaded fine
+hmnfusion	hmnfusion_extractfusion	PASS	
+hmnfusion	hmnfusion_mmej-deletion	PASS	
+hmnfusion	hmnfusion_mmej-fusion	PASS	
+hmnfusion	hmnfusion_quantification	PASS	
+hmnfusion	hmnfusion_workflow-align	Not completed	pipeline, skipped (runs a Snakemake workflow)
+hmnfusion	hmnfusion_workflow-fusion	Not completed	pipeline, skipped (runs a Snakemake workflow)
+hmnfusion	hmnfusion_workflow-hmnfusion	Not completed	pipeline, skipped (runs a Snakemake workflow)
+hmnillumina	hmnillumina_HmnIllumina	Failed	tool bug: cluster_percent_pf is 90.0 instead of 90.8 (integer division); other fields match the repo's expected JSON
+hmnqc	hmnqc_depthmin	PASS	
+hmnqc	hmnqc_depthtarget	PASS	
+hmnqc	hmnqc_extractvcf	PASS	
+hmnqc	hmnqc_infersexe	Failed	tool bug: hmnqc 0.5.1 crashes with AttributeError on a misspelled option name (paramter_simple)
+hmnqc	hmnqc_quality	PASS	matches expected json except three samtools flagstat keys the installed version does not emit
+hmnrandomread	hmnrandomread_HmnRandomRead	PASS	
+hmntrimmer	hmntrimmer_HmnTrimmer	PASS	
+hmtnote	hmtnote_annotate	Not completed	needs the HmtVar web service (www.hmtvar.uniba.it), which times out from this machine; offline mode needs a database dumped from the same service
+hocort	hocort_index_bbmap	PASS	
+hocort	hocort_index_bowtie2	PASS	
+hocort	hocort_index_bwamem2	PASS	
+hocort	hocort_index_hisat2	PASS	
+hocort	hocort_index_minimap2	PASS	
+hocort	hocort_map_bbmap	PASS	
+hocort	hocort_map_bowtie2	PASS	
+hocort	hocort_map_bwamem2	PASS	
+hocort	hocort_map_hisat2	PASS	
+hocort	hocort_map_minimap2	PASS	
+homer	homer_annotatePeaks.pl	PASS	
+homer	homer_bed2pos.pl	PASS	
+homer	homer_findMotifs.pl	PASS	
+homer	homer_findMotifsGenome.pl	PASS	
+homer	homer_findPeaks	PASS	
+homer	homer_homer2_background	PASS	
+homer	homer_homer2_denovo	PASS	
+homer	homer_homer2_find	PASS	
+homer	homer_homer2_known	PASS	
+homer	homer_homer2_mask	PASS	
+homer	homer_homer2_norm	PASS	
+homer	homer_makeTagDirectory	Failed	image problem: BAM input gives an empty tag directory because samtools is missing in the image; SAM input works
+homer	homer_mergePeaks	PASS	synthetic data: planted subsets of real Galaxy CTCF peaks; overlap counts 10/10/10 as expected.
+homer	homer_parseGTF.pl	PASS	
+homer	homer_pos2bed.pl	PASS	
+homer	homer_scanMotifGenomeWide.pl	PASS	text output identical to the Galaxy expected file; -bed start is 0-based (1448, matches the program source) while the older Galaxy file has 1449
+homoeditdistance	homoeditdistance_hed	PASS	
+homopolish	homopolish_make_train_data	Not completed	needs a Mash sketch (download URL is gone) and homolog downloads from NCBI; the -l local database option is ignored
+homopolish	homopolish_modpolish	Not completed	needs Nanopore reads of the draft genome and a Mash sketch (download URL is gone); no usable test data
+homopolish	homopolish_polish	Not completed	needs a 3.3 GB Mash sketch (download URL is gone) or a 1.5 GB NCBI assembly list; the -l local database option crashes (tool bug: name ani is shadowed by an int)
+homopolish	homopolish_train	Not completed	needs alignment dataframes made by make_train_data, which could not run
+hops	hops	Not completed	baseCommand fixed to hops; full run needs a MALT index database and ancient DNA references, too large to test
+hormon	hormon_HORmon	Failed	image problem: bundled stringdecomposer binary needs missing libasan.so.5
+hormon	hormon_monomer_inference	Failed	image problem: bundled stringdecomposer binary needs missing libasan.so.5
+hostile	hostile_clean	PASS	
+hostile	hostile_index_fetch	PASS	
+hostile	hostile_index_list	PASS	
+hostile	hostile_mask	PASS	
+how_are_we_stranded_here	how_are_we_stranded_here_check_strandedness	PASS	
+how_are_we_stranded_here	how_are_we_stranded_here_gff32gtf	PASS	
+how_are_we_stranded_here	how_are_we_stranded_here_gtf2bed	PASS	
+howdesbt	howdesbt_bfdistance	PASS	
+howdesbt	howdesbt_bitstats	PASS	
+howdesbt	howdesbt_build	PASS	
+howdesbt	howdesbt_cluster	PASS	
+howdesbt	howdesbt_combinebf	PASS	
+howdesbt	howdesbt_compressbf	PASS	
+howdesbt	howdesbt_dumpbf	PASS	
+howdesbt	howdesbt_dumpbv	PASS	
+howdesbt	howdesbt_makebf	PASS	
+howdesbt	howdesbt_makebv	PASS	
+howdesbt	howdesbt_nodestats	PASS	
+howdesbt	howdesbt_query	PASS	
+howdesbt	howdesbt_querybf	PASS	
+howdesbt	howdesbt_validatetree	PASS	
+hpcblast	hpcblast_hpc-blast	PASS	
+hpsuissero	hpsuissero_HpsuisSero.sh	PASS	
+hs-blastn	hs-blastn_align	PASS	
+hs-blastn	hs-blastn_index	PASS	
+hsdecipher	hsdecipher	Failed	image problem: script uses DataFrame.append, which pandas 2 in the image no longer has
+hsdecipher	hsdecipher_add_on	PASS	
+hsdecipher	hsdecipher_batch_run	PASS	
+hsdecipher	hsdecipher_categories	PASS	
+hsdecipher	hsdecipher_statistics	PASS	
+hsdfinder	hsdfinder	Not completed	runs to success on the tutorial input, but only 238 of 279 shared lines match the tutorial output (the tutorial used extra manual threshold curation), so the result cannot be confirmed.
+hsdfinder	hsdfinder_hsd_to_kegg	Failed	image problem: script uses __location__ before it is defined, so it always raises NameError
+htseq	htseq_htseq-count	PASS	
+htseq	htseq_htseq-count-barcodes	PASS	
+htseq	htseq_htseq-qa	PASS	
+htseqqc	htseqqc_filter.py	PASS	
+htsinfer	htsinfer	PASS	
+htslib	htslib_annot_tsv	PASS	
+htslib	htslib_bgzip	PASS	
+htslib	htslib_htsfile	PASS	
+htslib	htslib_tabix	PASS	
+htsqualc	htsqualc_filter.py	PASS	
+hubward	hubward_liftover	Failed	image problem: liftover calls bigBedToBed, which is missing from the image
+hubward	hubward_process	PASS	
+hubward	hubward_skeleton	PASS	
+hubward	hubward_upload	Not completed	needs a remote host with rsync and ssh access
+hubward-all	hubward-all_liftover	Failed	image problem: hubward fails at start with ImportError (bleach needs html5lib.sanitizer)
+hubward-all	hubward-all_process	Failed	image problem: hubward fails at start with ImportError (bleach needs html5lib.sanitizer)
+hubward-all	hubward-all_skeleton	Failed	image problem: hubward fails at start with ImportError (bleach needs html5lib.sanitizer)
+hubward-all	hubward-all_upload	Failed	image problem: hubward fails at start with ImportError (bleach needs html5lib.sanitizer)
+hulk	hulk_sketch	PASS	
+hulk	hulk_smash	PASS	
+humanfilt	humanfilt_run	Failed	image problem: fastuniq, bbduk.sh, dedupe.sh, kraken2 and seqkit are missing from the image, and the human references are not available
+humanfilt	humanfilt_setup	Not completed	downloads several GB of human reference bundles from Zenodo, too large to test
+humann	humann_humann	PASS	
+humann	humann_humann_barplot	PASS	
+humann	humann_humann_build_custom_database	PASS	
+humann	humann_humann_expand_cluster	Not completed	needs the HUMAnN utility mapping databases, which are not in the image and must be downloaded
+humann	humann_humann_genefamilies_genus_level	Failed	tool bug: the script calls dict.iteritems (Python 2 code) and crashes under Python 3
+humann	humann_humann_join_tables	PASS	
+humann	humann_humann_reduce_table	PASS	
+humann	humann_humann_regroup_table	PASS	
+humann	humann_humann_rename_table	PASS	
+humann	humann_humann_renorm_table	PASS	
+humann	humann_humann_split_stratified_table	PASS	
+humann	humann_humann_split_table	PASS	
+humann	humann_humann_unpack_pathways	PASS	
+humann2	humann2_humann2	PASS	
+humann2	humann2_humann2_barplot	PASS	
+humann2	humann2_humann2_build_custom_database	PASS	
+humann2	humann2_humann2_genefamilies_genus_level	PASS	
+humann2	humann2_humann2_join_tables	PASS	
+humann2	humann2_humann2_reduce_table	PASS	
+humann2	humann2_humann2_regroup_table	PASS	
+humann2	humann2_humann2_rename_table	PASS	
+humann2	humann2_humann2_renorm_table	PASS	
+humann2	humann2_humann2_rna_dna_norm	PASS	
+humann2	humann2_humann2_split_stratified_table	PASS	
+humann2	humann2_humann2_split_table	PASS	
+humann2	humann2_humann2_strain_profiler	PASS	
+humann2	humann2_humann2_unpack_pathways	PASS	
+humid	humid	PASS	
+hybkit	hybkit_hyb_analyze	PASS	
+hybkit	hybkit_hyb_check	PASS	
+hybkit	hybkit_hyb_eval	PASS	
+hybkit	hybkit_hyb_filter	PASS	
+hybpiper	hybpiper_assemble	PASS	
+hybpiper	hybpiper_check_targetfile	PASS	
+hybpiper	hybpiper_filter_by_length	PASS	
+hybpiper	hybpiper_fix_targetfile	PASS	
+hybpiper	hybpiper_paralog_retriever	PASS	
+hybpiper	hybpiper_recovery_heatmap	PASS	
+hybpiper	hybpiper_retrieve_sequences	PASS	
+hybpiper	hybpiper_stats	PASS	
+hybracter	hybracter_config	Failed	tool bug: it only copies the default config.yaml; documented options such as --min_length and --skip_qc are accepted but silently ignored
+hybracter	hybracter_hybrid	Not completed	pipeline, skipped
+hybracter	hybracter_hybrid-single	Not completed	pipeline, skipped
+hybracter	hybracter_install	Not completed	runs a Snakemake workflow that downloads the plassembler database (several GB) and conda environments from the network; skipped as pipeline/too heavy
+hybracter	hybracter_long	Not completed	pipeline, skipped
+hybracter	hybracter_long-single	Not completed	pipeline, skipped
+hybran	hybran	PASS	
+hybran	hybran_compare	Failed	tool bug: crashes with a TypeError (None joined in a report line) when the two annotations differ; works only on identical annotations
+hybran	hybran_defuse	PASS	
+hybran	hybran_onegene	PASS	ran on a single reference (no duplicate genes), so the unifications table is empty and the annotation is copied unchanged
+hybran	hybran_standardize	PASS	
+hybran	hybran_synergize	Failed	tool bug: on a hybran output directory it crashes with AttributeError 'function' object has no attribute 'glob'; the GenBank mode fails with KeyError 'gene' on hybran's own reference files
+hymet	hymet_ablation	Not completed	pipeline, skipped: reference ablation workflow needing the HYMET databases and case data
+hymet	hymet_bench	Not completed	pipeline, skipped: CAMI benchmark harness needing CAMI data and large databases
+hymet	hymet_case	Not completed	pipeline, skipped: case-study harness needing downloaded MGnify/Zymo data and large databases
+hymet	hymet_legacy	Not completed	legacy entry point of the same classifier; needs the HYMET Mash sketches (about 2.3 GB) and NCBI taxonomy files, which are not in the image
+hymet	hymet_run	Not completed	needs the HYMET Mash sketches (about 2.3 GB from Zenodo, not in the image) and NCBI genome downloads; too heavy for this machine
+hymet	hymet_truth_build-zymo	Not completed	needs NCBI taxonomy files (taxonomy_files/nodes.dmp) that are not in the image and cannot be passed on the command line; the tool stops with FileNotFoundError
+hymet2	hymet2_hymet	Not completed	interactive prompt (input directory read from standard input); stops because the Mash sketch databases (sketch1-3.msh, about 2.3 GB) are not in the image
+hyphy	hyphy_absrel	PASS	
+hyphy	hyphy_bgm	PASS	
+hyphy	hyphy_busted	PASS	
+hyphy	hyphy_contrast-fel	PASS	
+hyphy	hyphy_fade	PASS	
+hyphy	hyphy_fel	PASS	
+hyphy	hyphy_fubar	PASS	
+hyphy	hyphy_gard	PASS	needs ENV=TOLERATE_NUMERICAL_ERRORS=1; set through the env input, otherwise it stops with an internal numerical error
+hyphy	hyphy_mcc	PASS	synthetic data: real alignment with clade labels (Clade1, Clade2) added by hand to a real tree, as the tool requires
+hyphy	hyphy_mclk	PASS	
+hyphy	hyphy_meme	PASS	
+hyphy	hyphy_mgvsgy	PASS	
+hyphy	hyphy_molerate	PASS	
+hyphy	hyphy_mss	PASS	synthetic data: NEXUS alignment files assembled by hand from real galaxy test sequences and trees, because the tool needs the tree inside each alignment file
+hyphy	hyphy_mss-ga	PASS	synthetic data: NEXUS alignment files assembled by hand from real galaxy test sequences and trees, because the tool needs the tree inside each alignment file
+hyphy	hyphy_mss-ga-processor	PASS	
+hyphy	hyphy_mt	Failed	tool bug: hyphy mt crashes with a glibc heap corruption error (exit 139) after the first model on every input tried
+hyphy	hyphy_prime	PASS	
+hyphy	hyphy_relax	PASS	single-alignment mode only; the multiple-files mode was not tested
+hyphy	hyphy_slac	PASS	
+hyplas	hyplas	Not completed	pipeline, skipped: hybrid plasmid assembly pipeline that also needs the large Platon database
+hypo	hypo	PASS	
+ibdmix	ibdmix	PASS	
+ibdmix	ibdmix_generate_gt	PASS	
+ibdmix	ibdmix_gt_lods	PASS	
+ibdne	ibdne	Not completed	runs to success on real simulated Browning-lab chr1 IBD segments and writes Ne estimates with CIs, but the Ne values could not be checked against a known answer.
+ibdseq	ibdseq	PASS	
+ibridges	ibridges_alias	PASS	synthetic data: sample environment file; alias is created offline
+ibridges	ibridges_cd	Not completed	needs an iRODS server and account
+ibridges	ibridges_download	Not completed	needs an iRODS server and account
+ibridges	ibridges_init	Not completed	needs an iRODS server and account (asks for a password)
+ibridges	ibridges_ls	Not completed	needs an iRODS server and account
+ibridges	ibridges_meta-add	Not completed	needs an iRODS server and account
+ibridges	ibridges_meta-del	Not completed	needs an iRODS server and account
+ibridges	ibridges_meta-list	Not completed	needs an iRODS server and account
+ibridges	ibridges_mkcoll	Not completed	needs an iRODS server and account
+ibridges	ibridges_pwd	Not completed	needs an iRODS server and account
+ibridges	ibridges_rm	Not completed	needs an iRODS server and account
+ibridges	ibridges_search	Not completed	needs an iRODS server and account
+ibridges	ibridges_setup	Not completed	needs a server template plugin; the image has none, so it only prints a notice
+ibridges	ibridges_sync	Not completed	needs an iRODS server and account
+ibridges	ibridges_tree	Not completed	needs an iRODS server and account
+ibridges	ibridges_upload	Not completed	needs an iRODS server and account
+icescreen	icescreen	PASS	
+iclipro	iclipro_iCLIPro	Failed	image problem: iCLIPro crashes in the read overlap heatmap step (matplotlib 2.2.2 rejects shading='faceted') and writes no report
+iclipro	iclipro_iCLIPro_bam_splitter	PASS	

@@ -1,5 +1,15 @@
 # hiddendomains CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hiddendomains_binReads.pl | Failed | image problem: samtools in the image lacks libcrypto.so.1.0.0, so the default BAM input gives empty output; BED input (-B) works |
+| hiddendomains_domainsMergeToBed.pl | PASS |  |
+| hiddendomains_domainsToBed.pl | PASS |  |
+| hiddendomains_hiddenDomains | Failed | image problem: samtools in the image lacks libcrypto.so.1.0.0, so the default BAM input fails; BED input (-B) works |
+| hiddendomains_peakCenters | PASS |  |
+
 ## hiddendomains_hiddenDomains
 
 ### Tool Description
@@ -252,6 +262,41 @@ Options
     the domainFile (without the .txt suffix)
 ```
 
+
+## hiddendomains_peakCenters
+
+### Tool Description
+Identify the center of peaks in hiddenDomains output using ChIP-seq reads.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hiddendomains:3.1--pl526r36_0
+- **Homepage**: http://hiddendomains.sourceforge.net/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hiddendomains/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: peakCenters [options] domains_analysis.bed <chipSeq.bam | chipSeq.bed> > domains_centers.bed
+
+This program takes an "_analysis.bed" or "_vis.bed" file 
+(output from hiddenDomains) and a ChIP-seq BAM (or BED) file and identifies 
+the center of peaks.
+
+peakCenters requires bedtools to be installed on the system.
+
+Options
+
+-n  NUMBER
+    This will add NUMBER bases before and after the start and stop coordinates
+    for the peak. The default value is 100. You can set it to 0 if you just
+    want the peak coordinates.
+
+-v
+    Process a "_vis.bed" file instead of an "_analysis.bed" file.
+
+-h
+    Print this help information.
+```
 
 ## Metadata
 - **Skill**: generated

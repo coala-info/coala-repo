@@ -1,5 +1,11 @@
 # hisat2-pipeline CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hisat2-pipeline | Not completed | pipeline, skipped |
+
 ## hisat2-pipeline
 
 ### Tool Description

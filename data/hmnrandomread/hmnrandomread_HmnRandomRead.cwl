@@ -46,11 +46,24 @@ inputs:
       position: 101
       prefix: --profile-error-id
   - id: reference
-    type: string
-    doc: Reference(s) path with number sequence
+    type: File
+    doc: Reference fasta file; the tool passes it as `<path>,<number of reads>`
     inputBinding:
       position: 101
       prefix: --reference
+      valueFrom: |-
+        ${
+          var p = self.basename;
+          if (inputs.number_reads !== null && inputs.number_reads !== undefined) {
+            p = p + "," + inputs.number_reads;
+          }
+          return p;
+        }
+  - id: number_reads
+    type:
+      - 'null'
+      - int
+    doc: Number of sequences (read pairs) to generate from the reference
   - id: seed
     type:
       - 'null'
@@ -96,6 +109,10 @@ outputs:
       glob: $(inputs.read_reverse_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnrandomread:0.10.0--h9948957_4

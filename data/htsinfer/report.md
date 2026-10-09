@@ -1,5 +1,11 @@
 # htsinfer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| htsinfer | PASS |  |
+
 ## htsinfer
 
 ### Tool Description

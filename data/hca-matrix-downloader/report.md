@@ -1,5 +1,11 @@
 # hca-matrix-downloader CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hca-matrix-downloader | Not completed | the EBI FTP server (ftp.ebi.ac.uk) resets every connection from this machine, so no matrix could be downloaded |
+
 ## hca-matrix-downloader
 
 ### Tool Description

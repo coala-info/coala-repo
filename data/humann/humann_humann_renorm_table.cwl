@@ -15,26 +15,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'The normalization mode (e.g., community: normalize all levels by the same
-      sum, features: normalize each level independently)'
+    doc: 'Normalize all levels by community total or levelwise totals: community or
+      levelwise (default community)'
     inputBinding:
       position: 101
       prefix: --mode
-  - id: special_features
+  - id: special
     type:
       - 'null'
       - string
-    doc: Whether to include special features (UNMAPPED, UNGROUPED, etc.) in the 
-      normalization
+    doc: 'Include the special features UNMAPPED, UNINTEGRATED, and UNGROUPED: y or
+      n (default y)'
     inputBinding:
       position: 101
-      prefix: --special-features
+      prefix: --special
   - id: units
     type:
       - 'null'
       - string
-    doc: 'The units to normalize to (e.g., relab: relative abundance, cpm: copies
-      per million)'
+    doc: 'Normalization scheme: copies per million (cpm) or relative abundance (relab);
+      default cpm'
     inputBinding:
       position: 101
       prefix: --units

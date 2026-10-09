@@ -1,5 +1,11 @@
 # hmnillumina CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hmnillumina_HmnIllumina | Failed | tool bug: cluster_percent_pf is 90.0 instead of 90.8 (integer division); other fields match the repo's expected JSON |
+
 ## hmnillumina_HmnIllumina
 
 ### Tool Description

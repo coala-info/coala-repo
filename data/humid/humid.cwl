@@ -87,6 +87,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: log file written with -l
+    outputBinding:
+      glob: $(inputs.log_file)
   - id: output_directory_dir
     type:
       - 'null'

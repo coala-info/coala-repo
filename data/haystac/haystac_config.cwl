@@ -18,7 +18,7 @@ inputs:
   - id: cache
     type:
       - 'null'
-      - Directory
+      - string
     doc: Cache folder for storing genomes downloaded from NCBI and other shared 
       data
     inputBinding:
@@ -35,8 +35,8 @@ inputs:
   - id: use_conda
     type:
       - 'null'
-      - boolean
-    doc: Use conda as a package manger
+      - string
+    doc: Use conda as a package manger (True or False)
     inputBinding:
       position: 101
       prefix: --use-conda
@@ -44,6 +44,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: config_file
+    type: File
+    doc: Haystac configuration file written to the home directory (.haystac/config.yaml)
+    outputBinding:
+      glob: .haystac/config.yaml
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haystac:0.4.12--pyhcf36b3e_0

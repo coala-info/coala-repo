@@ -1,5 +1,11 @@
 # harvesttools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| harvesttools | Failed | tool bug: Gingr (.hvt) file written with -o cannot be read back (Premature EOF) and -V from a Gingr input crashes; other conversions work |
+
 ## harvesttools
 
 ### Tool Description

@@ -31,7 +31,7 @@ inputs:
       position: 101
       prefix: --mapdir
   - id: model
-    type: string
+    type: File
     doc: Admixture model in .dat format. See File Formats under simgenotype in 
       the docs for complete info.
     inputBinding:
@@ -66,6 +66,9 @@ inputs:
       prefix: --pop_field
   - id: ref_vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: VCF or PGEN file used as reference for creation of simulated samples 
       respective genotypes.
     inputBinding:
@@ -126,6 +129,11 @@ outputs:
       breakpoints output with extension bp e.g. /path/to/output.bp.
     outputBinding:
       glob: $(inputs.out_path)
+  - id: breakpoints
+    type: File
+    doc: Breakpoints file (.bp) written beside the output
+    outputBinding:
+      glob: $(inputs.out_path.replace(/\.(vcf\.gz|vcf|bcf|pgen)$/, '') + '.bp')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

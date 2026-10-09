@@ -75,6 +75,7 @@ inputs:
     type:
       - 'null'
       - string
+      - File
     doc: name of standard index or path to custom genome (Minimap2) or Bowtie2 
       index
     inputBinding:

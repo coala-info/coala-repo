@@ -1,9 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: distancelaw
+baseCommand:
+  - hicstuff
+  - distancelaw
 label: hicstuff_distancelaw
-doc: "Take the distance law file from hicstuff and can average it, normalize it compute
-  the\n    slope of the curve and plot it.\n\nTool homepage: https://github.com/koszullab/hicstuff"
+doc: "Take the distance law file from hicstuff and can average it, normalize it compute\
+  \ the\n    slope of the curve and plot it.\n\nTool homepage: https://github.com/koszullab/hicstuff"
 inputs:
   - id: average
     type:
@@ -43,10 +45,10 @@ inputs:
     doc: "Positions of the centromeres separated by\n                            \
       \                a space and in the same order as the\n                    \
       \                        chromosomes. This allows to plot chromosomal arms\n\
-      \                                            separately. Note this will only
-      work with --pairs\n                                            input, as the
-      distance law needs to be recomputed.\n                                     \
-      \       Incompatible with the circular option."
+      \                                            separately. Note this will only\
+      \ work with --pairs\n                                            input, as the\
+      \ distance law needs to be recomputed.\n                                   \
+      \         Incompatible with the circular option."
     inputBinding:
       position: 101
       prefix: --centromeres
@@ -66,20 +68,21 @@ inputs:
         items: File
     doc: "Directory to the file or files containing the\n                        \
       \                    compute distance law. File should have the same\n     \
-      \                                       format than the ones made by hicstuff
-      pipeline."
+      \                                       format than the ones made by hicstuff\
+      \ pipeline."
     inputBinding:
       position: 101
       prefix: --dist-tbl
+      itemSeparator: ','
   - id: frags
     type:
       - 'null'
       - File
     doc: "Tab-separated file with headers, containing\n                          \
       \                  columns id, chrom, start_pos, end_pos size.\n           \
-      \                                 This is the file \"fragments_list.txt\" generated
-      by\n                                            hicstuff pipeline. Required
-      if pairs are given."
+      \                                 This is the file \"fragments_list.txt\" generated\
+      \ by\n                                            hicstuff pipeline. Required\
+      \ if pairs are given."
     inputBinding:
       position: 101
       prefix: --frags
@@ -96,10 +99,9 @@ inputs:
   - id: labels
     type:
       - 'null'
-      - Directory
-    doc: "List of string of the labels for the plot\n                            \
-      \                separated by a coma. If no labels given, give\n           \
-      \                                 the names \"Sample 1\", \"Sample 2\"..."
+      - string
+    doc: Comma separated list of labels for the plot (Sample 1, Sample 2, ... if not
+      given).
     inputBinding:
       position: 101
       prefix: --labels
@@ -109,11 +111,11 @@ inputs:
       - File
     doc: "Pairs file. Format from 4D Nucleome Omics Data\n                       \
       \                     Standards Working Group with the 8th and 9th\n       \
-      \                                     coulumns are the ID of the fragments of
-      the\n                                            reads 1 and 2. Only add if
-      no distance_law table\n                                            given. It
-      will compute the table from these pairs\n                                  \
-      \          and the fragments from the fragments file."
+      \                                     coulumns are the ID of the fragments of\
+      \ the\n                                            reads 1 and 2. Only add if\
+      \ no distance_law table\n                                            given.\
+      \ It will compute the table from these pairs\n                             \
+      \               and the fragments from the fragments file."
     inputBinding:
       position: 101
       prefix: --pairs
@@ -133,10 +135,10 @@ inputs:
       - int
     doc: "Superior born to plot the distance law. By\n                           \
       \                 default the value is the maximum length of all\n         \
-      \                                   the dataset given. Also if big arm only
-      set, it\n                                            will be the minimum size
-      of the arms/chromosomes\n                                            taken to
-      make the average."
+      \                                   the dataset given. Also if big arm only\
+      \ set, it\n                                            will be the minimum size\
+      \ of the arms/chromosomes\n                                            taken\
+      \ to make the average."
     inputBinding:
       position: 101
       prefix: --sup

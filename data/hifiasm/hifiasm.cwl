@@ -10,7 +10,9 @@ inputs:
     inputBinding:
       position: 1
   - id: input_reads_2
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Second input FASTQ file (e.g., R2)
     inputBinding:
       position: 2
@@ -236,6 +238,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --h1
+      itemSeparator: ','
   - id: hic_r2_files
     type:
       - 'null'
@@ -245,6 +248,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --h2
+      itemSeparator: ','
   - id: hic_similarity_threshold_base_level
     type:
       - 'null'
@@ -538,6 +542,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --ul
+      itemSeparator: ','
   - id: utilize_homology_for_trio_phasing_errors
     type:
       - 'null'
@@ -556,7 +561,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_prefix || 'hifiasm.asm')*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hifiasm:0.25.0--h5ca1c30_0

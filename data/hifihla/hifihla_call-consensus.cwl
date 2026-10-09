@@ -57,7 +57,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output prefix
+    doc: Output prefix, with a directory part (for example ./sample); the directory must exist
     inputBinding:
       position: 101
       prefix: --out_prefix
@@ -80,8 +80,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101

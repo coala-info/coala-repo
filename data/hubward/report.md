@@ -1,5 +1,14 @@
 # hubward CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hubward_liftover | Failed | image problem: liftover calls bigBedToBed, which is missing from the image |
+| hubward_process | PASS |  |
+| hubward_skeleton | PASS |  |
+| hubward_upload | Not completed | needs a remote host with rsync and ssh access |
+
 ## hubward_process
 
 ### Tool Description

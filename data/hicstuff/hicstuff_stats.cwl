@@ -1,8 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicstuff_stats
+baseCommand:
+  - hicstuff
+  - stats
 label: hicstuff_stats
-doc: "Extract stats from a hicstuff log file.\n\nTool homepage: https://github.com/koszullab/hicstuff"
+doc: 'Extract stats from a hicstuff log file.
+
+
+  Tool homepage: https://github.com/koszullab/hicstuff'
 inputs:
   - id: log
     type: File

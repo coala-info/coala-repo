@@ -1,5 +1,11 @@
 # hippunfold-dev CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hippunfold-dev_hippunfold | Not completed | pipeline, skipped |
+
 ## hippunfold-dev_hippunfold
 
 ### Tool Description

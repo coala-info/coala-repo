@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - HmnTrimmer
-  - HmnTrimmer
+baseCommand: HmnTrimmer
 label: hmntrimmer_HmnTrimmer
 doc: "HmnTrimmer, a trimmer of NGS reads\n\nTool homepage: https://github.com/guillaume-gricourt/HmnTrimmer"
 inputs:
@@ -100,7 +98,7 @@ inputs:
   - id: version_check
     type:
       - 'null'
-      - boolean
+      - string
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
     inputBinding:

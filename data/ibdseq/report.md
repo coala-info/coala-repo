@@ -1,5 +1,11 @@
 # ibdseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ibdseq | PASS |  |
+
 ## ibdseq
 
 ### Tool Description

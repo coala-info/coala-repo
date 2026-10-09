@@ -1,5 +1,11 @@
 # hlama CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hlama | Not completed | pipeline, skipped (writes and runs a Snakemake workflow) |
+
 ## hlama
 
 ### Tool Description

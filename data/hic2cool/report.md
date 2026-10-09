@@ -1,5 +1,13 @@
 # hic2cool CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hic2cool_convert | PASS |  |
+| hic2cool_extract-norms | PASS |  |
+| hic2cool_update | PASS |  |
+
 ## hic2cool_convert
 
 ### Tool Description

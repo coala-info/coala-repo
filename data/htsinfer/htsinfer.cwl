@@ -162,11 +162,17 @@ inputs:
       position: 102
       prefix: --verbosity
   - id: output_directory_path
-    type: string?
+    type:
+      - 'null'
+      - string
+    doc: path to directory where output is written to
     inputBinding:
       position: 103
       prefix: --output-directory
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (inferred metadata as JSON)
   - id: output_directory
     type:
       - 'null'
@@ -179,3 +185,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/htsinfer:1.0.0_rc.1--pyhdfd78af_0
+stdout: htsinfer.out

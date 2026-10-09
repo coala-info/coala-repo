@@ -126,7 +126,7 @@ inputs:
   - id: hmms
     type:
       - 'null'
-      - string
+      - File
     doc: Trusted HMM to first annotate from
     inputBinding:
       position: 103
@@ -235,7 +235,7 @@ inputs:
   - id: prodigaltf
     type:
       - 'null'
-      - string
+      - File
     doc: Prodigal training file
     inputBinding:
       position: 103

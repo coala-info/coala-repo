@@ -1,5 +1,14 @@
 # hdmi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hdmi_detect | Failed | image problem: HDMI detect crashes with ModuleNotFoundError: Bio.Blast.Applications (Biopython in the image is too new) |
+| hdmi_index | Not completed | needs the HGT events table from hdmi detect, which crashes in this image, so the step could not be tested |
+| hdmi_profile | Not completed | needs the HGT events table from hdmi detect, which crashes in this image, so the step could not be tested |
+| hdmi_summary | Not completed | needs the HGT events table from hdmi detect, which crashes in this image, so the step could not be tested |
+
 ## hdmi_detect
 
 ### Tool Description

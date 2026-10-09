@@ -5,7 +5,7 @@ baseCommand:
   - skeleton
 label: hubward_skeleton
 doc: "Populate <dirname> with template files that can be customized on a per-study
-  basis. The skeleton is actually a working example.\n\nTool homepage: https://github.com/lh3/bwa"
+  basis. The skeleton is actually a working example.\n\nTool homepage: https://github.com/daler/hubward"
 inputs:
   - id: dirname
     type: string

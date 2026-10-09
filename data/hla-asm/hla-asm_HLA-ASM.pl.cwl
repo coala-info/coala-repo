@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hla-asm_HLA-ASM.pl
+baseCommand: HLA-ASM.pl
 label: hla-asm_HLA-ASM.pl
 doc: "Please specify parameters --assembly_fasta and --sampleID. --assembly_fasta
   should specify a path to a unified FASTA of your assembly with unique contig IDs,
@@ -19,10 +19,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sampleID
+  - id: truth
+    type:
+      - 'null'
+      - File
+    doc: An HLA truth file (optional), used to compare the called HLA types with
+      known sample HLA types
+    inputBinding:
+      position: 101
+      prefix: --truth
 outputs:
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Output of HLA*ASM (output_HLA_ASM/<sampleID>, with summary.txt)
+    outputBinding:
+      glob: output_HLA_ASM/$(inputs.sample_id)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hla-asm:1.0.1--pl5321hdfd78af_0

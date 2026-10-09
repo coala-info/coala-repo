@@ -4,54 +4,46 @@ baseCommand:
   - hicberg
   - create-folder
 label: hicberg_create-folder
-doc: "Create a folder to save results. Folder will be set as <output>/<name>.\n\n\
-  Tool homepage: https://github.com/sebgra/hicberg"
+doc: 'Create a folder to save results. Folder will be set as <output>/<name>.
+
+
+  Tool homepage: https://github.com/sebgra/hicberg'
 inputs:
+  - id: output_dir
+    type:
+      - 'null'
+      - string
+    doc: Existing parent folder in which the result folder is created. If not set,
+      the current directory is used.
+    inputBinding:
+      position: 101
+      prefix: --output
+  - id: name
+    type:
+      - 'null'
+      - string
+    doc: Name of the result folder to create. If not set, 'sample' is used.
+    inputBinding:
+      position: 102
+      prefix: --name
   - id: force
     type:
       - 'null'
       - boolean
     doc: Set if previous analysis files are deleted.
     inputBinding:
-      position: 101
+      position: 103
       prefix: --force
-  - id: name
-    type:
-      - 'null'
-      - string
-    doc: Name of the output folder to create. If not set, 'sample' is used.
-    inputBinding:
-      position: 101
-      prefix: --name
-  - id: output_folder
-    type:
-      - 'null'
-      - string
-    doc: Output folder to save results. If not set, the current directory is 
-      used.
-    inputBinding:
-      position: 101
-      prefix: --output
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: name_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Name of the output folder to create. If not set, 'sample' is used.
+  - id: result_folder
+    type: Directory
+    doc: The created result folder (index, alignments, statistics, contacts and plots
+      sub-folders).
     outputBinding:
-      glob: $(inputs.name)
-  - id: output_folder_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output folder to save results. If not set, the current directory is 
-      used.
-    outputBinding:
-      glob: $(inputs.output_folder)
+      glob: '${ var n = inputs.name || ''sample''; return inputs.output_dir ? inputs.output_dir
+        + ''/'' + n : n; }'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicberg:1.0.1--py312hcf36b3e_0
-stdout: hicberg_create-folder.out

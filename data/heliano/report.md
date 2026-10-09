@@ -1,5 +1,11 @@
 # heliano CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| heliano | Failed | image problem: the image has only busybox sort, which rejects --parallel, so the sort steps fail and all result tables are empty |
+
 ## heliano
 
 ### Tool Description

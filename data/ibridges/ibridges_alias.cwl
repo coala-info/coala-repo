@@ -16,7 +16,7 @@ inputs:
   - id: env_path
     type:
       - 'null'
-      - string
+      - File
     doc: iRODS environment path.
     inputBinding:
       position: 2
@@ -32,6 +32,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: cli_config
+    type:
+      - 'null'
+      - File
+    doc: Command line configuration file that stores the aliases
+    outputBinding:
+      glob: .ibridges/ibridges_cli.json
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ibridges:2.0.1--pyhdfd78af_0

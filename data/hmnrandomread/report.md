@@ -1,5 +1,11 @@
 # hmnrandomread CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hmnrandomread_HmnRandomRead | PASS |  |
+
 ## hmnrandomread_HmnRandomRead
 
 ### Tool Description

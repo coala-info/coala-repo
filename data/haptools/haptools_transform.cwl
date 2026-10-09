@@ -8,11 +8,17 @@ doc: "Creates a VCF composed of haplotypes\n\nTool homepage: https://github.com/
 inputs:
   - id: genotypes
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: GENOTYPES must be formatted as a VCF or PGEN
     inputBinding:
       position: 1
   - id: haplotypes
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: HAPLOTYPES must be formatted according to the .hap format spec
     inputBinding:
       position: 2
@@ -47,10 +53,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --id
     doc: "A list of the haplotype IDs to use from the .hap file (ex: '-i H1 -i H2')"
     inputBinding:
       position: 103
-      prefix: --id
   - id: haplotype_ids_file
     type:
       - 'null'
@@ -83,11 +90,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample
     doc: "A list of the samples to subset from the genotypes file (ex: '-s sample1
       -s sample2')"
     inputBinding:
       position: 103
-      prefix: --sample
   - id: samples_file
     type:
       - 'null'

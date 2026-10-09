@@ -39,11 +39,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --barcodes
     doc: Enumerate barcodes (must have same length) for demultiplexing, e.g. -b 
       AGGATC -b CCCTTT
     inputBinding:
       position: 105
-      prefix: --barcodes
   - id: block_size
     type:
       - 'null'
@@ -125,7 +126,8 @@ inputs:
   - id: keep_cycles
     type:
       - 'null'
-      - int
+      - type: array
+        items: int
     doc: Keep intermediate alignment files for these cycles. The last cycle is 
       always kept.
     inputBinding:
@@ -134,7 +136,8 @@ inputs:
   - id: lanes
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: Select lane
     inputBinding:
       position: 105
@@ -194,7 +197,8 @@ inputs:
   - id: output_cycles
     type:
       - 'null'
-      - int
+      - type: array
+        items: int
     doc: Cycles for alignment output. The respective temporary files are kept.
     inputBinding:
       position: 105
@@ -245,7 +249,8 @@ inputs:
   - id: tiles
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: Select tile numbers
     inputBinding:
       position: 105

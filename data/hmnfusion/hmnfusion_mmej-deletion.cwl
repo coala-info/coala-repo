@@ -10,6 +10,8 @@ inputs:
   - id: input_reference_fasta
     type: File
     doc: Genome of reference
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --input-reference-fasta

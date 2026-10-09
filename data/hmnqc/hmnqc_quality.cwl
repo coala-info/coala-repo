@@ -43,6 +43,8 @@ inputs:
       - 'null'
       - File
     doc: Bam file to analyse
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --input-sample-bam

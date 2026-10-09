@@ -4,16 +4,23 @@ baseCommand:
   - hictk
   - load
 label: hictk_load
-doc: "Build .cool and .hic files from interactions in various text formats.\n\nTool
-  homepage: https://github.com/paulsengroup/hictk"
+doc: 'Build .cool and .hic files from interactions in various text formats.
+
+
+  Tool homepage: https://github.com/paulsengroup/hictk'
 inputs:
   - id: interactions
     type: File
-    doc: Path to a file with the interactions to be loaded. Common compression 
-      formats are supported (namely, bzip2, gzip, lz4, lzo, xz, and zstd). Pass 
-      "-" to indicate that interactions should be read from stdin.
+    doc: Path to a file with the interactions to be loaded. Common compression formats
+      are supported (namely, bzip2, gzip, lz4, lzo, xz, and zstd). Pass "-" to indicate
+      that interactions should be read from stdin.
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: Path to output file. File extension will be used to infer the output format.
+    inputBinding:
+      position: 2
   - id: assembly
     type:
       - 'null'
@@ -58,8 +65,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to .chrom.sizes file. Required when interactions are not in 4DN 
-      pairs format.
+    doc: Path to .chrom.sizes file. Required when interactions are not in 4DN pairs
+      format.
     inputBinding:
       position: 102
       prefix: --chrom-sizes
@@ -75,8 +82,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Compression level used to compress interactions. Defaults to 6 and 10 
-      for .cool and .hic files, respectively.
+    doc: Compression level used to compress interactions. Defaults to 6 and 10 for
+      .cool and .hic files, respectively.
     inputBinding:
       position: 102
       prefix: --compression-lvl
@@ -114,8 +121,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not generate All vs All matrix. Has no effect when creating .cool 
-      files.
+    doc: Do not generate All vs All matrix. Has no effect when creating .cool files.
     inputBinding:
       position: 102
       prefix: --no-skip-all-vs-all
@@ -123,10 +129,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Transpose pixels overlapping the lower-triangular matrix. When 
-      --no-transpose-lower-triangular-pixels is used and one or more pixels 
-      overlapping with the lower triangular matrix are encountered an exception 
-      will be raised.
+    doc: Transpose pixels overlapping the lower-triangular matrix. When --no-transpose-lower-triangular-pixels
+      is used and one or more pixels overlapping with the lower triangular matrix
+      are encountered an exception will be raised.
     inputBinding:
       position: 102
       prefix: --no-transpose-lower-triangular-pixels
@@ -134,9 +139,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Toggle pixel validation on or off. When --no-validate-pixels is used 
-      and invalid pixels are encountered, hictk will either crash or produce 
-      invalid files.
+    doc: Toggle pixel validation on or off. When --no-validate-pixels is used and
+      invalid pixels are encountered, hictk will either crash or produce invalid files.
     inputBinding:
       position: 102
       prefix: --no-validate-pixels
@@ -144,9 +148,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Interpret genomic coordinates or bins as one/zero based. By default 
-      coordinates are assumed to be one-based for interactions in 4dn and 
-      validpairs formats and zero-based otherwise.
+    doc: Interpret genomic coordinates or bins as one/zero based. By default coordinates
+      are assumed to be one-based for interactions in 4dn and validpairs formats and
+      zero-based otherwise.
     inputBinding:
       position: 102
       prefix: --one-based
@@ -163,8 +167,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not generate All vs All matrix. Has no effect when creating .cool 
-      files.
+    doc: Do not generate All vs All matrix. Has no effect when creating .cool files.
     inputBinding:
       position: 102
       prefix: --skip-all-vs-all
@@ -172,8 +175,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of parallel threads to spawn. When loading interactions 
-      in a .cool file, only up to two threads will be used.
+    doc: Maximum number of parallel threads to spawn. When loading interactions in
+      a .cool file, only up to two threads will be used.
     inputBinding:
       position: 102
       prefix: --threads
@@ -189,10 +192,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Transpose pixels overlapping the lower-triangular matrix. When 
-      --no-transpose-lower-triangular-pixels is used and one or more pixels 
-      overlapping with the lower triangular matrix are encountered an exception 
-      will be raised.
+    doc: Transpose pixels overlapping the lower-triangular matrix. When --no-transpose-lower-triangular-pixels
+      is used and one or more pixels overlapping with the lower triangular matrix
+      are encountered an exception will be raised.
     inputBinding:
       position: 102
       prefix: --transpose-lower-triangular-pixels
@@ -200,9 +202,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Toggle pixel validation on or off. When --no-validate-pixels is used 
-      and invalid pixels are encountered, hictk will either crash or produce 
-      invalid files.
+    doc: Toggle pixel validation on or off. When --no-validate-pixels is used and
+      invalid pixels are encountered, hictk will either crash or produce invalid files.
     inputBinding:
       position: 102
       prefix: --validate-pixels
@@ -218,20 +219,18 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Interpret genomic coordinates or bins as one/zero based. By default 
-      coordinates are assumed to be one-based for interactions in 4dn and 
-      validpairs formats and zero-based otherwise.
+    doc: Interpret genomic coordinates or bins as one/zero based. By default coordinates
+      are assumed to be one-based for interactions in 4dn and validpairs formats and
+      zero-based otherwise.
     inputBinding:
       position: 102
       prefix: --zero-based
 outputs:
-  - id: output_path
+  - id: output
     type: File
-    doc: Path to output file. File extension will be used to infer the output 
-      format. This behavior can be overridden by explicitly specifying an output
-      format through option --output-fmt.
+    doc: Output .cool or .hic file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0

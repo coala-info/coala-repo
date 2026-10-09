@@ -1,5 +1,26 @@
 # ibridges CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ibridges_alias | PASS | synthetic data: sample environment file; alias is created offline |
+| ibridges_cd | Not completed | needs an iRODS server and account |
+| ibridges_download | Not completed | needs an iRODS server and account |
+| ibridges_init | Not completed | needs an iRODS server and account (asks for a password) |
+| ibridges_ls | Not completed | needs an iRODS server and account |
+| ibridges_meta-add | Not completed | needs an iRODS server and account |
+| ibridges_meta-del | Not completed | needs an iRODS server and account |
+| ibridges_meta-list | Not completed | needs an iRODS server and account |
+| ibridges_mkcoll | Not completed | needs an iRODS server and account |
+| ibridges_pwd | Not completed | needs an iRODS server and account |
+| ibridges_rm | Not completed | needs an iRODS server and account |
+| ibridges_search | Not completed | needs an iRODS server and account |
+| ibridges_setup | Not completed | needs a server template plugin; the image has none, so it only prints a notice |
+| ibridges_sync | Not completed | needs an iRODS server and account |
+| ibridges_tree | Not completed | needs an iRODS server and account |
+| ibridges_upload | Not completed | needs an iRODS server and account |
+
 ## ibridges_ls
 
 ### Tool Description
@@ -502,6 +523,31 @@ options:
 Examples:
 
 > ibridges setup some-servername -o ~/.irods/some_server.json
+```
+
+## ibridges_pwd
+
+### Tool Description
+Show current working collection.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ibridges:2.0.1--pyhdfd78af_0
+- **Homepage**: https://github.com/iBridges-for-iRODS/iBridges
+- **Package**: https://anaconda.org/channels/bioconda/packages/ibridges/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: ibridges pwd [-h]
+
+Show current working collection.
+
+options:
+  -h, --help  show this help message and exit
+
+Examples:
+
+> ibridges pwd
 ```
 
 ## Metadata

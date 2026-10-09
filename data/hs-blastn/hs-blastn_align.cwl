@@ -10,6 +10,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .bwt
+      - .header
+      - .sa
+      - .sequence
     doc: database name
     inputBinding:
       position: 101
@@ -163,8 +168,10 @@ inputs:
       position: 101
       prefix: -xdrop_ungap
   - id: out_path
-    type: string
-    doc: ' Output file name Default = standard output'
+    type:
+      - 'null'
+      - string
+    doc: Output file name. Default = standard output
     inputBinding:
       position: 102
       prefix: -out

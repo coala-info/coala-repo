@@ -4,13 +4,21 @@ baseCommand:
   - hictk
   - convert
 label: hictk_convert
-doc: "Convert Hi-C files between different formats.\n\nTool homepage: https://github.com/paulsengroup/hictk"
+doc: 'Convert Hi-C files between different formats.
+
+
+  Tool homepage: https://github.com/paulsengroup/hictk'
 inputs:
   - id: input
     type: File
     doc: Path to the .hic, .cool or .mcool file to be converted.
     inputBinding:
       position: 1
+  - id: output
+    type: string
+    doc: Output path. File extension is used to infer output format.
+    inputBinding:
+      position: 2
   - id: chunk_size
     type:
       - 'null'
@@ -23,8 +31,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Compression level used to compress interactions. Defaults to 6 and 10 
-      for .cool and .hic files, respectively.
+    doc: Compression level used to compress interactions. Defaults to 6 and 10 for
+      .cool and .hic files, respectively.
     inputBinding:
       position: 102
       prefix: --compression-lvl
@@ -57,8 +65,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Genome assembly name. By default this is copied from the .hic file 
-      metadata.
+    doc: Genome assembly name. By default this is copied from the .hic file metadata.
     inputBinding:
       position: 102
       prefix: --genome
@@ -66,8 +73,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not generate All vs All matrix. Has no effect when creating .[m]cool
-      files.
+    doc: Do not generate All vs All matrix. Has no effect when creating .[m]cool files.
     inputBinding:
       position: 102
       prefix: --no-skip-all-vs-all
@@ -76,9 +82,9 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Name of one or more normalization methods to be copied. By default, 
-      vectors for all known normalization methods are copied. Pass NONE to avoid
-      copying the normalization vectors.
+    doc: Name of one or more normalization methods to be copied. By default, vectors
+      for all known normalization methods are copied. Pass NONE to avoid copying the
+      normalization vectors.
     inputBinding:
       position: 102
       prefix: --normalization-methods
@@ -86,8 +92,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output format (by default this is inferred from the output file 
-      extension).
+    doc: Output format (by default this is inferred from the output file extension).
     inputBinding:
       position: 102
       prefix: --output-fmt
@@ -96,8 +101,7 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: One or more resolutions to be converted. By default all resolutions are
-      converted.
+    doc: One or more resolutions to be converted. By default all resolutions are converted.
     inputBinding:
       position: 102
       prefix: --resolutions
@@ -105,8 +109,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not generate All vs All matrix. Has no effect when creating .[m]cool
-      files.
+    doc: Do not generate All vs All matrix. Has no effect when creating .[m]cool files.
     inputBinding:
       position: 102
       prefix: --skip-all-vs-all
@@ -114,8 +117,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of parallel threads to spawn. When converting from hic 
-      to cool, only two threads will be used.
+    doc: Maximum number of parallel threads to spawn. When converting from hic to
+      cool, only two threads will be used.
     inputBinding:
       position: 102
       prefix: --threads
@@ -136,11 +139,11 @@ inputs:
       position: 102
       prefix: --verbosity
 outputs:
-  - id: output
+  - id: output_file
     type: File
-    doc: Output path. File extension is used to infer output format.
+    doc: Converted file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hictk:2.2.0--h75fee6f_0

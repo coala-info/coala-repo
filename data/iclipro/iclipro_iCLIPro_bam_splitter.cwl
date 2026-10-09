@@ -7,8 +7,11 @@ inputs:
   - id: input_bam
     type: File
     doc: Input BAM file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
-      position: 1
+      position: 200
   - id: min_mapq
     type:
       - 'null'
@@ -18,9 +21,7 @@ inputs:
       position: 102
       prefix: -q
   - id: output_folder
-    type:
-      - 'null'
-      - string
+    type: string
     doc: output folder
     inputBinding:
       position: 102
@@ -29,7 +30,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: read len groups
+    doc: 'read len groups (default: "A:16-39,A1:16-25,A2:26-32,A3:33-39,B:42")'
     inputBinding:
       position: 102
       prefix: -g
@@ -38,9 +39,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_folder_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: output folder
     outputBinding:
       glob: $(inputs.output_folder)

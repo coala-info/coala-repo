@@ -9,6 +9,9 @@ doc: "Extract HLA loci from assembled MHC contigs & call star alleles on extract
 inputs:
   - id: aligned_assembly
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Input assembly aligned to GRCh38
     inputBinding:
       position: 101
@@ -23,6 +26,9 @@ inputs:
       prefix: --full_length
   - id: hap1_fa
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Input hap1 assembly fa(.gz)
     inputBinding:
       position: 101
@@ -31,6 +37,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Input hap2 assembly fa(.gz) (optional)
     inputBinding:
       position: 101
@@ -44,6 +53,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --loci
+      itemSeparator: ','
   - id: log_level
     type:
       - 'null'
@@ -76,7 +86,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output prefix
+    doc: Output prefix, with a directory part (for example ./sample); the directory must exist
     inputBinding:
       position: 101
       prefix: --out_prefix
@@ -99,8 +109,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101
@@ -123,6 +132,14 @@ outputs:
     doc: Output directory [deprecated]
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.hap1_fa)
+        writable: true
+      - entry: $(inputs.hap2_fa)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hifihla:0.3.1--hdfd78af_0

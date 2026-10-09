@@ -1,5 +1,11 @@
 # hpsuissero CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hpsuissero_HpsuisSero.sh | PASS |  |
+
 ## hpsuissero_HpsuisSero.sh
 
 ### Tool Description

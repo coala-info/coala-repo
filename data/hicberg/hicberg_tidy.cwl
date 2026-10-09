@@ -4,26 +4,31 @@ baseCommand:
   - hicberg
   - tidy
 label: hicberg_tidy
-doc: "Tidy output folder.\n\nTool homepage: https://github.com/sebgra/hicberg"
+doc: 'Tidy output folder.
+
+
+  Tool homepage: https://github.com/sebgra/hicberg'
 inputs:
   - id: output_folder
-    type: string
-    doc: Output folder to save results.
+    type: Directory
+    doc: Result folder created by hicberg create-folder (and filled by the earlier
+      stages). It is staged writable; the stage adds its files to it.
     inputBinding:
-      position: 101
+      position: 100
       prefix: --output
+      valueFrom: $(runtime.outdir)/$(inputs.output_folder.basename)
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_folder_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output folder to save results.
+  - id: output_folder_out
+    type: Directory
+    doc: The same result folder with the files this stage wrote.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.output_folder)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicberg:1.0.1--py312hcf36b3e_0
-stdout: hicberg_tidy.out

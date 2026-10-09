@@ -1,5 +1,11 @@
 # hla-la CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hla-la_HLA-LA.pl | Not completed | needs the large PRG_MHC_GRCh38_withIMGT graph (not in the image, large download) and human MHC reads |
+
 ## hla-la_HLA-LA.pl
 
 ### Tool Description

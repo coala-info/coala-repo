@@ -1,5 +1,18 @@
 # hmnfusion CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hmnfusion_download-zenodo | PASS | crashes when a Zenodo file name contains a folder; flat record downloaded fine |
+| hmnfusion_extractfusion | PASS |  |
+| hmnfusion_mmej-deletion | PASS |  |
+| hmnfusion_mmej-fusion | PASS |  |
+| hmnfusion_quantification | PASS |  |
+| hmnfusion_workflow-align | Not completed | pipeline, skipped (runs a Snakemake workflow) |
+| hmnfusion_workflow-fusion | Not completed | pipeline, skipped (runs a Snakemake workflow) |
+| hmnfusion_workflow-hmnfusion | Not completed | pipeline, skipped (runs a Snakemake workflow) |
+
 ## hmnfusion_extractfusion
 
 ### Tool Description

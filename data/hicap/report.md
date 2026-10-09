@@ -1,9 +1,15 @@
 # hicap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hicap | PASS |  |
+
 ## hicap
 
 ### Tool Description
-HiCap: A tool for Hi-C data analysis
+Identify cap locus serotype and structure in a Haemophilus influenzae assembly.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hicap:1.0.4--pyhdfd78af_2

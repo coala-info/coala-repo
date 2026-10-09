@@ -1,5 +1,14 @@
 # hostile CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| hostile_clean | PASS |  |
+| hostile_index_fetch | PASS |  |
+| hostile_index_list | PASS |  |
+| hostile_mask | PASS |  |
+
 ## hostile_clean
 
 ### Tool Description
@@ -101,10 +110,10 @@ options:
 ```
 
 
-## hostile_index
+## hostile_index_list
 
 ### Tool Description
-Manage and download indexes for use with hostile clean
+List available remote and local cached indexes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hostile:2.0.2--pyhdfd78af_0
@@ -114,19 +123,42 @@ Manage and download indexes for use with hostile clean
 
 ### Original Help Text
 ```text
-usage: hostile index [-h] {delete,list,fetch} ...
+usage: hostile index list [-h] [-a]
 
-positional arguments:
-  {delete,list,fetch}
-    delete             Delete cached indexes
-    list               List available remote and local cached indexes
-    fetch              Download and cache indexes from object storage for use
-                       with hostile clean
+List available remote and local cached indexes
 
 options:
-  -h, --help           show this help message and exit
+  -h, --help      show this help message and exit
+  -a, --airplane  list only local cached indexes (offline mode)
+                  (default: False)
 ```
 
+## hostile_index_fetch
+
+### Tool Description
+Download and cache indexes from object storage for use with hostile clean
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hostile:2.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/bede/hostile
+- **Package**: https://anaconda.org/channels/bioconda/packages/hostile/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hostile index fetch [-h] [-n NAME] [-m] [-b]
+
+Download and cache indexes from object storage for use with hostile clean
+
+options:
+  -h, --help       show this help message and exit
+  -n, --name NAME  name of index to download
+                   (default: human-t2t-hla)
+  -m, --minimap2   fetch Minimap2 index
+                   (default: False)
+  -b, --bowtie2    fetch Bowtie2 index
+                   (default: False)
+```
 
 ## Metadata
 - **Skill**: generated

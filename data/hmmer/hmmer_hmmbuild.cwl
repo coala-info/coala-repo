@@ -8,14 +8,12 @@ inputs:
     type: string
     doc: Output HMM file
     inputBinding:
-      position: 1
+      position: 201
   - id: msafile
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input multiple sequence alignment file
     inputBinding:
-      position: 2
+      position: 202
   - id: name
     type:
       - 'null'
@@ -25,13 +23,17 @@ inputs:
       position: 103
       prefix: -n
   - id: summary_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: direct summary output to file, not stdout
     inputBinding:
       position: 103
       prefix: -o
   - id: resave_msa
-    type: string
+    type:
+      - 'null'
+      - string
     doc: resave annotated, possibly modified MSA to file
     inputBinding:
       position: 103
@@ -374,12 +376,10 @@ inputs:
       prefix: --maxinsertlen
 outputs:
   - id: out_hmmfile_out
-    type:
-      type: array
-      items: File
+    type: File
     doc: Output HMM file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.hmmfile_out)
   - id: output_summary_output
     type:
       - 'null'

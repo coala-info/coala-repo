@@ -1,5 +1,14 @@
 # haystack_bio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| haystack_bio_haystack_download_genome | Failed | image problem: the genome is written into the read-only package folder inside the image (Read-only file system), so it cannot be kept for other tools |
+| haystack_bio_haystack_hotspots | Not completed | needs the hg19 genome (about 800 MB) that the tool can only store inside the read-only image folder |
+| haystack_bio_haystack_motifs | Not completed | needs a UCSC genome (hg19 about 800 MB) that the tool can only store inside the read-only image folder |
+| haystack_bio_haystack_tf_activity_plane | Not completed | no usable test data: needs the output folder of haystack_motifs, which cannot be made without the genome |
+
 ## haystack_bio_haystack_download_genome
 
 ### Tool Description
@@ -244,6 +253,67 @@ optional arguments:
   --version             Print version and exit.
 ```
 
+
+## haystack_bio_haystack_tf_activity_plane
+
+### Tool Description
+HAYSTACK TF activity plane: relates TF motif activity from haystack_motifs output to gene expression in a target cell type.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/haystack_bio:0.5.5--0
+- **Homepage**: https://github.com/pinellolab/haystack_bio
+- **Package**: https://anaconda.org/channels/bioconda/packages/haystack_bio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] haystack_tf_activity_plane: ok via haystack_tf_activity_plane --help (--help=ok, -h=ok, -help=ok, (no args)=ok)
+[H A Y S T A C K   T F  A C T I V I T Y  P L A N E]
+
+-TFs Activity on Gene Expression-
+
+Version 0.5.5
+
+usage: haystack_tf_activity_plane [-h]
+                                  [--motif_mapping_filename MOTIF_MAPPING_FILENAME]
+                                  [--output_directory OUTPUT_DIRECTORY]
+                                  [--name NAME] [--plot_all]
+                                  [--rho_cutoff RHO_CUTOFF]
+                                  [--tf_value_cuttoff TF_VALUE_CUTTOFF]
+                                  [--version]
+                                  haystack_motifs_output_folder
+                                  gene_expression_samples_filename
+                                  target_cell_type
+
+HAYSTACK Parameters
+
+positional arguments:
+  haystack_motifs_output_folder
+                        A path to a folder created by the haystack_motifs
+                        utility
+  gene_expression_samples_filename
+                        A file containing the list of sample names and
+                        locations
+  target_cell_type      The sample name to use as a target for the analysis
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --motif_mapping_filename MOTIF_MAPPING_FILENAME
+                        Custom motif to gene mapping file (the default is for
+                        JASPAR CORE 2016 database)
+  --output_directory OUTPUT_DIRECTORY
+                        Output directory (default: current directory)
+  --name NAME           Define a custom output filename for the report
+  --plot_all            Disable the filter on the TF activity and correlation
+                        (default z-score TF>0 and rho>0.3)
+  --rho_cutoff RHO_CUTOFF
+                        The cutoff absolute correlation value (0.0 to 1) for
+                        which activity plots are generated (default: 0.3)
+  --tf_value_cuttoff TF_VALUE_CUTTOFF
+                        The cutoff z-score tf_value for which activity plots
+                        are generated (default: 0.0)
+  --version             Print version and exit.
+```
 
 ## Metadata
 - **Skill**: generated

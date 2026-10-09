@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: Input HMM profile file
     inputBinding:
-      position: 1
+      position: 201
 outputs:
   - id: stdout
     type: stdout

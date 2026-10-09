@@ -9,6 +9,8 @@ inputs:
   - id: input_sample_bam
     type: File
     doc: Bam file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --input-sample-bam

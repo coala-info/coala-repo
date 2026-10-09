@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hisat2
+baseCommand: hisat-3n
 label: hisat-3n
 doc: "HISAT2 version 2.2.1-3n-0.0.3 by Daehwan Kim (infphilo@gmail.com, www.ccb.jhu.edu/people/infphilo)\n\
   \nTool homepage: https://github.com/fulcrumgenomics/hisat-3n"
@@ -10,6 +10,13 @@ inputs:
     doc: Index filename prefix (minus trailing .X.ht2)
     inputBinding:
       position: 1
+      prefix: -x
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: HISAT-3N index files (the .ht2 files of both converted indexes), staged
+      in the working directory so that index_prefix resolves
   - id: add_chrname
     type:
       - 'null'
@@ -21,7 +28,7 @@ inputs:
   - id: aligned_pairs
     type:
       - 'null'
-      - File
+      - string
     doc: write pairs that aligned concordantly at least once to <path>
     inputBinding:
       position: 102
@@ -29,7 +36,7 @@ inputs:
   - id: aligned_pairs_bz2
     type:
       - 'null'
-      - File
+      - string
     doc: write pairs that aligned concordantly at least once to <path> (bzip2 
       compressed)
     inputBinding:
@@ -38,7 +45,7 @@ inputs:
   - id: aligned_pairs_gz
     type:
       - 'null'
-      - File
+      - string
     doc: write pairs that aligned concordantly at least once to <path> (gzipped)
     inputBinding:
       position: 102
@@ -46,7 +53,7 @@ inputs:
   - id: aligned_reads
     type:
       - 'null'
-      - File
+      - string
     doc: write unpaired reads that aligned at least once to <path>
     inputBinding:
       position: 102
@@ -54,7 +61,7 @@ inputs:
   - id: aligned_reads_bz2
     type:
       - 'null'
-      - File
+      - string
     doc: write unpaired reads that aligned at least once to <path> (bzip2 
       compressed)
     inputBinding:
@@ -63,7 +70,7 @@ inputs:
   - id: aligned_reads_gz
     type:
       - 'null'
-      - File
+      - string
     doc: write unpaired reads that aligned at least once to <path> (gzipped)
     inputBinding:
       position: 102
@@ -87,9 +94,7 @@ inputs:
       position: 102
       prefix: --avoid-pseudogene
   - id: base_change
-    type:
-      - 'null'
-      - string
+    type: string
     doc: the converted nucleotide and converted to nucleotide (C,T)
     inputBinding:
       position: 102
@@ -179,21 +184,25 @@ inputs:
       prefix: --known-splicesite-infile
   - id: mates1
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: "Files with #1 mates, paired with files in <m2>.\n             Could be gzip'ed
       (extension: .gz) or bzip2'ed (extension: .bz2)."
     inputBinding:
       position: 102
+      itemSeparator: ','
       prefix: '-1'
   - id: mates2
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: "Files with #2 mates, paired with files in <m1>.\n             Could be gzip'ed
       (extension: .gz) or bzip2'ed (extension: .bz2)."
     inputBinding:
       position: 102
+      itemSeparator: ','
       prefix: '-2'
   - id: max_alignments
     type:
@@ -265,7 +274,7 @@ inputs:
   - id: met_file
     type:
       - 'null'
-      - File
+      - string
     doc: send metrics to file at <path> (off)
     inputBinding:
       position: 102
@@ -560,12 +569,14 @@ inputs:
       prefix: --rdg
   - id: reads
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: "Files with unpaired reads.\n             Could be gzip'ed (extension: .gz)
       or bzip2'ed (extension: .bz2)."
     inputBinding:
       position: 102
+      itemSeparator: ','
       prefix: -U
   - id: remove_chrname
     type:
@@ -692,7 +703,7 @@ inputs:
   - id: summary_file
     type:
       - 'null'
-      - File
+      - string
     doc: print alignment summary to this file.
     inputBinding:
       position: 102
@@ -740,7 +751,7 @@ inputs:
   - id: unaligned_pairs
     type:
       - 'null'
-      - File
+      - string
     doc: write pairs that didn't align concordantly to <path>
     inputBinding:
       position: 102
@@ -748,7 +759,7 @@ inputs:
   - id: unaligned_pairs_bz2
     type:
       - 'null'
-      - File
+      - string
     doc: write pairs that didn't align concordantly to <path> (bzip2 compressed)
     inputBinding:
       position: 102
@@ -756,7 +767,7 @@ inputs:
   - id: unaligned_pairs_gz
     type:
       - 'null'
-      - File
+      - string
     doc: write pairs that didn't align concordantly to <path> (gzipped)
     inputBinding:
       position: 102
@@ -764,7 +775,7 @@ inputs:
   - id: unaligned_reads
     type:
       - 'null'
-      - File
+      - string
     doc: write unpaired reads that didn't align to <path>
     inputBinding:
       position: 102
@@ -772,7 +783,7 @@ inputs:
   - id: unaligned_reads_bz2
     type:
       - 'null'
-      - File
+      - string
     doc: write unpaired reads that didn't align to <path> (bzip2 compressed)
     inputBinding:
       position: 102
@@ -780,7 +791,7 @@ inputs:
   - id: unaligned_reads_gz
     type:
       - 'null'
-      - File
+      - string
     doc: write unpaired reads that didn't align to <path> (gzipped)
     inputBinding:
       position: 102
@@ -813,10 +824,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `sam_output_path`
+    doc: 'File for SAM output (default: stdout)'
     inputBinding:
       position: 104
-      prefix: --sam-output
+      prefix: -S
   - id: novel_splicesite_outfile_path
     type:
       - 'null'
@@ -840,8 +851,108 @@ outputs:
     doc: report a list of splice sites
     outputBinding:
       glob: $(inputs.novel_splicesite_outfile_path)
+  - id: aligned_pairs_out
+    type:
+      - 'null'
+      - File
+    doc: write pairs that aligned concordantly at least once to <path>
+    outputBinding:
+      glob: $(inputs.aligned_pairs)
+  - id: aligned_pairs_bz2_out
+    type:
+      - 'null'
+      - File
+    doc: write pairs that aligned concordantly at least once to <path> (bzip2        compressed)
+    outputBinding:
+      glob: $(inputs.aligned_pairs_bz2)
+  - id: aligned_pairs_gz_out
+    type:
+      - 'null'
+      - File
+    doc: write pairs that aligned concordantly at least once to <path> (gzipped)
+    outputBinding:
+      glob: $(inputs.aligned_pairs_gz)
+  - id: aligned_reads_out
+    type:
+      - 'null'
+      - File
+    doc: write unpaired reads that aligned at least once to <path>
+    outputBinding:
+      glob: $(inputs.aligned_reads)
+  - id: aligned_reads_bz2_out
+    type:
+      - 'null'
+      - File
+    doc: write unpaired reads that aligned at least once to <path> (bzip2        compressed)
+    outputBinding:
+      glob: $(inputs.aligned_reads_bz2)
+  - id: aligned_reads_gz_out
+    type:
+      - 'null'
+      - File
+    doc: write unpaired reads that aligned at least once to <path> (gzipped)
+    outputBinding:
+      glob: $(inputs.aligned_reads_gz)
+  - id: unaligned_pairs_out
+    type:
+      - 'null'
+      - File
+    doc: write pairs that didn't align concordantly to <path>
+    outputBinding:
+      glob: $(inputs.unaligned_pairs)
+  - id: unaligned_pairs_bz2_out
+    type:
+      - 'null'
+      - File
+    doc: write pairs that didn't align concordantly to <path> (bzip2 compressed)
+    outputBinding:
+      glob: $(inputs.unaligned_pairs_bz2)
+  - id: unaligned_pairs_gz_out
+    type:
+      - 'null'
+      - File
+    doc: write pairs that didn't align concordantly to <path> (gzipped)
+    outputBinding:
+      glob: $(inputs.unaligned_pairs_gz)
+  - id: unaligned_reads_out
+    type:
+      - 'null'
+      - File
+    doc: write unpaired reads that didn't align to <path>
+    outputBinding:
+      glob: $(inputs.unaligned_reads)
+  - id: unaligned_reads_bz2_out
+    type:
+      - 'null'
+      - File
+    doc: write unpaired reads that didn't align to <path> (bzip2 compressed)
+    outputBinding:
+      glob: $(inputs.unaligned_reads_bz2)
+  - id: unaligned_reads_gz_out
+    type:
+      - 'null'
+      - File
+    doc: write unpaired reads that didn't align to <path> (gzipped)
+    outputBinding:
+      glob: $(inputs.unaligned_reads_gz)
+  - id: met_file_out
+    type:
+      - 'null'
+      - File
+    doc: send metrics to file at <path> (off)
+    outputBinding:
+      glob: $(inputs.met_file)
+  - id: summary_file_out
+    type:
+      - 'null'
+      - File
+    doc: print alignment summary to this file.
+    outputBinding:
+      glob: $(inputs.summary_file)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hisat-3n:0.0.3--h503566f_0

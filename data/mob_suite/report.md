@@ -1,5 +1,14 @@
 # mob_suite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mob_suite_mob_cluster | PASS | synthetic data: taxonomy table typed by hand; clusters built for 3 real plasmids from the repo test data. |
+| mob_suite_mob_init | Not completed | needs a database download of about 2.8 GB; the image already holds the database, so the download was not run |
+| mob_suite_mob_recon | PASS |  |
+| mob_suite_mob_typer | PASS |  |
+
 ## mob_suite_mob_init
 
 ### Tool Description

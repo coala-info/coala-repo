@@ -11,6 +11,14 @@ doc: "Scan input regions to detect motif occurrences.\n\nThis main command invok
   \ \ncompared to control regions (can be random generated or user specified).\n\n\
   Tool homepage: https://github.com/shao-lab/MotifScan"
 inputs:
+  - id: genome_dir
+    type: Directory
+    doc: Installed genome directory (output of `motifscan genome --install`),
+      registered in the config file under the name given by --genome.
+  - id: motif_dir
+    type: Directory
+    doc: Installed and built motif set directory (output of `motifscan motif
+      --build`), registered under the name given by --motif.
   - id: control_file
     type:
       - 'null'
@@ -88,8 +96,9 @@ inputs:
   - id: p_value_cutoff
     type:
       - 'null'
-      - float
-    doc: P value cutoff for motif scores.
+      - string
+    doc: 'P value cutoff for motif scores, one of 1e-2, 1e-3, 1e-4, 1e-5, 1e-6.
+      Default: 1e-4'
     inputBinding:
       position: 101
       prefix: -p
@@ -173,6 +182,20 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = [];
+        if (inputs.config_file) {
+          l.push({entryname: ".motifscanrc", entry: inputs.config_file, writable: true});
+        } else {
+          var g = inputs.genome_dir ? inputs.genome + " = " + inputs.genome_dir.path + "\n" : "";
+          var m = inputs.motif_dir ? inputs.motif_name + " = " + runtime.outdir + "/" + inputs.motif_dir.basename + "\n" : "";
+          l.push({entryname: ".motifscanrc", writable: true, entry: "[motifscan]\ngenome_dir = " + runtime.outdir + "/.motifscan/genomes/\nmotif_dir = " + runtime.outdir + "/.motifscan/motifs/\n\n[genome]\n" + g + "\n[motif]\n" + m});
+        }
+        l.push({entry: inputs.motif_dir, writable: true});
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/motifscan:1.3.0--py310h4b81fae_3

@@ -57,8 +57,6 @@ inputs:
   - id: reference
     type: File
     doc: reference file name
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -92,15 +90,20 @@ inputs:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: output_files
     type:
-      - 'null'
-      - Directory
-    doc: output directory path
+      type: array
+      items: File
+    doc: Index files (.plain.slp, .thrbv.ms, .idx) and log written with the prefix
+      given in output_path
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/moni:0.2.2--py312h9b99d9e_0

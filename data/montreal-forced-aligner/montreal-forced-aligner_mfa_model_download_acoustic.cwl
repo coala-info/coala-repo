@@ -1,6 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mfa
+baseCommand:
+  - mfa
+  - model
+  - download
+  - acoustic
 label: montreal-forced-aligner_mfa_model_download_acoustic
 doc: "Download an acoustic model for Montreal Forced Aligner.\n\nTool homepage: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner"
 inputs:

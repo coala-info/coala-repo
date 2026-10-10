@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: segment
+baseCommand:
+  - mosaicatcher
+  - segment
 label: mosaicatcher_segment
 doc: "Find a segmentation across multiple cells.\n\nTool homepage: https://github.com/friendsofstrandseq/mosaicatcher/"
 inputs:
@@ -93,6 +95,10 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.counts_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mosaicatcher:0.3.1--h66ab1b6_2

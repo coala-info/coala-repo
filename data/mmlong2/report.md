@@ -1,5 +1,11 @@
 # mmlong2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mmlong2 | Not completed | pipeline, skipped |
+
 ## mmlong2
 
 ### Tool Description

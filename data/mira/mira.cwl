@@ -12,10 +12,16 @@ inputs:
     doc: Manifest file(s) to process
     inputBinding:
       position: 1
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Read and other data files named in the manifest; they are staged in the working directory so relative paths in the manifest resolve
   - id: change_working_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Change working directory
     inputBinding:
       position: 102
@@ -56,6 +62,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: assembly_directory
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Project directory (<projectname>_assembly) with the results
+    outputBinding:
+      glob: '*_assembly'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.data_files ? inputs.data_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mira:5.0.0rc2--hb5a7bbe_0

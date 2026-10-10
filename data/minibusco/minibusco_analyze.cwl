@@ -105,6 +105,7 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
+    doc: Output analysis folder
     inputBinding:
       position: 102
       prefix: --output_dir

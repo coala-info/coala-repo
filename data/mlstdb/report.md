@@ -1,5 +1,12 @@
 # mlstdb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mlstdb_fetch | Not completed | needs a PubMLST/BIGSdb account with client ID and secret (interactive registration) |
+| mlstdb_update | Not completed | needs the scheme list from fetch and BIGSdb account tokens, plus network access |
+
 ## mlstdb_fetch
 
 ### Tool Description

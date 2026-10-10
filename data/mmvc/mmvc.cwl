@@ -5,7 +5,7 @@ label: mmvc
 doc: "call variants using a multinomial model sampled by MCMC\n\nTool homepage: https://github.com/veg/mmvc"
 inputs:
   - id: msa
-    type: string
+    type: File
     doc: Multiple Sequence Alignment file
     inputBinding:
       position: 1
@@ -29,7 +29,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Filter to apply to variant calls
+    doc: Output path for the filtered multiple sequence alignment.
     inputBinding:
       position: 102
       prefix: --filter
@@ -66,9 +66,29 @@ inputs:
       position: 102
       prefix: --target-rate
 outputs:
+  - id: json_report_file
+    type:
+      - 'null'
+      - File
+    doc: JSON report.
+    outputBinding:
+      glob: $(inputs.json_report)
+  - id: filtered_msa
+    type:
+      - 'null'
+      - File
+    doc: Filtered multiple sequence alignment.
+    outputBinding:
+      glob: $(inputs.filter)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: JULIA_PKGDIR
+        envValue: /tmp/julia
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mmvc:1.0.2--0

@@ -2,14 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: minimap2
 label: minimap2
-doc: A versatile sequence alignment program that aligns DNA or mRNA sequences 
-  against a large reference database.
+doc: "A versatile sequence alignment program that aligns DNA or mRNA sequences against
+  a large reference database.\n\nTool homepage: https://github.com/lh3/minimap2"
 inputs:
   - id: target
     type: File
     doc: Target reference genome or index file (.fa, .idx, etc.)
     inputBinding:
-      position: 1
+      position: 200
   - id: query
     type:
       - 'null'
@@ -17,7 +17,7 @@ inputs:
         items: File
     doc: Query sequence file(s)
     inputBinding:
-      position: 2
+      position: 201
   - id: homopolymer_compressed
     type:
       - 'null'
@@ -51,7 +51,9 @@ inputs:
       position: 103
       prefix: -I
   - id: dump_index
-    type: string
+    type:
+      - 'null'
+      - string
     doc: dump index to FILE
     inputBinding:
       position: 103
@@ -218,7 +220,9 @@ inputs:
       position: 103
       prefix: -a
   - id: output_file
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output alignments to FILE
     inputBinding:
       position: 103
@@ -247,6 +251,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: -c
+  - id: cs_tag_default
+    type:
+      - 'null'
+      - boolean
+    doc: output the cs tag in the short form
+    inputBinding:
+      position: 103
+      prefix: --cs
   - id: cs_tag
     type:
       - 'null'
@@ -319,9 +331,12 @@ inputs:
     doc: preset (always applied before other options; e.g., map-pb, sr, splice, 
       etc.)
     inputBinding:
-      position: 103
+      position: 102
       prefix: -x
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Alignments (PAF or SAM) when -o is not given
   - id: output_dump_index
     type:
       - 'null'
@@ -341,6 +356,7 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minimap2:2.30--h577a1d6_0
+stdout: minimap2.out
 s:url: https://github.com/lh3/minimap2
 $namespaces:
   s: https://schema.org/

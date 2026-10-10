@@ -1,5 +1,11 @@
 # msaboot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msaboot | PASS |  |
+
 ## msaboot
 
 ### Tool Description

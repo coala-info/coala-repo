@@ -30,6 +30,34 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: final_mutations
+    type:
+      - 'null'
+      - File
+    doc: Mutations called on the codon-phased consensus
+    outputBinding:
+      glob: final.csv
+  - id: annotated_mutations
+    type:
+      - 'null'
+      - File
+    doc: Annotated drug-resistance mutations
+    outputBinding:
+      glob: merged_muts_drm_annotated.csv
+  - id: report
+    type:
+      - 'null'
+      - File
+    doc: Report in markdown format
+    outputBinding:
+      glob: report.md
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Run log
+    outputBinding:
+      glob: minvar.log
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minvar:2.2.2--py35_0

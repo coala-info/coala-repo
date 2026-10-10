@@ -38,7 +38,7 @@ inputs:
       position: 101
       prefix: -q
   - id: output_file_path
-    type: string?
+    type: string
     doc: output msa file
     inputBinding:
       position: 102

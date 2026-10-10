@@ -7,7 +7,7 @@ label: ms2pip_annotate-spectra
 doc: "Annotate observed spectra.\n\nTool homepage: http://compomics.github.io/projects/ms2pip_c"
 inputs:
   - id: psms
-    type: string
+    type: File
     doc: PSMs
     inputBinding:
       position: 1
@@ -65,10 +65,15 @@ inputs:
       position: 103
       prefix: --spectrum-id-pattern
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: annotations
+    type:
+      type: array
+      items: File
+    doc: Annotated observed intensities (<output_name>_observations.tsv)
+    outputBinding:
+      glob: "$(inputs.output_name ? inputs.output_name + '*' : inputs.psms.nameroot + '_predictions*')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ms2pip:4.1.0--py312h0fa9677_2
-stdout: ms2pip_annotate-spectra.out

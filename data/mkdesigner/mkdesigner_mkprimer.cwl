@@ -221,6 +221,14 @@ inputs:
       position: 101
       prefix: --vcf
 outputs:
+  - id: output_name_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory '<output name>_mkprimer' with the VCF with primers added
+      ('<output name>_primer_added.vcf'), 'for_draw.fai' and the intermediate files.
+    outputBinding:
+      glob: $(inputs.output_name)_mkprimer
   - id: stdout
     type: stdout
     doc: Standard output

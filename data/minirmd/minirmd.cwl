@@ -58,10 +58,12 @@ inputs:
       prefix: -o
 outputs:
   - id: output_file
-    type: File
-    doc: the output file
+    type:
+      type: array
+      items: File
+    doc: the output file (paired-end input writes <output>_1 and <output>_2)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

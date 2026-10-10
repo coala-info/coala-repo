@@ -7,9 +7,7 @@ doc: "The program parses the result of miniprot's \"--aln\" output. The input is
 inputs:
   - id: input
     type: File
-    doc: Input from stdin
-    inputBinding:
-      position: 1
+    doc: Output of miniprot run with --aln (read from standard input)
   - id: boundary_frameshift_penalty
     type:
       - 'null'
@@ -96,18 +94,19 @@ inputs:
       prefix: -w
   - id: output_file_path
     type: string
-    doc: here to save output file
+    doc: Where to save output file
     inputBinding:
       position: 103
       prefix: -o
 outputs:
   - id: output_file
     type: File
-    doc: Where to save output file
+    doc: Scored introns, starts, stops and exons
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdin: $(inputs.input.path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/miniprot-boundary-scorer:1.0.1--h9948957_0

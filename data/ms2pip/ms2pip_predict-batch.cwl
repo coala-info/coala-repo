@@ -7,7 +7,7 @@ label: ms2pip_predict-batch
 doc: "Predict fragmentation spectra for a batch of peptides.\n\nTool homepage: http://compomics.github.io/projects/ms2pip_c"
 inputs:
   - id: psms
-    type: string
+    type: File
     doc: PSMs
     inputBinding:
       position: 1
@@ -81,17 +81,15 @@ inputs:
       position: 102
       prefix: --psm-filetype
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_name_files
+  - id: predictions
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_name
+    doc: Predicted spectra (<output_name>.<format>, default <psms name>_predictions.<format>)
     outputBinding:
-      glob: $(inputs.output_name)*
+      glob: "$(inputs.output_name ? inputs.output_name + '*' : inputs.psms.nameroot + '_predictions*')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ms2pip:4.1.0--py312h0fa9677_2
-stdout: ms2pip_predict-batch.out

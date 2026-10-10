@@ -1,5 +1,11 @@
 # minimap2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minimap2 | PASS | single-end and paired short-read SAM matches the Galaxy expected BAMs; index dump and reload work |
+
 ## minimap2
 
 ### Tool Description

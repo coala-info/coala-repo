@@ -1,5 +1,11 @@
 # miniprot-boundary-scorer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| miniprot-boundary-scorer_miniprot_boundary_scorer | PASS | scored the miniprot --aln alignment of a mouse protein to the human DPP3 gene: 16 introns and 17 CDS records match the alignment |
+
 ## miniprot-boundary-scorer_miniprot_boundary_scorer
 
 ### Tool Description

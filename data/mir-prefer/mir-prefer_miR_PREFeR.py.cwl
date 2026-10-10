@@ -16,6 +16,15 @@ inputs:
     doc: Configuration file
     inputBinding:
       position: 2
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the config file (genome FASTA, alignment SAM files, GFF file); they are staged in the working directory so relative paths in the config resolve
+  - id: output_folder
+    type: string
+    doc: Name of the output folder; it must equal OUTFOLDER in the config file
   - id: keep_tmp
     type:
       - 'null'
@@ -45,6 +54,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder with the predicted miRNAs
+    outputBinding:
+      glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.input_files ? inputs.input_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mir-prefer:0.24--py27_0

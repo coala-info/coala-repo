@@ -4,6 +4,11 @@ baseCommand: rgb_from_z_tiles.py
 label: mindagap_rgb_from_z_tiles.py
 doc: "Reads 3 3D tif files, extracts desired z layer and creates 3-channel RGB tiff
   image\n\nTool homepage: https://github.com/ViriatoII/MindaGap"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.output_dir ? {class: 'Directory', basename: inputs.output_dir, listing: []} : null)"
 inputs:
   - id: blue
     type: File
@@ -63,22 +68,24 @@ inputs:
   - id: z
     type:
       - 'null'
-      - int
-    doc: The desired Z layers to keep
+      - string
+    doc: The desired Z layers to keep. Accepts layer numbers, slices or both,
+      separated by commas (no spaces), for example 2,4-6,9.
     inputBinding:
       position: 101
       prefix: --z
 outputs:
+  - id: rgb_png
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: RGB png images written by the tool
+    outputBinding:
+      glob: "$(inputs.output_dir ? inputs.output_dir + '/*_RGB.png' : '*_RGB.png')"
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory to save RGB tif files
-    outputBinding:
-      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mindagap:0.0.2--pyhdfd78af_1

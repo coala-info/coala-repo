@@ -1,5 +1,11 @@
 # mokapot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mokapot | PASS |  |
+
 ## mokapot
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # mitofinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mitofinder | Failed | image problem: the bioconda image has no install.sh.ok file, so MitoFinder stops with 'MitoFinder is not installed' |
+
 ## mitofinder
 
 ### Tool Description

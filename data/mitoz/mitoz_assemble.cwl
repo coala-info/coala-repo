@@ -207,12 +207,18 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: workdir
     inputBinding:
       position: 101
       prefix: --workdir
 outputs:
+  - id: assembly_dir
+    type: Directory
+    doc: Assembler directory (megahit, spades or mitoassemble) with the assembly and
+      the '<outprefix>.<assembler>.result' folder holding the mitochondrial scaffolds.
+    outputBinding:
+      glob: '$(inputs.assembler ? inputs.assembler : "megahit")'
   - id: stdout
     type: stdout
     doc: Standard output
@@ -223,6 +229,10 @@ outputs:
     doc: Files written with the prefix given in outprefix
     outputBinding:
       glob: $(inputs.outprefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mitoz:3.6--pyhdfd78af_1

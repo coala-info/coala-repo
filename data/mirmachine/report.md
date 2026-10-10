@@ -1,5 +1,11 @@
 # mirmachine CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mirmachine_MirMachine.py | PASS | fixed: genome staged writable (fai index) and results folder collected; Galaxy test genome gave 24 gff, 15 filtered gff and 24 fasta lines as the Galaxy test expects |
+
 ## mirmachine_MirMachine.py
 
 ### Tool Description

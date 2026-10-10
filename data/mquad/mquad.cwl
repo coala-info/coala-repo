@@ -31,7 +31,7 @@ inputs:
   - id: bic_params
     type:
       - 'null'
-      - string
+      - File
     doc: Existing unsorted_debug_BIC_params.csv
     inputBinding:
       position: 101
@@ -63,11 +63,14 @@ inputs:
   - id: mtx_data
     type:
       - 'null'
-      - string
-    doc: The two mtx files for AD and DP matrices, comma separated
+      - type: array
+        items: File
+    doc: The two mtx files for AD and DP matrices (AD first, then DP), joined
+      with a comma
     inputBinding:
       position: 101
       prefix: --mtxData
+      itemSeparator: ','
   - id: nproc
     type:
       - 'null'
@@ -79,7 +82,7 @@ inputs:
   - id: rand_seed
     type:
       - 'null'
-      - string
+      - int
     doc: Seed for random initialization
     inputBinding:
       position: 101
@@ -87,7 +90,7 @@ inputs:
   - id: tenx_cutoff
     type:
       - 'null'
-      - string
+      - float
     doc: User-defined deltaBIC cutoff mainly for low-depth data
     inputBinding:
       position: 101
@@ -102,6 +105,7 @@ inputs:
       prefix: --vcfData
   - id: out_dir_path
     type: string
+    doc: Directory for output files
     inputBinding:
       position: 102
       prefix: --outDir

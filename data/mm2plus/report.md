@@ -1,5 +1,11 @@
 # mm2plus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mm2plus | PASS |  |
+
 ## mm2plus
 
 ### Tool Description

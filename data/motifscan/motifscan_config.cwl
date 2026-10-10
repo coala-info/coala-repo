@@ -6,6 +6,13 @@ baseCommand:
 label: motifscan_config
 doc: "Configure data paths for MotifScan.\n\nTool homepage: https://github.com/shao-lab/MotifScan"
 inputs:
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: Existing MotifScan config file (.motifscanrc). It is staged as
+      ~/.motifscanrc so list, uninstall and config commands see it. Without it
+      the config starts empty. The default config is not kept between runs.
   - id: get_genome
     type:
       - 'null'
@@ -41,7 +48,7 @@ inputs:
   - id: set_default_genome
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set the default installation path for genome assemblies.
     inputBinding:
       position: 101
@@ -49,7 +56,7 @@ inputs:
   - id: set_default_motif
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set the default installation path for motif sets.
     inputBinding:
       position: 101
@@ -92,6 +99,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: config_out
+    type:
+      - 'null'
+      - File
+    doc: The MotifScan config file after the command (.motifscanrc).
+    outputBinding:
+      glob: .motifscanrc
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        return inputs.config_file ? [{entryname: ".motifscanrc", entry: inputs.config_file, writable: true}] : [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/motifscan:1.3.0--py310h4b81fae_3

@@ -1,5 +1,14 @@
 # motifscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| motifscan_config | PASS | show, set-genome, get-genome and rm-genome checked on a staged config file |
+| motifscan_genome | PASS | installed a chr20 2 Mb human FASTA with refGene annotation; remote search also worked |
+| motifscan_motif | PASS | installed 8 JASPAR matrices and built PWMs for chr20; remote list also worked |
+| motifscan_scan | PASS | 68 chr20 promoter regions, 8 JASPAR motifs; sites and enrichment table written; the --plot option with enrichment crashes inside the tool (numpy error), works with --no-enrich |
+
 ## motifscan_config
 
 ### Tool Description

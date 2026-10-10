@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 8708; PASS: 6742; Failed: 1072; Not completed: 894
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 8960; PASS: 6925; Failed: 1115; Not completed: 920
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -8708,3 +8708,255 @@ mimsi	mimsi_visualize_instance	PASS	synthetic data: vectors built from real BAMs
 minc-tools	minc-tools_minc_modify_header	PASS	
 minc-tools	minc-tools_mincmath	PASS	
 minced	minced	PASS	
+mindagap	mindagap_duplicate_finder.py	PASS	synthetic data: 40 planted duplicate pairs, all 40 found
+mindagap	mindagap_mindagap.py	PASS	
+mindagap	mindagap_rgb_from_z_tiles.py	Failed	tool bug: with --z the script calls exit() before writing any PNG; only the no-z mode works
+mindthegap	mindthegap_fill	PASS	
+mindthegap	mindthegap_find	PASS	
+minia	minia	PASS	
+miniasm	miniasm	PASS	matches the Galaxy expected GFA for both test parameter sets
+minibusco	minibusco_analyze	PASS	ran on a Mycoplasma genitalium genome with the mycoplasmatales_odb10 lineage (lineage fetched by hand because download is broken)
+minibusco	minibusco_download	Failed	tool bug: the md5 check compares the whole hash-file line (hash plus file name) with the file hash, so no download works with the current BUSCO server
+minibusco	minibusco_list	Failed	tool bug: list --remote stops at the same md5 check as download
+minibusco	minibusco_miniprot	PASS	113 protein alignments on a Mycoplasma genitalium genome
+minibusco	minibusco_run	Failed	tool bug: run downloads the lineage first and stops at the same md5 check as download
+minigraph	minigraph	PASS	mapping, graph generation and call modes on the repo MT test files
+minimac4	minimac4_compress-reference	PASS	built an MSAV panel from a 1000 Genomes chr21 region
+minimac4	minimac4_impute	PASS	imputed 4 held-out 1000 Genomes samples from 20 percent of sites with that panel; 99.4 percent of calls match the truth
+minimac4	minimac4_update-m3vcf	Not completed	no M3VCF test data found (none in the tool repo, Galaxy or nf-core) and no Minimac3 image to build one
+minimap	minimap	PASS	all-vs-all overlaps match the Galaxy expected PAF; index dump and reload work
+minimap2	minimap2	PASS	single-end and paired short-read SAM matches the Galaxy expected BAMs; index dump and reload work
+minimap2-coverage	minimap2-coverage	PASS	all-vs-all on 25 PacBio reads finds the two overlaps that minimap also reports
+minimizers	minimizers	PASS	minimizers of the human mitochondrial genome match an independent calculation; the tool crashes when --output is missing, so the output path is required
+minimod	minimod_freq	PASS	bedMethyl output correlates 0.97 with the modkit pileup shipped in the repo tests
+minimod	minimod_view	PASS	same records as the repo expected table; probabilities differ by at most 0.002
+minipileup	minipileup	PASS	variant sites and allele counts agree with samtools mpileup on the nf-core SARS-CoV-2 BAM
+minipolish	minipolish	PASS	polished a miniasm assembly of the Racon lambda ONT reads; identity to the reference rose from about 0.85 to 0.975
+miniprot	miniprot	PASS	GFF3, PAF and translated output match the Galaxy test checks (1297 GFF3 lines, known cs string); index save and reload work
+miniprot-boundary-scorer	miniprot-boundary-scorer_miniprot_boundary_scorer	PASS	scored the miniprot --aln alignment of a mouse protein to the human DPP3 gene: 16 introns and 17 CDS records match the alignment
+minirmd	minirmd	PASS	synthetic data: real sarscov2 reads with 20 planted duplicate pairs; duplicates removed, 100 pairs kept; output glob fixed for paired-end _1/_2 files
+minisplice	minisplice_gentrain	PASS	real human chr21 and GENCODE annotation (converted to BED12); training data has GT donor sites at the labelled positions
+minisplice	minisplice_predict	PASS	fixed second input to File; calibration run (-b) and scoring run (-c) gave splice site scores on real human chr22 sequence
+minisplice	minisplice_train	PASS	trained a model on the gentrain output; model file written
+minkemap	minkemap	PASS	fixed: removed required .fai, collect plot inside output directory with defaults; real MinkeMap test genomes gave plot, summary with plausible identity and gene counts
+minnow	minnow_estimate	Failed	tool bug: minnow estimate in this version only logs its options and writes no model; CWL rewritten (baseCommand estimate, real flags)
+minnow	minnow_simulate	PASS	synthetic data: planted 5-cell count matrix with real yeast transcriptome; rewrote CWL from help (wrong flags and types), staged the 10X whitelist that minnow reads from ../data; reads match the transcriptome
+minute	minute_download	Not completed	pipeline, skipped (Snakemake pipeline wrapper)
+minute	minute_init	Not completed	pipeline, skipped (Snakemake pipeline wrapper)
+minute	minute_run	Not completed	pipeline, skipped (Snakemake pipeline wrapper)
+minvar	minvar	Failed	image problem: the report step runs sierrapy, which aborts because the image has no UTF-8 locale (Click error); real HIV reads (SRR7724269) were mapped and called before the crash
+minys	minys_MinYS.py	PASS	fixed baseCommand to MinYS.py and required bwa index files; MinYS test data gave one 15,722 bp assembly as documented
+minys	minys_filter_components.py	PASS	kept the 15.7 kb graph component at min length 1000 and removed it at 20000
+mir-prefer	mir-prefer_bowtie-align-reads.py	PASS	new CWL; 3000 real miR-PREFeR example reads all aligned back to their original positions on Arabidopsis chr1; note: -p 2 hangs in this image, single thread works
+mir-prefer	mir-prefer_convert-mirdeep2-fasta.py	PASS	new CWL; collapsed fasta derived from the same real reads; read ids renamed to sample_rA_xN with counts kept (10000 total)
+mir-prefer	mir-prefer_convert-readcount-file.py	PASS	new CWL; read count file derived from the same real reads; converted with counts kept (10000 total)
+mir-prefer	mir-prefer_miR_PREFeR.py	Failed	image problem: samtools in the image cannot load libncurses.so.5, so the pipeline stops at its first samtools call; real Arabidopsis example data staged correctly
+mir-prefer	mir-prefer_process-reads-fasta.py	PASS	new CWL; real small RNA reads (nf-core smrnaseq) collapsed to 7782 unique reads with counts summing to 10000
+mira	mira	PASS	fixed: data files are staged beside the manifest, --cwd is a string, project folder is collected; MinYS test reads (simulated, from the MinYS repo) gave one 16.2 kb contig with 96% of its 25-mers in the reference
+miranda	miranda	PASS	fixed prefixes to -en/-go/-ge, -out optional and stdout collected; miRanda example (bantam vs hid UTR) gave scored hits with energies, gap options honoured
+mirdeep2	mirdeep2_mapper.pl	PASS	fixed baseCommand to mapper.pl and real -s/-t flags, staged bowtie index; tutorial reads gave the same collapsed reads as the tutorial file and 481 genome mappings
+mirdeep2	mirdeep2_miRDeep2.pl	PASS	new CWL; tutorial C. elegans data gave top known score 61008 as in the tutorial and one novel miRNA
+mirdeep2	mirdeep2_quantifier.pl	PASS	fixed baseCommand to quantifier.pl and wrapped all options, collected outputs; tutorial data gave counts for 7 cel miRNAs (cel-miR-37 118131)
+mirfix	mirfix_MIRfix.py	Not completed	CWL fixed (writable family folder, mature and mapping copies, trailing slashes) and runs on the example family, but the example needs 15 large genome FASTA files; with a small substitute genome the Final.fasta matches the example except one precursor and no corrected alignment is made
+mirge	mirge_annotate	Failed	image problem: bowtie, samtools and RNAfold are not in the image ('bowtie can't be found'), so miRge2.0 cannot run; new CWL written from the help
+mirge	mirge_predict	Failed	image problem: bowtie, samtools and RNAfold are not in the image, so miRge2.0 cannot run; new CWL written from the help (not run)
+mirge-build	mirge-build	PASS	synthetic data: rewrote CWL from help (baseCommand miRge-build, real flags); real human miRBase and genome piece, tRNA/rRNA/mRNA cut from chrM and snoRNA/other ncRNA from random genome pieces; built a full tiny library with 58 files
+mirmachine	mirmachine_MirMachine.py	PASS	fixed: genome staged writable (fai index) and results folder collected; Galaxy test genome gave 24 gff, 15 filtered gff and 24 fasta lines as the Galaxy test expects
+mirnature	mirnature_miRNAture	PASS	
+mirscore	mirscore_hairpinHelper	PASS	
+mirscore	mirscore_miRScore	PASS	plain FASTQ input works; gzipped FASTQ crashes in the tool (empty bowtie argument)
+mirtrace	mirtrace_qc	PASS	
+mirtrace	mirtrace_trace	PASS	
+mitgard	mitgard_MITGARD-LR.py	PASS	
+mitgard	mitgard_MITGARD.py	PASS	
+mitobim	mitobim_MITObim.pl	PASS	matched Galaxy test 3 output (reverse complement of ex3.fasta); output identical
+mitobim	mitobim_circules.py	PASS	synthetic data: real mitogenome with its first 300 bp appended; roll mode checked on the real genome
+mitobim	mitobim_downsample.py	PASS	
+mitobim	mitobim_interleave-fastqgz-MITOBIM.py	PASS	
+mitofinder	mitofinder	Failed	image problem: the bioconda image has no install.sh.ok file, so MitoFinder stops with 'MitoFinder is not installed'
+mitohifi	mitohifi_findMitoReference.py	PASS	downloaded the closest complete mitogenome from NCBI (needs network access)
+mitohifi	mitohifi_mitohifi.py	PASS	contigs mode (-c) found a circular 15320 bp mitogenome with 36 genes on a real moth data set; reads mode (-r) was not run (too slow here)
+mitorsaw	mitorsaw_build	Not completed	the build subcommand is not yet implemented in mitorsaw 0.2.7 (it prints 'not yet implemented' and writes no database)
+mitorsaw	mitorsaw_haplotype	PASS	
+mitosalt	mitosalt	Failed	image problem: the image has BusyBox gzip, which cannot read the .tab file that MitoSAlt gzips to .tab.gz, so the deletion step reads nothing and breakpoint and cluster files stay empty (a planted 4977 bp deletion was missed; plot step also needs CONDA_ENV_BIN, set in the CWL)
+mitosalt	mitosalt_se	Failed	image problem: the image has BusyBox gzip, which cannot read the .tab file that MitoSAlt gzips to .tab.gz, so the deletion step reads nothing and breakpoint and cluster files stay empty (a planted 4977 bp deletion was missed; plot step also needs CONDA_ENV_BIN, set in the CWL)
+mitoz	mitoz_all	PASS	full pipeline on the MitoZ test reads gave a circular 16453 bp annotated mitogenome (closest species Limulus polyphemus)
+mitoz	mitoz_annotate	PASS	annotation of the MitoZ example mitogenome matches the stored result except four gene boundaries (version difference)
+mitoz	mitoz_assemble	Not completed	megahit assembled a circular 16453 bp mitogenome with 11 full-length genes from the MitoZ test reads, but the repo's stored example result differs (18419 bp, linear), so the assembly cannot be confirmed.
+mitoz	mitoz_filter	PASS	all reads of the small MitoZ test set passed the filter (49392 pairs kept)
+mitoz	mitoz_findmitoscaf	PASS	
+mitoz	mitoz_tools_bold_identification	Not completed	the BOLD web page the tool reads no longer exists (404 at boldsystems.org), so no identification can be returned
+mitoz	mitoz_tools_circle_check	PASS	
+mitoz	mitoz_tools_gbfiletool_comrev	PASS	
+mitoz	mitoz_tools_gbfiletool_cut	PASS	
+mitoz	mitoz_tools_gbfiletool_select	PASS	
+mitoz	mitoz_tools_gbfiletool_sort	PASS	
+mitoz	mitoz_tools_gbseqextractor	PASS	
+mitoz	mitoz_tools_group_seq_by_gene	PASS	
+mitoz	mitoz_tools_msaconverter	PASS	
+mitoz	mitoz_tools_taxonomy_ranks	PASS	
+mitoz	mitoz_visualize	PASS	
+mity	mity_call	PASS	human HiFi chrM BAM: homoplasmic variants such as m.263A>G, 750, 1438, 4769, 8860 match the mitorsaw calls
+mity	mity_merge	PASS	synthetic data: the nf-core NA12878 chrM VCF stands in for the nuclear VCF; the mity call VCF and it merge to the expected 28 + 4 records (the BAM needed a read group added first).
+mity	mity_normalise	PASS	
+mity	mity_report	PASS	report and annotated VCF workbooks carry correct annotation (m.263A>G in MT-HV2)
+mity	mity_runall	PASS	
+mkdesigner	mkdesigner_mkprimer	PASS	primers designed for 107 of 181 SNP candidates on the repository test data
+mkdesigner	mkdesigner_mkselect	PASS	10 markers selected; table and figure written
+mkdesigner	mkdesigner_mkvcf	PASS	test data from the tool repository: 1294 variants called from two lines
+mlrho	mlrho_mlRho	PASS	
+mlst	mlst	PASS	
+mlst-cge	mlst-cge_mlst.py	PASS	
+mlstdb	mlstdb_fetch	Not completed	needs a PubMLST/BIGSdb account with client ID and secret (interactive registration)
+mlstdb	mlstdb_update	Not completed	needs the scheme list from fetch and BIGSdb account tokens, plus network access
+mm2plus	mm2plus	PASS	
+mmannot	mmannot	PASS	
+mmft	mmft_extract	PASS	
+mmft	mmft_filter	PASS	
+mmft	mmft_gc	PASS	
+mmft	mmft_len	PASS	
+mmft	mmft_merge	PASS	
+mmft	mmft_min	PASS	
+mmft	mmft_n50	PASS	
+mmft	mmft_num	PASS	
+mmft	mmft_regex	PASS	
+mmft	mmft_reverse	PASS	
+mmft	mmft_sample	PASS	
+mmft	mmft_split	PASS	
+mmft	mmft_trans	PASS	
+mmlong2	mmlong2	Not completed	pipeline, skipped
+mmlong2-lite	mmlong2-lite	Not completed	pipeline, skipped
+mmquant	mmquant	PASS	
+mmseqs2	mmseqs2_cluster	PASS	20000 proteins gave 5763 clusters; createtsv lists all 20000 members
+mmseqs2	mmseqs2_convertalis	PASS	alignment database converted to a BLAST-tab table with headers (694 hits); self hits at 100% identity
+mmseqs2	mmseqs2_createdb	PASS	20000-protein UniProt FASTA gave a database with 20000 entries, headers and lookup file
+mmseqs2	mmseqs2_createindex	PASS	built the k-mer index (db.idx) for the 20000-protein database; a search on it gives the same hits as without index; index is about 970 MB
+mmseqs2	mmseqs2_createtsv	PASS	cluster database written as a table; give the target database to get sequence names instead of numeric keys
+mmseqs2	mmseqs2_easy-cluster	PASS	20000 proteins clustered into 5760 clusters; cluster table, all-sequence and representative FASTA files all agree
+mmseqs2	mmseqs2_easy-linclust	PASS	20000 proteins clustered into 15119 clusters by linear-time clustering; table and FASTA files agree
+mmseqs2	mmseqs2_easy-search	PASS	30 real UniProt queries against 20000 UniProt proteins (MMseqs2 examples) gave 694 hits in 28 queries; the same pairs as search plus convertalis; self hits at 100% identity
+mmseqs2	mmseqs2_easy-taxonomy	PASS	synthetic data: tiny taxonomy database (11 real UniProt proteins, 64-node taxdump) made with createtaxdb; SARS-CoV spike, human ACE2 and E. coli HslV got the right taxa
+mmseqs2	mmseqs2_linclust	PASS	20000 proteins gave 15118 clusters at 90% identity; createtsv lists all 20000 members
+mmseqs2	mmseqs2_result2flat	PASS	cluster sequence file (from createseqfiledb) written as FASTA with 20000 members under 5763 cluster headers
+mmseqs2	mmseqs2_search	PASS	30 queries against the 20000-protein database gave an alignment database with 30 entries
+mmult	mmult_bbglm	PASS	
+mmult	mmult_cpgcdifenrich	PASS	
+mmult	mmult_vmcvmrnme	PASS	
+mmvc	mmvc	PASS	
+moabs	moabs	PASS	
+mob_suite	mob_suite_mob_cluster	PASS	synthetic data: taxonomy table typed by hand; clusters built for 3 real plasmids from the repo test data.
+mob_suite	mob_suite_mob_init	Not completed	needs a database download of about 2.8 GB; the image already holds the database, so the download was not run
+mob_suite	mob_suite_mob_recon	PASS	
+mob_suite	mob_suite_mob_typer	PASS	
+mobidic-mpa	mobidic-mpa_mpa	PASS	synthetic data: repo test VCF with the missing spliceai_filtered and CLNSIG fields added; MPA scores and ranks added
+mobster	mobster	PASS	synthetic data: the tool's own simulated chr12 test BAM (6 Mb region) gave 82 insertion predictions
+mobster	mobster_mobster_to_vcf	PASS	synthetic data: converted the mobster test predictions (82 records) to VCF
+moca	moca_find_motifs	Failed	image problem: the MEME suite (meme, fimo, centrimo) that this command runs is not installed in the image
+moca	moca_plot	Failed	image problem: LaTeX (latex) is missing from the image, so the plot step stops after the conservation scores are computed
+mockinbird	mockinbird_flip_mate	Failed	tool bug: the script reads args.flipped_bam, which does not exist (the argument is output_bam), so it always stops with AttributeError
+mockinbird	mockinbird_postprocess	Not completed	pipeline, skipped (runs a whole config-driven plotting and motif pipeline that needs yeast annotation files)
+mockinbird	mockinbird_preprocess	Not completed	pipeline, skipped (runs a whole config-driven pipeline: FastQC, adapter clipping, STAR mapping, binding-site calling)
+modle	modle_simulate	PASS	
+modle	modle_tools_annotate_barriers	PASS	ran on the nf-core human RPKM bigWig and the MoDLE chr22 barrier BED (not CTCF ChIP-seq signal); occupancies computed
+modle	modle_tools_evaluate	PASS	
+modle	modle_tools_transform	PASS	
+moff	moff_moff_all.py	PASS	match-between-runs mode ran on the three repo CPTAC PeptideShaker files and added matched peptides; the apex (raw file) mode was not run, no small raw file
+mokapot	mokapot	PASS	
+moni	moni_build	Failed	tool bug: moni build never finishes; its build_seqidx step loops forever on a 3-sequence FASTA and on the README example (also as root)
+moni	moni_extend	Not completed	needs an index from moni build, which never finishes (tool bug), so no index could be made
+moni	moni_mems	Not completed	needs an index from moni build, which never finishes (tool bug), so no index could be made
+moni	moni_ms	Not completed	needs an index from moni build, which never finishes (tool bug), so no index could be made
+mono	mono	PASS	
+monocle3-cli	monocle3-cli_create	PASS	
+monocle3-cli	monocle3-cli_diffExp	PASS	
+monocle3-cli	monocle3-cli_learnGraph	PASS	
+monocle3-cli	monocle3-cli_orderCells	PASS	
+monocle3-cli	monocle3-cli_partition	PASS	default resolution gave one cluster on this data; run with --resolution 0.001 gave 3 clusters
+monocle3-cli	monocle3-cli_plotCells	PASS	
+monocle3-cli	monocle3-cli_preprocess	PASS	
+monocle3-cli	monocle3-cli_reduceDim	PASS	
+monocle3-cli	monocle3-cli_topMarkers	PASS	
+monovar	monovar	PASS	
+monsda	monsda	Not completed	pipeline, skipped
+montreal-forced-aligner	montreal-forced-aligner_mfa_model_download_acoustic	Failed	image problem: mfa crashes at import (Python 3.14, TypeError: Path.copy() missing target); command words fixed in the CWL
+montreal-forced-aligner	montreal-forced-aligner_mfa_train_acoustic	Failed	image problem: mfa crashes at import (Python 3.14, TypeError: Path.copy() missing target); command words fixed in the CWL
+montreal-forced-aligner	montreal-forced-aligner_mfa_validate	Failed	image problem: mfa crashes at import (Python 3.14, TypeError: Path.copy() missing target); command words fixed in the CWL
+moreutils	moreutils_chronic	Failed	image problem: chronic is a perl script and the image has no /usr/bin/perl (exec: no such file)
+moreutils	moreutils_combine	Failed	image problem: combine is a perl script and the image has no /usr/bin/perl (exec: no such file)
+moreutils	moreutils_errno	PASS	
+moreutils	moreutils_ifdata	PASS	
+moreutils	moreutils_ifne	PASS	
+moreutils	moreutils_isutf8	PASS	synthetic data: one planted Latin-1 file next to a real UTF-8 BED; the bad file was reported
+moreutils	moreutils_lckdo	PASS	
+moreutils	moreutils_mispipe	PASS	
+moreutils	moreutils_pee	PASS	
+moreutils	moreutils_sponge	PASS	
+moreutils	moreutils_ts	Failed	image problem: ts is a perl script and the image has no /usr/bin/perl (exec: no such file)
+moreutils	moreutils_zrun	Failed	image problem: zrun is a perl script and the image has no /usr/bin/perl (exec: no such file)
+mosaicatcher	mosaicatcher_count	PASS	synthetic data: ordinary whole-genome reads from four nf-core chr20 BAMs used as Strand-seq cells; counts and info file checked
+mosaicatcher	mosaicatcher_makebins	PASS	synthetic data: one nf-core chr20 whole-genome BAM; bins written
+mosaicatcher	mosaicatcher_segment	PASS	synthetic data: counts from mosaicatcher simulate; SV breakpoints at 12 Mb and 14 Mb on chr1 were found
+mosaicatcher	mosaicatcher_simulate	PASS	main mode works; the --genome option stops with the tool message that reading a genome file is not implemented
+mosaicatcher	mosaicatcher_states	PASS	synthetic data: counts from mosaicatcher simulate; 229 of 327 state records equal the simulated SCE truth
+mosca	mosca	Not completed	pipeline, skipped
+mosdepth	mosdepth	PASS	
+moss	moss	PASS	Moss demo data from its repository; samples input rewritten as bam and realigned pairs; 29 candidate loci scored, several PASS with tumor-only alt reads
+motifraptor	motifraptor_celltype	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_motiffilter	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_motifspecific	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_preprocess	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_preprocess_ukbb_v3	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_snpfeature	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_snpindex	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_snpmotif	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_snpmotifradar	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_snpscan	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifraptor	motifraptor_snpspecific	Failed	image problem: MotifRaptor writes globalpara.txt inside its install folder at start, so it fails read-only or as a non-root user (OSError Read-only file system); also needs a 32 GB database
+motifscan	motifscan_config	PASS	show, set-genome, get-genome and rm-genome checked on a staged config file
+motifscan	motifscan_genome	PASS	installed a chr20 2 Mb human FASTA with refGene annotation; remote search also worked
+motifscan	motifscan_motif	PASS	installed 8 JASPAR matrices and built PWMs for chr20; remote list also worked
+motifscan	motifscan_scan	PASS	68 chr20 promoter regions, 8 JASPAR motifs; sites and enrichment table written; the --plot option with enrichment crashes inside the tool (numpy error), works with --no-enrich
+motulizer	motulizer_mOTUconvert.py	PASS	
+motulizer	motulizer_mOTUlize.py	PASS	
+motulizer	motulizer_mOTUpan.py	PASS	
+mp-est	mp-est_mpest	PASS	
+mp3treesim	mp3treesim	PASS	
+mpa-server	mpa-server	Not completed	long-running server that first asks to download a 1 GB database; not run
+mpboot	mpboot	PASS	the -net option is rejected by the tool (source bug); parsimony bootstrap, consensus, support, RF and random trees work
+mpra-data-access-portal	mpra-data-access-portal	Not completed	Shiny web app (server/GUI); only --self-test and --help exist, no data-processing command
+mqc	mqc_mQC.pl	Not completed	needs a large Ensembl SQLite database and ribosome-profiling alignments (species-specific); no small test data; baseCommand fixed to mQC.pl
+mquad	mquad	PASS	VCF input and BIC-params reuse match the repo example; the --mtxData mode crashes on mtx files without variant names (tool limit)
+mrbayes	mrbayes	PASS	
+mreps	mreps	PASS	
+mrs	mrs_blast	Failed	tool bug: FASTA files given to --databank silently give no hits although the help documents FASTA input; databank ids from a built databank work.
+mrs	mrs_build	PASS	real UniProt Swiss-Prot entries (15 kinase records); databank built with 15 documents
+mrs	mrs_dump	PASS	
+mrs	mrs_entry	PASS	
+mrs	mrs_fetch	PASS	fetched a tiny real remote file (UniProt reldate.txt) over FTP with NetworkAccess
+mrs	mrs_info	PASS	
+mrs	mrs_password	PASS	output hash matches md5 of user:realm:password; password given on standard input
+mrs	mrs_query	PASS	
+mrs	mrs_server	Not completed	long-running server daemon; not started
+mrs	mrs_update	PASS	no remote source in the test config, so it only rebuilt the databank from raw data
+mrs	mrs_vacuum	Failed	tool bug: mrs vacuum crashes with exit 139 (Error writing file: Bad file descriptor) after printing done
+mrs	mrs_validate	PASS	silent on success; it fails with an error on a corrupted index file
+mrsfast	mrsfast	Failed	tool bug: -u file is ignored (unmapped reads go to <out>.nohit) and paired mode with --seq1/--seq2 segfaults; single-end and interleaved --pe mapping work
+mrsfast	mrsfast_index	PASS	
+mrtrix3	mrtrix3_fixelcfestats	PASS	
+ms2pip	ms2pip_annotate-spectra	Failed	tool bug: ms2pip 4.1.0 annotate-spectra crashes with TypeError in PurePath.with_suffix() (no suffix given) on every run
+ms2pip	ms2pip_correlate	PASS	
+ms2pip	ms2pip_get-training-data	PASS	
+ms2pip	ms2pip_predict-batch	PASS	
+ms2pip	ms2pip_predict-library	PASS	
+ms2query	ms2query	Not completed	needs the MS2Query library and models from Zenodo (about 3 GB: embeddings 1-2 GB parquet, sqlite library 0.7 GB); baseCommand fixed to ms2query
+ms2rescore	ms2rescore	PASS	
+ms2rescore	ms2rescore_report	Failed	tool bug: ms2rescore-report cannot read the psms.tsv that ms2rescore wrote from a Comet idXML run (psm_utils provenance parsing error)
+ms2rescore	ms2rescore_tims2rescore	Not completed	needs timsTOF DDA-PASEF .d data, not available in small form
+msa4u	msa4u	PASS	-aln mode works (PDF drawn from a mafft alignment); -fa mode crashes because the image has no mafft and the default config points to a macOS mafft path; made -fa and -aln optional
+msaboot	msaboot	PASS	
+msaconverter	msaconverter	PASS	
+msalign2	msalign2	Failed	tool bug: -b is accepted but ignored (commented out in the source); the alignment itself works on mzXML data when -f, -c and -d (missing from -h) are given; baseCommand fixed to msalign2 and options glued
+msamtools	msamtools_coverage	Failed	tool bug in msamtools 1.1.3 (fixed in 1.2.0): per-base coverage misses the last base of a read at the reference end and counts D and N positions as covered, so results differ from the project's expected output
+msamtools	msamtools_filter	Failed	tool bug in msamtools 1.1.3 (fixed in 1.2.0): --besthit and --uniqhit are not mate-aware and --rescore with --besthit keeps the wrong hit; length, identity and query-fraction filters match the expected output
+msamtools	msamtools_profile	Failed	tool bug in msamtools 1.1.3 (fixed in 1.2.0): --multi ignore drops an insert that maps several times to one reference; all, equal and proportional modes match the expected values
+msamtools	msamtools_summary	PASS	

@@ -48,10 +48,11 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Genome fasta file location (e.g. data/genome/example.fasta)
+    doc: Genome fasta file location (e.g. data/genome/example.fasta). MirMachine writes a .fai index beside it, so a writable copy is used
     inputBinding:
       position: 101
       prefix: --genome
+      valueFrom: $(self.basename)
   - id: model
     type:
       - 'null'
@@ -136,6 +137,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type:
+      - 'null'
+      - Directory
+    doc: Results folder with the predictions (gff, filtered gff and fasta)
+    outputBinding:
+      glob: results
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.genome ? [{"entryname": inputs.genome.basename, "entry": inputs.genome, "writable": true}] : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mirmachine:0.3.0.2--pyhdfd78af_0

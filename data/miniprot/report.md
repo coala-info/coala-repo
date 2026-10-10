@@ -1,5 +1,11 @@
 # miniprot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| miniprot | PASS | GFF3, PAF and translated output match the Galaxy test checks (1297 GFF3 lines, known cs string); index save and reload work |
+
 ## miniprot
 
 ### Tool Description

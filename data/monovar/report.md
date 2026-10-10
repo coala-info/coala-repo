@@ -1,5 +1,11 @@
 # monovar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| monovar | PASS |  |
+
 ## monovar
 
 ### Tool Description

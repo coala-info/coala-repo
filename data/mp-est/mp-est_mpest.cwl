@@ -102,6 +102,25 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: besttree
+    type:
+      - 'null'
+      - File
+    doc: best species tree(s) found, written as <input file name>_besttree.tre
+    outputBinding:
+      glob: '*_besttree.tre'
+  - id: output_trees
+    type:
+      - 'null'
+      - File
+    doc: trees updated during the search, written as <input file name>_output.tre
+    outputBinding:
+      glob: '*_output.tre'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mp-est:3.1.0--h7b50bb2_0

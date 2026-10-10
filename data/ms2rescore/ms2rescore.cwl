@@ -92,13 +92,13 @@ inputs:
       position: 102
       prefix: --output-path
 outputs:
-  - id: output_path
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: Path and stem for output file names
+      type: array
+      items: File
+    doc: Result files written with the output path stem (PSM table, feature names, config, log, report).
     outputBinding:
-      glob: $(inputs.output_path_path)
+      glob: $(inputs.output_path_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

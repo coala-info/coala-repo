@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minys_MinYS.py
+baseCommand: MinYS.py
 label: minys_MinYS.py
 doc: "MinYS: A pipeline for de novo assembly of circular DNA molecules\n\nTool homepage:
   https://github.com/cguyomar/MinYS"
@@ -26,7 +26,13 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Bwa index
+    doc: Reference genome in FASTA format with its bwa index (.amb .ann .bwt .pac .sa) beside it
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     inputBinding:
       position: 101
       prefix: -ref

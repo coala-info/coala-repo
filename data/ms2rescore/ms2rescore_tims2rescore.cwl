@@ -1,0 +1,106 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand: tims2rescore
+label: ms2rescore_tims2rescore
+doc: "MS2Rescore tuned for timsTOF DDA-PASEF data: sensitive PSM rescoring with predicted features.\n\nTool homepage: https://compomics.github.io/projects/ms2rescore/"
+inputs:
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: path to MS²Rescore configuration file (see README.md)
+    inputBinding:
+      position: 101
+      prefix: --config-file
+  - id: disable_update_check
+    type:
+      - 'null'
+      - boolean
+    doc: Disable automatic check for software updates
+    inputBinding:
+      position: 101
+      prefix: --disable-update-check
+  - id: fasta_file
+    type:
+      - 'null'
+      - File
+    doc: path to FASTA file
+    inputBinding:
+      position: 101
+      prefix: --fasta-file
+  - id: log_level
+    type:
+      - 'null'
+      - string
+    doc: logging level
+    inputBinding:
+      position: 101
+      prefix: --log-level
+  - id: processes
+    type:
+      - 'null'
+      - int
+    doc: number of parallel processes available to MS²Rescore
+    inputBinding:
+      position: 101
+      prefix: --processes
+  - id: profile
+    type:
+      - 'null'
+      - boolean
+    doc: Enable profiling with cProfile
+    inputBinding:
+      position: 101
+      prefix: --profile
+  - id: psm_file
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: path to PSM file (PIN, mzIdentML, MaxQuant msms, X!Tandem XML...)
+    inputBinding:
+      position: 101
+      prefix: --psm-file
+  - id: psm_file_type
+    type:
+      - 'null'
+      - string
+    doc: PSM file type
+    inputBinding:
+      position: 101
+      prefix: --psm-file-type
+  - id: spectrum_path
+    type:
+      - 'null'
+      - File
+    doc: path to MGF/mzML spectrum file or directory with spectrum files
+    inputBinding:
+      position: 101
+      prefix: --spectrum-path
+  - id: write_report
+    type:
+      - 'null'
+      - boolean
+    doc: boolean whether to write an HTML report
+    inputBinding:
+      position: 101
+      prefix: --write-report
+  - id: output_path_path
+    type: string
+    doc: Path and stem for output file names
+    inputBinding:
+      position: 102
+      prefix: --output-path
+outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Result files written with the output path stem (PSM table, feature names, config, log, report).
+    outputBinding:
+      glob: $(inputs.output_path_path)*
+requirements:
+  - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/ms2rescore:3.2.1--pyhdfd78af_0

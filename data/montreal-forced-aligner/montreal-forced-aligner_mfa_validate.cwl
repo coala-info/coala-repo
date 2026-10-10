@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: montreal-forced-aligner_mfa
+baseCommand:
+  - mfa
+  - validate
 label: montreal-forced-aligner_mfa_validate
 doc: "Validate the alignment files for a corpus.\n\nTool homepage: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner"
 inputs:
@@ -9,6 +11,18 @@ inputs:
     doc: Path to the directory containing the corpus to validate.
     inputBinding:
       position: 1
+  - id: dictionary_path
+    type: File
+    doc: Pronunciation dictionary of the corpus.
+    inputBinding:
+      position: 2
+  - id: acoustic_model_path
+    type:
+      - 'null'
+      - File
+    doc: Acoustic model to validate the corpus against.
+    inputBinding:
+      position: 3
   - id: log_level
     type:
       - 'null'
@@ -34,14 +48,10 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
-  - id: output_directory
-    type:
-      - 'null'
-      - Directory
-    doc: Path to the directory where validation output should be saved. Defaults
-      to a subdirectory within the corpus directory.
-    outputBinding:
-      glob: $(inputs.output_directory)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/montreal-forced-aligner:3.3.8
+stdout: montreal-forced-aligner_mfa_validate.out

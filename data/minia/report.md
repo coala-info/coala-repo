@@ -1,5 +1,11 @@
 # minia CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minia | PASS |  |
+
 ## minia
 
 ### Tool Description

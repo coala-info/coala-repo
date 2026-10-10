@@ -1,17 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mirtrace
+baseCommand:
+  - mirtrace
+  - qc
 label: mirtrace_qc
 doc: "The first argument must specify what mode miRTrace should operate in. Available
   modes: trace miRNA trace mode. Produces a clade report. --species is ignored. qc
   Quality control mode (full set of reports). --species must be given.\n\nTool homepage:
   https://github.com/friedlanderlab/mirtrace"
 inputs:
-  - id: mode
-    type: string
-    doc: 'The mode miRTrace should operate in. Available modes: trace, qc'
-    inputBinding:
-      position: 1
   - id: fastq_filenames
     type:
       - 'null'
@@ -19,7 +16,7 @@ inputs:
         items: File
     doc: FASTQ filenames
     inputBinding:
-      position: 2
+      position: 200
   - id: adapter
     type:
       - 'null'
@@ -28,23 +25,16 @@ inputs:
     inputBinding:
       position: 103
       prefix: --adapter
-  - id: cite
-    type:
-      - 'null'
-      - boolean
-    doc: Show information about how to cite our paper.
-    inputBinding:
-      position: 103
-      prefix: --cite
   - id: comment
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --comment
     doc: Add a comment to the generated report. Multiple arguments can be given.
     inputBinding:
       position: 103
-      prefix: --comment
   - id: config
     type:
       - 'null'
@@ -90,14 +80,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --global-mem-reserve
-  - id: list_species
-    type:
-      - 'null'
-      - boolean
-    doc: List all species that miRTrace has reference databases for.
-    inputBinding:
-      position: 103
-      prefix: --list-species
   - id: num_threads
     type:
       - 'null'
@@ -126,9 +108,7 @@ inputs:
       position: 103
       prefix: --protocol
   - id: species
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'Species (miRBase encoding). EXAMPLE: "hsa" for Homo sapiens. To list all
       codes, run "miRTrace --list-species".'
     inputBinding:
@@ -169,9 +149,6 @@ inputs:
       position: 103
       prefix: --write-fasta
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_dir_dir
     type:
       - 'null'
@@ -182,4 +159,3 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mirtrace:1.0.1--0
-stdout: mirtrace_qc.out

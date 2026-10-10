@@ -24,12 +24,18 @@ inputs:
       prefix: --keep
   - id: mity_vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: mity vcf file
     inputBinding:
       position: 101
       prefix: --mity_vcf
   - id: nuclear_vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: nuclear vcf file
     inputBinding:
       position: 101
@@ -60,9 +66,6 @@ inputs:
       position: 101
       prefix: --reference
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_dir_dir
     type:
       - 'null'
@@ -70,7 +73,16 @@ outputs:
     doc: Output files will be saved in OUTPUT_DIR.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.output_dir ? {"class": "Directory", "basename": inputs.output_dir, "listing": []} : null)'
+        writable: true
+      - entry: $(inputs.mity_vcf)
+        writable: true
+      - entry: $(inputs.nuclear_vcf)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mity:2.0.1--pyhdfd78af_0
-stdout: mity_merge.out

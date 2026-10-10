@@ -1,5 +1,11 @@
 # mrtrix3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mrtrix3_fixelcfestats | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

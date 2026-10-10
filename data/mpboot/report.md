@@ -1,5 +1,11 @@
 # mpboot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mpboot | PASS | the -net option is rejected by the tool (source bug); parsimony bootstrap, consensus, support, RF and random trees work |
+
 ## mpboot
 
 ### Tool Description

@@ -44,8 +44,6 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: "Mandatory - input mitogenome in FASTA format to be\n                   \
       \     used as reference, /path/to/reference.fa"
     inputBinding:
@@ -59,9 +57,22 @@ inputs:
       position: 101
       prefix: --sample
 outputs:
+  - id: mitogenome
+    type:
+      - 'null'
+      - File
+    doc: Final mitogenome assembly.
+    outputBinding:
+      glob: $(inputs.sample_id)_mitogenome.fa*
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mitgard:1.1--hdfd78af_0

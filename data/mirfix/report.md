@@ -1,27 +1,10 @@
 # mirfix CWL Generation Report
 
-## mirfix_runMIRfix.sh
+## Real Data Test
 
-### Tool Description
-Running MIRfix with 1 cores, 10nt extension at --help
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mirfix:2.1.1--hdfd78af_0
-- **Homepage**: https://github.com/Bierinformatik/MIRfix
-- **Package**: https://anaconda.org/channels/bioconda/packages/mirfix/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/mirfix/overview
-- **Total Downloads**: 12.1K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/Bierinformatik/MIRfix
-- **Stars**: N/A
-### Original Help Text
-```text
-Creating output directory --help/output
-Running MIRfix with 1 cores, 10nt extension at --help
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| mirfix_MIRfix.py | Not completed | CWL fixed (writable family folder, mature and mapping copies, trailing slashes) and runs on the example family, but the example needs 15 large genome FASTA files; with a small substitute genome the Final.fasta matches the example except one precursor and no corrected alignment is made |
 
 ## mirfix_MIRfix.py
 
@@ -71,25 +54,6 @@ optional arguments:
                         Directory to write logfiles to
   --loglevel {WARNING,ERROR,INFO,DEBUG,CRITICAL}
                         Set log level
-```
-
-
-## mirfix_testMIRfix.sh
-
-### Tool Description
-Running MIRfix with 1 cores, 10nt extension
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mirfix:2.1.1--hdfd78af_0
-- **Homepage**: https://github.com/Bierinformatik/MIRfix
-- **Package**: https://anaconda.org/channels/bioconda/packages/mirfix/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Running MIRfix with 1 cores, 10nt extension at --help
-Found 
-At  Cleanup
 ```
 
 

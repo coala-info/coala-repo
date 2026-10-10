@@ -2,14 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: miniasm
 label: miniasm
-doc: "miniasm: option requires an argument -- 'h'\nSee miniasm.1 for detailed description
-  of the command-line options.\n\nTool homepage: https://github.com/lh3/miniasm"
+doc: "miniasm: a very fast OLC-based de novo assembler for noisy long reads. It takes
+  an all-vs-all read mapping in PAF format and writes the assembly graph in GFA format
+  to standard output.\n\nTool homepage: https://github.com/lh3/miniasm"
 inputs:
   - id: input_paf
     type: File
-    doc: Input PAF file
+    doc: Input PAF file (may be gzip-compressed)
     inputBinding:
-      position: 1
+      position: 200
   - id: aggressive_overlap_drop_ratio
     type:
       - 'null'
@@ -111,10 +112,11 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: max and min overlap drop ratio
+    doc: max and min overlap drop ratio (written as FLOAT,FLOAT)
     inputBinding:
       position: 102
       prefix: -r
+      itemSeparator: ','
   - id: prefilter_contained_reads
     type:
       - 'null'
@@ -166,8 +168,8 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Assembly graph (GFA) or other output chosen with -p
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/miniasm:0.3_r179--ha92aebf_0
-stdout: miniasm.out
+stdout: miniasm.gfa

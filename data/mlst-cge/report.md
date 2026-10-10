@@ -1,5 +1,11 @@
 # mlst-cge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mlst-cge_mlst.py | PASS |  |
+
 ## mlst-cge_mlst.py
 
 ### Tool Description

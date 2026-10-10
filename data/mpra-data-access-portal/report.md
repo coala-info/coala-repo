@@ -1,5 +1,11 @@
 # mpra-data-access-portal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mpra-data-access-portal | Not completed | Shiny web app (server/GUI); only --self-test and --help exist, no data-processing command |
+
 ## mpra-data-access-portal
 
 ### Tool Description

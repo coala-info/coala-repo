@@ -2,39 +2,20 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mrsfast
 label: mrsfast
-doc: "mrsFAST is a cache oblivious read mapping tool. mrsFAST capable of mapping single
+doc: "Search mode (mrsfast --search). mrsFAST is a cache oblivious read mapping tool. mrsFAST capable of mapping single
   and paired end reads to the reference genome. Bisulfite treated sequences are not
   supported in this version.\n\nTool homepage: https://github.com/sfu-compbio/mrsfast"
 inputs:
-  - id: index_file
-    type:
-      - 'null'
-      - File
-    doc: Reference genome file for indexing
+  - id: reference
+    type: File
+    doc: Reference genome FASTA file; its index (reference.index, made with
+      mrsfast --index) must exist beside it.
+    secondaryFiles:
+      - pattern: .index
+        required: true
     inputBinding:
       position: 1
-  - id: search_index
-    type:
-      - 'null'
-      - File
-    doc: Index file for searching
-    inputBinding:
-      position: 2
-  - id: region
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Region(s) to extract
-    inputBinding:
-      position: 3
-  - id: seq_file
-    type:
-      - 'null'
-      - File
-    doc: Input sequence file
-    inputBinding:
-      position: 4
+      prefix: --search
   - id: best
     type:
       - 'null'
@@ -226,16 +207,9 @@ inputs:
     inputBinding:
       position: 105
       prefix: -u
-  - id: window_size
-    type:
-      - 'null'
-      - int
-    doc: Index the reference genome with sliding a window of size window_size
-    inputBinding:
-      position: 105
-      prefix: --ws
   - id: output_file_path
     type: string
+    default: output.sam
     doc: 'file Output the mapping record into file (default: output.sam)'
     inputBinding:
       position: 106
@@ -252,10 +226,10 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output unmapped reads in file. This file will be generated in all 
-      mapping mode.
+    doc: Unmapped reads (written by mrsFAST as <output>.nohit; the -u file name is
+      ignored by version 3.4.2).
     outputBinding:
-      glob: $(inputs.unmapped_reads_file)
+      glob: $(inputs.output_file_path).nohit
 requirements:
   - class: InlineJavascriptRequirement
 hints:

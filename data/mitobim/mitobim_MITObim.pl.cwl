@@ -194,9 +194,23 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: iterations
+    type:
+      type: array
+      items: Directory
+    doc: Iteration directories written by MITObim (iteration1, iteration2, ...),
+      each with the MIRA assembly and the extended reference.
+    outputBinding:
+      glob: iteration*
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: LC_ALL
+        envValue: C
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mitobim:1.9.1--hdfd78af_1

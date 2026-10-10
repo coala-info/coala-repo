@@ -4,20 +4,22 @@ baseCommand:
   - mrs
   - fetch
 label: mrs_fetch
-doc: "Fetch data from a databank.\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
+doc: "Fetch/mirror remote data for a databank\n\nTool homepage: https://mrs.cmbi.ru.nl/"
 inputs:
   - id: config
-    type:
-      - 'null'
-      - File
-    doc: Configuration file
+    type: File
+    secondaryFiles:
+      - pattern: ^.dtd
+        required: true
+    doc: 'MRS configuration file. It must be named mrs-config.xml and have its DTD
+      mrs-config.dtd beside it. Directories in it should be relative paths such as
+      mrs, raw (the directories staged by this tool) so they resolve in the working
+      directory.'
     inputBinding:
       position: 101
       prefix: --config
   - id: databank
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Databank
     inputBinding:
       position: 101
@@ -38,10 +40,33 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: raw_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Existing directory with the raw data files (the "raw" directory named in
+      the configuration file); an empty one is created when not given
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: raw_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: The raw directory with the fetched files
+    outputBinding:
+      glob: raw
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: raw
+        entry: |-
+          ${ if (inputs.raw_dir) { return inputs.raw_dir; } return {class: 'Directory', basename: 'raw', listing: []}; }
+        writable: true
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/mrs:v6.0.5dfsg-2b2-deb_cv1

@@ -1,5 +1,11 @@
 # minimap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minimap | PASS | all-vs-all overlaps match the Galaxy expected PAF; index dump and reload work |
+
 ## minimap
 
 ### Tool Description

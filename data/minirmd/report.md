@@ -1,5 +1,11 @@
 # minirmd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minirmd | PASS | synthetic data: real sarscov2 reads with 20 planted duplicate pairs; duplicates removed, 100 pairs kept; output glob fixed for paired-end _1/_2 files |
+
 ## minirmd
 
 ### Tool Description

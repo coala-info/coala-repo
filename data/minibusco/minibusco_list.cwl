@@ -30,6 +30,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --remote
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 outputs:
   - id: stdout
     type: stdout

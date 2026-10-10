@@ -16,6 +16,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -in
+      itemSeparator: ','
   - id: properties
     type:
       - 'null'
@@ -34,6 +35,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -sn
+      itemSeparator: ','
+  - id: staged_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the properties file (mobiome index, MOSAIK annotation,
+      repeat mask file, Picard jar). They are staged in the working directory.
   - id: output_prefix_path
     type: string
     doc: '[output prefix]. This value will override corresponding value in properties
@@ -53,6 +62,9 @@ outputs:
       glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.staged_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mobster:0.2.4.1--py36_0

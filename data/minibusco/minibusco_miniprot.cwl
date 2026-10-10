@@ -21,8 +21,8 @@ inputs:
       position: 101
       prefix: --miniprot_execute_path
   - id: outdir
-    type: Directory
-    doc: Miniprot alignment output directory
+    type: string
+    doc: Miniprot alignment output directory (created by the tool)
     inputBinding:
       position: 101
       prefix: --outdir
@@ -30,7 +30,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: output if score at least FLOAT*bestScore
+    doc: output if score at least FLOAT*bestScore [0.95]
     inputBinding:
       position: 101
       prefix: --outs
@@ -48,7 +48,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+requirements:
+  - class: InlineJavascriptRequirement
 outputs:
+  - id: outdir_dir
+    type: Directory
+    doc: Miniprot alignment output directory (miniprot_output.gff, miniprot.done)
+    outputBinding:
+      glob: $(inputs.outdir)
   - id: stdout
     type: stdout
     doc: Standard output

@@ -6,19 +6,19 @@ doc: "minimap2-coverage is a forked minimap2 program focusing on coverage, and t
   for LongQC.\n\nTool homepage: https://github.com/yfukasawa/LongQC"
 inputs:
   - id: reference
-    type: string
+    type: File
     doc: reference
     inputBinding:
-      position: 1
+      position: 200
   - id: reads
-    type: string
+    type: File
     doc: reads
     inputBinding:
-      position: 2
+      position: 201
   - id: dump_index
     type:
       - 'null'
-      - File
+      - string
     doc: dump index to FILE
     inputBinding:
       position: 103
@@ -181,7 +181,16 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Overlap/coverage records written to standard output
+  - id: index_file
+    type:
+      - 'null'
+      - File
+    doc: Index dumped with --dump-index
+    outputBinding:
+      glob: $(inputs.dump_index)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minimap2-coverage:1.2.0c--h577a1d6_4

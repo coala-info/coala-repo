@@ -44,7 +44,7 @@ inputs:
   - id: dump_index_file
     type:
       - 'null'
-      - File
+      - string
     doc: dump index to FILE
     inputBinding:
       position: 103
@@ -330,6 +330,13 @@ outputs:
     doc: output alignments to FILE [stdout]
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: dump_index_output
+    type:
+      - 'null'
+      - File
+    doc: index dumped with -d
+    outputBinding:
+      glob: $(inputs.dump_index_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

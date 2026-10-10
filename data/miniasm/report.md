@@ -1,5 +1,11 @@
 # miniasm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| miniasm | PASS | matches the Galaxy expected GFA for both test parameter sets |
+
 ## miniasm
 
 ### Tool Description

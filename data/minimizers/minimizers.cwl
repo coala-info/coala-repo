@@ -46,9 +46,7 @@ inputs:
       position: 101
       prefix: --report-counts
   - id: size
-    type:
-      - 'null'
-      - int
+    type: int
     doc: Length of the minimizers
     inputBinding:
       position: 101
@@ -80,9 +78,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: window
-    type:
-      - 'null'
-      - int
+    type: int
     doc: "Size of the sliding window. It must be greater than\n                  \
       \      the minimizer size"
     inputBinding:
@@ -90,14 +86,14 @@ inputs:
       prefix: --window
   - id: output_path
     type: string
+    doc: Path to the output file with minimizers (required in practice - the tool
+      crashes when --output is missing)
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: "Path to the output file with minimizers. Results are\n                 \
       \       printed on the stdout if no output is provided"
     outputBinding:

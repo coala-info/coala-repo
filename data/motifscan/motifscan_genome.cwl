@@ -9,6 +9,13 @@ doc: "Genome assembly commands.\nThis subcommand controls the genome assemblies 
   (if available) for each genome assembly, users can either download them from a remote
   database or install directly with local prepared files.\n\nTool homepage: https://github.com/shao-lab/MotifScan"
 inputs:
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: Existing MotifScan config file (.motifscanrc). It is staged as
+      ~/.motifscanrc so list, uninstall and config commands see it. Without it
+      the config starts empty. The default config is not kept between runs.
   - id: annotation
     type:
       - 'null'
@@ -107,11 +114,24 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_dir_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Write to a given directory instead of the default directory.
     inputBinding:
       position: 102
       prefix: --output-dir
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: config_out
+    type:
+      - 'null'
+      - File
+    doc: The MotifScan config file after the command (.motifscanrc).
+    outputBinding:
+      glob: .motifscanrc
   - id: output_dir
     type:
       - 'null'
@@ -121,6 +141,14 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        return inputs.config_file ? [{entryname: ".motifscanrc", entry: inputs.config_file, writable: true}] : [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/motifscan:1.3.0--py310h4b81fae_3
+stdout: motifscan_genome.out

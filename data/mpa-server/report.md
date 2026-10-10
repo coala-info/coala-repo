@@ -1,5 +1,11 @@
 # mpa-server CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mpa-server | Not completed | long-running server that first asks to download a 1 GB database; not run |
+
 ## mpa-server
 
 ### Tool Description

@@ -121,8 +121,6 @@ inputs:
   - id: reference
     type: File
     doc: Reference genome (FASTA or GenBank)
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -162,6 +160,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: minkemap_results
     doc: Directory to save all output files
     inputBinding:
       position: 102
@@ -170,6 +169,8 @@ inputs:
     type:
       - 'null'
       - string
+    default: minkemap_plot.png
+    doc: Output filename (written inside the output directory)
     inputBinding:
       position: 103
       prefix: --output
@@ -180,7 +181,7 @@ outputs:
       - File
     doc: Output filename
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.outdir_path)/$(inputs.output_path)
   - id: outdir
     type:
       - 'null'

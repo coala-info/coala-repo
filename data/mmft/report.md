@@ -1,5 +1,23 @@
 # mmft CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mmft_extract | PASS |  |
+| mmft_filter | PASS |  |
+| mmft_gc | PASS |  |
+| mmft_len | PASS |  |
+| mmft_merge | PASS |  |
+| mmft_min | PASS |  |
+| mmft_n50 | PASS |  |
+| mmft_num | PASS |  |
+| mmft_regex | PASS |  |
+| mmft_reverse | PASS |  |
+| mmft_sample | PASS |  |
+| mmft_split | PASS |  |
+| mmft_trans | PASS |  |
+
 ## mmft_len
 
 ### Tool Description

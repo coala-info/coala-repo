@@ -1,5 +1,13 @@
 # mindagap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mindagap_duplicate_finder.py | PASS | synthetic data: 40 planted duplicate pairs, all 40 found |
+| mindagap_mindagap.py | PASS |  |
+| mindagap_rgb_from_z_tiles.py | Failed | tool bug: with --z the script calls exit() before writing any PNG; only the no-z mode works |
+
 ## mindagap_mindagap.py
 
 ### Tool Description

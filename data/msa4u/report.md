@@ -1,5 +1,11 @@
 # msa4u CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msa4u | PASS | -aln mode works (PDF drawn from a mafft alignment); -fa mode crashes because the image has no mafft and the default config points to a macOS mafft path; made -fa and -aln optional |
+
 ## msa4u
 
 ### Tool Description

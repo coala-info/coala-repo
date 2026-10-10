@@ -32,7 +32,7 @@ inputs:
   - id: loc_out
     type:
       - 'null'
-      - Directory
+      - string
     doc: specify the folder output
     inputBinding:
       position: 101
@@ -204,9 +204,29 @@ inputs:
       position: 101
       prefix: --xic_length
 outputs:
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder (apex module)
+    outputBinding:
+      glob: $(inputs.loc_out)
+  - id: mbr_output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Match-between-runs output folder, written inside the input folder
+    outputBinding:
+      glob: "$(inputs.loc_in ? inputs.loc_in.basename + '/mbr_output' : 'mbr_output')"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.loc_in)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/moff:2.0.3--4

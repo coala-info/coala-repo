@@ -1,5 +1,13 @@
 # mkdesigner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mkdesigner_mkprimer | PASS | primers designed for 107 of 181 SNP candidates on the repository test data |
+| mkdesigner_mkselect | PASS | 10 markers selected; table and figure written |
+| mkdesigner_mkvcf | PASS | test data from the tool repository: 1294 variants called from two lines |
+
 ## mkdesigner_mkvcf
 
 ### Tool Description

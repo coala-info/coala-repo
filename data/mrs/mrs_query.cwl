@@ -4,48 +4,48 @@ baseCommand:
   - mrs
   - query
 label: mrs_query
-doc: "Query the MRS databank\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
+doc: "Perform a search in a databank\n\nTool homepage: https://mrs.cmbi.ru.nl/"
 inputs:
   - id: config
-    type:
-      - 'null'
-      - string
-    doc: Configuration file
+    type: File
+    secondaryFiles:
+      - pattern: ^.dtd
+        required: true
+    doc: 'MRS configuration file. It must be named mrs-config.xml and have its DTD
+      mrs-config.dtd beside it. Directories in it should be relative paths such as
+      mrs, raw (the directories staged by this tool) so they resolve in the working
+      directory.'
     inputBinding:
       position: 101
       prefix: --config
-  - id: count
-    type:
-      - 'null'
-      - int
-    doc: Result count
-    inputBinding:
-      position: 101
-      prefix: --count
   - id: databank
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Databank
     inputBinding:
       position: 101
       prefix: --databank
-  - id: offset
-    type:
-      - 'null'
-      - int
-    doc: Result offset
-    inputBinding:
-      position: 101
-      prefix: --offset
   - id: query
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Query term
     inputBinding:
       position: 101
       prefix: --query
+  - id: count
+    type:
+      - 'null'
+      - int
+    doc: Result count (default = 10)
+    inputBinding:
+      position: 101
+      prefix: --count
+  - id: offset
+    type:
+      - 'null'
+      - int
+    doc: Result offset (default = 0)
+    inputBinding:
+      position: 101
+      prefix: --offset
   - id: threads
     type:
       - 'null'
@@ -62,10 +62,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: mrs_dir
+    type: Directory
+    doc: Directory with the built databanks (the "mrs" directory named in the
+      configuration file)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: mrs
+        entry: $(inputs.mrs_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/mrs:v6.0.5dfsg-2b2-deb_cv1

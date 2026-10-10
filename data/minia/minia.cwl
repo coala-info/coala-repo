@@ -143,7 +143,7 @@ inputs:
   - id: histo
     type:
       - 'null'
-      - boolean
+      - int
     doc: output the kmer abundance histogram
     inputBinding:
       position: 101
@@ -151,7 +151,7 @@ inputs:
   - id: histo2D
     type:
       - 'null'
-      - boolean
+      - int
     doc: compute the 2D histogram (with first file = genome, remaining files = 
       reads)
     inputBinding:
@@ -166,9 +166,7 @@ inputs:
       position: 101
       prefix: -histo-max
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input reads (fasta/fastq/compressed) or hdf5 file
     inputBinding:
       position: 101
@@ -429,7 +427,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "(1 arg) :    output file  [default '']"
+    default: minia_out
+    doc: output file prefix (writes <prefix>.contigs.fa, <prefix>.h5, ...)
     inputBinding:
       position: 102
       prefix: -out
@@ -459,34 +458,41 @@ inputs:
       position: 105
       prefix: -solid-kmers-out
 outputs:
+  - id: contigs
+    type:
+      - 'null'
+      - File
+    doc: assembled contigs
+    outputBinding:
+      glob: $(inputs.out_path).contigs.fa
+  - id: unitigs
+    type:
+      - 'null'
+      - File
+    doc: unitigs of the graph
+    outputBinding:
+      glob: $(inputs.out_path).unitigs.fa
+  - id: graph_h5
+    type:
+      - 'null'
+      - File
+    doc: k-mer counts and graph (hdf5)
+    outputBinding:
+      glob: $(inputs.out_path).h5
+  - id: histogram
+    type:
+      - 'null'
+      - File
+    doc: k-mer abundance histogram (with histo)
+    outputBinding:
+      glob: $(inputs.out_path).histo
   - id: solid_kmers_out
     type:
       - 'null'
       - File
-    doc: output file for solid kmers (only when constructing a graph)
+    doc: output file for solid kmers
     outputBinding:
       glob: $(inputs.solid_kmers_out_path)
-  - id: out
-    type:
-      - 'null'
-      - File
-    doc: output file
-    outputBinding:
-      glob: $(inputs.out_path)
-  - id: out_dir
-    type:
-      - 'null'
-      - Directory
-    doc: output directory
-    outputBinding:
-      glob: $(inputs.out_dir_path)
-  - id: out_tmp
-    type:
-      - 'null'
-      - Directory
-    doc: output directory for temporary files
-    outputBinding:
-      glob: $(inputs.out_tmp_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

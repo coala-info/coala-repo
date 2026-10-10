@@ -6,6 +6,14 @@ doc: "MPBoot version 1.1.1 for Linux 64-bit built Apr 15 2025\nCopyright (c) 201
   Diep Thi Hoang, Le Sy Vinh, Tomas Flouri, Alexandros Stamatakis, Arndt von Haeseler
   and Bui Quang Minh.\n\nTool homepage: https://github.com/diepthihoang/mpboot"
 inputs:
+  - id: random_tree_output
+    type:
+      - 'null'
+      - string
+    doc: Output file name for the random tree generated with the -r, -ru, -rcat,
+      -rbal or -rcsg options (the treefile argument)
+    inputBinding:
+      position: 3
   - id: initial_tree
     type:
       - 'null'
@@ -21,7 +29,9 @@ inputs:
     inputBinding:
       position: 2
   - id: alignment
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input alignment (REQUIRED) in PHYLIP/FASTA/NEXUS format
     inputBinding:
       position: 103
@@ -399,6 +409,79 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: treefile
+    type:
+      - 'null'
+      - File
+    doc: Maximum-parsimony tree
+    outputBinding:
+      glob: '*.treefile'
+  - id: mpboot_report
+    type:
+      - 'null'
+      - File
+    doc: MPBoot report
+    outputBinding:
+      glob: '*.mpboot'
+  - id: splits_nex
+    type:
+      - 'null'
+      - File
+    doc: Split support values from the bootstrap approximation
+    outputBinding:
+      glob: '*.splits.nex'
+  - id: contree
+    type:
+      - 'null'
+      - File
+    doc: Consensus tree
+    outputBinding:
+      glob: '*.contree'
+  - id: suptree
+    type:
+      - 'null'
+      - File
+    doc: Target tree with assigned support values
+    outputBinding:
+      glob: '*.suptree'
+  - id: rfdist
+    type:
+      - 'null'
+      - File
+    doc: Robinson-Foulds distances
+    outputBinding:
+      glob: '*.rfdist'
+  - id: sitepars
+    type:
+      - 'null'
+      - File
+    doc: Site parsimony scores
+    outputBinding:
+      glob: '*.sitepars'
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Screen log file
+    outputBinding:
+      glob: '*.log'
+  - id: random_tree
+    type:
+      - 'null'
+      - File
+    doc: Random tree written to the treefile argument
+    outputBinding:
+      glob: $(inputs.random_tree_output)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.alignment)
+        writable: true
+      - entry: $(inputs.initial_tree)
+        writable: true
+      - entry: $(inputs.input_trees_for_consensus)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mpboot:1.2--h503566f_0

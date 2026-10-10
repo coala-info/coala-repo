@@ -1,5 +1,11 @@
 # moss CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| moss | PASS | Moss demo data from its repository; samples input rewritten as bam and realigned pairs; 29 candidate loci scored, several PASS with tumor-only alt reads |
+
 ## moss
 
 ### Tool Description

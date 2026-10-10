@@ -1,5 +1,13 @@
 # minisplice CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minisplice_gentrain | PASS | real human chr21 and GENCODE annotation (converted to BED12); training data has GT donor sites at the labelled positions |
+| minisplice_predict | PASS | fixed second input to File; calibration run (-b) and scoring run (-c) gave splice site scores on real human chr22 sequence |
+| minisplice_train | PASS | trained a model on the gentrain output; model file written |
+
 ## minisplice_gentrain
 
 ### Tool Description

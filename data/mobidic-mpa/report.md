@@ -1,5 +1,11 @@
 # mobidic-mpa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mobidic-mpa_mpa | PASS | synthetic data: repo test VCF with the missing spliceai_filtered and CLNSIG fields added; MPA scores and ranks added |
+
 ## mobidic-mpa_mpa
 
 ### Tool Description

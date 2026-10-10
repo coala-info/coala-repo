@@ -17,6 +17,8 @@ inputs:
   - id: reads_bam
     type: File
     doc: Aligned reads in BAM format
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 2
   - id: batch_size
@@ -70,7 +72,7 @@ inputs:
   - id: min_modification_threshold
     type:
       - 'null'
-      - float
+      - string
     doc: min modification threshold(s). Comma separated values for each 
       modification code given in -c
     inputBinding:
@@ -109,12 +111,17 @@ inputs:
       position: 103
       prefix: --verbose
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output file [stdout]
     inputBinding:
       position: 104
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Result table (when -o is not given)
   - id: output_file
     type:
       - 'null'
@@ -127,3 +134,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minimod:0.4.0--h577a1d6_0
+stdout: minimod_freq.out

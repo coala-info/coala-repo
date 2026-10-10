@@ -26,11 +26,11 @@ inputs:
   - id: debug_mode
     type:
       - 'null'
-      - boolean
-    doc: Activate the Perl DEBUGGER to run miRNAture.
+      - int
+    doc: Activate the Perl DEBUGGER to run miRNAture (0 or 1).
     inputBinding:
       position: 101
-      prefix: -dbug
+      prefix: -debug_mode
   - id: man
     type:
       - 'null'
@@ -60,15 +60,23 @@ inputs:
   - id: parallel
     type:
       - 'null'
-      - boolean
+      - int
     doc: Activate parallel jobs processing (1) or not (0).
     inputBinding:
       position: 101
-      prefix: -parallel
+      prefix: -parallel_linux
+  - id: nbitscore_cutoff
+    type:
+      - 'null'
+      - float
+    doc: Normalized bitscore threshold (0-1) to clean the Rfam candidates.
+    inputBinding:
+      position: 101
+      prefix: -nbitscore_cutoff
   - id: parallel_slurm
     type:
       - 'null'
-      - boolean
+      - int
     doc: "Activate SLURM resource manager to submit parallel jobs (1)\nor not (0)."
     inputBinding:
       position: 101
@@ -169,6 +177,12 @@ outputs:
       glob: $(inputs.workdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.data_dir)
+        writable: true
+      - entry: $(inputs.species_genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mirnature:1.1--pl5321hdfd78af_2

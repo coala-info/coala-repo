@@ -1,5 +1,12 @@
 # mirtrace CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mirtrace_qc | PASS |  |
+| mirtrace_trace | PASS |  |
+
 ## mirtrace_trace
 
 ### Tool Description

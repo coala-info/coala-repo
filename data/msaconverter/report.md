@@ -1,5 +1,11 @@
 # msaconverter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msaconverter | PASS |  |
+
 ## msaconverter
 
 ### Tool Description

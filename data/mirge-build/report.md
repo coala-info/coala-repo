@@ -1,5 +1,11 @@
 # mirge-build CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mirge-build | PASS | synthetic data: rewrote CWL from help (baseCommand miRge-build, real flags); real human miRBase and genome piece, tRNA/rRNA/mRNA cut from chrM and snoRNA/other ncRNA from random genome pieces; built a full tiny library with 58 files |
+
 ## mirge-build
 
 ### Tool Description

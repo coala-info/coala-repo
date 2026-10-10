@@ -1,5 +1,15 @@
 # minibusco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minibusco_analyze | PASS | ran on a Mycoplasma genitalium genome with the mycoplasmatales_odb10 lineage (lineage fetched by hand because download is broken) |
+| minibusco_download | Failed | tool bug: the md5 check compares the whole hash-file line (hash plus file name) with the file hash, so no download works with the current BUSCO server |
+| minibusco_list | Failed | tool bug: list --remote stops at the same md5 check as download |
+| minibusco_miniprot | PASS | 113 protein alignments on a Mycoplasma genitalium genome |
+| minibusco_run | Failed | tool bug: run downloads the lineage first and stops at the same md5 check as download |
+
 ## minibusco_download
 
 ### Tool Description

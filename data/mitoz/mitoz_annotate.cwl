@@ -15,7 +15,8 @@ inputs:
       the header line, otherwise it is assumbed to be 'topology=linear'. For 
       example, '>Contig1 topology=linear'
     inputBinding:
-      position: 1
+      position: 101
+      prefix: --fastafiles
   - id: clade
     type:
       - 'null'
@@ -93,7 +94,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: workdir
     inputBinding:
       position: 102
@@ -102,13 +103,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: outprefix_files
+  - id: result_dirs
     type:
       type: array
-      items: File
-    doc: Files written with the prefix given in outprefix
+      items: Directory
+    doc: Result folders '<outprefix>.<fasta file name>.result' with the annotation
+      (GenBank, tables, CDS, tRNA and rRNA sequences, circos plot).
     outputBinding:
-      glob: $(inputs.outprefix)*
+      glob: $(inputs.outprefix)*.result
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mitoz:3.6--pyhdfd78af_1

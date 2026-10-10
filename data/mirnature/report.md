@@ -1,5 +1,11 @@
 # mirnature CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mirnature_miRNAture | PASS |  |
+
 ## mirnature_miRNAture
 
 ### Tool Description

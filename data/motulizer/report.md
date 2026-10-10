@@ -1,5 +1,13 @@
 # motulizer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| motulizer_mOTUconvert.py | PASS |  |
+| motulizer_mOTUlize.py | PASS |  |
+| motulizer_mOTUpan.py | PASS |  |
+
 ## motulizer_mOTUlize.py
 
 ### Tool Description

@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: mitofinder
 label: mitofinder
 doc: "Mitofinder is a pipeline to assemble and annotate mitochondrial DNA from trimmed
-  sequencing reads.\n\nTool homepage: https://github.com/parklab/xTea"
+  sequencing reads.\n\nTool homepage: https://github.com/RemiAllio/MitoFinder"
 inputs:
   - id: adjust_direction
     type:
@@ -91,14 +91,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --circular-size
-  - id: citation
-    type:
-      - 'null'
-      - boolean
-    doc: How to cite MitoFinder
-    inputBinding:
-      position: 101
-      prefix: --citation
   - id: config
     type:
       - 'null'
@@ -107,14 +99,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --config
-  - id: example
-    type:
-      - 'null'
-      - boolean
-    doc: Print getting started examples
-    inputBinding:
-      position: 101
-      prefix: --example
   - id: idba
     type:
       - 'null'
@@ -272,9 +256,7 @@ inputs:
       position: 101
       prefix: --Paired-end2
   - id: process_name
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Sequence ID to be used throughout the process
     inputBinding:
       position: 101
@@ -329,9 +311,17 @@ inputs:
       position: 101
       prefix: --tRNA-annotation
 outputs:
+  - id: results
+    type: Directory
+    doc: Output directory named after the sequence ID, with the assembly, the
+      contig search results and the annotation.
+    outputBinding:
+      glob: $(inputs.process_name)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mitofinder:1.4.1--py27h9801fc8_1

@@ -8,6 +8,9 @@ doc: "Normalises VCF files from mity.\n\nTool homepage: https://github.com/KCCG/
 inputs:
   - id: vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: vcf.gz file from running mity
     inputBinding:
       position: 1
@@ -84,9 +87,6 @@ inputs:
       position: 102
       prefix: --reference
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_dir_dir
     type:
       - 'null'
@@ -94,7 +94,14 @@ outputs:
     doc: Output files will be saved in OUTPUT_DIR.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.output_dir ? {"class": "Directory", "basename": inputs.output_dir, "listing": []} : null)'
+        writable: true
+      - entry: $(inputs.vcf)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mity:2.0.1--pyhdfd78af_0
-stdout: mity_normalise.out

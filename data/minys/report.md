@@ -1,5 +1,12 @@
 # minys CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minys_MinYS.py | PASS | fixed baseCommand to MinYS.py and required bwa index files; MinYS test data gave one 15,722 bp assembly as documented |
+| minys_filter_components.py | PASS | kept the 15.7 kb graph component at min length 1000 and removed it at 20000 |
+
 ## minys_MinYS.py
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # msalign2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msalign2 | Failed | tool bug: -b is accepted but ignored (commented out in the source); the alignment itself works on mzXML data when -f, -c and -d (missing from -h) are given; baseCommand fixed to msalign2 and options glued |
+
 ## msalign2
 
 ### Tool Description

@@ -25,11 +25,17 @@ inputs:
   - id: database_name
     type:
       - 'null'
-      - File
-    doc: name of database created using formatPro
+      - string
+    doc: 'name (file prefix) of the database created using formatPro; default: profileDb'
     inputBinding:
       position: 102
       prefix: -n
+  - id: database_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: formatPro database files (.sum, .pos, .con) that share the database name prefix
   - id: first_step_size
     type:
       - 'null'
@@ -130,6 +136,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.database_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mlrho:2.9--ha9c9cc8_3

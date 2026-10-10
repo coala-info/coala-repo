@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mqc_mQC.pl
+baseCommand: mQC.pl
 label: mqc_mQC.pl
 doc: "MappingQC is a tool to easily generate some figures which give a nice overview
   of the quality of the mapping of ribosome profiling data. More specific, it gives

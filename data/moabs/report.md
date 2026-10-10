@@ -1,5 +1,11 @@
 # moabs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| moabs | PASS |  |
+
 ## moabs
 
 ### Tool Description

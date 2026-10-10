@@ -64,10 +64,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --target
     doc: Target position where primers designed e.g. "chr01:1000000-3500000"
     inputBinding:
       position: 101
-      prefix: --target
   - id: vcf_primers
     type: File
     doc: VCF file with primers. This file must be made by "mkprimer" command.
@@ -85,7 +86,7 @@ outputs:
     doc: Identical name (must be unique). This will be stem of output directory 
       name.
     outputBinding:
-      glob: $(inputs.output_stem)
+      glob: $(inputs.output_stem)_mkselect
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mkdesigner:0.5.3--pyhdfd78af_0

@@ -20,12 +20,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -fastq
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: hairpin
     type: File
     doc: fasta file of hairpin precursor sequence
     inputBinding:
       position: 101
       prefix: -hairpin
+      valueFrom: $(self.basename)
   - id: kingdom
     type: string
     doc: Specify animal or plant
@@ -38,6 +40,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -mature
+      valueFrom: $(self.basename)
   - id: mm
     type:
       - 'null'
@@ -101,6 +104,11 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fastq)
+      - $(inputs.hairpin)
+      - $(inputs.mature)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mirscore:0.3.4--hdfd78af_0

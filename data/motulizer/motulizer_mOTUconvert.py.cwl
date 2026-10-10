@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mOTUconverts.py
+baseCommand: mOTUconvert.py
 label: motulizer_mOTUconvert.py
 doc: "Converts output of diverse software generatig COGs, or genetically encoded traits
   into a genome2gene_clusters-JSON file useable by mOTUpan\n\nTool homepage: https://github.com/moritzbuck/mOTUlizer/"
@@ -8,7 +8,7 @@ inputs:
   - id: input
     type:
       - 'null'
-      - string
+      - File
     doc: input file(s), check '--list' for specifics
     inputBinding:
       position: 1
@@ -47,7 +47,9 @@ inputs:
       position: 102
       prefix: --list
   - id: output_path
-    type: string?
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 103
       prefix: --output

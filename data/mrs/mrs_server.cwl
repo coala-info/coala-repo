@@ -4,7 +4,7 @@ baseCommand:
   - mrs
   - server
 label: mrs_server
-doc: "\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
+doc: "\nTool homepage: https://mrs.cmbi.ru.nl/"
 inputs:
   - id: command
     type:
@@ -33,7 +33,7 @@ inputs:
   - id: pidfile
     type:
       - 'null'
-      - File
+      - string
     doc: Create file with process ID (pid)
     inputBinding:
       position: 101

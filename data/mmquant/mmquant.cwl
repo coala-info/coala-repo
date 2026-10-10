@@ -54,7 +54,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output file
+    doc: 'output file (default: stdout)'
     inputBinding:
       position: 101
       prefix: -o
@@ -128,7 +128,7 @@ inputs:
   - id: statistics_file
     type:
       - 'null'
-      - File
+      - string
     doc: print statistics to a file instead of stderr
     inputBinding:
       position: 101
@@ -154,6 +154,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: count table written with -o
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: statistics_file_out
+    type:
+      - 'null'
+      - File
+    doc: statistics file written with -O
+    outputBinding:
+      glob: $(inputs.statistics_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mmquant:1.0.9--hdcf5f25_0

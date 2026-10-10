@@ -1,12 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mmft_n50
+baseCommand:
+  - mmft
+  - n50
 label: mmft_n50
 doc: "Calculates the N50 statistic for a given FASTA file.\n\nTool homepage: https://github.com/ARU-life-sciences/mmft"
 inputs:
-  - id: fasta_file
-    type: File
-    doc: Input FASTA file
+  - id: fasta_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input fasta file path(s).
     inputBinding:
       position: 1
 outputs:

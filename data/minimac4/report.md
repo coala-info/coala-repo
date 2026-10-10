@@ -1,9 +1,17 @@
 # minimac4 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minimac4_compress-reference | PASS | built an MSAV panel from a 1000 Genomes chr21 region |
+| minimac4_impute | PASS | imputed 4 held-out 1000 Genomes samples from 20 percent of sites with that panel; 99.4 percent of calls match the truth |
+| minimac4_update-m3vcf | Not completed | no M3VCF test data found (none in the tool repo, Galaxy or nf-core) and no Minimac3 image to build one |
+
 ## minimac4_update-m3vcf
 
 ### Tool Description
-Performs imputation using reference panels.
+Converts an M3VCF reference panel to the MSAV format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/minimac4:4.1.6--hcb620b3_1
@@ -60,7 +68,7 @@ Usage: minimac4 [opts ...] <reference.msav> <target.{sav,bcf,vcf.gz}>
 ## minimac4_compress-reference
 
 ### Tool Description
-Performs imputation using the minimac4 algorithm.
+Compresses a VCF, BCF or SAV reference panel to the MSAV format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/minimac4:4.1.6--hcb620b3_1
@@ -108,6 +116,56 @@ Usage: minimac4 [opts ...] <reference.msav> <target.{sav,bcf,vcf.gz}>
      --slope-unit          Parameter for unique haplotype compression heuristic (default: 10)
 ```
 
+
+## minimac4_impute
+
+### Tool Description
+Performs imputation of a target file against an MSAV reference panel using the minimac4 algorithm.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/minimac4:4.1.6--hcb620b3_1
+- **Homepage**: https://github.com/statgen/Minimac4
+- **Package**: https://anaconda.org/channels/bioconda/packages/minimac4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: minimac4 [opts ...] <reference.msav> <target.{sav,bcf,vcf.gz}>
+       minimac4 [opts ...] --update-m3vcf <reference.m3vcf.gz>
+       minimac4 [opts ...] --compress-reference <reference.{sav,bcf,vcf.gz}>
+
+ -a, --all-typed-sites     Include in the output sites that exist only in target VCF
+ -b, --temp-buffer         Number of samples to impute before writing to temporary files (default: 200)
+ -c, --chunk               Maximum chunk length in base pairs to impute at once (default: 20000000
+ -e, --empirical-output    Output path for empirical dosages
+ -h, --help                Print usage
+ -f, --format              Comma-separated list of format fields to generate (GT, HDS, DS, GP, or SD; default: HDS)
+ -m, --map                 Genetic map file
+ -o, --output              Output path (default: /dev/stdout)
+ -O, --output-format       Default output file format used for ambiguous filenames (bcf, sav, vcf.gz, ubcf, usav, or vcf; default: sav)
+ -r, --region              Genomic region to impute
+ -s, --sites               Output path for sites-only file
+ -t, --threads             Number of threads (default: 1)
+ -v, --version             Print version
+ -w, --overlap             Size (in base pairs) of overlap before and after impute region to use as input to HMM (default: 3000000)
+     --decay               Decay rate for dosages in flanking regions (default: disabled with 0)
+     --min-r2              Minimum estimated r-square for output variants
+     --min-ratio           Minimum ratio of number of target sites to reference sites (default: 1e-4)
+     --min-ratio-behavior  Behavior for when --min-ratio is not met ("skip" or "fail"; default: fail)
+     --match-error         Error parameter for HMM match probabilities (default: 0.01)
+     --min-recom           Minimum recombination probability (default: 1e-5)
+     --prob-threshold      Probability threshold used for template selection
+     --prob-threshold-s1   Probability threshold used for template selection in original state space
+     --diff-threshold      Probability diff threshold used in template selection
+     --sample-ids          Comma-separated list of sample IDs to subset from reference panel
+     --sample-ids-file     Text file containing sample IDs to subset from reference panel (one ID per line)
+     --temp-prefix         Prefix path for temporary output files (default: ${TMPDIR}/m4_)
+     --update-m3vcf        Converts M3VCF to MVCF (default output: /dev/stdout)
+     --compress-reference  Compresses VCF to MVCF (default output: /dev/stdout)
+     --min-block-size      Minimium block size for unique haplotype compression (default: 10)
+     --max-block-size      Maximum block size for unique haplotype compression (default: 65535)
+     --slope-unit          Parameter for unique haplotype compression heuristic (default: 10)
+```
 
 ## Metadata
 - **Skill**: generated

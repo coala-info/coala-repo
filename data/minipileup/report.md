@@ -1,5 +1,11 @@
 # minipileup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minipileup | PASS | variant sites and allele counts agree with samtools mpileup on the nf-core SARS-CoV-2 BAM |
+
 ## minipileup
 
 ### Tool Description

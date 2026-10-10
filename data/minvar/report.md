@@ -1,5 +1,11 @@
 # minvar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minvar | Failed | image problem: the report step runs sierrapy, which aborts because the image has no UTF-8 locale (Click error); real HIV reads (SRR7724269) were mapped and called before the crash |
+
 ## minvar
 
 ### Tool Description

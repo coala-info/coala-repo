@@ -1,5 +1,11 @@
 # miranda CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| miranda | PASS | fixed prefixes to -en/-go/-ge, -out optional and stdout collected; miRanda example (bantam vs hid UTR) gave scored hits with energies, gap options honoured |
+
 ## miranda
 
 ### Tool Description

@@ -679,9 +679,19 @@ inputs:
       position: 101
       prefix: --xi
 outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Contact matrix (.cool), log, config and LEF occupancy files written under
+      the output prefix.
+    outputBinding:
+      glob: $(inputs.output_prefix)*
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/modle:1.1.0--h63853f4_0

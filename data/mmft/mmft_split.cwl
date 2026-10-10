@@ -21,10 +21,9 @@ inputs:
       position: 102
       prefix: --number
   - id: output_dir
-    type:
-      - 'null'
-      - string
-    doc: Output directory for split files. Default is current working directory.
+    type: string
+    default: split_out
+    doc: Output directory for split files (created before the run).
     inputBinding:
       position: 102
       prefix: --dir
@@ -32,6 +31,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: split_files
+    type:
+      type: array
+      items: File
+    doc: Split fasta chunk files
+    outputBinding:
+      glob: $(inputs.output_dir)/*_chunk_*.fa
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mmft:0.3.2--hc1c3326_0

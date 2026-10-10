@@ -254,9 +254,26 @@ inputs:
       position: 102
       prefix: --verbosity
 outputs:
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Confidence estimates (PSMs, peptides, proteins, decoys) and saved models
+      written to the working directory.
+    outputBinding:
+      glob: ['*.txt', '*.pkl']
+  - id: dest_dir_output
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the result files, when dest_dir is given.
+    outputBinding:
+      glob: $(inputs.dest_dir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mokapot:0.10.0--pyhdfd78af_0

@@ -1,5 +1,12 @@
 # mobster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mobster | PASS | synthetic data: the tool's own simulated chr12 test BAM (6 Mb region) gave 82 insertion predictions |
+| mobster_mobster_to_vcf | PASS | synthetic data: converted the mobster test predictions (82 records) to VCF |
+
 ## mobster
 
 ### Tool Description
@@ -31,5 +38,28 @@ Predict non-reference Mobile Element Insertion (MEI) events using one properties
 	-sn [sample name]. This value will override corresponding value in properties file. Multiple sample names may be specified if seperated by a comma
 Default mapping tool: unspecified
 0 [main] INFO Mobster  - Invalid arguments. Please try again.
+```
+
+## mobster_mobster_to_vcf
+
+### Tool Description
+Convert a Mobster predictions file into a VCF file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mobster:0.2.4.1--py36_0
+- **Homepage**: https://github.com/jyhehir/mobster
+- **Package**: https://anaconda.org/channels/bioconda/packages/mobster/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+VERSION: April 8th 2015
+Usage: MobsterToVCF [options]
+  Options:
+  * -file
+       Mobster predictions file (containing metaheader with # and 1 normal line
+       header)
+  * -out
+       Output vcf file
 ```
 

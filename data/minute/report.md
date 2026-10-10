@@ -1,5 +1,13 @@
 # minute CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minute_download | Not completed | pipeline, skipped (Snakemake pipeline wrapper) |
+| minute_init | Not completed | pipeline, skipped (Snakemake pipeline wrapper) |
+| minute_run | Not completed | pipeline, skipped (Snakemake pipeline wrapper) |
+
 ## minute_download
 
 ### Tool Description

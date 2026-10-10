@@ -1,5 +1,15 @@
 # mosaicatcher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mosaicatcher_count | PASS | synthetic data: ordinary whole-genome reads from four nf-core chr20 BAMs used as Strand-seq cells; counts and info file checked |
+| mosaicatcher_makebins | PASS | synthetic data: one nf-core chr20 whole-genome BAM; bins written |
+| mosaicatcher_segment | PASS | synthetic data: counts from mosaicatcher simulate; SV breakpoints at 12 Mb and 14 Mb on chr1 were found |
+| mosaicatcher_simulate | PASS | main mode works; the --genome option stops with the tool message that reading a genome file is not implemented |
+| mosaicatcher_states | PASS | synthetic data: counts from mosaicatcher simulate; 229 of 327 state records equal the simulated SCE truth |
+
 ## mosaicatcher_count
 
 ### Tool Description

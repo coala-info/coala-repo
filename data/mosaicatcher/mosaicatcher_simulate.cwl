@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: simulate
+baseCommand:
+  - mosaicatcher
+  - simulate
 label: mosaicatcher_simulate
 doc: "Simulate binned Strand-seq data.\n\nTool homepage: https://github.com/friendsofstrandseq/mosaicatcher/"
 inputs:
@@ -21,7 +23,7 @@ inputs:
   - id: genome
     type:
       - 'null'
-      - string
+      - File
     doc: 'Chrom names & length file. Default: GRch38'
     inputBinding:
       position: 102
@@ -85,7 +87,7 @@ inputs:
   - id: seed
     type:
       - 'null'
-      - string
+      - int
     doc: Random generator seed
     inputBinding:
       position: 102
@@ -113,7 +115,7 @@ inputs:
     doc: Output or path parameter `info_file_path`
     inputBinding:
       position: 103
-      prefix: --info-file
+      prefix: --info
   - id: output_file_path
     type:
       - 'null'
@@ -137,7 +139,7 @@ inputs:
     doc: Output or path parameter `sce_file_path`
     inputBinding:
       position: 106
-      prefix: --sce-file
+      prefix: --sceFile
   - id: segment_file_path
     type:
       - 'null'
@@ -145,7 +147,7 @@ inputs:
     doc: Output or path parameter `segment_file_path`
     inputBinding:
       position: 107
-      prefix: --segment-file
+      prefix: --segmentFile
   - id: variant_file_path
     type:
       - 'null'
@@ -153,7 +155,7 @@ inputs:
     doc: Output or path parameter `variant_file_path`
     inputBinding:
       position: 108
-      prefix: --variant-file
+      prefix: --variantFile
 outputs:
   - id: output_file
     type:

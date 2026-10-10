@@ -1,5 +1,15 @@
 # ms2pip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ms2pip_annotate-spectra | Failed | tool bug: ms2pip 4.1.0 annotate-spectra crashes with TypeError in PurePath.with_suffix() (no suffix given) on every run |
+| ms2pip_correlate | PASS |  |
+| ms2pip_get-training-data | PASS |  |
+| ms2pip_predict-batch | PASS |  |
+| ms2pip_predict-library | PASS |  |
+
 ## ms2pip_annotate-spectra
 
 ### Tool Description

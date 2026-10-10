@@ -1,5 +1,12 @@
 # mitorsaw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mitorsaw_build | Not completed | the build subcommand is not yet implemented in mitorsaw 0.2.7 (it prints 'not yet implemented' and writes no database) |
+| mitorsaw_haplotype | PASS |  |
+
 ## mitorsaw_build
 
 ### Tool Description
@@ -81,34 +88,4 @@ Research Use Only and not for use in diagnostic procedures.
 
 ## Metadata
 - **Skill**: generated
-
-## mitorsaw
-
-### Tool Description
-a tool for haplotyping mitochondria from HiFi data. Select a subcommand to see more usage information:
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mitorsaw:0.2.7--h9ee0642_0
-- **Homepage**: https://github.com/PacificBiosciences/mitorsaw
-- **Package**: https://anaconda.org/channels/bioconda/packages/mitorsaw/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-Mitorsaw, a tool for haplotyping mitochondria from HiFi data. Select a subcommand to see more usage information:
-
-Usage: mitorsaw <COMMAND>
-
-Commands:
-  build      Download and build the mitochondria database
-  haplotype  Run the haplotyper on a dataset
-  help       Print this message or the help of the given subcommand(s)
-
-Options:
-  -h, --help     Print help
-  -V, --version  Print version
-
-Copyright (C) 2004-2026     Pacific Biosciences of California, Inc.
-This program comes with ABSOLUTELY NO WARRANTY; it is intended for
-Research Use Only and not for use in diagnostic procedures.
-```
 

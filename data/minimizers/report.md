@@ -1,5 +1,11 @@
 # minimizers CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minimizers | PASS | minimizers of the human mitochondrial genome match an independent calculation; the tool crashes when --output is missing, so the output path is required |
+
 ## minimizers
 
 ### Tool Description

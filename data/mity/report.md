@@ -1,5 +1,15 @@
 # mity CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mity_call | PASS | human HiFi chrM BAM: homoplasmic variants such as m.263A>G, 750, 1438, 4769, 8860 match the mitorsaw calls |
+| mity_merge | PASS | synthetic data: the nf-core NA12878 chrM VCF stands in for the nuclear VCF; the mity call VCF and it merge to the expected 28 + 4 records (the BAM needed a read group added first). |
+| mity_normalise | PASS |  |
+| mity_report | PASS | report and annotated VCF workbooks carry correct annotation (m.263A>G in MT-HV2) |
+| mity_runall | PASS |  |
+
 ## mity_call
 
 ### Tool Description

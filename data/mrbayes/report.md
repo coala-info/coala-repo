@@ -1,5 +1,11 @@
 # mrbayes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mrbayes | PASS |  |
+
 ## mrbayes
 
 ### Tool Description

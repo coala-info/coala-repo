@@ -1,5 +1,11 @@
 # minipolish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minipolish | PASS | polished a miniasm assembly of the Racon lambda ONT reads; identity to the reference rose from about 0.85 to 0.975 |
+
 ## minipolish
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # minkemap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minkemap | PASS | fixed: removed required .fai, collect plot inside output directory with defaults; real MinkeMap test genomes gave plot, summary with plausible identity and gene counts |
+
 ## minkemap
 
 ### Tool Description

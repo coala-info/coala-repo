@@ -33,13 +33,17 @@ inputs:
       position: 101
       prefix: --debug
   - id: input_fasta_aligned
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path to a fasta file with aligned sequences.
     inputBinding:
       position: 101
       prefix: -aln
   - id: input_fasta_unaligned
-    type: File
+    type:
+      - 'null'
+      - File
     doc: "Path to a fasta file with unaligned sequences.\nAlignment will be performed
       with mafft:\n[mafft --auto input.fa > input.aln.fa]"
     inputBinding:

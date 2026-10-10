@@ -86,17 +86,15 @@ inputs:
       position: 102
       prefix: --processes
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_name_files
+  - id: library
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_name
+    doc: Predicted spectral library (<output_name>.<format>)
     outputBinding:
-      glob: $(inputs.output_name)*
+      glob: "$(inputs.output_name ? inputs.output_name + '*' : (inputs.fasta_file ? inputs.fasta_file.nameroot + '_predictions*' : '*_predictions*'))"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ms2pip:4.1.0--py312h0fa9677_2
-stdout: ms2pip_predict-library.out

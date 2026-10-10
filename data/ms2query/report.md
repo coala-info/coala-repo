@@ -1,5 +1,11 @@
 # ms2query CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ms2query | Not completed | needs the MS2Query library and models from Zenodo (about 3 GB: embeddings 1-2 GB parquet, sqlite library 0.7 GB); baseCommand fixed to ms2query |
+
 ## ms2query
 
 ### Tool Description

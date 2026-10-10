@@ -47,13 +47,20 @@ inputs:
       position: 101
       prefix: --grammar
   - id: index
-    type: Directory
-    doc: reference index folder
+    type: string
+    doc: reference index prefix (the files written by moni build, for example
+      sars-cov2 for sars-cov2.plain.slp, sars-cov2.thrbv.ms and sars-cov2.idx)
     inputBinding:
       position: 101
       prefix: --index
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: The index files written by moni build (.plain.slp, .thrbv.ms, .idx). They
+      are staged in the working directory.
   - id: pattern
-    type: string
+    type: File
     doc: the input query
     inputBinding:
       position: 101
@@ -88,14 +95,17 @@ inputs:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: output_files
     type:
-      - 'null'
-      - Directory
-    doc: output directory path
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_path
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.index_files)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

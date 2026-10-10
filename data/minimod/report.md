@@ -1,5 +1,12 @@
 # minimod CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minimod_freq | PASS | bedMethyl output correlates 0.97 with the modkit pileup shipped in the repo tests |
+| minimod_view | PASS | same records as the repo expected table; probabilities differ by at most 0.002 |
+
 ## minimod_view
 
 ### Tool Description

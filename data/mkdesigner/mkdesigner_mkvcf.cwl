@@ -8,11 +8,14 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --bam
     doc: "Bam files for variant calling.\ne.g. -b bam1 -b bam2 ... \nYou must use
       this option 2 times or more\nto get markers in following analysis."
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
-      prefix: --bam
   - id: cpu
     type:
       - 'null'
@@ -30,8 +33,6 @@ inputs:
       prefix: --output
   - id: reference_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference fasta.
     inputBinding:
       position: 101
@@ -40,11 +41,12 @@ inputs:
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --name
     doc: "Variety name of each bam file.\ne.g. -n name_bam1 -n name_bam2 ... \nYou
       must use this option same times\nas -b."
     inputBinding:
       position: 101
-      prefix: --name
 outputs:
   - id: stdout
     type: stdout
@@ -56,7 +58,12 @@ outputs:
     doc: Identical name (must be unique). This will be stem of output directory 
       name.
     outputBinding:
-      glob: $(inputs.output_stem)
+      glob: $(inputs.output_stem)_mkvcf
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mkdesigner:0.5.3--pyhdfd78af_0

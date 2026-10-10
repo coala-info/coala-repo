@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mOTUlize
+baseCommand: mOTUlize.py
 label: motulizer_mOTUlize.py
 doc: "From a set of genomes, makes metagenomic Operational Taxonomic Units (mOTUs).
   By default it makes a graph of 95% (reciprocal) ANI (with fastANI) connected MAGs
@@ -130,7 +130,9 @@ inputs:
       position: 101
       prefix: --txt
   - id: output_path
-    type: string?
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output

@@ -10,6 +10,27 @@ doc: "Motif set (PFMs/PWMs) commands.\n\nMotifScan only detects the binding site
   genome contents, it \nis necessary to build the PFMs and get proper motif score
   cutoffs for every \ngenome assembly you want to scan later.\n\nTool homepage: https://github.com/shao-lab/MotifScan"
 inputs:
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: Existing MotifScan config file (.motifscanrc). It is staged as
+      ~/.motifscanrc so list, uninstall and config commands see it. Without it
+      the config starts empty. The default config is not kept between runs.
+  - id: genome_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Installed genome directory (output of `motifscan genome --install`)
+      for --genome when building a motif set. It is registered in the config
+      file under the name given by --genome.
+  - id: motif_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Installed motif set directory (output of `motifscan motif --install`)
+      for --build. It is staged writable, registered under the name given by
+      --build, and returned updated with the built PWMs in output_dir_updated.
   - id: build
     type:
       - 'null'
@@ -68,7 +89,7 @@ inputs:
     doc: Local motif PFMs file(s) to be installed.
     inputBinding:
       position: 101
-      prefix: --install
+      prefix: -i
   - id: max_n
     type:
       - 'null'
@@ -145,11 +166,34 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_dir_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Write to a given directory instead of the default directory.
     inputBinding:
       position: 102
       prefix: --output-dir
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: config_out
+    type:
+      - 'null'
+      - File
+    doc: The MotifScan config file after the command (.motifscanrc).
+    outputBinding:
+      glob: .motifscanrc
+  - id: output_dir_updated
+    type:
+      - 'null'
+      - Directory
+    doc: The motif set directory with the built PWMs (after --build).
+    outputBinding:
+      glob: |-
+        ${
+          return inputs.motif_dir ? inputs.motif_dir.basename : null;
+        }
   - id: output_dir
     type:
       - 'null'
@@ -160,6 +204,23 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = [];
+        if (inputs.config_file) {
+          l.push({entryname: ".motifscanrc", entry: inputs.config_file, writable: true});
+        } else {
+          var g = inputs.genome_dir ? inputs.genome + " = " + inputs.genome_dir.path + "\n" : "";
+          var m = inputs.motif_dir ? inputs.build + " = " + runtime.outdir + "/" + inputs.motif_dir.basename + "\n" : "";
+          l.push({entryname: ".motifscanrc", writable: true, entry: "[motifscan]\ngenome_dir = " + runtime.outdir + "/.motifscan/genomes/\nmotif_dir = " + runtime.outdir + "/.motifscan/motifs/\n\n[genome]\n" + g + "\n[motif]\n" + m});
+        }
+        if (inputs.motif_dir) { l.push({entry: inputs.motif_dir, writable: true}); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/motifscan:1.3.0--py310h4b81fae_3
+stdout: motifscan_motif.out

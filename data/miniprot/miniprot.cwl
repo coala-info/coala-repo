@@ -6,16 +6,14 @@ doc: "Align protein sequences to a reference database.\n\nTool homepage: https:/
 inputs:
   - id: reference_fasta
     type: File
-    doc: Reference protein FASTA file
-    secondaryFiles:
-      - .fai
+    doc: Reference genome FASTA file (may be gzip-compressed) or an index saved with -d
     inputBinding:
-      position: 1
+      position: 200
   - id: query_fasta
     type: File
     doc: Query protein FASTA file
     inputBinding:
-      position: 2
+      position: 201
   - id: query_files
     type:
       - 'null'
@@ -23,7 +21,7 @@ inputs:
         items: File
     doc: Additional query FASTA files
     inputBinding:
-      position: 3
+      position: 202
   - id: bits_per_block
     type:
       - 'null'
@@ -313,12 +311,17 @@ inputs:
       position: 104
       prefix: -C
   - id: save_index_to_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: save index to FILE []
     inputBinding:
       position: 105
       prefix: -d
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Alignments (PAF by default, GFF3 with --gff, GTF with --gtf)
   - id: save_index_to_file
     type:
       - 'null'
@@ -331,3 +334,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/miniprot:0.18--h577a1d6_0
+stdout: miniprot.out

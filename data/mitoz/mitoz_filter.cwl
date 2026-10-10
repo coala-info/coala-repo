@@ -76,7 +76,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory
     inputBinding:
       position: 101
@@ -84,7 +84,7 @@ inputs:
   - id: workdir_done
     type:
       - 'null'
-      - Directory
+      - string
     doc: done directory
     inputBinding:
       position: 101
@@ -92,7 +92,7 @@ inputs:
   - id: workdir_log
     type:
       - 'null'
-      - Directory
+      - string
     doc: log directory
     inputBinding:
       position: 101

@@ -2,14 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: minimap
 label: minimap
-doc: "Minimap2 is a versatile tool for rapid alignment of large numbers of DNA or
-  long reads.\n\nTool homepage: https://github.com/lh3/minimap2"
+doc: "Minimap (the original overlapper, not minimap2): finds approximate mappings
+  and all-vs-all read overlaps and writes them in PAF format.\n\nTool homepage:
+  https://github.com/lh3/minimap"
 inputs:
   - id: target_fasta
     type: File
     doc: Target FASTA file
     inputBinding:
-      position: 1
+      position: 200
   - id: query_fasta
     type:
       - 'null'
@@ -17,7 +18,7 @@ inputs:
         items: File
     doc: Query FASTA file(s)
     inputBinding:
-      position: 2
+      position: 201
   - id: bandwidth
     type:
       - 'null'
@@ -37,7 +38,7 @@ inputs:
   - id: dump_index_file
     type:
       - 'null'
-      - File
+      - string
     doc: dump index to FILE
     inputBinding:
       position: 103
@@ -120,7 +121,7 @@ inputs:
       - string
     doc: preset (recommended to be applied before other options)
     inputBinding:
-      position: 103
+      position: 102
       prefix: -x
   - id: sdust_threshold
     type:
@@ -157,8 +158,17 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Mappings in PAF format
+  - id: index_file
+    type:
+      - 'null'
+      - File
+    doc: Index dumped with -d
+    outputBinding:
+      glob: $(inputs.dump_index_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/minimap:v0.2-4-deb_cv1
-stdout: minimap.out
+stdout: minimap.paf

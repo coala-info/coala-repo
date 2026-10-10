@@ -1,5 +1,11 @@
 # moff CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| moff_moff_all.py | PASS | match-between-runs mode ran on the three repo CPTAC PeptideShaker files and added matched peptides; the apex (raw file) mode was not run, no small raw file |
+
 ## moff_moff_all.py
 
 ### Tool Description

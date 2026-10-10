@@ -4,13 +4,18 @@ baseCommand:
   - mrs
   - blast
 label: mrs_blast
-doc: "Perform BLAST search\n\nTool homepage: https://github.com/ctu-mrs/mrs_uav_system"
+doc: "Perform BLAST search\n\nTool homepage: https://mrs.cmbi.ru.nl/"
 inputs:
   - id: config_file
     type:
       - 'null'
       - File
-    doc: Configuration file
+    secondaryFiles:
+      - pattern: ^.dtd
+        required: true
+    doc: 'MRS configuration file. It must be named mrs-config.xml and have its DTD
+      mrs-config.dtd beside it; directories in it should be relative paths such as
+      mrs.'
     inputBinding:
       position: 101
       prefix: --config
@@ -18,11 +23,12 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items: string
         inputBinding:
           prefix: --databank
           separate: true
-    doc: Databank(s) in FastA format, can be specified multiple times
+    doc: Databank(s) to search, given as databank ids from the configuration
+      file (built with mrs build); can be specified multiple times
     inputBinding:
       position: 101
   - id: expect
@@ -119,13 +125,24 @@ inputs:
     inputBinding:
       position: 101
       prefix: --word-size
+  - id: mrs_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the built databanks (the "mrs" directory named in the
+      configuration file)
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output file, default is stdout
     inputBinding:
       position: 102
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: BLAST report printed to standard output when no output file is given
   - id: output_file
     type:
       - 'null'
@@ -135,6 +152,12 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: mrs
+        entry: $(inputs.mrs_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/mrs:v6.0.5dfsg-2b2-deb_cv1
+stdout: mrs_blast.out

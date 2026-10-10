@@ -15,6 +15,17 @@ inputs:
   - id: bam_or_cram
     type: File
     doc: the alignment file for which to calculate depth.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 2
   - id: threads
@@ -37,7 +48,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: optional BED file or (integer) window-sizes.
+    doc: optional (integer) window-size. Use by_bed for a BED file.
+    inputBinding:
+      position: 103
+      prefix: --by
+  - id: by_bed
+    type:
+      - 'null'
+      - File
+    doc: optional BED file of regions (alternative to the integer window-size in
+      by).
     inputBinding:
       position: 103
       prefix: --by

@@ -1,5 +1,11 @@
 # mosdepth CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mosdepth | PASS |  |
+
 ## mosdepth
 
 ### Tool Description

@@ -4,14 +4,14 @@ baseCommand: moss
 label: moss
 doc: "Multiple Sample Somatic variant caller\n\nTool homepage: https://github.com/elkebir-group/Moss"
 inputs:
-  - id: bam_files
-    type:
-      type: array
-      items: File
-    doc: original BAM files for one sample, can be addressed multiple times
+  - id: samples
+    type: moss_sample[]
+    doc: Samples in order, the normal sample first. Each sample has its original
+      BAM file and, optionally, its realigned BAM file; they are passed as
+      `--bam X --realigned Y` pairs, as Moss requires. Give a realigned BAM for
+      every sample or for none.
     inputBinding:
       position: 101
-      prefix: --bam
   - id: candidate_loci_vcf
     type:
       - 'null'
@@ -86,7 +86,9 @@ inputs:
       position: 101
       prefix: --min-mapping-qual
   - id: normal_germline_vcf
-    type: File
+    type:
+      - 'null'
+      - File
     doc: normal sample's germline VCF result
     inputBinding:
       position: 101
@@ -99,15 +101,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pileup
-  - id: realigned_bam_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: realigned BAM files for one sample, can be addressed multiple times
-    inputBinding:
-      position: 101
-      prefix: --realigned
   - id: reference
     type: File
     doc: reference FASTA file
@@ -133,7 +126,9 @@ inputs:
       position: 101
       prefix: --tau
   - id: tumor_somatic_vcf
-    type: File
+    type:
+      - 'null'
+      - File
     doc: tumor samples' somatic VCF result
     inputBinding:
       position: 101
@@ -152,6 +147,35 @@ outputs:
       glob: $(inputs.output_vcf_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - name: moss_sample
+        type: record
+        fields:
+          - name: bam
+            type: File
+            doc: original BAM file of the sample
+            secondaryFiles:
+              - pattern: .bai
+                required: false
+              - pattern: ^.bai
+                required: false
+            inputBinding:
+              position: 1
+              prefix: --bam
+          - name: realigned
+            type:
+              - 'null'
+              - File
+            doc: realigned BAM file of the sample
+            secondaryFiles:
+              - pattern: .bai
+                required: false
+              - pattern: ^.bai
+                required: false
+            inputBinding:
+              position: 2
+              prefix: --realigned
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/moss:0.1.1--h06e5f0a_2

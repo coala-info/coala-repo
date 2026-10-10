@@ -24,6 +24,10 @@ inputs:
     inputBinding:
       position: 102
       prefix: --library_path
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 outputs:
   - id: stdout
     type: stdout
@@ -32,11 +36,9 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: The destination folder to store the downloaded lineage files.If not 
-      specified, a folder named "mb_downloads" will be created on the current 
-      running path.
+    doc: Folder with the downloaded lineage files
     outputBinding:
-      glob: $(inputs.library_path)
+      glob: "$(inputs.library_path ? inputs.library_path : 'mb_downloads')"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minibusco:0.2.1--pyh7cba7a3_0

@@ -2,54 +2,77 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mp3treesim
 label: mp3treesim
-doc: "MP3TreeSim: Multi-Phylogeny Perspective Proximity Tree Similarity. A tool to
-  compute the similarity between two phylogenetic trees using the MP3 metric or other
-  methods.\n\nTool homepage: https://algolab.github.io/mp3treesim/"
+doc: "MP3 tree similarity measure. Computes the similarity of two trees (in DOT/GV
+  format) and prints it to standard output.\n\nTool homepage: https://algolab.github.io/mp3treesim/"
 inputs:
-  - id: labels
-    type:
-      - 'null'
-      - File
-    doc: File containing a list of labels to consider
-    inputBinding:
-      position: 101
-      prefix: --labels
-  - id: method
-    type:
-      - 'null'
-      - string
-    doc: Similarity method to use (e.g., mp3, grf, rf)
-    inputBinding:
-      position: 101
-      prefix: --method
   - id: tree1
     type: File
-    doc: First input tree file
+    doc: Path to the first tree
     inputBinding:
-      position: 101
-      prefix: --tree1
+      position: 1
   - id: tree2
     type: File
-    doc: Second input tree file
+    doc: Path to the second tree
     inputBinding:
-      position: 101
-      prefix: --tree2
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 102
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 2
+  - id: intersection_mode
     type:
       - 'null'
-      - File
-    doc: Output file to write the similarity results
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - boolean
+    doc: Run MP3-treesim in Intersection mode.
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: union_mode
+    type:
+      - 'null'
+      - boolean
+    doc: Run MP3-treesim in Union mode.
+    inputBinding:
+      position: 101
+      prefix: -u
+  - id: geometric_mode
+    type:
+      - 'null'
+      - boolean
+    doc: Run MP3-treesim in Geometric mode.
+    inputBinding:
+      position: 101
+      prefix: -g
+  - id: cores
+    type:
+      - 'null'
+      - int
+    doc: Number of cores to be used in computation.
+    inputBinding:
+      position: 101
+      prefix: --cores
+  - id: labeled_only
+    type:
+      - 'null'
+      - boolean
+    doc: Ingore nodes without "label" attribute. The trees will be interpred as
+      partially-label trees.
+    inputBinding:
+      position: 101
+      prefix: --labeled-only
+  - id: exclude
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: String(s) of comma separated labels to exclude from computation. If
+      only one string is provided the labels will be excluded from both trees.
+      If two strings are provided they will be excluded from the respective
+      tree.
+    inputBinding:
+      position: 102
+      prefix: --exclude
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Similarity value printed by the tool
+stdout: mp3treesim.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mp3treesim:1.0.6--py_0

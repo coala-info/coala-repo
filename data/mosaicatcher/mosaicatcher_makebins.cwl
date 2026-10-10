@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: makebins
+baseCommand:
+  - mosaicatcher
+  - makebins
 label: mosaicatcher_makebins
 doc: "Specify whole genome sequencing data (or a set of Strand-seq cells\nmerged into
   a single file) which were sequenced under equal conditions.\nThis tool will create
@@ -10,12 +12,17 @@ inputs:
   - id: wgs_bam
     type: File
     doc: Whole genome sequencing BAM file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 1
   - id: exclude
     type:
       - 'null'
-      - string
+      - File
     doc: Exclude chromosomes (no regions!)
     inputBinding:
       position: 102

@@ -5,10 +5,12 @@ label: mreps
 doc: "finds tandemly repeated fragments in a DNA sequence\n\nTool homepage: http://mreps.univ-mlv.fr/"
 inputs:
   - id: sequence_file
-    type: File
-    doc: DNA sequence file
+    type:
+      - 'null'
+      - File
+    doc: DNA sequence file (use this or the sequence input)
     inputBinding:
-      position: 1
+      position: 200
   - id: allow_small
     type:
       - 'null'
@@ -16,6 +18,7 @@ inputs:
     doc: output small repeats that can occur randomly
     inputBinding:
       position: 102
+      prefix: -allowsmall
   - id: exponent
     type:
       - 'null'
@@ -89,8 +92,11 @@ inputs:
       position: 102
       prefix: -res
   - id: sequence
-    type: string
-    doc: specifies the sequence in command line
+    type:
+      - 'null'
+      - string
+    doc: specifies the sequence in command line (use this or the sequence_file
+      input)
     inputBinding:
       position: 102
       prefix: -s
@@ -111,12 +117,17 @@ inputs:
       position: 102
       prefix: -win
   - id: xml_output_file_path
-    type: string
-    doc: Output or path parameter `xml_output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: outputs to <file> in xml format
     inputBinding:
-      position: 103
-      prefix: --xml-output-file
+      position: 102
+      prefix: -xmloutput
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: xml_output_file
     type:
       - 'null'
@@ -124,8 +135,7 @@ outputs:
     doc: outputs to <file> in xml format
     outputBinding:
       glob: $(inputs.xml_output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mreps:2.6.01--h7b50bb2_6
+stdout: mreps.out

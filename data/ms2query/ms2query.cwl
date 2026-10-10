@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: MS2Query
+baseCommand: ms2query
 label: ms2query
 doc: "MS2Query is a tool for MSMS library matching, searching both for analogues and
   exact matches in one run\n\nTool homepage: https://github.com/iomega/ms2query"
@@ -52,7 +52,7 @@ inputs:
   - id: results
     type:
       - 'null'
-      - Directory
+      - string
     doc: The folder in which the results should be stored. The default is a new 
       results folder in the folder with the spectra
     inputBinding:
@@ -69,10 +69,15 @@ inputs:
       position: 101
       prefix: --spectra
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: results_folder
+    type:
+      - 'null'
+      - Directory
+    doc: The folder with the MS2Query result tables (set with the results input).
+    outputBinding:
+      glob: $(inputs.results)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ms2query:1.5.4--pyhdfd78af_0
-stdout: ms2query.out

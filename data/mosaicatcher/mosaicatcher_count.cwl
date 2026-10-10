@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: count
+baseCommand:
+  - mosaicatcher
+  - count
 label: mosaicatcher_count
 doc: "Count reads from Strand-seq BAM files.\n\nTool homepage: https://github.com/friendsofstrandseq/mosaicatcher/"
 inputs:
@@ -8,7 +10,12 @@ inputs:
     type:
       type: array
       items: File
-    doc: Strand-seq BAM files
+    doc: Strand-seq BAM files, one cell per file, with an SM tag in the header
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 1
   - id: bins
@@ -39,8 +46,8 @@ inputs:
   - id: exclude
     type:
       - 'null'
-      - string
-    doc: Exclude chromosomes and regions
+      - File
+    doc: Exclude chromosomes and regions (file, for example GRCh38 .exclude)
     inputBinding:
       position: 102
       prefix: --exclude
@@ -90,6 +97,13 @@ outputs:
     doc: output file for counts + strand state (gz)
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: info_file
+    type:
+      - 'null'
+      - File
+    doc: info about samples, when --info is set
+    outputBinding:
+      glob: $(inputs.info)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

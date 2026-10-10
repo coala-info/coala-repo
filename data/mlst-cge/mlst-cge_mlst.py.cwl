@@ -65,9 +65,8 @@ inputs:
       position: 103
       prefix: --method_path
   - id: outdir
-    type:
-      - 'null'
-      - string
+    type: string
+    default: mlst_out
     doc: Output directory.
     inputBinding:
       position: 103
@@ -94,12 +93,17 @@ outputs:
     type: stdout
     doc: Standard output
   - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outdir)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mlst-cge:2.0.9--hdfd78af_0

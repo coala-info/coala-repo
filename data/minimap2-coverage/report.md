@@ -1,5 +1,11 @@
 # minimap2-coverage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minimap2-coverage | PASS | all-vs-all on 25 PacBio reads finds the two overlaps that minimap also reports |
+
 ## minimap2-coverage
 
 ### Tool Description

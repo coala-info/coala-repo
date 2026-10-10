@@ -105,6 +105,12 @@ outputs:
     doc: Output Directory to put results
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.infile)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mob_suite:3.1.9--pyhdfd78af_1

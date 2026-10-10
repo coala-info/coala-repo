@@ -13,6 +13,8 @@ inputs:
       inputBinding:
         prefix: --bam
         separate: true
+    secondaryFiles:
+      - .bai
     doc: Input alignment file in BAM format, can be specified multiple times
     inputBinding:
       position: 101
@@ -67,8 +69,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101
@@ -99,6 +100,9 @@ outputs:
   - id: output_vcf
     type: File
     doc: Output variant call file (VCF)
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     outputBinding:
       glob: $(inputs.output_vcf_path)
   - id: output_hap_stats

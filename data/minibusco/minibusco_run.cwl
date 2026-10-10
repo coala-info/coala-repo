@@ -24,7 +24,7 @@ inputs:
   - id: hmmsearch_execute_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to hmmsearch executable
     inputBinding:
       position: 101
@@ -40,6 +40,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --library_path
+      valueFrom: $(self.basename)
   - id: lineage
     type:
       - 'null'
@@ -94,7 +95,7 @@ inputs:
   - id: miniprot_execute_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to miniprot executable
     inputBinding:
       position: 101
@@ -128,7 +129,7 @@ inputs:
   - id: sepp_execute_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to run_sepp.py executable
     inputBinding:
       position: 101
@@ -151,6 +152,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.library_path)
+        writable: true
 outputs:
   - id: stdout
     type: stdout

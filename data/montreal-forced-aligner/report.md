@@ -1,5 +1,13 @@
 # montreal-forced-aligner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| montreal-forced-aligner_mfa_model_download_acoustic | Failed | image problem: mfa crashes at import (Python 3.14, TypeError: Path.copy() missing target); command words fixed in the CWL |
+| montreal-forced-aligner_mfa_train_acoustic | Failed | image problem: mfa crashes at import (Python 3.14, TypeError: Path.copy() missing target); command words fixed in the CWL |
+| montreal-forced-aligner_mfa_validate | Failed | image problem: mfa crashes at import (Python 3.14, TypeError: Path.copy() missing target); command words fixed in the CWL |
+
 ## montreal-forced-aligner_mfa_model_download_acoustic
 
 ### Tool Description

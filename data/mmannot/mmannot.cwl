@@ -30,7 +30,7 @@ inputs:
   - id: mapping_statistics_intervals
     type:
       - 'null'
-      - File
+      - string
     doc: print mapping statistics for each interval (slow, only work with 1 
       input file)
     inputBinding:
@@ -39,7 +39,7 @@ inputs:
   - id: mapping_statistics_reads
     type:
       - 'null'
-      - File
+      - string
     doc: print mapping statistics for each read (slow, only work with 1 input 
       file)
     inputBinding:
@@ -142,6 +142,20 @@ outputs:
     doc: output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: mapping_statistics_reads_out
+    type:
+      - 'null'
+      - File
+    doc: per-read mapping statistics written with -m
+    outputBinding:
+      glob: $(inputs.mapping_statistics_reads)
+  - id: mapping_statistics_intervals_out
+    type:
+      - 'null'
+      - File
+    doc: per-interval mapping statistics written with -M
+    outputBinding:
+      glob: $(inputs.mapping_statistics_intervals)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

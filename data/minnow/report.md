@@ -1,5 +1,12 @@
 # minnow CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minnow_estimate | Failed | tool bug: minnow estimate in this version only logs its options and writes no model; CWL rewritten (baseCommand estimate, real flags) |
+| minnow_simulate | PASS | synthetic data: planted 5-cell count matrix with real yeast transcriptome; rewrote CWL from help (wrong flags and types), staged the 10X whitelist that minnow reads from ../data; reads match the transcriptome |
+
 ## minnow_simulate
 
 ### Tool Description

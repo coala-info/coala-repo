@@ -1,5 +1,11 @@
 # minigraph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minigraph | PASS | mapping, graph generation and call modes on the repo MT test files |
+
 ## minigraph
 
 ### Tool Description

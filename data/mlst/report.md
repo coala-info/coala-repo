@@ -1,5 +1,11 @@
 # mlst CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mlst | PASS |  |
+
 ## mlst
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # mquad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mquad | PASS | VCF input and BIC-params reuse match the repo example; the --mtxData mode crashes on mtx files without variant names (tool limit) |
+
 ## mquad
 
 ### Tool Description

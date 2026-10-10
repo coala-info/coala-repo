@@ -1,87 +1,127 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: monovar.py
+baseCommand:
+  - samtools
+  - mpileup
 label: monovar
-doc: "Monovar is a Single Nucleotide Variant (SNV) caller for single-cell DNA sequencing
-  data. It is designed to handle the high levels of noise and allelic dropout common
-  in single-cell sequencing.\n\nTool homepage: https://bitbucket.org/hamimzafar/monovar"
+doc: "Monovar is a single nucleotide variant (SNV) caller for single-cell DNA
+  sequencing data. It reads a samtools mpileup stream of all cells on standard
+  input, so this tool runs `samtools mpileup ... | monovar ...` as in the
+  Monovar manual. The list of BAM files is written for you from bam_files.\n\nTool
+  homepage: https://bitbucket.org/hamimzafar/monovar"
+requirements:
+  - class: ShellCommandRequirement
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.bam_files)
+      - entryname: bam_list.txt
+        entry: |-
+          $(inputs.bam_files.map(function(f) { return f.basename; }).join("\n") + "\n")
 inputs:
-  - id: bam_list
+  - id: bam_files
+    type: File[]
+    doc: Sorted and indexed BAM files, one per single cell (the list file for
+      monovar and samtools mpileup is made from them)
+    secondaryFiles:
+      - pattern: .bai
+        required: true
+  - id: reference
     type: File
-    doc: Input file containing paths of BAM files
+    secondaryFiles:
+      - pattern: .fai
+        required: true
+    doc: Reference genome file (FASTA, indexed with samtools faidx)
     inputBinding:
-      position: 101
-      prefix: --bamfile
-  - id: consensus
+      position: 20
+      prefix: -f
+  - id: output_vcf_path
+    type: string
+    doc: Output VCF file name
+    inputBinding:
+      position: 21
+      prefix: -o
+  - id: prob_error
     type:
       - 'null'
-      - boolean
-    doc: Output consensus genotype
+      - float
+    doc: Probability of error (default 0.002)
     inputBinding:
-      position: 101
-      prefix: --consensus
-  - id: min_base_quality
+      position: 22
+      prefix: -p
+  - id: prob_deamination
     type:
       - 'null'
-      - int
-    doc: Minimum base quality
+      - float
+    doc: Probability of deamination error
     inputBinding:
-      position: 101
-      prefix: --min_bq
-  - id: min_mapping_quality
+      position: 22
+      prefix: -d
+  - id: prob_ado
     type:
       - 'null'
-      - int
-    doc: Minimum mapping quality
+      - float
+    doc: Probability of allelic dropout (default 0.2)
     inputBinding:
-      position: 101
-      prefix: --min_mq
+      position: 22
+      prefix: -a
   - id: prob_threshold
     type:
       - 'null'
       - float
-    doc: Threshold for the probability of being a variant
+    doc: Threshold for calling a variant (default 0.05)
     inputBinding:
-      position: 101
-      prefix: --prob_threshold
-  - id: reference
-    type: File
-    secondaryFiles:
-      - .fai
-    doc: Reference genome file (FASTA)
+      position: 22
+      prefix: -t
+  - id: consensus_filter
+    type:
+      - 'null'
+      - int
+    doc: Use the consensus filter, 1 (default) or 0
     inputBinding:
-      position: 101
-      prefix: --ref
+      position: 22
+      prefix: -c
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads
+    doc: Number of threads for multiprocessing (default 1)
     inputBinding:
-      position: 101
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Verbose mode
+      position: 22
+      prefix: -m
+  - id: min_mapping_quality
+    type: ['null', int]
+    default: 40
+    doc: Minimum mapping quality for samtools mpileup (-q), 40 in the Monovar
+      manual
     inputBinding:
-      position: 101
-      prefix: --verbose
-  - id: output_vcf_path
-    type: string
-    doc: Output or path parameter `output_vcf_path`
-    inputBinding:
-      position: 102
-      prefix: --output-vcf
+      position: 3
+      prefix: -q
+arguments:
+  - position: 1
+    valueFrom: -BQ0
+  - position: 2
+    valueFrom: -d10000
+  - position: 4
+    prefix: -f
+    valueFrom: $(inputs.reference.path)
+  - position: 5
+    prefix: -b
+    valueFrom: bam_list.txt
+  - position: 10
+    valueFrom: '|'
+    shellQuote: false
+  - position: 11
+    valueFrom: monovar
+  - position: 23
+    prefix: -b
+    valueFrom: bam_list.txt
 outputs:
   - id: output_vcf
     type: File
     doc: Output VCF file
     outputBinding:
       glob: $(inputs.output_vcf_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/monovar:v0.0.1--py27_0

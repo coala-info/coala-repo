@@ -1,5 +1,22 @@
 # mrs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mrs_blast | Failed | tool bug: FASTA files given to --databank silently give no hits although the help documents FASTA input; databank ids from a built databank work. |
+| mrs_build | PASS | real UniProt Swiss-Prot entries (15 kinase records); databank built with 15 documents |
+| mrs_dump | PASS |  |
+| mrs_entry | PASS |  |
+| mrs_fetch | PASS | fetched a tiny real remote file (UniProt reldate.txt) over FTP with NetworkAccess |
+| mrs_info | PASS |  |
+| mrs_password | PASS | output hash matches md5 of user:realm:password; password given on standard input |
+| mrs_query | PASS |  |
+| mrs_server | Not completed | long-running server daemon; not started |
+| mrs_update | PASS | no remote source in the test config, so it only rebuilt the databank from raw data |
+| mrs_vacuum | Failed | tool bug: mrs vacuum crashes with exit 139 (Error writing file: Bad file descriptor) after printing done |
+| mrs_validate | PASS | silent on success; it fails with an error on a corrupted index file |
+
 ## mrs_blast
 
 ### Tool Description

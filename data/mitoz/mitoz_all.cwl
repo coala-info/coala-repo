@@ -255,7 +255,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory
     inputBinding:
       position: 101
@@ -264,13 +264,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: outprefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in outprefix
+  - id: result_dir
+    type: Directory
+    doc: Result folder '<outprefix>.result' with the mitogenome (fasta and GenBank),
+      annotation tables, gene sequences, summary and circos plot.
     outputBinding:
-      glob: $(inputs.outprefix)*
+      glob: $(inputs.outprefix).result
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mitoz:3.6--pyhdfd78af_1

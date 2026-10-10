@@ -1,5 +1,12 @@
 # mirscore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mirscore_hairpinHelper | PASS |  |
+| mirscore_miRScore | PASS | plain FASTQ input works; gzipped FASTQ crashes in the tool (empty bowtie argument) |
+
 ## mirscore_miRScore
 
 ### Tool Description
@@ -48,3 +55,24 @@ options:
                         alternative miRNA duplex that meets all criteria
 ```
 
+
+## mirscore_hairpinHelper
+
+### Tool Description
+Creates a hairpin FASTA file with one precursor entry for every mature miRNA that shares a single hairpin locus.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mirscore:0.3.4--hdfd78af_0
+- **Homepage**: https://github.com/Aez35/miRScore
+- **Package**: https://anaconda.org/channels/bioconda/packages/mirscore/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hairpinHelper [-h] -mature MATURE -hairpin HAIRPIN
+
+options:
+  -h, --help        show this help message and exit
+  -mature MATURE    fasta file of mature miRNA sequence
+  -hairpin HAIRPIN  fasta file of hairpin precursor sequence
+```

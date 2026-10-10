@@ -10,6 +10,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: mity vcf files to create a report from
     inputBinding:
       position: 1
@@ -86,19 +89,15 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vcfanno-base-path
-  - id: output_annotated_vcf_path
-    type: string?
+  - id: output_annotated_vcf
+    type:
+      - 'null'
+      - boolean
+    doc: Output annotated vcf file
     inputBinding:
       position: 103
       prefix: --output-annotated-vcf
 outputs:
-  - id: output_annotated_vcf
-    type:
-      - 'null'
-      - File
-    doc: Output annotated vcf file
-    outputBinding:
-      glob: $(inputs.output_annotated_vcf_path)
   - id: output_dir_dir
     type:
       - 'null'
@@ -107,6 +106,12 @@ outputs:
     outputBinding:
       glob: $(inputs.output_dir)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.output_dir ? {"class": "Directory", "basename": inputs.output_dir, "listing": []} : null)'
+        writable: true
+      - entry: $(inputs.vcf)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

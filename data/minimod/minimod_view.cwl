@@ -17,6 +17,8 @@ inputs:
   - id: reads_bam
     type: File
     doc: Input reads BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 2
   - id: batch_size
@@ -82,7 +84,8 @@ inputs:
     doc: process section by section (yes|no)
     inputBinding:
       position: 103
-      prefix: --profile-cpu
+      prefix: --profile-cpu=
+      separate: false
   - id: threads
     type:
       - 'null'
@@ -100,12 +103,17 @@ inputs:
       position: 103
       prefix: --verbose
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output file [stdout]
     inputBinding:
       position: 104
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Result table (when -o is not given)
   - id: output_file
     type:
       - 'null'
@@ -118,3 +126,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minimod:0.4.0--h577a1d6_0
+stdout: minimod_view.out

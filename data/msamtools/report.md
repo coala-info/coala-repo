@@ -1,5 +1,14 @@
 # msamtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msamtools_coverage | Failed | tool bug in msamtools 1.1.3 (fixed in 1.2.0): per-base coverage misses the last base of a read at the reference end and counts D and N positions as covered, so results differ from the project's expected output |
+| msamtools_filter | Failed | tool bug in msamtools 1.1.3 (fixed in 1.2.0): --besthit and --uniqhit are not mate-aware and --rescore with --besthit keeps the wrong hit; length, identity and query-fraction filters match the expected output |
+| msamtools_profile | Failed | tool bug in msamtools 1.1.3 (fixed in 1.2.0): --multi ignore drops an insert that maps several times to one reference; all, equal and proportional modes match the expected values |
+| msamtools_summary | PASS |  |
+
 ## msamtools_filter
 
 ### Tool Description

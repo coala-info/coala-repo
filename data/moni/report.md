@@ -1,27 +1,13 @@
 # moni CWL Generation Report
 
-## moni
-### Tool Description
-moni: error: argument {build,ms,mems,extend}: invalid choice: 'valid' (choose from 'build', 'ms', 'mems', 'extend')
+## Real Data Test
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/moni:0.2.2--py312h9b99d9e_0
-- **Homepage**: https://github.com/maxrossi91/moni
-- **Package**: https://anaconda.org/channels/bioconda/packages/moni/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/moni/overview
-- **Total Downloads**: 1.8K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/maxrossi91/moni
-- **Stars**: N/A
-### Original Help Text
-```text
-/usr/local/bin/moni:7: SyntaxWarning: invalid escape sequence '\/'
-  Description = """
-usage: moni [-h] [--version] {build,ms,mems,extend} ...
-moni: error: argument {build,ms,mems,extend}: invalid choice: 'valid' (choose from 'build', 'ms', 'mems', 'extend')
-```
+| Tool | Result | Reason |
+|---|---|---|
+| moni_build | Failed | tool bug: moni build never finishes; its build_seqidx step loops forever on a 3-sequence FASTA and on the README example (also as root) |
+| moni_extend | Not completed | needs an index from moni build, which never finishes (tool bug), so no index could be made |
+| moni_mems | Not completed | needs an index from moni build, which never finishes (tool bug), so no index could be made |
+| moni_ms | Not completed | needs an index from moni build, which never finishes (tool bug), so no index could be made |
 
 ## moni_build
 

@@ -11,6 +11,11 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: BAM / CRAM files to run the analysis on. If --bam-file-list is 
       included, this argument is the file containing the list of bam/cram files.
     inputBinding:
@@ -145,9 +150,6 @@ inputs:
       position: 102
       prefix: --region
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_dir_dir
     type:
       - 'null'
@@ -155,7 +157,12 @@ outputs:
     doc: "Output files will be saved in OUTPUT_DIR. Default: '.'"
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.output_dir ? {"class": "Directory", "basename": inputs.output_dir, "listing": []} : null)'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mity:2.0.1--pyhdfd78af_0
-stdout: mity_call.out

@@ -1,5 +1,11 @@
 # mira CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mira | PASS | fixed: data files are staged beside the manifest, --cwd is a string, project folder is collected; MinYS test reads (simulated, from the MinYS repo) gave one 16.2 kb contig with 96% of its 25-mers in the reference |
+
 ## mira
 
 ### Tool Description

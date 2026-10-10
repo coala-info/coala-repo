@@ -1,9 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - montreal-forced-aligner
   - mfa
-  - train_acoustic
+  - train
 label: montreal-forced-aligner_mfa_train_acoustic
 doc: "Train an acoustic model.\n\nTool homepage: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner"
 inputs:
@@ -17,6 +16,11 @@ inputs:
     doc: Path to the dictionary file.
     inputBinding:
       position: 2
+  - id: output_model_path
+    type: string
+    doc: Path of the trained acoustic model (zip) to write.
+    inputBinding:
+      position: 3
   - id: clean
     type:
       - 'null'
@@ -50,11 +54,11 @@ inputs:
       position: 103
       prefix: --overwrite
 outputs:
-  - id: output_directory
-    type: Directory
-    doc: Path to the directory to save the trained acoustic model.
+  - id: acoustic_model
+    type: File
+    doc: The trained acoustic model.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_model_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/montreal-forced-aligner:3.3.8

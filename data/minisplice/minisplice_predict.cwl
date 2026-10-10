@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: input_fastx_or_train
-    type: string
+    type: File
     doc: Input fastx file or training data file
     inputBinding:
       position: 2

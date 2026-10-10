@@ -1,5 +1,13 @@
 # mmult CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mmult_bbglm | PASS |  |
+| mmult_cpgcdifenrich | PASS |  |
+| mmult_vmcvmrnme | PASS |  |
+
 ## mmult_bbglm
 
 ### Tool Description

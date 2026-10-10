@@ -23,7 +23,7 @@ inputs:
     doc: Set energy threshold to -E kcal/mol
     inputBinding:
       position: 103
-      prefix: -E
+      prefix: -en
   - id: gap_extend_penalty
     type:
       - 'null'
@@ -31,7 +31,7 @@ inputs:
     doc: Set gap-extend penalty to -Y
     inputBinding:
       position: 103
-      prefix: -Y
+      prefix: -ge
   - id: gap_open_penalty
     type:
       - 'null'
@@ -39,7 +39,7 @@ inputs:
     doc: Set gap-open penalty to -X
     inputBinding:
       position: 103
-      prefix: -X
+      prefix: -go
   - id: keyval
     type:
       - 'null'
@@ -106,12 +106,17 @@ inputs:
       position: 103
       prefix: -trim
   - id: output_file_path
-    type: string
-    doc: "file\tOutput results to file\t\t\t[DEFAULT: off]"
+    type:
+      - 'null'
+      - string
+    doc: Output results to file
     inputBinding:
       position: 104
       prefix: -out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_file
     type:
       - 'null'
@@ -124,3 +129,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/miranda:3.3a--h7b50bb2_9
+stdout: miranda.out

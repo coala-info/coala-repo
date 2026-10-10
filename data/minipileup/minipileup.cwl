@@ -9,9 +9,14 @@ inputs:
     type:
       type: array
       items: File
-    doc: Input BAM files
+    doc: Input BAM files (index .bai beside each, needed for --region and --include)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
-      position: 1
+      position: 200
   - id: drop_allele_if_fraction_below
     type:
       - 'null'
@@ -97,6 +102,9 @@ inputs:
       - 'null'
       - File
     doc: reference genome
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 102
       prefix: -f

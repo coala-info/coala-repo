@@ -1,5 +1,13 @@
 # mockinbird CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mockinbird_flip_mate | Failed | tool bug: the script reads args.flipped_bam, which does not exist (the argument is output_bam), so it always stops with AttributeError |
+| mockinbird_postprocess | Not completed | pipeline, skipped (runs a whole config-driven plotting and motif pipeline that needs yeast annotation files) |
+| mockinbird_preprocess | Not completed | pipeline, skipped (runs a whole config-driven pipeline: FastQC, adapter clipping, STAR mapping, binding-site calling) |
+
 ## mockinbird_preprocess
 
 ### Tool Description

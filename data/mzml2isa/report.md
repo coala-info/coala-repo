@@ -1,5 +1,11 @@
 # mzml2isa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mzml2isa | PASS | fixed output flag (-o, not --output-path); ran on 4 tiny HUPO-PSI mzML files; ISA-tab investigation, study and assay files written with 4 samples |
+
 ## mzml2isa
 
 ### Tool Description

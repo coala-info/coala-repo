@@ -17,13 +17,10 @@ inputs:
       - 'null'
       - type: array
         items: Directory
-        inputBinding:
-          prefix: --directory
-          separate: true
-    doc: path to the directory containing the raw ONT signal files. This option 
-      can be given multiple times.
-    inputBinding:
-      position: 102
+    doc: path to the directory containing the raw ONT signal files. The
+      directories are staged in the working directory and given to the tool by
+      name, so the index stores relative fast5 paths (later nanopolish steps
+      need the same directory staged under the same name).
   - id: sequencing_summary
     type:
       - 'null'
@@ -58,10 +55,36 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+arguments:
+  - position: 102
+    valueFrom: |
+      ${
+        var a = [];
+        (inputs.raw_ont_signal_directory || []).forEach(function (d) {
+          a.push('--directory');
+          a.push(d.basename);
+        });
+        return a;
+      }
 outputs:
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files written beside the reads file (<reads>.index,
+      <reads>.index.fai, <reads>.index.gzi, <reads>.index.readdb)
+    outputBinding:
+      glob: $(inputs.reads_fastq.basename).index*
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reads_fastq)
+        writable: true
+      - entry: '$(inputs.raw_ont_signal_directory ? inputs.raw_ont_signal_directory : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanopolish:0.14.0--h773013f_3

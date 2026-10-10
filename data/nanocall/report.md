@@ -1,5 +1,11 @@
 # nanocall CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanocall | Not completed | CWL fixed (wrong homepage, '--' flag, repeated --model/--log); the nf-core fast5 files have raw signal only, and nanocall needs eventdetection events, so it reads 0 events and writes an empty FASTA |
+
 ## nanocall
 
 ### Tool Description

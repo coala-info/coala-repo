@@ -10,14 +10,14 @@ inputs:
     type: File
     doc: reference-file
     inputBinding:
-      position: 1
+      position: 101
   - id: query_files
     type:
       type: array
       items: File
     doc: query-files
     inputBinding:
-      position: 2
+      position: 102
   - id: force_4_column_output
     type:
       - 'null'
@@ -25,7 +25,7 @@ inputs:
     doc: "force 4 column output format regardless of the number of\nreference sequence
       inputs"
     inputBinding:
-      position: 103
+      position: 10
       prefix: -F
   - id: forward_reverse_complement
     type:
@@ -33,7 +33,7 @@ inputs:
       - boolean
     doc: compute forward and reverse complement matches
     inputBinding:
-      position: 103
+      position: 10
       prefix: -b
   - id: match_only_acgt
     type:
@@ -42,7 +42,7 @@ inputs:
     doc: "match only the characters a, c, g, or t\nthey can be in upper or in lower
       case"
     inputBinding:
-      position: 103
+      position: 10
       prefix: -n
   - id: maxmatch
     type:
@@ -50,7 +50,7 @@ inputs:
       - boolean
     doc: compute all maximal matches regardless of their uniqueness
     inputBinding:
-      position: 103
+      position: 10
       prefix: -maxmatch
   - id: min_match_length
     type:
@@ -58,7 +58,7 @@ inputs:
       - int
     doc: set the minimum length of a match
     inputBinding:
-      position: 103
+      position: 10
       prefix: -l
   - id: mum
     type:
@@ -66,7 +66,7 @@ inputs:
       - boolean
     doc: compute maximal matches that are unique in both sequences
     inputBinding:
-      position: 103
+      position: 10
       prefix: -mum
   - id: mumcand
     type:
@@ -74,7 +74,7 @@ inputs:
       - boolean
     doc: same as -mumreference
     inputBinding:
-      position: 103
+      position: 10
       prefix: -mumcand
   - id: mumreference
     type:
@@ -83,7 +83,7 @@ inputs:
     doc: compute maximal matches that are unique in the reference- sequence but 
       not necessarily in the query-sequence (default)
     inputBinding:
-      position: 103
+      position: 10
       prefix: -mumreference
   - id: report_reverse_complement_query_position
     type:
@@ -92,7 +92,7 @@ inputs:
     doc: "report the query-position of a reverse complement match\nrelative to the
       original query sequence"
     inputBinding:
-      position: 103
+      position: 10
       prefix: -c
   - id: reverse_complement_only
     type:
@@ -100,7 +100,7 @@ inputs:
       - boolean
     doc: only compute reverse complement matches
     inputBinding:
-      position: 103
+      position: 10
       prefix: -r
   - id: show_matching_substrings
     type:
@@ -108,7 +108,7 @@ inputs:
       - boolean
     doc: show the matching substrings
     inputBinding:
-      position: 103
+      position: 10
       prefix: -s
   - id: show_query_sequence_length
     type:
@@ -116,7 +116,7 @@ inputs:
       - boolean
     doc: show the length of the query sequences on the header line
     inputBinding:
-      position: 103
+      position: 10
       prefix: -L
 outputs:
   - id: stdout

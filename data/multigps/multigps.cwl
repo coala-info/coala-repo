@@ -7,6 +7,12 @@ doc: "MultiGPS version 0.74\n\nCopyright (C) Shaun Mahony 2012-2016\n<http://mah
   are welcome to redistribute it under certain conditions.  See the MIT license \n\
   for details.\n\nTool homepage: https://github.com/shaunmahony/multigps-archive"
 inputs:
+  - id: experiment_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Signal and control files named in the design file (staged in the working directory so that the relative names resolve)
   - id: alphascale
     type:
       - 'null'
@@ -340,10 +346,9 @@ inputs:
       position: 101
       prefix: --noscaling
   - id: output_file_prefix
-    type:
-      - 'null'
-      - string
-    doc: output file prefix
+    type: string
+    default: multigps_out
+    doc: output file prefix (MultiGPS writes its results into a directory of this name)
     inputBinding:
       position: 101
       prefix: --out
@@ -449,13 +454,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_file_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_file_prefix
+  - id: output_directory
+    type: Directory
+    doc: Results directory (events, bed, html, counts and table files)
     outputBinding:
-      glob: $(inputs.output_file_prefix)*
+      glob: $(inputs.output_file_prefix)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_file_prefix)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
+      - $(inputs.experiment_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/multigps:0.74--r3.3.1_0

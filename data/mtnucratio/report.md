@@ -1,5 +1,11 @@
 # mtnucratio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mtnucratio | PASS |  |
+
 ## mtnucratio
 
 ### Tool Description

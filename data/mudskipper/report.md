@@ -1,5 +1,13 @@
 # mudskipper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mudskipper_bulk | PASS |  |
+| mudskipper_index | PASS |  |
+| mudskipper_sc | PASS | synthetic data: cell barcode and UMI tags added to a real SAM from the tool tests; BAM and RAD outputs checked |
+
 ## mudskipper_index
 
 ### Tool Description

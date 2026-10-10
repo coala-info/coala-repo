@@ -1,5 +1,13 @@
 # msms CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msms | PASS |  |
+| msms_pdb_to_xyzr | PASS |  |
+| msms_pdb_to_xyzrn | PASS |  |
+
 ## msms
 
 ### Tool Description
@@ -40,6 +48,74 @@ Usage : msms parameters
   -one_cavity #atoms at1 [at2][at3] : Compute the surface for an internal                        cavity for which at least one atom is specified
 ```
 
+
+## msms_pdb_to_xyzr
+
+### Tool Description
+Extract x, y, z from a PDB file and generate the radius of each atom (input for msms).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/msms:2.6.1--h9ee0642_3
+- **Homepage**: https://ccsb.scripps.edu/msms/
+- **Package**: https://anaconda.org/channels/bioconda/packages/msms/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+! /bin/sh
+extract x,y,z from PDB file, generate radius of each atom
+Hydrogens are presumed to be missing ("united atom" approach) unless -h given
+later: options for alternate radius and pattern files
+--- Mike Pique, The Scripps Research Institute
+
+input: pdb file as argument or stdin
+output: new xyzr file to stdout
+
+Options:
+
+-h: use explicit hydrogen radii instead of default united atom radii
+
+examples:
+  pdb_to_xyzr  crambin.pdb > crambin.xyzr
+
+  foo_to_pdb -h mol.foo  | pdb_to_xyzr > mol.xyzr
+
+  foo_to_pdb mol.foo  | pdb_to_xyzr | awk '{print $4}' >   mol.r
+```
+
+## msms_pdb_to_xyzrn
+
+### Tool Description
+Extract x, y, z from a PDB file and generate the radius of each atom (input for msms).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/msms:2.6.1--h9ee0642_3
+- **Homepage**: https://ccsb.scripps.edu/msms/
+- **Package**: https://anaconda.org/channels/bioconda/packages/msms/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+! /bin/sh
+extract x,y,z from PDB file, generate radius of each atom
+Hydrogens are presumed to be missing ("united atom" approach) unless -h given
+later: options for alternate radius and pattern files
+--- Mike Pique, The Scripps Research Institute
+
+input: pdb file as argument or stdin
+output: new xyzr file to stdout
+
+Options:
+
+-h: use explicit hydrogen radii instead of default united atom radii
+
+examples:
+  pdb_to_xyzr  crambin.pdb > crambin.xyzr
+
+  foo_to_pdb -h mol.foo  | pdb_to_xyzr > mol.xyzr
+
+  foo_to_pdb mol.foo  | pdb_to_xyzr | awk '{print $4}' >   mol.r
+```
 
 ## Metadata
 - **Skill**: generated

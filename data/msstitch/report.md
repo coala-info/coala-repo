@@ -1,5 +1,33 @@
 # msstitch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msstitch_concat | PASS |  |
+| msstitch_conffilt | PASS |  |
+| msstitch_dedupperco | PASS |  |
+| msstitch_deduppsms | PASS |  |
+| msstitch_deletesets | PASS |  |
+| msstitch_ensg | PASS |  |
+| msstitch_filterperco | PASS |  |
+| msstitch_genes | PASS |  |
+| msstitch_isosummarize | PASS |  |
+| msstitch_makedecoy | PASS |  |
+| msstitch_merge | PASS |  |
+| msstitch_peptides | PASS |  |
+| msstitch_perco2psm | PASS |  |
+| msstitch_proteins | PASS |  |
+| msstitch_psmtable | PASS |  |
+| msstitch_seqfilt | PASS |  |
+| msstitch_seqmatch | PASS | synthetic data: planted FASTA built from real PSM peptides |
+| msstitch_split | PASS |  |
+| msstitch_splitperco | PASS |  |
+| msstitch_storequant | PASS |  |
+| msstitch_storeseq | PASS | --map-accessions crashes on a FASTA with peptides shared between proteins; plain mode matches expected |
+| msstitch_storespectra | PASS |  |
+| msstitch_trypsinize | PASS |  |
+
 ## msstitch_storespectra
 
 ### Tool Description

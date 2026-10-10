@@ -1,5 +1,11 @@
 # mtm-align CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mtm-align | PASS |  |
+
 ## mtm-align
 
 ### Tool Description

@@ -2,99 +2,159 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mzmine
 label: mzmine
-doc: "MZmine is a modular software for analyzing mass spectrometry data.\n\nTool homepage:
-  http://mzmine.github.io/"
+doc: "MZmine is a modular software for analyzing mass spectrometry data. This wrapper
+  runs it headless in batch mode (-b with a batch file and -i with the input files).
+  Processing and export modules need an mzmine user login (-u user file).\n\nTool
+  homepage: http://mzmine.github.io/"
 inputs:
   - id: batch
     type:
       - 'null'
       - File
-    doc: Path to a batch processing configuration file
+    doc: batch mode file
     inputBinding:
       position: 101
       prefix: --batch
-  - id: config_file
-    type:
-      - 'null'
-      - File
-    doc: Path to a configuration file
-    inputBinding:
-      position: 101
-      prefix: --config
-  - id: export_format
-    type:
-      - 'null'
-      - string
-    doc: Format for exporting results (e.g., CSV, mzTab)
-    inputBinding:
-      position: 101
-      prefix: --export-format
-  - id: import_data
-    type:
-      - 'null'
-      - File
-    doc: Path to a data file to import
-    inputBinding:
-      position: 101
-      prefix: --import-data
-  - id: no_gui
-    type:
-      - 'null'
-      - boolean
-    doc: Run MZmine without the graphical user interface
-    inputBinding:
-      position: 101
-      prefix: --no-gui
-  - id: plugin_path
+  - id: input
     type:
       - 'null'
       - type: array
-        items: Directory
-    doc: Path to a directory containing MZmine plugins
+        items: File
+    doc: input data files. Either defined in a .txt text file with one file per line
+      or by glob pattern matching.
     inputBinding:
       position: 101
-      prefix: --plugin-path
-  - id: temp_dir
+      prefix: --input
+  - id: ignore_parameter_warnings
     type:
       - 'null'
-      - string
-    doc: Path to a temporary directory
+      - boolean
+    doc: Adding this option will (in batch mode) ignore warnings with regard to
+      changed parameters across versions. This will use the last set or the default
+      value. (This option is not recommended)
     inputBinding:
       position: 101
-      prefix: --temp-dir
-  - id: export_results_path
+      prefix: --ignore-parameter-warnings
+  - id: libraries
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: spectral library files. Either defined in a .txt text file with one file
+      per line or by glob pattern matching.
+    inputBinding:
+      position: 101
+      prefix: --libraries
+  - id: memory
     type:
       - 'null'
       - string
-    doc: Output or path parameter `export_results_path`
+    doc: 'keep objects (scan data, features, etc) in memory. Options: none, all,
+      features, centroids, raw, masses_features (masses_features for features and
+      centroids)'
     inputBinding:
-      position: 102
-      prefix: --export-results
-  - id: log_file_path
+      position: 101
+      prefix: --memory
+  - id: metadata
+    type:
+      - 'null'
+      - File
+    doc: Metadata file in csv or tsv, comma or tab-separated values, respectively.
+      The file ending defines the default value separator.
+    inputBinding:
+      position: 101
+      prefix: --metadata
+  - id: output
     type:
       - 'null'
       - string
-    doc: Output or path parameter `log_file_path`
+    doc: An output path and base filename that will change all export filenames.
+      -output path/basename will be extended by module specific suffixes and file
+      formats.
     inputBinding:
-      position: 103
-      prefix: --log-file
+      position: 101
+      prefix: --output
+  - id: pref
+    type:
+      - 'null'
+      - File
+    doc: preferences file
+    inputBinding:
+      position: 101
+      prefix: --pref
+  - id: proxy
+    type:
+      - 'null'
+      - string
+    doc: Option to set a proxy, which might be needed for user login and webservices.
+      Use a full definition like -proxy http://myproxy:myPort or use -proxy false
+      to turn the proxy off.
+    inputBinding:
+      position: 101
+      prefix: --proxy
+  - id: running
+    type:
+      - 'null'
+      - boolean
+    doc: keep mzmine running in headless mode
+    inputBinding:
+      position: 101
+      prefix: --running
+  - id: temp
+    type:
+      - 'null'
+      - string
+    doc: Temp directory overrides definition in preferences and JVM
+    inputBinding:
+      position: 101
+      prefix: --temp
+  - id: tdfpseudoprofile
+    type:
+      - 'null'
+      - boolean
+    doc: Loads pseudo-profile frame spectra for tdf files instead of centroided spectra.
+    inputBinding:
+      position: 101
+      prefix: --tdfpseudoprofile
+  - id: threads
+    type:
+      - 'null'
+      - string
+    doc: the number of threads to use during processing, or 'auto' to automatically
+      detect available resources. threads overwrites the specified value in the preference.
+    inputBinding:
+      position: 101
+      prefix: --threads
+  - id: user
+    type:
+      - 'null'
+      - File
+    doc: Path to an .mzuser file to login a user, e.g. pathTo/testuser.mzuser. The
+      file is copied to the users directory.
+    inputBinding:
+      position: 101
+      prefix: --user
 outputs:
-  - id: log_file
+  - id: stdout
+    type: stdout
+    doc: Log messages
+  - id: export_files
     type:
-      - 'null'
-      - File
-    doc: Path to a log file
+      type: array
+      items: File
+    doc: Files written by the batch export steps (named after --output)
     outputBinding:
-      glob: $(inputs.log_file_path)
-  - id: export_results
+      glob: "$(inputs.output ? inputs.output + '*' : 'mzmine_no_output_prefix_*')"
+  - id: log_files
     type:
-      - 'null'
-      - File
-    doc: Path to export results to
+      type: array
+      items: File
+    doc: mzmine log files (mzmine_*.log, written to the home directory)
     outputBinding:
-      glob: $(inputs.export_results_path)
+      glob: mzmine_*.log
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mzmine:4.7.29--hdfd78af_0
+stdout: mzmine.out

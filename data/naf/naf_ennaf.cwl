@@ -148,8 +148,10 @@ inputs:
       position: 102
       prefix: -c
   - id: output_file_path
-    type: string
-    doc: '- Write compressed output to FILE'
+    type:
+      - 'null'
+      - string
+    doc: Write compressed output to FILE
     inputBinding:
       position: 103
       prefix: -o
@@ -161,8 +163,12 @@ outputs:
     doc: Write compressed output to FILE
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: stdout
+    type: stdout
+    doc: Compressed data when -c is used
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/naf:1.3.0--h3c26d10_0
+stdout: naf_ennaf.out

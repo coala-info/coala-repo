@@ -1,5 +1,11 @@
 # mstmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mstmap | PASS |  |
+
 ## mstmap
 
 ### Tool Description

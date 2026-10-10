@@ -80,6 +80,9 @@ inputs:
       prefix: --num_consensus
   - id: pileup
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Path to pileup.bed
     inputBinding:
       position: 101
@@ -115,6 +118,10 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.assembly)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanomotif:1.1.2--pyhdfd78af_0

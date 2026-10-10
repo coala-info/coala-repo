@@ -10,10 +10,59 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Input sorted bam file(s)
     inputBinding:
       position: 101
       prefix: --bam
+  - id: ubam
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data is in one or more unmapped bam file(s).
+    inputBinding:
+      position: 101
+      prefix: --ubam
+  - id: cram
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - pattern: .crai
+        required: false
+    doc: Data is in one or more sorted cram file(s).
+    inputBinding:
+      position: 101
+      prefix: --cram
+  - id: feather
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data is in one or more feather file(s).
+    inputBinding:
+      position: 101
+      prefix: --feather
+  - id: no_supplementary
+    type:
+      - 'null'
+      - boolean
+    doc: Use if you want to remove supplementary alignments
+    inputBinding:
+      position: 101
+      prefix: --no_supplementary
+  - id: name
+    type:
+      - 'null'
+      - string
+    doc: Specify a filename/path for the output, stdout is the default.
+    inputBinding:
+      position: 101
+      prefix: --name
   - id: barcoded
     type:
       - 'null'
@@ -40,14 +89,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastq
-  - id: html
-    type:
-      - 'null'
-      - boolean
-    doc: Output statistics in an html file
-    inputBinding:
-      position: 101
-      prefix: --html
   - id: prefix
     type:
       - 'null'
@@ -91,8 +132,10 @@ inputs:
       position: 101
       prefix: --tsv
   - id: outdir_path
-    type: string
-    doc: Output or path parameter `outdir_path`
+    type:
+      - 'null'
+      - string
+    doc: Specify directory for output, only in combination with --name.
     inputBinding:
       position: 102
       prefix: --outdir
@@ -104,15 +147,12 @@ outputs:
     doc: Directory to write output files to
     outputBinding:
       glob: $(inputs.outdir_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
+  - id: stdout
+    type: stdout
+    doc: Statistics report (default output when --name is not given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanopack:1.1.1--hdfd78af_0
+stdout: nanostat.out

@@ -1,5 +1,11 @@
 # mzmine CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mzmine | Not completed | rewrote the CWL from the real help (old flags were invented); import, mass detection and chromatogram builder run headless, but export and later steps need an mzmine user login, so no result file |
+
 ## mzmine
 
 ### Tool Description

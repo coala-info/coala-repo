@@ -1,5 +1,11 @@
 # nanoplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanoplot | PASS | fastq (100 reads, 38253 bases) and bam (17 reads) modes give the correct stats and html plots |
+
 ## nanoplot
 
 ### Tool Description

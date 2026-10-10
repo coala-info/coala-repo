@@ -39,7 +39,9 @@ inputs:
       position: 101
       prefix: -f
   - id: homopolymer_microsatellite_file
-    type: string
+    type:
+      - 'null'
+      - File
     doc: homopolymer and microsates file
     inputBinding:
       position: 101
@@ -93,13 +95,22 @@ inputs:
       position: 101
       prefix: -s
   - id: models_directory
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: models directory for tumor only data
     inputBinding:
       position: 101
       prefix: -M
   - id: normal_bam_file
-    type: File
+    type:
+      - 'null'
+      - File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: normal bam file
     inputBinding:
       position: 101
@@ -146,6 +157,11 @@ inputs:
       prefix: -b
   - id: tumor_bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: tumor bam file
     inputBinding:
       position: 101
@@ -162,6 +178,27 @@ outputs:
     doc: output distribution file
     outputBinding:
       glob: $(inputs.output_distribution_file_path)
+  - id: distribution_file
+    type:
+      - 'null'
+      - File
+    doc: homopolymer and microsatellite length distribution
+    outputBinding:
+      glob: $(inputs.output_distribution_file_path)_dis
+  - id: germline_file
+    type:
+      - 'null'
+      - File
+    doc: germline sites
+    outputBinding:
+      glob: $(inputs.output_distribution_file_path)_germline
+  - id: somatic_file
+    type:
+      - 'null'
+      - File
+    doc: somatic sites
+    outputBinding:
+      glob: $(inputs.output_distribution_file_path)_somatic
 requirements:
   - class: InlineJavascriptRequirement
 hints:

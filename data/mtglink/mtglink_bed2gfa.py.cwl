@@ -57,6 +57,14 @@ outputs:
     doc: Name of the output GFA file
     outputBinding:
       glob: $(inputs.output_gfa_file_path)
+  - id: flanking_fasta_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTA files with the left and right flanking regions of each gap
+    outputBinding:
+      glob: '*.fasta'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

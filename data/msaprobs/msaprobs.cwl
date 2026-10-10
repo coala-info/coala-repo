@@ -44,13 +44,44 @@ inputs:
     inputBinding:
       position: 102
       prefix: -num_threads
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Report progress while aligning
+    inputBinding:
+      position: 102
+      prefix: --verbose
+  - id: annotation_file
+    type:
+      - 'null'
+      - string
+    doc: Write annotation for the multiple alignment to this file name
+    inputBinding:
+      position: 102
+      prefix: -annot
+  - id: alignment_order
+    type:
+      - 'null'
+      - boolean
+    doc: Print sequences in alignment order rather than input order
+    inputBinding:
+      position: 102
+      prefix: --alignment-order
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --outfile
 outputs:
+  - id: annotation_output
+    type:
+      - 'null'
+      - File
+    doc: Annotation file
+    outputBinding:
+      glob: $(inputs.annotation_file)
   - id: output_file
     type:
       - 'null'

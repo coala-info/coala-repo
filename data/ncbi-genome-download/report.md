@@ -1,5 +1,11 @@
 # ncbi-genome-download CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ncbi-genome-download | PASS |  |
+
 ## ncbi-genome-download
 
 ### Tool Description

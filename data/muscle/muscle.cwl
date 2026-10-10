@@ -183,8 +183,23 @@ outputs:
     doc: Output Jalview feature file with LC values and colors
     outputBinding:
       glob: $(inputs.jalview_path)
+  - id: exploded
+    type:
+      type: array
+      items: File
+    doc: Aligned FASTA files written by -efa_explode (named PERM.SEED, for example none.0)
+    outputBinding:
+      glob:
+        - none.*
+        - abc.*
+        - acb.*
+        - bca.*
+  - id: log
+    type: stderr
+    doc: Progress and summary messages (standard error), for example the -disperse result
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/muscle:5.3--h9948957_3
+stderr: muscle.log

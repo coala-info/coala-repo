@@ -1,5 +1,11 @@
 # nanopack CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanopack_NanoStat | PASS | fastq and bam modes give correct counts on real nanopore data (100 reads, 17 reads); the nf-core sequencing summary file is malformed so summary mode was not judged |
+
 ## Metadata
 - **Skill**: generated
 

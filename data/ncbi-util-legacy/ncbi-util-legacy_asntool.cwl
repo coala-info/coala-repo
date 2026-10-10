@@ -42,8 +42,8 @@ inputs:
   - id: bit_twiddle_optional_zero_slots
     type:
       - 'null'
-      - boolean
-    doc: Bit twiddle for optional zero value base slots [T/F]
+      - string
+    doc: Bit twiddle for optional zero value base slots [T/F] (T or F)
     inputBinding:
       position: 101
       prefix: -Z
@@ -76,8 +76,8 @@ inputs:
   - id: force_choice_use_structure
     type:
       - 'null'
-      - boolean
-    doc: Force choice to use structure instead of ValNodePtr [T/F]
+      - string
+    doc: Force choice to use structure instead of ValNodePtr [T/F] (T or F)
     inputBinding:
       position: 101
       prefix: -V
@@ -92,8 +92,8 @@ inputs:
   - id: generate_object_loader
     type:
       - 'null'
-      - boolean
-    doc: 'Generate object loader .c and .h files, if used, see below parameters: [T/F]'
+      - string
+    doc: "Generate object loader .c and .h files, if used, see below parameters: [T/F] (T or F)"
     inputBinding:
       position: 101
       prefix: -G
@@ -132,8 +132,8 @@ inputs:
   - id: use_quoted_syntax_for_includes
     type:
       - 'null'
-      - boolean
-    doc: Use quoted syntax form for generated include files [T/F]
+      - string
+    doc: Use quoted syntax form for generated include files [T/F] (T or F)
     inputBinding:
       position: 101
       prefix: -Q
@@ -180,7 +180,7 @@ inputs:
     doc: Output or path parameter `asn1_module_file_out_path`
     inputBinding:
       position: 102
-      prefix: --asn1-module-file-out
+      prefix: -f
   - id: asn1_tree_dump_file_path
     type:
       - 'null'
@@ -188,7 +188,7 @@ inputs:
     doc: Output or path parameter `asn1_tree_dump_file_path`
     inputBinding:
       position: 103
-      prefix: --asn1-tree-dump-file
+      prefix: -T
   - id: base_for_generated_filename_path
     type:
       - 'null'
@@ -313,12 +313,12 @@ outputs:
       glob: $(inputs.loader_file_path)
   - id: base_for_generated_filename
     type:
-      - 'null'
-      - File
+      type: array
+      items: File
     doc: Base for filename, without extensions, for generated objects and code 
       [File Out]
     outputBinding:
-      glob: $(inputs.base_for_generated_filename_path)
+      glob: "$(inputs.base_for_generated_filename_path ? inputs.base_for_generated_filename_path + '*' : 'none_generated')"
   - id: debugging_filename
     type:
       - 'null'

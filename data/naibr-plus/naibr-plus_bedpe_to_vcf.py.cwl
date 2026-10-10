@@ -18,7 +18,7 @@ inputs:
       position: 102
       prefix: --add-chr
   - id: ref
-    type: string
+    type: File
     doc: List of chromosome lengths e.g. `*.fai`
     inputBinding:
       position: 102
@@ -32,11 +32,17 @@ inputs:
       position: 102
       prefix: --sample-name
   - id: output_vcf_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: 'Output VCF. Default: write to stdout'
     inputBinding:
       position: 103
       prefix: --output-vcf
 outputs:
+  - id: stdout
+    type: stdout
+    doc: VCF written to stdout when no output file is given
   - id: output_vcf
     type:
       - 'null'
@@ -49,3 +55,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/naibr-plus:0.5.3--pyhdfd78af_0
+stdout: naibr-plus_bedpe_to_vcf.py.out

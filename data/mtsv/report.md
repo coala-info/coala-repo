@@ -1,5 +1,17 @@
 # mtsv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mtsv_analyze | Not completed | needs the .params metadata, taxonomy dump and database JSON that earlier mtsv stages write with absolute paths in one working directory; cannot be staged in a single CWL run |
+| mtsv_binning | PASS |  |
+| mtsv_extract | Not completed | needs the .params metadata, taxonomy dump and database JSON that earlier mtsv stages write with absolute paths in one working directory; cannot be staged in a single CWL run |
+| mtsv_init | PASS |  |
+| mtsv_pipeline | Not completed | pipeline, skipped |
+| mtsv_readprep | PASS |  |
+| mtsv_summary | Not completed | needs the .params metadata, taxonomy dump and database JSON that earlier mtsv stages write with absolute paths in one working directory; cannot be staged in a single CWL run |
+
 ## mtsv_init
 
 ### Tool Description
@@ -199,23 +211,6 @@ optional arguments:
                         dir. (default: ./Logs/mtsv_{COMMAND}_{TIMESTAMP}.log)
   -t THREADS, --threads THREADS
                         Number of worker threads to spawn. (default: 4)
-```
-
-## mtsv_coming
-
-### Tool Description
-mtsv: error: argument COMMAND: invalid choice: 'coming' (choose from 'init', 'analyze', 'binning', 'readprep', 'summary', 'extract', 'pipeline')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mtsv:1.0.6--py36hf1ae8f4_2
-- **Homepage**: https://github.com/FofanovLab/MTSv
-- **Package**: https://anaconda.org/channels/bioconda/packages/mtsv/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: mtsv [-h] COMMAND ...
-mtsv: error: argument COMMAND: invalid choice: 'coming' (choose from 'init', 'analyze', 'binning', 'readprep', 'summary', 'extract', 'pipeline')
 ```
 
 ## mtsv_summary

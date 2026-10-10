@@ -1,5 +1,14 @@
 # mwga-utils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mwga-utils_metrics | PASS | ran on LAST sarscov2 MAF (reformatted to MultiZ-style a-lines); output counts match the MAF |
+| mwga-utils_missing_regions | PASS | ran on LAST sarscov2 MAF with simple FASTA header; missing reference regions added with score NA |
+| mwga-utils_single_cov | PASS | new CWL; ran on the same MAF; coverage table matches the genome length |
+| mwga-utils_stats | PASS | ran on LAST sarscov2 MAF (reformatted to MultiZ-style a-lines); output counts match the MAF |
+
 ## mwga-utils_metrics
 
 ### Tool Description
@@ -83,6 +92,29 @@ Compute a series of statistics on a MAF file:
       -h --help        Show this screen.
 ```
 
+
+## mwga-utils_single_cov
+
+### Tool Description
+Check that the each sequence in the reference species is only covered once in a MAF.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mwga-utils:0.1.6--h9948957_3
+- **Homepage**: https://github.com/RomainFeron/mgwa_utils
+- **Package**: https://anaconda.org/channels/bioconda/packages/mwga-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Check that the each sequence in the reference species is only covered once in a MAF.
+
+    Usage:
+      single_coverage <maf_file> [-t <threads>]
+
+    Options:
+      <maf_file>       Path to a MAF file.
+      -h --help        Show this screen.
+```
 
 ## Metadata
 - **Skill**: generated

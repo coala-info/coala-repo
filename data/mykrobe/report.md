@@ -1,5 +1,17 @@
 # mykrobe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mykrobe_panels_describe | PASS | lists the bundled species panels (tb, staph, sonnei, typhi, paratyphiB) |
+| mykrobe_panels_update_metadata | PASS | downloaded new panel metadata into a writable copy of the panels folder; manifest updated |
+| mykrobe_panels_update_species | PASS | removed and re-downloaded the sonnei panel into a writable panels copy; files restored |
+| mykrobe_predict | PASS | ran on 500k real M. tuberculosis reads (ERR036221 subset); species M. tuberculosis, lineage4.10, drug table written |
+| mykrobe_variants_add | Not completed | new CWL; needs a MongoDB server (connection refused) |
+| mykrobe_variants_dump-probes | Not completed | new CWL; needs a MongoDB server (connection refused) |
+| mykrobe_variants_make-probes | PASS | new CWL; made ref and alt probes for 3 variants on the M. tuberculosis genome (--no-backgrounds) |
+
 ## mykrobe_predict
 
 ### Tool Description
@@ -131,96 +143,185 @@ optional arguments:
 ```
 
 
-## mykrobe_panels
+## mykrobe_panels_describe
 
 ### Tool Description
-Manage mykrobe panels
+Describe all known panels
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mykrobe:0.13.0--py38h59a8061_3
-- **Homepage**: https://github.com/iqbal-lab/Mykrobe-predictor
+- **Homepage**: https://github.com/Mykrobe-tools/mykrobe
 - **Package**: https://anaconda.org/channels/bioconda/packages/mykrobe/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-usage: mykrobe panels [-h] [-q] [-d]
-                      {describe,update_metadata,update_species} ...
+usage: mykrobe panels describe [-h] [--panels_dir DIRNAME] [-q] [-d]
 
 optional arguments:
   -h, --help            show this help message and exit
+  --panels_dir DIRNAME  Name of directory that contains panel data (default:
+                        /usr/local/lib/python3.8/site-packages/mykrobe/data)
   -q, --quiet           Only output warnings/errors to stderr
   -d, --debug           Output debugging information to stderr
-
-[sub-commands]:
-  {describe,update_metadata,update_species}
-                        help
-    describe            Describe all known panels
-    update_metadata     Update metadata about available species and their
-                        panels
-    update_species      Update species panel(s)
 ```
 
-
-## mykrobe_variants
+## mykrobe_panels_update_metadata
 
 ### Tool Description
-mykrobe variants
+Update metadata about available species and their panels
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mykrobe:0.13.0--py38h59a8061_3
-- **Homepage**: https://github.com/iqbal-lab/Mykrobe-predictor
+- **Homepage**: https://github.com/Mykrobe-tools/mykrobe
 - **Package**: https://anaconda.org/channels/bioconda/packages/mykrobe/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-usage: mykrobe variants [-h] [-q] [-d] {add,dump-probes,make-probes} ...
+usage: mykrobe panels update_metadata [-h] [--panels_dir DIRNAME] [-q] [-d]
 
 optional arguments:
   -h, --help            show this help message and exit
+  --panels_dir DIRNAME  Name of directory that contains panel data (default:
+                        /usr/local/lib/python3.8/site-packages/mykrobe/data)
   -q, --quiet           Only output warnings/errors to stderr
   -d, --debug           Output debugging information to stderr
-
-[sub-commands]:
-  {add,dump-probes,make-probes}
-                        help
-    add                 adds a set of variants to the database
-    dump-probes         dump a probe set of variant alleles from VCFs stored
-                        in database
-    make-probes         make probes from a list of variants
 ```
 
-
-## mykrobe_vars
+## mykrobe_panels_update_species
 
 ### Tool Description
-Manage variant databases
+Update species panel(s)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mykrobe:0.13.0--py38h59a8061_3
-- **Homepage**: https://github.com/iqbal-lab/Mykrobe-predictor
+- **Homepage**: https://github.com/Mykrobe-tools/mykrobe
 - **Package**: https://anaconda.org/channels/bioconda/packages/mykrobe/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-usage: mykrobe variants [-h] [-q] [-d] {add,dump-probes,make-probes} ...
+usage: mykrobe panels update_species [-h] [--panels_dir DIRNAME] [-q] [-d]
+                                     [--remove]
+                                     species
+
+positional arguments:
+  species               Name of species to update, or 'all' to update all
+                        species
 
 optional arguments:
   -h, --help            show this help message and exit
+  --panels_dir DIRNAME  Name of directory that contains panel data (default:
+                        /usr/local/lib/python3.8/site-packages/mykrobe/data)
   -q, --quiet           Only output warnings/errors to stderr
   -d, --debug           Output debugging information to stderr
-
-[sub-commands]:
-  {add,dump-probes,make-probes}
-                        help
-    add                 adds a set of variants to the database
-    dump-probes         dump a probe set of variant alleles from VCFs stored
-                        in database
-    make-probes         make probes from a list of variants
+  --remove              Remove species instead of updating
 ```
 
+## mykrobe_variants_add
+
+### Tool Description
+Adds a set of variants to the database (a MongoDB server is required)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mykrobe:0.13.0--py38h59a8061_3
+- **Homepage**: https://github.com/Mykrobe-tools/mykrobe
+- **Package**: https://anaconda.org/channels/bioconda/packages/mykrobe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mykrobe variants add [-h] [--db_name db_name] [--db_uri db_uri] [-f]
+                            [-q] [-d] [-m METHOD]
+                            vcf reference_set
+
+positional arguments:
+  vcf                   a vcf file
+  reference_set         reference set
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --db_name db_name     db_name
+  --db_uri db_uri       e.g.: mongodb://admin:qwerty@localhost/db_name
+  -f, --force           Force override any skeleton files
+  -q, --quiet           Only output warnings/errors to stderr
+  -d, --debug           Output debugging information to stderr
+  -m METHOD, --method METHOD
+                        variant caller method (e.g. CORTEX)
+```
+
+## mykrobe_variants_dump-probes
+
+### Tool Description
+Dump a probe set of variant alleles from VCFs stored in the database (a MongoDB server is required). Probes are written to stdout in FASTA format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mykrobe:0.13.0--py38h59a8061_3
+- **Homepage**: https://github.com/Mykrobe-tools/mykrobe
+- **Package**: https://anaconda.org/channels/bioconda/packages/mykrobe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mykrobe variants dump-probes [-h] [--db_name db_name] [--db_uri db_uri]
+                                    [-f] [-q] [-d] [--kmer kmer] [-v]
+                                    reference_filepath
+
+positional arguments:
+  reference_filepath  reference_filepath
+
+optional arguments:
+  -h, --help          show this help message and exit
+  --db_name db_name   db_name
+  --db_uri db_uri     e.g.: mongodb://admin:qwerty@localhost/db_name
+  -f, --force         Force override any skeleton files
+  -q, --quiet         Only output warnings/errors to stderr
+  -d, --debug         Output debugging information to stderr
+  --kmer kmer         kmer length
+  -v, --verbose
+```
+
+## mykrobe_variants_make-probes
+
+### Tool Description
+Make probes from a list of variants. Probes are written to stdout in FASTA format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mykrobe:0.13.0--py38h59a8061_3
+- **Homepage**: https://github.com/Mykrobe-tools/mykrobe
+- **Package**: https://anaconda.org/channels/bioconda/packages/mykrobe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mykrobe variants make-probes [-h] [--db_name db_name] [--db_uri db_uri]
+                                    [-q] [-d] [-f VCF] [-v VARIANTS]
+                                    [-t TEXT_FILE] [-g GENBANK] [-k KMER]
+                                    [--no-backgrounds] [--lineage FILENAME]
+                                    reference_filepath
+
+positional arguments:
+  reference_filepath    reference_filepath
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --db_name db_name     db_name
+  --db_uri db_uri       e.g.: mongodb://admin:qwerty@localhost/db_name
+  -q, --quiet           Only output warnings/errors to stderr
+  -d, --debug           Output debugging information to stderr
+  -f VCF, --vcf VCF     Use variants defined in a VCF file
+  -v VARIANTS, --variants VARIANTS
+                        Variant in DNA positions e.g. A1234T
+  -t TEXT_FILE, --text_file TEXT_FILE
+                        Text file containing variants as rows A1234T
+  -g GENBANK, --genbank GENBANK
+                        Genbank file containing genes as features
+  -k KMER, --kmer KMER  kmer length
+  --no-backgrounds      Build probe set against reference only ignoring nearby
+                        variants
+  --lineage FILENAME    Write lineages to output file
+```
 
 ## Metadata
 - **Skill**: not generated

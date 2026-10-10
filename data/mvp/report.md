@@ -1,5 +1,11 @@
 # mvp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mvp | Failed | tool bug: --outfile is accepted but silently ignored (results only go to stdout, which the CWL captures); the main output is correct. |
+
 ## mvp
 
 ### Tool Description

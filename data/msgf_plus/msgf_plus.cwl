@@ -1,10 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
+  - msgf_plus
   - -Xmx3500M
-  - -jar
-  - MSGFPlus.jar
 label: msgf_plus
 doc: "MS-GF+ Release (v2024.03.26) (26 March 2024)\n\nTool homepage: https://msgfplus.github.io/"
 inputs:
@@ -253,10 +251,10 @@ inputs:
       prefix: -verbose
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: '*.mzid (Default: [SpectrumFileName].mzid)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:
@@ -267,6 +265,10 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.database_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msgf_plus:2024.03.26--hdfd78af_0

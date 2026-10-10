@@ -1,8 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanospring_NanoSpring
+baseCommand: NanoSpring
 label: nanospring_NanoSpring
-doc: "No input file specified\n\nTool homepage: https://github.com/qm2/NanoSpring"
+doc: "Compress or decompress Oxford Nanopore FASTQ reads.\n\nTool homepage: https://github.com/qm2/NanoSpring"
 inputs:
   - id: compress
     type:
@@ -42,9 +42,7 @@ inputs:
       position: 101
       prefix: --edge-thr
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input file name
     inputBinding:
       position: 101
@@ -121,9 +119,7 @@ inputs:
       prefix: --output-file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: output file name
     outputBinding:
       glob: $(inputs.output_file_path)

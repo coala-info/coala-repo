@@ -16,23 +16,27 @@ doc: "Run comparative analysis of two sequence sets using nucmer and its associa
   Tool homepage: https://mummer4.github.io/"
 inputs:
   - id: reference
-    type: File
-    secondaryFiles:
-      - .fai
+    type:
+      - 'null'
+      - File
     doc: Set the input reference multi-FASTA filename
     inputBinding:
-      position: 1
+      position: 201
   - id: query
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Set the input query multi-FASTA filename
     inputBinding:
-      position: 2
+      position: 202
   - id: delta_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Provide precomputed delta file for analysis
     inputBinding:
       position: 103
-      prefix: delta
+      prefix: --delta
   - id: output_prefix
     type:
       - 'null'
@@ -40,7 +44,7 @@ inputs:
     doc: Set the prefix of the output files
     inputBinding:
       position: 103
-      prefix: prefix
+      prefix: --prefix
 outputs:
   - id: stdout
     type: stdout

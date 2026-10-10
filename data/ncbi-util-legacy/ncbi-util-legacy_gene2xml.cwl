@@ -7,24 +7,24 @@ inputs:
   - id: combine_agc_to_binary_ags_then_gzip
     type:
       - 'null'
-      - boolean
-    doc: Combine .agc -> binary .ags, then gzip
+      - string
+    doc: Combine .agc -> binary .ags, then gzip (T or F)
     inputBinding:
       position: 101
       prefix: -z
   - id: combine_agc_to_text_ags_for_testing
     type:
       - 'null'
-      - boolean
-    doc: Combine .agc -> text .ags (for testing)
+      - string
+    doc: Combine .agc -> text .ags (for testing) (T or F)
     inputBinding:
       position: 101
       prefix: -y
   - id: extract_ags_to_text_agc
     type:
       - 'null'
-      - boolean
-    doc: Extract .ags -> text .agc
+      - string
+    doc: Extract .ags -> text .agc (T or F)
     inputBinding:
       position: 101
       prefix: -x
@@ -39,24 +39,24 @@ inputs:
   - id: is_binary
     type:
       - 'null'
-      - boolean
-    doc: File is Binary
+      - string
+    doc: File is Binary (T or F)
     inputBinding:
       position: 101
       prefix: -b
   - id: is_compressed
     type:
       - 'null'
-      - boolean
-    doc: File is Compressed
+      - string
+    doc: File is Compressed (T or F)
     inputBinding:
       position: 101
       prefix: -c
   - id: log_processing
     type:
       - 'null'
-      - boolean
-    doc: Log Processing
+      - string
+    doc: Log Processing (T or F)
     inputBinding:
       position: 101
       prefix: -l
@@ -109,6 +109,11 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        return inputs.path_for_results_path ? [{entryname: inputs.path_for_results_path, entry: {class: 'Directory', listing: []}, writable: true}] : [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbi-util-legacy:6.1--h0e27e84_3

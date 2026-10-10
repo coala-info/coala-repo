@@ -42,14 +42,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: -p
-  - id: show_version
-    type:
-      - 'null'
-      - boolean
-    doc: show program's version number and exit
-    inputBinding:
-      position: 102
-      prefix: -v
   - id: save_parse_tree_as_png_path
     type: string?
     doc: save the parse tree as a PNG image (pydot required!)
@@ -57,6 +49,9 @@ inputs:
       position: 103
       prefix: -i
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Parse result (standard output)
   - id: save_parse_tree_as_png
     type:
       - 'null'
@@ -69,3 +64,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mutalyzer_hgvs_parser:0.3.9--pyh7e72e81_0
+stdout: mutalyzer_hgvs_parser.out

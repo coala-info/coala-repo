@@ -26,9 +26,11 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: stats files written by stats (<prefix>_bp_aligned.tsv; default prefix is stats)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.prefix ? inputs.prefix : 'stats')*"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mwga-utils:0.1.6--h9948957_3

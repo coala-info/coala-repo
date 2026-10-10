@@ -20,17 +20,11 @@ inputs:
       position: 101
       prefix: --gtf
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: dir_index_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output index directory name
     outputBinding:
       glob: $(inputs.dir_index)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mudskipper:0.1.0--h7d875b9_0
-stdout: mudskipper_index.out

@@ -1,5 +1,20 @@
 # mvip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mvip_MVP_00_set_up_MVP | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+| mvip_MVP_01_run_genomad_checkv | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+| mvip_MVP_02_filter_genomad_checkv | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+| mvip_MVP_03_do_clustering | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+| mvip_MVP_04_do_read_mapping | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+| mvip_MVP_05_create_vOTU_table | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+| mvip_MVP_06_do_functional_annotation | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+| mvip_MVP_07_do_binning | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+| mvip_MVP_100_summarize_outputs | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+| mvip_MVP_99_prep_MIUViG_submission | Not completed | pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths |
+
 ## mvip_MVP_00_set_up_MVP
 
 ### Tool Description

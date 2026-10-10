@@ -15,7 +15,7 @@ inputs:
       sequence data, or the .delta output of the promer program, run on 
       divergent sequence data.
     inputBinding:
-      position: 1
+      position: 201
   - id: circular_reference
     type:
       - 'null'

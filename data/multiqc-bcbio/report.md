@@ -1,5 +1,11 @@
 # multiqc-bcbio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| multiqc-bcbio_multiqc | PASS |  |
+
 ## multiqc-bcbio_multiqc
 
 ### Tool Description

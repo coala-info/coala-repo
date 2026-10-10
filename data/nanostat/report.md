@@ -1,5 +1,11 @@
 # nanostat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanostat | PASS |  |
+
 ## nanostat
 
 ### Tool Description

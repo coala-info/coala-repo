@@ -1,5 +1,15 @@
 # ncbi-datasets-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| datasets_download_gene | PASS |  |
+| datasets_download_genome | PASS |  |
+| datasets_summary_gene | PASS |  |
+| datasets_summary_genome | PASS |  |
+| ncbi-datasets-cli_rehydrate | PASS |  |
+
 ## ncbi-datasets-cli_rehydrate
 
 ### Tool Description
@@ -30,127 +40,6 @@ Global Flags
       --debug            Emit debugging info
       --help             Print detailed help about a datasets command
       --version          Print version of datasets
-```
-
-## ncbi-datasets-cli_completion
-
-### Tool Description
-This sub-command generates files needed to enable auto-complete for several popular command-line interpreters.
-
-### Metadata
-- **Docker Image**: ensemblorg/datasets-cli:latest
-- **Homepage**: https://github.com/ncbi/datasets
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-This sub-command generates files needed to enable auto-complete for several popular command-line interpreters.
-
-When enabled, the command-line interpreter can automatically fill in subcommands and options.
-
-A good introduction of command-line completion is found on [wikipedia](https://en.wikipedia.org/wiki/Command-line_completion).
-
-Usage
-  datasets completion [command]
-
-Available Commands
-  bash        Generate bash autocompletion script
-  zsh         Generate zsh autocompletion script
-  fish        Generate fish autocompletion script
-  powershell  Generate powershell autocompletion script
-
-Global Flags
-      --api-key string   Specify an NCBI API key
-      --debug            Emit debugging info
-      --help             Print detailed help about a datasets command
-      --version          Print version of datasets
-
-Use datasets completion <command> --help for detailed help about a command.
-```
-
-## dataformat_tsv
-
-### Tool Description
-Convert data to TSV format.
-
-### Metadata
-- **Docker Image**: ensemblorg/datasets-cli:latest
-- **Homepage**: https://github.com/ncbi/datasets
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Convert data to TSV format.
-
-Refer to NCBI's [download and install](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/) documentation for information about getting started with the command-line tools.
-
-Usage
-  dataformat tsv [command]
-
-Report Commands
-  genome             Convert Genome Assembly Data Report into TSV format
-  genome-seq         Convert Genome Assembly Sequence Report into TSV format
-  gene               Convert Gene Report into TSV format
-  gene-product       Convert Gene Product Report into TSV format
-  virus-genome       Convert Virus Data Report into TSV format
-  virus-annotation   Convert Virus Annotation Report into TSV format
-  microbigge         Convert MicroBIGG-E Data Report into TSV format
-  prok-gene          Convert Prokaryote Gene Report into TSV format
-  prok-gene-location Convert Prokaryote Gene Location Report into TSV format
-  feature            Convert Feature Data Report into TSV format
-
-Flags
-      --elide-header   Do not output header
-  -h, --help           help for tsv
-
-Global Flags
-      --force   Force dataformat to run without type check prompt
-
-Use dataformat tsv <command> --help for detailed help about a command.
-```
-
-## dataformat_excel
-
-### Tool Description
-Convert data into an Excel workbook.
-
-### Metadata
-- **Docker Image**: ensemblorg/datasets-cli:latest
-- **Homepage**: https://github.com/ncbi/datasets
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Convert data into an Excel workbook.
-
-Refer to NCBI's [download and install](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/) documentation for information about getting started with the command-line tools.
-
-Usage
-  dataformat excel [command]
-
-Report Commands
-  genome             Convert Genome Assembly Data Report into an Excel workbook
-  genome-seq         Convert Genome Assembly Sequence Report into an Excel workbook
-  gene               Convert Gene Report into an Excel workbook
-  gene-product       Convert Gene Product Report into an Excel workbook
-  virus-genome       Convert Virus Data Report into an Excel workbook
-  virus-annotation   Convert Virus Annotation Report into an Excel workbook
-  microbigge         Convert MicroBIGG-E Data Report into an Excel workbook
-  prok-gene          Convert Prokaryote Gene Report into an Excel workbook
-  prok-gene-location Convert Prokaryote Gene Location Report into an Excel workbook
-  feature            Convert Feature Data Report into an Excel workbook
-
-Flags
-  -h, --help                help for excel
-      --outputfile string   Excel workbook file
-
-Global Flags
-      --force   Force dataformat to run without type check prompt
-
-Use dataformat excel <command> --help for detailed help about a command.
 ```
 
 ## Metadata
@@ -271,75 +160,6 @@ Global Flags
       --version          Print version of datasets
 
 Use datasets summary genome <command> --help for detailed help about a command.
-```
-
-## datasets_summary_virus
-
-### Tool Description
-Print a data report containing virus genome metadata by accession or taxon. The data report is returned in JSON format.
-
-### Metadata
-- **Docker Image**: ensemblorg/datasets-cli:latest
-- **Homepage**: https://github.com/ncbi/datasets
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Print a data report containing virus genome metadata by accession or taxon. The data report is returned in JSON format.
-
-Usage
-  datasets summary virus [flags]
-  datasets summary virus [command]
-
-Available Commands
-  genome      Print a data report containing virus genome metadata by accession or taxon
-
-Global Flags
-      --api-key string   Specify an NCBI API key
-      --debug            Emit debugging info
-      --help             Print detailed help about a datasets command
-      --version          Print version of datasets
-
-Use datasets summary virus <command> --help for detailed help about a command.
-```
-
-## datasets_download_virus
-
-### Tool Description
-Download a virus genome or SARS-CoV-2 protein data package as a zip file.
-
-### Metadata
-- **Docker Image**: ensemblorg/datasets-cli:latest
-- **Homepage**: https://github.com/ncbi/datasets
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Download a virus genome or SARS-CoV-2 protein data package as a zip file.
-
-Usage
-  datasets download virus [flags]
-  datasets download virus [command]
-
-Sample Commands
-  datasets download virus genome taxon sars-cov-2 --host dog
-  datasets download virus protein S --host dog --filename SARS2-spike-dog.zip
-
-Available Commands
-  genome      Download a virus genome dataset by accession or taxon
-  protein     Download a SARS-CoV-2 protein dataset by protein name
-
-Global Flags
-      --api-key string    Specify an NCBI API key
-      --debug             Emit debugging info
-      --filename string   Specify a custom file name for the downloaded data package (default "ncbi_dataset.zip")
-      --help              Print detailed help about a datasets command
-      --no-progressbar    Hide progress bar
-      --version           Print version of datasets
-
-Use datasets download virus <command> --help for detailed help about a command.
 ```
 
 ## datasets_download_gene

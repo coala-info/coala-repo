@@ -2,13 +2,11 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: namfinder
 label: namfinder
-doc: "namfinder 0.1.2\n\nTool homepage: https://github.com/ksahlin/namfinder"
+doc: "namfinder 0.1.2. The options --create-index, --use-index and the reads2 argument are not wrapped: in this version the source ignores them (single-end mode only, no index is written).\n\nTool homepage: https://github.com/ksahlin/namfinder"
 inputs:
   - id: reference
     type: File
     doc: Reference in FASTA format
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 1
   - id: reads1
@@ -18,13 +16,6 @@ inputs:
     doc: Reads 1 in FASTA or FASTQ format, optionally gzip compressed
     inputBinding:
       position: 2
-  - id: reads2
-    type:
-      - 'null'
-      - File
-    doc: Reads 2 in FASTA or FASTQ format, optionally gzip compressed
-    inputBinding:
-      position: 3
   - id: bitcount_length
     type:
       - 'null'
@@ -33,24 +24,15 @@ inputs:
     inputBinding:
       position: 104
       prefix: -c
-  - id: create_index
+  - id: index_statistics_path
     type:
       - 'null'
-      - boolean
-    doc: "Do not map reads; only generate the strobemer index and write it to\n  \
-      \                  disk. If read files are provided, they are used to estimate
-      read\n                    length"
-    inputBinding:
-      position: 104
-      prefix: --create-index
-  - id: index_statistics
-    type:
-      - 'null'
-      - File
+      - string
     doc: Print statistics of indexing to PATH
     inputBinding:
       position: 104
-      prefix: --index-statistics
+      prefix: --index-statistics=
+      separate: false
   - id: lower_syncmer_offset
     type:
       - 'null'
@@ -144,14 +126,6 @@ inputs:
     inputBinding:
       position: 104
       prefix: -u
-  - id: use_index
-    type:
-      - 'null'
-      - boolean
-    doc: Use a pre-generated index previously written with --create-index.
-    inputBinding:
-      position: 104
-      prefix: --use-index
   - id: verbose
     type:
       - 'null'
@@ -161,12 +135,24 @@ inputs:
       position: 104
       prefix: -v
   - id: output_file_path
-    type: string
-    doc: '[PATH]     redirect output to file [stdout]'
+    type:
+      - 'null'
+      - string
+    doc: redirect output to file [stdout]
     inputBinding:
       position: 105
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: NAMs (nucleotide anchored matches) when -o is not given
+  - id: index_statistics
+    type:
+      - 'null'
+      - File
+    doc: Statistics of indexing
+    outputBinding:
+      glob: $(inputs.index_statistics_path)
   - id: output_file
     type:
       - 'null'
@@ -179,3 +165,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/namfinder:0.1.3--h077b44d_2
+stdout: namfinder.out

@@ -12,7 +12,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --config
-  - id: path
+  - id: project_path
     type: Directory
     doc: The path to the project directory.
     inputBinding:

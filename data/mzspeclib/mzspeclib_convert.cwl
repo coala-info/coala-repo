@@ -13,11 +13,16 @@ inputs:
     doc: Input file path
     inputBinding:
       position: 1
+  - id: outpath
+    type: string
+    doc: Output file path or '-' for STDOUT
+    inputBinding:
+      position: 2
   - id: format
     type:
       - 'null'
       - string
-    doc: Output format
+    doc: Output format (text, json or msp)
     inputBinding:
       position: 102
       prefix: --format
@@ -43,20 +48,40 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: library_attribute_pair
         inputBinding:
           prefix: --library-attribute
-          separate: true
-    doc: Specify an attribute to add to the library metadata section. May be 
-      repeated.
+    doc: Specify an attribute (name and value) to add to the library metadata section.
+      May be repeated.
     inputBinding:
       position: 102
 outputs:
-  - id: outpath
-    type: File
-    doc: Output file path or '-' for STDOUT
+  - id: converted
+    type:
+      - 'null'
+      - File
+    doc: Converted library (not written when outpath is '-')
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outpath)
+  - id: stdout
+    type: stdout
+    doc: Library text when outpath is '-'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - name: library_attribute_pair
+        type: record
+        fields:
+          - name: attribute_name
+            type: string
+            inputBinding:
+              position: 1
+          - name: attribute_value
+            type: string
+            inputBinding:
+              position: 2
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mzspeclib:1.0.7--pyhdfd78af_0
+stdout: mzspeclib_convert.out

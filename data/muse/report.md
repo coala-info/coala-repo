@@ -1,5 +1,12 @@
 # muse CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| muse_MuSE_call | PASS | output equals the nf-core expected MuSE-call result for chr21 (data lines) |
+| muse_MuSE_sump | Not completed | runs with -D dbSNP (segfaults without it), but the only small real call file (24 sites) is too small for the model, so the VCF has no records |
+
 ## muse_MuSE_call
 
 ### Tool Description

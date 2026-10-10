@@ -1,5 +1,11 @@
 # nanospring CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanospring_NanoSpring | PASS |  |
+
 ## nanospring_NanoSpring
 
 ### Tool Description

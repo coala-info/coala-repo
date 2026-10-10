@@ -1,5 +1,11 @@
 # mutalyzer_hgvs_parser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mutalyzer_hgvs_parser | PASS |  |
+
 ## mutalyzer_hgvs_parser
 
 ### Tool Description

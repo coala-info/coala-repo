@@ -1,5 +1,11 @@
 # nanolyse CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanolyse_NanoLyse | PASS |  |
+
 ## nanolyse_NanoLyse
 
 ### Tool Description

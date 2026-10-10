@@ -1,5 +1,14 @@
 # msisensor-rna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msisensor-rna_detection | PASS |  |
+| msisensor-rna_genes | PASS | option --threads crashes inside the tool (thread count read as a list); default run works |
+| msisensor-rna_show | PASS |  |
+| msisensor-rna_train | PASS |  |
+
 ## msisensor-rna_genes
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # myloasm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| myloasm | PASS | ran on the repo 40kb plasmid test reads; one circular contig of 48 kb assembled |
+
 ## myloasm
 
 ### Tool Description

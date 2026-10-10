@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: nanocall
 label: nanocall
-doc: "Call bases in Oxford Nanopore reads.\n\nTool homepage: https://github.com/WGLab/NanoCaller"
+doc: "Call bases in Oxford Nanopore reads.\n\nTool homepage: https://github.com/mateidavid/nanocall"
 inputs:
   - id: input_path
     type:
@@ -11,7 +11,7 @@ inputs:
     doc: 'Inputs: directories, fast5 files, or files of fast5 file names (use "-"
       to read fofn from stdin).'
     inputBinding:
-      position: 1
+      position: 200
   - id: basecall
     type:
       - 'null'
@@ -52,23 +52,16 @@ inputs:
     inputBinding:
       position: 102
       prefix: --fasta-line-width
-  - id: ignore_rest
-    type:
-      - 'null'
-      - boolean
-    doc: Ignores the rest of the labeled arguments following this flag.
-    inputBinding:
-      position: 102
-      prefix: --
   - id: log
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --log
     doc: Log level.
     inputBinding:
       position: 102
-      prefix: --log
   - id: max_ed_events
     type:
       - 'null'
@@ -90,10 +83,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --model
     doc: Custom pore model for strand (0=template, 1=complement, 2=both).
     inputBinding:
       position: 102
-      prefix: --model
   - id: model_fofn
     type:
       - 'null'
@@ -289,6 +283,7 @@ inputs:
       prefix: --write-fast5
   - id: output_path
     type: string
+    doc: Output.
     inputBinding:
       position: 103
       prefix: --output
@@ -300,8 +295,12 @@ outputs:
     doc: Output.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_output
+    type: stderr
+    doc: Log messages
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanocall:v0.7.4--0
+stderr: nanocall.err

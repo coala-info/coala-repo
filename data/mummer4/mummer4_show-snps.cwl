@@ -10,7 +10,7 @@ inputs:
     doc: Input is the .delta output of either the nucmer or promer program 
       passed on the command line.
     inputBinding:
-      position: 1
+      position: 201
   - id: include_sequence_length
     type:
       - 'null'

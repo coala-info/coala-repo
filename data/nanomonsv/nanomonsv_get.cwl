@@ -14,14 +14,43 @@ inputs:
       position: 1
   - id: tumor_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Path to tumor alignment (BAM or CRAM) file
     inputBinding:
       position: 2
   - id: reference_fa
     type: File
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     doc: Path to the reference genome sequence
     inputBinding:
       position: 3
+  - id: tumor_parse_files
+    type:
+      type: array
+      items: File
+    doc: Output files of the parse step for the tumor sample (named
+      <tumor_prefix>.*.sorted.bed.gz/.bedpe.gz with their .tbi indexes)
+  - id: control_parse_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Output files of the parse step for the matched control (named
+      <control_prefix>.*), needed with control_prefix
+  - id: control_panel_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Output files of the merge_control step (named
+      <control_panel_prefix>.*), needed with control_panel_prefix
   - id: check_read_max_num
     type:
       - 'null'
@@ -43,6 +72,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Path to control alignment (BAM or CRAM) file
     inputBinding:
       position: 104
@@ -255,9 +289,24 @@ inputs:
       position: 104
       prefix: --var_read_min_mapq
 outputs:
+  - id: nanomonsv_results
+    type:
+      type: array
+      items: File
+    doc: Result files written as <tumor_prefix>.nanomonsv.* (result txt, vcf and
+      supporting read list)
+    outputBinding:
+      glob: $(inputs.tumor_prefix).nanomonsv.*
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.tumor_parse_files)
+      - entry: '$(inputs.control_parse_files ? inputs.control_parse_files : [])'
+      - entry: '$(inputs.control_panel_files ? inputs.control_panel_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanomonsv:0.8.1--pyhdfd78af_0

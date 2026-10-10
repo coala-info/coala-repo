@@ -11,7 +11,7 @@ inputs:
     doc: Input is the .delta output of either the "nucmer" or the "promer" 
       program passed on the command line.
     inputBinding:
-      position: 1
+      position: 201
   - id: annotate_maximal_alignments
     type:
       - 'null'

@@ -6,8 +6,8 @@ doc: "Sync your collection with the latest assembly versions or download the lat
   assembly summary and taxonomy dump.\n\nTool homepage: https://github.com/andrewsanchez/NCBITK"
 inputs:
   - id: genbank
-    type: string
-    doc: Genbank identifier
+    type: Directory
+    doc: Path of the genome collection directory (staged writable; holds .info/assembly_summary.txt)
     inputBinding:
       position: 1
   - id: species
@@ -67,9 +67,22 @@ inputs:
       position: 103
       prefix: --update-assembly
 outputs:
+  - id: collection
+    type: Directory
+    doc: The genome collection directory (with the .info resources and any downloaded genomes).
+    outputBinding:
+      glob: $(inputs.genbank.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genbank)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbitk:1.0a17--py_0

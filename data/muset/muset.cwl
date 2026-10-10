@@ -5,6 +5,12 @@ label: muset
 doc: "a pipeline for building an abundance unitig matrix from a list of FASTA/FASTQ
   files.\n\nTool homepage: https://github.com/CamilaDuitama/muset"
 inputs:
+  - id: sample_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Sequence files named in the kmtricks-like input file (--file). They are staged in the working directory, so the relative names in the file resolve
   - id: file
     type:
       - 'null'
@@ -90,7 +96,7 @@ inputs:
   - id: min_unitig_length
     type:
       - 'null'
-      - string
+      - int
     doc: minimum unitig length.
     inputBinding:
       position: 101
@@ -151,6 +157,8 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.sample_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/muset:0.5.1--h22625ea_0

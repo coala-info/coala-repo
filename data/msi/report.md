@@ -1,5 +1,11 @@
 # msi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msi | Not completed | pipeline, skipped (nanopore amplicon workflow script; baseCommand fixed from msi.sh to msi) |
+
 ## msi
 
 ### Tool Description

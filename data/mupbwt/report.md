@@ -1,5 +1,11 @@
 # mupbwt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mupbwt | PASS |  |
+
 ## mupbwt
 
 ### Tool Description

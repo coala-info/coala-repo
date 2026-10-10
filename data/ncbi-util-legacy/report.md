@@ -1,5 +1,13 @@
 # ncbi-util-legacy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ncbi-util-legacy_asntool | PASS |  |
+| ncbi-util-legacy_errhdr | PASS |  |
+| ncbi-util-legacy_gene2xml | PASS | Ran on the NCBI Retroviridae gene file (HIV-2 taxon, 9 genes as expected); the -c T option for gzip input crashes (cannot find zcat). |
+
 ## ncbi-util-legacy_asntool
 
 ### Tool Description

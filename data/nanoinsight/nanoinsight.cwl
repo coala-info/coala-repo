@@ -11,8 +11,8 @@ inputs:
     inputBinding:
       position: 1
   - id: work_directory
-    type: Directory
-    doc: path to work directory
+    type: string
+    doc: path to work directory (created by the tool if it does not exist)
     inputBinding:
       position: 2
   - id: insfa_path
@@ -27,8 +27,8 @@ inputs:
   - id: mafft_path
     type:
       - 'null'
-      - File
-    doc: specify path to 'mafft' executable
+      - string
+    doc: specify path to 'mafft' executable (path inside the container)
     inputBinding:
       position: 103
       prefix: --mafftpath
@@ -43,8 +43,8 @@ inputs:
   - id: repeatmasker_path
     type:
       - 'null'
-      - File
-    doc: specify path to 'RepeatMasker' executable
+      - string
+    doc: specify path to 'RepeatMasker' executable (path inside the container)
     inputBinding:
       position: 103
       prefix: --repmaskpath
@@ -72,6 +72,12 @@ inputs:
       position: 103
       prefix: --threads
 outputs:
+  - id: output_directory
+    type: Directory
+    doc: Work directory with the insertion consensus fasta and rm_output
+      (RepeatMasker) results
+    outputBinding:
+      glob: $(inputs.work_directory)
   - id: stdout
     type: stdout
     doc: Standard output

@@ -1,5 +1,11 @@
 # muspinsim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| muspinsim | PASS | repo examples: the fitting example finds g = 3.04 (expected 3.0); the F-mu-F example runs |
+
 ## muspinsim
 
 ### Tool Description

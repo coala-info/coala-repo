@@ -17,12 +17,16 @@ inputs:
       position: 1
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: the reads aligned to the genome assembly are in bam FILE
     inputBinding:
       position: 102
       prefix: --bam
   - id: genome_file
     type: File
+    secondaryFiles:
+      - .fai
     doc: the reference genome is in FILE
     inputBinding:
       position: 102
@@ -37,6 +41,11 @@ inputs:
       prefix: --progress
   - id: reads_file
     type: File
+    secondaryFiles:
+      - .index
+      - .index.fai
+      - .index.gzi
+      - .index.readdb
     doc: the ONT reads are in fasta FILE
     inputBinding:
       position: 102
@@ -65,10 +74,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window
+  - id: raw_ont_signal_directory
+    type:
+      type: array
+      items: Directory
+    doc: Directories with the raw ONT signal (fast5) files that were given to
+      nanopolish index. They are staged in the working directory under the
+      same names, so the relative fast5 paths stored in the reads index
+      (.index.readdb) resolve.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.raw_ont_signal_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanopolish:0.14.0--h773013f_3

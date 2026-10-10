@@ -206,11 +206,15 @@ inputs:
     type:
       - 'null'
       - string
+    default: results.tbl
     doc: 'The file where tabular output will be written [default: results.tbl]'
     inputBinding:
       position: 106
       prefix: --tbl-out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Pipeline summary and alignments (with -s or -x)
   - id: tbl_out
     type:
       - 'null'
@@ -237,3 +241,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nail:0.4.0--h4349ce8_1
+stdout: nail_search.out

@@ -1,5 +1,12 @@
 # mtgrasp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mtgrasp_mtgrasp.py | Not completed | pipeline, skipped |
+| mtgrasp_runmitos.py | PASS |  |
+
 ## mtgrasp_mtgrasp.py
 
 ### Tool Description

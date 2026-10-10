@@ -1,5 +1,11 @@
 # mummer2circos CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mummer2circos | Failed | tool bug: with two query genomes the second one is missing from the plot (one query works); added outputs for the PNG and SVG |
+
 ## mummer2circos
 
 ### Tool Description

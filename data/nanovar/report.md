@@ -1,5 +1,11 @@
 # nanovar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanovar | PASS |  |
+
 ## nanovar
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # mtbseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mtbseq_MTBseq | Not completed | pipeline, skipped |
+
 ## mtbseq_MTBseq
 
 ### Tool Description

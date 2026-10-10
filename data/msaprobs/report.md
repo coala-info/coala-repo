@@ -1,5 +1,11 @@
 # msaprobs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msaprobs | PASS |  |
+
 ## msaprobs
 
 ### Tool Description

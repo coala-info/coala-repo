@@ -1,5 +1,21 @@
 # nanopolish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanopolish_call-methylation | PASS | synthetic data: real nanopore reads and fast5 files with a read as draft reference; CpG calls at the 3 CG sites per read, all unmethylated as expected for PCR amplicon reads |
+| nanopolish_detect-polyi | Not completed | detect-polyi needs direct RNA reads and none are available; the CWL runs on DNA reads and reports NONE with NOREGION for all reads |
+| nanopolish_eventalign | PASS | synthetic data: real nf-core sarscov2 nanopore reads and fast5 files aligned to one of the reads used as draft reference; event table has plausible levels and 83 reads in summary |
+| nanopolish_fast5-check | Failed | tool bug: fast5-check crashes (std::out_of_range in substr) on single-read fast5 files that nanopolish index reads fine; multi-read fast5 not tested |
+| nanopolish_index | PASS | synthetic data: real nf-core sarscov2 nanopore reads with their fast5 files; index maps all 100 reads to the fast5 files (index staged with relative fast5 paths) |
+| nanopolish_methyltrain | Not completed | too little data: with 50 amplicon reads no k-mer reached the training threshold, so no model was trained (the command runs and writes summary and event tables) |
+| nanopolish_phase-reads | PASS | synthetic data: real nanopore reads with one planted heterozygous SNP; the read spanning the SNP carries the alt allele as in the reads |
+| nanopolish_polya | Not completed | polya needs direct RNA reads and none are available; the CWL runs on DNA reads and correctly reports NOREGION (no poly-A tail) for all reads |
+| nanopolish_scorereads | PASS | synthetic data: real nanopore reads and fast5 files against a read used as draft reference with the r9.4 6-mer model from the nanopolish repo; the spanning read gets a plausible score and calibration (only one read is printed) |
+| nanopolish_variants | PASS | synthetic data: real nf-core nanopore reads and fast5 files with a read as draft reference and one planted SNP; consensus mode recovers the planted base (--snps mode with this tiny depth gives no calls) |
+| nanopolish_vcf2fasta | PASS | synthetic data: VCF from nanopolish variants applied to the draft; the SNP and insertion appear in the output sequence |
+
 ## nanopolish_call-methylation
 
 ### Tool Description

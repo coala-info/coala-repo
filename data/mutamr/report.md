@@ -1,5 +1,11 @@
 # mutamr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mutamr_wgs | Failed | image problem: freebayes crashes (signal 11) inside mutamr, so no SNPs are called and the VCF holds only delly deletions |
+
 ## mutamr_wgs
 
 ### Tool Description

@@ -26,13 +26,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir
+  - id: lineages
     type:
-      - 'null'
-      - Directory
-    doc: Output file path
+      type: array
+      items: File
+    doc: Lineage table (csv.gz); named by --output, otherwise the default file written by the tool.
     outputBinding:
-      glob: $(inputs.output)
+      glob: "$(inputs.output ? [inputs.output] : ['ncbi_lineages_*.csv.gz'])"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbitax2lin:3.0.0--pyhdfd78af_0

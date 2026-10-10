@@ -5,6 +5,12 @@ label: muspinsim
 doc: MuSpinSim - A program designed to carry out spin dynamics calculations for 
   muon science experiments
 inputs:
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data files the input file loads by relative name (for example fitting data). They are staged in the working directory next to the input file
   - id: input_file
     type: File
     doc: Path to file specifying simulation input parameters. For formatting and
@@ -12,6 +18,7 @@ inputs:
       https://muon-spectroscopy-computational-project.github.io/muspinsim/input/.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: fit_report_path
     type:
       - 'null'
@@ -59,6 +66,8 @@ outputs:
     outputBinding:
       glob: $(inputs.out_dir)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing: $([inputs.input_file].concat(inputs.data_files || []))
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

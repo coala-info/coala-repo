@@ -8,7 +8,7 @@
 | gff3toddbj_genbank-to-ddbj | PASS | NCBI NC_045512.2 GenBank record converts to a DDBJ annotation with source and CDS entries |
 | gff3toddbj_gff3-to-ddbj | PASS | repo augustus golden test: output identical to the expected augustus.ann; FASTA now staged writable for its index |
 | gff3toddbj_list-products | Failed | tool bug: prints a generator object instead of the product list |
-| gff3toddbj_normalize-entry-names | PASS | synthetic data: one entry name in the repo augustus.ann changed to dbj\\\\|AB1\\\\|loc 4 is renamed to dbj:AB1:loc:4 |
+| gff3toddbj_normalize-entry-names | PASS | synthetic data: one entry name in the repo augustus.ann changed to dbj\|AB1\|loc 4 is renamed to dbj:AB1:loc:4 |
 | gff3toddbj_split-fasta | PASS | synthetic data: repo augustus GFF3 plus an appended FASTA block; split GFF3 equals the original and the FASTA is intact |
 
 ## gff3toddbj_gff3-to-ddbj

@@ -180,6 +180,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: circos_images
+    type:
+      type: array
+      items: File
+    doc: Circos plot images (PNG and SVG)
+    outputBinding:
+      glob:
+        - '*.png'
+        - '*.svg'
+  - id: circos_config
+    type:
+      - 'null'
+      - File
+    doc: Circos configuration file that can be edited and re-run
+    outputBinding:
+      glob: circos.config
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mummer2circos:1.4.2--pyhdfd78af_0

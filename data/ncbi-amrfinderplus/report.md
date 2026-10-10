@@ -1,5 +1,13 @@
 # ncbi-amrfinderplus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ncbi-amrfinderplus_amrfinder | PASS |  |
+| ncbi-amrfinderplus_amrfinder_index | PASS |  |
+| ncbi-amrfinderplus_amrfinder_update | PASS |  |
+
 ## ncbi-amrfinderplus_amrfinder
 
 ### Tool Description
@@ -107,3 +115,80 @@ UPDATES
     Subscribe to the amrfinder-announce mailing list for database and software update notifications: https://www.ncbi.nlm.nih.gov/mailman/listinfo/amrfinder-announce
 ```
 
+## ncbi-amrfinderplus_amrfinder_update
+
+### Tool Description
+Update the database for AMRFinder.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ncbi-amrfinderplus:4.2.7--hf69ffd2_0
+- **Homepage**: https://github.com/ncbi/amr
+- **Package**: https://anaconda.org/channels/bioconda/packages/ncbi-amrfinderplus/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Update the database for AMRFinder from https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/
+Requirement: the database directory contains subdirectories named by database versions.
+
+USAGE:   amrfinder_update [--database DATABASE_DIR] [--blast_bin BLAST_DIR] [--hmmer_bin HMMER_DIR] [--force_update] [--debug] [--log LOG] [--quiet]
+HELP:    amrfinder_update --help or amrfinder_update -h
+VERSION: amrfinder_update --version or amrfinder_update -v
+
+NAMED PARAMETERS
+-d DATABASE_DIR, --database DATABASE_DIR
+    Directory for all versions of AMRFinder databases
+    Default: /usr/local/bin/data
+--blast_bin BLAST_DIR
+    Directory for BLAST
+--hmmer_bin HMMER_DIR
+    Directory for HMMer
+--force_update
+    Force updating the AMRFinder database
+--debug
+    Integrity checks
+--log LOG
+    Error log file, appended, opened on application start
+-q, --quiet
+    Suppress messages to STDERR
+
+Temporary directory used is $TMPDIR or "/tmp"
+```
+
+## ncbi-amrfinderplus_amrfinder_index
+
+### Tool Description
+Index the database for AMRFinder.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ncbi-amrfinderplus:4.2.7--hf69ffd2_0
+- **Homepage**: https://github.com/ncbi/amr
+- **Package**: https://anaconda.org/channels/bioconda/packages/ncbi-amrfinderplus/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Index the database for AMRFinder
+
+USAGE:   amrfinder_index <DATABASE> [--blast_bin BLAST_DIR] [--hmmer_bin HMMER_DIR] [--debug] [--log LOG] [--quiet]
+HELP:    amrfinder_index --help or amrfinder_index -h
+VERSION: amrfinder_index --version or amrfinder_index -v
+
+POSITIONAL PARAMETERS
+<DATABASE>
+    Directory with AMRFinder database
+
+NAMED PARAMETERS
+--blast_bin BLAST_DIR
+    Directory for BLAST
+--hmmer_bin HMMER_DIR
+    Directory for HMMer
+--debug
+    Integrity checks
+--log LOG
+    Error log file, appended, opened on application start
+-q, --quiet
+    Suppress messages to STDERR
+
+Temporary directory used is $TMPDIR or "/tmp"
+```

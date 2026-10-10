@@ -5,12 +5,13 @@ label: nanolyse_NanoLyse
 doc: "Remove reads mapping to DNA CS. Reads fastq on stdin and writes to stdout.\n\
   \nTool homepage: https://github.com/wdecoster/NanoLyse"
 inputs:
+  - id: reads
+    type: File
+    doc: Reads in fastq format, read on standard input
   - id: reference
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Specify a fasta file against which to filter. Standard is DNA CS.
     inputBinding:
       position: 101
@@ -39,6 +40,9 @@ inputs:
       position: 103
       prefix: --summary_out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Fastq reads that do not map to the reference
   - id: summary_out
     type:
       - 'null'
@@ -55,6 +59,8 @@ outputs:
       glob: $(inputs.logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdin: $(inputs.reads.path)
+stdout: nanolyse_reads.fastq
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanolyse:1.2.1--pyhdfd78af_0

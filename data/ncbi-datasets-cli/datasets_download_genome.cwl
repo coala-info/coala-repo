@@ -9,6 +9,18 @@ doc: Download a genome data package. Genome data packages may include genome,
   transcript and protein sequences, annotation and one or more data reports. 
   Data packages are downloaded as a zip archive.
 inputs:
+  - id: subcommand
+    type: string
+    doc: "Subcommand: accession or taxon."
+    inputBinding:
+      position: 1
+  - id: query
+    type:
+      type: array
+      items: string
+    doc: "Assembly or BioProject accession(s), or taxon (NCBI Taxonomy ID, scientific or common name at any tax rank)."
+    inputBinding:
+      position: 2
   - id: annotated
     type:
       - 'null'
@@ -109,12 +121,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --search
     doc: 'Limit results to genomes with specified text in the searchable fields: species
       and infraspecies, assembly name and submitter. To search multiple strings, use
       the flag multiple times.'
-    inputBinding:
-      position: 101
-      prefix: --search
   - id: api_key
     type:
       - 'null'
@@ -132,7 +143,9 @@ inputs:
       position: 101
       prefix: --debug
   - id: filename
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Specify a custom file name for the downloaded data package
     inputBinding:
       position: 101
@@ -145,14 +158,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no-progressbar
-outputs:
-  - id: output_filename
+  - id: include
     type:
       - 'null'
-      - File
+      - string
+    doc: "Specify the data files to include (comma-separated): genome, rna, protein, cds, gff3, gtf, gbff, seq-report, none (default genome)."
+    inputBinding:
+      position: 103
+      prefix: --include
+  - id: assembly_version
+    type:
+      - 'null'
+      - string
+    doc: "Limit to latest assembly accession version or include all (latest + previous versions)."
+    inputBinding:
+      position: 103
+      prefix: --assembly-version
+  - id: exclude_multi_isolate
+    type:
+      - 'null'
+      - boolean
+    doc: "Exclude assemblies from multi-isolate projects."
+    inputBinding:
+      position: 103
+      prefix: --exclude-multi-isolate
+  - id: fast_zip_validation
+    type:
+      - 'null'
+      - boolean
+    doc: "Skip zip checksum validation after download."
+    inputBinding:
+      position: 103
+      prefix: --fast-zip-validation
+  - id: from_type
+    type:
+      - 'null'
+      - boolean
+    doc: "Only return records with type material."
+    inputBinding:
+      position: 103
+      prefix: --from-type
+outputs:
+  - id: output_filename
+    type: File
     doc: Specify a custom file name for the downloaded data package
     outputBinding:
-      glob: $(inputs.filename)
+      glob: "$(inputs.filename ? inputs.filename : 'ncbi_dataset.zip')"
 requirements:
   - class: InlineJavascriptRequirement
   - class: NetworkAccess

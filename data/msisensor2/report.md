@@ -1,5 +1,12 @@
 # msisensor2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msisensor2_msi | PASS | paired tumor/normal run matches expected sites; tumor-only toy BAM has no covered sites |
+| msisensor2_scan | PASS |  |
+
 ## msisensor2_scan
 
 ### Tool Description

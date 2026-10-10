@@ -1,5 +1,11 @@
 # mypy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mypy | PASS | fixed baseCommand to python3 -m mypy (image has no mypy script) and successCodes 0,1; clean mypy sample files give no errors, a file with 4 planted type errors reports all 4 |
+
 ## mypy
 
 ### Tool Description

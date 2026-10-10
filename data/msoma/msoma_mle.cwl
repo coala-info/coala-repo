@@ -19,18 +19,14 @@ inputs:
       position: 102
       prefix: --min-depth
   - id: alpha_beta_output_path
-    type:
-      - 'null'
-      - string
-    doc: Output file to write alpha and beta parameter
+    type: string
+    doc: Output file to write alpha and beta parameter estimates
     inputBinding:
       position: 103
       prefix: --ab
   - id: output_path_path
-    type:
-      - 'null'
-      - string
-    doc: Path to write p-value output file  [required]
+    type: string
+    doc: Path to write p-value output file
     inputBinding:
       position: 104
       prefix: --output

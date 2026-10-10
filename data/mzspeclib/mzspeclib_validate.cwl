@@ -33,7 +33,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: validation_log
+    type: stderr
+    doc: Validation messages (the tool writes warnings and errors to stderr)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mzspeclib:1.0.7--pyhdfd78af_0
 stdout: mzspeclib_validate.out
+stderr: mzspeclib_validate.err

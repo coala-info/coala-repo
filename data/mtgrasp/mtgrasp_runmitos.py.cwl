@@ -223,8 +223,9 @@ inputs:
   - id: refdir
     type:
       - 'null'
-      - Directory
-    doc: base directory containing the reference data
+      - string
+    default: /usr/local/bin/data/refseqs_mitos
+    doc: "base directory containing the reference data (default: the reference data shipped in the image)"
     inputBinding:
       position: 101
       prefix: --refdir
@@ -232,6 +233,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: refseq81m
     doc: directory containing the reference data (relative to --refdir)
     inputBinding:
       position: 101
@@ -279,6 +281,13 @@ outputs:
     doc: the directory where the output is written.
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtgrasp:1.1.8--py312h7e72e81_0

@@ -42,9 +42,11 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: wig files written by metrics (alignability.wig and identity.wig, with the prefix if given)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.prefix ? inputs.prefix : '')*.wig"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mwga-utils:0.1.6--h9948957_3

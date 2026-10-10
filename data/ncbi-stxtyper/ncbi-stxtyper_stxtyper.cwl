@@ -15,7 +15,7 @@ inputs:
   - id: blast_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for BLAST.
     inputBinding:
       position: 101
@@ -31,7 +31,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: Error log file, appended, opened on application start
     inputBinding:
       position: 101
@@ -94,6 +94,16 @@ inputs:
       position: 103
       prefix: --output
 outputs:
+  - id: report
+    type: stdout
+    doc: Report table (standard output; empty when --output is used).
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Error log file.
+    outputBinding:
+      glob: $(inputs.log)
   - id: output_file
     type:
       - 'null'
@@ -110,6 +120,7 @@ outputs:
       glob: $(inputs.nucleotide_fasta_out_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: stxtyper_report.tsv
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbi-stxtyper:1.0.45--h9948957_0

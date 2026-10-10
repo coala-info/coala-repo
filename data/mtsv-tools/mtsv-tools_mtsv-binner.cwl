@@ -13,13 +13,17 @@ inputs:
       position: 101
       prefix: --edit-rate
   - id: fasta
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path to FASTA reads.
     inputBinding:
       position: 101
       prefix: --fasta
   - id: fastq
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path to FASTQ reads.
     inputBinding:
       position: 101
@@ -34,7 +38,7 @@ inputs:
       position: 101
       prefix: --force-overwrite
   - id: index
-    type: Directory
+    type: File
     doc: Path to MG-index file.
     inputBinding:
       position: 101

@@ -12,7 +12,8 @@ inputs:
       items: File
     doc: Multiple input files of {} format
     inputBinding:
-      position: 1
+      position: 101
+      prefix: -i
   - id: dbfile
     type: File
     doc: Database lookup file
@@ -148,8 +149,21 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: dbfile_updated
+    type:
+      - 'null'
+      - File
+    doc: The lookup database file after the run
+    outputBinding:
+      glob: '$(inputs.dbfile ? inputs.dbfile.basename : "no_dbfile_given")'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.dbfile)
+        writable: true
+      - entry: '${ return inputs.output_directory_path ? {"class": "Directory", "basename": inputs.output_directory_path, "listing": []} : null; }'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msstitch:3.19--pyhdfd78af_0

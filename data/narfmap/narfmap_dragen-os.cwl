@@ -1,19 +1,9 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dragenos
+baseCommand: dragen-os
 label: narfmap_dragen-os
-doc: "Command line options:\n\nTool homepage: https://github.com/Emiller88/NARFMAP"
+doc: "DRAGEN-OS (NARFMAP) mapper/aligner: build a reference hash table or map reads to it.\n\nTool homepage: https://github.com/Emiller88/NARFMAP"
 inputs:
-  - id: reference
-    type: string
-    doc: reference
-    inputBinding:
-      position: 1
-  - id: base_calls
-    type: string
-    doc: base calls
-    inputBinding:
-      position: 2
   - id: bam_input
     type:
       - 'null'
@@ -429,9 +419,7 @@ inputs:
       position: 103
       prefix: --num-threads
   - id: output_directory
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output directory
     inputBinding:
       position: 103
@@ -648,20 +636,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_file_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_file_prefix
-    outputBinding:
-      glob: $(inputs.output_file_prefix)*
   - id: output_directory_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory
+    type: Directory
+    doc: Output directory (alignments, or the reference hash table when building).
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory)
+        entry: "$({class: 'Directory', listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/narfmap:1.4.2--h43eeafb_3

@@ -86,22 +86,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+  - id: out
     type:
       - 'null'
-      - File
+      - string
     doc: Single filename to use for the combined output.
+    inputBinding:
+      position: 103
+      prefix: --out
+outputs:
+  - id: downloaded_files
+    type:
+      type: array
+      items: File
+    doc: Downloaded sequence files (the combined output file, or one file per accession).
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.out ? [inputs.out] : ['*.gbk', '*.fa', '*.gff', '*.ft'])"
+  - id: stdout
+    type: stdout
+    doc: Standard output (URLs when --url is used, progress with --verbose).
+stdout: ncbi-acc-download.stdout.txt
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbi-acc-download:0.2.8--pyh5e36f6f_0

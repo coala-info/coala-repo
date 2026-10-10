@@ -18,6 +18,8 @@ inputs:
       prefix: --alternative-basecalls-bam
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: the reads aligned to the reference genome are in bam FILE
     inputBinding:
       position: 101
@@ -74,6 +76,8 @@ inputs:
       prefix: --fix-homopolymers
   - id: genome
     type: File
+    secondaryFiles:
+      - .fai
     doc: the reference genome is in FILE
     inputBinding:
       position: 101
@@ -173,6 +177,11 @@ inputs:
       prefix: --read-group
   - id: reads
     type: File
+    secondaryFiles:
+      - .index
+      - .index.fai
+      - .index.gzi
+      - .index.readdb
     doc: the ONT reads are in fasta FILE
     inputBinding:
       position: 101
@@ -215,6 +224,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --outfile
+  - id: raw_ont_signal_directory
+    type:
+      type: array
+      items: Directory
+    doc: Directories with the raw ONT signal (fast5) files that were given to
+      nanopolish index. They are staged in the working directory under the
+      same names, so the relative fast5 paths stored in the reads index
+      (.index.readdb) resolve.
+  - id: model_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: k-mer model files named in the models_fofn file. They are staged in
+      the working directory, so the names in the fofn resolve.
 outputs:
   - id: outfile
     type:
@@ -224,6 +248,10 @@ outputs:
     outputBinding:
       glob: $(inputs.outfile_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.raw_ont_signal_directory)
+      - entry: '$(inputs.model_files ? inputs.model_files : [])'
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

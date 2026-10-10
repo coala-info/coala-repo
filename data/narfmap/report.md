@@ -1,5 +1,11 @@
 # narfmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| narfmap_dragen-os | Failed | image problem: dragen-os builds the hash table but segfaults (exit 139) when mapping reads, for single and paired reads on SARS-CoV-2 and chr21 references |
+
 ## narfmap_dragen-os
 
 ### Tool Description

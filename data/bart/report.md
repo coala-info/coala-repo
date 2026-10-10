@@ -7,7 +7,7 @@
 | bart_avg | PASS | synthetic data (bart index 0..3): average is 1.5 as expected. |
 | bart_bench | PASS | synthetic data: one micro-benchmark ran; timing table and benchmark array written. |
 | bart_bitmask | PASS | synthetic data: dims 0 1 2 give bitmask 7 as expected. |
-| bart_cabs | PASS | synthetic data: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|3+4i\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\| gives 5 as expected. |
+| bart_cabs | PASS | synthetic data: \|3+4i\| gives 5 as expected. |
 | bart_caldir | PASS | synthetic data (BART coil phantom k-space): POCSENSE projection with the maps has NRMSE 0.02. |
 | bart_calmat | PASS | synthetic data (BART coil phantom): 361x288 matrix as expected, identical to a direct bart run. |
 | bart_carg | PASS | synthetic data: phase of 1i is pi/2 as expected. |
@@ -62,7 +62,7 @@
 | bart_reshape | PASS | synthetic data: BART test-flatten reshape step passes (NRMSE 0). |
 | bart_resize | PASS | synthetic data: centered zero-padding to 100x100 matches BART test-slice step (NRMSE 0). |
 | bart_rof | PASS | synthetic data (BART phantom plus noise): NRMSE to the clean phantom drops from 0.40 to 0.14. |
-| bart_rss | PASS | synthetic data (BART coils): equals sqrt(sum \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|c\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|^2) computed with fmac and spow (NRMSE 0). |
+| bart_rss | PASS | synthetic data (BART coils): equals sqrt(sum \|c\|^2) computed with fmac and spow (NRMSE 0). |
 | bart_sake | PASS | synthetic data (BART coil phantom, Poisson undersampled R=2): NRMSE to full k-space drops from 0.33 to 0.15. |
 | bart_saxpy | PASS | synthetic data: 2*1+1 gives 3 as expected. |
 | bart_scale | PASS | synthetic data (BART phantom): matches BART test-fft-basic scale step (NRMSE 0). |

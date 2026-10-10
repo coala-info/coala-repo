@@ -1,5 +1,11 @@
 # muset CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| muset | PASS | repo test set D1-D10 gives 26 unitigs, abundances split D1-D4 vs D5-D10 |
+
 ## muset
 
 ### Tool Description

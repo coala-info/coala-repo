@@ -11,8 +11,13 @@ inputs:
       type: array
       items: File
     doc: BAM/CRAM files
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
-      position: 1
+      position: 200
   - id: align_quality
     type:
       - 'null'
@@ -80,7 +85,7 @@ inputs:
   - id: heteroplasmy_level
     type:
       - 'null'
-      - string
+      - float
     doc: Minimum Heteroplasmy Level
     inputBinding:
       position: 102
@@ -102,25 +107,23 @@ inputs:
       position: 102
       prefix: --mode
   - id: output_file
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output (txt or vcf)
     inputBinding:
       position: 102
       prefix: --output
   - id: reference
-    type:
-      - 'null'
-      - string
-    doc: Reference
+    type: File
+    doc: Reference (FASTA with its .fai index beside it; mutserve cannot write the index into the read-only input folder)
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 102
       prefix: --reference
   - id: strand_bias
     type:
       - 'null'
-      - string
+      - float
     doc: Set Strand Bias
     inputBinding:
       position: 102
@@ -128,7 +131,7 @@ inputs:
   - id: threads
     type:
       - 'null'
-      - string
+      - int
     doc: Number of threads
     inputBinding:
       position: 102
@@ -161,6 +164,23 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: variants
+    type: File
+    doc: Variant calls (txt or vcf, as named by output_file)
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: extra_files
+    type:
+      type: array
+      items: File
+    doc: Further files written next to the variant file, such as the FASTA (--write-fasta) and raw (--write-raw) files
+    outputBinding:
+      glob:
+        - '*.fasta'
+        - '*_raw.txt'
+        - '*.raw.txt'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mutserve:2.0.3--hdfd78af_0

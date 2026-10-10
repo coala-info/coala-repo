@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - msisensor
+  - msisensor2
   - scan
 label: msisensor2_scan
 doc: "Scan for homopolymers and microsatellites in a reference genome.\n\nTool homepage:

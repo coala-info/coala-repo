@@ -8,6 +8,13 @@ label: datasets_summary_genome
 doc: Print a data report containing genome metadata. The data report is returned
   in JSON format.
 inputs:
+  - id: query
+    type:
+      type: array
+      items: string
+    doc: "Assembly or BioProject accession(s), or taxon (NCBI Taxonomy ID, scientific or common name at any tax rank)."
+    inputBinding:
+      position: 2
   - id: subcommand
     type:
       - 'null'
@@ -112,11 +119,10 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --search
     doc: 'Limit results to genomes with specified text in the searchable fields: species
       and infraspecies, assembly name and submitter'
-    inputBinding:
-      position: 102
-      prefix: --search
   - id: api_key
     type:
       - 'null'
@@ -133,6 +139,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --debug
+  - id: assembly_version
+    type:
+      - 'null'
+      - string
+    doc: "Limit to latest assembly accession version or include all (latest + previous versions)."
+    inputBinding:
+      position: 103
+      prefix: --assembly-version
+  - id: exclude_multi_isolate
+    type:
+      - 'null'
+      - boolean
+    doc: "Exclude assemblies from multi-isolate projects."
+    inputBinding:
+      position: 103
+      prefix: --exclude-multi-isolate
+  - id: from_type
+    type:
+      - 'null'
+      - boolean
+    doc: "Only return records with type material."
+    inputBinding:
+      position: 103
+      prefix: --from-type
 outputs:
   - id: stdout
     type: stdout

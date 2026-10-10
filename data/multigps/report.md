@@ -1,5 +1,11 @@
 # multigps CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| multigps | PASS |  |
+
 ## multigps
 
 ### Tool Description

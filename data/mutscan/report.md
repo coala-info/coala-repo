@@ -1,5 +1,11 @@
 # mutscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mutscan | PASS | repo testdata finds both planted edge mutations with --legacy; default mode finds none on this tiny set |
+
 ## mutscan
 
 ### Tool Description

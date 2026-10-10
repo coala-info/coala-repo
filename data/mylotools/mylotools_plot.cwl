@@ -48,7 +48,7 @@ inputs:
   - id: step_size
     type:
       - 'null'
-      - string
+      - int
     doc: Step size for the sliding window
     inputBinding:
       position: 102
@@ -63,7 +63,7 @@ inputs:
       prefix: --window-size
   - id: output_path
     type: string
-    doc: Output directory for report files
+    doc: Output HTML file name (the tool creates a folder with this name and writes <contig>_analysis.html inside it)
     inputBinding:
       position: 103
       prefix: --output
@@ -72,7 +72,7 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: Output HTML file name
+    doc: Output folder holding the interactive plot (<contig>_analysis.html)
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

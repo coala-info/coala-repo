@@ -10,17 +10,15 @@ inputs:
   - id: reference
     type: File
     doc: Reference FASTA file
-    secondaryFiles:
-      - .fai
     inputBinding:
-      position: 1
+      position: 201
   - id: query
     type:
       type: array
       items: File
     doc: Query FASTA file(s)
     inputBinding:
-      position: 2
+      position: 202
   - id: batch_bases
     type:
       - 'null'
@@ -210,7 +208,7 @@ outputs:
       - File
     doc: Output delta file to PATH (instead of PREFIX.delta)
     outputBinding:
-      glob: $(inputs.delta_file_path)
+      glob: $(inputs.delta_file_path || (inputs.prefix || 'out') + '.delta')
   - id: sam_short_file
     type:
       - 'null'

@@ -1,9 +1,16 @@
 # mtb-snp-it CWL Generation Report
 
-## mtb-snp-it
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mtb-snp-it_snpit-run.py | PASS |  |
+
+
+## mtb-snp-it_snpit-run.py
 
 ### Tool Description
-A tool to identify the lineage of Mycobacterium tuberculosis isolates from VCF files.
+Reports the species and lineage of a Mycobacterium tuberculosis complex sample from a VCF or FASTA file aligned to NC_000962 (H37Rv).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mtb-snp-it:1.1--py_0
@@ -11,27 +18,12 @@ A tool to identify the lineage of Mycobacterium tuberculosis isolates from VCF f
 - **Package**: https://anaconda.org/channels/bioconda/packages/mtb-snp-it/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/mtb-snp-it/overview
-- **Total Downloads**: 6.1K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/samlipworth/snpit
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/mtb-snp-it:1.1--py_0' locally
-1.1--py_0: Pulling from biocontainers/mtb-snp-it
-4f4fb700ef54: Already exists
-b0dc45cd432d: Already exists
-9466b3513669: Already exists
-ddd482ea7b54: Already exists
-7ff999a2256f: Already exists
-e7c454e5167d: Already exists
-dfda3e01f2b6: Already exists
-4f4fb700ef54: Already exists
-10c3bb32200b: Already exists
-e7e0f5796615: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob3596273231: no space left on device
+usage: snpit-run.py [-h] --input INPUT
 
-Run 'docker run --help' for more information
+optional arguments:
+  -h, --help     show this help message and exit
+  --input INPUT  the path to the VCF or FASTA file to read and classify
+                 (either can be bzip2ed/gzipped)
 ```
-

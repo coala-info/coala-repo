@@ -317,6 +317,9 @@ inputs:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Prediction table (csv by default) when --output is not given
   - id: dump_species_covgs
     type:
       - 'null'
@@ -336,3 +339,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mykrobe:0.13.0--py38h59a8061_3
+stdout: mykrobe_predict.out

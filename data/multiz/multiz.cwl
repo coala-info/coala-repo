@@ -1,86 +1,91 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: multiz.v11.2
+baseCommand: multiz
 label: multiz
-doc: "aligning two files of alignment blocks where top rows are always the reference,
-  reference in both files cannot have duplicats\n\nTool homepage: http://www.bx.psu.edu/miller_lab/"
+doc: "multiz: aligning two files of alignment blocks where top rows are always the
+  reference, reference in both files cannot have duplicates. Usage: multiz [R=?] [M=?]
+  file1 file2 v? [out1 out2] [nohead] [all]. The alignment goes to standard output.\n\nTool
+  homepage: http://www.bx.psu.edu/miller_lab/"
 inputs:
-  - id: file1
-    type: File
-    doc: First alignment block file
-    inputBinding:
-      position: 1
-  - id: file2
-    type: File
-    doc: Second alignment block file
-    inputBinding:
-      position: 2
-  - id: all_blocks
-    type:
-      - 'null'
-      - boolean
-    doc: Output all blocks, including single-row blocks
-    inputBinding:
-      position: 103
-  - id: minimum_output_width
-    type:
-      - 'null'
-      - int
-    doc: minimum output width.
-    inputBinding:
-      position: 103
-      prefix: -M
-  - id: no_header
-    type:
-      - 'null'
-      - boolean
-    doc: Do not output MAF header
-    inputBinding:
-      position: 103
   - id: radius
     type:
       - 'null'
       - int
-    doc: radius in dynamic programming.
+    doc: R, radius in dynamic programming (default 30).
     inputBinding:
-      position: 103
-      prefix: -R
-  - id: verbose
+      position: 1
+      prefix: R=
+      separate: false
+  - id: minimum_output_width
     type:
       - 'null'
-      - boolean
-    doc: Verbose output flag
+      - int
+    doc: M, minimum output width (default 1).
     inputBinding:
-      position: 103
+      position: 2
+      prefix: M=
+      separate: false
+  - id: file1
+    type: File
+    doc: First alignment block file (MAF)
+    inputBinding:
+      position: 3
+  - id: file2
+    type: File
+    doc: Second alignment block file (MAF)
+    inputBinding:
+      position: 4
+  - id: v
+    type: int
+    doc: The v argument, 0 or 1. It selects the way the alignment step is used.
+    inputBinding:
+      position: 5
   - id: out1_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out1_path`
+    doc: File name for collecting unused input from file1 (give together with out2_path)
     inputBinding:
-      position: 104
-      prefix: --out1
+      position: 6
   - id: out2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `out2_path`
+    doc: File name for collecting unused input from file2 (give together with out1_path)
     inputBinding:
-      position: 105
-      prefix: --out2
+      position: 7
+  - id: no_header
+    type:
+      - 'null'
+      - boolean
+    doc: Do not output the MAF header (nohead)
+    inputBinding:
+      position: 8
+      valueFrom: "$(self ? 'nohead' : null)"
+  - id: all_blocks
+    type:
+      - 'null'
+      - boolean
+    doc: Output all blocks, including single-row blocks (all)
+    inputBinding:
+      position: 9
+      valueFrom: "$(self ? 'all' : null)"
 outputs:
+  - id: alignment
+    type: stdout
+    doc: Merged MAF alignment (standard output)
   - id: out1
     type:
       - 'null'
       - File
-    doc: File name for collecting unused input from file1
+    doc: Unused input from file1
     outputBinding:
       glob: $(inputs.out1_path)
   - id: out2
     type:
       - 'null'
       - File
-    doc: File name for collecting unused input from file2
+    doc: Unused input from file2
     outputBinding:
       glob: $(inputs.out2_path)
 requirements:
@@ -88,3 +93,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/multiz:11.2--hec16e2b_3
+stdout: multiz.maf

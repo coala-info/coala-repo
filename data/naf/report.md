@@ -1,5 +1,12 @@
 # naf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| naf_ennaf | PASS | made output optional (-c to stdout also works); compressed real SARS-CoV-2 FASTA and nanopore FASTQ; decompressed copies are identical |
+| naf_unnaf | PASS | fixed output flag (-o, not --output-file) and removed an invented string argument; FASTA and FASTQ round trips identical, --title works |
+
 ## naf_ennaf
 
 ### Tool Description

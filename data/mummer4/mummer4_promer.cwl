@@ -11,16 +11,14 @@ doc: "promer generates amino acid alignments between two mutli-FASTA DNA input f
 inputs:
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Set the input reference multi-FASTA DNA file
     inputBinding:
-      position: 1
+      position: 201
   - id: query
     type: File
     doc: Set the input query multi-FASTA DNA file
     inputBinding:
-      position: 2
+      position: 202
   - id: breaklen
     type:
       - 'null'
@@ -202,6 +200,8 @@ outputs:
     doc: Files written with the prefix given in prefix
     outputBinding:
       glob: $(inputs.prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0

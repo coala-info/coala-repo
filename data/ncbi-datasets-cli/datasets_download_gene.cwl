@@ -15,7 +15,9 @@ inputs:
     inputBinding:
       position: 1
   - id: query
-    type: string
+    type:
+      type: array
+      items: string
     doc: The identifier for the subcommand (e.g., Gene ID, symbol, accession, or
       taxon name)
     inputBinding:
@@ -62,7 +64,9 @@ inputs:
       position: 103
       prefix: --debug
   - id: filename
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Specify a custom file name for the downloaded data package
     inputBinding:
       position: 103
@@ -75,14 +79,28 @@ inputs:
     inputBinding:
       position: 103
       prefix: --no-progressbar
-outputs:
-  - id: output_filename
+  - id: include
     type:
       - 'null'
-      - File
+      - string
+    doc: "Specify the data files to include (comma-separated): gene, rna, protein, cds, 5p-utr, 3p-utr, product-report, none (default rna,protein)."
+    inputBinding:
+      position: 103
+      prefix: --include
+  - id: taxon
+    type:
+      - 'null'
+      - string
+    doc: "Taxon (NCBI Taxonomy ID, scientific or common name) to limit a gene symbol search."
+    inputBinding:
+      position: 103
+      prefix: --taxon
+outputs:
+  - id: output_filename
+    type: File
     doc: Specify a custom file name for the downloaded data package
     outputBinding:
-      glob: $(inputs.filename)
+      glob: "$(inputs.filename ? inputs.filename : 'ncbi_dataset.zip')"
 requirements:
   - class: InlineJavascriptRequirement
   - class: NetworkAccess

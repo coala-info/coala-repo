@@ -56,7 +56,7 @@ inputs:
     doc: Generate an AI summary of the report
     inputBinding:
       position: 102
-      prefix: --ai,--ai-summary
+      prefix: --ai-summary
   - id: ai_summary_full
     type:
       - 'null'

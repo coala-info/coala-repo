@@ -25,11 +25,9 @@ inputs:
       position: 102
       prefix: --config
   - id: fasta
-    type:
-      - 'null'
-      - File
-    doc: Path to FASTA query file produced by readprep. Avoid moving or renaming
-      this file after it is made, required metadata is stored with this file.
+    type: string
+    default: QueryFastas/queries.fasta
+    doc: Path to FASTA query file produced by readprep, relative to the working directory. Avoid moving or renaming this file after it is made, required metadata is stored with this file.
     inputBinding:
       position: 102
       prefix: --fasta
@@ -44,7 +42,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Set log file path, absolute or relative to working dir.
     inputBinding:
       position: 102
@@ -68,18 +66,23 @@ inputs:
       position: 102
       prefix: --trim_mode
   - id: working_dir
-    type:
-      - 'null'
-      - string
-    doc: Specify working directory to place output.
+    type: string
+    default: .
+    doc: Specify working directory to place output (the tool default is /tmp, so keep this at . to collect the results).
     inputBinding:
       position: 102
       prefix: --wd
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: query_fasta
+    type: File
+    doc: Deduplicated query FASTA file (reads cut into segments)
+    outputBinding:
+      glob: $(inputs.fasta)
+  - id: report
+    type: ['null', File]
+    doc: Readprep report
+    outputBinding:
+      glob: Reports/readprep_report.html
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtsv:1.0.6--py36hf1ae8f4_2
-stdout: mtsv_readprep.out

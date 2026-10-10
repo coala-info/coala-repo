@@ -44,9 +44,7 @@ inputs:
       prefix: --sequence-type
   - id: outfile_path
     type: string
-    inputBinding:
-      position: 103
-      prefix: --outfile
+    doc: name of the results table (mvp ignores --outfile and prints to stdout, so stdout is captured here)
 outputs:
   - id: outfile
     type:
@@ -55,6 +53,7 @@ outputs:
     doc: results table
     outputBinding:
       glob: $(inputs.outfile_path)
+stdout: $(inputs.outfile_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

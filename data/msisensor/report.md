@@ -1,5 +1,12 @@
 # msisensor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msisensor_msi | PASS |  |
+| msisensor_scan | Failed | image problem: msisensor scan segfaults (exit 139) on every FASTA tried, including a 130 bp one |
+
 ## msisensor_scan
 
 ### Tool Description
@@ -76,28 +83,4 @@ Usage:  msisensor msi [options]
 
 ## Metadata
 - **Skill**: not generated
-
-## msisensor
-
-### Tool Description
-homopolymer and miscrosatelite analysis using bam files
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/msisensor:0.5--hc755212_3
-- **Homepage**: https://github.com/ding-lab/msisensor
-- **Package**: https://anaconda.org/channels/bioconda/packages/msisensor/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-Program: msisensor (homopolymer and miscrosatelite analysis using bam files)
-Version: v0.5
-Author: Beifang Niu && Kai Ye
-
-Usage:   msisensor <command> [options]
-
-Key commands:
-
- scan            scan homopolymers and miscrosatelites
- msi             msi scoring
-```
 

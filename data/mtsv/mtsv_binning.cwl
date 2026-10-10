@@ -6,6 +6,9 @@ baseCommand:
 label: mtsv_binning
 doc: "Additional Snakemake commands may also be provided\n\nTool homepage: https://github.com/FofanovLab/MTSv"
 inputs:
+  - id: index_files
+    type: File[]
+    doc: Index files (built with mtsv-build) named in the fm-index-paths of the database configuration JSON (staged in the working directory)
   - id: binning_mode
     type:
       - 'null'
@@ -29,9 +32,7 @@ inputs:
       position: 101
       prefix: --config
   - id: database_config
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to sequence database configuration json.
     inputBinding:
       position: 101
@@ -45,9 +46,7 @@ inputs:
       position: 101
       prefix: --edits
   - id: fasta
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to FASTA query file produced by readprep.
     inputBinding:
       position: 101
@@ -55,7 +54,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Set log file path, absolute or relative to working dir.
     inputBinding:
       position: 101
@@ -95,39 +94,32 @@ inputs:
       position: 101
       prefix: --threads
   - id: working_dir
-    type:
-      - 'null'
-      - string
-    doc: Specify working directory to place output.
+    type: string
+    default: .
+    doc: Specify working directory to place output (the tool default is /tmp, so keep this at . to collect the results).
     inputBinding:
       position: 101
       prefix: --working_dir
   - id: binning_outpath_path
-    type:
-      - 'null'
-      - string
+    type: string
+    default: Binning
     inputBinding:
       position: 102
       prefix: --binning_outpath
   - id: merge_file_path
-    type:
-      - 'null'
-      - string
+    type: string
+    default: Binning/merged.clp
     inputBinding:
       position: 103
       prefix: --merge_file
 outputs:
   - id: binning_outpath
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to write binning files to.
     outputBinding:
       glob: $(inputs.binning_outpath_path)
   - id: merge_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Merged binning output file. (WARNING avoid moving output files from 
       their original directory, downstream processes rely on meta data (.params 
       file) in directory)
@@ -135,6 +127,8 @@ outputs:
       glob: $(inputs.merge_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtsv:1.0.6--py36hf1ae8f4_2

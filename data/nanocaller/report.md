@@ -1,5 +1,11 @@
 # nanocaller CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanocaller | PASS | rewrote the CWL from the real help (command is NanoCaller, flags use two dashes); ran on nf-core ONT BAM (chr22 slice, 13x); 58 SNPs called, all 50 strong pileup alt sites found; --mode all with the phased BAM also runs |
+
 ## nanocaller
 
 ### Tool Description

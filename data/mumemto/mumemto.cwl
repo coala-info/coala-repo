@@ -49,7 +49,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Include the reverse complement of the sequences
+    doc: Do not include the reverse complement of the sequences (--no-revcomp)
     inputBinding:
       position: 102
       prefix: --no-revcomp
@@ -170,7 +170,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_prefix).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mumemto:1.3.4--py310h275bdba_0

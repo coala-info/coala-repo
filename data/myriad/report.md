@@ -1,5 +1,11 @@
 # myriad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| myriad | PASS | server-client demo ran and returned exp(i) for 10 items correctly; --client mode needs a separate server and was not run |
+
 ## myriad
 
 ### Tool Description

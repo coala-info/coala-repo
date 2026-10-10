@@ -9,7 +9,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Compression level for gzipped output (0-9)
+    doc: Compression level to use if compressing output (1-9)
     inputBinding:
       position: 101
       prefix: --compress-level
@@ -17,7 +17,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: 'Input fastq[.gz] file [default: stdin]'
+    doc: 'Fast{a,q}.{gz,xz,bz} input file [default: stdin]'
     inputBinding:
       position: 101
       prefix: --input
@@ -53,19 +53,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --stats
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads
-    inputBinding:
-      position: 101
-      prefix: --threads
   - id: top
     type:
       - 'null'
       - int
-    doc: Filter the top N reads by length
+    doc: Number of top reads in verbose summary
     inputBinding:
       position: 101
       prefix: --top
@@ -77,11 +69,83 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: fast
+    type:
+      - 'null'
+      - boolean
+    doc: Ignore quality values if present
+    inputBinding:
+      position: 101
+      prefix: --fast
+  - id: header
+    type:
+      - 'null'
+      - boolean
+    doc: Header for summary output
+    inputBinding:
+      position: 101
+      prefix: --header
+  - id: json
+    type:
+      - 'null'
+      - boolean
+    doc: Summary report in JSON format
+    inputBinding:
+      position: 101
+      prefix: --json
+  - id: max_qual
+    type:
+      - 'null'
+      - float
+    doc: Maximum average read quality filter (Q)
+    inputBinding:
+      position: 101
+      prefix: --max-qual
+  - id: output_type
+    type:
+      - 'null'
+      - string
+    doc: 'Output compression type (u: uncompressed; b: Bzip2; g: Gzip; l: Lzma)'
+    inputBinding:
+      position: 101
+      prefix: --output-type
+  - id: trim_end
+    type:
+      - 'null'
+      - int
+    doc: Trim bases from end of each read
+    inputBinding:
+      position: 101
+      prefix: --trim-end
+  - id: trim_start
+    type:
+      - 'null'
+      - int
+    doc: Trim bases from start of each read
+    inputBinding:
+      position: 101
+      prefix: --trim-start
+  - id: read_lengths_path
+    type:
+      - 'null'
+      - string
+    doc: Read lengths output file
+    inputBinding:
+      position: 104
+      prefix: --read-lengths
+  - id: read_qualities_path
+    type:
+      - 'null'
+      - string
+    doc: Read qualities output file
+    inputBinding:
+      position: 105
+      prefix: --read-qualities
   - id: output_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_path`
+    doc: 'Output filepath, stdout if not present'
     inputBinding:
       position: 102
       prefix: --output
@@ -89,11 +153,28 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `report_path`
+    doc: Summary report output file
     inputBinding:
       position: 103
       prefix: --report
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Filtered reads or the summary report when no output file is given
+  - id: read_lengths
+    type:
+      - 'null'
+      - File
+    doc: Read lengths output file
+    outputBinding:
+      glob: $(inputs.read_lengths_path)
+  - id: read_qualities
+    type:
+      - 'null'
+      - File
+    doc: Read qualities output file
+    outputBinding:
+      glob: $(inputs.read_qualities_path)
   - id: output
     type:
       - 'null'
@@ -113,3 +194,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanoq:0.10.0--hc1c3326_4
+stdout: nanoq.out

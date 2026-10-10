@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: msi.sh
+baseCommand: msi
 label: msi
 doc: "MSI_DIR variable not set. Setting it to /usr/local\nonly -i or -c are mandatory.\n\
   \nTool homepage: http://github.com/nunofonseca/msi/"

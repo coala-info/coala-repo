@@ -1,5 +1,13 @@
 # nanomotif CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanomotif_detect_contamination | PASS | synthetic data: real geobacillus contigs duplicated 5 times (as in the tool's own test) to give enough contigs; output files are valid and methylation values are plausible, no contamination found as expected |
+| nanomotif_include_contigs | PASS | synthetic data: real geobacillus contigs duplicated into two bins (as in the tool's own test); the unbinned copies were assigned to the right bins |
+| nanomotif_motif_discovery | PASS |  |
+
 ## nanomotif_motif_discovery
 
 ### Tool Description
@@ -208,30 +216,6 @@ Mandatory Arguments:
   --contig_bins CONTIG_BINS
                         Path to bins.tsv file for contig bins
   --out OUT             Path to output directory
-```
-
-## nanomotif_MTase-linker
-
-### Tool Description
-MTase-linker commands
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nanomotif:1.1.2--pyhdfd78af_0
-- **Homepage**: https://pypi.org/project/nanomotif/
-- **Package**: https://anaconda.org/channels/bioconda/packages/nanomotif/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: nanomotif MTase-linker [-h] {run,install} ...
-
-options:
-  -h, --help     show this help message and exit
-
-MTase-linker commands:
-  {run,install}
-    run          Run the MTase-linker workflow
-    install      Install additional dependencies for MTase-linker
 ```
 
 ## Metadata

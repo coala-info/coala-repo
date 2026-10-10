@@ -1,5 +1,11 @@
 # nail CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nail_search | PASS | ran on the repo fixtures (GPCR 7tm_1 query vs 400 proteins), FASTA and HMM queries; 92 hits with E-values down to 1e-53, alignments and seeds written |
+
 ## nail_search
 
 ### Tool Description

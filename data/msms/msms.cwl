@@ -15,7 +15,7 @@ inputs:
   - id: area_file
     type:
       - 'null'
-      - File
+      - string
     doc: area file
     inputBinding:
       position: 101
@@ -151,21 +151,41 @@ inputs:
       position: 101
       prefix: -xdr
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: output for triangulated surface (writes <name>.vert and <name>.face)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -of
 outputs:
-  - id: output_file
+  - id: vertex_file
     type:
       - 'null'
       - File
-    doc: output for triangulated surface
+    doc: triangulated surface vertices
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).vert
+  - id: face_file
+    type:
+      - 'null'
+      - File
+    doc: triangulated surface faces
+    outputBinding:
+      glob: $(inputs.output_file_path).face
+  - id: area_output
+    type:
+      - 'null'
+      - File
+    doc: area file
+    outputBinding:
+      glob: $(inputs.area_file)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msms:2.6.1--h9ee0642_3
+stdout: msms.out

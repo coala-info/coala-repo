@@ -1,5 +1,11 @@
 # mugsy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mugsy | Failed | image problem: the image has no libstdc++.so.6, so the MUMmer programs delta-filter and delta2maf cannot start and the MAF alignment is empty |
+
 ## mugsy
 
 ### Tool Description

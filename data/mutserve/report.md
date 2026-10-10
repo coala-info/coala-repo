@@ -1,5 +1,11 @@
 # mutserve CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mutserve_call | PASS | repo test BAM HG03478: the FASTA equals the expected one except the blacklisted site 3107 (N expected, T written); BAM and reference indexes must be supplied |
+
 ## mutserve_call
 
 ### Tool Description

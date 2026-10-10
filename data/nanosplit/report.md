@@ -1,5 +1,11 @@
 # nanosplit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanosplit_NanoSplit | PASS |  |
+
 ## nanosplit_NanoSplit
 
 ### Tool Description

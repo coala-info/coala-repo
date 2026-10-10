@@ -1,5 +1,11 @@
 # mummer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mummer | Failed | image problem: in mummer 3.23, -mum and -mumreference (the default) segfault or print no matches; only -maxmatch works |
+
 ## mummer
 
 ### Tool Description

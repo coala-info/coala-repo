@@ -1,5 +1,25 @@
 # mummer4 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mummer4_annotate | Not completed | no usable gap file and data file pair found; the gap file from mgaps is rejected (it asks for a file name) |
+| mummer4_combineMUMs | PASS |  |
+| mummer4_delta-filter | PASS |  |
+| mummer4_dnadiff | PASS |  |
+| mummer4_exact-tandems | PASS |  |
+| mummer4_mummer | PASS |  |
+| mummer4_mummerplot | Failed | image problem: gnuplot is not in the image, so no plot is rendered (only the .gp and plot data files are written) |
+| mummer4_nucmer | PASS |  |
+| mummer4_promer | Failed | image problem: the promer script has unreplaced @LIBEXEC_DIR and @BIN_DIR paths, so it cannot find its helper programs |
+| mummer4_repeat-match | PASS |  |
+| mummer4_show-aligns | Not completed | the delta file stores absolute FASTA paths that do not exist in a separate CWL run; works only when the sequences sit at those paths |
+| mummer4_show-coords | PASS |  |
+| mummer4_show-diff | PASS |  |
+| mummer4_show-snps | Not completed | the delta file stores absolute FASTA paths that do not exist in a separate CWL run; works only when the sequences sit at those paths |
+| mummer4_show-tiling | PASS |  |
+
 ## mummer4_nucmer
 
 ### Tool Description
@@ -473,6 +493,235 @@ require a 1-to-1 mapping. Finally, for mapping query contigs, or
 sequencing reads, to a reference genome, use -q.
 ```
 
+
+## mummer4_exact-tandems
+
+### Tool Description
+Find exact tandem repeats
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0
+- **Homepage**: https://mummer4.github.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/mummer4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+USAGE:  /usr/local/bin/exact-tandems <file> <min-match-len>
+```
+
+## mummer4_show-aligns
+
+### Tool Description
+Show the alignments between a query and a reference sequence of a delta file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0
+- **Homepage**: https://mummer4.github.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/mummer4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+USAGE: show-aligns  [options]  <deltafile>  <ref ID>  <qry ID>
+
+-h            Display help information
+-q            Sort alignments by the query start coordinate
+-r            Sort alignments by the reference start coordinate
+-w int        Set the screen width - default is terminal width
+-c            Colorize bases on output
+-x int        Set the matrix type - default is 2 (BLOSUM 62)
+-m int        Space between markers - default is 10, disable with 0
+              other options include 1 (BLOSUM 45) and 3 (BLOSUM 80)
+              note: only has effect on amino acid alignments
+
+  Input is the .delta output of either the "nucmer" or the
+"promer" program passed on the command line.
+  Output is to stdout, and consists of all the alignments between the
+query and reference sequences identified on the command line.
+  NOTE: No sorting is done by default, therefore the alignments
+will be ordered as found in the <deltafile> input.
+```
+
+## mummer4_combineMUMs
+
+### Tool Description
+Combines MUMs in the gaps file by extending matches off ends and between MUMs
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0
+- **Homepage**: https://mummer4.github.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/mummer4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+USAGE:  combineMUMs <RefSequence> <MatchSequences> <GapsFile>
+
+Combines MUMs in <GapsFile> by extending matches off
+ends and between MUMs.  <RefSequence> is a fasta file
+of the reference sequence.  <MatchSequences> is a
+multi-fasta file of the sequences matched against the
+reference
+
+Options:
+-D      Only output to stdout the difference positions
+          and characters
+-n      Allow matches only between nucleotides, i.e., ACGTs
+-N num  Break matches at <num> or more consecutive non-ACGTs 
+-q tag  Used to label query match
+-r tag  Used to label reference match
+-S      Output all differences in strings
+-t      Label query matches with query fasta header
+-v num  Set verbose level for extra output
+-W file Reset the default output filename witherrors.gaps
+-x      Don't output .cover files
+-e      Set error-rate cutoff to e (e.g. 0.02 is two percent)
+```
+
+## mummer4_repeat-match
+
+### Tool Description
+Find all maximal exact matches in a genome file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0
+- **Homepage**: https://mummer4.github.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/mummer4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+USAGE:  repeat-match  [options]  <genome-file>
+
+Find all maximal exact matches in <genome-file>
+
+Options:
+ -E    Use exhaustive (slow) search to find matches
+ -f    Forward strand only, don't use reverse complement
+ -n #  Set minimum exact match length to #
+ -t    Only output tandem repeats
+ -V #  Set level of verbose (debugging) printing to #
+```
+
+## mummer4_annotate
+
+### Tool Description
+Annotate a gap file with a data file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0
+- **Homepage**: https://mummer4.github.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/mummer4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: annotate <gapfile> <datafile>
+```
+
+## mummer4_mummer
+
+### Tool Description
+Find and output the positions and length of all sufficiently long maximal matches of a substring in the query files and the reference file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0
+- **Homepage**: https://mummer4.github.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/mummer4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: mummer [options] <reference-file> <query file1> . . . [query file32]
+Implemented MUMmer v3 options:
+-mum           compute maximal matches that are unique in both sequences
+-mumreference  compute maximal matches that are unique in the reference-
+               sequence but not necessarily in the query-sequence (default)
+-mumcand       same as -mumreference
+-maxmatch      compute all maximal matches regardless of their uniqueness
+-l             set the minimum length of a match
+               if not set, the default value is 20
+-b             compute forward and reverse complement matches
+-F             force 4 column output format regardless of the number of
+               reference sequence inputs
+-n             match only the characters a, c, g, or t
+-L             print length of query sequence in header of matches
+-r             compute only reverse complement matches
+-s             print first 53 characters of the matching substring
+-c             Report the query position of a reverse complement match relative to the forward strand of the query sequence
+
+Additional options:
+-k             sampled suffix positions (one by default)
+-threads       number of threads to use for -maxmatch, only valid k > 1 
+-qthreads      number of threads to use for queries 
+-suflink       use suffix links (1=yes or 0=no) in the index and during search [auto]
+-child         use child table (1=yes or 0=no) in the index and during search [auto]
+-skip          sparsify the MEM-finding algorithm even more, performing jumps of skip*k [auto (l-10)/k]
+               this is a performance parameter that trade-offs SA traversal with checking of right-maximal MEMs
+-kmer          use kmer table containing sa-intervals (speeds up searching first k characters) in the index and during search [int value, auto]
+-save (string) save index to file to use again later (string)
+-load (string) load index from file
+
+Example usage:
+
+./mummer -maxmatch -l 20 -b -n -k 3 -threads 3 ref.fa query.fa
+Find all maximal matches on forward and reverse strands
+of length 20 or greater, matching only a, c, t, or g.
+Index every 3rd position in the ref.fa and use 3 threads to find MEMs.
+Fastest method for one long query sequence.
+
+./mummer -maxmatch -l 20 -b -n -k 3 -qthreads 3 ref.fa query.fa
+Same as above, but now use a single thread for every query sequence in
+query.fa. Fastest for many small query sequences.
+```
+
+## mummer4_show-diff
+
+### Tool Description
+Output structural differences of a delta file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mummer4:4.0.1--pl5321h9948957_0
+- **Homepage**: https://mummer4.github.io/
+- **Package**: https://anaconda.org/channels/bioconda/packages/mummer4/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+USAGE: show-diff  [options]  <deltafile>
+
+-f            Output diff information as AMOS features
+-h            Display help information
+-H            Do not show header
+-q            Show diff information for queries
+-r            Show diff information for references (default)
+
+  Outputs a list of structural differences for each sequence in
+the reference and query, sorted by position. For a reference
+sequence R, and its matching query sequence Q, differences are
+categorized as GAP (gap between two mutually consistent alignments),
+DUP (inserted duplication), BRK (other inserted sequence), JMP
+(rearrangement), INV (rearrangement with inversion), SEQ
+(rearrangement with another sequence). The first five columns of
+the output are seq ID, feature type, feature start, feature end,
+and feature length. Additional columns are added depending on the
+feature type. Negative feature lengths indicate overlapping adjacent
+alignment blocks.
+  IDR GAP gap-start gap-end gap-length-R gap-length-Q gap-diff
+  IDR DUP dup-start dup-end dup-length
+  IDR BRK gap-start gap-end gap-length
+  IDR JMP gap-start gap-end gap-length
+  IDR INV gap-start gap-end gap-length
+  IDR SEQ gap-start gap-end gap-length prev-sequence next-sequence
+Positions always reference the sequence with the given ID. The
+sum of the fifth column (ignoring negative values) is the total
+amount of inserted sequence. Summing the fifth column after removing
+DUP features is total unique inserted sequence. Note that unaligned
+sequence are not counted, and could represent additional "unique"
+sequences. See documentation for tips on how to interpret these
+alignment break features.
+```
 
 ## Metadata
 - **Skill**: generated

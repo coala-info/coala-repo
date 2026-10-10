@@ -12,7 +12,7 @@ inputs:
       position: 101
       prefix: --fasta
   - id: index
-    type: Directory
+    type: string
     doc: Absolute path to mtsv index file.
     inputBinding:
       position: 101
@@ -61,10 +61,11 @@ inputs:
       position: 101
       prefix: -v
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: index_file
+    type: File
+    doc: MG-index file written by mtsv-build
+    outputBinding:
+      glob: $(inputs.index)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtsv-tools:2.1.0--h54198d6_0
-stdout: mtsv-tools_mtsv-build.out

@@ -62,13 +62,31 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
+  - id: no_progressbar
+    type:
+      - 'null'
+      - boolean
+    doc: "Hide progress bar."
+    inputBinding:
+      position: 101
+      prefix: --no-progressbar
 outputs:
+  - id: rehydrated_directory
+    type: Directory
+    doc: The package directory with the downloaded data files.
+    outputBinding:
+      glob: $(inputs.directory.basename)
   - id: stdout
     type: stdout
     doc: Standard output
 requirements:
+  - class: InlineJavascriptRequirement
   - class: NetworkAccess
     networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: ensemblorg/datasets-cli:latest

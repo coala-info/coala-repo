@@ -1,5 +1,11 @@
 # nanometa-live CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanometa-live | Not completed | live GUI and Snakemake pipeline that needs a Kraken2 database and a running project; pipeline, skipped |
+
 ## nanometa-live
 
 ### Tool Description

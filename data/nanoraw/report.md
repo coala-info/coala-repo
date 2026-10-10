@@ -1,5 +1,23 @@
 # nanoraw CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanoraw_cluster_most_significant | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_genome_resquiggle | Not completed | no usable test data: nanoraw 0.5 needs albacore fast5 with event tables, and all 100 available Guppy fast5 reads fail with 'No events or corrupted events' (CWL fixed to stage the fast5 directory and genome writable) |
+| nanoraw_plot_correction | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_plot_genome_location | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_plot_kmer | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_plot_max_coverage | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_plot_max_difference | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_plot_most_significant | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_plot_motif_centered | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_plot_motif_with_stats | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_plot_multi_correction | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_write_most_significant_fasta | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+| nanoraw_write_wiggles | Not completed | needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables) |
+
 ## nanoraw_genome_resquiggle
 
 ### Tool Description
@@ -1197,25 +1215,6 @@ Miscellaneous Arguments:
                         statistics. Default: Don't save/load.
   --quiet, -q           Don't print status information.
   --help, -h            Print this help message and exit
-```
-
-
-## nanoraw
-### Tool Description
-nanoraw: error: invalid choice: 'Additional' (choose from 'genome_resquiggle', 'plot_max_coverage', 'plot_genome_location', 'plot_motif_centered', 'plot_max_difference', 'plot_most_significant', 'plot_motif_with_stats', 'plot_correction', 'plot_multi_correction', 'cluster_most_significant', 'plot_kmer', 'write_most_significant_fasta', 'write_wiggles')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nanoraw:0.5--py27r3.3.2_0
-- **Homepage**: https://github.com/marcus1487/nanoraw
-- **Package**: https://anaconda.org/channels/bioconda/packages/nanoraw/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: nanoraw [-h] [-v]
-               {genome_resquiggle,plot_max_coverage,plot_genome_location,plot_motif_centered,plot_max_difference,plot_most_significant,plot_motif_with_stats,plot_correction,plot_multi_correction,cluster_most_significant,plot_kmer,write_most_significant_fasta,write_wiggles}
-               ...
-nanoraw: error: invalid choice: 'Additional' (choose from 'genome_resquiggle', 'plot_max_coverage', 'plot_genome_location', 'plot_motif_centered', 'plot_max_difference', 'plot_most_significant', 'plot_motif_with_stats', 'plot_correction', 'plot_multi_correction', 'cluster_most_significant', 'plot_kmer', 'write_most_significant_fasta', 'write_wiggles')
 ```
 
 

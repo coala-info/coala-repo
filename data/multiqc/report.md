@@ -1,5 +1,11 @@
 # multiqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| multiqc | PASS |  |
+
 ## multiqc
 
 ### Tool Description

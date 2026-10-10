@@ -6,35 +6,55 @@ baseCommand:
   - download
   - acoustic
 label: montreal-forced-aligner_mfa_model_download_acoustic
-doc: "Download an acoustic model for Montreal Forced Aligner.\n\nTool homepage: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner"
+doc: "Download pretrained acoustic models from the MFA repository. If no model names are specified, the list of all downloadable acoustic models is printed.\n\nTool homepage: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner"
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: MFA_ROOT_DIR
+        envValue: $(runtime.outdir)/mfa_root
+  - class: NetworkAccess
+    networkAccess: true
 inputs:
-  - id: acoustic_model_name
-    type: string
-    doc: The name of the acoustic model to download.
+  - id: model_name
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: "Names of the acoustic models to download (for example english_us_arpa)."
     inputBinding:
       position: 1
-  - id: output_directory
+  - id: github_token
     type:
       - 'null'
       - string
-    doc: The directory to save the acoustic model to. Defaults to the MFA data 
-      directory.
+    doc: "Personal access token to use for requests to GitHub to increase rate limit."
     inputBinding:
-      position: 102
-      prefix: --output_directory
-outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_directory_dir
+      position: 100
+      prefix: --github_token
+  - id: version
     type:
       - 'null'
-      - Directory
-    doc: The directory to save the acoustic model to. Defaults to the MFA data 
-      directory.
+      - string
+    doc: "Specific version of model to download rather than the latest."
+    inputBinding:
+      position: 100
+      prefix: --version
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: "Flag to ignore existing downloaded models and force a re-download."
+    inputBinding:
+      position: 100
+      prefix: --force
+outputs:
+  - id: models
+    type:
+      type: array
+      items: File
+    doc: Downloaded model files.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: mfa_root/pretrained_models/acoustic/*
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/montreal-forced-aligner:3.3.8
-stdout: montreal-forced-aligner_mfa_model_download_acoustic.out
+    dockerPull: mmcauliffe/montreal-forced-aligner:v3.4.3

@@ -1,5 +1,11 @@
 # nanofilt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanofilt | Failed | tool bug: --logfile writes no log file (filtering, trimming and length/quality options give correct output on 100 sarscov2 nanopore reads) |
+
 ## nanofilt
 
 ### Tool Description

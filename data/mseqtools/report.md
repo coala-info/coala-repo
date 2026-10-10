@@ -1,5 +1,11 @@
 # mseqtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mseqtools_subset | PASS |  |
+
 ## mseqtools_subset
 
 ### Tool Description
@@ -39,26 +45,4 @@ Options:
 
 ## Metadata
 - **Skill**: generated
-
-## mseqtools
-
-### Tool Description
-Sequence manipulation toolkit
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mseqtools:0.9.1--h7132678_1
-- **Homepage**: https://github.com/arumugamlab/mseqtools
-- **Package**: https://anaconda.org/channels/bioconda/packages/mseqtools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-Program: mseqtools (Sequence manipulation toolkit)
-Version: 0.9.1
-
-Usage:   mseqtools <command> [options]
-
-Commands:
- -- Subsetting
-     subset         subset sequences based on a given list
-```
 

@@ -75,10 +75,10 @@ inputs:
       prefix: -W
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: out folder (new files will be created here)
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: -o
 outputs:
   - id: output_path
     type: Directory

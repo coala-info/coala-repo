@@ -64,9 +64,8 @@ inputs:
       position: 102
       prefix: --somagg
   - id: tmp_dir
-    type:
-      - 'null'
-      - Directory
+    type: string
+    default: preprocessed
     doc: Directory for storing preprocessed files.
     inputBinding:
       position: 102
@@ -88,10 +87,11 @@ inputs:
       position: 102
       prefix: --vcf
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: preprocessed
+    type: Directory
+    doc: Directory with the annotated (.gc.genic.exonic.cs.tsv.gz) and tokenized (.muat.tsv) files
+    outputBinding:
+      glob: $(inputs.tmp_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/muat:0.1.12--pyh7e72e81_0
-stdout: muat_preprocess.out

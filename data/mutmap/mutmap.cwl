@@ -26,26 +26,20 @@ inputs:
     type:
       type: array
       items: File
-      inputBinding:
-        prefix: --bulk
-        separate: true
-    doc: "FASTQ or BAM file of mutant bulk. If specifying\n                     FASTQ,
-      separate paired-end files with a comma,\n                     e.g., -b fastq1,fastq2.
-      This option can be\n                     used multiple times."
+    doc: FASTQ or BAM file(s) of the mutant bulk. Paired-end FASTQ files are given as two items and are joined with a comma (-b fastq1,fastq2)
     inputBinding:
       position: 101
+      prefix: --bulk
+      itemSeparator: ","
   - id: cultivar
     type:
       type: array
       items: File
-      inputBinding:
-        prefix: --cultivar
-        separate: true
-    doc: "FASTQ or BAM file of cultivar. If specifying\n                     FASTQ,
-      separate paired-end files with a comma,\n                     e.g., -c fastq1,fastq2.
-      This option can be\n                     used multiple times."
+    doc: FASTQ or BAM file(s) of the cultivar. Paired-end FASTQ files are given as two items and are joined with a comma (-c fastq1,fastq2)
     inputBinding:
       position: 101
+      prefix: --cultivar
+      itemSeparator: ","
   - id: dot_color
     type:
       - 'null'
@@ -124,11 +118,10 @@ inputs:
   - id: reference_fasta
     type: File
     doc: Reference FASTA file.
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --ref
+      valueFrom: $(self.basename)
   - id: snpeff
     type:
       - 'null'
@@ -186,10 +179,14 @@ inputs:
       prefix: --window
   - id: out_dir_path
     type: string
-    doc: '[-T] [-e <DATABASE>]'
+    doc: Output directory. The specified directory must not already exist.
     inputBinding:
       position: 102
-      prefix: -n
+      prefix: --out
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: "&& rm -f $(inputs.out_dir_path)/10_ref/$(inputs.reference_fasta.basename)"
 outputs:
   - id: out_dir
     type: Directory
@@ -199,6 +196,11 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference_fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mutmap:2.3.9--pyhdfd78af_0

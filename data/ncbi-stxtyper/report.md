@@ -1,5 +1,11 @@
 # ncbi-stxtyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ncbi-stxtyper_stxtyper | PASS |  |
+
 ## ncbi-stxtyper_stxtyper
 
 ### Tool Description

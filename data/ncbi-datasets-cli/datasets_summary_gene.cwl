@@ -14,7 +14,9 @@ inputs:
     inputBinding:
       position: 1
   - id: query
-    type: string
+    type:
+      type: array
+      items: string
     doc: The search term (e.g., gene ID, symbol, or accession)
     inputBinding:
       position: 2
@@ -58,6 +60,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --debug
+  - id: taxon
+    type:
+      - 'null'
+      - string
+    doc: "Taxon (NCBI Taxonomy ID, scientific or common name) to limit a gene symbol search."
+    inputBinding:
+      position: 103
+      prefix: --taxon
 outputs:
   - id: stdout
     type: stdout

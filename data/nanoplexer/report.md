@@ -1,5 +1,11 @@
 # nanoplexer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanoplexer | PASS | 100 guppy barcode01 reads all went to NB01; 4000 barcode04 reads went to NB04 (3914) with the rest unclassified or low-count |
+
 ## nanoplexer
 
 ### Tool Description

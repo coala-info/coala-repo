@@ -1,5 +1,11 @@
 # msprime CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msprime_mspms | PASS | simulator without input files; ms-format output checked; repeated options and event order are fixed by the wrapper |
+
 ## msprime_mspms
 
 ### Tool Description

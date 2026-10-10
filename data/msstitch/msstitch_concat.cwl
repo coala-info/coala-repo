@@ -12,7 +12,8 @@ inputs:
       items: File
     doc: Multiple input files of {} format
     inputBinding:
-      position: 1
+      position: 101
+      prefix: -i
   - id: output_dir
     type:
       - 'null'
@@ -44,6 +45,10 @@ outputs:
       glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '${ return inputs.output_dir ? {"class": "Directory", "basename": inputs.output_dir, "listing": []} : null; }'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msstitch:3.19--pyhdfd78af_0

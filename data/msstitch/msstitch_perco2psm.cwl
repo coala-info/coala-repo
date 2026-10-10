@@ -12,7 +12,8 @@ inputs:
       items: File
     doc: Multiple input files of {} format
     inputBinding:
-      position: 1
+      position: 101
+      prefix: -i
   - id: mzids
     type:
       - 'null'
@@ -21,7 +22,8 @@ inputs:
     doc: MzIdentML output files belonging to PSM table TSV files, use same order
       as for TSVs. Must be included when using MSGF+.
     inputBinding:
-      position: 2
+      position: 101
+      prefix: --mzids
   - id: filtpep
     type:
       - 'null'
@@ -69,7 +71,7 @@ inputs:
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 104
-      prefix: --output-dir
+      prefix: -d
   - id: output_file_path
     type:
       - 'null'
@@ -95,6 +97,10 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '${ return inputs.output_dir_path ? {"class": "Directory", "basename": inputs.output_dir_path, "listing": []} : null; }'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msstitch:3.19--pyhdfd78af_0

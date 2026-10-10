@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 8960; PASS: 6925; Failed: 1115; Not completed: 920
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 9331; PASS: 7205; Failed: 1154; Not completed: 972
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -811,7 +811,7 @@ barseqcount	barseqcount_count	Failed	image problem: barseqcount count crashes wh
 bart	bart_avg	PASS	synthetic data (bart index 0..3): average is 1.5 as expected.
 bart	bart_bench	PASS	synthetic data: one micro-benchmark ran; timing table and benchmark array written.
 bart	bart_bitmask	PASS	synthetic data: dims 0 1 2 give bitmask 7 as expected.
-bart	bart_cabs	PASS	synthetic data: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|3+4i\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\| gives 5 as expected.
+bart	bart_cabs	PASS	synthetic data: |3+4i| gives 5 as expected.
 bart	bart_caldir	PASS	synthetic data (BART coil phantom k-space): POCSENSE projection with the maps has NRMSE 0.02.
 bart	bart_calmat	PASS	synthetic data (BART coil phantom): 361x288 matrix as expected, identical to a direct bart run.
 bart	bart_carg	PASS	synthetic data: phase of 1i is pi/2 as expected.
@@ -866,7 +866,7 @@ bart	bart_repmat	PASS	synthetic data: 0..3 repeated 3 times as expected.
 bart	bart_reshape	PASS	synthetic data: BART test-flatten reshape step passes (NRMSE 0).
 bart	bart_resize	PASS	synthetic data: centered zero-padding to 100x100 matches BART test-slice step (NRMSE 0).
 bart	bart_rof	PASS	synthetic data (BART phantom plus noise): NRMSE to the clean phantom drops from 0.40 to 0.14.
-bart	bart_rss	PASS	synthetic data (BART coils): equals sqrt(sum \\\\\\\\\\\\\\\\\\\\\\\\\\\\\|c\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|^2) computed with fmac and spow (NRMSE 0).
+bart	bart_rss	PASS	synthetic data (BART coils): equals sqrt(sum |c|^2) computed with fmac and spow (NRMSE 0).
 bart	bart_sake	PASS	synthetic data (BART coil phantom, Poisson undersampled R=2): NRMSE to full k-space drops from 0.33 to 0.15.
 bart	bart_saxpy	PASS	synthetic data: 2*1+1 gives 3 as expected.
 bart	bart_scale	PASS	synthetic data (BART phantom): matches BART test-fft-basic scale step (NRMSE 0).
@@ -6081,7 +6081,7 @@ gff3toddbj	gff3toddbj_compare-ddbj	PASS	repo augustus.ann and maker.ann give a m
 gff3toddbj	gff3toddbj_genbank-to-ddbj	PASS	NCBI NC_045512.2 GenBank record converts to a DDBJ annotation with source and CDS entries
 gff3toddbj	gff3toddbj_gff3-to-ddbj	PASS	repo augustus golden test: output identical to the expected augustus.ann; FASTA now staged writable for its index
 gff3toddbj	gff3toddbj_list-products	Failed	tool bug: prints a generator object instead of the product list
-gff3toddbj	gff3toddbj_normalize-entry-names	PASS	synthetic data: one entry name in the repo augustus.ann changed to dbj\\\|AB1\\\|loc 4 is renamed to dbj:AB1:loc:4
+gff3toddbj	gff3toddbj_normalize-entry-names	PASS	synthetic data: one entry name in the repo augustus.ann changed to dbj|AB1|loc 4 is renamed to dbj:AB1:loc:4
 gff3toddbj	gff3toddbj_split-fasta	PASS	synthetic data: repo augustus GFF3 plus an appended FASTA block; split GFF3 equals the original and the FASTA is intact
 gff3toembl	gff3toembl_gff3_to_embl	PASS	repo single_feature.gff gives the expected EMBL record (same lines, qualifier order differs) and the expected chromosome list; input now staged writable, chromosome_list is a string, output default added
 gffcompare	gffcompare	PASS	Galaxy test sets give the expected counts (7 super-loci, 6 with reference, 21 for in4 vs in5, combined GTF sizes); CWL rewritten from the help (wrong -M/-R/-N meanings and invented --output-prefix removed)
@@ -8754,9 +8754,41 @@ mir-prefer	mir-prefer_miR_PREFeR.py	Failed	image problem: samtools in the image 
 mir-prefer	mir-prefer_process-reads-fasta.py	PASS	new CWL; real small RNA reads (nf-core smrnaseq) collapsed to 7782 unique reads with counts summing to 10000
 mira	mira	PASS	fixed: data files are staged beside the manifest, --cwd is a string, project folder is collected; MinYS test reads (simulated, from the MinYS repo) gave one 16.2 kb contig with 96% of its 25-mers in the reference
 miranda	miranda	PASS	fixed prefixes to -en/-go/-ge, -out optional and stdout collected; miRanda example (bantam vs hid UTR) gave scored hits with energies, gap options honoured
+mirdeep2	mirdeep2_bwa_sam_converter.pl	Failed	tool bug: with -c a read with several SAM lines is counted once per line (8 multi-mapped tutorial reads doubled, total 378342 instead of 378333); without -c and with unique mappings the arf (151 lines) and read counts were correct
+mirdeep2	mirdeep2_clip_adapters.pl	PASS	new CWL; 10000 tutorial reads lost the TCGTATGCCGTCTTCTGCTTGT adapter (no adapter left, 22 nt miRNAs remain)
+mirdeep2	mirdeep2_collapse_reads_md.pl	PASS	new CWL; 10000 tutorial reads collapsed to 1238 unique cel_<n>_x<count> entries with counts summing to 10000
+mirdeep2	mirdeep2_convert_bowtie_output.pl	PASS	new CWL; bowtie output of tutorial collapsed reads gave 167 arf lines, the first two equal to the miRDeep2 mapper arf lines, and the same columns as bwa_sam_converter
+mirdeep2	mirdeep2_excise_precursors.pl	PASS	new CWL; tutorial genome and parsed arf gave 20 precursors (-a 2) with matching coordinates file
+mirdeep2	mirdeep2_excise_precursors_iterative_final.pl	PASS	new CWL; tutorial genome and parsed arf gave 28 precursors at stack height 1, precursors fasta, coordinates and stack file identical to the miRDeep2 run
+mirdeep2	mirdeep2_extract_miRNAs.pl	PASS	new CWL; real miRBase mature.fa (nf-core smrnaseq) gave 437 cel and 2656 hsa mature entries in DNA alphabet
+mirdeep2	mirdeep2_fastaparse.pl	PASS	new CWL; 10000 clipped tutorial reads with -a 22 gave 9283 entries all at least 22 nt; -b removed a planted entry with a non-nucleotide letter
+mirdeep2	mirdeep2_fastaselect.pl	PASS	new CWL; tutorial mature miRNAs gave the 3 listed ids, and with -a the 4 other ids
+mirdeep2	mirdeep2_fastq2fasta.pl	PASS	new CWL; 2000 real nf-core smrnaseq fastq reads gave 2000 fasta entries seq_1 to seq_2000 with the same sequences
+mirdeep2	mirdeep2_find_read_count.pl	PASS	new CWL; tutorial collapsed reads gave 378333, equal to the sum of the _x counts
+mirdeep2	mirdeep2_geo2fasta.pl	PASS	synthetic data: GEO-style sequence-count files made from tutorial reads gave 2497 fasta entries, equal to the sum of the counts
+mirdeep2	mirdeep2_get_mirdeep2_precursors.pl	PASS	new CWL; tutorial miRDeep2 result csv gave 6 known and 1 novel precursor (score >= 1) with fasta and bed files; -m gave the mature sequence cel-miR-37
+mirdeep2	mirdeep2_illumina_to_fasta.pl	PASS	synthetic data: seq.txt and qseq.txt files made from 100 real nf-core smrnaseq reads gave 100 fasta entries each, with dots converted to N
+mirdeep2	mirdeep2_make_html.pl	PASS	new CWL; tutorial output.mrd, survey and quantifier folder gave a result csv identical to the miRDeep2 run and a result html with the 7 known miRNAs; pdf creation also worked (8 pdfs); the Rfam option cannot build its index in the read-only image and is skipped
+mirdeep2	mirdeep2_make_html2.pl	PASS	new CWL; tutorial quantifier folder gave an expression page identical to the one written by quantifier.pl
 mirdeep2	mirdeep2_mapper.pl	PASS	fixed baseCommand to mapper.pl and real -s/-t flags, staged bowtie index; tutorial reads gave the same collapsed reads as the tutorial file and 481 genome mappings
 mirdeep2	mirdeep2_miRDeep2.pl	PASS	new CWL; tutorial C. elegans data gave top known score 61008 as in the tutorial and one novel miRNA
+mirdeep2	mirdeep2_miRDeep2_core_algorithm.pl	PASS	new CWL; tutorial signature and structure files gave 9 scored precursors; novel miRNA score 102165.6 as in the miRDeep2 result
+mirdeep2	mirdeep2_mirdeep2bed.pl	PASS	new CWL; tutorial result.csv gave 8 BED lines (1 novel, 7 known) with the csv scores and coordinates
+mirdeep2	mirdeep2_parse_mappings.pl	PASS	new CWL; tutorial arf with -a 0 -b 21 -c 23 kept 174 of 481 mappings as counted by awk; -h -j on the signature arf trimmed trailing mismatches and dropped suboptimal mappings (3105 of 3109 kept)
+mirdeep2	mirdeep2_perform_controls.pl	PASS	new CWL; 3 permutation rounds of the core algorithm on the tutorial structure file; command line file and its input files are staged by base name
+mirdeep2	mirdeep2_permute_structure.pl	PASS	new CWL; tutorial structure file gave the same 28 ids with permuted sequences and structures (random order)
+mirdeep2	mirdeep2_prepare_signature.pl	PASS	new CWL; tutorial reads and precursors gave a signature file identical to the one from the miRDeep2 run (3109 lines)
 mirdeep2	mirdeep2_quantifier.pl	PASS	fixed baseCommand to quantifier.pl and wrapped all options, collected outputs; tutorial data gave counts for 7 cel miRNAs (cel-miR-37 118131)
+mirdeep2	mirdeep2_remove_white_space_in_id.pl	PASS	new CWL; 200 real miRBase mature records (nf-core smrnaseq) had ids cut at the first space and sequences upper-cased
+mirdeep2	mirdeep2_rna2dna.pl	PASS	new CWL; 200 real miRBase mature records (nf-core smrnaseq) gave DNA sequences (U to T) and ids cut at the first space
+mirdeep2	mirdeep2_samFLAGinfo.pl	PASS	new CWL; flag 163 listed bits 1, 2, 32 and 128 with the right meanings
+mirdeep2	mirdeep2_sam_reads_collapse.pl	Failed	tool bug: merged reads take the first read's count for every merged read, so a read mapped twice is doubled (seq_1_x196422 gave x392844) and reads x10 and x20 gave x20; real nf-core smrnaseq SAM lines, confirmed on a planted two-read SAM
+mirdeep2	mirdeep2_sanity_check_genome.pl	Failed	tool bug: a '|' inside a sequence is not rejected, although other illegal letters are; valid tutorial genome passes and a space in an id, a bad letter and a duplicate id are reported (synthetic data: planted broken copies).
+mirdeep2	mirdeep2_sanity_check_mapping_file.pl	PASS	synthetic data: tutorial arf (481 lines) gives no message and a planted truncated line is reported with its line number; note: a read whose length disagrees with its mapping fields is not caught.
+mirdeep2	mirdeep2_sanity_check_mature_ref.pl	PASS	synthetic data: valid tutorial mature file gives no message; a planted bad letter and a space in an id are reported; note: duplicate ids are not reported.
+mirdeep2	mirdeep2_sanity_check_reads_ready_file.pl	Failed	synthetic data: tool bug: a bad id, a short sequence and a duplicate sequence were reported, but duplicate read ids are not detected although the error text requires unique ids
+mirdeep2	mirdeep2_select_for_randfold.pl	PASS	new CWL; tutorial signature and structure files gave 9 precursor ids including the 8 loci reported by miRDeep2
+mirdeep2	mirdeep2_survey.pl	PASS	new CWL; tutorial output, controls, mature and signature files gave the 21-row table identical to the miRDeep2 survey.csv except the -d stack height column
 mirfix	mirfix_MIRfix.py	Not completed	CWL fixed (writable family folder, mature and mapping copies, trailing slashes) and runs on the example family, but the example needs 15 large genome FASTA files; with a small substitute genome the Final.fasta matches the example except one precursor and no corrected alignment is made
 mirge	mirge_annotate	Failed	image problem: bowtie, samtools and RNAfold are not in the image ('bowtie can't be found'), so miRge2.0 cannot run; new CWL written from the help
 mirge	mirge_predict	Failed	image problem: bowtie, samtools and RNAfold are not in the image, so miRge2.0 cannot run; new CWL written from the help (not run)
@@ -8878,9 +8910,39 @@ monocle3-cli	monocle3-cli_reduceDim	PASS
 monocle3-cli	monocle3-cli_topMarkers	PASS	
 monovar	monovar	PASS	
 monsda	monsda	Not completed	pipeline, skipped
-montreal-forced-aligner	montreal-forced-aligner_mfa_model_download_acoustic	Failed	image problem: mfa crashes at import (Python 3.14, TypeError: Path.copy() missing target); command words fixed in the CWL
-montreal-forced-aligner	montreal-forced-aligner_mfa_train_acoustic	Failed	image problem: mfa crashes at import (Python 3.14, TypeError: Path.copy() missing target); command words fixed in the CWL
-montreal-forced-aligner	montreal-forced-aligner_mfa_validate	Failed	image problem: mfa crashes at import (Python 3.14, TypeError: Path.copy() missing target); command words fixed in the CWL
+montreal-forced-aligner	montreal-forced-aligner_mfa_adapt	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_adapt_hf	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_align	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_align_hf	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_align_one	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_align_one_hf	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_compare_alignments	Failed	tool bug: mfa compare_alignments crashes on MFA's own TextGrids (KeyError for words/phones tiers, then sqlite NOT NULL error on phone_interval.begin).
+montreal-forced-aligner	montreal-forced-aligner_mfa_diarize	Not completed	needs a PostgreSQL server (mfa says diarization requires --use_postgres true); no server in the one-container run.
+montreal-forced-aligner	montreal-forced-aligner_mfa_find_oovs	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_g2p	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_model_add_words	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_model_create_hf_model	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_model_download	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_model_download_acoustic	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_model_inspect	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_model_list	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_model_save	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_remap_alignments	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_remap_dictionary	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_segment	Failed	image problem: speechbrain VAD fails in the image (hf_hub_download() got an unexpected keyword argument use_auth_token).
+montreal-forced-aligner	montreal-forced-aligner_mfa_segment_vad	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_tokenize	Failed	tool bug: corpus loader finds no files for any input (file or directory), so the tokenizer never runs.
+montreal-forced-aligner	montreal-forced-aligner_mfa_train_acoustic	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_train_dictionary	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_train_g2p	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_train_ivector	Not completed	tiny corpus cannot train an ivector extractor (Kaldi error: NaN in HouseBackward / PLDA needs ivectors).
+montreal-forced-aligner	montreal-forced-aligner_mfa_train_lm	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_train_tokenizer	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_transcribe	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_transcribe_speechbrain	Not completed	mfa says SpeechBrain transcription requires CUDA (GPU); none available.
+montreal-forced-aligner	montreal-forced-aligner_mfa_transcribe_whisper	Failed	image problem: whisperx is not installed in the image (mfa asks for pip install whisperx).
+montreal-forced-aligner	montreal-forced-aligner_mfa_validate	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_validate_dictionary	PASS	
 moreutils	moreutils_chronic	Failed	image problem: chronic is a perl script and the image has no /usr/bin/perl (exec: no such file)
 moreutils	moreutils_combine	Failed	image problem: combine is a perl script and the image has no /usr/bin/perl (exec: no such file)
 moreutils	moreutils_errno	PASS	
@@ -8960,3 +9022,312 @@ msamtools	msamtools_coverage	Failed	tool bug in msamtools 1.1.3 (fixed in 1.2.0)
 msamtools	msamtools_filter	Failed	tool bug in msamtools 1.1.3 (fixed in 1.2.0): --besthit and --uniqhit are not mate-aware and --rescore with --besthit keeps the wrong hit; length, identity and query-fraction filters match the expected output
 msamtools	msamtools_profile	Failed	tool bug in msamtools 1.1.3 (fixed in 1.2.0): --multi ignore drops an insert that maps several times to one reference; all, equal and proportional modes match the expected values
 msamtools	msamtools_summary	PASS	
+msaprobs	msaprobs	PASS	
+mseqtools	mseqtools_subset	PASS	
+msfragger	msfragger	Not completed	needs a licence key from the vendor
+msgf_plus	msgf_plus	PASS	
+msi	msi	Not completed	pipeline, skipped (nanopore amplicon workflow script; baseCommand fixed from msi.sh to msi)
+msisensor	msisensor_msi	PASS	
+msisensor	msisensor_scan	Failed	image problem: msisensor scan segfaults (exit 139) on every FASTA tried, including a 130 bp one
+msisensor-rna	msisensor-rna_detection	PASS	
+msisensor-rna	msisensor-rna_genes	PASS	option --threads crashes inside the tool (thread count read as a list); default run works
+msisensor-rna	msisensor-rna_show	PASS	
+msisensor-rna	msisensor-rna_train	PASS	
+msisensor2	msisensor2_msi	PASS	paired tumor/normal run matches expected sites; tumor-only toy BAM has no covered sites
+msisensor2	msisensor2_scan	PASS	
+msms	msms	PASS	
+msms	msms_pdb_to_xyzr	PASS	
+msms	msms_pdb_to_xyzrn	PASS	
+msoma	msoma_count	PASS	
+msoma	msoma_merge-counts	PASS	tool crashes on non-numeric chromosome names such as chrM; works on chr22 counts
+msoma	msoma_mle	PASS	
+msp2db	msp2db	PASS	baseCommand fixed from PROG to msp2db; 14 spectra loaded
+msprime	msprime_mspms	PASS	simulator without input files; ms-format output checked; repeated options and event order are fixed by the wrapper
+msproteomicstools	msproteomicstools_fix_swath_windows.py	PASS	synthetic data: MS2 scans planted into a real test mzXML; baseCommand fixed to fix_swath_windows.py and output path added
+msproteomicstools	msproteomicstools_tsv2spectrast.py	PASS	synthetic data: header-renamed real library table; baseCommand fixed to tsv2spectrast.py
+msstitch	msstitch_concat	PASS	
+msstitch	msstitch_conffilt	PASS	
+msstitch	msstitch_dedupperco	PASS	
+msstitch	msstitch_deduppsms	PASS	
+msstitch	msstitch_deletesets	PASS	
+msstitch	msstitch_ensg	PASS	
+msstitch	msstitch_filterperco	PASS	
+msstitch	msstitch_genes	PASS	
+msstitch	msstitch_isosummarize	PASS	
+msstitch	msstitch_makedecoy	PASS	
+msstitch	msstitch_merge	PASS	
+msstitch	msstitch_peptides	PASS	
+msstitch	msstitch_perco2psm	PASS	
+msstitch	msstitch_proteins	PASS	
+msstitch	msstitch_psmtable	PASS	
+msstitch	msstitch_seqfilt	PASS	
+msstitch	msstitch_seqmatch	PASS	synthetic data: planted FASTA built from real PSM peptides
+msstitch	msstitch_split	PASS	
+msstitch	msstitch_splitperco	PASS	
+msstitch	msstitch_storequant	PASS	
+msstitch	msstitch_storeseq	PASS	--map-accessions crashes on a FASTA with peptides shared between proteins; plain mode matches expected
+msstitch	msstitch_storespectra	PASS	
+msstitch	msstitch_trypsinize	PASS	
+mstmap	mstmap	PASS	
+msweep	msweep	PASS	
+mtb-snp-it	mtb-snp-it_snpit-run.py	PASS	
+mtbseq	mtbseq_MTBseq	Not completed	pipeline, skipped
+mtglink	mtglink_LRez_compare	PASS	
+mtglink	mtglink_LRez_extract	PASS	
+mtglink	mtglink_LRez_index_bam	PASS	
+mtglink	mtglink_LRez_index_fastq	PASS	
+mtglink	mtglink_LRez_query_bam	PASS	
+mtglink	mtglink_LRez_query_fastq	PASS	
+mtglink	mtglink_LRez_stats	PASS	
+mtglink	mtglink_bed2gfa.py	PASS	
+mtglink	mtglink_fasta2bed.py	PASS	
+mtglink	mtglink_gfa1tofasta.py	Not completed	no real GFA 1.0 file with path lines is available to test it
+mtglink	mtglink_gfa2tofasta.py	PASS	
+mtglink	mtglink_matrix2gfa.py	PASS	
+mtglink	mtglink_mergegfa.py	PASS	
+mtglink	mtglink_mtglink.py_DBG	Failed	image problem: mtglink.py imports turtle (tkinter) and the image lacks libX11.so.6, so it crashes at start
+mtglink	mtglink_mtglink.py_IRO	Failed	image problem: mtglink.py imports turtle (tkinter) and the image lacks libX11.so.6, so it crashes at start
+mtglink	mtglink_paths2gfa.py	PASS	synthetic data: a two-line paths file made for the scaffolds of the example genome; GFA content checked by hand
+mtglink	mtglink_vcf2gfa.py	PASS	
+mtgrasp	mtgrasp_mtgrasp.py	Not completed	pipeline, skipped
+mtgrasp	mtgrasp_runmitos.py	PASS	
+mtm-align	mtm-align	PASS	
+mtnucratio	mtnucratio	PASS	
+mtsv	mtsv_analyze	Not completed	needs the .params metadata, taxonomy dump and database JSON that earlier mtsv stages write with absolute paths in one working directory; cannot be staged in a single CWL run
+mtsv	mtsv_binning	PASS	
+mtsv	mtsv_extract	Not completed	needs the .params metadata, taxonomy dump and database JSON that earlier mtsv stages write with absolute paths in one working directory; cannot be staged in a single CWL run
+mtsv	mtsv_init	PASS	
+mtsv	mtsv_pipeline	Not completed	pipeline, skipped
+mtsv	mtsv_readprep	PASS	
+mtsv	mtsv_summary	Not completed	needs the .params metadata, taxonomy dump and database JSON that earlier mtsv stages write with absolute paths in one working directory; cannot be staged in a single CWL run
+mtsv-tools	mtsv-tools_mtsv-binner	PASS	
+mtsv-tools	mtsv-tools_mtsv-build	PASS	
+mtsv-tools	mtsv-tools_mtsv-chunk	PASS	
+mtsv-tools	mtsv-tools_mtsv-collapse	PASS	
+mtsv-tools	mtsv-tools_mtsv-partition	PASS	
+mtsv-tools	mtsv-tools_mtsv-reference	PASS	
+mtsv-tools	mtsv-tools_mtsv-resume-point	PASS	
+muat	muat_download	Failed	image problem: every muat run unpacks the packaged checkpoint zips into the root-owned site-packages folder at start, so it fails with a read-only/permission error; it only works as root with --no-match-user --no-read-only
+muat	muat_predict-ensemble_muat-wes	Failed	image problem: every muat run unpacks the packaged checkpoint zips into the root-owned site-packages folder at start, so it fails with a read-only/permission error; it only works as root with --no-match-user --no-read-only
+muat	muat_predict-ensemble_muat-wgs	Failed	image problem: every muat run unpacks the packaged checkpoint zips into the root-owned site-packages folder at start, so it fails with a read-only/permission error; it only works as root with --no-match-user --no-read-only
+muat	muat_predict_wes	Failed	image problem: every muat run unpacks the packaged checkpoint zips into the root-owned site-packages folder at start, so it fails with a read-only/permission error; it only works as root with --no-match-user --no-read-only
+muat	muat_predict_wgs	Failed	image problem: every muat run unpacks the packaged checkpoint zips into the root-owned site-packages folder at start, so it fails with a read-only/permission error; it only works as root with --no-match-user --no-read-only
+muat	muat_preprocess	Failed	image problem: every muat run unpacks the packaged checkpoint zips into the root-owned site-packages folder at start, so it fails with a read-only/permission error; it only works as root with --no-match-user --no-read-only
+muat	muat_train_from-checkpoint	Failed	image problem: every muat run unpacks the packaged checkpoint zips into the root-owned site-packages folder at start, so it fails with a read-only/permission error; it only works as root with --no-match-user --no-read-only
+muat	muat_train_from-scratch	Failed	image problem: every muat run unpacks the packaged checkpoint zips into the root-owned site-packages folder at start, so it fails with a read-only/permission error; it only works as root with --no-match-user --no-read-only
+mudskipper	mudskipper_bulk	PASS	
+mudskipper	mudskipper_index	PASS	
+mudskipper	mudskipper_sc	PASS	synthetic data: cell barcode and UMI tags added to a real SAM from the tool tests; BAM and RAD outputs checked
+mugsy	mugsy	Failed	image problem: the image has no libstdc++.so.6, so the MUMmer programs delta-filter and delta2maf cannot start and the MAF alignment is empty
+multigps	multigps	PASS	
+multiqc	multiqc	PASS	
+multiqc-bcbio	multiqc-bcbio_multiqc	PASS	
+multiqc-xenium-extra	multiqc-xenium-extra_multiqc	PASS	
+multiqc_sav	multiqc_sav_multiqc	Failed	image problem: python module interop is missing, so the SAV module cannot load and no run is found
+multivcfanalyzer	multivcfanalyzer	PASS	
+multiz	multiz	PASS	
+multiz	multiz_get_covered	PASS	
+multiz	multiz_lav2maf	PASS	
+multiz	multiz_maf2fasta	PASS	
+multiz	multiz_maf2lav	PASS	input FASTA headers must use the species:chr:start:strand:size form
+multiz	multiz_mafFind	PASS	
+multiz	multiz_maf_checkThread	PASS	
+multiz	multiz_maf_order	PASS	
+multiz	multiz_maf_project	PASS	
+multiz	multiz_maf_sort	PASS	
+multiz	multiz_multic	PASS	
+multiz	multiz_pair2tb	PASS	
+multiz	multiz_single_cov2	PASS	
+mumemto	mumemto	PASS	
+mumemto	mumemto_bed	Failed	tool bug: the last collinear block is never written, and a MUMs file without blocks gives empty output unless --verbose is set
+mumemto	mumemto_collinear	PASS	
+mumemto	mumemto_convert	PASS	
+mumemto	mumemto_coverage	PASS	
+mumemto	mumemto_extract	Not completed	the lengths file stores absolute FASTA paths that do not exist inside a CWL run; works only when the FASTA files sit at those paths
+mumemto	mumemto_inversion	PASS	synthetic data: a planted 3 kb inversion in the chimp genome is found with a small max_block_gap_len; the real mitochondrial genomes have none
+mumemto	mumemto_label	PASS	
+mumemto	mumemto_lengths	PASS	
+mumemto	mumemto_merge	PASS	
+mumemto	mumemto_viz	PASS	
+mummer	mummer	Failed	image problem: in mummer 3.23, -mum and -mumreference (the default) segfault or print no matches; only -maxmatch works
+mummer2circos	mummer2circos	Failed	tool bug: with two query genomes the second one is missing from the plot (one query works); added outputs for the PNG and SVG
+mummer4	mummer4_annotate	Not completed	no usable gap file and data file pair found; the gap file from mgaps is rejected (it asks for a file name)
+mummer4	mummer4_combineMUMs	PASS	
+mummer4	mummer4_delta-filter	PASS	
+mummer4	mummer4_dnadiff	PASS	
+mummer4	mummer4_exact-tandems	PASS	
+mummer4	mummer4_mummer	PASS	
+mummer4	mummer4_mummerplot	Failed	image problem: gnuplot is not in the image, so no plot is rendered (only the .gp and plot data files are written)
+mummer4	mummer4_nucmer	PASS	
+mummer4	mummer4_promer	Failed	image problem: the promer script has unreplaced @LIBEXEC_DIR and @BIN_DIR paths, so it cannot find its helper programs
+mummer4	mummer4_repeat-match	PASS	
+mummer4	mummer4_show-aligns	Not completed	the delta file stores absolute FASTA paths that do not exist in a separate CWL run; works only when the sequences sit at those paths
+mummer4	mummer4_show-coords	PASS	
+mummer4	mummer4_show-diff	PASS	
+mummer4	mummer4_show-snps	Not completed	the delta file stores absolute FASTA paths that do not exist in a separate CWL run; works only when the sequences sit at those paths
+mummer4	mummer4_show-tiling	PASS	
+mupbwt	mupbwt	PASS	
+muscle	muscle	PASS	align, super5, ensembles, maxcc, resample, disperse, efa_explode and addconfseq work; -letterconf -html crashes (Bad conf) and letterconf output uses symbols, not digits
+muse	muse_MuSE_call	PASS	output equals the nf-core expected MuSE-call result for chr21 (data lines)
+muse	muse_MuSE_sump	Not completed	runs with -D dbSNP (segfaults without it), but the only small real call file (24 sites) is too small for the model, so the VCF has no records
+muset	muset	PASS	repo test set D1-D10 gives 26 unitigs, abundances split D1-D4 vs D5-D10
+muspinsim	muspinsim	PASS	repo examples: the fitting example finds g = 3.04 (expected 3.0); the F-mu-F example runs
+mutalyzer_hgvs_parser	mutalyzer_hgvs_parser	PASS	
+mutamr	mutamr_wgs	Failed	image problem: freebayes crashes (signal 11) inside mutamr, so no SNPs are called and the VCF holds only delly deletions
+mutmap	mutmap	PASS	synthetic data: simulated reads on a 30 kb genome; SNP-index is 0.87 inside the planted locus and 0.58 elsewhere
+mutmap	mutmap_mutplot	PASS	synthetic data: VCF from the mutmap test; writes the SNP-index tables and the plot
+mutscan	mutscan	PASS	repo testdata finds both planted edge mutations with --legacy; default mode finds none on this tiny set
+mutserve	mutserve_call	PASS	repo test BAM HG03478: the FASTA equals the expected one except the blacklisted site 3107 (N expected, T written); BAM and reference indexes must be supplied
+mvip	mvip_MVP_00_set_up_MVP	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvip	mvip_MVP_01_run_genomad_checkv	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvip	mvip_MVP_02_filter_genomad_checkv	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvip	mvip_MVP_03_do_clustering	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvip	mvip_MVP_04_do_read_mapping	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvip	mvip_MVP_05_create_vOTU_table	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvip	mvip_MVP_06_do_functional_annotation	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvip	mvip_MVP_07_do_binning	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvip	mvip_MVP_100_summarize_outputs	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvip	mvip_MVP_99_prep_MIUViG_submission	Not completed	pipeline, skipped: MVP step that works in a shared working directory written by earlier steps and needs geNomad/CheckV databases and metadata with absolute file paths
+mvp	mvp	Failed	tool bug: --outfile is accepted but silently ignored (results only go to stdout, which the CWL captures); the main output is correct.
+mwga-utils	mwga-utils_metrics	PASS	ran on LAST sarscov2 MAF (reformatted to MultiZ-style a-lines); output counts match the MAF
+mwga-utils	mwga-utils_missing_regions	PASS	ran on LAST sarscov2 MAF with simple FASTA header; missing reference regions added with score NA
+mwga-utils	mwga-utils_single_cov	PASS	new CWL; ran on the same MAF; coverage table matches the genome length
+mwga-utils	mwga-utils_stats	PASS	ran on LAST sarscov2 MAF (reformatted to MultiZ-style a-lines); output counts match the MAF
+mykatlas	mykatlas_diff	Failed	tool bug: diff crashes with TypeError write() argument must be str, not bytes (Python 3 port error)
+mykatlas	mykatlas_genotype	PASS	ran on 500k real M. tuberculosis reads and the Bradley TB probe set; reference alleles at depth about 34, no resistance variants (susceptible, same as mykrobe)
+mykatlas	mykatlas_place	Failed	image problem: ModuleNotFoundError mykatlas.treeplacing
+mykatlas	mykatlas_walk	Failed	tool bug: walk crashes with TypeError 'dict_values' object is not subscriptable (Python 3 port error)
+mykrobe	mykrobe_panels_describe	PASS	lists the bundled species panels (tb, staph, sonnei, typhi, paratyphiB)
+mykrobe	mykrobe_panels_update_metadata	PASS	downloaded new panel metadata into a writable copy of the panels folder; manifest updated
+mykrobe	mykrobe_panels_update_species	PASS	removed and re-downloaded the sonnei panel into a writable panels copy; files restored
+mykrobe	mykrobe_predict	PASS	ran on 500k real M. tuberculosis reads (ERR036221 subset); species M. tuberculosis, lineage4.10, drug table written
+mykrobe	mykrobe_variants_add	Not completed	new CWL; needs a MongoDB server (connection refused)
+mykrobe	mykrobe_variants_dump-probes	Not completed	new CWL; needs a MongoDB server (connection refused)
+mykrobe	mykrobe_variants_make-probes	PASS	new CWL; made ref and alt probes for 3 variants on the M. tuberculosis genome (--no-backgrounds)
+myloasm	myloasm	PASS	ran on the repo 40kb plasmid test reads; one circular contig of 48 kb assembled
+mylotools	mylotools_extract-contigs	PASS	ran on a myloasm assembly of the repo plasmid reads; the contig was extracted to a folder
+mylotools	mylotools_plot	PASS	fixed step size type and output folder; wrote the interactive coverage plot for the contig
+mylotools	mylotools_report	PASS	ran on a myloasm assembly; summary HTML, contig and plot files written
+mylotools	mylotools_sanitize-headers	PASS	fixed the CWL to stage the FASTA writable; header rewritten and backup made
+mylotools	mylotools_strain-viz	PASS	fixed output type to File; PNG written from the myloasm overlaps file
+mypy	mypy	PASS	fixed baseCommand to python3 -m mypy (image has no mypy script) and successCodes 0,1; clean mypy sample files give no errors, a file with 4 planted type errors reports all 4
+myriad	myriad	PASS	server-client demo ran and returned exp(i) for 10 items correctly; --client mode needs a separate server and was not run
+mzmine	mzmine	Not completed	rewrote the CWL from the real help (old flags were invented); import, mass detection and chromatogram builder run headless, but export and later steps need an mzmine user login, so no result file
+mzml2isa	mzml2isa	PASS	fixed output flag (-o, not --output-path); ran on 4 tiny HUPO-PSI mzML files; ISA-tab investigation, study and assay files written with 4 samples
+mzspeclib	mzspeclib_convert	PASS	fixed output path (positional string, not File) and attribute pairs; text to JSON on the SPICE library gave 11 spectra; -f msp crashes in the tool (AttributeError ReporterIonAnnotation)
+mzspeclib	mzspeclib_describe	PASS	SPICE example library described: format text, 11 spectra, library attributes
+mzspeclib	mzspeclib_index	PASS	staged the library writable and collected the .splindex file; valid SQLite index for 21 spectra
+mzspeclib	mzspeclib_validate	PASS	validation messages go to stderr, so the CWL now collects stderr; real warnings reported on the SPICE library
+n50	n50	PASS	ran on 4 real nf-core files (SARS-CoV-2 and human genome FASTA, Illumina and nanopore FASTQ); N50, lengths and counts match an independent calculation
+n50	n50_binner	PASS	new CWL; nanopore test reads binned: 97 reads up to 1000 bp, 3 up to 2500 bp, as in the file
+n50	n50_countfx	PASS	new CWL; counted 100 Illumina reads
+n50	n50_fac	PASS	new CWL; counted 1 sequence in the SARS-CoV-2 genome
+n50	n50_fqc	PASS	new CWL; counted 100 Illumina reads from the gzip file
+n50	n50_gen	PASS	new CWL; wrote 2 FASTA files with 5 and 6 sequences; names match N50_count_length
+n50	n50_generate	Failed	new CWL; tool bug: segfault (exit 139) on the documented length,count CSV, and -f passes --FASTA/--FASTQ to n50_simreads which rejects it
+n50	n50_simreads	PASS	new CWL; made 5 reads (3x100, 2x50); FASTQ lengths match
+n50	n50_simseqs	PASS	new CWL; made 5 sequences (3x100, 2x50); file names and lengths match
+n50	n50_single	PASS	new CWL; header mode and N50-only mode match n50 results
+naf	naf_ennaf	PASS	made output optional (-c to stdout also works); compressed real SARS-CoV-2 FASTA and nanopore FASTQ; decompressed copies are identical
+naf	naf_unnaf	PASS	fixed output flag (-o, not --output-file) and removed an invented string argument; FASTA and FASTQ round trips identical, --title works
+naibr-plus	naibr-plus_bedpe_to_vcf.py	PASS	fixed ref type to File and made output optional; VCF from the example BEDPE matches the NAIBR VCF (chr21 INV)
+naibr-plus	naibr-plus_naibr	PASS	rewrote the CWL to write the config file from inputs; ran on the repo chr21 linked-read example; found the expected chr21 inversion (28 split molecules, PASS)
+nail	nail_search	PASS	ran on the repo fixtures (GPCR 7tm_1 query vs 400 proteins), FASTA and HMM queries; 92 hits with E-values down to 1e-53, alignments and seeds written
+namfinder	namfinder	Failed	tool bug: --create-index, --use-index and the reads2 argument are accepted but silently do nothing (inactive in the source); single-end matching works.
+nanoblaster	nanoblaster	PASS	ran on 17 real HG002 ONT telomere reads vs the mini reference; all 17 reads have an alignment at the true locus and strand (BAM truth)
+nanocall	nanocall	Not completed	CWL fixed (wrong homepage, '--' flag, repeated --model/--log); the nf-core fast5 files have raw signal only, and nanocall needs eventdetection events, so it reads 0 events and writes an empty FASTA
+nanocaller	nanocaller	PASS	rewrote the CWL from the real help (command is NanoCaller, flags use two dashes); ran on nf-core ONT BAM (chr22 slice, 13x); 58 SNPs called, all 50 strong pileup alt sites found; --mode all with the phased BAM also runs
+nanofilt	nanofilt	Failed	tool bug: --logfile writes no log file (filtering, trimming and length/quality options give correct output on 100 sarscov2 nanopore reads)
+nanoinsight	nanoinsight	Failed	image problem: RepeatMasker in the image has an empty 68-byte Dfam.h5 stub, so species human is not known; synthetic data reached the RepeatMasker step (insertion fasta and MAFFT consensus ran)
+nanolyse	nanolyse_NanoLyse	PASS	
+nanometa-live	nanometa-live	Not completed	live GUI and Snakemake pipeline that needs a Kraken2 database and a running project; pipeline, skipped
+nanomonsv	nanomonsv_connect	PASS	
+nanomonsv	nanomonsv_get	PASS	
+nanomonsv	nanomonsv_insert_classify	Failed	image problem: RepeatMasker -species human fails because the FamDB human partition 7 is absent from the image (Dfam.h5 is a stub)
+nanomonsv	nanomonsv_merge_control	PASS	
+nanomonsv	nanomonsv_parse	PASS	
+nanomonsv	nanomonsv_validate	PASS	
+nanomotif	nanomotif_detect_contamination	PASS	synthetic data: real geobacillus contigs duplicated 5 times (as in the tool's own test) to give enough contigs; output files are valid and methylation values are plausible, no contamination found as expected
+nanomotif	nanomotif_include_contigs	PASS	synthetic data: real geobacillus contigs duplicated into two bins (as in the tool's own test); the unbinned copies were assigned to the right bins
+nanomotif	nanomotif_motif_discovery	PASS	
+nanopack	nanopack_NanoStat	PASS	fastq and bam modes give correct counts on real nanopore data (100 reads, 17 reads); the nf-core sequencing summary file is malformed so summary mode was not judged
+nanoplexer	nanoplexer	PASS	100 guppy barcode01 reads all went to NB01; 4000 barcode04 reads went to NB04 (3914) with the rest unclassified or low-count
+nanoplot	nanoplot	PASS	fastq (100 reads, 38253 bases) and bam (17 reads) modes give the correct stats and html plots
+nanopolish	nanopolish_call-methylation	PASS	synthetic data: real nanopore reads and fast5 files with a read as draft reference; CpG calls at the 3 CG sites per read, all unmethylated as expected for PCR amplicon reads
+nanopolish	nanopolish_detect-polyi	Not completed	detect-polyi needs direct RNA reads and none are available; the CWL runs on DNA reads and reports NONE with NOREGION for all reads
+nanopolish	nanopolish_eventalign	PASS	synthetic data: real nf-core sarscov2 nanopore reads and fast5 files aligned to one of the reads used as draft reference; event table has plausible levels and 83 reads in summary
+nanopolish	nanopolish_fast5-check	Failed	tool bug: fast5-check crashes (std::out_of_range in substr) on single-read fast5 files that nanopolish index reads fine; multi-read fast5 not tested
+nanopolish	nanopolish_index	PASS	synthetic data: real nf-core sarscov2 nanopore reads with their fast5 files; index maps all 100 reads to the fast5 files (index staged with relative fast5 paths)
+nanopolish	nanopolish_methyltrain	Not completed	too little data: with 50 amplicon reads no k-mer reached the training threshold, so no model was trained (the command runs and writes summary and event tables)
+nanopolish	nanopolish_phase-reads	PASS	synthetic data: real nanopore reads with one planted heterozygous SNP; the read spanning the SNP carries the alt allele as in the reads
+nanopolish	nanopolish_polya	Not completed	polya needs direct RNA reads and none are available; the CWL runs on DNA reads and correctly reports NOREGION (no poly-A tail) for all reads
+nanopolish	nanopolish_scorereads	PASS	synthetic data: real nanopore reads and fast5 files against a read used as draft reference with the r9.4 6-mer model from the nanopolish repo; the spanning read gets a plausible score and calibration (only one read is printed)
+nanopolish	nanopolish_variants	PASS	synthetic data: real nf-core nanopore reads and fast5 files with a read as draft reference and one planted SNP; consensus mode recovers the planted base (--snps mode with this tiny depth gives no calls)
+nanopolish	nanopolish_vcf2fasta	PASS	synthetic data: VCF from nanopolish variants applied to the draft; the SNP and insertion appear in the output sequence
+nanoq	nanoq	PASS	53 of 100 reads kept (min length 300, min quality 10), checked against an independent count of reads, bases and length range
+nanoqc	nanoqc_nanoQC	PASS	fixed wrong flag --output-dir to --outdir; 4000 real nanopore reads processed, html report and log written
+nanoraw	nanoraw_cluster_most_significant	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_genome_resquiggle	Not completed	no usable test data: nanoraw 0.5 needs albacore fast5 with event tables, and all 100 available Guppy fast5 reads fail with 'No events or corrupted events' (CWL fixed to stage the fast5 directory and genome writable)
+nanoraw	nanoraw_plot_correction	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_plot_genome_location	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_plot_kmer	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_plot_max_coverage	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_plot_max_difference	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_plot_most_significant	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_plot_motif_centered	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_plot_motif_with_stats	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_plot_multi_correction	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_write_most_significant_fasta	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanoraw	nanoraw_write_wiggles	Not completed	needs fast5 files re-squiggled by genome_resquiggle, which cannot run on the available Guppy fast5 data (no event tables)
+nanosim	nanosim_read_analysis_detect_ir	Not completed	no real ONT RNA reads with a transcriptome and an annotation that has introns in the test data sets
+nanosim	nanosim_read_analysis_genome	PASS	
+nanosim	nanosim_read_analysis_metagenome	PASS	
+nanosim	nanosim_read_analysis_quantify	PASS	Ran with -e meta on the Portiera ONT reads and a two-genome list; all reads assigned to Portiera, as expected.
+nanosim	nanosim_read_analysis_transcriptome	Not completed	no real ONT cDNA or direct RNA reads with a matching reference transcriptome in the test data sets
+nanosim	nanosim_simulator_genome	PASS	
+nanosim	nanosim_simulator_metagenome	PASS	
+nanosim	nanosim_simulator_transcriptome	Not completed	needs a transcriptome error model trained on real ONT cDNA or direct RNA reads, which are not available in the test data sets
+nanosim-h	nanosim-h	PASS	
+nanosim-h	nanosim-h_train	PASS	Synthetic data: trained on 50 reads simulated by nanosim-h from the SARS-CoV-2 genome; the profile directory has the expected histograms and Markov models.
+nanosplit	nanosplit_NanoSplit	PASS	
+nanospring	nanospring_NanoSpring	PASS	
+nanostat	nanostat	PASS	
+nanosv	nanosv	Failed	image problem: NanoSV always reads its packaged config.ini, which has a non-ASCII byte, and the image has no UTF-8 locale (Python 3.6 ascii decode error)
+nanovar	nanovar	PASS	
+narfmap	narfmap_dragen-os	Failed	image problem: dragen-os builds the hash table but segfaults (exit 139) when mapping reads, for single and paired reads on SARS-CoV-2 and chr21 references
+nasm	nasm	PASS	
+nasm	nasm_ndisasm	PASS	
+nasp	nasp	Not completed	pipeline, skipped
+nasp	nasp_convert_external_genome	PASS	
+nasp	nasp_duplicates	PASS	Synthetic data: planted 400 bp repeat; the delta from nasp_find_duplicates gave the two expected ranges (201-600 and 3978-4377).
+nasp	nasp_export	Failed	tool bug: nasp export --type vcf (the default) writes GT 0 for the first sample although the matrix shows the same SNP call as the other sample; fasta export is correct
+nasp	nasp_filter_matrix_by_coord	PASS	
+nasp	nasp_filter_matrix_by_distance	Failed	image problem: python module Bio (Biopython) is missing, so the script stops at import
+nasp	nasp_filter_matrix_by_genome	PASS	
+nasp	nasp_find_duplicates	PASS	Synthetic data: planted 400 bp repeat; 800 positions marked as duplicated, as expected.
+nasp	nasp_format_fasta	PASS	
+nasp	nasp_frankenfasta	PASS	
+nasp	nasp_matrix	PASS	
+nasp	nasp_matrix_to_fasta	PASS	
+nasp	nasp_report_single_snps_single_isolate	PASS	
+nasp	nasp_vcf_to_matrix	Failed	tool bug: --mode commandline crashes with AttributeError: no attribute filter_matrix_format
+ncbi-acc-download	ncbi-acc-download	PASS	
+ncbi-amrfinderplus	ncbi-amrfinderplus_amrfinder	PASS	
+ncbi-amrfinderplus	ncbi-amrfinderplus_amrfinder_index	PASS	
+ncbi-amrfinderplus	ncbi-amrfinderplus_amrfinder_update	PASS	
+ncbi-datasets-cli	datasets_download_gene	PASS	
+ncbi-datasets-cli	datasets_download_genome	PASS	
+ncbi-datasets-cli	datasets_summary_gene	PASS	
+ncbi-datasets-cli	datasets_summary_genome	PASS	
+ncbi-datasets-cli	ncbi-datasets-cli_rehydrate	PASS	
+ncbi-genome-download	ncbi-genome-download	PASS	
+ncbi-stxtyper	ncbi-stxtyper_stxtyper	PASS	
+ncbi-util-legacy	ncbi-util-legacy_asntool	PASS	
+ncbi-util-legacy	ncbi-util-legacy_errhdr	PASS	
+ncbi-util-legacy	ncbi-util-legacy_gene2xml	PASS	Ran on the NCBI Retroviridae gene file (HIV-2 taxon, 9 genes as expected); the -c T option for gzip input crashes (cannot find zcat).
+ncbimeta	ncbimeta_NCBImeta	PASS	BioProject and Pubmed tables work (BioProject PRJNA269675 title and date correct); the Assembly and BioSample tables crash with XMLSyntaxError on current NCBI replies.
+ncbimeta	ncbimeta_NCBImetaAnnotate	PASS	
+ncbimeta	ncbimeta_NCBImetaExport	PASS	
+ncbimeta	ncbimeta_NCBImetaJoin	PASS	
+ncbitax2lin	ncbitax2lin	PASS	
+ncbitk	ncbitk	PASS	Tested --status with a local assembly summary (the tool's own test file): counts match (100 new genomes; 27 for Buchnera_aphidicola). The rsync update mode was not run.

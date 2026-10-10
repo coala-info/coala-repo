@@ -1,5 +1,12 @@
 # msproteomicstools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msproteomicstools_fix_swath_windows.py | PASS | synthetic data: MS2 scans planted into a real test mzXML; baseCommand fixed to fix_swath_windows.py and output path added |
+| msproteomicstools_tsv2spectrast.py | PASS | synthetic data: header-renamed real library table; baseCommand fixed to tsv2spectrast.py |
+
 ## msproteomicstools_tsv2spectrast.py
 
 ### Tool Description

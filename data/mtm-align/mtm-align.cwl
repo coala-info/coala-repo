@@ -2,56 +2,38 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mtm-align
 label: mtm-align
-doc: "An algorithm for multiple protein structure alignment (MSTA)\n\nTool homepage:
-  http://yanglab.nankai.edu.cn/mTM-align/help/"
+doc: "An algorithm for multiple protein structure alignment (MSTA)\n\nTool homepage: http://yanglab.nankai.edu.cn/mTM-align/help/"
 inputs:
   - id: input_list
     type: File
-    doc: "The input_list is an input file, listing the file names of the structures
-      to be aligned.\n                   Each line represents the file name for one
-      structure.\n                   Please note that each input structure should
-      be a single-chain structure."
+    doc: "File listing the file names of the structures to be aligned, one per line. Each input structure must be a single-chain structure."
     inputBinding:
-      position: 101
       prefix: -i
-  - id: output_directory_path
-    type:
-      - 'null'
-      - string
-    doc: The output directory to save the results (the default is 
-      './mTM_result')
-    inputBinding:
-      position: 102
-      prefix: -outdir
-  - id: output_filename_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_filename_path`
-    inputBinding:
-      position: 103
-      prefix: --output-filename
-outputs:
+  - id: structures
+    type: File[]
+    doc: Structure files named in the input list (staged in the working directory)
   - id: output_filename
     type:
       - 'null'
-      - File
-    doc: "The name of the file to save the superimposed structures. The default is
-      'result.pdb'\n                   When the number of input structures is >61,
-      the superimposed structures will be separated by 'MODEL'\n                 \
-      \  Otherwise, the structures are speparated using the chain IDs: A,B,C,..."
-    outputBinding:
-      glob: $(inputs.output_filename_path)
+      - string
+    doc: "The name of the file to save the superimposed structures (default: result.pdb)"
+    inputBinding:
+      prefix: -o
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
-    doc: The output directory to save the results (the default is 
-      './mTM_result')
+    type: string
+    default: mTM_result
+    doc: "The output directory to save the results (default: ./mTM_result)"
+    inputBinding:
+      prefix: -outdir
+outputs:
+  - id: results
+    type: Directory
+    doc: Output directory with the superimposed structures and the alignment results
     outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: $(inputs.output_directory)
 requirements:
-  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.structures)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtm-align:20220104--h9948957_3

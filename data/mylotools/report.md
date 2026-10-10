@@ -1,5 +1,15 @@
 # mylotools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mylotools_extract-contigs | PASS | ran on a myloasm assembly of the repo plasmid reads; the contig was extracted to a folder |
+| mylotools_plot | PASS | fixed step size type and output folder; wrote the interactive coverage plot for the contig |
+| mylotools_report | PASS | ran on a myloasm assembly; summary HTML, contig and plot files written |
+| mylotools_sanitize-headers | PASS | fixed the CWL to stage the FASTA writable; header rewritten and backup made |
+| mylotools_strain-viz | PASS | fixed output type to File; PNG written from the myloasm overlaps file |
+
 ## mylotools_report
 
 ### Tool Description

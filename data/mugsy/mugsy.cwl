@@ -3,6 +3,10 @@ class: CommandLineTool
 baseCommand: mugsy
 label: mugsy
 doc: "a multiple whole genome aligner\n\nTool homepage: https://github.com/margyle/MugsyDev"
+arguments:
+  - prefix: --directory
+    valueFrom: $(runtime.outdir)
+    position: 102
 inputs:
   - id: input_genomes
     type:
@@ -77,15 +81,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: -nucmeropts
-  - id: output_directory
-    type:
-      - 'null'
-      - string
-    doc: directory used to store output and temporary files. Must be a absolute 
-      path
-    inputBinding:
-      position: 102
-      prefix: --directory
   - id: output_prefix
     type:
       - 'null'

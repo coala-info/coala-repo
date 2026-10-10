@@ -85,6 +85,11 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     doc: Reference to use for alignment. Not required if using --mtb
     inputBinding:
       position: 101
@@ -117,6 +122,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type:
+      - 'null'
+      - Directory
+    doc: Result directory named after seq_id (default mutamr)
+    outputBinding:
+      glob: $(inputs.seq_id || 'mutamr')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mutamr:0.0.2--pyhdfd78af_0

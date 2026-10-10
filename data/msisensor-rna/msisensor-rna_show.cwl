@@ -31,7 +31,7 @@ inputs:
       position: 101
       prefix: --input_description
   - id: model
-    type: string
+    type: File
     doc: The trained model path.
     inputBinding:
       position: 101
@@ -45,9 +45,20 @@ inputs:
       position: 101
       prefix: --model_description
 outputs:
+  - id: updated_model
+    type: File
+    doc: The model file, rewritten with the added description
+    outputBinding:
+      glob: $(inputs.model.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.model)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msisensor-rna:0.1.6--pyhdfd78af_0

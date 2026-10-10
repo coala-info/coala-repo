@@ -51,8 +51,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input_description
-  - id: model
-    type: File
+  - id: model_path
+    type: string
     doc: The trained model of the input file.
     inputBinding:
       position: 101
@@ -74,6 +74,11 @@ inputs:
       position: 101
       prefix: --positive_num
 outputs:
+  - id: model
+    type: File
+    doc: The trained model file
+    outputBinding:
+      glob: $(inputs.model_path)
   - id: stdout
     type: stdout
     doc: Standard output

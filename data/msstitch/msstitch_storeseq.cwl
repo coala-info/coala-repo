@@ -118,8 +118,19 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: dbfile_updated
+    type:
+      - 'null'
+      - File
+    doc: The lookup database file after the run
+    outputBinding:
+      glob: '$(inputs.dbfile ? inputs.dbfile.basename : "no_dbfile_given")'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.dbfile)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msstitch:3.19--pyhdfd78af_0

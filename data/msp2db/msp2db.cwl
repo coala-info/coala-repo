@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: PROG
+baseCommand: msp2db
 label: msp2db
 doc: "Convert msp to SQLite or MySQL database\n\nTool homepage: https://github.com/computational-metabolomics/msp2db"
 inputs:
@@ -75,7 +75,10 @@ inputs:
       position: 101
       prefix: --source
   - id: out_pth_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: File path for SQLite database
     inputBinding:
       position: 102
       prefix: --out_pth

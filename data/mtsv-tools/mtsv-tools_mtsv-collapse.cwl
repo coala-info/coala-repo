@@ -23,7 +23,7 @@ inputs:
   - id: report
     type:
       - 'null'
-      - File
+      - string
     doc: Write per-taxid stats TSV report.
     inputBinding:
       position: 102
@@ -56,6 +56,13 @@ outputs:
     doc: Path to write combined outupt file to.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: report_file
+    type:
+      - 'null'
+      - File
+    doc: Per-taxid stats TSV report
+    outputBinding:
+      glob: $(inputs.report)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

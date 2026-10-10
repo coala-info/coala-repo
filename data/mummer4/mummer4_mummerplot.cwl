@@ -18,7 +18,7 @@ inputs:
       are from mummer, nucmer, promer and\n                    show-tiling (.out,
       .cluster, .delta and .tiling)"
     inputBinding:
-      position: 1
+      position: 201
   - id: breaklen
     type:
       - 'null'
@@ -204,6 +204,7 @@ inputs:
     doc: Specify the gnuplot plot title (default none)
     inputBinding:
       position: 102
+      prefix: -title
   - id: xrange
     type:
       - 'null'

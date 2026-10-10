@@ -1,5 +1,16 @@
 # nanomonsv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanomonsv_connect | PASS |  |
+| nanomonsv_get | PASS |  |
+| nanomonsv_insert_classify | Failed | image problem: RepeatMasker -species human fails because the FamDB human partition 7 is absent from the image (Dfam.h5 is a stub) |
+| nanomonsv_merge_control | PASS |  |
+| nanomonsv_parse | PASS |  |
+| nanomonsv_validate | PASS |  |
+
 ## nanomonsv_parse
 
 ### Tool Description

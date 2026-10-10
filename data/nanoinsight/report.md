@@ -1,5 +1,11 @@
 # nanoinsight CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanoinsight | Failed | image problem: RepeatMasker in the image has an empty 68-byte Dfam.h5 stub, so species human is not known; synthetic data reached the RepeatMasker step (insertion fasta and MAFFT consensus ran) |
+
 ## nanoinsight
 
 ### Tool Description

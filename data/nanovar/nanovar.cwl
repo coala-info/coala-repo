@@ -5,25 +5,19 @@ label: nanovar
 doc: "NanoVar is a long-read structural variant (SV) caller.\n\nTool homepage: https://github.com/cytham/nanovar"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: "Path to long reads or mapped BAM/CRAM file.\n                        Formats:
       fasta/fa/fa.gzip/fa.gz/fastq/fq/fq.gzip/fq.gz/bam/cram"
     inputBinding:
       position: 1
   - id: reference_genome
-    type:
-      - 'null'
-      - File
+    type: File
     doc: "Path to reference genome in FASTA. Genome indexes created \n           \
       \             will overwrite indexes created by other aligners such as bwa."
     inputBinding:
       position: 2
   - id: work_directory
-    type:
-      - 'null'
-      - Directory
+    type: string
     doc: "Path to work directory. Directory will be created \n                   \
       \     if it does not exist."
     inputBinding:
@@ -68,6 +62,7 @@ inputs:
     type:
       - 'null'
       - File
+      - string
     doc: "BED file with genomic regions to be excluded [None]\n                  \
       \      (e.g. telomeres and centromeres) Either specify name of in-built \n \
       \                       reference genome filter (i.e. hg38, hg19, mm10) or provide
@@ -98,7 +93,7 @@ inputs:
   - id: mafft_executable
     type:
       - 'null'
-      - File
+      - string
     doc: Specify path to 'mafft' executable for NanoINSight
     inputBinding:
       position: 104
@@ -122,7 +117,7 @@ inputs:
   - id: minimap2_executable
     type:
       - 'null'
-      - File
+      - string
     doc: Specify path to 'minimap2' executable
     inputBinding:
       position: 104
@@ -154,7 +149,7 @@ inputs:
   - id: repeatmasker_executable
     type:
       - 'null'
-      - File
+      - string
     doc: Specify path to 'RepeatMasker' executable for NanoINSight
     inputBinding:
       position: 104
@@ -162,7 +157,7 @@ inputs:
   - id: samtools_executable
     type:
       - 'null'
-      - File
+      - string
     doc: Specify path to 'samtools' executable
     inputBinding:
       position: 104
@@ -204,9 +199,20 @@ inputs:
       position: 104
       prefix: --threads
 outputs:
+  - id: work_dir
+    type: Directory
+    doc: Work directory with the SV results (VCF, HTML report, filtered BAM, logs).
+    outputBinding:
+      glob: $(inputs.work_directory)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference_genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanovar:1.8.3--py311haab0aaa_0

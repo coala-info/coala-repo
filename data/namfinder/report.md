@@ -1,5 +1,11 @@
 # namfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| namfinder | Failed | tool bug: --create-index, --use-index and the reads2 argument are accepted but silently do nothing (inactive in the source); single-end matching works. |
+
 ## namfinder
 
 ### Tool Description

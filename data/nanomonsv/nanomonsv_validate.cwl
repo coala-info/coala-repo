@@ -13,6 +13,11 @@ inputs:
       position: 1
   - id: tumor_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Path to tumor BAM file
     inputBinding:
       position: 2
@@ -23,6 +28,10 @@ inputs:
       position: 3
   - id: reference_fa
     type: File
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     doc: Path to the reference genome sequence
     inputBinding:
       position: 4
@@ -30,6 +39,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Path to control BAM file
     inputBinding:
       position: 104

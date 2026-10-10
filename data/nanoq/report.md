@@ -1,5 +1,11 @@
 # nanoq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanoq | PASS | 53 of 100 reads kept (min length 300, min quality 10), checked against an independent count of reads, bases and length range |
+
 ## nanoq
 
 ### Tool Description

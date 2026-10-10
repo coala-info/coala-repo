@@ -39,6 +39,7 @@ inputs:
       prefix: --index
   - id: max_softclip
     type: int
+    default: 50
     doc: Max allowed softclip length
     inputBinding:
       position: 101
@@ -52,13 +53,17 @@ inputs:
       position: 101
       prefix: --rad
   - id: rad_mapped
-    type: File
+    type:
+      - 'null'
+      - string
     doc: Name of output rad file; Only used with --rad
     inputBinding:
       position: 101
       prefix: --rad-mapped
   - id: rad_unmapped
-    type: File
+    type:
+      - 'null'
+      - string
     doc: Name of file containing the number of unmapped reads for each barcode; 
       Only used with --rad
     inputBinding:
@@ -66,6 +71,7 @@ inputs:
       prefix: --rad-unmapped
   - id: threads
     type: int
+    default: 1
     doc: Number of threads for processing bam files
     inputBinding:
       position: 101
@@ -78,7 +84,9 @@ inputs:
       prefix: --out
 outputs:
   - id: out
-    type: File
+    type:
+      - File
+      - Directory
     doc: Output file name (or directory name when --rad is passed)
     outputBinding:
       glob: $(inputs.out_path)

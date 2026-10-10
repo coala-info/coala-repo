@@ -5,6 +5,47 @@ label: nanofilt
 doc: "Perform quality and length filtering and trimming of long read sequencing data.\n\
   \nTool homepage: https://github.com/wdecoster/nanofilt"
 inputs:
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: input, uncompressed fastq file
+    inputBinding:
+      position: 200
+  - id: logfile
+    type:
+      - 'null'
+      - string
+    doc: Specify the path and filename for the log file.
+    inputBinding:
+      position: 101
+      prefix: --logfile
+  - id: maxlength
+    type:
+      - 'null'
+      - int
+    doc: Filter on a maximum read length
+    inputBinding:
+      position: 101
+      prefix: --maxlength
+  - id: min_gc
+    type:
+      - 'null'
+      - float
+    doc: Sequences must have GC content >= to this. Float between 0.0 and 1.0.
+      Ignored if using summary file.
+    inputBinding:
+      position: 101
+      prefix: --minGC
+  - id: max_gc
+    type:
+      - 'null'
+      - float
+    doc: Sequences must have GC content <= to this. Float between 0.0 and 1.0.
+      Ignored if using summary file.
+    inputBinding:
+      position: 101
+      prefix: --maxGC
   - id: headcrop
     type:
       - 'null'
@@ -57,7 +98,16 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Filtered fastq on standard output
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.logfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanofilt:2.8.0--py_0

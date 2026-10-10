@@ -1,5 +1,11 @@
 # ncbitax2lin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ncbitax2lin | PASS |  |
+
 ## ncbitax2lin
 
 ### Tool Description

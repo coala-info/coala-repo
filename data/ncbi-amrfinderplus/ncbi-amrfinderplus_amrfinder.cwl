@@ -17,7 +17,7 @@ inputs:
   - id: blast_bin
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'Directory for BLAST. Deafult: $BLAST_BIN'
     inputBinding:
       position: 101
@@ -83,7 +83,7 @@ inputs:
   - id: hmmer_bin
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for HMMer
     inputBinding:
       position: 101
@@ -109,7 +109,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: Error log file, appended, opened on application start
     inputBinding:
       position: 101
@@ -117,8 +117,8 @@ inputs:
   - id: mutation_all_file
     type:
       - 'null'
-      - File
-    doc: File to report all mutations
+      - string
+    doc: File to report all mutations (output path)
     inputBinding:
       position: 101
       prefix: --mutation_all
@@ -275,6 +275,23 @@ inputs:
       position: 107
       prefix: --protein_output
 outputs:
+  - id: report
+    type: stdout
+    doc: Report table (standard output; empty when --output is used).
+  - id: mutation_all
+    type:
+      - 'null'
+      - File
+    doc: File with all mutations.
+    outputBinding:
+      glob: $(inputs.mutation_all_file)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Error log file.
+    outputBinding:
+      glob: $(inputs.log)
   - id: output_file
     type:
       - 'null'
@@ -306,6 +323,7 @@ outputs:
       glob: $(inputs.nucleotide_flank5_output_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: amrfinder_report.tsv
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbi-amrfinderplus:4.2.7--hf69ffd2_0

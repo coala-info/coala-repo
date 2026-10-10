@@ -18,6 +18,13 @@ inputs:
       position: 2
   - id: reference_fa
     type: File
+    secondaryFiles:
+      - .fai
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     doc: Path to the reference genome sequence
     inputBinding:
       position: 3
@@ -28,6 +35,8 @@ inputs:
       position: 4
   - id: line1_db
     type: File
+    secondaryFiles:
+      - .tbi
     doc: Path to LINE1 position file
     inputBinding:
       position: 5

@@ -4,17 +4,8 @@ baseCommand: unnaf
 label: naf_unnaf
 doc: "Decompress NAF files\n\nTool homepage: https://github.com/KirillKryukov/naf"
 inputs:
-  - id: output_type
-    type:
-      - 'null'
-      - string
-    doc: Output type selection
-    inputBinding:
-      position: 1
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input NAF file
     inputBinding:
       position: 2
@@ -187,11 +178,13 @@ inputs:
       position: 103
       prefix: -c
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: Decompress into FILE
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:
@@ -200,8 +193,12 @@ outputs:
     doc: Decompress into FILE
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: stdout
+    type: stdout
+    doc: Decompressed data or the selected information when -c is used
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/naf:1.3.0--h3c26d10_0
+stdout: naf_unnaf.out

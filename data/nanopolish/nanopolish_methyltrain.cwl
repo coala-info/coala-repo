@@ -8,6 +8,8 @@ doc: "Train a methylation model\n\nTool homepage: https://github.com/jts/nanopol
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: the reads aligned to the genome assembly are in bam FILE
     inputBinding:
       position: 101
@@ -30,6 +32,8 @@ inputs:
       prefix: --filter-policy
   - id: genome
     type: File
+    secondaryFiles:
+      - .fai
     doc: the reference genome is in FILE
     inputBinding:
       position: 101
@@ -92,6 +96,11 @@ inputs:
       prefix: --progress
   - id: reads
     type: File
+    secondaryFiles:
+      - .index
+      - .index.fai
+      - .index.gzi
+      - .index.readdb
     doc: the ONT reads are in fasta FILE
     inputBinding:
       position: 101
@@ -142,7 +151,39 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-fofn
+  - id: raw_ont_signal_directory
+    type:
+      type: array
+      items: Directory
+    doc: Directories with the raw ONT signal (fast5) files that were given to
+      nanopolish index. They are staged in the working directory under the
+      same names, so the relative fast5 paths stored in the reads index
+      (.index.readdb) resolve.
+  - id: model_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: k-mer model files named in the models_fofn file. They are staged in
+      the working directory, so the names in the fofn resolve.
 outputs:
+  - id: trained_models
+    type:
+      type: array
+      items: File
+    doc: Model files in the working directory after training (methyltrain
+      rewrites the models given in the models fofn)
+    outputBinding:
+      glob: '*.model'
+  - id: training_files
+    type:
+      type: array
+      items: File
+    doc: Training summary and per-round event tables (methyltrain<suffix>.*)
+    outputBinding:
+      glob:
+        - methyltrain*.summary
+        - methyltrain*.events.tsv
   - id: out_fofn
     type:
       - 'null'
@@ -151,6 +192,10 @@ outputs:
     outputBinding:
       glob: $(inputs.out_fofn_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.raw_ont_signal_directory)
+      - '$(inputs.model_files ? inputs.model_files.map(function (f) { return {"entryname": f.basename, "entry": f, "writable": true}; }) : [])'
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

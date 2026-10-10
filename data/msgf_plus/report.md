@@ -1,5 +1,11 @@
 # msgf_plus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msgf_plus | PASS |  |
+
 ## msgf_plus
 
 ### Tool Description

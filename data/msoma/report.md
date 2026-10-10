@@ -1,5 +1,13 @@
 # msoma CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msoma_count | PASS |  |
+| msoma_merge-counts | PASS | tool crashes on non-numeric chromosome names such as chrM; works on chr22 counts |
+| msoma_mle | PASS |  |
+
 ## msoma_count
 
 ### Tool Description

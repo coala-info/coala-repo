@@ -85,6 +85,10 @@ outputs:
       glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '${ return inputs.output_dir ? {"class": "Directory", "basename": inputs.output_dir, "listing": []} : null; }'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msstitch:3.19--pyhdfd78af_0

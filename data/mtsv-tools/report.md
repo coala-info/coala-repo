@@ -1,5 +1,17 @@
 # mtsv-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mtsv-tools_mtsv-binner | PASS |  |
+| mtsv-tools_mtsv-build | PASS |  |
+| mtsv-tools_mtsv-chunk | PASS |  |
+| mtsv-tools_mtsv-collapse | PASS |  |
+| mtsv-tools_mtsv-partition | PASS |  |
+| mtsv-tools_mtsv-reference | PASS |  |
+| mtsv-tools_mtsv-resume-point | PASS |  |
+
 ## mtsv-tools_mtsv-chunk
 
 ### Tool Description
@@ -166,3 +178,100 @@ ARGS:
 
 ## Metadata
 - **Skill**: generated
+
+## mtsv-tools_mtsv-partition
+
+### Tool Description
+Split reads into matched/unmatched sets based on mtsv results.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mtsv-tools:2.1.0--h54198d6_0
+- **Homepage**: https://github.com/FofanovLab/mtsv_tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/mtsv-tools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+mtsv-partition 2.1.0
+Tara Furstenau <tara.furstenau@gmail.com>
+Split reads into matched/unmatched sets based on mtsv results.
+
+USAGE:
+    mtsv-partition [FLAGS] --fasta <FASTA> --fastq <FASTQ> --matched <MATCHED> --results <RESULTS>... --unmatched <UNMATCHED>
+
+FLAGS:
+    -v               Include this flag to trigger debug-level logging.
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -f, --fasta <FASTA>            Path to FASTA reads.
+    -f, --fastq <FASTQ>            Path to FASTQ reads.
+        --matched <MATCHED>        Output path for reads present in results.
+        --results <RESULTS>...     Path(s) to mtsv results files.
+        --unmatched <UNMATCHED>    Output path for reads not present in results.
+```
+
+## mtsv-tools_mtsv-reference
+
+### Tool Description
+Extract reference sequences for taxids present in mtsv results.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mtsv-tools:2.1.0--h54198d6_0
+- **Homepage**: https://github.com/FofanovLab/mtsv_tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/mtsv-tools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+mtsv 2.1.0
+Tara Furstenau <tara.furstenau@gmail.com>
+Extract reference sequences for taxids present in mtsv results.
+
+USAGE:
+    mtsv-reference [FLAGS] [OPTIONS] <TAXID>... --index <INDEX>
+
+FLAGS:
+    -v               Include this flag to trigger debug-level logging.
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -i, --index <INDEX>             Absolute path to mtsv index file.
+    -r, --results <RESULTS_PATH>    Output file path (FASTA).
+
+ARGS:
+    <TAXID>...    Extract reference sequences for taxid
+```
+
+## mtsv-tools_mtsv-resume-point
+
+### Tool Description
+Find the read offset of the last read present in mtsv results.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mtsv-tools:2.1.0--h54198d6_0
+- **Homepage**: https://github.com/FofanovLab/mtsv_tools
+- **Package**: https://anaconda.org/channels/bioconda/packages/mtsv-tools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+mtsv-resume-point 2.1.0
+Tara Furstenau <tara.furstenau@gmail.com>
+Find the read offset of the last read present in mtsv results.
+
+USAGE:
+    mtsv-resume-point [FLAGS] --fasta <FASTA> --fastq <FASTQ> --results <RESULTS>
+
+FLAGS:
+    -v               Include this flag to trigger debug-level logging.
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -f, --fasta <FASTA>        Path to FASTA reads.
+    -f, --fastq <FASTQ>        Path to FASTQ reads.
+        --results <RESULTS>    Path to mtsv results file.
+```

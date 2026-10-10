@@ -8,6 +8,11 @@ doc: "Parse alignment files to identify structural variants.\n\nTool homepage: h
 inputs:
   - id: alignment_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Path to input BAM or CRAM file
     inputBinding:
       position: 1

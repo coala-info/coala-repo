@@ -1,5 +1,11 @@
 # nanosv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanosv | Failed | image problem: NanoSV always reads its packaged config.ini, which has a non-ASCII byte, and the image has no UTF-8 locale (Python 3.6 ascii decode error) |
+
 ## nanosv
 
 ### Tool Description

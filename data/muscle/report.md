@@ -1,5 +1,11 @@
 # muscle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| muscle | PASS | align, super5, ensembles, maxcc, resample, disperse, efa_explode and addconfseq work; -letterconf -html crashes (Bad conf) and letterconf output uses symbols, not digits |
+
 ## muscle
 
 ### Tool Description

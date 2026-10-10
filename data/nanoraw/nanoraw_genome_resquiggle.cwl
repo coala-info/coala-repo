@@ -13,8 +13,6 @@ inputs:
       position: 1
   - id: genome_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: Path to fasta file for mapping.
     inputBinding:
       position: 2
@@ -230,9 +228,22 @@ inputs:
       position: 103
       prefix: --2d
 outputs:
+  - id: corrected_fast5_directory
+    type: Directory
+    doc: The fast5 directory with the re-squiggled (corrected) group added to
+      each file
+    outputBinding:
+      glob: $(inputs.fast5_basedir.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fast5_basedir)
+        writable: true
+      - entry: $(inputs.genome_fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanoraw:0.5--py27r3.3.2_0

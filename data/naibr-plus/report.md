@@ -1,5 +1,12 @@
 # naibr-plus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| naibr-plus_bedpe_to_vcf.py | PASS | fixed ref type to File and made output optional; VCF from the example BEDPE matches the NAIBR VCF (chr21 INV) |
+| naibr-plus_naibr | PASS | rewrote the CWL to write the config file from inputs; ran on the repo chr21 linked-read example; found the expected chr21 inversion (28 split molecules, PASS) |
+
 ## naibr-plus_naibr
 
 ### Tool Description

@@ -50,8 +50,19 @@ outputs:
     doc: Directory to output in
     outputBinding:
       glob: $(inputs.output_directory)
+  - id: split_files
+    type:
+      type: array
+      items: File
+    doc: One table per value of the split column
+    outputBinding:
+      glob: '$(inputs.output_directory ? inputs.output_directory + "/*.tsv" : "*.tsv")'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '${ return inputs.output_directory ? {"class": "Directory", "basename": inputs.output_directory, "listing": []} : null; }'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msstitch:3.19--pyhdfd78af_0

@@ -1,5 +1,11 @@
 # msp2db CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| msp2db | PASS | baseCommand fixed from PROG to msp2db; 14 spectra loaded |
+
 ## msp2db
 
 ### Tool Description

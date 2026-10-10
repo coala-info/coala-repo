@@ -13,6 +13,9 @@ inputs:
       position: 1
   - id: pileup
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: path to the modkit pileup file.
     inputBinding:
       position: 2
@@ -149,6 +152,10 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.assembly)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanomotif:1.1.2--pyhdfd78af_0

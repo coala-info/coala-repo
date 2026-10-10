@@ -1,5 +1,11 @@
 # ncbi-acc-download CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ncbi-acc-download | PASS |  |
+
 ## ncbi-acc-download
 
 ### Tool Description

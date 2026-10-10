@@ -1,5 +1,11 @@
 # nanoqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanoqc_nanoQC | PASS | fixed wrong flag --output-dir to --outdir; 4000 real nanopore reads processed, html report and log written |
+
 ## nanoqc_nanoQC
 
 ### Tool Description

@@ -10,7 +10,7 @@ inputs:
     type: File
     doc: delta alignment file
     inputBinding:
-      position: 1
+      position: 201
   - id: many_to_many_rearrangements
     type:
       - 'null'

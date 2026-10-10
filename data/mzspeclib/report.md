@@ -1,5 +1,14 @@
 # mzspeclib CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mzspeclib_convert | PASS | fixed output path (positional string, not File) and attribute pairs; text to JSON on the SPICE library gave 11 spectra; -f msp crashes in the tool (AttributeError ReporterIonAnnotation) |
+| mzspeclib_describe | PASS | SPICE example library described: format text, 11 spectra, library attributes |
+| mzspeclib_index | PASS | staged the library writable and collected the .splindex file; valid SQLite index for 21 spectra |
+| mzspeclib_validate | PASS | validation messages go to stderr, so the CWL now collects stderr; real warnings reported on the SPICE library |
+
 ## mzspeclib_convert
 
 ### Tool Description

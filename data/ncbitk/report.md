@@ -1,5 +1,11 @@
 # ncbitk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ncbitk | PASS | Tested --status with a local assembly summary (the tool's own test file): counts match (100 new genomes; 27 for Buchnera_aphidicola). The rsync update mode was not run. |
+
 ## ncbitk
 
 ### Tool Description

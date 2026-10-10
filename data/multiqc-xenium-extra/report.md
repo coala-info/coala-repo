@@ -1,5 +1,11 @@
 # multiqc-xenium-extra CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| multiqc-xenium-extra_multiqc | PASS |  |
+
 ## multiqc-xenium-extra_multiqc
 
 ### Tool Description

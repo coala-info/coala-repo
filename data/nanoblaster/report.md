@@ -1,5 +1,11 @@
 # nanoblaster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nanoblaster | PASS | ran on 17 real HG002 ONT telomere reads vs the mini reference; all 17 reads have an alignment at the true locus and strand (BAM truth) |
+
 ## nanoblaster
 
 ### Tool Description

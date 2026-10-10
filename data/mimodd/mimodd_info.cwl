@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: info
+baseCommand: [mimodd, info]
 label: mimodd_info
 doc: "Show information about the input file\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:

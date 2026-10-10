@@ -7,27 +7,14 @@ label: metawrap-kraken_metawrap_kraken
 doc: "Run on any number of fasta assembly files and/or or paired-end reads.\n\nTool
   homepage: https://github.com/bxlab/metaWRAP"
 inputs:
-  - id: assembly_fasta
-    type: File
-    doc: fasta assembly files
-    inputBinding:
-      position: 1
-  - id: reads_1
+  - id: reads
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: paired-end reads (read 1)
+      type: array
+      items: File
+    doc: "Sequence files: assembly files (*.fa, *.fasta) and/or paired reads named name_1.fastq and name_2.fastq"
     inputBinding:
-      position: 2
-  - id: reads_2
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: paired-end reads (read 2)
-    inputBinding:
-      position: 3
+      position: 200
+      valueFrom: $(self.map(function (f) { return f.basename; }))
   - id: no_preload
     type:
       - 'null'
@@ -70,6 +57,10 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metawrap-kraken:1.3.0--hdfd78af_3

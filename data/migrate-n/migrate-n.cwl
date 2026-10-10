@@ -2,82 +2,68 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: migrate-n
 label: migrate-n
-doc: "MIGRATION RATE AND POPULATION SIZE ESTIMATION using Markov Chain Monte Carlo
-  simulation\n\nTool homepage: http://popgen.sc.fsu.edu/Migrate/Migrate-n.html"
+doc: "Migrate-n estimates population sizes and migration rates (and other population parameters) from\
+  \ genetic data using maximum likelihood or Bayesian inference with coalescent MCMC.\n\nTool homepage:\
+  \ http://popgen.sc.fsu.edu/Migrate/Migrate-n.html"
 inputs:
-  - id: input_file
+  - id: nomenu
+    type:
+      - 'null'
+      - boolean
+    doc: Does not display menu, use this for batch jobs.
+    inputBinding:
+      position: 101
+      prefix: -nomenu
+  - id: menu
+    type:
+      - 'null'
+      - boolean
+    doc: Forces the display of the menu.
+    inputBinding:
+      position: 101
+      prefix: -menu
+  - id: parmfile
     type:
       - 'null'
       - File
-    doc: Input filename for reading
+    doc: Migrate-n parameter file (parmfile) that names the input data file and all run options.
     inputBinding:
       position: 1
-  - id: data_type
+  - id: data_files
     type:
       - 'null'
-      - string
-    doc: 'Data type currently set to: DNA sequence model'
-    inputBinding:
-      position: 102
-      prefix: D
-  - id: input_output_formats
-    type:
-      - 'null'
-      - string
-    doc: Input/Output formats
-    inputBinding:
-      position: 102
-      prefix: I
-  - id: parameters
-    type:
-      - 'null'
-      - string
-    doc: Parameters [start, migration model]
-    inputBinding:
-      position: 102
-      prefix: P
-  - id: pdf_output
-    type:
-      - 'null'
-      - boolean
-    doc: PDF output enabled [Letter-size]
-    inputBinding:
-      position: 102
-  - id: quit
-    type:
-      - 'null'
-      - string
-    doc: Quit the program
-    inputBinding:
-      position: 102
-      prefix: Q
-  - id: search_strategy
-    type:
-      - 'null'
-      - string
-    doc: Search strategy
-    inputBinding:
-      position: 102
-      prefix: S
-  - id: start_program
-    type:
-      - 'null'
-      - boolean
-    doc: Start the program with typing Yes or Y
-    inputBinding:
-      position: 102
-  - id: write_parmfile
-    type:
-      - 'null'
-      - string
-    doc: Write a parmfile
-    inputBinding:
-      position: 102
-      prefix: W
+      - type: array
+        items: File
+    doc: Files named in the parmfile (infile, usertree, geofile, ...); they are staged in the working
+      directory so the relative names resolve.
 outputs:
-  - id: stdout
+  - id: results
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Result files written to the working directory (outfile, PDF, summary, Bayesian and histogram
+      files).
+    outputBinding:
+      glob:
+        - outfile*
+        - sumfile*
+        - mathfile*
+        - bayesfile*
+        - bayesallfile*
+        - mighistfile*
+        - skylinefile*
+        - treefile*
+        - logfile*
+  - id: stdout_log
     type: stdout
-    doc: Standard output
+    doc: Progress messages (standard output).
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.data_files ? inputs.data_files : [])'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/migrate-n:3.6.11--haf0c795_7

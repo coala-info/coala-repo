@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: index
+baseCommand: [mimodd, index]
 label: mimodd_index
 doc: "Index generation tool for various formats.\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:
@@ -79,6 +79,7 @@ outputs:
   - id: output_path
     type:
       - 'null'
+      - File
       - Directory
     doc: 'specifies the location at which to save the index (default: save the index
       alongside the input file as <input file>.<INDEX_TYPE> for indices of type "fai"

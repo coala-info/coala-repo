@@ -1,5 +1,11 @@
 # migrate-n CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| migrate-n | PASS | real example microsatellite data (2 populations, 10 loci) with a shortened ML run gives a valid outfile with Theta and M estimates; rewrote CWL for batch parmfile use, input data must be staged writable |
+
 ## migrate-n
 
 ### Tool Description

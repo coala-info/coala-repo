@@ -1,5 +1,11 @@
 # metfrag CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metfrag | PASS | rewrote the wrapper: command is metfrag with ParameterFile=, data files staged, results folder created and returned; ranked 167 local candidates for the repo's example peak list |
+
 ## metfrag
 
 ### Tool Description

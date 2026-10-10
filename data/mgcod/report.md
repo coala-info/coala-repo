@@ -1,5 +1,12 @@
 # mgcod CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mgcod_mgcod.py | PASS |  |
+| mgcod_multiprocess_mgcod.py | PASS |  |
+
 ## mgcod_multiprocess_mgcod.py
 
 ### Tool Description
@@ -84,3 +91,79 @@ optional arguments:
   --version             show program's version number and exit
 ```
 
+## mgcod_mgcod.py
+
+### Tool Description
+Mgcod segments contigs based on genetic code usage and annotates coding regions with MetaGeneMark.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mgcod:1.0.2--hdfd78af_0
+- **Homepage**: https://github.com/gatech-genemark/Mgcod
+- **Package**: https://anaconda.org/channels/bioconda/packages/mgcod/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mgcod.py [-h] -i PATH_TO_GENOME [-p PATH_TO_PREDICTIONS] [-o OUTPUT]
+                [-m PATH_TO_PLOTS] [-r] [--isoforms] [-n CONSECUTIVE_WINDOWS]
+                [-g CONSECUTIVE_GENE_LABELS] [-w WINDOW_SIZE] [-st STRIDE]
+                [-t TOLERANCE] [-d] [-AA] [-NT] [--short_contigs]
+                [--logfile LOGFILE] [-v] [--version]
+
+Mgcod segments contigs based on genetic code usage and performs genetic-code-
+informed annotation of coding regions using MetaGeneMark. Can be run on any
+prokaryotic sequences with(-out) stop codon reassignment
+
+required arguments:
+  -i PATH_TO_GENOME, --path_to_genome PATH_TO_GENOME
+                        Path to input file, FASTA format
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH_TO_PREDICTIONS, --path_to_mgm_predictions PATH_TO_PREDICTIONS
+                        Directory where to save MGM predictions so that they
+                        can be re-used. If path does not exist, it will be
+                        created. [./mgm_results/]
+  -o OUTPUT, --path_to_output OUTPUT
+                        Directory where to save final gene annotations and
+                        supporting outputs. If path does not exist, it will be
+                        created. If -AA or -NT flag is set, sequences will be
+                        saved here, too. [./results/]
+  -m PATH_TO_PLOTS, --path_to_plots PATH_TO_PLOTS
+                        Directory where to save plots. Plots logodd ratio per
+                        window for different MGM models. Only available with
+                        isoform prediction. If path does not exist, it will be
+                        created
+  -r, --circular        Set if sequence is circular. Only relevant for isoform
+                        prediction
+  --isoforms            Enable prediction of isoforms
+  -n CONSECUTIVE_WINDOWS, --consecutive_windows CONSECUTIVE_WINDOWS
+                        Number of consecutive windows to be required with same
+                        genetic code to keep. Only relevant for isoform
+                        prediction. Minimum is 2. [3]
+  -g CONSECUTIVE_GENE_LABELS, --consecutive_gene_labels CONSECUTIVE_GENE_LABELS
+                        Number of consecutive gene labels to be required with
+                        same genetic code to keep. Only relevant for isoform
+                        prediction. Minimum is 2. [5]
+  -w WINDOW_SIZE, --window_size WINDOW_SIZE
+                        Window size in bp applied to search for isoform. Only
+                        relevant for isoform prediction. [5000]
+  -st STRIDE, --stride STRIDE
+                        Step size in bp, with which window will be moved along
+                        sequence. Only relevant for isoform prediction. [If
+                        sequence <= 100kb 2500 bp else 5000 bp]
+  -t TOLERANCE, --tolerance TOLERANCE
+                        The maximally tolerated difference in prediction of
+                        gene start or gene stop to consider the prediction of
+                        two models isoforms. Only relevent for isoform
+                        prediction. [30]
+  -d, --delete          Delete intermediary files (prediction of the different
+                        MGM models).
+  -AA, --amino_acids    Extract amino acid sequences of predicted proteins.
+  -NT, --nucleotides    Extract nucleotide sequences of predicted proteins.
+  --short_contigs       Predict genetic codes of contigs < 5000bp. Prediction
+                        may not be reliable
+  --logfile LOGFILE     Path to log file
+  -v, --verbose         verbose
+  --version             show program's version number and exit
+```

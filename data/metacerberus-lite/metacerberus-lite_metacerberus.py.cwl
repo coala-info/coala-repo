@@ -4,6 +4,12 @@ baseCommand: metacerberus.py
 label: metacerberus-lite_metacerberus.py
 doc: "MetaCerberus: a pipeline for the identification of viral sequences in metagenomic
   data.\n\nTool homepage: https://github.com/raw-lab/metacerberus"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.hmm_db_files || [])
+  - class: NetworkAccess
+    networkAccess: true
 inputs:
   - id: adapters
     type:
@@ -22,15 +28,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --address
-  - id: amino
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Protein Amino Acid sequence
-    inputBinding:
-      position: 101
-      prefix: --amino
   - id: chunker
     type:
       - 'null'
@@ -39,7 +36,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --chunker
-  - id: class
+  - id: class_file
     type:
       - 'null'
       - File
@@ -104,7 +101,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Eukaryote nucleotide sequence (includes other viruses, works all around
       for everything)
     inputBinding:
@@ -129,11 +126,17 @@ inputs:
     inputBinding:
       position: 101
       prefix: --hmm
+  - id: hmm_db_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Custom HMM database files (<name>.hmm.gz and its lookup table <name>.tsv), staged in the working directory so that --hmm <name>.hmm.gz can name them
   - id: hmmer_tsv
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Annotations tsv file from HMMER (experimental)
     inputBinding:
       position: 101
@@ -198,7 +201,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Phage sequence (EXPERIMENTAL)
     inputBinding:
       position: 101
@@ -215,7 +218,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Prokaryote nucleotide sequence (includes microbes, bacteriophage)
     inputBinding:
       position: 101
@@ -224,7 +227,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Giant virus nucleotide sequence
     inputBinding:
       position: 101
@@ -233,7 +236,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Protein Amino Acid sequence
     inputBinding:
       position: 101
@@ -298,7 +301,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Run sequence in both --prodigal and --fraggenescan modes
     inputBinding:
       position: 101
@@ -323,14 +326,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: dir_out_dir
-    type:
-      - 'null'
-      - Directory
-    doc: path to output directory, defaults to "results-metacerberus" in current
-      directory.
+  - id: results_dir
+    type: Directory
+    doc: Output directory (results-metacerberus unless --dir-out is given)
     outputBinding:
-      glob: $(inputs.dir_out)
+      glob: $(inputs.dir_out || 'results-metacerberus')
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metacerberus-lite:1.4.0--pyhdfd78af_1

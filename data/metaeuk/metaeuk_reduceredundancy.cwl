@@ -5,12 +5,20 @@ baseCommand:
   - reduceredundancy
 label: metaeuk_reduceredundancy
 doc: "By Eli Levy Karin <eli.levy.karin@gmail.com>\n\nTool homepage: https://github.com/soedinglab/metaeuk"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.called_exons_db)
 inputs:
   - id: called_exons_db
-    type: File
-    doc: Input calledExonsDB
+    type: 'File[]'
+    doc: Input called exons database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 1
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: compressed
     type:
       - 'null'
@@ -57,15 +65,15 @@ inputs:
       position: 3
 outputs:
   - id: predictions_exons_db
-    type: File
-    doc: Output predictionsExonsDB
+    type: 'File[]'
+    doc: Output predictions exons database. All files of the MetaEuk database (data, .index, .dbtype, ...).
     outputBinding:
-      glob: '$(inputs.predictions_exons_db_path)'
+      glob: "$(inputs.predictions_exons_db_path)*"
   - id: pred_to_call
-    type: File
-    doc: Output predToCall
+    type: 'File[]'
+    doc: Output prediction-to-call database. All files of the MetaEuk database (data, .index, .dbtype, ...).
     outputBinding:
-      glob: '$(inputs.pred_to_call_path)'
+      glob: "$(inputs.pred_to_call_path)*"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

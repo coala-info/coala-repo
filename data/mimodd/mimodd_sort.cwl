@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sort
+baseCommand: [mimodd, sort]
 label: mimodd_sort
 doc: "Sorts SAM/BAM files by read name.\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:

@@ -1,5 +1,11 @@
 # metav CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metav | Not completed | needs large databases (viral-nr, nr with taxonomy, host and plasmid indexes); added the missing -o output input |
+
 ## metav
 
 ### Tool Description

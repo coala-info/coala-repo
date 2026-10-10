@@ -16,6 +16,9 @@ inputs:
       position: 101
       prefix: --alpha
   - id: bams
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     type:
       - 'null'
       - type: array
@@ -24,6 +27,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bams
+      itemSeparator: ','
   - id: blocks
     type:
       - 'null'
@@ -210,6 +214,8 @@ inputs:
       position: 101
       prefix: --procs
   - id: ref
+    secondaryFiles:
+      - .fai
     type: File
     doc: ref genome fasta
     inputBinding:

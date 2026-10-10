@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varcall
+baseCommand: [mimodd, varcall]
 label: mimodd_varcall
 doc: "Call variants from aligned reads\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:

@@ -1,5 +1,11 @@
 # mhcgnomes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mhcgnomes | PASS | real NetMHCpan allele names parse to correct normalized alleles in tsv and json |
+
 ## mhcgnomes
 
 ### Tool Description

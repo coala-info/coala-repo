@@ -1,5 +1,11 @@
 # metawrap-classify-bins CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metawrap-classify-bins_metawrap | Not completed | needs the NCBI nt BLAST database and taxonomy dump (not available); fixed -o flag |
+
 ## Metadata
 - **Skill**: generated
 

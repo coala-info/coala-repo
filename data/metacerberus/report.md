@@ -1,5 +1,11 @@
 # metacerberus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metacerberus_metacerberus.py | PASS | protein mode on the repo CAZy_pc_Top10.faa with the CAZy HMM database (20 MB) as a custom --hmm; the 10 proteins get their CAZy families |
+
 ## metacerberus_metacerberus.py
 
 ### Tool Description

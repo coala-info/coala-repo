@@ -60,14 +60,18 @@ inputs:
   - id: output_fasta_files_path
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+    doc: Names of the files to write FASTA to, one per name list
     inputBinding:
       position: 102
       prefix: --output-fasta-files
   - id: output_fastq_files_path
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+    doc: Names of the files to write FASTQ to, one per name list
     inputBinding:
       position: 103
       prefix: --output-fastq-files
@@ -75,14 +79,16 @@ outputs:
   - id: output_fasta_files
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: List of files to write FASTA to
     outputBinding:
       glob: $(inputs.output_fasta_files_path)
   - id: output_fastq_files
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: List of files to write FASTQ to
     outputBinding:
       glob: $(inputs.output_fastq_files_path)

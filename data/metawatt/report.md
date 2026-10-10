@@ -1,5 +1,11 @@
 # metawatt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metawatt | PASS | binning, tRNA prediction and read mapping give 4 bins on real B. fragilis contigs; diamond taxonomy step fails because the image has no diamond |
+
 ## metawatt
 
 ### Tool Description

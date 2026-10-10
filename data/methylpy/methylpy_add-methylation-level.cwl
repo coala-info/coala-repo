@@ -15,6 +15,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --allc-files
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: buffer_line_number
     type:
       - 'null'
@@ -42,7 +43,7 @@ inputs:
       position: 101
       prefix: --input-no-header
   - id: input_tsv_file
-    type: File?
+    type: File
     doc: A tab-separate file that specifies genomic intervals. The file contains
       a header. First three columns are required to be chromosome, start and 
       end, which are 1-based coordinates.
@@ -106,8 +107,26 @@ outputs:
     doc: Name of output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: covered_sites_file
+    type:
+      - 'null'
+      - File
+    doc: Number of covered sites in each region (written when --extra-info is True)
+    outputBinding:
+      glob: $(inputs.output_file_path).covered_sites.tsv
+  - id: total_basecalls_file
+    type:
+      - 'null'
+      - File
+    doc: Total basecalls in each region (written when --extra-info is True)
+    outputBinding:
+      glob: $(inputs.output_file_path).total_basecalls.tsv
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.allc_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

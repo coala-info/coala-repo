@@ -1,5 +1,11 @@
 # metaclassifier CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaclassifier | PASS |  |
+
 ## metaclassifier
 
 ### Tool Description

@@ -19,7 +19,7 @@ inputs:
       - 'null'
       - string
     doc: Directory to store blast nucleotide databases for each sequence in 
-      genome directory. By default write to current folder 'blastn_db'
+      genome directory. By default write to current folder 'blastn_db'. The path must end with '/'.
     inputBinding:
       position: 101
       prefix: --database
@@ -50,7 +50,7 @@ inputs:
       - 'null'
       - string
     doc: Output folder storing all blastn queries in xml format. By defualt 
-      write to current folder 'blastn_against_bank'
+      write to current folder 'blastn_against_bank'. The path must end with '/'.
     inputBinding:
       position: 101
       prefix: --query
@@ -85,9 +85,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File containing the final partitioned MHGs, each line represents a MHG 
       containing different blocks
     outputBinding:
@@ -97,7 +95,7 @@ outputs:
       - 'null'
       - Directory
     doc: Directory to store blast nucleotide databases for each sequence in 
-      genome directory. By default write to current folder 'blastn_db'
+      genome directory. By default write to current folder 'blastn_db'. The path must end with '/'.
     outputBinding:
       glob: $(inputs.database)
   - id: query_dir
@@ -105,7 +103,7 @@ outputs:
       - 'null'
       - Directory
     doc: Output folder storing all blastn queries in xml format. By defualt 
-      write to current folder 'blastn_against_bank'
+      write to current folder 'blastn_against_bank'. The path must end with '/'.
     outputBinding:
       glob: $(inputs.query)
 requirements:

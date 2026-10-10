@@ -7,8 +7,6 @@ doc: "Convert streamlines of white matter bundle into a density map and binary m
 inputs:
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Path to the reference image
     inputBinding:
       position: 101
@@ -21,7 +19,7 @@ inputs:
       prefix: --tractogram
   - id: output_path
     type: string
-    doc: Path to the output binary mask file
+    doc: Path to the output binary mask file (name ends in .nii.gz)
     inputBinding:
       position: 102
       prefix: --output
@@ -31,6 +29,11 @@ outputs:
     doc: Path to the output binary mask file
     outputBinding:
       glob: $(inputs.output_path)
+  - id: density_map
+    type: File
+    doc: Density map, written beside the mask as <output>_density.nii.gz
+    outputBinding:
+      glob: $(inputs.output_path.replace('.nii.gz', '_density.nii.gz'))
 requirements:
   - class: InlineJavascriptRequirement
 hints:

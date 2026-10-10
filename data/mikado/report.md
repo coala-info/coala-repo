@@ -1,5 +1,21 @@
 # mikado CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mikado_compare | PASS | tmap, refmap and stats written for picked loci against the sample reference (base F1 93%); reference staged writable for the index |
+| mikado_configure | PASS | configuration written from the sample list, genome and junctions; rewrote CWL from help and added the config output |
+| mikado_pick | PASS | picked 11 genes from the prepared sample models using a junction-only database (ORF loading fails in this image); result matches the reference at 93% base F1 |
+| mikado_prepare | PASS | 112 transcripts, same count as the repo's own prepared sample GTF; rewrote CWL from help |
+| mikado_serialise | Failed | image problem: pandas 2.2 with SQLAlchemy 1.4 crashes when loading ORFs ('Engine' object has no attribute 'cursor'); only the junction-only mode works |
+| mikado_util_awk_gtf | PASS | region slice of the prepared sample GTF |
+| mikado_util_collect_compare | PASS | F1 and sensitivity tables written from a real compare stats file |
+| mikado_util_convert | PASS | reference GFF3 converted to BED12 with the expected 18 records |
+| mikado_util_grep | PASS | 3 listed models extracted from the reference GFF3 |
+| mikado_util_stats | Failed | image problem: numpy has no attribute 'warnings' (mikado calculator import fails) |
+| mikado_util_trim | Failed | tool bug: crashes with 'Namespace' object has no attribute 'gff' |
+
 ## mikado_configure
 
 ### Tool Description
@@ -658,27 +674,199 @@ Mikado compare: error: the following arguments are required: -r/--reference
 ```
 
 
-## mikado_util
+## mikado_util_awk_gtf
 
 ### Tool Description
-Mikado util
+Retrieve specific feature slices from a GTF file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2
-- **Homepage**: https://github.com/lucventurini/mikado
+- **Homepage**: https://github.com/EI-CoreBioinformatics/mikado
 - **Package**: https://anaconda.org/channels/bioconda/packages/mikado/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-/usr/local/lib/python3.10/site-packages/Mikado/subprograms/configure.py:7: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
-  from pkg_resources import resource_filename, resource_stream
-usage: Mikado util [-h]
-                   {awk_gtf,class_codes,collect_compare,convert,grep,metrics,stats,trim}
-                   ...
-Mikado util: error: argument -h/--help: ignored explicit argument 'elp'
+usage: mikado util awk_gtf [-h] (-r REGION | --chrom CHROM) [-as]
+                           [--start START] [--end END]
+                           gtf [out]
+
+Script to retrieve specific feature slices from a GTF file.
+
+positional arguments:
+  gtf
+  out
+
+options:
+  -h, --help            show this help message and exit
+  -r REGION, --region REGION
+                        Region defined as a string like <chrom>:<start>..<end>
+  --chrom CHROM
+  -as, --assume-sorted
+  --start START
+  --end END
 ```
 
+## mikado_util_collect_compare
+
+### Tool Description
+Collect and collapse multiple mikado compare summary statistics
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2
+- **Homepage**: https://github.com/EI-CoreBioinformatics/mikado
+- **Package**: https://anaconda.org/channels/bioconda/packages/mikado/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mikado util collect_compare [-h] [-o OUT] [-fmt  [...]]
+                                   [-l {all,f1,sn,pr,matches,missed_novel} [{all,f1,sn,pr,matches,missed_novel} ...]]
+                                   [-avf]
+                                   [stat ...]
+
+Script to collect and collapse multiple `mikado compare` summary statistics.
+
+positional arguments:
+  stat
+
+options:
+  -h, --help            show this help message and exit
+  -o OUT, --out OUT     Prefix for the output files
+  -fmt  [ ...], --format  [ ...]
+                        List of formats to print the tables into, separated by
+                        a space. Available formats can be seen using
+                        --available-formats. Terminate the list with --.
+                        Default: ['grid']
+  -l {all,f1,sn,pr,matches,missed_novel} [{all,f1,sn,pr,matches,missed_novel} ...], --levels {all,f1,sn,pr,matches,missed_novel} [{all,f1,sn,pr,matches,missed_novel} ...]
+                        Levels to print, separated by a space. Terminate the
+                        list with --. Default: ['f1', 'sn', 'pr'].
+  -avf, --available-formats
+                        Print out a list of available formats and exit.
+```
+
+## mikado_util_convert
+
+### Tool Description
+BAM to GTF to GFF3 to BED12 conversions
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2
+- **Homepage**: https://github.com/EI-CoreBioinformatics/mikado
+- **Package**: https://anaconda.org/channels/bioconda/packages/mikado/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mikado util convert [-h] [-as] [-of {bed12,gtf,gff3}]
+                           [-if {bed12,gtf,gff3,bam}] [-t]
+                           gf [out]
+
+Script to do BAM -> GTF <-> GFF3 -> BED12 conversions.
+
+positional arguments:
+  gf
+  out
+
+options:
+  -h, --help            show this help message and exit
+  -as, --assume-sorted
+  -of {bed12,gtf,gff3}, --out-format {bed12,gtf,gff3}
+  -if {bed12,gtf,gff3,bam}, --in-format {bed12,gtf,gff3,bam}
+  -t, --transcriptomic  Flag. If on, the file will be converted to a
+                        transcriptomic version.
+```
+
+## mikado_util_grep
+
+### Tool Description
+Extract specific models from GFF/GTF files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2
+- **Homepage**: https://github.com/EI-CoreBioinformatics/mikado
+- **Package**: https://anaconda.org/channels/bioconda/packages/mikado/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mikado util grep [-h] [-v] [--genes] ids gff [out]
+
+Script to extract specific models from GFF/GTF files.
+
+positional arguments:
+  ids         ID file (format: mrna_id, gene_id - tab separated)
+  gff         The GFF file to parse.
+  out         Optional output file
+
+options:
+  -h, --help  show this help message and exit
+  -v          Exclude from the gff all the records in the id file.
+  --genes     Flag. If set, the program expects as ids only a list of genes,
+              and will exclude/include all the transcripts children of the
+              selected genes.
+```
+
+## mikado_util_stats
+
+### Tool Description
+GFF/GTF statistics
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2
+- **Homepage**: https://github.com/EI-CoreBioinformatics/mikado
+- **Package**: https://anaconda.org/channels/bioconda/packages/mikado/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mikado util stats [-h] [--only-coding] [--tab-stats TAB_STATS] [-v]
+                         gff [out]
+
+GFF/GTF statistics script. It will compute median/average length of RNAs,
+exons, CDS features, etc.
+
+positional arguments:
+  gff                   GFF file to parse.
+  out
+
+options:
+  -h, --help            show this help message and exit
+  --only-coding
+  --tab-stats TAB_STATS
+                        Optional tabular file to write statistics for each
+                        transcript.
+  -v, --verbose
+```
+
+## mikado_util_trim
+
+### Tool Description
+Remove up to N bps from terminal exons in an annotation file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2
+- **Homepage**: https://github.com/EI-CoreBioinformatics/mikado
+- **Package**: https://anaconda.org/channels/bioconda/packages/mikado/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mikado util trim [-h] [-ml MAX_LENGTH] [--as-gtf] ann [out]
+
+Script to remove up to N bps from terminalexons in an annotation file.
+
+positional arguments:
+  ann                   Reference GTF/GFF output file.
+  out
+
+options:
+  -h, --help            show this help message and exit
+  -ml MAX_LENGTH, --max_length MAX_LENGTH
+                        Maximal length of trimmed terminal exons
+  --as-gtf              Flag. If set, the output will be in GTF rather than
+                        GFF3 format.
+```
 
 ## Metadata
 - **Skill**: generated

@@ -20,6 +20,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --AAsPath
+      valueFrom: $(self.basename)
   - id: cas_db_path
     type:
       - 'null'
@@ -29,14 +30,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --casDBpath
-  - id: citation
-    type:
-      - 'null'
-      - boolean
-    doc: Print citation for referencing Prokka.
-    inputBinding:
-      position: 101
-      prefix: --citation
   - id: crispr
     type:
       - 'null'
@@ -53,6 +46,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --gbkPath
+      valueFrom: $(self.basename)
   - id: gbk_suffix
     type:
       - 'null'
@@ -120,6 +114,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --scafPath
+      valueFrom: $(self.basename)
   - id: scaf_suffix
     type:
       - 'null'
@@ -140,6 +135,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type:
+      - 'null'
+      - Directory
+    doc: Results folder with one sub-folder per module (PI, IS, PROPHAGE, CRISPR)
+    outputBinding:
+      glob: Results
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var dirs = [inputs.aas_path, inputs.gbk_path, inputs.scaf_path].filter(function(d) { return d !== null && d !== undefined; });
+        return dirs.map(function(d) { return {"entry": d, "writable": true}; });
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mgca:0.0.0--pl5321hdfd78af_0

@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - Meteor
+  - meteor
   - fastq
 label: meteor_fastq
 doc: "Create a fastq repository from a directory containing fastq files.\n\nTool homepage:
@@ -43,8 +43,13 @@ outputs:
     doc: Directory where the fastq repository is created.
     outputBinding:
       glob: $(inputs.fastq_dir_path)
+arguments:
+  - position: 1000
+    shellQuote: false
+    valueFrom: '&& for l in `find $(inputs.fastq_dir_path) -type l`; do cp -L "$l" "$l.tmp" && mv -f "$l.tmp" "$l"; done'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0

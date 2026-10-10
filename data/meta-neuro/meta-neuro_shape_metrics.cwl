@@ -31,7 +31,7 @@ inputs:
       prefix: --tractogram
   - id: output_path
     type: string
-    doc: Path to the output binary mask file
+    doc: Output directory to save features (created before the run)
     inputBinding:
       position: 102
       prefix: --output
@@ -43,6 +43,11 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meta-neuro:2.0.1--py313h47f2c4e_0

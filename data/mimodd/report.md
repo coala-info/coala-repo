@@ -1,5 +1,28 @@
 # mimodd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mimodd_annotate | Failed | image problem: java is not in the image, so SnpEff cannot run (FileNotFoundError: java) |
+| mimodd_convert | PASS |  |
+| mimodd_covstats | PASS |  |
+| mimodd_delcall | PASS | uncovered regions on low-coverage test data |
+| mimodd_header | PASS |  |
+| mimodd_index | PASS |  |
+| mimodd_info | PASS |  |
+| mimodd_map | PASS |  |
+| mimodd_rebase | PASS | synthetic data: hand-made chain file shifting positions by 10 |
+| mimodd_reheader | PASS |  |
+| mimodd_snap | PASS | paired mode on unaligned BAM input; gz FASTQ pairs fail inside SNAP (file size check) |
+| mimodd_snap-batch | PASS |  |
+| mimodd_snpeff-genomes | PASS | synthetic data: real SnpEff config with an empty placeholder genome folder |
+| mimodd_sort | PASS |  |
+| mimodd_varcall | PASS |  |
+| mimodd_varextract | PASS |  |
+| mimodd_varreport | PASS | unannotated VCF gives unknown effects |
+| mimodd_vcf-filter | PASS |  |
+
 ## mimodd_info
 
 ### Tool Description

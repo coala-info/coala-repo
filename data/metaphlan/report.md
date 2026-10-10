@@ -1,5 +1,20 @@
 # metaphlan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaphlan | PASS | synthetic data: reads cut from the nf-core TOY database markers; the planted Corynebacterium SGB17013 is reported at 100 percent |
+| metaphlan_add_metadata_tree | Failed | image problem: crashes with AttributeError np.unicode_ (removed in NumPy 2) |
+| metaphlan_extract_markers | PASS | TOY database from nf-core; 200 markers of t__SGB17013 written as FASTA |
+| metaphlan_merge_metaphlan_tables | PASS | synthetic data: two profiles joined into one table, also with a file list |
+| metaphlan_metaphlan2krona | PASS | synthetic data: profile converted to a Krona line with the right taxa |
+| metaphlan_plot_tree_graphlan | Failed | image problem: crashes with TypeError in random.shuffle (Python 3.13 takes one argument) |
+| metaphlan_sample2markers | PASS | synthetic data: four planted SAM files give four consensus marker files |
+| metaphlan_sgb_to_gtdb_profile | PASS | synthetic data: profile converted to GTDB names |
+| metaphlan_strain_transmission | PASS | synthetic data: planted tree and metadata give one transmission event and a distance table |
+| metaphlan_strainphlan | PASS | synthetic data: four planted strain samples of SGB17013 give a 4-sample tree and alignment |
+
 ## metaphlan
 
 ### Tool Description
@@ -320,3 +335,310 @@ options:
   -v, --version         Prints the current StrainPhlAn version and exit
 ```
 
+## metaphlan_extract_markers
+
+### Tool Description
+Extract the marker sequences of the given clades from a MetaPhlAn database into FASTA files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0
+- **Homepage**: https://github.com/biobakery/metaphlan
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaphlan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: extract_markers.py [-h] [-d DATABASE] [-c CLADES [CLADES ...]]
+                          [-o OUTPUT_DIR]
+
+options:
+  -h, --help            show this help message and exit
+  -d, --database DATABASE
+                        The input MetaPhlAn database (default: latest)
+  -c, --clades CLADES [CLADES ...]
+                        The clades to investigate (default: [])
+  -o, --output_dir OUTPUT_DIR
+                        The output directory (default: None)
+```
+
+## metaphlan_sample2markers
+
+### Tool Description
+Reconstruct the consensus marker sequences of each sample from SAM or BAM files (input of StrainPhlAn).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0
+- **Homepage**: https://github.com/biobakery/metaphlan
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaphlan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: sample2markers.py -i INPUT [INPUT ...] -o OUTPUT_DIR [-d DATABASE]
+                         [--clades CLADES [CLADES ...]] [-f INPUT_FORMAT]
+                         [--sorted] [--min_reads_aligning MIN_READS_ALIGNING]
+                         [--min_base_coverage MIN_BASE_COVERAGE]
+                         [--min_base_quality MIN_BASE_QUALITY]
+                         [--min_mapping_quality MIN_MAPPING_QUALITY]
+                         [--max_gcsd MAX_GCSD]
+                         [--dominant_frq_threshold DOMINANT_FRQ_THRESHOLD]
+                         [--quasi_marker_frac QUASI_MARKER_FRAC]
+                         [--depth_avg_q DEPTH_AVG_Q] [--tmp TMP]
+                         [-b BREADTH_THRESHOLD] [--debug] [-n NPROCS] [-v]
+                         [-h]
+
+options:
+  -i, --input INPUT [INPUT ...]
+                        The input samples as SAM or BAM files (default: None)
+  -o, --output_dir OUTPUT_DIR
+                        The output directory (default: None)
+  -d, --database DATABASE
+                        The input MetaPhlAn 4.2.4 database (path to the pkl
+                        file) (default: latest)
+  --clades CLADES [CLADES ...]
+                        Restricts the reconstruction of the markers to the
+                        specified clades (default: [])
+  -f, --input_format INPUT_FORMAT
+                        The input samples format {bam, sam, bz2} (default:
+                        bz2)
+  --sorted              Whether the BAM input files are sorted (default:
+                        False)
+  --min_reads_aligning MIN_READS_ALIGNING
+                        The minimum number of reads to cover a marker.Default
+                        8 for bowtie2, 1 for minimap2 nad 1 otherwise.
+                        (default: None)
+  --min_base_coverage MIN_BASE_COVERAGE
+                        The minimum depth of coverage for a base to be
+                        considered (default: 1)
+  --min_base_quality MIN_BASE_QUALITY
+                        The minimum quality for a base to be considered. This
+                        is performed BEFORE --min_base_coverage (default: 30)
+  --min_mapping_quality MIN_MAPPING_QUALITY
+                        The minimum quality for a mapping of the read to be
+                        considered. Default 10 for bowtie2, 50 for minimap2
+                        and 0 otherwise. (default: None)
+  --max_gcsd MAX_GCSD   The maximum gap-compressed sequence divergence
+                        threshold to use in case of Minimap2 mapper. (default:
+                        0.1)
+  --dominant_frq_threshold DOMINANT_FRQ_THRESHOLD
+                        The cutoff for degree of 'allele dominance' for a
+                        position to be considered polymorphic (default: 0.8)
+  --quasi_marker_frac QUASI_MARKER_FRAC
+                        Fraction [0-1] of markers with a hit of an external
+                        SGB to disqualify a quasi-marker. (default: 0.33)
+  --depth_avg_q DEPTH_AVG_Q
+                        A quantile to cut from both ends of the coverage
+                        distributions to calculate robust average. (default:
+                        0.2)
+  --tmp TMP             If specified, the directory where to store the
+                        temporary files. Otherwise the output directory will
+                        be used. (default: None)
+  -b, --breadth_threshold BREADTH_THRESHOLD
+                        The breadth of coverage threshold for the consensus
+                        markers (default: 80)
+  --debug               If specified, StrainPhlAn will not remove the
+                        temporary folder. Not available with inputs in BAM
+                        format (default: False)
+  -n, --nprocs NPROCS   The number of threads to execute the script (default:
+                        1)
+  -v, --version         show program's version number and exit
+  -h, --help            Show help.
+```
+
+## metaphlan_merge_metaphlan_tables
+
+### Tool Description
+Performs a table join on one or more metaphlan output files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0
+- **Homepage**: https://github.com/biobakery/metaphlan
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaphlan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: usage: merge_metaphlan_tables.py [-h] [-l L] [-o output.txt] [--overwrite]
+                                 [--gtdb_profiles]
+                                 [input.txt ...]
+
+Please make sure to supply file paths to the files to combine.
+
+If combining 3 files (Table1.txt, Table2.txt, and Table3.txt) the call should be:
+   ./merge_metaphlan_tables.py Table1.txt Table2.txt Table3.txt > output.txt
+
+A wildcard to indicate all .txt files that start with Table can be used as follows:
+    ./merge_metaphlan_tables.py Table*.txt > output.txt
+
+Performs a table join on one or more metaphlan output files.
+
+positional arguments:
+  input.txt        One or more tab-delimited text tables to join
+
+options:
+  -h, --help       show this help message and exit
+  -l L             Name of file containing the paths to the files to combine
+  -o output.txt    Name of output file in which joined tables are saved
+  --overwrite      Overwrite output file if exists
+  --gtdb_profiles  To specify when running the script with GTDB-based profiles
+```
+
+## metaphlan_metaphlan2krona
+
+### Tool Description
+Convert a MetaPhlAn standard result file into the input format of Krona.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0
+- **Homepage**: https://github.com/biobakery/metaphlan
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaphlan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: metaphlan2krona.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -p PROFILE, --profile=PROFILE
+                        The input file is the MetaPhlAn standard result file
+  -k KRONA, --krona=KRONA
+                        the Krons output file name
+```
+
+## metaphlan_sgb_to_gtdb_profile
+
+### Tool Description
+Convert a MetaPhlAn SGB-based profile into a GTDB-based profile.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0
+- **Homepage**: https://github.com/biobakery/metaphlan
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaphlan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: sgb_to_gtdb_profile.py [-h] [-i INPUT] [-o OUTPUT]
+
+options:
+  -h, --help           show this help message and exit
+  -i, --input INPUT    The input profile (default: None)
+  -o, --output OUTPUT  The output profile (default: None)
+```
+
+## metaphlan_strain_transmission
+
+### Tool Description
+Infer strain transmission events from a StrainPhlAn tree and the sample metadata.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0
+- **Homepage**: https://github.com/biobakery/metaphlan
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaphlan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: strain_transmission.py [-h] [-t TREE] [-m METADATA] [-o OUTPUT_DIR]
+                              [--sgb_id SGB_ID] [--threshold THRESHOLD]
+                              [--precomputed_thresholds_file PRECOMPUTED_THRESHOLDS_FILE]
+                              [--save_dist]
+
+options:
+  -h, --help            show this help message and exit
+  -t, --tree TREE       The input tree file (default: None)
+  -m, --metadata METADATA
+                        The input metadata (default: None)
+  -o, --output_dir OUTPUT_DIR
+                        The output directory (default: None)
+  --sgb_id SGB_ID       [Optional] If specified, it will use the precomputed
+                        transmisison threshold for the specific SGB from the
+                        VallesColomerM_2022 study (default: None)
+  --threshold THRESHOLD
+                        [Optional] A custom distribution threshold value
+                        (default: 0.03)
+  --precomputed_thresholds_file PRECOMPUTED_THRESHOLDS_FILE
+                        [Optional] The file containing the pre-computed
+                        thresholds (default: /usr/local/lib/python3.13/site-pa
+                        ckages/metaphlan/utils/VallesColomerM_2022_Jan21_thres
+                        holds.tsv)
+  --save_dist           [Optional] Save the PhyPhlAn pairwise distances file
+                        (default: False)
+```
+
+## metaphlan_add_metadata_tree
+
+### Tool Description
+Add sample metadata to the nodes of a tree (writes <tree>.metadata).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0
+- **Homepage**: https://github.com/biobakery/metaphlan
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaphlan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: add_metadata_tree.py [-h] -t IFN_TREES [IFN_TREES ...]
+                            -f IFN_METADATAS [IFN_METADATAS ...]
+                            [--string_to_remove STRING_TO_REMOVE]
+                            [-m METADATAS [METADATAS ...]]
+
+options:
+  -h, --help            show this help message and exit
+  -t, --ifn_trees IFN_TREES [IFN_TREES ...]
+  -f, --ifn_metadatas IFN_METADATAS [IFN_METADATAS ...]
+  --string_to_remove STRING_TO_REMOVE
+                        string to be removed in the tree node names
+  -m, --metadatas METADATAS [METADATAS ...]
+                        The metadata fields that you want to add. Default: add
+                        all metadata from the first line.
+```
+
+## metaphlan_plot_tree_graphlan
+
+### Tool Description
+Plot a tree with GraPhlAn, optionally colouring the leaves by a metadata field.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaphlan:4.2.4--pyhdfd78af_0
+- **Homepage**: https://github.com/biobakery/metaphlan
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaphlan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: plot_tree_graphlan.py [-h] -t IFN_TREE [-m COLORIZED_METADATA]
+                             [--fig_size FIG_SIZE]
+                             [--legend_marker_size LEGEND_MARKER_SIZE]
+                             [--legend_font_size LEGEND_FONT_SIZE]
+                             [--legend_marker_edge_width LEGEND_MARKER_EDGE_WIDTH]
+                             [--leaf_marker_size LEAF_MARKER_SIZE]
+                             [--leaf_marker_edge_width LEAF_MARKER_EDGE_WIDTH]
+                             [--dpi DPI] [--figure_extension FIGURE_EXTENSION]
+                             [--ofn_prefix OFN_PREFIX]
+
+options:
+  -h, --help            show this help message and exit
+  -t, --ifn_tree IFN_TREE
+                        The input tree in newick format.
+  -m, --colorized_metadata COLORIZED_METADATA
+                        The metadata field to colorize. Default "unset".
+  --fig_size FIG_SIZE   The figure size. Default "8".
+  --legend_marker_size LEGEND_MARKER_SIZE
+                        The legend marker size. Default "20".
+  --legend_font_size LEGEND_FONT_SIZE
+                        The legend font size. Default "10".
+  --legend_marker_edge_width LEGEND_MARKER_EDGE_WIDTH
+                        The legend marker edge width. Default "0.2".
+  --leaf_marker_size LEAF_MARKER_SIZE
+                        The legend marker size. Default "20".
+  --leaf_marker_edge_width LEAF_MARKER_EDGE_WIDTH
+                        The legend marker edge width. Default "0.2".
+  --dpi DPI             The figure dpi.
+  --figure_extension FIGURE_EXTENSION
+                        The figure extension. Default ".png".
+  --ofn_prefix OFN_PREFIX
+                        The prefix of output files.
+```

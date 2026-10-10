@@ -3,6 +3,12 @@ class: CommandLineTool
 baseCommand: metamlst-index.py
 label: metamlst_metamlst-index.py
 doc: "Builds and manages the MetaMLST SQLite Databases\n\nTool homepage: https://github.com/SegataLab/metamlst"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.database)
+        writable: true
 inputs:
   - id: bowtie2_build
     type:
@@ -24,16 +30,16 @@ inputs:
   - id: buildblast
     type:
       - 'null'
-      - Directory
-    doc: Build a BLAST Index from the DB
+      - string
+    doc: Build a BLAST Index from the DB (name prefix of the index files)
     inputBinding:
       position: 101
       prefix: --buildblast
   - id: buildindex
     type:
       - 'null'
-      - Directory
-    doc: Build a Bowtie2 Index from the DB
+      - string
+    doc: Build a Bowtie2 Index from the DB (name prefix of the index files)
     inputBinding:
       position: 101
       prefix: --buildindex
@@ -41,16 +47,17 @@ inputs:
     type:
       - 'null'
       - File
-    doc: MetaMLST Database File (if unset, use the default database. If a file 
-      name is given, MetaMLST will create a new DB or update an existing one)
+    doc: MetaMLST Database File. It is updated in place, so it is staged as a 
+      writable copy. To create a new database, pass an empty file.
     inputBinding:
       position: 101
       prefix: --database
+      valueFrom: $(self.basename)
   - id: dump_db
     type:
       - 'null'
-      - File
-    doc: Dump the entire database to file in fasta format)
+      - string
+    doc: Dump the entire database to file in fasta format (output file name)
     inputBinding:
       position: 101
       prefix: --dump_db
@@ -92,6 +99,36 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_out
+    type:
+      - 'null'
+      - File
+    doc: The created or updated database
+    outputBinding:
+      glob: '$(inputs.database ? inputs.database.basename : [])'
+  - id: bowtie2_index
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Bowtie2 index files
+    outputBinding:
+      glob: "$(inputs.buildindex ? inputs.buildindex + '*.bt2' : [])"
+  - id: blast_index
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: BLAST index files
+    outputBinding:
+      glob: "$(inputs.buildblast ? inputs.buildblast + '*' : [])"
+  - id: dumped_fasta
+    type:
+      - 'null'
+      - File
+    doc: FASTA dump of the database
+    outputBinding:
+      glob: '$(inputs.dump_db ? inputs.dump_db : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metamlst:1.2.3--hdfd78af_0

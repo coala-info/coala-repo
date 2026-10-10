@@ -1,171 +1,195 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ASMpLot
+baseCommand: ASMplot
 label: merquryfk_ASMplot
-doc: "Plots assembly statistics\n\nTool homepage: https://github.com/thegenemyers/MERQURY.FK"
+doc: "Plots assembly k-mer copy-number spectra (ASMplot of MerquryFK)\n\nTool homepage: https://github.com/thegenemyers/MERQURY.FK"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        function add(f, parts) {
+          if (!f) { return; }
+          l.push({entryname: f.basename, entry: f});
+          (parts || []).forEach(function (p) {
+            var n = p.basename.split('.').pop();
+            l.push({entryname: '.' + f.basename + '.' + n, entry: p});
+          });
+        }
+        add(inputs.reads, inputs.reads_parts);
+        return l;
+      }
 inputs:
   - id: reads
-    type:
-      - 'null'
-      - File
-    doc: Reads file (optionally with .ktab suffix)
+    type: File
+    doc: "FastK k-mer table of the reads (<reads>.ktab)"
     inputBinding:
       position: 1
+  - id: reads_parts
+    type: File[]
+    doc: Hidden part files of the table (.<name>.ktab.1, .<name>.ktab.2, ...) written beside the table
   - id: asm1
-    type:
-      - 'null'
-      - File
-    doc: First assembly (dna)
+    type: File
+    doc: "First assembly (dna: FASTA/FASTQ, optionally gzipped)"
     inputBinding:
       position: 2
   - id: asm2
     type:
       - 'null'
       - File
-    doc: Second assembly (dna)
+    doc: "Second assembly (dna)"
     inputBinding:
       position: 3
-  - id: output_asmi
-    type:
-      - 'null'
-      - string
-    doc: Output file (optionally with .asmi suffix)
+  - id: out_prefix
+    type: string
+    doc: "Output name; <out>.asmi is written with -k, plots are <out>.*.png or <out>.*.pdf"
     inputBinding:
       position: 4
-  - id: draw_fill_plot
+  - id: width
     type:
       - 'null'
-      - boolean
-    doc: draw fill plot
+      - float
+    doc: "width in inches of plots"
     inputBinding:
-      position: 105
-      prefix: -f
-  - id: draw_line_plot
-    type:
-      - 'null'
-      - boolean
-    doc: draw line plot
-    inputBinding:
-      position: 105
-      prefix: -l
-  - id: draw_stack_plot
-    type:
-      - 'null'
-      - boolean
-    doc: draw stack plot
-    inputBinding:
-      position: 105
-      prefix: -s
+      position: 100
+      prefix: -w
+      separate: false
   - id: height
     type:
       - 'null'
       - float
-    doc: height in inches of plots
+    doc: "height in inches of plots"
     inputBinding:
-      position: 105
+      position: 100
       prefix: -h
-  - id: keep_plotting_data
-    type:
-      - 'null'
-      - boolean
-    doc: keep plotting data as <out>.asmi for a later go
-    inputBinding:
-      position: 105
-      prefix: -k
-  - id: max_x_absolute
-    type:
-      - 'null'
-      - int
-    doc: max x as an int value in absolute terms
-    inputBinding:
-      position: 105
-      prefix: -X
+      separate: false
   - id: max_x_multiple
     type:
       - 'null'
       - float
-    doc: max x as a real-valued multiple of x* with max count 'peak' away from 
-      the origin
+    doc: "max x as a real-valued multiple of x* with max count 'peak' away from the origin"
     inputBinding:
-      position: 105
+      position: 100
       prefix: -x
-  - id: max_y_absolute
+      separate: false
+  - id: max_x_absolute
     type:
       - 'null'
       - int
-    doc: max y as an int value in absolute terms
+    doc: "max x as an int value in absolute terms"
     inputBinding:
-      position: 105
-      prefix: -Y
+      position: 100
+      prefix: -X
+      separate: false
   - id: max_y_multiple
     type:
       - 'null'
       - float
-    doc: max y as a real-valued multiple of max count 'peak' away from the 
-      origin
+    doc: "max y as a real-valued multiple of max count 'peak' away from the origin"
     inputBinding:
-      position: 105
+      position: 100
       prefix: -y
+      separate: false
+  - id: max_y_absolute
+    type:
+      - 'null'
+      - int
+    doc: "max y as an int value in absolute terms"
+    inputBinding:
+      position: 100
+      prefix: -Y
+      separate: false
+  - id: draw_line_plot
+    type:
+      - 'null'
+      - boolean
+    doc: "draw line plot"
+    inputBinding:
+      position: 100
+      prefix: -l
+  - id: draw_fill_plot
+    type:
+      - 'null'
+      - boolean
+    doc: "draw fill plot"
+    inputBinding:
+      position: 100
+      prefix: -f
+  - id: draw_stack_plot
+    type:
+      - 'null'
+      - boolean
+    doc: "draw stack plot"
+    inputBinding:
+      position: 100
+      prefix: -s
   - id: output_pdf
     type:
       - 'null'
       - boolean
-    doc: output .pdf (default is .png)
+    doc: "output .pdf (default is .png)"
     inputBinding:
-      position: 105
+      position: 100
       prefix: -pdf
   - id: plot_unique_kmers
     type:
       - 'null'
       - boolean
-    doc: plot counts of k-mers unique to one or both assemblies
+    doc: "plot counts of k-mers unique to one or both assemblies"
     inputBinding:
-      position: 105
+      position: 100
       prefix: -z
-  - id: temp_dir
-    type:
-      - 'null'
-      - string
-    doc: Place all temporary files in directory -P.
-    inputBinding:
-      position: 105
-      prefix: -P
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: number of threads to use
-    inputBinding:
-      position: 105
-      prefix: -T
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: verbose output to stderr
+    doc: "verbose output to stderr"
     inputBinding:
-      position: 105
+      position: 100
       prefix: -v
-  - id: width
+  - id: keep_plotting_data
     type:
       - 'null'
-      - float
-    doc: width in inches of plots
+      - boolean
+    doc: "keep plotting data as <out>.asmi for a later go"
     inputBinding:
-      position: 105
-      prefix: -w
-outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_asmi_out
+      position: 100
+      prefix: -k
+  - id: threads
     type:
       - 'null'
-      - File
-    doc: Output file (optionally with .asmi suffix)
+      - int
+    doc: "number of threads to use"
+    inputBinding:
+      position: 100
+      prefix: -T
+      separate: false
+  - id: temp_dir
+    type:
+      - 'null'
+      - string
+    doc: "Place all temporary files in directory -P."
+    inputBinding:
+      position: 100
+      prefix: -P
+      separate: false
+outputs:
+  - id: figures_png
+    type: File[]
+    doc: "Plot files (PNG; empty with -pdf)"
     outputBinding:
-      glob: $(inputs.output_asmi)
+      glob: $(inputs.out_prefix)*.png
+  - id: figures_pdf
+    type: File[]
+    doc: "Plot files (PDF; empty without -pdf)"
+    outputBinding:
+      glob: $(inputs.out_prefix)*.pdf
+  - id: plot_data
+    type: File[]
+    doc: "Plotting data kept with -k"
+    outputBinding:
+      glob: $(inputs.out_prefix).asmi*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merquryfk:1.2--h71df26d_1
-stdout: merquryfk_ASMplot.out

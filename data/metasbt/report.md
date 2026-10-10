@@ -1,5 +1,19 @@
 # metasbt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metasbt_db | PASS | --list reads the public database table over the network; --download of a 567 MB database not run |
+| metasbt_index | PASS | four real monkeypox genomes indexed into a new database (4 references, kmer 13) |
+| metasbt_kraken | Not completed | needs the NCBI taxonomy by rsync, which is refused from this machine (kraken2-build exit 10) |
+| metasbt_pack | PASS | database packed into a 418 KB tarball and its sha256 reported |
+| metasbt_profile | PASS | genome profiles (single genome and list) match the Galaxy expected tables for genomes 1 to 3 |
+| metasbt_sketch | PASS | monkeypox genome sketched into the unpacked test database (genome_2.bf written) |
+| metasbt_summarize | PASS | table shows 12 references, 4 species and kmer size 9 for the test database |
+| metasbt_unpack | PASS | test database tarball from the Galaxy wrapper unpacks to 12 references |
+| metasbt_update | PASS | four monkeypox genomes added as MAGs to the test database (4 mags in genomes.tsv) |
+
 ## metasbt_db
 
 ### Tool Description
@@ -267,34 +281,6 @@ optional arguments:
   -h, --help           show this help message and exit
   --workdir WORKDIR    Path to the working directory. (default: None)
   --database DATABASE  The database name. (default: MetaSBT)
-```
-
-
-## metasbt_test
-
-### Tool Description
-Check for software dependencies and run unit tests.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metasbt:0.1.5--pyhdfd78af_0
-- **Homepage**: https://github.com/cumbof/MetaSBT
-- **Package**: https://anaconda.org/channels/bioconda/packages/metasbt/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: test [-h] --references REFERENCES --mags MAGS
-
-Check for software dependencies and run unit tests.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --references REFERENCES
-                        Path to the file with the list of paths to the
-                        reference genomes and their taxonomies. (default:
-                        None)
-  --mags MAGS           Path to the file with the list of paths to the
-                        metagenome-assembled genomes. (default: None)
 ```
 
 

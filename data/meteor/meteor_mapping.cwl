@@ -72,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -r
+      valueFrom: $(self.basename)
   - id: strategy
     type:
       - 'null'
@@ -118,6 +119,10 @@ outputs:
       glob: $(inputs.mapping_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.ref_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0

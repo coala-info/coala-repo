@@ -8,6 +8,9 @@ doc: "Segmented methylation analysis tool for calculating methylation levels ove
   specific intervals.\n\nTool homepage: https://github.com/adamewing/methylartist"
 inputs:
   - id: bams
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     type:
       - 'null'
       - type: array
@@ -17,6 +20,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bams
+      itemSeparator: ','
   - id: bedmethyl
     type:
       - 'null'
@@ -195,6 +199,8 @@ inputs:
       position: 101
       prefix: --procs
   - id: ref
+    secondaryFiles:
+      - .fai
     type:
       - 'null'
       - File

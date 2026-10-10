@@ -1,68 +1,78 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - run_metabinner.sh
+baseCommand: run_metabinner.sh
 label: metabinner_run_metabinner.sh
-doc: "Run the MetaBinner pipeline\n\nTool homepage: https://github.com/ziyewang/MetaBinner"
+doc: "Run the MetaBinner ensemble binning pipeline on an assembly, coverage profile and k-mer profile.\n\nTool homepage: https://github.com/ziyewang/MetaBinner"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.contig_file)
+        writable: true
 inputs:
   - id: contig_file
     type: File
-    doc: metagenomic assembly file
+    doc: "Metagenomic assembly file; staged writable in the working directory because FragGeneScan writes files beside it"
     inputBinding:
-      position: 101
+      position: 1
       prefix: -a
+      valueFrom: $(runtime.outdir)/$(self.basename)
+  - id: output_dir
+    type: string
+    doc: "Output directory (created by the script; must not exist); the script changes directory, so the path is passed as an absolute path in the working directory"
+    inputBinding:
+      position: 2
+      prefix: -o
+      valueFrom: $(runtime.outdir)/$(self)
   - id: coverage_profile
     type: File
-    doc: coverage_profile.tsv; The coverage profiles, containing a table where 
-      each row correspond to a contig, and each column correspond to a sample. 
-      All values are separated with tabs.
+    doc: "coverage_profile.tsv; table with one row per contig and one column per sample, tab separated"
     inputBinding:
-      position: 101
+      position: 3
       prefix: -d
-  - id: dataset_scale
-    type:
-      - 'null'
-      - string
-    doc: Dataset scale; eg. small,large,huge
-    inputBinding:
-      position: 101
-      prefix: -s
   - id: kmer_profile
     type: File
-    doc: kmer_profile.csv; The composition profiles, containing a table where 
-      each row correspond to a contig, and each column correspond to the kmer 
-      composition of particular kmer. All values are separated with comma.
+    doc: "kmer_profile.csv; table with one row per contig and one column per k-mer, comma separated"
     inputBinding:
-      position: 101
+      position: 4
       prefix: -k
   - id: path_to_metabinner
-    type: Directory
-    doc: path to MetaBinner; e.g. /home/wzy/MetaBinner
+    type: string
+    doc: "Path to MetaBinner; in this image the scripts are in <path>/scripts, so use /usr/local/bin"
+    default: /usr/local/bin
     inputBinding:
-      position: 101
+      position: 5
       prefix: -p
   - id: threads
-    type:
+    type: 
       - 'null'
       - int
-    doc: number of threads
+    doc: "Number of threads (default=1)"
     inputBinding:
-      position: 101
+      position: 6
       prefix: -t
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+  - id: dataset_scale
+    type: 
+      - 'null'
+      - string
+    doc: "Dataset scale; eg. small,large,huge (default=large)"
     inputBinding:
-      position: 102
-      prefix: --output-dir
+      position: 7
+      prefix: -s
 outputs:
-  - id: output_dir
+  - id: output
     type: Directory
-    doc: output directory
+    doc: "Output directory with metabinner_res/metabinner_result.tsv"
     outputBinding:
-      glob: $(inputs.output_dir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output_dir)
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: log
+    type: stderr
+    doc: Standard error (progress log)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
+stdout: run_metabinner.out
+stderr: run_metabinner.log

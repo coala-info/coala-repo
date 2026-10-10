@@ -1,5 +1,13 @@
 # metaphor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaphor_config | Not completed | pipeline, skipped |
+| metaphor_execute | Not completed | pipeline, skipped |
+| metaphor_test | Not completed | pipeline, skipped |
+
 ## metaphor_execute
 
 ### Tool Description

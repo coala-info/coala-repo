@@ -25,7 +25,7 @@ inputs:
       position: 101
       prefix: --data_dir
   - id: file
-    type: string
+    type: File
     doc: Output file from metaquantome expand.
     inputBinding:
       position: 101
@@ -65,7 +65,9 @@ inputs:
       position: 101
       prefix: --parametric
   - id: samps
-    type: string
+    type:
+      - string
+      - File
     doc: 'Give the column names in the intensity file that correspond to a given sample
       group. This can either be JSON formatted or be a path to a tabular file. JSON
       example of two experimental groups and two samples in each group: {"A": ["A1",
@@ -85,13 +87,6 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.outfile_path)
-  - id: file_out
-    type:
-      - 'null'
-      - File
-    doc: Output file from metaquantome expand.
-    outputBinding:
-      glob: $(inputs.file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

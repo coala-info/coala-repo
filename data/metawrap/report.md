@@ -1,5 +1,20 @@
 # metawrap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metawrap_annotate_bins | Failed | image problem: tbl2asn in the image is more than a year old and refuses to run, so prokka stops and no annotation table is made (metaWRAP still exits 0); fixed -o flag |
+| metawrap_assembly | PASS |  |
+| metawrap_bin_refinement | PASS | ran with --skip-checkm (no CheckM data): binning_refiner made refined bins from two B. fragilis bin sets |
+| metawrap_binning | PASS | fixed -o flag, option order and read staging; metabat2, maxbin2 and concoct made bins on B. fragilis contigs |
+| metawrap_blobology | Not completed | needs the NCBI nt BLAST database and taxonomy dump (not available); fixed read staging and the --subsample spelling |
+| metawrap_classify_bins | Not completed | needs the NCBI nt BLAST database and taxonomy dump (not available); fixed -o flag |
+| metawrap_kraken | Not completed | needs a Kraken 1 standard database (not available); fixed option order and read staging |
+| metawrap_quant_bins | PASS | fixed -o flag, option order and read staging; bin abundance table written |
+| metawrap_read_qc | PASS | fixed -o flag; run with --skip-bmtagger on B. fragilis reads |
+| metawrap_reassemble_bins | PASS | ran with --skip-checkm (no CheckM data); fixed -o flag and cut-off options; strict and permissive reassemblies made for one B. fragilis bin |
+
 ## metawrap_read_qc
 
 ### Tool Description

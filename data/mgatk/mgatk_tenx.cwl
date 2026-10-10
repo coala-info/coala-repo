@@ -16,18 +16,14 @@ inputs:
       position: 101
       prefix: --alignment-quality
   - id: barcode_tag
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Read tag (generally two letters) to separate single cells; valid and 
       required only in `bcall` mode.
     inputBinding:
       position: 101
       prefix: --barcode-tag
   - id: barcodes
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File path to barcodes that will be extracted; useful only in `bcall` 
       mode.
     inputBinding:
@@ -75,6 +71,8 @@ inputs:
       prefix: --ignore-samples
   - id: input
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input; either directory of singular .bam file; see documentation. 
       REQUIRED.
     inputBinding:

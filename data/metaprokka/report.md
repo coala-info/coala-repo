@@ -1,5 +1,11 @@
 # metaprokka CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaprokka | PASS | phage contig from the tool repo: 18 CDS annotated, including dUTPase, Xni and DNA polymerase I |
+
 ## metaprokka
 
 ### Tool Description

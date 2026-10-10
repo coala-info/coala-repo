@@ -1,5 +1,11 @@
 # metaomestats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaomestats_countAssembly.py | PASS |  |
+
 ## metaomestats_countAssembly.py
 
 ### Tool Description

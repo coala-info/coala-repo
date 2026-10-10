@@ -8,6 +8,8 @@ doc: "Whole-genome methylation calling and processing tool\n\nTool homepage: htt
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: bam used for methylation calling
     inputBinding:
       position: 101
@@ -145,6 +147,8 @@ inputs:
       position: 101
       prefix: --procs
   - id: ref
+    secondaryFiles:
+      - .fai
     type:
       - 'null'
       - File

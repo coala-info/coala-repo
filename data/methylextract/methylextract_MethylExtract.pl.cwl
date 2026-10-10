@@ -83,11 +83,12 @@ inputs:
       itemSeparator: ','
   - id: in_dir
     type: Directory
-    doc: alignments' directory
+    doc: "alignments' directory (staged writable because the tool writes temporary files into it)"
     inputBinding:
       position: 101
       prefix: inDir=
       separate: false
+      valueFrom: $(self.basename)
   - id: last_ignor
     type:
       - 'null'
@@ -228,10 +229,12 @@ inputs:
       separate: false
   - id: out_dir_path
     type: string
-    doc: Output or path parameter `out_dir_path`
+    default: methylextract_out
+    doc: output directory
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: outDir=
+      separate: false
 outputs:
   - id: out_dir
     type:
@@ -242,6 +245,10 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.in_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylextract:1.9.1--0

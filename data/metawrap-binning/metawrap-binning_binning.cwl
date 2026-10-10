@@ -1,0 +1,130 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand:
+  - metawrap
+  - binning
+label: metawrap-binning_binning
+doc: "Binning module for metagenomic assemblies\n\nTool homepage: https://github.com/bxlab/metaWRAP"
+inputs:
+  - id: reads
+    type:
+      type: array
+      items: File
+    doc: "Read files named name_1.fastq and name_2.fastq (paired, in order), or name.fastq with single_end or interleaved; staged into one folder because metaWRAP derives the mate path from the first file"
+    inputBinding:
+      position: 200
+      valueFrom: $(self.map(function (f) { return f.basename; }))
+  - id: assembly_file
+    type: File
+    doc: metagenomic assembly file
+    inputBinding:
+      position: 103
+      prefix: -a
+  - id: interleaved
+    type:
+      - 'null'
+      - boolean
+    doc: the input read files contain interleaved paired-end reads
+    inputBinding:
+      position: 103
+      prefix: --interleaved
+  - id: memory
+    type:
+      - 'null'
+      - int
+    doc: amount of RAM available
+    inputBinding:
+      position: 103
+      prefix: -m
+  - id: min_contig_length
+    type:
+      - 'null'
+      - int
+    doc: minimum contig length to bin
+    inputBinding:
+      position: 103
+      prefix: -l
+  - id: run_checkm
+    type:
+      - 'null'
+      - boolean
+    doc: immediately run CheckM on the bin results (requires 40GB+ of memory)
+    inputBinding:
+      position: 103
+      prefix: --run-checkm
+  - id: single_end
+    type:
+      - 'null'
+      - boolean
+    doc: non-paired reads mode (provide *.fastq files)
+    inputBinding:
+      position: 103
+      prefix: --single-end
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: number of threads
+    inputBinding:
+      position: 103
+      prefix: -t
+  - id: use_concoct
+    type:
+      - 'null'
+      - boolean
+    doc: bin contigs with CONCOCT
+    inputBinding:
+      position: 103
+      prefix: --concoct
+  - id: use_maxbin2
+    type:
+      - 'null'
+      - boolean
+    doc: bin contigs with MaxBin2
+    inputBinding:
+      position: 103
+      prefix: --maxbin2
+  - id: use_metabat1
+    type:
+      - 'null'
+      - boolean
+    doc: bin contigs with the original metaBAT
+    inputBinding:
+      position: 103
+      prefix: --metabat1
+  - id: use_metabat2
+    type:
+      - 'null'
+      - boolean
+    doc: bin contigs with metaBAT2
+    inputBinding:
+      position: 103
+      prefix: --metabat2
+  - id: use_universal_markers
+    type:
+      - 'null'
+      - boolean
+    doc: use universal marker genes instead of bacterial markers in MaxBin2 
+      (improves Archaea binning)
+    inputBinding:
+      position: 103
+      prefix: --universal
+  - id: output_dir_path
+    type: string
+    doc: output directory
+    inputBinding:
+      position: 104
+      prefix: -o
+outputs:
+  - id: output_dir
+    type: Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/metawrap-binning:1.3.0

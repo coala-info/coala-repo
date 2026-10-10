@@ -1,5 +1,11 @@
 # mhap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mhap | PASS | rewrote CWL from help (-s/-q/-p/-k flags, binary output dir); real nanopore overlaps share k-mers, random pairs do not |
+
 ## mhap
 
 ### Tool Description

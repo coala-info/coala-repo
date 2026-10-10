@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varreport
+baseCommand: [mimodd, varreport]
 label: mimodd_varreport
 doc: "Generates a report from a VCF file.\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:

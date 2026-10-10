@@ -1,5 +1,14 @@
 # mimeo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mimeo_filter | Failed | image problem: TRF ('trf') is not installed in the image (command not found); CWL rewritten to run 'mimeo filter' |
+| mimeo_map | Failed | image problem: lastz and bedtools are not installed in the image (tool warns and writes empty results); CWL rewritten to run 'mimeo map' |
+| mimeo_self | Failed | image problem: lastz and bedtools are not installed in the image (tool warns and writes empty results); CWL rewritten to run 'mimeo self' |
+| mimeo_x | Failed | image problem: lastz and bedtools are not installed in the image (tool warns and writes empty results); CWL rewritten to run 'mimeo x' |
+
 ## mimeo_self
 
 ### Tool Description
@@ -188,6 +197,58 @@ optional arguments:
                         Set the logging level.
 ```
 
+
+## mimeo_x
+
+### Tool Description
+Cross-species repeat finder
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mimeo:1.2.1--pyhdfd78af_0
+- **Homepage**: https://github.com/Adamtaranto/mimeo
+- **Package**: https://anaconda.org/channels/bioconda/packages/mimeo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mimeo-x [-h] [--version] [--adir ADIR] [--bdir BDIR] [--afasta AFASTA]
+               [--bfasta BFASTA] [-r] [-d OUTDIR] [--gffout GFFOUT]
+               [--outfile OUTFILE] [--verbose] [--label LABEL]
+               [--prefix PREFIX] [--keeptemp] [--lzpath LZPATH]
+               [--bedtools BEDTOOLS] [--minIdt MINIDT] [--minLen MINLEN]
+               [--minCov MINCOV] [--hspthresh HSPTHRESH]
+               [--loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}]
+
+Cross-species repeat finder. Mimeo-x searches for features which are abundant
+in an external reference genome.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             Show program version and exit.
+  --adir ADIR           Name of directory containing sequences from A genome.
+  --bdir BDIR           Name of directory containing sequences from B genome.
+  --afasta AFASTA       A genome as multifasta.
+  --bfasta BFASTA       B genome as multifasta.
+  -r, --recycle         Use existing alignment "--outfile" if found.
+  -d OUTDIR, --outdir OUTDIR
+                        Write output files to this directory. (Default: cwd)
+  --gffout GFFOUT       Name of GFF3 annotation file.
+  --outfile OUTFILE     Name of alignment result file.
+  --verbose             If set report LASTZ progress.
+  --label LABEL         Set annotation TYPE field in gff.
+  --prefix PREFIX       ID prefix for B-genome repeats annotated in A-genome.
+  --keeptemp            If set do not remove temp files.
+  --lzpath LZPATH       Custom path to LASTZ executable if not in $PATH.
+  --bedtools BEDTOOLS   Custom path to bedtools executable if not in $PATH.
+  --minIdt MINIDT       Minimum alignment identity to report.
+  --minLen MINLEN       Minimum alignment length to report.
+  --minCov MINCOV       Minimum depth of B-genome hits to report feature in
+                        A-genome.
+  --hspthresh HSPTHRESH
+                        Set HSP min score threshold for LASTZ.
+  --loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}
+                        Set the logging level.
+```
 
 ## Metadata
 - **Skill**: generated

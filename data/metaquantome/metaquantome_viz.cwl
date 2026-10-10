@@ -177,7 +177,9 @@ inputs:
       position: 101
       prefix: --sample_cluster_size
   - id: samps
-    type: string
+    type:
+      - string
+      - File
     doc: 'Give the column names in the intensity file that correspond to a given sample
       group. This can either be JSON formatted or be a path to a tabular file. JSON
       example of two experimental groups and two samples in each group: {"A": ["A1",

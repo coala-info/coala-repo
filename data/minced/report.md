@@ -1,5 +1,11 @@
 # minced CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minced | PASS |  |
+
 ## minced
 
 ### Tool Description

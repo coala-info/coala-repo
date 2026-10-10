@@ -47,6 +47,8 @@ outputs:
     outputBinding:
       glob: $(inputs.output_path_path)
 requirements:
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

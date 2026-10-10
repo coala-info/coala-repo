@@ -75,7 +75,9 @@ inputs:
       position: 101
       prefix: --ignore-samples
   - id: input
-    type: File
+    type:
+      - File
+      - Directory
     doc: Input; either directory of singular .bam file; see documentation.
     inputBinding:
       position: 101

@@ -94,6 +94,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Matched normal bam file for conversion
     inputBinding:
       position: 101
@@ -118,7 +121,7 @@ inputs:
   - id: save_location
     type:
       - 'null'
-      - Directory
+      - string
     doc: 'The location on the filesystem to save the converted vectors and final results.
       WARNING: Exisitng files in this directory in the formats *_locations.npy and
       *_data.npy will be deleted!'
@@ -137,6 +140,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Tumor bam file for conversion
     inputBinding:
       position: 101
@@ -150,10 +156,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-attention
+  - id: case_list_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+        # indexes must sit beside the BAM files named in the case list
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    doc: BAM files (and their .bai indexes) named in the case list; staged in the
+      working directory
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type: Directory
+    doc: Results directory (save_location, default mimsi_results)
+    outputBinding:
+      glob: $(inputs.save_location || 'mimsi_results')
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.case_list_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mimsi:0.4.5--pyhdfd78af_0

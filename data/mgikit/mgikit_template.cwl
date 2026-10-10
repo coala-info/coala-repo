@@ -117,19 +117,22 @@ inputs:
       position: 101
       prefix: --testing-reads
   - id: output_path
-    type: string?
+    type: string
+    default: template_out/sample_sheet
     inputBinding:
       position: 102
       prefix: --output
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - Directory
-    doc: Path to the output file prefix. If not provided, the output will be 
-      written at mgiKit_ followed by current data and time.
+  - id: template_file
+    type: File
+    doc: Sample sheet with the detected barcode template (<output>_template.tsv)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)_template.tsv
+  - id: details_file
+    type: File
+    doc: Details of the barcode matches per sample (<output>_details.tsv)
+    outputBinding:
+      glob: $(inputs.output_path)_details.tsv
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -28,14 +28,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dotsize
-  - id: example
-    type:
-      - 'null'
-      - boolean
-    doc: Show example command and exit.
-    inputBinding:
-      position: 101
-      prefix: --example
   - id: fasta
     type:
       - 'null'
@@ -148,6 +140,22 @@ outputs:
       will be created.'
     outputBinding:
       glob: $(inputs.qcfile_path)
+  - id: static_image
+    type:
+      - 'null'
+      - File
+    doc: Static image of the browser window (written when static is set)
+    outputBinding:
+      glob: $(inputs.static)
+  - id: html_reports
+    type:
+      type: array
+      items: File
+    doc: HTML reports written with the default names, in the working directory or in a region folder
+    outputBinding:
+      glob:
+        - '*.html'
+        - '*/*.html'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -6,24 +6,14 @@ baseCommand:
 label: metawrap_blobology
 doc: "Run blobology on assembly and reads\n\nTool homepage: https://github.com/bxlab/metaWRAP"
 inputs:
-  - id: readsA_1
-    type: File
-    doc: Forward reads for sample A
-    inputBinding:
-      position: 1
-  - id: readsA_2
-    type: File
-    doc: Reverse reads for sample A
-    inputBinding:
-      position: 2
-  - id: readsB
+  - id: reads
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Additional paired-end reads for other samples
+      type: array
+      items: File
+    doc: "Read files named name_1.fastq and name_2.fastq, one pair per sample"
     inputBinding:
-      position: 3
+      position: 200
+      valueFrom: $(self.map(function (f) { return f.basename; }))
   - id: assembly_fasta
     type: File
     doc: assembly fasta file
@@ -45,14 +35,14 @@ inputs:
     inputBinding:
       position: 104
       prefix: -o
-  - id: subsamble
+  - id: subsample
     type:
       - 'null'
       - int
     doc: Number of contigs to run blobology on. Subsampling is randomized.
     inputBinding:
       position: 104
-      prefix: --subsamble
+      prefix: --subsample
   - id: threads
     type:
       - 'null'
@@ -72,6 +62,10 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metawrap:1.2--0

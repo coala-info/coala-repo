@@ -1,5 +1,35 @@
 # metacoag CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metacoag | PASS |  |
+| metacoag_combine_cov | PASS |  |
+
+## metacoag_combine_cov
+
+### Tool Description
+Combine multiple coverage files of samples from CoverM
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metacoag:1.2.2--py312h9ee0642_0
+- **Homepage**: https://github.com/metagentools/MetaCoAG
+- **Package**: https://anaconda.org/channels/bioconda/packages/metacoag/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: combine_cov [OPTIONS]
+
+  combine_cov: Combine multiple coverage files of samples from CoverM
+
+Options:
+  --covpath PATH  path to the .tsv files from CoverM  [required]
+  --output PATH   path to the output folder  [required]
+  --help          Show this message and exit.
+```
+
 ## metacoag
 
 ### Tool Description

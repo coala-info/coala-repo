@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 8339; PASS: 6470; Failed: 1017; Not completed: 852
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 8708; PASS: 6742; Failed: 1072; Not completed: 894
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -8339,3 +8339,372 @@ merge-gbk-records	merge-gbk-records	PASS	NCBI phiX174 and lambda GenBank files: 
 mergenotcombined	mergenotcombined_mergeNotCombined	PASS	nf-core SARS-CoV-2 paired Illumina reads: all 100 pairs merged as forward + NNN + reverse complement with matching qualities
 mergevcf	mergevcf	PASS	nf-core human chr21 HaplotypeCaller and Mutect2 VCFs: 1356 merged records (union), the 47 shared calls carry both caller labels and PASS, the rest are LOWSUPPORT; (tool skips MT contigs, so the SARS-CoV-2 VCFs gave empty output)
 merqury	merqury_merqury.sh	PASS	SARS-CoV-2 genome with a meryl k=21 database of real amplicon reads: QV 35.38 (equals merfin QV), completeness 97.5%, spectra plots and histograms written; fixed meryl inputs to Directory and outputs to files plus directories
+merquryfk	merquryfk_ASMplot	PASS	
+merquryfk	merquryfk_CNplot	PASS	
+merquryfk	merquryfk_HAPmaker	PASS	
+merquryfk	merquryfk_HAPplot	PASS	
+merquryfk	merquryfk_KatComp	PASS	
+merquryfk	merquryfk_KatGC	PASS	
+merquryfk	merquryfk_MerquryFK	PASS	
+meta-apo	meta-apo_meta-apo-calibrate	Failed	image problem: the binary segfaults at start-up (needs a model from meta-apo-train, which also segfaults)
+meta-apo	meta-apo_meta-apo-train	Failed	image problem: the binary segfaults on the tool's own README demo data (and on missing input files); no model is written
+meta-neuro	meta-neuro_cmrep_vskel	PASS	real dipy tracks300.trk bundle; reference grid and scalar map derived from it
+meta-neuro	meta-neuro_density_map	PASS	real dipy tracks300.trk bundle; reference grid and scalar map derived from it
+meta-neuro	meta-neuro_meta	PASS	real dipy tracks300.trk bundle; reference grid and scalar map derived from it
+meta-neuro	meta-neuro_shape_metrics	PASS	real dipy tracks300.trk bundle; reference grid and scalar map derived from it
+meta-neuro	meta-neuro_streamlines_profile	PASS	real dipy tracks300.trk bundle; reference grid and scalar map derived from it
+meta-neuro	meta-neuro_volumetric_profile	PASS	real dipy tracks300.trk bundle; reference grid and scalar map derived from it
+meta-neuro	meta-neuro_vtklevelset	PASS	real dipy tracks300.trk bundle; reference grid and scalar map derived from it
+meta-sparse	meta-sparse_sparse_extract	Failed	image problem: SyntaxError in modules/C2_get_specific_reads.py, the command only prints usage
+meta-sparse	meta-sparse_sparse_index	PASS	
+meta-sparse	meta-sparse_sparse_init	PASS	
+meta-sparse	meta-sparse_sparse_mapDB	PASS	
+meta-sparse	meta-sparse_sparse_mash	PASS	
+meta-sparse	meta-sparse_sparse_predict	PASS	
+meta-sparse	meta-sparse_sparse_query	PASS	
+meta-sparse	meta-sparse_sparse_report	PASS	
+meta-sparse	meta-sparse_sparse_update	Failed	tool bug: update crashes with NameError (undefined variable index) as soon as one metadata field differs, and never saves the change
+metabat2	metabat2	PASS	
+metabat2	metabat2_contigOverlaps	PASS	ran on two Galaxy test BAM sets; the lists are from unrelated references, so only the table format was checked
+metabat2	metabat2_jgi_summarize_bam_contig_depths	PASS	
+metabat2	metabat2_metabat1	PASS	
+metabinkit	metabinkit_metabin	PASS	output identical to the expected tests/test_files/out1.tsv
+metabinkit	metabinkit_metabinkit_blast	PASS	main mode works on the repo test db and query; the -P and -N taxid filters fail because the image has no BLAST taxdb files
+metabinkit	metabinkit_metabinkit_blastgendb	PASS	database built from the repo test fasta; the -c check option fails inside blastdbcheck while building works
+metabinner	metabinner_Filter_tooshort.py	PASS	
+metabinner	metabinner_gen_coverage_file.sh	PASS	
+metabinner	metabinner_gen_kmer.py	PASS	real nf-core minigut assembly; output is the 136-column canonical 4-mer table
+metabinner	metabinner_run_metabinner.sh	Not completed	no real data big enough: on the small nf-core minigut assembly no marker seeds are found and the script stops in split_hhbins.py; its earlier steps ran
+metabolights-utils	metabolights-utils_mtbls_local-validate	Failed	image problem: the opa executable that validation needs is not in the image
+metabolights-utils	metabolights-utils_mtbls_model_create	PASS	model JSON of the repo test study MTBLS398 has the right title; studies with parser messages crash the tool on its own message printing
+metabolights-utils	metabolights-utils_mtbls_model_explain	PASS	
+metabolights-utils	metabolights-utils_mtbls_public_describe	PASS	local-only mode on repo test study MTBLS398; jsonpath title is correct
+metabolights-utils	metabolights-utils_mtbls_public_download	PASS	downloaded the ISA files of MTBLS2075 from the MetaboLights FTP
+metabolights-utils	metabolights-utils_mtbls_public_list	PASS	
+metabolights-utils	metabolights-utils_mtbls_public_remove	PASS	
+metabolights-utils	metabolights-utils_mtbls_public_search	Not completed	the MetaboLights search endpoint (ws3/public/search/studies/_search) now returns 404 Not Found
+metaboliteidconverter	metaboliteidconverter	Failed	image problem: the entrypoint is java -jar phnmnl-enrichment.jar with a relative path (the jar is in /), so it cannot start in cwltool's work directory
+metabuli	metabuli_build	PASS	
+metabuli	metabuli_classifiedRefiner	Failed	tool bug: always prints that the refined file already exists and writes nothing
+metabuli	metabuli_classify	PASS	tiny nf-core sarscov2 database built with metabuli build; all 100 read pairs classified to SARS-CoV-2
+metabuli	metabuli_database-report	PASS	
+metabuli	metabuli_extract	PASS	
+metabuli	metabuli_make-report	Failed	tool bug: stoi crash on the header line of the classify output; with the header removed the report is empty
+metabuli	metabuli_updateDB	PASS	synthetic data: the nf-core insect mitochondrial genome was mapped to an existing taxid to test the merge; the database grew
+metabuli	metabuli_validatedb	PASS	
+metacache	metacache_build	PASS	tiny database from nf-core sarscov2 and insect mitochondrial genomes; the accession-to-taxid map is planted
+metacache	metacache_build+query	PASS	
+metacache	metacache_info	PASS	
+metacache	metacache_merge	PASS	
+metacache	metacache_modify	PASS	
+metacache	metacache_query	PASS	
+metacerberus	metacerberus_metacerberus.py	PASS	protein mode on the repo CAZy_pc_Top10.faa with the CAZy HMM database (20 MB) as a custom --hmm; the 10 proteins get their CAZy families
+metacerberus-lite	metacerberus-lite_metacerberus.py	PASS	protein mode on the repo CAZy_pc_Top10.faa with the CAZy HMM database as a custom --hmm; same hits as metacerberus
+metacherchant	metacherchant_environment-finder-multi	PASS	difference of the environments built from the two read files of the nf-core sarscov2 test set
+metacherchant	metacherchant_metacherchant.sh	PASS	nf-core sarscov2 reads and an 80 bp genome region as the seed; the graph contains the seed node and its neighbours
+metachip	metachip_BP	Not completed	needs the PI working folder and PI fails in this image (Biopython 1.77)
+metachip	metachip_PI	Failed	image problem: Biopython 1.77 in the image is too old; gene prediction crashes with 'Need a Nucleotide or Protein alphabet'
+metachip	metachip_filter_HGT	PASS	synthetic data: hand-made multi-level HGT table; two of three rows kept at n=2 with matching recipient sequences
+metachip	metachip_get_SCG_tree	PASS	
+metachip	metachip_rename_seqs	PASS	
+metachip	metachip_update_hmms	Not completed	needs the full Pfam-A and TIGRFAMs databases (several GB)
+metaclassifier	metaclassifier	PASS	
+metacoag	metacoag	PASS	
+metacoag	metacoag_combine_cov	PASS	
+metacortex	metacortex	PASS	reads are a mock mixed-genome set; 94% of contig 31-mers match the source genomes; raw reads without --remove_seq_errors hit a tool assertion (path buffer)
+metaeuk	metaeuk_createdb	PASS	
+metaeuk	metaeuk_createtaxdb	PASS	synthetic data: hand-made mini taxdump and sequence-to-taxon map
+metaeuk	metaeuk_easy-predict	PASS	output matches the Galaxy tools-iuc expected FASTA and GFF
+metaeuk	metaeuk_groupstoacc	PASS	
+metaeuk	metaeuk_predictexons	PASS	
+metaeuk	metaeuk_reduceredundancy	PASS	
+metaeuk	metaeuk_taxtocontig	PASS	synthetic data: hand-made mini taxdump; both contigs get the planted taxon (Saccharomyces cerevisiae)
+metaeuk	metaeuk_unitesetstofasta	PASS	output matches the Galaxy tools-iuc expected FASTA
+metafx	metafx_bandage	PASS	
+metafx	metafx_calc_features	PASS	
+metafx	metafx_chisq	PASS	
+metafx	metafx_colored	PASS	used perc 0.5 and skip_graph on the small official data; category features separate the groups
+metafx	metafx_cv	PASS	
+metafx	metafx_extract_kmers	PASS	
+metafx	metafx_feature_analysis	PASS	
+metafx	metafx_fit	Failed	image problem: xgboost is not installed in the image; fit.py imports it at start
+metafx	metafx_fit_predict	PASS	
+metafx	metafx_metafast	PASS	
+metafx	metafx_metaspades	Failed	image problem: metaspades.py (SPAdes) is not in the image
+metafx	metafx_pca	PASS	
+metafx	metafx_predict	Failed	image problem: torch is not installed in the image; predict.py imports it at start
+metafx	metafx_stats	PASS	relaxed p-value limits (0.2) because the official data has only 2 samples per group; features separate the categories
+metafx	metafx_unique	PASS	
+metagene_annotator	metagene_annotator_mga	PASS	268 genes on the 362 kb Portiera genome (-s) and gene calls on bacterial contigs (-m)
+metagenome-atlas	metagenome-atlas_atlas	Not completed	pipeline, skipped
+metamate	metamate_dump	PASS	dump of result 13 from the find run kept 49 ASVs, as the find table says
+metamate	metamate_filter-adaptive	PASS	real Coleoptera data, 6 authentic and 1 non-authentic ASV found, per-sample thresholds written; bbmap in the image intermittently fails to start, rerun if needed
+metamate	metamate_filtertranslate	PASS	112 of 113 ASVs pass; the failing ASV matches the find run
+metamate	metamate_find	PASS	113 ASVs, 6 authentic and 1 stop-codon ASV found; bbmap in the image intermittently fails to start (heap size error), so a rerun is sometimes needed; clade binning fails because R packages are missing in the image
+metametamerge	metametamerge_MetaMetaMerge.py	PASS	synthetic data: small profile tables with real NCBI taxonomy subset from nf-core; merged profile and detailed output are correct
+metamlst	metamlst_metamlst-index.py	Failed	tool bug: --buildblast prints DONE but writes no index because makeblastdb is missing in the image, and --bowtie2_threads crashes with a type error; database build, list, dump and bowtie2 index modes work
+metamlst	metamlst_metamlst-merge.py	PASS	
+metamlst	metamlst_metamlst.py	PASS	
+metaomestats	metaomestats_countAssembly.py	PASS	
+metaphlan	metaphlan	PASS	synthetic data: reads cut from the nf-core TOY database markers; the planted Corynebacterium SGB17013 is reported at 100 percent
+metaphlan	metaphlan_add_metadata_tree	Failed	image problem: crashes with AttributeError np.unicode_ (removed in NumPy 2)
+metaphlan	metaphlan_extract_markers	PASS	TOY database from nf-core; 200 markers of t__SGB17013 written as FASTA
+metaphlan	metaphlan_merge_metaphlan_tables	PASS	synthetic data: two profiles joined into one table, also with a file list
+metaphlan	metaphlan_metaphlan2krona	PASS	synthetic data: profile converted to a Krona line with the right taxa
+metaphlan	metaphlan_plot_tree_graphlan	Failed	image problem: crashes with TypeError in random.shuffle (Python 3.13 takes one argument)
+metaphlan	metaphlan_sample2markers	PASS	synthetic data: four planted SAM files give four consensus marker files
+metaphlan	metaphlan_sgb_to_gtdb_profile	PASS	synthetic data: profile converted to GTDB names
+metaphlan	metaphlan_strain_transmission	PASS	synthetic data: planted tree and metadata give one transmission event and a distance table
+metaphlan	metaphlan_strainphlan	PASS	synthetic data: four planted strain samples of SGB17013 give a 4-sample tree and alignment
+metaphlan2	metaphlan2_merge_metaphlan_tables.py	Failed	tool bug: -o is ignored and the joined table goes to standard output only
+metaphlan2	metaphlan2_metaphlan2.py	Not completed	no MetaPhlAn2 marker database in the image; the only tiny database (nf-core MetaPhlAn3 toy) maps reads but gives an empty profile
+metaphor	metaphor_config	Not completed	pipeline, skipped
+metaphor	metaphor_execute	Not completed	pipeline, skipped
+metaphor	metaphor_test	Not completed	pipeline, skipped
+metapi	metapi_gene_wf	Not completed	pipeline, skipped
+metapi	metapi_init	Not completed	pipeline, skipped
+metapi	metapi_mag_wf	Not completed	pipeline, skipped
+metapi	metapi_simulate_wf	Not completed	pipeline, skipped
+metapi	metapi_sync	Not completed	pipeline, skipped
+metaplatanus	metaplatanus	PASS	short-read and ONT test data from the tool repo give the expected scaffolds (ONT run joins them to 20973 bp); the default NextPolish step crashes in the image, so long-read runs need no_nextpolish
+metaplex	metaplex_Metaplex-calculate-IJR	Failed	image problem: qiime2 is not installed in the image (ModuleNotFoundError at start)
+metaplex	metaplex_Metaplex-length-filter	Failed	image problem: qiime2 is not installed in the image (ModuleNotFoundError at start)
+metaplex	metaplex_Metaplex-per-sample-filter	Failed	image problem: qiime2 is not installed in the image (ModuleNotFoundError at start)
+metaplex	metaplex_Metaplex-remultiplex	PASS	20000 real reads from the tool repo are remultiplexed: each read starts with the forward index plus reverse index (F01R11 checked)
+metaprokka	metaprokka	PASS	phage contig from the tool repo: 18 CDS annotated, including dUTPase, Xni and DNA polymerase I
+metaquant	metaquant	PASS	fn mode on repo test data matches the expected COG and GO tables and t-test (with threshold); tax mode crashes because the old ete3 cannot load the current NCBI taxonomy
+metaquantome	metaquantome_db	PASS	ec database downloaded and used by later steps; go download fails with HTTP 403 (server refuses the Python urllib agent); ncbi not tried (500 MB)
+metaquantome	metaquantome_expand	PASS	repo test data: COG means match the expected table; EC mode expands to the enzyme hierarchy
+metaquantome	metaquantome_filter	PASS	EC-expanded repo test data filters correctly; COG mode crashes (missing n_peptide columns)
+metaquantome	metaquantome_stat	PASS	repo test data: log2 fold changes and corrected p values match the expected table
+metaquantome	metaquantome_viz	PASS	volcano plot of the repo test data is a valid PNG with the two significant COGs flagged
+metasbt	metasbt_db	PASS	--list reads the public database table over the network; --download of a 567 MB database not run
+metasbt	metasbt_index	PASS	four real monkeypox genomes indexed into a new database (4 references, kmer 13)
+metasbt	metasbt_kraken	Not completed	needs the NCBI taxonomy by rsync, which is refused from this machine (kraken2-build exit 10)
+metasbt	metasbt_pack	PASS	database packed into a 418 KB tarball and its sha256 reported
+metasbt	metasbt_profile	PASS	genome profiles (single genome and list) match the Galaxy expected tables for genomes 1 to 3
+metasbt	metasbt_sketch	PASS	monkeypox genome sketched into the unpacked test database (genome_2.bf written)
+metasbt	metasbt_summarize	PASS	table shows 12 references, 4 species and kmer size 9 for the test database
+metasbt	metasbt_unpack	PASS	test database tarball from the Galaxy wrapper unpacks to 12 references
+metasbt	metasbt_update	PASS	four monkeypox genomes added as MAGs to the test database (4 mags in genomes.tsv)
+metastudent	metastudent	PASS	
+metatree	metatree	Failed	image problem: ete3 TreeStyle import fails because libGL.so.1 is missing, so metatree crashes after the distance step
+metav	metav	Not completed	needs large databases (viral-nr, nr with taxonomy, host and plasmid indexes); added the missing -o output input
+metavelvet	metavelvet_meta-velvetg	PASS	
+metawatt	metawatt	PASS	binning, tRNA prediction and read mapping give 4 bins on real B. fragilis contigs; diamond taxonomy step fails because the image has no diamond
+metawrap	metawrap_annotate_bins	Failed	image problem: tbl2asn in the image is more than a year old and refuses to run, so prokka stops and no annotation table is made (metaWRAP still exits 0); fixed -o flag
+metawrap	metawrap_assembly	PASS	
+metawrap	metawrap_bin_refinement	PASS	ran with --skip-checkm (no CheckM data): binning_refiner made refined bins from two B. fragilis bin sets
+metawrap	metawrap_binning	PASS	fixed -o flag, option order and read staging; metabat2, maxbin2 and concoct made bins on B. fragilis contigs
+metawrap	metawrap_blobology	Not completed	needs the NCBI nt BLAST database and taxonomy dump (not available); fixed read staging and the --subsample spelling
+metawrap	metawrap_classify_bins	Not completed	needs the NCBI nt BLAST database and taxonomy dump (not available); fixed -o flag
+metawrap	metawrap_kraken	Not completed	needs a Kraken 1 standard database (not available); fixed option order and read staging
+metawrap	metawrap_quant_bins	PASS	fixed -o flag, option order and read staging; bin abundance table written
+metawrap	metawrap_read_qc	PASS	fixed -o flag; run with --skip-bmtagger on B. fragilis reads
+metawrap	metawrap_reassemble_bins	PASS	ran with --skip-checkm (no CheckM data); fixed -o flag and cut-off options; strict and permissive reassemblies made for one B. fragilis bin
+metawrap-assembly	metawrap-assembly_assembly	PASS	megahit assembly of B. fragilis reads: 255 contigs, 1.73 Mb
+metawrap-binning	metawrap-binning_binning	PASS	metabat2, maxbin2 and concoct made bins on B. fragilis contigs
+metawrap-classify-bins	metawrap-classify-bins_metawrap	Not completed	needs the NCBI nt BLAST database and taxonomy dump (not available); fixed -o flag
+metawrap-kraken	metawrap-kraken_metawrap_kraken	Not completed	needs a Kraken database (not available); fixed option order and read staging
+metawrap-read-qc	metawrap-read-qc_metawrap_read_qc	PASS	run with --skip-bmtagger on B. fragilis reads (no host index)
+metawrap-refinement	metawrap-refinement_bin_refinement	PASS	ran with --skip-checkm (no CheckM data): binning_refiner made refined bins from two B. fragilis bin sets
+metaxa	metaxa_metaxa2	PASS	rewrote the wrapper: T/F options now pass T or F, all documented options, outputs collected by base name; 10 known 16S/18S sequences classified correctly
+metaxa	metaxa_metaxa2_c	PASS	new CWL; input is staged writable because the tool splits it beside itself; 10 known 16S/18S sequences classified correctly
+metaxa	metaxa_metaxa2_dbb	PASS	T/F options fixed, input made optional; built a database from 19 real SSU reference entries and their taxonomy lines (from the image database)
+metaxa	metaxa_metaxa2_dc	PASS	staged inputs so sample names come from file names; combined two level_6 count files into a correct matrix
+metaxa	metaxa_metaxa2_rf	PASS	new CWL; counts per taxonomic level match the 10 classified 16S/18S entries
+metaxa	metaxa_metaxa2_si	PASS	new CWL; counts per taxonomic level match the 10 classified 16S/18S entries
+metaxa	metaxa_metaxa2_ttt	PASS	new CWL; counts per taxonomic level match the 10 classified 16S/18S entries
+metaxa	metaxa_metaxa2_uc	PASS	new CWL; Bray-Curtis between two samples with one shared taxon matches the expected 0.8 to 0.9 range
+metaxa	metaxa_metaxa2_x	PASS	new CWL; 10 rRNA sequences extracted from 16S/18S FASTA
+meteor	meteor_download	Not completed	downloads multi-gigabyte catalogues from Zenodo (network and large database); fixed baseCommand case and the -o flag
+meteor	meteor_fastq	PASS	fixed baseCommand case; added step that copies the fastq symlinks so the output folder is usable; imported eva71_bench reads into a sample folder
+meteor	meteor_mapping	PASS	fixed output dir handling by staging the catalogue writable (tool builds a fasta index beside it); mock catalogue and 2000 reads: counts sum to counted_reads (1416)
+meteor	meteor_merge	PASS	fixed baseCommand case and prefix output glob; merged tables match the repo's expected values for 3 samples
+meteor	meteor_profile	PASS	fixed baseCommand case; added step that copies output symlinks; msp and KEGG tables match the repo's expected values on its test catalogue (raw normalization, core size 4)
+meteor	meteor_strain	PASS	fixed baseCommand case; catalogue staged writable and output symlinks copied; 8 species had enough signal, consensus genes and VCF written for the repo's mock sample
+meteor	meteor_tree	PASS	fixed baseCommand case; tree for 3 strains built and distance matrix written; the -f txt option crashes (ete4 has no get_ascii), default format works
+metfrag	metfrag	PASS	rewrote the wrapper: command is metfrag with ParameterFile=, data files staged, results folder created and returned; ranked 167 local candidates for the repo's example peak list
+metfrag-cli-batch	metfrag-cli-batch_MetFragCLI	PASS	
+metfrag-cli-batch	metfrag-cli-batch_metfrag	PASS	
+metfrag-cli-batch	metfrag-cli-batch_run_metfrag	PASS	
+methbat	methbat_build	PASS	synthetic data: cohort of four pseudo-samples from split reads of the real BAM
+methbat	methbat_compare	PASS	synthetic data: pseudo-sample cohort background (case vs control)
+methbat	methbat_deconvolve	PASS	synthetic data: real atlas rows re-placed onto the test BAM region; JSON estimates sum plausibly
+methbat	methbat_joint-segment	PASS	synthetic data: four pseudo-samples from split reads of the real BAM; methylated and unmethylated segments written
+methbat	methbat_profile	PASS	same real data with 5 kb windows; output profile and ASM BED written, no haplotypes in input
+methbat	methbat_report	PASS	same real data with 10 kb windows; report table written, no haplotypes in input
+methbat	methbat_segment	PASS	real HiFi 5mC BAM (nf-core methylong HG002) run through pb-CpG-tools; methylated segment found
+methbat	methbat_signature	PASS	synthetic data: four pseudo-samples (2 case, 2 control) from split reads of the real BAM
+methphaser	methphaser_meth_phaser_parallel	PASS	real ONT R10 HLA reads, phased VCF and block GTF from the MethPhaser Zenodo set (chr6:30.70-30.95 Mb subset); block relationships written
+methphaser	methphaser_meth_phaser_post_processing	PASS	same subset; re-phased VCF and methylation-tagged BAM written, blocks merged
+methpipe	methpipe_format_reads	PASS	real bismark BAM from nf-core test data converted to methpipe format
+methpipe	methpipe_hmr	PASS	real methylome counts from the dnmtools test data; 6 HMRs plus posterior and parameter files
+methpipe	methpipe_hypermr	PASS	synthetic data: simulated Arabidopsis counts shipped with the dnmtools tests; 14 HypeMRs written with scores
+methpipe	methpipe_methcounts	PASS	real bismark reads on the SARS-CoV-2 genome; CpG counts table written; fixed chrom input to required File or Directory
+methpipe	methpipe_pmd	Not completed	runs and writes parameters and posteriors, but the small test methylome gives no PMDs (FDR cutoff 0), so the output cannot be confirmed; fixed -fixedbin and -posteriors-out types
+methpipe	methpipe_radmeth	PASS	dnmtools test design and table; 17903 result lines as the upstream test expects
+methplotlib	methplotlib	Failed	image problem: the tool's own example (nanopolish calls plus frequencies) and any two-dataset run crash with pandas 2.2 errors; only one frequency file plots
+methurator	methurator_downsample	PASS	real bismark BAM (nf-core SARS-CoV-2 test data); read and CpG counts rise to 876 CpGs at 1x; fixed read-only index failures (writable BAM, fasta .fai)
+methurator	methurator_gt-estimator	PASS	same real BAM; asymptote 876 CpGs matches the observed count
+methurator	methurator_plot	PASS	summary from the real downsample run; 1x and 3x saturation plots written
+methylartist	methylartist_adjustcutoffs	PASS	real nanopolish calls database; cutoffs and call states rewritten in the database; fixed to stage the database writable and return it
+methylartist	methylartist_composite	Failed	image problem: scikit-bio 0.7.1 in the image has no local_pairwise_align_ssw, so composite crashes
+methylartist	methylartist_db-custom	PASS	per-read table written from real nanopore Col-0 BAM calls (nf-core methylong); 1068 calls loaded; column numbers count from 0
+methylartist	methylartist_db-guppy	Not completed	deprecated command that needs guppy fast5 files with modified-base calls and --force; no small test data
+methylartist	methylartist_db-megalodon	PASS	synthetic data: real BAM calls rewritten in megalodon per-read text format; 1068 calls loaded
+methylartist	methylartist_db-nanopolish	PASS	real nanopolish calls from the methplotlib ACTB example; database with 44687 calls
+methylartist	methylartist_db-sub	PASS	real bismark BAM (nf-core SARS-CoV-2); database and append mode work; fixed db to a name string with a database output
+methylartist	methylartist_locus	PASS	real nanopore Col-0 BAM aligned to TAIR10 chr1 5-7 Mb; locus plot and smoothed table show methylation domains
+methylartist	methylartist_region	PASS	same real BAM; region plot and segment table written
+methylartist	methylartist_scoredist	PASS	real nanopolish database gives the score plot; the --bam mode crashes in the tool (empty read list), noted
+methylartist	methylartist_segmeth	PASS	same real BAM; per-segment methylation table, high segment 0.72 vs 0.13 elsewhere
+methylartist	methylartist_segplot	PASS	synthetic data: real segmeth table with planted group labels; violin plot written
+methylartist	methylartist_wgmeth	PASS	same real BAM; bedMethyl with 36615 CpG calls written
+methyldackel	methyldackel_extract	PASS	real bismark BAM (nf-core SARS-CoV-2); 438 CpG sites with counts, merged CpG and CHG outputs written
+methyldackel	methyldackel_mbias	PASS	real bismark BAM; OT and OB methylation bias SVG plots written
+methyldackel	methyldackel_mergeContext	PASS	extract output of the real BAM merged into per-CpG metrics; identical to extract --mergeContext
+methyldackel	methyldackel_perRead	PASS	real bismark BAM; 17447 per-read CpG methylation lines written
+methylextract	methylextract_MethylExtract.pl	PASS	E. coli bisulfite read pairs aligned with Bismark; CpG methylation 79.8 percent, same as the Bismark extractor; fixed outDir flag and writable input folder
+methylextract	methylextract_MethylExtractBSCR.pl	PASS	conversion rate 0.696 on all cytosines, consistent with the Bismark methylation counts; new CWL
+methylextract	methylextract_MethylExtractBSPvalue.pl	PASS	error probability added to 55939 CpG rows, 9395 significant at FDR 0.05; new CWL
+methylmap	methylmap	Not completed	interactive Dash web server that runs until stopped; the output table is written only after a browser request
+methylpy	methylpy_add-methylation-level	PASS	region methylation 0.939 equals hand count 77/82; extra-info files collected; inputs staged writable
+methylpy	methylpy_allc-to-bigwig	PASS	synthetic data: real allc file with a planted chromosome-1 fasta used only for chromosome length; bigWig bin value equals a hand count (77/82); made allc file required and tool paths strings
+methylpy	methylpy_bam-quality-filter	Failed	image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image)
+methylpy	methylpy_build-reference	Failed	image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image)
+methylpy	methylpy_call-methylation-state	Failed	image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image)
+methylpy	methylpy_dmrfind	Not completed	runs and writes valid tables, but the tool's own test data gives no significant sites (header-only result), so the content cannot be confirmed; fixed invented flags
+methylpy	methylpy_filter-allc	PASS	CGN filter with min-cov 2 keeps 2057 and 2086 CG rows, same as awk count; fixed output files to arrays and staged inputs writable
+methylpy	methylpy_index-allc	PASS	index files written for 2 allc files, identical to the shipped .idx files; staged inputs writable and index files collected
+methylpy	methylpy_merge-allc	PASS	merged 4 allc files; sums match per position and strand (58877 sites); allc files staged writable
+methylpy	methylpy_paired-end-pipeline	Failed	image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image)
+methylpy	methylpy_reidentify-dmr	Not completed	new CWL; runs on the DMRfind result, but that result has no significant sites, so the header-only output cannot be confirmed
+methylpy	methylpy_single-end-pipeline	Failed	image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image)
+methylpy	methylpy_test-allc	Failed	image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image)
+metilene	metilene	PASS	
+metilene	metilene_input.pl	PASS	synthetic data: bedGraph files cut from the real metilene test matrix (3 samples per group); merged matrix has 9022 rows and every value equals the source matrix; new CWL
+metilene	metilene_output.pl	PASS	metilene test DMR table filtered to 35 DMRs, same count as an awk filter on the same thresholds; table, bedgraph and plot written; new CWL
+mfold	mfold	PASS	yeast tRNA-Phe folded; ct and out files correct (dG -22.9); side tools efn2 and boxplot_ng crash in the image, epstopdf/convert missing
+mfqe	mfqe	PASS	fixed output paths to arrays; FASTQ and FASTA extraction by name matches expected reads
+mg-toolkit	mg-toolkit_bulk_download	Failed	tool bug: the tool calls the MGnify API 'latest', which now redirects to API v2, and it crashes with KeyError 'meta' (the old v1 API still answers)
+mg-toolkit	mg-toolkit_original_metadata	PASS	study ERP003634 gave 7 runs with ENA metadata, same run list as the ENA portal; CSV output now collected and network access added
+mg-toolkit	mg-toolkit_sequence_search	Not completed	the MGnify sequence-search service answers HTTP 410 Gone, so no search can run; CWL fixed (subcommand after options, threshold options added, network access)
+mgatk	mgatk_bcall	PASS	3 cell barcodes from the mgatk test BAM; per-barcode mean depth 142.2, 178.2 and 206.5 match samtools depth; barcode tag made required and BAM index staged
+mgatk	mgatk_call	PASS	2 human mito BAMs from the mgatk tests give base count tables; depthTable 58 and 63 reads depth, 82 and 105 with filters off vs samtools 76 and 97; input now accepts a directory
+mgatk	mgatk_mgatk-del	PASS	new CWL; Pearson syndrome test BAMs give the known del6073-13095 at 25 and 31 percent heteroplasmy
+mgatk	mgatk_mgatk-del-find	PASS	new CWL; clip and SA tables written (16569 positions, junctions 6073 and 13095 among the top clipped sites); the plot step prints an R error because ggrepel is missing in the image
+mgatk	mgatk_remove-background	Failed	image problem: cellbender and the R packages hdf5r, optparse and tidyr are missing
+mgatk	mgatk_tenx	Failed	image problem: matplotlib is missing so variant_stats, cell_heteroplasmic_df and the VMR plot are not written (mgatk still exits 0)
+mgca	mgca	PASS	PI module gave 507 pepstats entries for M. genitalium; CRISPR module found cas9, cas1, cas2 and a CRISPR array on a S. pyogenes region; IS crashes because BioPerl is missing in the image; PROPHAGE needs a 768 MB pVOG file and was not run; folders staged writable and Results folder collected
+mgcod	mgcod_mgcod.py	PASS	
+mgcod	mgcod_multiprocess_mgcod.py	PASS	
+mgcplotter	mgcplotter_MGCplotter	PASS	circular plot of M. gallisepticum with 719 CDS, 6 rRNA, 32 tRNA and RBH track; --assign_cog_color crashes because rpsblast is missing in the image
+mgems	mgems_bin	PASS	synthetic data: same mixed reads and mSWEEP 2.2.1 probabilities; wrote per-group .bin files and assignment table; new CWL
+mgems	mgems_extract	PASS	synthetic data: extracted Bacteroides and Portiera reads from the .bin files; identical to the full mGEMS run; new CWL
+mgems	mgems_mGEMS	PASS	synthetic data: real B. fragilis and Portiera reads with real genomes plus planted SNP strains; bins hold the right reads (Portiera bin 9545 of its reads, Bacteroides bin 5163 of its reads); fixed -o/-a flags, comma lists and output folder
+mgf-formatter	mgf-formatter	PASS	reformatted a 3-spectrum MGF from MsBackendMgf test data
+mgikit	mgikit_demultiplex	PASS	mgikit test set ds01 with 1 mismatch: all 15 output files (reads, reports) identical to the expected ones when --all-index-error is set; the default counts mismatches per index
+mgikit	mgikit_reformat	PASS	mgikit test set extras ds2 with 8 base UMI: all 3 output files identical to the expected ones
+mgikit	mgikit_report	Failed	tool bug: mgikit report panics (index out of bounds, report_manager.rs:237) even on the sample_stats file written by mgikit demultiplex; CWL fixed to repeat --qc-report
+mgikit	mgikit_template	PASS	mgikit test set ds01: template and details tables written, template file identical to the expected one; output now a file prefix with a folder part
+mgkit	mgkit_count-utils_cat	PASS	synthetic data: featureCounts table for the gene ids of the real mgkit test GFF; chained map, cat and to_csv gave correct sums
+mgkit	mgkit_count-utils_map	PASS	synthetic data: featureCounts table for the gene ids of the real mgkit test GFF; chained map, cat and to_csv gave correct sums
+mgkit	mgkit_count-utils_to_csv	PASS	synthetic data: featureCounts table for the gene ids of the real mgkit test GFF; chained map, cat and to_csv gave correct sums
+mgkit	mgkit_dict-utils_reverse	PASS	
+mgkit	mgkit_dict-utils_split	PASS	
+mgkit	mgkit_fasta-utils_filter	PASS	
+mgkit	mgkit_fasta-utils_info	PASS	
+mgkit	mgkit_fasta-utils_rename	PASS	
+mgkit	mgkit_fasta-utils_split	PASS	
+mgkit	mgkit_fasta-utils_translate	PASS	
+mgkit	mgkit_fasta-utils_uid	PASS	
+mgkit	mgkit_snp_parser	PASS	synthetic data: planted VCF and GFF on real mgkit test contigs; fixed samples_id to repeat -m for each sample
+mgnify-pipelines-toolkit	mgnify-pipelines-toolkit_get_subunits	PASS	output md5sums match the tool's own tests; added the sequence-categorisation directory output
+mhap	mhap	PASS	rewrote CWL from help (-s/-q/-p/-k flags, binary output dir); real nanopore overlaps share k-mers, random pairs do not
+mhc-annotation	mhc-annotation_mhca_annotate	PASS	GFF output is byte-identical to the author's test template
+mhc-annotation	mhc-annotation_mhca_check_CDS	PASS	
+mhc-annotation	mhc-annotation_mhca_refseq2fullfasta	Failed	image problem: samtools is missing in the image but the script runs samtools faidx
+mhc-annotation	mhc-annotation_mhca_update_feature_table	Not completed	runs only after a '>test1' record header was added by hand to the old feature table (mhca annotate does not write it), so the update cannot be confirmed on unedited input.
+mhcflurry	mhcflurry_mhcflurry-downloads_fetch	PASS	fetched models_class1_pan (228 MB); needs NetworkAccess, set in the CWL
+mhcflurry	mhcflurry_mhcflurry-predict	PASS	affinity-only mode on the fetched pan models; predictions match the tool's own expected values; presentation mode not tested
+mhcflurry	mhcflurry_mhcflurry-predict-scan	Not completed	needs the presentation and processing models (about 850 MB), too large; fails with the affinity models only
+mhcgnomes	mhcgnomes	PASS	real NetMHCpan allele names parse to correct normalized alleles in tsv and json
+mhg	mhg_MHG	PASS	3 truncated real bacterial genomes (300 kb each) give 54-85 homologous groups; the --query and --database paths must end with '/'; made output required
+mhg	mhg_MHG-partition	PASS	partition of the blastn XML queries gives about the same groups as MHG (tool output order varies between runs)
+mhg	mhg_genome-to-blast-db	PASS	blast databases and XML queries built for 3 truncated real genomes
+mice	mice	PASS	real 5-genome E. coli graph GFF gives 15815 synteny partitions; input must be uncompressed GFF/GFA
+microbecensus	microbecensus	Failed	image problem: bundled RAPsearch2 binary cannot start (libstdc++.so.6 missing in the image); CWL rewritten from help
+microhapdb	microhapdb_frequency	PASS	marker, population and allele options return the expected frequencies
+microhapdb	microhapdb_lookup	PASS	positions and rsIDs match the repo marker.csv
+microhapdb	microhapdb_marker	PASS	region, panel, query and column options checked against marker.csv; fasta/detail/offsets formats need the GRCh38 genome download, not tested
+microhapdb	microhapdb_population	PASS	ids and query options return the expected populations
+microhapdb	microhapdb_summarize	PASS	counts (3053 alleles, 2413 loci) match marker.csv
+microview	microview	PASS	HTML reports for real Kaiju results via -t and via the CSV table contain the expected taxa; added sample_files staging for the CSV mode
+midas	midas_build_midas_db	Failed	image problem: MIDAS exits at start with File not found: hs-blastn, because it checks ./hs-blastn, ./bowtie2 and ./samtools as files in the working directory
+midas	midas_call_consensus	Not completed	needs merge_midas output from real data (large database, run_midas fails in this image); no sample data available
+midas	midas_compare_genes	Not completed	needs merge_midas output from real data (large database, run_midas fails in this image); no sample data available
+midas	midas_merge_midas_genes	Not completed	needs the large MIDAS reference database and run_midas output; run_midas itself fails in this image
+midas	midas_merge_midas_snps	Not completed	needs the large MIDAS reference database and run_midas output; run_midas itself fails in this image
+midas	midas_merge_midas_species	Not completed	needs the large MIDAS reference database and run_midas output; run_midas itself fails in this image
+midas	midas_query_by_compound	Not completed	needs the large MIDAS reference database and run_midas output; run_midas itself fails in this image
+midas	midas_run_midas_genes	Failed	image problem: MIDAS exits at start with File not found: hs-blastn, because it checks ./hs-blastn, ./bowtie2 and ./samtools as files in the working directory
+midas	midas_run_midas_snps	Failed	image problem: MIDAS exits at start with File not found: hs-blastn, because it checks ./hs-blastn, ./bowtie2 and ./samtools as files in the working directory
+midas	midas_run_midas_species	Failed	image problem: MIDAS exits at start with File not found: hs-blastn, because it checks ./hs-blastn, ./bowtie2 and ./samtools as files in the working directory
+midas	midas_snp_diversity	Not completed	needs merge_midas output from real data (large database, run_midas fails in this image); also exits with a TypeError on default options unless --rand_reads is set
+midas	midas_strain_tracking_id_markers	Not completed	needs merge_midas output from real data (large database, run_midas fails in this image); no sample data available
+midas	midas_strain_tracking_track_markers	Not completed	needs merge_midas output from real data (large database, run_midas fails in this image); no sample data available
+migmap	migmap	Failed	image problem: migmap looks for its data in /usr/local/share/data (it is in /usr/local/share/igblast) and the bundled igblastn fails to load libbz2.so.1; CWL fixed (options before positionals, comma-joined -R)
+migrate-n	migrate-n	PASS	real example microsatellite data (2 populations, 10 loci) with a shortened ML run gives a valid outfile with Theta and M estimates; rewrote CWL for batch parmfile use, input data must be staged writable
+mikado	mikado_compare	PASS	tmap, refmap and stats written for picked loci against the sample reference (base F1 93%); reference staged writable for the index
+mikado	mikado_configure	PASS	configuration written from the sample list, genome and junctions; rewrote CWL from help and added the config output
+mikado	mikado_pick	PASS	picked 11 genes from the prepared sample models using a junction-only database (ORF loading fails in this image); result matches the reference at 93% base F1
+mikado	mikado_prepare	PASS	112 transcripts, same count as the repo's own prepared sample GTF; rewrote CWL from help
+mikado	mikado_serialise	Failed	image problem: pandas 2.2 with SQLAlchemy 1.4 crashes when loading ORFs ('Engine' object has no attribute 'cursor'); only the junction-only mode works
+mikado	mikado_util_awk_gtf	PASS	region slice of the prepared sample GTF
+mikado	mikado_util_collect_compare	PASS	F1 and sensitivity tables written from a real compare stats file
+mikado	mikado_util_convert	PASS	reference GFF3 converted to BED12 with the expected 18 records
+mikado	mikado_util_grep	PASS	3 listed models extracted from the reference GFF3
+mikado	mikado_util_stats	Failed	image problem: numpy has no attribute 'warnings' (mikado calculator import fails)
+mikado	mikado_util_trim	Failed	tool bug: crashes with 'Namespace' object has no attribute 'gff'
+mikrokondo-tools	mikrokondo-tools_download	Not completed	every database is large (smallest is 660 MB, others up to 7.7 GB); CWL rewritten with NetworkAccess and a created output directory
+mikrokondo-tools	mikrokondo-tools_samplesheet	PASS	real SARS-CoV-2 read pair and contigs give the expected sample sheet rows; FASTA input must be gzipped
+milonga	milonga_create_hybrid_samplesheet.sh	Failed	image problem: the script calls GNU 'basename -s' but the image has BusyBox basename, so samples.tsv stays header-only (read merging into raw/ works)
+milonga	milonga_milonga_setup.sh	Not completed	installer that downloads pipeline databases and test data into the image install folder; not a data tool
+mimeo	mimeo_filter	Failed	image problem: TRF ('trf') is not installed in the image (command not found); CWL rewritten to run 'mimeo filter'
+mimeo	mimeo_map	Failed	image problem: lastz and bedtools are not installed in the image (tool warns and writes empty results); CWL rewritten to run 'mimeo map'
+mimeo	mimeo_self	Failed	image problem: lastz and bedtools are not installed in the image (tool warns and writes empty results); CWL rewritten to run 'mimeo self'
+mimeo	mimeo_x	Failed	image problem: lastz and bedtools are not installed in the image (tool warns and writes empty results); CWL rewritten to run 'mimeo x'
+mimi	mimi_mimi_cache_create	PASS	KEGG compound list built into natural and 95% C13-labelled caches; rewrote CWL from help
+mimi	mimi_mimi_cache_dump	PASS	dump of a real cache shows metadata and compounds
+mimi	mimi_mimi_hmdb_extract	Not completed	needs the full HMDB metabolites XML (several GB); no small real sample available
+mimi	mimi_mimi_kegg_extract	Failed	image problem: the program fails at start with ModuleNotFoundError: No module named 'requests'
+mimi	mimi_mimi_mass_analysis	PASS	real FT-ICR peak list matched to both caches; masses check out (prednisolone [M-H]- 359.1864, C13 shift correct); the CWL strips .pkl because the tool adds it
+mimick	mimick	Failed	image problem: the bundled Julia fails to start (libz.so.1 missing) and its project folder is read-only, so no simulation runs
+mimodd	mimodd_annotate	Failed	image problem: java is not in the image, so SnpEff cannot run (FileNotFoundError: java)
+mimodd	mimodd_convert	PASS	
+mimodd	mimodd_covstats	PASS	
+mimodd	mimodd_delcall	PASS	uncovered regions on low-coverage test data
+mimodd	mimodd_header	PASS	
+mimodd	mimodd_index	PASS	
+mimodd	mimodd_info	PASS	
+mimodd	mimodd_map	PASS	
+mimodd	mimodd_rebase	PASS	synthetic data: hand-made chain file shifting positions by 10
+mimodd	mimodd_reheader	PASS	
+mimodd	mimodd_snap	PASS	paired mode on unaligned BAM input; gz FASTQ pairs fail inside SNAP (file size check)
+mimodd	mimodd_snap-batch	PASS	
+mimodd	mimodd_snpeff-genomes	PASS	synthetic data: real SnpEff config with an empty placeholder genome folder
+mimodd	mimodd_sort	PASS	
+mimodd	mimodd_varcall	PASS	
+mimodd	mimodd_varextract	PASS	
+mimodd	mimodd_varreport	PASS	unannotated VCF gives unknown effects
+mimodd	mimodd_vcf-filter	PASS	
+mimseq	mimseq	Failed	image problem: gmap_build has a broken perl shebang (build-env path) and usearch is missing, so the run stops at indexing
+mimsi	mimsi_analyze	Failed	image problem: numpy 1.24 rejects the ragged instance array in save_bag (inhomogeneous shape error); default model file is also missing
+mimsi	mimsi_create_data	Failed	image problem: numpy 1.24 rejects the ragged instance array in save_bag (inhomogeneous shape error); --cores also crashes
+mimsi	mimsi_evaluate_sample	Failed	tool bug: default tsv summary crashes (msi_status missing lci); only npy output works, tested on vectors built from real BAMs
+mimsi	mimsi_mi_msi_train_test	PASS	synthetic data: vectors from real BAMs copied with made-up labels, 1 epoch
+mimsi	mimsi_visualize_instance	PASS	synthetic data: vectors built from real BAMs with the tool's own convert_bam
+minc-tools	minc-tools_minc_modify_header	PASS	
+minc-tools	minc-tools_mincmath	PASS	
+minced	minced	PASS	

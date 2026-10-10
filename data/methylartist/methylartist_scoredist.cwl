@@ -12,19 +12,24 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - .bai
     doc: one or more .bam files with MM and ML tags for modification calls (see 
       samtags spec)
     inputBinding:
       position: 101
       prefix: --bam
+      itemSeparator: ','
   - id: db
     type:
       - 'null'
-      - File
-    doc: methylartist database(s), can be comma-delimited
+      - type: array
+        items: File
+    doc: methylartist database(s), comma-delimited
     inputBinding:
       position: 101
       prefix: --db
+      itemSeparator: ','
   - id: lw
     type:
       - 'null'
@@ -57,6 +62,8 @@ inputs:
       position: 101
       prefix: --palette
   - id: ref
+    secondaryFiles:
+      - .fai
     type:
       - 'null'
       - File

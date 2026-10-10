@@ -4,6 +4,15 @@ baseCommand: metacoag
 label: metacoag
 doc: "MetaCoAG: Binning Metagenomic Contigs via Composition, Coverage and Assembly
   Graphs\n\nTool homepage: https://github.com/metagentools/MetaCoAG"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
+      - entry: $(inputs.contigs)
+        writable: true
 inputs:
   - id: abundance
     type: File
@@ -162,15 +171,6 @@ outputs:
     doc: path to the output folder
     outputBinding:
       glob: $(inputs.output_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metacoag:1.2.2--py312h9ee0642_0

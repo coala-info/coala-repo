@@ -1,5 +1,11 @@
 # mice CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mice | PASS | real 5-genome E. coli graph GFF gives 15815 synteny partitions; input must be uncompressed GFF/GFA |
+
 ## mice
 
 ### Tool Description

@@ -196,7 +196,32 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error (progress messages; may contain non-UTF-8 bytes)
+  - id: fold_ct
+    type:
+      - 'null'
+      - File
+    doc: Connectivity table of the computed foldings (.ct)
+    outputBinding:
+      glob: $(inputs.seq.basename).ct
+  - id: fold_out
+    type:
+      - 'null'
+      - File
+    doc: Text description of the foldings (.out)
+    outputBinding:
+      glob: $(inputs.seq.basename).out
+  - id: fold_files
+    type:
+      type: array
+      items: File
+    doc: All files written next to the sequence name (ct, out, plot, det, pnt, ann, sav, h-num, ss-count, log, plots)
+    outputBinding:
+      glob: $(inputs.seq.basename).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mfold:3.6--h8537716_3
 stdout: mfold.out
+stderr: mfold.err

@@ -1,5 +1,15 @@
 # mimi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mimi_mimi_cache_create | PASS | KEGG compound list built into natural and 95% C13-labelled caches; rewrote CWL from help |
+| mimi_mimi_cache_dump | PASS | dump of a real cache shows metadata and compounds |
+| mimi_mimi_hmdb_extract | Not completed | needs the full HMDB metabolites XML (several GB); no small real sample available |
+| mimi_mimi_kegg_extract | Failed | image problem: the program fails at start with ModuleNotFoundError: No module named 'requests' |
+| mimi_mimi_mass_analysis | PASS | real FT-ICR peak list matched to both caches; masses check out (prednisolone [M-H]- 359.1864, C13 shift correct); the CWL strips .pkl because the tool adds it |
+
 ## mimi_mimi_hmdb_extract
 
 ### Tool Description
@@ -92,6 +102,67 @@ options:
   -s, --sample SAMPLE [SAMPLE ...]
                         Input sample file
   -o, --output OUTPUT   Output file
+```
+
+## mimi_mimi_cache_dump
+
+### Tool Description
+MIMI cache dump tool
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mimi:1.0.4--pyhdfd78af_0
+- **Homepage**: https://github.com/NYUAD-Core-Bioinformatics/MIMI
+- **Package**: https://anaconda.org/channels/bioconda/packages/mimi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mimi_cache_dump [-h] [-n NUM_COMPOUNDS] [-i NUM_ISOTOPES] [-o OUTPUT]
+                       cache_file
+
+MIMI Cache Dump Tool
+
+positional arguments:
+  cache_file            Input cache file (.pkl)
+
+options:
+  -h, --help            show this help message and exit
+  -n, --num-compounds NUM_COMPOUNDS
+                        Number of compounds to output (default: all)
+  -i, --num-isotopes NUM_ISOTOPES
+                        Number of isotopes per compound to output (default:
+                        all)
+  -o, --output OUTPUT   Output file (default: stdout)
+```
+
+## mimi_mimi_kegg_extract
+
+### Tool Description
+Extract compound information from KEGG within a mass range
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mimi:1.0.4--pyhdfd78af_0
+- **Homepage**: https://github.com/NYUAD-Core-Bioinformatics/MIMI
+- **Package**: https://anaconda.org/channels/bioconda/packages/mimi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mimi_kegg_extract [-h] [-l MIN_MASS] [-u MAX_MASS] [-i COMPOUND_IDS]
+                         [-o OUTPUT] [-b BATCH_SIZE]
+
+options:
+  -h, --help            show this help message and exit
+  -l, --min-mass MIN_MASS
+                        Lower bound of molecular weight in Da
+  -u, --max-mass MAX_MASS
+                        Upper bound of molecular weight in Da
+  -i, --input COMPOUND_IDS
+                        Input TSV file containing KEGG compound IDs
+  -o, --output OUTPUT   Output TSV file path (default: kegg_compounds.tsv)
+  -b, --batch-size BATCH_SIZE
+                        Number of compounds to process in each batch (default: 5)
+(help reconstructed from the argparse calls in mimi/kegg.py because the program fails to import in the image)
 ```
 
 ## Metadata

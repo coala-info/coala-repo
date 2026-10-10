@@ -1,5 +1,15 @@
 # metapi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metapi_gene_wf | Not completed | pipeline, skipped |
+| metapi_init | Not completed | pipeline, skipped |
+| metapi_mag_wf | Not completed | pipeline, skipped |
+| metapi_simulate_wf | Not completed | pipeline, skipped |
+| metapi_sync | Not completed | pipeline, skipped |
+
 ## metapi_init
 
 ### Tool Description

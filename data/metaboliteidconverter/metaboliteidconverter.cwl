@@ -3,6 +3,10 @@ class: CommandLineTool
 baseCommand: metaboliteidconverter
 label: metaboliteidconverter
 doc: "Converts metabolite IDs between different databases.\n\nTool homepage: https://github.com/phnmnl/container-MetaboliteIDConverter"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 inputs:
   - id: headers
     type:
@@ -10,27 +14,30 @@ inputs:
       - boolean
     doc: use this if the input file has database names on the first line
     inputBinding:
-      position: 101
+      position: 1
       prefix: -headers
   - id: in_db
     type: string
-    doc: Input database to convert from.
+    doc: "[Required] Input database to convert from."
     inputBinding:
-      position: 101
+      position: 2
+      prefix: -inDB
   - id: in_file
     type:
       - 'null'
       - File
     doc: Input file in tsv file format.
     inputBinding:
-      position: 101
+      position: 3
+      prefix: -inFile
   - id: in_id
     type:
       - 'null'
       - string
     doc: Input ID to convert.
     inputBinding:
-      position: 101
+      position: 4
+      prefix: -inId
   - id: out_db
     type:
       - 'null'
@@ -38,21 +45,20 @@ inputs:
         items: string
     doc: Output databases to convert to.
     inputBinding:
-      position: 101
-  - id: out_file_path
+      position: 5
+      prefix: -outDB
+  - id: out_file
     type: string
-    doc: ': [Required] Output file name.'
+    doc: "[Required] Output file name."
     inputBinding:
-      position: 102
+      position: 6
       prefix: -outFile
 outputs:
-  - id: out_file
+  - id: output
     type: File
-    doc: Output file name.
+    doc: Output file with the converted IDs
     outputBinding:
-      glob: $(inputs.out_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out_file)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/metaboliteidconverter:phenomenal-v0.5.1_cv1.2.31

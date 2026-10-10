@@ -1,5 +1,13 @@
 # metamlst CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metamlst_metamlst-index.py | Failed | tool bug: --buildblast prints DONE but writes no index because makeblastdb is missing in the image, and --bowtie2_threads crashes with a type error; database build, list, dump and bowtie2 index modes work |
+| metamlst_metamlst-merge.py | PASS |  |
+| metamlst_metamlst.py | PASS |  |
+
 ## metamlst_metamlst-index.py
 
 ### Tool Description

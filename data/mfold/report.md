@@ -1,5 +1,11 @@
 # mfold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mfold | PASS | yeast tRNA-Phe folded; ct and out files correct (dG -22.9); side tools efn2 and boxplot_ng crash in the image, epstopdf/convert missing |
+
 ## mfold
 
 ### Tool Description

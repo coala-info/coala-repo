@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mimodd_convert
+baseCommand: [mimodd, convert]
 label: mimodd_convert
 doc: "Convert between various sequence file formats.\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:

@@ -86,10 +86,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --bowtie2db
+      valueFrom: $(self.basename)
   - id: bowtie2out
     type:
       - 'null'
-      - File
+      - string
     doc: The file for saving the output of BowTie2
     inputBinding:
       position: 102
@@ -233,7 +234,7 @@ inputs:
   - id: min_cu_len
     type:
       - 'null'
-      - boolean
+      - int
     doc: minimum total nucleotide length for the markers in a clade for 
       estimating the abundance without considering sub-clade abundances [default
       2000]
@@ -251,7 +252,7 @@ inputs:
   - id: mpa_pkl
     type:
       - 'null'
-      - string
+      - File
     doc: The metadata pickled MetaPhlAn file [deprecated]
     inputBinding:
       position: 102
@@ -313,7 +314,7 @@ inputs:
   - id: samout
     type:
       - 'null'
-      - File
+      - string
     doc: The sam output file
     inputBinding:
       position: 102
@@ -370,7 +371,7 @@ inputs:
   - id: tmp_dir
     type:
       - 'null'
-      - boolean
+      - string
     doc: The folder used to store temporary files [default is the OS dependent 
       tmp dir]
     inputBinding:
@@ -399,7 +400,7 @@ inputs:
     doc: Output or path parameter `output_file_opt_path`
     inputBinding:
       position: 104
-      prefix: --output-file-opt
+      prefix: -o
   - id: biom_output_file_path
     type:
       - 'null'
@@ -423,6 +424,20 @@ outputs:
     doc: The output file (if not specified as positional argument)
     outputBinding:
       glob: $(inputs.output_file_opt_path)
+  - id: bowtie2out_file
+    type:
+      - 'null'
+      - File
+    doc: The saved output of BowTie2
+    outputBinding:
+      glob: '$(inputs.bowtie2out)'
+  - id: samout_file
+    type:
+      - 'null'
+      - File
+    doc: The sam output file
+    outputBinding:
+      glob: $(inputs.samout)
   - id: biom_output_file
     type:
       - 'null'
@@ -432,6 +447,10 @@ outputs:
       glob: $(inputs.biom_output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.bowtie2db ? inputs.bowtie2db : [])"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaphlan2:2.96.1--py_0

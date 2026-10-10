@@ -25,6 +25,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .fai
     doc: Fasta file of the reference genome used to align the samples. If not 
       provided, it will download it according to the specified genome.
     inputBinding:
@@ -104,6 +106,9 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${ return inputs.bams.map(function(f) { return {"entry": f, "writable": true}; }); }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methurator:2.1.1--pyhdfd78af_0

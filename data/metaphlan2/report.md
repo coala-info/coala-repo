@@ -1,5 +1,12 @@
 # metaphlan2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaphlan2_merge_metaphlan_tables.py | Failed | tool bug: -o is ignored and the joined table goes to standard output only |
+| metaphlan2_metaphlan2.py | Not completed | no MetaPhlAn2 marker database in the image; the only tiny database (nf-core MetaPhlAn3 toy) maps reads but gives an empty profile |
+
 ## metaphlan2_metaphlan2.py
 
 ### Tool Description

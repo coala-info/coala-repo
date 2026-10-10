@@ -5,22 +5,38 @@ baseCommand:
   - unitesetstofasta
 label: metaeuk_unitesetstofasta
 doc: "By Eli Levy Karin <eli.levy.karin@gmail.com>\n\nTool homepage: https://github.com/soedinglab/metaeuk"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.contigs_db)
+      - $(inputs.targets_db)
+      - $(inputs.exons_db)
 inputs:
   - id: contigs_db
-    type: File
-    doc: contigsDB
+    type: 'File[]'
+    doc: Input contigs database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 1
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: targets_db
-    type: File
-    doc: targetsDB
+    type: 'File[]'
+    doc: Input targets database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 2
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: exons_db
-    type: File
-    doc: exonsDB
+    type: 'File[]'
+    doc: Input exons database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 3
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: len_scan_for_start
     type:
       - 'null'
@@ -103,9 +119,25 @@ inputs:
 outputs:
   - id: united_exons_fasta
     type: File
-    doc: unitedExonsFasta
+    doc: Predicted proteins (amino acid FASTA), written as <unitedExonsFasta>.fas
     outputBinding:
-      glob: '$(inputs.united_exons_fasta_path)'
+      glob: $(inputs.united_exons_fasta_path).fas
+  - id: united_exons_codon_fasta
+    type: File
+    doc: Predicted coding sequences (nucleotide FASTA), written as <unitedExonsFasta>.codon.fas
+    outputBinding:
+      glob: $(inputs.united_exons_fasta_path).codon.fas
+  - id: united_exons_headers_map
+    type: File
+    doc: TSV map of each header to internal identifiers, written as
+      <unitedExonsFasta>.headersMap.tsv
+    outputBinding:
+      glob: $(inputs.united_exons_fasta_path).headersMap.tsv
+  - id: united_exons_gff
+    type: File
+    doc: Predictions in GFF format, written as <unitedExonsFasta>.gff
+    outputBinding:
+      glob: $(inputs.united_exons_fasta_path).gff
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

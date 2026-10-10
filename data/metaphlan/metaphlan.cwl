@@ -61,7 +61,7 @@ inputs:
   - id: bowtie2_build
     type:
       - 'null'
-      - File
+      - string
     doc: Full path to the bowtie2-build command to use, deafult assumes that 
       'bowtie2-build is present in the system path
     inputBinding:
@@ -70,7 +70,7 @@ inputs:
   - id: bowtie2_exe
     type:
       - 'null'
-      - File
+      - string
     doc: Full path and name of the BowTie2 executable. This option 
       allowsMetaPhlAn to reach the executable even when it is not in the system 
       PATH or the system PATH is unreachable
@@ -131,7 +131,7 @@ inputs:
       files! [default None]
     inputBinding:
       position: 102
-      prefix: --forward_reads
+      prefix: '-1'
   - id: ignore_archaea
     type:
       - 'null'
@@ -219,7 +219,7 @@ inputs:
   - id: mapout
     type:
       - 'null'
-      - File
+      - string
     doc: The file for saving the mapping output (old --bowtie2out option)
     inputBinding:
       position: 102
@@ -262,7 +262,7 @@ inputs:
   - id: minimap2_exe
     type:
       - 'null'
-      - File
+      - string
     doc: Full path and name of the Minimap2 executable. This option 
       allowsMetaPhlAn to reach the executable even when it is not in the system 
       PATH or the system PATH is unreachable
@@ -366,7 +366,7 @@ inputs:
       files! [default None]
     inputBinding:
       position: 102
-      prefix: --reverse_reads
+      prefix: '-2'
   - id: sample_id
     type:
       - 'null'
@@ -539,6 +539,13 @@ outputs:
     doc: The output file (if not specified stdout)
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: mapout_file
+    type:
+      - 'null'
+      - File
+    doc: The mapping output file
+    outputBinding:
+      glob: $(inputs.mapout)
   - id: samout
     type:
       - 'null'

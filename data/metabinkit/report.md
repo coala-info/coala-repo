@@ -1,11 +1,81 @@
 # metabinkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metabinkit_metabin | PASS | output identical to the expected tests/test_files/out1.tsv |
+| metabinkit_metabinkit_blast | PASS | main mode works on the repo test db and query; the -P and -N taxid filters fail because the image has no BLAST taxdb files |
+| metabinkit_metabinkit_blastgendb | PASS | database built from the repo test fasta; the -c check option fails inside blastdbcheck while building works |
+
 ## metabinkit_metabin
 
 ### Tool Description
 metabin
 
+#
+
+## metabinkit_metabinkit_blast
+
+### Tool Description
+BLAST a fasta file against a reference database and add taxonomy information.
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/metabinkit:0.2.3--r44h1104d80_3
+- **Homepage**: https://github.com/envmetagen/metabinkit
+- **Package**: https://anaconda.org/channels/bioconda/packages/metabinkit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+metabinkit_blast -f fasta file -D reference_DB -o outfile [options]
+ -f fasta_file 
+ -D reference_db    - reference Blast indexed database
+ -o outfile
+ -O outformat       - output format (default: 6 qseqid evalue pident qcovs saccver staxid ssciname sseqid)
+ -T taxdir          - folder with NCBI's taxonomy database (default:/usr/local/bin/../db/)
+ -t threads         - maximum number of threads (default:2)
+ -m max_hsps        - BLAST's max_hsps paramater (default:1)
+ -w word_size       - BLAST's word_size paramater (default:6)
+ -e evalue          - BLAST's evalue paramater (default:1)
+ -I perc_identity   - BLAST's perc_identity paramater (default:50)
+ -q qcov_hsp_perc   - BLAST's qcov_hsp_perc paramater (default:98)
+ -G gapopen         - BLAST's gapopen paramater (default:0)
+ -E gapextend       - BLAST's gapextend paramater (default:2)
+ -X task            - BLAST's task parameter (default:blastn)
+ -r reward	    - BLAST´s reward parameter (default:1)
+ -p penalty	    - BLAST´s reward parameter (default:-1)
+ -M max_target_seqs - BLAST´s max_target_seqs parameter (default:100)
+ -N taxids_blacklist_files - restrict search to taxids not present in the files provided (separated by comma). This options is incompatible with -P.
+ -P taxids_positive_files - restrict search to taxids present in the files provided (separated by comma). This option is incompatible with -N.
+ -v                       - print metabinkit version and exits
+ -h                 - provides usage information
+```
+
+## metabinkit_metabinkit_blastgendb
+
+### Tool Description
+Create a taxonomy-aware BLAST nucleotide database from a fasta file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metabinkit:0.2.3--r44h1104d80_3
+- **Homepage**: https://github.com/envmetagen/metabinkit
+- **Package**: https://anaconda.org/channels/bioconda/packages/metabinkit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+metabinkit_blastgendb -f fasta file -t taxid_map -o db [options]
+ -f fasta_file 
+ -T seqid_taxid_map - mapping between the sequence id and the taxid (tab separated). if none is found it will look for taxid=xxxx; in the fasta header after the first space and consider the word up to the first space or | as the sequence id.
+ -o outfile
+ -c                 - check database after creating it
+ -t threads         - maximum number of threads (default:2)
+ -v                 - print version and exit
+ -h                 - provides usage information
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/metabinkit:0.2.3--r44h1104d80_3
 - **Homepage**: https://github.com/envmetagen/metabinkit
 - **Package**: https://anaconda.org/channels/bioconda/packages/metabinkit/overview

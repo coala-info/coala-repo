@@ -1,5 +1,13 @@
 # methylextract CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| methylextract_MethylExtract.pl | PASS | E. coli bisulfite read pairs aligned with Bismark; CpG methylation 79.8 percent, same as the Bismark extractor; fixed outDir flag and writable input folder |
+| methylextract_MethylExtractBSCR.pl | PASS | conversion rate 0.696 on all cytosines, consistent with the Bismark methylation counts; new CWL |
+| methylextract_MethylExtractBSPvalue.pl | PASS | error probability added to 55939 CpG rows, 9395 significant at FDR 0.05; new CWL |
+
 ## methylextract_MethylExtract.pl
 
 ### Tool Description
@@ -50,3 +58,56 @@ Optional output parameters:
   wigOut=<methylation output in WIG format> [default: N]
 ```
 
+## methylextract_MethylExtractBSCR.pl
+
+### Tool Description
+Estimates the bisulfite conversion rate from alignments and a sequence file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/methylextract:1.9.1--0
+- **Homepage**: http://bioinfo2.ugr.es/MethylExtract/
+- **Package**: https://anaconda.org/channels/bioconda/packages/methylextract/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+
+################   MethylExtractBSCR   ###############
+###############   Command-line help   ###############
+
+Launch as:
+  perl MethExtractBSCR.pl seqFile=<sequence file> inFile=<alignments input file> flagW=<Watson FLAGs (multiple FLAGs comma separated)> flagC=<Crick FLAGs (multiple FLAGs comma separated)> [OPTIONS]
+Optional Quality parameters:
+  qscore=<fastq quality score: phred33-quals, phred64-quals,solexa-quals, solexa1.3-quals or NA> [default: phred33-quals]
+  minQ=<minimun PHRED quality per sequenced nucleotide> [default: 20]
+  FirstIgnor=<number of first bases ignored> [default: 0]
+  LastIgnor=<number of last bases ignored> [default: 0]
+```
+
+## methylextract_MethylExtractBSPvalue.pl
+
+### Tool Description
+Calculates the bisulfite error probability of each methylation value in a MethylExtract output.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/methylextract:1.9.1--0
+- **Homepage**: http://bioinfo2.ugr.es/MethylExtract/
+- **Package**: https://anaconda.org/channels/bioconda/packages/methylextract/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+
+################   MethylExtractErrorProbability   ###############
+######################   Command-line help   #####################
+
+Launch as:
+  perl MethylExtractBSPvalue.pl inFile=<input file> BSCR=<Bisulfite conversion rate> [OPTIONS]
+
+Optional parameters:
+  outFile=<Output file> [default: inFile.prob]
+  errorInterval=<Error interval allowed> [default: 0.2]
+  FDR=<False discovery rate allowed> [default: NA]
+```

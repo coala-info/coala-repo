@@ -1,5 +1,11 @@
 # methylmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| methylmap | Not completed | interactive Dash web server that runs until stopped; the output table is written only after a browser request |
+
 ## methylmap
 
 ### Tool Description

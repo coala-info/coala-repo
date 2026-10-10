@@ -1,5 +1,11 @@
 # metaquant CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaquant | PASS | fn mode on repo test data matches the expected COG and GO tables and t-test (with threshold); tax mode crashes because the old ete3 cannot load the current NCBI taxonomy |
+
 ## metaquant
 
 ### Tool Description

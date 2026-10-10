@@ -1,5 +1,11 @@
 # metacortex CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metacortex | PASS | reads are a mock mixed-genome set; 94% of contig 31-mers match the source genomes; raw reads without --remove_seq_errors hit a tool assertion (path buffer) |
+
 ## metacortex
 
 ### Tool Description

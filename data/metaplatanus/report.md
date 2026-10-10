@@ -1,5 +1,11 @@
 # metaplatanus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaplatanus | PASS | short-read and ONT test data from the tool repo give the expected scaffolds (ONT run joins them to 20973 bp); the default NextPolish step crashes in the image, so long-read runs need no_nextpolish |
+
 ## metaplatanus
 
 ### Tool Description

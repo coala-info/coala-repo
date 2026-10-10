@@ -1,5 +1,11 @@
 # metawrap-kraken CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metawrap-kraken_metawrap_kraken | Not completed | needs a Kraken database (not available); fixed option order and read staging |
+
 ## metawrap-kraken_metawrap_kraken
 
 ### Tool Description
@@ -31,46 +37,6 @@ Options:
 
 	Note: you may pass any number of sequence files with the following extensions:
 	*.fa *.fasta (assumed to be assembly files) or *_1.fastq and *_2.fastq (assumed to be paired)
-```
-
-
-## metawrap-kraken_metawrap_kraken2
-
-### Tool Description
-Please select a proper module of metaWRAP.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metawrap-kraken:1.3.0--hdfd78af_3
-- **Homepage**: https://github.com/bxlab/metaWRAP
-- **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-kraken/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-------------------------------------------------------------------------------------------------------------------------
------                                  Please select a proper module of metaWRAP.                                  -----
-------------------------------------------------------------------------------------------------------------------------
-
-
-MetaWRAP v=1.3.0
-Usage: metaWRAP [module]
-
-	Modules:
-	read_qc		Raw read QC module (read trimming and contamination removal)
-	assembly	Assembly module (metagenomic assembly)
-	kraken		KRAKEN module (taxonomy annotation of reads and assemblies)
-	blobology	Blobology module (GC vs Abund plots of contigs and bins)
-
-	binning		Binning module (metabat, maxbin, or concoct)
-	bin_refinement	Refinement of bins from binning module
-	reassemble_bins Reassemble bins using metagenomic reads
-	quant_bins	Quantify the abundance of each bin across samples
-	classify_bins	Assign taxonomy to genomic bins
-	annotate_bins	Functional annotation of draft genomes
-
-	--help | -h		show this help message
-	--version | -v	show metaWRAP version
-	--show-config	show where the metawrap configuration files are stored
 ```
 
 

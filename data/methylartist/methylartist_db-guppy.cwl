@@ -81,6 +81,8 @@ inputs:
       position: 101
       prefix: --procs
   - id: ref
+    secondaryFiles:
+      - .fai
     type: File
     doc: reference genome fasta (samtools faidx indexed)
     inputBinding:

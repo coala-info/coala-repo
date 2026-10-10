@@ -1,5 +1,11 @@
 # metatree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metatree | Failed | image problem: ete3 TreeStyle import fails because libGL.so.1 is missing, so metatree crashes after the distance step |
+
 ## metatree
 
 ### Tool Description

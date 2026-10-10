@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: annotate
+baseCommand: [mimodd, annotate]
 label: mimodd_annotate
 doc: "Annotates a VCF file using a specified SnpEff genome annotation.\n\nTool homepage:
   http://sourceforge.net/projects/mimodd"

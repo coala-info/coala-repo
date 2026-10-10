@@ -1,20 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mimeo-self
+baseCommand:
+  - mimeo
+  - self
 label: mimeo_self
-doc: "Internal repeat finder. Mimeo-self aligns a genome to itself and extracts high-identity
-  segments above an coverage threshold.\n\nTool homepage: https://github.com/Adamtaranto/mimeo"
+doc: "Internal repeat finder: aligns a genome to itself and extracts high-identity segments above a coverage\
+  \ threshold.\n\nTool homepage: https://github.com/Adamtaranto/mimeo"
 inputs:
-  - id: alignment_directory
+  - id: adir
     type:
       - 'null'
       - Directory
-    doc: Name of directory containing sequences from genome. Write split files 
-      here if providing genome as multifasta.
+    doc: Directory containing sequences from the genome. Split files are written here if the genome is
+      given as multifasta.
     inputBinding:
       position: 101
       prefix: --adir
-  - id: alignment_fasta
+  - id: afasta
     type:
       - 'null'
       - File
@@ -22,47 +24,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: --afasta
-  - id: bedtools_path
+  - id: recycle
+    type:
+      - 'null'
+      - boolean
+    doc: Use existing alignment "--outfile" if found.
+    inputBinding:
+      position: 101
+      prefix: -r
+  - id: outdir
     type:
       - 'null'
       - string
-    doc: Custom path to bedtools executable if not in $PATH.
+    doc: 'Write output files to this directory (default: working directory).'
     inputBinding:
       position: 101
-      prefix: --bedtools
-  - id: gff_output_file
+      prefix: --outdir
+  - id: gffout
     type:
       - 'null'
-      - File
+      - string
     doc: Name of GFF3 annotation file.
     inputBinding:
       position: 101
       prefix: --gffout
-  - id: hsp_threshold
+  - id: outfile
     type:
       - 'null'
-      - float
-    doc: Set HSP min score threshold for LASTZ.
+      - string
+    doc: Name of alignment result file.
     inputBinding:
       position: 101
-      prefix: --hspthresh
-  - id: intra_coverage
-    type:
-      - 'null'
-      - float
-    doc: Minimum depth of aligned segments from same scaffold to report feature.
-      Used if "--strictSelf" mode is selected.
-    inputBinding:
-      position: 101
-      prefix: --intraCov
-  - id: keep_temp
+      prefix: --outfile
+  - id: verbose
     type:
       - 'null'
       - boolean
-    doc: If set do not remove temp files.
+    doc: Report LASTZ progress.
     inputBinding:
       position: 101
-      prefix: --keeptemp
+      prefix: --verbose
   - id: label
     type:
       - 'null'
@@ -71,39 +72,39 @@ inputs:
     inputBinding:
       position: 101
       prefix: --label
-  - id: lastz_path
+  - id: prefix
     type:
       - 'null'
       - string
+    doc: ID prefix for the reported features.
+    inputBinding:
+      position: 101
+      prefix: --prefix
+  - id: keeptemp
+    type:
+      - 'null'
+      - boolean
+    doc: Do not remove temp files.
+    inputBinding:
+      position: 101
+      prefix: --keeptemp
+  - id: lzpath
+    type:
+      - 'null'
+      - File
     doc: Custom path to LASTZ executable if not in $PATH.
     inputBinding:
       position: 101
       prefix: --lzpath
-  - id: log_level
+  - id: minIdt
     type:
       - 'null'
-      - string
-    doc: Set the logging level.
-    inputBinding:
-      position: 101
-      prefix: --loglevel
-  - id: min_coverage
-    type:
-      - 'null'
-      - float
-    doc: Minimum depth of aligned segments to report repeat feature.
-    inputBinding:
-      position: 101
-      prefix: --minCov
-  - id: min_identity
-    type:
-      - 'null'
-      - float
+      - double
     doc: Minimum alignment identity to report.
     inputBinding:
       position: 101
       prefix: --minIdt
-  - id: min_length
+  - id: minLen
     type:
       - 'null'
       - int
@@ -111,68 +112,78 @@ inputs:
     inputBinding:
       position: 101
       prefix: --minLen
-  - id: output_directory
+  - id: hspthresh
+    type:
+      - 'null'
+      - int
+    doc: Set HSP min score threshold for LASTZ.
+    inputBinding:
+      position: 101
+      prefix: --hspthresh
+  - id: loglevel
     type:
       - 'null'
       - string
-    doc: Write output files to this directory.
+    doc: 'Logging level: DEBUG, INFO, WARNING, ERROR or CRITICAL.'
     inputBinding:
       position: 101
-      prefix: --outdir
-  - id: output_file
+      prefix: --loglevel
+  - id: bedtools
     type:
       - 'null'
       - File
-    doc: Name of alignment result file.
+    doc: Custom path to bedtools executable if not in $PATH.
     inputBinding:
       position: 101
-      prefix: --outfile
-  - id: prefix
+      prefix: --bedtools
+  - id: minCov
     type:
       - 'null'
-      - string
-    doc: ID prefix for internal repeats.
+      - double
+    doc: Minimum depth of aligned segments to report repeat feature.
     inputBinding:
       position: 101
-      prefix: --prefix
-  - id: recycle
+      prefix: --minCov
+  - id: intraCov
+    type:
+      - 'null'
+      - double
+    doc: Minimum depth of aligned segments from the same scaffold to report a feature (with --strictSelf).
+    inputBinding:
+      position: 101
+      prefix: --intraCov
+  - id: strictSelf
     type:
       - 'null'
       - boolean
-    doc: Use existing alignment "--outfile" if found.
-    inputBinding:
-      position: 101
-      prefix: --recycle
-  - id: strict_self
-    type:
-      - 'null'
-      - boolean
-    doc: If set process same-scaffold alignments separately with option to use 
-      higher "--intraCov" threshold. Sometime useful to avoid false repeat calls
-      from staggered alignments over SSRs or short tandem duplication.
+    doc: Process same-scaffold alignments separately with option to use a higher --intraCov threshold.
     inputBinding:
       position: 101
       prefix: --strictSelf
-  - id: verbose
+outputs:
+  - id: gff_file
     type:
       - 'null'
-      - boolean
-    doc: If set report LASTZ progress.
-    inputBinding:
-      position: 101
-      prefix: --verbose
-outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_directory_dir
+      - File
+    doc: GFF3 annotation.
+    outputBinding:
+      glob: '$(inputs.outdir ? inputs.outdir + ''/'' + inputs.gffout : inputs.gffout)'
+  - id: alignment_file
+    type:
+      - 'null'
+      - File
+    doc: Alignment result file.
+    outputBinding:
+      glob: '$(inputs.outdir ? inputs.outdir + ''/'' + inputs.outfile : inputs.outfile)'
+  - id: out_dir
     type:
       - 'null'
       - Directory
-    doc: Write output files to this directory.
+    doc: Output directory.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mimeo:1.2.1--pyhdfd78af_0
-stdout: mimeo_self.out

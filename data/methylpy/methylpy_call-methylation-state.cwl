@@ -65,7 +65,7 @@ inputs:
       position: 101
       prefix: --generate-mpileup-file
   - id: input_file
-    type: File?
+    type: File
     doc: bam file that contains mapped bisulfite sequencing reads.
     inputBinding:
       position: 101
@@ -133,7 +133,7 @@ inputs:
       position: 101
       prefix: --num-upstream-bases
   - id: paired_end
-    type: boolean
+    type: string
     doc: Boolean indicating whether the input BAM file is from paired-end data.
     inputBinding:
       position: 101
@@ -141,7 +141,7 @@ inputs:
   - id: path_to_bgzip
     type:
       - 'null'
-      - File
+      - string
     doc: Path to bgzip installation
     inputBinding:
       position: 101
@@ -149,7 +149,7 @@ inputs:
   - id: path_to_samtools
     type:
       - 'null'
-      - File
+      - string
     doc: Path to samtools installation
     inputBinding:
       position: 101
@@ -157,7 +157,7 @@ inputs:
   - id: path_to_tabix
     type:
       - 'null'
-      - File
+      - string
     doc: Path to tabix installation
     inputBinding:
       position: 101
@@ -207,7 +207,11 @@ inputs:
       position: 101
       prefix: --unmethylated-control
   - id: path_to_output_path
-    type: string?
+    type: string
+    default: methylpy_out
+    doc: Path to a directory where you would like the output to be stored. The
+      default of the tool is the directory of the input fastqs, which is read-only
+      here, so a name is always given.
     inputBinding:
       position: 102
       prefix: --path-to-output
@@ -222,6 +226,11 @@ outputs:
       glob: $(inputs.path_to_output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.path_to_output_path)
+        entry: '$({"class": "Directory", "basename": inputs.path_to_output_path, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

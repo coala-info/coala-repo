@@ -1,5 +1,11 @@
 # metawrap-read-qc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metawrap-read-qc_metawrap_read_qc | PASS | run with --skip-bmtagger on B. fragilis reads (no host index) |
+
 ## metawrap-read-qc_metawrap_read_qc
 
 ### Tool Description

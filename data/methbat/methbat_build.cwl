@@ -20,6 +20,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output-profile
+  - id: collection_files
+    type:
+      type: array
+      items: File
+    doc: Profile files named in the cohort file, staged in the working directory so the names resolve.
 outputs:
   - id: output_profile
     type: File
@@ -28,6 +33,8 @@ outputs:
       glob: $(inputs.output_profile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.collection_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methbat:0.17.0--h9ee0642_0

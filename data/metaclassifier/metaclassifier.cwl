@@ -5,6 +5,11 @@ label: metaclassifier
 doc: "The metaclassifier.py uses DNA metabarcoding sequence reads and a database of
   marker sequences, including corresponding taxonomy classes to identify and quantify
   the floral composition of honey\n\nTool homepage: https://github.com/ewafula/MetaClassifier"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.reads)
 inputs:
   - id: sample_file
     type: File
@@ -13,6 +18,10 @@ inputs:
       working directory)\nThe second file not required for single-end frangments"
     inputBinding:
       position: 1
+  - id: reads
+    type: 'File[]'
+    doc: Read files named in the sample file. They are staged in the working
+      directory so that the file names in the sample file resolve.
   - id: db_dir
     type: Directory
     doc: Input marker database directory with sequence fasta and corresponding 
@@ -29,93 +38,78 @@ inputs:
     inputBinding:
       position: 3
   - id: frag_type
-    type:
-      - 'null'
-      - string
+    type: ['null', string]
     doc: "Specify the sequence fragment type in the input sample file, available options
-      are:\npaired: single-end read fragments (default)\nsingle: paired-end read fragments"
+      are:\npaired: paired-end read fragments (default)\nsingle: single-end read fragments"
     inputBinding:
       position: 104
       prefix: --frag_type
   - id: max_markers
-    type:
-      - 'null'
-      - int
+    type: ['null', int]
     doc: Maximum missing markers allowed to retain a sample taxon (default = 0)
     inputBinding:
       position: 104
       prefix: --max_markers
   - id: merge
-    type:
-      - 'null'
-      - boolean
+    type: ['null', boolean]
     doc: 'Merge overlapping paired-end reads (default: False)'
     inputBinding:
       position: 104
       prefix: --merge
   - id: min_proportion
-    type:
-      - 'null'
-      - float
+    type: ['null', float]
     doc: "Minimum taxon read proportion allowed to retain a sample taxon, allowed
       proportion,\nranges from 0.00 to 0.01 (default = 0.00)"
     inputBinding:
       position: 104
       prefix: --min_proportion
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: ['null', string]
     doc: Specify output directory name, otherwise it will automatically be 
       created using the input sample table file name
     inputBinding:
       position: 104
       prefix: --output_dir
   - id: pear_merger
-    type:
-      - 'null'
-      - File
+    type: ['null', string]
     doc: 'Path to PEAR, the paired-end read merger if not in environmental variables
       (ENV) (default: read from ENV)'
     inputBinding:
       position: 104
       prefix: --pear_merger
   - id: seqtk_converter
-    type:
-      - 'null'
-      - File
+    type: ['null', string]
     doc: 'Path to seqtk, the sequence processing tool if not in environmental variables
       (ENV) (default: read from ENV)'
     inputBinding:
       position: 104
       prefix: --seqtk_converter
   - id: tax_class
-    type:
-      - 'null'
-      - string
-    doc: 'Taxonomy class for quantify taxon level marker read abundance (default:
-      genus)'
+    type: ['null', string]
+    doc: 'Taxonomy class for quantify taxon level marker read abundance, one of order,
+      family, genus, species (default: genus)'
     inputBinding:
       position: 104
       prefix: --tax_class
   - id: threads
-    type:
-      - 'null'
-      - int
+    type: ['null', int]
     doc: 'Specify the number of threads to use (default: 2)'
     inputBinding:
       position: 104
       prefix: --threads
   - id: vsearch_aligner
-    type:
-      - 'null'
-      - File
+    type: ['null', string]
     doc: 'Path to VSEARCH, the sequence analysis tool if not in environmental variables
       (ENV) (default: read from ENV)'
     inputBinding:
       position: 104
       prefix: --vsearch_aligner
 outputs:
+  - id: results_dir
+    type: Directory
+    doc: Output directory (named after the sample file unless --output_dir is set)
+    outputBinding:
+      glob: "$(inputs.output_dir ? inputs.output_dir : inputs.sample_file.nameroot)"
   - id: stdout
     type: stdout
     doc: Standard output

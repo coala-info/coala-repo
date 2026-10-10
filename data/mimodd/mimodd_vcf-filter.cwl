@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vcf-filter
+baseCommand: [mimodd, vcf-filter]
 label: mimodd_vcf-filter
 doc: "Filters VCF files based on various criteria.\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:

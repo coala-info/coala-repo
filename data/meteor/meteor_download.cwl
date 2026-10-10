@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - Meteor
+  - meteor
   - download
 label: meteor_download
 doc: "Download a specific catalogue for Meteor analysis.\n\nTool homepage: https://github.com/metagenopolis/meteor"
@@ -33,7 +33,7 @@ inputs:
     doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 102
-      prefix: --output-directory
+      prefix: -o
 outputs:
   - id: output_directory
     type: Directory

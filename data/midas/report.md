@@ -1,40 +1,27 @@
 # midas CWL Generation Report
 
-## midas_run_midas.py
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| midas_build_midas_db | Failed | image problem: MIDAS exits at start with File not found: hs-blastn, because it checks ./hs-blastn, ./bowtie2 and ./samtools as files in the working directory |
+| midas_call_consensus | Not completed | needs merge_midas output from real data (large database, run_midas fails in this image); no sample data available |
+| midas_compare_genes | Not completed | needs merge_midas output from real data (large database, run_midas fails in this image); no sample data available |
+| midas_merge_midas_genes | Not completed | needs the large MIDAS reference database and run_midas output; run_midas itself fails in this image |
+| midas_merge_midas_snps | Not completed | needs the large MIDAS reference database and run_midas output; run_midas itself fails in this image |
+| midas_merge_midas_species | Not completed | needs the large MIDAS reference database and run_midas output; run_midas itself fails in this image |
+| midas_query_by_compound | Not completed | needs the large MIDAS reference database and run_midas output; run_midas itself fails in this image |
+| midas_run_midas_genes | Failed | image problem: MIDAS exits at start with File not found: hs-blastn, because it checks ./hs-blastn, ./bowtie2 and ./samtools as files in the working directory |
+| midas_run_midas_snps | Failed | image problem: MIDAS exits at start with File not found: hs-blastn, because it checks ./hs-blastn, ./bowtie2 and ./samtools as files in the working directory |
+| midas_run_midas_species | Failed | image problem: MIDAS exits at start with File not found: hs-blastn, because it checks ./hs-blastn, ./bowtie2 and ./samtools as files in the working directory |
+| midas_snp_diversity | Not completed | needs merge_midas output from real data (large database, run_midas fails in this image); also exits with a TypeError on default options unless --rand_reads is set |
+| midas_strain_tracking_id_markers | Not completed | needs merge_midas output from real data (large database, run_midas fails in this image); no sample data available |
+| midas_strain_tracking_track_markers | Not completed | needs merge_midas output from real data (large database, run_midas fails in this image); no sample data available |
+
+## midas_run_midas_species
 
 ### Tool Description
-Estimate species abundance and intra-species genomic variation from an individual metagenome
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
-- **Homepage**: https://github.com/snayfach/MIDAS
-- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/midas/overview
-- **Total Downloads**: 34.7K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/snayfach/MIDAS
-- **Stars**: N/A
-### Original Help Text
-```text
-Description: Estimate species abundance and intra-species genomic variation from an individual metagenome
-
-Usage: run_midas.py <command> [options]
-
-Commands:
-	species	 estimate the abundance of 5,952 bacterial species
-	genes	 quantify gene copy number variation in abundant species
-	snps	 quantify single nucleotide variation in abundant species
-
-Note: use run_midas.py <command> -h to view usage for a specific command
-```
-
-
-## midas_merge_midas.py
-
-### Tool Description
-merge MIDAS results across metagenomic samples
+Map reads to a database of phylogenetic marker genes and estimate species abundance
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
@@ -44,18 +31,841 @@ merge MIDAS results across metagenomic samples
 
 ### Original Help Text
 ```text
-Description: merge MIDAS results across metagenomic samples
+Description: Map reads to a database of phylogenetic marker genes and estimate species abundance 
 
-Usage: merge_midas.py <command> [options]
+The pipeline can be broken down into the following steps:
+  1) align high-quality reads to the database of marker genes with HS-BLASTN
+  2) use species-level thresholds (94.5-98% DNA identity) to assign reads to a species
+  3) probabalistically assign reads that map equally well to 2 or more species
+  4) use mapped reads to estimate the sequencing depth and relative abundance of species
 
-Commands:
-	species	 build species abundance matrix
-	genes	 build pangenome matrix for each species
-	snps	 perform multi-sample SNP calling and build SNP matrix for each species
+After completion, use 'merge_midas.py species' to build the species abundance matrix
+Also, use 'merge_midas.py snps' or 'merge_midas.py genes' to quantify genomic variation for abundant species
 
-Note: use merge_midas.py <command> -h to view usage for a specific command
+Usage: run_midas.py species <outdir> [options]
+
+positional arguments:
+  outdir             Path to directory to store results.
+                     Directory name should correspond to sample identifier
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -1 M1              FASTA/FASTQ file containing 1st mate if using paired-end reads.
+                     Otherwise FASTA/FASTQ containing unpaired reads.
+                     Can be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)
+  -2 M2              FASTA/FASTQ file containing 2nd mate if using paired-end reads.
+                     Can be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)
+  -n MAX_READS       Number of reads to use from input file(s) (use all)
+  -t THREADS         Number of threads to use for database search (1)
+  -d DB              Path to reference database
+                     By default, the MIDAS_DB environmental variable is used
+  --remove_temp      Remove intermediate files generated by MIDAS (False).
+                     Useful to reduce disk space of MIDAS output
+  --word_size INT    Word size for BLAST search (28)
+                     Use word sizes > 16 for greatest efficiency.
+  --mapid FLOAT      Discard reads with alignment identity < MAPID
+                     By default gene-specific species-level cutoffs are used
+                     Values between 0-100 accepted
+  --aln_cov FLOAT    Discard reads with alignment coverage < ALN_COV (0.75)
+                     Values between 0-1 accepted
+  --read_length INT  Trim reads to READ_LENGTH and discard reads with length < READ_LENGTH
+                     By default, reads are not trimmed or filtered
+
+Examples:
+1) run with defaults using a paired-end metagenome:
+run_midas.py species /path/to/outdir -1 /path/to/reads_1.fq.gz -2 /path/to/reads_2.fq.gz
+
+2) run using a single-end metagenome with 4 CPUs and only 4M reads:
+run_midas.py species /path/to/outdir -1 /path/to/reads_1.fq.gz -t 4 -n 4000000
+
+3) run with exactly 80 base-pair reads:
+run_midas.py species /path/to/outdir -1 /path/to/reads_1.fq.gz --read_length 80
 ```
 
+## midas_run_midas_genes
+
+### Tool Description
+Map metagenomic reads to bacterial pangenomes and quantify these genes in your data
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description: Map metagenomic reads to bacterial pangenomes and quantify these genes in your data
+
+The pipeline can be broken down into the following steps:
+  1) build a database of pangenomes for abundance bacterial species
+  2) use local alignment to map high-quality metagenomic reads to the database
+  3) use mapped reads to quantify pangenome genes
+
+After completion, use 'merge_midas.py genes' to generate pangenome matrixes
+  
+Usage: run_midas.py genes <outdir> [options]
+
+positional arguments:
+  outdir                Path to directory to store results. 
+                        Directory name should correspond to sample identifier
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --remove_temp         Remove intermediate files generated by MIDAS (False).
+                        Useful to reduce disk space of MIDAS output
+
+Pipeline options (choose one or more; default=all):
+  --build_db            Build bowtie2 database of pangenomes
+  --align               Align reads to pangenome database
+  --call_genes          Compute coverage of genes in pangenome database
+
+Database options (if using --build_db):
+  -d DB                 Path to reference database
+                        By default, the MIDAS_DB environmental variable is used
+  --species_cov FLOAT   Include species with >X coverage (3.0)
+  --species_topn INT    Include top N most abundant species
+  --species_id CHAR     Include specified species. Separate ids with a comma
+
+Read alignment options (if using --align):
+  -1 M1                 FASTA/FASTQ file containing 1st mate if using paired-end reads.
+                        Otherwise FASTA/FASTQ containing unpaired reads.
+                        Can be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)
+  -2 M2                 FASTA/FASTQ file containing 2nd mate if using paired-end reads.
+                        Can be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)
+  --interleaved         FASTA/FASTQ file in -1 are paired and contain forward AND reverse reads
+  -s {very-fast,fast,sensitive,very-sensitive}
+                        Alignment speed/sensitivity (very-sensitive)
+  -m {local,global}     Global/local read alignment (local)
+  -n MAX_READS          # reads to use from input file(s) (use all)
+  -t THREADS            Number of threads to use (1)
+
+Quantify genes options (if using --call_genes):
+  --readq INT           Discard reads with mean quality < READQ (20)
+  --mapid FLOAT         Discard reads with alignment identity < MAPID (94.0)
+  --aln_cov FLOAT       Discard reads with alignment coverage < ALN_COV (0.75)
+  --trim INT            Trim N base-pairs from 3'/right end of read (0)
+
+Examples:
+1) run entire pipeline using defaults:
+run_midas.py genes /path/to/outdir -1 /path/to/reads_1.fq.gz -2 /path/to/reads_2.fq.gz
+			
+2) run entire pipeline for a specific species:
+run_midas.py genes /path/to/outdir --species_id Bacteroides_vulgatus_57955 -1 /path/to/reads_1.fq.gz -2 /path/to/reads_2.fq.gz
+
+3) use global read alignment (default is local alignment with 75% minimum alignment coverage):
+run_midas.py snps /path/to/outdir -1 /path/to/reads_1.fq.gz -2 /path/to/reads_2.fq.gz -m global
+
+4) just align reads, use faster alignment, only use the first 10M reads, use 4 CPUs:
+run_midas.py genes /path/to/outdir --align -1 /path/to/reads_1.fq.gz -2 /path/to/reads_2.fq.gz -s very-fast -n 10000000 -t 4
+
+5) just quantify genes, keep reads with >=95% alignment identity and reads with an average quality-score >=30:
+run_midas.py genes /path/to/outdir --call_genes --mapid 95 --readq 20
+```
+
+## midas_run_midas_snps
+
+### Tool Description
+Map metagenomic reads to representative genomes and call single nucleotide variants
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description: Map metagenomic reads to a bacterial genome database and quantify nucleotide variation
+
+The pipeline can be broken down into the following steps:
+  1) build a database of genome sequences for abundant bacterial species (1 representative genome/species)
+  2) use global alignment to map high-quality reads to the database
+  3) generate pileups and count variants at each genomic site
+
+After completion, use 'merge_midas.py snps' to perform multisample SNP calling
+  
+Usage: run_midas.py snps <outdir> [options]
+
+positional arguments:
+  outdir                Path to directory to store results. 
+                        Directory name should correspond to sample identifier
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --remove_temp         Remove intermediate files generated by MIDAS (False).
+                        Useful to reduce disk space of MIDAS output
+
+Pipeline options (choose one or more; default=all):
+  --build_db            Build bowtie2 database of pangenomes
+  --align               Align reads to pangenome database
+  --pileup              Run samtools mpileup and count 4 alleles across genome
+
+Database options (if using --build_db):
+  -d DB                 Path to reference database
+                        By default, the MIDAS_DB environmental variable is used
+  --species_cov FLOAT   Include species with >X coverage (3.0)
+  --species_topn INT    Include top N most abundant species
+  --species_id CHAR     Include specified species. Separate ids with a comma
+
+Read alignment options (if using --align):
+  -1 M1                 FASTA/FASTQ file containing 1st mate if using paired-end reads.
+                        Otherwise FASTA/FASTQ containing unpaired reads.
+                        Can be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)
+  -2 M2                 FASTA/FASTQ file containing 2nd mate if using paired-end reads.
+                        Can be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)
+  --interleaved         FASTA/FASTQ file in -1 are paired and contain forward AND reverse reads
+  -s {very-fast,fast,sensitive,very-sensitive}
+                        Bowtie2 alignment speed/sensitivity (very-sensitive)
+  -n MAX_READS          # reads to use from input file(s) (use all)
+  -m {local,global}     Global/local read alignment (global)
+  -t THREADS            Number of threads to use (1)
+
+Pileup options (if using --pileup):
+  --mapid FLOAT         Discard reads with alignment identity < MAPID (94.0)
+  --mapq INT            Discard reads with mapping quality < MAPQ (20)
+  --baseq INT           Discard bases with quality < BASEQ (30)
+  --readq INT           Discard reads with mean quality < READQ (20)
+  --aln_cov FLOAT       Discard reads with alignment coverage < ALN_COV (0.75)
+  --trim INT            Trim N base-pairs from 3'/right end of read (0)
+  --discard             Discard discordant read-pairs (False)
+  --baq                 Enable BAQ: per-base alignment quality (False)
+  --adjust_mq           Adjust MAPQ (False)
+
+Examples:
+1) run entire pipeline using defaults:
+run_midas.py snps /path/to/outdir -1 /path/to/reads_1.fq.gz -2 /path/to/reads_2.fq.gz
+			
+2) run entire pipeline for a specific species:
+run_midas.py snps /path/to/outdir --species_id Bacteroides_vulgatus_57955 -1 /path/to/reads_1.fq.gz -2 /path/to/reads_2.fq.gz
+
+3) use local read alignment and discard alignments that cover reads by < 75% (default is global alignment):
+run_midas.py snps /path/to/outdir -1 /path/to/reads_1.fq.gz -2 /path/to/reads_2.fq.gz -m local --aln_cov 0.75
+
+4) just align reads, use faster alignment, only use the first 10M reads, use 4 CPUs:
+run_midas.py snps /path/to/outdir --align -1 /path/to/reads_1.fq.gz -2 /path/to/reads_2.fq.gz -s very-fast -n 10000000 -t 4
+
+5) just count variants, keep reads with >=95% alignment identity and keep bases with quality-scores >=35:
+run_midas.py snps /path/to/outdir --pileup --mapid 95 --baseq 35
+```
+
+## midas_merge_midas_species
+
+### Tool Description
+Merge species abundance results across samples
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description: Merge species abundance files across samples
+
+Usage: merge_midas.py species <outdir> [options]
+
+positional arguments:
+  outdir                Directory for output files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT              Input to sample directories output by run_midas.py; see '-t' for details
+  -t INPUT_TYPE         Specify one of the following:
+                          list: -i is a comma-separated list (ex: /samples/sample_1,/samples/sample_2)
+                          dir: -i is a directory containing all samples (ex: /samples)
+                          file: -i is a file of paths to samples (ex: /sample_paths.txt)
+  -d DB                 Path to reference database
+                        By default the MIDAS_DB environmental variable is used
+  --sample_depth FLOAT  Minimum per-sample marker-gene-depth for estimating species prevalence (1.0)
+  --max_samples INT     Maximum number of samples to process.
+                        Useful for testing (use all)
+
+Examples:
+1) provide list of paths to sample directories:
+merge_midas.py species /path/to/outdir -i /path/to/samples/sample_1,/path/to/samples/sample_2 -t list
+
+2) provide directory containing all samples:
+merge_midas.py species /path/to/outdir -i /path/to/samples -t dir
+
+3) provide file containing paths to sample directories:
+merge_midas.py species /path/to/outdir -i /path/to/samples/sample_paths.txt -t file
+
+4) run a quick test:
+merge_midas.py species /path/to/outdir -i /path/to/samples -t dir --max_samples 2
+```
+
+## midas_merge_midas_genes
+
+### Tool Description
+Merge pangenome gene content results across samples
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description: merge results from pan-genome profiling across samples
+
+Usage: merge_midas.py genes <outdir> [options]
+
+positional arguments:
+  outdir                Directory for output files.
+                        A subdirectory will be created for each species_id
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+Input/Output:
+  -i INPUT              Input to sample directories output by run_midas.py; see '-t' for details
+  -t INPUT_TYPE         Specify one of the following:
+                          list: -i is a comma-separated list (ex: /samples/sample_1,/samples/sample_2)
+                          dir: -i is a directory containing all samples (ex: /samples)
+                          file: -i is a file of paths to samples (ex: /sample_paths.txt)
+  -d DB                 Path to reference database.
+                        By default, the MIDAS_DB environmental variable is used
+
+Species filters (select subset of species from INPUT):
+  --min_samples INT     All species with >= MIN_SAMPLES (1)
+  --species_id CHAR     Comma-separated list of species ids
+  --max_species INT     Maximum number of species to merge. Useful for testing (use all)
+
+Sample filters (select subset of samples from INPUT):
+  --sample_depth FLOAT  Minimum read-depth across all genes with non-zero coverage (1.0)
+  --max_samples INT     Maximum number of samples to process. Useful for testing (use all)
+
+Quantification:
+  --cluster_pid {75,80,85,90,95,99}
+                        In the database, pan-genomes are defined at 6 different % identity clustering cutoffs.
+                        CLUSTER_PID allows you to quantify gene content for any of these sets of gene clusters.
+                        By default, gene content is reported for genes clustered at 95% identity
+  --min_copy FLOAT      Genes >= MIN_COPY are classified as present
+                        Genes < MIN_COPY are classified as absent (0.35)
+
+Examples:
+1) Merge results for all species. Provide list of paths to sample directories:
+merge_midas.py genes /path/to/outdir -i sample_1,sample_2 -t list
+
+2) Merge results for one species (id=Bacteroides_vulgatus_57955):
+merge_midas.py genes /path/to/outdir --species_id Bacteroides_vulgatus_57955 -i sample_1,sample_2 -t list
+
+3) Exclude low-coverage samples in output matrix:
+merge_midas.py genes /path/to/outdir -i /path/to/samples -t dir --sample_depth 5.0
+
+4) Use lenient threshold for determining gene presence-absence:
+merge_midas.py genes /path/to/outdir -i /path/to/samples -t dir --min_copy 0.1
+
+5) Run a quick test:
+merge_midas.py genes /path/to/outdir -i /path/to/samples -t dir --max_species 1 --max_samples 10
+```
+
+## midas_merge_midas_snps
+
+### Tool Description
+Perform multi-sample core-genome SNP calling
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description: perform multi-sample core-genome SNP calling 
+
+The pipeline can be broken down into the following steps:
+  1) take MIDAS output files from multiple samples
+  2) identify species to process (based on user criterea, e.g. min # of samples)
+  3) scan across the representative genome of each species
+  4) pool nucleotide variants from all metagenomic samples & call the major and minor allele
+  5) determine if genomic site is a SNP (e.g. minor allele frequency >1%)
+  6) determine if genomic site is in the core-genome (e.g. non-zero depth in >95% of samples)
+  7) annotate genomic site by gene_id and coding changes
+  8) write core-genome SNPs to matrix files
+
+Usage: merge_midas.py snps <outdir> [options]
+
+positional arguments:
+  outdir                Directory for output files. 
+                        A subdirectory will be created for each species_id
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --threads INT         Number of CPUs to use (1)
+
+Input/Output:
+  -i INPUT              Input to sample directories output by run_midas.py; see '-t' for details
+  -t INPUT_TYPE         Specify one of the following:
+                          list: -i is a comma-separated list (ex: /samples/sample_1,/samples/sample_2)
+                          dir: -i is a directory containing all samples (ex: /samples)
+                          file: -i is a file of paths to samples (ex: /sample_paths.txt)
+  -d DB                 Path to reference database
+                        By default, the MIDAS_DB environmental variable is used
+
+Presets:
+  --core_snps           Same as: --snp_type bi --site_depth 1 --site_ratio 2.0 --site_prev 0.95 (default)
+  --core_sites          Same as: --snp_type any --site_depth 1 --site_ratio 2.0 --site_prev 0.95
+  --all_snps            Same as: --snp_type bi --site_prev 0.0
+  --all_sites           Same as: --snp_type any --site_prev 0.0
+
+Species filters (select subset of species from INPUT):
+  --min_samples INT     All species with >= MIN_SAMPLES (1)
+  --species_id CHAR     Comma-separated list of species ids
+  --max_species INT     Maximum number of species to call SNPs for (all with >= 1 sample)
+
+Sample filters (select subset of samples from INPUT):
+  --sample_depth FLOAT  Minimum average read depth per sample (5.0)
+  --fract_cov FLOAT     Fraction of reference sites covered by at least 1 read (0.4)
+  --max_samples INT     Maximum number of samples to process. useful for quick tests (use all)
+  --all_samples         Include all samples in output
+
+Site filters (select subset of genomic sites from INPUT):
+  --snp_type  [ ...]    Specify one or more of the following:
+                          mono: keep sites with 1 allele > ALLELE_FREQ
+                          bi: keep sites with 2 alleles > ALLELE_FREQ (default)
+                          tri: keep sites with 3 alleles > ALLELE_FREQ
+                          quad: keep sites with 4 alleles > ALLELE_FREQ
+                          any: keep sites regardless of observed alleles
+  --allele_freq FLOAT   Minimum frequency for calling an allele present (0.01)
+                        Values > 0.0 and < 0.5 are accepted.
+                        Ex: --snp_type=bi --allele_freq=0.01 keeps bi-allelic SNPs with a minimum frequency of 1%
+  --site_depth INT      Minimum number of reads mapped to genomic site (1)
+                        Used in combination with --site_prev to determine if site is in core-genome
+  --site_ratio FLOAT    Maximum ratio of site depth to genome depth (2.0)
+                        This filter helps to eliminate genomic sites with abnormally high read depth
+  --site_prev FLOAT     Minimum fraction of sample where genomic site is >= SITE_DEPTH and <= SITE_RATIO (0.95)
+                        A high value selects for sites in the core-genome (i.e. present in nearly all strains).
+                        A low value includes sites in variable regions and/or with abnormally high read depth
+  --max_sites INT       Maximum number of sites to include in output (use all). Useful for quick tests 
+
+Examples:
+1) Call SNPs for all species. Provide list of paths to sample directories:
+merge_midas.py snps /path/to/outdir -i sample_1,sample_2 -t list
+
+2) Call SNPs for one species (id=Bacteroides_vulgatus_57955):
+merge_midas.py snps /path/to/outdir --species_id Bacteroides_vulgatus_57955 -i sample_1,sample_2 -t list
+
+3) Merge results for all sites in the core genome, including those that aren't SNPs
+(this is useful for comparing core-genome-wide diversity patterns between species):
+merge_midas.py snps /path/to/outdir -i /path/to/samples -t dir --core-sites
+
+4) Run a quick test:
+merge_midas.py snps /path/to/outdir -i /path/to/samples -t dir --max_species 1 --max_samples 10 --max_sites 1000
+```
+
+## midas_build_midas_db
+
+### Tool Description
+Build a custom MIDAS reference database from genomes
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description:
+This script will allow you to build your own custom MIDAS database
+Usage: build_midas_db.py indir mapfile outdir [options]
+
+positional arguments:
+  indir              Path to directory of input genomes
+                     Each subdirectory should be named according to a genome_id
+                     Each subdirectory should contain (replace genome_id):
+                       genome_id.fna: Genomic DNA sequence in FASTA format
+                       genome_id.ffn: Gene DNA sequences in FASTA format
+                       genome_id.faa: Translated genes in FASTA format
+  mapfile            Path to mapping file that specifies which genomes belonging to the same species.
+                     The file should be tab-delimited file with a header and 3 fields:
+                       genome_id (CHAR): corresponds to subdirectory within INDIR
+                       species_id (CHAR): species identifier for genome_id
+                       rep_genome (0 or 1): indicator if genome_id should be used for SNP calling
+  outdir             Directory to store MIDAS database
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --threads INT      Number of threads to use (1)
+  --compress         Compress output files with gzip (False)
+  --max_species INT  Maximum number of species to process from input (use all).
+                     Useful for quick tests
+  --max_genomes INT  Maximum number of genomes to process per species (use all).
+                     Useful for quick tests
+```
+
+## midas_call_consensus
+
+### Tool Description
+Build multi-FASTA of consensus sequences from merged SNPs
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description:
+Build FASTA file of consensus sequences for a species per sample
+Useful for building phylogenetic trees
+Before running this script, you'll need to have run `merge_midas.py snps`
+
+Usage: call_consensus.py indir [options]
+
+positional arguments:
+  PATH                  path to output from `merge_midas.py snps` for one species
+                        directory should be named according to a species_id and contains files 'snps_*.txt')
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --out PATH            path to output file
+
+Sample filters (select subset of samples from INDIR):
+  --sample_depth FLOAT  minimum average read depth per sample (0.0)
+  --sample_cov FLOAT    fraction of reference sites covered by at least 1 read (0.0)
+  --max_samples INT     maximum number of samples to process.
+                        useful for quick tests (use all)
+  --keep_samples STR    comma-separated list of samples to include
+                        samples will still be subject to other filters
+  --exclude_samples STR
+                        comma-separated list of samples to exclude.
+                        samples will still be subject to other filters
+
+Site filters (select subset of genomic sites from INDIR):
+  --site_list PATH      path to list of sites to include; other filters still apply
+  --site_depth INT      minimum number of mapped reads per site (2)
+  --site_prev FLOAT     site has at least <site_depth> coverage in at least <site_prev> proportion of samples (0.0)
+                        a value of 1.0 will select sites that have sufficent coverage in all samples.
+                        a value of 0.0 will select all sites, including those with low coverage in many samples 
+                        NAs recorded for included sites with less than <site_depth> in a sample 
+  --site_maf FLOAT      minimum average-minor-allele-frequency of site across samples (0.0)
+                        setting this above zero (e.g. 0.01, 0.02, 0.05) will only retain variable sites
+                        by default invariant sites are also retained.
+  --site_ratio FLOAT    maximum ratio of site-depth to mean-genome-depth (None)
+                        a value of 10 will filter genomic sites with 10x greater coverage than the genomic background
+  --allele_support FLOAT
+                        minimum fraction of reads supporting consensus allele (0.5)
+  --locus_type {CDS,RNA,IGR}
+                        use genomic sites that intersect: 'CDS': coding genes, 'RNA': rRNA and tRNA genes, 'IGS': intergenic regions
+  --site_type {1D,2D,3D,4D}
+                        if locus_type == 'CDS', use genomic sites with specified degeneracy: 4D indicates synonymous and 1D non-synonymous sites
+  --max_sites INT       maximum number of sites to include in output (use all)
+                        useful for quick tests
+
+Examples:
+1) Build multi-FASTA of core-genome sequences (recommended)
+-core-genome sites defined as >=5 reads in >=90% of samples
+-use only variable positions (>=1% minor allele frequency across samples)
+-only include samples with sufficient data (>=10x mean-depth, >=40% of sites with >=1 mapped read)
+-exclude sites with abnormal depth (>5x mean-depth or <1/5 mean-depth)
+
+call_consensus.py /path/to/snps --out /path/to/seqs --site_maf 0.01 --site_depth 5 --site_prev 0.90 --sample_depth 10 --sample_cov 0.40 --site_ratio 5.0
+
+2) Build multi-FASTA using defaults
+call_consensus.py /path/to/snps --out /path/to/seqs
+
+3) Run a quick test
+call_consensus.py /path/to/snps --out /path/to/output --max_sites 10000
+```
+
+## midas_compare_genes
+
+### Tool Description
+Compute gene-content distances between samples
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description:
+This script will compare the gene content between all pairs of samples
+Before running this script, you'll need to have run: merge_midas.py genes
+
+Usage: compare_genes.py indir [options]
+
+positional arguments:
+  PATH                  Path to output from `merge_midas.py genes` for one species
+                        directory should be named according to a species_id and contains files 'genes_*.txt')
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --out PATH            Path to output file
+  --max_genes INT       Maximum number of genes to use. Useful for quick tests (use all)
+  --max_samples INT     Maximum number of samples to use. Useful for quick tests (use all)
+  --distance {jaccard,euclidean,manhattan}
+                        Metric to use for computing distances (jaccard)
+  --dtype {presabs,copynum}
+                        Data type to use for comparing genes (presabs)
+  --cutoff FLOAT        Cutoff to use for determining presence absence (0.35)
+
+Examples:
+1) Run with defaults:
+compare_genes.py /path/to/genes --out distances.txt
+
+2) Run a quick test:
+compare_genes.py /path/to/genes --out distances.txt --max_genes 1000 --max_samples 10
+
+3) Use a different distance metric:
+compare_genes.py /path/to/genes --out distances.txt --distance manhattan
+
+4) Use a lenient cutoff for determining gene presence absence:
+compare_genes.py /path/to/genes --out distances.txt --cutoff 0.10
+
+5) Use a strict cutoff for determining gene presence absence:
+compare_genes.py /path/to/genes --out distances.txt --cutoff 0.75
+```
+
+## midas_query_by_compound
+
+### Tool Description
+Query MIDAS results by KEGG compound
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description: 
+Query MIDAS output results by KEGG compound identifier
+For more info on compounds, see: http://www.genome.jp/kegg/compound/
+
+Workflow:
+1) Identify enzymes linked to KEGG compound
+2) Identify genes linked to enzymes
+3) Scan over MIDAS output results 
+4) Return abundances of identified genes per sample and species
+
+Usage: query_by_compound.py [options]
+
+optional arguments:
+  -h, --help          show this help message and exit
+  -i INPUT            Input to sample directories output by run_midas.py
+                      Can be a list of directories, a directory containing all samples, or a file with paths
+                      See '-t' for details
+  -t {list,file,dir}  list: -i is a comma-separated list (ex: /path/to/samples/sample_1,/path/to/samples/sample_2)
+                       dir: -i is a directory containing all samples (ex: /path/to/samples)
+                      file: -i is a file containing paths to sample directories (ex: /path/to/sample_paths.txt)
+  -o OUT              Path to output file (/dev/stdout)
+  -d DB               Path to MIDAS reference database
+                      By default, the MIDAS_DB environmental variable is used
+  -c COMPOUND         KEGG Compound identifier
+
+Examples:
+1) Query MIDAS results for compound C00312 (L-Xylulose):
+query_by_compound.py -i midas_out -t dir -c C00312
+
+2) Store results in text file:
+query_by_compound.py -i midas_out -t dir -c C00312 > midas_C00312.txt
+
+3) Specify path to individual sample directories:
+query_by_compound.py -i midas_out/sample_1,midas_out/sample_2 -t list -c C00312
+```
+
+## midas_snp_diversity
+
+### Tool Description
+Compute nucleotide diversity from merged SNPs
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description:
+Quantify the genomic diversity of a bacterial population
+Diversity computed genome-wide, for different site classes, or for individual genes
+Diversity computed for individual metagenomic samples for data pooled across samples
+Before running these scripts, you'll need to have run `merge_midas.py snps`
+
+Usage: snp_diversity.py indir [options]
+
+positional arguments:
+  PATH                  path to output from `merge_midas.py snps` for one species
+                        directory should be named according to a species_id and contains files 'snps_*.txt')
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --out PATH            path to output file (/dev/stdout)
+
+Diversity options:
+  --genomic_type {genome-wide,per-gene}
+                        compute diversity for individual genes or genome-wide (genome-wide)
+  --sample_type {per-sample,pooled-samples}
+                        compute diversity for individual samples or for pooled reads across samples (per-sample)
+  --weight_by_depth     weight data from samples by sequencing depth when --sample_type=pooled-samples
+  --rand_reads INT      randomly select N reads from each sample for each genomic site 
+  --replace_reads       reads drawn with replacement
+  --rand_samples INT    randomly select N samples from each genomic site
+  --rand_sites FLOAT    randomly select X proportion of high-quality genomic sites
+  --snp_maf FLOAT       minor allele frequency cutoff for determining if a site is a SNP (0.01)
+  --consensus           call consensus alleles prior to calling SNPs
+
+Sample filters (select subset of samples from INDIR):
+  --sample_depth FLOAT  minimum average read depth per sample (0.0)
+  --sample_cov FLOAT    fraction of reference sites covered by at least 1 read (0.0)
+  --max_samples INT     maximum number of samples to process.
+                        useful for quick tests (use all)
+  --keep_samples STR    comma-separated list of samples to use for computing diversity metrics.
+                        samples will still be subject to other filters
+  --exclude_samples STR
+                        comma-separated list of samples to exclude from computing diversity metrics.
+                        samples will still be subject to other filters
+
+Site filters (select subset of genomic sites from INDIR):
+  --site_list PATH      path to file containing newline-delimited list of genomic sites to include.
+                        other filters will still apply
+  --site_depth INT      minimum number of mapped reads per site (2)
+  --site_prev FLOAT     site has at least <site_depth> coverage in at least <site_prev> proportion of samples (0.0)
+                        a value of 1.0 will select sites that have sufficent coverage in all samples.
+                        a value of 0.0 will select all sites, including those with low coverage in many samples 
+                        NAs recorded for included sites with less than <site_depth> in a sample 
+  --site_maf FLOAT      minimum average-minor-allele-frequency of site across samples (0.0)
+                        setting this above zero (e.g. 0.01, 0.02, 0.05) will only retain variable sites
+                        by default invariant sites are also retained.
+  --site_ratio FLOAT    maximum ratio of site-depth to mean-genome-depth (None)
+                        a value of 10 will filter genomic sites with 10x greater coverage than the genomic background
+  --allele_support FLOAT
+                        minimum fraction of reads supporting consensus allele (0.50)
+  --locus_type {CDS,RNA,IGR}
+                        use genomic sites that intersect: 'CDS': coding genes, 'RNA': rRNA and tRNA genes, 'IGS': intergenic regions
+  --site_type {1D,2D,3D,4D}
+                        if locus_type == 'CDS', use genomic sites with specified degeneracy: 4D indicates synonymous and 1D non-synonymous sites
+  --max_sites INT       maximum number of sites to include in output (use all)
+                        useful for quick tests
+
+Examples:
+1) Quantify within-sample heterogenity genome-wide
+snp_diversity.py /path/to/snps --genomic_type genome-wide --sample_type per-sample --out /path/to/output
+
+2) Quantify between-sample heterogenity genome-wide
+snp_diversity.py /path/to/snps --genomic_type genome-wide --sample_type pooled-sample --out /path/to/output
+
+3) Quantify between-sample heterogenity per-gene
+snp_diversity.py /path/to/snps --genomic_type per-gene --sample_type pooled-samples --out /path/to/output
+
+4) Use downsampling to control the read-depth at each genomic site
+snp_diversity.py /path/to/snps --genomic_type genome-wide --sample_type per-sample --out /path/to/output
+
+5) Only quantify diversity at non-synonymous sites
+snp_diversity.py /path/to/snps --genomic_type genome-wide --sample_type pooled-samples --site_type 4D --locus_type CDS --out /path/to/output
+
+6) Quantify SNPs using a different definition of a polymorphism
+snp_diversity.py /path/to/snps --genomic_type genome-wide --sample_type per-sample --snp_maf 0.05 --out /path/to/output
+
+7) Run a quick test
+snp_diversity.py /path/to/snps --max_sites 10000  --out /path/to/output
+```
+
+## midas_strain_tracking_id_markers
+
+### Tool Description
+Identify rare SNPs that discriminate individual strains
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description: identify rare SNPs that disriminate individual strains of a particular species
+
+Usage: strain_tracking.py id_markers [options]
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --indir PATH       path to input snps directory for one species (contains files 'snps_*.txt')
+                     requires having run 'merge_midas.py snps'
+  --out PATH         path to output file containing list of markers
+  --samples PATH     comma-separated list of training samples
+                     by default, all samples are used
+  --min_freq FLOAT   minimum allele frequency (proportion of reads) per site for SNP calling (0.10)
+  --min_reads INT    minimum number of reads supporting allele per site for SNP calling (3)
+  --allele_prev INT  maximum occurences of allele across samples (1)
+                     setting this to 1 (default) will pick alleles found in exactly 1 sample
+  --max_sites INT    maximum number of genomic sites to process (use all)
+                     useful for quick tests
+
+Examples:
+1) Identify marker alleles for one species
+strain_tracking.py id_markers --indir merged_snps/species_id --out markers.txt --max_samples 1
+
+2) Run a quick test
+strain_tracking.py id_markers --indir merged_snps/species_id --out markers.txt --max_sites 10000
+
+Output fields:
+  site_id: site identifier (format: ref_id|ref_pos|ref_allele)
+  allele: nucleotide
+  count_samples - # of samples with sufficient coverage at site_id
+  count_A: # of samples with A at site_id
+  count_T: # of samples with T at site_id
+  count_C: # of samples with C at site_id
+  count_G: # of samples with G at site_id
+```
+
+## midas_strain_tracking_track_markers
+
+### Tool Description
+Track rare SNPs between samples and determine transmission
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
+- **Homepage**: https://github.com/snayfach/MIDAS
+- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Description: track rare SNPs between all pairs of samples and determine transmission
+
+Usage: strain_tracking.py track_markers [options]
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --indir PATH       path to input snps directory for one species (contains files 'snps_*.txt')
+                     requires having run 'merge_midas.py snps'
+  --out PATH         path to output file with marker sharing between all sample-pairs
+  --markers PATH     path to list of marker alleles output by 'strain_tracking.py id_markers'
+  --min_freq FLOAT   minimum allele frequency (proportion of reads) per site for SNP calling (0.10)
+  --min_reads INT    minimum number of reads supporting allele per site for SNP calling (3)
+  --max_sites INT    maximum number of sites to process (use all)
+                     useful for quick tests
+  --max_samples INT  maximum number of samples to process (use all)
+                     useful for quick tests
+
+Examples:
+1) Track marker alleles for one species
+strain_tracking.py track_markers --indir merged_snps/species_id --markers markers.txt --out allele_sharing.txt
+
+2) Run a quick test for species_id 57955
+strain_tracking.py track_markers --indir merged_snps/species_id --markers markers.txt --out allele_sharing.txt --max_sites 1000
+
+Output fields:
+  sample1: identifier for sample 1
+  sample2: identifier for sample 2
+  count1: number of marker alleles found in sample 1
+  count2: number of marker alleles found in sample 2
+  count_both: number of marker alleles found in sample 1 and 2
+  count_either: number of marker alleles found in sample 1 or 2
+```
 
 ## Metadata
 - **Skill**: generated

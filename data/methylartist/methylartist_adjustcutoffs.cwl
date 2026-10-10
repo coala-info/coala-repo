@@ -31,9 +31,20 @@ inputs:
       position: 101
       prefix: --unmethylated
 outputs:
+  - id: db_out
+    type: File
+    doc: The methylartist database with the adjusted cutoffs
+    outputBinding:
+      glob: $(inputs.db.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylartist:1.5.3--pyhdfd78af_0

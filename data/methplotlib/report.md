@@ -1,5 +1,11 @@
 # methplotlib CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| methplotlib | Failed | image problem: the tool's own example (nanopolish calls plus frequencies) and any two-dataset run crash with pandas 2.2 errors; only one frequency file plots |
+
 ## methplotlib
 
 ### Tool Description

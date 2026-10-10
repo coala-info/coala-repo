@@ -1,5 +1,16 @@
 # methpipe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| methpipe_format_reads | PASS | real bismark BAM from nf-core test data converted to methpipe format |
+| methpipe_hmr | PASS | real methylome counts from the dnmtools test data; 6 HMRs plus posterior and parameter files |
+| methpipe_hypermr | PASS | synthetic data: simulated Arabidopsis counts shipped with the dnmtools tests; 14 HypeMRs written with scores |
+| methpipe_methcounts | PASS | real bismark reads on the SARS-CoV-2 genome; CpG counts table written; fixed chrom input to required File or Directory |
+| methpipe_pmd | Not completed | runs and writes parameters and posteriors, but the small test methylome gives no PMDs (FDR cutoff 0), so the output cannot be confirmed; fixed -fixedbin and -posteriors-out types |
+| methpipe_radmeth | PASS | dnmtools test design and table; 17903 result lines as the upstream test expects |
+
 ## methpipe_format_reads
 
 ### Tool Description

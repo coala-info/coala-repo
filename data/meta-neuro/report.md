@@ -1,5 +1,17 @@
 # meta-neuro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| meta-neuro_cmrep_vskel | PASS | real dipy tracks300.trk bundle; reference grid and scalar map derived from it |
+| meta-neuro_density_map | PASS | real dipy tracks300.trk bundle; reference grid and scalar map derived from it |
+| meta-neuro_meta | PASS | real dipy tracks300.trk bundle; reference grid and scalar map derived from it |
+| meta-neuro_shape_metrics | PASS | real dipy tracks300.trk bundle; reference grid and scalar map derived from it |
+| meta-neuro_streamlines_profile | PASS | real dipy tracks300.trk bundle; reference grid and scalar map derived from it |
+| meta-neuro_volumetric_profile | PASS | real dipy tracks300.trk bundle; reference grid and scalar map derived from it |
+| meta-neuro_vtklevelset | PASS | real dipy tracks300.trk bundle; reference grid and scalar map derived from it |
+
 ## meta-neuro_density_map
 
 ### Tool Description

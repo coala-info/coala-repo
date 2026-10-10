@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: delcall
+baseCommand: [mimodd, delcall]
 label: mimodd_delcall
 doc: "delcall [-h] [--index-files INDEX FILE [INDEX FILE ...]] [-o OFILE] [--max-cov
   COVERAGE THRESHOLD] [--min-size SIZE THRESHOLD] [-u] [-i] [-v] BAM input files)

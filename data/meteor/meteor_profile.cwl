@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - Meteor
+  - meteor
   - profile
 label: meteor_profile
 doc: "Generate species and functional abundance tables from raw gene counts.\n\nTool
@@ -93,8 +93,13 @@ outputs:
       are saved.
     outputBinding:
       glob: $(inputs.profiled_sample_dir_path)
+arguments:
+  - position: 1000
+    shellQuote: false
+    valueFrom: '&& for l in `find $(inputs.profiled_sample_dir_path) -type l`; do cp -L "$l" "$l.tmp" && mv -f "$l.tmp" "$l"; done'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0

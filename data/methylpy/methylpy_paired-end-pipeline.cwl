@@ -95,9 +95,9 @@ inputs:
       position: 101
       prefix: --error-rate
   - id: forward_ref
-    type: File
-    doc: string indicating the path to the forward strand reference created by 
-      build_ref
+    type: string
+    doc: "Prefix of the forward strand reference created by build-reference (for
+      example chrL_f). The index files are given in reference_files."
     inputBinding:
       position: 101
       prefix: --forward-ref
@@ -249,7 +249,7 @@ inputs:
   - id: path_to_aligner
     type:
       - 'null'
-      - File
+      - string
     doc: Path to bowtie/bowtie2 installation
     inputBinding:
       position: 101
@@ -257,7 +257,7 @@ inputs:
   - id: path_to_bgzip
     type:
       - 'null'
-      - File
+      - string
     doc: Path to bgzip installation
     inputBinding:
       position: 101
@@ -265,7 +265,7 @@ inputs:
   - id: path_to_cutadapt
     type:
       - 'null'
-      - File
+      - string
     doc: Path to cutadapt installation
     inputBinding:
       position: 101
@@ -273,7 +273,7 @@ inputs:
   - id: path_to_picard
     type:
       - 'null'
-      - File
+      - string
     doc: The path to the picard.jar in picard tools.
     inputBinding:
       position: 101
@@ -281,7 +281,7 @@ inputs:
   - id: path_to_samtools
     type:
       - 'null'
-      - File
+      - string
     doc: Path to samtools installation
     inputBinding:
       position: 101
@@ -289,7 +289,7 @@ inputs:
   - id: path_to_tabix
     type:
       - 'null'
-      - File
+      - string
     doc: Path to tabix installation
     inputBinding:
       position: 101
@@ -348,9 +348,9 @@ inputs:
       position: 101
       prefix: --remove-clonal
   - id: reverse_ref
-    type: File
-    doc: string indicating the path to the reverse strand reference created by 
-      build_ref
+    type: string
+    doc: "Prefix of the reverse strand reference created by build-reference (for
+      example chrL_f). The index files are given in reference_files."
     inputBinding:
       position: 101
       prefix: --reverse-ref
@@ -403,8 +403,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zero-cap
+  - id: reference_files
+    type:
+      type: array
+      items: File
+    doc: Files written by build-reference (the _f and _r fasta files and the aligner
+      index files); staged in the working directory so the reference prefixes resolve.
   - id: path_to_output_path
-    type: string?
+    type: string
+    default: methylpy_out
+    doc: Path to a directory where you would like the output to be stored. The
+      default of the tool is the directory of the input fastqs, which is read-only
+      here, so a name is always given.
     inputBinding:
       position: 102
       prefix: --path-to-output
@@ -418,6 +428,12 @@ outputs:
       glob: $(inputs.path_to_output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.reference_files)
+      - entryname: $(inputs.path_to_output_path)
+        entry: '$({"class": "Directory", "basename": inputs.path_to_output_path, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

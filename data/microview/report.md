@@ -1,5 +1,11 @@
 # microview CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| microview | PASS | HTML reports for real Kaiju results via -t and via the CSV table contain the expected taxa; added sample_files staging for the CSV mode |
+
 ## microview
 
 ### Tool Description

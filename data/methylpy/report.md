@@ -1,5 +1,23 @@
 # methylpy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| methylpy_add-methylation-level | PASS | region methylation 0.939 equals hand count 77/82; extra-info files collected; inputs staged writable |
+| methylpy_allc-to-bigwig | PASS | synthetic data: real allc file with a planted chromosome-1 fasta used only for chromosome length; bigWig bin value equals a hand count (77/82); made allc file required and tool paths strings |
+| methylpy_bam-quality-filter | Failed | image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image) |
+| methylpy_build-reference | Failed | image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image) |
+| methylpy_call-methylation-state | Failed | image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image) |
+| methylpy_dmrfind | Not completed | runs and writes valid tables, but the tool's own test data gives no significant sites (header-only result), so the content cannot be confirmed; fixed invented flags |
+| methylpy_filter-allc | PASS | CGN filter with min-cov 2 keeps 2057 and 2086 CG rows, same as awk count; fixed output files to arrays and staged inputs writable |
+| methylpy_index-allc | PASS | index files written for 2 allc files, identical to the shipped .idx files; staged inputs writable and index files collected |
+| methylpy_merge-allc | PASS | merged 4 allc files; sums match per position and strand (58877 sites); allc files staged writable |
+| methylpy_paired-end-pipeline | Failed | image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image) |
+| methylpy_reidentify-dmr | Not completed | new CWL; runs on the DMRfind result, but that result has no significant sites, so the header-only output cannot be confirmed |
+| methylpy_single-end-pipeline | Failed | image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image) |
+| methylpy_test-allc | Failed | image problem: pysam cannot be imported (libcrypto.so.1.1 missing in the image) |
+
 ## methylpy_build-reference
 
 ### Tool Description
@@ -1110,6 +1128,76 @@ optional inputs:
                         Boolean indicates whether to remove in the final
                         output the "chr" prefix in the chromosome name
                         (default: True)
+```
+
+## methylpy_reidentify-dmr
+
+### Tool Description
+Re-call DMRs from existing DMRfind result.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0
+- **Homepage**: https://github.com/yupenghe/methylpy
+- **Package**: https://anaconda.org/channels/bioconda/packages/methylpy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: methylpy reidentify-DMR [-h] --input-rms-file INPUT_RMS_FILE
+                               --output-file OUTPUT_FILE
+                               [--collapse-samples COLLAPSE_SAMPLES [COLLAPSE_SAMPLES ...]]
+                               [--sample-category SAMPLE_CATEGORY [SAMPLE_CATEGORY ...]]
+                               [--min-cluster MIN_CLUSTER]
+                               [--sig-cutoff SIG_CUTOFF]
+                               [--dmr-max-dist DMR_MAX_DIST]
+                               [--min-num-dms MIN_NUM_DMS]
+                               [--resid-cutoff RESID_CUTOFF]
+                               [--num-sims NUM_SIMS] [--min-tests MIN_TESTS]
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+required inputs:
+  --input-rms-file INPUT_RMS_FILE
+                        File storing the results of RMS tests (from DMRfind
+                        function. (default: None)
+  --output-file OUTPUT_FILE
+                        String indicating the name of output file (default:
+                        None)
+
+optional inputs:
+  --collapse-samples COLLAPSE_SAMPLES [COLLAPSE_SAMPLES ...]
+                        A list of samples for collapsing blocks (default:
+                        False)
+  --sample-category SAMPLE_CATEGORY [SAMPLE_CATEGORY ...]
+                        A list of categories that each respective sample
+                        belongs to; the categories must begin at 0 and
+                        increase by 1 for each category added. ex: samples
+                        [A,B,C] categories [0,1,2] or categories [0, 1, 0]
+                        (default: False)
+  --min-cluster MIN_CLUSTER
+                        The minimum number of each sample category that must
+                        be present in every block that is output. (default: 2)
+  --sig-cutoff SIG_CUTOFF
+                        Float indicating at what FDR you want to consider a
+                        result significant. (default: 0.01)
+  --dmr-max-dist DMR_MAX_DIST
+                        Maximum distance two significant sites can be to be
+                        included in the same block. (default: 250)
+  --min-num-dms MIN_NUM_DMS
+                        The minimum number of differentially methylated sites
+                        that a differentially methylated region needs to
+                        contain to be reported (default: 0)
+  --resid-cutoff RESID_CUTOFF
+                        Results will have to show deviations in the
+                        contingency table in the same direction as the rest of
+                        the window (default: 0.01)
+  --num-sims NUM_SIMS   Number of permutation tests you would like to run to
+                        estimate the p-values of the differential methylation
+                        tests (default: 3000)
+  --min-tests MIN_TESTS
+                        Minimum number of permuation tests you\ would d like
+                        to run for each mC (default: 100)
 ```
 
 ## Metadata

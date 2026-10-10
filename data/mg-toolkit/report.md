@@ -1,5 +1,13 @@
 # mg-toolkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mg-toolkit_bulk_download | Failed | tool bug: the tool calls the MGnify API 'latest', which now redirects to API v2, and it crashes with KeyError 'meta' (the old v1 API still answers) |
+| mg-toolkit_original_metadata | PASS | study ERP003634 gave 7 runs with ENA metadata, same run list as the ENA portal; CSV output now collected and network access added |
+| mg-toolkit_sequence_search | Not completed | the MGnify sequence-search service answers HTTP 410 Gone, so no search can run; CWL fixed (subcommand after options, threshold options added, network access) |
+
 ## mg-toolkit_original_metadata
 
 ### Tool Description

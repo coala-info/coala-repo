@@ -1,5 +1,12 @@
 # minc-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| minc-tools_minc_modify_header | PASS |  |
+| minc-tools_mincmath | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

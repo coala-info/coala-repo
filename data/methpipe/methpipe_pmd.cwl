@@ -34,8 +34,8 @@ inputs:
   - id: fixed_bin_size
     type:
       - 'null'
-      - int
-    doc: Fixed bin size
+      - boolean
+    doc: Fixed bin size (switch, keeps the starting bin size)
     inputBinding:
       position: 102
       prefix: -fixedbin
@@ -64,11 +64,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -params-in
+      itemSeparator: ','
   - id: posteriors_out
     type:
       - 'null'
-      - boolean
-    doc: write out posterior probabilities in methcounts format
+      - string
+    doc: Prefix of the posterior probability files in methcounts format (writes .intoTrans, .outofTrans and .emissions files)
     inputBinding:
       position: 102
       prefix: -posteriors-out
@@ -127,6 +128,13 @@ outputs:
     doc: write HMM parameters to this file
     outputBinding:
       glob: $(inputs.params_out_path)
+  - id: posteriors_out_files
+    type:
+      type: array
+      items: File
+    doc: Posterior probability files written for the posteriors_out prefix
+    outputBinding:
+      glob: $(inputs.posteriors_out + '.*')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,23 @@
 # methylartist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| methylartist_adjustcutoffs | PASS | real nanopolish calls database; cutoffs and call states rewritten in the database; fixed to stage the database writable and return it |
+| methylartist_composite | Failed | image problem: scikit-bio 0.7.1 in the image has no local_pairwise_align_ssw, so composite crashes |
+| methylartist_db-custom | PASS | per-read table written from real nanopore Col-0 BAM calls (nf-core methylong); 1068 calls loaded; column numbers count from 0 |
+| methylartist_db-guppy | Not completed | deprecated command that needs guppy fast5 files with modified-base calls and --force; no small test data |
+| methylartist_db-megalodon | PASS | synthetic data: real BAM calls rewritten in megalodon per-read text format; 1068 calls loaded |
+| methylartist_db-nanopolish | PASS | real nanopolish calls from the methplotlib ACTB example; database with 44687 calls |
+| methylartist_db-sub | PASS | real bismark BAM (nf-core SARS-CoV-2); database and append mode work; fixed db to a name string with a database output |
+| methylartist_locus | PASS | real nanopore Col-0 BAM aligned to TAIR10 chr1 5-7 Mb; locus plot and smoothed table show methylation domains |
+| methylartist_region | PASS | same real BAM; region plot and segment table written |
+| methylartist_scoredist | PASS | real nanopolish database gives the score plot; the --bam mode crashes in the tool (empty read list), noted |
+| methylartist_segmeth | PASS | same real BAM; per-segment methylation table, high segment 0.72 vs 0.13 elsewhere |
+| methylartist_segplot | PASS | synthetic data: real segmeth table with planted group labels; violin plot written |
+| methylartist_wgmeth | PASS | same real BAM; bedMethyl with 36615 CpG calls written |
+
 ## methylartist_db-nanopolish
 
 ### Tool Description

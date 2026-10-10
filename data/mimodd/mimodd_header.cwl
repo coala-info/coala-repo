@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: header
+baseCommand: [mimodd, header]
 label: mimodd_header
 doc: "Add or modify header information in BAM/SAM/CRAM files.\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:

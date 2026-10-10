@@ -1,5 +1,11 @@
 # mgf-formatter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mgf-formatter | PASS | reformatted a 3-spectrum MGF from MsBackendMgf test data |
+
 ## mgf-formatter
 
 ### Tool Description

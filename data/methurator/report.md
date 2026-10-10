@@ -1,5 +1,13 @@
 # methurator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| methurator_downsample | PASS | real bismark BAM (nf-core SARS-CoV-2 test data); read and CpG counts rise to 876 CpGs at 1x; fixed read-only index failures (writable BAM, fasta .fai) |
+| methurator_gt-estimator | PASS | same real BAM; asymptote 876 CpGs matches the observed count |
+| methurator_plot | PASS | summary from the real downsample run; 1x and 3x saturation plots written |
+
 ## methurator_downsample
 
 ### Tool Description

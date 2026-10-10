@@ -1,5 +1,18 @@
 # methbat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| methbat_build | PASS | synthetic data: cohort of four pseudo-samples from split reads of the real BAM |
+| methbat_compare | PASS | synthetic data: pseudo-sample cohort background (case vs control) |
+| methbat_deconvolve | PASS | synthetic data: real atlas rows re-placed onto the test BAM region; JSON estimates sum plausibly |
+| methbat_joint-segment | PASS | synthetic data: four pseudo-samples from split reads of the real BAM; methylated and unmethylated segments written |
+| methbat_profile | PASS | same real data with 5 kb windows; output profile and ASM BED written, no haplotypes in input |
+| methbat_report | PASS | same real data with 10 kb windows; report table written, no haplotypes in input |
+| methbat_segment | PASS | real HiFi 5mC BAM (nf-core methylong HG002) run through pb-CpG-tools; methylated segment found |
+| methbat_signature | PASS | synthetic data: four pseudo-samples (2 case, 2 control) from split reads of the real BAM |
+
 ## methbat_build
 
 ### Tool Description

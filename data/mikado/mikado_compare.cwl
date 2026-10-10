@@ -1,187 +1,208 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - Mikado
+  - mikado
   - compare
 label: mikado_compare
-doc: "Compare predictions to a reference annotation.\n\nTool homepage: https://github.com/lucventurini/mikado"
+doc: "Compare a prediction annotation with a reference annotation (class codes, precision and recall).\n\
+  \nTool homepage: https://github.com/EI-CoreBioinformatics/mikado"
 inputs:
-  - id: distance
-    type:
-      - 'null'
-      - float
-    doc: Maximum distance for considering two features as matching
+  - id: reference
+    type: File
+    doc: Reference annotation file.
     inputBinding:
       position: 101
-      prefix: --distance
-  - id: exclude_redundant_matches
-    type:
-      - 'null'
-      - boolean
-    doc: Exclude redundant matches
-    inputBinding:
-      position: 101
-      prefix: --exclude-redundant-matches
-  - id: exclude_unannotated
-    type:
-      - 'null'
-      - boolean
-    doc: Exclude unannotated features
-    inputBinding:
-      position: 101
-      prefix: --exclude-unannotated
-  - id: fuzzy_match
-    type:
-      - 'null'
-      - File
-    doc: Fuzzy matching file
-    inputBinding:
-      position: 101
-      prefix: --fuzzy-match
-  - id: index
-    type:
-      - 'null'
-      - boolean
-    doc: Compare prediction to indexed reference (e.g., from a database)
-    inputBinding:
-      position: 101
-      prefix: --index
-  - id: internal
-    type:
-      - 'null'
-      - boolean
-    doc: Compare prediction to internal reference (e.g., from a previous run)
-    inputBinding:
-      position: 101
-      prefix: --internal
-  - id: lenient
-    type:
-      - 'null'
-      - boolean
-    doc: Lenient matching
-    inputBinding:
-      position: 101
-      prefix: --lenient
-  - id: log
-    type:
-      - 'null'
-      - File
-    doc: Log file
-    inputBinding:
-      position: 101
-      prefix: -l
-  - id: no_feature_type
-    type:
-      - 'null'
-      - boolean
-    doc: Do not consider feature type in comparisons
-    inputBinding:
-      position: 101
-      prefix: --no-feature-type
-  - id: no_shm
-    type:
-      - 'null'
-      - boolean
-    doc: Do not use shared memory for comparisons
-    inputBinding:
-      position: 101
-      prefix: --no-shm
-  - id: normalize
-    type:
-      - 'null'
-      - boolean
-    doc: Normalize scores
-    inputBinding:
-      position: 101
-      prefix: --normalize
-  - id: percent_complete
-    type:
-      - 'null'
-      - boolean
-    doc: Calculate percent complete instead of overlap
-    inputBinding:
-      position: 101
-      prefix: --percent-complete
+      prefix: -r
   - id: prediction
     type:
       - 'null'
       - File
-    doc: Prediction file (GTF/GFF3)
+    doc: Prediction annotation file.
     inputBinding:
       position: 101
       prefix: -p
-  - id: processes
-    type:
-      - 'null'
-      - int
-    doc: Number of processes to use
-    inputBinding:
-      position: 101
-      prefix: -x
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Quiet output
-    inputBinding:
-      position: 101
-      prefix: --quiet
-  - id: reference
-    type: File
-    secondaryFiles:
-      - .fai
-    doc: Reference annotation file (GTF/GFF3)
-    inputBinding:
-      position: 101
-      prefix: --reference
   - id: self
     type:
       - 'null'
       - boolean
-    doc: Compare prediction to itself (useful for internal comparisons)
+    doc: Compare the reference with itself.
     inputBinding:
       position: 101
       prefix: --self
+  - id: internal
+    type:
+      - 'null'
+      - boolean
+    doc: Compare each isoform of a gene with the others.
+    inputBinding:
+      position: 101
+      prefix: --internal
+  - id: index
+    type:
+      - 'null'
+      - boolean
+    doc: Stop after generating the GFF index for the reference.
+    inputBinding:
+      position: 101
+      prefix: --index
+  - id: no_shm
+    type:
+      - 'null'
+      - boolean
+    doc: Switch off /dev/shm usage.
+    inputBinding:
+      position: 101
+      prefix: --no-shm
   - id: shm
     type:
       - 'null'
       - boolean
-    doc: Use shared memory for comparisons (default)
+    doc: Switch on /dev/shm usage.
     inputBinding:
       position: 101
       prefix: --shm
-  - id: use_prediction_attributes
+  - id: distance
+    type:
+      - 'null'
+      - int
+    doc: 'Maximum distance for a transcript to be considered a polymerase run-on. Default: 2000.'
+    inputBinding:
+      position: 101
+      prefix: --distance
+  - id: protein_coding
     type:
       - 'null'
       - boolean
-    doc: Use attributes from prediction file
+    doc: Only consider transcripts with a CDS (both in reference and prediction).
     inputBinding:
       position: 101
-      prefix: --use-prediction-attributes
+      prefix: -pc
+  - id: out
+    type:
+      - 'null'
+      - string
+    doc: 'Prefix for the output files. Default: mikado_compare.'
+    inputBinding:
+      position: 101
+      prefix: -o
+  - id: fuzzy_intron_match
+    type:
+      - 'null'
+      - int
+    doc: Introns count as matched if their splices are within N bases of the annotated ones (default 0).
+    inputBinding:
+      position: 101
+      prefix: -fm
+  - id: lenient
+    type:
+      - 'null'
+      - boolean
+    doc: Calculate exonic statistics leniently in the TMAP.
+    inputBinding:
+      position: 101
+      prefix: --lenient
+  - id: do_not_report_fusions
+    type:
+      - 'null'
+      - boolean
+    doc: Do not report fusions in the input.
+    inputBinding:
+      position: 101
+      prefix: -nF
+  - id: exclude_utr
+    type:
+      - 'null'
+      - boolean
+    doc: Strip reference and prediction transcripts of their UTRs.
+    inputBinding:
+      position: 101
+      prefix: -eu
+  - id: no_index
+    type:
+      - 'null'
+      - boolean
+    doc: Do not save an index of the reference.
+    inputBinding:
+      position: 101
+      prefix: -n
+  - id: extended_refmap
+    type:
+      - 'null'
+      - boolean
+    doc: Also report recall and precision statistics in the RefMap.
+    inputBinding:
+      position: 101
+      prefix: -erm
+  - id: use_prediction_alias
+    type:
+      - 'null'
+      - boolean
+    doc: Use the alias rather than the transcript ID in the TMAP and REFMAP files.
+    inputBinding:
+      position: 101
+      prefix: -upa
+  - id: log
+    type:
+      - 'null'
+      - string
+    doc: Log file.
+    inputBinding:
+      position: 101
+      prefix: -l
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Verbose output
+    doc: Verbose logging.
     inputBinding:
       position: 101
-      prefix: --verbose
-  - id: out_path
-    type: string
-    doc: Output or path parameter `out_path`
+      prefix: -v
+  - id: gzip
+    type:
+      - 'null'
+      - boolean
+    doc: GZip the TMAP and REFMAP files.
     inputBinding:
-      position: 102
-      prefix: -o
+      position: 101
+      prefix: -z
+  - id: processes
+    type:
+      - 'null'
+      - int
+    doc: Number of processes.
+    inputBinding:
+      position: 101
+      prefix: -x
+  - id: staged_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named inside the configuration or list file (annotations, genome, scoring file, ...); staged
+      in the working directory so the relative names resolve.
 outputs:
-  - id: out
+  - id: results
+    type:
+      type: array
+      items: File
+    doc: Comparison tables (.tmap, .refmap, .stats) and the reference index.
+    outputBinding:
+      glob:
+        - '$(inputs.out ? inputs.out : ''mikado_compare'')*'
+  - id: log_file
     type:
       - 'null'
       - File
-    doc: Output file for comparison results
+    doc: Log file.
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '$(inputs.staged_files ? inputs.staged_files : [])'
+      - entry: $(inputs.reference)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2

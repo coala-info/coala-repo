@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - MetaWatt-3.5.3
+baseCommand: metawatt
 label: metawatt
 doc: "Metawatt version 3.5.3\n\nTool homepage: https://github.com/edhelas/metawatt"
 inputs:
@@ -36,10 +33,14 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: runs metawatt pipeline on the command line
+    doc: "runs metawatt pipeline on the command line; the project directory holds an
+      input folder (assembly fasta with at least two contigs, fastq reads), an optional databases folder with an HMM profile file, and metawatt
+      writes an output folder into it. The wrapper script changes directory, so the
+      path is passed as an absolute path."
     inputBinding:
       position: 101
       prefix: --run
+      valueFrom: $(runtime.outdir)/$(self.basename)
   - id: skip_database_update
     type:
       - 'null'
@@ -65,9 +66,20 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
+  - id: project_dir
+    type:
+      - 'null'
+      - Directory
+    doc: project directory after the run (input, output, metawatt-project.xml, logbook)
+    outputBinding:
+      glob: $(inputs.run.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.run ? [{entryname: inputs.run.basename, entry: inputs.run, writable: true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metawatt:3.5.3--boost1.64_0

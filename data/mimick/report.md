@@ -1,5 +1,11 @@
 # mimick CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mimick | Failed | image problem: the bundled Julia fails to start (libz.so.1 missing) and its project folder is read-only, so no simulation runs |
+
 ## mimick
 
 ### Tool Description

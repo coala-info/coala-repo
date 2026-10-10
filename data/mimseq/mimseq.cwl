@@ -6,11 +6,17 @@ doc: "Modification-induced misincorporation analysis of tRNA sequencing data\n\n
   homepage: https://github.com/nedialkova-lab/mim-tRNAseq"
 inputs:
   - id: sample_data
-    type: string
-    doc: 'Sample data sheet in text format, tab-separated. Column 1: full path to
-      fastq (or fastq.gz). Column 2: condition/group.'
+    type: File
+    doc: 'Sample data sheet in text format, tab-separated. Column 1: path to
+      fastq (or fastq.gz), given relative to the working directory (the files are
+      staged there from fastq_files). Column 2: condition/group.'
     inputBinding:
       position: 1
+  - id: fastq_files
+    type:
+      type: array
+      items: File
+    doc: FASTQ files named in the sample data sheet; staged in the working directory
   - id: cluster_id
     type:
       - 'null'
@@ -171,11 +177,8 @@ inputs:
       position: 102
       prefix: --no-snp-tolerance
   - id: out_dir
-    type:
-      - 'null'
-      - string
-    doc: Output directory. Default is current directory. Cannot be an existing 
-      directory.
+    type: string
+    doc: Output directory (created by the tool; cannot be an existing directory).
     inputBinding:
       position: 102
       prefix: --out-dir
@@ -289,13 +292,14 @@ outputs:
     type: stdout
     doc: Standard output
   - id: out_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory. Default is current directory. Cannot be an existing 
       directory.
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.fastq_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mimseq:1.3.11--pyhdfd78af_0

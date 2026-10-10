@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - Meteor
+  - meteor
   - merge
 label: meteor_merge
 doc: "Merge abundance tables from multiple samples into a single directory.\n\nTool
@@ -88,7 +88,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.merging_dir_path)/$(inputs.prefix || 'output')*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # metametamerge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metametamerge_MetaMetaMerge.py | PASS | synthetic data: small profile tables with real NCBI taxonomy subset from nf-core; merged profile and detailed output are correct |
+
 ## metametamerge_MetaMetaMerge.py
 
 ### Tool Description

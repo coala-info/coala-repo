@@ -986,9 +986,25 @@ inputs:
 outputs:
   - id: predictions_fasta
     type: File
-    doc: Output predictions FASTA file
+    doc: Predicted proteins (amino acid FASTA), written as <predictionsFasta>.fas
     outputBinding:
-      glob: '$(inputs.predictions_fasta_path)'
+      glob: $(inputs.predictions_fasta_path).fas
+  - id: predictions_codon_fasta
+    type: File
+    doc: Predicted coding sequences (nucleotide FASTA), written as <predictionsFasta>.codon.fas
+    outputBinding:
+      glob: $(inputs.predictions_fasta_path).codon.fas
+  - id: predictions_headers_map
+    type: File
+    doc: TSV map of each prediction header to internal identifiers, written as
+      <predictionsFasta>.headersMap.tsv
+    outputBinding:
+      glob: $(inputs.predictions_fasta_path).headersMap.tsv
+  - id: predictions_gff
+    type: File
+    doc: Predictions in GFF format, written as <predictionsFasta>.gff
+    outputBinding:
+      glob: $(inputs.predictions_fasta_path).gff
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

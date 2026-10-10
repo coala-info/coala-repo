@@ -1,5 +1,17 @@
 # merquryfk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| merquryfk_ASMplot | PASS |  |
+| merquryfk_CNplot | PASS |  |
+| merquryfk_HAPmaker | PASS |  |
+| merquryfk_HAPplot | PASS |  |
+| merquryfk_KatComp | PASS |  |
+| merquryfk_KatGC | PASS |  |
+| merquryfk_MerquryFK | PASS |  |
+
 ## merquryfk_CNplot
 
 ### Tool Description
@@ -223,6 +235,49 @@ Usage: KatGC  [-w<double(6.0)>] [-h<double(4.5)>]
       -T: number of threads to use
 ```
 
+
+## merquryfk_MerquryFK
+
+### Tool Description
+K-mer based assembly evaluation: completeness, QV, copy-number and phasing plots.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/merquryfk:1.2--h71df26d_1
+- **Homepage**: https://github.com/thegenemyers/MERQURY.FK
+- **Package**: https://anaconda.org/channels/bioconda/packages/merquryfk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: MerquryFK  [-w<double(6.0)>] [-h<double(4.5)>]
+                  [-[xX]<number(x2.1)>] [-[yY]<number(y1.1)>]
+                  [-vk] [-lfs] [-pdf] [-z] [-T<int(4)>] [-P<dir($TMPDIR)>]
+                  <read>[.ktab] [ <mat>[.hap[.ktab]] <pat>[.hap[.ktab]] ]
+                  <asm1:dna> [<asm2:dna>] <out>
+
+      -w: width in inches of plots
+      -h: height in inches of plots
+      -x: max x as a real-valued multiple of x* with max
+              count 'peak' away from the origin
+      -X: max x as an int value in absolute terms
+      -y: max y as a real-valued multiple of max count
+              'peak' away from the origin
+      -Y: max y as an int value in absolute terms
+
+      -l: draw line plot
+      -f: draw fill plot
+      -s: draw stack plot
+          any combo allowed, none => draw all
+
+      -z: plot counts of k-mers unique to assembly
+
+    -pdf: output .pdf (default is .png)
+
+      -v: verbose output to stderr
+      -k: keep plotting data as .cni, .asmi, and .hpi files
+      -T: number of threads to use
+      -P: Place all temporary files in directory -P.
+```
 
 ## Metadata
 - **Skill**: generated

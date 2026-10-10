@@ -1,5 +1,11 @@
 # mgnify-pipelines-toolkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mgnify-pipelines-toolkit_get_subunits | PASS | output md5sums match the tool's own tests; added the sequence-categorisation directory output |
+
 ## mgnify-pipelines-toolkit_get_subunits
 
 ### Tool Description

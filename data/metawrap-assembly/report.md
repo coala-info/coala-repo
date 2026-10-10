@@ -1,9 +1,16 @@
 # metawrap-assembly CWL Generation Report
 
-## metawrap-assembly_metawrap
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metawrap-assembly_assembly | PASS | megahit assembly of B. fragilis reads: 255 contigs, 1.73 Mb |
+
+
+## metawrap-assembly_assembly
 
 ### Tool Description
-Please select a proper module of metaWRAP.
+metaWRAP assembly module
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metawrap-assembly:1.3.0--hdfd78af_3
@@ -11,36 +18,21 @@ Please select a proper module of metaWRAP.
 - **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-assembly/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-assembly/overview
-- **Total Downloads**: 47
-- **Last updated**: 2025-10-30
-- **GitHub**: https://github.com/bxlab/metaWRAP
-- **Stars**: N/A
 ### Original Help Text
 ```text
-------------------------------------------------------------------------------------------------------------------------
------                                  Please select a proper module of metaWRAP.                                  -----
-------------------------------------------------------------------------------------------------------------------------
+metawrap assembly
 
+Usage: metaWRAP assembly [options] -1 reads_1.fastq -2 reads_2.fastq -o output_dir
+Options:
 
-MetaWRAP v=1.3.0
-Usage: metaWRAP [module]
+	-1 STR          forward fastq reads
+	-2 STR          reverse fastq reads
+	-o STR          output directory
+	-m INT          memory in GB (default=24)
+	-t INT          number of threads (defualt=1)
+	-l INT		minimum length of assembled contigs (default=1000)
 
-	Modules:
-	read_qc		Raw read QC module (read trimming and contamination removal)
-	assembly	Assembly module (metagenomic assembly)
-	kraken		KRAKEN module (taxonomy annotation of reads and assemblies)
-	blobology	Blobology module (GC vs Abund plots of contigs and bins)
-
-	binning		Binning module (metabat, maxbin, or concoct)
-	bin_refinement	Refinement of bins from binning module
-	reassemble_bins Reassemble bins using metagenomic reads
-	quant_bins	Quantify the abundance of each bin across samples
-	classify_bins	Assign taxonomy to genomic bins
-	annotate_bins	Functional annotation of draft genomes
-
-	--help | -h		show this help message
-	--version | -v	show metaWRAP version
-	--show-config	show where the metawrap configuration files are stored
+	--megahit	assemble with megahit (default)
+	--metaspades	assemble with metaspades instead of megahit (better results but slower and higher memory requirement)
 ```
 

@@ -1,5 +1,25 @@
 # metafx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metafx_bandage | PASS |  |
+| metafx_calc_features | PASS |  |
+| metafx_chisq | PASS |  |
+| metafx_colored | PASS | used perc 0.5 and skip_graph on the small official data; category features separate the groups |
+| metafx_cv | PASS |  |
+| metafx_extract_kmers | PASS |  |
+| metafx_feature_analysis | PASS |  |
+| metafx_fit | Failed | image problem: xgboost is not installed in the image; fit.py imports it at start |
+| metafx_fit_predict | PASS |  |
+| metafx_metafast | PASS |  |
+| metafx_metaspades | Failed | image problem: metaspades.py (SPAdes) is not in the image |
+| metafx_pca | PASS |  |
+| metafx_predict | Failed | image problem: torch is not installed in the image; predict.py imports it at start |
+| metafx_stats | PASS | relaxed p-value limits (0.2) because the official data has only 2 samples per group; features separate the categories |
+| metafx_unique | PASS |  |
+
 ## metafx_metafast
 
 ### Tool Description

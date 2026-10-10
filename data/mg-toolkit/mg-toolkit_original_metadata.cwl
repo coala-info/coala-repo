@@ -19,6 +19,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: metadata_csv
+    type:
+      type: array
+      items: File
+    doc: One CSV file of original ENA metadata per accession (<accession>.csv)
+    outputBinding:
+      glob: '*.csv'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mg-toolkit:0.10.4--pyhdfd78af_0

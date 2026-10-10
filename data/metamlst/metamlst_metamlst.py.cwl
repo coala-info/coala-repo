@@ -4,18 +4,26 @@ baseCommand: metamlst.py
 label: metamlst_metamlst.py
 doc: "Reconstruct the MLST loci from a BAMFILE aligned to the reference MLST loci\n\
   \nTool homepage: https://github.com/SegataLab/metamlst"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bamfile)
+        writable: true
 inputs:
   - id: bamfile
     type:
       - 'null'
       - File
-    doc: BowTie2 BAM file containing the alignments
+    doc: BowTie2 BAM file containing the alignments. The tool sorts and indexes
+      it in place, so it is staged as a writable copy.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: db_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Specify a different MetaMLST-Database. If unset, use the default 
       Database. You can create a custom DB with metaMLST-index.py)
     inputBinding:
@@ -93,6 +101,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: out
     doc: Output Folder
     inputBinding:
       position: 102

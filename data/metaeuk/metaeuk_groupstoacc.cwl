@@ -6,22 +6,38 @@ baseCommand:
 label: metaeuk_groupstoacc
 doc: "Replace the internal contig, target and strand identifiers with accessions from
   the headers\n\nTool homepage: https://github.com/soedinglab/metaeuk"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.contigsDB)
+      - $(inputs.targetsDB)
+      - $(inputs.predToCall)
 inputs:
   - id: contigsDB
-    type: File
-    doc: Input contigs database
+    type: 'File[]'
+    doc: Input contigs database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 1
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: targetsDB
-    type: File
-    doc: Input targets database
+    type: 'File[]'
+    doc: Input targets database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 2
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: predToCall
-    type: File
-    doc: Input prediction to call file
+    type: 'File[]'
+    doc: Input prediction-to-call database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 3
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: threads
     type:
       - 'null'

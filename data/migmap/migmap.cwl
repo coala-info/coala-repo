@@ -9,12 +9,12 @@ inputs:
     type: File
     doc: Input FASTA or FASTQ file (can be gzipped).
     inputBinding:
-      position: 1
+      position: 201
   - id: output_file
     type: string
     doc: Output file name or '-' for stdout.
     inputBinding:
-      position: 2
+      position: 202
   - id: all_alleles
     type:
       - 'null'
@@ -134,6 +134,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -R
+      itemSeparator: ','
   - id: species
     type: string
     doc: 'Species. Allowed values: [human, mouse, rat, rabbit, rhesus_monkey].'

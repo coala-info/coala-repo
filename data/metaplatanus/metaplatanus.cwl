@@ -3,17 +3,36 @@ class: CommandLineTool
 baseCommand: metaplatanus
 label: metaplatanus
 doc: "metaplatanus version v1.3.1\n\nTool homepage: https://github.com/rkajitani/metaplatanus"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - name: lib_pair
+        type: record
+        fields:
+          - name: lib_id
+            type: int
+          - name: forward
+            type: File
+          - name: reverse
+            type: File
+arguments:
+  - position: 101
+    valueFrom: |
+      ${
+        var out = [];
+        var groups = [['-IP', inputs.inward_pair_files], ['-OP', inputs.outward_pair_files], ['-binning_IP', inputs.binning_inward_pair_files]];
+        for (var g = 0; g < groups.length; g++) {
+          var libs = groups[g][1] || [];
+          for (var i = 0; i < libs.length; i++) {
+            out.push(groups[g][0] + libs[i].lib_id);
+            out.push(libs[i].forward.path);
+            out.push(libs[i].reverse.path);
+          }
+        }
+        return out;
+      }
 inputs:
-  - id: short_reads_1
-    type: File
-    doc: short_1.fastq(a)
-    inputBinding:
-      position: 1
-  - id: short_reads_2
-    type: File
-    doc: short_2.fastq(a)
-    inputBinding:
-      position: 2
   - id: barcoded_pair_files_interleaved
     type:
       - 'null'
@@ -37,22 +56,14 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
-    doc: lib_id inward_pair_files for binning process. (reads in 2 files, fasta 
-      or fastq; the data are usually from another sample)
-    inputBinding:
-      position: 103
-      prefix: -binning_IP
+        items: lib_pair
+    doc: "inward-pair library for binning process (reads in 2 files, fasta or fastq; the data are usually from another sample). Each item gives the library id and the forward and reverse files; it is passed as -binning_IP<lib_id> FWD REV."
   - id: inward_pair_files
     type:
       - 'null'
       - type: array
-        items: File
-    doc: lib_id inward_pair_files (reads in 2 files, fasta or fastq; at least 
-      one library required)
-    inputBinding:
-      position: 103
-      prefix: -IP
+        items: lib_pair
+    doc: "inward-pair library (reads in 2 files, fasta or fastq; at least one library required). Each item gives the library id and the forward and reverse files; it is passed as -IP<lib_id> FWD REV."
   - id: memory_limit_gb
     type:
       - 'null'
@@ -128,9 +139,8 @@ inputs:
       position: 103
       prefix: -ont
   - id: output_prefix
-    type:
-      - 'null'
-      - string
+    type: string
+    default: out
     doc: prefix of output files (default "out")
     inputBinding:
       position: 103
@@ -139,12 +149,8 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
-    doc: lib_id outward_pair_files (reads in 2 files, fasta or fastq; aka 
-      mate-pairs or jumping-library)
-    inputBinding:
-      position: 103
-      prefix: -OP
+        items: lib_pair
+    doc: "outward-pair library (reads in 2 files, fasta or fastq; aka mate-pairs or jumping-library). Each item gives the library id and the forward and reverse files; it is passed as -OP<lib_id> FWD REV."
   - id: overwrite
     type:
       - 'null'
@@ -191,13 +197,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+  - id: result_dir
+    type: Directory
+    doc: Result folder (<prefix>_result) with the final assembly and bins
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_prefix + '_result')
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaplatanus:1.3.1--h6a68c12_1

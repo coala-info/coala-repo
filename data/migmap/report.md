@@ -1,5 +1,11 @@
 # migmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| migmap | Failed | image problem: migmap looks for its data in /usr/local/share/data (it is in /usr/local/share/igblast) and the bundled igblastn fails to load libbz2.so.1; CWL fixed (options before positionals, comma-joined -R) |
+
 ## migmap
 
 ### Tool Description

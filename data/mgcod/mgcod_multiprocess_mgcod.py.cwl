@@ -56,7 +56,8 @@ inputs:
       prefix: --delete
   - id: genomes
     type: File
-    doc: path to txt file with genomes
+    doc: path to txt file with genomes (one genome FASTA path per line; the files
+      must be given in genome_files so that the names resolve)
     inputBinding:
       position: 101
       prefix: --genomes
@@ -76,10 +77,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nucleotides
-  - id: path_to_mgm_predictions
+  - id: genome_files
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
+    doc: Genome FASTA files named in the genomes list; staged in the working directory
+  - id: path_to_mgm_predictions
+    type: string
+    default: mgm_results
     doc: Directory where to save MGM predictions so that they can be re-used. If
       path does not exist, it will be created.
     inputBinding:
@@ -140,9 +146,8 @@ inputs:
       position: 102
       prefix: --logfile
   - id: path_to_output_path
-    type:
-      - 'null'
-      - string
+    type: string
+    default: results
     inputBinding:
       position: 103
       prefix: --path_to_output
@@ -189,6 +194,8 @@ outputs:
       glob: $(inputs.path_to_mgm_predictions)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.genome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mgcod:1.0.2--hdfd78af_0

@@ -1,5 +1,11 @@
 # mimseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mimseq | Failed | image problem: gmap_build has a broken perl shebang (build-env path) and usearch is missing, so the run stops at indexing |
+
 ## mimseq
 
 ### Tool Description

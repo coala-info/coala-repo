@@ -1,5 +1,12 @@
 # methphaser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| methphaser_meth_phaser_parallel | PASS | real ONT R10 HLA reads, phased VCF and block GTF from the MethPhaser Zenodo set (chr6:30.70-30.95 Mb subset); block relationships written |
+| methphaser_meth_phaser_post_processing | PASS | same subset; re-phased VCF and methylation-tagged BAM written, blocks merged |
+
 ## methphaser_meth_phaser_parallel
 
 ### Tool Description
@@ -56,3 +63,34 @@ Required arguments:
                         called vcf file from HapCUT2
 ```
 
+## methphaser_meth_phaser_post_processing
+
+### Tool Description
+methphaser: use the block relationships from meth_phaser_parallel to write a re-phased VCF file and methylation-tagged BAM files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/methphaser:0.0.3--hdfd78af_0
+- **Homepage**: https://github.com/treangenlab/methphaser
+- **Package**: https://anaconda.org/channels/bioconda/packages/methphaser/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: meth_phaser_post_processing [-h] -ib -if -ov -ob -vc [-t] [-vt] [-hs] [-mc] [-vd]
+
+methphaser: phase reads based on methlytion informaiton
+
+Required arguments:
+  -ib, --input_bam_file         input SNP-phased bam file
+  -if, --meth_phasing_input_folder  meth phasing input folder
+  -ov, --output_vcf             output VCF file location
+  -ob, --output_bam             output BAM file (without .bam suffix)
+  -vc, --vcf_called             SNP-phased VCF file
+  -t, --threads                 threads, default 1
+
+options:
+  -vt, --vcf_truth              truth VCF provided by GIAB
+  -hs, --high_success_rate_param  Enable high success rate parameter
+  -mc, --minimum_coverage       Minimum read number to assign blocks' relationship. default: 0.
+  -vd, --voting_difference      minimum voting difference for relationship assignment, default=0.5
+```

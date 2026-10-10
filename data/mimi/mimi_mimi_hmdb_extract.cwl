@@ -2,53 +2,53 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mimi_hmdb_extract
 label: mimi_mimi_hmdb_extract
-doc: "Extract metabolite information from HMDB XML file\n\nTool homepage: https://github.com/NYUAD-Core-Bioinformatics/MIMI"
+doc: "Extract metabolite information from an HMDB XML file.\n\nTool homepage: https://github.com/NYUAD-Core-Bioinformatics/MIMI"
 inputs:
   - id: id_tag
     type:
       - 'null'
       - string
-    doc: 'Preferred ID tag to use. Options: accession, kegg_id, chebi_id, pubchem_compound_id,
-      drugbank_id'
+    doc: 'Preferred ID tag to use: accession, kegg_id, chebi_id, pubchem_compound_id or drugbank_id.'
     inputBinding:
       position: 101
       prefix: --id-tag
-  - id: max_mass
-    type:
-      - 'null'
-      - float
-    doc: Upper bound of molecular weight in Da
-    inputBinding:
-      position: 101
-      prefix: --max-mass
-  - id: min_mass
-    type:
-      - 'null'
-      - float
-    doc: Lower bound of molecular weight in Da
-    inputBinding:
-      position: 101
-      prefix: --min-mass
   - id: xml
     type: File
-    doc: Path to HMDB metabolites XML file
+    doc: Path to HMDB metabolites XML file.
     inputBinding:
       position: 101
       prefix: --xml
-  - id: output_path
-    type: string
-    doc: 'Output TSV file path (default: metabolites.tsv)'
+  - id: min_mass
+    type:
+      - 'null'
+      - double
+    doc: Lower bound of molecular weight in Da.
     inputBinding:
-      position: 102
-      prefix: --output
-outputs:
+      position: 101
+      prefix: --min-mass
+  - id: max_mass
+    type:
+      - 'null'
+      - double
+    doc: Upper bound of molecular weight in Da.
+    inputBinding:
+      position: 101
+      prefix: --max-mass
   - id: output
     type:
       - 'null'
-      - File
-    doc: Output TSV file path
+      - string
+    doc: 'Output TSV file path (default: metabolites.tsv).'
+    default: metabolites.tsv
+    inputBinding:
+      position: 101
+      prefix: --output
+outputs:
+  - id: metabolites
+    type: File
+    doc: Metabolite table.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

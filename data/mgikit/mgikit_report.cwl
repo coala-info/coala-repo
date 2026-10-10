@@ -36,24 +36,28 @@ inputs:
     type:
       type: array
       items: File
-    doc: The paths to the QC reports, repeat it for each report.
+      inputBinding:
+        prefix: --qc-report
+    doc: The paths to the QC reports (the .sample_stats files written by demultiplex),
+      one --qc-report per report.
     inputBinding:
       position: 101
-      prefix: --qc-report
   - id: output_path
-    type: string?
-    doc: output directory
+    type: string
+    default: report_out/merged
+    doc: The path and prefix of the output files. The tool creates two files with this
+      prefix, ending in .info and .general.
     inputBinding:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: output_files
     type:
-      - 'null'
-      - Directory
-    doc: output directory
+      type: array
+      items: File
+    doc: Merged report files (<prefix>.info and <prefix>.general)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path).*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # mfqe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mfqe | PASS | fixed output paths to arrays; FASTQ and FASTA extraction by name matches expected reads |
+
 ## mfqe
 
 ### Tool Description

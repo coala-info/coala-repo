@@ -26,7 +26,7 @@ inputs:
       prefix: --canprob
   - id: chrom
     type: int
-    doc: chromosome column number
+    doc: chromosome column number (counted from 0)
     inputBinding:
       position: 101
       prefix: --chrom
@@ -87,7 +87,7 @@ inputs:
       prefix: --modbasecol
   - id: modprob
     type: int
-    doc: column number for probability of modified base
+    doc: column number for probability of modified base (counted from 0)
     inputBinding:
       position: 101
       prefix: --modprob
@@ -102,38 +102,46 @@ inputs:
       prefix: --motifsize
   - id: pos
     type: int
-    doc: genomic (i.e. on chromosome/contig) position column number, 0-based
+    doc: genomic (i.e. on chromosome/contig) position column number (counted from 0), positions are 0-based
     inputBinding:
       position: 101
       prefix: --pos
   - id: readname
     type: int
-    doc: readname column number
+    doc: readname column number (counted from 0)
     inputBinding:
       position: 101
       prefix: --readname
   - id: strand
     type: int
-    doc: strand column number
+    doc: strand column number (counted from 0)
     inputBinding:
       position: 101
       prefix: --strand
   - id: db_path
     type: string
-    doc: 'database name (default: auto-infer)'
+    doc: 'database name (.db is appended when missing)'
     inputBinding:
       position: 102
       prefix: --db
+  - id: existing_db
+    type:
+      - 'null'
+      - File
+    doc: Existing database to extend when append is set; db_path must be its file name. Staged in the working directory.
 outputs:
   - id: db
     type:
       - 'null'
       - File
-    doc: 'database name (default: auto-infer)'
+    doc: 'database name (.db is appended when missing)'
     outputBinding:
-      glob: $(inputs.db_path)
+      glob: "$(inputs.db_path.endsWith('.db') ? inputs.db_path : inputs.db_path + '.db')"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${ return inputs.existing_db ? [{"entry": inputs.existing_db, "writable": true}] : []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylartist:1.5.3--pyhdfd78af_0

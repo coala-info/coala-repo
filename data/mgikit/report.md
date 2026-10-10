@@ -1,5 +1,14 @@
 # mgikit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mgikit_demultiplex | PASS | mgikit test set ds01 with 1 mismatch: all 15 output files (reads, reports) identical to the expected ones when --all-index-error is set; the default counts mismatches per index |
+| mgikit_reformat | PASS | mgikit test set extras ds2 with 8 base UMI: all 3 output files identical to the expected ones |
+| mgikit_report | Failed | tool bug: mgikit report panics (index out of bounds, report_manager.rs:237) even on the sample_stats file written by mgikit demultiplex; CWL fixed to repeat --qc-report |
+| mgikit_template | PASS | mgikit test set ds01: template and details tables written, template file identical to the expected one; output now a file prefix with a folder part |
+
 ## mgikit_demultiplex
 
 ### Tool Description

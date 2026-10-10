@@ -1,5 +1,11 @@
 # mgcplotter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mgcplotter_MGCplotter | PASS | circular plot of M. gallisepticum with 719 CDS, 6 rRNA, 32 tRNA and RBH track; --assign_cog_color crashes because rpsblast is missing in the image |
+
 ## mgcplotter_MGCplotter
 
 ### Tool Description

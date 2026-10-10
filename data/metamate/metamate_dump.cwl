@@ -5,6 +5,13 @@ baseCommand:
   - dump
 label: metamate_dump
 doc: "Dump filtered ASVs based on specifications.\n\nTool homepage: https://github.com/tjcreedy/metamate"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 inputs:
   - id: anyfail
     type:
@@ -158,6 +165,11 @@ inputs:
       position: 101
       prefix: --uc
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Output directory with the filtered ASVs (dump.fasta) and the filtered read table
+    outputBinding:
+      glob: $(inputs.output)
   - id: stdout
     type: stdout
     doc: Standard output

@@ -86,6 +86,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output-report
+  - id: pileup_files
+    type:
+      type: array
+      items: File
+    doc: pb-CpG-tools output files for the input prefix (<prefix>.combined.bed.gz, optional <prefix>.hap1.bed.gz and <prefix>.hap2.bed.gz with their .tbi). Staged in the working directory so the prefix resolves.
 outputs:
   - id: output_report
     type: File
@@ -94,6 +99,8 @@ outputs:
       glob: $(inputs.output_report_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.pileup_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methbat:0.17.0--h9ee0642_0

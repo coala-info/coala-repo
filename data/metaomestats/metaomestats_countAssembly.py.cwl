@@ -5,7 +5,7 @@ label: metaomestats_countAssembly.py
 doc: "Count assembly statistics\n\nTool homepage: https://github.com/raw-lab/metaome_stats"
 inputs:
   - id: fasta
-    type: File
+    type: [File, Directory]
     doc: fasta file or folder
     inputBinding:
       position: 101

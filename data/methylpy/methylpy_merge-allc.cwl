@@ -10,10 +10,12 @@ inputs:
     type:
       type: array
       items: File
-    doc: List of allc files to merge.
+    doc: List of allc files to merge (staged writable, the tool writes .idx files
+      beside them).
     inputBinding:
       position: 101
       prefix: --allc-files
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: compress_output
     type:
       - 'null'
@@ -61,6 +63,10 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.allc_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

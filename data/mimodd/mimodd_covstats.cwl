@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: covstats
+baseCommand: [mimodd, covstats]
 label: mimodd_covstats
 doc: "Calculate coverage statistics from BCF files.\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:

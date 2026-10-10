@@ -1,9 +1,16 @@
 # metawrap-binning CWL Generation Report
 
-## metawrap-binning_metawrap
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metawrap-binning_binning | PASS | metabat2, maxbin2 and concoct made bins on B. fragilis contigs |
+
+
+## metawrap-binning_binning
 
 ### Tool Description
-Please select a proper module of metaWRAP.
+metaWRAP binning module
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metawrap-binning:1.3.0
@@ -11,36 +18,31 @@ Please select a proper module of metaWRAP.
 - **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-binning/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-binning/overview
-- **Total Downloads**: 104
-- **Last updated**: 2025-10-30
-- **GitHub**: https://github.com/bxlab/metaWRAP
-- **Stars**: N/A
 ### Original Help Text
 ```text
-------------------------------------------------------------------------------------------------------------------------
------                                  Please select a proper module of metaWRAP.                                  -----
-------------------------------------------------------------------------------------------------------------------------
+metawrap binning -h
 
+Usage: metaWRAP binning [options] -a assembly.fa -o output_dir readsA_1.fastq readsA_2.fastq ... [readsX_1.fastq readsX_2.fastq]
+Note1: Make sure to provide all your separately replicate read files, not the joined file.
+Note2: You may provide single end or interleaved reads as well with the use of the correct option
+Note3: If the output already has the .bam alignments files from previous runs, the module will skip re-aligning the reads
 
-MetaWRAP v=1.3.0
-Usage: metaWRAP [module]
+Options:
 
-	Modules:
-	read_qc		Raw read QC module (read trimming and contamination removal)
-	assembly	Assembly module (metagenomic assembly)
-	kraken		KRAKEN module (taxonomy annotation of reads and assemblies)
-	blobology	Blobology module (GC vs Abund plots of contigs and bins)
+	-a STR          metagenomic assembly file
+	-o STR          output directory
+	-t INT          number of threads (default=1)
+	-m INT		amount of RAM available (default=4)
+	-l INT		minimum contig length to bin (default=1000bp). Note: metaBAT will default to 1500bp minimum
 
-	binning		Binning module (metabat, maxbin, or concoct)
-	bin_refinement	Refinement of bins from binning module
-	reassemble_bins Reassemble bins using metagenomic reads
-	quant_bins	Quantify the abundance of each bin across samples
-	classify_bins	Assign taxonomy to genomic bins
-	annotate_bins	Functional annotation of draft genomes
+	--metabat2      bin contigs with metaBAT2
+	--metabat1	bin contigs with the original metaBAT
+	--maxbin2	bin contigs with MaxBin2
+	--concoct	bin contigs with CONCOCT
 
-	--help | -h		show this help message
-	--version | -v	show metaWRAP version
-	--show-config	show where the metawrap configuration files are stored
+	--universal	use universal marker genes instead of bacterial markers in MaxBin2 (improves Archaea binning)
+	--run-checkm	immediately run CheckM on the bin results (requires 40GB+ of memory)
+	--single-end	non-paired reads mode (provide *.fastq files)
+	--interleaved	the input read files contain interleaved paired-end reads
 ```
 

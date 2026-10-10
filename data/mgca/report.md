@@ -1,5 +1,11 @@
 # mgca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| mgca | PASS | PI module gave 507 pepstats entries for M. genitalium; CRISPR module found cas9, cas1, cas2 and a CRISPR array on a S. pyogenes region; IS crashes because BioPerl is missing in the image; PROPHAGE needs a 768 MB pVOG file and was not run; folders staged writable and Results folder collected |
+
 ## mgca
 
 ### Tool Description

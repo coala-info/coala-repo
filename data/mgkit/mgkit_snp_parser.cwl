@@ -84,11 +84,14 @@ inputs:
       position: 101
       prefix: --reference
   - id: samples_id
-    type: string
-    doc: the ids of the samples used in the analysis
+    type:
+      type: array
+      items: string
+      inputBinding:
+        prefix: --samples-id
+    doc: the ids of the samples used in the analysis (the option is repeated for each sample)
     inputBinding:
       position: 101
-      prefix: --samples-id
   - id: vcf_file
     type: File
     doc: Merged VCF file

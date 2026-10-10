@@ -121,6 +121,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output-prefix
+  - id: collection_files
+    type:
+      type: array
+      items: File
+    doc: pb-CpG-tools output files named in the cohort file, staged in the working directory so the names resolve.
 outputs:
   - id: output_prefix
     type:
@@ -131,6 +136,8 @@ outputs:
       glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.collection_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methbat:0.17.0--h9ee0642_0

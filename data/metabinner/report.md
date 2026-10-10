@@ -1,11 +1,54 @@
 # metabinner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metabinner_Filter_tooshort.py | PASS |  |
+| metabinner_gen_coverage_file.sh | PASS |  |
+| metabinner_gen_kmer.py | PASS | real nf-core minigut assembly; output is the 136-column canonical 4-mer table |
+| metabinner_run_metabinner.sh | Not completed | no real data big enough: on the small nf-core minigut assembly no marker seeds are found and the script stops in split_hhbins.py; its earlier steps ran |
+
 ## metabinner_Filter_tooshort.py
 
 ### Tool Description
 Filters out short sequences from a FASTA file.
 
+#
+
+## metabinner_gen_coverage_file.sh
+
+### Tool Description
+Align reads to the assembly (bwa) and generate the coverage profile tables for MetaBinner.
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
+- **Homepage**: https://github.com/ziyewang/MetaBinner
+- **Package**: https://anaconda.org/channels/bioconda/packages/metabinner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: bash gen_coverage_file.sh [options] -a assembly.fa -o output_dir readsA_1.fastq readsA_2.fastq ... [readsX_1.fastq readsX_2.fastq]
+Note1: Make sure to provide all your separately replicate read files, not the joined file.
+Note2: You may provide single end or interleaved reads as well with the use of the correct option
+Note3: If the output already has the .bam alignments files from previous runs, the module will skip re-aligning the reads
+
+Options:
+
+	-a STR    metagenomic assembly file
+	-o STR    output directory (to save the coverage files)
+	-b STR    directory for the bam files
+	-t INT    number of threads (default=1)
+	-m INT		amount of RAM available (default=4)
+	-l INT		minimum contig length to bin (default=1000bp).
+	--single-end	non-paired reads mode (provide *.fastq files)
+	--interleaved	the input read files contain interleaved paired-end reads
+	-f STR    Forward read suffix for paired reads (default=_1.fastq)
+	-r STR    Reverse read suffix for paired reads (default=_2.fastq)
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
 - **Homepage**: https://github.com/ziyewang/MetaBinner
 - **Package**: https://anaconda.org/channels/bioconda/packages/metabinner/overview

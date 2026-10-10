@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: map
+baseCommand: [mimodd, map]
 label: mimodd_map
 doc: "MiModD mapping tool for variant analysis.\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:
@@ -130,7 +130,7 @@ inputs:
   - id: plot_file
     type:
       - 'null'
-      - File
+      - string
     doc: 'generate graphical output and store it in the given file (default: no graphical
       output)'
     inputBinding:
@@ -179,7 +179,7 @@ inputs:
   - id: text_file
     type:
       - 'null'
-      - File
+      - string
     doc: generate text-based output for every variant position and save it to 
       the specified file. This file can be used as input during later runs of 
       the tool, which will speed up replotting.
@@ -213,10 +213,10 @@ inputs:
       prefix: --ylim-scatter
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: redirect the binned variant counts to this file
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --ofile
 outputs:
   - id: output_file
     type:
@@ -225,6 +225,20 @@ outputs:
     doc: 'redirect the binned variant counts to this file (default: stdout).'
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: plot_output
+    type:
+      - 'null'
+      - File
+    doc: graphical output written when plot_file is given
+    outputBinding:
+      glob: $(inputs.plot_file)
+  - id: text_output
+    type:
+      - 'null'
+      - File
+    doc: per-variant text output written when text_file is given
+    outputBinding:
+      glob: $(inputs.text_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

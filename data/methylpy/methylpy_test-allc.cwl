@@ -9,10 +9,12 @@ doc: "Test allc file for significant methylation sites, estimating non-conversio
 inputs:
   - id: allc_file
     type: File
-    doc: allc file to be tested.
+    doc: allc file to be tested (staged writable, the tool writes an .idx file beside
+      it).
     inputBinding:
       position: 101
       prefix: --allc-file
+      valueFrom: $(self.basename)
   - id: compress_output
     type:
       - 'null'
@@ -69,9 +71,7 @@ inputs:
       position: 101
       prefix: --sort-mem
   - id: unmethylated_control
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'name of the chromosome/region that you want to use to estimate the non-conversion
       rate of your sample, or the non-conversion rate you would like to use. Consequently,
       control is either a string, or a decimal. If control is a string then it should
@@ -96,6 +96,10 @@ outputs:
       glob: $(inputs.path_to_output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.allc_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

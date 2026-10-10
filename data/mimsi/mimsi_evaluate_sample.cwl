@@ -68,7 +68,7 @@ inputs:
   - id: save_location
     type:
       - 'null'
-      - Directory
+      - string
     doc: The location on the filesystem to save the final results
     inputBinding:
       position: 101
@@ -102,6 +102,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type: Directory
+    doc: Results directory (save_location, default mimsi_results)
+    outputBinding:
+      glob: $(inputs.save_location || 'mimsi_results')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mimsi:0.4.5--pyhdfd78af_0

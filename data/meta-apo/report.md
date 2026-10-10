@@ -1,5 +1,12 @@
 # meta-apo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| meta-apo_meta-apo-calibrate | Failed | image problem: the binary segfaults at start-up (needs a model from meta-apo-train, which also segfaults) |
+| meta-apo_meta-apo-train | Failed | image problem: the binary segfaults on the tool's own README demo data (and on missing input files); no model is written |
+
 ## meta-apo_meta-apo-train
 
 ### Tool Description

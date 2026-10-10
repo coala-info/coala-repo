@@ -1,5 +1,17 @@
 # meteor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| meteor_download | Not completed | downloads multi-gigabyte catalogues from Zenodo (network and large database); fixed baseCommand case and the -o flag |
+| meteor_fastq | PASS | fixed baseCommand case; added step that copies the fastq symlinks so the output folder is usable; imported eva71_bench reads into a sample folder |
+| meteor_mapping | PASS | fixed output dir handling by staging the catalogue writable (tool builds a fasta index beside it); mock catalogue and 2000 reads: counts sum to counted_reads (1416) |
+| meteor_merge | PASS | fixed baseCommand case and prefix output glob; merged tables match the repo's expected values for 3 samples |
+| meteor_profile | PASS | fixed baseCommand case; added step that copies output symlinks; msp and KEGG tables match the repo's expected values on its test catalogue (raw normalization, core size 4) |
+| meteor_strain | PASS | fixed baseCommand case; catalogue staged writable and output symlinks copied; 8 species had enough signal, consensus genes and VCF written for the repo's mock sample |
+| meteor_tree | PASS | fixed baseCommand case; tree for 3 strains built and distance matrix written; the -f txt option crashes (ete4 has no get_ascii), default format works |
+
 ## meteor_download
 
 ### Tool Description

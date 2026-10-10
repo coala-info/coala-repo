@@ -217,9 +217,7 @@ inputs:
       position: 101
       prefix: --realign
   - id: references
-    type:
-      - 'null'
-      - File
+    type: File
     doc: path to a fasta of known correct reference sequences
     inputBinding:
       position: 101
@@ -253,7 +251,7 @@ inputs:
   - id: translation_table
     type:
       - 'null'
-      - File
+      - int
     doc: the number referring to the translation table to use for translation 
       filtering
     inputBinding:
@@ -276,6 +274,11 @@ inputs:
       position: 101
       prefix: --uc
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Output directory (results table, result cache, control file and ASV counts)
+    outputBinding:
+      glob: $(inputs.output_name)
   - id: stdout
     type: stdout
     doc: Standard output

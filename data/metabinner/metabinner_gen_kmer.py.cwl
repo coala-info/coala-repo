@@ -1,52 +1,41 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metabinner_gen_kmer.py
+baseCommand: gen_kmer.py
 label: metabinner_gen_kmer.py
-doc: "Generates k-mers from input sequences.\n\nTool homepage: https://github.com/ziyewang/MetaBinner"
-inputs:
-  - id: input_file
-    type: File
-    doc: Path to the input FASTA file.
-    inputBinding:
-      position: 1
-  - id: length_threshold
-    type: int
-    doc: Minimum length of k-mers to consider.
-    inputBinding:
-      position: 2
-  - id: kmer_size
-    type:
-      - 'null'
-      - int
-    doc: Size of the k-mers to generate. Defaults to 31.
-    inputBinding:
-      position: 103
-      prefix: --kmer_size
-  - id: min_freq
-    type:
-      - 'null'
-      - int
-    doc: Minimum frequency for a k-mer to be included in the output. Defaults to
-      1.
-    inputBinding:
-      position: 103
-      prefix: --min_freq
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 104
-      prefix: --output-file
-outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the output file for k-mer counts. Defaults to stdout.
-    outputBinding:
-      glob: $(inputs.output_file_path)
+doc: "Generates the k-mer composition profile of contigs for MetaBinner.\n\nTool homepage: https://github.com/ziyewang/MetaBinner"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta_file)
+        writable: true
+inputs:
+  - id: fasta_file
+    type: File
+    doc: "Contigs in FASTA format; staged writable because the output is written beside it"
+    inputBinding:
+      position: 1
+      valueFrom: $(self.basename)
+  - id: length_threshold
+    type: int
+    doc: "Minimum contig length: contigs of this length or shorter are skipped"
+    inputBinding:
+      position: 2
+  - id: kmer_len
+    type: int
+    doc: "k-mer length (e.g. 4)"
+    inputBinding:
+      position: 3
+outputs:
+  - id: kmer_profile
+    type: File
+    doc: "k-mer composition profile (CSV), <name>_kmer_<k>_f<length>.csv"
+    outputBinding:
+      glob: $(inputs.fasta_file.nameroot)_kmer_$(inputs.kmer_len)_f$(inputs.length_threshold).csv
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
+stdout: gen_kmer.out

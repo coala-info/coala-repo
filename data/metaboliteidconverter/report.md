@@ -1,5 +1,11 @@
 # metaboliteidconverter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaboliteidconverter | Failed | image problem: the entrypoint is java -jar phnmnl-enrichment.jar with a relative path (the jar is in /), so it cannot start in cwltool's work directory |
+
 ## metaboliteidconverter
 
 ### Tool Description

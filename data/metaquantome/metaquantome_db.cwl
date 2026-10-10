@@ -17,10 +17,9 @@ inputs:
     inputBinding:
       position: 1
   - id: data_directory
-    type:
-      - 'null'
-      - Directory
-    doc: data directory for files.
+    type: string
+    default: metaquantome_data
+    doc: data directory for files (created by the tool; collected as an output).
     inputBinding:
       position: 102
       prefix: --dir
@@ -36,6 +35,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: data_directory_dir
+    type: Directory
+    doc: Folder with the downloaded databases
+    outputBinding:
+      glob: $(inputs.data_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.data_directory)
+        entry: "$({class: 'Directory', basename: inputs.data_directory, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaquantome:2.0.2--pyhdfd78af_0

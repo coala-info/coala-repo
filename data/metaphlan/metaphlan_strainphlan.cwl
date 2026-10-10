@@ -4,6 +4,13 @@ baseCommand: strainphlan
 label: metaphlan_strainphlan
 doc: "StrainPhlAn is a tool for the reconstruction of bacterial strains and their
   phylogenetic analysis.\n\nTool homepage: https://github.com/biobakery/metaphlan"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir)
+        entry: "$({class: 'Directory', basename: inputs.output_dir, listing: []})"
+        writable: true
 inputs:
   - id: breadth_thres
     type:
@@ -32,8 +39,11 @@ inputs:
   - id: database
     type:
       - 'null'
-      - string
+      - File
     doc: The input MetaPhlAn 4.2.4 database
+    secondaryFiles:
+      - pattern: ^.fna.bz2
+        required: false
     inputBinding:
       position: 101
       prefix: --database

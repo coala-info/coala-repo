@@ -33,6 +33,11 @@ inputs:
       position: 101
       prefix: --separate-subunits-by-models
 outputs:
+  - id: sequence_categorisation
+    type: Directory
+    doc: Directory sequence-categorisation with the extracted subunit FASTA files (SSU, LSU, 5S, 5.8S, other ncRNA, and one file per model with --separate-subunits-by-models)
+    outputBinding:
+      glob: sequence-categorisation
   - id: stdout
     type: stdout
     doc: Standard output

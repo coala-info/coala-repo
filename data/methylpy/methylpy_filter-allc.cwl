@@ -11,10 +11,12 @@ inputs:
     type:
       type: array
       items: File
-    doc: allc files to filter.
+    doc: allc files to filter (staged writable, the tool writes .idx files beside
+      them).
     inputBinding:
       position: 101
       prefix: --allc-files
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: chroms
     type:
       - 'null'
@@ -95,18 +97,27 @@ inputs:
       position: 101
       prefix: --num-procs
   - id: output_files_path
-    type: string
+    type:
+      type: array
+      items: string
+    doc: Name of output files. Each output file matches each allc file.
     inputBinding:
       position: 102
       prefix: --output-files
 outputs:
   - id: output_files
-    type: File
+    type:
+      type: array
+      items: File
     doc: Name of output files. Each output file matches each allc file.
     outputBinding:
       glob: $(inputs.output_files_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.allc_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

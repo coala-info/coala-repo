@@ -1,5 +1,15 @@
 # metaquantome CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaquantome_db | PASS | ec database downloaded and used by later steps; go download fails with HTTP 403 (server refuses the Python urllib agent); ncbi not tried (500 MB) |
+| metaquantome_expand | PASS | repo test data: COG means match the expected table; EC mode expands to the enzyme hierarchy |
+| metaquantome_filter | PASS | EC-expanded repo test data filters correctly; COG mode crashes (missing n_peptide columns) |
+| metaquantome_stat | PASS | repo test data: log2 fold changes and corrected p values match the expected table |
+| metaquantome_viz | PASS | volcano plot of the repo test data is a valid PNG with the two significant COGs flagged |
+
 ## metaquantome_db
 
 ### Tool Description
@@ -338,36 +348,4 @@ Principal Components Analysis:
 
 ## Metadata
 - **Skill**: generated
-
-## metaquantome
-
-### Tool Description
-metaQuantome is a tool that performs quantitative analysis on the function and taxonomy of microbomes and their interactions. For more background information, please read the associated manuscript: https://doi.org/10.1074/mcp.ra118.001240. For a more hands-on tutorial, please visit the following page: https://galaxyproteomics.github.io/metaquantome_mcp_analysis/cli_tutorial/cli_tutorial.html.
-
-The metaQuantome workflow is as follows: db → expand → filter → stat → viz.
-
-Run `metaquantome {db,expand,filter,stat,viz} -h` for more information on the individual modules. Any issues can be brought to attention here: https://github.com/galaxyproteomics/metaquantome/issues.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metaquantome:2.0.2--pyhdfd78af_0
-- **Homepage**: https://github.com/galaxyproteomics/metaquant
-- **Package**: https://anaconda.org/channels/bioconda/packages/metaquantome/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: metaquantome [-h] [-v] {db,expand,filter,stat,viz} ...
-
-metaQuantome is a tool that performs quantitative analysis on the function and taxonomy of microbomes and their interactions. For more background information, please read the associated manuscript: https://doi.org/10.1074/mcp.ra118.001240. For a more hands-on tutorial, please visit the following page: https://galaxyproteomics.github.io/metaquantome_mcp_analysis/cli_tutorial/cli_tutorial.html.
-
-The metaQuantome workflow is as follows: db → expand → filter → stat → viz.
-
-Run `metaquantome {db,expand,filter,stat,viz} -h` for more information on the individual modules. Any issues can be brought to attention here: https://github.com/galaxyproteomics/metaquantome/issues.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -v, --version         show program's version number and exit
-
-commands:
-  {db,expand,filter,stat,viz}
-```
 

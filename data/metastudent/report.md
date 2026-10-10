@@ -1,5 +1,11 @@
 # metastudent CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metastudent | PASS |  |
+
 ## metastudent
 
 ### Tool Description

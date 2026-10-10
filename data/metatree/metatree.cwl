@@ -6,10 +6,15 @@ doc: "Visualisation of polyphyletic groups between phylogenetic trees to a refer
   tree.\n\nTool homepage: https://github.com/aaronmussig/metatree"
 inputs:
   - id: batchfile
-    type: string
+    type: File
     doc: "First tree must be the reference tree, format:\nid<tab>path_to_tree"
     inputBinding:
       position: 1
+  - id: tree_files
+    type:
+      type: array
+      items: File
+    doc: Tree files named in the batchfile; staged in the working directory so the relative paths resolve
   - id: out_dir
     type: string
     doc: path to the output directory
@@ -41,6 +46,9 @@ outputs:
     doc: path to the output directory
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.tree_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metatree:0.0.1--py_0

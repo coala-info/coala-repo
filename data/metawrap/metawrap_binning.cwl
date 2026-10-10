@@ -6,22 +6,14 @@ baseCommand:
 label: metawrap_binning
 doc: "Binning module for metagenomic assemblies\n\nTool homepage: https://github.com/bxlab/metaWRAP"
 inputs:
-  - id: reads_a
+  - id: reads
     type:
       type: array
       items: File
-    doc: Reads file(s) for replicate A (e.g., readsA_1.fastq readsA_2.fastq)
+    doc: "Read files named name_1.fastq and name_2.fastq (paired, in order), or name.fastq with single_end or interleaved; staged into one folder because metaWRAP derives the mate path from the first file"
     inputBinding:
-      position: 1
-  - id: reads_x
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Additional reads file(s) for other replicates (e.g., readsX_1.fastq 
-      readsX_2.fastq)
-    inputBinding:
-      position: 2
+      position: 200
+      valueFrom: $(self.map(function (f) { return f.basename; }))
   - id: assembly_file
     type: File
     doc: metagenomic assembly file
@@ -119,10 +111,10 @@ inputs:
       prefix: --universal
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: output directory
     inputBinding:
       position: 104
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type: Directory
@@ -131,6 +123,8 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metawrap:1.2--0

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: varextract
+baseCommand: [mimodd, varextract]
 label: mimodd_varextract
 doc: "Extracts variant sites from BCF files.\n\nTool homepage: http://sourceforge.net/projects/mimodd"
 inputs:

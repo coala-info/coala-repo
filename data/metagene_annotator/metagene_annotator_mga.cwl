@@ -5,9 +5,7 @@ label: metagene_annotator_mga
 doc: "Metagenome Gene Annotator\n\nTool homepage: http://metagene.cb.k.u-tokyo.ac.jp/"
 inputs:
   - id: fasta
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input multi-fasta file
     inputBinding:
       position: 1

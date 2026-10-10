@@ -40,20 +40,28 @@ inputs:
       prefix: --motifsize
   - id: db_path
     type: string
-    doc: 'database name (default: auto-infer)'
+    doc: 'database name (.db is appended when missing)'
     inputBinding:
       position: 102
       prefix: --db
+  - id: existing_db
+    type:
+      - 'null'
+      - File
+    doc: Existing database to extend when append is set; db_path must be its file name. Staged in the working directory.
 outputs:
   - id: db
     type:
       - 'null'
       - File
-    doc: 'database name (default: auto-infer)'
+    doc: 'database name (.db is appended when missing)'
     outputBinding:
-      glob: $(inputs.db_path)
+      glob: "$(inputs.db_path.endsWith('.db') ? inputs.db_path : inputs.db_path + '.db')"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${ return inputs.existing_db ? [{"entry": inputs.existing_db, "writable": true}] : []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylartist:1.5.3--pyhdfd78af_0

@@ -1,54 +1,12 @@
 # mhcflurry CWL Generation Report
 
-## mhcflurry_mhcflurry-downloads
+## Real Data Test
 
-### Tool Description
-Download MHCflurry released datasets and trained models.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mhcflurry:2.1.5--pyh7e72e81_0
-- **Homepage**: https://github.com/hammerlab/mhcflurry
-- **Package**: https://anaconda.org/channels/bioconda/packages/mhcflurry/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/mhcflurry/overview
-- **Total Downloads**: 38.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/hammerlab/mhcflurry
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: mhcflurry-downloads [-h] [--quiet] [--verbose]
-                           {fetch,info,path,url} ...
-
-Download MHCflurry released datasets and trained models.
-
-Examples
-
-Fetch the default downloads:
-    $ mhcflurry-downloads fetch
-
-Fetch a specific download:
-    $ mhcflurry-downloads fetch models_class1_pan
-
-Get the path to a download:
-    $ mhcflurry-downloads path models_class1_pan
-
-Get the URL of a download:
-    $ mhcflurry-downloads url models_class1_pan
-
-Summarize available and fetched downloads:
-    $ mhcflurry-downloads info
-
-positional arguments:
-  {fetch,info,path,url}
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --quiet               Output less
-  --verbose, -v         Output more
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| mhcflurry_mhcflurry-downloads_fetch | PASS | fetched models_class1_pan (228 MB); needs NetworkAccess, set in the CWL |
+| mhcflurry_mhcflurry-predict | PASS | affinity-only mode on the fetched pan models; predictions match the tool's own expected values; presentation mode not tested |
+| mhcflurry_mhcflurry-predict-scan | Not completed | needs the presentation and processing models (about 850 MB), too large; fails with the affinity models only |
 
 ## mhcflurry_mhcflurry-predict
 
@@ -284,6 +242,34 @@ Model options:
                         predictions
 ```
 
+
+## mhcflurry_mhcflurry-downloads_fetch
+
+### Tool Description
+Download MHCflurry released datasets and trained models
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mhcflurry:2.1.5--pyh7e72e81_0
+- **Homepage**: https://github.com/hammerlab/mhcflurry
+- **Package**: https://anaconda.org/channels/bioconda/packages/mhcflurry/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mhcflurry-downloads fetch [-h] [--keep] [--release RELEASE]
+                                 [--already-downloaded-dir DIR]
+                                 [DOWNLOAD ...]
+
+positional arguments:
+  DOWNLOAD              Items to download
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --keep                Don't delete archives after they are extracted
+  --release RELEASE     Release to download. Default: 2.2.0
+  --already-downloaded-dir DIR
+                        Don't download files, get them from DIR
+```
 
 ## Metadata
 - **Skill**: generated

@@ -219,8 +219,19 @@ outputs:
     doc: 'output file name (default: generated from input)'
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: plot_data
+    type:
+      - 'null'
+      - File
+    doc: Per-segment plot data table written beside the segmeth input
+    outputBinding:
+      glob: '*.segplot_data.csv'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.segmeth)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylartist:1.5.3--pyhdfd78af_0

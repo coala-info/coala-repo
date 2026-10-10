@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rebase
+baseCommand: [mimodd, rebase]
 label: mimodd_rebase
 doc: "Remaps variants from one genome assembly to another using a UCSC chain file.\n\
   \nTool homepage: http://sourceforge.net/projects/mimodd"

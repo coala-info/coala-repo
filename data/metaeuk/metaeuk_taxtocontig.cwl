@@ -5,12 +5,21 @@ baseCommand:
   - taxtocontig
 label: metaeuk_taxtocontig
 doc: "By Eli Levy Karin <eli.levy.karin@gmail.com>\n\nTool homepage: https://github.com/soedinglab/metaeuk"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.contigs_db)
+      - $(inputs.tax_annot_target_db)
 inputs:
   - id: contigs_db
-    type: File
-    doc: Input contigs database
+    type: 'File[]'
+    doc: Input contigs database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 1
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: predictions_fasta
     type: File
     doc: Input predictions FASTA file
@@ -22,10 +31,13 @@ inputs:
     inputBinding:
       position: 3
   - id: tax_annot_target_db
-    type: File
-    doc: Input tax annotation target database
+    type: 'File[]'
+    doc: Input taxonomy-annotated target database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 4
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: tmp_dir
     type: string
     doc: Temporary directory
@@ -928,15 +940,20 @@ inputs:
       prefix: --zdrop
   - id: tax_result_path
     type: string
-    doc: Output tax result file
+    doc: Output taxonomy result prefix (files <prefix>_tax_per_contig.tsv and <prefix>_tax_per_pred.tsv)
     inputBinding:
       position: 5
 outputs:
-  - id: tax_result
+  - id: tax_per_contig
     type: File
-    doc: Output tax result file
+    doc: Taxonomic label per contig, written as <taxResult>_tax_per_contig.tsv
     outputBinding:
-      glob: '$(inputs.tax_result_path)'
+      glob: $(inputs.tax_result_path)_tax_per_contig.tsv
+  - id: tax_per_pred
+    type: File
+    doc: Taxonomic label per prediction, written as <taxResult>_tax_per_pred.tsv
+    outputBinding:
+      glob: $(inputs.tax_result_path)_tax_per_pred.tsv
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

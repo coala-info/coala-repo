@@ -19,6 +19,9 @@ inputs:
       position: 101
       prefix: -o
 outputs:
+  - id: merged_table
+    type: stdout
+    doc: Joined table (this version writes it to standard output)
   - id: output_file
     type:
       - 'null'
@@ -31,3 +34,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaphlan2:2.96.1--py_0
+stdout: metaphlan2_merged_table.txt

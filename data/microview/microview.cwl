@@ -23,6 +23,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxonomy
+  - id: sample_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Classification result files named in the CSV table; they are staged in the working directory so the relative paths in the table resolve.
   - id: output_file_path
     type: string
     doc: PATH  Report file name                                      │
@@ -39,6 +45,8 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.sample_files ? inputs.sample_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/microview:0.11.0--py312h031d066_0

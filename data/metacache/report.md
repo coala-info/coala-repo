@@ -1,11 +1,27 @@
 # metacache CWL Generation Report
 
-## metacache
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metacache_build | PASS | tiny database from nf-core sarscov2 and insect mitochondrial genomes; the accession-to-taxid map is planted |
+| metacache_build+query | PASS |  |
+| metacache_info | PASS |  |
+| metacache_merge | PASS |  |
+| metacache_modify | PASS |  |
+| metacache_query | PASS |  |
+
+## metacache_build
+
 ### Tool Description
-MetaCache  Copyright (C) 2016-2026  André Müller & Robin Kobus
-This program comes with ABSOLUTELY NO WARRANTY.
-This is free software, and you are welcome to redistribute it
-under certain conditions. See the file 'LICENSE' for details.
+Build a metacache database from sequence files or directories.
+
+#
+
+## metacache_info
+
+### Tool Description
+Show database and reference sequence properties stored in a MetaCache database.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metacache:2.6.0--h077b44d_0
@@ -13,61 +29,82 @@ under certain conditions. See the file 'LICENSE' for details.
 - **Package**: https://anaconda.org/channels/bioconda/packages/metacache/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/metacache/overview
-- **Total Downloads**: 32.3K
-- **Last updated**: 2026-01-22
-- **GitHub**: https://github.com/muellan/metacache
-- **Stars**: N/A
 ### Original Help Text
 ```text
-MetaCache  Copyright (C) 2016-2026  André Müller & Robin Kobus
-This program comes with ABSOLUTELY NO WARRANTY.
-This is free software, and you are welcome to redistribute it
-under certain conditions. See the file 'LICENSE' for details.
+SYNOPSIS
 
-USAGE:
+    metacache info [<database> ]
+    metacache info [<database> reference [<sequence_id>]... ]
+    metacache info [<database> rank <rank_name> ]
+    metacache info [<database> lineages ]
+    metacache info [<database> statistics ]
+    metacache info [<database> locations ]
+    metacache info [<database> featurecounts ]
 
-    metacache <MODE> [OPTION...]
 
-    Available modes:
+DESCRIPTION
 
-    help          shows documentation
-    build         build new database from reference sequences (usually genomes)
-    modify        add reference sequences and/or taxonomy to existing database
-    query         classify read sequences using pre-built database
-    build+query   build new database and query directly afterwards
-    merge         merge classification results of independent queries
-    info          show database and reference sequence properties
+    Display (meta-)information stored in a database.
 
-EXAMPLES:
 
-    Query single FASTA file 'myreads.fna' against pre-built database 'refseq':
-        metacache query refseq myreads.fna -out results.txt
-    same with output to the console:
-        metacache query refseq myreads.fna
+SUB-MODES
 
-    Query all sequence files in folder 'test' againgst database 'refseq':
-        metacache query refseq test -out results.txt
+    metacache info
+        show basic properties of MetaCache executable (data type widths, etc.)
 
-    Query paired-end reads in separate files:
-        metacache query refseq reads1.fa reads2.fa -pairfiles -out results.txt
+    matacache info <database>
+        show basic properties of <database>
 
-    Query paired-end reads in one file (a1,a2,b1,b2,...):
-        metacache query refseq paired_reads.fa -pairseq -out results.txt
+    matacache info <database> ref[erence]
+       list meta information for all reference sequences in <database>
 
-    View documentation for query mode:
-        metacache help query
+    matacache info <database> ref[erence] <sequence_id>...
+       list meta information for specific reference sequences
 
-    View documentation on how to build databases:
-        metacache help build
+    matacache info <database> rank <rank_name>
+       list reference sequence distribution on rank <rank_name>
+
+    matacache info <database> lin[eages]
+       print table with ranked lineages for all reference sequences
+
+    matacache info <database> stat[istics]
+       print database statistics / hash table properties
+
+    matacache info <database> loc[ations]
+       print map (feature -> list of reference locations)
+       Not available in the GPU version.
+
+    matacache info <database> featurecounts
+       print map (feature -> number of reference locations)
+       Not available in the GPU version.
+
+
+PARAMETERS
+
+    <database>        Name of database.
+                      A MetaCache database contains taxonomic information and
+                      min-hash signatures of reference sequences (complete
+                      genomes, scaffolds, contigs, ...).
+
+    <rank_name>       Valid values: sequence, form, variety, subspecies,
+                      species, subgenus, genus, subtribe, tribe, subfamily,
+                      family, suborder, order, subclass, class, subphylum,
+                      phylum, subkingdom, kingdom, domain
+
+
+EXAMPLES
+
+    List metadata for all reference sequences in database 'refseq':
+        metacache info refseq ref
+
+    List metadata for the sequence with id NC_12345.6 in database 'refseq':
+        metacache info refseq ref NC_12345.6
+
+    List distribution of the number of sequences on rank 'phylum':
+        metacache info refseq rank phylum
 ```
 
-## metacache_build
-
-### Tool Description
-Build a metacache database from sequence files or directories.
-
-### Metadata
+## Metadata
 - **Docker Image**: quay.io/biocontainers/metacache:2.6.0--h077b44d_0
 - **Homepage**: https://github.com/muellan/metacache
 - **Package**: https://anaconda.org/channels/bioconda/packages/metacache/overview

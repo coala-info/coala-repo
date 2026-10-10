@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - Meteor
+  - meteor
   - tree
 label: meteor_tree
 doc: "Infer phylogenetic trees from strain directories using various models and output

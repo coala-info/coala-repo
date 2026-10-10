@@ -17,7 +17,7 @@ inputs:
       position: 101
       prefix: --add-chr-prefix
   - id: allc_file
-    type: File?
+    type: File
     doc: input allc file to be converted to bigwig format
     inputBinding:
       position: 101
@@ -77,7 +77,7 @@ inputs:
   - id: path_to_samtools
     type:
       - 'null'
-      - File
+      - string
     doc: Path to samtools installation
     inputBinding:
       position: 101
@@ -85,7 +85,7 @@ inputs:
   - id: path_to_wigtobigwig
     type:
       - 'null'
-      - File
+      - string
     doc: Path to wigToBigWig executable
     inputBinding:
       position: 101

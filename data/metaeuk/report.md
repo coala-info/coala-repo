@@ -1,5 +1,86 @@
 # metaeuk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metaeuk_createdb | PASS |  |
+| metaeuk_createtaxdb | PASS | synthetic data: hand-made mini taxdump and sequence-to-taxon map |
+| metaeuk_easy-predict | PASS | output matches the Galaxy tools-iuc expected FASTA and GFF |
+| metaeuk_groupstoacc | PASS |  |
+| metaeuk_predictexons | PASS |  |
+| metaeuk_reduceredundancy | PASS |  |
+| metaeuk_taxtocontig | PASS | synthetic data: hand-made mini taxdump; both contigs get the planted taxon (Saccharomyces cerevisiae) |
+| metaeuk_unitesetstofasta | PASS | output matches the Galaxy tools-iuc expected FASTA |
+
+## metaeuk_createdb
+
+### Tool Description
+Create a sequence database from FASTA files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2
+- **Homepage**: https://github.com/soedinglab/metaeuk
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaeuk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: metaeuk createdb <i:fastaFile1[.gz|.bz2]> ... <i:fastaFileN[.gz|.bz2]>|<i:stdin> <o:sequenceDB> [options]
+ By Martin Steinegger <martin.steinegger@snu.ac.kr>
+options: misc:                
+ --dbtype INT          Database type 0: auto, 1: amino acid 2: nucleotides [0]
+ --shuffle BOOL        Shuffle input database [1]
+ --createdb-mode INT   Createdb mode 0: copy data, 1: soft link data and write new index (works only with single line fasta/q) [0]
+ --id-offset INT       Numeric ids in index file are offset by this value [0]
+common:              
+ --compressed INT      Write compressed output [0]
+ -v INT                Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info [3]
+expert:              
+ --write-lookup INT    write .lookup file containing mapping from internal id, fasta id and file number [1]
+
+examples:
+ # Create a sequence database from multiple FASTA files
+ mmseqs createdb file1.fa file2.fa.gz file3.fa sequenceDB
+ 
+ # Create a seqDB from stdin
+ cat seq.fasta | mmseqs createdb stdin sequenceDB
+ 
+ # Create a seqDB by indexing existing FASTA/Q (for single line fasta entries only)
+ mmseqs createdb seq.fasta sequenceDB --createdb-mode 1
+ 
+references:
+ - Steinegger M, Soding J: MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets. Nature Biotechnology, 35(11), 1026-1028 (2017)
+```
+
+## metaeuk_createtaxdb
+
+### Tool Description
+Add taxonomy to a sequence database
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2
+- **Homepage**: https://github.com/soedinglab/metaeuk
+- **Package**: https://anaconda.org/channels/bioconda/packages/metaeuk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: metaeuk createtaxdb <i:sequenceDB> <tmpDir> [options]
+ By Martin Steinegger <martin.steinegger@snu.ac.kr>
+options: misc:                   
+ --ncbi-tax-dump STR      NCBI tax dump directory. The tax dump can be downloaded here "ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz" []
+ --tax-mapping-file STR   File to map sequence identifier to taxonomical identifier []
+ --tax-mapping-mode INT   Map taxonomy based on sequence database 0: .lookup file 1: .source file [0]
+ --tax-db-mode INT        Create taxonomy database as: 0: .dmp flat files (human readable) 1: binary dump (faster readin) [1]
+common:                 
+ --threads INT            Number of CPU-cores used (all by default) [20]
+ -v INT                   Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info [3]
+
+references:
+ - Mirdita M, Steinegger M, Breitwieser F, Soding J, Levy Karin E: Fast and sensitive taxonomic assignment to metagenomic contigs. Bioinformatics, btab184 (2021)
+```
+
 ## metaeuk_predictexons
 
 ### Tool Description

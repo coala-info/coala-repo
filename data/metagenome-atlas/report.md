@@ -1,5 +1,11 @@
 # metagenome-atlas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metagenome-atlas_atlas | Not completed | pipeline, skipped |
+
 ## metagenome-atlas_atlas
 
 ### Tool Description

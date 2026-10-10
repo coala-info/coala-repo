@@ -6,27 +6,14 @@ baseCommand:
 label: metawrap_quant_bins
 doc: "Quantify abundance of bins in metagenomic datasets\n\nTool homepage: https://github.com/bxlab/metaWRAP"
 inputs:
-  - id: readsA_1
-    type: File
-    doc: First read file for dataset A
-    inputBinding:
-      position: 1
-  - id: readsA_2
+  - id: reads
     type:
-      - 'null'
-      - File
-    doc: Second read file for dataset A
+      type: array
+      items: File
+    doc: "Read files named name_1.fastq and name_2.fastq, one pair per sample; staged into one folder because metaWRAP derives the mate path from the first file"
     inputBinding:
-      position: 2
-  - id: readsX
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Additional read files for other datasets (e.g., readsX_1.fastq 
-      readsX_2.fastq)
-    inputBinding:
-      position: 3
+      position: 200
+      valueFrom: $(self.map(function (f) { return f.basename; }))
   - id: assembly_fa
     type: File
     doc: fasta file with entire metagenomic assembly (strongly recommended!)
@@ -49,10 +36,10 @@ inputs:
       prefix: -t
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: output directory
     inputBinding:
       position: 105
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type: Directory
@@ -61,6 +48,8 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metawrap:1.2--0

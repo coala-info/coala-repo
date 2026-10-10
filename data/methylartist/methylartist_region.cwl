@@ -17,6 +17,9 @@ inputs:
       position: 101
       prefix: --allreads
   - id: bams
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     type:
       - 'null'
       - type: array
@@ -25,6 +28,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bams
+      itemSeparator: ','
   - id: bed
     type:
       - 'null'
@@ -413,6 +417,8 @@ inputs:
       position: 101
       prefix: --readmask
   - id: ref
+    secondaryFiles:
+      - .fai
     type: File
     doc: ref genome fasta, required if normalising windows with -n/--norm_motif
     inputBinding:

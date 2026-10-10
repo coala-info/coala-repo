@@ -1,278 +1,291 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mikado_serialise
+baseCommand:
+  - mikado
+  - serialise
 label: mikado_serialise
-doc: "Serialise Mikado database\n\nTool homepage: https://github.com/lucventurini/mikado"
+doc: "Serialise the ORFs, BLAST hits, junctions and external scores into the Mikado database.\n\nTool\
+  \ homepage: https://github.com/EI-CoreBioinformatics/mikado"
 inputs:
-  - id: output_db
+  - id: start_method
     type:
       - 'null'
       - string
-    doc: 'Optional output database. Default: derived from configuration'
+    doc: 'Multiprocessing start method: fork, spawn or forkserver.'
     inputBinding:
-      position: 1
-  - id: blast_loading_debug
-    type:
-      - 'null'
-      - boolean
-    doc: Flag. If set, Mikado will switch on the debug mode for the XML/TSV 
-      loading.
-    inputBinding:
-      position: 102
-      prefix: --blast-loading-debug
-  - id: blast_targets
-    type:
-      - 'null'
-      - string
-    doc: Target sequences
-    inputBinding:
-      position: 102
-      prefix: --blast-targets
-  - id: codon_table
-    type:
-      - 'null'
-      - string
-    doc: 'Codon table to use. Default: 0 (ie Standard, NCBI #1, but only ATG is considered
-      a valid start codon.'
-    inputBinding:
-      position: 102
-      prefix: --codon-table
-  - id: configuration
-    type:
-      - 'null'
-      - File
-    inputBinding:
-      position: 102
-      prefix: --configuration
-  - id: external_scores
-    type:
-      - 'null'
-      - File
-    doc: Tabular file containing external scores for the transcripts. Each 
-      column should have a distinct name, and transcripts have to be listed on 
-      the first column.
-    inputBinding:
-      position: 102
-      prefix: --external-scores
-  - id: force
-    type:
-      - 'null'
-      - boolean
-    doc: Flag. If set, an existing databse will be deleted (sqlite) or dropped 
-      (MySQL/PostGreSQL) before beginning the serialisation.
-    inputBinding:
-      position: 102
-      prefix: --force
-  - id: genome
-    type:
-      - 'null'
-      - File
-    inputBinding:
-      position: 102
-      prefix: --genome
-  - id: genome_fai
-    type:
-      - 'null'
-      - File
-    inputBinding:
-      position: 102
-      prefix: --genome_fai
-  - id: junctions
-    type:
-      - 'null'
-      - File
-    inputBinding:
-      position: 102
-      prefix: --junctions
-  - id: log
-    type:
-      - 'null'
-      - File
-    doc: 'Optional log file. Default: stderr'
-    inputBinding:
-      position: 102
-      prefix: --log
-  - id: log_level
-    type:
-      - 'null'
-      - string
-    doc: 'Log level. Default: derived from the configuration; if absent, INFO'
-    inputBinding:
-      position: 102
-      prefix: --log-level
-  - id: max_objects
-    type:
-      - 'null'
-      - int
-    doc: 'Maximum number of objects to cache in memory before committing to the database.
-      Default: 100,000 i.e. approximately 450MB RAM usage for Drosophila.'
-    inputBinding:
-      position: 102
-      prefix: --max-objects
-  - id: max_regression
-    type:
-      - 'null'
-      - string
-    doc: '"Amount of sequence in the ORF (in %) to backtrack in order to find a valid
-      START codon, if one is absent. Default: None'
-    inputBinding:
-      position: 102
-      prefix: --max-regression
-  - id: max_target_seqs
-    type:
-      - 'null'
-      - int
-    doc: Maximum number of target sequences.
-    inputBinding:
-      position: 102
-      prefix: --max-target-seqs
-  - id: no_force
-    type:
-      - 'null'
-      - boolean
-    doc: Flag. If set, do not drop the contents of an existing Mikado DB before 
-      beginning the serialisation.
-    inputBinding:
-      position: 102
-      prefix: --no-force
-  - id: no_shm
-    type:
-      - 'null'
-      - boolean
-    doc: Force building the database on its final location, even if /dev/shm is 
-      available.
-    inputBinding:
-      position: 102
-      prefix: --no-shm
-  - id: no_start_adjustment
-    type:
-      - 'null'
-      - boolean
-    doc: Disable the start adjustment algorithm. Useful when using e.g. 
-      TransDecoder vs 5+.
-    inputBinding:
-      position: 102
-      prefix: --no-start-adjustment
-  - id: orfs
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: ORF BED file(s), separated by commas
-    inputBinding:
-      position: 102
-      prefix: --orfs
-      itemSeparator: ','
-  - id: output_dir
-    type:
-      - 'null'
-      - string
-    doc: 'Output directory. Default: current working directory'
-    inputBinding:
-      position: 102
-      prefix: --output-dir
-  - id: procs
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for analysing the BLAST files. This number 
-      should not be higher than the total number of XML files.
-    inputBinding:
-      position: 102
-      prefix: --procs
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    inputBinding:
-      position: 102
-      prefix: --quiet
-  - id: random_seed
-    type:
-      - 'null'
-      - boolean
-    doc: Generate a new random seed number (instead of the default of 0)
-    inputBinding:
-      position: 102
-      prefix: --random-seed
-  - id: seed
-    type:
-      - 'null'
-      - int
-    doc: 'Random seed number. Default: 0.'
-    inputBinding:
-      position: 102
-      prefix: --seed
+      position: 101
+      prefix: --start-method
   - id: shm
     type:
       - 'null'
       - boolean
     doc: Use /dev/shm (if available) for faster database building.
     inputBinding:
-      position: 102
+      position: 101
       prefix: --shm
-  - id: single_thread
+  - id: no_shm
     type:
       - 'null'
       - boolean
-    doc: Force serialise to run with a single thread, irrespective of other 
-      configuration options.
+    doc: Force building the database on its final location.
     inputBinding:
-      position: 102
-      prefix: --single-thread
-  - id: start_method
+      position: 101
+      prefix: --no-shm
+  - id: orfs
     type:
       - 'null'
-      - string
-    doc: Multiprocessing start method.
+      - type: array
+        items: File
+    doc: ORF BED file(s), joined with commas.
     inputBinding:
-      position: 102
-      prefix: --start-method
+      position: 101
+      prefix: --orfs
+      itemSeparator: ','
   - id: transcripts
     type:
       - 'null'
       - type: array
         items: File
-    doc: 'Transcript FASTA file(s) used for ORF calling and BLAST queries, separated
-      by commas. If multiple files are given, they must be in the same order of the
-      ORF files. E.g. valid command lines are: --transcript_fasta all_seqs1.fasta
-      --orfs all_orfs.bed --transcript_fasta seq1.fasta,seq2.fasta --orfs orfs1.bed,orf2.bed
-      --transcript_fasta all_seqs.fasta --orfs orfs1.bed,orf2.bed These are invalid
-      instead: # Inverted order --transcript_fasta seq1.fasta,seq2.fasta --orfs orfs2.bed,orf1.bed
-      #Two transcript files, one ORF file --transcript_fasta seq1.fasta,seq2.fasta
-      --orfs all_orfs.bed'
+    doc: Transcript FASTA file(s) used for ORF calling and BLAST queries, joined with commas (same order
+      as the ORF files).
     inputBinding:
-      position: 102
+      position: 101
       prefix: --transcripts
       itemSeparator: ','
-  - id: verbose
+  - id: max_regression
+    type:
+      - 'null'
+      - string
+    doc: Amount of sequence in the ORF (in %) to backtrack to find a valid START codon, if one is absent.
+    inputBinding:
+      position: 101
+      prefix: -mr
+  - id: codon_table
+    type:
+      - 'null'
+      - string
+    doc: 'Codon table to use. Default: 0.'
+    inputBinding:
+      position: 101
+      prefix: --codon-table
+  - id: no_start_adjustment
     type:
       - 'null'
       - boolean
+    doc: Disable the start adjustment algorithm.
     inputBinding:
-      position: 102
-      prefix: --verbose
+      position: 101
+      prefix: -nsa
+  - id: max_target_seqs
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of target sequences.
+    inputBinding:
+      position: 101
+      prefix: --max-target-seqs
+  - id: blast_targets
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Target protein FASTA file(s), joined with commas.
+    inputBinding:
+      position: 101
+      prefix: -bt
+      itemSeparator: ','
   - id: xml
     type:
       - 'null'
       - type: array
         items: File
-    doc: 'BLAST file(s) to parse. They can be provided in three ways: - a comma-separated
-      list - as a base folder - using bash-like name expansion (*,?, etc.). In this
-      case, you have to enclose the filename pattern in double quotes. Multiple folders/file
-      patterns can be given, separated by a comma. BLAST files must be either of two
-      formats: - BLAST XML - BLAST tabular format, with the following **custom** fields:
-      qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue
-      bitscore ppos btop'
+    doc: BLAST XML or tabular file(s) to parse, joined with commas.
     inputBinding:
-      position: 102
+      position: 101
       prefix: --xml
       itemSeparator: ','
+  - id: procs
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use for analysing the BLAST files.
+    inputBinding:
+      position: 101
+      prefix: -p
+  - id: single_thread
+    type:
+      - 'null'
+      - boolean
+    doc: Force serialise to run with a single thread.
+    inputBinding:
+      position: 101
+      prefix: --single-thread
+  - id: genome_fai
+    type:
+      - 'null'
+      - File
+    doc: Genome FASTA index.
+    inputBinding:
+      position: 101
+      prefix: --genome_fai
+  - id: genome
+    type:
+      - 'null'
+      - File
+    doc: Genome FASTA file.
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
+    inputBinding:
+      position: 101
+      prefix: --genome
+  - id: junctions
+    type:
+      - 'null'
+      - File
+    doc: Junctions BED file.
+    inputBinding:
+      position: 101
+      prefix: --junctions
+  - id: external_scores
+    type:
+      - 'null'
+      - File
+    doc: Tabular file containing external scores for the transcripts.
+    inputBinding:
+      position: 101
+      prefix: --external-scores
+  - id: max_objects
+    type:
+      - 'null'
+      - int
+    doc: 'Maximum number of objects to cache in memory before committing to the database. Default: 100,000.'
+    inputBinding:
+      position: 101
+      prefix: -mo
+  - id: no_force
+    type:
+      - 'null'
+      - boolean
+    doc: Do not drop the contents of an existing Mikado DB before the serialisation.
+    inputBinding:
+      position: 101
+      prefix: --no-force
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: Delete or drop an existing database before the serialisation.
+    inputBinding:
+      position: 101
+      prefix: --force
+  - id: configuration
+    type:
+      - 'null'
+      - File
+    doc: Configuration file.
+    inputBinding:
+      position: 101
+      prefix: --configuration
+  - id: log
+    type:
+      - 'null'
+      - string
+    doc: 'Optional log file. Default: stderr.'
+    inputBinding:
+      position: 101
+      prefix: -l
+  - id: output_dir
+    type:
+      - 'null'
+      - string
+    doc: 'Output directory. Default: current working directory.'
+    inputBinding:
+      position: 101
+      prefix: -od
+  - id: log_level
+    type:
+      - 'null'
+      - string
+    doc: 'Log level: DEBUG, INFO, WARN or ERROR.'
+    inputBinding:
+      position: 101
+      prefix: -lv
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose logging.
+    inputBinding:
+      position: 101
+      prefix: --verbose
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Quiet logging.
+    inputBinding:
+      position: 101
+      prefix: --quiet
+  - id: blast_loading_debug
+    type:
+      - 'null'
+      - boolean
+    doc: Switch on the debug mode for the XML/TSV loading.
+    inputBinding:
+      position: 101
+      prefix: --blast-loading-debug
+  - id: seed
+    type:
+      - 'null'
+      - int
+    doc: 'Random seed number. Default: 0.'
+    inputBinding:
+      position: 101
+      prefix: --seed
+  - id: random_seed
+    type:
+      - 'null'
+      - boolean
+    doc: Generate a new random seed number.
+    inputBinding:
+      position: 101
+      prefix: --random-seed
+  - id: db
+    type:
+      - 'null'
+      - string
+    doc: 'Output database. Default: derived from the configuration.'
+    inputBinding:
+      position: 201
+  - id: staged_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named inside the configuration or list file (annotations, genome, scoring file, ...); staged
+      in the working directory so the relative names resolve.
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: database
+    type: File
+    doc: Mikado SQLite database.
+    outputBinding:
+      glob: '$((inputs.output_dir ? inputs.output_dir + ''/'' : '''') + (inputs.db ? inputs.db : ''mikado.db''))'
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file.
+    outputBinding:
+      glob: $(inputs.log)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '$(inputs.staged_files ? inputs.staged_files : [])'
+      - entry: '$(inputs.transcripts ? inputs.transcripts : [])'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mikado:2.3.4--py310h8ea774a_2
-stdout: mikado_serialise.out

@@ -1,5 +1,11 @@
 # microbecensus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| microbecensus | Failed | image problem: bundled RAPsearch2 binary cannot start (libstdc++.so.6 missing in the image); CWL rewritten from help |
+
 ## microbecensus
 
 ### Tool Description

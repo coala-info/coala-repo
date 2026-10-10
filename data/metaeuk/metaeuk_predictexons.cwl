@@ -5,17 +5,29 @@ baseCommand:
   - predictexons
 label: metaeuk_predictexons
 doc: "By Eli Levy Karin <eli.levy.karin@gmail.com>\n\nTool homepage: https://github.com/soedinglab/metaeuk"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.contigs_db)
+      - $(inputs.targets_db)
 inputs:
   - id: contigs_db
-    type: File
-    doc: Input contigs database
+    type: 'File[]'
+    doc: Input contigs database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 1
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: targets_db
-    type: File
-    doc: Input targets database
+    type: 'File[]'
+    doc: Input targets database. All files of the MetaEuk database (name, .index, .dbtype,
+      .lookup, _h, ... or the split data parts), staged together in the working directory.
     inputBinding:
       position: 2
+      valueFrom: |-
+        ${ var names = self.map(function(f){return f.basename;}).filter(function(b){return /\.dbtype$/.test(b) && !/_h\.dbtype$/.test(b);}); return names[0].replace(/\.dbtype$/, ''); }
   - id: tmp_dir
     type: string
     doc: Temporary directory
@@ -939,10 +951,10 @@ inputs:
       position: 3
 outputs:
   - id: called_exons_db
-    type: Directory
-    doc: Output called exons database
+    type: 'File[]'
+    doc: Output called exons database. All files of the MetaEuk database (data, .index, .dbtype, ...).
     outputBinding:
-      glob: '$(inputs.called_exons_db_path)'
+      glob: "$(inputs.called_exons_db_path)*"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaeuk:7.bba0d80--pl5321hd6d6fdc_2

@@ -125,6 +125,8 @@ inputs:
       prefix: --verbose
   - id: output_file_path
     type: string
+    doc: Output file. Give a path with a folder part (for example ./merged.txt);
+      the tool writes parsed profiles to that folder.
     inputBinding:
       position: 102
       prefix: --output-file
@@ -134,6 +136,20 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: detailed_output
+    type: ['null', File]
+    doc: Detailed output (written when --detailed is set)
+    outputBinding:
+      glob: $(inputs.output_file_path).detailed
+  - id: parsed_profiles
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Parsed profiles, one per tool (written when --output-parsed-profiles is
+      set; they go to the folder of the output file)
+    outputBinding:
+      glob: '*.parsed_profile.out'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

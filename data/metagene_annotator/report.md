@@ -1,5 +1,11 @@
 # metagene_annotator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metagene_annotator_mga | PASS | 268 genes on the 362 kb Portiera genome (-s) and gene calls on bacterial contigs (-m) |
+
 ## metagene_annotator_mga
 
 ### Tool Description

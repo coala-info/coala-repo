@@ -1,5 +1,60 @@
 # metamate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metamate_dump | PASS | dump of result 13 from the find run kept 49 ASVs, as the find table says |
+| metamate_filter-adaptive | PASS | real Coleoptera data, 6 authentic and 1 non-authentic ASV found, per-sample thresholds written; bbmap in the image intermittently fails to start, rerun if needed |
+| metamate_filtertranslate | PASS | 112 of 113 ASVs pass; the failing ASV matches the find run |
+| metamate_find | PASS | 113 ASVs, 6 authentic and 1 stop-codon ASV found; bbmap in the image intermittently fails to start (heap size error), so a rerun is sometimes needed; clade binning fails because R packages are missing in the image |
+
+## metamate_filtertranslate
+
+### Tool Description
+Filter multifasta sequences by stop codons in their translation
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/metamate:0.5.2--pyr44h7e72e81_0
+- **Homepage**: https://github.com/tjcreedy/metamate
+- **Package**: https://anaconda.org/channels/bioconda/packages/metamate/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: filtertranslate [-h] -i path [-t n] [-r n] -o path [-y type] [-c [0-1]]
+                       [-m n]
+
+Standalone tool for filtering the sequences in a multifasta according to
+whether their translation contains stop codons. All sequences must have the
+same reading frame relative to the start of the sequence. The reading frame
+can be supplied if known or is automatically determined. All sequences must
+use the same translation table, which follows the NCBI numbering convention
+(https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi)
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input path      input file path
+  -t, ---table n        the number referring to the translation table to use
+  -r, --readingframe n  coding frame of sequences, if known
+  -o, --output path     if --outtype is 'pass', 'fail' or 'both', the output
+                        file name, or if --outtype is 'separate', the prefix
+                        of the output file name
+  -y, --outtype type    one of 'pass', 'fail', 'both' or 'separate', denoting
+                        whether to output only those that pass filtering, only
+                        those that fail filtering, all sequences in one file
+                        adding a ';translation=pass' or ';translation=fail'
+                        suffix in the headers, or as two separate files with
+                        _pass or _fail suffixes to the output file name
+                        (default pass)
+  -c, --detectionconfidence [0-1]
+                        confidence level for detection of reading frame
+                        (default 0.95, usually no need to change)
+  -m, --detectionminstops n
+                        minimum number of stops to encounter for detection
+                        (default 50, may need to decrease for few sequences)
+```
+
 ## metamate_find
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # metacerberus-lite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| metacerberus-lite_metacerberus.py | PASS | protein mode on the repo CAZy_pc_Top10.faa with the CAZy HMM database as a custom --hmm; same hits as metacerberus |
+
 ## metacerberus-lite_metacerberus.py
 
 ### Tool Description

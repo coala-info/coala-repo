@@ -96,6 +96,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -r
+      valueFrom: $(self.basename)
   - id: threads
     type:
       - 'null'
@@ -124,8 +125,17 @@ outputs:
     doc: Path to output directory.
     outputBinding:
       glob: $(inputs.strain_dir_path)
+arguments:
+  - position: 1000
+    shellQuote: false
+    valueFrom: '&& for l in `find $(inputs.strain_dir_path) -type l`; do cp -L "$l" "$l.tmp" && mv -f "$l.tmp" "$l"; done'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.ref_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0

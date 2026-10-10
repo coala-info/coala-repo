@@ -4,18 +4,26 @@ baseCommand: metamlst-merge.py
 label: metamlst_metamlst-merge.py
 doc: "Detects the MLST profiles from a collection of intermediate files from MetaMLST.py\n\
   \nTool homepage: https://github.com/SegataLab/metamlst"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.folder)
+        writable: true
 inputs:
   - id: folder
     type:
       - 'null'
       - Directory
-    doc: Path to the folder containing .nfo MetaMLST.py files
+    doc: Path to the folder containing .nfo MetaMLST.py files. The tool writes
+      a merged subfolder into it, so it is staged as a writable copy.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: database
     type:
       - 'null'
-      - Directory
+      - File
     doc: Specify a different MetaMLST-Database. If unset, use the default 
       Database. You can create a custom DB with metaMLST-index.py)
     inputBinding:
@@ -92,6 +100,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: merged_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the merged reports, ST tables and sequences
+    outputBinding:
+      glob: "$(inputs.folder ? inputs.folder.basename + '/merged' : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metamlst:1.2.3--hdfd78af_0

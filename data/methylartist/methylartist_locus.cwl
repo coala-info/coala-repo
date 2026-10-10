@@ -17,6 +17,9 @@ inputs:
       position: 101
       prefix: --allreads
   - id: bams
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     type:
       - 'null'
       - type: array
@@ -25,6 +28,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bams
+      itemSeparator: ','
   - id: bed
     type:
       - 'null'
@@ -473,6 +477,8 @@ inputs:
       position: 101
       prefix: --readopenmarkeredgecolor
   - id: ref
+    secondaryFiles:
+      - .fai
     type:
       - 'null'
       - File

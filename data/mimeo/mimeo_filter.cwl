@@ -1,142 +1,142 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mimeo-filter
+baseCommand:
+  - mimeo
+  - filter
 label: mimeo_filter
-doc: "Filter SSR containing sequences from fasta library of repeats.\n\nTool homepage:
-  https://github.com/Adamtaranto/mimeo"
+doc: "Filter SSR containing sequences from a fasta library of repeats.\n\nTool homepage: https://github.com/Adamtaranto/mimeo"
 inputs:
   - id: infile
     type: File
-    doc: Name of directory containing sequences from A genome.
+    doc: FASTA library of repeats to filter.
     inputBinding:
       position: 101
       prefix: --infile
-  - id: keeptemp
-    type:
-      - 'null'
-      - boolean
-    doc: If set do not remove temp files.
-    inputBinding:
-      position: 101
-      prefix: --keeptemp
-  - id: loglevel
-    type:
-      - 'null'
-      - string
-    doc: Set the logging level.
-    inputBinding:
-      position: 101
-      prefix: --loglevel
-  - id: maxtandem
-    type:
-      - 'null'
-      - string
-    doc: "Max percentage of a sequence which may be masked by\n                  \
-      \      TRF. If exceeded, element will be discarded."
-    inputBinding:
-      position: 101
-      prefix: --maxtandem
   - id: outdir
     type:
       - 'null'
       - string
-    doc: Write output files to this directory.
+    doc: 'Write output files to this directory (default: working directory).'
     inputBinding:
       position: 101
       prefix: --outdir
-  - id: tdelta
+  - id: outfile
     type:
       - 'null'
       - string
-    doc: TRF indel penalty
+    doc: Name of the filtered output file.
     inputBinding:
       position: 101
-      prefix: --tdelta
-  - id: tmatch
+      prefix: --outfile
+  - id: keeptemp
     type:
       - 'null'
-      - string
-    doc: TRF matching weight
+      - boolean
+    doc: Do not remove temp files.
     inputBinding:
       position: 101
-      prefix: --tmatch
-  - id: tmaxperiod
-    type:
-      - 'null'
-      - string
-    doc: "TRF maximum period size to report. Note: Setting this\n                \
-      \        score too high may exclude some LTR retrotransposons.\n           \
-      \             Optimal len to exclude only SSRs is 10-50bp."
-    inputBinding:
-      position: 101
-      prefix: --tmaxperiod
-  - id: tminscore
-    type:
-      - 'null'
-      - string
-    doc: TRF minimum alignment score to report
-    inputBinding:
-      position: 101
-      prefix: --tminscore
-  - id: tmismatch
-    type:
-      - 'null'
-      - string
-    doc: TRF mismatching penalty
-    inputBinding:
-      position: 101
-      prefix: --tmismatch
-  - id: tpi
-    type:
-      - 'null'
-      - string
-    doc: TRF indel probability
-    inputBinding:
-      position: 101
-      prefix: --tPI
-  - id: tpm
-    type:
-      - 'null'
-      - string
-    doc: TRF match probability
-    inputBinding:
-      position: 101
-      prefix: --tPM
-  - id: trfpath
-    type:
-      - 'null'
-      - string
-    doc: Custom path to TRF executable if not in $PATH.
-    inputBinding:
-      position: 101
-      prefix: --TRFpath
+      prefix: --keeptemp
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: If set report LASTZ progress.
+    doc: Report progress.
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: outfile_path
-    type: string?
-    doc: Name of alignment result file.
+  - id: loglevel
+    type:
+      - 'null'
+      - string
+    doc: 'Logging level: DEBUG, INFO, WARNING, ERROR or CRITICAL.'
     inputBinding:
-      position: 102
-      prefix: --outfile
-outputs:
-  - id: outfile
+      position: 101
+      prefix: --loglevel
+  - id: TRFpath
     type:
       - 'null'
       - File
-    doc: Name of alignment result file.
+    doc: Custom path to TRF executable if not in $PATH.
+    inputBinding:
+      position: 101
+      prefix: --TRFpath
+  - id: tmatch
+    type:
+      - 'null'
+      - int
+    doc: TRF matching weight.
+    inputBinding:
+      position: 101
+      prefix: --tmatch
+  - id: tmismatch
+    type:
+      - 'null'
+      - int
+    doc: TRF mismatching penalty.
+    inputBinding:
+      position: 101
+      prefix: --tmismatch
+  - id: tdelta
+    type:
+      - 'null'
+      - int
+    doc: TRF indel penalty.
+    inputBinding:
+      position: 101
+      prefix: --tdelta
+  - id: tPM
+    type:
+      - 'null'
+      - double
+    doc: TRF match probability.
+    inputBinding:
+      position: 101
+      prefix: --tPM
+  - id: tPI
+    type:
+      - 'null'
+      - double
+    doc: TRF indel probability.
+    inputBinding:
+      position: 101
+      prefix: --tPI
+  - id: tminscore
+    type:
+      - 'null'
+      - int
+    doc: TRF minimum alignment score to report.
+    inputBinding:
+      position: 101
+      prefix: --tminscore
+  - id: tmaxperiod
+    type:
+      - 'null'
+      - int
+    doc: TRF maximum period size to report.
+    inputBinding:
+      position: 101
+      prefix: --tmaxperiod
+  - id: maxtandem
+    type:
+      - 'null'
+      - double
+    doc: Max percentage which may be masked by TRF; if exceeded, the element is discarded.
+    inputBinding:
+      position: 101
+      prefix: --maxtandem
+outputs:
+  - id: filtered
+    type:
+      - 'null'
+      - File
+    doc: Filtered FASTA library.
     outputBinding:
-      glob: $(inputs.outfile_path)
-  - id: outdir_dir
+      glob: '$(inputs.outdir ? inputs.outdir + ''/'' + inputs.outfile : inputs.outfile)'
+  - id: out_dir
     type:
       - 'null'
       - Directory
-    doc: Write output files to this directory.
+    doc: Output directory.
     outputBinding:
       glob: $(inputs.outdir)
 requirements:

@@ -47,6 +47,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -oe
+  - id: output_directory
+    type: string
+    doc: output directory to store all results.
+    inputBinding:
+      position: 101
+      prefix: -o
   - id: paired_end
     type:
       - 'null'
@@ -120,11 +126,11 @@ inputs:
       position: 101
       prefix: -u
 outputs:
-  - id: output_directory
+  - id: output_directory_dir
     type:
       - 'null'
       - Directory
-    doc: output directory to store all results.
+    doc: output directory with all results.
     outputBinding:
       glob: $(inputs.output_directory)
 hints:

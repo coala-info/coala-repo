@@ -1,5 +1,11 @@
 # novoloci CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| novoloci | PASS | 16p13 demo (ONT reads), target shortened to 150 kb: two haplotype assemblies of about 163 kb each |
+
 ## novoloci
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # nohuman CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nohuman | Not completed | needs the large human k-mer database (several GB); only the dependency check ran |
+
 ## nohuman
 
 ### Tool Description

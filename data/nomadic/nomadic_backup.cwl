@@ -5,16 +5,41 @@ baseCommand:
   - backup
 label: nomadic_backup
 doc: "Backup entire nomadic workspace and associated minknow data to a different folder
-  e.g. on a local hard disk drive.\n\nTool homepage: https://jasonahendry.github.io/nomadic/"
+  e.g. on a local hard disk drive.\n\nThe workspace directory is staged (writable)
+  as the working directory, because nomadic 0.7.2 crashes when --workspace is given
+  explicitly (AttributeError: 'str' object has no attribute 'is_dir'); without it
+  nomadic uses the current directory.\n\nTool homepage: https://jasonahendry.github.io/nomadic/"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: LoadListingRequirement
+    loadListing: deep_listing
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return inputs.workspace.listing.map(function(x){ return {"entry": x, "writable": true}; }); }'
+      - entryname: $(inputs.target_dir)
+        entry: '$({"class": "Directory", "basename": inputs.target_dir, "listing": []})'
+        writable: true
 inputs:
-  - id: checksum
-    type:
-      - 'null'
-      - boolean
-    doc: Use checksum check instead of file size and modification time.
+  - id: workspace
+    type: Directory
+    doc: Path of the workspace (a directory with results, beds and metadata
+      folders). Its content is staged as the working directory.
+  - id: target_dir
+    type: string
+    doc: Path to root target backup folder, local or an SSH target like 
+      user@host:/path. The backup will go into <target>/<workspace_name>.
     inputBinding:
       position: 101
-      prefix: --checksum
+      prefix: --target_dir
+  - id: minknow_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the base minknow output directory. Only needed if the files 
+      were moved.
+    inputBinding:
+      position: 101
+      prefix: --minknow_dir
   - id: exclude_minknow
     type:
       - 'null'
@@ -31,22 +56,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --include-minknow
-  - id: minknow_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Path to the base minknow output directory. Only needed if the files 
-      were moved.
-    inputBinding:
-      position: 101
-      prefix: --minknow_dir
-  - id: target_dir
-    type: Directory
-    doc: Path to root target backup folder, local or an SSH target like 
-      user@host:/path. The backup will go into <target>/<workspace_name>.
-    inputBinding:
-      position: 101
-      prefix: --target_dir
   - id: verbose
     type:
       - 'null'
@@ -55,18 +64,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: workspace
+  - id: checksum
     type:
       - 'null'
-      - Directory
-    doc: Path of the workspace where all input/output files (beds, metadata, 
-      results) are stored. The workspace directory simplifies the use of nomadic
-      in that many arguments don't need to be listed as they are predefined in 
-      the workspace config or can be loaded from the workspace
+      - boolean
+    doc: Use checksum check instead of file size and modification time.
     inputBinding:
       position: 101
-      prefix: --workspace
+      prefix: --checksum
 outputs:
+  - id: backup_dir
+    type: Directory
+    doc: Backup folder written by nomadic
+    outputBinding:
+      glob: $(inputs.target_dir)
   - id: stdout
     type: stdout
     doc: Standard output

@@ -1,5 +1,11 @@
 # ngsfetch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngsfetch | PASS |  |
+
 ## ngsfetch
 
 ### Tool Description

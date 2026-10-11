@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ntHits
+baseCommand: nthits
 label: nthits
 doc: "Filters k-mers based on counts (cmin <= count <= cmax) in input files\n\nTool
   homepage: https://github.com/bcgsc/ntHits"
@@ -10,14 +10,14 @@ inputs:
     doc: "Output format: Bloom filter 'bf', counting Bloom filter ('cbf'), or table
       ('table')"
     inputBinding:
-      position: 1
+      position: 110
   - id: files
     type:
       type: array
       items: File
     doc: Input files
     inputBinding:
-      position: 2
+      position: 111
   - id: error_rate
     type:
       - 'null'

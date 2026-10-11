@@ -195,12 +195,17 @@ inputs:
       position: 101
       prefix: --threads
   - id: out_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Write the dynamic succinct variation
     inputBinding:
       position: 102
       prefix: --out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: out
     type:
       - 'null'
@@ -213,3 +218,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0
+stdout: odgi_paths.out

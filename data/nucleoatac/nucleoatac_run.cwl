@@ -9,6 +9,8 @@ inputs:
   - id: bam_file
     type: File
     doc: Accepts sorted BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam
@@ -21,6 +23,8 @@ inputs:
   - id: genome_seq
     type: File
     doc: Indexed fasta file
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --fasta

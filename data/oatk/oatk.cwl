@@ -160,6 +160,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .h3f
+      - pattern: .h3i
+      - pattern: .h3m
+      - pattern: .h3p
     doc: mitochondria gene annotation HMM profile database
     inputBinding:
       position: 102
@@ -192,6 +197,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .h3f
+      - pattern: .h3i
+      - pattern: .h3m
+      - pattern: .h3p
     doc: plastid gene annotation HMM profile database
     inputBinding:
       position: 102

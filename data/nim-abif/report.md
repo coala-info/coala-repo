@@ -1,5 +1,15 @@
 # nim-abif CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nim-abif_abi2fq | PASS |  |
+| nim-abif_abichromatogram | PASS |  |
+| nim-abif_abif | PASS |  |
+| nim-abif_abimerge | PASS |  |
+| nim-abif_abimetadata | PASS | viewing a tag works; editing a tag (-v, -o) crashes in a stat call inside the image |
+
 ## nim-abif_abi2fq
 
 ### Tool Description
@@ -118,6 +128,55 @@ Examples:
   abichromatogram input.ab1 -s 500 -e 1000 --width 1600
 ```
 
+
+## nim-abif_abif
+
+### Tool Description
+Reads an ABIF trace file (.ab1) and exports its base calls as a FASTA file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nim-abif:0.2.0--h7b50bb2_0
+- **Homepage**: https://github.com/quadram-institute-bioscience/nim-abif
+- **Package**: https://anaconda.org/channels/bioconda/packages/nim-abif/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: abif <trace_file.ab1> [output_file]
+```
+
+## nim-abif_abimetadata
+
+### Tool Description
+Display and modify metadata in ABIF files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nim-abif:0.2.0--h7b50bb2_0
+- **Homepage**: https://github.com/quadram-institute-bioscience/nim-abif
+- **Package**: https://anaconda.org/channels/bioconda/packages/nim-abif/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+abimetadata - Display and modify metadata in ABIF files
+
+Usage:
+  abimetadata <input.ab1> [options]
+
+Options:
+  -h, --help                 Show this help message
+  -l, --list                 List all metadata fields (default if no other option specified)
+  -t, --tag=STRING           Tag name to view or edit (e.g., "SMPL1")
+  -v, --value=STRING         New value for tag when editing (use empty string to remove)
+  -o, --output=STRING        Output file for modified ABI file (required when editing)
+  --limit=INT                Limit number of tags displayed (default: all)
+  --version                  Show version information
+  --debug                    Show additional debug information
+
+Special usage:
+  - To view a single tag in full: abimetadata <input.ab1> -t <TAG>
+  - To edit a tag: abimetadata <input.ab1> -t <TAG> -v <NEW_VALUE> -o <OUTPUT_FILE>
+```
 
 ## Metadata
 - **Skill**: generated

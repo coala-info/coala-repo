@@ -1,5 +1,15 @@
 # odamnet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| odamnet_domino | Not completed | needs the external DOMINO web server (domino.cs.tau.ac.il), which refuses connections; the command ran up to the server call |
+| odamnet_multixrank | PASS |  |
+| odamnet_networkCreation | PASS |  |
+| odamnet_networkDownloading | PASS |  |
+| odamnet_overlap | PASS |  |
+
 ## odamnet_overlap
 
 ### Tool Description

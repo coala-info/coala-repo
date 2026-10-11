@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: count
+baseCommand:
+  - ntstat
+  - count
 label: ntstat_count
 doc: "Count k-mers from sequencing data using a k-mer spectrum file.\n\nTool homepage:
   https://github.com/bcgsc/ntStat"
@@ -11,7 +13,7 @@ inputs:
       items: File
     doc: path to sequencing data file(s)
     inputBinding:
-      position: 1
+      position: 200
   - id: kmer_length
     type:
       - 'null'
@@ -73,11 +75,11 @@ inputs:
       position: 103
       prefix: -o
 outputs:
-  - id: output_file
-    type: File
-    doc: path to store output file
+  - id: output_files
+    type: File[]
+    doc: Counting Bloom filter files; ntstat count appends counts.cbf and depths.cbf to the -o name.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

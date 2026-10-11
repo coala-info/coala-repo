@@ -1,5 +1,13 @@
 # nf-core/demultiplex
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| demultiplex_demux | PASS |  |
+| demultiplex_guess | PASS |  |
+| demultiplex_match | PASS |  |
+
 ## Metadata
 
 - **Homepage:** https://nf-co.re/demultiplex/

@@ -1,5 +1,11 @@
 # nucflag CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nucflag | Not completed | runs and writes calls, but the call differs from the repo's expected output (made for NucFlag v1; image has 0.3.8) so the result cannot be confirmed |
+
 ## nucflag
 
 ### Tool Description

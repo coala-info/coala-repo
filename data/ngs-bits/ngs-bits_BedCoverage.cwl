@@ -10,6 +10,11 @@ inputs:
       type: array
       items: File
     doc: Input BAM/CRAM file(s).
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: -bam
@@ -97,15 +102,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -threads
-  - id: tool_definition_xml
-    type:
-      - 'null'
-      - boolean
-    doc: Writes a Tool Definition Xml file. The file name is the application 
-      name with the suffix '.tdx'.
-    inputBinding:
-      position: 101
-      prefix: --tdx
   - id: output_bed_file_path
     type: string
     doc: "Output BED file. If unset, writes to STDOUT. Default value: ''"

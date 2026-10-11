@@ -1,5 +1,21 @@
 # neoloop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| neoloop_add_prefix_to_cool | PASS | synthetic data: chr prefix removed from a real cool first |
+| neoloop_assemble-complexSVs | PASS |  |
+| neoloop_calculate-cnv | PASS | real SK-N-MC Hi-C (chr1, chrX, 25kb); default download fails (busybox wget lacks -L), so reference files were given through the cachefolder input |
+| neoloop_correct-cnv | PASS |  |
+| neoloop_neoloop-caller | PASS | real SK-N-MC Hi-C; Peakachu model given through the cachefolder input because the image wget lacks -L |
+| neoloop_neotad-caller | PASS |  |
+| neoloop_plot-cnv | PASS |  |
+| neoloop_prepare-SV-breakpoints | PASS | synthetic data: small planted SV table based on a real SK-N-MC translocation |
+| neoloop_searchSVbyGene | Failed | image problem: pyensembl/gtfparse crash (polars has no toggle_string_cache) |
+| neoloop_segment-cnv | PASS |  |
+| neoloop_simulate-cnv | PASS | synthetic data: the same SK-N-MC cool was used as normal and cancer map |
+
 ## neoloop_calculate-cnv
 
 ### Tool Description
@@ -253,41 +269,6 @@ options:
 ```
 
 
-## neoloop_add_prefix_to_cool.py
-
-### Tool Description
-Adds a prefix to the chromosome names in a .cool file.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0
-- **Homepage**: https://github.com/XiaoTaoWang/NeoLoopFinder
-- **Package**: https://anaconda.org/channels/bioconda/packages/neoloop/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/add_prefix_to_cool.py", line 7, in <module>
-    clr = cooler.Cooler(in_cool)
-  File "/usr/local/lib/python3.10/site-packages/cooler/api.py", line 85, in __init__
-    self._refresh()
-  File "/usr/local/lib/python3.10/site-packages/cooler/api.py", line 89, in _refresh
-    with open_hdf5(self.store, **self.open_kws) as h5:
-  File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
-    return next(self.gen)
-  File "/usr/local/lib/python3.10/site-packages/cooler/util.py", line 525, in open_hdf5
-    fh = h5py.File(fp, mode, *args, **kwargs)
-  File "/usr/local/lib/python3.10/site-packages/h5py/_hl/files.py", line 562, in __init__
-    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
-  File "/usr/local/lib/python3.10/site-packages/h5py/_hl/files.py", line 235, in make_fid
-    fid = h5f.open(name, flags, fapl=fapl)
-  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
-  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
-  File "h5py/h5f.pyx", line 102, in h5py.h5f.open
-FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '--help', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
-```
-
-
 ## neoloop_searchSVbyGene
 
 ### Tool Description
@@ -321,6 +302,188 @@ options:
   --species SPECIES     Species name of your cell line. (default: human)
 ```
 
+
+## neoloop_correct-cnv
+
+### Tool Description
+Remove copy number variation effect from cancer Hi-C.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0
+- **Homepage**: https://github.com/XiaoTaoWang/NeoLoopFinder
+- **Package**: https://anaconda.org/channels/bioconda/packages/neoloop/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: correct-cnv [-h] [-v] [-H HIC] [--cnv-file CNV_FILE]
+                   [--mad-max MAD_MAX] [--min-nnz MIN_NNZ]
+                   [--ignore-diags IGNORE_DIAGS] [--nproc NPROC] [-f]
+                   [--logFile LOGFILE]
+
+Remove copy number variation effect from cancer Hi-C.
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         Print version number and exit.
+  -H HIC, --hic HIC     Cool URI. (default: None)
+  --cnv-file CNV_FILE   Copy number segmentation in bedGraph format. (default:
+                        None)
+  --mad-max MAD_MAX     Ignore bins from the contact matrix using the 'MAD-
+                        max' filter. Increase the value of this parameter to
+                        include more bins to be considered in matrix
+                        balancing. Setting this parameter to 0 will ignore the
+                        'MAD-max' filter. (default: 5)
+  --min-nnz MIN_NNZ     Ignore bins from the contact matrix whose marginal
+                        number of nonzeros is less than this number. (default:
+                        10)
+  --ignore-diags IGNORE_DIAGS
+                        Number of diagonals of the contact matrix to ignore.
+                        For example, 0 ignores nothing, 1 ignores the main
+                        diagonal, and 2 ignores diagonals (-1, 0, 1).
+                        (default: 1)
+  --nproc NPROC         Number of worker processes. (default: 1)
+  -f, --force           When specified, overwrite the target bias vector,
+                        "sweight", if it already exists. (default: False)
+  --logFile LOGFILE     Logging file name. (default: cnv-norm.log)
+```
+
+## neoloop_plot-cnv
+
+### Tool Description
+Plot genome-wide CNV profiles and segments.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0
+- **Homepage**: https://github.com/XiaoTaoWang/NeoLoopFinder
+- **Package**: https://anaconda.org/channels/bioconda/packages/neoloop/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: plot-cnv [-h] [-v] [--cnv-profile CNV_PROFILE]
+                [--cnv-segment CNV_SEGMENT]
+                [--output-figure-name OUTPUT_FIGURE_NAME] [-C [CHROMS ...]]
+                [--dot-size DOT_SIZE] [--dot-alpha DOT_ALPHA]
+                [--line-width LINE_WIDTH] [--boundary-width BOUNDARY_WIDTH]
+                [--label-size LABEL_SIZE] [--tick-label-size TICK_LABEL_SIZE]
+                [--maximum-value MAXIMUM_VALUE]
+                [--minimum-value MINIMUM_VALUE] [--fig-width FIG_WIDTH]
+                [--fig-height FIG_HEIGHT] [--dpi DPI] [--clean-mode]
+
+Plot genome-wide CNV profiles and segments.
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         Print version number and exit.
+  --cnv-profile CNV_PROFILE
+                        Copy number profile in bedGraph format. (default:
+                        None)
+  --cnv-segment CNV_SEGMENT
+                        Copy number segmentation in bedGraph format. Optional
+                        (default: None)
+  --output-figure-name OUTPUT_FIGURE_NAME
+                        Output file path. (default: None)
+  -C [CHROMS ...], --chroms [CHROMS ...]
+                        List of chromosome labels. Only Hi-C data within the
+                        specified chromosomes will be included. Specially, "#"
+                        stands for chromosomes with numerical labels. "--
+                        chroms" with zero argument will include all chromosome
+                        data. (default: ['#', 'X'])
+  --dot-size DOT_SIZE   Size of the dots. (default: 0.5)
+  --dot-alpha DOT_ALPHA
+                        The alpha blending value of the dots, between 0
+                        (transparent) and 1 (opaque). (default: 0.1)
+  --line-width LINE_WIDTH
+                        Width of the CNV segment lines. (default: 1)
+  --boundary-width BOUNDARY_WIDTH
+                        Width of the chromosome boundaries. (default: 1)
+  --label-size LABEL_SIZE
+                        Label fontsize. (default: 6)
+  --tick-label-size TICK_LABEL_SIZE
+                        Fontsize of the tick labels. (default: 3)
+  --maximum-value MAXIMUM_VALUE
+                        Maximum value. (default: None)
+  --minimum-value MINIMUM_VALUE
+                        Minimum value. (default: None)
+  --fig-width FIG_WIDTH
+                        Width of the figure. (default: 5)
+  --fig-height FIG_HEIGHT
+                        Height of the figure. (default: 1)
+  --dpi DPI
+  --clean-mode
+```
+
+## neoloop_simulate-cnv
+
+### Tool Description
+Generate a Hi-C matrix given a normal Hi-C cool file and a genomic CNV profile.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0
+- **Homepage**: https://github.com/XiaoTaoWang/NeoLoopFinder
+- **Package**: https://anaconda.org/channels/bioconda/packages/neoloop/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: simulate-cnv [-h] [-v] [--normal-cool NORMAL_COOL]
+                    [--cancer-cool CANCER_COOL] [--cnv-file CNV_FILE]
+                    [--output OUTPUT] [--exclude [EXCLUDE ...]]
+                    [--ploidy PLOIDY] [--nproc NPROC] [--logFile LOGFILE]
+
+Generate a Hi-C matrix given a normal Hi-C cool file and a genomic CNV profile
+in bedGraph format.
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         Print version number and exit.
+  --normal-cool NORMAL_COOL
+                        Cool URI of a normal cell (default: None)
+  --cancer-cool CANCER_COOL
+                        Cool URI of a cancer cell (default: None)
+  --cnv-file CNV_FILE   Copy number profile from the same cancer cell.
+                        (default: None)
+  --output OUTPUT       Output folder name. (default: None)
+  --exclude [EXCLUDE ...]
+                        List of chromosomes to exclude. (default: ['chrY',
+                        'chrM'])
+  --ploidy PLOIDY       Ploidy of the cancer genome (default: 3)
+  --nproc NPROC         Number of worker processes. (default: 1)
+  --logFile LOGFILE     Logging file name. (default: cnvsim.log)
+```
+
+## neoloop_add_prefix_to_cool
+
+### Tool Description
+Add the chr prefix to the chromosome names of a cool file in place.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0
+- **Homepage**: https://github.com/XiaoTaoWang/NeoLoopFinder
+- **Package**: https://anaconda.org/channels/bioconda/packages/neoloop/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: add_prefix_to_cool.py <cool file>   (adds the chr prefix to all chromosome names in place)
+```
+
+## neoloop_prepare-SV-breakpoints
+
+### Tool Description
+Convert an SV table to the break point list used by assemble-complexSVs.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0
+- **Homepage**: https://github.com/XiaoTaoWang/NeoLoopFinder
+- **Package**: https://anaconda.org/channels/bioconda/packages/neoloop/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: python prepare-SV-breakpoints.py <input SV table> <output break points>
+```
 
 ## Metadata
 - **Skill**: generated

@@ -10,20 +10,12 @@ inputs:
     doc: The netcdf input file.
     inputBinding:
       position: 1
-  - id: output_tabular_file_path
-    type: string
-    doc: Output or path parameter `output_tabular_file_path`
-    inputBinding:
-      position: 101
-      prefix: --output-tabular-file
 outputs:
   - id: output_tabular_file
-    type:
-      - 'null'
-      - File
-    doc: Output tabular file containing variable and dimension information.
+    type: File
+    doc: Tabular file variables.tabular with one line per variable (name, number of dimensions, then each dimension name and size). The tool always writes this fixed name.
     outputBinding:
-      glob: $(inputs.output_tabular_file_path)
+      glob: variables.tabular
 requirements:
   - class: InlineJavascriptRequirement
 hints:

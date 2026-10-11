@@ -153,8 +153,6 @@ inputs:
   - id: reference
     type: File
     doc: Path to the reference genome (FASTA/Q, can be gzipped)
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -296,6 +294,7 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
+    doc: Output SAM file (default stdout)
     inputBinding:
       position: 102
       prefix: --output

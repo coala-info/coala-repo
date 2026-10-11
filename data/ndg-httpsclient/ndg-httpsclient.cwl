@@ -10,22 +10,30 @@ inputs:
     doc: The URL to fetch
     inputBinding:
       position: 1
-  - id: ca_certificate
-    type:
-      - 'null'
-      - File
-    doc: CA certificate file
-    inputBinding:
-      position: 102
-      prefix: --ca-certificate
   - id: certificate
     type:
       - 'null'
       - File
-    doc: Certificate file
+    doc: Certificate file - defaults to $HOME/credentials.pem
     inputBinding:
       position: 102
       prefix: --certificate
+  - id: private_key
+    type:
+      - 'null'
+      - File
+    doc: Private key file - defaults to the certificate file
+    inputBinding:
+      position: 102
+      prefix: --private-key
+  - id: ca_certificate_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Trusted CA certificate file directory
+    inputBinding:
+      position: 102
+      prefix: --ca-certificate-dir
   - id: debug
     type:
       - 'null'
@@ -34,18 +42,61 @@ inputs:
     inputBinding:
       position: 102
       prefix: --debug
-  - id: private_key
+  - id: post_data_file
     type:
       - 'null'
       - File
-    doc: Private key file
+    doc: POST data file
     inputBinding:
       position: 102
-      prefix: --private-key
+      prefix: --post-data-file
+  - id: fetch
+    type:
+      - 'null'
+      - string
+    doc: Output file
+    inputBinding:
+      position: 102
+      prefix: --fetch
+  - id: no_verify_peer
+    type:
+      - 'null'
+      - boolean
+    doc: Skip verification of peer certificate
+    inputBinding:
+      position: 102
+      prefix: --no-verify-peer
+  - id: basicauth
+    type:
+      - 'null'
+      - string
+    doc: HTTP authentication credentials, as USER:PASSWD
+    inputBinding:
+      position: 102
+      prefix: --basicauth
+  - id: header
+    type:
+      - 'null'
+      - string
+    doc: "Add HTTP header to request, as 'HEADER: VALUE'"
+    inputBinding:
+      position: 102
+      prefix: --header
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: fetched_file
+    type:
+      - 'null'
+      - File
+    doc: Output file written with --fetch
+    outputBinding:
+      glob: '$(inputs.fetch ? [inputs.fetch] : [])'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ndg-httpsclient:0.4.2--py36_0

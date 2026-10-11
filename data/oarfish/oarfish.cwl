@@ -96,7 +96,7 @@ inputs:
   - id: index_out
     type:
       - 'null'
-      - Directory
+      - string
     doc: path where minimap2 index will be written (if provided)
     inputBinding:
       position: 101
@@ -277,18 +277,30 @@ inputs:
       prefix: --write-assignment-probs=
       separate: false
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: location where output quantification file should be written (prefix of 
+      the output files)
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
     type:
+      type: array
+      items: File
+    doc: Quantification files written with the output prefix (.quant, 
+      .meta_info.json, and optional .infreps.pq, .ambig_info.tsv, .prob files)
+    outputBinding:
+      glob: "$(inputs.output_path ? inputs.output_path + '*' : 'no_output_prefix_given')"
+  - id: index_out_file
+    type:
       - 'null'
       - File
-    doc: location where output quantification file should be written
+    doc: minimap2 index written when index_out is given
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "$(inputs.index_out ? inputs.index_out : 'no_index_out_given')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

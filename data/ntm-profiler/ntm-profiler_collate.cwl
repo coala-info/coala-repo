@@ -112,9 +112,18 @@ inputs:
       position: 101
       prefix: --temp
 outputs:
+  - id: collated
+    type: File[]
+    doc: Collated results tables (default name ntmprofiler.collate.*, or the outfile name)
+    outputBinding:
+      glob:
+        - ntmprofiler.collate.*
+        - $(inputs.outfile)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntm-profiler:0.8.1--pyhdfd78af_0

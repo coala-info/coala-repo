@@ -55,8 +55,7 @@ inputs:
   - id: graph_pos
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: A graph position, e.g. 42,10,+ or 302,0,-.
     inputBinding:
       position: 101
@@ -101,8 +100,7 @@ inputs:
   - id: path_pos
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: A path position, e.g. chr8,1337,+ or chrZ,3929,-.
     inputBinding:
       position: 101

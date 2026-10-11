@@ -14,13 +14,6 @@ inputs:
     doc: Reverse input AB1 file
     inputBinding:
       position: 2
-  - id: output_fastq
-    type:
-      - 'null'
-      - string
-    doc: Output FASTQ file
-    inputBinding:
-      position: 3
   - id: join
     type:
       - 'null'
@@ -119,17 +112,19 @@ inputs:
       position: 104
       prefix: --window
 outputs:
-  - id: stdout
+  - id: merged_stdout
     type: stdout
-    doc: Standard output
+    doc: Merged FASTQ written to standard output (empty when output_file is given)
   - id: output_fastq_out
     type:
       - 'null'
       - File
     doc: Output FASTQ file
     outputBinding:
-      glob: $(inputs.output_fastq)
+      glob: $(inputs.output_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nim-abif:0.2.0--h7b50bb2_0
-stdout: nim-abif_abimerge.out
+stdout: nim-abif_abimerge.fastq

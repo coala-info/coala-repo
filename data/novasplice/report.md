@@ -1,5 +1,11 @@
 # novasplice CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| novasplice | PASS |  |
+
 ## novasplice
 
 ### Tool Description

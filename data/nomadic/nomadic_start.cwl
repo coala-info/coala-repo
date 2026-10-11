@@ -16,15 +16,26 @@ inputs:
     inputBinding:
       position: 1
   - id: workspace
-    type: Directory
+    type: string
     doc: Path to workspace.
     inputBinding:
       position: 102
       prefix: --workspace
 outputs:
+  - id: workspace_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Workspace folder created by nomadic
+    outputBinding:
+      glob: $(inputs.workspace)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nomadic:0.7.2--pyhdfd78af_0

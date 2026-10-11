@@ -92,7 +92,7 @@ inputs:
   - id: log_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Customize the file directory of logs. If this value is not provided or 
       the provided directory does not exist, logs will be saved to 
       NDA/nda-tools/vtcmd/logs inside your root folder.
@@ -191,6 +191,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nda-tools:0.6.0--pyh7e72e81_0

@@ -11,6 +11,9 @@ inputs:
       type: array
       items: File
     doc: Next-generation sequencing files to process (BAM or FASTQ).
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: consider_unannotated_references_novel
@@ -55,6 +58,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --gene-model
+      valueFrom: $(self.basename)
   - id: junction_files_dir
     type:
       - 'null'
@@ -108,6 +112,14 @@ outputs:
     doc: Write to filename rather than standard out.
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: junction_files
+    type:
+      type: array
+      items: File
+    doc: Annotated junction files (<input>.junctions.tsv) written to the working
+      directory when junction_files_dir is not given
+    outputBinding:
+      glob: '*.junctions.tsv'
   - id: junction_files_dir_dir
     type:
       - 'null'
@@ -117,6 +129,10 @@ outputs:
       glob: $(inputs.junction_files_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.gene_model)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngsderive:4.0.0--pyhdfd78af_0

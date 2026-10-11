@@ -37,6 +37,11 @@ inputs:
       items: File
     doc: Input variant lists in VCF format (two or more). If only one file is 
       given, each line in this file is interpreted as an input file path.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: -in
@@ -78,6 +83,9 @@ inputs:
       - 'null'
       - File
     doc: Reference genome for CRAM support (mandatory if CRAM is used).
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: -ref

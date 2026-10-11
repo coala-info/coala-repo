@@ -6,6 +6,9 @@ baseCommand:
 label: nimnexus_trim
 doc: "Trim the fastq reads\n\nTool homepage: https://github.com/avsecz/nimnexus"
 inputs:
+  - id: fastq
+    type: File
+    doc: Input FASTQ reads (plain text, decompress gzip files first), read from standard input
   - id: barcode
     type: string
     doc: Barcode sequences (comma-separated) that follow random barcode
@@ -36,10 +39,13 @@ inputs:
       position: 102
       prefix: --trim
 outputs:
-  - id: stdout
+  - id: trimmed_fastq
     type: stdout
-    doc: Standard output
+    doc: Trimmed FASTQ reads
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nimnexus:0.1.1--hcb20899_3
-stdout: nimnexus_trim.out
+stdin: $(inputs.fastq.path)
+stdout: nimnexus_trim.fastq

@@ -1,5 +1,35 @@
 # ngs-bits CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngs-bits_BamClipOverlap | PASS |  |
+| ngs-bits_BamFilter | PASS |  |
+| ngs-bits_BamToFastq | PASS |  |
+| ngs-bits_BedAnnotateGC | PASS |  |
+| ngs-bits_BedAnnotateGenes | Not completed | needs an NGSD database (MySQL) with gene annotations; no usable test database |
+| ngs-bits_BedCoverage | PASS |  |
+| ngs-bits_BedHighCoverage | PASS |  |
+| ngs-bits_BedLowCoverage | PASS |  |
+| ngs-bits_BedSort | PASS |  |
+| ngs-bits_FastaFromBam | PASS | synthetic data: M5 tag added to the header of a real BAM; output sequence equals the reference |
+| ngs-bits_MappingQC | PASS | ROI mode checked on SARS-CoV-2 data (mapped 98.5 percent, depth 0.93 match samtools); -wgs with -build non_human prints -inf depth |
+| ngs-bits_QcToTsv | PASS |  |
+| ngs-bits_ReadQC | PASS |  |
+| ngs-bits_RohHunter | PASS |  |
+| ngs-bits_SampleAncestry | PASS |  |
+| ngs-bits_SampleGender | PASS |  |
+| ngs-bits_SampleSimilarity | PASS | VCF mode matches the repo expected output; BAM mode gave zero overlap without an hg38 reference (not verified) |
+| ngs-bits_SeqPurge | PASS |  |
+| ngs-bits_UpdHunter | PASS |  |
+| ngs-bits_VariantQC | PASS |  |
+| ngs-bits_VcfAdd | PASS |  |
+| ngs-bits_VcfAnnotateConsequence | Not completed | needs the hg38 reference genome FASTA (about 3 GB) that goes with the repo test data; no small Ensembl-style test set available |
+| ngs-bits_VcfAnnotateFromBed | PASS |  |
+| ngs-bits_VcfAnnotateFromVcf | PASS |  |
+| ngs-bits_VcfSort | PASS |  |
+
 ## ngs-bits_ReadQC
 
 ### Tool Description

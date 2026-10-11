@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kuberun
+baseCommand: [nextflow, kuberun]
 label: nextflow_kuberun
 doc: "Execute a workflow in a Kubernetes cluster (experimental)\n\nTool homepage:
   https://github.com/nextflow-io/nextflow"
@@ -37,7 +37,7 @@ inputs:
   - id: deep_clone
     type:
       - 'null'
-      - boolean
+      - int
     doc: Create a shallow clone of the specified depth
     inputBinding:
       position: 102
@@ -82,6 +82,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -e.
+      separate: false
   - id: exports_env
     type:
       - 'null'
@@ -220,6 +221,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -process.
+      separate: false
   - id: profile
     type:
       - 'null'

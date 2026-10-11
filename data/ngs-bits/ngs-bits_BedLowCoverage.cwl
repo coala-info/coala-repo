@@ -21,6 +21,11 @@ inputs:
   - id: input_bam
     type: File
     doc: Input BAM/CRAM file.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: -bam

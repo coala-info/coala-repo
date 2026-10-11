@@ -1,5 +1,14 @@
 # neat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| neat_gen-mut-model | PASS | H1N1 reference plus VCF gives a valid mutation model and trinucleotide file |
+| neat_model-fraglen | PASS | paired-end BAM gives fragment model (mean 192, sd 52), matches BAM insert sizes |
+| neat_model-seq-err | PASS | plain fastq gives an error model; gzip fastq crashes (tool expects bgzip blocks) |
+| neat_read-simulator | PASS | H1N1 reference: 350 fastq reads of 100 bp, 347 match the reference exactly (shorter than the 5x coverage asked) |
+
 ## neat_gen-mut-model
 
 ### Tool Description

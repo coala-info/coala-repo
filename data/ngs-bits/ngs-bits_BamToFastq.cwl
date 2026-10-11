@@ -79,21 +79,19 @@ inputs:
       position: 101
       prefix: -write_buffer_size
   - id: output_read1_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_read1_path`
+    type: string
+    doc: Read 1 output FASTQ.GZ file.
     inputBinding:
       position: 102
-      prefix: --output-read1
+      prefix: -out1
   - id: output_read2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_read2_path`
+    doc: Read 2 output FASTQ.GZ file (required for pair-end samples).
     inputBinding:
       position: 103
-      prefix: --output-read2
+      prefix: -out2
 outputs:
   - id: output_read1
     type: File

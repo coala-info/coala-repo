@@ -48,6 +48,20 @@ outputs:
     doc: Output file for statistics.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: report_html
+    type:
+      - 'null'
+      - File
+    doc: HTML report written when report is set (output file name with the extension replaced by .html)
+    outputBinding:
+      glob: "$(inputs.output_file_path.replace(/\\.[^.\\/]*$/, '') + '.html')"
+  - id: report_plots
+    type:
+      type: array
+      items: File
+    doc: Plot files written when report is set (output file stem followed by _chromosome_distribution, _sv_sizes and _sv_types as png and svg)
+    outputBinding:
+      glob: "$(inputs.output_file_path.replace(/\\.[^.\\/]*$/, '') + '_*')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

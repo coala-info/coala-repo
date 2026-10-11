@@ -1,5 +1,11 @@
 # nopilesum CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nopilesum | PASS |  |
+
 ## nopilesum
 
 ### Tool Description

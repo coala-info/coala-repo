@@ -138,10 +138,40 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: reads_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Read files whose names start with the reads prefix; staged in the
+      working directory because ntroot picks up reads there by prefix.
 outputs:
+  - id: ancestry_predictions
+    type: File[]
+    doc: Ancestry prediction tables (tsv) written by ntroot
+    outputBinding:
+      glob: '*ancestry-predictions*'
+  - id: lai_files
+    type: File[]
+    doc: Local ancestry tables and interactive HTML (with --lai)
+    outputBinding:
+      glob:
+        - '*ntroot-lai*'
+  - id: variant_files
+    type: File[]
+    doc: Variant call and cross-reference VCF files
+    outputBinding:
+      glob:
+        - '*variants.vcf'
+        - '*cross-ref.vcf'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ var l = (inputs.reads_files || []).slice(); [inputs.reference_genome, inputs.custom_vcf, inputs.input_vcf].forEach(function(f){ if (f) l.push(f); }); (inputs.genome || []).forEach(function(f){ l.push(f); }); return l.map(function(x){ return {"entry": x, "writable": true}; }); }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntroot:1.1.6--py313pl5321hdfd78af_0

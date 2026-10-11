@@ -9,6 +9,8 @@ inputs:
   - id: bam_file
     type: File
     doc: Accepts sorted BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam
@@ -38,6 +40,8 @@ inputs:
       - 'null'
       - File
     doc: Indexed fasta file
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --fasta
@@ -87,8 +91,11 @@ inputs:
       - File
     doc: "bgzip compressed, tabix-indexed bedgraph file with\nocccupancy track. Otherwise
       occ not determined for nuc\npositions."
+    secondaryFiles:
+      - .tbi
     inputBinding:
       position: 101
+      valueFrom: $(self.basename)
       prefix: --occ_track
   - id: redundant_sep
     type:
@@ -131,6 +138,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write_all
+  - id: occ_bound_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Lower and upper bound occupancy tracks (NAME.occ.lower_bound.bedgraph.gz
+      and NAME.occ.upper_bound.bedgraph.gz, with .tbi indexes) written by occ. The
+      tool opens them by name beside the occ track, so they are staged together.
 outputs:
   - id: stdout
     type: stdout
@@ -142,6 +157,11 @@ outputs:
     doc: Files written with the prefix given in basename
     outputBinding:
       glob: $(inputs.basename)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ var l = []; if (inputs.occ_file) { l.push(inputs.occ_file); } (inputs.occ_bound_files || []).forEach(function(f){ l.push(f); }); return l; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nucleoatac:0.3.4--py27hf119a78_5

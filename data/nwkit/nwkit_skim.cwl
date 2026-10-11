@@ -131,6 +131,22 @@ outputs:
     doc: Output newick file. Use "-" for STDOUT.
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: groupfile_all
+    type:
+      - 'null'
+      - File
+    doc: Group assignment of all leaves, written when output_groupfile is yes 
+      (<outfile without .nwk>.all.tsv).
+    outputBinding:
+      glob: $(inputs.outfile_path.replace(/\.nwk$/, '') + '.all.tsv')
+  - id: groupfile_sampled
+    type:
+      - 'null'
+      - File
+    doc: Group assignment of the sampled leaves, written when output_groupfile 
+      is yes (<outfile without .nwk>.sampled.tsv).
+    outputBinding:
+      glob: $(inputs.outfile_path.replace(/\.nwk$/, '') + '.sampled.tsv')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

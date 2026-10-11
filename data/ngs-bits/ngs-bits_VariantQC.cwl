@@ -44,15 +44,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --settings
-  - id: tool_definition_xml
-    type:
-      - 'null'
-      - boolean
-    doc: Writes a Tool Definition Xml file. The file name is the application 
-      name with the suffix '.tdx'.
-    inputBinding:
-      position: 101
-      prefix: --tdx
   - id: write_txt
     type:
       - 'null'

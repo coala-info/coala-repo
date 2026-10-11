@@ -11,6 +11,9 @@ inputs:
       type: array
       items: File
     doc: Next-generation sequencing files to process (BAM or FASTQ).
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: debug
@@ -22,13 +25,12 @@ inputs:
       position: 102
       prefix: --debug
   - id: gene_model
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Gene model as a GFF/GTF file.
     inputBinding:
       position: 102
       prefix: --gene-model
+      valueFrom: $(self.basename)
   - id: max_iterations_per_try
     type:
       - 'null'
@@ -127,6 +129,10 @@ outputs:
       glob: $(inputs.outfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.gene_model)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngsderive:4.0.0--pyhdfd78af_0

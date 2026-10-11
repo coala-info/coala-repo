@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./NGmerge
+baseCommand: NGmerge
 label: ngmerge_NGmerge
 doc: "Merges paired-end reads from FASTQ files.\n\nTool homepage: https://github.com/harvardinformatics/NGmerge"
 inputs:
@@ -23,7 +23,7 @@ inputs:
   - id: dovetailed_reads_log
     type:
       - 'null'
-      - File
+      - string
     doc: Log file for dovetailed reads (adapter sequences)
     inputBinding:
       position: 101
@@ -47,7 +47,7 @@ inputs:
   - id: formatted_alignments_log
     type:
       - 'null'
-      - File
+      - string
     doc: Log file for formatted alignments of merged reads
     inputBinding:
       position: 101
@@ -85,7 +85,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log file for stitching results of each read pair
     inputBinding:
       position: 101
@@ -195,9 +195,7 @@ inputs:
       position: 102
       prefix: -f
   - id: output_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: "<file>       Output FASTQ file(s): - in 'stitch' mode (def.), the file of
       merged reads - in 'adapter-removal' mode (-a) or 'validate' mode (-r), the output
       files will be <file>_1.fastq and <file>_2.fastq"
@@ -205,23 +203,48 @@ inputs:
       position: 103
       prefix: -o
 outputs:
-  - id: output_file
-    type: File
-    doc: "Output FASTQ file(s): - in 'stitch' mode (def.), the file of merged reads
-      - in 'adapter-removal' mode (-a) or 'validate' mode (-r), the output files will
-      be <file>_1.fastq and <file>_2.fastq"
+  - id: run_log
+    type: stderr
+    doc: Status messages and counts (with -v)
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: "Merged reads (stitch mode; a .gz suffix is added for gzipped input or -z), or <file>_1.fastq and <file>_2.fastq (adapter-removal or validate mode)"
     outputBinding:
-      glob: $(inputs.output_file_path)
-  - id: failed_stitching_file
+      glob: $(inputs.output_file_path)*
+  - id: failed_stitching_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTQ files for reads that failed stitching (<file>_1.fastq and <file>_2.fastq)
+    outputBinding:
+      glob: $(inputs.failed_stitching_file_path)_*
+  - id: stitching_log
     type:
       - 'null'
       - File
-    doc: FASTQ files for reads that failed stitching (output as <file>_1.fastq 
-      and <file>_2.fastq)
+    doc: Log file for stitching results of each read pair
     outputBinding:
-      glob: $(inputs.failed_stitching_file_path)
+      glob: $(inputs.log_file)
+  - id: dovetailed_log
+    type:
+      - 'null'
+      - File
+    doc: Log file for dovetailed reads (adapter sequences)
+    outputBinding:
+      glob: $(inputs.dovetailed_reads_log)
+  - id: alignments_log
+    type:
+      - 'null'
+      - File
+    doc: Log file for formatted alignments of merged reads
+    outputBinding:
+      glob: $(inputs.formatted_alignments_log)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngmerge:0.5--h89d970f_0
+stderr: ngmerge_NGmerge.err

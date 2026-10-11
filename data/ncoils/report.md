@@ -1,5 +1,11 @@
 # ncoils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ncoils | PASS | GCN4 yeast protein: coil predicted at the known C-terminal leucine zipper |
+
 ## ncoils
 
 ### Tool Description

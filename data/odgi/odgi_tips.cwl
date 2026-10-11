@@ -104,13 +104,18 @@ inputs:
       position: 101
       prefix: --threads
   - id: not_visited_tsv_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: =[FILE]          Write target path(s) that do not visit the query 
       path(s) to this FILE.
     inputBinding:
       position: 102
       prefix: --not-visited-tsv
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: not_visited_tsv_file
     type:
       - 'null'
@@ -123,3 +128,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0
+stdout: odgi_tips.out

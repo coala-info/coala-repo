@@ -1,5 +1,11 @@
 # ngless CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngless | PASS |  |
+
 ## ngless
 
 ### Tool Description

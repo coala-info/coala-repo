@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: filter
+baseCommand:
+  - ntstat
+  - filter
 label: ntstat_filter
 doc: "Filters k-mer spectra based on various criteria.\n\nTool homepage: https://github.com/bcgsc/ntStat"
 inputs:
@@ -10,7 +12,7 @@ inputs:
       items: File
     doc: path to sequencing data file(s)
     inputBinding:
-      position: 1
+      position: 200
   - id: kmer_length
     type:
       - 'null'

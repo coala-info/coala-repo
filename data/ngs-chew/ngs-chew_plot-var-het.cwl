@@ -8,7 +8,7 @@ doc: "Plot var(het) metric from .npz files.\n\nTool homepage: https://github.com
 inputs:
   - id: stats_out
     type: File
-    doc: Input .npz files
+    doc: Output of 'ngs-chew stats' (tab-separated statistics table)
     inputBinding:
       position: 1
   - id: out_html

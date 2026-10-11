@@ -1,5 +1,11 @@
 # netcdf-metadata-info CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| netcdf-metadata-info | PASS | real NetCDF file (xarray air_temperature); removed invented --output-tabular-file, output is fixed variables.tabular |
+
 ## netcdf-metadata-info
 
 ### Tool Description

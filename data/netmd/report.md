@@ -1,5 +1,11 @@
 # netmd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| netmd | PASS | real GLUT1 contact files (first 33 frames of 3 replicas); --Files mode checked; the --InputPath mode reported only 1 replica for my folder layout |
+
 ## netmd
 
 ### Tool Description

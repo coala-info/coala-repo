@@ -1,5 +1,53 @@
 # odgi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| odgi_bin | PASS |  |
+| odgi_break | PASS |  |
+| odgi_build | PASS |  |
+| odgi_chop | PASS |  |
+| odgi_cover | PASS |  |
+| odgi_crush | PASS |  |
+| odgi_degree | PASS |  |
+| odgi_depth | PASS |  |
+| odgi_draw | PASS |  |
+| odgi_explode | PASS |  |
+| odgi_extract | PASS |  |
+| odgi_flatten | PASS |  |
+| odgi_flip | PASS |  |
+| odgi_groom | PASS |  |
+| odgi_heaps | PASS |  |
+| odgi_inject | PASS |  |
+| odgi_kmers | PASS |  |
+| odgi_layout | PASS |  |
+| odgi_matrix | PASS |  |
+| odgi_normalize | PASS |  |
+| odgi_overlap | PASS |  |
+| odgi_panpos | PASS |  |
+| odgi_pathindex | PASS |  |
+| odgi_paths | PASS |  |
+| odgi_pav | PASS |  |
+| odgi_position | PASS |  |
+| odgi_priv | PASS |  |
+| odgi_procbed | PASS |  |
+| odgi_prune | PASS |  |
+| odgi_server | Not completed | long-running HTTP server, not run |
+| odgi_similarity | PASS |  |
+| odgi_sort | PASS |  |
+| odgi_squeeze | PASS |  |
+| odgi_stats | PASS |  |
+| odgi_stepindex | PASS |  |
+| odgi_tension | PASS |  |
+| odgi_tips | PASS |  |
+| odgi_unchop | PASS |  |
+| odgi_unitig | PASS |  |
+| odgi_untangle | PASS |  |
+| odgi_validate | PASS |  |
+| odgi_view | PASS |  |
+| odgi_viz | PASS |  |
+
 ## odgi_bin
 
 ### Tool Description

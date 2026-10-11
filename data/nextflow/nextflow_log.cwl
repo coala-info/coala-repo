@@ -1,92 +1,104 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nextflow_log
+baseCommand: [nextflow, log]
 label: nextflow_log
-doc: "Print executions log and runtime info\n\nTool homepage: https://github.com/nextflow-io/nextflow"
+doc: "Print executions log and runtime info.
+
+Tool homepage: https://www.nextflow.io"
 inputs:
-  - id: run_name_or_session_id
-    type: string
-    doc: Run name or session id
-    inputBinding:
-      position: 1
+  - id: nextflow_dir
+    type: Directory
+    doc: "The .nextflow folder of the launch directory (execution history). It is staged in the working directory."
   - id: after
     type:
       - 'null'
-      - boolean
-    doc: Show log entries for runs executed after the specified one
+      - string
+    doc: "Show log entries for runs executed after the specified one."
     inputBinding:
-      position: 102
+      position: 1
       prefix: -after
   - id: before
     type:
       - 'null'
-      - boolean
-    doc: Show log entries for runs executed before the specified one
+      - string
+    doc: "Show log entries for runs executed before the specified one."
     inputBinding:
-      position: 102
+      position: 2
       prefix: -before
   - id: but
     type:
       - 'null'
-      - boolean
-    doc: Show log entries of all runs except the specified one
+      - string
+    doc: "Show log entries of all runs except the specified one."
     inputBinding:
-      position: 102
+      position: 3
       prefix: -but
   - id: fields
     type:
       - 'null'
       - string
-    doc: "Comma separated list of fields to include in the printed log -- Use the\n\
-      \       `-l` option to show the list of available fields"
+    doc: "Comma separated list of fields to include in the printed log."
     inputBinding:
-      position: 102
+      position: 4
       prefix: -fields
   - id: filter
     type:
       - 'null'
       - string
-    doc: "Filter log entries by a custom expression e.g. process =~ /foo.*/ &&\n \
-      \      status == 'COMPLETED'"
+    doc: "Filter log entries by a custom expression."
     inputBinding:
-      position: 102
+      position: 5
       prefix: -filter
   - id: list_fields
     type:
       - 'null'
       - boolean
-    doc: Show all available fields
+    doc: "Show all available fields."
     inputBinding:
-      position: 102
+      position: 6
       prefix: -list-fields
   - id: quiet
     type:
       - 'null'
       - boolean
-    doc: Show only run names
+    doc: "Show only run names."
     inputBinding:
-      position: 102
-      prefix: -quiet
+      position: 7
+      prefix: -q
   - id: separator_char
     type:
       - 'null'
       - string
-    doc: Character used to separate column values
+    doc: "Character used to separate column values."
     inputBinding:
-      position: 102
+      position: 8
       prefix: -s
   - id: template
     type:
       - 'null'
       - string
-    doc: Text template used to each record in the log
+    doc: "Text template used for each record in the log."
     inputBinding:
-      position: 102
+      position: 9
       prefix: -template
+  - id: run_name_or_session_id
+    type:
+      - 'null'
+      - string
+    doc: "Run name or session id."
+    inputBinding:
+      position: 10
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: .nextflow
+        entry: $(inputs.nextflow_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nextflow:25.10.4--h2a3209d_0

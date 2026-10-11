@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: query
+baseCommand:
+  - ntstat
+  - query
 label: ntstat_query
 doc: "Query ntstat database\n\nTool homepage: https://github.com/bcgsc/ntStat"
 inputs:
@@ -10,7 +12,7 @@ inputs:
       items: File
     doc: path to query data
     inputBinding:
-      position: 1
+      position: 200
   - id: bf_cbf_file
     type: File
     doc: path to BF/CBF file

@@ -1,5 +1,12 @@
 # newick_utils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| newick_utils_nw_prune | PASS | real catarrhini tree from the newick_utils repo; options moved before the positional arguments; -f flag fixed |
+| newick_utils_nw_reroot | PASS | real catarrhini_wrong tree from the newick_utils repo; options moved first; added -l and -s |
+
 ## Metadata
 - **Skill**: generated
 

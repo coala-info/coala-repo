@@ -45,7 +45,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: Write logging to this file.
     inputBinding:
       position: 101
@@ -71,6 +71,9 @@ inputs:
   - id: reference_file
     type: File
     doc: Input genome reference in fasta format
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 101
       prefix: --reference-file
@@ -104,8 +107,17 @@ outputs:
     doc: Path to output file.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Logging file, when --log is given.
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/negative_training_sampler:0.3.1--py_0

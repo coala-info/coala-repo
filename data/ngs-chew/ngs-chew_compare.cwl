@@ -10,7 +10,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Fingerprints to compare
     inputBinding:
       position: 1
@@ -56,10 +56,12 @@ outputs:
   - id: output_prefix
     type:
       - 'null'
-      - File
-    doc: Path to comparison file.
+      - type: array
+        items: File
+    doc: Comparison matrices (<prefix>.relatedness.txt, <prefix>.ibs0.txt and
+      <prefix>.mask.txt).
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path).*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

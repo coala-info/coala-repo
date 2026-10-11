@@ -12,11 +12,13 @@ inputs:
     doc: The BAMs to disambiguate
     inputBinding:
       position: 1
+      prefix: --input
   - id: output_prefix
     type: string
     doc: The output file prefix (e.g. dir/sample_prefix)
     inputBinding:
       position: 2
+      prefix: --output
   - id: async_io
     type:
       - 'null'
@@ -61,6 +63,19 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+  - id: ambiguous_alignments
+    type:
+      type: array
+      items: File
+    doc: Ambiguous per-input BAM files, written to ambiguous-alignments/ beside the output prefix
+    outputBinding:
+      glob: |-
+        ${
+          var i = inputs.output_prefix.lastIndexOf('/');
+          return (i < 0 ? '' : inputs.output_prefix.slice(0, i + 1)) + 'ambiguous-alignments/*';
+        }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neodisambiguate:1.1.1--hdfd78af_0

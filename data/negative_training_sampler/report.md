@@ -1,5 +1,11 @@
 # negative_training_sampler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| negative_training_sampler | PASS | synthetic data: planted labels on real human genome windows; added .fai secondary file and NetworkAccess |
+
 ## negative_training_sampler
 
 ### Tool Description

@@ -6,7 +6,9 @@ doc: "Extract meta information from nmrML files and create ISA-tab structure\n\n
   homepage: http://github.com/ISA-tools/nmrml2isa"
 inputs:
   - id: input_path
-    type: Directory
+    type:
+      - Directory
+      - File
     doc: input folder or archive containing nmrML files
     inputBinding:
       position: 101
@@ -44,7 +46,7 @@ inputs:
   - id: usermeta
     type:
       - 'null'
-      - string
+      - File
     doc: additional user provided metadata (JSON or XLSX format)
     inputBinding:
       position: 101
@@ -67,10 +69,10 @@ inputs:
       prefix: -W
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: out folder (a new directory will be created here)
     inputBinding:
       position: 102
-      prefix: --output-path
+      prefix: -o
 outputs:
   - id: output_path
     type: Directory

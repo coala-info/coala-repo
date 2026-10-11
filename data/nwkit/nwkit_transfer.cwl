@@ -78,24 +78,24 @@ inputs:
   - id: transfer_length
     type:
       - 'null'
-      - boolean
-    doc: transfer branch length.
+      - string
+    doc: transfer branch length. Use yes or no.
     inputBinding:
       position: 101
       prefix: --length
   - id: transfer_name
     type:
       - 'null'
-      - boolean
-    doc: transfer node names.
+      - string
+    doc: transfer node names. Use yes or no.
     inputBinding:
       position: 101
       prefix: --name
   - id: transfer_support
     type:
       - 'null'
-      - boolean
-    doc: transfer support values.
+      - string
+    doc: transfer support values. Use yes or no.
     inputBinding:
       position: 101
       prefix: --support

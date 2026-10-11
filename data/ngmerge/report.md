@@ -1,5 +1,11 @@
 # ngmerge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngmerge_NGmerge | PASS |  |
+
 ## ngmerge_NGmerge
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # nxtrim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nxtrim | PASS |  |
+
 ## nxtrim
 
 ### Tool Description

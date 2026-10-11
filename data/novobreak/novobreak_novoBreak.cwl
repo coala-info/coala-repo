@@ -23,6 +23,8 @@ inputs:
   - id: normal_bam
     type: File
     doc: Normal bam file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: -c
@@ -45,6 +47,8 @@ inputs:
   - id: tumor_bam
     type: File
     doc: Tumor bam file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: -i
@@ -60,6 +64,13 @@ outputs:
     doc: Output kmer
     outputBinding:
       glob: $(inputs.output_kmer_path)
+  - id: somatic_reads
+    type:
+      - 'null'
+      - File
+    doc: Somatic reads written by novoBreak
+    outputBinding:
+      glob: somaticreads.bam
 requirements:
   - class: InlineJavascriptRequirement
 hints:

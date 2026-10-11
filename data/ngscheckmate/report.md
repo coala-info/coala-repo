@@ -1,5 +1,15 @@
 # ngscheckmate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngscheckmate_makesnvpattern.pl | PASS |  |
+| ngscheckmate_ncm.py | Failed | image problem: BAM mode silently writes empty VCFs because the image's samtools no longer supports 'mpileup -u'; VCF mode works and its sample matching is correct. |
+| ngscheckmate_ncm_fastq.py | Failed | image problem: ncm_fastq.py is Python 2 code (file.xreadlines) and crashes on the image Python 3.12 |
+| ngscheckmate_ngscheckmate_fastq | PASS |  |
+| ngscheckmate_vaf_ncm.py | Not completed | runs, but only a few SNP sites are covered by the small FASTQ data, so no match call can be checked |
+
 ## ngscheckmate_ncm.py
 
 ### Tool Description
@@ -142,6 +152,95 @@ options:
                         -t option is for the previous NGSCheckMate version. No longer used.
 ```
 
+
+## ngscheckmate_vaf_ncm.py
+
+### Tool Description
+Computes sample matches from the VAF files written by ngscheckmate_fastq or ncm_fastq.py.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngscheckmate:1.0.1--py312pl5321h577a1d6_4
+- **Homepage**: https://github.com/parklab/NGSCheckMate
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngscheckmate/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: vaf_ncm.py [-h] -I input_dir_name -O output_dir [-N output_filename]
+                  [-f] [-nz]
+
+    NGSCheckMate v1.0
+    Usage : python vaf_ncm.py -I INPUT_DIR -O OUTPUT_DIR -N PREFIX [options]
+            python vaf_ncm.py -I ./ncm_fastq_output -O ./vaf_test -N output -f 
+            python vaf_ncm.py -I ./ncm_fastq_output -O ./vaf_test -N output2 -f -nz
+
+        Input arguments (required)
+          -I DIR        Input directory that contains the output VAF files of ngscheckmate_fastq or ncm_fastq.py.
+          -O DIR        Output directory
+
+        Options
+          -N PREFIX     Output file prefix (default : "output")
+          -f            Use strict VAF correlation cutoffs. Recommended when your data may include   
+                        related individuals (parents-child, siblings)
+          -nz           Use the mean of non-zero depths across the SNPs as a reference depth
+                        (default: Use the mean depth across all the SNPs)
+            
+
+options:
+  -h, --help            show this help message and exit
+  -I input_dir_name, --inputDir input_dir_name
+                        Inputdir name that contains ncm(VAF) files, -I dirname
+  -O output_dir, --outdir output_dir
+                        directory name for temp and output files
+  -N output_filename, --outfilename output_filename
+                        OutputFileName ( default : output ), -N filename
+  -f, --family_cutoff   apply strict correlation threshold to remove family cases
+  -nz, --nonzero        Use non-zero mean depth of target loci as reference correlation. (default: Use mean depth of all target loci)
+```
+
+## ngscheckmate_ngscheckmate_fastq
+
+### Tool Description
+Counts reads matching SNP flanking patterns in a FASTQ file and prints the variant allele fraction per SNP site.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngscheckmate:1.0.1--py312pl5321h577a1d6_4
+- **Homepage**: https://github.com/parklab/NGSCheckMate
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngscheckmate/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage : ngscheckmate_fastq <options> -1 fastqfile1 [-2 fastqfile2]  patternfile(.pt)
+
+	Input arguments (required)
+	  patternfile : a binary file containing sequences flanking representative snv sites, along with markers indicating the snv index and whether the sequence represents reference or alternative allele.
+	  -1, --fastq1 <fastq_file_1> : fastq file for SE data or first fastq file for a PE data. File can be gzipped (auto-detect).
+
+	Options
+	  -2, --fastq2 <fastq_file_2> : second fastq file for a PE data. File can be gzipped (auto-detect)
+	  -s, --ss <subsampling_rate> : subsampling rate (default 1.0)
+	  -d, --depth <desired_depth> : as an alternative to a user-defined subsampling rate, let the program compute the subsampling rate given a user-defined desired_depth and the data.
+	  -R, --reference_length <reference_length> : The reference length (default : 3E9) to be used for computing subsampling rate. If the data is NOT WGS from human, and if you're using the -d option, it is highly recommended to specify the reference length. For instance, if your data is human RNA-seq, the total reference length could be about 3% of the human genome, which can be set as 1E8.
+	  -L, --pattern_length <pattern_length> : The length of the flanking sequences being used to identify SNV sites. Default is 21bp. It is recommended not to change this value, unless you have created your own pattern file with a different pattern length.
+	  -p, --maxthread <number_of_threads> : number of threads to use (default : 1 )
+```
+
+## ngscheckmate_makesnvpattern.pl
+
+### Tool Description
+Generates a binary SNP flanking pattern file (.pt) from a SNP bed file, a genome FASTA and a bowtie index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngscheckmate:1.0.1--py312pl5321h577a1d6_4
+- **Homepage**: https://github.com/parklab/NGSCheckMate
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngscheckmate/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: /usr/local/NGSCheckMate/patterngenerator/makesnvpattern.pl bedfile genomefasta genome(bowtie)index outdir outprefix
+```
 
 ## Metadata
 - **Skill**: generated

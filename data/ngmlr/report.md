@@ -1,5 +1,11 @@
 # ngmlr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngmlr | PASS |  |
+
 ## ngmlr
 
 ### Tool Description

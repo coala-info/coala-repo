@@ -1,5 +1,11 @@
 # ngs-disambiguate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngs-disambiguate_disambiguate | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

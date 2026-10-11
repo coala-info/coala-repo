@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ngs-bits_FastaFromBam
+baseCommand: FastaFromBam
 label: ngs-bits_FastaFromBam
 doc: "Download the reference genome FASTA file for a BAM/CRAM file.\n\nTool homepage:
   https://github.com/imgag/ngs-bits"
@@ -17,6 +17,9 @@ inputs:
       - File
     doc: Reference genome FASTA file. If unset 'reference_genome' from the 
       'settings.ini' file is used.
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: -ref
@@ -51,6 +54,8 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0

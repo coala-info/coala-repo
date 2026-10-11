@@ -62,22 +62,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --target
-  - id: outfile_path
-    type: string
-    doc: 'default=-: Output newick file. Use "-" for STDOUT.'
-    inputBinding:
-      position: 102
-      prefix: --outfile
 outputs:
-  - id: outfile
-    type:
-      - 'null'
-      - File
-    doc: Output newick file. Use "-" for STDOUT.
-    outputBinding:
-      glob: $(inputs.outfile_path)
+  - id: labels
+    type: stdout
+    doc: Matching node labels, printed to standard output.
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nwkit:0.21.1--pyhdfd78af_0
+stdout: nwkit_printlabel.txt

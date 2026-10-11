@@ -169,7 +169,7 @@ inputs:
   - id: organization
     type:
       - 'null'
-      - string
+      - int
     doc: The degree of k-mer organization in the output files. This exploits the
       four-character alphabet of nucleotides to produce several k-mer output 
       files, with all k-mers in a file beginning with the same short sequence of

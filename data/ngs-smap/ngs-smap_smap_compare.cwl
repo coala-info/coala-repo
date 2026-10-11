@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: compare
+baseCommand:
+  - smap
+  - compare
 label: ngs-smap_smap_compare
 doc: "Compare merged clusters of two SMAP outputs.\n\nTool homepage: https://gitlab.com/truttink/smap"
 inputs:
@@ -15,10 +17,18 @@ inputs:
     inputBinding:
       position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Comparison tables and plots written by SMAP compare
+    outputBinding:
+      glob:
+        - "*.tsv"
+        - "*.png"
+        - "*.pdf"
+        - "*.bed"
+        - "*.txt"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-smap:5.0.1--pyhdfd78af_0
-stdout: ngs-smap_smap_compare.out

@@ -1,70 +1,20 @@
 # oakvar CWL Generation Report
 
-## oakvar_ov
+## Real Data Test
 
-### Tool Description
-OakVar. Genomic variant analysis platform.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/oakvar:2.12.25--pyhdfd78af_0
-- **Homepage**: http://www.oakvar.com
-- **Package**: https://anaconda.org/channels/bioconda/packages/oakvar/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/oakvar/overview
-- **Total Downloads**: 92.3K
-- **Last updated**: 2026-02-13
-- **GitHub**: N/A
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: ov [-h]
-          {run,report,module,gui,config,new,store,util,test,version,issue,system,license,update}
-          ...
-
-OakVar. Genomic variant analysis platform.
-https://github.com/rkimoakbioinformatics/oakvar
-
-options:
-  -h, --help            show this help message and exit
-
-Commands:
-  {run,report,module,gui,config,new,store,util,test,version,issue,system,license,update}
-    run                 Run a job
-    report              Generate a report from a job
-    module              Manages OakVar modules
-    gui                 Start the GUI
-    config              Manages OakVar configurations
-    new                 Create OakVar example input files and module templates
-    store               Publish modules to the store
-    util                OakVar utilities
-    test                Run tests on OakVar modules. `def test` should be
-                        defined in tested modules.
-    version             Show version
-    issue               Send an issue report
-    system              Commands on OakVar system
-    license             Shows license information.
-    update              Updates OakVar to the latest version.
-```
-
-
-## oakvar_ov_module_search
-
-### Tool Description
-Manage ov modules
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/oakvar:2.12.25--pyhdfd78af_0
-- **Homepage**: http://www.oakvar.com
-- **Package**: https://anaconda.org/channels/bioconda/packages/oakvar/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: ov module [-h] {install,pack,update,uninstall,info,ls,create} ...
-ov module: error: argument {install,pack,update,uninstall,info,ls,create}: invalid choice: 'search' (choose from install, pack, update, uninstall, info, ls, create)
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| oakvar_ov_gui | Not completed | starts a long-running web server (GUI) |
+| oakvar_ov_module_info | Not completed | needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed |
+| oakvar_ov_module_install | Not completed | needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed |
+| oakvar_ov_module_ls | Not completed | needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed |
+| oakvar_ov_module_update | Not completed | needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed |
+| oakvar_ov_new_exampleinput | PASS |  |
+| oakvar_ov_report | Not completed | needs a result database from ov run, which needs store modules (account required) |
+| oakvar_ov_run | Not completed | needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed |
+| oakvar_ov_system_setup | Not completed | needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed |
+| oakvar_ov_util_filtersqlite | Not completed | needs a result database from ov run, which needs store modules (account required) |
+| oakvar_ov_util_sqliteinfo | Not completed | needs a result database from ov run, which needs store modules (account required) |
 
 ## oakvar_ov_module_install
 
@@ -108,7 +58,6 @@ options:
   --file FILE           Use a file with module names to install
 ```
 
-
 ## oakvar_ov_module_update
 
 ### Tool Description
@@ -134,7 +83,6 @@ options:
   -y, --yes             Proceed without prompt
   --quiet               suppress stodout output
 ```
-
 
 ## oakvar_ov_run
 
@@ -298,7 +246,6 @@ options:
 inputs should be the first argument
 ```
 
-
 ## oakvar_ov_report
 
 ### Tool Description
@@ -373,7 +320,6 @@ options:
 dbpath must be the first argument
 ```
 
-
 ## oakvar_ov_gui
 
 ### Tool Description
@@ -406,73 +352,7 @@ options:
   --quiet          run quietly
 ```
 
-
-## oakvar_ov_system_setup
-
-### Tool Description
-OakVar system setup
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/oakvar:2.12.25--pyhdfd78af_0
-- **Homepage**: http://www.oakvar.com
-- **Package**: https://anaconda.org/channels/bioconda/packages/oakvar/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-==========================================================
- #######     ###    ##    ## ##     ##    ###    ########  
 ##     ##   ## ##   ##   ##  ##     ##   ## ##   ##     ## 
 ##     ##  ##   ##  ##  ##   ##     ##  ##   ##  ##     ## 
 ##     ## ##     ## #####    ##     ## ##     ## ########  
 ##     ## ######### ##  ##    ##   ##  ######### ##   ##   
-##     ## ##     ## ##   ##    ## ##   ##     ## ##    ##  
- #######  ##     ## ##    ##    ###    ##     ## ##     ##
-==========================================================
-                                   Oak Bioinformatics, LLC
-      Free with registration for personal and research use
-            Commercial license required for commercial use
-        Licensing and feedback: info@oakbioinformatics.com
-                                        https://oakvar.com
-
-Created /root/.oakvar/conf/system.yml.
-System configuration file: /root/.oakvar/conf/system.yml
-Created /root/.oakvar/modules.
-Created /root/.oakvar/jobs.
-Created /root/.oakvar/logs.
-Created /root/.oakvar/conf/liftover.
-Created: /root/.oakvar/oakvar.yml
-User configuration file: /root/.oakvar/oakvar.yml.
-Do you already have an OakVar store account? (y/N):
-```
-
-
-## oakvar_ov_module_info
-
-### Tool Description
-returns information of the queried module
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/oakvar:2.12.25--pyhdfd78af_0
-- **Homepage**: http://www.oakvar.com
-- **Package**: https://anaconda.org/channels/bioconda/packages/oakvar/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: ov module info [-h] [-l] [--fmt FMT] module_name
-
-positional arguments:
-  module_name  Module to get info about
-
-options:
-  -h, --help   show this help message and exit
-  -l, --local  Include local info
-  --fmt FMT    format of module information data. json or yaml
-
-returns information of the queried module
-```
-
-
-## Metadata
-- **Skill**: not generated

@@ -8,6 +8,9 @@ inputs:
   - id: hifi_map_bam
     type: File
     doc: HiFi-to-ref mapping file in sorted BAM format.
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 1
   - id: genome_fa

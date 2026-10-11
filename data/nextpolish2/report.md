@@ -1,35 +1,12 @@
 # nextpolish2 CWL Generation Report
 
-## nextpolish2_yak
+## Real Data Test
 
-### Tool Description
-yak <command> <argument>
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextpolish2:0.2.2--h74ec884_0
-- **Homepage**: https://github.com/Nextomics/NextPolish2
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextpolish2/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/nextpolish2/overview
-- **Total Downloads**: 7.0K
-- **Last updated**: 2025-11-05
-- **GitHub**: https://github.com/Nextomics/NextPolish2
-- **Stars**: N/A
-### Original Help Text
-```text
-Usage: yak <command> <argument>
-Command:
-  count     count k-mers
-  qv        evaluate quality values
-  triobin   trio binning
-  trioeval  evaluate phasing accuracy with trio
-  inspect   k-mer hash tables
-  chkerr    check errors
-  sexchr    count sex-chromosome-specific k-mers
-  version   print version number
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| nextpolish2_nextPolish2 | PASS |  |
+| nextpolish2_yak_count | PASS |  |
+| nextpolish2_yak_qv | PASS |  |
 
 ## nextpolish2_nextPolish2
 
@@ -140,6 +117,55 @@ Options:
           Print version
 ```
 
+
+## nextpolish2_yak_count
+
+### Tool Description
+Count k-mers in sequencing reads and dump the count hash table (yak format)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nextpolish2:0.2.2--h74ec884_0
+- **Homepage**: https://github.com/Nextomics/NextPolish2
+- **Package**: https://anaconda.org/channels/bioconda/packages/nextpolish2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: yak count [options] <in.fa> [in.fa]
+Options:
+  -k INT     k-mer size [31]
+  -p INT     prefix length [10]
+  -b INT     set Bloom filter size to 2**INT bits; 0 to disable [0]
+  -H INT     use INT hash functions for Bloom filter [4]
+  -t INT     number of worker threads [4]
+  -o FILE    dump the count hash table to FILE []
+  -K INT     chunk size [100m]
+Note: -b37 is recommended for human reads
+```
+
+## nextpolish2_yak_qv
+
+### Tool Description
+Estimate assembly consensus quality value (QV) with a k-mer hash table of short reads
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nextpolish2:0.2.2--h74ec884_0
+- **Homepage**: https://github.com/Nextomics/NextPolish2
+- **Package**: https://anaconda.org/channels/bioconda/packages/nextpolish2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: yak qv [options] <kmer.hash> <seq.fa>
+Options:
+  -l NUM      min sequence length [0]
+  -f FLOAT    min k-mer fraction [0.5]
+  -e FLOAT    false positive rate [0]
+  -p          print QV for each sequence
+  -E          print the positions of wrong k-mers
+  -t INT      number of threads [4]
+  -K NUM      batch size [1g]
+```
 
 ## Metadata
 - **Skill**: generated

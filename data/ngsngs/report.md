@@ -1,5 +1,11 @@
 # ngsngs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngsngs | PASS |  |
+
 ## ngsngs
 
 ### Tool Description

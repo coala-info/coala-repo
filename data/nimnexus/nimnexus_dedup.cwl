@@ -20,10 +20,10 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
-  - id: stdout
+  - id: dedup_sam
     type: stdout
-    doc: Standard output
+    doc: Deduplicated reads in SAM format
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nimnexus:0.1.1--hcb20899_3
-stdout: nimnexus_dedup.out
+stdout: nimnexus_dedup.sam

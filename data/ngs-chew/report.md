@@ -1,5 +1,15 @@
 # ngs-chew CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngs-chew_compare | PASS |  |
+| ngs-chew_fingerprint | PASS |  |
+| ngs-chew_plot-compare | PASS |  |
+| ngs-chew_plot-var-het | PASS |  |
+| ngs-chew_stats | PASS |  |
+
 ## ngs-chew_compare
 
 ### Tool Description

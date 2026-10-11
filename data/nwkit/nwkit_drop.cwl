@@ -9,24 +9,24 @@ inputs:
   - id: drop_length
     type:
       - 'null'
-      - boolean
-    doc: Drop branch length.
+      - string
+    doc: Drop branch length. Use yes or no.
     inputBinding:
       position: 101
       prefix: --length
   - id: drop_names
     type:
       - 'null'
-      - boolean
-    doc: Drop node names.
+      - string
+    doc: Drop node names. Use yes or no.
     inputBinding:
       position: 101
       prefix: --name
   - id: drop_support
     type:
       - 'null'
-      - boolean
-    doc: Drop support values.
+      - string
+    doc: Drop support values. Use yes or no.
     inputBinding:
       position: 101
       prefix: --support

@@ -1,5 +1,11 @@
 # nedbit-features-calculator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nedbit-features-calculator | PASS | first 6000 real BioGRID links with NIAPU seed genes (full network takes over 20 min): 4458 genes, degree and class match the input, features finite |
+
 ## nedbit-features-calculator
 
 ### Tool Description

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ntstat
+baseCommand:
+  - ntstat
+  - hist
 label: ntstat_hist
 doc: "Generates a histogram from k-mer spectrum data.\n\nTool homepage: https://github.com/bcgsc/ntStat"
 inputs:
@@ -108,6 +110,9 @@ inputs:
       position: 105
       prefix: --probs
 outputs:
+  - id: summary
+    type: stdout
+    doc: Estimated characteristics table written to standard output
   - id: plot
     type:
       - 'null'
@@ -134,3 +139,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntstat:1.0.1--py311he264feb_2
+stdout: ntstat_hist.out

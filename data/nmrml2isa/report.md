@@ -1,5 +1,11 @@
 # nmrml2isa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nmrml2isa | Failed | image problem: nmrml2isa crashes on every nmrML file because the image pronto version has no rchildren method |
+
 ## nmrml2isa
 
 ### Tool Description

@@ -78,13 +78,11 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_graph_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output or path parameter `output_graph_path`
     inputBinding:
       position: 102
-      prefix: --output-graph
+      prefix: --out
   - id: write_node_depth_path
     type:
       - 'null'

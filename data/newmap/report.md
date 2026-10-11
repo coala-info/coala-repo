@@ -1,5 +1,13 @@
 # newmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| newmap_index | PASS | real sarscov2 genome from nf-core test-datasets |
+| newmap_search | PASS | real sarscov2 genome from nf-core test-datasets |
+| newmap_track | PASS | real sarscov2 genome from nf-core test-datasets |
+
 ## newmap_index
 
 ### Tool Description

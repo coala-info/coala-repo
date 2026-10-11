@@ -33,37 +33,49 @@ inputs:
       position: 101
       prefix: --genome
   - id: hic_map
-    type:
-      - 'null'
-      - string
-    doc: Cool URI.
+    type: File
+    doc: Cool file (.cool, or an .mcool together with hic_group).
     inputBinding:
       position: 101
       prefix: --hic
+      valueFrom: "$(self.path)$(inputs.hic_group ? inputs.hic_group : '')"
+  - id: hic_group
+    type:
+      - 'null'
+      - string
+    doc: Group inside an .mcool file appended to the cool URI, for example ::resolutions/25000.
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Logging file name.
     inputBinding:
       position: 101
       prefix: --logFile
   - id: output_path
-    type: string?
-    doc: 'Output file path. (default: None)'
+    type: string
+    doc: Output file path (bedGraph).
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file path.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file.
+    outputBinding:
+      glob: |-
+        ${ return inputs.log_file ? inputs.log_file : 'cnv-calculation.log'; }
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0

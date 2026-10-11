@@ -1,5 +1,16 @@
 # ntm-profiler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ntm-profiler_collate | PASS |  |
+| ntm-profiler_create_resistance_db | PASS |  |
+| ntm-profiler_create_species_db | PASS | species database rebuilt from the downloaded sourmash index; sylph sketches not tested |
+| ntm-profiler_list_db | PASS |  |
+| ntm-profiler_profile | PASS | M. abscessus genome from NCBI called as M. abscessus subsp. bolletii |
+| ntm-profiler_update_db | PASS | downloads the 1.2 GB database from GitHub |
+
 ## ntm-profiler_profile
 
 ### Tool Description

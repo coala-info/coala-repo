@@ -14,15 +14,15 @@ inputs:
       position: 101
       prefix: --netUUID
   - id: network_file
-    type: File
-    doc: Network file name
+    type: string
+    doc: Network file name to write (.sif, or .gr with --simple True)
     inputBinding:
       position: 101
       prefix: --networkFile
   - id: simple
     type:
       - 'null'
-      - boolean
+      - string
     doc: Remove interaction column and header
     inputBinding:
       position: 101
@@ -31,6 +31,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: network
+    type: File
+    doc: Downloaded network file
+    outputBinding:
+      glob: $(inputs.network_file)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odamnet:1.1.0--pyhdfd78af_0

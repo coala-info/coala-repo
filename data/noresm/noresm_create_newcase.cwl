@@ -216,6 +216,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: case_files
+    type: File[]
+    doc: Case configuration files (env_*.xml, README.case) written by
+      create_newcase. The rest of the case directory holds links into the image.
+    outputBinding:
+      glob:
+        - $(inputs.case_name)/env_*.xml
+        - $(inputs.case_name)/README.case
   - id: output_root_dir
     type:
       - 'null'
@@ -223,6 +231,11 @@ outputs:
     doc: Alternative pathname for the directory where case output is written.
     outputBinding:
       glob: $(inputs.output_root)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: cwluser
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/noresm:2.0.2--py37pl5321h736fc29_1

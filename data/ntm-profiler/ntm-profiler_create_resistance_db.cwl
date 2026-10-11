@@ -13,6 +13,7 @@ inputs:
     doc: A bed file containing lineage barcode SNPs
     inputBinding:
       position: 101
+      valueFrom: $(self.basename)
       prefix: --barcode
   - id: csv
     type:
@@ -21,6 +22,7 @@ inputs:
     doc: The CSV file containing mutations
     inputBinding:
       position: 101
+      valueFrom: $(self.basename)
       prefix: --csv
   - id: custom
     type:
@@ -82,7 +84,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Storage directory
     inputBinding:
       position: 101
@@ -168,11 +170,30 @@ inputs:
       associated mutations
     inputBinding:
       position: 101
+      valueFrom: $(self.basename)
       prefix: --watchlist
+  - id: reference_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Reference files that create_resistance_db reads from the working
+      directory by fixed names (genome.fasta, genome.gff, mask.bed,
+      variables.json, snpEffectPredictor.bin).
 outputs:
+  - id: database
+    type: Directory
+    doc: New resistance database folder named after the prefix
+    outputBinding:
+      glob: $(inputs.prefix)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ var l = (inputs.reference_files || []).slice(); [inputs.csv, inputs.barcode, inputs.watchlist].forEach(function(f){ if (f) l.push(f); }); return l.map(function(x){ return {"entry": x, "writable": true}; }); }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntm-profiler:0.8.1--pyhdfd78af_0

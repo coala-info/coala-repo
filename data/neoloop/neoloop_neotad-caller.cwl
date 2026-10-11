@@ -5,9 +5,7 @@ label: neoloop_neotad-caller
 doc: "Identify neo-TADs.\n\nTool homepage: https://github.com/XiaoTaoWang/NeoLoopFinder"
 inputs:
   - id: assembly
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The assembled SV list outputed by assemble-complexSVs.
     inputBinding:
       position: 101
@@ -21,17 +19,21 @@ inputs:
       position: 101
       prefix: --balance-type
   - id: hic
-    type:
-      - 'null'
-      - string
-    doc: Cooler URI.
+    type: File
+    doc: Cool file (use hic_group for an .mcool file).
     inputBinding:
       position: 101
       prefix: --hic
+      valueFrom: "$(self.path)$(inputs.hic_group ? inputs.hic_group : '')"
+  - id: hic_group
+    type:
+      - 'null'
+      - string
+    doc: Group inside an .mcool file appended to the cool URI, for example ::resolutions/25000.
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Logging file name.
     inputBinding:
       position: 101
@@ -44,11 +46,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nproc
-  - id: output
-    type:
-      - 'null'
-      - string
-    doc: Output path.
+  - id: output_path
+    type: string
+    doc: Output file path.
     inputBinding:
       position: 101
       prefix: --output
@@ -77,17 +77,21 @@ inputs:
       position: 101
       prefix: --window-size
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_dir
+  - id: output
+    type: File
+    doc: Output file with the neo-TAD domains.
+    outputBinding:
+      glob: $(inputs.output_path)
+  - id: log_output
     type:
       - 'null'
-      - Directory
-    doc: Output path.
+      - File
+    doc: Log file.
     outputBinding:
-      glob: $(inputs.output)
+      glob: |-
+        ${ return inputs.logfile ? inputs.logfile : 'neotad.log'; }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0
-stdout: neoloop_neotad-caller.out

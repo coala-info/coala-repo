@@ -1,5 +1,11 @@
 # notramp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| notramp | Failed | image problem: --figures silently does nothing because matplotlib is missing in the image; read capping and clipping are correct. |
+
 ## notramp
 
 ### Tool Description

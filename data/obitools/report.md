@@ -1,5 +1,11 @@
 # obitools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| obitools_obiclean | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

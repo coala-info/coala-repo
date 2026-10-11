@@ -2,126 +2,47 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: nii2dcm
 label: nii2dcm
-doc: "Convert NIfTI files to DICOM series.\n\nTool homepage: https://github.com/tomaroberts/nii2dcm"
+doc: "nii2dcm - NIfTI file to DICOM conversion. Converts a NIfTI file (.nii or .nii.gz)
+  into a single-frame DICOM series.\n\nTool homepage: https://github.com/tomaroberts/nii2dcm"
 inputs:
-  - id: input_nii
+  - id: input_file
     type: File
-    doc: Input NIfTI file or directory.
+    doc: "[.nii/.nii.gz] input NIfTI file"
     inputBinding:
       position: 1
   - id: output_dir
     type: string
-    doc: Output directory for DICOM files.
+    doc: "[directory] output DICOM path (created before the tool runs)"
     inputBinding:
       position: 2
-  - id: frame_of_reference_uid
+  - id: dicom_type
     type:
       - 'null'
       - string
-    doc: Frame of Reference UID.
+    doc: "[string] type of DICOM. Available types: MR, SVR."
     inputBinding:
-      position: 103
-      prefix: --frame-of-reference-uid
-  - id: instance_number_start
+      position: 3
+      prefix: --dicom_type
+  - id: ref_dicom
     type:
       - 'null'
-      - int
-    doc: Starting instance number.
+      - File
+    doc: "[.dcm] Reference DICOM file for Attribute transfer"
     inputBinding:
-      position: 103
-      prefix: --instance-number-start
-  - id: manufacturer
-    type:
-      - 'null'
-      - string
-    doc: Manufacturer of the equipment.
-    inputBinding:
-      position: 103
-      prefix: --manufacturer
-  - id: manufacturer_model
-    type:
-      - 'null'
-      - string
-    doc: Manufacturer's model name.
-    inputBinding:
-      position: 103
-      prefix: --manufacturer-model
-  - id: modality
-    type:
-      - 'null'
-      - string
-    doc: Modality (e.g., CT, MR).
-    inputBinding:
-      position: 103
-      prefix: --modality
-  - id: patient_id
-    type:
-      - 'null'
-      - string
-    doc: Patient's ID.
-    inputBinding:
-      position: 103
-      prefix: --patient-id
-  - id: patient_name
-    type:
-      - 'null'
-      - string
-    doc: Patient's name.
-    inputBinding:
-      position: 103
-      prefix: --patient-name
-  - id: series_description
-    type:
-      - 'null'
-      - string
-    doc: Series description.
-    inputBinding:
-      position: 103
-      prefix: --series-description
-  - id: skip_empty_slices
-    type:
-      - 'null'
-      - boolean
-    doc: Skip empty slices.
-    inputBinding:
-      position: 103
-      prefix: --skip-empty-slices
-  - id: sop_class_uid
-    type:
-      - 'null'
-      - string
-    doc: SOP Class UID for the DICOM instances.
-    inputBinding:
-      position: 103
-      prefix: --sop-class-uid
-  - id: study_description
-    type:
-      - 'null'
-      - string
-    doc: Study description.
-    inputBinding:
-      position: 103
-      prefix: --study-description
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
-    inputBinding:
-      position: 103
-      prefix: --verbose
+      position: 3
+      prefix: --ref_dicom
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory for DICOM files.
+  - id: output_dicom_dir
+    type: Directory
+    doc: Directory with the DICOM series
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.output_dir, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nii2dcm:0.1.2--pyhdfd78af_0
-stdout: nii2dcm.out

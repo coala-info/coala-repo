@@ -124,7 +124,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Storage directory
     inputBinding:
       position: 101
@@ -402,7 +402,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.prefix).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntm-profiler:0.8.1--pyhdfd78af_0

@@ -1,5 +1,11 @@
 # ntedit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ntedit | PASS | edits and VCF written from a Bloom filter of SARS-CoV-2 test reads |
+
 ## ntedit
 
 ### Tool Description

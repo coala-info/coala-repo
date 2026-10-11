@@ -54,7 +54,7 @@ inputs:
     doc: Output or path parameter `output_graph_path`
     inputBinding:
       position: 102
-      prefix: --output-graph
+      prefix: --out
 outputs:
   - id: output_graph
     type: File

@@ -86,7 +86,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log file (use the stderr by default). Disable the log colors.
     inputBinding:
       position: 101
@@ -165,6 +165,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --WindowSize
+  - id: nucleic_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Genomic INSDC files (embl/genbank) named in the nucleic_File_Path column of the correspondences file. They are staged in the working directory, so use plain file names in that column.
   - id: output_dir_name_path
     type: string
     doc: ' Output directory name, used to define the project name'
@@ -173,14 +179,17 @@ inputs:
       prefix: --OutputDirName
 outputs:
   - id: output_dir_name
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory name, used to define the project name
     outputBinding:
       glob: $(inputs.output_dir_name_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.nucleic_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/netsyn:1.0.0--pyh7e72e81_0

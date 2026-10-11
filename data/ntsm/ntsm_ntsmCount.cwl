@@ -4,19 +4,11 @@ baseCommand: ntsmCount
 label: ntsm_ntsmCount
 doc: "Count k-mers for SNP sites\n\nTool homepage: https://github.com/JustinChu/ntsm"
 inputs:
-  - id: fasta
-    type:
-      - 'null'
-      - File
-    doc: Input FASTA file
-    inputBinding:
-      position: 1
   - id: files
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input files
+      type: array
+      items: File
+    doc: Input read files (fastq, fasta, sam, bam; gz allowed)
     inputBinding:
       position: 2
   - id: allow_shared_kmers
@@ -44,7 +36,7 @@ inputs:
       position: 103
       prefix: --maxCov
   - id: snp_fasta
-    type: string
+    type: File
     doc: Interleaved fasta of SNP sites to k-merize.
     inputBinding:
       position: 103
@@ -72,6 +64,9 @@ inputs:
       position: 104
       prefix: --output
 outputs:
+  - id: counts
+    type: stdout
+    doc: Per-site k-mer counts (counts file) written to standard output
   - id: output_summary
     type:
       - 'null'
@@ -84,3 +79,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntsm:1.2.1--h077b44d_1
+stdout: ntsm_counts.tsv

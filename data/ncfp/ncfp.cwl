@@ -5,7 +5,7 @@ label: ncfp
 doc: "ncfp\n\nTool homepage: http://widdowquinn.github.io/ncfp/"
 inputs:
   - id: infname
-    type: string
+    type: File
     doc: input sequence file
     inputBinding:
       position: 1
@@ -30,7 +30,7 @@ inputs:
   - id: cachedir
     type:
       - 'null'
-      - Directory
+      - string
     doc: directory for cached data
     inputBinding:
       position: 104
@@ -86,7 +86,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: path to logfile
     inputBinding:
       position: 104
@@ -102,7 +102,7 @@ inputs:
   - id: skippedfile
     type:
       - 'null'
-      - File
+      - string
     doc: path to file with skipped sequences
     inputBinding:
       position: 104
@@ -134,6 +134,24 @@ outputs:
     doc: output directory for sequence files
     outputBinding:
       glob: $(inputs.outdirname)
+  - id: skipped_out
+    type:
+      - 'null'
+      - File
+    doc: file with skipped sequences
+    outputBinding:
+      glob: $(inputs.skippedfile || 'skipped.fasta')
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: log file
+    outputBinding:
+      glob: '$(inputs.logfile ? [inputs.logfile] : [])'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncfp:0.2.0--py_0

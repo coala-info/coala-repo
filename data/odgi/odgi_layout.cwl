@@ -196,7 +196,7 @@ inputs:
     doc: Output or path parameter `output_layout_path`
     inputBinding:
       position: 102
-      prefix: --output-layout
+      prefix: --out
   - id: output_tsv_path
     type:
       - 'null'
@@ -204,7 +204,7 @@ inputs:
     doc: Output or path parameter `output_tsv_path`
     inputBinding:
       position: 103
-      prefix: --output-tsv
+      prefix: --tsv
 outputs:
   - id: output_layout
     type:

@@ -13,24 +13,29 @@ inputs:
       position: 101
       prefix: --balance-type
   - id: break_points
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to a TXT file containing pairs of break points.
     inputBinding:
       position: 101
       prefix: --break-points
   - id: hic
     type:
-      - 'null'
-      - type: array
-        items: string
+      type: array
+      items: File
     doc: List of cooler URIs. If URIs at multiple resolutions are provided, the 
       program will first detect complex SVs from each individual resolution, and
       then combine results from all resolutions in a non-redundant way.
     inputBinding:
       position: 101
       prefix: --hic
+      valueFrom: |-
+        ${ return self.map(function(f, i) { return f.path + (inputs.hic_groups && inputs.hic_groups[i] ? inputs.hic_groups[i] : ''); }); }
+  - id: hic_groups
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Groups inside .mcool files appended, in the same order, to the cool URIs in hic (for example ::resolutions/25000).
   - id: log_file
     type:
       - 'null'
@@ -57,9 +62,7 @@ inputs:
       position: 101
       prefix: --nproc
   - id: output_prefix
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output prefix.
     inputBinding:
       position: 101
@@ -91,6 +94,16 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file.
+    outputBinding:
+      glob: |-
+        ${ return inputs.log_file ? inputs.log_file : 'assembleSVs.log'; }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0

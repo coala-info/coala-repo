@@ -1,5 +1,19 @@
 # octopusv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| octopusv_benchmark | PASS |  |
+| octopusv_correct | PASS |  |
+| octopusv_merge | Not completed | gives 1640 records against 1631 in the expected file (all expected records present, each supported by at least 2 callers); the difference, probably a version change, cannot be confirmed. |
+| octopusv_plot | PASS |  |
+| octopusv_somatic | PASS |  |
+| octopusv_stat | PASS |  |
+| octopusv_svcf2bed | PASS |  |
+| octopusv_svcf2bedpe | PASS |  |
+| octopusv_svcf2vcf | Not completed | output differs from the expected file in REF ('.' vs 'N') on 14 BND rows, probably a version change, so the conversion cannot be confirmed. |
+
 ## octopusv_correct
 
 ### Tool Description

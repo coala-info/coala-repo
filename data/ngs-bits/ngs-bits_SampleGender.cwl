@@ -19,6 +19,11 @@ inputs:
       type: array
       items: File
     doc: Input BAM/CRAM file(s).
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: -in
@@ -76,6 +81,9 @@ inputs:
       - 'null'
       - File
     doc: Reference genome for CRAM support (mandatory if CRAM is used).
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: -ref
@@ -95,15 +103,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -sry_cov
-  - id: tdx
-    type:
-      - 'null'
-      - boolean
-    doc: Writes a Tool Definition Xml file. The file name is the application 
-      name with the suffix '.tdx'.
-    inputBinding:
-      position: 101
-      prefix: --tdx
   - id: output_file_path
     type: string
     doc: "Output TSV file - one line per input BAM/CRAM file. If unset, writes to

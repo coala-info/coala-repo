@@ -1,5 +1,11 @@
 # ngs_te_mapper2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngs_te_mapper2 | Failed | image problem: RepeatMasker rebuilds its library inside the image, so it needs a writable image filesystem and root (cwltool --no-read-only --no-match-user) |
+
 ## ngs_te_mapper2
 
 ### Tool Description

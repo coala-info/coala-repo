@@ -54,7 +54,7 @@ inputs:
   - id: log_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Customize the file directory of logs. If this value is not provided or 
       the provided directory does not exist, logs will be saved to 
       NDA/nda-tools/downloadcmd/logs inside your root folder.
@@ -204,41 +204,15 @@ inputs:
       position: 102
       prefix: --verify
   - id: s3_destination_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Specify s3 location (bucket) to copy the files of the package to,
+      instead of downloading them locally.
     inputBinding:
       position: 103
       prefix: --s3-destination
 outputs:
-  - id: s3_destination
-    type:
-      - 'null'
-      - File
-    doc: "Specify s3 location which you would like to download your files to. When
-      this option is specified, an attempt will be made\n                        to
-      copy the files from your package, which are stored in NDA's own S3 repository,
-      to the S3 bucket provided. \n                        \n                    \
-      \    For s3-to-s3 copy operations to be successful, the s3 bucket supplied as
-      the program argument must be configured to allow PUT object \n             \
-      \           operations  for 'arn:aws:sts::618523879050:federated-user/<username>'
-      where <username> is your nda username. \n                        For non-public
-      buckets, this will require an update to your bucket's policy. The following
-      statement should be sufficient to grant the uploading privileges necessary \n\
-      \                        to run this program using the s3 argument after replacing
-      <your-s3-bucket> with the bucket name: \n                                 {\n\
-      \                                    \"Sid\": \"AllowNDAUpload\",\n        \
-      \                            \"Effect\": \"Allow\",\n                      \
-      \              \"Principal\": {\n                                        \"\
-      AWS\": \"arn:aws:iam::618523879050:federated-user/<username>\"\t\t\n       \
-      \                             },\n                                    \"Action\"\
-      : \"s3:PutObject*\",\n                                    \"Resource\": \"arn:aws:s3:::<your-s3-bucket>/*\"\
-      \n                                }\n                                \n    \
-      \                    You may need to email your company/institution IT department
-      to have this added for you.\n                        Note: If your bucket is
-      encrypted with a customer-managed KMS key, then additional configuration is
-      needed. \n                        For more details, check the information on
-      the README page."
-    outputBinding:
-      glob: $(inputs.s3_destination_path)
   - id: download_directory_dir
     type:
       - 'null'
@@ -246,9 +220,11 @@ outputs:
     doc: Enter an alternate full directory path where you would like your files 
       to be saved. The default is ~/NDA/nda-tools/<package-id>
     outputBinding:
-      glob: $(inputs.download_directory)
+      glob: '$(inputs.download_directory ? [inputs.download_directory] : [])'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nda-tools:0.6.0--pyh7e72e81_0

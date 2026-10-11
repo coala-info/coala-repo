@@ -1,5 +1,19 @@
 # nomadic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nomadic_backup | PASS |  |
+| nomadic_configure_backup | PASS |  |
+| nomadic_configure_share | PASS |  |
+| nomadic_dashboard | Not completed | long-running web server needing results of a previous experiment |
+| nomadic_download | Failed | tool bug: hard-coded release-67 download URLs return HTTP 404 |
+| nomadic_process | Not completed | needs a downloaded reference genome and MinKNOW data; reference download is broken (HTTP 404) |
+| nomadic_realtime | Not completed | needs a downloaded reference genome and live MinKNOW run; reference download is broken (HTTP 404) |
+| nomadic_share | PASS |  |
+| nomadic_start | Failed | tool bug: nomadic 0.7.2 downloads the reference from a hard-coded PlasmoDB release-67 URL that now returns HTTP 404 |
+
 ## nomadic_start
 
 ### Tool Description
@@ -335,11 +349,10 @@ Options:
 ```
 
 
-## nomadic_configure
+## nomadic_configure_backup
 
 ### Tool Description
-Configure different nomadics functionality. This mostly sets standard
-  options in '.config.yaml' that can be overwritten from the command line.
+Configure the nomadic backup command.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nomadic:0.7.2--pyhdfd78af_0
@@ -349,17 +362,52 @@ Configure different nomadics functionality. This mostly sets standard
 
 ### Original Help Text
 ```text
-Usage: nomadic configure [OPTIONS] COMMAND [ARGS]...
-
-  Configure different nomadics functionality. This mostly sets standard
-  options in '.config.yaml' that can be overwritten from the command line.
+Usage: nomadic configure backup [OPTIONS]
 
 Options:
-  --help  Show this message and exit.
+  -w, --workspace DIRECTORY   Path of the workspace where all input/output
+                              files (beds, metadata, results) are stored. The
+                              workspace directory simplifies the use of
+                              nomadic in that many arguments don't need to be
+                              listed as they are predefined in the workspace
+                              config or can be loaded from the workspace
+                              [default: (current directory)]
+  -t, --target_dir DIRECTORY  Path to target folder or an SSH target like
+                              user@host:/path. The backed up files will go
+                              inside of that folder into a folder with the
+                              name of the workspace.
+  --help                      Show this message and exit.
+```
 
-Commands:
-  backup  Configure the nomadic backup command.
-  share   Configure the nomadic share command.
+
+## nomadic_configure_share
+
+### Tool Description
+Configure the nomadic share command.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nomadic:0.7.2--pyhdfd78af_0
+- **Homepage**: https://jasonahendry.github.io/nomadic/
+- **Package**: https://anaconda.org/channels/bioconda/packages/nomadic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: nomadic configure share [OPTIONS]
+
+Options:
+  -w, --workspace DIRECTORY   Path of the workspace where all input/output
+                              files (beds, metadata, results) are stored. The
+                              workspace directory simplifies the use of
+                              nomadic in that many arguments don't need to be
+                              listed as they are predefined in the workspace
+                              config or can be loaded from the workspace
+                              [default: (current directory)]
+  -t, --target_dir DIRECTORY  Path to target folder or an SSH target like
+                              user@host:/path. The shared files will go inside
+                              of that folder into a folder with the name of
+                              the workspace.
+  --help                      Show this message and exit.
 ```
 
 

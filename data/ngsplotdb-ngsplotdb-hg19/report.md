@@ -1,40 +1,14 @@
 # ngsplotdb-ngsplotdb-hg19 CWL Generation Report
 
-## ngsplotdb-ngsplotdb-hg19_ngsplotdb.py
+## Real Data Test
 
-### Tool Description
-Manipulate ngs.plot's annotation database
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ngsplotdb-ngsplotdb-hg19:3.00--r3.4.1_0
-- **Homepage**: https://github.com/shenlab-sinai/ngsplot
-- **Package**: https://anaconda.org/channels/bioconda/packages/ngsplotdb-ngsplotdb-hg19/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ngsplotdb-ngsplotdb-hg19/overview
-- **Total Downloads**: 5.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/shenlab-sinai/ngsplot
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: ngsplotdb.py [-h] [-y] {list,install,remove,chrnames} ...
-
-Manipulate ngs.plot's annotation database
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -y, --yes             Say yes to all prompted questions
-
-Subcommands:
-  {list,install,remove,chrnames}
-                        additional help
-    list                List genomes installed in database
-    install             Install genome from package file
-    remove              Remove genome from database
-    chrnames            List chromosome names
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| ngsplotdb-ngsplotdb-hg19_ngs.plot.r | Failed | image problem: the hg19 annotation database is missing from the image (only -R bed works) and the zip step fails |
+| ngsplotdb-ngsplotdb-hg19_ngsplotdb_chrnames | Failed | image problem: the hg19 database files are missing from the image |
+| ngsplotdb-ngsplotdb-hg19_ngsplotdb_install | Not completed | needs the large ngsplotdb package file, which is not available here |
+| ngsplotdb-ngsplotdb-hg19_ngsplotdb_list | Not completed | runs, but no genome is installed in the image so the table is empty |
+| ngsplotdb-ngsplotdb-hg19_ngsplotdb_remove | Not completed | no genome is installed in the image to remove |
 
 ## ngsplotdb-ngsplotdb-hg19_ngs.plot.r
 
@@ -124,6 +98,93 @@ Usage: ngs.plot.r -G genome -R region -C [cov|config]file
                  If set to 1, the neutral color represents 0(i.e. no bias)
 ```
 
+
+## ngsplotdb-ngsplotdb-hg19_ngsplotdb_list
+
+### Tool Description
+List genomes installed in the ngs.plot database.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngsplotdb-ngsplotdb-hg19:3.00--r3.4.1_0
+- **Homepage**: https://github.com/shenlab-sinai/ngsplot
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngsplotdb-ngsplotdb-hg19/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: ngsplotdb.py list [-h]
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+## ngsplotdb-ngsplotdb-hg19_ngsplotdb_chrnames
+
+### Tool Description
+List chromosome names of an installed genome.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngsplotdb-ngsplotdb-hg19:3.00--r3.4.1_0
+- **Homepage**: https://github.com/shenlab-sinai/ngsplot
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngsplotdb-ngsplotdb-hg19/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: ngsplotdb.py chrnames [-h] gn db
+
+positional arguments:
+  gn          Genome name(e.g. mm9)
+  db          Database(ensembl or refseq)
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+## ngsplotdb-ngsplotdb-hg19_ngsplotdb_install
+
+### Tool Description
+Install a genome from a package file into the ngs.plot database.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngsplotdb-ngsplotdb-hg19:3.00--r3.4.1_0
+- **Homepage**: https://github.com/shenlab-sinai/ngsplot
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngsplotdb-ngsplotdb-hg19/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: ngsplotdb.py install [-h] pkg
+
+positional arguments:
+  pkg         Package file(.tar.gz) to install
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+## ngsplotdb-ngsplotdb-hg19_ngsplotdb_remove
+
+### Tool Description
+Remove a genome from the ngs.plot database.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngsplotdb-ngsplotdb-hg19:3.00--r3.4.1_0
+- **Homepage**: https://github.com/shenlab-sinai/ngsplot
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngsplotdb-ngsplotdb-hg19/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: ngsplotdb.py remove [-h] [--ftr FTR] gn
+
+positional arguments:
+  gn          Name of genome to be removed(e.g. hg18)
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --ftr FTR   Remove cellline specific features (enhancer, dhs, etc)
+```
 
 ## Metadata
 - **Skill**: generated

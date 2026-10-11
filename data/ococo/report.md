@@ -1,5 +1,11 @@
 # ococo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ococo | PASS |  |
+
 ## ococo
 
 ### Tool Description

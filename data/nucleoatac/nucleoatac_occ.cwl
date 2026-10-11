@@ -9,6 +9,8 @@ inputs:
   - id: bam_file
     type: File
     doc: Sorted (and indexed) BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam
@@ -40,6 +42,8 @@ inputs:
       - 'null'
       - File
     doc: Indexed fasta file
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --fasta

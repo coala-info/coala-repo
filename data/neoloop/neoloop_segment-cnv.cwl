@@ -23,9 +23,7 @@ inputs:
       position: 101
       prefix: --cbs-pvalue
   - id: cnv_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Copy number profile in bedGraph format.
     inputBinding:
       position: 101
@@ -33,7 +31,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Logging file name.
     inputBinding:
       position: 101
@@ -91,16 +89,22 @@ inputs:
       position: 101
       prefix: --ploidy
   - id: output_path
-    type: string?
-    doc: 'Output file path. (default: None)'
+    type: string
+    doc: Output file path (bedGraph).
     inputBinding:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: log_output
     type:
       - 'null'
       - File
+    doc: Log file.
+    outputBinding:
+      glob: |-
+        ${ return inputs.log_file ? inputs.log_file : 'cnv-seg.log'; }
+  - id: output
+    type: File
     doc: Output file path.
     outputBinding:
       glob: $(inputs.output_path)

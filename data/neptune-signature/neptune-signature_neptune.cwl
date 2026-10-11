@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: neptune-conda
+baseCommand: neptune
 label: neptune-signature_neptune
 doc: "Neptune identifies signatures using an exact k-mer matching strategy. Neptune
   locates sequence that is sufficiently present in many inclusion targets and sufficiently
@@ -30,6 +30,7 @@ inputs:
     doc: The FASTA reference from which to extract signatures.
     inputBinding:
       position: 3
+      prefix: --reference
   - id: confidence
     type:
       - 'null'
@@ -112,7 +113,7 @@ inputs:
   - id: organization
     type:
       - 'null'
-      - string
+      - int
     doc: The degree of k-mer organization in the output files. This exploits the
       four-character alphabet of nucleotides to produce several k-mer output 
       files, with all k-mers in a file beginning with the same short sequence of
@@ -167,12 +168,20 @@ inputs:
     inputBinding:
       position: 104
       prefix: --size
+  - id: output_path
+    type: string
+    doc: The directory to place all output.
+    inputBinding:
+      position: 5
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: The directory to place all output.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neptune-signature:2.0.0--pyhdfd78af_0

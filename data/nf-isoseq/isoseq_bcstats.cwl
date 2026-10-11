@@ -1,136 +1,109 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - isoseq
-  - bcstats
+baseCommand: [isoseq, bcstats]
 label: isoseq_bcstats
-doc: "Generates stats for group barcodes and (optionally) molecular barcodes\n\nTool
-  homepage: https://github.com/PacificBiosciences/pbbioconda"
-inputs:
-  - id: input_file
-    type: string
-    doc: Input BAM, ConsensusReadSet XML, or FOFN
-    inputBinding:
-      position: 1
-  - id: batch_size
-    type:
-      - 'null'
-      - int
-    doc: Batch size for processing.
-    inputBinding:
-      position: 102
-      prefix: --batch-size
-  - id: deduplicated
-    type:
-      - 'null'
-      - boolean
-    doc: To mark as de-duplicated. This allows for faster analysis and sanity 
-      checks across versions.
-    inputBinding:
-      position: 102
-      prefix: --deduplicated
-  - id: emit_molecular_stats
-    type:
-      - 'null'
-      - boolean
-    doc: Emit stats for molecular barcodes (UMIs) as well as cell barcodes. This
-      results in a tsv with one line for each cell barcode and one line for each
-      molecular barcode.
-    inputBinding:
-      position: 102
-      prefix: --molecular
-  - id: log_file
-    type:
-      - 'null'
-      - File
-    doc: Log to a file, instead of stderr.
-    inputBinding:
-      position: 102
-      prefix: --log-file
-  - id: log_level
-    type:
-      - 'null'
-      - string
-    doc: Set log level.
-    inputBinding:
-      position: 102
-      prefix: --log-level
-  - id: method
-    type:
-      - 'null'
-      - string
-    doc: Whether to determine real vs non-real cells using Knee-finding ('knee')
-      or Percentile-based method ('percentile').
-    inputBinding:
-      position: 102
-      prefix: --method
-  - id: num_threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use, 0 means autodetection.
-    inputBinding:
-      position: 102
-      prefix: --num-threads
-  - id: percentile
-    type:
-      - 'null'
-      - int
-    doc: Percentile to use when calculating real vs non-real cells. This option 
-      is only relevant when --method is set to 'percentile'.
-    inputBinding:
-      position: 102
-      prefix: --percentile
-  - id: target
-    type:
-      - 'null'
-      - string
-    doc: Whether to determine real vs non-real cells by read count ('readcount')
-      or UMI count ('umicount').
-    inputBinding:
-      position: 102
-      prefix: --target
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Use verbose output.
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: json_report_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `json_report_path`
-    inputBinding:
-      position: 103
-      prefix: --json-report
-  - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 104
-      prefix: --output-file
-outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output tsv of stats for input BAM files.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-  - id: json_report
-    type:
-      - 'null'
-      - File
-    doc: Path to emit output JSON report.
-    outputBinding:
-      glob: $(inputs.json_report_path)
+doc: "Generates stats for group barcodes and (optionally) molecular barcodes
+
+Tool homepage: https://github.com/PacificBiosciences/pbbioconda"
 requirements:
   - class: InlineJavascriptRequirement
+inputs:
+  - id: input_bam
+    type: File
+    doc: "Input BAM, ConsensusReadSet XML, or FOFN"
+    secondaryFiles:
+      - pattern: .pbi
+        required: false
+    inputBinding:
+      position: 1
+  - id: molecular
+    type: ['null', boolean]
+    doc: "Emit stats for molecular barcodes (UMIs) as well as cell barcodes."
+    inputBinding:
+      position: 100
+      prefix: --molecular
+  - id: output
+    type: string
+    doc: "Output tsv of stats for input BAM files."
+    inputBinding:
+      position: 100
+      prefix: --output
+  - id: json
+    type: ['null', string]
+    doc: "Path to emit output JSON report."
+    inputBinding:
+      position: 100
+      prefix: --json
+  - id: deduplicated
+    type: ['null', boolean]
+    doc: "To mark as de-duplicated."
+    inputBinding:
+      position: 100
+      prefix: --deduplicated
+  - id: batch_size
+    type: ['null', int]
+    doc: "Batch size for processing. [65536]"
+    inputBinding:
+      position: 100
+      prefix: --batch-size
+  - id: percentile
+    type: ['null', int]
+    doc: "Percentile to use when calculating real vs non-real cells (method percentile). [99]"
+    inputBinding:
+      position: 100
+      prefix: --percentile
+  - id: target
+    type: ['null', string]
+    doc: "Determine real vs non-real cells by readcount or umicount. [umicount]"
+    inputBinding:
+      position: 100
+      prefix: --target
+  - id: method
+    type: ['null', string]
+    doc: "Determine real vs non-real cells using knee or percentile. [knee]"
+    inputBinding:
+      position: 100
+      prefix: --method
+  - id: log_level
+    type: ['null', string]
+    doc: "Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL). [WARN]"
+    inputBinding:
+      position: 100
+      prefix: --log-level
+  - id: log_file
+    type: ['null', string]
+    doc: "Log to a file, instead of stderr."
+    inputBinding:
+      position: 100
+      prefix: --log-file
+  - id: num_threads
+    type: ['null', int]
+    doc: "Number of threads to use, 0 means autodetection. [0]"
+    inputBinding:
+      position: 100
+      prefix: --num-threads
+  - id: verbose
+    type: ['null', boolean]
+    doc: "Use verbose output."
+    inputBinding:
+      position: 100
+      prefix: --verbose
+outputs:
+  - id: stats_tsv
+    type: File
+    doc: "Barcode statistics table"
+    outputBinding:
+      glob: $(inputs.output)
+  - id: stats_json
+    type: ['null', File]
+    doc: "JSON report"
+    outputBinding:
+      glob: $(inputs.json)
+  - id: log_output
+    type: ['null', File]
+    doc: "Log file (when log_file is set)"
+    outputBinding:
+      glob: $(inputs.log_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isoseq:4.3.0--h9ee0642_0

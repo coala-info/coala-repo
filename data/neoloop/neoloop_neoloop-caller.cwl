@@ -5,9 +5,7 @@ label: neoloop_neoloop-caller
 doc: "Identify novel loop interactions across SV points.\n\nTool homepage: https://github.com/XiaoTaoWang/NeoLoopFinder"
 inputs:
   - id: assembly
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The assembled SV list outputed by assemble-complexSVs.
     inputBinding:
       position: 101
@@ -32,10 +30,9 @@ inputs:
       prefix: --cachefolder
   - id: hic
     type:
-      - 'null'
-      - type: array
-        items: string
-    doc: "List of cooler URIs. If URIs at multiple resolutions\nare provided, the
+      type: array
+      items: File
+    doc: "List of cool files (use hic_groups for .mcool). If URIs at multiple resolutions\nare provided, the
       program will first detect neo-loops\nfrom each individual resolution, and then
       combine\nresults from all resolutions in a non-redundant way.\nIf an interaction
       is detected as a loop in multiple\nresolutions, only the one with the highest
@@ -43,10 +40,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --hic
+      valueFrom: |-
+        ${ return self.map(function(f, i) { return f.path + (inputs.hic_groups && inputs.hic_groups[i] ? inputs.hic_groups[i] : ''); }); }
+  - id: hic_groups
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Groups inside .mcool files appended, in the same order, to the cool URIs in hic (for example ::resolutions/25000).
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Logging file name.
     inputBinding:
       position: 101
@@ -101,20 +106,28 @@ inputs:
       prefix: --region-size
   - id: output_path
     type: string
-    doc: 'Output file path. (default: None)'
+    doc: Path to the output file (BEDPE).
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to the output file.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file.
+    outputBinding:
+      glob: |-
+        ${ return inputs.logfile ? inputs.logfile : 'neoloop.log'; }
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0

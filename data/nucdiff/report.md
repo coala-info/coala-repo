@@ -1,5 +1,11 @@
 # nucdiff CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nucdiff | PASS | Wuhan-Hu-1 vs a 2020 US isolate: 5 substitutions incl. 241, 3037, 14408, 23403 |
+
 ## nucdiff
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # noise2read CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| noise2read | PASS | correction module checked on real miRNA reads with a config file that sets 3 tuning trials |
+
 ## noise2read
 
 ### Tool Description

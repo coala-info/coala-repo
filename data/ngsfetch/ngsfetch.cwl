@@ -14,17 +14,13 @@ inputs:
       position: 101
       prefix: --attempts
   - id: id
-    type:
-      - 'null'
-      - string
+    type: string
     doc: ID of the data to fetch
     inputBinding:
       position: 101
       prefix: --id
   - id: output
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output directory
     inputBinding:
       position: 101
@@ -46,17 +42,15 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory
+    type: Directory
+    doc: Output directory with the metadata and the FASTQ files
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngsfetch:0.1.1--pyh7e72e81_0
-stdout: ngsfetch.out

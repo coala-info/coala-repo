@@ -1,5 +1,11 @@
 # ntroot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ntroot | PASS | --custom_vcf demo (HG002 chr21) predicts EUR as expected; reads and genome modes not tested |
+
 ## ntroot
 
 ### Tool Description

@@ -34,6 +34,9 @@ inputs:
       - File
     doc: Reference genome FASTA file. If unset, 'reference_genome' from the 
       'settings.ini' file is used.
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: -ref

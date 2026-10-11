@@ -80,6 +80,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: components
+    type:
+      type: array
+      items: File
+    doc: One graph file per connected component (prefix.N.og, or prefix.N.gfa with to_gfa)
+    outputBinding:
+      glob: $((inputs.prefix || 'component') + '.*')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

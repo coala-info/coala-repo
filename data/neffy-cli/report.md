@@ -1,5 +1,12 @@
 # neffy-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| neffy-cli_converter | PASS |  |
+| neffy-cli_neff | PASS |  |
+
 ## neffy-cli_neff
 
 ### Tool Description

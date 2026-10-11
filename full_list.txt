@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 9331; PASS: 7205; Failed: 1154; Not completed: 972
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 9712; PASS: 7494; Failed: 1183; Not completed: 1035
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -9331,3 +9331,384 @@ ncbimeta	ncbimeta_NCBImetaExport	PASS
 ncbimeta	ncbimeta_NCBImetaJoin	PASS	
 ncbitax2lin	ncbitax2lin	PASS	
 ncbitk	ncbitk	PASS	Tested --status with a local assembly summary (the tool's own test file): counts match (100 new genomes; 27 for Buchnera_aphidicola). The rsync update mode was not run.
+ncfp	ncfp	PASS	NCBI protein input matches expected output; UniProt input crashes (old UniProt API call returns 400)
+ncoils	ncoils	PASS	GCN4 yeast protein: coil predicted at the known C-terminal leucine zipper
+ncrf	ncrf_NCRF	PASS	GGAAT repeats in tutorial example.fa: 20 alignments match the expected file
+ncrf	ncrf_ncrf_cat.py	PASS	joins two NCRF files with one end marker; the --markend option crashes (typo in the tool script)
+ncrf	ncrf_ncrf_consensus_filter	PASS	filtered output has the same size as the expected filtered file; consensus mode adds GGAAT tags
+ncrf	ncrf_ncrf_resolve_overlaps.py	PASS	overlap groups written to console and to a motif-named file
+ncrf	ncrf_ncrf_sort	PASS	sorted tutorial output matches expected file (ties in a different order)
+ncrf	ncrf_ncrf_summary	PASS	summary table matches expected tutorial summary (two equal-ratio rows swapped)
+ncrf	ncrf_ncrf_to_bed.py	PASS	BED rows match summary coordinates, score is match ratio times 1000
+nda-tools	nda-tools_downloadcmd	Failed	image problem: nda-tools 0.6.0 exits at start saying it is out of date and asks for 0.7.0 (an NDA account is also needed)
+nda-tools	nda-tools_vtcmd	Failed	image problem: nda-tools 0.6.0 exits at start saying it is out of date and asks for 0.7.0 (an NDA account is also needed)
+ndg-httpsclient	ndg-httpsclient	Failed	image problem: HTTPS fails with SSL handshake error (image has OpenSSL 1.0.2k), --fetch crashes with a bytes/str TypeError, and plain output is a Python bytes repr
+neat	neat_gen-mut-model	PASS	H1N1 reference plus VCF gives a valid mutation model and trinucleotide file
+neat	neat_model-fraglen	PASS	paired-end BAM gives fragment model (mean 192, sd 52), matches BAM insert sizes
+neat	neat_model-seq-err	PASS	plain fastq gives an error model; gzip fastq crashes (tool expects bgzip blocks)
+neat	neat_read-simulator	PASS	H1N1 reference: 350 fastq reads of 100 bp, 347 match the reference exactly (shorter than the 5x coverage asked)
+nebulizer	nebulizer_add_key	PASS	alias, URL and key stored in the .nebulizer file and collected
+nebulizer	nebulizer_add_library_datasets	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_config	PASS	public Galaxy configuration read without a key; version_major 22.05 shown
+nebulizer	nebulizer_create_batch_users	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_create_library	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_create_library_folder	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_create_user	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_create_users_from_file	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_delete_user	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_install_tool	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_list_keys	PASS	staged keys file lists the stored alias and URL, with key shown
+nebulizer	nebulizer_list_libraries	PASS	public Galaxy data libraries listed without a key (one library found)
+nebulizer	nebulizer_list_tool_panel	PASS	public Galaxy tool panel listed without a key; name filter and tool listing work
+nebulizer	nebulizer_list_tools	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_list_users	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_ping	PASS	two pings of the public Galaxy at galaxy.pasteur.fr report status ok with times
+nebulizer	nebulizer_quota_add	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_quota_del	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_quota_mod	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_quotas	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_remove_key	PASS	staged keys file loses the alias after removal; the wrapper answers the confirmation prompt
+nebulizer	nebulizer_search_toolshed	PASS	search for fastqc on the main toolshed lists devteam fastqc with revisions and description
+nebulizer	nebulizer_uninstall_tool	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_update_key	PASS	new URL stored for the alias in the keys file
+nebulizer	nebulizer_update_tool	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nebulizer	nebulizer_whoami	Not completed	needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test
+nedbit-features-calculator	nedbit-features-calculator	PASS	first 6000 real BioGRID links with NIAPU seed genes (full network takes over 20 min): 4458 genes, degree and class match the input, features finite
+needle	needle_count	PASS	repo test reads (32 GeneA reads) and gene.fasta: counts 32 and 1 match the read numbers
+needle	needle_estimate	PASS	GeneA expression levels 2 and 1 from the ibf and ibfmin indexes, matching 32 and 1 reads
+needle	needle_ibf	PASS	index from the two repo test files; estimate gives GeneA levels 2 and 1 as expected from 32 and 1 reads
+needle	needle_ibfmin	PASS	index built from minimiser files gives the same estimate (GeneA 2 and 1) as the ibf index
+needle	needle_minimiser	PASS	repo test reads give minimiser files; ibfmin and estimate can use them
+neffy	neffy_converter	PASS	repo example.fasta converted to Stockholm with all 3 sequences kept (the tool shortens duplicate header names)
+neffy	neffy_neff	PASS	repo example.fasta (3 sequences): NEFF 0.4009 equals 3 divided by sqrt(56) for three unrelated sequences; per-residue and weight modes also run
+neffy-cli	neffy-cli_converter	PASS	
+neffy-cli	neffy-cli_neff	PASS	
+negative_training_sampler	negative_training_sampler	PASS	synthetic data: planted labels on real human genome windows; added .fai secondary file and NetworkAccess
+negspy	negspy_chr_pos_to_genome_pos	Failed	image problem: numpy is missing in the image (ModuleNotFoundError)
+negspy	negspy_create_chrominfo	Failed	image problem: Bio (biopython) is missing in the image (ModuleNotFoundError)
+negspy	negspy_make_triangular	PASS	synthetic data: small planted coordinate table
+neodisambiguate	neodisambiguate	PASS	real reads from nf-core sarscov2 and human mixed, aligned with bwa to two references; added --input/--output flags and ambiguous outputs
+neofox	neofox	Not completed	needs the NeoFox reference folder and licensed tools (netMHCpan, MixMHCpred) that are not in the image
+neoloop	neoloop_add_prefix_to_cool	PASS	synthetic data: chr prefix removed from a real cool first
+neoloop	neoloop_assemble-complexSVs	PASS	
+neoloop	neoloop_calculate-cnv	PASS	real SK-N-MC Hi-C (chr1, chrX, 25kb); default download fails (busybox wget lacks -L), so reference files were given through the cachefolder input
+neoloop	neoloop_correct-cnv	PASS	
+neoloop	neoloop_neoloop-caller	PASS	real SK-N-MC Hi-C; Peakachu model given through the cachefolder input because the image wget lacks -L
+neoloop	neoloop_neotad-caller	PASS	
+neoloop	neoloop_plot-cnv	PASS	
+neoloop	neoloop_prepare-SV-breakpoints	PASS	synthetic data: small planted SV table based on a real SK-N-MC translocation
+neoloop	neoloop_searchSVbyGene	Failed	image problem: pyensembl/gtfparse crash (polars has no toggle_string_cache)
+neoloop	neoloop_segment-cnv	PASS	
+neoloop	neoloop_simulate-cnv	PASS	synthetic data: the same SK-N-MC cool was used as normal and cancer map
+neptune	neptune	PASS	real phage genomes from NCBI (lambda and HK022 inclusion, T7 and phiX174 exclusion); fixed organization type to int
+neptune-signature	neptune-signature_neptune	PASS	real phage genomes from NCBI; baseCommand changed to neptune, added --reference and --output
+nest	nest	PASS	synthetic data: short SLI script; fixed --userargs= and --verbosity= to join with =
+netcdf-metadata-info	netcdf-metadata-info	PASS	real NetCDF file (xarray air_temperature); removed invented --output-tabular-file, output is fixed variables.tabular
+netmd	netmd	PASS	real GLUT1 contact files (first 33 frames of 3 replicas); --Files mode checked; the --InputPath mode reported only 1 replica for my folder layout
+netsyn	netsyn	PASS	real genomes from NCBI (4 Mollicutes/Buchnera, rplB targets) via a correspondences file; added NetworkAccess and nucleic_files input
+netsyn	netsyn_clusteringIntoFamilies	PASS	family counts match the main netsyn run
+netsyn	netsyn_dataExport	Failed	tool bug: crashes with a missing clusteringMethod argument when run alone
+netsyn	netsyn_getINSDCFiles	PASS	two real UniProt accessions, downloaded from ENA
+netsyn	netsyn_parseINSDCFiles_GetTaxonomy	PASS	same 4 real genomes
+netsyn	netsyn_syntenyFinder	Failed	tool bug: crashes with KeyError 'metrics' when run alone
+neurodocker	neurodocker_generate_docker	PASS	Dockerfile checked for the requested base, packages, env, ANTs and miniconda
+neurodocker	neurodocker_generate_singularity	PASS	recipe checked for base image, environment and miniconda
+neurodocker	neurodocker_reprozip_merge	Failed	image problem: rsync is missing in the image (RuntimeError)
+neurodocker	neurodocker_reprozip_trace	Failed	image problem: the docker python package is missing (ImportError), and it needs a running container
+newick_utils	newick_utils_nw_prune	PASS	real catarrhini tree from the newick_utils repo; options moved before the positional arguments; -f flag fixed
+newick_utils	newick_utils_nw_reroot	PASS	real catarrhini_wrong tree from the newick_utils repo; options moved first; added -l and -s
+newmap	newmap_index	PASS	real sarscov2 genome from nf-core test-datasets
+newmap	newmap_search	PASS	real sarscov2 genome from nf-core test-datasets
+newmap	newmap_track	PASS	real sarscov2 genome from nf-core test-datasets
+nextalign	nextalign_run	PASS	real SARS-CoV-2 reference and 5 sequences from nextclade_data; fixed output_translations glob for the {gene} template
+nextclade_js	nextclade_js_dataset_get	PASS	downloaded the SARS-CoV-2 orfs dataset
+nextclade_js	nextclade_js_dataset_list	PASS	needs network; JSON list of datasets checked
+nextclade_js	nextclade_js_read_annotation	PASS	GFF3 from the SARS-CoV-2 dataset
+nextclade_js	nextclade_js_run	PASS	real SARS-CoV-2 dataset and 5 real sequences from nextclade_data; clades 23B/23E/23F
+nextclade_js	nextclade_js_sort	PASS	5 real SARS-CoV-2 sequences, index from the Nextclade server
+nextdenovo	nextdenovo_nextDenovo	PASS	NextDenovo test reads shipped in the image; 305,667 bp single contig (genome size 308 kb); staged config and read files
+nextflow	nextflow_clean	Not completed	runs, but the work directories of the test run are recorded under the original run path in another container, so clean only lists them and the deletion cannot be confirmed.
+nextflow	nextflow_clone	PASS	cloned nextflow-io/hello from GitHub
+nextflow	nextflow_config	PASS	tiny local hello pipeline; -profile test and flat output checked; baseCommand fixed
+nextflow	nextflow_drop	PASS	nextflow-io/hello downloaded project was removed from the assets folder
+nextflow	nextflow_info	PASS	nextflow-io/hello downloaded project; JSON output checked; -o applies only when a project is given
+nextflow	nextflow_inspect	PASS	tiny local pipeline with a container directive; JSON lists the container
+nextflow	nextflow_kuberun	Not completed	needs a Kubernetes cluster; pipeline, skipped
+nextflow	nextflow_launch	Not completed	needs a Seqera Platform account
+nextflow	nextflow_lint	PASS	tiny local main.nf and config; deprecation warning reported
+nextflow	nextflow_log	PASS	execution history from a real tiny run; per-task fields checked
+nextflow	nextflow_pull	PASS	pulled nextflow-io/hello from GitHub
+nextflow	nextflow_run	Not completed	pipeline, skipped
+nextflow	nextflow_view	PASS	nextflow-io/hello downloaded project; repository content listed
+nextpolish2	nextpolish2_nextPolish2	PASS	
+nextpolish2	nextpolish2_yak_count	PASS	
+nextpolish2	nextpolish2_yak_qv	PASS	
+nextstrain	nextstrain_build	Not completed	pipeline runner (Snakemake workflow), skipped
+nextstrain	nextstrain_deploy	Not completed	needs an S3 bucket and AWS account to upload to
+nextstrain	nextstrain_shell	Not completed	interactive shell inside a Docker container, not testable
+nextstrain	nextstrain_view	Not completed	long-running Auspice web server
+nf-core	nf-core_modules_create	PASS	
+nf-core	nf-core_modules_lint	PASS	
+nf-core	nf-core_pipelines_create	PASS	
+nf-core	nf-core_pipelines_lint	PASS	
+nf-core	nf-core_subworkflows_create	PASS	
+nf-core	nf-core_subworkflows_lint	PASS	
+nf-demultiplex	demultiplex_demux	PASS	
+nf-demultiplex	demultiplex_guess	PASS	
+nf-demultiplex	demultiplex_match	PASS	
+nf-isoseq	isoseq_bcstats	PASS	synthetic data: planted barcodes on real reads; counts match planted counts
+nf-isoseq	isoseq_cluster	PASS	
+nf-isoseq	isoseq_cluster2	PASS	
+nf-isoseq	isoseq_collapse	PASS	
+nf-isoseq	isoseq_correct	PASS	synthetic data: planted barcodes on real reads; corrected barcode equals planted barcode for all reads
+nf-isoseq	isoseq_dedup	Not completed	runs to success on real Iso-Seq reads with planted barcodes, but no duplicates were present, so all 44 reads were kept and the deduplication cannot be confirmed.
+nf-isoseq	isoseq_groupdedup	Not completed	runs to success on real Iso-Seq reads with planted barcodes, but no duplicates were present, so all 44 reads were kept and the deduplication cannot be confirmed.
+nf-isoseq	isoseq_refine	PASS	
+nf-isoseq	isoseq_summarize	PASS	
+nf-isoseq	isoseq_tag	PASS	synthetic data: UMI and barcode bases planted on real Iso-Seq reads; all tags recovered exactly
+nf-sopa	sopa_aggregate	PASS	synthetic data: sopa built-in toy dataset (400 cells); rebuilt table equals the toy table
+nf-sopa	sopa_convert	Not completed	no small real raw spatial dataset (Xenium, MERSCOPE, CosMx) available; wsi reader also lacks tiffslide in the image
+nf-sopa	sopa_report	PASS	synthetic data: sopa built-in toy dataset; HTML report lists 400 cells
+nf-sopa	sopa_scanpy-preprocess	Failed	image problem: python igraph package missing, leiden clustering step raises ImportError
+nf-test	nf-test_generate_function	Failed	tool bug: on real nf-core code it also generates bogus test cases for local variable assignments inside functions (7 of 10 tests), some uncompilable
+nf-test	nf-test_generate_pipeline	PASS	
+nf-test	nf-test_generate_process	PASS	
+nf-test	nf-test_generate_workflow	PASS	
+nf-test	nf-test_init	PASS	
+nf-test	nf-test_list	PASS	
+ngless	ngless	PASS	
+nglview	nglview	Not completed	launches a Jupyter notebook server (interactive, long-running), not testable
+ngmaster	ngmaster	PASS	
+ngmerge	ngmerge_NGmerge	PASS	
+ngmlr	ngmlr	PASS	
+ngs-bits	ngs-bits_BamClipOverlap	PASS	
+ngs-bits	ngs-bits_BamFilter	PASS	
+ngs-bits	ngs-bits_BamToFastq	PASS	
+ngs-bits	ngs-bits_BedAnnotateGC	PASS	
+ngs-bits	ngs-bits_BedAnnotateGenes	Not completed	needs an NGSD database (MySQL) with gene annotations; no usable test database
+ngs-bits	ngs-bits_BedCoverage	PASS	
+ngs-bits	ngs-bits_BedHighCoverage	PASS	
+ngs-bits	ngs-bits_BedLowCoverage	PASS	
+ngs-bits	ngs-bits_BedSort	PASS	
+ngs-bits	ngs-bits_FastaFromBam	PASS	synthetic data: M5 tag added to the header of a real BAM; output sequence equals the reference
+ngs-bits	ngs-bits_MappingQC	PASS	ROI mode checked on SARS-CoV-2 data (mapped 98.5 percent, depth 0.93 match samtools); -wgs with -build non_human prints -inf depth
+ngs-bits	ngs-bits_QcToTsv	PASS	
+ngs-bits	ngs-bits_ReadQC	PASS	
+ngs-bits	ngs-bits_RohHunter	PASS	
+ngs-bits	ngs-bits_SampleAncestry	PASS	
+ngs-bits	ngs-bits_SampleGender	PASS	
+ngs-bits	ngs-bits_SampleSimilarity	PASS	VCF mode matches the repo expected output; BAM mode gave zero overlap without an hg38 reference (not verified)
+ngs-bits	ngs-bits_SeqPurge	PASS	
+ngs-bits	ngs-bits_UpdHunter	PASS	
+ngs-bits	ngs-bits_VariantQC	PASS	
+ngs-bits	ngs-bits_VcfAdd	PASS	
+ngs-bits	ngs-bits_VcfAnnotateConsequence	Not completed	needs the hg38 reference genome FASTA (about 3 GB) that goes with the repo test data; no small Ensembl-style test set available
+ngs-bits	ngs-bits_VcfAnnotateFromBed	PASS	
+ngs-bits	ngs-bits_VcfAnnotateFromVcf	PASS	
+ngs-bits	ngs-bits_VcfSort	PASS	
+ngs-chew	ngs-chew_compare	PASS	
+ngs-chew	ngs-chew_fingerprint	PASS	
+ngs-chew	ngs-chew_plot-compare	PASS	
+ngs-chew	ngs-chew_plot-var-het	PASS	
+ngs-chew	ngs-chew_stats	PASS	
+ngs-disambiguate	ngs-disambiguate_disambiguate	PASS	
+ngs-smap	ngs-smap_smap_compare	PASS	
+ngs-smap	ngs-smap_smap_delineate	PASS	
+ngs-smap	ngs-smap_smap_design	PASS	
+ngs-smap	ngs-smap_smap_effect-prediction	Not completed	needs a haplotype-window output table; only rendered documentation tables found, no real input
+ngs-smap	ngs-smap_smap_grm	Not completed	only a three-sample toy haplotype table is available and the clustering step crashes on it; no larger real haplotype table
+ngs-smap	ngs-smap_smap_haplotype-sites	PASS	
+ngs-smap	ngs-smap_smap_haplotype-window	Not completed	needs HiPlex FASTQ and BAM files and a reference; no usable test data found
+ngs_te_mapper2	ngs_te_mapper2	Failed	image problem: RepeatMasker rebuilds its library inside the image, so it needs a writable image filesystem and root (cwltool --no-read-only --no-match-user)
+ngscheckmate	ngscheckmate_makesnvpattern.pl	PASS	
+ngscheckmate	ngscheckmate_ncm.py	Failed	image problem: BAM mode silently writes empty VCFs because the image's samtools no longer supports 'mpileup -u'; VCF mode works and its sample matching is correct.
+ngscheckmate	ngscheckmate_ncm_fastq.py	Failed	image problem: ncm_fastq.py is Python 2 code (file.xreadlines) and crashes on the image Python 3.12
+ngscheckmate	ngscheckmate_ngscheckmate_fastq	PASS	
+ngscheckmate	ngscheckmate_vaf_ncm.py	Not completed	runs, but only a few SNP sites are covered by the small FASTQ data, so no match call can be checked
+ngsderive	ngsderive_encoding	PASS	
+ngsderive	ngsderive_endedness	PASS	
+ngsderive	ngsderive_instrument	PASS	
+ngsderive	ngsderive_junction-annotation	PASS	
+ngsderive	ngsderive_readlen	PASS	
+ngsderive	ngsderive_strandedness	PASS	
+ngsfetch	ngsfetch	PASS	
+ngshmmalign	ngshmmalign	PASS	single-end run matched the original aligner on all 84 reads; the paired test reads fully overlap and were all filtered by the tool
+ngsngs	ngsngs	PASS	
+ngsplotdb-ngsplotdb-hg19	ngsplotdb-ngsplotdb-hg19_ngs.plot.r	Failed	image problem: the hg19 annotation database is missing from the image (only -R bed works) and the zip step fails
+ngsplotdb-ngsplotdb-hg19	ngsplotdb-ngsplotdb-hg19_ngsplotdb_chrnames	Failed	image problem: the hg19 database files are missing from the image
+ngsplotdb-ngsplotdb-hg19	ngsplotdb-ngsplotdb-hg19_ngsplotdb_install	Not completed	needs the large ngsplotdb package file, which is not available here
+ngsplotdb-ngsplotdb-hg19	ngsplotdb-ngsplotdb-hg19_ngsplotdb_list	Not completed	runs, but no genome is installed in the image so the table is empty
+ngsplotdb-ngsplotdb-hg19	ngsplotdb-ngsplotdb-hg19_ngsplotdb_remove	Not completed	no genome is installed in the image to remove
+niemagraphgen	niemagraphgen_ngg_barabasi_albert	PASS	
+niemagraphgen	niemagraphgen_ngg_barbell	PASS	
+niemagraphgen	niemagraphgen_ngg_complete	PASS	
+niemagraphgen	niemagraphgen_ngg_cycle	PASS	
+niemagraphgen	niemagraphgen_ngg_empty	PASS	
+niemagraphgen	niemagraphgen_ngg_erdos_renyi	PASS	
+niemagraphgen	niemagraphgen_ngg_newman_watts_strogatz	PASS	
+niemagraphgen	niemagraphgen_ngg_path	PASS	
+niemagraphgen	niemagraphgen_ngg_ring_lattice	PASS	
+nifflr	nifflr_nifflr.sh	Failed	image problem: nifflr.sh calls python but the image has no python command
+nii2dcm	nii2dcm	Failed	image problem: nii2dcm crashes at start because its version code needs git, which is not in the image
+nim-abif	nim-abif_abi2fq	PASS	
+nim-abif	nim-abif_abichromatogram	PASS	
+nim-abif	nim-abif_abif	PASS	
+nim-abif	nim-abif_abimerge	PASS	
+nim-abif	nim-abif_abimetadata	PASS	viewing a tag works; editing a tag (-v, -o) crashes in a stat call inside the image
+nimnexus	nimnexus_dedup	PASS	
+nimnexus	nimnexus_trim	PASS	
+nmrml2isa	nmrml2isa	Failed	image problem: nmrml2isa crashes on every nmrML file because the image pronto version has no rchildren method
+nohuman	nohuman	Not completed	needs the large human k-mer database (several GB); only the dependency check ran
+noise2read	noise2read	PASS	correction module checked on real miRNA reads with a config file that sets 3 tuning trials
+nomadic	nomadic_backup	PASS	
+nomadic	nomadic_configure_backup	PASS	
+nomadic	nomadic_configure_share	PASS	
+nomadic	nomadic_dashboard	Not completed	long-running web server needing results of a previous experiment
+nomadic	nomadic_download	Failed	tool bug: hard-coded release-67 download URLs return HTTP 404
+nomadic	nomadic_process	Not completed	needs a downloaded reference genome and MinKNOW data; reference download is broken (HTTP 404)
+nomadic	nomadic_realtime	Not completed	needs a downloaded reference genome and live MinKNOW run; reference download is broken (HTTP 404)
+nomadic	nomadic_share	PASS	
+nomadic	nomadic_start	Failed	tool bug: nomadic 0.7.2 downloads the reference from a hard-coded PlasmoDB release-67 URL that now returns HTTP 404
+nopilesum	nopilesum	PASS	
+noresm	noresm_create_newcase	PASS	
+notramp	notramp	Failed	image problem: --figures silently does nothing because matplotlib is missing in the image; read capping and clipping are correct.
+novasplice	novasplice	PASS	
+novoalign	novoalign_novoalign	Not completed	needs a Novocraft licence (novoalign stops with a licence error)
+novoalign	novoalign_novobarcode	Not completed	no barcoded read set and tag file available for a real test
+novoalign	novoalign_novoindex	Not completed	writes an index that isnovoindex and novoutil headers accept, but the log says 0 kmers indexed and novoalign needs a licence, so the index cannot be shown to work.
+novoalign	novoalign_novosort	PASS	
+novobreak	novobreak_novoBreak	PASS	somatic k-mers found from two small real BAMs
+novobreak	novobreak_run_novoBreak.sh	Not completed	pipeline, skipped (shell script that runs the whole novoBreak pipeline)
+novoloci	novoloci	PASS	16p13 demo (ONT reads), target shortened to 150 kb: two haplotype assemblies of about 163 kb each
+novoplasty	novoplasty_NOVOPlasty4.3.5.pl	PASS	Galaxy test data (mito, 2000 read pairs): circularized assembly of 16689 bp
+novoplasty	novoplasty_filter_reads.pl	PASS	SARS-CoV-2 test reads from nf-core filtered against the genome
+npinv	npinv	PASS	inversion called from small real ONT BAM (nanomonsv test data); COLO829 chr22 subset gave no inversions
+nseg	nseg	PASS	default window/cutoffs on a human chr22 slice mask low-complexity DNA and -l lists segments; window 12 locut 2.2 hicut 2.5 segfaults in the tool (exit 139)
+ntcard	ntcard	PASS	
+ntedit	ntedit	PASS	edits and VCF written from a Bloom filter of SARS-CoV-2 test reads
+nthits	nthits	PASS	bf of SARS-CoV-2 test reads, checked with nthits-bfq
+nthits	nthits_bfq	PASS	
+ntm-profiler	ntm-profiler_collate	PASS	
+ntm-profiler	ntm-profiler_create_resistance_db	PASS	
+ntm-profiler	ntm-profiler_create_species_db	PASS	species database rebuilt from the downloaded sourmash index; sylph sketches not tested
+ntm-profiler	ntm-profiler_list_db	PASS	
+ntm-profiler	ntm-profiler_profile	PASS	M. abscessus genome from NCBI called as M. abscessus subsp. bolletii
+ntm-profiler	ntm-profiler_update_db	PASS	downloads the 1.2 GB database from GitHub
+ntroot	ntroot	PASS	--custom_vcf demo (HG002 chr21) predicts EUR as expected; reads and genome modes not tested
+ntsm	ntsm_ntsmCount	PASS	counts file written to stdout; 1544 chr21 sites covered by real chr21 reads
+ntsm	ntsm_ntsmEval	PASS	two halves of one real chr21 read set compared: relatedness 0.87, homozygous concordance 0.93
+ntsm	ntsm_ntsmSiteGen	PASS	generate-sites on 1000 Genomes chr22 SNPs; sites FASTA files written; generate-pca-rot-mat not tested
+ntsm	ntsm_ntsmVCF	Failed	tool bug: ntsmVCF segfaults (exit 139) right after opening the sites file on two real multi-sample VCFs
+ntstat	ntstat_count	PASS	counting Bloom filters written from SARS-CoV-2 test reads
+ntstat	ntstat_filter	PASS	
+ntstat	ntstat_hist	PASS	plot written with --no-model; the model fit fails on this tiny histogram
+ntstat	ntstat_query	PASS	5908 of 29809 genome 21-mers found in the filter built from the test reads
+ntsynt	ntsynt_ntSynt	PASS	3-genome demo gives the expected synteny blocks (same coordinates; block sizes differ by a few k-mers)
+nucamino	nucamino_hiv1b	PASS	HXB2 pol aligned at NA 2085-5093 as expected
+nucdiff	nucdiff	PASS	Wuhan-Hu-1 vs a 2020 US isolate: 5 substitutions incl. 241, 3037, 14408, 23403
+nucflag	nucflag	Not completed	runs and writes calls, but the call differs from the repo's expected output (made for NucFlag v1; image has 0.3.8) so the result cannot be confirmed
+nucleoatac	nucleoatac_merge	PASS	merged nucleosome map written from the example calls
+nucleoatac	nucleoatac_nfr	PASS	NFR calls for two example regions identical to the run output; needs the occ bound tracks and a fasta
+nucleoatac	nucleoatac_nuc	PASS	7 nucleosome calls for two example regions, all identical to the run output; needs the occ bound tracks
+nucleoatac	nucleoatac_occ	PASS	160 occupancy peaks, same as the run output
+nucleoatac	nucleoatac_run	PASS	repo example (yeast ATAC): 160 occupancy peaks and 125 nucleosome calls; occupancy fit identical to the repo's expected file
+nucleoatac	nucleoatac_vprocess	PASS	V-plot file written from the example fragment sizes
+nudup	nudup_nudup.py	PASS	
+nullarbor	nullarbor_nullarbor.pl	Not completed	pipeline, skipped
+nwalign3	nwalign3	Failed	image problem: numpy has no attribute 'int' (nwalign3 0.1.6 needs older numpy), tool crashes on any alignment
+nwkit	nwkit_constrain	Failed	image problem: nwkit constrain imports pkg_resources, which is missing in the image, so it crashes at start
+nwkit	nwkit_dist	Failed	tool bug: with -o the header and values are written on one line (missing newline); stdout output, which the CWL captures, is correct.
+nwkit	nwkit_drop	PASS	
+nwkit	nwkit_info	Failed	tool bug: -o/--outfile is silently ignored (the result only goes to stdout, which the CWL captures); the tree statistics are correct.
+nwkit	nwkit_intersection	PASS	
+nwkit	nwkit_label	PASS	
+nwkit	nwkit_mark	PASS	
+nwkit	nwkit_mcmctree	PASS	
+nwkit	nwkit_nhx2nwk	PASS	synthetic data: NHX tree hand-typed from the NHX specification example; converted Newick is correct, and labels appear with outformat 1.
+nwkit	nwkit_printlabel	Failed	tool bug: -o/--outfile is silently ignored (labels only go to stdout, which the CWL captures); the label list is correct.
+nwkit	nwkit_prune	PASS	
+nwkit	nwkit_rescale	PASS	
+nwkit	nwkit_root	PASS	
+nwkit	nwkit_sanitize	PASS	
+nwkit	nwkit_shuffle	PASS	
+nwkit	nwkit_skim	PASS	
+nwkit	nwkit_subtree	PASS	
+nwkit	nwkit_transfer	PASS	
+nxtrim	nxtrim	PASS	
+oakvar	oakvar_ov_gui	Not completed	starts a long-running web server (GUI)
+oakvar	oakvar_ov_module_info	Not completed	needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed
+oakvar	oakvar_ov_module_install	Not completed	needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed
+oakvar	oakvar_ov_module_ls	Not completed	needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed
+oakvar	oakvar_ov_module_update	Not completed	needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed
+oakvar	oakvar_ov_new_exampleinput	PASS	
+oakvar	oakvar_ov_report	Not completed	needs a result database from ov run, which needs store modules (account required)
+oakvar	oakvar_ov_run	Not completed	needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed
+oakvar	oakvar_ov_system_setup	Not completed	needs an OakVar store account: setup and module download fail with authorization failed, and no converter or mapper module can be installed
+oakvar	oakvar_ov_util_filtersqlite	Not completed	needs a result database from ov run, which needs store modules (account required)
+oakvar	oakvar_ov_util_sqliteinfo	Not completed	needs a result database from ov run, which needs store modules (account required)
+oarfish	oarfish	PASS	
+oases	oases	PASS	
+oatk	oatk	PASS	
+oatk	oatk_path_to_fasta	PASS	
+oatk	oatk_pathfinder	PASS	
+oatk	oatk_syncasm	PASS	
+obitools	obitools_obiclean	PASS	
+obitools4	obitools4_obiconvert	PASS	
+ococo	ococo	PASS	
+octopusv	octopusv_benchmark	PASS	
+octopusv	octopusv_correct	PASS	
+octopusv	octopusv_merge	Not completed	gives 1640 records against 1631 in the expected file (all expected records present, each supported by at least 2 callers); the difference, probably a version change, cannot be confirmed.
+octopusv	octopusv_plot	PASS	
+octopusv	octopusv_somatic	PASS	
+octopusv	octopusv_stat	PASS	
+octopusv	octopusv_svcf2bed	PASS	
+octopusv	octopusv_svcf2bedpe	PASS	
+octopusv	octopusv_svcf2vcf	Not completed	output differs from the expected file in REF ('.' vs 'N') on 14 BND rows, probably a version change, so the conversion cannot be confirmed.
+odamnet	odamnet_domino	Not completed	needs the external DOMINO web server (domino.cs.tau.ac.il), which refuses connections; the command ran up to the server call
+odamnet	odamnet_multixrank	PASS	
+odamnet	odamnet_networkCreation	PASS	
+odamnet	odamnet_networkDownloading	PASS	
+odamnet	odamnet_overlap	PASS	
+odgi	odgi_bin	PASS	
+odgi	odgi_break	PASS	
+odgi	odgi_build	PASS	
+odgi	odgi_chop	PASS	
+odgi	odgi_cover	PASS	
+odgi	odgi_crush	PASS	
+odgi	odgi_degree	PASS	
+odgi	odgi_depth	PASS	
+odgi	odgi_draw	PASS	
+odgi	odgi_explode	PASS	
+odgi	odgi_extract	PASS	
+odgi	odgi_flatten	PASS	
+odgi	odgi_flip	PASS	
+odgi	odgi_groom	PASS	
+odgi	odgi_heaps	PASS	
+odgi	odgi_inject	PASS	
+odgi	odgi_kmers	PASS	
+odgi	odgi_layout	PASS	
+odgi	odgi_matrix	PASS	
+odgi	odgi_normalize	PASS	
+odgi	odgi_overlap	PASS	
+odgi	odgi_panpos	PASS	
+odgi	odgi_pathindex	PASS	
+odgi	odgi_paths	PASS	
+odgi	odgi_pav	PASS	
+odgi	odgi_position	PASS	
+odgi	odgi_priv	PASS	
+odgi	odgi_procbed	PASS	
+odgi	odgi_prune	PASS	
+odgi	odgi_server	Not completed	long-running HTTP server, not run
+odgi	odgi_similarity	PASS	
+odgi	odgi_sort	PASS	
+odgi	odgi_squeeze	PASS	
+odgi	odgi_stats	PASS	
+odgi	odgi_stepindex	PASS	
+odgi	odgi_tension	PASS	
+odgi	odgi_tips	PASS	
+odgi	odgi_unchop	PASS	
+odgi	odgi_unitig	PASS	
+odgi	odgi_untangle	PASS	
+odgi	odgi_validate	PASS	
+odgi	odgi_view	PASS	
+odgi	odgi_viz	PASS	

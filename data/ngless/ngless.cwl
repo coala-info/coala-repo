@@ -3,7 +3,29 @@ class: CommandLineTool
 baseCommand: ngless-wrapped
 label: ngless
 doc: "ngless implement the NGLess language\n\nTool homepage: http://ngless.embl.de"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.script_file) { l.push({"entry": inputs.script_file, "writable": true}); }
+        (inputs.data_files || []).forEach(function (f) { l.push(f); });
+        return l;
+      }
 inputs:
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input files that the script reads by relative name (for example sample.fq); staged in the working directory
+  - id: result_names
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Names of the files the script writes (the ofile values), collected as outputs
   - id: script_file
     type:
       - 'null'
@@ -11,13 +33,6 @@ inputs:
     doc: Filename of script to interpret
     inputBinding:
       position: 1
-  - id: reference_data
-    type:
-      - 'null'
-      - string
-    doc: Name of reference to install
-    inputBinding:
-      position: 2
   - id: additional_args
     type:
       - 'null'
@@ -110,7 +125,7 @@ inputs:
   - id: export_cwl
     type:
       - 'null'
-      - File
+      - string
     doc: File to write CWL wrapper of given script
     inputBinding:
       position: 104
@@ -118,7 +133,7 @@ inputs:
   - id: export_json
     type:
       - 'null'
-      - File
+      - string
     doc: File to write JSON representation of script to
     inputBinding:
       position: 104
@@ -142,8 +157,8 @@ inputs:
   - id: install_reference_data
     type:
       - 'null'
-      - boolean
-    doc: Install reference data
+      - string
+    doc: Name of reference to install
     inputBinding:
       position: 104
       prefix: --install-reference-data
@@ -158,7 +173,7 @@ inputs:
   - id: local_file
     type:
       - 'null'
-      - File
+      - string
     doc: Local path to save the downloaded file
     inputBinding:
       position: 104
@@ -320,6 +335,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files written by the script (named in result_names)
+    outputBinding:
+      glob: $(inputs.result_names)
+  - id: export_cwl_file
+    type: ['null', File]
+    doc: CWL wrapper of the script (with export_cwl)
+    outputBinding:
+      glob: $(inputs.export_cwl)
+  - id: export_json_file
+    type: ['null', File]
+    doc: JSON representation of the script (with export_json)
+    outputBinding:
+      glob: $(inputs.export_json)
   - id: html_report_directory_dir
     type:
       - 'null'

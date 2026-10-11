@@ -45,7 +45,9 @@ inputs:
     doc: Put user defined arguments in statusdict::userargs
     inputBinding:
       position: 102
-      prefix: --userargs
+      prefix: --userargs=
+      separate: false
+      itemSeparator: ':'
   - id: verbosity
     type:
       - 'null'
@@ -54,7 +56,8 @@ inputs:
       (DEBUG|STATUS|INFO|WARNING|ERROR|FATAL) or turn off all messages (QUIET).
     inputBinding:
       position: 102
-      prefix: --verbosity
+      prefix: --verbosity=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

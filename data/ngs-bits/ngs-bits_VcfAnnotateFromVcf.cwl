@@ -56,14 +56,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -existence_only
-  - id: hts_version
-    type:
-      - 'null'
-      - boolean
-    doc: Prints used htlib version and exits.
-    inputBinding:
-      position: 101
-      prefix: -hts_version
   - id: id_column
     type:
       - 'null'
@@ -120,18 +112,12 @@ inputs:
       - 'null'
       - File
     doc: Tabix indexed VCF.GZ file that is the source of the annotated data.
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 101
       prefix: -source
-  - id: tdx
-    type:
-      - 'null'
-      - boolean
-    doc: Writes a Tool Definition Xml file. The file name is the application 
-      name with the suffix '.tdx'.
-    inputBinding:
-      position: 101
-      prefix: --tdx
   - id: threads
     type:
       - 'null'

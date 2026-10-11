@@ -9,17 +9,14 @@ inputs:
   - id: bam_file
     type: File
     doc: Input BAM/CRAM file.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: -bam
-  - id: changelog
-    type:
-      - 'null'
-      - boolean
-    doc: Prints changeloge and exits.
-    inputBinding:
-      position: 101
-      prefix: --changelog
   - id: cutoff
     type: int
     doc: Minimum depth to consider a base 'high coverage'.
@@ -85,15 +82,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --settings
-  - id: tdx
-    type:
-      - 'null'
-      - boolean
-    doc: Writes a Tool Definition Xml file. The file name is the application 
-      name with the suffix '.tdx'.
-    inputBinding:
-      position: 101
-      prefix: --tdx
   - id: threads
     type:
       - 'null'

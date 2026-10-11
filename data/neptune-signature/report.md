@@ -1,5 +1,11 @@
 # neptune-signature CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| neptune-signature_neptune | PASS | real phage genomes from NCBI; baseCommand changed to neptune, added --reference and --output |
+
 ## neptune-signature_neptune
 
 ### Tool Description

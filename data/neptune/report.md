@@ -1,5 +1,11 @@
 # neptune CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| neptune | PASS | real phage genomes from NCBI (lambda and HK022 inclusion, T7 and phiX174 exclusion); fixed organization type to int |
+
 ## neptune
 
 ### Tool Description

@@ -55,15 +55,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --settings
-  - id: tdx
-    type:
-      - 'null'
-      - boolean
-    doc: Writes a Tool Definition Xml file. The file name is the application 
-      name with the suffix '.tdx'.
-    inputBinding:
-      position: 101
-      prefix: --tdx
   - id: output_file_path
     type: string
     doc: "Output TSV file. If unset, writes to STDOUT. Default value: ''"

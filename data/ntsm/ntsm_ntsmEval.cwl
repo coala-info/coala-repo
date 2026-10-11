@@ -89,7 +89,7 @@ inputs:
   - id: norm
     type:
       - 'null'
-      - string
+      - File
     doc: Set of values use to center the data before rotation during PCA. 
       [Required if -p is enabled]
     inputBinding:
@@ -107,7 +107,7 @@ inputs:
   - id: pca
     type:
       - 'null'
-      - string
+      - File
     doc: Use PCA information to speed up analysis. Input is a set of rotational 
       values from a PCA.
     inputBinding:
@@ -155,9 +155,18 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
+  - id: merged_counts
+    type:
+      - 'null'
+      - File
+    doc: Merged counts file written when merge is given
+    outputBinding:
+      glob: $(inputs.merge)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntsm:1.2.1--h077b44d_1

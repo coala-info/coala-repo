@@ -1,5 +1,11 @@
 # nseg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nseg | PASS | default window/cutoffs on a human chr22 slice mask low-complexity DNA and -l lists segments; window 12 locut 2.2 hicut 2.5 segfaults in the tool (exit 139) |
+
 ## nseg
 
 ### Tool Description

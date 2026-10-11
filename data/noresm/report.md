@@ -1,5 +1,11 @@
 # noresm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| noresm_create_newcase | PASS |  |
+
 ## noresm_create_newcase
 
 ### Tool Description

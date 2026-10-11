@@ -6,8 +6,6 @@ doc: "Compares two fasta files and outputs differences\n\nTool homepage: https:/
 inputs:
   - id: reference_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: Fasta file with the reference sequences
     inputBinding:
       position: 1
@@ -17,7 +15,7 @@ inputs:
     inputBinding:
       position: 2
   - id: output_dir
-    type: Directory
+    type: string
     doc: Path to the directory where all intermediate and final results will be 
       stored
     inputBinding:
@@ -101,9 +99,16 @@ inputs:
       position: 105
       prefix: --vcf
 outputs:
+  - id: results
+    type: Directory
+    doc: Output directory with the NucDiff results
+    outputBinding:
+      glob: $(inputs.output_dir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nucdiff:2.0.3--pyh864c0ab_1

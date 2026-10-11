@@ -1,5 +1,19 @@
 # niemagraphgen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| niemagraphgen_ngg_barabasi_albert | PASS |  |
+| niemagraphgen_ngg_barbell | PASS |  |
+| niemagraphgen_ngg_complete | PASS |  |
+| niemagraphgen_ngg_cycle | PASS |  |
+| niemagraphgen_ngg_empty | PASS |  |
+| niemagraphgen_ngg_erdos_renyi | PASS |  |
+| niemagraphgen_ngg_newman_watts_strogatz | PASS |  |
+| niemagraphgen_ngg_path | PASS |  |
+| niemagraphgen_ngg_ring_lattice | PASS |  |
+
 ## niemagraphgen_ngg_barabasi_albert
 
 ### Tool Description
@@ -148,6 +162,23 @@ NiemaGraphGen v1.0.6 (FAVITES Output Format) (32-bit) (Ring Lattice)
 USAGE: ngg_ring_lattice <num_nodes> <degree>
 ```
 
+
+## niemagraphgen_ngg_empty
+
+### Tool Description
+Generates an empty graph (nodes without edges) in FAVITES output format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/niemagraphgen:1.0.6--hdbdd923_0
+- **Homepage**: https://github.com/niemasd/NiemaGraphGen
+- **Package**: https://anaconda.org/channels/bioconda/packages/niemagraphgen/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+NiemaGraphGen v1.0.6 (FAVITES Output Format) (32-bit) (Empty Graph)
+USAGE: ngg_empty <num_nodes>
+```
 
 ## Metadata
 - **Skill**: generated

@@ -2,88 +2,109 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: noise2read
 label: noise2read
-doc: "Noise2Read is a tool for denoising sequencing data.\n\nTool homepage: https://github.com/Jappy0/noise2read"
+doc: "Noise2Read is a tool for denoising sequencing data. It corrects errors in short
+  reads (amplicon, miRNA, UMI and other data) with a graph and machine learning
+  model.\n\nTool homepage: https://github.com/Jappy0/noise2read"
 inputs:
-  - id: config
-    type: File
-    doc: input configuration file
+  - id: module
+    type: string
+    doc: "module selection: correction, amplicon_correction, umi_correction, mimic_umi,
+      real_umi, evaluation or simulation"
     inputBinding:
-      position: 101
-      prefix: --config
+      position: 1
+      prefix: -m
+  - id: config
+    type:
+      - 'null'
+      - File
+    doc: input configuration file (use this or input)
+    inputBinding:
+      position: 2
+      prefix: -c
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: input raw data to be corrected (fastq, fasta, fa or fq)
+    inputBinding:
+      position: 2
+      prefix: -i
+  - id: umi_file
+    type:
+      - 'null'
+      - File
+    doc: UMI file (the umi_file option, short form -u)
+    inputBinding:
+      position: 2
+      prefix: -u
+  - id: output_directory
+    type:
+      - 'null'
+      - string
+    doc: set output directory (a trailing slash is added)
+    inputBinding:
+      position: 3
+      prefix: -d
+      valueFrom: $(self + "/")
+  - id: high_ambiguous
+    type:
+      - 'null'
+      - string
+    doc: "predict high ambiguous errors using machine learning, True or False (default
+      True)"
+    inputBinding:
+      position: 3
+      prefix: -a
   - id: ground_truth
     type:
       - 'null'
       - File
     doc: input ground truth data if you have
     inputBinding:
-      position: 101
-      prefix: --true
-  - id: high_ambiguous
-    type:
-      - 'null'
-      - boolean
-    doc: predict high ambiguous errors using machine learning when set true, 
-      defaut true
-    inputBinding:
-      position: 101
-      prefix: --high_ambiguous
-  - id: input
-    type: File
-    doc: input raw data to be corrected
-    inputBinding:
-      position: 101
-      prefix: --input
-  - id: module
-    type: string
-    doc: module selection
-    inputBinding:
-      position: 101
-      prefix: --module
-  - id: output_directory
-    type:
-      - 'null'
-      - string
-    doc: set output directory
-    inputBinding:
-      position: 101
-      prefix: --directory
-  - id: parallel
-    type:
-      - 'null'
-      - string
-    doc: use multiple cpu cores, default total cpu cores - 2
-    inputBinding:
-      position: 101
-      prefix: --parallel
+      position: 3
+      prefix: -t
   - id: rectification
     type:
       - 'null'
       - File
     doc: input corrected data when using module evaluation
     inputBinding:
-      position: 101
-      prefix: --rectification
+      position: 3
+      prefix: -r
+  - id: parallel
+    type:
+      - 'null'
+      - int
+    doc: use multiple cpu cores, default total cpu cores - 2
+    inputBinding:
+      position: 3
+      prefix: -p
   - id: tree_method
     type:
       - 'null'
       - string
-    doc: use gpu for training and prediction, default auto, (options gpu_hist, 
+    doc: use gpu for training and prediction, default auto, (options gpu_hist,
       hist, auto)
     inputBinding:
-      position: 101
-      prefix: --tree_method
+      position: 3
+      prefix: -g
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_directory_dir
     type:
       - 'null'
       - Directory
-    doc: set output directory
+    doc: output directory with the corrected reads, tables and plots
     outputBinding:
       glob: $(inputs.output_directory)
+  - id: log_files
+    type:
+      type: array
+      items: File
+    doc: Log file written to the working directory
+    outputBinding:
+      glob: '*noise2read.log'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/noise2read:0.3.0--pyhdfd78af_0
-stdout: noise2read.out

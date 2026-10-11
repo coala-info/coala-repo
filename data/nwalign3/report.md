@@ -1,5 +1,11 @@
 # nwalign3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nwalign3 | Failed | image problem: numpy has no attribute 'int' (nwalign3 0.1.6 needs older numpy), tool crashes on any alignment |
+
 ## nwalign3
 
 ### Tool Description

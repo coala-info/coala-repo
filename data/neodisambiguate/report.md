@@ -1,5 +1,11 @@
 # neodisambiguate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| neodisambiguate | PASS | real reads from nf-core sarscov2 and human mixed, aligned with bwa to two references; added --input/--output flags and ambiguous outputs |
+
 ## neodisambiguate
 
 ### Tool Description

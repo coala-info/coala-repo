@@ -1,26 +1,26 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: disambiguate
+baseCommand: ngs_disambiguate
 label: ngs-disambiguate_disambiguate
 doc: "Disambiguate reads from two species (e.g., human and mouse) in a mixed-species
-  sample. It takes two BAM files (one for each species) and assigns reads to the species
-  with the higher alignment quality.\n\nTool homepage: https://github.com/AstraZeneca-NGS/disambiguate"
+  sample. It takes two name-sorted BAM files (one for each species) and assigns reads
+  to the species with the higher alignment quality.\n\nTool homepage: https://github.com/AstraZeneca-NGS/disambiguate"
 inputs:
   - id: species_a_bam
     type: File
-    doc: BAM file for species A
+    doc: Species A BAM file
     inputBinding:
       position: 1
   - id: species_b_bam
     type: File
-    doc: BAM file for species B
+    doc: Species B BAM file
     inputBinding:
       position: 2
   - id: aligner
     type:
       - 'null'
       - string
-    doc: Aligner used (e.g., bwa, bowtie2, tophat2, star, hisat2)
+    doc: Aligner option {tophat(default),hisat2,bwa,star}
     inputBinding:
       position: 103
       prefix: --aligner
@@ -28,47 +28,29 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not sort the output BAM files
+    doc: (Deprecated option for backwards compatibility)
     inputBinding:
       position: 103
       prefix: --no-sort
   - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: Prefix for output files
+    type: string
+    doc: Sample ID or name used as prefix. Do not include .bam
     inputBinding:
       position: 103
       prefix: --prefix
-  - id: sort
-    type:
-      - 'null'
-      - boolean
-    doc: Sort the output BAM files
-    inputBinding:
-      position: 103
-      prefix: --sort
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output directory
     inputBinding:
       position: 104
       prefix: --output-dir
 outputs:
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory
+    type: Directory
+    doc: Output directory with the disambiguated and ambiguous BAM files and the
+      summary text file
     outputBinding:
       glob: $(inputs.output_dir_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

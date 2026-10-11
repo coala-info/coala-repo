@@ -1,5 +1,12 @@
 # nimnexus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nimnexus_dedup | PASS |  |
+| nimnexus_trim | PASS |  |
+
 ## nimnexus_trim
 
 ### Tool Description

@@ -10,7 +10,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Storage directory
+    doc: Branch of the database repository
     inputBinding:
       position: 101
       prefix: --branch
@@ -25,7 +25,7 @@ inputs:
   - id: db_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Storage directory
     inputBinding:
       position: 101
@@ -41,7 +41,7 @@ inputs:
   - id: dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Storage directory
     inputBinding:
       position: 101
@@ -79,9 +79,20 @@ inputs:
       position: 101
       prefix: --temp
 outputs:
+  - id: database
+    type:
+      - 'null'
+      - Directory
+    doc: Database folder written by update_db
+    outputBinding:
+      glob: $(inputs.db_dir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntm-profiler:0.8.1--pyhdfd78af_0

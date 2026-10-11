@@ -1,5 +1,11 @@
 # oarfish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| oarfish | PASS |  |
+
 ## oarfish
 
 ### Tool Description

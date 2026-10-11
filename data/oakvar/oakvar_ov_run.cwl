@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - oakvar_ov
+  - ov
   - run
 label: oakvar_ov_run
 doc: "Run OakVar on input files.\n\nTool homepage: http://www.oakvar.com"
@@ -271,8 +271,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - type: array
-        items: Directory
+      - string
     doc: directory for output files
     inputBinding:
       position: 102
@@ -408,6 +407,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir_files
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the job result files (SQLite database, reports and log).
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/oakvar:2.12.25--pyhdfd78af_0

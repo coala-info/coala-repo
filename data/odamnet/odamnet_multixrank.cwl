@@ -16,7 +16,7 @@ inputs:
       position: 101
       prefix: --chemicalsFile
   - id: config_path
-    type: Directory
+    type: File
     doc: Configurations file path name
     inputBinding:
       position: 101
@@ -32,7 +32,7 @@ inputs:
   - id: direct_association
     type:
       - 'null'
-      - boolean
+      - string
     doc: "True: Extract target genes from chemicals\n                            \
       \      False: Extract target genes from chemicals +\n                      \
       \            its child chemicals"
@@ -50,10 +50,11 @@ inputs:
       prefix: --nbPub
   - id: networks_path
     type: Directory
-    doc: Network directory path
+    doc: Network directory path (staged writable; the seeds file is written inside it)
     inputBinding:
       position: 101
       prefix: --networksPath
+      valueFrom: $(self.basename)
   - id: output_path
     type:
       - 'null'
@@ -63,11 +64,12 @@ inputs:
       position: 101
       prefix: --outputPath
   - id: seeds_file
-    type: File
-    doc: Seeds file path name
+    type: string
+    doc: Seeds file name, relative to the networks directory (the tool writes it)
     inputBinding:
       position: 101
       prefix: --seedsFile
+      valueFrom: $(inputs.networks_path.basename)/$(self)
   - id: sif_file_name
     type: string
     doc: Name of the output file network SIF
@@ -101,7 +103,20 @@ outputs:
       - Directory
     doc: Output folder name to save results
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path || 'OutputResults')
+  - id: seeds_out
+    type:
+      - 'null'
+      - File
+    doc: Seeds file written by the tool
+    outputBinding:
+      glob: $(inputs.networks_path.basename)/$(inputs.seeds_file)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.networks_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odamnet:1.1.0--pyhdfd78af_0

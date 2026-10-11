@@ -1,5 +1,14 @@
 # ntstat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ntstat_count | PASS | counting Bloom filters written from SARS-CoV-2 test reads |
+| ntstat_filter | PASS |  |
+| ntstat_hist | PASS | plot written with --no-model; the model fit fails on this tiny histogram |
+| ntstat_query | PASS | 5908 of 29809 genome 21-mers found in the filter built from the test reads |
+
 ## ntstat_count
 
 ### Tool Description

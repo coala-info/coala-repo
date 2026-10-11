@@ -87,8 +87,12 @@ outputs:
     doc: Output BAM file.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: stderr_log
+    type: stderr
+    doc: Standard error of the tool (messages and verbose log)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0
+stderr: ngs-bits_BamClipOverlap.err

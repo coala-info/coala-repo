@@ -1,33 +1,61 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: oakvar_ov
+baseCommand:
+  - ov
+  - system
+  - setup
 label: oakvar_ov_system_setup
-doc: "OakVar system setup\n\nTool homepage: http://www.oakvar.com"
+doc: "Sets up the OakVar system.\n\nTool homepage: http://www.oakvar.com"
 inputs:
-  - id: oakvar_store_account
+  - id: setup_file
+    type:
+      - 'null'
+      - File
+    doc: Setup file to use.
+    inputBinding:
+      position: 102
+      prefix: -f
+  - id: email
     type:
       - 'null'
       - string
-    doc: Indicates if the user has an OakVar store account
+    doc: Email for an OakVar store account.
     inputBinding:
-      position: 101
-      prefix: Do you already have an OakVar store account?
-  - id: system_config_file
+      position: 102
+      prefix: --email
+  - id: pw
     type:
       - 'null'
-      - File
-    doc: System configuration file
+      - string
+    doc: Password for an OakVar store account.
     inputBinding:
-      position: 101
-      prefix: System configuration file
-  - id: user_config_file
+      position: 102
+      prefix: --pw
+  - id: clean
     type:
       - 'null'
-      - File
-    doc: User configuration file
+      - boolean
+    doc: Performs clean installation.
     inputBinding:
-      position: 101
-      prefix: User configuration file
+      position: 102
+      prefix: --clean
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Run quietly.
+    inputBinding:
+      position: 102
+      prefix: --quiet
+  - id: modules
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Modules to install.
+    inputBinding:
+      position: 102
+      prefix: --modules
 outputs:
   - id: stdout
     type: stdout

@@ -19,6 +19,8 @@ inputs:
       - 'null'
       - File
     doc: Sorted (and indexed) BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam
@@ -29,10 +31,10 @@ inputs:
       position: 101
       prefix: --bed
   - id: genome_seq
-    type:
-      - 'null'
-      - File
-    doc: Indexed fasta file
+    type: File
+    doc: Indexed fasta file. Needed for the bias calculation; nfr fails without it.
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --fasta
@@ -42,6 +44,8 @@ inputs:
       - File
     doc: bgzip compressed, tabix-indexed bedgraph file with insertion track. 
       will be generated if not included
+    secondaryFiles:
+      - .tbi
     inputBinding:
       position: 101
       prefix: --ins_track
@@ -64,6 +68,8 @@ inputs:
   - id: nucpos_file
     type: File
     doc: bed file with nucleosome center calls
+    secondaryFiles:
+      - .tbi
     inputBinding:
       position: 101
       prefix: --calls
@@ -78,8 +84,11 @@ inputs:
   - id: occ_file
     type: File
     doc: bgzip compressed, tabix-indexed bedgraph file with occuppancy track.
+    secondaryFiles:
+      - .tbi
     inputBinding:
       position: 101
+      valueFrom: $(self.basename)
       prefix: --occ_track
   - id: out_basename
     type:
@@ -89,6 +98,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --out
+  - id: occ_bound_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Lower and upper bound occupancy tracks (NAME.occ.lower_bound.bedgraph.gz
+      and NAME.occ.upper_bound.bedgraph.gz, with .tbi indexes) written by occ. The
+      tool opens them by name beside the occ track, so they are staged together.
 outputs:
   - id: stdout
     type: stdout
@@ -100,6 +117,11 @@ outputs:
     doc: Files written with the prefix given in out_basename
     outputBinding:
       glob: $(inputs.out_basename)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ var l = []; if (inputs.occ_file) { l.push(inputs.occ_file); } (inputs.occ_bound_files || []).forEach(function(f){ l.push(f); }); return l; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nucleoatac:0.3.4--py27hf119a78_5

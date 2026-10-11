@@ -1,75 +1,13 @@
 # ntsm CWL Generation Report
 
-## ntsm_ntsmSiteGen
+## Real Data Test
 
-### Tool Description
-GNU Make is a tool which controls the generation of programs and other non-source files from a description file.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ntsm:1.2.1--h077b44d_1
-- **Homepage**: https://github.com/JustinChu/ntsm
-- **Package**: https://anaconda.org/channels/bioconda/packages/ntsm/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ntsm/overview
-- **Total Downloads**: 1.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/JustinChu/ntsm
-- **Stars**: N/A
-### Original Help Text
-```text
-Usage: make [options] [target] ...
-Options:
-  -b, -m                      Ignored for compatibility.
-  -B, --always-make           Unconditionally make all targets.
-  -C DIRECTORY, --directory=DIRECTORY
-                              Change to DIRECTORY before doing anything.
-  -d                          Print lots of debugging information.
-  --debug[=FLAGS]             Print various types of debugging information.
-  -e, --environment-overrides
-                              Environment variables override makefiles.
-  -E STRING, --eval=STRING    Evaluate STRING as a makefile statement.
-  -f FILE, --file=FILE, --makefile=FILE
-                              Read FILE as a makefile.
-  -h, --help                  Print this message and exit.
-  -i, --ignore-errors         Ignore errors from recipes.
-  -I DIRECTORY, --include-dir=DIRECTORY
-                              Search DIRECTORY for included makefiles.
-  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no arg.
-  --jobserver-style=STYLE     Select the style of jobserver to use.
-  -k, --keep-going            Keep going when some targets can't be made.
-  -l [N], --load-average[=N], --max-load[=N]
-                              Don't start multiple jobs unless load is below N.
-  -L, --check-symlink-times   Use the latest mtime between symlinks and target.
-  -n, --just-print, --dry-run, --recon
-                              Don't actually run any recipe; just print them.
-  -o FILE, --old-file=FILE, --assume-old=FILE
-                              Consider FILE to be very old and don't remake it.
-  -O[TYPE], --output-sync[=TYPE]
-                              Synchronize output of parallel jobs by TYPE.
-  -p, --print-data-base       Print make's internal database.
-  -q, --question              Run no recipe; exit status says if up to date.
-  -r, --no-builtin-rules      Disable the built-in implicit rules.
-  -R, --no-builtin-variables  Disable the built-in variable settings.
-  --shuffle[={SEED|random|reverse|none}]
-                              Perform shuffle of prerequisites and goals.
-  -s, --silent, --quiet       Don't echo recipes.
-  --no-silent                 Echo recipes (disable --silent mode).
-  -S, --no-keep-going, --stop
-                              Turns off -k.
-  -t, --touch                 Touch targets instead of remaking them.
-  --trace                     Print tracing information.
-  -v, --version               Print the version number of make and exit.
-  -w, --print-directory       Print the current directory.
-  --no-print-directory        Turn off -w, even if it was turned on implicitly.
-  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
-                              Consider FILE to be infinitely new.
-  --warn-undefined-variables  Warn when an undefined variable is referenced.
-
-This program built for x86_64-conda-linux-gnu
-Report bugs to <bug-make@gnu.org>
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| ntsm_ntsmCount | PASS | counts file written to stdout; 1544 chr21 sites covered by real chr21 reads |
+| ntsm_ntsmEval | PASS | two halves of one real chr21 read set compared: relatedness 0.87, homozygous concordance 0.93 |
+| ntsm_ntsmSiteGen | PASS | generate-sites on 1000 Genomes chr22 SNPs; sites FASTA files written; generate-pca-rot-mat not tested |
+| ntsm_ntsmVCF | Failed | tool bug: ntsmVCF segfaults (exit 139) right after opening the sites file on two real multi-sample VCFs |
 
 ## ntsm_ntsmCount
 
@@ -141,6 +79,57 @@ If only a single file is provided general QC information returned.
   -h, --help                 Display this dialog.
   -v, --verbose              Display verbose output.
       --version              Print version information.
+```
+
+
+## ntsm_ntsmVCF
+
+### Tool Description
+Converts a multi vcf file to a set of counts files, or creates a matrix for PCA.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ntsm:1.2.1--h077b44d_1
+- **Homepage**: https://github.com/JustinChu/ntsm
+- **Package**: https://anaconda.org/channels/bioconda/packages/ntsm/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ntsmVCF -s [FASTA] -r [FASTA] [VCF]
+Converts a multi vcf file to a set of counts files.
+Alternatively, you may also create a matrix to be used for PCA.
+  -t, --threads = INT    Number of threads to run.[1]
+  -d, --dupes            Allow shared k-mers between sites to
+                         be counted.
+  -s, --snp = STR        Interleaved fasta of SNP sites to
+                         k-merize. [required]
+  -p, --pca = STR        With multivcf generate rotation and
+                         centering files with this prefix.
+  -k, --kmer = INT       k-mer size used. [19]
+  -m, --multi = INT      Value to multiply base counts [20]
+  -w, --window = INT     Window size used. [31]
+  -r, --ref = STR        Reference fasta. [required]
+  -h, --help             Display this dialog.
+  -v, --verbose          Display verbose output.
+      --version          Print version information.
+```
+
+
+## ntsm_ntsmSiteGen
+
+### Tool Description
+Generate k-mer sites or a PCA rotation matrix (makefile driver with key=value parameters).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ntsm:1.2.1--h077b44d_1
+- **Homepage**: https://github.com/JustinChu/ntsm
+- **Package**: https://anaconda.org/channels/bioconda/packages/ntsm/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ntsmSiteGen generate-sites name=PREFIX ref=REF.fa vcf=SNPS.vcf [w=31] [k=19] [t=4]
+       ntsmSiteGen generate-pca-rot-mat name=PREFIX sites=SITES.fa multivcf=MULTI.vcf [dims=20]
 ```
 
 

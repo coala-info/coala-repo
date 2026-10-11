@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ncrf_ncrf_cat.py
+baseCommand: ncrf_cat
 label: ncrf_ncrf_cat.py
 doc: "Concatenate several output files from Noise Cancelling Repeat Finder. This is
   little more than copying the files and adding a blank line between the files.\n\n\

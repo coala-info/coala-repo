@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: run
+baseCommand: [nextflow, run]
 label: nextflow_run
 doc: "Execute a pipeline project\n\nTool homepage: https://github.com/nextflow-io/nextflow"
 inputs:
@@ -73,6 +73,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -e.
+      separate: false
   - id: export_env
     type:
       - 'null'
@@ -88,6 +89,7 @@ inputs:
     doc: Service hub where the project is hosted
     inputBinding:
       position: 102
+      prefix: -hub
   - id: lib
     type:
       - 'null'
@@ -95,6 +97,7 @@ inputs:
     doc: Library extension path
     inputBinding:
       position: 102
+      prefix: -lib
   - id: main_script
     type:
       - 'null'
@@ -145,6 +148,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -process.
+      separate: false
   - id: profile
     type:
       - 'null'

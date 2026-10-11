@@ -1,5 +1,11 @@
 # ntcard CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ntcard | PASS |  |
+
 ## ntcard
 
 ### Tool Description

@@ -17,6 +17,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --backgroundFile
+      valueFrom: $(runtime.outdir)/$(self.basename)
+  - id: background_gmt_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: "GMT files named in the background file (one per source, for example\n      hsapiens.GO-BP.name.gmt); staged next to the background file"
   - id: chemicals_file
     type:
       - 'null'
@@ -36,7 +43,7 @@ inputs:
   - id: direct_association
     type:
       - 'null'
-      - boolean
+      - string
     doc: "True: Extract target genes from chemicals\n                            \
       \      False: Extract target genes from chemicals +\n                      \
       \            its child chemicals"
@@ -88,7 +95,11 @@ outputs:
       - Directory
     doc: Output folder name to save results
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path || 'OutputResults')
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$((inputs.background_file ? [inputs.background_file] : []).concat(inputs.background_gmt_files || []))"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odamnet:1.1.0--pyhdfd78af_0

@@ -1,5 +1,11 @@
 # npinv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| npinv | PASS | inversion called from small real ONT BAM (nanomonsv test data); COLO829 chr22 subset gave no inversions |
+
 ## npinv
 
 ### Tool Description

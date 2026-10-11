@@ -1,76 +1,84 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: config
+baseCommand: [nextflow, config]
 label: nextflow_config
-doc: "Print a project configuration\n\nTool homepage: https://github.com/nextflow-io/nextflow"
+doc: "Print a project configuration.
+
+Tool homepage: https://www.nextflow.io"
 inputs:
-  - id: project_name
-    type: string
-    doc: project name
+  - id: project_dir
+    type: Directory
+    doc: "Project directory with the pipeline script and nextflow.config. It is staged in the working directory."
     inputBinding:
-      position: 1
-  - id: flat
-    type:
-      - 'null'
-      - boolean
-    doc: 'Print config using flat notation (deprecated: use `-o flat` instead)'
-    inputBinding:
-      position: 102
-      prefix: -flat
+      position: 9
+      valueFrom: $(self.basename)
   - id: output_format
     type:
       - 'null'
       - string
-    doc: 'Print the config using the specified format: canonical,properties,flat,json,yaml'
+    doc: "Print the config using the specified format: canonical, properties, flat, json, yaml."
     inputBinding:
-      position: 102
+      position: 1
       prefix: -output
   - id: profile
     type:
       - 'null'
       - string
-    doc: Choose a configuration profile
+    doc: "Choose a configuration profile."
     inputBinding:
-      position: 102
+      position: 2
       prefix: -profile
-  - id: properties
-    type:
-      - 'null'
-      - boolean
-    doc: 'Prints config using Java properties notation (deprecated: use `-o properties`
-      instead)'
-    inputBinding:
-      position: 102
-      prefix: -properties
   - id: show_profiles
     type:
       - 'null'
       - boolean
-    doc: Show all configuration profiles
+    doc: "Show all configuration profiles."
     inputBinding:
-      position: 102
+      position: 3
       prefix: -show-profiles
   - id: sort
     type:
       - 'null'
       - boolean
-    doc: Sort config attributes
+    doc: "Sort config attributes."
     inputBinding:
-      position: 102
+      position: 4
       prefix: -sort
   - id: value
     type:
       - 'null'
-      - boolean
-    doc: Print the value of a config option, or fail if the option is not 
-      defined
+      - string
+    doc: "Print the value of a config option, or fail if the option is not defined."
     inputBinding:
-      position: 102
+      position: 5
       prefix: -value
+  - id: flat
+    type:
+      - 'null'
+      - boolean
+    doc: "Print config using flat notation (deprecated, use output_format flat)."
+    inputBinding:
+      position: 6
+      prefix: -flat
+  - id: properties
+    type:
+      - 'null'
+      - boolean
+    doc: "Print config using Java properties notation (deprecated, use output_format properties)."
+    inputBinding:
+      position: 7
+      prefix: -properties
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.project_dir.basename)
+        entry: $(inputs.project_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nextflow:25.10.4--h2a3209d_0

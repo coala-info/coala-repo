@@ -62,9 +62,7 @@ inputs:
       position: 101
       prefix: --min_mapq
   - id: out
-    type:
-      - 'null'
-      - string
+    type: string
     doc: output dir
     inputBinding:
       position: 101
@@ -85,12 +83,11 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: reference genome
     inputBinding:
       position: 101
       prefix: --reference
+      valueFrom: $(self.basename)
   - id: thread
     type:
       - 'null'
@@ -116,24 +113,17 @@ inputs:
       position: 101
       prefix: --window
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
   - id: out_dir
-    type:
-      - 'null'
-      - Directory
-    doc: output dir
+    type: Directory
+    doc: output dir with the TE insertion calls (bed) and the logs
     outputBinding:
       glob: $(inputs.out)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs_te_mapper2:1.0.2--pyhdfd78af_1
-stdout: ngs_te_mapper2.out

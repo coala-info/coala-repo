@@ -65,7 +65,7 @@ inputs:
   - id: kraken_output
     type:
       - 'null'
-      - File
+      - string
     doc: Write the Kraken2 read classification output to a file
     inputBinding:
       position: 102
@@ -73,7 +73,7 @@ inputs:
   - id: kraken_report
     type:
       - 'null'
-      - File
+      - string
     doc: Write the Kraken2 report with aggregate counts/clade to file
     inputBinding:
       position: 102
@@ -153,6 +153,20 @@ outputs:
       file will be used."
     outputBinding:
       glob: $(inputs.output_2_path)
+  - id: kraken_output_file
+    type:
+      - 'null'
+      - File
+    doc: Kraken2 read classification output
+    outputBinding:
+      glob: $(inputs.kraken_output)
+  - id: kraken_report_file
+    type:
+      - 'null'
+      - File
+    doc: Kraken2 report with aggregate counts/clade
+    outputBinding:
+      glob: $(inputs.kraken_report)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,12 @@
 # nthits CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nthits | PASS | bf of SARS-CoV-2 test reads, checked with nthits-bfq |
+| nthits_bfq | PASS |  |
+
 ## nthits
 
 ### Tool Description
@@ -43,4 +50,35 @@ Optional arguments:
 
 Copyright 2023 Canada's Michael Smith Genome Science Centre
 ```
+
+## nthits_bfq
+
+### Tool Description
+Query tool for ntHits' output Bloom filter
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nthits:1.0.3--h4ac6f70_1
+- **Homepage**: https://github.com/bcgsc/ntHits
+- **Package**: https://anaconda.org/channels/bioconda/packages/nthits/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ntHits-BFQ [-h] [--cbf] [-ex VAR] bf_path data_path
+
+Query tool for ntHits' output Bloom filter
+
+Positional arguments:
+  bf_path      	Input Bloom filter file [required]
+  data_path    	Path to input dataset, use '-' to read from stdin. [required]
+
+Optional arguments:
+  -h, --help   	shows help message and exits 
+  -v, --version	prints version information and exits 
+  --cbf        	Treat input file as a counting Bloom filter and output k-mer counts 
+  -ex          	Path to the Bloom filter containing excluded k-mers 
+
+Copyright 2022 Canada's Michael Smith Genome Science Centre
+```
+
 

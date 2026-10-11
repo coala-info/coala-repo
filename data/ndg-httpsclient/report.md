@@ -1,5 +1,11 @@
 # ndg-httpsclient CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ndg-httpsclient | Failed | image problem: HTTPS fails with SSL handshake error (image has OpenSSL 1.0.2k), --fetch crashes with a bytes/str TypeError, and plain output is a Python bytes repr |
+
 ## ndg-httpsclient
 
 ### Tool Description

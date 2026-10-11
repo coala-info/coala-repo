@@ -1,5 +1,12 @@
 # nda-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nda-tools_downloadcmd | Failed | image problem: nda-tools 0.6.0 exits at start saying it is out of date and asks for 0.7.0 (an NDA account is also needed) |
+| nda-tools_vtcmd | Failed | image problem: nda-tools 0.6.0 exits at start saying it is out of date and asks for 0.7.0 (an NDA account is also needed) |
+
 ## nda-tools_vtcmd
 
 ### Tool Description

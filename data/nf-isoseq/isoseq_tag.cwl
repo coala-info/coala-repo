@@ -1,81 +1,76 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - isoseq
-  - tag
+baseCommand: [isoseq, tag]
 label: isoseq_tag
-doc: "Remove cell barcodes and UMIs from FL reads and generate tagged FL transcripts
-  (FL to FLT)\n\nTool homepage: https://github.com/PacificBiosciences/pbbioconda"
+doc: "Remove cell barcodes and UMIs from FL reads and generate tagged FL transcripts (FL to FLT)
+
+Tool homepage: https://github.com/PacificBiosciences/pbbioconda"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: demux_bam
     type: File
-    doc: Input cDNA demuxed BAM or ConsensusReadSet XML
+    doc: "Input cDNA demuxed BAM or ConsensusReadSet XML"
+    secondaryFiles:
+      - pattern: .pbi
+        required: false
     inputBinding:
       position: 1
+  - id: flt_output
+    type: string
+    doc: "Output FLT BAM or ConsensusReadSet XML"
+    inputBinding:
+      position: 2
   - id: design
-    type:
-      - 'null'
-      - string
-    doc: Barcoding design. Specifies which bases to use as cell/molecular 
-      barcodes.
+    type: ['null', string]
+    doc: "Barcoding design. Specifies which bases to use as cell/molecular barcodes. [T-8U-10B]"
     inputBinding:
-      position: 102
+      position: 100
       prefix: --design
-  - id: log_level
-    type:
-      - 'null'
-      - string
-    doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    inputBinding:
-      position: 102
-      prefix: --log-level
   - id: min_read_length
-    type:
-      - 'null'
-      - int
-    doc: Minimum read length after trimming.
+    type: ['null', int]
+    doc: "Minimum read length after trimming. [50]"
     inputBinding:
-      position: 102
+      position: 100
       prefix: --min-read-length
-  - id: num_threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use, 0 means autodetection.
+  - id: log_level
+    type: ['null', string]
+    doc: "Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL). [WARN]"
     inputBinding:
-      position: 102
+      position: 100
+      prefix: --log-level
+  - id: log_file
+    type: ['null', string]
+    doc: "Log to a file, instead of stderr."
+    inputBinding:
+      position: 100
+      prefix: --log-file
+  - id: num_threads
+    type: ['null', int]
+    doc: "Number of threads to use, 0 means autodetection. [0]"
+    inputBinding:
+      position: 100
       prefix: --num-threads
   - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Use verbose output.
+    type: ['null', boolean]
+    doc: "Use verbose output."
     inputBinding:
-      position: 102
+      position: 100
       prefix: --verbose
-  - id: log_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `log_file_path`
-    inputBinding:
-      position: 103
-      prefix: --log-file
 outputs:
   - id: flt_bam
     type: File
-    doc: Output FLT BAM or ConsensusReadSet XML
+    doc: "Tagged FL transcripts (FLT) BAM"
+    secondaryFiles:
+      - pattern: .pbi
+        required: false
     outputBinding:
-      glob: '*.out'
-  - id: log_file
-    type:
-      - 'null'
-      - File
-    doc: Log to a file, instead of stderr.
+      glob: $(inputs.flt_output)
+  - id: log_output
+    type: ['null', File]
+    doc: "Log file (when log_file is set)"
     outputBinding:
-      glob: $(inputs.log_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.log_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isoseq:4.3.0--h9ee0642_0

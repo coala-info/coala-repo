@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ntCard
+baseCommand: ntcard
 label: ntcard
 doc: "Estimates k-mer coverage histogram in FILE(S).\n\nTool homepage: https://github.com/bcgsc/ntCard"
 inputs:
@@ -68,13 +68,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: histogram
+    type:
+      - 'null'
+      - File
+    doc: Histogram file written when output_file is given
+    outputBinding:
+      glob: $(inputs.output_file)
   - id: output_prefix_files
     type:
       type: array
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_prefix)_*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntcard:1.2.2--pl5321h077b44d_7

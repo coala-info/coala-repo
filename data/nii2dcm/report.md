@@ -1,5 +1,11 @@
 # nii2dcm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nii2dcm | Failed | image problem: nii2dcm crashes at start because its version code needs git, which is not in the image |
+
 ## nii2dcm
 
 ### Tool Description

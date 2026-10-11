@@ -1,58 +1,54 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./converter
+baseCommand: [converter]
 label: neffy-cli_converter
 doc: "This program converts the format of an input Multiple Sequence Alignment (MSA)
-  file\nto that of an output MSA file. It supports various formats and can validate
-  sequences\nagainst a specified alphabet.\n\nTool homepage: https://maryam-haghani.github.io/NEFFy"
+  file to that of an output MSA file. It supports various formats and can validate
+  sequences against a specified alphabet.\n\nTool homepage: https://maryam-haghani.github.io/NEFFy"
 inputs:
-  - id: alphabet
-    type:
-      - 'null'
-      - int
-    doc: "Specifies the alphabet for the sequences:\n        0 : Protein (default)\n\
-      \        1 : RNA\n        2 : DNA"
-    inputBinding:
-      position: 101
-      prefix: --alphabet
-  - id: check_validation
-    type:
-      - 'null'
-      - boolean
-    doc: If true, validates the sequences to ensure they contain only letters 
-      from the specified alphabet.
-    inputBinding:
-      position: 101
-      prefix: --check_validation
   - id: in_file
     type: File
     doc: Path to the input MSA file.
     inputBinding:
       position: 101
-      prefix: --in_file
-  - id: in_format
-    type:
-      - 'null'
-      - string
-    doc: Format of the input file. If not provided, the format is inferred from 
-      the file extension.
-    inputBinding:
-      position: 101
-      prefix: --in_format
-  - id: out_format
-    type:
-      - 'null'
-      - string
-    doc: Format of the output file. If not provided, the format is inferred from
-      the file extension.
-    inputBinding:
-      position: 101
-      prefix: --out_format
+      prefix: --in_file=
+      separate: false
   - id: out_file_path
     type: string
+    doc: Path to the output MSA file.
     inputBinding:
       position: 102
-      prefix: --out_file
+      prefix: --out_file=
+      separate: false
+  - id: in_format
+    type: ['null', string]
+    doc: "Format of the input file. If not provided, the format is inferred from the file extension."
+    inputBinding:
+      position: 103
+      prefix: "--in_format="
+      separate: false
+  - id: out_format
+    type: ['null', string]
+    doc: "Format of the output file. If not provided, the format is inferred from the file extension."
+    inputBinding:
+      position: 104
+      prefix: "--out_format="
+      separate: false
+  - id: alphabet
+    type: ['null', int]
+    doc: "Alphabet for the sequences: 0 Protein (default), 1 RNA, 2 DNA."
+    inputBinding:
+      position: 105
+      prefix: "--alphabet="
+      separate: false
+  - id: check_validation
+    type: ['null', boolean]
+    doc: "If true, validates that sequences contain only letters from the specified alphabet (tool default true)."
+    inputBinding:
+      position: 106
+      prefix: "--check_validation="
+      separate: false
+      valueFrom: '$(self ? "true" : "false")'
 outputs:
   - id: out_file
     type: File

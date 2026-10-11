@@ -1,5 +1,11 @@
 # ngshmmalign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngshmmalign | PASS | single-end run matched the original aligner on all 84 reads; the paired test reads fully overlap and were all filtered by the tool |
+
 ## ngshmmalign
 
 ### Tool Description

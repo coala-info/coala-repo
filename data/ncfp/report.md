@@ -1,5 +1,11 @@
 # ncfp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ncfp | PASS | NCBI protein input matches expected output; UniProt input crashes (old UniProt API call returns 400) |
+
 ## ncfp
 
 ### Tool Description

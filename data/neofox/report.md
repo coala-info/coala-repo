@@ -1,5 +1,11 @@
 # neofox CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| neofox | Not completed | needs the NeoFox reference folder and licensed tools (netMHCpan, MixMHCpred) that are not in the image |
+
 ## neofox
 
 ### Tool Description

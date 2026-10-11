@@ -81,21 +81,28 @@ inputs:
       position: 102
       prefix: --updatedb
   - id: printseq_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: specify filename to save allele sequences to
     inputBinding:
       position: 103
       prefix: --printseq
 outputs:
+  - id: typing_results
+    type: stdout
+    doc: NG-MAST and NG-STAR typing table (tab- or comma-separated)
   - id: printseq
     type:
       - 'null'
-      - File
-    doc: specify filename to save allele sequences to
+      - type: array
+        items: File
+    doc: allele sequence files written for --printseq (NGMAST__<name> and NGSTAR__<name>)
     outputBinding:
-      glob: $(inputs.printseq_path)
+      glob: '*__$(inputs.printseq_path)'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngmaster:1.1.1--pyhdfd78af_1
+stdout: ngmaster.out

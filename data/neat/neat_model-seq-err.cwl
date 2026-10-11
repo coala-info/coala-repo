@@ -16,6 +16,7 @@ inputs:
       first convert to fastq using an external tool, such as samtools.
     inputBinding:
       position: 1
+      prefix: -i
   - id: max_reads
     type:
       - 'null'

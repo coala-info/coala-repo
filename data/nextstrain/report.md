@@ -1,5 +1,14 @@
 # nextstrain CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nextstrain_build | Not completed | pipeline runner (Snakemake workflow), skipped |
+| nextstrain_deploy | Not completed | needs an S3 bucket and AWS account to upload to |
+| nextstrain_shell | Not completed | interactive shell inside a Docker container, not testable |
+| nextstrain_view | Not completed | long-running Auspice web server |
+
 ## nextstrain_build
 
 ### Tool Description
@@ -167,58 +176,6 @@ optional arguments:
   -h, --help          show this help message and exit
 ```
 
-## nextstrain_remote
-
-### Tool Description
-Upload, download, and manage Nextstrain files on remote sources.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextstrain:20200304--hdfd78af_1
-- **Homepage**: https://nextstrain.org
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextstrain/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: nextstrain remote [-h] {upload,download,list,ls,delete,rm} ...
-
-Upload, download, and manage Nextstrain files on remote sources.
-
-Remote sources host the Auspice JSON data files and Markdown narratives that
-are fetched by nextstrain.org or standalone instances of Auspice.
- 
-Currently only Amazon S3 buckets (s3://…) are supported as the remote
-source, but others can be added in the future.
-
-Credentials for authentication should generally be provided by environment
-variables specific to each source.
-
-Amazon S3
----------
-
-* AWS_ACCESS_KEY_ID
-* AWS_SECRET_ACCESS_KEY
-
-More information at:
-
-    https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#environment-variables
-
-A persistent credentials file, ~/.aws/credentials, is also supported:
-
-    https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#shared-credentials-file
- 
-
-optional arguments:
-  -h, --help            show this help message and exit
-
-commands:
-  {upload,download,list,ls,delete,rm}
-    upload              Upload dataset and narrative files
-    download            Download dataset and narrative files
-    list (ls)           List dataset and narrative files
-    delete (rm)         Delete dataset and narrative files
-```
-
 ## nextstrain_shell
 
 ### Tool Description
@@ -250,45 +207,6 @@ optional arguments:
   --help-all        Show a full help message of all options and exit
 
 Run again with --help-all instead to see more options.
-```
-
-## nextstrain_check-setup
-
-### Tool Description
-Checks your local setup to see if you have a supported build environment.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextstrain:20200304--hdfd78af_1
-- **Homepage**: https://nextstrain.org
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextstrain/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: nextstrain check-setup [-h] [--set-default]
-
-Checks your local setup to see if you have a supported build environment.
-
-Three environments are supported, each of which will be tested:
-
-  • Our Docker image is the preferred build environment.  Docker itself must
-    be installed and configured on your computer first, but once it is, the
-    build environment is robust and reproducible.
-
-  • Your native ambient environment will be tested for snakemake, augur, and
-    auspice. Their presence implies a working build environment, but does not
-    guarantee it.
-
-  • Remote jobs on AWS Batch.  Your AWS account, if credentials are available
-    in your environment or via aws-cli configuration, will be tested for the
-    presence of appropriate resources.  Their presence implies a working AWS
-    Batch environment, but does not guarantee it.
-
-optional arguments:
-  -h, --help     show this help message and exit
-  --set-default  Set the default environment to the first which passes check-
-                 setup. Checks run in the order: docker, native, aws-batch.
-                 (default: False)
 ```
 
 ## Metadata

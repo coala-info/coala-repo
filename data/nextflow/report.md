@@ -1,32 +1,22 @@
 # nextflow CWL Generation Report
 
-## nextflow_auth
+## Real Data Test
 
-### Tool Description
-Manage Seqera Platform authentication
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextflow:25.10.4--h2a3209d_0
-- **Homepage**: https://github.com/nextflow-io/nextflow
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextflow/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/nextflow/overview
-- **Total Downloads**: 534.0K
-- **Last updated**: 2026-02-12
-- **GitHub**: https://github.com/nextflow-io/nextflow
-- **Stars**: N/A
-### Original Help Text
-```text
-Manage Seqera Platform authentication
-Usage: nextflow auth <sub-command> [options]
-
-Commands:
-  login    Authenticate with Seqera Platform
-  logout   Remove authentication and revoke access token
-  status   Show current authentication status and configuration
-  config   Configure Seqera Platform settings
-```
+| Tool | Result | Reason |
+|---|---|---|
+| nextflow_clean | Not completed | runs, but the work directories of the test run are recorded under the original run path in another container, so clean only lists them and the deletion cannot be confirmed. |
+| nextflow_clone | PASS | cloned nextflow-io/hello from GitHub |
+| nextflow_config | PASS | tiny local hello pipeline; -profile test and flat output checked; baseCommand fixed |
+| nextflow_drop | PASS | nextflow-io/hello downloaded project was removed from the assets folder |
+| nextflow_info | PASS | nextflow-io/hello downloaded project; JSON output checked; -o applies only when a project is given |
+| nextflow_inspect | PASS | tiny local pipeline with a container directive; JSON lists the container |
+| nextflow_kuberun | Not completed | needs a Kubernetes cluster; pipeline, skipped |
+| nextflow_launch | Not completed | needs a Seqera Platform account |
+| nextflow_lint | PASS | tiny local main.nf and config; deprecation warning reported |
+| nextflow_log | PASS | execution history from a real tiny run; per-task fields checked |
+| nextflow_pull | PASS | pulled nextflow-io/hello from GitHub |
+| nextflow_run | Not completed | pipeline, skipped |
+| nextflow_view | PASS | nextflow-io/hello downloaded project; repository content listed |
 
 ## nextflow_clean
 
@@ -160,30 +150,6 @@ Usage: drop [options] name of the project to drop
     -h, -help
        Print the command usage
        Default: false
-```
-
-## nextflow_fs
-
-### Tool Description
-File system operations
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextflow:25.10.4--h2a3209d_0
-- **Homepage**: https://github.com/nextflow-io/nextflow
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextflow/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: nextflow fs <command> [arg]
-
-Commands:
-  cp	Copy a file
-  mv	Move a file
-  ls	List the content of a folder
-  cat	Print a file to the stdout
-  rm	Remove a file
-  stat	Print file to meta info
 ```
 
 ## nextflow_info
@@ -433,31 +399,6 @@ Options:
   -stub-run, -stub          Execute the workflow replacing process scripts with command stubs
   -main-script <file>       The script file to be executed when launching a project
   --<param>=<value>         Set a parameter used by the pipeline
-```
-
-## nextflow_lineage
-
-### Tool Description
-Explore workflows lineage metadata
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextflow:25.10.4--h2a3209d_0
-- **Homepage**: https://github.com/nextflow-io/nextflow
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextflow/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Explore workflows lineage metadata
-Usage: nextflow lineage <sub-command> [options]
-
-Commands:
-  check 	Checks the integrity of an lineage file path
-  diff  	Show differences between two lineage descriptions
-  find  	Find lineage metadata descriptions matching with a query
-  list  	List the executions with lineage enabled
-  render	Render the lineage graph for a workflow output
-  view  	Print the description of a Lineage ID (lid)
 ```
 
 ## nextflow_lint
@@ -711,29 +652,6 @@ Usage: run [options] Project name or repository url
        Disable the use of Spack environments
     -w, -work-dir
        Directory where intermediate result files are stored
-```
-
-## nextflow_secrets
-
-### Tool Description
-Manage pipeline secrets
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nextflow:25.10.4--h2a3209d_0
-- **Homepage**: https://github.com/nextflow-io/nextflow
-- **Package**: https://anaconda.org/channels/bioconda/packages/nextflow/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage pipeline secrets
-Usage: nextflow secrets <sub-command> [options]
-
-Commands:
-  delete
-  get
-  list
-  set
 ```
 
 ## nextflow_view

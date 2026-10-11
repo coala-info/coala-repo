@@ -1,5 +1,12 @@
 # novobreak CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| novobreak_novoBreak | PASS | somatic k-mers found from two small real BAMs |
+| novobreak_run_novoBreak.sh | Not completed | pipeline, skipped (shell script that runs the whole novoBreak pipeline) |
+
 ## novobreak_run_novoBreak.sh
 
 ### Tool Description

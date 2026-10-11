@@ -7,6 +7,11 @@ inputs:
   - id: input
     type: File
     doc: file to read
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
       position: 101
       prefix: --input

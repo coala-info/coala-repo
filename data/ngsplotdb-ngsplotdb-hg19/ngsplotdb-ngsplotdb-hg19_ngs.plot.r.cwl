@@ -29,6 +29,9 @@ inputs:
   - id: cov_config_file
     type: File
     doc: Indexed bam file or a configuration file for multiplot
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: -C
@@ -46,7 +49,7 @@ inputs:
   - id: draw_axis_labels
     type:
       - 'null'
-      - boolean
+      - int
     doc: Draw X- and Y-axis labels? 1(default) or 0
     inputBinding:
       position: 101
@@ -54,7 +57,7 @@ inputs:
   - id: draw_box
     type:
       - 'null'
-      - boolean
+      - int
     doc: Draw box around plot? 1(default) or 0
     inputBinding:
       position: 101
@@ -62,7 +65,7 @@ inputs:
   - id: draw_legend
     type:
       - 'null'
-      - boolean
+      - int
     doc: Draw legend? 1(default) or 0
     inputBinding:
       position: 101
@@ -70,7 +73,7 @@ inputs:
   - id: draw_vertical_lines
     type:
       - 'null'
-      - boolean
+      - int
     doc: Draw vertical lines? 1(default) or 0
     inputBinding:
       position: 101
@@ -110,7 +113,7 @@ inputs:
   - id: forbid_image_output
     type:
       - 'null'
-      - boolean
+      - int
     doc: Forbid image output if set to 1(default=0)
     inputBinding:
       position: 101
@@ -211,7 +214,7 @@ inputs:
   - id: interval_larger_than_flanking
     type:
       - 'null'
-      - boolean
+      - int
     doc: Shall interval be larger than flanking in plot?(0 or 1, 
       default=automatic)
     inputBinding:
@@ -299,7 +302,7 @@ inputs:
   - id: plot_standard_errors
     type:
       - 'null'
-      - boolean
+      - int
     doc: Shall standard errors be plotted?(0 or 1)
     inputBinding:
       position: 101
@@ -354,10 +357,20 @@ inputs:
       position: 101
       prefix: -YAS
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Output files (<output_name>.zip, <output_name>.avgprof.pdf, <output_name>.heatmap.pdf)
+    outputBinding:
+      glob: $(inputs.output_name).*
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the plotted data (<output_name>)
+    outputBinding:
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngsplotdb-ngsplotdb-hg19:3.00--r3.4.1_0
-stdout: ngsplotdb-ngsplotdb-hg19_ngs.plot.r.out

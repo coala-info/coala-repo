@@ -1,5 +1,11 @@
 # ngmaster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngmaster | PASS |  |
+
 ## ngmaster
 
 ### Tool Description

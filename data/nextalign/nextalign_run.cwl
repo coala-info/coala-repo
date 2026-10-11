@@ -403,7 +403,8 @@ outputs:
   - id: output_translations
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: "Template string for path to output fasta files containing translated and
       aligned\npeptides. A separate file will be generated for every gene. The string
       should contain\ntemplate variable `{gene}`, where the gene name will be substituted.
@@ -416,7 +417,8 @@ outputs:
       (stdout).\n\nIf the required directory tree does not exist, it will be created.\n\
       \nExample for bash shell:\n\n--output-translations='output_dir/gene_{gene}.translation.fasta'"
     outputBinding:
-      glob: $(inputs.output_translations_path)
+      glob: |-
+        ${ return inputs.output_translations_path ? inputs.output_translations_path.replace('{gene}', '*') : null; }
   - id: output_insertions
     type:
       - 'null'

@@ -72,7 +72,7 @@ inputs:
     doc: Output or path parameter `output_path`
     inputBinding:
       position: 103
-      prefix: --output
+      prefix: -o
 outputs:
   - id: output
     type:

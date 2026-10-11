@@ -4,7 +4,7 @@ baseCommand:
   - ngsderive
   - encoding
 label: ngsderive_encoding
-doc: "Encodes sequencing files.\n\nTool homepage: https://github.com/claymcleod/ngsderive"
+doc: "Derive the quality score encoding of sequencing files.\n\nTool homepage: https://github.com/claymcleod/ngsderive"
 inputs:
   - id: ngsfiles
     type:
@@ -38,20 +38,18 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
-  - id: output_file_path
+  - id: outfile_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Write to filename rather than standard out.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --outfile
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Write to filename rather than standard out.
+  - id: outfile
+    type: File
+    doc: Table with the probable quality score encoding
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.outfile_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

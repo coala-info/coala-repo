@@ -1,5 +1,16 @@
 # nucleoatac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nucleoatac_merge | PASS | merged nucleosome map written from the example calls |
+| nucleoatac_nfr | PASS | NFR calls for two example regions identical to the run output; needs the occ bound tracks and a fasta |
+| nucleoatac_nuc | PASS | 7 nucleosome calls for two example regions, all identical to the run output; needs the occ bound tracks |
+| nucleoatac_occ | PASS | 160 occupancy peaks, same as the run output |
+| nucleoatac_run | PASS | repo example (yeast ATAC): 160 occupancy peaks and 125 nucleosome calls; occupancy fit identical to the repo's expected file |
+| nucleoatac_vprocess | PASS | V-plot file written from the example fragment sizes |
+
 ## nucleoatac_run
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # nifflr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nifflr_nifflr.sh | Failed | image problem: nifflr.sh calls python but the image has no python command |
+
 ## nifflr_nifflr.sh
 
 ### Tool Description

@@ -134,7 +134,7 @@ inputs:
   - id: qc_file
     type:
       - 'null'
-      - File
+      - string
     doc: If set, a read QC file in qcML format is created (just like ReadQC).
     inputBinding:
       position: 101
@@ -175,7 +175,7 @@ inputs:
   - id: summary_file
     type:
       - 'null'
-      - File
+      - string
     doc: Write summary/progress to this file instead of STDOUT.
     inputBinding:
       position: 101
@@ -189,32 +189,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: -threads
-  - id: tool_definition_xml
-    type:
-      - 'null'
-      - boolean
-    doc: Writes a Tool Definition Xml file. The file name is the application 
-      name with the suffix '.tdx'.
-    inputBinding:
-      position: 101
-      prefix: --tdx
   - id: output_forward_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Forward output gzipped FASTQ file.
     inputBinding:
       position: 102
       prefix: -out1
   - id: output_reverse_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Reverse output gzipped FASTQ file.
     inputBinding:
       position: 103
       prefix: -out2
 outputs:
+  - id: qc_report
+    type: ['null', File]
+    doc: Read QC file in qcML format (with qc_file)
+    outputBinding:
+      glob: $(inputs.qc_file)
+  - id: summary_report
+    type: ['null', File]
+    doc: Summary/progress file (with summary_file)
+    outputBinding:
+      glob: $(inputs.summary_file)
+  - id: singleton_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Singleton read output files (with output_singletons_prefix)
+    outputBinding:
+      glob: $(inputs.output_singletons_prefix)*
   - id: output_forward
     type: File
     doc: Forward output gzipped FASTQ file.
@@ -225,8 +230,12 @@ outputs:
     doc: Reverse output gzipped FASTQ file.
     outputBinding:
       glob: $(inputs.output_reverse_path)
+  - id: stdout_log
+    type: stdout
+    doc: Standard output of the tool
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0
+stdout: ngs-bits_SeqPurge.out

@@ -91,7 +91,7 @@ inputs:
       prefix: --type-ignore
   - id: output_dir_path
     type: string
-    doc: PATH     Output directory for         │
+    doc: Output directory for benchmark results.
     inputBinding:
       position: 104
       prefix: --output-dir

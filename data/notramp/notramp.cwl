@@ -8,14 +8,18 @@ doc: "NoTrAmp is a Tool for read-depth normalization and trimming of reads in\na
   of all amplicons at a chosen value.\n\nTool homepage: https://github.com/simakro/NoTrAmp.git"
 inputs:
   - id: all
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: "Perform read depth normalization by coverage-\ncapping/downsampling first,
       then clip the normalized\nreads. (mut.excl. with -c, -t)"
     inputBinding:
       position: 101
       prefix: --all
   - id: cov
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: "Perform only read-depth normalization/downsampling.\n(mut.excl. with -a,
       -t)"
     inputBinding:
@@ -33,8 +37,8 @@ inputs:
   - id: figures
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
+      - int
     doc: "Set to generate figures of input and output\nread_counts. Available for
       --all and --cov modes. You\ncan optionally provide a value to draw a red helper\n\
       line in the output read plot, showing a threshold, e.g.\nmin. required reads.
@@ -85,8 +89,6 @@ inputs:
       prefix: --reads
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: "Path to reference (genome) fasta file. Must contain\nonly one target sequence.
       Multiple target sequences\nare not currently supported."
     inputBinding:
@@ -148,7 +150,9 @@ inputs:
       position: 101
       prefix: --split
   - id: trim
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: "Perform only trimming to amplicon length (excluding\nprimers by default;
       to include primers set --incl_prim\nflag). (mut.excl. with -a, -c)"
     inputBinding:
@@ -172,6 +176,10 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reads)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/notramp:1.1.9--pyh7e72e81_0

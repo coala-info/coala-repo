@@ -202,7 +202,7 @@ outputs:
     doc: Output path for UpSet plot. If not provided, will use output_file 
       basename with _upset.png suffix.
     outputBinding:
-      glob: $(inputs.upsetr_output_path)
+      glob: "$(inputs.upsetr_output_path ? inputs.upsetr_output_path : inputs.output_file_path.replace(/\\.[^.\\/]*$/, '') + '_upset.png')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

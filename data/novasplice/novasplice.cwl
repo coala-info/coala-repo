@@ -57,6 +57,9 @@ inputs:
       - 'null'
       - File
     doc: Full path to the reference genome being used
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 101
       prefix: --reference
@@ -82,6 +85,9 @@ inputs:
       - 'null'
       - File
     doc: Full path to the zipped reference genome being used
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 101
       prefix: --zippedreference
@@ -94,6 +100,20 @@ inputs:
       position: 101
       prefix: --zippedvcf
 outputs:
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the novasplice predictions
+    outputBinding:
+      glob: $(inputs.output_folder)
+  - id: intermediate_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with intermediate files
+    outputBinding:
+      glob: $(inputs.intermediate_files_folder)
   - id: stdout
     type: stdout
     doc: Standard output

@@ -127,13 +127,6 @@ inputs:
       position: 103
       prefix: --output-file
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: Output file path.
-    outputBinding:
-      glob: '*.out'
   - id: output_file
     type:
       - 'null'

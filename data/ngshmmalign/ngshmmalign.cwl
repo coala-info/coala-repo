@@ -4,6 +4,14 @@ baseCommand: ngshmmalign
 label: ngshmmalign
 doc: "ngshmmalign\n\nTool homepage: https://github.com/cbg-ethz/ngshmmalign"
 inputs:
+  - id: reads
+    type:
+      type: array
+      items: File
+    doc: Input FASTQ file(s). One file for single-end or two files for
+      paired-end reads.
+    inputBinding:
+      position: 1
   - id: ambiguous_bases_allele_frequencies
     type:
       - 'null'
@@ -216,18 +224,15 @@ inputs:
       position: 102
       prefix: --wrong
   - id: output_alignment_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_alignment_path`
+    type: string
+    default: aln.sam
+    doc: Filename where alignment will be written to (default aln.sam)
     inputBinding:
       position: 103
-      prefix: --output-alignment
+      prefix: -o
 outputs:
   - id: output_alignment
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Filename where alignment will be written to
     outputBinding:
       glob: $(inputs.output_alignment_path)

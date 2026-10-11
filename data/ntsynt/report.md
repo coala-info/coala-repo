@@ -1,5 +1,11 @@
 # ntsynt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ntsynt_ntSynt | PASS | 3-genome demo gives the expected synteny blocks (same coordinates; block sizes differ by a few k-mers) |
+
 ## ntsynt_ntSynt
 
 ### Tool Description

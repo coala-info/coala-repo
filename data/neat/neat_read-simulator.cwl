@@ -1,56 +1,51 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: neat_read-simulator
+baseCommand:
+  - neat
+  - read-simulator
 label: neat_read-simulator
-doc: "NEAT read simulator\n\nTool homepage: https://github.com/ncsa/NEAT/"
+doc: "Simulate NGS reads dataset (See README for complete description of the config
+  input).\n\nTool homepage: https://github.com/ncsa/NEAT/"
 inputs:
   - id: config
+    type: File
+    doc: Path (including filename) to the configuration file for this run. File
+      names inside the config (reference, VCF, BED, models) are relative to the
+      working directory; stage them with config_files.
+    inputBinding:
+      position: 1
+      prefix: --config
+  - id: config_files
     type:
       - 'null'
-      - File
-    doc: Configuration file for the read simulator. If not provided, NEAT will 
-      use default settings.
-    inputBinding:
-      position: 101
-      prefix: --config
+      - type: array
+        items: File
+    doc: Files named in the configuration file (reference FASTA, VCF, BED,
+      models), staged in the working directory
   - id: output_dir
-    type: Directory
-    doc: Directory where the simulated reads will be saved.
+    type: string
+    doc: Path to the output directory. Will create if not present.
     inputBinding:
-      position: 101
-      prefix: --output-dir
+      position: 2
+      prefix: --output_dir
   - id: prefix
     type:
       - 'null'
       - string
-    doc: Prefix for the output read files.
+    doc: Prefix to use to name files
     inputBinding:
-      position: 101
+      position: 3
       prefix: --prefix
-  - id: log_file_path
-    type: string
-    doc: Output or path parameter `log_file_path`
-    inputBinding:
-      position: 102
-      prefix: --log-file
 outputs:
-  - id: log_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the log file. If not specified, a log file will be created in 
-      the current directory.
+  - id: output_directory
+    type: Directory
+    doc: Directory with the simulated reads and other output files
     outputBinding:
-      glob: $(inputs.log_file_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.config_files ? inputs.config_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neat:4.3.5--pyhdfd78af_0

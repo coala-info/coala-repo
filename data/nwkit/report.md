@@ -1,5 +1,28 @@
 # nwkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nwkit_constrain | Failed | image problem: nwkit constrain imports pkg_resources, which is missing in the image, so it crashes at start |
+| nwkit_dist | Failed | tool bug: with -o the header and values are written on one line (missing newline); stdout output, which the CWL captures, is correct. |
+| nwkit_drop | PASS |  |
+| nwkit_info | Failed | tool bug: -o/--outfile is silently ignored (the result only goes to stdout, which the CWL captures); the tree statistics are correct. |
+| nwkit_intersection | PASS |  |
+| nwkit_label | PASS |  |
+| nwkit_mark | PASS |  |
+| nwkit_mcmctree | PASS |  |
+| nwkit_nhx2nwk | PASS | synthetic data: NHX tree hand-typed from the NHX specification example; converted Newick is correct, and labels appear with outformat 1. |
+| nwkit_printlabel | Failed | tool bug: -o/--outfile is silently ignored (labels only go to stdout, which the CWL captures); the label list is correct. |
+| nwkit_prune | PASS |  |
+| nwkit_rescale | PASS |  |
+| nwkit_root | PASS |  |
+| nwkit_sanitize | PASS |  |
+| nwkit_shuffle | PASS |  |
+| nwkit_skim | PASS |  |
+| nwkit_subtree | PASS |  |
+| nwkit_transfer | PASS |  |
+
 ## nwkit_constrain
 
 ### Tool Description

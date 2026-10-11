@@ -1,5 +1,11 @@
 # nudup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nudup_nudup.py | PASS |  |
+
 ## nudup_nudup.py
 
 ### Tool Description

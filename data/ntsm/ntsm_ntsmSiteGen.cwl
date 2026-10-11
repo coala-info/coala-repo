@@ -1,341 +1,113 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: make
+baseCommand:
+  - ntsmSiteGen
 label: ntsm_ntsmSiteGen
-doc: "GNU Make is a tool which controls the generation of programs and other non-source
-  files from a description file.\n\nTool homepage: https://github.com/JustinChu/ntsm"
+doc: "Generate k-mer sites (generate-sites) from a reference FASTA and a VCF of SNP
+  variants, or a PCA rotation matrix (generate-pca-rot-mat) from a multi-sample VCF.
+  ntsmSiteGen is a makefile driver; parameters are given as key=value words.\n\nTool
+  homepage: https://github.com/JustinChu/ntsm"
 inputs:
   - id: target
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Target to build
+    type: string
+    doc: Make target, generate-sites or generate-pca-rot-mat
     inputBinding:
       position: 1
-  - id: always_make
-    type:
-      - 'null'
-      - boolean
-    doc: Unconditionally make all targets.
+  - id: name
+    type: string
+    doc: Output file prefix (required)
     inputBinding:
-      position: 102
-      prefix: --always-make
-  - id: assume_new
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
-    inputBinding:
-      position: 102
-      prefix: --assume-new
-  - id: assume_old
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be very old and don't remake it.
-    inputBinding:
-      position: 102
-      prefix: --assume-old
-  - id: check_symlink_times
-    type:
-      - 'null'
-      - boolean
-    doc: Use the latest mtime between symlinks and target.
-    inputBinding:
-      position: 102
-      prefix: --check-symlink-times
-  - id: debug
-    type:
-      - 'null'
-      - string
-    doc: Print various types of debugging information.
-    inputBinding:
-      position: 102
-      prefix: --debug=
+      position: 2
+      prefix: name=
       separate: false
-  - id: debug_info
+  - id: ref
     type:
       - 'null'
-      - boolean
-    doc: Print lots of debugging information.
+      - File
+    doc: FASTA reference file (required for generate-sites)
     inputBinding:
-      position: 102
-      prefix: -d
-  - id: directory
+      position: 3
+      prefix: ref=
+      separate: false
+  - id: vcf
     type:
       - 'null'
-      - Directory
-    doc: Change to DIRECTORY before doing anything.
+      - File
+    doc: VCF file containing variants (required for generate-sites)
     inputBinding:
-      position: 102
-      prefix: --directory
-  - id: dry_run
+      position: 4
+      prefix: vcf=
+      separate: false
+  - id: multivcf
     type:
       - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
+      - File
+    doc: Multi-sample VCF file containing genotypes (required for
+      generate-pca-rot-mat)
     inputBinding:
-      position: 102
-      prefix: --dry-run
-  - id: environment_overrides
+      position: 5
+      prefix: multivcf=
+      separate: false
+  - id: sites
     type:
       - 'null'
-      - boolean
-    doc: Environment variables override makefiles.
+      - File
+    doc: Sites FASTA used for generate-pca-rot-mat
     inputBinding:
-      position: 102
-      prefix: --environment-overrides
-  - id: eval
-    type:
-      - 'null'
-      - string
-    doc: Evaluate STRING as a makefile statement.
-    inputBinding:
-      position: 102
-      prefix: --eval
-  - id: ignore_errors
-    type:
-      - 'null'
-      - boolean
-    doc: Ignore errors from recipes.
-    inputBinding:
-      position: 102
-      prefix: --ignore-errors
-  - id: include_dir
-    type:
-      - 'null'
-      - type: array
-        items: Directory
-    doc: Search DIRECTORY for included makefiles.
-    inputBinding:
-      position: 102
-      prefix: --include-dir
-  - id: jobs
+      position: 6
+      prefix: sites=
+      separate: false
+  - id: window
     type:
       - 'null'
       - int
-    doc: Allow N jobs at once; infinite jobs with no arg.
+    doc: Window size to consider sequences in the region
     inputBinding:
-      position: 102
-      prefix: --jobs=
+      position: 7
+      prefix: w=
       separate: false
-  - id: jobserver_style
+  - id: kmer
     type:
       - 'null'
-      - string
-    doc: Select the style of jobserver to use.
+      - int
+    doc: k-mer size used in the window region
     inputBinding:
-      position: 102
-      prefix: --jobserver-style
-  - id: just_print
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
-    inputBinding:
-      position: 102
-      prefix: --just-print
-  - id: keep_going
-    type:
-      - 'null'
-      - boolean
-    doc: Keep going when some targets can't be made.
-    inputBinding:
-      position: 102
-      prefix: --keep-going
-  - id: load_average
-    type:
-      - 'null'
-      - float
-    doc: Don't start multiple jobs unless load is below N.
-    inputBinding:
-      position: 102
-      prefix: --load-average=
+      position: 8
+      prefix: k=
       separate: false
-  - id: makefile
+  - id: threads
     type:
       - 'null'
-      - File
-    doc: Read FILE as a makefile.
+      - int
+    doc: Threads for any subprocess or tool
     inputBinding:
-      position: 102
-      prefix: --file
-  - id: max_load
-    type:
-      - 'null'
-      - float
-    doc: Don't start multiple jobs unless load is below N.
-    inputBinding:
-      position: 102
-      prefix: --max-load=
+      position: 9
+      prefix: t=
       separate: false
-  - id: new_file
+  - id: dims
     type:
       - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
+      - int
+    doc: Number of PCA dimensions for generate-pca-rot-mat
     inputBinding:
-      position: 102
-      prefix: --new-file
-  - id: no_builtin_rules
-    type:
-      - 'null'
-      - boolean
-    doc: Disable the built-in implicit rules.
-    inputBinding:
-      position: 102
-      prefix: --no-builtin-rules
-  - id: no_builtin_variables
-    type:
-      - 'null'
-      - boolean
-    doc: Disable the built-in variable settings.
-    inputBinding:
-      position: 102
-      prefix: --no-builtin-variables
-  - id: no_keep_going
-    type:
-      - 'null'
-      - boolean
-    doc: Turns off -k.
-    inputBinding:
-      position: 102
-      prefix: --no-keep-going
-  - id: no_print_directory
-    type:
-      - 'null'
-      - boolean
-    doc: Turn off -w, even if it was turned on implicitly.
-    inputBinding:
-      position: 102
-      prefix: --no-print-directory
-  - id: no_silent
-    type:
-      - 'null'
-      - boolean
-    doc: Echo recipes (disable --silent mode).
-    inputBinding:
-      position: 102
-      prefix: --no-silent
-  - id: old_file
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be very old and don't remake it.
-    inputBinding:
-      position: 102
-      prefix: --old-file
-  - id: output_sync
-    type:
-      - 'null'
-      - string
-    doc: Synchronize output of parallel jobs by TYPE.
-    inputBinding:
-      position: 102
-      prefix: --output-sync=
+      position: 10
+      prefix: dims=
       separate: false
-  - id: print_data_base
-    type:
-      - 'null'
-      - boolean
-    doc: Print make's internal database.
-    inputBinding:
-      position: 102
-      prefix: --print-data-base
-  - id: print_directory
-    type:
-      - 'null'
-      - boolean
-    doc: Print the current directory.
-    inputBinding:
-      position: 102
-      prefix: --print-directory
-  - id: question
-    type:
-      - 'null'
-      - boolean
-    doc: Run no recipe; exit status says if up to date.
-    inputBinding:
-      position: 102
-      prefix: --question
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Don't echo recipes.
-    inputBinding:
-      position: 102
-      prefix: --quiet
-  - id: recon
-    type:
-      - 'null'
-      - boolean
-    doc: Don't actually run any recipe; just print them.
-    inputBinding:
-      position: 102
-      prefix: --recon
-  - id: shuffle
-    type:
-      - 'null'
-      - string
-    doc: Perform shuffle of prerequisites and goals.
-    inputBinding:
-      position: 102
-      prefix: --shuffle=
-      separate: false
-  - id: silent
-    type:
-      - 'null'
-      - boolean
-    doc: Don't echo recipes.
-    inputBinding:
-      position: 102
-      prefix: --silent
-  - id: stop
-    type:
-      - 'null'
-      - boolean
-    doc: Turns off -k.
-    inputBinding:
-      position: 102
-      prefix: --stop
-  - id: touch
-    type:
-      - 'null'
-      - boolean
-    doc: Touch targets instead of remaking them.
-    inputBinding:
-      position: 102
-      prefix: --touch
-  - id: trace
-    type:
-      - 'null'
-      - boolean
-    doc: Print tracing information.
-    inputBinding:
-      position: 102
-      prefix: --trace
-  - id: warn_undefined_variables
-    type:
-      - 'null'
-      - boolean
-    doc: Warn when an undefined variable is referenced.
-    inputBinding:
-      position: 102
-      prefix: --warn-undefined-variables
-  - id: what_if
-    type:
-      - 'null'
-      - File
-    doc: Consider FILE to be infinitely new.
-    inputBinding:
-      position: 102
-      prefix: --what-if
 outputs:
+  - id: site_files
+    type: File[]
+    doc: Generated sites and PCA files
+    outputBinding:
+      glob:
+        - $(inputs.name)_n*.fa
+        - $(inputs.name)_rotationalMatrix.tsv
+        - $(inputs.name)_matrix.tsv
+        - $(inputs.name)_center.txt
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntsm:1.2.1--h077b44d_1

@@ -1,5 +1,36 @@
 # nebulizer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nebulizer_add_key | PASS | alias, URL and key stored in the .nebulizer file and collected |
+| nebulizer_add_library_datasets | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_config | PASS | public Galaxy configuration read without a key; version_major 22.05 shown |
+| nebulizer_create_batch_users | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_create_library | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_create_library_folder | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_create_user | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_create_users_from_file | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_delete_user | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_install_tool | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_list_keys | PASS | staged keys file lists the stored alias and URL, with key shown |
+| nebulizer_list_libraries | PASS | public Galaxy data libraries listed without a key (one library found) |
+| nebulizer_list_tool_panel | PASS | public Galaxy tool panel listed without a key; name filter and tool listing work |
+| nebulizer_list_tools | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_list_users | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_ping | PASS | two pings of the public Galaxy at galaxy.pasteur.fr report status ok with times |
+| nebulizer_quota_add | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_quota_del | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_quota_mod | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_quotas | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_remove_key | PASS | staged keys file loses the alias after removal; the wrapper answers the confirmation prompt |
+| nebulizer_search_toolshed | PASS | search for fastqc on the main toolshed lists devteam fastqc with revisions and description |
+| nebulizer_uninstall_tool | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_update_key | PASS | new URL stored for the alias in the keys file |
+| nebulizer_update_tool | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+| nebulizer_whoami | Not completed | needs a Galaxy server with an API key (admin rights for most); command line accepted by the tool but no server to test |
+
 ## nebulizer_add_key
 
 ### Tool Description

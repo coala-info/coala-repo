@@ -2,13 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: oases
 label: oases
-doc: "De novo transcriptome assembler for the Velvet package\n\nTool homepage: https://github.com/coin-or/qpOASES"
+doc: "De novo transcriptome assembler for the Velvet package\n\nTool homepage: https://github.com/dzerbino/oases"
 inputs:
   - id: directory
     type: Directory
-    doc: working directory name
+    doc: working directory name (a Velvet output directory made with velveth and 
+      velvetg -read_trkg yes; Oases writes its results into it)
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: alignments
     type:
       - 'null'
@@ -52,6 +54,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: -edgeFractionCutoff
+  - id: ins_length
+    type:
+      - 'null'
+      - int
+    doc: expected distance between two paired-end reads in the first short-read 
+      dataset
+    inputBinding:
+      position: 102
+      prefix: -ins_length
+  - id: ins_length_sd
+    type:
+      - 'null'
+      - int
+    doc: est. standard deviation of the first short-read dataset
+    inputBinding:
+      position: 102
+      prefix: -ins_length_sd
   - id: ins_length2
     type:
       - 'null'
@@ -140,6 +159,31 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: transcripts
+    type:
+      - 'null'
+      - File
+    doc: Assembled transcripts (directory/transcripts.fa)
+    outputBinding:
+      glob: $(inputs.directory.basename)/transcripts.fa
+  - id: contig_ordering
+    type:
+      - 'null'
+      - File
+    doc: Contig ordering of the transcripts (directory/contig-ordering.txt)
+    outputBinding:
+      glob: $(inputs.directory.basename)/contig-ordering.txt
+  - id: output_directory
+    type: Directory
+    doc: The working directory with all Oases output files
+    outputBinding:
+      glob: $(inputs.directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.directory)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/oases:0.2.09--h7b50bb2_2

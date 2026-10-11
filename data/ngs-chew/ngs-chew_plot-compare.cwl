@@ -7,8 +7,8 @@ label: ngs-chew_plot-compare
 doc: "Plot result of 'ngs-chew compare'.\n\nTool homepage: https://github.com/bihealth/ngs-chew"
 inputs:
   - id: compare_out
-    type: string
-    doc: Output from 'ngs-chew compare'.
+    type: File
+    doc: Output from 'ngs-chew compare' (the <prefix>.relatedness.txt matrix).
     inputBinding:
       position: 1
   - id: out_html

@@ -64,14 +64,21 @@ inputs:
       position: 101
       prefix: --threads
   - id: out_path
-    type: string
-    doc: Write the broken graph in ODGI format
+    type:
+      - 'null'
+      - string
+    doc: Write the broken graph in ODGI format (do not set together with show)
     inputBinding:
       position: 102
       prefix: --out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the edges that would be removed, with show)
   - id: out
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Write the broken graph in ODGI format to FILE. A file ending of *.og* 
       is recommended.
     outputBinding:
@@ -81,3 +88,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0
+stdout: odgi_break.out

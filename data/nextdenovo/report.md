@@ -1,5 +1,11 @@
 # nextdenovo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nextdenovo_nextDenovo | PASS | NextDenovo test reads shipped in the image; 305,667 bp single contig (genome size 308 kb); staged config and read files |
+
 ## nextdenovo_nextDenovo
 
 ### Tool Description

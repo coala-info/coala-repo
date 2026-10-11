@@ -7,7 +7,7 @@ label: oakvar_ov_report
 doc: "Generate reports from a job\n\nTool homepage: http://www.oakvar.com"
 inputs:
   - id: dbpath
-    type: string
+    type: File
     doc: Path to aggregator output
     inputBinding:
       position: 1

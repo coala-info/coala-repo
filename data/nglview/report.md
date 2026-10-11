@@ -1,5 +1,11 @@
 # nglview CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nglview | Not completed | launches a Jupyter notebook server (interactive, long-running), not testable |
+
 ## nglview
 
 ### Tool Description

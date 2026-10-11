@@ -1,5 +1,11 @@
 # nucamino CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| nucamino_hiv1b | PASS | HXB2 pol aligned at NA 2085-5093 as expected |
+
 ## nucamino_hiv1b
 
 ### Tool Description

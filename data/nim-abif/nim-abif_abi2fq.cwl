@@ -9,6 +9,13 @@ inputs:
     doc: Input ABI file
     inputBinding:
       position: 1
+  - id: output_fastq
+    type:
+      - 'null'
+      - string
+    doc: Output FASTQ file name (FASTQ is written to standard output when not given)
+    inputBinding:
+      position: 2
   - id: no_trim
     type:
       - 'null'
@@ -42,13 +49,19 @@ inputs:
       position: 102
       prefix: --window
 outputs:
-  - id: output_file
+  - id: fastq_stdout
+    type: stdout
+    doc: FASTQ written to standard output (empty when output_fastq is given)
+  - id: output_fastq_file
     type:
       - 'null'
       - File
-    doc: Output FASTQ file (defaults to STDOUT)
+    doc: Output FASTQ file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_fastq)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nim-abif:0.2.0--h7b50bb2_0
+stdout: nim-abif_abi2fq.fastq

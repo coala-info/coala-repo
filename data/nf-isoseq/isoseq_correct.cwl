@@ -1,106 +1,99 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - isoseq
-  - correct
+baseCommand: [isoseq, correct]
 label: isoseq_correct
-doc: "Correct group barcodes given a barcode truth set\n\nTool homepage: https://github.com/PacificBiosciences/pbbioconda"
+doc: "Correct group barcodes given a barcode truth set
+
+Tool homepage: https://github.com/PacificBiosciences/pbbioconda"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
-  - id: input_flnc
-    type: string
-    doc: Input flnc BAM, ConsensusReadSet XML, or FOFN
+  - id: flnc_bam
+    type: File
+    doc: "Input flnc BAM, ConsensusReadSet XML, or FOFN"
+    secondaryFiles:
+      - pattern: .pbi
+        required: false
     inputBinding:
       position: 1
-  - id: output_flnc_bccorr
+  - id: corrected_output
     type: string
-    doc: Output Barcode-corrected flnc BAM or ConsensusReadSet XML
+    doc: "Output barcode-corrected flnc BAM or ConsensusReadSet XML"
     inputBinding:
       position: 2
   - id: barcodes
-    type:
-      - 'null'
-      - string
-    doc: Plain text file containing known 'true' barcodes, one per line. This 
-      'include list' specifies the barcode-set to which raw cell barcodes are 
-      remapped by minimum edit distance. May be gzip-compressed.
+    type: File
+    doc: "Plain text file containing known 'true' barcodes, one per line (may be gzip-compressed)"
     inputBinding:
-      position: 103
+      position: 100
       prefix: --barcodes
-  - id: filter
-    type:
-      - 'null'
-      - string
-    doc: "Filtering mode. Set to 'missing' to remove reads which could not be corrected,
-      and 'failing' to remove those as well as reads failing max-edit-distance thresholding.
-      Valid choices: (missing, failing, none)."
-    inputBinding:
-      position: 103
-      prefix: --filter
-  - id: log_file
-    type:
-      - 'null'
-      - File
-    doc: Log to a file, instead of stderr.
-    inputBinding:
-      position: 103
-      prefix: --log-file
-  - id: log_level
-    type:
-      - 'null'
-      - string
-    doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    inputBinding:
-      position: 103
-      prefix: --log-level
   - id: max_edit_distance
-    type:
-      - 'null'
-      - int
-    doc: Maximum edit distance for mapping barcodes to those in the truth set. 
-      Increasing this parameter will increase yield but potentially introduce 
-      errors.
+    type: ['null', int]
+    doc: "Maximum edit distance for mapping barcodes to those in the truth set. [2]"
     inputBinding:
-      position: 103
+      position: 100
       prefix: --max-edit-distance
-  - id: method
-    type:
-      - 'null'
-      - string
-    doc: "Whether to determine real vs non-real cells using Knee-finding ('knee')
-      or Percentile-based method ('percentile'). Valid choices: (knee, percentile)."
+  - id: filter
+    type: ['null', string]
+    doc: "Filtering mode: missing, failing or none. [none]"
     inputBinding:
-      position: 103
-      prefix: --method
-  - id: num_threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use, 0 means autodetection.
-    inputBinding:
-      position: 103
-      prefix: --num-threads
+      position: 100
+      prefix: --filter
   - id: percentile
-    type:
-      - 'null'
-      - int
-    doc: Percentile to use when calculating real vs non-real cells. This option 
-      is only relevant when --method is set to 'percentile'.
+    type: ['null', int]
+    doc: "Percentile to use when calculating real vs non-real cells (method percentile). [99]"
     inputBinding:
-      position: 103
+      position: 100
       prefix: --percentile
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Use verbose output.
+  - id: method
+    type: ['null', string]
+    doc: "Determine real vs non-real cells using knee or percentile. [knee]"
     inputBinding:
-      position: 103
+      position: 100
+      prefix: --method
+  - id: log_level
+    type: ['null', string]
+    doc: "Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL). [WARN]"
+    inputBinding:
+      position: 100
+      prefix: --log-level
+  - id: log_file
+    type: ['null', string]
+    doc: "Log to a file, instead of stderr."
+    inputBinding:
+      position: 100
+      prefix: --log-file
+  - id: num_threads
+    type: ['null', int]
+    doc: "Number of threads to use, 0 means autodetection. [0]"
+    inputBinding:
+      position: 100
+      prefix: --num-threads
+  - id: verbose
+    type: ['null', boolean]
+    doc: "Use verbose output."
+    inputBinding:
+      position: 100
       prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: corrected_bam
+    type: File
+    doc: "Barcode-corrected flnc BAM"
+    secondaryFiles:
+      - pattern: .pbi
+        required: false
+    outputBinding:
+      glob: $(inputs.corrected_output)
+  - id: report_json
+    type: ['null', File]
+    doc: "Correction report"
+    outputBinding:
+      glob: $(inputs.corrected_output.replace(/\.(bam|xml)$/, '')).report.json
+  - id: log_output
+    type: ['null', File]
+    doc: "Log file (when log_file is set)"
+    outputBinding:
+      glob: $(inputs.log_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isoseq:4.3.0--h9ee0642_0
-stdout: isoseq_correct.out

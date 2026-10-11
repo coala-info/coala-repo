@@ -97,7 +97,7 @@ inputs:
   - id: merge
     type:
       - 'null'
-      - int
+      - string
     doc: "Maximum distance between collinear synteny blocks for merging (bp).\n  \
       \                      Can also specify a multiple of the window size (ex. 3w)"
     inputBinding:

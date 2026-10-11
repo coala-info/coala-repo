@@ -15,6 +15,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-graphs
+  - id: graph_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The graph files named in the list file; staged in the working directory so that the names in the list resolve
   - id: optimize
     type:
       - 'null'
@@ -63,6 +69,8 @@ outputs:
     outputBinding:
       glob: $(inputs.out_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.graph_files || [])
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

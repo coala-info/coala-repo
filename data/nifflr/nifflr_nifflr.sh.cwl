@@ -15,8 +15,6 @@ inputs:
       prefix: --allowed_exon_gap_or_overlap
   - id: genome_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: fasta file containing the genome sequence
     inputBinding:
       position: 101
@@ -70,10 +68,9 @@ inputs:
       position: 101
       prefix: --bases
   - id: output_prefix
-    type:
-      - 'null'
-      - string
-    doc: prefix of the output files
+    type: string
+    default: output
+    doc: prefix of the output files (default output)
     inputBinding:
       position: 101
       prefix: --prefix
@@ -101,9 +98,6 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_prefix_files
     type:
       type: array
@@ -111,7 +105,8 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nifflr:2.0.0--pl5321haf24da9_0
-stdout: nifflr_nifflr.sh.out

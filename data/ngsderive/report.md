@@ -1,5 +1,16 @@
 # ngsderive CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ngsderive_encoding | PASS |  |
+| ngsderive_endedness | PASS |  |
+| ngsderive_instrument | PASS |  |
+| ngsderive_junction-annotation | PASS |  |
+| ngsderive_readlen | PASS |  |
+| ngsderive_strandedness | PASS |  |
+
 ## ngsderive_readlen
 
 ### Tool Description

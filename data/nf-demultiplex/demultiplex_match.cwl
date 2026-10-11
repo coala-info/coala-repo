@@ -4,50 +4,50 @@ baseCommand:
   - demultiplex
   - match
 label: demultiplex_match
-doc: "Demultiplex reads based on barcode matching.\n\nTool homepage: https://github.com/jfjlaros/demultiplex"
+doc: "Demultiplex one file given a list of barcode tuples.\n\nTool homepage: https://github.com/jfjlaros/demultiplex"
 inputs:
   - id: barcodes
     type: File
-    doc: File containing barcodes
+    doc: barcodes file
     inputBinding:
       position: 1
   - id: input
     type:
       type: array
       items: File
-    doc: Input FASTQ files
+    doc: input files
     inputBinding:
       position: 2
-  - id: deduplicate
+  - id: write_multiple_matches
     type:
       - 'null'
       - boolean
-    doc: Deduplicate reads after demultiplexing
+    doc: write multiple matches to separate files
     inputBinding:
       position: 103
-      prefix: --deduplicate
-  - id: force
+      prefix: -f
+  - id: levenshtein
     type:
       - 'null'
       - boolean
-    doc: Overwrite existing output files
+    doc: use Levenshtein distance
     inputBinding:
       position: 103
-      prefix: --force
+      prefix: -d
   - id: mismatch
     type:
       - 'null'
       - int
-    doc: Maximum allowed mismatches in barcode matching
+    doc: number of mismatches (default 1)
     inputBinding:
       position: 103
-      prefix: --mismatch
+      prefix: -m
   - id: output_path_path
     type: string
-    doc: Output or path parameter `output_path_path`
+    doc: output directory
     inputBinding:
       position: 104
-      prefix: --output-path
+      prefix: -p
 outputs:
   - id: output_path
     type:

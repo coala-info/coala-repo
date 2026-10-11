@@ -24,9 +24,19 @@ inputs:
       position: 101
       prefix: --reference_name
 outputs:
+  - id: resources
+    type:
+      - 'null'
+      - Directory
+    doc: Reference genomes downloaded by nomadic (stored under HOME/.local/share/nomadic)
+    outputBinding:
+      glob: .local/share/nomadic
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nomadic:0.7.2--pyhdfd78af_0

@@ -44,6 +44,9 @@ inputs:
     type: File
     doc: Input bam file or per-base coverage tsv file with 3-columns (position, 
       first, second). If a bam file is provided, it must be indexed.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --infile

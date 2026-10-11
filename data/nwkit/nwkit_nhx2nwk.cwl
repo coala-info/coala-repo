@@ -27,8 +27,7 @@ inputs:
   - id: node_label
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: NHX attribute to use as internal node labels.
     inputBinding:
       position: 101

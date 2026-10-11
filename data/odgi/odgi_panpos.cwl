@@ -20,7 +20,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nuc-pos
-  - id: path
+  - id: path_name
     type: string
     doc: The path name of the query.
     inputBinding:

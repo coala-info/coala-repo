@@ -53,7 +53,7 @@ inputs:
   - id: save_fasta
     type:
       - 'null'
-      - File
+      - string
     doc: Save FASTA file
     inputBinding:
       position: 101
@@ -86,6 +86,13 @@ outputs:
     doc: Output CSV file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: saved_fasta
+    type:
+      - 'null'
+      - File
+    doc: FASTA file of the sequences that pass the score and p-value filters
+    outputBinding:
+      glob: $(inputs.save_fasta)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

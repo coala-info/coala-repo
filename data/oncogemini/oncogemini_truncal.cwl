@@ -7,7 +7,7 @@ label: oncogemini_truncal
 doc: "Query the database for truncal variants.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1

@@ -1,5 +1,13 @@
 # optimir CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| optimir_libprep | PASS | ran on the repo example genotypes VCF; library and bowtie2 index built |
+| optimir_process | PASS | ran repo example sample S1; abundances match the repo expected results |
+| optimir_summarize | PASS | summary tables match repo expected values for S1; results directory is now staged writable because the tool writes beside it |
+
 ## optimir_process
 
 ### Tool Description

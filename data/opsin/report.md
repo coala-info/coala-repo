@@ -1,5 +1,11 @@
 # opsin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| opsin | PASS | names to SMILES correct for 5 real names (aspirin, ethanol, benzene, DMF, chlorotoluene); stdinchikey option gives the right ethanol key; bad name skipped |
+
 ## opsin
 
 ### Tool Description

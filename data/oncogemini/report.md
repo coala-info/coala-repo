@@ -1,5 +1,26 @@
 # oncogemini CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| oncogemini_amend | PASS |  |
+| oncogemini_annotate | Failed | tool bug: -t integer with -o max/sum/min/mean stores raw bytes instead of numbers (silent wrong values) and -o list/uniq_list crash; boolean, count and first work |
+| oncogemini_bottleneck | Failed | image problem: SyntaxError, Python 2 print statement in the package under Python 3 |
+| oncogemini_db_info | PASS |  |
+| oncogemini_dump | Failed | image problem: --variants and --genotypes, two of the three dump modes, crash with an sqlalchemy error. Only --samples works. |
+| oncogemini_fusions | Not completed | needs the gene_summary annotation table (built by gemini load with annotation data) and set_somatic, which fails in this image; could not build such a database |
+| oncogemini_loh | Failed | image problem: SyntaxError, Python 2 print statement in the package under Python 3 |
+| oncogemini_query | PASS | plain SQL works; --gt-filter and genotype columns crash in this image (Python 2 code on Python 3) |
+| oncogemini_region | PASS |  |
+| oncogemini_roh | Failed | image problem: ModuleNotFoundError: No module named 'gemini' (roh imports the missing gemini package) |
+| oncogemini_set_somatic | Failed | image problem: KeyError when reading genotype blobs (Python 2 code on Python 3); no somatic flags are set |
+| oncogemini_stats | Failed | tool bug: --vars-by-sample and --gts-by-sample give zero or byte-string counts (Python 2 genotype decoding in the image); --sfs works |
+| oncogemini_truncal | Failed | image problem: SyntaxError, Python 2 print statement in the package under Python 3 |
+| oncogemini_unique | Failed | image problem: SyntaxError, Python 2 print statement in the package under Python 3 |
+| oncogemini_update | Not completed | updates the software and downloads annotation data into the install; needs network and a writable install, not a data test |
+| oncogemini_windower | Failed | image problem: crashes with a bedtools error (no windows built; genotype decoding broken in the image) |
+
 ## oncogemini_amend
 
 ### Tool Description

@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - PathwayMatcher.jar
+  - pathwaymatcher
   - match-chrbp
 label: pathwaymatcher_match-chrbp
 doc: "Match a list of genetic variants as chromosome and base pairs\n\nTool homepage:

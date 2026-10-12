@@ -272,11 +272,16 @@ inputs:
       position: 101
       prefix: --VJ_model_folder
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --outfile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (results when no outfile is given)
   - id: outfile
     type:
       - 'null'
@@ -289,3 +294,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/olga:1.3.0--pyh7e72e81_0
+stdout: olga.out

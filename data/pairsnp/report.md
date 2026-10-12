@@ -1,5 +1,11 @@
 # pairsnp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pairsnp | PASS | 10-species mammal codon alignment from nf-core; the matrix matches an independent count. |
+
 ## pairsnp
 
 ### Tool Description

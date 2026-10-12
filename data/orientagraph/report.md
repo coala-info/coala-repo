@@ -1,5 +1,11 @@
 # orientagraph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| orientagraph | PASS | ran repo Arctic data; covariance files and final log-likelihood 364.943 match the repo solution; -g now takes both graph files; -givenmat with an SE file crashes in this build (tool bug), main mode works |
+
 ## orientagraph
 
 ### Tool Description

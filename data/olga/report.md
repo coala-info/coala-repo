@@ -1,5 +1,12 @@
 # olga CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| olga_olga-compute_pgen | PASS |  |
+| olga_olga-generate_sequences | PASS |  |
+
 ## olga_olga-compute_pgen
 
 ### Tool Description

@@ -33,7 +33,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output format for plots (png, tiff, pdf, or svg)
+    doc: Output format for plots (png, tiff, pdf, or svg; default png)
     inputBinding:
       position: 101
       prefix: --format
@@ -141,20 +141,26 @@ inputs:
       position: 101
       prefix: --xticks
   - id: output_directory_path
-    type: string?
+    type:
+      - 'null'
+      - string
+    doc: 'Output directory for the plots (default: .)'
     inputBinding:
       position: 102
       prefix: --output-directory
 outputs:
-  - id: output_directory
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory for the plots
+  - id: plots
+    type: File[]
+    doc: Plots written for each gene cluster, plus the sequence legend
     outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: $((inputs.output_directory_path || '.') + '/*.' + (inputs.format || 'png'))
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory_path || 'panfeed_plots_unused')
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panfeed:1.7.2--pyhdfd78af_0

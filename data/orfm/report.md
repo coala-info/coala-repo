@@ -1,5 +1,11 @@
 # orfm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| orfm | PASS | ran on nf-core sarscov2 reads; 216 ORFs, all translations match an independent translation of the transcripts; -t flag fixed and protein stdout collected |
+
 ## orfm
 
 ### Tool Description

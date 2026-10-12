@@ -1,5 +1,11 @@
 # parsnp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parsnp | PASS |  |
+
 ## parsnp
 
 ### Tool Description

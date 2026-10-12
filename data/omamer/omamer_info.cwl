@@ -7,7 +7,7 @@ label: omamer_info
 doc: "Show metadata about an existing omamer database\n\nTool homepage: https://github.com/DessimozLab/omamer"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: Path to an existing database (including filename).
     inputBinding:
       position: 101

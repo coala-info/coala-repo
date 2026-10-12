@@ -173,10 +173,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_lowcov_path`
+    doc: Output file for pairs from low coverage regions
     inputBinding:
       position: 104
-      prefix: --output-lowcov
+      prefix: --output
   - id: output_stats_path
     type:
       - 'null'

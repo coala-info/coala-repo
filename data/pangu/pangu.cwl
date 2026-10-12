@@ -10,6 +10,8 @@ inputs:
       - type: array
         items: File
     doc: Aligned BAM file(s) of HiFi WGS reads
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 1
   - id: bam_fofn
@@ -102,6 +104,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: fofn_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: BAM files (with .bai indexes) and VCF files named in bamFofn or vcfFofn; staged in the working directory so the listed names resolve
+    secondaryFiles:
+      - .bai?
   - id: log_file_path
     type: string?
     doc: Log file. Default {prefix}[_/]caller.log
@@ -125,6 +135,9 @@ outputs:
       glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fofn_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangu:0.2.8--pyhdfd78af_0

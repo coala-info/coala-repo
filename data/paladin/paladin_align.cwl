@@ -8,8 +8,17 @@ doc: "Protein alignment tool for functional profiling of metagenomes\n\nTool hom
   https://github.com/ToniWestbrook/paladin"
 inputs:
   - id: idxbase
-    type: string
-    doc: Index base name
+    type: File
+    doc: Reference FASTA that was indexed with paladin index (the index files must sit
+      beside it)
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
+      - pattern: .pro
+        required: false
     inputBinding:
       position: 1
   - id: input_reads
@@ -346,7 +355,9 @@ inputs:
       position: 103
       prefix: -h
   - id: output_prefix_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'activate PALADIN reporting using STR as an output file prefix.  Files generated
       as follows: STR.sam - alignment data (will not be sent to stdout) STR_uniprot.tsv
       - Tab delimited UniProt report (normal alignment mode) STR_uniprot_primary.tsv
@@ -356,16 +367,24 @@ inputs:
       position: 104
       prefix: -o
 outputs:
+  - id: sam
+    type: stdout
+    doc: SAM alignments (empty when -o is used)
   - id: output_prefix
     type:
       - 'null'
       - type: array
         items: File
-    doc: activate PALADIN reporting using STR as an output file prefix
+    doc: Files written with the output prefix (SAM and UniProt reports)
     outputBinding:
-      glob: $(inputs.output_prefix_path)*
+      glob: "$(inputs.output_prefix_path ? inputs.output_prefix_path + '*' : [])"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_reads)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paladin:1.6.0--h44aa6d8_0
+stdout: paladin_align.sam

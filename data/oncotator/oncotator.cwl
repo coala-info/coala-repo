@@ -10,11 +10,16 @@ inputs:
     doc: Input file to be annotated. Type is specified through options.
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: Output file name of annotated file.
+    inputBinding:
+      position: 2
   - id: genome_build
     type: string
     doc: 'Genome build. For example: hg19'
     inputBinding:
-      position: 2
+      position: 3
   - id: allow_overwriting
     type:
       - 'null'
@@ -245,11 +250,18 @@ inputs:
       position: 103
       prefix: --verbose
 outputs:
-  - id: output_file
+  - id: annotated_output
     type: File
-    doc: Output file name of annotated file.
+    doc: Annotated output file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Oncotator log file.
+    outputBinding:
+      glob: '*.log'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/oncotator:1.9.9.0--py_0

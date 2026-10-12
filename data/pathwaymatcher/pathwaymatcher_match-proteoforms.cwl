@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - PathwayMatcher.jar
+  - pathwaymatcher
   - match-proteoforms
 label: pathwaymatcher_match-proteoforms
 doc: "Match a list of proteoforms to reactions and pathways\n\nTool homepage: https://github.com/LuisFranciscoHS/PathwayMatcher"

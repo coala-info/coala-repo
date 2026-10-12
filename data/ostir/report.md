@@ -1,5 +1,11 @@
 # ostir CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ostir | PASS | CSV, FASTA and string inputs reproduce the repo expected tables; input split into file and sequence inputs, threads defaults to 1 because the tool crashes without -j |
+
 ## ostir
 
 ### Tool Description

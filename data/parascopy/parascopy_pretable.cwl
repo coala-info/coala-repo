@@ -33,6 +33,13 @@ inputs:
       prefix: --bwa
   - id: fasta_ref
     type: File
+    secondaryFiles:
+      - .fai
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     doc: Input reference fasta file. Should have BWA index.
     inputBinding:
       position: 101
@@ -165,6 +172,9 @@ outputs:
   - id: output
     type: File
     doc: Output bed[.gz] file.
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

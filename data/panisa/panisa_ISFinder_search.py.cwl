@@ -6,7 +6,9 @@ doc: "automate search IS homology in ISFinder from panISa output\n\nTool homepag
   https://github.com/bvalot/panISa"
 inputs:
   - id: file
-    type: File
+    type:
+      type: array
+      items: File
     doc: PanISa result files to merge
     inputBinding:
       position: 1
@@ -65,6 +67,8 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panisa:0.1.7--pyhdfd78af_0

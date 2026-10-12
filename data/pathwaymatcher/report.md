@@ -1,5 +1,19 @@
 # pathwaymatcher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pathwaymatcher_match-chrbp | PASS |  |
+| pathwaymatcher_match-ensembl | PASS |  |
+| pathwaymatcher_match-genes | PASS |  |
+| pathwaymatcher_match-modified-peptides | PASS |  |
+| pathwaymatcher_match-peptides | PASS |  |
+| pathwaymatcher_match-proteoforms | PASS |  |
+| pathwaymatcher_match-rsids | PASS |  |
+| pathwaymatcher_match-uniprot | PASS |  |
+| pathwaymatcher_match-vcf | PASS |  |
+
 ## pathwaymatcher_match-proteoforms
 
 ### Tool Description

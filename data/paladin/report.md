@@ -1,5 +1,18 @@
 # paladin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| paladin_align | PASS | 100 SARS-CoV-2 Illumina reads aligned to ORF1ab and spike proteins; the -o report option needs a prepared index. |
+| paladin_bwt2sa | Not completed | Output cannot be confirmed: an index chained from fa2pac, pac2bwt, bwtupdate and bwt2sa makes paladin align crash (segfault), unlike the index from paladin index. |
+| paladin_bwtupdate | Not completed | Output cannot be confirmed: an index chained from fa2pac, pac2bwt, bwtupdate and bwt2sa makes paladin align crash (segfault), unlike the index from paladin index. |
+| paladin_fa2pac | PASS | Rewrote baseCommand (bwa is not in the image); with -f the pac and ann files equal those of paladin index. |
+| paladin_index | PASS | SARS-CoV-2 proteome indexed; the index aligned reads correctly. |
+| paladin_pac2bwt | Not completed | Output cannot be confirmed: an index chained from fa2pac, pac2bwt, bwtupdate and bwt2sa makes paladin align crash (segfault), unlike the index from paladin index. |
+| paladin_prepare | PASS | Local protein FASTA (-f) was indexed as a prepared index; the report option then worked. The download mode was not tested. |
+| paladin_shm | Not completed | Shared-memory index manager: a one-shot container has no shared-memory indices to list, so there is no output to check. |
+
 ## paladin_index
 
 ### Tool Description

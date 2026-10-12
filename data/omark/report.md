@@ -1,5 +1,11 @@
 # omark CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| omark | PASS |  |
+
 ## omark
 
 ### Tool Description

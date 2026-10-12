@@ -17,8 +17,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Verbosity
     inputBinding:
       position: 101

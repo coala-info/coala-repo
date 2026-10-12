@@ -1,5 +1,11 @@
 # panman CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| panman_panmanUtils | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

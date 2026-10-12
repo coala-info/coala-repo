@@ -120,8 +120,35 @@ outputs:
       session.
     outputBinding:
       glob: $(inputs.logfile_path)
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written by the ParmEd script commands (for example outparm, 
+      parmout, writeFrcmod, writeOFF).
+    outputBinding:
+      glob:
+        - '*.parm7'
+        - '*.prmtop'
+        - '*.rst7'
+        - '*.inpcrd'
+        - '*.pdb'
+        - '*.cif'
+        - '*.mol2'
+        - '*.frcmod'
+        - '*.lib'
+        - '*.off'
+        - '*.psf'
+        - '*.crd'
+        - '*.top'
+        - '*.gro'
+        - '*.txt'
+  - id: stdout
+    type: stdout
+    doc: Standard output (messages and printed details from the script commands)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parmed:3.4.3
+stdout: parmed.out

@@ -1,5 +1,11 @@
 # orsum CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| orsum_orsum.py | PASS | ran on a real g:Profiler GO:BP enrichment of 30 p53-pathway genes with the g:Profiler human GMT; 369 terms reduced to 87 representative terms plus plots and tables |
+
 ## orsum_orsum.py
 
 ### Tool Description

@@ -25,19 +25,18 @@ inputs:
     inputBinding:
       position: 102
       prefix: --schema
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: show program's version number and exit
-    inputBinding:
-      position: 102
-      prefix: -V
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: validation_log
+    type: stderr
+    doc: Validation log (the tool logs to standard error)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/opentargets-validator:1.0.0--pyhdfd78af_0
 stdout: opentargets-validator_opentargets_validator.out
+stderr: opentargets-validator_opentargets_validator.err
+successCodes:
+  - 0
+  - 1

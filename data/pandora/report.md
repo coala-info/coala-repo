@@ -1,5 +1,19 @@
 # pandora CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pandora_compare | PASS |  |
+| pandora_discover | PASS |  |
+| pandora_get_vcf_ref | PASS | works with a 4-path query; the tool aborts (PRG is empty) with a query of only one or two sequences |
+| pandora_index | PASS |  |
+| pandora_map | PASS |  |
+| pandora_merge_index | PASS |  |
+| pandora_random | PASS |  |
+| pandora_seq2path | PASS | top path works; with -i the tool aborts when the PRG file has more than one locus (one-locus PRG works) |
+| pandora_walk | PASS |  |
+
 ## pandora_index
 
 ### Tool Description

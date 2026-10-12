@@ -15,7 +15,7 @@ inputs:
   - id: dir_working
     type:
       - 'null'
-      - Directory
+      - string
     doc: Working directory
     inputBinding:
       position: 101
@@ -119,8 +119,6 @@ inputs:
   - id: ref_fasta
     type: File
     doc: Reference FASTA file
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --ref-fasta

@@ -1,5 +1,11 @@
 # packmol CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| packmol | PASS | Fixed the CWL (input is read from stdin with structure files staged); 100 waters and 40 ureas packed, 620 atoms as expected. |
+
 ## packmol
 
 ### Tool Description

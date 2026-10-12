@@ -1,5 +1,11 @@
 # pathracer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pathracer | PASS | fixed --output (was --output-directory); ran 40 SARS-CoV-2 protein HMMs on a real SPAdes GFA graph, the M and E proteins were recovered correctly |
+
 ## pathracer
 
 ### Tool Description

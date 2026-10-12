@@ -1,5 +1,11 @@
 # oligon-design CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| oligon-design_oligoNdesign | PASS |  |
+
 ## oligon-design_oligoNdesign
 
 ### Tool Description

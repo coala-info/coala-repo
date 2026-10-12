@@ -4,38 +4,49 @@ baseCommand:
   - pangwas
   - annotate
 label: pangwas_annotate
-doc: "Annotate genomic assemblies with bakta.\n\nTakes as input a FASTA file of genomic
-  assemblies. Outputs a GFF file\nof annotations, among many other formats from bakta.\n\
-  \nAll additional arguments with be passed to the `bakta` CLI.\n\nTool homepage:
-  https://github.com/phac-nml/pangwas"
+doc: "Annotate genomic assemblies with bakta.\n\nTakes as input a FASTA file of genomic assemblies. Outputs a GFF file\nof annotations, among many other formats from bakta.\n\nAll additional arguments with be passed to the `bakta` CLI.\n\nTool homepage: https://github.com/phac-nml/pangwas"
 inputs:
-  - id: db
-    type: Directory
-    doc: bakta database directory.
-    inputBinding:
-      position: 101
-      prefix: --db
   - id: fasta
     type: File
-    doc: Input FASTA sequences.
+    doc: "Input FASTA sequences."
     inputBinding:
       position: 101
       prefix: --fasta
+  - id: db
+    type: Directory
+    doc: "bakta database directory."
+    inputBinding:
+      position: 101
+      prefix: --db
+  - id: outdir
+    type:
+      - 'null'
+      - string
+    doc: "Output directory. (default: .)"
+    inputBinding:
+      position: 101
+      prefix: --outdir
   - id: prefix
     type:
       - 'null'
       - string
-    doc: Output file prefix. If not provided, will be parsed from the fasta file
-      name.
+    doc: "Output file prefix. If not provided, will be parsed from the fasta file name."
     inputBinding:
       position: 101
       prefix: --prefix
+  - id: tmp
+    type:
+      - 'null'
+      - string
+    doc: "Temporary directory."
+    inputBinding:
+      position: 101
+      prefix: --tmp
   - id: sample
     type:
       - 'null'
       - string
-    doc: Sample identifier. If not provided, will be parsed from the fasta file 
-      name.
+    doc: "Sample identifier. If not provided, will be parsed from the fasta file name."
     inputBinding:
       position: 101
       prefix: --sample
@@ -43,39 +54,31 @@ inputs:
     type:
       - 'null'
       - int
-    doc: CPU threads for bakta.
+    doc: "CPU threads for bakta. (default: 1)"
     inputBinding:
       position: 101
       prefix: --threads
-  - id: tmp
+  - id: extra_args
     type:
       - 'null'
-      - string
-    doc: Temporary directory.
+      - type: array
+        items: string
+    doc: "Additional arguments passed on to `bakta`."
     inputBinding:
-      position: 101
-      prefix: --tmp
-  - id: outdir_path
-    type: string?
-    doc: 'Output directory. (default: .)'
-    inputBinding:
-      position: 102
-      prefix: --outdir
+      position: 200
 outputs:
-  - id: outdir
+  - id: gff
     type:
       - 'null'
-      - Directory
-    doc: Output directory.
+      - File
+    doc: "GFF3 annotations written by bakta"
     outputBinding:
-      glob: $(inputs.outdir_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + (inputs.prefix || inputs.fasta.nameroot) + '.gff3')"
+  - id: annotation_files
+    type: File[]
+    doc: "All annotation files written with the output prefix"
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + (inputs.prefix || inputs.fasta.nameroot) + '.*')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

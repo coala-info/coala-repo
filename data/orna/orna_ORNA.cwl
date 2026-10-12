@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: orna_ORNA
+baseCommand: ORNA
 label: orna_ORNA
 doc: "ORNA options\n\nTool homepage: https://github.com/SchulzLab/ORNA"
 inputs:
@@ -23,7 +23,7 @@ inputs:
   - id: collect_stat
     type:
       - 'null'
-      - string
+      - int
     doc: Collect stat
     inputBinding:
       position: 101
@@ -47,7 +47,7 @@ inputs:
   - id: ksorting
     type:
       - 'null'
-      - string
+      - int
     doc: Kmer based Sorting
     inputBinding:
       position: 101
@@ -61,9 +61,8 @@ inputs:
       position: 101
       prefix: -nb-cores
   - id: output
-    type:
-      - 'null'
-      - string
+    type: string
+    default: Normalized
     doc: Prefix of the output File
     inputBinding:
       position: 101
@@ -79,7 +78,7 @@ inputs:
   - id: pair1
     type:
       - 'null'
-      - string
+      - File
     doc: First read of the pair
     inputBinding:
       position: 101
@@ -87,7 +86,7 @@ inputs:
   - id: pair2
     type:
       - 'null'
-      - string
+      - File
     doc: Second read of the pair
     inputBinding:
       position: 101
@@ -95,7 +94,7 @@ inputs:
   - id: sorting
     type:
       - 'null'
-      - string
+      - int
     doc: Quality Sorting
     inputBinding:
       position: 101
@@ -119,6 +118,8 @@ outputs:
     doc: Files written with the prefix given in output
     outputBinding:
       glob: $(inputs.output)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/orna:2.0--he52c88d_0

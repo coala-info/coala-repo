@@ -1,5 +1,11 @@
 # pargenes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pargenes_pargenes.py | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

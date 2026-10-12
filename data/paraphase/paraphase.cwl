@@ -9,6 +9,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .bai
     doc: Input BAM file, mutually exclusive with -l
     inputBinding:
       position: 101

@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - pathoscope
-  - id
+  - ID
 label: pathoscope_ID
 doc: "PathoScope ID: Identification and quantification of microbes from sequencing
   data\n\nTool homepage: https://github.com/PathoScope/PathoScope"
@@ -94,21 +94,24 @@ inputs:
       position: 101
       prefix: -thetaPrior
   - id: out_dir_path
-    type: string?
+    type: string
     doc: Output Directory (Default=. (current directory))
     inputBinding:
       position: 102
       prefix: -outDir
 outputs:
   - id: out_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output Directory
     outputBinding:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.out_dir_path)
+        writable: true
+        entry: "$({\"class\": \"Directory\", \"basename\": inputs.out_dir_path, \"listing\": []})"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pathoscope:2.0.7--pyhdfd78af_2

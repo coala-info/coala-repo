@@ -1,5 +1,11 @@
 # padloc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| padloc | Failed | image problem: the script runs mkdir /usr/local/data at start and fails as a non-root user, and the image has no PADLOC-DB database. |
+
 ## padloc
 
 ### Tool Description

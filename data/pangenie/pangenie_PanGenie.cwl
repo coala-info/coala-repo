@@ -82,8 +82,6 @@ inputs:
       - 'null'
       - File
     doc: 'reference genome in FASTA format. NOTE: INPUT FASTA FILE MUST NOT BE COMPRESSED.'
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: -r
@@ -161,22 +159,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: -o
-  - id: write_sampled_panel_path
+  - id: write_sampled_panel
     type:
       - 'null'
-      - string
+      - boolean
     doc: write sampled panel to additional output VCF.
     inputBinding:
       position: 103
       prefix: -d
-outputs:
-  - id: write_sampled_panel
+  - id: index_files
     type:
       - 'null'
-      - File
-    doc: write sampled panel to additional output VCF.
-    outputBinding:
-      glob: $(inputs.write_sampled_panel_path)
+      - type: array
+        items: File
+    doc: Index files written by PanGenie-index (all files starting with the index prefix); staged in the working directory so the -f prefix resolves
+outputs:
   - id: output_prefix
     type:
       type: array
@@ -184,9 +181,12 @@ outputs:
     doc: 'prefix of the output files. NOTE: the given path must not include non-existent
       folders'
     outputBinding:
-      glob: $(inputs.output_prefix_path)*
+      glob: $((inputs.output_prefix_path || 'result') + '*')
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangenie:4.2.1--h077b44d_0

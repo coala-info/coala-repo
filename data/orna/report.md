@@ -1,5 +1,11 @@
 # orna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| orna_ORNA | Failed | tool bug: -type fasta is ignored and FASTA input gives FASTQ-style records with empty quality lines (FASTQ input works); baseCommand fixed to ORNA |
+
 ## orna_ORNA
 
 ### Tool Description

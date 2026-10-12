@@ -5,6 +5,15 @@ baseCommand:
   - seq2path
 label: pandora_seq2path
 doc: "For each sequence, return the path through the PRG\n\nTool homepage: https://github.com/rmcolq/pandora"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{entry: inputs.prg, writable: true}];
+        if (inputs.kmer_prgs) { l.push({entry: inputs.kmer_prgs, writable: true}); }
+        return l;
+      }
 inputs:
   - id: prg
     type: File
@@ -54,9 +63,8 @@ inputs:
   - id: verbosity
     type:
       - 'null'
-      - type: array
-        items: boolean
-    doc: Verbosity of logging. Repeat for increased verbosity
+      - boolean
+    doc: Verbosity of logging
     inputBinding:
       position: 102
       prefix: -v
@@ -68,6 +76,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: -w
+  - id: kmer_prgs
+    type:
+      - 'null'
+      - Directory
+    doc: The kmer_prgs directory made by pandora index (staged beside the PRG)
 outputs:
   - id: stdout
     type: stdout

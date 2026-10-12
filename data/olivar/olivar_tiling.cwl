@@ -7,7 +7,9 @@ label: olivar_tiling
 doc: "Primer design for tiling experiments.\n\nTool homepage: https://gitlab.com/treangenlab/olivar"
 inputs:
   - id: olvr_path
-    type: File
+    type:
+      - File
+      - Directory
     doc: Path to the Olivar reference file (.olvr), or the directory of 
       reference files for multiple targets
     inputBinding:
@@ -208,7 +210,7 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - Directory
     doc: Output path (output to current directory by default).
     outputBinding:
       glob: $(inputs.output_path)

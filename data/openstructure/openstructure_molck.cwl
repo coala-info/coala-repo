@@ -11,6 +11,7 @@ inputs:
     doc: Input PDB files
     inputBinding:
       position: 1
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: color
     type:
       - 'null'
@@ -18,7 +19,8 @@ inputs:
     doc: Whether output should be colored.
     inputBinding:
       position: 102
-      prefix: --color
+      prefix: --color=
+      separate: false
   - id: complib
     type:
       - 'null'
@@ -28,7 +30,8 @@ inputs:
       library location (if the executable is part of a standard OpenStructure installation)'
     inputBinding:
       position: 102
-      prefix: --complib
+      prefix: --complib=
+      separate: false
   - id: fix_ele
     type:
       - 'null'
@@ -56,7 +59,8 @@ inputs:
       - Remove unknown atoms not following the nomenclature'
     inputBinding:
       position: 102
-      prefix: --rm
+      prefix: --rm=
+      separate: false
   - id: stdout
     type:
       - 'null'
@@ -66,22 +70,35 @@ inputs:
       position: 102
       prefix: --stdout
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: Output file name for the cleaned file(s). % characters are replaced with the basename of the input file without extension. Default is %-molcked.pdb.
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out=
+      separate: false
 outputs:
   - id: output_file
     type:
+      type: array
+      items: File
+    doc: Cleaned file(s) written to disk.
+    outputBinding:
+      glob: '*-molcked.pdb'
+  - id: custom_output_file
+    type:
       - 'null'
       - File
-    doc: Write cleaned file(s) to disk. % characters in the filename are 
-      replaced with the basename of the input file without extension.
+    doc: Cleaned file written with a custom --out name.
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/openstructure:2.11.1--py310h1f7f436_0

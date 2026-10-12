@@ -1,5 +1,31 @@
 # parasail CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parasail_parasail_aligner | PASS |  |
+| parasail_parasail_stats | PASS |  |
+
+## parasail_parasail_stats
+
+### Tool Description
+Report simple statistics of a FASTA file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/parasail:2.6.2--h5ca1c30_1
+- **Homepage**: https://github.com/jeffdaily/parasail
+- **Package**: https://anaconda.org/channels/bioconda/packages/parasail/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] parasail_stats: ok via parasail_stats (--help=usage_only, -h=usage_only, -help=usage_only, (no args)=usage_only)
+Missing input file.
+
+usage: parasail_stats file
+```
+
 ## Metadata
 - **Skill**: generated
 

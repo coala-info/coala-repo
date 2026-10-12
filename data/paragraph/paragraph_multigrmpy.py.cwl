@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Multigrmpy.py
+baseCommand: multigrmpy.py
 label: paragraph_multigrmpy.py
 doc: "A tool for graph-based genotyping of variants using a manifest of samples and
   a reference genome.\n\nTool homepage: https://github.com/Illumina/paragraph"
@@ -212,12 +212,23 @@ inputs:
       position: 102
       prefix: --logfile
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: Output directory.
     inputBinding:
       position: 103
       prefix: --output
+  - id: sample_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+    doc: BAM/CRAM files (with indexes) named in the manifest; they are staged in
+      the working directory, so the manifest must list them by file name.
 outputs:
   - id: output
     type: Directory
@@ -233,6 +244,9 @@ outputs:
       glob: $(inputs.logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.sample_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paragraph:2.3--h8908b6f_0

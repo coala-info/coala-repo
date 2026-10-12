@@ -1,5 +1,11 @@
 # paf2chain CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| paf2chain | PASS | SARS-CoV-2 scaffolds aligned with minimap2 gave a valid chain file. |
+
 ## paf2chain
 
 ### Tool Description

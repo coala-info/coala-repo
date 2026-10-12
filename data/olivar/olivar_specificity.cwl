@@ -12,6 +12,13 @@ inputs:
       name), "fP" (sequence of forward primer), "rP" (sequence of reverse primer).'
     inputBinding:
       position: 1
+  - id: blast_db_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files of the BLAST database (.nhr, .nin, .nsq, ...), staged in the
+      working directory so that the db prefix resolves
   - id: db
     type:
       - 'null'
@@ -72,12 +79,14 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - Directory
     doc: Output path (output to current directory by default).
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.blast_db_files ? inputs.blast_db_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/olivar:1.3.3--pyhdfd78af_0

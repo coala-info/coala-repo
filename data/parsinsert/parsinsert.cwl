@@ -18,6 +18,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -D
+      separate: false
   - id: mask_file
     type:
       - 'null'
@@ -34,6 +35,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -n
+      separate: false
   - id: percent_threshold_cutoff
     type:
       - 'null'
@@ -42,6 +44,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -c
+      separate: false
   - id: print_node_comments
     type:
       - 'null'

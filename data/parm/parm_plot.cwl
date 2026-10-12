@@ -61,10 +61,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min_relative_attribution
-  - id: output
-    type:
-      - 'null'
-      - Directory
+  - id: output_path
+    type: string
     doc: "Path to the directory where the files will be\n                        \
       \  stored. Default behaviour is to save the PDFs in the\n                  \
       \        same directory as the input data."
@@ -81,9 +79,18 @@ inputs:
       position: 101
       prefix: --plot_format
 outputs:
+  - id: output
+    type: Directory
+    doc: Directory with the plots
+    outputBinding:
+      glob: $(inputs.output_path)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parm:0.1.44--pyh7e72e81_0

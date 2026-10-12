@@ -1,5 +1,16 @@
 # pauvre CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pauvre_browser | Failed | image problem: Python module gffutils is missing, pauvre browser fails on import |
+| pauvre_custommargin | PASS |  |
+| pauvre_marginplot | PASS |  |
+| pauvre_redwood | Failed | tool bug: SyntaxError in pauvre/redwood.py line 706 (ifargs.BASENAME), redwood cannot start |
+| pauvre_stats | PASS |  |
+| pauvre_synplot | Failed | image problem: Python module progressbar is missing, pauvre synplot fails on import |
+
 ## pauvre_browser
 
 ### Tool Description

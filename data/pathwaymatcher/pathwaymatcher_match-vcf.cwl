@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - PathwayMatcher.jar
+  - pathwaymatcher
   - match-vcf
 label: pathwaymatcher_match-vcf
 doc: "Match a list of genetic variants in VCF format\n\nTool homepage: https://github.com/LuisFranciscoHS/PathwayMatcher"

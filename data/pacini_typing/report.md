@@ -1,5 +1,12 @@
 # pacini_typing CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pacini_typing_makedatabase | PASS | built FASTA (blast) and FASTQ (kma) databases from the repo gene file; database directory collected |
+| pacini_typing_query | PASS | paired kma query matches the repo expected res file; FASTA blast query finds the gene (repo expected tsv has stray decimals); outputs now collected by prefix |
+
 ## pacini_typing_makedatabase
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # pasa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pasa | PASS | ran the PASA assembler on the repository's real Arabidopsis alignments (39 alignments of one gene) and got one correct assembly |
+
 ## pasa
 
 ### Tool Description

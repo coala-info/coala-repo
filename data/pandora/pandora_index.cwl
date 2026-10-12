@@ -30,9 +30,8 @@ inputs:
   - id: verbosity
     type:
       - 'null'
-      - type: array
-        items: boolean
-    doc: Verbosity of logging. Repeat for increased verbosity
+      - boolean
+    doc: Verbosity of logging
     inputBinding:
       position: 102
       prefix: -v
@@ -45,21 +44,32 @@ inputs:
       position: 102
       prefix: -w
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'Filename for the index [default: <PRG>.kXX.wXX.idx]'
     inputBinding:
       position: 103
       prefix: --outfile
 outputs:
   - id: outfile
+    type: File
+    doc: The PRG index (outfile_path if given, otherwise <PRG>.kXX.wXX.idx beside the PRG)
+    outputBinding:
+      glob: "$(inputs.outfile_path ? inputs.outfile_path : inputs.prg.basename + '.k' + (inputs.kmer_size ? inputs.kmer_size : 15) + '.w' + (inputs.window_size ? inputs.window_size : 14) + '.idx')"
+  - id: kmer_prgs
     type:
       - 'null'
-      - File
-    doc: Filename for the index
+      - Directory
+    doc: Directory with the kmer graph of each locus (kmer_prgs), written beside the PRG and used by pandora map, compare and discover
     outputBinding:
-      glob: $(inputs.outfile_path)
+      glob: kmer_prgs
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.prg)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pandora:0.9.2--h4ac6f70_0

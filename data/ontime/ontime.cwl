@@ -50,8 +50,10 @@ inputs:
       position: 102
       prefix: --to
   - id: output_file_path
-    type: string
-    doc: ' Output file name [default: stdout]'
+    type:
+      - 'null'
+      - string
+    doc: 'Output file name [default: stdout]'
     inputBinding:
       position: 103
       prefix: --output
@@ -63,6 +65,10 @@ outputs:
     doc: Output file name
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: stdout_text
+    type: stdout
+    doc: Standard output (reads when no output file is given; start times with --show)
+stdout: ontime_stdout.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

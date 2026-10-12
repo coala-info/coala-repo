@@ -44,6 +44,8 @@ inputs:
       prefix: --regions-file
   - id: table
     type: File
+    secondaryFiles:
+      - .tbi
     doc: Input indexed bed.gz homology table.
     inputBinding:
       position: 101

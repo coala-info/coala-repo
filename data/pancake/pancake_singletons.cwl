@@ -5,7 +5,7 @@ baseCommand:
   - singletons
 label: pancake_singletons
 doc: "Identify singleton regions in a PanCake Data Object File and output them as
-  FASTA or BED files.\n\nTool homepage: https://github.com/pancakeswap/pancake-frontend"
+  FASTA or BED files.\n\nTool homepage: https://bitbucket.org/CorinnaErnst/pancake"
 inputs:
   - id: exclude_chromosomes
     type:
@@ -89,14 +89,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_dir_path`
+    doc: 'directory to which .fasta files of singleton regions are written (DEFAULT: singletons_{REF_CHROM|REF_GENOME})'
     inputBinding:
       position: 103
-      prefix: --output-dir
+      prefix: --output
   - id: bed_file_path
     type:
       - 'null'
       - string
+    doc: .bed file to which singleton regions are written
     inputBinding:
       position: 104
       prefix: --bed_file

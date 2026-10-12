@@ -1,5 +1,13 @@
 # panchip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| panchip_analysis | Not completed | needs the PanChIP library (more than 13.6 GB download from panchip init) |
+| panchip_filter | Not completed | needs the PanChIP library (more than 13.6 GB download from panchip init) |
+| panchip_init | Not completed | needs the PanChIP library (more than 13.6 GB download from panchip init) |
+
 ## panchip_init
 
 ### Tool Description

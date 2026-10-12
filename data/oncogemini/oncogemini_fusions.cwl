@@ -7,7 +7,7 @@ label: oncogemini_fusions
 doc: "Query the database for fusions.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1

@@ -1,5 +1,11 @@
 # pass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pass_PASS | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

@@ -1,5 +1,14 @@
 # panfeed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| panfeed | PASS |  |
+| panfeed_panfeed-get-clusters | PASS | synthetic data: planted association p-values on real panfeed hashes; fixed output (stdout and -o file) |
+| panfeed_panfeed-get-kmers | PASS | synthetic data: planted association p-values on real panfeed k-mers; fixed output (stdout and -o file) |
+| panfeed_panfeed-plot | PASS | fixed output collection and output directory creation; plots drawn from get-kmers output with planted p-values |
+
 ## panfeed
 
 ### Tool Description

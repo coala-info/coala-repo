@@ -146,34 +146,34 @@ inputs:
       - 'null'
       - string
     doc: ' Output Alignment File Name (Default=outalign.sam)'
+    default: outalign.sam
     inputBinding:
       position: 102
       prefix: -outAlign
   - id: out_dir_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output Directory (Default=. (current directory))
     inputBinding:
       position: 103
       prefix: -outDir
 outputs:
   - id: out_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output Directory (Default=. (current directory))
     outputBinding:
       glob: $(inputs.out_dir_path)
   - id: out_align
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output Alignment File Name (Default=outalign.sam)
     outputBinding:
-      glob: $(inputs.out_align_path)
+      glob: $(inputs.out_dir_path + '/' + inputs.out_align_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.out_dir_path)
+        writable: true
+        entry: "$({\"class\": \"Directory\", \"basename\": inputs.out_dir_path, \"listing\": []})"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pathoscope:2.0.7--pyhdfd78af_2

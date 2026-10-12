@@ -1,5 +1,14 @@
 # pastml CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pastml | PASS |  |
+| pastml_geomap | Failed | image problem: geomap crashes with numpy AttributeError (np.str was removed) in generate_geomap.py |
+| pastml_name_tree | PASS |  |
+| pastml_transition_counter | PASS |  |
+
 ## pastml
 
 ### Tool Description
@@ -258,3 +267,211 @@ iTOL-related arguments:
                         name for the tree uploaded to iTOL.
 ```
 
+## pastml_geomap
+
+### Tool Description
+Visualisation of locations.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pastml:1.9.51--pyhdfd78af_0
+- **Homepage**: https://github.com/evolbioinfo/pastml
+- **Package**: https://anaconda.org/channels/bioconda/packages/pastml/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: geomap [-h] -d DATA [-s DATA_SEP] [-i ID_INDEX] -c COUNTRY -l LOCATION
+              [-t TREE] [-o HTML] [--colours COLOURS]
+
+Visualisation of locations.
+
+options:
+  -h, --help            show this help message and exit
+
+annotation-related arguments:
+  -d DATA, --data DATA  the annotation file in tab/csv format with the first
+                        row containing the column names.
+  -s DATA_SEP, --data_sep DATA_SEP
+                        the column separator for the data table. By default is
+                        set to tab, i.e. for tab file. Set it to ',' if your
+                        file is csv.
+  -i ID_INDEX, --id_index ID_INDEX
+                        the index of the column in the data table that
+                        contains the tree tip names, indices start from zero
+                        (by default is set to 0).
+  -c COUNTRY, --country COUNTRY
+                        name of the data table column that contains countries.
+  -l LOCATION, --location LOCATION
+                        name of the data table column that contains locations
+                        (to be mapped to colours).
+
+tree-related arguments:
+  -t TREE, --tree TREE  the input tree in newick format (to only consider ids
+                        present in the tree).
+
+output-related arguments:
+  -o HTML, --html HTML  the output map visualisation file (html).
+  --colours COLOURS     optional way to specify the colours used for location
+                        visualisation. Should be a path to a tab-delimited
+                        file, with two columns: the first one containing
+                        possible locations, and the second, named "colour",
+                        containing colours, in HEX format (e.g. #a6cee3).
+```
+
+## pastml_name_tree
+
+### Tool Description
+Name internal tree nodes as PastMl would.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pastml:1.9.51--pyhdfd78af_0
+- **Homepage**: https://github.com/evolbioinfo/pastml
+- **Package**: https://anaconda.org/channels/bioconda/packages/pastml/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: name_tree [-h] -i IN_TREE [-o OUT_TREE] [--root_date [ROOT_DATE ...]]
+                 [-c [COLUMNS ...]] [--version]
+
+Name internal tree nodes as PastMl would.
+
+options:
+  -h, --help            show this help message and exit
+  -i IN_TREE, --in_tree IN_TREE
+                        input tree(s) in newick or nexus format (must be
+                        rooted).
+  -o OUT_TREE, --out_tree OUT_TREE
+                        path where to save the named output tree(s) in newick
+                        format.
+  --root_date [ROOT_DATE ...]
+                        date(s) of the root(s) (for dated tree(s) only), if
+                        specified, the corresponding dates will be added to
+                        the tree node annotations.
+  -c [COLUMNS ...], --columns [COLUMNS ...]
+                        names of the annotation columns of the input tree (if
+                        any) to be kept in the output tree. If there are
+                        LSD2-like date-related columns (date and date_CI)
+                        present in the tree, they will be kept in any case, so
+                        no need to specify them among columns here.
+  --version             show program's version number and exit
+```
+
+## pastml_transition_counter
+
+### Tool Description
+Transition counting for PastML ACR
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pastml:1.9.51--pyhdfd78af_0
+- **Homepage**: https://github.com/evolbioinfo/pastml
+- **Package**: https://anaconda.org/channels/bioconda/packages/pastml/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: transition_counter [-h] -t TREE [-d DATA] [-s DATA_SEP] [-i ID_INDEX]
+                          -c COLUMN [-m {JC,F81,EFT,HKY,JTT,CUSTOM_RATES}]
+                          --parameters PARAMETERS [--rate_matrix RATE_MATRIX]
+                          [-n N_REPETITIONS] -o OUT_TRANSITIONS [-v]
+                          [--html HTML] [--offline] [--work_dir WORK_DIR]
+                          [--colours COLOURS] [--threshold THRESHOLD]
+                          [--version]
+
+Transition counting for PastML ACR
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+tree-related arguments:
+  -t TREE, --tree TREE  input tree(s) in newick format (must be rooted).
+
+annotation-file-related arguments:
+  -d DATA, --data DATA  annotation file in tab/csv format with the first row
+                        containing the column names. If not given, the
+                        annotations should be contained in the tree file
+                        itself.
+  -s DATA_SEP, --data_sep DATA_SEP
+                        column separator for the annotation table. By default
+                        is set to tab, i.e. for a tab-delimited file. Set it
+                        to ',' if your file is csv.
+  -i ID_INDEX, --id_index ID_INDEX
+                        index of the annotation table column containing tree
+                        tip names, indices start from zero (by default is set
+                        to 0).
+
+ancestral-character-reconstruction-related arguments:
+  -c COLUMN, --column COLUMN
+                        the name of the annotation table column that contain
+                        the character to be analysed.
+  -m {JC,F81,EFT,HKY,JTT,CUSTOM_RATES}, --model {JC,F81,EFT,HKY,JTT,CUSTOM_RATES}
+                        evolutionary model for ML methods (ignored by MP
+                        methods). When multiple ancestral characters are
+                        specified (see -c, --columns), the same model can be
+                        used for all of them (if only one model is specified),
+                        or different models can be used (specified in the same
+                        order as -c, --columns). If multiple models are given,
+                        but not for all the characters, for the rest of them
+                        the default model (F81) is chosen.
+  --parameters PARAMETERS
+                        the ML-method parameters, specified as a path to a
+                        tab-delimited file with two columns: the first one
+                        containing parameter names, and the second, named
+                        "value", containing parameter values. Parameters can
+                        include character state frequencies (parameter name
+                        should be the corresponding state, and parameter value
+                        - the float frequency value, between 0 and 1),tree
+                        branch scaling factor (parameter name
+                        scaling_factor),and tree branch smoothing factor
+                        (parameter name smoothing_factor),
+  --rate_matrix RATE_MATRIX
+                        (only for CUSTOM_RATES model) path to the file
+                        containing the rate matrix. The rate matrix file
+                        should specify character states in its first line,
+                        preceded by # and separated by spaces. The following
+                        lines should contain a symmetric squared rate matrix
+                        with positive rates(and zeros on the diagonal),
+                        separated by spaces, in the same order at the
+                        character states specified in the first line.For
+                        example, for four states, A, C, G, T and the rates
+                        A<->C 1, A<->G 4, A<->T 1, C<->G 1, C<->T 4, G<->T
+                        1,the rate matrix file would look like:# A C G T0 1 4
+                        11 0 1 44 1 0 11 4 1 0
+  -n N_REPETITIONS, --n_repetitions N_REPETITIONS
+                        (default 1000) Number of times the ancestral scenario
+                        is drawn from the marginal probabilities.The
+                        transition counts are averaged over all these
+                        scenarios.
+
+output-related arguments:
+  -o OUT_TRANSITIONS, --out_transitions OUT_TRANSITIONS
+                        path to the output transition count file.
+  -v, --verbose         print information on the progress of the analysis (to
+                        console)
+  --html HTML           path to the output transition visualisation file
+                        (html).
+  --work_dir WORK_DIR   path to the folder where pastml will store all the
+                        needed CSS/JS scripts for the --offline mode. Default
+                        is <path_to_input_tree>/<input_tree_name>_pastml. If
+                        the folder does not exist, it will be created.
+
+visualisation-related arguments:
+  --offline             By default (without --offline option) PastML assumes
+                        that there is an internet connection available, which
+                        permits it to fetch CSS and JS scripts needed for
+                        visualisation online.With --offline option turned on,
+                        PastML will store all the needed CSS/JS scripts in the
+                        folder specified by --work_dir, so that internet
+                        connection is not needed (but you must not move the
+                        output html files to any location other that the one
+                        specified by --html).
+  --colours COLOURS     optional way to specify the colours used for character
+                        state visualisation. A tab-delimited file, with two
+                        columns: the first one containing character states,
+                        and the second, named "colour", containing colours, in
+                        HEX format (e.g. #a6cee3).
+  --threshold THRESHOLD
+                        Do not visualise the interactions below this threshold
+                        value.
+```

@@ -83,11 +83,12 @@ inputs:
   - id: index
     type:
       - 'null'
-      - string
-    doc: Generating indexes and print sequence (passed as reference) between x:y
+      - boolean
+    doc: Generate indexes and print the sequence of the reference between --start
+      and --end (the binary takes a boolean value, passed as --index=true)
     inputBinding:
       position: 101
-      prefix: --index
+      prefix: --index=true
   - id: input_file
     type:
       - 'null'
@@ -116,8 +117,8 @@ inputs:
   - id: input_newick
     type:
       - 'null'
-      - string
-    doc: Input tree topology as Newick string
+      - File
+    doc: Input tree topology as Newick file
     inputBinding:
       position: 101
       prefix: --input-newick
@@ -275,7 +276,9 @@ outputs:
         items: File
     doc: Prefix of the output file name
     outputBinding:
-      glob: $(inputs.output_file_path)*
+      glob:
+        - panman/$(inputs.output_file_path)*
+        - info/$(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

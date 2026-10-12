@@ -1,5 +1,11 @@
 # paperbanana CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| paperbanana | Not completed | Needs an LLM / image-generation provider API key and network access, which are not available. |
+
 ## paperbanana
 
 ### Tool Description

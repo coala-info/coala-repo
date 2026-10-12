@@ -264,7 +264,8 @@ inputs:
       - File
     doc: (r)eference genome (set to ! to pick random one from sequence dir)
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --reference

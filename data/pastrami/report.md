@@ -1,5 +1,16 @@
 # pastrami CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pastrami_aggregate | Failed | image problem: Rscript is not installed in the image, the NNLS step of aggregate fails and the estimates file is not written |
+| pastrami_all | Failed | image problem: Rscript is not installed in the image, the final NNLS step fails after the pickle and copying files are written |
+| pastrami_build | PASS | real 1000 Genomes phase 3 SNPs (100 kb per chromosome, 90 phased haplotypes of YRI, CEU and CHB); top copying population equals own population for 78 of 90 |
+| pastrami_coanc | Failed | tool bug: coanc unpacks 3 columns from the 4-column haplotype table that hapmake writes (ValueError at pastrami.py line 1167), so it always fails |
+| pastrami_hapmake | PASS | output identical to hap.tsv in the pastrami repository |
+| pastrami_query | PASS | real 1000 Genomes data; ASW query haplotypes copy mostly from YRI, MXL query haplotypes from CEU and CHB |
+
 ## pastrami_all
 
 ### Tool Description

@@ -8,7 +8,7 @@ doc: "Build a database, by providing an OMA HDF5 database file [BROWSERBUILD] or
   OrthoXML + FASTA + Newick files [OXMLBUILD].\n\nTool homepage: https://github.com/DessimozLab/omamer"
 inputs:
   - id: db
-    type: File
+    type: string
     doc: Path to new database (including filename).
     inputBinding:
       position: 101
@@ -135,6 +135,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: db_file
+    type:
+      - 'null'
+      - File
+    doc: The new database
+    outputBinding:
+      glob: $(inputs.db)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/omamer:2.1.2--pyhdfd78af_0

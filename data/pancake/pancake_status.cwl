@@ -4,7 +4,7 @@ baseCommand:
   - pancake
   - status
 label: pancake_status
-doc: "Check the status of a PAN_FILE\n\nTool homepage: https://github.com/pancakeswap/pancake-frontend"
+doc: "Check the status of a PAN_FILE\n\nTool homepage: https://bitbucket.org/CorinnaErnst/pancake"
 inputs:
   - id: pan_file
     type: File

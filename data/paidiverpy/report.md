@@ -1,5 +1,11 @@
 # paidiverpy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| paidiverpy | PASS | Rewrote inputs (config file plus staged image directories, removed the GUI flag); 12 images of the tool's benthic sample set were converted to gray and blurred. |
+
 ## paidiverpy
 
 ### Tool Description

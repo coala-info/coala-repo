@@ -7,7 +7,7 @@ label: oncogemini_amend
 doc: "Amend a database with new sample information.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be amended.
     inputBinding:
       position: 1
@@ -28,9 +28,20 @@ inputs:
       position: 102
       prefix: --sample
 outputs:
+  - id: db_out
+    type: File
+    doc: The updated database
+    outputBinding:
+      glob: $(inputs.db.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/oncogemini:1.0.0--pyh3252c3a_0

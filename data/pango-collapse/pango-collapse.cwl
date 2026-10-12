@@ -104,20 +104,26 @@ inputs:
       position: 102
       prefix: --tsv
   - id: output_path
-    type: string
-    doc: FILE  Path to output CSV/TSV with Lineage      │
+    type:
+      - 'null'
+      - string
+    doc: Path to output CSV/TSV with Lineage column. If not supplied will print 
+      to stdout.
     inputBinding:
       position: 103
       prefix: --output
+stdout: pango-collapse_stdout.txt
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: Path to output CSV/TSV with Lineage column. If not supplied will print 
-      to stdout.
+    doc: Path to output CSV/TSV with Lineage column.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: stdout_table
+    type: stdout
+    doc: Collapsed table printed to standard output (empty when --output is used)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

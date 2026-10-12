@@ -30,13 +30,17 @@ inputs:
   - id: verbosity
     type:
       - 'null'
-      - type: array
-        items: boolean
-    doc: Verbosity of logging. Repeat for increased verbosity
+      - boolean
+    doc: Verbosity of logging
     inputBinding:
       position: 102
       prefix: -v
 outputs:
+  - id: random_paths
+    type: File
+    doc: Fasta of random paths through the PRGs, written by pandora to random_paths.fa.gz
+    outputBinding:
+      glob: random_paths.fa*
   - id: stdout
     type: stdout
     doc: Standard output

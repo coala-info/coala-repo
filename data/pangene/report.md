@@ -1,5 +1,11 @@
 # pangene CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pangene | PASS | fixed: output is stdout (GFA or BED); tested on the tool's own C4 gene alignments |
+
 ## pangene
 
 ### Tool Description

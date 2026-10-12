@@ -1,5 +1,13 @@
 # panaln CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| panaln_align | Failed | tool bug: panaln align crashes (index out of boundary) on exact reads for genomes of 30 kb to 47 Mb and writes a SAM header only |
+| panaln_combine | PASS |  |
+| panaln_index | Not completed | index files are created, but they cannot be confirmed because panaln align crashes on them |
+
 ## panaln_combine
 
 ### Tool Description

@@ -223,8 +223,12 @@ outputs:
       name><tab><partition number>."
     outputBinding:
       glob: $(inputs.clusters_path_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the chosen representatives and the diversity covered)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parnas:0.1.7--pyhdfd78af_0
+stdout: parnas.out

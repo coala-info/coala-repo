@@ -1,5 +1,11 @@
 # orfanage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| orfanage | PASS | ran repo example query and template GTF; 27 CDS lines added to 5 query transcripts; templates moved last and outputs collected |
+
 ## orfanage
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # oncofuse CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| oncofuse | PASS |  |
+
 ## oncofuse
 
 ### Tool Description

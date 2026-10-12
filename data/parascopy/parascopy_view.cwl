@@ -8,6 +8,8 @@ doc: "View and filter homology table.\n\nTool homepage: https://github.com/tprod
 inputs:
   - id: input_table
     type: File
+    secondaryFiles:
+      - .tbi
     doc: Input indexed bed.gz homology table.
     inputBinding:
       position: 1

@@ -53,7 +53,7 @@ inputs:
       position: 102
       prefix: --assembly
   - id: chroms_path
-    type: string
+    type: File
     doc: 'Chromosome order used to flip interchromosomal mates: path to a chromosomes
       file (e.g. UCSC chrom.sizes or similar) whose first column lists scaffold names.
       Any scaffolds not listed will be ordered lexicographically following the names
@@ -84,7 +84,7 @@ inputs:
   - id: dedup_max_mismatch
     type:
       - 'null'
-      - string
+      - int
     doc: Allowed mismatch between intramolecular alignments to detect 
       readthrough duplicates. Pairs with both sides mapped within this distance 
       (bp) from each other are considered duplicates.
@@ -170,7 +170,7 @@ inputs:
   - id: max_expansion_depth
     type:
       - 'null'
-      - string
+      - int
     doc: Works in combination with --expand. Maximum number of segments 
       separating pair. By default, expanding all possible pairs.Setting the 
       number will limit the expansion depth and enforce contacts from the same 
@@ -181,7 +181,7 @@ inputs:
   - id: max_insert_size
     type:
       - 'null'
-      - string
+      - int
     doc: When searching for overlapping ends of left and right read (R1 and R2),
       this sets the minimal distance when two alignments on the same strand and 
       chromosome are considered part of the same fragment (and thus reported as 
@@ -198,7 +198,7 @@ inputs:
   - id: max_inter_align_gap
     type:
       - 'null'
-      - string
+      - int
     doc: Read segments that are not covered by any alignment and longer than the
       specified value are treated as "null" alignments. These null alignments 
       convert otherwise linear alignments into walks, and affect how they get 
@@ -209,7 +209,7 @@ inputs:
   - id: min_mapq
     type:
       - 'null'
-      - string
+      - int
     doc: The minimal MAPQ score to consider a read as uniquely mapped.
     inputBinding:
       position: 102
@@ -241,7 +241,7 @@ inputs:
   - id: nproc_in
     type:
       - 'null'
-      - string
+      - int
     doc: Number of processes used by the auto-guessed input decompressing 
       command.
     inputBinding:
@@ -250,7 +250,7 @@ inputs:
   - id: nproc_out
     type:
       - 'null'
-      - string
+      - int
     doc: Number of processes used by the auto-guessed output compressing 
       command.
     inputBinding:

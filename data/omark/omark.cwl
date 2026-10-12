@@ -6,7 +6,7 @@ doc: "Compute an OMA quality score from the OMAmer file of a proteome.\n\nTool h
   https://github.com/DessimozLab/omark"
 inputs:
   - id: database
-    type: string
+    type: File
     doc: The OMAmer database.
     inputBinding:
       position: 101

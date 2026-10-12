@@ -1,5 +1,11 @@
 # pal2nal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pal2nal_pal2nal.pl | PASS | Mammal protein alignment plus CDS from nf-core gave back the original codon alignment. |
+
 ## Metadata
 - **Skill**: generated
 

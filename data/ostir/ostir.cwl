@@ -31,14 +31,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --end
-  - id: input
+  - id: input_file
+    type:
+      - 'null'
+      - File
+    doc: "Input filename (FASTA/CSV). For CSV input files, there must be a 'seq' or 'sequence' column. Other columns will override any options provided at the command line if they are present: 'name/id', 'start', 'end', 'anti-Shine-Dalgarno'"
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: input_sequence
     type:
       - 'null'
       - string
-    doc: "Input filename (FASTA/CSV) or DNA/RNA sequence. For CSV input files, there
-      must be a 'seq' or 'sequence' column. Other columns will override any options
-      provided at the command line if they are present: 'name/id', 'start', 'end',
-      'anti-Shine-Dalgarno'"
+    doc: DNA/RNA sequence given directly on the command line (use instead of input_file)
     inputBinding:
       position: 101
       prefix: --input
@@ -71,6 +76,7 @@ inputs:
     type:
       - 'null'
       - int
+    default: 1
     doc: Number of threads for multiprocessing
     inputBinding:
       position: 101
@@ -92,11 +98,17 @@ inputs:
       position: 101
       prefix: --versity
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Output file path. If not provided, results will output to the console
     inputBinding:
       position: 102
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Results printed to the console when no output path is given
   - id: output
     type:
       - 'null'
@@ -109,3 +121,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ostir:1.1.2--pyhdfd78af_0
+stdout: ostir.out

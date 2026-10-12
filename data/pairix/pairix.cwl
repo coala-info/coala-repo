@@ -6,7 +6,11 @@ doc: "PAIRs file IndeXer\n\nTool homepage: https://github.com/4dn-dcic/pairix"
 inputs:
   - id: input_pairs_file
     type: File
-    doc: Input pairs file (must be bgzf compressed)
+    doc: Input pairs file (must be bgzf compressed). Its .px2 index is used for queries
+      when present; without regions the tool writes the index.
+    secondaryFiles:
+      - pattern: .px2
+        required: false
     inputBinding:
       position: 1
   - id: regions
@@ -17,6 +21,13 @@ inputs:
     doc: Query region(s)
     inputBinding:
       position: 2
+  - id: regions_file
+    type:
+      - 'null'
+      - File
+    doc: File listing query regions (use together with the -L flag)
+    inputBinding:
+      position: 3
   - id: autoflip_query
     type:
       - 'null'
@@ -207,6 +218,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_file
+    type:
+      - 'null'
+      - File
+    doc: Index (.px2) written when the input is indexed
+    outputBinding:
+      glob: $(inputs.input_pairs_file.basename).px2
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_pairs_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairix:0.3.9--py312h4711d71_0

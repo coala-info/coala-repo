@@ -4,14 +4,17 @@ baseCommand:
   - pangwas
   - binarize
 label: pangwas_binarize
-doc: "Convert a categorical column to multiple binary (0/1) columns.\n\nTakes as input
-  a table (TSV or CSV) and the name of a column to binarize.\nOutputs a new table
-  with separate columns for each categorical value.\n\nAny additional arguments will
-  be passed to `pyseer`.\n\nTool homepage: https://github.com/phac-nml/pangwas"
+doc: "Convert a categorical column to multiple binary (0/1) columns.\n\nTakes as input a table (TSV or CSV) and the name of a column to binarize.\nOutputs a new table with separate columns for each categorical value.\n\nAny additional arguments will be passed to `pyseer`.\n\nTool homepage: https://github.com/phac-nml/pangwas"
 inputs:
+  - id: table
+    type: File
+    doc: "TSV or CSV table."
+    inputBinding:
+      position: 101
+      prefix: --table
   - id: column
     type: string
-    doc: Column name to binarize.
+    doc: "Column name to binarize."
     inputBinding:
       position: 101
       prefix: --column
@@ -19,7 +22,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prefix to add to column names.
+    doc: "Prefix to add to column names."
     inputBinding:
       position: 101
       prefix: --column-prefix
@@ -27,7 +30,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output directory.
+    doc: "Output directory. (default: . )"
     inputBinding:
       position: 101
       prefix: --outdir
@@ -35,7 +38,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output delimiter.
+    doc: "Output delimiter. (default: tab)"
     inputBinding:
       position: 101
       prefix: --output-delim
@@ -43,43 +46,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prefix for output files
+    doc: "Prefix for output files"
     inputBinding:
       position: 101
       prefix: --prefix
-  - id: table
-    type: File
-    doc: TSV or CSV table.
-    inputBinding:
-      position: 101
-      prefix: --table
   - id: transpose
     type:
       - 'null'
       - boolean
-    doc: Tranpose output table.
+    doc: "Tranpose output table."
     inputBinding:
       position: 101
       prefix: --transpose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+  - id: binarized_table
+    type: File
+    doc: "Table with one binary (0/1) column per category (.tsv for tab, .csv for comma)"
     outputBinding:
-      glob: $(inputs.prefix)*
-  - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory.
-    outputBinding:
-      glob: $(inputs.outdir)
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + (inputs.prefix ? inputs.prefix + '.' : '') + 'binarize.*')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangwas:0.1.0--pyh7e72e81_0
-stdout: pangwas_binarize.out

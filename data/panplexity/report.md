@@ -1,5 +1,11 @@
 # panplexity CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| panplexity | PASS |  |
+
 ## panplexity
 
 ### Tool Description

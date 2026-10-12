@@ -16,22 +16,11 @@ inputs:
       position: 101
       prefix: --benchmark_test
   - id: configuration_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to the configuration file 'config.yml'
     inputBinding:
       position: 101
       prefix: --configuration_file
-  - id: gui
-    type:
-      - 'null'
-      - type: array
-        items: boolean
-    doc: 'OPTIONAL: ONLY FOR RUNNING THE GRAPHICAL USER INTERFACE (GUI) OF PAIDIVERPY.'
-    inputBinding:
-      position: 101
-      prefix: --gui
   - id: validate
     type:
       - 'null'
@@ -41,10 +30,34 @@ inputs:
     inputBinding:
       position: 101
       prefix: --validate
+  - id: input_directories
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Directories with images and metadata that the configuration file refers to by
+      relative path (staged in the working directory)
+  - id: output_dir_name
+    type:
+      - 'null'
+      - string
+    default: output
+    doc: Name of the output directory, as set by `output_path` in the configuration file
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Processed images and metadata written by paidiverpy
+    outputBinding:
+      glob: $(inputs.output_dir_name)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.input_directories ? inputs.input_directories : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paidiverpy:0.2.1--pyhdfd78af_0

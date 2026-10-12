@@ -7,12 +7,15 @@ label: oncogemini_annotate
 doc: "Annotate variants with information from a BED file.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be updated.
     inputBinding:
       position: 1
   - id: anno_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     doc: The TABIX'ed BED file containing the annotations
     inputBinding:
       position: 102
@@ -35,6 +38,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -e
+      itemSeparator: ','
   - id: col_names
     type:
       - 'null'
@@ -45,6 +49,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -c
+      itemSeparator: ','
   - id: col_operations
     type:
       - 'null'
@@ -56,6 +61,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -o
+      itemSeparator: ','
   - id: col_types
     type:
       - 'null'
@@ -66,6 +72,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+      itemSeparator: ','
   - id: region_only
     type:
       - 'null'
@@ -78,9 +85,20 @@ inputs:
       position: 102
       prefix: --region-only
 outputs:
+  - id: db_out
+    type: File
+    doc: The updated database
+    outputBinding:
+      glob: $(inputs.db.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/oncogemini:1.0.0--pyh3252c3a_0

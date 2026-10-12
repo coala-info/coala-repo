@@ -1,5 +1,11 @@
 # pan-plaster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pan-plaster_plaster | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

@@ -1,5 +1,11 @@
 # orfipy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| orfipy | PASS | outputs match Galaxy expected BED and DNA FASTA on the same input; outdir is now a string and output paths resolve inside it |
+
 ## orfipy
 
 ### Tool Description

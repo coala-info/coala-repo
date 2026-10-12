@@ -4,43 +4,25 @@ baseCommand:
   - pangwas
   - structural
 label: pangwas_structural
-doc: "Extract structural variants from cluster alignments.\n\nTakes as input the summarized
-  clusters and their individual alignments.\nOutputs an Rtab file of structural variants.\n\
-  \nTool homepage: https://github.com/phac-nml/pangwas"
+doc: "Extract structural variants from cluster alignments.\n\nTakes as input the summarized clusters and their individual alignments.\nOutputs an Rtab file of structural variants.\n\nTool homepage: https://github.com/phac-nml/pangwas"
 inputs:
-  - id: alignments
-    type: Directory
-    doc: Directory of cluster alignments (not consensus alignments!).
-    inputBinding:
-      position: 101
-      prefix: --alignments
   - id: clusters
     type: File
-    doc: TSV of clusters from summarize.
+    doc: "TSV of clusters from summarize."
     inputBinding:
       position: 101
       prefix: --clusters
-  - id: min_indel_len
-    type:
-      - 'null'
-      - int
-    doc: Minimum indel length.
+  - id: alignments
+    type: Directory
+    doc: "Directory of cluster alignments (not consensus alignments!)."
     inputBinding:
       position: 101
-      prefix: --min-indel-len
-  - id: min_len
-    type:
-      - 'null'
-      - int
-    doc: Minimum variant length.
-    inputBinding:
-      position: 101
-      prefix: --min-len
+      prefix: --alignments
   - id: outdir
     type:
       - 'null'
       - string
-    doc: Output directory.
+    doc: "Output directory. (default: . )"
     inputBinding:
       position: 101
       prefix: --outdir
@@ -48,29 +30,34 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prefix for output files.
+    doc: "Prefix for output files."
     inputBinding:
       position: 101
       prefix: --prefix
-outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
-  - id: outdir_dir
+  - id: min_len
     type:
       - 'null'
-      - Directory
-    doc: Output directory.
+      - int
+    doc: "Minimum variant length. (default: 10)"
+    inputBinding:
+      position: 101
+      prefix: --min-len
+  - id: min_indel_len
+    type:
+      - 'null'
+      - int
+    doc: "Minimum indel length. (default: 3)"
+    inputBinding:
+      position: 101
+      prefix: --min-indel-len
+outputs:
+  - id: structural_rtab
+    type: File
+    doc: "Rtab file of structural variants"
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + (inputs.prefix ? inputs.prefix + '.' : '') + 'structural.Rtab')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangwas:0.1.0--pyh7e72e81_0
-stdout: pangwas_structural.out

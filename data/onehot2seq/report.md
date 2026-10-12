@@ -1,5 +1,11 @@
 # onehot2seq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| onehot2seq | PASS | ran on the tool's example npy files; DNA, protein and FASTA output match the repo test files |
+
 ## onehot2seq
 
 ### Tool Description

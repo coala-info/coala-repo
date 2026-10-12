@@ -1,5 +1,12 @@
 # paraclu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| paraclu | PASS | synthetic data: planted tag clusters were found. |
+| paraclu_paraclu-cut | PASS | synthetic data: planted clusters were kept after cutting. |
+
 ## paraclu
 
 ### Tool Description
@@ -28,6 +35,29 @@ INFO:    Creating SIF file...
 paraclu: I need a minValue and a fileName
 ```
 
+
+## paraclu_paraclu-cut
+
+### Tool Description
+Extract a subset of clusters from the output of paraclu.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/paraclu:10--h077b44d_6
+- **Homepage**: http://cbrc3.cbrc.jp/~martin/paraclu/
+- **Package**: https://anaconda.org/channels/bioconda/packages/paraclu/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: paraclu-cut [options] [paraclu-output-file(s)]
+Extract a subset of clusters from the output of paraclu.
+
+Options:
+  -h  show this help message and exit
+  -l  maximum cluster length (default 200)
+  -d  minimum density increase (default 2)
+  -s  density increase applies to single clusters, not cumulatively
+```
 
 ## Metadata
 - **Skill**: generated

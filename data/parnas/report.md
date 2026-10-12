@@ -1,5 +1,11 @@
 # parnas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parnas | PASS |  |
+
 ## parnas
 
 ### Tool Description

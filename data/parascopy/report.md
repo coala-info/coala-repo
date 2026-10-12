@@ -1,5 +1,21 @@
 # parascopy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parascopy_call | PASS | Used the cn output directory; pooled variants at the DDT/DDTL PSVs with 0/0/1/1 genotypes. |
+| parascopy_cn | PASS | DDT/DDTL locus: agCN 4 with quality 35.8, from the depth output above. |
+| parascopy_cn-using | PASS | Reused the model written by cn; same agCN 4 result. |
+| parascopy_depth | PASS | HG00113 reads (chr22:22.5-25.5 Mb slice of the 1000 Genomes CRAM) on a chr22-only reference with 100 bp tiled windows; the depth table was used by cn. |
+| parascopy_examine | PASS | Same chr22 table subset; regions split by reference copy number. |
+| parascopy_msa | PASS | Same chr22 table subset; clustal and csv alignment of DDT against DDTL. |
+| parascopy_pool | PASS | Pooled 3153 reads from the DDT/DDTL copies, in both BAM-file and directory output modes. |
+| parascopy_pretable | Failed | image problem: bedtools is not in the image (FileNotFoundError: 'bedtools'), so the pre-table cannot be built. |
+| parascopy_psvs | PASS | Same chr22 table subset; the PSV positions match the DDT model (chr22:23956207, 23956325, 23956337). |
+| parascopy_table | Not completed | Needs a pre-table, and the pretable step cannot run because bedtools is missing from the image. |
+| parascopy_view | PASS | Precomputed GRCh38 homology table (Zenodo) cut to chr22:23.94-24.00 Mb; the duplicated DDT/DDTL pair is listed. |
+
 ## parascopy_pretable
 
 ### Tool Description
@@ -123,27 +139,6 @@ Optional arguments:
 Other arguments:
   -h, --help            Show this help message
   -V, --version         Show version.
-```
-
-## parascopy_into
-
-### Tool Description
-A tool for analyzing paralogous genes and their copy number variations. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, and call.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0
-- **Homepage**: https://github.com/tprodanov/parascopy
-- **Package**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: unknown command "into"
-
-Usage: parascopy <command>
-    Valid commands: help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call.
 ```
 
 ## parascopy_depth

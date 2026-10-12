@@ -1,5 +1,11 @@
 # orthoflow CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| orthoflow | Not completed | pipeline, skipped |
+
 ## orthoflow
 
 ### Tool Description

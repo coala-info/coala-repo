@@ -96,6 +96,7 @@ inputs:
       prefix: --work-dir
   - id: output_path
     type: string
+    doc: output pan-genome fasta and metadata file stem (does not include file extension)
     inputBinding:
       position: 103
       prefix: --output
@@ -103,11 +104,11 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
-    doc: output pan-genome fasta and metadata file stem (does not include file 
-      extension)
+      - type: array
+        items: File
+    doc: pan-genome fasta (<stem>.fasta) and metadata files (<stem>.tsv, <stem>_plasmid.tsv)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
   - id: work_dir_dir
     type:
       - 'null'

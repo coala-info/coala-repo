@@ -91,9 +91,8 @@ inputs:
       position: 102
       prefix: --min
   - id: outdir
-    type:
-      - 'null'
-      - Directory
+    type: string
+    default: orfipy_out
     doc: Path to outdir
     inputBinding:
       position: 102
@@ -223,37 +222,46 @@ outputs:
       - File
     doc: bed12 out file
     outputBinding:
-      glob: $(inputs.bed12_path)
+      glob: "$(inputs.bed12_path ? inputs.outdir + '/' + inputs.bed12_path : null)"
   - id: bed
     type:
       - 'null'
       - File
     doc: bed out file
     outputBinding:
-      glob: $(inputs.bed_path)
+      glob: "$(inputs.bed_path ? inputs.outdir + '/' + inputs.bed_path : null)"
   - id: dna
     type:
       - 'null'
       - File
     doc: fasta (DNA) out file
     outputBinding:
-      glob: $(inputs.dna_path)
+      glob: "$(inputs.dna_path ? inputs.outdir + '/' + inputs.dna_path : null)"
   - id: rna
     type:
       - 'null'
       - File
     doc: fasta (RNA) out file
     outputBinding:
-      glob: $(inputs.rna_path)
+      glob: "$(inputs.rna_path ? inputs.outdir + '/' + inputs.rna_path : null)"
   - id: pep
     type:
       - 'null'
       - File
     doc: fasta (peptide) out file
     outputBinding:
-      glob: $(inputs.pep_path)
+      glob: "$(inputs.pep_path ? inputs.outdir + '/' + inputs.pep_path : null)"
+  - id: stdout_bed
+    type: stdout
+    doc: BED output printed to standard output when no output file option is given
+  - id: outdir_dir
+    type: Directory
+    doc: Output directory with all files written by orfipy
+    outputBinding:
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: orfipy_stdout.bed
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/orfipy:0.0.4--py37h96cfd12_1

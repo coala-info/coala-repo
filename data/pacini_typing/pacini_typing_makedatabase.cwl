@@ -35,6 +35,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_dir
+    type: Directory
+    doc: Directory holding the reference database files
+    outputBinding:
+      glob: $(inputs.database_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pacini_typing:2.0.2--pyhdfd78af_0

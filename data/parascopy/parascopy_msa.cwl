@@ -17,6 +17,8 @@ inputs:
       prefix: --exclude
   - id: fasta_ref
     type: File
+    secondaryFiles:
+      - .fai
     doc: Input reference fasta file.
     inputBinding:
       position: 101
@@ -43,6 +45,8 @@ inputs:
       prefix: --regions-file
   - id: table
     type: File
+    secondaryFiles:
+      - .tbi
     doc: Input indexed bed.gz homology table.
     inputBinding:
       position: 101

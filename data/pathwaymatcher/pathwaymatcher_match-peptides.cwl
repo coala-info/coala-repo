@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - PathwayMatcher.jar
+  - pathwaymatcher
   - match-peptides
 label: pathwaymatcher_match-peptides
 doc: "Match a list of peptides to proteins and identify associated reactions and pathways.\n\

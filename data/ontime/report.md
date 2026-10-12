@@ -1,5 +1,11 @@
 # ontime CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ontime | PASS | ran on the repo test SAM; time window returns the right 6 reads and --show start times match |
+
 ## ontime
 
 ### Tool Description

@@ -1,5 +1,29 @@
 # pairtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pairtools_dedup | PASS | Output equals the Galaxy expected file, including mark-dups, dups, stats and by-tile stats outputs. |
+| pairtools_filterbycov | PASS | Fixed the low-coverage option to --output; the 9 mock pairs split into 2 low, 4 high and 3 unmapped. |
+| pairtools_flip | PASS | Mock pairs were flipped into upper-triangular order using the chromosome file. |
+| pairtools_header_generate | PASS | New CWL for pairtools header generate; output checked against the mock and Galaxy pairs files. |
+| pairtools_header_set_columns | PASS | New CWL for pairtools header set_columns; output checked against the mock and Galaxy pairs files. |
+| pairtools_header_transfer | PASS | New CWL for pairtools header transfer; output checked against the mock and Galaxy pairs files. |
+| pairtools_header_validate_columns | PASS | New CWL for pairtools header validate_columns; output checked against the mock and Galaxy pairs files. |
+| pairtools_markasdup | PASS | All 10 mock pairs became DD. |
+| pairtools_merge | PASS | Merged file holds all 15 pairs of the two mock inputs. |
+| pairtools_parse | PASS | Galaxy test SAM gave pairs equal to the expected file, and the stats file was written; the BAM input with options also worked. |
+| pairtools_parse2 | PASS | Fixed chroms_path to File and number options to int; mock walks SAM gave expected pairs with pair index. |
+| pairtools_phase | PASS | synthetic data: Galaxy test SAM renamed to a mat/pat diploid genome; reads were phased to the mat copy as designed. |
+| pairtools_restrict | PASS | Mock pairs got restriction fragment columns matching the sites bed. |
+| pairtools_sample | PASS | A 0.5 fraction gave 309 of 592 pairs. |
+| pairtools_scaling | PASS | Scaling table written with 588 pairs counted from the Galaxy pairs file. |
+| pairtools_select | PASS | Condition split 592 pairs into 405 selected and 187 rest; the selected count matches an awk count. |
+| pairtools_sort | PASS | Output body equals the Galaxy expected sorted pairs. |
+| pairtools_split | PASS | Pairs file equals the Galaxy expected one and the BAM has the expected 1564 reads. |
+| pairtools_stats | PASS | Stats equal the Galaxy expected file; merging two stats files matches too. |
+
 ## pairtools_dedup
 
 ### Tool Description
@@ -348,34 +372,6 @@ Options:
                           work with stdout. Must read input from stdin and
                           print output into stdout. EXAMPLE: pbgzip -c -n 8
   -h, --help              Show this message and exit.
-```
-
-
-## pairtools_header
-
-### Tool Description
-Manipulate the .pairs/.pairsam header
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0
-- **Homepage**: https://github.com/mirnylab/pairtools
-- **Package**: https://anaconda.org/channels/bioconda/packages/pairtools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: pairtools header [OPTIONS] COMMAND [ARGS]...
-
-  Manipulate the .pairs/.pairsam header
-
-Options:
-  -h, --help  Show this message and exit.
-
-Commands:
-  generate          Generate the header
-  set-columns       Add the columns to the .pairs/pairsam file
-  transfer          Transfer the header from one pairs file to another
-  validate-columns  Validate the columns of the .pairs/pairsam file...
 ```
 
 
@@ -1381,6 +1377,200 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
+
+## pairtools_header_generate
+
+### Tool Description
+Generate the header
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0
+- **Homepage**: https://github.com/open2c/pairtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/pairtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: pairtools header generate [OPTIONS] [PAIRS_PATH]
+
+  Generate the header
+
+Options:
+  -o, --output TEXT     output file. If the path ends with .gz or .lz4, the
+                        output is bgzip-/lz4c-compressed. By default, the
+                        output is printed into stdout.
+  --nproc-in INTEGER    Number of processes used by the auto-guessed input
+                        decompressing command.  [default: 1]
+  --nproc-out INTEGER   Number of processes used by the auto-guessed output
+                        compressing command.  [default: 8]
+  --cmd-in TEXT         A command to decompress the input. If provided, fully
+                        overrides the auto-guessed command. Does not work with
+                        stdin. Must read input from stdin and print output
+                        into stdout. EXAMPLE: pbgzip -dc -n 3
+  --cmd-out TEXT        A command to compress the output. If provided, fully
+                        overrides the auto-guessed command. Does not work with
+                        stdout. Must read input from stdin and print output
+                        into stdout. EXAMPLE: pbgzip -c -n 8
+  --chroms-path TEXT    Chromosome order used to flip interchromosomal mates:
+                        path to a chromosomes file (e.g. UCSC chrom.sizes or
+                        similar) whose first column lists scaffold names. Any
+                        scaffolds not listed will be ordered lexicographically
+                        following the names provided.
+  --sam-path TEXT       Input sam file to inherit the header. Either --sam or
+                        --chroms-path should be provided to store the
+                        chromosome sizes in the header.
+  --columns TEXT        Report columns describing alignments Can take multiple
+                        values as a comma-separated list.By default, assign
+                        standard .pairs columns: readID,chrom1,pos1,chrom2,pos
+                        2,strand1,strand2,pair_type,sam1,sam2,walk_pair_index,
+                        walk_pair_type
+  --extra-columns TEXT  Report extra columns describing alignments Can take
+                        multiple values as a comma-separated list.
+  --assembly TEXT       Name of genome assembly (e.g. hg19, mm10) to store in
+                        the pairs header.
+  --no-flip             If specified, assume that the pairs are not filpped in
+                        genomic order and instead preserve the order in which
+                        they were sequenced.
+  --pairs / --pairsam   If pairs, then the defult columns will be set to: read
+                        ID,chrom1,pos1,chrom2,pos2,strand1,strand2,pair_type
+                        if pairsam, then to: readID,chrom1,pos1,chrom2,pos2,st
+                        rand1,strand2,pair_type,sam1,sam2
+  -h, --help            Show this message and exit.
+```
+
+## pairtools_header_set_columns
+
+### Tool Description
+Add the columns to the .pairs/pairsam file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0
+- **Homepage**: https://github.com/open2c/pairtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/pairtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: pairtools header set-columns [OPTIONS] [PAIRS_PATH]
+
+  Add the columns to the .pairs/pairsam file
+
+Options:
+  -o, --output TEXT    output file. If the path ends with .gz or .lz4, the
+                       output is bgzip-/lz4c-compressed. By default, the
+                       output is printed into stdout.
+  --nproc-in INTEGER   Number of processes used by the auto-guessed input
+                       decompressing command.  [default: 1]
+  --nproc-out INTEGER  Number of processes used by the auto-guessed output
+                       compressing command.  [default: 8]
+  --cmd-in TEXT        A command to decompress the input. If provided, fully
+                       overrides the auto-guessed command. Does not work with
+                       stdin. Must read input from stdin and print output into
+                       stdout. EXAMPLE: pbgzip -dc -n 3
+  --cmd-out TEXT       A command to compress the output. If provided, fully
+                       overrides the auto-guessed command. Does not work with
+                       stdout. Must read input from stdin and print output
+                       into stdout. EXAMPLE: pbgzip -c -n 8
+  -c, --columns TEXT   Comma-separated list of columns to be added, e.g.: read
+                       ID,chrom1,pos1,chrom2,pos2,strand1,strand2,pair_type,sa
+                       m1,sam2,walk_pair_index,walk_pair_type  [required]
+  -h, --help           Show this message and exit.
+```
+
+## pairtools_header_transfer
+
+### Tool Description
+Transfer the header from one pairs file to another
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0
+- **Homepage**: https://github.com/open2c/pairtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/pairtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: pairtools header transfer [OPTIONS] [PAIRS_PATH]
+
+  Transfer the header from one pairs file to another
+
+Options:
+  -o, --output TEXT          output file. If the path ends with .gz or .lz4,
+                             the output is bgzip-/lz4c-compressed. By default,
+                             the output is printed into stdout.
+  --nproc-in INTEGER         Number of processes used by the auto-guessed
+                             input decompressing command.  [default: 1]
+  --nproc-out INTEGER        Number of processes used by the auto-guessed
+                             output compressing command.  [default: 8]
+  --cmd-in TEXT              A command to decompress the input. If provided,
+                             fully overrides the auto-guessed command. Does
+                             not work with stdin. Must read input from stdin
+                             and print output into stdout. EXAMPLE: pbgzip -dc
+                             -n 3
+  --cmd-out TEXT             A command to compress the output. If provided,
+                             fully overrides the auto-guessed command. Does
+                             not work with stdout. Must read input from stdin
+                             and print output into stdout. EXAMPLE: pbgzip -c
+                             -n 8
+  -r, --reference-file TEXT  Header file for transfer  [required]
+  -h, --help                 Show this message and exit.
+```
+
+## pairtools_header_validate_columns
+
+### Tool Description
+Validate the columns of the .pairs/pairsam file against reference or within
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0
+- **Homepage**: https://github.com/open2c/pairtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/pairtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: pairtools header validate-columns [OPTIONS] [PAIRS_PATH]
+
+  Validate the columns of the .pairs/pairsam file against reference or within
+  file. If the checks pass, then returns full pairs file. Otherwise throws an
+  exception.
+
+  If reference_file is provided, check:     1) columns are the same between
+  pairs and reference_file     2) number of columns in the pairs body is the
+  same as the number of columns
+
+  If reference_columns are provided, check:     1) pairs columns are the same
+  as provided     2) number of columns in the pairs body is the same as the
+  number of columns
+
+  If no reference_file or columns, then check only the number of columns in
+  the pairs body. Checks only the first line in the pairs stream!
+
+Options:
+  -o, --output TEXT             output file. If the path ends with .gz or
+                                .lz4, the output is bgzip-/lz4c-compressed. By
+                                default, the output is printed into stdout.
+  --nproc-in INTEGER            Number of processes used by the auto-guessed
+                                input decompressing command.  [default: 1]
+  --nproc-out INTEGER           Number of processes used by the auto-guessed
+                                output compressing command.  [default: 8]
+  --cmd-in TEXT                 A command to decompress the input. If
+                                provided, fully overrides the auto-guessed
+                                command. Does not work with stdin. Must read
+                                input from stdin and print output into stdout.
+                                EXAMPLE: pbgzip -dc -n 3
+  --cmd-out TEXT                A command to compress the output. If provided,
+                                fully overrides the auto-guessed command. Does
+                                not work with stdout. Must read input from
+                                stdin and print output into stdout. EXAMPLE:
+                                pbgzip -c -n 8
+  -r, --reference-file TEXT     Header file for comparison (optional)
+  -c, --reference-columns TEXT  Comma-separated list of columns fro check
+                                (optional), e.g.: readID,chrom1,pos1,chrom2,po
+                                s2,strand1,strand2,pair_type,sam1,sam2,walk_pa
+                                ir_index,walk_pair_type
+  -h, --help                    Show this message and exit.
+```
 
 ## Metadata
 - **Skill**: generated

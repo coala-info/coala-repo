@@ -11,7 +11,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Skip download, use local copy of reference database (may be indexed)
+    doc: Skip download, use local copy of reference database (may be indexed). The index
+      files are written beside it.
     inputBinding:
       position: 101
       prefix: -f
@@ -36,6 +37,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files written beside the local reference (empty when the reference is downloaded)
+    outputBinding:
+      glob: "$(inputs.local_reference ? inputs.local_reference.basename + '.*' : [])"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.local_reference)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paladin:1.6.0--h44aa6d8_0

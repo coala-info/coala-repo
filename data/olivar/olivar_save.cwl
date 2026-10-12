@@ -20,7 +20,7 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
+      - Directory
     doc: Output path (output to current directory by default).
     outputBinding:
       glob: $(inputs.output_path)

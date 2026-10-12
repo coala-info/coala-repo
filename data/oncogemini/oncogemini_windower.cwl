@@ -7,7 +7,7 @@ label: oncogemini_windower
 doc: "Windowing tool for oncogemini\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be updated.
     inputBinding:
       position: 1

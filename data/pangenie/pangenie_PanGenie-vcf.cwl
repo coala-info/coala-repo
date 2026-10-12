@@ -13,7 +13,7 @@ inputs:
       position: 101
       prefix: -z
   - id: index_prefix
-    type: File
+    type: string
     doc: filename prefix of the index files (i.e. option -o used with 
       PanGenie-index).
     inputBinding:
@@ -51,6 +51,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files written by PanGenie-index (all files starting with the index prefix); staged in the working directory so the -f prefix resolves
   - id: output_prefix_path
     type: string
     doc: 'prefix of the output files. NOTE: the given path must not include non-existent
@@ -69,6 +74,9 @@ outputs:
       glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangenie:4.2.1--h077b44d_0

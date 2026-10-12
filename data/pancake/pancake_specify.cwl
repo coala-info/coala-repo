@@ -5,7 +5,12 @@ baseCommand:
   - specify
 label: pancake_specify
 doc: "Specify or modify chromosome information in a PanCake Data Object File\n\nTool
-  homepage: https://github.com/pancakeswap/pancake-frontend"
+  homepage: https://bitbucket.org/CorinnaErnst/pancake"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.panfile)
+        writable: true
 inputs:
   - id: chrom
     type:
@@ -58,6 +63,11 @@ inputs:
       position: 101
       prefix: --panfile
 outputs:
+  - id: updated_panfile
+    type: File
+    doc: The PanCake Data Object File, changed in place
+    outputBinding:
+      glob: $(inputs.panfile.basename)
   - id: stdout
     type: stdout
     doc: Standard output

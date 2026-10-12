@@ -37,6 +37,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --graph-sequence-matching
+  - id: sample_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+    doc: BAM/CRAM files (with indexes) named in the manifest; they are staged in
+      the working directory, so the manifest must list them by file name.
   - id: graphs
     type:
       type: array
@@ -206,6 +218,9 @@ outputs:
       glob: $(inputs.output_folder_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.sample_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paragraph:2.3--h8908b6f_0

@@ -1,5 +1,11 @@
 # parallel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parallel | PASS |  |
+
 ## parallel
 
 ### Tool Description

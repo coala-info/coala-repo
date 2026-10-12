@@ -1,9 +1,15 @@
 # pasty CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pasty | PASS |  |
+
 ## pasty
 
 ### Tool Description
-Classify assemblies using BLAST against larger genomic regions
+In silico serogrouping of Pseudomonas aeruginosa isolates from assemblies using BLAST against the O-antigen gene clusters.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pasty:2.2.1--hdfd78af_0
@@ -11,14 +17,10 @@ Classify assemblies using BLAST against larger genomic regions
 - **Package**: https://anaconda.org/channels/bioconda/packages/pasty/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pasty/overview
-- **Total Downloads**: 11.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/rpetit3/pasty
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: camlhmp-blast-regions [OPTIONS]                                         
+                                                                                
+ Usage: camlhmp-blast-regions [OPTIONS]                                         
                                                                                 
  🐪 camlhmp-blast-regions 🐪 - Classify assemblies using BLAST against larger   
  genomic regions                                                                
@@ -48,4 +50,3 @@ Usage: camlhmp-blast-regions [OPTIONS]
 │    --help                       Show this message and exit.                  │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
-

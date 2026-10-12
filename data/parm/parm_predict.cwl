@@ -40,7 +40,7 @@ inputs:
       position: 101
       prefix: --L_max
   - id: model
-    type: File
+    type: Directory
     doc: Path to the directory of the model. If you want to perform predictions 
       for the pre-trained K562 model, for instance, this should be 
       pre_trained_models/K562. If you have trained your own model, you should 
@@ -97,13 +97,13 @@ inputs:
       prefix: --type_loss
   - id: output_path
     type: string
-    doc: Path to the directory to store all the output files.
+    doc: Path to the output file where the predictions will be saved.
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: Directory
+    type: File
     doc: Path to the output file where the predictions will be saved. Output is 
       a tab-separated file with the sequence, header, and the predicted score.
     outputBinding:

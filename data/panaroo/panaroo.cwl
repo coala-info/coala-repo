@@ -233,7 +233,7 @@ inputs:
   - id: remove_by_consensus
     type:
       - 'null'
-      - boolean
+      - string
     doc: "if a gene is called in the same region with similar\n                  \
       \      sequence a minority of the time, remove it. One of\n                \
       \        'True' or 'False'"

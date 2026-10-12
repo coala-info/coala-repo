@@ -1,5 +1,14 @@
 # pangenie CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pangenie_PanGenie | PASS | fixed -d (flag, not a path) and index files staging; output equals the repo demo test_genotyping.vcf |
+| pangenie_PanGenie-index | PASS | tool's own demo data; index files written |
+| pangenie_PanGenie-sampling | PASS | new CWL; tool's own demo data; sampled panel written |
+| pangenie_PanGenie-vcf | PASS | fixed index prefix type and index file staging; output equals the repo demo test_genotyping.vcf |
+
 ## Metadata
 - **Skill**: generated
 
@@ -89,7 +98,42 @@ Error: one of the options -f and -v must be used.
 ### Tool Description
 Genotyping based on kmer-counting and known haplotype sequences using serialized genotyping results.
 
+### pangenie_PanGenie-sampling
+
+### Tool Description
+PanGenie sampling step: reduces the haplotype panel to the paths that best fit the reads
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/pangenie:4.2.1--h077b44d_0
+- **Homepage**: https://github.com/eblerjana/pangenie
+- **Package**: https://anaconda.org/channels/bioconda/packages/pangenie/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+program: PanGenie - genotyping based on kmer-counting and known haplotype sequences.
+author: Jana Ebler
+
+version: v4.2.1
+usage: 
+PanGenie-sampling [options] -f <index-prefix> -i <reads.fa/fq> -o <outfile-prefix>
+
+options:
+	-b VAL	effective population size for sampling step. (default: 0.01).
+	-c	count all read kmers instead of only those located in graph
+	-e VAL	size of hash used by jellyfish (default: 3000000000).
+	-f VAL	Filename prefix of files computed by PanGenie-index (i.e. option -o used with PanGenie-index).
+	-i VAL	sequencing reads in FASTA/FASTQ format or Jellyfish database in jf format. NOTE: INPUT FASTA/Q FILE MUST NOT BE COMPRESSED.
+	-j VAL	number of threads to use for kmer-counting (default: 1).
+	-k VAL	kmer size (default: 31).
+	-o VAL	prefix of the output files. NOTE: the given path must not include non-existent folders (default: result).
+	-t VAL	number of threads to use for core algorithm. Largest number of threads possible is the number of chromosomes given in the VCF (default: 1).
+	-x VAL	to which size the input panel shall be reduced. (default: 0).
+	-y VAL	Penality used for already selected alleles in sampling step. (default: 5).
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/pangenie:4.2.1--h077b44d_0
 - **Homepage**: https://github.com/eblerjana/pangenie
 - **Package**: https://anaconda.org/channels/bioconda/packages/pangenie/overview

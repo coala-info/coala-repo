@@ -1,5 +1,12 @@
 # parebrick CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parebrick | PASS |  |
+| parebrick_charts | PASS |  |
+
 ## parebrick
 
 ### Tool Description
@@ -78,3 +85,28 @@ Optional arguments:
                         clusters.
 ```
 
+## parebrick_charts
+
+### Tool Description
+Building charts for pan-genome analysis based on synteny blocks.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/parebrick:0.5.7--pyhdfd78af_0
+- **Homepage**: https://github.com/ctlab/parallel-rearrangements
+- **Package**: https://anaconda.org/channels/bioconda/packages/parebrick/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: parebrick-charts [-h] --infercars_file INFERCARS_FILE [--output OUTPUT]
+
+Building charts for pan-genome analysis based on synteny blocks.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --infercars_file INFERCARS_FILE, -f INFERCARS_FILE
+                        Path to file in infercars format, can be found in main
+                        script output
+  --output OUTPUT, -o OUTPUT
+                        Path to output folder.
+```

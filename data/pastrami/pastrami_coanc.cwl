@@ -4,42 +4,55 @@ baseCommand:
   - pastrami.py
   - coanc
 label: pastrami_coanc
-doc: "Calculate copying matrices for reference and query haplotypes\n\nTool homepage:
-  https://github.com/healthdisparities/pastrami"
+doc: "Individual v. individual co-ancestry\n\nTool homepage: https://github.com/healthdisparities/pastrami"
 inputs:
   - id: haplotypes
-    type: File?
-    doc: File of haplotype positions
-    inputBinding:
-      position: 101
-      prefix: --haplotypes
-  - id: log_file
     type:
       - 'null'
       - File
-    doc: File containing log information
+    doc: "File of haplotype positions"
     inputBinding:
       position: 101
-      prefix: --log-file
+      prefix: --haplotypes
+  - id: reference_files
+    type:
+      type: array
+      items: File
+    doc: "TPED and TFAM files of the reference individuals (they are staged in the working directory)"
+  - id: query_files
+    type:
+      type: array
+      items: File
+    doc: "TPED and TFAM files of the query individuals (they are staged in the working directory)"
+  - id: reference_prefix
+    type:
+      - 'null'
+      - string
+    doc: "Prefix for the reference TPED/TFAM input files"
+    inputBinding:
+      position: 101
+      prefix: --reference-prefix
   - id: query_prefix
     type:
       - 'null'
       - string
-    doc: Prefix for the query TPED/TFAM input files
+    doc: "Prefix for the query TPED/TFAM input files"
     inputBinding:
       position: 101
       prefix: --query-prefix
-  - id: reference_prefix
-    type: File?
-    doc: Prefix for the reference TPED/TFAM input files
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: "File containing log information (default: run.log)"
     inputBinding:
-      position: 101
-      prefix: --reference-prefix
+      position: 102
+      prefix: --log-file
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of concurrent threads
+    doc: "Number of concurrent threads (default: 4)"
     inputBinding:
       position: 101
       prefix: --threads
@@ -47,58 +60,55 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Print program progress information on screen
+    doc: "Print program progress information on screen"
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: combined_out_path
-    type:
-      - 'null'
-      - string
-    doc: The all v. reference copying matrix output
-    inputBinding:
-      position: 102
-      prefix: --combined-out
-  - id: query_out_path
-    type:
-      - 'null'
-      - string
-    doc: The query v. reference copying matrix output
+  - id: reference_out_path
+    type: string
+    doc: "The reference v. reference copying matrix output"
     inputBinding:
       position: 103
-      prefix: --query-out
-  - id: reference_out_path
-    type:
-      - 'null'
-      - string
-    doc: The reference v. reference copying matrix output
+      prefix: --reference-out
+  - id: query_out_path
+    type: string
+    doc: "The query v. reference copying matrix output"
     inputBinding:
       position: 104
-      prefix: --reference-out
+      prefix: --query-out
+  - id: combined_out_path
+    type: string
+    doc: "The all v. reference copying matrix output"
+    inputBinding:
+      position: 105
+      prefix: --combined-out
 outputs:
   - id: reference_out
-    type:
-      - 'null'
-      - File
-    doc: The reference v. reference copying matrix output
+    type: File
+    doc: "The reference v. reference copying matrix"
     outputBinding:
       glob: $(inputs.reference_out_path)
   - id: query_out
-    type:
-      - 'null'
-      - File
-    doc: The query v. reference copying matrix output
+    type: File
+    doc: "The query v. reference copying matrix"
     outputBinding:
       glob: $(inputs.query_out_path)
   - id: combined_out
+    type: File
+    doc: "The all v. reference copying matrix"
+    outputBinding:
+      glob: $(inputs.combined_out_path)
+  - id: log_file
     type:
       - 'null'
       - File
-    doc: The all v. reference copying matrix output
+    doc: "File containing log information"
     outputBinding:
-      glob: $(inputs.combined_out_path)
+      glob: $(inputs.log_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.reference_files.concat(inputs.query_files))"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pastrami:1.0.1--pyh67a8953_0

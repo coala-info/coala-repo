@@ -6,9 +6,14 @@ baseCommand:
 label: panaln_align
 doc: "Align fastq sequences using panaln\n\nTool homepage: https://github.com/Lilu-guo/Panaln"
 inputs:
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files made by panaln index (<basename>.1.idx to <basename>.9.idx). Staged in the working directory.
   - id: index_basename
     type: string
-    doc: Index basename
+    doc: Index basename (the file names of index_files without the .N.idx suffix)
     inputBinding:
       position: 101
       prefix: -x
@@ -20,10 +25,10 @@ inputs:
       prefix: -f
   - id: output_sam_path
     type: string
-    doc: Output or path parameter `output_sam_path`
+    doc: Output SAM file name
     inputBinding:
       position: 102
-      prefix: --output-sam
+      prefix: -s
 outputs:
   - id: output_sam
     type: File
@@ -31,7 +36,8 @@ outputs:
     outputBinding:
       glob: $(inputs.output_sam_path)
 requirements:
-  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panaln:2.09--h5ca1c30_0

@@ -8,6 +8,8 @@ doc: "Profile a BAM file\n\nTool homepage: https://github.com/PacificBiosciences
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
     doc: Input BAM file
     inputBinding:
       position: 101
@@ -78,6 +80,9 @@ inputs:
       prefix: --min-mg
   - id: regions
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Genomic region(s) to score for MSI (bed format with motif)
     inputBinding:
       position: 101
@@ -93,8 +98,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Verbosity
     inputBinding:
       position: 101

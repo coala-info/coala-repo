@@ -1,5 +1,11 @@
 # pal_finder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pal_finder | PASS |  |
+
 ## pal_finder
 
 ### Tool Description

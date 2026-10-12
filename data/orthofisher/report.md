@@ -1,5 +1,11 @@
 # orthofisher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| orthofisher | Failed | image problem: hmmsearch (HMMER) is missing from the image, so every search fails |
+
 ## orthofisher
 
 ### Tool Description

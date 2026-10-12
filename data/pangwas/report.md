@@ -1,5 +1,29 @@
 # pangwas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pangwas_align | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_annotate | Not completed | needs the large bakta database (over 1 GB), not downloaded |
+| pangwas_binarize | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_cluster | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_collect | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_combine | PASS | new CWL; tool's own 4-sample test data; output equals the repo's expected file |
+| pangwas_defrag | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_extract | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_gwas | PASS | tool's own 4-sample test data; rewritten output collection; tables equal the repo's expected files |
+| pangwas_heatmap | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_manhattan | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_presence_absence | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_root_tree | PASS | output equals the repo's expected file; note: running without --outgroup crashes (tool bug), although help says it roots on the first taxon |
+| pangwas_snps | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_structural | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_summarize | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_table_to_rtab | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_tree | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+| pangwas_vcf_to_rtab | PASS | tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files |
+
 ## pangwas_annotate
 
 ### Tool Description
@@ -1012,6 +1036,43 @@ optional arguments:
   --prefix PREFIX  Prefix for output files.
 ```
 
+
+## pangwas_combine
+
+### Tool Description
+Combine variants from multiple Rtab files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pangwas:0.1.0--pyh7e72e81_0
+- **Homepage**: https://github.com/phac-nml/pangwas
+- **Package**: https://anaconda.org/channels/bioconda/packages/pangwas/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pangwas combine [-h] --rtab RTAB [RTAB ...] [--outdir OUTDIR]
+                       [--prefix PREFIX]
+
+Combine variants from multiple Rtab files.
+
+Takes as input a list of file paths to Rtab files. Outputs an Rtab file with
+the variants concatenated, ensuring consistent ordering of the sample columns.
+
+Examples:
+> pangwas combine --rtab snps.Rtab presence_absence.Rtab
+> pangwas combine --rtab snps.Rtab structural.Rtab presence_absence.Rtab
+
+options:
+  -h, --help            show this help message and exit
+
+required arguments:
+  --rtab RTAB [RTAB ...]
+                        Rtab variants files.
+
+optional arguments:
+  --outdir OUTDIR       Output directory. (default: . )
+  --prefix PREFIX       Prefix for output files.
+```
 
 ## Metadata
 - **Skill**: generated

@@ -1,5 +1,12 @@
 # pacu_snp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pacu_snp_PACU | Not completed | pipeline, skipped (Snakemake workflow; it did run to the end on the PACU test BAMs). |
+| pacu_snp_PACU_map | PASS | Fixed working dir type and removed .fai; PACU test FASTQ (Illumina, ONT, trim) gave BAMs with all reads mapped. |
+
 ## pacu_snp_PACU_map
 
 ### Tool Description

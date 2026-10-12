@@ -1,5 +1,11 @@
 # oligomap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| oligomap | PASS |  |
+
 ## oligomap
 
 ### Tool Description

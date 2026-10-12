@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - PathwayMatcher.jar
+  - pathwaymatcher
   - match-uniprot
 label: pathwaymatcher_match-uniprot
 doc: "Match a list of UniProt protein accessions to reactions and pathways, and perform

@@ -105,12 +105,17 @@ inputs:
       position: 101
       prefix: --top_n_fams
   - id: out_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Path to output. If not set, defaults to stdout
     inputBinding:
       position: 102
       prefix: --out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (results when no output path is given)
   - id: out
     type:
       - 'null'
@@ -123,3 +128,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/omamer:2.1.2--pyhdfd78af_0
+stdout: omamer_search.out

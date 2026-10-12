@@ -7,11 +7,16 @@ label: panchip_init
 doc: "Initialization of the PanChIP library\n\nTool homepage: https://github.com/hanjunlee21/PanChIP"
 inputs:
   - id: library_directory
-    type: Directory
+    type: string
     doc: Directory wherein PanChIP library will be stored. > 13.6 GB of storage required.
     inputBinding:
       position: 1
 outputs:
+  - id: library_directory_out
+    type: Directory
+    doc: Directory wherein the PanChIP library is stored.
+    outputBinding:
+      glob: $(inputs.library_directory)
   - id: stdout
     type: stdout
     doc: Standard output

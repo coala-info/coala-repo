@@ -1,5 +1,11 @@
 # oncotator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| oncotator | PASS | synthetic data: planted maflite on the tool's own tiny test datasource; output_file positional was missing and is fixed; annotations appear in output |
+
 ## oncotator
 
 ### Tool Description

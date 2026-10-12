@@ -1,5 +1,11 @@
 # parallel-virfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parallel-virfinder_parallel-virfinder.py | PASS |  |
+
 ## parallel-virfinder_parallel-virfinder.py
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # patman CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| patman | PASS |  |
+
 ## patman
 
 ### Tool Description

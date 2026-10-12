@@ -2,72 +2,71 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: patman
 label: patman
-doc: "A tool for rapid alignment of short sequences (patterns) to large databases,
-  allowing for a specific number of edits and gaps.\n\nTool homepage: https://github.com/Patman86/x265-Mod-by-Patman"
+doc: "PatMaN: pattern matching in nucleotide databases. Rapid alignment of short
+  sequences (patterns) to large databases, allowing for a specific number of edits
+  and gaps.\n\nTool homepage: https://bioinf.eva.mpg.de/patman/"
 inputs:
-  - id: input_files
+  - id: databases
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input files (databases or patterns)
+      type: array
+      items: File
+    doc: Database files (FASTA); passed after -D
     inputBinding:
-      position: 1
+      position: 102
+      prefix: -D
+  - id: patterns
+    type:
+      type: array
+      items: File
+    doc: Files that contain the patterns (FASTA); passed after -P
+    inputBinding:
+      position: 103
+      prefix: -P
   - id: ambicodes
     type:
       - 'null'
       - boolean
     doc: Interpret ambiguity codes in patterns
     inputBinding:
-      position: 102
+      position: 101
       prefix: --ambicodes
-  - id: databases
-    type:
-      - 'null'
-      - boolean
-    doc: Following files are databases
-    inputBinding:
-      position: 102
-      prefix: --databases
   - id: edits
     type:
       - 'null'
       - int
-    doc: Set maximum edit distance to N
+    doc: 'Set maximum edit distance to N (default: 2)'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --edits
+      separate: false
+      valueFrom: =$(self)
   - id: gaps
     type:
       - 'null'
       - int
-    doc: Set maximum number of gaps to N
+    doc: 'Set maximum number of gaps to N (default: 0)'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --gaps
-  - id: patterns
-    type:
-      - 'null'
-      - boolean
-    doc: Following files contain patterns
-    inputBinding:
-      position: 102
-      prefix: --patterns
+      separate: false
+      valueFrom: =$(self)
   - id: prefetch
     type:
       - 'null'
       - int
-    doc: Prefetch N nodes
+    doc: 'Prefetch N nodes (default: 3)'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --prefetch
+      separate: false
+      valueFrom: =$(self)
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Turn off warnings
     inputBinding:
-      position: 102
+      position: 101
       prefix: --quiet
   - id: singlestrand
     type:
@@ -75,7 +74,7 @@ inputs:
       - boolean
     doc: Do not match reverse-complements
     inputBinding:
-      position: 102
+      position: 101
       prefix: --singlestrand
   - id: verbose
     type:
@@ -83,20 +82,20 @@ inputs:
       - boolean
     doc: Print additional progress reports
     inputBinding:
-      position: 102
+      position: 101
       prefix: --verbose
   - id: output_path
     type: string
     doc: Write output to FILE
     inputBinding:
-      position: 103
+      position: 100
       prefix: --output
+      separate: false
+      valueFrom: =$(self)
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: Write output to FILE
+    type: File
+    doc: Alignments of the patterns to the databases
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

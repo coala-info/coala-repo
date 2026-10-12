@@ -15,6 +15,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --align
+  - id: blast_db_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files of the BLAST database (.nhr, .nin, .nsq, ...), staged in the
+      working directory so that the db prefix resolves
   - id: db
     type:
       - 'null'
@@ -87,7 +94,7 @@ inputs:
   - id: var
     type:
       - 'null'
-      - string
+      - File
     doc: 'Optional, path to the csv file of SNP coordinates and frequencies. Required
       columns: "START", "STOP", "FREQ". "FREQ" is considered as 1.0 if empty. Coordinates
       are 1-based.'
@@ -105,6 +112,10 @@ outputs:
     doc: Output directory (output to current directory by default).
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.blast_db_files ? inputs.blast_db_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/olivar:1.3.3--pyhdfd78af_0

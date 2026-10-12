@@ -5,7 +5,7 @@ baseCommand:
   - core
 label: pancake_core
 doc: "Identify and extract core genome regions from a PanCake Data Object File.\n\n\
-  \ Tool homepage: https://github.com/pancakeswap/pancake-frontend"
+  \ Tool homepage: https://bitbucket.org/CorinnaErnst/pancake"
 inputs:
   - id: exclude_chromosomes
     type:
@@ -106,6 +106,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: .bed file to which core regions are written
     inputBinding:
       position: 102
       prefix: --bed_file
@@ -113,6 +114,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: 'directory to which .fasta files of core regions are written (DEFAULT: core_{REF_CHROM|REF_GENOME})'
     inputBinding:
       position: 103
       prefix: --output

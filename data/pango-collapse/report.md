@@ -1,5 +1,11 @@
 # pango-collapse CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pango-collapse | PASS | fixed optional output (stdout capture); output equals the repo's expected tables |
+
 ## pango-collapse
 
 ### Tool Description

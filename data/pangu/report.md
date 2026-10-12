@@ -1,5 +1,11 @@
 # pangu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pangu | PASS | added .bai secondary files and fofn file staging; diplotype CYP2D6 *4x2/*5 equals the repo demo report |
+
 ## pangu
 
 ### Tool Description

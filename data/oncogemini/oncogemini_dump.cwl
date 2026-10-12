@@ -7,7 +7,7 @@ label: oncogemini_dump
 doc: "Dump data from the oncogemini database.\n\nTool homepage: https://github.com/fakedrtom/oncogemini"
 inputs:
   - id: db
-    type: string
+    type: File
     doc: The name of the database to be queried.
     inputBinding:
       position: 1

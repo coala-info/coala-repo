@@ -55,21 +55,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
-  - id: histogram_path
-    type: string
-    inputBinding:
-      position: 102
-      prefix: --histogram
-outputs:
   - id: histogram
     type:
       - 'null'
-      - File
+      - boolean
     doc: Make a histogram of the read lengths and saves it to a new file
+    inputBinding:
+      position: 101
+      prefix: --histogram
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Table of read statistics
+  - id: histogram_files
+    type:
+      type: array
+      items: File
+    doc: Read length histogram as CSV (written when --histogram is set)
     outputBinding:
-      glob: $(inputs.histogram_path)
+      glob: '*.hist.csv'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pauvre:0.1924--py_0
+stdout: pauvre_stats.out

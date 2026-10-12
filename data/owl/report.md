@@ -1,5 +1,13 @@
 # owl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| owl_merge | Failed | tool bug: merging two real profiles outputs only the first sample because owl 0.4.0 appends columns only when a line has more than 4 columns, but profile lines have exactly 4 |
+| owl_profile | PASS | ran on a small real HG002 HiFi BAM (nf-core methylong) with the repo marker BED; loci with coverage got counts, rest zero; BAM index and verbose type fixed |
+| owl_score | PASS | scored the real profile; summary and motif tables written (qc fail is expected at 90 reads); -m prefix corrected to --min-depth |
+
 ## owl_profile
 
 ### Tool Description

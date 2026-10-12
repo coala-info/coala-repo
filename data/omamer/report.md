@@ -1,5 +1,13 @@
 # omamer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| omamer_info | PASS |  |
+| omamer_mkdb | PASS |  |
+| omamer_search | PASS |  |
+
 ## omamer_mkdb
 
 ### Tool Description

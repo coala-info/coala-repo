@@ -333,10 +333,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: work_dir
-    type:
-      - 'null'
-      - Directory
+  - id: work_dir_path
+    type: string
     doc: path to the folder where pastml parameter, named tree and marginal 
       probability (for marginal ML methods (MAP, MPPA) only) files are to be 
       stored. Default is <path_to_input_file>/<input_file_name>_pastml. If the 
@@ -382,6 +380,11 @@ inputs:
       position: 107
       prefix: --out_data
 outputs:
+  - id: work_dir
+    type: Directory
+    doc: Folder with pastml parameter, named tree and marginal probability files
+    outputBinding:
+      glob: $(inputs.work_dir_path)
   - id: out_data
     type:
       - 'null'

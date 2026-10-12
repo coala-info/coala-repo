@@ -24,6 +24,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: context_size
+    type:
+      - 'null'
+      - int
+    doc: Context size (default 150)
+    inputBinding:
+      position: 101
+      prefix: -c
 outputs:
   - id: stdout
     type: stdout
@@ -32,9 +40,9 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in basename
+    doc: Pan-genome file (<basename>.pan) and auxiliary file (<basename>.aux), written in the dirPan folder
     outputBinding:
-      glob: $(inputs.basename)*
+      glob: dirPan/$(inputs.basename).*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panaln:2.09--h5ca1c30_0

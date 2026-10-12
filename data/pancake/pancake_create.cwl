@@ -4,7 +4,7 @@ baseCommand:
   - pancake
   - create
 label: pancake_create
-doc: "Create a PanCake Object from sequences and alignments\n\nTool homepage: https://github.com/pancakeswap/pancake-frontend"
+doc: "Create a PanCake Object from sequences and alignments\n\nTool homepage: https://bitbucket.org/CorinnaErnst/pancake"
 inputs:
   - id: ali
     type:
@@ -62,7 +62,10 @@ inputs:
       position: 101
       prefix: --sequences
   - id: pan_file_path
-    type: string?
+    type:
+      - 'null'
+      - string
+    doc: 'File name of new PanCake Object (DEFAULT=pan_files/pancake.pan)'
     inputBinding:
       position: 102
       prefix: --pan_file
@@ -73,7 +76,7 @@ outputs:
       - File
     doc: File name of new PanCake Object
     outputBinding:
-      glob: $(inputs.pan_file_path)
+      glob: "$(inputs.pan_file_path ? inputs.pan_file_path : 'pan_files/pancake.pan')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

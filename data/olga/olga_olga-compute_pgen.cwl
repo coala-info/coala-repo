@@ -4,6 +4,15 @@ baseCommand: olga-compute_pgen
 label: olga_olga-compute_pgen
 doc: "Compute Pgens for TCR and Ig sequences.\n\nTool homepage: https://github.com/zsethna/OLGA"
 inputs:
+  - id: sequences
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: CDR3 amino acid sequences to compute Pgen for (used when no infile is
+      given)
+    inputBinding:
+      position: 1
   - id: alphabet_filename
     type:
       - 'null'
@@ -435,11 +444,16 @@ inputs:
       position: 101
       prefix: --v_mask_index
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --outfile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (results when no outfile is given)
   - id: outfile
     type:
       - 'null'
@@ -452,3 +466,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/olga:1.3.0--pyh7e72e81_0
+stdout: olga.out

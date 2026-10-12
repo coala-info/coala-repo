@@ -1,5 +1,11 @@
 # paraviewer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| paraviewer | Not completed | needs paraphase result files (PacBio HiFi run) and IGV with a display, which the image does not contain |
+
 ## paraviewer
 
 ### Tool Description

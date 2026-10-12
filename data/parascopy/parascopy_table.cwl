@@ -19,12 +19,16 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - .fai
     doc: Input reference fasta file.
     inputBinding:
       position: 101
       prefix: --fasta-ref
   - id: input
     type: File
+    secondaryFiles:
+      - .tbi
     doc: Input indexed bed.gz homology pre-table.
     inputBinding:
       position: 101
@@ -90,6 +94,9 @@ outputs:
   - id: output
     type: File
     doc: Output table bed[.gz] file with homology table.
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     outputBinding:
       glob: $(inputs.output_path)
   - id: graph

@@ -9,7 +9,10 @@ doc: "Quasi-map reads to an indexed PRG, infer the sequence of present loci in t
 inputs:
   - id: target
     type: File
-    doc: An indexed PRG file (in fasta format)
+    doc: An indexed PRG file (in fasta format). Give the index made by pandora index as secondary file (<PRG>.k15.w14.idx); without it the PRG is indexed on the fly.
+    secondaryFiles:
+      - pattern: .k15.w14.idx?
+        required: false
     inputBinding:
       position: 1
   - id: query_idx
@@ -208,9 +211,8 @@ inputs:
   - id: verbosity
     type:
       - 'null'
-      - type: array
-        items: boolean
-    doc: Verbosity of logging. Repeat for increased verbosity
+      - boolean
+    doc: Verbosity of logging
     inputBinding:
       position: 103
       prefix: -v
@@ -228,6 +230,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: --outdir
+  - id: kmer_prgs
+    type:
+      - 'null'
+      - Directory
+    doc: The kmer_prgs directory made by pandora index (staged beside the PRG)
+  - id: reads
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The read files named in the sample index file (staged in the working directory; use plain file names in the index file)
 outputs:
   - id: outdir
     type:
@@ -238,6 +251,14 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{entry: inputs.target, writable: true}];
+        if (inputs.kmer_prgs) { l.push({entry: inputs.kmer_prgs, writable: true}); }
+        if (inputs.reads) { l = l.concat(inputs.reads); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pandora:0.9.2--h4ac6f70_0

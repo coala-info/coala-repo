@@ -87,10 +87,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --fastq-in
     doc: Read and align FASTQ-format reads from FILE (two are allowed with -p).
     inputBinding:
       position: 101
-      prefix: --fastq-in
   - id: force_rebuild
     type:
       - 'null'
@@ -199,10 +200,18 @@ inputs:
   - id: pantax_db
     type:
       - 'null'
-      - Directory
+      - string
     doc: Name for pantax DB
     inputBinding:
       position: 101
+      prefix: -db
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Reference genome files named in the genomes information file; they are
+      staged in the working directory, so list them there by file name.
   - id: precise_clipping
     type:
       - 'null'
@@ -333,7 +342,7 @@ inputs:
     doc: File for abundance output(prefix).
     inputBinding:
       position: 102
-      prefix: --ouput
+      prefix: --output
   - id: classified_output_prefix_path
     type:
       - 'null'
@@ -357,23 +366,40 @@ outputs:
       - File
     doc: File for alignment output(prefix).
     outputBinding:
-      glob: $(inputs.classified_output_prefix_path)
+      glob: $(inputs.classified_output_prefix_path).gaf
   - id: report_output_prefix
     type:
       - 'null'
       - File
     doc: File for read classification(binning) output(prefix).
     outputBinding:
-      glob: $(inputs.report_output_prefix_path)
+      glob: $(inputs.report_output_prefix_path).tsv
   - id: abundance_output_prefix
     type:
       - 'null'
-      - File
-    doc: File for abundance output(prefix).
+      - type: array
+        items: File
+    doc: Species and strain abundance files (prefix_species_abundance.txt, prefix_strain_abundance.txt).
     outputBinding:
-      glob: $(inputs.abundance_output_prefix_path)
+      glob:
+        - $(inputs.abundance_output_prefix_path)_*_abundance.txt
+        - species_abundance.txt
+        - strain_abundance.txt
+  - id: pantax_db_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The PanTax database directory.
+    outputBinding:
+      glob: $(inputs.pantax_db || 'pantax_db')
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: pantax_db_tmp
+        entry: '$({"class": "Directory", "basename": "pantax_db_tmp", "listing": []})'
+        writable: true
+      - $(inputs.genome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pantax:2.0.1--py310h3e1df6f_1

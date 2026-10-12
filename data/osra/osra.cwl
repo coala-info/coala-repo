@@ -43,14 +43,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --embedded-format
-  - id: ignore_rest
-    type:
-      - 'null'
-      - boolean
-    doc: Ignores the rest of the labeled arguments following this flag.
-    inputBinding:
-      position: 102
-      prefix: --
   - id: invert_color
     type:
       - 'null'
@@ -94,8 +86,8 @@ inputs:
   - id: preview_filename
     type:
       - 'null'
-      - File
-    doc: Preview Image
+      - string
+    doc: Preview image file name
     inputBinding:
       position: 102
       prefix: --preview
@@ -199,7 +191,7 @@ inputs:
   - id: write_filename
     type:
       - 'null'
-      - File
+      - string
     doc: Write recognized structures to text file
     inputBinding:
       position: 102
@@ -207,7 +199,23 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Recognized structures printed to standard output
+  - id: written_file
+    type:
+      - 'null'
+      - File
+    doc: Recognized structures written with --write
+    outputBinding:
+      glob: $(inputs.write_filename)
+  - id: preview_file
+    type:
+      - 'null'
+      - File
+    doc: Preview image written with --preview
+    outputBinding:
+      glob: $(inputs.preview_filename)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/osra:2.1.0--0

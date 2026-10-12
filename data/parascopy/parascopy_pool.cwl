@@ -24,6 +24,8 @@ inputs:
       prefix: --exclude
   - id: fasta_ref
     type: File
+    secondaryFiles:
+      - .fai
     doc: Input reference fasta file.
     inputBinding:
       position: 101
@@ -33,6 +35,10 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - .bai
+      - pattern: .crai
+        required: false
     doc: Input indexed BAM/CRAM files. All entries should follow the format 
       "filename[::sample]"
     inputBinding:
@@ -83,6 +89,8 @@ inputs:
       prefix: --samtools
   - id: table
     type: File
+    secondaryFiles:
+      - .tbi
     doc: Input indexed bed table with information about segmental duplications.
     inputBinding:
       position: 101
@@ -95,19 +103,32 @@ inputs:
       position: 102
       prefix: --only-regions
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: Output BAM/CRAM file if the name has a .bam/.cram extension; otherwise
+      an output directory that receives CRAM (or BAM with --bam) files.
     inputBinding:
       position: 103
       prefix: --output
 outputs:
   - id: output
-    type: Directory
-    doc: Output BAM/CRAM file if corresponding extension is used. Otherwise, 
-      write CRAM files in the output directory.
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory with the pooled CRAM/BAM files (when --output is a directory).
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: '$(inputs.output_path.match(/[.](bam|cram)$/) ? "__none__" : inputs.output_path)'
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Output BAM/CRAM file (when --output has a .bam/.cram extension).
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+    outputBinding:
+      glob: '$(inputs.output_path.match(/[.](bam|cram)$/) ? inputs.output_path : "__none__")'
   - id: only_regions
     type:
       - 'null'

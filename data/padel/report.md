@@ -1,5 +1,11 @@
 # padel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| padel | PASS | Rewrote the CWL for the real padel command; 5 small-drug SMILES gave correct molecular weights. |
+
 ## padel
 
 ### Tool Description

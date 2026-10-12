@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: paragraph_idxdepth
+baseCommand: idxdepth
 label: paragraph_idxdepth
 doc: "Estimate coverage depth from BAM/CRAM files using index information.\n\nTool
   homepage: https://github.com/Illumina/paragraph"

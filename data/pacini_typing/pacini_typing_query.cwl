@@ -38,17 +38,18 @@ inputs:
       prefix: --single
   - id: output_file_path
     type: string
-    doc: 'utput, --output Output Output file to store the results. Specify an output
-      file: -o output'
+    doc: 'Output file prefix to store the results (the tool adds .tsv for FASTA databases). Specify an output file: -o output'
     inputBinding:
       position: 102
       prefix: -o
 outputs:
-  - id: output_file
-    type: File
-    doc: 'Output file to store the results. Specify an output file: -o output'
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: 'Result files written by the query (blast tsv for FASTA databases; kma res, aln, fsa and frag files for FASTQ databases)'
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

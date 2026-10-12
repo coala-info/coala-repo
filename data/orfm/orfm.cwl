@@ -63,12 +63,17 @@ inputs:
       position: 102
       prefix: -p
   - id: transcript_output_file_path
-    type: string
-    doc: Output or path parameter `transcript_output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: output nucleotide sequences of transcripts to this path
     inputBinding:
       position: 103
-      prefix: --transcript-output-file
+      prefix: -t
 outputs:
+  - id: orfs
+    type: stdout
+    doc: Translated open reading frames (protein FASTA) printed to standard output
   - id: transcript_output_file
     type:
       - 'null'
@@ -78,6 +83,7 @@ outputs:
       glob: $(inputs.transcript_output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: orfm_orfs.faa
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/orfm:1.4.0--h577a1d6_0

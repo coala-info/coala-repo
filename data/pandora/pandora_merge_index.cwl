@@ -17,9 +17,8 @@ inputs:
   - id: verbosity
     type:
       - 'null'
-      - type: array
-        items: boolean
-    doc: Verbosity of logging. Repeat for increased verbosity
+      - boolean
+    doc: Verbosity of logging
     inputBinding:
       position: 102
       prefix: -v

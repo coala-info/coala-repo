@@ -47,6 +47,7 @@ inputs:
       prefix: --tmpdir
   - id: outdir_path
     type: string
+    doc: output directory
     inputBinding:
       position: 102
       prefix: --outdir
@@ -60,6 +61,14 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: .ncbi/user-settings.mkfg
+        entry: |
+          /LIBS/GUID = "b5f4d3b2-0000-4000-8000-000000000001"
+          /config/default = "false"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parallel-fastq-dump:0.6.7--pyhdfd78af_0

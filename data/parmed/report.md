@@ -1,5 +1,11 @@
 # parmed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parmed | PASS |  |
+
 ## parmed
 
 ### Tool Description

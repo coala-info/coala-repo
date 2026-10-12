@@ -1,5 +1,19 @@
 # pancake CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pancake_addAli | PASS |  |
+| pancake_addChrom | PASS |  |
+| pancake_core | PASS |  |
+| pancake_create | PASS |  |
+| pancake_graph | PASS |  |
+| pancake_sequence | PASS |  |
+| pancake_singletons | PASS |  |
+| pancake_specify | PASS |  |
+| pancake_status | PASS |  |
+
 ## pancake_create
 
 ### Tool Description
@@ -7,14 +21,14 @@ Create a PanCake Object from sequences and alignments
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
-- **Homepage**: https://github.com/pancakeswap/pancake-frontend
+- **Homepage**: https://bitbucket.org/CorinnaErnst/pancake
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pancake/overview
 - **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/pancakeswap/pancake-frontend
+- **GitHub**: https://bitbucket.org/CorinnaErnst/pancake
 - **Stars**: N/A
 ### Original Help Text
 ```text
@@ -57,7 +71,7 @@ Check the status of a PAN_FILE
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
-- **Homepage**: https://github.com/pancakeswap/pancake-frontend
+- **Homepage**: https://bitbucket.org/CorinnaErnst/pancake
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -77,7 +91,7 @@ Specify or modify chromosome information in a PanCake Data Object File
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
-- **Homepage**: https://github.com/pancakeswap/pancake-frontend
+- **Homepage**: https://bitbucket.org/CorinnaErnst/pancake
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -113,7 +127,7 @@ Identify and extract core genome regions from a PanCake Data Object File.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
-- **Homepage**: https://github.com/pancakeswap/pancake-frontend
+- **Homepage**: https://bitbucket.org/CorinnaErnst/pancake
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -176,7 +190,7 @@ Identify singleton regions in a PanCake Data Object File and output them as FAST
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
-- **Homepage**: https://github.com/pancakeswap/pancake-frontend
+- **Homepage**: https://bitbucket.org/CorinnaErnst/pancake
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -233,7 +247,7 @@ Extract sequences from PanCake Data Object Files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
-- **Homepage**: https://github.com/pancakeswap/pancake-frontend
+- **Homepage**: https://bitbucket.org/CorinnaErnst/pancake
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -268,7 +282,7 @@ Generate a DOT graph from PanCake Data Object Files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
-- **Homepage**: https://github.com/pancakeswap/pancake-frontend
+- **Homepage**: https://bitbucket.org/CorinnaErnst/pancake
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -311,6 +325,89 @@ optional arguments:
                         (DEFAULT=False), ignored if -all is set
   --output FILE, -o FILE
                         output DOT file (DEFAULT: STDOUT)
+```
+
+## pancake_addAli
+
+### Tool Description
+Include information from pairwise (BLAST or nucmer) alignments into an already existing PanCake Object
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
+- **Homepage**: https://bitbucket.org/CorinnaErnst/pancake
+- **Package**: https://anaconda.org/channels/bioconda/packages/pancake/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pancake addAli [-h] --panfile PAN_FILE [--output NEW_PAN_FILE]
+                      [--min_len INT] [--no_self_alignments]
+                      ALI_FILE [ALI_FILE ...]
+
+positional arguments:
+  ALI_FILE              Alignment File (BLAST or nucmer output)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --panfile PAN_FILE, -p PAN_FILE
+                        Name of PanCake Data Object File (required)
+  --output NEW_PAN_FILE, -o NEW_PAN_FILE
+                        output pangenome file (PAN_FILE will be unchanged)
+  --min_len INT, -l INT
+                        minimum length of pairwise alignments to get included
+                        (DEFAULT=25)
+  --no_self_alignments, -nsa
+                        if set, skip pairwise alignments between regions on
+                        identical chromosomes (DEFAULT=False)
+```
+
+## pancake_addChrom
+
+### Tool Description
+Add chromosomes to an already existing PanCake Object
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pancake:1.1.2--py35_0
+- **Homepage**: https://bitbucket.org/CorinnaErnst/pancake
+- **Package**: https://anaconda.org/channels/bioconda/packages/pancake/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pancake addChrom [-h] --panfile PAN_FILE
+                        [--sequences SEQUENCES [SEQUENCES ...]]
+                        [--ids IDS [IDS ...]] [--email EMAIL]
+                        [--output OUTPUT] [--ali [ALI [ALI ...]]]
+                        [--min_len MIN_LEN] [--no_self_alignments]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --panfile PAN_FILE, -p PAN_FILE
+                        Name of PanCake Data Object File (required)
+  --sequences SEQUENCES [SEQUENCES ...], -s SEQUENCES [SEQUENCES ...]
+                        fasta or multiple fasta file providing input
+                        chromosome sequences
+  --ids IDS [IDS ...], -i IDS [IDS ...]
+                        gi ids of sequences to download from NCBI
+  --email EMAIL, -e EMAIL
+                        if downloading your sequences via gi ids, please
+                        specify your email address; in case of excessive
+                        usage, NCBI will attempt to contact a user at the
+                        e-mail address provided prior to blocking access to
+                        the E-utilities
+  --output OUTPUT, -o OUTPUT
+                        output file for new PanCake Object (DEFAULT=PAN_FILE);
+                        if specified, PanCake Data Object in PAN_FILE stays
+                        unchanged
+  --ali [ALI [ALI ...]], -a [ALI [ALI ...]]
+                        pairwise alignments (BLAST or nucmer output) to
+                        include in PanCake Object
+  --min_len MIN_LEN, -l MIN_LEN
+                        minimum length of pairwise alignments to include
+                        (DEFUALT=25)
+  --no_self_alignments, -nsa
+                        if set, skip pairwise alignments between regions on
+                        identical chromosomes as input (DEFAULT=False)
 ```
 
 ## Metadata

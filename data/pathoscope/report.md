@@ -1,5 +1,15 @@
 # pathoscope CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pathoscope_ID | Failed | tool bug: PathoReportA.write_tsv_report writes str rows to a binary file (Python 2 code on Python 3.13), so ID crashes before the report is complete |
+| pathoscope_LIB | Failed | tool bug: pathoLib.py uses Python 2 fp.next() and crashes on Python 3.13 for any input |
+| pathoscope_MAP | PASS |  |
+| pathoscope_QC | Failed | image problem: PathoQC (pathoqc.py) is not installed in the image, the tool prints a not-found message and writes nothing |
+| pathoscope_REP | Failed | tool bug: the same write_tsv_report crash (TypeError, bytes-like object is required) in REP |
+
 ## pathoscope_LIB
 
 ### Tool Description
@@ -217,6 +227,67 @@ options:
                         SAM Alignment file path
   --noDisplayCutoff     Do not cutoff display of genomes, even if it is
                         insignificant
+```
+
+## pathoscope_QC
+
+### Tool Description
+PathoScope QC (PathoQC): quality control and filtering of sequencing reads
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pathoscope:2.0.7--pyhdfd78af_2
+- **Homepage**: https://github.com/PathoScope/PathoScope
+- **Package**: https://anaconda.org/channels/bioconda/packages/pathoscope/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Running without mySQLdb library
+usage: pathoscope QC [-h] -1 QC_READ1 [-2 QC_READ2] [-r QC_READL]
+                     [-t QC_PHRED_OFFSET] [-o QC_OUTDIR] [-s QC_SEQUENCER]
+                     [-m QC_LEN_CUTOFF] [-a QC_ADAPTOR] [-a2 QC_ADAPTOR2]
+                     [-q QC_QUAL_CUTOFF] [-R QC_LOWER454] [-e QC_COFF_ENTROPY]
+                     [-d QC_DEREP] [-g QC_ADD_VALID_SINGLE] [--no_prinseq]
+                     [-p QC_NUM_THREADS] [--debug] [--version]
+
+options:
+  -h, --help            show this help message and exit
+  -1 QC_READ1           1st pair of read in PER or SER
+  -2 QC_READ2           2nd pair of read in PER
+  -r QC_READL           let us know a mean read length (0:ignore. [1]:I want
+                        to know the range of read length after trimming,
+                        i:user_specified_mean_read_length)
+  -t QC_PHRED_OFFSET    specify a phred offset used in encoding base
+                        quality(0:not sure?, [33]:phred+33, 64:phred+64)
+  -o QC_OUTDIR          specify output directory in full path
+  -s QC_SEQUENCER       tell us which sequencer generates the reads
+                        ([Illumina], PacBio, Roche454, IonTorrent)
+  -m QC_LEN_CUTOFF      specify the min read length cutoff[35]
+  -a QC_ADAPTOR         specify an adaptor (Y:have pathoQC detect it,
+                        [N]:ignore, ACGT:adaptor)
+  -a2 QC_ADAPTOR2       specify a second adaptor if it is different from the
+                        first one (Y:have pathoQC detect it, [N]:ignore,
+                        ACGT:adaptor)
+  -q QC_QUAL_CUTOFF     specify a cutoff of base quality value to trim at the
+                        end of reads([0]:ignore, 1:let pathoQC take care of
+                        it, i:user_specified_cutoff_value)
+  -R QC_LOWER454        set to 1 if you want to mask all lower case bases that
+                        may correspond to sequence tag or adaptor in Roche454
+                        or IonTorrent
+  -e QC_COFF_ENTROPY    specify a cutoff of entropy of low sequence complexity
+                        to filter out[0..100],default:30, set 0 to disable
+  -d QC_DEREP           filtering duplicates: [1] (exact duplicate), 2 (5'
+                        duplicate), 3 (3' duplicate), 4 (reverse complement
+                        exact duplicate), 5 (reverse complement 5'/3'
+                        duplicate)
+  -g QC_ADD_VALID_SINGLE
+                        Set to 1 if you want to add a valid single read into a
+                        reduced valid PER set. Note that this option works
+                        only with PER
+  --no_prinseq          to force to skip prinseq module
+  -p QC_NUM_THREADS     specify a total number of cpus to use[1]
+  --debug               working on debug mode
+  --version             show program's version number and exit
 ```
 
 ## Metadata

@@ -27,7 +27,7 @@ inputs:
     doc: Min depth
     inputBinding:
       position: 101
-      prefix: -m
+      prefix: --min-depth
   - id: min_pass
     type:
       - 'null'
@@ -70,8 +70,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Verbosity
     inputBinding:
       position: 101

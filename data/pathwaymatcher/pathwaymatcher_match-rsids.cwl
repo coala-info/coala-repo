@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - PathwayMatcher.jar
+  - pathwaymatcher
   - match-rsids
 label: pathwaymatcher_match-rsids
 doc: "Match a list of genetic variants as RsIds\n\nTool homepage: https://github.com/LuisFranciscoHS/PathwayMatcher"

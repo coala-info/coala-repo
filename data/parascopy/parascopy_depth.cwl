@@ -26,6 +26,8 @@ inputs:
       prefix: --clipped-perc
   - id: fasta_ref
     type: File
+    secondaryFiles:
+      - .fai
     doc: Input reference fasta file.
     inputBinding:
       position: 101
@@ -44,6 +46,10 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - .bai
+      - pattern: .crai
+        required: false
     doc: Input indexed BAM/CRAM files. All entries should follow the format 
       "filename[::sample]"
     inputBinding:

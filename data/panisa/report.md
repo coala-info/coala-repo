@@ -1,5 +1,12 @@
 # panisa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| panisa_ISFinder_search.py | Not completed | The ISFinder web endpoint the tool posts to now returns 404, so no homology result can be checked. |
+| panisa_panISa.py | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

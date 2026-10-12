@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - bwa
+  - paladin
   - shm
 label: paladin_shm
 doc: "Manage indices in shared memory\n\nTool homepage: https://github.com/ToniWestbrook/paladin"

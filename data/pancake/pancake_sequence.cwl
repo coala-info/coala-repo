@@ -4,7 +4,7 @@ baseCommand:
   - pancake
   - sequence
 label: pancake_sequence
-doc: "Extract sequences from PanCake Data Object Files\n\nTool homepage: https://github.com/pancakeswap/pancake-frontend"
+doc: "Extract sequences from PanCake Data Object Files\n\nTool homepage: https://bitbucket.org/CorinnaErnst/pancake"
 inputs:
   - id: chromosome
     type:
@@ -17,8 +17,7 @@ inputs:
   - id: genome
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: (multiple) .fasta output of GENOME (if set, start and stop will be 
       ignored)
     inputBinding:
@@ -55,7 +54,10 @@ inputs:
       position: 101
       prefix: -stop
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: 'file to which .fasta output will be written (DEFAULT = STDOUT)'
     inputBinding:
       position: 102
       prefix: --output
@@ -67,8 +69,12 @@ outputs:
     doc: file to which .fasta output will be written (DEFAULT = STDOUT)
     outputBinding:
       glob: $(inputs.output_path)
+  - id: stdout
+    type: stdout
+    doc: FASTA sequence written to standard output when no output file is given
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pancake:1.1.2--py35_0
+stdout: pancake_sequence.out

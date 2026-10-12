@@ -15,6 +15,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: updated_bwt
+    type: File
+    doc: The BWT file after the in-place update
+    outputBinding:
+      glob: $(inputs.bwt_file.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bwt_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paladin:1.6.0--h44aa6d8_0

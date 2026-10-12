@@ -4,7 +4,7 @@ baseCommand:
   - pancake
   - graph
 label: pancake_graph
-doc: "Generate a DOT graph from PanCake Data Object Files\n\nTool homepage: https://github.com/pancakeswap/pancake-frontend"
+doc: "Generate a DOT graph from PanCake Data Object Files\n\nTool homepage: https://bitbucket.org/CorinnaErnst/pancake"
 inputs:
   - id: all
     type:
@@ -87,7 +87,10 @@ inputs:
       position: 101
       prefix: -stops
   - id: output_path
-    type: string?
+    type:
+      - 'null'
+      - string
+    doc: 'output DOT file (DEFAULT: STDOUT)'
     inputBinding:
       position: 102
       prefix: --output
@@ -99,8 +102,10 @@ outputs:
     doc: 'output DOT file (DEFAULT: STDOUT)'
     outputBinding:
       glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: DOT graph written to standard output when no output file is given
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pancake:1.1.2--py35_0
+stdout: pancake_graph.out

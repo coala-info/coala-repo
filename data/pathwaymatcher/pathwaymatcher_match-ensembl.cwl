@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - PathwayMatcher.jar
+  - pathwaymatcher
   - match-ensembl
 label: pathwaymatcher_match-ensembl
 doc: "Match a list of Ensembl protein identifiers\n\nTool homepage: https://github.com/LuisFranciscoHS/PathwayMatcher"

@@ -1,5 +1,14 @@
 # parm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parm_mutagenesis | PASS |  |
+| parm_plot | PASS |  |
+| parm_predict | PASS |  |
+| parm_train | PASS |  |
+
 ## parm_train
 
 ### Tool Description

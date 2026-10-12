@@ -4,48 +4,31 @@ baseCommand:
   - pangwas
   - gwas
 label: pangwas_gwas
-doc: "Run genome-wide association study (GWAS) tests with pyseer.\n\nTakes as input
-  the TSV file of summarized clusters from summarize, an Rtab file of variants,\n\
-  a TSV/CSV table of phenotypes, and a column name representing the trait of interest.\n\
-  Outputs tables of locus effects, and optionally lineage effects (bugwas) if specified.\n\
-  \nAny additional arguments will be passed to `pyseer`. If no additional\narguments
-  are used, the following default args will apply:\n--lmm\n\nTool homepage: https://github.com/phac-nml/pangwas"
+doc: "Run genome-wide association study (GWAS) tests with pyseer.\n\nTakes as input the TSV file of summarized clusters from summarize, an Rtab file of variants,\na TSV/CSV table of phenotypes, and a column name representing the trait of interest.\nOutputs tables of locus effects, and optionally lineage effects (bugwas) if specified.\n\nAny additional arguments will be passed to `pyseer`. If no additional\narguments are used, the following default args will apply:\n--lmm\n\nTool homepage: https://github.com/phac-nml/pangwas"
 inputs:
-  - id: clusters
-    type:
-      - 'null'
-      - File
-    doc: TSV of clusters from summarize.
+  - id: variants
+    type: File
+    doc: "Rtab file of variants."
     inputBinding:
       position: 101
-      prefix: --clusters
+      prefix: --variants
+  - id: table
+    type: File
+    doc: "TSV or CSV table of phenotypes (variables)."
+    inputBinding:
+      position: 101
+      prefix: --table
   - id: column
     type: string
-    doc: Column name of trait (variable) in table.
+    doc: "Column name of trait (variable) in table."
     inputBinding:
       position: 101
       prefix: --column
-  - id: continuous
-    type:
-      - 'null'
-      - boolean
-    doc: Treat the column trait as a continuous variable.
-    inputBinding:
-      position: 101
-      prefix: --continuous
-  - id: exclude_missing
-    type:
-      - 'null'
-      - boolean
-    doc: Exclude samples missing phenotype data.
-    inputBinding:
-      position: 101
-      prefix: --exclude-missing
   - id: lineage_column
     type:
       - 'null'
       - string
-    doc: Column name of lineages in table. Enables bugwas lineage effects.
+    doc: "Column name of lineages in table. Enables bugwas lineage effects."
     inputBinding:
       position: 101
       prefix: --lineage-column
@@ -53,15 +36,47 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable midpoint rooting of the tree for the kinship matrix.
+    doc: "Disable midpoint rooting of the tree for the kinship matrix."
     inputBinding:
       position: 101
       prefix: --no-midpoint
+  - id: tree
+    type:
+      - 'null'
+      - File
+    doc: "Newick phylogenetic tree. Not required if pyseer args includes --no-distances."
+    inputBinding:
+      position: 101
+      prefix: --tree
+  - id: continuous
+    type:
+      - 'null'
+      - boolean
+    doc: "Treat the column trait as a continuous variable."
+    inputBinding:
+      position: 101
+      prefix: --continuous
+  - id: exclude_missing
+    type:
+      - 'null'
+      - boolean
+    doc: "Exclude samples missing phenotype data."
+    inputBinding:
+      position: 101
+      prefix: --exclude-missing
+  - id: clusters
+    type:
+      - 'null'
+      - File
+    doc: "TSV of clusters from summarize."
+    inputBinding:
+      position: 101
+      prefix: --clusters
   - id: outdir
     type:
       - 'null'
       - string
-    doc: Output directory.
+    doc: "Output directory. (default: . )"
     inputBinding:
       position: 101
       prefix: --outdir
@@ -69,58 +84,48 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prefix for output files.
+    doc: "Prefix for output files. (default: the trait column name)"
     inputBinding:
       position: 101
       prefix: --prefix
-  - id: table
-    type: File
-    doc: TSV or CSV table of phenotypes (variables).
-    inputBinding:
-      position: 101
-      prefix: --table
   - id: threads
     type:
       - 'null'
       - int
-    doc: CPU threads for pyseer.
+    doc: "CPU threads for pyseer. (default: 1)"
     inputBinding:
       position: 101
       prefix: --threads
-  - id: tree
+  - id: extra_args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: "Additional arguments passed on to `pyseer`."
+    inputBinding:
+      position: 200
+outputs:
+  - id: gwas_files
+    type: File[]
+    doc: "All files written for the trait: locus effects, lineage effects, samplesheet, filtered inputs, kinship, QQ plot and pyseer log"
+    outputBinding:
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + (inputs.prefix || inputs.column) + '.*')"
+  - id: locus_effects
     type:
       - 'null'
       - File
-    doc: Newick phylogenetic tree. Not required if pyseer args includes 
-      --no-distances.
-    inputBinding:
-      position: 101
-      prefix: --tree
-  - id: variants
-    type: File
-    doc: Rtab file of variants.
-    inputBinding:
-      position: 101
-      prefix: --variants
-outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+    doc: "Table of locus effects"
     outputBinding:
-      glob: $(inputs.prefix)*
-  - id: outdir_dir
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + (inputs.prefix || inputs.column) + '.locus_effects.tsv')"
+  - id: locus_effects_significant
     type:
       - 'null'
-      - Directory
-    doc: Output directory.
+      - File
+    doc: "Table of significant locus effects"
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + (inputs.prefix || inputs.column) + '.locus_effects.significant.tsv')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangwas:0.1.0--pyh7e72e81_0
-stdout: pangwas_gwas.out

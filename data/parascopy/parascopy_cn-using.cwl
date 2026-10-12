@@ -35,6 +35,8 @@ inputs:
       prefix: --depth
   - id: fasta_ref
     type: File
+    secondaryFiles:
+      - .fai
     doc: Input reference fasta file.
     inputBinding:
       position: 102
@@ -52,6 +54,10 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - .bai
+      - pattern: .crai
+        required: false
     doc: Input indexed BAM/CRAM files. All entries should follow the format 
       "filename[::sample]". Mutually exclusive with --input-list.
     inputBinding:
@@ -155,6 +161,8 @@ inputs:
       prefix: --tabix
   - id: table
     type: File
+    secondaryFiles:
+      - .tbi
     doc: Input indexed bed table with information about segmental duplications.
     inputBinding:
       position: 102

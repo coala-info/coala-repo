@@ -1,5 +1,11 @@
 # pangolin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pangolin | PASS | fixed output collection and alignment file type; lineages match the repo's expected test_seqs assignments |
+
 ## pangolin
 
 ### Tool Description

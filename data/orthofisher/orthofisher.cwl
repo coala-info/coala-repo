@@ -48,17 +48,37 @@ inputs:
       position: 101
       prefix: --hmm
   - id: output_directory_name
-    type:
-      - 'null'
-      - Directory
+    type: string
+    default: orthofisher_output
     doc: name of the outputted directory
     inputBinding:
       position: 101
       prefix: --output_dir
+  - id: fasta_files
+    type:
+      type: array
+      items: File
+    doc: The fasta files named in the fasta list; staged into the working directory so the listed names resolve
+  - id: hmm_files
+    type:
+      type: array
+      items: File
+    doc: The HMM files named in the HMM list; staged into the working directory so the listed names resolve
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory
+    type: Directory
+    doc: Directory with the fasta files of hits and the summary tables
+    outputBinding:
+      glob: $(inputs.output_directory_name)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fasta_files)
+      - $(inputs.hmm_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/orthofisher:1.1.1--pyhdfd78af_0

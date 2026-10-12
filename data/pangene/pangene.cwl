@@ -180,21 +180,28 @@ inputs:
     inputBinding:
       position: 102
       prefix: -w
-  - id: output_bed_path
-    type: string
-    doc: output 12-column BED where STR is walk, raw or flag [walk]
+  - id: bed
+    type:
+      - 'null'
+      - boolean
+    doc: Write 12-column BED (walk mode) to the output instead of GFA; use bed_mode to pick walk, raw or flag
+    inputBinding:
+      position: 103
+      prefix: --bed
+  - id: bed_mode
+    type:
+      - 'null'
+      - string
+    doc: Write 12-column BED to the output instead of GFA, where STR is walk, raw or flag [walk]
     inputBinding:
       position: 103
       prefix: --bed=
       separate: false
+stdout: '$((inputs.bed || inputs.bed_mode) ? "pangene.bed" : "pangene.gfa")'
 outputs:
-  - id: output_bed
-    type:
-      - 'null'
-      - File
-    doc: output 12-column BED where STR is walk, raw or flag
-    outputBinding:
-      glob: $(inputs.output_bed_path)
+  - id: output
+    type: stdout
+    doc: Pangene graph in GFA format, or 12-column BED when --bed is used
 requirements:
   - class: InlineJavascriptRequirement
 hints:

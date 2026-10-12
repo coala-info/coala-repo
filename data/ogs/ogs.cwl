@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ogs
 label: ogs
-doc: "OpenGeoSys-6 software.\n\nTool homepage: https://github.com/OGSR/OGSR-Engine"
+doc: "OpenGeoSys-6 software.\n\nTool homepage: https://www.opengeosys.org"
 inputs:
   - id: project_file
     type: File
@@ -26,14 +26,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --enable-fpe
-  - id: ignore_rest
-    type:
-      - 'null'
-      - boolean
-    doc: Ignores the rest of the labeled arguments following this flag.
-    inputBinding:
-      position: 102
-      prefix: --ignore_rest
   - id: log_level
     type:
       - 'null'
@@ -90,11 +82,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --xml-patch
     doc: the xml patch file(s) which is (are) applied (in the given order) to 
       the PROJECT_FILE
     inputBinding:
       position: 102
-      prefix: --xml-patch
   - id: output_directory_path
     type: string
     inputBinding:

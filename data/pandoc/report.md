@@ -1,5 +1,11 @@
 # pandoc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pandoc | PASS |  |
+
 ## pandoc
 
 ### Tool Description

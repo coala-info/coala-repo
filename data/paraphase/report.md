@@ -1,5 +1,11 @@
 # paraphase CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| paraphase | Failed | image problem: samtools and minimap2 are missing from the image, so paraphase stops with 'samtools is not found' (exit code 0, no output). |
+
 ## paraphase
 
 ### Tool Description

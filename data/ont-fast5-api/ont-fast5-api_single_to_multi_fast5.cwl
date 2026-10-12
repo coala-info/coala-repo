@@ -12,12 +12,12 @@ inputs:
     doc: Number of fast5 files to batch into a single multi-read file
     inputBinding:
       position: 101
-      prefix: --n_fast5
+      prefix: --batch_size
   - id: compression
     type:
       - 'null'
       - string
-    doc: Compression type (gzip or vbz)
+    doc: Target output compression type (vbz_v1.alpha, vbz, gzip or None)
     inputBinding:
       position: 101
       prefix: --compression
@@ -29,6 +29,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --filename_base
+  - id: ignore_symlinks
+    type:
+      - 'null'
+      - boolean
+    doc: Ignore symlinks when searching recursively for fast5 files
+    inputBinding:
+      position: 101
+      prefix: --ignore_symlinks
   - id: input_path
     type: Directory
     doc: Path to directory containing single-read fast5 files
@@ -51,18 +59,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
-  - id: save_path_path
+  - id: save_path_name
     type: string
-    doc: Output or path parameter `save_path_path`
+    doc: Folder to output multi read files to
     inputBinding:
       position: 102
-      prefix: --save-path
+      prefix: --save_path
 outputs:
   - id: save_path
     type: Directory
     doc: Path to directory to save multi-read fast5 files
     outputBinding:
-      glob: $(inputs.save_path_path)
+      glob: $(inputs.save_path_name)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

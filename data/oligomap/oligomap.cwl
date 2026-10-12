@@ -6,8 +6,10 @@ doc: "Finds matches of query sequences in a target sequence database.\n\nTool ho
   https://github.com/zavolanlab/oligomap"
 inputs:
   - id: target_fa
-    type: File
-    doc: Target FASTA file
+    type:
+      - File
+      - Directory
+    doc: Target FASTA file (a directory of .fa files with -d)
     inputBinding:
       position: 1
   - id: query_fa
@@ -18,7 +20,7 @@ inputs:
   - id: match_report_file
     type:
       - 'null'
-      - File
+      - string
     doc: create a match report at the end
     inputBinding:
       position: 103
@@ -51,6 +53,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: match_report
+    type:
+      - 'null'
+      - File
+    doc: match report
+    outputBinding:
+      glob: $(inputs.match_report_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/oligomap:1.0.1--h077b44d_1

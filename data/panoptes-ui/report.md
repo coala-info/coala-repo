@@ -1,5 +1,11 @@
 # panoptes-ui CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| panoptes-ui_panoptes | Not completed | Long-running monitoring web server that only serves a UI. |
+
 ## Metadata
 - **Skill**: generated
 

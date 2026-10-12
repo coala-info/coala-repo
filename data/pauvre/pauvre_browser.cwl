@@ -41,6 +41,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no_timestamp
+  - id: track_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Track files (BAM with its index, GFF, and so on) that are named inside the
+      plot_commands strings; they are staged in the working directory, so use their
+      base names in plot_commands.
   - id: plot_commands
     type:
       - 'null'
@@ -141,6 +149,8 @@ outputs:
       glob: $(inputs.path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.track_files ? inputs.track_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pauvre:0.1924--py_0

@@ -1,5 +1,15 @@
 # olivar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| olivar_build | PASS |  |
+| olivar_save | PASS |  |
+| olivar_sensitivity | PASS |  |
+| olivar_specificity | Failed | image problem: with --db the BLAST step writes /usr/local/lib/python3.12/site-packages/olivar/BLAST_query.fasta inside the image install folder (read-only) and crashes; without --db it only gives primer properties |
+| olivar_tiling | PASS |  |
+
 ## olivar_build
 
 ### Tool Description
@@ -121,23 +131,6 @@ options:
                         Number of threads [1].
   --iterMul <int>       Multiplier of iterations during PDR optimization.
   --deg                 Control whether use degenerate mode or not.
-```
-
-## olivar_Olivar
-
-### Tool Description
-olivar: error: argument subparser_name: invalid choice: 'Olivar' (choose from build, tiling, save, specificity, sensitivity)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/olivar:1.3.3--pyhdfd78af_0
-- **Homepage**: https://gitlab.com/treangenlab/olivar
-- **Package**: https://anaconda.org/channels/bioconda/packages/olivar/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: olivar [-h] [--version] {build,tiling,save,specificity,sensitivity} ...
-olivar: error: argument subparser_name: invalid choice: 'Olivar' (choose from build, tiling, save, specificity, sensitivity)
 ```
 
 ## olivar_save

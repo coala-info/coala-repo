@@ -42,6 +42,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -allmigs
+  - id: f2_statistics
+    type:
+      - 'null'
+      - boolean
+    doc: Use f2-statistics instead of covariances (used in the OrientAGraph README examples; not listed in the program help)
+    inputBinding:
+      position: 101
+      prefix: -f2
   - id: given_matrix_file
     type:
       - 'null'
@@ -61,29 +69,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -global
-  - id: graph_edges_file
+  - id: graph_files
     type:
       - 'null'
-      - File
-    doc: read the graph from a previous TreeMix run
-    inputBinding:
-      position: 101
-      prefix: -g
-  - id: graph_vertices_file
-    type:
-      - 'null'
-      - File
-    doc: read the graph from a previous TreeMix run
+      - type: array
+        items: File
+    doc: read the graph from a previous TreeMix run; give the vertices file and then the edges file
     inputBinding:
       position: 101
       prefix: -g
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input file
     inputBinding:
-      position: 101
+      position: 100
       prefix: -i
   - id: known_migration_events_file
     type:
@@ -118,9 +117,7 @@ inputs:
       position: 101
       prefix: -n_warn
   - id: output_stem
-    type:
-      - 'null'
-      - string
+    type: string
     doc: output stem (will be [stem].treeout.gz, [stem].cov.gz, 
       [stem].modelcov.gz)
     inputBinding:
@@ -206,6 +203,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the output stem (treeout, cov, covse, modelcov, edges, vertices, llik)
+    outputBinding:
+      glob: $(inputs.output_stem).*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/orientagraph:1.1--h3b735ea_0

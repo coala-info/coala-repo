@@ -1,5 +1,11 @@
 # ogtfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ogtfinder | PASS |  |
+
 ## ogtfinder
 
 ### Tool Description

@@ -9,8 +9,6 @@ doc: "Index a reference genome or transcriptome for PALADIN alignment\n\nTool ho
 inputs:
   - id: reference_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference FASTA file (nucleotide or protein)
     inputBinding:
       position: 1
@@ -42,6 +40,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files (.amb, .ann, .bwt, .pac, .sa, .pro) written beside the reference
+    outputBinding:
+      glob: $(inputs.reference_fasta.basename).*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference_fasta)
+        writable: true
+      - entry: $(inputs.annotation_gff)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paladin:1.6.0--h44aa6d8_0

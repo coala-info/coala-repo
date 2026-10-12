@@ -1,5 +1,11 @@
 # parsinsert CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parsinsert | PASS |  |
+
 ## parsinsert
 
 ### Tool Description

@@ -5,7 +5,9 @@ label: pangwes_SpydrPick
 doc: "MI-ARACNE genome-wide co-evolution analysis.\n\nTool homepage: https://github.com/jurikuronen/PANGWES"
 inputs:
   - id: alignment_file_positional
-    type: File
+    type:
+      - 'null'
+      - File
     doc: The input alignment filename(s). When two filenames are specified, only
       inter-alignment links will be probed for.
     inputBinding:
@@ -267,86 +269,81 @@ inputs:
     type:
       - 'null'
       - string
-    doc: ' The ARACNE output filename. This is a binary file for "plot.r".'
+    doc: 'The ARACNE output filename (default: aracne.out). This is a binary file for "plot.r".'
     inputBinding:
       position: 103
       prefix: --aracne-outputfile
-  - id: output_alignment_path
+  - id: output_alignment
     type:
       - 'null'
-      - string
+      - boolean
     doc: Write alignment to file.
     inputBinding:
       position: 104
       prefix: --output-alignment
-  - id: output_filtered_alignment_path
+  - id: output_filtered_alignment
     type:
       - 'null'
-      - string
+      - boolean
     doc: Write filtered alignment to file.
     inputBinding:
       position: 105
       prefix: --output-filtered-alignment
-  - id: output_sample_distance_matrix_path
+  - id: output_sample_distance_matrix
     type:
       - 'null'
-      - string
-    doc: Output triangular sample-sample Hamming
+      - boolean
+    doc: Output triangular sample-sample Hamming distance matrix.
     inputBinding:
       position: 106
       prefix: --output-sample-distance-matrix
-  - id: output_sample_weights_path
+  - id: output_sample_weights
     type:
       - 'null'
-      - string
+      - boolean
     doc: Output sample weights.
     inputBinding:
       position: 107
       prefix: --output-sample-weights
-  - id: output_state_frequencies_path
+  - id: output_state_frequencies
     type:
       - 'null'
-      - string
-    doc: Write column-wise state frequencies to
+      - boolean
+    doc: Write column-wise state frequencies to file.
     inputBinding:
       position: 108
       prefix: --output-state-frequencies
 outputs:
-  - id: output_state_frequencies
-    type:
-      - 'null'
-      - File
-    doc: Write column-wise state frequencies to file.
+  - id: couplings
+    type: File[]
+    doc: MI-ARACNE couplings network (edges file named after the input alignment)
     outputBinding:
-      glob: $(inputs.output_state_frequencies_path)
-  - id: output_sample_weights
-    type:
-      - 'null'
-      - File
-    doc: Output sample weights.
+      glob: '*spydrpick_couplings*edges'
+  - id: outliers
+    type: File[]
+    doc: Outlier couplings written with the network
     outputBinding:
-      glob: $(inputs.output_sample_weights_path)
-  - id: output_sample_distance_matrix
-    type:
-      - 'null'
-      - File
-    doc: Output triangular sample-sample Hamming distance matrix.
+      glob: '*.outliers'
+  - id: sample_weights
+    type: File[]
+    doc: Sample weights (with --output-sample-weights)
     outputBinding:
-      glob: $(inputs.output_sample_distance_matrix_path)
-  - id: output_alignment
-    type:
-      - 'null'
-      - File
-    doc: Write alignment to file.
+      glob: '*.weights'
+  - id: state_frequencies
+    type: File[]
+    doc: Column-wise state frequencies (with --output-state-frequencies)
     outputBinding:
-      glob: $(inputs.output_alignment_path)
-  - id: output_filtered_alignment
-    type:
-      - 'null'
-      - File
-    doc: Write filtered alignment to file.
+      glob: '*frequencies.txt'
+  - id: sample_distance_matrix
+    type: File[]
+    doc: Triangular sample-sample Hamming distance matrix (with --output-sample-distance-matrix)
     outputBinding:
-      glob: $(inputs.output_filtered_alignment_path)
+      glob: '*triangular_sample_distance_matrix'
+  - id: alignments
+    type: File[]
+    doc: Alignment and filtered alignment (with --output-alignment and --output-filtered-alignment)
+    outputBinding:
+      glob: '*.fasta'
   - id: aracne_output_file
     type:
       - 'null'

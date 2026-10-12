@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - PathwayMatcher.jar
+  - pathwaymatcher
   - match-modified-peptides
 label: pathwaymatcher_match-modified-peptides
 doc: "Match a list of peptides with post translational modifications\n\nTool homepage:

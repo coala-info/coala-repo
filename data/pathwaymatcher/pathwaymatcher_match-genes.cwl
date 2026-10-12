@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - PathwayMatcher.jar
+  - pathwaymatcher
   - match-genes
 label: pathwaymatcher_match-genes
 doc: "Match a list of gene names and perform over-representation analysis\n\nTool

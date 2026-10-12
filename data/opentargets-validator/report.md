@@ -1,5 +1,11 @@
 # opentargets-validator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| opentargets-validator_opentargets_validator | PASS | ran on the repo test JSON; valid record counted valid, record missing a required field counted invalid (exit 1 allowed); log captured from stderr |
+
 ## opentargets-validator_opentargets_validator
 
 ### Tool Description

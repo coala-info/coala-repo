@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pangwes_unitig_distance
+baseCommand: unitig_distance
 label: pangwes_unitig_distance
 doc: "Calculate unitig distances in graphs and single genome graphs, with tools for
   determining outliers.\n\nTool homepage: https://github.com/jurikuronen/PANGWES"
@@ -173,39 +173,39 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: output_outliers_path
+  - id: output_outliers
     type:
       - 'null'
-      - string
+      - boolean
     doc: Output a list of outliers and outlier statistics.
     inputBinding:
       position: 102
       prefix: --output-outliers
-  - id: output_stem_path
-    type:
-      - 'null'
-      - string
-    doc: Path for output files (without extension).
-    inputBinding:
-      position: 103
-      prefix: --output-stem
-outputs:
-  - id: output_outliers
-    type:
-      - 'null'
-      - File
-    doc: Output a list of outliers and outlier statistics.
-    outputBinding:
-      glob: $(inputs.output_outliers_path)
   - id: output_stem
     type:
       - 'null'
-      - File
-    doc: Path for output files (without extension).
+      - string
+    doc: "Path for output files (without extension). (default: out)"
+    inputBinding:
+      position: 103
+      prefix: --output-stem
+  - id: sgg_edge_dirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Directories with the single genome graph edge files named in the sgg paths file (for example STEM_paths from gfa1_parser); staged in the working directory so the listed paths resolve
+outputs:
+  - id: output_files
+    type: File[]
+    doc: Files written with the output stem (distance tables and, with --output-outliers, the outlier lists)
     outputBinding:
-      glob: $(inputs.output_stem_path)
+      glob: "$((inputs.output_stem || 'out') + '*')"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.sgg_edge_dirs)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangwes:0.3.0_alpha--h9948957_1

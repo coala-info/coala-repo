@@ -1,5 +1,20 @@
 # paragraph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| paragraph | PASS |  |
+| paragraph_addVariants.py | PASS | synthetic data: a planted variant JSON added three new nodes to a real graph. |
+| paragraph_grmpy | PASS |  |
+| paragraph_grmpy-vcf-merge.py | Failed | image problem: htslib assertion bcf_update_format (core dump) when writing the merged VCF. |
+| paragraph_idxdepth | PASS | --output-bins crashes with 'BAM index reading not available yet'; the depth JSON is correct. |
+| paragraph_msa2vcf.py | Failed | image problem: bcftools in the image cannot load libcrypto.so.1.0.0. |
+| paragraph_multigrmpy.py | Failed | image problem: htslib assertion bcf_update_format (core dump) when writing genotypes.vcf.gz, so the final VCF is empty. |
+| paragraph_multiparagraph.py | PASS |  |
+| paragraph_paragraph2dot.py | PASS |  |
+| paragraph_vcf2paragraph.py | PASS |  |
+
 ## paragraph
 
 ### Tool Description
@@ -114,6 +129,234 @@ Dynamic exception type: boost::wrapexcept<boost::program_options::ambiguous_opti
 std::exception::what: option '--h' is ambiguous and matches '--help', '--help-defaults', and '--help-md'
 ```
 
+
+## paragraph_vcf2paragraph.py
+
+### Tool Description
+Convert a VCF / BCF file of variants into a paragraph graph JSON file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/paragraph:2.3--h8908b6f_0
+- **Homepage**: https://github.com/Illumina/paragraph
+- **Package**: https://anaconda.org/channels/bioconda/packages/paragraph/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] vcf2paragraph.py: ok via vcf2paragraph.py --help (--help=ok, -h=ok, -help=ok, (no args)=ok)
+usage: vcf2paragraph.py [-h] -r REF [-v] [-g {alleles,haplotypes}] [-R]
+                        [-l MAX_REF_LEN] [-p READ_LEN] [-T TARGET_REGIONS]
+                        [--ins-info-key INS_INFO_KEY] [--alt-paths]
+                        [--alt-splitting] [--recursion-limit RECURSION_LIMIT]
+                        input output
+
+positional arguments:
+  input                 Input VCF / BCF file
+  output                Output JSON file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -r REF, --reference-sequence REF
+                        Reference FASTA for checking REF and resolving <DEL>
+  -v, --verbose         More logging; May be given twice for even more
+                        logging.
+
+Common VCF graph options:
+  -g {alleles,haplotypes}, --graph-type {alleles,haplotypes}
+                        Select the type of graph to generate.
+  -R, --retrieve-reference-sequence
+                        Retrieve reference sequence for REF nodes
+  -l MAX_REF_LEN, --max-ref-node-length MAX_REF_LEN
+                        Maximum length of reference nodes before they get
+                        padded and truncated.
+  -p READ_LEN, --read-length READ_LEN
+                        Read length -- this can be used to add reference
+                        padding for disambiguation.
+  -T TARGET_REGIONS, --target-region TARGET_REGIONS
+                        Target regions for read retrieval
+  --ins-info-key INS_INFO_KEY
+                        Key for symbolic <INS> in INFO field
+  --alt-paths           Create all possible ALT paths in addition to reference
+                        paths.
+  --alt-splitting       Also split long alternate alleles (e.g. long
+                        insertions)
+  --recursion-limit RECURSION_LIMIT
+                        Set the recursion limit ( O(expected number of nodes
+                        of the graph) for large graphs -- this is required for
+                        sorting )
+```
+
+## paragraph_paragraph2dot.py
+
+### Tool Description
+Convert a paragraph graph or output JSON file into a graphviz dot file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/paragraph:2.3--h8908b6f_0
+- **Homepage**: https://github.com/Illumina/paragraph
+- **Package**: https://anaconda.org/channels/bioconda/packages/paragraph/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] paragraph2dot.py: ok via paragraph2dot.py --help (--help=usage_only, -h=usage_only, -help=flag_rejected, (no args)=usage_only)
+usage: paragraph2dot.py [-h] input output
+
+positional arguments:
+  input       Input paragraph JSON file
+  output      Output dot file
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+## paragraph_addVariants.py
+
+### Tool Description
+Add new variants into a graph as nodes/edges.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/paragraph:2.3--h8908b6f_0
+- **Homepage**: https://github.com/Illumina/paragraph
+- **Package**: https://anaconda.org/channels/bioconda/packages/paragraph/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] addVariants.py: ok via addVariants.py --help (--help=ok, -h=ok, -help=flag_rejected, (no args)=usage_only)
+usage: addVariants.py [-h] [--variants VARIANTS] [-v] graph output
+
+Add new variants into a graph as nodes/edges
+
+positional arguments:
+  graph                Input graph JSON file
+  output               Output JSON file
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --variants VARIANTS  JSON file with variant calls to use instead of calls in
+                       input graph
+  -v, --verbose        More logging; May be given twice for even more logging
+```
+
+## paragraph_grmpy-vcf-merge.py
+
+### Tool Description
+Merge the JSON genotyping output of multigrmpy.py / grmpy back into the input VCF.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/paragraph:2.3--h8908b6f_0
+- **Homepage**: https://github.com/Illumina/paragraph
+- **Package**: https://anaconda.org/channels/bioconda/packages/paragraph/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] grmpy-vcf-merge.py: ok via grmpy-vcf-merge.py --help (--help=ok, -h=ok, -help=flag_rejected, (no args)=usage_only)
+usage: Multigrmpy.py [-h] -i INPUT -g INPUT_GRM [-o OUTPUT]
+                     [--logfile LOGFILE] [--verbose | --quiet | --debug]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Input VCF file of variants.
+  -g INPUT_GRM, --grmpy INPUT_GRM
+                        JSON output from multigrmpy.py / grmpy
+  -o OUTPUT, --output OUTPUT
+                        Output file name.
+  --logfile LOGFILE     Write logging information into file rather than to
+                        stderr
+  --verbose             Raise logging level from warning to info.
+  --quiet               Set logging level to output errors only.
+  --debug               Log debug level events.
+```
+
+## paragraph_msa2vcf.py
+
+### Tool Description
+Convert a FASTA multiple sequence alignment into a VCF file relative to a reference.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/paragraph:2.3--h8908b6f_0
+- **Homepage**: https://github.com/Illumina/paragraph
+- **Package**: https://anaconda.org/channels/bioconda/packages/paragraph/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] msa2vcf.py: ok via msa2vcf.py --help (--help=ok, -h=ok, -help=flag_rejected, (no args)=usage_only)
+usage: vcf2paragraph.py [-h] [--reference-chr REFERENCE_CHR]
+                        [--reference-start REFERENCE_START]
+                        --reference-sequence REF [--bcftools BCFTOOLS]
+                        input output
+
+positional arguments:
+  input                 Input Fasta MSA file
+  output                Output VCF file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --reference-chr REFERENCE_CHR
+                        Reference chromosome
+  --reference-start REFERENCE_START
+                        Reference start pos
+  --reference-sequence REF
+                        Reference FASTA for checking REF
+  --bcftools BCFTOOLS   Path to bcftools
+```
+
+## paragraph_multiparagraph.py
+
+### Tool Description
+Run paragraph on a BAM file for a set of events given as JSON files and merge the results.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/paragraph:2.3--h8908b6f_0
+- **Homepage**: https://github.com/Illumina/paragraph
+- **Package**: https://anaconda.org/channels/bioconda/packages/paragraph/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] multiparagraph.py: ok via multiparagraph.py --help (--help=ok, -h=ok, -help=ok, (no args)=ok)
+usage: Multiparagraph [-h] -b BAM -o OUTPUT -r REF [-E]
+                      [--max-events MAX_EVENTS] [--min-length MIN_LENGTH]
+                      [--event-threads THREADS]
+                      [--paragraph-threads PARAGRAPH_THREADS] [--keep-scratch]
+                      [--scratch-dir SCRATCH_DIR] [--paragraph PARAGRAPH]
+                      [--logfile LOGFILE] [--verbose | --quiet]
+                      input [input ...]
+
+positional arguments:
+  input
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -b BAM, --bam BAM     BAM file name
+  -o OUTPUT, --output OUTPUT
+                        Output file name
+  -r REF, --reference-sequence REF
+                        Reference FASTA
+  -E, --extended-output
+                        Run paragraph with -E 1
+  --max-events MAX_EVENTS
+                        Only do the first n events.
+  --min-length MIN_LENGTH
+                        Minimum event length.
+  --event-threads THREADS, -t THREADS
+                        Number of events to process in parallel.
+  --paragraph-threads PARAGRAPH_THREADS, -T PARAGRAPH_THREADS
+                        Number of threads for parallel read processing.
+  --keep-scratch        Do not delete temp files.
+  --scratch-dir SCRATCH_DIR
+                        Directory for temp files
+  --paragraph PARAGRAPH
+                        Path to the paragraph executable
+  --logfile LOGFILE     Write logging information into file rather than to
+                        stderr
+  --verbose             Raise logging level from warning to info.
+  --quiet               Set logging level to output errors only.
+```
 
 ## Metadata
 - **Skill**: generated

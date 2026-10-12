@@ -1,5 +1,16 @@
 # paplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| paplot_ca | PASS |  |
+| paplot_index | PASS |  |
+| paplot_mutation | PASS |  |
+| paplot_pmsignature | PASS |  |
+| paplot_qc | PASS |  |
+| paplot_signature | PASS |  |
+
 ## paplot_index
 
 ### Tool Description

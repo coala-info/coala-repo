@@ -1,5 +1,11 @@
 # pasta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pasta_run_pasta.py | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

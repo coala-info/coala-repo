@@ -18,7 +18,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: P-value column in the associations file
+    doc: 'P-value column in the associations file (default: lrt-pvalue)'
     inputBinding:
       position: 101
       prefix: --column
@@ -33,7 +33,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Association p-value threshold
+    doc: 'Association p-value threshold (default: 1.00)'
     inputBinding:
       position: 101
       prefix: --threshold
@@ -46,17 +46,23 @@ inputs:
       position: 101
       prefix: -v
   - id: output_path
-    type: string
-    doc: Output directory to store outputs (will cause an error
+    type:
+      - 'null'
+      - string
+    doc: Filename to save filtered associations table (not saved by default)
     inputBinding:
       position: 102
       prefix: --output
+stdout: gene_clusters.txt
 outputs:
-  - id: output
+  - id: clusters
+    type: stdout
+    doc: Gene clusters with significantly associated patterns, one per line
+  - id: filtered_associations
     type:
       - 'null'
-      - Directory
-    doc: Filename to save filtered associations table (not saved by default)
+      - File
+    doc: Filtered associations table (only when --output is given)
     outputBinding:
       glob: $(inputs.output_path)
 requirements:

@@ -1,5 +1,11 @@
 # osra CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| osra | Failed | image problem: osra segfaults (exit 139) on PubChem structure images in PNG, JPG, GIF and TIFF; the image mixes glibc libraries with a musl base (ldd shows relocation errors) |
+
 ## osra
 
 ### Tool Description

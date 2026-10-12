@@ -40,7 +40,7 @@ inputs:
   - id: alignment_file
     type:
       - 'null'
-      - File
+      - string
     doc: Multiple sequence alignment file name.
     inputBinding:
       position: 102
@@ -236,13 +236,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: outdir_dir
+  - id: lineage_report
     type:
       - 'null'
-      - Directory
-    doc: Output directory.
+      - File
+    doc: Lineage assignment report (CSV)
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + (inputs.outfile || 'lineage_report.csv'))"
+  - id: alignment_out
+    type:
+      - 'null'
+      - File
+    doc: Multiple sequence alignment (written with --alignment)
+    outputBinding:
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + (inputs.alignment_file || 'alignment.fasta'))"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangolin:4.3.4--pyhdfd78af_1

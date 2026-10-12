@@ -1,5 +1,11 @@
 # parallel-meta-suite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| parallel-meta-suite_PM-pipeline | Not completed | pipeline, skipped (it also needs a reference database that is not in the image). |
+
 ## parallel-meta-suite_PM-pipeline
 
 ### Tool Description

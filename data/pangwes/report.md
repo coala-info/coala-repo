@@ -1,5 +1,14 @@
 # pangwes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pangwes_SpydrPick | PASS | fixed output switches and output collection; top 5000 pairs and MI scores equal the repo's expected queries |
+| pangwes_gfa1_parser | PASS | fixed command and output stem argument; unitigs and edges equal the repo's expected files |
+| pangwes_gwes_plot | Failed | image problem: R package data.table is missing and cannot be installed (default mode fails); only --no-deps works; the -l option crashes (tool bug) |
+| pangwes_unitig_distance | Not completed | fixed command name and staging; ran on the repo's test graph, but the image is v0.3.0_alpha and gives distances (for example 3) that differ from the v1.0.0 expected file (6), so they could not be confirmed |
+
 ## Metadata
 - **Skill**: generated
 
@@ -124,7 +133,30 @@ Option '--help' will print a list of available options.
 ### Tool Description
 Calculate unitig distances in graphs and single genome graphs, with tools for determining outliers.
 
+### pangwes_gwes_plot
+
+### Tool Description
+Draw a GWES Manhattan plot from the unitig_distance output
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/pangwes:0.3.0_alpha--h9948957_1
+- **Homepage**: https://github.com/jurikuronen/PANGWES
+- **Package**: https://anaconda.org/channels/bioconda/packages/pangwes/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ./gwes_plot.r -i input_links_file -n number_of_assemblies [other options]
+Options:
+  -i, --input            Input links file (required)
+  -n  --num-assemblies   Number of assemblies in the analysis (required)
+  -o, --output           Output plot path (default: ./pangwes_plot.png)
+  -l  --ld-dist          LD distance cutoff (default: 50000)
+  --no-deps              Generate a basic plot without any R package dependencies (Much slower!)
+  -h  --help             Display this help message
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/pangwes:0.3.0_alpha--h9948957_1
 - **Homepage**: https://github.com/jurikuronen/PANGWES
 - **Package**: https://anaconda.org/channels/bioconda/packages/pangwes/overview

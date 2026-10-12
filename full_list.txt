@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 9712; PASS: 7494; Failed: 1183; Not completed: 1035
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 10027; PASS: 7745; Failed: 1226; Not completed: 1056
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -9712,3 +9712,318 @@ odgi	odgi_untangle	PASS
 odgi	odgi_validate	PASS	
 odgi	odgi_view	PASS	
 odgi	odgi_viz	PASS	
+ogs	ogs	PASS	
+ogtfinder	ogtfinder	PASS	
+olga	olga_olga-compute_pgen	PASS	
+olga	olga_olga-generate_sequences	PASS	
+oligomap	oligomap	PASS	
+oligon-design	oligon-design_oligoNdesign	PASS	
+olivar	olivar_build	PASS	
+olivar	olivar_save	PASS	
+olivar	olivar_sensitivity	PASS	
+olivar	olivar_specificity	Failed	image problem: with --db the BLAST step writes /usr/local/lib/python3.12/site-packages/olivar/BLAST_query.fasta inside the image install folder (read-only) and crashes; without --db it only gives primer properties
+olivar	olivar_tiling	PASS	
+omamer	omamer_info	PASS	
+omamer	omamer_mkdb	PASS	
+omamer	omamer_search	PASS	
+omark	omark	PASS	
+oncofuse	oncofuse	PASS	
+oncogemini	oncogemini_amend	PASS	
+oncogemini	oncogemini_annotate	Failed	tool bug: -t integer with -o max/sum/min/mean stores raw bytes instead of numbers (silent wrong values) and -o list/uniq_list crash; boolean, count and first work
+oncogemini	oncogemini_bottleneck	Failed	image problem: SyntaxError, Python 2 print statement in the package under Python 3
+oncogemini	oncogemini_db_info	PASS	
+oncogemini	oncogemini_dump	Failed	image problem: --variants and --genotypes, two of the three dump modes, crash with an sqlalchemy error. Only --samples works.
+oncogemini	oncogemini_fusions	Not completed	needs the gene_summary annotation table (built by gemini load with annotation data) and set_somatic, which fails in this image; could not build such a database
+oncogemini	oncogemini_loh	Failed	image problem: SyntaxError, Python 2 print statement in the package under Python 3
+oncogemini	oncogemini_query	PASS	plain SQL works; --gt-filter and genotype columns crash in this image (Python 2 code on Python 3)
+oncogemini	oncogemini_region	PASS	
+oncogemini	oncogemini_roh	Failed	image problem: ModuleNotFoundError: No module named 'gemini' (roh imports the missing gemini package)
+oncogemini	oncogemini_set_somatic	Failed	image problem: KeyError when reading genotype blobs (Python 2 code on Python 3); no somatic flags are set
+oncogemini	oncogemini_stats	Failed	tool bug: --vars-by-sample and --gts-by-sample give zero or byte-string counts (Python 2 genotype decoding in the image); --sfs works
+oncogemini	oncogemini_truncal	Failed	image problem: SyntaxError, Python 2 print statement in the package under Python 3
+oncogemini	oncogemini_unique	Failed	image problem: SyntaxError, Python 2 print statement in the package under Python 3
+oncogemini	oncogemini_update	Not completed	updates the software and downloads annotation data into the install; needs network and a writable install, not a data test
+oncogemini	oncogemini_windower	Failed	image problem: crashes with a bedtools error (no windows built; genotype decoding broken in the image)
+oncotator	oncotator	PASS	synthetic data: planted maflite on the tool's own tiny test datasource; output_file positional was missing and is fixed; annotations appear in output
+onehot2seq	onehot2seq	PASS	ran on the tool's example npy files; DNA, protein and FASTA output match the repo test files
+ont-fast5-api	ont-fast5-api_check_compression	PASS	ran on the repo's multi-read and single-read test fast5 files; read ids and counts are right
+ont-fast5-api	ont-fast5-api_compress_fast5	PASS	ran on the repo's multi-read and single-read test fast5 files; read ids and counts are right
+ont-fast5-api	ont-fast5-api_fast5_subset	PASS	ran on the repo's multi-read and single-read test fast5 files; read ids and counts are right
+ont-fast5-api	ont-fast5-api_multi_to_single_fast5	PASS	ran on the repo's multi-read and single-read test fast5 files; read ids and counts are right
+ont-fast5-api	ont-fast5-api_single_to_multi_fast5	PASS	ran on the repo's multi-read and single-read test fast5 files; read ids and counts are right
+ont-tombo	ont-tombo_detect_modifications_aggregate_per_read_stats	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; aggregated the per-read stats from alternative_model into a genomic stats file
+ont-tombo	ont-tombo_detect_modifications_alternative_model	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; 5mC model on the re-squiggled reads; stats and per-read stats written
+ont-tombo	ont-tombo_detect_modifications_de_novo	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; chained from resquiggle output; stats and per-read stats files written
+ont-tombo	ont-tombo_detect_modifications_level_sample_compare	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; WT against KO control; stats file written
+ont-tombo	ont-tombo_plot_max_coverage	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; PDF written; --control-fast5-basedirs crashes in this image (NameError _R_DF, R plotting missing), the main mode works
+ont-tombo	ont-tombo_preprocess_annotate_raw_with_fastqs	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; basecalls added to all 40 reads; fast5 directory staged writable
+ont-tombo	ont-tombo_resquiggle	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; 37 of 40 reads re-squiggled, resquiggle groups present in the output fast5
+ont-tombo	ont-tombo_text_output_browser_files	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; coverage, fraction and statistic wig/bedGraph files written from the de_novo stats
+ont-tombo	ont-tombo_text_output_signif_sequence_context	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; 50 sequences written and all found in the reference at the reported positions; genome FASTA staged writable
+ontime	ontime	PASS	ran on the repo test SAM; time window returns the right 6 reads and --show start times match
+open-cravat	open-cravat_report	PASS	regenerated the text report from the result database; identical to the run output
+open-cravat	open-cravat_run	PASS	ran 20 real hg38 chr21 variants with the built-in gene mapper and go annotator; text report has gene and consequence columns
+open-cravat	open-cravat_vcfanno	PASS	annotated the 20 real variants; output VCF has OC_ gene and consequence INFO fields
+openstructure	openstructure_compare_ligand_structures	PASS	two real trypsin-benzamidine mmCIF entries; LDDT-PLI near 1 and ligand RMSD returned
+openstructure	openstructure_compare_structures	PASS	two real ubiquitin X-ray structures; LDDT 0.993, QS 1.0, chain mapping A:A
+openstructure	openstructure_compare_structures_legacy	PASS	same ubiquitin pair gives LDDT 0.993; automatic chain mapping needs clustalw2 which the image lacks, so -c must be given
+openstructure	openstructure_molck	PASS	ran on NMR trp-cage PDB; hydrogens removed and cleaned file written; --out and positional input paths fixed
+opentargets-validator	opentargets-validator_opentargets_validator	PASS	ran on the repo test JSON; valid record counted valid, record missing a required field counted invalid (exit 1 allowed); log captured from stderr
+opsin	opsin	PASS	names to SMILES correct for 5 real names (aspirin, ethanol, benzene, DMF, chlorotoluene); stdinchikey option gives the right ethanol key; bad name skipped
+optimir	optimir_libprep	PASS	ran on the repo example genotypes VCF; library and bowtie2 index built
+optimir	optimir_process	PASS	ran repo example sample S1; abundances match the repo expected results
+optimir	optimir_summarize	PASS	summary tables match repo expected values for S1; results directory is now staged writable because the tool writes beside it
+optitype	optitype_OptiTypePipeline.py	PASS	baseCommand fixed to OptiTypePipeline.py; ran repo RNA test pair, result has 6 HLA-A/B/C 4-digit alleles
+orfanage	orfanage	PASS	ran repo example query and template GTF; 27 CDS lines added to 5 query transcripts; templates moved last and outputs collected
+orfipy	orfipy	PASS	outputs match Galaxy expected BED and DNA FASTA on the same input; outdir is now a string and output paths resolve inside it
+orfm	orfm	PASS	ran on nf-core sarscov2 reads; 216 ORFs, all translations match an independent translation of the transcripts; -t flag fixed and protein stdout collected
+orientagraph	orientagraph	PASS	ran repo Arctic data; covariance files and final log-likelihood 364.943 match the repo solution; -g now takes both graph files; -givenmat with an SE file crashes in this build (tool bug), main mode works
+orna	orna_ORNA	Failed	tool bug: -type fasta is ignored and FASTA input gives FASTQ-style records with empty quality lines (FASTQ input works); baseCommand fixed to ORNA
+orsum	orsum_orsum.py	PASS	ran on a real g:Profiler GO:BP enrichment of 30 p53-pathway genes with the g:Profiler human GMT; 369 terms reduced to 87 representative terms plus plots and tables
+orthofisher	orthofisher	Failed	image problem: hmmsearch (HMMER) is missing from the image, so every search fails
+orthoflow	orthoflow	Not completed	pipeline, skipped
+osra	osra	Failed	image problem: osra segfaults (exit 139) on PubChem structure images in PNG, JPG, GIF and TIFF; the image mixes glibc libraries with a musl base (ldd shows relocation errors)
+ostir	ostir	PASS	CSV, FASTA and string inputs reproduce the repo expected tables; input split into file and sequence inputs, threads defaults to 1 because the tool crashes without -j
+owl	owl_merge	Failed	tool bug: merging two real profiles outputs only the first sample because owl 0.4.0 appends columns only when a line has more than 4 columns, but profile lines have exactly 4
+owl	owl_profile	PASS	ran on a small real HG002 HiFi BAM (nf-core methylong) with the repo marker BED; loci with coverage got counts, rest zero; BAM index and verbose type fixed
+owl	owl_score	PASS	scored the real profile; summary and motif tables written (qc fail is expected at 90 reads); -m prefix corrected to --min-depth
+pacini_typing	pacini_typing_makedatabase	PASS	built FASTA (blast) and FASTQ (kma) databases from the repo gene file; database directory collected
+pacini_typing	pacini_typing_query	PASS	paired kma query matches the repo expected res file; FASTA blast query finds the gene (repo expected tsv has stray decimals); outputs now collected by prefix
+packmol	packmol	PASS	Fixed the CWL (input is read from stdin with structure files staged); 100 waters and 40 ureas packed, 620 atoms as expected.
+pacu_snp	pacu_snp_PACU	Not completed	pipeline, skipped (Snakemake workflow; it did run to the end on the PACU test BAMs).
+pacu_snp	pacu_snp_PACU_map	PASS	Fixed working dir type and removed .fai; PACU test FASTQ (Illumina, ONT, trim) gave BAMs with all reads mapped.
+padel	padel	PASS	Rewrote the CWL for the real padel command; 5 small-drug SMILES gave correct molecular weights.
+padloc	padloc	Failed	image problem: the script runs mkdir /usr/local/data at start and fails as a non-root user, and the image has no PADLOC-DB database.
+paf2chain	paf2chain	PASS	SARS-CoV-2 scaffolds aligned with minimap2 gave a valid chain file.
+paidiverpy	paidiverpy	PASS	Rewrote inputs (config file plus staged image directories, removed the GUI flag); 12 images of the tool's benthic sample set were converted to gray and blurred.
+pairix	pairix	PASS	Index file identical to the reference .px2, a region query and the chromosome list match the data.
+pairix	pairix_fragment_4dnpairs	PASS	synthetic data: evenly spaced restriction-site file (the image has no default); frag columns computed.
+pairix	pairix_juicer_shortform2pairs	PASS	Output matches the repository sample or the input line counts.
+pairix	pairix_merged_nodup2pairs	PASS	Output matches the repository sample or the input line counts.
+pairix	pairix_old_merged_nodup2pairs	PASS	Output matches the repository sample or the input line counts.
+pairix	pairix_pairs_merger	PASS	Output matches the repository sample or the input line counts.
+pairix	pairix_streamer_1d	PASS	Output matches the repository sample or the input line counts.
+pairsnp	pairsnp	PASS	10-species mammal codon alignment from nf-core; the matrix matches an independent count.
+pairtools	pairtools_dedup	PASS	Output equals the Galaxy expected file, including mark-dups, dups, stats and by-tile stats outputs.
+pairtools	pairtools_filterbycov	PASS	Fixed the low-coverage option to --output; the 9 mock pairs split into 2 low, 4 high and 3 unmapped.
+pairtools	pairtools_flip	PASS	Mock pairs were flipped into upper-triangular order using the chromosome file.
+pairtools	pairtools_header_generate	PASS	New CWL for pairtools header generate; output checked against the mock and Galaxy pairs files.
+pairtools	pairtools_header_set_columns	PASS	New CWL for pairtools header set_columns; output checked against the mock and Galaxy pairs files.
+pairtools	pairtools_header_transfer	PASS	New CWL for pairtools header transfer; output checked against the mock and Galaxy pairs files.
+pairtools	pairtools_header_validate_columns	PASS	New CWL for pairtools header validate_columns; output checked against the mock and Galaxy pairs files.
+pairtools	pairtools_markasdup	PASS	All 10 mock pairs became DD.
+pairtools	pairtools_merge	PASS	Merged file holds all 15 pairs of the two mock inputs.
+pairtools	pairtools_parse	PASS	Galaxy test SAM gave pairs equal to the expected file, and the stats file was written; the BAM input with options also worked.
+pairtools	pairtools_parse2	PASS	Fixed chroms_path to File and number options to int; mock walks SAM gave expected pairs with pair index.
+pairtools	pairtools_phase	PASS	synthetic data: Galaxy test SAM renamed to a mat/pat diploid genome; reads were phased to the mat copy as designed.
+pairtools	pairtools_restrict	PASS	Mock pairs got restriction fragment columns matching the sites bed.
+pairtools	pairtools_sample	PASS	A 0.5 fraction gave 309 of 592 pairs.
+pairtools	pairtools_scaling	PASS	Scaling table written with 588 pairs counted from the Galaxy pairs file.
+pairtools	pairtools_select	PASS	Condition split 592 pairs into 405 selected and 187 rest; the selected count matches an awk count.
+pairtools	pairtools_sort	PASS	Output body equals the Galaxy expected sorted pairs.
+pairtools	pairtools_split	PASS	Pairs file equals the Galaxy expected one and the BAM has the expected 1564 reads.
+pairtools	pairtools_stats	PASS	Stats equal the Galaxy expected file; merging two stats files matches too.
+pal2nal	pal2nal_pal2nal.pl	PASS	Mammal protein alignment plus CDS from nf-core gave back the original codon alignment.
+pal_finder	pal_finder	PASS	
+paladin	paladin_align	PASS	100 SARS-CoV-2 Illumina reads aligned to ORF1ab and spike proteins; the -o report option needs a prepared index.
+paladin	paladin_bwt2sa	Not completed	Output cannot be confirmed: an index chained from fa2pac, pac2bwt, bwtupdate and bwt2sa makes paladin align crash (segfault), unlike the index from paladin index.
+paladin	paladin_bwtupdate	Not completed	Output cannot be confirmed: an index chained from fa2pac, pac2bwt, bwtupdate and bwt2sa makes paladin align crash (segfault), unlike the index from paladin index.
+paladin	paladin_fa2pac	PASS	Rewrote baseCommand (bwa is not in the image); with -f the pac and ann files equal those of paladin index.
+paladin	paladin_index	PASS	SARS-CoV-2 proteome indexed; the index aligned reads correctly.
+paladin	paladin_pac2bwt	Not completed	Output cannot be confirmed: an index chained from fa2pac, pac2bwt, bwtupdate and bwt2sa makes paladin align crash (segfault), unlike the index from paladin index.
+paladin	paladin_prepare	PASS	Local protein FASTA (-f) was indexed as a prepared index; the report option then worked. The download mode was not tested.
+paladin	paladin_shm	Not completed	Shared-memory index manager: a one-shot container has no shared-memory indices to list, so there is no output to check.
+paml	paml_baseml	PASS	
+paml	paml_basemlg	PASS	
+paml	paml_chi2	PASS	
+paml	paml_codeml	PASS	
+paml	paml_evolver	PASS	
+paml	paml_infinitesites	PASS	
+paml	paml_mcmctree	PASS	
+paml	paml_pamp	PASS	
+paml	paml_yn00	PASS	
+pan-plaster	pan-plaster_plaster	PASS	
+panacota	panacota_align	PASS	
+panacota	panacota_annotate	Failed	image problem: matplotlib cannot import (libtiff.so.5 missing), so annotate crashes before annotation
+panacota	panacota_corepers	PASS	
+panacota	panacota_pangenome	PASS	
+panacota	panacota_prepare	PASS	
+panacota	panacota_tree	PASS	
+panaln	panaln_align	Failed	tool bug: panaln align crashes (index out of boundary) on exact reads for genomes of 30 kb to 47 Mb and writes a SAM header only
+panaln	panaln_combine	PASS	
+panaln	panaln_index	Not completed	index files are created, but they cannot be confirmed because panaln align crashes on them
+panaroo	panaroo	PASS	
+panaroo	panaroo_extract_gene	PASS	
+panaroo	panaroo_filter_pa	PASS	
+panaroo	panaroo_fmg	Not completed	with 4 genomes and a substitution-rate tree (no dated tree) the likelihood is NaN and the estimates are at the lower bound, so the result cannot be confirmed
+panaroo	panaroo_gene_neighbourhood	PASS	
+panaroo	panaroo_generate_gffs	PASS	
+panaroo	panaroo_img	PASS	
+panaroo	panaroo_integrate	Failed	tool bug: the new genome is named x in the presence/absence tables (only final_graph.gml gets the real name)
+panaroo	panaroo_merge	PASS	
+panaroo	panaroo_msa	PASS	
+panaroo	panaroo_plot_abundance	PASS	
+panaroo	panaroo_qc	PASS	
+panaroo	panaroo_run_prokka	PASS	
+panaroo	panaroo_spydrpick	PASS	
+pancake	pancake_addAli	PASS	
+pancake	pancake_addChrom	PASS	
+pancake	pancake_core	PASS	
+pancake	pancake_create	PASS	
+pancake	pancake_graph	PASS	
+pancake	pancake_sequence	PASS	
+pancake	pancake_singletons	PASS	
+pancake	pancake_specify	PASS	
+pancake	pancake_status	PASS	
+panchip	panchip_analysis	Not completed	needs the PanChIP library (more than 13.6 GB download from panchip init)
+panchip	panchip_filter	Not completed	needs the PanChIP library (more than 13.6 GB download from panchip init)
+panchip	panchip_init	Not completed	needs the PanChIP library (more than 13.6 GB download from panchip init)
+pandoc	pandoc	PASS	
+pandora	pandora_compare	PASS	
+pandora	pandora_discover	PASS	
+pandora	pandora_get_vcf_ref	PASS	works with a 4-path query; the tool aborts (PRG is empty) with a query of only one or two sequences
+pandora	pandora_index	PASS	
+pandora	pandora_map	PASS	
+pandora	pandora_merge_index	PASS	
+pandora	pandora_random	PASS	
+pandora	pandora_seq2path	PASS	top path works; with -i the tool aborts when the PRG file has more than one locus (one-locus PRG works)
+pandora	pandora_walk	PASS	
+panfeed	panfeed	PASS	
+panfeed	panfeed_panfeed-get-clusters	PASS	synthetic data: planted association p-values on real panfeed hashes; fixed output (stdout and -o file)
+panfeed	panfeed_panfeed-get-kmers	PASS	synthetic data: planted association p-values on real panfeed k-mers; fixed output (stdout and -o file)
+panfeed	panfeed_panfeed-plot	PASS	fixed output collection and output directory creation; plots drawn from get-kmers output with planted p-values
+pangbank-api	pangbank-api_pangbank_db_add-collection-release	PASS	synthetic data: tool's own functional-test set (3 genomes, 2 pangenomes); new CWL written
+pangbank-api	pangbank-api_pangbank_db_delete-collection	PASS	synthetic data: tool's own functional-test set (3 genomes, 2 pangenomes); new CWL written
+pangbank-api	pangbank-api_pangbank_db_genome-metadata_add	PASS	synthetic data: tool's own functional-test set (3 genomes, 2 pangenomes); new CWL written
+pangbank-api	pangbank-api_pangbank_db_genome-metadata_delete	PASS	synthetic data: tool's own functional-test set (3 genomes, 2 pangenomes); new CWL written
+pangbank-api	pangbank-api_pangbank_db_genome-metadata_list	PASS	synthetic data: tool's own functional-test set (3 genomes, 2 pangenomes); new CWL written
+pangbank-api	pangbank-api_pangbank_db_list-collections	PASS	synthetic data: tool's own functional-test set (3 genomes, 2 pangenomes); new CWL written
+pangene	pangene	PASS	fixed: output is stdout (GFA or BED); tested on the tool's own C4 gene alignments
+pangenie	pangenie_PanGenie	PASS	fixed -d (flag, not a path) and index files staging; output equals the repo demo test_genotyping.vcf
+pangenie	pangenie_PanGenie-index	PASS	tool's own demo data; index files written
+pangenie	pangenie_PanGenie-sampling	PASS	new CWL; tool's own demo data; sampled panel written
+pangenie	pangenie_PanGenie-vcf	PASS	fixed index prefix type and index file staging; output equals the repo demo test_genotyping.vcf
+pango-collapse	pango-collapse	PASS	fixed optional output (stdout capture); output equals the repo's expected tables
+pangolin	pangolin	PASS	fixed output collection and alignment file type; lineages match the repo's expected test_seqs assignments
+pangu	pangu	PASS	added .bai secondary files and fofn file staging; diplotype CYP2D6 *4x2/*5 equals the repo demo report
+pangwas	pangwas_align	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_annotate	Not completed	needs the large bakta database (over 1 GB), not downloaded
+pangwas	pangwas_binarize	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_cluster	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_collect	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_combine	PASS	new CWL; tool's own 4-sample test data; output equals the repo's expected file
+pangwas	pangwas_defrag	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_extract	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_gwas	PASS	tool's own 4-sample test data; rewritten output collection; tables equal the repo's expected files
+pangwas	pangwas_heatmap	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_manhattan	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_presence_absence	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_root_tree	PASS	output equals the repo's expected file; note: running without --outgroup crashes (tool bug), although help says it roots on the first taxon
+pangwas	pangwas_snps	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_structural	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_summarize	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_table_to_rtab	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_tree	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwas	pangwas_vcf_to_rtab	PASS	tool's own 4-sample test data; rewritten output collection; output equals the repo's expected files
+pangwes	pangwes_SpydrPick	PASS	fixed output switches and output collection; top 5000 pairs and MI scores equal the repo's expected queries
+pangwes	pangwes_gfa1_parser	PASS	fixed command and output stem argument; unitigs and edges equal the repo's expected files
+pangwes	pangwes_gwes_plot	Failed	image problem: R package data.table is missing and cannot be installed (default mode fails); only --no-deps works; the -l option crashes (tool bug)
+pangwes	pangwes_unitig_distance	Not completed	fixed command name and staging; ran on the repo's test graph, but the image is v0.3.0_alpha and gives distances (for example 3) that differ from the v1.0.0 expected file (6), so they could not be confirmed
+panisa	panisa_ISFinder_search.py	Not completed	The ISFinder web endpoint the tool posts to now returns 404, so no homology result can be checked.
+panisa	panisa_panISa.py	PASS	
+panman	panman_panmanUtils	PASS	
+panoptes-ui	panoptes-ui_panoptes	Not completed	Long-running monitoring web server that only serves a UI.
+panplexity	panplexity	PASS	
+pantax	pantax	Failed	image problem: pantaxr cannot load libgurobi110.so (symlink to missing libgurobi.so.11.0.3), so database build stops; CWL also fixed for -db, repeated -r, --output and the missing tmp folder.
+paperbanana	paperbanana	Not completed	Needs an LLM / image-generation provider API key and network access, which are not available.
+paplot	paplot_ca	PASS	
+paplot	paplot_index	PASS	
+paplot	paplot_mutation	PASS	
+paplot	paplot_pmsignature	PASS	
+paplot	paplot_qc	PASS	
+paplot	paplot_signature	PASS	
+paraclu	paraclu	PASS	synthetic data: planted tag clusters were found.
+paraclu	paraclu_paraclu-cut	PASS	synthetic data: planted clusters were kept after cutting.
+paragraph	paragraph	PASS	
+paragraph	paragraph_addVariants.py	PASS	synthetic data: a planted variant JSON added three new nodes to a real graph.
+paragraph	paragraph_grmpy	PASS	
+paragraph	paragraph_grmpy-vcf-merge.py	Failed	image problem: htslib assertion bcf_update_format (core dump) when writing the merged VCF.
+paragraph	paragraph_idxdepth	PASS	--output-bins crashes with 'BAM index reading not available yet'; the depth JSON is correct.
+paragraph	paragraph_msa2vcf.py	Failed	image problem: bcftools in the image cannot load libcrypto.so.1.0.0.
+paragraph	paragraph_multigrmpy.py	Failed	image problem: htslib assertion bcf_update_format (core dump) when writing genotypes.vcf.gz, so the final VCF is empty.
+paragraph	paragraph_multiparagraph.py	PASS	
+paragraph	paragraph_paragraph2dot.py	PASS	
+paragraph	paragraph_vcf2paragraph.py	PASS	
+parallel	parallel	PASS	
+parallel-fastq-dump	parallel-fastq-dump	Failed	image problem: sra-tools 2.10.9 in the image has no CA bundle (TLS error 'certificate is not correctly signed'), so sra-stat and fastq-dump cannot reach NCBI.
+parallel-meta-suite	parallel-meta-suite_PM-pipeline	Not completed	pipeline, skipped (it also needs a reference database that is not in the image).
+parallel-virfinder	parallel-virfinder_parallel-virfinder.py	PASS	
+paraphase	paraphase	Failed	image problem: samtools and minimap2 are missing from the image, so paraphase stops with 'samtools is not found' (exit code 0, no output).
+parasail	parasail_parasail_aligner	PASS	
+parasail	parasail_parasail_stats	PASS	
+parascopy	parascopy_call	PASS	Used the cn output directory; pooled variants at the DDT/DDTL PSVs with 0/0/1/1 genotypes.
+parascopy	parascopy_cn	PASS	DDT/DDTL locus: agCN 4 with quality 35.8, from the depth output above.
+parascopy	parascopy_cn-using	PASS	Reused the model written by cn; same agCN 4 result.
+parascopy	parascopy_depth	PASS	HG00113 reads (chr22:22.5-25.5 Mb slice of the 1000 Genomes CRAM) on a chr22-only reference with 100 bp tiled windows; the depth table was used by cn.
+parascopy	parascopy_examine	PASS	Same chr22 table subset; regions split by reference copy number.
+parascopy	parascopy_msa	PASS	Same chr22 table subset; clustal and csv alignment of DDT against DDTL.
+parascopy	parascopy_pool	PASS	Pooled 3153 reads from the DDT/DDTL copies, in both BAM-file and directory output modes.
+parascopy	parascopy_pretable	Failed	image problem: bedtools is not in the image (FileNotFoundError: 'bedtools'), so the pre-table cannot be built.
+parascopy	parascopy_psvs	PASS	Same chr22 table subset; the PSV positions match the DDT model (chr22:23956207, 23956325, 23956337).
+parascopy	parascopy_table	Not completed	Needs a pre-table, and the pretable step cannot run because bedtools is missing from the image.
+parascopy	parascopy_view	PASS	Precomputed GRCh38 homology table (Zenodo) cut to chr22:23.94-24.00 Mb; the duplicated DDT/DDTL pair is listed.
+paraviewer	paraviewer	Not completed	needs paraphase result files (PacBio HiFi run) and IGV with a display, which the image does not contain
+parebrick	parebrick	PASS	
+parebrick	parebrick_charts	PASS	
+pargenes	pargenes_pargenes.py	PASS	
+parm	parm_mutagenesis	PASS	
+parm	parm_plot	PASS	
+parm	parm_predict	PASS	
+parm	parm_train	PASS	
+parmed	parmed	PASS	
+parnas	parnas	PASS	
+parsinsert	parsinsert	PASS	
+parsnp	parsnp	PASS	
+pasa	pasa	PASS	ran the PASA assembler on the repository's real Arabidopsis alignments (39 alignments of one gene) and got one correct assembly
+pass	pass_PASS	PASS	
+pasta	pasta_run_pasta.py	PASS	
+pastml	pastml	PASS	
+pastml	pastml_geomap	Failed	image problem: geomap crashes with numpy AttributeError (np.str was removed) in generate_geomap.py
+pastml	pastml_name_tree	PASS	
+pastml	pastml_transition_counter	PASS	
+pastrami	pastrami_aggregate	Failed	image problem: Rscript is not installed in the image, the NNLS step of aggregate fails and the estimates file is not written
+pastrami	pastrami_all	Failed	image problem: Rscript is not installed in the image, the final NNLS step fails after the pickle and copying files are written
+pastrami	pastrami_build	PASS	real 1000 Genomes phase 3 SNPs (100 kb per chromosome, 90 phased haplotypes of YRI, CEU and CHB); top copying population equals own population for 78 of 90
+pastrami	pastrami_coanc	Failed	tool bug: coanc unpacks 3 columns from the 4-column haplotype table that hapmake writes (ValueError at pastrami.py line 1167), so it always fails
+pastrami	pastrami_hapmake	PASS	output identical to hap.tsv in the pastrami repository
+pastrami	pastrami_query	PASS	real 1000 Genomes data; ASW query haplotypes copy mostly from YRI, MXL query haplotypes from CEU and CHB
+pasty	pasty	PASS	
+pathogentrack	pathogentrack_align	Failed	image problem: STAR not installed in the image, the tool prints status 127 and writes no output
+pathogentrack	pathogentrack_classify	Failed	image problem: kraken2 not installed in the image, the tool prints status 127 and writes no output
+pathogentrack	pathogentrack_count	Failed	image problem: umi_tools, fastp, STAR and kraken2 not installed in the image, the tool prints status 127 and writes no output
+pathogentrack	pathogentrack_extract	Failed	image problem: umi_tools not installed in the image, the tool prints status 127 and writes no output
+pathogentrack	pathogentrack_filter	Failed	image problem: fastp not installed in the image, the tool prints status 127 and writes no output
+pathogentrack	pathogentrack_quant	PASS	synthetic data: kraken2 input made from SARS-CoV-2 reads spiked into 10x barcodes (classify not runnable in the image)
+pathogentrack	pathogentrack_trim	PASS	
+pathoscope	pathoscope_ID	Failed	tool bug: PathoReportA.write_tsv_report writes str rows to a binary file (Python 2 code on Python 3.13), so ID crashes before the report is complete
+pathoscope	pathoscope_LIB	Failed	tool bug: pathoLib.py uses Python 2 fp.next() and crashes on Python 3.13 for any input
+pathoscope	pathoscope_MAP	PASS	
+pathoscope	pathoscope_QC	Failed	image problem: PathoQC (pathoqc.py) is not installed in the image, the tool prints a not-found message and writes nothing
+pathoscope	pathoscope_REP	Failed	tool bug: the same write_tsv_report crash (TypeError, bytes-like object is required) in REP
+pathracer	pathracer	PASS	fixed --output (was --output-directory); ran 40 SARS-CoV-2 protein HMMs on a real SPAdes GFA graph, the M and E proteins were recovered correctly
+pathwaymatcher	pathwaymatcher_match-chrbp	PASS	
+pathwaymatcher	pathwaymatcher_match-ensembl	PASS	
+pathwaymatcher	pathwaymatcher_match-genes	PASS	
+pathwaymatcher	pathwaymatcher_match-modified-peptides	PASS	
+pathwaymatcher	pathwaymatcher_match-peptides	PASS	
+pathwaymatcher	pathwaymatcher_match-proteoforms	PASS	
+pathwaymatcher	pathwaymatcher_match-rsids	PASS	
+pathwaymatcher	pathwaymatcher_match-uniprot	PASS	
+pathwaymatcher	pathwaymatcher_match-vcf	PASS	
+patman	patman	PASS	
+pauvre	pauvre_browser	Failed	image problem: Python module gffutils is missing, pauvre browser fails on import
+pauvre	pauvre_custommargin	PASS	
+pauvre	pauvre_marginplot	PASS	
+pauvre	pauvre_redwood	Failed	tool bug: SyntaxError in pauvre/redwood.py line 706 (ifargs.BASENAME), redwood cannot start
+pauvre	pauvre_stats	PASS	
+pauvre	pauvre_synplot	Failed	image problem: Python module progressbar is missing, pauvre synplot fails on import

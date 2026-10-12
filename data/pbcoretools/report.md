@@ -1,5 +1,12 @@
 # pbcoretools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbcoretools_bamsieve | PASS |  |
+| pbcoretools_pbvalidate | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

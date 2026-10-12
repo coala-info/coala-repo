@@ -11,6 +11,11 @@ inputs:
     doc: CCS BAM or ConsensusReadSet XML
     inputBinding:
       position: 1
+  - id: output_bam
+    type: string
+    doc: Output CCS BAM or ConsensusReadSet XML file name.
+    inputBinding:
+      position: 2
   - id: log_file
     type:
       - 'null'
@@ -49,7 +54,7 @@ outputs:
     type: File
     doc: Output CCS BAM or ConsensusReadSet XML
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_bam)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbtk:3.5.0--h9ee0642_0

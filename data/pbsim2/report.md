@@ -1,5 +1,11 @@
 # pbsim2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbsim2_pbsim | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

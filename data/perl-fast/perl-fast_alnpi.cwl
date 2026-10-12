@@ -6,13 +6,8 @@ doc: "Calculate nucleotide diversity, Watterson estimator, or Tajima's D from mu
   alignments.\n\nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: multifasta_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input multi-fasta files
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input multi-fasta files (read from standard input)
   - id: absolute
     type:
       - 'null'
@@ -64,7 +59,7 @@ inputs:
   - id: logname
     type:
       - 'null'
-      - File
+      - string
     doc: Use [string] as the name of the logfile.
     inputBinding:
       position: 102
@@ -110,3 +105,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_alnpi.out
+stdin: $(inputs.multifasta_files.path)

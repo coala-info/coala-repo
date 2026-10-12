@@ -1,5 +1,11 @@
 # perl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl | PASS |  |
+
 ## perl
 
 ### Tool Description

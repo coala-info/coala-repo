@@ -8,6 +8,8 @@ doc: "Calculate the depth at each base, per-nucleotide\n\nTool homepage: https:/
 inputs:
   - id: reads
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input indexed BAM/CRAM to analyze
     inputBinding:
       position: 1

@@ -10,6 +10,11 @@ inputs:
     doc: Input file(s) as BAM, DATASET.XML, FASTA[.GZ], FASTQ[.GZ], or FOFN
     inputBinding:
       position: 1
+  - id: output_file_name
+    type: string
+    doc: Output file as BAM, DATASET.XML, FASTA.GZ or FASTQ.GZ
+    inputBinding:
+      position: 2
   - id: clobber
     type:
       - 'null'
@@ -71,7 +76,7 @@ outputs:
     type: File
     doc: Output file as BAM, DATASET.XML, FASTA.GZ or FASTQ.GZ
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file_name)
   - id: dup_file
     type:
       - 'null'

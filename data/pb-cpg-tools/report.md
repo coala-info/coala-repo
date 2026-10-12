@@ -1,5 +1,11 @@
 # pb-cpg-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pb-cpg-tools_aligned_bam_to_cpg_scores | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

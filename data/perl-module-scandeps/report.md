@@ -1,5 +1,11 @@
 # perl-module-scandeps CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-module-scandeps | PASS |  |
+
 ## perl-module-scandeps
 
 ### Tool Description

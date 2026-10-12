@@ -1,5 +1,12 @@
 # pdivas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pdivas_predict | PASS |  |
+| pdivas_vcf2tsv | Not completed | runs, but the last two columns differ from the expected example TSV (wo_annots versus dot, split PD_ID and PDIVAS), which may be outdated |
+
 ## pdivas_predict
 
 ### Tool Description

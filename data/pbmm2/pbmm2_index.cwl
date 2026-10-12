@@ -8,11 +8,14 @@ doc: "Index reference and store as .mmi file\n\nTool homepage: https://github.co
 inputs:
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference FASTA, ReferenceSet XML
     inputBinding:
       position: 1
+  - id: output_index_name
+    type: string
+    doc: Output Reference Index (for example ref.mmi)
+    inputBinding:
+      position: 2
   - id: kmer_size
     type:
       - 'null'
@@ -24,7 +27,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log to a file, instead of stderr.
     inputBinding:
       position: 102
@@ -75,7 +78,16 @@ outputs:
     type: File
     doc: Output Reference Index
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_index_name)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file, when --log-file is used
+    outputBinding:
+      glob: $(inputs.log_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbmm2:26.1.0--h9ee0642_0

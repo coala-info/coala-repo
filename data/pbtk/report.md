@@ -1,5 +1,18 @@
 # pbtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbtk_bam2fasta | PASS |  |
+| pbtk_bam2fastq | PASS |  |
+| pbtk_ccs-kinetics-bystrandify | PASS |  |
+| pbtk_extracthifi | PASS |  |
+| pbtk_pbindex | PASS |  |
+| pbtk_pbindexdump | PASS |  |
+| pbtk_pbmerge | PASS |  |
+| pbtk_zmwfilter | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

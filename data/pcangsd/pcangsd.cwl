@@ -253,6 +253,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --plink
+  - id: plink_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The PLINK files (.bed, .bim, .fam) to stage in the working directory
+      so that the --plink prefix resolves.
   - id: post
     type:
       - 'null'
@@ -350,6 +357,9 @@ outputs:
       glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.plink_files ? inputs.plink_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pcangsd:1.36.4--py311h8ddd9a4_0

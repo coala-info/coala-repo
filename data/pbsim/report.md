@@ -1,5 +1,11 @@
 # pbsim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbsim | PASS |  |
+
 ## pbsim
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # pbsv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbsv_call | PASS |  |
+| pbsv_discover | PASS |  |
+
 ## pbsv_discover
 
 ### Tool Description

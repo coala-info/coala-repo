@@ -1,5 +1,11 @@
 # pbgzip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbgzip | PASS |  |
+
 ## pbgzip
 
 ### Tool Description

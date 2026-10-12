@@ -188,6 +188,17 @@ outputs:
     doc: alarms.json for errors
     outputBinding:
       glob: $(inputs.alarms_out_path)
+  - id: validation_report
+    type:
+      - 'null'
+      - File
+    doc: Standard output of pbvalidate (validation messages)
+    outputBinding:
+      glob: pbvalidate_stdout.txt
+stdout: pbvalidate_stdout.txt
+successCodes:
+  - 0
+  - 1
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # perlprimer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perlprimer | Not completed | GUI-only program (Perl/Tk window), no command-line mode |
+
 ## perlprimer
 
 ### Tool Description

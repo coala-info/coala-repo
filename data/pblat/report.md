@@ -1,5 +1,11 @@
 # pblat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pblat | PASS |  |
+
 ## pblat
 
 ### Tool Description

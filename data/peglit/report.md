@@ -1,5 +1,13 @@
 # peglit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| peglit | PASS |  |
+| peglit_inspect | PASS |  |
+| peglit_score | PASS |  |
+
 ## peglit
 
 ### Tool Description
@@ -97,3 +105,57 @@ output options:
   --motif-thresh-col MOTIF_THRESH_COL
 ```
 
+## peglit_score
+
+### Tool Description
+Score a given linker for a pegRNA (PBS, spacer, template and scaffold basepairing subscores).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/peglit:1.1.0--pyh7cba7a3_0
+- **Homepage**: https://github.com/sshen8/peglit/
+- **Package**: https://anaconda.org/channels/bioconda/packages/peglit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: peglit.score spacer,scaffold,template,pbs linker [options]
+
+Scores.
+
+positional arguments:
+  sequence
+  linker
+
+options:
+  -h, --help  show this help message and exit
+  --max
+  --verbose
+```
+
+## peglit_inspect
+
+### Tool Description
+Inspect a given linker for a pegRNA: score, subscores and predicted RNA structures.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/peglit:1.1.0--pyh7cba7a3_0
+- **Homepage**: https://github.com/sshen8/peglit/
+- **Package**: https://anaconda.org/channels/bioconda/packages/peglit/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: peglit.inspect spacer,scaffold,template,pbs,motif linker [options]
+
+Scores.
+
+positional arguments:
+  sequence
+  linker
+
+options:
+  -h, --help            show this help message and exit
+  --epsilon EPSILON
+  --scaffold-thresh SCAFFOLD_THRESH
+  --motif-thresh MOTIF_THRESH
+```

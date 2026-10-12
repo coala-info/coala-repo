@@ -6,13 +6,8 @@ doc: "Print the first few sequence records of a multifasta file.\n\nTool homepag
   http://metacpan.org/pod/FAST"
 inputs:
   - id: multifasta_file
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input multifasta file(s)
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input multifasta file(s) (read from standard input)
   - id: annotate
     type:
       - 'null'
@@ -88,3 +83,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fashead.out
+stdin: $(inputs.multifasta_file.path)

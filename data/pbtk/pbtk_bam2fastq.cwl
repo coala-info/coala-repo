@@ -9,6 +9,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .pbi
+        required: false
     doc: Input file(s).
     inputBinding:
       position: 1

@@ -1,5 +1,12 @@
 # perl-fastx-reader CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-fastx-reader_fqc | PASS |  |
+| perl-fastx-reader_fqlen.pl | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 
@@ -106,3 +113,73 @@ COPYRIGHT AND LICENSE
       The MIT (X11) License
 ```
 
+## perl-fastx-reader_fqlen.pl
+
+### Tool Description
+A demo implementation to filter fastx files by length
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/perl-fastx-reader:1.12.0--pl5321hdfd78af_0
+- **Homepage**: https://github.com/telatin/FASTQ-Parser
+- **Package**: https://anaconda.org/channels/bioconda/packages/perl-fastx-reader/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+NAME
+    fqlen.pl - A demo implementation to filter fastx files by length
+
+VERSION
+    version 1.12.0
+
+SYNOPSIS
+      fqc [options] [FILE1 FILE2 FILE3...]
+
+DESCRIPTION
+    A program to filter sequences by minimum/maximum lengths. Can process
+    multiple files and rename the produced sequences.
+
+PARAMETERS
+  FILE NAME
+    *-a, --abspath*
+        Print the absolute path of the filename (the absolute path is always
+        the table key, but if relative paths are supplied, they will be
+        printed).
+
+    *-m, --min INT*
+        Minimum length to print a sequence
+
+    *-x, --max INT*
+        Maximum length to print a sequence
+
+    *-l, --len*
+        Add read length as comment
+
+    *-f, --fasta*
+        Force FASTA output (default: as INPUT)
+
+    *-w, --fasta-width INT*
+        Paginate FASTA sequences (default: no)
+
+    *-n, --namescheme*
+        Sequence name scheme:
+
+    *-p, --prefix STR*
+        Use as sequence name prefix this string
+
+    *-c, --strip-comment*
+        Remove sequence comment (default: no)
+
+    *--verbose*
+        Add verbose feedback on % of printed reads
+
+AUTHOR
+    Andrea Telatin <andrea@telatin.com>
+
+COPYRIGHT AND LICENSE
+    This software is Copyright (c) 2019 by Andrea Telatin.
+
+    This is free software, licensed under:
+
+      The MIT (X11) License
+```

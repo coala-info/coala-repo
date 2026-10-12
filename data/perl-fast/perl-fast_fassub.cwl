@@ -6,27 +6,18 @@ doc: "Perform regex substitutions on FASTA/FASTQ identifiers, descriptions, or s
   \ \nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: perl_regex
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Perl regular expression to match
     inputBinding:
-      position: 1
+      position: 201
   - id: substitution
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Substitution string
     inputBinding:
-      position: 2
+      position: 202
   - id: multifasta_file
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input multifasta file(s)
-    inputBinding:
-      position: 3
+    type: File
+    doc: Input multifasta file(s) (read from standard input)
   - id: comment
     type:
       - 'null'
@@ -104,21 +95,20 @@ inputs:
     inputBinding:
       position: 104
       prefix: --sequence
-  - id: logname_path
-    type: string
-    inputBinding:
-      position: 105
-      prefix: --logname
-outputs:
   - id: logname
     type:
       - 'null'
-      - File
+      - string
     doc: Use [string] as the name of the logfile.
-    outputBinding:
-      glob: $(inputs.logname_path)
-requirements:
-  - class: InlineJavascriptRequirement
+    inputBinding:
+      position: 104
+      prefix: --logname
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
+stdout: perl-fast_fassub.out
+stdin: $(inputs.multifasta_file.path)

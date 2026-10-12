@@ -47,8 +47,10 @@ inputs:
   - id: errhmm
     type:
       - 'null'
+      - string
       - File
-    doc: error model
+    doc: error model. Give a File, or a path inside the image such as
+      /usr/local/data/ERRHMM-SEQUEL.model.
     inputBinding:
       position: 101
       prefix: --errhmm
@@ -63,7 +65,7 @@ inputs:
   - id: hp_del_bias
     type:
       - 'null'
-      - int
+      - float
     doc: bias intensity of deletion in homopolymer
     inputBinding:
       position: 101
@@ -127,8 +129,10 @@ inputs:
   - id: qshmm
     type:
       - 'null'
+      - string
       - File
-    doc: quality score model
+    doc: quality score model. Give a File, or a path inside the image such as
+      /usr/local/data/QSHMM-RSII.model.
     inputBinding:
       position: 101
       prefix: --qshmm

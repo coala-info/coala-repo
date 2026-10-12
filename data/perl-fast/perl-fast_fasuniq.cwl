@@ -6,12 +6,8 @@ doc: "Removes duplicate sequences from FASTA/FASTQ files by matching on descript
   or identifiers.\n\nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: multifasta_file
-    type:
-      - 'null'
-      - File
-    doc: Input MULTIFASTA file
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input MULTIFASTA file (read from standard input)
   - id: comment
     type:
       - 'null'
@@ -111,3 +107,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fasuniq.out
+stdin: $(inputs.multifasta_file.path)

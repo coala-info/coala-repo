@@ -1,5 +1,11 @@
 # pdb2fasta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pdb2fasta | PASS |  |
+
 ## pdb2fasta
 
 ### Tool Description

@@ -6,34 +6,23 @@ doc: "Filter sequences from a multi-fasta file based on taxonomic information us
   NCBI nodes and names files.\n\nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: nodes_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: NCBI nodes.dmp file
     inputBinding:
-      position: 1
+      position: 201
   - id: names_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: NCBI names.dmp file (not used in --tax-id-mode)
     inputBinding:
-      position: 2
+      position: 202
   - id: taxon
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Taxon name or ID to filter by
     inputBinding:
-      position: 3
+      position: 203
   - id: multifasta_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input multi-fasta file(s)
-    inputBinding:
-      position: 4
+    type: File
+    doc: Input multi-fasta file(s) (read from standard input)
   - id: comment
     type:
       - 'null'
@@ -114,7 +103,7 @@ inputs:
     doc: in field-mode (-f) split on perl-regex <regex> instead of the default separator
     inputBinding:
       position: 105
-      prefix: --regex-split
+      prefix: --split-on-regex
   - id: strict_negate
     type:
       - 'null'
@@ -140,3 +129,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fastax.out
+stdin: $(inputs.multifasta_files.path)

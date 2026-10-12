@@ -13,7 +13,7 @@ inputs:
         items: File
     doc: XML files to query.
     inputBinding:
-      position: 1
+      position: 200
   - id: no_external_dtd
     type:
       - 'null'
@@ -26,7 +26,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: use prefix instead of nothing.
+    doc: Postfix, use postfix instead of nothing.
     inputBinding:
       position: 102
       prefix: -p
@@ -34,10 +34,11 @@ inputs:
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: -e
     doc: XPath query to execute. At least one query must be provided.
     inputBinding:
       position: 102
-      prefix: -e
   - id: quiet
     type:
       - 'null'

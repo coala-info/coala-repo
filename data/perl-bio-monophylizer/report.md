@@ -1,5 +1,11 @@
 # perl-bio-monophylizer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-bio-monophylizer_monophylizer.pl | PASS |  |
+
 ## perl-bio-monophylizer_monophylizer.pl
 
 ### Tool Description

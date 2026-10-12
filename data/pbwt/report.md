@@ -1,5 +1,11 @@
 # pbwt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbwt | PASS | reference imputation on the repo's OMNI.vcf example matches the expected VCF exactly; VCFs with missing ('.') genotypes are not accepted by pbwt 3.0. |
+
 ## pbwt
 
 ### Tool Description

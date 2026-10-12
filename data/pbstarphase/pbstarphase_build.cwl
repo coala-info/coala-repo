@@ -17,16 +17,13 @@ inputs:
   - id: reference
     type: File
     doc: Reference FASTA file
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101
@@ -45,6 +42,8 @@ outputs:
       glob: $(inputs.output_db_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbstarphase:2.0.1--h9ee0642_0

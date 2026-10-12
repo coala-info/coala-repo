@@ -1,5 +1,17 @@
 # peakranger CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| peakranger_bcp | PASS |  |
+| peakranger_ccat | PASS |  |
+| peakranger_lc | PASS |  |
+| peakranger_nr | PASS |  |
+| peakranger_ranger | PASS |  |
+| peakranger_wig | PASS |  |
+| peakranger_wigpe | PASS |  |
+
 ## peakranger_nr
 
 ### Tool Description

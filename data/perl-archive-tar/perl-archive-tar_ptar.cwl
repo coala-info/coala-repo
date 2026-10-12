@@ -12,12 +12,20 @@ inputs:
         items: File
     doc: Files to be added to the archive
     inputBinding:
-      position: 1
+      position: 200
   - id: archive_file
     type:
       - 'null'
       - File
-    doc: Name of the ARCHIVE_FILE to use. Default is './default.tar'
+    doc: Existing ARCHIVE_FILE to list (-t) or extract (-x)
+    inputBinding:
+      position: 102
+      prefix: -f
+  - id: output_archive
+    type:
+      - 'null'
+      - string
+    doc: Name of the ARCHIVE_FILE to create with -c. Default is './default.tar'
     inputBinding:
       position: 102
       prefix: -f
@@ -102,6 +110,23 @@ inputs:
       position: 102
       prefix: -v
 outputs:
+  - id: created_archive
+    type:
+      - 'null'
+      - File
+    doc: Archive created with -c
+    outputBinding:
+      glob: $(inputs.output_archive)
+  - id: extracted_files
+    type:
+      - 'null'
+      - type: array
+        items:
+          - File
+          - Directory
+    doc: Files and folders extracted with -x
+    outputBinding:
+      glob: '*'
   - id: stdout
     type: stdout
     doc: Standard output

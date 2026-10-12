@@ -10,6 +10,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Control libraries
     inputBinding:
       position: 101
@@ -18,6 +21,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Experimental libraries
     inputBinding:
       position: 101

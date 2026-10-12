@@ -35,7 +35,9 @@ inputs:
       position: 101
       prefix: --gtf
   - id: in
-    type: string
+    type:
+      - File
+      - Directory
     doc: 'Three different inputs possible: (1) output folder of peakhood extract with
       genomic and transcript context sequence sets in which to look for given --motif.
       (2) BED file (genomic or transcript regions) in which to look for given --motif.

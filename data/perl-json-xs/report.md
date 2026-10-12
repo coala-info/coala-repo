@@ -1,5 +1,11 @@
 # perl-json-xs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-json-xs | PASS | cbor output fails because the optional CBOR::XS module is not in the image; json and dumper work |
+
 ## perl-json-xs
 
 ### Tool Description

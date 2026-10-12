@@ -1,5 +1,11 @@
 # perl-json-pp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-json-pp_json_pp | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

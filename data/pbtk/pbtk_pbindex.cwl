@@ -36,10 +36,17 @@ inputs:
       position: 102
       prefix: --num-threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_pbi
+    type: File
+    doc: PacBio index file, the input BAM name plus .pbi suffix.
+    outputBinding:
+      glob: $(inputs.input_bam.basename).pbi
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_bam)
+        writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbtk:3.5.0--h9ee0642_0
-stdout: pbtk_pbindex.out

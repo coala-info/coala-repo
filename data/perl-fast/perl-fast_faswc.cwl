@@ -6,13 +6,8 @@ doc: "Output tallies of sequences and/or characters in FASTA files.\n\nTool home
   http://metacpan.org/pod/FAST"
 inputs:
   - id: multifasta_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input multi-FASTA files
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input multi-FASTA files (read from standard input)
   - id: characters
     type:
       - 'null'
@@ -56,7 +51,7 @@ inputs:
   - id: logname
     type:
       - 'null'
-      - File
+      - string
     doc: Use [string] as the name of the logfile.
     inputBinding:
       position: 102
@@ -85,3 +80,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_faswc.out
+stdin: $(inputs.multifasta_files.path)

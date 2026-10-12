@@ -1,5 +1,12 @@
 # pbaa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbaa_bampaint | PASS |  |
+| pbaa_cluster | PASS |  |
+
 ## pbaa_cluster
 
 ### Tool Description

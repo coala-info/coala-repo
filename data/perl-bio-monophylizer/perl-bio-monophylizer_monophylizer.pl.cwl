@@ -75,12 +75,18 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
-    doc: Influences how verbose the script is. Use once for info, twice for 
-      debugging.
+      - boolean
+    doc: Influences how verbose the script is. Use once for informational messages.
     inputBinding:
       position: 101
+      prefix: -verbose
+  - id: verbose_debug
+    type:
+      - 'null'
+      - boolean
+    doc: Second -verbose flag; together with verbose it also emits debugging messages.
+    inputBinding:
+      position: 102
       prefix: -verbose
   - id: whitespace
     type:

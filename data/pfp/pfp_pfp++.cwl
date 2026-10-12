@@ -114,11 +114,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: List of comma ',' separated reference files. Assuming in genome order!
+        items: File
+    doc: List of comma ',' separated reference files (gzip compressed FASTA).
+      Assuming in genome order!
     inputBinding:
       position: 101
       prefix: --ref
+      itemSeparator: ','
   - id: samples
     type:
       - 'null'
@@ -163,11 +165,16 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: List of comma ',' separated vcf files. Assuming in genome order!
+        items: File
+    doc: List of comma ',' separated vcf files (bgzip compressed with .tbi
+      index). Assuming in genome order!
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 101
       prefix: --vcf
+      itemSeparator: ','
   - id: verbose
     type:
       - 'null'

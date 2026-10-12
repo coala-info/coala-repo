@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: alleleCounts.pl
+baseCommand: alleleCounter.pl
 label: perl-sanger-cgp-allelecount_alleleCounter.pl
 doc: "Extract allele counts from BAM/CRAM files at specific loci.\n\nTool homepage:
   https://github.com/cancerit/alleleCount"
@@ -8,6 +8,11 @@ inputs:
   - id: bam
     type: File
     doc: BAM/CRAM file (expects co-located index) - if CRAM see '-ref'
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
       prefix: -bam
@@ -26,7 +31,7 @@ inputs:
       for each residue
     inputBinding:
       position: 101
-      prefix: -loci
+      prefix: -locus
   - id: map_qual
     type:
       - 'null'
@@ -48,6 +53,9 @@ inputs:
       - 'null'
       - File
     doc: genome.fa, required for CRAM (with colocated .fai)
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: -ref

@@ -6,20 +6,13 @@ doc: "Filter sequence records by their descriptions, fields, tags, or regex capt
   \nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: ranges
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Ranges to filter by
     inputBinding:
-      position: 1
+      position: 201
   - id: multifasta_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input multifasta files
-    inputBinding:
-      position: 2
+    type: File
+    doc: Input multifasta files (read from standard input)
   - id: comment
     type:
       - 'null'
@@ -74,7 +67,7 @@ inputs:
   - id: logname
     type:
       - 'null'
-      - File
+      - string
     doc: Use [string] as the name of the logfile.
     inputBinding:
       position: 103
@@ -130,3 +123,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fasfilter.out
+stdin: $(inputs.multifasta_files.path)

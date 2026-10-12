@@ -1,5 +1,12 @@
 # pftools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pftools_pfscanV3 | PASS | pftools3 test SH2/SH3 profiles on human VAV1: SH3, SH2, SH3 found at the known positions; fixed --unknown-symbol spelling and int types |
+| pftools_pfsearchV3 | PASS | pftools3 test SH3 profile on SH3 protein set and a kinase PROSITE pattern: expected proteins hit; profile now a File input, pattern separate |
+
 ## pftools_pfsearchV3
 
 ### Tool Description

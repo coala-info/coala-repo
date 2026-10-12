@@ -1,21 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nr
+baseCommand:
+  - peakranger
+  - nr
 label: peakranger_nr
-doc: Not enough command options.
+doc: Estimate ChIP-seq data quality (noise rate) from a data and a control file
 inputs:
   - id: control_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: control file
     inputBinding:
       position: 101
       prefix: --control
   - id: data_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: data file
     inputBinding:
       position: 101
@@ -35,6 +33,7 @@ inputs:
     doc: 'the format of the data file, can be one of : bowtie, sam, bam and bed'
     inputBinding:
       position: 101
+      prefix: --format
   - id: verbose
     type:
       - 'null'

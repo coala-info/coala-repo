@@ -10,12 +10,12 @@ inputs:
       items: File
     doc: XML files to split
     inputBinding:
-      position: 1
+      position: 200
   - id: base
     type:
       - 'null'
       - string
-    doc: Base name for the split files
+    doc: Base name for the output, files are named BASE-NN.ext
     inputBinding:
       position: 102
       prefix: -b
@@ -23,7 +23,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Condition to split the XML
+    doc: Generate a file for each element that passes the condition (XPath-like,
+      for example section)
     inputBinding:
       position: 102
       prefix: -c
@@ -39,7 +40,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Extension for the split files
+    doc: Extension to use for generated files
     inputBinding:
       position: 102
       prefix: -e
@@ -47,7 +48,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Split in place
+    doc: Use XInclude elements instead of processing instructions to mark where
+      sub files need to be included
     inputBinding:
       position: 102
       prefix: -i
@@ -55,18 +57,11 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Level at which to split the XML
+    doc: Level to cut at; 1 generates a file for each child of the root, 2 for
+      each grand child (default 1)
     inputBinding:
       position: 102
       prefix: -l
-  - id: merge
-    type:
-      - 'null'
-      - boolean
-    doc: Merge mode
-    inputBinding:
-      position: 102
-      prefix: -m
   - id: nb
     type:
       - 'null'
@@ -79,7 +74,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of elements to group in each split file
+    doc: Group this many elements in a single file; used with -l
     inputBinding:
       position: 102
       prefix: -g
@@ -103,7 +98,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Size of the split files
+    doc: Generate files of approximately this size (bytes, Kb, Mb or Gb); used
+      with -l
     inputBinding:
       position: 102
       prefix: -s
@@ -119,6 +115,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: split_files
+    type:
+      type: array
+      items: File
+    doc: Generated files BASE-NN.ext; NN = 00 holds the main document
+    outputBinding:
+      glob: '*-[0-9]*'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-xml-twig:3.52--pl526_1

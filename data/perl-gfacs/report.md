@@ -1,5 +1,11 @@
 # perl-gfacs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-gfacs_gFACs.pl | PASS |  |
+
 ## perl-gfacs_gFACs.pl
 
 ### Tool Description

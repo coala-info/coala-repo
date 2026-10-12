@@ -1,5 +1,11 @@
 # perl-module-corelist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-module-corelist_corelist | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

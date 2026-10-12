@@ -1,5 +1,11 @@
 # perl-file-copy-link CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-file-copy-link_copylink | Not completed | copylink needs a real symbolic link as input, but cwltool stages inputs as regular files, so it fails with 'not a link' |
+
 ## Metadata
 - **Skill**: generated
 

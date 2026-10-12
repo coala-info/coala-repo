@@ -8,6 +8,12 @@ doc: "The enrich module determines which peptides are enriched in samples that h
   been assayed in n-replicate, as determined by user-specified thresholds.\n\nTool
   homepage: https://github.com/LadnerLab/PepSIRF"
 inputs:
+  - id: threshold_matrices
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Score matrix files named in the threshold file; they are staged in the working directory so the names in the threshold file resolve.
   - id: join_on
     type:
       - 'null'
@@ -118,7 +124,7 @@ outputs:
       enriched peptide files. Output to the same directory as enriched peptide 
       files.
     outputBinding:
-      glob: $(inputs.enrichment_failure_reason_path)
+      glob: $(inputs.output_directory_path)/$(inputs.enrichment_failure_reason_path)
   - id: output_directory
     type:
       - 'null'
@@ -135,6 +141,8 @@ outputs:
       glob: $(inputs.logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.threshold_matrices || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

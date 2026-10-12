@@ -16,6 +16,11 @@ inputs:
     doc: Bam file to add color tags.
     inputBinding:
       position: 2
+  - id: output_bam_name
+    type: string
+    doc: Output bam file name.
+    inputBinding:
+      position: 3
   - id: log_file
     type:
       - 'null'
@@ -43,9 +48,9 @@ inputs:
 outputs:
   - id: output_bam
     type: File
-    doc: Output bam file name.
+    doc: Output bam file with color tags added.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_bam_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbaa:1.2.0--h9ee0642_0

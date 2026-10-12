@@ -6,13 +6,8 @@ doc: "Translate nucleotide sequences to amino acids in FASTA/FASTQ files.\n\nToo
   homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: multifasta_file
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input FASTA or FASTQ files
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input FASTA or FASTQ files (read from standard input)
   - id: annotate
     type:
       - 'null'
@@ -166,3 +161,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fasxl.out
+stdin: $(inputs.multifasta_file.path)

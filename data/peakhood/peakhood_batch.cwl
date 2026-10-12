@@ -347,7 +347,7 @@ inputs:
     doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out
 outputs:
   - id: out_dir
     type: Directory

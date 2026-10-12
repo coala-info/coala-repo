@@ -1,5 +1,12 @@
 # pbfusion CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbfusion_discover | PASS |  |
+| pbfusion_gff-cache | PASS |  |
+
 ## pbfusion_discover
 
 ### Tool Description

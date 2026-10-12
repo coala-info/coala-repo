@@ -1,5 +1,11 @@
 # perl-velvetoptimiser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-velvetoptimiser_VelvetOptimiser.pl | PASS | fixed required --velvethfiles input; 180 kb genome assembled into few contigs with N50 above 130 kb |
+
 ## perl-velvetoptimiser_VelvetOptimiser.pl
 
 ### Tool Description

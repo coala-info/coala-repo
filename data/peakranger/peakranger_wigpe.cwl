@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wigpe
+baseCommand:
+  - peakranger
+  - wigpe
 label: peakranger_wigpe
 doc: WigPE 1.18
 inputs:
@@ -50,18 +52,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: output_path
+  - id: output_prefix
     type: string
-    doc: the output location
+    doc: the output location prefix; result files are written as <prefix>_*
     inputBinding:
       position: 102
       prefix: --output
 outputs:
-  - id: output
-    type: Directory
-    doc: the output location
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Result files written with the output prefix
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

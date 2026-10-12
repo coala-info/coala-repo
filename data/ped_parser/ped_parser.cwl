@@ -30,7 +30,7 @@ inputs:
   - id: logfile
     type:
       - 'null'
-      - File
+      - string
     doc: Path to log file. If none logging is printed to stderr.
     inputBinding:
       position: 102
@@ -97,6 +97,13 @@ outputs:
     doc: Specify the path to a file where results should be stored.
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file (written when --logfile is set)
+    outputBinding:
+      glob: $(inputs.logfile)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

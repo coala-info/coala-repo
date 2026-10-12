@@ -10,15 +10,17 @@ inputs:
       - File
     doc: Program file to execute
     inputBinding:
-      position: 1
+      position: 200
   - id: arguments
     type:
       - 'null'
       - type: array
-        items: string
-    doc: Arguments passed to the program file
+        items:
+          - string
+          - File
+    doc: Arguments passed to the program file (strings or input files)
     inputBinding:
-      position: 2
+      position: 201
   - id: all_warnings
     type:
       - 'null'
@@ -66,7 +68,8 @@ inputs:
     doc: print configuration summary (or a single Config.pm variable)
     inputBinding:
       position: 103
-      prefix: -V
+      prefix: '-d:'
+      separate: false
   - id: debugger
     type:
       - 'null'
@@ -74,7 +77,8 @@ inputs:
     doc: run program under debugger
     inputBinding:
       position: 103
-      prefix: -d
+      prefix: '-d:'
+      separate: false
   - id: debugging_flags
     type:
       - 'null'
@@ -82,7 +86,8 @@ inputs:
     doc: set debugging flags (argument is a bit mask or alphabets)
     inputBinding:
       position: 103
-      prefix: -D
+      prefix: '-D'
+      separate: false
   - id: disable_warnings
     type:
       - 'null'
@@ -104,19 +109,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -e
     doc: one line of program (several -e's allowed, omit programfile)
     inputBinding:
       position: 103
-      prefix: -e
   - id: execute_command_features
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -E
     doc: like -e, but enables all optional features
     inputBinding:
       position: 103
-      prefix: -E
   - id: ignore_text
     type:
       - 'null'
@@ -124,16 +131,18 @@ inputs:
     doc: 'ignore text before #!perl line (optionally cd to directory)'
     inputBinding:
       position: 103
-      prefix: -x
+      prefix: '-x'
+      separate: false
   - id: include_directory
     type:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: -I
     doc: specify @INC/#include directory (several -I's allowed)
     inputBinding:
       position: 103
-      prefix: -I
   - id: inplace_edit
     type:
       - 'null'
@@ -141,7 +150,8 @@ inputs:
     doc: edit <> files in place (makes backup if extension supplied)
     inputBinding:
       position: 103
-      prefix: -i
+      prefix: '-i'
+      separate: false
   - id: line_ending_processing
     type:
       - 'null'
@@ -149,16 +159,19 @@ inputs:
     doc: enable line ending processing, specifies line terminator
     inputBinding:
       position: 103
-      prefix: -l
+      prefix: '-l'
+      separate: false
   - id: module
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -m
+          separate: false
     doc: execute 'use/no module...' before executing program
     inputBinding:
       position: 103
-      prefix: -m
   - id: no_sitecustomize
     type:
       - 'null'
@@ -175,6 +188,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: '-0'
+      separate: false
   - id: search_path
     type:
       - 'null'
@@ -190,7 +204,8 @@ inputs:
     doc: split() pattern for -a switch (//'s are optional)
     inputBinding:
       position: 103
-      prefix: -F
+      prefix: '-F'
+      separate: false
   - id: switch_parsing
     type:
       - 'null'
@@ -222,7 +237,8 @@ inputs:
     doc: enables the listed Unicode features
     inputBinding:
       position: 103
-      prefix: -C
+      prefix: '-C'
+      separate: false
   - id: unsafe_operations
     type:
       - 'null'

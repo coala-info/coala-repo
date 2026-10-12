@@ -1,5 +1,12 @@
 # pbmm2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbmm2_align | PASS |  |
+| pbmm2_index | PASS |  |
+
 ## pbmm2_index
 
 ### Tool Description

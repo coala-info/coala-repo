@@ -14,6 +14,11 @@ inputs:
         inputBinding:
           prefix: --bam
           separate: true
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: Input alignment file in BAM format, can be specified multiple times; 
       required for HLA diplotyping
     inputBinding:
@@ -148,6 +153,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input structural variant file in VCF format
     inputBinding:
       position: 101
@@ -156,6 +166,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: Input variant file in VCF format
     inputBinding:
       position: 101
@@ -163,8 +178,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 101

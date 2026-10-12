@@ -100,6 +100,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result
+    type: File
+    doc: Table of pegRNA and nicking guide candidates (result.txt)
+    outputBinding:
+      glob: result.txt
+  - id: cas_offinder_output
+    type:
+      - 'null'
+      - File
+    doc: Off-target hits from cas-offinder
+    outputBinding:
+      glob: cas-offinder-output.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pedesigner:0.2.0--pyhdfd78af_0

@@ -12,7 +12,7 @@ inputs:
         items: File
     doc: Files to process
     inputBinding:
-      position: 1
+      position: 200
   - id: absolute
     type:
       - 'null'
@@ -26,10 +26,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --accept
     doc: Process only files matching REGEX
     inputBinding:
       position: 102
-      prefix: --accept
   - id: all
     type:
       - 'null'
@@ -73,7 +74,7 @@ inputs:
   - id: compile_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for compiled template files
     inputBinding:
       position: 102
@@ -91,19 +92,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --copy
     doc: Copy files matching REGEX
     inputBinding:
       position: 102
-      prefix: --copy
   - id: copy_dir
     type:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --copy_dir
     doc: Copy files in dir DIR (recursive)
     inputBinding:
       position: 102
-      prefix: --copy_dir
   - id: debug
     type:
       - 'null'
@@ -123,11 +126,13 @@ inputs:
   - id: define
     type:
       - 'null'
-      - string
-    doc: Define template variable
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --define
+    doc: Define template variable (var=value)
     inputBinding:
       position: 102
-      prefix: --define
   - id: depend
     type:
       - 'null'
@@ -189,19 +194,21 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --file
     doc: Read named configuration file
     inputBinding:
       position: 102
-      prefix: --file
   - id: ignore
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ignore
     doc: Ignore files matching REGEX
     inputBinding:
       position: 102
-      prefix: --ignore
   - id: interpolate
     type:
       - 'null'
@@ -215,19 +222,21 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --lib
     doc: Library directory (INCLUDE_PATH)
     inputBinding:
       position: 102
-      prefix: --lib
   - id: link
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --link
     doc: Link files matching REGEX
     inputBinding:
       position: 102
-      prefix: --link
   - id: load_perl
     type:
       - 'null'
@@ -345,10 +354,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --suffix
     doc: Change any '.old' suffix to '.new'
     inputBinding:
       position: 102
-      prefix: --suffix
   - id: summary
     type:
       - 'null'
@@ -384,8 +394,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: 'Verbose mode. Use twice for more verbosity: -v -v'
     inputBinding:
       position: 102

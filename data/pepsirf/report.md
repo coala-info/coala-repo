@@ -1,5 +1,19 @@
 # pepsirf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pepsirf_bin | PASS |  |
+| pepsirf_deconv | PASS |  |
+| pepsirf_demux | PASS |  |
+| pepsirf_enrich | PASS |  |
+| pepsirf_info | PASS |  |
+| pepsirf_link | PASS |  |
+| pepsirf_norm | PASS |  |
+| pepsirf_subjoin | PASS |  |
+| pepsirf_zscore | PASS |  |
+
 ## pepsirf_enrich
 
 ### Tool Description

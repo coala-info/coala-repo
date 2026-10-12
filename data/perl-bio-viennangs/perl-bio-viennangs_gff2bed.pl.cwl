@@ -15,32 +15,21 @@ inputs:
       position: 101
       prefix: --feature
   - id: gff
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input GFF file.
     inputBinding:
       position: 101
       prefix: --gff
-  - id: man
-    type:
-      - 'null'
-      - boolean
-    doc: Prints the manual page and exits
-    inputBinding:
-      position: 101
-      prefix: --man
   - id: out_path
     type: string
+    doc: Output directory (created by the tool). One BED12 file per feature type is written there.
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: out
-    type:
-      - 'null'
-      - File
-    doc: Output path.
+    type: Directory
+    doc: Output directory with the BED12 files and the feature summary
     outputBinding:
       glob: $(inputs.out_path)
 requirements:

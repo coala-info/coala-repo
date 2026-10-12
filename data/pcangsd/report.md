@@ -1,5 +1,11 @@
 # pcangsd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pcangsd | PASS |  |
+
 ## pcangsd
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # perl-parse-yapp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-parse-yapp_yapp | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

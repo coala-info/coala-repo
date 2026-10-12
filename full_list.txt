@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 10027; PASS: 7745; Failed: 1226; Not completed: 1056
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 10254; PASS: 7933; Failed: 1247; Not completed: 1074
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -10027,3 +10027,230 @@ pauvre	pauvre_marginplot	PASS
 pauvre	pauvre_redwood	Failed	tool bug: SyntaxError in pauvre/redwood.py line 706 (ifargs.BASENAME), redwood cannot start
 pauvre	pauvre_stats	PASS	
 pauvre	pauvre_synplot	Failed	image problem: Python module progressbar is missing, pauvre synplot fails on import
+pb-cpg-tools	pb-cpg-tools_aligned_bam_to_cpg_scores	PASS	
+pbaa	pbaa_bampaint	PASS	
+pbaa	pbaa_cluster	PASS	
+pbalign	pbalign	Failed	image problem: the biocontainers image has no pbalign launcher (command not found). Started as 'python -m pbalign.pbalignrunner', it aligns FASTA reads correctly with blasr.
+pbcoretools	pbcoretools_bamsieve	PASS	
+pbcoretools	pbcoretools_pbvalidate	PASS	
+pbdagcon	pbdagcon	PASS	
+pbfusion	pbfusion_discover	PASS	
+pbfusion	pbfusion_gff-cache	PASS	
+pbgzip	pbgzip	PASS	
+pbh5tools	pbh5tools_bash5tools.py	PASS	
+pbh5tools	pbh5tools_cmph5tools_equal	PASS	
+pbh5tools	pbh5tools_cmph5tools_merge	PASS	
+pbh5tools	pbh5tools_cmph5tools_select	PASS	
+pbh5tools	pbh5tools_cmph5tools_sort	PASS	
+pbh5tools	pbh5tools_cmph5tools_stats	PASS	
+pbh5tools	pbh5tools_cmph5tools_summarize	PASS	
+pbh5tools	pbh5tools_cmph5tools_validate	PASS	
+pbhoover	pbhoover	Failed	image problem: bgzip and tabix in the image cannot load libcrypto.so.1.0.0, so pbhoover stops with a StopIteration traceback after the variant call (on real lambda cmp.h5 data)
+pblat	pblat	PASS	
+pbmarkdup	pbmarkdup	Failed	tool bug: FASTA/FASTQ output named .gz is written as plain text, not gzip (BAM mode works: 3510 reads gave 2389 unique with --rmdup)
+pbmm2	pbmm2_align	PASS	
+pbmm2	pbmm2_index	PASS	
+pbsim	pbsim	PASS	
+pbsim2	pbsim2_pbsim	PASS	
+pbsim3	pbsim3_pbsim	PASS	
+pbstarphase	pbstarphase_build	Not completed	needs a PharmVar API key (account): the PharmVar query fails with 'invalid type: map' and this version (2.0.1) has no --api-keys option; the CPIC query worked
+pbstarphase	pbstarphase_db-stat	PASS	
+pbstarphase	pbstarphase_diplotype	PASS	synthetic data: the tool's own faux UGT1A1 test set (hand-made database, small VCFs and reference); calls match the expected diplotypes
+pbsv	pbsv_call	PASS	
+pbsv	pbsv_discover	PASS	
+pbtk	pbtk_bam2fasta	PASS	
+pbtk	pbtk_bam2fastq	PASS	
+pbtk	pbtk_ccs-kinetics-bystrandify	PASS	
+pbtk	pbtk_extracthifi	PASS	
+pbtk	pbtk_pbindex	PASS	
+pbtk	pbtk_pbindexdump	PASS	
+pbtk	pbtk_pbmerge	PASS	
+pbtk	pbtk_zmwfilter	PASS	
+pbwt	pbwt	PASS	reference imputation on the repo's OMNI.vcf example matches the expected VCF exactly; VCFs with missing ('.') genotypes are not accepted by pbwt 3.0.
+pcangsd	pcangsd	PASS	
+pcaone	pcaone_PCAone	PASS	ran on plink data with --svd 0 (default window method fails on only 220 SNPs)
+pcasuite	pcasuite_pcaunzip	PASS	
+pcasuite	pcasuite_pcazip	PASS	
+pcasuite	pcasuite_pczdump	PASS	
+pdb2fasta	pdb2fasta	PASS	
+pdbfixer	pdbfixer	PASS	
+pdftk	pdftk	PASS	tested cat, burst, fill_form, dump_data, encrypt, attach and unpack on pdftk-java test PDFs
+pdivas	pdivas_predict	PASS	
+pdivas	pdivas_vcf2tsv	Not completed	runs, but the last two columns differ from the expected example TSV (wo_annots versus dot, split PD_ID and PDIVAS), which may be outdated
+peakachu	peakachu_adaptive	Failed	image problem: the image's pandas has no DataFrame.append, so the tool crashes after blockbuster
+peakachu	peakachu_consensus_peak	Not completed	needs a project folder from peakachu window or adaptive, which crash in this image (pandas DataFrame.append)
+peakachu	peakachu_coverage	Not completed	needs a project folder from peakachu window or adaptive, which crash in this image (pandas DataFrame.append)
+peakachu	peakachu_window	Failed	image problem: the image's pandas has no DataFrame.append, so the tool crashes after window counting
+peakhood	peakhood_batch	PASS	works with --report; without it the tool's final check fails after the outputs are written (tool bug).
+peakhood	peakhood_extract	PASS	
+peakhood	peakhood_merge	PASS	
+peakhood	peakhood_motif	PASS	
+peakranger	peakranger_bcp	PASS	
+peakranger	peakranger_ccat	PASS	
+peakranger	peakranger_lc	PASS	
+peakranger	peakranger_nr	PASS	
+peakranger	peakranger_ranger	PASS	
+peakranger	peakranger_wig	PASS	
+peakranger	peakranger_wigpe	PASS	
+peaks2utr	peaks2utr	Failed	image problem: the bundled macs2 fails to import (undefined symbol __log_finite), so peak calling cannot run
+peakzilla	peakzilla_peakzilla.py	Failed	image problem: peakzilla.py is Python 2 code run by Python 3 in the image (TypeError: list indices must be integers) so it crashes on the Galaxy test data
+pear	pear	PASS	
+pecat	pecat_assemble	PASS	
+pecat	pecat_config	PASS	
+pecat	pecat_correct	PASS	
+pecat	pecat_unzip	Failed	image problem: racon in the image crashes with Illegal instruction during the polishing step
+ped_parser	ped_parser	PASS	
+peddy	peddy	PASS	
+pedesigner	pedesigner	PASS	synthetic data: planted single-base edit in a real SARS-CoV-2 region, on-target hit found by cas-offinder on CPU
+peekseq	peekseq_peekseq.pl	PASS	
+pegas	pegas	Not completed	pipeline, skipped
+pegasusio	pegasusio_aggregate_matrix	PASS	run on a single 10x h5 sample; the two-sample run with an extra h5ad file failed on that file (barcode count mismatch in the data)
+peglit	peglit	PASS	
+peglit	peglit_inspect	PASS	
+peglit	peglit_score	PASS	
+pegs	pegs	PASS	needs network: the tool downloads bedtools at run time (NetworkAccess set in the CWL)
+pegs	pegs_mk_pegs_intervals	PASS	
+peka	peka	PASS	
+pepgenome	pepgenome	PASS	
+pepnovo	pepnovo_PepNovo_bin	PASS	
+pepquery	pepquery	PASS	
+pepr	pepr_PePr	PASS	
+pepr	pepr_PePr-postprocess	Failed	tool bug: crashes on every run with a Python 3 error (dict_values indexing) in the image
+pepr	pepr_PePr-preprocess	PASS	
+pepsirf	pepsirf_bin	PASS	
+pepsirf	pepsirf_deconv	PASS	
+pepsirf	pepsirf_demux	PASS	
+pepsirf	pepsirf_enrich	PASS	
+pepsirf	pepsirf_info	PASS	
+pepsirf	pepsirf_link	PASS	
+pepsirf	pepsirf_norm	PASS	
+pepsirf	pepsirf_subjoin	PASS	
+pepsirf	pepsirf_zscore	PASS	
+perbase	perbase_base-depth	PASS	
+perbase	perbase_merge-adjacent	PASS	synthetic data: real only-depth output with every interval split in two; the merge gave back the original intervals
+perbase	perbase_only-depth	PASS	
+percolator	percolator	PASS	
+percolator	percolator_msgf2pin	Not completed	no usable test data: the converter crashes with a string error on the only sample files found (target-only files shipped in the image); no separate target and decoy search results available
+percolator	percolator_qvality	PASS	
+percolator	percolator_sqt2pin	Not completed	no usable test data: the converter crashes with a string error on the only sample files found (target-only files shipped in the image); no separate target and decoy search results available
+percolator	percolator_tandem2pin	Not completed	no usable test data: the converter crashes with a string error on the only sample files found (target-only files shipped in the image); no separate target and decoy search results available
+peregrine-2021	peregrine-2021_pg_asm	PASS	
+peregrine-2021	peregrine-2021_pg_build_idx	PASS	
+peregrine-2021	peregrine-2021_pg_build_sdb	PASS	
+peregrine-2021	peregrine-2021_pg_dedup	PASS	
+peregrine-2021	peregrine-2021_pg_dp_graph	PASS	
+peregrine-2021	peregrine-2021_pg_getreads	PASS	
+peregrine-2021	peregrine-2021_pg_graph	PASS	
+peregrine-2021	peregrine-2021_pg_layout	PASS	
+peregrine-2021	peregrine-2021_pg_ovlp	PASS	
+peregrine-2021	peregrine-2021_pg_ovlp_ec	PASS	
+peregrine-2021	peregrine-2021_pg_resolve	PASS	
+perl	perl	PASS	
+perl-archive-tar	perl-archive-tar_ptar	PASS	
+perl-archive-tar	perl-archive-tar_ptardiff	Failed	image problem: the Perl module Text::Diff that ptardiff needs is missing from the image
+perl-archive-tar	perl-archive-tar_ptargrep	PASS	
+perl-bio-bigfile	perl-bio-bigfile_bigWigToWig.pl	PASS	
+perl-bio-bigfile	perl-bio-bigfile_index_bigwigset.pl	PASS	
+perl-bio-bigfile	perl-bio-bigfile_wigToBigWig.pl	PASS	
+perl-bio-monophylizer	perl-bio-monophylizer_monophylizer.pl	PASS	
+perl-bio-samtools	perl-bio-samtools_bam2bedgraph	PASS	
+perl-bio-samtools	perl-bio-samtools_bamToGBrowse.pl	Failed	image problem: Bio::DB::BigFile is missing (createBigWig not found) and bedGraphToBigWig is not installed, so the BigWig step crashes
+perl-bio-samtools	perl-bio-samtools_chrom_sizes.pl	PASS	
+perl-bio-samtools	perl-bio-samtools_genomeCoverageBed.pl	PASS	
+perl-bio-viennangs	perl-bio-viennangs_bam_split.pl	PASS	
+perl-bio-viennangs	perl-bio-viennangs_bam_to_bigwig.pl	PASS	
+perl-bio-viennangs	perl-bio-viennangs_gff2bed.pl	PASS	
+perl-bioperl	perl-bioperl_bp_gccalc	PASS	
+perl-devel-cover	perl-devel-cover	PASS	
+perl-devel-cover	perl-devel-cover_cpancover	Not completed	needs a directory of unpacked CPAN distributions and runs their test suites; too heavy for a minimal test
+perl-devel-cover	perl-devel-cover_gcov2perl	Not completed	no real gcov files available: the image has no gcc to build coverage data and the module ships none
+perl-encode	perl-encode_enc2xs	PASS	
+perl-encode	perl-encode_encguess	Failed	tool bug: -s splits the suspect list on the literal string ':,' so a list of encodings is not split and gives a wrong guess (EUC-CN for a JIS X 0208 file)
+perl-encode	perl-encode_piconv	PASS	
+perl-extutils-parsexs	perl-extutils-parsexs	PASS	
+perl-fast	perl-fast_alncut	PASS	
+perl-fast	perl-fast_alnpi	PASS	
+perl-fast	perl-fast_fascodon	PASS	
+perl-fast	perl-fast_fascomp	PASS	
+perl-fast	perl-fast_fasconvert	PASS	
+perl-fast	perl-fast_fascut	PASS	the --format option is rejected by the tool (not in its option list); the main mode works
+perl-fast	perl-fast_fasfilter	PASS	
+perl-fast	perl-fast_fasgrep	PASS	
+perl-fast	perl-fast_fashead	PASS	
+perl-fast	perl-fast_faslen	PASS	
+perl-fast	perl-fast_faspaste	PASS	
+perl-fast	perl-fast_fasrc	PASS	
+perl-fast	perl-fast_fassort	PASS	
+perl-fast	perl-fast_fassub	PASS	
+perl-fast	perl-fast_fastail	PASS	
+perl-fast	perl-fast_fastax	PASS	synthetic data: real NCBI taxonomy files with planted FASTA headers that are taxon names
+perl-fast	perl-fast_fastaxsort	PASS	synthetic data: real NCBI taxonomy files with planted FASTA headers that are taxon names
+perl-fast	perl-fast_fastr	PASS	
+perl-fast	perl-fast_fasuniq	PASS	
+perl-fast	perl-fast_faswc	PASS	
+perl-fast	perl-fast_fasxl	PASS	
+perl-fastx-reader	perl-fastx-reader_fqc	PASS	
+perl-fastx-reader	perl-fastx-reader_fqlen.pl	PASS	
+perl-file-copy-link	perl-file-copy-link_copylink	Not completed	copylink needs a real symbolic link as input, but cwltool stages inputs as regular files, so it fails with 'not a link'
+perl-gfacs	perl-gfacs_gFACs.pl	PASS	
+perl-go-perl	perl-go-perl_go-apply-xslt	Failed	image problem: xsltproc rejects oboxml_to_owl.xsl (xmlns attribute not allowed) and oboxml_to_obotext.xsl gives malformed output
+perl-go-perl	perl-go-perl_go-dag-summary.pl	PASS	works on an 8-term subset; runs without end on the full 140-term GO slim
+perl-go-perl	perl-go-perl_go-export-prolog.pl	PASS	
+perl-go-perl	perl-go-perl_go-filter-subset.pl	PASS	
+perl-go-perl	perl-go-perl_go-show-paths-to-root.pl	PASS	
+perl-go-perl	perl-go-perl_go2fmt.pl	PASS	
+perl-hpc-runner-command	perl-hpc-runner-command_archive	Failed	image problem: archive runs tar -zcvf but the image has only busybox tar, which rejects -z
+perl-hpc-runner-command	perl-hpc-runner-command_execute_array	Not completed	needs a scheduler array job id; run alone it executed no commands (command index -1)
+perl-hpc-runner-command	perl-hpc-runner-command_execute_job	PASS	
+perl-hpc-runner-command	perl-hpc-runner-command_new	PASS	
+perl-hpc-runner-command	perl-hpc-runner-command_single_node	PASS	
+perl-hpc-runner-command	perl-hpc-runner-command_stats	Not completed	needs submissions recorded by submit_jobs on a scheduler; local runs leave nothing to query
+perl-html-tidy	perl-html-tidy_webtidy	PASS	
+perl-image-exiftool	perl-image-exiftool_exiftool	PASS	
+perl-json-pp	perl-json-pp_json_pp	PASS	
+perl-json-xs	perl-json-xs	PASS	cbor output fails because the optional CBOR::XS module is not in the image; json and dumper work
+perl-module-corelist	perl-module-corelist_corelist	PASS	
+perl-module-scandeps	perl-module-scandeps	PASS	
+perl-module-util	perl-module-util_pm_which	PASS	
+perl-par-packer	perl-par-packer_par.pl	PASS	run and -O -B work; -b output fails when run (Errno.pm compile error)
+perl-par-packer	perl-par-packer_pp	PASS	
+perl-parse-yapp	perl-parse-yapp_yapp	PASS	
+perl-pcap	perl-pcap_bamToBw.pl	Failed	image problem: bam2bw is not installed in the image
+perl-pcap	perl-pcap_bam_stats.pl	PASS	
+perl-pcap	perl-pcap_bam_to_sra_sub.pl	Not completed	needs a PCAP-made BAM with PM read-group tag and a GNOS server; no such data (bwa missing)
+perl-pcap	perl-pcap_bwa_aln.pl	Failed	image problem: bwa is not installed in the image (script stops with 'Failed to find bwa')
+perl-pcap	perl-pcap_bwa_mem.pl	Failed	image problem: bwa is not installed in the image (script stops with 'Failed to find bwa')
+perl-pcap	perl-pcap_detectExtremeDepth.pl	Failed	image problem: Perl module Bio::DB::BigWig is missing
+perl-pcap	perl-pcap_diff_bams.pl	Failed	tool bug: reports one matching record too many (201 for a 200-read BAM)
+perl-pcap	perl-pcap_gnos_pull.pl	Not completed	needs GNOS repositories, network and permission keys
+perl-pcap	perl-pcap_monitor.pl	PASS	
+perl-pcap	perl-pcap_xam_coverage_bins.pl	PASS	
+perl-pcap	perl-pcap_xml_to_bas.pl	Not completed	needs GNOS analysis XML from a GNOS server; no local test data
+perl-pod-coverage	perl-pod-coverage_pod_cover	PASS	
+perl-pod-usage	perl-pod-usage_pod2usage	PASS	
+perl-retroseq	perl-retroseq_call	Not completed	runs but finds zero call regions on the small test BAM; needs a genome-wide BAM with several supporting reads per TE insertion
+perl-retroseq	perl-retroseq_discover	PASS	synthetic data: the TE reference is the SARS-CoV-2 genome, so the 3 reads with unmapped mates are reported
+perl-sanger-cgp-allelecount	perl-sanger-cgp-allelecount_alleleCounter.pl	Failed	image problem: alleleCounter.pl needs the C program alleleCounter, which the image does not contain
+perl-sanger-cgp-allelecount	perl-sanger-cgp-allelecount_alleleCounterToJson.pl	PASS	
+perl-template-toolkit	perl-template-toolkit_tpage	PASS	synthetic data: small hand-written template; variables and include path rendered correctly
+perl-template-toolkit	perl-template-toolkit_ttree	PASS	synthetic data: small template tree; both templates written to the destination with the defined variable filled in
+perl-velvetoptimiser	perl-velvetoptimiser_VelvetOptimiser.pl	PASS	fixed required --velvethfiles input; 180 kb genome assembled into few contigs with N50 above 130 kb
+perl-xml-twig	perl-xml-twig_xml_grep	PASS	NCBI GenBank XML of 2 phage genomes; fixed file position after options; locus names and counts correct
+perl-xml-twig	perl-xml-twig_xml_merge	PASS	merged the xml_split output back; same content as the original; fixed -o flag and staging of parts
+perl-xml-twig	perl-xml-twig_xml_pp	PASS	new CWL; pretty printed GenBank XML with record style, same 2 records
+perl-xml-twig	perl-xml-twig_xml_split	PASS	NCBI GenBank XML of 2 phage genomes; fixed read-only output, removed -m (man); split into 45 files
+perl-xml-xpath	perl-xml-xpath_xpath	PASS	NCBI GenBank XML of 2 phage genomes; fixed repeated -e and file position; returned lengths 5386 and 48502
+perlprimer	perlprimer	Not completed	GUI-only program (Perl/Tk window), no command-line mode
+perm	perm	PASS	rewritten from perm help; SARS-CoV-2 genome with nf-core Illumina reads, single-end mapped 99 of 100 reads to SAM, paired mode also ran
+pfam_scan	pfam_scan	PASS	rewritten from help; 4 real Pfam-A HMMs pressed, 5 UniProt proteins: kinase, homeodomain, zinc finger and 7tm hits correct, globin no hit; -json crashes (image lacks the Perl JSON module)
+pfp	pfp_pfp++	PASS	SARS-CoV-2 FASTA and pfp test VCF with chrY reference both parsed; dictionary holds the genome text; fixed vcf/ref as File lists
+pftools	pftools_pfscanV3	PASS	pftools3 test SH2/SH3 profiles on human VAV1: SH3, SH2, SH3 found at the known positions; fixed --unknown-symbol spelling and int types
+pftools	pftools_pfsearchV3	PASS	pftools3 test SH3 profile on SH3 protein set and a kinase PROSITE pattern: expected proteins hit; profile now a File input, pattern separate
+pgap2	pgap2_add	Failed	tool bug: pgap2 add stops with AssertionError 'Leaf has no old nodes' when the new genome has any gene without a match in the previous run; only a duplicate of a known genome works
+pgap2	pgap2_main	PASS	4 NCBI Mycoplasma pneumoniae genomes (gcode 4): 591 strict core of 792 gene clusters; indir fixed to Directory, links and fixed work dir added
+pgap2	pgap2_post_baps	PASS	new CWL; all 10 steps ran (core alignment, tree, ClonalFrameML, mask, fastbaps); all 4 strains in one cluster
+pgap2	pgap2_post_profile	PASS	new CWL; PAV matrix of the 4-genome partition: rarefaction tables, curve fit and PDF written
+pgap2	pgap2_post_singletree	PASS	new CWL; core gene tree of 4 M. pneumoniae strains built with FastTree
+pgap2	pgap2_post_stat	PASS	new CWL; on the 4-genome partition result: strict core 591 genes matches main, curve fit and PDF written
+pgap2	pgap2_post_tajimas_d	PASS	new CWL; Tajima's D table for 697 clusters; some clusters without variation or too few sequences report 0 by design
+pgap2	pgap2_prep	PASS	3 NCBI Mycoplasma pneumoniae genomes (GenBank, gcode 4); gene counts 666-709 per strain, ANI above 99.7; fixed links to inputs left in the output

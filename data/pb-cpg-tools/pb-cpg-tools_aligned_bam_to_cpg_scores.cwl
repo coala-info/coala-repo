@@ -8,6 +8,11 @@ doc: "A utility to calculate CpG methylation scores from an alignment file with 
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Alignment file for input sample in BAM or CRAM format. Alignment file 
       must be mapped and indexed, with MM/ML tags specifying 5mC methylation. If
       a CRAM file is provided, then `--ref` must also be specified
@@ -79,7 +84,8 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_prefix_path
-    type: string?
+    type: string
+    default: aligned_bam_to_cpg_scores
     inputBinding:
       position: 102
       prefix: --output-prefix

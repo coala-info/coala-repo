@@ -10,7 +10,8 @@ inputs:
     doc: The grammar file. If no suffix is given, and the file does not exists, 
       .yp is added
     inputBinding:
-      position: 1
+      position: 200
+      valueFrom: $(self.basename)
   - id: create_output_file
     type:
       - 'null'
@@ -62,10 +63,10 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Create the file <outfile> for your parser module
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:
@@ -75,8 +76,19 @@ outputs:
       <grammar>.pm or, if -m A::Module::Name is specified, Name.pm
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: parser_description
+    type:
+      - 'null'
+      - File
+    doc: File <grammar>.output describing the parser, written with the verbose option
+    outputBinding:
+      glob: '*.output'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.grammar)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-parse-yapp:1.21--pl526_0

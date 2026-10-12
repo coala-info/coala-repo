@@ -9,6 +9,22 @@ inputs:
     doc: XS source file to process
     inputBinding:
       position: 1
+  - id: hiertype
+    type:
+      - 'null'
+      - boolean
+    doc: Retain '::' in type names so that C++ hierarchical types can be mapped
+    inputBinding:
+      position: 102
+      prefix: -hiertype
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: Name of the output file to generate (default is standard output)
+    inputBinding:
+      position: 102
+      prefix: -output
   - id: csuffix
     type:
       - 'null'
@@ -93,9 +109,18 @@ inputs:
     inputBinding:
       position: 102
 outputs:
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: C source file written when the output option is used
+    outputBinding:
+      glob: $(inputs.output)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

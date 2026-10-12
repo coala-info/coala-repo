@@ -9,6 +9,14 @@ inputs:
     doc: input .bas.h5 filename
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+  - id: companion_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The .bax.h5 files (and optional .rgn.h5 region files) that the .bas.h5
+      file refers to. They are staged next to the input file.
   - id: debug
     type:
       - 'null'
@@ -75,7 +83,7 @@ inputs:
       prefix: --verbose
   - id: out_file_prefix_path
     type: string?
-    doc: ' output filename prefix [None]'
+    doc: output filename prefix [None]
     inputBinding:
       position: 103
       prefix: --outFilePrefix
@@ -85,11 +93,23 @@ outputs:
       - 'null'
       - type: array
         items: File
-    doc: output filename prefix
+    doc: Extracted reads in fasta or fastq format
     outputBinding:
-      glob: $(inputs.out_file_prefix_path)*
+      glob: |
+        ${ return inputs.out_file_prefix_path ? inputs.out_file_prefix_path + "*" : ["*.fasta", "*.fastq"]; }
+  - id: stdout_output
+    type: stdout
+    doc: Standard output
+stdout: pbh5tools_bash5tools_stdout.txt
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [inputs.input_file];
+        if (inputs.companion_files) { l = l.concat(inputs.companion_files); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbh5tools:0.8.0--py27h470a237_1

@@ -8,6 +8,12 @@ doc: "The subjoin module is used to manipulate matrix files. This module can cre
   a subset of an existing matrix, can combine multiple matrices together or perform
   a combination of these two functions.\n\nTool homepage: https://github.com/LadnerLab/PepSIRF"
 inputs:
+  - id: staged_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Score matrix and name list files that are named in --input or in the --multi_file file; they are staged in the working directory so those names resolve.
   - id: duplicate_evaluation
     type:
       - 'null'
@@ -92,6 +98,8 @@ outputs:
       glob: $(inputs.logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.staged_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

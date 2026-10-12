@@ -1,0 +1,136 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand:
+  - pgap2
+  - post
+  - profile
+label: pgap2_post_profile
+doc: "Generate the pangenome profile using the presence-absence variation (PAV) matrix; a subset of the stat module.\n\nTool homepage: https://github.com/bucongfan/PGAP2"
+inputs:
+  - id: pav
+    type: File
+    doc: "The presence-absence variation (PAV) matrix"
+    inputBinding:
+      position: 101
+      prefix: --pav
+  - id: nodraw
+    type:
+      - 'null'
+      - boolean
+    doc: "Only output flat file, but no drawing plot"
+    inputBinding:
+      position: 101
+      prefix: --nodraw
+  - id: single_file
+    type:
+      - 'null'
+      - boolean
+    doc: "Output each vector plot as a single file"
+    inputBinding:
+      position: 101
+      prefix: --single_file
+  - id: s
+    type:
+      - 'null'
+      - int
+    doc: "Number of strains to sample in each bin"
+    inputBinding:
+      position: 101
+      prefix: --S
+  - id: n
+    type:
+      - 'null'
+      - int
+    doc: "Number of bins to sample"
+    inputBinding:
+      position: 101
+      prefix: --N
+  - id: r
+    type:
+      - 'null'
+      - int
+    doc: "Number of repeats for every sample"
+    inputBinding:
+      position: 101
+      prefix: --R
+  - id: k
+    type:
+      - 'null'
+      - int
+    doc: "Inflated cof for DG method"
+    inputBinding:
+      position: 101
+      prefix: --K
+  - id: method
+    type:
+      - 'null'
+      - string
+    doc: "Sampling method. TR - total random; DG - diversity guided"
+    inputBinding:
+      position: 101
+      prefix: --method
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Verbose output"
+    inputBinding:
+      position: 101
+      prefix: --verbose
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: "Debug mode. Note: very verbose"
+    inputBinding:
+      position: 101
+      prefix: --debug
+  - id: disable
+    type:
+      - 'null'
+      - boolean
+    doc: "Disable progress bar"
+    inputBinding:
+      position: 101
+      prefix: --disable
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: "Threads used in parallel"
+    inputBinding:
+      position: 101
+      prefix: --threads
+  - id: outdir
+    type:
+      - 'null'
+      - string
+    doc: "Output directory"
+    inputBinding:
+      position: 101
+      prefix: --outdir
+outputs:
+  - id: stdout
+    type: stdout
+    doc: "Standard output"
+  - id: outdir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: "Output directory"
+    outputBinding:
+      glob: $(inputs.outdir)
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: >-
+      && find $(inputs.outdir || '.') -type l -exec sh -c 'cp -L "$1" "$1.tmp" &&
+      mv "$1.tmp" "$1"' _ {} \;
+requirements:
+  - class: ShellCommandRequirement
+  - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/pgap2:1.1.0--pyhdfd78af_0
+    dockerOutputDirectory: /pgap2_out
+stdout: pgap2_post_profile.out

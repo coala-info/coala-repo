@@ -1,5 +1,11 @@
 # peakzilla CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| peakzilla_peakzilla.py | Failed | image problem: peakzilla.py is Python 2 code run by Python 3 in the image (TypeError: list indices must be integers) so it crashes on the Galaxy test data |
+
 ## Metadata
 - **Skill**: generated
 

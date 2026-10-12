@@ -51,6 +51,16 @@ inputs:
       position: 103
       prefix: --verbose
 outputs:
+  - id: extracted_files
+    type:
+      - 'null'
+      - type: array
+        items:
+          - File
+          - Directory
+    doc: Matching files extracted from the archives (when --list-only is not used)
+    outputBinding:
+      glob: '*'
   - id: stdout
     type: stdout
     doc: Standard output

@@ -1,5 +1,13 @@
 # perl-archive-tar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-archive-tar_ptar | PASS |  |
+| perl-archive-tar_ptardiff | Failed | image problem: the Perl module Text::Diff that ptardiff needs is missing from the image |
+| perl-archive-tar_ptargrep | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

@@ -1,5 +1,13 @@
 # pepr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pepr_PePr | PASS |  |
+| pepr_PePr-postprocess | Failed | tool bug: crashes on every run with a Python 3 error (dict_values indexing) in the image |
+| pepr_PePr-preprocess | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 
@@ -84,3 +92,57 @@ Options:
                         binding region
 ```
 
+## pepr_PePr
+
+### Tool Description
+PePr: Peak-calling and Prioritization pipeline for ChIP-seq data with replicates; calls peaks (or differential binding with --diff).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pepr:1.1.24--py35_0
+- **Homepage**: https://github.com/shawnzhangyx/PePr/
+- **Package**: https://anaconda.org/channels/bioconda/packages/pepr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: Basic usage: PePr -c chip_files -i input_files -f file_type
+You could also use a parameter file by: PePr -p param_file
+For pre-processing only (parameter estimation), run: PePr-preprocess
+For post-processing, run: PePr-postprocess
+
+Options:
+  -h, --help            show this help message and exit
+  -p PARAMETER-FILE, --parameter-file=PARAMETER-FILE
+                        provide a file that contain the parameters
+  -c CHIP1, --chip1=CHIP1
+                        chip1 file names separated by comma
+  -i INPUT1, --input1=INPUT1
+                        input1 file names separated by comma
+  --chip2=CHIP2         chip2 file names separated by comma
+  --input2=INPUT2       input2 file names separated by comma
+  -f FORMAT, --file-format=FORMAT
+                        bed, sam, bam, sampe, bampe...
+  -s SHIFTSIZE, --shiftsize=SHIFTSIZE
+                        Half the fragment size.
+  -w WINDOWSIZE, --windowsize=WINDOWSIZE
+                        Window sizes
+  --diff                Perform differential binding instead of peak-calling
+  -n NAME, --name=NAME  the experimental name. NA if none provided
+  --threshold=THRESHOLD
+                        p-value threshold. Default 1e-5.
+  --peaktype=PEAKTYPE   sharp or broad. Default broad.
+  --num-processors=NUM_PROCS
+                        number of cores for use.
+  --input-directory=INPUT_DIRECTORY
+                        where the data files are. Absolute path recommended.
+  --output-directory=OUTPUT_DIRECTORY
+                        where you want the output files to be
+  --normalization=NORMALIZATION
+                        Normalization method. inter-group, intra-group, scale
+                        or no. Must manually specify for differential binding
+                        analysis.
+  --keep-max-dup=KEEP_MAX_DUP
+                        maximum number of reads to keep at each position.
+                        if not specified, will not remove any duplicate.
+  --version             Show version information and exit
+```

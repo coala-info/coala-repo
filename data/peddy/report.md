@@ -1,5 +1,11 @@
 # peddy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| peddy | PASS |  |
+
 ## peddy
 
 ### Tool Description

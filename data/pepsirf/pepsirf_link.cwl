@@ -9,6 +9,12 @@ doc: "The link module is used to create the \"--linked\" input file for the deco
   (or other groups of interest) and peptides based on shared kmers.\n\nTool homepage:
   https://github.com/LadnerLab/PepSIRF"
 inputs:
+  - id: meta_file
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Metadata file named in the --meta value; it is staged in the working directory so that name resolves.
   - id: kmer_redundancy_control
     type:
       - 'null'
@@ -99,6 +105,8 @@ outputs:
       glob: $(inputs.logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.meta_file || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

@@ -1,5 +1,11 @@
 # pbdagcon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbdagcon | PASS |  |
+
 ## pbdagcon
 
 ### Tool Description

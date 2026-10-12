@@ -1,5 +1,12 @@
 # perl-template-toolkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-template-toolkit_tpage | PASS | synthetic data: small hand-written template; variables and include path rendered correctly |
+| perl-template-toolkit_ttree | PASS | synthetic data: small template tree; both templates written to the destination with the defined variable filled in |
+
 ## perl-template-toolkit_tpage
 
 ### Tool Description

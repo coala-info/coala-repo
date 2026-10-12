@@ -19,8 +19,8 @@ inputs:
   - id: fastq_output
     type:
       - 'null'
-      - boolean
-    doc: Include this to output sample-level fastq files.
+      - string
+    doc: Include this to output sample-level fastq files (value is the output name or directory).
     inputBinding:
       position: 101
       prefix: --fastq_output
@@ -290,6 +290,13 @@ outputs:
       containing unmapped reads.
     outputBinding:
       glob: $(inputs.unmapped_reads_output_path)
+  - id: fastq_output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory of sample-level fastq files (from --fastq_output).
+    outputBinding:
+      glob: $(inputs.fastq_output)
   - id: trunc_info_output
     type:
       - 'null'

@@ -11,7 +11,7 @@ inputs:
     doc: The pathname of a file containing pod documentation to be output in 
       usage message format (defaults to standard input).
     inputBinding:
-      position: 1
+      position: 200
   - id: exit_val
     type:
       - 'null'
@@ -58,7 +58,9 @@ inputs:
       position: 102
       prefix: -verbose
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: outfile The output file to print to. If the special names "-" or ">&1" 
       or ">&STDOUT" are used then standard output is used. If ">&2" or 
       ">&STDERR" is used then standard error is used.
@@ -66,6 +68,9 @@ inputs:
       position: 103
       prefix: -output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_file
     type:
       - 'null'
@@ -80,3 +85,8 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-pod-usage:2.05--pl5321hdfd78af_0
+stdout: perl-pod-usage_pod2usage.out
+successCodes:
+  - 0
+  - 1
+  - 2

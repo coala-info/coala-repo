@@ -1,5 +1,11 @@
 # pedesigner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pedesigner | PASS | synthetic data: planted single-base edit in a real SARS-CoV-2 region, on-target hit found by cas-offinder on CPU |
+
 ## pedesigner
 
 ### Tool Description

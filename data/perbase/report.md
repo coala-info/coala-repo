@@ -1,5 +1,13 @@
 # perbase CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perbase_base-depth | PASS |  |
+| perbase_merge-adjacent | PASS | synthetic data: real only-depth output with every interval split in two; the merge gave back the original intervals |
+| perbase_only-depth | PASS |  |
+
 ## perbase_base-depth
 
 ### Tool Description
@@ -204,6 +212,58 @@ ARGS:
             Input indexed BAM/CRAM to analyze
 ```
 
+## perbase_merge-adjacent
+
+### Tool Description
+Merge adjacent intervals that have the same depth.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/perbase:1.2.0--h15397dd_0
+- **Homepage**: https://github.com/sstadick/perbase
+- **Package**: https://anaconda.org/channels/bioconda/packages/perbase/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+perbase-merge-adjacent 1.2.0
+Seth Stadick <sstadick@gmail.com>
+Merge adjacent intervals that have the same depth. Input must be sorted like: `sort -k1,1 -k2,2n in.bed > in.sorted.bed`
+
+Generally accepts any file with no header tha is <chrom>\t<start>\t<stop>\t<depth>. The <stop> is optional. See
+documentation for explaination of headers that are accepted.
+
+USAGE:
+    perbase merge-adjacent [FLAGS] [OPTIONS] [in-file]
+
+FLAGS:
+    -Z, --bgzip        
+            Optionally bgzip the output
+
+    -h, --help         
+            Prints help information
+
+    -n, --no-header    
+            Indicate if the input file does not have a header
+
+    -V, --version      
+            Prints version information
+
+
+OPTIONS:
+    -L, --compression-level <compression-level>
+            The level to use for compressing output (specified by --bgzip) [default: 2]
+
+    -T, --compression-threads <compression-threads>
+            The number of threads to use for compressing output (specified by --bgzip) [default: 20]
+
+    -o, --output <output>                              
+            The output location, defaults to STDOUT
+
+
+ARGS:
+    <in-file>    
+            Input bed-like file, defaults to STDIN
+```
 
 ## Metadata
 - **Skill**: generated

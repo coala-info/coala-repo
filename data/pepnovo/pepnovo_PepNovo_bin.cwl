@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pepnovo
+baseCommand: PepNovo_bin
 label: pepnovo_PepNovo_bin
 doc: "PepNovo+ - de Novo peptide sequencing and MS-Filter - spectal quality scoring,
   precursor mass correction and chage determination.\n\nTool homepage: https://github.com/jmchilton/pepnovo"
@@ -44,13 +44,17 @@ inputs:
       position: 101
       prefix: -fragment_tolerance
   - id: input_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: PepNovo can analyze dta,mgf and mzXML files
     inputBinding:
       position: 101
       prefix: -file
   - id: list
-    type: File
+    type:
+      - 'null'
+      - File
     doc: path to text file listing input files
     inputBinding:
       position: 101
@@ -82,8 +86,9 @@ inputs:
   - id: model_dir
     type:
       - 'null'
-      - Directory
-    doc: directory where model files are kept (default ./Models)
+      - string
+    default: /home/biodocker/bin/PepNovo/Models
+    doc: directory where model files are kept (the image keeps them in /home/biodocker/bin/PepNovo/Models)
     inputBinding:
       position: 101
       prefix: -model_dir

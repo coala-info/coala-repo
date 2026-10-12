@@ -6,13 +6,8 @@ doc: "Calculate sequence lengths for FASTA/FASTQ files and annotate descriptions
   output as a table.\n\nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: input_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input multi-fasta file(s)
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input multi-fasta file(s) (read from standard input)
   - id: comment
     type:
       - 'null'
@@ -87,3 +82,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_faslen.out
+stdin: $(inputs.input_files.path)

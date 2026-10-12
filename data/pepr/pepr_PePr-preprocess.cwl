@@ -145,6 +145,7 @@ inputs:
       prefix: --windowsize
   - id: output_directory_path
     type: string
+    doc: where you want the output files to be (created before the run)
     inputBinding:
       position: 102
       prefix: --output-directory
@@ -158,6 +159,11 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory_path)
+        entry: "$({class: 'Directory', listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepr:1.1.24--py35_0

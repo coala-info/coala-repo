@@ -1,5 +1,15 @@
 # percolator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| percolator | PASS |  |
+| percolator_msgf2pin | Not completed | no usable test data: the converter crashes with a string error on the only sample files found (target-only files shipped in the image); no separate target and decoy search results available |
+| percolator_qvality | PASS |  |
+| percolator_sqt2pin | Not completed | no usable test data: the converter crashes with a string error on the only sample files found (target-only files shipped in the image); no separate target and decoy search results available |
+| percolator_tandem2pin | Not completed | no usable test data: the converter crashes with a string error on the only sample files found (target-only files shipped in the image); no separate target and decoy search results available |
+
 ## percolator
 
 ### Tool Description
@@ -316,6 +326,373 @@ Options:
                                         file
 ```
 
+## percolator_qvality
+
+### Tool Description
+Calculate score, PEP and q-value directly from target and null scores.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/percolator:3.7.1--h3b5f4bd_2
+- **Homepage**: https://github.com/percolator/percolator
+- **Package**: https://anaconda.org/channels/bioconda/packages/percolator/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+qvality version 3.07.1, Build Date Mar 13 2025 17:19:51
+Distributed under Apache 2.0 License
+Written by Lukas Käll (lukas.kall@cbr.su.se) in the
+Department of Genome Sciences at the University of Washington.
+
+Usage:
+   qvality [options] target_file null_file
+or
+   qvality [options] pvalue_file
+
+target_file and null_file are files containing scores from a mixed model
+and a null model, each score separated with whitespace or line feed.
+Alternatively, accuate p-value could be provided in a single file pvalue_file.
+
+The method reports score, PEP, and q-value calculated directly from scores
+Convergence of the method can be checked by comparing the average PEP of identifications
+above threshold with the q-value
+
+Options:
+ -h
+ --help                              Display this message
+ -v <level>
+ --verbose <level>                   Set verbosity of output: 0=no processing 
+                                     info, 5=all, default is 2
+ -s <value>
+ --epsilon-step <value>              The relative step size used as treshhold 
+                                     before cross validation error is calculated
+ -n <bins>
+ --number-of-bins <bins>             The number of spline knots used when 
+                                     interpolating spline function. Default is 
+                                     500.
+ -c <value>
+ --epsilon-cross-validation <value>  The relative crossvalidation step size used 
+                                     as treshhold before ending the iterations
+ -r
+ --reverse                           Indicating that the scoring mechanism is 
+                                     reversed, i.e., that low scores are better 
+                                     than higher scores
+ -o <file>
+ --output-file <file>                Output results to file instead of stdout
+ -Y
+ --tdc-input                         Turns off the pi0 correction for search 
+                                     results from a concatenated database.
+ -d
+ --include-negative                  Include negative hits (decoy) probabilities 
+                                     in the results
+```
+
+## percolator_sqt2pin
+
+### Tool Description
+Convert SQT search results to the Percolator pin input format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/percolator:3.7.1--h3b5f4bd_2
+- **Homepage**: https://github.com/percolator/percolator
+- **Package**: https://anaconda.org/channels/bioconda/packages/percolator/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+Pin-converter version 3.07.1, Build Date Mar 13 2025 17:22:53
+Copyright (c) 2013 Lukas Käll. All rights reserved.
+Written by Lukas Käll (lukas.kall@scilifelab.se) in the
+School of Biotechnology at KTH - Royal Institute of Technology, Stockholm.
+
+Usage:
+   sqt2pin [options] -o output.tsv target.sqt decoy.sqt 
+
+Where output.tsv is where the output will be written (ensure to have read and 
+write access on the file).target.sqt is the target sqt-file, and decoy.sqt is
+the decoy sqt-file. Small data sets may be merged by replace the sqt-files with
+meta files. Meta files are text files containing the paths of sqt-files, one
+path per line. For successful result, the different runs should be generated
+under similar condition.
+
+Options:
+ -h
+ --help                     Display this message
+ -o <filename>
+ --outputTab <filename>     save output in a tab delimited file
+ -k <filename>
+ --outputXML <filename>     save output in the (deprecated) pin-xml format file
+ -K
+ --outputXMLstdout          output to stdout in the (deprecated) pin-xml format 
+                            file
+ -m <number>
+ --matches <number>         Maximal number of matches to take in consideration 
+                            per spectrum
+ -v <level>
+ --verbose <level>          Set verbosity of output: 0=no processing info, 
+                            5=all, default is 2
+ -a
+ --aa-freq                  Calculate amino acid frequency features
+ -b
+ --PTM                      Calculate feature for number of post-translational 
+                            modifications
+ -e
+ --enzyme                   Type of enzyme 
+                            "no_enzyme","elastase","pepsin","proteinasek","therm
+                            olysin","chymotrypsin","lys-n","lys-c","arg-c","asp-
+                            n","glu-c","trypsin" default="trypsin"
+[EXPERIMENTAL FEATURE]
+ --id-with-exp-mass         Include experimental mass in PSMid for easier 
+                            correlation with search engine results.
+ -N
+ --PNGaseF                  Calculate feature based on N-linked glycosylation 
+                            pattern resulting from a PNGaseF treatment. 
+                            (N[*].[ST])
+ -2 <filename>
+ --ms2-file <filename>      File containing spectra and retention time. The file 
+                            could be in mzXML, MS2 or compressed MS2 file.
+ -M
+ --isotope                  Mass difference calculated to closest isotope mass 
+                            rather than to the average mass.
+ -p <Scheme>
+ --psm-annotation <Scheme>  An anotation scheme used to convert the psms from 
+                            the search. An example if Q# was used to describe 
+                            pyro-glu formation (UNIMOD:28), and S* and T* was 
+                            used to describe phosphorylation (UNIMOD:21), we 
+                            would use the option -p *:21:#:28
+ -P
+ --pattern                  Pattern used to identify the decoy PSMs. Default = 
+                            "random".
+ -F
+ --databases                Link to the fasta database/s used in the search 
+                            against the spectra file/s 
+                            <target.fasta,[decoy.fasta]> (Including this option 
+                            will add the proteins to the generated pin file).
+ -c
+ --cleavages                Number of allowed miss cleavages used in the search 
+                            engine (default 0)(Only valid when using option -F).
+ -l
+ --min-length               Minimum peptide length allowed used in the search 
+                            engine (default 6)(Only valid when using option -F).
+ -t
+ --max-length               Maximum peptide length allowed used in the search 
+                            engine (default 40)(Only valid when using option 
+                            -F).
+ -w
+ --min-mass                 Minimum peptide mass allowed used in the search 
+                            engine (default 400)(Only valid when using option 
+                            -F).
+ -x
+ --max-mass                 Maximum peptide mass allowed used in the search 
+                            engine (default 6000)(Only valid when using option 
+                            -F).
+```
+
+## percolator_msgf2pin
+
+### Tool Description
+Convert MS-GF+ MzIdentML results to the Percolator pin input format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/percolator:3.7.1--h3b5f4bd_2
+- **Homepage**: https://github.com/percolator/percolator
+- **Package**: https://anaconda.org/channels/bioconda/packages/percolator/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+Pin-converter version 3.07.1, Build Date Mar 13 2025 17:22:53
+Copyright (c) 2013 Lukas Käll. All rights reserved.
+Written by Lukas Käll (lukas.kall@scilifelab.se) in the
+School of Biotechnology at KTH - Royal Institute of Technology, Stockholm.
+
+Usage:
+   msgf2pin [options] target.mzid decoy.mzid
+
+target.mzid and decoy.mzid are MzIdentML-files of MS-GF+ from
+separate target and decoy searches. Internal MS-GF+ target/decoy
+analysis should be turned off, and the addFeatures options turned on.
+Multiple MzIdentML-files can be merged by replacing target and decoy
+filepaths with meta files. Meta files are text files containing the
+the paths of mzid-files, one path per line. For successful results,
+the different runs should be generated under similar conditions.
+
+Options:
+ -h
+ --help                     Display this message
+ -o <filename>
+ --outputTab <filename>     save output in a tab delimited file
+ -k <filename>
+ --outputXML <filename>     save output in the (deprecated) pin-xml format file
+ -K
+ --outputXMLstdout          output to stdout in the (deprecated) pin-xml format 
+                            file
+ -m <number>
+ --matches <number>         Maximal number of matches to take in consideration 
+                            per spectrum
+ -v <level>
+ --verbose <level>          Set verbosity of output: 0=no processing info, 
+                            5=all, default is 2
+ -a
+ --aa-freq                  Calculate amino acid frequency features
+ -b
+ --PTM                      Calculate feature for number of post-translational 
+                            modifications
+ -e
+ --enzyme                   Type of enzyme 
+                            "no_enzyme","elastase","pepsin","proteinasek","therm
+                            olysin","chymotrypsin","lys-n","lys-c","arg-c","asp-
+                            n","glu-c","trypsin" default="trypsin"
+[EXPERIMENTAL FEATURE]
+ --id-with-exp-mass         Include experimental mass in PSMid for easier 
+                            correlation with search engine results.
+ -N
+ --PNGaseF                  Calculate feature based on N-linked glycosylation 
+                            pattern resulting from a PNGaseF treatment. 
+                            (N[*].[ST])
+ -2 <filename>
+ --ms2-file <filename>      File containing spectra and retention time. The file 
+                            could be in mzXML, MS2 or compressed MS2 file.
+ -M
+ --isotope                  Mass difference calculated to closest isotope mass 
+                            rather than to the average mass.
+ -p <Scheme>
+ --psm-annotation <Scheme>  An anotation scheme used to convert the psms from 
+                            the search. An example if Q# was used to describe 
+                            pyro-glu formation (UNIMOD:28), and S* and T* was 
+                            used to describe phosphorylation (UNIMOD:21), we 
+                            would use the option -p *:21:#:28
+ -P
+ --pattern                  Pattern used to identify the decoy PSMs. Default = 
+                            "random".
+ -F
+ --databases                Link to the fasta database/s used in the search 
+                            against the spectra file/s 
+                            <target.fasta,[decoy.fasta]> (Including this option 
+                            will add the proteins to the generated pin file).
+ -c
+ --cleavages                Number of allowed miss cleavages used in the search 
+                            engine (default 0)(Only valid when using option -F).
+ -l
+ --min-length               Minimum peptide length allowed used in the search 
+                            engine (default 6)(Only valid when using option -F).
+ -t
+ --max-length               Maximum peptide length allowed used in the search 
+                            engine (default 40)(Only valid when using option 
+                            -F).
+ -w
+ --min-mass                 Minimum peptide mass allowed used in the search 
+                            engine (default 400)(Only valid when using option 
+                            -F).
+ -x
+ --max-mass                 Maximum peptide mass allowed used in the search 
+                            engine (default 6000)(Only valid when using option 
+                            -F).
+```
+
+## percolator_tandem2pin
+
+### Tool Description
+Convert X!Tandem results to the Percolator pin input format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/percolator:3.7.1--h3b5f4bd_2
+- **Homepage**: https://github.com/percolator/percolator
+- **Package**: https://anaconda.org/channels/bioconda/packages/percolator/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+Pin-converter version 3.07.1, Build Date Mar 13 2025 17:22:53
+Copyright (c) 2013 Lukas Käll. All rights reserved.
+Written by Lukas Käll (lukas.kall@scilifelab.se) in the
+School of Biotechnology at KTH - Royal Institute of Technology, Stockholm.
+
+Usage:
+   tandem2pin [options] -o output.tsv target_file decoy_file 
+
+Where output.tsv is where the output will be written (ensure to have read and 
+write access on the file).target_file is the target X!tandem-file, and decoy_file is
+the decoy X!tandem-file. Small data sets may be merged by replace the X!tandem-files with
+meta files. Meta files are text files containing the paths of X!tandem-files, one
+path per line. For successful result, the different runs should be generated
+under similar condition.
+
+Options:
+ -h
+ --help                     Display this message
+ -o <filename>
+ --outputTab <filename>     save output in a tab delimited file
+ -k <filename>
+ --outputXML <filename>     save output in the (deprecated) pin-xml format file
+ -K
+ --outputXMLstdout          output to stdout in the (deprecated) pin-xml format 
+                            file
+ -m <number>
+ --matches <number>         Maximal number of matches to take in consideration 
+                            per spectrum
+ -v <level>
+ --verbose <level>          Set verbosity of output: 0=no processing info, 
+                            5=all, default is 2
+ -a
+ --aa-freq                  Calculate amino acid frequency features
+ -b
+ --PTM                      Calculate feature for number of post-translational 
+                            modifications
+ -e
+ --enzyme                   Type of enzyme 
+                            "no_enzyme","elastase","pepsin","proteinasek","therm
+                            olysin","chymotrypsin","lys-n","lys-c","arg-c","asp-
+                            n","glu-c","trypsin" default="trypsin"
+[EXPERIMENTAL FEATURE]
+ --id-with-exp-mass         Include experimental mass in PSMid for easier 
+                            correlation with search engine results.
+ -N
+ --PNGaseF                  Calculate feature based on N-linked glycosylation 
+                            pattern resulting from a PNGaseF treatment. 
+                            (N[*].[ST])
+ -2 <filename>
+ --ms2-file <filename>      File containing spectra and retention time. The file 
+                            could be in mzXML, MS2 or compressed MS2 file.
+ -M
+ --isotope                  Mass difference calculated to closest isotope mass 
+                            rather than to the average mass.
+ -p <Scheme>
+ --psm-annotation <Scheme>  An anotation scheme used to convert the psms from 
+                            the search. An example if Q# was used to describe 
+                            pyro-glu formation (UNIMOD:28), and S* and T* was 
+                            used to describe phosphorylation (UNIMOD:21), we 
+                            would use the option -p *:21:#:28
+ -P
+ --pattern                  Pattern used to identify the decoy PSMs. Default = 
+                            "random".
+ -F
+ --databases                Link to the fasta database/s used in the search 
+                            against the spectra file/s 
+                            <target.fasta,[decoy.fasta]> (Including this option 
+                            will add the proteins to the generated pin file).
+ -c
+ --cleavages                Number of allowed miss cleavages used in the search 
+                            engine (default 0)(Only valid when using option -F).
+ -l
+ --min-length               Minimum peptide length allowed used in the search 
+                            engine (default 6)(Only valid when using option -F).
+ -t
+ --max-length               Maximum peptide length allowed used in the search 
+                            engine (default 40)(Only valid when using option 
+                            -F).
+ -w
+ --min-mass                 Minimum peptide mass allowed used in the search 
+                            engine (default 400)(Only valid when using option 
+                            -F).
+ -x
+ --max-mass                 Maximum peptide mass allowed used in the search 
+                            engine (default 6000)(Only valid when using option 
+                            -F).
+```
 
 ## Metadata
 - **Skill**: not generated

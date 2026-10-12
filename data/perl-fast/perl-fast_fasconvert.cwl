@@ -5,14 +5,9 @@ label: perl-fast_fasconvert
 doc: "Convert sequences and alignments either to or from fasta format.\n\nTool homepage:
   http://metacpan.org/pod/FAST"
 inputs:
-  - id: input_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input sequence or alignment files to be converted
-    inputBinding:
-      position: 1
+  - id: input_file
+    type: File
+    doc: Input sequence or alignment file to be converted (read from standard input)
   - id: comment
     type:
       - 'null'
@@ -21,14 +16,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --comment
-  - id: files_mode
-    type:
-      - 'null'
-      - boolean
-    doc: Convert file in place. File name appended with format
-    inputBinding:
-      position: 102
-      prefix: --files
   - id: input_format
     type:
       - 'null'
@@ -86,3 +73,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fasconvert.out
+stdin: $(inputs.input_file.path)

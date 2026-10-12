@@ -1,5 +1,11 @@
 # pepnovo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pepnovo_PepNovo_bin | PASS |  |
+
 ## pepnovo_PepNovo_bin
 
 ### Tool Description

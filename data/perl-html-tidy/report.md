@@ -1,5 +1,11 @@
 # perl-html-tidy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-html-tidy_webtidy | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

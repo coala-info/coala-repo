@@ -4,11 +4,20 @@ baseCommand: VelvetOptimiser.pl
 label: perl-velvetoptimiser_VelvetOptimiser.pl
 doc: "Optimises Velvet assembly parameters.\n\nTool homepage: https://github.com/tseemann/VelvetOptimiser"
 inputs:
-  - id: velveth_input_line
+  - id: velveth_files
     type: string
-    doc: The file section of the velveth command line.
+    doc: The file section of the velveth command line, for example "-fastq.gz
+      -shortPaired -separate R1.fq.gz R2.fq.gz". The files must be given in
+      reads.
     inputBinding:
-      position: 1
+      position: 102
+      prefix: --velvethfiles
+  - id: reads
+    type:
+      type: array
+      items: File
+    doc: Read files named in velveth_files; staged into the working directory so
+      the names resolve.
   - id: amos_file
     type:
       - 'null'
@@ -69,9 +78,7 @@ inputs:
       position: 102
       prefix: --optFuncKmer
   - id: prefix
-    type:
-      - 'null'
-      - string
+    type: string
     doc: The prefix for the output filenames, the default is the date and time 
       in the format DD-MM-YYYY-HH-MM_.
     inputBinding:
@@ -119,14 +126,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --velvetgoptions
-  - id: velveth_files
-    type:
-      - 'null'
-      - string
-    doc: The file section of the velveth command line.
-    inputBinding:
-      position: 102
-      prefix: --velvethfiles
   - id: verbose
     type:
       - 'null'
@@ -139,13 +138,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
+  - id: logfile
+    type: File
+    doc: Log file written as PREFIX_logfile.txt
+    outputBinding:
+      glob: $(inputs.prefix)_logfile.txt
+  - id: assembly_dirs
     type:
       type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+      items: Directory
+    doc: Velvet assembly directories PREFIX_data_<hash>; the final one has
+      contigs.fa
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.prefix)_data_*
   - id: dir_final_dir
     type:
       - 'null'
@@ -153,6 +158,10 @@ outputs:
     doc: The name of the directory to put the final output into.
     outputBinding:
       glob: $(inputs.dir_final)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-velvetoptimiser:2.2.6--pl526_0

@@ -7,8 +7,6 @@ inputs:
   - id: reference
     type: File
     doc: FASTA format file (text file only).
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 1
   - id: accuracy_max
@@ -55,8 +53,10 @@ inputs:
   - id: hmm_model
     type:
       - 'null'
+      - string
       - File
-    doc: HMM model of quality code.
+    doc: HMM model of quality code. Give a File, or a path inside the image such
+      as /usr/local/data/P6C4.model (PacBio) or /usr/local/data/R94.model (Nanopore).
     inputBinding:
       position: 102
       prefix: --hmm_model

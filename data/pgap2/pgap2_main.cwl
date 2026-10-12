@@ -133,7 +133,7 @@ inputs:
       position: 101
       prefix: --id-attr-key
   - id: indir
-    type: File
+    type: Directory
     doc: Input file contained, same prefix seems as the same strain.
     inputBinding:
       position: 101
@@ -255,7 +255,17 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: >-
+      && find $(inputs.outdir || '.') -type l -exec sh -c 'cp -L "$1" "$1.tmp" &&
+      mv "$1.tmp" "$1"' _ {} \;
+requirements:
+  - class: ShellCommandRequirement
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgap2:1.1.0--pyhdfd78af_0
+    dockerOutputDirectory: /pgap2_out
 stdout: pgap2_main.out

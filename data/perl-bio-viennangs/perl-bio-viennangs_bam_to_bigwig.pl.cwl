@@ -1,22 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bam_to_bigWig.pl
+baseCommand: bam_to_bigwig.pl
 label: perl-bio-viennangs_bam_to_bigwig.pl
 doc: "Convert BAM files to bigWig format for visualization, with support for strand-specific
   data.\n\nTool homepage: http://metacpan.org/pod/Bio::ViennaNGS"
 inputs:
   - id: bam
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input file in BAM format
     inputBinding:
       position: 101
       prefix: --bam
   - id: chromosome_sizes
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Chromosome sizes file
     inputBinding:
       position: 101
@@ -24,7 +20,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: Name of the log file. Unless specified, the default log file will be 
       'bam_to_bigwig.log' in the given output directory.
     inputBinding:
@@ -49,9 +45,7 @@ inputs:
       prefix: -o
 outputs:
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_directory_path)

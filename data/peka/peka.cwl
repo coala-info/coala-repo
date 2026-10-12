@@ -4,12 +4,19 @@ baseCommand: peka
 label: peka
 doc: "Search for enriched motifs around thresholded crosslinks in CLIP data.\n\nTool
   homepage: https://github.com/ulelab/peka"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path)
+        entry: "$({class: 'Directory', listing: []})"
+        writable: true
 inputs:
   - id: all_outputs
     type:
       - 'null'
-      - boolean
-    doc: controls the number of outputs, can be True or False
+      - string
+    doc: controls the number of outputs, can be True or False (default False)
     inputBinding:
       position: 101
       prefix: --alloutputs
@@ -64,10 +71,9 @@ inputs:
       position: 101
       prefix: --kmerlength
   - id: output_path
-    type:
-      - 'null'
-      - string
-    doc: output folder
+    type: string
+    default: peka_out
+    doc: output folder (created before the run)
     inputBinding:
       position: 101
       prefix: --outputpath
@@ -93,7 +99,7 @@ inputs:
   - id: relaxed_prtxn
     type:
       - 'null'
-      - boolean
+      - string
     doc: Whether to relax automatically calculated prtxn threshold or not. Can 
       be 'True' or 'False', default is 'True'. If 'True', more positions will be
       included for PEKA-score calculation across k-mers. Using relaxed threshold
@@ -131,7 +137,7 @@ inputs:
   - id: set_seeds
     type:
       - 'null'
-      - boolean
+      - string
     doc: If you want to ensure reproducibility of results the option set_seeds 
       must be set to True. Can be True or False [DEFAULT True]. Note that 
       setting seeds reduces the randomness of background sampling.
@@ -159,7 +165,7 @@ inputs:
   - id: subsample
     type:
       - 'null'
-      - boolean
+      - string
     doc: if the crosslinks file is very large, they can be subsampled to reduce 
       runtime, can be True/False
     inputBinding:

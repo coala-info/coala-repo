@@ -1,5 +1,11 @@
 # pdbfixer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pdbfixer | PASS |  |
+
 ## pdbfixer
 
 ### Tool Description

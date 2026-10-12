@@ -2,17 +2,18 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pegs
 label: pegs
-doc: "Peak-set Enrichment Gene-set Analysis (PEGS)\n\nTool homepage: https://github.com/pegjs/pegjs"
+doc: "Peak-set Enrichment Gene-set Analysis (PEGS)\n\nTool homepage: https://github.com/fls-bioinformatics-core/pegs"
 inputs:
   - id: gene_intervals
-    type: File
+    type:
+      - File
+      - string
     doc: Gene intervals file
     inputBinding:
       position: 1
   - id: basename
-    type:
-      - 'null'
-      - string
+    type: string
+    default: pegs
     doc: Basename for output files
     inputBinding:
       position: 102
@@ -87,7 +88,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Keep temporary files
+    doc: keep the intermediate intersection files (useful for debugging)
     inputBinding:
       position: 102
       prefix: -k
@@ -155,6 +156,8 @@ outputs:
       glob: $(inputs.basename)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pegs:0.6.6--pyhdfd78af_0

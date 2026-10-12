@@ -1,5 +1,11 @@
 # pepquery CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pepquery | PASS |  |
+
 ## pepquery
 
 ### Tool Description

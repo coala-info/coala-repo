@@ -6,27 +6,18 @@ doc: "Sort sequence records taxonomically using NCBI taxonomic data.\n\nTool hom
   http://metacpan.org/pod/FAST"
 inputs:
   - id: nodes_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: NCBI nodes.dmp file
     inputBinding:
-      position: 1
+      position: 201
   - id: names_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: NCBI names.dmp file (not used in --tax-id-mode)
     inputBinding:
-      position: 2
+      position: 202
   - id: multifasta_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input multifasta files
-    inputBinding:
-      position: 3
+    type: File
+    doc: Input multifasta files (read from standard input)
   - id: annotate
     type:
       - 'null'
@@ -75,7 +66,7 @@ inputs:
     doc: Taxa are sorted using sequence identifiers (default uses whole descriptions)
     inputBinding:
       position: 104
-      prefix: --indentifier
+      prefix: --identifier
   - id: index
     type:
       - 'null'
@@ -142,3 +133,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fastaxsort.out
+stdin: $(inputs.multifasta_files.path)

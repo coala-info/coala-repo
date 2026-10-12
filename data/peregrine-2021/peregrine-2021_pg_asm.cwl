@@ -4,27 +4,42 @@ baseCommand: pg_asm
 label: peregrine-2021_pg_asm
 doc: "Peregrine-2021 genome assembler: the main workflow entry for end-to-end assembly
   from the reads\n\nTool homepage: https://github.com/cschin/peregrine-2021"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.read_files || [])
 inputs:
+  - id: read_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Read files named in the list file (input_reads); they are staged in the working directory so those names resolve.
   - id: input_reads
     type: File
     doc: Path to a file that contains the list of reads in .fa .fa.gz .fastq or fastq.gz
       formats
     inputBinding:
       position: 1
+  - id: work_dir
+    type: string
+    doc: The path to a work directory for intermediate files and the results
+    inputBinding:
+      position: 2
   - id: nthreads
     type:
       - 'null'
       - int
     doc: Number of threads
     inputBinding:
-      position: 2
+      position: 3
   - id: nchunks
     type:
       - 'null'
       - int
     doc: Number of partition
     inputBinding:
-      position: 3
+      position: 4
   - id: bestn
     type:
       - 'null'
@@ -114,11 +129,11 @@ inputs:
       position: 104
       prefix: -w
 outputs:
-  - id: work_dir
+  - id: assembly_dir
     type: Directory
-    doc: The path to a work directory for intermediate files and the results
+    doc: The work directory with intermediate files and the assembly results
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.work_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peregrine-2021:0.4.13--ha6fb395_6

@@ -5,13 +5,8 @@ label: perl-fast_fastail
 doc: "Print the last sequence records of a multifasta file.\n\nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: multifasta_file
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input multifasta file(s)
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input multifasta file(s) (read from standard input)
   - id: annotate
     type:
       - 'null'
@@ -86,3 +81,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fastail.out
+stdin: $(inputs.multifasta_file.path)

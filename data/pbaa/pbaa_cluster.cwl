@@ -19,6 +19,11 @@ inputs:
       1.9 or greater. A FOFN can be provide for multiple files.
     inputBinding:
       position: 2
+  - id: output_prefix
+    type: string
+    doc: Output prefix for run.
+    inputBinding:
+      position: 3
   - id: filter
     type:
       - 'null'
@@ -165,11 +170,16 @@ inputs:
       position: 103
       prefix: --trim-ends
 outputs:
-  - id: prefix
-    type: File
-    doc: Output prefix for run.
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: All files written with the output prefix (passed and failed cluster
+      sequences, read info, and the other cluster tables).
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbaa:1.2.0--h9ee0642_0

@@ -1,5 +1,11 @@
 # pear CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pear | PASS |  |
+
 ## pear
 
 ### Tool Description

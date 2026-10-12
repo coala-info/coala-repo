@@ -1,13 +1,12 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -Xmx2G
-  - -jar
-  - pepquery.jar
+baseCommand: pepquery
 label: pepquery
 doc: "A tool for peptide-centric identification and validation of proteomics data.\n\
   \ \nTool homepage: https://github.com/bzhanglab/PepQuery"
+arguments:
+  - position: 0
+    valueFrom: -Xmx2G
 inputs:
   - id: aa_substitution
     type:
@@ -125,7 +124,9 @@ inputs:
       position: 101
       prefix: -indexType
   - id: input
-    type: string
+    type:
+      - string
+      - File
     doc: 'Input value: peptide sequence(s), file of sequences, protein sequence/ID,
       DNA sequence, VCF, BED, or GTF file.'
     inputBinding:
@@ -216,6 +217,7 @@ inputs:
     type:
       - 'null'
       - File
+      - string
     doc: MS/MS data used for identification (MGF, mzML, mzXML, raw, etc. or 
       USI).
     inputBinding:
@@ -249,6 +251,7 @@ inputs:
     type:
       - 'null'
       - string
+      - File
     doc: Protein reference database in FASTA format or online database string 
       (e.g., swissprot:human).
     inputBinding:
@@ -314,10 +317,10 @@ inputs:
       prefix: -varMod
   - id: output_dir_path
     type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: Output directory
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type:
@@ -328,6 +331,9 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      $([inputs.protein_db, inputs.ms_data].filter(function (x) { return x && x.class === 'File'; }).map(function (x) { return {entry: x, writable: true}; }))
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepquery:2.0.2--hdfd78af_0

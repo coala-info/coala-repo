@@ -1,5 +1,14 @@
 # peakhood CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| peakhood_batch | PASS | works with --report; without it the tool's final check fails after the outputs are written (tool bug). |
+| peakhood_extract | PASS |  |
+| peakhood_merge | PASS |  |
+| peakhood_motif | PASS |  |
+
 ## peakhood_extract
 
 ### Tool Description

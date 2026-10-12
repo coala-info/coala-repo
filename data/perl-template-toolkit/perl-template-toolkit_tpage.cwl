@@ -11,7 +11,7 @@ inputs:
         items: File
     doc: Template files to process
     inputBinding:
-      position: 1
+      position: 200
   - id: absolute
     type:
       - 'null'
@@ -31,7 +31,7 @@ inputs:
   - id: compile_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for compiled template files
     inputBinding:
       position: 102
@@ -65,10 +65,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --define
     doc: Define template variable (var=value)
     inputBinding:
       position: 102
-      prefix: --define
   - id: end_tag
     type:
       - 'null'
@@ -106,10 +107,11 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --include_path
     doc: Add directory to INCLUDE_PATH
     inputBinding:
       position: 102
-      prefix: --include_path
   - id: interpolate
     type:
       - 'null'
@@ -131,10 +133,11 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --perl5lib
     doc: Specify additional Perl library directories
     inputBinding:
       position: 102
-      prefix: --perl5lib
   - id: plugin_base
     type:
       - 'null'

@@ -1,5 +1,110 @@
 # perl-fast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-fast_alncut | PASS |  |
+| perl-fast_alnpi | PASS |  |
+| perl-fast_fascodon | PASS |  |
+| perl-fast_fascomp | PASS |  |
+| perl-fast_fasconvert | PASS |  |
+| perl-fast_fascut | PASS | the --format option is rejected by the tool (not in its option list); the main mode works |
+| perl-fast_fasfilter | PASS |  |
+| perl-fast_fasgrep | PASS |  |
+| perl-fast_fashead | PASS |  |
+| perl-fast_faslen | PASS |  |
+| perl-fast_faspaste | PASS |  |
+| perl-fast_fasrc | PASS |  |
+| perl-fast_fassort | PASS |  |
+| perl-fast_fassub | PASS |  |
+| perl-fast_fastail | PASS |  |
+| perl-fast_fastax | PASS | synthetic data: real NCBI taxonomy files with planted FASTA headers that are taxon names |
+| perl-fast_fastaxsort | PASS | synthetic data: real NCBI taxonomy files with planted FASTA headers that are taxon names |
+| perl-fast_fastr | PASS |  |
+| perl-fast_fasuniq | PASS |  |
+| perl-fast_faswc | PASS |  |
+| perl-fast_fasxl | PASS |  |
+
+## perl-fast_alncut
+
+### Tool Description
+Select sites of a multiple sequence alignment by gap content, parsimony informativeness or variant frequency
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
+- **Homepage**: http://metacpan.org/pod/FAST
+- **Package**: https://anaconda.org/channels/bioconda/packages/perl-fast/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+    alncut [options] [MULTIFASTA-FILE...]
+
+Options:
+    -g --gapfree
+            Print only sites that contain no gaps
+
+    -a --allgap
+            Print only sites that contain exclusively gaps
+
+    -p --parsinf
+            Print only sites that are parsimoniously informative.
+            Parsimoniously informative sites are variable sites in which at
+            least two different site-characters or states are each
+            represented in at least two different sequences.
+
+    -v --negate
+            Print set-complement of sites otherwise selected; as a sole
+            option, will print only variable sites
+
+    -f [int], --frequency=[int]
+            Print sites that contain gaps or minor variants up to a maximum
+            of [int] sequences
+
+    -f [float], --frequency=[float]
+            Print sites that contain gaps or minor variants up to a maximum
+            of [float] relative frequency
+
+    --verbose
+            Print numbers and indices of sites selected by the criteria to
+            STDERR
+
+    -h, --help
+            Print a brief help message and exit.
+
+    --man   Print the manual page and exit.
+
+    --version
+            Print version information and exit.
+
+    -l, --log
+            Creates, or appends to, a generic FAST logfile in the current
+            working directory. The logfile records date/time of execution,
+            full command with options and arguments, and an optional
+            comment.
+
+    -L [string], --logname=[string]
+            Use [string] as the name of the logfile. Default is
+            "FAST.log.txt".
+
+    -C [string], --comment=[string]
+            Include comment [string] in logfile. No comment is saved by
+            default.
+
+    --format=[format]
+            Use alternative format for input. See man page for "fasconvert"
+            for allowed formats. This is for convenience; the FAST tools are
+            designed to exchange data in Fasta format, and "fasta" is the
+            default format for this tool.
+
+    -m [dna|rna|protein], --moltype=[dna|rna|protein]
+            Specify the type of sequence on input (should not be needed in
+            most cases, but sometimes Bioperl cannot guess and complains
+            when processing data).
+```
+
 ## Metadata
 - **Skill**: generated
 

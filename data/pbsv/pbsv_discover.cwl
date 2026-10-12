@@ -9,9 +9,17 @@ doc: "Find structural variant (SV) signatures in read alignments (BAM to SVSIG).
 inputs:
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Coordinate-sorted aligned reads in which to identify SV signatures.
     inputBinding:
       position: 1
+  - id: output_svsig
+    type: string
+    doc: Structural variant signatures output file name (svsig.gz).
+    inputBinding:
+      position: 2
   - id: downsample_max_alignments
     type:
       - 'null'
@@ -117,11 +125,11 @@ inputs:
       position: 102
       prefix: --tandem-repeats
 outputs:
-  - id: output_svsig
+  - id: output_svsig_file
     type: File
     doc: Structural variant signatures output.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_svsig)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbsv:2.11.0--h9ee0642_0

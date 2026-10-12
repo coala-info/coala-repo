@@ -2,39 +2,53 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: xml_merge
 label: perl-xml-twig_xml_merge
-doc: "Merge XML files using the XML::Twig module.\n\nTool homepage: http://metacpan.org/pod/XML-Twig"
+doc: "Merge back XML files split with xml_split.\n\nTool homepage: http://metacpan.org/pod/XML-Twig"
 inputs:
-  - id: input_files
-    type:
-      type: array
-      items: File
-    doc: XML files to be merged
+  - id: main_file
+    type: File
+    doc: The main document written by xml_split (the one ending in -00.xml)
     inputBinding:
-      position: 1
-  - id: in_place
+      position: 200
+  - id: parts
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Sub files written by xml_split; staged next to the main file so the
+      names in the merge instructions resolve
+  - id: xinclude
     type:
       - 'null'
       - boolean
-    doc: Edit files in place
+    doc: The files use XInclude instead of processing instructions (they were
+      created using the -i option of xml_split)
     inputBinding:
       position: 102
       prefix: -i
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+  - id: verbose
     type:
       - 'null'
-      - File
-    doc: Output results to this file instead of stdout
+      - boolean
+    doc: Verbose output
+    inputBinding:
+      position: 102
+      prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output file; unless this option is used the program output goes to STDOUT
+    inputBinding:
+      position: 103
+      prefix: -o
+outputs:
+  - id: output_file
+    type: File
+    doc: Merged XML document
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.parts ? [inputs.main_file].concat(inputs.parts) : [inputs.main_file])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-xml-twig:3.52--pl526_1

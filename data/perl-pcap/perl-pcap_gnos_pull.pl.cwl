@@ -1,51 +1,32 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./gnos_pull.pl
+baseCommand: gnos_pull.pl
 label: perl-pcap_gnos_pull.pl
-doc: "PCAP GNOS pull tool for retrieving ALIGNMENTS or CALLS metadata and data from
-  GNOS repositories.\n\nTool homepage: https://github.com/ICGC-TCGA-PanCancer/PCAP-core"
+doc: "Pull alignments or calls from GNOS repositories into a local mirror\n\nTool homepage: https://github.com/ICGC-TCGA-PanCancer/PCAP-core"
 inputs:
   - id: analysis
     type: string
-    doc: ALIGNMENTS or CALLS
+    doc: "ALIGNMENTS or CALLS"
     inputBinding:
       position: 101
       prefix: --analysis
+  - id: outdir
+    type: string
+    doc: "Where to save jsonl and resulting GNOS downloads"
+    inputBinding:
+      position: 101
+      prefix: --outdir
   - id: config
     type: File
-    doc: Mapping of GNOS repos to permissions keys
+    doc: "Mapping of GNOS repos to permissions keys"
     inputBinding:
       position: 101
       prefix: --config
-  - id: debug
-    type:
-      - 'null'
-      - boolean
-    doc: prints extra debug information
-    inputBinding:
-      position: 101
-      prefix: --debug
-  - id: info
-    type:
-      - 'null'
-      - boolean
-    doc: Just prints how many donor's will be included in pull and some stats.
-    inputBinding:
-      position: 101
-      prefix: --info
-  - id: man
-    type:
-      - 'null'
-      - boolean
-    doc: More verbose usage info
-    inputBinding:
-      position: 101
-      prefix: --man
   - id: symlinks
     type:
       - 'null'
       - boolean
-    doc: Rebuild symlinks only.
+    doc: "Rebuild symlinks only"
     inputBinding:
       position: 101
       prefix: --symlinks
@@ -53,7 +34,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of parallel GNOS retrievals.
+    doc: "Number of parallel GNOS retrievals"
     inputBinding:
       position: 101
       prefix: --threads
@@ -61,24 +42,38 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The base URL to retrieve jsonl file from
+    doc: "The base URL to retrieve jsonl file from [http://pancancer.info/gnos_metadata/latest/]"
     inputBinding:
       position: 101
       prefix: --url
-  - id: outdir_path
-    type: string
-    doc: (-o)  Where to save jsonl and resulting GNOS downloads
+  - id: info
+    type:
+      - 'null'
+      - boolean
+    doc: "Just print how many donors will be included in the pull and some stats"
     inputBinding:
-      position: 102
-      prefix: --outdir
+      position: 101
+      prefix: --info
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: "Print extra debug information"
+    inputBinding:
+      position: 101
+      prefix: --debug
 outputs:
-  - id: outdir
-    type: Directory
-    doc: Where to save jsonl and resulting GNOS downloads
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: outdir_out
+    type:
+      - 'null'
+      - Directory
+    doc: "Output folder with the jsonl file and GNOS downloads"
     outputBinding:
-      glob: $(inputs.outdir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0
+stdout: perl-pcap_gnos_pull.pl.out

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wig
+baseCommand:
+  - peakranger
+  - wig
 label: peakranger_wig
 doc: "Converts various genomic data formats to WIG format.\n\nTool homepage: https://github.com/fnaumenko/wigReg"
 inputs:
@@ -60,20 +62,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: output_location_path
+  - id: output_prefix
     type: string
-    doc: the output location
+    doc: the output location prefix; result files are written as <prefix>_*
     inputBinding:
       position: 102
       prefix: --output
 outputs:
-  - id: output_location
+  - id: output_files
     type:
-      - 'null'
-      - Directory
-    doc: the output location
+      type: array
+      items: File
+    doc: Result files written with the output prefix
     outputBinding:
-      glob: $(inputs.output_location_path)
+      glob: $(inputs.output_prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

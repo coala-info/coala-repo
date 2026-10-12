@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ranger
+baseCommand:
+  - peakranger
+  - ranger
 label: peakranger_ranger
 doc: Peak calling tool for ChIP-seq data
 inputs:
@@ -112,20 +114,27 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: output_location_path
+  - id: output_prefix
     type: string
-    doc: the output location
+    doc: the output location prefix; result files are written as <prefix>_*
     inputBinding:
       position: 102
       prefix: --output
 outputs:
-  - id: output_location
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Result files written with the output prefix
+    outputBinding:
+      glob: $(inputs.output_prefix)*
+  - id: report_dir
     type:
       - 'null'
       - Directory
-    doc: the output location
+    doc: HTML report folder (written when --report is set)
     outputBinding:
-      glob: $(inputs.output_location_path)
+      glob: '*_REPORT_*'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

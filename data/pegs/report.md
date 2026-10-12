@@ -1,5 +1,12 @@
 # pegs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pegs | PASS | needs network: the tool downloads bedtools at run time (NetworkAccess set in the CWL) |
+| pegs_mk_pegs_intervals | PASS |  |
+
 ## pegs
 
 ### Tool Description
@@ -32,6 +39,31 @@ usage: pegs [-h] [--version] -p PEAK_SET_FILE [PEAK_SET_FILE ...] -g
 pegs: error: the following arguments are required: GENE_INTERVALS, -p/--peaks, -g/--genes
 ```
 
+
+## pegs_mk_pegs_intervals
+
+### Tool Description
+Make a BED file of gene intervals for PEGS from refGene annotation data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pegs:0.6.6--pyhdfd78af_0
+- **Homepage**: https://github.com/fls-bioinformatics-core/pegs
+- **Package**: https://anaconda.org/channels/bioconda/packages/pegs/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: mk_pegs_intervals [-h] [--version] REFGENE_FILE [GENE_INTERVAL_FILE]
+
+positional arguments:
+  REFGENE_FILE        refGene annotation data for the genome of interest
+  GENE_INTERVAL_FILE  destination for output BED file with gene interval data
+                      (default: '<REFGENE_FILE>_intervals.bed')
+
+optional arguments:
+  -h, --help          show this help message and exit
+  --version           show program's version number and exit
+```
 
 ## Metadata
 - **Skill**: not generated

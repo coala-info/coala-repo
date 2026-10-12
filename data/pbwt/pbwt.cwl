@@ -11,7 +11,7 @@ inputs:
       - boolean
     doc: build reverse pbwt
     inputBinding:
-      position: 101
+      position: 30
       prefix: -buildReverse
   - id: check
     type:
@@ -19,15 +19,23 @@ inputs:
       - boolean
     doc: do various checks
     inputBinding:
-      position: 101
+      position: 90
       prefix: -check
+  - id: root_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files (for example OMNI.pbwt, OMNI.sites, OMNI.samples) staged in the
+      working directory so that root names given to -readAll, -referencePhase,
+      -referenceImpute and -genotypeCompare resolve.
   - id: checkpoint
     type:
       - 'null'
       - int
     doc: checkpoint every n sites while reading
     inputBinding:
-      position: 101
+      position: 5
       prefix: -checkpoint
   - id: copy_samples
     type:
@@ -37,7 +45,7 @@ inputs:
     doc: make M new samples copied from current haplotypes with mean switch 
       length len (expects <M> <len>)
     inputBinding:
-      position: 101
+      position: 30
       prefix: -copySamples
   - id: corrupt_samples
     type:
@@ -47,7 +55,7 @@ inputs:
     doc: randomise fraction q of positions for fraction p of samples (expects 
       <p> <q>)
     inputBinding:
-      position: 101
+      position: 30
       prefix: -corruptSamples
   - id: corrupt_sites
     type:
@@ -57,7 +65,7 @@ inputs:
     doc: randomise fraction q of positions at fraction p of sites (expects <p> 
       <q>)
     inputBinding:
-      position: 101
+      position: 30
       prefix: -corruptSites
   - id: fit_alpha_beta
     type:
@@ -65,7 +73,7 @@ inputs:
       - int
     doc: fit probabilistic model 1..3
     inputBinding:
-      position: 101
+      position: 40
       prefix: -fitAlphaBeta
   - id: four_haps_stats
     type:
@@ -73,7 +81,7 @@ inputs:
       - boolean
     doc: mu:rho 4 hap test stats
     inputBinding:
-      position: 101
+      position: 40
       prefix: -4hapsStats
   - id: genotype_compare
     type:
@@ -82,7 +90,7 @@ inputs:
     doc: compare genotypes with those from reference whose root name is the 
       argument
     inputBinding:
-      position: 101
+      position: 40
       prefix: -genotypeCompare
   - id: impute_explore
     type:
@@ -90,7 +98,7 @@ inputs:
       - int
     doc: n'th impute test
     inputBinding:
-      position: 101
+      position: 40
       prefix: -imputeExplore
   - id: impute_missing
     type:
@@ -98,7 +106,7 @@ inputs:
       - boolean
     doc: impute data marked as missing
     inputBinding:
-      position: 101
+      position: 40
       prefix: -imputeMissing
   - id: ll_copy_model
     type:
@@ -107,15 +115,15 @@ inputs:
         items: float
     doc: log likelihood of Li-Stephens model (expects <theta> <rho>)
     inputBinding:
-      position: 101
+      position: 40
       prefix: -llCopyModel
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: log file; '-' for stderr
     inputBinding:
-      position: 101
+      position: 1
       prefix: -log
   - id: long_within
     type:
@@ -123,7 +131,7 @@ inputs:
       - int
     doc: find matches within set longer than L
     inputBinding:
-      position: 101
+      position: 40
       prefix: -longWithin
   - id: match_dynamic
     type:
@@ -131,7 +139,7 @@ inputs:
       - File
     doc: maximal match seqs in pbwt file to reference
     inputBinding:
-      position: 101
+      position: 40
       prefix: -matchDynamic
   - id: match_indexed
     type:
@@ -139,7 +147,7 @@ inputs:
       - File
     doc: maximal match seqs in pbwt file to reference
     inputBinding:
-      position: 101
+      position: 40
       prefix: -matchIndexed
   - id: match_naive
     type:
@@ -147,7 +155,7 @@ inputs:
       - File
     doc: maximal match seqs in pbwt file to reference
     inputBinding:
-      position: 101
+      position: 40
       prefix: -matchNaive
   - id: max_within
     type:
@@ -155,7 +163,7 @@ inputs:
       - boolean
     doc: find maximal matches within set
     inputBinding:
-      position: 101
+      position: 40
       prefix: -maxWithin
   - id: merge
     type:
@@ -164,7 +172,7 @@ inputs:
         items: File
     doc: merge two or more pbwt files
     inputBinding:
-      position: 101
+      position: 10
       prefix: -merge
   - id: paint
     type:
@@ -174,7 +182,7 @@ inputs:
     doc: output painting co-ancestry matrix to fileroot, optionally specififying
       the number per region (expects <fileNameRoot> [n])
     inputBinding:
-      position: 101
+      position: 40
       prefix: -paint
   - id: paint_sparse
     type:
@@ -184,7 +192,7 @@ inputs:
     doc: output sparse painting to fileroot, optionally specififying the number 
       per region (expects <fileNameRoot> [n])
     inputBinding:
-      position: 101
+      position: 40
       prefix: -paintSparse
   - id: phase
     type:
@@ -192,7 +200,7 @@ inputs:
       - int
     doc: phase with n sparse pbwts
     inputBinding:
-      position: 101
+      position: 40
       prefix: -phase
   - id: pretty
     type:
@@ -201,7 +209,7 @@ inputs:
         items: string
     doc: pretty plot at site k (expects <file> <k>)
     inputBinding:
-      position: 101
+      position: 40
       prefix: -pretty
   - id: read
     type:
@@ -209,7 +217,7 @@ inputs:
       - File
     doc: read pbwt file; '-' for stdin
     inputBinding:
-      position: 101
+      position: 10
       prefix: -read
   - id: read_all
     type:
@@ -218,7 +226,7 @@ inputs:
     doc: read .pbwt and if present .sites, .samples, .missing - note not by 
       default dosage
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readAll
   - id: read_dosage
     type:
@@ -226,7 +234,7 @@ inputs:
       - File
     doc: read dosage file; '-' for stdin
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readDosage
   - id: read_gen
     type:
@@ -235,7 +243,7 @@ inputs:
         items: string
     doc: read impute2 gen file - must set chrom (expects <file> <chrom>)
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readGen
   - id: read_genetic_map
     type:
@@ -243,7 +251,7 @@ inputs:
       - File
     doc: read Oxford format genetic map file
     inputBinding:
-      position: 101
+      position: 20
       prefix: -readGeneticMap
   - id: read_hap
     type:
@@ -252,7 +260,7 @@ inputs:
         items: string
     doc: read impute2 hap file - must set chrom (expects <file> <chrom>)
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readHap
   - id: read_hap_legend
     type:
@@ -262,7 +270,7 @@ inputs:
     doc: read impute2 hap and legend file - must set chrom (expects <hap_file> 
       <legend_file> <chrom>)
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readHapLegend
   - id: read_macs
     type:
@@ -270,7 +278,7 @@ inputs:
       - File
     doc: read MaCS output file; '-' for stdin
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readMacs
   - id: read_missing
     type:
@@ -278,7 +286,7 @@ inputs:
       - File
     doc: read missing file; '-' for stdin
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readMissing
   - id: read_phase
     type:
@@ -286,7 +294,7 @@ inputs:
       - File
     doc: read Li and Stephens phase file
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readPhase
   - id: read_reverse
     type:
@@ -294,7 +302,7 @@ inputs:
       - File
     doc: read reverse file; '-' for stdin
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readReverse
   - id: read_samples
     type:
@@ -302,7 +310,7 @@ inputs:
       - File
     doc: read samples file; '-' for stdin
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readSamples
   - id: read_sites
     type:
@@ -310,7 +318,7 @@ inputs:
       - File
     doc: read sites file; '-' for stdin
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readSites
   - id: read_vcf_gt
     type:
@@ -319,7 +327,7 @@ inputs:
     doc: read GTs from vcf or bcf file; '-' for stdin vcf only ; biallelic sites
       only - require diploid!
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readVcfGT
   - id: read_vcf_pl
     type:
@@ -328,7 +336,7 @@ inputs:
     doc: read PLs from vcf or bcf file; '-' for stdin vcf only ; biallelic sites
       only - require diploid!
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readVcfPL
   - id: read_vcfq
     type:
@@ -336,7 +344,7 @@ inputs:
       - File
     doc: read VCFQ file; '-' for stdin
     inputBinding:
-      position: 101
+      position: 10
       prefix: -readVcfq
   - id: ref_freq
     type:
@@ -344,7 +352,7 @@ inputs:
       - File
     doc: read site frequency information into the refFreq field of current sites
     inputBinding:
-      position: 101
+      position: 20
       prefix: -refFreq
   - id: reference_fasta
     type:
@@ -354,7 +362,7 @@ inputs:
     secondaryFiles:
       - .fai
     inputBinding:
-      position: 101
+      position: 20
       prefix: -referenceFasta
   - id: reference_impute
     type:
@@ -365,7 +373,7 @@ inputs:
       argument; optional nSparse > 1 and fSparse (expects <root> [nSparse] 
       [fSparse])
     inputBinding:
-      position: 101
+      position: 40
       prefix: -referenceImpute
   - id: reference_phase
     type:
@@ -373,7 +381,7 @@ inputs:
       - string
     doc: phase current pbwt against reference whose root name is the argument
     inputBinding:
-      position: 101
+      position: 40
       prefix: -referencePhase
   - id: remove_sites
     type:
@@ -381,7 +389,7 @@ inputs:
       - File
     doc: remove sites as in sites file
     inputBinding:
-      position: 101
+      position: 30
       prefix: -removeSites
   - id: select_samples
     type:
@@ -389,7 +397,7 @@ inputs:
       - File
     doc: select samples as in samples file
     inputBinding:
-      position: 101
+      position: 30
       prefix: -selectSamples
   - id: select_sites
     type:
@@ -397,7 +405,7 @@ inputs:
       - File
     doc: select sites as in sites file
     inputBinding:
-      position: 101
+      position: 30
       prefix: -selectSites
   - id: sfs
     type:
@@ -405,7 +413,7 @@ inputs:
       - boolean
     doc: print site frequency spectrum (log scale) - also writes sites.freq file
     inputBinding:
-      position: 101
+      position: 40
       prefix: -sfs
   - id: site_info
     type:
@@ -415,7 +423,7 @@ inputs:
     doc: export PBWT information at sites with allele count kmin <= k < kmax 
       (expects <file> <kmin> <kmax>)
     inputBinding:
-      position: 101
+      position: 40
       prefix: -siteInfo
   - id: stats
     type:
@@ -423,7 +431,7 @@ inputs:
       - boolean
     doc: print stats depending on commands; writes to stdout
     inputBinding:
-      position: 101
+      position: 90
       prefix: -stats
   - id: subrange
     type:
@@ -432,7 +440,7 @@ inputs:
         items: int
     doc: cut down to sites in [start,end) (expects <start> <end>)
     inputBinding:
-      position: 101
+      position: 30
       prefix: -subrange
   - id: subsample
     type:
@@ -441,7 +449,7 @@ inputs:
         items: int
     doc: subsample <n> samples from index <start> (expects <start> <n>)
     inputBinding:
-      position: 101
+      position: 30
       prefix: -subsample
   - id: subsites
     type:
@@ -450,40 +458,40 @@ inputs:
         items: float
     doc: subsample <frac> sites with AF > <fmin> (expects <fmin> <frac>)
     inputBinding:
-      position: 101
+      position: 30
       prefix: -subsites
   - id: write_all_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_all_path`
+    doc: write .pbwt and if present .sites, .samples, .missing, .dosage using this root name
     inputBinding:
       position: 104
-      prefix: --write-all
+      prefix: -writeAll
   - id: write_bcf_path
     type:
       - 'null'
       - string
-    doc: " write VCF or BCF; uncompressed or bgzip (Gz) compressed file; '-' for stdout"
+    doc: "write BCF; uncompressed; '-' for stdout"
     inputBinding:
       position: 105
-      prefix: -writeVcf
+      prefix: -writeBcf
   - id: write_bcf_gz_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_bcf_gz_path`
+    doc: write BCF; bgzip compressed file; '-' for stdout
     inputBinding:
       position: 106
-      prefix: --write-bcf-gz
+      prefix: -writeBcfGz
   - id: write_dosage_path
     type:
       - 'null'
       - string
-    doc: write .pbwt and if present .sites, .samples, .missing, .dosage
+    doc: write dosage file; '-' for stdout
     inputBinding:
       position: 107
-      prefix: -writeAll
+      prefix: -writeDosage
   - id: write_gen_path
     type:
       - 'null'
@@ -512,10 +520,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_missing_path`
+    doc: write missing file; '-' for stdout
     inputBinding:
       position: 111
-      prefix: --write-missing
+      prefix: -writeMissing
   - id: write_phase_path
     type:
       - 'null'
@@ -561,18 +569,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_vcf_path`
+    doc: write VCF; uncompressed; '-' for stdout
     inputBinding:
       position: 117
-      prefix: --write-vcf
+      prefix: -writeVcf
   - id: write_vcf_gz_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `write_vcf_gz_path`
+    doc: write VCF; bgzip compressed file; '-' for stdout
     inputBinding:
       position: 118
-      prefix: --write-vcf-gz
+      prefix: -writeVcfGz
   - id: haps_path
     type:
       - 'null'
@@ -590,6 +598,9 @@ inputs:
       position: 120
       prefix: -write
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (statistics, matches and other text printed by the commands)
   - id: write
     type:
       - 'null'
@@ -635,17 +646,19 @@ outputs:
   - id: write_all
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: write .pbwt and if present .sites, .samples, .missing, .dosage
     outputBinding:
-      glob: $(inputs.write_all_path)
+      glob: $(inputs.write_all_path).*
   - id: write_impute_ref
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: write .imputeHaps and .imputeLegend
     outputBinding:
-      glob: $(inputs.write_impute_ref_path)
+      glob: $(inputs.write_impute_ref_path).*
   - id: write_impute_haps_g
     type:
       - 'null'
@@ -710,8 +723,12 @@ outputs:
     doc: write BCF; bgzip compressed file
     outputBinding:
       glob: $(inputs.write_bcf_gz_path)
+stdout: pbwt_stdout.txt
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.root_files ? inputs.root_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbwt:3.0--hed50d52_1

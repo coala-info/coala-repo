@@ -1,5 +1,11 @@
 # perl-pod-usage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-pod-usage_pod2usage | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

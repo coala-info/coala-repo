@@ -6,9 +6,7 @@ doc: "Split BAM files by strand and optionally create BED, BedGraph, and bigWig 
   files.\n\nTool homepage: http://metacpan.org/pod/Bio::ViennaNGS"
 inputs:
   - id: bam
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input file in BAM format
     inputBinding:
       position: 101
@@ -56,14 +54,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --log
-  - id: man
-    type:
-      - 'null'
-      - boolean
-    doc: Prints the manual page and exits
-    inputBinding:
-      position: 101
-      prefix: --man
   - id: norm
     type:
       - 'null'
@@ -99,14 +89,13 @@ inputs:
       prefix: --uniq
   - id: out_path
     type: string
+    doc: Output directory
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: out
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.out_path)

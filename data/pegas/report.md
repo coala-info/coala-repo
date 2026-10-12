@@ -1,5 +1,11 @@
 # pegas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pegas | Not completed | pipeline, skipped |
+
 ## pegas
 
 ### Tool Description

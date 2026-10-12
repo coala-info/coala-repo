@@ -40,6 +40,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --batch
+      valueFrom: $(self.basename)
   - id: bottleneck
     type:
       - 'null'
@@ -59,7 +60,7 @@ inputs:
   - id: clusters
     type:
       - 'null'
-      - File
+      - string
     doc: Filename to save clusters plot.
     inputBinding:
       position: 102
@@ -267,6 +268,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: batch_designs
+    type:
+      - 'null'
+      - File
+    doc: Linker designs for --batch input (<input_filename>_linker_designs.csv)
+    outputBinding:
+      glob: '*_linker_designs.csv'
+  - id: clusters_plot
+    type:
+      - 'null'
+      - File
+    doc: Clusters plot (written when --clusters is set)
+    outputBinding:
+      glob: $(inputs.clusters)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.batch_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peglit:1.1.0--pyh7cba7a3_0

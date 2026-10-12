@@ -4,9 +4,19 @@ baseCommand: pfsearchV3
 label: pftools_pfsearchV3
 doc: "Scan a protein sequence library for profile matches\n\nTool homepage: https://web.expasy.org/pftools/"
 inputs:
-  - id: profile_regex_pattern
-    type: string
-    doc: profile|regex{...}|pattern{...}
+  - id: profile
+    type:
+      - 'null'
+      - File
+    doc: Profile file (give either a profile file or a pattern)
+    inputBinding:
+      position: 1
+  - id: pattern
+    type:
+      - 'null'
+      - string
+    doc: Regular expression or PROSITE pattern, written as regex{...} or
+      pattern{...} (give either a profile file or a pattern)
     inputBinding:
       position: 1
   - id: database
@@ -114,7 +124,7 @@ inputs:
   - id: heuristic_cutoff
     type:
       - 'null'
-      - string
+      - int
     doc: heuristic cutoff value
     inputBinding:
       position: 103
@@ -130,7 +140,7 @@ inputs:
   - id: max_heuristic_nthreads
     type:
       - 'null'
-      - string
+      - int
     doc: max number of threads to use for heuristic phase only. (IO bounds), 
       default to all available cores
     inputBinding:
@@ -139,7 +149,7 @@ inputs:
   - id: max_regex_match
     type:
       - 'null'
-      - string
+      - int
     doc: maximum number of returned matches per sequence
     inputBinding:
       position: 103
@@ -163,7 +173,7 @@ inputs:
   - id: nthreads
     type:
       - 'null'
-      - string
+      - int
     doc: max number of threads to use, default to all available cores
     inputBinding:
       position: 103
@@ -179,7 +189,7 @@ inputs:
   - id: output_length
     type:
       - 'null'
-      - string
+      - int
     doc: maximum number of column for sequence output printing
     inputBinding:
       position: 103
@@ -187,7 +197,7 @@ inputs:
   - id: output_method
     type:
       - 'null'
-      - string
+      - int
     doc: printing output method
     inputBinding:
       position: 103

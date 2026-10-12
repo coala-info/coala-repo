@@ -1,5 +1,11 @@
 # pfp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pfp_pfp++ | PASS | SARS-CoV-2 FASTA and pfp test VCF with chrY reference both parsed; dictionary holds the genome text; fixed vcf/ref as File lists |
+
 ## Metadata
 - **Skill**: generated
 

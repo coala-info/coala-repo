@@ -11,6 +11,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -f
+      valueFrom: $(self.basename)
   - id: genetic_code
     type:
       - 'null'
@@ -27,6 +28,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -k
+  - id: output_tsv
+    type:
+      - 'null'
+      - int
+    doc: 'output tsv file (option, -v 1==yes -v 0==no [default])'
+    inputBinding:
+      position: 101
+      prefix: -v
   - id: min_region_size
     type:
       - 'null'
@@ -36,9 +45,21 @@ inputs:
       position: 101
       prefix: -s
 outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Coding DNA and protein FASTA files, log and optional k-mer frame table (peekseq_v*)
+    outputBinding:
+      glob: peekseq_v*
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fasta_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peekseq:0.0.1--hdfd78af_0

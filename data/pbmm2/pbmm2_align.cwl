@@ -8,8 +8,6 @@ doc: "Align PacBio reads to reference sequences\n\nTool homepage: https://github
 inputs:
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference FASTA, ReferenceSet XML, or Reference Index
     inputBinding:
       position: 1
@@ -18,6 +16,11 @@ inputs:
     doc: Input BAM, DataSet XML, FASTA, or FASTQ
     inputBinding:
       position: 2
+  - id: output_file_name
+    type: string
+    doc: Output BAM or DataSet XML (for example out.aligned.bam)
+    inputBinding:
+      position: 3
   - id: bam_index
     type:
       - 'null'
@@ -118,7 +121,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log to a file, instead of stderr.
     inputBinding:
       position: 103
@@ -334,12 +337,24 @@ inputs:
       prefix: --zmw
 outputs:
   - id: output_file
+    type: File
+    doc: Output BAM or DataSet XML
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .csi
+        required: false
+    outputBinding:
+      glob: $(inputs.output_file_name)
+  - id: log_output
     type:
       - 'null'
       - File
-    doc: Output BAM or DataSet XML
+    doc: Log file, when --log-file is used
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.log_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbmm2:26.1.0--h9ee0642_0

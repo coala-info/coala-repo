@@ -6,6 +6,9 @@ doc: "Filter ZMWs from BAM data\n\nTool homepage: https://github.com/PacificBios
 inputs:
   - id: input
     type: File
+    secondaryFiles:
+      - pattern: .pbi
+        required: false
     doc: Input BAM, FASTX, or DataSet XML
     inputBinding:
       position: 1

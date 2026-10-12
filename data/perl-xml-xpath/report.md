@@ -1,5 +1,11 @@
 # perl-xml-xpath CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-xml-xpath_xpath | PASS | NCBI GenBank XML of 2 phage genomes; fixed repeated -e and file position; returned lengths 5386 and 48502 |
+
 ## Metadata
 - **Skill**: generated
 

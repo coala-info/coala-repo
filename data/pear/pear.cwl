@@ -37,7 +37,7 @@ inputs:
       arbitrary long.
     inputBinding:
       position: 101
-      prefix: --max-assembly-length
+      prefix: -m
   - id: max_uncalled_base
     type:
       - 'null'
@@ -68,7 +68,7 @@ inputs:
       arbitrary short.
     inputBinding:
       position: 101
-      prefix: --min-assembly-length
+      prefix: -n
   - id: min_overlap
     type:
       - 'null'
@@ -127,7 +127,7 @@ inputs:
       less than the specified threshold, the rest of the read will be trimmed.
     inputBinding:
       position: 101
-      prefix: --quality-threshold
+      prefix: -q
   - id: reverse_fastq
     type: File
     doc: Reverse paired-end FASTQ file.
@@ -169,11 +169,26 @@ inputs:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: assembled
     type: File
-    doc: Output filename.
+    doc: Assembled reads (<output>.assembled.fastq)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path).assembled.fastq
+  - id: unassembled_forward
+    type: File
+    doc: Unassembled forward reads (<output>.unassembled.forward.fastq)
+    outputBinding:
+      glob: $(inputs.output_path).unassembled.forward.fastq
+  - id: unassembled_reverse
+    type: File
+    doc: Unassembled reverse reads (<output>.unassembled.reverse.fastq)
+    outputBinding:
+      glob: $(inputs.output_path).unassembled.reverse.fastq
+  - id: discarded
+    type: File
+    doc: Discarded reads (<output>.discarded.fastq)
+    outputBinding:
+      glob: $(inputs.output_path).discarded.fastq
 requirements:
   - class: InlineJavascriptRequirement
 hints:

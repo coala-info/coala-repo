@@ -1,5 +1,13 @@
 # pcasuite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pcasuite_pcaunzip | PASS |  |
+| pcasuite_pcazip | PASS |  |
+| pcasuite_pczdump | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

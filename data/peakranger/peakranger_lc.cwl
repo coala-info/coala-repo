@@ -1,13 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lc
+baseCommand:
+  - peakranger
+  - lc
 label: peakranger_lc
-doc: PeakRanger LC
+doc: Calculate library complexity of a BAM file
 inputs:
   - id: data_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: the data file
     inputBinding:
       position: 101

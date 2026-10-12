@@ -6,13 +6,8 @@ doc: "Compute character frequencies or relative frequencies for sequences in FAS
   files.\n\nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: multifasta_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input FASTA files to process
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input FASTA files to process (read from standard input)
   - id: alphabet
     type:
       - 'null'
@@ -135,3 +130,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fascomp.out
+stdin: $(inputs.multifasta_files.path)

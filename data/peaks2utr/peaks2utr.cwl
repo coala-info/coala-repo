@@ -14,6 +14,9 @@ inputs:
   - id: bam_in
     type: File
     doc: input reads file in bam format
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 2
   - id: do_pseudo
@@ -145,6 +148,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_in)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peaks2utr:1.4.1--pyhdfd78af_0

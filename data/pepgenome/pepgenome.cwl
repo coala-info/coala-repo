@@ -4,6 +4,11 @@ baseCommand: pepgenome
 label: pepgenome
 doc: "A tool for mapping peptide identifications to genomic coordinates using protein
   sequences and genome annotations.\n\nTool homepage: https://github.com/bigbio/pgatk/"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_files)
+        writable: true
 inputs:
   - id: chr_prefix
     type:
@@ -55,11 +60,11 @@ inputs:
     type:
       type: array
       items: File
-    doc: Comma(,) separated file paths for files containing peptide identifications
-      (tsv, mzTab, or mzIdentML)
+    doc: Peptide identification files (tsv, mzTab, or mzIdentML); joined with commas
     inputBinding:
       position: 101
       prefix: -in
+      itemSeparator: ','
   - id: input_format
     type:
       - 'null'
@@ -71,15 +76,15 @@ inputs:
   - id: merge
     type:
       - 'null'
-      - boolean
-    doc: Set 'true' to merge mappings from all files from input
+      - string
+    doc: Set 'true' to merge mappings from all files from input (default 'false')
     inputBinding:
       position: 101
       prefix: -merge
   - id: mismatch_mode
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Mismatch mode (true or false): if true mismatching with two mismatches will
       only allow 1 mismatch every kmersize (default: 5) positions.'
     inputBinding:
@@ -101,6 +106,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -source
+  - id: species
+    type:
+      - 'null'
+      - string
+    doc: Species (listed in the usage line of the tool)
+    inputBinding:
+      position: 101
+      prefix: -species
   - id: spark_master
     type:
       - 'null'
@@ -110,6 +123,41 @@ inputs:
       position: 101
       prefix: -spark_master
 outputs:
+  - id: gtf_output
+    type:
+      type: array
+      items: File
+    doc: Peptide mappings in GTF format (one file per input file)
+    outputBinding:
+      glob: '*.gtf'
+  - id: bed_output
+    type:
+      type: array
+      items: File
+    doc: Peptide mappings in BED format
+    outputBinding:
+      glob: '*.bed'
+  - id: gct_output
+    type:
+      type: array
+      items: File
+    doc: Peptide mappings in GCT format
+    outputBinding:
+      glob: '*.gct'
+  - id: ptmbed_output
+    type:
+      type: array
+      items: File
+    doc: Peptide mappings with modifications in PTMBED format
+    outputBinding:
+      glob: '*ptm*.bed'
+  - id: unmapped_output
+    type:
+      type: array
+      items: File
+    doc: Peptides that could not be mapped
+    outputBinding:
+      glob: '*_unmapped.txt'
   - id: stdout
     type: stdout
     doc: Standard output

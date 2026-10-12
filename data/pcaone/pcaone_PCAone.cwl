@@ -269,6 +269,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pcangsd
+  - id: plink_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The PLINK files (.bed, .bim, .fam) to stage in the working directory
+      so that the --bfile prefix resolves.
+  - id: usv_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The PCAone files (.eigvecs, .eigvals, .loadings, .mbim) to stage in
+      the working directory so that the --USV prefix resolves.
   - id: plink_prefix
     type:
       - 'null'
@@ -410,6 +424,10 @@ outputs:
       glob: $(inputs.output_prefix_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(inputs.plink_files ? inputs.plink_files : [])'
+      - entry: '$(inputs.usv_files ? inputs.usv_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pcaone:0.6.0--ha628be3_0

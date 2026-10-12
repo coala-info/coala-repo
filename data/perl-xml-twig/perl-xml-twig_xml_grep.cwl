@@ -11,7 +11,7 @@ inputs:
       items: File
     doc: XML files to search
     inputBinding:
-      position: 1
+      position: 200
   - id: by_file
     type:
       - 'null'
@@ -25,11 +25,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --cond
     doc: return the chunks (or file names) only if they contain elements matching
       <cond>. Several can be provided (OR'ed).
     inputBinding:
       position: 102
-      prefix: --cond
   - id: count
     type:
       - 'null'
@@ -47,6 +48,15 @@ inputs:
     inputBinding:
       position: 102
       prefix: --date
+  - id: nodate
+    type:
+      - 'null'
+      - boolean
+    doc: do not add the 'date' attribute to the wrapping element (useful to
+      compare 2 runs)
+    inputBinding:
+      position: 102
+      prefix: --nodate
   - id: descr
     type:
       - 'null'
@@ -124,10 +134,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --root
     doc: look for and return xml chunks matching <cond>. Several can be provided.
     inputBinding:
       position: 102
-      prefix: --root
   - id: strict
     type:
       - 'null'

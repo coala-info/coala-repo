@@ -8,8 +8,6 @@ inputs:
   - id: reference
     type: File
     doc: FASTA format file
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 1
   - id: accuracy_max
@@ -108,8 +106,10 @@ inputs:
   - id: model_qc
     type:
       - 'null'
+      - string
       - File
-    doc: model of quality code
+    doc: model of quality code. Give a File, or a path inside the image such as
+      /usr/share/pbsim/models/model_qc_clr or /usr/share/pbsim/models/model_qc_ccs.
     inputBinding:
       position: 102
       prefix: --model_qc

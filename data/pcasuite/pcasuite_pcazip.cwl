@@ -27,10 +27,12 @@ inputs:
       compression. Atom numbers (2nd field) must be correct!
     inputBinding:
       position: 101
-      prefix: --mask
+      prefix: -m
   - id: num_atoms
-    type: int
-    doc: number of atoms in a snapshot
+    type:
+      - 'null'
+      - int
+    doc: number of atoms in a snapshot (not needed when a PDB file is given)
     inputBinding:
       position: 101
       prefix: -n
@@ -59,14 +61,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -q
-  - id: use_pdb
+  - id: pdb_file
     type:
       - 'null'
-      - boolean
+      - File
     doc: Use a PDB file for atom number and name extraction
     inputBinding:
       position: 101
-      prefix: --pdb
+      prefix: -p
   - id: verbose
     type:
       - 'null'

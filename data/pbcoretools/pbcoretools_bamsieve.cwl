@@ -11,6 +11,11 @@ inputs:
     doc: Input BAM or DataSet from which reads will be read
     inputBinding:
       position: 1
+  - id: output_bam_name
+    type: string
+    doc: Output BAM or DataSet to which filtered reads will be written
+    inputBinding:
+      position: 2
   - id: anonymize
     type:
       - 'null'
@@ -72,7 +77,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Write the log to file. Default(None) will write to stdout.
     inputBinding:
       position: 102
@@ -161,6 +166,24 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: whitelist_file
+    type:
+      - 'null'
+      - File
+    doc: File with a whitelist of one hole number per line (or a BAM/DataSet file
+      from which to extract ZMWs), used with --whitelist
+    inputBinding:
+      position: 102
+      prefix: --whitelist
+  - id: blacklist_file
+    type:
+      - 'null'
+      - File
+    doc: File with a blacklist of one hole number per line (or a BAM/DataSet file
+      from which to extract ZMWs), used with --blacklist
+    inputBinding:
+      position: 102
+      prefix: --blacklist
   - id: whitelist
     type:
       - 'null'
@@ -175,10 +198,33 @@ outputs:
     type:
       - 'null'
       - File
-    doc: 'Output BAM or DataSet to which filtered reads will be written (default:
-      None)'
+    doc: Output BAM or DataSet with the filtered reads
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_bam_name)
+  - id: output_pbi
+    type:
+      - 'null'
+      - File
+    doc: PacBio index of the output BAM
+    outputBinding:
+      glob: $(inputs.output_bam_name).pbi
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: Log file, when --log-file is used
+    outputBinding:
+      glob: $(inputs.log_file)
+  - id: zmw_list
+    type:
+      - 'null'
+      - File
+    doc: ZMW list printed by --show-zmws
+    outputBinding:
+      glob: bamsieve_stdout.txt
+stdout: bamsieve_stdout.txt
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbcoretools:0.8.1--py_1

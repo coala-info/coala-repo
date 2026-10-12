@@ -1,5 +1,11 @@
 # ped_parser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ped_parser | PASS |  |
+
 ## ped_parser
 
 ### Tool Description

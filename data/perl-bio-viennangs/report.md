@@ -1,5 +1,13 @@
 # perl-bio-viennangs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-bio-viennangs_bam_split.pl | PASS |  |
+| perl-bio-viennangs_bam_to_bigwig.pl | PASS |  |
+| perl-bio-viennangs_gff2bed.pl | PASS |  |
+
 ## perl-bio-viennangs_gff2bed.pl
 
 ### Tool Description

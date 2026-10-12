@@ -6,11 +6,12 @@ doc: "Returns the path to the given module(s)\n\nTool homepage: http://metacpan.
 inputs:
   - id: modules
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
     doc: Module(s) to find paths for
     inputBinding:
-      position: 1
+      position: 200
   - id: all
     type:
       - 'null'
@@ -32,10 +33,11 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: -I
     doc: Add a path to search (like perl -I)
     inputBinding:
       position: 102
-      prefix: -I
   - id: module_names_only
     type:
       - 'null'

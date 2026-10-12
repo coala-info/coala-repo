@@ -1,5 +1,12 @@
 # perl-sanger-cgp-allelecount CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-sanger-cgp-allelecount_alleleCounter.pl | Failed | image problem: alleleCounter.pl needs the C program alleleCounter, which the image does not contain |
+| perl-sanger-cgp-allelecount_alleleCounterToJson.pl | PASS |  |
+
 ## perl-sanger-cgp-allelecount_alleleCounter.pl
 
 ### Tool Description

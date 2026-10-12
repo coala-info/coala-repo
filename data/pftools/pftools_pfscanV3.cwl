@@ -67,7 +67,7 @@ inputs:
   - id: max_heuristic_nthreads
     type:
       - 'null'
-      - string
+      - int
     doc: max number of threads to use for heuristic phase only. (IO bounds)
     inputBinding:
       position: 103
@@ -75,7 +75,7 @@ inputs:
   - id: max_regex_match
     type:
       - 'null'
-      - string
+      - int
     doc: maximum number of returned matches per sequence
     inputBinding:
       position: 103
@@ -99,7 +99,7 @@ inputs:
   - id: nthreads
     type:
       - 'null'
-      - string
+      - int
     doc: max number of threads to use
     inputBinding:
       position: 103
@@ -107,7 +107,7 @@ inputs:
   - id: output_length
     type:
       - 'null'
-      - string
+      - int
     doc: maximum number of column for sequence output printing
     inputBinding:
       position: 103
@@ -115,7 +115,7 @@ inputs:
   - id: output_method
     type:
       - 'null'
-      - string
+      - int
     doc: printing output method
     inputBinding:
       position: 103
@@ -143,7 +143,7 @@ inputs:
     doc: change unknown symbol to given character
     inputBinding:
       position: 103
-      prefix: --unknown-synbol
+      prefix: --unknown-symbol
   - id: verbose
     type:
       - 'null'

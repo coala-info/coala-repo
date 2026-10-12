@@ -11,13 +11,13 @@ inputs:
       items: File
     doc: GO/OBO style ontology file(s) to parse
     inputBinding:
-      position: 1
+      position: 200
   - id: errfile
     type:
       - 'null'
-      - File
-    doc: writes parse errors in XML - defaults to STDERR (there should be no 
-      parse errors in well formed files)
+      - string
+    doc: Name of a file to write parse errors in XML to (defaults to STDERR; there
+      should be no parse errors in well formed files)
     inputBinding:
       position: 102
       prefix: -e
@@ -33,10 +33,11 @@ inputs:
   - id: use_cache
     type:
       - 'null'
-      - string
+      - boolean
     doc: If this switch is specified, then caching mode is turned on.
     inputBinding:
       position: 102
+      prefix: -use_cache
   - id: writer_format
     type:
       - 'null'
@@ -44,7 +45,7 @@ inputs:
     doc: format for output - see below for list
     inputBinding:
       position: 102
-      prefix: --writer
+      prefix: -w
   - id: xslt
     type:
       - 'null'
@@ -53,10 +54,56 @@ inputs:
     inputBinding:
       position: 102
       prefix: -xslt
+  - id: output_file
+    type:
+      - 'null'
+      - string
+    doc: Name of a file to write the converted ontology to (default is standard output)
+    inputBinding:
+      position: 102
+      prefix: -o
+  - id: datatype
+    type:
+      - 'null'
+      - string
+    doc: Type of data to parse (as used by GO::Parser)
+    inputBinding:
+      position: 102
+      prefix: -t
+  - id: litemode
+    type:
+      - 'null'
+      - boolean
+    doc: Use lite mode when parsing
+    inputBinding:
+      position: 102
+      prefix: -l
+  - id: obo_set
+    type:
+      - 'null'
+      - boolean
+    doc: Wrap the output in an obo_set element, even for a single file
+    inputBinding:
+      position: 102
+      prefix: -obo_set
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_file_out
+    type:
+      - 'null'
+      - File
+    doc: Converted ontology written with the output option
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: errfile_out
+    type:
+      - 'null'
+      - File
+    doc: Parse errors written with the errfile option
+    outputBinding:
+      glob: $(inputs.errfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-go-perl:0.15--pl526_3

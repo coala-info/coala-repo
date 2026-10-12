@@ -51,7 +51,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: directory/filename to store log file to
     inputBinding:
       position: 103
@@ -84,6 +84,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (log.txt unless --log is given)
+    outputBinding:
+      glob: "$(inputs.log ? inputs.log : 'log.txt')"
+  - id: negative_peaks
+    type:
+      - 'null'
+      - File
+    doc: Negative peaks (written with --negative)
+    outputBinding:
+      glob: negative_peaks.tsv
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peakzilla:1.0--py36_1

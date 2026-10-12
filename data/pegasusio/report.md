@@ -1,5 +1,11 @@
 # pegasusio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pegasusio_aggregate_matrix | PASS | run on a single 10x h5 sample; the two-sample run with an extra h5ad file failed on that file (barcode count mismatch in the data) |
+
 ## pegasusio_aggregate_matrix
 
 ### Tool Description

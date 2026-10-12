@@ -1,5 +1,11 @@
 # peka CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| peka | PASS |  |
+
 ## peka
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # peekseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| peekseq_peekseq.pl | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

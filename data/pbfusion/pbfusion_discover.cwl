@@ -11,19 +11,21 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Aligned Iso-Seq data in BAM format
+    doc: Aligned Iso-Seq data in BAM format (positional files; placed after all
+      options, because the tool reads everything after them as file names)
     inputBinding:
-      position: 1
+      position: 120
   - id: additional_bams
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -b
     doc: Aligned Iso-Seq data in BAM format. Accepts a path to a bam, a url, or 
       a fofn file
     inputBinding:
       position: 102
-      prefix: -b
   - id: allow_immune
     type:
       - 'null'
@@ -170,8 +172,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Enable verbose output
     inputBinding:
       position: 102

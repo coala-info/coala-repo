@@ -8,6 +8,12 @@ doc: "The deconv module converts a list of enriched peptides into a parsimony-ba
   list of likely taxa to which the assayed individual has likely been exposed. It
   supports both batch and singular modes.\n\nTool homepage: https://github.com/LadnerLab/PepSIRF"
 inputs:
+  - id: custom_id_name_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: File named in --custom_id_name_map_info; it is staged in the working directory so that name resolves.
   - id: custom_id_name_map_info
     type:
       - 'null'
@@ -18,7 +24,9 @@ inputs:
       position: 101
       prefix: --custom_id_name_map_info
   - id: enriched
-    type: File
+    type:
+      - File
+      - Directory
     doc: Name of a directory containing files, or a single file containing the 
       names of enriched peptides, one per line.
     inputBinding:
@@ -178,6 +186,7 @@ outputs:
     type:
       - 'null'
       - File
+      - Directory
     doc: Name for the output directory or file. Output will be in the form of 
       either one file or a directory containing files.
     outputBinding:
@@ -194,6 +203,7 @@ outputs:
     type:
       - 'null'
       - File
+      - Directory
     doc: Optional output. If specified, a map detailing which peptides were 
       assigned to which taxa will be written.
     outputBinding:
@@ -205,16 +215,10 @@ outputs:
     doc: Designated file to which the module's processes are logged.
     outputBinding:
       glob: $(inputs.logfile_path)
-  - id: outfile_suffix_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Used for batch mode only. When specified, the name of each file written
-      to the output directory will have this suffix.
-    outputBinding:
-      glob: $(inputs.outfile_suffix)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.custom_id_name_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

@@ -1,5 +1,11 @@
 # pfam_scan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pfam_scan | PASS | rewritten from help; 4 real Pfam-A HMMs pressed, 5 UniProt proteins: kinase, homeodomain, zinc finger and 7tm hits correct, globin no hit; -json crashes (image lacks the Perl JSON module) |
+
 ## pfam_scan
 
 ### Tool Description

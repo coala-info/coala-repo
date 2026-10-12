@@ -6,27 +6,18 @@ doc: "Transliterate or delete characters in FASTA/FASTQ sequences, identifiers, 
   descriptions.\n\nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: searchlist
-    type:
-      - 'null'
-      - string
+    type: string
     doc: List of characters to search for
     inputBinding:
-      position: 1
+      position: 201
   - id: replacelist
-    type:
-      - 'null'
-      - string
+    type: string
     doc: List of characters to replace with
     inputBinding:
-      position: 2
+      position: 202
   - id: multifasta_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input FASTA or FASTQ files
-    inputBinding:
-      position: 3
+    type: File
+    doc: Input FASTA or FASTQ files (read from standard input)
   - id: ambig
     type:
       - 'null'
@@ -113,7 +104,7 @@ inputs:
   - id: logname
     type:
       - 'null'
-      - File
+      - string
     doc: Use [string] as the name of the logfile.
     inputBinding:
       position: 104
@@ -166,3 +157,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fastr.out
+stdin: $(inputs.multifasta_files.path)

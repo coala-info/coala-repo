@@ -1,5 +1,11 @@
 # pbmarkdup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbmarkdup | Failed | tool bug: FASTA/FASTQ output named .gz is written as plain text, not gzip (BAM mode works: 3510 reads gave 2389 unique with --rmdup) |
+
 ## pbmarkdup
 
 ### Tool Description

@@ -19,6 +19,11 @@ inputs:
       min_genes and min_umis arguments.
     inputBinding:
       position: 1
+  - id: matrix_files
+    type:
+      type: array
+      items: File
+    doc: Count matrix files listed in the Location column of the csv file; staged next to it so the relative paths resolve
   - id: output_name
     type: string
     doc: The output file name.
@@ -125,13 +130,14 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --restriction
     doc: Select data that satisfy all restrictions. Each restriction takes the 
       format of name:value,...,value or name:~value,..,value, where ~ refers to 
       not. You can specifiy multiple restrictions by setting this option 
       multiple times.
     inputBinding:
       position: 103
-      prefix: --restriction
   - id: select_only_singlets
     type:
       - 'null'
@@ -153,9 +159,19 @@ inputs:
       position: 103
       prefix: --subset-singlets
 outputs:
+  - id: output_zarr
+    type: File
+    doc: Zipped Zarr file containing aggregated data (output_name.zarr.zip)
+    outputBinding:
+      glob: $(inputs.output_name).zarr.zip
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.matrix_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pegasusio:0.10.0--py311haab0aaa_0

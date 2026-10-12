@@ -1,5 +1,11 @@
 # pcaone CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pcaone_PCAone | PASS | ran on plink data with --svd 0 (default window method fails on only 220 SNPs) |
+
 ## Metadata
 - **Skill**: generated
 

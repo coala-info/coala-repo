@@ -1,5 +1,14 @@
 # peakachu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| peakachu_adaptive | Failed | image problem: the image's pandas has no DataFrame.append, so the tool crashes after blockbuster |
+| peakachu_consensus_peak | Not completed | needs a project folder from peakachu window or adaptive, which crash in this image (pandas DataFrame.append) |
+| peakachu_coverage | Not completed | needs a project folder from peakachu window or adaptive, which crash in this image (pandas DataFrame.append) |
+| peakachu_window | Failed | image problem: the image's pandas has no DataFrame.append, so the tool crashes after window counting |
+
 ## peakachu_window
 
 ### Tool Description
@@ -162,22 +171,6 @@ optional arguments:
   -l CONSENSUS_LENGTH, --consensus_length CONSENSUS_LENGTH
                         Length of the region around peak centers for plotting
                         consensus peaks
-```
-
-## peakachu
-### Tool Description
-peakachu: error: invalid choice: 'on' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/peakachu:0.2.0--py38h0020b31_4
-- **Homepage**: https://github.com/tbischler/PEAKachu
-- **Package**: https://anaconda.org/channels/bioconda/packages/peakachu/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: peakachu [-h] [--version] {window,adaptive,coverage,consensus_peak} ...
-peakachu: error: invalid choice: 'on' (choose from 'window', 'adaptive', 'coverage', 'consensus_peak')
 ```
 
 ## Metadata

@@ -1,17 +1,31 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pdftk
 label: pdftk
 doc: A handy tool for manipulating PDF documents, including merging, splitting, 
-  rotating, encrypting, and filling forms.
+  rotating, encrypting, and filling forms. The pdftk/pdftk image starts pdftk as
+  its entrypoint, so the command line has no base command.
 inputs:
   - id: input_files
     type:
       type: array
       items: File
-    doc: A list of the input PDF files or handles (e.g., A=in1.pdf).
+    doc: The input PDF files, in the order to combine them. Give handles in
+      the handles input to name them (A=in1.pdf).
     inputBinding:
       position: 1
+      valueFrom: |
+        ${
+          return self.map(function(f, i) {
+            return (inputs.handles && inputs.handles[i]) ? inputs.handles[i] + "=" + f.path : f.path;
+          });
+        }
+  - id: handles
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Upper-case handles for the input files, in the same order (for
+      example A, B). Page ranges and passwords refer to them.
   - id: operation
     type:
       - 'null'
@@ -21,16 +35,26 @@ inputs:
       dump_data_fields_utf8, dump_data_annots, update_info, update_info_utf8, attach_files,
       unpack_files.'
     inputBinding:
-      position: 2
+      position: 3
   - id: operation_arguments
     type:
       - 'null'
       - type: array
         items: string
-    doc: Arguments specific to the chosen operation (e.g., page ranges, FDF 
-      files, or background files).
+    doc: Text arguments of the chosen operation (for example page ranges for
+      cat, such as A1-3 B, or to_page 2 for attach_files).
     inputBinding:
-      position: 3
+      position: 5
+  - id: operation_file_arguments
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: File arguments of the chosen operation (for example the FDF or XFDF
+      file of fill_form, the PDF of background or stamp, the info file of
+      update_info, or the files of attach_files).
+    inputBinding:
+      position: 4
   - id: input_pw
     type:
       - 'null'
@@ -38,14 +62,14 @@ inputs:
         items: string
     doc: Input PDF owner passwords associated with files by using their handles.
     inputBinding:
-      position: 104
+      position: 2
       prefix: input_pw
   - id: output
     type: string
     doc: The output filename, directory (for unpack_files), or printf-styled 
-      format string (for burst).
+      format string (for burst, for example pg_%04d.pdf).
     inputBinding:
-      position: 104
+      position: 100
       prefix: output
   - id: encryption
     type:
@@ -180,9 +204,43 @@ outputs:
     doc: The output filename, directory (for unpack_files), or printf-styled 
       format string (for burst).
     outputBinding:
-      glob: $(inputs.output)
+      glob: |
+        ${
+          if (inputs.operation == 'unpack_files' || inputs.operation == 'burst') { return []; }
+          return inputs.output;
+        }
+  - id: burst_pages
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The single page PDFs and doc_data.txt written by the burst operation.
+    outputBinding:
+      glob: |
+        ${
+          if (inputs.operation != 'burst') { return []; }
+          var p = inputs.output.replace(/%0?[0-9]*d/, '*');
+          return [p, 'doc_data.txt'];
+        }
+  - id: unpacked_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The files written by the unpack_files operation (output is a directory).
+    outputBinding:
+      glob: |
+        ${
+          if (inputs.operation != 'unpack_files') { return []; }
+          return inputs.output + '/*';
+        }
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: '$(inputs.operation == "unpack_files" ? inputs.output : ".pdftk_unused")'
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: pdftk/pdftk

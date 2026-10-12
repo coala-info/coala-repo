@@ -1,5 +1,11 @@
 # perl-image-exiftool CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-image-exiftool_exiftool | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

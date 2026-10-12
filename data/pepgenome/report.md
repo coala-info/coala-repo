@@ -1,5 +1,11 @@
 # pepgenome CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pepgenome | PASS |  |
+
 ## pepgenome
 
 ### Tool Description

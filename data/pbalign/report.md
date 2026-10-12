@@ -1,5 +1,11 @@
 # pbalign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbalign | Failed | image problem: the biocontainers image has no pbalign launcher (command not found). Started as 'python -m pbalign.pbalignrunner', it aligns FASTA reads correctly with blasr. |
+
 ## pbalign
 
 ### Tool Description

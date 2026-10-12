@@ -10,7 +10,8 @@ inputs:
   - id: ref_fasta
     type: File
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     doc: Reference genome assembly against which to call variants.
     inputBinding:
       position: 1
@@ -19,6 +20,11 @@ inputs:
     doc: SV signatures from one or more samples (svsig.gz or fofn).
     inputBinding:
       position: 2
+  - id: output_vcf
+    type: string
+    doc: Variant call format (VCF) output file name.
+    inputBinding:
+      position: 3
   - id: annotation_min_perc_sim
     type:
       - 'null'
@@ -245,11 +251,11 @@ inputs:
       position: 103
       prefix: --types
 outputs:
-  - id: output_vcf
+  - id: output_vcf_file
     type: File
     doc: Variant call format (VCF) output.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_vcf)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbsv:2.11.0--h9ee0642_0

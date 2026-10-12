@@ -1,5 +1,11 @@
 # perl-extutils-parsexs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-extutils-parsexs | PASS |  |
+
 ## perl-extutils-parsexs
 
 ### Tool Description

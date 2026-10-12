@@ -6,12 +6,13 @@ doc: "Parallel block gzip compression and decompression tool\n\nTool homepage: h
 inputs:
   - id: input_file
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input file(s) to process
+      type: array
+      items: File
+    doc: Input file(s) to process (staged in the working directory, so in-place
+      compression and decompression work)
     inputBinding:
       position: 1
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: block_size
     type:
       - 'null'
@@ -33,10 +34,10 @@ inputs:
     type:
       - 'null'
       - int
-    doc: the compression level (-1 to -9)
+    doc: the compression level (1 to 9)
     inputBinding:
       position: 102
-      prefix: '-1'
+      valueFrom: $("-" + self)
   - id: decompress
     type:
       - 'null'
@@ -53,7 +54,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -f
-  - id: stdout
+  - id: stdout_mode
     type:
       - 'null'
       - boolean
@@ -72,7 +73,22 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (data written with -c)
+  - id: compressed_files
+    type:
+      type: array
+      items: File
+    doc: Files compressed in place (without -c)
+    outputBinding:
+      glob:
+        - '*.gz'
+        - '*.bz2'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbgzip:2016.08.04--hb1d24b7_6

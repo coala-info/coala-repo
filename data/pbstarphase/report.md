@@ -1,5 +1,13 @@
 # pbstarphase CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pbstarphase_build | Not completed | needs a PharmVar API key (account): the PharmVar query fails with 'invalid type: map' and this version (2.0.1) has no --api-keys option; the CPIC query worked |
+| pbstarphase_db-stat | PASS |  |
+| pbstarphase_diplotype | PASS | synthetic data: the tool's own faux UGT1A1 test set (hand-made database, small VCFs and reference); calls match the expected diplotypes |
+
 ## pbstarphase_build
 
 ### Tool Description

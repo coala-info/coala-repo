@@ -6,13 +6,8 @@ doc: "Calculate codon frequencies or Relative Synonymous Codon Usage (RSCU) valu
   for sequences in MULTIFASTA files.\n\nTool homepage: http://metacpan.org/pod/FAST"
 inputs:
   - id: multifasta_files
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input MULTIFASTA file(s)
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input MULTIFASTA file(s) (read from standard input)
   - id: amino_order
     type:
       - 'null'
@@ -137,3 +132,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-fast:1.06--pl5321hdfd78af_2
 stdout: perl-fast_fascodon.out
+stdin: $(inputs.multifasta_files.path)

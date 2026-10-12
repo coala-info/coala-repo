@@ -1,5 +1,11 @@
 # perl-module-util CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| perl-module-util_pm_which | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

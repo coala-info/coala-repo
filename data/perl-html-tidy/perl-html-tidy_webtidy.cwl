@@ -5,12 +5,12 @@ label: perl-html-tidy_webtidy
 doc: "webtidy v1.60 using tidyp v1.04 - A tool to tidy HTML from files or URLs\n\n
   Tool homepage: http://github.com/petdance/html-tidy"
 inputs:
-  - id: input_files_or_urls
+  - id: input_files
     type:
       - 'null'
       - type: array
-        items: string
-    doc: filename or url (filename - reads STDIN)
+        items: File
+    doc: HTML files to check
     inputBinding:
       position: 1
   - id: context

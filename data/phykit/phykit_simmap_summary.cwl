@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --tree
   - id: trait_data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: tab-delimited trait file with header row
     inputBinding:
       position: 101
@@ -55,13 +53,17 @@ inputs:
       position: 101
       prefix: --seed
   - id: plot
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output plot file showing tree with posterior pie charts at nodes
     inputBinding:
       position: 101
       prefix: --plot
   - id: csv
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output CSV file with per-branch dwelling proportions and node 
       posteriors
     inputBinding:
@@ -197,6 +199,9 @@ inputs:
       position: 101
       prefix: --color-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot
     type:
       - 'null'
@@ -214,6 +219,7 @@ outputs:
       glob: $(inputs.csv)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_simmap_summary.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

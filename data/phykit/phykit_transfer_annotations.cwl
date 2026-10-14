@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --source
   - id: target
-    type:
-      - 'null'
-      - File
+    type: File
     doc: target tree file with branch lengths to keep (e.g., RAxML-NG or IQ-TREE
       output)
     inputBinding:

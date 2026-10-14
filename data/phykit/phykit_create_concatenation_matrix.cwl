@@ -10,8 +10,8 @@ doc: 'Create a concatenated alignment file. This function is used to help in the
 inputs:
   - id: alignment
     type: File
-    doc: alignment list file. File should contain a single column list of 
-      alignment sequence files to concatenate into a single matrix.
+    doc: alignment list file. File should contain a single column list of alignment
+      sequence files to concatenate into a single matrix.
     inputBinding:
       position: 101
       prefix: --alignment
@@ -25,9 +25,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimum fraction of informative (non-gap, non-ambiguous) sites across 
-      the concatenated alignment for a taxon to be included. Set to 0 to disable
-      filtering.
+    doc: minimum fraction of informative (non-gap, non-ambiguous) sites across the
+      concatenated alignment for a taxon to be included. Set to 0 to disable filtering.
     inputBinding:
       position: 101
       prefix: --threshold
@@ -40,7 +39,9 @@ inputs:
       position: 101
       prefix: --plot-occupancy
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'output path for occupancy figure (supports .png, .pdf, .svg, .jpg). default:
       <prefix>.occupancy.png'
     inputBinding:
@@ -146,8 +147,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 101
       prefix: --cladogram
@@ -163,8 +163,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: color annotation file for tip labels, clade ranges, and branch colors 
-      (iTOL-inspired TSV format)
+    doc: color annotation file for tip labels, clade ranges, and branch colors (iTOL-inspired
+      TSV format)
     inputBinding:
       position: 101
       prefix: --color-file
@@ -176,7 +176,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --json
+  - id: alignment_files
+    type:
+      type: array
+      items: File
+    doc: alignment files named in the list file; staged into the working directory
+      so the list entries resolve
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_prefix
     type: File[]
     doc: prefix of output files
@@ -192,9 +200,13 @@ outputs:
       glob: $(inputs.plot_output)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.alignment_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_create_concatenation_matrix.out

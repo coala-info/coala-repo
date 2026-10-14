@@ -54,9 +54,11 @@ inputs:
       position: 102
       prefix: --liftover
   - id: logfile
-    type: File
-    doc: Name for the log file (score metadata) for combined scores.[ will write
-      to identical directory as combined scorefile]
+    type:
+      - 'null'
+      - string
+    doc: Name for the log file (score metadata) for combined scores. It is
+      written inside the output directory.
     inputBinding:
       position: 102
       prefix: --logfile
@@ -92,18 +94,25 @@ inputs:
       prefix: --verbose
   - id: outfile_path
     type: string
+    doc: Output directory (created before the run). The tool writes one
+      normalised_<scorefile name> file per input scorefile and the log file into
+      it.
     inputBinding:
       position: 103
       prefix: --outfile
 outputs:
   - id: outfile
-    type: File
-    doc: Output path to combined long scorefile [ will compress output if 
-      filename ends with .gz ]
+    type: Directory
+    doc: Output directory with the normalised scoring files and the log file.
     outputBinding:
       glob: $(inputs.outfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outfile_path)
+        entry: '$({"class": "Directory", "basename": inputs.outfile_path, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgscatalog.core:1.0.2--pyhdfd78af_0

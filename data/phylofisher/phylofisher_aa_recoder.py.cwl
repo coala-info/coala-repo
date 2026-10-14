@@ -15,7 +15,7 @@ inputs:
       position: 101
       prefix: --in_format
   - id: input_matrix
-    type: File?
+    type: File
     doc: Path to input matrix for recoding.
     inputBinding:
       position: 101
@@ -29,11 +29,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --out_format
-  - id: output_dir
-    type:
-      - 'null'
-      - string
-    doc: Path to user-defined output directory
+  - id: output_prefix
+    type: string
+    default: aa_recoder_out
+    doc: Output path without extension; the recoded matrix is written to <output>.fas,
+      <output>.phy or <output>.nex, by output format (the tool treats --output as a
+      file prefix, not as a directory)
     inputBinding:
       position: 101
       prefix: --output
@@ -48,13 +49,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir_dir
+  - id: recoded_matrix
     type:
       - 'null'
-      - Directory
-    doc: Path to user-defined output directory
+      - File
+    doc: Recoded matrix
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_prefix).*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylofisher:1.2.14--pyhdfd78af_0

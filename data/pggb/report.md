@@ -1,5 +1,11 @@
 # pggb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pggb | Not completed | pipeline, skipped |
+
 ## pggb
 
 ### Tool Description

@@ -1,5 +1,14 @@
 # phylodeep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylodeep_checkdeep | PASS |  |
+| phylodeep_modeldeep | PASS | default CNN_FULL_TREE mode crashes in the image (keras keepdims error); FFNN_SUMSTATS gives the values expected by the tool's tests |
+| phylodeep_paramdeep | PASS | default CNN_FULL_TREE mode crashes in the image (keras keepdims error); FFNN_SUMSTATS gives the values expected by the tool's tests |
+| phylodeep_subtree_picker | PASS |  |
+
 ## phylodeep_checkdeep
 
 ### Tool Description
@@ -147,6 +156,41 @@ output:
                         The name of the output file.
 ```
 
+
+## phylodeep_subtree_picker
+
+### Tool Description
+Cuts the given tree into subtrees within a given size range.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phylodeep:0.9--pyhdfd78af_0
+- **Homepage**: https://github.com/evolbioinfo/phylodeep
+- **Package**: https://anaconda.org/channels/bioconda/packages/phylodeep/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: subtree_picker [-h] -i IN_NWK -o OUT_NWK [-m MIN_SIZE] [-M MAX_SIZE]
+
+Cuts the given tree into subtrees within a given size (s) range: min_size <= s
+<= max_size.
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+tree-related arguments:
+  -i IN_NWK, --in_nwk IN_NWK
+                        input tree in newick format (must be rooted, without
+                        polytomies and containing at least --min_size tips).
+  -o OUT_NWK, --out_nwk OUT_NWK
+                        output newick file to store the generated subtrees.
+
+subtree size-related arguments:
+  -m MIN_SIZE, --min_size MIN_SIZE
+                        minimal number of tips for a subtree (inclusive).
+  -M MAX_SIZE, --max_size MAX_SIZE
+                        maximal number of tips for a subtree (inclusive).
+```
 
 ## Metadata
 - **Skill**: generated

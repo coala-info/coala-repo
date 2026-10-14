@@ -12,12 +12,17 @@ inputs:
       bacteria.list`)"
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: CSV file with assignments of phages to their most probable hosts
+    inputBinding:
+      position: 2
 outputs:
   - id: output
     type: File
     doc: CSV file with assignments of phages to their most probable hosts
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phist:1.0.0--py311h2de2dd3_1

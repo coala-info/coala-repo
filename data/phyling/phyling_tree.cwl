@@ -24,15 +24,18 @@ inputs:
       position: 101
       prefix: --figure
   - id: input_dir
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: Directory containing multiple sequence alignment fasta of the markers
     inputBinding:
       position: 101
       prefix: --input_dir
   - id: inputs
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Multiple sequence alignment fasta of the markers
     inputBinding:
       position: 101
@@ -102,6 +105,9 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.inputs)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyling:2.3.1--pyhdfd78af_0

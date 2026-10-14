@@ -40,7 +40,9 @@ inputs:
       position: 101
       prefix: --missing-taxa
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output filename for the quartet network plot
     inputBinding:
       position: 101
@@ -175,6 +177,9 @@ inputs:
       position: 101
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot_output
     type:
       - 'null'
@@ -184,6 +189,7 @@ outputs:
       glob: $(inputs.plot_output)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_quartet_network.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

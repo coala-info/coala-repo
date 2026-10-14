@@ -14,11 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: reference
-    type:
-      - 'null'
-      - File
-    secondaryFiles:
-      - .fai
+    type: File
     doc: reference fasta alignment to compare query alignment to
     inputBinding:
       position: 102

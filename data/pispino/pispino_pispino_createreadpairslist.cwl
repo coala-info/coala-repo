@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pispino_pispino_createreadpairslist
+baseCommand: pispino_createreadpairslist
 label: pispino_pispino_createreadpairslist
 doc: "makes a read_pairs_list.\n\nTool homepage: https://github.com/hsgweon/pispino"
 inputs:

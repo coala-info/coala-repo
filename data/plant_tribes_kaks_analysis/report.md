@@ -1,5 +1,11 @@
 # plant_tribes_kaks_analysis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plant_tribes_kaks_analysis_KaKsAnalysis | PASS | paralog mode on the PlantTribes test species1 proteins and CDS gave 1146 Ka/Ks pairs; ortholog mode not run |
+
 ## plant_tribes_kaks_analysis_KaKsAnalysis
 
 ### Tool Description

@@ -36,7 +36,7 @@ inputs:
   - id: incomplete_matrix
     type:
       - 'null'
-      - File
+      - string
     doc: The path to the outfile for incomplete-matrix records. Required when 
       processing an incomplete data matrix.
     inputBinding:
@@ -52,7 +52,7 @@ inputs:
   - id: log_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to a directory to hold logs.
     inputBinding:
       position: 101
@@ -80,10 +80,15 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: Directory
+    type: File
     doc: The path to the output FASTA file you want to create.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: incomplete_matrix_output
+    type: ['null', File]
+    doc: The outfile for incomplete-matrix records.
+    outputBinding:
+      glob: $(inputs.incomplete_matrix)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

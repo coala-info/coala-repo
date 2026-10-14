@@ -33,6 +33,7 @@ inputs:
       addition with one taxon per line.
     inputBinding:
       position: 101
+      prefix: --to_exclude
 outputs:
   - id: stdout
     type: stdout

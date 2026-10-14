@@ -1,5 +1,15 @@
 # phylowgs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylowgs_create_phylowgs_inputs.py | PASS |  |
+| phylowgs_evolve.py | PASS |  |
+| phylowgs_multievolve.py | Failed | image problem: the multievolve.py on PATH cannot import its helper module and stops at once; the copy at /usr/local/share/phylowgs/multievolve.py runs the chains correctly. |
+| phylowgs_parse_cnvs.py | PASS | synthetic data: small TITAN segment table; output values checked by hand. |
+| phylowgs_write_results.py | PASS |  |
+
 ## phylowgs_evolve.py
 
 ### Tool Description
@@ -90,6 +100,188 @@ optional arguments:
                        data) (default: False)
   --min-ssms MIN_SSMS  Minimum number or percent of SSMs to retain a subclone
                        (default: 0.01)
+```
+
+## phylowgs_create_phylowgs_inputs.py
+
+### Tool Description
+Create ssm_data.txt and cnv_data.txt input files for PhyloWGS from VCF and CNV data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phylowgs:20181105--py27ha7db03b_3
+- **Homepage**: https://github.com/morrislab/phylowgs
+- **Package**: https://anaconda.org/channels/bioconda/packages/phylowgs/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: create_phylowgs_inputs.py [-h] --vcf-type VCF_TYPES [-e ERROR_RATE]
+                                 [--missing-variant-confidence MISSING_VARIANT_CONFIDENCE]
+                                 [-s SAMPLE_SIZE] [-P PRIORITY_SSM_FILENAME]
+                                 [--only-priority] [--cnvs CNV_FILES]
+                                 [--regions {normal_cn,normal_and_abnormal_cn,all}]
+                                 [--output-cnvs OUTPUT_CNVS]
+                                 [--output-variants OUTPUT_VARIANTS]
+                                 [--output-params OUTPUT_PARAMS]
+                                 [--tumor-sample TUMOR_SAMPLE]
+                                 [--muse-tier MUSE_TIER]
+                                 [--nonsubsampled-variants OUTPUT_NONSUBSAMPLED_VARIANTS]
+                                 [--nonsubsampled-variants-cnvs OUTPUT_NONSUBSAMPLED_VARIANTS_CNVS]
+                                 [--sex {auto,male,female}]
+                                 [--het-snp-rate HETSNP_RATE] [--verbose]
+                                 vcf_files [vcf_files ...]
+
+Create ssm_data.txt and cnv_data.txt input files for PhyloWGS from VCF and CNV
+data.
+
+positional arguments:
+  vcf_files             Path to VCF file for each sample. Specified as
+                        <sample>=<VCF path>.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --vcf-type VCF_TYPES  Type of VCF file for each sample, specified as
+                        <sample>=<vcf_type>. Valid VCF types are strelka,mutec
+                        t_pcawg,dkfz,muse,vardict,mutect_smchet,mutect_tcga,sa
+                        nger,pcawg_consensus. (default: None)
+  -e ERROR_RATE, --error-rate ERROR_RATE
+                        Expected error rate of sequencing platform (default:
+                        0.001)
+  --missing-variant-confidence MISSING_VARIANT_CONFIDENCE
+                        Confidence in range [0, 1] that SSMs missing from a
+                        sample are indeed not present in that sample (default:
+                        1.0)
+  -s SAMPLE_SIZE, --sample-size SAMPLE_SIZE
+                        Subsample SSMs to reduce PhyloWGS runtime (default:
+                        None)
+  -P PRIORITY_SSM_FILENAME, --priority-ssms PRIORITY_SSM_FILENAME
+                        File containing newline-separated list of SSMs in
+                        "<chr>_<locus>" format to prioritize for inclusion
+                        (default: None)
+  --only-priority       Only sample variants provided on priority list
+                        (default: False)
+  --cnvs CNV_FILES      Path to CNV file created with parse_cnvs.py for each
+                        sample. Specified as <sample>=<CNV path>. (default:
+                        None)
+  --regions {normal_cn,normal_and_abnormal_cn,all}
+                        Which regions to use variants from. Refer to the
+                        parser README for more details. (default:
+                        normal_and_abnormal_cn)
+  --output-cnvs OUTPUT_CNVS
+                        Output destination for CNVs (default: cnv_data.txt)
+  --output-variants OUTPUT_VARIANTS
+                        Output destination for variants (default:
+                        ssm_data.txt)
+  --output-params OUTPUT_PARAMS
+                        Output destination for run parameters (default:
+                        params.json)
+  --tumor-sample TUMOR_SAMPLE
+                        Name of the tumor sample in the input VCF file.
+                        Defaults to last sample if not specified. (default:
+                        None)
+  --muse-tier MUSE_TIER
+                        Maximum MuSE tier to include (default: 0)
+  --nonsubsampled-variants OUTPUT_NONSUBSAMPLED_VARIANTS
+                        If subsampling, write nonsubsampled variants to
+                        separate file, in addition to subsampled variants
+                        (default: None)
+  --nonsubsampled-variants-cnvs OUTPUT_NONSUBSAMPLED_VARIANTS_CNVS
+                        If subsampling, write CNVs for nonsubsampled variants
+                        to separate file (default: None)
+  --sex {auto,male,female}
+                        Sex of patient. Used to adjust expected variant
+                        frequencies on sex chromosomes. If auto, patient is
+                        set to male if any variants are provided on the Y
+                        chromosome, and female otherwise. (default: auto)
+  --het-snp-rate HETSNP_RATE
+                        Average number of heterozygous SNPs per base used to
+                        call copy number. This determines how heavily we
+                        weight somatic CNAs relative to SNVs. Defaults to 7
+                        SNPs per 10 kb, as per Battenberg. (default: 0.0007)
+  --verbose
+```
+
+## phylowgs_parse_cnvs.py
+
+### Tool Description
+Create CNV input file for parser from Battenberg or TITAN data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phylowgs:20181105--py27ha7db03b_3
+- **Homepage**: https://github.com/morrislab/phylowgs
+- **Package**: https://anaconda.org/channels/bioconda/packages/phylowgs/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: parse_cnvs.py [-h] -f {battenberg,battenberg-smchet,titan} -c
+                     CELLULARITY [--cnv-output CNV_OUTPUT_FILENAME]
+                     cnv_file
+
+Create CNV input file for parser from Battenberg or TITAN data
+
+positional arguments:
+  cnv_file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f {battenberg,battenberg-smchet,titan}, --cnv-format {battenberg,battenberg-smchet,titan}
+                        Type of CNV input (default: None)
+  -c CELLULARITY, --cellularity CELLULARITY
+                        Fraction of sample that is cancerous rather than
+                        somatic. Used only for estimating CNV confidence -- if
+                        no CNVs, need not specify argument. (default: None)
+  --cnv-output CNV_OUTPUT_FILENAME
+                        Output destination for parsed CNVs (default: cnvs.txt)
+```
+
+## phylowgs_multievolve.py
+
+### Tool Description
+Concurrently run multiple MCMC chains of PhyloWGS.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phylowgs:20181105--py27ha7db03b_3
+- **Homepage**: https://github.com/morrislab/phylowgs
+- **Package**: https://anaconda.org/channels/bioconda/packages/phylowgs/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: multievolve.py [-h] [-n NUM_CHAINS]
+                      [-r RANDOM_SEEDS [RANDOM_SEEDS ...]]
+                      [-I CHAIN_INCLUSION_FACTOR] [-O OUTPUT_DIR] --ssms
+                      SSM_FILE --cnvs CNV_FILE
+
+Concurrently run multiple MCMC chains of PhyloWGS. All options that evolve.py
+accepts may also be specified here. To list those arguments, run
+`/usr/local/bin/python evolve.py --help`.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n NUM_CHAINS, --num-chains NUM_CHAINS
+                        Number of chains to run concurrently (default: 4)
+  -r RANDOM_SEEDS [RANDOM_SEEDS ...], --random-seeds RANDOM_SEEDS [RANDOM_SEEDS ...]
+                        Space-separated random seeds with which to initialize
+                        each chain. Specify one for each chain. (default:
+                        None)
+  -I CHAIN_INCLUSION_FACTOR, --chain-inclusion-factor CHAIN_INCLUSION_FACTOR
+                        Factor for determining which chains will be included
+                        in the output "merged" folder. Default is 1.1, meaning
+                        that the sum of the likelihoods of the trees found in
+                        each chain must be greater than 1.1x the maximum of
+                        that value across chains. Setting this value = inf
+                        includes all chains and setting it = 1 will include
+                        only the best chain. (default: 1.1)
+  -O OUTPUT_DIR, --output-dir OUTPUT_DIR
+                        Directory where results from each chain will be saved.
+                        We will create it if it does not exist. (default:
+                        chains)
+  --ssms SSM_FILE       File listing SSMs (simple somatic mutations, i.e.,
+                        single nucleotide variants. For proper format, see
+                        README.md. (default: None)
+  --cnvs CNV_FILE       File listing CNVs (copy number variations). For proper
+                        format, see README.md. (default: None)
 ```
 
 ## Metadata

@@ -165,6 +165,7 @@ inputs:
     doc: Keep top-N hits per contig (by bitscore)
     inputBinding:
       position: 102
+      prefix: --top-per-contig
   - id: ttable
     type:
       - 'null'

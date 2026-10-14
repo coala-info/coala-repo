@@ -154,6 +154,13 @@ outputs:
     doc: the output file for the predicted metagenome
     outputBinding:
       glob: $(inputs.output_metagenome_table_path)
+  - id: accuracy_metrics_file
+    type:
+      - 'null'
+      - File
+    doc: accuracy metrics table written when accuracy_metrics is given
+    outputBinding:
+      glob: $(inputs.accuracy_metrics)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

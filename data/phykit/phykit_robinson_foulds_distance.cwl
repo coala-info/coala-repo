@@ -16,9 +16,7 @@ inputs:
     inputBinding:
       position: 1
   - id: tree_file_one
-    type:
-      - 'null'
-      - File
+    type: File
     doc: second argument after function name should be a tree file
     inputBinding:
       position: 2

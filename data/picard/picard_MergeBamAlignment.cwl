@@ -17,19 +17,16 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: reference_sequence
-    type:
-      - 'null'
-      - File
+    type: File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
   - id: unmapped_bam
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Original SAM or BAM file of unmapped reads, which must be in queryname 
       order. Reads MUST be unmapped.
     inputBinding:
@@ -43,6 +40,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ADD_MATE_CIGAR
+      valueFrom: '$(self ? "true" : "false")'
   - id: add_pg_tag_to_reads
     type:
       - 'null'
@@ -51,16 +49,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ADD_PG_TAG_TO_READS
+      valueFrom: '$(self ? "true" : "false")'
   - id: aligned_bam
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --ALIGNED_BAM
     doc: SAM or BAM file(s) with alignment data. This argument may be specified 
       0 or more times.
     inputBinding:
       position: 101
-      prefix: --ALIGNED_BAM
   - id: aligned_reads_only
     type:
       - 'null'
@@ -83,49 +83,54 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: attributes_to_remove
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ATTRIBUTES_TO_REMOVE
     doc: Attributes from the alignment record that should be removed when 
       merging. This overrides ATTRIBUTES_TO_RETAIN if they share common tags.
     inputBinding:
       position: 101
-      prefix: --ATTRIBUTES_TO_REMOVE
   - id: attributes_to_retain
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ATTRIBUTES_TO_RETAIN
     doc: Reserved alignment attributes (tags starting with X, Y, or Z) that 
       should be brought over from the alignment data when merging.
     inputBinding:
       position: 101
-      prefix: --ATTRIBUTES_TO_RETAIN
   - id: attributes_to_reverse
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ATTRIBUTES_TO_REVERSE
     doc: Attributes on negative strand reads that need to be reversed.
     inputBinding:
       position: 101
-      prefix: --ATTRIBUTES_TO_REVERSE
   - id: attributes_to_reverse_complement
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ATTRIBUTES_TO_REVERSE_COMPLEMENT
     doc: Attributes on negative strand reads that need to be reverse 
       complemented.
     inputBinding:
       position: 101
-      prefix: --ATTRIBUTES_TO_REVERSE_COMPLEMENT
   - id: clip_adapters
     type:
       - 'null'
@@ -134,6 +139,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --CLIP_ADAPTERS
+      valueFrom: '$(self ? "true" : "false")'
   - id: clip_overlapping_reads
     type:
       - 'null'
@@ -143,6 +149,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --CLIP_OVERLAPPING_READS
+      valueFrom: '$(self ? "true" : "false")'
   - id: compression_level
     type:
       - 'null'
@@ -173,11 +180,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --EXPECTED_ORIENTATIONS
     doc: 'The expected orientation of proper read pairs. Replaces JUMP_SIZE. Possible
       values: {FR, RF, TANDEM}'
     inputBinding:
       position: 101
-      prefix: --EXPECTED_ORIENTATIONS
   - id: hard_clip_overlapping_reads
     type:
       - 'null'
@@ -195,6 +203,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --INCLUDE_SECONDARY_ALIGNMENTS
+      valueFrom: '$(self ? "true" : "false")'
   - id: is_bisulfite_sequence
     type:
       - 'null'
@@ -218,11 +227,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --MATCHING_DICTIONARY_TAGS
     doc: List of Sequence Records tags that must be equal (if present) in the 
       reference dictionary and in the aligned file.
     inputBinding:
       position: 101
-      prefix: --MATCHING_DICTIONARY_TAGS
   - id: max_insertions_or_deletions
     type:
       - 'null'
@@ -258,6 +268,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --PAIRED_RUN
+      valueFrom: '$(self ? "true" : "false")'
   - id: primary_alignment_strategy
     type:
       - 'null'
@@ -314,10 +325,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --READ1_ALIGNED_BAM
     doc: SAM or BAM file(s) with alignment data from the first read of a pair.
     inputBinding:
       position: 101
-      prefix: --READ1_ALIGNED_BAM
   - id: read1_trim
     type:
       - 'null'
@@ -332,10 +344,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --READ2_ALIGNED_BAM
     doc: SAM or BAM file(s) with alignment data from the second read of a pair.
     inputBinding:
       position: 101
-      prefix: --READ2_ALIGNED_BAM
   - id: read2_trim
     type:
       - 'null'
@@ -359,11 +372,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: unmap_contaminant_reads
     type:
       - 'null'

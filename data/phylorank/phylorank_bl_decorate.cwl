@@ -26,6 +26,11 @@ inputs:
     doc: rank of labels (1, 2, 3, 4, 5, or 6)
     inputBinding:
       position: 4
+  - id: output_tree_path
+    type: string
+    doc: decorate tree (output tree file)
+    inputBinding:
+      position: 5
   - id: keep_labels
     type:
       - 'null'
@@ -56,7 +61,7 @@ outputs:
     type: File
     doc: decorate tree
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_tree_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

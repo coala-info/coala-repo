@@ -36,10 +36,11 @@ inputs:
       - 'null'
       - File
     doc: put the bipart freq on the edges of this tree. This will create a 
-      *.pxbpmapped.tre file.
+      *.pxbpmapped.tre file beside it, so it is staged writable.
     inputBinding:
       position: 101
       prefix: --maptree
+      valueFrom: $(self.basename)
   - id: suppress
     type:
       - 'null'
@@ -86,8 +87,19 @@ outputs:
     doc: output file, STOUT otherwise
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: mapped_tree
+    type:
+      - 'null'
+      - File
+    doc: Tree with the bipartition frequencies on the edges
+    outputBinding:
+      glob: '*.pxbpmapped.tre'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.map_tree)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyx:1.1--hc0837bd_5

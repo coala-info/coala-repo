@@ -1,5 +1,12 @@
 # pindel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pindel | PASS | ran on pindel SmallTest data; calls hit the planted events; shipped expected files are from an older pindel and list fewer calls |
+| pindel_pindel2vcf | PASS |  |
+
 ## pindel
 
 ### Tool Description

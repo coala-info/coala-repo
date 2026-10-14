@@ -1,5 +1,11 @@
 # plant_tribes_gene_family_aligner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plant_tribes_gene_family_aligner_GeneFamilyAligner | PASS | ran with MAFFT on the integrated orthogroup; protein and codon alignments written |
+
 ## plant_tribes_gene_family_aligner_GeneFamilyAligner
 
 ### Tool Description

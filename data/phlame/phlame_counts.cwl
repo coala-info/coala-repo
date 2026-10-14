@@ -9,12 +9,18 @@ inputs:
   - id: input_bam
     type: File
     doc: Path to input bam file (required).
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: -i
   - id: reference_genome
     type: File
     doc: Path to reference genome.
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: -r

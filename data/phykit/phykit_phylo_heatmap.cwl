@@ -14,9 +14,7 @@ inputs:
       position: 101
       prefix: --tree
   - id: data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: numeric data matrix in TSV format with header row (required)
     inputBinding:
       position: 101

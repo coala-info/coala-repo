@@ -1,5 +1,11 @@
 # phynteny CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phynteny | Not completed | needs the 380 MB pre-trained model download (Zenodo), which is over the test size limit; CWL was rewritten from the help and starts correctly. |
+
 ## phynteny
 
 ### Tool Description

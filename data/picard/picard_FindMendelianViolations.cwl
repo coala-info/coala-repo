@@ -10,6 +10,11 @@ doc: Takes in VCF or BCF and a pedigree file and looks for high confidence calls
 inputs:
   - id: input
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .idx
+        required: false
     doc: Input VCF or BCF with genotypes.
     inputBinding:
       position: 101
@@ -21,9 +26,7 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: trios
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File of Trio information in PED format (with no genotype columns).
     inputBinding:
       position: 101
@@ -33,10 +36,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -67,19 +71,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --FEMALE_CHROMS
     doc: List of possible names for female sex chromosome(s)
     inputBinding:
       position: 101
-      prefix: --FEMALE_CHROMS
   - id: male_chroms
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --MALE_CHROMS
     doc: List of possible names for male sex chromosome(s)
     inputBinding:
       position: 101
-      prefix: --MALE_CHROMS
   - id: max_records_in_ram
     type:
       - 'null'
@@ -118,11 +124,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --PSEUDO_AUTOSOMAL_REGIONS
     doc: List of chr:start-end for pseudo-autosomal regions on the female sex 
       chromosome.
     inputBinding:
       position: 101
-      prefix: --PSEUDO_AUTOSOMAL_REGIONS
   - id: quiet
     type:
       - 'null'
@@ -137,6 +144,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -146,10 +154,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --SKIP_CHROMS
     doc: List of chromosome names to skip entirely.
     inputBinding:
       position: 101
-      prefix: --SKIP_CHROMS
   - id: tab_mode
     type:
       - 'null'
@@ -172,11 +181,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -204,7 +214,9 @@ inputs:
       position: 101
       prefix: --VALIDATION_STRINGENCY
   - id: vcf_dir
-    type: string
+    type:
+      - 'null'
+      - string
     doc: If provided, output per-family VCFs of mendelian violations into this 
       directory.
     inputBinding:
@@ -234,6 +246,9 @@ outputs:
       glob: $(inputs.vcf_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      $(inputs.vcf_dir ? [{"entryname": inputs.vcf_dir, "entry": {"class": "Directory", "listing": []}, "writable": true}] : [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0

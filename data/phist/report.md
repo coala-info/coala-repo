@@ -1,5 +1,11 @@
 # phist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phist | PASS |  |
+
 ## phist
 
 ### Tool Description

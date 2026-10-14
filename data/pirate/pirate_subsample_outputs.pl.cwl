@@ -36,7 +36,7 @@ inputs:
   - id: list
     type:
       - 'null'
-      - string
+      - File
     doc: list of isolates to include in output
     inputBinding:
       position: 101

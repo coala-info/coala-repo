@@ -34,7 +34,7 @@ inputs:
     doc: Output or path parameter `out_file_path`
     inputBinding:
       position: 102
-      prefix: --out-file
+      prefix: --outf
 outputs:
   - id: out_file
     type:

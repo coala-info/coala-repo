@@ -36,6 +36,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input_tsv
+  - id: nucleotide_files
+    type:
+      type: array
+      items: File
+    doc: Nucleotide (CDS) fasta files named in input_tsv; they are staged in the working
+      directory under cds/<file name>, so write the tsv paths as cds/<file name>
   - id: out_format
     type:
       - 'null'
@@ -70,6 +76,8 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.nucleotide_files.map(function(f) {return {"entryname": "cds/" + f.basename, "entry": f};}))'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylofisher:1.2.14--pyhdfd78af_0

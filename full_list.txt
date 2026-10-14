@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 10254; PASS: 7933; Failed: 1247; Not completed: 1074
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 10764; PASS: 8355; Failed: 1294; Not completed: 1115
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -10254,3 +10254,513 @@ pgap2	pgap2_post_singletree	PASS	new CWL; core gene tree of 4 M. pneumoniae stra
 pgap2	pgap2_post_stat	PASS	new CWL; on the 4-genome partition result: strict core 591 genes matches main, curve fit and PDF written
 pgap2	pgap2_post_tajimas_d	PASS	new CWL; Tajima's D table for 697 clusters; some clusters without variation or too few sequences report 0 by design
 pgap2	pgap2_prep	PASS	3 NCBI Mycoplasma pneumoniae genomes (GenBank, gcode 4); gene counts 666-709 per strain, ANI above 99.7; fixed links to inputs left in the output
+pgcgap	pgcgap_mash	Not completed	pipeline, skipped
+pgdspider	pgdspider_PGDSpider2-cli	PASS	
+pggb	pggb	Not completed	pipeline, skipped
+pgrc	pgrc_PgRC	PASS	
+pgscatalog-utils	pgscatalog-utils_pgscatalog-aggregate	PASS	
+pgscatalog-utils	pgscatalog-utils_pgscatalog-ancestry-adjust	PASS	
+pgscatalog-utils	pgscatalog-utils_pgscatalog-combine	PASS	
+pgscatalog-utils	pgscatalog-utils_pgscatalog-download	PASS	
+pgscatalog-utils	pgscatalog-utils_pgscatalog-intersect	PASS	
+pgscatalog-utils	pgscatalog-utils_pgscatalog-match	PASS	
+pgscatalog-utils	pgscatalog-utils_pgscatalog-matchmerge	PASS	
+pgscatalog-utils	pgscatalog-utils_pgscatalog-relabel	PASS	
+pgscatalog.calc	pgscatalog.calc_pgscatalog-aggregate	PASS	
+pgscatalog.calc	pgscatalog.calc_pgscatalog-ancestry-adjust	PASS	
+pgscatalog.core	pgscatalog.core_pgscatalog-download	PASS	
+pgscatalog.core	pgscatalog.core_pgscatalog-format	PASS	
+pgscatalog.core	pgscatalog.core_pgscatalog-relabel	PASS	
+pgscatalog.match	pgscatalog.match_pgscatalog-intersect	PASS	
+pgscatalog.match	pgscatalog.match_pgscatalog-match	PASS	
+pgscatalog.match	pgscatalog.match_pgscatalog-matchmerge	PASS	
+phables	phables_config	Failed	tool bug: phables config 1.5.0 always crashes with TypeError (copy_config is called without the system config path)
+phables	phables_run	Not completed	pipeline, skipped
+phabox	phabox_phabox2	PASS	tested --task votu with ANI clustering of two T7 genomes plus lambda (no database needed); the other tasks need the large PhaBOX database and were not run
+phamb	phamb_run_RF	Failed	image problem: /usr/local/bin/run_RF.py looks for dbs/RF_model.python39.sav next to itself, but the model is only in site-packages/phamb/dbs, so every run stops with FileNotFoundError
+phame	phame	Failed	tool bug: phame 1.0.2 compares samtools versions as decimals and stops with 'Need samtools >= 1.3 but you have 1.11', so no run and not even --vcheck can start
+phanotate	phanotate_phanotate.py	Failed	tool bug: --format gff3 is a documented choice but writes an NCBI feature table (>Feature ...), not GFF3; tabular, gff, genbank and fasta formats work (59 genes on phage T7)
+phantompeakqualtools	phantompeakqualtools	PASS	yeast ChIP vs input (bwa-aligned, 95k reads): cross-correlation gives NSC 1.32 and RSC 1.29, peak calling with -p=2 gives 833 narrow peaks; peak calling with -p=0 crashes inside spp (names(cc) error)
+pharokka	pharokka	Not completed	needs the large Pharokka database (656 MB download, over the 200 MB limit); no small database exists
+phasius	phasius	PASS	
+phastaf	phastaf	Failed	tool bug: phastaf 0.1.0 accepts --mingenes but never uses it, so phage.bed keeps 16 clusters (many with 1 gene) instead of the 4 expected prophage regions; the rest of the run works
+phava	phava_cluster	PASS	
+phava	phava_create	PASS	
+phava	phava_locate	PASS	
+phava	phava_ratio	PASS	
+phava	phava_summarize	PASS	
+phava	phava_variation_wf	PASS	
+phcue-ck	phcue-ck	Failed	tool bug: --output-format csv-wide labels the read 1 size column as bytes_se and leaves bytes_1 empty (headers swapped); json, csv and csv-long are correct
+pheniqs	pheniqs_mux	PASS	BDGGG demultiplexing run: 494 shared reads match the repo expected file (older version, other tag names); fastq copy mode also checked
+phenix	phenix_filter_vcf	Failed	tool bug: filter_vcf.py calls filter_variants(out_vcf=...) which the phe library does not accept, so every run stops with TypeError
+phenix	phenix_prepare_reference	PASS	mpileup/bwa mode writes the bwa index and .fai; the gatk variant stops with GATK_JAR not found (the GATK jar is not in the image)
+phenix	phenix_vcf2distancematrix	PASS	default mode checked against the VCF (11 and 12 SNPs to the reference, 0 between samples, N positions skipped); --remove-recombination not confirmed because the repo reference genome file is only a path stub
+phenix	phenix_vcf2fasta	PASS	output has the same records as the repo gold file (record order differs); positions checked against the VCF PASS sites
+phenix	phenix_vcf2json	PASS	
+phertilizer	phertilizer	Not completed	runs and writes cell clusters, SNV clusters and a tree, but the output differs from the repo example (made with a newer version that has --post_process); it merges two expected clones, so it cannot be confirmed
+phiercc	phiercc_HCCeval	Failed	tool bug: HCCeval aborts with double free or corruption in the pairwise distance step and then hangs (tried 60 and 400 STs from the example profile)
+phiercc	phiercc_pHierCC	PASS	Yersinia cgMLST example (2999 STs): HierCC table with HC0 to HC1553 levels written; --append run crashes inside the tool (could not broadcast input array), the main mode works
+phigaro	phigaro	Not completed	needs the large pVOG HMM database (about 1.5 GB download, set up with phigaro-setup); no small database exists
+philosopher	philosopher_abacus	PASS	two BSA experiments combined: albumin 12 peptides and 37 spectral counts; needs a combined pepXML and protXML made with a TPP helper image
+philosopher	philosopher_bioquant	Failed	image problem: the bundled cd-hit cannot start (libstdc++.so.6 and libgomp.so.1 missing), so it stops with cannot open cluster file
+philosopher	philosopher_comet	PASS	BSA/OVEMB mzML searched, pepXML written (481 spectra for BSA); --print writes comet.params
+philosopher	philosopher_database	PASS	18-protein standards plus contaminants: 9531 targets and 9531 decoys; --annotate fills the workspace
+philosopher	philosopher_filter	PASS	OVEMB human run: 142 PSMs, 127 peptides, 42 proteins at 1% FDR; PeptideProphet and ProteinProphet input made with a TPP helper image because the Philosopher image cannot run them
+philosopher	philosopher_freequant	PASS	130 of 142 PSMs get an intensity on the OVEMB run
+philosopher	philosopher_iprophet	Failed	image problem: the bundled TPP program cannot start (libz.so.1 missing), so the run writes no output
+philosopher	philosopher_labelquant	Not completed	no usable TMT test data: the only small TMT10 set (nf-core ddamsproteomics) gives no valid PeptideProphet model, so no filtered PSMs to quantify
+philosopher	philosopher_msfragger	Not completed	needs the MSFragger jar (licence download) and Java, which are not in the image
+philosopher	philosopher_peptideprophet	Failed	image problem: the bundled TPP program cannot start (libz.so.1 missing), so the run writes no output
+philosopher	philosopher_pipeline	Not completed	pipeline, skipped
+philosopher	philosopher_proteinprophet	Failed	image problem: the bundled TPP program cannot start (libz.so.1 missing), so the run writes no output
+philosopher	philosopher_ptmprophet	Failed	image problem: the bundled TPP program cannot start (libz.so.1 missing), so the run writes no output
+philosopher	philosopher_report	PASS	psm, ion, peptide and protein tables match the filter counts (142 PSMs, 42 proteins); BSA run lists albumin, keratins, trypsin
+philosopher	philosopher_slack	Not completed	needs a Slack account and API token
+philosopher	philosopher_tmtintegrator	Not completed	needs the TMT-Integrator jar and Java, which are not in the image, and TMT results from labelquant
+philosopher	philosopher_workspace	PASS	creates the .meta workspace that later steps reuse
+phirbo	phirbo	PASS	
+phispy	phispy	PASS	
+phist	phist	PASS	
+phizz	phizz_build-genes	Failed	tool bug: Python 3 crash comparing gzip bytes with a str (startswith), so no gene database is written
+phizz	phizz_delete	PASS	
+phizz	phizz_init	Failed	image problem: the tool writes its config file into the read-only package folder inside the image
+phizz	phizz_query	PASS	
+phlame	phlame_classify	Failed	image problem: samtools is not installed in the image, so the pileup step finds no data
+phlame	phlame_cmt	PASS	
+phlame	phlame_counts	Failed	image problem: samtools and bcftools are not installed in the image, so counts stops at its dependency check
+phlame	phlame_makedb	Failed	tool bug: the -y output tree option is accepted but never written; classifier and clades match the example
+phlame	phlame_plot	PASS	
+phlame	phlame_tree	PASS	phylip step checked (8 samples); building the tree with -o needs raxmlHPC, which the image lacks
+phold	phold_autotune	Failed	tool bug: autotune calls torch.cuda.synchronize even with --cpu, and the image torch has no CUDA
+phold	phold_compare	PASS	per-CDS functions match the golden run output; the 3Di input came from phold_predict
+phold	phold_createdb	PASS	
+phold	phold_install	PASS	
+phold	phold_plot	PASS	
+phold	phold_predict	PASS	ran on CPU with the default settings and matches the tool's golden 3Di output; --cpu crashes with a half/float type error
+phold	phold_proteins-compare	PASS	
+phold	phold_proteins-predict	PASS	ran on CPU with the default settings; 3Di strings give the expected functions in proteins-compare
+phold	phold_remote	Failed	tool bug: after the Foldseek step it reads a mean probabilities csv that remote mode never writes
+phold	phold_run	PASS	ran on CPU with the default settings; functions match the golden output
+phu	phu_cluster	PASS	
+phu	phu_screen	PASS	
+phu	phu_simplify-taxa	Failed	tool bug: the documented example novel_genus_1_of_novel_family_2_of_Caudoviricetes gives novel_family_2_of_Caudoviricetes:NG1 instead of Caudoviricetes:NF2:NG1
+phybin	phybin	Failed	image problem: graphviz (neato) is missing, so default clustering and --rfdist exit with an error; only --bin works
+phyclone	phyclone_consensus	PASS	
+phyclone	phyclone_map	PASS	
+phyclone	phyclone_run	PASS	
+phyclone	phyclone_topology-report	PASS	
+phykit	phykit_alignment_entropy	PASS	mean and verbose modes checked (0.657 matches the tool test); the plot option crashes because matplotlib is missing in the image
+phykit	phykit_alignment_length	PASS	
+phykit	phykit_alignment_length_no_gaps	PASS	
+phykit	phykit_alignment_outlier_taxa	PASS	
+phykit	phykit_alignment_recoding	Failed	image problem: the recoding_tables folder is missing from the image, so every named scheme (RY-nucleotide, Dayhoff-6) stops with a table-not-found message
+phykit	phykit_alignment_subsample	PASS	
+phykit	phykit_ancestral_state_reconstruction	PASS	continuous and discrete reconstructions match fit_continuous and fit_discrete values; the plot option needs matplotlib, missing in the image
+phykit	phykit_bipartition_support_stats	PASS	
+phykit	phykit_branch_length_multiplier	PASS	
+phykit	phykit_character_map	Failed	image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for character_map'
+phykit	phykit_chronogram	Failed	image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for chronogram'
+phykit	phykit_collapse_branches	PASS	
+phykit	phykit_column_score	PASS	
+phykit	phykit_composition_per_taxon	PASS	
+phykit	phykit_compositional_bias_per_site	Failed	tool bug: in phykit 2.1.92 the corrected p-value column puts nan at the wrong sites (inserts in reverse order); the tool test expects different values
+phykit	phykit_concordance_asr	PASS	weighted method gives root estimate equal to the plain reconstruction; the plot options need matplotlib, missing in the image
+phykit	phykit_consensus_network	PASS	split table checked by hand (6 splits, frequencies match the 10 input trees); the plot option needs matplotlib, missing in the image
+phykit	phykit_consensus_tree	PASS	
+phykit	phykit_cont_map	Failed	image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for contMap'
+phykit	phykit_cophylo	Failed	image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for cophylo plotting'
+phykit	phykit_covarying_evolutionary_rates	PASS	main output matches the tool test; the plot option needs matplotlib, missing in the image
+phykit	phykit_create_concatenation_matrix	PASS	concatenated matrix, partition and occupancy files match the tool test files; the occupancy plot option needs matplotlib, missing in the image
+phykit	phykit_degree_of_violation_of_a_molecular_clock	PASS	
+phykit	phykit_density_map	Failed	image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for density map plotting'
+phykit	phykit_dfoil	PASS	
+phykit	phykit_dstatistic	PASS	
+phykit	phykit_dtt	PASS	text output (MDI and DTT curve) checks out; the plot option needs matplotlib, missing in the image
+phykit	phykit_evolutionary_rate	PASS	
+phykit	phykit_evolutionary_rate_per_site	PASS	main output matches the tool test; the plot option needs matplotlib, missing in the image
+phykit	phykit_faidx	PASS	
+phykit	phykit_faiths_pd	PASS	
+phykit	phykit_fit_continuous	PASS	
+phykit	phykit_fit_discrete	PASS	
+phykit	phykit_gc_content	PASS	
+phykit	phykit_hidden_paralogy_check	PASS	
+phykit	phykit_hybridization	PASS	gene concordance factors agree with the dstatistic and concordance_asr runs; the plot option needs matplotlib, missing in the image
+phykit	phykit_identity_matrix	Failed	image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for identity_matrix'
+phykit	phykit_independent_contrasts	PASS	
+phykit	phykit_internal_branch_stats	PASS	
+phykit	phykit_internode_labeler	PASS	
+phykit	phykit_kuhner_felsenstein_distance	PASS	
+phykit	phykit_last_common_ancestor_subtree	PASS	
+phykit	phykit_long_branch_score	PASS	
+phykit	phykit_ltt	PASS	gamma statistic 2.2825 matches the tool test; the plot option needs matplotlib, missing in the image
+phykit	phykit_mask_alignment	PASS	
+phykit	phykit_monophyly_check	PASS	
+phykit	phykit_nearest_neighbor_interchange	PASS	
+phykit	phykit_neighbor_net	Failed	image problem: matplotlib is missing in the image, so the network drawing step raises ModuleNotFoundError
+phykit	phykit_network_signal	PASS	
+phykit	phykit_occupancy_filter	PASS	taxa below the occupancy threshold removed correctly from the fasta files
+phykit	phykit_occupancy_per_taxon	PASS	
+phykit	phykit_ou_shift_detection	PASS	
+phykit	phykit_ouwie	PASS	
+phykit	phykit_pairwise_identity	PASS	main mode checked; --plot fails because the image has no matplotlib
+phykit	phykit_parsimony_informative_sites	PASS	
+phykit	phykit_parsimony_score	PASS	
+phykit	phykit_patristic_distances	PASS	
+phykit	phykit_phenogram	Failed	image problem: matplotlib is missing, so the plot cannot be made
+phykit	phykit_phylo_anova	PASS	
+phykit	phykit_phylo_gwas	Failed	image problem: matplotlib is missing, so the Manhattan plot cannot be made
+phykit	phykit_phylo_heatmap	Failed	image problem: matplotlib is missing, so the heatmap cannot be made
+phykit	phykit_phylo_impute	PASS	
+phykit	phykit_phylo_logistic	PASS	
+phykit	phykit_phylo_path	PASS	plot option not tested because the image has no matplotlib
+phykit	phykit_phylogenetic_glm	PASS	
+phykit	phykit_phylogenetic_ordination	PASS	PCA tested; plot options not tested because the image has no matplotlib
+phykit	phykit_phylogenetic_regression	PASS	
+phykit	phykit_phylogenetic_signal	PASS	
+phykit	phykit_phylomorphospace	Failed	image problem: matplotlib is missing, so the plot cannot be made
+phykit	phykit_plot_alignment_qc	Failed	image problem: matplotlib is missing, so the plot cannot be made
+phykit	phykit_polytomy_test	PASS	
+phykit	phykit_print_tree	PASS	
+phykit	phykit_prune_tree	PASS	
+phykit	phykit_quartet_network	PASS	
+phykit	phykit_quartet_pie	Failed	image problem: matplotlib is missing, so the plot cannot be made
+phykit	phykit_rate_heterogeneity	PASS	
+phykit	phykit_relative_composition_variability	PASS	
+phykit	phykit_relative_composition_variability_taxon	PASS	
+phykit	phykit_relative_rate_test	PASS	
+phykit	phykit_rename_fasta_entries	PASS	
+phykit	phykit_rename_tree_tips	PASS	
+phykit	phykit_robinson_foulds_distance	PASS	
+phykit	phykit_root_tree	PASS	
+phykit	phykit_saturation	PASS	
+phykit	phykit_simmap_summary	PASS	
+phykit	phykit_spectral_discordance	PASS	
+phykit	phykit_spurious_sequence	PASS	
+phykit	phykit_stochastic_character_map	PASS	
+phykit	phykit_subtree_prune_regraft	PASS	
+phykit	phykit_sum_of_pairs_score	PASS	
+phykit	phykit_taxon_groups	PASS	
+phykit	phykit_thread_dna	PASS	
+phykit	phykit_threshold_model	PASS	
+phykit	phykit_tip_labels	PASS	
+phykit	phykit_tip_to_tip_distance	PASS	pair and --all-pairs modes checked; --plot not tested because the image has no matplotlib
+phykit	phykit_tip_to_tip_node_distance	PASS	
+phykit	phykit_total_tree_length	PASS	
+phykit	phykit_trait_correlation	Failed	image problem: matplotlib is missing, so the plot cannot be made
+phykit	phykit_trait_rate_map	Failed	image problem: matplotlib is missing, so the plot cannot be made
+phykit	phykit_transfer_annotations	PASS	
+phykit	phykit_tree_space	Failed	image problem: matplotlib is missing, so the plot cannot be made
+phykit	phykit_treeness	PASS	
+phykit	phykit_treeness_over_rcv	PASS	
+phykit	phykit_variable_sites	PASS	
+phyling	phyling_align	PASS	
+phyling	phyling_download	PASS	
+phyling	phyling_filter	PASS	
+phyling	phyling_tree	PASS	
+phylip	phylip_dnadist	PASS	
+phylip	phylip_dnainvar	PASS	
+phylip	phylip_dnapars	PASS	
+phylip	phylip_dolmove	PASS	
+phylip	phylip_drawtree	PASS	
+phylip	phylip_neighbor	PASS	
+phylip	phylip_retree	PASS	
+phyloacc	phyloacc	PASS	
+phyloacc	phyloacc_PhyloAcc-GT	PASS	synthetic data: the coalescent-unit tree is the substitution-rate tree of the mod file
+phyloacc	phyloacc_PhyloAcc-ST	PASS	
+phyloacc	phyloacc_phyloacc_post.py	PASS	
+phyloaln	phyloaln_PhyloAln	PASS	
+phyloaln	phyloaln_alignseq.pl	PASS	
+phyloaln	phyloaln_check_aln.py	PASS	
+phyloaln	phyloaln_connect.pl	PASS	
+phyloaln	phyloaln_merge_seqs.py	PASS	
+phyloaln	phyloaln_prune_tree.py	PASS	synthetic data: hand-written species tree of the test species
+phyloaln	phyloaln_revertransseq.pl	PASS	
+phyloaln	phyloaln_root_tree.py	PASS	synthetic data: hand-written species tree of the test species
+phyloaln	phyloaln_select_seqs.py	PASS	
+phyloaln	phyloaln_test_effect.py	PASS	
+phyloaln	phyloaln_transseq.pl	PASS	
+phyloaln	phyloaln_trim_matrix.py	PASS	
+phylobayes-mpi	phylobayes-mpi_bpcomp	PASS	
+phylobayes-mpi	phylobayes-mpi_cvrep	PASS	
+phylobayes-mpi	phylobayes-mpi_pb_mpi	PASS	
+phylobayes-mpi	phylobayes-mpi_readpb_mpi	PASS	
+phylobayes-mpi	phylobayes-mpi_tracecomp	PASS	tool bug: -x with every and until stops with 'does not find file named 1'; burnin alone works
+phylocsf	phylocsf	PASS	
+phylocsfpp	phylocsfpp_annotate-with-mmseqs	Not completed	needs MMseqs2 (not in the image) and a set of reference genomes
+phylocsfpp	phylocsfpp_annotate-with-tracks	PASS	
+phylocsfpp	phylocsfpp_build-tracks	PASS	
+phylocsfpp	phylocsfpp_find-cds	PASS	
+phylocsfpp	phylocsfpp_score-msa	PASS	
+phylodeep	phylodeep_checkdeep	PASS	
+phylodeep	phylodeep_modeldeep	PASS	default CNN_FULL_TREE mode crashes in the image (keras keepdims error); FFNN_SUMSTATS gives the values expected by the tool's tests
+phylodeep	phylodeep_paramdeep	PASS	default CNN_FULL_TREE mode crashes in the image (keras keepdims error); FFNN_SUMSTATS gives the values expected by the tool's tests
+phylodeep	phylodeep_subtree_picker	PASS	
+phylofisher	phylofisher_aa_recoder.py	PASS	
+phylofisher	phylofisher_apply_to_db.py	Not completed	needs the PhyloFisher database and config.ini (large database download)
+phylofisher	phylofisher_heterotachy.py	PASS	
+phylofisher	phylofisher_matrix_constructor.py	Failed	image problem: it runs snakemake with --use-conda, but the image has no mamba or conda
+phylofisher	phylofisher_nucl_matrix_constructor.py	PASS	
+phylofisher	phylofisher_select_taxa.py	Not completed	needs the PhyloFisher database and config.ini (large database download)
+phylofisher	phylofisher_sgt_constructor.py	Not completed	needs a PhyloFisher database and config.ini; it also runs snakemake with --use-conda (no mamba in the image)
+phylofisher	phylofisher_taxon_collapser.py	Not completed	needs the PhyloFisher database and config.ini (large database download)
+phyloflash	phyloflash_phyloFlash.pl	Not completed	needs the phyloFlash SILVA/UniVec reference database (large download); the run stops with: failed to find suitable DBHOME
+phyloflash	phyloflash_phyloFlash_barplot.R	PASS	
+phyloflash	phyloflash_phyloFlash_compare.pl	PASS	ran on the tool's own test NTU tables; the heatmap task needs --min-ntu-count 0 there (the default 50 stops with an R error on these tiny tables)
+phyloflash	phyloflash_phyloFlash_fastgFishing.pl	Not completed	no test data: needs an assembly graph (Fastg) and contigs from a real metagenome assembly
+phyloflash	phyloflash_phyloFlash_heatmap.R	Not completed	needs complete phyloFlash result sets (*.phyloFlash.report.csv from a database run); the tool's NTU tables alone give 'cannot open report.csv'
+phyloflash	phyloflash_phyloFlash_makedb.pl	Not completed	downloads the full SILVA and UniVec databases (large) and indexes them; not run
+phylommand	phylommand_contree	PASS	
+phylommand	phylommand_pairalign	PASS	
+phylommand	phylommand_treeator	PASS	
+phylommand	phylommand_treebender	PASS	
+phylophlan	phylophlan	PASS	ran on six real poxvirus proteomes with a small custom marker database (4 markers built with phylophlan_setup_database), not the standard database
+phylophlan	phylophlan_assign_sgbs	Not completed	needs the large SGB Mash database and genomes to classify
+phylophlan	phylophlan_assign_sgbs_legacy	Not completed	needs the large SGB Mash database and genomes to classify
+phylophlan	phylophlan_draw_metagenomic	Not completed	needs the output table of an SGB assignment and a bin-to-metagenome map; no small real example exists
+phylophlan	phylophlan_get_reference	Not completed	downloads the GenBank assembly summary and reference genomes from the network (large); not run
+phylophlan	phylophlan_patristic_distances	Failed	image problem: IndexError on every tree; the script shares globals with a multiprocessing pool, which breaks under the Python 3.14 default start method
+phylophlan	phylophlan_setup_database	PASS	ran on four real poxvirus marker sequences, not on a downloaded database
+phylophlan	phylophlan_strain_finder	PASS	ran on the tree and mutation rates from the small poxvirus run
+phylophlan	phylophlan_write_config_file	PASS	
+phylopypruner	phylopypruner	PASS	
+phylorank	phylorank_bl_decorate	PASS	
+phylorank	phylorank_bl_dist	PASS	
+phylorank	phylorank_bl_optimal	PASS	
+phylorank	phylorank_bl_table	Failed	tool bug: compares a float with None (Python 3 TypeError) in bl_dist.py, so it always crashes
+phylorank	phylorank_compare_red	PASS	
+phylorank	phylorank_decorate	PASS	
+phylorank	phylorank_mark_tree	PASS	
+phylorank	phylorank_outliers	PASS	
+phylorank	phylorank_rank_res	PASS	
+phylorank	phylorank_rogue_test	PASS	synthetic data: three trees with the same topology (decorated, scaled and bl-decorated versions of one real tree), so every index is 0; --decorate crashes because genometreetk is not in the image
+phylorank	phylorank_scale_tree	PASS	
+phylorank	phylorank_taxon_stats	PASS	
+phylotoast	phylotoast_LDA.py	PASS	synthetic data: the mapping file with two groups of samples S1-S5 and S6-S10 was planted for the real test.biom
+phylotoast	phylotoast_otu_to_tax_name.py	PASS	
+phylotoast	phylotoast_restrict_repset.py	PASS	synthetic data: real test sequences renamed to the OTU ids of a JSON subset of test.biom; the tool reads JSON BIOM only
+phylotoast	phylotoast_transform_biom.py	PASS	
+phylovega	phylovega	Failed	tool bug: every option crashes with a SyntaxError (the traitlets aliases are the literal text '{}.{}'), and the command reads no tree and writes no output
+phylowgs	phylowgs_create_phylowgs_inputs.py	PASS	
+phylowgs	phylowgs_evolve.py	PASS	
+phylowgs	phylowgs_multievolve.py	Failed	image problem: the multievolve.py on PATH cannot import its helper module and stops at once; the copy at /usr/local/share/phylowgs/multievolve.py runs the chains correctly.
+phylowgs	phylowgs_parse_cnvs.py	PASS	synthetic data: small TITAN segment table; output values checked by hand.
+phylowgs	phylowgs_write_results.py	PASS	
+phyluce	phyluce_phyluce_align_get_align_summary_data	PASS	
+phyluce	phyluce_phyluce_align_get_only_loci_with_min_taxa	PASS	
+phyluce	phyluce_phyluce_align_get_trimmed_alignments_from_untrimmed	PASS	
+phyluce	phyluce_phyluce_align_seqcap_align	PASS	
+phyluce	phyluce_phyluce_assembly_assemblo_spades	PASS	
+phyluce	phyluce_phyluce_assembly_get_fastas_from_match_counts	PASS	
+phyluce	phyluce_phyluce_assembly_get_match_counts	PASS	
+phyml	phyml	Failed	tool bug: main DNA run, bootstrap and site likelihood output are correct, but --print_trace always writes an empty trace file, even with SPR search and 54 taxa.
+phynder	phynder	PASS	synthetic data: tree and VCF built from a real 7-primate BRCA1 alignment, query Chimp was placed in the Gorilla/Human clade; option -U stops with a command line error (tool bug, main mode works).
+phynteny	phynteny	Not completed	needs the 380 MB pre-trained model download (Zenodo), which is over the test size limit; CWL was rewritten from the help and starts correctly.
+phynteny_transformer	phynteny_transformer	Not completed	needs a 233 MB pre-trained model download plus an ESM protein model from HuggingFace, over the test size limit; CWL was fixed (models is a directory, advanced options added) and starts correctly.
+physher	physher	PASS	
+physiofit	physiofit	PASS	ran config generation then fit on real E. coli batch data; fluxes agree with the published result (qGlc -8.19 vs -8.14, qAce 3.24 vs 3.24; growth rate 0.61 vs 0.51); the tool names result files with backslashes on Linux.
+physiofit4galaxy	physiofit4galaxy	PASS	ran in galaxy mode on real E. coli batch data (also from a saved config); fluxes agree with the published result (qGlc -8.09 vs -8.14, qAce 3.20 vs 3.24).
+phytest	phytest	PASS	ran the project example test file on its example alignment and tree: 19 tests, the 4 planted failures reported as expected; successCodes 0 and 1 added.
+phytop	phytop	PASS	ran on the project example ASTRAL tree: info table matches the shipped one and the PDF is made; clades/subset work; option -pie crashes (QFont float error in the tool); QT_QPA_PLATFORM=offscreen set in the CWL.
+phyx	phyx_pxbp	PASS	fixed: --maptree input is now staged writable and its .pxbpmapped.tre output is collected.
+phyx	phyx_pxcat	PASS	fixed: --flist works with the listed files staged; the positional FILES form is ignored by the tool (it prints an error), use --seqf or --flist.
+phyx	phyx_pxclsq	PASS	synthetic data: a real alignment with 50 columns planted as N in five taxa; they were removed (1503 to 1453 sites); the unmodified real alignment keeps all columns.
+phyx	phyx_pxcomp	PASS	
+phyx	phyx_pxnj	PASS	
+phyx	phyx_pxrevcomp	PASS	reverse complement of the named sequences is correct with --seqf and --ids; the positional file form fails because the tool reads standard input.
+phyx	phyx_pxrmt	PASS	
+phyx	phyx_pxrr	PASS	
+phyx	phyx_pxs2fa	PASS	
+phyx	phyx_pxs2nex	PASS	
+phyx	phyx_pxs2phy	PASS	
+phyx	phyx_pxt2new	PASS	
+phyx	phyx_pxtlate	PASS	
+phyx	phyx_pxtrt	PASS	fixed: names file option is -f (the long form --namesf is not accepted by pxtrt).
+phyx	phyx_pxupgma	PASS	
+pia	pia	PASS	fixed: command is pia (not PIACli), outfile optional, exports collected; compile then analysis on the project's Tide search file gave PSM mzTab, peptide and protein tables; analysis json uses relative paths and a relaxed FDR for this small cut file; mzIdentML protein export crashes (tool error).
+piawka	piawka	PASS	fixed: groups can be a file or the keywords unite/divide, VCF index .tbi staged; ran on the project minitest VCF with groups table: pi, Dxy, Hudson Fst, Watterson and Tajima-like values are plausible.
+picard	picard_AccumulateQualityYieldMetrics	PASS	
+picard	picard_AccumulateVariantCallingMetrics	PASS	
+picard	picard_AddCommentsToBam	PASS	
+picard	picard_AddOATag	PASS	
+picard	picard_AddOrReplaceReadGroups	PASS	
+picard	picard_BaitDesigner	PASS	
+picard	picard_BamIndexStats	PASS	
+picard	picard_BamToBfq	PASS	
+picard	picard_BedToIntervalList	PASS	
+picard	picard_BpmToNormalizationManifestCsv	Not completed	needs a binary Illumina .bpm manifest and .egt cluster file; none small and public was found (Picard's repo has only text manifests)
+picard	picard_BuildBamIndex	PASS	
+picard	picard_CalculateFingerprintMetrics	PASS	
+picard	picard_CalculateReadGroupChecksum	PASS	
+picard	picard_CheckDuplicateMarking	PASS	
+picard	picard_CheckFingerprint	PASS	
+picard	picard_CheckIlluminaDirectory	PASS	synthetic data: InterOp/TileMetricsOut.bin was written for the 3 tiles of Picard's own 25T8B25T test folder (as Picard's unit test does); the run-folder files are real
+picard	picard_CheckTerminatorBlock	PASS	
+picard	picard_CleanSam	PASS	
+picard	picard_ClusterCrosscheckMetrics	PASS	
+picard	picard_CollectAlignmentSummaryMetrics	PASS	
+picard	picard_CollectArraysVariantCallingMetrics	PASS	
+picard	picard_CollectBaseDistributionByCycle	PASS	
+picard	picard_CollectDuplicateMetrics	PASS	
+picard	picard_CollectGcBiasMetrics	PASS	
+picard	picard_CollectHiSeqXPfFailMetrics	PASS	
+picard	picard_CollectHsMetrics	PASS	
+picard	picard_CollectIlluminaBasecallingMetrics	PASS	
+picard	picard_CollectIlluminaLaneMetrics	PASS	
+picard	picard_CollectIndependentReplicateMetrics	PASS	
+picard	picard_CollectInsertSizeMetrics	PASS	
+picard	picard_CollectJumpingLibraryMetrics	PASS	
+picard	picard_CollectMultipleMetrics	PASS	
+picard	picard_CollectOxoGMetrics	PASS	
+picard	picard_CollectQualityYieldMetrics	PASS	
+picard	picard_CollectQualityYieldMetricsFlow	PASS	
+picard	picard_CollectQualityYieldMetricsSNVQ	PASS	
+picard	picard_CollectRawWgsMetrics	PASS	
+picard	picard_CollectRnaSeqMetrics	PASS	
+picard	picard_CollectRrbsMetrics	PASS	
+picard	picard_CollectSamErrorMetrics	PASS	
+picard	picard_CollectSequencingArtifactMetrics	PASS	
+picard	picard_CollectTargetedPcrMetrics	PASS	
+picard	picard_CollectUmiPrevalenceMetrics	PASS	
+picard	picard_CollectVariantCallingMetrics	PASS	
+picard	picard_CollectWgsMetrics	PASS	
+picard	picard_CollectWgsMetricsWithNonZeroCoverage	PASS	
+picard	picard_CombineGenotypingArrayVcfs	PASS	
+picard	picard_CompareGtcFiles	Not completed	needs binary Illumina .gtc genotype files and a .bpm manifest; none small and public was found
+picard	picard_CompareMetrics	PASS	
+picard	picard_CompareSAMs	PASS	
+picard	picard_ConvertHaplotypeDatabaseToVcf	PASS	
+picard	picard_ConvertSequencingArtifactToOxoG	PASS	
+picard	picard_CreateBafRegressMetricsFile	PASS	
+picard	picard_CreateExtendedIlluminaManifest	PASS	ran on a one-locus chr21 subset of Picard's HumanExome test manifest with the b37 chr20/21 reference; FLAG_DUPLICATES off because no cluster file
+picard	picard_CreateSequenceDictionary	PASS	
+picard	picard_CreateVerifyIDIntensityContaminationMetricsFile	PASS	
+picard	picard_CrosscheckFingerprints	PASS	
+picard	picard_DownsampleSam	PASS	
+picard	picard_EstimateLibraryComplexity	PASS	
+picard	picard_ExtractFingerprint	PASS	
+picard	picard_ExtractIlluminaBarcodes	PASS	
+picard	picard_ExtractSequences	PASS	
+picard	picard_FastqToSam	PASS	
+picard	picard_FifoBuffer	PASS	
+picard	picard_FilterSamReads	PASS	
+picard	picard_FilterVcf	PASS	
+picard	picard_FindMendelianViolations	PASS	Main mode works on the justhusky trio; the optional VCF_DIR output crashes in Picard (duplicate sample names in the writer header).
+picard	picard_FixMateInformation	PASS	
+picard	picard_FixVcfHeader	PASS	
+picard	picard_GatherBamFiles	PASS	
+picard	picard_GatherVcfs	PASS	
+picard	picard_GenotypeConcordance	PASS	
+picard	picard_GtcToVcf	Not completed	no usable test data: needs a real Illumina GTC file with its EGT cluster file and BPM manifest, and none is available in small public test sets.
+picard	picard_IdentifyContaminant	PASS	synthetic data: haplotype map built from the five variant sites of the real test VCF; the BAM and reference are real.
+picard	picard_IlluminaBasecallsToFastq	PASS	
+picard	picard_IlluminaBasecallsToSam	PASS	
+picard	picard_IntervalListToBed	PASS	
+picard	picard_IntervalListTools	PASS	
+picard	picard_LiftOverHaplotypeMap	PASS	
+picard	picard_LiftOverIntervalList	PASS	
+picard	picard_LiftoverVcf	PASS	
+picard	picard_MakeSitesOnlyVcf	PASS	
+picard	picard_MakeVcfSampleNameMap	PASS	
+picard	picard_MarkDuplicates	PASS	
+picard	picard_MarkDuplicatesWithMateCigar	PASS	
+picard	picard_MarkIlluminaAdapters	PASS	
+picard	picard_MeanQualityByCycle	PASS	
+picard	picard_MergeBamAlignment	PASS	
+picard	picard_MergePedIntoVcf	PASS	
+picard	picard_MergeSamFiles	PASS	
+picard	picard_MergeVcfs	PASS	
+picard	picard_NonNFastaSize	PASS	
+picard	picard_NormalizeFasta	PASS	
+picard	picard_PositionBasedDownsampleSam	PASS	
+picard	picard_QualityScoreDistribution	PASS	
+picard	picard_RenameSampleInVcf	PASS	
+picard	picard_ReorderSam	PASS	
+picard	picard_ReplaceSamHeader	PASS	
+picard	picard_RevertOriginalBaseQualitiesAndAddMateCigar	PASS	
+picard	picard_RevertSam	PASS	
+picard	picard_SamFormatConverter	PASS	
+picard	picard_SamToFastq	PASS	
+picard	picard_SamToFastqWithTags	PASS	
+picard	picard_ScatterIntervalsByNs	PASS	
+picard	picard_SetNmMdAndUqTags	PASS	
+picard	picard_SimpleMarkDuplicatesWithMateCigar	PASS	
+picard	picard_SortGff	PASS	
+picard	picard_SortSam	PASS	
+picard	picard_SortVcf	PASS	
+picard	picard_SplitSamByLibrary	PASS	
+picard	picard_SplitSamByNumberOfReads	PASS	
+picard	picard_SplitVcfs	PASS	
+picard	picard_UmiAwareMarkDuplicatesWithMateCigar	PASS	
+picard	picard_UpdateVcfSequenceDictionary	PASS	
+picard	picard_ValidateSamFile	PASS	
+picard	picard_VcfFormatConverter	PASS	
+picard	picard_VcfToAdpc	PASS	
+picard	picard_VcfToIntervalList	PASS	
+picard	picard_ViewSam	PASS	
+picopore	picopore	PASS	
+picopore	picopore_picopore-realtime	Not completed	long-running directory monitor that never exits; skipped
+picopore	picopore_picopore-rename	PASS	
+picopore	picopore_picopore-test	PASS	
+picrust	picrust_categorize_by_function.py	PASS	
+picrust	picrust_compare_biom.py	PASS	
+picrust	picrust_metagenome_contributions.py	PASS	
+picrust	picrust_normalize_by_copy_number.py	PASS	
+picrust	picrust_predict_metagenomes.py	PASS	main mode and accuracy metrics work on Galaxy test data with a custom trait table; option -f crashes in this image (AttributeError)
+picrust	picrust_scale_metagenome.py	PASS	
+picrust2	picrust2_add_descriptions.py	PASS	
+picrust2	picrust2_convert_table.py	PASS	
+picrust2	picrust2_hsp.py	PASS	
+picrust2	picrust2_metagenome_pipeline.py	PASS	
+picrust2	picrust2_pathway_pipeline.py	PASS	ran on the EC table from the picrust2 pipeline run; repo test table uses a newer id format than the image
+picrust2	picrust2_picrust2_pipeline.py	PASS	ran on picrust2 test sequences with the bundled references; takes about 23 minutes
+picrust2	picrust2_place_seqs.py	PASS	
+picrust2	picrust2_shuffle_predictions.py	PASS	
+pifcosm	pifcosm_PifCoSm.pl	Not completed	pipeline, skipped: PifCoSm.pl chains many modules (GenBank parsing, clustering, alignment, trees) on a database
+pigpen	pigpen	Not completed	needs per-sample STAR, salmon and postmaster outputs from the OINC-seq pipeline; no small real data
+pigz	pigz_unpigz	PASS	
+piler	piler	Not completed	rewritten for the -trs mode; needs a PALS self-alignment hit file (PALS is not in the image) and no real test data
+piler-cr	piler-cr_pilercr	PASS	
+pileuppy	pileuppy	PASS	
+pilon	pilon	PASS	
+pin_hic	pin_hic_break	PASS	
+pin_hic	pin_hic_build	PASS	
+pin_hic	pin_hic_gets	PASS	
+pin_hic	pin_hic_link	PASS	
+pin_hic	pin_hic_pin_hic_it	PASS	
+pindel	pindel	PASS	ran on pindel SmallTest data; calls hit the planted events; shipped expected files are from an older pindel and list fewer calls
+pindel	pindel_pindel2vcf	PASS	
+pipdeptree	pipdeptree	PASS	
+pipelign	pipelign	Failed	image problem: the tool's default modes (--run G, --merge P) need GNU parallel, which is not in the image; with --run J --merge C it aligns correctly but still exits 1.
+pipits	pipits_pipits_createreadpairslist	PASS	
+pipits	pipits_pipits_funits	PASS	ran on real ITS reads converted from FASTQ to FASTA
+pipits	pipits_pipits_prep	PASS	ran on SARS-CoV-2 paired reads (no small paired ITS reads); joining and filtering work
+pipits	pipits_pipits_process	PASS	ran on real ITS reads; the wrapper now calls pipits_process and allows network to download the UNITE database
+piranha-polio	piranha-polio_piranha	Not completed	pipeline, skipped: piranha runs a whole Snakemake workflow (demultiplexed reads to haplotype and phylogeny report)
+pirate	pirate_PIRATE	PASS	
+pirate	pirate_subsample_outputs.pl	PASS	
+pirs	pirs_diploid	PASS	simulator run on the real SARS-CoV-2 reference
+pirs	pirs_simulate	PASS	simulator run on the real SARS-CoV-2 reference
+pisad	pisad_create	Not completed	needs a .snp file from run.sh on deep diploid WGS reads; no small real data
+pisad	pisad_pisadCount	Not completed	needs a variant sketch built from deep human WGS SNP calls; no small real data
+pisad	pisad_pisadEval	Not completed	needs count files from pisadCount on human WGS cohorts; no small real data
+pisad	pisad_run.sh	Not completed	needs deep diploid WGS reads; on small real reads it ran but gave an empty SNP file; option -d2 fails in run.sh
+piscem	piscem_build	PASS	ran on the human chr21 genome; the wrapper raises the open-file limit with ulimit because the default 1024 makes cuttlefish fail
+piscem	piscem_map-bulk	PASS	ran on 10x multiome chr21 reads against a chr21 index
+piscem	piscem_map-sc	PASS	ran on 10x multiome chr21 GEX reads against a chr21 genome index
+piscem	piscem_map-sc-atac	PASS	ran on 10x multiome chr21 ATAC reads
+piscem-infer	piscem-infer_quant	PASS	ran on piscem map-bulk output of real yeast Hi-C reads; total expected count matches mapped reads
+pispino	pispino_pispino_createreadpairslist	PASS	baseCommand fixed to pispino_createreadpairslist
+pispino	pispino_pispino_seqprep	PASS	ran on SARS-CoV-2 paired reads with the VSEARCH joiner; the PEAR joiner fails because pear is not in the image
+pizzly	pizzly	PASS	added the required fusion.txt input; output matches the Galaxy test (CD74-ROS1 fusion); pizzly helper scripts are not in the image
+plannotate	plannotate_batch	Not completed	needs the pLannotate BLAST/diamond/Rfam database (210 MB download into the install folder, read-only in Docker)
+plannotate	plannotate_streamlit	Not completed	launches an interactive web app server
+plannotate	plannotate_yaml	PASS	rewritten as plannotate yaml with no inputs; prints the built-in database YAML template
+plant_tribes_gene_family_aligner	plant_tribes_gene_family_aligner_GeneFamilyAligner	PASS	ran with MAFFT on the integrated orthogroup; protein and codon alignments written
+plant_tribes_gene_family_classifier	plant_tribes_gene_family_classifier_GeneFamilyClassifier	PASS	ran on the small PlantTribes 12Gv1.0 test scaffold (its empty BLAST and HMM database folders were rebuilt from its own fasta and hmm files); all 11 proteins went to the one orthogroup
+plant_tribes_gene_family_integrator	plant_tribes_gene_family_integrator_GeneFamilyIntegrator	PASS	ran on the 12Gv1.0 test scaffold and the classifier output
+plant_tribes_gene_family_phylogeny_builder	plant_tribes_gene_family_phylogeny_builder_GeneFamilyPhylogenyBuilder	PASS	FastTree and RAxML runs on the aligned orthogroup give trees with each query next to its scaffold twin
+plant_tribes_kaks_analysis	plant_tribes_kaks_analysis_KaKsAnalysis	PASS	paralog mode on the PlantTribes test species1 proteins and CDS gave 1146 Ka/Ks pairs; ortholog mode not run
+plantcv	plantcv_plantcv-workflow.py	PASS	ran a small PlantCV workflow script on two real plant images from the PlantCV tests; output folder is now created by the wrapper
+plasann	plasann_PlasAnn	Not completed	needs a 524 MB database downloaded from Zenodo at first run (too large and slow); wrapper now stages the input writable and allows network
+plasclass	plasclass_classify_fasta.py	PASS	ran on the Galaxy test contigs; removed the invented --probs option
+plasclass	plasclass_train.py	PASS	rewritten for train.py; the wrapper sets PYTHONPATH because the script cannot import plasclass_utils otherwise; trained on 5 real plasmids and the E. coli K-12 chromosome with length bins 1000 and 10000

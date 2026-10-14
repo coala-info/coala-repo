@@ -1,5 +1,11 @@
 # phame CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phame | Failed | tool bug: phame 1.0.2 compares samtools versions as decimals and stops with 'Need samtools >= 1.3 but you have 1.11', so no run and not even --vcheck can start |
+
 ## phame
 
 ### Tool Description

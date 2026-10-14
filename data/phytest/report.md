@@ -1,5 +1,11 @@
 # phytest CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phytest | PASS | ran the project example test file on its example alignment and tree: 19 tests, the 4 planted failures reported as expected; successCodes 0 and 1 added. |
+
 ## phytest
 
 ### Tool Description

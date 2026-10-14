@@ -5,6 +5,9 @@ label: pigz_unpigz
 doc: "pigz does what gzip does, but spreads the work over multiple processors and
   cores when compressing. It will compress files in place, adding the suffix '.gz'.\n\
   \ \nTool homepage: https://github.com/madler/pigz"
+arguments:
+  - position: 103
+    valueFrom: --stdout
 inputs:
   - id: files
     type:
@@ -49,11 +52,12 @@ inputs:
   - id: compression_level
     type:
       - 'null'
-      - boolean
-    doc: Compression level (0-9, -11)
+      - int
+    doc: Compression level 0 to 9, or 11 (zopfli, much slower)
     inputBinding:
       position: 102
-      prefix: '-0'
+      prefix: '-'
+      separate: false
   - id: decompress
     type:
       - 'null'
@@ -118,14 +122,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --keep
-  - id: license
-    type:
-      - 'null'
-      - boolean
-    doc: Display the pigz license and quit
-    inputBinding:
-      position: 102
-      prefix: --license
   - id: list
     type:
       - 'null'
@@ -270,21 +266,16 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zlib
-  - id: stdout_path
+  - id: output_name
     type: string
-    inputBinding:
-      position: 103
-      prefix: --stdout
+    doc: Name of the file that receives the processed output (pigz runs with --stdout)
 outputs:
-  - id: stdout
-    type:
-      - 'null'
-      - File
-    doc: Write all processed output to stdout (won't delete)
-    outputBinding:
-      glob: $(inputs.stdout_path)
+  - id: output
+    type: stdout
+    doc: Processed output (compressed, decompressed or listing)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pigz:2.8
+stdout: $(inputs.output_name)

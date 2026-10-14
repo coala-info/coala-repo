@@ -9,14 +9,6 @@ inputs:
     doc: Input GenBank file
     inputBinding:
       position: 1
-  - id: advanced
-    type:
-      - 'null'
-      - boolean
-    doc: Show advanced options for custom models
-    inputBinding:
-      position: 102
-      prefix: --advanced
   - id: batch_size
     type:
       - 'null'
@@ -60,7 +52,7 @@ inputs:
   - id: models
     type:
       - 'null'
-      - File
+      - Directory
     doc: Path to the models to use for predictions
     inputBinding:
       position: 102
@@ -93,6 +85,144 @@ inputs:
     inputBinding:
       position: 102
       prefix: --show-model-info
+  - id: input_dim
+    type:
+      - 'null'
+      - int
+    doc: Input dimension for the model (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --input-dim
+  - id: num_classes
+    type:
+      - 'null'
+      - int
+    doc: Number of output classes (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --num-classes
+  - id: num_heads
+    type:
+      - 'null'
+      - int
+    doc: Number of attention heads (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --num-heads
+  - id: hidden_dim
+    type:
+      - 'null'
+      - int
+    doc: Hidden dimension (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --hidden-dim
+  - id: lstm_hidden_dim
+    type:
+      - 'null'
+      - int
+    doc: LSTM hidden dimension (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --lstm-hidden-dim
+  - id: no_lstm
+    type:
+      - 'null'
+      - boolean
+    doc: Do not use the LSTM layer (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --no-lstm
+  - id: max_len
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of genes in a genome (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --max-len
+  - id: protein_dropout_rate
+    type:
+      - 'null'
+      - float
+    doc: Protein dropout rate (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --protein-dropout-rate
+  - id: attention
+    type:
+      - 'null'
+      - type: enum
+        symbols: [absolute,relative,circular]
+    doc: Attention type (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --attention
+  - id: positional_encoding_type
+    type:
+      - 'null'
+      - type: enum
+        symbols: [fourier,sinusoidal]
+    doc: Positional encoding type (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --positional-encoding-type
+  - id: pre_norm
+    type:
+      - 'null'
+      - boolean
+    doc: Use pre-layer normalisation (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --pre-norm
+  - id: progressive_dropout
+    type:
+      - 'null'
+      - boolean
+    doc: Use progressive dropout (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --progressive-dropout
+  - id: initial_dropout_rate
+    type:
+      - 'null'
+      - float
+    doc: Initial dropout rate (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --initial-dropout-rate
+  - id: final_dropout_rate
+    type:
+      - 'null'
+      - float
+    doc: Final dropout rate (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --final-dropout-rate
+  - id: output_dim
+    type:
+      - 'null'
+      - int
+    doc: Output dimension (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --output-dim
+  - id: num_layers
+    type:
+      - 'null'
+      - int
+    doc: Number of layers (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --num-layers
+  - id: dropout
+    type:
+      - 'null'
+      - float
+    doc: Dropout rate (advanced model option)
+    inputBinding:
+      position: 102
+      prefix: --dropout
   - id: out_path
     type: string
     doc: Output directory
@@ -105,13 +235,6 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.out_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

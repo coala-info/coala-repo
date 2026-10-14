@@ -1,5 +1,11 @@
 # piler-cr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| piler-cr_pilercr | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

@@ -10,9 +10,10 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File containing trees to compare
+    doc: File containing trees to compare; given with --file, so that the file name is never read as the argument of another switch
     inputBinding:
-      position: 1
+      position: 102
+      prefix: --file
   - id: add_to_support
     type:
       - 'null'
@@ -60,14 +61,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --decisiveness
-  - id: file
-    type:
-      - 'null'
-      - File
-    doc: give file name for trees, or decisiveness, e.g. -f file.tree.
-    inputBinding:
-      position: 102
-      prefix: --file
   - id: format
     type:
       - 'null'

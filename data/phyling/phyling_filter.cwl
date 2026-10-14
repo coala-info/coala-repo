@@ -8,15 +8,18 @@ doc: "Filter the multiple sequence alignment (MSA) results for tree module.\n\nT
   homepage: https://github.com/stajichlab/Phyling"
 inputs:
   - id: input_dir
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: Directory containing multiple sequence alignment fasta of the markers
     inputBinding:
       position: 101
       prefix: --input_dir
   - id: inputs
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Multiple sequence alignment fasta of the markers
     inputBinding:
       position: 101
@@ -75,8 +78,17 @@ outputs:
     doc: Output directory of the treeness.tsv and selected MSAs
     outputBinding:
       glob: $(inputs.output_directory_path)
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: >-
+      && find $(inputs.output_directory_path) -type l -exec sh -c 'cp --remove-destination "`readlink -f "$1"`" "$1"' _ {} \;
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.inputs)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyling:2.3.1--pyhdfd78af_0

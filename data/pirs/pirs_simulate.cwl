@@ -256,6 +256,7 @@ inputs:
       - 'null'
       - string
     doc: Use PREFIX as the prefix of the output files.
+    default: pirs_reads
     inputBinding:
       position: 102
       prefix: --output-prefix

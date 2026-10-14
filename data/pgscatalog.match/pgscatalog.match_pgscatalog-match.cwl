@@ -157,6 +157,13 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outdir)
+        entry: '$({"class": "Directory", "basename": inputs.outdir, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgscatalog.match:0.4.0--pyhdfd78af_0

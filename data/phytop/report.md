@@ -1,5 +1,11 @@
 # phytop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phytop | PASS | ran on the project example ASTRAL tree: info table matches the shipped one and the PDF is made; clades/subset work; option -pie crashes (QFont float error in the tool); QT_QPA_PLATFORM=offscreen set in the CWL. |
+
 ## phytop
 
 ### Tool Description

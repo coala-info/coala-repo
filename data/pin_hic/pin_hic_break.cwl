@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pin_hic
+baseCommand: [pin_hic, break]
 label: pin_hic_break
 doc: "Identify breaks in a SAT file using Hi-C BAM files\n\nTool homepage: https://github.com/dfguan/pin_hic/"
 inputs:
@@ -8,14 +8,14 @@ inputs:
     type: File
     doc: Input SAT file
     inputBinding:
-      position: 1
+      position: 200
   - id: bam_files
     type:
       type: array
       items: File
     doc: Input Hi-C BAM files
     inputBinding:
-      position: 2
+      position: 201
   - id: min_coverage_ratio
     type:
       - 'null'

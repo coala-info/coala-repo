@@ -1,5 +1,11 @@
 # plant_tribes_gene_family_phylogeny_builder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plant_tribes_gene_family_phylogeny_builder_GeneFamilyPhylogenyBuilder | PASS | FastTree and RAxML runs on the aligned orthogroup give trees with each query next to its scaffold twin |
+
 ## plant_tribes_gene_family_phylogeny_builder_GeneFamilyPhylogenyBuilder
 
 ### Tool Description

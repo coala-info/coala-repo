@@ -1,5 +1,11 @@
 # phigaro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phigaro | Not completed | needs the large pVOG HMM database (about 1.5 GB download, set up with phigaro-setup); no small database exists |
+
 ## phigaro
 
 ### Tool Description

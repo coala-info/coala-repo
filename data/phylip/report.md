@@ -1,5 +1,17 @@
 # phylip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylip_dnadist | PASS |  |
+| phylip_dnainvar | PASS |  |
+| phylip_dnapars | PASS |  |
+| phylip_dolmove | PASS |  |
+| phylip_drawtree | PASS |  |
+| phylip_neighbor | PASS |  |
+| phylip_retree | PASS |  |
+
 ## phylip_retree
 
 ### Tool Description

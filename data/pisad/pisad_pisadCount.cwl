@@ -4,19 +4,11 @@ baseCommand: pisadCount
 label: pisad_pisadCount
 doc: "Calculate variant sketch statistics\n\nTool homepage: https://github.com/ZhantianXu/PISAD"
 inputs:
-  - id: fasta
-    type:
-      - 'null'
-      - File
-    doc: Input FASTA file
-    inputBinding:
-      position: 1
   - id: files
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Input files
+      type: array
+      items: File
+    doc: Sequencing files (FASTQ, may be gzipped)
     inputBinding:
       position: 2
   - id: information
@@ -46,11 +38,12 @@ inputs:
   - id: snp
     type:
       type: array
-      items: string
-    doc: variant sketch (one or more)
+      items: File
+    doc: variant sketch FASTA file(s), joined with commas
     inputBinding:
       position: 103
       prefix: --snp
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'

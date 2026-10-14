@@ -1,5 +1,11 @@
 # phcue-ck CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phcue-ck | Failed | tool bug: --output-format csv-wide labels the read 1 size column as bytes_se and leaves bytes_1 empty (headers swapped); json, csv and csv-long are correct |
+
 ## phcue-ck
 
 ### Tool Description

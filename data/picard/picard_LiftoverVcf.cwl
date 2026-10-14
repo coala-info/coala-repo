@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --CHAIN
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The input VCF/BCF file to be lifted over.
     inputBinding:
       position: 101
@@ -30,11 +28,10 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: reference_sequence
-    type:
-      - 'null'
-      - File
+    type: File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: The reference sequence (fasta) for the TARGET genome build (i.e., the 
       new one. The fasta file must have an accompanying sequence dictionary 
       (.dict file).
@@ -60,10 +57,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -115,6 +113,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --LOG_FAILED_INTERVALS
+      valueFrom: '$(self ? "true" : "false")'
   - id: max_records_in_ram
     type:
       - 'null'
@@ -148,31 +147,34 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --TAGS_TO_DROP
     doc: INFO field annotations that should be deleted when swapping reference 
       with variant alleles.
     inputBinding:
       position: 101
-      prefix: --TAGS_TO_DROP
   - id: tags_to_reverse
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --TAGS_TO_REVERSE
     doc: INFO field annotations that behave like an Allele Frequency and should 
       be transformed with x->1-x when swapping reference with variant alleles.
     inputBinding:
       position: 101
-      prefix: --TAGS_TO_REVERSE
   - id: tmp_dir
     type:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

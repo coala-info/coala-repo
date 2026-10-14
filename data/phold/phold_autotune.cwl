@@ -10,7 +10,7 @@ inputs:
   - id: database_path
     type:
       - 'null'
-      - string
+      - Directory
     doc: Specific path to installed phold database
     inputBinding:
       position: 101
@@ -76,6 +76,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: user
+      - envName: TORCHINDUCTOR_CACHE_DIR
+        envValue: $(runtime.tmpdir)/torch_cache
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phold:1.2.2--pyhdfd78af_0

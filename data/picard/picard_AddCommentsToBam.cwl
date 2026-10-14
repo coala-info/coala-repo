@@ -12,10 +12,11 @@ inputs:
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --COMMENT
     doc: Comments to add to the BAM file
     inputBinding:
       position: 101
-      prefix: --COMMENT
   - id: input
     type: File
     doc: Input BAM file to add a comment to the header
@@ -33,10 +34,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -94,11 +96,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -142,6 +145,10 @@ outputs:
       glob: $(inputs.output)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0

@@ -13,7 +13,9 @@ inputs:
       position: 101
       prefix: --mode
   - id: alignment
-    type: File
+    type:
+      - 'null'
+      - File
     doc: alignment file (FASTA). Required for partitions and sites modes.
     inputBinding:
       position: 101

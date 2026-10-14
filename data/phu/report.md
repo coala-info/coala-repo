@@ -1,5 +1,13 @@
 # phu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phu_cluster | PASS |  |
+| phu_screen | PASS |  |
+| phu_simplify-taxa | Failed | tool bug: the documented example novel_genus_1_of_novel_family_2_of_Caudoviricetes gives novel_family_2_of_Caudoviricetes:NG1 instead of Caudoviricetes:NF2:NG1 |
+
 ## phu_cluster
 
 ### Tool Description

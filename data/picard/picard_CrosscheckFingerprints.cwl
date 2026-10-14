@@ -19,12 +19,13 @@ inputs:
   - id: input
     type:
       type: array
-      items: string
+      items: File
+      inputBinding:
+        prefix: --INPUT
     doc: One or more input files (or lists of files) with which to compare 
       fingerprints.
     inputBinding:
       position: 101
-      prefix: --INPUT
   - id: allow_duplicate_reads
     type:
       - 'null'
@@ -38,10 +39,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: calculate_tumor_aware_results
     type:
       - 'null'
@@ -50,6 +52,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --CALCULATE_TUMOR_AWARE_RESULTS
+      valueFrom: '$(self ? "true" : "false")'
   - id: compression_level
     type:
       - 'null'
@@ -255,12 +258,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
+        inputBinding:
+          prefix: --SECOND_INPUT
     doc: A second set of input files (or lists of files) with which to compare 
       fingerprints.
     inputBinding:
       position: 101
-      prefix: --SECOND_INPUT
   - id: second_input_index_map
     type:
       - 'null'
@@ -283,11 +287,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage.
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -343,6 +348,9 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+successCodes:
+  - 0
+  - 1
 s:url: http://broadinstitute.github.io/picard/
 $namespaces:
   s: https://schema.org/

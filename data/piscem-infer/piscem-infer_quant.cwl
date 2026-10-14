@@ -6,6 +6,11 @@ baseCommand:
 label: piscem-infer_quant
 doc: "quantify from the rad file\n\nTool homepage: https://github.com/COMBINE-lab/piscem-infer"
 inputs:
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: Mapping files (<stem>.rad and <stem>.map_info.json) written by piscem map-bulk; staged in the working directory so that the input stem resolves
   - id: convergence_thresh
     type:
       - 'null'
@@ -112,6 +117,9 @@ outputs:
       glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/piscem-infer:0.7.0--h090f6cf_0

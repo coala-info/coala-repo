@@ -10,14 +10,20 @@ doc: Acts as a large memory buffer between processes that are connected with
   processes each process can run at full speed and the bursts can be smoothed 
   out by the memory buffer.
 inputs:
+  - id: input_stream
+    type: File
+    doc: The data to pass through the buffer. It is read from standard input 
+      and written unchanged to standard output.
   - id: arguments_file
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: buffer_size
     type:
       - 'null'
@@ -100,6 +106,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -109,11 +116,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -153,9 +161,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: JAVA_TOOL_OPTIONS
+        envValue: -Dlog4j.configurationFile=
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+stdin: $(inputs.input_stream.path)
 stdout: picard_FifoBuffer.out
 s:url: http://broadinstitute.github.io/picard/
 $namespaces:

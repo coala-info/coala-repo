@@ -13,11 +13,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --INPUT
     doc: One or more input SAM, BAM or CRAM files to analyze. Must be coordinate
       sorted.
     inputBinding:
       position: 101
-      prefix: --INPUT
   - id: metrics_file
     type: string
     doc: File to write duplication metrics to
@@ -38,15 +39,17 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ADD_PG_TAG_TO_READS
+      valueFrom: '$(self ? "true" : "false")'
   - id: arguments_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: assume_sort_order
     type:
       - 'null'
@@ -80,10 +83,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --COMMENT
     doc: Comment(s) to include in the output file's header.
     inputBinding:
       position: 101
-      prefix: --COMMENT
   - id: compression_level
     type:
       - 'null'
@@ -210,6 +214,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -231,16 +236,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --SKIP_PAIRS_WITH_NO_MATE_CIGAR
+      valueFrom: '$(self ? "true" : "false")'
   - id: tmp_dir
     type:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # phirbo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phirbo | PASS |  |
+
 ## phirbo
 
 ### Tool Description

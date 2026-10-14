@@ -13,8 +13,8 @@ inputs:
     inputBinding:
       position: 1
   - id: taxon_category
-    type: string
-    doc: Taxon category
+    type: File
+    doc: file indicating category for each taxon in the tree
     inputBinding:
       position: 2
   - id: output_table

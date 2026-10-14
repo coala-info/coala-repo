@@ -1,5 +1,12 @@
 # plasclass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plasclass_classify_fasta.py | PASS | ran on the Galaxy test contigs; removed the invented --probs option |
+| plasclass_train.py | PASS | rewritten for train.py; the wrapper sets PYTHONPATH because the script cannot import plasclass_utils otherwise; trained on 5 real plasmids and the E. coli K-12 chromosome with length bins 1000 and 10000 |
+
 ## Metadata
 - **Skill**: generated
 

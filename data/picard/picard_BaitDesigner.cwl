@@ -24,9 +24,7 @@ inputs:
       position: 101
       prefix: --REFERENCE_SEQUENCE
   - id: targets
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The file with design parameters and targets
     inputBinding:
       position: 101
@@ -36,10 +34,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: bait_offset
     type:
       - 'null'
@@ -109,6 +108,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --FILL_POOLS
+      valueFrom: '$(self ? "true" : "false")'
   - id: left_primer
     type:
       - 'null'
@@ -135,6 +135,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --MERGE_NEARBY_TARGETS
+      valueFrom: '$(self ? "true" : "false")'
   - id: minimum_baits_per_target
     type:
       - 'null'
@@ -152,6 +153,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --OUTPUT_AGILENT_FILES
+      valueFrom: '$(self ? "true" : "false")'
   - id: output_directory
     type: string
     doc: The output directory. If not provided then the DESIGN_NAME will be used
@@ -207,11 +209,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

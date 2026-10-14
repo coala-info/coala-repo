@@ -4,10 +4,9 @@ baseCommand:
   - phykit
   - consensus_network
 label: phykit_consensus_network
-doc: Extract bipartition splits from a collection of gene trees and summarize 
-  conflicting phylogenetic signal. Counts how frequently each non-trivial 
-  bipartition appears across input trees and filters by a minimum frequency 
-  threshold.
+doc: Extract bipartition splits from a collection of gene trees and summarize conflicting
+  phylogenetic signal. Counts how frequently each non-trivial bipartition appears
+  across input trees and filters by a minimum frequency threshold.
 inputs:
   - id: trees
     type: File
@@ -32,7 +31,9 @@ inputs:
       position: 101
       prefix: --missing-taxa
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output filename for the circular splits network plot (optional)
     inputBinding:
       position: 101
@@ -46,7 +47,9 @@ inputs:
       position: 101
       prefix: --max-splits
   - id: histogram
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output filename for a split frequency histogram (optional)
     inputBinding:
       position: 101
@@ -151,8 +154,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 101
       prefix: --cladogram
@@ -181,6 +183,8 @@ inputs:
       position: 101
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot_output
     type:
       - 'null'
@@ -203,3 +207,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_consensus_network.out

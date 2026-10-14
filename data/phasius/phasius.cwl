@@ -9,6 +9,15 @@ inputs:
       type: array
       items: File
     doc: cram or bam files to check
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
     inputBinding:
       position: 1
   - id: bed
@@ -16,6 +25,9 @@ inputs:
       - 'null'
       - File
     doc: bed file annotation to use (bgzipped and tabix indexed)
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     inputBinding:
       position: 102
       prefix: --bed
@@ -59,9 +71,7 @@ inputs:
       position: 102
       prefix: --width
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: HTML output file name
     inputBinding:
       position: 103

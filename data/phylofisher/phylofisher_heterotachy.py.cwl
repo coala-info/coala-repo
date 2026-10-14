@@ -16,10 +16,11 @@ inputs:
       prefix: --in_format
   - id: matrix
     type: File
-    doc: Path to supermatrix
+    doc: Path to supermatrix (staged in the working directory; the tool joins the path to the working directory)
     inputBinding:
       position: 101
       prefix: --matrix
+      valueFrom: $(self.basename)
   - id: out_format
     type:
       - 'null'
@@ -38,10 +39,11 @@ inputs:
       prefix: --step_size
   - id: tree
     type: File
-    doc: Path to tree
+    doc: Path to tree (staged in the working directory; the tool joins the path to the working directory)
     inputBinding:
       position: 101
       prefix: --tree
+      valueFrom: $(self.basename)
   - id: output_dir_path
     type: string
     doc: 'Path to user-defined output directory Default: ./heterotachy_out_<M.D.Y>'
@@ -58,6 +60,10 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.matrix)
+      - $(inputs.tree)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylofisher:1.2.14--pyhdfd78af_0

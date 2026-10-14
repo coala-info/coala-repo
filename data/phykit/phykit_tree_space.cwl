@@ -68,7 +68,9 @@ inputs:
       position: 101
       prefix: --heatmap
   - id: distance_matrix
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output pairwise distance matrix as CSV file
     inputBinding:
       position: 101
@@ -203,6 +205,9 @@ inputs:
       position: 101
       prefix: --color-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_output
     type: File
     doc: output figure path (.png, .pdf, .svg)
@@ -217,6 +222,7 @@ outputs:
       glob: $(inputs.distance_matrix)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_tree_space.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

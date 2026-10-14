@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --protein
   - id: nucleotide
-    type:
-      - 'null'
-      - File
+    type: File
     doc: nucleotide sequence file
     inputBinding:
       position: 101

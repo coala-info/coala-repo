@@ -1,5 +1,18 @@
 # picrust2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| picrust2_add_descriptions.py | PASS |  |
+| picrust2_convert_table.py | PASS |  |
+| picrust2_hsp.py | PASS |  |
+| picrust2_metagenome_pipeline.py | PASS |  |
+| picrust2_pathway_pipeline.py | PASS | ran on the EC table from the picrust2 pipeline run; repo test table uses a newer id format than the image |
+| picrust2_picrust2_pipeline.py | PASS | ran on picrust2 test sequences with the bundled references; takes about 23 minutes |
+| picrust2_place_seqs.py | PASS |  |
+| picrust2_shuffle_predictions.py | PASS |  |
+
 ## picrust2_picrust2_pipeline.py
 
 ### Tool Description
@@ -515,6 +528,266 @@ usage: hsp.py [-h] -t PATH -o PATH
 hsp.py: error: the following arguments are required: -t/--tree, -o/--output
 ```
 
+
+## picrust2_metagenome_pipeline.py
+
+### Tool Description
+Per-sample metagenome functional profiles from predicted functions for each study sequence.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/picrust2:2.6.3--pyhdfd78af_1
+- **Homepage**: https://github.com/picrust/picrust2
+- **Package**: https://anaconda.org/channels/bioconda/packages/picrust2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: metagenome_pipeline.py [-h] -i PATH -f PATH [-m PATH]
+                              [--max_nsti FLOAT] [--min_reads INT]
+                              [--min_samples INT] [--strat_out] [--wide_table]
+                              [--skip_norm] [-o PATH] [-v]
+
+Per-sample metagenome functional profiles are generated based on the predicted functions for each study sequence. Note that typically these sequences correspond to OTUs or ASVs. The specified sequence abundance table will be normalized by the predicted number of marker gene copies before outputting the final files by default. The sample metagenome table stratified by contributing ASVs can optionally also be output.
+
+options:
+  -h, --help            show this help message and exit
+  -i PATH, --input PATH
+                        Input table of sequence abundances (BIOM, TSV, or
+                        mothur shared file format).
+  -f PATH, --function PATH
+                        Table of predicted gene family copy numbers (output of
+                        hsp.py).
+  -m PATH, --marker PATH
+                        Table of predicted marker gene copy numbers (output of
+                        hsp.py - typically for 16S).
+  --max_nsti FLOAT      Sequences with NSTI values above this value will be
+                        excluded (default: 2).
+  --min_reads INT       Minimum number of reads across all samples for each
+                        input ASV. ASVs below this cut-off will be counted as
+                        part of the "RARE" category in the stratified output
+                        (default: 1).
+  --min_samples INT     Minimum number of samples that an ASV needs to be
+                        identfied within. ASVs below this cut-off will be
+                        counted as part of the "RARE" category in the
+                        stratified output (default: 1).
+  --strat_out           Output table stratified by sequences as well. By
+                        default this will be in "contributional" format (i.e.
+                        long-format) unless the "--wide_table" option is set.
+                        The startified outfile is named
+                        "metagenome_contrib.tsv.gz" when in long-format.
+  --wide_table          Output wide-format stratified table of metagenome
+                        predictions when "--strat_out" is set. This is the
+                        deprecated method of generating stratified tables
+                        since it is extremely memory intensive. The startified
+                        outfile is named "pred_metagenome_strat.tsv.gz" when
+                        this option is set.
+  --skip_norm           Skip normalizing sequence abundances by predicted
+                        marker gene copy numbers (typically 16S rRNA genes).
+                        This step will be performed automatically unless this
+                        option is specified.
+  -o PATH, --out_dir PATH
+                        Output directory for metagenome predictions. (default:
+                        metagenome_out).
+  -v, --version         show program's version number and exit
+
+Usage example:
+metagenome_pipeline.py -i seqabun.biom -f predicted_EC.tsv.gz -m predicted_16S.tsv.gz --max_nsti 2.0 -o metagenome_out
+  matcher_str= '^\s*%s\s*%s\s*(%s)?\s*$' % (FIRST_MATCH, SECOND_MATCH, _NHX_RE)
+```
+
+## picrust2_pathway_pipeline.py
+
+### Tool Description
+Infer the presence and abundances of pathways from gene family abundances.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/picrust2:2.6.3--pyhdfd78af_1
+- **Homepage**: https://github.com/picrust/picrust2
+- **Package**: https://anaconda.org/channels/bioconda/packages/picrust2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pathway_pipeline.py [-h] -i IN_TABLE -o DIRECTORY [-db DATABASE]
+                           [-m MAP] [--skip_minpath] [--no_gap_fill]
+                           [--intermediate DIR] [-p PROCESSES] [--no_regroup]
+                           [--coverage] [-r ID_MAP] [--per_sequence_contrib]
+                           [--per_sequence_abun PATH]
+                           [--per_sequence_function PATH] [--wide_table]
+                           [--verbose] [-v]
+
+Script to infer the presence and abundances of pathways based on gene family abundances in a sample. By default, this script expects a table of EC number abundances (as output by PICRUSt2). However, alternative reaction to pathways mapping files can also be specified. By default, EC numbers are first regrouped to MetaCyc reactions, which are then linked to MetaCyc pathways through the default database.
+
+Stratified output will only be output if a stratified metagenome is input (or if --per_sequence_contrib is set). Please note that by default stratified abundances are based on how much predicted genomes (e.g. sequences) contribute to the community-wide abundance, not the abundance of the pathway based on the predicted genes in that genome alone. In other words, a predicted genome might be contributing greatly to the community-wide pathway abundance simply because one required gene for that pathway is at extremely high abundance in that genome even though no other required genes for that pathway are present. In contrast, the --per_sequence_contrib option should be used to get the predicted abundance and coverage of each pathway based on the predicted gene families within each genome. Note that using the --per_sequence_contrib option can greatly increase runtime.
+
+options:
+  -h, --help            show this help message and exit
+  -i IN_TABLE, --input IN_TABLE
+                        Input TSV table of gene family abundances (either the
+                        unstratified or stratified output of
+                        metagenome_pipeline.py).
+  -o DIRECTORY, --out_dir DIRECTORY
+                        Output folder for pathway abundance output.
+  -db DATABASE, --database DATABASE
+                        Database that is being used for the pathway
+                        calculations. Set this to oldIMG if you want to run
+                        this script with the old IMG database.
+  -m MAP, --map MAP     Mapping of pathways to reactions. The default mapfile
+                        maps MetaCyc reactions to prokaryotic MetaCyc pathways
+                        (default: /usr/local/lib/python3.12/site-packages/picr
+                        ust2/default_files/pathway_mapfiles/metacyc_pathways_s
+                        tructured_filtered_v24.txt).
+  --skip_minpath        Do not run MinPath to identify which pathways are
+                        present as a first pass (on by default).
+  --no_gap_fill         Do not perform gap filling before predicting pathway
+                        abundances (Gap filling is on otherwise by default.
+  --intermediate DIR    Output folder for intermediate files (will be deleted
+                        otherwise).
+  -p PROCESSES, --processes PROCESSES
+                        Number of processes to run in parallel (default: 1).
+  --no_regroup          Do not regroup input gene families to reactions as
+                        specified in the regrouping mapfile.
+  --coverage            Calculate pathway coverages as well as abundances,
+                        which are experimental and only useful for advanced
+                        users.
+  -r ID_MAP, --regroup_map ID_MAP
+                        Mapfile of ids to regroup gene families to before
+                        running MinPath. The default mapfile is for regrouping
+                        EC numbers to MetaCyc reactions (default:
+                        /usr/local/lib/python3.12/site-packages/picrust2/defau
+                        lt_files/pathway_mapfiles/ec_level4_to_metacyc_rxn_new
+                        .tsv).
+  --per_sequence_contrib
+                        Flag to specify that MinPath is run on the genes
+                        contributed by each sequence (i.e. a predicted genome)
+                        individually. Note this will greatly increase the
+                        runtime. The output will be the predicted pathway
+                        abundance contributed by each individual sequence.
+                        This is in contrast to the default stratified output,
+                        which is the contribution to the community-wide
+                        pathway abundances. Experimental pathway coverage
+                        stratified by contributing sequence will also be
+                        output when --coverage is set. Options
+                        --per_sequence_contrib and --per_sequence_function
+                        need to be set when this option is used (default:
+                        False).
+  --per_sequence_abun PATH
+                        Path to table of sequence abundances across samples
+                        normalized by marker copy number (typically the
+                        normalized sequence abundance table output at the
+                        metagenome pipeline step). This input is required when
+                        the --per_sequence_contrib option is set. (default:
+                        None).
+  --per_sequence_function PATH
+                        Path to table of function abundances per sequence,
+                        which was outputted at the hidden-state prediction
+                        step. This input is required when the
+                        --per_sequence_contrib option is set. Note that this
+                        file should be the same input table as used for the
+                        metagenome pipeline step (default: None).
+  --wide_table          Flag to specify that wide-format stratified table
+                        should be output rather than metagenome contribution
+                        table. This is the deprecated method of generating
+                        stratified tables since it is extremely memory
+                        intensive (default: False).
+  --verbose             If specified, print out wrapped commands and other
+                        details to screen.
+  -v, --version         show program's version number and exit
+
+Usage examples:
+
+Default mapping of predicted EC number abundances to MetaCyc pathways:
+pathway_pipeline.py -i EC_metagenome_out/pred_metagenome_unstrat.tsv.gz -o pathways_out --processes 1
+
+Mapping predicted KO abundances to legacy KEGG pathways (with stratified output that represents contributions to community-wide abundances):
+pathway_pipeline.py -i KO_metagenome_out/pred_metagenome_strat.tsv.gz -o KEGG_pathways_out --no_regroup --map picrust2/picrust2/default_files/pathway_mapfiles/KEGG_pathways_to_KO.tsv
+
+Map EC numbers to MetaCyc pathways and get stratified output corresponding to contribution of predicted gene family abundances within each predicted genome:
+pathway_pipeline.py -i EC_metagenome_out/pred_metagenome_unstrat.tsv.gz -o pathways_out_per_seq --per_sequence_contrib --per_sequence_abun EC_metagenome_out/seqtab_norm.tsv.gz --per_sequence_function EC_predicted.tsv.gz
+  matcher_str= '^\s*%s\s*%s\s*(%s)?\s*$' % (FIRST_MATCH, SECOND_MATCH, _NHX_RE)
+```
+
+## picrust2_convert_table.py
+
+### Tool Description
+Convert to and from PICRUSt2 function abundance tables (legacy contributional format, HUMAnN2).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/picrust2:2.6.3--pyhdfd78af_1
+- **Homepage**: https://github.com/picrust/picrust2
+- **Package**: https://anaconda.org/channels/bioconda/packages/picrust2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: convert_table.py [-h] -o OUTPUT -c CONVERSION [--raw_abun] [-v]
+                        INPUT [INPUT ...]
+
+Converts to and from PICRUSt2 function abundance table. Currently supports converting to legacy contributional format and to and from HUMAnN2 function tables. Both stratified and unstratified tables are supported. Note that the categories like "UNMAPPED" in the HUMAnN2 tables will be removed if they have values of 0. The PICRUSt2 "strat" format refers to the deprecated wide-table stratified table format only.
+
+positional arguments:
+  INPUT                 Input table to convert. If there are multiple input
+                        files (e.g. if multiple HUMAnN2 gene tables for
+                        different samples should be converted to a single
+                        PICRUSt2 table) then specify them all: file1 file2
+                        file3...
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        Path to output. Corresponds to folder name if multiple
+                        files are output, otherwise it will be a filename.
+  -c CONVERSION, --conversion CONVERSION
+                        Type of conversion to perform ('contrib_to_legacy',
+                        'humann2_unstrat_to_picrust2',
+                        'humann2_strat_to_picrust2',
+                        'picrust2_unstrat_to_humann2_split',
+                        'picrust2_strat_to_humann2_split', or
+                        'picrust2_to_humann2_merged').
+  --raw_abun            When converting to legacy contributional table output
+                        abundance (i.e. OTUAbundanceInSample column) as raw
+                        abundance rather than relative abundances (relative
+                        abundances are the default).
+  -v, --version         show program's version number and exit
+
+Usage example:
+convert_table.py -o output.tsv -c humann2_strat_to_picrust2 humann2_out/*.tsv
+  matcher_str= '^\s*%s\s*%s\s*(%s)?\s*$' % (FIRST_MATCH, SECOND_MATCH, _NHX_RE)
+```
+
+## picrust2_shuffle_predictions.py
+
+### Tool Description
+Shuffle sequence ids of a prediction table for a number of replicates.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/picrust2:2.6.3--pyhdfd78af_1
+- **Homepage**: https://github.com/picrust/picrust2
+- **Package**: https://anaconda.org/channels/bioconda/packages/picrust2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: shuffle_predictions.py [-h] -i OUTPUT -o OUTPUT [-r INT] [-s INT] [-v]
+
+Shuffles sequence ids of prediction table for a specified number of replicates. Note that this means that the prediction table is not totally scrambled across all colunmns: each predicted genome is still the same, but the sequence ids (e.g. the ASV id) linked with each predicted genome is randomized.
+
+options:
+  -h, --help            show this help message and exit
+  -i OUTPUT, --input OUTPUT
+                        Path to input directory.
+  -o OUTPUT, --outdir OUTPUT
+                        Path to output directory.
+  -r INT, --rep INT     Number of shuffled replicates to create (default: 1).
+  -s INT, --seed INT    Random seed: set this if you want reproducible
+                        shufflings (default: None).
+  -v, --version         show program's version number and exit
+
+Usage example:
+
+shuffle_predictions.py -i EC_predicted.tsv.gz -o EC_predicted_shuffled --rep 5
+  matcher_str= '^\s*%s\s*%s\s*(%s)?\s*$' % (FIRST_MATCH, SECOND_MATCH, _NHX_RE)
+```
 
 ## Metadata
 - **Skill**: generated

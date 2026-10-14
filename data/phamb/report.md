@@ -1,25 +1,41 @@
 # phamb CWL Generation Report
 
-## Metadata
-- **Skill**: generated
+## Real Data Test
 
-## phamb_run_RF.py
+| Tool | Result | Reason |
+|---|---|---|
+| phamb_run_RF | Failed | image problem: /usr/local/bin/run_RF.py looks for dbs/RF_model.python39.sav next to itself, but the model is only in site-packages/phamb/dbs, so every run stops with FileNotFoundError |
+
+## phamb_run_RF
 
 ### Tool Description
-Run Random Forest model on features to predict viral or microbial origin of bins.
+Command-line utility that predicts viral bins from VAMB clusters with the PHAMB random forest model.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/phamb:1.0.1--pyhdfd78af_0
 - **Homepage**: https://github.com/RasmussenLab/phamb
 - **Package**: https://anaconda.org/channels/bioconda/packages/phamb/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phamb:1.0.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:7d033683a699d224531bcb0dd54c288cfb629630454169f0bee3d3338dabdc95: unpack entry: usr/local/lib/python3.10/concurrent/futures/__pycache__/__init__.cpython-310.pyc: unpack to regular file: short write: write /tmp/build-temp-2175928071/rootfs/usr/local/lib/python3.10/concurrent/futures/__pycache__/__init__.cpython-310.pyc: no space left on device
+usage: run_RF.py [-h] [-m] [-s SEPARATOR]
+                 fastafile clusterspath annotationdir directoryout
+
+Command-line benchmark utility.
+
+positional arguments:
+  fastafile      Path to concatenated assembly VAMB
+  clusterspath   Path to clusters.tsv
+  annotationdir  Path to directory with contig annotations
+  directoryout   Path to directory out
+
+options:
+  -h, --help     show this help message and exit
+  -m             Minimum size of bins - default [5000]
+  -s SEPARATOR   Binsplit separator
 ```
+
+## Metadata
+- **Skill**: generated
 

@@ -4,9 +4,9 @@ baseCommand:
   - phykit
   - column_score
 label: phykit_column_score
-doc: Calculates column score, an accuracy metric for a multiple alignment 
-  relative to a reference alignment. It is calculated by summing the correctly 
-  aligned columns over all columns in an alignment.
+doc: Calculates column score, an accuracy metric for a multiple alignment relative
+  to a reference alignment. It is calculated by summing the correctly aligned columns
+  over all columns in an alignment.
 inputs:
   - id: fasta
     type: File
@@ -14,11 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: reference
-    type:
-      - 'null'
-      - File
-    secondaryFiles:
-      - .fai
+    type: File
     doc: reference fasta alignment to compare query alignment to
     inputBinding:
       position: 102

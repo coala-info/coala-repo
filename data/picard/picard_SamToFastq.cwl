@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --FASTQ
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input SAM/BAM/CRAM file to extract reads from
     inputBinding:
       position: 101
@@ -28,10 +26,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: clipping_action
     type:
       - 'null'
@@ -131,7 +130,9 @@ inputs:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
   - id: output_dir
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Directory in which to output the FASTQ file(s). Used only when 
       OUTPUT_PER_RG is true.
     inputBinding:
@@ -172,6 +173,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --RE_REVERSE
+      valueFrom: '$(self ? "true" : "false")'
   - id: read1_max_bases_to_write
     type:
       - 'null'
@@ -210,6 +212,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -224,7 +227,9 @@ inputs:
       position: 101
       prefix: --RG_TAG
   - id: second_end_fastq
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output FASTQ file (if paired, second end of the pair FASTQ).
     inputBinding:
       position: 101
@@ -234,13 +239,16 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: unpaired_fastq
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output FASTQ file for unpaired reads; may only be provided in 
       paired-FASTQ mode
     inputBinding:

@@ -17,25 +17,33 @@ inputs:
       position: 101
       prefix: --evalue
   - id: input_dir
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: Directory containing query pepetide/cds fasta or gzipped fasta
     inputBinding:
       position: 101
       prefix: --input_dir
   - id: inputs
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Query pepetide/cds fasta or gzipped fasta
     inputBinding:
       position: 101
       prefix: --inputs
   - id: markerset
     type: Directory
-    doc: Directory of the HMM markerset
+    doc: Directory of the HMM markerset (the hmms folder of a BUSCO lineage)
     inputBinding:
       position: 101
       prefix: --markerset
+      valueFrom: markerset_dir/hmms
+  - id: scores_cutoff
+    type: File
+    doc: Bitscore cutoff file of the markerset (the scores_cutoff file next to the hmms
+      folder; phyling reads it from the parent folder of the markerset)
   - id: method
     type:
       - 'null'
@@ -93,6 +101,13 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: markerset_dir/hmms
+        entry: $(inputs.markerset)
+        writable: true
+      - entryname: markerset_dir/scores_cutoff
+        entry: $(inputs.scores_cutoff)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyling:2.3.1--pyhdfd78af_0

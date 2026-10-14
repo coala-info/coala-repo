@@ -1,5 +1,15 @@
 # pin_hic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pin_hic_break | PASS |  |
+| pin_hic_build | PASS |  |
+| pin_hic_gets | PASS |  |
+| pin_hic_link | PASS |  |
+| pin_hic_pin_hic_it | PASS |  |
+
 ## pin_hic_link
 
 ### Tool Description

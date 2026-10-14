@@ -15,9 +15,7 @@ inputs:
       position: 101
       prefix: --alignment
   - id: tree
-    type:
-      - 'null'
-      - File
+    type: File
     doc: a tree file
     inputBinding:
       position: 101
@@ -39,7 +37,9 @@ inputs:
       position: 101
       prefix: --plot
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output path for saturation plot
     inputBinding:
       position: 101
@@ -174,7 +174,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --json
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: print out patristic distances and uncorrected distances used to determine saturation
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot_output
     type:
       - 'null'
@@ -184,6 +195,7 @@ outputs:
       glob: $(inputs.plot_output)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_saturation.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

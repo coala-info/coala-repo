@@ -1,77 +1,85 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: transseq.pl
+baseCommand:
+  - transseq.pl
 label: phyloaln_transseq.pl
-doc: "Converts sequences between different formats.\n\nTool homepage: https://github.com/huangyh45/PhyloAln"
+doc: "Translate nucleotide sequences in a file to amino acid sequences.\n\nTool homepage: https://github.com/huangyh45/PhyloAln"
 inputs:
-  - id: amino_acids
-    type:
-      - 'null'
-      - boolean
-    doc: Output amino acids (default).
-    inputBinding:
-      position: 101
-      prefix: -a
-  - id: codons
-    type:
-      - 'null'
-      - boolean
-    doc: Output codons instead of amino acids.
-    inputBinding:
-      position: 101
-      prefix: -c
-  - id: genome_file
-    type:
-      - 'null'
-      - File
-    doc: Genome file for annotation.
-    inputBinding:
-      position: 101
-      prefix: -g
   - id: input_file
     type: File
-    doc: Input file containing sequences.
+    doc: "input nucleotide sequences file"
     inputBinding:
-      position: 101
-      prefix: -i
-  - id: longest_orf
+      position: 1
+      prefix: "-i"
+  - id: output_file_path
+    type: string
+    doc: "output amino acid sequences file"
+    inputBinding:
+      position: 2
+      prefix: "-o"
+  - id: genetic_code
     type:
       - 'null'
-      - boolean
-    doc: Output only the longest open reading frame.
+      - int
+    doc: "genetic code (default=1, invertebrate mitochondrion=5)"
     inputBinding:
-      position: 101
-      prefix: -l
-  - id: nucleotides
-    type:
-      - 'null'
-      - boolean
-    doc: Output nucleotides.
-    inputBinding:
-      position: 101
-      prefix: -n
-  - id: translation_table
+      position: 3
+      prefix: "-g"
+  - id: termination_symbol
     type:
       - 'null'
       - string
-    doc: Translation table to use (e.g., '1', '2', '3', '4', '5', '6', '9', 
-      '10', '11', '12', '13', '14', '15', '16', '21', '22', '23', '24', '25', 
-      '26').
+    doc: "symbol of termination (default='*')"
     inputBinding:
-      position: 101
-      prefix: -t
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+      position: 4
+      prefix: "-t"
+  - id: translate_incomplete_codons
+    type:
+      - 'null'
+      - int
+    doc: "if translate incomplete codons into 'X' (default=no; give 1 for yes)"
     inputBinding:
-      position: 102
-      prefix: --output-file
+      position: 5
+      prefix: "-c"
+  - id: translate_all_six_orfs
+    type:
+      - 'null'
+      - int
+    doc: "if translate all six ORF (default=no; give 1 for yes)"
+    inputBinding:
+      position: 6
+      prefix: "-a"
+  - id: num_threads
+    type:
+      - 'null'
+      - int
+    doc: "num threads (default=1)"
+    inputBinding:
+      position: 7
+      prefix: "-n"
+  - id: log_file_name
+    type:
+      - 'null'
+      - string
+    doc: "log file name (default='transseq.log')"
+    inputBinding:
+      position: 8
+      prefix: "-l"
 outputs:
   - id: output_file
-    type: File
-    doc: Output file to write converted sequences.
+    type:
+      - 'null'
+      - File
+    doc: "Translated amino acid sequences"
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.output_file_path)"
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: "Log file"
+    outputBinding:
+      glob: "$(inputs.log_file_name || \"transseq.log\")"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

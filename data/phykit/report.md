@@ -1,5 +1,114 @@
 # phykit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phykit_alignment_entropy | PASS | mean and verbose modes checked (0.657 matches the tool test); the plot option crashes because matplotlib is missing in the image |
+| phykit_alignment_length | PASS |  |
+| phykit_alignment_length_no_gaps | PASS |  |
+| phykit_alignment_outlier_taxa | PASS |  |
+| phykit_alignment_recoding | Failed | image problem: the recoding_tables folder is missing from the image, so every named scheme (RY-nucleotide, Dayhoff-6) stops with a table-not-found message |
+| phykit_alignment_subsample | PASS |  |
+| phykit_ancestral_state_reconstruction | PASS | continuous and discrete reconstructions match fit_continuous and fit_discrete values; the plot option needs matplotlib, missing in the image |
+| phykit_bipartition_support_stats | PASS |  |
+| phykit_branch_length_multiplier | PASS |  |
+| phykit_character_map | Failed | image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for character_map' |
+| phykit_chronogram | Failed | image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for chronogram' |
+| phykit_collapse_branches | PASS |  |
+| phykit_column_score | PASS |  |
+| phykit_composition_per_taxon | PASS |  |
+| phykit_compositional_bias_per_site | Failed | tool bug: in phykit 2.1.92 the corrected p-value column puts nan at the wrong sites (inserts in reverse order); the tool test expects different values |
+| phykit_concordance_asr | PASS | weighted method gives root estimate equal to the plain reconstruction; the plot options need matplotlib, missing in the image |
+| phykit_consensus_network | PASS | split table checked by hand (6 splits, frequencies match the 10 input trees); the plot option needs matplotlib, missing in the image |
+| phykit_consensus_tree | PASS |  |
+| phykit_cont_map | Failed | image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for contMap' |
+| phykit_cophylo | Failed | image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for cophylo plotting' |
+| phykit_covarying_evolutionary_rates | PASS | main output matches the tool test; the plot option needs matplotlib, missing in the image |
+| phykit_create_concatenation_matrix | PASS | concatenated matrix, partition and occupancy files match the tool test files; the occupancy plot option needs matplotlib, missing in the image |
+| phykit_degree_of_violation_of_a_molecular_clock | PASS |  |
+| phykit_density_map | Failed | image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for density map plotting' |
+| phykit_dfoil | PASS |  |
+| phykit_dstatistic | PASS |  |
+| phykit_dtt | PASS | text output (MDI and DTT curve) checks out; the plot option needs matplotlib, missing in the image |
+| phykit_evolutionary_rate | PASS |  |
+| phykit_evolutionary_rate_per_site | PASS | main output matches the tool test; the plot option needs matplotlib, missing in the image |
+| phykit_faidx | PASS |  |
+| phykit_faiths_pd | PASS |  |
+| phykit_fit_continuous | PASS |  |
+| phykit_fit_discrete | PASS |  |
+| phykit_gc_content | PASS |  |
+| phykit_hidden_paralogy_check | PASS |  |
+| phykit_hybridization | PASS | gene concordance factors agree with the dstatistic and concordance_asr runs; the plot option needs matplotlib, missing in the image |
+| phykit_identity_matrix | Failed | image problem: matplotlib is missing in the image, so the command stops with 'matplotlib is required for identity_matrix' |
+| phykit_independent_contrasts | PASS |  |
+| phykit_internal_branch_stats | PASS |  |
+| phykit_internode_labeler | PASS |  |
+| phykit_kuhner_felsenstein_distance | PASS |  |
+| phykit_last_common_ancestor_subtree | PASS |  |
+| phykit_long_branch_score | PASS |  |
+| phykit_ltt | PASS | gamma statistic 2.2825 matches the tool test; the plot option needs matplotlib, missing in the image |
+| phykit_mask_alignment | PASS |  |
+| phykit_monophyly_check | PASS |  |
+| phykit_nearest_neighbor_interchange | PASS |  |
+| phykit_neighbor_net | Failed | image problem: matplotlib is missing in the image, so the network drawing step raises ModuleNotFoundError |
+| phykit_network_signal | PASS |  |
+| phykit_occupancy_filter | PASS | taxa below the occupancy threshold removed correctly from the fasta files |
+| phykit_occupancy_per_taxon | PASS |  |
+| phykit_ou_shift_detection | PASS |  |
+| phykit_ouwie | PASS |  |
+| phykit_pairwise_identity | PASS | main mode checked; --plot fails because the image has no matplotlib |
+| phykit_parsimony_informative_sites | PASS |  |
+| phykit_parsimony_score | PASS |  |
+| phykit_patristic_distances | PASS |  |
+| phykit_phenogram | Failed | image problem: matplotlib is missing, so the plot cannot be made |
+| phykit_phylo_anova | PASS |  |
+| phykit_phylo_gwas | Failed | image problem: matplotlib is missing, so the Manhattan plot cannot be made |
+| phykit_phylo_heatmap | Failed | image problem: matplotlib is missing, so the heatmap cannot be made |
+| phykit_phylo_impute | PASS |  |
+| phykit_phylo_logistic | PASS |  |
+| phykit_phylo_path | PASS | plot option not tested because the image has no matplotlib |
+| phykit_phylogenetic_glm | PASS |  |
+| phykit_phylogenetic_ordination | PASS | PCA tested; plot options not tested because the image has no matplotlib |
+| phykit_phylogenetic_regression | PASS |  |
+| phykit_phylogenetic_signal | PASS |  |
+| phykit_phylomorphospace | Failed | image problem: matplotlib is missing, so the plot cannot be made |
+| phykit_plot_alignment_qc | Failed | image problem: matplotlib is missing, so the plot cannot be made |
+| phykit_polytomy_test | PASS |  |
+| phykit_print_tree | PASS |  |
+| phykit_prune_tree | PASS |  |
+| phykit_quartet_network | PASS |  |
+| phykit_quartet_pie | Failed | image problem: matplotlib is missing, so the plot cannot be made |
+| phykit_rate_heterogeneity | PASS |  |
+| phykit_relative_composition_variability | PASS |  |
+| phykit_relative_composition_variability_taxon | PASS |  |
+| phykit_relative_rate_test | PASS |  |
+| phykit_rename_fasta_entries | PASS |  |
+| phykit_rename_tree_tips | PASS |  |
+| phykit_robinson_foulds_distance | PASS |  |
+| phykit_root_tree | PASS |  |
+| phykit_saturation | PASS |  |
+| phykit_simmap_summary | PASS |  |
+| phykit_spectral_discordance | PASS |  |
+| phykit_spurious_sequence | PASS |  |
+| phykit_stochastic_character_map | PASS |  |
+| phykit_subtree_prune_regraft | PASS |  |
+| phykit_sum_of_pairs_score | PASS |  |
+| phykit_taxon_groups | PASS |  |
+| phykit_thread_dna | PASS |  |
+| phykit_threshold_model | PASS |  |
+| phykit_tip_labels | PASS |  |
+| phykit_tip_to_tip_distance | PASS | pair and --all-pairs modes checked; --plot not tested because the image has no matplotlib |
+| phykit_tip_to_tip_node_distance | PASS |  |
+| phykit_total_tree_length | PASS |  |
+| phykit_trait_correlation | Failed | image problem: matplotlib is missing, so the plot cannot be made |
+| phykit_trait_rate_map | Failed | image problem: matplotlib is missing, so the plot cannot be made |
+| phykit_transfer_annotations | PASS |  |
+| phykit_tree_space | Failed | image problem: matplotlib is missing, so the plot cannot be made |
+| phykit_treeness | PASS |  |
+| phykit_treeness_over_rcv | PASS |  |
+| phykit_variable_sites | PASS |  |
+
 ## phykit_alignment_length
 
 ### Tool Description

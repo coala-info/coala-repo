@@ -4,6 +4,12 @@ baseCommand: pindel2vcf
 label: pindel_pindel2vcf
 doc: "conversion of Pindel output to VCF format\n\nTool homepage: http://gmt.genome.wustl.edu/packages/pindel/index.html"
 inputs:
+  - id: pindel_output_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Pindel output files (root_D, root_SI, root_TD, ...) staged in the working directory so that pindel_output_root resolves
   - id: both_strands_supported
     type:
       - 'null'
@@ -237,6 +243,9 @@ outputs:
       glob: $(inputs.vcf_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.pindel_output_files ? inputs.pindel_output_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pindel:0.2.5b9--h077b44d_12

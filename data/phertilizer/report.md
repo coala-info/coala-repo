@@ -1,5 +1,11 @@
 # phertilizer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phertilizer | Not completed | runs and writes cell clusters, SNV clusters and a tree, but the output differs from the repo example (made with a newer version that has --post_process); it merges two expected clones, so it cannot be confirmed |
+
 ## phertilizer
 
 ### Tool Description

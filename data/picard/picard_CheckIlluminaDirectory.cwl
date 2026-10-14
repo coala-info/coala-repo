@@ -8,21 +8,34 @@ doc: Asserts the validity for specified Illumina basecalling data. This tool
   will check that the basecall directory and the internal files are available, 
   exist, and are reasonably sized for every tile and cycle.
 inputs:
-  - id: basecalls_dir
+  - id: intensities_dir
     type: Directory
-    doc: The basecalls output directory.
+    doc: The Data/Intensities directory of the Illumina run folder. It holds the
+      BaseCalls directory, the lane position files (L001/*.clocs or s.locs) and
+      the filter files. It is staged as run/Data/Intensities and BASECALLS_DIR 
+      is set to run/Data/Intensities/BaseCalls, so that Picard finds the files 
+      it reads from the parent of BaseCalls.
     inputBinding:
       position: 101
       prefix: --BASECALLS_DIR
+      valueFrom: run/Data/Intensities/BaseCalls
+  - id: interop_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The InterOp directory of the Illumina run folder (it holds 
+      TileMetricsOut.bin, which Picard reads to get the expected tiles). It is 
+      staged as run/InterOp.
   - id: lanes
     type:
       type: array
       items: int
+      inputBinding:
+        prefix: --LANES
     doc: The number of the lane(s) to check. This argument must be specified at 
       least once.
     inputBinding:
       position: 101
-      prefix: --LANES
   - id: read_structure
     type: string
     doc: A description of the logical structure of clusters in an Illumina Run, 
@@ -36,10 +49,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -70,11 +84,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --DATA_TYPES
     doc: 'The data types that should be checked for each tile/cycle. Possible values:
       {Position, BaseCalls, QualityScores, PF, Barcodes}'
     inputBinding:
       position: 101
-      prefix: --DATA_TYPES
   - id: fake_files
     type:
       - 'null'
@@ -125,20 +140,22 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --TILE_NUMBERS
     doc: The number(s) of the tile(s) to check.
     inputBinding:
       position: 101
-      prefix: --TILE_NUMBERS
   - id: tmp_dir
     type:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -175,13 +192,22 @@ inputs:
       position: 101
       prefix: --showHidden
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error; holds the Picard log with the check result.
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: run/Data/Intensities
+        entry: $(inputs.intensities_dir)
+        writable: true
+      - entryname: run/InterOp
+        entry: $(inputs.interop_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
-stdout: picard_CheckIlluminaDirectory.out
+stderr: picard_CheckIlluminaDirectory.err
 s:url: http://broadinstitute.github.io/picard/
 $namespaces:
   s: https://schema.org/

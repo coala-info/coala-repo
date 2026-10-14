@@ -9,9 +9,10 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Input tree file (newick or nexus format)
+    doc: Input tree file (newick or nexus format); given with --file, so that the file name is never read as the argument of another switch
     inputBinding:
-      position: 1
+      position: 102
+      prefix: --file
   - id: branch_lengths
     type:
       - 'null'
@@ -82,14 +83,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --drop_tips
-  - id: file
-    type:
-      - 'null'
-      - File
-    doc: give file name, e.g. -f file.tree.
-    inputBinding:
-      position: 102
-      prefix: --file
   - id: format
     type:
       - 'null'

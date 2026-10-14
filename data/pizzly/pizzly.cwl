@@ -4,6 +4,11 @@ baseCommand: pizzly
 label: pizzly
 doc: "A tool for fusion detection from kallisto alignments\n\nTool homepage: https://github.com/pmelsted/pizzly"
 inputs:
+  - id: fusion_file
+    type: File
+    doc: fusion.txt file written by kallisto quant --fusion
+    inputBinding:
+      position: 200
   - id: align_score
     type:
       - 'null'
@@ -15,7 +20,7 @@ inputs:
   - id: cache
     type:
       - 'null'
-      - File
+      - string
     doc: File for caching annotation (created if not present, otherwise reused 
       from previous runs)
     inputBinding:

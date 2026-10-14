@@ -18,10 +18,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -79,11 +80,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -120,13 +122,13 @@ inputs:
       position: 101
       prefix: --showHidden
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error; holds the HAS_TERMINATOR_BLOCK or DEFECTIVE verdict and the Picard log.
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
-stdout: picard_CheckTerminatorBlock.out
+stderr: picard_CheckTerminatorBlock.err
 s:url: http://broadinstitute.github.io/picard/
 $namespaces:
   s: https://schema.org/

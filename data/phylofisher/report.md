@@ -1,5 +1,18 @@
 # phylofisher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylofisher_aa_recoder.py | PASS |  |
+| phylofisher_apply_to_db.py | Not completed | needs the PhyloFisher database and config.ini (large database download) |
+| phylofisher_heterotachy.py | PASS |  |
+| phylofisher_matrix_constructor.py | Failed | image problem: it runs snakemake with --use-conda, but the image has no mamba or conda |
+| phylofisher_nucl_matrix_constructor.py | PASS |  |
+| phylofisher_select_taxa.py | Not completed | needs the PhyloFisher database and config.ini (large database download) |
+| phylofisher_sgt_constructor.py | Not completed | needs a PhyloFisher database and config.ini; it also runs snakemake with --use-conda (no mamba in the image) |
+| phylofisher_taxon_collapser.py | Not completed | needs the PhyloFisher database and config.ini (large database download) |
+
 ## phylofisher_sgt_constructor.py
 
 ### Tool Description

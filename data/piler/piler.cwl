@@ -2,166 +2,90 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: piler
 label: piler
-doc: "PILER v1.0\nhttp://www.drive5.com/piler\nWritten by Robert C. Edgar\nThis software
-  is donated to the public domain.\nPlease visit web site for requested citation.\n\
-  \nTool homepage: https://github.com/alvarotrigo/pagePiling.js"
+doc: "PILER identifies and classifies genomic repeats. This file wraps the -trs mode: it reads a hit file from a whole-genome local self-alignment (for example from PALS) and writes the transposable repeat structures (TRS).\n\nTool homepage: https://www.drive5.com/piler/"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
-  - id: alnfile
+  - id: trs
     type: File
-    doc: Input alignment file for -cons mode
+    doc: 'Hit file from a whole-genome self-alignment'
     inputBinding:
-      position: 1
-  - id: gff
-    type: File
-    doc: Input GFF file for -annot mode
-    inputBinding:
-      position: 2
-  - id: hitfile
-    type: File
-    doc: Input hit file for -trs mode
-    inputBinding:
-      position: 3
-  - id: trsfile
-    type: File
-    doc: Input trs file for -trs2fasta mode
-    inputBinding:
-      position: 4
-  - id: annot
-    type:
-      - 'null'
-      - boolean
-    doc: Annotate repeats
-    inputBinding:
-      position: 105
-      prefix: -annot
-  - id: cons
-    type:
-      - 'null'
-      - boolean
-    doc: Generate consensus sequence
-    inputBinding:
-      position: 105
-      prefix: -cons
-  - id: images
-    type:
-      - 'null'
-      - File
-    doc: Image file for -trs options
-    inputBinding:
-      position: 105
-      prefix: -images
-  - id: label
-    type:
-      - 'null'
-      - string
-    doc: Label for consensus sequence in -cons mode
-    inputBinding:
-      position: 105
-      prefix: -label
-  - id: maxfam
-    type:
-      - 'null'
-      - int
-    doc: Maximum family size for -trs2fasta mode
-    inputBinding:
-      position: 105
-      prefix: -maxfam
-  - id: maxlengthdiffpct
-    type:
-      - 'null'
-      - float
-    doc: Maximum length difference percentage for -trs options
-    inputBinding:
-      position: 105
-      prefix: -maxlengthdiffpct
+      position: 101
+      prefix: -trs
   - id: mincover
     type:
       - 'null'
       - int
-    doc: Minimum coverage for -trs options
+    doc: 'Minimum coverage of a pile'
     inputBinding:
-      position: 105
+      position: 101
       prefix: -mincover
+  - id: maxlengthdiffpct
+    type:
+      - 'null'
+      - float
+    doc: 'Maximum length difference in percent'
+    inputBinding:
+      position: 101
+      prefix: -maxlengthdiffpct
+  - id: piles_name
+    type:
+      - 'null'
+      - string
+    doc: 'Name of the pile file to write'
+    inputBinding:
+      position: 101
+      prefix: -piles
+  - id: images_name
+    type:
+      - 'null'
+      - string
+    doc: 'Name of the image file to write'
+    inputBinding:
+      position: 101
+      prefix: -images
   - id: multihit
     type:
       - 'null'
       - boolean
-    doc: Enable multi-hit for -trs options
+    doc: 'Allow multiple hits'
     inputBinding:
-      position: 105
+      position: 101
       prefix: -multihit
-  - id: path
-    type:
-      - 'null'
-      - string
-    doc: Path for -trs2fasta mode
-    inputBinding:
-      position: 105
-      prefix: -path
-  - id: piles
-    type:
-      - 'null'
-      - File
-    doc: Pile file for -trs options
-    inputBinding:
-      position: 105
-      prefix: -piles
   - id: quiet
     type:
       - 'null'
       - boolean
-    doc: Suppress progress messages
+    doc: 'Suppress progress messages'
     inputBinding:
-      position: 105
+      position: 101
       prefix: -quiet
-  - id: repfile
-    type:
-      - 'null'
-      - File
-    doc: Repeat file for -annot mode
-    inputBinding:
-      position: 105
-      prefix: -rep
-  - id: seq
-    type:
-      - 'null'
-      - File
-    doc: Input fasta file for -trs2fasta mode
-    inputBinding:
-      position: 105
-      prefix: -seq
-  - id: trs
-    type:
-      - 'null'
-      - boolean
-    doc: Process hitfile to trsfile
-    inputBinding:
-      position: 105
-      prefix: -trs
-  - id: trs2fasta
-    type:
-      - 'null'
-      - boolean
-    doc: Convert trsfile to fastafile
-    inputBinding:
-      position: 105
-      prefix: -trs2fasta
-  - id: out_path
+  - id: out_name
     type: string
-    doc: Output or path parameter `out_path`
+    doc: 'Name of the TRS output file'
     inputBinding:
-      position: 106
+      position: 102
       prefix: -out
 outputs:
-  - id: out
+  - id: trsfile
+    type: File
+    doc: 'TRS output file'
+    outputBinding:
+      glob: $(inputs.out_name)
+  - id: piles
     type:
       - 'null'
       - File
-    doc: Output file name
+    doc: 'Pile file'
     outputBinding:
-      glob: $(inputs.out_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.piles_name)
+  - id: images
+    type:
+      - 'null'
+      - File
+    doc: 'Image file'
+    outputBinding:
+      glob: $(inputs.images_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/piler:0.1--0

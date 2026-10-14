@@ -1,5 +1,14 @@
 # pipits CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pipits_pipits_createreadpairslist | PASS |  |
+| pipits_pipits_funits | PASS | ran on real ITS reads converted from FASTQ to FASTA |
+| pipits_pipits_prep | PASS | ran on SARS-CoV-2 paired reads (no small paired ITS reads); joining and filtering work |
+| pipits_pipits_process | PASS | ran on real ITS reads; the wrapper now calls pipits_process and allows network to download the UNITE database |
+
 ## pipits_pipits_createreadpairslist
 
 ### Tool Description

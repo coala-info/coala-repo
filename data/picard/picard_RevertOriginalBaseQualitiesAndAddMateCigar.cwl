@@ -24,10 +24,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -53,6 +54,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
+      valueFrom: '$(self ? "true" : "false")'
   - id: max_records_in_ram
     type:
       - 'null'
@@ -86,6 +88,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -99,6 +102,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --RESTORE_ORIGINAL_QUALITIES
+      valueFrom: '$(self ? "true" : "false")'
   - id: sort_order
     type:
       - 'null'
@@ -113,11 +117,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -154,8 +159,12 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_output
-    type: File
-    doc: The output SAM/BAM/CRAM file to create.
+    type:
+      - 'null'
+      - File
+    doc: The output SAM/BAM/CRAM file to create. Picard writes no file when the
+      input has no original qualities and already has mate cigars (see
+      MAX_RECORDS_TO_EXAMINE).
     outputBinding:
       glob: $(inputs.output)
 requirements:

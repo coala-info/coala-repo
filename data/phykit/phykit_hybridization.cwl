@@ -4,9 +4,9 @@ baseCommand:
   - phykit
   - hybridization
 label: phykit_hybridization
-doc: Estimate the minimum number of reticulation (hybridization) events and 
-  localize where hybridization likely occurred on a species tree using 
-  four-group decomposition and binomial tests.
+doc: Estimate the minimum number of reticulation (hybridization) events and localize
+  where hybridization likely occurred on a species tree using four-group decomposition
+  and binomial tests.
 inputs:
   - id: tree
     type: File
@@ -15,9 +15,7 @@ inputs:
       position: 101
       prefix: --tree
   - id: gene_trees
-    type:
-      - 'null'
-      - File
+    type: File
     doc: multi-Newick file of gene trees
     inputBinding:
       position: 101
@@ -26,8 +24,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: collapse gene tree branches below this support value before topology 
-      determination
+    doc: collapse gene tree branches below this support value before topology determination
     inputBinding:
       position: 101
       prefix: --support
@@ -40,7 +37,9 @@ inputs:
       position: 101
       prefix: --alpha
   - id: plot
-    type: string
+    type:
+      - 'null'
+      - string
     doc: optional output path for hybridization score phylogram (PNG)
     inputBinding:
       position: 101
@@ -153,8 +152,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: Draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 101
       prefix: --cladogram
@@ -175,6 +173,8 @@ inputs:
       position: 101
       prefix: --color-file
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot
     type:
       - 'null'
@@ -190,3 +190,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_hybridization.out

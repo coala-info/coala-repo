@@ -172,6 +172,78 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tree
+  - id: bgtdb
+    type:
+      - 'null'
+      - File
+    doc: Path to the GTDB tsv file of the MAGs (GTDB-based taxonomy filter for kmer-based prediction)
+    inputBinding:
+      position: 101
+      prefix: --bgtdb
+  - id: ccov
+    type:
+      - 'null'
+      - float
+    doc: Alignment coverage for CRISPRs, 0 to 100 (default 90)
+    inputBinding:
+      position: 101
+      prefix: --ccov
+  - id: cpident
+    type:
+      - 'null'
+      - float
+    doc: Alignment identity for CRISPRs, 90 to 100 (default 90)
+    inputBinding:
+      position: 101
+      prefix: --cpident
+  - id: mcov
+    type:
+      - 'null'
+      - float
+    doc: Alignment coverage for matching marker genes, 0 to 100 (default 50)
+    inputBinding:
+      position: 101
+      prefix: --mcov
+  - id: mpident
+    type:
+      - 'null'
+      - float
+    doc: Alignment identity for matching marker genes, 0 to 100 (default 25)
+    inputBinding:
+      position: 101
+      prefix: --mpident
+  - id: msa
+    type:
+      - 'null'
+      - string
+    doc: "Whether to run msa on the marker genes with mafft (Y or N, default N)"
+    inputBinding:
+      position: 101
+      prefix: --msa
+  - id: msadb
+    type:
+      - 'null'
+      - string
+    doc: "Whether to run msa with the database (Y or N, default Y)"
+    inputBinding:
+      position: 101
+      prefix: --msadb
+  - id: prolen
+    type:
+      - 'null'
+      - int
+    doc: Minimum alignment length for prophage, 0 to 100000 (default 1000)
+    inputBinding:
+      position: 101
+      prefix: --prolen
+  - id: tcov
+    type:
+      - 'null'
+      - float
+    doc: Alignment coverage for ANI-based clustering, 0 to 100 (default 85)
+    inputBinding:
+      position: 101
+      prefix: --tcov
   - id: outpth_path
     type: string
     inputBinding:

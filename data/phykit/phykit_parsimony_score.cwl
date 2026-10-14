@@ -30,6 +30,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --json
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: print per-item output (verbose)
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

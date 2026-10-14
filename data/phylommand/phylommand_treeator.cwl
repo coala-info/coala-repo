@@ -6,13 +6,6 @@ doc: "Treeator is a command line program to construct trees using neighbor joini
   parsimony, or maximum likelihood from similarity matrices or data matrices (fasta,
   nexus, or phylip).\n\nTool homepage: https://github.com/mr-y/phylommand"
 inputs:
-  - id: data_file_positional
-    type:
-      - 'null'
-      - File
-    doc: The data file containing similarity matrix or character data.
-    inputBinding:
-      position: 1
   - id: alphabet_file
     type:
       - 'null'
@@ -23,10 +16,8 @@ inputs:
       position: 102
       prefix: --alphabet_file
   - id: data_file
-    type:
-      - 'null'
-      - File
-    doc: give the data file.
+    type: File
+    doc: give the data file (similarity matrix or character data).
     inputBinding:
       position: 102
       prefix: --data_file

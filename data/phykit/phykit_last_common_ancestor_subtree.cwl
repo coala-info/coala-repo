@@ -4,8 +4,8 @@ baseCommand:
   - phykit
   - last_common_ancestor_subtree
 label: phykit_last_common_ancestor_subtree
-doc: Obtains subtree from a phylogeny by getting the last common ancestor from a
-  list of taxa.
+doc: Obtains subtree from a phylogeny by getting the last common ancestor from a list
+  of taxa.
 inputs:
   - id: tree
     type: File
@@ -13,9 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: list_of_taxa
-    type:
-      - 'null'
-      - File
+    type: File
     doc: list of taxa to get the last common ancestor subtree for
     inputBinding:
       position: 2

@@ -1,5 +1,14 @@
 # pisad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pisad_create | Not completed | needs a .snp file from run.sh on deep diploid WGS reads; no small real data |
+| pisad_pisadCount | Not completed | needs a variant sketch built from deep human WGS SNP calls; no small real data |
+| pisad_pisadEval | Not completed | needs count files from pisadCount on human WGS cohorts; no small real data |
+| pisad_run.sh | Not completed | needs deep diploid WGS reads; on small real reads it ran but gave an empty SNP file; option -d2 fails in run.sh |
+
 ## pisad_run.sh
 
 ### Tool Description

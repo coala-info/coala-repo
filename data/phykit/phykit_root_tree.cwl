@@ -15,9 +15,7 @@ inputs:
     inputBinding:
       position: 1
   - id: root
-    type:
-      - 'null'
-      - File
+    type: File
     doc: single column file with tip names of root taxa
     inputBinding:
       position: 102

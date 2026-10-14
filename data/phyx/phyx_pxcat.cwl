@@ -30,6 +30,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --flist
+  - id: listed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named inside the --flist file, staged in the working directory
+      so that the names resolve.
   - id: seqf
     type:
       - 'null'
@@ -80,6 +87,9 @@ outputs:
       glob: $(inputs.partf_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${ return inputs.listed_files ? inputs.listed_files : []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyx:1.1--hc0837bd_5

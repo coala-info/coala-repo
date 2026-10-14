@@ -1,5 +1,13 @@
 # pgscatalog.match CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pgscatalog.match_pgscatalog-intersect | PASS |  |
+| pgscatalog.match_pgscatalog-match | PASS |  |
+| pgscatalog.match_pgscatalog-matchmerge | PASS |  |
+
 ## pgscatalog.match_pgscatalog-match
 
 ### Tool Description

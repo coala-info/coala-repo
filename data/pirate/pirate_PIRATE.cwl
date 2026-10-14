@@ -46,6 +46,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --features
+      itemSeparator: ','
   - id: identity_thresholds
     type:
       - 'null'
@@ -55,6 +56,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --steps
+      itemSeparator: ','
   - id: input_dir
     type: Directory
     doc: input directory containing gffs

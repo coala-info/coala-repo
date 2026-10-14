@@ -22,9 +22,7 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: ref_flat
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Gene annotations in refFlat form.
     inputBinding:
       position: 101
@@ -42,10 +40,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: assume_sorted
     type:
       - 'null'
@@ -55,6 +54,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ASSUME_SORTED
+      valueFrom: '$(self ? "true" : "false")'
   - id: chart_output
     type: string
     doc: The PDF file to write out a plot of normalized position vs. coverage.
@@ -99,11 +99,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --IGNORE_SEQUENCE
     doc: If a read maps to a sequence specified with this option, all the bases 
       in the read are counted as ignored bases.
     inputBinding:
       position: 101
-      prefix: --IGNORE_SEQUENCE
   - id: max_records_in_ram
     type:
       - 'null'
@@ -118,11 +119,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --METRIC_ACCUMULATION_LEVEL
     doc: 'The level(s) at which to accumulate metrics. Possible values: {ALL_READS,
       SAMPLE, LIBRARY, READ_GROUP}'
     inputBinding:
       position: 101
-      prefix: --METRIC_ACCUMULATION_LEVEL
   - id: minimum_length
     type:
       - 'null'
@@ -180,11 +182,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

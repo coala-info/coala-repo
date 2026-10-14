@@ -1,5 +1,25 @@
 # phyx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phyx_pxbp | PASS | fixed: --maptree input is now staged writable and its .pxbpmapped.tre output is collected. |
+| phyx_pxcat | PASS | fixed: --flist works with the listed files staged; the positional FILES form is ignored by the tool (it prints an error), use --seqf or --flist. |
+| phyx_pxclsq | PASS | synthetic data: a real alignment with 50 columns planted as N in five taxa; they were removed (1503 to 1453 sites); the unmodified real alignment keeps all columns. |
+| phyx_pxcomp | PASS |  |
+| phyx_pxnj | PASS |  |
+| phyx_pxrevcomp | PASS | reverse complement of the named sequences is correct with --seqf and --ids; the positional file form fails because the tool reads standard input. |
+| phyx_pxrmt | PASS |  |
+| phyx_pxrr | PASS |  |
+| phyx_pxs2fa | PASS |  |
+| phyx_pxs2nex | PASS |  |
+| phyx_pxs2phy | PASS |  |
+| phyx_pxt2new | PASS |  |
+| phyx_pxtlate | PASS |  |
+| phyx_pxtrt | PASS | fixed: names file option is -f (the long form --namesf is not accepted by pxtrt). |
+| phyx_pxupgma | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

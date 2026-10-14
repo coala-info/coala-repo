@@ -4,15 +4,23 @@ baseCommand:
   - phykit
   - internal_branch_stats
 label: phykit_internal_branch_stats
-doc: Calculate summary statistics for internal branch lengths in a phylogeny. 
-  Internal branch lengths can be useful for phylogeny diagnostics. To obtain all
-  internal branch lengths, use the -v/--verbose option.
+doc: Calculate summary statistics for internal branch lengths in a phylogeny. Internal
+  branch lengths can be useful for phylogeny diagnostics. To obtain all internal branch
+  lengths, use the -v/--verbose option.
 inputs:
   - id: tree
     type: File
     doc: first argument after function name should be a tree file
     inputBinding:
       position: 1
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: optional argument to print all values
+    inputBinding:
+      position: 102
+      prefix: --verbose
   - id: json
     type:
       - 'null'

@@ -1,5 +1,18 @@
 # pgscatalog-utils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pgscatalog-utils_pgscatalog-aggregate | PASS |  |
+| pgscatalog-utils_pgscatalog-ancestry-adjust | PASS |  |
+| pgscatalog-utils_pgscatalog-combine | PASS |  |
+| pgscatalog-utils_pgscatalog-download | PASS |  |
+| pgscatalog-utils_pgscatalog-intersect | PASS |  |
+| pgscatalog-utils_pgscatalog-match | PASS |  |
+| pgscatalog-utils_pgscatalog-matchmerge | PASS |  |
+| pgscatalog-utils_pgscatalog-relabel | PASS |  |
+
 ## pgscatalog-utils_pgscatalog-download
 
 ### Tool Description
@@ -440,6 +453,62 @@ options:
   -cc COMMENT_CHAR, --comment_char COMMENT_CHAR
 ```
 
+
+## pgscatalog-utils_pgscatalog-combine
+
+### Tool Description
+Combine multiple scoring files in PGS Catalog format to a long table of columns needed for variant matching.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pgscatalog-utils:2.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/PGScatalog/pygscatalog
+- **Package**: https://anaconda.org/channels/bioconda/packages/pgscatalog-utils/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pgscatalog-combine [-h] -s SCOREFILES [SCOREFILES ...] [--liftover] -t
+                          {GRCh37,GRCh38} [-c CHAIN_DIR] [-m MIN_LIFT]
+                          [--drop_missing] -o OUTFILE [-l LOGFILE] [-v]
+
+Combine multiple scoring files in PGS Catalog format (see 
+https://www.pgscatalog.org/downloads/ for details) to a 'long' table of columns 
+needed for variant matching and subsequent calculation.
+
+Custom scorefiles in PGS Catalog format can be combined with PGS Catalog scoring files, and 
+optionally liftover genomic coordinates to GRCh37 or GRCh38. The script can accept a mix of
+unharmonised and harmonised PGS Catalog data. By default all variants are output (including 
+positions with duplicated data [often caused by rsID/liftover collions across builds]) and 
+variants with missing positions. 
+
+options:
+  -h, --help            show this help message and exit
+  -s SCOREFILES [SCOREFILES ...], --scorefiles SCOREFILES [SCOREFILES ...]
+                        <Required> Scorefile paths
+  --liftover            <Optional> Convert scoring file variants to target
+                        genome build?
+  -t {GRCh37,GRCh38}, --target_build {GRCh37,GRCh38}
+                        <Required> Build of target genome
+  -c CHAIN_DIR, --chain_dir CHAIN_DIR
+                        Path to directory containing chain files
+  -m MIN_LIFT, --min_lift MIN_LIFT
+                        <Optional> If liftover, minimum proportion of variants
+                        lifted over
+  --drop_missing        <Optional> Drop variants with missing information
+                        (chr/pos) and non-standard alleles (e.g. HLA=P/N) from
+                        the output file.
+  -o OUTFILE, --outfile OUTFILE
+                        <Required> Output path to combined long scorefile [
+                        will compress output if filename ends with .gz ]
+  -l LOGFILE, --logfile LOGFILE
+                        <Required> Name for the log file (score metadata) for
+                        combined scores.[ will write to identical directory as
+                        combined scorefile]
+  -v, --verbose         <Optional> Extra logging information
+
+The long table is used to simplify intersecting variants in target genotyping datasets 
+and the scoring files with the match_variants program.
+```
 
 ## Metadata
 - **Skill**: generated

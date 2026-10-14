@@ -1,5 +1,11 @@
 # pia CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pia | PASS | fixed: command is pia (not PIACli), outfile optional, exports collected; compile then analysis on the project's Tide search file gave PSM mzTab, peptide and protein tables; analysis json uses relative paths and a relaxed FDR for this small cut file; mzIdentML protein export crashes (tool error). |
+
 ## pia
 
 ### Tool Description

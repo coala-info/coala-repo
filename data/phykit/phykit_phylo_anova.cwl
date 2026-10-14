@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --tree
   - id: traits
-    type:
-      - 'null'
-      - File
+    type: File
     doc: TSV file with taxon, group column, and one or more response trait 
       columns
     inputBinding:
@@ -57,7 +55,9 @@ inputs:
       position: 101
       prefix: --pairwise
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output figure path (.png, .pdf, .svg)
     inputBinding:
       position: 101
@@ -209,6 +209,9 @@ inputs:
       position: 101
       prefix: --color-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot_output
     type:
       - 'null'
@@ -218,6 +221,7 @@ outputs:
       glob: $(inputs.plot_output)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_phylo_anova.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

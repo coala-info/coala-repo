@@ -25,7 +25,7 @@ inputs:
   - id: database
     type:
       - 'null'
-      - string
+      - Directory
     doc: Specific path to installed phold database
     inputBinding:
       position: 101
@@ -187,14 +187,13 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
 requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: user
+      - envName: TORCHINDUCTOR_CACHE_DIR
+        envValue: $(runtime.tmpdir)/torch_cache
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

@@ -4,8 +4,8 @@ baseCommand:
   - phykit
   - ancestral_state_reconstruction
 label: phykit_ancestral_state_reconstruction
-doc: Estimate ancestral states using maximum likelihood. Supports continuous 
-  (Brownian Motion) and discrete (Mk) models.
+doc: Estimate ancestral states using maximum likelihood. Supports continuous (Brownian
+  Motion) and discrete (Mk) models.
 inputs:
   - id: tree
     type: File
@@ -14,9 +14,7 @@ inputs:
       position: 101
       prefix: --tree
   - id: trait_data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: trait data file (2-column or multi-trait with header)
     inputBinding:
       position: 101
@@ -62,7 +60,9 @@ inputs:
       position: 101
       prefix: --ci
   - id: plot
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output path for plot
     inputBinding:
       position: 101
@@ -167,8 +167,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 101
       prefix: --cladogram
@@ -184,8 +183,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: color annotation file for tip labels, clade ranges, and branch colors 
-      (iTOL-inspired TSV format)
+    doc: color annotation file for tip labels, clade ranges, and branch colors (iTOL-inspired
+      TSV format)
     inputBinding:
       position: 101
       prefix: --color-file
@@ -193,8 +192,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: draw confidence interval bars at internal nodes on the contMap plot 
-      (requires --ci and --plot)
+    doc: draw confidence interval bars at internal nodes on the contMap plot (requires
+      --ci and --plot)
     inputBinding:
       position: 101
       prefix: --plot-ci
@@ -216,6 +215,8 @@ inputs:
       position: 101
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot
     type:
       - 'null'
@@ -231,3 +232,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_ancestral_state_reconstruction.out

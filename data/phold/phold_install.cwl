@@ -7,9 +7,7 @@ label: phold_install
 doc: "Installs ProstT5 model and phold database\n\nTool homepage: https://github.com/gbouras13/phold"
 inputs:
   - id: database
-    type:
-      - 'null'
-      - Directory
+    type: string
     doc: Specific path to install the phold database
     inputBinding:
       position: 101
@@ -44,10 +42,21 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: database_dir
+    type: Directory
+    doc: The installed phold database and ProstT5 model
+    outputBinding:
+      glob: $(inputs.database)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: user
+      - envName: TORCHINDUCTOR_CACHE_DIR
+        envValue: $(runtime.tmpdir)/torch_cache
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phold:1.2.2--pyhdfd78af_0
-stdout: phold_install.out

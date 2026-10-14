@@ -18,8 +18,6 @@ inputs:
       (gzip). It may contain multiple sequences (scaffolds or chromosomes), each
       marked with a separate FASTA tag line. If '-' is specified, the reference 
       sequence is read from stdin, but it must be uncompressed.
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 1
   - id: indel_rate
@@ -52,6 +50,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: pirs_diploid
     doc: Use PREFIX as the prefix of the output file and logs.
     inputBinding:
       position: 102

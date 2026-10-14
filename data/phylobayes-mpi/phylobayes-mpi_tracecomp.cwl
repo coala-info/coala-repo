@@ -1,57 +1,55 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tracecomp
+baseCommand:
+  - tracecomp
 label: phylobayes-mpi_tracecomp
-doc: "measure the effective sizes and overlap between 95% CI of several independent
-  chains\n\nTool homepage: https://github.com/bayesiancook/pbmpi"
+doc: "Measure the effective sizes and overlap between the 95% credibility intervals of several independent chains.\n\nTool homepage: https://github.com/bayesiancook/pbmpi"
 inputs:
+  - id: output_prefix
+    type:
+      - 'null'
+      - string
+    doc: "detailed output into file <output>.contdiff (default prefix tracecomp)"
+    inputBinding:
+      position: 1
+      prefix: "-o"
+  - id: extract
+    type:
+      - 'null'
+      - type: array
+        items: int
+    doc: "burnin, and optionally every and until (default burnin = 20% of the chain)"
+    inputBinding:
+      position: 1
+      prefix: "-x"
   - id: chain_names
     type:
       type: array
       items: string
-    doc: Names of the chains to compare
+    doc: "names of the chains (prefix of the <chain>.trace files)"
     inputBinding:
-      position: 1
-  - id: burnin
+      position: 2
+  - id: chain_files
     type:
-      - 'null'
-      - int
-    doc: burnin period
-    inputBinding:
-      position: 102
-      prefix: -x
-  - id: every
-    type:
-      - 'null'
-      - int
-    doc: sample every Nth state after burnin
-    inputBinding:
-      position: 102
-      prefix: -x
-  - id: until
-    type:
-      - 'null'
-      - int
-    doc: stop sampling at state N
-    inputBinding:
-      position: 102
-      prefix: -x
-  - id: output_file_path
-    type: string
-    doc: ': detailed output into file'
-    inputBinding:
-      position: 103
-      prefix: -o
+      type: array
+      items: File
+    doc: "files of the chains (<chain>.trace)"
 outputs:
-  - id: output_file
+  - id: stdout
+    type: stdout
+    doc: "Standard output (effective sizes and relative differences)"
+  - id: comparison
     type:
       - 'null'
       - File
-    doc: detailed output into file
+    doc: "Detailed comparison of the chains"
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.output_prefix || \"tracecomp\").contdiff"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.chain_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylobayes-mpi:1.9--h5c6ebe3_0
+stdout: phylobayes-mpi_tracecomp.out

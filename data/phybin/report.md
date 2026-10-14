@@ -1,5 +1,11 @@
 # phybin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phybin | Failed | image problem: graphviz (neato) is missing, so default clustering and --rfdist exit with an error; only --bin works |
+
 ## phybin
 
 ### Tool Description

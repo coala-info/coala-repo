@@ -4,9 +4,9 @@ baseCommand:
   - phykit
   - faiths_pd
 label: phykit_faiths_pd
-doc: Calculate Faith's phylogenetic diversity (PD) for a community of tips on a 
-  phylogeny. Faith's PD is the sum of branch lengths in the minimum subtree that
-  connects a set of taxa.
+doc: Calculate Faith's phylogenetic diversity (PD) for a community of tips on a phylogeny.
+  Faith's PD is the sum of branch lengths in the minimum subtree that connects a set
+  of taxa.
 inputs:
   - id: tree
     type: File
@@ -14,9 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: taxa
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File with one tip label per line defining the community
     inputBinding:
       position: 102
@@ -25,8 +23,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Sum only branches of the induced subtree rooted at the community MRCA; 
-      by default the path up to the tree root is included
+    doc: Sum only branches of the induced subtree rooted at the community MRCA; by
+      default the path up to the tree root is included
     inputBinding:
       position: 102
       prefix: --exclude-root

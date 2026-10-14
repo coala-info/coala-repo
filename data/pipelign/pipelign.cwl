@@ -95,7 +95,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Merge using (P)arallel/(C)onsensus strategy
+    doc: Merge using (P)arallel/(C)onsensus strategy.
     inputBinding:
       position: 101
       prefix: --merge
@@ -109,7 +109,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Run either (J)oblib/(G)NU parallel version
+    doc: Run either (J)oblib/(G)NU parallel version.
     inputBinding:
       position: 101
       prefix: --run

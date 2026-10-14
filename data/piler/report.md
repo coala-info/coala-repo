@@ -1,5 +1,11 @@
 # piler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| piler | Not completed | rewritten for the -trs mode; needs a PALS self-alignment hit file (PALS is not in the image) and no real test data |
+
 ## piler
 
 ### Tool Description

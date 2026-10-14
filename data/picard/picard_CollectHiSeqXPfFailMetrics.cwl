@@ -8,12 +8,17 @@ doc: 'Classify PF-Failing reads in a HiSeqX Illumina Basecalling directory into 
   categories. This tool categorizes the reads that did not pass filter (PF-Failing)
   into four groups: MISALIGNED, EMPTY, POLYCLONAL, and UNKNOWN.'
 inputs:
-  - id: basecalls_dir
+  - id: intensities_dir
     type: Directory
-    doc: The Illumina basecalls directory.
+    doc: The Data/Intensities directory of the Illumina run folder. It holds the
+      BaseCalls directory, the lane position files (L001/*.clocs or s.locs) and
+      the filter files. It is staged as run/Data/Intensities and BASECALLS_DIR 
+      is set to run/Data/Intensities/BaseCalls, so that Picard finds the files 
+      it reads from the parent of BaseCalls.
     inputBinding:
       position: 101
       prefix: --BASECALLS_DIR
+      valueFrom: run/Data/Intensities/BaseCalls
   - id: lane
     type: int
     doc: Lane number.
@@ -32,10 +37,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -119,11 +125,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -168,6 +175,11 @@ outputs:
       glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: run/Data/Intensities
+        entry: $(inputs.intensities_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0

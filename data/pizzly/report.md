@@ -1,5 +1,11 @@
 # pizzly CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pizzly | PASS | added the required fusion.txt input; output matches the Galaxy test (CD74-ROS1 fusion); pizzly helper scripts are not in the image |
+
 ## pizzly
 
 ### Tool Description

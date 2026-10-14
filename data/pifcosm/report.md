@@ -1,5 +1,11 @@
 # pifcosm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pifcosm_PifCoSm.pl | Not completed | pipeline, skipped: PifCoSm.pl chains many modules (GenBank parsing, clustering, alignment, trees) on a database |
+
 ## Metadata
 - **Skill**: generated
 

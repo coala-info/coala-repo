@@ -1,5 +1,11 @@
 # phanotate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phanotate_phanotate.py | Failed | tool bug: --format gff3 is a documented choice but writes an NCBI feature table (>Feature ...), not GFF3; tabular, gff, genbank and fasta formats work (59 genes on phage T7) |
+
 ## Metadata
 - **Skill**: generated
 

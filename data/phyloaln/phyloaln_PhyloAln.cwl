@@ -43,8 +43,9 @@ inputs:
       prefix: --cross_overlap_pident
   - id: fasta_file
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: the input FASTA/FASTQ file(s) of the single species(-s), compressed 
       files ending with ".gz" are allowed
     inputBinding:
@@ -240,7 +241,9 @@ inputs:
       position: 101
       prefix: --outgroup_weight
   - id: output_directory
-    type: Directory
+    type:
+      - 'null'
+      - string
     doc: the output directory containing the results(default:PhyloAln_out)
     inputBinding:
       position: 101
@@ -274,7 +277,9 @@ inputs:
       position: 101
       prefix: --parallel
   - id: reference_alignment_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: the single reference FASTA alignment file
     inputBinding:
       position: 101
@@ -326,7 +331,9 @@ inputs:
       position: 101
       prefix: --split_slide
   - id: species
-    type: string
+    type:
+      - 'null'
+      - string
     doc: the studied species ID for the provided FASTA/FASTQ files(-i)
     inputBinding:
       position: 101
@@ -353,6 +360,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: the output directory containing the results (default PhyloAln_out)
+    outputBinding:
+      glob: $(inputs.output_directory || "PhyloAln_out")
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyloaln:1.1.0--hdfd78af_0

@@ -39,7 +39,7 @@ inputs:
   - id: log_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to a directory to hold logs.
     inputBinding:
       position: 101
@@ -114,7 +114,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: Directory
+    type: File
     doc: The path to the output file you want to create.
     outputBinding:
       glob: $(inputs.output_path)

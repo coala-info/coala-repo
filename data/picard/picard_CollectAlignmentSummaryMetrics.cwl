@@ -26,19 +26,21 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ADAPTER_SEQUENCE
     doc: List of adapter sequences to use when processing the alignment metrics.
     inputBinding:
       position: 101
-      prefix: --ADAPTER_SEQUENCE
   - id: arguments_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: assume_sorted
     type:
       - 'null'
@@ -48,6 +50,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ASSUME_SORTED
+      valueFrom: '$(self ? "true" : "false")'
   - id: collect_alignment_information
     type:
       - 'null'
@@ -57,6 +60,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --COLLECT_ALIGNMENT_INFORMATION
+      valueFrom: '$(self ? "true" : "false")'
   - id: compression_level
     type:
       - 'null'
@@ -87,11 +91,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --EXPECTED_PAIR_ORIENTATIONS
     doc: Paired-end reads that do not have this expected orientation will be 
       considered chimeric.
     inputBinding:
       position: 101
-      prefix: --EXPECTED_PAIR_ORIENTATIONS
   - id: histogram_file
     type: string
     doc: If Provided, file to write read-length chart pdf.
@@ -129,10 +134,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --METRIC_ACCUMULATION_LEVEL
     doc: The level(s) at which to accumulate metrics.
     inputBinding:
       position: 101
-      prefix: --METRIC_ACCUMULATION_LEVEL
   - id: quiet
     type:
       - 'null'
@@ -166,11 +172,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

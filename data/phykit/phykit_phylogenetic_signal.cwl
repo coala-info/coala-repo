@@ -14,9 +14,7 @@ inputs:
       position: 101
       prefix: --tree
   - id: trait_data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: tab-delimited trait file (taxon_name<tab>trait_value)
     inputBinding:
       position: 101

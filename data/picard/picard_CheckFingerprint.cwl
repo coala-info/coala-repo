@@ -9,16 +9,16 @@ doc: Checks the sample identity of the sequence/genotype data in the provided
   genotype file (in VCF format).
 inputs:
   - id: detail_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The text file to which to write detail metrics. Required. Cannot be 
       used in conjunction with argument(s) OUTPUT (O)
     inputBinding:
       position: 101
       prefix: --DETAIL_OUTPUT
   - id: genotypes
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File of genotypes (VCF) to be used in comparison. May contain any 
       number of genotypes; CheckFingerprint will use only those that are usable 
       for fingerprinting.
@@ -26,25 +26,23 @@ inputs:
       position: 101
       prefix: --GENOTYPES
   - id: haplotype_map
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The file lists a set of SNPs, optionally arranged in high-LD blocks, to
       be used for fingerprinting.
     inputBinding:
       position: 101
       prefix: --HAPLOTYPE_MAP
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input file SAM/BAM/CRAM or VCF. If a VCF is used, it must have at least
       one sample.
     inputBinding:
       position: 101
       prefix: --INPUT
   - id: output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The base prefix of output files to write. The summary metrics will have
       the file extension '.fingerprinting_summary_metrics' and the detail 
       metrics will have the extension '.fingerprinting_detail_metrics'.
@@ -52,7 +50,9 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: summary_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The text file to which to write summary metrics. Required. Cannot be 
       used in conjunction with argument(s) OUTPUT (O)
     inputBinding:
@@ -63,10 +63,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -177,11 +178,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -219,24 +221,28 @@ inputs:
       prefix: --showHidden
 outputs:
   - id: output_detail_output
-    type: File
+    type:
+      - 'null'
+      - File
     doc: The text file to which to write detail metrics. Required. Cannot be 
       used in conjunction with argument(s) OUTPUT (O)
     outputBinding:
-      glob: $(inputs.detail_output)
+      glob: '$(inputs.detail_output ? inputs.detail_output : [])'
   - id: output_output
     type: File[]
     doc: The base prefix of output files to write. The summary metrics will have
       the file extension '.fingerprinting_summary_metrics' and the detail 
       metrics will have the extension '.fingerprinting_detail_metrics'.
     outputBinding:
-      glob: $(inputs.output)*
+      glob: '$(inputs.output ? inputs.output + "*" : [])'
   - id: output_summary_output
-    type: File
+    type:
+      - 'null'
+      - File
     doc: The text file to which to write summary metrics. Required. Cannot be 
       used in conjunction with argument(s) OUTPUT (O)
     outputBinding:
-      glob: $(inputs.summary_output)
+      glob: '$(inputs.summary_output ? inputs.summary_output : [])'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

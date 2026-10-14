@@ -1,5 +1,11 @@
 # physiofit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| physiofit | PASS | ran config generation then fit on real E. coli batch data; fluxes agree with the published result (qGlc -8.19 vs -8.14, qAce 3.24 vs 3.24; growth rate 0.61 vs 0.51); the tool names result files with backslashes on Linux. |
+
 ## physiofit
 
 ### Tool Description

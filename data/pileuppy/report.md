@@ -1,5 +1,11 @@
 # pileuppy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pileuppy | PASS |  |
+
 ## pileuppy
 
 ### Tool Description

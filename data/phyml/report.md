@@ -1,5 +1,11 @@
 # phyml CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phyml | Failed | tool bug: main DNA run, bootstrap and site likelihood output are correct, but --print_trace always writes an empty trace file, even with SPR search and 54 taxa. |
+
 ## phyml
 
 ### Tool Description

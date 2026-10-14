@@ -4,11 +4,10 @@ baseCommand:
   - phykit
   - monophyly_check
 label: phykit_monophyly_check
-doc: Check for monophyly of a lineage. This analysis can be used to determine if
-  a set of taxa are monophyletic. Requires a taxa file, which specifies which 
-  tip names are expected to be monophyletic. The output will have six columns 
-  including monophyly status, bipartition support values, and additional 
-  monophyletic taxa.
+doc: Check for monophyly of a lineage. This analysis can be used to determine if a
+  set of taxa are monophyletic. Requires a taxa file, which specifies which tip names
+  are expected to be monophyletic. The output will have six columns including monophyly
+  status, bipartition support values, and additional monophyletic taxa.
 inputs:
   - id: tree
     type: File
@@ -16,9 +15,7 @@ inputs:
     inputBinding:
       position: 1
   - id: list_of_taxa
-    type:
-      - 'null'
-      - File
+    type: File
     doc: single column file with list of tip names to examine the monophyly of
     inputBinding:
       position: 2

@@ -85,6 +85,11 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outdir_path)
+        entry: '$({"class": "Directory", "basename": inputs.outdir_path, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgscatalog-utils:2.0.2--pyhdfd78af_0

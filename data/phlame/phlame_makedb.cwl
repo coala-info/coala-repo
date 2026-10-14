@@ -142,13 +142,11 @@ inputs:
       position: 102
       prefix: -p
   - id: output_db_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_db_path`
+    type: string
+    doc: Path to output classifier (required).
     inputBinding:
       position: 103
-      prefix: --output-db
+      prefix: -o
   - id: output_tree_path
     type:
       - 'null'

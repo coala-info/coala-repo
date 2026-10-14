@@ -4,9 +4,9 @@ baseCommand:
   - phykit
   - hidden_paralogy_check
 label: phykit_hidden_paralogy_check
-doc: Scan tree for evidence of hidden paralogy. This analysis examines if a set 
-  of well known monophyletic taxa are, in fact, monophyletic. If they are not, 
-  the evolutionary history of the gene may be subject to hidden paralogy.
+doc: Scan tree for evidence of hidden paralogy. This analysis examines if a set of
+  well known monophyletic taxa are, in fact, monophyletic. If they are not, the evolutionary
+  history of the gene may be subject to hidden paralogy.
 inputs:
   - id: tree
     type: File
@@ -14,9 +14,7 @@ inputs:
     inputBinding:
       position: 1
   - id: clade
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Clade file that specifies what monophyletic clades to expect
     inputBinding:
       position: 102

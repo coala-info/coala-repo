@@ -1,5 +1,14 @@
 # phyling CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phyling_align | PASS |  |
+| phyling_download | PASS |  |
+| phyling_filter | PASS |  |
+| phyling_tree | PASS |  |
+
 ## phyling_download
 
 ### Tool Description

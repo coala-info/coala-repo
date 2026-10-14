@@ -14,6 +14,22 @@ inputs:
     doc: File containing sampled trees
     inputBinding:
       position: 2
+  - id: tree_summary_output
+    type: string
+    doc: Output file for JSON-formatted tree summaries
+    inputBinding:
+      position: 3
+  - id: mutlist_output
+    type: string
+    doc: Output file for JSON-formatted list of mutations
+    inputBinding:
+      position: 4
+  - id: mutass_output
+    type: string
+    doc: "Output file for JSON-formatted list of SSMs and CNVs\n                 \
+      \      assigned to each subclone"
+    inputBinding:
+      position: 5
   - id: include_ssm_names
     type:
       - 'null'
@@ -32,22 +48,22 @@ inputs:
       position: 103
       prefix: --min-ssms
 outputs:
-  - id: tree_summary_output
+  - id: tree_summary_output_file
     type: File
     doc: Output file for JSON-formatted tree summaries
     outputBinding:
-      glob: '*.out'
-  - id: mutlist_output
+      glob: $(inputs.tree_summary_output)
+  - id: mutlist_output_file
     type: File
     doc: Output file for JSON-formatted list of mutations
     outputBinding:
-      glob: '*.out'
-  - id: mutass_output
+      glob: $(inputs.mutlist_output)
+  - id: mutass_output_file
     type: File
     doc: "Output file for JSON-formatted list of SSMs and CNVs\n                 \
       \      assigned to each subclone"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.mutass_output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylowgs:20181105--py27ha7db03b_3

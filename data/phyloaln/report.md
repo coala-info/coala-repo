@@ -1,5 +1,22 @@
 # phyloaln CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phyloaln_PhyloAln | PASS |  |
+| phyloaln_alignseq.pl | PASS |  |
+| phyloaln_check_aln.py | PASS |  |
+| phyloaln_connect.pl | PASS |  |
+| phyloaln_merge_seqs.py | PASS |  |
+| phyloaln_prune_tree.py | PASS | synthetic data: hand-written species tree of the test species |
+| phyloaln_revertransseq.pl | PASS |  |
+| phyloaln_root_tree.py | PASS | synthetic data: hand-written species tree of the test species |
+| phyloaln_select_seqs.py | PASS |  |
+| phyloaln_test_effect.py | PASS |  |
+| phyloaln_transseq.pl | PASS |  |
+| phyloaln_trim_matrix.py | PASS |  |
+
 ## phyloaln_PhyloAln
 
 ### Tool Description
@@ -326,6 +343,106 @@ Error: options < 3!
 Usage: /usr/local/bin/prune_tree.py input.nwk output.nwk seq/seqs(separated by comma)_in_clade1_for_deletion( seq/seqs_in_clade2_for_deletion ...)
 ```
 
+
+## phyloaln_alignseq.pl
+
+### Tool Description
+Align sequences in a file by mafft.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phyloaln:1.1.0--hdfd78af_0
+- **Homepage**: https://github.com/huangyh45/PhyloAln
+- **Package**: https://anaconda.org/channels/bioconda/packages/phyloaln/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+perl /usr/local/bin/alignseq.pl
+Align sequences in a file by mafft.
+Requirement: mafft
+
+Usage: 
+-i   input sequences file
+-o   output sequences file
+-a   type of alignment(direct/translate/codon/complement/ncRNA, default='direct', 'translate' means alignment of translation of sequences)
+-g   genetic code(default=1, invertebrate mitochondrion=5)
+-t   symbol of termination(default='X', mafft will clean '*')
+-c   if translate incomplete codons into 'X'(default=no)
+-m   if delete the intermediate files, such as translated files and aligned aa files(default=no)
+-f   the folder where mafft/linsi is, if mafft/linsi had been in PATH you can ignore this parameter
+-n   num threads(default=1)
+-l   log file(default='alignseq.log')
+-h   this help message
+
+Example:
+alignseq.pl -i inputfile -o outputfile -a aligntype -g gencode -t termination -c 1 -m 1 -f mafftfolder -n numthreads -l logfile
+
+Written by Yu-Hao Huang (2017-2024) huangyh45@mail3.sysu.edu.cn
+```
+
+## phyloaln_check_aln.py
+
+### Tool Description
+Check alignments by the average frequency per site and gaps at the ends.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phyloaln:1.1.0--hdfd78af_0
+- **Homepage**: https://github.com/huangyh45/PhyloAln
+- **Package**: https://anaconda.org/channels/bioconda/packages/phyloaln/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/check_aln.py input_dir output_dir(default='none') aver_freq_per_site(default=0.75) gap_symbol(default='-') start_end_no_gap_number(>=1)_or_percent(<1)(default=0.6) fasta_suffix(default='.fa')
+```
+
+## phyloaln_merge_seqs.py
+
+### Tool Description
+Merge the result directories of several PhyloAln runs.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phyloaln:1.1.0--hdfd78af_0
+- **Homepage**: https://github.com/huangyh45/PhyloAln
+- **Package**: https://anaconda.org/channels/bioconda/packages/phyloaln/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/merge_seqs.py output_dir PhyloAln_dir1 PhyloAln_dir2 (PhyloAln_dir3 ...)
+```
+
+## phyloaln_select_seqs.py
+
+### Tool Description
+Select or exclude species or sequences from alignments.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phyloaln:1.1.0--hdfd78af_0
+- **Homepage**: https://github.com/huangyh45/PhyloAln
+- **Package**: https://anaconda.org/channels/bioconda/packages/phyloaln/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/select_seqs.py input_dir selected_species_or_sequences(separated by comma) output_dir fasta_suffix(default='.fa') separate_symbol(default='.') if_list_for_exclusion(default=no)
+```
+
+## phyloaln_test_effect.py
+
+### Tool Description
+Compare aligned sequences of a species between two directories.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phyloaln:1.1.0--hdfd78af_0
+- **Homepage**: https://github.com/huangyh45/PhyloAln
+- **Package**: https://anaconda.org/channels/bioconda/packages/phyloaln/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/test_effect.py reference_dir:ref_species_or_seq_name target_dir:target_species_or_seq_name output_tsv unknown_symbol(default='N') separate(default='.') fasta_suffix(default='.fa') selected_species_or_sequences(separated by comma)
+```
 
 ## Metadata
 - **Skill**: generated

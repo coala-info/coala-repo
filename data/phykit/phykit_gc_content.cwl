@@ -4,15 +4,23 @@ baseCommand:
   - phykit
   - gc_content
 label: phykit_gc_content
-doc: Calculate GC content of a fasta file. GC content is negatively correlated 
-  with phylogenetic signal. If there are multiple entries, use the -v/--verbose 
-  option to determine the GC content of each fasta entry separately.
+doc: Calculate GC content of a fasta file. GC content is negatively correlated with
+  phylogenetic signal. If there are multiple entries, use the -v/--verbose option
+  to determine the GC content of each fasta entry separately.
 inputs:
   - id: fasta
     type: File
     doc: first argument after function name should be a fasta file
     inputBinding:
       position: 1
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: optional argument to print the GC content of each fasta entry
+    inputBinding:
+      position: 102
+      prefix: --verbose
   - id: json
     type:
       - 'null'

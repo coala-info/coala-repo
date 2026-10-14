@@ -15,17 +15,13 @@ inputs:
       position: 101
       prefix: --tree
   - id: trait_data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: tab-delimited trait file (taxon<tab>value)
     inputBinding:
       position: 101
       prefix: --trait_data
   - id: regime_data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: tab-delimited regime file (taxon<tab>regime_label)
     inputBinding:
       position: 101
@@ -47,7 +43,9 @@ inputs:
       position: 101
       prefix: --seed
   - id: plot
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output plot file path
     inputBinding:
       position: 101
@@ -182,6 +180,9 @@ inputs:
       position: 101
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot
     type:
       - 'null'
@@ -191,6 +192,7 @@ outputs:
       glob: $(inputs.plot)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_rate_heterogeneity.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

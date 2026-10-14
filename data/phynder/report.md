@@ -1,5 +1,11 @@
 # phynder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phynder | PASS | synthetic data: tree and VCF built from a real 7-primate BRCA1 alignment, query Chimp was placed in the Gorilla/Human clade; option -U stops with a command line error (tool bug, main mode works). |
+
 ## phynder
 
 ### Tool Description

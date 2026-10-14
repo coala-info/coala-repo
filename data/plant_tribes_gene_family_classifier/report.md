@@ -1,5 +1,11 @@
 # plant_tribes_gene_family_classifier CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plant_tribes_gene_family_classifier_GeneFamilyClassifier | PASS | ran on the small PlantTribes 12Gv1.0 test scaffold (its empty BLAST and HMM database folders were rebuilt from its own fasta and hmm files); all 11 proteins went to the one orthogroup |
+
 ## plant_tribes_gene_family_classifier_GeneFamilyClassifier
 
 ### Tool Description

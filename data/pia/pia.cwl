@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: PIACli
+baseCommand: pia
 label: pia
 doc: "PIA - Protein Inference Algorithms. Performs compilation or analysis of protein
   search results.\n\nTool homepage: https://github.com/medbioinf/pia"
@@ -48,7 +48,9 @@ inputs:
       position: 102
       prefix: --threads
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output file name (e.g. intermediate PIA file)
     inputBinding:
       position: 103
@@ -61,6 +63,15 @@ outputs:
     doc: output file name (e.g. intermediate PIA file)
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: export_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files exported by an analysis run (export file names come from the
+      analysis json)
+    outputBinding:
+      glob: ['*.mzTab', '*.csv', '*.mzid', '*.idXML']
 requirements:
   - class: InlineJavascriptRequirement
 hints:

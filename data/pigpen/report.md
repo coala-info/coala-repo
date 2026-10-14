@@ -1,5 +1,11 @@
 # pigpen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pigpen | Not completed | needs per-sample STAR, salmon and postmaster outputs from the OINC-seq pipeline; no small real data |
+
 ## pigpen
 
 ### Tool Description

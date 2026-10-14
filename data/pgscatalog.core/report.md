@@ -1,5 +1,13 @@
 # pgscatalog.core CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pgscatalog.core_pgscatalog-download | PASS |  |
+| pgscatalog.core_pgscatalog-format | PASS |  |
+| pgscatalog.core_pgscatalog-relabel | PASS |  |
+
 ## pgscatalog.core_pgscatalog-download
 
 ### Tool Description

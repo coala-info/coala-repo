@@ -154,6 +154,10 @@ outputs:
     doc: Output directory for images. Not required by all workflows.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.outdir ? [{entryname: inputs.outdir, entry: {class: 'Directory', listing: []}, writable: true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plantcv:3.8.0--py_0

@@ -4,12 +4,14 @@ baseCommand:
   - phykit
   - dstatistic
 label: phykit_dstatistic
-doc: Compute Patterson's D-statistic (ABBA-BABA test) for detecting 
-  introgression or gene flow. Supports site patterns from an alignment or 
-  quartet topologies from gene trees.
+doc: Compute Patterson's D-statistic (ABBA-BABA test) for detecting introgression
+  or gene flow. Supports site patterns from an alignment or quartet topologies from
+  gene trees.
 inputs:
   - id: alignment
-    type: File
+    type:
+      - 'null'
+      - File
     doc: FASTA alignment file (site-pattern mode)
     inputBinding:
       position: 101
@@ -18,8 +20,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: gene trees file, one Newick per line (gene-tree mode; trees can have 
-      any number of taxa)
+    doc: gene trees file, one Newick per line (gene-tree mode; trees can have any
+      number of taxa)
     inputBinding:
       position: 101
       prefix: --gene-trees
@@ -51,8 +53,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: block size for jackknife estimation of standard error (alignment mode 
-      only)
+    doc: block size for jackknife estimation of standard error (alignment mode only)
     inputBinding:
       position: 101
       prefix: --block-size
@@ -60,8 +61,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimum branch support threshold for gene trees; branches below this 
-      value are collapsed (treated as unresolved). Gene-tree mode only.
+    doc: minimum branch support threshold for gene trees; branches below this value
+      are collapsed (treated as unresolved). Gene-tree mode only.
     inputBinding:
       position: 101
       prefix: --support

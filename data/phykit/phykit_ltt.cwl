@@ -4,9 +4,9 @@ baseCommand:
   - phykit
   - ltt
 label: phykit_ltt
-doc: Lineage-through-time plot and gamma statistic. Computes the Pybus & Harvey 
-  (2000) gamma statistic to test for temporal variation in diversification 
-  rates. Optionally generates a lineage-through-time plot.
+doc: Lineage-through-time plot and gamma statistic. Computes the Pybus & Harvey (2000)
+  gamma statistic to test for temporal variation in diversification rates. Optionally
+  generates a lineage-through-time plot.
 inputs:
   - id: tree
     type: File
@@ -14,8 +14,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tree
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: print branching times and LTT data points
+    inputBinding:
+      position: 101
+      prefix: --verbose
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output filename for the lineage-through-time plot
     inputBinding:
       position: 101
@@ -120,8 +130,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 101
       prefix: --cladogram
@@ -137,8 +146,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: color annotation file for tip labels, clade ranges, and branch colors 
-      (iTOL-inspired TSV format)
+    doc: color annotation file for tip labels, clade ranges, and branch colors (iTOL-inspired
+      TSV format)
     inputBinding:
       position: 101
       prefix: --color-file
@@ -151,6 +160,8 @@ inputs:
       position: 101
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot_output
     type:
       - 'null'
@@ -166,3 +177,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_ltt.out

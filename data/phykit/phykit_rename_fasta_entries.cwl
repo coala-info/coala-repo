@@ -12,9 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: idmap
-    type:
-      - 'null'
-      - File
+    type: File
     doc: identifier map of current FASTA names (col1) and desired FASTA names 
       (col2)
     inputBinding:
@@ -22,9 +20,8 @@ inputs:
       prefix: --idmap
   - id: output
     type: string
-    doc: optional argument to write the renamed fasta file to. Default output 
-      has the same name as the input file with the suffix ".renamed.fa" added to
-      it.
+    doc: name used for the renamed fasta file; the tool adds the suffix 
+      ".renamed.fa" to it (so --output x.fa writes x.fa.renamed.fa)
     inputBinding:
       position: 102
       prefix: --output
@@ -38,14 +35,10 @@ inputs:
       prefix: --json
 outputs:
   - id: output_output
-    type:
-      - 'null'
-      - File
-    doc: optional argument to write the renamed fasta file to. Default output 
-      has the same name as the input file with the suffix ".renamed.fa" added to
-      it.
+    type: File
+    doc: renamed fasta file (output name plus the suffix ".renamed.fa")
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output).renamed.fa
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # phantompeakqualtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phantompeakqualtools | PASS | yeast ChIP vs input (bwa-aligned, 95k reads): cross-correlation gives NSC 1.32 and RSC 1.29, peak calling with -p=2 gives 833 narrow peaks; peak calling with -p=0 crashes inside spp (names(cc) error) |
+
 ## phantompeakqualtools
 
 ### Tool Description

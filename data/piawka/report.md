@@ -1,5 +1,11 @@
 # piawka CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| piawka | PASS | fixed: groups can be a file or the keywords unite/divide, VCF index .tbi staged; ran on the project minitest VCF with groups table: pi, Dxy, Hudson Fst, Watterson and Tajima-like values are plausible. |
+
 ## piawka
 
 ### Tool Description

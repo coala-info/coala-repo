@@ -14,7 +14,9 @@ inputs:
     inputBinding:
       position: 1
   - id: output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output image path
     inputBinding:
       position: 102

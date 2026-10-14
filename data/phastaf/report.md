@@ -1,5 +1,11 @@
 # phastaf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phastaf | Failed | tool bug: phastaf 0.1.0 accepts --mingenes but never uses it, so phage.bed keeps 16 clusters (many with 1 gene) instead of the 4 expected prophage regions; the rest of the run works |
+
 ## phastaf
 
 ### Tool Description

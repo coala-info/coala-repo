@@ -1,5 +1,11 @@
 # phylovega CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylovega | Failed | tool bug: every option crashes with a SyntaxError (the traitlets aliases are the literal text '{}.{}'), and the command reads no tree and writes no output |
+
 ## phylovega
 
 ### Tool Description

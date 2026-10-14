@@ -1,5 +1,11 @@
 # phispy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phispy | PASS |  |
+
 ## phispy
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # pirate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pirate_PIRATE | PASS |  |
+| pirate_subsample_outputs.pl | PASS |  |
+
 ## pirate_PIRATE
 
 ### Tool Description

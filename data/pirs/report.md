@@ -1,5 +1,12 @@
 # pirs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pirs_diploid | PASS | simulator run on the real SARS-CoV-2 reference |
+| pirs_simulate | PASS | simulator run on the real SARS-CoV-2 reference |
+
 ## pirs_diploid
 
 ### Tool Description

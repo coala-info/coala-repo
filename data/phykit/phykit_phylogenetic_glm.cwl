@@ -15,9 +15,7 @@ inputs:
       position: 101
       prefix: --tree
   - id: trait_data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: tab-delimited multi-trait file with header row
     inputBinding:
       position: 101

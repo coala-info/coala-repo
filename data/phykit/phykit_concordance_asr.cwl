@@ -4,8 +4,8 @@ baseCommand:
   - phykit
   - concordance_asr
 label: phykit_concordance_asr
-doc: Concordance-aware ancestral state reconstruction (ASR) that incorporates 
-  gene tree discordance into ancestral estimates.
+doc: Concordance-aware ancestral state reconstruction (ASR) that incorporates gene
+  tree discordance into ancestral estimates.
 inputs:
   - id: species_tree
     type: File
@@ -14,17 +14,13 @@ inputs:
       position: 101
       prefix: --tree
   - id: gene_trees
-    type:
-      - 'null'
-      - File
+    type: File
     doc: file with gene trees (multi-Newick, one per line)
     inputBinding:
       position: 101
       prefix: --gene-trees
   - id: trait_data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: trait data file (2-column or multi-trait with header)
     inputBinding:
       position: 101
@@ -54,16 +50,20 @@ inputs:
       position: 101
       prefix: --ci
   - id: plot
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output path for concordance ASR plot
     inputBinding:
       position: 101
       prefix: --plot
   - id: plot_uncertainty
-    type: string
-    doc: output path for uncertainty plot showing the distribution of ancestral 
-      estimates across gene trees (distribution method) or concordance sources 
-      (weighted method) as violin + boxplots
+    type:
+      - 'null'
+      - string
+    doc: output path for uncertainty plot showing the distribution of ancestral estimates
+      across gene trees (distribution method) or concordance sources (weighted method)
+      as violin + boxplots
     inputBinding:
       position: 101
       prefix: --plot-uncertainty
@@ -175,8 +175,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 101
       prefix: --cladogram
@@ -192,8 +191,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: color annotation file for tip labels, clade ranges, and branch colors 
-      (iTOL-inspired TSV format)
+    doc: color annotation file for tip labels, clade ranges, and branch colors (iTOL-inspired
+      TSV format)
     inputBinding:
       position: 101
       prefix: --color-file
@@ -206,6 +205,8 @@ inputs:
       position: 101
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot
     type:
       - 'null'
@@ -217,9 +218,9 @@ outputs:
     type:
       - 'null'
       - File
-    doc: output path for uncertainty plot showing the distribution of ancestral 
-      estimates across gene trees (distribution method) or concordance sources 
-      (weighted method) as violin + boxplots
+    doc: output path for uncertainty plot showing the distribution of ancestral estimates
+      across gene trees (distribution method) or concordance sources (weighted method)
+      as violin + boxplots
     outputBinding:
       glob: $(inputs.plot_uncertainty)
 requirements:
@@ -230,3 +231,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_concordance_asr.out

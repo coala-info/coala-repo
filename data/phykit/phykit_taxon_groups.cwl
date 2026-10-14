@@ -11,11 +11,12 @@ doc: Determine which tree or FASTA files share the same set of taxa. Reads a
 inputs:
   - id: list
     type: File
-    doc: 'file listing paths to gene trees or FASTA files (one per line). Blank lines
-      and lines starting with # are skipped.'
+    doc: 'file listing paths to gene trees or FASTA files (one per line), relative
+      to the list file. Blank lines and lines starting with # are skipped.'
     inputBinding:
       position: 101
       prefix: --list
+      valueFrom: $(self.basename)
   - id: format
     type:
       - 'null'
@@ -32,10 +33,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --json
+  - id: list_files
+    type:
+      type: array
+      items: File
+    doc: tree or fasta files named in the list file; staged so the names resolve in the working directory
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $([inputs.list].concat(inputs.list_files))
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

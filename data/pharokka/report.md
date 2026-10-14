@@ -1,5 +1,11 @@
 # pharokka CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pharokka | Not completed | needs the large Pharokka database (656 MB download, over the 200 MB limit); no small database exists |
+
 ## pharokka
 
 ### Tool Description

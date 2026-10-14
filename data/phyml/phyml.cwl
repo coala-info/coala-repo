@@ -78,6 +78,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+      valueFrom: $(self.basename)
   - id: inputtree
     type:
       - 'null'
@@ -223,39 +224,61 @@ inputs:
     doc: Transition/transversion ratio. DNA sequences only. Fixed value or 'e'.
     inputBinding:
       position: 101
-      prefix: --ts/tv
-  - id: print_site_lnl_path
+      prefix: -t
+  - id: print_site_lnl
     type:
       - 'null'
-      - string
+      - boolean
+    doc: Print the likelihood for each site in file *_phyml_lk.txt.
     inputBinding:
       position: 102
       prefix: --print_site_lnl
-  - id: print_trace_path
+  - id: print_trace
     type:
       - 'null'
-      - string
+      - boolean
+    doc: Print each phylogeny explored during the tree search process in file 
+      *_phyml_trace.txt.
     inputBinding:
       position: 103
       prefix: --print_trace
 outputs:
-  - id: print_site_lnl
-    type:
-      - 'null'
-      - File
-    doc: Print the likelihood for each site in file *_phyml_lk.txt.
+  - id: tree
+    type: ['null', File]
+    doc: Maximum-likelihood tree in Newick format (<input>_phyml_tree*.txt)
     outputBinding:
-      glob: $(inputs.print_site_lnl_path)
-  - id: print_trace
-    type:
-      - 'null'
-      - File
-    doc: Print each phylogeny explored during the tree search process in file 
-      *_phyml_trace.txt.
+      glob: $(inputs.input.basename)_phyml_tree*
+  - id: stats
+    type: ['null', File]
+    doc: Model parameters and likelihood (<input>_phyml_stats*.txt)
     outputBinding:
-      glob: $(inputs.print_trace_path)
+      glob: $(inputs.input.basename)_phyml_stats*
+  - id: boot_trees
+    type: ['null', File]
+    doc: Bootstrap trees (<input>_phyml_boot_trees*.txt)
+    outputBinding:
+      glob: $(inputs.input.basename)_phyml_boot_trees*
+  - id: boot_stats
+    type: ['null', File]
+    doc: Bootstrap statistics (<input>_phyml_boot_stats*.txt)
+    outputBinding:
+      glob: $(inputs.input.basename)_phyml_boot_stats*
+  - id: site_lnl
+    type: ['null', File]
+    doc: Likelihood of each site (<input>_phyml_lk*.txt)
+    outputBinding:
+      glob: $(inputs.input.basename)_phyml_lk*
+  - id: trace
+    type: ['null', File]
+    doc: Phylogenies explored during the tree search (<input>_phyml_trace*.txt)
+    outputBinding:
+      glob: $(inputs.input.basename)_phyml_trace*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyml:3.3.20220408--h9bc3f66_3

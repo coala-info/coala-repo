@@ -11,10 +11,11 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --INPUT
     doc: BAM file(s) of reads with duplicates marked
     inputBinding:
       position: 101
-      prefix: --INPUT
   - id: output
     type: string
     doc: File to which metrics should be written
@@ -26,10 +27,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: chimera_kb_min
     type:
       - 'null'
@@ -113,11 +115,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

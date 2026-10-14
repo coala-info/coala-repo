@@ -15,9 +15,7 @@ inputs:
       position: 101
       prefix: --tree
   - id: trait_data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: multi-trait TSV with header row; missing values marked as NA, ?, or 
       empty
     inputBinding:

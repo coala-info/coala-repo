@@ -12,12 +12,23 @@ inputs:
   - id: input
     type:
       type: array
-      items: File
+      items: string
+      inputBinding:
+        prefix: --INPUT
     doc: Paths (except for the file extensions) of Variant Calling Metrics files
-      to read and merge. This argument must be specified at least once.
+      to read and merge, as base names of the staged input_files (for example 
+      shard1 for shard1.variant_calling_detail_metrics and 
+      shard1.variant_calling_summary_metrics). This argument must be specified 
+      at least once.
     inputBinding:
       position: 101
-      prefix: --INPUT
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: The detail and summary metrics files (prefix.variant_calling_detail_metrics
+      and prefix.variant_calling_summary_metrics) of every prefix named in input;
+      staged in the working directory.
   - id: output
     type: string
     doc: Path (except for the file extension) of output metrics files to write.
@@ -29,10 +40,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -90,11 +102,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -138,6 +151,8 @@ outputs:
       glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0

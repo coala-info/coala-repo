@@ -1,128 +1,50 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phylip_drawtree
+baseCommand:
+  - drawtree
 label: phylip_drawtree
-doc: "Draws trees in various formats.\n\nTool homepage: http://evolution.genetics.washington.edu/phylip/"
+doc: "Plots an unrooted tree diagram. The program has no command-line options: it reads a menu from standard input (menu_answers) and reads fixed file names from the working directory. Menu letters: 0 screen type, P plotting device (Postscript, PCL, PICT, Windows bitmap, X bitmap, ...), B use branch lengths, L angle of labels, R rotation, I iteration, D avoid label overlap, S scale, C character height, F font, M margins, # page size.\n\nTool homepage: http://evolution.genetics.washington.edu/phylip/"
 inputs:
-  - id: input_tree_file
+  - id: intree
     type: File
-    doc: Input tree file
-    inputBinding:
-      position: 1
-  - id: color
-    type:
-      - 'null'
-      - string
-    doc: Color for labels
-    inputBinding:
-      position: 102
-  - id: flip
-    type:
-      - 'null'
-      - string
-    doc: Flip the tree along the specified axis
-    inputBinding:
-      position: 102
-  - id: font
-    type:
-      - 'null'
-      - string
-    doc: Font to use for labels
-    inputBinding:
-      position: 102
-  - id: format
-    type:
-      - 'null'
-      - string
-    doc: Format of the output tree (e.g., 'newick', 'nexus', 'phylip')
-    inputBinding:
-      position: 102
-  - id: height
-    type:
-      - 'null'
-      - int
-    doc: Height of the drawing
-    inputBinding:
-      position: 102
-  - id: labels
-    type:
-      - 'null'
-      - string
-    doc: Label the nodes with their names
-    inputBinding:
-      position: 102
-  - id: no_labels
-    type:
-      - 'null'
-      - boolean
-    doc: Do not label the nodes
-    inputBinding:
-      position: 102
-  - id: no_root
-    type:
-      - 'null'
-      - boolean
-    doc: Do not root the tree
-    inputBinding:
-      position: 102
-  - id: root
-    type:
-      - 'null'
-      - string
-    doc: Root the tree at the specified node
-    inputBinding:
-      position: 102
-  - id: rotate
-    type:
-      - 'null'
-      - float
-    doc: Rotate the tree by the specified angle
-    inputBinding:
-      position: 102
-  - id: scale
-    type:
-      - 'null'
-      - boolean
-    doc: Scale the tree branches by their lengths
-    inputBinding:
-      position: 102
-  - id: size
-    type:
-      - 'null'
-      - int
-    doc: Font size for labels
-    inputBinding:
-      position: 102
-  - id: unscaled
-    type:
-      - 'null'
-      - boolean
-    doc: Do not scale the tree branches
-    inputBinding:
-      position: 102
-  - id: width
-    type:
-      - 'null'
-      - int
-    doc: Line width for drawing
-    inputBinding:
-      position: 102
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+    doc: Tree in Newick format (staged as 'intree')
+  - id: fontfile
     type:
       - 'null'
       - File
-    doc: Output file for the drawing
+    doc: Font file (only for the Hershey-font plotting devices) (staged as 'fontfile')
+  - id: menu_answers
+    type:
+      type: array
+      items: string
+    doc: Answers typed at the program menu, one per line
+    default:
+      - '0'
+      - 'L'
+      - 'M'
+      - 'Y'
+arguments:
+  - position: 1
+    shellQuote: false
+    valueFrom: '< menu_answers.txt'
+outputs:
+  - id: plotfile
+    type: File
+    doc: Plot of the tree (PostScript by default)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: plotfile
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: intree
+        entry: $(inputs.intree)
+      - entryname: fontfile
+        entry: $(inputs.fontfile)
+      - entryname: menu_answers.txt
+        entry: $(inputs.menu_answers.join("\n") + "\n")
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylip:3.697--h470a237_0
+stdout: phylip_drawtree.out

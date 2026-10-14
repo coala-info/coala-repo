@@ -4,8 +4,8 @@ baseCommand:
   - phykit
   - dtt
 label: phykit_dtt
-doc: Disparity through time (DTT) analysis. Computes how morphological disparity
-  partitions among subclades through time (Harmon et al. 2003).
+doc: Disparity through time (DTT) analysis. Computes how morphological disparity partitions
+  among subclades through time (Harmon et al. 2003).
 inputs:
   - id: tree
     type: File
@@ -14,9 +14,7 @@ inputs:
       position: 101
       prefix: --tree
   - id: traits
-    type:
-      - 'null'
-      - File
+    type: File
     doc: TSV file with trait data
     inputBinding:
       position: 101
@@ -56,7 +54,9 @@ inputs:
       position: 101
       prefix: --seed
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output figure path
     inputBinding:
       position: 101
@@ -169,8 +169,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: Draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 101
       prefix: --cladogram
@@ -191,6 +190,8 @@ inputs:
       position: 101
       prefix: --color-file
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot_output
     type:
       - 'null'
@@ -206,3 +207,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_dtt.out

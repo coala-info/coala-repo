@@ -1,5 +1,22 @@
 # phylorank CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylorank_bl_decorate | PASS |  |
+| phylorank_bl_dist | PASS |  |
+| phylorank_bl_optimal | PASS |  |
+| phylorank_bl_table | Failed | tool bug: compares a float with None (Python 3 TypeError) in bl_dist.py, so it always crashes |
+| phylorank_compare_red | PASS |  |
+| phylorank_decorate | PASS |  |
+| phylorank_mark_tree | PASS |  |
+| phylorank_outliers | PASS |  |
+| phylorank_rank_res | PASS |  |
+| phylorank_rogue_test | PASS | synthetic data: three trees with the same topology (decorated, scaled and bl-decorated versions of one real tree), so every index is 0; --decorate crashes because genometreetk is not in the image |
+| phylorank_scale_tree | PASS |  |
+| phylorank_taxon_stats | PASS |  |
+
 ## phylorank_outliers
 
 ### Tool Description

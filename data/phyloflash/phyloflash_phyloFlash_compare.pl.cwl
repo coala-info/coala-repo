@@ -84,7 +84,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --csv
-      itemSeparator: ','
+      valueFrom: $(self.map(function(f) {return f.basename;}).join(","))
   - id: displaytaxa
     type:
       - 'null'
@@ -140,6 +140,7 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files.
+    default: test.phyloFlash_compare
     inputBinding:
       position: 101
       prefix: --out
@@ -163,6 +164,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --task
+      itemSeparator: ','
   - id: use_sam
     type:
       - 'null'
@@ -189,18 +191,25 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zip
-      itemSeparator: ','
+      valueFrom: $(self.map(function(f) {return f.basename;}).join(","))
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
   - id: out_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Files written with the prefix given in out
     outputBinding:
       glob: $(inputs.out)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.csv_files || [])
+      - $(inputs.zip_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyloflash:3.4.2--hdfd78af_0

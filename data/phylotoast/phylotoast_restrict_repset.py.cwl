@@ -8,7 +8,7 @@ doc: "Take a subset BIOM table (e.g. from a core calculation) and a representati
 inputs:
   - id: biom_fp
     type: File
-    doc: Path to a biom-format file with OTU-Sample abundance data.
+    doc: Path to a biom-format file with OTU-Sample abundance data (JSON BIOM only; the tool cannot read HDF5 BIOM).
     inputBinding:
       position: 101
       prefix: --biom_fp

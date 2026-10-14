@@ -4,15 +4,21 @@ baseCommand: picopore
 label: picopore
 doc: "A tool for reducing the size of an Oxford Nanopore Technologies dataset without
   losing any data\n\nTool homepage: https://github.com/scottgigante/picopore"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 inputs:
   - id: input
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: list of directories or fast5 files to shrink
     inputBinding:
       position: 1
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: fastq
     type:
       - 'null'
@@ -93,6 +99,12 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
+  - id: fast5_files
+    type:
+      type: array
+      items: File
+    outputBinding:
+      glob: '*.fast5'
   - id: stdout
     type: stdout
     doc: Standard output

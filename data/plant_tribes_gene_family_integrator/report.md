@@ -1,5 +1,11 @@
 # plant_tribes_gene_family_integrator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plant_tribes_gene_family_integrator_GeneFamilyIntegrator | PASS | ran on the 12Gv1.0 test scaffold and the classifier output |
+
 ## plant_tribes_gene_family_integrator_GeneFamilyIntegrator
 
 ### Tool Description

@@ -23,7 +23,9 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: output_map
-    type: string
+    type:
+      - 'null'
+      - File
     doc: Tab separated file with two columns, READ_GROUP_ID and OUTPUT, 
       providing file mapping only used if OUTPUT_BY_READGROUP is true.
     inputBinding:
@@ -34,39 +36,43 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: attribute_to_clear
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ATTRIBUTE_TO_CLEAR
     doc: When removing alignment information, the set of optional tags to 
       remove.
     inputBinding:
       position: 101
-      prefix: --ATTRIBUTE_TO_CLEAR
   - id: attribute_to_reverse
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ATTRIBUTE_TO_REVERSE
     doc: Attributes on negative strand reads that need to be reversed.
     inputBinding:
       position: 101
-      prefix: --ATTRIBUTE_TO_REVERSE
   - id: attribute_to_reverse_complement
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ATTRIBUTE_TO_REVERSE_COMPLEMENT
     doc: Attributes on negative strand reads that need to be reverse 
       complemented.
     inputBinding:
       position: 101
-      prefix: --ATTRIBUTE_TO_REVERSE_COMPLEMENT
   - id: compression_level
     type:
       - 'null'
@@ -159,6 +165,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -171,6 +178,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REMOVE_ALIGNMENT_INFORMATION
+      valueFrom: '$(self ? "true" : "false")'
   - id: remove_duplicate_information
     type:
       - 'null'
@@ -179,6 +187,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REMOVE_DUPLICATE_INFORMATION
+      valueFrom: '$(self ? "true" : "false")'
   - id: restore_hardclips
     type:
       - 'null'
@@ -188,6 +197,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --RESTORE_HARDCLIPS
+      valueFrom: '$(self ? "true" : "false")'
   - id: restore_original_qualities
     type:
       - 'null'
@@ -197,6 +207,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --RESTORE_ORIGINAL_QUALITIES
+      valueFrom: '$(self ? "true" : "false")'
   - id: sample_alias
     type:
       - 'null'
@@ -227,11 +238,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -273,12 +285,6 @@ outputs:
       OUTPUT_BY_READGROUP is true. Required unless OUTPUT_MAP is used.
     outputBinding:
       glob: $(inputs.output)
-  - id: output_output_map
-    type: File
-    doc: Tab separated file with two columns, READ_GROUP_ID and OUTPUT, 
-      providing file mapping only used if OUTPUT_BY_READGROUP is true.
-    outputBinding:
-      glob: $(inputs.output_map)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

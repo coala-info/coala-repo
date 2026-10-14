@@ -10,7 +10,7 @@ inputs:
       items: File
     doc: Input BAM file(s)
     inputBinding:
-      position: 1
+      position: 200
   - id: accurate_mode
     type:
       - 'null'
@@ -163,6 +163,11 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory_path)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pin_hic:3.0.0--h577a1d6_5

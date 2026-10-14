@@ -8,12 +8,12 @@ inputs:
     type: File
     doc: Newick tree file
     inputBinding:
-      position: 1
+      position: 201
   - id: vcf_for_tree
     type: File
     doc: VCF file for the tree
     inputBinding:
-      position: 2
+      position: 202
   - id: calc_mode
     type:
       - 'null'
@@ -96,12 +96,17 @@ inputs:
       position: 103
       prefix: -b
   - id: output_filename_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: ONEfile name; default is stdout [-]
     inputBinding:
       position: 104
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (ONEcode result when -o is not given)
   - id: output_filename
     type:
       - 'null'
@@ -114,3 +119,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phynder:1.0--h566b1c6_5
+stdout: phynder.out

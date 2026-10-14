@@ -4,21 +4,29 @@ baseCommand:
   - phykit
   - bipartition_support_stats
 label: phykit_bipartition_support_stats
-doc: Calculate summary statistics for bipartition support. High bipartition 
-  support values are thought to be desirable because they are indicative of 
-  greater certainty in tree topology.
+doc: Calculate summary statistics for bipartition support. High bipartition support
+  values are thought to be desirable because they are indicative of greater certainty
+  in tree topology.
 inputs:
   - id: tree
     type: File
     doc: first argument after function name should be a tree file
     inputBinding:
       position: 1
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: optional argument to print all values
+    inputBinding:
+      position: 102
+      prefix: --verbose
   - id: thresholds
     type:
       - 'null'
       - string
-    doc: optional comma-separated support cutoffs; reports count and fraction of
-      bipartitions below each cutoff
+    doc: optional comma-separated support cutoffs; reports count and fraction of bipartitions
+      below each cutoff
     inputBinding:
       position: 102
       prefix: --thresholds

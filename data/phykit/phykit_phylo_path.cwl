@@ -15,17 +15,13 @@ inputs:
       position: 101
       prefix: --tree
   - id: traits
-    type:
-      - 'null'
-      - File
+    type: File
     doc: TSV file with taxon and continuous trait columns
     inputBinding:
       position: 101
       prefix: --traits
   - id: models
-    type:
-      - 'null'
-      - File
+    type: File
     doc: 'model definition file with candidate DAGs. Format: name: A->B, B->C, ...'
     inputBinding:
       position: 101
@@ -39,13 +35,17 @@ inputs:
       position: 101
       prefix: --best-only
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output DAG plot file
     inputBinding:
       position: 101
       prefix: --plot-output
   - id: csv
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output CSV with model comparison and path coefficients
     inputBinding:
       position: 101
@@ -182,6 +182,9 @@ inputs:
       position: 101
       prefix: --color-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot_output
     type:
       - 'null'
@@ -198,6 +201,7 @@ outputs:
       glob: $(inputs.csv)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_phylo_path.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

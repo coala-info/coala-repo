@@ -1,5 +1,12 @@
 # pgscatalog.calc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pgscatalog.calc_pgscatalog-aggregate | PASS |  |
+| pgscatalog.calc_pgscatalog-ancestry-adjust | PASS |  |
+
 ## pgscatalog.calc_pgscatalog-aggregate
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # pilon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pilon | PASS |  |
+
 ## pilon
 
 ### Tool Description

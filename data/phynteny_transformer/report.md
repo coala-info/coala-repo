@@ -1,5 +1,11 @@
 # phynteny_transformer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phynteny_transformer | Not completed | needs a 233 MB pre-trained model download plus an ESM protein model from HuggingFace, over the test size limit; CWL was fixed (models is a directory, advanced options added) and starts correctly. |
+
 ## phynteny_transformer
 
 ### Tool Description

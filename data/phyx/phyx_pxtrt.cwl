@@ -36,7 +36,7 @@ inputs:
     doc: names in a file (each on a line)
     inputBinding:
       position: 101
-      prefix: --namesf
+      prefix: -f
   - id: silent
     type:
       - 'null'

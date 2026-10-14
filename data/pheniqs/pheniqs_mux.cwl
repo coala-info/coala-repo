@@ -42,10 +42,12 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to configuration file
+    doc: Path to configuration file (staged in the working directory so that
+      the files it imports resolve)
     inputBinding:
       position: 101
       prefix: --config
+      valueFrom: $(self.basename)
   - id: decoding_threads
     type:
       - 'null'
@@ -141,7 +143,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items: string
         inputBinding:
           prefix: --output
           separate: true
@@ -169,10 +171,12 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Output read token
+        inputBinding:
+          prefix: --token
+          separate: true
+    doc: Output read token (SEGMENT:START:END), may be repeated
     inputBinding:
       position: 101
-      prefix: --token
   - id: prior_file
     type:
       - 'null'
@@ -184,7 +188,7 @@ inputs:
   - id: report_file
     type:
       - 'null'
-      - File
+      - string
     doc: Path to report file
     inputBinding:
       position: 101
@@ -229,10 +233,39 @@ inputs:
     inputBinding:
       position: 101
       prefix: --validate
+  - id: staged_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files that the configuration file names by relative path (inputs,
+      imported configuration files, barcode tables); they are staged in the
+      working directory under their own names
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: report
+    type:
+      - 'null'
+      - File
+    doc: Report file written with --report
+    outputBinding:
+      glob: $(inputs.report_file)
+  - id: output_paths
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Output files written with --output
+    outputBinding:
+      glob: $(inputs.output_files)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return inputs.staged_files ? inputs.staged_files : []; }'
+      - '${ return inputs.config_file ? [inputs.config_file] : []; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pheniqs:2.1.0--py38h1b92da4_7

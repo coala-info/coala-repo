@@ -4,9 +4,9 @@ baseCommand:
   - phykit
   - evo_rate_per_site
 label: phykit_evolutionary_rate_per_site
-doc: Estimate evolutionary rate per site. Evolutionary rate per site is one 
-  minus the sum of squared frequency of different characters at a given site. 
-  Values may range from 0 (slow evolving) to 1 (fast evolving).
+doc: Estimate evolutionary rate per site. Evolutionary rate per site is one minus
+  the sum of squared frequency of different characters at a given site. Values may
+  range from 0 (slow evolving) to 1 (fast evolving).
 inputs:
   - id: fasta
     type: File
@@ -22,7 +22,9 @@ inputs:
       position: 102
       prefix: --plot
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output path for plot
     inputBinding:
       position: 102
@@ -127,8 +129,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 102
       prefix: --cladogram
@@ -144,8 +145,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: color annotation file for tip labels, clade ranges, and branch colors 
-      (iTOL-inspired TSV format)
+    doc: color annotation file for tip labels, clade ranges, and branch colors (iTOL-inspired
+      TSV format)
     inputBinding:
       position: 102
       prefix: --color-file
@@ -158,6 +159,8 @@ inputs:
       position: 102
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot_output
     type:
       - 'null'
@@ -173,3 +176,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_evolutionary_rate_per_site.out

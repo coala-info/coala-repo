@@ -9,7 +9,14 @@ inputs:
     type: File
     doc: JSON configuration file
     inputBinding:
-      position: 1
+      position: 200
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named inside the JSON configuration (alignment, tree), staged
+      in the working directory so the names resolve.
   - id: seed
     type:
       - 'null'
@@ -22,6 +29,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.data_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/physher:2.0.1--h4656aac_3

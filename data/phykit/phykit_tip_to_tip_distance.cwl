@@ -44,7 +44,9 @@ inputs:
       position: 104
       prefix: --plot
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output path for heatmap
     inputBinding:
       position: 104
@@ -180,6 +182,9 @@ inputs:
       position: 104
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot_output
     type:
       - 'null'
@@ -189,6 +194,7 @@ outputs:
       glob: $(inputs.plot_output)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_tip_to_tip_distance.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

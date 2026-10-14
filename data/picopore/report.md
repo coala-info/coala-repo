@@ -1,5 +1,14 @@
 # picopore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| picopore | PASS |  |
+| picopore_picopore-realtime | Not completed | long-running directory monitor that never exits; skipped |
+| picopore_picopore-rename | PASS |  |
+| picopore_picopore-test | PASS |  |
+
 ## picopore
 
 ### Tool Description
@@ -158,3 +167,43 @@ optional arguments:
                         silence (Default: 100)
 ```
 
+## picopore_picopore-rename
+
+### Tool Description
+A tool for renaming groups and datasets within Oxford Nanopore Technologies FAST5 files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/picopore:1.2.0--pyh8b68c5b_1
+- **Homepage**: https://github.com/scottgigante/picopore
+- **Package**: https://anaconda.org/channels/bioconda/packages/picopore/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: picopore-rename [-h] -p PATTERN -r REPLACEMENT [-v] [-y] [-t INT]
+                       [--prefix STR] [--skip-root] [--print-every INT]
+                       [input [input ...]]
+
+"A tool for renaming groups and datasets within Oxford Nanopore Technologies
+FAST5 files
+
+positional arguments:
+  input                 list of directories or fast5 files to shrink
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATTERN, --pattern PATTERN
+                        String or regex to replace
+  -r REPLACEMENT, --replacement REPLACEMENT
+                        String or regex replacement for PATTERN
+  -v, --version         show version number and exit
+  -y                    skip confirm step
+  -t INT, --threads INT
+                        number of threads (Default: 1)
+  --prefix STR          add prefix to output files to prevent overwrite
+  --skip-root, --no-skip-root
+                        ignore files in root input directories for albacore
+                        realtime compression (Default: --no-skip-root)
+  --print-every INT     print a dot every approximately INT files, or -1 to
+                        silence (Default: 100)
+```

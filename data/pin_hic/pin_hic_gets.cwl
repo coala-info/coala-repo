@@ -12,11 +12,9 @@ inputs:
       items: File
     doc: SAT file(s)
     inputBinding:
-      position: 1
+      position: 200
   - id: fasta_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: fasta file
     inputBinding:
       position: 102

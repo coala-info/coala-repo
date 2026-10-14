@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Physiofit
+baseCommand: physiofit4galaxy
 label: physiofit4galaxy
 doc: "Extracellular flux estimation software\n\nTool homepage: https://github.com/MetaSys-LISBP/PhysioFit4Galaxy"
 inputs:
@@ -47,7 +47,7 @@ inputs:
   - id: deg
     type:
       - 'null'
-      - boolean
+      - string
     doc: Should degradation constants be taken into consideration. Add for True.
       Constants should then be given in dictionary format
     inputBinding:
@@ -105,7 +105,7 @@ inputs:
   - id: vini
     type:
       - 'null'
-      - string
+      - float
     doc: Select an initial value for fluxes to estimate
     inputBinding:
       position: 101

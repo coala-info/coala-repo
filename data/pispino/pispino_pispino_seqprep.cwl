@@ -69,7 +69,8 @@ inputs:
       "-v 8 -v 15", PEAR will use the later.'
     inputBinding:
       position: 101
-      prefix: --PEAR_options
+      prefix: --PEAR_options=
+      separate: false
   - id: retain_intermediate_files
     type:
       - 'null'

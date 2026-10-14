@@ -4,9 +4,8 @@ baseCommand:
   - phykit
   - covarying_evolutionary_rates
 label: phykit_covarying_evolutionary_rates
-doc: Determine if two genes have a signature of covariation with one another by 
-  calculating the correlation among relative evolutionary rates between two 
-  phylogenies.
+doc: Determine if two genes have a signature of covariation with one another by calculating
+  the correlation among relative evolutionary rates between two phylogenies.
 inputs:
   - id: tree_file_zero
     type: File
@@ -14,23 +13,25 @@ inputs:
     inputBinding:
       position: 1
   - id: tree_file_one
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Second argument after function name should be a tree file
     inputBinding:
       position: 2
   - id: reference
-    type:
-      - 'null'
-      - File
-    secondaryFiles:
-      - .fai
-    doc: A tree to correct branch lengths by in the two input trees. Typically, 
-      this is a putative species tree.
+    type: File
+    doc: A tree to correct branch lengths by in the two input trees. Typically, this
+      is a putative species tree.
     inputBinding:
       position: 103
       prefix: --reference
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: print out corrected branch lengths shared between tree 0 and tree 1
+    inputBinding:
+      position: 103
+      prefix: --verbose
   - id: plot
     type:
       - 'null'
@@ -40,7 +41,9 @@ inputs:
       position: 103
       prefix: --plot
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output path for plot
     inputBinding:
       position: 103
@@ -145,8 +148,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 103
       prefix: --cladogram
@@ -162,8 +164,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: color annotation file for tip labels, clade ranges, and branch colors 
-      (iTOL-inspired TSV format)
+    doc: color annotation file for tip labels, clade ranges, and branch colors (iTOL-inspired
+      TSV format)
     inputBinding:
       position: 103
       prefix: --color-file
@@ -176,6 +178,8 @@ inputs:
       position: 103
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot_output
     type:
       - 'null'
@@ -191,3 +195,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_covarying_evolutionary_rates.out

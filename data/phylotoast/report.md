@@ -1,46 +1,83 @@
 # phylotoast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylotoast_LDA.py | PASS | synthetic data: the mapping file with two groups of samples S1-S5 and S6-S10 was planted for the real test.biom |
+| phylotoast_otu_to_tax_name.py | PASS |  |
+| phylotoast_restrict_repset.py | PASS | synthetic data: real test sequences renamed to the OTU ids of a JSON subset of test.biom; the tool reads JSON BIOM only |
+| phylotoast_transform_biom.py | PASS |  |
+
 ## phylotoast_LDA.py
 
 ### Tool Description
-Performs Latent Dirichlet Allocation (LDA) analysis on phylogenetic data.
+This script calculates and returns LDA plots based on normalized relative abundances or distance matrices (for e.g. unifrac distance matrix).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/phylotoast:1.4.0rc2--py27_0
 - **Homepage**: https://github.com/smdabdoub/phylotoast
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/phylotoast/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/phylotoast/overview
-- **Total Downloads**: 15.4K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/smdabdoub/phylotoast
-- **Stars**: N/A
 ### Original Help Text
 ```text
-/usr/local/lib/python2.7/site-packages/matplotlib/font_manager.py:273: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
-  warnings.warn('Matplotlib is building the font cache using fc-list. This may take a moment.')
-Traceback (most recent call last):
-  File "/usr/local/bin/LDA.py", line 4, in <module>
-    __import__('pkg_resources').run_script('phylotoast==1.4.0rc2', 'LDA.py')
-  File "/usr/local/lib/python2.7/site-packages/setuptools-27.2.0-py2.7.egg/pkg_resources/__init__.py", line 744, in run_script
-  File "/usr/local/lib/python2.7/site-packages/setuptools-27.2.0-py2.7.egg/pkg_resources/__init__.py", line 1506, in run_script
-  File "/usr/local/lib/python2.7/site-packages/phylotoast-1.4.0rc2-py2.7.egg/EGG-INFO/scripts/LDA.py", line 10, in <module>
-    
-  File "build/bdist.linux-x86_64/egg/phylotoast/graph_util.py", line 21, in <module>
-  File "/usr/local/lib/python2.7/site-packages/matplotlib/pyplot.py", line 114, in <module>
-    _backend_mod, new_figure_manager, draw_if_interactive, _show = pylab_setup()
-  File "/usr/local/lib/python2.7/site-packages/matplotlib/backends/__init__.py", line 32, in pylab_setup
-    globals(),locals(),[backend_name],0)
-  File "/usr/local/lib/python2.7/site-packages/matplotlib/backends/backend_qt5agg.py", line 16, in <module>
-    from .backend_qt5 import QtCore
-  File "/usr/local/lib/python2.7/site-packages/matplotlib/backends/backend_qt5.py", line 31, in <module>
-    from .qt_compat import QtCore, QtGui, QtWidgets, _getSaveFileName, __version__
-  File "/usr/local/lib/python2.7/site-packages/matplotlib/backends/qt_compat.py", line 137, in <module>
-    from PyQt4 import QtCore, QtGui
-ImportError: No module named PyQt4
-```
+usage: LDA.py [-h] -m MAP_FP -g GROUP_BY [-c COLORS] [-ot OTU_TABLE]
+              [-dm DIST_MATRIX_FILE] [--save_lda_input SAVE_LDA_INPUT]
+              [--plot_title PLOT_TITLE] [-o OUT_FP] [-d {2,3}]
+              [--z_angles Z_ANGLES Z_ANGLES] [--figsize FIGSIZE FIGSIZE]
+              [--font_size FONT_SIZE] [--label_padding LABEL_PADDING]
+              [--annotate_points] [--ggplot2_style]
 
+This script calculates and returns LDA plots based on normalized relative
+abundances or distance matrices (for e.g. unifrac distance matrix).
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -m MAP_FP, --map_fp MAP_FP
+                        Metadata mapping file. [REQUIRED]
+  -g GROUP_BY, --group_by GROUP_BY
+                        A column name in the mapping file containing
+                        categorical values that will be used to identify
+                        groups. Each sample ID must have a group entry.
+                        Default is no categories and all the data will be
+                        treated as a single group. [REQUIRED]
+  -c COLORS, --colors COLORS
+                        A column name in the mapping file containing
+                        hexadecimal (#FF0000) color values that will be used
+                        to color the groups. Each sample ID must have a color
+                        entry.
+  -ot OTU_TABLE, --otu_table OTU_TABLE
+                        Input biom file format OTU table.
+  -dm DIST_MATRIX_FILE, --dist_matrix_file DIST_MATRIX_FILE
+                        Input distance matrix file.
+  --save_lda_input SAVE_LDA_INPUT
+                        Save a CSV-format file of the transposed LDA-input
+                        table to the file specifed by this option.
+  --plot_title PLOT_TITLE
+                        Plot title. Default is no title.
+  -o OUT_FP, --out_fp OUT_FP
+                        The path and file name to save the LDA plot under. If
+                        specified, the figure will be saved directly instead
+                        of opening a window in which the plot can be viewed
+                        before saving.
+  -d {2,3}, --dimensions {2,3}
+                        Choose whether to plot 2D or 3D. Default is a 2D view.
+  --z_angles Z_ANGLES Z_ANGLES
+                        Specify the azimuth and elevation angles for a 3D
+                        plot.
+  --figsize FIGSIZE FIGSIZE
+                        Specify the 'width height' in inches for LDA plots.
+                        Default figure size is 14x8 inches.
+  --font_size FONT_SIZE
+                        Sets the font size for text elements in the plot.
+  --label_padding LABEL_PADDING
+                        Sets the spacing in points between the each axis and
+                        its label.
+  --annotate_points     If specified, each data point will be labeled with its
+                        sample ID. Default is False.
+  --ggplot2_style       Apply ggplot2 styling to the figure. Default is False.
+```
 
 ## phylotoast_transform_biom.py
 

@@ -4,9 +4,9 @@ baseCommand:
   - phykit
   - occupancy_filter
 label: phykit_occupancy_filter
-doc: Filter alignments and/or trees by cross-file taxon occupancy. Counts how 
-  many files each taxon appears in and retains only taxa meeting a minimum 
-  threshold. Outputs filtered copies of each input file.
+doc: Filter alignments and/or trees by cross-file taxon occupancy. Counts how many
+  files each taxon appears in and retains only taxa meeting a minimum threshold. Outputs
+  filtered copies of each input file.
 inputs:
   - id: file_list
     type: File
@@ -14,6 +14,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --list
+      valueFrom: $(self.basename)
   - id: format
     type:
       - 'null'
@@ -26,9 +27,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimum occupancy to retain a taxon. Values between 0 and 1 are treated
-      as a fraction (e.g., 0.5 = 50% of files). Values >= 1 are treated as an 
-      absolute count.
+    doc: minimum occupancy to retain a taxon. Values between 0 and 1 are treated as
+      a fraction (e.g., 0.5 = 50% of files). Values >= 1 are treated as an absolute
+      count.
     inputBinding:
       position: 101
       prefix: --threshold
@@ -54,7 +55,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --json
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: alignment or tree files named in the list file; staged into the working directory
+      so the list entries resolve
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_output_dir
     type:
       - 'null'
@@ -64,9 +73,14 @@ outputs:
       glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.file_list)
+      - $(inputs.input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_occupancy_filter.out

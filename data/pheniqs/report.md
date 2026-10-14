@@ -1,5 +1,11 @@
 # pheniqs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pheniqs_mux | PASS | BDGGG demultiplexing run: 494 shared reads match the repo expected file (older version, other tag names); fastq copy mode also checked |
+
 ## pheniqs_mux
 
 ### Tool Description

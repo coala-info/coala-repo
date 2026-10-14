@@ -15,9 +15,7 @@ inputs:
       position: 101
       prefix: --trees
   - id: groups
-    type:
-      - 'null'
-      - File
+    type: File
     doc: a tab-delimited file with the grouping designations to test. Names of 
       individual taxa should be separated by a semi-colon ';'
     inputBinding:
@@ -31,10 +29,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --json
+  - id: tree_files
+    type:
+      type: array
+      items: File
+    doc: tree files named in the trees list file; staged so the names resolve in the working directory
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.tree_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

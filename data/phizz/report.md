@@ -1,5 +1,14 @@
 # phizz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phizz_build-genes | Failed | tool bug: Python 3 crash comparing gzip bytes with a str (startswith), so no gene database is written |
+| phizz_delete | PASS |  |
+| phizz_init | Failed | image problem: the tool writes its config file into the read-only package folder inside the image |
+| phizz_query | PASS |  |
+
 ## phizz_build-genes
 
 ### Tool Description
@@ -31,7 +40,7 @@ Options:
 ## phizz_delete
 
 ### Tool Description
-Deletes the phizz database.
+Delete the database.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/phizz:0.2.3--py_0
@@ -41,8 +50,14 @@ Deletes the phizz database.
 
 ### Original Help Text
 ```text
-[2026-02-25 01:48:25,249] phizz.cli                 INFO     Deleting database /usr/local/lib/python3.7/site-packages/phizz/resources/phizz.db
-[2026-02-25 01:48:25,568] phizz.cli                 INFO     Database /usr/local/lib/python3.7/site-packages/phizz/resources/phizz.db deleted
+Usage: phizz delete [OPTIONS]
+
+  Delete the database.
+
+Options:
+  --db_name PATH
+  --path TEXT
+  --help          Show this message and exit.
 ```
 
 ## phizz_query
@@ -75,6 +90,29 @@ Options:
   --start INTEGER
   --stop INTEGER
   --help                  Show this message and exit.
+```
+
+## phizz_init
+
+### Tool Description
+Create a config file for phizz.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phizz:0.2.3--py_0
+- **Homepage**: https://github.com/moonso/phizz
+- **Package**: https://anaconda.org/channels/bioconda/packages/phizz/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: phizz init [OPTIONS]
+
+  Create a config file for phizz.
+
+Options:
+  --db_name TEXT
+  --path TEXT
+  --help          Show this message and exit.
 ```
 
 ## Metadata

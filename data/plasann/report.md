@@ -1,5 +1,11 @@
 # plasann CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plasann_PlasAnn | Not completed | needs a 524 MB database downloaded from Zenodo at first run (too large and slow); wrapper now stages the input writable and allows network |
+
 ## plasann_PlasAnn
 
 ### Tool Description

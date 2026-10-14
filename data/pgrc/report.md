@@ -1,5 +1,11 @@
 # pgrc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pgrc_PgRC | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

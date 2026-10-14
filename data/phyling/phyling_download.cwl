@@ -24,6 +24,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: markerset_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Downloaded markersets (the ~/.phyling folder; HOME is the working directory)
+    outputBinding:
+      glob: .phyling
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyling:2.3.1--pyhdfd78af_0

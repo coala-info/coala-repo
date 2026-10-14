@@ -1,5 +1,16 @@
 # phava CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phava_cluster | PASS |  |
+| phava_create | PASS |  |
+| phava_locate | PASS |  |
+| phava_ratio | PASS |  |
+| phava_summarize | PASS |  |
+| phava_variation_wf | PASS |  |
+
 ## phava_variation_wf
 
 ### Tool Description
@@ -295,48 +306,6 @@ CLUSTER PARAMETERS:
   -f FLANKSIZE, --flankSize FLANKSIZE
                         Size flanking size to include on either side of
                         invertable regions (in bps) (default: 1000)
-```
-
-## phava_test
-
-### Tool Description
-PhaVa tool for locating, creating, and analyzing inverted repeats.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phava:0.2.3--pyhdfd78af_0
-- **Homepage**: https://github.com/patrickwest/PhaVa
-- **Package**: https://anaconda.org/channels/bioconda/packages/phava/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-PhaVa Locate:
-INFO:root:------Beginning IR locating operation------
-INFO:root:------Beginning IR search------
-INFO:root:einverted -maxrepeat 750  -gap 100 -threshold 51 -match 5 -mismatch -9 -outfile /usr/local/tests/test_outputs/intermediate/einverted.51.outfile -outseq /usr/local/tests/test_outputs/intermediate/einverted.51.outseq -sequence /usr/local/tests/test_small.fna
-INFO:root:b'Find inverted repeats in nucleotide sequences'
-INFO:root:einverted -maxrepeat 750  -gap 100 -threshold 75 -match 5 -mismatch -15 -outfile /usr/local/tests/test_outputs/intermediate/einverted.75.outfile -outseq /usr/local/tests/test_outputs/intermediate/einverted.75.outseq -sequence /usr/local/tests/test_small.fna
-INFO:root:b"Find inverted repeats in nucleotide sequences\nWarning: No sequences written to output file '/usr/local/tests/test_outputs/intermediate/einverted.75.outseq'"
-INFO:root:------Finished IR search------
-INFO:root:------Finished pickling IR database------
-INFO:root:------Finished IR locating operation------
-
-PhaVa Create:
-INFO:root:------Beginning IR create operation------
-INFO:root:------Beginning mock IR creation------
-INFO:root:------Finished unpickling IR database------
-INFO:root:------Finished mock IR creation------
-INFO:root:------Finished pickling IR database------
-INFO:root:------Finished IR create operation------
-
-PhaVa Ratio:
-INFO:root:------Beginning IR ratio operation------
-INFO:root:------Beginning IR ratio calculation------
-INFO:root:------Finished unpickling IR database------
-INFO:root:minimap2 -a --MD -o /usr/local/tests/test_outputs/intermediate/simulated_reads.fastq_vs_test_small.fna.sam -t 1 /usr/local/tests/test_outputs/data/invertedSeqs.fasta /usr/local/tests/simulated_reads.fastq
-test_genome:9567-9590-9803-9826	7	5	0.4166666666666667	simulated_reads.fastq
-INFO:root:------Finished IR ratio calculation------
-INFO:root:------Finished IR ratio operation------
 ```
 
 ## Metadata

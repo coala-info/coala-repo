@@ -5,22 +5,13 @@ label: plasann_PlasAnn
 doc: "PlasAnn v1.1.6 - Comprehensive Plasmid Annotation Pipeline\n\nTool homepage:
   https://github.com/ajlopatkin/PlasAnn"
 inputs:
-  - id: check_deps
-    type:
-      - 'null'
-      - boolean
-    doc: Check external dependency status and exit
-    inputBinding:
-      position: 101
-      prefix: --check-deps
   - id: input
-    type:
-      - 'null'
-      - File
-    doc: Input FASTA or GenBank file/folder
+    type: File
+    doc: Input FASTA or GenBank file. It is staged in the working directory because PlasAnn writes Prodigal results beside the input file.
     inputBinding:
       position: 101
       prefix: --input
+      valueFrom: $(self.basename)
   - id: min_identity
     type:
       - 'null'
@@ -86,6 +77,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --uniprot-tsv
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 outputs:
   - id: stdout
     type: stdout

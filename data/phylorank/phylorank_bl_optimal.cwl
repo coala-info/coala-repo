@@ -17,6 +17,11 @@ inputs:
     doc: rank of labels (1, 2, 3, 4, 5, or 6)
     inputBinding:
       position: 2
+  - id: output_table_path
+    type: string
+    doc: desired named of output table
+    inputBinding:
+      position: 3
   - id: max_dist
     type:
       - 'null'
@@ -46,7 +51,7 @@ outputs:
     type: File
     doc: desired named of output table
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_table_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

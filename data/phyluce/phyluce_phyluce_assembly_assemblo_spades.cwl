@@ -39,7 +39,7 @@ inputs:
   - id: log_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to a directory to hold logs.
     inputBinding:
       position: 101

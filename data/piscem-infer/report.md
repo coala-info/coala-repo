@@ -1,5 +1,11 @@
 # piscem-infer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| piscem-infer_quant | PASS | ran on piscem map-bulk output of real yeast Hi-C reads; total expected count matches mapped reads |
+
 ## piscem-infer_quant
 
 ### Tool Description

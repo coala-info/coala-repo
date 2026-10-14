@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --alignment
   - id: phenotype
-    type:
-      - 'null'
-      - File
+    type: File
     doc: 'two-column TSV file: taxon<tab>phenotype'
     inputBinding:
       position: 101
@@ -70,7 +68,9 @@ inputs:
       position: 101
       prefix: --dot-size
   - id: csv
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output per-site results as CSV to the specified file
     inputBinding:
       position: 101

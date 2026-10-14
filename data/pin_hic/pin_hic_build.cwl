@@ -10,7 +10,7 @@ inputs:
     type: File
     doc: Links matrix file
     inputBinding:
-      position: 1
+      position: 200
   - id: accurate_mode
     type:
       - 'null'
@@ -60,9 +60,7 @@ inputs:
       position: 102
       prefix: -n
   - id: reference_index
-    type:
-      - 'null'
-      - File
+    type: File
     doc: reference index file
     inputBinding:
       position: 102

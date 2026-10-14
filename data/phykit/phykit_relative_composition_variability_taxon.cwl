@@ -23,7 +23,9 @@ inputs:
       position: 102
       prefix: --plot
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output path for plot
     inputBinding:
       position: 102
@@ -159,6 +161,9 @@ inputs:
       position: 102
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot_output
     type:
       - 'null'
@@ -168,6 +173,7 @@ outputs:
       glob: $(inputs.plot_output)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_relative_composition_variability_taxon.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

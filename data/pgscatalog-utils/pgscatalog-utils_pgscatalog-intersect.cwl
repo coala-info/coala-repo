@@ -35,8 +35,6 @@ inputs:
   - id: reference
     type: File
     doc: path/to/REFERENCE/pvar
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -45,7 +43,13 @@ inputs:
       type: array
       items: File
     doc: A list of paths of target genomic variants (.bim/pvar format). The 
-      .afreq and .vmiss files are also required for these files.
+      .afreq.gz and .vmiss.gz files with the same file stem are also required
+      for these files.
+    secondaryFiles:
+      - pattern: '$(self.basename.split(".")[0] + ".afreq.gz")'
+        required: true
+      - pattern: '$(self.basename.split(".")[0] + ".vmiss.gz")'
+        required: true
     inputBinding:
       position: 101
       prefix: --target
@@ -79,6 +83,11 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outdir_path)
+        entry: '$({"class": "Directory", "basename": inputs.outdir_path, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgscatalog-utils:2.0.2--pyhdfd78af_0

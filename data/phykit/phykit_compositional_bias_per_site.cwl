@@ -4,8 +4,8 @@ baseCommand:
   - phykit
   - compositional_bias_per_site
 label: phykit_compositional_bias_per_site
-doc: Calculates compositional bias per site in an alignment using site-wise 
-  chi-squared tests.
+doc: Calculates compositional bias per site in an alignment using site-wise chi-squared
+  tests.
 inputs:
   - id: alignment
     type: File
@@ -16,13 +16,15 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Optional argument to save a Manhattan-style plot of compositional bias 
-      per site
+    doc: Optional argument to save a Manhattan-style plot of compositional bias per
+      site
     inputBinding:
       position: 102
       prefix: --plot
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output path for plot
     inputBinding:
       position: 102
@@ -127,8 +129,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: Draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 102
       prefix: --cladogram
@@ -144,8 +145,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Color annotation file for tip labels, clade ranges, and branch colors 
-      (iTOL-inspired TSV format)
+    doc: Color annotation file for tip labels, clade ranges, and branch colors (iTOL-inspired
+      TSV format)
     inputBinding:
       position: 102
       prefix: --color-file
@@ -158,6 +159,8 @@ inputs:
       position: 102
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot_output
     type:
       - 'null'
@@ -173,3 +176,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_compositional_bias_per_site.out

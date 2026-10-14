@@ -1,5 +1,17 @@
 # phyluce CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phyluce_phyluce_align_get_align_summary_data | PASS |  |
+| phyluce_phyluce_align_get_only_loci_with_min_taxa | PASS |  |
+| phyluce_phyluce_align_get_trimmed_alignments_from_untrimmed | PASS |  |
+| phyluce_phyluce_align_seqcap_align | PASS |  |
+| phyluce_phyluce_assembly_assemblo_spades | PASS |  |
+| phyluce_phyluce_assembly_get_fastas_from_match_counts | PASS |  |
+| phyluce_phyluce_assembly_get_match_counts | PASS |  |
+
 ## phyluce_phyluce_assembly_assemblo_spades
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # physiofit4galaxy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| physiofit4galaxy | PASS | ran in galaxy mode on real E. coli batch data (also from a saved config); fluxes agree with the published result (qGlc -8.09 vs -8.14, qAce 3.20 vs 3.24). |
+
 ## physiofit4galaxy
 
 ### Tool Description

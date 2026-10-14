@@ -25,8 +25,8 @@ inputs:
   - id: taxa_file
     type:
       - 'null'
-      - File
-    doc: Optional taxa file
+      - string
+    doc: output file indicating taxa within each resolution category
     inputBinding:
       position: 103
       prefix: --taxa_file
@@ -36,6 +36,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: '$(inputs.output_file)'
+  - id: out_taxa_file
+    type:
+      - 'null'
+      - File
+    doc: Output file indicating taxa within each resolution category
+    outputBinding:
+      glob: $(inputs.taxa_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylorank:0.1.12--pyhdfd78af_0

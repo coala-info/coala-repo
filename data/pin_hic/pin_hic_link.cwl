@@ -10,7 +10,7 @@ inputs:
     type: File
     doc: Input BAM file
     inputBinding:
-      position: 1
+      position: 200
   - id: collect_all
     type:
       - 'null'
@@ -53,20 +53,14 @@ inputs:
       prefix: -d
   - id: output_file_path
     type: string
-    doc: STR      output file [stdout]
-    inputBinding:
-      position: 103
-      prefix: -o
+    doc: Name of the file that receives the link matrix (pin_hic link writes it to stdout; its -o option is rejected by version 3.0.0)
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: output file
-    outputBinding:
-      glob: $(inputs.output_file_path)
+    type: stdout
+    doc: link matrix
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pin_hic:3.0.0--h577a1d6_5
+stdout: $(inputs.output_file_path)

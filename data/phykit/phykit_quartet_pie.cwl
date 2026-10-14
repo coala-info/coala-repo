@@ -168,7 +168,9 @@ inputs:
       position: 101
       prefix: --branch-labels
   - id: csv
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output per-branch concordance values as a CSV file
     inputBinding:
       position: 101
@@ -191,6 +193,9 @@ inputs:
       position: 101
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_output
     type: File
     doc: output figure path (supports .png, .pdf, .svg)
@@ -205,6 +210,7 @@ outputs:
       glob: $(inputs.csv)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_quartet_pie.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

@@ -16,11 +16,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --INPUT
     doc: The SAM/BAM/CRAM input files to check and fix. Multiple files will be 
       merged and sorted. This argument must be specified at least once.
     inputBinding:
       position: 101
-      prefix: --INPUT
   - id: add_mate_cigar
     type:
       - 'null'
@@ -29,15 +30,17 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ADD_MATE_CIGAR
+      valueFrom: '$(self ? "true" : "false")'
   - id: arguments_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: assume_sorted
     type:
       - 'null'
@@ -81,6 +84,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --IGNORE_MISSING_MATES
+      valueFrom: '$(self ? "true" : "false")'
   - id: max_records_in_ram
     type:
       - 'null'
@@ -91,7 +95,9 @@ inputs:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
   - id: output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The output file to write to. If no output file is supplied, the input 
       file is overwritten (only available with single input file).
     inputBinding:
@@ -111,6 +117,7 @@ inputs:
       - File
     secondaryFiles:
       - .fai
+      - ^.dict
     doc: Reference sequence file.
     inputBinding:
       position: 101
@@ -130,11 +137,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

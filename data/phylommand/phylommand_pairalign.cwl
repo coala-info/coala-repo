@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: Input DNA sequences in fasta format
     inputBinding:
-      position: 1
+      position: 200
   - id: aligned
     type:
       - 'null'

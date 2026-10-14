@@ -1,5 +1,11 @@
 # piranha-polio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| piranha-polio_piranha | Not completed | pipeline, skipped: piranha runs a whole Snakemake workflow (demultiplexed reads to haplotype and phylogeny report) |
+
 ## piranha-polio_piranha
 
 ### Tool Description

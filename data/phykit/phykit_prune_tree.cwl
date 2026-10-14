@@ -13,9 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: list_of_taxa
-    type:
-      - 'null'
-      - File
+    type: File
     doc: single column file with the names of the tips to remove from the 
       phylogeny
     inputBinding:

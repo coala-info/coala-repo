@@ -23,9 +23,7 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: reference_sequence
-    type:
-      - 'null'
-      - File
+    type: File
     secondaryFiles:
       - .fai
     doc: The reference sequence (fasta) for the TARGET genome build.
@@ -43,10 +41,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: bad_assays_file
     type: string
     doc: The name of the the 'bad assays file'. This is a subset version of the 
@@ -110,6 +109,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --FLAG_DUPLICATES
+      valueFrom: '$(self ? "true" : "false")'
   - id: max_records_in_ram
     type:
       - 'null'
@@ -132,30 +132,33 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --SUPPORTED_BUILD
     doc: A supported build. The order of the input must match the order for 
       SUPPORTED_REFERENCE_FILE and SUPPORTED_CHAIN_FILE.
     inputBinding:
       position: 101
-      prefix: --SUPPORTED_BUILD
   - id: supported_chain_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --SUPPORTED_CHAIN_FILE
     doc: A chain file that maps from SUPPORTED_BUILD -> TARGET_BUILD. Must 
       provide a corresponding supported reference file.
     inputBinding:
       position: 101
-      prefix: --SUPPORTED_CHAIN_FILE
   - id: supported_reference_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --SUPPORTED_REFERENCE_FILE
     doc: A reference file for the provided SUPPORTED_BUILD.
     inputBinding:
       position: 101
-      prefix: --SUPPORTED_REFERENCE_FILE
   - id: target_build
     type:
       - 'null'
@@ -170,11 +173,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

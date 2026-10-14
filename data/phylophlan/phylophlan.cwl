@@ -56,8 +56,10 @@ inputs:
   - id: configs_folder
     type:
       - 'null'
-      - Directory
-    doc: Path to the folder containing the configuration files
+      - string
+    default: .
+    doc: Path to the folder containing the configuration files (the tool needs one that
+      exists; the default is the working directory, where a staged config_file lies)
     inputBinding:
       position: 101
       prefix: --configs_folder
@@ -100,7 +102,8 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Path to the folder containing the database files
+    doc: Path to the folder containing the database files (staged writable, because the
+      tool writes the indexed database next to the markers)
     inputBinding:
       position: 101
       prefix: --databases_folder
@@ -256,11 +259,9 @@ inputs:
       position: 101
       prefix: --nproc
   - id: output
-    type:
-      - 'null'
-      - Directory
-    doc: Output folder name, otherwise it will be the name of the input folder 
-      concatenated with the name of the database used
+    type: string
+    doc: Output folder name (the project folder inside output_folder), otherwise it will
+      be the name of the input folder concatenated with the name of the database used
     inputBinding:
       position: 101
       prefix: --output
@@ -429,13 +430,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_folder_dir
+  - id: output_dir
     type:
       - 'null'
       - Directory
-    doc: Path to the output folder where to save the results
+    doc: Project output folder with the concatenated alignment and the tree
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: '$(inputs.output_folder ? inputs.output_folder + "/" + inputs.output : inputs.output)'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.databases_folder)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylophlan:3.2.1--pyhdfd78af_0

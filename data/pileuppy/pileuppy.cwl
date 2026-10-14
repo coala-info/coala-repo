@@ -10,6 +10,13 @@ inputs:
       items: File
     doc: 'Required: Input indexed BAM/CRAM files. Allows format name=path, in that
       case name will be displayed in pileup instead of filename.'
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 1
   - id: display
@@ -26,6 +33,9 @@ inputs:
       - 'null'
       - File
     doc: 'Optional: Input reference indexed FASTA file.'
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 102
       prefix: --fasta-ref

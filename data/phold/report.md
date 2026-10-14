@@ -1,5 +1,20 @@
 # phold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phold_autotune | Failed | tool bug: autotune calls torch.cuda.synchronize even with --cpu, and the image torch has no CUDA |
+| phold_compare | PASS | per-CDS functions match the golden run output; the 3Di input came from phold_predict |
+| phold_createdb | PASS |  |
+| phold_install | PASS |  |
+| phold_plot | PASS |  |
+| phold_predict | PASS | ran on CPU with the default settings and matches the tool's golden 3Di output; --cpu crashes with a half/float type error |
+| phold_proteins-compare | PASS |  |
+| phold_proteins-predict | PASS | ran on CPU with the default settings; 3Di strings give the expected functions in proteins-compare |
+| phold_remote | Failed | tool bug: after the Foldseek step it reads a mean probabilities csv that remote mode never writes |
+| phold_run | PASS | ran on CPU with the default settings; functions match the golden output |
+
 ## phold_autotune
 
 ### Tool Description

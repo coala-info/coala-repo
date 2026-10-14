@@ -1,5 +1,11 @@
 # phylocsf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylocsf | PASS |  |
+
 ## phylocsf
 
 ### Tool Description

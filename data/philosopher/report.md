@@ -1,5 +1,27 @@
 # philosopher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| philosopher_abacus | PASS | two BSA experiments combined: albumin 12 peptides and 37 spectral counts; needs a combined pepXML and protXML made with a TPP helper image |
+| philosopher_bioquant | Failed | image problem: the bundled cd-hit cannot start (libstdc++.so.6 and libgomp.so.1 missing), so it stops with cannot open cluster file |
+| philosopher_comet | PASS | BSA/OVEMB mzML searched, pepXML written (481 spectra for BSA); --print writes comet.params |
+| philosopher_database | PASS | 18-protein standards plus contaminants: 9531 targets and 9531 decoys; --annotate fills the workspace |
+| philosopher_filter | PASS | OVEMB human run: 142 PSMs, 127 peptides, 42 proteins at 1% FDR; PeptideProphet and ProteinProphet input made with a TPP helper image because the Philosopher image cannot run them |
+| philosopher_freequant | PASS | 130 of 142 PSMs get an intensity on the OVEMB run |
+| philosopher_iprophet | Failed | image problem: the bundled TPP program cannot start (libz.so.1 missing), so the run writes no output |
+| philosopher_labelquant | Not completed | no usable TMT test data: the only small TMT10 set (nf-core ddamsproteomics) gives no valid PeptideProphet model, so no filtered PSMs to quantify |
+| philosopher_msfragger | Not completed | needs the MSFragger jar (licence download) and Java, which are not in the image |
+| philosopher_peptideprophet | Failed | image problem: the bundled TPP program cannot start (libz.so.1 missing), so the run writes no output |
+| philosopher_pipeline | Not completed | pipeline, skipped |
+| philosopher_proteinprophet | Failed | image problem: the bundled TPP program cannot start (libz.so.1 missing), so the run writes no output |
+| philosopher_ptmprophet | Failed | image problem: the bundled TPP program cannot start (libz.so.1 missing), so the run writes no output |
+| philosopher_report | PASS | psm, ion, peptide and protein tables match the filter counts (142 PSMs, 42 proteins); BSA run lists albumin, keratins, trypsin |
+| philosopher_slack | Not completed | needs a Slack account and API token |
+| philosopher_tmtintegrator | Not completed | needs the TMT-Integrator jar and Java, which are not in the image, and TMT results from labelquant |
+| philosopher_workspace | PASS | creates the .meta workspace that later steps reuse |
+
 ## philosopher_abacus
 
 ### Tool Description
@@ -88,38 +110,6 @@ Flags:
       --noindex        skip raw file indexing
       --param string   comet parameter file (default "comet.params.txt")
       --print          print a comet.params file
-```
-
-
-## philosopher_completion
-
-### Tool Description
-Generate the autocompletion script for philosopher for the specified shell.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/philosopher:5.1.2--he881be0_0
-- **Homepage**: https://github.com/Nesvilab/philosopher
-- **Package**: https://anaconda.org/channels/bioconda/packages/philosopher/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Generate the autocompletion script for philosopher for the specified shell.
-See each sub-command's help for details on how to use the generated script.
-
-Usage:
-  philosopher completion [command]
-
-Available Commands:
-  bash        Generate the autocompletion script for bash
-  fish        Generate the autocompletion script for fish
-  powershell  Generate the autocompletion script for powershell
-  zsh         Generate the autocompletion script for zsh
-
-Flags:
-  -h, --help   help for completion
-
-Use "philosopher completion [command] --help" for more information about a command.
 ```
 
 

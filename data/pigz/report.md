@@ -1,5 +1,11 @@
 # pigz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pigz_unpigz | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

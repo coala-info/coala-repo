@@ -1,5 +1,11 @@
 # phabox CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phabox_phabox2 | PASS | tested --task votu with ANI clustering of two T7 genomes plus lambda (no database needed); the other tasks need the large PhaBOX database and were not run |
+
 ## phabox_phabox2
 
 ### Tool Description

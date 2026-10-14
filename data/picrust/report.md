@@ -1,5 +1,16 @@
 # picrust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| picrust_categorize_by_function.py | PASS |  |
+| picrust_compare_biom.py | PASS |  |
+| picrust_metagenome_contributions.py | PASS |  |
+| picrust_normalize_by_copy_number.py | PASS |  |
+| picrust_predict_metagenomes.py | PASS | main mode and accuracy metrics work on Galaxy test data with a custom trait table; option -f crashes in this image (AttributeError) |
+| picrust_scale_metagenome.py | PASS |  |
+
 ## picrust_normalize_by_copy_number.py
 
 ### Tool Description
@@ -280,6 +291,188 @@ Options:
                         [REQUIRED]
 ```
 
+
+## picrust_categorize_by_function.py
+
+### Tool Description
+Collapse hierarchical metagenome predictions (KEGG, COG, taxonomy) to a chosen level.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/picrust:1.1.4--pyh24bf2e0_0
+- **Homepage**: https://github.com/picrust/picrust
+- **Package**: https://anaconda.org/channels/bioconda/packages/picrust/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: categorize_by_function.py [options] {-i/--input_fp INPUT_FP -o/--output_fp OUTPUT_FP -c/--metadata_category METADATA_CATEGORY -l/--level LEVEL}
+
+[] indicates optional input (order unimportant)
+{} indicates required input (order unimportant)
+
+This script collapses hierarchical data to a specified level. For instance, often it is useful to examine KEGG results from a higher level within the pathway hierarchy. Many genes are sometimes involved in multiple pathways, and in these circumstances (also know as a one-to-many relationship), the gene is counted for each pathway. This has a side effect of increasing the total count of genes in the table.
+
+Example usage: 
+Print help message and exit
+ categorize_by_function.py -h
+
+Collapse predicted metagenome using KEGG Pathway metadata.
+ categorize_by_function.py -i predicted_metagenomes.biom -c KEGG_Pathways -l 3 -o predicted_metagenomes.L3.biom
+
+Change output to tab-delimited format (instead of BIOM).
+ categorize_by_function.py -f -i predicted_metagenomes.biom -c KEGG_Pathways -l 3 -o predicted_metagenomes.L3.txt
+
+Collapse COG Categories.
+ categorize_by_function.py -i cog_predicted_metagenomes.biom -c COG_Category -l 2 -o cog_predicted_metagenomes.L2.biom
+
+Collapse predicted metagenome using taxonomy metadata (not one-to-many).
+ categorize_by_function.py -i observation_table.biom -c taxonomy -l 1 -o observation_table.L1.biom
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -v, --verbose         Print information during execution -- useful for
+                        debugging [default: False]
+  --ignore=IGNORE       Ignore the comma separated list of names. For
+                        instance, specifying
+                        --ignore_unknown=unknown,unclassified will ignore
+                        those labels while collapsing. The default is to not
+                        ignore anything. [default: none]
+  -f, --format_tab_delimited
+                        output the predicted metagenome table in tab-delimited
+                        format [default: False]
+
+  REQUIRED options:
+    The following options must be provided under all circumstances.
+
+    -i INPUT_FP, --input_fp=INPUT_FP
+                        the predicted metagenome table [REQUIRED]
+    -o OUTPUT_FP, --output_fp=OUTPUT_FP
+                        the resulting table [REQUIRED]
+    -c METADATA_CATEGORY, --metadata_category=METADATA_CATEGORY
+                        the metadata category that describes the hierarchy
+                        (e.g. KEGG_Pathways, COG_Category, etc.). Note: RFAM
+                        predictions can not be collapsed because there are no
+                        categories to group them into. [REQUIRED]
+    -l LEVEL, --level=LEVEL
+                        the level in the hierarchy to collapse to. A value of
+                        0 is not allowed, a value of 1 is the highest level,
+                        and any higher value nears the leaves of the
+                        hierarchy. For instance, if the hierarchy contains 4
+                        levels, specifying 3 would collapse at one level above
+                        being fully specified. [REQUIRED]
+```
+
+## picrust_compare_biom.py
+
+### Tool Description
+Compare an observed BIOM table to an expected BIOM table and report accuracy values.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/picrust:1.1.4--pyh24bf2e0_0
+- **Homepage**: https://github.com/picrust/picrust
+- **Package**: https://anaconda.org/channels/bioconda/packages/picrust/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: compare_biom.py [options] {-e/--exp_trait_table_fp EXP_TRAIT_TABLE_FP -o/--output_fp OUTPUT_FP}
+
+[] indicates optional input (order unimportant)
+{} indicates required input (order unimportant)
+
+ 
+
+Example usage: 
+Print help message and exit
+ compare_biom.py -h
+
+Example 1: Compare an observed table to an expected table using relative abundance
+ compare_biom.py -e expected_ra.biom -o compare_results_ra.tab observed_ra.biom
+
+Example 2: Compare an observed table to an expected table using real counts
+ compare_biom.py --not_relative_abundance -e expected.biom -o compare_results.tab observed.biom
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -v, --verbose         Print information during execution -- useful for
+                        debugging [default: False]
+  -c, --compare_observations
+                        Calculate accuracy values by comparing between
+                        observations (instead of between samples) [default:
+                        False]
+  -n, --normalize       Convert both expected and observed tables to relative
+                        abundances (instead of observations) [default: False]
+  -l, --limit_to_expected_observations
+                        Ignore observations that are not in the expected
+                        table[default: False]
+  --limit_to_observed_observations
+                        Ignore observations that are not in the observed
+                        table[default: False]
+  -s, --shuffle_samples
+                        Shuffle samples ids randomly before measuring
+                        accuracy[default: False]
+  --not_relative_abundance_scores
+                        Round numbers (instead of taking ceil() which is used
+                        for RA) before calculating TP,FP,FN,TN [default:
+                        False]
+
+  REQUIRED options:
+    The following options must be provided under all circumstances.
+
+    -e EXP_TRAIT_TABLE_FP, --exp_trait_table_fp=EXP_TRAIT_TABLE_FP
+                        the expected trait table (biom format) [REQUIRED]
+    -o OUTPUT_FP, --output_fp=OUTPUT_FP
+                        the output file [REQUIRED]
+```
+
+## picrust_scale_metagenome.py
+
+### Tool Description
+Scale a BIOM table of trait counts by the sequencing depth of each sample.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/picrust:1.1.4--pyh24bf2e0_0
+- **Homepage**: https://github.com/picrust/picrust
+- **Package**: https://anaconda.org/channels/bioconda/packages/picrust/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: scale_metagenome.py [options] {-s/--input_seq_depth_file INPUT_SEQ_DEPTH_FILE -i/--input_count_table INPUT_COUNT_TABLE -o/--output_metagenome_table OUTPUT_METAGENOME_TABLE}
+
+[] indicates optional input (order unimportant)
+{} indicates required input (order unimportant)
+
+
+
+Example usage: 
+Print help message and exit
+ scale_metagenome.py -h
+
+Predict metagenomes from genomes.biom and otus.biom.
+ scale_metagenome.py -i otus.biom -s sample_scaling.tsv -o scaled_otus.biom
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -v, --verbose         Print information during execution -- useful for
+                        debugging [default: False]
+
+  REQUIRED options:
+    The following options must be provided under all circumstances.
+
+    -s INPUT_SEQ_DEPTH_FILE, --input_seq_depth_file=INPUT_SEQ_DEPTH_FILE
+                        an input tab-delimited table, with samples as the
+                        first column and an integer sequencing depth as the
+                        second [REQUIRED]
+    -i INPUT_COUNT_TABLE, --input_count_table=INPUT_COUNT_TABLE
+                        the input trait counts on per otu basis in biom format
+                        (can be gzipped) [REQUIRED]
+    -o OUTPUT_METAGENOME_TABLE, --output_metagenome_table=OUTPUT_METAGENOME_TABLE
+                        the output file for the scaled metagenome [REQUIRED]
+```
 
 ## Metadata
 - **Skill**: generated

@@ -8,18 +8,17 @@ doc: "Create a gene database.\n\nTool homepage: https://github.com/moonso/phizz"
 inputs:
   - id: gene_file
     type: File
-    doc: Gene file
+    doc: Gene file (gzip-compressed table, for example genes_37.txt.gz)
     inputBinding:
       position: 1
   - id: db_name
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Database name
+    default: genes.db
     inputBinding:
       position: 102
       prefix: --db_name
-  - id: path
+  - id: db_path
     type:
       - 'null'
       - string
@@ -28,10 +27,11 @@ inputs:
       position: 102
       prefix: --path
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: gene_db
+    type: File
+    doc: The gene database
+    outputBinding:
+      glob: $(inputs.db_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phizz:0.2.3--py_0
-stdout: phizz_build-genes.out

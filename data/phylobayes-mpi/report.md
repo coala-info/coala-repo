@@ -1,5 +1,15 @@
 # phylobayes-mpi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylobayes-mpi_bpcomp | PASS |  |
+| phylobayes-mpi_cvrep | PASS |  |
+| phylobayes-mpi_pb_mpi | PASS |  |
+| phylobayes-mpi_readpb_mpi | PASS |  |
+| phylobayes-mpi_tracecomp | PASS | tool bug: -x with every and until stops with 'does not find file named 1'; burnin alone works |
+
 ## phylobayes-mpi_pb_mpi
 
 ### Tool Description
@@ -95,6 +105,40 @@ bpcomp [-cox] ChainName1 ChainName2 ...
 	 and build consensus based on merged lists of trees
 ```
 
+
+## phylobayes-mpi_readpb_mpi
+
+### Tool Description
+Read a PhyloBayes chain: posterior summaries, site-specific profiles and rates, posterior predictive tests.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phylobayes-mpi:1.9--h5c6ebe3_0
+- **Homepage**: https://github.com/bayesiancook/pbmpi
+- **Package**: https://anaconda.org/channels/bioconda/packages/phylobayes-mpi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+readpb_mpi [-x <burnin> [<every> [<until>]]] [options] <chainname>
+
+Run under mpirun with at least 2 processes. Reads a chain created by pb_mpi and writes posterior summaries (default), or site-specific profiles (-ss), rates (-r), site log-likelihoods (-sitelogl), posterior predictive tests (-ppred, -div, -comp, -allppred), mapping (-map), ancestral states (-anc).
+```
+
+## phylobayes-mpi_cvrep
+
+### Tool Description
+Make random learning and test data sets from an alignment for cross-validation.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phylobayes-mpi:1.9--h5c6ebe3_0
+- **Homepage**: https://github.com/bayesiancook/pbmpi
+- **Package**: https://anaconda.org/channels/bioconda/packages/phylobayes-mpi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+cvrep datafile N1 N2 Nrep outfile
+```
 
 ## Metadata
 - **Skill**: generated

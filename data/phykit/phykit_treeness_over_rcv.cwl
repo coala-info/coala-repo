@@ -15,9 +15,7 @@ inputs:
       position: 101
       prefix: --alignment
   - id: tree
-    type:
-      - 'null'
-      - File
+    type: File
     doc: a tree file
     inputBinding:
       position: 101

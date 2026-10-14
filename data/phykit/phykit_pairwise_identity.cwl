@@ -30,8 +30,10 @@ inputs:
       position: 102
       prefix: --plot
   - id: plot_output
-    type: string
-    doc: output path for heatmap
+    type:
+      - 'null'
+      - string
+    doc: output path for heatmap (default pairwise_identity_heatmap.png)
     inputBinding:
       position: 102
       prefix: --plot-output
@@ -165,19 +167,31 @@ inputs:
     inputBinding:
       position: 102
       prefix: --json
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: optional argument to print identity per pair
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot_output
     type:
       - 'null'
       - File
     doc: output path for heatmap
     outputBinding:
-      glob: $(inputs.plot_output)
+      glob: $(inputs.plot_output || 'pairwise_identity_heatmap.png')
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0
+stdout: phykit_pairwise_identity.out
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/

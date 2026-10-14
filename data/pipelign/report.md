@@ -1,5 +1,11 @@
 # pipelign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pipelign | Failed | image problem: the tool's default modes (--run G, --merge P) need GNU parallel, which is not in the image; with --run J --merge C it aligns correctly but still exits 1. |
+
 ## pipelign
 
 ### Tool Description

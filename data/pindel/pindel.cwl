@@ -4,6 +4,17 @@ baseCommand: pindel
 label: pindel
 doc: "Detection of indels and structural variations\n\nTool homepage: http://gmt.genome.wustl.edu/packages/pindel/index.html"
 inputs:
+  - id: bam_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Indexed BAM files named in the BAM configuration file; staged next to the configuration file so that the relative paths in it resolve
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
   - id: additional_mismatch
     type:
       - 'null'
@@ -85,6 +96,9 @@ inputs:
   - id: fasta
     type: File
     doc: the reference genome sequences in fasta format
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 101
       prefix: --fasta
@@ -409,6 +423,9 @@ outputs:
       glob: $(inputs.name_of_logfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.bam_files ? inputs.bam_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pindel:0.2.5b9--h077b44d_12

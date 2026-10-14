@@ -1,5 +1,13 @@
 # plannotate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plannotate_batch | Not completed | needs the pLannotate BLAST/diamond/Rfam database (210 MB download into the install folder, read-only in Docker) |
+| plannotate_streamlit | Not completed | launches an interactive web app server |
+| plannotate_yaml | PASS | rewritten as plannotate yaml with no inputs; prints the built-in database YAML template |
+
 ## plannotate_batch
 
 ### Tool Description

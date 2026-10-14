@@ -1,5 +1,11 @@
 # phasius CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phasius | PASS |  |
+
 ## phasius
 
 ### Tool Description

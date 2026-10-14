@@ -1,5 +1,16 @@
 # phlame CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phlame_classify | Failed | image problem: samtools is not installed in the image, so the pileup step finds no data |
+| phlame_cmt | PASS |  |
+| phlame_counts | Failed | image problem: samtools and bcftools are not installed in the image, so counts stops at its dependency check |
+| phlame_makedb | Failed | tool bug: the -y output tree option is accepted but never written; classifier and clades match the example |
+| phlame_plot | PASS |  |
+| phlame_tree | PASS | phylip step checked (8 samples); building the tree with -o needs raxmlHPC, which the image lacks |
+
 ## phlame_classify
 
 ### Tool Description

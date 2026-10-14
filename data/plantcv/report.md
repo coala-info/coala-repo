@@ -1,5 +1,11 @@
 # plantcv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plantcv_plantcv-workflow.py | PASS | ran a small PlantCV workflow script on two real plant images from the PlantCV tests; output folder is now created by the wrapper |
+
 ## plantcv_plantcv-workflow.py
 
 ### Tool Description

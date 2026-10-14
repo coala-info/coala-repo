@@ -4,15 +4,23 @@ baseCommand:
   - phykit
   - alignment_entropy
 label: phykit_alignment_entropy
-doc: Calculate alignment entropy. Site-wise entropy is calculated using Shannon 
-  entropy. By default, this function prints the mean site entropy. With the 
-  -v/--verbose option, entropy is printed for each site in the alignment.
+doc: Calculate alignment entropy. Site-wise entropy is calculated using Shannon entropy.
+  By default, this function prints the mean site entropy. With the -v/--verbose option,
+  entropy is printed for each site in the alignment.
 inputs:
   - id: alignment
     type: File
     doc: First argument after function name should be an alignment file
     inputBinding:
       position: 1
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: optional argument to print entropy for each site
+    inputBinding:
+      position: 102
+      prefix: --verbose
   - id: plot
     type:
       - 'null'
@@ -22,7 +30,9 @@ inputs:
       position: 102
       prefix: --plot
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output path for plot
     inputBinding:
       position: 102
@@ -127,8 +137,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: draw cladogram (equal branch lengths, tips aligned) instead of 
-      phylogram
+    doc: draw cladogram (equal branch lengths, tips aligned) instead of phylogram
     inputBinding:
       position: 102
       prefix: --cladogram
@@ -144,8 +153,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: color annotation file for tip labels, clade ranges, and branch colors 
-      (iTOL-inspired TSV format)
+    doc: color annotation file for tip labels, clade ranges, and branch colors (iTOL-inspired
+      TSV format)
     inputBinding:
       position: 102
       prefix: --color-file
@@ -158,6 +167,8 @@ inputs:
       position: 102
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
   - id: output_plot_output
     type:
       - 'null'
@@ -173,3 +184,4 @@ hints:
 s:url: https://github.com/jlsteenwyk/phykit
 $namespaces:
   s: https://schema.org/
+stdout: phykit_alignment_entropy.out

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: PIPITS_PROCESS
+baseCommand: pipits_process
 label: pipits_pipits_process
 doc: "Sequences to OTU Table\n\nTool homepage: https://github.com/hsgweon/pipits"
 inputs:
@@ -124,19 +124,21 @@ inputs:
       position: 101
       prefix: -v
   - id: output_dir_path
-    type: string?
+    type: string
     doc: '[REQUIRED] Directory to output results.'
     inputBinding:
       position: 102
       prefix: -o
 outputs:
   - id: output_dir
-    type: Directory?
+    type: Directory
     doc: Directory to output results.
     outputBinding:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pipits:4.0--pyhdfd78af_0

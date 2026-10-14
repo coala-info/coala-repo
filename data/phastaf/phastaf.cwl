@@ -5,9 +5,7 @@ label: phastaf
 doc: "Find phage regions in bacterial genomes\n\nTool homepage: https://github.com/tseemann/phastaf"
 inputs:
   - id: contigs
-    type:
-      type: array
-      items: File
+    type: File
     doc: Contigs file in fasta, genbank, or gff format
     inputBinding:
       position: 1

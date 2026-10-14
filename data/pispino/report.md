@@ -1,5 +1,12 @@
 # pispino CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pispino_pispino_createreadpairslist | PASS | baseCommand fixed to pispino_createreadpairslist |
+| pispino_pispino_seqprep | PASS | ran on SARS-CoV-2 paired reads with the VSEARCH joiner; the PEAR joiner fails because pear is not in the image |
+
 ## pispino_pispino_createreadpairslist
 
 ### Tool Description

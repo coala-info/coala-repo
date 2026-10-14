@@ -1,5 +1,14 @@
 # piscem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| piscem_build | PASS | ran on the human chr21 genome; the wrapper raises the open-file limit with ulimit because the default 1024 makes cuttlefish fail |
+| piscem_map-bulk | PASS | ran on 10x multiome chr21 reads against a chr21 index |
+| piscem_map-sc | PASS | ran on 10x multiome chr21 GEX reads against a chr21 genome index |
+| piscem_map-sc-atac | PASS | ran on 10x multiome chr21 ATAC reads |
+
 ## piscem_build
 
 ### Tool Description

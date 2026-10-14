@@ -32,7 +32,9 @@ inputs:
       position: 101
       prefix: --tree
   - id: plot_output
-    type: string
+    type:
+      - 'null'
+      - string
     doc: save pairwise p-value heatmap to this path
     inputBinding:
       position: 101
@@ -166,7 +168,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --json
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: print detailed output
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot_output
     type:
       - 'null'
@@ -176,6 +189,7 @@ outputs:
       glob: $(inputs.plot_output)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_relative_rate_test.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

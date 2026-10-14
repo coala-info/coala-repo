@@ -1,5 +1,129 @@
 # picard CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| picard_AccumulateQualityYieldMetrics | PASS |  |
+| picard_AccumulateVariantCallingMetrics | PASS |  |
+| picard_AddCommentsToBam | PASS |  |
+| picard_AddOATag | PASS |  |
+| picard_AddOrReplaceReadGroups | PASS |  |
+| picard_BaitDesigner | PASS |  |
+| picard_BamIndexStats | PASS |  |
+| picard_BamToBfq | PASS |  |
+| picard_BedToIntervalList | PASS |  |
+| picard_BpmToNormalizationManifestCsv | Not completed | needs a binary Illumina .bpm manifest and .egt cluster file; none small and public was found (Picard's repo has only text manifests) |
+| picard_BuildBamIndex | PASS |  |
+| picard_CalculateFingerprintMetrics | PASS |  |
+| picard_CalculateReadGroupChecksum | PASS |  |
+| picard_CheckDuplicateMarking | PASS |  |
+| picard_CheckFingerprint | PASS |  |
+| picard_CheckIlluminaDirectory | PASS | synthetic data: InterOp/TileMetricsOut.bin was written for the 3 tiles of Picard's own 25T8B25T test folder (as Picard's unit test does); the run-folder files are real |
+| picard_CheckTerminatorBlock | PASS |  |
+| picard_CleanSam | PASS |  |
+| picard_ClusterCrosscheckMetrics | PASS |  |
+| picard_CollectAlignmentSummaryMetrics | PASS |  |
+| picard_CollectArraysVariantCallingMetrics | PASS |  |
+| picard_CollectBaseDistributionByCycle | PASS |  |
+| picard_CollectDuplicateMetrics | PASS |  |
+| picard_CollectGcBiasMetrics | PASS |  |
+| picard_CollectHiSeqXPfFailMetrics | PASS |  |
+| picard_CollectHsMetrics | PASS |  |
+| picard_CollectIlluminaBasecallingMetrics | PASS |  |
+| picard_CollectIlluminaLaneMetrics | PASS |  |
+| picard_CollectIndependentReplicateMetrics | PASS |  |
+| picard_CollectInsertSizeMetrics | PASS |  |
+| picard_CollectJumpingLibraryMetrics | PASS |  |
+| picard_CollectMultipleMetrics | PASS |  |
+| picard_CollectOxoGMetrics | PASS |  |
+| picard_CollectQualityYieldMetrics | PASS |  |
+| picard_CollectQualityYieldMetricsFlow | PASS |  |
+| picard_CollectQualityYieldMetricsSNVQ | PASS |  |
+| picard_CollectRawWgsMetrics | PASS |  |
+| picard_CollectRnaSeqMetrics | PASS |  |
+| picard_CollectRrbsMetrics | PASS |  |
+| picard_CollectSamErrorMetrics | PASS |  |
+| picard_CollectSequencingArtifactMetrics | PASS |  |
+| picard_CollectTargetedPcrMetrics | PASS |  |
+| picard_CollectUmiPrevalenceMetrics | PASS |  |
+| picard_CollectVariantCallingMetrics | PASS |  |
+| picard_CollectWgsMetrics | PASS |  |
+| picard_CollectWgsMetricsWithNonZeroCoverage | PASS |  |
+| picard_CombineGenotypingArrayVcfs | PASS |  |
+| picard_CompareGtcFiles | Not completed | needs binary Illumina .gtc genotype files and a .bpm manifest; none small and public was found |
+| picard_CompareMetrics | PASS |  |
+| picard_CompareSAMs | PASS |  |
+| picard_ConvertHaplotypeDatabaseToVcf | PASS |  |
+| picard_ConvertSequencingArtifactToOxoG | PASS |  |
+| picard_CreateBafRegressMetricsFile | PASS |  |
+| picard_CreateExtendedIlluminaManifest | PASS | ran on a one-locus chr21 subset of Picard's HumanExome test manifest with the b37 chr20/21 reference; FLAG_DUPLICATES off because no cluster file |
+| picard_CreateSequenceDictionary | PASS |  |
+| picard_CreateVerifyIDIntensityContaminationMetricsFile | PASS |  |
+| picard_CrosscheckFingerprints | PASS |  |
+| picard_DownsampleSam | PASS |  |
+| picard_EstimateLibraryComplexity | PASS |  |
+| picard_ExtractFingerprint | PASS |  |
+| picard_ExtractIlluminaBarcodes | PASS |  |
+| picard_ExtractSequences | PASS |  |
+| picard_FastqToSam | PASS |  |
+| picard_FifoBuffer | PASS |  |
+| picard_FilterSamReads | PASS |  |
+| picard_FilterVcf | PASS |  |
+| picard_FindMendelianViolations | PASS | Main mode works on the justhusky trio; the optional VCF_DIR output crashes in Picard (duplicate sample names in the writer header). |
+| picard_FixMateInformation | PASS |  |
+| picard_FixVcfHeader | PASS |  |
+| picard_GatherBamFiles | PASS |  |
+| picard_GatherVcfs | PASS |  |
+| picard_GenotypeConcordance | PASS |  |
+| picard_GtcToVcf | Not completed | no usable test data: needs a real Illumina GTC file with its EGT cluster file and BPM manifest, and none is available in small public test sets. |
+| picard_IdentifyContaminant | PASS | synthetic data: haplotype map built from the five variant sites of the real test VCF; the BAM and reference are real. |
+| picard_IlluminaBasecallsToFastq | PASS |  |
+| picard_IlluminaBasecallsToSam | PASS |  |
+| picard_IntervalListToBed | PASS |  |
+| picard_IntervalListTools | PASS |  |
+| picard_LiftOverHaplotypeMap | PASS |  |
+| picard_LiftOverIntervalList | PASS |  |
+| picard_LiftoverVcf | PASS |  |
+| picard_MakeSitesOnlyVcf | PASS |  |
+| picard_MakeVcfSampleNameMap | PASS |  |
+| picard_MarkDuplicates | PASS |  |
+| picard_MarkDuplicatesWithMateCigar | PASS |  |
+| picard_MarkIlluminaAdapters | PASS |  |
+| picard_MeanQualityByCycle | PASS |  |
+| picard_MergeBamAlignment | PASS |  |
+| picard_MergePedIntoVcf | PASS |  |
+| picard_MergeSamFiles | PASS |  |
+| picard_MergeVcfs | PASS |  |
+| picard_NonNFastaSize | PASS |  |
+| picard_NormalizeFasta | PASS |  |
+| picard_PositionBasedDownsampleSam | PASS |  |
+| picard_QualityScoreDistribution | PASS |  |
+| picard_RenameSampleInVcf | PASS |  |
+| picard_ReorderSam | PASS |  |
+| picard_ReplaceSamHeader | PASS |  |
+| picard_RevertOriginalBaseQualitiesAndAddMateCigar | PASS |  |
+| picard_RevertSam | PASS |  |
+| picard_SamFormatConverter | PASS |  |
+| picard_SamToFastq | PASS |  |
+| picard_SamToFastqWithTags | PASS |  |
+| picard_ScatterIntervalsByNs | PASS |  |
+| picard_SetNmMdAndUqTags | PASS |  |
+| picard_SimpleMarkDuplicatesWithMateCigar | PASS |  |
+| picard_SortGff | PASS |  |
+| picard_SortSam | PASS |  |
+| picard_SortVcf | PASS |  |
+| picard_SplitSamByLibrary | PASS |  |
+| picard_SplitSamByNumberOfReads | PASS |  |
+| picard_SplitVcfs | PASS |  |
+| picard_UmiAwareMarkDuplicatesWithMateCigar | PASS |  |
+| picard_UpdateVcfSequenceDictionary | PASS |  |
+| picard_ValidateSamFile | PASS |  |
+| picard_VcfFormatConverter | PASS |  |
+| picard_VcfToAdpc | PASS |  |
+| picard_VcfToIntervalList | PASS |  |
+| picard_ViewSam | PASS |  |
+
 ## picard_CheckIlluminaDirectory
 
 ### Tool Description

@@ -1,5 +1,14 @@
 # phyloacc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phyloacc | PASS |  |
+| phyloacc_PhyloAcc-GT | PASS | synthetic data: the coalescent-unit tree is the substitution-rate tree of the mod file |
+| phyloacc_PhyloAcc-ST | PASS |  |
+| phyloacc_phyloacc_post.py | PASS |  |
+
 ## phyloacc
 
 ### Tool Description
@@ -160,5 +169,85 @@ options:
                         as '-version', '-v', or '--v'.
   --quiet               Set this flag to prevent PhyloAcc from reporting
                         detailed information about each step.
+```
+
+## phyloacc_PhyloAcc-ST
+
+### Tool Description
+PhyloAcc species tree model: Bayesian estimation of substitution rates of conserved non-coding elements, run on one batch of loci from a parameter file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phyloacc:2.4.5--py313h4c9e609_1
+- **Homepage**: https://github.com/phyloacc/PhyloAcc
+- **Package**: https://anaconda.org/channels/bioconda/packages/phyloacc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+PhyloAcc-ST <parameter file>
+
+The program takes one parameter file (written by phyloacc for each batch of loci) and
+writes the results of that batch to the folder named RESULT_FOLDER in the file.
+It has no -h option.
+```
+
+## phyloacc_PhyloAcc-GT
+
+### Tool Description
+PhyloAcc gene tree model: Bayesian estimation of substitution rates with gene tree variation, run on one batch of loci from a parameter file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phyloacc:2.4.5--py313h4c9e609_1
+- **Homepage**: https://github.com/phyloacc/PhyloAcc
+- **Package**: https://anaconda.org/channels/bioconda/packages/phyloacc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+PhyloAcc-GT <parameter file>
+
+The program takes one parameter file (written by phyloacc for each batch of loci) and
+writes the results of that batch to the folder named RESULT_FOLDER in the file.
+It has no -h option.
+```
+
+## phyloacc_phyloacc_post.py
+
+### Tool Description
+phyloacc_post.py combines and summarizes the output from batched PhyloAcc runs.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phyloacc:2.4.5--py313h4c9e609_1
+- **Homepage**: https://github.com/phyloacc/PhyloAcc
+- **Package**: https://anaconda.org/channels/bioconda/packages/phyloacc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: phyloacc_post.py [-h] [-i INPUT_DIR] [-o OUT_DEST] [-bf1 BF1]
+                        [-bf2 BF2] [-bf3 BF3] [--overwrite] [--info]
+                        [--version] [--quiet] [--appendlog]
+
+phyloacc_post.py combines and summarizes the output from batched PhyloAcc
+runs.
+
+options:
+  -h, --help    show this help message and exit
+  -i INPUT_DIR  The directory created from a phyloacc.py run.
+  -o OUT_DEST   Desired output directory. This will be created for you if it
+                doesn't exist. Default: <input directory>/results/
+  -bf1 BF1      The cutoff for logBF1.
+  -bf2 BF2      The cutoff for logBF2.
+  -bf3 BF3      The cutoff for logBF3.
+  --overwrite   Set this to overwrite existing files.
+  --info        Print some meta information about the program and exit. No
+                other options required.
+  --version     Simply print the version and exit. Can also be called as
+                '-version', '-v', or '--v'
+  --quiet       Set this flag to prevent PhyloAcc from reporting detailed
+                information about each step.
+  --appendlog   Set this to keep the old log file even if --overwrite is
+                specified. New log information will instead be appended to the
+                previous log file.
 ```
 

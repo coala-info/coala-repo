@@ -1,5 +1,14 @@
 # phylommand CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phylommand_contree | PASS |  |
+| phylommand_pairalign | PASS |  |
+| phylommand_treeator | PASS |  |
+| phylommand_treebender | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

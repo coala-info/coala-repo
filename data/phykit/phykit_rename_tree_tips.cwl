@@ -12,9 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: idmap
-    type:
-      - 'null'
-      - File
+    type: File
     doc: identifier map of current tip names (col1) and desired tip names (col2)
     inputBinding:
       position: 102

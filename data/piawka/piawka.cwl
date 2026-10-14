@@ -30,7 +30,9 @@ inputs:
       position: 101
       prefix: --fstwc
   - id: groups
-    type: File
+    type:
+      - File
+      - string
     doc: either 2-columns sample / group table or keywords "unite" (1 group) or "divide"
       (n_samples groups)
     inputBinding:
@@ -134,6 +136,9 @@ inputs:
       prefix: --targets
   - id: vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     doc: gzipped and tabixed VCF file
     inputBinding:
       position: 101

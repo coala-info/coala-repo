@@ -62,6 +62,13 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: user
+      - envName: TORCHINDUCTOR_CACHE_DIR
+        envValue: $(runtime.tmpdir)/torch_cache
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phold:1.2.2--pyhdfd78af_0

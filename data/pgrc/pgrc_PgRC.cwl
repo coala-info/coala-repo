@@ -9,7 +9,7 @@ inputs:
     type: string
     doc: Name of the archive
     inputBinding:
-      position: 1
+      position: 200
   - id: pair_src_file
     type:
       - 'null'
@@ -17,6 +17,11 @@ inputs:
     doc: Paired-end source file (used with -i)
     inputBinding:
       position: 2
+  - id: archive_file
+    type:
+      - 'null'
+      - File
+    doc: Existing archive to decompress (staged under archive_name; use with -d)
   - id: decompression_mode
     type:
       - 'null'
@@ -87,7 +92,7 @@ inputs:
       - File
     doc: Sequence source file
     inputBinding:
-      position: 103
+      position: 1
       prefix: -i
   - id: threads
     type:
@@ -101,6 +106,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: archive
+    type:
+      - 'null'
+      - File
+    doc: Compressed archive
+    outputBinding:
+      glob: $(inputs.archive_name)
+  - id: decompressed_reads
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Decompressed read files (archive_name_out_1, archive_name_out_2)
+    outputBinding:
+      glob: $(inputs.archive_name)_out_*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '${ return inputs.archive_file ? [{"entry": inputs.archive_file, "entryname": inputs.archive_name}] : []; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgrc:2.0.2--h9948957_1

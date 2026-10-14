@@ -16,9 +16,7 @@ inputs:
       position: 101
       prefix: --Histogram_FILE
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Input SAM/BAM/CRAM file.
     inputBinding:
       position: 101
@@ -34,10 +32,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: assume_sorted
     type:
       - 'null'
@@ -47,6 +46,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ASSUME_SORTED
+      valueFrom: '$(self ? "true" : "false")'
   - id: compression_level
     type:
       - 'null'
@@ -113,11 +113,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --METRIC_ACCUMULATION_LEVEL
     doc: 'The level(s) at which to accumulate metrics. Possible values: {ALL_READS,
       SAMPLE, LIBRARY, READ_GROUP}'
     inputBinding:
       position: 101
-      prefix: --METRIC_ACCUMULATION_LEVEL
   - id: min_histogram_width
     type:
       - 'null'
@@ -166,11 +167,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'

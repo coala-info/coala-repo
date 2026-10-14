@@ -14,22 +14,24 @@ inputs:
       position: 101
       prefix: --ANALYSIS_DIR
   - id: flowcell_barcode
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Flowcell barcode (e.g. 30PYMAAXX). Cannot be used in conjunction with 
       argument(s) OUTPUT_FILE_PREFIX
     inputBinding:
       position: 101
       prefix: --FLOWCELL_BARCODE
   - id: input
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The BAM file to parse.
     inputBinding:
       position: 101
       prefix: --INPUT
   - id: output_file_prefix
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Prefix for all output files. Cannot be used in conjunction with 
       argument(s) FLOWCELL_BARCODE (F) LANE (L)
     inputBinding:
@@ -41,15 +43,17 @@ inputs:
     inputBinding:
       position: 101
       prefix: --PAIRED_RUN
+      valueFrom: '$(self ? "true" : "false")'
   - id: arguments_file
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: bases_to_write
     type:
       - 'null'
@@ -68,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --CLIP_ADAPTERS
+      valueFrom: '$(self ? "true" : "false")'
   - id: compression_level
     type:
       - 'null'
@@ -177,11 +182,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -225,12 +231,17 @@ outputs:
       glob: $(inputs.analysis_dir)
   - id: output_output_file_prefix
     type: File[]
-    doc: Prefix for all output files. Cannot be used in conjunction with 
+    doc: The binary bfq files written to the analysis directory. Prefix for all output files. Cannot be used in conjunction with 
       argument(s) FLOWCELL_BARCODE (F) LANE (L)
     outputBinding:
-      glob: $(inputs.output_file_prefix)*
+      glob: $(inputs.analysis_dir)/*.bfq
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.analysis_dir)
+        entry: '$({"class": "Directory", "basename": inputs.analysis_dir, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0

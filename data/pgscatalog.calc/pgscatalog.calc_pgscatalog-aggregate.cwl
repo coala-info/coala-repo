@@ -23,6 +23,11 @@ inputs:
       type: array
       items: File
     doc: List of scorefile paths. Use a wildcard (*) to select multiple files.
+    secondaryFiles:
+      - pattern: '$(self.basename.split(".")[0] + ".scorefile.gz")'
+        required: false
+      - pattern: '$(self.basename.split(".")[0] + ".sscore.vars")'
+        required: false
     inputBinding:
       position: 101
       prefix: --scores
@@ -65,6 +70,13 @@ outputs:
     doc: Output directory to store downloaded files
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outdir)
+        entry: '$({"class": "Directory", "basename": inputs.outdir, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pgscatalog.calc:0.3.1--pyhdfd78af_1

@@ -1,5 +1,14 @@
 # phyclone CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| phyclone_consensus | PASS |  |
+| phyclone_map | PASS |  |
+| phyclone_run | PASS |  |
+| phyclone_topology-report | PASS |  |
+
 ## phyclone_consensus
 
 ### Tool Description

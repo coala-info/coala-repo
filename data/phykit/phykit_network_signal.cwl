@@ -4,9 +4,8 @@ baseCommand:
   - phykit
   - network_signal
 label: phykit_network_signal
-doc: Measures phylogenetic signal (Bloomberg's K and/or Pagel's lambda) on a 
-  phylogenetic network by incorporating hybrid edges inferred from quartet 
-  concordance factors.
+doc: Measures phylogenetic signal (Bloomberg's K and/or Pagel's lambda) on a phylogenetic
+  network by incorporating hybrid edges inferred from quartet concordance factors.
 inputs:
   - id: tree
     type: File
@@ -55,6 +54,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --permutations
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: print detailed output
+    inputBinding:
+      position: 101
+      prefix: --verbose
   - id: json
     type:
       - 'null'

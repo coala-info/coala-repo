@@ -4,16 +4,24 @@ baseCommand:
   - phykit
   - long_branch_score
 label: phykit_long_branch_score
-doc: Calculate long branch (LB) scores in a phylogeny. LB score is the mean 
-  pairwise patristic distance of taxon i compared to all other taxa over the 
-  average pairwise patristic distance. PhyKIT reports summary statistics. To 
-  obtain LB scores for each taxa, use the -v/--verbose option.
+doc: Calculate long branch (LB) scores in a phylogeny. LB score is the mean pairwise
+  patristic distance of taxon i compared to all other taxa over the average pairwise
+  patristic distance. PhyKIT reports summary statistics. To obtain LB scores for each
+  taxa, use the -v/--verbose option.
 inputs:
   - id: tree
     type: File
     doc: first argument after function name should be a tree file
     inputBinding:
       position: 1
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: optional argument to print all values
+    inputBinding:
+      position: 102
+      prefix: --verbose
   - id: json
     type:
       - 'null'

@@ -15,7 +15,7 @@ inputs:
   - id: dsk_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory for dsk files
     inputBinding:
       position: 101
@@ -116,6 +116,27 @@ inputs:
       position: 101
       prefix: -t
 outputs:
+  - id: snp_files
+    type:
+      type: array
+      items: File
+    doc: SNP files written in the working directory
+    outputBinding:
+      glob: '*.snp'
+  - id: histogram
+    type:
+      - 'null'
+      - File
+    doc: k-mer histogram
+    outputBinding:
+      glob: '*.histo'
+  - id: plots
+    type:
+      type: array
+      items: File
+    doc: k-mer coverage plots
+    outputBinding:
+      glob: '*.png'
   - id: stdout
     type: stdout
     doc: Standard output

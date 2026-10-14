@@ -194,6 +194,9 @@ inputs:
       position: 101
       prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_plot
     type:
       - 'null'
@@ -203,6 +206,7 @@ outputs:
       glob: $(inputs.plot)*
 requirements:
   - class: InlineJavascriptRequirement
+stdout: phykit_spectral_discordance.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phykit:2.1.92--pyhdfd78af_0

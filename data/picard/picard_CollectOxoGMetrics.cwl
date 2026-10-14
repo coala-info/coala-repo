@@ -23,9 +23,7 @@ inputs:
       position: 101
       prefix: --OUTPUT
   - id: reference_sequence
-    type:
-      - 'null'
-      - File
+    type: File
     secondaryFiles:
       - .fai
     doc: Reference sequence file.
@@ -37,10 +35,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --arguments_file
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
-      prefix: --arguments_file
   - id: compression_level
     type:
       - 'null'
@@ -63,11 +62,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --CONTEXTS
     doc: The optional set of sequence contexts to restrict analysis to. If not 
       supplied all contexts are analyzed.
     inputBinding:
       position: 101
-      prefix: --CONTEXTS
   - id: create_index
     type:
       - 'null'
@@ -102,6 +102,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --INCLUDE_NON_PF_READS
+      valueFrom: '$(self ? "true" : "false")'
   - id: intervals
     type:
       - 'null'
@@ -176,11 +177,12 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: --TMP_DIR
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
     inputBinding:
       position: 101
-      prefix: --TMP_DIR
   - id: use_jdk_deflater
     type:
       - 'null'
@@ -207,6 +209,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --USE_OQ
+      valueFrom: '$(self ? "true" : "false")'
   - id: validation_stringency
     type:
       - 'null'

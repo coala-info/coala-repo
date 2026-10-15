@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 10764; PASS: 8355; Failed: 1294; Not completed: 1115
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 10974; PASS: 8538; Failed: 1319; Not completed: 1117
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -10457,13 +10457,41 @@ phyling	phyling_align	PASS
 phyling	phyling_download	PASS	
 phyling	phyling_filter	PASS	
 phyling	phyling_tree	PASS	
+phylip	phylip_clique	PASS	
+phylip	phylip_consense	PASS	
+phylip	phylip_contml	PASS	
+phylip	phylip_contrast	PASS	
+phylip	phylip_dnacomp	PASS	
 phylip	phylip_dnadist	PASS	
 phylip	phylip_dnainvar	PASS	
-phylip	phylip_dnapars	PASS	
+phylip	phylip_dnaml	PASS	default run matches an analytic ln likelihood check (-72.25088); documentation example with hidden Markov rates differs slightly (-58.74 vs -58.41)
+phylip	phylip_dnamlk	PASS	default run matches an analytic ln likelihood check (-73.07456); documentation example with hidden Markov rates differs slightly (-58.84 vs -58.52)
+phylip	phylip_dnamove	PASS	
+phylip	phylip_dnapars	PASS	weights input renamed from weightfile to weights and tested with menu answers W, Y (19 steps with no weights, 14 with sites 1 and 13 at weight 0)
+phylip	phylip_dnapenny	PASS	
+phylip	phylip_dollop	PASS	
 phylip	phylip_dolmove	PASS	
+phylip	phylip_dolpenny	PASS	
+phylip	phylip_drawgram	PASS	
 phylip	phylip_drawtree	PASS	
+phylip	phylip_factor	PASS	
+phylip	phylip_fitch	PASS	
+phylip	phylip_gendist	PASS	
+phylip	phylip_kitsch	PASS	
+phylip	phylip_mix	PASS	
+phylip	phylip_move	PASS	
 phylip	phylip_neighbor	PASS	
+phylip	phylip_pars	PASS	
+phylip	phylip_penny	PASS	
+phylip	phylip_proml	PASS	default run matches an analytic likelihood check; documentation example with hidden Markov rates differs slightly (ln likelihood -104.96 vs -104.53)
+phylip	phylip_promlk	Failed	tool bug: ln likelihood and branch lengths are wrong (-12.8 for four identical 13-residue sequences, expected about -38; -2.6 for 474 residues where proml gives -3620)
+phylip	phylip_protdist	PASS	
+phylip	phylip_protpars	PASS	
+phylip	phylip_restdist	PASS	
+phylip	phylip_restml	PASS	
 phylip	phylip_retree	PASS	
+phylip	phylip_seqboot	PASS	
+phylip	phylip_treedist	PASS	
 phyloacc	phyloacc	PASS	
 phyloacc	phyloacc_PhyloAcc-GT	PASS	synthetic data: the coalescent-unit tree is the substitution-rate tree of the mod file
 phyloacc	phyloacc_PhyloAcc-ST	PASS	
@@ -10545,13 +10573,120 @@ phylowgs	phylowgs_evolve.py	PASS
 phylowgs	phylowgs_multievolve.py	Failed	image problem: the multievolve.py on PATH cannot import its helper module and stops at once; the copy at /usr/local/share/phylowgs/multievolve.py runs the chains correctly.
 phylowgs	phylowgs_parse_cnvs.py	PASS	synthetic data: small TITAN segment table; output values checked by hand.
 phylowgs	phylowgs_write_results.py	PASS	
+phyluce	phyluce_phyluce_align_add_missing_data_designators	PASS	
+phyluce	phyluce_phyluce_align_convert_degen_bases	PASS	tested with FASTA output; --output-format nexus (the default) crashes in this image with a Biopython alphabet error
+phyluce	phyluce_phyluce_align_convert_one_align_to_another	PASS	
+phyluce	phyluce_phyluce_align_explode_alignments	PASS	
+phyluce	phyluce_phyluce_align_extract_taxa_from_alignments	PASS	
+phyluce	phyluce_phyluce_align_extract_taxon_fasta_from_alignments	PASS	
+phyluce	phyluce_phyluce_align_filter_alignments	PASS	
+phyluce	phyluce_phyluce_align_filter_characters_from_alignments	PASS	
+phyluce	phyluce_phyluce_align_format_concatenated_phylip_for_paml	PASS	
+phyluce	phyluce_phyluce_align_format_nexus_files_for_mrbayes	PASS	
+phyluce	phyluce_phyluce_align_format_nexus_files_for_raxml	PASS	
 phyluce	phyluce_phyluce_align_get_align_summary_data	PASS	
+phyluce	phyluce_phyluce_align_get_aligns_partitioned_by_cluster	PASS	synthetic data: cluster CSV built from invariant and variable sites of real alignments; tested with FASTA output, NEXUS output crashes in this image with a Biopython alphabet error
+phyluce	phyluce_phyluce_align_get_bed_from_lastz	PASS	
+phyluce	phyluce_phyluce_align_get_gblocks_trimmed_alignments_from_untrimmed	PASS	
+phyluce	phyluce_phyluce_align_get_incomplete_matrix_estimates	PASS	
+phyluce	phyluce_phyluce_align_get_indels_from_alignments	PASS	
+phyluce	phyluce_phyluce_align_get_informative_sites	PASS	
 phyluce	phyluce_phyluce_align_get_only_loci_with_min_taxa	PASS	
+phyluce	phyluce_phyluce_align_get_ry_recoded_alignments	PASS	
+phyluce	phyluce_phyluce_align_get_smilogram_from_alignments	PASS	
+phyluce	phyluce_phyluce_align_get_taxon_locus_counts_in_alignments	PASS	
+phyluce	phyluce_phyluce_align_get_trimal_trimmed_alignments_from_untrimmed	PASS	
 phyluce	phyluce_phyluce_align_get_trimmed_alignments_from_untrimmed	PASS	
+phyluce	phyluce_phyluce_align_move_align_by_conf_file	PASS	
+phyluce	phyluce_phyluce_align_output_list_of_taxon_counts	PASS	
+phyluce	phyluce_phyluce_align_parallel_sate	Failed	image problem: run_sate.py (SATe) is not installed in the image, so the tool crashes with OSError
+phyluce	phyluce_phyluce_align_randomly_sample_and_concatenate	PASS	
+phyluce	phyluce_phyluce_align_reduce_alignments_with_raxml	PASS	synthetic data: real alignments with 5 gap-only columns inserted; RAxML removed them
+phyluce	phyluce_phyluce_align_remove_empty_taxa	PASS	
+phyluce	phyluce_phyluce_align_remove_locus_name_from_nexus_lines	PASS	
+phyluce	phyluce_phyluce_align_screen_alignments_for_problems	PASS	
 phyluce	phyluce_phyluce_align_seqcap_align	PASS	
+phyluce	phyluce_phyluce_align_split_concat_nexus_to_loci	Failed	image problem: Biopython in the image cannot parse the charpartition line of NEXUS files written by phyluce itself (NexusError)
+phyluce	phyluce_phyluce_assembly_assemblo_abyss	PASS	24 contigs and 7282 bp, same as the expected test set (run with --abyss-se)
 phyluce	phyluce_phyluce_assembly_assemblo_spades	PASS	
+phyluce	phyluce_phyluce_assembly_assemblo_trinity	Failed	image problem: Trinity in the image stops with 'jellyfish: not found'
+phyluce	phyluce_phyluce_assembly_assemblo_velvet	PASS	24 contigs, 18616 bp (expected 18635 bp); 12 contigs identical to the expected set
+phyluce	phyluce_phyluce_assembly_copy_trinity_symlinks	PASS	synthetic data: symlink folder planted from the real Trinity test contigs; wrapper copies the link targets so the output can be collected
+phyluce	phyluce_phyluce_assembly_explode_get_fastas_file	PASS	4 per-taxon files with the same sequences as the expected test files
+phyluce	phyluce_phyluce_assembly_extract_contigs_to_barcodes	PASS	extracted the named contig from the real barcode test contigs
+phyluce	phyluce_phyluce_assembly_filter_seqs_from_fastas	PASS	short sequences removed by median-length cut-off (11 removed), checked by hand
+phyluce	phyluce_phyluce_assembly_get_bed_for_genome_enabled_taxon	PASS	synthetic data: sliced-contig headers planted from real probe hits; BED has the 20 expected loci
+phyluce	phyluce_phyluce_assembly_get_fasta_lengths	PASS	24 contigs and 20187 bp, same as counted with Biopython
 phyluce	phyluce_phyluce_assembly_get_fastas_from_match_counts	PASS	
+phyluce	phyluce_phyluce_assembly_get_fastq_lengths	PASS	7404 reads and 677024 bp, same as the expected value in the phyluce tests
 phyluce	phyluce_phyluce_assembly_get_match_counts	PASS	
+phyluce	phyluce_phyluce_assembly_get_trinity_coverage	Failed	image problem: the GATK jar is not in the image (GenomeAnalysisTK asks for gatk3-register), so no coverage file is made
+phyluce	phyluce_phyluce_assembly_get_trinity_coverage_for_uce_loci	Not completed	needs the coverage files of get_trinity_coverage, which cannot run in this image (GATK jar missing)
+phyluce	phyluce_phyluce_assembly_match_contigs_to_barcodes	Failed	image problem: python module requests is missing in the image
+phyluce	phyluce_phyluce_assembly_match_contigs_to_probes	PASS	match counts 24/24, 20/20, 16/21 and 6/6 contigs, same as the expected probe_match_results.csv
+phyluce	phyluce_phyluce_assembly_parse_trinity_coverage_for_uce_loci_log	PASS	synthetic data: log lines written in the format the coverage tool prints; the --output option crashes in the tool (use standard output)
+phyluce	phyluce_phyluce_assembly_parse_trinity_coverage_log	PASS	synthetic data: log lines written in the format the coverage tool prints
+phyluce	phyluce_phyluce_assembly_screen_probes_for_dupes	PASS	listed the duplicate probes found in a real probe self-to-self lastz file
+phyluce	phyluce_phyluce_genetrees_generate_multilocus_bootstrap_count	PASS	
+phyluce	phyluce_phyluce_genetrees_get_mean_bootrep_support	PASS	
+phyluce	phyluce_phyluce_genetrees_get_tree_counts	PASS	
+phyluce	phyluce_phyluce_genetrees_locus_stats	Failed	tool bug: the script leaves a pdb.set_trace() in its last loop, so it always stops with BdbQuit and writes no result.
+phyluce	phyluce_phyluce_genetrees_order_gene_tree_file	Failed	image problem: the python module ete2 is missing in the image (ImportError).
+phyluce	phyluce_phyluce_genetrees_phybase	Failed	image problem: the python module rpy2 is missing in the image (ImportError).
+phyluce	phyluce_phyluce_genetrees_reformat_raxml_output	PASS	
+phyluce	phyluce_phyluce_genetrees_reformat_trees	PASS	
+phyluce	phyluce_phyluce_genetrees_rename_tree_leaves	PASS	
+phyluce	phyluce_phyluce_genetrees_run_raxml_bootstraps	PASS	
+phyluce	phyluce_phyluce_genetrees_run_raxml_genetrees	PASS	
+phyluce	phyluce_phyluce_genetrees_run_raxml_multilocus_bootstraps	PASS	
+phyluce	phyluce_phyluce_genetrees_sort_multilocus_bootstraps	PASS	
+phyluce	phyluce_phyluce_genetrees_split_models_from_genetrees	PASS	synthetic data: a two-line CloudForest-style genetree file was planted because no real one exists; the locus and model table came out correctly.
+phyluce	phyluce_phyluce_ncbi_chunk_fasta_for_ncbi	PASS	24 records split into chunks of 10, 10 and 4
+phyluce	phyluce_phyluce_ncbi_prep_uce_align_files_for_ncbi	PASS	
+phyluce	phyluce_phyluce_ncbi_prep_uce_align_files_for_ncbi_targeted_locus_db	PASS	
+phyluce	phyluce_phyluce_ncbi_prep_uce_fasta_files_for_ncbi	Failed	image problem: python module seqtools is missing in the image
+phyluce	phyluce_phyluce_probe_easy_lastz	PASS	
+phyluce	phyluce_phyluce_probe_get_clusters_from_bed	PASS	Probe BED names were rewritten to the probes-id|probes-locus form from real lastz probe hits; the JSON clusters are correct.
+phyluce	phyluce_phyluce_probe_get_clusters_from_taxa	Failed	tool bug: add_new_locus_numbers_to_rest starts at mx instead of mx+1, so the first unclustered probe (id 3) gets locus 0 and joins the real cluster of probes 697-699 (probes table built from the probe headers).
+phyluce	phyluce_phyluce_probe_get_genome_sequences_from_bed	PASS	
+phyluce	phyluce_phyluce_probe_get_locus_bed_from_lastz_files	PASS	
+phyluce	phyluce_phyluce_probe_get_multi_fasta_table	PASS	
+phyluce	phyluce_phyluce_probe_get_multi_merge_table	PASS	
+phyluce	phyluce_phyluce_probe_get_probe_bed_from_lastz_files	PASS	
+phyluce	phyluce_phyluce_probe_get_screened_loci_by_proximity	PASS	
+phyluce	phyluce_phyluce_probe_get_subsets_of_tiled_probes	PASS	
+phyluce	phyluce_phyluce_probe_get_tiled_probe_from_multiple_inputs	PASS	
+phyluce	phyluce_phyluce_probe_get_tiled_probes	PASS	
+phyluce	phyluce_phyluce_probe_query_multi_fasta_table	PASS	
+phyluce	phyluce_phyluce_probe_query_multi_merge_table	PASS	
+phyluce	phyluce_phyluce_probe_reconstruct_uce_from_probe	PASS	
+phyluce	phyluce_phyluce_probe_remove_duplicate_hits_from_probes_using_lastz	PASS	
+phyluce	phyluce_phyluce_probe_remove_overlapping_probes_given_config	PASS	
+phyluce	phyluce_phyluce_probe_run_multiple_lastzs_sqlite	PASS	
+phyluce	phyluce_phyluce_probe_slice_sequence_from_genomes	PASS	
+phyluce	phyluce_phyluce_probe_strip_masked_loci_from_set	PASS	
+phyluce	phyluce_phyluce_snp_bwa_align	PASS	
+phyluce	phyluce_phyluce_snp_bwa_multiple_align	PASS	
+phyluce	phyluce_phyluce_snp_convert_vcf_to_snapp	PASS	
+phyluce	phyluce_phyluce_snp_convert_vcf_to_structure	PASS	
+phyluce	phyluce_phyluce_snp_find_snps_in_bed_interval	PASS	
+phyluce	phyluce_phyluce_snp_get_dbsnp_freq_stats	Failed	image problem: phyluce.helpers.get_xml_data uses etree without importing it (NameError), and lxml is not installed in the image.
+phyluce	phyluce_phyluce_snp_get_dbsnp_variability_for_all_uces	Failed	image problem: phyluce.helpers.get_xml_data uses etree without importing it (NameError), and lxml is not installed in the image.
+phyluce	phyluce_phyluce_snp_get_from_uce_alignments	Failed	image problem: the python module cogent is missing in the image (ImportError).
+phyluce	phyluce_phyluce_snp_phase_uces	PASS	
+phyluce	phyluce_phyluce_snp_prep_interval_list_file_for_picard	PASS	
+phyluce	phyluce_phyluce_snp_screen_phased_alignments	PASS	
+phyluce	phyluce_phyluce_snp_screen_vcf_files	PASS	
+phyluce	phyluce_phyluce_snp_summarize_vcf_file	PASS	
+phyluce	phyluce_phyluce_utilities_cleanup_trinity	PASS	synthetic data: Trinity folder layout planted; only Trinity.fasta and trinity.log are kept
+phyluce	phyluce_phyluce_utilities_combine_reads	PASS	two read folders merged; read count doubled as expected
+phyluce	phyluce_phyluce_utilities_filter_bed_by_fasta	PASS	kept the 6 BED loci that are in the FASTA, plus the track line (standard output mode)
+phyluce	phyluce_phyluce_utilities_get_bed_from_fasta	PASS	synthetic data: sliced-contig FASTA headers planted; 20 BED rows with the locus prefix
+phyluce	phyluce_phyluce_utilities_merge_multiple_gzip_files	PASS	two gz read files merged into one with twice the reads
+phyluce	phyluce_phyluce_utilities_merge_next_seq_gzip_files	PASS	two lanes merged per read; twice the reads in each output
+phyluce	phyluce_phyluce_utilities_replace_many_links	PASS	synthetic data: symlink planted; new target path used and copied by the wrapper
+phyluce	phyluce_phyluce_utilities_sample_reads_from_files	PASS	200 reads sampled as set in the config (100 UCE, 30 mtDNA, 70 genome)
+phyluce	phyluce_phyluce_utilities_unmix_fasta_reads	PASS	100 R1, 100 R2 and 5 singleton reads from reads in new-style format; the tool only runs with --new-style
 phyml	phyml	Failed	tool bug: main DNA run, bootstrap and site likelihood output are correct, but --print_trace always writes an empty trace file, even with SPR search and 54 taxa.
 phynder	phynder	PASS	synthetic data: tree and VCF built from a real 7-primate BRCA1 alignment, query Chimp was placed in the Gorilla/Human clade; option -U stops with a command line error (tool bug, main mode works).
 phynteny	phynteny	Not completed	needs the 380 MB pre-trained model download (Zenodo), which is over the test size limit; CWL was rewritten from the help and starts correctly.
@@ -10559,23 +10694,98 @@ phynteny_transformer	phynteny_transformer	Not completed	needs a 233 MB pre-train
 physher	physher	PASS	
 physiofit	physiofit	PASS	ran config generation then fit on real E. coli batch data; fluxes agree with the published result (qGlc -8.19 vs -8.14, qAce 3.24 vs 3.24; growth rate 0.61 vs 0.51); the tool names result files with backslashes on Linux.
 physiofit4galaxy	physiofit4galaxy	PASS	ran in galaxy mode on real E. coli batch data (also from a saved config); fluxes agree with the published result (qGlc -8.09 vs -8.14, qAce 3.20 vs 3.24).
+physlr	physlr_annotate-graph	PASS	
+physlr	physlr_annotate-graph-bxtochr	Failed	tool bug: node hue is the index of the last barcode of each chromosome (for example 49.0 or 24.5), not a value between 0 and 1
+physlr	physlr_backbone	PASS	
+physlr	physlr_backbone-graph	PASS	
+physlr	physlr_bed-to-path	PASS	
+physlr	physlr_best-edges	PASS	
+physlr	physlr_biconnected-components	PASS	
+physlr	physlr_common-neighbours	PASS	
+physlr	physlr_count-minimizers	PASS	
+physlr	physlr_count-molecules	PASS	
+physlr	physlr_degree	PASS	
+physlr	physlr_fasta-gaps	PASS	
+physlr	physlr_filter	PASS	
+physlr	physlr_filter-barcodes	PASS	
+physlr	physlr_filter-bed	PASS	
+physlr	physlr_filter-bxmx	PASS	
+physlr	physlr_filter-overlap	PASS	
+physlr	physlr_find-ntcard-mode	PASS	
+physlr	physlr_flesh-backbone	PASS	
+physlr	physlr_indexlr	PASS	
+physlr	physlr_intersect	PASS	all-pairs mode checked against Python; the -v option crashes in the tool (itertools.combinations called without a size)
+physlr	physlr_liftover-paf	PASS	
+physlr	physlr_makebf	PASS	
+physlr	physlr_map	PASS	
+physlr	physlr_map-mkt	PASS	
+physlr	physlr_map-paf	PASS	
+physlr	physlr_molecules	PASS	
+physlr	physlr_mst	PASS	
+physlr	physlr_mst-troubleshoot	Failed	tool bug: always crashes with KeyError, the code loops over dict items as if they were edge pairs
+physlr	physlr_overlap	PASS	
+physlr	physlr_paf-metrics	PASS	
+physlr	physlr_path-metrics	PASS	
+physlr	physlr_path-to-fasta	PASS	
+physlr	physlr_remove-bridges-graph	PASS	
+physlr	physlr_report-junctions-graph	PASS	
+physlr	physlr_split-minimizers	Failed	tool bug: it needs vertex names barcode_N_M, so the graph written by physlr molecules (barcode_N) gives empty output; correct only on a graph renamed by hand
+physlr	physlr_split-minimizers-cpp	PASS	
+physlr	physlr_split-reads-molecules	PASS	synthetic data: molecule table built from the real read minimizers with one molecule per barcode
+physlr	physlr_subgraph	PASS	vertex list (-d 0) works; -d 1 or more crashes in the tool with a set-changed-during-iteration error
+physlr	physlr_subgraphs	Failed	tool bug: -d 1 writes only the source vertex and --exclude-source 1 is ignored, so documented options give wrong output
+physlr	physlr_subgraphs-stats	Failed	tool bug: the vertices list file is ignored when threads is 1 (all barcodes are reported); the default thread count and the all-barcodes mode work
+physlr	physlr_tiling-graph	PASS	
 phytest	phytest	PASS	ran the project example test file on its example alignment and tree: 19 tests, the 4 planted failures reported as expected; successCodes 0 and 1 added.
 phytop	phytop	PASS	ran on the project example ASTRAL tree: info table matches the shipped one and the PDF is made; clades/subset work; option -pie crashes (QFont float error in the tool); QT_QPA_PLATFORM=offscreen set in the CWL.
+phyx	phyx_pxaa2cdn	PASS	70 taxa codon alignment built from the amino acid and nucleotide example files.
+phyx	phyx_pxbdfit	PASS	
+phyx	phyx_pxbdsim	PASS	3 trees with 12 extant tips each; a 2.0 time run gives a tree with root age 2.
+phyx	phyx_pxboot	PASS	bootstrap and 50% jackknife give 8 sequences of the expected length; the partitioned jackknife (--part with --frac) stops with the tool's own 'not implemented' message.
 phyx	phyx_pxbp	PASS	fixed: --maptree input is now staged writable and its .pxbpmapped.tre output is collected.
 phyx	phyx_pxcat	PASS	fixed: --flist works with the listed files staged; the positional FILES form is ignored by the tool (it prints an error), use --seqf or --flist.
 phyx	phyx_pxclsq	PASS	synthetic data: a real alignment with 50 columns planted as N in five taxa; they were removed (1503 to 1453 sites); the unmodified real alignment keeps all columns.
+phyx	phyx_pxcltr	PASS	
+phyx	phyx_pxcolt	PASS	real tree with support values: all 93 nodes below 0.9 collapsed, 42 nodes remain.
 phyx	phyx_pxcomp	PASS	
+phyx	phyx_pxconsq	PASS	
+phyx	phyx_pxcontrates	Failed	tool bug: -o is accepted but ignored (results go to standard output, the file stays empty); the long options are not recognised, so the CWL uses the short ones.
+phyx	phyx_pxfqfilt	PASS	696 of 1000 reads kept, all with mean quality of 30 or more.
+phyx	phyx_pxlog	PASS	real BEAST tree logs combined and thinned (101 trees to 5 per file); column list, keep and delete options checked on a synthetic parameter log; the --rand option is documented as not yet implemented.
+phyx	phyx_pxlssq	PASS	
+phyx	phyx_pxlstr	PASS	
+phyx	phyx_pxmono	PASS	
+phyx	phyx_pxmrca	PASS	
+phyx	phyx_pxmrcacut	PASS	
+phyx	phyx_pxmrcaname	PASS	
 phyx	phyx_pxnj	PASS	
+phyx	phyx_pxnw	Failed	tool bug: the scores go to standard output; the -o file stays empty and -a writes no alignment file.
+phyx	phyx_pxrecode	PASS	
 phyx	phyx_pxrevcomp	PASS	reverse complement of the named sequences is correct with --seqf and --ids; the positional file form fails because the tool reads standard input.
+phyx	phyx_pxrls	PASS	
+phyx	phyx_pxrlt	PASS	
+phyx	phyx_pxrmk	PASS	
+phyx	phyx_pxrms	PASS	
 phyx	phyx_pxrmt	PASS	
 phyx	phyx_pxrr	PASS	
 phyx	phyx_pxs2fa	PASS	
 phyx	phyx_pxs2nex	PASS	
 phyx	phyx_pxs2phy	PASS	
+phyx	phyx_pxseqgen	Failed	tool bug: --nreps is accepted but ignored (always one replicate; not implemented in the source); size, base frequencies, rate options and root sequence work.
+phyx	phyx_pxssort	PASS	
+phyx	phyx_pxsstat	PASS	
+phyx	phyx_pxstrec	Not completed	the tool's own 4-state, 10-taxon example did not finish in 15 minutes (nor did a 6-taxon tree); a synthetic 4-taxon, 2-state case ran and wrote all output files.
+phyx	phyx_pxsw	Failed	tool bug: with --seqtype 1 and no --matrix all scores are 0 (the AA default matrix is not implemented); DNA mode and a given matrix work.
 phyx	phyx_pxt2new	PASS	
+phyx	phyx_pxt2nex	PASS	
+phyx	phyx_pxtcol	Failed	tool bug: the --mrcaf option is read but never used, so MRCA annotations are not added; --nodeidf annotation of node and tip labels works.
+phyx	phyx_pxtcomb	Failed	tool bug: on a 6-taxon tree with a 3-taxon subtree it returns a tree that lost taxon s3; other inputs loop forever or crash.
+phyx	phyx_pxtgen	PASS	5 taxa give the 15 unrooted topologies; the count option reports 105 for 6 taxa.
 phyx	phyx_pxtlate	PASS	
 phyx	phyx_pxtrt	PASS	fixed: names file option is -f (the long form --namesf is not accepted by pxtrt).
+phyx	phyx_pxtscale	PASS	
 phyx	phyx_pxupgma	PASS	
+phyx	phyx_pxvcf2fa	PASS	
 pia	pia	PASS	fixed: command is pia (not PIACli), outfile optional, exports collected; compile then analysis on the project's Tide search file gave PSM mzTab, peptide and protein tables; analysis json uses relative paths and a relaxed FDR for this small cut file; mzIdentML protein export crashes (tool error).
 piawka	piawka	PASS	fixed: groups can be a file or the keywords unite/divide, VCF index .tbi staged; ran on the project minitest VCF with groups table: pi, Dxy, Hudson Fst, Watterson and Tajima-like values are plausible.
 picard	picard_AccumulateQualityYieldMetrics	PASS	

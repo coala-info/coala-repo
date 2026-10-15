@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand:
   - dnapars
 label: phylip_dnapars
-doc: "DNA parsimony program. The program has no command-line options: it reads a menu from standard input (menu_answers) and reads fixed file names from the working directory. Menu letters: U user trees, S search option, J randomize input order, O outgroup, T threshold, N use weights, W sites weighted, M multiple data sets, I interleaved input.\n\nTool homepage: http://evolution.genetics.washington.edu/phylip/"
+doc: "DNA parsimony program. The program has no command-line options: it reads a menu from standard input (menu_answers) and reads fixed file names from the working directory. Menu letters: U user trees, S search option, J randomize input order, O outgroup, T threshold, W sites weighted (needs the weights file and the answer W), M multiple data sets, I interleaved input.\n\nTool homepage: http://evolution.genetics.washington.edu/phylip/"
 inputs:
   - id: infile
     type: File
@@ -13,11 +13,11 @@ inputs:
       - 'null'
       - File
     doc: User trees in Newick format (needed when the menu option U is chosen) (staged as 'intree')
-  - id: weightfile
+  - id: weights
     type:
       - 'null'
       - File
-    doc: Site weights (needed when the menu option W is chosen) (staged as 'weightfile')
+    doc: Site weights (needed when the menu option W is chosen) (staged as 'weights'; also add W to menu_answers)
   - id: menu_answers
     type:
       type: array
@@ -49,8 +49,8 @@ requirements:
         entry: $(inputs.infile)
       - entryname: intree
         entry: $(inputs.intree)
-      - entryname: weightfile
-        entry: $(inputs.weightfile)
+      - entryname: weights
+        entry: $(inputs.weights)
       - entryname: menu_answers.txt
         entry: $(inputs.menu_answers.join("\n") + "\n")
 hints:

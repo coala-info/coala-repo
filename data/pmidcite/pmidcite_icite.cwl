@@ -15,7 +15,7 @@ inputs:
   - id: append_outfile
     type:
       - 'null'
-      - File
+      - string
     doc: Append current citation report to an ASCII text file. Create if needed.
     inputBinding:
       position: 102
@@ -31,7 +31,7 @@ inputs:
   - id: dir_icite
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write PMID icite reports into directory
     inputBinding:
       position: 102
@@ -48,7 +48,7 @@ inputs:
   - id: dir_pubmed_txt
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write PubMed entry into directory
     inputBinding:
       position: 102
@@ -222,11 +222,17 @@ inputs:
       position: 102
       prefix: -O
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Write current citation report to an ASCII text file.
     inputBinding:
-      position: 103
+      position: 102
       prefix: --outfile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Citation report printed to standard output
   - id: outfile
     type:
       - 'null'
@@ -234,8 +240,48 @@ outputs:
     doc: Write current citation report to an ASCII text file.
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: appended_outfile
+    type:
+      - 'null'
+      - File
+    doc: Citation report appended to this text file
+    outputBinding:
+      glob: $(inputs.append_outfile)
+  - id: icite_reports_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with one iCite report per PMID
+    outputBinding:
+      glob: $(inputs.dir_icite)
+  - id: pubmed_entries_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the PubMed entries
+    outputBinding:
+      glob: $(inputs.dir_pubmed_txt)
+  - id: icite_py_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with temporary working files holding the iCite information
+    outputBinding:
+      glob: $(inputs.dir_icite_py)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        ['dir_icite', 'dir_icite_py', 'dir_pubmed_txt'].forEach(function(k) {
+          if (inputs[k]) { l.push({entryname: inputs[k], entry: {class: 'Directory', listing: []}, writable: true}); }
+        });
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pmidcite:0.3.1--pyhdfd78af_0
+stdout: pmidcite_icite.out

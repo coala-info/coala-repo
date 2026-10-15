@@ -94,8 +94,11 @@ inputs:
   - id: glm
     type:
       - 'null'
-      - boolean
+      - type: array
+        items: string
     doc: Perform basic association analysis using linear or logistic regression.
+      Optional modifiers, for example allow-no-covars, hide-covar, genotypic,
+      firth-fallback, cols=+a1freq.
     inputBinding:
       position: 101
       prefix: --glm
@@ -240,6 +243,80 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: bed
+    type:
+      - 'null'
+      - File
+    doc: Specify full name of .bed file.
+    inputBinding:
+      position: 101
+      prefix: --bed
+  - id: bim
+    type:
+      - 'null'
+      - File
+    doc: Specify full name of .bim file.
+    inputBinding:
+      position: 101
+      prefix: --bim
+  - id: fam
+    type:
+      - 'null'
+      - File
+    doc: Specify full name of .fam file.
+    inputBinding:
+      position: 101
+      prefix: --fam
+  - id: double_id
+    type:
+      - 'null'
+      - boolean
+    doc: Set both family and within-family IDs to the VCF sample ID.
+    inputBinding:
+      position: 101
+      prefix: --double-id
+  - id: freq
+    type:
+      - 'null'
+      - boolean
+    doc: Compute allele frequencies (.afreq report).
+    inputBinding:
+      position: 101
+      prefix: --freq
+  - id: hardy
+    type:
+      - 'null'
+      - boolean
+    doc: Compute Hardy-Weinberg equilibrium test statistics (.hardy report).
+    inputBinding:
+      position: 101
+      prefix: --hardy
+  - id: missing
+    type:
+      - 'null'
+      - boolean
+    doc: Compute sample-based and variant-based missing data reports.
+    inputBinding:
+      position: 101
+      prefix: --missing
+  - id: het
+    type:
+      - 'null'
+      - boolean
+    doc: Compute observed and expected homozygous/heterozygous genotype counts and F estimates for each sample.
+    inputBinding:
+      position: 101
+      prefix: --het
+  - id: indep_pairwise
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Generate a list of variants in approximate linkage equilibrium. Takes the
+      window size, the step size (variant count) and the r^2 threshold.
+    inputBinding:
+      position: 101
+      prefix: --indep-pairwise
   - id: out_path
     type: string
     doc: ': Specify prefix for output files.'

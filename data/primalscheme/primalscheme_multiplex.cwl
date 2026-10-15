@@ -14,14 +14,14 @@ inputs:
   - id: amplicon_size
     type:
       - 'null'
-      - int
+      - type: array
+        items: int
+        inputBinding:
+          prefix: --amplicon-size
     doc: Amplicon size target. Pass twice to set an exact range, otherwise 
-      expect +/- 5.0%.
-      - 380
-      - 420
+      expect +/- 5.0%. Default 380, 420.
     inputBinding:
       position: 102
-      prefix: --amplicon-size
   - id: debug
     type:
       - 'null'
@@ -50,6 +50,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: scheme
     doc: Prefix name for your outputs.
     inputBinding:
       position: 102
@@ -90,6 +91,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: output
     doc: Path to output directory.
     inputBinding:
       position: 102
@@ -114,17 +116,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: name_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in name
-    outputBinding:
-      glob: $(inputs.name)*
   - id: outpath_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to output directory.
     outputBinding:
       glob: $(inputs.outpath)

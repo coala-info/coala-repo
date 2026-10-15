@@ -4,12 +4,19 @@ baseCommand:
   - ppanggolin
   - spot
 label: ppanggolin_spot
-doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
-  team, and distributed under the CeCILL Free Software License Agreement.\n\nFor genomic
-  islands and spots of insertion detection, please cite:\nBazin A et al. (2020) panRGP:
-  a pangenome-based method to predict genomic islands and explore their diversity.\n\
-  Bioinformatics, Volume 36, Issue Supplement_2, Pages i651–i658, https://doi.org/10.1093/bioinformatics/btaa792\n\
-  \nTool homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
+  team, and distributed under the CeCILL Free Software License Agreement.
+
+
+  For genomic islands and spots of insertion detection, please cite:
+
+  Bazin A et al. (2020) panRGP: a pangenome-based method to predict genomic islands
+  and explore their diversity.
+
+  Bioinformatics, Volume 36, Issue Supplement_2, Pages i651–i658, https://doi.org/10.1093/bioinformatics/btaa792
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: config
     type:
@@ -66,23 +73,25 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The number of 'missing' persistent genes allowed when comparing 
-      flanking genes during hotspot computations
+    doc: The number of 'missing' persistent genes allowed when comparing flanking
+      genes during hotspot computations
     inputBinding:
       position: 101
       prefix: --overlapping_match
   - id: pangenome
     type: File
-    doc: The pangenome .h5 file
+    doc: The pangenome .h5 file The file is staged writable because ppanggolin opens
+      it for writing.
     inputBinding:
       position: 101
       prefix: --pangenome
+      valueFrom: $(self.basename)
   - id: set_size
     type:
       - 'null'
       - int
-    doc: Number of single copy markers to use as flanking genes for a RGP during
-      hotspot computation
+    doc: Number of single copy markers to use as flanking genes for a RGP during hotspot
+      computation
     inputBinding:
       position: 101
       prefix: --set_size
@@ -90,8 +99,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Writes a graph of pairs of blocks of single copy markers flanking RGPs,
-      supposedly belonging to the same hotspot
+    doc: Writes a graph of pairs of blocks of single copy markers flanking RGPs, supposedly
+      belonging to the same hotspot
     inputBinding:
       position: 101
       prefix: --spot_graph
@@ -99,8 +108,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -117,8 +126,17 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_path)
+  - id: pangenome_out
+    type: File
+    doc: The pangenome HDF5 file after the step.
+    outputBinding:
+      glob: $(inputs.pangenome.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.pangenome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0

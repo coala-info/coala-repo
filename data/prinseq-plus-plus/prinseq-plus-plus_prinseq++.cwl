@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prinseq-plus-plus
+baseCommand: prinseq++
 label: prinseq-plus-plus_prinseq++
 doc: "PRINSEQ++ is a C++ implementation of the prinseq-lite.pl program. It can be
   used to filter, reformat or trim genomic and metagenomic sequence data. It is 5X
@@ -147,6 +147,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: prinseq_out
     doc: For pair-end sequences, the output files are <string>_good_out_R1 and 
       <string>_good_out_R2 for pairs where both reads pass quality control, 
       <string>_single_out_R1 and <string>_single_out_R2 for read that passed 
@@ -327,6 +328,13 @@ inputs:
       position: 107
       prefix: -out_single2
 outputs:
+  - id: out_files
+    type:
+      type: array
+      items: File
+    doc: Output files written with the prefix given in out_name
+    outputBinding:
+      glob: $(inputs.out_name)_*
   - id: out_good
     type:
       - 'null'

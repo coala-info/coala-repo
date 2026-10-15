@@ -4,9 +4,11 @@ baseCommand:
   - ppanggolin
   - context
 label: ppanggolin_context
-doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
-  team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
-  homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
+  team, and distributed under the CeCILL Free Software License Agreement.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: config
     type:
@@ -43,7 +45,7 @@ inputs:
   - id: family
     type:
       - 'null'
-      - string
+      - File
     doc: List of family IDs of interest from the pangenome
     inputBinding:
       position: 101
@@ -52,9 +54,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use representative sequences of gene families for input gene alignment.
-      This option is recommended for faster processing but may be less 
-      sensitive. By default, all pangenome genes are used for alignment.
+    doc: Use representative sequences of gene families for input gene alignment. This
+      option is recommended for faster processing but may be less sensitive. By default,
+      all pangenome genes are used for alignment.
     inputBinding:
       position: 101
       prefix: --fast
@@ -86,8 +88,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimum jaccard similarity used to filter edges between gene families. 
-      Increasing it will improve precision but lower sensitivity a lot.
+    doc: minimum jaccard similarity used to filter edges between gene families. Increasing
+      it will improve precision but lower sensitivity a lot.
     inputBinding:
       position: 101
       prefix: --jaccard
@@ -103,8 +105,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: DO NOT Realign gene families to link fragments withtheir non-fragmented
-      gene family.
+    doc: DO NOT Realign gene families to link fragments withtheir non-fragmented gene
+      family.
     inputBinding:
       position: 101
       prefix: --no_defrag
@@ -134,9 +136,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Size of the transitive closure used to build the graph. This indicates 
-      the number of non related genes allowed in-between two related genes. 
-      Increasing it will improve precision but lower sensitivity a little.
+    doc: Size of the transitive closure used to build the graph. This indicates the
+      number of non related genes allowed in-between two related genes. Increasing
+      it will improve precision but lower sensitivity a little.
     inputBinding:
       position: 101
       prefix: --transitive
@@ -144,8 +146,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The translation table to use when the input sequences are nucleotide 
-      sequences.
+    doc: The translation table to use when the input sequences are nucleotide sequences.
     inputBinding:
       position: 101
       prefix: --translation_table
@@ -153,8 +154,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -162,8 +163,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of neighboring genes that are considered on each side of a gene 
-      of interest when searching for conserved genomic contexts.
+    doc: Number of neighboring genes that are considered on each side of a gene of
+      interest when searching for conserved genomic contexts.
     inputBinding:
       position: 101
       prefix: --window_size

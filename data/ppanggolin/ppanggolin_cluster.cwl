@@ -4,16 +4,18 @@ baseCommand:
   - ppanggolin
   - cluster
 label: ppanggolin_cluster
-doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
-  team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
-  homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
+  team, and distributed under the CeCILL Free Software License Agreement.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: clusters
     type:
       - 'null'
       - File
-    doc: A tab-separated list containing the result of a clustering. One line 
-      per gene. First column is cluster ID, and second is gene ID
+    doc: A tab-separated list containing the result of a clustering. One line per
+      gene. First column is cluster ID, and second is gene ID
     inputBinding:
       position: 101
       prefix: --clusters
@@ -29,8 +31,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimal coverage of the alignment for two proteins to be in the same 
-      cluster
+    doc: Minimal coverage of the alignment for two proteins to be in the same cluster
     inputBinding:
       position: 101
       prefix: --coverage
@@ -70,9 +71,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: When reading a clustering result with --clusters, if a gene is not in 
-      the provided file it will be placed in a cluster where the gene is the 
-      only member.
+    doc: When reading a clustering result with --clusters, if a gene is not in the
+      provided file it will be placed in a cluster where the gene is the only member.
     inputBinding:
       position: 101
       prefix: --infer_singletons
@@ -105,17 +105,19 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: DO NOT Use the defragmentation strategy to link potential fragments 
-      with their original gene family.
+    doc: DO NOT Use the defragmentation strategy to link potential fragments with
+      their original gene family.
     inputBinding:
       position: 101
       prefix: --no_defrag
   - id: pangenome
     type: File
-    doc: The pangenome .h5 file
+    doc: The pangenome .h5 file The file is staged writable because ppanggolin opens
+      it for writing.
     inputBinding:
       position: 101
       prefix: --pangenome
+      valueFrom: $(self.basename)
   - id: tmpdir
     type:
       - 'null'
@@ -136,8 +138,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -145,7 +147,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pangenome_out
+    type: File
+    doc: The pangenome HDF5 file after the step.
+    outputBinding:
+      glob: $(inputs.pangenome.basename)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0
 stdout: ppanggolin_cluster.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.pangenome)
+        writable: true

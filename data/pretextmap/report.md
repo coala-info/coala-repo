@@ -1,5 +1,11 @@
 # pretextmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pretextmap_PretextMap | PASS | Built a contact map from 41,563 real Hi-C pairs (metaTOR test data); filtering gives a smaller map (input read from stdin; -o and filter flags fixed). |
+
 ## pretextmap_PretextMap
 
 ### Tool Description

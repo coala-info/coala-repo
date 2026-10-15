@@ -1,26 +1,41 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - predictosaurus
-  - peptides
+baseCommand: predictosaurus
+arguments:
+  - position: 2
+    valueFrom: peptides
 label: predictosaurus_peptides
 doc: "Output all distinct peptides from the given features to a fastq file per given
   CDS in the feature file\n\nTool homepage: https://github.com/fxwiegand/predictosaurus"
 inputs:
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use (global option, placed before the subcommand; default all available cores)
+    inputBinding:
+      position: 1
+      prefix: --threads
   - id: background_events
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --background-events
+    doc: Background events (repeat the option for each event)
     inputBinding:
       position: 101
-      prefix: --background-events
   - id: events
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --events
+    doc: Events of interest (repeat the option for each event)
     inputBinding:
       position: 101
-      prefix: --events
   - id: features
     type: File
     doc: Path to the gff file containing the features of interest
@@ -88,12 +103,16 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: Directory
-    doc: Path to the output directory for the fastq files
+    type: File
+    doc: Peptide FASTA file (the help says directory, but the tool writes a single file)
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.graph)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/predictosaurus:0.8.4--hbcba35e_0

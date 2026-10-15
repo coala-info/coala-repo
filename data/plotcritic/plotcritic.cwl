@@ -68,6 +68,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_dir
+    type: Directory
+    doc: Website directory created with the project name
+    outputBinding:
+      glob: $(inputs.project)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plotcritic:1.0.1--pyh5e36f6f_0

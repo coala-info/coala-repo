@@ -88,11 +88,17 @@ inputs:
       position: 102
       prefix: --threads
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Output filename (the table goes to standard output when not given)
     inputBinding:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Table of read fields (when --output is not given)
   - id: output
     type:
       - 'null'
@@ -102,6 +108,7 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: pod5_view.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0

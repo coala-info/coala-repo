@@ -1,5 +1,12 @@
 # pmga CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pmga | Not completed | needs the full PubMLST BLAST database from pmga-build (about 4,500 loci, roughly 12 hours of downloads), so no test run was possible |
+| pmga_pmga-build | Not completed | needs about 4,500 PubMLST locus downloads (roughly 12 hours, about 6 loci per minute measured), stopped after 15 minutes |
+
 ## pmga
 
 ### Tool Description
@@ -46,6 +53,34 @@ Additional Options:
   --version             show program's version number and exit
 ```
 
+
+## pmga_pmga-build
+
+### Tool Description
+Create local BLAST databases from the PubMLST alleles used by pmga
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pmga:3.0.2--hdfd78af_0
+- **Homepage**: https://github.com/rpetit3/pmga
+- **Package**: https://anaconda.org/channels/bioconda/packages/pmga/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pmga-build [-h] [--outdir STR] [--force] [--silent] [--debug]
+                  [--version]
+
+pmga-build (v3.0.1) - Script for creating local BlastDBs from PubMLST alleles
+
+options:
+  -h, --help    show this help message and exit
+  --outdir STR  Directory to save BLAST databases to (Default:
+                ./pubmlst_dbs_all)
+  --force       Overwrite existing directories.
+  --silent      Only critical errors will be printed.
+  --debug       Print debug related text.
+  --version     show program's version number and exit
+```
 
 ## Metadata
 - **Skill**: generated

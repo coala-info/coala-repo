@@ -1,5 +1,11 @@
 # prodigal-gv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prodigal-gv | PASS | SARS-CoV-2 genome in meta mode gave 8 genes including ORF1a and S. |
+
 ## prodigal-gv
 
 ### Tool Description

@@ -87,6 +87,13 @@ inputs:
       position: 102
       prefix: --type
 outputs:
+  - id: plot
+    type:
+      - 'null'
+      - File
+    doc: The plot written with --saveas
+    outputBinding:
+      glob: $(inputs.saveas)
   - id: stdout
     type: stdout
     doc: Standard output

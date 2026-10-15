@@ -1,65 +1,67 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: predstoseq.py
+baseCommand:
+  - plncpro
+  - predtoseq
 label: plncpro_predtoseq
-doc: "Use this to extract lncRNA or mRNA sequences, as predicted by PLNCPRO, from
-  the input fasta file\n\nTool homepage: https://github.com/urmi-21/PLncPRO"
+doc: "Extract lncRNA or mRNA sequences, as predicted by PLNCPRO, from the input fasta file\n\nTool homepage: https://github.com/urmi-21/PLncPRO"
 inputs:
-  - id: max_length
-    type:
-      - 'null'
-      - int
-    doc: max_length
-    inputBinding:
-      position: 1
-  - id: class_prob_cutoff
-    type:
-      - 'null'
-      - float
-    doc: class_prob_cutoff[range 0-1]
-    inputBinding:
-      position: 102
-      prefix: -s
   - id: input_fastafile
     type: File
-    doc: input fastafile
+    doc: 'Input fasta file'
     inputBinding:
-      position: 102
+      position: 101
       prefix: -f
-  - id: min_length
-    type:
-      - 'null'
-      - int
-    doc: min_length
+  - id: output_file
+    type: string
+    doc: 'Output file'
     inputBinding:
-      position: 102
-      prefix: -m
+      position: 101
+      prefix: -o
   - id: predictionfile
     type: File
-    doc: predictionfile
+    doc: 'PLNCPRO prediction file'
     inputBinding:
-      position: 102
+      position: 101
       prefix: -p
   - id: required_label
     type:
       - 'null'
       - string
-    doc: required label
+    doc: 'Required label [default: 0]'
     inputBinding:
-      position: 102
+      position: 101
       prefix: -l
-  - id: outputfile_path
-    type: string
-    doc: Output or path parameter `outputfile_path`
+  - id: class_prob_cutoff
+    type:
+      - 'null'
+      - float
+    doc: 'Class probability cutoff, range 0-1 [default: 0]'
     inputBinding:
-      position: 103
-      prefix: --outputfile
+      position: 101
+      prefix: -s
+  - id: min_length
+    type:
+      - 'null'
+      - int
+    doc: 'Minimum sequence length [default 0] (the help text shows -m, but the program only accepts --min)'
+    inputBinding:
+      position: 101
+      prefix: --min
+  - id: max_length
+    type:
+      - 'null'
+      - int
+    doc: 'Maximum sequence length [default inf] (the help text shows a second value after -m, but the program only accepts --max)'
+    inputBinding:
+      position: 101
+      prefix: --max
 outputs:
-  - id: outputfile
+  - id: output
     type: File
-    doc: outputfile
+    doc: 'Extracted sequences'
     outputBinding:
-      glob: $(inputs.outputfile_path)
+      glob: $(inputs.output_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

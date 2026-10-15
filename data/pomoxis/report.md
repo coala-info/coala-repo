@@ -1,5 +1,17 @@
 # pomoxis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pomoxis_assess_assembly | PASS |  |
+| pomoxis_filter_bam | PASS |  |
+| pomoxis_intersect_assembly_errors | Failed | tool bug: the script calls stats_from_bam --bam, an option that stats_from_bam 0.3.16 in the same image rejects, so it stops after trimming |
+| pomoxis_mini_align | PASS |  |
+| pomoxis_mini_assemble | PASS |  |
+| pomoxis_stats_from_bam | PASS |  |
+| pomoxis_subsample_bam | PASS |  |
+
 ## pomoxis_mini_assemble
 
 ### Tool Description

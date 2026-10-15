@@ -1,5 +1,11 @@
 # presto CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| presto_BuildConsensus.py | PASS | Output matches the two Galaxy expected files (max diversity and max error runs); CWL rewritten (wrong -p, --log-file, --out-name flags; outdir created). |
+
 ## Metadata
 - **Skill**: generated
 

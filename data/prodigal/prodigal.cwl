@@ -107,8 +107,16 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Write a training file (if none exists); otherwise, read and use the 
-      specified training file.
+    doc: Read and use the specified training file.
+    inputBinding:
+      position: 101
+      prefix: -t
+  - id: write_training_file
+    type:
+      - 'null'
+      - string
+    doc: Write a training file with this name (used when no training file exists
+      yet).
     inputBinding:
       position: 101
       prefix: -t
@@ -141,11 +149,22 @@ outputs:
     doc: Write all potential genes (with scores) to the selected file.
     outputBinding:
       glob: $(inputs.score_file)
+  - id: output_training_file
+    type:
+      - 'null'
+      - File
+    doc: Training file written with -t.
+    outputBinding:
+      glob: $(inputs.write_training_file)
+  - id: stdout
+    type: stdout
+    doc: Gene predictions when no output file is given.
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prodigal:2.60--1
+stdout: prodigal.out
 s:url: https://github.com/hyattpd/Prodigal
 $namespaces:
   s: https://schema.org/

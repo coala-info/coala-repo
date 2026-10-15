@@ -1,72 +1,94 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plncpro_predict
+baseCommand:
+  - plncpro
+  - predict
 label: plncpro_predict
-doc: "This script classifies transcripts as coding or non coding transcripts\n\nTool
-  homepage: https://github.com/urmi-21/PLncPRO"
+doc: "Classify transcripts as coding or non coding transcripts\n\nTool homepage: https://github.com/urmi-21/PLncPRO"
 inputs:
-  - id: blast_database
-    type:
-      - 'null'
-      - Directory
-    doc: path to blast database
-    inputBinding:
-      position: 101
-      prefix: -d
-  - id: blast_output_file
-    type:
-      - 'null'
-      - File
-    doc: path to blast output for input file
-    inputBinding:
-      position: 101
-      prefix: --blastres
-  - id: cleanup_intermediate_files
-    type:
-      - 'null'
-      - boolean
-    doc: clean up intermediate files
-    inputBinding:
-      position: 101
-      prefix: -r
-  - id: input_sequences_file
-    type:
-      - 'null'
-      - File
-    doc: path to file containing input sequences
+  - id: input_fasta
+    type: File
+    doc: 'Path to file containing input sequences'
     inputBinding:
       position: 101
       prefix: -i
-  - id: labels_file
+  - id: model
+    type: File
+    doc: 'Path to the model file'
+    inputBinding:
+      position: 101
+      prefix: -m
+  - id: prediction_file
+    type: string
+    doc: 'Output file name to store prediction results'
+    inputBinding:
+      position: 101
+      prefix: -p
+  - id: outdir
+    type: string
+    doc: 'Output directory name to store all results'
+    inputBinding:
+      position: 101
+      prefix: -o
+  - id: blast_db_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: 'Files of the protein BLAST database (for example mydb.phr, mydb.pin and mydb.psq), staged in the working directory so that blast_db_prefix resolves'
+  - id: blast_db_prefix
+    type:
+      - 'null'
+      - string
+    doc: 'Path (prefix) of the protein BLAST database'
+    inputBinding:
+      position: 101
+      prefix: -d
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: 'Number of threads [default: 4]'
+    inputBinding:
+      position: 101
+      prefix: -t
+  - id: labels
     type:
       - 'null'
       - File
-    doc: path to the files containg labels(this outputs performance of the 
-      classifier)
+    doc: 'Path to the file containing labels (this outputs performance of the classifier)'
     inputBinding:
       position: 101
       prefix: -l
+  - id: cleanup
+    type:
+      - 'null'
+      - boolean
+    doc: 'Clean up intermediate files'
+    inputBinding:
+      position: 101
+      prefix: -r
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: 'Show more messages'
+    inputBinding:
+      position: 101
+      prefix: -v
   - id: min_len
     type:
       - 'null'
       - int
-    doc: specifiy min_length to filter input files
+    doc: 'Minimum length to filter input files'
     inputBinding:
       position: 101
       prefix: --min_len
-  - id: model_file
-    type:
-      - 'null'
-      - File
-    doc: path to the model file
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: no_blast
+  - id: noblast
     type:
       - 'null'
       - boolean
-    doc: Don't use blast features
+    doc: 'Do not use blast features'
     inputBinding:
       position: 101
       prefix: --noblast
@@ -74,7 +96,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Don't use framefinder features
+    doc: 'Do not use framefinder features'
     inputBinding:
       position: 101
       prefix: --no_ff
@@ -82,59 +104,31 @@ inputs:
     type:
       - 'null'
       - int
-    doc: specify qcov parameter for blast
+    doc: 'Query coverage parameter for blast [default: 30]'
     inputBinding:
       position: 101
       prefix: --qcov_hsp
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: number of threads
-    inputBinding:
-      position: 101
-      prefix: -t
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: show more messages
-    inputBinding:
-      position: 101
-      prefix: -v
-  - id: output_directory_path
-    type:
-      - 'null'
-      - string
-    doc: output directory name to store all results
-    inputBinding:
-      position: 102
-      prefix: -o
-  - id: output_prediction_file_path
-    type:
-      - 'null'
-      - string
-    doc: output file name to store prediction results
-    inputBinding:
-      position: 103
-      prefix: -p
-outputs:
-  - id: output_prediction_file
+  - id: blastres
     type:
       - 'null'
       - File
-    doc: output file name to store prediction results
+    doc: 'Path to blast output for input file'
+    inputBinding:
+      position: 101
+      prefix: --blastres
+outputs:
+  - id: result_directory
+    type: Directory
+    doc: 'Output directory with the prediction results'
     outputBinding:
-      glob: $(inputs.output_prediction_file_path)
-  - id: output_directory
-    type:
-      - 'null'
-      - Directory
-    doc: output directory name to store all results
-    outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.blast_db_files)
+      - entry: $(inputs.input_fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plncpro:1.2.2--py37hc9558a2_0

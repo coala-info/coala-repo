@@ -1,5 +1,11 @@
 # plink CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plink | PASS | Galaxy plink test data (plink-simulated sets, test.vcf); VCF to bed output identical to Galaxy expected, freq/hardy/missing counts checked against own decoding, assoc/logistic/pca/genome/bmerge/make-bed/recode ran; fixed merge inputs to files and added freq, hardy, missing, het, genome, indep-pairwise flags |
+
 ## plink
 
 ### Tool Description

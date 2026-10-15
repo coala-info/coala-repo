@@ -43,12 +43,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+    secondaryFiles:
+      - .fai
   - id: input
     type: File
     doc: gene FASTA file from extract_gene_seq.py script
     inputBinding:
       position: 101
       prefix: --input
+    secondaryFiles:
+      - .fai
   - id: mutations
     type: File
     doc: DNA mutations file (MAF file). Columns can be in any order, but should 

@@ -1,5 +1,12 @@
 # pmidcite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pmidcite_icite | PASS |  |
+| pmidcite_sumpaps | PASS |  |
+
 ## pmidcite_icite
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # progressivemauve CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| progressivemauve_progressiveMauve | PASS | Two-genome run gives the same 6 blocks and sequences as the Galaxy expected XMFA (gap placement differs slightly); guide tree matches; options need the = form. |
+
 ## progressivemauve_progressiveMauve
 
 ### Tool Description

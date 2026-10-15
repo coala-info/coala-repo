@@ -1,5 +1,11 @@
 # pmdtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pmdtools | PASS |  |
+
 ## pmdtools
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # pretextsnapshot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pretextsnapshot_PretextSnapshot | PASS | Rendered the Hi-C contact map as PNG images (full map plus one per contig, 106 files); full-map image shows a contact grid. |
+
 ## pretextsnapshot_PretextSnapshot
 
 ### Tool Description

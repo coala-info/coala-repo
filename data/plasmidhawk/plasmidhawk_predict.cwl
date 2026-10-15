@@ -8,7 +8,9 @@ doc: "Choose prediction mode (max, supermax, correct), default max. supermax is 
   mode, but output top 50 labs\n\nTool homepage: https://gitlab.com/treangenlab/plasmidhawk"
 inputs:
   - id: prediction_mode
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Choose prediction mode (max, supermax, correct), default max. supermax 
       is max mode, but output top 50 labs
     inputBinding:
@@ -67,8 +69,8 @@ inputs:
   - id: work_dir
     type:
       - 'null'
-      - Directory
-    doc: output lab-of-origin prediction
+      - string
+    doc: Directory to save the nucmer outputs
     inputBinding:
       position: 105
       prefix: --work-dir
@@ -85,6 +87,13 @@ outputs:
     doc: output lab-of-origin prediction
     outputBinding:
       glob: $(inputs.output_path)
+  - id: work_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: nucmer work directory
+    outputBinding:
+      glob: $(inputs.work_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

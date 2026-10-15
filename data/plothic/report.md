@@ -1,5 +1,11 @@
 # plothic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plothic | PASS |  |
+
 ## plothic
 
 ### Tool Description

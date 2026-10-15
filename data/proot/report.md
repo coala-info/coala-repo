@@ -1,5 +1,11 @@
 # proot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proot | PASS | Ran commands in an Alpine 3.24 minirootfs; -0, -k, -w and -b worked. |
+
 ## proot
 
 ### Tool Description

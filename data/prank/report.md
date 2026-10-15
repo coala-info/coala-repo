@@ -1,5 +1,11 @@
 # prank CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prank | PASS | Aligned 20 real HIV sequences (with and without a guide tree); output FASTA and PHYLIP alignments are valid. Fixed -d input and output glob. |
+
 ## prank
 
 ### Tool Description

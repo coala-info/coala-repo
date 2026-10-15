@@ -24,7 +24,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: select backend by name
+    doc: "select backend by name: eps, postscript, ps, pdf, pdfpage, svg, dxf, geojson, pgm, gimppath or xfig"
     inputBinding:
       position: 102
       prefix: --backend
@@ -68,13 +68,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --debug
-  - id: dxf
-    type:
-      - 'null'
-      - boolean
-    doc: DXF backend (drawing interchange format)
-    inputBinding:
-      position: 102
   - id: eps
     type:
       - 'null'
@@ -107,20 +100,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --gamma
-  - id: geojson
-    type:
-      - 'null'
-      - boolean
-    doc: GeoJSON backend
-    inputBinding:
-      position: 102
-  - id: gimppath
-    type:
-      - 'null'
-      - boolean
-    doc: Gimppath backend (GNU Gimp)
-    inputBinding:
-      position: 102
   - id: group
     type:
       - 'null'
@@ -217,20 +196,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --pagesize
-  - id: pdf
-    type:
-      - 'null'
-      - boolean
-    doc: PDF backend (portable document format)
-    inputBinding:
-      position: 102
-  - id: pdfpage
-    type:
-      - 'null'
-      - boolean
-    doc: fixed page-size PDF backend
-    inputBinding:
-      position: 102
   - id: pgm
     type:
       - 'null'
@@ -359,13 +324,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --width
-  - id: xfig
-    type:
-      - 'null'
-      - boolean
-    doc: XFig backend
-    inputBinding:
-      position: 102
   - id: output_file_path
     type: string
     doc: '- write all output to this file'

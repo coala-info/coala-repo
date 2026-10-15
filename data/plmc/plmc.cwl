@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: Multiple sequence alignment in FASTA format
     inputBinding:
-      position: 1
+      position: 200
   - id: alphabet
     type:
       - 'null'
@@ -121,7 +121,7 @@ inputs:
     doc: Output or path parameter `output_param_file_path`
     inputBinding:
       position: 104
-      prefix: --output-param-file
+      prefix: --output
   - id: save_weights_path
     type:
       - 'null'

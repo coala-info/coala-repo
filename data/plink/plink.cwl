@@ -56,8 +56,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: Merge the given binary fileset with the initially loaded fileset.
+        items: File
+    doc: Merge the given binary fileset (.bed .bim .fam files) with the initially
+      loaded fileset.
     inputBinding:
       position: 101
       prefix: --bmerge
@@ -188,8 +189,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: Merge the given fileset with the initially loaded fileset.
+        items: File
+    doc: Merge the given text fileset (.ped .map files) with the initially loaded
+      fileset.
     inputBinding:
       position: 101
       prefix: --merge
@@ -260,6 +262,72 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: freq
+    type:
+      - 'null'
+      - boolean
+    doc: Generate a basic allele frequency report.
+    inputBinding:
+      position: 101
+      prefix: --freq
+  - id: freqx
+    type:
+      - 'null'
+      - boolean
+    doc: Generate a genotype count report.
+    inputBinding:
+      position: 101
+      prefix: --freqx
+  - id: hardy
+    type:
+      - 'null'
+      - boolean
+    doc: Generate a Hardy-Weinberg exact test p-value report.
+    inputBinding:
+      position: 101
+      prefix: --hardy
+  - id: missing
+    type:
+      - 'null'
+      - boolean
+    doc: Generate sample- and variant-based missing data reports.
+    inputBinding:
+      position: 101
+      prefix: --missing
+  - id: het
+    type:
+      - 'null'
+      - boolean
+    doc: Estimate inbreeding coefficients (method-of-moments).
+    inputBinding:
+      position: 101
+      prefix: --het
+  - id: check_sex
+    type:
+      - 'null'
+      - boolean
+    doc: Compare sex assignments in the input with those imputed from X chromosome inbreeding coefficients.
+    inputBinding:
+      position: 101
+      prefix: --check-sex
+  - id: genome
+    type:
+      - 'null'
+      - boolean
+    doc: Generate an identity-by-descent report.
+    inputBinding:
+      position: 101
+      prefix: --genome
+  - id: indep_pairwise
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Generate a list of markers in approximate linkage equilibrium. Takes the
+      window size, the step size (variant count) and the r^2 threshold.
+    inputBinding:
+      position: 101
+      prefix: --indep-pairwise
   - id: out_path
     type: string
     doc: ': Specify prefix for output files.'

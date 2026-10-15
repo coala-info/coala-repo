@@ -1,5 +1,11 @@
 # prefersim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prefersim_PReFerSim | PASS | Ran the repo's neutral dog-demography example; output tables and SNP counts are written (baseCommand fixed to PReFerSim, demography file staged, seed set via environment). |
+
 ## prefersim_PReFerSim
 
 ### Tool Description

@@ -21,6 +21,9 @@ outputs:
     doc: Output directory to extract plasmid database
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plasmidid:1.6.5--hdfd78af_0

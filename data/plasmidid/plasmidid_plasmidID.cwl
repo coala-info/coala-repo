@@ -215,6 +215,11 @@ outputs:
     doc: output directory, by default is the current directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.database)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plasmidid:1.6.5--hdfd78af_0

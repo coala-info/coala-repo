@@ -1,5 +1,11 @@
 # primerclip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| primerclip | PASS | ARTIC v3 SARS-CoV-2 paired reads trimmed correctly; a read with an unmapped mate stops the run early (tool limit), so only properly paired reads were used. |
+
 ## primerclip
 
 ### Tool Description

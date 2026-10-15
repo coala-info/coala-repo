@@ -65,10 +65,9 @@ inputs:
       position: 102
       prefix: --missing-ok
   - id: output
-    type:
-      - 'null'
-      - string
-    doc: Destination directory to write outputs
+    type: string
+    default: subset_out
+    doc: Destination directory to write outputs (the tool default is /tmp)
     inputBinding:
       position: 102
       prefix: --output
@@ -92,18 +91,10 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Table filepath (csv or tsv)
+    doc: Table filepath (csv or tsv); also called --table
     inputBinding:
       position: 102
       prefix: --summary
-  - id: table
-    type:
-      - 'null'
-      - File
-    doc: Table filepath (csv or tsv)
-    inputBinding:
-      position: 102
-      prefix: --table
   - id: template
     type:
       - 'null'
@@ -127,9 +118,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Destination directory to write outputs
     outputBinding:
       glob: $(inputs.output)

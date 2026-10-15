@@ -1,5 +1,11 @@
 # portello CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| portello | PASS | real HiFi reads assembled with hifiasm, aligned with minimap2 -Y |
+
 ## portello
 
 ### Tool Description

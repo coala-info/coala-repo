@@ -27,9 +27,8 @@ inputs:
       position: 102
       prefix: --force
   - id: outdir
-    type:
-      - 'null'
-      - string
+    type: string
+    default: pmga
     doc: Directory to output results to
     inputBinding:
       position: 102
@@ -79,17 +78,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
   - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory to output results to
     outputBinding:
       glob: $(inputs.outdir)

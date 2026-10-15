@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: Score matrix file
     inputBinding:
-      position: 1
+      position: 200
   - id: read_fasta
     type:
       - 'null'
@@ -191,6 +191,9 @@ inputs:
       position: 102
       prefix: -best
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (verbose messages, score matrix)
   - id: output_pir
     type:
       - 'null'
@@ -214,6 +217,7 @@ outputs:
       glob: $(inputs.po)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: poa.out
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/poa:v2.020060928-7-deb_cv1

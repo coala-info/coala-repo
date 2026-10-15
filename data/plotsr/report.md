@@ -1,5 +1,11 @@
 # plotsr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plotsr | PASS |  |
+
 ## plotsr
 
 ### Tool Description

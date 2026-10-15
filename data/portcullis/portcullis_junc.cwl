@@ -110,6 +110,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: All files written with the output prefix (junction tables, BED, GFF and BAM files).
+    outputBinding:
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : 'portcullis_junc/portcullis') + '*')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/portcullis:1.2.4--py39hc87ae8a_4

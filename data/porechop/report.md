@@ -1,5 +1,11 @@
 # porechop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| porechop | PASS | output identical to the Galaxy expected file; barcode_dir fixed to a string output folder |
+
 ## porechop
 
 ### Tool Description

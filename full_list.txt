@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 10974; PASS: 8538; Failed: 1319; Not completed: 1117
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 11258; PASS: 8771; Failed: 1354; Not completed: 1133
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -10974,3 +10974,287 @@ plantcv	plantcv_plantcv-workflow.py	PASS	ran a small PlantCV workflow script on 
 plasann	plasann_PlasAnn	Not completed	needs a 524 MB database downloaded from Zenodo at first run (too large and slow); wrapper now stages the input writable and allows network
 plasclass	plasclass_classify_fasta.py	PASS	ran on the Galaxy test contigs; removed the invented --probs option
 plasclass	plasclass_train.py	PASS	rewritten for train.py; the wrapper sets PYTHONPATH because the script cannot import plasclass_utils otherwise; trained on 5 real plasmids and the E. coli K-12 chromosome with length bins 1000 and 10000
+plascope	plascope_plaScope.sh	PASS	synthetic data: tiny centrifuge database built from real E. coli and Klebsiella sequences, SPAdes-style contig names; fasta mode only; fixed optional modes and output folder
+plasflow	plasflow_PlasFlow.py	PASS	
+plasmidcommunity	plasmidcommunity_plasmidCommunity.sh	Failed	image problem: R package qgraph is missing, so getCommunity mode stops with no output (silhouetteCurve mode works); fixed wrong long flags to short flags
+plasmidfinder	plasmidfinder_plasmidfinder.py	PASS	Galaxy test contigs and plasmidfinder_db (kma-indexed in the image); hits rep11a and rep14a match the Galaxy expected table; added output folder creation
+plasmidhawk	plasmidhawk_annotate	PASS	repo example files; pangenome built with plaster from the same image; lab-to-fragment tables correct
+plasmidhawk	plasmidhawk_predict	PASS	repo example files; correct mode gives LabB and LabC, matching the repo truth file; made mode optional and work-dir a string
+plasmidid	plasmidid_download_plasmid_database.py	Not completed	too heavy: tool downloads 59,387 NCBI records one by one (hours); it started and wrote 24 MB of FASTA before the test was stopped; added NetworkAccess
+plasmidid	plasmidid_plasmidID	PASS	repo test reads, contigs and plasmid database; found plasmids pKPHS1-6 of Klebsiella HS11286; database staged writable
+plasmidid	plasmidid_summary_report_pid.py	PASS	reports built from the plasmidID test run in single-sample and group modes; input folder staged writable
+plasmidseeker	plasmidseeker	Failed	image problem: Rscript is missing in the image, so plasmidseeker stops at startup even with --ponly
+plasmidtron	plasmidtron	Failed	image problem: GNU parallel is missing in the image, so the k-mer counting step exits with status 127; rewrote the CWL from the real help (invented flags)
+plasnet	plasnet_add-sample-hits	PASS	repo test sample hits on subcommunities from split and type runs; sample graphs written
+plasnet	plasnet_split	PASS	repo test data (hub set and main set); communities.pkl and graph files written
+plasnet	plasnet_type	PASS	repo hub test data; typing.tsv matches the repo truth file and hub_plasmids.csv matches after sorting
+plass	plass_assemble	PASS	repo example paired reads give 1229 protein contigs
+plass	plass_penguin_guided_nuclassemble	PASS	real Klebsiella paired reads (first 40,000 pairs of the plasmidID test set) give 549 contigs; new CWL for the penguin guided_nuclassemble subcommand
+plass	plass_penguin_nuclassemble	PASS	real Klebsiella paired reads (first 40,000 pairs of the plasmidID test set) give 2638 nucleotide contigs; new CWL for the penguin nuclassemble subcommand
+plassembler	plassembler_assembled	PASS	repo test assemblies and reads; copy numbers for the 44 kb and 9.3 kb plasmids and chromosome reported; added TERM variable
+plassembler	plassembler_download	PASS	downloaded the real Plassembler database (Zenodo v1.5.0, about 460 MB unpacked) into a new folder; added NetworkAccess and made the database path a string
+plassembler	plassembler_long	PASS	repo depth-filter long reads recover the 70.6 kb chromosome and the 9.3 kb plasmid; the smaller repo input_fastq.gz gives no plasmids (SPAdes stops inside Unicycler); added TERM variable
+plassembler	plassembler_run	PASS	repo end-to-end test data and test database; chromosome 70.6 kb and plasmids of 44 kb and 9.3 kb recovered; added TERM variable the tool needs
+plastid	plastid_counts_in_region	PASS	nf-core human riboseq chr20 BAM and CDS BED from cs generate; 500 regions counted, counts equal cs count (ENSG00000000419 = 6); added BAM index secondary files and offset as int or file
+plastid	plastid_crossmap	Failed	image problem: crossmap looks for bowtie at /usr/bin/bowtie, which is missing (bowtie is in /usr/local/bin), so the run exits 0 with an empty mask; it works only when the job sets --bowtie /usr/local/bin/bowtie; new CWL for crossmap
+plastid	plastid_cs_chart	Failed	image problem: matplotlib in the image is too new (log-scale argument basex removed), so cs chart crashes when plotting; default bins also hit a NaN error on the sparse test data; new CWL for cs chart
+plastid	plastid_cs_count	PASS	nf-core human riboseq chr20 BAM with positions from cs generate and P-site offsets; table of 1446 genes with exon, 5' UTR, CDS and 3' UTR counts; new CWL for cs count
+plastid	plastid_cs_generate	PASS	nf-core human riboseq chr20 GTF; gene and transcript position files and BED tracks written (1447 genes); new CWL for cs generate
+plastid	plastid_findjuncs	PASS	nf-core SARS-CoV-2 genome.gtf; 9 splice junctions for the 10-exon transcript, BED and tophat juncs written; new CWL for findjuncs
+plastid	plastid_get_count_vectors	PASS	nf-core human riboseq chr20 BAM and 10 CDS regions; vector sums equal counts_in_region counts (266 in total); new CWL for get_count_vectors
+plastid	plastid_gff_parent_types	PASS	nf-core SARS-CoV-2 genome.gff3; parent-child table matches feature counts (12 CDS and 10 gene features with transcript parents); new CWL for gff_parent_types
+plastid	plastid_make_wiggle	PASS	nf-core human riboseq chr20 BAM with P-site offsets; wiggle signal total 423252 vs 423256 reads of length 25-100 in the BAM; new CWL for make_wiggle
+plastid	plastid_metagene_count	PASS	nf-core human riboseq chr20 BAM with P-site offsets; profile non-zero with --min_counts 1 --use_mean (sparse subset BAM; with default min_counts the program crashes on an empty selection); new CWL for metagene count
+plastid	plastid_metagene_generate	PASS	nf-core human riboseq chr20 GTF; ROI table identical to the nf-core expected file; new CWL for metagene generate
+plastid	plastid_phase_by_size	PASS	nf-core human riboseq chr20 BAM and ROI file from metagene generate; phasing table and plot written; added BAM index secondary files
+plastid	plastid_psite	PASS	nf-core human riboseq chr20 BAM and ROI file; P-site offsets identical to the nf-core expected file; new CWL for psite
+plastid	plastid_reformat_transcripts	PASS	nf-core SARS-CoV-2 genome.gtf converted to BED12 with --output_format BED (one transcript, 10 exons, 258-29667); default output is GTF2 whatever the file name; new CWL for reformat_transcripts
+plastid	plastid_slidejuncs	PASS	junctions from findjuncs on nf-core SARS-CoV-2 genome and genome FASTA; all 9 junctions matched to the known reference set; new CWL for slidejuncs
+platon	platon	PASS	repo test database and draft assembly with plasmids; plasmid contigs separated from chromosome (test.plasmid.fasta non-empty)
+plek	plek	Failed	tool bug: PLEK.py ends with sys.exit(1) after a correct run (predictions are right: 8 of 10 test transcripts, lncRNA HOTAIR and XIST called non-coding), so cwltool reports failure; fixed wrong flags
+plek	plek_PLEKModelling.py	PASS	NCBI RefSeq human mRNA (330) and non-coding RNA (330) transcripts; model and range files written and load in PLEK.py; new CWL for PLEKModelling.py
+plink	plink	PASS	Galaxy plink test data (plink-simulated sets, test.vcf); VCF to bed output identical to Galaxy expected, freq/hardy/missing counts checked against own decoding, assoc/logistic/pca/genome/bmerge/make-bed/recode ran; fixed merge inputs to files and added freq, hardy, missing, het, genome, indep-pairwise flags
+plink2	plink2	PASS	Galaxy plink test data (plink-simulated set, test.vcf); freq, hardy, glm logistic values match plink 1.9 results, pca/het/missing/make-pgen ran, VCF round trip correct; glm now takes modifiers (allow-no-covars needed), added bed/bim/fam, freq, hardy, missing, het, indep-pairwise flags
+plmc	plmc	Not completed	repo DHFR example runs and sequence weights equal the repo expected file, but couplings differ from tests/DHFR.couplings (correlation 0.96, same result with 1 or default threads), so correctness cannot be confirmed; the expected file may be outdated; fixed --output flag and put the alignment last
+plncpro	plncpro_build	Failed	image problem: BLAST (blastx) is missing in the image, so the default run with blast features writes no model and still exits 0; only --noblast works; rewrote the CWL (baseCommand plncpro build, real flags, writable inputs)
+plncpro	plncpro_predict	Failed	image problem: BLAST (blastx) is missing in the image, so the default run with blast features cannot work; only --noblast works (94 percent accuracy on the repo test set); rewrote the CWL (baseCommand plncpro predict, real flags, writable input)
+plncpro	plncpro_predtoseq	PASS	predictions from plncpro predict on the repo test set; extracted 108 sequences, same set as computed from the prediction file; help text shows -m but the program only accepts --min and --max, CWL uses those; baseCommand was a missing script
+plotcritic	plotcritic	PASS	
+plothic	plothic	PASS	
+plotsr	plotsr	PASS	
+pmdtools	pmdtools	PASS	
+pmga	pmga	Not completed	needs the full PubMLST BLAST database from pmga-build (about 4,500 loci, roughly 12 hours of downloads), so no test run was possible
+pmga	pmga_pmga-build	Not completed	needs about 4,500 PubMLST locus downloads (roughly 12 hours, about 6 loci per minute measured), stopped after 15 minutes
+pmidcite	pmidcite_icite	PASS	
+pmidcite	pmidcite_sumpaps	PASS	
+pmlst	pmlst_pmlst.py	PASS	
+pmmrcalculator	pmmrcalculator	PASS	
+pmultiqc	pmultiqc_multiqc	PASS	
+pneumo-typer	pneumo-typer	PASS	
+pneumocat	pneumocat_PneumoCaT.py	PASS	
+poa	poa	PASS	
+pod5	pod5_convert_fast5	PASS	
+pod5	pod5_convert_to_fast5	PASS	
+pod5	pod5_filter	Failed	image problem: polars cannot read the minknow.uuid extension type (pyarrow 20 / polars 1.33 in the image), so read-table tools crash on every real pod5 file
+pod5	pod5_inspect_debug	Failed	image problem: pyarrow ExtensionScalar has no attribute as_buffer (pyarrow 20 in the image), so read-table output crashes on real pod5 files
+pod5	pod5_inspect_read	Failed	image problem: pyarrow ExtensionScalar has no attribute as_buffer (pyarrow 20 in the image), so read-table output crashes on real pod5 files
+pod5	pod5_inspect_reads	Failed	image problem: pyarrow ExtensionScalar has no attribute as_buffer (pyarrow 20 in the image), so read-table output crashes on real pod5 files
+pod5	pod5_inspect_summary	PASS	
+pod5	pod5_merge	PASS	
+pod5	pod5_recover	Not completed	no file with MinKNOW temporary run-info files to recover: a truncated real pod5 file gave 0 recovered reads
+pod5	pod5_repack	PASS	
+pod5	pod5_subset	Failed	image problem: polars cannot read the minknow.uuid extension type (pyarrow 20 / polars 1.33 in the image), so read-table tools crash on every real pod5 file
+pod5	pod5_update	PASS	
+pod5	pod5_view	Failed	image problem: polars cannot read the minknow.uuid extension type (pyarrow 20 / polars 1.33 in the image), so read-table tools crash on every real pod5 file
+poly-qtlseq	poly-qtlseq_polyQtlseq	Not completed	pipeline, skipped
+poly-qtlseq	poly-qtlseq_polyQtlseq_qc	PASS	
+poly-qtlseq	poly-qtlseq_polyQtlseq_qtl	Failed	image problem: graph step crashes (SkiaSharp cannot load a font, run prints QTL-Seq analysis error and no graph images); synthetic data: planted-QTL VCF, tables found the planted 1.2-1.8 Mb region
+polyat	polyat	PASS	
+polymutt	polymutt	PASS	
+polypolish	polypolish_filter	PASS	
+polypolish	polypolish_polish	PASS	
+pomoxis	pomoxis_assess_assembly	PASS	
+pomoxis	pomoxis_filter_bam	PASS	
+pomoxis	pomoxis_intersect_assembly_errors	Failed	tool bug: the script calls stats_from_bam --bam, an option that stats_from_bam 0.3.16 in the same image rejects, so it stops after trimming
+pomoxis	pomoxis_mini_align	PASS	
+pomoxis	pomoxis_mini_assemble	PASS	
+pomoxis	pomoxis_stats_from_bam	PASS	
+pomoxis	pomoxis_subsample_bam	PASS	
+poolsnp	poolsnp_PoolSNP.sh	PASS	
+popdel	popdel_call	PASS	baseCommand fixed to popdel call; ran on 4 real chr20 BAMs from nf-core
+popdel	popdel_profile	PASS	baseCommand fixed to popdel profile; ran on 4 real chr20 BAMs from nf-core
+popdel	popdel_view	PASS	baseCommand fixed to popdel view; ran on 4 real chr20 BAMs from nf-core
+popera	popera	PASS	ran on real chrM BAM; added BAM index and output collection
+popgen-entropy	popgen-entropy_entropy	PASS	baseCommand fixed to entropy; boolean options now take 0/1; ran on 24 real alfalfa tetraploid samples x 150 loci from the tool repo
+popins2	popins2_assemble	Failed	image problem: popins2 assemble calls the gatb-minia-pipeline at a build path that does not exist in the image (only --skip-assembly works)
+popins2	popins2_contigmap	PASS	synthetic data: simulated reads of a 3 kb planted insertion in a SARS-CoV-2 genome; locations found at the planted position 15000
+popins2	popins2_genotype	PASS	synthetic data: simulated samples; the three carrier samples get 1/1 and the sample without the insertion gets 0/0
+popins2	popins2_merge	Failed	image problem: with the default k-mer length 63 the image's Bifrost crashes (stack smashing); it only works with -k 31 -g 20
+popins2	popins2_multik	Failed	image problem: the image's Bifrost crashes (stack smashing) when the multi-k iteration passes k=47
+popins2	popins2_place-finish	Not completed	synthetic data: no split-read placements to combine; the tool crashes (exit 139) when the placed-locations files are empty
+popins2	popins2_place-refalign	PASS	synthetic data: simulated reads of a 3 kb planted insertion; VCF records placed at the planted position 15000 (contigs were supplied, because assemble is broken in the image)
+popins2	popins2_place-splitalign	Not completed	synthetic data: place-refalign placed every location, so locations_unplaced.txt was empty and split-read alignment had nothing to align
+poplddecay	poplddecay_PopLDdecay	PASS	baseCommand and -OutStat flag fixed; ran on 1000 Genomes chr20 VCF (stat, pairwise LD, EHH); note: -OutFilterSNP writes no file when -SubPop is also used
+popscle	popscle_demuxlet	PASS	ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command>
+popscle	popscle_digital-pileup	PASS	ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command>
+popscle	popscle_dsc-dump	PASS	ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command>
+popscle	popscle_dsc-dump2plp	PASS	ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command>
+popscle	popscle_dsc-pileup	PASS	ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command>
+popscle	popscle_freemuxlet	PASS	ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command>
+popscle	popscle_freemuxlet-old	PASS	ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command>
+popscle	popscle_plp-make-dge-matrix	PASS	ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command>
+pore-c	pore-c_alignments_assign-consensus-haplotype	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_alignments_assign-fragments	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_alignments_create-table	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_alignments_filter-bam	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_alignments_reformat-bam	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_alignments_to-contacts	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_contacts_downsample	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_contacts_export	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_contacts_merge	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_contacts_summarize	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_reads_prepare	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_refgenome_fragments-to-hicref	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_refgenome_prepare	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_refgenome_virtual-digest	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+pore-c	pore-c_utils_parquet-to-csv	PASS	ran on the real Pore-C test data from the tool repo; output files match the tool tests
+porechop	porechop	PASS	output identical to the Galaxy expected file; barcode_dir fixed to a string output folder
+porechop_abi	porechop_abi	PASS	ab initio adapter inference and trimming ran on Porechop test reads; output paths fixed; note: --export_graph crashes when the value ends in .graphml (tool bug)
+poretools	poretools_combine	PASS	ran on 4 Galaxy test FAST5 files; TAR holds all four files
+poretools	poretools_events	PASS	ran on 4 Galaxy test FAST5 files; line counts match the Galaxy test (2901 and 3083 with --pre-basecalled)
+poretools	poretools_fasta	PASS	ran on 4 Galaxy test FAST5 files; reads match the Galaxy expected FASTA
+poretools	poretools_fastq	PASS	ran on 4 Galaxy test FAST5 files; reads match the Galaxy expected FASTQ
+poretools	poretools_hist	Failed	image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported
+poretools	poretools_index	PASS	ran on 4 Galaxy test FAST5 files; index table lists all four reads
+poretools	poretools_metadata	PASS	ran on 4 Galaxy test FAST5 files; metadata table printed
+poretools	poretools_nucdist	PASS	ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files
+poretools	poretools_occupancy	Failed	image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported
+poretools	poretools_organise	PASS	ran on 4 Galaxy test FAST5 files with --copy; destination folder is now created before the run
+poretools	poretools_qualdist	PASS	ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files
+poretools	poretools_qualpos	Failed	image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported
+poretools	poretools_readstats	PASS	ran on a real R9 FAST5 read from the poretools repo (the old-format Galaxy files give an HDF5 structure error in this mode)
+poretools	poretools_squiggle	Failed	image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported
+poretools	poretools_stats	PASS	ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files
+poretools	poretools_tabular	PASS	ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files
+poretools	poretools_times	PASS	ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files
+poretools	poretools_winner	PASS	ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files
+poretools	poretools_yield_plot	Failed	image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported
+porfast	porfast	PASS	
+portcullis	portcullis_bamfilt	PASS	
+portcullis	portcullis_filt	PASS	
+portcullis	portcullis_full	PASS	
+portcullis	portcullis_junc	PASS	
+portcullis	portcullis_prep	PASS	
+portello	portello	PASS	real HiFi reads assembled with hifiasm, aligned with minimap2 -Y
+poseidon-trident	poseidon-trident_fetch	Failed	image problem: no CA certificates in the image, so the HTTPS download fails with unknown CA
+poseidon-trident	poseidon-trident_forge	PASS	
+poseidon-trident	poseidon-trident_genoconvert	PASS	
+poseidon-trident	poseidon-trident_init	PASS	
+poseidon-trident	poseidon-trident_jannocoalesce	PASS	default all-columns mode crashes when the source janno has columns missing in the target; --includeColumns works
+poseidon-trident	poseidon-trident_list	PASS	local mode works; --remote fails with the same missing CA certificates; --raw still prints a header line
+poseidon-trident	poseidon-trident_rectify	PASS	
+poseidon-trident	poseidon-trident_summarise	PASS	
+poseidon-trident	poseidon-trident_survey	PASS	
+poseidon-trident	poseidon-trident_validate	PASS	
+poseidon-xerxes	poseidon-xerxes_admixpops	PASS	
+poseidon-xerxes	poseidon-xerxes_fstats	PASS	
+poseidon-xerxes	poseidon-xerxes_ras	PASS	
+postmaster	postmaster	PASS	
+potrace	potrace	PASS	real binary horse silhouette (scikit-image) traced to SVG, PDF, GeoJSON, DXF, XFig, EPS and PGM; removed six bare backend booleans without a flag
+pourrna	pourrna_pourRNA	Failed	tool bug: --dot-plot-per-basin writes no file; all other outputs were checked on the HIV-1 TAR RNA and are correct (fixed baseCommand case and two output globs)
+pout2mzid	pout2mzid	PASS	synthetic data: the Percolator input table was built by script from a real MS-GF+ search (msgf2pin crashes in its image); needs --validate because the Percolator 3.7 XML is newer than the tool's schema; inserted q-values and PEP match the Percolator output
+ppanggolin	ppanggolin_align	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_all	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_annotate	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_cluster	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_context	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_draw	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_fasta	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_graph	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_info	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_metadata	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_metrics	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_module	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_msa	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_panmodule	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_panrgp	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_partition	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_projection	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_rarefaction	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_rgp	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_rgp_cluster	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_spot	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_utils	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_workflow	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_write_genomes	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_write_metadata	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanggolin	ppanggolin_write_pangenome	PASS	Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes)
+ppanini	ppanini	PASS	Ran on the package's own demo abundance table; priority table is correct (the tool crashes visibly with --basename or a #NICHE line, a tool bug).
+ppanini	ppanini_barplot	PASS	Made the characterization bar plot (PDF, PNG, SVGZ) and table from the demo ppanini input and output tables.
+ppanini	ppanini_cluster2genes	PASS	Converted a CD-HIT cluster file (made from the real demo proteins) into a 986-cluster gene map; the two-gene cluster is listed correctly.
+ppanini	ppanini_gene_caller	Not completed	needs the large UniRef90 database plus contigs and reads; not available here.
+ppanini	ppanini_infer_gene	Not completed	needs DIAMOND hits against UniRef90 with query and subject lengths; no real hits table available.
+ppanini	ppanini_join_tables	Not completed	needs a folder of real per-sample gene tables from ppanini_gene_caller; none available.
+ppanini	ppanini_press	Not completed	needs ppanini_gene_caller outputs for several samples (UniRef90 hits); no real input available.
+ppanini	ppanini_rename_contigs	PASS	Prefixed all 998 headers of the package's demo FASTA with the sample name.
+ppanini	ppanini_rocplot	Not completed	needs essential-gene lists and per-niche genome tables from the paper data; not available.
+ppanini	ppanini_scatterplot	Not completed	needs a gene-to-genome DIAMOND mapping file from the paper data; not available.
+pplacer	pplacer	PASS	Placed 3 HIV query sequences on a reference tree from the pplacer tests; each landed next to its closest relative.
+pprodigal	pprodigal	PASS	Predicted 1705 genes on 272 real Bacteroides fragilis contigs; GFF, protein, gene and score files match in count.
+ppx	ppx	PASS	Downloaded two real files from PRIDE project PXD000001; the protein FASTA and README are intact (NetworkAccess added to the CWL).
+prank	prank	PASS	Aligned 20 real HIV sequences (with and without a guide tree); output FASTA and PHYLIP alignments are valid. Fixed -d input and output glob.
+predex	predex_annotation	PASS	Built a gene annotation table from a real human chr22 FASTA and GTF slice; gene lengths and GC values are plausible (the tool hangs if a GTF gene has no exon line).
+predex	predex_comparison	PASS	Made the comparison list from a real sample sheet (Diagnosis column: 2 groups, 1 comparison).
+predex	predex_design	PASS	Made a design matrix template from a real RNA-seq count table; all 5 sample names are listed.
+predex	predex_ipa	PASS	synthetic data: two small IPA-style tables; p-values and Greek letters were converted correctly.
+predicthaplo	predicthaplo	Failed	tool bug: on real SARS-CoV-2 read pairs it writes local windows, then crashes with a segmentation fault (exit 139) in the global step; the help also names two flags the binary rejects (fixed to --min_qual and --min_length).
+predictosaurus	predictosaurus_build	PASS	Built a variant graph from the repo's real SARS-CoV-2 calls and observations BCF files (sample=file input fixed).
+predictosaurus	predictosaurus_peptides	PASS	Wrote 359 peptide FASTA records for 8-11 mers from the graph; the output is a file, not a directory (fixed).
+predictosaurus	predictosaurus_plot	PASS	Converted the process scores to a TSV with transcript, score and sample columns; values are plausible.
+predictosaurus	predictosaurus_process	PASS	Scored 7 SARS-CoV-2 genes on the graph from build; output score database is valid (GFF derived from NC_045512.2 coordinates; graph staged writable).
+prefersim	prefersim_PReFerSim	PASS	Ran the repo's neutral dog-demography example; output tables and SNP counts are written (baseCommand fixed to PReFerSim, demography file staged, seed set via environment).
+prequal	prequal	PASS	Filtered 138 real Pfam seed protein sequences; filtered FASTA, PP, summary and detail files match (CWL rewritten: input last, all options, writable input).
+preseq	preseq_bound_pop	PASS	Estimated unseen species from the Shakespeare histogram in the preseq repo; table has median and confidence limits.
+preseq	preseq_c_curve	PASS	Output matches the upstream test checksum (histogram input) and the Galaxy expected table (BAM input); wrong -o and -D flags fixed.
+preseq	preseq_gc_extrap	Not completed	Runs on real BED data and is repeatable, but its checksum differs from the newer upstream test (-B flag needed); output could not be confirmed.
+preseq	preseq_lc_extrap	PASS	Output matches the upstream test checksum (counts input) and the Galaxy expected table (BAM input).
+preseq	preseq_pop_size	PASS	Estimated population size from the Shakespeare counts in the preseq repo; table has estimate and confidence limits.
+preseq	preseq_to_mr	PASS	Converted the Galaxy test BAM to MR format; 219 KB of mapped-read lines with plausible coordinates.
+president	president	PASS	Compared two real SARS-CoV-2 genomes with NC_045512.2: identity 0.9974 and 0.9984 (ignoring Ns), both valid (output path typed string, directory created, .fai not needed).
+presto	presto_BuildConsensus.py	PASS	Output matches the two Galaxy expected files (max diversity and max error runs); CWL rewritten (wrong -p, --log-file, --out-name flags; outdir created).
+pretextgraph	pretextgraph_PretextGraph	PASS	Embedded a read-pair density bedgraph (derived from the real Hi-C pairs) as a coverage graph in a real contact map; output grew by the graph size (-f is the input bedgraph; input staged writable; other graph names fail silently).
+pretextmap	pretextmap_PretextMap	PASS	Built a contact map from 41,563 real Hi-C pairs (metaTOR test data); filtering gives a smaller map (input read from stdin; -o and filter flags fixed).
+pretextsnapshot	pretextsnapshot_PretextSnapshot	PASS	Rendered the Hi-C contact map as PNG images (full map plus one per contig, 106 files); full-map image shows a contact grid.
+primalbedtools	primalbedtools_amplicon	PASS	Built 99 amplicons from the ARTIC V4.1 BED; --primertrim shifts the ends inward as expected.
+primalbedtools	primalbedtools_csv	PASS	Converted the ARTIC V4.1 BED to CSV with header and 209 rows.
+primalbedtools	primalbedtools_downgrade	PASS	Downgraded the primalbedtools alt-primer BED to v1 names; --merge-alts keeps one primer per site.
+primalbedtools	primalbedtools_fasta	PASS	Converted the ARTIC V4.1 BED to FASTA; 209 primer sequences.
+primalbedtools	primalbedtools_format	PASS	Formatted the ARTIC V4.1 primer BED; 209 valid lines.
+primalbedtools	primalbedtools_merge	Failed	tool bug: merge builds the merged primers but never prints or writes them, so the output is empty (source: no print after merge).
+primalbedtools	primalbedtools_remap	PASS	Remapped ARTIC V4.1 primers from MN908947.3 to OX512233.1 using a MAFFT alignment; 60 later primers shift by the genome deletions.
+primalbedtools	primalbedtools_sort	PASS	Sorted the real ARTIC V4.1 primer BED (209 lines); same lines, pool order kept.
+primalbedtools	primalbedtools_update	PASS	Updated primer names of the ARTIC V4.1 BED to the v2 style (_1 suffix); 209 lines.
+primalbedtools	primalbedtools_validate	PASS	Silent exit 0 on the ARTIC V4.1 BED with its reference; a reference with another contig name fails (negative control).
+primalbedtools	primalbedtools_validate_bedfile	PASS	Silent exit 0 on the ARTIC V4.1 BED; a BED with a bad primer name fails with exit 1 (negative control).
+primalscheme	primalscheme_multiplex	PASS	
+primedlamp	primedlamp_PrimedLAMP	PASS	
+primedlamp	primedlamp_PrimedLAMP_Amplicon_Success	PASS	
+primedlamp	primedlamp_PrimedLAMP_Cross_Reactivity_Update	PASS	
+primedlamp	primedlamp_PrimedLAMP_Custom	PASS	
+primedlamp	primedlamp_PrimedLAMP_Inclusivity_Update	Failed	image problem: the script has no shebang line, so it fails with exec format error
+primedlamp	primedlamp_PrimedLAMP_Tm_Update	PASS	
+primedrpa	primedrpa_PrimedRPA	PASS	
+primer3	primer3_primer3_core	PASS	
+primerclip	primerclip	PASS	ARTIC v3 SARS-CoV-2 paired reads trimmed correctly; a read with an unmapped mate stops the run early (tool limit), so only properly paired reads were used.
+primerforge	primerforge_primerForge	Failed	image problem: khmer 3.0.0a3 in the image returns k-mers as bytes, so no k-mer passes the filter and primerForge stops with StopIteration on any genome set
+primers	primers_create	PASS	
+primers	primers_score	PASS	
+prince	prince	PASS	
+prinseq-plus-plus	prinseq-plus-plus_prinseq++	PASS	
+priorcons	priorcons_build-priors	PASS	
+priorcons	priorcons_integrate-consensus	PASS	synthetic data: an N-masked region was planted in a real HBV genome used as the mapping consensus; coverage rose from 93.7% to 99.97%.
+privateer	privateer	PASS	Validated 2wah N-glycans (12 sugars, 0 issues); -mode ccp4i2 with -showgeom crashed on the ligand-only model 5ajc.
+probabilistic2020	probabilistic2020_hotmaps1d	PASS	
+probabilistic2020	probabilistic2020_oncogene	PASS	
+probabilistic2020	probabilistic2020_tsg	PASS	
+probcons	probcons	PASS	
+probcons-extra	probcons-extra_pc-compare	PASS	
+probcons-extra	probcons-extra_pc-makegnuplot	Failed	image problem: gnuplot is not installed in the image, so no plot is drawn
+probcons-extra	probcons-extra_pc-project	PASS	
+probconsrna	probconsrna	PASS	Rfam tRNA seed sequences aligned; the real command is probconsRNA (the old file ran a missing name).
+probeit	probeit_posnegset	PASS	Output matches the repository sample files probe1.fa and probe2.fa.
+probeit	probeit_snp	PASS	Amino acid and nucleotide runs match the repository sample probe files.
+proda	proda	PASS	Seven globin proteins aligned; the old file wrapped a help phrase, now rewritten from the usage line; proda needs a writable input folder.
+prodigal	prodigal	PASS	Proteins and genes match the Galaxy expected files (177 genes); training file written and reused; score text differs slightly because the image is prodigal 2.60.
+prodigal-gv	prodigal-gv	PASS	SARS-CoV-2 genome in meta mode gave 8 genes including ORF1a and S.
+profbval	profbval	PASS	Output is identical to the package's own cad23 example result; the old file lacked the output name, mode and HSSP inputs.
+profile_dists	profile_dists	PASS	Hamming and scaled matrices are identical to the repository expected results.
+progenomes	progenomes_download_datasets	PASS	Downloaded the highly important strains table (820 genome IDs).
+progenomes	progenomes_download_genomes	Not completed	downloads the full representative genome set (many GB); not run
+progenomes	progenomes_view	PASS	Needs network access (NetworkAccess requirement added); listed 820 highly important strains.
+progressivemauve	progressivemauve_progressiveMauve	PASS	Two-genome run gives the same 6 blocks and sequences as the Galaxy expected XMFA (gap placement differs slightly); guide tree matches; options need the = form.
+prokka	prokka	Failed	tool bug: prokka 1.15.6 always runs prodigal in single mode, so --metagenome is ignored and genomes under 20 kb get 0 CDS; a 56 kb Enterococcus plasmid annotated fine (63 CDS)
+proksee	proksee_assemble	Failed	image problem: config.json is missing from the proksee package folder in the image, so every command stops with FileNotFoundError
+proksee	proksee_evaluate	Failed	image problem: config.json is missing from the proksee package folder in the image, so every command stops with FileNotFoundError
+proksee	proksee_updatedb	Failed	image problem: config.json is missing from the proksee package folder in the image, so every command stops with FileNotFoundError
+proot	proot	PASS	Ran commands in an Alpine 3.24 minirootfs; -0, -k, -w and -b worked.

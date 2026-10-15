@@ -1,5 +1,11 @@
 # pretextgraph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pretextgraph_PretextGraph | PASS | Embedded a read-pair density bedgraph (derived from the real Hi-C pairs) as a coverage graph in a real contact map; output grew by the graph size (-f is the input bedgraph; input staged writable; other graph names fail silently). |
+
 ## pretextgraph_PretextGraph
 
 ### Tool Description

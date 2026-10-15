@@ -4,7 +4,7 @@ baseCommand:
   - primalbedtools
   - merge
 label: primalbedtools_merge
-doc: "Merge overlapping intervals in a BED file.\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
+doc: "Merge primer clouds into a single bedline.\n\nTool homepage: https://github.com/ChrisgKent/primalbedtools"
 inputs:
   - id: bed
     type: File

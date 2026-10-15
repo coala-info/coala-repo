@@ -1,5 +1,13 @@
 # probabilistic2020 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| probabilistic2020_hotmaps1d | PASS |  |
+| probabilistic2020_oncogene | PASS |  |
+| probabilistic2020_tsg | PASS |  |
+
 ## probabilistic2020_oncogene
 
 ### Tool Description

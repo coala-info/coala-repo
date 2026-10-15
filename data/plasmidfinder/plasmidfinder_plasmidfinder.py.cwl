@@ -102,6 +102,11 @@ outputs:
       glob: $(inputs.output_path_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plasmidfinder:2.1.6--hdfd78af_0

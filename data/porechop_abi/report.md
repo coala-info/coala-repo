@@ -1,5 +1,11 @@
 # porechop_abi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| porechop_abi | PASS | ab initio adapter inference and trimming ran on Porechop test reads; output paths fixed; note: --export_graph crashes when the value ends in .graphml (tool bug) |
+
 ## porechop_abi
 
 ### Tool Description

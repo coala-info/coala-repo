@@ -40,9 +40,8 @@ inputs:
       position: 102
       prefix: --method_path
   - id: outdir
-    type:
-      - 'null'
-      - string
+    type: string
+    default: pmlst_out
     doc: Output directory.
     inputBinding:
       position: 102
@@ -75,12 +74,19 @@ outputs:
     type: stdout
     doc: Standard output
   - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{entryname: inputs.outdir, entry: {class: 'Directory', listing: []}, writable: true}];
+        if (inputs.tmp_dir) { l.push({entryname: inputs.tmp_dir, entry: {class: 'Directory', listing: []}, writable: true}); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pmlst:2.0.3--hdfd78af_0

@@ -1,5 +1,11 @@
 # potrace CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| potrace | PASS | real binary horse silhouette (scikit-image) traced to SVG, PDF, GeoJSON, DXF, XFig, EPS and PGM; removed six bare backend booleans without a flag |
+
 ## potrace
 
 ### Tool Description

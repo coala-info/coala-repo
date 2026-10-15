@@ -5,12 +5,13 @@ baseCommand:
   - view
 label: progenomes_view
 doc: "View datasets within the Progenomes database.\n\nTool homepage: https://github.com/BigDataBiology/progenomes-cli"
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 inputs:
   - id: dataset
     type: string
-    doc: 'Dataset to view. Available options: Highly important strains, Excluded genomes,
-      ANI representatives, ANI clustering, Functional annotations for representative
-      genomes.'
+    doc: "Dataset to view: highly-important-strains, excluded-genomes, ani-representatives, ani-clustering or functional-annotations."
     inputBinding:
       position: 1
 outputs:

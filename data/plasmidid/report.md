@@ -1,5 +1,13 @@
 # plasmidid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plasmidid_download_plasmid_database.py | Not completed | too heavy: tool downloads 59,387 NCBI records one by one (hours); it started and wrote 24 MB of FASTA before the test was stopped; added NetworkAccess |
+| plasmidid_plasmidID | PASS | repo test reads, contigs and plasmid database; found plasmids pKPHS1-6 of Klebsiella HS11286; database staged writable |
+| plasmidid_summary_report_pid.py | PASS | reports built from the plasmidID test run in single-sample and group modes; input folder staged writable |
+
 ## plasmidid_download_plasmid_database.py
 
 ### Tool Description

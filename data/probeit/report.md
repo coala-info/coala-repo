@@ -1,5 +1,12 @@
 # probeit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| probeit_posnegset | PASS | Output matches the repository sample files probe1.fa and probe2.fa. |
+| probeit_snp | PASS | Amino acid and nucleotide runs match the repository sample probe files. |
+
 ## probeit_posnegset
 
 ### Tool Description

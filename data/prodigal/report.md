@@ -1,5 +1,11 @@
 # prodigal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prodigal | PASS | Proteins and genes match the Galaxy expected files (177 genes); training file written and reused; score text differs slightly because the image is prodigal 2.60. |
+
 ## prodigal
 
 ### Tool Description

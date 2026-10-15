@@ -1,5 +1,11 @@
 # poolsnp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| poolsnp_PoolSNP.sh | PASS |  |
+
 ## poolsnp_PoolSNP.sh
 
 ### Tool Description

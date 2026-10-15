@@ -10,9 +10,10 @@ inputs:
     type:
       type: array
       items: File
-    doc: The input FAST5 files.
+    doc: The input FAST5 files (staged in the working directory, because the plots are written next to them).
     inputBinding:
       position: 1
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: num_facets
     type:
       - 'null'
@@ -38,21 +39,23 @@ inputs:
       position: 102
       prefix: --theme-bw
   - id: saveas_path
-    type: string?
-    doc: Save the squiggle plot to a file.
+    type: string
+    doc: Save the squiggle plots as files with this extension (png or pdf); one file per FAST5 file.
     inputBinding:
       position: 103
       prefix: --saveas
 outputs:
   - id: saveas
     type:
-      - 'null'
-      - File
-    doc: Save the squiggle plot to a file.
+      type: array
+      items: File
+    doc: One squiggle plot per FAST5 file, named <fast5 name>.<extension>
     outputBinding:
-      glob: $(inputs.saveas_path)
+      glob: $('*.' + inputs.saveas_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/poretools:0.6.1a0--py27_0

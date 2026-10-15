@@ -36,6 +36,11 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/predex:0.9.3--pyh5e36f6f_0

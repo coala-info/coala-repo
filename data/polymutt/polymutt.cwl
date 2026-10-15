@@ -2,30 +2,104 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: polymutt
 label: polymutt
-doc: "Polymutt is a tool for genotype likelihood calculation and variant calling.\n\
-  \nTool homepage: https://genome.sph.umich.edu/wiki/Polymutt"
+doc: "Polymutt is a tool for genotype likelihood calculation and variant calling.
+  It calls variants and de novo mutations in families from GLF files or from a VCF
+  file with PL or GL fields. The index file (-g) and the pedigree files name other
+  files: give the GLF files in glf_files so that they are staged in the working directory.\n\nTool
+  homepage: https://genome.sph.umich.edu/wiki/Polymutt"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.glf_files) { l = l.concat(inputs.glf_files); }
+        return l;
+      }
 inputs:
-  - id: MT
+  - id: glf_files
     type:
       - 'null'
-      - string
-    doc: Non-autosome label for mitochondrial DNA
+      - type: array
+        items: File
+    doc: GLF files named in the GLF index file (staged in the working directory)
+  - id: pedfile
+    type:
+      - 'null'
+      - File
+    doc: 'Pedigree file (merlin format) describing the sample relationships'
     inputBinding:
       position: 101
-      prefix: --MT
-  - id: all_sites
+      prefix: -p
+  - id: datfile
+    type:
+      - 'null'
+      - File
+    doc: 'Data file; its GLF_Index column is the sixth column of the pedigree file'
+    inputBinding:
+      position: 101
+      prefix: -d
+  - id: glf_index_file
+    type:
+      - 'null'
+      - File
+    doc: 'GLF index file: maps the indices in the pedigree file to GLF file names'
+    inputBinding:
+      position: 101
+      prefix: -g
+  - id: posterior_cutoff
+    type:
+      - 'null'
+      - float
+    doc: 'Minimum cutoff of posterior probability to output a variant (default 0.5)'
+    inputBinding:
+      position: 101
+      prefix: -c
+  - id: in_vcf
+    type:
+      - 'null'
+      - File
+    doc: 'Alternative input VCF file with PL or GL fields (used instead of -g)'
+    inputBinding:
+      position: 101
+      prefix: --in_vcf
+  - id: mixed_vcf_records
     type:
       - 'null'
       - boolean
-    doc: Include all sites in output
+    doc: 'Handle input VCF files that mix records with different FORMAT fields'
     inputBinding:
       position: 101
-      prefix: --all_sites
+      prefix: --mixed_vcf_records
+  - id: theta
+    type:
+      - 'null'
+      - float
+    doc: 'Scaled mutation rate per site for single nucleotide variants (default 0.001)'
+    inputBinding:
+      position: 101
+      prefix: --theta
+  - id: indel_theta
+    type:
+      - 'null'
+      - float
+    doc: 'Scaled mutation rate per site for indels (default 0.0001)'
+    inputBinding:
+      position: 101
+      prefix: --indel_theta
+  - id: poly_tstv
+    type:
+      - 'null'
+      - float
+    doc: 'Prior of ts/tv ratio (default 2.0)'
+    inputBinding:
+      position: 101
+      prefix: --poly_tstv
   - id: chrX
     type:
       - 'null'
       - string
-    doc: Non-autosome label for chromosome X
+    doc: 'Label of chromosome X (default X)'
     inputBinding:
       position: 101
       prefix: --chrX
@@ -33,217 +107,158 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Non-autosome label for chromosome Y
+    doc: 'Label of chromosome Y (default Y)'
     inputBinding:
       position: 101
       prefix: --chrY
-  - id: datfile
+  - id: MT
     type:
       - 'null'
       - string
-    doc: Data file name
+    doc: 'Label of the mitochondrial chromosome (default MT)'
     inputBinding:
       position: 101
-      prefix: -dname
+      prefix: --MT
   - id: denovo
     type:
       - 'null'
       - boolean
-    doc: Enable de novo mutation model
+    doc: 'Turn on de novo mutation detection (GLF input only)'
     inputBinding:
       position: 101
       prefix: --denovo
-  - id: ext
-    type:
-      - 'null'
-      - boolean
-    doc: Enable extended output format
-    inputBinding:
-      position: 101
-      prefix: --ext
-  - id: gl_off
-    type:
-      - 'null'
-      - boolean
-    doc: Turn off genotype likelihoods in output
-    inputBinding:
-      position: 101
-      prefix: --gl_off
-  - id: glf_index_file
-    type:
-      - 'null'
-      - string
-    doc: GLF index file name
-    inputBinding:
-      position: 101
-      prefix: -gname
-  - id: in_vcf
-    type:
-      - 'null'
-      - File
-    doc: Alternative input VCF file
-    inputBinding:
-      position: 101
-      prefix: --in_vcf
-  - id: indel_theta
-    type:
-      - 'null'
-      - float
-    doc: Scaled indel mutation rate
-    inputBinding:
-      position: 101
-      prefix: --indel_theta
-  - id: maxDepth
-    type:
-      - 'null'
-      - boolean
-    doc: Filter by maximum depth
-    inputBinding:
-      position: 101
-      prefix: --maxDepth
-  - id: minDepth
-    type:
-      - 'null'
-      - boolean
-    doc: Filter by minimum depth
-    inputBinding:
-      position: 101
-      prefix: --minDepth
-  - id: minLLR_denovo
-    type:
-      - 'null'
-      - float
-    doc: Minimum LLR for de novo mutation calls
-    inputBinding:
-      position: 101
-      prefix: --minLLR_denovo
-  - id: minMapQuality
-    type:
-      - 'null'
-      - boolean
-    doc: Filter by minimum mapping quality
-    inputBinding:
-      position: 101
-      prefix: --minMapQuality
-  - id: minPercSampleWithData
-    type:
-      - 'null'
-      - float
-    doc: Minimum percentage of samples with data
-    inputBinding:
-      position: 101
-      prefix: --minPercSampleWithData
-  - id: mixed_vcf_records
-    type:
-      - 'null'
-      - boolean
-    doc: Allow mixed VCF records
-    inputBinding:
-      position: 101
-      prefix: --mixed_vcf_records
-  - id: nthreads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads for multiple threading
-    inputBinding:
-      position: 101
-      prefix: --nthreads
-  - id: pedfile
-    type:
-      - 'null'
-      - string
-    doc: Pedigree file name
-    inputBinding:
-      position: 101
-      prefix: -pname
-  - id: poly_tstv
-    type:
-      - 'null'
-      - float
-    doc: Prior of ts/tv ratio
-    inputBinding:
-      position: 101
-      prefix: --poly_tstv
-  - id: posterior_cutoff
-    type:
-      - 'null'
-      - float
-    doc: Posterior probability cutoff
-    inputBinding:
-      position: 101
-      prefix: -c99.999
-  - id: prec
-    type:
-      - 'null'
-      - float
-    doc: Optimization precision
-    inputBinding:
-      position: 101
-      prefix: --prec
-  - id: quick_call
-    type:
-      - 'null'
-      - boolean
-    doc: Perform a quick variant call
-    inputBinding:
-      position: 101
-      prefix: --quick_call
   - id: rate_denovo
     type:
       - 'null'
       - float
-    doc: De novo mutation rate
+    doc: 'Mutation rate per haplotype per generation (default 1.5e-08)'
     inputBinding:
       position: 101
       prefix: --rate_denovo
-  - id: theta
-    type:
-      - 'null'
-      - float
-    doc: Scaled mutation rate
-    inputBinding:
-      position: 101
-      prefix: --theta
   - id: tstv_denovo
     type:
       - 'null'
       - float
-    doc: De novo transition/transversion ratio
+    doc: 'Prior ts/tv ratio of de novo mutations (default 2.0)'
     inputBinding:
       position: 101
       prefix: --tstv_denovo
-  - id: out_vcf_path
+  - id: minLLR_denovo
+    type:
+      - 'null'
+      - float
+    doc: 'Minimum log10 likelihood ratio of allowing versus disallowing de novo mutations to output'
+    inputBinding:
+      position: 101
+      prefix: --minLLR_denovo
+  - id: prec
+    type:
+      - 'null'
+      - float
+    doc: 'Optimization precision (default 1.0e-04)'
+    inputBinding:
+      position: 101
+      prefix: --prec
+  - id: nthreads
+    type:
+      - 'null'
+      - int
+    doc: 'Number of threads (default 1)'
+    inputBinding:
+      position: 101
+      prefix: --nthreads
+  - id: minMapQuality
+    type:
+      - 'null'
+      - int
+    doc: 'Filter: minimum mapping quality'
+    inputBinding:
+      position: 101
+      prefix: --minMapQuality
+  - id: minDepth
+    type:
+      - 'null'
+      - int
+    doc: 'Filter: minimum total depth'
+    inputBinding:
+      position: 101
+      prefix: --minDepth
+  - id: maxDepth
+    type:
+      - 'null'
+      - int
+    doc: 'Filter: maximum total depth'
+    inputBinding:
+      position: 101
+      prefix: --maxDepth
+  - id: minPercSampleWithData
+    type:
+      - 'null'
+      - float
+    doc: 'Filter: minimum percentage of samples with data (default 0.00)'
+    inputBinding:
+      position: 101
+      prefix: --minPercSampleWithData
+  - id: pos
+    type:
+      - 'null'
+      - File
+    doc: 'File with two columns (chr pos): output genotypes of all individuals at these sites, even if monomorphic'
+    inputBinding:
+      position: 101
+      prefix: --pos
+  - id: all_sites
+    type:
+      - 'null'
+      - boolean
+    doc: 'Output all sites with at least one read coverage'
+    inputBinding:
+      position: 101
+      prefix: --all_sites
+  - id: gl_off
+    type:
+      - 'null'
+      - boolean
+    doc: 'Do not output genotype likelihood values for each individual'
+    inputBinding:
+      position: 101
+      prefix: --gl_off
+  - id: quick_call
+    type:
+      - 'null'
+      - boolean
+    doc: 'Call variants assuming all individuals are unrelated first, then run the family-aware calling at variant sites'
+    inputBinding:
+      position: 101
+      prefix: --quick_call
+  - id: ext
+    type:
+      - 'null'
+      - boolean
+    doc: 'Extended output'
+    inputBinding:
+      position: 101
+      prefix: --ext
+  - id: out_vcf
     type:
       - 'null'
       - string
+    doc: 'Output VCF file name'
     inputBinding:
       position: 102
       prefix: --out_vcf
-  - id: pos_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 103
-      prefix: --pos
 outputs:
-  - id: out_vcf
+  - id: stdout
+    type: stdout
+    doc: Variant calling statistics
+  - id: output_vcf
     type:
       - 'null'
       - File
     doc: Output VCF file
     outputBinding:
-      glob: $(inputs.out_vcf_path)
-  - id: pos
-    type:
-      - 'null'
-      - File
-    doc: Output positions file
-    outputBinding:
-      glob: $(inputs.pos_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out_vcf)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/polymutt:0.18--0
+stdout: polymutt.out

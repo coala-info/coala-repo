@@ -5,10 +5,14 @@ label: prank
 doc: "Minimal usage: 'prank sequence_file'\n\nTool homepage: https://github.com/n0xa/m5stick-nemo"
 inputs:
   - id: sequence_file
-    type: File
-    doc: Input sequence file in FASTA format
+    type:
+      - 'null'
+      - File
+    doc: Input sequence file in FASTA format (-d, not used in merge mode)
     inputBinding:
       position: 1
+      prefix: -d=
+      separate: false
   - id: anchorskip
     type:
       - 'null'
@@ -473,20 +477,20 @@ inputs:
       position: 102
       prefix: -verbose
   - id: output_file_path
-    type: string
-    doc: "=output_file [default: 'output']"
+    type:
+      - 'null'
+      - string
+    doc: "Output file name prefix [default: 'output']"
     inputBinding:
       position: 103
       prefix: -o=
       separate: false
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file
+  - id: output_files
+    type: File[]
+    doc: Alignment and other files written with the output prefix (for example output.best.fas)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.output_file_path ? inputs.output_file_path : 'output')*"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

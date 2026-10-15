@@ -1,168 +1,170 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: popscle_freemuxlet-old
+baseCommand: [popscle, freemuxlet-old]
 label: popscle_freemuxlet-old
-doc: "Genotype-free deconvolution of sc-RNAseq (deprecated)\n\nTool homepage: https://github.com/statgen/popscle"
+doc: "Genotype-free deconvolution of single-cell RNA-seq (deprecated).\n\nTool homepage: https://github.com/statgen/popscle"
 inputs:
-  - id: aux_files
-    type:
-      - 'null'
-      - boolean
-    doc: Turn on writing auxilary output files
+  - id: plp
+    type: string
+    doc: "Prefix of the input pileup files (<prefix>.plp.gz, .var.gz, .cel.gz, .umi.gz)"
     inputBinding:
-      position: 101
-      prefix: --aux-files
-  - id: bf_thres
-    type:
-      - 'null'
-      - float
-    doc: Bayes Factor Threshold used in the initial clustering
-    inputBinding:
-      position: 101
-      prefix: --bf-thres
-  - id: cap_bq
-    type:
-      - 'null'
-      - int
-    doc: Maximum base quality (higher BQ will be capped)
-    inputBinding:
-      position: 101
-      prefix: --cap-BQ
-  - id: doublet_prior
-    type:
-      - 'null'
-      - float
-    doc: Prior of doublet
-    inputBinding:
-      position: 101
-      prefix: --doublet-prior
-  - id: frac_init_clust
-    type:
-      - 'null'
-      - float
-    doc: Fraction of droplets to be clustered in the very first round of initial
-      clustering procedure
-    inputBinding:
-      position: 101
-      prefix: --frac-init-clust
-  - id: geno_error
-    type:
-      - 'null'
-      - float
-    doc: Genotype error parameter per cluster
-    inputBinding:
-      position: 101
-      prefix: --geno-error
-  - id: group_list
-    type:
-      - 'null'
-      - string
-    doc: List of tag readgroup/cell barcode to consider in this run. All other 
-      barcodes will be ignored. This is useful for parallelized run
-    inputBinding:
-      position: 101
-      prefix: --group-list
+      position: 1
+      prefix: --plp
   - id: init_cluster
     type:
       - 'null'
       - File
-    doc: Input file containing the initial cluster information
+    doc: "Input file containing the initial cluster information"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --init-cluster
+  - id: out
+    type: string
+    doc: "Output file prefix"
+    inputBinding:
+      position: 1
+      prefix: --out
+  - id: nsample
+    type:
+      - 'null'
+      - int
+    doc: "Number of samples multiplexed together Default: 0"
+    inputBinding:
+      position: 1
+      prefix: --nsample
+  - id: aux_files
+    type:
+      - 'null'
+      - boolean
+    doc: "Turn on writing auxilary output files Default: OFF"
+    inputBinding:
+      position: 1
+      prefix: --aux-files
+  - id: verbose
+    type:
+      - 'null'
+      - int
+    doc: "Turn on verbose mode with specific verbosity threshold. 0: fully verbose, 100 : no verbose messages Default: 100"
+    inputBinding:
+      position: 1
+      prefix: --verbose
+  - id: doublet_prior
+    type:
+      - 'null'
+      - float
+    doc: "Prior of doublet Default: 0.50"
+    inputBinding:
+      position: 1
+      prefix: --doublet-prior
+  - id: geno_error
+    type:
+      - 'null'
+      - float
+    doc: "Genotype error parameter per cluster Default: 0.00"
+    inputBinding:
+      position: 1
+      prefix: --geno-error
+  - id: bf_thres
+    type:
+      - 'null'
+      - float
+    doc: "Bayes Factor Threshold used in the initial clustering Default: 5.41"
+    inputBinding:
+      position: 1
+      prefix: --bf-thres
+  - id: frac_init_clust
+    type:
+      - 'null'
+      - float
+    doc: "Fraction of droplets to be clustered in the very first round of initial clustering procedure Default: 1.00"
+    inputBinding:
+      position: 1
+      prefix: --frac-init-clust
   - id: iter_init
     type:
       - 'null'
       - int
-    doc: Iteration for initial cluster assignment (set to zero to skip the 
-      iterations)
+    doc: "Iteration for initial cluster assignment (set to zero to skip the iterations) Default: 10"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --iter-init
   - id: keep_init_missing
     type:
       - 'null'
       - boolean
-    doc: Keep missing cluster assignment as missing in the initial iteration
+    doc: "Keep missing cluster assignment as missing in the initial iteration Default: OFF"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --keep-init-missing
+  - id: cap_bq
+    type:
+      - 'null'
+      - int
+    doc: "Maximum base quality (higher BQ will be capped) Default: 40"
+    inputBinding:
+      position: 1
+      prefix: --cap-BQ
   - id: min_bq
     type:
       - 'null'
       - int
-    doc: Minimum base quality to consider (lower BQ will be skipped)
+    doc: "Minimum base quality to consider (lower BQ will be skipped) Default: 13"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --min-BQ
-  - id: min_snp
+  - id: group_list
     type:
       - 'null'
-      - int
-    doc: Minimum number of SNPs with coverage for a droplet/cell to be 
-      considered
+      - File
+    doc: "List of tag readgroup/cell barcode to consider in this run. All other barcodes will be ignored. This is useful for parallelized run"
     inputBinding:
-      position: 101
-      prefix: --min-snp
+      position: 1
+      prefix: --group-list
   - id: min_total
     type:
       - 'null'
       - int
-    doc: Minimum number of total reads for a droplet/cell to be considered
+    doc: "Minimum number of total reads for a droplet/cell to be considered Default: 0"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --min-total
   - id: min_uniq
     type:
       - 'null'
       - int
-    doc: Minimum number of unique reads (determined by UMI/SNP pair) for a 
-      droplet/cell to be considered
+    doc: "Minimum number of unique reads (determined by UMI/SNP pair) for a droplet/cell to be considered Default: 0"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --min-uniq
-  - id: nsample
+  - id: min_snp
     type:
       - 'null'
       - int
-    doc: Number of samples multiplexed together
+    doc: "Minimum number of SNPs with coverage for a droplet/cell to be considered Default: 0"
     inputBinding:
-      position: 101
-      prefix: --nsample
-  - id: plp
+      position: 1
+      prefix: --min-snp
+  - id: plp_files
     type:
-      - 'null'
-      - string
-    doc: Prefix of input files generated by dsc-pileup
-    inputBinding:
-      position: 101
-      prefix: --plp
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: 'Turn on verbose mode with specific verbosity threshold. 0: fully verbose,
-      100 : no verbose messages'
-    inputBinding:
-      position: 101
-      prefix: --verbose
-  - id: out_path
-    type: string
-    doc: '[STR: ]             : Output file prefix'
-    inputBinding:
-      position: 102
-      prefix: --out
+      type: array
+      items: File
+    doc: "Pileup files (<prefix>.plp.gz, .var.gz, .cel.gz, .umi.gz) written by dsc-pileup; staged in the working directory so that the plp prefix resolves"
 outputs:
-  - id: out
+  - id: results
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Output file prefix
+      type: array
+      items: File
+    doc: "Output files: <out>.clust1.samples.gz, <out>.clust1.vcf.gz, <out>.lmix and others"
     outputBinding:
-      glob: $(inputs.out_path)*
+      glob: "$(inputs.out).*"
+  - id: log
+    type: stderr
+    doc: "Log messages"
 requirements:
-  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.plp_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
+stdout: popscle_freemuxlet-old.out
+stderr: popscle_freemuxlet-old.log

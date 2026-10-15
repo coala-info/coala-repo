@@ -1,5 +1,11 @@
 # plmc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plmc | Not completed | repo DHFR example runs and sequence weights equal the repo expected file, but couplings differ from tests/DHFR.couplings (correlation 0.96, same result with 1 or default threads), so correctness cannot be confirmed; the expected file may be outdated; fixed --output flag and put the alignment last |
+
 ## plmc
 
 ### Tool Description

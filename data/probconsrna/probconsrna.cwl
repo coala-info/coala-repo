@@ -1,93 +1,130 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: probconsrna
+baseCommand: probconsRNA
 label: probconsrna
-doc: "PROBCONS RNA is a tool for probabilistic consistency-based multiple alignment
-  of RNA sequences.\n\nTool homepage: http://probcons.stanford.edu/"
+doc: "PROBCONS RNA is a tool for probabilistic consistency-based multiple alignment of RNA sequences.\n\nTool homepage: http://probcons.stanford.edu/"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: input_files
-    type:
-      type: array
-      items: File
-    doc: Input MFA (Multi-Fasta) files to be aligned
+    type: File[]
+    doc: "Input sequences in MFA (Multi-Fasta) format"
     inputBinding:
-      position: 1
-  - id: alignment_order
-    type:
-      - 'null'
-      - boolean
-    doc: Print sequences in alignment order rather than input order
-    inputBinding:
-      position: 102
-      prefix: --alignment-order
+      position: 10
   - id: clustalw
     type:
       - 'null'
       - boolean
-    doc: Use ClustalW output format instead of MFA
+    doc: "use CLUSTALW output format instead of MFA"
     inputBinding:
-      position: 102
+      position: 2
       prefix: -clustalw
   - id: consistency
     type:
       - 'null'
       - int
-    doc: Use REPS passes of consistency transformation
+    doc: "use 0 <= REPS <= 5 (default: 2) passes of consistency transformation"
     inputBinding:
-      position: 102
-      prefix: --consistency
+      position: 2
+      prefix: -c
   - id: iterative_refinement
     type:
       - 'null'
       - int
-    doc: Use REPS passes of iterative-refinement
+    doc: "use 0 <= REPS <= 1000 (default: 100) passes of iterative-refinement"
     inputBinding:
-      position: 102
-      prefix: --iterative-refinement
-  - id: pairs
-    type:
-      - 'null'
-      - boolean
-    doc: Generate all-pairs pairwise alignments
-    inputBinding:
-      position: 102
-      prefix: -pairs
-  - id: paramfile
-    type:
-      - 'null'
-      - File
-    doc: Read parameters from FILENAME
-    inputBinding:
-      position: 102
-      prefix: --paramfile
+      position: 2
+      prefix: -ir
   - id: pre_training
     type:
       - 'null'
       - int
-    doc: Use REPS passes of pre-training
+    doc: "use 0 <= REPS <= 20 (default: 0) rounds of pretraining"
     inputBinding:
-      position: 102
-      prefix: --pre-training
-  - id: train
+      position: 2
+      prefix: -pre
+  - id: pairs
     type:
       - 'null'
-      - File
-    doc: Compute EM transition probabilities and store in FILENAME
+      - boolean
+    doc: "generate all-pairs pairwise alignments"
     inputBinding:
-      position: 102
-      prefix: --train
+      position: 2
+      prefix: -pairs
+  - id: viterbi
+    type:
+      - 'null'
+      - boolean
+    doc: "use Viterbi algorithm to generate all pairs (automatically enables -pairs)"
+    inputBinding:
+      position: 2
+      prefix: -viterbi
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Report progress while aligning
+    doc: "report progress while aligning (default: off)"
     inputBinding:
-      position: 102
-      prefix: --verbose
+      position: 2
+      prefix: -v
+  - id: annot_path
+    type:
+      - 'null'
+      - string
+    doc: "write annotation for multiple alignment to FILENAME"
+    inputBinding:
+      position: 2
+      prefix: -annot
+  - id: train_path
+    type:
+      - 'null'
+      - string
+    doc: "compute EM transition probabilities, store in FILENAME (default: no training)"
+    inputBinding:
+      position: 2
+      prefix: -t
+  - id: emissions
+    type:
+      - 'null'
+      - boolean
+    doc: "also reestimate emission probabilities (default: off)"
+    inputBinding:
+      position: 2
+      prefix: -e
+  - id: paramfile
+    type:
+      - 'null'
+      - File
+    doc: "read parameters from FILENAME"
+    inputBinding:
+      position: 2
+      prefix: -p
+  - id: alignment_order
+    type:
+      - 'null'
+      - boolean
+    doc: "print sequences in alignment order rather than input order (default: off)"
+    inputBinding:
+      position: 2
+      prefix: -a
 outputs:
-  - id: stdout
+  - id: alignment
     type: stdout
-    doc: Standard output
+    doc: Multiple alignment (MFA or CLUSTALW format) printed to standard output
+  - id: annot
+    type:
+      - 'null'
+      - File
+    doc: annotation for the multiple alignment
+    outputBinding:
+      glob: $(inputs.annot_path)
+  - id: train
+    type:
+      - 'null'
+      - File
+    doc: EM transition probabilities
+    outputBinding:
+      glob: $(inputs.train_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/probconsrna:1.10--h9f5acd7_4

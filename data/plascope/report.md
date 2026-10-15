@@ -1,5 +1,11 @@
 # plascope CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plascope_plaScope.sh | PASS | synthetic data: tiny centrifuge database built from real E. coli and Klebsiella sequences, SPAdes-style contig names; fasta mode only; fixed optional modes and output folder |
+
 ## plascope_plaScope.sh
 
 ### Tool Description

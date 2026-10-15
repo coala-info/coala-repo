@@ -1,5 +1,18 @@
 # popins2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| popins2_assemble | Failed | image problem: popins2 assemble calls the gatb-minia-pipeline at a build path that does not exist in the image (only --skip-assembly works) |
+| popins2_contigmap | PASS | synthetic data: simulated reads of a 3 kb planted insertion in a SARS-CoV-2 genome; locations found at the planted position 15000 |
+| popins2_genotype | PASS | synthetic data: simulated samples; the three carrier samples get 1/1 and the sample without the insertion gets 0/0 |
+| popins2_merge | Failed | image problem: with the default k-mer length 63 the image's Bifrost crashes (stack smashing); it only works with -k 31 -g 20 |
+| popins2_multik | Failed | image problem: the image's Bifrost crashes (stack smashing) when the multi-k iteration passes k=47 |
+| popins2_place-finish | Not completed | synthetic data: no split-read placements to combine; the tool crashes (exit 139) when the placed-locations files are empty |
+| popins2_place-refalign | PASS | synthetic data: simulated reads of a 3 kb planted insertion; VCF records placed at the planted position 15000 (contigs were supplied, because assemble is broken in the image) |
+| popins2_place-splitalign | Not completed | synthetic data: place-refalign placed every location, so locations_unplaced.txt was empty and split-read alignment had nothing to align |
+
 ## popins2_assemble
 
 ### Tool Description

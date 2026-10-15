@@ -7,7 +7,7 @@ label: plassembler_download
 doc: "Downloads Plassembler DB\n\nTool homepage: https://github.com/gbouras13/plassembler"
 inputs:
   - id: database
-    type: Directory
+    type: string
     doc: Directory where database will be stored.
     inputBinding:
       position: 101
@@ -24,6 +24,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the downloaded database
+    outputBinding:
+      glob: $(inputs.database)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plassembler:1.8.2--pyhdfd78af_0

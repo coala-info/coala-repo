@@ -4,9 +4,11 @@ baseCommand:
   - ppanggolin
   - module
 label: ppanggolin_module
-doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
-  team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
-  homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
+  team, and distributed under the CeCILL Free Software License Agreement.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: config
     type:
@@ -36,8 +38,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimum ratio of genomes in which the family must have multiple genes 
-      for it to be considered 'duplicated'
+    doc: minimum ratio of genomes in which the family must have multiple genes for
+      it to be considered 'duplicated'
     inputBinding:
       position: 101
       prefix: --dup_margin
@@ -53,8 +55,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimum jaccard similarity used to filter edges between gene families. 
-      Increasing it will improve precision but lower sensitivity a lot.
+    doc: minimum jaccard similarity used to filter edges between gene families. Increasing
+      it will improve precision but lower sensitivity a lot.
     inputBinding:
       position: 101
       prefix: --jaccard
@@ -70,18 +72,19 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of times the module needs to be present in the pangenome
-      to be reported. Increasing it will improve precision but lower 
-      sensitivity.
+    doc: Minimum number of times the module needs to be present in the pangenome to
+      be reported. Increasing it will improve precision but lower sensitivity.
     inputBinding:
       position: 101
       prefix: --min_presence
   - id: pangenome
     type: File
-    doc: The pangenome .h5 file
+    doc: The pangenome .h5 file The file is staged writable because ppanggolin opens
+      it for writing.
     inputBinding:
       position: 101
       prefix: --pangenome
+      valueFrom: $(self.basename)
   - id: size
     type:
       - 'null'
@@ -94,9 +97,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Size of the transitive closure used to build the graph. This indicates 
-      the number of non related genes allowed in-between two related genes. 
-      Increasing it will improve precision but lower sensitivity a little.
+    doc: Size of the transitive closure used to build the graph. This indicates the
+      number of non related genes allowed in-between two related genes. Increasing
+      it will improve precision but lower sensitivity a little.
     inputBinding:
       position: 101
       prefix: --transitive
@@ -104,8 +107,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -113,7 +116,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pangenome_out
+    type: File
+    doc: The pangenome HDF5 file after the step.
+    outputBinding:
+      glob: $(inputs.pangenome.basename)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0
 stdout: ppanggolin_module.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.pangenome)
+        writable: true

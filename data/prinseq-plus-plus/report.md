@@ -1,5 +1,11 @@
 # prinseq-plus-plus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prinseq-plus-plus_prinseq++ | PASS |  |
+
 ## prinseq-plus-plus_prinseq++
 
 ### Tool Description

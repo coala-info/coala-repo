@@ -188,13 +188,6 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
   - id: outdir_dir
     type:
       - 'null'
@@ -202,6 +195,11 @@ outputs:
     doc: Directory to write the output to.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: TERM
+        envValue: xterm
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plassembler:1.8.2--pyhdfd78af_0

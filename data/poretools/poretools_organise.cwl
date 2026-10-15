@@ -15,7 +15,7 @@ inputs:
       position: 1
   - id: destination_directory
     type: string
-    doc: The destination directory.
+    doc: The destination directory (created in the working directory before the run).
     inputBinding:
       position: 2
   - id: copy
@@ -45,6 +45,13 @@ outputs:
     doc: The destination directory.
     outputBinding:
       glob: $(inputs.destination_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.destination_directory)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/poretools:0.6.1a0--py27_0

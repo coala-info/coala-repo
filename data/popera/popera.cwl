@@ -14,6 +14,8 @@ inputs:
       prefix: --bandwidth
   - id: datafile
     type: File
+    secondaryFiles:
+      - .bai
     doc: data file, should be sorted bam format
     inputBinding:
       position: 101
@@ -67,6 +69,20 @@ inputs:
       position: 101
       prefix: --threshold
 outputs:
+  - id: hotspots_bed
+    type:
+      - 'null'
+      - File
+    doc: Hot spots (DNase I hypersensitive sites) in BED format
+    outputBinding:
+      glob: '*_hotspots.bed'
+  - id: bigwig
+    type:
+      - 'null'
+      - File
+    doc: Smoothed signal track, written with --bigwig
+    outputBinding:
+      glob: '*.bw'
   - id: stdout
     type: stdout
     doc: Standard output

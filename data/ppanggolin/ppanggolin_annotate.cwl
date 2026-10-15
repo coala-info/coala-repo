@@ -4,9 +4,11 @@ baseCommand:
   - ppanggolin
   - annotate
 label: ppanggolin_annotate
-doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
-  team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
-  homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
+  team, and distributed under the CeCILL Free Software License Agreement.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: allow_overlap
     type:
@@ -18,9 +20,9 @@ inputs:
       prefix: --allow_overlap
   - id: anno
     type: File?
-    doc: A tab-separated file listing the genome names, and the gff/gbff 
-      filepath of its annotations (the files can be compressed with gzip). One 
-      line per genome. If this is provided, those annotations will be used.
+    doc: A tab-separated file listing the genome names, and the gff/gbff filepath
+      of its annotations (the files can be compressed with gzip). One line per genome.
+      If this is provided, those annotations will be used.
     inputBinding:
       position: 101
       prefix: --anno
@@ -58,9 +60,9 @@ inputs:
       prefix: --disable_prog_bar
   - id: fasta
     type: File?
-    doc: A tab-separated file listing the genome names, and the fasta filepath 
-      of its genomic sequence(s) (the fastas can be compressed with gzip). One 
-      line per genome.
+    doc: A tab-separated file listing the genome names, and the fasta filepath of
+      its genomic sequence(s) (the fastas can be compressed with gzip). One line per
+      genome.
     inputBinding:
       position: 101
       prefix: --fasta
@@ -76,8 +78,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Kingdom to which the prokaryota belongs to, to know which models to use
-      for rRNA annotation.
+    doc: Kingdom to which the prokaryota belongs to, to know which models to use for
+      rRNA annotation.
     inputBinding:
       position: 101
       prefix: --kingdom
@@ -101,8 +103,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Allow to force the prodigal procedure. If nothing given, PPanGGOLiN 
-      will decide in function of contig length
+    doc: Allow to force the prodigal procedure. If nothing given, PPanGGOLiN will
+      decide in function of contig length
     inputBinding:
       position: 101
       prefix: --prodigal_procedure
@@ -126,8 +128,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: In the context of provided annotation, use this option to read 
-      pseudogenes. (Default behavior is to ignore them)
+    doc: In the context of provided annotation, use this option to read pseudogenes.
+      (Default behavior is to ignore them)
     inputBinding:
       position: 101
       prefix: --use_pseudo
@@ -135,8 +137,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -145,6 +147,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the list files (annotations or FASTA), staged next to them
+      so that the names in the list resolve.
 outputs:
   - id: output
     type:
@@ -162,6 +171,9 @@ outputs:
       glob: $(inputs.basename)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0

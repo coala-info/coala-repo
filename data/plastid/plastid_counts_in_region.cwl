@@ -74,6 +74,9 @@ inputs:
         items: File
     doc: One or more count or alignment file(s) from a single sample or set of 
       samples to be pooled.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 102
       prefix: --count_files
@@ -266,6 +269,7 @@ inputs:
     type:
       - 'null'
       - int
+      - File
     doc: "For `--fiveprime` or `--threeprime`, provide an integer representing the
       offset into the read, starting from either the 5' or 3' end, at which data should
       be plotted. For `--fiveprime_variable`, provide the filename of a two-column

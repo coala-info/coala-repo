@@ -1,5 +1,11 @@
 # primerforge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| primerforge_primerForge | Failed | image problem: khmer 3.0.0a3 in the image returns k-mers as bytes, so no k-mer passes the filter and primerForge stops with StopIteration on any genome set |
+
 ## primerforge_primerForge
 
 ### Tool Description

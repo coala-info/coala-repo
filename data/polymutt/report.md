@@ -1,5 +1,11 @@
 # polymutt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| polymutt | PASS |  |
+
 ## polymutt
 
 ### Tool Description

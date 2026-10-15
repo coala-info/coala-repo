@@ -96,6 +96,9 @@ inputs:
         items: File
     doc: "One or more count or alignment file(s) from a single\nsample or set of samples
       to be pooled."
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 103
       prefix: --count_files

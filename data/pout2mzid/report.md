@@ -1,5 +1,11 @@
 # pout2mzid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pout2mzid | PASS | synthetic data: the Percolator input table was built by script from a real MS-GF+ search (msgf2pin crashes in its image); needs --validate because the Percolator 3.7 XML is newer than the tool's schema; inserted q-values and PEP match the Percolator output |
+
 ## pout2mzid
 
 ### Tool Description

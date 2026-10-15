@@ -7,6 +7,9 @@ doc: "Parse a bamfile (from a stream) and output summary stats for each read.\n\
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Path to bam file.
     inputBinding:
       position: 1
@@ -50,11 +53,20 @@ inputs:
       position: 102
       prefix: --threads
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Output alignment stats to file instead of stdout.
     inputBinding:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Per-read alignment stats (when --output is not given)
+  - id: stderr
+    type: stderr
+    doc: Summary (when --summary is not given)
   - id: output
     type:
       - 'null'
@@ -71,6 +83,8 @@ outputs:
       glob: $(inputs.summary)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: pomoxis_stats_from_bam.out
+stderr: pomoxis_stats_from_bam.err
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pomoxis:0.3.16--pyhdfd78af_0

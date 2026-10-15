@@ -1,5 +1,11 @@
 # pneumo-typer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pneumo-typer | PASS |  |
+
 ## pneumo-typer
 
 ### Tool Description

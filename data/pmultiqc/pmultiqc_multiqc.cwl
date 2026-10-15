@@ -10,9 +10,7 @@ doc: "MultiQC aggregates results from bioinformatics analyses across many sample
   'multiqc .'\n\nTool homepage: https://github.com/bigbio/pmultiqc/"
 inputs:
   - id: analysis_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory to scan for analysis results
     inputBinding:
       position: 1
@@ -233,10 +231,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exclude
     doc: Do not use this module. Can specify multiple times.
     inputBinding:
       position: 102
-      prefix: --exclude
   - id: export
     type:
       - 'null'
@@ -363,10 +362,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --module
     doc: Use only this module. Can specify multiple times.
     inputBinding:
       position: 102
-      prefix: --module
   - id: mzid_plugin
     type:
       - 'null'

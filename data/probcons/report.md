@@ -1,5 +1,11 @@
 # probcons CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| probcons | PASS |  |
+
 ## probcons
 
 ### Tool Description

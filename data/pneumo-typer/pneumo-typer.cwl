@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pneumo-typer.pl
+baseCommand: pneumo-typer
 label: pneumo-typer
 doc: "A comprehensive prediction and visualization of serotype and sequence type for
   streptococcus pneumoniae using assembled genomes.\n\nTool homepage: https://www.microbialgenomic.cn/Pneumo-Typer.html"
@@ -8,7 +8,7 @@ inputs:
   - id: cgmlst
     type:
       - 'null'
-      - boolean
+      - string
     doc: Perform cgmlst analysis. It needs about 3 mins for one genome
     inputBinding:
       position: 101
@@ -32,7 +32,7 @@ inputs:
   - id: mlst
     type:
       - 'null'
-      - boolean
+      - string
     doc: Perform mlst analysis
     inputBinding:
       position: 101
@@ -61,7 +61,7 @@ inputs:
   - id: prodigal_annotation
     type:
       - 'null'
-      - boolean
+      - string
     doc: Annotate all genomes using prodigal
     inputBinding:
       position: 101
@@ -69,7 +69,7 @@ inputs:
   - id: recreate_figure
     type:
       - 'null'
-      - boolean
+      - string
     doc: Re-create the figure of the genetic organization of cps gene cluster 
       for genomes. At this step, users can add a parameter "phylogenetic_tree" 
       or "strain_reorder_file".
@@ -79,7 +79,7 @@ inputs:
   - id: recreate_heatmap
     type:
       - 'null'
-      - boolean
+      - string
     doc: Re-create the heatmap of cps gene distribution in genomes. At this 
       step, users can add a parameter "phylogenetic_tree" or 
       "strain_reorder_file".
@@ -89,7 +89,7 @@ inputs:
   - id: skip_blastn
     type:
       - 'null'
-      - boolean
+      - string
     doc: Skip the process of doing blastn during serotype analysis.
     inputBinding:
       position: 101
@@ -97,7 +97,7 @@ inputs:
   - id: skip_sequence_processing
     type:
       - 'null'
-      - boolean
+      - string
     doc: Skip the process of sequence processing (STEP-1)
     inputBinding:
       position: 101
@@ -117,7 +117,7 @@ inputs:
   - id: test
     type:
       - 'null'
-      - boolean
+      - string
     doc: Run pneumo-typer using Test_data as input to check whether Pneumo-Typer
       is installed successfully
     inputBinding:
@@ -125,18 +125,15 @@ inputs:
       prefix: --test
   - id: output_directory_path
     type: string
+    default: pneumo-typer_workplace
+    doc: An output directory holding all the generated files by pneumo-typer.
     inputBinding:
       position: 102
-      prefix: --output_directory
+      prefix: -o
 outputs:
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
-    doc: An output directory holding all the generated files by pneumo-typer.pl.
-      if this option is not set,  a directory named "pneumo-typer_workplace" 
-      will be created in the bin directory from where pneumo-typer.pl was 
-      invoked.
+    type: Directory
+    doc: An output directory holding all the generated files by pneumo-typer.
     outputBinding:
       glob: $(inputs.output_directory_path)
 requirements:

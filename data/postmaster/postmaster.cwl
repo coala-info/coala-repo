@@ -7,7 +7,8 @@ inputs:
   - id: alignments
     type:
       - 'null'
-      - string
+      - File
+    doc: SAM or BAM alignment file written by salmon with --writeMappings (stdin if not given)
     inputBinding:
       position: 101
       prefix: --alignments
@@ -15,26 +16,30 @@ inputs:
     type:
       - 'null'
       - int
+    doc: Number of threads (default 2)
     inputBinding:
       position: 101
       prefix: --num-threads
   - id: output
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: Output alignment file; the format follows the suffix (.sam or .bam).
     inputBinding:
       position: 101
       prefix: --output
   - id: quant
-    type: string
+    type: File
+    doc: quant.sf file of the corresponding salmon run
     inputBinding:
       position: 101
       prefix: --quant
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: Annotated alignments written with --output
+    outputBinding:
+      glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/postmaster:0.1.0--ha6fb395_1
-stdout: postmaster.out

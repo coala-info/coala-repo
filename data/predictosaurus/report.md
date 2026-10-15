@@ -1,5 +1,14 @@
 # predictosaurus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| predictosaurus_build | PASS | Built a variant graph from the repo's real SARS-CoV-2 calls and observations BCF files (sample=file input fixed). |
+| predictosaurus_peptides | PASS | Wrote 359 peptide FASTA records for 8-11 mers from the graph; the output is a file, not a directory (fixed). |
+| predictosaurus_plot | PASS | Converted the process scores to a TSV with transcript, score and sample columns; values are plausible. |
+| predictosaurus_process | PASS | Scored 7 SARS-CoV-2 genes on the graph from build; output score database is valid (GFF derived from NC_045512.2 coordinates; graph staged writable). |
+
 ## predictosaurus_build
 
 ### Tool Description

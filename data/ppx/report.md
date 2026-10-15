@@ -1,5 +1,11 @@
 # ppx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ppx | PASS | Downloaded two real files from PRIDE project PXD000001; the protein FASTA and README are intact (NetworkAccess added to the CWL). |
+
 ## ppx
 
 ### Tool Description

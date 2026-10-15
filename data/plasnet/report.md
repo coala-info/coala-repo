@@ -1,5 +1,13 @@
 # plasnet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plasnet_add-sample-hits | PASS | repo test sample hits on subcommunities from split and type runs; sample graphs written |
+| plasnet_split | PASS | repo test data (hub set and main set); communities.pkl and graph files written |
+| plasnet_type | PASS | repo hub test data; typing.tsv matches the repo truth file and hub_plasmids.csv matches after sorting |
+
 ## plasnet_add-sample-hits
 
 ### Tool Description

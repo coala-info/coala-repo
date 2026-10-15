@@ -23,7 +23,7 @@ inputs:
   - id: bar_max
     type:
       - 'null'
-      - float
+      - int
     doc: Maximum value for color bar
     inputBinding:
       position: 101
@@ -31,7 +31,7 @@ inputs:
   - id: bar_min
     type:
       - 'null'
-      - float
+      - int
     doc: 'Minimum value for color bar, default: 0'
     inputBinding:
       position: 101
@@ -79,7 +79,7 @@ inputs:
   - id: fig_size
     type:
       - 'null'
-      - float
+      - int
     doc: 'Figure size, default: 10'
     inputBinding:
       position: 101
@@ -104,7 +104,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: 'Show grid in the heatmap, Default: True'
+    doc: 'Hide the grid in the heatmap (the grid is shown by default; this flag turns it off)'
     inputBinding:
       position: 101
       prefix: -grid
@@ -160,7 +160,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Output directory, default: ./'
+    doc: 'Output file name, or an existing directory (the figure is then GenomeContact.<format>); default: ./'
     inputBinding:
       position: 101
       prefix: --output
@@ -192,13 +192,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir
+  - id: figures
     type:
-      - 'null'
-      - Directory
-    doc: 'Output directory, default: ./'
+      type: array
+      items: File
+    doc: Heatmap figure files written to the working directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: ['*.pdf', '*.png', '*.svg', '*.jpg', '*.jpeg', '*.tif', '*.tiff', '*.eps']
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plothic:1.0.0--pyh5707d69_0

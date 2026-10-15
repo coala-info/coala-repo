@@ -1,5 +1,11 @@
 # pprodigal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pprodigal | PASS | Predicted 1705 genes on 272 real Bacteroides fragilis contigs; GFF, protein, gene and score files match in count. |
+
 ## pprodigal
 
 ### Tool Description

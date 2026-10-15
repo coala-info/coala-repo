@@ -6,6 +6,9 @@ doc: "Filter a bam\n\nTool homepage: https://github.com/nanoporetech/pomoxis"
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: input bam file.
     inputBinding:
       position: 1
@@ -68,7 +71,7 @@ inputs:
   - id: quality
     type:
       - 'null'
-      - int
+      - float
     doc: Filter reads by mean qscore.
     inputBinding:
       position: 102
@@ -91,14 +94,14 @@ inputs:
       prefix: --threads
   - id: output_bam_path
     type: string
+    default: filtered.bam
+    doc: 'Output bam file (default: filtered.bam).'
     inputBinding:
       position: 103
       prefix: --output_bam
 outputs:
   - id: output_bam
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output bam file.
     outputBinding:
       glob: $(inputs.output_bam_path)

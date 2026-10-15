@@ -1,5 +1,11 @@
 # postmaster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| postmaster | PASS |  |
+
 ## postmaster
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # pplacer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pplacer | PASS | Placed 3 HIV query sequences on a reference tree from the pplacer tests; each landed next to its closest relative. |
+
 ## pplacer
 
 ### Tool Description

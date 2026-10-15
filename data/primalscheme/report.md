@@ -1,5 +1,11 @@
 # primalscheme CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| primalscheme_multiplex | PASS |  |
+
 ## primalscheme_multiplex
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # primer3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| primer3_primer3_core | PASS |  |
+
 ## primer3_primer3_core
 
 ### Tool Description

@@ -6,6 +6,9 @@ doc: "Subsample a bam to uniform or proportional depth\n\nTool homepage: https:/
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: input bam file.
     inputBinding:
       position: 1
@@ -133,7 +136,7 @@ inputs:
   - id: quality
     type:
       - 'null'
-      - int
+      - float
     doc: Filter reads by mean qscore.
     inputBinding:
       position: 103

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: probeit
+baseCommand:
+  - probeit
+  - posnegset
 label: probeit_posnegset
 doc: "It generates a probe set with sequences included in the positive genome but
   not in the negative genome\n\nTool homepage: https://github.com/steineggerlab/probeit"
@@ -155,6 +157,11 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+arguments:
+  - position: 900
+    shellQuote: false
+    valueFrom: '&& rm -rf $(inputs.output_dir_path)/cluster/temp'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/probeit:2.2--py36hff8b118_0

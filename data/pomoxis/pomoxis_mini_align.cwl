@@ -4,6 +4,12 @@ baseCommand: mini_align
 label: pomoxis_mini_align
 doc: "Align fastq/a or bam formatted reads to a genome using minimap2.\n\nTool homepage:
   https://github.com/nanoporetech/pomoxis"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
 inputs:
   - id: aggressively_extend_gaps
     type:
@@ -150,22 +156,21 @@ inputs:
       position: 101
       prefix: -A
   - id: output_prefix
-    type:
-      - 'null'
-      - string
+    type: string
+    default: reads
     doc: 'output file prefix (default: reads).'
     inputBinding:
       position: 101
       prefix: -p
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: "reference, should be a fasta file. If correspondng minimap indices\ndo not
-      exist they will be created."
+      exist they will be created (next to the reference, so it is staged writable in
+      the working directory)."
     inputBinding:
       position: 101
       prefix: -r
+      valueFrom: $(self.basename)
   - id: retain_bam_tags
     type:
       - 'null'
@@ -196,6 +201,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: alignments
+    type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    doc: Sorted alignments (bam) with its index
+    outputBinding:
+      glob: $(inputs.output_prefix).bam
   - id: output_prefix_files
     type:
       type: array

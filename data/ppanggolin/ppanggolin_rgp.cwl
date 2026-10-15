@@ -4,10 +4,13 @@ baseCommand:
   - ppanggolin
   - rgp
 label: ppanggolin_rgp
-doc: "For genomic islands and spots of insertion detection, please cite: Bazin A et
+doc: 'For genomic islands and spots of insertion detection, please cite: Bazin A et
   al. (2020) panRGP: a pangenome-based method to predict genomic islands and explore
   their diversity. Bioinformatics, Volume 36, Issue Supplement_2, Pages i651–i658,
-  https://doi.org/10.1093/bioinformatics/btaa792\n\nTool homepage: https://github.com/labgem/PPanGGOLiN"
+  https://doi.org/10.1093/bioinformatics/btaa792
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: config
     type:
@@ -29,8 +32,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum ratio of genomes where the family is present in which the 
-      family must have multiple genes for it to be considered 'duplicated'
+    doc: Minimum ratio of genomes where the family is present in which the family
+      must have multiple genes for it to be considered 'duplicated'
     inputBinding:
       position: 101
       prefix: --dup_margin
@@ -60,10 +63,12 @@ inputs:
       prefix: --min_score
   - id: pangenome
     type: File
-    doc: The pangenome .h5 file
+    doc: The pangenome .h5 file The file is staged writable because ppanggolin opens
+      it for writing.
     inputBinding:
       position: 101
       prefix: --pangenome
+      valueFrom: $(self.basename)
   - id: persistent_penalty
     type:
       - 'null'
@@ -84,8 +89,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -103,8 +108,17 @@ outputs:
     doc: log output file
     outputBinding:
       glob: $(inputs.log_path)
+  - id: pangenome_out
+    type: File
+    doc: The pangenome HDF5 file after the step.
+    outputBinding:
+      glob: $(inputs.pangenome.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.pangenome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0

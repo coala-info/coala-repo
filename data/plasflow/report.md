@@ -1,5 +1,11 @@
 # plasflow CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plasflow_PlasFlow.py | PASS |  |
+
 ## plasflow_PlasFlow.py
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # predicthaplo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| predicthaplo | Failed | tool bug: on real SARS-CoV-2 read pairs it writes local windows, then crashes with a segmentation fault (exit 139) in the global step; the help also names two flags the binary rejects (fixed to --min_qual and --min_length). |
+
 ## predicthaplo
 
 ### Tool Description

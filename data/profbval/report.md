@@ -1,5 +1,11 @@
 # profbval CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| profbval | PASS | Output is identical to the package's own cad23 example result; the old file lacked the output name, mode and HSSP inputs. |
+
 ## profbval
 
 ### Tool Description

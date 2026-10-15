@@ -7,6 +7,13 @@ doc: "Projects read alignments from personal assembly to reference\n\nTool homep
 inputs:
   - id: assembly_to_ref
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .csi
+        required: false
+      - pattern: .crai
+        required: false
     doc: "Assembly contig to reference genome alignment file in BAM/CRAM format\n\n\
       \          Alignment file must be sorted and indexed. Minimap2 or pbmm2 alignments
       can be used."
@@ -43,6 +50,13 @@ inputs:
       prefix: --phased-het-vcf-prefix
   - id: read_to_assembly
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .csi
+        required: false
+      - pattern: .crai
+        required: false
     doc: "Read to assembly alignment file in BAM/CRAM format\n\n          Alignment
       file must be sorted and indexed. Only pbmm2 alignments are supported for these
       alignments."
@@ -51,6 +65,9 @@ inputs:
       prefix: --read-to-assembly
   - id: ref
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Genome reference in FASTA format
     inputBinding:
       position: 101
@@ -101,6 +118,13 @@ outputs:
       contig\n\n          This file is written in BAM format"
     outputBinding:
       glob: $(inputs.unassembled_read_output_path)
+  - id: phased_het_vcf
+    type:
+      type: array
+      items: File
+    doc: Phased heterozygous small variant VCF and index (written with --phased-het-vcf-prefix).
+    outputBinding:
+      glob: "$(inputs.phased_het_vcf_prefix ? inputs.phased_het_vcf_prefix + '*' : 'no_phased_het_vcf_requested')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

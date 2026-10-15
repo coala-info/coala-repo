@@ -4,6 +4,12 @@ baseCommand:
   - PneumoCaT.py
 label: pneumocat_PneumoCaT.py
 doc: "PneumoCaT.py\n\nTool homepage: https://github.com/phe-bioinformatics/pneumocat/archive/v1.1.tar.gz"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fastq_1)
+      - $(inputs.fastq_2)
 inputs:
   - id: bowtie
     type:
@@ -25,16 +31,20 @@ inputs:
       prefix: --cleanup
   - id: fastq_1
     type: File?
-    doc: Fastq file pair 1 [REQUIRED - OPTION 2]
+    doc: Fastq file pair 1 [REQUIRED - OPTION 2]. Both fastq files are staged in the working
+      directory because PneumoCaT finds the mate file by renaming 1.fastq to 2.fastq.
     inputBinding:
       position: 101
       prefix: --fastq_1
+      valueFrom: $(self.basename)
   - id: fastq_2
     type: File?
-    doc: Fastq file pair 2 [REQUIRED - OPTION 2]
+    doc: Fastq file pair 2 [REQUIRED - OPTION 2]. Both fastq files are staged in the working
+      directory because PneumoCaT finds the mate file by renaming 1.fastq to 2.fastq.
     inputBinding:
       position: 101
       prefix: --fastq_2
+      valueFrom: $(self.basename)
   - id: input_directory
     type: Directory?
     doc: please provide the path to the directory contains the fastq files 
@@ -43,12 +53,10 @@ inputs:
       position: 101
       prefix: --input_directory
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: "please provide an output directory [OPTIONAL]; if none\n               \
-      \         provided a pneumo_capsular_typing folder will be\n               \
-      \         created in the directory containing the fastq files"
+    type: string
+    default: pneumocat_out
+    doc: please provide an output directory [OPTIONAL]; if none provided a pneumo_capsular_typing
+      folder will be created in the directory containing the fastq files
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -82,6 +90,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory
+    type: Directory
+    doc: Directory with the capsular typing results
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pneumocat:1.2.1--0

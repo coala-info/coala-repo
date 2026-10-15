@@ -1,5 +1,11 @@
 # profile_dists CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| profile_dists | PASS | Hamming and scaled matrices are identical to the repository expected results. |
+
 ## profile_dists
 
 ### Tool Description

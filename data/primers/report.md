@@ -1,5 +1,12 @@
 # primers CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| primers_create | PASS |  |
+| primers_score | PASS |  |
+
 ## primers_score
 
 ### Tool Description

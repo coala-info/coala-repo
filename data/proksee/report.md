@@ -1,5 +1,13 @@
 # proksee CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proksee_assemble | Failed | image problem: config.json is missing from the proksee package folder in the image, so every command stops with FileNotFoundError |
+| proksee_evaluate | Failed | image problem: config.json is missing from the proksee package folder in the image, so every command stops with FileNotFoundError |
+| proksee_updatedb | Failed | image problem: config.json is missing from the proksee package folder in the image, so every command stops with FileNotFoundError |
+
 ## proksee_assemble
 
 ### Tool Description

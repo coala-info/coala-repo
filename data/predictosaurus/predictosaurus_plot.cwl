@@ -1,12 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - predictosaurus
-  - plot
+baseCommand: predictosaurus
+arguments:
+  - position: 2
+    valueFrom: plot
 label: predictosaurus_plot
 doc: "Create visualizations and output HTML, TSV, or Vega specs\n\nTool homepage:
   https://github.com/fxwiegand/predictosaurus"
 inputs:
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use (global option, placed before the subcommand; default all available cores)
+    inputBinding:
+      position: 1
+      prefix: --threads
   - id: input
     type: File
     doc: Path to the input data file
@@ -36,6 +45,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/predictosaurus:0.8.4--hbcba35e_0

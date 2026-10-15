@@ -18,14 +18,18 @@ inputs:
       position: 101
       prefix: --db_name
   - id: fasta_assembly
-    type: File
-    doc: SPAdes assembly fasta file
+    type:
+      - 'null'
+      - File
+    doc: SPAdes assembly fasta file (mode 2, used instead of reads)
     inputBinding:
       position: 101
       prefix: --fasta
   - id: forward_reads
-    type: File
-    doc: forward paired-end reads
+    type:
+      - 'null'
+      - File
+    doc: forward paired-end reads (mode 1)
     inputBinding:
       position: 101
       prefix: '-1'
@@ -46,8 +50,10 @@ inputs:
       position: 101
       prefix: -o
   - id: reverse_reads
-    type: File
-    doc: reverse paired-end reads
+    type:
+      - 'null'
+      - File
+    doc: reverse paired-end reads (mode 1)
     inputBinding:
       position: 101
       prefix: '-2'
@@ -73,9 +79,12 @@ outputs:
     type:
       - 'null'
       - Directory
-    doc: output directory
+    doc: result directory <output directory>/<sample>_PlaScope
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: |
+        ${ return inputs.output_directory ? inputs.output_directory + '/' + inputs.sample + '_PlaScope' : inputs.sample + '_PlaScope'; }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plascope:1.3.1--0

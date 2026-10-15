@@ -6,6 +6,15 @@ baseCommand:
 label: pod5_recover
 doc: "Attempt to recover pod5 files. Recovered files are written to sibling files
   with the '_recovered.pod5` suffix\n\nTool homepage: https://github.com/nanoporetech/pod5-file-format"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        return inputs.inputs.map(function(f) {
+          return {entryname: f.basename, entry: f, writable: true};
+        });
+      }
 inputs:
   - id: inputs
     type:
@@ -43,6 +52,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: recovered
+    type:
+      type: array
+      items: File
+    doc: Recovered pod5 files (written next to the inputs with the _recovered.pod5 suffix)
+    outputBinding:
+      glob: '*_recovered.pod5'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0

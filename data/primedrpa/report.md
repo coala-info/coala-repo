@@ -1,5 +1,11 @@
 # primedrpa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| primedrpa_PrimedRPA | PASS |  |
+
 ## primedrpa_PrimedRPA
 
 ### Tool Description

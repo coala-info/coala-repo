@@ -34,7 +34,7 @@ inputs:
   - id: local_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: The local directory where data will be downloaded. The default is 
       ~/.ppx/<identifier>. This can also be changed globally by setting the 
       PPX_DATA_DIR environment variable to your desired location.
@@ -53,6 +53,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: downloaded_files
+    type:
+      - 'null'
+      - Directory
+    doc: Local directory with the downloaded files (when local_directory is set).
+    outputBinding:
+      glob: "$(inputs.local_directory ? inputs.local_directory : 'no_such_dir')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppx:1.5.0--pyhdfd78af_0

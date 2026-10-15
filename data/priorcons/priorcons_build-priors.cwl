@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: priorcons
+baseCommand:
+  - priorcons
+  - build-priors
 label: priorcons_build-priors
 doc: "Build empirical priors from alignment\n\nTool homepage: https://github.com/GERMAN00VP/priorcons"
 inputs:

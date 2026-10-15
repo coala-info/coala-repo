@@ -1,5 +1,11 @@
 # plink2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plink2 | PASS | Galaxy plink test data (plink-simulated set, test.vcf); freq, hardy, glm logistic values match plink 1.9 results, pca/het/missing/make-pgen ran, VCF round trip correct; glm now takes modifiers (allow-no-covars needed), added bed/bim/fam, freq, hardy, missing, het, indep-pairwise flags |
+
 ## plink2
 
 ### Tool Description

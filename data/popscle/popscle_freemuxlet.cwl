@@ -1,183 +1,186 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: popscle_freemuxlet
+baseCommand: [popscle, freemuxlet]
 label: popscle_freemuxlet
-doc: "Genotype-free deconvolution of sc-RNAseq\n\nTool homepage: https://github.com/statgen/popscle"
+doc: "Genotype-free deconvolution of multiplexed single-cell RNA-seq over multiple individuals.\n\nTool homepage: https://github.com/statgen/popscle"
 inputs:
+  - id: plp
+    type: string
+    doc: "Prefix of the input pileup files (<prefix>.plp.gz, .var.gz, .cel.gz, .umi.gz)"
+    inputBinding:
+      position: 1
+      prefix: --plp
+  - id: init_cluster
+    type:
+      - 'null'
+      - File
+    doc: "Input file containing the initial cluster information"
+    inputBinding:
+      position: 1
+      prefix: --init-cluster
+  - id: out
+    type: string
+    doc: "Output file prefix"
+    inputBinding:
+      position: 1
+      prefix: --out
+  - id: nsample
+    type:
+      - 'null'
+      - int
+    doc: "Number of samples multiplexed together Default: 0"
+    inputBinding:
+      position: 1
+      prefix: --nsample
   - id: aux_files
     type:
       - 'null'
       - boolean
-    doc: Turn on writing auxilary output files
+    doc: "Turn on writing auxilary output files Default: OFF"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --aux-files
-  - id: bf_thres
-    type:
-      - 'null'
-      - float
-    doc: Bayes Factor Threshold used in the initial clustering
-    inputBinding:
-      position: 101
-      prefix: --bf-thres
-  - id: cap_bq
+  - id: verbose
     type:
       - 'null'
       - int
-    doc: Maximum base quality (higher BQ will be capped)
+    doc: "Turn on verbose mode with specific verbosity threshold. 0: fully verbose, 100 : no verbose messages Default: 100"
     inputBinding:
-      position: 101
-      prefix: --cap-BQ
+      position: 1
+      prefix: --verbose
   - id: doublet_prior
     type:
       - 'null'
       - float
-    doc: Prior of doublet
+    doc: "Prior of doublet Default: 0.50"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --doublet-prior
-  - id: frac_init_clust
-    type:
-      - 'null'
-      - float
-    doc: Fraction of droplets to be clustered in the very first round of initial
-      clustering procedure
-    inputBinding:
-      position: 101
-      prefix: --frac-init-clust
   - id: geno_error
     type:
       - 'null'
       - float
-    doc: Genotype error parameter per cluster
+    doc: "Genotype error parameter per cluster Default: 0.10"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --geno-error
-  - id: group_list
+  - id: bf_thres
     type:
       - 'null'
-      - string
-    doc: List of tag readgroup/cell barcode to consider in this run. All other 
-      barcodes will be ignored. This is useful for parallelized run
+      - float
+    doc: "Bayes Factor Threshold used in the initial clustering Default: 5.41"
     inputBinding:
-      position: 101
-      prefix: --group-list
-  - id: init_cluster_file
+      position: 1
+      prefix: --bf-thres
+  - id: frac_init_clust
     type:
       - 'null'
-      - File
-    doc: Input file containing the initial cluster information
+      - float
+    doc: "Fraction of droplets to be clustered in the very first round of initial clustering procedure Default: 1.00"
     inputBinding:
-      position: 101
-      prefix: --init-cluster
+      position: 1
+      prefix: --frac-init-clust
   - id: iter_init
     type:
       - 'null'
       - int
-    doc: Iteration for initial cluster assignment (set to zero to skip the 
-      iterations)
+    doc: "Iteration for initial cluster assignment (set to zero to skip the iterations) Default: 10"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --iter-init
   - id: keep_init_missing
     type:
       - 'null'
       - boolean
-    doc: Keep missing cluster assignment as missing in the initial iteration
+    doc: "Keep missing cluster assignment as missing in the initial iteration Default: OFF"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --keep-init-missing
-  - id: min_bq
-    type:
-      - 'null'
-      - int
-    doc: Minimum base quality to consider (lower BQ will be skipped)
-    inputBinding:
-      position: 101
-      prefix: --min-BQ
-  - id: min_snp
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of SNPs with coverage for a droplet/cell to be 
-      considered
-    inputBinding:
-      position: 101
-      prefix: --min-snp
-  - id: min_total
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of total reads for a droplet/cell to be considered
-    inputBinding:
-      position: 101
-      prefix: --min-total
-  - id: min_umi
-    type:
-      - 'null'
-      - int
-    doc: Minimum number of UMIs for a droplet/cell to be considered
-    inputBinding:
-      position: 101
-      prefix: --min-umi
-  - id: nsample
-    type:
-      - 'null'
-      - int
-    doc: Number of samples multiplexed together
-    inputBinding:
-      position: 101
-      prefix: --nsample
-  - id: plp_prefix
-    type:
-      - 'null'
-      - string
-    doc: Prefix of input files generated by dsc-pileup
-    inputBinding:
-      position: 101
-      prefix: --plp
   - id: randomize_singlet_score
     type:
       - 'null'
       - boolean
-    doc: Randomize the singlet scores to test its effect
+    doc: "Randomize the singlet scores to test its effect Default: OFF"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --randomize-singlet-score
   - id: seed
     type:
       - 'null'
       - int
-    doc: Seed for random number (use clocks if not set)
+    doc: "Seed for random number (use clocks if not set) Default: 0"
     inputBinding:
-      position: 101
+      position: 1
       prefix: --seed
-  - id: verbose
+  - id: cap_bq
     type:
       - 'null'
       - int
-    doc: 'Turn on verbose mode with specific verbosity threshold. 0: fully verbose,
-      100 : no verbose messages'
+    doc: "Maximum base quality (higher BQ will be capped) Default: 20"
     inputBinding:
-      position: 101
-      prefix: --verbose
-  - id: out_prefix_path
-    type: string
-    doc: '[STR: ]             : Output file prefix'
-    inputBinding:
-      position: 102
-      prefix: --out
-outputs:
-  - id: out_prefix
+      position: 1
+      prefix: --cap-BQ
+  - id: min_bq
     type:
       - 'null'
-      - type: array
-        items: File
-    doc: Output file prefix
+      - int
+    doc: "Minimum base quality to consider (lower BQ will be skipped) Default: 13"
+    inputBinding:
+      position: 1
+      prefix: --min-BQ
+  - id: group_list
+    type:
+      - 'null'
+      - File
+    doc: "List of tag readgroup/cell barcode to consider in this run. All other barcodes will be ignored. This is useful for parallelized run"
+    inputBinding:
+      position: 1
+      prefix: --group-list
+  - id: min_total
+    type:
+      - 'null'
+      - int
+    doc: "Minimum number of total reads for a droplet/cell to be considered Default: 0"
+    inputBinding:
+      position: 1
+      prefix: --min-total
+  - id: min_umi
+    type:
+      - 'null'
+      - int
+    doc: "Minimum number of UMIs for a droplet/cell to be considered Default: 0"
+    inputBinding:
+      position: 1
+      prefix: --min-umi
+  - id: min_snp
+    type:
+      - 'null'
+      - int
+    doc: "Minimum number of SNPs with coverage for a droplet/cell to be considered Default: 0"
+    inputBinding:
+      position: 1
+      prefix: --min-snp
+  - id: plp_files
+    type:
+      type: array
+      items: File
+    doc: "Pileup files (<prefix>.plp.gz, .var.gz, .cel.gz, .umi.gz) written by dsc-pileup; staged in the working directory so that the plp prefix resolves"
+outputs:
+  - id: results
+    type:
+      type: array
+      items: File
+    doc: "Output files: <out>.clust1.samples.gz, <out>.clust1.vcf.gz, <out>.lmix and others"
     outputBinding:
-      glob: $(inputs.out_prefix_path)*
+      glob: "$(inputs.out).*"
+  - id: log
+    type: stderr
+    doc: "Log messages"
 requirements:
-  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.plp_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
+stdout: popscle_freemuxlet.out
+stderr: popscle_freemuxlet.log

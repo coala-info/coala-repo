@@ -4,7 +4,10 @@ baseCommand:
   - ppanggolin
   - info
 label: ppanggolin_info
-doc: "Show information about a pangenome.\n\nTool homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'Show information about a pangenome.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: content
     type:
@@ -24,16 +27,17 @@ inputs:
       prefix: --metadata
   - id: pangenome
     type: File
-    doc: Path to the pangenome .h5 file
+    doc: Path to the pangenome .h5 file The file is staged writable because ppanggolin
+      opens it for writing.
     inputBinding:
       position: 101
       prefix: --pangenome
+      valueFrom: $(self.basename)
   - id: parameters
     type:
       - 'null'
       - boolean
-    doc: Display the parameters used or computed for each step of pangenome 
-      generation
+    doc: Display the parameters used or computed for each step of pangenome generation
     inputBinding:
       position: 101
       prefix: --parameters
@@ -41,8 +45,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Display information about the statuses of different elements in the 
-      pangenome, indicating what has been computed or not
+    doc: Display information about the statuses of different elements in the pangenome,
+      indicating what has been computed or not
     inputBinding:
       position: 101
       prefix: --status
@@ -54,3 +58,9 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0
 stdout: ppanggolin_info.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.pangenome)
+        writable: true

@@ -1,62 +1,22 @@
 # pod5 CWL Generation Report
 
-## pod5_convert
+## Real Data Test
 
-### Tool Description
-File conversion tools
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0
-- **Homepage**: https://github.com/nanoporetech/pod5-file-format
-- **Package**: https://anaconda.org/channels/bioconda/packages/pod5/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pod5/overview
-- **Total Downloads**: 2.6K
-- **Last updated**: 2025-09-04
-- **GitHub**: https://github.com/nanoporetech/pod5-file-format
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: pod5 convert [-h] {fast5,from_fast5,to_fast5} ...
-
-File conversion tools
-
-options:
-  -h, --help            show this help message and exit
-
-Example: pod5 convert fast5 input.fast5 --output output.pod5
-```
-
-
-## pod5_inspect
-
-### Tool Description
-Tools for inspecting, converting, subsetting and formatting POD5 files
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0
-- **Homepage**: https://github.com/nanoporetech/pod5-file-format
-- **Package**: https://anaconda.org/channels/bioconda/packages/pod5/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: pod5 [-h] [-v]
-            {convert,inspect,merge,repack,subset,filter,recover,update,view}
-            ...
-
-**********      POD5 Tools      **********
-
-Tools for inspecting, converting, subsetting and formatting POD5 files
-
-options:
-  -h, --help            show this help message and exit
-  -v, --version         Show pod5 version and exit.
-
-Example: pod5 convert fast5 input.fast5 --output output.pod5
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| pod5_convert_fast5 | PASS |  |
+| pod5_convert_to_fast5 | PASS |  |
+| pod5_filter | Failed | image problem: polars cannot read the minknow.uuid extension type (pyarrow 20 / polars 1.33 in the image), so read-table tools crash on every real pod5 file |
+| pod5_inspect_debug | Failed | image problem: pyarrow ExtensionScalar has no attribute as_buffer (pyarrow 20 in the image), so read-table output crashes on real pod5 files |
+| pod5_inspect_read | Failed | image problem: pyarrow ExtensionScalar has no attribute as_buffer (pyarrow 20 in the image), so read-table output crashes on real pod5 files |
+| pod5_inspect_reads | Failed | image problem: pyarrow ExtensionScalar has no attribute as_buffer (pyarrow 20 in the image), so read-table output crashes on real pod5 files |
+| pod5_inspect_summary | PASS |  |
+| pod5_merge | PASS |  |
+| pod5_recover | Not completed | no file with MinKNOW temporary run-info files to recover: a truncated real pod5 file gave 0 recovered reads |
+| pod5_repack | PASS |  |
+| pod5_subset | Failed | image problem: polars cannot read the minknow.uuid extension type (pyarrow 20 / polars 1.33 in the image), so read-table tools crash on every real pod5 file |
+| pod5_update | PASS |  |
+| pod5_view | Failed | image problem: polars cannot read the minknow.uuid extension type (pyarrow 20 / polars 1.33 in the image), so read-table tools crash on every real pod5 file |
 
 ## pod5_merge
 
@@ -357,6 +317,209 @@ List Fields:
 Example: pod5 view input.pod5
 ```
 
+
+## pod5_convert_fast5
+
+### Tool Description
+Convert fast5 file(s) into a pod5 file(s)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0
+- **Homepage**: https://github.com/nanoporetech/pod5-file-format
+- **Package**: https://anaconda.org/channels/bioconda/packages/pod5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pod5 convert fast5 [-h] -o OUTPUT [-r] [-t THREADS] [--strict]
+                          [-O ONE_TO_ONE] [-f]
+                          [--signal-chunk-size SIGNAL_CHUNK_SIZE]
+                          inputs [inputs ...]
+
+Convert fast5 file(s) into a pod5 file(s)
+
+positional arguments:
+  inputs                Input path for fast5 file
+
+options:
+  -h, --help            show this help message and exit
+  -r, --recursive       Search for input files recursively matching `*.pod5`
+                        (default: False)
+  -t THREADS, --threads THREADS
+                        Set the number of threads to use (default: 4)
+  --strict              Immediately quit if an exception is encountered during
+                        conversion instead of continuing with remaining inputs
+                        after issuing a warning (default: False)
+
+required arguments:
+  -o OUTPUT, --output OUTPUT
+                        Output path for the pod5 file(s). This can be an
+                        existing directory (creating 'output.pod5' within it)
+                        or a new named file path. A directory must be given
+                        when using --one-to-one. (default: None)
+
+output control arguments:
+  -O ONE_TO_ONE, --one-to-one ONE_TO_ONE
+                        Output files are written 1:1 to inputs. 1:1 output
+                        files are written to the output directory in a new
+                        directory structure relative to the directory path
+                        provided to this argument. This directory path must be
+                        a relative parent of all inputs. (default: None)
+  -f, --force-overwrite
+                        Overwrite destination files (default: False)
+  --signal-chunk-size SIGNAL_CHUNK_SIZE
+                        Chunk size to use for signal data set (default:
+                        102400)
+```
+
+## pod5_convert_to_fast5
+
+### Tool Description
+Convert pod5 file(s) into fast5 file(s)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0
+- **Homepage**: https://github.com/nanoporetech/pod5-file-format
+- **Package**: https://anaconda.org/channels/bioconda/packages/pod5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pod5 convert to_fast5 [-h] -o OUTPUT [-r] [-t THREADS] [-f]
+                             [--file-read-count FILE_READ_COUNT]
+                             inputs [inputs ...]
+
+Convert pod5 file(s) into fast5 file(s)
+
+positional arguments:
+  inputs
+
+options:
+  -h, --help            show this help message and exit
+  -r, --recursive       Search for input files recursively matching `*.pod5`
+                        (default: False)
+  -t THREADS, --threads THREADS
+                        How many file writers to keep active (default: 4)
+
+required arguments:
+  -o OUTPUT, --output OUTPUT
+                        Output path for the pod5 file(s). This can be an
+                        existing directory (creating 'output.pod5' within it)
+                        or a new named file path. A directory must be given
+                        when using --one-to-one. (default: None)
+
+output control arguments:
+  -f, --force-overwrite
+                        Overwrite destination files (default: False)
+  --file-read-count FILE_READ_COUNT
+                        Number of reads to write per file. (default: 4000)
+```
+
+## pod5_inspect_summary
+
+### Tool Description
+Print a summary of the contents of pod5 files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0
+- **Homepage**: https://github.com/nanoporetech/pod5-file-format
+- **Package**: https://anaconda.org/channels/bioconda/packages/pod5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pod5 inspect summary [-h] input_files [input_files ...]
+
+Print a summary of the contents of pod5 files
+
+positional arguments:
+  input_files
+
+options:
+  -h, --help   show this help message and exit
+
+Example: pod5 inspect summary input.pod5
+```
+
+## pod5_inspect_reads
+
+### Tool Description
+Print read information on all reads as a csv table
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0
+- **Homepage**: https://github.com/nanoporetech/pod5-file-format
+- **Package**: https://anaconda.org/channels/bioconda/packages/pod5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pod5 inspect reads [-h] [-r] input_files [input_files ...]
+
+Print read information on all reads as a csv table
+
+positional arguments:
+  input_files
+
+options:
+  -h, --help       show this help message and exit
+  -r, --recursive  Search for input files recursively matching `*.pod5`
+
+Example: pod5 inspect reads input.pod5
+```
+
+## pod5_inspect_read
+
+### Tool Description
+Print detailed read information for a named read id
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0
+- **Homepage**: https://github.com/nanoporetech/pod5-file-format
+- **Package**: https://anaconda.org/channels/bioconda/packages/pod5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pod5 inspect read [-h] input_files read_id
+
+Print detailed read information for a named read id
+
+positional arguments:
+  input_files
+  read_id
+
+options:
+  -h, --help   show this help message and exit
+
+Example: pod5 inspect read input.pod5 0000173c-bf67-44e7-9a9c-1ad0bc728e74
+```
+
+## pod5_inspect_debug
+
+### Tool Description
+Print debugging information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pod5:0.3.33--pyhdfd78af_0
+- **Homepage**: https://github.com/nanoporetech/pod5-file-format
+- **Package**: https://anaconda.org/channels/bioconda/packages/pod5/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pod5 inspect debug [-h] input_files
+
+Print debugging information
+
+positional arguments:
+  input_files
+
+options:
+  -h, --help   show this help message and exit
+
+Example: pod5 inspect debug input.pod5
+```
 
 ## Metadata
 - **Skill**: generated

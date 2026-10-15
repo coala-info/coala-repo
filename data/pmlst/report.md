@@ -1,5 +1,11 @@
 # pmlst CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pmlst_pmlst.py | PASS |  |
+
 ## pmlst_pmlst.py
 
 ### Tool Description

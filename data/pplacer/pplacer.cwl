@@ -137,7 +137,7 @@ inputs:
   - id: map_mrca_file
     type:
       - 'null'
-      - File
+      - string
     doc: Specify a file to write out MAP sequences for MRCAs and corresponding 
       placements.
     inputBinding:
@@ -194,7 +194,7 @@ inputs:
   - id: mmap_file
     type:
       - 'null'
-      - File
+      - string
     doc: Instead of doing large allocations, mmap the given file. It will be 
       created if it doesn't exist.
     inputBinding:
@@ -276,7 +276,7 @@ inputs:
   - id: reference_package_path
     type:
       - 'null'
-      - string
+      - Directory
     doc: Specify the path to the reference package.
     inputBinding:
       position: 102
@@ -374,14 +374,16 @@ inputs:
   - id: write_pre_masked_sequences
     type:
       - 'null'
-      - File
+      - string
     doc: Write out the pre-masked sequences to the specified fasta file before 
       placement.
     inputBinding:
       position: 102
       prefix: --write-pre-masked
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Specify the output file name
     inputBinding:
       position: 103
@@ -393,7 +395,7 @@ outputs:
       - File
     doc: Specify the output file name
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.output_file_path ? inputs.output_file_path : '*.jplace')"
   - id: output_directory_dir
     type:
       - 'null'
@@ -401,8 +403,27 @@ outputs:
     doc: Specify the directory to write place files to.
     outputBinding:
       glob: $(inputs.output_directory)
+  - id: pre_masked_sequences
+    type:
+      - 'null'
+      - File
+    doc: Pre-masked sequences written by --write-pre-masked.
+    outputBinding:
+      glob: "$(inputs.write_pre_masked_sequences ? inputs.write_pre_masked_sequences : 'no_such_output')"
+  - id: map_mrca_output
+    type:
+      - 'null'
+      - File
+    doc: MAP sequences for MRCAs written by --map-mrca.
+    outputBinding:
+      glob: "$(inputs.map_mrca_file ? inputs.map_mrca_file : 'no_such_output')"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: "$(inputs.output_directory ? inputs.output_directory : 'unused_dir')"
+        entry: "$(inputs.output_directory ? {'class': 'Directory', 'listing': []} : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pplacer:1.1.alpha17--0

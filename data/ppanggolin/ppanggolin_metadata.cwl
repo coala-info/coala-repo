@@ -4,9 +4,11 @@ baseCommand:
   - ppanggolin
   - metadata
 label: ppanggolin_metadata
-doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
-  team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
-  homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
+  team, and distributed under the CeCILL Free Software License Agreement.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: assign
     type: string
@@ -62,10 +64,12 @@ inputs:
       prefix: --omit
   - id: pangenome
     type: File
-    doc: The pangenome .h5 file
+    doc: The pangenome .h5 file The file is staged writable because ppanggolin opens
+      it for writing.
     inputBinding:
       position: 101
       prefix: --pangenome
+      valueFrom: $(self.basename)
   - id: source
     type: string
     doc: Name of the metadata source
@@ -76,8 +80,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -85,7 +89,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pangenome_out
+    type: File
+    doc: The pangenome HDF5 file after the step.
+    outputBinding:
+      glob: $(inputs.pangenome.basename)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0
 stdout: ppanggolin_metadata.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.pangenome)
+        writable: true

@@ -27,7 +27,7 @@ inputs:
   - id: barcode_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: "Reads will be binned based on their barcode and\nsaved to separate files
       in this directory\n(incompatible with --output)"
     inputBinding:
@@ -212,11 +212,23 @@ inputs:
       position: 101
       prefix: --verbosity
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output
 outputs:
+  - id: barcode_bins
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the reads binned by barcode (with --barcode_dir)
+    outputBinding:
+      glob: $(inputs.barcode_dir)
+  - id: stdout
+    type: stdout
+    doc: Trimmed reads (when --output is not set) or the progress log
   - id: output
     type:
       - 'null'
@@ -230,3 +242,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/porechop:0.2.4--py311h2a4ad6c_7
+stdout: porechop.out

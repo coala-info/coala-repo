@@ -1,5 +1,12 @@
 # priorcons CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| priorcons_build-priors | PASS |  |
+| priorcons_integrate-consensus | PASS | synthetic data: an N-masked region was planted in a real HBV genome used as the mapping consensus; coverage rose from 93.7% to 99.97%. |
+
 ## priorcons_build-priors
 
 ### Tool Description

@@ -4,17 +4,19 @@ baseCommand:
   - ppanggolin
   - fasta
 label: ppanggolin_fasta
-doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
-  team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
-  homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
+  team, and distributed under the CeCILL Free Software License Agreement.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: anno
     type:
       - 'null'
       - File
-    doc: A tab-separated file listing the genome names, and the gff/gbff 
-      filepath of its annotations (the files can be compressed with gzip). One 
-      line per genome. If this is provided, those annotations will be used.
+    doc: A tab-separated file listing the genome names, and the gff/gbff filepath
+      of its annotations (the files can be compressed with gzip). One line per genome.
+      If this is provided, those annotations will be used.
     inputBinding:
       position: 101
       prefix: --anno
@@ -54,9 +56,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A tab-separated file listing the genome names, and the fasta filepath 
-      of its genomic sequence(s) (the fastas can be compressed with gzip). One 
-      line per genome.
+    doc: A tab-separated file listing the genome names, and the fasta filepath of
+      its genomic sequence(s) (the fastas can be compressed with gzip). One line per
+      genome.
     inputBinding:
       position: 101
       prefix: --fasta
@@ -72,9 +74,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Write representative nucleotide sequences of gene families. Possible 
-      values are all, persistent, shell, cloud, rgp, softcore, core, module_X 
-      with X being a module id.
+    doc: Write representative nucleotide sequences of gene families. Possible values
+      are all, persistent, shell, cloud, rgp, softcore, core, module_X with X being
+      a module id.
     inputBinding:
       position: 101
       prefix: --gene_families
@@ -82,9 +84,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Write all nucleotide CDS sequences. Possible values are all, 
-      persistent, shell, cloud, rgp, softcore, core, module_X with X being a 
-      module id.
+    doc: Write all nucleotide CDS sequences. Possible values are all, persistent,
+      shell, cloud, rgp, softcore, core, module_X with X being a module id.
     inputBinding:
       position: 101
       prefix: --genes
@@ -114,9 +115,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Write representative amino acid sequences of gene families. Possible 
-      values are all, persistent, shell, cloud, rgp, softcore, core, module_X 
-      with X being a module id.
+    doc: Write representative amino acid sequences of gene families. Possible values
+      are all, persistent, shell, cloud, rgp, softcore, core, module_X with X being
+      a module id.
     inputBinding:
       position: 101
       prefix: --prot_families
@@ -124,9 +125,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Write representative amino acid sequences of genes. Possible values are
-      all, persistent, shell, cloud, rgp, softcore, core, module_X with X being 
-      a module id.
+    doc: Write representative amino acid sequences of genes. Possible values are all,
+      persistent, shell, cloud, rgp, softcore, core, module_X with X being a module
+      id.
     inputBinding:
       position: 101
       prefix: --proteins
@@ -134,8 +135,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Write the RGP nucleotide sequences (requires --anno or --fasta used to 
-      compute the pangenome to be given)
+    doc: Write the RGP nucleotide sequences (requires --anno or --fasta used to compute
+      the pangenome to be given)
     inputBinding:
       position: 101
       prefix: --regions
@@ -167,8 +168,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -177,6 +178,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the list files (annotations or FASTA), staged next to them
+      so that the names in the list resolve.
 outputs:
   - id: output
     type: Directory
@@ -185,6 +193,9 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0

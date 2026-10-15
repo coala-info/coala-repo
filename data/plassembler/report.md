@@ -1,5 +1,14 @@
 # plassembler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plassembler_assembled | PASS | repo test assemblies and reads; copy numbers for the 44 kb and 9.3 kb plasmids and chromosome reported; added TERM variable |
+| plassembler_download | PASS | downloaded the real Plassembler database (Zenodo v1.5.0, about 460 MB unpacked) into a new folder; added NetworkAccess and made the database path a string |
+| plassembler_long | PASS | repo depth-filter long reads recover the 70.6 kb chromosome and the 9.3 kb plasmid; the smaller repo input_fastq.gz gives no plasmids (SPAdes stops inside Unicycler); added TERM variable |
+| plassembler_run | PASS | repo end-to-end test data and test database; chromosome 70.6 kb and plasmids of 44 kb and 9.3 kb recovered; added TERM variable the tool needs |
+
 ## plassembler_assembled
 
 ### Tool Description
@@ -69,25 +78,6 @@ Options:
                             input (short only, long only or long + short).
   --no_copy_numbers         Only run the PLSDB mash screen, not copy number
                             estimation
-```
-
-
-## plassembler_citation
-
-### Tool Description
-Please cite plassembler in your paper using:
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/plassembler:1.8.2--pyhdfd78af_0
-- **Homepage**: https://github.com/gbouras13/plassembler
-- **Package**: https://anaconda.org/channels/bioconda/packages/plassembler/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Please cite plassembler in your paper using:
-
-Bouras, G., Sheppard A.E., Mallawaarachchi, V., Vreugde S. (2023) Plassembler: an automated bacterial plasmid assembly tool, Bioinformatics, Volume 39, Issue 7, July 2023, btad409, https://doi.org/10.1093/bioinformatics/btad409
 ```
 
 

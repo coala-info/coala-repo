@@ -1,5 +1,11 @@
 # plasmidfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plasmidfinder_plasmidfinder.py | PASS | Galaxy test contigs and plasmidfinder_db (kma-indexed in the image); hits rep11a and rep14a match the Galaxy expected table; added output folder creation |
+
 ## plasmidfinder_plasmidfinder.py
 
 ### Tool Description

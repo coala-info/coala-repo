@@ -53,14 +53,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --jpegQuality
-  - id: licence
-    type:
-      - 'null'
-      - boolean
-    doc: Prints the software licence.
-    inputBinding:
-      position: 101
-      prefix: --licence
   - id: map
     type: File
     doc: Path to a pretext map.
@@ -86,14 +78,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --prefix
-  - id: print_colour_map_names
-    type:
-      - 'null'
-      - boolean
-    doc: Prints a list of the available colour maps.
-    inputBinding:
-      position: 101
-      prefix: --printColourMapNames
   - id: print_sequence_names
     type:
       - 'null'
@@ -113,14 +97,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --resolution
-  - id: sequence_help
-    type:
-      - 'null'
-      - boolean
-    doc: Sequence specification string format documentation.
-    inputBinding:
-      position: 101
-      prefix: --sequenceHelp
   - id: sequences
     type:
       - 'null'
@@ -131,15 +107,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sequences
-  - id: third_party
-    type:
-      - 'null'
-      - boolean
-    doc: Prints a list of the third-party libraries used, along with their 
-      respective licences.
-    inputBinding:
-      position: 101
-      prefix: --thirdParty
   - id: verbose
     type:
       - 'null'

@@ -1,27 +1,35 @@
 # ppanggolin CWL Generation Report
 
-## ppanggolin_ppanggolin
+## Real Data Test
 
-### Tool Description
-ppanggolin: error: argument : invalid choice: 'ppanggolin' (choose from 'annotate', 'cluster', 'graph', 'partition', 'rarefaction', 'workflow', 'panrgp', 'panmodule', 'all', 'draw', 'write_pangenome', 'write_genomes', 'write_metadata', 'fasta', 'msa', 'metrics', 'align', 'rgp', 'spot', 'module', 'context', 'projection', 'rgp_cluster', 'metadata', 'info', 'utils')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0
-- **Homepage**: https://github.com/labgem/PPanGGOLiN
-- **Package**: https://anaconda.org/channels/bioconda/packages/ppanggolin/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ppanggolin/overview
-- **Total Downloads**: 100.1K
-- **Last updated**: 2025-11-21
-- **GitHub**: https://github.com/labgem/PPanGGOLiN
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: ppanggolin [-h] [-v]  ...
-ppanggolin: error: argument : invalid choice: 'ppanggolin' (choose from 'annotate', 'cluster', 'graph', 'partition', 'rarefaction', 'workflow', 'panrgp', 'panmodule', 'all', 'draw', 'write_pangenome', 'write_genomes', 'write_metadata', 'fasta', 'msa', 'metrics', 'align', 'rgp', 'spot', 'module', 'context', 'projection', 'rgp_cluster', 'metadata', 'info', 'utils')
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| ppanggolin_align | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_all | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_annotate | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_cluster | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_context | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_draw | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_fasta | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_graph | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_info | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_metadata | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_metrics | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_module | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_msa | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_panmodule | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_panrgp | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_partition | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_projection | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_rarefaction | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_rgp | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_rgp_cluster | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_spot | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_utils | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_workflow | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_write_genomes | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_write_metadata | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
+| ppanggolin_write_pangenome | PASS | Chlamydia genomes from the PPanGGOLiN testingDataset (5 genomes) |
 
 ## ppanggolin_all
 

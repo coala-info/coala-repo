@@ -1,5 +1,21 @@
 # primalbedtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| primalbedtools_amplicon | PASS | Built 99 amplicons from the ARTIC V4.1 BED; --primertrim shifts the ends inward as expected. |
+| primalbedtools_csv | PASS | Converted the ARTIC V4.1 BED to CSV with header and 209 rows. |
+| primalbedtools_downgrade | PASS | Downgraded the primalbedtools alt-primer BED to v1 names; --merge-alts keeps one primer per site. |
+| primalbedtools_fasta | PASS | Converted the ARTIC V4.1 BED to FASTA; 209 primer sequences. |
+| primalbedtools_format | PASS | Formatted the ARTIC V4.1 primer BED; 209 valid lines. |
+| primalbedtools_merge | Failed | tool bug: merge builds the merged primers but never prints or writes them, so the output is empty (source: no print after merge). |
+| primalbedtools_remap | PASS | Remapped ARTIC V4.1 primers from MN908947.3 to OX512233.1 using a MAFFT alignment; 60 later primers shift by the genome deletions. |
+| primalbedtools_sort | PASS | Sorted the real ARTIC V4.1 primer BED (209 lines); same lines, pool order kept. |
+| primalbedtools_update | PASS | Updated primer names of the ARTIC V4.1 BED to the v2 style (_1 suffix); 209 lines. |
+| primalbedtools_validate | PASS | Silent exit 0 on the ARTIC V4.1 BED with its reference; a reference with another contig name fails (negative control). |
+| primalbedtools_validate_bedfile | PASS | Silent exit 0 on the ARTIC V4.1 BED; a BED with a bad primer name fails with exit 1 (negative control). |
+
 ## primalbedtools_remap
 
 ### Tool Description

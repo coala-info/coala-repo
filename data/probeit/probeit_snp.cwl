@@ -88,7 +88,9 @@ inputs:
       position: 101
       prefix: --probe2-repeat
   - id: reference_annotation
-    type: File
+    type:
+      - 'null'
+      - File
     doc: The wildtype genome annotation. Only required when using amino acid 
       differences in the -m option.
     inputBinding:
@@ -135,6 +137,11 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+arguments:
+  - position: 900
+    shellQuote: false
+    valueFrom: '&& rm -rf $(inputs.output_dir_path)/cluster/temp'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/probeit:2.2--py36hff8b118_0

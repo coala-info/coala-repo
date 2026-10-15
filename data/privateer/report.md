@@ -1,5 +1,11 @@
 # privateer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| privateer | PASS | Validated 2wah N-glycans (12 sugars, 0 issues); -mode ccp4i2 with -showgeom crashed on the ligand-only model 5ajc. |
+
 ## privateer
 
 ### Tool Description

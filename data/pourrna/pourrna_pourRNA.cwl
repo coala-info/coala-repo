@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pourrna
+baseCommand: pourRNA
 label: pourrna_pourRNA
 doc: "Explore RNA energy landscapes\n\nTool homepage: https://github.com/ViennaRNA/pourRNA/"
 inputs:
@@ -312,12 +312,12 @@ outputs:
       glob: $(inputs.saddle_file_path)
   - id: barriers_like_output
     type:
-      - 'null'
-      - File
+      type: array
+      items: File
     doc: Output the rates file and the structures in a format similar to the 
       tool barriers. For the same prefix is used for both files.
     outputBinding:
-      glob: $(inputs.barriers_like_output_path)
+      glob: $(inputs.barriers_like_output_path)_*.out
   - id: partition_functions
     type:
       - 'null'
@@ -337,13 +337,13 @@ outputs:
       glob: $(inputs.dot_plot_path)
   - id: dot_plot_per_basin
     type:
-      - 'null'
-      - File
+      type: array
+      items: File
     doc: Creates a dotplot for each gradient basin in the enrgy landscape. It 
       shows the Maximum Expected Accuracy (MEA) structure in the upper right 
       triangle and the basin representative in the lower left triangle.
     outputBinding:
-      glob: $(inputs.dot_plot_per_basin_path)
+      glob: $(inputs.dot_plot_per_basin_path)_*.ps
 requirements:
   - class: InlineJavascriptRequirement
 hints:

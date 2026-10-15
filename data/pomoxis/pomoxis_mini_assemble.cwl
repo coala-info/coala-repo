@@ -4,6 +4,11 @@ baseCommand: mini_assemble
 label: pomoxis_mini_assemble
 doc: "Assemble fastq/fasta formatted reads and perform POA consensus.\n\nTool homepage:
   https://github.com/nanoporetech/pomoxis"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${ return inputs.reference_fasta ? [{entry: inputs.reference_fasta, writable: true}] : []; }
 inputs:
   - id: error_correct
     type:
@@ -46,9 +51,8 @@ inputs:
       position: 101
       prefix: -K
   - id: output_folder
-    type:
-      - 'null'
-      - string
+    type: string
+    default: assm
     doc: 'output folder (default: assm).'
     inputBinding:
       position: 101
@@ -89,8 +93,6 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: reference fasta for reference-guided consensus (instead of de novo 
       assembly)
     inputBinding:
@@ -125,17 +127,8 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
-    outputBinding:
-      glob: $(inputs.output_prefix)*
   - id: output_folder_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: 'output folder (default: assm).'
     outputBinding:
       glob: $(inputs.output_folder)

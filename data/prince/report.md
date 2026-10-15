@@ -1,5 +1,11 @@
 # prince CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prince | PASS |  |
+
 ## prince
 
 ### Tool Description

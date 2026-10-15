@@ -60,6 +60,13 @@ inputs:
       position: 103
       prefix: --saveas
 outputs:
+  - id: data_frame
+    type:
+      - 'null'
+      - File
+    doc: The data frame used to construct the plot (written with --savedf)
+    outputBinding:
+      glob: $(inputs.savedf)
   - id: saveas
     type:
       - 'null'

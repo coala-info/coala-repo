@@ -1,5 +1,18 @@
 # popscle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| popscle_demuxlet | PASS | ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command> |
+| popscle_digital-pileup | PASS | ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command> |
+| popscle_dsc-dump | PASS | ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command> |
+| popscle_dsc-dump2plp | PASS | ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command> |
+| popscle_dsc-pileup | PASS | ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command> |
+| popscle_freemuxlet | PASS | ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command> |
+| popscle_freemuxlet-old | PASS | ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command> |
+| popscle_plp-make-dge-matrix | PASS | ran on the popscle demo data (chr21 BAM with barcodes, 2 donors VCF) from nf-core; baseCommand fixed to popscle <command> |
+
 ## popscle_demuxlet
 
 ### Tool Description

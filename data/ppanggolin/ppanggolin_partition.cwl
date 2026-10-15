@@ -4,16 +4,18 @@ baseCommand:
   - ppanggolin
   - partition
 label: ppanggolin_partition
-doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
-  team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
-  homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
+  team, and distributed under the CeCILL Free Software License Agreement.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: beta
     type:
       - 'null'
       - float
-    doc: beta is the strength of the smoothing using the graph topology during 
-      partitioning. 0 will deactivate spatial smoothing.
+    doc: beta is the strength of the smoothing using the graph topology during partitioning.
+      0 will deactivate spatial smoothing.
     inputBinding:
       position: 101
       prefix: --beta
@@ -21,9 +23,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Size of the chunks when performing partitioning using chunks of 
-      genomes. Chunk partitioning will be used automatically if the number of 
-      genomes is above this number.
+    doc: Size of the chunks when performing partitioning using chunks of genomes.
+      Chunk partitioning will be used automatically if the number of genomes is above
+      this number.
     inputBinding:
       position: 101
       prefix: --chunk_size
@@ -55,8 +57,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use if you want to draw the ICL curve for all the tested K values. Will
-      not be done if K is given.
+    doc: Use if you want to draw the ICL curve for all the tested K values. Will not
+      be done if K is given.
     inputBinding:
       position: 101
       prefix: --draw_ICL
@@ -72,8 +74,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: use if the dispersion around the centroid vector of each partition 
-      during must be free. It will be the same for all genomes by default.
+    doc: use if the dispersion around the centroid vector of each partition during
+      must be free. It will be the same for all genomes by default.
     inputBinding:
       position: 101
       prefix: --free_dispersion
@@ -81,12 +83,12 @@ inputs:
     type:
       - 'null'
       - float
-    doc: K is detected automatically by maximizing ICL. However at some point 
-      the ICL reaches a plateau. Therefore we are looking for the minimal value 
-      of K without significant gain from the larger values of K measured by ICL.
-      For that we take the lowest K that is found within a given 'margin' of the
-      maximal ICL value. Basically, change this option only if you truly 
-      understand it, otherwise just leave it be.
+    doc: K is detected automatically by maximizing ICL. However at some point the
+      ICL reaches a plateau. Therefore we are looking for the minimal value of K without
+      significant gain from the larger values of K measured by ICL. For that we take
+      the lowest K that is found within a given 'margin' of the maximal ICL value.
+      Basically, change this option only if you truly understand it, otherwise just
+      leave it be.
     inputBinding:
       position: 101
       prefix: --ICL_margin
@@ -127,17 +129,19 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of partitions to use. Must be at least 2. If under 2, it will be
-      detected automatically.
+    doc: Number of partitions to use. Must be at least 2. If under 2, it will be detected
+      automatically.
     inputBinding:
       position: 101
       prefix: --nb_of_partitions
   - id: pangenome
     type: File
-    doc: The pangenome.h5 file
+    doc: The pangenome.h5 file The file is staged writable because ppanggolin opens
+      it for writing.
     inputBinding:
       position: 101
       prefix: --pangenome
+      valueFrom: $(self.basename)
   - id: seed
     type:
       - 'null'
@@ -158,8 +162,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -176,8 +180,17 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_path)
+  - id: pangenome_out
+    type: File
+    doc: The pangenome HDF5 file after the step.
+    outputBinding:
+      glob: $(inputs.pangenome.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.pangenome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0

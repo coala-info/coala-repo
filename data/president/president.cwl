@@ -24,8 +24,8 @@ inputs:
       position: 101
       prefix: --n_threshold
   - id: path
-    type: Directory
-    doc: Path to be used to store results and FASTA files.
+    type: string
+    doc: Path to be used to store results and FASTA files (created before the run).
     inputBinding:
       position: 101
       prefix: --path
@@ -55,8 +55,6 @@ inputs:
       prefix: --quite
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference genome.
     inputBinding:
       position: 101
@@ -81,13 +79,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+  - id: results_directory
+    type: Directory
+    doc: Directory with the results and FASTA files
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.path)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/president:0.6.8--pyhdfd78af_0

@@ -1,12 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - predictosaurus
-  - process
+baseCommand: predictosaurus
+arguments:
+  - position: 2
+    valueFrom: process
 label: predictosaurus_process
 doc: "Retrieve subgraphs for individual features from the given GFF file\n\nTool homepage:
   https://github.com/fxwiegand/predictosaurus"
 inputs:
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use (global option, placed before the subcommand; default all available cores)
+    inputBinding:
+      position: 1
+      prefix: --threads
   - id: distance_metric
     type:
       - 'null'
@@ -73,6 +82,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.graph)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/predictosaurus:0.8.4--hbcba35e_0

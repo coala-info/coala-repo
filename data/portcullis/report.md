@@ -1,5 +1,15 @@
 # portcullis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| portcullis_bamfilt | PASS |  |
+| portcullis_filt | PASS |  |
+| portcullis_full | PASS |  |
+| portcullis_junc | PASS |  |
+| portcullis_prep | PASS |  |
+
 ## portcullis_full
 
 ### Tool Description

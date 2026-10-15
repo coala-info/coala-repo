@@ -1,5 +1,14 @@
 # predex CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| predex_annotation | PASS | Built a gene annotation table from a real human chr22 FASTA and GTF slice; gene lengths and GC values are plausible (the tool hangs if a GTF gene has no exon line). |
+| predex_comparison | PASS | Made the comparison list from a real sample sheet (Diagnosis column: 2 groups, 1 comparison). |
+| predex_design | PASS | Made a design matrix template from a real RNA-seq count table; all 5 sample names are listed. |
+| predex_ipa | PASS | synthetic data: two small IPA-style tables; p-values and Greek letters were converted correctly. |
+
 ## predex_design
 
 ### Tool Description

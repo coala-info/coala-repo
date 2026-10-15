@@ -1,15 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: poolsnp_PoolSNP.sh
+baseCommand: PoolSNP.sh
 label: poolsnp_PoolSNP.sh
 doc: "PoolSNP v. 1.05 - 13/11/2017\n\nTool homepage: https://github.com/capoony/PoolSNP"
 inputs:
   - id: base_quality
-    type: int
+    type:
+      - 'null'
+      - int
     doc: minimum base quality for every nucleotide
     inputBinding:
       position: 101
-      prefix: --base-quality
+      prefix: base-quality=
+      separate: false
   - id: jobs
     type:
       - 'null'
@@ -67,24 +70,61 @@ inputs:
       mpileup file
     inputBinding:
       position: 101
-      prefix: --names
+      prefix: names=
+      separate: false
   - id: output
-    type: Directory
-    doc: The output prefix
+    type: string
+    doc: The output prefix (file name prefix; written in the working directory)
     inputBinding:
       position: 101
       prefix: output=
       separate: false
+      valueFrom: $(runtime.outdir)/$(self)
+  - id: badsites
+    type:
+      - 'null'
+      - int
+    doc: 1 to also write a bad-sites file (sites that did not pass the SNP calling criteria)
+    inputBinding:
+      position: 101
+      prefix: badsites=
+      separate: false
+  - id: allsites
+    type:
+      - 'null'
+      - int
+    doc: 1 to report all sites irrespective of whether they are polymorphic (disables miss-frac)
+    inputBinding:
+      position: 101
+      prefix: allsites=
+      separate: false
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: The reference FASTA file
     inputBinding:
       position: 101
       prefix: reference=
       separate: false
 outputs:
+  - id: vcf
+    type: File
+    doc: Gzipped VCF file with allele counts and frequencies
+    outputBinding:
+      glob: $(inputs.output).vcf.gz
+  - id: max_cov_file
+    type:
+      - 'null'
+      - File
+    doc: Maximum coverage thresholds per contig and sample
+    outputBinding:
+      glob: $(inputs.output)-cov-*.txt
+  - id: bad_sites
+    type:
+      - 'null'
+      - File
+    doc: Gzipped bad-sites file
+    outputBinding:
+      glob: $(inputs.output)_BS.txt.gz
   - id: stdout
     type: stdout
     doc: Standard output

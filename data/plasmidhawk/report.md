@@ -1,5 +1,12 @@
 # plasmidhawk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plasmidhawk_annotate | PASS | repo example files; pangenome built with plaster from the same image; lab-to-fragment tables correct |
+| plasmidhawk_predict | PASS | repo example files; correct mode gives LabB and LabC, matching the repo truth file; made mode optional and work-dir a string |
+
 ## plasmidhawk_annotate
 
 ### Tool Description
@@ -83,27 +90,4 @@ optional arguments:
 
 ## Metadata
 - **Skill**: not generated
-
-## plasmidhawk
-
-### Tool Description
-PlasmidHawk: A tool for plasmid analysis
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/plasmidhawk:1.0.3--hdfd78af_0
-- **Homepage**: https://gitlab.com/treangenlab/plasmidhawk
-- **Package**: https://anaconda.org/channels/bioconda/packages/plasmidhawk/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: plasmidhawk [-h] {annotate,predict} ...
-
-positional arguments:
-  {annotate,predict}  sub-command help
-    annotate          Create annotation file which maps labs to fragments
-    predict           Predict lab of origin of input sequences
-
-optional arguments:
-  -h, --help          show this help message and exit
-```
 

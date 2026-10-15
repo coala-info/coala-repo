@@ -1,5 +1,13 @@
 # popdel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| popdel_call | PASS | baseCommand fixed to popdel call; ran on 4 real chr20 BAMs from nf-core |
+| popdel_profile | PASS | baseCommand fixed to popdel profile; ran on 4 real chr20 BAMs from nf-core |
+| popdel_view | PASS | baseCommand fixed to popdel view; ran on 4 real chr20 BAMs from nf-core |
+
 ## popdel_profile
 
 ### Tool Description

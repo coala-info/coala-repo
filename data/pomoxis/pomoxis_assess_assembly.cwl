@@ -3,6 +3,14 @@ class: CommandLineTool
 baseCommand: assess_assembly
 label: pomoxis_assess_assembly
 doc: "Calculate accuracy statistics for an assembly.\n\nTool homepage: https://github.com/nanoporetech/pomoxis"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: 
+      - entry: $(inputs.reference)
+        writable: true
+      - entry: $(inputs.input_assembly)
+        writable: true
 inputs:
   - id: accumulate_stats_chunks
     type:
@@ -64,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
+      valueFrom: $(self.basename)
   - id: min_indel_length
     type:
       - 'null'
@@ -82,17 +91,14 @@ inputs:
       position: 101
       prefix: -d
   - id: output_prefix
-    type:
-      - 'null'
-      - string
-    doc: output file prefix
+    type: string
+    default: assm
+    doc: 'output file prefix (default: assm)'
     inputBinding:
       position: 101
       prefix: -p
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: "reference, should be a fasta file. If correspondng minimap2 indices\ndo
       not exist they will be created."
     inputBinding:
@@ -121,10 +127,11 @@ outputs:
   - id: output_prefix_files
     type:
       type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+      items: [File, Directory]
+    doc: Result files and directories written with the prefix given in output_prefix
+      (summaries, stats, alignments, error catalogue, homopolymer counts, indel lists)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: ['$(inputs.output_prefix)_*', '$(inputs.output_prefix).bam', '$(inputs.output_prefix).bam.bai']
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pomoxis:0.3.16--pyhdfd78af_0

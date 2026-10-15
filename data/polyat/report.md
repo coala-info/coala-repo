@@ -1,5 +1,11 @@
 # polyat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| polyat | PASS |  |
+
 ## polyat
 
 ### Tool Description

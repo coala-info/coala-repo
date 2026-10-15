@@ -1,5 +1,11 @@
 # pneumocat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pneumocat_PneumoCaT.py | PASS |  |
+
 ## pneumocat_PneumoCaT.py
 
 ### Tool Description

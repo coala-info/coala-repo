@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: Ellipsis
+baseCommand:
+  - priorcons
+  - integrate-consensus
 label: priorcons_integrate-consensus
 doc: "Integrates prior information into consensus sequence generation.\n\nTool homepage:
   https://github.com/GERMAN00VP/priorcons"

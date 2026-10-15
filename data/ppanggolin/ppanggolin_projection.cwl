@@ -4,14 +4,17 @@ baseCommand:
   - ppanggolin
   - projection
 label: ppanggolin_projection
-doc: "Project pangenome annotations onto input genomes.\n\nTool homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'Project pangenome annotations onto input genomes.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: add_metadata
     type:
       - 'null'
       - boolean
-    doc: Include metadata information in the output files if any have been added
-      to pangenome elements (see ppanggolin metadata command).
+    doc: Include metadata information in the output files if any have been added to
+      pangenome elements (see ppanggolin metadata command).
     inputBinding:
       position: 101
       prefix: --add_metadata
@@ -25,11 +28,11 @@ inputs:
       prefix: --add_sequences
   - id: anno
     type: File?
-    doc: Specify an annotation file in GFF/GBFF format for the genome you wish 
-      to annotate. Alternatively, you can provide a tab-separated file listing 
-      genome names alongside their respective annotation filepaths, with one 
-      line per genome. If both an annotation file and a FASTA file are provided,
-      the annotation file will take precedence.
+    doc: Specify an annotation file in GFF/GBFF format for the genome you wish to
+      annotate. Alternatively, you can provide a tab-separated file listing genome
+      names alongside their respective annotation filepaths, with one line per genome.
+      If both an annotation file and a FASTA file are provided, the annotation file
+      will take precedence.
     inputBinding:
       position: 101
       prefix: --anno
@@ -38,8 +41,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Specify the contigs of the input genome that should be treated as 
-      circular when providing a single FASTA or annotation file.
+    doc: Specify the contigs of the input genome that should be treated as circular
+      when providing a single FASTA or annotation file.
     inputBinding:
       position: 101
       prefix: --circular_contigs
@@ -87,9 +90,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimum ratio of genomes in which the family must have multiple genes 
-      for it to be considered 'duplicated'. This metric is used to compute 
-      completeness and duplication of the input genomes
+    doc: minimum ratio of genomes in which the family must have multiple genes for
+      it to be considered 'duplicated'. This metric is used to compute completeness
+      and duplication of the input genomes
     inputBinding:
       position: 101
       prefix: --dup_margin
@@ -97,17 +100,17 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use representative sequences of gene families for input gene alignment.
-      This option is faster but may be less sensitive. By default, all pangenome
-      genes are used.
+    doc: Use representative sequences of gene families for input gene alignment. This
+      option is faster but may be less sensitive. By default, all pangenome genes
+      are used.
     inputBinding:
       position: 101
       prefix: --fast
   - id: fasta
     type: File?
-    doc: Specify a FASTA file containing the genomic sequences of the genome(s) 
-      you wish to annotate, or provide a tab-separated file listing genome names
-      alongside their respective FASTA filepaths, with one line per genome.
+    doc: Specify a FASTA file containing the genomic sequences of the genome(s) you
+      wish to annotate, or provide a tab-separated file listing genome names alongside
+      their respective FASTA filepaths, with one line per genome.
     inputBinding:
       position: 101
       prefix: --fasta
@@ -123,8 +126,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify the name of the genome whose genome you want to annotate when 
-      providing a single FASTA or annotation file.
+    doc: Specify the name of the genome whose genome you want to annotate when providing
+      a single FASTA or annotation file.
     inputBinding:
       position: 101
       prefix: --genome_name
@@ -132,8 +135,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Generate GFF files with projected pangenome annotations for each input 
-      genome.
+    doc: Generate GFF files with projected pangenome annotations for each input genome.
     inputBinding:
       position: 101
       prefix: --gff
@@ -174,9 +176,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The separator used to join multiple metadata values for elements with 
-      multiple metadata values from the same source. This character should not 
-      appear in metadata values.
+    doc: The separator used to join multiple metadata values for elements with multiple
+      metadata values from the same source. This character should not appear in metadata
+      values.
     inputBinding:
       position: 101
       prefix: --metadata_sep
@@ -185,8 +187,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Which source of metadata should be written. By default all metadata 
-      sources are included.
+    doc: Which source of metadata should be written. By default all metadata sources
+      are included.
     inputBinding:
       position: 101
       prefix: --metadata_sources
@@ -194,8 +196,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: DO NOT Realign gene families to link fragments with their 
-      non-fragmented gene family.
+    doc: DO NOT Realign gene families to link fragments with their non-fragmented
+      gene family.
     inputBinding:
       position: 101
       prefix: --no_defrag
@@ -209,8 +211,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Generate JSON map files for PROKSEE with projected pangenome 
-      annotations for each input genome.
+    doc: Generate JSON map files for PROKSEE with projected pangenome annotations
+      for each input genome.
     inputBinding:
       position: 101
       prefix: --proksee
@@ -218,10 +220,10 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Soft core threshold used when generating general statistics on the 
-      projected genome. This threshold does not influence PPanGGOLiN's 
-      partitioning. The value determines the minimum fraction of genomes that 
-      must possess a gene family for it to be considered part of the soft core.
+    doc: Soft core threshold used when generating general statistics on the projected
+      genome. This threshold does not influence PPanGGOLiN's partitioning. The value
+      determines the minimum fraction of genomes that must possess a gene family for
+      it to be considered part of the soft core.
     inputBinding:
       position: 101
       prefix: --soft_core
@@ -229,9 +231,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Write the spot graph to a file, with pairs of blocks of single copy 
-      markers flanking RGPs as nodes. This graph can be used to visualize nodes 
-      that have RGPs from the input genome.
+    doc: Write the spot graph to a file, with pairs of blocks of single copy markers
+      flanking RGPs as nodes. This graph can be used to visualize nodes that have
+      RGPs from the input genome.
     inputBinding:
       position: 101
       prefix: --spot_graph
@@ -255,8 +257,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: In the context of provided annotation, use this option to read 
-      pseudogenes. (Default behavior is to ignore them)
+    doc: In the context of provided annotation, use this option to read pseudogenes.
+      (Default behavior is to ignore them)
     inputBinding:
       position: 101
       prefix: --use_pseudo
@@ -264,8 +266,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -274,6 +276,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the list files (annotations or FASTA), staged next to them
+      so that the names in the list resolve.
 outputs:
   - id: output
     type:
@@ -284,6 +293,9 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0

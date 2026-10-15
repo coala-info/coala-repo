@@ -125,12 +125,40 @@ inputs:
       position: 101
       prefix: -vertical
   - id: mtzout_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output best and difference map coefficients to MTZ files
     inputBinding:
       position: 102
       prefix: -mtzout
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the validation report)
+  - id: svg_files
+    type:
+      type: array
+      items: File
+    doc: SNFG glycan plots (SVG)
+    outputBinding:
+      glob: '*.svg'
+  - id: coot_scripts
+    type:
+      type: array
+      items: File
+    doc: Coot scripts that show the detected issues
+    outputBinding:
+      glob: privateer-results.*
+  - id: ccp4i2_files
+    type:
+      type: array
+      items: File
+    doc: XML and CSV files written in ccp4i2 mode
+    outputBinding:
+      glob:
+        - '*.xml'
+        - '*.csv'
   - id: mtzout
     type:
       - 'null'
@@ -143,3 +171,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/privateer:MKV--py311h8d1dbc1_0
+stdout: privateer.out

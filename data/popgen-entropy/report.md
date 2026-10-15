@@ -1,5 +1,11 @@
 # popgen-entropy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| popgen-entropy_entropy | PASS | baseCommand fixed to entropy; boolean options now take 0/1; ran on 24 real alfalfa tetraploid samples x 150 loci from the tool repo |
+
 ## popgen-entropy_entropy
 
 ### Tool Description

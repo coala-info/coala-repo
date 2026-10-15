@@ -1,5 +1,29 @@
 # poretools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| poretools_combine | PASS | ran on 4 Galaxy test FAST5 files; TAR holds all four files |
+| poretools_events | PASS | ran on 4 Galaxy test FAST5 files; line counts match the Galaxy test (2901 and 3083 with --pre-basecalled) |
+| poretools_fasta | PASS | ran on 4 Galaxy test FAST5 files; reads match the Galaxy expected FASTA |
+| poretools_fastq | PASS | ran on 4 Galaxy test FAST5 files; reads match the Galaxy expected FASTQ |
+| poretools_hist | Failed | image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported |
+| poretools_index | PASS | ran on 4 Galaxy test FAST5 files; index table lists all four reads |
+| poretools_metadata | PASS | ran on 4 Galaxy test FAST5 files; metadata table printed |
+| poretools_nucdist | PASS | ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files |
+| poretools_occupancy | Failed | image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported |
+| poretools_organise | PASS | ran on 4 Galaxy test FAST5 files with --copy; destination folder is now created before the run |
+| poretools_qualdist | PASS | ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files |
+| poretools_qualpos | Failed | image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported |
+| poretools_readstats | PASS | ran on a real R9 FAST5 read from the poretools repo (the old-format Galaxy files give an HDF5 structure error in this mode) |
+| poretools_squiggle | Failed | image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported |
+| poretools_stats | PASS | ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files |
+| poretools_tabular | PASS | ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files |
+| poretools_times | PASS | ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files |
+| poretools_winner | PASS | ran on 4 Galaxy test FAST5 files; output matches the Galaxy expected files |
+| poretools_yield_plot | Failed | image problem: libstdc++.so.6 is missing, so matplotlib and pandas cannot be imported |
+
 ## poretools_combine
 
 ### Tool Description

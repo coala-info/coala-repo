@@ -1,5 +1,11 @@
 # platon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| platon | PASS | repo test database and draft assembly with plasmids; plasmid contigs separated from chromosome (test.plasmid.fasta non-empty) |
+
 ## platon
 
 ### Tool Description

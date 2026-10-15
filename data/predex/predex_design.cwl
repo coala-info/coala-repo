@@ -30,7 +30,14 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: "$(inputs.output_directory ? inputs.output_directory : 'unused_dir')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: "$(inputs.output_directory ? inputs.output_directory : 'unused_dir')"
+        entry: "$(inputs.output_directory ? {'class': 'Directory', 'listing': []} : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/predex:0.9.3--pyh5e36f6f_0

@@ -1,5 +1,11 @@
 # pmultiqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pmultiqc_multiqc | PASS |  |
+
 ## pmultiqc_multiqc
 
 ### Tool Description

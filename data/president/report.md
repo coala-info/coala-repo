@@ -1,5 +1,11 @@
 # president CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| president | PASS | Compared two real SARS-CoV-2 genomes with NC_045512.2: identity 0.9974 and 0.9984 (ignoring Ns), both valid (output path typed string, directory created, .fai not needed). |
+
 ## president
 
 ### Tool Description

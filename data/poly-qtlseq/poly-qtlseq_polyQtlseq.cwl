@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: PolyploidQtlSeq
+baseCommand: polyQtlseq
 label: poly-qtlseq_polyQtlseq
 doc: "Run the Polyploid QTL-seq pipeline.\n\nTool homepage: https://github.com/TatsumiMizubayashi/PolyploidQtlSeq"
 inputs:

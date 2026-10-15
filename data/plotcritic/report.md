@@ -1,5 +1,11 @@
 # plotcritic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plotcritic | PASS |  |
+
 ## plotcritic
 
 ### Tool Description

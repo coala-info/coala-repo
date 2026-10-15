@@ -86,14 +86,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min_align_score_fraction
-  - id: min_mapping_qual
+  - id: min_qual
     type:
       - 'null'
       - int
-    doc: '...'
+    doc: Minimum quality (the binary accepts --min_qual; its help text says --min_mapping_qual,
+      which it rejects). Default 30.
     inputBinding:
       position: 101
-      prefix: --min_mapping_qual
+      prefix: --min_qual
   - id: min_overlap_factor
     type:
       - 'null'
@@ -103,14 +104,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min_overlap_factor
-  - id: min_readlength
+  - id: min_length
     type:
       - 'null'
       - int
-    doc: '...'
+    doc: Minimum read length (the binary accepts --min_length; its help text says --min_readlength,
+      which it rejects). Default 220.
     inputBinding:
       position: 101
-      prefix: --min_readlength
+      prefix: --min_length
   - id: nsample
     type:
       - 'null'

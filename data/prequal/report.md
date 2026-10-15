@@ -1,5 +1,11 @@
 # prequal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prequal | PASS | Filtered 138 real Pfam seed protein sequences; filtered FASTA, PP, summary and detail files match (CWL rewritten: input last, all options, writable input). |
+
 ## prequal
 
 ### Tool Description

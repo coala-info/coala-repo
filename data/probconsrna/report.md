@@ -1,5 +1,11 @@
 # probconsrna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| probconsrna | PASS | Rfam tRNA seed sequences aligned; the real command is probconsRNA (the old file ran a missing name). |
+
 ## probconsrna
 
 ### Tool Description

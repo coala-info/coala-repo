@@ -1,5 +1,11 @@
 # poplddecay CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| poplddecay_PopLDdecay | PASS | baseCommand and -OutStat flag fixed; ran on 1000 Genomes chr20 VCF (stat, pairwise LD, EHH); note: -OutFilterSNP writes no file when -SubPop is also used |
+
 ## poplddecay_PopLDdecay
 
 ### Tool Description

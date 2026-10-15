@@ -1,5 +1,11 @@
 # popera CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| popera | PASS | ran on real chrM BAM; added BAM index and output collection |
+
 ## popera
 
 ### Tool Description

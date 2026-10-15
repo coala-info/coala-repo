@@ -1,5 +1,11 @@
 # proda CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proda | PASS | Seven globin proteins aligned; the old file wrapped a help phrase, now rewritten from the usage line; proda needs a writable input folder. |
+
 ## proda
 
 ### Tool Description

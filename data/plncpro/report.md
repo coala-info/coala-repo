@@ -1,5 +1,13 @@
 # plncpro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plncpro_build | Failed | image problem: BLAST (blastx) is missing in the image, so the default run with blast features writes no model and still exits 0; only --noblast works; rewrote the CWL (baseCommand plncpro build, real flags, writable inputs) |
+| plncpro_predict | Failed | image problem: BLAST (blastx) is missing in the image, so the default run with blast features cannot work; only --noblast works (94 percent accuracy on the repo test set); rewrote the CWL (baseCommand plncpro predict, real flags, writable input) |
+| plncpro_predtoseq | PASS | predictions from plncpro predict on the repo test set; extracted 108 sequences, same set as computed from the prediction file; help text shows -m but the program only accepts --min and --max, CWL uses those; baseCommand was a missing script |
+
 ## plncpro_predict
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # plasmidcommunity CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| plasmidcommunity_plasmidCommunity.sh | Failed | image problem: R package qgraph is missing, so getCommunity mode stops with no output (silhouetteCurve mode works); fixed wrong long flags to short flags |
+
 ## plasmidcommunity_plasmidCommunity.sh
 
 ### Tool Description

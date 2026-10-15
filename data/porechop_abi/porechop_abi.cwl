@@ -54,7 +54,7 @@ inputs:
   - id: barcode_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Reads will be binned based on their barcode and saved to separate files
       in this directory (incompatible with --output)
     inputBinding:
@@ -152,7 +152,7 @@ inputs:
   - id: export_consensus
     type:
       - 'null'
-      - File
+      - string
     doc: Path to export the intermediate adapters found in consensus mode.
     inputBinding:
       position: 101
@@ -160,7 +160,7 @@ inputs:
   - id: export_graph
     type:
       - 'null'
-      - File
+      - string
     doc: Path to export the assembly graphs (.graphml format), if you want to 
       keep them
     inputBinding:
@@ -334,11 +334,38 @@ inputs:
       position: 101
       prefix: --window_size
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output
 outputs:
+  - id: barcode_bins
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the reads binned by barcode (with --barcode_dir)
+    outputBinding:
+      glob: $(inputs.barcode_dir)
+  - id: consensus_file
+    type:
+      - 'null'
+      - File
+    doc: Intermediate adapters found in consensus mode (with --export_consensus)
+    outputBinding:
+      glob: $(inputs.export_consensus)
+  - id: graph_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Assembly graphs in graphml format (with --export_graph)
+    outputBinding:
+      glob: '*.graphml'
+  - id: stdout
+    type: stdout
+    doc: Trimmed reads (when --output is not set) or the progress log
   - id: output
     type:
       - 'null'
@@ -352,3 +379,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/porechop_abi:0.5.1--py310h275bdba_0
+stdout: porechop_abi.out

@@ -1,5 +1,11 @@
 # prokka CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prokka | Failed | tool bug: prokka 1.15.6 always runs prodigal in single mode, so --metagenome is ignored and genomes under 20 kb get 0 CDS; a 56 kb Enterococcus plasmid annotated fine (63 CDS) |
+
 ## prokka
 
 ### Tool Description

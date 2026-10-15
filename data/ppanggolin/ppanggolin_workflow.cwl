@@ -4,18 +4,20 @@ baseCommand:
   - ppanggolin
   - workflow
 label: ppanggolin_workflow
-doc: "PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
-  team, and distributed under the CeCILL Free Software License Agreement.\n\nTool
-  homepage: https://github.com/labgem/PPanGGOLiN"
+doc: 'PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM
+  team, and distributed under the CeCILL Free Software License Agreement.
+
+
+  Tool homepage: https://github.com/labgem/PPanGGOLiN'
 inputs:
   - id: anno
     type:
       - 'null'
       - File
-    doc: A tab-separated file listing the genome names, and the gff filepath of 
-      its annotations (the gffs can be compressed). One line per genome. This 
-      option can be used alone IF the fasta sequences are in the gff files, 
-      otherwise --fasta needs to be used.
+    doc: A tab-separated file listing the genome names, and the gff filepath of its
+      annotations (the gffs can be compressed). One line per genome. This option can
+      be used alone IF the fasta sequences are in the gff files, otherwise --fasta
+      needs to be used.
     inputBinding:
       position: 101
       prefix: --anno
@@ -31,8 +33,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: a tab-separated file listing the cluster names, the gene IDs, and 
-      optionally whether they are a fragment or not.
+    doc: a tab-separated file listing the cluster names, the gene IDs, and optionally
+      whether they are a fragment or not.
     inputBinding:
       position: 101
       prefix: --clusters
@@ -48,8 +50,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimal coverage of the alignment for two proteins to be in the same 
-      cluster
+    doc: Minimal coverage of the alignment for two proteins to be in the same cluster
     inputBinding:
       position: 101
       prefix: --coverage
@@ -73,9 +74,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A tab-separated file listing the genome names, and the fasta filepath 
-      of its genomic sequence(s) (the fastas can be compressed). One line per 
-      genome. This option can be used alone.
+    doc: A tab-separated file listing the genome names, and the fasta filepath of
+      its genomic sequence(s) (the fastas can be compressed). One line per genome.
+      This option can be used alone.
     inputBinding:
       position: 101
       prefix: --fasta
@@ -99,9 +100,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use this option together with --clusters. If a gene is not present in 
-      the provided clustering result file, it will be assigned to its own unique
-      cluster as a singleton.
+    doc: Use this option together with --clusters. If a gene is not present in the
+      provided clustering result file, it will be assigned to its own unique cluster
+      as a singleton.
     inputBinding:
       position: 101
       prefix: --infer_singletons
@@ -109,8 +110,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Kingdom to which the prokaryota belongs to, to know which models to use
-      for rRNA annotation.
+    doc: Kingdom to which the prokaryota belongs to, to know which models to use for
+      rRNA annotation.
     inputBinding:
       position: 101
       prefix: --kingdom
@@ -135,8 +136,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of partitions to use. Must be at least 2. If under 2, it will be
-      detected automatically.
+    doc: Number of partitions to use. Must be at least 2. If under 2, it will be detected
+      automatically.
     inputBinding:
       position: 101
       prefix: --nb_of_partitions
@@ -144,8 +145,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: DO NOT Realign gene families to link fragments with their 
-      non-fragmented gene family.
+    doc: DO NOT Realign gene families to link fragments with their non-fragmented
+      gene family.
     inputBinding:
       position: 101
       prefix: --no_defrag
@@ -185,8 +186,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: In the context of provided annotation, use this option to read 
-      pseudogenes. (Default behavior is to ignore them)
+    doc: In the context of provided annotation, use this option to read pseudogenes.
+      (Default behavior is to ignore them)
     inputBinding:
       position: 101
       prefix: --use_pseudo
@@ -194,8 +195,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
-      for debug)
+    doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 for
+      debug)
     inputBinding:
       position: 101
       prefix: --verbose
@@ -204,6 +205,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the list files (annotations or FASTA), staged next to them
+      so that the names in the list resolve.
 outputs:
   - id: output
     type:
@@ -221,6 +229,9 @@ outputs:
       glob: $(inputs.basename)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ppanggolin:2.2.6--py310h1fe012e_0

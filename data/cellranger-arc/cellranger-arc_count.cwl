@@ -308,10 +308,17 @@ requirements:
       - entryname: libraries_staged.csv
         entry: |-
           ${
+            var col = null;
             return inputs.libraries.contents.split('\n').map(function(line) {
               var c = line.split(',');
-              if (c.length >= 3 && c[0] != '' && c[0] != 'fastqs' && c[0].charAt(0) != '/') {
-                c[0] = c[0] == '.' ? runtime.outdir : runtime.outdir + '/' + c[0];
+              if (col === null) {
+                if (line.trim() == '') return line;
+                col = c.map(function(x) { return x.trim(); }).indexOf('fastqs');
+                return line;
+              }
+              var v = col >= 0 && c.length > col ? c[col].trim() : '';
+              if (v != '' && v.charAt(0) != '/') {
+                c[col] = v == '.' ? runtime.outdir : runtime.outdir + '/' + v;
               }
               return c.join(',');
             }).join('\n');

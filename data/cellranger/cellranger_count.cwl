@@ -4,8 +4,17 @@ baseCommand:
   - cellranger
   - count
 label: cellranger_count
-doc: Count gene expression and/or feature barcode reads from a single sample and
-  GEM well
+doc: |-
+  Count gene expression and/or feature barcode reads from a single sample and GEM well.
+  The container sees only the files passed to it. Cell Ranger finds FASTQs by name: <sample>_S1_L001_<read>_001.fastq.gz, where <sample>
+  is the --sample value (or the libraries CSV sample column).
+  Pass the FASTQs as a folder (fastqs) or as files (fastq_files); with fastq_files and no
+  fastqs, --fastqs is the working directory. In a libraries CSV, a relative fastqs path
+  ('.') is resolved against the working directory, where fastq_files are staged.
+arguments:
+  - position: 100
+    valueFrom: '${ if (inputs.fastq_files && inputs.fastq_files.length && !inputs.fastqs && !inputs.libraries)
+      return ["--fastqs", runtime.outdir]; return null; }'
 inputs:
   - id: id
     type: string
@@ -33,7 +42,10 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Path to input FASTQ data
+    doc: |-
+      Folder of input FASTQs, named <sample>_S1_L001_<read>_001.fastq.gz. The folder is
+      mounted as it is: symlinks in it that point outside it do not resolve inside the
+      container. To give SRA files 10x names by linking, pass the links in fastq_files.
     inputBinding:
       position: 101
       prefix: --fastqs
@@ -50,7 +62,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prefix of the filenames of FASTQs to select
+    doc: |-
+      Prefix of the filenames of FASTQs to select: <sample> in
+      <sample>_S1_L001_<read>_001.fastq.gz
     inputBinding:
       position: 101
       prefix: --sample
@@ -66,10 +80,29 @@ inputs:
     type:
       - 'null'
       - File
-    doc: CSV file declaring input library data sources
+    loadContents: true
+    doc: |-
+      CSV file declaring input library data sources (fastqs,sample,library_type). A host
+      folder in its fastqs column is not visible inside the container: set it to '.' and
+      pass the FASTQs in fastq_files, which are staged in the working directory.
     inputBinding:
       position: 101
       prefix: --libraries
+      valueFrom: $(runtime.outdir)/libraries_staged.csv
+  - id: fastq_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: |-
+      FASTQ files to stage in the working directory. Use this instead of fastqs when
+      the files are not already in one folder under 10x names: link each file under
+      its 10x name and pass the links; they are staged under the link names.
+      With a libraries CSV, set its fastqs column to '.'.
+      Each must be named <sample>_S1_L001_<read>_001.fastq.gz (<sample> as in sample).
+      Gene Expression: R1 = cell barcode + UMI (28 bp), R2 = cDNA read; V(D)J: R1 =
+      barcode + UMI, R2 = the receptor read. SRA downloads are named SRR..._1/_2.fastq.gz:
+      check each file's read length (zcat f | head -2) to tell R1 from R2.
   - id: feature_ref
     type:
       - 'null'
@@ -348,6 +381,29 @@ outputs:
       glob: $(inputs.output_dir || inputs.id)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |-
+        ${
+          if (!inputs.libraries) return [];
+          var col = null;
+          var lines = inputs.libraries.contents.split('\n').map(function(line) {
+            var c = line.split(',');
+            if (col === null) {
+              if (line.trim() == '') return line;
+              col = c.map(function(x) { return x.trim(); }).indexOf('fastqs');
+              return line;
+            }
+            var v = col >= 0 && c.length > col ? c[col].trim() : '';
+            if (v != '' && v.charAt(0) != '/') {
+              c[col] = v == '.' ? runtime.outdir : runtime.outdir + '/' + v;
+            }
+            return c.join(',');
+          });
+          return [{"class": "File", "basename": "libraries_staged.csv",
+                   "contents": lines.join('\n')}];
+        }
+      - '$(inputs.fastq_files ? inputs.fastq_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: cumulusprod/cellranger:10.1.0

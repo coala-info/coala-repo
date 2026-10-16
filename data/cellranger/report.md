@@ -11,7 +11,7 @@
 | cellranger_cloud_files_download | Not completed | Downloads from 10x Genomics Cloud need an account access token and network access, which this test does not have. |
 | cellranger_cloud_files_upload | Not completed | Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have. |
 | cellranger_cloud_references_upload | Not completed | Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have. |
-| cellranger_count | PASS | The tiny dataset gave 1,084 cells and 128 genes, the same as testrun; fixed --create-bam, --include-introns and --check-library-compatibility to pass =true/false. |
+| cellranger_count | PASS | The tiny dataset gave 1,084 cells and 128 genes, the same as testrun; fixed --create-bam, --include-introns and --check-library-compatibility to pass =true/false. Added fastq_files (staged in the working directory; --fastqs is that directory when no fastqs folder is given) and libraries CSV staging; through xcrunner, SRA-named reads linked under 10x names gave 1,128 cells via fastq_files and via a libraries CSV with fastqs '.', while the same links passed as a fastqs folder failed (links unresolvable in the container). |
 | cellranger_mat2csv | PASS | The tiny filtered matrix converted to a dense CSV of 273 genes by 1,084 cells, matching the testrun cell count. |
 | cellranger_mkgtf | PASS | Filtering the tiny reference GTF with gene_type:protein_coding kept exactly the 124 protein-coding genes. |
 | cellranger_mkref | PASS | Rebuilt the tiny reference from its FASTA and GTF; the FASTA hash, chromosome table and 273-gene STAR index match the bundled reference. |
@@ -21,7 +21,7 @@
 | cellranger_reanalyze | PASS | Reanalysis of the tiny filtered matrix produced PCA, UMAP, differential expression and graph clusters for all 1,084 cells. |
 | cellranger_testrun | PASS | The bundled tiny dataset ran through count and reported 1,084 cells and 128 genes detected. |
 | cellranger_upload | Not completed | Uploads a file to 10x Genomics support over the network with the user's email, which cannot be tested here. |
-| cellranger_vdj | Not completed | The run finished on nf-core subsampled T-cell reads (86.5% map to TRA/TRB), but 10,000 read pairs are too few to assemble contigs or call cells, and full VDJ data is too large. |
+| cellranger_vdj | Not completed | The run finished on nf-core subsampled T-cell reads (86.5% map to TRA/TRB), but 10,000 read pairs are too few to assemble contigs or call cells, and full VDJ data is too large. Added fastq_files (staged; --fastqs is the working directory); a staged run passed the FASTQ folder check. |
 
 ## cellranger_count
 

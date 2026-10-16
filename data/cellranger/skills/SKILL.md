@@ -59,6 +59,34 @@ Key optional flags:
 - `--force-cells <INT>`: Bypasses automated cell filtering and forces a specific cell barcode count.
 - `--chemistry <CHEM>`: Explicitly define chemistry if auto-detection fails (e.g., `threeprime`, `fiveprime`, `SC3Pv3`, `ARC-v1`).
 
+#### FASTQ names, and running through the CWL tool (container)
+`--fastqs` is searched for files named `<sample>_S1_L001_<read>_001.fastq.gz`, with `<sample>`
+equal to `--sample`. Gene Expression: R1 = cell barcode + UMI (28 bp), R2 = cDNA read. FASTQs
+from SRA are named `SRR…_1.fastq.gz` / `SRR…_2.fastq.gz`; tell R1 from R2 by read length
+(`zcat f | head -2 | tail -1 | wc -L`) and link them under 10x names.
+
+The container sees only what is passed to it, and a folder is mounted as it is: a folder of
+symlinks passed as `fastqs` fails with `Error opening FASTQ file: … No such file or directory`,
+because the links point outside it. Pass the links as files instead; they are staged in the
+working directory under the link names, and `--fastqs` becomes that directory:
+
+```bash
+mkdir -p fastq10x && cd fastq10x
+ln -s ../SRR1234567_1.fastq.gz sample1_S1_L001_R1_001.fastq.gz   # 28 bp: barcode + UMI
+ln -s ../SRR1234567_2.fastq.gz sample1_S1_L001_R2_001.fastq.gz   # cDNA
+```
+
+```json
+{"id": "sample1", "transcriptome": "refdata-gex", "sample": "sample1", "create_bam": false,
+ "localcores": 16, "localmem": 64,
+ "fastq_files": ["fastq10x/sample1_S1_L001_R1_001.fastq.gz",
+                 "fastq10x/sample1_S1_L001_R2_001.fastq.gz"]}
+```
+
+With a `libraries` CSV (feature barcoding), set its `fastqs` column to `.` and pass every
+library's FASTQs in `fastq_files`; a host folder in that column does not exist in the container.
+The same `fastq_files` input works for `cellranger vdj`.
+
 ---
 
 ### 2. Multi-Assay & Multiplexed Workflows (`cellranger multi`)
@@ -211,6 +239,7 @@ cellranger mat2csv \
    Cell Ranger matches input FASTQs using Illumina naming conventions:
    `[SampleName]_S[SampleNumber]_L00[LaneNumber]_[ReadType]_001.fastq.gz`
    Ensure `R1` (barcode/UMI), `R2` (cDNA insert), and `I1`/`I2` (sample indices) follow this standard format before running pipelines.
+   Through the CWL tool, pass renamed links in `fastq_files`, not a folder of links in `fastqs` (see above).
 2. **Storage and Disk Space**:
    A typical run generates temporary files under the `--id` folder. Do not modify or move internal files while the run is active. The final deliverables reside cleanly in `<id>/outs/`.
 3. **Resuming Interrupted Runs**:

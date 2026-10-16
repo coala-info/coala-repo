@@ -4,8 +4,16 @@ baseCommand:
   - cellranger
   - vdj
 label: cellranger_vdj
-doc: Assembles single-cell VDJ receptor sequences from 10x Immune Profiling 
-  libraries
+doc: |-
+  Assembles single-cell VDJ receptor sequences from 10x Immune Profiling libraries.
+  The container sees only the files passed to it. Cell Ranger finds FASTQs by name: <sample>_S1_L001_<read>_001.fastq.gz, where <sample>
+  is the --sample value (or the libraries CSV sample column).
+  Pass the FASTQs as a folder (fastqs) or as files (fastq_files); with fastq_files and no
+  fastqs, --fastqs is the working directory.
+arguments:
+  - position: 100
+    valueFrom: '${ if (inputs.fastq_files && inputs.fastq_files.length && !inputs.fastqs)
+      return ["--fastqs", runtime.outdir]; return null; }'
 inputs:
   - id: id
     type: string
@@ -31,8 +39,13 @@ inputs:
       position: 101
       prefix: --reference
   - id: fastqs
-    type: Directory
-    doc: Path to input FASTQ data
+    type:
+      - 'null'
+      - Directory
+    doc: |-
+      Folder of input FASTQs, named <sample>_S1_L001_<read>_001.fastq.gz. The folder is
+      mounted as it is: symlinks in it that point outside it do not resolve inside the
+      container. To give SRA files 10x names by linking, pass the links in fastq_files.
     inputBinding:
       position: 101
       prefix: --fastqs
@@ -49,10 +62,25 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prefix of the filenames of FASTQs to select
+    doc: |-
+      Prefix of the filenames of FASTQs to select: <sample> in
+      <sample>_S1_L001_<read>_001.fastq.gz
     inputBinding:
       position: 101
       prefix: --sample
+  - id: fastq_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: |-
+      FASTQ files to stage in the working directory. Use this instead of fastqs when
+      the files are not already in one folder under 10x names: link each file under
+      its 10x name and pass the links; they are staged under the link names.
+      Each must be named <sample>_S1_L001_<read>_001.fastq.gz (<sample> as in sample).
+      Gene Expression: R1 = cell barcode + UMI (28 bp), R2 = cDNA read; V(D)J: R1 =
+      barcode + UMI, R2 = the receptor read. SRA downloads are named SRR..._1/_2.fastq.gz:
+      check each file's read length (zcat f | head -2) to tell R1 from R2.
   - id: lanes
     type:
       - 'null'
@@ -222,6 +250,9 @@ outputs:
       glob: $(inputs.output_dir || inputs.id)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - '$(inputs.fastq_files ? inputs.fastq_files : [])'
 hints:
   - class: DockerRequirement
     dockerPull: cumulusprod/cellranger:10.1.0

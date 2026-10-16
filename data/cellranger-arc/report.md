@@ -25,7 +25,7 @@
 | cellranger-arc_cloud_references_list | Not completed | Needs a 10x Genomics Cloud Analysis account, access token and network access. |
 | cellranger-arc_cloud_references_update | Not completed | Needs a 10x Genomics Cloud Analysis account, access token and network access. |
 | cellranger-arc_cloud_references_upload | Not completed | Needs a 10x Genomics Cloud Analysis account, access token and network access. |
-| cellranger-arc_count | PASS |  |
+| cellranger-arc_count | PASS | Through xcrunner, the testrun reads renamed to SRA-style names and linked back under 10x names, passed in fastq_files with a libraries CSV (fastqs '.', columns reordered), gave 656 cells, ATAC fragments and BAMs. The CSV rewrite finds the fastqs column by its header. |
 | cellranger-arc_mkfastq | Failed | image problem: bcl2fastq is not in the image, and mkfastq needs it on PATH to demultiplex. |
 | cellranger-arc_mkgtf | PASS |  |
 | cellranger-arc_mkref | PASS |  |

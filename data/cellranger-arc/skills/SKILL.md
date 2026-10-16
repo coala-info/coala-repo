@@ -96,6 +96,52 @@ fastqs,sample,library_type
 /path/to/fastqs/gex_dir,sample_gex,Gene Expression
 ```
 
+### FASTQ names: what `count` looks for
+`count` does not take a list of files. It searches the `fastqs` folder for files whose names
+start with the `sample` value, in the bcl2fastq/bcl-convert form:
+
+```text
+<sample>_S1_L001_<read>_001.fastq.gz
+```
+
+| Library | Read | Content |
+|---|---|---|
+| Gene Expression | R1 | cell barcode + UMI (28 bp) |
+| Gene Expression | R2 | cDNA read |
+| Chromatin Accessibility | R1, R3 | genomic reads (read 1, read 2) |
+| Chromatin Accessibility | R2 | cell barcode read |
+
+FASTQs downloaded from SRA are named `SRR…_1.fastq.gz`, `SRR…_2.fastq.gz` (and `_3` for ATAC),
+which `count` will not find. Tell the reads apart by length, then link them under 10x names:
+
+```bash
+for f in SRR1234567_*.fastq.gz; do echo "$f $(zcat "$f" | head -2 | tail -1 | wc -L)"; done
+mkdir -p fastq10x && cd fastq10x
+ln -s ../SRR1234567_1.fastq.gz rep1_gex_S1_L001_R1_001.fastq.gz   # 28 bp: barcode + UMI
+ln -s ../SRR1234567_2.fastq.gz rep1_gex_S1_L001_R2_001.fastq.gz   # cDNA
+```
+
+### Running `count` through the CWL tool (container)
+The container sees only the files passed to it. A host folder named in the CSV does not exist
+inside it, and the run fails at once with `FASTQ path doesn't exist: /<random>/…`. So:
+
+1. Set the CSV `fastqs` column to `.`.
+2. Pass every FASTQ (all reads of every library) in `fastq_files`, already under 10x names.
+   They are staged in the working directory, where `.` points.
+
+```json
+{"id": "rep1", "reference": "refdata-arc", "libraries": "libraries_rep1.csv",
+ "create_bam": true, "localcores": 16, "localmem": 64,
+ "fastq_files": ["fastq10x/rep1_gex_S1_L001_R1_001.fastq.gz",
+                 "fastq10x/rep1_gex_S1_L001_R2_001.fastq.gz",
+                 "fastq10x/rep1_atac_S1_L001_R1_001.fastq.gz",
+                 "fastq10x/rep1_atac_S1_L001_R2_001.fastq.gz",
+                 "fastq10x/rep1_atac_S1_L001_R3_001.fastq.gz"]}
+```
+
+Set `localcores` and `localmem` to the job's real cores and memory (minus a few GB): without
+them the pipeline sizes itself from the whole machine and can be killed.
+
 ### Step 2: Run `count`
 ```bash
 cellranger-arc count \
@@ -194,11 +240,18 @@ Cell Ranger ARC uses the Martian runtime engine, supporting distributed executio
 
 1. **Deprecated `mkfastq`**:
    `cellranger-arc mkfastq` is deprecated. Use Illumina `bcl-convert` directly to produce demultiplexed FASTQs for both GEX and ATAC libraries before running `cellranger-arc count`.
-2. **Library CSV Type Matching**:
+2. **`FASTQ path doesn't exist`**:
+   The `fastqs` folder in the libraries CSV is not visible where `count` runs. In the CWL tool,
+   set it to `.` and pass the FASTQs in `fastq_files` (see above). Retrying the same call fails
+   the same way.
+3. **No FASTQs found for a sample**:
+   The files are there but not under `<sample>_S1_L001_<read>_001.fastq.gz` with `<sample>`
+   equal to the CSV `sample` column. Rename or link them.
+4. **Library CSV Type Matching**:
    Ensure `library_type` strings in the libraries CSV match standard conventions exactly (`Gene Expression` and `Chromatin Accessibility`). Mismatched strings will cause validation failure during preflight checks.
-3. **Mitochondrial Contig Specification**:
+5. **Mitochondrial Contig Specification**:
    When using `mkref`, always specify mitochondrial contigs in `non_nuclear_contigs`. Excluding this causes false ATAC peaks to be called across circular mtDNA.
-4. **BAM Generation Overhead**:
+6. **BAM Generation Overhead**:
    If downstream visualization via Loupe Browser and matrix analysis in Seurat/Signac/Scanpy are all that is required, use `--create-bam=false` to cut storage and pipeline runtime substantially.
 
 ---

@@ -4,7 +4,12 @@ baseCommand:
   - cellranger-arc
   - count
 label: cellranger-arc_count
-doc: Count ATAC and gene expression reads from a single library
+doc: |-
+  Count ATAC and gene expression reads from a single library.
+  The container sees only the files passed to it: list every FASTQ in fastq_files and set
+  the libraries CSV fastqs column to '.'. Cell Ranger ARC finds FASTQs by name, so each must
+  be named <sample>_S1_L001_<read>_001.fastq.gz, where <sample> is the CSV sample column.
+  Rename or link SRA files (SRR..._1.fastq.gz) to that form first; see fastq_files.
 inputs:
   - id: id
     type: string
@@ -32,11 +37,16 @@ inputs:
   - id: libraries
     type: File
     loadContents: true
-    doc: Path to 3-column CSV file defining the paths to ATAC and gene 
-      expression FASTQ data generated with the Chromium Single Cell Multiome 
-      ATAC + Gene Expression solution. A relative path in the fastqs column 
-      (for example '.') is resolved against the working directory, where 
-      fastq_files are staged.
+    doc: |-
+      Path to 3-column CSV (fastqs,sample,library_type) defining the ATAC and gene
+      expression FASTQ data generated with the Chromium Single Cell Multiome ATAC + Gene
+      Expression solution. library_type is 'Gene Expression' or 'Chromatin Accessibility'.
+      Set fastqs to '.': a relative path is resolved against the container's working
+      directory, where fastq_files are staged, and a host folder is not visible there.
+      sample must equal the file-name prefix of that library's FASTQs, e.g.
+        fastqs,sample,library_type
+        .,rep1_gex,Gene Expression
+        .,rep1_atac,Chromatin Accessibility
     inputBinding:
       position: 101
       prefix: --libraries
@@ -46,8 +56,15 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: FASTQ files named by the libraries CSV. They are staged in the working 
-      directory, so the CSV fastqs column can be '.'.
+    doc: |-
+      Every FASTQ of every library in the libraries CSV. Needed for a real run: without
+      them the container has no FASTQs and count fails with "FASTQ path doesn't exist".
+      Each file must be named <sample>_S1_L001_<read>_001.fastq.gz (<sample> as in the CSV).
+      Gene Expression: R1 = cell barcode + UMI (28 bp), R2 = cDNA read.
+      Chromatin Accessibility: R1 and R3 = genomic reads, R2 = cell barcode read.
+      SRA downloads are named SRR..._1/_2/_3.fastq.gz: check each file's read length
+      (zcat f | head -2) to tell which read it is, then symlink it under the 10x name and
+      pass the links, e.g. rep1_gex_S1_L001_R1_001.fastq.gz -> SRR1234567_1.fastq.gz.
   - id: min_atac_count
     type:
       - 'null'

@@ -43,6 +43,75 @@ def category_label(tool_id: str, cwl_count: int = 0) -> str:
     return "library"
 
 
+GROUP_CLI = "Command-line tools"
+GROUP_LIBRARY = "Libraries"
+GROUP_WORKFLOW = "Workflows"
+GROUP_OTHER = "Other"
+
+# category_label() value -> (display category, group).
+# "library" is not listed: its language is detected by library_category().
+LABEL_CATEGORY_MAP = {
+    "CLI": ("Command-line tool", GROUP_CLI),
+    "python": ("Python library", GROUP_LIBRARY),
+    "R": ("R package", GROUP_LIBRARY),
+    "bioconductor": ("Bioconductor package", GROUP_LIBRARY),
+    "perl": ("Perl module", GROUP_LIBRARY),
+    "galaxy": ("Galaxy workflow", GROUP_WORKFLOW),
+    "nextflow": ("Nextflow workflow", GROUP_WORKFLOW),
+    "CWL": ("CWL workflow", GROUP_WORKFLOW),
+}
+
+LANGUAGE_CATEGORY = {
+    "python": "Python library",
+    "r": "R package",
+    "perl": "Perl module",
+}
+
+
+def _build_string(docker_image: str) -> str:
+    """Return the biocontainer build string, e.g. abnumber:0.4.4--pyhdfd78af_0 -> pyhdfd78af_0."""
+    tag = docker_image.rsplit(":", 1)[-1] if ":" in docker_image else ""
+    return tag.split("--", 1)[1].lower() if "--" in tag else ""
+
+
+def _language_from_docker_image(docker_image: str) -> str | None:
+    """Detect language from the biocontainer build string or a Debian-style -deb-py tag."""
+    if "-deb-py" in docker_image:
+        return "python"
+    build = _build_string(docker_image)
+    if build.startswith("py"):
+        return "python"
+    if build.startswith("pl"):
+        return "perl"
+    if re.match(r"r\d", build):
+        return "r"
+    return None
+
+
+def _language_from_skill(skill_markdown: str) -> str | None:
+    """Detect language from the most common code block language in SKILL.md."""
+    langs = [m.lower() for m in re.findall(r"```(\w+)", skill_markdown or "")]
+    counts = {lang: langs.count(lang) for lang in LANGUAGE_CATEGORY if lang in langs}
+    return max(counts, key=counts.get) if counts else None
+
+
+def library_category(tool_id: str, docker_image: str, skill_markdown: str) -> str:
+    """Pick a library category by language: name prefix, then build string, then SKILL.md code blocks."""
+    lang = "python" if tool_id.startswith(("python-", "py-")) else None
+    lang = lang or _language_from_docker_image(docker_image)
+    # Build strings starting with "h" are compiled packages; their code blocks are often wrapper scripts.
+    if not lang and not _build_string(docker_image).startswith("h"):
+        lang = _language_from_skill(skill_markdown)
+    return LANGUAGE_CATEGORY.get(lang or "", "Other library")
+
+
+def display_category(label: str, tool_id: str, docker_image: str, skill_markdown: str) -> tuple[str, str]:
+    """Map a category_label() value to (display category, group) for the site."""
+    if label == "library":
+        return library_category(tool_id, docker_image, skill_markdown), GROUP_LIBRARY
+    return LABEL_CATEGORY_MAP.get(label, (label, GROUP_OTHER))
+
+
 def _markdown_list_item_metadata_key_value(line: str) -> tuple[str, str] | None:
     """Parse `- **Key**: value` or nf-style `- **Key:** value` from a metadata bullet line."""
     line = line.strip()
@@ -383,17 +452,17 @@ def build_tool(tool_id: str, tool_path: Path) -> dict | None:
     conda_downloads_raw = parsed.get("conda_downloads") or ""
     conda_downloads_num = _parse_conda_downloads_num(conda_downloads_raw)
 
-    category = category_label(tool_id, len(cwl_files))
-    if category == "CLI":
+    label = category_label(tool_id, len(cwl_files))
+    if label == "CLI":
         cwl_count_public = len(cwl_files)
-    elif category == "CWL":
+    elif label == "CWL":
         cwl_count_public = 1
     else:
         cwl_count_public = 0
 
     index_entry = {
         "id": tool_id,
-        "category": category,
+        "category": label,
         "name": name,
         "description": description[:500] if description else "",
         "overview": overview[:500] if overview else "",
@@ -439,7 +508,12 @@ def build_tool(tool_id: str, tool_path: Path) -> dict | None:
         if has_skill and skill_path is not None
         else None
     )
+    category, category_group = display_category(
+        label, tool_id, parsed.get("docker_image") or "", skill_markdown or ""
+    )
     skill_front_matter_dict = skill_front_matter(skill_path) if has_skill and skill_path is not None else {}
+    index_entry["category"] = category
+    index_entry["category_group"] = category_group
 
     full_data = {
         **index_entry,

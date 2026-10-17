@@ -1,5 +1,11 @@
 # proteinortho CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteinortho | PASS |  |
+
 ## proteinortho
 
 ### Tool Description

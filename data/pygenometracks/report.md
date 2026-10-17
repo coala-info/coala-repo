@@ -1,5 +1,12 @@
 # pygenometracks CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pygenometracks_make_tracks_file | PASS |  |
+| pygenometracks_pyGenomeTracks | PASS |  |
+
 ## pygenometracks_make_tracks_file
 
 ### Tool Description

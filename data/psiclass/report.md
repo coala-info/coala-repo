@@ -1,5 +1,11 @@
 # psiclass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| psiclass | PASS | Galaxy tools-iuc test BAMs; consensus GTF identical to the Galaxy expected output (1 and 2 samples). CWL fixed: BAM files are now File[] joined by commas. |
+
 ## psiclass
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ptrimmer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ptrimmer | PASS |  |
+
 ## ptrimmer
 
 ### Tool Description

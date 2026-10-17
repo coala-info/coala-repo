@@ -23,7 +23,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: path to log file. Log not written by default.
     inputBinding:
       position: 101

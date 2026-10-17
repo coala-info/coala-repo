@@ -1,23 +1,32 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - PyLOH
+  - PyLOH.py
   - preprocess
 label: pyloh_PyLOH.py_preprocess
 doc: "Preprocesses BAM files for PyLOH analysis.\n\nTool homepage: https://github.com/uci-cbcl/PyLOH"
 inputs:
   - id: reference_genome
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: FASTA file for reference genome.
     inputBinding:
       position: 1
   - id: normal_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: BAM file for normal sample.
     inputBinding:
       position: 2
   - id: tumor_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: BAM file for tumor sample.
     inputBinding:
       position: 3
@@ -77,6 +86,13 @@ inputs:
       position: 105
       prefix: --WES
 outputs:
+  - id: preprocessed_files
+    type:
+      type: array
+      items: File
+    doc: Preprocessed files written with the base name (counts, segments, BAF heat map)
+    outputBinding:
+      glob: $(inputs.filename_base)*
   - id: stdout
     type: stdout
     doc: Standard output

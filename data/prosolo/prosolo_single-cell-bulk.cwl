@@ -10,11 +10,15 @@ inputs:
   - id: single_cell
     type: File
     doc: BAM file with reads from single cell sample.
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 1
   - id: bulk
     type: File
     doc: BAM file with reads from bulk sample.
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 2
   - id: reference
@@ -90,7 +94,7 @@ inputs:
   - id: obs
     type:
       - 'null'
-      - File
+      - string
     doc: Optional path where read observations shall be written to. The 
       resulting file contains a line for each observation with tab-separated 
       values.
@@ -176,15 +180,20 @@ inputs:
       prefix: --spurious-insext-rate
   - id: output_path
     type: string
-    doc: BCF file that shall contain the results (if omitted, write to STDOUT).
+    doc: BCF file that shall contain the results.
     inputBinding:
       position: 105
       prefix: --output
 outputs:
-  - id: output
+  - id: obs_out
     type:
       - 'null'
       - File
+    doc: Read observations (tab-separated), written when --obs is given.
+    outputBinding:
+      glob: $(inputs.obs)
+  - id: output
+    type: File
     doc: BCF file that shall contain the results (if omitted, write to STDOUT).
     outputBinding:
       glob: $(inputs.output_path)

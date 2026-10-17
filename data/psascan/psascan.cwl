@@ -12,7 +12,7 @@ inputs:
   - id: gap_file
     type:
       - 'null'
-      - File
+      - string
     doc: 'specify the file holding the gap array (default: FILE.sa5.gap)'
     inputBinding:
       position: 102

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pTrimmer
+baseCommand: ptrimmer
 label: ptrimmer
 doc: "pTrimmer is a tool for trimming primer sequences from sequencing data.\n\nTool
   homepage: https://github.com/DMU-lilab/pTrimmer"
@@ -89,9 +89,7 @@ inputs:
       position: 102
       prefix: --summary
   - id: trim1_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: '[required] the trimmed read1 of fastq file'
     inputBinding:
       position: 103
@@ -123,7 +121,7 @@ outputs:
       - File
     doc: the trimming information of each amplicon
     outputBinding:
-      glob: $(inputs.summary_path)
+      glob: "$(inputs.summary_path ? inputs.summary_path : 'Summary.ampcount')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -4,97 +4,113 @@ baseCommand:
   - pyani-plus
   - anim
 label: pyani-plus_anim
-doc: "Execute ANIm calculations, logged to a pyANI-plus SQLite3 database.\n\nTool
-  homepage: https://github.com/pyani-plus/pyani-plus"
+doc: "Execute ANIm calculations, logged to a pyANI-plus SQLite3 database.\n\nTool homepage: https://github.com/pyani-plus/pyani-plus"
 inputs:
   - id: fasta
     type: Directory
-    doc: Directory of FASTA files (extensions .fa, .fas, .fasta, .fna).
+    doc: "Directory of FASTA files (extensions .fa, .fas, .fasta, .fna)."
     inputBinding:
       position: 1
-  - id: create_db
-    type:
-      - 'null'
-      - boolean
-    doc: Create database if does not exist.
-    inputBinding:
-      position: 102
-      prefix: --create-db
   - id: database
-    type: File
-    doc: Path to pyani-plus SQLite3 database.
+    type: string
+    doc: "Path to pyANI-plus SQLite3 database (created when create_db is set, otherwise an existing copy is given in database_in)."
     inputBinding:
-      position: 102
-      prefix: -d
-  - id: debug
-    type:
-      - 'null'
-      - boolean
-    doc: Show debugging level logging at the terminal (in addition to the log 
-      file).
-    inputBinding:
-      position: 102
-      prefix: --debug
-  - id: executor
-    type:
-      - 'null'
-      - string
-    doc: How should the internal tools be run?
-    inputBinding:
-      position: 102
-      prefix: --executor
-  - id: log
+      position: 2
+      prefix: --database
+  - id: database_in
     type:
       - 'null'
       - File
-    doc: Where to record log(s). Use '-' for no logging. Default is no logging 
-      for the local executor, but otherwise "pyani-plus.log".
-    inputBinding:
-      position: 102
-      prefix: --log
-  - id: mode
-    type:
-      - 'null'
-      - string
-    doc: Nucmer mode for ANIm.
-    inputBinding:
-      position: 102
-      prefix: --mode
+    doc: Existing pyANI-plus database to extend (staged as a writable copy under the name given by database).
   - id: name
     type:
       - 'null'
       - string
-    doc: Run name.
+    doc: "Run name. Default is 'N genomes using METHOD'."
     inputBinding:
-      position: 102
+      position: 10
       prefix: --name
+  - id: create_db
+    type:
+      - 'null'
+      - boolean
+    doc: "Create database if does not exist."
+    inputBinding:
+      position: 10
+      prefix: --create-db
+  - id: executor
+    type:
+      - 'null'
+      - type: enum
+        symbols: [local, slurm]
+    doc: "How should the internal tools be run?"
+    inputBinding:
+      position: 10
+      prefix: --executor
+  - id: mode
+    type:
+      - 'null'
+      - type: enum
+        symbols: [mum, maxmatch]
+    doc: "Nucmer mode for ANIm."
+    inputBinding:
+      position: 10
+      prefix: --mode
   - id: temp
     type:
       - 'null'
       - string
-    doc: Directory to use for intermediate files, which for debugging purposes 
-      will not be deleted. For clusters this must be on a shared drive. Default 
-      behaviour is to use a system specified temporary directory (specific to 
-      the compute-node when using a cluster) and remove this afterwards.
+    doc: "Directory to use for intermediate files, which for debugging purposes will not be deleted. For clusters this must be on a shared drive. Default behaviour is to use a system specified temporary directory (specific to the compute-node when using a cluster) and remove this afterwards."
     inputBinding:
-      position: 102
+      position: 10
       prefix: --temp
   - id: wtemp
     type:
       - 'null'
       - string
-    doc: Directory to use for temporary workflow coordination files, which for 
-      debugging purposes will not be deleted. For clusters this must be on a 
-      shared drive. Default behaviour is to use a system specified temporary 
-      directory (for the local executor) or a temporary directory under the 
-      present direct (for clusters), and remove this afterwards.
+    doc: "Directory to use for temporary workflow coordination files, which for debugging purposes will not be deleted. For clusters this must be on a shared drive. Default behaviour is to use a system specified temporary directory (for the local executor) or a temporary directory under the present direct (for clusters), and remove this afterwards."
     inputBinding:
-      position: 102
+      position: 10
       prefix: --wtemp
+  - id: log
+    type:
+      - 'null'
+      - string
+    doc: "Where to record log(s). Use '-' for no logging."
+    inputBinding:
+      position: 10
+      prefix: --log
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: "Show debugging level logging at the terminal (in addition to the log file)."
+    inputBinding:
+      position: 10
+      prefix: --debug
 outputs:
-  - id: stdout
+  - id: database_out
+    type: File
+    doc: pyANI-plus database with the new run
+    outputBinding:
+      glob: $(inputs.database)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (written when log is set)
+    outputBinding:
+      glob: $(inputs.log)
+  - id: stdout_text
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.database)
+        entry: $(inputs.database_in)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyani-plus:1.0.0--pyhdfd78af_0

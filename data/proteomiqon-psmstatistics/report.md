@@ -1,5 +1,11 @@
 # proteomiqon-psmstatistics CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-psmstatistics | PASS |  |
+
 ## proteomiqon-psmstatistics
 
 ### Tool Description

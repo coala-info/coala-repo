@@ -1,5 +1,11 @@
 # pynnotator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pynnotator | Not completed | needs VEP, snpEff and many GB of annotation databases that the install step downloads; none are in the image |
+
 ## pynnotator
 
 ### Tool Description

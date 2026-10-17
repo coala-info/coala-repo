@@ -429,9 +429,46 @@ inputs:
       position: 102
       prefix: -xml
 outputs:
+  - id: orthology_groups
+    type:
+      - 'null'
+      - File
+    doc: Orthology groups (<project>.proteinortho.tsv)
+    outputBinding:
+      glob: $(inputs.project || 'myproject').proteinortho.tsv
+  - id: orthology_pairs
+    type:
+      - 'null'
+      - File
+    doc: Orthology pairs (<project>.proteinortho-graph)
+    outputBinding:
+      glob: $(inputs.project || 'myproject').proteinortho-graph
+  - id: blast_graph
+    type:
+      - 'null'
+      - File
+    doc: Reciprocal best hit graph (<project>.blast-graph)
+    outputBinding:
+      glob: $(inputs.project || 'myproject').blast-graph
+  - id: html_report
+    type:
+      - 'null'
+      - File
+    doc: HTML report of the orthology groups (<project>.proteinortho.html)
+    outputBinding:
+      glob: $(inputs.project || 'myproject').proteinortho.html
+  - id: info_file
+    type:
+      - 'null'
+      - File
+    doc: Run information (<project>.info)
+    outputBinding:
+      glob: $(inputs.project || 'myproject').info
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/proteinortho:6.3.6--h2b77389_0

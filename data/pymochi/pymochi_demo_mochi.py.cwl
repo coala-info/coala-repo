@@ -316,6 +316,18 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.output_directory) {
+          l.push({"entryname": inputs.output_directory, "writable": true,
+                  "entry": {"class": "Directory", "basename": inputs.output_directory, "listing": []}});
+        }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pymochi:1.1--pyhdfd78af_0

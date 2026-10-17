@@ -1,5 +1,11 @@
 # proteomiqon-labeledproteinquantification CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-labeledproteinquantification | PASS |  |
+
 ## proteomiqon-labeledproteinquantification
 
 ### Tool Description

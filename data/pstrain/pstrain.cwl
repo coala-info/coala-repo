@@ -185,6 +185,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weight
+  - id: read_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTQ files named in the config file, staged in the working directory
+      so the names in the config resolve.
   - id: outdir_path
     type: string
     inputBinding:
@@ -198,6 +205,8 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.read_files ? inputs.read_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pstrain:1.0.3--h9ee0642_0

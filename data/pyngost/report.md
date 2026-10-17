@@ -1,5 +1,11 @@
 # pyngost CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyngost_pyngoST.py | PASS | downloaded real NG-STAR/MLST/NG-MAST database (530 MB, deleted after the test); 25 example strains match the expected STs, FA1090 genome typed |
+
 ## pyngost_pyngoST.py
 
 ### Tool Description

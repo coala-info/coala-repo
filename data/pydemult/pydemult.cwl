@@ -139,7 +139,14 @@ outputs:
       - Directory
     doc: Output directory to write individual fastq files to.
     outputBinding:
-      glob: $(inputs.output)
+      glob: "$(inputs.output ? inputs.output : 'fastq')"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: "$(inputs.output ? inputs.output : 'fastq')"
+        entry: "$({class: 'Directory', basename: (inputs.output ? inputs.output : 'fastq'), listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pydemult:0.6--py_0

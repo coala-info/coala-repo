@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prottest3
+baseCommand: prottest
 label: prottest
 doc: "ProtTest is a tool for selecting the best-fit model of amino-acid replacement
   for a given set of protein sequences.\n\nTool homepage: https://github.com/ddarriba/prottest3"
@@ -128,13 +128,16 @@ inputs:
   - id: matrix
     type:
       - 'null'
-      - string
-    doc: Include matrix (Amino-acid) = JTT LG DCMut MtREV MtMam MtArt Dayhoff 
-      WAG RtREV CpREV Blosum62 VT HIVb HIVw FLU. If you don't specify any 
-      matrix, all matrices displayed above will be included.
+      - type: array
+        items: string
+        inputBinding:
+          prefix: '-'
+          separate: false
+    doc: 'Amino-acid matrices to include, each given as a flag: JTT LG DCMut MtREV
+      MtMam MtArt Dayhoff WAG RtREV CpREV Blosum62 VT HIVb HIVw FLU. If none is
+      given, all matrices are included.'
     inputBinding:
       position: 101
-      prefix: '-'
   - id: num_categories
     type:
       - 'null'

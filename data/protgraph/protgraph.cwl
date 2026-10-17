@@ -175,7 +175,7 @@ inputs:
   - id: output_csv_layout
     type:
       - 'null'
-      - File
+      - string
     doc: Layout for output CSV
     inputBinding:
       position: 102
@@ -207,7 +207,7 @@ inputs:
   - id: pep_sqlite_database
     type:
       - 'null'
-      - File
+      - string
     doc: SQLite database file
     inputBinding:
       position: 102
@@ -258,13 +258,20 @@ inputs:
       position: 105
       prefix: --pep_fasta_out
 outputs:
+  - id: sqlite_out
+    type:
+      - 'null'
+      - File
+    doc: SQLite database of the exported peptides (--pep_sqlite_database, default 'proteins')
+    outputBinding:
+      glob: $(inputs.pep_sqlite_database || 'proteins')*
   - id: output_csv
     type:
       - 'null'
       - File
     doc: Output CSV file
     outputBinding:
-      glob: $(inputs.output_csv_path)
+      glob: $(inputs.output_csv_path || 'protein_graph_statistics.csv')
   - id: export_output_folder
     type:
       - 'null'

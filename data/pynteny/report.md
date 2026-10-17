@@ -1,5 +1,14 @@
 # pynteny CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pynteny_build | PASS | real E. coli GenBank gives the same peptide database as the tool repo; nucleotide assembly also built (13 ORFs) |
+| pynteny_download | Not completed | downloads the 460 MB PGAP HMM database, over the 200 MB test budget |
+| pynteny_parse | PASS | gene symbols translated to HMM groups with the test metadata |
+| pynteny_search | Failed | tool bug: with --gene_ids or HMM-group structures (a\|b) the search silently returns no hits (checked on E. coli leu operon); plain HMM names find the expected 3 genes |
+
 ## pynteny_search
 
 ### Tool Description

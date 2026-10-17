@@ -1,5 +1,11 @@
 # pulchra CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pulchra | PASS | backbone atoms rebuilt from C-alpha only ubiquitin within 0.5 A RMSD |
+
 ## pulchra
 
 ### Tool Description

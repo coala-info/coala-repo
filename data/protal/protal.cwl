@@ -27,7 +27,7 @@ inputs:
   - id: benchmark_alignment_output
     type:
       - 'null'
-      - File
+      - string
     doc: Benchmark alignment output. Output is appended to the file.
     inputBinding:
       position: 101
@@ -51,12 +51,14 @@ inputs:
   - id: first
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: Comma separated list of reads. If paired-end, also specify second read 
       via -2/--second.
     inputBinding:
       position: 101
       prefix: --first
+      itemSeparator: ','
   - id: force
     type:
       - 'null'
@@ -68,7 +70,7 @@ inputs:
   - id: full_reference
     type:
       - 'null'
-      - string
+      - File
     doc: All marker genomes (not only representative ones) to check unique 
       k-mers during build process
     inputBinding:
@@ -77,7 +79,7 @@ inputs:
   - id: map
     type:
       - 'null'
-      - string
+      - File
     doc: For larger datasets you can define parameters -1, -2, -3 and -o in a 
       tsv-file.
     inputBinding:
@@ -184,7 +186,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Comma separated list of output prefixes (optional). If not specified, 
       output file prefixes are generated from the input file names. If not 
       otherwise specified by using --map, sam files, profiles, msas, and other 
@@ -236,7 +238,7 @@ inputs:
   - id: profile_truth
     type:
       - 'null'
-      - string
+      - File
     doc: Provide truth file and annotate profile taxa with TP/FP. Format is list
       of integers (internal ids)
     inputBinding:
@@ -245,7 +247,7 @@ inputs:
   - id: reference
     type:
       - 'null'
-      - string
+      - File
     doc: Set of reference sequences to build the internal alignment database 
       from
     inputBinding:
@@ -254,13 +256,15 @@ inputs:
   - id: second
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
     doc: Comma separated list of reads. must have <-1/--first> specified. 
       Currently this must be specified -- single-end reads are not yet 
       supported.
     inputBinding:
       position: 101
       prefix: --second
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'
@@ -288,9 +292,18 @@ inputs:
       position: 101
       prefix: --x_drop
 outputs:
+  - id: outdir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory with the subfolders sam, profiles, strains and misc.
+    outputBinding:
+      glob: $(inputs.outdir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/protal:0.2.0a--h5ca1c30_0

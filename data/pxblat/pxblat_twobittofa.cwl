@@ -83,7 +83,7 @@ inputs:
   - id: udc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Place to put cache for remote bigBed/bigWigs.
     inputBinding:
       position: 102

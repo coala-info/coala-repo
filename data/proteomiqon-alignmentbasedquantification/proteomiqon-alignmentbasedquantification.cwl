@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.AlignmentBasedQuantification
+baseCommand: proteomiqon-alignmentbasedquantification
 label: proteomiqon-alignmentbasedquantification
 doc: "Performs alignment-based quantification of proteomic data.\n\nTool homepage:
   https://csbiology.github.io/ProteomIQon/"
@@ -24,13 +24,14 @@ inputs:
       position: 101
       prefix: --diagnosticcharts
   - id: instrumentoutput
-    type: Directory
+    type: File
     doc: Specify the mass spectrometry output, either specify a file directory 
       containing the files to be analyzed or specify the file path of a single 
-      mzlite file.
+      mzlite file. The file is staged writable because the tool writes to it.
     inputBinding:
       position: 101
       prefix: --instrumentoutput
+      valueFrom: $(self.basename)
   - id: log_level
     type:
       - 'null'
@@ -110,6 +111,10 @@ outputs:
       glob: $(inputs.outputdirectory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.instrumentoutput)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: 

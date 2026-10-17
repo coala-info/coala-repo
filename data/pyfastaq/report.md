@@ -1,81 +1,31 @@
 # pyfastaq CWL Generation Report
 
-## pyfastaq_fastaq
+## Real Data Test
 
-### Tool Description
-A command-line tool for manipulating FASTA and FASTQ files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
-- **Homepage**: https://github.com/sanger-pathogens/Fastaq
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
-- **Total Downloads**: 44.8K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/sanger-pathogens/Fastaq
-- **Stars**: N/A
-### Original Help Text
-```text
-Task "--h" not recognised. Cannot continue.
-
-Usage: fastaq <command> [options]
-
-To get minimal usage for a command use:
-fastaq command
-
-To get full help for a command use one of:
-fastaq command -h
-fastaq command --help
-
-Available commands:
-
-acgtn_only             Replace every non acgtnACGTN with an N
-add_indels             Deletes or inserts bases at given position(s)
-caf_to_fastq           Converts a CAF file to FASTQ format
-capillary_to_pairs     Converts file of capillary reads to paired and unpaired files
-chunker                Splits sequences into equal sized chunks
-count_sequences        Counts the sequences in input file
-deinterleave           Splits interleaved paired file into two separate files
-enumerate_names        Renames sequences in a file, calling them 1,2,3... etc
-expand_nucleotides     Makes every combination of degenerate nucleotides
-fasta_to_fastq         Convert FASTA and .qual to FASTQ
-filter                 Filter sequences to get a subset of them
-get_ids                Get the ID of each sequence
-get_seq_flanking_gaps  Gets the sequences flanking gaps
-interleave             Interleaves two files, output is alternating between fwd/rev reads
-make_random_contigs    Make contigs of random sequence
-merge                  Converts multi sequence file to a single sequence
-replace_bases          Replaces all occurrences of one letter with another
-reverse_complement     Reverse complement all sequences
-scaffolds_to_contigs   Creates a file of contigs from a file of scaffolds
-search_for_seq         Find all exact matches to a string (and its reverse complement)
-sequence_trim          Trim exact matches to a given string off the start of every sequence
-sort_by_name           Sorts sequences in lexographical (name) order
-sort_by_size           Sorts sequences in length order
-split_by_base_count    Split multi sequence file into separate files
-strip_illumina_suffix  Strips /1 or /2 off the end of every read name
-to_boulderio           Converts to Boulder-IO format, used by primer3
-to_fake_qual           Make fake quality scores file
-to_fasta               Converts a variety of input formats to nicely formatted FASTA format
-to_mira_xml            Create an xml file from a file of reads, for use with Mira assembler
-to_orfs_gff            Writes a GFF file of open reading frames
-to_perfect_reads       Make perfect paired reads from reference
-to_random_subset       Make a random sample of sequences (and optionally mates as well)
-to_tiling_bam          Make a BAM file of reads uniformly spread across the input reference
-to_unique_by_id        Remove duplicate sequences, based on their names. Keep longest seqs
-translate              Translate all sequences in input nucleotide sequences
-trim_Ns_at_end         Trims all Ns at the start/end of all sequences
-trim_contigs           Trims a set number of bases off the end of every contig
-trim_ends              Trim fixed number of bases of start and/or end of every sequence
-version                Print version number and exit
-```
+| Tool | Result | Reason |
+|---|---|---|
+| pyfastaq_fastaq_acgtn_only | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_count_sequences | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_deinterleave | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_fasta_to_fastq | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_filter | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_interleave | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_reverse_complement | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_scaffolds_to_contigs | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_sort_by_name | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_sort_by_size | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_strip_illumina_suffix | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_to_fake_qual | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_to_fasta | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_to_random_subset | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_to_unique_by_id | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_translate | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_trim_Ns_at_end | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 
 ## pyfastaq_fastaq_acgtn_only
 
 ### Tool Description
-Filter FASTA/FASTQ sequences to only include ACGTN characters.
+Replaces any character that is not one of acgtACGTnN with an N
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -85,21 +35,22 @@ Filter FASTA/FASTQ sequences to only include ACGTN characters.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq acgtn_only [options] <infile> <outfile>
+
+Replaces any character that is not one of acgtACGTnN with an N
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## pyfastaq_fastaq_trim_Ns_at_end
 
 ### Tool Description
-Remove Ns from the ends of sequences.
+Trims any Ns off each sequence in input file. Does nothing to gaps in the middle, just trims the ends
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -109,21 +60,23 @@ Remove Ns from the ends of sequences.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq trim_Ns_at_end <infile> <outfile>
+
+Trims any Ns off each sequence in input file. Does nothing to gaps in the
+middle, just trims the ends
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## pyfastaq_fastaq_strip_illumina_suffix
 
 ### Tool Description
-Remove Illumina suffix from FASTA/FASTQ IDs
+Strips /1 or /2 off the end of every read name
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -133,21 +86,20 @@ Remove Illumina suffix from FASTA/FASTQ IDs
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq strip_illumina_suffix <infile> <outfile>
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## pyfastaq_fastaq_filter
 
 ### Tool Description
-Filter FASTA/FASTQ files based on various criteria.
+Filters a sequence file by sequence length and/or by name matching a regular expression
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -157,21 +109,40 @@ Filter FASTA/FASTQ files based on various criteria.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq filter [options] <infile> <outfile>
+
+Filters a sequence file by sequence length and/or by name matching a regular
+expression
+
+positional arguments:
+  infile               Name of input file to be filtered
+  outfile              Name of output file
+
+options:
+  -h, --help           show this help message and exit
+  --min_length INT     Minimum length of sequence to keep [0]
+  --max_length INT     Maximum length of sequence to keep [inf]
+  --regex REGEX        If given, only reads with a name matching the regular
+                       expression will be kept
+  --ids_file FILENAME  If given, only reads whose ID is in th given file will
+                       be used. One ID per line of file.
+  -v, --invert         Only keep sequences that do not match the filters
+  --check_comments     Search the header comments also for the given regex.
+                       Can only be specified with --regex
+
+Mate file for read pairs options:
+  --mate_in FILENAME   Name of mates input file. If used, must also provide
+                       --mate_out
+  --mate_out FILENAME  Name of mates output file
+  --both_mates_pass    By default, if either mate passes filter, then both
+                       reads output. Use this flag to require that both reads
+                       of a pair pass the filter
 ```
 
 ## pyfastaq_fastaq_sort_by_size
 
 ### Tool Description
-Sort FASTA/FASTQ files by sequence length.
+Sorts sequences in length order
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -181,21 +152,22 @@ Sort FASTA/FASTQ files by sequence length.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq sort_by_size [options] <infile> <outfile>
+
+positional arguments:
+  infile         Name of input file
+  outfile        Name of output file
+
+options:
+  -h, --help     show this help message and exit
+  -r, --reverse  Sort by shortest first instead of the default of longest
+                 first
 ```
 
 ## pyfastaq_fastaq_sort_by_name
 
 ### Tool Description
-Sort FASTA/FASTQ records by name.
+Sorts sequences in lexographical (name) order
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -205,21 +177,20 @@ Sort FASTA/FASTQ records by name.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq sort_by_name <infile> <outfile>
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## pyfastaq_fastaq_to_unique_by_id
 
 ### Tool Description
-Remove duplicate sequences from a FASTA or FASTQ file, keeping only the first occurrence of each sequence ID.
+Removes duplicate sequences from input file, based on their names. If the same name is found more than once, then the longest sequence is kept. Order of sequences is preserved in output
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -229,21 +200,24 @@ Remove duplicate sequences from a FASTA or FASTQ file, keeping only the first oc
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq to_unique_by_id <infile> <outfile>
+
+Removes duplicate sequences from input file, based on their names. If the same
+name is found more than once, then the longest sequence is kept. Order of
+sequences is preserved in output
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## pyfastaq_fastaq_interleave
 
 ### Tool Description
-Interleave two FASTA files.
+Interleaves two files, output is alternating between fwd/rev reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -253,21 +227,25 @@ Interleave two FASTA files.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq interleave <infile_1> <infile_2> <outfile>
+
+positional arguments:
+  infile_1           Name of first input file
+  infile_2           Name of second input file
+  outfile            Name of output file of interleaved reads
+
+options:
+  -h, --help         show this help message and exit
+  --suffix1 SUFFIX1  Suffix to add to all names from infile_1 (if suffix not
+                     already present)
+  --suffix2 SUFFIX2  Suffix to add to all names from infile_2 (if suffix not
+                     already present)
 ```
 
 ## pyfastaq_fastaq_deinterleave
 
 ### Tool Description
-Deinterleaves a FASTAQ file into two separate FASTAQ files.
+Deinterleaves sequence file, so that reads are written alternately between two output files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -277,21 +255,25 @@ Deinterleaves a FASTAQ file into two separate FASTAQ files.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq deinterleave [options] <infile> <out_fwd> <out_rev>
+
+Deinterleaves sequence file, so that reads are written alternately between two
+output files
+
+positional arguments:
+  infile       Name of fasta/q file to be deinterleaved
+  out_fwd      Name of output fasta/q file of forwards reads
+  out_rev      Name of output fasta/q file of reverse reads
+
+options:
+  -h, --help   show this help message and exit
+  --fasta_out  Use this to write output as fasta (default is same as input)
 ```
 
 ## pyfastaq_fastaq_to_fasta
 
 ### Tool Description
-Convert FASTA to FASTA format.
+to_fasta
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -301,21 +283,28 @@ Convert FASTA to FASTA format.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq to_fasta [options] <infile> <outfile>
+
+positional arguments:
+  infile                Name of input file. Can be any of FASTA, FASTQ, GFF3,
+                        EMBL, GBK, Phylip
+  outfile               Name of output file
+
+options:
+  -h, --help            show this help message and exit
+  -l, --line_length LINE_LENGTH
+                        Number of bases on each sequence line of output file.
+                        Set to zero for no linebreaks in sequences [60]
+  -s, --strip_after_whitespace
+                        Remove everything after first whitespace in every
+                        sequence name
+  -u, --check_unique    Die if any of the output sequence names are not unique
 ```
 
 ## pyfastaq_fastaq_fasta_to_fastq
 
 ### Tool Description
-Convert FASTA to FASTQ format.
+Convert FASTA and .qual to FASTQ
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -325,21 +314,21 @@ Convert FASTA to FASTQ format.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq fasta_to_fastq <fasta in> <qual in> <fastq out>
+
+positional arguments:
+  fasta in    Name of input FASTA file
+  qual in     Name of input quality scores file
+  fastq out   Name of output FASTQ file
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## pyfastaq_fastaq_scaffolds_to_contigs
 
 ### Tool Description
-Convert scaffolds to contigs
+Creates a file of contigs from a file of scaffolds - i.e. breaks at every gap in the input
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -349,21 +338,25 @@ Convert scaffolds to contigs
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq scaffolds_to_contigs [options] <infile> <outfile>
+
+Creates a file of contigs from a file of scaffolds - i.e. breaks at every gap
+in the input
+
+positional arguments:
+  infile            Name of input file
+  outfile           Name of output contigs file
+
+options:
+  -h, --help        show this help message and exit
+  --number_contigs  Use this to enumerate contig names 1,2,3,... within each
+                    scaffold
 ```
 
 ## pyfastaq_fastaq_count_sequences
 
 ### Tool Description
-Count the number of sequences in a FASTA or FASTQ file.
+Prints the number of sequences in input file to stdout
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -373,21 +366,21 @@ Count the number of sequences in a FASTA or FASTQ file.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq count_sequences <infile>
+
+Prints the number of sequences in input file to stdout
+
+positional arguments:
+  infile      Name of input file
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## pyfastaq_fastaq_to_random_subset
 
 ### Tool Description
-Select a random subset of sequences from a FASTA file.
+Takes a random subset of reads from a sequence file and optionally the corresponding read from a mates file.  Output is interleaved if mates file given
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -397,21 +390,30 @@ Select a random subset of sequences from a FASTA file.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq to_random_subset [options] <infile> <outfile> <percent>
+
+Takes a random subset of reads from a sequence file and optionally the
+corresponding read from a mates file. Output is interleaved if mates file
+given
+
+positional arguments:
+  infile                Name of input file
+  outfile               Name of output file
+  FLOAT                 Per cent probability of keeping any given read (pair)
+                        in [0,100]
+
+options:
+  -h, --help            show this help message and exit
+  --mate_file MATE_FILE
+                        Name of mates file
+  --seed INT            Seed for random number generator. If not given,
+                        python's default is used
 ```
 
 ## pyfastaq_fastaq_to_fake_qual
 
 ### Tool Description
-Convert FASTA to FASTQ with fake quality scores.
+Make fake quality scores file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -421,21 +423,21 @@ Convert FASTA to FASTQ with fake quality scores.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq to_fake_qual [options] <infile> <outfile>
+
+positional arguments:
+  infile           Name of input file
+  outfile          Name of output file
+
+options:
+  -h, --help       show this help message and exit
+  -q, --qual QUAL  Quality score to assign to all bases [40]
 ```
 
 ## pyfastaq_fastaq_reverse_complement
 
 ### Tool Description
-Reverse complement a FASTA file
+Reverse complement all sequences
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -445,21 +447,20 @@ Reverse complement a FASTA file
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq reverse_complement <infile> <outfile>
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## pyfastaq_fastaq_translate
 
 ### Tool Description
-Translate DNA sequences to protein sequences.
+Translates all sequences in input file. Output is always FASTA format
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
@@ -469,15 +470,17 @@ Translate DNA sequences to protein sequences.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/fastaq", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/pyfastaq/app_fastaq.py", line 70, in main
-    exec('pyfastaq.runners.' + task + '.run("' + tasks[task] + '")')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1, in <module>
-NameError: name 'pyfastaq' is not defined
+usage: fastaq translate [options] <infile> <outfile>
+
+Translates all sequences in input file. Output is always FASTA format
+
+positional arguments:
+  infile           Name of file to be translated
+  outfile          Name of output FASTA file
+
+options:
+  -h, --help       show this help message and exit
+  --frame {0,1,2}  Frame to translate [0]
 ```
 
 ## Metadata

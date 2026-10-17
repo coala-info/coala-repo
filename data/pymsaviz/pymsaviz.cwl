@@ -39,7 +39,7 @@ inputs:
   - id: end
     type:
       - 'null'
-      - string
+      - int
     doc: End position of MSA visualization
     inputBinding:
       position: 101
@@ -109,7 +109,7 @@ inputs:
   - id: wrap_length
     type:
       - 'null'
-      - string
+      - int
     doc: Wrap length
     inputBinding:
       position: 101

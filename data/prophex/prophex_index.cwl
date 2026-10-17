@@ -7,10 +7,12 @@ label: prophex_index
 doc: "Constructs index for prophex\n\nTool homepage: https://github.com/prophyle/prophex"
 inputs:
   - id: idxbase
-    type: string
-    doc: Base name for the index files
+    type: File
+    doc: Reference FASTA file; the index files are written beside it (staged in
+      the working directory)
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: kmer_length
     type:
       - 'null'
@@ -36,9 +38,26 @@ inputs:
       position: 102
       prefix: -i
 outputs:
+  - id: index
+    type: File
+    doc: The FASTA file with its index files (.amb, .ann, .bwt, .pac, .sa)
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
+    outputBinding:
+      glob: $(inputs.idxbase.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.idxbase)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prophex:0.1.1--h5bf99c6_2

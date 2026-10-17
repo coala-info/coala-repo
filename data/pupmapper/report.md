@@ -1,5 +1,12 @@
 # pupmapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pupmapper_all | PASS | k-mer map matches the repository file; pileup edge values differ from the older expected file but follow the v0.2.0 code |
+| pupmapper_genmap | PASS | k-mer map matches the expected file of the tool repository |
+
 ## pupmapper_all
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # proteomiqon-peptidedb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-peptidedb | PASS |  |
+
 ## proteomiqon-peptidedb
 
 ### Tool Description

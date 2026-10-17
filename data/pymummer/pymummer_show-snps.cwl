@@ -87,11 +87,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: -T
+  - id: sequence_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Reference and query FASTA files named in the delta file, staged in the
+      working directory so that the names resolve.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.sequence_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pymummer:0.12.0--pyhdfd78af_0
+    dockerOutputDirectory: /data
 stdout: pymummer_show-snps.out

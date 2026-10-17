@@ -17,13 +17,13 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: path to log file. Log not written by default.
     inputBinding:
       position: 101
       prefix: --log
   - id: outdir
-    type: Directory
+    type: string
     doc: "path to directory where to download HMM database. Note, if database is relocated
       after download, Pynteny won't be able to find it automatically, You can either:
       delete and download again in the new location or manually indicate database
@@ -43,6 +43,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_dir
+    type: Directory
+    doc: Directory with the downloaded HMM database
+    outputBinding:
+      glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pynteny:1.0.0--py310hec16e2b_0

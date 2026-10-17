@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 11258; PASS: 8771; Failed: 1354; Not completed: 1133
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 11568; PASS: 8980; Failed: 1426; Not completed: 1162
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -1898,7 +1898,7 @@ cellranger	cellranger_cloud_fastqs_upload	Not completed	Uploads to 10x Genomics 
 cellranger	cellranger_cloud_files_download	Not completed	Downloads from 10x Genomics Cloud need an account access token and network access, which this test does not have.
 cellranger	cellranger_cloud_files_upload	Not completed	Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have.
 cellranger	cellranger_cloud_references_upload	Not completed	Uploads to 10x Genomics Cloud need an account access token and network access, which this test does not have.
-cellranger	cellranger_count	PASS	The tiny dataset gave 1,084 cells and 128 genes, the same as testrun; fixed --create-bam, --include-introns and --check-library-compatibility to pass =true/false.
+cellranger	cellranger_count	PASS	The tiny dataset gave 1,084 cells and 128 genes, the same as testrun; fixed --create-bam, --include-introns and --check-library-compatibility to pass =true/false. Added fastq_files (staged in the working directory; --fastqs is that directory when no fastqs folder is given) and libraries CSV staging; through xcrunner, SRA-named reads linked under 10x names gave 1,128 cells via fastq_files and via a libraries CSV with fastqs '.', while the same links passed as a fastqs folder failed (links unresolvable in the container).
 cellranger	cellranger_mat2csv	PASS	The tiny filtered matrix converted to a dense CSV of 273 genes by 1,084 cells, matching the testrun cell count.
 cellranger	cellranger_mkgtf	PASS	Filtering the tiny reference GTF with gene_type:protein_coding kept exactly the 124 protein-coding genes.
 cellranger	cellranger_mkref	PASS	Rebuilt the tiny reference from its FASTA and GTF; the FASTA hash, chromosome table and 273-gene STAR index match the bundled reference.
@@ -1908,7 +1908,7 @@ cellranger	cellranger_multi-template	PASS	Writes the multi config template with 
 cellranger	cellranger_reanalyze	PASS	Reanalysis of the tiny filtered matrix produced PCA, UMAP, differential expression and graph clusters for all 1,084 cells.
 cellranger	cellranger_testrun	PASS	The bundled tiny dataset ran through count and reported 1,084 cells and 128 genes detected.
 cellranger	cellranger_upload	Not completed	Uploads a file to 10x Genomics support over the network with the user's email, which cannot be tested here.
-cellranger	cellranger_vdj	Not completed	The run finished on nf-core subsampled T-cell reads (86.5% map to TRA/TRB), but 10,000 read pairs are too few to assemble contigs or call cells, and full VDJ data is too large.
+cellranger	cellranger_vdj	Not completed	The run finished on nf-core subsampled T-cell reads (86.5% map to TRA/TRB), but 10,000 read pairs are too few to assemble contigs or call cells, and full VDJ data is too large. Added fastq_files (staged; --fastqs is the working directory); a staged run passed the FASTQ folder check.
 cellranger-arc	cellranger-arc_aggr	PASS	
 cellranger-arc	cellranger-arc_cloud_analyses_download	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
 cellranger-arc	cellranger-arc_cloud_analyses_files	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
@@ -1930,7 +1930,7 @@ cellranger-arc	cellranger-arc_cloud_references_get	Not completed	Needs a 10x Gen
 cellranger-arc	cellranger-arc_cloud_references_list	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
 cellranger-arc	cellranger-arc_cloud_references_update	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
 cellranger-arc	cellranger-arc_cloud_references_upload	Not completed	Needs a 10x Genomics Cloud Analysis account, access token and network access.
-cellranger-arc	cellranger-arc_count	PASS	
+cellranger-arc	cellranger-arc_count	PASS	Through xcrunner, the testrun reads renamed to SRA-style names and linked back under 10x names, passed in fastq_files with a libraries CSV (fastqs '.', columns reordered), gave 656 cells, ATAC fragments and BAMs. The CSV rewrite finds the fastqs column by its header.
 cellranger-arc	cellranger-arc_mkfastq	Failed	image problem: bcl2fastq is not in the image, and mkfastq needs it on PATH to demultiplex.
 cellranger-arc	cellranger-arc_mkgtf	PASS	
 cellranger-arc	cellranger-arc_mkref	PASS	
@@ -11258,3 +11258,313 @@ proksee	proksee_assemble	Failed	image problem: config.json is missing from the p
 proksee	proksee_evaluate	Failed	image problem: config.json is missing from the proksee package folder in the image, so every command stops with FileNotFoundError
 proksee	proksee_updatedb	Failed	image problem: config.json is missing from the proksee package folder in the image, so every command stops with FileNotFoundError
 proot	proot	PASS	Ran commands in an Alpine 3.24 minirootfs; -0, -k, -w and -b worked.
+prooverlap	prooverlap	PASS	
+proovframe	proovframe_fix	PASS	
+proovframe	proovframe_map	PASS	
+proovframe	proovframe_prf	PASS	
+prophane	prophane_init	PASS	
+prophane	prophane_prepare-dbs	Not completed	downloads large public databases (and conda environments); too heavy
+prophane	prophane_run	Not completed	needs conda environment downloads from repo.anaconda.com, which is unreachable here (connection reset)
+prophasm	prophasm	PASS	
+prophex	prophex_bwt2fa	PASS	
+prophex	prophex_bwtdowngrade	PASS	
+prophex	prophex_index	PASS	
+prophex	prophex_klcp	PASS	
+prophex	prophex_query	PASS	
+prosampler	prosampler_ProSampler	PASS	
+prosolo	prosolo_control-fdr	PASS	
+prosolo	prosolo_estimate-mutation-rate	PASS	synthetic data: allele frequency CSV made by a simulation; the program reads CSV, not VCF/BCF as its help says
+prosolo	prosolo_single-cell-bulk	PASS	
+protal	protal	Not completed	needs the prebuilt GTDB r214 index (very large download) or a taxonomy and marker-gene database; no small real test database
+proteinortho	proteinortho	PASS	
+proteomiqon-alignmentbasedquantification	proteomiqon-alignmentbasedquantification	Not completed	no matching test data: needs the mzlite of a second run plus .align and .alignmetric files from QuantBasedAlignment; the repo test set has only the .quant, .align and .alignmetric of truncated runs without their mzlite
+proteomiqon-alignmentbasedquantstatistics	proteomiqon-alignmentbasedquantstatistics	Not completed	no matching test data: needs .alignedQuant files from AlignmentBasedQuantification of a multi-run experiment, which the repo test set does not have
+proteomiqon-joinquantpepionswithproteins	proteomiqon-joinquantpepionswithproteins	PASS	
+proteomiqon-labeledproteinquantification	proteomiqon-labeledproteinquantification	PASS	
+proteomiqon-labelfreeproteinquantification	proteomiqon-labelfreeproteinquantification	PASS	
+proteomiqon-mzmltomzlite	proteomiqon-mzmltomzlite	PASS	
+proteomiqon-peptidedb	proteomiqon-peptidedb	PASS	
+proteomiqon-proteininference	proteomiqon-proteininference	PASS	output equals the repo reference except in the last floating point digit
+proteomiqon-psmbasedquantification	proteomiqon-psmbasedquantification	PASS	same peptide ions as the repo reference; Quant values agree within 0.1% (reference is from an older release with a different mz refinement)
+proteomiqon-psmstatistics	proteomiqon-psmstatistics	PASS	
+protgraph	protgraph	PASS	graph statistics CSV and peptide FASTA checked; the --export_peptide_sqlite option prints that it is skipped because the image lacks the apsw module
+protk	protk_interprophet.rb	PASS	
+protk	protk_make_decoy.rb	PASS	
+protk	protk_mascot_search.rb	Not completed	Needs a Mascot server with network access and an account; not available.
+protk	protk_msgfplus_search.rb	Failed	image problem: the image has no MSGFPlus.jar, so msgfplus_search.rb stops with 'Could not find MSGFPlus.jar'.
+protk	protk_peptide_prophet.rb	PASS	
+protk	protk_pepxml_to_table.rb	PASS	
+protk	protk_protein_prophet.rb	PASS	Ran on tandem pepXML data from the protk repo; protein groups match the repo reference (database path in the input pepXML was made relative and the FASTA staged beside it).
+protk	protk_protxml_to_gff.rb	Failed	image problem: the image has no makeblastdb, so protxml_to_gff.rb stops with ENOENT when it indexes the FASTA database.
+protk	protk_protxml_to_table.rb	PASS	
+protk	protk_sixframe.rb	PASS	
+protk	protk_tandem_search.rb	Failed	image problem: the image has no X!Tandem binary, so tandem_search.rb stops with 'Unable to locate tandem'.
+protmapper	protmapper	PASS	
+prottest	prottest	Failed	image problem: ProtTest 3.4.2 cannot read the output of the PhyML 3.3 in the image ('Stats file does not exist'), so no model table is produced. CWL fixed: baseCommand is prottest (not prottest3) and matrices are flags like -JTT.
+provean	provean	Not completed	Needs the huge NCBI nr protein database with gi numbers; on a small p53-family BLAST database PROVEAN found no supporting sequences and printed nan. CWL fixed (tool paths as strings, database index files, scores captured).
+prscs	prscs_PRScs.py	Not completed	Needs an LD reference panel (about 4.5 GB per population); no small panel exists. CWL fixed: the validation .bim file is now a staged File.
+psap	psap_annotate	PASS	
+psap	psap_predict	Failed	image problem: scikit-learn in the image is too new to load the bundled model (unexpected keyword 'min_impurity_split'), so predict stops.
+psap	psap_train	Failed	image problem: sklearn_json in the image fails on the new scikit-learn ('RandomForestClassifier' has no attribute 'min_impurity_split'), so the model JSON is empty.
+psascan	psascan	PASS	Suffix array of a 30 kb real genome slice checked correct. CWL fixed: gap file is an output path string, not a File.
+psass	psass_analyze	PASS	Ran on the sync file from psass pileup (two real human BAMs); windows, SNP, FST and gene outputs written and plausible.
+psass	psass_convert	Failed	tool bug: convert never reads the reference allele, so it counts '.' and ',' (bases equal to the reference) as N; output is wrong for samtools mpileup -f input (deprecated command).
+psass	psass_pileup	PASS	Ran on two real human BAMs (nf-core); per-pool depth totals match samtools depth. CWL fixed: BAM index files are now staged.
+psauron	psauron	PASS	Real E. coli CDS (Galaxy test set and 17 NCBI CDS) on CPU; in-frame scores match the Galaxy expected values and real CDS score True. CWL has no -m/-e short-flag issue; run with --use-cpu.
+pscan-tfbs	pscan-tfbs	PASS	Rewritten from the real help (old options were invented). Real human promoters: NFY scan finds CCAAT sites; query vs background run works. Note: the -m (precomputed background) mode crashes with a GSL error.
+psdm	psdm	PASS	
+pseqsid	pseqsid	PASS	Real COX2 protein alignment; identity checked by hand. CWL fixed: the tool writes CSV/TSV files, not stdout, so outputs are now collected by name.
+pseudo-it	pseudo-it_pseudo_it.py	Failed	image problem: picard in the image needs a newer Java (class file version 61, image has Java 11), so the Mark duplicates step fails. CWL fixed: reference index files are now staged.
+psiclass	psiclass	PASS	Galaxy tools-iuc test BAMs; consensus GTF identical to the Galaxy expected output (1 and 2 samples). CWL fixed: BAM files are now File[] joined by commas.
+psirc	psirc_create_custom_transcriptome_fa.pl	Failed	image problem: the script starts with #!/usr/bin/perl but perl is only at /usr/local/bin/perl in the image, so it cannot execute.
+psirc	psirc_h5dump	PASS	Plaintext abundance.tsv identical to the quant output.
+psirc	psirc_index	PASS	Real SARS-CoV-2 transcriptome from nf-core; index used by quant and pseudo, inspect shows 11 targets.
+psirc	psirc_inspect	PASS	GFA graph with 11 contigs written; BED has only a header because the GTF transcript IDs do not match the index.
+psirc	psirc_pseudo	PASS	Equivalence class counts (sum 93) match quant; run_info.json reports 0 pseudoaligned, a cosmetic quirk.
+psirc	psirc_quant	PASS	100 real read pairs on the SARS-CoV-2 transcripts: 93 pseudoaligned, counts match the pseudo equivalence classes.
+psirc	psirc_query	PASS	Unitig path of one transcript has 3792 k-mers for a 3822 nt transcript, as expected.
+psmc	psmc	PASS	Diploid consensus built from real NA12878 (1000 Genomes) chr22 heterozygous sites on GRCh37 30-34 Mb; converted with fq2psmcfa; converged, theta near 0.0008 per bp.
+psmc	psmc_avg.pl	Failed	image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute.
+psmc	psmc_calD	Not completed	runs on real 1000 Genomes consensus sequences, but the D value could not be confirmed independently (only its sign matched a site count).
+psmc	psmc_cntcpg	PASS	Binary count file for the NA12878 chr22 reference slice; CpG and non-CpG counts of 400 bins match an independent count. CWL note: output is a binary file for psmc -c.
+psmc	psmc_ctime_plot.pl	Failed	image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute.
+psmc	psmc_dec2ctime.pl	Failed	image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute.
+psmc	psmc_decode2bed.pl	Failed	image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute.
+psmc	psmc_fq2psmcfa	PASS	Same NA12878 chr22 slice; number of K bins equals the number of 100 bp windows with a heterozygous site (3186).
+psmc	psmc_history2ms.pl	Failed	image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute.
+psmc	psmc_ms2psmcfa.pl	Failed	image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute.
+psmc	psmc_mutDiff	PASS	Four real 1000 Genomes chr22 1 Mb consensus sequences; listed difference sites (815 = 506 + 309) all valid and all unambiguous differences present.
+psmc	psmc_psmc2history.pl	Failed	image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute.
+psmc	psmc_psmc_plot.pl	Failed	image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute.
+psmc	psmc_psmc_trunc.pl	Failed	image problem: perl is not installed in the image ('env: can't execute perl').
+psmc	psmc_splitfa	PASS	Split of the NA12878 chr22 PSMCFA into 4 trunks; concatenation equals the input.
+psosp	psosp_predict	PASS	Repo test genome and phages: predictions, HI values and box sequences identical to the expected result; no CheckV database, so completeness columns are empty and quality differs.
+pstools	pstools_completeness	Failed	image problem: pstools completeness exits with illegal instruction (status 132) and prints an empty result
+pstools	pstools_haplotype_scaffold	Not completed	no real haplotype connection file from a diploid assembly; tool segfaults (status 139) on the small yeast Hi-C mapping
+pstools	pstools_hic_mapping_haplo	Failed	image problem: pstools exits with segmentation fault (status 139) after writing the map, so cwltool reports failure
+pstools	pstools_hic_mapping_unitig	PASS	
+pstools	pstools_phasing_error	Failed	image problem: pstools phasing_error exits with illegal instruction (status 132) and prints an empty result
+pstools	pstools_qv	Failed	image problem: pstools qv exits with illegal instruction (status 132) and prints an empty result
+pstools	pstools_resolve_haplotypes	Not completed	synthetic data: ran with a one-node graph made from yeast contigs, so the haplotype outputs are empty; no diploid HiFi graph with Hi-C test data available
+pstrain	pstrain	Not completed	needs the MetaPhlAn bowtie2 database (several GB), which is too large to download for a test
+psytrans	psytrans_psytrans.py	PASS	
+ptgaul	ptgaul_combine_gfa.py	PASS	
+ptgaul	ptgaul_ptGAUL.sh	PASS	
+ptools_bin	ptools_bin_10x_bam2fastq	Failed	image problem: the command 10x_bam2fastq in the image has a syntax error (imports module ptools_bin.10xbam2fastq), so it cannot start
+ptools_bin	ptools_bin_compress	PASS	
+ptools_bin	ptools_bin_createDiff	PASS	
+ptools_bin	ptools_bin_getSeq_genome_wN	PASS	
+ptools_bin	ptools_bin_getSeq_genome_woN	PASS	
+ptools_bin	ptools_bin_make_unique	PASS	synthetic data: BC and QT tags of a real 10x BAM renamed to the SR and SY tags the tool needs
+ptools_bin	ptools_bin_pbam2bam	PASS	round trip with createDiff and compress restores clips and indels; base substitutions in M-only CIGARs are not restored, as designed
+ptools_bin	ptools_bin_pbam_mapped_transcriptome	PASS	
+ptools_bin	ptools_bin_print_unique	PASS	synthetic data: BC and QT tags of a real 10x BAM renamed to the SR and SY tags the tool needs
+ptrimmer	ptrimmer	PASS	
+pubmlst_client	pubmlst_client_pubmlst_download	PASS	
+pubmlst_client	pubmlst_client_pubmlst_list	PASS	
+pulchra	pulchra	PASS	backbone atoms rebuilt from C-alpha only ubiquitin within 0.5 A RMSD
+pullseq	pullseq	PASS	
+pupmapper	pupmapper_all	PASS	k-mer map matches the repository file; pileup edge values differ from the older expected file but follow the v0.2.0 code
+pupmapper	pupmapper_genmap	PASS	k-mer map matches the expected file of the tool repository
+pureclip	pureclip	PASS	174 of the 176 Galaxy expected crosslink sites reproduced at the same positions, scores differ slightly
+pvacseq	pvacseq_binding_filter	PASS	
+pvacseq	pvacseq_config_files	PASS	
+pvacseq	pvacseq_coverage_filter	PASS	
+pvacseq	pvacseq_download_example_data	PASS	
+pvacseq	pvacseq_generate_protein_fasta	PASS	
+pvacseq	pvacseq_install_vep_plugin	PASS	
+pvacseq	pvacseq_run	PASS	ran with the SMM predictor through the IEDB web service on a small VCF; local IEDB install and other predictors not tested
+pvga	pvga	Failed	image problem: the required aligner blasr is not in the image (blasr: command not found)
+pvrg-jpeg	pvrg-jpeg	PASS	fixed baseCommand to pvrg-jpeg and per-component options; encode then decode of a real image round-trips
+pxblat	pxblat_client	PASS	added network access; psl output matches the repo ground-truth file (needs a running pxblat server)
+pxblat	pxblat_fatotwobit	PASS	added missing output positional; 2bit file identical to the repo test file
+pxblat	pxblat_server_files	PASS	added network access; ran against a pxblat server started from the same image
+pxblat	pxblat_server_start	Failed	tool bug: --log writes no log file (server itself starts and answers client and status requests)
+pxblat	pxblat_server_status	PASS	added network access; ran against a pxblat server started from the same image
+pxblat	pxblat_server_stop	PASS	added network access; ran against a pxblat server started from the same image
+pxblat	pxblat_twobittofa	PASS	fasta from the repo test 2bit matches the source sequence
+py2neo	py2neo_evaluate	Not completed	needs a running Neo4j server (connection refused without one); fixed baseCommand to py2neo evaluate and added network access
+py2neo	py2neo_run	Not completed	needs a running Neo4j server (connection refused without one); fixed baseCommand to py2neo run and added network access
+pyani	pyani_anib	Failed	tool bug: pyani anib raises NotImplementedError in this build (0.3.0-alpha) after fragmenting the genomes
+pyani	pyani_aniblastall	Failed	tool bug: pyani aniblastall raises NotImplementedError in this build (0.3.0-alpha)
+pyani	pyani_anim	PASS	3 real Blochmannia genomes: ANI about 0.83, same values as the legacy script
+pyani	pyani_average_nucleotide_identity	PASS	ANIm on 3 real genomes with heatmaps; identity table equals the pyani anim result
+pyani	pyani_classify	PASS	result is written to the log only (this build writes nothing to the output folder); clique intervals reported
+pyani	pyani_createdb	PASS	empty SQLite database with the pyani tables
+pyani	pyani_download	Not completed	NCBI download hangs after listing the assembly (no genome after 10 minutes); --retries crashes with a type error
+pyani	pyani_fastani	Failed	image problem: fastANI is not installed in the image, every comparison fails
+pyani	pyani_genbank_get_genomes_by_taxon	Not completed	ran but downloaded nothing: current NCBI service reports the assembly NOT DOWNLOADED
+pyani	pyani_index	PASS	labels, classes and md5 files for 3 real Blochmannia genomes match the repo test targets
+pyani	pyani_plot	PASS	11 plots as png and pdf for run 1
+pyani	pyani_report	PASS	tables and matrices match the run (identity 0.83); --formats html crashes because Jinja2 is missing in the image
+pyani-plus	pyani-plus_anib	PASS	same 4 genomes; run Done, identity 0.98 for the closest pair, in line with ANIm
+pyani-plus	pyani-plus_anim	PASS	4 real Blochmannia genomes; run Done, identity 0.98 for the closest pair; database now a string name plus optional input database
+pyani-plus	pyani-plus_classify	PASS	classification table and plot written
+pyani-plus	pyani-plus_delete-run	PASS	run 5 removed, 4 runs remain in the database
+pyani-plus	pyani-plus_dnadiff	PASS	same 4 genomes; run Done, identity 0.98 for the closest pair, in line with ANIm
+pyani-plus	pyani-plus_export-run	PASS	identity matrix and long table exported for the run
+pyani-plus	pyani-plus_external-alignment	PASS	synthetic data: the repo's own mock 3-genome alignment; identity matrix equals the expected one; alignment staged in the working folder
+pyani-plus	pyani-plus_fastani	PASS	same 4 genomes; run Done, identity 0.98 for the closest pair, in line with ANIm
+pyani-plus	pyani-plus_list-runs	PASS	lists the run table of the real 4 genome database
+pyani-plus	pyani-plus_plot-run	PASS	heatmaps, distributions and scatter plots written in 5 formats
+pyani-plus	pyani-plus_plot-run-comp	PASS	comparison plots of runs 1-3 (ANIm, fastANI, dnadiff)
+pyani-plus	pyani-plus_resume	Not completed	resume needs the original FASTA folder at the path stored in the database, but that path changes on every container run
+pyani-plus	pyani-plus_sourmash	PASS	same 4 genomes; run Done, identity 0.98 for the closest pair, in line with ANIm
+pybarrnap	pybarrnap	PASS	E. coli K-12 example: 7 16S, 7 23S and 8 5S rRNA genes found; outseq typed as string with a collected output
+pybda	pybda_clustering	Failed	image problem: Java is not installed in the image (spark-submit says JAVA_HOME is not set); pybda still exits 0 and writes no result
+pybda	pybda_dimension-reduction	Failed	image problem: Java is not installed in the image (spark-submit says JAVA_HOME is not set); pybda still exits 0 and writes no result
+pybda	pybda_regression	Failed	image problem: Java is not installed in the image (spark-submit says JAVA_HOME is not set); pybda still exits 0 and writes no result
+pybda	pybda_run	Not completed	pipeline, skipped (runs every task of the config through snakemake and Spark; Spark cannot start because Java is missing in the image)
+pybda	pybda_sample	Failed	image problem: Java is not installed in the image (spark-submit says JAVA_HOME is not set); pybda still exits 0 and writes no result
+pybdei	pybdei_bdei_infer	PASS	synthetic data: the repo's simulated 5650-tip tree; estimates match the true mu, lambda, psi; tree staged writable because the tool writes a temp file beside it
+pybdei	pybdei_bdei_loglikelihood	PASS	synthetic data: the repo's simulated 5650-tip tree with its true parameters gives a finite log-likelihood (-16047.2); new CWL
+pybdei	pybdei_bdei_u	PASS	synthetic data: the repo's simulated 5650-tip tree; estimates 0.236 hidden trees; new CWL
+pybdei	pybdei_generate_bdei	PASS	new CWL; the simulated tree has the requested 100 tips and the log holds the given parameters
+pybdei	pybdei_generate_bdeiss	PASS	new CWL; the simulated tree has the requested 100 tips and the log holds the given parameters
+pybel	pybel_compile	PASS	real PyBEL test BEL document: pickle written, 4 nodes and 6 edges; writable script staged and network access added; exits 1 when the script has warnings
+pybel	pybel_insert	PASS	real PyBEL test BEL document (two annotation URLs replaced by LIST because that host's certificate fails); database shows 1 network, 6 edges, 4 nodes
+pybel	pybel_machine	Failed	image problem: the indra Python package is not installed in the image (ModuleNotFoundError)
+pybel	pybel_manage_drop	PASS	database emptied (0 networks, 0 nodes)
+pybel	pybel_manage_edges_ls	PASS	prints the BEL of the first edges
+pybel	pybel_manage_examples	Not completed	needs the BEL resource server arty.scai.fraunhofer.de (connection timed out)
+pybel	pybel_manage_namespaces_drop	PASS	namespace count falls back to 3
+pybel	pybel_manage_namespaces_insert	PASS	namespace count rises from 3 to 4 after adding a belns URL
+pybel	pybel_manage_namespaces_ls	PASS	lists the entries of cached namespace 1
+pybel	pybel_manage_networks_drop	PASS	network 1 removed (0 networks, 0 edges)
+pybel	pybel_manage_networks_ls	PASS	lists the inserted network by name and version
+pybel	pybel_manage_nodes_prune	Failed	tool bug: crashes with UnmappedInstanceError (session.delete is given a list)
+pybel	pybel_manage_summarize	PASS	counts match the inserted network (1 network, 6 edges, 4 nodes)
+pybel	pybel_neo	Failed	image problem: the py2neo Python package is not installed in the image (ModuleNotFoundError); a Neo4j server would also be needed
+pybel	pybel_post	Not completed	uploads the graph to the public BEL Commons web service; not run
+pybel	pybel_serialize	PASS	csv, sif, gsea, graphml and json written and correct (6 edges); --bel crashes with a TypeError on the document's Project header
+pybel	pybel_summarize	PASS	summary shows 4 nodes, 6 edges, 2 citations for the compiled document
+pybel	pybel_warnings	PASS	lists the missing citation and evidence warnings of the real misordered.bel test document
+pychopper	pychopper	PASS	
+pycistarget	pycistarget_cistarget	Not completed	needs a large cisTarget rankings database and motif annotations downloaded from the web; no small test database exists
+pycistarget	pycistarget_dem	Not completed	needs a large DEM score database and motif annotations downloaded from the web; no small test database exists
+pycistopic	pycistopic_qc	Failed	image problem: polars version too new for pycisTopic, crashes with column CB not found (synthetic data: scATAC fragments built around real yeast TSS)
+pycistopic	pycistopic_topic_modeling_lda	Failed	image problem: python module lda is missing in the image
+pycistopic	pycistopic_topic_modeling_mallet	Failed	image problem: python module lda is missing and no mallet binary in the image
+pycistopic	pycistopic_tss_gene_annotation_list	PASS	
+pycistopic	pycistopic_tss_get_ncbi_acc	PASS	
+pycistopic	pycistopic_tss_get_ncbi_chrom_sizes_and_alias_mapping	Failed	image problem: polars too new, DataFrame.write_csv() rejects has_header
+pycistopic	pycistopic_tss_get_tss	PASS	
+pycistopic	pycistopic_tss_get_ucsc_chrom_sizes_and_alias_mapping	Failed	image problem: polars too new, DataFrame.write_csv() rejects has_header
+pyclone	pyclone_build_mutations_file	PASS	
+pyclone	pyclone_build_table	PASS	
+pyclone	pyclone_plot_clusters	PASS	
+pyclone	pyclone_plot_loci	PASS	
+pyclone	pyclone_run_analysis	PASS	
+pyclone	pyclone_run_analysis_pipeline	PASS	
+pyclone	pyclone_setup_analysis	PASS	
+pyclone-vi	pyclone-vi_fit	PASS	
+pyclone-vi	pyclone-vi_write-results-file	PASS	
+pycodestyle	pycodestyle	PASS	
+pycomo	pycomo	Failed	image problem: cobra deepcopy of a Reaction recurses forever on the image's Python 3.14 (RecursionError even with the minimal command)
+pycoqc	pycoqc	PASS	
+pycoqc	pycoqc_Barcode_split	PASS	
+pycoqc	pycoqc_Fast5_to_seq_summary	PASS	
+pycov3	pycov3	PASS	
+pycrac	pycrac_pyBarcodeFilter.py	PASS	
+pycrac	pycrac_pyMotif.py	PASS	
+pycrac	pycrac_pyReadAligner.py	PASS	
+pycrac	pycrac_pyReadCounters.py	PASS	
+pyctv_taxonomy	pyctv_taxonomy_download	Failed	tool bug: the ICTV site now answers its HEAD request with a redirect that has no Content-Disposition header, so pyctv stops with FATAL; it also saves the workbook inside its read-only install folder
+pyctv_taxonomy	pyctv_taxonomy_list	Failed	tool bug: list first checks the ICTV site for the workbook and stops with the same missing Content-Disposition FATAL error; no workbook is shipped in the image
+pydamage	pydamage_analyze	PASS	
+pydamage	pydamage_binplot	PASS	
+pydamage	pydamage_filter	PASS	
+pydemult	pydemult	PASS	synthetic data: read names built from real 10x scATAC R1 reads plus their real I1 index reads
+pydnase	pydnase_dnase_average_profile.py	PASS	
+pydnase	pydnase_dnase_bias_estimator.py	Failed	tool bug: crashes with TypeError (a bytes-like object is required, not str) when writing its temporary 6-mer BED on Python 3 (hg19 chr6 genome, real example BAM)
+pydnase	pydnase_dnase_cut_counter.py	PASS	
+pydnase	pydnase_dnase_ddhs_scorer.py	PASS	synthetic data: control BAM is the left part of the example BAM, tiled windows serve as the DHS sets
+pydnase	pydnase_dnase_to_JSON.py	PASS	
+pydnase	pydnase_dnase_to_javatreeview.py	PASS	
+pydnase	pydnase_dnase_wig_tracks.py	PASS	
+pydnase	pydnase_wellington_bootstrap.py	Failed	tool bug: the worker raises TypeError (list indices must be integers, not numpy.float64) in findDiffFP, the error is swallowed and both output files stay empty
+pydnase	pydnase_wellington_footprints.py	PASS	
+pydownsampler	pydownsampler	PASS	
+pyega3	pyega3_datasets	Not completed	needs an EGA account and credentials (login) for every command, none were entered
+pyega3	pyega3_fetch	Not completed	needs an EGA account and credentials (login) for every command, none were entered
+pyega3	pyega3_files	Not completed	needs an EGA account and credentials (login) for every command, none were entered
+pyfaidx	pyfaidx_faidx	PASS	
+pyfasta	pyfasta_extract	Failed	image problem: pyfasta calls numpy memmap.tostring(), which the image's newer numpy no longer has (AttributeError)
+pyfasta	pyfasta_flatten	PASS	
+pyfasta	pyfasta_info	Failed	image problem: pyfasta calls numpy memmap.tostring(), which the image's newer numpy no longer has (AttributeError)
+pyfasta	pyfasta_split	Failed	image problem: pyfasta calls numpy memmap.tostring(), which the image's newer numpy no longer has (AttributeError)
+pyfastaq	pyfastaq_fastaq_acgtn_only	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_count_sequences	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_deinterleave	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_fasta_to_fastq	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_filter	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_interleave	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_reverse_complement	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_scaffolds_to_contigs	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_sort_by_name	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_sort_by_size	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_strip_illumina_suffix	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_to_fake_qual	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_to_fasta	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_to_random_subset	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_to_unique_by_id	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_translate	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_trim_Ns_at_end	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastx	pyfastx_extract	PASS	
+pyfastx	pyfastx_fq2fa	PASS	
+pyfastx	pyfastx_index	PASS	
+pyfastx	pyfastx_sample	PASS	
+pyfastx	pyfastx_split	PASS	
+pyfastx	pyfastx_stat	PASS	
+pyfastx	pyfastx_subseq	PASS	
+pyfiglet	pyfiglet	PASS	
+pyfish	pyfish	PASS	
+pygcap	pygcap	Failed	image problem: the image has no datasets, dataformat or mmseqs commands, so pygcap stops with FileNotFoundError: datasets
+pygenetic_code	pygenetic_code	PASS	
+pygenometracks	pygenometracks_make_tracks_file	PASS	
+pygenometracks	pygenometracks_pyGenomeTracks	PASS	
+pygenomeviz	pygenomeviz_pgv-download-dataset	PASS	
+pygenomeviz	pygenomeviz_pgv-gui	Not completed	GUI web server (Streamlit app), cannot be tested in a batch run
+pygenomeviz	pygenomeviz_pgv-mmseqs	Failed	image problem: MMseqs is not installed in the image, so the tool stops with 'alignment is not available in this environment'
+pygenomeviz	pygenomeviz_pgv-mummer	Failed	image problem: MUMmer is not installed in the image, so the tool stops with 'alignment is not available in this environment'
+pygenomeviz	pygenomeviz_pgv-pmauve	Failed	image problem: progressiveMauve is not installed in the image, so the tool stops with 'alignment is not available in this environment'
+pygenomeviz	pygenomeviz_pgv-simpleplot	PASS	
+pygmes	pygmes	Not completed	needs the licensed GeneMark-ES program (not in the image) and a large diamond database
+pygtftk	pygtftk_gtftk_get_example	PASS	
+pygtftk	pygtftk_gtftk_get_tx_seq	PASS	
+pygvcf2coverage	pygvcf2coverage	Failed	image problem: the cyvcf2 import is commented out in the package, so the tool stops with NameError: name 'VCF' is not defined
+pyhmmsearch	pyhmmsearch	PASS	matches HMMER 3.4 hmmsearch on 124 BUSCO bacteria models and 4977 proteins (115 hits)
+pyhmmsearch	pyhmmsearch_reformat_pyhmmsearch	PASS	
+pyhmmsearch	pyhmmsearch_serialize_hmm_models	PASS	--hmm_list mode tested; --hmm_database stops with an assertion unless stdin is a terminal (tool bug)
+pyjess	pyjess	PASS	matches the expected Jess output of the pyjess tests (156 hits)
+pykofamsearch	pykofamsearch	PASS	56 real KOfam profiles; hits match HMMER 3.4 with the ko_list thresholds; --database_directory stops with KeyError 'enzyme_commission' (tool bug), the serialized database mode works
+pykofamsearch	pykofamsearch_reformat_pykofamsearch	PASS	
+pykofamsearch	pykofamsearch_serialize_kofam_models	PASS	
+pykofamsearch	pykofamsearch_subset_serialized_models	PASS	
+pyloh	pyloh_PyLOH.py_BAF_heatmap	PASS	synthetic data: stand-in normal/tumor pair; MPLBACKEND=Agg is set in the CWL because the image lacks libGL
+pyloh	pyloh_PyLOH.py_preprocess	PASS	synthetic data: two real 1000 Genomes BAMs (HG00349, HG00350, chr20 100 kb) used as a stand-in normal/tumor pair
+pyloh	pyloh_PyLOH.py_run_model	PASS	synthetic data: one real BAM (HG00349) used as both normal and tumor, giving copy number 2 and purity 0.01 as expected
+pylprotpredictor	pylprotpredictor	PASS	test scaffold genome from the tool repo; UniProt archaeal Swiss-Prot proteins as reference FASTA instead of UniRef90 (290 CDS, 17 TAG-ending, 7 with homologs)
+pymlst	pymlst_claMLST_import	PASS	imported the PubMLST Pasteur scheme for Acinetobacter baumannii (needs --mlst)
+pymlst	pymlst_claMLST_search	PASS	two real genomes typed as ST25 with all 7 Pasteur loci found
+pymlst	pymlst_pyTyper_search	Failed	image problem: pytyper.db is created inside the read-only install directory on first use, so it fails for a non-root user (works only as root)
+pymlst	pymlst_wgMLST_add	PASS	4 real A. baumannii genomes added in turn; database grew each time
+pymlst	pymlst_wgMLST_create	PASS	real A. baumannii cgMLST scheme (2386 genes) from the pyMLST tests
+pymlst	pymlst_wgMLST_distance	PASS	symmetric 4x4 allele distance matrix, consistent with the MLST table
+pymlst	pymlst_wgMLST_import	PASS	imported the A. baumannii scheme from cgmlst.org (2390 genes)
+pymlst	pymlst_wgMLST_mlst	PASS	allele table of 4 strains over 2386 genes
+pymlst	pymlst_wgMLST_msa	PASS	4 aligned sequences written (mafft)
+pymlst	pymlst_wgMLST_stats	PASS	reports 2386 core genes and 4 strains
+pymochi	pymochi_demo_mochi.py	PASS	demo project of the tool (built-in demo data), 5 epochs
+pymochi	pymochi_run_mochi.py	PASS	MoCHI demo model design with its fitness data, 5 epochs; all outputs written (weights, predictions, reports)
+pymsaviz	pymsaviz	PASS	
+pymummer	pymummer_delta-filter	PASS	SARS-CoV-2 reference vs real Illumina assembly contigs (nf-core)
+pymummer	pymummer_nucmer	PASS	SARS-CoV-2 reference vs real Illumina assembly contigs (nf-core)
+pymummer	pymummer_show-coords	PASS	SARS-CoV-2 reference vs real Illumina assembly contigs (nf-core)
+pymummer	pymummer_show-snps	PASS	SARS-CoV-2 reference vs real Illumina assembly contigs (nf-core)
+pyngost	pyngost_pyngoST.py	PASS	downloaded real NG-STAR/MLST/NG-MAST database (530 MB, deleted after the test); 25 example strains match the expected STs, FA1090 genome typed
+pynnotator	pynnotator	Not completed	needs VEP, snpEff and many GB of annotation databases that the install step downloads; none are in the image
+pynteny	pynteny_build	PASS	real E. coli GenBank gives the same peptide database as the tool repo; nucleotide assembly also built (13 ORFs)
+pynteny	pynteny_download	Not completed	downloads the 460 MB PGAP HMM database, over the 200 MB test budget
+pynteny	pynteny_parse	PASS	gene symbols translated to HMM groups with the test metadata
+pynteny	pynteny_search	Failed	tool bug: with --gene_ids or HMM-group structures (a|b) the search silently returns no hits (checked on E. coli leu operon); plain HMM names find the expected 3 genes

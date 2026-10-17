@@ -4,88 +4,94 @@ baseCommand:
   - pyani-plus
   - resume
 label: pyani-plus_resume
-doc: "Resume any (partial) run already logged in the database.\n\nIf the run was already
-  complete, this should have no effect.\nAny missing pairwise comparisons will be
-  computed, and the the old run will be\nmarked as complete.\nIf the version of the
-  underlying tool has changed, this will abort as the\noriginal run cannot be completed.\n\
-  \nTool homepage: https://github.com/pyani-plus/pyani-plus"
+doc: "Resume any (partial) run already logged in the database.\n\nTool homepage: https://github.com/pyani-plus/pyani-plus"
 inputs:
-  - id: cache
-    type:
-      - 'null'
-      - Directory
-    doc: Cache location if required for a method (must be visible to cluster 
-      workers).
-    inputBinding:
-      position: 101
-      prefix: --cache
   - id: database
     type: File
-    doc: Path to pyANI-plus SQLite3 database.
+    doc: "Path to pyANI-plus SQLite3 database (a writable copy is used)."
     inputBinding:
-      position: 101
+      position: 1
       prefix: --database
-  - id: debug
-    type:
-      - 'null'
-      - boolean
-    doc: Show debugging level logging at the terminal (in addition to the log 
-      file).
-    inputBinding:
-      position: 101
-      prefix: --debug
-  - id: executor
-    type:
-      - 'null'
-      - string
-    doc: How should the internal tools be run?
-    inputBinding:
-      position: 101
-      prefix: --executor
-  - id: log
-    type:
-      - 'null'
-      - File
-    doc: Where to record log(s). Use '-' for no logging. Default is no logging 
-      for the local executor, but otherwise "pyani-plus.log".
-    inputBinding:
-      position: 101
-      prefix: --log
+      valueFrom: $(self.basename)
   - id: run_id
     type:
       - 'null'
       - int
-    doc: Which run from the database (defaults to latest).
+    doc: "Which run from the database (defaults to latest)."
     inputBinding:
-      position: 101
+      position: 10
       prefix: --run-id
+  - id: executor
+    type:
+      - 'null'
+      - type: enum
+        symbols: [local, slurm]
+    doc: "How should the internal tools be run?"
+    inputBinding:
+      position: 10
+      prefix: --executor
+  - id: cache
+    type:
+      - 'null'
+      - string
+    doc: "Cache location if required for a method (must be visible to cluster workers). (default: .)"
+    inputBinding:
+      position: 10
+      prefix: --cache
   - id: temp
     type:
       - 'null'
       - string
-    doc: Directory to use for intermediate files, which for debugging purposes 
-      will not be deleted. For clusters this must be on a shared drive. Default 
-      behaviour is to use a system specified temporary directory (specific to 
-      the compute-node when using a cluster) and remove this afterwards.
+    doc: "Directory to use for intermediate files, which for debugging purposes will not be deleted."
     inputBinding:
-      position: 101
+      position: 10
       prefix: --temp
   - id: wtemp
     type:
       - 'null'
       - string
-    doc: Directory to use for temporary workflow coordination files, which for 
-      debugging purposes will not be deleted. For clusters this must be on a 
-      shared drive. Default behaviour is to use a system specified temporary 
-      directory (for the local executor) or a temporary directory under the 
-      present direct (for clusters), and remove this afterwards.
+    doc: "Directory to use for temporary workflow coordination files, which for debugging purposes will not be deleted."
     inputBinding:
-      position: 101
+      position: 10
       prefix: --wtemp
+  - id: log
+    type:
+      - 'null'
+      - string
+    doc: "Where to record log(s). Use '-' for no logging."
+    inputBinding:
+      position: 10
+      prefix: --log
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: "Show debugging level logging at the terminal (in addition to the log file)."
+    inputBinding:
+      position: 10
+      prefix: --debug
 outputs:
-  - id: stdout
+  - id: database_out
+    type: File
+    doc: Updated database
+    outputBinding:
+      glob: $(inputs.database.basename)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file (written when log is set)
+    outputBinding:
+      glob: $(inputs.log)
+  - id: stdout_text
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.database)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyani-plus:1.0.0--pyhdfd78af_0

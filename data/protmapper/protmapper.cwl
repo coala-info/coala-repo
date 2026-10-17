@@ -68,6 +68,9 @@ outputs:
       site produced by Protmapper.
     outputBinding:
       glob: '$(inputs.output)'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/protmapper:0.0.29--pyhdfd78af_0

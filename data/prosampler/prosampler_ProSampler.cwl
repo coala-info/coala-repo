@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./ProSampler
+baseCommand: ProSampler
 label: prosampler_ProSampler
 doc: "ProSampler is a tool for motif discovery in DNA sequences.\n\nTool homepage:
   https://github.com/zhengchangsulab/ProSampler"
@@ -94,21 +94,11 @@ inputs:
       position: 101
       prefix: -p
   - id: output_prefix
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Prefix of the names of output files
     inputBinding:
       position: 101
       prefix: -o
-  - id: print_help
-    type:
-      - 'null'
-      - boolean
-    doc: Print this message
-    inputBinding:
-      position: 101
-      prefix: -h
   - id: significant_kmer_zvalue_cutoff
     type:
       - 'null'
@@ -134,9 +124,32 @@ inputs:
       position: 101
       prefix: -s
 outputs:
+  - id: motifs_meme
+    type:
+      - 'null'
+      - File
+    doc: Motifs in MEME format (<prefix>.meme)
+    outputBinding:
+      glob: $(inputs.output_prefix).meme
+  - id: motif_sites
+    type:
+      - 'null'
+      - File
+    doc: Binding sites of the motifs (<prefix>.site)
+    outputBinding:
+      glob: $(inputs.output_prefix).site
+  - id: motif_spic
+    type:
+      - 'null'
+      - File
+    doc: Motif matrices with SPIC scores (<prefix>.spic)
+    outputBinding:
+      glob: $(inputs.output_prefix).spic
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prosampler:1.5--h9948957_2

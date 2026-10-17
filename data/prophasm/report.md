@@ -1,5 +1,11 @@
 # prophasm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prophasm | PASS |  |
+
 ## prophasm
 
 ### Tool Description

@@ -38,8 +38,6 @@ inputs:
       prefix: --longreads
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: 'MANDATORY: reference contigs or scaffolds in fasta format'
     inputBinding:
       position: 101
@@ -53,11 +51,13 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+    type:
+      - 'null'
+      - string
+    doc: output directory of results, defult is current directory
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --outputdir
 outputs:
   - id: output_dir
     type:
@@ -65,7 +65,7 @@ outputs:
       - Directory
     doc: output directory of results, defult is current directory
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: "${ var d = inputs.output_dir_path ? inputs.output_dir_path + '/' : ''; var f = inputs.filtered ? inputs.filtered : 3000; return d + 'result_' + f; }"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

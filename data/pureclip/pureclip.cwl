@@ -158,18 +158,21 @@ inputs:
     type:
       type: array
       items: File
-    doc: 'Target bam index files. Valid filetype is: .bai.'
+      inputBinding:
+        prefix: --bai
+    doc: 'Target bam index files. Valid filetype is: .bai. One per BAM file, in the
+      same order.'
     inputBinding:
       position: 101
-      prefix: --bai
   - id: input_bam
     type:
       type: array
       items: File
-    doc: 'Target bam files. Valid filetype is: .bam.'
+      inputBinding:
+        prefix: --in
+    doc: 'Target bam files. Valid filetype is: .bam. Give one or two (replicates).'
     inputBinding:
       position: 101
-      prefix: --in
   - id: intervals_learn
     type:
       - 'null'

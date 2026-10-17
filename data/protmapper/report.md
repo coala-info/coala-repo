@@ -1,5 +1,11 @@
 # protmapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| protmapper | PASS |  |
+
 ## protmapper
 
 ### Tool Description

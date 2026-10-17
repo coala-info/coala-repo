@@ -12,6 +12,13 @@ inputs:
       type: array
       items: File
     doc: Alignment files to include in pileup, in bam or cram format and indexed
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 1
   - id: min_map_quality

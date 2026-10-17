@@ -61,9 +61,7 @@ inputs:
       prefix: --output
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: BCF file that contains the filtered results (if omitted, write to 
       STDOUT).
     outputBinding:

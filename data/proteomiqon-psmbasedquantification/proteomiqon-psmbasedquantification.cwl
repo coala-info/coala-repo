@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.PSMBasedQuantification
+baseCommand: proteomiqon-psmbasedquantification
 label: proteomiqon-psmbasedquantification
 doc: "Performs PSM-based quantification using mass spectrometry output, scored PSMs,
   and a peptide database.\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
@@ -19,10 +19,11 @@ inputs:
       items: File
     doc: Specify the mass spectrometry output, either specify a file directory 
       containing the files to be analyzed or specify the file path of a single 
-      mzlite file.
+      mzlite file. The files are staged writable because the tool writes to them.
     inputBinding:
       position: 101
       prefix: --instrumentoutput
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: log_level
     type:
       - 'null'
@@ -104,6 +105,10 @@ outputs:
       glob: $(inputs.outputdirectory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.instrumentoutput)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: 

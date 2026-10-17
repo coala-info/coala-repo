@@ -16,6 +16,11 @@ inputs:
     doc: GFA file
     inputBinding:
       position: 2
+  - id: output_dir
+    type: string
+    doc: Output directory (created by the tool; must not exist)
+    inputBinding:
+      position: 3
   - id: threads
     type:
       - 'null'
@@ -29,7 +34,7 @@ outputs:
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pstools:0.2a3--h077b44d_4

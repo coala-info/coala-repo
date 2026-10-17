@@ -112,7 +112,9 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      - 'null'
+      - File
     doc: path/to/output.tsv
     outputBinding:
       glob: $(inputs.output_path)
@@ -130,8 +132,12 @@ outputs:
     doc: path/to/output.domtblout
     outputBinding:
       glob: $(inputs.domtblout_path)
+  - id: stdout
+    type: stdout
+    doc: Hit table written to standard output when no output file is given
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyhmmsearch:2025.10.23.post1--pyh7e72e81_0
+stdout: pyhmmsearch.out

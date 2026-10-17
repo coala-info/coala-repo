@@ -94,28 +94,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: zip
+  - id: zip_path
     type:
       - 'null'
-      - File
+      - string
     doc: use this option to compress all the output files in a single zip file
     inputBinding:
       position: 101
       prefix: --zip
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output_file
 outputs:
-  - id: output_file
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: k-mer count, Z score and top k-mers in features output files, plus the log.
+    outputBinding:
+      glob:
+        - '*.txt'
+        - '*.gtf'
+  - id: zip
     type:
       - 'null'
       - File
-    doc: Use this flag to override the standard file names. Do NOT add an 
-      extension.
+    doc: use this option to compress all the output files in a single zip file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.zip_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

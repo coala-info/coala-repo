@@ -1,5 +1,11 @@
 # proteomiqon-alignmentbasedquantification CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-alignmentbasedquantification | Not completed | no matching test data: needs the mzlite of a second run plus .align and .alignmetric files from QuantBasedAlignment; the repo test set has only the .quant, .align and .alignmetric of truncated runs without their mzlite |
+
 ## proteomiqon-alignmentbasedquantification
 
 ### Tool Description

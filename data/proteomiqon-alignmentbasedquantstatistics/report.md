@@ -1,5 +1,11 @@
 # proteomiqon-alignmentbasedquantstatistics CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-alignmentbasedquantstatistics | Not completed | no matching test data: needs .alignedQuant files from AlignmentBasedQuantification of a multi-run experiment, which the repo test set does not have |
+
 ## proteomiqon-alignmentbasedquantstatistics
 
 ### Tool Description

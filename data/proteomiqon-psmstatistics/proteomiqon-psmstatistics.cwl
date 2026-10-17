@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.PSMStatistics
+baseCommand: proteomiqon-psmstatistics
 label: proteomiqon-psmstatistics
 doc: "Compute PSM statistics and score peptide spectrum matches.\n\nTool homepage:
   https://csbiology.github.io/ProteomIQon/"

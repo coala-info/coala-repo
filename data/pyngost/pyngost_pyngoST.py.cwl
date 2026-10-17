@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyngoST
+baseCommand: pyngoST.py
 label: pyngost_pyngoST.py
 doc: "fast, simultaneous and accurate multiple sequence typing of Neisseria gonorrhoeae
   genome collections\n\nTool homepage: https://github.com/leosanbu/pyngoST"
@@ -116,7 +116,7 @@ inputs:
   - id: out_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path used to save output files
     inputBinding:
       position: 101
@@ -157,7 +157,52 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Typing table (screen output when no output file name is given)
+  - id: results_table
+    type:
+      - 'null'
+      - File
+    doc: Results table written with out_filename
+    outputBinding:
+      glob: "$(inputs.out_filename ? (inputs.out_path ? inputs.out_path + '/' + inputs.out_filename : inputs.out_filename) : null)"
+  - id: new_allele_fastas
+    type:
+      type: array
+      items: File
+    doc: Fasta files with new alleles (alleles_out option)
+    outputBinding:
+      glob: "$(inputs.out_path ? inputs.out_path : '.')/*.fasta"
+  - id: database_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Downloaded allele and profile database (download_db option)
+    outputBinding:
+      glob: "$(inputs.download_db ? (inputs.db_name ? inputs.db_name : 'allelesDB') : null)"
+  - id: updated_database
+    type:
+      - 'null'
+      - Directory
+    doc: Database directory with the recreated pickle file (update option)
+    outputBinding:
+      glob: "$(inputs.update && inputs.path ? inputs.path.basename : null)"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.update && inputs.path) {
+          l.push({"entry": inputs.path, "writable": true});
+        }
+        if (inputs.out_path) {
+          l.push({"entryname": inputs.out_path, "writable": true,
+                  "entry": {"class": "Directory", "basename": inputs.out_path, "listing": []}});
+        }
+        return l;
+      }
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyngost:1.1.3--pyh7e72e81_0

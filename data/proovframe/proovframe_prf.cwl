@@ -1,14 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: proovframe_prf
+baseCommand:
+  - proovframe
+  - prf
 label: proovframe_prf
 doc: "Assess error rate of a query sequence against a reference sequence.\n\nTool
   homepage: https://github.com/thackl/proovframe"
 inputs:
   - id: reference_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference FASTA file
     inputBinding:
       position: 1
@@ -37,21 +37,19 @@ inputs:
     type:
       - 'null'
       - int
-    doc: only assess first
+    doc: only assess first N reads [1000]
     inputBinding:
       position: 103
       prefix: --num-reads
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: write to this file
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: write to this file
     outputBinding:
       glob: $(inputs.output_file_path)

@@ -1,5 +1,11 @@
 # pylprotpredictor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pylprotpredictor | PASS | test scaffold genome from the tool repo; UniProt archaeal Swiss-Prot proteins as reference FASTA instead of UniRef90 (290 CDS, 17 TAG-ending, 7 with homologs) |
+
 ## pylprotpredictor
 
 ### Tool Description

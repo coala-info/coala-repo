@@ -1,5 +1,11 @@
 # pscan-tfbs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pscan-tfbs | PASS | Rewritten from the real help (old options were invented). Real human promoters: NFY scan finds CCAAT sites; query vs background run works. Note: the -m (precomputed background) mode crashes with a GSL error. |
+
 ## pscan-tfbs
 
 ### Tool Description

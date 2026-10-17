@@ -71,6 +71,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no-date
+  - id: outputfile
+    type:
+      - 'null'
+      - string
+    doc: Output file.
+    inputBinding:
+      position: 101
+      prefix: --outputfile
   - id: quiet
     type:
       - 'null'
@@ -110,7 +118,9 @@ outputs:
       - File
     doc: Output file.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.outputfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pygtftk:1.6.2--py39heed1e64_5

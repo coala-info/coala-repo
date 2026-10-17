@@ -1,5 +1,11 @@
 # pullseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pullseq | PASS |  |
+
 ## pullseq
 
 ### Tool Description

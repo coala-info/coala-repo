@@ -1,5 +1,11 @@
 # pycov3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pycov3 | PASS |  |
+
 ## pycov3
 
 ### Tool Description

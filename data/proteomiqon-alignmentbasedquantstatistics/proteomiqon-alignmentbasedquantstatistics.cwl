@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.AlignmentBasedQuantStatistics
+baseCommand: proteomiqon-alignmentbasedquantstatistics
 label: proteomiqon-alignmentbasedquantstatistics
 doc: "Performs alignment-based quantification statistics.\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
 inputs:

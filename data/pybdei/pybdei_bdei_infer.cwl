@@ -44,10 +44,11 @@ inputs:
       prefix: --mu
   - id: nwk
     type: File
-    doc: Input tree(s) in newick format (must be rooted).
+    doc: Input tree(s) in newick format (must be rooted). A writable copy is staged because the tool writes a temporary file beside it.
     inputBinding:
       position: 101
       prefix: --nwk
+      valueFrom: $(self.basename)
   - id: p
     type:
       - 'null'
@@ -172,6 +173,10 @@ outputs:
       glob: $(inputs.time_log_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.nwk)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pybdei:0.13--py310hef477bb_1

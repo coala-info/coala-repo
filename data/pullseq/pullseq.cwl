@@ -37,7 +37,7 @@ inputs:
     doc: Exclude the header id names in the list (-n)
     inputBinding:
       position: 101
-      prefix: --excluded
+      prefix: -e
   - id: input_file
     type: File
     doc: Input fasta/fastq file
@@ -76,11 +76,17 @@ inputs:
     inputBinding:
       position: 101
       prefix: --names_stdin
+  - id: names_stdin_file
+    type:
+      - 'null'
+      - File
+    doc: File of header id names sent to standard input (use with names_stdin)
   - id: quality_code
     type:
       - 'null'
-      - string
-    doc: ASCII code to use for fasta->fastq quality conversions
+      - int
+    doc: ASCII code to use for fasta->fastq quality conversions (for example 73
+      for I)
     inputBinding:
       position: 101
       prefix: --quality
@@ -104,7 +110,10 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pullseq:1.0.2--h1104d80_11
+stdin: "$(inputs.names_stdin_file ? inputs.names_stdin_file.path : null)"
 stdout: pullseq.out

@@ -1,5 +1,11 @@
 # pyfish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyfish | PASS |  |
+
 ## pyfish
 
 ### Tool Description

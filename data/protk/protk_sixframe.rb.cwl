@@ -7,8 +7,6 @@ inputs:
   - id: genome_fasta
     type: File
     doc: Input genome fasta file
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 1
   - id: coords

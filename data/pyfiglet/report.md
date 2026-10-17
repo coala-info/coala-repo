@@ -1,5 +1,11 @@
 # pyfiglet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyfiglet | PASS |  |
+
 ## pyfiglet
 
 ### Tool Description

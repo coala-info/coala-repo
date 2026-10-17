@@ -1,5 +1,11 @@
 # proteomiqon-joinquantpepionswithproteins CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-joinquantpepionswithproteins | PASS |  |
+
 ## proteomiqon-joinquantpepionswithproteins
 
 ### Tool Description

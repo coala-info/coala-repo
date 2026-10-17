@@ -1,5 +1,11 @@
 # pymsaviz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pymsaviz | PASS |  |
+
 ## pymsaviz
 
 ### Tool Description

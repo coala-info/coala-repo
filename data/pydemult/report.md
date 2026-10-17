@@ -1,5 +1,11 @@
 # pydemult CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pydemult | PASS | synthetic data: read names built from real 10x scATAC R1 reads plus their real I1 index reads |
+
 ## pydemult
 
 ### Tool Description

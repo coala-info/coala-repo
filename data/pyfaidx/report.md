@@ -1,5 +1,11 @@
 # pyfaidx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyfaidx_faidx | PASS |  |
+
 ## pyfaidx_faidx
 
 ### Tool Description

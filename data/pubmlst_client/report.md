@@ -1,5 +1,12 @@
 # pubmlst_client CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pubmlst_client_pubmlst_download | PASS |  |
+| pubmlst_client_pubmlst_list | PASS |  |
+
 ## pubmlst_client_pubmlst_list
 
 ### Tool Description

@@ -1,25 +1,29 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pyfastaq_fastaq
+  - fastaq
   - acgtn_only
 label: pyfastaq_fastaq_acgtn_only
-doc: "Filter FASTA/FASTQ sequences to only include ACGTN characters.\n\nTool homepage:
-  https://github.com/sanger-pathogens/Fastaq"
+doc: "Replaces any character that is not one of acgtACGTnN with an N\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
+  - id: infile
     type: File
-    doc: Input FASTA or FASTQ file
+    doc: "Name of input file"
     inputBinding:
-      position: 1
+      position: 20
+  - id: outfile
+    type: string
+    doc: "Name of output file"
+    inputBinding:
+      position: 21
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: 'Output FASTA or FASTQ file (default: stdout)'
+  - id: output
+    type: File
+    doc: "Name of output file"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

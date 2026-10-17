@@ -17,12 +17,17 @@ inputs:
     doc: predicted haplotypes fasta file
     inputBinding:
       position: 2
+  - id: output_dir
+    type: string
+    doc: output directory (created by the tool; must not exist)
+    inputBinding:
+      position: 3
   - id: enable_identity_check
     type:
       - 'null'
-      - boolean
-    doc: enable identity check on contigs, exclude identical ones while 
-      scaffolding
+      - string
+    doc: 'enable identity check on contigs, exclude identical ones while scaffolding
+      (BOOL: true or false)'
     inputBinding:
       position: 103
       prefix: -i
@@ -48,7 +53,7 @@ outputs:
     type: Directory
     doc: output directory
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pstools:0.2a3--h077b44d_4

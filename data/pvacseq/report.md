@@ -1,5 +1,17 @@
 # pvacseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pvacseq_binding_filter | PASS |  |
+| pvacseq_config_files | PASS |  |
+| pvacseq_coverage_filter | PASS |  |
+| pvacseq_download_example_data | PASS |  |
+| pvacseq_generate_protein_fasta | PASS |  |
+| pvacseq_install_vep_plugin | PASS |  |
+| pvacseq_run | PASS | ran with the SMM predictor through the IEDB web service on a small VCF; local IEDB install and other predictors not tested |
+
 ## pvacseq_run
 
 ### Tool Description

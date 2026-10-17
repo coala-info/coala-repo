@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.MzMLToMzLite
+baseCommand: proteomiqon-mzmltomzlite
 label: proteomiqon-mzmltomzlite
 doc: "Converts mzML files to MzLite format.\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
 inputs:

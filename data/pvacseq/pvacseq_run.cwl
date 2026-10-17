@@ -33,6 +33,18 @@ inputs:
       etc.). Multiple algorithms can be specified, separated by spaces.
     inputBinding:
       position: 4
+  - id: output_dir_path
+    type: string
+    doc: The directory for writing all result files
+    inputBinding:
+      position: 5
+  - id: additional_input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the additional input file list (expression and coverage
+      files), staged in the working directory so the names in the yaml resolve.
   - id: additional_input_file_list
     type:
       - 'null'
@@ -80,7 +92,7 @@ inputs:
   - id: expn_val
     type:
       - 'null'
-      - float
+      - int
     doc: Gene and Transcript Expression cutoff. Sites above this cutoff will be 
       considered.
     inputBinding:
@@ -124,7 +136,7 @@ inputs:
   - id: minimum_fold_change
     type:
       - 'null'
-      - float
+      - int
     doc: Minimum fold change between mutant binding score and wild-type score.
     inputBinding:
       position: 105
@@ -166,7 +178,7 @@ inputs:
   - id: normal_vaf
     type:
       - 'null'
-      - float
+      - int
     doc: Normal VAF Cutoff. Sites BELOW this cutoff in normal will be 
       considered.
     inputBinding:
@@ -191,7 +203,7 @@ inputs:
   - id: tdna_vaf
     type:
       - 'null'
-      - float
+      - int
     doc: Tumor DNA VAF Cutoff. Sites above this cutoff will be considered.
     inputBinding:
       position: 105
@@ -225,7 +237,7 @@ inputs:
   - id: trna_vaf
     type:
       - 'null'
-      - float
+      - int
     doc: Tumor RNA VAF Cutoff. Sites above this cutoff will be considered.
     inputBinding:
       position: 105
@@ -235,7 +247,13 @@ outputs:
     type: Directory
     doc: The directory for writing all result files
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.additional_input_files ? inputs.additional_input_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pvacseq:4.0.10--py36_0

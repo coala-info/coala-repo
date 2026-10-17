@@ -1,5 +1,11 @@
 # prosampler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prosampler_ProSampler | PASS |  |
+
 ## prosampler_ProSampler
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # pycistarget CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pycistarget_cistarget | Not completed | needs a large cisTarget rankings database and motif annotations downloaded from the web; no small test database exists |
+| pycistarget_dem | Not completed | needs a large DEM score database and motif annotations downloaded from the web; no small test database exists |
+
 ## pycistarget_cistarget
 
 ### Tool Description

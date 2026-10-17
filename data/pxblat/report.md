@@ -1,5 +1,17 @@
 # pxblat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pxblat_client | PASS | added network access; psl output matches the repo ground-truth file (needs a running pxblat server) |
+| pxblat_fatotwobit | PASS | added missing output positional; 2bit file identical to the repo test file |
+| pxblat_server_files | PASS | added network access; ran against a pxblat server started from the same image |
+| pxblat_server_start | Failed | tool bug: --log writes no log file (server itself starts and answers client and status requests) |
+| pxblat_server_status | PASS | added network access; ran against a pxblat server started from the same image |
+| pxblat_server_stop | PASS | added network access; ran against a pxblat server started from the same image |
+| pxblat_twobittofa | PASS | fasta from the repo test 2bit matches the source sequence |
+
 ## pxblat_fatotwobit
 
 ### Tool Description
@@ -145,10 +157,10 @@ Usage: pxblat twobittofa [OPTIONS] input.2bit out.fa
 ```
 
 
-## pxblat_server
+## pxblat_server_start
 
 ### Tool Description
-Make a server to quickly find where DNA occurs in genome
+To set up a server.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pxblat:1.2.8--py311h93bbee8_1
@@ -158,22 +170,142 @@ Make a server to quickly find where DNA occurs in genome
 
 ### Original Help Text
 ```text
-Usage: pxblat server [OPTIONS] COMMAND [ARGS]...                               
                                                                                 
- Make a server to quickly find where DNA occurs in genome                       
+ Usage: pxblat server start [OPTIONS] HOST PORT TWO_BIT                         
                                                                                 
-╭─ Options ────────────────────────────────────────────────────────────────────╮
-│ --help  -h        Show this message and exit.                                │
+ To set up a server.                                                            
+                                                                                
+ gfServer start host port file(s)                                               
+                                                                                
+ where the files are .2bit or .nib format files specified relative to the       
+ current directory                                                              
+                                                                                
+╭─ Arguments ──────────────────────────────────────────────────────────────────╮
+│ *    host         TEXT     [required]                                        │
+│ *    port         INTEGER  [required]                                        │
+│ *    two_bit      FILE     Two bit file [required]                           │
 ╰──────────────────────────────────────────────────────────────────────────────╯
-╭─ Commands ───────────────────────────────────────────────────────────────────╮
-│ start   To set up a server.                                                  │
-│ stop    To remove a server.                                                  │
-│ status  To figure out if server is alive, on static instances get usage      │
-│         statics.                                                             │
-│ files   To get input file list.                                              │
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --tile-size              INTEGER  Size of n-mers to index.  Default is 11    │
+│                                   for nucleotides, 4 for proteins (or        │
+│                                   translated nucleotides).                   │
+│                                   [default: 11]                              │
+│ --stepSize               INTEGER  Spacing between tiles. Default is          │
+│                                   tileSize.                                  │
+│                                   [default: 11]                              │
+│ --min-match              INTEGER  Number of n-mer matches that trigger       │
+│                                   detailed alignment. Default is 2 for       │
+│                                   nucleotides, 3 for proteins.               │
+│                                   [default: 2]                               │
+│ --trans                           Translate database to protein in 6 frames. │
+│ --log                    TEXT     Keep a log file that records server        │
+│                                   requests.                                  │
+│ --mask                            Use masking from .2bit file.               │
+│ --repMatch               INTEGER  Number of occurrences of a tile (n-mer)    │
+│                                   that triggers repeat masking the tile.     │
+│                                   Default is 1024.                           │
+│                                   [default: 0]                               │
+│ --noSimpRepMask                   Suppresses simple repeat masking.          │
+│ --maxDnaHits             INTEGER  Maximum number of hits for a DNA query     │
+│                                   that are sent from the server.             │
+│                                   [default: 100]                             │
+│ --maxTransHits           INTEGER  Maximum number of hits for a translated    │
+│                                   query that are sent from the server.       │
+│                                   [default: 200]                             │
+│ --maxNtSize              INTEGER  Maximum size of untranslated DNA query     │
+│                                   sequence.                                  │
+│                                   [default: 40000]                           │
+│ --perSeqMax              FILE     File contains one seq filename (possibly   │
+│                                   with ':seq' suffix) per line.              │
+│ --canStop                         If set, a quit message will actually take  │
+│                                   down the server.                           │
+│ --indexFile              FILE     Index file create by `gfServer index'.     │
+│ --timeout                INTEGER  Timeout in seconds. [default: 90]          │
+│ --help           -h               Show this message and exit.                │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+## pxblat_server_stop
+
+### Tool Description
+To remove a server.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pxblat:1.2.8--py311h93bbee8_1
+- **Homepage**: https://pypi.org/project/pxblat/
+- **Package**: https://anaconda.org/channels/bioconda/packages/pxblat/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                                                                
+ Usage: pxblat server stop [OPTIONS] HOST PORT                                  
+                                                                                
+ To remove a server.                                                            
+                                                                                
+╭─ Arguments ──────────────────────────────────────────────────────────────────╮
+│ *    host      TEXT     [required]                                           │
+│ *    port      INTEGER  [required]                                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --help  -h        Show this message and exit.                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+```
+
+## pxblat_server_status
+
+### Tool Description
+To figure out if server is alive, on static instances get usage statics.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pxblat:1.2.8--py311h93bbee8_1
+- **Homepage**: https://pypi.org/project/pxblat/
+- **Package**: https://anaconda.org/channels/bioconda/packages/pxblat/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                                                                
+ Usage: pxblat server status [OPTIONS] HOST PORT                                
+                                                                                
+ To figure out if server is alive, on static instances get usage statics.       
+                                                                                
+╭─ Arguments ──────────────────────────────────────────────────────────────────╮
+│ *    host      TEXT     [required]                                           │
+│ *    port      INTEGER  [required]                                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --trans            Translate database to protein in 6 frames.                │
+│ --help   -h        Show this message and exit.                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+```
+
+## pxblat_server_files
+
+### Tool Description
+To get input file list.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pxblat:1.2.8--py311h93bbee8_1
+- **Homepage**: https://pypi.org/project/pxblat/
+- **Package**: https://anaconda.org/channels/bioconda/packages/pxblat/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                                                                
+ Usage: pxblat server files [OPTIONS] HOST PORT                                 
+                                                                                
+ To get input file list.                                                        
+                                                                                
+╭─ Arguments ──────────────────────────────────────────────────────────────────╮
+│ *    host      TEXT     [required]                                           │
+│ *    port      INTEGER  [required]                                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --help  -h        Show this message and exit.                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+```
 
 ## Metadata
 - **Skill**: generated

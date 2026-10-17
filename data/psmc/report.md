@@ -1,5 +1,25 @@
 # psmc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| psmc | PASS | Diploid consensus built from real NA12878 (1000 Genomes) chr22 heterozygous sites on GRCh37 30-34 Mb; converted with fq2psmcfa; converged, theta near 0.0008 per bp. |
+| psmc_avg.pl | Failed | image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute. |
+| psmc_calD | Not completed | runs on real 1000 Genomes consensus sequences, but the D value could not be confirmed independently (only its sign matched a site count). |
+| psmc_cntcpg | PASS | Binary count file for the NA12878 chr22 reference slice; CpG and non-CpG counts of 400 bins match an independent count. CWL note: output is a binary file for psmc -c. |
+| psmc_ctime_plot.pl | Failed | image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute. |
+| psmc_dec2ctime.pl | Failed | image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute. |
+| psmc_decode2bed.pl | Failed | image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute. |
+| psmc_fq2psmcfa | PASS | Same NA12878 chr22 slice; number of K bins equals the number of 100 bp windows with a heterozygous site (3186). |
+| psmc_history2ms.pl | Failed | image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute. |
+| psmc_ms2psmcfa.pl | Failed | image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute. |
+| psmc_mutDiff | PASS | Four real 1000 Genomes chr22 1 Mb consensus sequences; listed difference sites (815 = 506 + 309) all valid and all unambiguous differences present. |
+| psmc_psmc2history.pl | Failed | image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute. |
+| psmc_psmc_plot.pl | Failed | image problem: the Perl script starts with #!/usr/bin/perl, which is missing in the image, so it cannot execute. |
+| psmc_psmc_trunc.pl | Failed | image problem: perl is not installed in the image ('env: can't execute perl'). |
+| psmc_splitfa | PASS | Split of the NA12878 chr22 PSMCFA into 4 trunks; concatenation equals the input. |
+
 ## psmc
 
 ### Tool Description
@@ -36,5 +56,286 @@ Options: -p STR      pattern of parameters [4+5*3+4]
          -S          simulate sequence
          -d          perform decoding
          -D          print full posterior probabilities
+```
+
+## psmc_fq2psmcfa
+
+### Tool Description
+Convert a diploid consensus FASTQ into the PSMCFA input of psmc
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: fq2psmcfa [-cnvx] [-q 10] [-g 10000] [-s 100] <in.fq>
+```
+
+
+## psmc_splitfa
+
+### Tool Description
+Split sequences of a PSMCFA file into trunks for bootstrapping with psmc -b
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: splitfa <in.fa> [trunk_size=500000]
+```
+
+
+## psmc_cntcpg
+
+### Tool Description
+Count CpG and non-CpG sites for the CpG-aware mode of psmc
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: cntcpg [-b] [-s 100] [-n 0.9] <in.fa>
+
+Output: 5 numbers: #CpG #CpG-ts #nonCpG #nonCpG-ts+tv #tv
+```
+
+
+## psmc_calD
+
+### Tool Description
+Calculate the D-statistic from four consensus sequences
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: calD [options] <U.fa> <V.fa> <X.fa> <Y.fa>
+Options:
+  -w INT     window size for block Jack-Knife [1000000]
+  -q INT     quality threshold [0]
+  -M FILE    mask regions in BED FILE [null]
+  -s INT     step size (effective with -b) [100]
+  -b         binary output
+```
+
+
+## psmc_mutDiff
+
+### Tool Description
+Count mutation differences between two sequences relative to an outgroup
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: mutDiff [-bl] [-s 100] <1.fa> <2.fa> <outgroup.fa>
+```
+
+
+## psmc_psmc2history.pl
+
+### Tool Description
+Convert a PSMC result to a history file for simulation
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: psmc2history.pl [-n 20] <in.psmc.par>
+```
+
+
+## psmc_history2ms.pl
+
+### Tool Description
+Convert a PSMC parameter file into an ms command line
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:   history2ms.pl [options] <in.psmc.par>
+
+Options: -n INT    number of chromosome to simulate [2]
+         -L INT    length of each chromosome [30000000]
+         -s INT    skip used in psmc run [100]
+         -u FLOAT  neutral mutation rate [2.5e-8]
+         -R FLOAT  recomb. rate in hotspots are FLOAT times larger [10]
+         -g INT    years per generation [25]
+         -d INT    divergence time [0]
+         -r INT    # replicates [1]
+         -M        output macs command line
+```
+
+
+## psmc_ms2psmcfa.pl
+
+### Tool Description
+Convert ms simulation output to PSMCFA
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ms2psmcfa.pl [-s 100] <ms.out>   (options from the script source: -s bin size)
+```
+
+
+## psmc_psmc_plot.pl
+
+### Tool Description
+Plot the PSMC estimate of effective population size history
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:   psmc_plot.pl [options] <out.prefix> <in.psmc>
+
+Options: -u FLOAT   absolute mutation rate per nucleotide [2.5e-8]
+         -s INT     skip used in data preparation [100]
+         -X FLOAT   maximum generations, 0 for auto [0]
+         -x FLOAT   minimum generations, 0 for auto [10000]
+         -Y FLOAT   maximum popsize, 0 for auto [0]
+         -m INT     minimum number of iteration [5]
+         -n INT     take n-th iteration (suppress GOF) [20]
+         -M titles  multiline mode [null]
+         -f STR     font for title, labels and tics [Helvetica,16]
+         -g INT     number of years per generation [25]
+         -w INT     line width [4]
+         -P STR     position of the keys [right top]
+         -T STR     figure title [null]
+         -N FLOAT   false negative rate [0]
+         -S         no scaling
+         -L         show the last bin
+         -p         convert to PDF (with epstopdf)
+         -R         do not remove temporary files
+         -G         plot grid
+```
+
+
+## psmc_decode2bed.pl
+
+### Tool Description
+Convert PSMC decoding output to BED
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: decode2bed.pl [-s 100] [-N 0] <in.dec>
+```
+
+
+## psmc_avg.pl
+
+### Tool Description
+Compute average population size over time intervals from a PSMC result
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: avg.pl [-n 20] [-s 100] [-b 0] [-e 999] <in.psmc>   (options from the script source)
+```
+
+
+## psmc_ctime_plot.pl
+
+### Tool Description
+Plot coalescent times along the genome
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:   ctime_plot.pl [options] <in.ctime> [...]
+
+Options: -d DIR      working directory [ctime_plot]
+         -l FLOAT    length of the figure [10.0]
+         -h FLOAT    height of the figure [0.5]
+         -Y FLOAT    max Y-axis, 0 for auto [0]
+         -r FILE     recombination map (.rho) [null]
+```
+
+
+## psmc_dec2ctime.pl
+
+### Tool Description
+Convert PSMC decoding output to coalescent times along the genome
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: dec2ctime.pl [-u 2.5e-8] [-s 100] [-N 0] <in.dec>
+```
+
+
+## psmc_psmc_trunc.pl
+
+### Tool Description
+Truncate a PSMC result file at a given time
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/psmc:0.6.5--h5ca1c30_4
+- **Homepage**: https://github.com/lh3/psmc
+- **Package**: https://anaconda.org/channels/bioconda/packages/psmc/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: psmc_trunc.pl [-n 20] [-d 0] [-s 100] <in.psmc>   (options from the script source)
 ```
 

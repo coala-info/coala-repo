@@ -1,5 +1,15 @@
 # prophex CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prophex_bwt2fa | PASS |  |
+| prophex_bwtdowngrade | PASS |  |
+| prophex_index | PASS |  |
+| prophex_klcp | PASS |  |
+| prophex_query | PASS |  |
+
 ## prophex_index
 
 ### Tool Description

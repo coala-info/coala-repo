@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.LabelFreeProteinQuantification
+baseCommand: proteomiqon-labelfreeproteinquantification
 label: proteomiqon-labelfreeproteinquantification
 doc: "Label-Free Protein Quantification\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
 inputs:

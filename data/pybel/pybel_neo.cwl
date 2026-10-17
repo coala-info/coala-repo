@@ -7,29 +7,34 @@ label: pybel_neo
 doc: "Upload to neo4j.\n\nTool homepage: https://pybel.readthedocs.io"
 inputs:
   - id: path
-    type: string
-    doc: Path to upload
+    type: File
+    doc: "Compiled graph pickle written by pybel compile (a BEL script path also works when its compiled pickle is beside it)"
     inputBinding:
       position: 1
   - id: connection
     type:
       - 'null'
       - string
-    doc: Connection string for neo4j upload.
+    doc: "Connection string for neo4j upload."
     inputBinding:
-      position: 102
+      position: 10
       prefix: --connection
   - id: password
     type:
       - 'null'
       - string
+    doc: "Neo4j password"
     inputBinding:
-      position: 102
+      position: 10
       prefix: --password
 outputs:
-  - id: stdout
+  - id: stdout_text
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pybel:0.13.2--py_0

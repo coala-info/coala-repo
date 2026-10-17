@@ -86,10 +86,43 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: identity_table
+    type:
+      - 'null'
+      - File
+    doc: Pairwise sequence identity matrix (with --identity)
+    outputBinding:
+      glob: $(inputs.msa.nameroot)_identity.csv
+  - id: similarity_table
+    type:
+      - 'null'
+      - File
+    doc: Pairwise sequence similarity matrix (with --similarity)
+    outputBinding:
+      glob: $(inputs.msa.nameroot)_similarity.csv
+  - id: nss_table
+    type:
+      - 'null'
+      - File
+    doc: Pairwise normalized similarity score matrix (with --nss)
+    outputBinding:
+      glob: $(inputs.msa.nameroot)_nss.csv
+  - id: long_table
+    type:
+      - 'null'
+      - File
+    doc: Long-form table of all requested pairwise values
+    outputBinding:
+      glob: $(inputs.msa.nameroot)_table.tsv
+  - id: default_grouping
+    type:
+      - 'null'
+      - File
+    doc: Default amino acid similarity groups file, created when needed and not given
+    outputBinding:
+      glob: default_aa_similarity_groups.txt
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pseqsid:1.1.0--h4349ce8_0
-stdout: pseqsid.out

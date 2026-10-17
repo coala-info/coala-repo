@@ -1,25 +1,29 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pyfastaq
   - fastaq
   - strip_illumina_suffix
 label: pyfastaq_fastaq_strip_illumina_suffix
-doc: "Remove Illumina suffix from FASTA/FASTQ IDs\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
+doc: "Strips /1 or /2 off the end of every read name\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
+  - id: infile
     type: File
-    doc: Input FASTA/FASTQ file
+    doc: "Name of input file"
     inputBinding:
-      position: 1
+      position: 20
+  - id: outfile
+    type: string
+    doc: "Name of output file"
+    inputBinding:
+      position: 21
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output FASTA/FASTQ file
+  - id: output
+    type: File
+    doc: "Name of output file"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

@@ -1,41 +1,29 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pyfastaq
   - fastaq
   - sort_by_name
 label: pyfastaq_fastaq_sort_by_name
-doc: "Sort FASTA/FASTQ records by name.\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
+doc: "Sorts sequences in lexographical (name) order\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
+  - id: infile
     type: File
-    doc: Input FASTA/FASTQ file. Reads from stdin if not specified.
+    doc: "Name of input file"
     inputBinding:
-      position: 1
-  - id: compress
-    type:
-      - 'null'
-      - boolean
-    doc: Compress output using gzip.
+      position: 20
+  - id: outfile
+    type: string
+    doc: "Name of output file"
     inputBinding:
-      position: 102
-      prefix: --compress
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for compression.
-    inputBinding:
-      position: 102
-      prefix: --threads
+      position: 21
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output FASTA/FASTQ file. Writes to stdout if not specified.
+  - id: output
+    type: File
+    doc: "Name of output file"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

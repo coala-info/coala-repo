@@ -1,5 +1,17 @@
 # pyfastx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyfastx_extract | PASS |  |
+| pyfastx_fq2fa | PASS |  |
+| pyfastx_index | PASS |  |
+| pyfastx_sample | PASS |  |
+| pyfastx_split | PASS |  |
+| pyfastx_stat | PASS |  |
+| pyfastx_subseq | PASS |  |
+
 ## pyfastx_index
 
 ### Tool Description

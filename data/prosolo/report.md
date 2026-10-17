@@ -1,5 +1,13 @@
 # prosolo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prosolo_control-fdr | PASS |  |
+| prosolo_estimate-mutation-rate | PASS | synthetic data: allele frequency CSV made by a simulation; the program reads CSV, not VCF/BCF as its help says |
+| prosolo_single-cell-bulk | PASS |  |
+
 ## prosolo_control-fdr
 
 ### Tool Description
@@ -68,27 +76,6 @@ OPTIONS:
         --fit <FILE>        Path to file that will contain observations and the parameters of the fitted model as JSON.
     -F, --max-af <FLOAT>    Maximum allele frequency to consider [0.25].
     -f, --min-af <FLOAT>    Minimum allele frequency to consider [0.12].
-```
-
-## prosolo_variants
-
-### Tool Description
-Prosolo variants tool
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/prosolo:0.6.1--h2138d71_0
-- **Homepage**: https://github.com/PROSIC/prosolo/tree/v0.2.0
-- **Package**: https://anaconda.org/channels/bioconda/packages/prosolo/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: Found argument 'variants' which wasn't expected, or isn't valid in this context
-
-USAGE:
-    prosolo [FLAGS] <SUBCOMMAND>
-
-For more information try --help
 ```
 
 ## prosolo_single-cell-bulk

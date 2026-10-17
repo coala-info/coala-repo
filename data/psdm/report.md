@@ -1,5 +1,11 @@
 # psdm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| psdm | PASS |  |
+
 ## psdm
 
 ### Tool Description

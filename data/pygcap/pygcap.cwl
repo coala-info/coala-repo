@@ -31,12 +31,14 @@ inputs:
   - id: skip
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --skip
     doc: Options to skip steps, e.g., ncbi, mmseqs2, parsing, uniprot, blastdb 
       or all
     inputBinding:
       position: 103
-      prefix: --skip
   - id: thread
     type:
       - 'null'

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.ProteinInference
+baseCommand: proteomiqon-proteininference
 label: proteomiqon-proteininference
 doc: "Protein inference tool for ProteomIQon\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
 inputs:

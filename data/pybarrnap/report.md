@@ -1,5 +1,11 @@
 # pybarrnap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pybarrnap | PASS | E. coli K-12 example: 7 16S, 7 23S and 8 5S rRNA genes found; outseq typed as string with a collected output |
+
 ## pybarrnap
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # pseudo-it CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pseudo-it_pseudo_it.py | Failed | image problem: picard in the image needs a newer Java (class file version 61, image has Java 11), so the Mark duplicates step fails. CWL fixed: reference index files are now staged. |
+
 ## pseudo-it_pseudo_it.py
 
 ### Tool Description

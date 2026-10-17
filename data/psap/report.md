@@ -1,5 +1,13 @@
 # psap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| psap_annotate | PASS |  |
+| psap_predict | Failed | image problem: scikit-learn in the image is too new to load the bundled model (unexpected keyword 'min_impurity_split'), so predict stops. |
+| psap_train | Failed | image problem: sklearn_json in the image fails on the new scikit-learn ('RandomForestClassifier' has no attribute 'min_impurity_split'), so the model JSON is empty. |
+
 ## psap_annotate
 
 ### Tool Description

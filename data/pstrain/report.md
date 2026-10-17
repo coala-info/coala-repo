@@ -1,5 +1,11 @@
 # pstrain CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pstrain | Not completed | needs the MetaPhlAn bowtie2 database (several GB), which is too large to download for a test |
+
 ## pstrain
 
 ### Tool Description

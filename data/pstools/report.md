@@ -1,5 +1,17 @@
 # pstools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pstools_completeness | Failed | image problem: pstools completeness exits with illegal instruction (status 132) and prints an empty result |
+| pstools_haplotype_scaffold | Not completed | no real haplotype connection file from a diploid assembly; tool segfaults (status 139) on the small yeast Hi-C mapping |
+| pstools_hic_mapping_haplo | Failed | image problem: pstools exits with segmentation fault (status 139) after writing the map, so cwltool reports failure |
+| pstools_hic_mapping_unitig | PASS |  |
+| pstools_phasing_error | Failed | image problem: pstools phasing_error exits with illegal instruction (status 132) and prints an empty result |
+| pstools_qv | Failed | image problem: pstools qv exits with illegal instruction (status 132) and prints an empty result |
+| pstools_resolve_haplotypes | Not completed | synthetic data: ran with a one-node graph made from yeast contigs, so the haplotype outputs are empty; no diploid HiFi graph with Hi-C test data available |
+
 ## pstools_resolve_haplotypes
 
 ### Tool Description

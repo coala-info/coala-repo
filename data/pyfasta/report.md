@@ -1,5 +1,14 @@
 # pyfasta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyfasta_extract | Failed | image problem: pyfasta calls numpy memmap.tostring(), which the image's newer numpy no longer has (AttributeError) |
+| pyfasta_flatten | PASS |  |
+| pyfasta_info | Failed | image problem: pyfasta calls numpy memmap.tostring(), which the image's newer numpy no longer has (AttributeError) |
+| pyfasta_split | Failed | image problem: pyfasta calls numpy memmap.tostring(), which the image's newer numpy no longer has (AttributeError) |
+
 ## pyfasta_extract
 
 ### Tool Description
@@ -56,7 +65,7 @@ Options:
 ## pyfasta_split
 
 ### Tool Description
-split a fasta file into separated files.
+Split a fasta file into separated files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyfasta:0.5.2--pyhdfd78af_2
@@ -93,6 +102,25 @@ Options:
                         split the sequence up into k-mers, just     split
                         based on the headers. a reasonable value would be
                         10Kbp
+```
+
+## pyfasta_flatten
+
+### Tool Description
+Flatten a fasta file inplace so all later access by pyfasta will use that flattened (but still viable) fasta file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfasta:0.5.2--pyhdfd78af_2
+- **Homepage**: https://github.com/brentp/pyfasta
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfasta/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: flatten a fasta file *inplace* so all later access by pyfasta will use that flattend (but still viable) fasta file
+
+Options:
+  -h, --help  show this help message and exit
 ```
 
 ## Metadata

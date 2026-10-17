@@ -1,48 +1,20 @@
 # protk CWL Generation Report
 
-## protk_protk_setup.rb
+## Real Data Test
 
-### Tool Description
-Post install tasks for protk.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
-- **Homepage**: https://github.com/iracooke/protk
-- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/protk/overview
-- **Total Downloads**: 5.7K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/iracooke/protk
-- **Stars**: N/A
-### Original Help Text
-```text
-"You must supply a setup task [all,system_packages]"
-#<OptionParser:0x0000000015f17bc8 @stack=[#<OptionParser::List:0x0000000015d607d0 @atype={Object=>[/.*/m, #<Proc:0x0000000015d5e1b0@/usr/local/lib/ruby/2.4.0/optparse.rb:1814>], NilClass=>[/.*/m, #<Proc:0x0000000015d5e070@/usr/local/lib/ruby/2.4.0/optparse.rb:1816>], String=>[/.+/m, #<Proc:0x0000000015d5df80@/usr/local/lib/ruby/2.4.0/optparse.rb:1821>], Integer=>[/\A[-+]?(?:0(?:[0-7]+(?:_[0-7]+)*|b[01]+(?:_[01]+)*|x[\da-f]+(?:_[\da-f]+)*)?|\d+(?:_\d+)*)\z/i, #<Proc:0x0000000015d5db20@/usr/local/lib/ruby/2.4.0/optparse.rb:1834>], Float=>[/\A[-+]?(?:\d+(?:_\d+)*(?=(.)?)(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:E[-+]?\d+(?:_\d+)*)?\z/i, #<Proc:0x0000000015d5d800@/usr/local/lib/ruby/2.4.0/optparse.rb:1847>], Numeric=>[/\A([-+]?(?:0(?:[0-7]+(?:_[0-7]+)*|b[01]+(?:_[01]+)*|x[\da-f]+(?:_[\da-f]+)*)?|(?:\d+(?:_\d+)*(?=(.)?)(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:E[-+]?\d+(?:_\d+)*)?))(?:\/([-+]?(?:0(?:[0-7]+(?:_[0-7]+)*|b[01]+(?:_[01]+)*|x[\da-f]+(?:_[\da-f]+)*)?|(?:\d+(?:_\d+)*(?=(.)?)(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:E[-+]?\d+(?:_\d+)*)?)))?\z/i, #<Proc:0x0000000015d5d418@/usr/local/lib/ruby/2.4.0/optparse.rb:1854>], /\A[-+]?\d+(?:_\d+)*\z/i=>[/\A[-+]?\d+(?:_\d+)*\z/i, #<Proc:0x0000000015d5d120@/usr/local/lib/ruby/2.4.0/optparse.rb:1868>], /\A[-+]?(?:[0-7]+(?:_[0-7]+)*|0(?:b[01]+(?:_[01]+)*|x[\da-f]+(?:_[\da-f]+)*))\z/i=>[/\A[-+]?(?:[0-7]+(?:_[0-7]+)*|0(?:b[01]+(?:_[01]+)*|x[\da-f]+(?:_[\da-f]+)*))\z/i, #<Proc:0x0000000015d5cd88@/usr/local/lib/ruby/2.4.0/optparse.rb:1881>], /\A[-+]?(?:\d+(?:_\d+)*(?=(.)?)(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:E[-+]?\d+(?:_\d+)*)?\z/i=>[/\A[-+]?(?:\d+(?:_\d+)*(?=(.)?)(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:E[-+]?\d+(?:_\d+)*)?\z/i, #<Proc:0x0000000015d5cce8@/usr/local/lib/ruby/2.4.0/optparse.rb:1894>], TrueClass=>[{"-"=>false, "no"=>false, "false"=>false, "+"=>true, "yes"=>true, "true"=>true, "nil"=>false}, #<Proc:0x0000000015d5c860@/usr/local/lib/ruby/2.4.0/optparse.rb:1915>], FalseClass=>[{"-"=>false, "no"=>false, "false"=>false, "+"=>true, "yes"=>true, "true"=>true, "nil"=>false}, #<Proc:0x0000000015d5c770@/usr/local/lib/ruby/2.4.0/optparse.rb:1919>], Array=>[/.*/m, #<Proc:0x0000000015d5c608@/usr/local/lib/ruby/2.4.0/optparse.rb:1924>], Regexp=>[/\A\/((?:\\.|[^\\])*)\/([[:alpha:]]+)?\z|.*/, #<Proc:0x0000000015d5c4f0@/usr/local/lib/ruby/2.4.0/optparse.rb:1934>]}, @short={"-"=>#<OptionParser::Switch::NoArgument:0x0000000015d60708 @pattern=nil, @conv=nil, @short=nil, @long=nil, @arg=nil, @desc=nil, @block=#<Proc:0x0000000015d606b8@/usr/local/lib/ruby/2.4.0/optparse.rb:931>>}, @long={""=>#<OptionParser::Switch::NoArgument:0x0000000015d60618 @pattern=nil, @conv=nil, @short=nil, @long=nil, @arg=nil, @desc=nil, @block=#<Proc:0x0000000015d605f0@/usr/local/lib/ruby/2.4.0/optparse.rb:932>>}, @list=[]>, #<OptionParser::List:0x0000000015f17b00 @atype={}, @short={}, @long={"help"=>#<OptionParser::Switch::NoArgument:0x0000000015f176f0 @pattern=nil, @conv=nil, @short=nil, @long=nil, @arg=nil, @desc=nil, @block=#<Proc:0x0000000015f174c0@/usr/local/lib/ruby/2.4.0/optparse.rb:962>>, "*-completion-bash"=>#<OptionParser::Switch::RequiredArgument:0x0000000015f173d0 @pattern=nil, @conv=nil, @short=nil, @long=nil, @arg=nil, @desc=nil, @block=#<Proc:0x0000000015f17380@/usr/local/lib/ruby/2.4.0/optparse.rb:973>>, "*-completion-zsh"=>#<OptionParser::Switch::OptionalArgument:0x0000000015f171c8 @pattern=nil, @conv=nil, @short=nil, @long=nil, @arg=nil, @desc=nil, @block=#<Proc:0x0000000015f17100@/usr/local/lib/ruby/2.4.0/optparse.rb:984>>, "version"=>#<OptionParser::Switch::OptionalArgument:0x0000000015f17088 @pattern=nil, @conv=nil, @short=nil, @long=nil, @arg=nil, @desc=nil, @block=#<Proc:0x0000000015f16f98@/usr/local/lib/ruby/2.4.0/optparse.rb:995>>}, @list=[]>, #<OptionParser::List:0x0000000015f179e8 @atype={}, @short={"h"=>#<OptionParser::Switch::NoArgument:0x0000000015f158a0 @pattern=/.*/m, @conv=#<Proc:0x0000000015d5e1b0@/usr/local/lib/ruby/2.4.0/optparse.rb:1814>, @short=["-h"], @long=["--help"], @arg=nil, @desc=["Display this screen"], @block=#<Proc:0x0000000015f16c50@/usr/local/lib/ruby/gems/2.4.0/gems/protk-1.4.4/lib/protk/tool.rb:108>>}, @long={"help"=>#<OptionParser::Switch::NoArgument:0x0000000015f158a0 @pattern=/.*/m, @conv=#<Proc:0x0000000015d5e1b0@/usr/local/lib/ruby/2.4.0/optparse.rb:1814>, @short=["-h"], @long=["--help"], @arg=nil, @desc=["Display this screen"], @block=#<Proc:0x0000000015f16c50@/usr/local/lib/ruby/gems/2.4.0/gems/protk-1.4.4/lib/protk/tool.rb:108>>}, @list=[#<OptionParser::Switch::NoArgument:0x0000000015f158a0 @pattern=/.*/m, @conv=#<Proc:0x0000000015d5e1b0@/usr/local/lib/ruby/2.4.0/optparse.rb:1814>, @short=["-h"], @long=["--help"], @arg=nil, @desc=["Display this screen"], @block=#<Proc:0x0000000015f16c50@/usr/local/lib/ruby/gems/2.4.0/gems/protk-1.4.4/lib/protk/tool.rb:108>>]>], @program_name=nil, @banner="Post install tasks for protk.\nUsage: protk_setup.rb [options] toolname", @summary_width=32, @summary_indent="    ", @default_argv=[]>
-```
-
-
-## protk_manage_db.rb
-
-### Tool Description
-Manage named protein databases.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
-- **Homepage**: https://github.com/iracooke/protk
-- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Manage named protein databases.
-Usage: manage_db.rb <command> [options] dbname
-Commands are: add remove update list help
-Type manage_db <command> -h to get help on a specific command
-    -h, --help                       Display this screen
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| protk_interprophet.rb | PASS |  |
+| protk_make_decoy.rb | PASS |  |
+| protk_mascot_search.rb | Not completed | Needs a Mascot server with network access and an account; not available. |
+| protk_msgfplus_search.rb | Failed | image problem: the image has no MSGFPlus.jar, so msgfplus_search.rb stops with 'Could not find MSGFPlus.jar'. |
+| protk_peptide_prophet.rb | PASS |  |
+| protk_pepxml_to_table.rb | PASS |  |
+| protk_protein_prophet.rb | PASS | Ran on tandem pepXML data from the protk repo; protein groups match the repo reference (database path in the input pepXML was made relative and the FASTA staged beside it). |
+| protk_protxml_to_gff.rb | Failed | image problem: the image has no makeblastdb, so protxml_to_gff.rb stops with ENOENT when it indexes the FASTA database. |
+| protk_protxml_to_table.rb | PASS |  |
+| protk_sixframe.rb | PASS |  |
+| protk_tandem_search.rb | Failed | image problem: the image has no X!Tandem binary, so tandem_search.rb stops with 'Unable to locate tandem'. |
 
 ## protk_tandem_search.rb
 

@@ -1,5 +1,11 @@
 # pvrg-jpeg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pvrg-jpeg | PASS | fixed baseCommand to pvrg-jpeg and per-component options; encode then decode of a real image round-trips |
+
 ## pvrg-jpeg
 
 ### Tool Description

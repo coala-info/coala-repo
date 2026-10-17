@@ -9,16 +9,16 @@ doc: "nucmer generates nucleotide alignments between two mutli-FASTA input files
 inputs:
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Set the input reference multi-FASTA filename
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: query
     type: File
     doc: Set the input query multi-FASTA filename
     inputBinding:
       position: 2
+      valueFrom: $(self.basename)
   - id: banded
     type:
       - 'null'
@@ -40,7 +40,7 @@ inputs:
   - id: coords
     type:
       - 'null'
-      - string
+      - boolean
     doc: Automatically generate the original NUCmer1.1 coords output file using 
       the 'show-coords' program
     inputBinding:
@@ -236,14 +236,28 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
+  - id: delta_file
     type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+      - 'null'
+      - File
+    doc: Alignment file in delta format (prefix.delta, default out.delta)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.prefix ? inputs.prefix : 'out').delta"
+  - id: coords_file
+    type:
+      - 'null'
+      - File
+    doc: Coordinates file written with the coords option (prefix.coords)
+    outputBinding:
+      glob: "$(inputs.prefix ? inputs.prefix : 'out').coords"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.reference)
+      - $(inputs.query)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pymummer:0.12.0--pyhdfd78af_0
+    dockerOutputDirectory: /data
 stdout: pymummer_nucmer.out

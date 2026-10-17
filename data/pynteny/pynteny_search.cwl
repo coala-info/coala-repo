@@ -65,7 +65,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: path to log file. Log not written by default.
     inputBinding:
       position: 101
@@ -137,13 +137,6 @@ outputs:
     doc: path to output directory
     outputBinding:
       glob: $(inputs.outdir_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

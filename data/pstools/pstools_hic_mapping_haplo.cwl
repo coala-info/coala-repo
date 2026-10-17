@@ -54,11 +54,13 @@ inputs:
       position: 104
       prefix: -t
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: save mapping relationship to FILE
     inputBinding:
       position: 105
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:
@@ -66,7 +68,7 @@ outputs:
       - File
     doc: save mapping relationship to FILE
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.output_file_path ? inputs.output_file_path : [])"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

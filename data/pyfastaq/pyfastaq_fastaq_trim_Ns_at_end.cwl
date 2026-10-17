@@ -1,49 +1,29 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pyfastaq
   - fastaq
   - trim_Ns_at_end
 label: pyfastaq_fastaq_trim_Ns_at_end
-doc: "Remove Ns from the ends of sequences.\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
+doc: "Trims any Ns off each sequence in input file. Does nothing to gaps in the middle, just trims the ends\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
+  - id: infile
     type: File
-    doc: Input FASTA/FASTQ file
+    doc: "Name of input file"
     inputBinding:
-      position: 1
-  - id: trim_both
-    type:
-      - 'null'
-      - boolean
-    doc: Trim Ns from both ends (default)
+      position: 20
+  - id: outfile
+    type: string
+    doc: "Name of output file"
     inputBinding:
-      position: 102
-      prefix: --both
-  - id: trim_end
-    type:
-      - 'null'
-      - boolean
-    doc: Trim Ns from end only
-    inputBinding:
-      position: 102
-      prefix: --end
-  - id: trim_start
-    type:
-      - 'null'
-      - boolean
-    doc: Trim Ns from start only
-    inputBinding:
-      position: 102
-      prefix: --start
+      position: 21
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output FASTA/FASTQ file
+  - id: output
+    type: File
+    doc: "Name of output file"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

@@ -59,6 +59,10 @@ outputs:
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fastx)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

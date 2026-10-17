@@ -1,5 +1,11 @@
 # proteomiqon-mzmltomzlite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-mzmltomzlite | PASS |  |
+
 ## proteomiqon-mzmltomzlite
 
 ### Tool Description

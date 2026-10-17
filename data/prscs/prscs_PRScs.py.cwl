@@ -24,11 +24,12 @@ inputs:
       position: 101
       prefix: --b
   - id: bim_prefix
-    type: string
-    doc: Prefix of the validation .bim file
+    type: File
+    doc: Validation .bim file (the tool is given its path without the .bim suffix)
     inputBinding:
       position: 101
       prefix: --bim_prefix
+      valueFrom: $(self.path.replace(/\.bim$/, ''))
   - id: chrom
     type:
       - 'null'

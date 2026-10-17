@@ -1,5 +1,11 @@
 # protgraph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| protgraph | PASS | graph statistics CSV and peptide FASTA checked; the --export_peptide_sqlite option prints that it is skipped because the image lacks the apsw module |
+
 ## protgraph
 
 ### Tool Description

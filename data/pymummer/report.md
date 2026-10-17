@@ -1,5 +1,14 @@
 # pymummer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pymummer_delta-filter | PASS | SARS-CoV-2 reference vs real Illumina assembly contigs (nf-core) |
+| pymummer_nucmer | PASS | SARS-CoV-2 reference vs real Illumina assembly contigs (nf-core) |
+| pymummer_show-coords | PASS | SARS-CoV-2 reference vs real Illumina assembly contigs (nf-core) |
+| pymummer_show-snps | PASS | SARS-CoV-2 reference vs real Illumina assembly contigs (nf-core) |
+
 ## pymummer_nucmer
 
 ### Tool Description

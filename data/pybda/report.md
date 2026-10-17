@@ -1,5 +1,15 @@
 # pybda CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pybda_clustering | Failed | image problem: Java is not installed in the image (spark-submit says JAVA_HOME is not set); pybda still exits 0 and writes no result |
+| pybda_dimension-reduction | Failed | image problem: Java is not installed in the image (spark-submit says JAVA_HOME is not set); pybda still exits 0 and writes no result |
+| pybda_regression | Failed | image problem: Java is not installed in the image (spark-submit says JAVA_HOME is not set); pybda still exits 0 and writes no result |
+| pybda_run | Not completed | pipeline, skipped (runs every task of the config through snakemake and Spark; Spark cannot start because Java is missing in the image) |
+| pybda_sample | Failed | image problem: Java is not installed in the image (spark-submit says JAVA_HOME is not set); pybda still exits 0 and writes no result |
+
 ## pybda_clustering
 
 ### Tool Description

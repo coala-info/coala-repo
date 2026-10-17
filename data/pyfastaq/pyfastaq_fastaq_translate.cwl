@@ -1,47 +1,37 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pyfastaq_fastaq_translate
+baseCommand:
+  - fastaq
+  - translate
 label: pyfastaq_fastaq_translate
-doc: "Translate DNA sequences to protein sequences.\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
+doc: "Translates all sequences in input file. Output is always FASTA format\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input FASTA file containing DNA sequences.
-    inputBinding:
-      position: 1
   - id: frame
     type:
       - 'null'
       - int
-    doc: Translation frame (1, 2, or 3). Default is 1.
+    doc: "Frame to translate [0]"
     inputBinding:
-      position: 102
+      position: 1
       prefix: --frame
-  - id: genetic_code
-    type:
-      - 'null'
-      - string
-    doc: Genetic code to use (e.g., 'standard', 'vertebrate_mt'). Default is 
-      'standard'.
+  - id: infile
+    type: File
+    doc: "Name of file to be translated"
     inputBinding:
-      position: 102
-      prefix: --genetic-code
-  - id: reverse_complement
-    type:
-      - 'null'
-      - boolean
-    doc: Translate the reverse complement of the sequences.
+      position: 20
+  - id: outfile
+    type: string
+    doc: "Name of output FASTA file"
     inputBinding:
-      position: 102
-      prefix: --reverse-complement
+      position: 21
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file to write translated protein sequences.
+  - id: output
+    type: File
+    doc: "Name of output FASTA file"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

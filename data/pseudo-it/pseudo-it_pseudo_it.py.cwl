@@ -250,6 +250,21 @@ inputs:
       - 'null'
       - File
     doc: The FASTA assembly to use for the initial mapping.
+    secondaryFiles:
+      - pattern: .fai
+        required: true
+      - pattern: ^.dict
+        required: true
+      - pattern: .amb
+        required: true
+      - pattern: .ann
+        required: true
+      - pattern: .bwt
+        required: true
+      - pattern: .pac
+        required: true
+      - pattern: .sa
+        required: true
     inputBinding:
       position: 101
       prefix: -ref

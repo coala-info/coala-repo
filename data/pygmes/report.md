@@ -1,5 +1,11 @@
 # pygmes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pygmes | Not completed | needs the licensed GeneMark-ES program (not in the image) and a large diamond database |
+
 ## pygmes
 
 ### Tool Description

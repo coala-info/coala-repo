@@ -41,6 +41,11 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        return inputs.reference_fasta_db ? [{"entry": inputs.reference_fasta_db, "writable": true}] : [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pylprotpredictor:1.0.2--py_0

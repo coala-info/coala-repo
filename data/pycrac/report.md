@@ -1,5 +1,14 @@
 # pycrac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pycrac_pyBarcodeFilter.py | PASS |  |
+| pycrac_pyMotif.py | PASS |  |
+| pycrac_pyReadAligner.py | PASS |  |
+| pycrac_pyReadCounters.py | PASS |  |
+
 ## pycrac_pyBarcodeFilter.py
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # proovframe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proovframe_fix | PASS |  |
+| proovframe_map | PASS |  |
+| proovframe_prf | PASS |  |
+
 ## proovframe_map
 
 ### Tool Description

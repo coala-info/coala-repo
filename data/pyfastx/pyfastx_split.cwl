@@ -47,6 +47,18 @@ outputs:
     doc: output directory, default is current folder
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{"entry": inputs.fastx, "writable": true}];
+        if (inputs.output_directory) {
+          l.push({"entryname": inputs.output_directory, "writable": true,
+                  "entry": {"class": "Directory", "basename": inputs.output_directory, "listing": []}});
+        }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastx:2.3.0--py312h4711d71_1

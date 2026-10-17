@@ -1,0 +1,63 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand: pybel
+label: pybel_manage_namespaces_ls
+doc: "List cached namespaces.\n\nTool homepage: https://pybel.readthedocs.io"
+arguments:
+  - position: 2
+    valueFrom: manage
+  - position: 3
+    valueFrom: namespaces
+  - position: 4
+    valueFrom: ls
+inputs:
+  - id: database
+    type: string
+    doc: "SQLite database file name used as the connection (sqlite:///NAME); created when it does not exist"
+    inputBinding:
+      position: 1
+      prefix: -c
+      valueFrom: sqlite:///$(self)
+  - id: database_in
+    type:
+      - 'null'
+      - File
+    doc: Existing database to use (staged as a writable copy under the name given by database).
+  - id: url
+    type:
+      - 'null'
+      - string
+    doc: "Specific resource URL to list"
+    inputBinding:
+      position: 10
+      prefix: --url
+  - id: namespace_id
+    type:
+      - 'null'
+      - int
+    doc: "Specific resource URL to list"
+    inputBinding:
+      position: 10
+      prefix: --namespace-id
+outputs:
+  - id: database_out
+    type: File
+    doc: Database file after the command
+    outputBinding:
+      glob: $(inputs.database)
+  - id: stdout_text
+    type: stdout
+    doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.database)
+        entry: $(inputs.database_in)
+        writable: true
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/pybel:0.13.2--py_0
+stdout: pybel_manage_namespaces_ls.out

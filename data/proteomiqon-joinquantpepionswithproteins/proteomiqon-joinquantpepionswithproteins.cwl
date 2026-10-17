@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.JoinQuantPepIonsWithProteins
+baseCommand: proteomiqon-joinquantpepionswithproteins
 label: proteomiqon-joinquantpepionswithproteins
 doc: "Joins quantified peptide information with inferred protein information.\n\n\
   Tool homepage: https://csbiology.github.io/ProteomIQon/"

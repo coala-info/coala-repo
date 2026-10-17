@@ -11,6 +11,7 @@ inputs:
     doc: Input PDB file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: center_chain
     type:
       - 'null'
@@ -156,9 +157,27 @@ inputs:
       position: 102
       prefix: -v
 outputs:
+  - id: rebuilt_pdb
+    type: File
+    doc: Rebuilt full-atom structure (the program names it <pdb_file>.rebuilt.pdb)
+    outputBinding:
+      glob: $(inputs.pdb_file.nameroot).rebuilt.pdb
+  - id: trajectory
+    type:
+      - 'null'
+      - File
+    doc: Chain optimization trajectory, written with the -t option
+    outputBinding:
+      glob: $(inputs.pdb_file.basename).trajectory
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.pdb_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pulchra:3.06--h031d066_4

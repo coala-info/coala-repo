@@ -1,5 +1,11 @@
 # prscs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prscs_PRScs.py | Not completed | Needs an LD reference panel (about 4.5 GB per population); no small panel exists. CWL fixed: the validation .bim file is now a staged File. |
+
 ## prscs_PRScs.py
 
 ### Tool Description

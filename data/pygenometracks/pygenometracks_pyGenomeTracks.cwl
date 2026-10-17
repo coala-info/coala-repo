@@ -40,7 +40,7 @@ inputs:
   - id: font_size
     type:
       - 'null'
-      - string
+      - float
     doc: Font size for the labels of the plot (default is 0.3 * figure width)
     inputBinding:
       position: 101
@@ -48,7 +48,7 @@ inputs:
   - id: height
     type:
       - 'null'
-      - int
+      - float
     doc: Figure height in centimeters. If not given, the figure height is 
       computed based on the heights of the tracks. If given, the track height 
       are proportionally scaled to match the desired figure height.
@@ -58,7 +58,7 @@ inputs:
   - id: plot_width
     type:
       - 'null'
-      - int
+      - float
     doc: width in centimeters of the plotting (central) part
     inputBinding:
       position: 101
@@ -111,14 +111,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tracks
+      valueFrom: $(self.basename)
   - id: width
     type:
       - 'null'
-      - int
+      - float
     doc: figure width in centimeters (default is 40)
     inputBinding:
       position: 101
       prefix: --width
+  - id: track_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the tracks.ini (bigWig, BED, GTF and so on). They are staged
+      next to the tracks file so that relative names in `file =` lines resolve.
 outputs:
   - id: output_plot
     type: File
@@ -126,6 +134,11 @@ outputs:
       multiple BED regions if needed).
     outputBinding:
       glob: $(inputs.out_file_name)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.tracks)
+      - $(inputs.track_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pygenometracks:3.9--pyhdfd78af_0

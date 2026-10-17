@@ -2,57 +2,55 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pydownsampler
 label: pydownsampler
-doc: "Downsample BAM files to a specified coverage.\n\nTool homepage: https://github.com/LindoNkambule/pydownsampler"
+doc: "Downsample a BAM/SAM/CRAM file to a desired average coverage, or print the\
+  \ average coverage of the file.\n\nTool homepage: https://github.com/LindoNkambule/pydownsampler"
 inputs:
-  - id: input_bam
+  - id: input_file
     type: File
-    doc: Input BAM file
+    doc: BAM/SAM/CRAM file to be downsampled (Required argument)
     inputBinding:
       position: 1
-  - id: seed
+    secondaryFiles:
+      - pattern: .bai
+        required: true
+  - id: downcoverage
     type:
       - 'null'
       - int
-    doc: Random seed for reproducibility
+    doc: The coverage you want to downsample to (Required argument for downsampling)
     inputBinding:
-      position: 102
-      prefix: --seed
-  - id: target_coverage
-    type: int
-    doc: Target coverage
-    inputBinding:
-      position: 102
-      prefix: --target
-  - id: threads
+      position: 2
+      prefix: -d
+  - id: output_prefix
     type:
       - 'null'
-      - int
-    doc: Number of threads to use
+      - string
+    doc: Output filename prefix (Optional); .bam is appended
     inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
+      position: 3
+      prefix: -o
+  - id: coverage
     type:
       - 'null'
       - boolean
-    doc: Enable verbose output
+    doc: Print out average coverage for file
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_bam_path
-    type: string
-    doc: Output or path parameter `output_bam_path`
-    inputBinding:
-      position: 103
-      prefix: --output-bam
+      position: 2
+      prefix: -c
 outputs:
-  - id: output_bam
-    type: File
-    doc: Output BAM file
+  - id: downsampled
+    type:
+      - 'null'
+      - File
+    doc: Downsampled BAM file
     outputBinding:
-      glob: $(inputs.output_bam_path)
+      glob: '*.bam'
+  - id: stdout
+    type: stdout
+    doc: Messages printed by the tool (average coverage, downsampling fraction)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pydownsampler:1.0--py_0
+stdout: pydownsampler.out

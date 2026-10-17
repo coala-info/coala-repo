@@ -1,5 +1,11 @@
 # pvga CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pvga | Failed | image problem: the required aligner blasr is not in the image (blasr: command not found) |
+
 ## pvga
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # pydamage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pydamage_analyze | PASS |  |
+| pydamage_binplot | PASS |  |
+| pydamage_filter | PASS |  |
+
 ## pydamage_analyze
 
 ### Tool Description

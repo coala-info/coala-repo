@@ -25,6 +25,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: index files (.fxi) written beside each input
+    outputBinding:
+      glob: '*.fxi'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fastx_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastx:2.3.0--py312h4711d71_1

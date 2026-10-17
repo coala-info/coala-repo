@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: run
+baseCommand:
+  - py2neo
+  - run
 label: py2neo_run
 doc: "Run a Cypher statement\n\nTool homepage: https://github.com/MazzaWill/neo4j-python-pandas-py2neo-v3"
 inputs:
@@ -29,6 +31,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/py2neo:3.1.2--py34_0

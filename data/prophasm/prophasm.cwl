@@ -17,24 +17,35 @@ inputs:
   - id: intersection_file
     type:
       - 'null'
-      - File
-    doc: Compute intersection, subtract it, save it.
+      - string
+    doc: Compute intersection, subtract it, save it (output FASTA file name).
     inputBinding:
-      position: 101
+      position: 102
       prefix: -x
   - id: kmer_size
     type: int
     doc: K-mer size.
     inputBinding:
-      position: 101
+      position: 100
       prefix: -k
+  - id: output_files
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: -o
+          separate: true
+    doc: Output FASTA file (if used, must be used as many times as -i).
+    inputBinding:
+      position: 103
   - id: silent_mode
     type:
       - 'null'
       - boolean
     doc: Silent mode.
     inputBinding:
-      position: 101
+      position: 104
       prefix: -S
   - id: stats_file
     type:
@@ -42,22 +53,24 @@ inputs:
       - string
     doc: Output file with k-mer statistics.
     inputBinding:
-      position: 101
+      position: 105
       prefix: -s
-  - id: output_files_path
-    type: string
-    doc: Output or path parameter `output_files_path`
-    inputBinding:
-      position: 102
-      prefix: --output-files
 outputs:
-  - id: output_files
+  - id: output_fasta
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Output FASTA files (-o)
+    outputBinding:
+      glob: $(inputs.output_files)
+  - id: intersection_out
     type:
       - 'null'
       - File
-    doc: Output FASTA file (if used, must be used as many times as -i).
+    doc: Intersection FASTA file (-x)
     outputBinding:
-      glob: $(inputs.output_files_path)
+      glob: $(inputs.intersection_file)
   - id: stats_file_out
     type:
       - 'null'

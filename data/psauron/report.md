@@ -1,5 +1,11 @@
 # psauron CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| psauron | PASS | Real E. coli CDS (Galaxy test set and 17 NCBI CDS) on CPU; in-frame scores match the Galaxy expected values and real CDS score True. CWL has no -m/-e short-flag issue; run with --use-cpu. |
+
 ## psauron
 
 ### Tool Description

@@ -21,7 +21,7 @@ inputs:
   - id: expn_val
     type:
       - 'null'
-      - float
+      - int
     doc: Gene and Transcript Expression cutoff. Sites above this cutoff will be 
       considered
     inputBinding:
@@ -38,7 +38,7 @@ inputs:
   - id: normal_vaf
     type:
       - 'null'
-      - float
+      - int
     doc: Normal VAF Cutoff. Sites BELOW this cutoff in normal will be 
       considered.
     inputBinding:
@@ -55,7 +55,7 @@ inputs:
   - id: tdna_vaf
     type:
       - 'null'
-      - float
+      - int
     doc: Tumor DNA VAF Cutoff. Sites above this cutoff will be considered.
     inputBinding:
       position: 102
@@ -71,7 +71,7 @@ inputs:
   - id: trna_vaf
     type:
       - 'null'
-      - float
+      - int
     doc: Tumor RNA VAF Cutoff. Sites above this cutoff will be considered.
     inputBinding:
       position: 102

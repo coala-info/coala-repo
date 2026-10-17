@@ -7,11 +7,17 @@ label: pvacseq_download_example_data
 doc: "Download example data for pVACseq\n\nTool homepage: https://github.com/griffithlab/pVAC-Seq"
 inputs:
   - id: destination_directory
-    type: Directory
-    doc: Directory for downloading example data
+    type: string
+    doc: Directory for downloading example data (the tool writes an example_data
+      folder inside it)
     inputBinding:
       position: 1
 outputs:
+  - id: example_data_dir
+    type: Directory
+    doc: Directory holding the copied example_data folder
+    outputBinding:
+      glob: $(inputs.destination_directory)
   - id: stdout
     type: stdout
     doc: Standard output

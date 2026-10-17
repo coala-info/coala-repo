@@ -1,29 +1,10 @@
 # psosp CWL Generation Report
 
-## psosp_test
+## Real Data Test
 
-### Tool Description
-A tool for host-virus sequence analysis (psosp)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/psosp:1.1.2--pyhdfd78af_2
-- **Homepage**: https://github.com/mujiezhang/PSOSP
-- **Package**: https://anaconda.org/channels/bioconda/packages/psosp/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/psosp/overview
-- **Total Downloads**: 881
-- **Last updated**: 2025-07-07
-- **GitHub**: https://github.com/mujiezhang/PSOSP
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: psosp [-h] [-hf HOST_FASTA] [-vf VIRUS_FASTA] [-wd WORKING_DIR]
-             [-hfaa HOST_FAA] [-db CHECKV_DB] [-v]
-             {test,predict} ...
-psosp: error: ambiguous option: --h could match --help, --host_fasta, --host_faa
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| psosp_predict | PASS | Repo test genome and phages: predictions, HI values and box sequences identical to the expected result; no CheckV database, so completeness columns are empty and quality differs. |
 
 ## psosp_predict
 

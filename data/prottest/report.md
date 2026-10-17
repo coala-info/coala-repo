@@ -1,5 +1,11 @@
 # prottest CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prottest | Failed | image problem: ProtTest 3.4.2 cannot read the output of the PhyML 3.3 in the image ('Stats file does not exist'), so no model table is produced. CWL fixed: baseCommand is prottest (not prottest3) and matrices are flags like -JTT. |
+
 ## prottest
 
 ### Tool Description

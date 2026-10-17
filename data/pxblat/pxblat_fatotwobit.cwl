@@ -13,6 +13,11 @@ inputs:
     doc: The fasta files
     inputBinding:
       position: 1
+  - id: out2bit_name
+    type: string
+    doc: The output file
+    inputBinding:
+      position: 2
   - id: ignore_dups
     type:
       - 'null'
@@ -52,7 +57,7 @@ outputs:
     type: File
     doc: The output file
     outputBinding:
-      glob: '*.out'
+      glob: '$(inputs.out2bit_name)'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pxblat:1.2.8--py311h93bbee8_1

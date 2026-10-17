@@ -7,10 +7,17 @@ label: prophex_query
 doc: "Query a prophex index\n\nTool homepage: https://github.com/prophyle/prophex"
 inputs:
   - id: idxbase
-    type: string
-    doc: Base name of the prophex index files
+    type: File
+    doc: Reference FASTA file with its prophex/bwa index files
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: input_fq
     type: File
     doc: Input FASTQ file
@@ -33,10 +40,16 @@ inputs:
     inputBinding:
       position: 103
       prefix: -k
-  - id: log_file
+  - id: klcp_file
     type:
       - 'null'
       - File
+    doc: k-LCP file (<idxbase>.<k>.klcp) made by prophex klcp; needed with -u,
+      staged beside the index
+  - id: log_file
+    type:
+      - 'null'
+      - string
     doc: log file name to output statistics
     inputBinding:
       position: 103
@@ -74,9 +87,22 @@ inputs:
       position: 103
       prefix: -u
 outputs:
+  - id: log_file_out
+    type:
+      - 'null'
+      - File
+    doc: Log file with statistics
+    outputBinding:
+      glob: $(inputs.log_file)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.idxbase)
+      - entry: $(inputs.klcp_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prophex:0.1.1--h5bf99c6_2

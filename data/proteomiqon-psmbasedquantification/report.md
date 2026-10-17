@@ -1,5 +1,11 @@
 # proteomiqon-psmbasedquantification CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-psmbasedquantification | PASS | same peptide ions as the repo reference; Quant values agree within 0.1% (reference is from an older release with a different mz refinement) |
+
 ## proteomiqon-psmbasedquantification
 
 ### Tool Description

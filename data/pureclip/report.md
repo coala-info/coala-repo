@@ -1,5 +1,11 @@
 # pureclip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pureclip | PASS | 174 of the 176 Galaxy expected crosslink sites reproduced at the same positions, scores differ slightly |
+
 ## pureclip
 
 ### Tool Description

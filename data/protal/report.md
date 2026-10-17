@@ -1,5 +1,11 @@
 # protal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| protal | Not completed | needs the prebuilt GTDB r214 index (very large download) or a taxonomy and marker-gene database; no small real test database |
+
 ## protal
 
 ### Tool Description

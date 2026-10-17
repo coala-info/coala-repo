@@ -10,7 +10,7 @@ inputs:
   - id: hmm_meta
     type:
       - 'null'
-      - string
+      - File
     doc: "path to hmm database metadata file. If already donwloaded with \npynteny
       downloaded, hmm meta file is retrieved from default location."
     inputBinding:

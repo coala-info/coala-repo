@@ -11,6 +11,7 @@ inputs:
     doc: FASTA file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: regions
     type:
       - 'null'
@@ -19,6 +20,14 @@ inputs:
     doc: "space separated regions of sequence to fetch e.g.\nchr1:1-1000"
     inputBinding:
       position: 2
+  - id: out_file
+    type:
+      - 'null'
+      - string
+    doc: 'output file name (default: stdout)'
+    inputBinding:
+      position: 103
+      prefix: --out
   - id: auto_strand
     type:
       - 'null'
@@ -196,9 +205,26 @@ outputs:
     type:
       - 'null'
       - File
-    doc: 'output file name (default: stdout)'
+    doc: 'output file written with --out'
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.out_file)
+  - id: stdout
+    type: stdout
+    doc: Sequences printed to standard output (when --out is not used)
+  - id: fasta_index
+    type:
+      - 'null'
+      - File
+    doc: The .fai index built next to the FASTA file
+    outputBinding:
+      glob: '*.fai'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfaidx:0.9.0.3--pyhdfd78af_0
+stdout: pyfaidx_faidx.out

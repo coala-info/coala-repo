@@ -14,7 +14,9 @@ inputs:
       position: 101
       prefix: --all_hits
   - id: database_directory
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: path/to/kofam_database_directory/ cannot be used with 
       -b/-serialized_database
     inputBinding:
@@ -80,24 +82,32 @@ inputs:
   - id: verbosity
     type:
       - 'null'
-      - string
+      - int
     doc: Verbosity of missing KOfams
     inputBinding:
       position: 101
       prefix: --verbosity
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: File
+    type:
+      - 'null'
+      - File
     doc: path/to/output.tsv
     outputBinding:
       glob: $(inputs.output_path)
+  - id: stdout
+    type: stdout
+    doc: Hit table written to standard output when no output file is given
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pykofamsearch:2025.9.5--pyhdfd78af_1
+stdout: pykofamsearch.out

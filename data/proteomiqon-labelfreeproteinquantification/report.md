@@ -1,5 +1,11 @@
 # proteomiqon-labelfreeproteinquantification CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-labelfreeproteinquantification | PASS |  |
+
 ## proteomiqon-labelfreeproteinquantification
 
 ### Tool Description

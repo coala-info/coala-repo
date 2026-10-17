@@ -1,27 +1,29 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pyfastaq
   - fastaq
   - to_unique_by_id
 label: pyfastaq_fastaq_to_unique_by_id
-doc: "Remove duplicate sequences from a FASTA or FASTQ file, keeping only the first
-  occurrence of each sequence ID.\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
+doc: "Removes duplicate sequences from input file, based on their names. If the same name is found more than once, then the longest sequence is kept. Order of sequences is preserved in output\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
+  - id: infile
     type: File
-    doc: Input FASTA or FASTQ file.
+    doc: "Name of input file"
     inputBinding:
-      position: 1
+      position: 20
+  - id: outfile
+    type: string
+    doc: "Name of output file"
+    inputBinding:
+      position: 21
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output FASTA or FASTQ file. If not specified, output will be written to
-      stdout.
+  - id: output
+    type: File
+    doc: "Name of output file"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

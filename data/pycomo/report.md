@@ -1,5 +1,11 @@
 # pycomo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pycomo | Failed | image problem: cobra deepcopy of a Reaction recurses forever on the image's Python 3.14 (RecursionError even with the minimal command) |
+
 ## pycomo
 
 ### Tool Description
@@ -18,7 +24,7 @@ Combine single species/strain models into a community model.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-2026-02-24 23:05:20,122 - PyCoMo - INFO - Logger initialized.
+2026-10-17 04:57:05,112 - PyCoMo - INFO - Logger initialized.
 usage: PyCoMo [-h] [-v] -i INPUT [INPUT ...] [-c] [-n NAME]
               [-m MATCH_VIA_ANNOTATION] [--growth-rate GROWTH_RATE |
               --equal-abd | --abd-file ABD_FILE] [--medium MEDIUM]

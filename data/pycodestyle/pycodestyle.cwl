@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pep8
+baseCommand: pycodestyle
 label: pycodestyle
 doc: "Check code against the style conventions in PEP 8.\n\nTool homepage: https://github.com/PyCQA/pycodestyle"
 inputs:
@@ -167,3 +167,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pycodestyle:2.0.0--py35_0
 stdout: pycodestyle.out
+successCodes:
+  - 0
+  - 1

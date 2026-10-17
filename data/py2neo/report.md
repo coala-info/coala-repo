@@ -1,5 +1,12 @@
 # py2neo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| py2neo_evaluate | Not completed | needs a running Neo4j server (connection refused without one); fixed baseCommand to py2neo evaluate and added network access |
+| py2neo_run | Not completed | needs a running Neo4j server (connection refused without one); fixed baseCommand to py2neo run and added network access |
+
 ## py2neo_run
 
 ### Tool Description
@@ -65,22 +72,4 @@ Report bugs to nigel@py2neo.org
 
 ## Metadata
 - **Skill**: generated
-
-## py2neo
-
-### Tool Description
-A tool to run or evaluate Cypher statements against a Neo4j database.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/py2neo:3.1.2--py34_0
-- **Homepage**: https://github.com/MazzaWill/neo4j-python-pandas-py2neo-v3
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: py2neo run [-h] [-H host] [-P port] statement
-       py2neo evaluate [-h] [-H host] [-P port] statement
-
-Report bugs to nigel@py2neo.org
-```
 

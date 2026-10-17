@@ -276,14 +276,15 @@ inputs:
       position: 104
       prefix: --zip
 outputs:
-  - id: output_file
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: Use this flag to override the standard file names. Do NOT add an 
-      extension.
+      type: array
+      items: File
+    doc: Output files (count output gtf, hit table, statistics and log text files).
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob:
+        - '*.gtf'
+        - '*.txt'
   - id: discarded
     type:
       - 'null'

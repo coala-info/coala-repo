@@ -1,21 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pyfastaq
   - fastaq
   - count_sequences
 label: pyfastaq_fastaq_count_sequences
-doc: "Count the number of sequences in a FASTA or FASTQ file.\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
+doc: "Prints the number of sequences in input file to stdout\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
+  - id: infile
     type: File
-    doc: Input FASTA or FASTQ file.
+    doc: "Name of input file"
     inputBinding:
-      position: 1
+      position: 20
 outputs:
-  - id: stdout
+  - id: sequence_count
     type: stdout
-    doc: Standard output
+    doc: Number of sequences, printed on standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

@@ -1,5 +1,11 @@
 # proteomiqon-proteininference CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| proteomiqon-proteininference | PASS | output equals the repo reference except in the last floating point digit |
+
 ## proteomiqon-proteininference
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # pyhmmsearch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyhmmsearch | PASS | matches HMMER 3.4 hmmsearch on 124 BUSCO bacteria models and 4977 proteins (115 hits) |
+| pyhmmsearch_reformat_pyhmmsearch | PASS |  |
+| pyhmmsearch_serialize_hmm_models | PASS | --hmm_list mode tested; --hmm_database stops with an assertion unless stdin is a terminal (tool bug) |
+
 ## pyhmmsearch
 
 ### Tool Description
@@ -61,3 +69,68 @@ Database arguments:
 https://github.com/jolespin/pyhmmsearch
 ```
 
+## pyhmmsearch_reformat_pyhmmsearch
+
+### Tool Description
+Reformat the hit table written by pyhmmsearch into one row per protein (table) or a pickled dictionary (pickle).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyhmmsearch:2025.10.23.post1--pyh7e72e81_0
+- **Homepage**: https://github.com/jolespin/pyhmmsearch
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyhmmsearch/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: reformat_pyhmmsearch -i <input.tsv> -o <output.tsv> -f <format> 
+
+    Running: reformat_pyhmmsearch v2025.10.23.post1 via Python v3.12.12 | /usr/local/bin/python3.12
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+  -i INPUT, --input INPUT
+                        path/to/input.tsv. The results of `pyhmmsearch.py` [Default: stdin]
+  -o OUTPUT, --output OUTPUT
+                        path/to/output.tsv [Default: stdout]
+  -f {pickle,table}, --format {pickle,table}
+                        Output format
+  --no_header           Input does not have header
+  -b, --best_hits_only  Best hits only
+
+PyHMMSearch
+```
+
+## pyhmmsearch_serialize_hmm_models
+
+### Tool Description
+Serialize HMM models into a pickled dictionary that pyhmmsearch can load with --serialized_database.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyhmmsearch:2025.10.23.post1--pyh7e72e81_0
+- **Homepage**: https://github.com/jolespin/pyhmmsearch
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyhmmsearch/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: serialize_hmm_models -d <path/to/hmm_database> -b <hmm_database.pkl.gz> -f name 
+
+    Running: serialize_hmm_models v2025.10.23.post1 via Python v3.12.12 | /usr/local/bin/python3.12
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+
+Database arguments:
+  -l HMM_LIST, --hmm_list HMM_LIST
+                        List of filepaths to HMM files. Cannot be used with --hmm_database. [Default: stdin]
+  -d HMM_DATABASE, --hmm_database HMM_DATABASE
+                        path/to/hmm_database.  If it is a single file then it is interpreted as a multi-HMM database. If it's a directory, then it will be scanned for .hmm[.gz] files (Not case sensitive). Cannot be used with --hmm_list.
+  -b SERIALIZED_DATABASE, --serialized_database SERIALIZED_DATABASE
+                        path/to/database.pkl[.gz] is dictionary of HMM models
+  -f HMM_MARKER_FIELD, --hmm_marker_field HMM_MARKER_FIELD
+                        HMM reference type (accession, name) [Default: accession]
+
+PyHMMSearch
+```

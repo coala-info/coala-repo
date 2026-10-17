@@ -30,7 +30,7 @@ inputs:
   - id: minimum_fold_change
     type:
       - 'null'
-      - float
+      - int
     doc: Minimum fold change between mutant binding score and wild-type score. 
       The default is 0, which filters no results, but 1 is often a sensible 
       option (requiring that binding is better to the MT than WT).

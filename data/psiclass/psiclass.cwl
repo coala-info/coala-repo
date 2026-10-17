@@ -8,12 +8,13 @@ inputs:
   - id: bam_files
     type:
       - 'null'
-      - string
-    doc: paths to the alignment BAM files. Use comma to separate multiple BAM 
-      files
+      - type: array
+        items: File
+    doc: Alignment BAM files (passed as a comma-separated list)
     inputBinding:
       position: 101
       prefix: -b
+      itemSeparator: ','
   - id: bam_group_file
     type:
       - 'null'

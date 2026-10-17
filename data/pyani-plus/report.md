@@ -1,5 +1,23 @@
 # pyani-plus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyani-plus_anib | PASS | same 4 genomes; run Done, identity 0.98 for the closest pair, in line with ANIm |
+| pyani-plus_anim | PASS | 4 real Blochmannia genomes; run Done, identity 0.98 for the closest pair; database now a string name plus optional input database |
+| pyani-plus_classify | PASS | classification table and plot written |
+| pyani-plus_delete-run | PASS | run 5 removed, 4 runs remain in the database |
+| pyani-plus_dnadiff | PASS | same 4 genomes; run Done, identity 0.98 for the closest pair, in line with ANIm |
+| pyani-plus_export-run | PASS | identity matrix and long table exported for the run |
+| pyani-plus_external-alignment | PASS | synthetic data: the repo's own mock 3-genome alignment; identity matrix equals the expected one; alignment staged in the working folder |
+| pyani-plus_fastani | PASS | same 4 genomes; run Done, identity 0.98 for the closest pair, in line with ANIm |
+| pyani-plus_list-runs | PASS | lists the run table of the real 4 genome database |
+| pyani-plus_plot-run | PASS | heatmaps, distributions and scatter plots written in 5 formats |
+| pyani-plus_plot-run-comp | PASS | comparison plots of runs 1-3 (ANIm, fastANI, dnadiff) |
+| pyani-plus_resume | Not completed | resume needs the original FASTA folder at the path stored in the database, but that path changes on every container run |
+| pyani-plus_sourmash | PASS | same 4 genomes; run Done, identity 0.98 for the closest pair, in line with ANIm |
+
 ## pyani-plus_resume
 
 ### Tool Description

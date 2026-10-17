@@ -1,5 +1,13 @@
 # psass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| psass_analyze | PASS | Ran on the sync file from psass pileup (two real human BAMs); windows, SNP, FST and gene outputs written and plausible. |
+| psass_convert | Failed | tool bug: convert never reads the reference allele, so it counts '.' and ',' (bases equal to the reference) as N; output is wrong for samtools mpileup -f input (deprecated command). |
+| psass_pileup | PASS | Ran on two real human BAMs (nf-core); per-pool depth totals match samtools depth. CWL fixed: BAM index files are now staged. |
+
 ## psass_analyze
 
 ### Tool Description

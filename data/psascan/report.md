@@ -1,5 +1,11 @@
 # psascan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| psascan | PASS | Suffix array of a 30 kb real genome slice checked correct. CWL fixed: gap file is an output path string, not a File. |
+
 ## psascan
 
 ### Tool Description

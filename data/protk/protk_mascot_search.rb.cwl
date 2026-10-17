@@ -37,6 +37,7 @@ inputs:
   - id: database
     type:
       - 'null'
+      - File
       - string
     doc: Specify the database to use for this search. Can be a named protk 
       database or the path to a fasta file

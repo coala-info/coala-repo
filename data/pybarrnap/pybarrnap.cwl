@@ -54,7 +54,7 @@ inputs:
   - id: outseq
     type:
       - 'null'
-      - File
+      - string
     doc: Output rRNA hit seqs as fasta file
     inputBinding:
       position: 102
@@ -87,6 +87,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: rrna_seqs
+    type:
+      - 'null'
+      - File
+    doc: Output rRNA hit seqs as fasta file
+    outputBinding:
+      glob: $(inputs.outseq)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pybarrnap:0.5.1--pyhdfd78af_0

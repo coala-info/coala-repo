@@ -1,25 +1,29 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pyfastaq
   - fastaq
   - reverse_complement
 label: pyfastaq_fastaq_reverse_complement
-doc: "Reverse complement a FASTA file\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
+doc: "Reverse complement all sequences\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
+  - id: infile
     type: File
-    doc: Input FASTA file
+    doc: "Name of input file"
     inputBinding:
-      position: 1
+      position: 20
+  - id: outfile
+    type: string
+    doc: "Name of output file"
+    inputBinding:
+      position: 21
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output FASTA file
+  - id: output
+    type: File
+    doc: "Name of output file"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

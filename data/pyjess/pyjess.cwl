@@ -122,10 +122,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --templates
+  - id: template_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Template files named in the template list file, staged in the working
+      directory so that the names resolve.
+  - id: query_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Query PDB files named in the query list file, staged in the working
+      directory so that the names resolve.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.template_files)
+      - $(inputs.query_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyjess:0.9.1--py310h1fe012e_0

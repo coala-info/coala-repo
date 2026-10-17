@@ -1,24 +1,53 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pyfastaq_fastaq
+  - fastaq
   - to_fasta
 label: pyfastaq_fastaq_to_fasta
-doc: "Convert FASTA to FASTA format.\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
+doc: "to_fasta\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input FASTA file
-    inputBinding:
-      position: 1
-outputs:
-  - id: output_file
+  - id: line_length
     type:
       - 'null'
-      - File
-    doc: 'Output FASTA file (default: stdout)'
+      - int
+    doc: "Number of bases on each sequence line of output file. Set to zero for no linebreaks in sequences [60]"
+    inputBinding:
+      position: 1
+      prefix: --line_length
+  - id: strip_after_whitespace
+    type:
+      - 'null'
+      - boolean
+    doc: "Remove everything after first whitespace in every sequence name"
+    inputBinding:
+      position: 2
+      prefix: --strip_after_whitespace
+  - id: check_unique
+    type:
+      - 'null'
+      - boolean
+    doc: "Die if any of the output sequence names are not unique"
+    inputBinding:
+      position: 3
+      prefix: --check_unique
+  - id: infile
+    type: File
+    doc: "Name of input file. Can be any of FASTA, FASTQ, GFF3, EMBL, GBK, Phylip"
+    inputBinding:
+      position: 20
+  - id: outfile
+    type: string
+    doc: "Name of output file"
+    inputBinding:
+      position: 21
+outputs:
+  - id: output
+    type: File
+    doc: "Name of output file"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

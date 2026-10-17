@@ -1,47 +1,50 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - pyfastaq
   - fastaq
   - to_random_subset
 label: pyfastaq_fastaq_to_random_subset
-doc: "Select a random subset of sequences from a FASTA file.\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
+doc: "Takes a random subset of reads from a sequence file and optionally the corresponding read from a mates file.  Output is interleaved if mates file given\n\nTool homepage: https://github.com/sanger-pathogens/Fastaq"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input FASTA file
+  - id: mate_file
+    type:
+      - 'null'
+      - File
+    doc: "Name of mates file"
     inputBinding:
       position: 1
-  - id: fraction_of_sequences
-    type:
-      - 'null'
-      - float
-    doc: Fraction of sequences to select (0.0 to 1.0)
-    inputBinding:
-      position: 102
-      prefix: --fraction
-  - id: number_of_sequences
-    type:
-      - 'null'
-      - int
-    doc: Number of sequences to select
-    inputBinding:
-      position: 102
-      prefix: --number
+      prefix: --mate_file
   - id: seed
     type:
       - 'null'
       - int
-    doc: Random seed for reproducibility
+    doc: "Seed for random number generator. If not given, python's default is used"
     inputBinding:
-      position: 102
+      position: 2
       prefix: --seed
-outputs:
-  - id: output_file
+  - id: infile
     type: File
-    doc: Output FASTA file
+    doc: "Name of input file"
+    inputBinding:
+      position: 20
+  - id: outfile
+    type: string
+    doc: "Name of output file"
+    inputBinding:
+      position: 21
+  - id: percent
+    type: float
+    doc: "Per cent probability of keeping any given read (pair) in [0,100]"
+    inputBinding:
+      position: 22
+outputs:
+  - id: output
+    type: File
+    doc: "Name of output file"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0

@@ -129,6 +129,9 @@ outputs:
     doc: where to put the output
     outputBinding:
       glob: '$(inputs.outpsl)'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pxblat:1.2.8--py311h93bbee8_1

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.LabeledProteinQuantification
+baseCommand: proteomiqon-labeledproteinquantification
 label: proteomiqon-labeledproteinquantification
 doc: "Labeled Protein Quantification\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
 inputs:

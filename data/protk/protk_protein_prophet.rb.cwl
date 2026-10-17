@@ -141,6 +141,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: --output
+  - id: database_fasta
+    type:
+      - 'null'
+      - File
+    doc: Search database FASTA file named in the pep.xml input (its search_database
+      local_path). It is staged in the working directory so a relative path in the
+      pep.xml resolves.
 outputs:
   - id: output_file
     type:
@@ -151,6 +158,9 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.database_fasta)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1

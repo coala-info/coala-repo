@@ -21,29 +21,14 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Extra parameters for diamond
+    doc: Extra parameters for diamond (passed after `--`)
     inputBinding:
-      position: 2
-  - id: aa
-    type:
-      - 'null'
-      - boolean
-    doc: protein file, not required if db provided.
-    inputBinding:
-      position: 103
-      prefix: --aa
+      position: 200
+      prefix: --
   - id: database
     type:
       - 'null'
       - string
-    doc: created if not existing and --aa given
-    inputBinding:
-      position: 103
-      prefix: --db
-  - id: db
-    type:
-      - 'null'
-      - boolean
     doc: created if not existing and --aa given [basename(aa).dmnd]
     inputBinding:
       position: 103
@@ -88,36 +73,25 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
-  - id: alignments_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `alignments_file_path`
-    inputBinding:
-      position: 104
-      prefix: --alignments-file
   - id: out_path
-    type:
-      - 'null'
-      - string
+    type: string
+    doc: write alignments to this file [basename(seqs).o6]
     inputBinding:
       position: 105
       prefix: --out
 outputs:
   - id: out
-    type:
-      - 'null'
-      - File
+    type: File
     doc: write alignments to this file [basename(seqs).o6]
     outputBinding:
       glob: $(inputs.out_path)
-  - id: alignments_file
+  - id: database_out
     type:
       - 'null'
       - File
-    doc: write alignments to this file
+    doc: diamond database created when --aa is given and the database did not exist
     outputBinding:
-      glob: $(inputs.alignments_file_path)
+      glob: $(inputs.database)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

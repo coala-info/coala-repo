@@ -43,10 +43,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --chr
-  - id: discarded_file
+  - id: discarded_path
     type:
       - 'null'
-      - File
+      - string
     doc: prints the lines from the alignments file that were discarded by the 
       parsers. This file contains reads that were unmapped (NM), of poor quality
       (i.e. QC) or paired reads that were mapped to different chromosomal 
@@ -210,28 +210,43 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: zip_file
+  - id: zip_path
     type:
       - 'null'
-      - File
+      - string
     doc: use this option to compress all the output files in a single zip file
     inputBinding:
       position: 101
       prefix: --zip
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output_file
 outputs:
-  - id: output_file
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Alignment output files (fasta alignments, or the single file named by output_file_path, and the log).
+    outputBinding:
+      glob: "$(inputs.output_file_path ? ['*.fasta', '*.txt', '*.gtf', inputs.output_file_path] : ['*.fasta', '*.txt', '*.gtf'])"
+  - id: discarded
     type:
       - 'null'
       - File
-    doc: Use this flag to override the standard output file names. All 
-      alignments will be written to one output file.
+    doc: Lines of the alignments file that were discarded by the parsers.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.discarded_path)
+  - id: zip
+    type:
+      - 'null'
+      - File
+    doc: use this option to compress all the output files in a single zip file
+    outputBinding:
+      glob: $(inputs.zip_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # pygenetic_code CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pygenetic_code | PASS |  |
+
 ## pygenetic_code
 
 ### Tool Description

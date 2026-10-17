@@ -1,5 +1,11 @@
 # pygcap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pygcap | Failed | image problem: the image has no datasets, dataformat or mmseqs commands, so pygcap stops with FileNotFoundError: datasets |
+
 ## pygcap
 
 ### Tool Description

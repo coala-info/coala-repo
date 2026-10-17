@@ -1,5 +1,13 @@
 # pyloh CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyloh_PyLOH.py_BAF_heatmap | PASS | synthetic data: stand-in normal/tumor pair; MPLBACKEND=Agg is set in the CWL because the image lacks libGL |
+| pyloh_PyLOH.py_preprocess | PASS | synthetic data: two real 1000 Genomes BAMs (HG00349, HG00350, chr20 100 kb) used as a stand-in normal/tumor pair |
+| pyloh_PyLOH.py_run_model | PASS | synthetic data: one real BAM (HG00349) used as both normal and tumor, giving copy number 2 and purity 0.01 as expected |
+
 ## pyloh_PyLOH.py_preprocess
 
 ### Tool Description

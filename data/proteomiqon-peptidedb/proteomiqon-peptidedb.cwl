@@ -1,13 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ProteomIQon.PeptideDB
+baseCommand: proteomiqon-peptidedb
 label: proteomiqon-peptidedb
 doc: "Create a peptide database\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
 inputs:
   - id: fasta_path
-    type:
-      - 'null'
-      - Directory
+    type: File
     doc: Specify fasta file path
     inputBinding:
       position: 101

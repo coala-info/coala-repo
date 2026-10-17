@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: PyCoMo
+baseCommand: pycomo
 label: pycomo
 doc: "Combine single species/strain models into a community model.\n\nTool homepage:
   https://github.com/univieCUBE/PyCoMo"
@@ -70,10 +70,18 @@ inputs:
   - id: fva_flux
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: run FVA on the exchange metabolites of the community model and store 
       the flux vector in a file.
+    inputBinding:
+      position: 101
+      prefix: --fva-flux
+  - id: fva_flux_fraction
+    type:
+      - 'null'
+      - float
+    doc: Deprecated optional value of --fva-flux (fraction of optimum); use
+      instead of the fva_flux flag, not together with it.
     inputBinding:
       position: 101
       prefix: --fva-flux
@@ -99,8 +107,7 @@ inputs:
     type:
       type: array
       items: File
-    doc: single species/strain models to combine, either as a directory or 
-      separate files
+    doc: single species/strain models to combine, as separate files
     inputBinding:
       position: 101
       prefix: --input
@@ -115,13 +122,22 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - type: array
-        items: File
+      - boolean
     doc: set a log file for PyCoMo, located in the output directory (see -o / 
-      --output-dir. If used as flag, the file is called 'pycomo.log'.
+      --output-dir. Used as a flag, the file is called 'pycomo.log'.
     inputBinding:
       position: 101
       prefix: --log-file
+  - id: log_file_name
+    type:
+      - 'null'
+      - string
+    doc: Name of the log file in the output directory (alternative to the
+      log_file flag, not together with it).
+    inputBinding:
+      position: 101
+      prefix: --log-file=
+      separate: false
   - id: log_level
     type:
       - 'null'
@@ -159,7 +175,7 @@ inputs:
   - id: medium
     type:
       - 'null'
-      - string
+      - File
     doc: the medium to be used in the community model, as a comma separated file
       containing a column 'compounds' and a column 'maxFlux'.
     inputBinding:
@@ -193,6 +209,7 @@ inputs:
       prefix: --save-sbml
   - id: output_dir_path
     type: string
+    doc: the output directory to store results
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -207,6 +224,11 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir_path)
+        entry: "$({class: 'Directory', basename: inputs.output_dir_path, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pycomo:0.2.9--pyhdfd78af_0

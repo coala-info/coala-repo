@@ -92,6 +92,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: reads_per_barcode
+    type:
+      type: array
+      items: File
+    doc: Demultiplexed FASTQ or FASTA files, one per barcode, plus the others file.
+    outputBinding:
+      glob:
+        - '*.fastq'
+        - '*.fasta'
+        - '*.fastq.gz'
+        - '*.fasta.gz'
+  - id: statistics
+    type:
+      type: array
+      items: File
+    doc: Barcode and random nucleotide statistics files.
+    outputBinding:
+      glob: '*_statistics.txt'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pycrac:1.5.2--pyh7cba7a3_0

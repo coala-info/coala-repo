@@ -1,5 +1,12 @@
 # pymochi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pymochi_demo_mochi.py | PASS | demo project of the tool (built-in demo data), 5 epochs |
+| pymochi_run_mochi.py | PASS | MoCHI demo model design with its fitness data, 5 epochs; all outputs written (weights, predictions, reports) |
+
 ## pymochi_run_mochi.py
 
 ### Tool Description

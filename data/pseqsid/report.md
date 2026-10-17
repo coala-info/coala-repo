@@ -1,5 +1,11 @@
 # pseqsid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pseqsid | PASS | Real COX2 protein alignment; identity checked by hand. CWL fixed: the tool writes CSV/TSV files, not stdout, so outputs are now collected by name. |
+
 ## pseqsid
 
 ### Tool Description

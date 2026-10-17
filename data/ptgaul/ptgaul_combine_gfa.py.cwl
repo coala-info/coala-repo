@@ -6,17 +6,13 @@ doc: "This script is used to merge the edges from assembly graph.\n\nTool homepa
   https://github.com/Bean061/ptgaul"
 inputs:
   - id: input_edges_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input edge fasta file
     inputBinding:
       position: 101
       prefix: --input_edges_file
   - id: sorted_depth
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input depth file
     inputBinding:
       position: 101
@@ -28,14 +24,17 @@ inputs:
       prefix: --outputdir
 outputs:
   - id: outputdir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: output directory
     outputBinding:
       glob: $(inputs.outputdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outputdir_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ptgaul:1.0.5--pyhdfd78af_1

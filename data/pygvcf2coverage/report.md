@@ -1,5 +1,11 @@
 # pygvcf2coverage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pygvcf2coverage | Failed | image problem: the cyvcf2 import is commented out in the package, so the tool stops with NameError: name 'VCF' is not defined |
+
 ## pygvcf2coverage
 
 ### Tool Description

@@ -1,9 +1,17 @@
 # pyega3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyega3_datasets | Not completed | needs an EGA account and credentials (login) for every command, none were entered |
+| pyega3_fetch | Not completed | needs an EGA account and credentials (login) for every command, none were entered |
+| pyega3_files | Not completed | needs an EGA account and credentials (login) for every command, none were entered |
+
 ## pyega3_files
 
 ### Tool Description
-List files in a dataset
+List files in a specified dataset.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyega3:5.2.0--pyhdfd78af_0
@@ -25,7 +33,7 @@ options:
 ## pyega3_fetch
 
 ### Tool Description
-Fetch data from EGA.
+Fetch a dataset or file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyega3:5.2.0--pyhdfd78af_0
@@ -80,10 +88,10 @@ options:
                         left on the disk after a failed transfer.
 ```
 
-## pyega3_JSON
+## pyega3_datasets
 
 ### Tool Description
-pyega3: error: argument subcommand: invalid choice: 'JSON' (choose from 'datasets', 'files', 'fetch')
+List authorized datasets.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyega3:5.2.0--pyhdfd78af_0
@@ -93,10 +101,10 @@ pyega3: error: argument subcommand: invalid choice: 'JSON' (choose from 'dataset
 
 ### Original Help Text
 ```text
-usage: pyega3 [-h] [-d] [-cf CONFIG_FILE] [-sf SERVER_FILE] [-c CONNECTIONS]
-              [-t] [-ms MAX_SLICE_SIZE] [-j] [-v]
-              {datasets,files,fetch} ...
-pyega3: error: argument subcommand: invalid choice: 'JSON' (choose from 'datasets', 'files', 'fetch')
+usage: pyega3 datasets [-h]
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## Metadata

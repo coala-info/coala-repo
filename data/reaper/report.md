@@ -1,5 +1,11 @@
 # reaper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| reaper | PASS | Trimmed the Illumina adapter from 2000 real small RNA reads; 859 clean reads kept with no adapter left, 1141 discarded as too short after trimming. |
+
 ## reaper
 
 ### Tool Description

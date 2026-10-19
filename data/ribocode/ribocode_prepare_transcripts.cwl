@@ -7,12 +7,11 @@ doc: "This script is designed for preparing transcripts annotation files.\n\nToo
 inputs:
   - id: genome_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: The genome sequences file in fasta format.
     inputBinding:
       position: 101
       prefix: --fasta
+      valueFrom: $(self.basename)
   - id: gtf_file
     type: File
     doc: 'Default, suitable for GENCODE and ENSEMBL GTF file, please refer: https://en.wikipedia.org/wiki/GENCODE,
@@ -21,15 +20,26 @@ inputs:
       position: 101
       prefix: --gtf
   - id: out_dir
-    type: Directory
+    type: string
     doc: annotation directory name.
     inputBinding:
       position: 101
       prefix: --out_dir
 outputs:
+  - id: annot_dir
+    type: Directory
+    doc: Annotation directory written by prepare_transcripts
+    outputBinding:
+      glob: $(inputs.out_dir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome_fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1

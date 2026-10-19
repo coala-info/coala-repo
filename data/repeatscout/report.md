@@ -1,5 +1,15 @@
 # repeatscout CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| repeatscout_RepeatScout | PASS | ran on the E. coli test genome; found 119 repeat families |
+| repeatscout_build_lmer_table | PASS | ran on the E. coli test genome (Galaxy repeatmodeler data); l-mer table feeds RepeatScout |
+| repeatscout_compare-out-to-gff.prl | PASS | ran with RepeatMasker output and a RepeatMasker GFF of simple repeats; overlap table is plausible |
+| repeatscout_filter-stage-1.prl | PASS | ran on the RepeatScout library; dropped 2 low-complexity families (TRF and nseg) |
+| repeatscout_filter-stage-2.prl | PASS | ran with a RepeatMasker .out of the library on the same genome; kept the families with at least 5 hits |
+
 ## repeatscout_build_lmer_table
 
 ### Tool Description

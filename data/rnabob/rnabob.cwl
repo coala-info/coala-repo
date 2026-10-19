@@ -8,19 +8,19 @@ inputs:
     type: File
     doc: descriptor file
     inputBinding:
-      position: 1
+      position: 101
   - id: sequence_file
     type: File
     doc: sequence file
     inputBinding:
-      position: 2
+      position: 102
   - id: fancy
     type:
       - 'null'
       - boolean
     doc: 'fancy: show full alignments to pattern'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -F
   - id: quiet
     type:
@@ -28,7 +28,7 @@ inputs:
       - boolean
     doc: 'quiet: suppress verbose banner and headers'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -q
   - id: search_both_strands
     type:
@@ -36,7 +36,7 @@ inputs:
       - boolean
     doc: search both strands of database
     inputBinding:
-      position: 103
+      position: 1
       prefix: -c
   - id: skip_mode
     type:
@@ -44,7 +44,7 @@ inputs:
       - boolean
     doc: 'skip mode: disallow overlapping matches'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -s
 outputs:
   - id: stdout

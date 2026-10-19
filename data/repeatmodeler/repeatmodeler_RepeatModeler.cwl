@@ -3,15 +3,24 @@ class: CommandLineTool
 baseCommand: RepeatModeler
 label: repeatmodeler_RepeatModeler
 doc: "Model repetitive DNA\n\nTool homepage: https://www.repeatmasker.org/RepeatModeler"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.database_files)
 inputs:
   - id: cdhit_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of the CD-Hit sequence clustering package.
     inputBinding:
       position: 101
       prefix: -cdhit_dir
+  - id: database_files
+    type:
+      type: array
+      items: File
+    doc: Files of the sequence database made by BuildDatabase (<name>.nhr, .nin, .nnd, .nni, .nog, .nsq, .translation); staged in the working directory
   - id: database
     type: string
     doc: The name of the sequence database to run an analysis on. This is the 
@@ -33,7 +42,7 @@ inputs:
   - id: genometools_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of the GenomeTools package.
     inputBinding:
       position: 101
@@ -41,7 +50,7 @@ inputs:
   - id: ltr_retriever_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of the LTR_Retriever v2.9.0 structural LTR
       analysis package.
     inputBinding:
@@ -59,7 +68,7 @@ inputs:
   - id: mafft_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of the MAFFT multiple alignment program.
     inputBinding:
       position: 101
@@ -67,7 +76,7 @@ inputs:
   - id: ninja_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of the Ninja phylogenetic analysis 
       package.
     inputBinding:
@@ -96,7 +105,7 @@ inputs:
   - id: recon_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of the RECON de-novo repeatfinding 
       program.
     inputBinding:
@@ -116,7 +125,7 @@ inputs:
   - id: repeatafterme_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of the RepeatAfterMe ( 0.0.6 or higher ) 
       extension program.
     inputBinding:
@@ -125,7 +134,7 @@ inputs:
   - id: repeatmasker_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of RepeatMasker (RM 4.1.5 or higher)
     inputBinding:
       position: 101
@@ -133,7 +142,7 @@ inputs:
   - id: rmblast_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of the RMBLAST (2.14.1 or higher)
     inputBinding:
       position: 101
@@ -141,7 +150,7 @@ inputs:
   - id: rscout_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation of the RepeatScout ( 1.0.7 or higher ) 
       de-novo repeatfinding program.
     inputBinding:
@@ -173,7 +182,7 @@ inputs:
   - id: trf_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The full path to TRF program. TRF must be named "trf". ( 4.0.9 or 
       higher )
     inputBinding:
@@ -182,13 +191,41 @@ inputs:
   - id: ucsctools_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to the installation directory of the UCSC TwoBit Tools 
       (twoBitToFa, faToTwoBit, twoBitInfo etc).
     inputBinding:
       position: 101
       prefix: -ucsctools_dir
 outputs:
+  - id: families_fasta
+    type:
+      - 'null'
+      - File
+    doc: Consensus sequences of the repeat families
+    outputBinding:
+      glob: $(inputs.database)-families.fa
+  - id: families_stockholm
+    type:
+      - 'null'
+      - File
+    doc: Seed alignments of the repeat families (Stockholm format)
+    outputBinding:
+      glob: $(inputs.database)-families.stk
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: RepeatModeler log file
+    outputBinding:
+      glob: $(inputs.database)-rmod.log
+  - id: work_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Working directory of the run (RM_<pid>.<date>)
+    outputBinding:
+      glob: RM_*
   - id: stdout
     type: stdout
     doc: Standard output

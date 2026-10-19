@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: riboplot.py
+baseCommand: riboplot
 label: riboplot
 doc: "Plot and output read counts for a single transcript\n\nTool homepage: https://github.com/hsinyenwu/RiboPlotR"
 inputs:
@@ -42,6 +42,8 @@ inputs:
       prefix: --read_offsets
   - id: ribo_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: Ribo-Seq alignment file in BAM format
     inputBinding:
       position: 101
@@ -50,6 +52,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .bai
     doc: RNA-Seq alignment file (BAM)
     inputBinding:
       position: 101
@@ -62,6 +66,8 @@ inputs:
       prefix: --transcript_name
   - id: transcriptome_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA format file of the transcriptome
     inputBinding:
       position: 101

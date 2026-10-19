@@ -113,10 +113,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: -mismatch
-  - id: ranges_file
+  - id: ranges_file_path
     type:
       - 'null'
-      - File
+      - string
     doc: file to save the extended sequence ranges (optional)
     inputBinding:
       position: 101
@@ -146,12 +146,11 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
-    doc: How verbose do you want it to be?  -vvvv is super-verbose.
+      - int
+    doc: How verbose do you want it to be? 1 gives -v, 4 gives -vvvv (super-verbose).
     inputBinding:
       position: 101
-      prefix: -v
+      valueFrom: $("-" + "v".repeat(self))
   - id: output_file_path
     type: string
     doc: '# file to write identified consensi to (FASTA format)'
@@ -159,6 +158,13 @@ inputs:
       position: 102
       prefix: -output
 outputs:
+  - id: ranges_file
+    type:
+      - 'null'
+      - File
+    doc: file with the extended sequence ranges
+    outputBinding:
+      glob: $(inputs.ranges_file_path)
   - id: output_file
     type: File
     doc: file to write identified consensi to (FASTA format)

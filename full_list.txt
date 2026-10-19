@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 11897; PASS: 9256; Failed: 1451; Not completed: 1190
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 12185; PASS: 9483; Failed: 1482; Not completed: 1220
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -11897,3 +11897,291 @@ rbpbench	rbpbench_sponge	PASS
 rbpbench	rbpbench_streme	PASS	
 rbpbench	rbpbench_tomtom	PASS	
 rcorrector	rcorrector_run_rcorrector.pl	PASS	
+rd-analyzer	rd-analyzer_RD-Analyzer-extended.py	PASS	Real M. tuberculosis reads against a reference with renamed headers; the result table showed the expected RD105 and RD207 deletions.
+rd-analyzer	rd-analyzer_RD-Analyzer.py	Failed	image problem: the tool runs bwa index on its built-in reference in the read-only image folder, so it fails for a non-root user.
+rdeval	rdeval	PASS	
+rdfextras	rdfextras_csv2rdf	PASS	Converted a real 31-row CSV to n3 triples; the command-line --colN, --propN and --propbase options crash in this version (tool bug), so the wrapper uses -p and a config file for column types.
+rdfextras	rdfextras_rdf2dot	PASS	
+rdfextras	rdfextras_rdfgraphisomorphism	PASS	Compared the real FOAF RDF file with itself; the tool reported no difference.
+rdfextras	rdfextras_rdfpipe	PASS	
+rdfextras	rdfextras_rdfs2dot	PASS	
+rdp-alignment	rdp-alignment_align-nucl-to-prot	PASS	Transferred a protein alignment of 4 real coronavirus N genes onto their nucleotide sequences; codons line up with the protein.
+rdp-alignment	rdp-alignment_alignment-merger	PASS	Merged two Infernal alignments of 8 real 16S sequences into one fasta alignment with the reference row.
+rdp-alignment	rdp-alignment_compare-error-type	PASS	Compared 7 real 16S queries with 8 reference 16S sequences; wrote the alignment, indel and mismatch files.
+rdp-alignment	rdp-alignment_pairwise-knn	PASS	Found the 2 nearest real 16S references for 7 queries; hits look right (Pseudomonas to Pseudomonas aeruginosa).
+rdp-alignment	rdp-alignment_rm-partialseq	PASS	Real 16S queries plus truncated E. coli copies (synthetic truncation); the truncated ones were removed.
+rdp-readseq	rdp-readseq_random-sample	PASS	Sampled 2 sequences from each of two real 16S sample files; both subset files have 2 sequences.
+rdp-readseq	rdp-readseq_reverse-comp	PASS	Reverse complemented 8 real 16S sequences; output matches an independent reverse complement.
+rdp-readseq	rdp-readseq_rm-dupseq	PASS	Real 16S file with one planted duplicate and one planted substring (synthetic additions); both were removed, 8 sequences kept.
+rdp-readseq	rdp-readseq_select-seqs	PASS	Selected 3 of 8 real 16S sequences by id.
+rdp-readseq	rdp-readseq_split	PASS	Split 8 real 16S sequences into 3 files of 3, 3 and 2 sequences.
+rdp-readseq	rdp-readseq_to-fasta	PASS	Converted 100 real fastq reads to fasta.
+rdp-readseq	rdp-readseq_to-fastq	PASS	Converted 100 real fastq reads; sequences match the input.
+rdp-readseq	rdp-readseq_to-stk	PASS	Converted a MAFFT alignment of 8 real 16S sequences to Stockholm format.
+rdp_classifier	rdp_classifier	PASS	Classified 8 real 16S sequences to the correct genus or family; the image has no training data, so the RDP 2.14 16S training set is supplied as input.
+rdrpcatch	rdrpcatch_databases	Not completed	Downloads the 3.6 GB RdRpCATCH database from Zenodo, too large for this test.
+rdrpcatch	rdrpcatch_scan	Not completed	Needs the 3.6 GB RdRpCATCH database (HMM profiles and MMseqs taxonomy), which is too large for this test.
+read-it-and-keep	read-it-and-keep_readItAndKeep	PASS	Kept 100 of 100 real SARS-CoV-2 read pairs; with 100 non-viral reads mixed in, it kept 99 of 200 reads and dropped the rest.
+read2tree	read2tree	PASS	Ran the Galaxy test set (20 marker genes, paired reads, DNA reference) and got a tree placing the sample with the mammal species.
+readfq	readfq_kseq_fastq_base	PASS	Counted 100 reads and 13897 bases in a real SARS-CoV-2 fastq; both match an independent count.
+reads2graph	reads2graph	PASS	Built an edit-distance graph from real 16S amplicon reads (1244 unique reads, 1122 edges); the DOT file has the same number of edges.
+readseq	readseq	PASS	Converted a real 16S alignment to Phylip, extracted the 3 CDS from pBR322 GenBank, and reverse complemented 8 sequences correctly. The wrapper now needs an output file name because readseq writes beside the input otherwise.
+readucks	readucks	PASS	Demultiplexed the 4000 real nanopore reads from the tool repository into native barcode bins (NB03 to NB06) plus unassigned; read counts add up to 4000.
+real	real	Failed	tool bug: the documented -u 0 (all matches) mode writes an empty output file; the default unique mode aligned 92 of 100 real reads correctly. The wrapper stages the reference with a .fa suffix because real ignores other suffixes.
+realphy	realphy	Failed	image problem: bowtie2, bowtie2-build and the tree programs (PhyML, RAxML) are not in the image, so realphy stops with 'The executable for BOWTIE2 is essential'.
+reaper	reaper	PASS	Trimmed the Illumina adapter from 2000 real small RNA reads; 859 clean reads kept with no adapter left, 1141 discarded as too short after trimming.
+rearr	rearr_rearrangement	PASS	Aligned 20 real CRISPR example reads to the example double-cut reference; 20 chimeric alignments with large deletions. The wrapper now feeds the input on stdin and the reference on file descriptor 3.
+rebaler	rebaler	PASS	Polished the Candidatus Portiera reference with 7100 real nanopore reads; one 352,692 bp contig, and the reads map to it slightly better than to the reference (88.2% vs 87.9% identity).
+rebar	rebar_dataset_download	Failed	image problem: the image has no CA certificates, so downloading the sars-cov-2 dataset fails with 'unable to get local issuer certificate'; only the built-in toy1 dataset downloads.
+rebar	rebar_dataset_list	PASS	Listed the datasets sars-cov-2 and toy1.
+rebar	rebar_plot	PASS	Drew breakpoint plots for D and E from the toy1 run; the plot for D shows the A to B switch at position 12.
+rebar	rebar_run	PASS	On the tool's toy1 dataset, found recombinants D (A,B at 12-12) and E (C,D at 4-4), matching the tool README.
+rebar	rebar_simulate	PASS	Simulated a recombinant of A and B at breakpoint 12 on the toy1 dataset; the sequence is A up to 12 and B after.
+recalladapters	recalladapters	Not completed	needs raw PacBio subreads and scraps BAM files with a subreadset.xml; no such real test data exists in the public test sets
+recentrifuge	recentrifuge_rcf	PASS	
+recentrifuge	recentrifuge_refafilt	PASS	
+recentrifuge	recentrifuge_refasplit	PASS	
+recentrifuge	recentrifuge_remock	PASS	
+recentrifuge	recentrifuge_retaxdump	PASS	
+recentrifuge	recentrifuge_rextraccnt	PASS	
+recentrifuge	recentrifuge_rextract	PASS	
+recentrifuge	recentrifuge_rgf	Not completed	needs GO-adapted nodes.dmp/names.dmp files and GO annotation output tables; no real test data available
+recgraph	recgraph	PASS	
+recognizer	recognizer	Not completed	needs the full CDD database (4.6 GB download and more than 20 GB extracted), too heavy for this machine; run was stopped after 20 minutes
+recontig	recontig_conversion-help	PASS	
+recontig	recontig_convert	PASS	
+recontig	recontig_make-mapping	PASS	
+recur	recur	PASS	
+recycler	recycler_get_simple_cycs.py	PASS	
+recycler	recycler_make_fasta_from_fastg.py	PASS	
+recycler	recycler_recycle.py	PASS	
+red	red	PASS	
+reduce	reduce	PASS	
+referee	referee_referee.py	PASS	
+referenceseeker	referenceseeker	PASS	
+refgenie	refgenie_add	Not completed	refgenie add needs an absolute genome folder, but the container work path changes on every run, so the relative folder fails with 'Provided path must exist'
+refgenie	refgenie_alias_get	PASS	
+refgenie	refgenie_alias_remove	PASS	
+refgenie	refgenie_alias_set	PASS	
+refgenie	refgenie_build	Failed	image problem: samtools is missing in the image, so the fasta recipe stops with 'samtools: command not found'
+refgenie	refgenie_compare	PASS	
+refgenie	refgenie_getseq	PASS	
+refgenie	refgenie_id	PASS	
+refgenie	refgenie_init	PASS	
+refgenie	refgenie_list	PASS	
+refgenie	refgenie_listr	PASS	
+refgenie	refgenie_populate	PASS	
+refgenie	refgenie_populater	PASS	
+refgenie	refgenie_pull	PASS	
+refgenie	refgenie_remove	PASS	
+refgenie	refgenie_seek	PASS	
+refgenie	refgenie_seekr	PASS	
+refgenie	refgenie_subscribe	PASS	
+refgenie	refgenie_tag	PASS	the tag rename works; the option --default crashes visibly for fasta assets (tool says it cannot change the default tag of fasta assets)
+refgenie	refgenie_unsubscribe	PASS	
+refgenie	refgenie_upgrade	Failed	image problem: python module tqdm is missing, so upgrading an old (synthetic v0.3) config stops with ModuleNotFoundError; a v0.4 config gives 'not implemented'
+refgenieserver	refgenieserver_archive	Failed	image problem: rsync is missing in the image, so archive cannot create the tgz (test used a small refgenie config built from refgenie t7.fa.gz)
+refgenieserver	refgenieserver_serve	Not completed	long-running web server, not tested
+refinem	refinem_call_genes	PASS	
+refinem	refinem_filter_bins	PASS	
+refinem	refinem_genome_stats	PASS	
+refinem	refinem_modify_bin	PASS	
+refinem	refinem_outliers	PASS	
+refinem	refinem_scaffold_stats	PASS	
+refinem	refinem_ssu_erroneous	Failed	image problem: nhmmer is missing and blastn fails on a missing libssl.so.1.0.0, so 16S detection cannot run
+refinem	refinem_taxon_filter	PASS	synthetic data: mixed bin with a tiny planted reference database; the 3 foreign scaffolds were flagged
+refinem	refinem_taxon_profile	PASS	synthetic data: tiny reference database built from the bins' own proteins
+refseq-plasmid-dl	refseq-plasmid-dl	PASS	dev-mode run downloaded one RefSeq plasmid group and wrote 5544 circular plasmids; needs NetworkAccess (added)
+regenie	regenie	PASS	step 1 and step 2 ran on the regenie example data (bed and pgen); binary Firth results match the shipped example file except 21 Firth rows with small numeric differences
+regtools	regtools_cis-ase_identify	PASS	output identical to the expected file shipped in the regtools integration tests
+regtools	regtools_cis-splice-effects_associate	PASS	output identical to the expected file shipped in the regtools integration tests
+regtools	regtools_cis-splice-effects_identify	PASS	output identical to the expected file shipped in the regtools integration tests
+regtools	regtools_junctions_annotate	PASS	output identical to the expected file shipped in the regtools integration tests
+regtools	regtools_junctions_extract	PASS	output identical to the expected file shipped in the regtools integration tests
+regtools	regtools_variants_annotate	PASS	output identical to the expected file shipped in the regtools integration tests
+relecov-tools	relecov-tools_build-schema	PASS	built a JSON schema and metadata template from the test mapping spreadsheet; output folder is created first and --version and --project are needed
+relecov-tools	relecov-tools_download	Not completed	needs an sftp server and credentials
+relecov-tools	relecov-tools_logs-to-excel	PASS	merged the test log summary into an xlsx report and JSON for lab COD-test-1
+relecov-tools	relecov-tools_map	PASS	mapped the 6 validated samples to the ENA schema JSON
+relecov-tools	relecov-tools_metadata-homogeneizer	Failed	tool bug: crashes at start because the config key self.institution does not exist (join() on None), before any input is read
+relecov-tools	relecov-tools_pipeline-manager	Not completed	needs buisciii-tools pipeline templates and dated validated-sample folders; no test data available
+relecov-tools	relecov-tools_read-bioinfo-metadata	PASS	viralrecon test results folder read into a long-table JSON with variants and lineage for 5 samples
+relecov-tools	relecov-tools_read-lab-metadata	PASS	13 samples parsed from the relecov-tools test spreadsheet into the output JSON
+relecov-tools	relecov-tools_send-mail	Not completed	sends an e-mail with a mailbox password; not run
+relecov-tools	relecov-tools_update-db	Not completed	needs an iSkyLIMS/relecov database server and credentials
+relecov-tools	relecov-tools_upload-to-ena	Not completed	needs ENA account credentials and submission server
+relecov-tools	relecov-tools_upload-to-gisaid	Not completed	needs GISAID credentials and submission server
+relecov-tools	relecov-tools_validate	PASS	validated the read-lab-metadata output against the relecov schema: 6 of 13 samples valid, validated JSON and invalid-sample report written
+relion	relion_relion_refine	PASS	synthetic data: noisy projections of the EMD-2788 apoferritin map made with relion_project; 3D refinement for 2 iterations gave a map with correlation 0.62 to the source map
+relion-bin-plusgui	relion-bin-plusgui_relion_preprocess	Failed	tool bug: the normalised stack is written as <o>.mrcs.mrcs while the output STAR file names <o>.mrcs, so the STAR file points to a missing stack
+relion-bin-plusmpi	relion-bin-plusmpi_relion_refine_mpi	PASS	synthetic data: noisy projections of the EMD-2788 apoferritin map; run through mpirun with 3 processes; map correlation to the source map rose from 0.43 to 0.61 in 2 iterations
+relion-bin-plusmpi-plusgui	relion-bin-plusmpi-plusgui_relion_preprocess	Failed	tool bug: the normalised stack is written as <o>.mrcs.mrcs while the output STAR file names <o>.mrcs, so the STAR file points to a missing stack
+relion-bin-plusmpi-plusgui	relion-bin-plusmpi-plusgui_relion_refine_mpi	PASS	synthetic data: noisy projections of the EMD-2788 apoferritin map; run through mpirun with 3 processes; map correlation to the source map rose to 0.61 in 2 iterations
+remag	remag	Failed	tool bug: remag 0.3.4 crashes in the main binning flow with TypeError (check_core_gene_duplications got an unexpected keyword use_header_cache); the CWL was rewritten from the help and the command line is accepted
+rename	rename	PASS	two real FASTQ files renamed with --subst; names changed and contents unchanged
+renano	renano	PASS	
+reneo	reneo_config	Failed	tool bug: reneo config crashes with a TypeError because copy_config gets no system config path
+reneo	reneo_run	Not completed	pipeline, skipped
+renet2	renet2_download_data	PASS	abs mode downloads real PubTator abstracts; ft mode fails visibly because the PubTator API now needs pmids
+renet2	renet2_evaluate_renet2_ft_cv	Not completed	too heavy: the 5-fold cross-validation does not finish within 15 minutes on 20 documents, and a smaller set crashes with a TypeError in the tool
+renet2	renet2_normalize_ann	PASS	
+renet2	renet2_parse_data	Failed	image problem: the geniass sentence splitter is not built and renet2 install_geniass fails (no make, tar error), so sentences.txt is not written
+renet2	renet2_predict	PASS	
+renet2	renet2_train	PASS	
+repaq	repaq	PASS	
+reparation_blast	reparation_blast_reparation.pl	PASS	ran on real E. coli ribosome profiling reads (SRR9691487 subset) with the E. coli K-12 proteome; predicted 1430 ORFs
+repeatafterme	repeatafterme_RAMExtend	PASS	
+repeatmasker	repeatmasker_RepeatMasker	PASS	ran with a custom library on Galaxy test data; masked FASTA and catalog match the expected files
+repeatmasker-recon	repeatmasker-recon	PASS	ran the C. elegans demo; the Tc3 family matches the 26 curated copies
+repeatmasker-recon	repeatmasker-recon_MSPCollect	Not completed	needs WU-BLAST output; NCBI BLAST output gives zero coordinates and no sample WU-BLAST output is available
+repeatmasker-recon	repeatmasker-recon_edgeredef	PASS	ran on the C. elegans demo data in pipeline order; chained output gives the same families as the full run
+repeatmasker-recon	repeatmasker-recon_eledef	PASS	ran on the C. elegans demo data in pipeline order; chained output gives the same families as the full run
+repeatmasker-recon	repeatmasker-recon_eleredef	PASS	ran on the C. elegans demo data in pipeline order; chained output gives the same families as the full run
+repeatmasker-recon	repeatmasker-recon_famdef	PASS	ran on the C. elegans demo data in pipeline order; chained output gives the same families as the full run
+repeatmasker-recon	repeatmasker-recon_imagespread	PASS	ran on the C. elegans demo data in pipeline order; chained output gives the same families as the full run
+repeatmodeler	repeatmodeler_BuildDatabase	PASS	built the database for the 6 Mb E. coli test genome (Galaxy repeatmodeler data)
+repeatmodeler	repeatmodeler_RepeatModeler	PASS	ran with -quick on the 6 Mb E. coli test genome; found 25 families and wrote the FASTA and Stockholm files
+repeatscout	repeatscout_RepeatScout	PASS	ran on the E. coli test genome; found 119 repeat families
+repeatscout	repeatscout_build_lmer_table	PASS	ran on the E. coli test genome (Galaxy repeatmodeler data); l-mer table feeds RepeatScout
+repeatscout	repeatscout_compare-out-to-gff.prl	PASS	ran with RepeatMasker output and a RepeatMasker GFF of simple repeats; overlap table is plausible
+repeatscout	repeatscout_filter-stage-1.prl	PASS	ran on the RepeatScout library; dropped 2 low-complexity families (TRF and nseg)
+repeatscout	repeatscout_filter-stage-2.prl	PASS	ran with a RepeatMasker .out of the library on the same genome; kept the families with at least 5 hits
+repenrich	repenrich_RepEnrich.py	PASS	ran on real E. coli Illumina reads (ERR10542496 subset) with bowtie unique and multimapped reads; fraction counts per repeat are plausible
+repenrich	repenrich_RepEnrich_setup.py	PASS	ran on E. coli K-12 with a RepeatMasker annotation made with a RepeatScout library; built the repeat pseudogenome indexes
+repic	repic_get_cliques	PASS	ran on the REPIC example 10017 picks (3 pickers, box 180); found 270 cliques
+repic	repic_iter_config	Not completed	needs a crYOLO model, a DeepPicker install and three conda environments (crYOLO, DeepPicker, Topaz) that are not in the image
+repic	repic_iter_pick	Not completed	needs GPU picker programs (crYOLO, DeepPicker, Topaz) and a training run of 20 to 30 minutes per iteration
+repic	repic_run_ilp	PASS	ran on the get_cliques output of example 10017; wrote consensus BOX files with plausible scores
+replidec	replidec_Replidec	Failed	image problem: the 371 MB database is not in the image and Replidec downloads it into its read-only install folder, so the run fails
+reprof	reprof	PASS	
+reseq	reseq_illuminaPE	PASS	
+reseq	reseq_queryProfile	PASS	
+reseq	reseq_replaceN	PASS	
+reseq	reseq_seqToIllumina	PASS	
+resfinder	resfinder_run_resfinder.py	PASS	
+revbayes	revbayes_rb	PASS	
+reveal	reveal_align	PASS	
+reveal	reveal_bubbles	PASS	
+reveal	reveal_comp	PASS	
+reveal	reveal_convert	PASS	
+reveal	reveal_extract	PASS	
+reveal	reveal_finish	Failed	image problem: matplotlib import fails in the image (PyQt4 missing, broken fontconfig), so the tool stops with NameError: plt is not defined
+reveal	reveal_matches	PASS	
+reveal	reveal_merge	PASS	
+reveal	reveal_plot	Failed	image problem: matplotlib import fails in the image (PyQt4 missing, broken fontconfig), so the tool stops with NameError: plt is not defined
+reveal	reveal_realign	PASS	
+reveal	reveal_subgraph	PASS	
+reviewer	reviewer_REViewer	PASS	
+revoluzer	revoluzer	Failed	tool bug: exits with status 1 after printing results (segmentation fault on 12 real genomes); needs undocumented -r flag and integer gene names
+revoluzer	revoluzer_crex	PASS	
+revoluzer	revoluzer_distmat	PASS	
+revoluzer	revoluzer_trex	PASS	
+revtag	revtag	PASS	
+rfmix	rfmix	PASS	
+rgi	rgi_rgi_auto_load	PASS	downloads and loads the current CARD release with k-mers (about 8 GB of output); loaded_databases.json shows CARD 4.0.2 and 61-mers
+rgi	rgi_rgi_bwt	PASS	synthetic data: paired reads simulated from the real pBR322 and pUC19 plasmid sequences; TEM-1 and tet(C) found
+rgi	rgi_rgi_card_annotation	PASS	
+rgi	rgi_rgi_heatmap	PASS	
+rgi	rgi_rgi_kmer_build	Not completed	needs the large CARD prevalence data directory; without it the tool crashes (None path)
+rgi	rgi_rgi_kmer_query	PASS	needs the 8 GB local database from rgi auto_load (--local); 1070 AMR k-mers found in pBR322
+rgi	rgi_rgi_load	PASS	
+rgi	rgi_rgi_main	PASS	
+rgi	rgi_rgi_parser	PASS	
+rgi	rgi_rgi_remove_duplicates	PASS	synthetic data: three planted prevalence records made from a real CARD sequence (duplicate and shorter copy removed); real prevalence data is very large
+rgi	rgi_rgi_tab	PASS	
+rgi	rgi_rgi_tm	Failed	image problem: melt.pl (UNAFold) stops with 'stack file is corrupt', so the output is an empty JSON
+rgi	rgi_rgi_wildcard_annotation	Not completed	needs the WildCARD variants download (about 1 GB) and was not fetched
+rhinotype	rhinotype	PASS	
+rhocall	rhocall_aggregate	PASS	
+rhocall	rhocall_annotate	PASS	BED mode annotated 271 variants in the AZ window; the --no-v14 mode crashes with StopIteration at the end of the VCF
+rhocall	rhocall_call	Failed	tool bug: rhocall call crashes with TypeError (call() missing argument ctx) on any VCF; command is deprecated
+rhocall	rhocall_tally	PASS	
+rhocall	rhocall_viz	PASS	wig/bed mode works; plot mode (--no-wig) crashes in the tool when a window has too few variants (NaN strings)
+rhotermpredict	rhotermpredict	Failed	image problem: the command exits with status 1 after writing a correct result file, because the entry script calls sys.exit with the result list
+ribocode	ribocode_GTFupdate	PASS	
+ribocode	ribocode_ORFcount	PASS	
+ribocode	ribocode_RiboCode	PASS	
+ribocode	ribocode_RiboCode_onestep	PASS	
+ribocode	ribocode_metaplots	PASS	
+ribocode	ribocode_plot_orf_density	PASS	
+ribocode	ribocode_prepare_transcripts	PASS	
+ribocutter	ribocutter	PASS	
+ribodetector	ribodetector	Not completed	needs a GPU: the command stops with CUDA unavailable; the CPU command is wrapped in ribodetector_cpu.cwl
+ribodetector	ribodetector_cpu	PASS	
+riboloco	riboloco	Failed	image problem: the tool crashes with AttributeError in make_ss_df (pandas DataFrame.append was removed in pandas 2) while reading the bed file
+riboloco	riboloco_convert_gtf	PASS	
+riboloco	riboloco_find_orfs	Failed	image problem: the tool crashes with AttributeError (pandas DataFrame.append was removed in pandas 2)
+ribominer	ribominer_GetProteinCodingSequence	PASS	
+ribominer	ribominer_GetUTRSequences	PASS	
+ribominer	ribominer_OutputTranscriptInfo	PASS	
+ribominer	ribominer_Periodicity	Failed	image problem: the plot step crashes (ValueError 102 values for 101 positions) after the start-codon table is written, so the run fails and no stop-codon output is made
+riboplot	riboplot	PASS	
+riboraptor	riboraptor_bam-to-bedgraph	PASS	
+riboraptor	riboraptor_bedgraph-to-bigwig	PASS	
+riboraptor	riboraptor_export-bed-fasta	Failed	tool bug: sequences of minus-strand genes are shifted by one base (extra base at the start, last base missing); plus-strand sequences are correct
+riboraptor	riboraptor_export-gene-coverages	PASS	
+riboraptor	riboraptor_export-metagene-coverage	PASS	
+riboraptor	riboraptor_periodicity	PASS	
+riboraptor	riboraptor_plot-metagene	PASS	the --ascii option crashes because gnuplotlib is missing in the image; the default plot works
+riboraptor	riboraptor_plot-read-length	PASS	the --ascii option crashes because gnuplotlib is missing in the image; the default plot works
+riboraptor	riboraptor_read-length-dist	PASS	
+riboraptor	riboraptor_uniq-bam	PASS	
+riboraptor	riboraptor_uniq-mapping-count	PASS	
+riboseed	riboseed_ribo_run	PASS	
+riboseed	riboseed_ribo_scan	PASS	
+riboseed	riboseed_ribo_score	PASS	
+riboseed	riboseed_ribo_seed	PASS	
+riboseed	riboseed_ribo_select	PASS	
+riboseed	riboseed_ribo_sim	PASS	
+riboseed	riboseed_ribo_sketch	Not completed	needs Mauve.jar (Mauve contig mover), which is not in the image
+riboseed	riboseed_ribo_snag	PASS	
+riboseed	riboseed_ribo_spec	Not completed	no usable data: the small real SPAdes graphs have no complete 16S and 23S nodes, so the run stops with FileNotFoundError for riboSpec_results.tab
+riboseed	riboseed_ribo_stack	PASS	
+riboseed	riboseed_ribo_structure	PASS	
+riboseed	riboseed_ribo_swap	PASS	
+ribotaper	ribotaper_Ribotaper.sh	Failed	image problem: samtools in the image fails to load libncurses.so.5, so the run stops at the first step
+ribotaper	ribotaper_create_annotations_files.bash	Failed	image problem: R fails to load libncurses.so.5 and tac is missing, so the run exits 0 but the annotation files are empty
+ribotaper	ribotaper_create_metaplots.bash	Failed	image problem: samtools in the image fails to load libncurses.so.5, so no metaplot data is made
+ribotin	ribotin_ribotin-hifiasm	Not completed	no usable small real data: the tool needs HiFi reads that cover the rDNA at depth (tens of GB of human reads) plus a hifiasm assembly
+ribotin	ribotin_ribotin-ref	Not completed	no usable small real data: the tool needs HiFi reads that cover the rDNA at depth (tens of GB of human reads)
+ribotin	ribotin_ribotin-verkko	Not completed	no usable small real data: the tool needs a verkko assembly folder of a human genome with rDNA (tens of GB of reads)
+ribotish	ribotish_predict	PASS	with -t (TIS) data, -p greater than 1 crashes with AssertionError in multiprocessing (Python 3.13); -p 1 and the -b mode work
+ribotish	ribotish_quality	PASS	
+ribotish	ribotish_tisdiff	PASS	synthetic data: the two groups are random halves of one Ribo-seq BAM; --plotout and --plotma crash with ModuleNotFoundError for zbio, and --export writes only the count table
+ribotish	ribotish_transplot	PASS	
+ribotricer	ribotricer_count-orfs	PASS	
+ribotricer	ribotricer_count-orfs-codon	Failed	tool bug: ribotricer 1.5.0 crashes with TypeError in str.join (count_orfs.py line 171) and writes an empty file
+ribotricer	ribotricer_detect-orfs	PASS	
+ribotricer	ribotricer_learn-cutoff	PASS	
+ribotricer	ribotricer_orfs-seq	PASS	
+ribotricer	ribotricer_prepare-orfs	PASS	
+rilseq	rilseq_RILseq_significant_regions.py	PASS	
+rilseq	rilseq_map_chimeric_fragments.py	PASS	
+rilseq	rilseq_map_single_fragments.py	Failed	tool bug: the documented --outhead option is ignored by map_single_fragments.py; output files are named from the fastq name (mapping and counts otherwise work)
+ripcal	ripcal	PASS	
+ripcal	ripcal_deripcal	PASS	
+ripcal	ripcal_ripcal_summarise	PASS	
+ripser	ripser	PASS	
+ripser	ripser_ripser-coeff	PASS	
+rmap	rmap	PASS	
+rmats	rmats_rmats.py	PASS	
+rmats2sashimiplot	rmats2sashimiplot	PASS	
+rmblast	rmblast_rmblastn	PASS	
+rna-seqc	rna-seqc_rnaseqc	PASS	
+rna-star	rna-star_STAR	PASS	genomeGenerate and alignReads work on real reads (99.8% mapped); option --quantMode GeneCounts segfaults in this STAR 2.7.0a image
+rnabloom	rnabloom	PASS	
+rnablueprint	rnablueprint_RNAblueprint	PASS	
+rnabob	rnabob	PASS	
+rnabridge-align	rnabridge-align	Not completed	runs on real paired reads and writes a BAM, but the template lengths in the output differ from the input (e.g. 201 becomes 75) and it could not be confirmed that this is the intended bridging result.
+rnabridge-denovo	rnabridge-denovo	PASS	
+rnachipintegrator	rnachipintegrator_RnaChipIntegrator	PASS	
+rnacode	rnacode_RNAcode	PASS	
+rnahybrid	rnahybrid_RNAcalibrate	PASS	
+rnahybrid	rnahybrid_RNAeffective	PASS	
+rnahybrid	rnahybrid_RNAhybrid	PASS	
+rnalien	rnalien	Not completed	needs the NCBI BLAST web service or a local nt database and runs for hours; flags were rewritten from the help
+rnalien	rnalien_RNAcentralHTTPRequest	Failed	tool bug: the RNAcentral web request runs but the answer no longer parses (key count not found)
+rnalien	rnalien_RNAlienScan	Not completed	run on the E. coli genome with the TPP riboswitch alignment took 17 minutes and ended with 'model.stockholm does not exist' in iteration 1, so no result could be checked
+rnalien	rnalien_RNAlienStatistics	PASS	
+rnalien	rnalien_cmsearchToBed	PASS	
+rnalyze	rnalyze	Not completed	pipeline, skipped

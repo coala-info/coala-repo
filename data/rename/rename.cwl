@@ -6,19 +6,18 @@ doc: "Rename files according to a pattern.\n\nTool homepage: http://plasmasturm.
 inputs:
   - id: files
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Files to rename
+      type: array
+      items: File
+    doc: Files to rename (copied into the working directory)
     inputBinding:
-      position: 1
+      position: 200
   - id: append
     type:
       - 'null'
       - string
     doc: append string to filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --append
   - id: backwards
     type:
@@ -26,7 +25,7 @@ inputs:
       - boolean
     doc: process files in reverse order
     inputBinding:
-      position: 102
+      position: 101
       prefix: --backwards
   - id: camelcase
     type:
@@ -34,7 +33,7 @@ inputs:
       - boolean
     doc: convert filenames to camel case
     inputBinding:
-      position: 102
+      position: 101
       prefix: --camelcase
   - id: counter_format
     type:
@@ -42,7 +41,7 @@ inputs:
       - string
     doc: specify counter format
     inputBinding:
-      position: 102
+      position: 101
       prefix: --counter-format
   - id: delete
     type:
@@ -50,7 +49,7 @@ inputs:
       - string
     doc: delete specified string from filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --delete
   - id: delete_all
     type:
@@ -58,7 +57,7 @@ inputs:
       - string
     doc: delete all occurrences of specified string from filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --delete-all
   - id: dry_run
     type:
@@ -66,7 +65,7 @@ inputs:
       - boolean
     doc: do not rename, just print what would be done
     inputBinding:
-      position: 102
+      position: 101
       prefix: --dry-run
   - id: expr
     type:
@@ -74,7 +73,7 @@ inputs:
       - string
     doc: apply Perl expression to filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --expr
   - id: force
     type:
@@ -82,7 +81,7 @@ inputs:
       - boolean
     doc: proceed when overwriting
     inputBinding:
-      position: 102
+      position: 101
       prefix: --force
   - id: glob
     type:
@@ -90,7 +89,7 @@ inputs:
       - boolean
     doc: expand "*" etc. in filenames, useful in Windows™ CMD.EXE
     inputBinding:
-      position: 102
+      position: 101
       prefix: --glob
   - id: hardlink
     type:
@@ -98,7 +97,7 @@ inputs:
       - boolean
     doc: create hard links
     inputBinding:
-      position: 102
+      position: 101
       prefix: --hardlink
   - id: interactive
     type:
@@ -106,7 +105,7 @@ inputs:
       - boolean
     doc: prompt when overwriting
     inputBinding:
-      position: 102
+      position: 101
       prefix: --interactive
   - id: just_print
     type:
@@ -114,7 +113,7 @@ inputs:
       - boolean
     doc: do not rename, just print what would be done
     inputBinding:
-      position: 102
+      position: 101
       prefix: --just-print
   - id: keep_extension
     type:
@@ -122,7 +121,7 @@ inputs:
       - boolean
     doc: keep file extension
     inputBinding:
-      position: 102
+      position: 101
       prefix: --keep-extension
   - id: lower_case
     type:
@@ -130,7 +129,7 @@ inputs:
       - boolean
     doc: convert filenames to lower case
     inputBinding:
-      position: 102
+      position: 101
       prefix: --lower-case
   - id: make_dirs
     type:
@@ -138,23 +137,15 @@ inputs:
       - boolean
     doc: create parent directories as needed
     inputBinding:
-      position: 102
+      position: 101
       prefix: --make-dirs
-  - id: man
-    type:
-      - 'null'
-      - boolean
-    doc: read the full manual
-    inputBinding:
-      position: 102
-      prefix: --man
   - id: mkpath
     type:
       - 'null'
       - boolean
     doc: create parent directories as needed
     inputBinding:
-      position: 102
+      position: 101
       prefix: --mkpath
   - id: no_stdin
     type:
@@ -162,7 +153,7 @@ inputs:
       - boolean
     doc: do not read filenames from standard input
     inputBinding:
-      position: 102
+      position: 101
       prefix: --no-stdin
   - id: noctrl
     type:
@@ -170,7 +161,7 @@ inputs:
       - boolean
     doc: remove control characters from filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --noctrl
   - id: nometa
     type:
@@ -178,7 +169,7 @@ inputs:
       - boolean
     doc: remove metadata characters from filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --nometa
   - id: nows
     type:
@@ -186,7 +177,7 @@ inputs:
       - boolean
     doc: remove whitespace from filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --nows
   - id: null_input
     type:
@@ -194,7 +185,7 @@ inputs:
       - boolean
     doc: when reading from STDIN
     inputBinding:
-      position: 102
+      position: 101
       prefix: --null
   - id: pipe
     type:
@@ -202,7 +193,7 @@ inputs:
       - string
     doc: pipe filenames through external command
     inputBinding:
-      position: 102
+      position: 101
       prefix: --pipe
   - id: prepend
     type:
@@ -210,7 +201,7 @@ inputs:
       - string
     doc: prepend string to filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --prepend
   - id: remove_extension
     type:
@@ -218,7 +209,7 @@ inputs:
       - boolean
     doc: remove file extension
     inputBinding:
-      position: 102
+      position: 101
       prefix: --remove-extension
   - id: reverse_order
     type:
@@ -226,7 +217,7 @@ inputs:
       - boolean
     doc: process files in reverse order
     inputBinding:
-      position: 102
+      position: 101
       prefix: --reverse-order
   - id: rews
     type:
@@ -234,7 +225,7 @@ inputs:
       - boolean
     doc: replace whitespace with underscores in filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --rews
   - id: sanitize
     type:
@@ -242,7 +233,7 @@ inputs:
       - boolean
     doc: sanitize filenames (remove invalid characters)
     inputBinding:
-      position: 102
+      position: 101
       prefix: --sanitize
   - id: sort_time
     type:
@@ -250,7 +241,7 @@ inputs:
       - boolean
     doc: sort files by modification time
     inputBinding:
-      position: 102
+      position: 101
       prefix: --sort-time
   - id: stdin
     type:
@@ -258,7 +249,7 @@ inputs:
       - boolean
     doc: read filenames from standard input
     inputBinding:
-      position: 102
+      position: 101
       prefix: --stdin
   - id: subst
     type:
@@ -267,7 +258,7 @@ inputs:
         items: string
     doc: substitute first occurrence of 'from' with 'to' in filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --subst
   - id: subst_all
     type:
@@ -276,7 +267,7 @@ inputs:
         items: string
     doc: substitute all occurrences of 'from' with 'to' in filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --subst-all
   - id: symlink
     type:
@@ -284,7 +275,7 @@ inputs:
       - boolean
     doc: create symbolic links
     inputBinding:
-      position: 102
+      position: 101
       prefix: --symlink
   - id: transcode
     type:
@@ -292,7 +283,7 @@ inputs:
       - string
     doc: transcode filenames to specified encoding
     inputBinding:
-      position: 102
+      position: 101
       prefix: --transcode
   - id: trim
     type:
@@ -300,7 +291,7 @@ inputs:
       - boolean
     doc: trim leading/trailing whitespace from filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --trim
   - id: upper_case
     type:
@@ -308,7 +299,7 @@ inputs:
       - boolean
     doc: convert filenames to upper case
     inputBinding:
-      position: 102
+      position: 101
       prefix: --upper-case
   - id: urlesc
     type:
@@ -316,7 +307,7 @@ inputs:
       - boolean
     doc: URL-encode filenames
     inputBinding:
-      position: 102
+      position: 101
       prefix: --urlesc
   - id: use_module
     type:
@@ -324,7 +315,7 @@ inputs:
       - string
     doc: use specified module
     inputBinding:
-      position: 102
+      position: 101
       prefix: --use
   - id: verbose
     type:
@@ -332,13 +323,25 @@ inputs:
       - boolean
     doc: be verbose
     inputBinding:
-      position: 102
+      position: 101
       prefix: --verbose
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: renamed_files
+    type:
+      type: array
+      items: File
+    doc: Files in the working directory after the rename
+    outputBinding:
+      glob: '*'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rename:1.601--0
 stdout: rename.out
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.files)
+        writable: true

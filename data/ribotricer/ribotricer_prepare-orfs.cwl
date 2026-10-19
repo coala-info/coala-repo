@@ -12,6 +12,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fasta
+      valueFrom: $(self.basename)
   - id: gtf
     type: File
     doc: Path to GTF file
@@ -67,6 +68,12 @@ outputs:
     doc: Files written with the prefix given in prefix
     outputBinding:
       glob: $(inputs.prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribotricer:1.5.0--pyhdfd78af_0

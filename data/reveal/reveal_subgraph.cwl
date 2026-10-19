@@ -4,15 +4,20 @@ baseCommand:
   - reveal
   - subgraph
 label: reveal_subgraph
-doc: "Extract subgraph from gfa by specified node ids.\n\nTool homepage: https://github.com/hakimel/reveal.js"
+doc: "Extract subgraph from gfa by specified node ids.\n\nTool homepage: https://github.com/jasperlinthorst/reveal"
 inputs:
-  - id: inputfiles
-    type:
-      type: array
-      items: File
-    doc: The gfa graph followed by node ids that make up the subgraph.
+  - id: graph
+    type: File
+    doc: The gfa graph from which the subgraph is extracted.
     inputBinding:
       position: 1
+  - id: node_ids
+    type:
+      type: array
+      items: string
+    doc: Node ids that make up the subgraph.
+    inputBinding:
+      position: 2
   - id: gml
     type:
       - 'null'

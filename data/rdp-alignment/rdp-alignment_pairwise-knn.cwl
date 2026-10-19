@@ -1,64 +1,72 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: PairwiseKNN
+baseCommand:
+  - rdp-alignment
+  - pairwise-knn
 label: rdp-alignment_pairwise-knn
-doc: "Pairwise alignment tool using k-nearest neighbors\n\nTool homepage: https://github.com/AlbertoMartinPerez/Sequence_Analyzer_automations"
+doc: "Compute the k nearest neighbors of each query sequence by pairwise alignment (PairwiseKNN).
+
+Tool homepage: https://github.com/rdpstaff/Alignment"
 inputs:
   - id: query_file
     type: File
-    doc: Query sequence file
+    doc: "Query sequence file"
     inputBinding:
-      position: 1
+      position: 6
   - id: db_file
     type: File
-    doc: Database sequence file
+    doc: "Database (reference) sequence file"
     inputBinding:
-      position: 2
+      position: 7
   - id: k
     type:
       - 'null'
       - int
-    doc: K-nearest neighbors to return.
+    doc: "K-nearest neighbors to return (default 1)"
     inputBinding:
-      position: 103
+      position: 1
       prefix: -k
   - id: mode
     type:
       - 'null'
       - string
-    doc: Alignment mode {global, glocal, local, overlap, overlap_trimmed}
+    doc: "Alignment mode {global, glocal, local, overlap, overlap_trimmed} (default glocal)"
     inputBinding:
-      position: 103
+      position: 2
       prefix: --mode
   - id: prefilter
     type:
       - 'null'
       - int
-    doc: The top p closest targets from kmer prefilter step. Set p=0 to disable 
-      the prefilter step.
+    doc: "The top p closest targets from the kmer prefilter step. Set p=0 to disable the prefilter step (default 10)"
     inputBinding:
-      position: 103
+      position: 3
       prefix: --prefilter
   - id: word_size
     type:
       - 'null'
       - int
-    doc: The word size used to find closest targets during prefilter.
+    doc: "The word size used to find closest targets during prefilter (default 4 for protein, 8 for nucleotide)"
     inputBinding:
-      position: 103
+      position: 4
       prefix: --word-size
   - id: out_path
-    type: string
-    doc: Redirect output to file instead of stdout
+    type:
+      - 'null'
+      - string
+    doc: "Redirect output to this file instead of stdout"
     inputBinding:
-      position: 104
+      position: 5
       prefix: --out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: out
     type:
       - 'null'
       - File
-    doc: Redirect output to file instead of stdout
+    doc: "Alignment hits of the nearest neighbors"
     outputBinding:
       glob: $(inputs.out_path)
 requirements:
@@ -66,3 +74,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rdp-alignment:v1.2.0-5-deb_cv1
+stdout: rdp-alignment_pairwise-knn.out

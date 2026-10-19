@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: getargs_genome_maker.py
+baseCommand: RepEnrich_setup.py
 label: repenrich_RepEnrich_setup.py
 doc: "Part I: Prepartion of repetive element psuedogenomes and repetive element\n\
   bamfiles. This script prepares the annotation used by downstream applications\n\
@@ -30,7 +30,7 @@ inputs:
     inputBinding:
       position: 2
   - id: setup_folder
-    type: Directory
+    type: string
     doc: "List folder to contain bamfiles for repeats and repeat\n               \
       \         element psuedogenomes. Example\n                        /data/annotation/mm9/setup"
     inputBinding:
@@ -81,8 +81,20 @@ outputs:
       \       number of fragments processed per repname."
     outputBinding:
       glob: $(inputs.nfragmentsfile1_path)
+  - id: setup_folder_out
+    type: Directory
+    doc: Setup folder with the repeat element pseudogenomes (bowtie indexes) and repeat bed files
+    outputBinding:
+      glob: $(inputs.setup_folder)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.setup_folder)
+        writable: true
+        entry: '$({"class": "Directory", "listing": []})'
+      - entry: $(inputs.genomefasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repenrich:1.2--py27_1

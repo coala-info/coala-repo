@@ -1,5 +1,11 @@
 # riboplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| riboplot | PASS |  |
+
 ## riboplot
 
 ### Tool Description

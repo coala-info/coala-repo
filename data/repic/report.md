@@ -1,5 +1,14 @@
 # repic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| repic_get_cliques | PASS | ran on the REPIC example 10017 picks (3 pickers, box 180); found 270 cliques |
+| repic_iter_config | Not completed | needs a crYOLO model, a DeepPicker install and three conda environments (crYOLO, DeepPicker, Topaz) that are not in the image |
+| repic_iter_pick | Not completed | needs GPU picker programs (crYOLO, DeepPicker, Topaz) and a training run of 20 to 30 minutes per iteration |
+| repic_run_ilp | PASS | ran on the get_cliques output of example 10017; wrote consensus BOX files with plausible scores |
+
 ## repic_get_cliques
 
 ### Tool Description

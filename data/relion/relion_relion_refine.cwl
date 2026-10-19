@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: relion_relion_refine
+baseCommand: relion_refine
 label: relion_relion_refine
 doc: "RELION: command line arguments\n\nTool homepage: https://github.com/3dem/relion"
 inputs:
@@ -581,7 +581,7 @@ inputs:
   - id: input_optimiser_set
     type:
       - 'null'
-      - string
+      - File
     doc: Input tomo optimisation set file. It is used to set --i, --tomograms, 
       --ref or --solvent_mask if they are not provided. Updated output optimiser
       set is created.
@@ -591,7 +591,7 @@ inputs:
   - id: input_particles
     type:
       - 'null'
-      - string
+      - File
     doc: Input particles (in a star-file)
     inputBinding:
       position: 101
@@ -1198,7 +1198,7 @@ inputs:
   - id: tomograms
     type:
       - 'null'
-      - string
+      - File
     doc: Star file with the tomograms, in case subtomos are handled as 2D stacks
     inputBinding:
       position: 101
@@ -1206,7 +1206,7 @@ inputs:
   - id: trajectories
     type:
       - 'null'
-      - string
+      - File
     doc: Star file with the tomogram motion trajectories
     inputBinding:
       position: 101
@@ -1262,11 +1262,39 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zero_mask
+  - id: particle_stacks
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Image stacks (.mrcs) named in the input particle STAR file, staged in 
+      the working directory so the names resolve
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the output rootname
+    outputBinding:
+      glob: $(inputs.output_rootname)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/relion:5.0.1--h6e3b700_0
 stdout: relion_relion_refine.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.particle_stacks) { l = l.concat(inputs.particle_stacks); }
+        var r = inputs.output_rootname;
+        if (r && r.indexOf("/") >= 0) {
+          var dn = r.substring(0, r.lastIndexOf("/"));
+          l.push({"entryname": dn, "entry": {"class": "Directory", "basename": dn, "listing": []}, "writable": true});
+        }
+        return l;
+      }

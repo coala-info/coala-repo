@@ -1,5 +1,11 @@
 # refseq-plasmid-dl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| refseq-plasmid-dl | PASS | dev-mode run downloaded one RefSeq plasmid group and wrote 5544 circular plasmids; needs NetworkAccess (added) |
+
 ## refseq-plasmid-dl
 
 ### Tool Description

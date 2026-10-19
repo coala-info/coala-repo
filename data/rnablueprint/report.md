@@ -1,5 +1,11 @@
 # rnablueprint CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnablueprint_RNAblueprint | PASS |  |
+
 ## rnablueprint_RNAblueprint
 
 ### Tool Description

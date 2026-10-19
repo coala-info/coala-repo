@@ -5,7 +5,7 @@ baseCommand:
   - align
 label: reveal_align
 doc: "Construct a population graph from input genomes or other graphs.\n\nTool homepage:
-  https://github.com/hakimel/reveal.js"
+  https://github.com/jasperlinthorst/reveal"
 inputs:
   - id: inputfiles
     type:
@@ -190,6 +190,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: graph_files
+    type:
+      type: array
+      items: File
+    doc: Alignment graph (gfa, or gml with --gml) and mumplot files written in the working directory
+    outputBinding:
+      glob:
+        - '*.gfa'
+        - '*.gml'
+        - '*.png'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reveal:0.1--py27_1

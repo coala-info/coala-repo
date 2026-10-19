@@ -5,7 +5,7 @@ label: referenceseeker
 doc: "Rapid determination of appropriate reference genomes.\n\nTool homepage: https://github.com/oschwengers/referenceseeker"
 inputs:
   - id: database
-    type: string
+    type: Directory
     doc: ReferenceSeeker database path
     inputBinding:
       position: 1

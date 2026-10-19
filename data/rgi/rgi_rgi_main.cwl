@@ -123,11 +123,16 @@ inputs:
       position: 102
       prefix: --output_file
 outputs:
-  - id: output_file
+  - id: output_json
     type: File
-    doc: output folder and base filename
+    doc: RGI results in JSON format (output file name plus .json)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).json
+  - id: output_txt
+    type: File
+    doc: RGI results as a tab-delimited table (output file name plus .txt)
+    outputBinding:
+      glob: $(inputs.output_file_path).txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

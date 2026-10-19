@@ -77,12 +77,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rgi
+  - id: local_db
+    type:
+      - 'null'
+      - Directory
+    doc: Local database directory created by rgi load --local (staged as localDB in the working directory).
+  - id: output_file_path
+    type: string
+    doc: Output file name.
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output_file
-    type: File
-    doc: Output file name.
+    type:
+      type: array
+      items: File
+    doc: Output files (output name plus the analysis suffixes)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.local_db ? [{entry: inputs.local_db, entryname: 'localDB', writable: false}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0

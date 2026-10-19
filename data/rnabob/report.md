@@ -1,5 +1,11 @@
 # rnabob CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnabob | PASS |  |
+
 ## rnabob
 
 ### Tool Description

@@ -1,5 +1,21 @@
 # reveal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| reveal_align | PASS |  |
+| reveal_bubbles | PASS |  |
+| reveal_comp | PASS |  |
+| reveal_convert | PASS |  |
+| reveal_extract | PASS |  |
+| reveal_finish | Failed | image problem: matplotlib import fails in the image (PyQt4 missing, broken fontconfig), so the tool stops with NameError: plt is not defined |
+| reveal_matches | PASS |  |
+| reveal_merge | PASS |  |
+| reveal_plot | Failed | image problem: matplotlib import fails in the image (PyQt4 missing, broken fontconfig), so the tool stops with NameError: plt is not defined |
+| reveal_realign | PASS |  |
+| reveal_subgraph | PASS |  |
+
 ## reveal_align
 
 ### Tool Description

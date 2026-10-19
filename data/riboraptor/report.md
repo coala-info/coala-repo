@@ -1,5 +1,21 @@
 # riboraptor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| riboraptor_bam-to-bedgraph | PASS |  |
+| riboraptor_bedgraph-to-bigwig | PASS |  |
+| riboraptor_export-bed-fasta | Failed | tool bug: sequences of minus-strand genes are shifted by one base (extra base at the start, last base missing); plus-strand sequences are correct |
+| riboraptor_export-gene-coverages | PASS |  |
+| riboraptor_export-metagene-coverage | PASS |  |
+| riboraptor_periodicity | PASS |  |
+| riboraptor_plot-metagene | PASS | the --ascii option crashes because gnuplotlib is missing in the image; the default plot works |
+| riboraptor_plot-read-length | PASS | the --ascii option crashes because gnuplotlib is missing in the image; the default plot works |
+| riboraptor_read-length-dist | PASS |  |
+| riboraptor_uniq-bam | PASS |  |
+| riboraptor_uniq-mapping-count | PASS |  |
+
 ## riboraptor_bam-to-bedgraph
 
 ### Tool Description

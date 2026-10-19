@@ -7,7 +7,7 @@ inputs:
   - id: nodes_path
     type:
       - 'null'
-      - Directory
+      - string
     doc: path for the nodes information files (nodes.dmp and names.dmp from 
       NCBI)
     inputBinding:
@@ -17,6 +17,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: nodes_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the downloaded nodes.dmp and names.dmp files
+    outputBinding:
+      glob: $(inputs.nodes_path)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recentrifuge:2.1.1--pyhdfd78af_0

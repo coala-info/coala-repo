@@ -1,5 +1,23 @@
 # relecov-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| relecov-tools_build-schema | PASS | built a JSON schema and metadata template from the test mapping spreadsheet; output folder is created first and --version and --project are needed |
+| relecov-tools_download | Not completed | needs an sftp server and credentials |
+| relecov-tools_logs-to-excel | PASS | merged the test log summary into an xlsx report and JSON for lab COD-test-1 |
+| relecov-tools_map | PASS | mapped the 6 validated samples to the ENA schema JSON |
+| relecov-tools_metadata-homogeneizer | Failed | tool bug: crashes at start because the config key self.institution does not exist (join() on None), before any input is read |
+| relecov-tools_pipeline-manager | Not completed | needs buisciii-tools pipeline templates and dated validated-sample folders; no test data available |
+| relecov-tools_read-bioinfo-metadata | PASS | viralrecon test results folder read into a long-table JSON with variants and lineage for 5 samples |
+| relecov-tools_read-lab-metadata | PASS | 13 samples parsed from the relecov-tools test spreadsheet into the output JSON |
+| relecov-tools_send-mail | Not completed | sends an e-mail with a mailbox password; not run |
+| relecov-tools_update-db | Not completed | needs an iSkyLIMS/relecov database server and credentials |
+| relecov-tools_upload-to-ena | Not completed | needs ENA account credentials and submission server |
+| relecov-tools_upload-to-gisaid | Not completed | needs GISAID credentials and submission server |
+| relecov-tools_validate | PASS | validated the read-lab-metadata output against the relecov schema: 6 of 13 samples valid, validated JSON and invalid-sample report written |
+
 ## relecov-tools_download
 
 ### Tool Description

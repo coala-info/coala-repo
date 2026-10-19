@@ -1,30 +1,40 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - AlignmentMerger
+  - rdp-alignment
+  - alignment-merger
 label: rdp-alignment_alignment-merger
-doc: "This program reads in all the files from the input directory and merges the
-  alignment into one single file\n\nTool homepage: https://github.com/AlbertoMartinPerez/Sequence_Analyzer_automations"
+doc: "Read all alignment files (fasta or Stockholm, each with a #=GC_RF reference sequence) from a directory and merge them into one alignment file.
+
+Tool homepage: https://github.com/rdpstaff/Alignment"
 inputs:
   - id: alignfiledir
     type: Directory
-    doc: stkdir contains a list of aligned stk files to be merged
+    doc: "Directory with the aligned files to be merged"
     inputBinding:
       position: 1
+  - id: outfile
+    type: string
+    doc: "Output fasta file with the merged alignment"
+    inputBinding:
+      position: 2
   - id: mask_file
     type:
       - 'null'
       - File
-    doc: maskfile contains the model positions to be ignored
+    doc: "File with the model positions to be ignored"
     inputBinding:
-      position: 2
+      position: 3
 outputs:
-  - id: outfile_fasta
-    type: File
-    doc: outfile.fasta merges the alignment into one single file
+  - id: merged
+    type:
+      - 'null'
+      - File
+    doc: "Merged alignment"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.outfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rdp-alignment:v1.2.0-5-deb_cv1

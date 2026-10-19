@@ -1,5 +1,15 @@
 # rdfextras CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rdfextras_csv2rdf | PASS | Converted a real 31-row CSV to n3 triples; the command-line --colN, --propN and --propbase options crash in this version (tool bug), so the wrapper uses -p and a config file for column types. |
+| rdfextras_rdf2dot | PASS |  |
+| rdfextras_rdfgraphisomorphism | PASS | Compared the real FOAF RDF file with itself; the tool reported no difference. |
+| rdfextras_rdfpipe | PASS |  |
+| rdfextras_rdfs2dot | PASS |  |
+
 ## rdfextras_csv2rdf
 
 ### Tool Description
@@ -199,6 +209,28 @@ Reading from stdin as None...Traceback (most recent call last):
 xml.sax._exceptions.SAXParseException: file:///dev/stdin:1:0: no element found
 ```
 
+
+## rdfextras_rdfgraphisomorphism
+
+### Tool Description
+Tests if RDF graphs are isomorphic (equal when blank node labels are ignored).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rdfextras:0.4--py27_2
+- **Homepage**: https://github.com/RDFLib/rdfextras
+- **Package**: https://anaconda.org/channels/bioconda/packages/rdfextras/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rdfgraphisomorphism [options] file1 file2 ... fileN
+
+Options:
+  -h, --help           show this help message and exit
+  -s, --stdin          Load from STDIN as well
+  --format=RDF_FORMAT  The format of the RDF document(s) to compareOne of
+                       'xml','n3','trix', 'nt', or 'rdfa'.  The default is xml
+```
 
 ## Metadata
 - **Skill**: generated

@@ -45,7 +45,7 @@ inputs:
       prefix: --region_bed
   - id: saveto_path
     type: string
-    doc: Path to write bedgraph output
+    doc: Path to write gene coverages tsv file
     inputBinding:
       position: 102
       prefix: --saveto

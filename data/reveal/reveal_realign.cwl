@@ -4,7 +4,7 @@ baseCommand:
   - reveal
   - realign
 label: reveal_realign
-doc: "Realign between two nodes in the graph.\n\nTool homepage: https://github.com/hakimel/reveal.js"
+doc: "Realign between two nodes in the graph.\n\nTool homepage: https://github.com/jasperlinthorst/reveal"
 inputs:
   - id: graph
     type: File

@@ -5,6 +5,13 @@ label: rmblast_rmblastn
 doc: "Nucleotide-Nucleotide BLAST with RepeatMasker Extensions 2.14.1+\n\nTool homepage:
   https://www.repeatmasker.org/rmblast/"
 inputs:
+  - id: database_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files of a BLAST database made with makeblastdb (all files sharing the 
+      prefix given in db); they are staged in the working directory
   - id: best_hit_overhang
     type:
       - 'null'
@@ -38,6 +45,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -db
+  - id: complexity_adjust
+    type:
+      - 'null'
+      - boolean
+    doc: Use complexity adjusted scoring
+    inputBinding:
+      position: 101
+      prefix: -complexity_adjust
+  - id: mask_level
+    type:
+      - 'null'
+      - int
+    doc: Masklevel - percentage overlap allowed per query domain [0-101]
+    inputBinding:
+      position: 101
+      prefix: -mask_level
+  - id: matrix
+    type:
+      - 'null'
+      - File
+    doc: Scoring matrix name
+    inputBinding:
+      position: 101
+      prefix: -matrix
   - id: db_hard_mask
     type:
       - 'null'
@@ -363,6 +394,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -soft_masking
+      valueFrom: '$(self ? "true" : "false")'
   - id: sorthits
     type:
       - 'null'
@@ -419,6 +451,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -sum_stats
+      valueFrom: '$(self ? "true" : "false")'
   - id: task
     type:
       - 'null'
@@ -475,6 +508,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -use_index
+      valueFrom: '$(self ? "true" : "false")'
   - id: window_masker_db
     type:
       - 'null'
@@ -562,6 +596,9 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.database_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rmblast:2.14.1--hdb21ba3_2

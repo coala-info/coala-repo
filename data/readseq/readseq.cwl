@@ -1,333 +1,340 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -cp
-  - readseq.jar
-  - run
+baseCommand: readseq
 label: readseq
-doc: "Read & reformat biosequences, Java command-line version\n\nTool homepage: http://iubio.bio.indiana.edu/soft/molbio/readseq/java/"
+doc: "Read and reformat biosequences, Java command-line version. Converts between sequence formats (fasta, genbank, embl, phylip, nexus, msf, clustal and more), with options for case, reverse complement, translation, feature extraction and pretty printing.
+
+Tool homepage: http://iubio.bio.indiana.edu/soft/molbio/readseq/java/"
 inputs:
   - id: input_files
     type:
       type: array
       items: File
-    doc: Input file(s)
+    doc: Input sequence file(s)
     inputBinding:
-      position: 1
+      position: 200
+  - id: output_file_path
+    type: string
+    doc: "Output file name. Without it readseq tries to write next to the input file, which fails for staged inputs"
+    inputBinding:
+      position: 100
+      prefix: -output=
+      separate: false
   - id: all_sequences
     type:
       - 'null'
       - boolean
-    doc: select All sequences
+    doc: "Select all sequences"
     inputBinding:
-      position: 102
-      prefix: --all
-  - id: amino_translate
-    type:
-      - 'null'
-      - boolean
-    doc: translate dna to amino acids
-    inputBinding:
-      position: 102
-      prefix: --translate
+      position: 1
+      prefix: -all
   - id: case_lower
     type:
       - 'null'
       - boolean
-    doc: change to lower case
+    doc: "Change to lower case"
     inputBinding:
-      position: 102
-      prefix: --aselower
+      position: 2
+      prefix: -caselower
   - id: case_upper
     type:
       - 'null'
       - boolean
-    doc: change to UPPER CASE
+    doc: "Change to UPPER CASE"
     inputBinding:
-      position: 102
-      prefix: --ASEUPPER
+      position: 3
+      prefix: -CASEUPPER
   - id: checksum
     type:
       - 'null'
       - boolean
-    doc: calculate & print checksum of sequences
+    doc: "Calculate and print the checksum of sequences"
     inputBinding:
-      position: 102
-      prefix: --checksum
-  - id: column_space
-    type:
-      - 'null'
-      - int
-    doc: column space within sequence line on output
-    inputBinding:
-      position: 102
-      prefix: --colspace
-  - id: compare
-    type:
-      - 'null'
-      - int
-    doc: Compare two sequence files, reporting differences 
-      (flags=nodoc,noid,nolen,nocrc)
-    inputBinding:
-      position: 102
-      prefix: -compare=
-      separate: false
+      position: 4
+      prefix: -checksum
   - id: degap
     type:
       - 'null'
       - string
-    doc: remove gap symbols
+    doc: "Remove gap symbols; the value is the gap symbol (for example -)"
     inputBinding:
-      position: 102
+      position: 5
       prefix: -degap=
       separate: false
-  - id: extract_features
+  - id: output_format
     type:
       - 'null'
       - string
-    doc: extract sequence of selected features
+    doc: "Format number or format name for the output (for example fasta, genbank, phylip, nexus, msf, clustal, pir, embl, gff, 8)"
     inputBinding:
-      position: 102
-      prefix: --features
-  - id: extract_range
-    type:
-      - 'null'
-      - string
-    doc: extract all features, sequence from given base range
-    inputBinding:
-      position: 102
-      prefix: -extract=
-      separate: false
-  - id: gap_count
-    type:
-      - 'null'
-      - boolean
-    doc: count gap chars in sequence numbers
-    inputBinding:
-      position: 102
-      prefix: --gapcount
-  - id: include_fields
-    type:
-      - 'null'
-      - string
-    doc: include selected document fields in output
-    inputBinding:
-      position: 102
-      prefix: -field=
-      separate: false
-  - id: indent_tab
-    type:
-      - 'null'
-      - int
-    doc: left indent
-    inputBinding:
-      position: 102
-      prefix: -tab=
+      position: 6
+      prefix: -format=
       separate: false
   - id: input_format
     type:
       - 'null'
       - string
-    doc: input format number, or input format name. Assume input data is this 
-      format
+    doc: "Input format number or name; assume the input data is this format"
     inputBinding:
-      position: 102
-      prefix: --informat
-  - id: interline_blank
-    type:
-      - 'null'
-      - string
-    doc: blank line(s) between sequence blocks
-    inputBinding:
-      position: 102
-      prefix: --interline
+      position: 7
+      prefix: -informat=
+      separate: false
   - id: item_numbers
     type:
       - 'null'
       - string
-    doc: select Item number(s) from several
+    doc: "Select item number(s) from several, for example 2,3,4"
     inputBinding:
-      position: 102
-      prefix: --item
+      position: 8
+      prefix: -item=
+      separate: false
   - id: list_sequences
     type:
       - 'null'
       - boolean
-    doc: List sequences only
+    doc: "List sequences only"
     inputBinding:
-      position: 102
-      prefix: --list
-  - id: match_base
+      position: 9
+      prefix: -list
+  - id: pipe
+    type:
+      - 'null'
+      - boolean
+    doc: "Pipe mode (command line, stdin to stdout)"
+    inputBinding:
+      position: 10
+      prefix: -pipe
+  - id: reverse_complement
+    type:
+      - 'null'
+      - boolean
+    doc: "Reverse-complement of the input sequence"
+    inputBinding:
+      position: 11
+      prefix: -reverse
+  - id: translate_symbols
     type:
       - 'null'
       - string
-    doc: use match base for 2..n species
+    doc: "Translate input symbol i to output symbol o, given as io (for example tu)"
     inputBinding:
-      position: 102
-      prefix: -match=
+      position: 12
+      prefix: -translate=
       separate: false
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "Verbose progress"
+    inputBinding:
+      position: 13
+      prefix: -verbose
+  - id: compare
+    type:
+      - 'null'
+      - string
+    doc: "Compare two sequence files, reporting differences (flags=nodoc,noid,nolen,nocrc)"
+    inputBinding:
+      position: 14
+      prefix: -compare=
+      separate: false
+  - id: amino_translate
+    type:
+      - 'null'
+      - boolean
+    doc: "Translate DNA to amino acids"
+    inputBinding:
+      position: 15
+      prefix: -aminotranslate
+  - id: features
+    type:
+      - 'null'
+      - string
+    doc: "Extract the sequence of selected features, for example exon,CDS"
+    inputBinding:
+      position: 16
+      prefix: -features=
+      separate: false
+  - id: no_features
+    type:
+      - 'null'
+      - string
+    doc: "Remove the sequence of selected features, for example repeat_region,intron"
+    inputBinding:
+      position: 17
+      prefix: -nofeatures=
+      separate: false
+  - id: fields
+    type:
+      - 'null'
+      - string
+    doc: "Include selected document fields in the output, for example AC,ID"
+    inputBinding:
+      position: 18
+      prefix: -field=
+      separate: false
+  - id: no_fields
+    type:
+      - 'null'
+      - string
+    doc: "Remove selected document fields from the output, for example COMMENT"
+    inputBinding:
+      position: 19
+      prefix: -nofield=
+      separate: false
+  - id: extract_range
+    type:
+      - 'null'
+      - string
+    doc: "Extract all features and sequence from a base range, for example 1000..9999"
+    inputBinding:
+      position: 20
+      prefix: -extract=
+      separate: false
+  - id: subrange
+    type:
+      - 'null'
+      - string
+    doc: "Extract a subrange of the sequence for feature locations, for example 1..end"
+    inputBinding:
+      position: 21
+      prefix: -subrange=
+      separate: false
+  - id: pair_features
+    type:
+      - 'null'
+      - string
+    doc: "Combine feature (fff, gff) and sequence files into one output"
+    inputBinding:
+      position: 22
+      prefix: -pair=
+      separate: false
+  - id: unpair_features
+    type:
+      - 'null'
+      - string
+    doc: "Split features and sequence from one input into two files"
+    inputBinding:
+      position: 23
+      prefix: -unpair=
+      separate: false
+  - id: width
+    type:
+      - 'null'
+      - int
+    doc: "Sequence line width (pretty format options)"
+    inputBinding:
+      position: 24
+      prefix: -width=
+      separate: false
+  - id: tab
+    type:
+      - 'null'
+      - int
+    doc: "Left indent"
+    inputBinding:
+      position: 25
+      prefix: -tab=
+      separate: false
+  - id: column_space
+    type:
+      - 'null'
+      - int
+    doc: "Column space within a sequence line on output"
+    inputBinding:
+      position: 26
+      prefix: -colspace=
+      separate: false
+  - id: gap_count
+    type:
+      - 'null'
+      - boolean
+    doc: "Count gap characters in sequence numbers"
+    inputBinding:
+      position: 27
+      prefix: -gapcount
   - id: name_left
     type:
       - 'null'
-      - string
-    doc: name on left side [=max width]
+      - boolean
+    doc: "Name on the left side"
     inputBinding:
-      position: 102
+      position: 28
       prefix: -nameleft
   - id: name_right
     type:
       - 'null'
       - string
-    doc: name on right side [=max width]
+    doc: "Name on the right side, with width"
     inputBinding:
-      position: 102
+      position: 29
       prefix: -nameright=
       separate: false
   - id: name_top
     type:
       - 'null'
       - boolean
-    doc: name at top/bottom
+    doc: "Name at top and bottom"
     inputBinding:
-      position: 102
+      position: 30
       prefix: -nametop
-  - id: num_bottom
-    type:
-      - 'null'
-      - boolean
-    doc: index on bottom side
-    inputBinding:
-      position: 102
-      prefix: -numbot
   - id: num_left
     type:
       - 'null'
       - boolean
-    doc: seq index on left side
+    doc: "Sequence index on the left side"
     inputBinding:
-      position: 102
+      position: 31
       prefix: -numleft
   - id: num_right
     type:
       - 'null'
       - boolean
-    doc: seq index on right side
+    doc: "Sequence index on the right side"
     inputBinding:
-      position: 102
+      position: 32
       prefix: -numright
   - id: num_top
     type:
       - 'null'
       - boolean
-    doc: index on top side
+    doc: "Index on the top side"
     inputBinding:
-      position: 102
+      position: 33
       prefix: -numtop
-  - id: output_format
-    type:
-      - 'null'
-      - string
-    doc: Format number for output, or Format name for output
-    inputBinding:
-      position: 102
-      prefix: --format
-  - id: pair_features
-    type:
-      - 'null'
-      - int
-    doc: combine features (fff,gff) and sequence files to one output
-    inputBinding:
-      position: 102
-      prefix: -pair=
-      separate: false
-  - id: pipe
+  - id: num_bottom
     type:
       - 'null'
       - boolean
-    doc: Pipe (command line, < stdin, > stdout)
+    doc: "Index on the bottom side"
     inputBinding:
-      position: 102
-      prefix: --pipe
-  - id: remove_features
+      position: 34
+      prefix: -numbot
+  - id: match_base
     type:
       - 'null'
       - string
-    doc: remove sequence of selected features
+    doc: "Use a match base for species 2..n, for example ."
     inputBinding:
-      position: 102
-      prefix: --nofeatures
-  - id: remove_fields
-    type:
-      - 'null'
-      - string
-    doc: remove selected document fields from output
-    inputBinding:
-      position: 102
-      prefix: -nofield=
+      position: 35
+      prefix: -match=
       separate: false
-  - id: reverse_complement
-    type:
-      - 'null'
-      - boolean
-    doc: reverse-complement of input sequence
-    inputBinding:
-      position: 102
-      prefix: --reverse
-  - id: sequence_width
+  - id: interline
     type:
       - 'null'
       - int
-    doc: sequence line width
+    doc: "Blank lines between sequence blocks"
     inputBinding:
-      position: 102
-      prefix: --width
-  - id: subrange
-    type:
-      - 'null'
-      - string
-    doc: extract subrange of sequence for feature locations
-    inputBinding:
-      position: 102
-      prefix: -subrange=
+      position: 36
+      prefix: -interline=
       separate: false
-  - id: translate
-    type:
-      - 'null'
-      - string
-    doc: translate input symbol [i] to output symbol [o]
-    inputBinding:
-      position: 102
-      prefix: --translate
-  - id: unpair_features
-    type:
-      - 'null'
-      - int
-    doc: split features,sequence from one input to two files
-    inputBinding:
-      position: 102
-      prefix: -unpair=
-      separate: false
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Verbose progress
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (messages, or results of -list, -checksum and -compare)
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: redirect Output
+    type: File
+    doc: Converted sequences written to output_file_path
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:
@@ -335,3 +342,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/readseq:2.1.30--1
+stdout: readseq.out

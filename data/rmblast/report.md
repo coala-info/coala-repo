@@ -1,5 +1,11 @@
 # rmblast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rmblast_rmblastn | PASS |  |
+
 ## rmblast_rmblastn
 
 ### Tool Description

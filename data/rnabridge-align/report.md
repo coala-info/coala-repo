@@ -1,5 +1,11 @@
 # rnabridge-align CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnabridge-align | Not completed | runs on real paired reads and writes a BAM, but the template lengths in the output differ from the input (e.g. 201 becomes 75) and it could not be confirmed that this is the intended bridging result. |
+
 ## rnabridge-align
 
 ### Tool Description

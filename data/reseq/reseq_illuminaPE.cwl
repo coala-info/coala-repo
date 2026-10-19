@@ -24,7 +24,9 @@ inputs:
       position: 101
       prefix: --adapterMatrix
   - id: bam_in
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Position sorted bam/sam file with reads mapped to refIn
     inputBinding:
       position: 101
@@ -56,8 +58,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --errorMutliplier
-  - id: first_reads_out
-    type: File
+  - id: first_reads_out_path
+    type: string
     doc: Writes the simulated first reads into this file
     inputBinding:
       position: 101
@@ -203,8 +205,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --refSim
-  - id: second_reads_out
-    type: File
+  - id: second_reads_out_path
+    type: string
     doc: Writes the simulated second reads into this file
     inputBinding:
       position: 101
@@ -288,7 +290,7 @@ inputs:
     doc: Output or path parameter `probabilities_out_path`
     inputBinding:
       position: 102
-      prefix: --probabilities-out
+      prefix: --probabilitiesOut
   - id: stats_out_path
     type:
       - 'null'
@@ -296,7 +298,7 @@ inputs:
     doc: Output or path parameter `stats_out_path`
     inputBinding:
       position: 103
-      prefix: --stats-out
+      prefix: --statsOut
   - id: write_sys_error_path
     type:
       - 'null'
@@ -307,6 +309,20 @@ inputs:
       position: 104
       prefix: --writeSysError
 outputs:
+  - id: first_reads_out
+    type:
+      - 'null'
+      - File
+    doc: Writes the simulated first reads into this file
+    outputBinding:
+      glob: $(inputs.first_reads_out_path)
+  - id: second_reads_out
+    type:
+      - 'null'
+      - File
+    doc: Writes the simulated second reads into this file
+    outputBinding:
+      glob: $(inputs.second_reads_out_path)
   - id: stats_out
     type:
       - 'null'

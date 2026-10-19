@@ -138,11 +138,12 @@ inputs:
       position: 101
       prefix: --silent
   - id: subreadset
-    type: string
+    type: File
     doc: Input subreadset.xml
     inputBinding:
       position: 101
       prefix: --subreadset
+      valueFrom: $(self.basename)
   - id: whitelist_zmw_num
     type:
       - 'null'
@@ -151,6 +152,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --whitelistZmwNum
+  - id: dataset_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The subreads and scraps BAM files (with their .pbi index files) that
+      the subreadset.xml refers to. They are staged next to the subreadset.xml.
 outputs:
   - id: stdout
     type: stdout
@@ -162,6 +170,11 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.subreadset)
+      - $(inputs.dataset_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recalladapters:9.0.0--h9ee0642_1

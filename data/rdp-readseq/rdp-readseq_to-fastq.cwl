@@ -1,71 +1,30 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rdp-readseq_to-fastq
+baseCommand:
+  - rdp-readseq
+  - to-fastq
 label: rdp-readseq_to-fastq
-doc: Converts sequence files to FASTQ format.
+doc: "Convert a fastq file, or a fasta file with a quality file, to fastq on standard output (ToFastq).
+
+Tool homepage: https://github.com/rdpstaff/ReadSeq"
 inputs:
-  - id: input_file
+  - id: seqfile
     type: File
-    doc: Input sequence file (e.g., FASTA, GenBank)
+    doc: "Sequence file with quality information (fastq), or a fasta file"
     inputBinding:
       position: 1
-  - id: force
-    type:
-      - 'null'
-      - boolean
-    doc: Overwrite output file if it already exists.
-    inputBinding:
-      position: 102
-      prefix: --force
-  - id: interleaved
-    type:
-      - 'null'
-      - boolean
-    doc: Output interleaved FASTQ format (for paired-end reads).
-    inputBinding:
-      position: 102
-      prefix: --interleaved
-  - id: max_length
-    type:
-      - 'null'
-      - int
-    doc: Maximum sequence length to include in the output.
-    inputBinding:
-      position: 102
-      prefix: --max-length
-  - id: min_length
-    type:
-      - 'null'
-      - int
-    doc: Minimum sequence length to include in the output.
-    inputBinding:
-      position: 102
-      prefix: --min-length
-  - id: quality_score
-    type:
-      - 'null'
-      - int
-    doc: Assign a constant quality score to all bases (0-41).
-    inputBinding:
-      position: 102
-      prefix: --quality-score
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+  - id: qualfile
     type:
       - 'null'
       - File
-    doc: Output FASTQ file name. If not specified, output will be written to 
-      standard output.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+    doc: "Quality file, for a fasta input"
+    inputBinding:
+      position: 2
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rdp-readseq:v2.0.2-6-deb_cv1
+stdout: rdp-readseq_to-fastq.out

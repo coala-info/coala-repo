@@ -6,9 +6,7 @@ doc: "Reaper is a tool for processing sequencing reads, particularly for removin
   adapters and other unwanted sequences.\n\nTool homepage: https://www.ebi.ac.uk/~stijn/reaper/reaper.html"
 inputs:
   - id: basename
-    type:
-      - 'null'
-      - string
+    type: string
     doc: pfx.lint.gz, pfx.clean.gz pfx.report etc will be constructed
     inputBinding:
       position: 101
@@ -140,7 +138,9 @@ inputs:
       position: 101
       prefix: --keep-all
   - id: meta_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: 'file with geometry-dependent format. Required columns: Geometry Columns:
       no-bc 3p-ad - - - tabu 3p-bc 3p-ad barcode 3p-si - tabu 5p-bc 3p-ad barcode
       - 5p-si tabu bc=barcode, ad=adaptor, si=sequence insert Columns 3p-si, 5p-si,
@@ -318,6 +318,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the basename (clean reads, lint reads, reports)
+    outputBinding:
+      glob: $(inputs.basename).*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reaper:16.098--ha92aebf_2

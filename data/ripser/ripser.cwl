@@ -7,7 +7,7 @@ inputs:
   - id: filename
     type:
       - 'null'
-      - string
+      - File
     doc: Input filename
     inputBinding:
       position: 1

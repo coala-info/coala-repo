@@ -1,5 +1,13 @@
 # rilseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rilseq_RILseq_significant_regions.py | PASS |  |
+| rilseq_map_chimeric_fragments.py | PASS |  |
+| rilseq_map_single_fragments.py | Failed | tool bug: the documented --outhead option is ignored by map_single_fragments.py; output files are named from the fastq name (mapping and counts otherwise work) |
+
 ## rilseq_map_single_fragments.py
 
 ### Tool Description

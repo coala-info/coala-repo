@@ -4,93 +4,21 @@ baseCommand:
   - riboraptor
   - periodicity
 label: riboraptor_periodicity
-doc: "Calculate periodicity of Ribo-seq data.\n\nTool homepage: https://github.com/saketkc/riboraptor"
+doc: "Calculate periodicity\n\nTool homepage: https://github.com/saketkc/riboraptor"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input Ribo-seq data file (e.g., BAM, BED, TSV).
-    inputBinding:
-      position: 1
-  - id: max_read_length
+  - id: counts
     type:
       - 'null'
-      - int
-    doc: Maximum read length to consider.
+      - File
+    doc: Path to counts file (if not stdin)
     inputBinding:
-      position: 102
-      prefix: --max-read-length
-  - id: min_period_score
-    type:
-      - 'null'
-      - float
-    doc: Minimum score for a period to be considered significant.
-    inputBinding:
-      position: 102
-      prefix: --min-period-score
-  - id: min_read_length
-    type:
-      - 'null'
-      - int
-    doc: Minimum read length to consider.
-    inputBinding:
-      position: 102
-      prefix: --min-read-length
-  - id: period_range
-    type:
-      - 'null'
-      - string
-    doc: Range of periods to test (e.g., '10-50').
-    inputBinding:
-      position: 102
-      prefix: --period-range
-  - id: step_size
-    type:
-      - 'null'
-      - int
-    doc: Step size for the sliding window.
-    inputBinding:
-      position: 102
-      prefix: --step-size
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use.
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: window_size
-    type:
-      - 'null'
-      - int
-    doc: Size of the sliding window for periodicity calculation.
-    inputBinding:
-      position: 102
-      prefix: --window-size
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 103
-      prefix: --output-dir
+      position: 101
+      prefix: --counts
 outputs:
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to save output files.
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboraptor:0.2.2--py36_0
+stdout: riboraptor_periodicity.out

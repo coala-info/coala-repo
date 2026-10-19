@@ -8,6 +8,8 @@ doc: "Calculate read length distribution\n\nTool homepage: https://github.com/sa
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: Path to BAM file
     inputBinding:
       position: 101

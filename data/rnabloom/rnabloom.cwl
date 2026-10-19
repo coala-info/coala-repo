@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - RNA-Bloom.jar
+baseCommand: rnabloom
 label: rnabloom
 doc: "RNA-Bloom v2.0.1\n\nTool homepage: https://github.com/bcgsc/RNA-Bloom"
 inputs:
@@ -160,6 +157,7 @@ inputs:
     doc: long reads file(s)
     inputBinding:
       position: 101
+      prefix: -long
   - id: lookahead_kmers
     type:
       - 'null'
@@ -344,6 +342,7 @@ inputs:
     doc: list of read files for pooled assembly
     inputBinding:
       position: 101
+      prefix: -pool
   - id: reference_transcripts
     type:
       - 'null'
@@ -352,6 +351,7 @@ inputs:
     doc: reference transcripts file(s) for guiding the assembly process
     inputBinding:
       position: 101
+      prefix: -ref
   - id: revcomp_left
     type:
       - 'null'
@@ -433,6 +433,7 @@ inputs:
     doc: single-end forward read file(s)
     inputBinding:
       position: 101
+      prefix: -sef
   - id: single_end_reverse
     type:
       - 'null'
@@ -441,6 +442,7 @@ inputs:
     doc: single-end reverse read file(s)
     inputBinding:
       position: 101
+      prefix: -ser
   - id: skip_redundancy_reduction
     type:
       - 'null'

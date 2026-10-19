@@ -14,6 +14,8 @@ inputs:
       prefix: --chrom_sizes
   - id: fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to fasta file
     inputBinding:
       position: 101
@@ -50,18 +52,25 @@ inputs:
       prefix: --region_bed
   - id: output_prefix_path
     type: string
-    doc: Path to write output
+    doc: Path to write output (include a directory name, for example fa/cds)
     inputBinding:
       position: 102
       prefix: --prefix
 outputs:
-  - id: output_prefix
+  - id: all_genes
     type:
       - 'null'
       - File
-    doc: Path to write output
+    doc: Table of all gene sequences (<prefix>_all_genes.tsv)
     outputBinding:
-      glob: $(inputs.output_prefix_path)
+      glob: $(inputs.output_prefix_path)_all_genes.tsv
+  - id: gene_fastas
+    type:
+      type: array
+      items: File
+    doc: One FASTA file per gene (<prefix>_<gene>.fasta)
+    outputBinding:
+      glob: $(inputs.output_prefix_path)_*.fasta
 requirements:
   - class: InlineJavascriptRequirement
 hints:

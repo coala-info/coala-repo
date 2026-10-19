@@ -1,5 +1,11 @@
 # rna-star CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rna-star_STAR | PASS | genomeGenerate and alignReads work on real reads (99.8% mapped); option --quantMode GeneCounts segfaults in this STAR 2.7.0a image |
+
 ## rna-star_STAR
 
 ### Tool Description

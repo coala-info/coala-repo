@@ -1,8 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: predict.py
+baseCommand:
+  - renet2
+  - predict
 label: renet2_predict
 doc: "RENET2 testing models [assemble, full-text]\n\nTool homepage: https://github.com/sujunhao/RENET2"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.gda_fn_d)
+        writable: true
+        entry: '$({"class": "Directory", "listing": []})'
 inputs:
   - id: add_cache_suf
     type:
@@ -69,9 +78,7 @@ inputs:
       position: 101
       prefix: --fix_token_n
   - id: gda_fn_d
-    type:
-      - 'null'
-      - string
+    type: string
     doc: found gda file folder
     inputBinding:
       position: 101
@@ -261,6 +268,11 @@ inputs:
       position: 101
       prefix: --word_index_fn
 outputs:
+  - id: gda_dir
+    type: Directory
+    doc: Folder with the predicted gene-disease associations (gda_rst.tsv)
+    outputBinding:
+      glob: $(inputs.gda_fn_d)
   - id: stdout
     type: stdout
     doc: Standard output

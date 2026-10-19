@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnablueprint_RNAblueprint
+baseCommand: RNAblueprint
 label: rnablueprint_RNAblueprint
 doc: "Reads RNA secondary structures in dot-bracket notation as well as sequence constraints
   in IUPAC code and fairly samples RNA sequences compatible to both inputs\n\nTool
@@ -50,7 +50,7 @@ inputs:
   - id: num_designs
     type:
       - 'null'
-      - string
+      - int
     doc: number of designs
     inputBinding:
       position: 101
@@ -58,7 +58,7 @@ inputs:
   - id: seed
     type:
       - 'null'
-      - string
+      - int
     doc: random number generator seed
     inputBinding:
       position: 101
@@ -72,12 +72,24 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_file_path
-    type: string
-    doc: 'output file for writing the sequences (default:'
+    type:
+      - 'null'
+      - string
+    doc: 'output file for writing the sequences (default: stdout)'
     inputBinding:
       position: 102
       prefix: --out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the sequences when no output file is given)
+  - id: graphml_output
+    type:
+      - 'null'
+      - File
+    doc: GraphML file representing the dependency graph
+    outputBinding:
+      glob: $(inputs.graphml_file)
   - id: output_file
     type:
       - 'null'
@@ -90,3 +102,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnablueprint:1.3.3--py311pl5321h6accb3f_0
+stdout: rnablueprint_RNAblueprint.out

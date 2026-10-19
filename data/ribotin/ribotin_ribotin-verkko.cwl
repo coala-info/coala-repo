@@ -56,7 +56,9 @@ inputs:
       position: 101
       prefix: --graphaligner
   - id: guess_tangles_using_reference
-    type: string
+    type:
+      - 'null'
+      - File
     doc: Guess the rDNA tangles using k-mer matches to given reference sequence
     inputBinding:
       position: 101
@@ -143,13 +145,15 @@ inputs:
       prefix: --samtools
   - id: tangles_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --tangles
     doc: Input files for node tangles. Multiple files may be inputed with -c 
       file1.txt -c file2.txt ...
     inputBinding:
       position: 101
-      prefix: --tangles
   - id: threads
     type:
       - 'null'

@@ -1,5 +1,11 @@
 # rmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rmap | PASS |  |
+
 ## rmap
 
 ### Tool Description

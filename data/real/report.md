@@ -1,5 +1,11 @@
 # real CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| real | Failed | tool bug: the documented -u 0 (all matches) mode writes an empty output file; the default unique mode aligned 92 of 100 real reads correctly. The wrapper stages the reference with a .fa suffix because real ignores other suffixes. |
+
 ## real
 
 ### Tool Description

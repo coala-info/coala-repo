@@ -5,15 +5,15 @@ baseCommand:
   - finish
 label: reveal_finish
 doc: "Finish a draft assembly by ordering and orienting contigs with respect to a
-  finished reference assembly.\n\nTool homepage: https://github.com/hakimel/reveal.js"
+  finished reference assembly.\n\nTool homepage: https://github.com/jasperlinthorst/reveal"
 inputs:
   - id: reference
-    type: string
+    type: File
     doc: Graph or sequence to which query/contigs should be assigned.
     inputBinding:
       position: 1
   - id: contigs
-    type: string
+    type: File
     doc: Graph or fasta that is to be reverse complemented with respect to the 
       reference.
     inputBinding:

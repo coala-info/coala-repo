@@ -1,5 +1,11 @@
 # readucks CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| readucks | PASS | Demultiplexed the 4000 real nanopore reads from the tool repository into native barcode bins (NB03 to NB06) plus unassigned; read counts add up to 4000. |
+
 ## readucks
 
 ### Tool Description

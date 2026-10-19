@@ -102,14 +102,21 @@ inputs:
       position: 101
       prefix: -r
   - id: output_bam_file_path
-    type: string
-    doc: Output or path parameter `output_bam_file_path`
+    type:
+      - 'null'
+      - string
+    doc: Output BAM file name (not needed with --preview)
     inputBinding:
       position: 102
-      prefix: --output-bam-file
+      prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the preview report with --preview)
   - id: output_bam_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Output BAM file
     outputBinding:
       glob: $(inputs.output_bam_file_path)
@@ -118,3 +125,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnabridge-align:1.0.1--h5ca1c30_9
+stdout: rnabridge-align.out

@@ -1,5 +1,13 @@
 # ripcal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ripcal | PASS |  |
+| ripcal_deripcal | PASS |  |
+| ripcal_ripcal_summarise | PASS |  |
+
 ## ripcal
 
 ### Tool Description
@@ -46,6 +54,43 @@ RIP index scan options (-type = scan):
 	disable index options by setting to 0
 ```
 
+
+## ripcal_deripcal
+
+### Tool Description
+deRIPCAL creates a virtually de-RIP-mutated consensus sequence from a multiple alignment (fasta or clustalw format).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ripcal:2.0--hdfd78af_0
+- **Homepage**: https://sourceforge.net/projects/ripcal
+- **Package**: https://anaconda.org/channels/bioconda/packages/ripcal/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: deRIPCAL format input output
+format: fasta OR clustalw
+input: multiple alignment in either pearson/fasta (default) or clustalw aln formats
+output: multiple alignment in pearson/fasta format, with deRIPped consensus model sequence first
+```
+
+## ripcal_ripcal_summarise
+
+### Tool Description
+Summarise a RIPCAL tabular output file for one repeat class; the summary goes to standard output.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ripcal:2.0--hdfd78af_0
+- **Homepage**: https://sourceforge.net/projects/ripcal
+- **Package**: https://anaconda.org/channels/bioconda/packages/ripcal/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: ripcal_summarise input model (optional: 1, writes field ids) >> output
+input: ripcal tabular output file
+model: name of the repeat class analysed in the input file
+```
 
 ## Metadata
 - **Skill**: generated

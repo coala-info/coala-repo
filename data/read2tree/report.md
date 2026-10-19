@@ -1,5 +1,11 @@
 # read2tree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| read2tree | PASS | Ran the Galaxy test set (20 marker genes, paired reads, DNA reference) and got a tree placing the sample with the mammal species. |
+
 ## read2tree
 
 ### Tool Description

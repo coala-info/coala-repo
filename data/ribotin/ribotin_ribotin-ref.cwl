@@ -51,21 +51,23 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --in
     doc: Input HiFi/duplex reads. Multiple files can be input with -i file1.fa 
       -i file2.fa etc
     inputBinding:
       position: 101
-      prefix: --in
   - id: input_ultralong_ont_reads
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --nano
     doc: Input ultralong ONT reads. Multiple files can be input with --nano 
       file1.fa --nano file2.fa etc
     inputBinding:
       position: 101
-      prefix: --nano
   - id: kmer_size
     type:
       - 'null'

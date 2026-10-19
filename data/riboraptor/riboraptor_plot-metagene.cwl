@@ -4,120 +4,100 @@ baseCommand:
   - riboraptor
   - plot-metagene
 label: riboraptor_plot-metagene
-doc: "Plot metagene read counts.\n\nTool homepage: https://github.com/saketkc/riboraptor"
+doc: "Plot metagene profile\n\nTool homepage: https://github.com/saketkc/riboraptor"
 inputs:
-  - id: input_files
-    type:
-      type: array
-      items: File
-    doc: Input files (e.g. .counts.tsv)
-    inputBinding:
-      position: 1
-  - id: force
+  - id: counts
     type:
       - 'null'
-      - boolean
-    doc: Overwrite output file if it exists.
+      - File
+    doc: Path to counts file (if not stdin)
     inputBinding:
-      position: 102
-      prefix: --force
-  - id: log_scale
-    type:
-      - 'null'
-      - boolean
-    doc: Use log scale for Y-axis.
-    inputBinding:
-      position: 102
-      prefix: --log-scale
-  - id: max_value
-    type:
-      - 'null'
-      - float
-    doc: Maximum value to display on Y-axis.
-    inputBinding:
-      position: 102
-      prefix: --max-value
-  - id: min_value
-    type:
-      - 'null'
-      - float
-    doc: Minimum value to display on Y-axis.
-    inputBinding:
-      position: 102
-      prefix: --min-value
-  - id: no_legend
-    type:
-      - 'null'
-      - boolean
-    doc: Do not display legend.
-    inputBinding:
-      position: 102
-      prefix: --no-legend
-  - id: normalize
-    type:
-      - 'null'
-      - boolean
-    doc: Normalize counts by total read counts.
-    inputBinding:
-      position: 102
-      prefix: --normalize
-  - id: smooth
-    type:
-      - 'null'
-      - int
-    doc: Smooth the curve using a moving average window of size INT.
-    inputBinding:
-      position: 102
-      prefix: --smooth
+      position: 101
+      prefix: --counts
   - id: title
     type:
       - 'null'
       - string
-    doc: Plot title.
+    doc: Plot Title
     inputBinding:
-      position: 102
+      position: 101
       prefix: --title
-  - id: window_size
-    type:
-      - 'null'
-      - int
-    doc: 'Window size for smoothing (default: 50).'
-    inputBinding:
-      position: 102
-      prefix: --window-size
-  - id: xlabel
+  - id: marker
     type:
       - 'null'
       - string
-    doc: X-axis label.
+    doc: Marker (o/x) for plots
     inputBinding:
-      position: 102
-      prefix: --xlabel
+      position: 101
+      prefix: --marker
+  - id: color
+    type:
+      - 'null'
+      - string
+    doc: Color
+    inputBinding:
+      position: 101
+      prefix: --color
+  - id: millify_labels
+    type:
+      - 'null'
+      - boolean
+    doc: Convert labels on Y-axis to concise form?
+    inputBinding:
+      position: 101
+      prefix: --millify_labels
+  - id: identify_peak
+    type:
+      - 'null'
+      - boolean
+    doc: Identify Peak?
+    inputBinding:
+      position: 101
+      prefix: --identify_peak
+  - id: positions
+    type:
+      - 'null'
+      - string
+    doc: Range of positions to plot
+    inputBinding:
+      position: 101
+      prefix: --positions
   - id: ylabel
     type:
       - 'null'
       - string
-    doc: Y-axis label.
+    doc: Y axix label
+    inputBinding:
+      position: 101
+      prefix: --ylabel
+  - id: ascii
+    type:
+      - 'null'
+      - boolean
+    doc: Do not plot ascii
+    inputBinding:
+      position: 101
+      prefix: --ascii
+  - id: saveto_path
+    type: string
+    doc: Path to file (png/pdf) to save to
     inputBinding:
       position: 102
-      prefix: --ylabel
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
+      prefix: --saveto
 outputs:
-  - id: output_file
+  - id: saveto
     type:
       - 'null'
       - File
-    doc: Output file name. If not specified, will be derived from input file 
-      names.
+    doc: Path to file (png/pdf) to save to
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.saveto_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboraptor:0.2.2--py36_0
+stdout: riboraptor_plot-metagene.out

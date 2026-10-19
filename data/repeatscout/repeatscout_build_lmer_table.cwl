@@ -23,6 +23,7 @@ inputs:
     doc: Input sequence file
     inputBinding:
       position: 101
+      prefix: -sequence
   - id: tandem
     type:
       - 'null'

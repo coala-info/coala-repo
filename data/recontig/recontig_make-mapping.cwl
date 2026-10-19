@@ -8,11 +8,17 @@ doc: "make a contig conversion file from two fasta files\n\nTool homepage: https
 inputs:
   - id: from_fa
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: First FASTA file
     inputBinding:
       position: 1
   - id: to_fa
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: Second FASTA file
     inputBinding:
       position: 2

@@ -90,10 +90,8 @@ inputs:
       position: 101
       prefix: --num_reads_in_batch
   - id: output_dir
-    type:
-      - 'null'
-      - string
-    doc: 'Output directory (default: working directory)'
+    type: string
+    doc: Output directory, created before the run (the tool writes to the working directory if it does not exist)
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -201,6 +199,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory
+    type: Directory
+    doc: Output directory given with output_dir (barcode bins, annotation and summary files)
+    outputBinding:
+      glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        return [
+          {"entry": inputs.input_path, "writable": true},
+          {"entryname": inputs.output_dir, "entry": {"class": "Directory", "listing": []}, "writable": true}
+        ];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/readucks:0.0.3--py_0

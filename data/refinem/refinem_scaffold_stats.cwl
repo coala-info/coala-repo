@@ -27,6 +27,9 @@ inputs:
       - type: array
         items: File
     doc: BAM files to parse for coverage profile
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 4
   - id: cov_all_reads

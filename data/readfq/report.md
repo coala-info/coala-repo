@@ -1,5 +1,11 @@
 # readfq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| readfq_kseq_fastq_base | PASS | Counted 100 reads and 13897 bases in a real SARS-CoV-2 fastq; both match an independent count. |
+
 ## Metadata
 - **Skill**: generated
 

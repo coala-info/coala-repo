@@ -1,5 +1,11 @@
 # repaq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| repaq | PASS |  |
+
 ## repaq
 
 ### Tool Description

@@ -65,7 +65,7 @@ inputs:
   - id: input_file2
     type:
       - 'null'
-      - string
+      - File
     doc: read2 input file name when encoding paired-end FASTQ files
     inputBinding:
       position: 101
@@ -82,7 +82,7 @@ inputs:
   - id: rfq_to_compare
     type:
       - 'null'
-      - string
+      - File
     doc: the RFQ file to be compared with the input. This option is only used in
       compare mode.
     inputBinding:
@@ -127,22 +127,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file1_path`
+    doc: output file name
     inputBinding:
       position: 103
-      prefix: --output-file1
+      prefix: --out1
   - id: output_file2_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file2_path`
+    doc: read2 output file name when decoding to paired-end FASTQ files
     inputBinding:
       position: 104
-      prefix: --output-file2
+      prefix: --out2
   - id: json_compare_result_path
     type:
       - 'null'
       - string
+    doc: the file to store the comparison result
     inputBinding:
       position: 105
       prefix: --json_compare_result

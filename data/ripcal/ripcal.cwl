@@ -118,6 +118,30 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: alignments
+    type:
+      type: array
+      items: File
+    doc: Clustal alignments written per repeat family (*_alignment.aln)
+    outputBinding:
+      glob: '*_alignment.aln'
+  - id: rip_tables
+    type:
+      type: array
+      items: File
+    doc: RIP analysis tables written by ripcal (align table, dinucleotide indices, index scan GFF)
+    outputBinding:
+      glob:
+        - '*_ripalign.txt'
+        - '*_dinuc.txt'
+        - '*_scan.txt'
+  - id: graphs
+    type:
+      type: array
+      items: File
+    doc: RIP frequency graphs (GIF images)
+    outputBinding:
+      glob: '*.gif'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ripcal:2.0--hdfd78af_0

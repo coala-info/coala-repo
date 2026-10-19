@@ -32,11 +32,13 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Register a namespace binding (QName prefix to a base URI). This can be 
-      used more than once.
+        inputBinding:
+          prefix: --ns=
+          separate: false
+    doc: Register a namespace binding as PREFIX=NAMESPACE. This can be used more
+      than once.
     inputBinding:
       position: 102
-      prefix: --ns
   - id: no_guess
     type:
       - 'null'

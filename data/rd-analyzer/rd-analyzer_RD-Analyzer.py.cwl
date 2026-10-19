@@ -69,20 +69,44 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output
-    outputBinding:
-      glob: $(inputs.output)*
-  - id: outdir_dir
+  - id: result
     type:
       - 'null'
-      - Directory
-    doc: output directory
+      - File
+    doc: Result table of the analysis (.result)
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: |
+        ${
+          var d = inputs.outdir ? inputs.outdir + "/" : "";
+          var o = inputs.output ? inputs.output : "RD-Analyzer";
+          return d + o + ".result";
+        }
+  - id: depth
+    type:
+      - 'null'
+      - File
+    doc: Per-position read depth over the RD regions (.depth)
+    outputBinding:
+      glob: |
+        ${
+          var d = inputs.outdir ? inputs.outdir + "/" : "";
+          var o = inputs.output ? inputs.output : "RD-Analyzer";
+          return d + o + ".depth";
+        }
+  - id: sorted_bam
+    type:
+      - 'null'
+      - File
+    doc: Sorted alignment, kept only in debug mode (.sort.bam)
+    outputBinding:
+      glob: |
+        ${
+          var d = inputs.outdir ? inputs.outdir + "/" : "";
+          var o = inputs.output ? inputs.output : "RD-Analyzer";
+          return d + o + ".sort.bam";
+        }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rd-analyzer:1.01--hdfd78af_0

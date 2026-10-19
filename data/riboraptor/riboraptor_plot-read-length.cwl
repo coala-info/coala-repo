@@ -6,99 +6,58 @@ baseCommand:
 label: riboraptor_plot-read-length
 doc: "Plot read length distribution\n\nTool homepage: https://github.com/saketkc/riboraptor"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input file (e.g. .tsv, .csv, .txt)
-    inputBinding:
-      position: 1
-  - id: ascii
+  - id: read_lengths
     type:
       - 'null'
-      - boolean
-    doc: Print ASCII plot to stdout
+      - File
+    doc: Path to read length pickle file
     inputBinding:
-      position: 102
-      prefix: --ascii
-  - id: bins
-    type:
-      - 'null'
-      - int
-    doc: Number of bins for histogram
-    inputBinding:
-      position: 102
-      prefix: --bins
-  - id: column
-    type:
-      - 'null'
-      - string
-    doc: Column name to use for read lengths
-    inputBinding:
-      position: 102
-      prefix: --column
-  - id: log_scale
-    type:
-      - 'null'
-      - boolean
-    doc: Use log scale for y-axis
-    inputBinding:
-      position: 102
-      prefix: --log-scale
-  - id: max_length
-    type:
-      - 'null'
-      - int
-    doc: Maximum read length to consider
-    inputBinding:
-      position: 102
-      prefix: --max-length
-  - id: min_length
-    type:
-      - 'null'
-      - int
-    doc: Minimum read length to consider
-    inputBinding:
-      position: 102
-      prefix: --min-length
+      position: 101
+      prefix: --read-lengths
   - id: title
     type:
       - 'null'
       - string
-    doc: Plot title
+    doc: Plot Title
     inputBinding:
-      position: 102
+      position: 101
       prefix: --title
-  - id: xlabel
+  - id: millify_labels
     type:
       - 'null'
-      - string
-    doc: X-axis label
+      - boolean
+    doc: Convert labels on Y-axis to concise form?
     inputBinding:
-      position: 102
-      prefix: --xlabel
-  - id: ylabel
+      position: 101
+      prefix: --millify_labels
+  - id: ascii
     type:
       - 'null'
-      - string
-    doc: Y-axis label
+      - boolean
+    doc: Do not plot ascii
     inputBinding:
-      position: 102
-      prefix: --ylabel
-  - id: output_file_path
+      position: 101
+      prefix: --ascii
+  - id: saveto_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to file (png/pdf) to save to
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 102
+      prefix: --saveto
 outputs:
-  - id: output_file
+  - id: saveto
     type:
       - 'null'
       - File
-    doc: Output file name (e.g. .png, .svg, .pdf)
+    doc: Path to file (png/pdf) to save to
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.saveto_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboraptor:0.2.2--py36_0
+stdout: riboraptor_plot-read-length.out

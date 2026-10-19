@@ -10,10 +10,11 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to bedgraph file
+    doc: Path to bedgraph file (optional); it is sorted in place, so it is staged writable
     inputBinding:
       position: 101
       prefix: --bedgraph
+      valueFrom: $(self.basename)
   - id: sizes
     type: File
     doc: Path to genome chrom.sizes file
@@ -22,7 +23,7 @@ inputs:
       prefix: --sizes
   - id: saveto_path
     type: string
-    doc: Path to write bedgraph output
+    doc: Path to write bigwig output
     inputBinding:
       position: 102
       prefix: --saveto
@@ -34,6 +35,10 @@ outputs:
       glob: $(inputs.saveto_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bedgraph)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboraptor:0.2.2--py36_0

@@ -170,6 +170,9 @@ outputs:
     doc: Directory to save FASTA files, reports, and final multi-FASTA
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/refseq-plasmid-dl:0.1.0--pyhdfd78af_0

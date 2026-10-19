@@ -1,5 +1,11 @@
 # renano CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| renano | PASS |  |
+
 ## renano
 
 ### Tool Description

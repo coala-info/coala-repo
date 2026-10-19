@@ -1,21 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: normalize_ann.py
+baseCommand:
+  - renet2
+  - normalize_ann
 label: renet2_normalize_ann
 doc: "normalize annotation ID\n\nTool homepage: https://github.com/sujunhao/RENET2"
 inputs:
   - id: in_f
-    type:
-      - 'null'
-      - string
-    doc: input annotation None
+    type: File
+    doc: input annotation
     inputBinding:
       position: 101
       prefix: --in_f
   - id: out_f
-    type:
-      - 'null'
-      - string
+    type: string
     doc: output file
     inputBinding:
       position: 101
@@ -25,9 +23,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: out_f_out
-    type:
-      - 'null'
-      - File
+    type: File
     doc: output file
     outputBinding:
       glob: $(inputs.out_f)

@@ -1,5 +1,13 @@
 # riboloco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| riboloco | Failed | image problem: the tool crashes with AttributeError in make_ss_df (pandas DataFrame.append was removed in pandas 2) while reading the bed file |
+| riboloco_convert_gtf | PASS |  |
+| riboloco_find_orfs | Failed | image problem: the tool crashes with AttributeError (pandas DataFrame.append was removed in pandas 2) |
+
 ## riboloco
 
 ### Tool Description
@@ -229,3 +237,92 @@ options:
                         and info
 ```
 
+## riboloco_convert_gtf
+
+### Tool Description
+Convert a GTF annotation and genome FASTA into the transcript info table and transcript FASTA used by riboloco
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/riboloco:0.3.10--pyhdfd78af_0
+- **Homepage**: https://github.com/Delayed-Gitification/riboloco.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/riboloco/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: riboloco_convert_gtf [-h] -gtf INPUT_GTF -o OUTPUT_FILENAME [-ffl]
+                            [-nf] [--stop_correction STOP_CORRECTION] -f
+                            GENOME_FASTA [--transcript_word TRANSCRIPT_WORD]
+                            [--feature_type_word FEATURE_TYPE_WORD]
+                            [--filter_for FILTER_FOR]
+                            [--gene_name_word GENE_NAME_WORD]
+                            [--cds_word CDS_WORD]
+                            [--gene_id_word GENE_ID_WORD]
+                            [--transcript_id_word TRANSCRIPT_ID_WORD]
+                            [--exon_word EXON_WORD] [--early_stop EARLY_STOP]
+                            [-pf] [--bypass_tx_type_filter]
+                            [--assume_cds_same]
+
+options:
+  -h, --help            show this help message and exit
+  -gtf INPUT_GTF, --input_gtf INPUT_GTF
+                        A gtf file with your genome annotation. Can be .gz
+                        compressed.
+  -o OUTPUT_FILENAME, --output_filename OUTPUT_FILENAME
+                        The outfile filename
+  -ffl, --filter_for_longest
+                        Only use the longest protein coding transcript
+                        associated with each gene.
+  -nf, --no_fasta       Don't generate a fasta of transcripts
+  --stop_correction STOP_CORRECTION
+                        Add 3 nt for stop codon. Can be changed to 0 depending
+                        on whether the annotation includes the stop codon
+                        within the annotated CDSs.
+  -f GENOME_FASTA, --genome_fasta GENOME_FASTA
+  --transcript_word TRANSCRIPT_WORD
+  --feature_type_word FEATURE_TYPE_WORD
+  --filter_for FILTER_FOR
+                        Which transcript types to filter for. Set to 'all' to
+                        disable. Default=protein_coding
+  --gene_name_word GENE_NAME_WORD
+  --cds_word CDS_WORD
+  --gene_id_word GENE_ID_WORD
+  --transcript_id_word TRANSCRIPT_ID_WORD
+  --exon_word EXON_WORD
+                        The key word that signifies exons. Default=exon
+  --early_stop EARLY_STOP
+                        Stop after n reads parsed. -1 to disable (default)
+  -pf, --print_features
+  --bypass_tx_type_filter
+  --assume_cds_same     Sets CDS to same as transcript. Useful for writing out
+                        eg snoRNAs
+```
+
+## riboloco_find_orfs
+
+### Tool Description
+Find open reading frames in a transcriptome FASTA
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/riboloco:0.3.10--pyhdfd78af_0
+- **Homepage**: https://github.com/Delayed-Gitification/riboloco.git
+- **Package**: https://anaconda.org/channels/bioconda/packages/riboloco/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: riboloco_find_orfs [-h] -f FASTA -i INFO [-d OUTPUT_DIRECTORY] -o
+                          OUTPUT
+
+options:
+  -h, --help            show this help message and exit
+  -f FASTA, --fasta FASTA
+                        Transciptome fasta - can be generated with
+                        riboloco_convert_gff
+  -i INFO, --info INFO  A info file with transcript details - can also be
+                        generated with riboloco_convert_gff
+  -d OUTPUT_DIRECTORY, --output_directory OUTPUT_DIRECTORY
+                        The directory to save outputs.
+  -o OUTPUT, --output OUTPUT
+                        Output file
+```

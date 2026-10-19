@@ -4,7 +4,7 @@ baseCommand:
   - reveal
   - extract
 label: reveal_extract
-doc: "Extract the input sequence from a graph.\n\nTool homepage: https://github.com/hakimel/reveal.js"
+doc: "Extract the input sequence from a graph.\n\nTool homepage: https://github.com/jasperlinthorst/reveal"
 inputs:
   - id: graph
     type: File

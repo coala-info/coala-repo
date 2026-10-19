@@ -1,5 +1,11 @@
 # relion CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| relion_relion_refine | PASS | synthetic data: noisy projections of the EMD-2788 apoferritin map made with relion_project; 3D refinement for 2 iterations gave a map with correlation 0.62 to the source map |
+
 ## relion_relion_refine
 
 ### Tool Description

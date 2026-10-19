@@ -1,5 +1,12 @@
 # refgenieserver CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| refgenieserver_archive | Failed | image problem: rsync is missing in the image, so archive cannot create the tgz (test used a small refgenie config built from refgenie t7.fa.gz) |
+| refgenieserver_serve | Not completed | long-running web server, not tested |
+
 ## refgenieserver_serve
 
 ### Tool Description

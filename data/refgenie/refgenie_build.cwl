@@ -4,14 +4,17 @@ baseCommand:
   - refgenie
   - build
 label: refgenie_build
-doc: "Build genome assets.\n\nTool homepage: http://refgenie.databio.org"
+doc: 'Build genome assets.
+
+
+  Tool homepage: http://refgenie.databio.org'
 inputs:
   - id: asset_registry_paths
     type:
       type: array
       items: string
-    doc: One or more registry path strings that identify assets (e.g. hg38/fasta
-      or hg38/fasta:tag).
+    doc: One or more registry path strings that identify assets (e.g. hg38/fasta or
+      hg38/fasta:tag).
     inputBinding:
       position: 1
   - id: assets
@@ -19,8 +22,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Override the default genome, asset and tag of the parents (e.g. 
-      fasta=hg38/fasta:default gtf=mm10/gencode_gtf:default).
+    doc: Override the default genome, asset and tag of the parents (e.g. fasta=hg38/fasta:default
+      gtf=mm10/gencode_gtf:default).
     inputBinding:
       position: 102
       prefix: --assets
@@ -28,8 +31,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Pipeline configuration file (YAML). Relative paths are with respect to 
-      the pipeline script.
+    doc: Pipeline configuration file (YAML). Relative paths are with respect to the
+      pipeline script.
     inputBinding:
       position: 102
       prefix: --config
@@ -45,7 +48,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items: string
     doc: Provide paths to the required files (e.g. fasta=/path/to/file.fa.gz).
     inputBinding:
       position: 102
@@ -58,21 +61,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --genome
-  - id: genome_config
-    type:
-      - 'null'
-      - File
-    doc: Path to local genome configuration file. Optional if REFGENIE 
-      environment variable is set.
-    inputBinding:
-      position: 102
-      prefix: --genome-config
   - id: genome_description
     type:
       - 'null'
       - string
-    doc: Add genome level description (e.g. The mouse mitochondrial genome, 
-      released in Dec 2013).
+    doc: Add genome level description (e.g. The mouse mitochondrial genome, released
+      in Dec 2013).
     inputBinding:
       position: 102
       prefix: --genome-description
@@ -105,8 +99,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not remove the genome configuration files produced in the potential 
-      map step of building
+    doc: Do not remove the genome configuration files produced in the potential map
+      step of building
     inputBinding:
       position: 102
       prefix: --preserve-map-configs
@@ -114,8 +108,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Automatically pull the default parent asset if required but not 
-      provided
+    doc: Automatically pull the default parent asset if required but not provided
     inputBinding:
       position: 102
       prefix: --pull-parents
@@ -172,15 +165,62 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: string
     doc: If using docker, also mount these folders as volumes.
     inputBinding:
       position: 102
       prefix: --volumes
+  - id: genome_config
+    type: File
+    doc: Path to the local genome configuration file. It is staged in a writable work
+      folder and returned as genome_config_out.
+    inputBinding:
+      position: 100
+      prefix: --genome-config
+      valueFrom: $(self.basename)
+  - id: genomes_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Asset folder of the configuration (the genome_folder entry, "genomes"), from
+      a previous refgenie step. It is staged in a writable work folder and returned
+      as genomes_dir_out.
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files required by the recipe (for example the FASTA file for the fasta asset).
+      They are staged in the working directory, so name them in the files option by
+      their file name (for example fasta=genome.fa.gz).
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: genome_config_out
+    type: File
+    doc: Updated genome configuration file
+    outputBinding:
+      glob: $(inputs.genome_config.basename)
+  - id: genomes_dir_out
+    type: Directory
+    doc: Asset folder of the configuration, with the changes of this step
+    outputBinding:
+      glob: genomes
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.genome_config.basename)
+        entry: $(inputs.genome_config)
+        writable: true
+      - entryname: genomes
+        entry: '$(inputs.genomes_dir ? inputs.genomes_dir : {"class": "Directory",
+          "listing": []})'
+        writable: true
+      - $(inputs.input_files)
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/refgenie:0.12.1--pyhdfd78af_0

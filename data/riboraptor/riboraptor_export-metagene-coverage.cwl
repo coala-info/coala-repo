@@ -52,7 +52,8 @@ inputs:
       prefix: --region_bed
   - id: saveto_path
     type: string
-    doc: Path to write bedgraph output
+    doc: Path to write metagene coverage tsv file (include a directory name, for
+      example out/metagene.tsv; a bare file name crashes the tool)
     inputBinding:
       position: 102
       prefix: --saveto

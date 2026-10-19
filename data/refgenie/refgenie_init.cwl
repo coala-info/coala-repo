@@ -4,12 +4,15 @@ baseCommand:
   - refgenie
   - init
 label: refgenie_init
-doc: "Initialize a genome configuration.\n\nTool homepage: http://refgenie.databio.org"
+doc: 'Initialize a genome configuration.
+
+
+  Tool homepage: http://refgenie.databio.org'
 inputs:
   - id: genome_archive_config
     type:
       - 'null'
-      - File
+      - string
     doc: Absolute path to desired archive config file; used by refgenieserver.
     inputBinding:
       position: 101
@@ -17,24 +20,23 @@ inputs:
   - id: genome_archive_folder
     type:
       - 'null'
-      - Directory
-    doc: Absolute path to parent archive folder refgenie-managed assets; used by
-      refgenieserver.
+      - string
+    doc: Absolute path to parent archive folder refgenie-managed assets; used by refgenieserver.
     inputBinding:
       position: 101
       prefix: --genome-archive-folder
   - id: genome_config
     type: string
-    doc: Path to local genome configuration file. Optional if REFGENIE 
-      environment variable is set.
+    doc: Name of the local genome configuration file to create.
     inputBinding:
       position: 101
       prefix: --genome-config
   - id: genome_folder
     type:
       - 'null'
-      - Directory
-    doc: Absolute path to parent folder refgenie-managed assets.
+      - string
+    doc: 'Path to the parent folder of the refgenie-managed assets, relative to the
+      working directory (default: genomes).'
     inputBinding:
       position: 101
       prefix: --genome-folder
@@ -51,8 +53,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: URL to use as an alternative, remote archive location; used by 
-      refgenieserver.
+    doc: URL to use as an alternative, remote archive location; used by refgenieserver.
     inputBinding:
       position: 101
       prefix: --remote-url-base
@@ -60,8 +61,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Absolute path to a JSON file with the key value pairs to inialize the 
-      configuration file with. Overwritten by itemized specifications.
+    doc: Absolute path to a JSON file with the key value pairs to inialize the configuration
+      file with. Overwritten by itemized specifications.
     inputBinding:
       position: 101
       prefix: --settings-json
@@ -77,6 +78,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: genome_config_out
+    type: File
+    doc: The new genome configuration file
+    outputBinding:
+      glob: $(inputs.genome_config)
+  - id: genomes_dir_out
+    type: Directory
+    doc: The asset folder created by refgenie init
+    outputBinding:
+      glob: '$(inputs.genome_folder === null ? "genomes" : inputs.genome_folder)'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/refgenie:0.12.1--pyhdfd78af_0

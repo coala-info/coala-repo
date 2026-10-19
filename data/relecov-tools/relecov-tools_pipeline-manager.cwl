@@ -12,11 +12,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --folder_names
     doc: Folder basenames to process. Target folders names should match the 
       given dates. E.g. ... -f folder1 -f folder2 -f folder3
     inputBinding:
       position: 101
-      prefix: --folder_names
   - id: input_folder
     type:
       - 'null'
@@ -29,10 +30,12 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Skip the database upload step. This is useful for testing purposes.
+    doc: Skip the database upload step. This is useful for testing purposes. The
+      option takes a BOOLEAN value, which the wrapper passes as true or false.
     inputBinding:
       position: 101
       prefix: --skip_db_upload
+      valueFrom: "$(self ? 'true' : 'false')"
   - id: templates_root
     type:
       - 'null'
@@ -42,62 +45,12 @@ inputs:
       position: 101
       prefix: --templates_root
   - id: output_dir_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output_dir
+    doc: Directory where the generated output will be saved
 outputs:
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory where the generated output will be saved
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory where the generated output will be saved
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory where the generated output will be saved
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory where the generated output will be saved
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory where the generated output will be saved
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory where the generated output will be saved
-    outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory where the generated output will be saved
-    outputBinding:
-      glob: $(inputs.output_dir_path)
   - id: output_dir
     type:
       - 'null'

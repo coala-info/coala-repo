@@ -4,6 +4,9 @@ baseCommand: rb
 label: revbayes_rb
 doc: "Bayesian phylogenetic inference using probabilistic graphical models and an
   interpreted language\n\nTool homepage: https://revbayes.github.io/"
+arguments:
+  - position: 103
+    valueFrom: "$(inputs.expressions ? [].concat.apply([], inputs.expressions.map(function(e) { return ['-e', e]; })) : [])"
 inputs:
   - id: file
     type:
@@ -33,10 +36,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Expression to evaluate
-    inputBinding:
-      position: 103
-      prefix: --expression
+    doc: Expression to evaluate (each one is passed as -e <expr>)
   - id: interactive
     type:
       - 'null'
@@ -79,11 +79,34 @@ inputs:
     inputBinding:
       position: 103
       prefix: --setOption
+  - id: support_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files read by the script (for example data files), staged next to the
+      script in the working directory.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Files written by the Rev script (monitor, log and tree files)
+    outputBinding:
+      glob:
+        - '*.out'
+        - '*.log'
+        - '*.trees'
+        - '*.tre'
+        - '*.var'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.support_files ? inputs.support_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/revbayes:1.3.2--hf316886_0
-stdout: revbayes_rb.out
+stdout: revbayes_rb.stdout

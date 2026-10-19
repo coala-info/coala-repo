@@ -9,6 +9,7 @@ inputs:
     doc: Input file containing genome data
     inputBinding:
       position: 1
+      prefix: -f
   - id: compute_crex_distance
     type:
       - 'null'

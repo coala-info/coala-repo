@@ -7,6 +7,7 @@ inputs:
   - id: input
     type:
       - 'null'
+      - File
       - string
     doc: Input filename (FASTA) or DNA/RNA sequence.
     inputBinding:

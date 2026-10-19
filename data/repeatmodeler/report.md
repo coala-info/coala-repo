@@ -1,5 +1,12 @@
 # repeatmodeler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| repeatmodeler_BuildDatabase | PASS | built the database for the 6 Mb E. coli test genome (Galaxy repeatmodeler data) |
+| repeatmodeler_RepeatModeler | PASS | ran with -quick on the 6 Mb E. coli test genome; found 25 families and wrote the FASTA and Stockholm files |
+
 ## repeatmodeler_BuildDatabase
 
 ### Tool Description

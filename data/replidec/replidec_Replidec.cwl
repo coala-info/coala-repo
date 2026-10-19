@@ -54,9 +54,7 @@ inputs:
       position: 101
       prefix: --hmmer_parameters
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The input file, which can be a sequence file or an index table
     inputBinding:
       position: 101
@@ -93,17 +91,23 @@ inputs:
       position: 101
       prefix: --threads
   - id: work_dir
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Directory to store intermediate and final results
     inputBinding:
       position: 101
       prefix: --work_dir
 outputs:
+  - id: results_dir
+    type: Directory
+    doc: Directory with the intermediate and final results (prediction_summary.tsv)
+    outputBinding:
+      glob: $(inputs.work_dir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/replidec:0.3.5--pyhdfd78af_0

@@ -2,44 +2,41 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rdf2dot
 label: rdfextras_rdf2dot
-doc: "Converts RDF graphs to the DOT graph description language.\n\nTool homepage:
-  https://github.com/RDFLib/rdfextras"
+doc: "Read RDF files and write a graph of the RDF data in DOT language to stdout\n\nTool homepage: https://github.com/RDFLib/rdfextras"
 inputs:
-  - id: input_file
+  - id: files
     type:
-      - 'null'
-      - File
-    doc: Input RDF file (defaults to stdin)
+      type: array
+      items: File
+    doc: RDF files to read
     inputBinding:
-      position: 1
+      position: 3
   - id: format
     type:
       - 'null'
       - string
-    doc: RDF serialization format (e.g., 'turtle', 'xml', 'json-ld')
+    doc: "parser to use (for example xml, n3, turtle, nt); guessed from the file
+      extension if not given (-f)"
     inputBinding:
-      position: 102
-      prefix: --format
-  - id: verbose
+      position: 1
+      prefix: -f
+  - id: output_file_path
     type:
       - 'null'
-      - boolean
-    doc: Enable verbose output
+      - string
+    doc: write the DOT output to this file instead of stdout (-o)
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 2
+      prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: DOT output when no output file is given
   - id: output_file
     type:
       - 'null'
       - File
-    doc: Output DOT file (defaults to stdout)
+    doc: DOT output file
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:
@@ -47,3 +44,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rdfextras:0.4--py27_2
+stdout: rdfextras_rdf2dot.out

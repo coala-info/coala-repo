@@ -1,5 +1,11 @@
 # recalladapters CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| recalladapters | Not completed | needs raw PacBio subreads and scraps BAM files with a subreadset.xml; no such real test data exists in the public test sets |
+
 ## recalladapters
 
 ### Tool Description

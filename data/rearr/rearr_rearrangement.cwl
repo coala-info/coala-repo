@@ -2,18 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rearrangement
 label: rearr_rearrangement
-doc: "Perform rearrangement analysis\n\nTool homepage: https://github.com/ljw20180420/sx_lcy"
+doc: "Perform rearrangement analysis\n\nTool homepage: https://github.com/ljw20180420/rearr"
 inputs:
   - id: input_file
     type: File
-    doc: Input file
-    inputBinding:
-      position: 1
+    doc: "Input file read from stdin: tab-separated query, count (#) and reference index (id, 0-based row of the reference file)"
   - id: reference_file
     type: File
-    doc: Reference file
-    inputBinding:
-      position: 2
+    doc: "Reference file read from file descriptor 3: tab-separated start1, ref1, end1, start2, ref2, end2 per row"
   - id: gap_extending_penalty
     type:
       - 'null'
@@ -86,6 +82,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: -s0
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: 3< $(inputs.reference_file.path)
+requirements:
+  - class: ShellCommandRequirement
+  - class: InlineJavascriptRequirement
 outputs:
   - id: stdout
     type: stdout
@@ -94,3 +97,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rearr:1.0.11--h9948957_0
 stdout: rearr_rearrangement.out
+stdin: $(inputs.input_file.path)

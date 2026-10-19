@@ -2,8 +2,10 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rgf
 label: recentrifuge_rgf
-doc: "Robust comparative analysis and contamination removal for functional metagenomics\n\
-  \nTool homepage: https://github.com/khyox/recentrifuge"
+doc: 'Robust comparative analysis and contamination removal for functional metagenomics
+
+
+  Tool homepage: https://github.com/khyox/recentrifuge'
 inputs:
   - id: avoid_cross
     type:
@@ -17,9 +19,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: this number of first samples will be treated as negative controls; 
-      default is no controls. CAUTION! Regentrifuge direct support of control 
-      samples is experimental.
+    doc: this number of first samples will be treated as negative controls; default
+      is no controls. CAUTION! Regentrifuge direct support of control samples is experimental.
     inputBinding:
       position: 101
       prefix: --controls
@@ -36,32 +37,34 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: GO code to exclude a GO node and all underneath (multiple -x is 
-      available to exclude several GOs)
+        inputBinding:
+          prefix: --exclude
+    doc: GO code to exclude a GO node and all underneath (multiple -x is available
+      to exclude several GOs)
     inputBinding:
       position: 101
-      prefix: --exclude
   - id: file
     type:
       type: array
       items: File
-    doc: GO output files in tab separated columns with the format:taxid, gi, go,
-      score and evalue. Currently, the data for the analysis is retrieved from 
-      the last 3 columns. Multiple -f is available to include several samples.
+      inputBinding:
+        prefix: --file
+    doc: GO output files in tab separated columns with the format:taxid, gi, go, score
+      and evalue. Currently, the data for the analysis is retrieved from the last
+      3 columns. Multiple -f is available to include several samples.
     inputBinding:
       position: 101
-      prefix: --file
   - id: include_taxid
     type:
       - 'null'
       - type: array
         items: string
-    doc: GO code to include a GO node and all underneath (multiple -i is 
-      available to include several GOs); by default all the GOs are considered 
-      for inclusion
+        inputBinding:
+          prefix: --include
+    doc: GO code to include a GO node and all underneath (multiple -i is available
+      to include several GOs); by default all the GOs are considered for inclusion
     inputBinding:
       position: 101
-      prefix: --include
   - id: mingene
     type:
       - 'null'
@@ -74,17 +77,17 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum score/confidence of the annotation of a scaffold to pass the 
-      quality filter; all pass by default
+    doc: minimum score/confidence of the annotation of a scaffold to pass the quality
+      filter; all pass by default
     inputBinding:
       position: 101
       prefix: --minscore
   - id: nodes_path
     type:
       - 'null'
-      - File
-    doc: path for the nodes information files (nodes.dmp and names.dmp adapted 
-      from GO)
+      - Directory
+    doc: path for the nodes information files (nodes.dmp and names.dmp adapted from
+      GO)
     inputBinding:
       position: 101
       prefix: --nodespath
@@ -92,8 +95,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: type of scoring to be applied, and can be one of ['FULL', 'CSV', 
-      'MULTICSV', 'TSV', 'DYNOMICS']
+    doc: type of scoring to be applied, and can be one of ['FULL', 'CSV', 'MULTICSV',
+      'TSV', 'DYNOMICS']
     inputBinding:
       position: 101
       prefix: --extra
@@ -101,10 +104,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: pickle (serialize) statistics and data results in pandas DataFrames 
-      (format affected by selection of --extra); one additional flag and the 
-      input samples will be serialized as a dict of sample names and TaxTree 
-      objects
+    doc: pickle (serialize) statistics and data results in pandas DataFrames (format
+      affected by selection of --extra); one additional flag and the input samples
+      will be serialized as a dict of sample names and TaxTree objects
     inputBinding:
       position: 101
       prefix: --pickle
@@ -120,8 +122,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: select to "add" summary samples to other samples, or to "only" show 
-      summary samples or to "avoid" summaries at all
+    doc: select to "add" summary samples to other samples, or to "only" show summary
+      samples or to "avoid" summaries at all
     inputBinding:
       position: 101
       prefix: --summary
@@ -137,8 +139,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of threads to use for parallel processing; 0 (default) means 
-      legacy mode using min(cpu_count, samples)
+    doc: number of threads to use for parallel processing; 0 (default) means legacy
+      mode using min(cpu_count, samples)
     inputBinding:
       position: 101
       prefix: --threads
@@ -152,8 +154,7 @@ outputs:
     type:
       - 'null'
       - File
-    doc: HTML output file (if not given the filename will be inferred from input
-      files)
+    doc: HTML output file (if not given the filename will be inferred from input files)
     outputBinding:
       glob: $(inputs.outhtml_path)
 requirements:

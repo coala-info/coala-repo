@@ -12,7 +12,8 @@ inputs:
       (decimal allowed)
     inputBinding:
       position: 101
-      prefix: --analyze-range
+      prefix: --analyze-range=
+      separate: false
   - id: bootstrap_mode
     type:
       - 'null'
@@ -20,13 +21,15 @@ inputs:
     doc: Specify random forest bootstrap mode as integer code (see manual)
     inputBinding:
       position: 101
-      prefix: --bootstrap-mode
+      prefix: --bootstrap-mode=
+      separate: false
   - id: chromosome
     type: string
     doc: Execute only on specified chromosome
     inputBinding:
       position: 101
-      prefix: --chromosome
+      prefix: --chromosome=
+      separate: false
   - id: crf_spacing
     type:
       - 'null'
@@ -34,7 +37,8 @@ inputs:
     doc: Conditional Random Field spacing (# of SNPs)
     inputBinding:
       position: 101
-      prefix: --crf-spacing
+      prefix: --crf-spacing=
+      separate: false
   - id: crf_weight
     type:
       - 'null'
@@ -43,7 +47,8 @@ inputs:
       random field
     inputBinding:
       position: 101
-      prefix: --crf-weight
+      prefix: --crf-weight=
+      separate: false
   - id: debug
     type:
       - 'null'
@@ -59,7 +64,8 @@ inputs:
     doc: Maximum number of EM iterations
     inputBinding:
       position: 101
-      prefix: --em-iterations
+      prefix: --em-iterations=
+      separate: false
   - id: generations
     type:
       - 'null'
@@ -67,13 +73,15 @@ inputs:
     doc: Average number of generations since expected admixture
     inputBinding:
       position: 101
-      prefix: --generations
+      prefix: --generations=
+      separate: false
   - id: genetic_map
     type: File
     doc: Genetic map file
     inputBinding:
       position: 101
-      prefix: --genetic-map
+      prefix: --genetic-map=
+      separate: false
   - id: max_missing
     type:
       - 'null'
@@ -81,7 +89,8 @@ inputs:
     doc: Maximum proportion of missing data allowed to include a SNP
     inputBinding:
       position: 101
-      prefix: --max-missing
+      prefix: --max-missing=
+      separate: false
   - id: n_threads
     type:
       - 'null'
@@ -89,7 +98,8 @@ inputs:
     doc: Force number of simultaneous thread for parallel execution
     inputBinding:
       position: 101
-      prefix: --n-threads
+      prefix: --n-threads=
+      separate: false
   - id: node_size
     type:
       - 'null'
@@ -97,19 +107,22 @@ inputs:
     doc: Terminal node size for random forest trees
     inputBinding:
       position: 101
-      prefix: --node-size
+      prefix: --node-size=
+      separate: false
   - id: output_basename
     type: string
     doc: Basename (prefix) for output files
     inputBinding:
       position: 101
-      prefix: --output-basename
+      prefix: --output-basename=
+      separate: false
   - id: query_file
     type: File
     doc: VCF file with samples to analyze
     inputBinding:
       position: 101
-      prefix: --query-file
+      prefix: --query-file=
+      separate: false
   - id: random_seed
     type:
       - 'null'
@@ -119,7 +132,8 @@ inputs:
       current system time.
     inputBinding:
       position: 101
-      prefix: --random-seed
+      prefix: --random-seed=
+      separate: false
   - id: reanalyze_reference
     type:
       - 'null'
@@ -133,7 +147,8 @@ inputs:
     doc: VCF file with reference individuals
     inputBinding:
       position: 101
-      prefix: --reference-file
+      prefix: --reference-file=
+      separate: false
   - id: rf_minimum_snps
     type:
       - 'null'
@@ -142,7 +157,8 @@ inputs:
       regardless of span
     inputBinding:
       position: 101
-      prefix: --rf-minimum-snps
+      prefix: --rf-minimum-snps=
+      separate: false
   - id: rf_window_size
     type:
       - 'null'
@@ -150,13 +166,15 @@ inputs:
     doc: Random forest window size (class estimation window size)
     inputBinding:
       position: 101
-      prefix: --rf-window-size
+      prefix: --rf-window-size=
+      separate: false
   - id: sample_map
     type: File
     doc: Reference panel sample population classification map
     inputBinding:
       position: 101
-      prefix: --sample-map
+      prefix: --sample-map=
+      separate: false
   - id: trees
     type:
       - 'null'
@@ -165,11 +183,34 @@ inputs:
       probability
     inputBinding:
       position: 101
-      prefix: --trees
+      prefix: --trees=
+      separate: false
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: msp_file
+    type: File
+    doc: Maximum-likelihood ancestry assignment per window (.msp.tsv)
+    outputBinding:
+      glob: $(inputs.output_basename).msp.tsv
+  - id: fb_file
+    type: File
+    doc: Forward-backward ancestry probabilities per site (.fb.tsv)
+    outputBinding:
+      glob: $(inputs.output_basename).fb.tsv
+  - id: q_file
+    type: File
+    doc: Global ancestry estimates per sample (.rfmix.Q)
+    outputBinding:
+      glob: $(inputs.output_basename).rfmix.Q
+  - id: sis_file
+    type:
+      - 'null'
+      - File
+    doc: Subpopulation (ancestry) inference summary (.sis.tsv)
+    outputBinding:
+      glob: $(inputs.output_basename).sis.tsv
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rfmix:2.03.r0.9505bfa--h503566f_8

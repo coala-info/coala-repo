@@ -26,10 +26,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --add
     doc: ID of scaffold to add to genome (may specify multiple times)
     inputBinding:
       position: 103
-      prefix: --add
   - id: min_len
     type:
       - 'null'
@@ -51,10 +52,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --remove
     doc: ID of scaffold to remove from bin (may specify multiple times)
     inputBinding:
       position: 103
-      prefix: --remove
   - id: silent
     type:
       - 'null'

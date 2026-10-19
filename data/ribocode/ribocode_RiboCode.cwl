@@ -20,6 +20,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --annot_dir
+      valueFrom: $(self.basename)
+  - id: alignment_files
+    type:
+      type: array
+      items: File
+    doc: Transcriptome BAM/SAM files named in the config file; staged in the working
+      directory, so give the file names only (no directory) in the config file.
   - id: config_file
     type: File
     doc: list bam file and P-sites information in this file, please refer to the
@@ -133,9 +140,30 @@ inputs:
       position: 101
       prefix: --transl_table
 outputs:
+  - id: orf_results
+    type:
+      type: array
+      items: File
+    doc: Predicted ORF tables, GTF and BED files (name prefix from --output-name, default final_result)
+    outputBinding:
+      glob: "$(inputs.output_name ? inputs.output_name : 'final_result')*"
+  - id: psites_hd5
+    type:
+      type: array
+      items: File
+    doc: P-site density files (one per sample), used by plot_orf_density
+    outputBinding:
+      glob: '*_psites.hd5'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.annot_dir)
+        writable: true
+      - $(inputs.alignment_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1

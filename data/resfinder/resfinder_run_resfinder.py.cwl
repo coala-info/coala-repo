@@ -172,10 +172,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nanopore
-  - id: out_json
+  - id: out_json_path
     type:
       - 'null'
-      - File
+      - string
     doc: Specify JSON filename and output directory. If the directory doesn't 
       exist, it will be created.
     inputBinding:
@@ -259,6 +259,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_json
+    type:
+      - 'null'
+      - File
+    doc: Specify JSON filename and output directory.
+    outputBinding:
+      glob: $(inputs.out_json_path)
   - id: output_path_dir
     type:
       - 'null'

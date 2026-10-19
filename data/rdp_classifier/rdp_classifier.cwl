@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ClassifierCmd
+baseCommand: rdp_classifier
 label: rdp_classifier
 doc: "Note this is the legacy command for one sample classification\n\nTool homepage:
   http://rdp.cme.msu.edu/"
@@ -55,15 +55,18 @@ inputs:
       position: 102
       prefix: --queryFile
   - id: train_propfile
+    type: File
+    doc: "property file containing the mapping of the training files. The Debian
+      image has no built-in training data, so the training set must be given here
+      (the default 16srrna data is not in the image). The training files are staged
+      in the same directory as this file."
+  - id: train_files
     type:
-      - 'null'
-      - File
-    doc: "property file containing the mapping of the training files if not using
-      the default. Note: \n                             the training files and the
-      property file should be in the same directory."
-    inputBinding:
-      position: 102
-      prefix: --train_propfile
+      type: array
+      items: File
+    doc: "training files named in the property file (bergeyTrainingTree.xml,
+      genus_wordConditionalProbList.txt, wordConditionalProbIndexArr.txt,
+      logWordPrior.txt)"
   - id: output_file_path
     type: string
     doc: tab-delimited text output file for classification assignment.
@@ -76,8 +79,16 @@ outputs:
     doc: tab-delimited text output file for classification assignment.
     outputBinding:
       glob: $(inputs.output_file_path)
+arguments:
+  - position: 102
+    prefix: --train_propfile
+    valueFrom: $(inputs.train_propfile.basename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.train_propfile)
+      - $(inputs.train_files)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rdp-classifier:v2.10.2-4-deb_cv1

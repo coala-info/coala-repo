@@ -111,6 +111,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outfile_file
+    type:
+      - 'null'
+      - File
+    doc: Output file
+    outputBinding:
+      glob: $(inputs.outfile)
   - id: eps_dir_dir
     type:
       - 'null'
@@ -118,6 +125,8 @@ outputs:
     doc: Directory to put eps-files
     outputBinding:
       glob: $(inputs.eps_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnacode:0.3.1--h7b50bb2_0

@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - python
-  - Periodicity
+baseCommand: Periodicity
 label: ribominer_Periodicity
 doc: "Calculates periodicity of Ribo-seq reads.\n\nTool homepage: https://github.com/xryanglab/RiboMiner"
 inputs:
@@ -35,6 +33,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .bai
     doc: Input file(s) in bam format.
     inputBinding:
       position: 101

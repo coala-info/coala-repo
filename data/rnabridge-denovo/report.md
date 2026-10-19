@@ -1,5 +1,11 @@
 # rnabridge-denovo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnabridge-denovo | PASS |  |
+
 ## rnabridge-denovo
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # rmats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rmats_rmats.py | PASS |  |
+
 ## rmats_rmats.py
 
 ### Tool Description

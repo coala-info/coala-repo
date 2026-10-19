@@ -1,8 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: train.py
+baseCommand:
+  - renet2
+  - train
 label: renet2_train
 doc: "RENET2 training models [assemble, full-text] and testing\n\nTool homepage: https://github.com/sujunhao/RENET2"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.gda_fn_d)
+        writable: true
+        entry: '$({"class": "Directory", "listing": []})'
+      - entry: $(inputs.raw_data_dir)
+        writable: true
+      - $(inputs.silver_data_files)
 inputs:
   - id: add_cache_suf
     type:
@@ -77,10 +89,8 @@ inputs:
       position: 101
       prefix: --fix_token_n
   - id: gda_fn_d
-    type:
-      - 'null'
-      - string
-    doc: found gda file folder
+    type: string
+    doc: found gda file folder (output folder, created before the run)
     inputBinding:
       position: 101
       prefix: --gda_fn_d
@@ -88,10 +98,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: SiDa file
+    doc: SiDa file prefix (reads <prefix>_01.tsv to <prefix>_10.tsv from the working directory; stage them with silver_data_files)
     inputBinding:
       position: 101
       prefix: --have_SiDa
+  - id: silver_data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Silver data tables (<prefix>_01.tsv ... <prefix>_10.tsv) staged in the working directory for have_sida
   - id: is_filter_sub
     type:
       - 'null'
@@ -133,10 +149,8 @@ inputs:
       position: 101
       prefix: --max_doc_num
   - id: model_dir
-    type:
-      - 'null'
-      - Directory
-    doc: modle data dir
+    type: string
+    doc: modle data dir (output folder for the trained models)
     inputBinding:
       position: 101
       prefix: --model_dir
@@ -175,19 +189,23 @@ inputs:
   - id: pretrained_model_p
     type:
       - 'null'
-      - string
-    doc: pretrained based models
+      - File
+    doc: pretrained based models (the .ckp file; the .cf file with the same stem is staged beside it)
+    secondaryFiles:
+      - pattern: ^.cf
+        required: true
     inputBinding:
       position: 101
       prefix: --pretrained_model_p
+      valueFrom: $(self.path.replace(/\.ckp$/, ''))
   - id: raw_data_dir
-    type:
-      - 'null'
-      - Directory
-    doc: input data folder
+    type: Directory
+    doc: input data folder (staged writable in the working directory, because
+      train writes labels_n.txt into it; the path is passed with a trailing slash)
     inputBinding:
       position: 101
       prefix: --raw_data_dir
+      valueFrom: $(self.basename)/
   - id: read_abs
     type:
       - 'null'
@@ -253,6 +271,16 @@ inputs:
       position: 101
       prefix: --word_index_fn
 outputs:
+  - id: model_out
+    type: Directory
+    doc: Folder with the trained models
+    outputBinding:
+      glob: $(inputs.model_dir)
+  - id: gda_out
+    type: Directory
+    doc: Folder with the predicted gene-disease associations
+    outputBinding:
+      glob: $(inputs.gda_fn_d)
   - id: stdout
     type: stdout
     doc: Standard output

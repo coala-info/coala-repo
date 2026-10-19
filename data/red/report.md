@@ -1,5 +1,11 @@
 # red CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| red | PASS |  |
+
 ## red
 
 ### Tool Description

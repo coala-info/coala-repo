@@ -4,7 +4,7 @@ baseCommand:
   - reveal
   - merge
 label: reveal_merge
-doc: "Combine multiple gfa graphs into a single gfa graph.\n\nTool homepage: https://github.com/hakimel/reveal.js"
+doc: "Combine multiple gfa graphs into a single gfa graph.\n\nTool homepage: https://github.com/jasperlinthorst/reveal"
 inputs:
   - id: graphs
     type:
@@ -19,7 +19,7 @@ inputs:
     doc: Output or path parameter `output_prefix_path`
     inputBinding:
       position: 101
-      prefix: --output-prefix
+      prefix: -o
 outputs:
   - id: output_prefix
     type:

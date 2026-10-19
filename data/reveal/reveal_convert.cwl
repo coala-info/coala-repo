@@ -4,7 +4,7 @@ baseCommand:
   - reveal
   - convert
 label: reveal_convert
-doc: "Convert gfa graph to gml.\n\nTool homepage: https://github.com/hakimel/reveal.js"
+doc: "Convert gfa graph to gml.\n\nTool homepage: https://github.com/jasperlinthorst/reveal"
 inputs:
   - id: graphs
     type:
@@ -66,6 +66,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: gml_files
+    type:
+      type: array
+      items: File
+    doc: Converted graph(s) in gml format (written next to the input graph)
+    outputBinding:
+      glob: '*.gml'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.graphs ? inputs.graphs : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reveal:0.1--py27_1

@@ -1,5 +1,11 @@
 # rnacode CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnacode_RNAcode | PASS |  |
+
 ## rnacode_RNAcode
 
 ### Tool Description

@@ -9,6 +9,9 @@ inputs:
   - id: bam
     type: File
     doc: Path to BAM file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: --bam

@@ -1,5 +1,11 @@
 # revbayes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| revbayes_rb | PASS |  |
+
 ## revbayes_rb
 
 ### Tool Description

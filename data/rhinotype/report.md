@@ -1,5 +1,11 @@
 # rhinotype CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rhinotype | PASS |  |
+
 ## rhinotype
 
 ### Tool Description

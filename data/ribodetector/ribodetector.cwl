@@ -88,7 +88,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items: string
     doc: Path of the output sequence file of detected rRNAs (same number of 
       files as input)
     inputBinding:
@@ -111,19 +111,29 @@ inputs:
       position: 101
       prefix: --threads
   - id: output_path
-    type: string
+    type:
+      type: array
+      items: string
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
     type:
-      - 'null'
-      - File
+      type: array
+      items: File
     doc: 'Path of the output sequence files after rRNAs removal (same number of files
       as input). (Note: 2 times slower to write gz files)'
     outputBinding:
       glob: $(inputs.output_path)
+  - id: rrna_output
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Detected rRNA sequences (written with --rrna)
+    outputBinding:
+      glob: $(inputs.rrna)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

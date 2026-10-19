@@ -11,7 +11,7 @@ inputs:
     type: File
     doc: Input file
     inputBinding:
-      position: 1
+      position: 200
   - id: build
     type:
       - 'null'
@@ -102,20 +102,36 @@ inputs:
       position: 102
       prefix: --verbose
   - id: ejected_output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: File to write ejected records to (records with unmapped contigs)
     inputBinding:
       position: 103
       prefix: --ejected-output
 outputs:
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Converted output file
+    outputBinding:
+      glob: '$(inputs.output === null ? "__no_output__" : inputs.output)'
+  - id: stdout
+    type: stdout
+    doc: Converted records written to standard output when no output file is given
   - id: ejected_output
     type:
       - 'null'
       - File
     doc: File to write ejected records to (records with unmapped contigs)
     outputBinding:
-      glob: $(inputs.ejected_output_path)
+      glob: '$(inputs.ejected_output_path === null ? "__no_ejected__" : inputs.ejected_output_path)'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recontig:1.5.0--h9ee0642_0
+stdout: recontig_convert.out

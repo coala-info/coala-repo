@@ -1,5 +1,13 @@
 # ribotin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ribotin_ribotin-hifiasm | Not completed | no usable small real data: the tool needs HiFi reads that cover the rDNA at depth (tens of GB of human reads) plus a hifiasm assembly |
+| ribotin_ribotin-ref | Not completed | no usable small real data: the tool needs HiFi reads that cover the rDNA at depth (tens of GB of human reads) |
+| ribotin_ribotin-verkko | Not completed | no usable small real data: the tool needs a verkko assembly folder of a human genome with rDNA (tens of GB of reads) |
+
 ## ribotin_ribotin-ref
 
 ### Tool Description

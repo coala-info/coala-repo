@@ -124,6 +124,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: local_db
+    type:
+      - 'null'
+      - Directory
+    doc: Local database directory (localDB) written when --local is used
+    outputBinding:
+      glob: localDB
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0

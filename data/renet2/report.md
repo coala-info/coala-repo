@@ -1,5 +1,16 @@
 # renet2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| renet2_download_data | PASS | abs mode downloads real PubTator abstracts; ft mode fails visibly because the PubTator API now needs pmids |
+| renet2_evaluate_renet2_ft_cv | Not completed | too heavy: the 5-fold cross-validation does not finish within 15 minutes on 20 documents, and a smaller set crashes with a TypeError in the tool |
+| renet2_normalize_ann | PASS |  |
+| renet2_parse_data | Failed | image problem: the geniass sentence splitter is not built and renet2 install_geniass fails (no make, tar error), so sentences.txt is not written |
+| renet2_predict | PASS |  |
+| renet2_train | PASS |  |
+
 ## renet2_predict
 
 ### Tool Description

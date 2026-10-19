@@ -83,11 +83,18 @@ inputs:
   - id: bed
     type:
       - 'null'
-      - string
-    doc: prefix to PLINK .bed/.bim/.fam files
+      - File
+    doc: PLINK .bed file; the .bim and .fam files must sit beside it (the prefix is
+      passed to regenie)
+    secondaryFiles:
+      - pattern: ^.bim
+        required: true
+      - pattern: ^.fam
+        required: true
     inputBinding:
       position: 101
       prefix: --bed
+      valueFrom: $(self.dirname)/$(self.nameroot)
   - id: bgen
     type:
       - 'null'
@@ -418,6 +425,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --joint
+      itemSeparator: ','
   - id: keep
     type:
       - 'null'
@@ -575,11 +583,18 @@ inputs:
   - id: pgen
     type:
       - 'null'
-      - string
-    doc: prefix to PLINK2 .pgen/.pvar/.psam files
+      - File
+    doc: PLINK2 .pgen file; the .pvar and .psam files must sit beside it (the prefix
+      is passed to regenie)
+    secondaryFiles:
+      - pattern: ^.pvar
+        required: true
+      - pattern: ^.psam
+        required: true
     inputBinding:
       position: 101
       prefix: --pgen
+      valueFrom: $(self.dirname)/$(self.nameroot)
   - id: pheno_col
     type:
       - 'null'
@@ -612,10 +627,14 @@ inputs:
     type:
       - 'null'
       - File
-    doc: file containing the list of predictions files from step 1
+    doc: file containing the list of predictions files from step 1. Step 1 writes
+      absolute paths into this list; the wrapper rewrites them to the base names of
+      the files given in pred_files, which are staged in the working directory.
+    loadContents: true
     inputBinding:
       position: 101
       prefix: --pred
+      valueFrom: "$(self ? 'regenie_pred.list' : null)"
   - id: print_prs
     type:
       - 'null'
@@ -866,6 +885,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-samples
+  - id: pred_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Step 1 prediction files (the .loco files named in the --pred list), staged
+      in the working directory so the names in the list resolve
 outputs:
   - id: stdout
     type: stdout
@@ -884,6 +910,24 @@ outputs:
     doc: Files written with the prefix given in split_l0
     outputBinding:
       glob: $(inputs.split_l0)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.pred_files) { l = l.concat(inputs.pred_files); }
+        if (inputs.pred) {
+          var rows = inputs.pred.contents.split("\n").filter(function (x) { return x.trim() !== ""; });
+          var fixed = rows.map(function (x) {
+            var f = x.trim().split(/\s+/);
+            f[f.length - 1] = f[f.length - 1].split("/").pop();
+            return f.join(" ");
+          });
+          l.push({"entryname": "regenie_pred.list", "entry": fixed.join("\n") + "\n"});
+        }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/regenie:4.1.2--he9e75c4_0

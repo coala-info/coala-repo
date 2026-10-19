@@ -1,5 +1,11 @@
 # reads2graph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| reads2graph | PASS | Built an edit-distance graph from real 16S amplicon reads (1244 unique reads, 1122 edges); the DOT file has the same number of edges. |
+
 ## reads2graph
 
 ### Tool Description

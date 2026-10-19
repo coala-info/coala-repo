@@ -61,8 +61,6 @@ inputs:
       prefix: --reads2
   - id: reference_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference genome FASTA filename
     inputBinding:
       position: 101

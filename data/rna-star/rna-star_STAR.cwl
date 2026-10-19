@@ -383,7 +383,9 @@ inputs:
       position: 101
       prefix: --genomeConsensusFile
   - id: genome_dir
-    type: Directory
+    type:
+      - Directory
+      - string
     doc: path to the directory where genome files are stored (for --runMode 
       alignReads) or will be generated (for --runMode generateGenome)
     inputBinding:
@@ -740,7 +742,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outSAMattrRGline
-      itemSeparator: ','
   - id: out_sam_attributes
     type:
       - 'null'
@@ -1154,8 +1155,9 @@ inputs:
       prefix: --quantTranscriptomeBan
   - id: read_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: paths to files that contain input read1 (and, if needed, read2)
     inputBinding:
       position: 101
@@ -1709,6 +1711,52 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: genome_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Genome index directory written with --runMode genomeGenerate
+    outputBinding:
+      glob: '$(inputs.run_mode === "genomeGenerate" && typeof inputs.genome_dir === "string" ? inputs.genome_dir : "__none__")'
+  - id: alignments
+    type:
+      type: array
+      items: File
+    doc: Alignment files (Aligned.*.sam/bam, Unmapped.out.mate*, Chimeric.out.*)
+    outputBinding:
+      glob:
+        - '$((inputs.out_file_name_prefix || "") + "Aligned*")'
+        - '$((inputs.out_file_name_prefix || "") + "Unmapped.out.mate*")'
+        - '$((inputs.out_file_name_prefix || "") + "Chimeric.out.*")'
+  - id: splice_junctions
+    type:
+      type: array
+      items: File
+    doc: Splice junction tables (SJ.out.tab) and gene counts (ReadsPerGene.out.tab)
+    outputBinding:
+      glob:
+        - '$((inputs.out_file_name_prefix || "") + "SJ.out.tab")'
+        - '$((inputs.out_file_name_prefix || "") + "ReadsPerGene.out.tab")'
+  - id: logs
+    type:
+      type: array
+      items: File
+    doc: STAR log files (Log.out, Log.final.out, Log.progress.out)
+    outputBinding:
+      glob: '$((inputs.out_file_name_prefix || "") + "Log*.out")'
+  - id: signal_files
+    type:
+      type: array
+      items: File
+    doc: Wiggle or bedGraph signal files (--outWigType)
+    outputBinding:
+      glob: '$((inputs.out_file_name_prefix || "") + "Signal.*")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$(typeof inputs.genome_dir === "string" ? {class: "Directory", basename: inputs.genome_dir, listing: []} : null)'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rna-star:v2.7.0adfsg-1-deb_cv1

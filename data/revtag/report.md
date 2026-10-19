@@ -1,5 +1,11 @@
 # revtag CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| revtag | PASS |  |
+
 ## revtag
 
 ### Tool Description

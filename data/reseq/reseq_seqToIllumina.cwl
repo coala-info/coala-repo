@@ -64,10 +64,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --probabilitiesIn
-  - id: probabilities_out
+  - id: probabilities_out_path
     type:
       - 'null'
-      - File
+      - string
     doc: Stores the probabilities estimated by iterative proportional fitting 
       [<probabilitiesIn>]
     inputBinding:
@@ -110,6 +110,13 @@ inputs:
       position: 102
       prefix: --output
 outputs:
+  - id: probabilities_out
+    type:
+      - 'null'
+      - File
+    doc: Stores the probabilities estimated by iterative proportional fitting
+    outputBinding:
+      glob: $(inputs.probabilities_out_path)
   - id: output_file
     type:
       - 'null'

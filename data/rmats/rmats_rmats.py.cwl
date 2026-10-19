@@ -4,6 +4,16 @@ baseCommand: rmats.py
 label: rmats_rmats.py
 doc: "rMATS-turbo\n\nTool homepage: http://rnaseq-mats.sourceforge.net"
 inputs:
+  - id: bam_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    doc: BAM files named in the --b1 and --b2 list files; they are staged in the 
+      working directory so that the names in the list files resolve
   - id: allow_clipping
     type:
       - 'null'
@@ -150,7 +160,7 @@ inputs:
   - id: od
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory for final output from the post step
     inputBinding:
       position: 101
@@ -225,7 +235,7 @@ inputs:
   - id: tmp
     type:
       - 'null'
-      - Directory
+      - string
     doc: The directory for intermediate output such as ".rmats" files from the 
       prep step
     inputBinding:
@@ -263,6 +273,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: od_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The directory for final output from the post step
+    outputBinding:
+      glob: $(inputs.od)
+  - id: tmp_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The directory for intermediate output such as ".rmats" files from the 
+      prep step
+    outputBinding:
+      glob: $(inputs.tmp)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.bam_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rmats:4.3.0--py311hf2f0b74_5

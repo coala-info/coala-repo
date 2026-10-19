@@ -1,5 +1,12 @@
 # rdrpcatch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rdrpcatch_databases | Not completed | Downloads the 3.6 GB RdRpCATCH database from Zenodo, too large for this test. |
+| rdrpcatch_scan | Not completed | Needs the 3.6 GB RdRpCATCH database (HMM profiles and MMseqs taxonomy), which is too large for this test. |
+
 ## rdrpcatch_databases
 
 ### Tool Description

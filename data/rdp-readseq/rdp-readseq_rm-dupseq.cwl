@@ -1,53 +1,63 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: RmRedundantSeqs
+baseCommand:
+  - rdp-readseq
+  - rm-dupseq
 label: rdp-readseq_rm-dupseq
-doc: Remove redundant sequences from a FASTA file.
+doc: "Remove identical sequences or sequences contained in another sequence (RmRedundantSeqs).
+
+Tool homepage: https://github.com/rdpstaff/ReadSeq"
 inputs:
+  - id: infile
+    type: File
+    doc: "Input fasta file"
+    inputBinding:
+      position: 1
+      prefix: --infile
+  - id: outfile
+    type: string
+    doc: "Output fasta file"
+    inputBinding:
+      position: 2
+      prefix: --outfile
+  - id: duplicates
+    type:
+      - 'null'
+      - boolean
+    doc: "Remove identical sequence, or sequence contained by another sequence"
+    inputBinding:
+      position: 3
+      prefix: --duplicates
   - id: debug
     type:
       - 'null'
       - boolean
-    doc: output the ids that are contained by other sequences to standard out
+    doc: "Output the ids that are contained by other sequences to standard out"
     inputBinding:
-      position: 101
+      position: 4
       prefix: --debug
-  - id: infile
-    type: File
-    doc: input fasta file
-    inputBinding:
-      position: 101
-      prefix: --infile
   - id: min_seq_length
     type:
       - 'null'
       - int
-    doc: filter sequence by minimum sequence length
+    doc: "Filter sequences by minimum sequence length, default is 0"
     inputBinding:
-      position: 101
+      position: 5
       prefix: --min_seq_length
-  - id: remove_identical
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: out
     type:
       - 'null'
-      - boolean
-    doc: remove identical sequence, or sequence contained by another sequence
-    inputBinding:
-      position: 101
-      prefix: --duplicates
-  - id: outfile_path
-    type: string
-    doc: output fasta file
-    inputBinding:
-      position: 102
-      prefix: --outfile
-outputs:
-  - id: outfile
-    type: File
-    doc: output fasta file
+      - File
+    doc: "Output fasta file"
     outputBinding:
-      glob: $(inputs.outfile_path)
+      glob: $(inputs.outfile)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rdp-readseq:v2.0.2-6-deb_cv1
+stdout: rdp-readseq_rm-dupseq.out

@@ -1,5 +1,12 @@
 # rd-analyzer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rd-analyzer_RD-Analyzer-extended.py | PASS | Real M. tuberculosis reads against a reference with renamed headers; the result table showed the expected RD105 and RD207 deletions. |
+| rd-analyzer_RD-Analyzer.py | Failed | image problem: the tool runs bwa index on its built-in reference in the read-only image folder, so it fails for a non-root user. |
+
 ## rd-analyzer_RD-Analyzer.py
 
 ### Tool Description

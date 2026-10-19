@@ -1,15 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: download_data.py
+baseCommand:
+  - renet2
+  - download_data
 label: renet2_download_data
 doc: "download abstrcts/full-text pubtator/json file from Pubtator\n\nTool homepage:
   https://github.com/sujunhao/RENET2"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.dir)
+        writable: true
+        entry: '$({"class": "Directory", "listing": []})'
 inputs:
   - id: dir
-    type:
-      - 'null'
-      - string
-    doc: output dir
+    type: string
+    doc: output dir (created before the run)
     inputBinding:
       position: 101
       prefix: --dir
@@ -30,10 +39,8 @@ inputs:
       position: 101
       prefix: --process_n
   - id: tmp_hit_f
-    type:
-      - 'null'
-      - File
-    doc: output hit id list f
+    type: string
+    doc: output hit id list file
     inputBinding:
       position: 101
       prefix: --tmp_hit_f
@@ -50,12 +57,15 @@ outputs:
     type: stdout
     doc: Standard output
   - id: dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: output dir
     outputBinding:
       glob: $(inputs.dir)
+  - id: hit_file
+    type: File
+    doc: List of the ids that were downloaded
+    outputBinding:
+      glob: $(inputs.tmp_hit_f)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/renet2:1.2--py_0

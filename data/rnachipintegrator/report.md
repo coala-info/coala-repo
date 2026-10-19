@@ -1,5 +1,11 @@
 # rnachipintegrator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnachipintegrator_RnaChipIntegrator | PASS |  |
+
 ## rnachipintegrator_RnaChipIntegrator
 
 ### Tool Description

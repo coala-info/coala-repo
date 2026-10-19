@@ -1,5 +1,11 @@
 # rebaler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rebaler | PASS | Polished the Candidatus Portiera reference with 7100 real nanopore reads; one 352,692 bp contig, and the reads map to it slightly better than to the reference (88.2% vs 87.9% identity). |
+
 ## rebaler
 
 ### Tool Description

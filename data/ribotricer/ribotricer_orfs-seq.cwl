@@ -12,6 +12,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fasta
+      valueFrom: $(self.basename)
   - id: protein
     type:
       - 'null'
@@ -21,7 +22,7 @@ inputs:
       position: 101
       prefix: --protein
   - id: ribotricer_index
-    type: string
+    type: File
     doc: "Path to the index file of ribotricer This file\n                       \
       \    should be generated using ribotricer prepare-orfs"
     inputBinding:
@@ -41,6 +42,10 @@ outputs:
       glob: $(inputs.saveto_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribotricer:1.5.0--pyhdfd78af_0

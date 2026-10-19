@@ -1,5 +1,11 @@
 # realphy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| realphy | Failed | image problem: bowtie2, bowtie2-build and the tree programs (PhyML, RAxML) are not in the image, so realphy stops with 'The executable for BOWTIE2 is essential'. |
+
 ## realphy
 
 ### Tool Description

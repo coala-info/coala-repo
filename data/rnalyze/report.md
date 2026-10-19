@@ -1,5 +1,11 @@
 # rnalyze CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnalyze | Not completed | pipeline, skipped |
+
 ## rnalyze
 
 ### Tool Description

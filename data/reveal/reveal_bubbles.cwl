@@ -4,7 +4,7 @@ baseCommand:
   - reveal
   - bubbles
 label: reveal_bubbles
-doc: "Extract all bubbles from the graph.\n\nTool homepage: https://github.com/hakimel/reveal.js"
+doc: "Extract all bubbles from the graph.\n\nTool homepage: https://github.com/jasperlinthorst/reveal"
 inputs:
   - id: graph
     type: File

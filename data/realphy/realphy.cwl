@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: java -Xmx[available RAM in MB]m -jar RealPhy_v1.12.jar
+baseCommand: realphy
 label: realphy
 doc: "RealPhy is a tool for phylogenetic analysis. It takes a folder of sequence files
   and outputs a phylogenetic tree.\n\nTool homepage: https://realphy.unibas.ch/fcgi/realphy"
@@ -11,11 +11,13 @@ inputs:
     inputBinding:
       position: 1
   - id: output_folder
-    type: Directory
-    doc: Folder where output files will be generated. Must contain a config.txt 
-      file.
+    type: string
+    doc: Folder where output files will be generated (created with the config.txt staged inside).
     inputBinding:
       position: 2
+  - id: config_file
+    type: File
+    doc: config.txt with the locations of bowtie2, bowtie2-build and the tree program (BOWTIE2, BOWTIE2BUILDER, PHYML, RAXML, ...). It is staged as config.txt in the output folder.
   - id: bowtie_options
     type:
       - 'null'
@@ -214,6 +216,17 @@ outputs:
     doc: Appends a suffix to the reference output folder.
     outputBinding:
       glob: $(inputs.suffix)
+  - id: output_directory
+    type: Directory
+    doc: Output folder
+    outputBinding:
+      glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_folder)/config.txt
+        entry: $(inputs.config_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/realphy:1.13--hdfd78af_1

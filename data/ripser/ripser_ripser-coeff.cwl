@@ -1,0 +1,56 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand: ripser-coeff
+label: ripser_ripser-coeff
+doc: "Compute persistent homology (build with support for coefficients in the prime field Z/pZ)\n\nTool homepage: http://ripser.org/"
+inputs:
+  - id: filename
+    type:
+      - 'null'
+      - File
+    doc: Input filename
+    inputBinding:
+      position: 1
+  - id: dim
+    type:
+      - 'null'
+      - int
+    doc: Compute persistent homology up to dimension <k>
+    inputBinding:
+      position: 102
+      prefix: --dim
+  - id: format
+    type:
+      - 'null'
+      - string
+    doc: 'Use the specified file format for the input. Options are: lower-distance
+      (lower triangular distance matrix; default), upper-distance (upper triangular
+      distance matrix), distance (full distance matrix), point-cloud (point cloud
+      in Euclidean space), dipha (distance matrix in DIPHA file format)'
+    inputBinding:
+      position: 102
+      prefix: --format
+  - id: modulus
+    type:
+      - 'null'
+      - int
+    doc: Compute homology with coefficients in the prime field Z/<p>Z
+    inputBinding:
+      position: 102
+      prefix: --modulus
+  - id: threshold
+    type:
+      - 'null'
+      - float
+    doc: Compute Rips complexes up to diameter <t>
+    inputBinding:
+      position: 102
+      prefix: --threshold
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/ripser:1.0.1--h6bb024c_0
+stdout: ripser_ripser-coeff.out

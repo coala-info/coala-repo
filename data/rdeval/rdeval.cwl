@@ -194,11 +194,16 @@ inputs:
       position: 103
       prefix: --verbose
   - id: out_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 104
       prefix: --out-file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (read summary statistics)
   - id: out_file
     type:
       - 'null'
@@ -212,3 +217,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rdeval:0.0.8--r44h35c04b2_1
+stdout: rdeval.out

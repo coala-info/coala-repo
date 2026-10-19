@@ -1,5 +1,18 @@
 # rdp-readseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rdp-readseq_random-sample | PASS | Sampled 2 sequences from each of two real 16S sample files; both subset files have 2 sequences. |
+| rdp-readseq_reverse-comp | PASS | Reverse complemented 8 real 16S sequences; output matches an independent reverse complement. |
+| rdp-readseq_rm-dupseq | PASS | Real 16S file with one planted duplicate and one planted substring (synthetic additions); both were removed, 8 sequences kept. |
+| rdp-readseq_select-seqs | PASS | Selected 3 of 8 real 16S sequences by id. |
+| rdp-readseq_split | PASS | Split 8 real 16S sequences into 3 files of 3, 3 and 2 sequences. |
+| rdp-readseq_to-fasta | PASS | Converted 100 real fastq reads to fasta. |
+| rdp-readseq_to-fastq | PASS | Converted 100 real fastq reads; sequences match the input. |
+| rdp-readseq_to-stk | PASS | Converted a MAFFT alignment of 8 real 16S sequences to Stockholm format. |
+
 ## rdp-readseq_random-sample
 
 ### Tool Description
@@ -171,28 +184,4 @@ usage: USAGE: to-stk <input-file> <out-file>
 
 ## Metadata
 - **Skill**: generated
-
-## rdp-readseq
-
-### Tool Description
-Main entry point for ReadSeq operations. Use with a subcommand.
-
-### Metadata
-- **Docker Image**: biocontainers/rdp-readseq:v2.0.2-6-deb_cv1
-- **Homepage**: Not found
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-ERROR: wrong subcommand
-USAGE: ReadSeqMain <subcommand> <subcommand args ...>
-	random-sample  - random select a subset or subregion of sequences
-	reverse-comp   - reverse complement sequences
-	rm-dupseq      - remove identical or substring of sequences
-	select-seqs    - select or deselect sequences from a file
-	split          - split sequences
-	to-fasta       - convert to fasta format
-	to-fastq       - convert to fastq format
-	to-stk         - convert to stk format
-```
 

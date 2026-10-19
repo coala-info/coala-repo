@@ -41,7 +41,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error, where recontig prints the valid conversions
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recontig:1.5.0--h9ee0642_0
 stdout: recontig_conversion-help.out
+stderr: recontig_conversion-help.err

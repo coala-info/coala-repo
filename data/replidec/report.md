@@ -1,5 +1,11 @@
 # replidec CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| replidec_Replidec | Failed | image problem: the 371 MB database is not in the image and Replidec downloads it into its read-only install folder, so the run fails |
+
 ## replidec_Replidec
 
 ### Tool Description

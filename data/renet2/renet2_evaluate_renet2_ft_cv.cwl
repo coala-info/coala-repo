@@ -1,8 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: evaluate_renet2_ft_cv.py
+baseCommand:
+  - renet2
+  - evaluate_renet2_ft_cv
 label: renet2_evaluate_renet2_ft_cv
 doc: "RENET2 training models [assemble, full-text] and testing\n\nTool homepage: https://github.com/sujunhao/RENET2"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.raw_data_dir)
+        writable: true
+      - $(inputs.silver_data_files)
 inputs:
   - id: add_cache_suf
     type:
@@ -80,10 +89,16 @@ inputs:
     type:
       - 'null'
       - string
-    doc: SiDa file
+    doc: SiDa file prefix (reads <prefix>_01.tsv to <prefix>_10.tsv from the working directory; stage them with silver_data_files)
     inputBinding:
       position: 101
       prefix: --have_SiDa
+  - id: silver_data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Silver data tables (<prefix>_01.tsv ... <prefix>_10.tsv) staged in the working directory for have_sida
   - id: is_filter_sub
     type:
       - 'null'
@@ -167,19 +182,24 @@ inputs:
   - id: pretrained_model_p
     type:
       - 'null'
-      - string
-    doc: pretrained based models
+      - File
+    doc: pretrained based models (the .ckp file; the .cf file with the same stem is staged beside it)
+    secondaryFiles:
+      - pattern: ^.cf
+        required: true
     inputBinding:
       position: 101
       prefix: --pretrained_model_p
+      valueFrom: $(self.path.replace(/\.ckp$/, ''))
   - id: raw_data_dir
-    type:
-      - 'null'
-      - Directory
-    doc: input data folder
+    type: Directory
+    doc: input data folder (staged writable in the working directory, because
+      the tool writes labels_n.txt, models and results into it; the path is passed
+      with a trailing slash)
     inputBinding:
       position: 101
       prefix: --raw_data_dir
+      valueFrom: $(self.basename)/
   - id: read_abs
     type:
       - 'null'
@@ -245,6 +265,18 @@ inputs:
       position: 101
       prefix: --word_index_fn
 outputs:
+  - id: results
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Cross-validation prediction tables, labels_n.txt and models written into the input folder
+    outputBinding:
+      glob:
+        - $(inputs.raw_data_dir.basename)/$(inputs.rst_file_prefix || 'ft_base')_*.tsv
+        - $(inputs.raw_data_dir.basename)/labels_n.txt
+        - $(inputs.raw_data_dir.basename)/*.ckp
+        - $(inputs.raw_data_dir.basename)/*.cf
   - id: stdout
     type: stdout
     doc: Standard output

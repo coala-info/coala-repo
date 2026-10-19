@@ -1,5 +1,11 @@
 # referenceseeker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| referenceseeker | PASS |  |
+
 ## referenceseeker
 
 ### Tool Description

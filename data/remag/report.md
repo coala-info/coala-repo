@@ -1,5 +1,11 @@
 # remag CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| remag | Failed | tool bug: remag 0.3.4 crashes in the main binning flow with TypeError (check_core_gene_duplications got an unexpected keyword use_header_cache); the CWL was rewritten from the help and the command line is accepted |
+
 ## remag
 
 ### Tool Description

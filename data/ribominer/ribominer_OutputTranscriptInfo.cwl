@@ -1,8 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - python
-  - OutputTranscriptInfo
+baseCommand: OutputTranscriptInfo
 label: ribominer_OutputTranscriptInfo
 doc: "Output transcript information.\n\nTool homepage: https://github.com/xryanglab/RiboMiner"
 inputs:

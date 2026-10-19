@@ -8,11 +8,6 @@ inputs:
     type: File
     doc: Protein or codon alignment in FASTA format
     inputBinding:
-      position: 1
-  - id: alignment_format
-    type: File
-    doc: Protein or codon alignment in FASTA format
-    inputBinding:
       position: 102
       prefix: -f
   - id: batch_size

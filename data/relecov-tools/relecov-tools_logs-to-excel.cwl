@@ -10,17 +10,17 @@ inputs:
   - id: files
     type:
       type: array
-      items: string
+      items: File
+      inputBinding:
+        prefix: --files
     doc: Paths to log_summary.json files to merge into xlsx file, called once 
       per file
     inputBinding:
       position: 101
-      prefix: --files
   - id: lab_code
-    type:
-      - 'null'
-      - string
-    doc: Only merge logs from target laboratory in log-summary.json files
+    type: string
+    doc: Only merge logs from target laboratory in log-summary.json files (the key
+      must exist in the files; the tool fails without it)
     inputBinding:
       position: 101
       prefix: --lab_code

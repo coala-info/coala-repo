@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: revoluzer_sim
+baseCommand: revoluzer
 label: revoluzer
 doc: "Simulates rearrangements on a genome.\n\nTool homepage: https://gitlab.com/Bernt/revoluzer/"
 inputs:
@@ -9,6 +9,7 @@ inputs:
     doc: Input file specifying the genome and rearrangements.
     inputBinding:
       position: 1
+      prefix: -f
   - id: circular_genomes
     type:
       - 'null'
@@ -25,6 +26,16 @@ inputs:
     inputBinding:
       position: 102
       prefix: -i
+  - id: real_data
+    type:
+      - 'null'
+      - boolean
+    doc: Input is real data with integer gene names (read genome length and
+      count from the file instead of from the file name; from the tool source, not
+      listed in the usage text).
+    inputBinding:
+      position: 102
+      prefix: -r
   - id: use_reversals_on_same_component
     type:
       - 'null'

@@ -1,86 +1,22 @@
 # rgi CWL Generation Report
 
-## rgi
+## Real Data Test
 
-### Tool Description
-Use the Resistance Gene Identifier to predict resistome(s) from protein or nucleotide data based on homology and SNP models. Check https://card.mcmaster.ca/download for software and data updates. Receive email notification of monthly CARD updates via the CARD Mailing List (https://mailman.mcmaster.ca/mailman/listinfo/card-l)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0
-- **Homepage**: https://card.mcmaster.ca
-- **Package**: https://anaconda.org/channels/bioconda/packages/rgi/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/rgi/overview
-- **Total Downloads**: 208.4K
-- **Last updated**: 2025-09-01
-- **GitHub**: N/A
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: rgi <command> [<args>]
-            commands are:
-               ---------------------------------------------------------------------------------------
-               Database
-               ---------------------------------------------------------------------------------------
-               auto_load Automatically loads CARD database, annotations and k-mer database
-               load      Loads CARD database, annotations and k-mer database
-               clean     Removes BLAST databases and temporary files
-               database  Information on installed card database
-               galaxy    Galaxy project wrapper
-
-               ---------------------------------------------------------------------------------------
-               Genomic
-               ---------------------------------------------------------------------------------------
-
-               main     Runs rgi application
-               tab      Creates a Tab-delimited from rgi results
-               parser   Creates categorical JSON files RGI wheel visualization
-               heatmap  Heatmap for multiple analysis
-
-               ---------------------------------------------------------------------------------------
-               Metagenomic
-               ---------------------------------------------------------------------------------------
-               bwt                   Align reads to CARD and in silico predicted allelic variants (beta)
-
-               ---------------------------------------------------------------------------------------
-               Baits validation
-               ---------------------------------------------------------------------------------------
-               tm                    Baits Melting Temperature
-
-               ---------------------------------------------------------------------------------------
-               Annotations
-               ---------------------------------------------------------------------------------------
-               card_annotation       Create fasta files with annotations from card.json
-               wildcard_annotation   Create fasta files with annotations from variants
-               baits_annotation      Create fasta files with annotations from baits (experimental)
-               remove_duplicates     Removes duplicate sequences (experimental)
-
-               ---------------------------------------------------------------------------------------
-               Pathogen of origin
-               ---------------------------------------------------------------------------------------
-
-               kmer_build            Build AMR specific k-mers database used for pathogen of origin (beta)
-               kmer_query            Query sequences against AMR k-mers database to predict pathogen of origin (beta)
-
-               
-
-Resistance Gene Identifier - 6.0.5
-
-positional arguments:
-  {main,tab,parser,load,auto_load,clean,galaxy,database,bwt,tm,card_annotation,wildcard_annotation,baits_annotation,remove_duplicates,heatmap,kmer_build,kmer_query}
-                        Subcommand to run
-
-options:
-  -h, --help            show this help message and exit
-
-Use the Resistance Gene Identifier to predict resistome(s) from protein or
-nucleotide data based on homology and SNP models. Check
-https://card.mcmaster.ca/download for software and data updates. Receive email
-notification of monthly CARD updates via the CARD Mailing List
-(https://mailman.mcmaster.ca/mailman/listinfo/card-l)
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| rgi_rgi_auto_load | PASS | downloads and loads the current CARD release with k-mers (about 8 GB of output); loaded_databases.json shows CARD 4.0.2 and 61-mers |
+| rgi_rgi_bwt | PASS | synthetic data: paired reads simulated from the real pBR322 and pUC19 plasmid sequences; TEM-1 and tet(C) found |
+| rgi_rgi_card_annotation | PASS |  |
+| rgi_rgi_heatmap | PASS |  |
+| rgi_rgi_kmer_build | Not completed | needs the large CARD prevalence data directory; without it the tool crashes (None path) |
+| rgi_rgi_kmer_query | PASS | needs the 8 GB local database from rgi auto_load (--local); 1070 AMR k-mers found in pBR322 |
+| rgi_rgi_load | PASS |  |
+| rgi_rgi_main | PASS |  |
+| rgi_rgi_parser | PASS |  |
+| rgi_rgi_remove_duplicates | PASS | synthetic data: three planted prevalence records made from a real CARD sequence (duplicate and shorter copy removed); real prevalence data is very large |
+| rgi_rgi_tab | PASS |  |
+| rgi_rgi_tm | Failed | image problem: melt.pl (UNAFold) stops with 'stack file is corrupt', so the output is an empty JSON |
+| rgi_rgi_wildcard_annotation | Not completed | needs the WildCARD variants download (about 1 GB) and was not fetched |
 
 ## rgi_rgi_main
 
@@ -324,6 +260,233 @@ options:
   --debug               debug mode
 ```
 
+
+## rgi_rgi_tab
+
+### Tool Description
+Creates a tab-delimited file from an RGI JSON result file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0
+- **Homepage**: https://card.mcmaster.ca
+- **Package**: https://anaconda.org/channels/bioconda/packages/rgi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: rgi tab [-h] -i AFILE
+
+Resistance Gene Identifier - 6.0.5 - Tab-delimited
+
+options:
+  -h, --help         show this help message and exit
+  -i, --afile AFILE  must be a rgi json result file
+```
+
+## rgi_rgi_parser
+
+### Tool Description
+Creates categorical JSON files for the RGI wheel visualization.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0
+- **Homepage**: https://card.mcmaster.ca
+- **Package**: https://anaconda.org/channels/bioconda/packages/rgi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: rgi parser [-h] -i INPUT [-o OUTPUT] [--include_loose] [-t TYPE]
+
+Resistance Gene Identifier - 6.0.5 - Parser 
+
+Creates categorical .json files RGI wheel visualization. An input .json file containing the RGI results must be input.
+
+options:
+  -h, --help           show this help message and exit
+  -i, --input INPUT    RGI results in a .json file
+  -o, --output OUTPUT  Name/identifier for the output categorical .json files
+  --include_loose      Include loose hits in addition to strict and perfect hits
+  -t, --type TYPE      type of input sequence: contig, protein or read
+```
+
+## rgi_rgi_card_annotation
+
+### Tool Description
+Creates card annotations for RGI BWT from card.json.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0
+- **Homepage**: https://card.mcmaster.ca
+- **Package**: https://anaconda.org/channels/bioconda/packages/rgi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: rgi card_annotation [-h] -i INPUT [--ncbi] [--debug]
+
+Resistance Gene Identifier - 6.0.5 - CARD Annotation 
+
+Creates card annotations for RGI BWT from card.json
+
+options:
+  -h, --help         show this help message and exit
+  -i, --input INPUT  card.json file
+  --ncbi             adds ncbi accession to FASTA headers (default: False)
+  --debug            debug mode (default: False)
+```
+
+## rgi_rgi_remove_duplicates
+
+### Tool Description
+Removes duplicate sequences from an annotated FASTA file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0
+- **Homepage**: https://card.mcmaster.ca
+- **Package**: https://anaconda.org/channels/bioconda/packages/rgi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: rgi remove_duplicates [-h] -i INPUT_FASTA_FILE
+                             --card_annotation CARD_ANNOTATION
+                             -o OUTPUT_FASTA_FILE [--debug]
+
+Resistance Gene Identifier - 6.0.5 - Remove duplicates 
+
+Removes duplicates sequences from annotationed fasta file.
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input INPUT_FASTA_FILE
+                        input fasta file
+  --card_annotation CARD_ANNOTATION
+                        card_annotation input fasta file
+  -o, --output OUTPUT_FASTA_FILE
+                        output fasta file
+  --debug               debug mode
+```
+
+## rgi_rgi_tm
+
+### Tool Description
+Calculates the melting temperature of baits (probes).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0
+- **Homepage**: https://card.mcmaster.ca
+- **Package**: https://anaconda.org/channels/bioconda/packages/rgi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: rgi tm [-h] [-i INPUT_FILE] [-o OUTPUT_FILE] [-t FILTER_TEMPERATURE]
+              [--clean] [--debug]
+
+Resistance Gene Identifier - 6.0.5 - TM
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input_file INPUT_FILE
+                        input_file
+  -o, --output_file OUTPUT_FILE
+                        output_file
+  -t, --filter_temperature FILTER_TEMPERATURE
+                        desired melting temperature (default=65).
+  --clean               removes temporary files
+  --debug               debug mode
+```
+
+## rgi_rgi_kmer_build
+
+### Tool Description
+Builds the k-mer sets for CARD*kmers.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0
+- **Homepage**: https://card.mcmaster.ca
+- **Package**: https://anaconda.org/channels/bioconda/packages/rgi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: rgi kmer_build [-h] [-i INPUT_DIRECTORY] -c CARD_FASTA -k K [--skip]
+                      [-n THREADS] [--batch_size BATCH_SIZE]
+
+Resistance Gene Identifier - 6.0.5 - Kmer Build 
+
+Builds the kmer sets for CARD*kmers
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input_directory INPUT_DIRECTORY
+                        input directory of prevalence data
+  -c, --card CARD_FASTA
+                        fasta file of CARD reference sequences. If missing, run 'rgi card_annotation' to generate.
+  -k K                  k-mer size (e.g., 61)
+  --skip                skips the concatenation and splitting of the CARD*R*V sequences.
+  -n, --threads THREADS
+                        number of threads (CPUs) to use (default=1)
+  --batch_size BATCH_SIZE
+                        number of kmers to query at a time using pyahocorasick--the greater the number the more memory usage (default=100,000)
+```
+
+## rgi_rgi_wildcard_annotation
+
+### Tool Description
+Creates card annotations for RGI BWT from Variants or WildCARD data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0
+- **Homepage**: https://card.mcmaster.ca
+- **Package**: https://anaconda.org/channels/bioconda/packages/rgi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: rgi wildcard_annotation [-h] -i INPUT_DIRECTORY -v VERSION -j CARD_JSON
+                               [--debug]
+
+Resistance Gene Identifier - 6.0.5 - WildCARD Annotation 
+
+Creates card annotations for RGI BWT from Variants or Wilcard data
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input_directory INPUT_DIRECTORY
+                        input directory for wildcard
+  -v, --version VERSION
+                        specify version downloaded for wildcard / variants
+  -j, --card_json CARD_JSON
+                        card.json file
+  --debug               debug mode (default: False)
+```
+
+## rgi_rgi_auto_load
+
+### Tool Description
+Automatically loads the CARD database, annotations and k-mer database.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rgi:6.0.5--pyh05cac1d_0
+- **Homepage**: https://card.mcmaster.ca
+- **Package**: https://anaconda.org/channels/bioconda/packages/rgi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: rgi auto_load [-h] [--local] [--clean] [--debug]
+
+Resistance Gene Identifier - 6.0.5 - Automatic Load
+
+options:
+  -h, --help  show this help message and exit
+  --local     use local database (default: uses database in executable
+              directory)
+  --clean     removes temporary files
+  --debug     debug mode
+```
 
 ## Metadata
 - **Skill**: generated

@@ -1,5 +1,11 @@
 # readseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| readseq | PASS | Converted a real 16S alignment to Phylip, extracted the 3 CDS from pBR322 GenBank, and reverse complemented 8 sequences correctly. The wrapper now needs an output file name because readseq writes beside the input otherwise. |
+
 ## readseq
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # resfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| resfinder_run_resfinder.py | PASS |  |
+
 ## resfinder_run_resfinder.py
 
 ### Tool Description

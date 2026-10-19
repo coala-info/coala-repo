@@ -50,8 +50,10 @@ inputs:
       position: 101
       prefix: --clusters
   - id: config_file
-    type: File
-    doc: 'config file; if none given, create one; default: /'
+    type:
+      - 'null'
+      - File
+    doc: 'config file; if none given, create one'
     inputBinding:
       position: 101
       prefix: --config
@@ -184,6 +186,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min_flank_depth
+  - id: output
+    type: string
+    doc: output directory
+    inputBinding:
+      position: 101
+      prefix: --output
   - id: pre_kmers
     type:
       - 'null'
@@ -207,14 +215,12 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: path to a (multi)fasta or a directory containing one or more 
       chromosomal sequences in fasta format. Required, unless using a config 
       file
     inputBinding:
       position: 101
-      prefix: --reference_fasta
+      prefix: -r
   - id: score_min
     type:
       - 'null'
@@ -291,19 +297,12 @@ inputs:
       prefix: --verbosity
 outputs:
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir)
-  - id: experiment_name_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in experiment_name
-    outputBinding:
-      glob: $(inputs.experiment_name)*
+      glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboseed:0.4.90--py_0

@@ -1,5 +1,11 @@
 # reprof CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| reprof | PASS |  |
+
 ## reprof
 
 ### Tool Description

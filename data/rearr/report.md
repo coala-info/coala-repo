@@ -1,5 +1,11 @@
 # rearr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rearr_rearrangement | PASS | Aligned 20 real CRISPR example reads to the example double-cut reference; 20 chimeric alignments with large deletions. The wrapper now feeds the input on stdin and the reference on file descriptor 3. |
+
 ## rearr_rearrangement
 
 ### Tool Description

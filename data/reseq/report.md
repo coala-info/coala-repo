@@ -1,5 +1,14 @@
 # reseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| reseq_illuminaPE | PASS |  |
+| reseq_queryProfile | PASS |  |
+| reseq_replaceN | PASS |  |
+| reseq_seqToIllumina | PASS |  |
+
 ## reseq_illuminaPE
 
 ### Tool Description
@@ -238,30 +247,6 @@ seqToIllumina:
                                  random seed will be used
   -s [ --statsIn ] arg           Profile file that contains the statistics used
                                  for simulation
-```
-
-
-## reseq_test
-
-### Tool Description
-Runs ReSeq in test mode
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/reseq:1.1--py310hfb68e69_5
-- **Homepage**: https://github.com/schmeing/ReSeq/tree/devel
-- **Package**: https://anaconda.org/channels/bioconda/packages/reseq/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
->>> 25-02-26 13:44:46: info:  Running ReSeq version 1.1 in test mode
-Usage: reseq test [options]
-General:
-  -h [ --help ]             Prints help information and exits
-  -j [ --threads ] arg (=0) Number of threads used (0=auto)
-  --verbosity arg (=4)      Sets the level of verbosity (4=everything, 
-                            0=nothing)
-  --version                 Prints version info and exits
 ```
 
 

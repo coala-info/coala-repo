@@ -2,7 +2,10 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rextract
 label: recentrifuge_rextract
-doc: "Selectively extract reads by Centrifuge output\n\nTool homepage: https://github.com/khyox/recentrifuge"
+doc: 'Selectively extract reads by Centrifuge output
+
+
+  Tool homepage: https://github.com/khyox/recentrifuge'
 inputs:
   - id: compress
     type:
@@ -25,17 +28,18 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: NCBI taxid code to exclude a taxon and all underneath (multiple -x is 
-      available to exclude several taxid)
+        inputBinding:
+          prefix: --exclude
+    doc: NCBI taxid code to exclude a taxon and all underneath (multiple -x is available
+      to exclude several taxid)
     inputBinding:
       position: 101
-      prefix: --exclude
   - id: fasta
     type:
       - 'null'
       - boolean
-    doc: treat all the input and output sequence files as FASTA instead of the 
-      default FASTQ
+    doc: treat all the input and output sequence files as FASTA instead of the default
+      FASTQ
     inputBinding:
       position: 101
       prefix: --fasta
@@ -47,6 +51,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastq
+      valueFrom: $(self.basename)
   - id: file
     type: File
     doc: Centrifuge output file
@@ -58,12 +63,12 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: NCBI taxid code to include a taxon and all underneath (multiple -i is 
-      available to include several taxid); by default all the taxa is considered
-      for inclusion
+        inputBinding:
+          prefix: --include
+    doc: NCBI taxid code to include a taxon and all underneath (multiple -i is available
+      to include several taxid); by default all the taxa is considered for inclusion
     inputBinding:
       position: 101
-      prefix: --include
   - id: limit
     type:
       - 'null'
@@ -76,20 +81,22 @@ inputs:
     type:
       - 'null'
       - File
-    doc: paired-ends sequence file (gzipped or not) for mate 1s (filename 
-      usually includes _1)
+    doc: paired-ends sequence file (gzipped or not) for mate 1s (filename usually
+      includes _1)
     inputBinding:
       position: 101
       prefix: --mate1
+      valueFrom: $(self.basename)
   - id: mate2_file
     type:
       - 'null'
       - File
-    doc: paired-ends sequence file (gzipped or not) for mate 2s (filename 
-      usually includes _2)
+    doc: paired-ends sequence file (gzipped or not) for mate 2s (filename usually
+      includes _2)
     inputBinding:
       position: 101
       prefix: --mate2
+      valueFrom: $(self.basename)
   - id: maxreads
     type:
       - 'null'
@@ -102,8 +109,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: maximum score/confidence of the classification of a read to pass the 
-      quality filter; all pass by default
+    doc: maximum score/confidence of the classification of a read to pass the quality
+      filter; all pass by default
     inputBinding:
       position: 101
       prefix: --maxscore
@@ -111,8 +118,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum score/confidence of the classification of a read to pass the 
-      quality filter; all pass by default
+    doc: minimum score/confidence of the classification of a read to pass the quality
+      filter; all pass by default
     inputBinding:
       position: 101
       prefix: --minscore
@@ -120,8 +127,7 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: path for the nodes information files (nodes.dmp and names.dmp from 
-      NCBI)
+    doc: path for the nodes information files (nodes.dmp and names.dmp from NCBI)
     inputBinding:
       position: 101
       prefix: --nodespath
@@ -137,6 +143,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: extracted_reads
+    type:
+      type: array
+      items: File
+    doc: Extracted sequence files (<input name>_rxtr*)
+    outputBinding:
+      glob: '*_rxtr*'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.fastq_file)
+      - $(inputs.mate1_file)
+      - $(inputs.mate2_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recentrifuge:2.1.1--pyhdfd78af_0

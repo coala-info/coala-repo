@@ -1,5 +1,11 @@
 # recur CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| recur | PASS |  |
+
 ## recur
 
 ### Tool Description

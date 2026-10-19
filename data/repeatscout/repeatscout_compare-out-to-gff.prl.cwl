@@ -33,11 +33,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --gff
     doc: A GFF-formatted file of features. More than one file may be specified 
       with multiple --gff options.
     inputBinding:
       position: 101
-      prefix: --gff
   - id: overlap_threshold
     type:
       - 'null'
@@ -57,7 +58,7 @@ inputs:
       position: 101
       prefix: --over
   - id: repeatmasker_instances
-    type: string
+    type: File
     doc: RepeatMasker instances in either .cat format or .out format (prefer 
       .out)
     inputBinding:

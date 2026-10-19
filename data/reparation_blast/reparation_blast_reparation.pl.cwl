@@ -4,6 +4,13 @@ baseCommand: reparation.pl
 label: reparation_blast_reparation.pl
 doc: "Performs BLAST analysis for bacterial protein sequence identification and ORF
   prediction.\n\nTool homepage: https://github.com/RickGelhausen/REPARATION_blast"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_file)
+        writable: true
+      - entry: $(inputs.curated_protein_db)
+        writable: true
 inputs:
   - id: bam_file
     type: File
@@ -157,7 +164,9 @@ inputs:
       position: 101
       prefix: -pcdn
   - id: scripts_directory
-    type: Directory
+    type:
+      - 'null'
+      - string
     doc: The "scripts" directory (avialable within the REPARATION directory), 
       defaults to directory of reparation.pl script
     inputBinding:
@@ -218,12 +227,17 @@ inputs:
   - id: working_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: working directory (defaults to current directory)
     inputBinding:
       position: 101
       prefix: -wdir
 outputs:
+  - id: results_dir
+    type: Directory
+    doc: Result folder <experiment name>_reparation with the predicted ORFs (.txt, .bed, .fasta), occupancy file and plots
+    outputBinding:
+      glob: '*_reparation'
   - id: stdout
     type: stdout
     doc: Standard output

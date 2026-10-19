@@ -1,5 +1,14 @@
 # ribotish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ribotish_predict | PASS | with -t (TIS) data, -p greater than 1 crashes with AssertionError in multiprocessing (Python 3.13); -p 1 and the -b mode work |
+| ribotish_quality | PASS |  |
+| ribotish_tisdiff | PASS | synthetic data: the two groups are random halves of one Ribo-seq BAM; --plotout and --plotma crash with ModuleNotFoundError for zbio, and --export writes only the count table |
+| ribotish_transplot | PASS |  |
+
 ## ribotish_quality
 
 ### Tool Description

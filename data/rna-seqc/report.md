@@ -1,5 +1,11 @@
 # rna-seqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rna-seqc_rnaseqc | PASS |  |
+
 ## rna-seqc_rnaseqc
 
 ### Tool Description

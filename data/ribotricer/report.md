@@ -1,5 +1,16 @@
 # ribotricer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ribotricer_count-orfs | PASS |  |
+| ribotricer_count-orfs-codon | Failed | tool bug: ribotricer 1.5.0 crashes with TypeError in str.join (count_orfs.py line 171) and writes an empty file |
+| ribotricer_detect-orfs | PASS |  |
+| ribotricer_learn-cutoff | PASS |  |
+| ribotricer_orfs-seq | PASS |  |
+| ribotricer_prepare-orfs | PASS |  |
+
 ## ribotricer_count-orfs
 
 ### Tool Description

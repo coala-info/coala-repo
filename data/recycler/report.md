@@ -1,5 +1,13 @@
 # recycler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| recycler_get_simple_cycs.py | PASS |  |
+| recycler_make_fasta_from_fastg.py | PASS |  |
+| recycler_recycle.py | PASS |  |
+
 ## recycler_make_fasta_from_fastg.py
 
 ### Tool Description
@@ -29,65 +37,6 @@ optional arguments:
                         before_rr.fastg]
   -o OUTPUT, --output OUTPUT
                         output file name for FASTA of cycles
-```
-
-
-## recycler_samtools
-
-### Tool Description
-Tools for alignments in the SAM format
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/recycler:0.7--py27h24bf2e0_2
-- **Homepage**: https://github.com/Shamir-Lab/Recycler
-- **Package**: https://anaconda.org/channels/bioconda/packages/recycler/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Program: samtools (Tools for alignments in the SAM format)
-Version: 1.8 (using htslib 1.8)
-
-Usage:   samtools <command> [options]
-
-Commands:
-  -- Indexing
-     dict           create a sequence dictionary file
-     faidx          index/extract FASTA
-     index          index alignment
-
-  -- Editing
-     calmd          recalculate MD/NM tags and '=' bases
-     fixmate        fix mate information
-     reheader       replace BAM header
-     targetcut      cut fosmid regions (for fosmid pool only)
-     addreplacerg   adds or replaces RG tags
-     markdup        mark duplicates
-
-  -- File operations
-     collate        shuffle and group alignments by name
-     cat            concatenate BAMs
-     merge          merge sorted alignments
-     mpileup        multi-way pileup
-     sort           sort alignment file
-     split          splits a file by read group
-     quickcheck     quickly check if SAM/BAM/CRAM file appears intact
-     fastq          converts a BAM to a FASTQ
-     fasta          converts a BAM to a FASTA
-
-  -- Statistics
-     bedcov         read depth per BED region
-     depth          compute the depth
-     flagstat       simple stats
-     idxstats       BAM index stats
-     phase          phase heterozygotes
-     stats          generate stats (former bamcheck)
-
-  -- Viewing
-     flags          explain BAM flags
-     tview          text alignment viewer
-     view           SAM<->BAM<->CRAM conversion
-     depad          convert padded BAM to unpadded BAM
 ```
 
 
@@ -132,6 +81,34 @@ optional arguments:
                         Output directory
 ```
 
+
+## recycler_get_simple_cycs.py
+
+### Tool Description
+Gets simple (single contig) cycles from plasmid metagenomes and writes them to a separate FASTA file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/recycler:0.7--py27h24bf2e0_2
+- **Homepage**: https://github.com/Shamir-Lab/Recycler
+- **Package**: https://anaconda.org/channels/bioconda/packages/recycler/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] get_simple_cycs.py: ok via get_simple_cycs.py --help (--help=ok, -h=ok, -help=flag_rejected, (no args)=usage_only)
+usage: get_simple_cycs.py [-h] -i INPUT [-m MIN_LENGTH]
+
+gets simple (single contig) cycles from plasmid metagenomes, leaves rest of
+graph as is; outputs these to two separate files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Input (SPAdes 3.50+) FASTG to process
+  -m MIN_LENGTH, --min_length MIN_LENGTH
+                        Minimum cycle length to keep (shorter cycles put in
+                        new graph file; default = 1000)
+```
 
 ## Metadata
 - **Skill**: generated

@@ -63,10 +63,8 @@ inputs:
       position: 101
       prefix: -f
   - id: pattern_file
-    type:
-      - 'null'
-      - File
-    doc: pattern file
+    type: File
+    doc: pattern file (reads, fasta or fastq)
     inputBinding:
       position: 101
       prefix: -p
@@ -81,7 +79,7 @@ inputs:
   - id: rewrite_pattern_file
     type:
       - 'null'
-      - boolean
+      - int
     doc: rewrite pattern file
     inputBinding:
       position: 101
@@ -104,10 +102,7 @@ inputs:
       prefix: -similarity
   - id: text_file
     type: File
-    doc: text file name
-    inputBinding:
-      position: 101
-      prefix: -t
+    doc: "text file (reference sequences, fasta). It is staged with the suffix .fa because real only reads text files that end in .fa"
   - id: transitions_fraction
     type:
       - 'null'
@@ -119,7 +114,7 @@ inputs:
   - id: unique_match
     type:
       - 'null'
-      - boolean
+      - int
     doc: search for unique match
     inputBinding:
       position: 101
@@ -127,27 +122,33 @@ inputs:
   - id: use_quality_scores
     type:
       - 'null'
-      - boolean
+      - int
     doc: use quality scores
     inputBinding:
       position: 101
       prefix: -q
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: output filename
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: output filename
     outputBinding:
       glob: $(inputs.output_file_path)
+arguments:
+  - position: 101
+    prefix: -t
+    valueFrom: $(inputs.text_file.nameroot).fa
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.text_file.nameroot).fa
+        entry: $(inputs.text_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/real:1.0--he941832_1

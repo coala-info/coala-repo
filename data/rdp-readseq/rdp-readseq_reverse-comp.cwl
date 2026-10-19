@@ -1,48 +1,49 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: RevComplement
+baseCommand:
+  - rdp-readseq
+  - reverse-comp
 label: rdp-readseq_reverse-comp
-doc: Reverse complement a DNA sequence
+doc: "Reverse complement sequences (RevComplement).
+
+Tool homepage: https://github.com/rdpstaff/ReadSeq"
 inputs:
+  - id: infile
+    type: File
+    doc: "Input fasta file"
+    inputBinding:
+      position: 1
+      prefix: --infile
+  - id: outfile
+    type: string
+    doc: "Output file"
+    inputBinding:
+      position: 2
+      prefix: --outfile
   - id: check_orientation
     type:
       - 'null'
       - boolean
-    doc: If set, will check orientation of the rRNA sequenc, only reverse 
-      complement if needed
+    doc: "If set, check the orientation of the rRNA sequence and reverse complement only if needed"
     inputBinding:
-      position: 101
+      position: 3
       prefix: --check
-  - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: input fasta file
-    inputBinding:
-      position: 101
-      prefix: --infile
   - id: output_format
     type:
       - 'null'
       - string
-    doc: output format, fasta or fastq.
+    doc: "Output format, fasta or fastq. Default is fasta"
     inputBinding:
-      position: 101
+      position: 4
       prefix: --format
-  - id: output_file_path
-    type: string
-    doc: output fasta file
-    inputBinding:
-      position: 102
-      prefix: --outfile
 outputs:
-  - id: output_file
+  - id: out
     type:
       - 'null'
       - File
-    doc: output fasta file
+    doc: "Output sequence file"
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.outfile)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

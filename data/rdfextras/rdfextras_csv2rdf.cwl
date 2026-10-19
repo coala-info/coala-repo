@@ -1,127 +1,146 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: csv2rdf.py
+baseCommand: csv2rdf
 label: rdfextras_csv2rdf
-doc: "Reads csv files from stdin or given files\nif -d is given, use this delimiter\n\
-  if -s is given, skips N lines at the start\nCreates a URI from the columns given
-  to -i, or automatically by numbering if\nnone is given\nOutputs RDFS labels from
-  the columns given to -l\nif -c is given adds a type triple with the given classname\n\
-  if -C is given, the class is defined as rdfs:Class\nOutputs one RDF triple per column
-  in each row.\nOutput is in n3 format.\nOutput is stdout, unless -o is specified\n\
-  \nTool homepage: https://github.com/RDFLib/rdfextras"
+doc: "Reads csv files from stdin or given files. Creates a URI from the columns
+  given to -i, or automatically by numbering if none is given. Outputs RDFS labels
+  from the columns given to -l. Outputs one RDF triple per column in each row. Output
+  is in n3 format.\n\nTool homepage: https://github.com/RDFLib/rdfextras"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: files
     type:
       - 'null'
       - type: array
         items: File
-    doc: CSV files to read
+    doc: CSV files to read (stdin if none)
+    inputBinding:
+      position: 200
+  - id: instance_base
+    type: string
+    doc: instance base URI (-b)
     inputBinding:
       position: 1
+      prefix: --base
+  - id: property_base
+    type: string
+    doc: property base URI (--propbase crashes in this version, so -p is used)
+    inputBinding:
+      position: 2
+      prefix: -p
   - id: classname
     type:
       - 'null'
       - string
-    doc: classname to add as type triple
+    doc: adds a type triple with the given classname (-c)
     inputBinding:
-      position: 102
+      position: 3
       prefix: --class
-  - id: col_spec
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: specify conversion for columns (e.g., --col0 float())
-    inputBinding:
-      position: 102
-      prefix: --col
-  - id: config_file
-    type:
-      - 'null'
-      - File
-    doc: config file to read settings from
-    inputBinding:
-      position: 102
-      prefix: -f
-  - id: define_class
-    type:
-      - 'null'
-      - boolean
-    doc: the class is defined as rdfs:Class
-    inputBinding:
-      position: 102
-      prefix: --defineclass
-  - id: delimiter
-    type:
-      - 'null'
-      - string
-    doc: delimiter to use for CSV parsing
-    inputBinding:
-      position: 102
-      prefix: -d
   - id: identity_columns
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: identity column(s) to create URI from
+      - string
+    doc: "identity column(s) to build the URI from, a Python expression: an index
+      such as 0 or a tuple such as (0,1) (-i)"
     inputBinding:
-      position: 102
+      position: 4
       prefix: --ident
-  - id: instance_base
-    type: string
-    doc: instance base URI
-    inputBinding:
-      position: 102
-      prefix: --base
   - id: label_columns
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: label columns for RDFS labels
+      - string
+    doc: "columns for RDFS labels, a Python expression: a tuple such as (1,) or
+      (1,2) (-l)"
     inputBinding:
-      position: 102
+      position: 5
       prefix: --label
-  - id: property
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: specify specific properties to use (e.g., --prop0 foaf:name)
-    inputBinding:
-      position: 102
-      prefix: --prop
-  - id: property_base
-    type: string
-    doc: property base URI
-    inputBinding:
-      position: 102
-      prefix: --propbase
   - id: skip_lines
     type:
       - 'null'
       - int
-    doc: skips N lines at the start
+    doc: skips N lines at the start (-s)
     inputBinding:
-      position: 102
-      prefix: -s
+      position: 6
+      prefix: --skip
+  - id: delimiter
+    type:
+      - 'null'
+      - string
+    doc: delimiter to use for CSV parsing (-d)
+    inputBinding:
+      position: 7
+      prefix: --delim
+  - id: define_class
+    type:
+      - 'null'
+      - boolean
+    doc: the class is defined as rdfs:Class (-C; needs classname)
+    inputBinding:
+      position: 8
+      prefix: --defineclass
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: ini file with a section csv2rdf holding the long options (-f)
+    inputBinding:
+      position: 9
+      prefix: -f
+  - id: col_specs
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: "(the command-line --colN option crashes in this version; use config_file
+      instead) column conversions as N:spec, for example 2:float() or 3:int(); each item
+      becomes --colN spec. Conversions: float(), int(), split(sep, [more]), uri(base,
+      [class]), date(format)"
+  - id: prop_specs
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: "(the command-line --propN option crashes in this version; use config_file
+      instead) specific properties as N:uri, for example 0:http://xmlns.com/foaf/0.1/name;
+      each item becomes --propN uri"
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: write the n3 output to this file instead of stdout (-o)
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 10
+      prefix: --out
+arguments:
+  - position: 11
+    valueFrom: |
+      ${
+        var r = [];
+        (inputs.col_specs || []).forEach(function(s) {
+          var i = s.indexOf(":");
+          r.push("--col" + s.substring(0, i));
+          r.push(s.substring(i + 1));
+        });
+        (inputs.prop_specs || []).forEach(function(s) {
+          var i = s.indexOf(":");
+          r.push("--prop" + s.substring(0, i));
+          r.push(s.substring(i + 1));
+        });
+        return r;
+      }
 outputs:
+  - id: stdout
+    type: stdout
+    doc: n3 output when no output file is given
   - id: output_file
     type:
       - 'null'
       - File
-    doc: output file
+    doc: n3 output file
     outputBinding:
       glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rdfextras:0.4--py27_2
+stdout: rdfextras_csv2rdf.out

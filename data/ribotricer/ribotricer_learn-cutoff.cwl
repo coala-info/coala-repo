@@ -15,7 +15,7 @@ inputs:
       position: 101
       prefix: --filter_by_tx_annotation
   - id: min_valid_codons
-    type: int
+    type: ['null', int]
     doc: Minimum number of codons with non-zero reads for determining active 
       translation (required for BAM input)
     inputBinding:
@@ -30,7 +30,7 @@ inputs:
       position: 101
       prefix: --n_bootstraps
   - id: phase_score_cutoff
-    type: float
+    type: ['null', float]
     doc: Phase score cutoff for determining active translation (required for BAM
       input)
     inputBinding:
@@ -49,6 +49,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Path(s) to Ribo-seq BAM file separated by comma
     inputBinding:
       position: 101
@@ -65,7 +68,7 @@ inputs:
       prefix: --ribo_tsvs
       itemSeparator: ','
   - id: ribotricer_index
-    type: File
+    type: ['null', File]
     doc: Path to the index file of ribotricer This file should be generated 
       using ribotricer prepare-orfs (required for BAM input)
     inputBinding:
@@ -76,6 +79,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Path(s) to RNA-seq BAM file separated by comma
     inputBinding:
       position: 101

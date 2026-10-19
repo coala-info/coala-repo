@@ -38,6 +38,13 @@ inputs:
       position: 102
       prefix: -dir
 outputs:
+  - id: database_files
+    type:
+      type: array
+      items: File
+    doc: Database files (<name>.nhr, .nin, .nnd, .nni, .nog, .nsq, .translation)
+    outputBinding:
+      glob: $(inputs.database_name).*
   - id: stdout
     type: stdout
     doc: Standard output

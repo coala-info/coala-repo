@@ -1,5 +1,15 @@
 # rdp-alignment CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rdp-alignment_align-nucl-to-prot | PASS | Transferred a protein alignment of 4 real coronavirus N genes onto their nucleotide sequences; codons line up with the protein. |
+| rdp-alignment_alignment-merger | PASS | Merged two Infernal alignments of 8 real 16S sequences into one fasta alignment with the reference row. |
+| rdp-alignment_compare-error-type | PASS | Compared 7 real 16S queries with 8 reference 16S sequences; wrote the alignment, indel and mismatch files. |
+| rdp-alignment_pairwise-knn | PASS | Found the 2 nearest real 16S references for 7 queries; hits look right (Pseudomonas to Pseudomonas aeruginosa). |
+| rdp-alignment_rm-partialseq | PASS | Real 16S queries plus truncated E. coli copies (synthetic truncation); the truncated ones were removed. |
+
 ## rdp-alignment_alignment-merger
 
 ### Tool Description

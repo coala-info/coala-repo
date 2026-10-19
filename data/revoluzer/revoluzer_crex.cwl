@@ -10,6 +10,7 @@ inputs:
     doc: Specify a filename
     inputBinding:
       position: 1
+      prefix: -f
   - id: affect
     type:
       - 'null'
@@ -50,14 +51,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --events
-  - id: file
-    type:
-      - 'null'
-      - boolean
-    doc: specify a filename
-    inputBinding:
-      position: 102
-      prefix: --file
   - id: length
     type:
       - 'null'

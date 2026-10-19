@@ -35,7 +35,9 @@ inputs:
       position: 101
       prefix: --threads
   - id: threshold
-    type: float
+    type:
+      - 'null'
+      - float
     doc: The p-distance threshold for genotyping (e.g., 0.105).
     inputBinding:
       position: 101
@@ -44,6 +46,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: reports
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the genotype classification report (CSV)
+    outputBinding:
+      glob: reports
+  - id: figures
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the SNP, tree, frequency and amino acid figures
+    outputBinding:
+      glob: figures
+  - id: alignment
+    type:
+      - 'null'
+      - File
+    doc: MAFFT alignment of the query sequences and the prototype sequences
+    outputBinding:
+      glob: sequence_align.fasta
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rhinotype:2.0.0--pyhdfd78af_0

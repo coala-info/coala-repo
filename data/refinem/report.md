@@ -1,5 +1,19 @@
 # refinem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| refinem_call_genes | PASS |  |
+| refinem_filter_bins | PASS |  |
+| refinem_genome_stats | PASS |  |
+| refinem_modify_bin | PASS |  |
+| refinem_outliers | PASS |  |
+| refinem_scaffold_stats | PASS |  |
+| refinem_ssu_erroneous | Failed | image problem: nhmmer is missing and blastn fails on a missing libssl.so.1.0.0, so 16S detection cannot run |
+| refinem_taxon_filter | PASS | synthetic data: mixed bin with a tiny planted reference database; the 3 foreign scaffolds were flagged |
+| refinem_taxon_profile | PASS | synthetic data: tiny reference database built from the bins' own proteins |
+
 ## refinem_scaffold_stats
 
 ### Tool Description

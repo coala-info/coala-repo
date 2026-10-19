@@ -8,6 +8,8 @@ doc: "Create a new bam with unique mapping reads only\n\nTool homepage: https://
 inputs:
   - id: inbam
     type: File
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --inbam

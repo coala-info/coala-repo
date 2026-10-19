@@ -115,9 +115,16 @@ inputs:
 outputs:
   - id: output
     type: File
-    doc: output filename
+    doc: Guide table; the tool appends .csv to the output name
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path).csv
+  - id: stats
+    type:
+      - 'null'
+      - File
+    doc: Copy numbers of the most abundant sequences (written with --save_stats)
+    outputBinding:
+      glob: $(inputs.output_path).stats.csv
 requirements:
   - class: InlineJavascriptRequirement
 hints:

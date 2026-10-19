@@ -1,5 +1,18 @@
 # recentrifuge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| recentrifuge_rcf | PASS |  |
+| recentrifuge_refafilt | PASS |  |
+| recentrifuge_refasplit | PASS |  |
+| recentrifuge_remock | PASS |  |
+| recentrifuge_retaxdump | PASS |  |
+| recentrifuge_rextraccnt | PASS |  |
+| recentrifuge_rextract | PASS |  |
+| recentrifuge_rgf | Not completed | needs GO-adapted nodes.dmp/names.dmp files and GO annotation output tables; no real test data available |
+
 ## recentrifuge_rcf
 
 ### Tool Description
@@ -535,6 +548,126 @@ retaxdump  - Release 2.1.1 - Feb 2026
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ```
 
+
+## recentrifuge_refafilt
+
+### Tool Description
+Filter a FASTA file by sequence length.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/recentrifuge:2.1.1--pyhdfd78af_0
+- **Homepage**: https://github.com/khyox/recentrifuge
+- **Package**: https://anaconda.org/channels/bioconda/packages/recentrifuge/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+=-= /usr/local/bin/refafilt =-= v2.1.1 - Feb 2026 =-= by Jose Manuel Martí =-=
+
+usage: refafilt [-h] [-d] -i FILE [-o FILE] [-s FILE] [-l FILE] [-p FILE]
+                [-f NUMBER] [-F NUMBER] [-m NUMBER] [-c] [-e] [-V]
+
+Filter a FASTA file by sequence length
+
+options:
+  -h, --help            show this help message and exit
+  -d, --debug           increase output verbosity and perform additional
+                        checks
+  -i FILE, --input FILE
+                        input FASTA file, which may be gzipped
+  -o FILE, --output_pass FILE
+                        output file for sequences passing the filter(s)
+  -s FILE, --output_short FILE
+                        output file for sequences too short
+  -l FILE, --output_long FILE
+                        output file for sequences too long
+  -p FILE, --output_plot FILE
+                        output PDF file for histogram plot
+  -f NUMBER, --filter_less_than NUMBER
+                        minimum length of the accepted sequences
+  -F NUMBER, --filter_more_than NUMBER
+                        maximum length of the accepted sequences
+  -m NUMBER, --maxreads NUMBER
+                        maximum number of FASTA reads to process; default: no
+                        maximum
+  -c, --compress        the resulting FASTA files will be gzipped
+  -e, --expand          expand multiple headers in multiple sequences
+  -V, --version         show program's version number and exit
+
+refafilt  - Release 2.1.1 - Feb 2026
+
+    Copyright (C) 2017–2026, Jose Manuel Martí Martínez
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+    
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
+
+## recentrifuge_remock
+
+### Tool Description
+Generate mock samples for Recentrifuge.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/recentrifuge:2.1.1--pyhdfd78af_0
+- **Homepage**: https://github.com/khyox/recentrifuge
+- **Package**: https://anaconda.org/channels/bioconda/packages/recentrifuge/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+=-= /usr/local/bin/remock =-= v2.1.1 - Feb 2026 =-= by Jose Manuel Martí =-=
+
+usage: remock [-h] (-f FILE | -r MHL) [-d] (-m FILE | -x FILE | -t) [-n PATH]
+              [-c] [-V]
+
+Generate mock samples for Recentrifuge
+
+options:
+  -h, --help            show this help message and exit
+  -f FILE, --file FILE  Explicit source: Centrifuge output file as source
+  -r MHL, --random MHL  Random score generated. Please provide the minimum hit
+                        length (mhl) of the classification; 15 by default
+  -d, --debug           increase output verbosity and perform additional
+                        checks
+  -m FILE, --mock FILE  Mock files to be read for mock Centrifuge sequences
+                        layout. If a single directory is entered, every .mck
+                        file inside will be taken as a different sample.
+                        Multiple -f is available to include several samples.
+  -x FILE, --xcel FILE  Excel file with the mock layout.
+  -t, --test            generate mock data ready for testing Recentrifuge
+  -n PATH, --nodespath PATH
+                        path for the nodes information files (nodes.dmp and
+                        names.dmp from NCBI)
+  -c, --compress        Any generated FASTQ file will be gzipped
+  -V, --version         show program's version number and exit
+
+remock  - Release 2.1.1 - Feb 2026
+
+    Copyright (C) 2017–2026, Jose Manuel Martí Martínez
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+    
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
 
 ## Metadata
 - **Skill**: generated

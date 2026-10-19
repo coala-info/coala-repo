@@ -15,17 +15,25 @@ inputs:
     inputBinding:
       position: 101
       prefix: --color
-  - id: coordinate_and_annotation
+  - id: coordinate
     type:
       - 'null'
       - string
-    doc: The genome region coordinates and a GFF3 (not GTF) annotation file of 
-      genes and transcripts. The format is -c 
+    doc: The genome region coordinates in the format 
+      {chromosome}:{strand}:{start}:{end}. It is combined with the GFF3 file 
+      given in annotation_gff3 into the option -c 
       {chromosome}:{strand}:{start}:{end}:{/path/to/gff3} (Only if using 
       Coordinate and annotation input)
     inputBinding:
       position: 101
       prefix: -c
+      valueFrom: '$(self === null ? null : self + ":" + inputs.annotation_gff3.path)'
+  - id: annotation_gff3
+    type:
+      - 'null'
+      - File
+    doc: GFF3 (not GTF) annotation file of genes and transcripts (Only if using
+      Coordinate and annotation input)
   - id: event_type
     type:
       - 'null'
@@ -165,10 +173,14 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: 'sample_1 bam files: s1_rep1.bam[,s1_rep2.bam]'
     inputBinding:
       position: 101
       prefix: --b1
+      itemSeparator: ','
   - id: sample1_sam_files
     type:
       - 'null'
@@ -178,15 +190,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --s1
+      itemSeparator: ','
   - id: sample2_bam_files
     type:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: 'sample_2 bam files: s2_rep1.bam[,s2_rep2.bam]'
     inputBinding:
       position: 101
       prefix: --b2
+      itemSeparator: ','
   - id: sample2_sam_files
     type:
       - 'null'
@@ -196,6 +213,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --s2
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout
@@ -207,6 +225,8 @@ outputs:
     doc: The output directory.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rmats2sashimiplot:3.0.0--py39hdff8610_2

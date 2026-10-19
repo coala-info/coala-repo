@@ -8,6 +8,8 @@ doc: "Convert bam to bedgraph\n\nTool homepage: https://github.com/saketkc/ribor
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: Path to BAM file
     inputBinding:
       position: 101

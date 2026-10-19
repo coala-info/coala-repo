@@ -90,9 +90,18 @@ inputs:
       position: 101
       prefix: --stranded
 outputs:
+  - id: metaplots_files
+    type:
+      type: array
+      items: File
+    doc: Metaplot PDF and predicted P-site configuration file (name prefix from --outname, default metaplots)
+    outputBinding:
+      glob: "$(inputs.outname ? inputs.outname : 'metaplots')*"
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1

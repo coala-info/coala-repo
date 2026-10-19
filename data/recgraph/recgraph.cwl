@@ -8,12 +8,12 @@ inputs:
     type: File
     doc: Input graph (in .gfa format)
     inputBinding:
-      position: 1
+      position: 2
   - id: sequence_path
     type: File
     doc: Input sequences (in .fasta format)
     inputBinding:
-      position: 2
+      position: 1
   - id: aln_mode
     type:
       - 'null'
@@ -30,9 +30,9 @@ inputs:
   - id: amb_strand
     type:
       - 'null'
-      - boolean
+      - string
     doc: "Ambigous strand mode (experimental): try reverse complement if alignment
-      score is too\n            low"
+      score is too low (true or false)"
     inputBinding:
       position: 103
       prefix: --amb-strand

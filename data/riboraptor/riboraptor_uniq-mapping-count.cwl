@@ -8,6 +8,8 @@ doc: "Count number of unique mapping reads\n\nTool homepage: https://github.com/
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: Path to BAM file
     inputBinding:
       position: 101

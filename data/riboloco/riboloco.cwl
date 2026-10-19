@@ -72,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ignore
+      itemSeparator: ':'
   - id: info
     type:
       - 'null'
@@ -344,6 +345,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reference
+      itemSeparator: ':'
   - id: reference_use_KL
     type:
       - 'null'
@@ -364,7 +366,7 @@ inputs:
   - id: samples
     type:
       - 'null'
-      - string
+      - File
     doc: In reference generation mode this may either be a .csv file of samples 
       (you MUST ensure that the file is of '.csv' otherwise it will not be 
       recognised) or a single bed file. In conversion mode it must be a single 
@@ -436,9 +438,7 @@ inputs:
       position: 101
       prefix: --write_individual_files
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output

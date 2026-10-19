@@ -1,5 +1,11 @@
 # repeatmasker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| repeatmasker_RepeatMasker | PASS | ran with a custom library on Galaxy test data; masked FASTA and catalog match the expected files |
+
 ## repeatmasker_RepeatMasker
 
 ### Tool Description

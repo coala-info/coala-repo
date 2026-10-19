@@ -96,10 +96,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tag
     doc: Filter out reads with the specified tag.
     inputBinding:
       position: 104
-      prefix: --tag
   - id: fragment_samples
     type:
       - 'null'

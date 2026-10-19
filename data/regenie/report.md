@@ -1,5 +1,11 @@
 # regenie CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| regenie | PASS | step 1 and step 2 ran on the regenie example data (bed and pgen); binary Firth results match the shipped example file except 21 Firth rows with small numeric differences |
+
 ## regenie
 
 ### Tool Description

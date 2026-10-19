@@ -1,5 +1,15 @@
 # rhocall CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rhocall_aggregate | PASS |  |
+| rhocall_annotate | PASS | BED mode annotated 271 variants in the AZ window; the --no-v14 mode crashes with StopIteration at the end of the VCF |
+| rhocall_call | Failed | tool bug: rhocall call crashes with TypeError (call() missing argument ctx) on any VCF; command is deprecated |
+| rhocall_tally | PASS |  |
+| rhocall_viz | PASS | wig/bed mode works; plot mode (--no-wig) crashes in the tool when a window has too few variants (NaN strings) |
+
 ## rhocall_aggregate
 
 ### Tool Description

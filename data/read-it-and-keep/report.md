@@ -1,5 +1,11 @@
 # read-it-and-keep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| read-it-and-keep_readItAndKeep | PASS | Kept 100 of 100 real SARS-CoV-2 read pairs; with 100 non-viral reads mixed in, it kept 99 of 200 reads and dropped the rest. |
+
 ## read-it-and-keep_readItAndKeep
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # rdp_classifier CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rdp_classifier | PASS | Classified 8 real 16S sequences to the correct genus or family; the image has no training data, so the RDP 2.14 16S training set is supplied as input. |
+
 ## rdp_classifier
 
 ### Tool Description

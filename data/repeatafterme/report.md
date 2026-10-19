@@ -1,5 +1,11 @@
 # repeatafterme CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| repeatafterme_RAMExtend | PASS |  |
+
 ## repeatafterme_RAMExtend
 
 ### Tool Description

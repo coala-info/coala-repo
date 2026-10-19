@@ -11,7 +11,7 @@ inputs:
   - id: add_custom_db
     type:
       - 'null'
-      - File
+      - Directory
     doc: Path to a custom, pressed pHMM database directory. This only works if 
       the supported databases have already been downloaded. Please point to the 
       directory the databases are stored ('rdrpcatch_dbs') using the 
@@ -28,7 +28,7 @@ inputs:
       position: 101
       prefix: --concept-doi
   - id: destination_dir
-    type: Directory
+    type: string
     doc: Path to directory to download databases
     inputBinding:
       position: 101
@@ -37,6 +37,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: databases_dir
+    type: Directory
+    doc: Directory with the downloaded databases
+    outputBinding:
+      glob: $(inputs.destination_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rdrpcatch:1.0.1.post1--pyhdfd78af_0

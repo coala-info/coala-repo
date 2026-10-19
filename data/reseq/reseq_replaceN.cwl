@@ -41,7 +41,7 @@ inputs:
     doc: Output or path parameter `ref_sim_path`
     inputBinding:
       position: 102
-      prefix: --ref-sim
+      prefix: --refSim
 outputs:
   - id: ref_sim
     type: File

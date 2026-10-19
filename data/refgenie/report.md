@@ -1,5 +1,31 @@
 # refgenie CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| refgenie_add | Not completed | refgenie add needs an absolute genome folder, but the container work path changes on every run, so the relative folder fails with 'Provided path must exist' |
+| refgenie_alias_get | PASS |  |
+| refgenie_alias_remove | PASS |  |
+| refgenie_alias_set | PASS |  |
+| refgenie_build | Failed | image problem: samtools is missing in the image, so the fasta recipe stops with 'samtools: command not found' |
+| refgenie_compare | PASS |  |
+| refgenie_getseq | PASS |  |
+| refgenie_id | PASS |  |
+| refgenie_init | PASS |  |
+| refgenie_list | PASS |  |
+| refgenie_listr | PASS |  |
+| refgenie_populate | PASS |  |
+| refgenie_populater | PASS |  |
+| refgenie_pull | PASS |  |
+| refgenie_remove | PASS |  |
+| refgenie_seek | PASS |  |
+| refgenie_seekr | PASS |  |
+| refgenie_subscribe | PASS |  |
+| refgenie_tag | PASS | the tag rename works; the option --default crashes visibly for fasta assets (tool says it cannot change the default tag of fasta assets) |
+| refgenie_unsubscribe | PASS |  |
+| refgenie_upgrade | Failed | image problem: python module tqdm is missing, so upgrading an old (synthetic v0.3) config stops with ModuleNotFoundError; a v0.4 config gives 'not implemented' |
+
 ## refgenie_init
 
 ### Tool Description
@@ -561,59 +587,6 @@ optional arguments:
 ```
 
 
-## refgenie_alias
-
-### Tool Description
-refgenie - reference genome asset manager
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/refgenie:0.12.1--pyhdfd78af_0
-- **Homepage**: http://refgenie.databio.org
-- **Package**: https://anaconda.org/channels/bioconda/packages/refgenie/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-version: 0.12.1 | refgenconf 0.12.0
-usage: refgenie [-h] [--version] [--silent] [--verbosity V] [--logdev]
-                {init,list,listr,pull,build,seek,seekr,add,remove,getseq,tag,id,subscribe,unsubscribe,alias,compare,upgrade,populate,populater}
-                ...
-
-refgenie - reference genome asset manager
-
-positional arguments:
-  {init,list,listr,pull,build,seek,seekr,add,remove,getseq,tag,id,subscribe,unsubscribe,alias,compare,upgrade,populate,populater}
-    init                Initialize a genome configuration.
-    list                List available local assets.
-    listr               List available remote assets.
-    pull                Download assets.
-    build               Build genome assets.
-    seek                Get the path to a local asset.
-    seekr               Get the path to a remote asset.
-    add                 Add local asset to the config file.
-    remove              Remove a local asset.
-    getseq              Get sequences from a genome.
-    tag                 Tag an asset.
-    id                  Return the asset digest.
-    subscribe           Add a refgenieserver URL to the config.
-    unsubscribe         Remove a refgenieserver URL from the config.
-    alias               Interact with aliases.
-    compare             Compare two genomes.
-    upgrade             Upgrade config. This will alter the files on disk.
-    populate            Populate registry paths with local paths.
-    populater           Populate registry paths with remote paths.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --version             show program's version number and exit
-  --silent              Silence logging. Overrides verbosity.
-  --verbosity V         Set logging level (1-5 or logging module level name)
-  --logdev              Expand content of logging message format.
-
-https://refgenie.databio.org
-```
-
-
 ## refgenie_compare
 
 ### Tool Description
@@ -731,6 +704,92 @@ optional arguments:
   -f F, --file F                        File with registry paths to populate
 ```
 
+
+## refgenie_alias_set
+
+### Tool Description
+Set aliases.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/refgenie:0.12.1--pyhdfd78af_0
+- **Homepage**: http://refgenie.databio.org
+- **Package**: https://anaconda.org/channels/bioconda/packages/refgenie/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: refgenie alias set [-h] [-c C] [--skip-read-lock] [-a A [A ...]] [-d D] [-r] [-f]
+
+Set aliases.
+
+optional arguments:
+  -h, --help                         show this help message and exit
+  -c C, --genome-config C            Path to local genome configuration file. Optional if
+                                     REFGENIE environment variable is set.
+  --skip-read-lock                   Whether the config file should not be locked for
+                                     reading
+  -a A [A ...], --aliases A [A ...]  Aliases to set; single if the digest is to be
+                                     retrieved from the server.
+  -d D, --digest D                   Digest to set; leave out if the digest is to be
+                                     retrieved from the server.
+  -r, --reset                        Whether all the aliases should be removed prior to
+                                     setting new ones.
+  -f, --force                        Whether the action should be forced, if genome does
+                                     not exist.
+```
+
+## refgenie_alias_get
+
+### Tool Description
+Get aliases.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/refgenie:0.12.1--pyhdfd78af_0
+- **Homepage**: http://refgenie.databio.org
+- **Package**: https://anaconda.org/channels/bioconda/packages/refgenie/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: refgenie alias get [-h] [-c C] [--skip-read-lock] [-a A [A ...]]
+
+Get aliases.
+
+optional arguments:
+  -h, --help                         show this help message and exit
+  -c C, --genome-config C            Path to local genome configuration file. Optional if
+                                     REFGENIE environment variable is set.
+  --skip-read-lock                   Whether the config file should not be locked for
+                                     reading
+  -a A [A ...], --aliases A [A ...]  Aliases to get the digests for.
+```
+
+## refgenie_alias_remove
+
+### Tool Description
+Remove aliases.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/refgenie:0.12.1--pyhdfd78af_0
+- **Homepage**: http://refgenie.databio.org
+- **Package**: https://anaconda.org/channels/bioconda/packages/refgenie/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: refgenie alias remove [-h] [-c C] [--skip-read-lock] [-a A [A ...]] -d D
+
+Remove aliases.
+
+optional arguments:
+  -h, --help                         show this help message and exit
+  -c C, --genome-config C            Path to local genome configuration file. Optional if
+                                     REFGENIE environment variable is set.
+  --skip-read-lock                   Whether the config file should not be locked for
+                                     reading
+  -a A [A ...], --aliases A [A ...]  Aliases to remove.
+  -d D, --digest D                   Digest to remove.
+```
 
 ## Metadata
 - **Skill**: generated

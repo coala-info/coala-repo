@@ -1,5 +1,11 @@
 # recognizer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| recognizer | Not completed | needs the full CDD database (4.6 GB download and more than 20 GB extracted), too heavy for this machine; run was stopped after 20 minutes |
+
 ## recognizer
 
 ### Tool Description

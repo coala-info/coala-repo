@@ -1,5 +1,11 @@
 # rmats2sashimiplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rmats2sashimiplot | PASS |  |
+
 ## rmats2sashimiplot
 
 ### Tool Description

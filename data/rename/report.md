@@ -1,5 +1,11 @@
 # rename CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rename | PASS | two real FASTQ files renamed with --subst; names changed and contents unchanged |
+
 ## rename
 
 ### Tool Description

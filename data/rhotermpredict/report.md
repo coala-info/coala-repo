@@ -1,5 +1,11 @@
 # rhotermpredict CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rhotermpredict | Failed | image problem: the command exits with status 1 after writing a correct result file, because the entry script calls sys.exit with the result list |
+
 ## rhotermpredict
 
 ### Tool Description

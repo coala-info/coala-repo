@@ -1,64 +1,76 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rdp-alignment_rm-partialseq
+baseCommand:
+  - rdp-alignment
+  - rm-partialseq
 label: rdp-alignment_rm-partialseq
-doc: "Performs alignment of sequences, marking partial sequences based on gap count.\n\
-  \nTool homepage: https://github.com/AlbertoMartinPerez/Sequence_Analyzer_automations"
+doc: "Remove partial sequences, based on pairwise alignment to full-length reference sequences. Sequences can be protein or nucleotide.
+
+Tool homepage: https://github.com/rdpstaff/Alignment"
 inputs:
-  - id: fulllengthSeqFile
+  - id: fulllength_seq_file
     type: File
-    doc: File containing full-length sequences.
+    doc: "Full-length reference sequences"
     inputBinding:
-      position: 1
-  - id: queryFile
+      position: 5
+  - id: query_file
     type: File
-    doc: File containing query sequences.
+    doc: "Query sequences"
     inputBinding:
-      position: 2
+      position: 6
+  - id: passed_seq_out_file
+    type: string
+    doc: "Output file for the sequences that passed"
+    inputBinding:
+      position: 7
   - id: alignment_mode
     type:
       - 'null'
       - string
-    doc: 'Alignment mode: overlap, glocal, local or global.'
+    doc: "Alignment mode: overlap, glocal, local or global (default overlap)"
     inputBinding:
-      position: 103
+      position: 1
       prefix: --alignment-mode
-  - id: knn
-    type:
-      - 'null'
-      - int
-    doc: The top k closest targets using a heuristic method.
-    inputBinding:
-      position: 103
-      prefix: --knn
   - id: min_gaps
     type:
       - 'null'
       - int
-    doc: The minimum number of continuous gaps in the beginning or end of the 
-      query alignment. If above the cutoff, the query is marked as partial.
+    doc: "The minimum number of continuous gaps at the start or end of the query alignment. Above the cutoff, the query is marked as partial (default 50)"
     inputBinding:
-      position: 103
+      position: 2
       prefix: --min_gaps
+  - id: knn
+    type:
+      - 'null'
+      - int
+    doc: "The top k closest targets using a heuristic method (default 20)"
+    inputBinding:
+      position: 3
+      prefix: --knn
   - id: alignment_out_path
     type:
       - 'null'
       - string
-    doc: The output file containing the pairwise alignment
+    doc: "Output file with the pairwise alignment"
     inputBinding:
-      position: 104
+      position: 4
       prefix: --alignment-out
 outputs:
-  - id: passedSeqOutFile
-    type: File
-    doc: Output file for passed sequences.
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: passed_seq_out
+    type:
+      - 'null'
+      - File
+    doc: "Sequences that passed (not partial)"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.passed_seq_out_file)
   - id: alignment_out
     type:
       - 'null'
       - File
-    doc: The output file containing the pairwise alignment
+    doc: "Pairwise alignment output"
     outputBinding:
       glob: $(inputs.alignment_out_path)
 requirements:
@@ -66,3 +78,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rdp-alignment:v1.2.0-5-deb_cv1
+stdout: rdp-alignment_rm-partialseq.out

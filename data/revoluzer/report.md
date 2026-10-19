@@ -1,5 +1,14 @@
 # revoluzer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| revoluzer | Failed | tool bug: exits with status 1 after printing results (segmentation fault on 12 real genomes); needs undocumented -r flag and integer gene names |
+| revoluzer_crex | PASS |  |
+| revoluzer_distmat | PASS |  |
+| revoluzer_trex | PASS |  |
+
 ## revoluzer
 
 ### Tool Description

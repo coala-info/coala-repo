@@ -1,5 +1,11 @@
 # rnabloom CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnabloom | PASS |  |
+
 ## rnabloom
 
 ### Tool Description

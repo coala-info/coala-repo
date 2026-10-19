@@ -1,5 +1,11 @@
 # reduce CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| reduce | PASS |  |
+
 ## reduce
 
 ### Tool Description

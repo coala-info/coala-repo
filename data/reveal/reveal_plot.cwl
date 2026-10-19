@@ -4,7 +4,7 @@ baseCommand:
   - reveal
   - plot
 label: reveal_plot
-doc: "Generate mumplot for two fasta files.\n\nTool homepage: https://github.com/hakimel/reveal.js"
+doc: "Generate mumplot for two fasta files.\n\nTool homepage: https://github.com/jasperlinthorst/reveal"
 inputs:
   - id: fastas
     type:

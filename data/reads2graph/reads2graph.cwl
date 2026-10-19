@@ -22,15 +22,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bin_size_max
-  - id: export_help
-    type:
-      - 'null'
-      - string
-    doc: Export the help page information. Value must be one of [html, man, ctd,
-      cwl].
-    inputBinding:
-      position: 101
-      prefix: --export-help
   - id: input_data
     type:
       - 'null'
@@ -81,6 +72,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --omh_flag
+      valueFrom: '$(self ? "true" : "false")'
   - id: omh_k
     type:
       - 'null'
@@ -113,6 +105,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pair_wise
+      valueFrom: '$(self ? "true" : "false")'
   - id: probability
     type:
       - 'null'
@@ -139,6 +132,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --save_graph
+      valueFrom: '$(self ? "true" : "false")'
   - id: visit_depth
     type:
       - 'null'
@@ -162,6 +156,9 @@ inputs:
       position: 102
       prefix: --output_dir
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_dir
     type:
       - 'null'
@@ -171,6 +168,12 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir_path)
+        entry: '${ return {"class": "Directory", "listing": []}; }'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reads2graph:1.0.0--h503566f_1
+stdout: reads2graph.out

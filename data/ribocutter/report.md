@@ -1,5 +1,11 @@
 # ribocutter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ribocutter | PASS |  |
+
 ## ribocutter
 
 ### Tool Description

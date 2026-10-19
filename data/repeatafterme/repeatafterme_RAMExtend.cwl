@@ -36,10 +36,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: -cappenalty
-  - id: cons_fa
+  - id: cons_fa_path
     type:
       - 'null'
-      - File
+      - string
     doc: Save the left/right consensus sequences to a FASTA file.
     inputBinding:
       position: 101
@@ -84,47 +84,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: -match
-  - id: matrix_14p43g
+  - id: matrix
     type:
       - 'null'
-      - boolean
-    doc: Use the 14p43g substitution matrix.
+      - string
+    doc: Scoring matrix, one of 14p43g, 18p43g, 20p43g, 25p43g (divergence tuned
+      DNA matrices for a 43% GC background) or repeatscout (the original RepeatScout
+      scoring system).
     inputBinding:
       position: 101
-      prefix: -matrix 14p43g
-  - id: matrix_18p43g
-    type:
-      - 'null'
-      - boolean
-    doc: Use the 18p43g substitution matrix.
-    inputBinding:
-      position: 101
-      prefix: -matrix 18p43g
-  - id: matrix_20p43g
-    type:
-      - 'null'
-      - boolean
-    doc: Use the 20p43g substitution matrix.
-    inputBinding:
-      position: 101
-      prefix: -matrix 20p43g
-  - id: matrix_25p43g
-    type:
-      - 'null'
-      - boolean
-    doc: Use the 25p43g substitution matrix.
-    inputBinding:
-      position: 101
-      prefix: -matrix 25p43g
-  - id: matrix_repeatscout
-    type:
-      - 'null'
-      - boolean
-    doc: The original RepeatScout scoring system is enabled if this option is 
-      set. This uses a simple match/mismatch penalty and a linear gap model.
-    inputBinding:
-      position: 101
-      prefix: -matrix repeatscout
+      prefix: -matrix
   - id: max_occurrences
     type:
       - 'null'
@@ -181,12 +150,11 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
-    doc: How verbose do you want it to be? -vvvv is super-verbose.
+      - int
+    doc: How verbose do you want it to be? 1 gives -v, 4 gives -vvvv (super-verbose).
     inputBinding:
       position: 101
-      prefix: -v
+      valueFrom: $("-" + "v".repeat(self))
   - id: outfa_seq_fa_path
     type:
       - 'null'
@@ -212,6 +180,13 @@ inputs:
       position: 104
       prefix: -outtsv
 outputs:
+  - id: cons_fa
+    type:
+      - 'null'
+      - File
+    doc: Left/right consensus sequences.
+    outputBinding:
+      glob: $(inputs.cons_fa_path)
   - id: outtsv_final_tsv
     type:
       - 'null'

@@ -13,14 +13,14 @@ inputs:
     inputBinding:
       position: 1
   - id: clustered_loci
-    type: string
+    type: File
     doc: output from riboSelect
     inputBinding:
       position: 2
   - id: barrnap_exe
     type:
       - 'null'
-      - File
+      - string
     doc: Path to barrnap executable
     inputBinding:
       position: 103
@@ -71,7 +71,7 @@ inputs:
   - id: mafft_exe
     type:
       - 'null'
-      - File
+      - string
     doc: Path to MAFFT executable
     inputBinding:
       position: 103
@@ -79,7 +79,7 @@ inputs:
   - id: makeblastdb_exe
     type:
       - 'null'
-      - File
+      - string
     doc: Path to makeblastdb executable
     inputBinding:
       position: 103
@@ -137,7 +137,7 @@ inputs:
   - id: prank_exe
     type:
       - 'null'
-      - File
+      - string
     doc: Path to PRANK executable
     inputBinding:
       position: 103

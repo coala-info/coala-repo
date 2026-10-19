@@ -191,6 +191,9 @@ outputs:
     doc: Output directory for storing databases and other resources
     outputBinding:
       glob: $(inputs.resources_directory)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recognizer:1.11.1--hdfd78af_0

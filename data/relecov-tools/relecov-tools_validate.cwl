@@ -36,14 +36,18 @@ inputs:
       position: 101
       prefix: --json_schema_file
   - id: logsum_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Required if --upload_files. Path to the log_summary.json file merged 
       from all previous processes, used to check for invalid samples.
     inputBinding:
       position: 101
       prefix: --logsum_file
   - id: metadata
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Origin file containing metadata
     inputBinding:
       position: 101

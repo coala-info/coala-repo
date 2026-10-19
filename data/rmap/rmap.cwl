@@ -2,13 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rmap
 label: rmap
-doc: "Map fastq reads to a reference genome.\n\nTool homepage: https://github.com/juruen/rmapi"
+doc: "Map fastq reads to a reference genome.\n\nTool homepage: http://smithlabresearch.org/software/rmap/"
 inputs:
   - id: fastq_reads_file
     type: File
     doc: File containing fastq reads
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: chrom_suffix
     type:
       - 'null'
@@ -20,7 +21,8 @@ inputs:
   - id: chromosomes
     type:
       - 'null'
-      - string
+      - File
+      - Directory
     doc: chromosomes in FASTA file or dir
     inputBinding:
       position: 102
@@ -106,6 +108,10 @@ outputs:
       glob: $(inputs.ambiguous_reads_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fastq_reads_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rmap:2.1--0

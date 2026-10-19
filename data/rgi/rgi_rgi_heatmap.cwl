@@ -62,12 +62,11 @@ inputs:
 outputs:
   - id: output
     type:
-      - 'null'
-      - File
-    doc: "Name for the output EPS and PNG files.\nThe number of files run will automatically\
-      \ \nbe appended to the end of the file name."
+      type: array
+      items: File
+    doc: "Heatmap EPS and PNG files (output name with the number of samples appended)."
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

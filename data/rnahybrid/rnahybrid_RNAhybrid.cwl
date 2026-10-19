@@ -136,6 +136,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: graphics
+    type:
+      type: array
+      items: File
+    doc: Graphical output of the hits (PostScript files written with -g)
+    outputBinding:
+      glob: '*.ps'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rnahybrid:v2.1.2-5-deb_cv1

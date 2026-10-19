@@ -8,6 +8,11 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     doc: Name of genome fasta file. The file must be indexed using bwa index 
       command prior to this run.
     inputBinding:

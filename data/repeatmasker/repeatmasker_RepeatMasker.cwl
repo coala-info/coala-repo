@@ -16,7 +16,65 @@ inputs:
       items: File
     doc: FASTA format sequences or raw sequence files to be masked.
     inputBinding:
-      position: 1
+      position: 200
+  - id: dir
+    type:
+      - 'null'
+      - string
+    doc: Writes output to this directory (default is query file directory, 
+      "-dir ." will write to current directory)
+    inputBinding:
+      position: 102
+      prefix: -dir
+  - id: uncurated
+    type:
+      - 'null'
+      - boolean
+    doc: Use the uncurated library
+    inputBinding:
+      position: 102
+      prefix: -uncurated
+  - id: nopost
+    type:
+      - 'null'
+      - boolean
+    doc: Do not run the post processing (ProcessRepeats) step
+    inputBinding:
+      position: 102
+      prefix: -nopost
+  - id: lcambig
+    type:
+      - 'null'
+      - boolean
+    doc: Output ambiguous DNA sequence symbols in lowercase for masked regions
+    inputBinding:
+      position: 102
+      prefix: -lcambig
+  - id: source
+    type:
+      - 'null'
+      - boolean
+    doc: Include for each annotation the HSP "evidence". Currently this option 
+      is only available with the RMBlast engine.
+    inputBinding:
+      position: 102
+      prefix: -source
+  - id: html
+    type:
+      - 'null'
+      - boolean
+    doc: Creates an additional output file in xhtml format
+    inputBinding:
+      position: 102
+      prefix: -html
+  - id: libdir
+    type:
+      - 'null'
+      - string
+    doc: Alternate path to the Libraries directory
+    inputBinding:
+      position: 102
+      prefix: -libdir
   - id: ace
     type:
       - 'null'
@@ -103,7 +161,7 @@ inputs:
       query.
     inputBinding:
       position: 102
-      prefix: -e
+      prefix: -excln
   - id: fixed_width_output
     type:
       - 'null'
@@ -353,10 +411,31 @@ inputs:
       position: 102
       prefix: -xsmall
 outputs:
+  - id: annotation_files
+    type:
+      type: array
+      items: File
+    doc: Result files named after the input sequences (.out, .masked, .tbl, .cat, 
+      .align, .gff, .poly and the other optional outputs)
+    outputBinding:
+      glob:
+        - '*.out'
+        - '*.masked'
+        - '*.tbl'
+        - '*.cat'
+        - '*.cat.gz'
+        - '*.align'
+        - '*.gff'
+        - '*.cut'
+        - '*.polyout'
+        - '*.ace'
+        - '*.xm'
+        - '*.html'
+        - '*.alert'
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repeatmasker:4.2.2--pl5321hdfd78af_0
-stdout: repeatmasker_RepeatMasker.out
+stdout: repeatmasker_RepeatMasker.log

@@ -1,5 +1,12 @@
 # rabbittclust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rabbittclust_clust-greedy | PASS |  |
+| rabbittclust_clust-mst | PASS |  |
+
 ## rabbittclust_clust-mst
 
 ### Tool Description

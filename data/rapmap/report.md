@@ -1,5 +1,12 @@
 # rapmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rapmap_quasiindex | PASS |  |
+| rapmap_quasimap | PASS | 10000 read pairs give 28506 alignment lines on the RapMap sample transcripts |
+
 ## rapmap_quasiindex
 
 ### Tool Description

@@ -58,8 +58,8 @@ inputs:
   - id: homo_trim
     type:
       - 'null'
-      - boolean
-    doc: Trim homo-polymer on 3' end
+      - int
+    doc: Trim homo-polymer on 3' end (integer argument, see the quorum script)
     inputBinding:
       position: 102
       prefix: --homo-trim
@@ -70,7 +70,7 @@ inputs:
     doc: Kmer length
     inputBinding:
       position: 102
-      prefix: --kmer-len
+      prefix: -k
   - id: mer_database_size
     type:
       - 'null'
@@ -90,7 +90,7 @@ inputs:
   - id: min_q_char
     type:
       - 'null'
-      - string
+      - int
     doc: Minimum quality char. Usually 33 or 64 (autodetect)
     inputBinding:
       position: 102
@@ -169,7 +169,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_prefix || 'quorum_corrected')*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/quorum:v1.1.1-2-deb_cv1

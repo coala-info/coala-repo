@@ -1,5 +1,11 @@
 # pyrodigal-gv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyrodigal-gv | PASS |  |
+
 ## pyrodigal-gv
 
 ### Tool Description

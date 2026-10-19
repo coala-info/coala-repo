@@ -88,7 +88,7 @@ inputs:
       implicit configuration files.
     inputBinding:
       position: 102
-      prefix: --config-file
+      prefix: -c
   - id: continue_on_collection_errors
     type:
       - 'null'
@@ -197,10 +197,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --ignore
     doc: ignore path during collection (multi-allowed).
     inputBinding:
       position: 102
-      prefix: --ignore
   - id: import_mode
     type:
       - 'null'
@@ -240,11 +241,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -p
     doc: early-load given plugin (multi-allowed). To avoid loading of plugins, 
       use the `no:` prefix, e.g. `no:doctest`.
     inputBinding:
       position: 102
-      prefix: --load-plugin
   - id: markexpr
     type:
       - 'null'
@@ -337,7 +339,7 @@ inputs:
       --disable-pytest-warnings is set
     inputBinding:
       position: 102
-      prefix: --report-chars
+      prefix: -r
   - id: runxfail
     type:
       - 'null'
@@ -487,6 +489,9 @@ inputs:
       position: 104
       prefix: --result-log
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: junit_xml
     type:
       - 'null'
@@ -506,3 +511,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pytest-timeout:1.0.0--py35_0
+stdout: pytest-timeout_pytest.out

@@ -6,7 +6,7 @@ baseCommand:
 label: pyqi_make-optparse
 doc: "Construct and stub out the basic optparse configuration for a given Command.
   This template provides comments and examples of what to fill in.\n\nTool homepage:
-  https://github.com/qir-alliance/pyqir"
+  https://github.com/biocore/pyqi"
 inputs:
   - id: author
     type:

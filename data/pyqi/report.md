@@ -1,5 +1,15 @@
 # pyqi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyqi_make-bash-completion | PASS |  |
+| pyqi_make-command | PASS |  |
+| pyqi_make-optparse | PASS |  |
+| pyqi_make-release | Not completed | release tool: needs a git project with ChangeLog.md and uploads to PyPI; no usable test project |
+| pyqi_serve-html-interface | Not completed | long-running web server, skipped |
+
 ## pyqi_make-bash-completion
 
 ### Tool Description

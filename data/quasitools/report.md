@@ -1,5 +1,22 @@
 # quasitools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quasitools_aacoverage | PASS | quasitools repo test data; coverage CSV identical to the repo expected file; added BAM index secondary files |
+| quasitools_call_aavar | PASS | quasitools repo align.bam with variants and mutation database; AAVF report written with the expected RT mutations (K103N region) |
+| quasitools_call_codonvar | PASS | quasitools repo align.bam, offset 1269; codon variant CSV lists K103N at 7.79% with coverage 154, as in the repo expected file |
+| quasitools_call_ntvar | PASS | quasitools repo align.bam; VCF with 1509 nucleotide variants (DP, AF) written |
+| quasitools_complexity_bam | PASS | quasitools repo complexity BAM and reference, k=3; per-position complexity CSV written |
+| quasitools_complexity_fasta | PASS | quasitools repo complexity.fasta; complexity CSV with haplotype, entropy and Simpson values written |
+| quasitools_consensus | PASS | quasitools repo HIV pol BAM; 2679-base consensus matches the HXB2 reference exactly over the covered region; added BAM index secondary files |
+| quasitools_distance | PASS | quasitools repo test BAMs quasi1 and quasi2; symmetric angular distance matrix 0.0063 between them, similarity mode also works; reference changed to File, BAM indexes added |
+| quasitools_dnds | PASS | quasitools repo mutant_types.csv with offset 1269; dn/ds report identical to the repo expected file; removed invented options and used --output |
+| quasitools_drmutations | PASS | quasitools repo test data; report finds K103N at 7.79% with coverage 154, same as the repo expected dr_report; fixed --output flag and BAM index |
+| quasitools_hydra | PASS | quasitools repo forward and reverse FASTQ; full run gives alignment, VCF, coverage, consensus and a drug resistance report listing K103N and other RT mutations |
+| quasitools_quality | PASS | quasitools repo forward and reverse FASTQ; reads combined and filtered (min length 100, N masked) |
+
 ## quasitools_aacoverage
 
 ### Tool Description
@@ -33,67 +50,6 @@ Usage: quasitools aacoverage [OPTIONS] BAM REFERENCE BED4_FILE
 Options:
   -o, --output FILENAME
   --help                 Show this message and exit.
-```
-
-
-## quasitools_call
-
-### Tool Description
-Call nucleotide variants from a BAM file.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/quasitools:0.7.0--py_0
-- **Homepage**: https://github.com/phac-nml/quasitools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/quasitools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: quasitools call [OPTIONS] COMMAND [ARGS]...
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  aavar     Identifies amino acid mutations.
-  codonvar  Identify the number of non-synonymous and synonymous mutations.
-  ntvar     Call nucleotide variants from a BAM file.
-```
-
-
-## quasitools_complexity
-
-### Tool Description
-Reports the per-amplicon (fasta) or k-mer complexity of the pileup, for each k-mer position in the reference complexity (bam and reference) of a quasispecies using several measures outlined in the following work:
-
-Gregori, Josep, et al. "Viral quasispecies complexity measures." Virology 493 (2016): 227-237.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/quasitools:0.7.0--py_0
-- **Homepage**: https://github.com/phac-nml/quasitools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/quasitools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: quasitools complexity [OPTIONS] COMMAND [ARGS]...
-
-  Reports the per-amplicon (fasta) or k-mer complexity of the pileup, for
-  each k-mer position in the reference complexity (bam and reference) of a
-  quasispecies using several measures outlined in the following work:
-
-  Gregori, Josep, et al. "Viral quasispecies complexity measures." Virology
-  493 (2016): 227-237.
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  bam    Calculates various quasispecies complexity measures on next
-         generation sequenced data from a BAM file and it's corresponding
-         reference file.
-  fasta  Calculates various quasispecies complexity measures on a multiple
-         aligned FASTA file.
 ```
 
 
@@ -186,25 +142,6 @@ Options:
   -k, --keep_no_coverage          Do not ignore pileup regions with no
                                   coverage.
   --help                          Show this message and exit.
-```
-
-
-## quasitools
-### Tool Description
-A command-line tool for manipulating and analyzing quasigenomes.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/quasitools:0.7.0--py_0
-- **Homepage**: https://github.com/phac-nml/quasitools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/quasitools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: quasitools [OPTIONS] COMMAND [ARGS]...
-Try "quasitools --help" for help.
-
-Error: No such command "using".
 ```
 
 
@@ -359,6 +296,132 @@ Options:
   --help                        Show this message and exit.
 ```
 
+
+## quasitools_call_ntvar
+
+### Tool Description
+Call nucleotide variants from a BAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/quasitools:0.7.0--py_0
+- **Homepage**: https://github.com/phac-nml/quasitools/
+- **Package**: https://anaconda.org/channels/bioconda/packages/quasitools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: quasitools call ntvar [OPTIONS] BAM REFERENCE
+
+Options:
+  -e, --error_rate FLOAT  estimated sequencing error rate.
+  -o, --output FILENAME
+  --help                  Show this message and exit.
+```
+
+## quasitools_call_aavar
+
+### Tool Description
+Identify amino acid mutations from a BAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/quasitools:0.7.0--py_0
+- **Homepage**: https://github.com/phac-nml/quasitools/
+- **Package**: https://anaconda.org/channels/bioconda/packages/quasitools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: quasitools call aavar [OPTIONS] BAM REFERENCE BED4_FILE [VARIANTS]
+                             [MUTATION_DB]
+
+Options:
+  -f, --min_freq FLOAT    the minimum required frequency.
+  -e, --error_rate FLOAT  estimated sequencing error rate.
+  -o, --output FILENAME
+  --help                  Show this message and exit.
+```
+
+## quasitools_call_codonvar
+
+### Tool Description
+Call codon variants from a BAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/quasitools:0.7.0--py_0
+- **Homepage**: https://github.com/phac-nml/quasitools/
+- **Package**: https://anaconda.org/channels/bioconda/packages/quasitools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: quasitools call codonvar [OPTIONS] BAM REFERENCE OFFSET BED4_FILE
+                                [VARIANTS]
+
+Options:
+  -e, --error_rate FLOAT  estimated sequencing error rate.
+  -o, --output FILENAME
+  --help                  Show this message and exit.
+```
+
+## quasitools_complexity_fasta
+
+### Tool Description
+Report the per-amplicon complexity of a quasispecies FASTA file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/quasitools:0.7.0--py_0
+- **Homepage**: https://github.com/phac-nml/quasitools/
+- **Package**: https://anaconda.org/channels/bioconda/packages/quasitools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: quasitools complexity fasta [OPTIONS] FASTA_LOCATION
+
+  Reports the per-amplicon (fasta)  or k-mer complexity of the pileup, for
+  each k-mer position in the reference complexity (bam and reference) of a
+  quasispecies using several measures outlined in the following work:
+
+  Gregori, Josep, et al. "Viral quasispecies complexity measures." Virology
+  493 (2016): 227-237.
+
+Options:
+  -o, --output_location PATH  Output the quasispecies complexity in CSV format
+                              to the specified file.
+  --help                      Show this message and exit.
+```
+
+## quasitools_complexity_bam
+
+### Tool Description
+Report the k-mer complexity of the pileup for each k-mer position in the reference.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/quasitools:0.7.0--py_0
+- **Homepage**: https://github.com/phac-nml/quasitools/
+- **Package**: https://anaconda.org/channels/bioconda/packages/quasitools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: quasitools complexity bam [OPTIONS] REFERENCE_LOCATION BAM_LOCATION K
+
+  Reports the per-amplicon (fasta)  or k-mer complexity of the pileup, for
+  each k-mer position in the reference complexity (bam and reference) of a
+  quasispecies using several measures outlined in the following work:
+
+  Gregori, Josep, et al. "Viral quasispecies complexity measures." Virology
+  493 (2016): 227-237.
+
+Options:
+  -f, --haplotype_filter FLOAT  User defined A filter between 0 and 100,
+                                inclusive. Abundancesbelow the filter size
+                                will be removed from each positionallist. The
+                                default is 0 (i.e. no filtering).
+  -o, --output_location PATH    Output the quasispecies complexity in CSV
+                                format to the specified file.
+  --help                        Show this message and exit.
+```
 
 ## Metadata
 - **Skill**: generated

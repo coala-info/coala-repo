@@ -9,8 +9,7 @@ inputs:
   - id: chr_list
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: List of chromosomes to check
     inputBinding:
       position: 101
@@ -33,21 +32,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trait
-  - id: output_path_path
-    type: string?
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: path+prefix of the report file, the file will be suffixed by the trait name and .txt
     inputBinding:
       position: 102
       prefix: --output-path
 outputs:
-  - id: output_path
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: report_files
     type:
-      - 'null'
-      - Directory
-    doc: Path to save the output files
+      type: array
+      items: File
+    doc: Report files written with the output path prefix (suffixed by the trait name and .txt)
     outputBinding:
-      glob: $(inputs.output_path_path)
+      glob: $(inputs.output_path || '__none__')*
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/raiss:4.0.1--pyhdfd78af_0
+stdout: raiss_sanity-check.out

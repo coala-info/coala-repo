@@ -18,6 +18,9 @@ inputs:
       position: 2
   - id: variants
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     doc: Input VCF file must be already BGZF compressed (.gz) and indexed (.tbi)
       to allow random access.
     inputBinding:

@@ -1,5 +1,15 @@
 # rastair CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rastair_call | PASS |  |
+| rastair_convert | PASS |  |
+| rastair_mbias | Failed | image problem: tabix is not in the image, so mbias cannot index the per-read BED |
+| rastair_per-read | PASS |  |
+| rastair_view | PASS |  |
+
 ## rastair_call
 
 ### Tool Description
@@ -581,26 +591,6 @@ Output Options:
           Output path prefix
           
           [default: .]
-```
-
-## rastair_You
-
-### Tool Description
-A tool for analyzing and visualizing RNA sequencing data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rastair:2.0.0--h03e3cfe_0
-- **Homepage**: https://bitbucket.org/bsblabludwig/rastair/src/v0.8.2/
-- **Package**: https://anaconda.org/channels/bioconda/packages/rastair/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'You'
-
-Usage: rastair [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
 ```
 
 ## Metadata

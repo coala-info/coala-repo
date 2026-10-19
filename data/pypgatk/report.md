@@ -1,5 +1,24 @@
 # pypgatk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pypgatk_blast_get_position | PASS | ran on py-pgatk v0.0.24 test PSM table and reference proteins; canonical, non-canonical and variant positions written (the newer repo test file lacks the PSM_ID column the tool needs) |
+| pypgatk_cbioportal-downloader | Failed | tool bug: the download host is fixed in the code (cbioportal-datahub.s3.amazonaws.com, config cannot change it) and now answers HTTP 403, so no study downloads; list_studies works |
+| pypgatk_cbioportal-to-proteindb | PASS | ran on py-pgatk v0.0.24 cBioPortal mutations and clinical file; CDS FASTA cut from the repo transcript file by its CDS header; 6 checked amino acid changes match |
+| pypgatk_cosmic-downloader | Not completed | needs a COSMIC account (username and password); CWL rewritten from the help (old file had invented --token option) |
+| pypgatk_cosmic-to-proteindb | PASS | ran on py-pgatk v0.0.24 COSMIC test mutations and gene FASTA; HRAS G13R, G13S, G12D proteins correct (the tool needs the old COSMIC column names) |
+| pypgatk_dnaseq-to-proteindb | PASS | ran on py-pgatk GENCODE test transcripts; OR4F5 protein translated correctly |
+| pypgatk_ensembl-check | PASS | ran on py-pgatk test proteins and on the vcf-to-proteindb output; stop codon splitting and min length filter work |
+| pypgatk_ensembl-downloader | PASS | downloaded the turkey (9103) protein FASTA from Ensembl, 28295 proteins, and wrote the URL list with url_file; NetworkAccess added; Ensembl REST sometimes answers 500 and the tool then fails |
+| pypgatk_generate-decoy | PASS | ran protein-reverse and decoypyrat on py-pgatk HRAS test proteins; decoys correct; temp_file changed from File to string |
+| pypgatk_mztab_class_fdr | Not completed | no real mzTab file with Percolator scores and decoys available (project has only the PSM table, not the full mzTab); CWL checked against source |
+| pypgatk_peptide-class-fdr | PASS | ran on nf-core HepG2 comet idXML (1078 PSMs to 241 at default FDR), global and class FDR modes; note --psm-pep-fdr-cutoff given on the command line crashes (string compared with number) |
+| pypgatk_threeframe-translation | PASS | new CWL; ran on py-pgatk GENCODE test transcripts; 10 transcripts gave 30 frames, frame 1 checked by hand |
+| pypgatk_validate_peptides | PASS | ran both modes on py-pgatk v0.0.24 test mzML files and PSM tables (mzTab-style with mzml_files, MSGF with mzml_path); fragment ion support columns written; mzml_path changed to Directory and mzml_files joined with commas |
+| pypgatk_vcf-to-proteindb | PASS | ran on py-pgatk Ensembl OR11H1 test VCF, FASTA and GTF; 10 variant proteins checked (start-lost and missense changes correct); GTF staged writable because the tool writes a .db beside it |
+
 ## pypgatk_blast_get_position
 
 ### Tool Description
@@ -540,6 +559,30 @@ Options:
                                   filters. (default is False)
   --accepted_filters TEXT         Accepted filters for variant parsing
   -h, --help                      Show this message and exit.
+```
+
+## pypgatk_threeframe-translation
+
+### Tool Description
+Command to perform 3'frame translation
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0
+- **Homepage**: http://github.com/bigbio/py-pgatk
+- **Package**: https://anaconda.org/channels/bioconda/packages/pypgatk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: pypgatk threeframe-translation [OPTIONS]
+
+Options:
+  -c, --config_file TEXT        Configuration to perform conversion between
+                                ENSEMBL Files
+  -in, --input_fasta TEXT       input_fasta file to perform the translation
+  -t, --translation_table TEXT  Translation table default value 1
+  -out, --output TEXT           Output File
+  -h, --help                    Show this message and exit.
 ```
 
 ## Metadata

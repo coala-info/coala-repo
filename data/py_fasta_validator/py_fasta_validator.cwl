@@ -2,82 +2,29 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: py_fasta_validator
 label: py_fasta_validator
-doc: "Validate FASTA files.\n\nTool homepage: https://github.com/linsalrob/py_fasta_validator"
+doc: "Validate a fasta file. The exit code is 0 for a valid file, 1 when the first line
+  does not start with >, 2 for duplicate sequence identifiers and 4 for characters
+  other than letters in a sequence line; the reason is printed to the standard error.\n\
+  \nTool homepage: https://github.com/linsalrob/py_fasta_validator"
 inputs:
-  - id: fasta_file
+  - id: file
     type: File
-    doc: Path to the FASTA file to validate.
+    doc: fasta file to validate
     inputBinding:
       position: 1
-  - id: allowed_chars
-    type:
-      - 'null'
-      - string
-    doc: A string of characters allowed in sequences. Any other character will 
-      be flagged.
-    inputBinding:
-      position: 102
-      prefix: --allowed-chars
-  - id: ignore_case
-    type:
-      - 'null'
-      - boolean
-    doc: Ignore case differences in sequence data.
-    inputBinding:
-      position: 102
-      prefix: --ignore-case
-  - id: max_seq_len
-    type:
-      - 'null'
-      - int
-    doc: Maximum allowed sequence length. Sequences longer than this will be 
-      flagged.
-    inputBinding:
-      position: 102
-      prefix: --max-seq-len
-  - id: min_seq_len
-    type:
-      - 'null'
-      - int
-    doc: Minimum allowed sequence length. Sequences shorter than this will be 
-      flagged.
-    inputBinding:
-      position: 102
-      prefix: --min-seq-len
-  - id: strict
-    type:
-      - 'null'
-      - boolean
-    doc: Enforce strict validation rules. By default, some common deviations are
-      tolerated.
-    inputBinding:
-      position: 102
-      prefix: --strict
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
+      prefix: -f
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the output file for validation results. If not provided, 
-      results are printed to stdout.
-    outputBinding:
-      glob: $(inputs.output_file_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error (reason when the file is not valid)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: biocontainers/python3-sphinxcontrib.autoprogram:v0.1.2-1-deb_cv1
+    dockerPull: quay.io/biocontainers/py_fasta_validator:0.6--py312h734f728_7
+successCodes: [0, 1, 2, 4]
+stdout: py_fasta_validator.out
+stderr: py_fasta_validator.err

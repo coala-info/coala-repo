@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - RAPPAS.jar
+baseCommand: rappas
 label: rappas
 doc: "Rapid Alignment-free Phylogenetic Placement via Ancestral Sequences\n\nTool
   homepage: https://github.com/blinard-BIOINFO/RAPPAS"
@@ -247,6 +244,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --queries
+      itemSeparator: ','
   - id: ratio_reduction
     type:
       - 'null'
@@ -311,25 +309,40 @@ inputs:
     type:
       - 'null'
       - string
+    default: rappas_workdir
     doc: Working directory for temp files. (b|p phase)
     inputBinding:
       position: 101
       prefix: --workdir
   - id: write_reduction_path
-    type: string
-    doc: Output or path parameter `write_reduction_path`
+    type:
+      - 'null'
+      - string
+    doc: Write reduced alignment to file. (b phase)
     inputBinding:
       position: 102
       prefix: --write-reduction
 outputs:
+  - id: workdir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Working directory with the phylo-kmer database, logs and the jplace placement files
+    outputBinding:
+      glob: $(inputs.workdir || '__none__')
   - id: write_reduction
     type:
       - 'null'
       - File
     doc: Write reduced alignment to file. (b phase)
     outputBinding:
-      glob: $(inputs.write_reduction_path)
+      glob: $(inputs.write_reduction_path || '__none__')
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.workdir)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

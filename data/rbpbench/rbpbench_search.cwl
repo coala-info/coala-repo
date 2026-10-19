@@ -300,6 +300,9 @@ inputs:
       prefix: --functions
   - id: genome
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: 'Genomic sequences file (currently supported formats: FASTA)'
     inputBinding:
       position: 101

@@ -10,56 +10,55 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Python expression to evaluate
+    doc: Python expression to evaluate, e.g. py '2 ** 32'
     inputBinding:
-      position: 1
-  - id: import_module
+      position: 100
+  - id: stdin_file
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Import a module before running the expression
-    inputBinding:
-      position: 102
-      prefix: --import
-  - id: list_output
+      - File
+    doc: File sent to the standard input of py (used by -x and -l, or read by the
+      expression)
+  - id: each_row
     type:
       - 'null'
       - boolean
-    doc: Iterate over the expression result and print each item on a new line
+    doc: treat each row of stdin as x
     inputBinding:
-      position: 102
-      prefix: --list
-  - id: post_cmd
+      position: 1
+      prefix: -x
+  - id: list_stdin
     type:
       - 'null'
-      - string
-    doc: Run code after evaluating the expression
+      - boolean
+    doc: treat list of stdin as l
     inputBinding:
-      position: 102
-      prefix: --post
+      position: 1
+      prefix: -l
   - id: pre_cmd
     type:
       - 'null'
       - string
-    doc: Run code before evaluating the expression (e.g., imports)
+    doc: run code before expression
     inputBinding:
-      position: 102
-      prefix: --pre
-  - id: split
+      position: 1
+      prefix: -c
+  - id: post_cmd
     type:
       - 'null'
-      - boolean
-    doc: Treat each line of standard input as 'x' and evaluate the expression for
-      each line
+      - string
+    doc: run code after expression
     inputBinding:
-      position: 102
-      prefix: --split
+      position: 1
+      prefix: -C
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pythonpy:0.4.11--py_0
+stdin: $(inputs.stdin_file.path)
 stdout: pythonpy.out

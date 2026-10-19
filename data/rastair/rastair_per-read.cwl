@@ -10,6 +10,9 @@ doc: "Call methylation per-read\nThis will produce a bed file that list the meth
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Path to sorted and indexed BAM file
     inputBinding:
       position: 1
@@ -69,6 +72,11 @@ inputs:
       prefix: --exclude-flags
   - id: fasta_file
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
+      - pattern: .gzi
+        required: false
     doc: Path to sorted and indexed (via samtools faidx) FASTA file. Can be 
       bgzip compressed, but requires both a gzi index and a fai index
     inputBinding:

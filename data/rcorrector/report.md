@@ -1,5 +1,11 @@
 # rcorrector CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rcorrector_run_rcorrector.pl | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

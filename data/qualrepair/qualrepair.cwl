@@ -24,6 +24,9 @@ inputs:
       position: 102
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Repaired FASTQ written to standard output when no output path is given
   - id: output
     type:
       - 'null'
@@ -36,3 +39,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualrepair:1.0.0--pyhdfd78af_0
+stdout: qualrepair.out

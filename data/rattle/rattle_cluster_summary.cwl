@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rattle_cluster_summary
+baseCommand:
+  - rattle
+  - cluster_summary
 label: rattle_cluster_summary
 doc: "Generates a summary of clustering results from input FASTA/FASTQ and cluster
   files.\n\nTool homepage: https://github.com/comprna/RATTLE"

@@ -10,6 +10,7 @@ inputs:
     doc: the path to the coordinate-sorted alignment BAM file
     inputBinding:
       position: 101
+      valueFrom: $(self.basename)
       prefix: -b
   - id: assembly_fasta
     type:
@@ -18,6 +19,7 @@ inputs:
     doc: the paths to the raw assembly fasta file
     inputBinding:
       position: 101
+      valueFrom: $(self.basename)
       prefix: -f
   - id: break_on_ns
     type:
@@ -35,6 +37,7 @@ inputs:
       aligner
     inputBinding:
       position: 101
+      valueFrom: $(self.basename)
       prefix: -bc
   - id: kmer_size
     type:
@@ -95,8 +98,16 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $((inputs.output_prefix || 'rascaf') + '*')
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.alignment_bam)
+      - $(inputs.assembly_fasta)
+      - $(inputs.clipping_bam)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rascaf:20180710--h5ca1c30_1
-stdout: rascaf.out
+    dockerOutputDirectory: /rascaf_work
+stdout: rascaf_stdout.txt

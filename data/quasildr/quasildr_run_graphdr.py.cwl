@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: run_graphdr
+baseCommand: run_graphdr.py
 label: quasildr_run_graphdr.py
 doc: "Run GraphDR.\n\nTool homepage: https://github.com/jzthree/quasildr"
 inputs:

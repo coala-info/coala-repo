@@ -28,6 +28,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: outdir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Directory in which results are stored
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/querynator:0.6.0--pyhdfd78af_0

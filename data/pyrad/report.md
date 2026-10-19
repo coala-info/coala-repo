@@ -1,5 +1,11 @@
 # pyrad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyrad | Not completed | pipeline, skipped: the CWL runs the whole pyRAD pipeline; only the -n template step ran |
+
 ## pyrad
 
 ### Tool Description

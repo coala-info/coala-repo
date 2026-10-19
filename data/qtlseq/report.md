@@ -1,5 +1,11 @@
 # qtlseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qtlseq | PASS | ran on the tool's own test FASTQ; fixed paired-file comma lists, --out flag and removed a link to the input from the output folder |
+
 ## qtlseq
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # rapgreen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rapgreen | PASS | NHX tree with duplication marks and a 128-row scoring table; the example expected files belong to another tree |
+
 ## rapgreen
 
 ### Tool Description

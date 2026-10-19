@@ -1,5 +1,11 @@
 # pysamstats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pysamstats | PASS |  |
+
 ## pysamstats
 
 ### Tool Description

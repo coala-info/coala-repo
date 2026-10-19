@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: PyQuant
+baseCommand: pyQuant
 label: pyquant-ms_pyQuant
 doc: "This will quantify labeled peaks (such as SILAC) in ms1 spectra. It relies solely
   on the distance between peaks, which can correct for errors due to amino acid conversions.\n\

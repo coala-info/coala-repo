@@ -1,5 +1,11 @@
 # qcatch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qcatch | Not completed | no usable test data: input must be simpleaf or alevin-fry output with quant_info (the nf-core h5ad files fail with a quant_info error) and the QCatch tutorial download is gone (404) |
+
 ## qcatch
 
 ### Tool Description

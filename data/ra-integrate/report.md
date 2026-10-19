@@ -1,5 +1,11 @@
 # ra-integrate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ra-integrate | Not completed | pipeline, skipped (Ruby driver that runs the whole overlap, layout and consensus assembly pipeline) |
+
 ## ra-integrate
 
 ### Tool Description

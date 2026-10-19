@@ -1,5 +1,11 @@
 # rabix-bunny CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rabix-bunny_rabix | PASS | ran a tiny echo CommandLineTool with --no-container |
+
 ## rabix-bunny_rabix
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # rate4site CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rate4site | PASS | protein alignment without a tree gives plausible rates; -t crashed on a Newick tree with support-value labels (tool parse error) |
+
 ## rate4site
 
 ### Tool Description

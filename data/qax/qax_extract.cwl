@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: extract
+baseCommand:
+  - qax
+  - extract
 label: qax_extract
 doc: "Extract the artifact data. If multiple files are present, a new directory will
   be created (artifact name), otherwise the artifact name will be used to rename the

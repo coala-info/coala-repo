@@ -9,17 +9,19 @@ inputs:
   - id: input_data
     type:
       type: array
-      items: string
+      items: Directory
     doc: Supply motif search results data, either as folders (--out folders of 
       rbpbench search or batch), or as files (both RBP and motif hit stats files
       needed!). Order of files does NOT matter
     inputBinding:
       position: 1
+      prefix: --in
   - id: output_folder
-    type: Directory
+    type: string
     doc: Comparison results output folder
     inputBinding:
       position: 2
+      prefix: --out
   - id: plot_abs_paths
     type:
       - 'null'
@@ -50,14 +52,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: sort_js_mode_dir
+  - id: output_folder_dir
     type:
       - 'null'
       - Directory
-    doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
-      copy .js file to plots output folder. 3: include .js code in HTML'
+    doc: Comparison results output folder
     outputBinding:
-      glob: $(inputs.sort_js_mode)
+      glob: $(inputs.output_folder)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rbpbench:1.1.0--pyhdfd78af_0

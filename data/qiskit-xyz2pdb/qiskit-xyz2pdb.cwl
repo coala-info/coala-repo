@@ -46,6 +46,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_pdb
+    type:
+      - 'null'
+      - File
+    doc: Output PDB file
+    outputBinding:
+      glob: |
+        ${ return (inputs.out_folder ? inputs.out_folder + "/" : "") + (inputs.out_name ? inputs.out_name : "*") + ".pdb"; }
   - id: out_folder_dir
     type:
       - 'null'
@@ -53,6 +61,13 @@ outputs:
     doc: Path to the output folder
     outputBinding:
       glob: $(inputs.out_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: '${ return inputs.out_folder ? inputs.out_folder : "out_unused"; }'
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qiskit-xyz2pdb:0.1.2--pyhca03a8a_0

@@ -9,6 +9,11 @@ inputs:
   - id: bam_file
     type: File
     doc: Input BAM file
+    secondaryFiles:
+      - pattern: ^.bai
+        required: false
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: reference_file

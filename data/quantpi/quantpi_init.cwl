@@ -33,7 +33,7 @@ inputs:
   - id: samples
     type:
       - 'null'
-      - string
+      - File
     doc: "desired input:\nsamples list, tsv format required.\n\n                 \
       \       if begin from trimming, rmhost, or assembly:\n                     \
       \       if it is fastq:\n                                the header is: [sample_id,
@@ -55,7 +55,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: project workdir
     inputBinding:
       position: 101
@@ -64,6 +64,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Created project working directory
+    outputBinding:
+      glob: $(inputs.workdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/quantpi:1.0.0--pyh7e72e81_0

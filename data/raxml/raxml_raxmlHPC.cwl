@@ -574,6 +574,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: RAxML result files (RAxML_info, RAxML_bestTree, RAxML_result, ...) named after output_file_name
+    outputBinding:
+      glob: RAxML_*.$(inputs.output_file_name)*
   - id: output_directory_dir
     type:
       - 'null'

@@ -69,12 +69,17 @@ inputs:
       position: 102
       prefix: --strip
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'Output mapping file (default: stdout)'
     inputBinding:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the mapping table when -o is not given)
   - id: output_file
     type:
       - 'null'
@@ -87,3 +92,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qimba:0.4.0--pyhdfd78af_0
+stdout: qimba_make-mapping.out

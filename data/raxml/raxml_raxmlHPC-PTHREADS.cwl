@@ -764,13 +764,25 @@ inputs:
       position: 101
       prefix: -j
   - id: output_directory_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: FULL (!) path to the directory into which RAxML shall write its output 
       files
     inputBinding:
       position: 102
       prefix: -w
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: RAxML result files (RAxML_info, RAxML_bestTree, RAxML_result, ...) named after output_file_name
+    outputBinding:
+      glob: RAxML_*.$(inputs.output_file_name)*
   - id: output_directory
     type:
       - 'null'
@@ -784,3 +796,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/raxml:8.2.13--h7b50bb2_3
+stdout: raxml_raxmlHPC-PTHREADS.out

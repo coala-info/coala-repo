@@ -53,6 +53,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: params_file
+    type:
+      - 'null'
+      - File
+    doc: Empty parameter file written by -n
+    outputBinding:
+      glob: params.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyrad:3.0.66--py27_0

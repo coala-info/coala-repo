@@ -19,10 +19,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --attr
+  - id: read_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Read files named in the sample sheet; they are staged in the working directory so that relative names in the sample sheet resolve
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.read_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qimba:0.4.0--pyhdfd78af_0

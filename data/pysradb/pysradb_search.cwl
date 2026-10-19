@@ -211,12 +211,17 @@ inputs:
       position: 101
       prefix: --verbosity
   - id: save_to_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Save search result dataframe to file
     inputBinding:
       position: 102
       prefix: --saveto
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result table when no --saveto file is given)
   - id: save_to
     type:
       - 'null'
@@ -225,7 +230,10 @@ outputs:
     outputBinding:
       glob: $(inputs.save_to_path)
 requirements:
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pysradb:2.5.1--pyhdfd78af_0
+stdout: pysradb_search.out

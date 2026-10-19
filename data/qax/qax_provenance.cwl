@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: provenance
+baseCommand:
+  - qax
+  - provenance
 label: qax_provenance
 doc: "Print ancestry of an artifact\n\nTool homepage: https://github.com/telatin/qax"
 inputs:

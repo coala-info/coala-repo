@@ -19,10 +19,10 @@ inputs:
     inputBinding:
       position: 102
       prefix: --fontsize
-  - id: path
+  - id: plot_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Create plots in this directory
     inputBinding:
       position: 102
@@ -58,6 +58,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: plots
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Plot files written by the tool
+    outputBinding:
+      glob: '$(inputs.plot_dir ? inputs.plot_dir + "/*.png" : "*.png")'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: '$(inputs.plot_dir ? inputs.plot_dir : "plots_unused")'
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

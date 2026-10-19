@@ -1,5 +1,11 @@
 # quast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quast | PASS | QUAST repo test assemblies contigs_1 and contigs_2 with reference and genes; report lists 3 and 4 contigs and total length 6710; fixed contigs input to a file list, --est-ref-size flag and baseCommand |
+
 ## quast
 
 ### Tool Description

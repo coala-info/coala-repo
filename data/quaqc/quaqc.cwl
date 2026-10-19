@@ -9,8 +9,13 @@ inputs:
       type: array
       items: File
     doc: Input BAM files
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     inputBinding:
-      position: 1
+      position: 200
   - id: bed
     type:
       - 'null'
@@ -30,7 +35,7 @@ inputs:
   - id: bedGraph_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to output bedGraphs if not that of input.
     inputBinding:
       position: 102
@@ -62,7 +67,7 @@ inputs:
   - id: bed_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to output BED files if not that of input.
     inputBinding:
       position: 102
@@ -142,7 +147,7 @@ inputs:
   - id: keep_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Directory to create new BAM in if not that of input.
     inputBinding:
       position: 102
@@ -531,6 +536,27 @@ outputs:
     doc: Directory to save QC report if not that of input.
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: bedGraph_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder given in bedGraph_dir
+    outputBinding:
+      glob: $(inputs.bedGraph_dir)
+  - id: bed_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder given in bed_dir
+    outputBinding:
+      glob: $(inputs.bed_dir)
+  - id: keep_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder given in keep_dir
+    outputBinding:
+      glob: $(inputs.keep_dir)
   - id: json
     type:
       - 'null'
@@ -540,6 +566,20 @@ outputs:
       glob: $(inputs.json_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: '${ return inputs.output_dir_path ? inputs.output_dir_path : "_unused_o"; }'
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
+      - entryname: '${ return inputs.bedGraph_dir ? inputs.bedGraph_dir : "_unused_g"; }'
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
+      - entryname: '${ return inputs.bed_dir ? inputs.bed_dir : "_unused_b"; }'
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
+      - entryname: '${ return inputs.keep_dir ? inputs.keep_dir : "_unused_k"; }'
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/quaqc:1.5--h577a1d6_0

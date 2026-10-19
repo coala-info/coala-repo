@@ -4,11 +4,11 @@ baseCommand:
   - quasitools
   - dnds
 label: quasitools_dnds
-doc: "Calculate dN/dS ratios for coding sequences.\n\nTool homepage: https://github.com/phac-nml/quasitools/"
+doc: "Calculate the dn/ds value for each region in a bed file.\n\nTool homepage: https://github.com/phac-nml/quasitools/"
 inputs:
   - id: csv_file
     type: File
-    doc: CSV file containing gene information.
+    doc: CSV file of codon variants (output of quasitools call codonvar).
     inputBinding:
       position: 1
   - id: reference_file
@@ -18,57 +18,31 @@ inputs:
       position: 2
   - id: offset
     type: int
-    doc: Offset for gene coordinates.
+    doc: Offset of the gene region in the reference.
     inputBinding:
       position: 3
-  - id: codon_table
+  - id: output_filename_path
     type:
       - 'null'
       - string
-    doc: Codon table to use (e.g., standard, vertebrate_mito).
+    doc: Output file (CSV).
     inputBinding:
-      position: 104
-      prefix: --codon-table
-  - id: min_length
-    type:
-      - 'null'
-      - int
-    doc: Minimum coding sequence length to consider.
-    inputBinding:
-      position: 104
-      prefix: --min-length
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use.
-    inputBinding:
-      position: 104
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
-    inputBinding:
-      position: 104
-      prefix: --verbose
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 105
-      prefix: --output-dir
+      position: 101
+      prefix: --output
 outputs:
-  - id: output_dir
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: output_filename
     type:
       - 'null'
-      - Directory
-    doc: Directory to save output files.
+      - File
+    doc: Output file (CSV).
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.output_filename_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/quasitools:0.7.0--py_0
+stdout: quasitools_dnds.out

@@ -49,6 +49,10 @@ outputs:
       glob: $(inputs.out_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fastx)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pytrf:1.4.2--py310h1fe012e_1

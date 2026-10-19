@@ -29,6 +29,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Genomic sequences FASTA file (required if --in is BED)
     inputBinding:
       position: 101

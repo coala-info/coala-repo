@@ -1,5 +1,12 @@
 # rasusa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rasusa_aln | PASS |  |
+| rasusa_reads | PASS |  |
+
 ## rasusa_reads
 
 ### Tool Description
@@ -163,34 +170,6 @@ Options:
 
   -V, --version
           Print version
-```
-
-
-## rasusa_cite
-
-### Tool Description
-Rasusa: Randomly subsample sequencing reads to a specified coverage
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rasusa:3.0.0--h54198d6_0
-- **Homepage**: https://github.com/mbhall88/rasusa
-- **Package**: https://anaconda.org/channels/bioconda/packages/rasusa/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-@article{Hall2022,
-  doi = {10.21105/joss.03941},
-  url = {https://doi.org/10.21105/joss.03941},
-  year = {2022},
-  publisher = {The Open Journal},
-  volume = {7},
-  number = {69},
-  pages = {3941},
-  author = {Michael B. Hall},
-  title = {Rasusa: Randomly subsample sequencing reads to a specified coverage},
-  journal = {Journal of Open Source Software}
-}
 ```
 
 

@@ -1,5 +1,14 @@
 # pytrf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pytrf_extract | Failed | tool bug: pytrf 1.4.2 extract crashes on every input (passes a csv dialect object as the delimiter) |
+| pytrf_findatr | PASS |  |
+| pytrf_findgtr | PASS |  |
+| pytrf_findstr | PASS |  |
+
 ## pytrf_findstr
 
 ### Tool Description

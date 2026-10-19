@@ -106,7 +106,7 @@ inputs:
   - id: lineage_file
     type:
       - 'null'
-      - File
+      - string
     doc: File to write lineage association to
     inputBinding:
       position: 101
@@ -211,7 +211,7 @@ inputs:
   - id: output_patterns
     type:
       - 'null'
-      - File
+      - string
     doc: File to print patterns to, useful for finding pvalue threshold (not 
       used with --wg)
     inputBinding:
@@ -283,7 +283,7 @@ inputs:
   - id: save_predictions
     type:
       - 'null'
-      - File
+      - string
     doc: File to save predictions to in TSV format
     inputBinding:
       position: 101
@@ -333,6 +333,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: VCF file. Will filter any non 'PASS' sites
     inputBinding:
       position: 101
@@ -350,6 +353,64 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: lineage_effects
+    type:
+      - 'null'
+      - File
+    doc: Lineage associations (default file name)
+    outputBinding:
+      glob: lineage_effects.txt
+  - id: lineage_file_out
+    type:
+      - 'null'
+      - File
+    doc: Lineage associations written to the lineage_file path
+    outputBinding:
+      glob: $(inputs.lineage_file)
+  - id: output_patterns_out
+    type:
+      - 'null'
+      - File
+    doc: Patterns file
+    outputBinding:
+      glob: $(inputs.output_patterns)
+  - id: save_predictions_out
+    type:
+      - 'null'
+      - File
+    doc: Predictions from the whole genome model
+    outputBinding:
+      glob: $(inputs.save_predictions)
+  - id: m_decomposition
+    type:
+      - 'null'
+      - File
+    doc: Saved matrix decomposition
+    outputBinding:
+      glob: $(inputs.save_m).pkl
+  - id: lmm_cache
+    type:
+      - 'null'
+      - File
+    doc: Saved LMM cache
+    outputBinding:
+      glob: $(inputs.save_lmm).npz
+  - id: model_files
+    type:
+      type: array
+      items: File
+    doc: Saved model files
+    outputBinding:
+      glob: $(inputs.save_model)*
+  - id: vars_files
+    type:
+      type: array
+      items: File
+    doc: Saved variant files
+    outputBinding:
+      glob: $(inputs.save_vars)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyseer:1.4.0--pyhdfd78af_0

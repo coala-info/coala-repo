@@ -10,6 +10,11 @@ inputs:
   - id: input_file
     type: File
     doc: Path to the input alignment file (SAM/BAM/CRAM) to subsample
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 1
   - id: batch_size

@@ -1,5 +1,11 @@
 # rappas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rappas | PASS | built a database from a 10-sequence cytb alignment and tree, then each query is placed on its own leaf edge (real sequences; tree from rapidnj) |
+
 ## rappas
 
 ### Tool Description

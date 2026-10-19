@@ -7,6 +7,9 @@ doc: "Calculate statistics against genome positions based on sequence alignments
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: SAM or BAM file
     inputBinding:
       position: 1
@@ -30,6 +33,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Reference sequence file, only required for some statistics.
     inputBinding:
       position: 102
@@ -228,12 +234,17 @@ inputs:
       position: 102
       prefix: --zero-based
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Path to output file. If not provided, write to stdout.
     inputBinding:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Statistics table (when no output path is given)
   - id: output
     type:
       - 'null'
@@ -246,3 +257,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pysamstats:1.1.2--py311h384fd50_15
+stdout: pysamstats.out

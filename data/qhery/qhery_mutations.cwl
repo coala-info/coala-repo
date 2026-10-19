@@ -10,6 +10,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: bam file
     inputBinding:
       position: 101
@@ -31,9 +34,7 @@ inputs:
       position: 101
       prefix: --lineage
   - id: pipeline_dir
-    type:
-      - 'null'
-      - Directory
+    type: string
     doc: Pipeline to run program in.
     inputBinding:
       position: 101
@@ -49,9 +50,8 @@ inputs:
   - id: vcf
     type:
       - 'null'
-      - type: array
-        items: File
-    doc: List of VCF files
+      - File
+    doc: VCF file with the sample variants
     inputBinding:
       position: 101
       prefix: --vcf
@@ -59,6 +59,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pipeline_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the result tables
+    outputBinding:
+      glob: $(inputs.pipeline_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.pipeline_dir, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qhery:0.1.2--pyhdfd78af_0

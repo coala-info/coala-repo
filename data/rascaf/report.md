@@ -1,5 +1,12 @@
 # rascaf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rascaf | PASS |  |
+| rascaf_join | PASS |  |
+
 ## rascaf
 
 ### Tool Description
@@ -30,5 +37,21 @@ options:
 	-k INT: the size of a kmer(<=32; <=0 if you do not want to use kmer. default: 23)
 	-cs : output the genomic sequence involved in connections in file $prefix_cs.fa (default: not used)
 	-v : verbose mode (default: false)
+```
+
+## rascaf_join
+
+### Tool Description
+rascaf-join builds scaffolds from the contig connections found by rascaf.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rascaf:20180710--h5ca1c30_1
+- **Homepage**: https://github.com/mourisl/Rascaf
+- **Package**: https://anaconda.org/channels/bioconda/packages/rascaf/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
 ```
 

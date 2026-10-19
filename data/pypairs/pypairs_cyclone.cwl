@@ -5,52 +5,82 @@ label: pypairs_cyclone
 doc: "Cyclone is a tool for inferring cell cycle phase from single-cell RNA sequencing
   data.\n\nTool homepage: https://github.com/rfechtner/pypairs"
 inputs:
-  - id: input_file
+  - id: data
     type: File
-    doc: Input file containing single-cell RNA sequencing data (e.g., AnnData, 
-      Loom, or CSV format).
+    doc: Path to the data matrix where rows correspond to cells and columns to 
+      genes.
     inputBinding:
       position: 1
-  - id: genes
-    type:
-      - 'null'
-      - File
-    doc: File containing a list of genes to use for cell cycle inference (e.g., 
-      a text file with one gene per line).
+      prefix: --data
+  - id: sep
+    type: ['null', string]
+    doc: 'Seperator used for data (default: ",")'
     inputBinding:
-      position: 102
-      prefix: --genes
-  - id: n_jobs
-    type:
-      - 'null'
-      - int
-    doc: Number of parallel jobs to run.
+      position: 2
+      prefix: --sep
+  - id: transpose
+    type: ['null', boolean]
+    doc: Set flag to transpose matrix
     inputBinding:
-      position: 102
-      prefix: --n-jobs
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
+      position: 3
+      prefix: --transpose
+  - id: out
+    type: ['null', string]
+    doc: Store score to csv
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+      position: 4
+      prefix: --out
+  - id: marker_pairs
+    type: ['null', File]
+    doc: Path to marker pairs .json. If not provided default marker pairs are 
+      used
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 5
+      prefix: --marker_pairs
+  - id: iterations
+    type: ['null', int]
+    doc: 'An integer specifying the number of iterations for random sampling to 
+      obtain a cycle score (default: 1000).'
+    inputBinding:
+      position: 6
+      prefix: --iterations
+  - id: min_iter
+    type: ['null', int]
+    doc: 'An integer specifying the minimum number of iterations for score 
+      estimation (default: 100).'
+    inputBinding:
+      position: 7
+      prefix: --min_iter
+  - id: min_pairs
+    type: ['null', int]
+    doc: 'An integer specifying the minimum number of pairs for cycle estimation
+      (default: 50).'
+    inputBinding:
+      position: 8
+      prefix: --min_pairs
+  - id: quantile_transform
+    type: ['null', boolean]
+    doc: Set flag to apply quantile transformation to data
+    inputBinding:
+      position: 9
+      prefix: --quantile_transform
+  - id: verbosity
+    type: ['null', int]
+    doc: 'Set level of verbosity from 1 to 4. Where 1 is minimal and 4 most 
+      (default: 3).'
+    inputBinding:
+      position: 10
+      prefix: --verbosity
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file to save the inferred cell cycle phases (e.g., AnnData, 
-      Loom, or CSV format).
+  - id: scores_csv
+    type: ['null', File]
+    doc: Cell cycle scores written to the --out file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.out)
+  - id: stdout_scores
+    type: stdout
+    doc: Scores printed to standard output when --out is not given
+stdout: cyclone_stdout.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

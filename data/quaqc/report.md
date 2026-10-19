@@ -1,5 +1,11 @@
 # quaqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quaqc | Not completed | ran on the repo test BAM and all counts match the repo reference, but percentile lines differ from a reference made with a newer quaqc, so output not fully confirmed; fixed option order, BAM index and output folders |
+
 ## quaqc
 
 ### Tool Description

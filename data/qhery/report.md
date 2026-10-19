@@ -1,5 +1,13 @@
 # qhery CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qhery_list_rx | PASS | ran on the official slim covid-drdb database (the full one is 727 MB) |
+| qhery_mutations | Failed | image problem: bcftools csq cannot write the .fai index of the packaged reference FASTA (read-only image file system), so no csq table is made |
+| qhery_run | Not completed | needs the 727 MB full covid-drdb database (the slim release lacks a required view); the vcf route also hits the read-only reference index problem |
+
 ## qhery_list_rx
 
 ### Tool Description

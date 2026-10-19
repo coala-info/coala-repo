@@ -1,5 +1,11 @@
 # ragout CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ragout | PASS |  |
+
 ## ragout
 
 ### Tool Description

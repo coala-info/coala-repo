@@ -1,5 +1,11 @@
 # quickdeconvolution CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quickdeconvolution_QuickDeconvolution | PASS | repo test FASTQ (first 10000 reads); all reads returned with barcode extensions -1, -2, ... |
+
 ## quickdeconvolution_QuickDeconvolution
 
 ### Tool Description

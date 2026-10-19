@@ -17,7 +17,7 @@ inputs:
   - id: config_file
     type:
       - 'null'
-      - string
+      - File
     doc: Configuration to perform Peptide Class FDR
     inputBinding:
       position: 101

@@ -23,7 +23,8 @@ inputs:
         items: string
     doc: are the app input values specified directly from the command line
     inputBinding:
-      position: 3
+      position: 200
+      prefix: --
   - id: cache_dir
     type:
       - 'null'
@@ -44,7 +45,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: execution directory
+    doc: execution directory (created in the working directory; the default is rabix_run)
+    default: rabix_run
     inputBinding:
       position: 104
       prefix: --basedir
@@ -125,7 +127,21 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (final result JSON)
+  - id: execution_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Execution directory with the job folders and output files of the app
+    outputBinding:
+      glob: $(inputs.execution_directory)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.execution_directory)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rabix-bunny:1.0.4--0

@@ -10,7 +10,7 @@ inputs:
   - id: config_file
     type:
       - 'null'
-      - string
+      - File
     doc: Configuration file for the ensembl data downloader pipeline
     inputBinding:
       position: 101
@@ -116,7 +116,7 @@ inputs:
   - id: url_file
     type:
       - 'null'
-      - File
+      - string
     doc: Add the url to a downloaded file
     inputBinding:
       position: 101
@@ -132,6 +132,16 @@ outputs:
     doc: Output directory for the peptide databases
     outputBinding:
       glob: $(inputs.output_directory)
+  - id: url_file_out
+    type:
+      - 'null'
+      - File
+    doc: File with the download URLs, written when url_file is given (nothing is downloaded then)
+    outputBinding:
+      glob: $(inputs.url_file)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0

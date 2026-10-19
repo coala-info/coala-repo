@@ -1,5 +1,11 @@
 # quickmerge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quickmerge | PASS | Galaxy tools-iuc E. coli test data; merged sequences and anchor summary match the expected files (headers differ only by spaces); fixed output globs for merged_<prefix>.fasta and summaries |
+
 ## quickmerge
 
 ### Tool Description

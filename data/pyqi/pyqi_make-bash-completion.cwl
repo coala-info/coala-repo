@@ -5,7 +5,7 @@ baseCommand:
   - make-bash-completion
 label: pyqi_make-bash-completion
 doc: "Construct a bash tab completion script that will search through available commands
-  and options\n\nTool homepage: https://github.com/qir-alliance/pyqir"
+  and options\n\nTool homepage: https://github.com/biocore/pyqi"
 inputs:
   - id: command_config_module
     type: string

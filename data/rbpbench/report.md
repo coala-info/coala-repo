@@ -1,5 +1,29 @@
 # rbpbench CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rbpbench_batch | PASS |  |
+| rbpbench_compare | PASS |  |
+| rbpbench_con | PASS | peak sites on chr21 with phyloP and phastCons bigWig windows from UCSC; giving only --phylop crashes the tool (UnboundLocalError) |
+| rbpbench_dist | PASS |  |
+| rbpbench_enmo | PASS |  |
+| rbpbench_goa | PASS |  |
+| rbpbench_info | PASS |  |
+| rbpbench_isocomp | PASS |  |
+| rbpbench_nemo | PASS |  |
+| rbpbench_optex | PASS |  |
+| rbpbench_search | PASS |  |
+| rbpbench_searchlong | PASS |  |
+| rbpbench_searchlongrna | PASS |  |
+| rbpbench_searchregex | PASS |  |
+| rbpbench_searchrna | Failed | tool bug: rbpbench searchrna crashes with AttributeError disable_all_reg_bar when it writes the HTML report |
+| rbpbench_searchseq | PASS |  |
+| rbpbench_sponge | PASS |  |
+| rbpbench_streme | PASS |  |
+| rbpbench_tomtom | PASS |  |
+
 ## rbpbench_search
 
 ### Tool Description

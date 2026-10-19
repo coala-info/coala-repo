@@ -60,13 +60,32 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+  - id: merged_fasta
+    type: File
+    doc: Merged assembly (merged_<prefix>.fasta)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: merged_$(inputs.prefix).fasta
+  - id: aln_summary
+    type:
+      - 'null'
+      - File
+    doc: Alignment summary (aln_summary_<prefix>.tsv)
+    outputBinding:
+      glob: aln_summary_$(inputs.prefix).tsv
+  - id: anchor_summary
+    type:
+      - 'null'
+      - File
+    doc: Anchor summary (anchor_summary_<prefix>.txt)
+    outputBinding:
+      glob: anchor_summary_$(inputs.prefix).txt
+  - id: param_summary
+    type:
+      - 'null'
+      - File
+    doc: Parameter summary (param_summary_<prefix>.txt)
+    outputBinding:
+      glob: param_summary_$(inputs.prefix).txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/quickmerge:0.3--pl5321h503566f_6

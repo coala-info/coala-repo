@@ -1,5 +1,11 @@
 # qualifilter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qualifilter | PASS | Galaxy tools-iuc test data; QC_matrix.tsv and .csv match the expected outputs |
+
 ## qualifilter
 
 ### Tool Description

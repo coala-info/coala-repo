@@ -17,7 +17,7 @@ inputs:
   - id: config_file
     type:
       - 'null'
-      - string
+      - File
     doc: Configuration file for the fdr peptides pipeline
     inputBinding:
       position: 101
@@ -41,7 +41,7 @@ inputs:
   - id: input_mztab
     type:
       - 'null'
-      - string
+      - File
     doc: The file name of the input mzTab
     inputBinding:
       position: 101

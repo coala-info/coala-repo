@@ -2,23 +2,918 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: qhull
 label: qhull
-doc: "Qhull computes the convex hull, Delaunay triangulation, Voronoi diagram, half-space
-  intersection and the medial axis of points, line segments and triangles.\n\nTool
-  homepage: https://github.com/qhull/qhull"
+doc: "Qhull computes the convex hull, Delaunay triangulation, Voronoi diagram, half-space intersection and the medial axis of points, line segments and triangles.\n\nTool homepage: https://github.com/qhull/qhull"
 inputs:
-  - id: run_id
+  - id: points
+    type: File
+    doc: 'Input points on the standard input: dimension, number of points, then one point per line (halfspaces: dimension plus one and offset after the coefficients)'
+  - id: opt_d
     type:
       - 'null'
-      - int
-    doc: run-id
+      - boolean
+    doc: Delaunay triangulation by lifting points to a paraboloid
     inputBinding:
-      position: 101
-      prefix: run-id
+      position: 1
+      prefix: d
+  - id: opt_v
+    type:
+      - 'null'
+      - boolean
+    doc: Voronoi diagram (dual of the Delaunay triangulation)
+    inputBinding:
+      position: 1
+      prefix: v
+  - id: opt_H_value
+    type:
+      - 'null'
+      - string
+    doc: 'halfspace intersection about point [n,n,0,...] (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: H
+      separate: false
+  - id: opt_Qt
+    type:
+      - 'null'
+      - boolean
+    doc: triangulated output
+    inputBinding:
+      position: 1
+      prefix: Qt
+  - id: opt_QJ
+    type:
+      - 'null'
+      - boolean
+    doc: joggled input instead of merged facets
+    inputBinding:
+      position: 1
+      prefix: QJ
+  - id: opt_Qc
+    type:
+      - 'null'
+      - boolean
+    doc: keep coplanar points with nearest facet
+    inputBinding:
+      position: 1
+      prefix: Qc
+  - id: opt_Qi
+    type:
+      - 'null'
+      - boolean
+    doc: keep interior points with nearest facet
+    inputBinding:
+      position: 1
+      prefix: Qi
+  - id: opt_QbB
+    type:
+      - 'null'
+      - boolean
+    doc: scale input to unit cube centered at the origin
+    inputBinding:
+      position: 1
+      prefix: QbB
+  - id: opt_Qbb
+    type:
+      - 'null'
+      - boolean
+    doc: 'scale last coordinate to [0,m] for Delaunay triangulations'
+    inputBinding:
+      position: 1
+      prefix: Qbb
+  - id: opt_QJ_value
+    type:
+      - 'null'
+      - string
+    doc: 'randomly joggle input in range [-n,n] (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: QJ
+      separate: false
+  - id: opt_QR_value
+    type:
+      - 'null'
+      - string
+    doc: 'random rotation (n=seed, n=0 time, n=-1 time/no rotate) (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: QR
+      separate: false
+  - id: opt_Qf
+    type:
+      - 'null'
+      - boolean
+    doc: partition point to furthest outside facet
+    inputBinding:
+      position: 1
+      prefix: Qf
+  - id: opt_Qg
+    type:
+      - 'null'
+      - boolean
+    doc: 'only build good facets (needs ''QGn'', ''QVn'', or ''PdD'')'
+    inputBinding:
+      position: 1
+      prefix: Qg
+  - id: opt_Qm
+    type:
+      - 'null'
+      - boolean
+    doc: only process points that would increase max_outside
+    inputBinding:
+      position: 1
+      prefix: Qm
+  - id: opt_Qr
+    type:
+      - 'null'
+      - boolean
+    doc: process random outside points instead of furthest ones
+    inputBinding:
+      position: 1
+      prefix: Qr
+  - id: opt_Qs
+    type:
+      - 'null'
+      - boolean
+    doc: search all points for the initial simplex
+    inputBinding:
+      position: 1
+      prefix: Qs
+  - id: opt_Qu
+    type:
+      - 'null'
+      - boolean
+    doc: 'for ''d'' or ''v'', compute upper hull without point at-infinity'
+    inputBinding:
+      position: 1
+      prefix: Qu
+  - id: opt_Qv
+    type:
+      - 'null'
+      - boolean
+    doc: test vertex neighbors for convexity
+    inputBinding:
+      position: 1
+      prefix: Qv
+  - id: opt_Qx
+    type:
+      - 'null'
+      - boolean
+    doc: exact pre-merges (skips coplanar and angle-coplanar facets)
+    inputBinding:
+      position: 1
+      prefix: Qx
+  - id: opt_Qz
+    type:
+      - 'null'
+      - boolean
+    doc: add point-at-infinity to Delaunay triangulation
+    inputBinding:
+      position: 1
+      prefix: Qz
+  - id: opt_QG_value
+    type:
+      - 'null'
+      - string
+    doc: 'good facet if visible from point n, -n for not visible (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: QG
+      separate: false
+  - id: opt_QV_value
+    type:
+      - 'null'
+      - string
+    doc: 'good facet if it includes point n, -n if not (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: QV
+      separate: false
+  - id: opt_Q0
+    type:
+      - 'null'
+      - boolean
+    doc: 'turn off default premerge with ''C-0''/''Qx'''
+    inputBinding:
+      position: 1
+      prefix: Q0
+  - id: opt_Q1
+    type:
+      - 'null'
+      - boolean
+    doc: sort merges by type instead of angle
+    inputBinding:
+      position: 1
+      prefix: Q1
+  - id: opt_Q2
+    type:
+      - 'null'
+      - boolean
+    doc: merge all non-convex at once instead of independent sets
+    inputBinding:
+      position: 1
+      prefix: Q2
+  - id: opt_Q3
+    type:
+      - 'null'
+      - boolean
+    doc: do not merge redundant vertices
+    inputBinding:
+      position: 1
+      prefix: Q3
+  - id: opt_Q4
+    type:
+      - 'null'
+      - boolean
+    doc: 'avoid old->new merges'
+    inputBinding:
+      position: 1
+      prefix: Q4
+  - id: opt_Q5
+    type:
+      - 'null'
+      - boolean
+    doc: do not correct outer planes at end of qhull
+    inputBinding:
+      position: 1
+      prefix: Q5
+  - id: opt_Q6
+    type:
+      - 'null'
+      - boolean
+    doc: do not pre-merge concave or coplanar facets
+    inputBinding:
+      position: 1
+      prefix: Q6
+  - id: opt_Q7
+    type:
+      - 'null'
+      - boolean
+    doc: depth-first processing instead of breadth-first
+    inputBinding:
+      position: 1
+      prefix: Q7
+  - id: opt_Q8
+    type:
+      - 'null'
+      - boolean
+    doc: do not process near-inside points
+    inputBinding:
+      position: 1
+      prefix: Q8
+  - id: opt_Q9
+    type:
+      - 'null'
+      - boolean
+    doc: process furthest of furthest points
+    inputBinding:
+      position: 1
+      prefix: Q9
+  - id: opt_Q10
+    type:
+      - 'null'
+      - boolean
+    doc: no special processing for narrow distributions
+    inputBinding:
+      position: 1
+      prefix: Q10
+  - id: opt_Q11
+    type:
+      - 'null'
+      - boolean
+    doc: copy normals and recompute centrums for tricoplanar facets
+    inputBinding:
+      position: 1
+      prefix: Q11
+  - id: opt_Q12
+    type:
+      - 'null'
+      - boolean
+    doc: no error on wide merge due to duplicate ridge
+    inputBinding:
+      position: 1
+      prefix: Q12
+  - id: opt_T4_value
+    type:
+      - 'null'
+      - string
+    doc: 'trace at level n, 4=all, 5=mem/gauss, -1= events (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: T
+      separate: false
+  - id: opt_Ta
+    type:
+      - 'null'
+      - boolean
+    doc: annotate output with message codes
+    inputBinding:
+      position: 1
+      prefix: Ta
+  - id: opt_Tc
+    type:
+      - 'null'
+      - boolean
+    doc: check frequently during execution
+    inputBinding:
+      position: 1
+      prefix: Tc
+  - id: opt_Ts
+    type:
+      - 'null'
+      - boolean
+    doc: print statistics
+    inputBinding:
+      position: 1
+      prefix: Ts
+  - id: opt_Tv
+    type:
+      - 'null'
+      - boolean
+    doc: 'verify result: structure, convexity, and point inclusion'
+    inputBinding:
+      position: 1
+      prefix: Tv
+  - id: opt_Tz
+    type:
+      - 'null'
+      - boolean
+    doc: send all output to stdout
+    inputBinding:
+      position: 1
+      prefix: Tz
+  - id: opt_TF_value
+    type:
+      - 'null'
+      - string
+    doc: report summary when n or more facets created (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: TF
+      separate: false
+  - id: opt_TP_value
+    type:
+      - 'null'
+      - string
+    doc: turn on tracing when point n added to hull (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: TP
+      separate: false
+  - id: opt_TM_value
+    type:
+      - 'null'
+      - string
+    doc: turn on tracing at merge n (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: TM
+      separate: false
+  - id: opt_TW_value
+    type:
+      - 'null'
+      - string
+    doc: 'trace merge facets when width > n (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: TW
+      separate: false
+  - id: opt_TR_value
+    type:
+      - 'null'
+      - string
+    doc: 'rerun qhull n times. Use with ''QJn'' (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: TR
+      separate: false
+  - id: opt_TV_value
+    type:
+      - 'null'
+      - string
+    doc: 'stop qhull after adding point n, -n for before (see TCn) (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: TV
+      separate: false
+  - id: opt_TC_value
+    type:
+      - 'null'
+      - string
+    doc: stop qhull after building cone for point n (see TVn) (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: TC
+      separate: false
+  - id: opt_C_value
+    type:
+      - 'null'
+      - string
+    doc: radius of centrum (roundoff added). Merge facets if non-convex (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: C
+      separate: false
+  - id: opt_A_value
+    type:
+      - 'null'
+      - string
+    doc: 'cosine of maximum angle. Merge facets if cosine > n or non-convex (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: A
+      separate: false
+  - id: opt_E_value
+    type:
+      - 'null'
+      - string
+    doc: max roundoff error for distance computation (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: E
+      separate: false
+  - id: opt_R_value
+    type:
+      - 'null'
+      - string
+    doc: 'randomly perturb computations by a factor of [1-n,1+n] (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: R
+      separate: false
+  - id: opt_V_value
+    type:
+      - 'null'
+      - string
+    doc: min distance above plane for a visible facet (default 3C-n or En) (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: V
+      separate: false
+  - id: opt_U_value
+    type:
+      - 'null'
+      - string
+    doc: 'max distance below plane for a new, coplanar point (default Vn) (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: U
+      separate: false
+  - id: opt_W_value
+    type:
+      - 'null'
+      - string
+    doc: 'min facet width for outside point (before roundoff, default 2Vn) (value n after the option letters)'
+    inputBinding:
+      position: 1
+      prefix: W
+      separate: false
+  - id: opt_f
+    type:
+      - 'null'
+      - boolean
+    doc: facet dump
+    inputBinding:
+      position: 1
+      prefix: f
+  - id: opt_G
+    type:
+      - 'null'
+      - boolean
+    doc: Geomview output (see below)
+    inputBinding:
+      position: 1
+      prefix: G
+  - id: opt_i
+    type:
+      - 'null'
+      - boolean
+    doc: vertices incident to each facet
+    inputBinding:
+      position: 1
+      prefix: i
+  - id: opt_m
+    type:
+      - 'null'
+      - boolean
+    doc: Mathematica output (2-d and 3-d)
+    inputBinding:
+      position: 1
+      prefix: m
+  - id: opt_o
+    type:
+      - 'null'
+      - boolean
+    doc: 'OFF format (dim, points and facets; Voronoi regions)'
+    inputBinding:
+      position: 1
+      prefix: o
+  - id: opt_n
+    type:
+      - 'null'
+      - boolean
+    doc: normals with offsets
+    inputBinding:
+      position: 1
+      prefix: n
+  - id: opt_p
+    type:
+      - 'null'
+      - boolean
+    doc: 'vertex coordinates or Voronoi vertices (coplanar points if ''Qc'')'
+    inputBinding:
+      position: 1
+      prefix: p
+  - id: opt_s
+    type:
+      - 'null'
+      - boolean
+    doc: summary (stderr)
+    inputBinding:
+      position: 1
+      prefix: s
+  - id: opt_Fa
+    type:
+      - 'null'
+      - boolean
+    doc: area for each facet
+    inputBinding:
+      position: 1
+      prefix: Fa
+  - id: opt_FA
+    type:
+      - 'null'
+      - boolean
+    doc: 'compute total area and volume for option ''s'''
+    inputBinding:
+      position: 1
+      prefix: FA
+  - id: opt_Fc
+    type:
+      - 'null'
+      - boolean
+    doc: count plus coplanar points for each facet
+    inputBinding:
+      position: 1
+      prefix: Fc
+  - id: opt_FC
+    type:
+      - 'null'
+      - boolean
+    doc: centrum or Voronoi center for each facet
+    inputBinding:
+      position: 1
+      prefix: FC
+  - id: opt_Fd
+    type:
+      - 'null'
+      - boolean
+    doc: use cdd format for input (homogeneous with offset first)
+    inputBinding:
+      position: 1
+      prefix: Fd
+  - id: opt_FD
+    type:
+      - 'null'
+      - boolean
+    doc: use cdd format for numeric output (offset first)
+    inputBinding:
+      position: 1
+      prefix: FD
+  - id: opt_FF
+    type:
+      - 'null'
+      - boolean
+    doc: facet dump without ridges
+    inputBinding:
+      position: 1
+      prefix: FF
+  - id: opt_Fi
+    type:
+      - 'null'
+      - boolean
+    doc: inner plane for each facet
+    inputBinding:
+      position: 1
+      prefix: Fi
+  - id: opt_FI
+    type:
+      - 'null'
+      - boolean
+    doc: ID of each facet
+    inputBinding:
+      position: 1
+      prefix: FI
+  - id: opt_Fm
+    type:
+      - 'null'
+      - boolean
+    doc: merge count for each facet (511 max)
+    inputBinding:
+      position: 1
+      prefix: Fm
+  - id: opt_FM
+    type:
+      - 'null'
+      - boolean
+    doc: Maple output (2-d and 3-d)
+    inputBinding:
+      position: 1
+      prefix: FM
+  - id: opt_Fn
+    type:
+      - 'null'
+      - boolean
+    doc: count plus neighboring facets for each facet
+    inputBinding:
+      position: 1
+      prefix: Fn
+  - id: opt_FN
+    type:
+      - 'null'
+      - boolean
+    doc: count plus neighboring facets for each point
+    inputBinding:
+      position: 1
+      prefix: FN
+  - id: opt_Fo
+    type:
+      - 'null'
+      - boolean
+    doc: outer plane (or max_outside) for each facet
+    inputBinding:
+      position: 1
+      prefix: Fo
+  - id: opt_FO
+    type:
+      - 'null'
+      - boolean
+    doc: options and precision constants
+    inputBinding:
+      position: 1
+      prefix: FO
+  - id: opt_Fp
+    type:
+      - 'null'
+      - boolean
+    doc: 'dim, count, and intersection coordinates (halfspace only)'
+    inputBinding:
+      position: 1
+      prefix: Fp
+  - id: opt_FP
+    type:
+      - 'null'
+      - boolean
+    doc: nearest vertex and distance for each coplanar point
+    inputBinding:
+      position: 1
+      prefix: FP
+  - id: opt_FQ
+    type:
+      - 'null'
+      - boolean
+    doc: command used for qhull
+    inputBinding:
+      position: 1
+      prefix: FQ
+  - id: opt_Fs
+    type:
+      - 'null'
+      - boolean
+    doc: 'summary: #int (8), dimension, #points, tot vertices, tot facets,'
+    inputBinding:
+      position: 1
+      prefix: Fs
+  - id: opt_FS
+    type:
+      - 'null'
+      - boolean
+    doc: 'sizes: #int (0)'
+    inputBinding:
+      position: 1
+      prefix: FS
+  - id: opt_Ft
+    type:
+      - 'null'
+      - boolean
+    doc: triangulation with centrums for non-simplicial facets (OFF format)
+    inputBinding:
+      position: 1
+      prefix: Ft
+  - id: opt_Fv
+    type:
+      - 'null'
+      - boolean
+    doc: count plus vertices for each facet
+    inputBinding:
+      position: 1
+      prefix: Fv
+  - id: opt_FV
+    type:
+      - 'null'
+      - boolean
+    doc: 'average of vertices (a feasible point for ''H'')'
+    inputBinding:
+      position: 1
+      prefix: FV
+  - id: opt_Fx
+    type:
+      - 'null'
+      - boolean
+    doc: extreme points (in order for 2-d)
+    inputBinding:
+      position: 1
+      prefix: Fx
+  - id: opt_Ga
+    type:
+      - 'null'
+      - boolean
+    doc: all points as dots
+    inputBinding:
+      position: 1
+      prefix: Ga
+  - id: opt_Gp
+    type:
+      - 'null'
+      - boolean
+    doc: coplanar points and vertices as radii
+    inputBinding:
+      position: 1
+      prefix: Gp
+  - id: opt_Gv
+    type:
+      - 'null'
+      - boolean
+    doc: vertices as spheres
+    inputBinding:
+      position: 1
+      prefix: Gv
+  - id: opt_Gi
+    type:
+      - 'null'
+      - boolean
+    doc: inner planes only
+    inputBinding:
+      position: 1
+      prefix: Gi
+  - id: opt_Gn
+    type:
+      - 'null'
+      - boolean
+    doc: no planes
+    inputBinding:
+      position: 1
+      prefix: Gn
+  - id: opt_Go
+    type:
+      - 'null'
+      - boolean
+    doc: outer planes only
+    inputBinding:
+      position: 1
+      prefix: Go
+  - id: opt_Gc
+    type:
+      - 'null'
+      - boolean
+    doc: centrums
+    inputBinding:
+      position: 1
+      prefix: Gc
+  - id: opt_Gh
+    type:
+      - 'null'
+      - boolean
+    doc: hyperplane intersections
+    inputBinding:
+      position: 1
+      prefix: Gh
+  - id: opt_Gr
+    type:
+      - 'null'
+      - boolean
+    doc: ridges
+    inputBinding:
+      position: 1
+      prefix: Gr
+  - id: opt_GD_value
+    type:
+      - 'null'
+      - string
+    doc: drop dimension n in 3-d and 4-d output (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: GD
+      separate: false
+  - id: opt_Gt
+    type:
+      - 'null'
+      - boolean
+    doc: 'for 3-d ''d'', transparent outer ridges'
+    inputBinding:
+      position: 1
+      prefix: Gt
+  - id: opt_PA_value
+    type:
+      - 'null'
+      - string
+    doc: keep n largest facets by area (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: PA
+      separate: false
+  - id: opt_Pg
+    type:
+      - 'null'
+      - boolean
+    doc: 'print good facets (needs ''QGn'' or ''QVn'')'
+    inputBinding:
+      position: 1
+      prefix: Pg
+  - id: opt_PF_value
+    type:
+      - 'null'
+      - string
+    doc: keep facets whose area is at least n (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: PF
+      separate: false
+  - id: opt_PG
+    type:
+      - 'null'
+      - boolean
+    doc: print neighbors of good facets
+    inputBinding:
+      position: 1
+      prefix: PG
+  - id: opt_PM_value
+    type:
+      - 'null'
+      - string
+    doc: keep n facets with most merges (value n after the option letters)
+    inputBinding:
+      position: 1
+      prefix: PM
+      separate: false
+  - id: opt_Po
+    type:
+      - 'null'
+      - boolean
+    doc: 'force output. If error, output neighborhood of facet'
+    inputBinding:
+      position: 1
+      prefix: Po
+  - id: opt_Pp
+    type:
+      - 'null'
+      - boolean
+    doc: do not report precision problems
+    inputBinding:
+      position: 1
+      prefix: Pp
+  - id: opt_TI
+    type:
+      - 'null'
+      - File
+    doc: input data from file, no spaces or single quotes
+    inputBinding:
+      position: 1
+      prefix: TI
+  - id: opt_TO
+    type:
+      - 'null'
+      - string
+    doc: output results to file, no spaces or single quotes
+    inputBinding:
+      position: 1
+      prefix: TO
+  - id: extra_options
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: 'Further options given as complete tokens, for example Qb0:-1 : Qbk:n (scale coord k so that low bound is n); QBk:n (scale coord k so that upper bound is n (QBk is 0.5)); Qbk:0Bk:0 (remove k-th coordinate from input); Pdk:n (drop facet if normal[k] <= n (default 0.0)); PDk:n (drop facet if normal[k] >= n)'
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error (summary with option s)
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: file written with the TO option
+    outputBinding:
+      glob: $(inputs.opt_TO)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qhull:2015.2--h2d50403_0
+stdin: $(inputs.points.path)
 stdout: qhull.out
+stderr: qhull.err

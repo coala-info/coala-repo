@@ -44,13 +44,18 @@ inputs:
       position: 101
       prefix: --use-ref-name
   - id: output_path
-    type: string?
+    type:
+      - 'null'
+      - string
     doc: output file where the JSON format RAD file will be written; if not 
       provided, the output will be written to standard out
     inputBinding:
       position: 102
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Text representation of the RAD file (written when no output file is given)
   - id: output
     type:
       - 'null'
@@ -58,9 +63,10 @@ outputs:
     doc: output file where the JSON format RAD file will be written; if not 
       provided, the output will be written to standard out
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path || '__none__')
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/radtk:0.2.0--ha6fb395_1
+stdout: radtk_view.out

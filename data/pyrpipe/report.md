@@ -1,5 +1,11 @@
 # pyrpipe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyrpipe | Not completed | pipeline, skipped: pyrpipe is a framework that runs a user-written RNA-seq workflow script |
+
 ## pyrpipe
 
 ### Tool Description

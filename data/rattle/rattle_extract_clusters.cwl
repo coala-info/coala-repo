@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rattle_extract_clusters
+baseCommand:
+  - rattle
+  - extract_clusters
 label: rattle_extract_clusters
 doc: "Extracts clusters from a fasta/fastq file based on a clusters file.\n\nTool
   homepage: https://github.com/comprna/RATTLE"
@@ -43,9 +45,7 @@ inputs:
       position: 101
       prefix: --min-reads
   - id: output_folder
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'output folder for fastx files (default: .)'
     inputBinding:
       position: 101
@@ -55,12 +55,17 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_folder_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: 'output folder for fastx files (default: .)'
     outputBinding:
       glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_folder)
+        entry: "$({class: 'Directory', listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rattle:1.0--h5ca1c30_0

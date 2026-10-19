@@ -1,5 +1,11 @@
 # quickmirseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quickmirseq_QuickMIRSeq.pl | Not completed | needs a species genome Bowtie index and a small RNA database built from large downloads; no small real set available |
+
 ## quickmirseq_QuickMIRSeq.pl
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # qgrs-cpp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qgrs-cpp_qgrs | PASS | same QGRS as the repo sample; only the title row and a comma differ from the old sample file |
+
 ## qgrs-cpp_qgrs
 
 ### Tool Description

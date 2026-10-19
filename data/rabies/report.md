@@ -1,5 +1,13 @@
 # rabies CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rabies_analysis | Not completed | needs a BIDS mouse fMRI dataset and brain templates (hundreds of MB); no small real data, and registration is too heavy for this machine |
+| rabies_confound_correction | Not completed | needs a BIDS mouse fMRI dataset and brain templates (hundreds of MB); no small real data, and registration is too heavy for this machine |
+| rabies_preprocess | Not completed | needs a BIDS mouse fMRI dataset and brain templates (hundreds of MB); no small real data, and registration is too heavy for this machine |
+
 ## rabies_preprocess
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # qualitymetrics CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qualitymetrics | PASS | image test data; both metadata outputs match the expected files; fixed name-value argument style and CV value |
+
 ## qualitymetrics
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # randfold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| randfold | PASS | human let-7a-1 hairpin gives MFE -33.0 and p-value 0.01 |
+
 ## randfold
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # raxml-ng CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| raxml-ng | PASS |  |
+
 ## raxml-ng
 
 ### Tool Description

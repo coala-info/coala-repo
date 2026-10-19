@@ -1,5 +1,11 @@
 # quasirecomb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quasirecomb | PASS | quasitools test HIV pol BAM, region 1000-1300 with K 1-2; BIC table and haplotype FASTA produced; rewrote options from the help (several were invented), -o output folder staged |
+
 ## quasirecomb
 
 ### Tool Description

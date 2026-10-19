@@ -2,104 +2,128 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: run_rcorrector.pl
 label: rcorrector_run_rcorrector.pl
-doc: "A k-mer based error correction tool for Illumina RNA-seq reads\n\nTool homepage:
-  https://github.com/mourisl/Rcorrector/"
+doc: "Rcorrector: error correction for Illumina RNA-seq reads.\n\nTool homepage: https://github.com/mourisl/Rcorrector/"
 inputs:
-  - id: interleaved_read
+  - id: single_end_reads
     type:
       - 'null'
-      - File
-    doc: interleaved fastq file
+      - type: array
+        items: File
+    doc: "comma separated files for single-end data sets"
     inputBinding:
-      position: 101
-      prefix: -i
-  - id: kmer_size
-    type:
-      - 'null'
-      - int
-    doc: k-mer size (<=32)
-    inputBinding:
-      position: 101
-      prefix: -k
-  - id: max_memory
-    type:
-      - 'null'
-      - string
-    doc: max memory to use (in GB)
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: prefix for output files
-    inputBinding:
-      position: 101
-      prefix: -p
+      prefix: "-s"
+      itemSeparator: ","
   - id: read1
     type:
       - 'null'
-      - File
-    doc: fastq file for read 1 (if paired-end)
+      - type: array
+        items: File
+    doc: "comma separated files for the first mate in the paired-end data sets"
     inputBinding:
-      position: 101
-      prefix: '-1'
+      prefix: "-1"
+      itemSeparator: ","
   - id: read2
     type:
       - 'null'
-      - File
-    doc: fastq file for read 2 (if paired-end)
+      - type: array
+        items: File
+    doc: "comma separated files for the second mate in the paired-end data sets"
     inputBinding:
-      position: 101
-      prefix: '-2'
-  - id: single_end_read
+      prefix: "-2"
+      itemSeparator: ","
+  - id: interleaved_reads
     type:
       - 'null'
-      - File
-    doc: fastq file for single-end read
+      - type: array
+        items: File
+    doc: "comma separated files for interleaved paired-end data sets"
     inputBinding:
-      position: 101
-      prefix: -s
-  - id: stdout_cor
+      prefix: "-i"
+      itemSeparator: ","
+  - id: kmer_length
     type:
       - 'null'
-      - boolean
-    doc: output corrected reads to stdout
+      - int
+    doc: "kmer length (<=32, default: 23)"
     inputBinding:
-      position: 101
-      prefix: --stdout
+      prefix: "-k"
+  - id: output_directory
+    type:
+      - 'null'
+      - string
+    doc: "output file directory (default: ./)"
+    inputBinding:
+      prefix: "-od"
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of threads to use
+    doc: "number of threads (default: 1)"
     inputBinding:
-      position: 101
-      prefix: -t
-  - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
-    inputBinding:
-      position: 102
-      prefix: --output-directory
-outputs:
-  - id: output_directory
+      prefix: "-t"
+  - id: max_corrections_per_window
     type:
       - 'null'
-      - Directory
-    doc: output directory
-    outputBinding:
-      glob: $(inputs.output_directory_path)
-  - id: prefix_files
+      - int
+    doc: "the maximum number of correction within k-bp window (default: 4)"
+    inputBinding:
+      prefix: "-maxcorK"
+  - id: weak_kmer_proportion
+    type:
+      - 'null'
+      - float
+    doc: "the proportion of kmers that are used to estimate weak kmer count threshold, lower for more divergent genome (default: 0.95)"
+    inputBinding:
+      prefix: "-wk"
+  - id: expected_kmers
+    type:
+      - 'null'
+      - string
+    doc: "expected number of kmers: does not affect the correctness of the program but affects the memory usage (default: 100000000)"
+    inputBinding:
+      prefix: "-ek"
+  - id: stdout_reads
+    type:
+      - 'null'
+      - boolean
+    doc: "output the corrected reads to stdout (default: not used)"
+    inputBinding:
+      prefix: "-stdout"
+  - id: temp_directory
+    type:
+      - 'null'
+      - string
+    doc: "directory for temporary files (default: ./)"
+    inputBinding:
+      prefix: "-tmpd"
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: "output some correction information to stdout (default: not used)"
+    inputBinding:
+      prefix: "-verbose"
+  - id: stage
+    type:
+      - 'null'
+      - int
+    doc: "start from which stage (default: 0): 0 storing kmers in bloom filter; 1 count kmers showed up in bloom filter; 2 dumping kmer counts into a jf_dump file; 3 error correction"
+    inputBinding:
+      prefix: "-stage"
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the corrected reads when stdout_reads is set)
+  - id: corrected_reads
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in prefix
+    doc: Corrected read files (*.cor.fq / *.cor.fa)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$((inputs.output_directory ? inputs.output_directory + '/' : '') + '*.cor.f*')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rcorrector:1.0.7--pl5321h5ca1c30_2
+stdout: rcorrector_stdout.txt

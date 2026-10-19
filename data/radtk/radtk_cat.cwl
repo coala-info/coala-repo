@@ -7,11 +7,14 @@ label: radtk_cat
 doc: "concatenate the records in a sequence of RAD files\n\nTool homepage: https://github.com/COMBINE-lab/radtk"
 inputs:
   - id: inputs
-    type: string
-    doc: "',' separated list of input RAD files"
+    type:
+      type: array
+      items: File
+    doc: input RAD files (passed as a ',' separated list)
     inputBinding:
       position: 101
       prefix: --inputs
+      itemSeparator: ','
   - id: output_path
     type: string
     doc: output RAD file

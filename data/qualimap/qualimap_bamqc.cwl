@@ -147,7 +147,7 @@ inputs:
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -outdir
   - id: output_file_path
     type:
       - 'null'
@@ -186,7 +186,8 @@ outputs:
       - File
     doc: Output file for PDF report
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: |
+        ${ return (inputs.output_dir_path ? inputs.output_dir_path + "/" : "") + inputs.output_file_path; }
 requirements:
   - class: InlineJavascriptRequirement
 hints:

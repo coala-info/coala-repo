@@ -2,13 +2,16 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pyrodigal-rv
 label: pyrodigal-rv
-doc: "pyrodigal-rv [-a trans_file] [-c] [-d nuc_file] [-f output_type]\n         \
-  \           [-g tr_table] [-i input_file] [-m] [-n] [-o output_file]\n         \
-  \           [-p mode] [-s start_file] [-t training_file] [-j jobs]\n           \
-  \         [-h] [-V] [--min-gene MIN_GENE]\n                    [--min-edge-gene
-  MIN_EDGE_GENE]\n                    [--max-overlap MAX_OVERLAP] [--no-stop-codon]\n\
-  \                    [--pool {thread,process}]\n\nTool homepage: https://github.com/LanderDC/pyrodigal-rv"
+doc: "Find genes in nucleotide sequences of RNA viruses (Pyrodigal-rv).\n\nTool homepage: https://github.com/LanderDC/pyrodigal-rv"
 inputs:
+  - id: translation_output_path
+    type:
+      - 'null'
+      - string
+    doc: Write protein translations to the selected file.
+    inputBinding:
+      position: 101
+      prefix: -a
   - id: closed_ends
     type:
       - 'null'
@@ -17,59 +20,102 @@ inputs:
     inputBinding:
       position: 101
       prefix: -c
-  - id: force_motif_scan
+  - id: nucleotide_output_path
     type:
       - 'null'
-      - boolean
-    doc: "Bypass Shine-Dalgarno trainer and force a full motif\n                 \
-      \       scan."
+      - string
+    doc: Write nucleotide sequences of genes to the selected file.
     inputBinding:
       position: 101
-      prefix: -n
-  - id: input_file
+      prefix: -d
+  - id: format
+    type:
+      - 'null'
+      - string
+    doc: Select output format (gbk or gff).
+    inputBinding:
+      position: 101
+      prefix: -f
+  - id: translation_table
+    type:
+      - 'null'
+      - int
+    doc: Specify a translation table to use.
+    inputBinding:
+      position: 101
+      prefix: -g
+  - id: input
     type:
       - 'null'
       - File
-    doc: Specify FASTA input file.
+    doc: Specify FASTA input file (plain or gzipped).
     inputBinding:
       position: 101
       prefix: -i
+  - id: mask
+    type:
+      - 'null'
+      - boolean
+    doc: Treat runs of N as masked sequence; don't build genes across them.
+    inputBinding:
+      position: 101
+      prefix: -m
+  - id: nosd
+    type:
+      - 'null'
+      - boolean
+    doc: Bypass Shine-Dalgarno trainer and force a full motif scan.
+    inputBinding:
+      position: 101
+      prefix: -n
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Specify output file.
+    inputBinding:
+      position: 101
+      prefix: -o
+  - id: procedure
+    type:
+      - 'null'
+      - string
+    doc: Select procedure (single or meta).
+    inputBinding:
+      position: 101
+      prefix: -p
+  - id: potential_genes_path
+    type:
+      - 'null'
+      - string
+    doc: Write all potential genes (with scores) to the selected file.
+    inputBinding:
+      position: 101
+      prefix: -s
+  - id: training_file
+    type:
+      - 'null'
+      - File
+    doc: Read and use the specified training file.
+    inputBinding:
+      position: 101
+      prefix: -t
+  - id: training_output_path
+    type:
+      - 'null'
+      - string
+    doc: Write a training file to this path (a training file is written when none exists).
+    inputBinding:
+      position: 101
+      prefix: -t
   - id: jobs
     type:
       - 'null'
       - int
-    doc: "The number of threads to use if input contains\n                       \
-      \ multiple sequences."
+    doc: The number of threads to use if input contains multiple sequences.
     inputBinding:
       position: 101
-      prefix: --jobs
-  - id: masked_sequence
-    type:
-      - 'null'
-      - boolean
-    doc: "Treat runs of N as masked sequence; don't build genes\n                \
-      \        across them."
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: max_overlap
-    type:
-      - 'null'
-      - int
-    doc: "The maximum number of nucleotides that can overlap\n                   \
-      \     between two genes on the same strand. This must be\n                 \
-      \       lower or equal to the minimum gene length."
-    inputBinding:
-      position: 101
-      prefix: --max-overlap
-  - id: min_edge_gene
-    type:
-      - 'null'
-      - int
-    doc: The minimum edge gene length.
-    inputBinding:
-      position: 101
-      prefix: --min-edge-gene
+      prefix: -j
   - id: min_gene
     type:
       - 'null'
@@ -78,96 +124,79 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min-gene
-  - id: mode
+  - id: min_edge_gene
     type:
       - 'null'
-      - string
-    doc: Select procedure.
+      - int
+    doc: The minimum edge gene length.
     inputBinding:
       position: 101
-      prefix: -p
+      prefix: --min-edge-gene
+  - id: max_overlap
+    type:
+      - 'null'
+      - int
+    doc: The maximum number of nucleotides that can overlap between two genes on the same strand. This must be lower or equal to the minimum gene length.
+    inputBinding:
+      position: 101
+      prefix: --max-overlap
   - id: no_stop_codon
     type:
       - 'null'
       - boolean
-    doc: "Disables translation of stop codons into star\n                        characters
-      (*) for complete genes."
+    doc: Disables translation of stop codons into star characters (*) for complete genes.
     inputBinding:
       position: 101
       prefix: --no-stop-codon
-  - id: nuc_file
-    type:
-      - 'null'
-      - File
-    doc: "Write nucleotide sequences of genes to the selected\n                  \
-      \      file."
-    inputBinding:
-      position: 101
-      prefix: -d
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Specify output file.
-    inputBinding:
-      position: 101
-      prefix: -o
-  - id: output_type
-    type:
-      - 'null'
-      - string
-    doc: Select output format.
-    inputBinding:
-      position: 101
-      prefix: -f
   - id: pool
     type:
       - 'null'
       - string
-    doc: "The sort of pool to use to process genomes in\n                        parallel.
-      Processes may be faster than threads on some\n                        machines,
-      refer to documentation."
+    doc: The sort of pool to use to process genomes in parallel (thread or process).
     inputBinding:
       position: 101
       prefix: --pool
-  - id: start_file
-    type:
-      - 'null'
-      - File
-    doc: "Write all potential genes (with scores) to the\n                       \
-      \ selected file."
-    inputBinding:
-      position: 101
-      prefix: -s
-  - id: tr_table
-    type:
-      - 'null'
-      - string
-    doc: Specify a translation table to use.
-    inputBinding:
-      position: 101
-      prefix: -g
-  - id: training_file
-    type:
-      - 'null'
-      - File
-    doc: "Write a training file (if none exists); otherwise,\n                   \
-      \     read and use the specified training file."
-    inputBinding:
-      position: 101
-      prefix: -t
-  - id: trans_file
-    type:
-      - 'null'
-      - File
-    doc: Write protein translations to the selected file.
-    inputBinding:
-      position: 101
-      prefix: -a
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (gene predictions when no output file is given)
+  - id: output
+    type:
+      - 'null'
+      - File
+    doc: Output file.
+    outputBinding:
+      glob: $(inputs.output_path)
+  - id: translation_output
+    type:
+      - 'null'
+      - File
+    doc: Protein translations.
+    outputBinding:
+      glob: $(inputs.translation_output_path)
+  - id: nucleotide_output
+    type:
+      - 'null'
+      - File
+    doc: Nucleotide sequences of genes.
+    outputBinding:
+      glob: $(inputs.nucleotide_output_path)
+  - id: potential_genes
+    type:
+      - 'null'
+      - File
+    doc: All potential genes with scores.
+    outputBinding:
+      glob: $(inputs.potential_genes_path)
+  - id: training_output
+    type:
+      - 'null'
+      - File
+    doc: Training file.
+    outputBinding:
+      glob: $(inputs.training_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyrodigal-rv:0.1.0--pyh7e72e81_0

@@ -1,5 +1,11 @@
 # qiskit-xyz2pdb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qiskit-xyz2pdb | PASS | synthetic data: 7-residue XYZ chain; fixed output collection (PDB file) and out-folder creation |
+
 ## qiskit-xyz2pdb
 
 ### Tool Description

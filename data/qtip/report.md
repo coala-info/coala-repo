@@ -1,5 +1,11 @@
 # qtip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qtip | Failed | image problem: image has no aligner (bowtie2, bwa or snap), so qtip cannot align reads; index input fixed to a prefix string |
+
 ## qtip
 
 ### Tool Description

@@ -25,7 +25,7 @@ inputs:
   - id: fetch_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: The path to a directory for storing fetched datasets.
     inputBinding:
       position: 102
@@ -51,6 +51,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: fetched_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the fetched datasets
+    outputBinding:
+      glob: $(inputs.fetch_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyroe:0.9.3--pyhdfd78af_0

@@ -1,5 +1,16 @@
 # qimba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qimba_check-tab | PASS |  |
+| qimba_dada2-split | PASS | synthetic data: 20 real ASV sequences from the QIIME 2 moving pictures tutorial with simulated counts |
+| qimba_derep | PASS |  |
+| qimba_make-mapping | Failed | tool bug: the --output option writes only the sample names without read paths (stdout mode works) |
+| qimba_merge | PASS |  |
+| qimba_show-samples | PASS |  |
+
 ## qimba_make-mapping
 
 ### Tool Description

@@ -1,5 +1,14 @@
 # pyscenic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyscenic_add_cor | PASS |  |
+| pyscenic_aucell | PASS |  |
+| pyscenic_ctx | PASS | synthetic data: planted JUN adjacency made from the best-ranked genes of the JUN motif in the small real test database (the tiny 5-motif database gave no enrichment for real adjacencies); thresholds relaxed, JUN regulon enriched as expected; the GMT module-file input crashes and then hangs (tool bug) |
+| pyscenic_grn | PASS |  |
+
 ## pyscenic_grn
 
 ### Tool Description

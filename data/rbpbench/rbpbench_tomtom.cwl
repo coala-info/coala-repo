@@ -34,10 +34,21 @@ inputs:
       position: 101
       prefix: --fe-pval
   - id: input_file
-    type: string
-    doc: Provide MEME XML style file path or (regular expression) sequence to 
-      search for similar motifs in database. Currently only square bracket 
-      containing regexes are supported
+    type:
+      - 'null'
+      - string
+    doc: (Regular expression) sequence to search for similar motifs in database.
+      Currently only square bracket containing regexes are supported. Give
+      either this or input_meme_file.
+    inputBinding:
+      position: 101
+      prefix: --in
+  - id: input_meme_file
+    type:
+      - 'null'
+      - File
+    doc: MEME XML style motif file to search for similar motifs in database. Give
+      either this or input_file.
     inputBinding:
       position: 101
       prefix: --in

@@ -9,6 +9,7 @@ inputs:
     doc: path to recipe file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: debug
     type:
       - 'null'
@@ -21,7 +22,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output directory
+    doc: output directory (default ragout-out)
+    default: ragout-out
     inputBinding:
       position: 102
       prefix: --outdir
@@ -73,6 +75,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: recipe_dependencies
+    type:
+      - 'null'
+      - type: array
+        items:
+          - File
+          - Directory
+    doc: Files and folders named in the recipe (references and target contigs), staged next to the recipe file so the relative paths resolve
 outputs:
   - id: stdout
     type: stdout
@@ -84,6 +94,11 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.recipe_file)
+      - $(inputs.recipe_dependencies)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ragout:2.3--py36hc9558a2_0

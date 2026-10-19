@@ -50,11 +50,12 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --file-paths
     doc: The path to an quantification file. To provide multiple input files, 
-      use `-i input1.sf -i input2.sf ...`.
+      give several files; each one is passed as its own `--file-paths` option.
     inputBinding:
       position: 101
-      prefix: --file-paths
   - id: gene_level
     type:
       - 'null'
@@ -74,16 +75,16 @@ inputs:
   - id: ignore_after_bar
     type:
       - 'null'
-      - boolean
-    doc: Whether to split the transcript id after the bar character (`|`).
+      - string
+    doc: Whether to split the transcript id after the bar character (`|`) (true or false).
     inputBinding:
       position: 101
       prefix: --ignore-after-bar
   - id: ignore_transcript_version
     type:
       - 'null'
-      - boolean
-    doc: Whether to ignore the transcript version.
+      - string
+    doc: Whether to ignore the transcript version (true or false).
     inputBinding:
       position: 101
       prefix: --ignore-transcript-version
@@ -147,8 +148,8 @@ inputs:
       prefix: --output_path
 outputs:
   - id: output_path
-    type: Directory
-    doc: The output path to save the resulting counts to.
+    type: File
+    doc: The output file with the resulting counts.
     outputBinding:
       glob: $(inputs.output_path_path)
 requirements:

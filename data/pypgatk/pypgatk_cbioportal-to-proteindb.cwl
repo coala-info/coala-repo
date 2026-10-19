@@ -19,7 +19,7 @@ inputs:
   - id: clinical_sample_file
     type:
       - 'null'
-      - string
+      - File
     doc: File to get tissue type from for the samples in input_mutation file
     inputBinding:
       position: 101
@@ -27,7 +27,7 @@ inputs:
   - id: config_file
     type:
       - 'null'
-      - string
+      - File
     doc: Configuration for cbioportal to proteindb tool
     inputBinding:
       position: 101
@@ -43,7 +43,7 @@ inputs:
   - id: input_cds
     type:
       - 'null'
-      - string
+      - File
     doc: CDS genes from ENSEMBL database
     inputBinding:
       position: 101
@@ -51,7 +51,7 @@ inputs:
   - id: input_mutation
     type:
       - 'null'
-      - string
+      - File
     doc: Cbioportal mutation file
     inputBinding:
       position: 101

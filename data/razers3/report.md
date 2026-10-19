@@ -1,5 +1,11 @@
 # razers3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| razers3 | PASS |  |
+
 ## razers3
 
 ### Tool Description

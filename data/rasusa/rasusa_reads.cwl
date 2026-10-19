@@ -111,18 +111,24 @@ inputs:
       position: 102
       prefix: -v
   - id: output_filepaths_path
-    type: string
-    doc: Output or path parameter `output_filepaths_path`
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --output
+    doc: "Output filepath(s); stdout if not present. For paired Illumina give two names (the flag is passed once per name), in the same order as the input - e.g., R1 then R2. This option is required for paired input."
     inputBinding:
       position: 103
-      prefix: --output-filepaths
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the subsampled reads when no output file is given)
   - id: output_filepaths
-    type: File
-    doc: "Output filepath(s); stdout if not present.\n          \n          For paired
-      Illumina pass this flag twice `-o o1.fq -o o2.fq`\n          \n          NOTE:
-      The order of the pairs is assumed to be the same as the input - e.g., R1 then
-      R2.\n          \n          This option is required for paired input."
+    type:
+      type: array
+      items: File
+    doc: Subsampled read file(s)
     outputBinding:
       glob: $(inputs.output_filepaths_path)
 requirements:
@@ -130,3 +136,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rasusa:3.0.0--h54198d6_0
+stdout: rasusa_reads_stdout.txt

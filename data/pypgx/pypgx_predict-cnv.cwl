@@ -25,12 +25,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: --cnv-caller
+  - id: pypgx_bundle
+    type:
+      - 'null'
+      - Directory
+    doc: 'Path to the pypgx-bundle directory (git clone of the version matching PyPGx). It is passed to the tool in the PYPGX_BUNDLE environment variable, because the default home directory location does not exist in the container.'
 outputs:
   - id: out_cnv_calls
     type: File
     doc: Output archive file with the semantic type SampleTable[CNVCalls].
     outputBinding:
       glob: '$(inputs.cnv_calls)'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: PYPGX_BUNDLE
+        envValue: '$(inputs.pypgx_bundle ? inputs.pypgx_bundle.path : "/pypgx-bundle")'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

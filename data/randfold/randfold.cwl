@@ -7,8 +7,8 @@ doc: "Performs randomizations on a sequence file to assess statistical significa
 inputs:
   - id: method
     type: string
-    doc: 'The randomization method to use. Options are: -s (simple mononucleotide
-      shuffling), -d (dinucleotide shuffling), -m (markov chain 1 shuffling).'
+    doc: 'The randomization method flag: -s (simple mononucleotide shuffling), -d
+      (dinucleotide shuffling) or -m (markov chain 1 shuffling).'
     inputBinding:
       position: 1
   - id: file_name
@@ -21,30 +21,6 @@ inputs:
     doc: The number of randomizations to perform.
     inputBinding:
       position: 3
-  - id: dinucleotide_shuffling
-    type:
-      - 'null'
-      - boolean
-    doc: Use dinucleotide shuffling method.
-    inputBinding:
-      position: 104
-      prefix: -d
-  - id: markov_chain_shuffling
-    type:
-      - 'null'
-      - boolean
-    doc: Use markov chain 1 shuffling method.
-    inputBinding:
-      position: 104
-      prefix: -m
-  - id: simple_shuffling
-    type:
-      - 'null'
-      - boolean
-    doc: Use simple mononucleotide shuffling method.
-    inputBinding:
-      position: 104
-      prefix: -s
 outputs:
   - id: stdout
     type: stdout

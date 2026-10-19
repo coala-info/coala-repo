@@ -1,5 +1,11 @@
 # query_phenomizer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| query_phenomizer | Not completed | needs a Phenomizer web service account (username and password); made -o optional, added stdout and network access |
+
 ## query_phenomizer
 
 ### Tool Description

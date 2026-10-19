@@ -1,5 +1,11 @@
 # racon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| racon | PASS |  |
+
 ## racon
 
 ### Tool Description

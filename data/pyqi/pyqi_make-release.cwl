@@ -4,7 +4,7 @@ baseCommand:
   - pyqi
   - make-release
 label: pyqi_make-release
-doc: "Do all the things for a release\n\nTool homepage: https://github.com/qir-alliance/pyqir"
+doc: "Do all the things for a release\n\nTool homepage: https://github.com/biocore/pyqi"
 inputs:
   - id: package_name
     type: string

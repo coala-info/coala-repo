@@ -61,12 +61,17 @@ inputs:
       position: 102
       prefix: --verbose
   - id: output_filename_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Specify the path to a file for storing the phenomizer output.
     inputBinding:
       position: 103
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (phenomizer result when no output file is given)
   - id: output_filename
     type:
       - 'null'
@@ -76,6 +81,9 @@ outputs:
       glob: $(inputs.output_filename_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/query_phenomizer:1.2.1--pyh7cba7a3_0
+stdout: query_phenomizer.out

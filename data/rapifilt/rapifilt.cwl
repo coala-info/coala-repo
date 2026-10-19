@@ -103,18 +103,18 @@ inputs:
       prefix: -w
   - id: output_fastq_file_path
     type: string
-    doc: Desired fastq output file. If not specified to stdout
+    doc: Output file name prefix. The tool writes <prefix>.fastq (or .fasta with -f), <prefix>_bad.fastq (filtered reads) and <prefix>_stat.txt
     inputBinding:
       position: 102
       prefix: -o
 outputs:
   - id: output_fastq_file
     type:
-      - 'null'
-      - File
-    doc: Desired fastq output file. If not specified to stdout
+      type: array
+      items: File
+    doc: Filtered reads, rejected reads and per-base quality statistics written with the output prefix
     outputBinding:
-      glob: $(inputs.output_fastq_file_path)
+      glob: $(inputs.output_fastq_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

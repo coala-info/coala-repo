@@ -1,69 +1,94 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pysradb_download
+baseCommand:
+  - pysradb
+  - download
 label: pysradb_download
-doc: "Download SRA data. Accepts a list of accession IDs from stdin or a file.\n\n\
-  Tool homepage: https://github.com/saketkc/pysradb"
+doc: "Download SRA data (runs of an SRA project, experiment or GEO series).\n\nTool
+  homepage: https://github.com/saketkc/pysradb"
 inputs:
-  - id: accession_ids
-    type:
-      type: array
-      items: string
-    doc: List of SRA accession IDs (e.g., SRR12345, SRP67890). Can be provided 
-      via stdin or a file.
-    inputBinding:
-      position: 1
-  - id: force
-    type:
-      - 'null'
-      - boolean
-    doc: Overwrite existing files if they are incomplete.
-    inputBinding:
-      position: 102
-      prefix: --force
-  - id: output_dir
+  - id: out_dir
     type:
       - 'null'
       - string
-    doc: Directory to save downloaded files. Defaults to the current directory.
+    doc: Output directory root
     inputBinding:
-      position: 102
+      position: 101
       prefix: --out-dir
-  - id: skip_metadata
+  - id: srx
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Download only these SRX(s)
+    inputBinding:
+      position: 101
+      prefix: --srx
+  - id: srp
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: SRP ID
+    inputBinding:
+      position: 101
+      prefix: --srp
+  - id: geo
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: GEO ID
+    inputBinding:
+      position: 101
+      prefix: --geo
+  - id: skip_confirmation
     type:
       - 'null'
       - boolean
-    doc: Skip downloading metadata files (e.g., .info, .sra.runinfo.xml).
+    doc: Skip confirmation
+    default: true
     inputBinding:
-      position: 102
-      prefix: --skip-metadata
+      position: 101
+      prefix: --skip-confirmation
+  - id: use_ascp
+    type:
+      - 'null'
+      - boolean
+    doc: Use aspera instead of wget
+    inputBinding:
+      position: 101
+      prefix: --use_ascp
+  - id: col
+    type:
+      - 'null'
+      - string
+    doc: Specify column to download
+    inputBinding:
+      position: 101
+      prefix: --col
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of parallel download threads. Defaults to 1.
+    doc: Number of threads
     inputBinding:
-      position: 102
+      position: 101
       prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
-    inputBinding:
-      position: 102
-      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir_dir
+  - id: downloaded_dir
     type:
       - 'null'
       - Directory
-    doc: Directory to save downloaded files. Defaults to the current directory.
+    doc: Output directory with the downloaded data
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.out_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pysradb:2.5.1--pyhdfd78af_0

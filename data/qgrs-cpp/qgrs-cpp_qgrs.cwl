@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qgrs-cpp_qgrs
+baseCommand: qgrs
 label: qgrs-cpp_qgrs
 doc: "Finds and analyzes G-quadruplexes (QGRS) in a DNA sequence.\n\nTool homepage:
   https://github.com/freezer333/qgrs-cpp"
@@ -71,12 +71,17 @@ inputs:
       position: 101
       prefix: -g
   - id: output_filename_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: '[output filename]  write output to file as specified (defaults to stdout)'
     inputBinding:
       position: 102
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the QGRS table when -o is not given)
   - id: output_filename
     type:
       - 'null'
@@ -89,3 +94,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qgrs-cpp:1.0--h503566f_5
+stdout: qgrs-cpp_qgrs.out

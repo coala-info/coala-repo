@@ -1,5 +1,11 @@
 # raven-assembler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| raven-assembler | PASS |  |
+
 ## raven-assembler
 
 ### Tool Description

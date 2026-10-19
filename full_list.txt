@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 11568; PASS: 8980; Failed: 1426; Not completed: 1162
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 11897; PASS: 9256; Failed: 1451; Not completed: 1190
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -11385,6 +11385,7 @@ pxblat	pxblat_server_stop	PASS	added network access; ran against a pxblat server
 pxblat	pxblat_twobittofa	PASS	fasta from the repo test 2bit matches the source sequence
 py2neo	py2neo_evaluate	Not completed	needs a running Neo4j server (connection refused without one); fixed baseCommand to py2neo evaluate and added network access
 py2neo	py2neo_run	Not completed	needs a running Neo4j server (connection refused without one); fixed baseCommand to py2neo run and added network access
+py_fasta_validator	py_fasta_validator	PASS	
 pyani	pyani_anib	Failed	tool bug: pyani anib raises NotImplementedError in this build (0.3.0-alpha) after fragmenting the genomes
 pyani	pyani_aniblastall	Failed	tool bug: pyani aniblastall raises NotImplementedError in this build (0.3.0-alpha)
 pyani	pyani_anim	PASS	3 real Blochmannia genomes: ANI about 0.83, same values as the legacy script
@@ -11568,3 +11569,331 @@ pynteny	pynteny_build	PASS	real E. coli GenBank gives the same peptide database 
 pynteny	pynteny_download	Not completed	downloads the 460 MB PGAP HMM database, over the 200 MB test budget
 pynteny	pynteny_parse	PASS	gene symbols translated to HMM groups with the test metadata
 pynteny	pynteny_search	Failed	tool bug: with --gene_ids or HMM-group structures (a|b) the search silently returns no hits (checked on E. coli leu operon); plain HMM names find the expected 3 genes
+pyonsite	pyonsite_all	Not completed	LucXor step needs at least 50 high-scoring phospho PSMs; the small real data sets (OpenMS LuciPHOr2 test, bigbio onsite rep1) have fewer and the all command has no option to lower it
+pyonsite	pyonsite_ascore	PASS	ran on OpenMS LuciPHOr2 test mzML and idXML (8 phospho PSMs); AScore scores written; note --threads 2 hangs
+pyonsite	pyonsite_lucxor	PASS	ran on OpenMS LuciPHOr2 test mzML and idXML with min-num-psms-model 2 and modeling-score-threshold 0; LuciPHOr2 scores and FLR written
+pyonsite	pyonsite_phosphors	PASS	ran on OpenMS LuciPHOr2 test mzML and idXML (8 phospho PSMs); PhosphoRS scores written; note --threads 2 hangs
+pypairs	pypairs_cyclone	Failed	image problem: python module click is missing, so cyclone stops at import (options rewritten from the tool source)
+pypairs	pypairs_sandbag	Failed	image problem: python module click is missing, so sandbag stops at import (new CWL written from the tool source)
+pypgatk	pypgatk_blast_get_position	PASS	ran on py-pgatk v0.0.24 test PSM table and reference proteins; canonical, non-canonical and variant positions written (the newer repo test file lacks the PSM_ID column the tool needs)
+pypgatk	pypgatk_cbioportal-downloader	Failed	tool bug: the download host is fixed in the code (cbioportal-datahub.s3.amazonaws.com, config cannot change it) and now answers HTTP 403, so no study downloads; list_studies works
+pypgatk	pypgatk_cbioportal-to-proteindb	PASS	ran on py-pgatk v0.0.24 cBioPortal mutations and clinical file; CDS FASTA cut from the repo transcript file by its CDS header; 6 checked amino acid changes match
+pypgatk	pypgatk_cosmic-downloader	Not completed	needs a COSMIC account (username and password); CWL rewritten from the help (old file had invented --token option)
+pypgatk	pypgatk_cosmic-to-proteindb	PASS	ran on py-pgatk v0.0.24 COSMIC test mutations and gene FASTA; HRAS G13R, G13S, G12D proteins correct (the tool needs the old COSMIC column names)
+pypgatk	pypgatk_dnaseq-to-proteindb	PASS	ran on py-pgatk GENCODE test transcripts; OR4F5 protein translated correctly
+pypgatk	pypgatk_ensembl-check	PASS	ran on py-pgatk test proteins and on the vcf-to-proteindb output; stop codon splitting and min length filter work
+pypgatk	pypgatk_ensembl-downloader	PASS	downloaded the turkey (9103) protein FASTA from Ensembl, 28295 proteins, and wrote the URL list with url_file; NetworkAccess added; Ensembl REST sometimes answers 500 and the tool then fails
+pypgatk	pypgatk_generate-decoy	PASS	ran protein-reverse and decoypyrat on py-pgatk HRAS test proteins; decoys correct; temp_file changed from File to string
+pypgatk	pypgatk_mztab_class_fdr	Not completed	no real mzTab file with Percolator scores and decoys available (project has only the PSM table, not the full mzTab); CWL checked against source
+pypgatk	pypgatk_peptide-class-fdr	PASS	ran on nf-core HepG2 comet idXML (1078 PSMs to 241 at default FDR), global and class FDR modes; note --psm-pep-fdr-cutoff given on the command line crashes (string compared with number)
+pypgatk	pypgatk_threeframe-translation	PASS	new CWL; ran on py-pgatk GENCODE test transcripts; 10 transcripts gave 30 frames, frame 1 checked by hand
+pypgatk	pypgatk_validate_peptides	PASS	ran both modes on py-pgatk v0.0.24 test mzML files and PSM tables (mzTab-style with mzml_files, MSGF with mzml_path); fragment ion support columns written; mzml_path changed to Directory and mzml_files joined with commas
+pypgatk	pypgatk_vcf-to-proteindb	PASS	ran on py-pgatk Ensembl OR11H1 test VCF, FASTA and GTF; 10 variant proteins checked (start-lost and missense changes correct); GTF staged writable because the tool writes a .db beside it
+pypgx	pypgx_call-genotypes	PASS	genotypes HG00436 *2x2/*71, HG00589 *2/*21, NA18973 *2/*21 from alleles and CNV calls (HG00436 and HG00589 match GeT-RM)
+pypgx	pypgx_call-phenotypes	PASS	phenotypes from genotypes: Indeterminate and two Intermediate Metabolizers
+pypgx	pypgx_combine-results	PASS	combined genotypes, phenotypes, alleles and CNV calls into one results table
+pypgx	pypgx_compare-genotypes	PASS	compared results with itself: genotype and CNV concordance 3 of 3 (no second real result set with the same sample names)
+pypgx	pypgx_compute-control-statistics	PASS	VDR control statistics from 3 real GRCh38 BAM slices; mean depth 34 to 40, as expected for 30x data
+pypgx	pypgx_compute-copy-number	PASS	copy number from read depth and VDR statistics; HG00436 about 2 to 4 copies over CYP2D6, consistent with its known duplication
+pypgx	pypgx_compute-target-depth	PASS	CYP2D6 read depth from 3 real GRCh38 BAM slices; depth about 36 to 48 at the first positions
+pypgx	pypgx_create-consolidated-vcf	PASS	consolidated imported and phased variants into one archive
+pypgx	pypgx_create-input-vcf	PASS	called 156 CYP2D6 variants in 3 real GRCh38 1000 Genomes BAM slices with a chr22 reference; .tbi output added
+pypgx	pypgx_create-regions-bed	PASS	BED for CYP2D6 and CYP2C19 on GRCh38 matches the PyPGx gene table
+pypgx	pypgx_estimate-phase-beagle	PASS	phased 139 CYP2D6 variants with Beagle and the 1KGP bundle panel; genotypes shown as 0|1; bundle input added
+pypgx	pypgx_filter-samples	PASS	kept 2 of 3 samples in the results archive
+pypgx	pypgx_import-read-depth	PASS	CYP2D6 read depth imported from the depth-of-coverage archive
+pypgx	pypgx_import-variants	PASS	imported CYP2D6 variants from the input VCF (.tbi staged); archive VcfFrame[Imported]
+pypgx	pypgx_plot-bam-copy-number	PASS	PNG with fitted copy number line written for HG00436
+pypgx	pypgx_plot-bam-read-depth	PASS	PNG written for HG00436; plot_dir input added (renamed from path) and output folder created
+pypgx	pypgx_plot-cn-af	PASS	PNG with copy number and allele fraction written for HG00436; copy number rises over CYP2D6 as expected for its duplication
+pypgx	pypgx_plot-vcf-allele-fraction	PASS	PNG with allele fractions written for HG00436
+pypgx	pypgx_plot-vcf-read-depth	PASS	PNG written for HG00436 from a bcftools mpileup VCF with FORMAT/DP; a VCF without FORMAT/DP gives an empty plot
+pypgx	pypgx_predict-alleles	PASS	predicted candidate star alleles from consolidated variants
+pypgx	pypgx_predict-cnv	PASS	CNV calls with the bundle CYP2D6 caller: HG00436 WholeDup1, other two Normal; bundle passed with PYPGX_BUNDLE (input added)
+pypgx	pypgx_prepare-depth-of-coverage	PASS	ran on 3 real GRCh38 BAM slices for CYP2D6; depth archive used by later steps
+pypgx	pypgx_print-data	PASS	printed the VDR statistics table and the CYP2D6 read depth table
+pypgx	pypgx_print-metadata	PASS	printed gene, assembly, semantic type and platform of a read depth archive
+pypgx	pypgx_run-chip-pipeline	PASS	CYP3A5 pipeline on the pypgx-data Coriell chip VCF (GRCh37, 355 samples); *1/*1, *1/*3, *3/*3 called with matching phenotypes
+pypgx	pypgx_run-long-read-pipeline	Not completed	no real long-read phased VCF available; .tbi staging added to the CWL
+pypgx	pypgx_run-ngs-pipeline	PASS	CYP2D6 pipeline on the 3 BAM-derived inputs with the bundle (PYPGX_BUNDLE); results equal the step-by-step run
+pypgx	pypgx_slice-bam	PASS	sliced a real GRCh38 1000 Genomes BAM to the CYP2D6 region; reads span chr22:42116353-42155799 only; .bai staged as secondary file
+pypgx	pypgx_test-cnv-caller	PASS	tested the trained GSTT1 caller on the pypgx-data test set; all 20 samples correct
+pypgx	pypgx_train-cnv-caller	PASS	trained GSTT1 CNV caller on the pypgx-data GRCh38 training set; confusion matrix perfect
+pypints	pypints_pints_caller	PASS	
+pypints	pypints_pints_visualizer	PASS	
+pypolca	pypolca_run	PASS	
+pyqi	pyqi_make-bash-completion	PASS	
+pyqi	pyqi_make-command	PASS	
+pyqi	pyqi_make-optparse	PASS	
+pyqi	pyqi_make-release	Not completed	release tool: needs a git project with ChangeLog.md and uploads to PyPI; no usable test project
+pyqi	pyqi_serve-html-interface	Not completed	long-running web server, skipped
+pyquant-ms	pyquant-ms_pyQuant	Failed	tool bug: image version 0.2.4 crashes (UnboundLocalError new_col) on 6 of 7 scans of its own iTRAQ test data, output is mostly NA
+pyrad	pyrad	Not completed	pipeline, skipped: the CWL runs the whole pyRAD pipeline; only the -n template step ran
+pyrodigal	pyrodigal	PASS	
+pyrodigal-gv	pyrodigal-gv	PASS	
+pyrodigal-rv	pyrodigal-rv	PASS	
+pyroe	pyroe_convert	PASS	synthetic data: planted 4-cell alevin-fry USA-mode quant folder; output matrix checked by hand (X = S+A, gene names projected)
+pyroe	pyroe_fetch-quant	Not completed	dataset server umd.box.com returns HTTP 400 for every dataset URL; nothing to download
+pyroe	pyroe_id-to-name	PASS	
+pyroe	pyroe_make-spliceu	PASS	
+pyroe	pyroe_make-splici	PASS	
+pyrpipe	pyrpipe	Not completed	pipeline, skipped: pyrpipe is a framework that runs a user-written RNA-seq workflow script
+pysamstats	pysamstats	PASS	
+pyscenic	pyscenic_add_cor	PASS	
+pyscenic	pyscenic_aucell	PASS	
+pyscenic	pyscenic_ctx	PASS	synthetic data: planted JUN adjacency made from the best-ranked genes of the JUN motif in the small real test database (the tiny 5-motif database gave no enrichment for real adjacencies); thresholds relaxed, JUN regulon enriched as expected; the GMT module-file input crashes and then hangs (tool bug)
+pyscenic	pyscenic_grn	PASS	
+pyseer	pyseer	PASS	fixed-effects and lineage output identical to upstream baseline, LMM within 0.1%; --wg enet crashes inside glmnet_python (numpy 2 incompatibility)
+pyseer	pyseer_annotate_hits	PASS	run with one reference only: cwltool cannot stage upstream's draft file names containing #
+pyseer	pyseer_enet_predict	Not completed	needs a fitted elastic net model; pyseer --wg enet fails in this image (glmnet_python incompatible with numpy 2), so no model could be made
+pyseer	pyseer_phandango_mapper	PASS	
+pyseer	pyseer_scree_plot	Failed	image problem: scree_plot_pyseer forces the TkAgg backend and crashes with missing libX11.so.6, no plot is written
+pyseer	pyseer_similarity	PASS	
+pyseer	pyseer_square_mash	PASS	
+pysradb	pysradb_doi-to-gse	PASS	
+pysradb	pysradb_doi-to-identifiers	PASS	
+pysradb	pysradb_doi-to-srp	PASS	
+pysradb	pysradb_download	PASS	
+pysradb	pysradb_geo-matrix	PASS	
+pysradb	pysradb_gse-to-gsm	Failed	tool bug: the column named study_alias holds the SRP accession instead of the GSE (GSM/SRX pairs are correct)
+pysradb	pysradb_gse-to-pmid	PASS	
+pysradb	pysradb_gse-to-srp	PASS	
+pysradb	pysradb_gsm-to-gse	Failed	tool bug: the column named study_accession holds the SRX accession instead of the SRP
+pysradb	pysradb_gsm-to-srp	Failed	tool bug: the column named experiment_alias holds the GSE instead of the GSM
+pysradb	pysradb_gsm-to-srr	PASS	
+pysradb	pysradb_gsm-to-srs	PASS	
+pysradb	pysradb_gsm-to-srx	PASS	
+pysradb	pysradb_metadata	PASS	
+pysradb	pysradb_pmc-to-identifiers	PASS	
+pysradb	pysradb_pmid-to-gse	PASS	
+pysradb	pysradb_pmid-to-identifiers	PASS	
+pysradb	pysradb_pmid-to-srp	PASS	
+pysradb	pysradb_search	PASS	
+pysradb	pysradb_srp-to-gse	PASS	
+pysradb	pysradb_srp-to-pmid	PASS	
+pysradb	pysradb_srp-to-srr	PASS	
+pysradb	pysradb_srp-to-srs	PASS	
+pysradb	pysradb_srp-to-srx	PASS	
+pysradb	pysradb_srr-to-gsm	PASS	
+pysradb	pysradb_srr-to-srp	PASS	
+pysradb	pysradb_srr-to-srs	PASS	
+pysradb	pysradb_srr-to-srx	PASS	
+pysradb	pysradb_srs-to-gsm	PASS	
+pysradb	pysradb_srs-to-srx	PASS	
+pysradb	pysradb_srx-to-srp	PASS	
+pysradb	pysradb_srx-to-srr	PASS	
+pysradb	pysradb_srx-to-srs	PASS	
+pytest-timeout	pytest-timeout_pytest	PASS	
+pytest-workflow	pytest-workflow_pytest	PASS	
+python	python	PASS	
+python3-pyfaidx	python3-pyfaidx	PASS	
+pythonpy	pythonpy	PASS	
+pytransaln	pytransaln_align	Failed	image problem: mafft is not installed in the image, so align crashes with FileNotFoundError
+pytransaln	pytransaln_stats	PASS	
+pytrf	pytrf_extract	Failed	tool bug: pytrf 1.4.2 extract crashes on every input (passes a csv dialect object as the delimiter)
+pytrf	pytrf_findatr	PASS	
+pytrf	pytrf_findgtr	PASS	
+pytrf	pytrf_findstr	PASS	
+pytximport	pytximport	PASS	
+pytximport	pytximport_create-map	PASS	
+pywdl	pywdl_parse	PASS	
+pywgsim	pywgsim	PASS	
+qax	qax_citations	PASS	
+qax	qax_extract	PASS	
+qax	qax_list	PASS	
+qax	qax_make	Failed	tool bug: the --attr option writes a broken metadata.yaml (no newline), so qax cannot read the new artifact; plain make works
+qax	qax_provenance	PASS	
+qax	qax_view	PASS	
+qcat	qcat	PASS	
+qcatch	qcatch	Not completed	no usable test data: input must be simpleaf or alevin-fry output with quant_info (the nf-core h5ad files fail with a quant_info error) and the QCatch tutorial download is gone (404)
+qfilt	qfilt	PASS	
+qgrs-cpp	qgrs-cpp_qgrs	PASS	same QGRS as the repo sample; only the title row and a comma differ from the old sample file
+qhery	qhery_list_rx	PASS	ran on the official slim covid-drdb database (the full one is 727 MB)
+qhery	qhery_mutations	Failed	image problem: bcftools csq cannot write the .fai index of the packaged reference FASTA (read-only image file system), so no csq table is made
+qhery	qhery_run	Not completed	needs the 727 MB full covid-drdb database (the slim release lacks a required view); the vcf route also hits the read-only reference index problem
+qhull	qhull	PASS	synthetic data: points made with rbox (unit cube or 60 points on a sphere); hull counts and area match the known values
+qhull	qhull_qconvex	PASS	synthetic data: points made with rbox (unit cube or 60 points on a sphere); hull counts and area match the known values
+qhull	qhull_qdelaunay	PASS	synthetic data: points made with rbox (unit cube or 60 points on a sphere); hull counts and area match the known values
+qhull	qhull_qhalf	PASS	synthetic data: halfspaces of a unit cube; gives its 8 corners
+qhull	qhull_qvoronoi	PASS	synthetic data: points made with rbox (unit cube or 60 points on a sphere); hull counts and area match the known values
+qhull	qhull_rbox	PASS	synthetic data: generates the unit cube and random sphere points as expected
+qimba	qimba_check-tab	PASS	
+qimba	qimba_dada2-split	PASS	synthetic data: 20 real ASV sequences from the QIIME 2 moving pictures tutorial with simulated counts
+qimba	qimba_derep	PASS	
+qimba	qimba_make-mapping	Failed	tool bug: the --output option writes only the sample names without read paths (stdout mode works)
+qimba	qimba_merge	PASS	
+qimba	qimba_show-samples	PASS	
+qiskit-xyz2pdb	qiskit-xyz2pdb	PASS	synthetic data: 7-residue XYZ chain; fixed output collection (PDB file) and out-folder creation
+qsignature	qsignature_QSigCompare	Failed	image problem: Java fails at start with UnsatisfiedLinkError (libnio.so cannot load libnet.so)
+qsignature	qsignature_SignatureGenerator	Failed	image problem: Java fails at start with UnsatisfiedLinkError (libnio.so cannot load libnet.so)
+qtip	qtip	Failed	image problem: image has no aligner (bowtie2, bwa or snap), so qtip cannot align reads; index input fixed to a prefix string
+qtlseq	qtlseq	PASS	ran on the tool's own test FASTQ; fixed paired-file comma lists, --out flag and removed a link to the input from the output folder
+qualifilter	qualifilter	PASS	Galaxy tools-iuc test data; QC_matrix.tsv and .csv match the expected outputs
+qualimap	qualimap_bamqc	PASS	Galaxy tools-iuc test BAM; genome_results.txt and per-base coverage match the expected outputs; fixed -outdir flag and PDF output glob
+qualimap	qualimap_clustering	Failed	image problem: R package Repitools is missing in the image, so the R script fails; fixed BAM inputs to staged Files
+qualimap	qualimap_comp-counts	PASS	Galaxy tools-iuc test BAM and GTF; GENE1 count 54 equals the exonic read count in the Galaxy expected rnaseq result
+qualimap	qualimap_counts	PASS	Galaxy tools-iuc mouse counts table; report has the expected Counts QC title and saturation section; fixed PDF output glob, optional -outfile, staged counts file
+qualimap	qualimap_multi-bamqc	PASS	Galaxy tools-iuc test BAM used as two samples (-r mode); report lists both samples; fixed PDF glob and staged BAMs
+qualimap	qualimap_rnaseq	PASS	Galaxy tools-iuc test BAM and GTF; rnaseq_qc_results.txt matches the expected output; fixed output globs inside the output folder
+qualitymetrics	qualitymetrics	PASS	image test data; both metadata outputs match the expected files; fixed name-value argument style and CV value
+qualrepair	qualrepair	PASS	synthetic data: subsequence FASTQ cut from 100 real sarscov2 reads; qualities restored correctly; added stdout capture
+quantpi	quantpi_init	PASS	synthetic data: samples list for two real sarscov2 FASTQ; project folder created with config.yaml; fixed samples to File and workdir to a created folder
+quantpi	quantpi_profiling_wf	Not completed	pipeline, skipped
+quantpi	quantpi_simulate_wf	Not completed	pipeline, skipped
+quantpi	quantpi_sync	Not completed	needs the finished output of a profiling pipeline run, which is skipped as a pipeline
+quaqc	quaqc	Not completed	ran on the repo test BAM and all counts match the repo reference, but percentile lines differ from a reference made with a newer quaqc, so output not fully confirmed; fixed option order, BAM index and output folders
+quasildr	quasildr_run_graphdr.py	PASS	Dentate Gyrus PCA example from the repo; GraphDR output has the right shape and correlates with the input; plot with annotation also works; fixed baseCommand to run_graphdr.py
+quasildr	quasildr_run_structdr.py	Failed	image problem: Python module networkx is missing, so the script stops at import
+quasirecomb	quasirecomb	PASS	quasitools test HIV pol BAM, region 1000-1300 with K 1-2; BIC table and haplotype FASTA produced; rewrote options from the help (several were invented), -o output folder staged
+quasitools	quasitools_aacoverage	PASS	quasitools repo test data; coverage CSV identical to the repo expected file; added BAM index secondary files
+quasitools	quasitools_call_aavar	PASS	quasitools repo align.bam with variants and mutation database; AAVF report written with the expected RT mutations (K103N region)
+quasitools	quasitools_call_codonvar	PASS	quasitools repo align.bam, offset 1269; codon variant CSV lists K103N at 7.79% with coverage 154, as in the repo expected file
+quasitools	quasitools_call_ntvar	PASS	quasitools repo align.bam; VCF with 1509 nucleotide variants (DP, AF) written
+quasitools	quasitools_complexity_bam	PASS	quasitools repo complexity BAM and reference, k=3; per-position complexity CSV written
+quasitools	quasitools_complexity_fasta	PASS	quasitools repo complexity.fasta; complexity CSV with haplotype, entropy and Simpson values written
+quasitools	quasitools_consensus	PASS	quasitools repo HIV pol BAM; 2679-base consensus matches the HXB2 reference exactly over the covered region; added BAM index secondary files
+quasitools	quasitools_distance	PASS	quasitools repo test BAMs quasi1 and quasi2; symmetric angular distance matrix 0.0063 between them, similarity mode also works; reference changed to File, BAM indexes added
+quasitools	quasitools_dnds	PASS	quasitools repo mutant_types.csv with offset 1269; dn/ds report identical to the repo expected file; removed invented options and used --output
+quasitools	quasitools_drmutations	PASS	quasitools repo test data; report finds K103N at 7.79% with coverage 154, same as the repo expected dr_report; fixed --output flag and BAM index
+quasitools	quasitools_hydra	PASS	quasitools repo forward and reverse FASTQ; full run gives alignment, VCF, coverage, consensus and a drug resistance report listing K103N and other RT mutations
+quasitools	quasitools_quality	PASS	quasitools repo forward and reverse FASTQ; reads combined and filtered (min length 100, N masked)
+quast	quast	PASS	QUAST repo test assemblies contigs_1 and contigs_2 with reference and genes; report lists 3 and 4 contigs and total length 6710; fixed contigs input to a file list, --est-ref-size flag and baseCommand
+quatradis	quatradis_tradis_compare_essentiality	PASS	output of tradis plot count on a QuaTradis repo test plot; essentiality table identical to the repo expected small_control file
+quatradis	quatradis_tradis_compare_gene_report	Not completed	ran on the repo's saved comparison output (compare insertion_sites cannot run in this image); regions and signs agree with the logFC plot, but the reported values could not be confirmed.
+quatradis	quatradis_tradis_compare_insertion_sites	Failed	image problem: R package edgeR is missing, so tradis_comparison.R stops; genome_length made required
+quatradis	quatradis_tradis_compare_presence_absence	PASS	QuaTradis repo presence-absence test data; logFC matrix values identical to the repo expected file, with heatmaps and trees; output folder collected as a Directory
+quatradis	quatradis_tradis_plot_combine	PASS	QuaTradis repo combine test plots with a list file; combined plots are the sums of the input plots, with tabix index; list file and plots staged together
+quatradis	quatradis_tradis_plot_count	PASS	QuaTradis repo pipeline plots and EMBL annotation; read and insertion counts for the first gene (78 reads, 13 sites) match a direct count of the plot
+quatradis	quatradis_tradis_plot_create	PASS	QuaTradis repo test FASTQ and reference; 23 of 23 reads mapped with 9 unique insertion sites in the plot
+quatradis	quatradis_tradis_plot_normalise	PASS	QuaTradis repo pipeline plots; the plot with most reads stays unchanged and the other is scaled up towards it
+quatradis	quatradis_tradis_utils_index	PASS	QuaTradis repo smallref.fa; BWA index files (.amb .ann .bwt .pac .sa) written
+query_phenomizer	query_phenomizer	Not completed	needs a Phenomizer web service account (username and password); made -o optional, added stdout and network access
+querynator	querynator_create-report	Not completed	needs result folders from both the CGI query (account and token) and the CIViC query, which fails; fixed outdir to a string with a folder output
+querynator	querynator_query-api-cgi	Not completed	needs a Cancer Genome Interpreter account and token; fixed outdir to a string with a folder output and added network access
+querynator	querynator_query-api-civic	Failed	image problem: civicpy in the image cannot read the current online CIViC cache (AttributeError: Approval); fixed outdir to a string with a folder output and added network access
+quickdeconvolution	quickdeconvolution_QuickDeconvolution	PASS	repo test FASTQ (first 10000 reads); all reads returned with barcode extensions -1, -2, ...
+quickmerge	quickmerge	PASS	Galaxy tools-iuc E. coli test data; merged sequences and anchor summary match the expected files (headers differ only by spaces); fixed output globs for merged_<prefix>.fasta and summaries
+quickmirseq	quickmirseq_QuickMIRSeq.pl	Not completed	needs a species genome Bowtie index and a small RNA database built from large downloads; no small real set available
+quicktree	quicktree	PASS	
+quorum	quorum	PASS	
+ra	ra_consensus	Failed	tool bug: consensus segfaults on any input (map_reads resizes an array to zero size)
+ra	ra_depot_dump_overlaps	PASS	
+ra	ra_depot_dump_reads	PASS	
+ra	ra_depot_import_overlaps	PASS	
+ra	ra_depot_import_reads	PASS	
+ra	ra_fill_read_coverage	PASS	
+ra	ra_filter_contained	PASS	
+ra	ra_filter_erroneous_overlaps	PASS	
+ra	ra_filter_transitive	PASS	ran on real MHAP overlaps of a real RNA-seq read set; removed 0 overlaps as transitive on this data
+ra	ra_overlap2dot	PASS	
+ra	ra_ra_consensus	PASS	
+ra	ra_to_afg	PASS	
+ra	ra_unitigger	PASS	
+ra	ra_widen_overlaps	PASS	
+ra	ra_zoom	PASS	
+ra-integrate	ra-integrate	Not completed	pipeline, skipped (Ruby driver that runs the whole overlap, layout and consensus assembly pipeline)
+rabbitqcplus	rabbitqcplus	PASS	
+rabbittclust	rabbittclust_clust-greedy	PASS	
+rabbittclust	rabbittclust_clust-mst	PASS	
+rabies	rabies_analysis	Not completed	needs a BIDS mouse fMRI dataset and brain templates (hundreds of MB); no small real data, and registration is too heavy for this machine
+rabies	rabies_confound_correction	Not completed	needs a BIDS mouse fMRI dataset and brain templates (hundreds of MB); no small real data, and registration is too heavy for this machine
+rabies	rabies_preprocess	Not completed	needs a BIDS mouse fMRI dataset and brain templates (hundreds of MB); no small real data, and registration is too heavy for this machine
+rabix-bunny	rabix-bunny_rabix	PASS	ran a tiny echo CommandLineTool with --no-container
+racon	racon	PASS	
+rad	rad	Failed	image problem: the resources folder (layouts and barcode whitelists) is missing from the image, so the documented layout keys (three_prime, five_prime, splitseq) fail with 'Cannot locate resources folder'
+radsex	radsex_depth	PASS	
+radsex	radsex_distrib	PASS	
+radsex	radsex_freq	PASS	
+radsex	radsex_map	PASS	synthetic data: pseudo genome built from real marker sequences with random spacers; planted markers mapped to the right positions
+radsex	radsex_process	PASS	
+radsex	radsex_signif	PASS	
+radsex	radsex_subset	PASS	
+radtk	radtk_cat	PASS	merged two bulk RAD files; viewing the result gives the same 100 records
+radtk	radtk_split	PASS	test file has one chunk, so one output file is written
+radtk	radtk_view	PASS	prints 100 records; the JSON text is not strictly valid because of nested quotes in the file tags (tool output)
+ragout	ragout	PASS	
+ragtag	ragtag_agp2fa	PASS	
+ragtag	ragtag_agpcheck	PASS	
+ragtag	ragtag_asmstats	PASS	
+ragtag	ragtag_correct	PASS	output equals the Galaxy tools-iuc expected AGP and FASTA
+ragtag	ragtag_delta2paf	PASS	
+ragtag	ragtag_merge	PASS	output equals the Galaxy tools-iuc expected AGP and FASTA
+ragtag	ragtag_paf2delta	PASS	
+ragtag	ragtag_patch	PASS	output equals the Galaxy tools-iuc expected AGP and FASTA
+ragtag	ragtag_scaffold	PASS	output equals the Galaxy tools-iuc expected AGP and FASTA
+ragtag	ragtag_splitasm	PASS	
+ragtag	ragtag_updategff	PASS	synthetic data: planted AGP shifts the real Galaxy GFF by 100 bp
+rainbow	rainbow_cluster	PASS	
+rainbow	rainbow_div	PASS	
+rainbow	rainbow_merge	PASS	
+rainbow	rainbow_select_all_rbcontig	PASS	
+rainbow	rainbow_select_best_rbcontig	PASS	
+rainbow	rainbow_select_best_rbcontig_plus_read1	PASS	
+rainbow	rainbow_select_sec_rbcontig	PASS	
+raiss	raiss	Not completed	needs harmonized GWAS z-scores, LD matrices and a reference panel for a chromosome; no small real data set found
+raiss	raiss_performance-grid-search	Not completed	needs harmonized GWAS z-scores, LD matrices and a reference panel for a chromosome; no small real data set found
+raiss	raiss_sanity-check	Not completed	needs harmonized GWAS z-scores, LD matrices and a reference panel for a chromosome; no small real data set found
+rambo-k	rambo-k	PASS	real reads of two species separate by score (SARS-CoV-2 mean -1.9, B. fragilis mean +0.1)
+rampler	rampler_split	PASS	8 chunks of about 450 kB for a 500000 byte chunk size
+rampler	rampler_subsample	PASS	5x and 10x subsamples hold about 5.4x and 9.7x of the 48.5 kb lambda reference
+randfold	randfold	PASS	human let-7a-1 hairpin gives MFE -33.0 and p-value 0.01
+rapclust	rapclust	Failed	image problem: RapClust stops at start with FileNotFoundError for the 'locale' command (click needs it; no UTF-8 locale in the image); CWL rewritten from the script source (command RapClust, option --config only)
+rapgreen	rapgreen	PASS	NHX tree with duplication marks and a 128-row scoring table; the example expected files belong to another tree
+rapidnj	rapidnj	PASS	trees equal the Galaxy tools-iuc expected output
+rapifilt	rapifilt	PASS	paired Illumina and single fastq inputs run; all 50 test reads pass the filters
+rapmap	rapmap_quasiindex	PASS	
+rapmap	rapmap_quasimap	PASS	10000 read pairs give 28506 alignment lines on the RapMap sample transcripts
+rapmap-example-data	rapmap-example-data_quasiindex	PASS	
+rapmap-example-data	rapmap-example-data_quasimap	PASS	same alignments as the rapmap package (new CWLs on the example-data image)
+rappas	rappas	PASS	built a database from a 10-sequence cytb alignment and tree, then each query is placed on its own leaf edge (real sequences; tree from rapidnj)
+rapsearch	prerapsearch	PASS	database from the 12 SARS-CoV-2 proteins searched successfully with rapsearch
+rapsearch	rapsearch	PASS	all 100 SARS-CoV-2 reads hit the SARS-CoV-2 proteins at 100% identity
+raptor	raptor_build	PASS	Raptor repository test files (small simulated sequences); index built from a list and from a layout
+raptor	raptor_layout	PASS	Raptor repository test files (small simulated sequences)
+raptor	raptor_prepare	PASS	Raptor repository test files (small simulated sequences); minimiser files written
+raptor	raptor_search	PASS	Raptor repository test files (small simulated sequences); queries hit the expected bins
+raptor	raptor_upgrade	PASS	Raptor repository test files (small simulated sequences); index made with Raptor 2.0.0 upgraded and searched with Raptor 3
+raremetalworker	raremetalworker	PASS	
+rascaf	rascaf	PASS	
+rascaf	rascaf_join	PASS	
+rastair	rastair_call	PASS	
+rastair	rastair_convert	PASS	
+rastair	rastair_mbias	Failed	image problem: tabix is not in the image, so mbias cannot index the per-read BED
+rastair	rastair_per-read	PASS	
+rastair	rastair_view	PASS	
+rasusa	rasusa_aln	PASS	
+rasusa	rasusa_reads	PASS	
+ratatosk	ratatosk_correct	PASS	
+ratatosk	ratatosk_index	PASS	
+rate4site	rate4site	PASS	protein alignment without a tree gives plausible rates; -t crashed on a Newick tree with support-value labels (tool parse error)
+ratt	ratt	PASS	
+rattle	rattle_cluster	PASS	
+rattle	rattle_cluster_summary	PASS	
+rattle	rattle_correct	PASS	
+rattle	rattle_extract_clusters	PASS	
+rattle	rattle_polish	PASS	
+raven-assembler	raven-assembler	PASS	
+raxml	raxml_raxmlHPC	PASS	
+raxml	raxml_raxmlHPC-PTHREADS	PASS	
+raxml-ng	raxml-ng	PASS	
+razers3	razers3	PASS	
+rbpbench	rbpbench_batch	PASS	
+rbpbench	rbpbench_compare	PASS	
+rbpbench	rbpbench_con	PASS	peak sites on chr21 with phyloP and phastCons bigWig windows from UCSC; giving only --phylop crashes the tool (UnboundLocalError)
+rbpbench	rbpbench_dist	PASS	
+rbpbench	rbpbench_enmo	PASS	
+rbpbench	rbpbench_goa	PASS	
+rbpbench	rbpbench_info	PASS	
+rbpbench	rbpbench_isocomp	PASS	
+rbpbench	rbpbench_nemo	PASS	
+rbpbench	rbpbench_optex	PASS	
+rbpbench	rbpbench_search	PASS	
+rbpbench	rbpbench_searchlong	PASS	
+rbpbench	rbpbench_searchlongrna	PASS	
+rbpbench	rbpbench_searchregex	PASS	
+rbpbench	rbpbench_searchrna	Failed	tool bug: rbpbench searchrna crashes with AttributeError disable_all_reg_bar when it writes the HTML report
+rbpbench	rbpbench_searchseq	PASS	
+rbpbench	rbpbench_sponge	PASS	
+rbpbench	rbpbench_streme	PASS	
+rbpbench	rbpbench_tomtom	PASS	
+rcorrector	rcorrector_run_rcorrector.pl	PASS	

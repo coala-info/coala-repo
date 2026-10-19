@@ -33,12 +33,13 @@ inputs:
   - id: input_file
     type:
       - 'null'
-      - string
+      - File
     doc: set the input file, single FASTA genome file (without -l option) or 
       genome list file (with -l option)
     inputBinding:
       position: 101
       prefix: --input
+      valueFrom: $(self.basename)
   - id: input_is_list
     type:
       - 'null'
@@ -110,10 +111,41 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Genome FASTA files named in the genome list; staged next to the list so the names resolve
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: cluster_result
+    type: File
+    doc: Cluster result written with the output name
+    outputBinding:
+      glob: $(inputs.output_name)
+  - id: extra_results
+    type:
+      type: array
+      items: File
+    doc: Other result files written next to the cluster result (noise-removed clusters, newick tree)
+    outputBinding:
+      glob: $(inputs.output_name).*
+  - id: saved_intermediate
+    type:
+      type: array
+      items: Directory
+    doc: Folder with the saved sketch, MST and density files (not written with --no-save)
+    outputBinding:
+      glob: 20??_??_??_??-??-??
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.genome_files)
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rabbittclust:2.3.0--h43eeafb_0

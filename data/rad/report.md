@@ -1,5 +1,11 @@
 # rad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rad | Failed | image problem: the resources folder (layouts and barcode whitelists) is missing from the image, so the documented layout keys (three_prime, five_prime, splitseq) fail with 'Cannot locate resources folder' |
+
 ## rad
 
 ### Tool Description

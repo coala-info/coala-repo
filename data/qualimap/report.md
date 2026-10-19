@@ -1,5 +1,16 @@
 # qualimap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qualimap_bamqc | PASS | Galaxy tools-iuc test BAM; genome_results.txt and per-base coverage match the expected outputs; fixed -outdir flag and PDF output glob |
+| qualimap_clustering | Failed | image problem: R package Repitools is missing in the image, so the R script fails; fixed BAM inputs to staged Files |
+| qualimap_comp-counts | PASS | Galaxy tools-iuc test BAM and GTF; GENE1 count 54 equals the exonic read count in the Galaxy expected rnaseq result |
+| qualimap_counts | PASS | Galaxy tools-iuc mouse counts table; report has the expected Counts QC title and saturation section; fixed PDF output glob, optional -outfile, staged counts file |
+| qualimap_multi-bamqc | PASS | Galaxy tools-iuc test BAM used as two samples (-r mode); report lists both samples; fixed PDF glob and staged BAMs |
+| qualimap_rnaseq | PASS | Galaxy tools-iuc test BAM and GTF; rnaseq_qc_results.txt matches the expected output; fixed output globs inside the output folder |
+
 ## qualimap_bamqc
 
 ### Tool Description

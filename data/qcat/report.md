@@ -1,5 +1,11 @@
 # qcat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qcat | PASS |  |
+
 ## qcat
 
 ### Tool Description

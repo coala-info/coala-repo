@@ -49,10 +49,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --mzml_files
+      itemSeparator: ','
   - id: mzml_path
     type:
       - 'null'
-      - File
+      - Directory
     doc: The mzml file path.You only need to use either mzml_path or mzml_files
     inputBinding:
       position: 101

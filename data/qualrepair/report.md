@@ -1,5 +1,11 @@
 # qualrepair CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qualrepair | PASS | synthetic data: subsequence FASTQ cut from 100 real sarscov2 reads; qualities restored correctly; added stdout capture |
+
 ## qualrepair
 
 ### Tool Description

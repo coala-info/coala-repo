@@ -21,6 +21,9 @@ inputs:
       position: 101
       prefix: --saveto
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result table when no --saveto file is given)
   - id: saveto
     type:
       - 'null'
@@ -29,7 +32,10 @@ outputs:
     outputBinding:
       glob: $(inputs.saveto_path)
 requirements:
+  - class: NetworkAccess
+    networkAccess: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pysradb:2.5.1--pyhdfd78af_0
+stdout: pysradb_pmid-to-identifiers.out

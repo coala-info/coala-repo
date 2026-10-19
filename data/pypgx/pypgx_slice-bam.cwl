@@ -8,6 +8,9 @@ doc: "Slice BAM file for all genes used by PyPGx.\n\nTool homepage: https://gith
 inputs:
   - id: input
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Input BAM file. It must be already indexed to allow random access.
     inputBinding:
       position: 1

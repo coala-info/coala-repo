@@ -6,6 +6,15 @@ baseCommand:
 label: qualimap_multi-bamqc
 doc: "Multi-sample BAM quality control analysis\n\nTool homepage: http://qualimap.bioinfo.cipf.es/"
 inputs:
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: BAM files (with .bai) or BAM QC result folders named in the data file, staged in the working directory
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: data
     type: File
     doc: 'File describing the input data. Format of the file is a 2- or 3-column tab-delimited
@@ -110,7 +119,8 @@ outputs:
       - File
     doc: Output file for PDF report (default value is report.pdf).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: |
+        ${ return (inputs.output_dir ? inputs.output_dir + "/" : "") + (inputs.output_file ? inputs.output_file : "report.pdf"); }
   - id: output_dir_dir
     type:
       - 'null'
@@ -118,6 +128,11 @@ outputs:
     doc: Output folder for HTML report and raw data.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualimap:2.3--hdfd78af_0

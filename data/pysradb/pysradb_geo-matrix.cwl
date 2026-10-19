@@ -39,6 +39,9 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pysradb:2.5.1--pyhdfd78af_0

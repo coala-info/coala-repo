@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: citations
+baseCommand:
+  - qax
+  - citations
 label: qax_citations
 doc: "Retrieve BibTeX citations from input files.\n\nTool homepage: https://github.com/telatin/qax"
 inputs:

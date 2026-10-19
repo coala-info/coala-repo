@@ -1,5 +1,11 @@
 # quorum CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quorum | PASS |  |
+
 ## quorum
 
 ### Tool Description

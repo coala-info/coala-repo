@@ -8,7 +8,7 @@ inputs:
   - id: barcode_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: If specified, qcat will demultiplex reads to this folder
     inputBinding:
       position: 101
@@ -161,11 +161,23 @@ inputs:
       position: 101
       prefix: --tsv
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (trimmed reads when --output is not given, or the --tsv table)
+  - id: barcode_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the demultiplexed reads
+    outputBinding:
+      glob: $(inputs.barcode_dir)
   - id: output
     type:
       - 'null'
@@ -178,3 +190,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qcat:1.1.0--py_0
+stdout: qcat.out

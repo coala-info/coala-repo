@@ -1,5 +1,16 @@
 # qax CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qax_citations | PASS |  |
+| qax_extract | PASS |  |
+| qax_list | PASS |  |
+| qax_make | Failed | tool bug: the --attr option writes a broken metadata.yaml (no newline), so qax cannot read the new artifact; plain make works |
+| qax_provenance | PASS |  |
+| qax_view | PASS |  |
+
 ## qax_citations
 
 ### Tool Description

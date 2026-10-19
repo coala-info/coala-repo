@@ -1,5 +1,43 @@
 # pysradb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pysradb_doi-to-gse | PASS |  |
+| pysradb_doi-to-identifiers | PASS |  |
+| pysradb_doi-to-srp | PASS |  |
+| pysradb_download | PASS |  |
+| pysradb_geo-matrix | PASS |  |
+| pysradb_gse-to-gsm | Failed | tool bug: the column named study_alias holds the SRP accession instead of the GSE (GSM/SRX pairs are correct) |
+| pysradb_gse-to-pmid | PASS |  |
+| pysradb_gse-to-srp | PASS |  |
+| pysradb_gsm-to-gse | Failed | tool bug: the column named study_accession holds the SRX accession instead of the SRP |
+| pysradb_gsm-to-srp | Failed | tool bug: the column named experiment_alias holds the GSE instead of the GSM |
+| pysradb_gsm-to-srr | PASS |  |
+| pysradb_gsm-to-srs | PASS |  |
+| pysradb_gsm-to-srx | PASS |  |
+| pysradb_metadata | PASS |  |
+| pysradb_pmc-to-identifiers | PASS |  |
+| pysradb_pmid-to-gse | PASS |  |
+| pysradb_pmid-to-identifiers | PASS |  |
+| pysradb_pmid-to-srp | PASS |  |
+| pysradb_search | PASS |  |
+| pysradb_srp-to-gse | PASS |  |
+| pysradb_srp-to-pmid | PASS |  |
+| pysradb_srp-to-srr | PASS |  |
+| pysradb_srp-to-srs | PASS |  |
+| pysradb_srp-to-srx | PASS |  |
+| pysradb_srr-to-gsm | PASS |  |
+| pysradb_srr-to-srp | PASS |  |
+| pysradb_srr-to-srs | PASS |  |
+| pysradb_srr-to-srx | PASS |  |
+| pysradb_srs-to-gsm | PASS |  |
+| pysradb_srs-to-srx | PASS |  |
+| pysradb_srx-to-srp | PASS |  |
+| pysradb_srx-to-srr | PASS |  |
+| pysradb_srx-to-srs | PASS |  |
+
 ## pysradb_metadata
 
 ### Tool Description
@@ -38,7 +76,7 @@ options:
 ## pysradb_download
 
 ### Tool Description
-Download SRA data. Accepts a list of accession IDs from stdin or a file.
+Download SRA data (runs of an SRA project, experiment or GEO series).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pysradb:2.5.1--pyhdfd78af_0
@@ -48,37 +86,26 @@ Download SRA data. Accepts a list of accession IDs from stdin or a file.
 
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/pysradb", line 10, in <module>
-    sys.exit(parse_args())
-             ~~~~~~~~~~^^
-  File "/usr/local/lib/python3.14/site-packages/pysradb/cli.py", line 1358, in parse_args
-    download(
-    ~~~~~~~~^
-        args.out_dir,
-        ^^^^^^^^^^^^^
-    ...<6 lines>...
-        args.threads,
-        ^^^^^^^^^^^^^
-    )
-    ^
-  File "/usr/local/lib/python3.14/site-packages/pysradb/cli.py", line 106, in download
-    df = pd.read_csv(sys.stdin, sep="\t")
-  File "/usr/local/lib/python3.14/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File "/usr/local/lib/python3.14/site-packages/pandas/io/parsers/readers.py", line 620, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File "/usr/local/lib/python3.14/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
-    self._engine = self._make_engine(f, self.engine)
-                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.14/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
-    return mapping[engine](f, **self.options)
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.14/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 93, in __init__
-    self._reader = parsers.TextReader(src, **kwds)
-                   ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "pandas/_libs/parsers.pyx", line 581, in pandas._libs.parsers.TextReader.__cinit__
-pandas.errors.EmptyDataError: No columns to parse from file
+usage: pysradb download [-h] [--out-dir OUT_DIR] [--srx SRX [SRX ...]]
+                        [--srp SRP [SRP ...]] [--geo GEO [GEO ...]]
+                        [--skip-confirmation] [--use_ascp] [--col COL]
+                        [--threads THREADS]
+
+options:
+  -h, --help            show this help message and exit
+  --out-dir OUT_DIR     Output directory root
+  --srx, -x SRX [SRX ...]
+                        Download only these SRX(s)
+  --srp, -p SRP [SRP ...]
+                        SRP ID
+  --geo, -g GEO [GEO ...]
+                        GEO ID
+  --skip-confirmation, -y
+                        Skip confirmation
+  --use_ascp, -a        Use aspera instead of wget
+  --col COL             Specify column to download
+  --threads, -t THREADS
+                        Number of threads
 ```
 
 
@@ -960,70 +987,6 @@ positional arguments:
 options:
   -h, --help       show this help message and exit
   --saveto SAVETO  Save output to file
-```
-
-
-## pysradb_Extract
-
-### Tool Description
-Query NGS metadata and data from NCBI Sequence Read Archive.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pysradb:2.5.1--pyhdfd78af_0
-- **Homepage**: https://github.com/saketkc/pysradb
-- **Package**: https://anaconda.org/channels/bioconda/packages/pysradb/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: pysradb [-h] [--version] [--citation]
-               {metadata,download,search,gse-to-gsm,gse-to-srp,gsm-to-gse,gsm-to-srp,gsm-to-srr,gsm-to-srs,gsm-to-srx,srp-to-gse,srp-to-srr,srp-to-srs,srp-to-srx,srr-to-gsm,srr-to-srp,srr-to-srs,srr-to-srx,srs-to-gsm,srs-to-srx,srx-to-srp,srx-to-srr,srx-to-srs,geo-matrix,srp-to-pmid,gse-to-pmid,pmid-to-gse,pmid-to-srp,pmc-to-identifiers,pmid-to-identifiers,doi-to-gse,doi-to-srp,doi-to-identifiers} ...
-
-pysradb: Query NGS metadata and data from NCBI Sequence Read Archive.
-version: 2.5.1.
-Citation: 10.12688/f1000research.18676.1
-
-options:
-  -h, --help            show this help message and exit
-  --version             show program's version number and exit
-  --citation            how to cite
-
-subcommands:
-  {metadata,download,search,gse-to-gsm,gse-to-srp,gsm-to-gse,gsm-to-srp,gsm-to-srr,gsm-to-srs,gsm-to-srx,srp-to-gse,srp-to-srr,srp-to-srs,srp-to-srx,srr-to-gsm,srr-to-srp,srr-to-srs,srr-to-srx,srs-to-gsm,srs-to-srx,srx-to-srp,srx-to-srr,srx-to-srs,geo-matrix,srp-to-pmid,gse-to-pmid,pmid-to-gse,pmid-to-srp,pmc-to-identifiers,pmid-to-identifiers,doi-to-gse,doi-to-srp,doi-to-identifiers}
-    metadata            Fetch metadata for SRA project (SRPnnnn)
-    download            Download SRA project (SRPnnnn)
-    search              Search SRA/ENA for matching text
-    gse-to-gsm          Get GSM for a GSE
-    gse-to-srp          Get SRP for a GSE
-    gsm-to-gse          Get GSE for a GSM
-    gsm-to-srp          Get SRP for a GSM
-    gsm-to-srr          Get SRR for a GSM
-    gsm-to-srs          Get SRS for a GSM
-    gsm-to-srx          Get SRX for a GSM
-    srp-to-gse          Get GSE for a SRP
-    srp-to-srr          Get SRR for a SRP
-    srp-to-srs          Get SRS for a SRP
-    srp-to-srx          Get SRX for a SRP
-    srr-to-gsm          Get GSM for a SRR
-    srr-to-srp          Get SRP for a SRR
-    srr-to-srs          Get SRS for a SRR
-    srr-to-srx          Get SRX for a SRR
-    srs-to-gsm          Get GSM for a SRS
-    srs-to-srx          Get SRX for a SRS
-    srx-to-srp          Get SRP for a SRX
-    srx-to-srr          Get SRR for a SRX
-    srx-to-srs          Get SRS for a SRX
-    geo-matrix          Download and parse GEO Matrix files
-    srp-to-pmid         Get PMIDs for SRP accessions
-    gse-to-pmid         Get PMIDs for GSE accessions
-    pmid-to-gse         Get GSE accessions from PMIDs
-    pmid-to-srp         Get SRP accessions from PMIDs
-    pmc-to-identifiers  Extract database identifiers from PMC articles
-    pmid-to-identifiers
-                        Extract database identifiers from PubMed articles
-    doi-to-gse          Get GSE accessions from DOIs
-    doi-to-srp          Get SRP accessions from DOIs
-    doi-to-identifiers  Extract database identifiers from articles via DOI
 ```
 
 

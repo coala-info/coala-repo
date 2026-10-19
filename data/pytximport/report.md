@@ -1,5 +1,12 @@
 # pytximport CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pytximport | PASS |  |
+| pytximport_create-map | PASS |  |
+
 ## pytximport
 
 ### Tool Description
@@ -83,3 +90,41 @@ Options:
   --help                          Show this message and exit.
 ```
 
+## pytximport_create-map
+
+### Tool Description
+Create a transcript-to-gene mapping file via the command line.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pytximport:0.12.0--pyhdfd78af_0
+- **Homepage**: https://pytximport.readthedocs.io/en/latest/start.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/pytximport/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: pytximport create-map [OPTIONS]
+
+  Create a transcript-to-gene mapping file via the command line.
+
+Options:
+  -i, --input_file, --input PATH  The path to the annotation GTF file.
+                                  [required]
+  -o, --output_file, --output PATH
+                                  The output path to save the resulting
+                                  transcript-to-gene mapping file to.
+                                  [required]
+  -ow, --output_path_overwrite, --save-path-overwrite
+                                  Provide this flag to overwrite an existing
+                                  file at the output path.
+  --source-field, --source_field TEXT
+                                  The annotation field to use as the source in
+                                  the mapping file.
+  --target-field, --target_field TEXT
+                                  The annotation field(s) to use as the target
+                                  in the mapping file.
+  --keep-biotype, --keep_biotype  Provide this flag to keep the gene_biotype
+                                  column as an additional column in the
+                                  mapping file.
+  --help                          Show this message and exit.
+```

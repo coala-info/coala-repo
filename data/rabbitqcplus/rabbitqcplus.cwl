@@ -206,7 +206,7 @@ inputs:
   - id: input_file1
     type:
       - 'null'
-      - string
+      - File
     doc: input fastq name 1
     inputBinding:
       position: 101
@@ -214,7 +214,7 @@ inputs:
   - id: input_file2
     type:
       - 'null'
-      - string
+      - File
     doc: input fastq name 2
     inputBinding:
       position: 101
@@ -633,6 +633,16 @@ outputs:
     doc: output fastq name 2
     outputBinding:
       glob: $(inputs.output_file2_path)
+  - id: qc_reports
+    type:
+      type: array
+      items: File
+    doc: Quality control report (HTML) and optional trimmed adapter or over-represented sequence lists
+    outputBinding:
+      glob:
+        - '*_RabbitQCPlus.html'
+        - '*_trimmed_adapters.txt'
+        - '*ORP_sequences.txt'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

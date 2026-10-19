@@ -1,5 +1,11 @@
 # ratt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ratt | PASS |  |
+
 ## ratt
 
 ### Tool Description

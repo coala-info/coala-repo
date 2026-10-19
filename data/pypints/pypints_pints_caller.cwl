@@ -27,6 +27,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: input bam file, if you want to use bigwig files, please use --bw-pl and
       --bw-mn
     inputBinding:
@@ -81,6 +84,9 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Bam file for input/control (minus strand). If you want to use bigwig 
       instead of BAM, please use --input-bw-pl and --input-bw-mn
     inputBinding:
@@ -377,7 +383,7 @@ inputs:
   - id: save_to
     type:
       - 'null'
-      - Directory
+      - string
     doc: save peaks to this path (a folder), by default, current folder
     inputBinding:
       position: 101
@@ -451,14 +457,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tss-extension
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: show program's version number and exit
-    inputBinding:
-      position: 101
-      prefix: -v
   - id: window_size_threshold
     type:
       - 'null'
@@ -471,6 +469,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: peak_files
+    type:
+      type: array
+      items: File
+    doc: Peak files and intermediate files written with the file prefix
+    outputBinding:
+      glob: $(inputs.file_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypints:1.2.1--pyh7e72e81_0

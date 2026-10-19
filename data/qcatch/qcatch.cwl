@@ -39,7 +39,9 @@ inputs:
       position: 101
       prefix: --gene_id2name_file
   - id: input
-    type: File
+    type:
+      - File
+      - Directory
     doc: "Path to either the .h5ad file itself or to the\ndirectory containing the
       quantification output files."
     inputBinding:
@@ -111,7 +113,9 @@ inputs:
       position: 101
       prefix: --visualize_doublets
   - id: output_path
-    type: string?
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output

@@ -6,15 +6,18 @@ doc: filter sequencing data using some simple heuristics
 inputs:
   - id: fasta_qual_files
     type:
-      type: array
-      items: File
-    doc: FASTA and QUAL files
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTA and QUAL files (give exactly two files, FASTA then QUAL; use this or the FASTQ input)
     inputBinding:
       position: 101
       prefix: -F
   - id: fastq_file
-    type: File
-    doc: FASTQ file
+    type:
+      - 'null'
+      - File
+    doc: FASTQ file (use this or the FASTA and QUAL input)
     inputBinding:
       position: 101
       prefix: -Q
@@ -124,12 +127,20 @@ inputs:
       position: 101
       prefix: -p
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: direct retained fragments to a file named OUTPUT (default=stdout)
     inputBinding:
       position: 102
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Retained fragments (when -o is not given)
+  - id: stderr
+    type: stderr
+    doc: Run diagnostics
   - id: output_file
     type:
       - 'null'
@@ -142,3 +153,5 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qfilt:0.0.1--h9948957_7
+stdout: qfilt.out
+stderr: qfilt.err

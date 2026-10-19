@@ -1,5 +1,11 @@
 # quicktree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quicktree | PASS |  |
+
 ## quicktree
 
 ### Tool Description

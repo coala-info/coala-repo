@@ -1,11 +1,58 @@
 # rapsearch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| prerapsearch | PASS | database from the 12 SARS-CoV-2 proteins searched successfully with rapsearch |
+| rapsearch | PASS | all 100 SARS-CoV-2 reads hit the SARS-CoV-2 proteins at 100% identity |
+
 ## rapsearch
 
 ### Tool Description
 Fast protein similarity search tool for short reads
 
+### prerapsearch
+
+### Tool Description
+Usage: prerapsearch -d database -n swift-file(base name only)
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/rapsearch:2.24--1
+- **Homepage**: https://omics.informatics.indiana.edu/mg/RAPSearch2/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rapsearch/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: prerapsearch -d database -n swift-file(base name only)
+       optional parameter:
+          -s splits-num (splits the database into specified number of files)
+          -f T/t (output the full fasta headers of subjects to faicilitate anonotation)
+Example: prerapsearch -d nr -n nr
+```
+
+## prerapsearch
+
+### Tool Description
+Usage: prerapsearch -d database -n swift-file(base name only)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rapsearch:2.24--1
+- **Homepage**: https://omics.informatics.indiana.edu/mg/RAPSearch2/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rapsearch/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: prerapsearch -d database -n swift-file(base name only)
+       optional parameter:
+          -s splits-num (splits the database into specified number of files)
+          -f T/t (output the full fasta headers of subjects to faicilitate anonotation)
+Example: prerapsearch -d nr -n nr
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/rapsearch:2.24--1
 - **Homepage**: https://github.com/zhaoyanswill/RAPSearch2
 - **Package**: Not found

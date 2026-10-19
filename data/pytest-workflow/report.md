@@ -1,5 +1,11 @@
 # pytest-workflow CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pytest-workflow_pytest | PASS |  |
+
 ## pytest-workflow_pytest
 
 ### Tool Description

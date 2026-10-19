@@ -1,5 +1,14 @@
 # quantpi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quantpi_init | PASS | synthetic data: samples list for two real sarscov2 FASTQ; project folder created with config.yaml; fixed samples to File and workdir to a created folder |
+| quantpi_profiling_wf | Not completed | pipeline, skipped |
+| quantpi_simulate_wf | Not completed | pipeline, skipped |
+| quantpi_sync | Not completed | needs the finished output of a profiling pipeline run, which is skipped as a pipeline |
+
 ## quantpi_init
 
 ### Tool Description

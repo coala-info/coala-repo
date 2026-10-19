@@ -32,8 +32,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The format in which the output should be written, one of {'h5ad', 
-      'csvs', 'loom', 'zarr'}.
+    doc: The format in which the output should be written, one of {'csvs', 
+      'zarr', 'h5ad', 'loom'}.
     inputBinding:
       position: 103
       prefix: --output-format
@@ -49,6 +49,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: converted
+    type:
+      - 'null'
+      - File
+      - Directory
+    doc: The converted quantification matrix (a directory for the csvs format)
+    outputBinding:
+      glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyroe:0.9.3--pyhdfd78af_0

@@ -1,23 +1,14 @@
 # pyroe CWL Generation Report
 
-## pyroe_Make
+## Real Data Test
 
-### Tool Description
-pyroe: error: argument command: invalid choice: 'Make' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyroe:0.9.3--pyhdfd78af_0
-- **Homepage**: https://github.com/COMBINE-lab/pyroe
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyroe/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: pyroe [-h] [-v]
-             {make-spliced+intronic,make-splici,make-spliced+unspliced,make-spliceu,fetch-quant,id-to-name,convert}
-             ...
-pyroe: error: argument command: invalid choice: 'Make' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert')
-```
+| Tool | Result | Reason |
+|---|---|---|
+| pyroe_convert | PASS | synthetic data: planted 4-cell alevin-fry USA-mode quant folder; output matrix checked by hand (X = S+A, gene names projected) |
+| pyroe_fetch-quant | Not completed | dataset server umd.box.com returns HTTP 400 for every dataset URL; nothing to download |
+| pyroe_id-to-name | PASS |  |
+| pyroe_make-spliceu | PASS |  |
+| pyroe_make-splici | PASS |  |
 
 ## pyroe_fetch-quant
 
@@ -148,6 +139,96 @@ options:
                         A 2 column tab-separated list of gene ID to gene name
                         mappings. Providing this file will project gene IDs to
                         gene names in the output.
+```
+
+## pyroe_make-splici
+
+### Tool Description
+Make spliced + intronic (splici) reference.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyroe:0.9.3--pyhdfd78af_0
+- **Homepage**: https://github.com/COMBINE-lab/pyroe
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyroe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pyroe make-spliced+intronic [-h] [--filename-prefix FILENAME_PREFIX]
+                                   [--flank-trim-length FLANK_TRIM_LENGTH]
+                                   [--extra-spliced EXTRA_SPLICED]
+                                   [--extra-unspliced EXTRA_UNSPLICED]
+                                   [--bt-path BT_PATH] [--no-bt]
+                                   [--dedup-seqs] [--no-flanking-merge]
+                                   genome-path gtf-path read-length output-dir
+
+positional arguments:
+  genome-path           The path to a genome fasta file.
+  gtf-path              The path to a gtf file.
+  read-length           The read length of the single-cell experiment being
+                        processed (determines flank size).
+  output-dir            The output directory where splici reference files will
+                        be written.
+
+options:
+  -h, --help            show this help message and exit
+  --filename-prefix FILENAME_PREFIX
+                        The file name prefix of the generated output files.
+  --flank-trim-length FLANK_TRIM_LENGTH
+                        Determines the amount subtracted from the read length
+                        to get the flank length.
+  --extra-spliced EXTRA_SPLICED
+                        The path to an extra spliced sequence fasta file.
+  --extra-unspliced EXTRA_UNSPLICED
+                        The path to an extra unspliced sequence fasta file.
+  --bt-path BT_PATH     The path to bedtools v2.30.0 or greater.
+  --no-bt               A flag indicates whether bedtools will be used for
+                        generating splici reference files.
+  --dedup-seqs          A flag indicates whether identical sequences will be
+                        deduplicated.
+  --no-flanking-merge   A flag indicates whether flank lengths will be
+                        considered when merging introns.
+```
+
+## pyroe_make-spliceu
+
+### Tool Description
+Make spliced + unspliced reference.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyroe:0.9.3--pyhdfd78af_0
+- **Homepage**: https://github.com/COMBINE-lab/pyroe
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyroe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pyroe make-spliced+unspliced [-h] [--filename-prefix FILENAME_PREFIX]
+                                    [--extra-spliced EXTRA_SPLICED]
+                                    [--extra-unspliced EXTRA_UNSPLICED]
+                                    [--bt-path BT_PATH] [--no-bt]
+                                    [--dedup-seqs]
+                                    genome-path gtf-path output-dir
+
+positional arguments:
+  genome-path           The path to a genome fasta file.
+  gtf-path              The path to a gtf file.
+  output-dir            The output directory where Spliceu reference files
+                        will be written.
+
+options:
+  -h, --help            show this help message and exit
+  --filename-prefix FILENAME_PREFIX
+                        The file name prefix of the generated output files.
+  --extra-spliced EXTRA_SPLICED
+                        The path to an extra spliced sequence fasta file.
+  --extra-unspliced EXTRA_UNSPLICED
+                        The path to an extra unspliced sequence fasta file.
+  --bt-path BT_PATH     The path to bedtools v2.30.0 or greater.
+  --no-bt               A flag indicates whether bedtools will be used for
+                        generating Spliceu reference files.
+  --dedup-seqs          A flag indicates whether identical sequences will be
+                        deduplicated.
 ```
 
 ## Metadata

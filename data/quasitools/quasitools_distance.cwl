@@ -9,7 +9,7 @@ doc: "Quasitools distance produces a measure of evolutionary distance [0 - 1] be
   \nTool homepage: https://github.com/phac-nml/quasitools/"
 inputs:
   - id: reference
-    type: string
+    type: File
     doc: Reference sequence(s)
     inputBinding:
       position: 1
@@ -19,6 +19,11 @@ inputs:
       - type: array
         items: File
     doc: BAM files
+    secondaryFiles:
+      - pattern: ^.bai
+        required: false
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 2
   - id: dont_normalize

@@ -1,5 +1,12 @@
 # pytransaln CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pytransaln_align | Failed | image problem: mafft is not installed in the image, so align crashes with FileNotFoundError |
+| pytransaln_stats | PASS |  |
+
 ## pytransaln_align
 
 ### Tool Description

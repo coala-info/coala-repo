@@ -1,5 +1,17 @@
 # pyseer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pyseer | PASS | fixed-effects and lineage output identical to upstream baseline, LMM within 0.1%; --wg enet crashes inside glmnet_python (numpy 2 incompatibility) |
+| pyseer_annotate_hits | PASS | run with one reference only: cwltool cannot stage upstream's draft file names containing # |
+| pyseer_enet_predict | Not completed | needs a fitted elastic net model; pyseer --wg enet fails in this image (glmnet_python incompatible with numpy 2), so no model could be made |
+| pyseer_phandango_mapper | PASS |  |
+| pyseer_scree_plot | Failed | image problem: scree_plot_pyseer forces the TkAgg backend and crashes with missing libX11.so.6, no plot is written |
+| pyseer_similarity | PASS |  |
+| pyseer_square_mash | PASS |  |
+
 ## pyseer
 
 ### Tool Description
@@ -146,3 +158,217 @@ Other:
   --version             show program's version number and exit
 ```
 
+## pyseer_square_mash
+
+### Tool Description
+Make a square matrix out of a mash stream.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyseer:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/mgalardini/pyseer
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyseer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: square_mash [-h] [--classic] [--version]
+
+Make a square matrix out of a mash stream
+
+options:
+  -h, --help  show this help message and exit
+  --classic   Output table in a format suitable for R_mds.pl
+  --version   show program's version number and exit
+```
+
+## pyseer_similarity
+
+### Tool Description
+Calculate a similarity matrix using variant presence/absence information.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyseer:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/mgalardini/pyseer
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyseer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: similarity [-h] (--kmers KMERS | --vcf VCF | --pres PRES)
+                  [--min-af MIN_AF] [--max-af MAX_AF]
+                  [--max-missing MAX_MISSING] [--uncompressed] [--version]
+                  samples
+
+Calculate a similarity matrix using variant presence/absence information
+
+positional arguments:
+  samples               List of sample names to use
+
+options:
+  -h, --help            show this help message and exit
+  --kmers KMERS         Kmers file
+  --vcf VCF             VCF file. Will filter any non 'PASS' sites
+  --pres PRES           Presence/absence .Rtab matrix as produced by roary and
+                        piggy
+  --min-af MIN_AF       Minimum AF [Default: 0.01]
+  --max-af MAX_AF       Maximum AF [Default: 0.99]
+  --max-missing MAX_MISSING
+                        Maximum missing (vcf/Rtab) [Default: 0.05]
+  --uncompressed        Uncompressed kmers file [Default: gzipped]
+  --version             show program's version number and exit
+```
+
+## pyseer_scree_plot
+
+### Tool Description
+Draw a scree-plot from MDS eigenvalues.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyseer:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/mgalardini/pyseer
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyseer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scree_plot_pyseer [-h] [--max-dimensions MAX_DIMENSIONS]
+                         [--output OUTPUT]
+                         distances
+
+Draw a scree-plot from MDS eigenvalues
+
+positional arguments:
+  distances             Strains distance square matrix
+
+options:
+  -h, --help            show this help message and exit
+  --max-dimensions MAX_DIMENSIONS
+                        Maximum dimensions to plot [Default: 30]
+  --output OUTPUT       Plot filename [Default: scree_plot.png]
+```
+
+## pyseer_phandango_mapper
+
+### Tool Description
+Create Phandango Manhattan plot from kmer results.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyseer:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/mgalardini/pyseer
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyseer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: phandango_mapper [-h] [--bwa BWA] [--tmp-prefix TMP_PREFIX]
+                        [--use-filter-p]
+                        kmers reference output
+
+Create Phandango Manhattan plot from kmer results
+
+positional arguments:
+  kmers                 Kmers file, filtered output from SEER
+  reference             Reference fasta file
+  output                Output file
+
+options:
+  -h, --help            show this help message and exit
+  --bwa BWA             Location of bwa executable [Default: bwa]
+  --tmp-prefix TMP_PREFIX
+                        Directory to store temporary files [Default: cwd]
+  --use-filter-p        Plot the unadjusted p-value [Default: lrt-p-value]
+```
+
+## pyseer_annotate_hits
+
+### Tool Description
+Iteratively annotate significant kmers from SEER.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyseer:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/mgalardini/pyseer
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyseer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: annotate_hits [-h] [--feature-type FEATURE_TYPE] [--bwa BWA]
+                     [--tmp-prefix TMP_PREFIX]
+                     kmers references output
+
+Iteratively annotate significant kmers from SEER
+
+positional arguments:
+  kmers                 Kmers file, filtered output from SEER
+  references            File of reference annotations. First column fasta
+                        sequence, second column gff annotation, third column
+                        'ref' or 'draft'
+  output                Output file
+
+options:
+  -h, --help            show this help message and exit
+  --feature-type FEATURE_TYPE
+                        Which feature types to consider [default=CDSs only]
+  --bwa BWA             Location of bwa executable [default=bwa]
+  --tmp-prefix TMP_PREFIX
+                        Directory to store temporary files [default=./]
+```
+
+## pyseer_enet_predict
+
+### Tool Description
+Predict phenotypes using a fitted elastic net model.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyseer:1.4.0--pyhdfd78af_0
+- **Homepage**: https://github.com/mgalardini/pyseer
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyseer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: enet_predict_pyseer [-h] [--threshold THRESHOLD]
+                           [--lineage-clusters LINEAGE_CLUSTERS]
+                           [--true-values TRUE_VALUES] [--ignore-missing]
+                           (--kmers KMERS | --vcf VCF | --pres PRES)
+                           [--burden BURDEN] [--uncompressed]
+                           [--covariates COVARIATES]
+                           [--use-covariates [USE_COVARIATES ...]]
+                           model samples
+
+Predict phenotypes using a fitted elastic net model
+
+positional arguments:
+  model                 Name of fitted model pickle file (.pkl)
+  samples               File with samples to predict
+
+options:
+  -h, --help            show this help message and exit
+  --threshold THRESHOLD
+                        Threshold to pick binary predictions
+  --lineage-clusters LINEAGE_CLUSTERS
+                        Custom clusters to use as lineages to report
+                        stratified accuracy
+  --true-values TRUE_VALUES
+                        Pheno file with known phenotypes to calculate accuracy
+  --ignore-missing      Treat missing values as REF/0 rather than using the
+                        mean AF
+
+Variants:
+  --kmers KMERS         Kmers file
+  --vcf VCF             VCF file. Will filter any non 'PASS' sites
+  --pres PRES           Presence/absence .Rtab matrix as produced by roary and
+                        piggy
+  --burden BURDEN       VCF regions to group variants by for burden testing
+                        (requires --vcf). Requires vcf to be indexed
+  --uncompressed        Uncompressed kmers file [Default: gzipped]
+
+Covariates:
+  --covariates COVARIATES
+                        User-defined covariates file (tab-delimited, no
+                        header, first column contains sample names)
+  --use-covariates [USE_COVARIATES ...]
+                        Covariates to use. Format is "2 3q 4" (q for
+                        quantitative) [Default: load covariates but don't use
+                        them]
+```

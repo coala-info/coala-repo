@@ -6,10 +6,14 @@ doc: "Visualize BAM files with PINTs.\n\nTool homepage: https://pints.yulab.org"
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Input BAM file
     inputBinding:
       position: 101
       prefix: --bam
+      valueFrom: $(self.basename)
   - id: bam_parser
     type:
       - 'null'
@@ -98,6 +102,11 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypints:1.2.1--pyh7e72e81_0

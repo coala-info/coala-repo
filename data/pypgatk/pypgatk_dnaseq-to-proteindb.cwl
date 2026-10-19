@@ -18,7 +18,7 @@ inputs:
   - id: config_file
     type:
       - 'null'
-      - string
+      - File
     doc: Configuration to perform conversion between ENSEMBL Files
     inputBinding:
       position: 101

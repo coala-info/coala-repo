@@ -10,6 +10,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: bam file
     inputBinding:
       position: 101
@@ -62,7 +65,7 @@ inputs:
       position: 101
       prefix: --nextclade_data
   - id: pipeline_dir
-    type: Directory
+    type: string
     doc: Pipeline to run program in.
     inputBinding:
       position: 101
@@ -94,6 +97,21 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pipeline_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the result tables
+    outputBinding:
+      glob: $(inputs.pipeline_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.pipeline_dir, listing: []})'
+        writable: true
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qhery:0.1.2--pyhdfd78af_0

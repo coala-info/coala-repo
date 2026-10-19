@@ -1,5 +1,40 @@
 # pypgx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pypgx_call-genotypes | PASS | genotypes HG00436 *2x2/*71, HG00589 *2/*21, NA18973 *2/*21 from alleles and CNV calls (HG00436 and HG00589 match GeT-RM) |
+| pypgx_call-phenotypes | PASS | phenotypes from genotypes: Indeterminate and two Intermediate Metabolizers |
+| pypgx_combine-results | PASS | combined genotypes, phenotypes, alleles and CNV calls into one results table |
+| pypgx_compare-genotypes | PASS | compared results with itself: genotype and CNV concordance 3 of 3 (no second real result set with the same sample names) |
+| pypgx_compute-control-statistics | PASS | VDR control statistics from 3 real GRCh38 BAM slices; mean depth 34 to 40, as expected for 30x data |
+| pypgx_compute-copy-number | PASS | copy number from read depth and VDR statistics; HG00436 about 2 to 4 copies over CYP2D6, consistent with its known duplication |
+| pypgx_compute-target-depth | PASS | CYP2D6 read depth from 3 real GRCh38 BAM slices; depth about 36 to 48 at the first positions |
+| pypgx_create-consolidated-vcf | PASS | consolidated imported and phased variants into one archive |
+| pypgx_create-input-vcf | PASS | called 156 CYP2D6 variants in 3 real GRCh38 1000 Genomes BAM slices with a chr22 reference; .tbi output added |
+| pypgx_create-regions-bed | PASS | BED for CYP2D6 and CYP2C19 on GRCh38 matches the PyPGx gene table |
+| pypgx_estimate-phase-beagle | PASS | phased 139 CYP2D6 variants with Beagle and the 1KGP bundle panel; genotypes shown as 0\|1; bundle input added |
+| pypgx_filter-samples | PASS | kept 2 of 3 samples in the results archive |
+| pypgx_import-read-depth | PASS | CYP2D6 read depth imported from the depth-of-coverage archive |
+| pypgx_import-variants | PASS | imported CYP2D6 variants from the input VCF (.tbi staged); archive VcfFrame[Imported] |
+| pypgx_plot-bam-copy-number | PASS | PNG with fitted copy number line written for HG00436 |
+| pypgx_plot-bam-read-depth | PASS | PNG written for HG00436; plot_dir input added (renamed from path) and output folder created |
+| pypgx_plot-cn-af | PASS | PNG with copy number and allele fraction written for HG00436; copy number rises over CYP2D6 as expected for its duplication |
+| pypgx_plot-vcf-allele-fraction | PASS | PNG with allele fractions written for HG00436 |
+| pypgx_plot-vcf-read-depth | PASS | PNG written for HG00436 from a bcftools mpileup VCF with FORMAT/DP; a VCF without FORMAT/DP gives an empty plot |
+| pypgx_predict-alleles | PASS | predicted candidate star alleles from consolidated variants |
+| pypgx_predict-cnv | PASS | CNV calls with the bundle CYP2D6 caller: HG00436 WholeDup1, other two Normal; bundle passed with PYPGX_BUNDLE (input added) |
+| pypgx_prepare-depth-of-coverage | PASS | ran on 3 real GRCh38 BAM slices for CYP2D6; depth archive used by later steps |
+| pypgx_print-data | PASS | printed the VDR statistics table and the CYP2D6 read depth table |
+| pypgx_print-metadata | PASS | printed gene, assembly, semantic type and platform of a read depth archive |
+| pypgx_run-chip-pipeline | PASS | CYP3A5 pipeline on the pypgx-data Coriell chip VCF (GRCh37, 355 samples); *1/*1, *1/*3, *3/*3 called with matching phenotypes |
+| pypgx_run-long-read-pipeline | Not completed | no real long-read phased VCF available; .tbi staging added to the CWL |
+| pypgx_run-ngs-pipeline | PASS | CYP2D6 pipeline on the 3 BAM-derived inputs with the bundle (PYPGX_BUNDLE); results equal the step-by-step run |
+| pypgx_slice-bam | PASS | sliced a real GRCh38 1000 Genomes BAM to the CYP2D6 region; reads span chr22:42116353-42155799 only; .bai staged as secondary file |
+| pypgx_test-cnv-caller | PASS | tested the trained GSTT1 caller on the pypgx-data test set; all 20 samples correct |
+| pypgx_train-cnv-caller | PASS | trained GSTT1 CNV caller on the pypgx-data GRCh38 training set; confusion matrix perfect |
+
 ## pypgx_call-genotypes
 
 ### Tool Description

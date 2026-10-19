@@ -42,6 +42,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: 'Genomic sequences file (currently supported formats: FASTA)'
     inputBinding:
       position: 101

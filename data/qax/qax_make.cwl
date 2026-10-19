@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: make
+baseCommand:
+  - qax
+  - make
 label: qax_make
 doc: "Create a Qiime Visualization Artifact from a directory with files. By default,
   will create a \"Visualization\", thus requiring an \"index.html\" file in the root
@@ -40,10 +42,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Artifact metadata attribute (key=value)
+        inputBinding:
+          prefix: --attr
+    doc: Artifact metadata attribute (key=value), repeat for several attributes
     inputBinding:
       position: 102
-      prefix: --attr
   - id: force
     type:
       - 'null'

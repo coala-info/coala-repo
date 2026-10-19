@@ -23,11 +23,17 @@ inputs:
       position: 101
       prefix: --clusters
   - id: control_bam_files
-    type: string
+    type:
+      type: array
+      items: File
     doc: Comma-separated list of control BAM files
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: -control
+      itemSeparator: ","
   - id: downstream_offset
     type:
       - 'null'
@@ -94,18 +100,24 @@ inputs:
   - id: rscript_path
     type:
       - 'null'
-      - File
+      - string
     doc: Path to Rscript executable (by default it is assumed to be available 
       from system $PATH)
     inputBinding:
       position: 101
       prefix: --rscriptpath
   - id: sample_bam_files
-    type: string
+    type:
+      type: array
+      items: File
     doc: Comma-separated list of sample BAM files
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 101
       prefix: -sample
+      itemSeparator: ","
   - id: upstream_offset
     type:
       - 'null'
@@ -132,7 +144,8 @@ outputs:
       - File
     doc: Output file for PDF report
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: |
+        ${ return (inputs.output_dir ? inputs.output_dir + "/" : "") + (inputs.output_file ? inputs.output_file : "report.pdf"); }
   - id: output_dir_dir
     type:
       - 'null'
@@ -140,6 +153,8 @@ outputs:
     doc: Output folder for HTML report and raw data.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualimap:2.3--hdfd78af_0

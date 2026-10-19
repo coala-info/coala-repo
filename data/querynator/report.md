@@ -1,5 +1,13 @@
 # querynator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| querynator_create-report | Not completed | needs result folders from both the CGI query (account and token) and the CIViC query, which fails; fixed outdir to a string with a folder output |
+| querynator_query-api-cgi | Not completed | needs a Cancer Genome Interpreter account and token; fixed outdir to a string with a folder output and added network access |
+| querynator_query-api-civic | Failed | image problem: civicpy in the image cannot read the current online CIViC cache (AttributeError: Approval); fixed outdir to a string with a folder output and added network access |
+
 ## querynator_create-report
 
 ### Tool Description

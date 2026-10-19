@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: list
+baseCommand:
+  - qax
+  - list
 label: qax_list
 doc: "List artifacts\n\nTool homepage: https://github.com/telatin/qax"
 inputs:

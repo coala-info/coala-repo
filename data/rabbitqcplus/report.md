@@ -1,5 +1,11 @@
 # rabbitqcplus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rabbitqcplus | PASS |  |
+
 ## rabbitqcplus
 
 ### Tool Description

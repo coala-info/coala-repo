@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rattle_polish
+baseCommand:
+  - rattle
+  - polish
 label: rattle_polish
 doc: "RATTLE Polish\n\nTool homepage: https://github.com/comprna/RATTLE"
 inputs:
@@ -19,9 +21,7 @@ inputs:
       position: 101
       prefix: --label
   - id: output_folder
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'output folder for fastx files (default: .)'
     inputBinding:
       position: 101
@@ -64,12 +64,17 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_folder_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: 'output folder for fastx files (default: .)'
     outputBinding:
       glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_folder)
+        entry: "$({class: 'Directory', listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rattle:1.0--h5ca1c30_0

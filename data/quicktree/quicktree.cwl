@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: Input file (distance matrix or alignment)
     inputBinding:
-      position: 1
+      position: 200
   - id: boot
     type:
       - 'null'

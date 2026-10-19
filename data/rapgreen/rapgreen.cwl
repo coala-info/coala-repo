@@ -102,20 +102,22 @@ inputs:
   - id: rerooted_gene_tree_file
     type:
       - 'null'
-      - File
+      - string
     doc: The simple unannotated rerooted gene tree file
     inputBinding:
       position: 101
       prefix: -rerooted
+      valueFrom: $(runtime.outdir)/$(self)
   - id: rerooted_species_gene_tree_file
     type:
       - 'null'
-      - File
+      - string
     doc: The simple unannotated rerooted gene tree file, with only species on 
       the leaf (for supertrees for example)
     inputBinding:
       position: 101
       prefix: -rerootedSpecies
+      valueFrom: $(runtime.outdir)/$(self)
   - id: speciation_weight
     type:
       - 'null'
@@ -176,6 +178,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -nhx
+      valueFrom: $(runtime.outdir)/$(self)
   - id: gene_tree_phyloxml_file_path
     type:
       - 'null'
@@ -184,6 +187,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -phyloxml
+      valueFrom: $(runtime.outdir)/$(self)
   - id: output_gene_tree_file_path
     type:
       - 'null'
@@ -192,6 +196,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: -og
+      valueFrom: $(runtime.outdir)/$(self)
   - id: output_species_tree_file_path
     type:
       - 'null'
@@ -200,6 +205,7 @@ inputs:
     inputBinding:
       position: 105
       prefix: -os
+      valueFrom: $(runtime.outdir)/$(self)
   - id: reconciled_tree_file_path
     type:
       - 'null'
@@ -208,6 +214,7 @@ inputs:
     inputBinding:
       position: 106
       prefix: -or
+      valueFrom: $(runtime.outdir)/$(self)
   - id: stats_gene_tree_file_path
     type:
       - 'null'
@@ -216,6 +223,7 @@ inputs:
     inputBinding:
       position: 107
       prefix: -stats
+      valueFrom: $(runtime.outdir)/$(self)
 outputs:
   - id: gene_tree_nhx_file
     type:
@@ -260,6 +268,20 @@ outputs:
     doc: The output tree file (annotated with duplications) in phyloXML format
     outputBinding:
       glob: $(inputs.gene_tree_phyloxml_file_path)
+  - id: rerooted_tree
+    type:
+      - 'null'
+      - File
+    doc: The simple unannotated rerooted gene tree file
+    outputBinding:
+      glob: $(inputs.rerooted_gene_tree_file)
+  - id: rerooted_species_tree
+    type:
+      - 'null'
+      - File
+    doc: The simple unannotated rerooted gene tree file, with only species on the leaf
+    outputBinding:
+      glob: $(inputs.rerooted_species_gene_tree_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

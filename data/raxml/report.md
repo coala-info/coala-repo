@@ -1,5 +1,12 @@
 # raxml CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| raxml_raxmlHPC | PASS |  |
+| raxml_raxmlHPC-PTHREADS | PASS |  |
+
 ## raxml_raxmlHPC
 
 ### Tool Description

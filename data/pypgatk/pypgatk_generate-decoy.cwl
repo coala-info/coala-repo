@@ -140,7 +140,7 @@ inputs:
   - id: temp_file
     type:
       - 'null'
-      - File
+      - string
     doc: Set temporary file to write decoys prior to shuffling. Default=tmp.fa
     inputBinding:
       position: 101

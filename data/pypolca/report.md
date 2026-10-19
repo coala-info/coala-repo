@@ -1,5 +1,11 @@
 # pypolca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pypolca_run | PASS |  |
+
 ## pypolca_run
 
 ### Tool Description

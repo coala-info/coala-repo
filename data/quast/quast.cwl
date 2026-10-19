@@ -1,13 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - python
-  - /usr/local/bin/quast
+baseCommand: quast
 label: quast
 doc: "Quality Assessment Tool for Genome Assemblies\n\nTool homepage: http://quast.sourceforge.net/"
 inputs:
   - id: files_with_contigs
-    type: File
+    type:
+      type: array
+      items: File
     doc: Files containing contigs for assembly
     inputBinding:
       position: 1
@@ -84,7 +84,7 @@ inputs:
       reference)
     inputBinding:
       position: 102
-      prefix: --est-insert-size
+      prefix: --est-ref-size
   - id: eukaryote
     type:
       - 'null'
@@ -627,6 +627,142 @@ inputs:
     inputBinding:
       position: 102
       prefix: --x-for-Nx
+  - id: genes
+    type:
+      - 'null'
+      - File
+    doc: File with genes coordinates in the reference (GFF, BED, NCBI or TXT).
+    inputBinding:
+      position: 102
+      prefix: --genes
+  - id: cov
+    type:
+      - 'null'
+      - File
+    doc: File with read coverage (BEDGraph).
+    inputBinding:
+      position: 102
+      prefix: --cov
+  - id: phys_cov
+    type:
+      - 'null'
+      - File
+    doc: File with physical coverage (BEDGraph).
+    inputBinding:
+      position: 102
+      prefix: --phys-cov
+  - id: reads1
+    type:
+      - 'null'
+      - File
+    doc: Illumina forward paired-end reads (FASTQ, may be gzipped).
+    inputBinding:
+      position: 102
+      prefix: --reads1
+  - id: reads2
+    type:
+      - 'null'
+      - File
+    doc: Illumina reverse paired-end reads (FASTQ, may be gzipped).
+    inputBinding:
+      position: 102
+      prefix: --reads2
+  - id: colors
+    type:
+      - 'null'
+      - string
+    doc: Comma-separated list of colors used in plots.
+    inputBinding:
+      position: 102
+      prefix: --colors
+  - id: ls
+    type:
+      - 'null'
+      - string
+    doc: Comma-separated list of line styles used in plots.
+    inputBinding:
+      position: 102
+      prefix: --ls
+  - id: err_fpath
+    type:
+      - 'null'
+      - string
+    doc: File to write error messages to.
+    inputBinding:
+      position: 102
+      prefix: --err-fpath
+  - id: no_krona
+    type:
+      - 'null'
+      - boolean
+    doc: Do not draw Krona charts (metaQUAST).
+    inputBinding:
+      position: 102
+      prefix: --no-krona
+  - id: no_check_meta
+    type:
+      - 'null'
+      - boolean
+    doc: Do not check the input files for metaQUAST.
+    inputBinding:
+      position: 102
+      prefix: --no-check-meta
+  - id: no_portable_html
+    type:
+      - 'null'
+      - boolean
+    doc: Do not create a portable HTML report.
+    inputBinding:
+      position: 102
+      prefix: --no-portable-html
+  - id: combined_ref
+    type:
+      - 'null'
+      - boolean
+    doc: Use one combined reference for all assemblies (metaQUAST).
+    inputBinding:
+      position: 102
+      prefix: --combined-ref
+  - id: agb
+    type:
+      - 'null'
+      - boolean
+    doc: Use the AGB (annotated gene block) reference-free mode.
+    inputBinding:
+      position: 102
+      prefix: --agb
+  - id: read_support
+    type:
+      - 'null'
+      - boolean
+    doc: Compute read support for the assembly.
+    inputBinding:
+      position: 102
+      prefix: --read-support
+  - id: save_json
+    type:
+      - 'null'
+      - boolean
+    doc: Save the output in JSON format in the output directory.
+    inputBinding:
+      position: 102
+      prefix: --save-json
+  - id: use_input_ref_order
+    type:
+      - 'null'
+      - boolean
+    doc: Use the order of references from the input (metaQUAST).
+    inputBinding:
+      position: 102
+      prefix: --use-input-ref-order
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Run in debug mode.
+    inputBinding:
+      position: 102
+      prefix: --debug
 outputs:
   - id: stdout
     type: stdout

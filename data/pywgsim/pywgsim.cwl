@@ -10,17 +10,13 @@ inputs:
     doc: FASTA reference sequence
     inputBinding:
       position: 1
-  - id: read1
-    type:
-      - 'null'
-      - File
+  - id: read1_path
+    type: string
     doc: FASTQ file for first in pair (read1.fq)
     inputBinding:
       position: 2
-  - id: read2
-    type:
-      - 'null'
-      - File
+  - id: read2_path
+    type: string
     doc: FASTQ file for second in pair (read2.fq)
     inputBinding:
       position: 3
@@ -121,12 +117,24 @@ inputs:
       position: 104
       prefix: --stdev
   - id: gff_output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'GFF output file (default: stdout)'
     inputBinding:
       position: 105
       prefix: --gff
 outputs:
+  - id: read1
+    type: File
+    doc: FASTQ file for first in pair
+    outputBinding:
+      glob: $(inputs.read1_path)
+  - id: read2
+    type: File
+    doc: FASTQ file for second in pair
+    outputBinding:
+      glob: $(inputs.read2_path)
   - id: gff_output_file
     type:
       - 'null'

@@ -52,7 +52,7 @@ inputs:
   - id: config_file
     type:
       - 'null'
-      - string
+      - File
     doc: Configuration to perform conversion between ENSEMBL Files
     inputBinding:
       position: 101
@@ -197,6 +197,10 @@ outputs:
       glob: $(inputs.output_proteindb_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.gene_annotations_gtf)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0

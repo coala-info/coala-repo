@@ -17,7 +17,7 @@ inputs:
   - id: config_file
     type:
       - 'null'
-      - string
+      - File
     doc: Configuration to perform Ensembl database check
     inputBinding:
       position: 101

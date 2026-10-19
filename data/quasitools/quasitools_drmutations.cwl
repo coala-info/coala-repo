@@ -9,6 +9,11 @@ inputs:
   - id: bam_file
     type: File
     doc: Input BAM file
+    secondaryFiles:
+      - pattern: ^.bai
+        required: false
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: reference_file
@@ -18,7 +23,7 @@ inputs:
       position: 2
   - id: variants_file
     type: File
-    doc: Variants file (e.g., VCF)
+    doc: Variants file in VCF format (output of quasitools call ntvar)
     inputBinding:
       position: 3
   - id: bed4_file
@@ -53,7 +58,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 107
-      prefix: --output-file
+      prefix: --output
 outputs:
   - id: output_file
     type:

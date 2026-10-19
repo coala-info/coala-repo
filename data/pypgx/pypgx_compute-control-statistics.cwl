@@ -22,6 +22,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: One or more input BAM files. Alternatively, you can provide a text file
       (.txt, .tsv, .csv, or .list) containing one BAM file per line.
     inputBinding:

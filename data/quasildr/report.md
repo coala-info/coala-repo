@@ -1,11 +1,37 @@
 # quasildr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| quasildr_run_graphdr.py | PASS | Dentate Gyrus PCA example from the repo; GraphDR output has the right shape and correlates with the input; plot with annotation also works; fixed baseCommand to run_graphdr.py |
+| quasildr_run_structdr.py | Failed | image problem: Python module networkx is missing, so the script stops at import |
+
 ## quasildr_run_graphdr.py
 
 ### Tool Description
 Run GraphDR.
 
+### quasildr_run_structdr.py
+
+### Tool Description
+Run nonparametric ridge estimation (StructDR).
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/quasildr:0.2.2--pyhdfd78af_0
+- **Homepage**: https://github.com/jzthree/quasildr
+- **Package**: https://anaconda.org/channels/bioconda/packages/quasildr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/run_structdr.py", line 10, in <module>
+    import networkx as nx
+ModuleNotFoundError: No module named 'networkx'
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/quasildr:0.2.2--pyhdfd78af_0
 - **Homepage**: https://github.com/jzthree/quasildr
 - **Package**: https://anaconda.org/channels/bioconda/packages/quasildr/overview

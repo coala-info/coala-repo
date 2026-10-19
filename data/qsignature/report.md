@@ -1,146 +1,130 @@
 # qsignature CWL Generation Report
 
-## qsignature
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| qsignature_QSigCompare | Failed | image problem: Java fails at start with UnsatisfiedLinkError (libnio.so cannot load libnet.so) |
+| qsignature_SignatureGenerator | Failed | image problem: Java fails at start with UnsatisfiedLinkError (libnio.so cannot load libnet.so) |
+
+## qsignature_SignatureGenerator
 
 ### Tool Description
-Execute Java classes or jar files
+Generate a qsignature VCF of base counts at SNP positions from a BAM file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/qsignature:0.1pre--3
-- **Homepage**: Not found
-- **Package**: Not found
+- **Homepage**: https://github.com/AdamaJava/adamajava/tree/master/qsignature
+- **Package**: https://anaconda.org/channels/bioconda/packages/qsignature/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/qsignature/overview
-- **Total Downloads**: 18.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
 ### Original Help Text
 ```text
-/usr/local/bin/qsignature: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-Usage: java [-options] class [args...]
-           (to execute a class)
-   or  java [-options] -jar jarfile [args...]
-           (to execute a jar file)
-where options include:
-    -d32	  use a 32-bit data model if available
-    -d64	  use a 64-bit data model if available
-    -server	  to select the "server" VM
-                  The default VM is server,
-                  because you are running on a server-class machine.
-
-
-    -cp <class search path of directories and zip/jar files>
-    -classpath <class search path of directories and zip/jar files>
-                  A : separated list of directories, JAR archives,
-                  and ZIP archives to search for class files.
-    -D<name>=<value>
-                  set a system property
-    -verbose:[class|gc|jni]
-                  enable verbose output
-    -version      print product version and exit
-    -version:<value>
-                  Warning: this feature is deprecated and will be removed
-                  in a future release.
-                  require the specified version to run
-    -showversion  print product version and continue
-    -jre-restrict-search | -no-jre-restrict-search
-                  Warning: this feature is deprecated and will be removed
-                  in a future release.
-                  include/exclude user private JREs in the version search
-    -? -help      print this help message
-    -X            print help on non-standard options
-    -ea[:<packagename>...|:<classname>]
-    -enableassertions[:<packagename>...|:<classname>]
-                  enable assertions with specified granularity
-    -da[:<packagename>...|:<classname>]
-    -disableassertions[:<packagename>...|:<classname>]
-                  disable assertions with specified granularity
-    -esa | -enablesystemassertions
-                  enable system assertions
-    -dsa | -disablesystemassertions
-                  disable system assertions
-    -agentlib:<libname>[=<options>]
-                  load native agent library <libname>, e.g. -agentlib:hprof
-                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
-    -agentpath:<pathname>[=<options>]
-                  load native agent library by full pathname
-    -javaagent:<jarpath>[=<options>]
-                  load Java programming language agent, see java.lang.instrument
-    -splash:<imagepath>
-                  show splash screen with specified image
-See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
+usage: qsignature ToolName [-options] (See https://qcmg-wiki.imb.uq.edu.au/index.php/Qsignature for more details)
+Option                                  Description                            
+------                                  -----------                            
+-V, -v, --version                       Print version info.                    
+--additionalSearchString <Additional    Specifies an input file or directory.  
+  Search string>                                                               
+--cutoff <Float: cutoff>                Specifies the cutoff value to be used  
+                                          in the comparison                    
+-d, --dir, --directory <outdir>         Specifies the output directory.        
+--email <email>                         Specifies an input file or directory.  
+--emailSubject <emailSubject>           Specifies an input file or directory.  
+--excludeVcfsFile <excludeVcfsFile>     Specifies an input file or directory.  
+-h, --help                              Shows this help message.               
+-i, --input <infile>                    Specifies an input file or directory.  
+--illuminaArraysDesign <Illumina        Specifies an input file or directory.  
+  Arrays Design file>                                                          
+--log                                   Full path to file where log output     
+                                          will be directed (must have write    
+                                          permissions)                         
+--loglevel                              Logging level required, e.g. INFO,     
+                                          DEBUG. (Optional) If no parameter is 
+                                          specified, will default to INFO      
+--minBaseQuality <Integer:              Specifies the minimum base quality the 
+  minBaseQuality>                         base must have to be considered in   
+                                          the calculation                      
+--minCoverage <Integer: minCoverage>    Specifies the minimum coverage to be   
+                                          used in the comparison               
+--minMappingQuality <Integer:           Specifies the minimum mapping quality  
+  minMappingQuality>                      the read must have to be considered  
+                                          in the calculation                   
+--noOfThreads <Integer: noOfThreads>    Specifies the number of threads to be  
+                                          used when retireving positions from  
+                                          bam files                            
+--output <outputfile>                   Specifies the output file.             
+-p, --position <position>               Specifies an input file or directory.  
+--searchSuffix <Search suffix>          Specifies an input file or directory.  
+--sequential                            Specifies that bam access should be    
+                                          sequential rather than indexed       
+--snpChipSearchSuffix <Snp Chip Search  Specifies an input file or directory.  
+  Suffix>                                                                      
+--snpPositions <snpPositions>           Specifies the snp positions file.      
+--validation                            How strict to be when reading a SAM or 
+                                          BAM. Possible values: {STRICT,       
+                                          LENIENT, SILENT}
 ```
 
+## qsignature_QSigCompare
+
+### Tool Description
+Compare qsignature VCF files in a directory and report the pairwise similarity as XML.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/qsignature:0.1pre--3
+- **Homepage**: https://github.com/AdamaJava/adamajava/tree/master/qsignature
+- **Package**: https://anaconda.org/channels/bioconda/packages/qsignature/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: qsignature ToolName [-options] (See https://qcmg-wiki.imb.uq.edu.au/index.php/Qsignature for more details)
+Option                                  Description                            
+------                                  -----------                            
+-V, -v, --version                       Print version info.                    
+--additionalSearchString <Additional    Specifies an input file or directory.  
+  Search string>                                                               
+--cutoff <Float: cutoff>                Specifies the cutoff value to be used  
+                                          in the comparison                    
+-d, --dir, --directory <outdir>         Specifies the output directory.        
+--email <email>                         Specifies an input file or directory.  
+--emailSubject <emailSubject>           Specifies an input file or directory.  
+--excludeVcfsFile <excludeVcfsFile>     Specifies an input file or directory.  
+-h, --help                              Shows this help message.               
+-i, --input <infile>                    Specifies an input file or directory.  
+--illuminaArraysDesign <Illumina        Specifies an input file or directory.  
+  Arrays Design file>                                                          
+--log                                   Full path to file where log output     
+                                          will be directed (must have write    
+                                          permissions)                         
+--loglevel                              Logging level required, e.g. INFO,     
+                                          DEBUG. (Optional) If no parameter is 
+                                          specified, will default to INFO      
+--minBaseQuality <Integer:              Specifies the minimum base quality the 
+  minBaseQuality>                         base must have to be considered in   
+                                          the calculation                      
+--minCoverage <Integer: minCoverage>    Specifies the minimum coverage to be   
+                                          used in the comparison               
+--minMappingQuality <Integer:           Specifies the minimum mapping quality  
+  minMappingQuality>                      the read must have to be considered  
+                                          in the calculation                   
+--noOfThreads <Integer: noOfThreads>    Specifies the number of threads to be  
+                                          used when retireving positions from  
+                                          bam files                            
+--output <outputfile>                   Specifies the output file.             
+-p, --position <position>               Specifies an input file or directory.  
+--searchSuffix <Search suffix>          Specifies an input file or directory.  
+--sequential                            Specifies that bam access should be    
+                                          sequential rather than indexed       
+--snpChipSearchSuffix <Snp Chip Search  Specifies an input file or directory.  
+  Suffix>                                                                      
+--snpPositions <snpPositions>           Specifies the snp positions file.      
+--validation                            How strict to be when reading a SAM or 
+                                          BAM. Possible values: {STRICT,       
+                                          LENIENT, SILENT}
+```
 
 ## Metadata
 - **Skill**: generated
-
-## qsignature
-
-### Tool Description
-Execute Java classes or jar files
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/qsignature:0.1pre--3
-- **Homepage**: Not found
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-/usr/local/bin/qsignature: line 5: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-Usage: java [-options] class [args...]
-           (to execute a class)
-   or  java [-options] -jar jarfile [args...]
-           (to execute a jar file)
-where options include:
-    -d32	  use a 32-bit data model if available
-    -d64	  use a 64-bit data model if available
-    -server	  to select the "server" VM
-                  The default VM is server,
-                  because you are running on a server-class machine.
-
-
-    -cp <class search path of directories and zip/jar files>
-    -classpath <class search path of directories and zip/jar files>
-                  A : separated list of directories, JAR archives,
-                  and ZIP archives to search for class files.
-    -D<name>=<value>
-                  set a system property
-    -verbose:[class|gc|jni]
-                  enable verbose output
-    -version      print product version and exit
-    -version:<value>
-                  Warning: this feature is deprecated and will be removed
-                  in a future release.
-                  require the specified version to run
-    -showversion  print product version and continue
-    -jre-restrict-search | -no-jre-restrict-search
-                  Warning: this feature is deprecated and will be removed
-                  in a future release.
-                  include/exclude user private JREs in the version search
-    -? -help      print this help message
-    -X            print help on non-standard options
-    -ea[:<packagename>...|:<classname>]
-    -enableassertions[:<packagename>...|:<classname>]
-                  enable assertions with specified granularity
-    -da[:<packagename>...|:<classname>]
-    -disableassertions[:<packagename>...|:<classname>]
-                  disable assertions with specified granularity
-    -esa | -enablesystemassertions
-                  enable system assertions
-    -dsa | -disablesystemassertions
-                  disable system assertions
-    -agentlib:<libname>[=<options>]
-                  load native agent library <libname>, e.g. -agentlib:hprof
-                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
-    -agentpath:<pathname>[=<options>]
-                  load native agent library by full pathname
-    -javaagent:<jarpath>[=<options>]
-                  load Java programming language agent, see java.lang.instrument
-    -splash:<imagepath>
-                  show splash screen with specified image
-See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
-```
 

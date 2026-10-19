@@ -20,6 +20,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: One or more input BAM files. Alternatively, you can provide a text file
       (.txt, .tsv, .csv, or .list) containing one BAM file per line.
     inputBinding:
@@ -79,6 +82,9 @@ outputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Output VCF file. It must have .vcf.gz as suffix.
     outputBinding:
       glob: $(inputs.vcf)

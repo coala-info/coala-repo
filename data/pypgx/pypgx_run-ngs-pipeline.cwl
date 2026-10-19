@@ -123,12 +123,20 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     doc: Input VCF file must be already BGZF compressed (.gz) and indexed (.tbi)
       to allow random access. Statistical haplotype phasing will be skipped if 
       input VCF is already fully phased.
     inputBinding:
       position: 103
       prefix: --variants
+  - id: pypgx_bundle
+    type:
+      - 'null'
+      - Directory
+    doc: 'Path to the pypgx-bundle directory (git clone of the version matching PyPGx). It is passed to the tool in the PYPGX_BUNDLE environment variable, because the default home directory location does not exist in the container.'
 outputs:
   - id: stdout
     type: stdout
@@ -140,6 +148,12 @@ outputs:
     doc: Output directory.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: PYPGX_BUNDLE
+        envValue: '$(inputs.pypgx_bundle ? inputs.pypgx_bundle.path : "/pypgx-bundle")'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgx:0.26.0--pyh7e72e81_0

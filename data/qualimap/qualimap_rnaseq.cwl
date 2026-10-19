@@ -115,14 +115,16 @@ outputs:
     doc: Output file for computed counts. If only name of the file is provided, 
       then the file will be saved in the output folder.
     outputBinding:
-      glob: $(inputs.output_counts_file)
+      glob: |
+        ${ return (inputs.output_dir ? inputs.output_dir + "/" : "") + inputs.output_counts_file; }
   - id: output_file_out
     type:
       - 'null'
       - File
     doc: Output file for PDF report
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: |
+        ${ return (inputs.output_dir ? inputs.output_dir + "/" : "") + inputs.output_file; }
   - id: output_dir_dir
     type:
       - 'null'
@@ -130,6 +132,8 @@ outputs:
     doc: Output folder for HTML report and raw data.
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualimap:2.3--hdfd78af_0

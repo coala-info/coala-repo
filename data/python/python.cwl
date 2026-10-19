@@ -11,13 +11,14 @@ inputs:
     doc: program read from script file
     inputBinding:
       position: 1
-  - id: stdin_arg
+  - id: input_files
     type:
       - 'null'
-      - string
-    doc: program read from stdin (default; interactive mode if a tty)
+      - type: array
+        items: File
+    doc: input files passed to the program as arguments (staged so the script can read them)
     inputBinding:
-      position: 2
+      position: 3
   - id: program_args
     type:
       - 'null'
@@ -25,7 +26,7 @@ inputs:
         items: string
     doc: arguments passed to program in sys.argv[1:]
     inputBinding:
-      position: 3
+      position: 4
   - id: check_hash_based_pycs
     type:
       - 'null'
@@ -59,30 +60,6 @@ inputs:
     inputBinding:
       position: 104
       prefix: -B
-  - id: help_all
-    type:
-      - 'null'
-      - boolean
-    doc: print complete help information and exit
-    inputBinding:
-      position: 104
-      prefix: --help-all
-  - id: help_env
-    type:
-      - 'null'
-      - boolean
-    doc: print help about Python environment variables and exit
-    inputBinding:
-      position: 104
-      prefix: --help-env
-  - id: help_xoptions
-    type:
-      - 'null'
-      - boolean
-    doc: print help about implementation-specific -X options and exit
-    inputBinding:
-      position: 104
-      prefix: --help-xoptions
   - id: ignore_env_vars
     type:
       - 'null'
@@ -175,15 +152,6 @@ inputs:
     inputBinding:
       position: 104
       prefix: -OO
-  - id: print_version
-    type:
-      - 'null'
-      - boolean
-    doc: print the Python version number and exit (also --version); when given 
-      twice, print more information about the build
-    inputBinding:
-      position: 104
-      prefix: -V
   - id: skip_first_line
     type:
       - 'null'

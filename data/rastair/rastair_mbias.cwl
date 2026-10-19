@@ -90,6 +90,11 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: R_SCRIPT_DIR
+        envValue: /usr/local/share/rastair/scripts
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rastair:2.0.0--h03e3cfe_0

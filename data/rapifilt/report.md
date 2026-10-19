@@ -1,5 +1,11 @@
 # rapifilt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rapifilt | PASS | paired Illumina and single fastq inputs run; all 50 test reads pass the filters |
+
 ## rapifilt
 
 ### Tool Description

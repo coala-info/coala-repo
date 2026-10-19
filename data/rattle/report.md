@@ -1,5 +1,15 @@
 # rattle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rattle_cluster | PASS |  |
+| rattle_cluster_summary | PASS |  |
+| rattle_correct | PASS |  |
+| rattle_extract_clusters | PASS |  |
+| rattle_polish | PASS |  |
+
 ## rattle_cluster
 
 ### Tool Description

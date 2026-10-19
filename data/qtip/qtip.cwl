@@ -58,12 +58,19 @@ inputs:
   - id: index
     type:
       - 'null'
-      - File
-    doc: Index file to use; specify the appropriate prefix, e.g. Bowtie 2 index 
-      file name without the .X.bt2 suffix.
+      - string
+    doc: Index file prefix to use, e.g. Bowtie 2 index file name without the .X.bt2 
+      suffix. The index files themselves go in index_files.
     inputBinding:
       position: 101
       prefix: --index
+  - id: index_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Aligner index files (e.g. the Bowtie 2 .bt2 files) staged next to the 
+      working directory so the index prefix resolves
   - id: input_model_size
     type:
       - 'null'
@@ -455,6 +462,9 @@ outputs:
       glob: $(inputs.vanilla_output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qtip:1.6.2--py36_0

@@ -1,5 +1,11 @@
 # rapclust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rapclust | Failed | image problem: RapClust stops at start with FileNotFoundError for the 'locale' command (click needs it; no UTF-8 locale in the image); CWL rewritten from the script source (command RapClust, option --config only) |
+
 ## rapclust
 
 ### Tool Description

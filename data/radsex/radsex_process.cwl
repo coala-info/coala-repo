@@ -4,51 +4,43 @@ baseCommand:
   - radsex
   - process
 label: radsex_process
-doc: "Process raw fastq files and generate a table of marker depths.\n\nTool homepage:
-  https://github.com/RomainFeron/RadSex"
+doc: "Computes a table of marker depths from a set of demultiplexed reads files.\n\
+  \nTool homepage: https://github.com/SexGenomicsToolkit/radsex"
 inputs:
-  - id: groups_file
-    type: File
-    doc: File describing groups for each individual
-    inputBinding:
-      position: 101
-      prefix: --groups-file
   - id: input_dir
     type: Directory
-    doc: Directory containing fastq files
+    doc: Path to a directory contains demultiplexed sequence files
     inputBinding:
       position: 101
       prefix: --input-dir
-  - id: min_depth
-    type:
-      - 'null'
-      - int
-    doc: Minimum depth to consider a marker
-    inputBinding:
-      position: 101
-      prefix: --min-depth
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads
+    doc: Number of threads to use (default 1)
     inputBinding:
       position: 101
       prefix: --threads
+  - id: min_depth
+    type:
+      - 'null'
+      - int
+    doc: Minimum depth to consider a marker present in an individual (default 1)
+    inputBinding:
+      position: 101
+      prefix: --min-depth
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Path to the output file (table of marker depths in each individual)
     inputBinding:
       position: 102
       prefix: --output-file
 outputs:
   - id: output_file
     type: File
-    doc: Output table file
+    doc: Path to the output file (table of marker depths in each individual)
     outputBinding:
       glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/radsex:1.2.0--h43eeafb_3

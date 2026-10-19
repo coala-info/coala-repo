@@ -14,6 +14,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --compare
+  - id: counts_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Counts files named in the third column of the data file, staged in the working directory
   - id: data
     type: File
     doc: "File describing the input data. Format of the file is a 4-column tab-delimited
@@ -75,7 +81,10 @@ inputs:
       position: 101
       prefix: --threshold
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Output file for PDF report (default value is report.pdf).
     inputBinding:
       position: 102
       prefix: -outfile
@@ -86,7 +95,8 @@ outputs:
       - File
     doc: Output file for PDF report (default value is report.pdf).
     outputBinding:
-      glob: $(inputs.outfile_path)
+      glob: |
+        ${ return (inputs.outdir ? inputs.outdir + "/" : "") + (inputs.outfile_path ? inputs.outfile_path : "report.pdf"); }
   - id: outdir_dir
     type:
       - 'null'
@@ -96,6 +106,9 @@ outputs:
       glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.counts_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualimap:2.3--hdfd78af_0

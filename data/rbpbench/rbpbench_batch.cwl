@@ -17,16 +17,22 @@ inputs:
       for the correct format'
     inputBinding:
       position: 1
+      prefix: --bed
   - id: genome
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: 'Genomic sequences file (currently supported formats: FASTA)'
     inputBinding:
       position: 2
+      prefix: --genome
   - id: output_folder
     type: string
     doc: Batch job results output folder
     inputBinding:
       position: 3
+      prefix: --out
   - id: add_annot_bed
     type:
       - 'null'

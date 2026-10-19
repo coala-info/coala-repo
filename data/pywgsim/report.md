@@ -1,5 +1,11 @@
 # pywgsim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| pywgsim | PASS |  |
+
 ## pywgsim
 
 ### Tool Description

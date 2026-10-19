@@ -1,13 +1,19 @@
 # python3-pyfaidx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| python3-pyfaidx | PASS |  |
+
 ## python3-pyfaidx
 
 ### Tool Description
-The provided text is a Docker system error ('no space left on device') and does not contain the help documentation for the tool. Below is the standard interface for the 'faidx' command provided by the python3-pyfaidx package.
+Fetch sequences from FASTA files by region (pyfaidx).
 
 ### Metadata
 - **Docker Image**: biocontainers/python3-pyfaidx:v0.4.8.1-1-deb_cv1
-- **Homepage**: Not found
+- **Homepage**: https://github.com/mdshw5/pyfaidx
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -18,25 +24,63 @@ The provided text is a Docker system error ('no space left on device') and does 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'biocontainers/python3-pyfaidx:v0.4.8.1-1-deb_cv1' locally
-v0.4.8.1-1-deb_cv1: Pulling from biocontainers/python3-pyfaidx
-f02c85e8286d: Pulling fs layer
-59c73d8d8027: Pulling fs layer
-f48e474aa75e: Pulling fs layer
-3474c491ae21: Pulling fs layer
-f6c1b00d55fa: Pulling fs layer
-67c6c901a29b: Pulling fs layer
-c1c6573ca534: Pulling fs layer
-f02c85e8286d: Waiting
-59c73d8d8027: Waiting
-f48e474aa75e: Waiting
-3474c491ae21: Waiting
-f6c1b00d55fa: Waiting
-67c6c901a29b: Waiting
-c1c6573ca534: Waiting
-docker: write /var/lib/docker/tmp/GetImageBlob1685001202: no space left on device
+usage: faidx [-h] [-b BED] [-o OUT]
+             [-i {bed,chromsizes,nucleotide,transposed}] [-c] [-r]
+             [-a SIZE_RANGE] [-n | -f] [-x] [-l] [-s DEFAULT_SEQ]
+             [-d DELIMITER] [-g REGEX | -v] [-m | -M] [--no-rebuild]
+             [--version]
+             fasta [regions [regions ...]]
 
-Run 'docker run --help' for more information
+Fetch sequences from FASTA. If no regions are specified, all entries in the
+input file are returned. Input FASTA file must be consistently line-wrapped,
+and line wrapping of output is based on input line lengths.
+
+positional arguments:
+  fasta                 FASTA file
+  regions               space separated regions of sequence to fetch e.g.
+                        chr1:1-1000
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -b BED, --bed BED     bed file of regions
+  -o OUT, --out OUT     output file name (default: stdout)
+  -i {bed,chromsizes,nucleotide,transposed}, --transform {bed,chromsizes,nucleotide,transposed}
+                        transform the requested regions into another format.
+                        default: None
+  -c, --complement      complement the sequence. default: False
+  -r, --reverse         reverse the sequence. default: False
+  -a SIZE_RANGE, --size-range SIZE_RANGE
+                        selected sequences are in the size range [low, high].
+                        example: 1,1000 default: None
+  -n, --no-names        omit sequence names from output. default: False
+  -f, --full-names      output full names including description. default:
+                        False
+  -x, --split-files     write each region to a separate file (names are
+                        derived from regions)
+  -l, --lazy            fill in --default-seq for missing ranges. default:
+                        False
+  -s DEFAULT_SEQ, --default-seq DEFAULT_SEQ
+                        default base for missing positions and masking.
+                        default: N
+  -d DELIMITER, --delimiter DELIMITER
+                        delimiter for splitting names to multiple values
+                        (duplicate names will be discarded). default: None
+  -g REGEX, --regex REGEX
+                        selected sequences are those matching regular
+                        expression. default: .*
+  -v, --invert-match    selected sequences are those not matching 'regions'
+                        argument. default: False
+  -m, --mask-with-default-seq
+                        mask the FASTA file using --default-seq default: False
+  -M, --mask-by-case    mask the FASTA file by changing to lowercase. default:
+                        False
+  --no-rebuild          do not rebuild the .fai index even if it is out of
+                        date. default: False
+  --version             print pyfaidx version number
+
+Please cite: Shirley MD, Ma Z, Pedersen BS, Wheelan SJ. (2015) Efficient
+"pythonic" access to FASTA files using pyfaidx. PeerJ PrePrints 3:e1196
+https://dx.doi.org/10.7287/peerj.preprints.970v1
 ```
 
 

@@ -6,7 +6,7 @@ baseCommand:
 label: pyqi_make-command
 doc: "This command is intended to construct the basics of a Command object so that
   a developer can dive straight into the implementation of the command\n\nTool homepage:
-  https://github.com/qir-alliance/pyqir"
+  https://github.com/biocore/pyqi"
 inputs:
   - id: author
     type:

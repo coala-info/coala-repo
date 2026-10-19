@@ -5,7 +5,7 @@ baseCommand:
   - serve-html-interface
 label: pyqi_serve-html-interface
 doc: "Start the HTMLInterface server and load the provided interface_module and port\n\
-  \nTool homepage: https://github.com/qir-alliance/pyqir"
+  \nTool homepage: https://github.com/biocore/pyqi"
 inputs:
   - id: interface_module
     type: string

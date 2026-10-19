@@ -1,5 +1,13 @@
 # radtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| radtk_cat | PASS | merged two bulk RAD files; viewing the result gives the same 100 records |
+| radtk_split | PASS | test file has one chunk, so one output file is written |
+| radtk_view | PASS | prints 100 records; the JSON text is not strictly valid because of nested quotes in the file tags (tool output) |
+
 ## radtk_cat
 
 ### Tool Description

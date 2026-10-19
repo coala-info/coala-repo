@@ -1,5 +1,13 @@
 # raiss CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| raiss | Not completed | needs harmonized GWAS z-scores, LD matrices and a reference panel for a chromosome; no small real data set found |
+| raiss_performance-grid-search | Not completed | needs harmonized GWAS z-scores, LD matrices and a reference panel for a chromosome; no small real data set found |
+| raiss_sanity-check | Not completed | needs harmonized GWAS z-scores, LD matrices and a reference panel for a chromosome; no small real data set found |
+
 ## raiss_sanity-check
 
 ### Tool Description
@@ -92,6 +100,69 @@ options:
                         each parameter value
 ```
 
+
+## raiss
+
+### Tool Description
+options:
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/raiss:4.0.1--pyhdfd78af_0
+- **Homepage**: http://statistical-genetics.pages.pasteur.fr/raiss/
+- **Package**: https://anaconda.org/channels/bioconda/packages/raiss/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+options:
+  -h, --help            show this help message and exit
+  --chrom CHROM         chromosome to impute to the chr\d+ format
+  --gwas GWAS           GWAS to impute to the consortia_trait format
+  --ref-folder REF_FOLDER
+                        reference panel location (used to determine which snp
+                        to impute)
+  --ld-folder LD_FOLDER
+                        Location LD correlation matrices
+  --zscore-folder ZSCORE_FOLDER
+                        Location of the zscore files of the gwases to impute
+  --output-folder OUTPUT_FOLDER
+                        Location of the impute zscore files
+  --window-size WINDOW_SIZE
+                        Size of the non overlapping window
+  --buffer-size BUFFER_SIZE
+                        Size of the buffer around the imputation window
+  --l2-regularization L2_REGULARIZATION
+                        Size of the small value added to the diagonal of the
+                        covariance matrix before inversion
+  --eigen-threshold EIGEN_THRESHOLD
+                        threshold under which eigen vectors are removed for
+                        the computation of the pseudo inverse
+  --R2-threshold R2_THRESHOLD
+                        R square (imputation quality) threshold bellow which
+                        SNPs are filtered from the output
+  --ld-type LD_TYPE     'Two options are available : 'plink' or 'scipy'. Ld
+                        can be supplied as plink command --ld-snp-list output
+                        files (see raiss.ld_matrix.launch_plink_ld to compute
+                        these data using plink) or as a couple of a scipy
+                        sparse matrix (.npz )and an .csv containing SNPs index
+  --ref-panel-prefix REF_PANEL_PREFIX
+                        prefix for the reference panel files
+  --ref-panel-suffix REF_PANEL_SUFFIX
+                        suffix for the reference panel files
+  --minimum-ld MINIMUM_LD
+                        this parameter ensure that their is enough typed SNPs
+                        around the imputed loci to perform a high accuracy
+                        imputation
+usage: raiss [-h] [--chrom CHROM] [--gwas GWAS] [--ref-folder REF_FOLDER]
+             [--ld-folder LD_FOLDER] [--zscore-folder ZSCORE_FOLDER]
+             [--output-folder OUTPUT_FOLDER] [--window-size WINDOW_SIZE]
+             [--buffer-size BUFFER_SIZE]
+             [--l2-regularization L2_REGULARIZATION]
+             [--eigen-threshold EIGEN_THRESHOLD] [--R2-threshold R2_THRESHOLD]
+             [--ld-type LD_TYPE] [--ref-panel-prefix REF_PANEL_PREFIX]
+             [--ref-panel-suffix REF_PANEL_SUFFIX] [--minimum-ld MINIMUM_LD]
+             {sanity-check,performance-grid-search} ...
+```
 
 ## Metadata
 - **Skill**: generated

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rattle_cluster
+baseCommand:
+  - rattle
+  - cluster
 label: rattle_cluster
 doc: "Rattlesnake clustering tool\n\nTool homepage: https://github.com/comprna/RATTLE"
 inputs:
@@ -111,9 +113,7 @@ inputs:
       position: 101
       prefix: --min-reads-cluster
   - id: output_folder
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'output folder (default: .)'
     inputBinding:
       position: 101
@@ -179,12 +179,17 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_folder_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: 'output folder (default: .)'
     outputBinding:
       glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_folder)
+        entry: "$({class: 'Directory', listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rattle:1.0--h5ca1c30_0

@@ -1,5 +1,11 @@
 # rapidnj CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rapidnj | PASS | trees equal the Galaxy tools-iuc expected output |
+
 ## rapidnj
 
 ### Tool Description

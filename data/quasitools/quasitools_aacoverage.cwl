@@ -14,6 +14,11 @@ inputs:
   - id: bam_file
     type: File
     doc: BAM alignment file
+    secondaryFiles:
+      - pattern: ^.bai
+        required: false
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: reference_fasta

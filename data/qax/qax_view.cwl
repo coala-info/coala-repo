@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: view
+baseCommand:
+  - qax
+  - view
 label: qax_view
 doc: "View (a la `cat`) the content of data files in one artifact.\n\nTool homepage:
   https://github.com/telatin/qax"
@@ -14,8 +16,8 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
-    doc: Additional data files
+        items: string
+    doc: Names of the data files inside the artifact to print (default, all data files)
     inputBinding:
       position: 2
   - id: force

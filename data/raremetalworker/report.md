@@ -1,5 +1,11 @@
 # raremetalworker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| raremetalworker | PASS |  |
+
 ## raremetalworker
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # rscape CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rscape_R-scape | PASS |  |
+
 ## rscape_R-scape
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # saspector CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| saspector_SASpector | Failed | image problem: EMBOSS union (and mash) are missing from the image, so SASpector exits at start-up |
+
 ## saspector_SASpector
 
 ### Tool Description

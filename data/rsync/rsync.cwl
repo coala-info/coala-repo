@@ -8,13 +8,15 @@ inputs:
   - id: source
     type:
       type: array
-      items: string
+      items:
+        - File
+        - Directory
     doc: Source file(s) or directorie(s)
     inputBinding:
       position: 1
   - id: destination
     type: string
-    doc: Destination file, directory, or remote host
+    doc: Destination file or directory, created in the working directory
     inputBinding:
       position: 2
   - id: acls
@@ -644,6 +646,17 @@ inputs:
       position: 105
       prefix: --write-batch
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (file list and statistics)
+  - id: destination_out
+    type:
+      - 'null'
+      - File
+      - Directory
+    doc: The copied destination file or directory
+    outputBinding:
+      glob: $(inputs.destination)
   - id: log_file
     type:
       - 'null'
@@ -660,3 +673,7 @@ outputs:
       glob: $(inputs.write_batch_path)
 requirements:
   - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: instrumentisto/rsync-ssh:alpine3.23-r3
+stdout: rsync.out

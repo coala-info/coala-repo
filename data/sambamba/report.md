@@ -1,5 +1,21 @@
 # sambamba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sambamba_depth | PASS | Fixed baseCommand, output option now -o because the documented --output-file is rejected by the tool; region, window and base coverage match samtools. |
+| sambamba_flagstat | PASS | Fixed baseCommand to sambamba flagstat; counts equal samtools flagstat, tabular mode also works. |
+| sambamba_index | PASS | Fixed baseCommand to sambamba index and made the output name required; index works with samtools idxstats and region queries. |
+| sambamba_markdup | PASS | synthetic data: real BAM plus a renamed copy of its reads; 197 duplicates marked and 203 reads left with --remove-duplicates. |
+| sambamba_merge | PASS | Fixed baseCommand and added the missing output name; merged BAM has the sum of both inputs (300 reads). |
+| sambamba_mpileup | Failed | image problem: the sambamba image has no samtools in PATH, which mpileup needs. |
+| sambamba_slice | PASS | Fixed baseCommand to sambamba slice; BAM region, BED and FASTA slices match samtools. |
+| sambamba_sort | PASS | Fixed baseCommand to sambamba sort; coordinate and name sort of a real BAM give correct order and index. |
+| sambamba_subsample | Failed | tool bug: rewrote CWL from help; output has more reads than the input (208 from 200), prints debug text to stdout, and --remove has no effect. |
+| sambamba_validate | Failed | tool bug: new CWL for validate; it exits 0 with no result even for a truncated BAM. |
+| sambamba_view | PASS | Fixed baseCommand to sambamba view, optional output and index; BAM region slice and filtered count match samtools. |
+
 ## sambamba_view
 
 ### Tool Description
@@ -439,6 +455,33 @@ Sambamba options:
 Sambamba paths:
 
 sambamba-pileup: failed to locate samtools executable in PATH
+```
+
+## sambamba_validate
+
+### Tool Description
+Validates a bam file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sambamba:1.0.1--he614052_4
+- **Homepage**: https://github.com/biod/sambamba
+- **Package**: https://anaconda.org/channels/bioconda/packages/sambamba/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] sambamba validate: ok via sambamba validate (--help=no_options, -h=no_options, -help=no_options, (no args)=usage_only)
+Usage: sambamba validate [options] <input.bam> [<input2.bam> [...]]
+
+       Validates a bam file.
+
+Options:
+         (...)
+
+
+sambamba 1.0.1
+ by Artem Tarasov and Pjotr Prins (C) 2012-2023
+    LDC 1.39.0 / DMD v2.109.1 / LLVM17.0.6 / bootstrap LDC - the LLVM D compiler (1.39.0)
 ```
 
 ## Metadata

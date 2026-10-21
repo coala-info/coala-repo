@@ -7,7 +7,9 @@ label: savvy_sav_rehead
 doc: "Replace headers in a SAV file.\n\nTool homepage: https://github.com/statgen/savvy"
 inputs:
   - id: headers_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: File containing new headers
     inputBinding:
       position: 1
@@ -22,12 +24,14 @@ inputs:
     inputBinding:
       position: 3
   - id: sample_ids_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path to file containing list of sample IDs that will replace existing 
       IDs.
     inputBinding:
       position: 103
-      prefix: --sample-ids
+      prefix: -I
 outputs:
   - id: output_sav
     type: File

@@ -14,6 +14,7 @@ inputs:
       extension.
     inputBinding:
       position: 1
+      prefix: --input-files
   - id: input_names
     type:
       type: array
@@ -21,6 +22,7 @@ inputs:
     doc: Path to input name files.
     inputBinding:
       position: 2
+      prefix: --input-names
   - id: dominant_variants
     type:
       - 'null'

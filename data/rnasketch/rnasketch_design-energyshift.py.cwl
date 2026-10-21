@@ -5,6 +5,11 @@ label: rnasketch_design-energyshift.py
 doc: "Design a multi-stable riboswitch similar using Boltzmann sampling.\n\nTool homepage:
   https://github.com/ViennaRNA/RNAsketch"
 inputs:
+  - id: stdin_file
+    type:
+      - 'null'
+      - File
+    doc: Text file with target structures (one per line) and an optional sequence constraint line, sent to the standard input (use with the input flag)
   - id: csv_output
     type:
       - 'null'
@@ -114,7 +119,10 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnasketch:1.5--py27_1
 stdout: rnasketch_design-energyshift.py.out
+stdin: '$(inputs.stdin_file ? inputs.stdin_file.path : null)'

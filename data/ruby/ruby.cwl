@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ruby
 label: ruby
-doc: "Execute a Ruby script\n\nTool homepage: https://github.com/krahets/hello-algo"
+doc: "Execute a Ruby script\n\nTool homepage: https://www.ruby-lang.org/"
 inputs:
   - id: programfile
     type:
@@ -11,6 +11,14 @@ inputs:
     doc: The Ruby script file to execute
     inputBinding:
       position: 1
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input files passed to the script as arguments (staged into the working directory)
+    inputBinding:
+      position: 2
   - id: arguments
     type:
       - 'null'
@@ -18,7 +26,7 @@ inputs:
         items: string
     doc: Arguments to pass to the script
     inputBinding:
-      position: 2
+      position: 3
   - id: assume_gets_loop
     type:
       - 'null'
@@ -72,10 +80,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --disable
     doc: Disable features
     inputBinding:
       position: 103
-      prefix: --disable
   - id: edit_in_place
     type:
       - 'null'
@@ -84,15 +93,17 @@ inputs:
     inputBinding:
       position: 103
       prefix: -i
+      separate: false
   - id: enable_feature
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --enable
     doc: Enable features
     inputBinding:
       position: 103
-      prefix: --enable
   - id: enable_switch_parsing
     type:
       - 'null'
@@ -114,10 +125,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -e
     doc: One line of script. Several -e's allowed. Omit [programfile]
     inputBinding:
       position: 103
-      prefix: -e
   - id: external_encoding
     type:
       - 'null'
@@ -147,10 +159,11 @@ inputs:
       - 'null'
       - type: array
         items: Directory
+        inputBinding:
+          prefix: -I
     doc: Specify $LOAD_PATH directory (may be used more than once)
     inputBinding:
       position: 103
-      prefix: -I
   - id: print_copyright
     type:
       - 'null'
@@ -167,15 +180,17 @@ inputs:
     inputBinding:
       position: 103
       prefix: '-0'
+      separate: false
   - id: require_library
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -r
     doc: Require the library before executing your script
     inputBinding:
       position: 103
-      prefix: -r
   - id: split_pattern
     type:
       - 'null'
@@ -184,6 +199,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -F
+      separate: false
   - id: strip_text_and_cd
     type:
       - 'null'
@@ -192,6 +208,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -x
+      separate: false
   - id: tainting_checks
     type:
       - 'null'
@@ -200,6 +217,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -T
+      separate: false
   - id: use_path_env
     type:
       - 'null'
@@ -224,6 +242,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -W
+      separate: false
   - id: warnings
     type:
       - 'null'

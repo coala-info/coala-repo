@@ -79,10 +79,11 @@ inputs:
       prefix: --threads
   - id: output_dir_path
     type: string
-    doc: ' Output directory'
+    doc: ' Output directory name (created in the working directory; passed to the tool as an absolute path because the tool changes directory while running)'
     inputBinding:
       position: 102
       prefix: --outputDir
+      valueFrom: $(runtime.outdir)/$(self)
 outputs:
   - id: output_dir
     type: Directory
@@ -91,6 +92,13 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir_path)
+        entry: "$({class: 'Directory', listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rsv-typer:0.5.0--pyh7e72e81_0

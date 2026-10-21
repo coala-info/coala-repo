@@ -69,8 +69,10 @@ inputs:
       position: 101
       prefix: -m
   - id: output_file_path
-    type: string
-    doc: output SAM/BAM file [-]
+    type:
+      - 'null'
+      - string
+    doc: "output SAM/BAM file [-]"
     inputBinding:
       position: 102
       prefix: -o
@@ -82,8 +84,12 @@ outputs:
     doc: output SAM/BAM file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (SAM text when no output file is given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samsift:0.3.1--pyhdfd78af_0
+stdout: samsift.out

@@ -6,6 +6,9 @@ baseCommand:
 label: rsrq_worker
 doc: "Spawns worker processes to consume jobs from a queue\n\nTool homepage: https://github.com/aaronmussig/rsrq"
 inputs:
+  - id: redis_url
+    type: string
+    doc: URL of the Redis server (set as the REDIS_URL environment variable), for example redis://localhost:6379
   - id: queue
     type: string
     doc: The target queue to process
@@ -55,7 +58,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Log messages (rsrq writes its results to standard error)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: EnvVarRequirement
+    envDef:
+      - envName: REDIS_URL
+        envValue: $(inputs.redis_url)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0
 stdout: rsrq_worker.out
+stderr: rsrq_worker.err

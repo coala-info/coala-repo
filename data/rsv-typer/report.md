@@ -1,5 +1,11 @@
 # rsv-typer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rsv-typer | PASS |  |
+
 ## rsv-typer
 
 ### Tool Description

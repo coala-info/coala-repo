@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rscape
+baseCommand: R-scape
 label: rscape_R-scape
 doc: "RNA Structural Covariation Above Phylogenetic Expectation\n\nTool homepage:
   http://eddylab.org/R-scape/"
@@ -9,7 +9,7 @@ inputs:
     type: File
     doc: Multiple sequence alignment file
     inputBinding:
-      position: 1
+      position: 200
   - id: allbranch
     type:
       - 'null'
@@ -964,7 +964,7 @@ inputs:
     doc: be verbose
     inputBinding:
       position: 102
-      prefix: --verbose
+      prefix: -v
   - id: voutput
     type:
       - 'null'
@@ -1024,6 +1024,10 @@ outputs:
     doc: specify a directory for all output files
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.outdir ? [{entryname: inputs.outdir, entry: {class: 'Directory', listing: []}, writable: true}] : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rscape:2.0.4.a--h503566f_1

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba-sort
+baseCommand:
+  - sambamba
+  - sort
 label: sambamba_sort
 doc: "Sort BAM files.\n\nTool homepage: https://github.com/biod/sambamba"
 inputs:
@@ -115,6 +117,9 @@ outputs:
       - File
     doc: output file name; if not provided, the result is written to a file with
       .sorted.bam extension
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     outputBinding:
       glob: $(inputs.output_file_path)
 requirements:

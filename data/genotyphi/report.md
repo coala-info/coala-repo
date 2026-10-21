@@ -12,31 +12,7 @@
 ### Tool Description
 VCF to Typhi genotypes
 
-### genotyphi_parse_typhi_mykrobe
-
-### Tool Description
-Parse mykrobe predict JSON files (Typhi genotype, AMR and plasmid calls) into one table.
-
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/genotyphi:2.0--hdfd78af_0
-- **Homepage**: https://github.com/typhoidgenomics/genotyphi
-- **Package**: https://anaconda.org/channels/bioconda/packages/genotyphi/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: parse_typhi_mykrobe.py [-h] --jsons JSONS [JSONS ...] --prefix PREFIX
-
-Parse mykrobe predict JSON files
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --jsons JSONS [JSONS ...]
-                        JSON files output from mykrobe predict
-  --prefix PREFIX       prefix for output files
-```
-
-## Metadata
 - **Docker Image**: quay.io/biocontainers/genotyphi:2.0--hdfd78af_0
 - **Homepage**: https://github.com/katholt/genotyphi
 - **Package**: https://anaconda.org/channels/bioconda/packages/genotyphi/overview
@@ -84,5 +60,29 @@ optional arguments:
   --bcftools_location BCFTOOLS_LOCATION
                         Location of folder containing bcftools installation if
                         not standard/in path.
+```
+
+## genotyphi_parse_typhi_mykrobe
+
+### Tool Description
+Parse mykrobe predict JSON files (Typhi genotype, AMR and plasmid calls) into one table.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genotyphi:2.0--hdfd78af_0
+- **Homepage**: https://github.com/typhoidgenomics/genotyphi
+- **Package**: https://anaconda.org/channels/bioconda/packages/genotyphi/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: parse_typhi_mykrobe.py [-h] --jsons JSONS [JSONS ...] --prefix PREFIX
+
+Parse mykrobe predict JSON files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --jsons JSONS [JSONS ...]
+                        JSON files output from mykrobe predict
+  --prefix PREFIX       prefix for output files
 ```
 

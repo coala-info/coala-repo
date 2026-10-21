@@ -9,12 +9,12 @@ inputs:
     type:
       type: array
       items: File
-    doc: FASTA file with RefSeq sequences
+    doc: FASTQ file(s) with reads to filter
     inputBinding:
       position: 1
   - id: ancestor_taxid
     type: string
-    doc: Name of ancestor to use as ancestor filter
+    doc: Taxonomy ID of the ancestor to use as ancestor filter
     inputBinding:
       position: 102
       prefix: --ancestor_taxid
@@ -29,8 +29,8 @@ inputs:
   - id: db
     type:
       - 'null'
-      - string
-    doc: URL for SQLite taxonomy database
+      - File
+    doc: SQLite taxonomy database (made with taxonomy_util to_sqlite)
     inputBinding:
       position: 102
       prefix: --db
@@ -51,7 +51,7 @@ inputs:
       position: 102
       prefix: --output_dir
   - id: tax_report_filename
-    type: string
+    type: File
     doc: Output from Kraken2 (default) or Centrifuge
     inputBinding:
       position: 102
@@ -60,6 +60,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: filtered_fastq
+    type:
+      type: array
+      items: File
+    doc: Filtered FASTQ files (<name>.filtered.<ext>)
+    outputBinding:
+      glob: '*.filtered.*'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6

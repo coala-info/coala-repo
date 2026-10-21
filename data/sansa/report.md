@@ -1,5 +1,13 @@
 # sansa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sansa_annotate | PASS | Annotated gnomAD-SV records (Galaxy test data) against the SV database and the GTF; matches and genes reported |
+| sansa_compvcf | PASS | Compared real delly SV calls with a half subset as base; recall 1, precision about 0.5; added optional .csi/.tbi index files |
+| sansa_markdup | PASS | Ran on real delly SV calls (nf-core variantbenchmarking); valid BCF with Duplicate filter written; added optional .csi/.tbi index files |
+
 ## sansa_annotate
 
 ### Tool Description

@@ -1,11 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba-view
+baseCommand:
+  - sambamba
+  - view
 label: sambamba_view
 doc: "View and convert SAM/BAM/CRAM files\n\nTool homepage: https://github.com/biod/sambamba"
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Input BAM/SAM file
     inputBinding:
       position: 1
@@ -150,7 +155,10 @@ inputs:
       position: 103
       prefix: --with-header
   - id: output_filename_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: specify output filename
     inputBinding:
       position: 104
       prefix: --output-filename
@@ -162,8 +170,12 @@ outputs:
     doc: specify output filename
     outputBinding:
       glob: $(inputs.output_filename_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (SAM text, count, header or JSON when no output file is given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sambamba:1.0.1--he614052_4
+stdout: sambamba_view.out

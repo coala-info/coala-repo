@@ -1,5 +1,12 @@
 # samstats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samstats_SAMstats | PASS | Added stdout; counts on a real name-sorted SAM equal samtools flagstat. |
+| samstats_SAMstatsParallel | PASS | Added stdout; counts with 2 threads on a real name-sorted SAM equal samtools flagstat. |
+
 ## samstats_SAMstats
 
 ### Tool Description

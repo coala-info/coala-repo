@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba-pileup
+baseCommand:
+  - sambamba
+  - mpileup
 label: sambamba_mpileup
 doc: "This subcommand relies on external tools and acts as a multi-core\nimplementation
   of samtools and bcftools.\n\nTool homepage: https://github.com/biod/sambamba"

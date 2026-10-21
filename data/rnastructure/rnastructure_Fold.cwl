@@ -12,6 +12,11 @@ inputs:
       hyphen (-), the file will be read from standard input (STDIN).
     inputBinding:
       position: 1
+  - id: ct_file_path
+    type: string
+    doc: Name of the CT file to which output is written (a dot-bracket file with the bracket flag)
+    inputBinding:
+      position: 2
   - id: allow_isolated_base_pairs
     type:
       - 'null'
@@ -224,7 +229,7 @@ inputs:
   - id: save_file
     type:
       - 'null'
-      - File
+      - string
     doc: Specify the name of a save file, needed for dotplots and refolding. 
       Default is not to generate a save file.
     inputBinding:
@@ -336,12 +341,18 @@ inputs:
 outputs:
   - id: ct_file
     type: File
-    doc: The name of a CT file to which output will be written. If the --bracket
-      flag is present, output will be written as a dot-bracket file. If the file
-      name is a hyphen (-), the structure will be written to standard output 
-      (STDOUT) instead of a file.
+    doc: Predicted structures (CT format, or dot-bracket with the bracket flag)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.ct_file_path)
+  - id: save_file_out
+    type:
+      - 'null'
+      - File
+    doc: Save file for dot plots and refolding
+    outputBinding:
+      glob: $(inputs.save_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnastructure:6.5--hde5307d_0

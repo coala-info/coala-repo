@@ -1,5 +1,11 @@
 # sap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sap | Failed | tool bug: on the repo's own test pair (and on a self comparison) the image gives score 0 and all coordinates -nan, not the expected sapout.pdb |
+
 ## sap
 
 ### Tool Description

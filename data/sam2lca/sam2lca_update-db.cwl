@@ -2,10 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - sam2lca
-  - update-db
 label: sam2lca_update-db
 doc: "Download/prepare acc2tax and taxonomy databases\n\nTool homepage: https://github.com/maxibor/sam2lca"
+arguments:
+  - position: 2
+    valueFrom: update-db
 inputs:
+  - id: dbdir
+    type: string
+    default: sam2lca_db
+    doc: Directory to store taxonomy databases (global option, created by the tool)
+    inputBinding:
+      position: 1
+      prefix: --dbdir
   - id: acc2tax
     type:
       - 'null'
@@ -59,9 +68,18 @@ inputs:
       position: 101
       prefix: --taxonomy
 outputs:
+  - id: dbdir_out
+    type: Directory
+    doc: Database directory with the built taxonomy and acc2tax databases
+    outputBinding:
+      glob: $(inputs.dbdir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sam2lca:1.1.4--pyhdfd78af_0

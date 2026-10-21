@@ -8,6 +8,9 @@ doc: "Too few arguments\n\nTool homepage: https://github.com/statgen/savvy"
 inputs:
   - id: input_sav
     type: File
+    secondaryFiles:
+      - pattern: .s1r
+        required: false
     doc: Input .sav file
     inputBinding:
       position: 1

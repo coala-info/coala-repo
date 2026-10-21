@@ -7,7 +7,11 @@ inputs:
   - id: input_files
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: 'Input file(s) in BAM format. "-i" takes these input: 1) a single BAM file.
       2) "," separated BAM files. 3) directory containing one or more bam files. 4)
       plain text file containing the path of one or more bam file (Each row is a BAM
@@ -15,6 +19,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+      itemSeparator: ','
   - id: refgene
     type: File
     doc: Reference gene model in bed format.

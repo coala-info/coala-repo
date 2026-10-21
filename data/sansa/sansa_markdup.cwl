@@ -8,6 +8,11 @@ doc: "Filter sites for PASS\n\nTool homepage: https://github.com/dellytools/sans
 inputs:
   - id: input_bcf
     type: File
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .tbi
+        required: false
     doc: Input BCF file
     inputBinding:
       position: 1

@@ -12,12 +12,17 @@ inputs:
     inputBinding:
       position: 1
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: output FMD to FILE [stdout]
     inputBinding:
       position: 101
-      prefix: --output-file
+      prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the FMD index when -o is not given)
   - id: output_file
     type:
       - 'null'
@@ -30,3 +35,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ropebwt3:3.10--h577a1d6_0
+stdout: ropebwt3_plain2fmd.out

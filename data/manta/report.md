@@ -18,39 +18,7 @@ Configuration will produce a workflow run script which
 can execute the workflow on a single node or through
 sge and resume any interrupted execution.
 
-### manta_convertInversion.py
-
-### Tool Description
-Convert pairs of Manta inversion breakend records into symbolic INV records.
-
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/manta:1.6.0--py27h9948957_6
-- **Homepage**: https://github.com/Illumina/manta
-- **Package**: https://anaconda.org/channels/bioconda/packages/manta/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-convertInversion.py <samtools path> <reference fasta> <vcf file>
-```
-
-## manta_denovo_scoring.py
-
-### Tool Description
-Add a de novo quality score to the proband genotype of a Manta trio VCF.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/manta:1.6.0--py27h9948957_6
-- **Homepage**: https://github.com/Illumina/manta
-- **Package**: https://anaconda.org/channels/bioconda/packages/manta/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-denovo_scoring.py <vcf file> <proband sample ID> <father sample ID> <mother sample ID>
-```
-
-## Metadata
 - **Docker Image**: quay.io/biocontainers/manta:1.6.0--py27h9948957_6
 - **Homepage**: https://github.com/Illumina/manta
 - **Package**: https://anaconda.org/channels/bioconda/packages/manta/overview
@@ -110,5 +78,37 @@ Options:
                         (default: call the entire genome)
 
   Extended options (hidden):
+```
+
+## manta_convertInversion.py
+
+### Tool Description
+Convert pairs of Manta inversion breakend records into symbolic INV records.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/manta:1.6.0--py27h9948957_6
+- **Homepage**: https://github.com/Illumina/manta
+- **Package**: https://anaconda.org/channels/bioconda/packages/manta/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+convertInversion.py <samtools path> <reference fasta> <vcf file>
+```
+
+## manta_denovo_scoring.py
+
+### Tool Description
+Add a de novo quality score to the proband genotype of a Manta trio VCF.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/manta:1.6.0--py27h9948957_6
+- **Homepage**: https://github.com/Illumina/manta
+- **Package**: https://anaconda.org/channels/bioconda/packages/manta/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+denovo_scoring.py <vcf file> <proband sample ID> <father sample ID> <mother sample ID>
 ```
 

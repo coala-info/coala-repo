@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba-index
+baseCommand:
+  - sambamba
+  - index
 label: sambamba_index
 doc: "Creates index for a BAM, or FASTA file\n\nTool homepage: https://github.com/biod/sambamba"
 inputs:
@@ -10,10 +12,8 @@ inputs:
     inputBinding:
       position: 1
   - id: output_file
-    type:
-      - 'null'
-      - string
-    doc: Output index file
+    type: string
+    doc: Output index file (a name in the working directory, since the input folder is read-only)
     inputBinding:
       position: 2
   - id: check_bins
@@ -53,9 +53,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_file_out
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output index file
     outputBinding:
       glob: $(inputs.output_file)

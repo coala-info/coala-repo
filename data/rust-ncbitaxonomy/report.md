@@ -1,46 +1,16 @@
 # rust-ncbitaxonomy CWL Generation Report
 
-## rust-ncbitaxonomy_taxonomy_util
+## Real Data Test
 
-### Tool Description
-Utilities for working with the NCBI taxonomy database
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
-- **Homepage**: https://github.com/pvanheus/ncbitaxonomy
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
-- **Total Downloads**: 33.4K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/pvanheus/ncbitaxonomy
-- **Stars**: N/A
-### Original Help Text
-```text
-taxonomy_util 1.0.7
-Peter van Heusden <pvh@sanbi.axc.za>
-Utilities for working with the NCBI taxonomy database
-
-USAGE:
-    taxonomy_util --db <TAXDB_URL> [SUBCOMMAND]
-
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
-
-OPTIONS:
-    -d, --db <TAXDB_URL>    URL for SQLite taxonomy database
-
-SUBCOMMANDS:
-    common_ancestor_distance    find the tree distance to te common ancestor between two taxa
-    get_id                      find taxonomy ID for name
-    get_lineage                 get lineage for name
-    get_name                    find name for taxonomy ID
-    help                        Prints this message or the help of the given subcommand(s)
-    to_sqlite                   save taxonomy database loaded from files to SQLite database file
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| rust-ncbitaxonomy_taxonomy_filter_fastq | Failed | tool bug: the ancestor check always returns true (ancestor 9606 keeps all classified reads, bacterial included), so the filter does not filter |
+| rust-ncbitaxonomy_taxonomy_filter_refseq | Failed | tool bug: the ancestor check always returns true (an unrelated ancestor keeps all records), so the filter does not filter |
+| rust-ncbitaxonomy_taxonomy_util_common_ancestor_distance | PASS |  |
+| rust-ncbitaxonomy_taxonomy_util_get_id | PASS |  |
+| rust-ncbitaxonomy_taxonomy_util_get_lineage | PASS |  |
+| rust-ncbitaxonomy_taxonomy_util_get_name | PASS |  |
+| rust-ncbitaxonomy_taxonomy_util_to_sqlite | PASS |  |
 
 ## rust-ncbitaxonomy_taxonomy_filter_refseq
 
@@ -115,6 +85,150 @@ ARGS:
     <INPUT_FASTQ>...    FASTA file with RefSeq sequences
 ```
 
+
+## rust-ncbitaxonomy_taxonomy_util_get_id
+
+### Tool Description
+find taxonomy ID for name
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
+- **Homepage**: https://github.com/pvanheus/ncbitaxonomy
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+taxonomy_util-get_id 
+find taxonomy ID for name
+
+USAGE:
+    taxonomy_util --db <TAXDB_URL> get_id <NAME>
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+ARGS:
+    <NAME>    Name of taxon
+```
+
+## rust-ncbitaxonomy_taxonomy_util_get_name
+
+### Tool Description
+find name for taxonomy ID
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
+- **Homepage**: https://github.com/pvanheus/ncbitaxonomy
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+taxonomy_util-get_name 
+find name for taxonomy ID
+
+USAGE:
+    taxonomy_util --db <TAXDB_URL> get_name <ID>
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+ARGS:
+    <ID>    Taxonomy ID to look up
+```
+
+## rust-ncbitaxonomy_taxonomy_util_get_lineage
+
+### Tool Description
+get lineage for name
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
+- **Homepage**: https://github.com/pvanheus/ncbitaxonomy
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+taxonomy_util-get_lineage 
+get lineage for name
+
+USAGE:
+    taxonomy_util --db <TAXDB_URL> get_lineage [FLAGS] [OPTIONS] <NAME>
+
+FLAGS:
+    -S, --show_names    Show taxon names, not just IDs
+    -h, --help          Prints help information
+    -V, --version       Prints version information
+
+OPTIONS:
+    -D, --delimiter <DELIMITER>    Delimiter for lineage string
+
+ARGS:
+    <NAME>    Name of taxon
+```
+
+## rust-ncbitaxonomy_taxonomy_util_common_ancestor_distance
+
+### Tool Description
+find the tree distance to the common ancestor between two taxa
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
+- **Homepage**: https://github.com/pvanheus/ncbitaxonomy
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+taxonomy_util-common_ancestor_distance 
+find the tree distance to te common ancestor between two taxa
+
+USAGE:
+    taxonomy_util --db <TAXDB_URL> common_ancestor_distance [FLAGS] <NAME1> <NAME2>
+
+FLAGS:
+        --only_canonical    Only consider canonical taxonomic ranks
+    -h, --help              Prints help information
+    -V, --version           Prints version information
+
+ARGS:
+    <NAME1>    Name of first taxon
+    <NAME2>    Name of second taxon
+```
+
+## rust-ncbitaxonomy_taxonomy_util_to_sqlite
+
+### Tool Description
+save taxonomy database loaded from files to SQLite database file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
+- **Homepage**: https://github.com/pvanheus/ncbitaxonomy
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+taxonomy_util-to_sqlite 
+save taxonomy database loaded from files to SQLite database file
+
+USAGE:
+    taxonomy_util --db <TAXDB_URL> to_sqlite [OPTIONS] <TAXONOMY_DIR>
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -t, --tax_prefix <TAXONOMY_FILENAME_PREFIX>    String to prepend to names of nodes.dmp and names.dmp
+
+ARGS:
+    <TAXONOMY_DIR>    Directory containing the NCBI taxonomy nodes.dmp and names.dmp files
+```
 
 ## Metadata
 - **Skill**: generated

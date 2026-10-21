@@ -1,5 +1,17 @@
 # rnanorm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnanorm_cpm | PASS | Ran on real GTEx lung counts (30 samples, chr21); output matches a direct calculation. |
+| rnanorm_ctf | PASS | Ran on real GTEx lung counts (30 samples, chr21); output matches a direct calculation. |
+| rnanorm_cuf | PASS | Ran on real GTEx lung counts (30 samples, chr21); output matches a direct calculation. |
+| rnanorm_fpkm | PASS | Ran on real GTEx lung counts (30 samples, chr21) with the GENCODE chr21 GTF; output is plausible (TPM rows sum to 1e6). |
+| rnanorm_tmm | PASS | Ran on real GTEx lung counts (30 samples, chr21); output matches edgeR factors and direct calculation. |
+| rnanorm_tpm | PASS | Ran on real GTEx lung counts (30 samples, chr21) with the GENCODE chr21 GTF; output is plausible (TPM rows sum to 1e6). |
+| rnanorm_uq | PASS | Ran on real GTEx lung counts (30 samples, chr21); output matches edgeR factors and direct calculation. |
+
 ## rnanorm_cpm
 
 ### Tool Description

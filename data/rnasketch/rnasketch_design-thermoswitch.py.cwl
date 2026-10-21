@@ -5,6 +5,9 @@ label: rnasketch_design-thermoswitch.py
 doc: "Design a multi-stable thermoswitch as suggested in the Flamm 2001 publication.\n\
   \nTool homepage: https://github.com/ViennaRNA/RNAsketch"
 inputs:
+  - id: stdin_file
+    type: File
+    doc: Text file with one target structure per line, each followed by its temperature, sent to the standard input
   - id: csv
     type:
       - 'null'
@@ -21,10 +24,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: graphml
+  - id: graphml_path
     type:
       - 'null'
-      - File
+      - string
     doc: Write a graphml file with the given filename.
     inputBinding:
       position: 101
@@ -82,7 +85,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: graphml_file
+    type:
+      - 'null'
+      - File
+    doc: Graphml file of the dependency graph
+    outputBinding:
+      glob: $(inputs.graphml_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnasketch:1.5--py27_1
 stdout: rnasketch_design-thermoswitch.py.out
+stdin: $(inputs.stdin_file.path)

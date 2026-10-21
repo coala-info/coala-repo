@@ -1,5 +1,18 @@
 # samestr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samestr_compare | PASS | Added the missing --input-files and --input-names flags; overlap and fraction tables equal the Galaxy expected files. |
+| samestr_convert | PASS | Added the missing --input-files flag; BAM from the Galaxy test set gives the expected alignment stats on the small test marker database. |
+| samestr_db | Not completed | Only --db-check ran (OK on the small Galaxy test database); building a database needs the large MetaPhlAn marker FASTA and pickle files. |
+| samestr_extract | Failed | image problem: makeblastdb in the image fails with missing libzstd.so.1; I added the missing --input-files flag. |
+| samestr_filter | PASS | Added the missing --input-files and --input-names flags; filtered profile is byte-identical to the Galaxy expected file. |
+| samestr_merge | PASS | Merged the two Galaxy test profiles into one profile with both samples. |
+| samestr_stats | PASS | Added the missing --input-files and --input-names flags; statistics row matches the Galaxy expected values. |
+| samestr_summarize | PASS | Strain events, co-occurrences and taxon counts match the Galaxy expected values. |
+
 ## samestr_db
 
 ### Tool Description

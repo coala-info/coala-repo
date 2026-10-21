@@ -12,7 +12,43 @@
 ### Tool Description
 Find golden paths from long reads with GoldRush-Path.
 
-### goldrush_goldpolish
+### Metadata
+- **Docker Image**: quay.io/biocontainers/goldrush:1.2.2--py39h2de1943_0
+- **Homepage**: https://github.com/bcgsc/goldrush
+- **Package**: https://anaconda.org/channels/bioconda/packages/goldrush/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:  goldrush_path  -k K -w W -i INPUT -g G [-p prefix] [-P PHRED_AVG] [-o O] [-t T] [-f F] [-h H] [-u U] [-m M] [-H HASH_UNIVERSE] [-s S] [-x X] [-M MAX_PATHS][-a A] [-j J] [-b B] [-d D] [--silver_path] [--ntcard] [--help] 
+
+  -i INPUT                find golden paths from INPUT [required]
+  -g G                    estimated genome size [required]
+  -b B                    during insertion, B number of consecutive tiles to be inserted with the same ID [10]
+  -d D                    remove reads with greater or equal then D phred average between first half and second half of the read [5]
+  -f F                    don't use reads from F. Expects one read per line
+  -o O                    use O as occupancy [0.1]
+  -h H                    use h as number of spaced seed patterns [1]
+  -H HASH_UNIVERSE        determine MiBF size based on HASH_UNIVERSE [Calculated based on W and h]
+  -t T                    tile length [1000]
+  -k K                    span of spaced seed [required]
+  -w W                    weight of spaced seed [required]
+  -m M                    use reads longer than M [20000]
+  -u U                    U minimum unassigned tiles for read to be unassigned [5]
+  -a A                    A maximum assigned tiles for read to be unassigned [1]
+  -p prefix               write output to files with prefix [goldrush_out]
+  -P PHRED_AVG            minimum average phred score for each read [0 (calculates phred score minimum automatically)]
+  -j J                    number of threads [48]
+  -s S                    use S seed preset. Must be consistent with k and w [n/a, generate one randomly based on k and w]
+  -x X                    require X hits for a tile to be assigned [10]
+  -M MAX_PATHS            output MAX_PATHS [5, used with --silver_path]
+  --ntcard                use ntcard to estimate genome size [false, assume max entries]
+  --silver_path           generate silver path(s) instead of golden path. Silver paths terminate when the number of bases recruited equals or exceeds T * r
+ --verbose                print verbose messages [false]
+  --help                  display this help and exit
+```
+
+## goldrush_goldpolish
 
 ### Tool Description
 Polish sequences with long reads (GoldPolish).
@@ -78,42 +114,4 @@ optional arguments:
   --softmask            Target coordinates determined from softmasked regions
                         in the input assembly (if --target specified)
 ```
-
-
-## Metadata
-- **Docker Image**: quay.io/biocontainers/goldrush:1.2.2--py39h2de1943_0
-- **Homepage**: https://github.com/bcgsc/goldrush
-- **Package**: https://anaconda.org/channels/bioconda/packages/goldrush/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage:  goldrush_path  -k K -w W -i INPUT -g G [-p prefix] [-P PHRED_AVG] [-o O] [-t T] [-f F] [-h H] [-u U] [-m M] [-H HASH_UNIVERSE] [-s S] [-x X] [-M MAX_PATHS][-a A] [-j J] [-b B] [-d D] [--silver_path] [--ntcard] [--help] 
-
-  -i INPUT                find golden paths from INPUT [required]
-  -g G                    estimated genome size [required]
-  -b B                    during insertion, B number of consecutive tiles to be inserted with the same ID [10]
-  -d D                    remove reads with greater or equal then D phred average between first half and second half of the read [5]
-  -f F                    don't use reads from F. Expects one read per line
-  -o O                    use O as occupancy [0.1]
-  -h H                    use h as number of spaced seed patterns [1]
-  -H HASH_UNIVERSE        determine MiBF size based on HASH_UNIVERSE [Calculated based on W and h]
-  -t T                    tile length [1000]
-  -k K                    span of spaced seed [required]
-  -w W                    weight of spaced seed [required]
-  -m M                    use reads longer than M [20000]
-  -u U                    U minimum unassigned tiles for read to be unassigned [5]
-  -a A                    A maximum assigned tiles for read to be unassigned [1]
-  -p prefix               write output to files with prefix [goldrush_out]
-  -P PHRED_AVG            minimum average phred score for each read [0 (calculates phred score minimum automatically)]
-  -j J                    number of threads [48]
-  -s S                    use S seed preset. Must be consistent with k and w [n/a, generate one randomly based on k and w]
-  -x X                    require X hits for a tile to be assigned [10]
-  -M MAX_PATHS            output MAX_PATHS [5, used with --silver_path]
-  --ntcard                use ntcard to estimate genome size [false, assume max entries]
-  --silver_path           generate silver path(s) instead of golden path. Silver paths terminate when the number of bases recruited equals or exceeds T * r
- --verbose                print verbose messages [false]
-  --help                  display this help and exit
-```
-
 

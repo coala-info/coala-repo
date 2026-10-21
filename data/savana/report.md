@@ -1,5 +1,16 @@
 # savana CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| savana_classify | PASS | Classified the nf-core savana chr21 breakpoint VCF; CLASS added to all 29 records and somatic VCF written |
+| savana_cna | Not completed | the only test data is a chr22-only reference; savana 1.3.6 looks up bare chromosome names (22) unless chr1 is in the reference, so the run stops with KeyError |
+| savana_evaluate | PASS | Compared the nf-core savana breakpoint VCF with itself and with half of it; labels and statistics correct (29/29 and 14 true positives) |
+| savana_run | PASS | Ran nf-core COLO829 tumour and normal ONT chr22 slices; 8 breakpoints in VCF, bedpe and read support files; added .bai and .fai secondary files |
+| savana_to | PASS | Ran tumour-only on the COLO829 chr22 slice; breakpoints called and classified (all noise at this depth); made --somatic_output optional, added .bai and .fai |
+| savana_train | PASS | synthetic data: ten copies of one small labelled VCF made from real savana calls; a random forest model and training stats were written (the tool crashes on too little data) |
+
 ## savana_run
 
 ### Tool Description

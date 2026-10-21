@@ -7,10 +7,9 @@ label: rnanorm_uq
 doc: "Performs Upper Quartile Normalization on expression data.\n\nTool homepage:
   https://github.com/genialis/RNAnorm"
 inputs:
-  - id: expression_file
+  - id: exp
     type: File
-    doc: Path to the input expression file (CSV format, with gene IDs as the 
-      first column).
+    doc: Path to the input expression file (CSV or TSV, genes in columns).
     inputBinding:
       position: 1
   - id: force
@@ -21,18 +20,18 @@ inputs:
     inputBinding:
       position: 102
       prefix: --force
-  - id: output_file_path
+  - id: out_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
 outputs:
-  - id: output_file
+  - id: out
     type: File
     doc: Path to save the normalized expression data (CSV format).
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

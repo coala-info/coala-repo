@@ -1,5 +1,11 @@
 # rrmscorer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rrmscorer | PASS |  |
+
 ## rrmscorer
 
 ### Tool Description

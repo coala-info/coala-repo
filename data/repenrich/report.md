@@ -25,29 +25,7 @@ command-line usage EXAMPLE: python master_setup.py
 /users/nneretti/data/annotation/mm9/mm9.fa
 /users/nneretti/data/annotation/mm9/setup_folder
 
-### repenrich_RepEnrich.py
-
-### Tool Description
-Part II: Conducting the alignments to the psuedogenomes (repeat element enrichment counts).
-
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/repenrich:1.2--py27_1
-- **Homepage**: https://github.com/nskvir/RepEnrich
-- **Package**: https://anaconda.org/channels/bioconda/packages/repenrich/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: RepEnrich.py [-h] [--version] [--pairedend PAIREDEND]
-                    [--collapserepeat collapserepeat] [--threshold threshold]
-                    [--tolerance tolerance] [--fastqfile2 fastqfile2]
-                    [--cpus cpus] [--allcountmethod allcountmethod]
-                    [--is_bed is_bed]
-                    annotation_file outputfolder outputprefix setup_folder
-                    fastqfile alignment_bam
-```
-
-## Metadata
 - **Docker Image**: quay.io/biocontainers/repenrich:1.2--py27_1
 - **Homepage**: https://github.com/nskvir/RepEnrich
 - **Package**: https://anaconda.org/channels/bioconda/packages/repenrich/overview
@@ -116,6 +94,28 @@ optional arguments:
                         applicable. Default FALSE change to TRUE
 ```
 
+
+## repenrich_RepEnrich.py
+
+### Tool Description
+Part II: Conducting the alignments to the psuedogenomes (repeat element enrichment counts).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/repenrich:1.2--py27_1
+- **Homepage**: https://github.com/nskvir/RepEnrich
+- **Package**: https://anaconda.org/channels/bioconda/packages/repenrich/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: RepEnrich.py [-h] [--version] [--pairedend PAIREDEND]
+                    [--collapserepeat collapserepeat] [--threshold threshold]
+                    [--tolerance tolerance] [--fastqfile2 fastqfile2]
+                    [--cpus cpus] [--allcountmethod allcountmethod]
+                    [--is_bed is_bed]
+                    annotation_file outputfolder outputprefix setup_folder
+                    fastqfile alignment_bam
+```
 
 ## Metadata
 - **Skill**: generated

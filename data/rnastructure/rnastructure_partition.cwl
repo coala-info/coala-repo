@@ -11,6 +11,11 @@ inputs:
       the file will be read from standard input\n    (STDIN)."
     inputBinding:
       position: 1
+  - id: pfs_file_path
+    type: string
+    doc: Name of the partition function save file (PFS) to which output is written
+    inputBinding:
+      position: 2
   - id: alphabet
     type:
       - 'null'
@@ -154,10 +159,11 @@ inputs:
 outputs:
   - id: pfs_file
     type: File
-    doc: "The name of a partition function save file (PFS) to which output will be\n\
-      \    written."
+    doc: Partition function save file (binary)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.pfs_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnastructure:6.5--hde5307d_0

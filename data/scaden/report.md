@@ -1,5 +1,16 @@
 # scaden CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scaden_example | PASS |  |
+| scaden_merge | PASS | synthetic data: random example dataset from scaden example |
+| scaden_predict | PASS | synthetic data: random example dataset from scaden example |
+| scaden_process | PASS | synthetic data: random example dataset from scaden example |
+| scaden_simulate | PASS | synthetic data: random example dataset from scaden example |
+| scaden_train | PASS | synthetic data: random example dataset from scaden example |
+
 ## scaden_example
 
 ### Tool Description

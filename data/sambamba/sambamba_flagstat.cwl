@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba-flagstat
+baseCommand:
+  - sambamba
+  - flagstat
 label: sambamba_flagstat
 doc: "Outputs SAM/BAM/CRAM alignment statistics.\n\nTool homepage: https://github.com/biod/sambamba"
 inputs:

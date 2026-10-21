@@ -16,12 +16,22 @@ inputs:
       prefix: -B
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: INPUT-BAM
     inputBinding:
       position: 101
       prefix: -b
   - id: input_vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: INPUT-VCF
     inputBinding:
       position: 101
@@ -120,29 +130,23 @@ inputs:
       position: 101
       prefix: -F
   - id: output_r1_fastq_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output or path parameter `output_r1_fastq_path`
     inputBinding:
       position: 102
-      prefix: --output-r1-fastq
+      prefix: '-1'
   - id: output_r2_fastq_gz_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output or path parameter `output_r2_fastq_gz_path`
     inputBinding:
       position: 103
-      prefix: --output-r2-fastq-gz
+      prefix: '-2'
   - id: output_unpaired_fastq_gz_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output or path parameter `output_unpaired_fastq_gz_path`
     inputBinding:
       position: 104
-      prefix: --output-unpaired-fastq-gz
+      prefix: '-0'
 outputs:
   - id: output_r1_fastq
     type: File

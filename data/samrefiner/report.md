@@ -1,5 +1,11 @@
 # samrefiner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samrefiner_SAM_Refiner | PASS | Fixed 0/1 options to int, -r flag, writable SAM staging and output collection; nt call depths match samtools on a real SAM (only nt calls are non-empty; pysam is absent so BAM input is unsupported). |
+
 ## samrefiner_SAM_Refiner
 
 ### Tool Description

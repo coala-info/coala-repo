@@ -1,5 +1,11 @@
 # samclip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samclip | Failed | tool bug: --invert prints the kept clipped read, not the 2 rejected ones; I added the missing SAM input and index; plain filtering works on real BAM. |
+
 ## samclip
 
 ### Tool Description

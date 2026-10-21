@@ -1,5 +1,11 @@
 # sanntis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sanntis | PASS | Ran on the tool's test proteins with preprocessed InterProScan GFF3; found the expected CLUSTER (RiPP, BGC0001472); fixed True/False options typed boolean |
+
 ## sanntis
 
 ### Tool Description

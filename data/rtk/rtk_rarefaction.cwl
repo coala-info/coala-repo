@@ -51,7 +51,8 @@ inputs:
       prefix: -w
   - id: output
     type: string
-    doc: path to a output directory
+    doc: Output prefix (path inside an existing directory, or a plain prefix) for the
+      result files
     inputBinding:
       position: 102
       prefix: -o
@@ -67,13 +68,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir
+  - id: output_files
     type:
-      - 'null'
-      - Directory
-    doc: path to a output directory
+      type: array
+      items: File
+    doc: Rarefied tables and diversity tables written with the output prefix
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rtk:0.93.2--h077b44d_6

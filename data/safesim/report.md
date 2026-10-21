@@ -1,5 +1,12 @@
 # safesim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| safesim_safemix | PASS | real sarscov2 BAMs; tumor fraction 0.01/0.5/0.99 gives 2/200/200 tumor reads as expected; added missing tumor and normal BAM outputs |
+| safesim_safemut | Failed | tool bug: never finishes on three real BAMs (one with UMI read names): writes a malformed R2 FASTQ forever; fixed wrong -1/-2/-0 output flags |
+
 ## safesim_safemut
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # rnasamba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnasamba_classify | PASS | Classified 40 coding and 40 lncRNA Ensembl chr21 transcripts with the repository weights; 74 of 80 are correct and the protein FASTA is written. |
+| rnasamba_train | PASS | Trained on 80 real Ensembl chr21 coding and 80 lncRNA transcripts (5 epochs); the weights file is valid and classifies held-out transcripts. |
+
 ## rnasamba_classify
 
 ### Tool Description

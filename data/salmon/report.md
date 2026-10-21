@@ -1,5 +1,14 @@
 # salmon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| salmon_alevin | PASS | fixed baseCommand (salmon alevin), index and --output; 100k real 10x v2 mouse reads gave a 165-cell matrix, but only 0.35% mapped because the index is a small cDNA subset; a full barcode universe as --whitelist is rejected by the tool |
+| salmon_index | PASS | index of the 11 sarscov2 transcripts and of a 2520-transcript mouse cDNA subset; output index directory now collected |
+| salmon_quant | PASS | rewrote CWL from the reads-mode help (old one had only 3 options); 95 of 100 real read pairs assigned, matches sailfish |
+| salmon_quantmerge | PASS | merged numreads of two real quant runs; quants are now Directory inputs |
+
 ## salmon_index
 
 ### Tool Description
@@ -258,27 +267,6 @@ alevin-specific Options:
                                         (Default: 200).
   --maxNumBarcodes arg (=100000)        Maximum allowable limit to process the 
                                         cell barcodes. (Default: 100000)
-```
-
-
-## salmon_swim
-
-### Tool Description
-A tool for single-cell RNA-seq analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/salmon:1.10.3--h45fbf2d_5
-- **Homepage**: https://github.com/COMBINE-lab/salmon
-- **Package**: https://anaconda.org/channels/bioconda/packages/salmon/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-_____       __
-   / ___/____ _/ /___ ___  ____  ____
-   \__ \/ __ `/ / __ `__ \/ __ \/ __ \
-  ___/ / /_/ / / / / / / / /_/ / / / /
- /____/\__,_/_/_/ /_/ /_/\____/_/ /_/
 ```
 
 

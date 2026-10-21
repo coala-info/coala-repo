@@ -40,6 +40,8 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sbol-utilities:1.0a16--pyhdfd78af_0

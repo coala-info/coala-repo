@@ -11,7 +11,7 @@ inputs:
       position: 101
       prefix: --coordinates
   - id: database
-    type: string
+    type: File
     doc: Primary database record to extract sequence information from
     inputBinding:
       position: 101
@@ -104,6 +104,13 @@ inputs:
       position: 104
       prefix: --output
 outputs:
+  - id: default_summary
+    type:
+      - 'null'
+      - File
+    doc: Summary JSON written to summary.json when --output is not given
+    outputBinding:
+      glob: summary.json
   - id: output
     type:
       - 'null'

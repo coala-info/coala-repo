@@ -276,6 +276,8 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - .bai
     doc: Normal BAM file (must have index)
     inputBinding:
       position: 101
@@ -350,7 +352,9 @@ inputs:
       position: 101
       prefix: --readcount_mapq
   - id: ref
-    type: string
+    type: File
+    secondaryFiles:
+      - .fai
     doc: Full path to reference genome
     inputBinding:
       position: 101
@@ -408,6 +412,8 @@ inputs:
       prefix: --trim
   - id: tumour
     type: File
+    secondaryFiles:
+      - .bai
     doc: Tumour BAM file (must have index)
     inputBinding:
       position: 101

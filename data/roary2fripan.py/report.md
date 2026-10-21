@@ -1,5 +1,11 @@
 # roary2fripan.py CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| roary2fripan.py | PASS |  |
+
 ## roary2fripan.py
 
 ### Tool Description

@@ -6,8 +6,8 @@ baseCommand:
 label: sample-sheet_totable
 doc: "Pretty print a sample sheet to terminal\n\nTool homepage: https://github.com/clintval/sample-sheet"
 inputs:
-  - id: path
-    type: string
+  - id: sample_sheet
+    type: File
     doc: Path to the sample sheet
     inputBinding:
       position: 1

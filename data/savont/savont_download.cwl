@@ -14,8 +14,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --emu-db
-  - id: location
-    type: Directory
+  - id: download_location
+    type: string
     doc: Download location directory
     inputBinding:
       position: 101
@@ -40,6 +40,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: location_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the downloaded database
+    outputBinding:
+      glob: $(inputs.download_location)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savont:0.3.2--h3ab6199_0

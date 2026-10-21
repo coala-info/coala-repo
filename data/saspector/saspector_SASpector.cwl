@@ -96,7 +96,7 @@ inputs:
       prefix: --tandem_repeats
   - id: output_path_path
     type: string
-    doc: utput path, --outdir Output path Output directory
+    doc: Output directory
     inputBinding:
       position: 102
       prefix: -dir

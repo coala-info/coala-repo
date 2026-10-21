@@ -74,6 +74,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_folder
+    type: Directory
+    doc: Output folder
+    outputBinding:
+      glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnaprot:0.5--pyhdfd78af_1

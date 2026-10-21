@@ -1,22 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - savvy
+  - sav
   - export
 label: savvy_sav_export
 doc: "Export SAV data to VCF, VCF.GZ, or SAV format.\n\nTool homepage: https://github.com/statgen/savvy"
 inputs:
   - id: input_sav
-    type:
-      - 'null'
-      - File
+    type: File
+    secondaryFiles:
+      - pattern: .s1r
+        required: false
     doc: Input SAV file
     inputBinding:
       position: 1
   - id: output_file
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output file (vcf, vcf.gz, or sav)
     inputBinding:
       position: 2
@@ -157,7 +156,9 @@ inputs:
       position: 103
       prefix: --update-info
   - id: index_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 104
       prefix: --index-file

@@ -93,7 +93,7 @@ inputs:
     doc: Output or path parameter `aligned_output_dir_path`
     inputBinding:
       position: 102
-      prefix: --aligned-output-dir
+      prefix: --aligned
   - id: csv_output_dir_path
     type:
       - 'null'
@@ -101,7 +101,7 @@ inputs:
     doc: Output or path parameter `csv_output_dir_path`
     inputBinding:
       position: 103
-      prefix: --csv-output-dir
+      prefix: --csv
   - id: json_output_dir_path
     type:
       - 'null'
@@ -109,7 +109,7 @@ inputs:
     doc: Output or path parameter `json_output_dir_path`
     inputBinding:
       position: 104
-      prefix: --json-output-dir
+      prefix: --json
   - id: plot_output_dir_path
     type:
       - 'null'
@@ -117,8 +117,11 @@ inputs:
     doc: Output or path parameter `plot_output_dir_path`
     inputBinding:
       position: 105
-      prefix: --plot-output-dir
+      prefix: --plot
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (predicted scores)
   - id: json_output_dir
     type:
       - 'null'
@@ -152,3 +155,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rrmscorer:1.0.11--pyhdfd78af_0
+stdout: rrmscorer.out

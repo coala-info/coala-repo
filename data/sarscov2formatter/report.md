@@ -1,5 +1,11 @@
 # sarscov2formatter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sarscov2formatter | PASS | Output matches the Galaxy expected msa, duplicates and metadata files (tabular and NCBI json modes); added the three output files |
+
 ## sarscov2formatter
 
 ### Tool Description

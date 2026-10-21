@@ -1,5 +1,11 @@
 # rnaz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnaz_rnazRandomizeAln.pl | PASS | Ran on the real IRE alignment from the RNAz repo; columns are shuffled with the same shape. The CWL had invented options (--seed, string level) that were replaced by the documented ones. |
+
 ## Metadata
 - **Skill**: generated
 

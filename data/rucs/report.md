@@ -1,5 +1,11 @@
 # rucs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rucs | Failed | image problem: fucs/full crash (numpy removed np.int) and vpcr needs makeblastdb-2.2.31, which is missing; only pcrs ran |
+
 ## rucs
 
 ### Tool Description

@@ -3,6 +3,11 @@ class: CommandLineTool
 baseCommand: cargo
 label: rust_cargo
 doc: "Rust's package manager\n\nTool homepage: https://github.com/rust-lang/rust"
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.project)
+        writable: true
 inputs:
   - id: command
     type: string
@@ -17,6 +22,20 @@ inputs:
     doc: Arguments for the cargo command
     inputBinding:
       position: 2
+  - id: project
+    type:
+      - 'null'
+      - Directory
+    doc: Cargo project directory (with Cargo.toml). It is staged writable in the working
+      directory so that cargo can create its target directory
+  - id: manifest_path
+    type:
+      - 'null'
+      - string
+    doc: Path to Cargo.toml of the staged project (for example hello/Cargo.toml)
+    inputBinding:
+      position: 103
+      prefix: --manifest-path
   - id: color
     type:
       - 'null'
@@ -68,8 +87,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Use verbose output
     inputBinding:
       position: 103
@@ -78,6 +96,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: target_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Build output directory (target) of the staged project
+    outputBinding:
+      glob: $(inputs.project.basename)/target
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust:1.14.0--0

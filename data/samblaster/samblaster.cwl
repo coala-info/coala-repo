@@ -197,8 +197,12 @@ outputs:
       if QUAL information available, otherwise FASTA.
     outputBinding:
       glob: $(inputs.unmapped_file_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (all alignments when no output file is given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samblaster:0.1.26--h9948957_7
+stdout: samblaster.out

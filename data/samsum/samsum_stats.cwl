@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: samsum
+baseCommand:
+  - samsum
+  - stats
 label: samsum_stats
 doc: "Calculate read coverage stats over reference sequences.\n\nTool homepage: https://github.com/hallamlab/samsum"
 inputs:
@@ -43,8 +45,6 @@ inputs:
     type: File
     doc: "Path to the reference file used to generate the\n                      \
       \  SAM/BAM file."
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --ref_fasta
@@ -77,6 +77,8 @@ inputs:
       prefix: --verbose
   - id: output_table_path
     type: string
+    default: ./samsum_table.csv
+    doc: "Name of a file to write the alignment stats to; keep the ./ prefix, because samsum writes its log next to the table (DEFAULT = ./samsum_table.csv)"
     inputBinding:
       position: 102
       prefix: --output_table

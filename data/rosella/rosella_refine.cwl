@@ -9,7 +9,7 @@ inputs:
   - id: assembly
     type:
       - 'null'
-      - string
+      - File
     inputBinding:
       position: 101
       prefix: --assembly
@@ -38,7 +38,7 @@ inputs:
   - id: checkm_results
     type:
       - 'null'
-      - string
+      - File
     inputBinding:
       position: 101
       prefix: --checkm-results

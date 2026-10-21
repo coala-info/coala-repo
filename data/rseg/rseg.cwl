@@ -41,7 +41,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -chrom
-  - id: deadezones_file
+  - id: deadzones_file
     type:
       - 'null'
       - File

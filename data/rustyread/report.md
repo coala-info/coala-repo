@@ -1,42 +1,10 @@
 # rustyread CWL Generation Report
 
-## rustyread
-### Tool Description
-A long read simulator based on badread idea and model
+## Real Data Test
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rustyread:0.4.1--heebf65f_4
-- **Homepage**: https://github.com/natir/rustyread
-- **Package**: https://anaconda.org/channels/bioconda/packages/rustyread/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/rustyread/overview
-- **Total Downloads**: 16.4K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/natir/rustyread
-- **Stars**: N/A
-### Original Help Text
-```text
-rustyread 0.4 Pidgeotto
-Pierre Marijon <pierre.marijon@hhu.de>
-A long read simulator based on badread idea and model
-
-USAGE:
-    rustyread [OPTIONS] <SUBCOMMAND>
-
-OPTIONS:
-    -h, --help                 Print help information
-    -t, --threads <THREADS>    Number of thread use by rustyread, 0 use all avaible core, default
-                               value 0
-    -v, --verbosity            Verbosity level also control by environment variable RUSTYREAD_LOG if
-                               flag is set RUSTYREAD_LOG value is ignored
-    -V, --version              Print version information
-
-SUBCOMMANDS:
-    help        Print this message or the help of the given subcommand(s)
-    simulate    Generate fake long read
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| rustyread_simulate | PASS | about 5x of reads simulated with real badread nanopore2020 model files; model names (default) need Python badread, so model files are passed as inputs |
 
 ## rustyread_simulate
 

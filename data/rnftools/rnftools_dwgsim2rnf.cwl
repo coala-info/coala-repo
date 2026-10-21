@@ -13,6 +13,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --dwgsim-prefix
+  - id: dwgsim_files
+    type: File[]
+    doc: DwgSim output files that start with the prefix (at least <prefix>.bfast.fastq), staged in the working directory so that the prefix resolves.
   - id: estimate_unknown
     type:
       - 'null'
@@ -22,9 +25,7 @@ inputs:
       position: 101
       prefix: --estimate-unknown
   - id: faidx
-    type:
-      - 'null'
-      - File
+    type: File
     doc: FAI index of the reference FASTA file (- for standard input). It can be
       created using 'samtools faidx'.
     inputBinding:
@@ -54,6 +55,8 @@ outputs:
       glob: $(inputs.rnf_fastq_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.dwgsim_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnftools:0.4.0.0--pyhdfd78af_0

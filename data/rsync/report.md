@@ -1,5 +1,11 @@
 # rsync CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rsync | PASS | no bioconda image exists; DockerRequirement set to instrumentisto/rsync-ssh:alpine3.23-r3 (pinned); archive copy of a real FASTA and FASTQ with an exclude pattern is correct |
+
 ## rsync
 
 ### Tool Description

@@ -5,7 +5,9 @@ label: rsem_rsem-calculate-expression
 doc: "Estimate gene and isoform expression from RNA-Seq data.\n\nTool homepage: https://deweylab.github.io/RSEM/"
 inputs:
   - id: input_alignments
-    type: File
+    type:
+      - 'null'
+      - File
     doc: SAM/BAM/CRAM formatted input file. If "-" is specified for the 
       filename, the input is instead assumed to come from standard input. RSEM 
       requires all alignments of the same read group together. For paired-end 
@@ -16,8 +18,9 @@ inputs:
       position: 1
   - id: upstream_read_files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Comma-separated list of files containing single-end reads or upstream 
       reads for paired-end data. By default, these files are assumed to be in 
       FASTQ format. If the --no-qualities option is specified, then FASTA format
@@ -50,6 +53,13 @@ inputs:
       name (e.g., sample_name.genes.results)
     inputBinding:
       position: 5
+  - id: reference_files
+    type:
+      type: array
+      items: File
+    doc: Reference files written by rsem-prepare-reference (all files starting with
+      the reference name). They are staged in the working directory so that reference_name
+      resolves.
   - id: alignments
     type:
       - 'null'
@@ -111,7 +121,7 @@ inputs:
   - id: bowtie2_path
     type:
       - 'null'
-      - File
+      - Directory
     doc: "(Bowtie 2 parameter) The path to the Bowtie 2 executables. (Default: the
       path to the Bowtie 2 executables is assumed to be in the user's PATH environment
       variable)"
@@ -170,7 +180,7 @@ inputs:
   - id: bowtie_path
     type:
       - 'null'
-      - File
+      - Directory
     doc: "The path to the Bowtie executables. (Default: the path to the Bowtie executables
       is assumed to be in the user's PATH environment variable)"
     inputBinding:
@@ -421,7 +431,7 @@ inputs:
   - id: hisat2_path
     type:
       - 'null'
-      - File
+      - Directory
     doc: "The path to HISAT2's executable. (Default: the path to HISAT2 executable
       is assumed to be in user's PATH environment variable)"
     inputBinding:
@@ -725,7 +735,7 @@ inputs:
   - id: star_path
     type:
       - 'null'
-      - File
+      - Directory
     doc: "The path to STAR's executable. (Default: the path to STAR executable is
       assumed to be in user's PATH environment variable)"
     inputBinding:
@@ -785,6 +795,47 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: genes_results
+    type:
+      - 'null'
+      - File
+    doc: Gene-level expression estimates (sample_name.genes.results)
+    outputBinding:
+      glob: $(inputs.sample_name).genes.results
+  - id: isoforms_results
+    type:
+      - 'null'
+      - File
+    doc: Isoform-level expression estimates (sample_name.isoforms.results)
+    outputBinding:
+      glob: $(inputs.sample_name).isoforms.results
+  - id: stat_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Model and count statistics (sample_name.stat)
+    outputBinding:
+      glob: $(inputs.sample_name).stat
+  - id: bam_files
+    type:
+      type: array
+      items: File
+    doc: Transcript and genome BAM files and their indices
+    outputBinding:
+      glob: $(inputs.sample_name).*bam*
+  - id: other_files
+    type:
+      type: array
+      items: File
+    doc: Other result files (confidence intervals, time, wiggles)
+    outputBinding:
+      glob:
+        - $(inputs.sample_name).*.ci_results
+        - $(inputs.sample_name).time
+        - $(inputs.sample_name).*.pme_results
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reference_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12

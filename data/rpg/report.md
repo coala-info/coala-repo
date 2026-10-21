@@ -1,5 +1,11 @@
 # rpg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rpg | PASS |  |
+
 ## rpg
 
 ### Tool Description

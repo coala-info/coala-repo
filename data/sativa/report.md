@@ -1,5 +1,11 @@
 # sativa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sativa_sativa.py | PASS | Ran the repo example alignment and taxonomy; .mis file lists mislabeled sequences; wrapper now creates the output directory and sets a writable tmpdir |
+
 ## sativa_sativa.py
 
 ### Tool Description

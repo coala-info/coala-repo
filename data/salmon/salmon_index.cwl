@@ -50,8 +50,8 @@ inputs:
       position: 101
       prefix: --gencode
   - id: index
-    type: Directory
-    doc: salmon index.
+    type: string
+    doc: salmon index (output directory name).
     inputBinding:
       position: 101
       prefix: --index
@@ -139,6 +139,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_dir
+    type: Directory
+    doc: salmon index
+    outputBinding:
+      glob: $(inputs.index)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/salmon:1.10.3--h45fbf2d_5

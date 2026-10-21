@@ -15,6 +15,11 @@ inputs:
       prefix: -j
   - id: normal_input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: normal-INPUT-BAM file
     inputBinding:
       position: 101
@@ -69,6 +74,11 @@ inputs:
       prefix: -i
   - id: tumor_input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: tumor-INPUT-BAM file
     inputBinding:
       position: 101
@@ -94,6 +104,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: tumor_bam
+    type: File
+    doc: Simulated tumor BAM
+    outputBinding:
+      glob: $(inputs.output_prefix).tumor.bam
+  - id: normal_bam
+    type: File
+    doc: Simulated normal BAM
+    outputBinding:
+      glob: $(inputs.output_prefix).normal.bam
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/safesim:0.1.6.8d44580--h7d57edc_4

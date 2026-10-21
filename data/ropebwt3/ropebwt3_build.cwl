@@ -134,7 +134,7 @@ inputs:
   - id: save_index_file
     type:
       - 'null'
-      - File
+      - string
     doc: save the current index to FILE after each input file
     inputBinding:
       position: 102
@@ -166,6 +166,13 @@ outputs:
     doc: output to FILE
     outputBinding:
       glob: $(inputs.output_file)
+  - id: save_index_file_out
+    type:
+      - 'null'
+      - File
+    doc: save the current index to FILE after each input file
+    outputBinding:
+      glob: $(inputs.save_index_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ropebwt3:3.10--h577a1d6_0

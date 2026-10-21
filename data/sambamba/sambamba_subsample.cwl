@@ -1,68 +1,70 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba_subsample
+baseCommand:
+  - sambamba
+  - subsample
 label: sambamba_subsample
-doc: "Subsample BAM files\n\nTool homepage: https://github.com/biod/sambamba"
+doc: "Subsample a bam file.\n\nTool homepage: https://github.com/biod/sambamba"
 inputs:
   - id: input_bam
-    type: File
-    doc: Input BAM file
+    type:
+      type: array
+      items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    doc: Input BAM file(s)
+    inputBinding:
+      position: 3
+  - id: type
+    type:
+      - 'null'
+      - string
+    doc: Algorithm for subsampling (fasthash, default is none)
     inputBinding:
       position: 1
-  - id: compress
+      prefix: --type=
+      separate: false
+  - id: max_cov
     type:
       - 'null'
       - int
-    doc: Compression level for output BAM (0-9)
+    doc: Maximum coverage (approx)
     inputBinding:
-      position: 102
-      prefix: --compress
-  - id: force
+      position: 1
+      prefix: --max-cov=
+      separate: false
+  - id: remove
     type:
       - 'null'
       - boolean
-    doc: Overwrite output file if it exists
+    doc: Remove over sampled reads from output
     inputBinding:
-      position: 102
-      prefix: --force
-  - id: fraction
+      position: 1
+      prefix: --remove
+  - id: output_path
     type:
       - 'null'
-      - float
-    doc: Fraction of reads to keep (e.g., 0.1 for 10%)
+      - string
+    doc: Set output file (default stdout)
     inputBinding:
-      position: 102
-      prefix: --fraction
-  - id: nreads
-    type:
-      - 'null'
-      - int
-    doc: Number of reads to keep
-    inputBinding:
-      position: 102
-      prefix: --nreads
-  - id: seed
-    type:
-      - 'null'
-      - int
-    doc: Random seed for subsampling
-    inputBinding:
-      position: 102
-      prefix: --seed
-  - id: output_bam_path
-    type: string
-    doc: Output or path parameter `output_bam_path`
-    inputBinding:
-      position: 103
-      prefix: --output-bam
+      position: 2
+      prefix: -o
+      separate: false
 outputs:
   - id: output_bam
-    type: File
-    doc: Output BAM file
+    type:
+      - 'null'
+      - File
+    doc: Subsampled BAM file
     outputBinding:
-      glob: $(inputs.output_bam_path)
+      glob: $(inputs.output_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (BAM stream when no output file is given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sambamba:1.0.1--he614052_4
+stdout: sambamba_subsample.out

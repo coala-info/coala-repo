@@ -1,5 +1,11 @@
 # sapling CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sapling | PASS | Output matches the repo's example_output.tsv exactly |
+
 ## sapling
 
 ### Tool Description

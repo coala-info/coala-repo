@@ -1,43 +1,19 @@
 # savvy CWL Generation Report
 
-## savvy_sav
+## Real Data Test
 
-### Tool Description
-Missing sub-command
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/savvy:2.1.0--h5b0a936_4
-- **Homepage**: https://github.com/statgen/savvy
-- **Package**: https://anaconda.org/channels/bioconda/packages/savvy/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/savvy/overview
-- **Total Downloads**: 41.8K
-- **Last updated**: 2025-09-08
-- **GitHub**: https://github.com/statgen/savvy
-- **Stars**: N/A
-### Original Help Text
-```text
-Missing sub-command
-Usage: sav <sub-command> [args ...]
-or: sav [opts ...]
-
-Sub-commands:
- export:      Exports SAV to VCF or SAV
- head:        Prints SAV headers or samples IDs
- import:      Imports VCF or BCF into SAV
- index:       Indexes SAV file
- rehead:      Replaces headers without recompressing variant blocks
- sort:        Sorts variant records
- stat:        Gathers statistics on SAV file
- stat-index:  Gathers statistics on s1r index
- stat-merge:  Merges output from multiple calls to stat
-
-Options:
- -h, --help     Print usage
- -v, --version  Print version
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| savvy_sav_concat | Failed | tool bug: sav concat stops with 'Header dictionaries incompatible' even for two copies of the same SAV file; added the missing --out input |
+| savvy_sav_export | PASS | Exported SAV back to VCF (24 records identical to the source) and sliced it into SAV parts; fixed command name sav |
+| savvy_sav_head | PASS | Printed headers and sample IDs of the test SAV; contents match the source VCF |
+| savvy_sav_import | PASS | Imported the savvy repo test_file.vcf into SAV; export back to VCF gives identical records; made input a required VCF/BCF file |
+| savvy_sav_index | PASS | New CWL: wrote a separate .s1r index file and appended an index to a staged copy of a SAV file |
+| savvy_sav_rehead | PASS | Replaced six sample IDs with S1 to S6; used the short -I option because the long --sample-ids option only prints usage |
+| savvy_sav_sort | PASS | Sorted the test SAV in descending order; exported VCF starts at chr20 4236679; added the missing --output input |
+| savvy_sav_stat | PASS | Counted records of the test SAV: 24 records, 28 variants, 4 multi-allelic; slices give 12 14 2 as expected |
+| savvy_sav_stat-index | PASS | Printed per-chromosome index statistics (records 5 and 19) of the test SAV |
+| savvy_sav_stat-merge | Not completed | new CWL: this stat prints only three counts, so there are no per-sample or per-count tables to merge; the merge output just repeats the first file, which cannot be confirmed |
 
 ## savvy_sav_import
 
@@ -241,6 +217,43 @@ Usage: sav sort [opts ...] <in.sav>
  -p, --point       Specifies which allele position to sort by (beg, mid or end; default: beg)
 ```
 
+
+## savvy_sav_index
+
+### Tool Description
+Indexes SAV file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/savvy:2.1.0--h5b0a936_4
+- **Homepage**: https://github.com/statgen/savvy
+- **Package**: https://anaconda.org/channels/bioconda/packages/savvy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sav index [opts ...] <in.sav> 
+
+ -h, --help    Print usage
+ -o, --output  Output path (default: appends index to SAV file)
+```
+
+## savvy_sav_stat-merge
+
+### Tool Description
+Merges output from multiple calls to stat
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/savvy:2.1.0--h5b0a936_4
+- **Homepage**: https://github.com/statgen/savvy
+- **Package**: https://anaconda.org/channels/bioconda/packages/savvy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sav stat-merge [opts ...] <in1.tsv> <in2.tsv> [other.tsv ...] 
+
+ -h, --help  Print usage
+```
 
 ## Metadata
 - **Skill**: generated

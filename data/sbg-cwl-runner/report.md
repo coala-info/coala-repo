@@ -1,5 +1,11 @@
 # sbg-cwl-runner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sbg-cwl-runner | Not completed | pipeline runner for the Seven Bridges cloud platform: needs an account and API profile, skipped; workflow and job inputs changed to File |
+
 ## sbg-cwl-runner
 
 ### Tool Description

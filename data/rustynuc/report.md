@@ -1,5 +1,11 @@
 # rustynuc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rustynuc | PASS | oxoG calls and VCF filtering match the repo tests; a 3-column BED is rejected by the tool (needs a name column) |
+
 ## rustynuc
 
 ### Tool Description

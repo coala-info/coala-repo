@@ -104,7 +104,7 @@ inputs:
     doc: Output or path parameter `classifications_out_path`
     inputBinding:
       position: 102
-      prefix: --classifications-out
+      prefix: -o
 outputs:
   - id: classifications_out
     type: File

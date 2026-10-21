@@ -23,8 +23,6 @@ inputs:
   - id: reference
     type: File
     doc: Host Reference fasta or fasta.gz file
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --Reference

@@ -43,9 +43,8 @@ inputs:
       prefix: --names
   - id: quants
     type:
-      - 'null'
-      - type: array
-        items: string
+      type: array
+      items: Directory
     doc: List of quantification directories.
     inputBinding:
       position: 101

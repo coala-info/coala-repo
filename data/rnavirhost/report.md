@@ -1,5 +1,12 @@
 # rnavirhost CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnavirhost_classify_order | Failed | image problem: the tool unzips its virus database into the image install folder, which is read-only (unzip: can't open 'virus.fasta': Read-only file system). |
+| rnavirhost_predict | PASS | Ran on the three real virus genomes from the tool repo test; predicted hosts match the viruses (bat coronavirus gives Chordata/Chiroptera, tick virus gives Invertebrate, narnavirus gives Fungi). |
+
 ## rnavirhost_classify_order
 
 ### Tool Description

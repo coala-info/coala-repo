@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: PROG
+baseCommand: salty
 label: salty
 doc: "SALTy: A tool for rapid and accurate lineage assignment of bacterial genomes.\n\
   \nTool homepage: https://github.com/LanLab/salty"

@@ -1,5 +1,13 @@
 # sam2lca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sam2lca_analyze | PASS | Added the global --dbdir option; on the tool's test BAM and test database the JSON result equals the expected file. |
+| sam2lca_list-db | PASS | New CWL for list-db; lists the test taxonomy and acc2tax databases (the tool writes them to stderr). |
+| sam2lca_update-db | PASS | Added the global --dbdir option and network access; built the small test taxonomy and acc2tax database. |
+
 ## sam2lca_analyze
 
 ### Tool Description
@@ -82,6 +90,27 @@ Options:
                        [default: https://raw.githubusercontent.com/maxibor/sam
                        2lca/master/data/acc2tax.json]
   --help               Show this message and exit.
+```
+
+## sam2lca_list-db
+
+### Tool Description
+List available taxonomy and acc2tax databases
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sam2lca:1.1.4--pyhdfd78af_0
+- **Homepage**: https://github.com/maxibor/sam2lca
+- **Package**: https://anaconda.org/channels/bioconda/packages/sam2lca/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sam2lca list-db [OPTIONS]
+
+  List available taxonomy and acc2tax databases
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## Metadata

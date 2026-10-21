@@ -11,6 +11,14 @@ inputs:
     doc: Input FASTA file
     inputBinding:
       position: 1
+  - id: no_reverse_strand
+    type:
+      - 'null'
+      - boolean
+    doc: no reverse strand
+    inputBinding:
+      position: 101
+      prefix: -R
   - id: additional_files
     type:
       - 'null'

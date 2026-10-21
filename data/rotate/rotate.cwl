@@ -8,7 +8,7 @@ inputs:
     type: File
     doc: input fasta filename
     inputBinding:
-      position: 1
+      position: 200
   - id: max_mismatches
     type:
       - 'null'
@@ -46,7 +46,7 @@ inputs:
     doc: Output or path parameter `output_filename_path`
     inputBinding:
       position: 103
-      prefix: --output-filename
+      prefix: -o
 outputs:
   - id: output_filename
     type:

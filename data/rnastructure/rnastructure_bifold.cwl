@@ -10,6 +10,11 @@ inputs:
     doc: The name of a file containing a first input sequence.
     inputBinding:
       position: 1
+  - id: ct_file_path
+    type: string
+    doc: Name of the CT file to which output is written
+    inputBinding:
+      position: 3
   - id: seq_file_2
     type: File
     doc: The name of a file containing a second input sequence.
@@ -83,7 +88,7 @@ inputs:
   - id: save_file
     type:
       - 'null'
-      - File
+      - string
     doc: Specify the name of a save file, needed for dotplots and refolding. 
       Default is not to generate a save file.
     inputBinding:
@@ -109,9 +114,18 @@ inputs:
 outputs:
   - id: ct_file
     type: File
-    doc: The name of a CT file to which output will be written.
+    doc: Predicted bimolecular structures (CT format)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.ct_file_path)
+  - id: save_file_out
+    type:
+      - 'null'
+      - File
+    doc: Save file for dot plots and refolding
+    outputBinding:
+      glob: $(inputs.save_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnastructure:6.5--hde5307d_0

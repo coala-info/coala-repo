@@ -2,39 +2,26 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rnazRandomizeAln.pl
 label: rnaz_rnazRandomizeAln.pl
-doc: "Randomize alignments for RNAz analysis by shuffling positions, columns, or the
-  entire alignment to create null models.\n\nTool homepage: https://www.tbi.univie.ac.at/~wash/RNAz/"
+doc: "Randomize alignments for RNAz analysis: columns of the same conservation are shuffled within windows to create a null model.\n\nTool homepage: https://www.tbi.univie.ac.at/~wash/RNAz/"
 inputs:
   - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: Input alignment file (usually in ClustalW or MAF format). If omitted, reads
-      from stdin.
+    type: File
+    doc: Input alignment file (ClustalW or MAF format).
     inputBinding:
       position: 1
   - id: level
     type:
       - 'null'
-      - string
-    doc: "Level of randomization: 'pos' (shuffles positions within columns), 'aln'
-      (shuffles the whole alignment), or 'col' (shuffles columns)."
+      - int
+    doc: Level of coarse graining of the column conservation (mean pairwise identity) used to decide which columns are shuffled together (0 = conserved or not, 2 = nearly exact identity). Default is 2.
     inputBinding:
       position: 102
       prefix: --level
-  - id: seed
-    type:
-      - 'null'
-      - int
-    doc: Random seed for reproducibility. Defaults to current time if not specified.
-    inputBinding:
-      position: 102
-      prefix: --seed
   - id: slide
     type:
       - 'null'
       - int
-    doc: Slide size for windowing. 0 means no windowing.
+    doc: Offset of the shuffling window. Default is 120.
     inputBinding:
       position: 102
       prefix: --slide
@@ -42,7 +29,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Window size for randomization. 0 means no windowing (process entire alignment).
+    doc: Size of the window in which the alignment is shuffled. Default is 120.
     inputBinding:
       position: 102
       prefix: --window

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba-depth
+baseCommand:
+  - sambamba
+  - depth
 label: sambamba_depth
 doc: "Calculate depth of coverage for BAM files.\n\nTool homepage: https://github.com/biod/sambamba"
 inputs:
@@ -13,6 +15,8 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
     doc: Input BAM file(s). Must be coordinate-sorted and indexed.
     inputBinding:
       position: 2
@@ -38,12 +42,13 @@ inputs:
       - 'null'
       - type: array
         items: float
+        inputBinding:
+          prefix: --cov-threshold
     doc: Multiple thresholds can be provided, for each one an extra column will 
       be added, the percentage of bases in the region where coverage is more 
       than this value.
     inputBinding:
       position: 103
-      prefix: --cov-threshold
   - id: filter
     type:
       - 'null'
@@ -108,6 +113,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --regions
+  - id: regions_file
+    type:
+      - 'null'
+      - File
+    doc: BED file with the regions of interest (alternative to a single region)
+    inputBinding:
+      position: 103
+      prefix: --regions
   - id: report_zero_coverage
     type:
       - 'null'
@@ -118,16 +131,21 @@ inputs:
       position: 103
       prefix: --report-zero-coverage
   - id: window_size
-    type: int
+    type:
+      - 'null'
+      - int
     doc: Breadth of the window, in bp.
     inputBinding:
       position: 103
       prefix: --window-size
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: output filename (by default standard output)
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:
@@ -136,8 +154,12 @@ outputs:
     doc: Output filename.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (depth table when no output file is given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sambamba:1.0.1--he614052_4
+stdout: sambamba_depth.out

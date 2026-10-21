@@ -1,5 +1,13 @@
 # rsem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rsem_rsem-calculate-expression | PASS | tested in --alignments mode (counts close to RSEM gold); read mode needs bowtie/bowtie2/STAR/HISAT2, which are not in the image |
+| rsem_rsem-generate-data-matrix | PASS |  |
+| rsem_rsem-prepare-reference | PASS | reference files match the RSEM gold files; the aligner-index options need bowtie/bowtie2/STAR/HISAT2, which are not in the image |
+
 ## rsem_rsem-prepare-reference
 
 ### Tool Description

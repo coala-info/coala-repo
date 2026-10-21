@@ -1,5 +1,11 @@
 # sage-proteomics CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sage-proteomics_sage | PASS | repo test spectrum identifies the expected peptide LQSRPAAPPAPGPGQLTLR (VAT1_HUMAN) |
+
 ## sage-proteomics_sage
 
 ### Tool Description

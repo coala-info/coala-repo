@@ -1,5 +1,16 @@
 # rnasketch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnasketch_design-cofold.py | PASS | Ran the README example structures sent on standard input; designed sequences and the graphml file are written. |
+| rnasketch_design-energyshift.py | Failed | image problem: the image has no RNARedPrint program or REDPRINT folder, so the sampler stops with 'cannot copy tree ./RNARedPrint/'. |
+| rnasketch_design-ligandswitch.py | PASS | Ran the README theophylline switch example sent on standard input; designed sequences are written. |
+| rnasketch_design-multistate.py | PASS | Ran the README example structures sent on standard input; designed sequences and the graphml file are written. |
+| rnasketch_design-redprint-multistate.py | Failed | image problem: the image has no RNARedPrint program or REDPRINT folder, so the sampler stops with 'cannot copy tree ./RNARedPrint/'. |
+| rnasketch_design-thermoswitch.py | PASS | Ran the README example structures sent on standard input; designed sequences and the graphml file are written. |
+
 ## rnasketch_design-multistate.py
 
 ### Tool Description

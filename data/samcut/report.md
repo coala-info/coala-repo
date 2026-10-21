@@ -1,5 +1,11 @@
 # samcut CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samcut | PASS | Added the missing SAM input (read from stdin); columns, header, delimiter and fill output match the real BAM records. |
+
 ## samcut
 
 ### Tool Description

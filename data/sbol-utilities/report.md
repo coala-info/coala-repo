@@ -1,5 +1,16 @@
 # sbol-utilities CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sbol-utilities_excel-to-sbol | PASS |  |
+| sbol-utilities_graph-sbol | PASS |  |
+| sbol-utilities_sbol-calculate-sequences | PASS |  |
+| sbol-utilities_sbol-converter | PASS |  |
+| sbol-utilities_sbol-diff | PASS |  |
+| sbol-utilities_sbol-expand-derivations | PASS |  |
+
 ## sbol-utilities_sbol-converter
 
 ### Tool Description

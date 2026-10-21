@@ -1,5 +1,12 @@
 # samplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samplot_plot | PASS | Added optional BAM index; plot of the repo's chr1 58343117-58343622 deletion BAM shows the coverage drop and split-read arc. |
+| samplot_vcf | PASS | Made output dir and command file strings, repeated --filter per item, added outputs; test VCF gives 8 SV plots and index.html from real BAMs. |
+
 ## samplot_plot
 
 ### Tool Description

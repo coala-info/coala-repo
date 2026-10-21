@@ -1,5 +1,11 @@
 # saccharis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| saccharis | Not completed | pipeline, skipped: downloads CAZy and NCBI data and needs the dbCAN databases |
+
 ## saccharis
 
 ### Tool Description

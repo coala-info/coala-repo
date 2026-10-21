@@ -1,5 +1,11 @@
 # rnaquast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnaquast_rnaQUAST.py | PASS | Ran on the Galaxy phiX174 reference, GTF and transcripts; the short report matches the Galaxy expected metrics. |
+
 ## rnaquast_rnaQUAST.py
 
 ### Tool Description

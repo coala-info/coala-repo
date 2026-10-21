@@ -43,6 +43,13 @@ outputs:
     doc: The output folder
     outputBinding:
       glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_folder)
+        entry: '$({class: "Directory", basename: inputs.output_folder, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnamining:1.0.4--pyhdfd78af_0

@@ -4,7 +4,7 @@ baseCommand:
   - ropebwt3
   - suffix
 label: ropebwt3_suffix
-doc: "Build suffix array and BWT for a FASTA file.\n\nTool homepage: https://github.com/lh3/ropebwt3"
+doc: "Find the longest matching suffix of query sequences in an FMR/FMD index.\n\nTool homepage: https://github.com/lh3/ropebwt3"
 inputs:
   - id: idx_fmr
     type: File
@@ -16,6 +16,14 @@ inputs:
     doc: Input FASTA sequence file
     inputBinding:
       position: 2
+  - id: one_sequence_per_line
+    type:
+      - 'null'
+      - boolean
+    doc: one sequence per line in the input
+    inputBinding:
+      position: 101
+      prefix: -L
   - id: additional_seq_fa
     type:
       - 'null'

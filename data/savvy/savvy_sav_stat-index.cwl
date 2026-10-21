@@ -8,6 +8,9 @@ doc: "Index a SAV file for fast random access.\n\nTool homepage: https://github.
 inputs:
   - id: input_sav
     type: File
+    secondaryFiles:
+      - pattern: .s1r
+        required: false
     doc: Input SAV file
     inputBinding:
       position: 1

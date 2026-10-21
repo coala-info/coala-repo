@@ -262,6 +262,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: reference_files
+    type:
+      type: array
+      items: File
+    doc: Reference files written by RSEM (all files starting with the reference name)
+    outputBinding:
+      glob: $(inputs.reference_name)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12

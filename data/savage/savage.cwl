@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: savage.py
+baseCommand: savage
 label: savage
 doc: "SAVAGE - Strain Aware VirAl GEnome assembly. SAVAGE assembles individual (viral)
   haplotypes from NGS data. It expects as input single- and/or paired-end Illumina
@@ -208,12 +208,11 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: reference genome in fasta format
     inputBinding:
       position: 101
       prefix: --ref
+      valueFrom: $(runtime.outdir)/$(self.basename)
   - id: revcomp
     type:
       - 'null'
@@ -258,6 +257,13 @@ outputs:
     doc: specify output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        return inputs.reference ? [{"entry": inputs.reference, "writable": true}] : [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savage:0.4.2--py27h3e4de3e_0

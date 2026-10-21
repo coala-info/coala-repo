@@ -1,5 +1,11 @@
 # roary CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| roary | PASS |  |
+
 ## roary
 
 ### Tool Description

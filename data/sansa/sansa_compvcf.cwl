@@ -8,11 +8,21 @@ doc: "Compare two VCF/BCF files and report differences.\n\nTool homepage: https:
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .tbi
+        required: false
     doc: input VCF/BCF file
     inputBinding:
       position: 1
   - id: base_file
     type: File
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .tbi
+        required: false
     doc: base VCF/BCF file
     inputBinding:
       position: 102

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: alevin
+baseCommand:
+  - salmon
+  - alevin
 label: salmon_alevin
 doc: "salmon-based processing of single-cell RNA-seq data.\n\nTool homepage: https://github.com/COMBINE-lab/salmon"
 inputs:
@@ -198,9 +200,7 @@ inputs:
       position: 101
       prefix: --hash
   - id: index
-    type:
-      - 'null'
-      - string
+    type: Directory
     doc: salmon index
     inputBinding:
       position: 101
@@ -429,7 +429,7 @@ inputs:
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type:

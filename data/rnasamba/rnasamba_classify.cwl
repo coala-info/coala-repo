@@ -34,7 +34,9 @@ inputs:
       position: 104
       prefix: --verbose
   - id: protein_fasta_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 105
       prefix: --protein_fasta

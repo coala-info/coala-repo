@@ -1,5 +1,11 @@
 # rukki CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rukki_trio | PASS | synthetic data: real rukki test graph with planted marker counts; parental assignments match the repo's expected annotation; fixed paths output type |
+
 ## rukki_trio
 
 ### Tool Description

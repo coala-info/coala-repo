@@ -15,6 +15,7 @@ inputs:
       .bam).
     inputBinding:
       position: 1
+      prefix: --input-files
   - id: db_force
     type:
       - 'null'

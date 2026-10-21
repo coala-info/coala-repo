@@ -4,132 +4,171 @@ baseCommand:
 - samtools
 - ampliconstats
 label: samtools_ampliconstats
-doc: "Produce statistics from amplicon sequencing alignment files\n\nTool homepage:
-  https://github.com/samtools/samtools"
+doc: 'Generate amplicon specific statistics
+
+
+  Tool homepage: https://github.com/samtools/samtools'
 requirements:
 - class: InlineJavascriptRequirement
+hints:
+- class: DockerRequirement
+  dockerPull: quay.io/biocontainers/samtools:1.23--h96c455f_0
 inputs:
 - id: primers_bed
   type: File
-  doc: Primers in BED format
+  doc: BED file of primer positions.
   inputBinding:
     position: 104
 - id: input_bams
   type:
     type: array
     items: File
-  doc: Input BAM files
+  doc: Input SAM/BAM/CRAM files.
   inputBinding:
     position: 105
-- id: depth_bin
-  type: float?
-  doc: Merge FDP values within +/- FRACTION together
+- id: required_flag
+  type:
+  - 'null'
+  - string
+  doc: Only include reads with all of the FLAGs present [0x0].
   inputBinding:
-    position: 1
-    prefix: --depth-bin
+    position: 103
+    prefix: --required-flag
 - id: filter_flag
-  type: string?
-  doc: Only include reads with none of the FLAGs present
+  type:
+  - 'null'
+  - string
+  doc: Only include reads with none of the FLAGs present [0xB04].
   inputBinding:
-    position: 1
-    prefix: -F
-- id: input_fmt
-  type: string?
-  doc: Specify input format (SAM, BAM, CRAM)
-  inputBinding:
-    position: 1
-    prefix: --input-fmt
-- id: input_fmt_option
-  type: string?
-  doc: Specify a single input file format option in the form of OPTION or 
-    OPTION=VALUE
-  inputBinding:
-    position: 1
-    prefix: --input-fmt-option
-- id: max_amplicon_length
-  type: int?
-  doc: Change the maximum length of an individual amplicon
-  inputBinding:
-    position: 1
-    prefix: -l
+    position: 103
+    prefix: --filter-flag
 - id: max_amplicons
-  type: int?
-  doc: Change the maximum number of amplicons permitted
-  inputBinding:
-    position: 1
-    prefix: -m
-- id: min_depth
   type:
   - 'null'
   - int
-  - type: array
-    items: int
-  doc: Minimum base depth(s) to consider position covered
+  doc: Change the maximum number of amplicons permitted [1000].
   inputBinding:
-    position: 1
-    prefix: -d
-    itemSeparator: ","
+    position: 103
+    prefix: --max-amplicons
+- id: max_amplicon_length
+  type:
+  - 'null'
+  - int
+  doc: Change the maximum length of an individual amplicon [1000].
+  inputBinding:
+    position: 103
+    prefix: --max-amplicon-length
+- id: min_depth
+  type:
+  - 'null'
+  - string
+  doc: Minimum base depth(s) to consider position covered, INT[,INT]... [1].
+  inputBinding:
+    position: 103
+    prefix: --min-depth
 - id: pos_margin
-  type: int?
-  doc: Margin of error for matching primer positions
+  type:
+  - 'null'
+  - int
+  doc: Margin of error for matching primer positions [30].
   inputBinding:
-    position: 1
+    position: 103
     prefix: --pos-margin
-- id: reference
-  type: File?
-  secondaryFiles:
-    - .fai
-  doc: Reference sequence FASTA FILE
+- id: output_filename
+  type: string
+  doc: Output file (-o).
+  default: ampliconstats.txt
   inputBinding:
-    position: 1
-    prefix: --reference
-- id: required_flag
-  type: string?
-  doc: Only include reads with all of the FLAGs present
-  inputBinding:
-    position: 1
-    prefix: -f
-- id: single_ref
-  type: boolean?
-  doc: Force single-ref (<=1.12) output format
-  inputBinding:
-    position: 1
-    prefix: -s
-- id: tcoord_bin
-  type: int?
-  doc: Bin template start,end positions into multiples of INT
-  inputBinding:
-    position: 1
-    prefix: -b
-- id: tcoord_min_count
-  type: int?
-  doc: Minimum template start,end frequency for recording
-  inputBinding:
-    position: 1
-    prefix: -c
-- id: threads
-  type: int?
-  doc: Number of additional threads to use
-  inputBinding:
-    position: 1
-    prefix: -@
-- id: tlen_adjust
-  type: int?
-  doc: Add/subtract from TLEN; use when clipping but no fixmate step
-  inputBinding:
-    position: 1
-    prefix: -a
+    position: 103
+    prefix: -o
 - id: use_sample_name
-  type: boolean?
-  doc: Use the sample name from the first @RG header line
+  type:
+  - 'null'
+  - boolean
+  doc: Use the sample name from the first @RG header line.
   inputBinding:
-    position: 1
+    position: 103
     prefix: --use-sample-name
-stdout: stats.out
+- id: tlen_adjust
+  type:
+  - 'null'
+  - int
+  doc: Add/subtract from TLEN; use when clipping but no fixmate step.
+  inputBinding:
+    position: 103
+    prefix: --tlen-adjust
+- id: tcoord_bin
+  type:
+  - 'null'
+  - int
+  doc: Bin template start,end positions into multiples of INT [1].
+  inputBinding:
+    position: 103
+    prefix: --tcoord-bin
+- id: tcoord_min_count
+  type:
+  - 'null'
+  - int
+  doc: Minimum template start,end frequency for recording [10].
+  inputBinding:
+    position: 103
+    prefix: --tcoord-min-count
+- id: depth_bin
+  type:
+  - 'null'
+  - float
+  doc: Merge FDP values within +/- FRACTION together.
+  inputBinding:
+    position: 103
+    prefix: --depth-bin
+- id: single_ref
+  type:
+  - 'null'
+  - boolean
+  doc: Force single-ref (<=1.12) output format.
+  inputBinding:
+    position: 103
+    prefix: --single-ref
+- id: input_fmt
+  type:
+  - 'null'
+  - string
+  doc: Specify input format FORMAT[,OPT[=VAL]]... (SAM, BAM, CRAM).
+  inputBinding:
+    position: 103
+    prefix: --input-fmt
+- id: reference
+  type:
+  - 'null'
+  - File
+  doc: Reference sequence FASTA file.
+  secondaryFiles:
+  - pattern: .fai
+    required: false
+  inputBinding:
+    position: 103
+    prefix: --reference
+- id: threads
+  type:
+  - 'null'
+  - int
+  doc: Number of additional threads to use [0].
+  inputBinding:
+    position: 103
+    prefix: --threads
+- id: input_fmt_option
+  type:
+  - 'null'
+  - type: array
+    items: string
+    inputBinding:
+      prefix: --input-fmt-option
+  doc: Specify a single input file format option in the form OPTION or OPTION=VALUE (repeatable).
+  inputBinding:
+    position: 103
 outputs:
-- id: output_file
-  type: stdout
-  doc: Captured statistics output
-hints:
-- class: DockerRequirement
-  dockerPull: quay.io/biocontainers/samtools:1.23--h96c455f_0
+- id: output
+  type: File
+  doc: Amplicon statistics.
+  outputBinding:
+    glob: $(inputs.output_filename)

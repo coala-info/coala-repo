@@ -12,6 +12,11 @@ inputs:
     doc: Input file to be transformed (- for standard input).
     inputBinding:
       position: 1
+  - id: output_path
+    type: string
+    doc: Output file to be transformed (- for standard output).
+    inputBinding:
+      position: 2
   - id: chain_file
     type:
       - 'null'
@@ -63,7 +68,9 @@ outputs:
     type: File
     doc: Output file to be transformed (- for standard output).
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnftools:0.4.0.0--pyhdfd78af_0

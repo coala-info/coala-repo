@@ -8,6 +8,9 @@ doc: "Sorts a SAV file.\n\nTool homepage: https://github.com/statgen/savvy"
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .s1r
+        required: false
     doc: Input SAV file
     inputBinding:
       position: 1
@@ -15,7 +18,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Specifies whether to sort in ascending or descending order (asc or desc;'
+    doc: 'Specifies whether to sort in ascending or descending order (asc or desc; default: asc)'
     inputBinding:
       position: 102
       prefix: --direction
@@ -27,6 +30,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --point
+  - id: output_path
+    type: string
+    doc: Path to output SAV file
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output_file
     type:
@@ -34,7 +43,7 @@ outputs:
       - File
     doc: Path to output SAV file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savvy:2.1.0--h5b0a936_4

@@ -1,5 +1,12 @@
 # sample-sheet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sample-sheet_tojson | PASS | Renamed input path to sample_sheet; JSON of the repo's test sheet has the header, reads, settings and every data row. |
+| sample-sheet_totable | Failed | tool bug: the command only prints SampleSheet('<file>') and no table; also fixed the input type to File and renamed path to sample_sheet. |
+
 ## sample-sheet_tojson
 
 ### Tool Description

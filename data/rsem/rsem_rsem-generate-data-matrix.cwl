@@ -14,10 +14,9 @@ inputs:
       position: 1
 outputs:
   - id: output_matrix
-    type: File
-    doc: Output matrix file name
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Data matrix of the expected_count columns of all result files
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+stdout: rsem-generate-data-matrix.matrix

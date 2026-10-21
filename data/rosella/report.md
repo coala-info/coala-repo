@@ -1,5 +1,12 @@
 # rosella CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rosella_recover | PASS |  |
+| rosella_refine | PASS |  |
+
 ## rosella_recover
 
 ### Tool Description
@@ -238,32 +245,6 @@ Options:
           
   -h, --help
           Print help
-```
-
-
-## rosella_shell-completion
-
-### Tool Description
-Generate a shell completion script for lorikeet
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rosella:0.5.7--hfa530fd_0
-- **Homepage**: https://github.com/rhysnewell/rosella.git
-- **Package**: https://anaconda.org/channels/bioconda/packages/rosella/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Generate a shell completion script for lorikeet
-
-Usage: rosella shell-completion [OPTIONS] --output-file <output-file> --shell <shell>
-
-Options:
-  -o, --output-file <output-file>  
-      --shell <shell>              [possible values: bash, elvish, fish, powershell, zsh]
-  -v, --verbose                    
-  -q, --quiet                      
-  -h, --help                       Print help
 ```
 
 

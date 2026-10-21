@@ -27,9 +27,9 @@ inputs:
   - id: gene_filter
     type:
       - 'null'
-      - boolean
-    doc: A boolean variable which defines whether to perform gene filtering 
-      before SC3 clustering.
+      - string
+    doc: TRUE or FALSE. Defines whether to perform gene filtering before SC3 
+      clustering (default TRUE).
     inputBinding:
       position: 101
       prefix: --gene-filter
@@ -45,7 +45,7 @@ inputs:
   - id: kmeans_iter_max
     type:
       - 'null'
-      - int
+      - float
     doc: iter.max parameter passed to kmeans function. Default is 1e+09.
     inputBinding:
       position: 101

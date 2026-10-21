@@ -7,7 +7,7 @@ inputs:
   - id: AAcentered
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) amino acid centered seq and covar outputs for .gb 
       processing (--AAcentered 0), requires AAreport enabled
     inputBinding:
@@ -16,7 +16,7 @@ inputs:
   - id: AAcodonasMNP
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) reporting multiple nt changes in a single codon as
       one polymorphism, default enabled (--AAcodonasMNP 1), requires AAreport 
       enabled
@@ -26,7 +26,7 @@ inputs:
   - id: AAreport
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) amino acid reporting, default enabled (--AAreport 
       1)
     inputBinding:
@@ -72,7 +72,7 @@ inputs:
   - id: chim_rm
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) chim_rm output, default enabled (--chim_rm 1)
     inputBinding:
       position: 101
@@ -88,7 +88,7 @@ inputs:
   - id: collect
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) collection step, default enabled (--collect 1)
     inputBinding:
       position: 101
@@ -96,7 +96,7 @@ inputs:
   - id: covar
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) covar output, default enabled (--covar 1)
     inputBinding:
       position: 101
@@ -104,7 +104,7 @@ inputs:
   - id: covar_tile_coverage
     type:
       - 'null'
-      - boolean
+      - int
     doc: 'Enable/Disable (1/0) using tiles covering positions instead of minimum nt
       coverage to calculate abundance of covariants (--covar_tile_coverage), require
       --wgs 1 (default: 0)'
@@ -114,7 +114,7 @@ inputs:
   - id: deconv
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) covar deconv, default enabled (--deconv 1)
     inputBinding:
       position: 101
@@ -131,7 +131,7 @@ inputs:
   - id: indel
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) indel output, default enabled (--indel 1)
     inputBinding:
       position: 101
@@ -202,7 +202,7 @@ inputs:
   - id: nt_call
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) nt_call output, default enabled (--nt_call 1)
     inputBinding:
       position: 101
@@ -229,7 +229,7 @@ inputs:
   - id: ntvar
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) nt_call output, default enabled (--ntvar 1)
     inputBinding:
       position: 101
@@ -237,7 +237,7 @@ inputs:
   - id: pass_out
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) covar_pass output, default disabled (--pass_out 0)
     inputBinding:
       position: 101
@@ -245,7 +245,7 @@ inputs:
   - id: read
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) reads output, default disabled (--read 0)
     inputBinding:
       position: 101
@@ -253,7 +253,7 @@ inputs:
   - id: redist
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) redistribution of chimera counts for chim_rm, 
       default enabled (--redist 1)
     inputBinding:
@@ -263,13 +263,11 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: reference fasta or genbank file. Only chimera removal and collections 
       will be performed if omitted.
     inputBinding:
       position: 101
-      prefix: -reference
+      prefix: -r
   - id: sam_files
     type:
       - 'null'
@@ -280,10 +278,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --Sam_files
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: seq
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) unique seq output, default enabled (--seq 1)
     inputBinding:
       position: 101
@@ -291,7 +290,7 @@ inputs:
   - id: use_count
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) use of counts in sequence IDs, default enabled 
       (--use_count 1)
     inputBinding:
@@ -300,15 +299,31 @@ inputs:
   - id: wgs
     type:
       - 'null'
-      - boolean
+      - int
     doc: Enable/Disable (1/0) covar deconv, default enabled (--wgs 1)
     inputBinding:
       position: 101
       prefix: --wgs
 outputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Report tables written by SAM_Refiner (nt calls, unique sequences, covariants, collections)
+    outputBinding:
+      glob:
+        - '*.tsv'
+        - '*.csv'
+        - '*.txt'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.sam_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samrefiner:1.4.2.1--pyhdfd78af_0

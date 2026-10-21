@@ -16,6 +16,11 @@ inputs:
       (use -1 or "ALL" to convert all structures).
     inputBinding:
       position: 2
+  - id: bracket_file_path
+    type: string
+    doc: Name of the dot-bracket file to which output is written
+    inputBinding:
+      position: 3
   - id: format
     type:
       - 'null'
@@ -44,11 +49,11 @@ inputs:
 outputs:
   - id: bracket_file
     type: File
-    doc: The name of a dot bracket file to which output will be written. If the 
-      name is a hyphen (-), the converted file will be written to standard 
-      output (STDOUT) instead of a file.
+    doc: Dot-bracket file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.bracket_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnastructure:6.5--hde5307d_0

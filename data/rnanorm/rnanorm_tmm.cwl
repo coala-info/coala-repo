@@ -4,26 +4,18 @@ baseCommand:
   - rnanorm
   - tmm
 label: rnanorm_tmm
-doc: "Apply TMM normalization to an expression matrix.\n\nTool homepage: https://github.com/genialis/RNAnorm"
+doc: "Compute TMM.\n\nTool homepage: https://github.com/genialis/RNAnorm"
 inputs:
-  - id: expression_matrix
+  - id: exp
     type: File
-    doc: Path to the input expression matrix (CSV format, gene names as index).
+    doc: Input expression matrix (CSV or TSV, genes in columns)
     inputBinding:
       position: 1
-  - id: a_trim
-    type:
-      - 'null'
-      - float
-    doc: Proportion of genes to trim from the median calculation (upper bound).
-    inputBinding:
-      position: 102
-      prefix: --a-trim
   - id: force
     type:
       - 'null'
       - boolean
-    doc: Overwrite the output file if it already exists.
+    doc: Overwrite already existing output file
     inputBinding:
       position: 102
       prefix: --force
@@ -31,24 +23,30 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Proportion of genes to trim from the median calculation (lower bound).
+    doc: Two sided cutoff for M-values
     inputBinding:
       position: 102
-      prefix: --m-trim
-  - id: output_file_path
+      prefix: --m_trim
+  - id: a_trim
+    type:
+      - 'null'
+      - float
+    doc: Two sided cutoff for A-values
+    inputBinding:
+      position: 102
+      prefix: --a_trim
+  - id: out_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: --out
 outputs:
-  - id: output_file
+  - id: out
     type: File
-    doc: Path to save the normalized expression matrix.
+    doc: Normalised expression table
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnanorm:2.2.0--pyhdfd78af_1

@@ -1,5 +1,11 @@
 # savage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| savage | PASS | Ran the repo HIV example in de novo and reference-guided modes; contigs are about 9.5 kb (genome length), 2 contigs in reference mode as in the repo example; fixed command name savage, dropped .fai, stage reference writable |
+
 ## savage
 
 ### Tool Description

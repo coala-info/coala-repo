@@ -1,5 +1,11 @@
 # samsum CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samsum_stats | PASS | Fixed baseCommand to samsum stats and dropped the wrong .fai requirement; on the repo's test SAM it counts 116 fragments, equal to the mapped pairs in the SAM. |
+
 ## samsum_stats
 
 ### Tool Description

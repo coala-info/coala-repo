@@ -187,8 +187,8 @@ inputs:
   - id: paths
     type:
       - 'null'
-      - File
-    doc: Marker-assisted extracted haplo-paths
+      - string
+    doc: Output file name for the marker-assisted extracted haplo-paths
     inputBinding:
       position: 101
       prefix: --paths
@@ -293,6 +293,13 @@ inputs:
       position: 104
       prefix: --refined-assign
 outputs:
+  - id: haplo_paths
+    type:
+      - 'null'
+      - File
+    doc: Marker-assisted extracted haplo-paths
+    outputBinding:
+      glob: $(inputs.paths)
   - id: init_assign
     type:
       - 'null'

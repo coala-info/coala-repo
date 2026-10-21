@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: SAMPEI
+baseCommand: sampei
 label: sampei
 doc: "SAMPEI is a searching method leveraging high quality query spectra within the
   same or different dataset to assign target spectra with peptide sequence and undefined

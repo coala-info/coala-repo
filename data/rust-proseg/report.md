@@ -1,5 +1,12 @@
 # rust-proseg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rust-proseg_proseg | PASS |  |
+| rust-proseg_proseg-to-baysor | PASS |  |
+
 ## rust-proseg_proseg
 
 ### Tool Description

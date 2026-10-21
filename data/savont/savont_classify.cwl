@@ -8,7 +8,9 @@ doc: "Classify ASVs against a reference database and generate taxonomy abundance
   at species/genus level\n\nTool homepage: https://github.com/bluenote-1577/savont"
 inputs:
   - id: emu_db
-    type: File
+    type:
+      - 'null'
+      - Directory
     doc: Emu database path
     inputBinding:
       position: 101
@@ -16,7 +18,7 @@ inputs:
   - id: genus_threshold
     type:
       - 'null'
-      - string
+      - float
     doc: Minimum identity threshold for genus-level classification
     inputBinding:
       position: 101
@@ -44,7 +46,9 @@ inputs:
       position: 101
       prefix: --output-dir
   - id: silva_db
-    type: File
+    type:
+      - 'null'
+      - Directory
     doc: SILVA database path
     inputBinding:
       position: 101
@@ -52,7 +56,7 @@ inputs:
   - id: species_threshold
     type:
       - 'null'
-      - string
+      - float
     doc: Minimum identity threshold for species-level classification
     inputBinding:
       position: 101

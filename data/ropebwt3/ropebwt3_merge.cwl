@@ -27,12 +27,32 @@ inputs:
       position: 103
       prefix: -t
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output FMR to FILE [stdout]
     inputBinding:
       position: 104
       prefix: -o
+  - id: save_index_file
+    type:
+      - 'null'
+      - string
+    doc: save the current index to FILE after each input file
+    inputBinding:
+      position: 105
+      prefix: -S
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the merged FMR when -o is not given)
+  - id: save_index_file_out
+    type:
+      - 'null'
+      - File
+    doc: index saved after each input file
+    outputBinding:
+      glob: $(inputs.save_index_file)
   - id: output_file
     type:
       - 'null'
@@ -45,3 +65,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ropebwt3:3.10--h577a1d6_0
+stdout: ropebwt3_merge.out

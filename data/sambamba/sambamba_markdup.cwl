@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba-markdup
+baseCommand:
+  - sambamba
+  - markdup
 label: sambamba_markdup
 doc: "Marks the duplicates without removing them\n\nTool homepage: https://github.com/biod/sambamba"
 inputs:
@@ -11,6 +13,11 @@ inputs:
     doc: Input BAM file(s)
     inputBinding:
       position: 1
+  - id: output_bam_path
+    type: string
+    doc: Output BAM file name
+    inputBinding:
+      position: 2
   - id: compression_level
     type:
       - 'null'
@@ -95,7 +102,9 @@ outputs:
     type: File
     doc: Output BAM file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sambamba:1.0.1--he614052_4

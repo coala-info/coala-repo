@@ -569,6 +569,8 @@ inputs:
       prefix: --readcount_mapq
   - id: ref
     type: File
+    secondaryFiles:
+      - .fai
     doc: Full path to reference genome
     inputBinding:
       position: 101
@@ -676,12 +678,17 @@ inputs:
       prefix: --trim
   - id: tumour
     type: File
+    secondaryFiles:
+      - .bai
     doc: Tumour BAM file (must have index)
     inputBinding:
       position: 101
       prefix: --tumour
   - id: somatic_output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Output VCF containing only PASS somatic variants
     inputBinding:
       position: 102
       prefix: --somatic_output

@@ -1,5 +1,11 @@
 # satrap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| satrap | Not completed | no real SOLiD color-space reads or double-encoded assembly available as test data; the tool ships none |
+
 ## satrap
 
 ### Tool Description

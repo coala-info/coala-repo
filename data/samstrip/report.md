@@ -1,5 +1,11 @@
 # samstrip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samstrip | PASS | Added the missing SAM input (read from stdin); on a real SAM it keeps NM only by default, and --keep and --remove give the expected tags. |
+
 ## samstrip
 
 ### Tool Description

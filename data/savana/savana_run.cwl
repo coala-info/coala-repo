@@ -118,6 +118,8 @@ inputs:
       prefix: --min_support
   - id: normal
     type: File
+    secondaryFiles:
+      - .bai
     doc: Normal BAM file (must have index)
     inputBinding:
       position: 101
@@ -138,6 +140,8 @@ inputs:
       prefix: --overwrite
   - id: ref
     type: File
+    secondaryFiles:
+      - .fai
     doc: Full path to reference genome
     inputBinding:
       position: 101
@@ -195,6 +199,8 @@ inputs:
       prefix: --threads
   - id: tumour
     type: File
+    secondaryFiles:
+      - .bai
     doc: Tumour BAM file (must have index)
     inputBinding:
       position: 101

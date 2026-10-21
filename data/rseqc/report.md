@@ -1,5 +1,12 @@
 # rseqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rseqc_bam_stat.py | PASS |  |
+| rseqc_geneBody_coverage.py | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

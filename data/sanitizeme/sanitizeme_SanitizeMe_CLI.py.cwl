@@ -53,8 +53,6 @@ inputs:
       prefix: --PacBioCCS
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Host Reference fasta or fasta.gz file
     inputBinding:
       position: 101

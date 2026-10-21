@@ -45,7 +45,7 @@ inputs:
       position: 101
       prefix: --gtf
   - id: input_sites
-    type: string
+    type: File
     doc: Genomic or transcript RBP binding sites file in BED (6-column format) 
       or FASTA format. If --in FASTA, only --str is supported as additional 
       feature. If --in BED, --gtf and --gen become mandatory
@@ -63,7 +63,7 @@ inputs:
       position: 101
       prefix: --mode
   - id: output_prediction_folder
-    type: Directory
+    type: string
     doc: Output prediction dataset folder (== input folder to rnaprot predict)
     inputBinding:
       position: 101
@@ -113,7 +113,7 @@ inputs:
       position: 101
       prefix: --seq-ext
   - id: training_input_folder
-    type: string
+    type: Directory
     doc: Training input folder (output folder of rnaprot train) to extract the 
       same features for --in sites which were used to train the model (info 
       stored in --train-in folder)
@@ -146,6 +146,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_folder
+    type: Directory
+    doc: Output folder
+    outputBinding:
+      glob: $(inputs.output_prediction_folder)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnaprot:0.5--pyhdfd78af_1

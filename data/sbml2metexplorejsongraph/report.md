@@ -1,5 +1,11 @@
 # sbml2metexplorejsongraph CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sbml2metexplorejsongraph | Failed | image problem: the image has no sbml2metexplorejsongraph command; its entrypoint is 'java -jar SBML2MetexploreJsonGraph.jar' with a relative jar path, so it cannot find the jar outside the root folder |
+
 ## sbml2metexplorejsongraph
 
 ### Tool Description

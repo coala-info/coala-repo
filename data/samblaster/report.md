@@ -1,5 +1,11 @@
 # samblaster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samblaster | PASS | Ran on Galaxy test BAM (name-sorted SAM); 90 split reads equal the expected file and the expected unmapped read is present. |
+
 ## samblaster
 
 ### Tool Description

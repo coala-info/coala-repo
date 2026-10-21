@@ -1,5 +1,11 @@
 # rpsbproc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rpsbproc | PASS |  |
+
 ## rpsbproc
 
 ### Tool Description

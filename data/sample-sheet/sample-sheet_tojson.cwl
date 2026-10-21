@@ -6,7 +6,7 @@ baseCommand:
 label: sample-sheet_tojson
 doc: "Convert a sample sheet to JSON format.\n\nTool homepage: https://github.com/clintval/sample-sheet"
 inputs:
-  - id: path
+  - id: sample_sheet
     type: File
     doc: Path to the sample sheet file
     inputBinding:

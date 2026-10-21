@@ -1,5 +1,15 @@
 # rnaprot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnaprot_eval | PASS | Ran on real PUM2 PAR-CLIP positives and negatives (400 each, RNAProt repo) and the NORAD lncRNA; outputs are plausible; the CWL output folders are now collected. |
+| rnaprot_gp | PASS | Ran on real PUM2 PAR-CLIP positives and negatives (400 each, RNAProt repo) and the NORAD lncRNA; outputs are plausible; the CWL output folders are now collected. |
+| rnaprot_gt | PASS | Ran on real PUM2 PAR-CLIP positives and negatives (400 each, RNAProt repo) and the NORAD lncRNA; outputs are plausible; the CWL output folders are now collected. |
+| rnaprot_predict | PASS | Ran on real PUM2 PAR-CLIP positives and negatives (400 each, RNAProt repo) and the NORAD lncRNA; outputs are plausible; the CWL output folders are now collected. |
+| rnaprot_train | PASS | Ran on real PUM2 PAR-CLIP positives and negatives (400 each, RNAProt repo) and the NORAD lncRNA; outputs are plausible; the CWL output folders are now collected. |
+
 ## rnaprot_train
 
 ### Tool Description

@@ -18,37 +18,46 @@
 ### Tool Description
 Calculate file hashes.
 
-### google-cloud-sdk_gsutil_cat
+### Metadata
+- **Docker Image**: quay.io/biocontainers/google-cloud-sdk:166.0.0--py27_0
+- **Homepage**: https://cloud.google.com/storage/docs/gsutil
+- **Package**: https://anaconda.org/channels/bioconda/packages/google-cloud-sdk/overview
+- **Validation**: PASS
 
-### Tool Description
-Concatenate object content to stdout.
+### Original Help Text
+```text
+NAME
+  hash - Calculate file hashes
 
-### google-cloud-sdk_gsutil_ls
 
-### Tool Description
-List providers, buckets, or objects.
+SYNOPSIS
 
-### google-cloud-sdk_gsutil_du
+  gsutil hash [-c] [-h] [-m] filename...
 
-### Tool Description
-Display object size usage.
 
-### google-cloud-sdk_gsutil_cp
 
-### Tool Description
-Copy files and objects.
+DESCRIPTION
+  The hash command calculates hashes on a local file that can be used to compare
+  with gsutil ls -L output. If a specific hash option is not provided, this
+  command calculates all gsutil-supported hashes for the file.
 
-### google-cloud-sdk_gsutil_mv
+  Note that gsutil automatically performs hash validation when uploading or
+  downloading files, so this command is only needed if you want to write a
+  script that separately checks the hash for some reason.
 
-### Tool Description
-Move/rename objects and/or subdirectories.
+  If you calculate a CRC32c hash for the file without a precompiled crcmod
+  installation, hashing will be very slow. See "gsutil help crcmod" for details.
 
-### google-cloud-sdk_gsutil_rm
+OPTIONS
+  -c          Calculate a CRC32c hash for the file.
 
-### Tool Description
-Remove objects.
+  -h          Output hashes in hex format. By default, gsutil uses base64.
 
-### google-cloud-sdk_gsutil_rsync
+  -m          Calculate a MD5 hash for the file.
+```
+
+
+## google-cloud-sdk_gsutil_rsync
 
 ### Tool Description
 Synchronize content of two buckets/directories.
@@ -398,8 +407,12 @@ OPTIONS
                 you need to use double quotes.
 ```
 
+## google-cloud-sdk_gsutil_rm
 
-## Metadata
+### Tool Description
+Remove objects.
+
+### Metadata
 - **Docker Image**: quay.io/biocontainers/google-cloud-sdk:166.0.0--py27_0
 - **Homepage**: https://cloud.google.com/storage/docs/gsutil
 - **Package**: https://anaconda.org/channels/bioconda/packages/google-cloud-sdk/overview
@@ -511,8 +524,12 @@ OPTIONS
   -a          Delete all versions of an object.
 ```
 
+## google-cloud-sdk_gsutil_mv
 
-## Metadata
+### Tool Description
+Move/rename objects and/or subdirectories.
+
+### Metadata
 - **Docker Image**: quay.io/biocontainers/google-cloud-sdk:166.0.0--py27_0
 - **Homepage**: https://cloud.google.com/storage/docs/gsutil
 - **Package**: https://anaconda.org/channels/bioconda/packages/google-cloud-sdk/overview
@@ -589,8 +606,12 @@ OPTIONS
   for more information.
 ```
 
+## google-cloud-sdk_gsutil_cp
 
-## Metadata
+### Tool Description
+Copy files and objects.
+
+### Metadata
 - **Docker Image**: quay.io/biocontainers/google-cloud-sdk:166.0.0--py27_0
 - **Homepage**: https://cloud.google.com/storage/docs/gsutil
 - **Package**: https://anaconda.org/channels/bioconda/packages/google-cloud-sdk/overview
@@ -1261,8 +1282,12 @@ OPTIONS
                  cloud than they would if left uncompressed.
 ```
 
+## google-cloud-sdk_gsutil_du
 
-## Metadata
+### Tool Description
+Display object size usage.
+
+### Metadata
 - **Docker Image**: quay.io/biocontainers/google-cloud-sdk:166.0.0--py27_0
 - **Homepage**: https://cloud.google.com/storage/docs/gsutil
 - **Package**: https://anaconda.org/channels/bioconda/packages/google-cloud-sdk/overview
@@ -1347,8 +1372,12 @@ EXAMPLES
       gsutil -o GSUtil:default_project_id=project-name du -shc
 ```
 
+## google-cloud-sdk_gsutil_ls
 
-## Metadata
+### Tool Description
+List providers, buckets, or objects.
+
+### Metadata
 - **Docker Image**: quay.io/biocontainers/google-cloud-sdk:166.0.0--py27_0
 - **Homepage**: https://cloud.google.com/storage/docs/gsutil
 - **Package**: https://anaconda.org/channels/bioconda/packages/google-cloud-sdk/overview
@@ -1565,8 +1594,12 @@ OPTIONS
   -e          Include ETag in long listing (-l) output.
 ```
 
+## google-cloud-sdk_gsutil_cat
 
-## Metadata
+### Tool Description
+Concatenate object content to stdout.
+
+### Metadata
 - **Docker Image**: quay.io/biocontainers/google-cloud-sdk:166.0.0--py27_0
 - **Homepage**: https://cloud.google.com/storage/docs/gsutil
 - **Package**: https://anaconda.org/channels/bioconda/packages/google-cloud-sdk/overview
@@ -1629,46 +1662,6 @@ OPTIONS
 
               returns the final 5 bytes of the object.
 ```
-
-
-## Metadata
-- **Docker Image**: quay.io/biocontainers/google-cloud-sdk:166.0.0--py27_0
-- **Homepage**: https://cloud.google.com/storage/docs/gsutil
-- **Package**: https://anaconda.org/channels/bioconda/packages/google-cloud-sdk/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-NAME
-  hash - Calculate file hashes
-
-
-SYNOPSIS
-
-  gsutil hash [-c] [-h] [-m] filename...
-
-
-
-DESCRIPTION
-  The hash command calculates hashes on a local file that can be used to compare
-  with gsutil ls -L output. If a specific hash option is not provided, this
-  command calculates all gsutil-supported hashes for the file.
-
-  Note that gsutil automatically performs hash validation when uploading or
-  downloading files, so this command is only needed if you want to write a
-  script that separately checks the hash for some reason.
-
-  If you calculate a CRC32c hash for the file without a precompiled crcmod
-  installation, hashing will be very slow. See "gsutil help crcmod" for details.
-
-OPTIONS
-  -c          Calculate a CRC32c hash for the file.
-
-  -h          Output hashes in hex format. By default, gsutil uses base64.
-
-  -m          Calculate a MD5 hash for the file.
-```
-
 
 ## Metadata
 - **Skill**: generated

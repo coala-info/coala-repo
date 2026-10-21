@@ -8,12 +8,12 @@ doc: "Predict cell type composition using a trained Scaden model\n\nTool homepag
   https://github.com/KevinMenden/scaden"
 inputs:
   - id: prediction_data
-    type: string
-    doc: Prediction data
+    type: File
+    doc: Prediction data (genes x samples table)
     inputBinding:
       position: 1
   - id: model_dir
-    type: string
+    type: Directory
     doc: Path to trained model
     inputBinding:
       position: 102
@@ -27,19 +27,19 @@ inputs:
       position: 102
       prefix: --seed
   - id: outname_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Name of predictions file.
     inputBinding:
       position: 103
       prefix: --outname
 outputs:
   - id: outname
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Name of predictions file.
     outputBinding:
-      glob: $(inputs.outname_path)
+      glob: $(inputs.outname_path || 'scaden_predictions.txt')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

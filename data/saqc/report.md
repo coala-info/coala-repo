@@ -1,5 +1,11 @@
 # saqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| saqc | PASS | Ran the repo's tutorial soil-moisture data and config; output has data and flag columns with BAD flags set; made --outfile optional |
+
 ## saqc
 
 ### Tool Description

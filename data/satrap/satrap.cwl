@@ -71,11 +71,6 @@ inputs:
       - type: array
         items: int
     doc: Set the kmer to be considered. [23 25 27 29 31]
-      - 23
-      - 25
-      - 27
-      - 29
-      - 31
     inputBinding:
       position: 101
       prefix: -kmer_set

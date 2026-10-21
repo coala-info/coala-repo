@@ -1,5 +1,12 @@
 # rvtests CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rvtests_rvtest | PASS | fixed baseCommand rvtest; single wald beta matches independent least squares; burden and kernel tests ran |
+| rvtests_vcf2kinship | PASS | fixed baseCommand vcf2kinship |
+
 ## rvtests_rvtest
 
 ### Tool Description

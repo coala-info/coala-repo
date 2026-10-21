@@ -1,5 +1,23 @@
 # rnftools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnftools_art2rnf | PASS | synthetic data: reads simulated from the real SARS-CoV-2 reference (nf-core sarscov2 genome) with art_illumina; RNF names carry the true positions. |
+| rnftools_curesim2rnf | PASS | synthetic data: reads simulated from the real SARS-CoV-2 reference (nf-core sarscov2 genome) with CuReSim; RNF names carry the true positions. |
+| rnftools_dwgsim2rnf | PASS | synthetic data: reads simulated from the real SARS-CoV-2 reference (nf-core sarscov2 genome) with dwgsim (-y 0); the CWL now stages the dwgsim files and requires the faidx input. |
+| rnftools_es2et | PASS | synthetic data: ES file from simulated SARS-CoV-2 reads; the ET file lists each read tuple as mapped correctly. |
+| rnftools_et2roc | PASS | synthetic data: ET file from simulated SARS-CoV-2 reads; the ROC table equals the one from sam2roc. |
+| rnftools_liftover | Failed | tool bug: RnfLifter.lift_rnf_name uses an undefined name n_right (NameError) for any RNF name with a non-zero end coordinate, in both FASTQ and SAM mode; FASTQ autodetect also fails for .fq files, so formats must be given. |
+| rnftools_mason2rnf | PASS | synthetic data: reads simulated from the real SARS-CoV-2 reference (nf-core sarscov2 genome) with mason_simulator; RNF names carry the true positions. |
+| rnftools_merge | PASS | synthetic data: merged two single-end RNF FASTQ files of simulated SARS-CoV-2 reads; the merged FASTQ has all 400 reads. |
+| rnftools_sam2es | PASS | synthetic data: bwa mem alignment of simulated SARS-CoV-2 reads; all 200 reads are evaluated as correct (M_1). |
+| rnftools_sam2rnf | PASS | synthetic data: reads simulated from the real SARS-CoV-2 reference (nf-core sarscov2 genome) (art_illumina SAM with true alignments); RNF names are correct. |
+| rnftools_sam2roc | PASS | synthetic data: bwa mem alignment of simulated SARS-CoV-2 reads; the ROC table shows 200 of 200 reads mapped correctly. |
+| rnftools_validate | PASS | synthetic data: a valid RNF FASTQ gives no message (exit 0); a planted bad read name is reported as an error. |
+| rnftools_wgsim2rnf | PASS | synthetic data: reads simulated from the real SARS-CoV-2 reference (nf-core sarscov2 genome) with wgsim; RNF names are correct; the CWL now stages the inputs writable because the tool opens them for update. |
+
 ## rnftools_validate
 
 ### Tool Description

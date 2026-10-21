@@ -1,5 +1,11 @@
 # sbpipe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sbpipe | Not completed | pipeline, skipped: sbpipe runs whole simulation and parameter-estimation pipelines |
+
 ## sbpipe
 
 ### Tool Description

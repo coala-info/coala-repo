@@ -8,6 +8,9 @@ doc: "Print headers or sample IDs from a Savvy file\n\nTool homepage: https://gi
 inputs:
   - id: input_sav
     type: File
+    secondaryFiles:
+      - pattern: .s1r
+        required: false
     doc: Input Savvy file
     inputBinding:
       position: 1

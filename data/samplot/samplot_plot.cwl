@@ -47,6 +47,11 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Space-delimited list of BAM/CRAM file names
     inputBinding:
       position: 101

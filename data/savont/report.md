@@ -1,5 +1,13 @@
 # savont CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| savont_asv | PASS | Ran two repo Zymo ONT read sets; 25 ASVs, every ASV 21-mer is in the repo's reference ASV set |
+| savont_classify | PASS | Classified the Zymo gut ASVs with the EMU default database (fetched from OSF); found Veillonella, Bacteroides fragilis, Escherichia coli, Faecalibacterium etc.; made databases optional Directory inputs and thresholds float |
+| savont_download | Failed | image problem: the image has only busybox wget, which lacks --content-disposition, so the EMU database download fails |
+
 ## savont_asv
 
 ### Tool Description

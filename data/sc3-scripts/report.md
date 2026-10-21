@@ -1,5 +1,18 @@
 # sc3-scripts CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sc3-scripts_sc3-sc3-calc-biology.R | PASS |  |
+| sc3-scripts_sc3-sc3-calc-consens.R | PASS |  |
+| sc3-scripts_sc3-sc3-calc-dists.R | PASS |  |
+| sc3-scripts_sc3-sc3-calc-transfs.R | PASS |  |
+| sc3-scripts_sc3-sc3-estimate-k.R | PASS |  |
+| sc3-scripts_sc3-sc3-kmeans.R | PASS |  |
+| sc3-scripts_sc3-sc3-prepare.R | PASS | the --svm-train-inds option fails because the tool reads it as a number, not a file |
+| sc3-scripts_sc3-sc3.R | PASS |  |
+
 ## sc3-scripts_sc3-sc3-prepare.R
 
 ### Tool Description
@@ -217,6 +230,116 @@ Options:
 		Show this help message and exit
 ```
 
+
+## sc3-scripts_sc3-sc3-calc-biology.R
+
+### Tool Description
+Calculates marker genes, differentially expressed genes or outlier cells for SC3 clusters.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sc3-scripts:0.0.6--r351_0
+- **Homepage**: https://github.com/ebi-gene-expression-group/bioconductor-sc3-scripts
+- **Package**: https://anaconda.org/channels/bioconda/packages/sc3-scripts/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] sc3-sc3-calc-biology.R: ok via sc3-sc3-calc-biology.R --help (--help=ok, -h=ok, -help=no_options, (no args)=ok)
+Usage: /usr/local/bin/sc3-sc3-calc-biology.R [options]
+
+
+Options:
+	-i INPUT-OBJECT-FILE, --input-object-file=INPUT-OBJECT-FILE
+		File name in which a SC3 'SingleCellExperiment' object has been stored after kmeans clustering.
+
+	-t OUTPUT-TEXT-FILE, --output-text-file=OUTPUT-TEXT-FILE
+		A text file file to write marker matrices to. A 'k' column will defined from which value of 'k' the markers are derived.
+
+	-k KS, --ks=KS
+		A comma-separated string or single value representing the number of clusters k to be used for SC3 clustering.
+
+	-r REGIME, --regime=REGIME
+		defines what biological analysis to perform. "marker" for marker genes, "de" for differentiall expressed genes and "outl" for outlier cells.
+
+	-o OUTPUT-OBJECT-FILE, --output-object-file=OUTPUT-OBJECT-FILE
+		File name for R object of type 'SingleCellExperiment' from SC3 in which to store the consensus matrix.
+
+	-h, --help
+		Show this help message and exit
+```
+
+## sc3-scripts_sc3-sc3.R
+
+### Tool Description
+Runs the whole SC3 consensus clustering on a SingleCellExperiment object in one step.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sc3-scripts:0.0.6--r351_0
+- **Homepage**: https://github.com/ebi-gene-expression-group/bioconductor-sc3-scripts
+- **Package**: https://anaconda.org/channels/bioconda/packages/sc3-scripts/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] sc3-sc3.R: ok via sc3-sc3.R --help (--help=ok, -h=ok, -help=no_options, (no args)=ok)
+Usage: /usr/local/bin/sc3-sc3.R [options]
+
+
+Options:
+	-i INPUT-OBJECT-FILE, --input-object-file=INPUT-OBJECT-FILE
+		File name in which a serialized R SingleCellExperiment object where object matrix found
+
+	-c KS, --ks=KS
+		A comma-separated string or single value representing the number of clusters k to be used for SC3 clustering.
+
+	-f GENE-FILTER, --gene-filter=GENE-FILTER
+		A boolean variable which defines whether to perform gene filtering before SC3 clustering.
+
+	-p PCT-DROPOUT-MIN, --pct-dropout-min=PCT-DROPOUT-MIN
+		If gene_filter = TRUE, then genes with percent of dropouts smaller than pct_dropout_min are filtered out before clustering.
+
+	-q PCT-DROPOUT-MAX, --pct-dropout-max=PCT-DROPOUT-MAX
+		If gene_filter = TRUE, then genes with percent of dropouts larger than pct_dropout_max are filtered out before clustering.
+
+	-d D-REGION-MIN, --d-region-min=D-REGION-MIN
+		Defines the minimum number of eigenvectors used for kmeans clustering as a fraction of the total number of cells. Default is 0.04. See SC3 paper for more details.
+
+	-e D-REGION-MAX, --d-region-max=D-REGION-MAX
+		Defines the maximum number of eigenvectors used for kmeans clustering as a fraction of the total number of cells. Default is 0.07. See SC3 paper for more details.
+
+	-n SVM-NUM-CELLS, --svm-num-cells=SVM-NUM-CELLS
+		Number of randomly selected training cells to be used for SVM prediction. Default is NULL.
+
+	-r SVM-TRAIN-INDS, --svm-train-inds=SVM-TRAIN-INDS
+		Text file with one integer per line. Will be used to create a numeric vector defining indices of training cells that should be used for SVM training. The default is NULL.
+
+	-m SVM-MAX, --svm-max=SVM-MAX
+		Define the maximum number of cells below which SVM are not run.
+
+	-t N-CORES, --n-cores=N-CORES
+		Number of threads/cores to be used in the user's machine.
+
+	-k KMEANS-NSTART, --kmeans-nstart=KMEANS-NSTART
+		nstart parameter passed to kmeans function. Default is 1000 for up to 2000 cells and 50 for more than 2000 cells.
+
+	-a KMEANS-ITER-MAX, --kmeans-iter-max=KMEANS-ITER-MAX
+		iter.max parameter passed to kmeans function. Default is 1e+09.
+
+	-g K_ESTIMATOR, --k_estimator=K_ESTIMATOR
+		A boolean variable which defines whether to estimate an optimal number of clusters. If user has already defined the ks parameter the estimation does not affect the user's paramater.
+
+	-b BIOLOGY, --biology=BIOLOGY
+		A boolean variable which defines whether to compute differentially expressed genes, marker genes and cell outliers.
+
+	-s RAND-SEED, --rand-seed=RAND-SEED
+		sets the seed of the random number generator. SC3 is a stochastic method, so setting the rand_seed to a fixed values can be used for reproducibility purposes.
+
+	-o OUTPUT-OBJECT-FILE, --output-object-file=OUTPUT-OBJECT-FILE
+		File name in which to store serialized R object of type 'SingleCellExperiment'.
+
+	-h, --help
+		Show this help message and exit
+```
 
 ## Metadata
 - **Skill**: generated

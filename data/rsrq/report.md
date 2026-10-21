@@ -1,5 +1,21 @@
 # rsrq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rsrq_enqueue | PASS |  |
+| rsrq_purge_all | PASS |  |
+| rsrq_purge_failed | PASS |  |
+| rsrq_purge_finished | PASS |  |
+| rsrq_purge_queued | PASS |  |
+| rsrq_snakemake_cancel | PASS |  |
+| rsrq_snakemake_config | PASS |  |
+| rsrq_snakemake_status | PASS |  |
+| rsrq_snakemake_submit | PASS |  |
+| rsrq_status | PASS |  |
+| rsrq_worker | PASS |  |
+
 ## rsrq_enqueue
 
 ### Tool Description
@@ -84,37 +100,7 @@ Options:
 ```
 
 
-## rsrq_snakemake
-
-### Tool Description
-Commands that can be issued by Snakemake for cluster execution
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0
-- **Homepage**: https://github.com/aaronmussig/rsrq
-- **Package**: https://anaconda.org/channels/bioconda/packages/rsrq/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Commands that can be issued by Snakemake for cluster execution
-
-Usage: rsrq snakemake
-       rsrq snakemake <COMMAND>
-
-Commands:
-  submit  Submit a Snakemake job
-  status  Check the status of a Snakemake job
-  cancel  Cancel a Snakemake job
-  config  Write the Snakemake cluster profile to the target directory
-  help    Print this message or the help of the given subcommand(s)
-
-Options:
-  -h, --help  Print help
-```
-
-
-## rsrq_purge
+## rsrq_purge_all
 
 ### Tool Description
 Removes all data from Redis
@@ -127,22 +113,175 @@ Removes all data from Redis
 
 ### Original Help Text
 ```text
-Commands for removing data from Redis
+Removes all data from Redis
 
-Usage: rsrq purge
-       rsrq purge <COMMAND>
-
-Commands:
-  all       Removes all data from Redis
-  failed    Removes all failed jobs
-  finished  Removes all finished jobs
-  queued    Removes all queued jobs
-  help      Print this message or the help of the given subcommand(s)
+Usage: rsrq purge all
 
 Options:
   -h, --help  Print help
 ```
 
+## rsrq_purge_failed
+
+### Tool Description
+Removes all failed jobs
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0
+- **Homepage**: https://github.com/aaronmussig/rsrq
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsrq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Removes all failed jobs
+
+Usage: rsrq purge failed [OPTIONS]
+
+Options:
+      --queue <QUEUE>  The target queue to purge (default: all queues)
+  -h, --help           Print help
+```
+
+## rsrq_purge_finished
+
+### Tool Description
+Removes all finished jobs
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0
+- **Homepage**: https://github.com/aaronmussig/rsrq
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsrq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Removes all finished jobs
+
+Usage: rsrq purge finished [OPTIONS]
+
+Options:
+      --queue <QUEUE>  The target queue to purge (default: all queues)
+  -h, --help           Print help
+```
+
+## rsrq_purge_queued
+
+### Tool Description
+Removes all queued jobs
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0
+- **Homepage**: https://github.com/aaronmussig/rsrq
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsrq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Removes all queued jobs
+
+Usage: rsrq purge queued [OPTIONS]
+
+Options:
+      --queue <QUEUE>  The target queue to purge (default: all queues)
+  -h, --help           Print help
+```
+
+## rsrq_snakemake_submit
+
+### Tool Description
+Submit a Snakemake job
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0
+- **Homepage**: https://github.com/aaronmussig/rsrq
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsrq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Submit a Snakemake job
+
+Usage: rsrq snakemake submit <JOB_SCRIPT>
+
+Arguments:
+  <JOB_SCRIPT>  The path to the job script
+
+Options:
+  -h, --help  Print help
+```
+
+## rsrq_snakemake_status
+
+### Tool Description
+Check the status of a Snakemake job
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0
+- **Homepage**: https://github.com/aaronmussig/rsrq
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsrq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Check the status of a Snakemake job
+
+Usage: rsrq snakemake status <JOB_ID>
+
+Arguments:
+  <JOB_ID>  The Job ID to check
+
+Options:
+  -h, --help  Print help
+```
+
+## rsrq_snakemake_cancel
+
+### Tool Description
+Cancel a Snakemake job
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0
+- **Homepage**: https://github.com/aaronmussig/rsrq
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsrq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Cancel a Snakemake job
+
+Usage: rsrq snakemake cancel [JOB_IDS]...
+
+Arguments:
+  [JOB_IDS]...  The Jobs ID to cancel
+
+Options:
+  -h, --help  Print help
+```
+
+## rsrq_snakemake_config
+
+### Tool Description
+Write the Snakemake cluster profile to the target directory
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsrq:1.1.0--h4349ce8_0
+- **Homepage**: https://github.com/aaronmussig/rsrq
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsrq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Write the Snakemake cluster profile to the target directory
+
+Usage: rsrq snakemake config <DIRECTORY>
+
+Arguments:
+  <DIRECTORY>  The target directory to write the profile to
+
+Options:
+  -h, --help  Print help
+```
 
 ## Metadata
 - **Skill**: generated

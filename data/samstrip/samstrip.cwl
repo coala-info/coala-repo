@@ -8,6 +8,9 @@ doc: "Reads a SAM file from stdin, and prints the equivalent stripped file to st
   contain the same alignment information as a full file, but takes up less disk space.\n\
   \nTool homepage: https://github.com/jakobnissen/samstrip"
 inputs:
+  - id: input_sam
+    type: File
+    doc: Input SAM file (read from standard input)
   - id: keep_tags
     type:
       - 'null'
@@ -42,3 +45,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samstrip:0.2.1--h4349ce8_0
 stdout: samstrip.out
+stdin: $(inputs.input_sam.path)

@@ -1,5 +1,11 @@
 # rtax CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rtax | Not completed | rtax needs the licensed usearch program, which is not in the image ('usearch not found in path'); CWL flag fixed (-o) |
+
 ## rtax
 
 ### Tool Description

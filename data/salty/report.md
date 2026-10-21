@@ -1,5 +1,11 @@
 # salty CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| salty | PASS | Fixed baseCommand PROG to salty; ran on the tool's own test genomes and the summary matches the expected file. |
+
 ## salty
 
 ### Tool Description

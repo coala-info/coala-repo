@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rtk
+baseCommand: rtk2
 label: rtk2_rarefaction
 doc: "rarefaction tool kit (rtk)\n\nTool homepage: https://github.com/hildebra/rtk2/"
 inputs:
@@ -59,18 +59,19 @@ inputs:
       prefix: -t
   - id: output_path
     type: string
-    doc: path to a output directory
+    doc: Output prefix (path inside an existing directory, or a plain prefix) for the
+      result files
     inputBinding:
       position: 103
       prefix: -o
 outputs:
   - id: output
-    type: Directory
-    doc: path to a output directory
+    type:
+      type: array
+      items: File
+    doc: Rarefied tables and diversity tables written with the output prefix
     outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output_path)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rtk2:2.11.2--h077b44d_1

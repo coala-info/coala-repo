@@ -1,5 +1,11 @@
 # sc-musketeers CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sc-musketeers | Not completed | runs on real nf-core scdownstream counts (1 epoch per phase) and writes the annotated output, but the predicted labels could not be judged because the reference labels in that test file are artificial. |
+
 ## sc-musketeers
 
 ### Tool Description

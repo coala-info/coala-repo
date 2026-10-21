@@ -1,16 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba-merge
+baseCommand:
+  - sambamba
+  - merge
 label: sambamba_merge
 doc: "Merge multiple BAM files into a single BAM file.\n\nTool homepage: https://github.com/biod/sambamba"
 inputs:
+  - id: output_bam_path
+    type: string
+    doc: Output BAM file name
+    inputBinding:
+      position: 1
   - id: input_bams
     type:
       type: array
       items: File
     doc: Input BAM files to merge
     inputBinding:
-      position: 1
+      position: 2
   - id: compression_level
     type:
       - 'null'
@@ -54,10 +61,18 @@ inputs:
       prefix: --show-progress
 outputs:
   - id: output_bam
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Output BAM file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_bam_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (merged header when --header is used)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sambamba:1.0.1--he614052_4
+stdout: sambamba_merge.out

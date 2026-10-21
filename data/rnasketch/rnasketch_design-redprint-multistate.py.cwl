@@ -5,6 +5,11 @@ label: rnasketch_design-redprint-multistate.py
 doc: "Design a multi-stable riboswitch similar using Boltzmann sampling.\n\nTool homepage:
   https://github.com/ViennaRNA/RNAsketch"
 inputs:
+  - id: stdin_file
+    type:
+      - 'null'
+      - File
+    doc: Text file with target structures (one per line) and an optional sequence constraint line, sent to the standard input (use with the input flag)
   - id: csv_output
     type:
       - 'null'
@@ -103,12 +108,17 @@ inputs:
       position: 101
       prefix: --temperature
   - id: graphml_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: ' Write a graphml file with the given filename.'
     inputBinding:
       position: 102
       prefix: --graphml
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: graphml_file
     type:
       - 'null'
@@ -121,3 +131,5 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnasketch:1.5--py27_1
+stdout: rnasketch_design-redprint-multistate.py.out
+stdin: '$(inputs.stdin_file ? inputs.stdin_file.path : null)'

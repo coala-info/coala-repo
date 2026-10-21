@@ -6,12 +6,12 @@ doc: "Generate HTML outputs to explore Sensing Enabling Metabolic Pathway from R
   results.\n\nTool homepage: https://github.com/conda-forge/rp2biosensor-feedstock"
 inputs:
   - id: rp2_results
-    type: string
+    type: File
     doc: RetroPath2.0 results
     inputBinding:
       position: 1
   - id: sink_file
-    type: string
+    type: File
     doc: Sink file used for RetroPath2.0
     inputBinding:
       position: 2
@@ -54,9 +54,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_path_dir
+  - id: output_json_out
     type:
       - 'null'
+      - File
+    doc: Graph as JSON file
+    outputBinding:
+      glob: $(inputs.output_json)
+  - id: output_path_out
+    type:
+      - 'null'
+      - File
       - Directory
     doc: Output path.
     outputBinding:

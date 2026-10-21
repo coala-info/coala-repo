@@ -14,6 +14,7 @@ inputs:
     doc: Reference genomes in fasta format.
     inputBinding:
       position: 1
+      prefix: --input-files
   - id: clade
     type: string
     doc: Clade to process from input files. Names must correspond to the 

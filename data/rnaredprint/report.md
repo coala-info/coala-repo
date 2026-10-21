@@ -1,5 +1,11 @@
 # rnaredprint CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnaredprint_RNARedPrint | PASS | Ran the README example (three target structures, weights, GC weight); designed sequences pair as required; base command fixed to RNARedPrint on PATH. |
+
 ## rnaredprint_RNARedPrint
 
 ### Tool Description

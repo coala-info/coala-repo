@@ -9,7 +9,7 @@ doc: "This software takes protein sequences as input (-i option). All sequences 
   enzymes are included (-l option to print available enzymes) but it is possible to
   define other enzymes (-a option). See https://gitlab.pasteur.fr/nmaillet/rpg/ and
   https://rapid-peptide- generator.readthedocs.io for more informations.\n\nTool homepage:
-  https://github.com/jynew/jynew"
+  https://gitlab.pasteur.fr/nmaillet/rpg"
 inputs:
   - id: add_enzyme
     type:

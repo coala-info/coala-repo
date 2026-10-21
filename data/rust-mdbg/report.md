@@ -1,11 +1,76 @@
 # rust-mdbg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rust-mdbg | PASS |  |
+| rust-mdbg_to_basespace | PASS |  |
+
 ## rust-mdbg
 
 ### Tool Description
 Original implementation of minimizer-space de Bruijn graphs (mdBG) for genome assembly.
 
+### rust-mdbg_to_basespace
+
+### Tool Description
+Converts the output of gfatools asm -u [any number of simplifications] to base-space.
+
 ### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-mdbg:1.0.1--h4ac6f70_3
+- **Homepage**: https://github.com/ekimb/rust-mdbg
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-mdbg/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+to-basespace 0.1.0
+Converts the output of gfatools asm -u [any number of simplifications] to base-space.
+
+USAGE:
+    to_basespace [FLAGS] [OPTIONS]
+
+FLAGS:
+    -d, --debug      Activate debug mode
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -g, --gfa <gfa>                Input file
+    -s, --sequences <sequences>
+```
+
+## rust-mdbg_to_basespace
+
+### Tool Description
+Converts the output of gfatools asm -u to base-space.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rust-mdbg:1.0.1--h4ac6f70_3
+- **Homepage**: https://github.com/ekimb/rust-mdbg
+- **Package**: https://anaconda.org/channels/bioconda/packages/rust-mdbg/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+to-basespace 0.1.0
+Converts the output of gfatools asm -u [any number of simplifications] to base-space.
+
+USAGE:
+    to_basespace [FLAGS] [OPTIONS]
+
+FLAGS:
+    -d, --debug      Activate debug mode
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -g, --gfa <gfa>                Input file
+    -s, --sequences <sequences>
+```
+
+## Metadata
 - **Docker Image**: quay.io/biocontainers/rust-mdbg:1.0.1--h4ac6f70_3
 - **Homepage**: https://github.com/ekimb/rust-mdbg
 - **Package**: https://anaconda.org/channels/bioconda/packages/rust-mdbg/overview

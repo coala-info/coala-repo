@@ -7,10 +7,8 @@ label: rnanorm_tpm
 doc: "Compute TPM.\n\nTool homepage: https://github.com/genialis/RNAnorm"
 inputs:
   - id: exp
-    type:
-      - 'null'
-      - string
-    doc: Input experiment data
+    type: File
+    doc: Input expression matrix (CSV or TSV, genes in columns)
     inputBinding:
       position: 1
   - id: force

@@ -1,5 +1,11 @@
 # rust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rust_cargo | Failed | image problem: no C linker (cc) in the image, so cargo build and cargo run fail at the link step |
+
 ## rust_cargo
 
 ### Tool Description

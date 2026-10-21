@@ -5,6 +5,11 @@ label: rnasketch_design-multistate.py
 doc: "Design a multi-stable riboswitch similar to Hoehner 2013 paper.\n\nTool homepage:
   https://github.com/ViennaRNA/RNAsketch"
 inputs:
+  - id: stdin_file
+    type:
+      - 'null'
+      - File
+    doc: Text file with target structures (one per line) and an optional sequence constraint line, sent to the standard input (use with the input flag)
   - id: csv_output
     type:
       - 'null'
@@ -21,10 +26,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: --debug
-  - id: graphml_file
+  - id: graphml_file_path
     type:
       - 'null'
-      - File
+      - string
     doc: Write a graphml file with the given filename.
     inputBinding:
       position: 101
@@ -114,7 +119,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: graphml_file
+    type:
+      - 'null'
+      - File
+    doc: Graphml file of the dependency graph
+    outputBinding:
+      glob: $(inputs.graphml_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnasketch:1.5--py27_1
 stdout: rnasketch_design-multistate.py.out
+stdin: '$(inputs.stdin_file ? inputs.stdin_file.path : null)'

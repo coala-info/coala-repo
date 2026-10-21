@@ -1,37 +1,13 @@
 # sadie-antibody CWL Generation Report
 
-## sadie-antibody_sadie
+## Real Data Test
 
-### Tool Description
-SADIE Antibody Analysis
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sadie-antibody:2.0.0--pyhdfd78af_0
-- **Homepage**: https://sadie.jordanrwillis.com
-- **Package**: https://anaconda.org/channels/bioconda/packages/sadie-antibody/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/sadie-antibody/overview
-- **Total Downloads**: 105
-- **Last updated**: 2025-08-28
-- **GitHub**: https://github.com/jwillis0720/sadie
-- **Stars**: N/A
-### Original Help Text
-```text
-Usage: sadie [OPTIONS] COMMAND [ARGS]...
-
-Options:
-  --version      Show the version and exit.
-  -v, --verbose  Vebosity level, ex. -vvvvv for debug level logging
-  --help         Show this message and exit.
-
-Commands:
-  airr         Run the AIRR annotation pipeline from the command line on...
-  make-all     Comprehensive database generation for SADIE AIRR analysis
-  reference
-  renumbering
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| sadie-antibody_sadie_airr | Failed | image problem: bundled igblastn cannot start (libbz2.so.1 missing in the image) |
+| sadie-antibody_sadie_make-all | Failed | tool bug: crashes with UnboundLocalError on Path before doing any work |
+| sadie-antibody_sadie_reference_make | Not completed | needs the remote server g3.jordanrwillis.com, which does not resolve |
+| sadie-antibody_sadie_renumbering | Not completed | needs the remote server g3.jordanrwillis.com, which does not resolve |
 
 ## sadie-antibody_sadie_airr
 
@@ -111,6 +87,104 @@ Options:
   --help                          Show this message and exit.
 ```
 
+
+## sadie-antibody_sadie_make-all
+
+### Tool Description
+Comprehensive database generation for SADIE AIRR analysis
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sadie-antibody:2.0.0--pyhdfd78af_0
+- **Homepage**: https://sadie.jordanrwillis.com
+- **Package**: https://anaconda.org/channels/bioconda/packages/sadie-antibody/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sadie make-all [OPTIONS]
+
+  Comprehensive database generation for SADIE AIRR analysis
+
+  This command performs all necessary steps to set up a complete AIRR analysis
+  environment:
+
+  1. Generates or updates reference.yml configuration (if needed) 2. Downloads
+  IMGT germline sequences (if needed) 3. Generates IgBLAST reference databases
+  4. Creates auxiliary files for IgBLAST 5. Generates internal annotation
+  files (ndm.imgt) 6. Optionally regenerates CATNAP and IGL references 7.
+  Creates reference index files
+
+  The process creates the following directory structure:
+
+  outpath/
+  ├── reference.yml            # Reference configuration (if generated)
+  ├── Ig/
+  │   ├── blastdb/         # BLAST databases
+  │   │   ├── human/
+  │   │   ├── mouse/
+  │   │   └── ...
+  │   └── internal_data/   # Internal annotation files
+  │       ├── human/
+  │       ├── mouse/
+  │       └── ...
+  ├── aux_db/              # Auxiliary files
+  │   └── imgt/
+  │       ├── human_gl.aux
+  │       ├── mouse_gl.aux
+  │       └── ...
+  └── .references_dataframe.csv.gz  # Reference index
+
+Options:
+  -o, --outpath DIRECTORY  Output path for all generated files
+  -r, --reference PATH     Path to reference.yml file  [default:
+                           /usr/local/lib/python3.13/site-
+                           packages/sadie/reference/data/reference.yml]
+  -s, --species TEXT       Comma-separated list of species to build databases
+                           for (default: all)  [default: all]
+  --regenerate-catnap      Regenerate CATNAP references from FASTA files
+  --regenerate-igl         Regenerate IGL references from FASTA files
+  --generate-reference     Generate reference.yml file interactively or
+                           regenerate if missing
+  --skip-blast             Skip BLAST database generation
+  --skip-aux               Skip auxiliary file generation
+  --skip-internal          Skip internal annotation file generation
+  -v, --verbose            Vebosity level, ex. -vvvvv for debug level logging
+  --help                   Show this message and exit.
+```
+
+## sadie-antibody_sadie_reference_make
+
+### Tool Description
+make the igblast reference files
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sadie-antibody:2.0.0--pyhdfd78af_0
+- **Homepage**: https://sadie.jordanrwillis.com
+- **Package**: https://anaconda.org/channels/bioconda/packages/sadie-antibody/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sadie reference make [OPTIONS]
+
+  make the igblast reference files
+
+  This script will make the imgt reference files used by igblast or airr,
+  including internal data, the blast the blast database, and the auxillary
+  files. It uses the reference.yml to configure select genes and species. If
+  you update the reference.yml file, run this again.
+
+Options:
+  -v, --verbose         Vebosity level, ex. -vvvvv for debug level logging
+  -o, --outpath PATH    Output path to generate blast_db, internal_data and
+                        auxillary files  [default:
+                        /usr/local/lib/python3.13/site-
+                        packages/sadie/airr/data/germlines]
+  -d, --reference PATH  Path to reference.yml  [default:
+                        /usr/local/lib/python3.13/site-
+                        packages/sadie/reference/data/reference.yml]
+  --help                Show this message and exit.
+```
 
 ## Metadata
 - **Skill**: generated

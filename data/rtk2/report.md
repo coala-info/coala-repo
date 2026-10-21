@@ -1,5 +1,12 @@
 # rtk2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rtk2_colsums | PASS |  |
+| rtk2_rarefaction | PASS |  |
+
 ## rtk2_rarefaction
 
 ### Tool Description

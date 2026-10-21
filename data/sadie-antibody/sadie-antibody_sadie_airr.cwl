@@ -38,6 +38,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --name
+  - id: output_path_name
+    type:
+      - 'null'
+      - string
+    doc: Output path (default is airr .tsv file)
+    inputBinding:
+      position: 2
 outputs:
   - id: output_path
     type:
@@ -45,7 +52,9 @@ outputs:
       - File
     doc: Output path (default is airr .tsv file)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_path_name)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sadie-antibody:2.0.0--pyhdfd78af_0

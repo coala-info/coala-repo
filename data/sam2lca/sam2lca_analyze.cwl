@@ -2,15 +2,29 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - sam2lca
-  - analyze
 label: sam2lca_analyze
 doc: "Run the sam2lca analysis\n\nTool homepage: https://github.com/maxibor/sam2lca"
+arguments:
+  - position: 2
+    valueFrom: analyze
 inputs:
-  - id: sam_file
-    type: File
-    doc: path to SAM/BAM/CRAM alignment file
+  - id: dbdir
+    type: Directory
+    doc: Directory with the taxonomy and acc2tax databases (global option --dbdir)
     inputBinding:
       position: 1
+      prefix: --dbdir
+      valueFrom: $(self.basename)
+  - id: sam_file
+    type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+    doc: path to SAM/BAM/CRAM alignment file
+    inputBinding:
+      position: 200
   - id: acc2tax
     type:
       - 'null'
@@ -30,8 +44,7 @@ inputs:
   - id: bam_split_rank
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: Write BAM output file split by TAXID at rank -r. To use in combination 
       with -b/--bam_out
     inputBinding:
@@ -96,22 +109,27 @@ inputs:
     inputBinding:
       position: 102
       prefix: --taxonomy
-  - id: output_file_path
+  - id: output
     type: string
-    doc: 'sam2lca output file. Default:'
+    default: sam2lca_result
+    doc: 'sam2lca output file prefix. Default: [basename].sam2lca.*'
     inputBinding:
       position: 103
       prefix: --output
 outputs:
-  - id: output_file
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: 'sam2lca output file. Default: [basename].sam2lca.*'
+      type: array
+      items: File
+    doc: 'sam2lca output files: [output].sam2lca.csv, .json and optional BAM files'
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.dbdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sam2lca:1.1.4--pyhdfd78af_0

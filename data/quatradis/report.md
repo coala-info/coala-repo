@@ -19,7 +19,32 @@
 ### Tool Description
 Determine how essential each gene is based on the transposon insertion site plot counts.
 
-### quatradis_tradis_compare_gene_report
+### Metadata
+- **Docker Image**: quay.io/biocontainers/quatradis:1.4.0--py312h0fa9677_1
+- **Homepage**: https://github.com/quadram-institute-bioscience/QuaTradis
+- **Package**: https://anaconda.org/channels/bioconda/packages/quatradis/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: tradis compare essentiality [options] <plot_count_file>
+
+Determines how essential each gene is based on the transposon insertion site
+plot counts
+
+positional arguments:
+  count_file     Counts from a transposon insertion site plot file to be used.
+                 i.e. generated from "tradis plot count"
+
+options:
+  -h, --help     show this help message and exit
+  --profile      Turn on profiling. Prints out cumulative time in each
+                 function to stdout and to an output file (tradis.profile).
+                 The profile file can be read by tools such as snakeviz.
+  --verbose, -v  Print out extra information about the process while it runs
+```
+
+## quatradis_tradis_compare_gene_report
 
 ### Tool Description
 Generate a gene report from comparison analysis data.
@@ -375,30 +400,5 @@ options:
                         tools such as snakeviz.
   --verbose, -v         Print out extra information about the process while it
                         runs
-```
-
-## Metadata
-- **Docker Image**: quay.io/biocontainers/quatradis:1.4.0--py312h0fa9677_1
-- **Homepage**: https://github.com/quadram-institute-bioscience/QuaTradis
-- **Package**: https://anaconda.org/channels/bioconda/packages/quatradis/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: tradis compare essentiality [options] <plot_count_file>
-
-Determines how essential each gene is based on the transposon insertion site
-plot counts
-
-positional arguments:
-  count_file     Counts from a transposon insertion site plot file to be used.
-                 i.e. generated from "tradis plot count"
-
-options:
-  -h, --help     show this help message and exit
-  --profile      Turn on profiling. Prints out cumulative time in each
-                 function to stdout and to an output file (tradis.profile).
-                 The profile file can be read by tools such as snakeviz.
-  --verbose, -v  Print out extra information about the process while it runs
 ```
 

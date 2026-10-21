@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rvtests_vcf2kinship
+baseCommand: vcf2kinship
 label: rvtests_vcf2kinship
 doc: "Calculate kinship from VCF files.\n\nTool homepage: https://github.com/zhanxw/rvtests"
 inputs:
@@ -39,6 +39,9 @@ inputs:
       prefix: --ibs
   - id: in_vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Input VCF File
     inputBinding:
       position: 101
@@ -125,6 +128,7 @@ inputs:
     doc: List IDs of people that will be included in study
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --peopleExcludeID
   - id: people_include_file
     type:
@@ -142,6 +146,7 @@ inputs:
     doc: List IDs of people that will be included in study
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --peopleIncludeID
   - id: range_file
     type:
@@ -159,6 +164,7 @@ inputs:
     doc: Specify some ranges to use, please use chr:begin-end format.
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --rangeList
   - id: store_genotype
     type:

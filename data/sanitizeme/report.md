@@ -1,5 +1,12 @@
 # sanitizeme CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sanitizeme_SanitizeMePaired_CLI.py | PASS | Removed SARS-CoV-2 host reads from a mixed paired set; kept 1000 non-host pairs; dropped needless .fai requirement |
+| sanitizeme_SanitizeMe_CLI.py | PASS | Removed SARS-CoV-2 host reads from a mixed single-end set; kept 1000 non-host reads; dropped needless .fai requirement |
+
 ## sanitizeme_SanitizeMe_CLI.py
 
 ### Tool Description

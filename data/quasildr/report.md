@@ -12,26 +12,7 @@
 ### Tool Description
 Run GraphDR.
 
-### quasildr_run_structdr.py
-
-### Tool Description
-Run nonparametric ridge estimation (StructDR).
-
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/quasildr:0.2.2--pyhdfd78af_0
-- **Homepage**: https://github.com/jzthree/quasildr
-- **Package**: https://anaconda.org/channels/bioconda/packages/quasildr/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Traceback (most recent call last):
-  File "/usr/local/bin/run_structdr.py", line 10, in <module>
-    import networkx as nx
-ModuleNotFoundError: No module named 'networkx'
-```
-
-## Metadata
 - **Docker Image**: quay.io/biocontainers/quasildr:0.2.2--pyhdfd78af_0
 - **Homepage**: https://github.com/jzthree/quasildr
 - **Package**: https://anaconda.org/channels/bioconda/packages/quasildr/overview
@@ -74,5 +55,24 @@ Options:
   --scale                                   Preprocess input by scaling to unit variance.
   --output=<output>                         Output file prefix, use input_file if not specified [default: ]
   --suffix=<suffix>                         Suffix append to output file name [default: ]
+```
+
+## quasildr_run_structdr.py
+
+### Tool Description
+Run nonparametric ridge estimation (StructDR).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/quasildr:0.2.2--pyhdfd78af_0
+- **Homepage**: https://github.com/jzthree/quasildr
+- **Package**: https://anaconda.org/channels/bioconda/packages/quasildr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/run_structdr.py", line 10, in <module>
+    import networkx as nx
+ModuleNotFoundError: No module named 'networkx'
 ```
 

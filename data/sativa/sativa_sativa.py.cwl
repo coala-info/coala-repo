@@ -188,7 +188,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Directory for temporary files.
+    default: sativa_tmp
+    doc: Directory for temporary files. The tool's own default is inside the image and read-only, so the wrapper uses a directory in the working directory.
     inputBinding:
       position: 101
       prefix: -tmpdir
@@ -211,6 +212,16 @@ outputs:
     doc: 'Output directory (default: current).'
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        if (inputs.output_dir) {
+          return [{"entryname": inputs.output_dir, "entry": {"class": "Directory", "basename": inputs.output_dir, "listing": []}, "writable": true}];
+        }
+        return [];
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sativa:0.9.3--py312h031d066_0

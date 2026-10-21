@@ -12,23 +12,7 @@
 ### Tool Description
 MapCaller v0.9.9.41
 
-### mapcaller_index
-
-### Tool Description
-Index a reference genome (FASTA) for MapCaller.
-
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mapcaller:0.9.9.41--h13024bc_6
-- **Homepage**: https://github.com/hsinnan75/MapCaller
-- **Package**: https://anaconda.org/channels/bioconda/packages/mapcaller/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-MapCaller index ref_file[ex.ecoli.fa] index_prefix[ex. Ecoli]
-```
-
-## Metadata
 - **Docker Image**: quay.io/biocontainers/mapcaller:0.9.9.41--h13024bc_6
 - **Homepage**: https://github.com/hsinnan75/MapCaller
 - **Package**: https://anaconda.org/channels/bioconda/packages/mapcaller/overview
@@ -74,5 +58,21 @@ Options: -i STR        BWT_Index_Prefix
          -filter       apply variant filters (under test) [false]
          -id STR       assign sample id
          -v            version
+```
+
+## mapcaller_index
+
+### Tool Description
+Index a reference genome (FASTA) for MapCaller.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mapcaller:0.9.9.41--h13024bc_6
+- **Homepage**: https://github.com/hsinnan75/MapCaller
+- **Package**: https://anaconda.org/channels/bioconda/packages/mapcaller/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+MapCaller index ref_file[ex.ecoli.fa] index_prefix[ex. Ecoli]
 ```
 

@@ -1,5 +1,11 @@
 # robust-bias-aware CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| robust-bias-aware | PASS |  |
+
 ## robust-bias-aware
 
 ### Tool Description

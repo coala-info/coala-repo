@@ -15,10 +15,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --infix
     doc: Select characters from-to where from and to are 0-based indices.
     inputBinding:
       position: 102
-      prefix: --infix
   - id: line_length
     type:
       - 'null'
@@ -49,32 +50,35 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --sequence
     doc: Select the given sequence for extraction by 0-based index.
     inputBinding:
       position: 102
-      prefix: --sequence
   - id: sequence_name
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sequence-name
     doc: Select sequence with name prefix being NAME.
     inputBinding:
       position: 102
-      prefix: --sequence-name
   - id: sequences
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sequences
     doc: Select sequences from-to where from and to are 0-based indices.
     inputBinding:
       position: 102
-      prefix: --sequences
   - id: version_check
     type:
       - 'null'
-      - boolean
+      - string
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
     inputBinding:
@@ -82,6 +86,7 @@ inputs:
       prefix: --version-check
   - id: output_file_path
     type: string
+    doc: Path to the resulting file (type from the extension)
     inputBinding:
       position: 103
       prefix: --out-path

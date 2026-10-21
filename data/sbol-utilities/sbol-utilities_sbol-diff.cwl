@@ -34,6 +34,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+successCodes:
+  - 0
+  - 1
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sbol-utilities:1.0a16--pyhdfd78af_0

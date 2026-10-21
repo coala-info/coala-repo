@@ -1,5 +1,11 @@
 # rnamining CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnamining | PASS | Ran on real human CDS and lncRNA sequences from Ensembl; the output folder is created by the CWL; the lowercase organism names in the help crash because the image models are named like Homo_sapiens. |
+
 ## rnamining
 
 ### Tool Description

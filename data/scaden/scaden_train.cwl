@@ -7,8 +7,8 @@ label: scaden_train
 doc: "Train a Scaden model\n\nTool homepage: https://github.com/KevinMenden/scaden"
 inputs:
   - id: training_data
-    type: string
-    doc: training data
+    type: File
+    doc: training data (processed .h5ad file from scaden process)
     inputBinding:
       position: 1
   - id: batch_size
@@ -30,7 +30,7 @@ inputs:
   - id: model_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to store the model in
     inputBinding:
       position: 102
@@ -61,10 +61,17 @@ inputs:
       position: 102
       prefix: --train_datasets
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: model
+    type: Directory
+    doc: Directory with the trained models (m256, m512, m1024)
+    outputBinding:
+      glob: $(inputs.model_dir || '.')
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.model_dir ? {class: 'Directory', basename: inputs.model_dir, listing: []} : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scaden:1.1.2--pyhdfd78af_0
-stdout: scaden_train.out

@@ -1,5 +1,11 @@
 # rp2biosensor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rp2biosensor | Not completed | needs the rrCache database; its download URL (gitlab rrCache-data master) now returns 404 and the files at the new location fail the tool's checksum |
+
 ## rp2biosensor
 
 ### Tool Description

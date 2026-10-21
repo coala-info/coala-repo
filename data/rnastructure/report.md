@@ -1,5 +1,15 @@
 # rnastructure CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| rnastructure_Fold | PASS | Ran on the real yeast tRNA-Phe sequence; the output file is now an explicit argument and the structure has the expected cloverleaf pairing. |
+| rnastructure_ProbabilityPlot | PASS | Ran on the real yeast tRNA-Phe sequence; the output file is now an explicit argument and the structure has the expected cloverleaf pairing. |
+| rnastructure_bifold | PASS | Ran on the real yeast tRNA-Phe sequence; the output file is now an explicit argument and the structure has the expected cloverleaf pairing. |
+| rnastructure_ct2dot | PASS | Ran on the real yeast tRNA-Phe sequence; the output file is now an explicit argument and the structure has the expected cloverleaf pairing. |
+| rnastructure_partition | PASS | Ran on the real yeast tRNA-Phe sequence; the output file is now an explicit argument and the structure has the expected cloverleaf pairing. |
+
 ## rnastructure_Fold
 
 ### Tool Description

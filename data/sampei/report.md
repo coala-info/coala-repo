@@ -1,5 +1,11 @@
 # sampei CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sampei | PASS | Fixed baseCommand SAMPEI to sampei; on the demo files it finds the +17.99 Da fluorine shift at F11 of DFSAFINLVEFCR. |
+
 ## sampei
 
 ### Tool Description

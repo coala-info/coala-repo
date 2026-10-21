@@ -5,6 +5,9 @@ label: samcut
 doc: "Print the standard 11 columns (qname, flag, ..., qual) with a header row\n\n\
   Tool homepage: https://github.com/gshiba/samcut"
 inputs:
+  - id: input_sam
+    type: File
+    doc: Input SAM records without header (read from standard input), e.g. from `samtools view in.bam`
   - id: fields
     type:
       - 'null'
@@ -43,7 +46,10 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samcut:0.1.1--h9948957_3
 stdout: samcut.out
+stdin: $(inputs.input_sam.path)

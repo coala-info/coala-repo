@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: satsuma2_SatsumaSynteny2
+baseCommand: SatsumaSynteny2
 label: satsuma2_SatsumaSynteny2
 doc: "Wrapper around high-sensitivity alignments.\n\nTool homepage: https://github.com/bioinfologics/satsuma2"
 inputs:
@@ -155,7 +155,7 @@ inputs:
       position: 101
       prefix: -q_chunk
   - id: query_fasta
-    type: string
+    type: File
     doc: query fasta sequence
     inputBinding:
       position: 101
@@ -185,7 +185,7 @@ inputs:
       position: 101
       prefix: -t_chunk
   - id: target_fasta
-    type: string
+    type: File
     doc: target fasta sequence
     inputBinding:
       position: 101
@@ -209,6 +209,12 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: SATSUMA2_PATH
+        envValue: /usr/local/bin
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/satsuma2:20161123--1

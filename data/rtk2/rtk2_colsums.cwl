@@ -1,80 +1,35 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rtk
+baseCommand:
+  - rtk2
+  - colsums
 label: rtk2_colsums
 doc: "Reports the column sums of all columns in form of a sorted and an unsorted file.\n\
   \nTool homepage: https://github.com/hildebra/rtk2/"
 inputs:
-  - id: mode
-    type: string
-    doc: 'For rarefaction: mode can be either swap or memory. Swap mode creates temporary
-      files but uses less memory. The speed of both modes is comparable.'
-    inputBinding:
-      position: 1
-  - id: depth
-    type:
-      - 'null'
-      - string
-    doc: Depth or multiple comma seperated depths to rarefy to.
-    inputBinding:
-      position: 102
-      prefix: -d
   - id: input_file
     type: File
     doc: path to an .txt file (tab delimited) to rarefy
     inputBinding:
-      position: 102
+      position: 1
       prefix: -i
-  - id: no_temp_files
-    type:
-      - 'null'
-      - boolean
-    doc: If set, no temporary files will be used when writing rarefaction tables
-      to disk.
-    inputBinding:
-      position: 102
-      prefix: -ns
-  - id: num_diversity_measures
-    type:
-      - 'null'
-      - int
-    doc: Number of times to create diversity measures.
-    inputBinding:
-      position: 102
-      prefix: -r
-  - id: num_rarefied_tables
-    type:
-      - 'null'
-      - int
-    doc: Number of rarefied tables to write.
-    inputBinding:
-      position: 102
-      prefix: -w
-  - id: output
+  - id: output_prefix
     type: string
-    doc: path to a output directory
+    doc: path to a output directory or prefix for output files
     inputBinding:
-      position: 102
+      position: 2
       prefix: -o
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use.
-    inputBinding:
-      position: 102
-      prefix: -t
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir
+  - id: output_prefix_files
     type:
-      - 'null'
-      - Directory
-    doc: path to a output directory
+      type: array
+      items: File
+    doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_prefix)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rtk2:2.11.2--h077b44d_1

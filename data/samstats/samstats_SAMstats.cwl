@@ -35,8 +35,12 @@ outputs:
       printed to stdout if no file is provided
     outputBinding:
       glob: $(inputs.outf_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the statistics when no output file is given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samstats:0.2.2--py_0
+stdout: samstats_SAMstats.out

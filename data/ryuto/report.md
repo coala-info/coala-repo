@@ -1,5 +1,11 @@
 # ryuto CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ryuto | PASS | rewrote CWL from the help (old one had invented flags); 7 transcripts assembled and matched with the guide GTF on real RNA-seq BAM |
+
 ## ryuto
 
 ### Tool Description

@@ -8,11 +8,17 @@ doc: "Concatenates SAV files.\n\nTool homepage: https://github.com/statgen/savvy
 inputs:
   - id: first_sav
     type: File
+    secondaryFiles:
+      - pattern: .s1r
+        required: false
     doc: The first SAV file to concatenate.
     inputBinding:
       position: 1
   - id: second_sav
     type: File
+    secondaryFiles:
+      - pattern: .s1r
+        required: false
     doc: The second SAV file to concatenate.
     inputBinding:
       position: 2
@@ -24,6 +30,12 @@ inputs:
     doc: Additional SAV files to concatenate.
     inputBinding:
       position: 3
+  - id: output_path
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 4
+      prefix: --out
 outputs:
   - id: output_file
     type:
@@ -31,7 +43,7 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savvy:2.1.0--h5b0a936_4

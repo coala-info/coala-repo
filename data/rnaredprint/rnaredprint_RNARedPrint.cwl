@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/../share/RNARedPrint/RNARedPrint
+baseCommand: RNARedPrint
 label: rnaredprint_RNARedPrint
 doc: "Generates valid designs for the RNA secondary structures from the weighted distribution\n\
   \nTool homepage: https://github.com/yannponty/RNARedPrint"
@@ -66,7 +66,7 @@ inputs:
   - id: prefix_path
     type:
       - 'null'
-      - boolean
+      - string
     doc: Prefix path for locating the TD libraries
     inputBinding:
       position: 104

@@ -28,7 +28,7 @@ inputs:
   - id: data_path
     type:
       - 'null'
-      - string
+      - Directory
     doc: Specify directory that contains data files. By default, the program 
       will look in 'data' directory in current directory and the directory where
       the program is located
@@ -55,7 +55,7 @@ inputs:
   - id: infile
     type:
       - 'null'
-      - string
+      - File
     doc: Input file(s) that holds asn data produced by rpsblast with "-outfmt 
       11" switch. If omitted, default to stdin.
     inputBinding:
@@ -102,6 +102,9 @@ inputs:
       position: 103
       prefix: --outfile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the processed result when no output file is given)
   - id: outfile
     type:
       - 'null'
@@ -122,3 +125,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rpsbproc:0.5.1--hd6d6fdc_0
+stdout: rpsbproc.out

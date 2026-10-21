@@ -1,5 +1,11 @@
 # sarscov2summary CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sarscov2summary | Failed | tool bug: --output creates an empty file because the tool always writes summary.json; default run matches the Galaxy expected summary.json |
+
 ## sarscov2summary
 
 ### Tool Description

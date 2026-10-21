@@ -53,7 +53,9 @@ inputs:
       position: 101
       prefix: --scheme
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Path to a output file.
     inputBinding:
       position: 102

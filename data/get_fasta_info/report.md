@@ -12,37 +12,7 @@
 ### Tool Description
 Get basic summary info about fasta formatted files.
 
-### get_fasta_info_get_fastq_info
-
-### Tool Description
-Get basic summary info about fastq formatted files.
-
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0
-- **Homepage**: https://github.com/nylander/get_fasta_info
-- **Package**: https://anaconda.org/channels/bioconda/packages/get_fasta_info/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-get_fastq_info v2.5.0
-
-Get basic summary info about fastq formatted files.
-
-Usage:
-
- get_fastq_info [options] infile(s).
-
-Options:
-
- -h  help
- -V  version
- -n  noverbose
- -q  show avg. read qual (ASCII_BASE=33)
- infile should be in fastq format (gzipped or not).
-```
-
-## Metadata
 - **Docker Image**: quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0
 - **Homepage**: https://github.com/nylander/get_fasta_info
 - **Package**: https://anaconda.org/channels/bioconda/packages/get_fasta_info/overview
@@ -79,5 +49,35 @@ Options:
  -p        print full path to file
 
  infile should be in fasta format.
+```
+
+## get_fasta_info_get_fastq_info
+
+### Tool Description
+Get basic summary info about fastq formatted files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0
+- **Homepage**: https://github.com/nylander/get_fasta_info
+- **Package**: https://anaconda.org/channels/bioconda/packages/get_fasta_info/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+get_fastq_info v2.5.0
+
+Get basic summary info about fastq formatted files.
+
+Usage:
+
+ get_fastq_info [options] infile(s).
+
+Options:
+
+ -h  help
+ -V  version
+ -n  noverbose
+ -q  show avg. read qual (ASCII_BASE=33)
+ infile should be in fastq format (gzipped or not).
 ```
 

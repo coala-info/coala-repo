@@ -1,5 +1,50 @@
 # samtools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| samtools_addreplacerg | PASS |  |
+| samtools_ampliconclip | PASS | synthetic data: primer BED planted on real reads |
+| samtools_ampliconstats | PASS | synthetic data: primer BED planted on real reads |
+| samtools_bedcov | PASS |  |
+| samtools_calmd | PASS |  |
+| samtools_cat | PASS |  |
+| samtools_checksum | PASS |  |
+| samtools_collate | PASS |  |
+| samtools_consensus | PASS |  |
+| samtools_coverage | PASS |  |
+| samtools_cram-size | PASS |  |
+| samtools_depad | PASS | samtools test files (depad.001p.sam padded SAM and padded reference); output matches depad.001u.sam |
+| samtools_depth | PASS |  |
+| samtools_dict | PASS |  |
+| samtools_faidx | PASS |  |
+| samtools_fasta | PASS |  |
+| samtools_fastq | PASS |  |
+| samtools_fixmate | PASS |  |
+| samtools_flags | PASS |  |
+| samtools_flagstat | PASS |  |
+| samtools_fqidx | PASS |  |
+| samtools_head | PASS |  |
+| samtools_idxstats | PASS |  |
+| samtools_import | PASS |  |
+| samtools_index | PASS |  |
+| samtools_markdup | PASS |  |
+| samtools_merge | PASS |  |
+| samtools_mpileup | PASS |  |
+| samtools_phase | PASS |  |
+| samtools_quickcheck | PASS |  |
+| samtools_reference | PASS |  |
+| samtools_reheader | PASS |  |
+| samtools_reset | PASS |  |
+| samtools_samples | PASS |  |
+| samtools_sort | PASS |  |
+| samtools_split | PASS |  |
+| samtools_stats | PASS |  |
+| samtools_targetcut | PASS |  |
+| samtools_tview | PASS |  |
+| samtools_view | PASS |  |
+
 ## samtools_dict
 
 ### Tool Description

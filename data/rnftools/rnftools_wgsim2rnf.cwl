@@ -57,6 +57,12 @@ outputs:
       glob: $(inputs.rnf_fastq_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.wgsim_fastq_1)
+        writable: true
+      - entry: $(inputs.wgsim_fastq_2)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnftools:0.4.0.0--pyhdfd78af_0

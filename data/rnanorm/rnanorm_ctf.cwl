@@ -4,43 +4,49 @@ baseCommand:
   - rnanorm
   - ctf
 label: rnanorm_ctf
-doc: "Convert count data to TPM format.\n\nTool homepage: https://github.com/genialis/RNAnorm"
+doc: "Compute CTF (counts adjusted with TMM factors).\n\nTool homepage: https://github.com/genialis/RNAnorm"
 inputs:
   - id: exp
     type: File
-    doc: Input count data (CSV format, index column is gene ID)
+    doc: Input expression matrix (CSV or TSV, genes in columns)
     inputBinding:
       position: 1
-  - id: a_trim
-    type:
-      - 'null'
-      - boolean
-    doc: 'Trim average counts (default: False)'
-    inputBinding:
-      position: 102
-      prefix: --a-trim
   - id: force
     type:
       - 'null'
       - boolean
-    doc: Overwrite output file if it exists
+    doc: Overwrite already existing output file
     inputBinding:
       position: 102
       prefix: --force
   - id: m_trim
     type:
       - 'null'
-      - boolean
-    doc: 'Trim molecular counts (default: False)'
+      - float
+    doc: Two sided cutoff for M-values
     inputBinding:
       position: 102
-      prefix: --m-trim
+      prefix: --m_trim
+  - id: a_trim
+    type:
+      - 'null'
+      - float
+    doc: Two sided cutoff for A-values
+    inputBinding:
+      position: 102
+      prefix: --a_trim
+  - id: out_path
+    type: string
+    doc: Output file name
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type: File
-    doc: Output file path for TPM data
+    doc: Normalised expression table
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_path)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnanorm:2.2.0--pyhdfd78af_1

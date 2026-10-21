@@ -9,7 +9,7 @@ inputs:
   - id: add_train_in
     type:
       - 'null'
-      - string
+      - Directory
     doc: Second model training folder (output of rnaprot train) for comparing 
       prediction scores of both models on --gt-in positive dataset. Note that if
       dataset features of the two models are not identical, comparison might be 

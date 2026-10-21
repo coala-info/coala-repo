@@ -1,12 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sambamba-slice
+baseCommand:
+  - sambamba
+  - slice
 label: sambamba_slice
 doc: "Fast copy of a region from indexed BAM or FASTA file to a new file\n\nTool homepage:
   https://github.com/biod/sambamba"
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .fai
+        required: false
     doc: Input BAM or FASTA file
     inputBinding:
       position: 1
@@ -36,7 +43,10 @@ inputs:
       position: 103
       prefix: --regions
   - id: output_filename_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Output BAM or FASTA filename
     inputBinding:
       position: 104
       prefix: --output-filename
@@ -48,8 +58,12 @@ outputs:
     doc: Output BAM or FASTA filename
     outputBinding:
       glob: $(inputs.output_filename_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the slice, when no output file is given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sambamba:1.0.1--he614052_4
+stdout: sambamba_slice.out

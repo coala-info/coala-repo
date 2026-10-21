@@ -1,5 +1,11 @@
 # sak CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sak | Failed | tool bug: with two selections (-ss 10-12 -ss 20-23, or -s 10 -s 20) only the first selection is written, although the help example uses several; single selection, infix and revcomp are correct; fixed list options to repeat the flag |
+
 ## sak
 
 ### Tool Description

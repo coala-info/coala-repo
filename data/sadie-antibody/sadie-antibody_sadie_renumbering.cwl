@@ -95,6 +95,8 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sadie-antibody:2.0.0--pyhdfd78af_0

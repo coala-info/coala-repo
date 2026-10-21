@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rvtests_rvtest
+baseCommand: rvtest
 label: rvtests_rvtest
 doc: "RVTESTS is a powerful and flexible software package for association testing
   of genetic variants.\n\nTool homepage: https://github.com/zhanxw/rvtests"
@@ -47,6 +47,7 @@ inputs:
     doc: Specify markers to be conditions (specify range)
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --condition
   - id: covar
     type:
@@ -64,6 +65,7 @@ inputs:
     doc: Specify the column name in covariate file to be included in analysis
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --covar-name
   - id: dosage
     type:
@@ -97,6 +99,7 @@ inputs:
     doc: Specify which genes to test
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --gene
   - id: gene_file
     type:
@@ -167,6 +170,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Input VCF File
     inputBinding:
       position: 101
@@ -322,6 +328,7 @@ inputs:
     doc: List IDs of people that will be included in study
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --peopleExcludeID
   - id: people_include_file
     type:
@@ -339,6 +346,7 @@ inputs:
     doc: List IDs of people that will be included in study
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --peopleIncludeID
   - id: pheno
     type:
@@ -356,6 +364,7 @@ inputs:
     doc: Specify which phenotype column to read by header
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --pheno-name
   - id: qtl
     type:
@@ -381,6 +390,7 @@ inputs:
     doc: Specify some ranges to use, please use chr:begin-end format.
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --rangeList
   - id: set
     type:
@@ -406,6 +416,7 @@ inputs:
     doc: Specify a list to test (for burden tests)
     inputBinding:
       position: 101
+      itemSeparator: ','
       prefix: --setList
   - id: sex
     type:

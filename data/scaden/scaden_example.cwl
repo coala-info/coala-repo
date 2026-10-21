@@ -47,17 +47,27 @@ inputs:
       position: 101
       prefix: --types
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: out_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory
+  - id: counts_file
+    type: File
+    doc: Example scRNA-seq count file (example_counts.txt)
     outputBinding:
-      glob: $(inputs.out)
+      glob: $((inputs.out || '.') + '/example_counts.txt')
+  - id: celltypes_file
+    type: File
+    doc: Example cell type labels (example_celltypes.txt)
+    outputBinding:
+      glob: $((inputs.out || '.') + '/example_celltypes.txt')
+  - id: bulk_file
+    type: File
+    doc: Example bulk RNA-seq data (example_bulk_data.txt)
+    outputBinding:
+      glob: $((inputs.out || '.') + '/example_bulk_data.txt')
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.out ? {class: 'Directory', basename: inputs.out, listing: []} : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scaden:1.1.2--pyhdfd78af_0
-stdout: scaden_example.out

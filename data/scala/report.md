@@ -1,5 +1,11 @@
 # scala CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scala | PASS |  |
+
 ## scala
 
 ### Tool Description

@@ -27,19 +27,19 @@ inputs:
       position: 103
       prefix: --var_cutoff
   - id: processed_path_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Path of processed file. Must end with .h5ad
     inputBinding:
       position: 104
       prefix: --processed_path
 outputs:
   - id: processed_path
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path of processed file. Must end with .h5ad
     outputBinding:
-      glob: $(inputs.processed_path_path)
+      glob: $(inputs.processed_path_path || 'processed.h5ad')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

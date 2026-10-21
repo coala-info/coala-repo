@@ -6,14 +6,14 @@ doc: "CWL E Coyote: A CWL Runner for the Seven Bridges Genomics cloud platform\n
   Tool homepage: https://github.com/kaushik-work/sbg-cwl-runner"
 inputs:
   - id: workflow
-    type: string
+    type: File
     doc: CWL Workflow file
     inputBinding:
       position: 1
   - id: job
     type:
       - 'null'
-      - string
+      - File
     doc: CWL Job file
     inputBinding:
       position: 2

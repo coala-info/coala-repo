@@ -32,6 +32,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: -i
+  - id: output_files_list
+    type:
+      - 'null'
+      - File
+    doc: file containing the name(s) of the output FASTQ file(s); FASTQ file 
+      name(s) should be structured in the same way as the file specified in 
+      option -i.
+    inputBinding:
+      position: 102
+      prefix: -o
+  - id: output_fastq_names
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Names of the output FASTQ files listed in the file given with -o (used to
+      collect them)
+  - id: input_list_members
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTQ files named in the list given with -i (staged next to the working directory
+      so that the names resolve)
   - id: kmer_length
     type:
       - 'null'
@@ -108,24 +132,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
-  - id: output_files_list_path
-    type: string
-    doc: Output or path parameter `output_files_list_path`
-    inputBinding:
-      position: 103
-      prefix: --output-files-list
 outputs:
-  - id: output_files_list
+  - id: output_fastq
     type:
-      - 'null'
-      - File
-    doc: file containing the name(s) of the output FASTQ file(s); FASTQ file 
-      name(s) should be structured in the same way as the file specified in 
-      option -i.
+      type: array
+      items: File
+    doc: Filtered FASTQ files (default names are <input>.rock.fastq; with -o, the names
+      given in the output list file)
     outputBinding:
-      glob: $(inputs.output_files_list_path)
+      glob:
+        - '*.rock.fastq*'
+        - $(inputs.output_fastq_names)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.input_list_members ? inputs.input_list_members : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rock:2.0--h4ac6f70_2

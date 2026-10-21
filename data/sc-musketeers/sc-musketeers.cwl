@@ -616,6 +616,10 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.out_dir_path, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sc-musketeers:0.4.2--pyhdfd78af_0

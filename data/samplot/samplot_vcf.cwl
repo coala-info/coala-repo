@@ -8,9 +8,13 @@ doc: "Plots structural variants from VCF and BAM/CRAM files.\n\nTool homepage: h
 inputs:
   - id: bams
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Space-delimited list of BAM/CRAM file names
     inputBinding:
       position: 101
@@ -18,7 +22,8 @@ inputs:
   - id: command_file
     type:
       - 'null'
-      - File
+      - string
+    default: samplot_vcf_cmds.tmp
     doc: store commands in this file.
     inputBinding:
       position: 101
@@ -52,12 +57,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --filter
     doc: simple filter that samples must meet. Join multiple filters with '&' 
       and specify --filter multiple times for 'or' e.g. DHFFC < 0.7 & SVTYPE = 
       'DEL'
     inputBinding:
       position: 101
-      prefix: --filter
   - id: format
     type:
       - 'null'
@@ -143,7 +149,8 @@ inputs:
   - id: out_dir
     type:
       - 'null'
-      - Directory
+      - string
+    default: samplot-out
     doc: path to write output images
     inputBinding:
       position: 101
@@ -192,9 +199,25 @@ inputs:
       position: 101
       prefix: --vcf
 outputs:
+  - id: out_dir_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory with the plots and index.html
+    outputBinding:
+      glob: $(inputs.out_dir)
+  - id: command_file_out
+    type:
+      - 'null'
+      - File
+    doc: File with the plotting commands
+    outputBinding:
+      glob: $(inputs.command_file)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samplot:1.3.0--pyh5e36f6f_1

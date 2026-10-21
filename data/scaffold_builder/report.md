@@ -1,5 +1,11 @@
 # scaffold_builder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scaffold_builder_scaffold_builder.py | PASS |  |
+
 ## scaffold_builder_scaffold_builder.py
 
 ### Tool Description

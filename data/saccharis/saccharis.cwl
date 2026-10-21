@@ -96,7 +96,7 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: You can set a predefined output directory with this flag, either a full
       path or a subfolder of the CWD. Default is <Current Working Directory 
       (CWD)>/output. If you specify an absolute file path the end directory will
@@ -219,6 +219,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory with all result files
+    outputBinding:
+      glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/saccharis:2.0.5--pyh7e72e81_0

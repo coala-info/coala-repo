@@ -14,8 +14,8 @@ inputs:
   - id: antismash_output
     type:
       - 'null'
-      - boolean
-    doc: Write results in antiSMASH 6.0 JSON specification output
+      - string
+    doc: Write results in antiSMASH 6.0 JSON specification output (True or False)
     inputBinding:
       position: 102
       prefix: --antismash_output
@@ -58,16 +58,16 @@ inputs:
   - id: meta
     type:
       - 'null'
-      - boolean
-    doc: Prodigal option meta
+      - string
+    doc: Prodigal option meta (True or False)
     inputBinding:
       position: 102
       prefix: --meta
   - id: minimal
     type:
       - 'null'
-      - boolean
-    doc: Minimal output in a gff3 file
+      - string
+    doc: Minimal output in a gff3 file (True or False)
     inputBinding:
       position: 102
       prefix: --minimal
@@ -82,8 +82,8 @@ inputs:
   - id: refined
     type:
       - 'null'
-      - boolean
-    doc: Annotate high probability borders
+      - string
+    doc: Annotate high probability borders (True or False)
     inputBinding:
       position: 102
       prefix: --refined
@@ -96,7 +96,9 @@ inputs:
       position: 102
       prefix: --score
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output file [default outdir/SEQUENCE_FILE.sanntis.gff]
     inputBinding:
       position: 103

@@ -1,5 +1,11 @@
 # sankoff CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sankoff | PASS | Ran on the tool's own test tree, alignment and cost matrix; ancestral sequences and labelled tree are correct |
+
 ## sankoff
 
 ### Tool Description

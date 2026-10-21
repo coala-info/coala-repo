@@ -15,6 +15,11 @@ inputs:
       plot file, the "--log10" flag must be specified.
     inputBinding:
       position: 1
+  - id: output_file_path
+    type: string
+    doc: Name of the file to which output is written (PostScript, SVG or text)
+    inputBinding:
+      position: 2
   - id: description_config
     type:
       - 'null'
@@ -100,11 +105,11 @@ inputs:
 outputs:
   - id: output_file
     type: File
-    doc: The name of a file to which output will be written. Depending on the 
-      options selected, this may be one of the following file types. 1) A 
-      Postscript image file. 2) An SVG image file. 3) A plain text file.
+    doc: Probability plot (PostScript, SVG or text)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnastructure:6.5--hde5307d_0

@@ -18,8 +18,8 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: Comma-separated list of filenames to merge
+        items: File
+    doc: List of .h5ad files to merge (joined with commas on the command line)
     inputBinding:
       position: 101
       prefix: --files
@@ -33,17 +33,13 @@ inputs:
       position: 101
       prefix: --prefix
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+  - id: merged_file
+    type: File
+    doc: Merged training dataset (<prefix>.h5ad)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $((inputs.output_prefix || 'data') + '.h5ad')
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scaden:1.1.2--pyhdfd78af_0
-stdout: scaden_merge.out

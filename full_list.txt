@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 12493; PASS: 9743; Failed: 1512; Not completed: 1238
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 12612; PASS: 9838; Failed: 1535; Not completed: 1239
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -12257,11 +12257,68 @@ rscape	rscape_R-scape	PASS
 rseg	rseg	PASS	BED reads work; the -bam option stops with 'reads not sorted' on a coordinate-sorted BAM
 rseg	rseg_deadzones	PASS	
 rseg	rseg_rseg-diff	PASS	
+rsem	rsem_convert-sam-for-rsem	PASS	
+rsem	rsem_rsem-bam2readdepth	PASS	
+rsem	rsem_rsem-bam2wig	PASS	wiggle file has per-base coverage matching the read depth output; --no-fractional-weight also works
+rsem	rsem_rsem-build-read-index	PASS	
+rsem	rsem_rsem-calculate-credibility-intervals	Failed	image problem: crashes with a segmentation fault (exit 139); rsem-calculate-expression --calc-ci fails the same way
 rsem	rsem_rsem-calculate-expression	PASS	tested in --alignments mode (counts close to RSEM gold); read mode needs bowtie/bowtie2/STAR/HISAT2, which are not in the image
+rsem	rsem_rsem-control-fdr	Not completed	needs a valid rsem-run-ebseq result, which the image cannot produce (PPDE is 0 for every gene); the Perl script ran and gave a header-only file
+rsem	rsem_rsem-extract-reference-transcripts	PASS	transcripts, chrlist, grp and ti files are identical to the rsem-prepare-reference output
+rsem	rsem_rsem-for-ebseq-calculate-clustering-info	PASS	
+rsem	rsem_rsem-for-ebseq-find-DE	Failed	image problem: the usual two-condition mode crashes because the image's EBSeq 2.4.0 output has no C1Mean field, which the rsem script reads; only the three-condition mode works (tested on EBSeq's example count matrix, synthetic data).
+rsem	rsem_rsem-for-ebseq-generate-ngvector-from-clustering-info	PASS	
+rsem	rsem_rsem-gen-transcript-plots	PASS	
 rsem	rsem_rsem-generate-data-matrix	PASS	
+rsem	rsem_rsem-get-unique	PASS	2208 uniquely aligned pairs kept, matching the bowtie2 unique count
+rsem	rsem_rsem-gff3-to-gtf	Failed	image problem: the script starts with 'env python' and the image has no python
+rsem	rsem_rsem-parse-alignments	PASS	
+rsem	rsem_rsem-plot-model	PASS	
+rsem	rsem_rsem-plot-transcript-wiggles	PASS	
 rsem	rsem_rsem-prepare-reference	PASS	reference files match the RSEM gold files; the aligner-index options need bowtie/bowtie2/STAR/HISAT2, which are not in the image
+rsem	rsem_rsem-preref	PASS	
+rsem	rsem_rsem-refseq-extract-primary-assembly	Failed	image problem: the script starts with 'env python' and the image has no python
+rsem	rsem_rsem-run-ebseq	Failed	image problem: EBSeq 2.4.0 in the image does not fit rsem-for-ebseq-find-DE; two conditions crash, more than two give PPDE 0 for every gene
+rsem	rsem_rsem-run-em	PASS	
+rsem	rsem_rsem-run-gibbs	PASS	
+rsem	rsem_rsem-sam-validator	PASS	
+rsem	rsem_rsem-scan-for-paired-end-reads	PASS	
+rsem	rsem_rsem-simulate-reads	Failed	image problem: rsem-simulate-reads crashes with a segmentation fault (exit 139) on a model learned from real data
+rsem	rsem_rsem-synthesis-reference-transcripts	PASS	
+rsem	rsem_rsem-tbam2gbam	Failed	tool bug: exits 255 on a valid paired transcript BAM (two mates aligned to two different transcripts); rsem-calculate-expression --output-genome-bam fails the same way
+rseqc	rseqc_FPKM-UQ.py	Failed	image problem: htseq-count is not installed in the image, so the tool stops before it counts reads
+rseqc	rseqc_FPKM_count.py	PASS	
+rseqc	rseqc_RNA_fragment_size.py	PASS	
+rseqc	rseqc_RPKM_saturation.py	PASS	
+rseqc	rseqc_bam2fq.py	PASS	
+rseqc	rseqc_bam2wig.py	Failed	image problem: wigToBigWig is not in the image, so the bigWig output is silently not written (the tool prints 'command not found' and exits 0); the wiggle output itself is identical to the Galaxy expected file.
 rseqc	rseqc_bam_stat.py	PASS	
+rseqc	rseqc_clipping_profile.py	PASS	
+rseqc	rseqc_deletion_profile.py	PASS	
+rseqc	rseqc_divide_bam.py	PASS	
 rseqc	rseqc_geneBody_coverage.py	PASS	
+rseqc	rseqc_geneBody_coverage2.py	PASS	
+rseqc	rseqc_infer_experiment.py	PASS	
+rseqc	rseqc_inner_distance.py	PASS	
+rseqc	rseqc_insertion_profile.py	PASS	
+rseqc	rseqc_junction_annotation.py	PASS	
+rseqc	rseqc_junction_saturation.py	PASS	
+rseqc	rseqc_mismatch_profile.py	PASS	
+rseqc	rseqc_normalize_bigwig.py	PASS	
+rseqc	rseqc_overlay_bigwig.py	PASS	
+rseqc	rseqc_read_GC.py	PASS	
+rseqc	rseqc_read_NVC.py	PASS	
+rseqc	rseqc_read_distribution.py	PASS	
+rseqc	rseqc_read_duplication.py	PASS	
+rseqc	rseqc_read_hexamer.py	PASS	
+rseqc	rseqc_read_quality.py	PASS	
+rseqc	rseqc_sc_bamStat.py	PASS	
+rseqc	rseqc_sc_editMatrix.py	Failed	image problem: R package pheatmap is missing in the image, so the heatmap files are not written (csv tables are).
+rseqc	rseqc_sc_seqLogo.py	PASS	
+rseqc	rseqc_sc_seqQual.py	Failed	image problem: R package pheatmap is missing in the image, so the quality heatmap is not written (csv tables are).
+rseqc	rseqc_split_bam.py	PASS	
+rseqc	rseqc_split_paired_bam.py	PASS	
+rseqc	rseqc_tin.py	PASS	
 rsidx	rsidx_index	PASS	
 rsidx	rsidx_search	PASS	
 rsrq	rsrq_enqueue	PASS	
@@ -12279,13 +12336,39 @@ rsv-typer	rsv-typer	PASS
 rsync	rsync	PASS	no bioconda image exists; DockerRequirement set to instrumentisto/rsync-ssh:alpine3.23-r3 (pinned); archive copy of a real FASTA and FASTQ with an exclude pattern is correct
 rtax	rtax	Not completed	rtax needs the licensed usearch program, which is not in the image ('usearch not found in path'); CWL flag fixed (-o)
 rtg-tools	rtg-tools_rtg_bgzip	PASS	compress then decompress of a real VCF gives the identical file
+rtg-tools	rtg-tools_rtg_bndeval	PASS	real simulated SV VCF decomposed to 334 breakends: compared with itself gives 334 TP, 0 FP, 0 FN; note: EXPR. score expressions crash with a null JavaScript processor
+rtg-tools	rtg-tools_rtg_cgsim	PASS	synthetic data by design: 100 simulated CG v1 read pairs of 35 bp, read by sdf2sam
+rtg-tools	rtg-tools_rtg_childsim	PASS	synthetic data by design: child from simulated parents, 849 records with 0 Mendelian violations; child SDF written
+rtg-tools	rtg-tools_rtg_cnveval	PASS	real cnvkit CNV calls: against themselves 344 TP, 0 FP, 0 FN; deletions-only calls vs all gives precision 0.885 and sensitivity 0.404, consistent with the counts; region BED was derived from the VCF intervals
+rtg-tools	rtg-tools_rtg_denovosim	PASS	synthetic data by design: derived sample has 18 new sites over 849 (20 requested); derived SDF written
+rtg-tools	rtg-tools_rtg_extract	PASS	real GATK calls on chr21 (indexed): region chr21:6M-12M returned the 2 records an independent count finds, plus the header
+rtg-tools	rtg-tools_rtg_fastqtrim	PASS	100 real SARS-CoV-2 reads: trim 5 from start and 10 from end gave every read 15 bases shorter with matching sequence
 rtg-tools	rtg-tools_rtg_format	PASS	real chr21 FASTA (nf-core) became an SDF with 46,709,983 residues, as in the FASTA
+rtg-tools	rtg-tools_rtg_genomesim	PASS	synthetic data by design: 2 contigs of 637 and 763 bp (within 500-800); --length 300 --length 400 and --freq also checked
 rtg-tools	rtg-tools_rtg_index	PASS	tabix index of the block-gzipped VCF was written and used by vcfeval --region
 rtg-tools	rtg-tools_rtg_mendelian	PASS	real trio VCF with PED: 96 violations in 3250 checked records (own check of fully called records: 86); template is N-only contigs with the VCF contig names, since no GRCh37 SDF is small
+rtg-tools	rtg-tools_rtg_pedfilter	PASS	real PED (3 members) was converted to a VCF header with 3 samples and the child-parent line
+rtg-tools	rtg-tools_rtg_pedsamplesim	PASS	synthetic data by design: trio PED gave a 3-sample VCF of 876 records, summary and per-sample SDFs
+rtg-tools	rtg-tools_rtg_pedstats	PASS	real PED: --families lists father, mother and one child as in the file
+rtg-tools	rtg-tools_rtg_popsim	PASS	synthetic data by design: 849 population variants on the chr22 slice, bgzip VCF plus tabix index, used by samplesim
+rtg-tools	rtg-tools_rtg_readsim	PASS	synthetic data by design from real chr22 slice: 100 illumina_pe pairs, left 50 bp and right 60 bp, read by sdf2fastq
+rtg-tools	rtg-tools_rtg_rocplot	PASS	ROC files from a real vcfeval run gave a valid PNG and SVG plot (checked the PNG: title, baseline total 404, two curves)
+rtg-tools	rtg-tools_rtg_samplereplay	PASS	synthetic data by design: replayed SDF is identical in sequence to the samplesim --output-sdf of the same sample
+rtg-tools	rtg-tools_rtg_samplesim	PASS	synthetic data by design: father/mother genotypes from popsim VCF (849 records); --output-sdf gave a 2-haplotype SDF of 80027 residues
+rtg-tools	rtg-tools_rtg_sdf2fasta	PASS	chain: readsim reads (100 pairs) gave 2 gz FASTA files; simulated 2-contig genome gave contigs of 637 and 763 bp; --names selected simctg1 only
+rtg-tools	rtg-tools_rtg_sdf2fastq	PASS	readsim paired SDF gave left/right FASTQ with 100 reads each, lengths 50 and 60, as requested
+rtg-tools	rtg-tools_rtg_sdf2sam	PASS	cgsim SDF (100 simulated 35 bp pairs) gave a BAM with 200 records of length 35
 rtg-tools	rtg-tools_rtg_sdfstats	PASS	reports 1 sequence, 46,709,983 residues and 39 N blocks for the formatted chr21
+rtg-tools	rtg-tools_rtg_sdfsubseq	PASS	chr21:6456942+10 from the real chr21 SDF gives GTTGCGGTAC, the same as the FASTA
+rtg-tools	rtg-tools_rtg_sdfsubset	PASS	ids 10-14 of an SDF of 100 real sarscov2 reads gave an SDF with those 5 reads (names match the FASTQ lines 11-15)
+rtg-tools	rtg-tools_rtg_svdecompose	PASS	real simulated chr21 SV VCF (136 records): 61 inversions became breakend pairs, DUPs kept, 334 BND records written
+rtg-tools	rtg-tools_rtg_vcf2rocplot	PASS	real vcfeval annotated calls and baseline VCFs: SNP ROC has 403 baseline and 729 call variants, and 184 TP at score 99 as in vcfeval
+rtg-tools	rtg-tools_rtg_vcfannotate	PASS	real GATK calls: all 733 records kept, AN/AC filled and a computed QD annotation added (header declares it)
+rtg-tools	rtg-tools_rtg_vcfdecompose	PASS	real dbSNP chr22 slice with its 40 kb chr22 SDF: 7 complex records decomposed, 2174 to 2186 records, CAG>CTC became two SNPs
 rtg-tools	rtg-tools_rtg_vcfeval	PASS	real GATK calls vs their GQ>=50 SNP subset: 403 TP, 0 FP, 330 FN as expected; --region chr21:6M-20M gives 10 TP
 rtg-tools	rtg-tools_rtg_vcffilter	PASS	snps-only plus GQ>=50 kept 403 of 733 real calls; independent count matches (397 single-ALT SNPs plus 6 multi-allelic SNP sites)
 rtg-tools	rtg-tools_rtg_vcfmerge	PASS	merged two real single-sample GATK VCFs (74 + 733) into a 2-sample VCF with 807 records
+rtg-tools	rtg-tools_rtg_vcfsplit	PASS	real trio VCF split into 3 per-sample files; the first sample has 2364 non-reference records, as in an independent count of the input
 rtg-tools	rtg-tools_rtg_vcfstats	PASS	real GATK calls: 733 records, 729 SNPs, 3 insertions, 1 deletion, as counted from the VCF
 rtg-tools	rtg-tools_rtg_vcfsubset	PASS	removed INFO and QUAL and kept only GT for all 733 real records
 rtk	rtk_colsums	PASS	
@@ -12310,8 +12393,27 @@ rust-proseg	rust-proseg_proseg	PASS
 rust-proseg	rust-proseg_proseg-to-baysor	PASS	
 rustynuc	rustynuc	PASS	oxoG calls and VCF filtering match the repo tests; a 3-column BED is rejected by the tool (needs a name column)
 rustyread	rustyread_simulate	PASS	about 5x of reads simulated with real badread nanopore2020 model files; model names (default) need Python badread, so model files are passed as inputs
+rvtests	rvtests_bgen2vcf	Failed	tool bug: --siteFile is ignored and --peopleIncludeID/--peopleExcludeID lists are not split; plain conversion matches the expected VCF
+rvtests	rvtests_bgenFileInfo	PASS	
+rvtests	rvtests_combineKinship	PASS	
+rvtests	rvtests_kinshipDecompose	PASS	
+rvtests	rvtests_plink2vcf	PASS	
 rvtests	rvtests_rvtest	PASS	fixed baseCommand rvtest; single wald beta matches independent least squares; burden and kernel tests ran
+rvtests	rvtests_vcf2geno	Failed	tool bug: --peopleExcludeID with several IDs is silently ignored (one ID works); the genotype table itself matches the VCF
 rvtests	rvtests_vcf2kinship	PASS	fixed baseCommand vcf2kinship
+rvtests	rvtests_vcf2ld_gene	Failed	tool bug: --siteFile is silently ignored and --peopleExcludeID with several IDs is ignored; the gene covariance matches a numpy check
+rvtests	rvtests_vcf2ld_neighbor	Failed	tool bug: --siteID and --siteFile never match (the position is appended as a character), so the LD table is empty
+rvtests	rvtests_vcf2ld_window	Failed	tool bug: --siteFile is silently ignored and --peopleExcludeID with several IDs is ignored; the window covariance matches a numpy check
+rvtests	rvtests_vcf2plink	Failed	tool bug: --minCallRate never filters (missing calls are not counted) and --peopleExcludeID with several IDs is ignored; the bed file matches the VCF
+rvtests	rvtests_vcfAnnoSummaryLite	Failed	tool bug: --rangeList and --rangeFile are silently ignored (range code is commented out); the summary counts are correct
+rvtests	rvtests_vcfConcordance	Failed	tool bug: --rangeList crashes and --rangeFile is not applied to the comparison VCFs; the plain concordance is correct
+rvtests	rvtests_vcfExtractSite	PASS	
+rvtests	rvtests_vcfIndvSummary	PASS	
+rvtests	rvtests_vcfPair	Failed	tool bug: --peopleExcludeID with several IDs is silently ignored (one ID works); the pair counts match an independent count
+rvtests	rvtests_vcfPeek	Failed	tool bug: --peopleExcludeID with several IDs is silently ignored (one ID works); the VCF summary is correct
+rvtests	rvtests_vcfSummary	PASS	
+rvtests	rvtests_vcfSummaryLite	Failed	tool bug: --rangeList and --rangeFile are silently ignored (range code is commented out); the summary counts are correct
+rvtests	rvtests_vcfVariantSummaryLite	Failed	tool bug: --rangeList and --rangeFile are silently ignored (range code is commented out); the summary counts are correct
 ryuto	ryuto	PASS	rewrote CWL from the help (old one had invented flags); 7 transcripts assembled and matched with the guide GTF on real RNA-seq BAM
 s3gof3r	s3gof3r_gof3r_cp	Not completed	needs AWS credentials: gof3r stops with 'no AWS keys found' even for a public bucket (1000genomes)
 s3gof3r	s3gof3r_gof3r_get	Not completed	needs AWS credentials: gof3r stops with 'no AWS keys found' even for a public bucket (1000genomes)
@@ -12446,7 +12548,24 @@ sat-bsa	sat-bsa_Long_reads_alignment	Failed	image problem: the Sat-BSA perl help
 sat-bsa	sat-bsa_SVs_detection	Failed	image problem: the Sat-BSA perl helper scripts use /usr/bin/perl, which is missing in the image (bad interpreter)
 sativa	sativa_sativa.py	PASS	Ran the repo example alignment and taxonomy; .mis file lists mislabeled sequences; wrapper now creates the output directory and sets a writable tmpdir
 satrap	satrap	Not completed	no real SOLiD color-space reads or double-encoded assembly available as test data; the tool ships none
+satsuma2	satsuma2_BlockDisplaySatsuma	PASS	
+satsuma2	satsuma2_ChainMatches	PASS	
+satsuma2	satsuma2_ChromosomePaint	PASS	
+satsuma2	satsuma2_ColaAlignSatsuma	PASS	
+satsuma2	satsuma2_FilterGridSeeds	PASS	
+satsuma2	satsuma2_HomologyByXCorr	PASS	
+satsuma2	satsuma2_KMatch	PASS	
+satsuma2	satsuma2_MatchDump	PASS	
+satsuma2	satsuma2_MatchesByFeature	PASS	synthetic data: match ranges planted on real yeast chromosome I GFF3
+satsuma2	satsuma2_MergeScaffoldsBySynteny	PASS	
+satsuma2	satsuma2_MergeXCorrMatches	PASS	
+satsuma2	satsuma2_MicroSyntenyPlot	PASS	
+satsuma2	satsuma2_OrderOrientBySynteny	PASS	
+satsuma2	satsuma2_ReverseSatsumaOut	PASS	
 satsuma2	satsuma2_SatsumaSynteny2	Failed	image problem: satsuma_run.sh fails under the image's busybox sh (bad number, eval error), so the KMatch jobs never run and the tool hangs; fixed command name, File inputs and SATSUMA2_PATH
+satsuma2	satsuma2_SatsumaToFASTA	PASS	
+satsuma2	satsuma2_SatsumaToGFF	PASS	
+satsuma2	satsuma2_SortSatsuma	PASS	
 savage	savage	PASS	Ran the repo HIV example in de novo and reference-guided modes; contigs are about 9.5 kb (genome length), 2 contigs in reference mode as in the repo example; fixed command name savage, dropped .fai, stage reference writable
 savana	savana_classify	PASS	Classified the nf-core savana chr21 breakpoint VCF; CLASS added to all 29 records and somatic VCF written
 savana	savana_cna	Not completed	the only test data is a chr22-only reference; savana 1.3.6 looks up bare chromosome names (22) unless chr1 is in the reference, so the run stops with KeyError

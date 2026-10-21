@@ -4,9 +4,35 @@
 
 | Tool | Result | Reason |
 |---|---|---|
+| rsem_convert-sam-for-rsem | PASS |  |
+| rsem_rsem-bam2readdepth | PASS |  |
+| rsem_rsem-bam2wig | PASS | wiggle file has per-base coverage matching the read depth output; --no-fractional-weight also works |
+| rsem_rsem-build-read-index | PASS |  |
+| rsem_rsem-calculate-credibility-intervals | Failed | image problem: crashes with a segmentation fault (exit 139); rsem-calculate-expression --calc-ci fails the same way |
 | rsem_rsem-calculate-expression | PASS | tested in --alignments mode (counts close to RSEM gold); read mode needs bowtie/bowtie2/STAR/HISAT2, which are not in the image |
+| rsem_rsem-control-fdr | Not completed | needs a valid rsem-run-ebseq result, which the image cannot produce (PPDE is 0 for every gene); the Perl script ran and gave a header-only file |
+| rsem_rsem-extract-reference-transcripts | PASS | transcripts, chrlist, grp and ti files are identical to the rsem-prepare-reference output |
+| rsem_rsem-for-ebseq-calculate-clustering-info | PASS |  |
+| rsem_rsem-for-ebseq-find-DE | Failed | image problem: the usual two-condition mode crashes because the image's EBSeq 2.4.0 output has no C1Mean field, which the rsem script reads; only the three-condition mode works (tested on EBSeq's example count matrix, synthetic data). |
+| rsem_rsem-for-ebseq-generate-ngvector-from-clustering-info | PASS |  |
+| rsem_rsem-gen-transcript-plots | PASS |  |
 | rsem_rsem-generate-data-matrix | PASS |  |
+| rsem_rsem-get-unique | PASS | 2208 uniquely aligned pairs kept, matching the bowtie2 unique count |
+| rsem_rsem-gff3-to-gtf | Failed | image problem: the script starts with 'env python' and the image has no python |
+| rsem_rsem-parse-alignments | PASS |  |
+| rsem_rsem-plot-model | PASS |  |
+| rsem_rsem-plot-transcript-wiggles | PASS |  |
 | rsem_rsem-prepare-reference | PASS | reference files match the RSEM gold files; the aligner-index options need bowtie/bowtie2/STAR/HISAT2, which are not in the image |
+| rsem_rsem-preref | PASS |  |
+| rsem_rsem-refseq-extract-primary-assembly | Failed | image problem: the script starts with 'env python' and the image has no python |
+| rsem_rsem-run-ebseq | Failed | image problem: EBSeq 2.4.0 in the image does not fit rsem-for-ebseq-find-DE; two conditions crash, more than two give PPDE 0 for every gene |
+| rsem_rsem-run-em | PASS |  |
+| rsem_rsem-run-gibbs | PASS |  |
+| rsem_rsem-sam-validator | PASS |  |
+| rsem_rsem-scan-for-paired-end-reads | PASS |  |
+| rsem_rsem-simulate-reads | Failed | image problem: rsem-simulate-reads crashes with a segmentation fault (exit 139) on a model learned from real data |
+| rsem_rsem-synthesis-reference-transcripts | PASS |  |
+| rsem_rsem-tbam2gbam | Failed | tool bug: exits 255 on a valid paired transcript BAM (two mates aligned to two different transcripts); rsem-calculate-expression --output-genome-bam fails the same way |
 
 ## rsem_rsem-prepare-reference
 
@@ -1405,6 +1431,820 @@ Usage: rsem-generate-data-matrix sampleA.[alleles/genes/isoforms].results sample
 All result files should have the same file type. The 'expected_count' columns of every result file are extracted to form the data matrix.
 ```
 
+
+## rsem_rsem-parse-alignments
+
+### Tool Description
+Parse a read-name sorted SAM/BAM/CRAM alignment file into RSEM's intermediate files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage : rsem-parse-alignments refName imdName statName alignF read_type [-t fai_file] [-tag tagName] [-q]
+```
+
+## rsem_rsem-build-read-index
+
+### Tool Description
+Build a read index (.ridx) for each read file, for RSEM's EM step.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage : rsem-build-read-index gap hasQ quiet readFile1, readFile2, ...
+```
+
+## rsem_rsem-run-em
+
+### Tool Description
+Run RSEM's expectation-maximization algorithm on the intermediate files and write isoform and gene estimates.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage : rsem-run-em refName read_type sampleName imdName statName [-p #Threads] [-b samInpF has_fai? [fai_file]] [-q] [--gibbs-out] [--sampling] [--seed seed] [--append-names]
+
+  refName: reference name
+  read_type: 0 single read without quality score; 1 single read with quality score; 2 paired-end read without quality score; 3 paired-end read with quality score.
+  sampleName: sample's name, including the path
+  sampleToken: sampleName excludes the path
+  -p: number of threads which user wants to use. (default: 1)
+  -b: produce bam format output file. (default: off)
+  -q: set it quiet
+  --gibbs-out: generate output file used by Gibbs sampler. (default: off)
+  --sampling: sample each read from its posterior distribution when BAM file is generated. (default: off)
+  --seed uint32: the seed used for the BAM sampling. (default: off)
+  --append-names: append transcript_name/gene_name when available. (default: off)
+// model parameters should be in imdName.mparams.
+```
+
+## rsem_rsem-run-gibbs
+
+### Tool Description
+Run RSEM's Gibbs sampler on the files made by rsem-run-em and write posterior mean estimates and count samples.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-run-gibbs reference_name imdName statName BURNIN NSAMPLES GAP [-p #Threads] [--seed seed] [--pseudo-count pseudo_count] [--prior file] [-q]
+
+Format of the prior file:
+- One isoform's prior per line
+- Priors must be in the same order as in the .ti file
+- Priors for those to-be-omitted isoforms must be included as well
+- Comments can be added after prior separated by space(s)
+```
+
+## rsem_rsem-scan-for-paired-end-reads
+
+### Tool Description
+Scan a SAM/BAM/CRAM file and write a BAM file of its paired-end reads.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-scan-for-paired-end-reads number_of_threads input.[sam/bam/cram] output.bam
+```
+
+## rsem_rsem-synthesis-reference-transcripts
+
+### Tool Description
+Build the RSEM transcript reference files (.transcripts.fa, .ti, .grp) from transcript FASTA files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: synthesisRef refName quiet hasMappingFile<0,no;1,yes;2,allele-specific> [mappingFile] reference_file_1 [reference_file_2 ...]
+```
+
+## rsem_rsem-preref
+
+### Tool Description
+Pad poly(A) tails onto the reference transcripts and write the RSEM reference sequence files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+USAGE : rsem-preref refFastaF polyAChoice refName [-l polyALen] [-f exceptionF] [-q]
+
+  refFastaF: a FASTA format file contains all reference transcripts
+  polyAChoice: choice for polyA tail padding.It is a number from {0,1,2}
+    0: pad polyA tail
+    1: do not pad polyA tail at all
+    2: pad polyA tail for all references but those in exceptionF
+  -l: polyALen: specify the length of polyA tail you want to pad. Default is 100
+  -f: exceptionF: file contains a list of exception reference ids. IDs starts from 1. Must set if polyAChoice = 2
+  -q: quiet
+```
+
+## rsem_rsem-refseq-extract-primary-assembly
+
+### Tool Description
+Extract the primary assembly sequences from an NCBI RefSeq top-level assembly FASTA file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-refseq-extract-primary-assembly input_top_level_assembly.fna output_primary_assembly.fna
+```
+
+## rsem_rsem-for-ebseq-calculate-clustering-info
+
+### Tool Description
+Calculate k-mer clustering information for the transcripts of a reference FASTA file (EBSeq input).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-for-ebseq-calculate-clustering-info k input_reference_fasta_file output_file
+```
+
+## rsem_rsem-for-ebseq-find-DE
+
+### Tool Description
+Find differentially expressed genes or isoforms with EBSeq from a data matrix of expected counts.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-for-ebseq-find-DE path ngvector_file data_matrix_file output_file number_of_replicate_for_condition_1 number_of_replicate_for_condition_2 ...
+```
+
+## rsem_rsem-for-ebseq-generate-ngvector-from-clustering-info
+
+### Tool Description
+Generate the EBSeq NgVector file from the clustering information file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-for-ebseq-generate-ngvector-from-clustering-info input_file output_file
+```
+
+## rsem_rsem-plot-transcript-wiggles
+
+### Tool Description
+Generate PDF wiggle plots from transcript or gene ids.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Invalid number of arguments!
+NAME
+    rsem-plot-transcript-wiggles - Generate PDF wiggle plots from transcript
+    or gene ids
+
+SYNOPSIS
+     rsem-plot-transcript-wiggles [options] sample_name input_list output_plot_file
+
+ARGUMENTS
+    sample_name
+        The name of the sample analyzed.
+
+    input_list
+        A list of transcript ids or gene ids. But it cannot be a mixture of
+        transcript & gene ids. Each id occupies one line without extra
+        spaces.
+
+    output_plot_file
+        The file name of the pdf file which contains all plots.
+
+OPTIONS
+    --gene-list
+        The input-list is a list of gene ids. (Default: off)
+
+    --transcript-list
+        The input-list is a list of transcript ids. This option can only be
+        turned on if allele-specific expression is calculated. (Default:
+        off)
+
+    --show-unique
+        Show the wiggle plots as stacked bar plots. See description section
+        for details. (Default: off)
+
+    -p/--num-threads <int>
+        Set the number of threads we can use. (Default: 1)
+
+    --memory-per-thread <string>
+        Set the maximum allowable memory per thread. <string> represents the
+        memory and accepts suffices 'K/M/G'. (Default: 1G)
+
+    -h/--help
+        Show help information.
+
+DESCRIPTION
+    This program generates transcript wiggle plots and outputs them in a pdf
+    file. This program can accept either a list of transcript ids or gene
+    ids (if transcript to gene mapping information is provided) and has two
+    modes of showing wiggle plots. If '--show-unique' is not specified, the
+    wiggle plot for each transcript is a histogram where each position has
+    the expected read depth at this position as its height. If
+    '--show-unique' is specified, for each transcript a stacked bar plot is
+    generated. For each position, the read depth of unique reads, which have
+    only one alignment, is showed in black. The read depth of multi-reads,
+    which align to more than one places, is showed in red on top of the read
+    depth of unique reads.This program will use some files RSEM generated
+    previouslly. So please do not delete/move any file
+    'rsem-calculate-expression' generated. If allele-specific expression is
+    calculated, the basic unit for plotting is an allele-specific transcript
+    and plots can be grouped by either transcript ids (--transcript-list) or
+    gene ids (--gene-list).
+
+OUTPUT
+    output_plot_file
+        This is a pdf file containing all plots generated. If a list of
+        transcript ids is provided, each page display at most 6 plots in 3
+        rows and 2 columns. If gene ids are provided, each page display a
+        gene. The gene's id is showed at the top and all its transcripts'
+        wiggle plots are showed in this page. The arrangement of plots is
+        determined automatically. For each transcript wiggle plot, the
+        transcript id is displayed as title. x-axis is position in the
+        transcript and y-axis is read depth. If allele-specific expression
+        is calculated, the basin unit becomes an allele-specific transcript
+        and transcript ids and gene ids can be used to group allele-specific
+        transcripts.
+
+    sample_name.transcript.sorted.bam and sample_name.transcript.readdepth
+        If these files do not exist, 'rsem-plot-transcript-wiggles' will
+        automatically generate them.
+
+    sample_name.uniq.transcript.bam, sample_name.uniq.transcript.sorted.bam
+    and sample_name.uniq.transcript.readdepth
+        If '--show-unique' option is specified and these files do not exist,
+        'rsem-plot-transcript-wiggles' will automatically generate them.
+
+EXAMPLES
+    Suppose sample_name and output_plot_file are set to
+    'mmliver_single_quals' and 'output.pdf' respectively. input_list is set
+    to 'transcript_ids.txt' if transcript ids are provided, and is set to
+    'gene_ids.txt' if gene ids are provided.
+
+    1) Transcript ids are provided and we just want normal wiggle plots:
+
+     rsem-plot-transcript-wiggles mmliver_single_quals transcript_ids.txt output.pdf
+
+    2) Gene ids are provided and we want to show stacked bar plots:
+
+     rsem-plot-transcript-wiggles --gene-list --show-unique mmliver_single_quals gene_ids.txt output.pdf
+```
+
+## rsem_convert-sam-for-rsem
+
+### Tool Description
+Make a RSEM compatible BAM file from a SAM/BAM/CRAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+NAME
+    convert-sam-for-rsem - Make a RSEM compatible BAM file.
+
+SYNOPSIS
+     convert-sam-for-rsem [options] <input.sam/input.bam/input.cram> output_file_name
+
+ARGUMENTS
+    input.sam/input.bam/input.cram
+        The SAM/BAM/CRAM file generated by user's aligner. We require this
+        file contains the header section.
+
+    output_file_name
+        The output name for the converted file. 'convert-sam-for-rsem' will
+        output a BAM with the name 'output_file_name.bam'.
+
+OPTIONS
+    -p/--num-threads <int>
+        Set the number of threads to be used for converting. (Default: 1)
+
+    --memory-per-thread <string>
+        Set the maximum allowable memory per thread. <string> represents the
+        memory and accepts suffices 'K/M/G'. (Default: 1G)
+
+    -h/--help
+        Show help information.
+
+DESCRIPTION
+    This program converts the SAM/BAM/CRAM file generated by user's aligner
+    into a BAM file which RSEM can process. However, users should make sure
+    their aligners use 'reference_name.idx.fa' generated by
+    'rsem-prepare-reference' as their references and output header sections.
+    After the conversion, this program will call 'rsem-sam-validator' to
+    validate the resulting BAM file.
+
+    Note: You do not need to run this script if `rsem-sam-validator' reports
+    that your SAM/BAM/CRAM file is valid.
+
+EXAMPLES
+    Suppose input is set to 'input.sam' and output file name is "output"
+
+     convert-sam-for-rsem input.sam output
+
+    We will get a file called 'output.bam' as output.
+```
+
+## rsem_rsem-bam2wig
+
+### Tool Description
+Generate a wiggle (read coverage) file from a sorted SAM/BAM/CRAM alignment file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Number of arguments is not correct!
+Usage: rsem-bam2wig sorted_alignment_file wig_output wiggle_name [--no-fractional-weight]
+sorted_alignment_file	: Can be either in SAM/BAM/CRAM format, must be sorted
+wig_output		: Output wiggle file's name, e.g. output.wig
+wiggle_name		: the name of this wiggle plot
+--no-fractional-weight	: If this is set, RSEM will not look for "ZW" tag and each alignment appeared in the BAM file has weight 1. Set this if your BAM file is not generated by RSEM. Please note that this option must be at the end of the command line.
+```
+
+## rsem_rsem-bam2readdepth
+
+### Tool Description
+Compute the read depth of every transcript from a sorted BAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-bam2readdepth sorted_bam_input readdepth_output
+```
+
+## rsem_rsem-sam-validator
+
+### Tool Description
+Validate that a SAM/BAM/CRAM file can be used as input for RSEM.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-sam-validator <input.sam/input.bam/input.cram>
+```
+
+## rsem_rsem-plot-model
+
+### Tool Description
+Plot the model files learned by rsem-calculate-expression into a PDF file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-plot-model sample_name output_plot_file
+```
+
+## rsem_rsem-simulate-reads
+
+### Tool Description
+Simulate RNA-Seq reads from a learned RSEM model and isoform expression levels.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-simulate-reads reference_name estimated_model_file estimated_isoform_results theta0 N output_name [--seed seed] [-q]
+
+Parameters:
+
+reference_name: The name of RSEM references, which should be already generated by 'rsem-prepare-reference'
+estimated_model_file: This file describes how the RNA-Seq reads will be sequenced given the expression levels. It determines what kind of reads will be simulated (single-end/paired-end, w/o quality score) and includes parameters for fragment length distribution, read start position distribution, sequencing error models, etc. Normally, this file should be learned from real data using 'rsem-calculate-expression'. The file can be found under the 'sample_name.stat' folder with the name of 'sample_name.model'
+estimated_isoform_results: This file contains expression levels for all isoforms recorded in the reference. It can be learned using 'rsem-calculate-expression' from real data. The corresponding file users want to use is 'sample_name.isoforms.results'. If simulating from user-designed expression profile is desired, start from a learned 'sample_name.isoforms.results' file and only modify the 'TPM' column. The simulator only reads the TPM column. But keeping the file format the same is required. If the RSEM references built are aware of allele-specific transcripts, 'sample_name.alleles.results' should be used instead.
+theta0: This parameter determines the fraction of reads that are coming from background "noise" (instead of from a transcript). It can also be estimated using 'rsem-calculate-expression' from real data. Users can find it as the first value of the third line of the file 'sample_name.stat/sample_name.theta'.
+N: The total number of reads to be simulated. If 'rsem-calculate-expression' is executed on a real data set, the total number of reads can be found as the 4th number of the first line of the file 'sample_name.stat/sample_name.cnt'.
+output_name: Prefix for all output files.
+--seed seed: Set seed for the random number generator used in simulation. The seed should be a 32-bit unsigned integer.
+-q: Set it will stop outputting intermediate information.
+
+Outputs:
+
+output_name.sim.isoforms.results, output_name.sim.genes.results: Expression levels estimated by counting where each simulated read comes from.
+output_name.sim.alleles.results: Allele-specific expression levels estimated by counting where each simulated read comes from.
+
+output_name.fa if single-end without quality score;
+output_name.fq if single-end with quality score;
+output_name_1.fa & output_name_2.fa if paired-end without quality score;
+output_name_1.fq & output_name_2.fq if paired-end with quality score.
+
+Format of the header line: Each simulated read's header line encodes where it comes from. The header line has the format:
+
+	{>/@}_rid_dir_sid_pos[_insertL]
+
+{>/@}: Either '>' or '@' must appear. '>' appears if FASTA files are generated and '@' appears if FASTQ files are generated
+rid: Simulated read's index, numbered from 0
+dir: The direction of the simulated read. 0 refers to forward strand ('+') and 1 refers to reverse strand ('-')
+sid: Represent which transcript this read is simulated from. It ranges between 0 and M, where M is the total number of transcripts. If sid=0, the read is simulated from the background noise. Otherwise, the read is simulated from a transcript with index sid. Transcript sid's transcript name can be found in the 'transcript_id' column of the 'sample_name.isoforms.results' file (at line sid + 1, line 1 is for column names)
+pos: The start position of the simulated read in strand dir of transcript sid. It is numbered from 0
+insertL: Only appear for paired-end reads. It gives the insert length of the simulated read.
+
+Example:
+
+Suppose we want to simulate 50 millon single-end reads with quality scores and use the parameters learned from [Example](#example). In addition, we set theta0 as 0.2 and output_name as 'simulated_reads'. The command is:
+
+	rsem-simulate-reads /ref/mouse_125 mmliver_single_quals.stat/mmliver_single_quals.model mmliver_single_quals.isoforms.results 0.2 50000000 simulated_reads
+```
+
+## rsem_rsem-run-ebseq
+
+### Tool Description
+Wrapper for EBSeq to perform differential expression analysis on two or more conditions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+NAME
+    rsem-run-ebseq - Wrapper for EBSeq to perform differential expression
+    analysis.
+
+SYNOPSIS
+    rsem-run-ebseq [options] data_matrix_file conditions output_file
+
+ARGUMENTS
+    data_matrix_file
+        This file is a m by n matrix. m is the number of genes/transcripts
+        and n is the number of total samples. Each element in the matrix
+        represents the expected count for a particular gene/transcript in a
+        particular sample. Users can use 'rsem-generate-data-matrix' to
+        generate this file from expression result files.
+
+    conditions
+        Comma-separated list of values representing the number of replicates
+        for each condition. For example, "3,3" means the data set contains 2
+        conditions and each condition has 3 replicates. "2,3,3" means the
+        data set contains 3 conditions, with 2, 3, and 3 replicates for each
+        condition respectively.
+
+    output_file
+        Output file name.
+
+OPTIONS
+    --ngvector <file>
+        This option provides the grouping information required by EBSeq for
+        isoform-level differential expression analysis. The file can be
+        generated by 'rsem-generate-ngvector'. Turning this option on is
+        highly recommended for isoform-level differential expression
+        analysis. (Default: off)
+
+    -h/--help
+        Show help information.
+
+DESCRIPTION
+    This program is a wrapper over EBSeq. It performs differential
+    expression analysis and can work on two or more conditions. All
+    genes/transcripts and their associated statistcs are reported in one
+    output file. This program does not control false discovery rate and call
+    differential expressed genes/transcripts. Please use 'rsem-control-fdr'
+    to control false discovery rate after this program is finished.
+
+OUTPUT
+    output_file
+        This file reports the calculated statistics for all
+        genes/transcripts. It is written as a matrix with row and column
+        names. The row names are the genes'/transcripts' names. The column
+        names are for the reported statistics.
+
+        If there are only 2 different conditions among the samples, four
+        statistics (columns) will be reported for each gene/transcript. They
+        are "PPEE", "PPDE", "PostFC" and "RealFC". "PPEE" is the posterior
+        probability (estimated by EBSeq) that a gene/transcript is equally
+        expressed. "PPDE" is the posterior probability that a
+        gene/transcript is differentially expressed. "PostFC" is the
+        posterior fold change (condition 1 over condition2) for a
+        gene/transcript. It is defined as the ratio between posterior mean
+        expression estimates of the gene/transcript for each condition.
+        "RealFC" is the real fold change (condition 1 over condition2) for a
+        gene/transcript. It is the ratio of the normalized within condition
+        1 mean count over normalized within condition 2 mean count for the
+        gene/transcript. Fold changes are calculated using EBSeq's 'PostFC'
+        function. The genes/transcripts are reported in descending order of
+        their "PPDE" values.
+
+        If there are more than 2 different conditions among the samples, the
+        output format is different. For differential expression analysis
+        with more than 2 conditions, EBSeq will enumerate all possible
+        expression patterns (on which conditions are equally expressed and
+        which conditions are not). Suppose there are k different patterns,
+        the first k columns of the output file give the posterior
+        probability of each expression pattern is true. Patterns are defined
+        in a separate file, 'output_file.pattern'. The k+1 column gives the
+        maximum a posteriori (MAP) expression pattern for each
+        gene/transcript. The k+2 column gives the posterior probability that
+        not all conditions are equally expressed (column name "PPDE"). The
+        genes/transcripts are reported in descending order of their "PPDE"
+        column values. For details on how EBSeq works for more than 2
+        conditions, please refer to EBSeq's manual.
+
+    output_file.normalized_data_matrix
+        This file contains the median normalized version of the input data
+        matrix.
+
+    output_file.pattern
+        This file is only generated when there are more than 2 conditions.
+        It defines all possible expression patterns over the conditions
+        using a matrix with names. Each row of the matrix refers to a
+        different expression pattern and each column gives the expression
+        status of a different condition. Two conditions are equally
+        expressed if and only if their statuses are the same.
+
+    output_file.condmeans
+        This file is only generated when there are more than 2 conditions.
+        It gives the normalized mean count value for each gene/transcript at
+        each condition. It is formatted as a matrix with names. Each row
+        represents a gene/transcript and each column represent a condition.
+        The order of genes/transcripts is the same as 'output_file'. This
+        file can be used to calculate fold changes between conditions which
+        users are interested in.
+
+EXAMPLES
+    1) We're interested in isoform-level differential expression analysis
+    and there are two conditions. Each condition has 5 replicates. We have
+    already collected the data matrix as 'IsoMat.txt' and generated ngvector
+    as 'ngvector.ngvec':
+
+     rsem-run-ebseq --ngvector ngvector.ngvec IsoMat.txt 5,5 IsoMat.results
+
+    The results will be in 'IsoMat.results' and
+    'IsoMat.results.normalized_data_matrix' contains the normalized data
+    matrix.
+
+    2) We're interested in gene-level analysis and there are 3 conditions.
+    The first condition has 3 replicates and the other two has 4 replicates
+    each. The data matrix is named as 'GeneMat.txt':
+
+     rsem-run-ebseq GeneMat.txt 3,4,4 GeneMat.results
+
+    Four files, 'GeneMat.results', 'GeneMat.results.normalized_data_matrix',
+    'GeneMat.results.pattern', and 'GeneMat.results.condmeans', will be
+    generated.
+```
+
+## rsem_rsem-control-fdr
+
+### Tool Description
+Filter EBSeq output for statistical significance at a given false discovery rate.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+NAME
+    rsem-control-fdr - Filter EBSeq output for statistical significance.
+
+SYNOPSIS
+    rsem-control-fdr [options] input_file fdr_rate output_file
+
+ARGUMENTS
+    input_file
+        This should be the main result file generated by 'rsem-run-ebseq',
+        which contains all genes/transcripts and their associated
+        statistics.
+
+    fdr_rate
+        The desire false discovery rate (FDR).
+
+    output_file
+        This file is a subset of the 'input_file'. It only contains the
+        genes/transcripts called as differentially expressed (DE). When more
+        than 2 conditions exist, DE is defined as not all conditions are
+        equally expressed. Because statistical significance does not
+        necessarily mean biological significance, users should also refer to
+        the fold changes to decide which genes/transcripts are biologically
+        significant. When more than two conditions exist, this file will not
+        contain fold change information and users need to calculate it from
+        'input_file.condmeans' by themselves.
+
+OPTIONS
+    --hard-threshold
+        Use hard threshold method to control FDR. If this option is set,
+        only those genes/transcripts with their PPDE >= 1 - fdr_rate are
+        called as DE. (Default: on)
+
+    --soft-threshold
+        Use soft threshold method to control FDR. If this option is set,
+        this program will try to report as many genes/transcripts as
+        possible, as long as their average PPDE >= 1 - fdr_rate. This option
+        is equivalent to use EBSeq's 'crit_fun' for FDR control. (Default:
+        off)
+
+    -h/--help
+        Show help information.
+
+DESCRIPTION
+    This program controls the false discovery rate and reports
+    differentially expressed genes/transcripts.
+
+EXAMPLES
+    We assume that we have 'GeneMat.results' as input. We want to control
+    FDR at 0.05 using hard threshold method and name the output file as
+    'GeneMat.de.txt':
+
+     rsem-control-fdr GeneMat.results 0.05 GeneMat.de.txt
+```
+
+## rsem_rsem-gen-transcript-plots
+
+### Tool Description
+Generate read depth plots (PDF) for a list of transcripts, alleles or genes from RSEM read depth files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-gen-transcript-plots sample_name input_list is_allele_specific id_type<0,allele;1,isoform;2,gene> show_uniq output_plot_file
+```
+
+## rsem_rsem-get-unique
+
+### Tool Description
+Extract the uniquely aligned reads from an unsorted transcript BAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-get-unique number_of_threads unsorted_transcript_bam_input bam_output
+```
+
+## rsem_rsem-gff3-to-gtf
+
+### Tool Description
+Convert a GFF3 annotation file to a GTF file that rsem-prepare-reference can use.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: rsem-gff3-to-gtf [-h] [--make-genes-as-transcripts]
+                        [--RNA-patterns <patterns>]
+                        [--extract-sequences <output.fa>]
+                        input_GFF3_file output_GTF_file
+
+positional arguments:
+  input_GFF3_file       Input GFF3 file.
+  output_GTF_file       Output GTF file.
+
+options:
+  --make-genes-as-transcripts
+                        GFF3 file does not contain transcripts, make each gene as a transcript.
+  --RNA-patterns <patterns>
+                        Types of RNAs to be extracted, e.g. mRNA,rRNA
+  --extract-sequences <output.fa>
+                        If GFF3 file contains reference sequences, extract them to the specified file
+```
+
+## rsem_rsem-extract-reference-transcripts
+
+### Tool Description
+Extract transcript sequences and RSEM transcript information from genome FASTA files and a GTF file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-extract-reference-transcripts refName quiet gtfF sources hasMappingFile [mappingFile] chromosome_file_1 [chromosome_file_2 ...]
+```
+
+## rsem_rsem-tbam2gbam
+
+### Tool Description
+Convert a transcript-coordinate BAM file into a genome-coordinate BAM file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-tbam2gbam reference_name unsorted_transcript_bam_input genome_bam_output [-p number_of_threads]
+```
+
+## rsem_rsem-calculate-credibility-intervals
+
+### Tool Description
+Calculate credibility intervals of the expression estimates from Gibbs sampler count vectors.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12
+- **Homepage**: https://deweylab.github.io/RSEM/
+- **Package**: https://anaconda.org/channels/bioconda/packages/rsem/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: rsem-calculate-credibility-intervals reference_name imdName statName confidence nCV nSpC nMB [-p #Threads] [--seed seed] [--pseudo-count pseudo_count] [-q]
+```
 
 ## Metadata
 - **Skill**: generated

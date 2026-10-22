@@ -1,5 +1,11 @@
 # shigatyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shigatyper_shigatyper.py | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

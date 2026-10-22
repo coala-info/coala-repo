@@ -54,12 +54,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: -data-info
+  - id: sample_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Sequence files named in the sample list. They are staged in the working directory so the relative names in the list resolve.
   - id: input_file
     type: File
-    doc: 'input file of samples. One sample per line: id1: filename1...'
+    doc: 'input file of samples. One sample per line: id1: filename1... File names are resolved relative to the folder of this file, so it is staged in the working directory next to the sample files.'
     inputBinding:
       position: 101
       prefix: -in
+      valueFrom: $(self.basename)
   - id: keep_tmp
     type:
       - 'null'
@@ -185,7 +192,7 @@ inputs:
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -out
 outputs:
   - id: output_dir
     type:
@@ -196,6 +203,10 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_file)
+      - $(inputs.sample_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/simka:1.5.3--h077b44d_5

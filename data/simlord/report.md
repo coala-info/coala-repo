@@ -1,5 +1,11 @@
 # simlord CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| simlord | PASS | note: a reference with a long FASTA header crashes the SAM step (read name over 254 characters); --no-sam works |
+
 ## simlord
 
 ### Tool Description

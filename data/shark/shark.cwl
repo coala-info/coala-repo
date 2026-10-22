@@ -39,8 +39,6 @@ inputs:
   - id: reference
     type: File
     doc: reference sequences in FASTA format (can be gzipped)
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -97,6 +95,9 @@ inputs:
       position: 103
       prefix: --out2
 outputs:
+  - id: associations
+    type: stdout
+    doc: Read to gene associations (standard output)
   - id: out1
     type:
       - 'null'
@@ -111,6 +112,7 @@ outputs:
     doc: second output sample in FASTQ
     outputBinding:
       glob: $(inputs.out2_path)
+stdout: shark.ssv
 requirements:
   - class: InlineJavascriptRequirement
 hints:

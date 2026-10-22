@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: shiver_shiver_align_contigs.sh
+baseCommand: shiver_align_contigs.sh
 label: shiver_shiver_align_contigs.sh
 doc: "Aligns contigs to references based on blast hits. In normal usage this script
   requires 4 arguments: the initialisation directory, the configuration file, a fasta
@@ -29,18 +29,15 @@ inputs:
     doc: A sample ID ('SID') used for naming the output from this script.
     inputBinding:
       position: 4
-  - id: test_config
-    type:
-      - 'null'
-      - boolean
-    doc: Test whether the configuration file is OK and exit.
-    inputBinding:
-      position: 105
-      prefix: --test
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type: File[]
+    doc: Output files named after the sample ID (.blast file, contigs with hits, and their alignment to the references)
+    outputBinding:
+      glob: $(inputs.sample_id)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shiver:1.7.3--hdfd78af_0

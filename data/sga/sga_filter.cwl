@@ -4,15 +4,28 @@ baseCommand:
   - sga
   - filter
 label: sga_filter
-doc: "Remove reads from a data set.\nThe currently available filters are removing
-  exact-match duplicates\nand removing reads with low-frequency k-mers.\nAutomatically
-  rebuilds the FM-index without the discarded reads.\n\nTool homepage: https://github.com/jts/sga"
+doc: 'Remove reads from a data set.
+
+  The currently available filters are removing exact-match duplicates
+
+  and removing reads with low-frequency k-mers.
+
+  Automatically rebuilds the FM-index without the discarded reads.
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: readsfile
     type: File
     doc: Input reads file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - ^.bwt
+      - ^.sai
+      - ^.rbwt?
+      - ^.rsai?
   - id: homopolymer_check
     type:
       - 'null'
@@ -73,8 +86,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'use PREFIX for the names of the index files (default: prefix of the input
-      file)'
+    doc: 'use PREFIX for the names of the index files (default: prefix of the input file)'
     inputBinding:
       position: 102
       prefix: --prefix
@@ -82,9 +94,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: "use occurrence array sample rate of N in the FM-index. Higher values use
-      significantly\nless memory at the cost of higher runtime. This value must be
-      a power of 2 (default: 128)"
+    doc: 'use occurrence array sample rate of N in the FM-index. Higher values use significantly
+
+      less memory at the cost of higher runtime. This value must be a power of 2 (default: 128)'
     inputBinding:
       position: 102
       prefix: --sample-rate
@@ -92,8 +104,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: when removing duplicates, only remove substring sequences, not 
-      full-length matches
+    doc: when removing duplicates, only remove substring sequences, not full-length matches
     inputBinding:
       position: 102
       prefix: --substring-only
@@ -121,14 +132,50 @@ inputs:
       prefix: --outfile
 outputs:
   - id: outfile
+    type: File
+    doc: Reads that passed the filters.
+    outputBinding:
+      glob: $(inputs.outfile_path)
+  - id: discarded
     type:
       - 'null'
       - File
-    doc: 'write the qc-passed reads to FILE (default: READSFILE.filter.pass.fa)'
+    doc: Reads removed by the filters.
     outputBinding:
-      glob: $(inputs.outfile_path)
+      glob: $(inputs.outfile_path.replace(/\.[^.]*$/, "")).discard.fa
+  - id: bwt
+    type:
+      - 'null'
+      - File
+    doc: Forward BWT of the passed reads (rebuilt by the tool).
+    outputBinding:
+      glob: $(inputs.outfile_path.replace(/\.[^.]*$/, "")).bwt
+  - id: rbwt
+    type:
+      - 'null'
+      - File
+    doc: Reverse BWT of the passed reads.
+    outputBinding:
+      glob: $(inputs.outfile_path.replace(/\.[^.]*$/, "")).rbwt
+  - id: sai
+    type:
+      - 'null'
+      - File
+    doc: Sampled suffix array of the passed reads.
+    outputBinding:
+      glob: $(inputs.outfile_path.replace(/\.[^.]*$/, "")).sai
+  - id: rsai
+    type:
+      - 'null'
+      - File
+    doc: Reverse sampled suffix array of the passed reads.
+    outputBinding:
+      glob: $(inputs.outfile_path.replace(/\.[^.]*$/, "")).rsai
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.readsfile)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

@@ -1,5 +1,13 @@
 # smartmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smartmap_SmartMap | PASS |  |
+| smartmap_SmartMapPrep | PASS |  |
+| smartmap_SmartMapRNAPrep | PASS |  |
+
 ## smartmap_SmartMapPrep
 
 ### Tool Description

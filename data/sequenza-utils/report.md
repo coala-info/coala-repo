@@ -1,5 +1,16 @@
 # sequenza-utils CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sequenza-utils_bam2seqz | Failed | image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source |
+| sequenza-utils_gc_wiggle | Failed | image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source |
+| sequenza-utils_pileup2acgt | Failed | image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source |
+| sequenza-utils_seqz_binning | Failed | image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source |
+| sequenza-utils_seqz_merge | Failed | image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source |
+| sequenza-utils_snp2seqz | Failed | image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source |
+
 ## sequenza-utils_bam2seqz
 
 ### Tool Description

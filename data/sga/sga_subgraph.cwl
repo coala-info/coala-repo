@@ -4,8 +4,10 @@ baseCommand:
   - sga
   - subgraph
 label: sga_subgraph
-doc: "Extract the subgraph around the sequence with ID from an asqg file.\n\nTool
-  homepage: https://github.com/jts/sga"
+doc: 'Extract the subgraph around the sequence with ID from an asqg file.
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: id
     type: string
@@ -21,8 +23,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: the size of the subgraph to extract, all vertices that are at most N 
-      hops away from the root will be included
+    doc: the size of the subgraph to extract, all vertices that are at most N hops away from the root will be included
     inputBinding:
       position: 103
       prefix: --size
@@ -39,7 +40,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: --out
 outputs:
   - id: output_file
     type:

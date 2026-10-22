@@ -1,5 +1,11 @@
 # sibsim4 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sibsim4 | PASS |  |
+
 ## sibsim4
 
 ### Tool Description

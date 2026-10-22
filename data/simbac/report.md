@@ -1,5 +1,11 @@
 # simbac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| simbac_SimBac | PASS | note: option -g (break log with taxa) segfaults; the other options work |
+
 ## simbac_SimBac
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # smashpp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smashpp | PASS |  |
+
 ## smashpp
 
 ### Tool Description

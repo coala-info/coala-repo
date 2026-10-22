@@ -1,5 +1,11 @@
 # simwalk2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| simwalk2 | Not completed | no usable test data: the SimWalk2 example files need registration on the distribution site; the fixed BATCH2.DAT control file is staged and read |
+
 ## simwalk2
 
 ### Tool Description

@@ -4,20 +4,27 @@ baseCommand:
   - sga
   - overlap
 label: sga_overlap
-doc: "Compute pairwise overlap between all the sequences in READS\n\nTool homepage:
-  https://github.com/jts/sga"
+doc: 'Compute pairwise overlap between all the sequences in READS
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: reads_file
     type: File
     doc: Input file containing sequences
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
   - id: error_rate
     type:
       - 'null'
       - float
-    doc: 'the maximum error rate allowed to consider two sequences aligned (default:
-      exact matches only)'
+    doc: 'the maximum error rate allowed to consider two sequences aligned (default: exact matches only)'
     inputBinding:
       position: 102
       prefix: --error-rate
@@ -25,8 +32,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: force the use of the exact-mode irreducible block algorithm. This is 
-      faster but requires that no substrings are present in the input set.
+    doc: force the use of the exact-mode irreducible block algorithm. This is faster but requires that no substrings are present in the input set.
     inputBinding:
       position: 102
       prefix: --exact
@@ -50,8 +56,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'use PREFIX for the names of the index files (default: prefix of the input
-      file)'
+    doc: 'use PREFIX for the names of the index files (default: prefix of the input file)'
     inputBinding:
       position: 102
       prefix: --prefix
@@ -59,9 +64,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: sample the symbol counts every N symbols in the FM-index. Higher values
-      use significantly less memory at the cost of higher runtime. This value 
-      must be a power of 2
+    doc: sample the symbol counts every N symbols in the FM-index. Higher values use significantly less memory at the cost of higher runtime. This value must be a power of 2
     inputBinding:
       position: 102
       prefix: --sample-rate
@@ -69,11 +72,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: force the seed length to be LEN. By default, the seed length in the 
-      overlap step is calculated to guarantee all overlaps with --error-rate 
-      differences are found. This option removes the guarantee but will be 
-      (much) faster. As SGA can tolerate some missing edges, this option may be 
-      preferable for some data sets.
+    doc: force the seed length to be LEN. By default, the seed length in the overlap step is calculated to guarantee all overlaps with --error-rate differences are found. This option removes the guarantee but will be (much) faster. As SGA can tolerate some missing edges, this option may be preferable for some data sets.
     inputBinding:
       position: 102
       prefix: --seed-length
@@ -81,9 +80,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: force the seed stride to be LEN. This parameter will be ignored unless 
-      --seed-length is specified (see above). This parameter defaults to the 
-      same value as --seed-length
+    doc: force the seed stride to be LEN. This parameter will be ignored unless --seed-length is specified (see above). This parameter defaults to the same value as --seed-length
     inputBinding:
       position: 102
       prefix: --seed-stride
@@ -115,7 +112,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: asqg
+    type:
+      - 'null'
+      - File
+    doc: Overlap graph in ASQG format.
+    outputBinding:
+      glob: '*.asqg.gz'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1
 stdout: sga_overlap.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.reads_file)

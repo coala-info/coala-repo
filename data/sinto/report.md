@@ -1,5 +1,19 @@
 # sinto CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sinto_addtags | PASS |  |
+| sinto_barcode | PASS |  |
+| sinto_blocks | PASS |  |
+| sinto_filterbarcodes | PASS |  |
+| sinto_fragments | PASS |  |
+| sinto_nametotag | PASS |  |
+| sinto_tagtoname | PASS |  |
+| sinto_tagtorg | PASS |  |
+| sinto_tagtotag | PASS |  |
+
 ## sinto_filterbarcodes
 
 ### Tool Description

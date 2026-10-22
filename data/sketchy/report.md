@@ -1,5 +1,15 @@
 # sketchy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sketchy_check | PASS |  |
+| sketchy_info | PASS |  |
+| sketchy_predict | PASS |  |
+| sketchy_shared | PASS |  |
+| sketchy_sketch | PASS |  |
+
 ## sketchy_check
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # setsimilaritysearch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| setsimilaritysearch_all_pairs.py | PASS | same four pairs and similarities as the repo example output; only the order inside two pairs differs |
+
 ## setsimilaritysearch_all_pairs.py
 
 ### Tool Description

@@ -11,6 +11,8 @@ inputs:
     doc: One or more fastq alignment files
     inputBinding:
       position: 1
+      prefix: -fastq
+      valueFrom: $(self.map(function(f) { return f.basename; }))
   - id: annotate
     type:
       - 'null'
@@ -30,7 +32,7 @@ inputs:
   - id: genome
     type:
       - 'null'
-      - string
+      - File
     doc: Genome for annotation
     inputBinding:
       position: 102
@@ -82,9 +84,8 @@ inputs:
       position: 102
       prefix: -trimkey
   - id: out_path
-    type:
-      - 'null'
-      - string
+    type: string
+    default: ShortCut_output
     doc: output directory
     inputBinding:
       position: 103
@@ -113,6 +114,8 @@ outputs:
       glob: $(inputs.ssout_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.fastq)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shortcut:1.0--hdfd78af_0

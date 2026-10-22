@@ -1,5 +1,11 @@
 # sistr_cmd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sistr_cmd | PASS |  |
+
 ## sistr_cmd
 
 ### Tool Description

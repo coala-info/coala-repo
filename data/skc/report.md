@@ -1,5 +1,11 @@
 # skc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| skc | PASS |  |
+
 ## skc
 
 ### Tool Description

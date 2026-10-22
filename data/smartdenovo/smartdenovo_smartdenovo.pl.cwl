@@ -2,13 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: smartdenovo.pl
 label: smartdenovo_smartdenovo.pl
-doc: "Smartdenovo is a de novo assembler for long reads.\n\nTool homepage: https://github.com/ruanjue/smartdenovo"
+doc: "Generate a Makefile for the SMARTdenovo assembly pipeline (long reads, ultra-fast de novo assembler).\n\nTool homepage: https://github.com/ruanjue/smartdenovo"
 inputs:
   - id: reads_fa
     type: File
     doc: Input FASTA file of reads
     inputBinding:
-      position: 1
+      position: 103
   - id: engine
     type:
       - 'null'
@@ -16,7 +16,7 @@ inputs:
     doc: engine of overlaper, compressed kmer overlapper(zmo), dot matrix 
       overlapper(dmo)
     inputBinding:
-      position: 102
+      position: 101
       prefix: -e
   - id: generate_consensus
     type:
@@ -24,7 +24,7 @@ inputs:
       - int
     doc: generate consensus
     inputBinding:
-      position: 102
+      position: 101
       prefix: -c
   - id: kmer_length
     type:
@@ -32,7 +32,7 @@ inputs:
       - int
     doc: k-mer length for overlapping
     inputBinding:
-      position: 102
+      position: 101
       prefix: -k
   - id: min_read_length
     type:
@@ -40,7 +40,7 @@ inputs:
       - int
     doc: min read length
     inputBinding:
-      position: 102
+      position: 101
       prefix: -J
   - id: output_prefix
     type:
@@ -48,7 +48,7 @@ inputs:
       - string
     doc: output prefix
     inputBinding:
-      position: 102
+      position: 101
       prefix: -p
   - id: threads
     type:
@@ -56,19 +56,13 @@ inputs:
       - int
     doc: number of threads
     inputBinding:
-      position: 102
+      position: 101
       prefix: -t
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
-    outputBinding:
-      glob: $(inputs.output_prefix)*
+    doc: Makefile text for the assembly pipeline (smartdenovo.pl prints it to 
+      standard output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8

@@ -1,5 +1,11 @@
 # showali CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| showali | Not completed | interactive terminal viewer (full-screen TUI): cannot be tested non-interactively |
+
 ## showali
 
 ### Tool Description

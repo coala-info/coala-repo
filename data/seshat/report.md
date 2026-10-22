@@ -1,5 +1,14 @@
 # seshat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seshat_find-in-gmail | Not completed | needs the external Seshat web service and a Gmail account with Google OAuth credentials |
+| seshat_merge | PASS | synthetic data: real SARS-CoV-2 VCF with a hand-made annotation table; merge output carries the Seshat INFO fields |
+| seshat_round-trip | Not completed | needs the external Seshat web service and a Gmail account with Google OAuth credentials |
+| seshat_upload-vcf | Not completed | needs the external Seshat web service and a Gmail account with Google OAuth credentials |
+
 ## seshat_find-in-gmail
 
 ### Tool Description

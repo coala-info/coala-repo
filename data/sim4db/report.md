@@ -1,5 +1,11 @@
 # sim4db CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sim4db | PASS |  |
+
 ## sim4db
 
 ### Tool Description

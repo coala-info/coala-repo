@@ -1,15 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sfold.pl
+baseCommand: sfold
 label: sfold
 doc: "Sfold Executable Code for Academic Users, Version 2.2-20220519\n\nTool homepage:
   https://github.com/Ding-RNA-Lab/Sfold"
 inputs:
   - id: sequence_file
     type: File
-    doc: sequence file
+    doc: sequence file (must come after the options)
     inputBinding:
-      position: 1
+      position: 200
   - id: antisense_oligo_length
     type:
       - 'null'
@@ -31,7 +31,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not obliterate sample.out to save space
+    doc: Do not obliterate sample.out to save space (default is to remove it)
     inputBinding:
       position: 102
       prefix: -e
@@ -56,8 +56,8 @@ inputs:
   - id: run_clustering
     type:
       - 'null'
-      - boolean
-    doc: Run clustering on the sampled ensemble
+      - int
+    doc: Run clustering on the sampled ensemble (0 or 1). Default 1.
     inputBinding:
       position: 102
       prefix: -a
@@ -71,17 +71,15 @@ inputs:
       prefix: -i
   - id: output_directory_path
     type: string
-    doc: Output or path parameter `output_directory_path`
+    doc: Name of directory to which output files are written. It is created if it does not
+      exist.
     inputBinding:
       position: 103
-      prefix: --output-directory
+      prefix: -o
 outputs:
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
-    doc: Name of directory to which output files are written. Directory will be 
-      created if it does not already exist. Existing files will be overwritten.
+    type: Directory
+    doc: Output directory with the sampled structures, clusters and base pair probabilities.
     outputBinding:
       glob: $(inputs.output_directory_path)
 requirements:

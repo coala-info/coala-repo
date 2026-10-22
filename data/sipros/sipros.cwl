@@ -68,6 +68,10 @@ outputs:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({"class": "Directory", "basename": inputs.output_directory_path, "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sipros:5.0.1--hdfd78af_1

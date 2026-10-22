@@ -1,5 +1,23 @@
 # smartdenovo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smartdenovo_pairaln | PASS |  |
+| smartdenovo_smartdenovo.pl | PASS |  |
+| smartdenovo_wtclp | PASS |  |
+| smartdenovo_wtcns | PASS |  |
+| smartdenovo_wtcyc | PASS |  |
+| smartdenovo_wtext | PASS |  |
+| smartdenovo_wtgbo | PASS |  |
+| smartdenovo_wtlay | PASS |  |
+| smartdenovo_wtmer | PASS |  |
+| smartdenovo_wtmsa | PASS |  |
+| smartdenovo_wtobt | PASS |  |
+| smartdenovo_wtpre | PASS |  |
+| smartdenovo_wtzmo | PASS |  |
+
 ## smartdenovo_smartdenovo.pl
 
 ### Tool Description
@@ -337,6 +355,277 @@ Example:
 $> wtmsa -i wt.lay -o wt.lay.cns.fa 2>log.msa
 ```
 
+
+## smartdenovo_wtpre
+
+### Tool Description
+WTPRE: Prepare raw reads for assembly
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8
+- **Homepage**: https://github.com/ruanjue/smartdenovo
+- **Package**: https://anaconda.org/channels/bioconda/packages/smartdenovo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+WTPRE: Prepare raw reads for assembly
+SMARTdenovo: Ultra-fast de novo assembler for high noisy long reads
+Author: Jue Ruan <ruanjue@gmail.com>
+Version: 1.0
+Usage: wtpre [options] <raw_reads_file:fq/fa>
+Options:
+ -o <string> Output of processed reads, [-]
+ -f          Force overwrite output file
+ -L          Keep all subreads in a well, default: the longest one
+ -J <int>    Jack knife of read length, [0]
+ -c <int>    Clip <-c> bases at both ends, [0]
+ -p <string> Change the read name into {"%s%012d", <-p>}, [pb]
+
+Example: 
+$> wtpre -J 5000 -p pb my_raw_reads_1.fq my_raw_reads_2.fq >wt.fa
+```
+
+## smartdenovo_wtobt
+
+### Tool Description
+WTOBT: Overlap based trimming
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8
+- **Homepage**: https://github.com/ruanjue/smartdenovo
+- **Package**: https://anaconda.org/channels/bioconda/packages/smartdenovo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+WTOBT: Overlap based trimming
+SMARTdenovo: Ultra-fast de novo assembler for high noisy long reads
+Author: Jue Ruan <ruanjue@gmail.com>
+Version: 1.0
+Usage: wtobt [options]
+ -i <string> Long reads sequences file, + *
+ -b <string> Long reads retained region, often from wtobt/wtcyc, +
+             Format: read_name\toffset\tlength\toriginal_len
+ -j <string> Overlap file(s), + *
+             Format: reads1\t+/-\tlen1\tbeg1\tend1\treads2\t+/-\tlen2\tbeg2\tend2\tscore\tidentity<float>\tmat\tmis\tins\tdel\tcigar
+ -o          Ouput of reads' regions after trimming, -:stdout, *
+             Format: read_name\toffset\tlength
+ -f          Force overwrite output file
+ -C          Trun off specical trim for reads contained by others
+             One read (A) will not be trimmed when it is contained by another read (B).
+             When trun on special trim (by default), if the B read is trimmed, program will accordingly trim A read
+ -s <int>    Minimum score of alignment, [200]
+ -m <float>  Minimum identity of alignment , [0.5]
+ -w <int>    Maximum margin of alignment, [200]
+ -c <int>    Minimum depth of overlap between anchored reads along reference read, to detect chimeric reads, [1]
+
+Example:
+$> wtobt -i wt.fa -j wt.zmo.ovl -o wt.zmo.obt -m 0.6 -c 2
+```
+
+## smartdenovo_wtlay
+
+### Tool Description
+WTLay: Layout of long reads using Best Overlap Graph
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8
+- **Homepage**: https://github.com/ruanjue/smartdenovo
+- **Package**: https://anaconda.org/channels/bioconda/packages/smartdenovo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+WTLay: Layout of long reads using Best Overlap Graph
+SMARTdenovo: Ultra-fast de novo assembler for high noisy long reads
+Author: Jue Ruan <ruanjue@gmail.com>
+Version: 1.0
+Usage: wtlay [options]
+Options:
+ -i <string> Long reads sequences file(s), + *
+ -b <string> Long reads retained region, often from wtobt, +
+             Format: read_name\toffset\tlength\toriginal_len
+ -j <string> Overlap file(s), + *
+             Format: reads1\t+/-\tlen1\tbeg1\tend1\treads2\t+/-\tlen2\tbeg2\tend2\tscore
+ -s <int>    Minimum alignment matched bases, [500]
+ -m <float>  Minimum alignment identity, [0.6]
+ -w <int>    Maximum margin of alignment, [100]
+ -o <string> Output file of layouts, *
+ -f          Force overwrite output file
+ -c <int>    Minimum estimated coverage of edge to be trusted, [1]
+             edge coverage is calculated by counting overlaps that can replace this edge
+ -R          Use number of matches as alignment score
+ -r <float>  Best score cutoff, say best overlap MUST have alignment score >= <-r> * read's best score [0.95]
+ -q <float>  Minimum coverage for similar unitig detection, say the aligned length of unitig A by unitig B, divided by total length of unitig A, [0.4]
+ -u <int>    Min nodes of a layout to be output as independent unitig, [4]
+ -B <int>    Maximum step in tracing bubbles, [20]
+ -S <float>  Variance threshold of (alignment score / overlap) between ture and false overlaps, [0.50]
+             Used in better_overlap_strgraph
+---- DEBUG option ---
+ -Q <string> Commands, [gCwgBgRURg]
+             G: print_dot_strgraph
+             g: print_simple_dot_strgraph
+             w: mask_low_cov_edge_strgraph
+             C: mask_contained_reads_strgraph
+             B: best_overlap_strgraph
+             t: bog_cut_tips_strgraph
+             M: bog_merge_bubbles_strgraph
+             U: recover_edges_inter_unitigs_strgraph
+             R: repair_best_overlap_strgraph
+             b: better_overlap_strgraph
+             O: mask_self_circle_reads_strgraph
+             T: reduce_transitive_strgraph
+             L: longest_overlap_strgraph
+             .: exit program
+
+Example: 
+$> wtlay -i wt.fa -b wt.zmo.obt -j wt.zmo.ext -o wt.lay -m 0.6 -c 1 -r 0.95
+```
+
+## smartdenovo_wtcyc
+
+### Tool Description
+WTCYC: Align long read against its reverse complementary
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8
+- **Homepage**: https://github.com/ruanjue/smartdenovo
+- **Package**: https://anaconda.org/channels/bioconda/packages/smartdenovo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+WTCYC: Align long read against its reverse complementary
+SMARTdenovo: Ultra-fast de novo assembler for high noisy long reads
+Author: Jue Ruan <ruanjue@gmail.com>
+Version: 1.0
+Usage: wtcyc [options] <long_read_file>
+Options:
+ -t <int>    Number of threads, [1]
+ -P <int>    Total parallel jobs, [1]
+ -p <int>    Index of current job (0-based), [0]
+             Suppose to run it parallelly in 60 nodes. For node1, -P 60 -p 0; node2, -P 60 -p 1, ...
+ -o <string> Output of reads' regions after trimming, [-]
+ -a <string> Output of alignments, [NULL]
+ -f          Force overwrite output file
+ -s <int>    Mininum alignment score, [400]
+ -m <int>    Mininum alignment identity, [0.7]
+ -M <int>    Alignment penalty: match, [2]
+ -X <int>    Alignment penalty: mismatch, [-5]
+ -O <int>    Alignment penalty: gap open, [-3]
+ -E <int>    Alignment penalty: gap extension, [-1]
+ -T <int>    Alignment penalty: read end clipping, 0: distable HSP extension, otherwise set to -30 or other [-100]
+ -W <int>    Bandwidth, [800]
+
+Example: 
+$> wtcyc -t 32 wt.fa -fo wt.zmo.cyc -a wt.zmo.cyc.info
+```
+
+## smartdenovo_wtext
+
+### Tool Description
+WTEXT: Extending and clipping overlaps
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8
+- **Homepage**: https://github.com/ruanjue/smartdenovo
+- **Package**: https://anaconda.org/channels/bioconda/packages/smartdenovo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+WTEXT: Extending and clipping overlaps
+SMARTdenovo: Ultra-fast de novo assembler for high noisy long reads
+Author: Jue Ruan <ruanjue@gmail.com>
+Version: 1.0
+Usage: wtext [options]
+Options:
+ -t <int>    Number of threads, [1]
+ -P <int>    Total parallel jobs, [1]
+ -p <int>    Index of current job (0-based), [0]
+             Suppose to run it parallelly in 60 nodes. For node1, -P 60 -p 0; node2, -P 60 -p 1, ...
+ -i <string> Long reads sequences file, + *
+ -B <string> Long reads previous retained region, often from wtcyc, +
+             Format: read_name\toffset\tlength
+ -b <string> Long reads retained region, often from wtobt, +
+             Format: read_name\toffset\tlength
+ -j <string> Overlap file(s), + *
+             Format: reads1\t+/-\tlen1\tbeg1\tend1\treads2\t+/-\tlen2\tbeg2\tend2\tscore\tidentity<float>\tmat\tmis\tins\tdel\tcigar
+ -o <string> Output file of extended alignments, -:stdout, *
+ -f          Force overwrite
+ -W <float>  Bandwidth, [800]
+ -M <int>    Alignment penalty: match, [2]
+ -X <int>    Alignment penalty: mismatch, [-5]
+ -O <int>    Alignment penalty: insertion or deletion, [-3]
+ -E <int>    Alignment penalty: gap extension, [-1]
+ -T <int>    Alignment penalty: read end clipping [-100]
+ -S <int>    Maximum extension (bp) in each end, [400]
+
+Example: 
+$> wtext -t 32 -i wt.fa -b wt.zmo.obt -j wt.zmo.ovl -o wt.zmo.ext
+```
+
+## smartdenovo_wtmer
+
+### Tool Description
+WTMER: K-mer analysis of long reads
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8
+- **Homepage**: https://github.com/ruanjue/smartdenovo
+- **Package**: https://anaconda.org/channels/bioconda/packages/smartdenovo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+WTMER: K-mer analysis of long reads
+SMARTdenvo: Ultra-fast de novo assembler for high noisy long reads
+Author: Jue Ruan <ruanjue@gmail.com>
+Version: 1.0
+Usage: wtmer [options]
+Options:
+ -i <string> Long reads sequences file, + *
+ -o <string> Output file of kmer_frequency, *
+ -f          Force overwrite
+ -H          Disable homopolymer compression
+ -k <int>    Kmer size, 5 <= <-k> <= 16, [16]
+```
+
+## smartdenovo_pairaln
+
+### Tool Description
+pairaln: align pairs of sequences read from standard input
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8
+- **Homepage**: https://github.com/ruanjue/smartdenovo
+- **Package**: https://anaconda.org/channels/bioconda/packages/smartdenovo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Program: pairaln
+ pairaln read paired sequences (fasta or fastq) from STDIN, here is an example input
+ >read1
+ AAGGCCTT
+ >read2
+ AAGCCTT
+ and so on, read3, read4, ...
+ pairaln will perform alignment on read1 and read2, read3 and read4, ...
+ The default parameters is used for pacbio long reads
+Usage: pairaln [options]
+Author: Jue Ruan
+Options:
+ -s          Try both strands
+ -M <int>    Alignment penalty: match, [2]
+ -X <int>    Alignment penalty: mismatch, [-5]
+ -O <int>    Alignment penalty: insertion or deletion, [-3]
+ -E <int>    Alignment penalty: gap extension, [-1]
+ -T <int>    Alignment penalty: read end clipping, 0: distable HSP extension, otherwise set to -100 or other [-100]
+ -W <int>    Bandwidth, [800]
+ -a          Output alignment
+```
 
 ## Metadata
 - **Skill**: generated

@@ -1,5 +1,11 @@
 # skyline2isocor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| skyline2isocor | PASS | Rewritten with -i/-o options; the package's own Skyline test file converted and matches the expected IsoCor table (2045 lines). |
+
 ## skyline2isocor
 
 ### Tool Description

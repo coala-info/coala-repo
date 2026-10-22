@@ -8,10 +8,13 @@ doc: "Append new genomes to be sketched to an existing sketch database\n\nTool h
   https://github.com/bacpop/sketchlib.rust"
 inputs:
   - id: db
-    type: string
-    doc: Sketching database basename (so without .skm or .skd)
+    type: File
+    secondaryFiles:
+      - ^.skd
+    doc: Sketching database (.skm file with its .skd file beside it); the tool takes the basename, so the .skm suffix is removed on the command line.
     inputBinding:
       position: 1
+      valueFrom: $(self.path.replace(/\.skm$/, ''))
   - id: seq_files
     type:
       - 'null'
@@ -102,10 +105,12 @@ inputs:
       prefix: -o
 outputs:
   - id: output
-    type: File
-    doc: Output filename for the merged sketch
+    type:
+      type: array
+      items: File
+    doc: Merged sketch files (.skm and .skd) written with the given output prefix
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

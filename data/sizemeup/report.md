@@ -1,5 +1,11 @@
 # sizemeup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sizemeup | PASS |  |
+
 ## sizemeup
 
 ### Tool Description

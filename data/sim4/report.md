@@ -1,5 +1,11 @@
 # sim4 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sim4 | PASS | cross-species sample: mouse mRNAs aligned to a human gene region from the package examples |
+
 ## sim4
 
 ### Tool Description

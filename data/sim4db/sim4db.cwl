@@ -143,7 +143,7 @@ inputs:
   - id: print_script_lines_annotated
     type:
       - 'null'
-      - boolean
+      - string
     doc: print script lines (to given file) as they are processed, annotated 
       with yes/no
     inputBinding:
@@ -209,7 +209,7 @@ inputs:
   - id: touch_file
     type:
       - 'null'
-      - File
+      - string
     doc: create this file when the program finishes execution
     inputBinding:
       position: 101
@@ -227,8 +227,22 @@ inputs:
     doc: Output or path parameter `output_sim4db_path`
     inputBinding:
       position: 102
-      prefix: --output-sim4db
+      prefix: -output
 outputs:
+  - id: touched_file
+    type:
+      - 'null'
+      - File
+    doc: File created when the program finishes execution
+    outputBinding:
+      glob: $(inputs.touch_file)
+  - id: script_lines_annotated
+    type:
+      - 'null'
+      - File
+    doc: Script lines annotated with yes/no
+    outputBinding:
+      glob: $(inputs.print_script_lines_annotated)
   - id: output_sim4db
     type: File
     doc: write output to this file

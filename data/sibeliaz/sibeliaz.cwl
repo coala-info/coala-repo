@@ -6,10 +6,12 @@ doc: "Process input file and generate output in a specified directory.\n\nTool h
   https://github.com/medvedevgroup/SibeliaZ"
 inputs:
   - id: input_file
-    type: File
+    type:
+      type: array
+      items: File
     doc: Input file.
     inputBinding:
-      position: 1
+      position: 200
   - id: flag_n
     type:
       - 'null'
@@ -71,7 +73,7 @@ inputs:
     doc: Output or path parameter `output_directory_path`
     inputBinding:
       position: 103
-      prefix: --output-directory
+      prefix: -o
 outputs:
   - id: output_directory
     type:

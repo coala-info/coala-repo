@@ -1,5 +1,11 @@
 # sff2fastq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sff2fastq | PASS |  |
+
 ## sff2fastq
 
 ### Tool Description

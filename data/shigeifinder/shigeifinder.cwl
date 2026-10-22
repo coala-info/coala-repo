@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ShigeiFinder.py
+baseCommand: shigeifinder
 label: shigeifinder
 doc: "ShigeiFinder.py is a tool for analyzing assembly or raw read data.\n\nTool homepage:
   https://github.com/LanLab/ShigEiFinder"
@@ -25,7 +25,7 @@ inputs:
   - id: input_data
     type:
       type: array
-      items: string
+      items: File
     doc: path/to/input_data
     inputBinding:
       position: 101

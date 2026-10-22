@@ -132,12 +132,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: Input fasta/fastq file(s) for reads (could be used multiple times for 
-      different runs, could be gzipped)
+        items: File
+    doc: Input fasta/fastq file(s) for reads, could be gzipped. Files are joined
+      with commas into one --reads value (use two files for a read pair).
     inputBinding:
       position: 101
       prefix: --reads
+      itemSeparator: ','
   - id: seeds
     type:
       - 'null'

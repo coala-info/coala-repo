@@ -1,5 +1,13 @@
 # shiver CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shiver_shiver_align_contigs.sh | PASS |  |
+| shiver_shiver_init.sh | PASS |  |
+| shiver_shiver_map_reads.sh | PASS |  |
+
 ## shiver_shiver_init.sh
 
 ### Tool Description

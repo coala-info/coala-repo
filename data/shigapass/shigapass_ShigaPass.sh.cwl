@@ -6,10 +6,11 @@ doc: "This tool is used to predict Shigella serotypes\n\nTool homepage: https://
 inputs:
   - id: databases_path
     type: Directory
-    doc: Path to databases directory
+    doc: Path to databases directory (staged writable, so that -u can build the BLAST databases in it)
     inputBinding:
       position: 101
       prefix: -p
+      valueFrom: $(self.basename)
   - id: initialize_databases
     type:
       - 'null'
@@ -19,14 +20,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: -u
+  - id: input_list
+    type: File
+    doc: Text file listing the input FASTA file(s), one file name per line
+    inputBinding:
+      position: 101
+      prefix: -l
   - id: input_files
     type:
       type: array
       items: File
-    doc: List of input file(s) (FASTA) with their path(s)
-    inputBinding:
-      position: 101
-      prefix: -l
+    doc: The FASTA files named in the list. They are staged in the working
+      directory, so the list can name them by file name.
   - id: keep_subdirectories
     type:
       - 'null'
@@ -60,6 +65,13 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_files)
+      - entry: $(inputs.databases_path)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shigapass:1.5.0--hdfd78af_0

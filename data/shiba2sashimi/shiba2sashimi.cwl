@@ -29,8 +29,8 @@ inputs:
       position: 101
       prefix: --dpi
   - id: experiment
-    type: string
-    doc: Experiment table used for Shiba
+    type: File
+    doc: Experiment table used for Shiba (columns sample, bam, group)
     inputBinding:
       position: 101
       prefix: --experiment
@@ -111,7 +111,7 @@ inputs:
       position: 101
       prefix: --samples
   - id: shiba
-    type: string
+    type: Directory
     doc: Shiba working directory
     inputBinding:
       position: 101
@@ -141,6 +141,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --width
+  - id: bams
+    type:
+      - 'null'
+      - type: array
+        items: File
+    secondaryFiles:
+      - .bai
+    doc: BAM files named in the experiment table. They are staged in the working
+      directory, so the table can name them by file name.
   - id: output_path
     type: string
     inputBinding:
@@ -154,6 +163,8 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.bams)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shiba2sashimi:0.1.7--pyh7e72e81_0

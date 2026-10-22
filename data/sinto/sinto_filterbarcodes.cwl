@@ -8,6 +8,8 @@ doc: "Filter reads based on input list of cell barcodes\n\nTool homepage: https:
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input bam file (must be indexed)
     inputBinding:
       position: 101
@@ -31,8 +33,8 @@ inputs:
       position: 101
       prefix: --barcodetag
   - id: cells
-    type: string
-    doc: File or comma-separated list of cell barcodes. Can be gzip compressed
+    type: File
+    doc: "File of cell barcodes (tab-delimited: barcode, then comma-separated group names; one output file per group). Can be gzip compressed. The tool needs a file: a comma-separated list gives 'File not found'."
     inputBinding:
       position: 101
       prefix: --cells
@@ -69,9 +71,16 @@ inputs:
       position: 101
       prefix: --trim_suffix
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: filtered_alignments
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: One alignment file per group in the cells file (written to the working directory when outdir is not set).
+    outputBinding:
+      glob:
+        - '*.bam'
+        - '*.sam'
   - id: outdir_dir
     type:
       - 'null'
@@ -82,4 +91,3 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sinto:0.10.1--pyhdfd78af_0
-stdout: sinto_filterbarcodes.out

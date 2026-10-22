@@ -1,5 +1,11 @@
 # shark CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shark | PASS |  |
+
 ## shark
 
 ### Tool Description

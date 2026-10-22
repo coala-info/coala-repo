@@ -1,5 +1,11 @@
 # severus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| severus | PASS | ran on the nf-core COLO829 tumour and normal chr22 subset; all_SVs VCF has 4 SV records, no somatic calls at this low coverage |
+
 ## severus
 
 ### Tool Description

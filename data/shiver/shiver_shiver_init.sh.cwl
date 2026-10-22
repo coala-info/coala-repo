@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: shiver_shiver_init.sh
+baseCommand: shiver_init.sh
 label: shiver_shiver_init.sh
 doc: "Initialises shiver files.\n\nTool homepage: https://github.com/ChrisHIV/shiver"
 inputs:
@@ -29,16 +29,6 @@ inputs:
     doc: a fasta file of the primers used in sequencing
     inputBinding:
       position: 5
-  - id: test_config
-    type:
-      - 'null'
-      - boolean
-    doc: test whether the configuration file is OK (including whether this 
-      script can call the external programs it needs using commands given in the
-      config file) and then exit.
-    inputBinding:
-      position: 106
-      prefix: --test
 outputs:
   - id: stdout
     type: stdout

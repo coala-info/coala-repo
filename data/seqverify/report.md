@@ -1,5 +1,11 @@
 # seqverify CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqverify | Not completed | needs a human reference genome (CHM13 or hg38), whole-genome reads and a Kraken2 database; too heavy for this machine |
+
 ## seqverify
 
 ### Tool Description

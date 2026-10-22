@@ -9,10 +9,19 @@ doc: "This program will take a native aligned_reads.cmph5 and compare each molec
   https://github.com/silviazuffi/smalr_online"
 inputs:
   - id: inputs_file
-    type: string
-    doc: An inputs_file containing paths to the relevant files.
+    type: File
+    doc: An inputs_file containing paths to the relevant files (native_cmph5, 
+      fastq, wga_cmph5, ref). The paths are relative to the working directory.
     inputBinding:
       position: 1
+  - id: referenced_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the inputs_file (aligned BAM or cmp.h5 files with 
+      their indexes, and the reference FASTA). They are staged beside the 
+      inputs_file so that the names resolve.
   - id: align
     type:
       - 'null'
@@ -190,6 +199,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: contig_results
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: One result folder per reference contig (<contig>_SMsn or <contig>_SMp) 
+      with the results table, log file, motif position lists and contig FASTA
+    outputBinding:
+      glob:
+        - '*_SMsn'
+        - '*_SMp'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.inputs_file)
+      - $(inputs.referenced_files)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/smalr:v1.1dfsg-2-deb_cv1

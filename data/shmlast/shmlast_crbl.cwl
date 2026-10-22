@@ -48,7 +48,7 @@ inputs:
   - id: profile_output
     type:
       - 'null'
-      - File
+      - string
     doc: Filename for profile results.
     inputBinding:
       position: 101
@@ -60,7 +60,10 @@ inputs:
       position: 101
       prefix: --query
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: CSV output file path
     inputBinding:
       position: 102
       prefix: --output
@@ -73,8 +76,28 @@ outputs:
       QUERY.x.DATABASE.{c}rbl.csv.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: default_output
+    type:
+      - 'null'
+      - File
+    doc: CSV hits file under its default name (used when no output path is given)
+    outputBinding:
+      glob: $(inputs.query.basename).x.$(inputs.database.basename).crbl.csv
+  - id: profile_results
+    type:
+      - 'null'
+      - File
+    doc: Profile results
+    outputBinding:
+      glob: $(inputs.profile_output)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.query)
+        writable: true
+      - entry: $(inputs.database)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shmlast:1.6--py_0

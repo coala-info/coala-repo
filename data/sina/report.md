@@ -1,5 +1,11 @@
 # sina CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sina | PASS | Galaxy test data; output has the expected 17 aligned sequences and 18-line table; a FASTA reference must first be converted to ARB with prealigned and an .arb output |
+
 ## sina
 
 ### Tool Description

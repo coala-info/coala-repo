@@ -1,5 +1,11 @@
 # shiba2sashimi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shiba2sashimi | PASS |  |
+
 ## shiba2sashimi
 
 ### Tool Description

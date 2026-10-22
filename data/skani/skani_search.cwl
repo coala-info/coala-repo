@@ -119,8 +119,7 @@ inputs:
   - id: query_list
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: File with each line containing one fasta/sketch file
     inputBinding:
       position: 102

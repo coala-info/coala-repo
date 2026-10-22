@@ -13,6 +13,7 @@ inputs:
     doc: One or more BAM alignment files
     inputBinding:
       position: 1
+      prefix: --bamfile
   - id: readfile
     type:
       - 'null'
@@ -21,6 +22,7 @@ inputs:
     doc: One or more files of reads (fq, fa, gzip OK)
     inputBinding:
       position: 2
+      prefix: --readfile
   - id: adapter
     type:
       - 'null'
@@ -62,7 +64,9 @@ inputs:
       position: 103
       prefix: --autotrim_key
   - id: autotrim_only
-    type: boolean
+    type:
+      - 'null'
+      - boolean
     doc: If this switch is set, ShortStack quits after performing auto-trimming 
       of input reads.
     inputBinding:
@@ -99,10 +103,12 @@ inputs:
       prefix: --dn_mirna
   - id: genomefile
     type: File
-    doc: FASTA file of the reference genome
+    doc: FASTA file of the reference genome (staged writable, because ShortStack
+      writes its index files beside it)
     inputBinding:
       position: 103
       prefix: --genomefile
+      valueFrom: $(self.basename)
   - id: known_mirnas
     type:
       - 'null'
@@ -213,6 +219,12 @@ outputs:
     doc: Output directory name. Defaults to ShortStack_time
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genomefile)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shortstack:4.1.2--hdfd78af_0

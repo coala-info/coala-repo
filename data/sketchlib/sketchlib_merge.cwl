@@ -8,11 +8,15 @@ doc: "Merge two sketch files (.skm and .skd pair)\n\nTool homepage: https://gith
 inputs:
   - id: db1
     type: File
+    secondaryFiles:
+      - ^.skm
     doc: The first .skd (sketch data) file
     inputBinding:
       position: 1
   - id: db2
     type: File
+    secondaryFiles:
+      - ^.skm
     doc: The second .skd (sketch data) file
     inputBinding:
       position: 2
@@ -34,16 +38,18 @@ inputs:
       prefix: --verbose
   - id: output_path
     type: string
-    doc: Output filename for the merged sketch
+    doc: Output prefix for the merged sketch (.skm and .skd are added)
     inputBinding:
       position: 104
       prefix: -o
 outputs:
   - id: output
-    type: File
-    doc: Output filename for the merged sketch
+    type:
+      type: array
+      items: File
+    doc: Merged sketch files (.skm and .skd) written with the given output prefix
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # skder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| skder | Failed | image problem: busybox sort in the image has no --parallel option, so skder writes empty results with no representative genomes |
+
 ## skder
 
 ### Tool Description

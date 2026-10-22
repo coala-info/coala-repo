@@ -7,6 +7,11 @@ doc: "Script to extract base counts and coverage information from a single align
 inputs:
   - id: alignment_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: alignment file
     inputBinding:
       position: 1
@@ -40,17 +45,13 @@ inputs:
       position: 102
       prefix: --name
   - id: basecnt_tsv_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: ' bases count table output file'
     inputBinding:
       position: 103
       prefix: --basecnt
   - id: coverage_tsv_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: ' coverage table output file'
     inputBinding:
       position: 104
@@ -64,16 +65,12 @@ inputs:
       prefix: --stats
 outputs:
   - id: basecnt_tsv
-    type:
-      - 'null'
-      - File
+    type: File
     doc: bases count table output file
     outputBinding:
       glob: $(inputs.basecnt_tsv_path)
   - id: coverage_tsv
-    type:
-      - 'null'
-      - File
+    type: File
     doc: coverage table output file
     outputBinding:
       glob: $(inputs.coverage_tsv_path)

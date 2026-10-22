@@ -1,5 +1,11 @@
 # serotypefinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| serotypefinder | PASS |  |
+
 ## serotypefinder
 
 ### Tool Description

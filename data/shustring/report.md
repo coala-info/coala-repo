@@ -1,5 +1,11 @@
 # shustring CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shustring | PASS |  |
+
 ## shustring
 
 ### Tool Description

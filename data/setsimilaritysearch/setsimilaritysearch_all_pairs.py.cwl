@@ -18,11 +18,13 @@ inputs:
   - id: reversed_tuple
     type:
       - 'null'
-      - string
-    doc: Whether the input tuples are reversed i.e. (Token SetID).
+      - boolean
+    doc: Whether the input tuples are reversed i.e. (Token SetID). The tool reads any value
+      after the flag as true, so the flag is only written when this is true.
     inputBinding:
       position: 101
       prefix: --reversed-tuple
+      valueFrom: '$(self ? "True" : null)'
   - id: sample_k
     type:
       - 'null'
@@ -35,8 +37,14 @@ inputs:
   - id: similarity_func
     type:
       - 'null'
-      - string
-    doc: Similarity function to use.
+      - type: enum
+        name: similarity_func_values
+        symbols:
+          - jaccard
+          - cosine
+          - containment
+          - containment_min
+    doc: Similarity function to use. Default jaccard.
     inputBinding:
       position: 101
       prefix: --similarity-func
@@ -44,12 +52,13 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum similarity threshold for pairs.
+    doc: Minimum similarity threshold for pairs. Default 0.5.
     inputBinding:
       position: 101
       prefix: --similarity-threshold
   - id: output_pairs_path
     type: string
+    doc: Output file name for the pairs (CSV).
     inputBinding:
       position: 102
       prefix: --output-pairs

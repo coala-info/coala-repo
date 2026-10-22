@@ -11,6 +11,8 @@ inputs:
       type: array
       items: File
     doc: Bam file(s)
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 1
   - id: bed_file

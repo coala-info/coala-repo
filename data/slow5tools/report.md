@@ -1,5 +1,22 @@
 # slow5tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| slow5tools_cat | PASS | Two real BLOW5 files from the FAST5 test reads concatenated; stats on the result shows 6 records. Fixed the input to accept several files. |
+| slow5tools_degrade | PASS | Real BLOW5 read from the slow5tools tests degraded with the automatic bit count; output is byte-identical to the expected file; --bits and --to/--from also ran. |
+| slow5tools_f2s | PASS | Real FAST5 reads from the slow5tools tests converted to SLOW5 and BLOW5; both outputs are byte-identical to the repo's expected files. |
+| slow5tools_get | PASS | Real BLOW5 reads: get by read id and by list file returned the requested records, identical to the same records in the full SLOW5 conversion. Fixed the CWL to stage the input writable so the index can be built. |
+| slow5tools_index | PASS | Real BLOW5 file indexed; the .idx holds the 3 read ids. Fixed the CWL to stage the input writable and collect the .idx output. |
+| slow5tools_merge | PASS | Real BLOW5 files (3 reads + 1 read from different FAST5 test files) merged with --allow; stats on the result shows 4 records; without --allow merge refuses because attributes differ for the same run id. |
+| slow5tools_quickcheck | PASS | Intact real BLOW5 file exits 0; a truncated copy fails with the missing EOF marker error. |
+| slow5tools_s2f | PASS | Real BLOW5 converted back to FAST5; converting that FAST5 to SLOW5 again gives identical read records (only the file_type header attribute differs, now multi-read). |
+| slow5tools_skim | PASS | Real BLOW5 file: default skim lists the 3 records without signal and --rid lists the 3 read ids; fixed the CWL to stage the input writable for the index. |
+| slow5tools_split | PASS | Real SLOW5/BLOW5 reads: split by --reads gave 2 files of 2 reads, and demultiplexing with a barcode summary table gave files identical to the slow5tools expected output. |
+| slow5tools_stats | PASS | Real BLOW5 file: stats report shows BLOW5, zlib/svb-zd, 3 records and the 5 auxiliary fields, as expected. |
+| slow5tools_view | PASS | Real BLOW5 (from FAST5 test reads) converted to SLOW5; output is identical to the direct FAST5 to SLOW5 conversion. |
+
 ## slow5tools_f2s
 
 ### Tool Description

@@ -8,7 +8,12 @@ doc: "Calculate DDC scores for variants.\n\nTool homepage: https://github.com/br
 inputs:
   - id: vcf
     type: File
-    doc: Input VCF file
+    doc: Input VCF file (indexed; the .csi or .tbi index must sit beside it)
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 1
   - id: ped

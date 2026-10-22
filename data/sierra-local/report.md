@@ -1,5 +1,11 @@
 # sierra-local CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sierra-local_sierralocal | PASS | note: option -alignment nuc crashes because the bundled nucamino binary segfaults; the default aligner works |
+
 ## sierra-local_sierralocal
 
 ### Tool Description

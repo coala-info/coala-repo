@@ -4,19 +4,23 @@ baseCommand:
   - sga
   - haplotype-filter
 label: sga_haplotype-filter
-doc: "Remove haplotypes and their associated variants from a data set.\n\nTool homepage:
-  https://github.com/jts/sga"
+doc: 'Remove haplotypes and their associated variants from a data set.
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: haplotype_file
     type: File
     doc: Haplotype file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: vcf_file
     type: File
     doc: VCF file
     inputBinding:
       position: 2
+      valueFrom: $(self.basename)
   - id: haploid
     type:
       - 'null'
@@ -29,18 +33,33 @@ inputs:
     type:
       - 'null'
       - File
-    doc: load the FM-index of the reads in FILE
+    doc: Load the FM-index of the reads in FILE (needs a population index, FILE prefix + .popidx, written by merging per-sample indexes).
     inputBinding:
       position: 103
       prefix: --reads
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
+      - ^.popidx
   - id: reference
     type:
       - 'null'
-      - string
-    doc: load the reference genome from FILE
+      - File
+    doc: Load the reference genome from FILE.
     inputBinding:
       position: 103
       prefix: --reference
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - .fai
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
+      - ^.ssa
   - id: threads
     type:
       - 'null'
@@ -62,17 +81,30 @@ inputs:
     doc: write the passed haplotypes and variants to STR.vcf and STR.fa
     inputBinding:
       position: 104
-      prefix: --out-prefix
+      prefix: -o
 outputs:
-  - id: out_prefix
+  - id: passed_vcf
     type:
       - 'null'
       - File
-    doc: write the passed haplotypes and variants to STR.vcf and STR.fa
+    doc: Passed haplotypes and variants.
     outputBinding:
-      glob: $(inputs.out_prefix_path)
+      glob: $(inputs.out_prefix_path).vcf
+  - id: passed_haplotypes
+    type:
+      - 'null'
+      - File
+    doc: Passed haplotype sequences.
+    outputBinding:
+      glob: $(inputs.out_prefix_path).fa
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.haplotype_file)
+      - $(inputs.vcf_file)
+      - '${ return inputs.reads ? inputs.reads : []; }'
+      - '${ return inputs.reference ? inputs.reference : []; }'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

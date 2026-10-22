@@ -1,5 +1,15 @@
 # simba_pbg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| simba_pbg_torchbiggraph_eval | PASS | Zachary karate club graph (34 nodes, 78 edges) as test graph |
+| simba_pbg_torchbiggraph_export_to_tsv | PASS | Zachary karate club graph (34 nodes, 78 edges) as test graph |
+| simba_pbg_torchbiggraph_import_from_parquet | Failed | image problem: the Python module 'parquet' needed to read Parquet files is missing in the image |
+| simba_pbg_torchbiggraph_import_from_tsv | PASS | Zachary karate club graph (34 nodes, 78 edges) as test graph |
+| simba_pbg_torchbiggraph_train | PASS | Zachary karate club graph (34 nodes, 78 edges) as test graph |
+
 ## simba_pbg_torchbiggraph_import_from_tsv
 
 ### Tool Description
@@ -312,6 +322,97 @@ config:
 	Use half-precision training (GPU ONLY)
 ```
 
+
+## simba_pbg_torchbiggraph_eval
+
+### Tool Description
+Evaluate a trained PyTorch-BigGraph model on held-out edges.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/simba:1.2--pyh7cba7a3_0
+- **Homepage**: https://github.com/pinellolab/simba_pbg
+- **Package**: https://anaconda.org/channels/bioconda/packages/simba_pbg/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: torchbiggraph_eval [-h] [-p [PARAM ...]] config
+
+positional arguments:
+  config                Path to config file
+
+options:
+  -h, --help            show this help message and exit
+  -p [PARAM ...], --param [PARAM ...]
+```
+
+## simba_pbg_torchbiggraph_export_to_tsv
+
+### Tool Description
+Export entity embeddings and relation type parameters of a trained model to TSV files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/simba:1.2--pyh7cba7a3_0
+- **Homepage**: https://github.com/pinellolab/simba_pbg
+- **Package**: https://anaconda.org/channels/bioconda/packages/simba_pbg/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: torchbiggraph_export_to_tsv [-h] [-p [PARAM ...]] --entities-output
+                                   ENTITIES_OUTPUT --relation-types-output
+                                   RELATION_TYPES_OUTPUT
+                                   config
+
+positional arguments:
+  config                Path to config file
+
+options:
+  -h, --help            show this help message and exit
+  -p [PARAM ...], --param [PARAM ...]
+  --entities-output ENTITIES_OUTPUT
+  --relation-types-output RELATION_TYPES_OUTPUT
+```
+
+## simba_pbg_torchbiggraph_import_from_parquet
+
+### Tool Description
+Import Parquet edge lists into the partitioned PyTorch-BigGraph format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/simba:1.2--pyh7cba7a3_0
+- **Homepage**: https://github.com/pinellolab/simba_pbg
+- **Package**: https://anaconda.org/channels/bioconda/packages/simba_pbg/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: torchbiggraph_import_from_parquet [-h] [-p [PARAM ...]] -l LHS_COL -r
+                                         RHS_COL [--rel-col REL_COL]
+                                         [--weight-col WEIGHT_COL]
+                                         [--relation-type-min-count RELATION_TYPE_MIN_COUNT]
+                                         [--entity-min-count ENTITY_MIN_COUNT]
+                                         config [edge_paths ...]
+
+positional arguments:
+  config                Path to config file
+  edge_paths            Input file paths
+
+options:
+  -h, --help            show this help message and exit
+  -p [PARAM ...], --param [PARAM ...]
+  -l LHS_COL, --lhs-col LHS_COL
+                        Column index for source entity
+  -r RHS_COL, --rhs-col RHS_COL
+                        Column index for target entity
+  --rel-col REL_COL     Column index for relation entity
+  --weight-col WEIGHT_COL
+                        (Optional) Column index for edge weight
+  --relation-type-min-count RELATION_TYPE_MIN_COUNT
+                        Min count for relation types
+  --entity-min-count ENTITY_MIN_COUNT
+                        Min count for entities
+```
 
 ## Metadata
 - **Skill**: generated

@@ -8,7 +8,7 @@ inputs:
   - id: db
     type:
       - 'null'
-      - string
+      - Directory
     doc: database of reference genomes to use
     inputBinding:
       position: 101
@@ -30,7 +30,7 @@ inputs:
   - id: paired
     type:
       - 'null'
-      - string
+      - File
     doc: second set of reads in pair (if any)
     inputBinding:
       position: 101

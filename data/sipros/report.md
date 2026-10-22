@@ -1,5 +1,11 @@
 # sipros CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sipros | PASS |  |
+
 ## sipros
 
 ### Tool Description

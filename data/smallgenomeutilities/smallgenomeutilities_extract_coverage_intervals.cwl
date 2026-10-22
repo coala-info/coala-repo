@@ -8,6 +8,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Input BAM file(s)
     inputBinding:
       position: 1
@@ -95,6 +98,7 @@ inputs:
     doc: Window length used by ShoRAH
     inputBinding:
       position: 102
+      itemSeparator: ','
       prefix: --window-lenght
   - id: window_overlap
     type:
@@ -112,6 +116,7 @@ inputs:
     doc: Window shifts used by ShoRAH
     inputBinding:
       position: 102
+      itemSeparator: ','
       prefix: --window-shift
   - id: output_path
     type: string

@@ -1,5 +1,12 @@
 # simka CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| simka | PASS |  |
+| simka_simkaMin.py | PASS | output matches the tool's own truth matrix |
+
 ## simka
 
 ### Tool Description
@@ -59,5 +66,39 @@ ERROR: Option '-in' is mandatory
           -merge-cmd  (1 arg) :    command to submit merging job  [default '']
           -count-file (1 arg) :    filename to the couting job template  [default '']
           -merge-file (1 arg) :    filename to the merging job template  [default '']
+```
+
+## simka_simkaMin.py
+
+### Tool Description
+SimkaMin computes approximate pairwise distances between samples from a subsample of k-mers.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/simka:1.5.3--h077b44d_5
+- **Homepage**: https://github.com/GATB/simka
+- **Package**: https://anaconda.org/channels/bioconda/packages/simka/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[main options]:
+  -in                  (1 arg) :    input file of datasets. One sample per line: id1: filename1...
+  -out                 (1 arg) :    output directory for result files (distance matrices) [Default: ./simka_results]
+  -seed                (1 arg) :    seed used for random k-mer selection [Default: 100]
+  -bin                 (1 arg) :    path to simkaMinCore program (to be specified if not in PATH, or not in standard installation directory <simkaDir>/build/bin/simkaMinCore)
+
+[core options]:
+  -nb-cores            (1 arg) :    number of cores [Default: 0]
+  -max-memory          (1 arg) :    max memory (MB) [Default: 8000]
+
+[k-mer options]:
+  -kmer-size           (1 arg) :    size of a kmer [Default: 21]
+  -nb-kmers            (1 arg) :    number of kmers used to compute distances [Default: 1000000]
+  -filter              (0 arg) :    filter out k-mer seen one time (potentially erroneous)
+
+[read options]:
+  -max-reads           (1 arg) :    maximum number of reads per sample to process [Default: 0]
+  -min-read-size       (1 arg) :    minimal size a read should have to be kept [Default: 0]
+  -min-shannon-index   (1 arg) :    minimal Shannon index a read should have to be kept. Float in [0,2] [Default: 0]
 ```
 

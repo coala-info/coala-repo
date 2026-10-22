@@ -1,5 +1,16 @@
 # slivar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| slivar_compound-hets | PASS | Slivar comphet.vcf test: 9 expect=yes compound hets reported and none of the expect=no ones, as the tool's own test requires. |
+| slivar_ddc | PASS | Real Ashkenazi trio VCF (chr1, 2191 sites) gave the 156 KB data-driven cutoff HTML report; added the .csi index as optional secondary file. |
+| slivar_duo-del | Not completed | Fixed the subcommand word to duo-del; it runs on the real trio VCF but finds no deletions (header only), so the output cannot be checked; no real duo with a known deletion. |
+| slivar_expr | PASS | Real GIAB Ashkenazi trio from the slivar tests: de novo trio expression gave the expected 4 variants; also annotated ClinVar with a gnotate file (72 records). |
+| slivar_make-gnotate | PASS | ClinVar test VCF converted to a gnotate zip (ALLELEID:clinvar_a) and then used by slivar expr, which added clinvar_a to 72 records. |
+| slivar_tsv | PASS | Slivar test VCF with BCSQ: 4 de novo rows with the expected QUAL values (2548.1, 755.1, 2789.1, 501.1). |
+
 ## slivar_expr
 
 ### Tool Description

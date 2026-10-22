@@ -4,31 +4,44 @@ baseCommand:
   - sga
   - graph-concordance
 label: sga_graph-concordance
-doc: "Count read support for variants in a vcf file\n\nTool homepage: https://github.com/jts/sga"
+doc: 'Count read support for variants in a vcf file
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: variant_fastq
     type: File
-    doc: variant.fastq
+    doc: Variant read set (-r) with its BWT/SAI index files beside it.
     inputBinding:
       position: 1
+      prefix: -r
+      valueFrom: $(self.basename)
+    secondaryFiles: &id001
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
   - id: base_fastq
     type: File
-    doc: base.fastq
+    doc: Base read set (-b) with its BWT/SAI index files beside it.
     inputBinding:
       position: 2
+      prefix: -b
+      valueFrom: $(self.basename)
+    secondaryFiles: *id001
   - id: vcf_file
     type: File
     doc: VCF_FILE
     inputBinding:
-      position: 3
+      position: 200
+      valueFrom: $(self.basename)
   - id: germline
-    type:
-      - 'null'
-      - File
-    doc: load germline variants from FILE
+    type: File
+    doc: Load germline variants from FILE (the tool refuses to run without it).
     inputBinding:
       position: 104
       prefix: --germline
+      valueFrom: $(self.basename)
   - id: reference
     type:
       - 'null'
@@ -39,6 +52,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --reference
+      valueFrom: $(self.basename)
   - id: threads
     type:
       - 'null'
@@ -63,3 +77,12 @@ hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1
 stdout: sga_graph-concordance.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.variant_fastq)
+      - $(inputs.base_fastq)
+      - $(inputs.vcf_file)
+      - $(inputs.germline)
+      - '${ return inputs.reference ? inputs.reference : []; }'

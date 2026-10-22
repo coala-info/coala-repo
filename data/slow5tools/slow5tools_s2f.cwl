@@ -31,8 +31,10 @@ inputs:
       position: 102
       prefix: --out-dir
   - id: output_file_path
-    type: string
-    doc: output to FILE [stdout]
+    type:
+      - 'null'
+      - string
+    doc: output to FILE (a single FAST5 file)
     inputBinding:
       position: 103
       prefix: --output

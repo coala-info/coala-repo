@@ -238,6 +238,45 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: position_file
+    type:
+      - 'null'
+      - File
+    doc: Positions of the detected regions (<reference>.<target>.pos or .json)
+    outputBinding:
+      glob: "$(inputs.reference_file.basename + '.' + inputs.tar_file.basename + '.' + (inputs.format === 'json' ? 'json' : 'pos'))"
+  - id: profile_files
+    type:
+      type: array
+      items: File
+    doc: Profiles (*.prf), written with --save-profile
+    outputBinding:
+      glob: '*.prf'
+  - id: filtered_files
+    type:
+      type: array
+      items: File
+    doc: Filtered files (*.fil), written with --save-filtered
+    outputBinding:
+      glob: '*.fil'
+  - id: segmented_files
+    type:
+      type: array
+      items: File
+    doc: Segmented files (*.s[i]), written with --save-segmented
+    outputBinding:
+      glob:
+        - '*.s[0-9]'
+        - '*.s[0-9][0-9]'
+  - id: sequence_files
+    type:
+      type: array
+      items: File
+    doc: Sequence files (*.seq), written with --save-sequence
+    outputBinding:
+      glob: '*.seq'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smashpp:23.09--h9948957_1

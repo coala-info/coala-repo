@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 13055; PASS: 10211; Failed: 1581; Not completed: 1263
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 13342; PASS: 10455; Failed: 1602; Not completed: 1285
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -13055,3 +13055,290 @@ sequencetools	sequencetools_pileupCaller	PASS	fixed: added missing pileup input 
 sequenoscope	sequenoscope_analyze	PASS	
 sequenoscope	sequenoscope_filter_ONT	PASS	
 sequenoscope	sequenoscope_plot	PASS	
+sequenza-utils	sequenza-utils_bam2seqz	Failed	image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source
+sequenza-utils	sequenza-utils_gc_wiggle	Failed	image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source
+sequenza-utils	sequenza-utils_pileup2acgt	Failed	image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source
+sequenza-utils	sequenza-utils_seqz_binning	Failed	image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source
+sequenza-utils	sequenza-utils_seqz_merge	Failed	image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source
+sequenza-utils	sequenza-utils_snp2seqz	Failed	image problem: every sequenza-utils subcommand crashes at start with argparse 'conflicting subparser' error (Python 3.11 image); CWL rewritten from source
+seqverify	seqverify	Not completed	needs a human reference genome (CHM13 or hg38), whole-genome reads and a Kraken2 database; too heavy for this machine
+seqwin	seqwin	PASS	
+seqwish	seqwish	PASS	
+seqyclean	seqyclean	PASS	
+serotypefinder	serotypefinder	PASS	
+seshat	seshat_find-in-gmail	Not completed	needs the external Seshat web service and a Gmail account with Google OAuth credentials
+seshat	seshat_merge	PASS	synthetic data: real SARS-CoV-2 VCF with a hand-made annotation table; merge output carries the Seshat INFO fields
+seshat	seshat_round-trip	Not completed	needs the external Seshat web service and a Gmail account with Google OAuth credentials
+seshat	seshat_upload-vcf	Not completed	needs the external Seshat web service and a Gmail account with Google OAuth credentials
+setsimilaritysearch	setsimilaritysearch_all_pairs.py	PASS	same four pairs and similarities as the repo example output; only the order inside two pairs differs
+seurat-scripts	seurat-scripts_seurat-run-umap.R	PASS	input built with the image's own read-10x, normalise, variable-genes, scale and PCA scripts from real 10x data; output holds a 11089 x 2 UMAP embedding
+severus	severus	PASS	ran on the nf-core COLO829 tumour and normal chr22 subset; all_SVs VCF has 4 SV records, no somatic calls at this low coverage
+sexdeterrmine	sexdeterrmine	PASS	input depth table made with samtools depth from the Galaxy test BAM; counts match the depth file
+sff2fastq	sff2fastq	PASS	
+sfold	sfold	PASS	Galaxy test sequence gives the expected 10 sampled structures; the Galaxy mfe.ct file fails with -m because the tool needs mfold-style CT text (lower-case 'initially')
+sga	sga_assemble	PASS	
+sga	sga_bwt2fa	PASS	
+sga	sga_cluster	PASS	
+sga	sga_correct	PASS	
+sga	sga_filter	PASS	
+sga	sga_filterBAM	PASS	ran on read pairs aligned to the assembled contigs, not a mate-pair library; pairs were filtered and a valid BAM written
+sga	sga_fm-merge	PASS	
+sga	sga_gapfill	PASS	synthetic data: a 100 bp gap planted in a real assembled contig was filled with the original sequence
+sga	sga_gen-ssa	PASS	
+sga	sga_graph-concordance	PASS	
+sga	sga_graph-diff	PASS	
+sga	sga_haplotype-filter	Not completed	tool asserts on the graph-diff strings file; it needs a haplotype file from the full SGA variant workflow and a multi-sample population index
+sga	sga_index	PASS	
+sga	sga_kmer-count	PASS	
+sga	sga_merge	PASS	
+sga	sga_overlap	PASS	
+sga	sga_oview	PASS	
+sga	sga_preprocess	PASS	
+sga	sga_preqc	Not completed	full mode did not finish within 10 minutes on a 48 kb phage read set; the --simple mode works
+sga	sga_rewrite-evidence-bam	PASS	evidence BAM from graph-diff was rewritten with read sequences and qualities
+sga	sga_rmdup	PASS	
+sga	sga_scaffold	Not completed	runs on real phage short-insert reads, but no contig links form with this data, so scaffolding itself could not be shown.
+sga	sga_scaffold2fasta	Not completed	runs on real phage short-insert reads, but no contig links form with this data, so scaffolding could not be shown; the documented --no-singletons option is rejected by the tool.
+sga	sga_somatic-variant-filters	PASS	
+sga	sga_stats	PASS	
+sga	sga_subgraph	PASS	
+sgdemux	sgdemux	PASS	
+shapeit	shapeit	PASS	
+shapeit4	shapeit4	PASS	
+shapeit5	shapeit5_ligate	PASS	
+shapeit5	shapeit5_phase_common	PASS	
+shapeit5	shapeit5_phase_rare	PASS	
+shapeit5	shapeit5_switch	PASS	
+shapemapper	shapemapper	Failed	image problem: the command shapemapper is not in the image (1.2 has only ShapeMapper.py, 2.3.2 has only helper programs)
+shapemapper	shapemapper_mutation_counter	PASS	
+shapemapper	shapemapper_mutation_parser	PASS	
+shapemapper	shapemapper_read_trimmer	PASS	
+shapemapper	shapemapper_tab_to_shape.py	PASS	synthetic data: reactivity table computed from real mutation counts of the example reads
+shark	shark	PASS	
+shasta	shasta	PASS	
+sherpas	sherpas_SHERPAS	Not completed	no usable test data: SHERPAS rejects a database built with the packaged IPK 0.5.1 ('built with older version of xpas'); the pre-built database is about 10 GB
+shiba	shiba_scshiba.py	Not completed	pipeline, skipped
+shiba	shiba_shiba.py	Not completed	pipeline, skipped
+shiba2sashimi	shiba2sashimi	PASS	
+shigapass	shigapass_ShigaPass.sh	PASS	
+shigatyper	shigatyper_shigatyper.py	PASS	
+shigeifinder	shigeifinder	PASS	
+shiptv	shiptv	PASS	
+shiver	shiver_shiver_align_contigs.sh	PASS	
+shiver	shiver_shiver_init.sh	PASS	
+shiver	shiver_shiver_map_reads.sh	PASS	
+shmlast	shmlast_crbl	PASS	
+shmlast	shmlast_rbl	PASS	
+shorah	shorah_amplicon	PASS	
+shorah	shorah_shotgun	PASS	
+shorah	shorah_snv	PASS	ran on intermediate files of an earlier amplicon run (required by the subcommand)
+short-read-connector	short-read-connector_short_read_connector_counter.sh_index	PASS	
+short-read-connector	short-read-connector_short_read_connector_counter.sh_query	PASS	
+short-read-connector	short-read-connector_short_read_connector_linker.sh_index	PASS	
+short-read-connector	short-read-connector_short_read_connector_linker.sh_query	PASS	
+shortcut	shortcut_ShortCut	PASS	
+shortstack	shortstack_ShortStack	PASS	
+shorttracks	shorttracks_ShortTracks	PASS	
+shovill	shovill	PASS	
+shovill-se	shovill-se	PASS	
+showali	showali	Not completed	interactive terminal viewer (full-screen TUI): cannot be tested non-interactively
+shustring	shustring	PASS	
+siann	siann_siann.py	Failed	image problem: bowtie2 in the image cannot load libtbb.so.2, so siann cannot align reads
+sibeliaz	sibeliaz	Failed	image problem: busybox find in the image lacks -printf, so the default alignment step writes an empty alignment.maf (only -n block coordinates work)
+sibsim4	sibsim4	PASS	
+sickle	sickle_pe	PASS	
+sickle	sickle_se	PASS	
+sideretro	sideretro_make-vcf	PASS	synthetic data: planted read pairs and a synthetic parental exon; the database came from sider process-sample and merge-call run in one container
+sideretro	sideretro_merge-call	Not completed	genotype step re-opens the BAM by the absolute path saved by process-sample, which changes between cwltool jobs; works only inside one container
+sideretro	sideretro_process-sample	PASS	
+sidr	sidr_default	PASS	
+sidr	sidr_runfile	PASS	
+sierra-local	sierra-local_sierralocal	PASS	note: option -alignment nuc crashes because the bundled nucamino binary segfaults; the default aligner works
+sierrapy	sierrapy_fasta	PASS	
+sierrapy	sierrapy_mutations	PASS	
+sierrapy	sierrapy_patterns	PASS	
+sierrapy	sierrapy_recipe_alignment	PASS	
+sierrapy	sierrapy_recipe_mutationtsv	PASS	
+sierrapy	sierrapy_recipe_sequencetsv	PASS	
+sierrapy	sierrapy_seqreads	PASS	synthetic data: codon reads built from the HXB2 protease sequence with two planted minor variants
+sift4g	sift4g	PASS	
+sigprofilermatrixgenerator	sigprofilermatrixgenerator_cnv_matrix_generator	PASS	
+sigprofilermatrixgenerator	sigprofilermatrixgenerator_install	PASS	
+sigprofilermatrixgenerator	sigprofilermatrixgenerator_matrix_generator	PASS	
+sigprofilermatrixgenerator	sigprofilermatrixgenerator_sv_matrix_generator	Failed	image problem: SV matrix step aborts with free(): invalid pointer (segfault) on the tool's own example bedpe files
+sigprofilerplotting	sigprofilerplotting_plotCNV	PASS	
+sigprofilerplotting	sigprofilerplotting_plotDBS	PASS	synthetic data: DBS78 matrix made by SigProfilerMatrixGenerator from planted doublets; the repo's own DBS78 example fails to plot (NaN counts)
+sigprofilerplotting	sigprofilerplotting_plotID	PASS	
+sigprofilerplotting	sigprofilerplotting_plotSBS	PASS	
+sigprofilerplotting	sigprofilerplotting_plotSV	PASS	
+sim4	sim4	PASS	cross-species sample: mouse mRNAs aligned to a human gene region from the package examples
+sim4db	sim4db	PASS	
+simba_pbg	simba_pbg_torchbiggraph_eval	PASS	Zachary karate club graph (34 nodes, 78 edges) as test graph
+simba_pbg	simba_pbg_torchbiggraph_export_to_tsv	PASS	Zachary karate club graph (34 nodes, 78 edges) as test graph
+simba_pbg	simba_pbg_torchbiggraph_import_from_parquet	Failed	image problem: the Python module 'parquet' needed to read Parquet files is missing in the image
+simba_pbg	simba_pbg_torchbiggraph_import_from_tsv	PASS	Zachary karate club graph (34 nodes, 78 edges) as test graph
+simba_pbg	simba_pbg_torchbiggraph_train	PASS	Zachary karate club graph (34 nodes, 78 edges) as test graph
+simbac	simbac_SimBac	PASS	note: option -g (break log with taxa) segfaults; the other options work
+simka	simka	PASS	
+simka	simka_simkaMin.py	PASS	output matches the tool's own truth matrix
+simlord	simlord	PASS	note: a reference with a long FASTA header crashes the SAM step (read name over 254 characters); --no-sam works
+simphyni	simphyni_run	Not completed	pipeline, skipped: simphyni run starts a Snakemake workflow
+simple_sv_annotation	simple_sv_annotation_simple_sv_annotation.py	PASS	synthetic data: small snpEff-style SV VCF with planted BRCA1 exon loss and an ABL1 fusion; the repo's fusion list, gene panel and exon number files
+simplejson	simplejson	PASS	baseCommand fixed to python -m simplejson.tool; invented --indent and --sort-keys options removed (not in this version)
+simscsntree	simscsntree_python_-m_SimSCSnTree	Failed	image problem: samtools is missing in the image, so the read sampling step (skip_first_step 1) ends without reads; the tree and CNV step works
+simug	simug	PASS	yeast reference from the tool's own test example; counts of simulated SNPs and INDELs match the requested numbers
+simug	simug_vcf2model	PASS	
+simwalk2	simwalk2	Not completed	no usable test data: the SimWalk2 example files need registration on the distribution site; the fixed BATCH2.DAT control file is staged and read
+sina	sina	PASS	Galaxy test data; output has the expected 17 aligned sequences and 18-line table; a FASTA reference must first be converted to ARB with prealigned and an .arb output
+singlecellnet-cli	singlecellnet-cli_scn-predict.R	PASS	
+singlecellnet-cli	singlecellnet-cli_scn-train-model.R	PASS	
+sinto	sinto_addtags	PASS	
+sinto	sinto_barcode	PASS	
+sinto	sinto_blocks	PASS	
+sinto	sinto_filterbarcodes	PASS	
+sinto	sinto_fragments	PASS	
+sinto	sinto_nametotag	PASS	
+sinto	sinto_tagtoname	PASS	
+sinto	sinto_tagtorg	PASS	
+sinto	sinto_tagtotag	PASS	
+sipros	sipros	PASS	
+sirius-csifingerid	sirius-csifingerid_sirius_login	Not completed	needs a SIRIUS web service account to log in; only the --show option ran (Not logged in)
+sistr_cmd	sistr_cmd	PASS	
+sizemeup	sizemeup	PASS	
+ska	ska_align	PASS	
+ska	ska_alleles	PASS	
+ska	ska_annotate	PASS	
+ska	ska_compare	PASS	
+ska	ska_distance	PASS	
+ska	ska_fasta	PASS	
+ska	ska_fastq	PASS	
+ska	ska_humanise	PASS	
+ska	ska_info	PASS	
+ska	ska_map	PASS	
+ska	ska_merge	PASS	
+ska	ska_summary	PASS	
+ska	ska_type	Not completed	no allele fasta files and profile table with a matching split kmer file for typing were available; not run
+ska	ska_unique	PASS	
+ska	ska_weed	PASS	
+ska2	ska2_align	PASS	
+ska2	ska2_build	PASS	
+ska2	ska2_cov	PASS	
+ska2	ska2_delete	PASS	
+ska2	ska2_distance	PASS	
+ska2	ska2_lo	PASS	
+ska2	ska2_map	PASS	
+ska2	ska2_merge	PASS	
+ska2	ska2_nk	PASS	
+ska2	ska2_weed	PASS	
+skani	skani_dist	PASS	
+skani	skani_search	PASS	
+skani	skani_sketch	PASS	
+skani	skani_triangle	PASS	
+skc	skc	PASS	
+skder	skder	Failed	image problem: busybox sort in the image has no --parallel option, so skder writes empty results with no representative genomes
+skesa	skesa	PASS	
+skesa	skesa_gfa_connector	PASS	
+skesa	skesa_kmercounter	PASS	
+skesa	skesa_saute	PASS	
+sketchlib	sketchlib_append	PASS	
+sketchlib	sketchlib_delete	PASS	
+sketchlib	sketchlib_dist	PASS	
+sketchlib	sketchlib_info	PASS	
+sketchlib	sketchlib_inverted_build	PASS	
+sketchlib	sketchlib_inverted_precluster	PASS	
+sketchlib	sketchlib_inverted_query	PASS	
+sketchlib	sketchlib_merge	PASS	
+sketchlib	sketchlib_sketch	PASS	
+sketchy	sketchy_check	PASS	
+sketchy	sketchy_info	PASS	
+sketchy	sketchy_predict	PASS	
+sketchy	sketchy_shared	PASS	
+sketchy	sketchy_sketch	PASS	
+skewer	skewer	Failed	image problem: --compress silently writes empty output files because the image's busybox gzip has no --rsyncable; plain trimming of real paired reads is correct.
+skmer	skmer_correct	Not completed	needs subsample replicate output, and skmer subsample fails in this image (mash Relink warning breaks the distance step)
+skmer	skmer_distance	Failed	image problem: the image's mash prints a 'Relink libgfortran' warning on stderr, which skmer parses as a number (ValueError), so every multi-sample distance step fails
+skmer	skmer_query	Failed	image problem: the image's mash prints a 'Relink libgfortran' warning on stderr, which skmer parses as a number (ValueError), so every multi-sample distance step fails
+skmer	skmer_reference	Failed	image problem: the image's mash prints a 'Relink libgfortran' warning on stderr, which skmer parses as a number (ValueError), so every multi-sample distance step fails
+skmer	skmer_subsample	Failed	image problem: the image's mash prints a 'Relink libgfortran' warning on stderr, which skmer parses as a number (ValueError), so every multi-sample distance step fails
+skyline2isocor	skyline2isocor	PASS	Rewritten with -i/-o options; the package's own Skyline test file converted and matches the expected IsoCor table (2045 lines).
+slamdunk	slamdunk_all	PASS	Galaxy test reads (12 reads, Actb region) run; T>C counts match the Galaxy expected table.
+slamdunk	slamdunk_alleyoop_collapse	PASS	New CWL; the collapsed table for Actb matches the tcount values (rate 0.0222, 8 reads, 4 T>C reads).
+slamdunk	slamdunk_alleyoop_dedup	PASS	New CWL; the 12 filtered Galaxy test reads were all retained (12 of 12) and the BAM has 12 reads.
+slamdunk	slamdunk_alleyoop_dump	PASS	New CWL; the read info dump lists the test reads with sequence, mismatches and per-position T>C counts.
+slamdunk	slamdunk_alleyoop_merge	PASS	New CWL; merged T>C rate for Actb is 0.5 (4 T>C reads over 8 reads), as TcReadCount / ReadCount gives.
+slamdunk	slamdunk_alleyoop_positional-tracks	PASS	New CWL; Galaxy test reads gave the 8 genome-wide bedGraph tracks with plausible values (T>C conversions at chr5:120495).
+slamdunk	slamdunk_alleyoop_rates	PASS	New CWL; the overall rates table is identical to the Galaxy expected reads1_overallrates.csv (only the version comment differs).
+slamdunk	slamdunk_alleyoop_read-separator	PASS	New CWL; on the Galaxy test BAM with its SNP VCF (--vcf), the TC and background BAMs match the Galaxy expected reads exactly.
+slamdunk	slamdunk_alleyoop_snpeval	Not completed	New CWL; alleyoop snpeval writes its CSV and PDF but its R plot script stops with an xy.coords error because the 12-read test set has no SNPs; no larger real data.
+slamdunk	slamdunk_alleyoop_summary	PASS	New CWL; summary shows 12 sequenced, 12 mapped, 12 retained and 8 counted reads for the Galaxy test sample.
+slamdunk	slamdunk_alleyoop_tccontext	PASS	New CWL; the T>C context table and PDF were written for the Galaxy test reads with plausible counts.
+slamdunk	slamdunk_alleyoop_tcperreadpos	PASS	New CWL; per read position conversion table and PDF written for the Galaxy test reads.
+slamdunk	slamdunk_alleyoop_tcperutrpos	PASS	New CWL; per UTR position conversion table and PDF written for the Actb UTR.
+slamdunk	slamdunk_alleyoop_utrrates	PASS	New CWL; Actb UTR rates with 8 reads and a median T>C rate of 3.9 percent, consistent with the tcount result.
+slamdunk	slamdunk_count	PASS	Galaxy test reads (12 reads, Actb region) run; T>C counts match the Galaxy expected table.
+slamdunk	slamdunk_filter	PASS	Galaxy test reads (12 reads, Actb region) run; T>C counts match the Galaxy expected table.
+slamdunk	slamdunk_map	PASS	Galaxy test reads (12 reads, Actb region) run; T>C counts match the Galaxy expected table.
+slamdunk	slamdunk_snp	PASS	Galaxy test reads run on the filtered BAM; the SNP VCF has no records, as in the Galaxy expected file.
+slclust	slclust	PASS	Rewritten to read pairs from stdin and write clusters to stdout; the tool's own test pairs gave the expected clusters (test2 split into 2 clusters with -j 0.6).
+slicedimage	slicedimage_checksum	Failed	tool bug: slicedimage 3.1.2 checksum crashes with TypeError (generate_partition_document() got an unexpected keyword argument 'tile_writer'); NetworkAccess was added and the real SpaceTx partition file was read.
+slimfastq	slimfastq	PASS	Rewritten; the tool's sample FASTQ (50 reads) compressed, then decompressed to a file and to stdout, both identical to the original.
+slimm	slimm	PASS	Real nf-core SARS-CoV-2 reads aligned with hisat2: raw table shows 197 reads (100%) on MT192765 as expected; note the profile shows taxid 0* for this 'no rank' taxon, while a Haemophilus species gave taxid 727.
+slimm	slimm_build	PASS	New CWL; built a .sldb from the nf-core SARS-CoV-2 + Haemophilus influenzae genomes with their real accession2taxid and taxdump files; the database holds both accessions and species names.
+slivar	slivar_compound-hets	PASS	Slivar comphet.vcf test: 9 expect=yes compound hets reported and none of the expect=no ones, as the tool's own test requires.
+slivar	slivar_ddc	PASS	Real Ashkenazi trio VCF (chr1, 2191 sites) gave the 156 KB data-driven cutoff HTML report; added the .csi index as optional secondary file.
+slivar	slivar_duo-del	Not completed	Fixed the subcommand word to duo-del; it runs on the real trio VCF but finds no deletions (header only), so the output cannot be checked; no real duo with a known deletion.
+slivar	slivar_expr	PASS	Real GIAB Ashkenazi trio from the slivar tests: de novo trio expression gave the expected 4 variants; also annotated ClinVar with a gnotate file (72 records).
+slivar	slivar_make-gnotate	PASS	ClinVar test VCF converted to a gnotate zip (ALLELEID:clinvar_a) and then used by slivar expr, which added clinvar_a to 72 records.
+slivar	slivar_tsv	PASS	Slivar test VCF with BCSQ: 4 de novo rows with the expected QUAL values (2548.1, 755.1, 2789.1, 501.1).
+slncky	slncky	Not completed	needs the 2 GB annotations.tar.gz (genome FASTA, coding BED, liftOver chains); fixed outputs and tool path types; without --config the image looks for /usr/localannotations.config (path bug), so a config file must be given.
+slow5curl	slow5curl_get	PASS	Real BLOW5 file on GitHub (slow5curl test file, fetched with NetworkAccess); output is byte-identical to the repo's expected result.
+slow5curl	slow5curl_head	PASS	Real BLOW5 file on GitHub (slow5curl test file, fetched with NetworkAccess); output is byte-identical to the repo's expected result.
+slow5curl	slow5curl_reads	PASS	Real BLOW5 file on GitHub (slow5curl test file, fetched with NetworkAccess); output is byte-identical to the repo's expected result.
+slow5tools	slow5tools_cat	PASS	Two real BLOW5 files from the FAST5 test reads concatenated; stats on the result shows 6 records. Fixed the input to accept several files.
+slow5tools	slow5tools_degrade	PASS	Real BLOW5 read from the slow5tools tests degraded with the automatic bit count; output is byte-identical to the expected file; --bits and --to/--from also ran.
+slow5tools	slow5tools_f2s	PASS	Real FAST5 reads from the slow5tools tests converted to SLOW5 and BLOW5; both outputs are byte-identical to the repo's expected files.
+slow5tools	slow5tools_get	PASS	Real BLOW5 reads: get by read id and by list file returned the requested records, identical to the same records in the full SLOW5 conversion. Fixed the CWL to stage the input writable so the index can be built.
+slow5tools	slow5tools_index	PASS	Real BLOW5 file indexed; the .idx holds the 3 read ids. Fixed the CWL to stage the input writable and collect the .idx output.
+slow5tools	slow5tools_merge	PASS	Real BLOW5 files (3 reads + 1 read from different FAST5 test files) merged with --allow; stats on the result shows 4 records; without --allow merge refuses because attributes differ for the same run id.
+slow5tools	slow5tools_quickcheck	PASS	Intact real BLOW5 file exits 0; a truncated copy fails with the missing EOF marker error.
+slow5tools	slow5tools_s2f	PASS	Real BLOW5 converted back to FAST5; converting that FAST5 to SLOW5 again gives identical read records (only the file_type header attribute differs, now multi-read).
+slow5tools	slow5tools_skim	PASS	Real BLOW5 file: default skim lists the 3 records without signal and --rid lists the 3 read ids; fixed the CWL to stage the input writable for the index.
+slow5tools	slow5tools_split	PASS	Real SLOW5/BLOW5 reads: split by --reads gave 2 files of 2 reads, and demultiplexing with a barcode summary table gave files identical to the slow5tools expected output.
+slow5tools	slow5tools_stats	PASS	Real BLOW5 file: stats report shows BLOW5, zlib/svb-zd, 3 records and the 5 auxiliary fields, as expected.
+slow5tools	slow5tools_view	PASS	Real BLOW5 (from FAST5 test reads) converted to SLOW5; output is identical to the direct FAST5 to SLOW5 conversion.
+smaca	smaca	Failed	image problem: smaca crashes with numpy AttributeError (np.float removed) in the image
+smafa	smafa_cluster	PASS	
+smafa	smafa_count	PASS	
+smafa	smafa_makedb	PASS	
+smafa	smafa_query	PASS	
+smakcr	smakcr	PASS	
+smallgenomeutilities	smallgenomeutilities_aln2basecnt	PASS	
+smallgenomeutilities	smallgenomeutilities_convert_reference	PASS	
+smallgenomeutilities	smallgenomeutilities_coverage_depth_qc	PASS	
+smallgenomeutilities	smallgenomeutilities_extract_consensus	PASS	
+smallgenomeutilities	smallgenomeutilities_extract_coverage_intervals	PASS	
+smallgenomeutilities	smallgenomeutilities_frameshift_deletions_checks	Not completed	runs on a real SARS-CoV-2 BAM and its own consensus, but the table is header-only (no frameshifts in this data), so the detection could not be shown.
+smallgenomeutilities	smallgenomeutilities_mapper	Failed	image problem: the mapper script calls __mapper_impl__.find_interval, which does not exist in the image (AttributeError)
+smallgenomeutilities	smallgenomeutilities_minority_freq	PASS	
+smallgenomeutilities	smallgenomeutilities_paired_end_read_merger	PASS	
+smalr	smalr	PASS	
+smalt	smalt_index	PASS	
+smalt	smalt_map	PASS	
+smalt	smalt_sample	PASS	
+smartdenovo	smartdenovo_pairaln	PASS	
+smartdenovo	smartdenovo_smartdenovo.pl	PASS	
+smartdenovo	smartdenovo_wtclp	PASS	
+smartdenovo	smartdenovo_wtcns	PASS	
+smartdenovo	smartdenovo_wtcyc	PASS	
+smartdenovo	smartdenovo_wtext	PASS	
+smartdenovo	smartdenovo_wtgbo	PASS	
+smartdenovo	smartdenovo_wtlay	PASS	
+smartdenovo	smartdenovo_wtmer	PASS	
+smartdenovo	smartdenovo_wtmsa	PASS	
+smartdenovo	smartdenovo_wtobt	PASS	
+smartdenovo	smartdenovo_wtpre	PASS	
+smartdenovo	smartdenovo_wtzmo	PASS	
+smartmap	smartmap_SmartMap	PASS	
+smartmap	smartmap_SmartMapPrep	PASS	
+smartmap	smartmap_SmartMapRNAPrep	PASS	
+smashpp	smashpp	PASS	

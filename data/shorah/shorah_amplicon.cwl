@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: shorah
+baseCommand:
+  - shorah
+  - amplicon
 label: shorah_amplicon
 doc: "Call SNVs from amplicon sequencing data\n\nTool homepage: https://github.com/cbg-ethz/shorah"
 inputs:
@@ -15,6 +17,9 @@ inputs:
       prefix: --alpha
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: sorted bam format alignment file
     inputBinding:
       position: 101
@@ -29,10 +34,13 @@ inputs:
       prefix: --diversity
   - id: fasta_ref
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference genome in fasta format
     inputBinding:
       position: 101
       prefix: --fasta
+      valueFrom: $(self.basename)
   - id: ignore_indels
     type:
       - 'null'
@@ -111,6 +119,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: snv_files
+    type: File[]
+    doc: Called SNVs and corrected reads written to the working directory (csv, vcf, txt, fasta)
+    outputBinding:
+      glob: ["*.csv", "*.vcf", "*.txt", "*.fas", "*.log"]
+  - id: snv_directory
+    type: ['null', Directory]
+    doc: Directory with the SNV calls and support files
+    outputBinding:
+      glob: snv
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta_ref)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shorah:1.99.2--py38h73782ee_8

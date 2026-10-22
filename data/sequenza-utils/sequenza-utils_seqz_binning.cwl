@@ -4,111 +4,47 @@ baseCommand:
   - sequenza-utils
   - seqz_binning
 label: sequenza-utils_seqz_binning
-doc: "Binning of the genome based on allele frequencies.\n\nTool homepage: http://sequenza-utils.readthedocs.org"
+doc: 'Perform the binning of the seqz file to reduce file size and memory requirement for the analysis.
+
+
+  Tool homepage: http://sequenza-utils.readthedocs.org'
 inputs:
-  - id: input_file
+  - id: seqz
     type: File
-    doc: Input file (e.g. seqz.txt)
+    doc: A seqz file.
     inputBinding:
       position: 1
-  - id: max_depth
-    type:
-      - 'null'
-      - int
-    doc: Maximum depth for a bin to be considered
-    inputBinding:
-      position: 102
-      prefix: --max-depth
-  - id: max_freq
-    type:
-      - 'null'
-      - float
-    doc: Maximum allele frequency for a bin to be considered
-    inputBinding:
-      position: 102
-      prefix: --max-freq
-  - id: max_len
-    type:
-      - 'null'
-      - int
-    doc: Maximum length of a bin to be considered
-    inputBinding:
-      position: 102
-      prefix: --max-len
-  - id: min_depth
-    type:
-      - 'null'
-      - int
-    doc: Minimum depth for a bin to be considered
-    inputBinding:
-      position: 102
-      prefix: --min-depth
-  - id: min_freq
-    type:
-      - 'null'
-      - float
-    doc: Minimum allele frequency for a bin to be considered
-    inputBinding:
-      position: 102
-      prefix: --min-freq
-  - id: min_len
-    type:
-      - 'null'
-      - int
-    doc: Minimum length of a bin to be considered
-    inputBinding:
-      position: 102
-      prefix: --min-len
-  - id: output_dir
+      prefix: --seqz
+  - id: output_name
     type: string
-    doc: Output directory
+    doc: Output file name. Default STDOUT ("-"). Gzip compression when the name ends in .gz.
     inputBinding:
-      position: 102
-      prefix: --output-dir
-  - id: step
-    type:
-      - 'null'
-      - int
-    doc: Step size for binning (bp)
-    inputBinding:
-      position: 102
-      prefix: --step
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output
-    inputBinding:
-      position: 102
-      prefix: --verbose
+      position: 2
+      prefix: -o
   - id: window
     type:
       - 'null'
       - int
-    doc: Window size for binning (bp)
+    doc: Window size used for binning the original seqz file. Default 50.
     inputBinding:
-      position: 102
+      position: 3
       prefix: --window
-outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
-  - id: output_dir_dir
+  - id: tabix
     type:
       - 'null'
-      - Directory
-    doc: Output directory
+      - string
+    doc: Path of the tabix binary. Default "tabix".
+    inputBinding:
+      position: 4
+      prefix: --tabix
+outputs:
+  - id: output_seqz
+    type: File
+    doc: Binned seqz file.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_name)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sequenza-utils:3.0.0--py311h8ddd9a4_8
-stdout: sequenza-utils_seqz_binning.out

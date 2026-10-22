@@ -16,12 +16,18 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: Fasta file containing the reference sequence
     inputBinding:
       position: 101
       prefix: -f
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Input BAM file
     inputBinding:
       position: 101

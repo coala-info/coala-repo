@@ -1,5 +1,36 @@
 # sga CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sga_assemble | PASS |  |
+| sga_bwt2fa | PASS |  |
+| sga_cluster | PASS |  |
+| sga_correct | PASS |  |
+| sga_filter | PASS |  |
+| sga_filterBAM | PASS | ran on read pairs aligned to the assembled contigs, not a mate-pair library; pairs were filtered and a valid BAM written |
+| sga_fm-merge | PASS |  |
+| sga_gapfill | PASS | synthetic data: a 100 bp gap planted in a real assembled contig was filled with the original sequence |
+| sga_gen-ssa | PASS |  |
+| sga_graph-concordance | PASS |  |
+| sga_graph-diff | PASS |  |
+| sga_haplotype-filter | Not completed | tool asserts on the graph-diff strings file; it needs a haplotype file from the full SGA variant workflow and a multi-sample population index |
+| sga_index | PASS |  |
+| sga_kmer-count | PASS |  |
+| sga_merge | PASS |  |
+| sga_overlap | PASS |  |
+| sga_oview | PASS |  |
+| sga_preprocess | PASS |  |
+| sga_preqc | Not completed | full mode did not finish within 10 minutes on a 48 kb phage read set; the --simple mode works |
+| sga_rewrite-evidence-bam | PASS | evidence BAM from graph-diff was rewritten with read sequences and qualities |
+| sga_rmdup | PASS |  |
+| sga_scaffold | Not completed | runs on real phage short-insert reads, but no contig links form with this data, so scaffolding itself could not be shown. |
+| sga_scaffold2fasta | Not completed | runs on real phage short-insert reads, but no contig links form with this data, so scaffolding could not be shown; the documented --no-singletons option is rejected by the tool. |
+| sga_somatic-variant-filters | PASS |  |
+| sga_stats | PASS |  |
+| sga_subgraph | PASS |  |
+
 ## sga_preprocess
 
 ### Tool Description

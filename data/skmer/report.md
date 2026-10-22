@@ -1,5 +1,15 @@
 # skmer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| skmer_correct | Not completed | needs subsample replicate output, and skmer subsample fails in this image (mash Relink warning breaks the distance step) |
+| skmer_distance | Failed | image problem: the image's mash prints a 'Relink libgfortran' warning on stderr, which skmer parses as a number (ValueError), so every multi-sample distance step fails |
+| skmer_query | Failed | image problem: the image's mash prints a 'Relink libgfortran' warning on stderr, which skmer parses as a number (ValueError), so every multi-sample distance step fails |
+| skmer_reference | Failed | image problem: the image's mash prints a 'Relink libgfortran' warning on stderr, which skmer parses as a number (ValueError), so every multi-sample distance step fails |
+| skmer_subsample | Failed | image problem: the image's mash prints a 'Relink libgfortran' warning on stderr, which skmer parses as a number (ValueError), so every multi-sample distance step fails |
+
 ## skmer_reference
 
 ### Tool Description
@@ -180,23 +190,6 @@ options:
               working_directory/subsample
   -p P        Max number of processors to use [1-20]. Default for this
               machine: 20
-```
-
-
-## skmer
-### Tool Description
-skmer: error: argument {commands}: invalid choice: 'Run' (choose from 'reference', 'subsample', 'correct', 'distance', 'query')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/skmer:3.3.0--pyh086e186_0
-- **Homepage**: https://github.com/shahab-sarmashghi/Skmer
-- **Package**: https://anaconda.org/channels/bioconda/packages/skmer/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: skmer [-h] [--debug] {reference,subsample,correct,distance,query} ...
-skmer: error: argument {commands}: invalid choice: 'Run' (choose from 'reference', 'subsample', 'correct', 'distance', 'query')
 ```
 
 

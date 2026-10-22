@@ -1,5 +1,19 @@
 # smallgenomeutilities CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smallgenomeutilities_aln2basecnt | PASS |  |
+| smallgenomeutilities_convert_reference | PASS |  |
+| smallgenomeutilities_coverage_depth_qc | PASS |  |
+| smallgenomeutilities_extract_consensus | PASS |  |
+| smallgenomeutilities_extract_coverage_intervals | PASS |  |
+| smallgenomeutilities_frameshift_deletions_checks | Not completed | runs on a real SARS-CoV-2 BAM and its own consensus, but the table is header-only (no frameshifts in this data), so the detection could not be shown. |
+| smallgenomeutilities_mapper | Failed | image problem: the mapper script calls __mapper_impl__.find_interval, which does not exist in the image (AttributeError) |
+| smallgenomeutilities_minority_freq | PASS |  |
+| smallgenomeutilities_paired_end_read_merger | PASS |  |
+
 ## smallgenomeutilities_convert_reference
 
 ### Tool Description

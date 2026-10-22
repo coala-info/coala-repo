@@ -1,5 +1,11 @@
 # shigapass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shigapass_ShigaPass.sh | PASS |  |
+
 ## shigapass_ShigaPass.sh
 
 ### Tool Description

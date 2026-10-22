@@ -1,5 +1,11 @@
 # shapeit4 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shapeit4 | PASS |  |
+
 ## shapeit4
 
 ### Tool Description

@@ -89,18 +89,19 @@ inputs:
       prefix: -d
   - id: overlap_file
     type:
-      - 'null'
-      - string
+      type: array
+      items: File
+      inputBinding:
+        prefix: -i
     doc: "Overlap file from wtzmo, +, *\n             Format: reads1\t+/-\tlen1\t\
       beg1\tend1\treads2\t+/-\tlen2\tbeg2\tend2\tscore\tidentity<float>\tmat\tmis\t\
       ins\tdel\tcigar"
     inputBinding:
       position: 101
-      prefix: -i
   - id: retained_region_file
     type:
       - 'null'
-      - string
+      - File
     doc: "Long reads retained region, often from wtobt/wtcyc, +\n             Format:
       read_name\toffset\tlength\toriginal_len"
     inputBinding:
@@ -134,15 +135,13 @@ inputs:
       prefix: -v
   - id: output_regions_path
     type: string
-    doc: Output or path parameter `output_regions_path`
+    doc: Output of reads' regions after clipping (-o)
     inputBinding:
       position: 102
-      prefix: --output-regions
+      prefix: -o
 outputs:
   - id: output_regions
-    type:
-      - 'null'
-      - File
+    type: File
     doc: "Ouput of reads' regions after clipping, -:stdout, *\n             Format:
       read_name\toffset\tlength"
     outputBinding:

@@ -1,5 +1,13 @@
 # smalt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smalt_index | PASS |  |
+| smalt_map | PASS |  |
+| smalt_sample | PASS |  |
+
 ## smalt_index
 
 ### Tool Description

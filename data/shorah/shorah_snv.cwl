@@ -6,6 +6,13 @@ baseCommand:
 label: shorah_snv
 doc: "Call SNVs from BAM files.\n\nTool homepage: https://github.com/cbg-ethz/shorah"
 inputs:
+  - id: previous_run_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Intermediate files of a previous shorah shotgun or amplicon run (coverage.txt and the
+      support files), staged in the working directory because the snv step reads them from there.
   - id: alpha
     type:
       - 'null'
@@ -17,6 +24,9 @@ inputs:
       prefix: --alpha
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: sorted bam format alignment file
     inputBinding:
       position: 101
@@ -63,6 +73,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fasta
+      valueFrom: $(self.basename)
   - id: region
     type:
       - 'null'
@@ -99,6 +110,23 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: snv_files
+    type: File[]
+    doc: Called SNVs and corrected reads written to the working directory (csv, vcf, txt, fasta)
+    outputBinding:
+      glob: ["*.csv", "*.vcf", "*.txt", "*.fas", "*.log"]
+  - id: snv_directory
+    type: ['null', Directory]
+    doc: Directory with the SNV calls and support files
+    outputBinding:
+      glob: snv
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.previous_run_files || [])
+      - entry: $(inputs.reference_fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shorah:1.99.2--py38h73782ee_8

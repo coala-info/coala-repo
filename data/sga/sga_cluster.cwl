@@ -4,18 +4,26 @@ baseCommand:
   - sga
   - cluster
 label: sga_cluster
-doc: "Extract clusters of reads belonging to the same connected components.\n\nTool
-  homepage: https://github.com/jts/sga"
+doc: 'Extract clusters of reads belonging to the same connected components.
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: reads
-    type: string
-    doc: Reads to process
+    type: File
+    doc: Reads file (FASTA/FASTQ) with its BWT index files beside it.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
   - id: error_rate
     type:
       - 'null'
-      - string
+      - float
     doc: the maximum error rate allowed to consider two sequences aligned
     inputBinding:
       position: 102
@@ -100,6 +108,9 @@ outputs:
       glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.reads)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

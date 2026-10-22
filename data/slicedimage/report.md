@@ -1,5 +1,11 @@
 # slicedimage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| slicedimage_checksum | Failed | tool bug: slicedimage 3.1.2 checksum crashes with TypeError (generate_partition_document() got an unexpected keyword argument 'tile_writer'); NetworkAccess was added and the real SpaceTx partition file was read. |
+
 ## slicedimage_checksum
 
 ### Tool Description

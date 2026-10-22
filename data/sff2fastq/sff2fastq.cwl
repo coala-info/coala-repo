@@ -10,26 +10,24 @@ inputs:
     doc: Input SFF file
     inputBinding:
       position: 1
-  - id: include_name_in_quality
+  - id: untrimmed
     type:
       - 'null'
       - boolean
-    doc: Include sequence name in the quality line
+    doc: Output the untrimmed sequence and quality scores
     inputBinding:
       position: 102
       prefix: -n
   - id: output_fastq_path
     type: string
-    doc: Output or path parameter `output_fastq_path`
+    doc: Desired fastq output file name.
     inputBinding:
       position: 103
-      prefix: --output-fastq
+      prefix: -o
 outputs:
   - id: output_fastq
-    type:
-      - 'null'
-      - File
-    doc: Output FASTQ file (default is stdout)
+    type: File
+    doc: Output FASTQ file
     outputBinding:
       glob: $(inputs.output_fastq_path)
 requirements:

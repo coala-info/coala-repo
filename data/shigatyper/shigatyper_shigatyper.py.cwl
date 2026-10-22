@@ -2,68 +2,67 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: shigatyper
 label: shigatyper_shigatyper.py
-doc: "Shigella serotyping from Illumina paired-end reads.\n\nTool homepage: https://github.com/CFSAN-Biostatistics/shigatyper"
+doc: "A WGS-based genoserotyping pipeline for Shigella spp. (ShigaTyper). Predicts the serotype from Illumina paired-end, single-end or ONT reads.\n\nTool homepage: https://github.com/CFSAN-Biostatistics/shigatyper"
 inputs:
-  - id: fastq_1
-    type: File
-    doc: Forward read file (FASTQ)
+  - id: r1
+    type: ['null', File]
+    doc: Input FASTQ is R1 of paired-end reads
     inputBinding:
-      position: 1
-  - id: fastq_2
-    type:
-      - 'null'
-      - File
-    doc: Reverse read file (FASTQ)
+      position: 101
+      prefix: --R1
+  - id: r2
+    type: ['null', File]
+    doc: Input FASTQ is R2 of paired-end reads
     inputBinding:
-      position: 2
-  - id: msh
-    type:
-      - 'null'
-      - boolean
-    doc: Use MSH (MinHash) for identification
+      position: 101
+      prefix: --R2
+  - id: se
+    type: ['null', File]
+    doc: Input FASTQ is contains single-end reads
     inputBinding:
-      position: 103
-      prefix: --msh
-  - id: no_clean
-    type:
-      - 'null'
-      - boolean
-    doc: Do not delete intermediate files
+      position: 101
+      prefix: --SE
+  - id: ont
+    type: ['null', boolean]
+    doc: The input FASTQ file contains ONT reads
     inputBinding:
-      position: 103
-      prefix: --no-clean
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
+      position: 101
+      prefix: --ont
+  - id: sample_name
+    type: ['null', string]
+    doc: Sample name
     inputBinding:
-      position: 103
-      prefix: --threads
+      position: 101
+      prefix: --name
   - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output
+    type: ['null', boolean]
+    doc: Verbose mode
     inputBinding:
-      position: 103
+      position: 101
       prefix: --verbose
-  - id: output_path
+  - id: outdir
     type: string
-    doc: Output or path parameter `output_path`
+    doc: Where to write output files to
     inputBinding:
-      position: 104
-      prefix: --output
+      position: 102
+      prefix: --outdir
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: Output file for the results
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: output_directory
+    type: Directory
+    doc: Directory with the serotype prediction and hit tables
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.outdir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outdir)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shigatyper:2.0.5--pyhdfd78af_0
+stdout: shigatyper_shigatyper.py.out

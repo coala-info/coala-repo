@@ -24,11 +24,12 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: int
     doc: Sets the number and length of the fragments
     inputBinding:
       position: 101
       prefix: -B
+      itemSeparator: ','
   - id: gap_between_fragments
     type:
       - 'null'
@@ -151,7 +152,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 107
-      prefix: --output-file
+      prefix: -o
   - id: recombinant_break_log_with_taxa_path
     type:
       - 'null'
@@ -159,7 +160,7 @@ inputs:
     doc: Output or path parameter `recombinant_break_log_with_taxa_path`
     inputBinding:
       position: 108
-      prefix: --recombinant-break-log-with-taxa
+      prefix: -g
 outputs:
   - id: output_file
     type:

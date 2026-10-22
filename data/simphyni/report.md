@@ -1,5 +1,11 @@
 # simphyni CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| simphyni_run | Not completed | pipeline, skipped: simphyni run starts a Snakemake workflow |
+
 ## simphyni_run
 
 ### Tool Description

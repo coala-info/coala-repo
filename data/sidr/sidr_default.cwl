@@ -8,6 +8,9 @@ doc: "Runs the default analysis using raw preassembly data.\n\nTool homepage: ht
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Alignment of reads to preliminary assembly, in BAM format.
     inputBinding:
       position: 101
@@ -29,7 +32,7 @@ inputs:
   - id: contigs_to_keep_path
     type:
       - 'null'
-      - File
+      - string
     doc: Location to save the contigs identified as the target organism 
       (optional).
     inputBinding:
@@ -38,7 +41,7 @@ inputs:
   - id: contigs_to_remove_path
     type:
       - 'null'
-      - File
+      - string
     doc: Location to save the contigs identified as not belonging to the target 
       organism (optional).
     inputBinding:
@@ -88,6 +91,20 @@ outputs:
     doc: Output path
     outputBinding:
       glob: $(inputs.output_path_path)
+  - id: contigs_to_keep
+    type:
+      - 'null'
+      - File
+    doc: Contigs identified as the target organism
+    outputBinding:
+      glob: $(inputs.contigs_to_keep_path)
+  - id: contigs_to_remove
+    type:
+      - 'null'
+      - File
+    doc: Contigs identified as not belonging to the target organism
+    outputBinding:
+      glob: $(inputs.contigs_to_remove_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

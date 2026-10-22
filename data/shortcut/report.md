@@ -1,5 +1,11 @@
 # shortcut CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shortcut_ShortCut | PASS |  |
+
 ## shortcut_ShortCut
 
 ### Tool Description

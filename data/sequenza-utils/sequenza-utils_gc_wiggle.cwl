@@ -4,58 +4,37 @@ baseCommand:
   - sequenza-utils
   - gc_wiggle
 label: sequenza-utils_gc_wiggle
-doc: "Generates a wiggle file with GC content information for each bin.\n\nTool homepage:
-  http://sequenza-utils.readthedocs.org"
+doc: 'Given a fasta file and a window size it computes the GC percentage across the sequences, and returns a file in the UCSC wiggle format.
+
+
+  Tool homepage: http://sequenza-utils.readthedocs.org'
 inputs:
-  - id: input_file
+  - id: fasta
     type: File
-    doc: Input FASTA file containing the reference genome.
+    doc: The fasta file.
     inputBinding:
       position: 1
-  - id: bin_size
-    type:
-      - 'null'
-      - int
-    doc: 'Size of bins in base pairs. Default: 10000.'
-    inputBinding:
-      position: 102
-      prefix: --bin-size
-  - id: gc_window
-    type:
-      - 'null'
-      - int
-    doc: 'Window size for GC content calculation. Default: 1000.'
-    inputBinding:
-      position: 102
-      prefix: --gc-window
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: 'Number of threads to use. Default: 1.'
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Enable verbose output.
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
+      prefix: --fasta
+  - id: output_name
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output file name. Default STDOUT ("-").
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 2
+      prefix: -o
+  - id: window
+    type:
+      - 'null'
+      - int
+    doc: The window size to calculate the GC-content percentage. Default 50.
+    inputBinding:
+      position: 3
+      prefix: -w
 outputs:
-  - id: output_file
+  - id: output_wig
     type: File
-    doc: Output wiggle file name.
+    doc: GC-content wiggle file.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_name)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

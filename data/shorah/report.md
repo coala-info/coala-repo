@@ -1,5 +1,13 @@
 # shorah CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shorah_amplicon | PASS |  |
+| shorah_shotgun | PASS |  |
+| shorah_snv | PASS | ran on intermediate files of an earlier amplicon run (required by the subcommand) |
+
 ## shorah_shotgun
 
 ### Tool Description

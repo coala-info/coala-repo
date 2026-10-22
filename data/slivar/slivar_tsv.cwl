@@ -60,11 +60,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: INFO field(s) that should be added to output (e.g. gnomad_popmax_af) 
-      can also use 'ID' or 'QUAL' to report those variant fields.
+        inputBinding:
+          prefix: --info-field
+    doc: INFO field(s) that should be added to output (e.g. gnomad_popmax_af); can also use 'ID' or 'QUAL' to report those variant fields
     inputBinding:
       position: 102
-      prefix: --info-field
   - id: ped
     type: File
     doc: required ped file describing the trios in the VCF

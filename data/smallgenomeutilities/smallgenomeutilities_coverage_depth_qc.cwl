@@ -34,7 +34,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: int
+        items: string
     doc: name to use for each TSV file (by default extract from the TSV column)
     inputBinding:
       position: 102

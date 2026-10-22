@@ -1,5 +1,17 @@
 # sierrapy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sierrapy_fasta | PASS |  |
+| sierrapy_mutations | PASS |  |
+| sierrapy_patterns | PASS |  |
+| sierrapy_recipe_alignment | PASS |  |
+| sierrapy_recipe_mutationtsv | PASS |  |
+| sierrapy_recipe_sequencetsv | PASS |  |
+| sierrapy_seqreads | PASS | synthetic data: codon reads built from the HXB2 protease sequence with two planted minor variants |
+
 ## sierrapy_fasta
 
 ### Tool Description
@@ -119,34 +131,6 @@ Options:
   --help                     Show this message and exit.
 ```
 
-## sierrapy_recipe
-
-### Tool Description
-Post process Sierra web service output.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sierrapy:0.4.3--pyh7cba7a3_0
-- **Homepage**: https://github.com/hivdb/sierra-client/tree/master/python
-- **Package**: https://anaconda.org/channels/bioconda/packages/sierrapy/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: sierrapy recipe [OPTIONS] COMMAND [ARGS]...
-
-  Post process Sierra web service output.
-
-Options:
-  --input FILENAME   JSON result from Sierra web service.
-  --output FILENAME  File path to store the result.
-  --help             Show this message and exit.
-
-Commands:
-  alignment    Export aligned pol sequences from Sierra result.
-  mutationtsv  Export mutation set of each sequences from Sierra result.
-  sequencetsv  Export mutation set of each sequences from Sierra result.
-```
-
 ## sierrapy_seqreads
 
 ### Tool Description
@@ -183,6 +167,78 @@ Options:
                                   on `SequenceAnalysis`
   --ugly                          Output compressed JSON result
   --help                          Show this message and exit.
+```
+
+## sierrapy_recipe_alignment
+
+### Tool Description
+Export aligned pol sequences from Sierra result.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sierrapy:0.4.3--pyh7cba7a3_0
+- **Homepage**: https://github.com/hivdb/sierra-client/tree/master/python
+- **Package**: https://anaconda.org/channels/bioconda/packages/sierrapy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sierrapy recipe alignment [OPTIONS]
+
+  Export aligned pol sequences from Sierra result.
+
+Options:
+  --gap-handling [squeeze|hxb2strip|hxb2stripkeepins]
+                                  Specify how you want the recipe to handle
+                                  the gaps.
+                                  
+                                  Specify "squeeze" to keep every gap in the
+                                  result alignment; "hxb2strip" to strip out
+                                  non-HXB2 columns; "hxb2stripkeepins" to
+                                  strip not non-HXB2 columns except codon
+                                  insertions.
+  --help                          Show this message and exit.
+```
+
+## sierrapy_recipe_mutationtsv
+
+### Tool Description
+Export mutation set of each sequences from Sierra result.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sierrapy:0.4.3--pyh7cba7a3_0
+- **Homepage**: https://github.com/hivdb/sierra-client/tree/master/python
+- **Package**: https://anaconda.org/channels/bioconda/packages/sierrapy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sierrapy recipe mutationtsv [OPTIONS]
+
+  Export mutation set of each sequences from Sierra result.
+
+Options:
+  --help  Show this message and exit.
+```
+
+## sierrapy_recipe_sequencetsv
+
+### Tool Description
+Export mutation set of each sequences from Sierra result.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sierrapy:0.4.3--pyh7cba7a3_0
+- **Homepage**: https://github.com/hivdb/sierra-client/tree/master/python
+- **Package**: https://anaconda.org/channels/bioconda/packages/sierrapy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sierrapy recipe sequencetsv [OPTIONS]
+
+  Export mutation set of each sequences from Sierra result.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 ## Metadata

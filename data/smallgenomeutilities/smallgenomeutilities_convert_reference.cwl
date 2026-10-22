@@ -15,6 +15,9 @@ inputs:
       prefix: -H
   - id: input_sam_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Input SAM/BAM file
     inputBinding:
       position: 101

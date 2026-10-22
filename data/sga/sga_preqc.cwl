@@ -4,19 +4,27 @@ baseCommand:
   - sga
   - preqc
 label: sga_preqc
-doc: "Perform pre-assembly quality checks\n\nTool homepage: https://github.com/jts/sga"
+doc: 'Perform pre-assembly quality checks
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: reads_file
     type: File
     doc: Input reads file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
   - id: diploid_reference_mode
     type:
       - 'null'
       - boolean
-    doc: generate metrics assuming that the input data is a reference genome, 
-      not a collection of reads
+    doc: generate metrics assuming that the input data is a reference genome, not a collection of reads
     inputBinding:
       position: 102
       prefix: --diploid-reference-mode
@@ -24,9 +32,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: force preqc to proceed even if the coverage model does not converge. 
-      This allows the rest of the program to continue but the branch and genome 
-      size estimates may be misleading
+    doc: force preqc to proceed even if the coverage model does not converge. This allows the rest of the program to continue but the branch and genome size estimates may be misleading
     inputBinding:
       position: 102
       prefix: --force-EM
@@ -80,3 +86,8 @@ hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1
 stdout: sga_preqc.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.reads_file)

@@ -1,5 +1,11 @@
 # simscsntree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| simscsntree_python_-m_SimSCSnTree | Failed | image problem: samtools is missing in the image, so the read sampling step (skip_first_step 1) ends without reads; the tree and CNV step works |
+
 ## simscsntree_python_-m_SimSCSnTree
 
 ### Tool Description

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/scn-train-model.R
+baseCommand: scn-train-model.R
 label: singlecellnet-cli_scn-train-model.R
 doc: "Train a single cell classifier model.\n\nTool homepage: https://github.com/ebi-gene-expression-group/singlecellnet-cli"
 inputs:
@@ -17,7 +17,9 @@ inputs:
       position: 101
       prefix: --cell-type-col
   - id: dataset_id
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Name of the dataset used for training the classifier.
     inputBinding:
       position: 101
@@ -29,25 +31,33 @@ inputs:
       position: 101
       prefix: --input-object
   - id: n_rand
-    type: int
+    type:
+      - 'null'
+      - int
     doc: Number of random profiles to generate for training.
     inputBinding:
       position: 101
       prefix: --n-rand
   - id: n_top_gene_pairs
-    type: int
+    type:
+      - 'null'
+      - int
     doc: The number of top gene pairs per category.
     inputBinding:
       position: 101
       prefix: --n-top-gene-pairs
   - id: n_top_genes
-    type: int
+    type:
+      - 'null'
+      - int
     doc: The number of classification genes per category.
     inputBinding:
       position: 101
       prefix: --n-top-genes
   - id: n_trees
-    type: int
+    type:
+      - 'null'
+      - int
     doc: Number of trees for random forest classifier
     inputBinding:
       position: 101
@@ -93,7 +103,7 @@ inputs:
       prefix: --output-path
 outputs:
   - id: output_path
-    type: Directory
+    type: File
     doc: Output path for the trained classifier.
     outputBinding:
       glob: $(inputs.output_path_path)

@@ -20,11 +20,16 @@ inputs:
     doc: out_prefix
     inputBinding:
       position: 3
+  - id: annotations
+    type:
+      - 'null'
+      - Directory
+    doc: The downloaded annotations directory (annotations.tar.gz, about 2 GB, unpacked); it is staged as ./annotations because annotations.config uses relative paths
   - id: bedtools
     type:
       - 'null'
-      - File
-    doc: path to bedtools
+      - string
+    doc: path to bedtools (a path inside the image)
     inputBinding:
       position: 104
       prefix: --bedtools
@@ -41,6 +46,7 @@ inputs:
     type:
       - 'null'
       - string
+    doc: lastz gap extension penalty
     inputBinding:
       position: 104
       prefix: --gap_extend
@@ -48,22 +54,23 @@ inputs:
     type:
       - 'null'
       - string
+    doc: lastz gap open penalty
     inputBinding:
       position: 104
       prefix: --gap_open
   - id: lastz
     type:
       - 'null'
-      - File
-    doc: path to lastz
+      - string
+    doc: path to lastz (a path inside the image)
     inputBinding:
       position: 104
       prefix: --lastz
   - id: liftover
     type:
       - 'null'
-      - File
-    doc: path to liftOver
+      - string
+    doc: path to liftOver (a path inside the image)
     inputBinding:
       position: 104
       prefix: --liftover
@@ -223,6 +230,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the out_prefix (filtered lncRNAs, ortholog tables, ...)
+    outputBinding:
+      glob: $(inputs.out_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.annotations)
+        entryname: annotations
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slncky:1.0.4--1

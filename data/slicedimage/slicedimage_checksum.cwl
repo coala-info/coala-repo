@@ -4,7 +4,7 @@ baseCommand:
   - slicedimage
   - checksum
 label: slicedimage_checksum
-doc: "Calculate and write checksums for a sliced image partition file.\n\nTool homepage:
+doc: "Read a partition file and add missing checksums.\n\nTool homepage:
   https://github.com/spacetx/slicedimage"
 inputs:
   - id: in_url
@@ -31,6 +31,9 @@ outputs:
     doc: Path to write partition file with checksums
     outputBinding:
       glob: '$(inputs.out_path)'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slicedimage:3.1.2--py_0

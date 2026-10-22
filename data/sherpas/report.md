@@ -1,5 +1,11 @@
 # sherpas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sherpas_SHERPAS | Not completed | no usable test data: SHERPAS rejects a database built with the packaged IPK 0.5.1 ('built with older version of xpas'); the pre-built database is about 10 GB |
+
 ## sherpas_SHERPAS
 
 ### Tool Description

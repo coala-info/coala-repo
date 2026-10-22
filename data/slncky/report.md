@@ -1,5 +1,11 @@
 # slncky CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| slncky | Not completed | needs the 2 GB annotations.tar.gz (genome FASTA, coding BED, liftOver chains); fixed outputs and tool path types; without --config the image looks for /usr/localannotations.config (path bug), so a config file must be given. |
+
 ## slncky
 
 ### Tool Description

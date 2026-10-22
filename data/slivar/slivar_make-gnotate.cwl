@@ -19,11 +19,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --field
     doc: field(s) to pull from VCF. format is source:dest. e.g. 
       AF_popmax:gnomad_popmax_af
     inputBinding:
       position: 102
-      prefix: --field
   - id: message
     type:
       - 'null'
@@ -36,6 +37,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: gno
     doc: prefix for output
     inputBinding:
       position: 102

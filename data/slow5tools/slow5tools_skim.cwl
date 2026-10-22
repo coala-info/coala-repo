@@ -9,10 +9,8 @@ doc: "Skims through requested components in a SLOW5/BLOW5 file. If no options ar
   https://github.com/hasindu2008/slow5tools"
 inputs:
   - id: slow5_file
-    type:
-      - 'null'
-      - File
-    doc: SLOW5/BLOW5 file to skim
+    type: File
+    doc: SLOW5/BLOW5 file to skim (an index is created beside it when needed)
     inputBinding:
       position: 1
   - id: batchsize
@@ -51,6 +49,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.slow5_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slow5tools:1.4.0--hee927d3_0

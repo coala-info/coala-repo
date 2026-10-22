@@ -110,7 +110,7 @@ inputs:
       position: 101
       prefix: -f
   - id: input_file
-    type: string
+    type: File
     doc: Input file, layout from wtlay, +, *
     inputBinding:
       position: 101

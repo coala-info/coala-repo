@@ -1,5 +1,11 @@
 # sift4g CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sift4g | PASS |  |
+
 ## sift4g
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # shorttracks CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shorttracks_ShortTracks | PASS |  |
+
 ## shorttracks_ShortTracks
 
 ### Tool Description

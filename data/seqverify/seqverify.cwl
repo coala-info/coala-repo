@@ -47,7 +47,7 @@ inputs:
   - id: granularity
     type:
       - 'null'
-      - string
+      - int
     doc: Granularity level for Kraken2 classification.
     inputBinding:
       position: 101
@@ -144,7 +144,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: float
+        items: string
     doc: Similarity thresholds for comparison.
     inputBinding:
       position: 101
@@ -168,7 +168,7 @@ inputs:
   - id: stringency
     type:
       - 'null'
-      - string
+      - float
     doc: Stringency level for filtering results.
     inputBinding:
       position: 101
@@ -210,7 +210,7 @@ inputs:
   - id: variant_intensity
     type:
       - 'null'
-      - float
+      - string
     doc: Intensity threshold for variant calling.
     inputBinding:
       position: 101
@@ -224,7 +224,10 @@ inputs:
       position: 101
       prefix: --variant_window_size
   - id: output_path
-    type: string?
+    type:
+      - 'null'
+      - string
+    doc: Name of the output folder. Default "output".
     inputBinding:
       position: 102
       prefix: --output
@@ -232,10 +235,10 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
-    doc: Output directory or file path.
+      - Directory
+    doc: Output directory.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path || 'output')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

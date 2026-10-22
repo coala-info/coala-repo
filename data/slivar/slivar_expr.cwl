@@ -26,29 +26,33 @@ inputs:
   - id: family_expr
     type:
       - 'null'
-      - string
-    doc: expression(s) applied to each family where 'fam' is available with a 
-      list of samples in each family from ped file.
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --family-expr
+    doc: expression(s) applied to each family where 'fam' is available with a list of samples in each family from ped file (name:expression)
     inputBinding:
       position: 101
-      prefix: --family-expr
   - id: gnotate
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --gnotate
     doc: path(s) to compressed gnotate file(s)
     inputBinding:
       position: 101
-      prefix: --gnotate
   - id: group_expr
     type:
       - 'null'
-      - string
-    doc: 'expression(s) applied to the groups defined in the alias option [see: https://github.com/brentp/slivar/wiki/groups-in-slivar].'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --group-expr
+    doc: expression(s) applied to the groups defined in the alias option (name:expression)
     inputBinding:
       position: 101
-      prefix: --group-expr
   - id: info
     type:
       - 'null'
@@ -94,11 +98,13 @@ inputs:
   - id: sample_expr
     type:
       - 'null'
-      - string
-    doc: expression(s) applied to each sample in the VCF.
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --sample-expr
+    doc: expression(s) applied to each sample in the VCF (name:expression)
     inputBinding:
       position: 101
-      prefix: --sample-expr
   - id: skip_non_variable
     type:
       - 'null'
@@ -111,15 +117,21 @@ inputs:
   - id: trio
     type:
       - 'null'
-      - string
-    doc: expression(s) applied to each trio where 'mom', 'dad', 'kid' labels are
-      available; trios inferred from ped file.
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --trio
+    doc: expression(s) applied to each trio where 'mom', 'dad', 'kid' labels are available; trios inferred from ped file (name:expression)
     inputBinding:
       position: 101
-      prefix: --trio
   - id: vcf
     type: File
     doc: path to VCF/BCF
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 101
       prefix: --vcf

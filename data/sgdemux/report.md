@@ -1,5 +1,11 @@
 # sgdemux CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sgdemux | PASS |  |
+
 ## sgdemux
 
 ### Tool Description

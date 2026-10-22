@@ -4,32 +4,38 @@ baseCommand:
   - smalt
   - map
 label: smalt_map
-doc: "Map reads to an index\n\nTool homepage: https://github.com/roquie/smalte"
+doc: "Map reads to an index\n\nTool homepage: https://www.sanger.ac.uk/tool/smalt-0/"
 inputs:
   - id: index_name
     type: string
     doc: Name of the index to map to
     inputBinding:
-      position: 1
+      position: 102
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files (<index_name>.sma and <index_name>.smi) made by smalt index. 
+      They are staged in the working directory so that index_name resolves.
   - id: query_file
     type: File
     doc: Query file containing reads
     inputBinding:
-      position: 2
+      position: 103
   - id: mate_file
     type:
       - 'null'
       - File
     doc: Optional mate file for paired-end reads
     inputBinding:
-      position: 3
+      position: 104
   - id: add_explicit_alignments
     type:
       - 'null'
       - boolean
     doc: Add explicit alignments to output.
     inputBinding:
-      position: 104
+      position: 101
       prefix: -a
   - id: alignment_penalties
     type:
@@ -38,7 +44,7 @@ inputs:
     doc: Set alignment penalties, e.g 'match=1,mismatch=-2,gapopen=-4,gapext=-3'
       (default).
     inputBinding:
-      position: 104
+      position: 101
       prefix: -S
   - id: alignment_score_threshold
     type:
@@ -46,7 +52,7 @@ inputs:
       - int
     doc: Threshold of alignment score.
     inputBinding:
-      position: 104
+      position: 101
       prefix: -m
   - id: base_quality_threshold
     type:
@@ -54,7 +60,7 @@ inputs:
       - int
     doc: Base quality threshold <= 10 (default 0).
     inputBinding:
-      position: 104
+      position: 101
       prefix: -q
   - id: exhaustive_search
     type:
@@ -62,23 +68,15 @@ inputs:
       - boolean
     doc: Exhaustive search for alignments (at the cost of speed).
     inputBinding:
-      position: 104
+      position: 101
       prefix: -x
-  - id: extensive_help
-    type:
-      - 'null'
-      - boolean
-    doc: Print more extensive help on options.
-    inputBinding:
-      position: 104
-      prefix: -H
   - id: identity_threshold
     type:
       - 'null'
       - float
     doc: 'Identity threshold (default: 0).'
     inputBinding:
-      position: 104
+      position: 101
       prefix: -y
   - id: input_format
     type:
@@ -86,7 +84,7 @@ inputs:
       - string
     doc: Input format [fastq (default)|sam|bam].
     inputBinding:
-      position: 104
+      position: 101
       prefix: -F
   - id: insert_size_distribution_file
     type:
@@ -94,7 +92,7 @@ inputs:
       - File
     doc: Reads insert size distribution from file (see 'sample' task).
     inputBinding:
-      position: 104
+      position: 101
       prefix: -g
   - id: kmer_seed_coverage_threshold
     type:
@@ -102,7 +100,7 @@ inputs:
       - int
     doc: Threshold of the number of bases covered by k-mer seeds.
     inputBinding:
-      position: 104
+      position: 101
       prefix: -c
   - id: max_insert_size_paired_reads
     type:
@@ -110,7 +108,7 @@ inputs:
       - int
     doc: 'Maximum insert size for paired reads (default: 500).'
     inputBinding:
-      position: 104
+      position: 101
       prefix: -i
   - id: min_insert_size_paired_reads
     type:
@@ -118,7 +116,7 @@ inputs:
       - int
     doc: 'Minimum insert size for paired reads (default: 0).'
     inputBinding:
-      position: 104
+      position: 101
       prefix: -j
   - id: output_format
     type:
@@ -126,7 +124,7 @@ inputs:
       - string
     doc: 'Output format [sam(default)|bam|cigar|gff|ssaha]. Ext: [sam|bam]:nohead,x,clip.'
     inputBinding:
-      position: 104
+      position: 101
       prefix: -f
   - id: paired_read_library_type
     type:
@@ -134,7 +132,7 @@ inputs:
       - string
     doc: 'Type of paired read library [pe|mp|pp] (default: pe).'
     inputBinding:
-      position: 104
+      position: 101
       prefix: -l
   - id: preserve_read_order
     type:
@@ -142,7 +140,7 @@ inputs:
       - boolean
     doc: Preserve the order of the reads in the output (with '-n').
     inputBinding:
-      position: 104
+      position: 101
       prefix: -O
   - id: random_assignment_degen_mappings
     type:
@@ -150,7 +148,7 @@ inputs:
       - int
     doc: Random assignment of degen. mappings (mark 'unmapped' if < 0).
     inputBinding:
-      position: 104
+      position: 101
       prefix: -r
   - id: report_split_alignments
     type:
@@ -158,7 +156,7 @@ inputs:
       - boolean
     doc: Report split alignments.
     inputBinding:
-      position: 104
+      position: 101
       prefix: -p
   - id: smith_waterman_score_relative_to_best_threshold
     type:
@@ -166,7 +164,7 @@ inputs:
       - int
     doc: Threshold of the Smith-Waterman score relative to best.
     inputBinding:
-      position: 104
+      position: 101
       prefix: -d
   - id: temp_files_directory
     type:
@@ -174,7 +172,7 @@ inputs:
       - string
     doc: Write temporary files do specified directory.
     inputBinding:
-      position: 104
+      position: 101
       prefix: -T
   - id: threads
     type:
@@ -182,7 +180,7 @@ inputs:
       - int
     doc: Number of threads.
     inputBinding:
-      position: 104
+      position: 101
       prefix: -n
   - id: use_complexity_weighted_smith_waterman
     type:
@@ -190,14 +188,14 @@ inputs:
       - boolean
     doc: Use complexity weighted Smith-Waterman scores.
     inputBinding:
-      position: 104
+      position: 101
       prefix: -w
   - id: output_file_path
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
-      position: 105
-      prefix: --output-file
+      position: 101
+      prefix: -o
 outputs:
   - id: output_file
     type:
@@ -208,6 +206,8 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/smalt:v0.7.6-8-deb_cv1

@@ -57,10 +57,20 @@ inputs:
       position: 101
       prefix: --whitelist
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: barcoded_reads
+    type:
+      type: array
+      items: File
+    doc: Read FASTQ files with the cell barcode added to the read names (one per input read file, named <reads>.barcoded.fastq.gz).
+    outputBinding:
+      glob: '*.barcoded.fastq.gz'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.read1)
+        writable: true
+      - entry: $(inputs.read2)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sinto:0.10.1--pyhdfd78af_0
-stdout: sinto_barcode.out

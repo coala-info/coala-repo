@@ -4,15 +4,22 @@ baseCommand:
   - sga
   - fm-merge
 label: sga_fm-merge
-doc: "Merge unambiguously sequences from the READSFILE using the FM-index. This program
-  requires filter to be run before it and rmdup to be run after.\n\nTool homepage:
-  https://github.com/jts/sga"
+doc: 'Merge unambiguously sequences from the READSFILE using the FM-index. This program requires filter to be run before it and rmdup to be run after.
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: readsfile
     type: File
     doc: File containing reads to merge
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
   - id: min_overlap
     type:
       - 'null'
@@ -61,6 +68,9 @@ outputs:
       glob: $(inputs.outfile_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.readsfile)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

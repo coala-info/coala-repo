@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sizemeup-main
+baseCommand: sizemeup
 label: sizemeup
 doc: "A simple tool to determine the genome size of an organism\n\nTool homepage:
   https://github.com/rpetit3/sizemeup"
@@ -28,8 +28,10 @@ inputs:
       position: 101
       prefix: --silent
   - id: sizes
-    type: string
-    doc: The built in sizes file to use
+    type:
+      - 'null'
+      - File
+    doc: The built in sizes file to use (default is the file shipped with the tool)
     inputBinding:
       position: 101
       prefix: --sizes
@@ -55,13 +57,6 @@ outputs:
     doc: Directory to write output
     outputBinding:
       glob: $(inputs.outdir_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

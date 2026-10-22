@@ -165,6 +165,7 @@ inputs:
     doc: Sex of the samples.
     inputBinding:
       position: 101
+      prefix: --input-sex
   - id: input_thr
     type:
       - 'null'
@@ -249,7 +250,7 @@ inputs:
   - id: output_graph
     type:
       - 'null'
-      - File
+      - string
     doc: Phased haplotype graphs in binary format (v2.2).
     inputBinding:
       position: 101
@@ -265,7 +266,7 @@ inputs:
   - id: output_max
     type:
       - 'null'
-      - File
+      - string
     doc: Phased haplotypes in HAPS/SAMPLE format.
     inputBinding:
       position: 101
@@ -365,6 +366,28 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: haps
+    type: ['null', File]
+    doc: Phased haplotypes (HAPS format)
+    outputBinding:
+      glob: $(inputs.output_max).haps
+  - id: sample
+    type: ['null', File]
+    doc: Samples of the phased haplotypes (SAMPLE format)
+    outputBinding:
+      glob: $(inputs.output_max).sample
+  - id: log
+    type: ['null', File]
+    doc: Log file containing a copy of the screen output
+    outputBinding:
+      glob: $(inputs.output_log)
+  - id: graph
+    type: ['null', File]
+    doc: Phased haplotype graphs in binary format
+    outputBinding:
+      glob: $(inputs.output_graph)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shapeit:2.r837--h09b0a5c_1

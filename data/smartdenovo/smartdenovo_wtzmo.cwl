@@ -302,10 +302,13 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: Ultra-fast dot matrix alignment, pattern search in zmer image
+        inputBinding:
+          prefix: -U
+    doc: Ultra-fast dot matrix alignment, pattern search in zmer image. Give 
+      -U once with -1 for the default parameters, or five values (max_gap, 
+      max_deviation, min_size, deviation penalty, gap size penalty).
     inputBinding:
       position: 101
-      prefix: -U
   - id: verbose
     type:
       - 'null'

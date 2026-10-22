@@ -9,6 +9,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: List of BAM files
     inputBinding:
       position: 1

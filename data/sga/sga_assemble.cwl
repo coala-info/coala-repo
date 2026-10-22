@@ -4,7 +4,10 @@ baseCommand:
   - sga
   - assemble
 label: sga_assemble
-doc: "Create contigs from the assembly graph ASQGFILE.\n\nTool homepage: https://github.com/jts/sga"
+doc: 'Create contigs from the assembly graph ASQGFILE.
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: asqgfile
     type: File
@@ -31,8 +34,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: only remove variation if the divergence between sequences is less than 
-      F
+    doc: only remove variation if the divergence between sequences is less than F
     inputBinding:
       position: 102
       prefix: --max-divergence
@@ -40,9 +42,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: limit each vertex to a maximum of N edges. For highly repetitive 
-      regions this helps save memory by culling excessive edges around 
-      unresolvable repeats
+    doc: limit each vertex to a maximum of N edges. For highly repetitive regions this helps save memory by culling excessive edges around unresolvable repeats
     inputBinding:
       position: 102
       prefix: --max-edges
@@ -50,9 +50,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: only remove variation if the divergence between sequences when only 
-      counting indels is less than F. Setting this to 0.0 will suppress removing
-      indel variation
+    doc: only remove variation if the divergence between sequences when only counting indels is less than F. Setting this to 0.0 will suppress removing indel variation
     inputBinding:
       position: 102
       prefix: --max-gap-divergence
@@ -76,8 +74,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: only use overlaps of at least LEN. This can be used to filter the 
-      overlap set so that the overlap step only needs to be run once.
+    doc: only use overlaps of at least LEN. This can be used to filter the overlap set so that the overlap step only needs to be run once.
     inputBinding:
       position: 102
       prefix: --min-overlap
@@ -85,8 +82,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: use NAME as the prefix of the output files (output files will be 
-      NAME-contigs.fa, etc)
+    doc: use NAME as the prefix of the output files (output files will be NAME-contigs.fa, etc)
     inputBinding:
       position: 102
       prefix: --out-prefix
@@ -94,8 +90,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: resolve small repeats using spanning overlaps when the difference 
-      between the shortest and longest overlap is greater than LEN
+    doc: resolve small repeats using spanning overlaps when the difference between the shortest and longest overlap is greater than LEN
     inputBinding:
       position: 102
       prefix: --resolve-small
@@ -119,6 +114,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: contigs
+    type:
+      - 'null'
+      - File
+    doc: Assembled contigs.
+    outputBinding:
+      glob: '*-contigs.fa'
+  - id: graph
+    type:
+      - 'null'
+      - File
+    doc: Assembly graph after simplification.
+    outputBinding:
+      glob: '*-graph.asqg.gz'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

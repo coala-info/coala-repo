@@ -1,5 +1,11 @@
 # simplejson CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| simplejson | PASS | baseCommand fixed to python -m simplejson.tool; invented --indent and --sort-keys options removed (not in this version) |
+
 ## simplejson
 
 ### Tool Description

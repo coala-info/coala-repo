@@ -184,6 +184,8 @@ outputs:
       glob: $(inputs.output_newick)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shiptv:0.4.1--pyh5e36f6f_0

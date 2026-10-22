@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - slivar
-  - duodel
+  - duo-del
 label: slivar_duo-del
 doc: "find denovo structural deletions in parent-child duos using non-transmission
   of SNPs\n\nTool homepage: https://github.com/brentp/slivar"

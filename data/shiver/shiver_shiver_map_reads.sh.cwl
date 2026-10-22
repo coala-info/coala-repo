@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: shiver_shiver_map_reads.sh
+baseCommand: shiver_map_reads.sh
 label: shiver_shiver_map_reads.sh
 doc: "Maps reads to contigs, potentially using reference alignments.\n\nTool homepage:
   https://github.com/ChrisHIV/shiver"
@@ -15,11 +15,6 @@ inputs:
     doc: The configuration file, containing all your parameter choices etc.
     inputBinding:
       position: 2
-  - id: test_mode_type
-    type: string
-    doc: Either 'paired' or 'unpaired' to specify the read type for testing.
-    inputBinding:
-      position: 3
   - id: contigs_fasta
     type: File
     doc: A fasta file of contigs (output from processing the short reads with an
@@ -59,18 +54,15 @@ inputs:
       argument.
     inputBinding:
       position: 9
-  - id: test_mode
-    type:
-      - 'null'
-      - boolean
-    doc: Test configuration file validity and external program calls.
-    inputBinding:
-      position: 110
-      prefix: --test
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type: File[]
+    doc: Output files named after the sample ID (BAM files, consensus, base frequencies, coordinates)
+    outputBinding:
+      glob: $(inputs.sample_id)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shiver:1.7.3--hdfd78af_0

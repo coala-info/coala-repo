@@ -1,9 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scaffold
+baseCommand:
+  - sga
+  - scaffold
 label: sga_scaffold
-doc: "Construct scaffolds from CONTIGSFILE using distance estimates.\n\nTool homepage:
-  https://github.com/jts/sga"
+doc: 'Construct scaffolds from CONTIGSFILE using distance estimates.
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: contigs_file
     type: File
@@ -14,17 +18,13 @@ inputs:
     type:
       - 'null'
       - File
-    doc: optionally load the sequence graph from FILE
+    doc: Optionally load the sequence graph from FILE (the long form --asqg-file is rejected by this version, so -g is used).
     inputBinding:
       position: 102
-      prefix: --asqg-file
+      prefix: -g
   - id: astatistic_file
-    type:
-      - 'null'
-      - File
-    doc: load Myers' A-statistic values from FILE. This is used to determine 
-      unique and repetitive contigs with the -u/--unique-astat and 
-      -r/--repeat-astat parameters
+    type: File
+    doc: Load Myers' A-statistic values from FILE (required). Used to determine unique and repetitive contigs.
     inputBinding:
       position: 102
       prefix: --astatistic-file
@@ -40,8 +40,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: collapse heterozygous structural variation if the event size is less 
-      than N
+    doc: collapse heterozygous structural variation if the event size is less than N
     inputBinding:
       position: 102
       prefix: --max-sv-size
@@ -73,8 +72,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if two contigs have multiple distance estimates between them and they 
-      do not agree, break the scaffold at this point
+    doc: if two contigs have multiple distance estimates between them and they do not agree, break the scaffold at this point
     inputBinding:
       position: 102
       prefix: --remove-conflicting
@@ -82,10 +80,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: perform strict consistency checks on the scaffold links. If a vertex X 
-      has multiple edges, a path will be searched for that contains every vertex
-      linked to X. If no such path can be found, the edge of X are removed. This
-      builds very conservative scaffolds that should be highly accurate.
+    doc: perform strict consistency checks on the scaffold links. If a vertex X has multiple edges, a path will be searched for that contains every vertex linked to X. If no such path can be found, the edge of X are removed. This builds very conservative scaffolds that should be highly accurate.
     inputBinding:
       position: 102
       prefix: --strict

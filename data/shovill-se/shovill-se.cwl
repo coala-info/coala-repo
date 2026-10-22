@@ -43,6 +43,7 @@ inputs:
     doc: Estimated genome size eg. 3.2M <blank=AUTODETECT>
     inputBinding:
       position: 101
+      prefix: --gsize
   - id: keepfiles
     type:
       - 'null'
@@ -126,7 +127,7 @@ inputs:
     doc: Single-end reads
     inputBinding:
       position: 101
-      prefix: --single
+      prefix: --se
   - id: tmpdir
     type:
       - 'null'

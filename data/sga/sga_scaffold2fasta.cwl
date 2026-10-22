@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scaffold2fasta
+baseCommand:
+  - sga
+  - scaffold2fasta
 label: sga_scaffold2fasta
 doc: "Write out a fasta file for the scaffolds indicated in SCAFFOLDFILE\n\nTool homepage:
   https://github.com/jts/sga"

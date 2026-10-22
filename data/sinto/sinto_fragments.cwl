@@ -8,6 +8,8 @@ doc: "Create ATAC-seq fragment file from BAM file\n\nTool homepage: https://timo
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input bam file (must be indexed)
     inputBinding:
       position: 101

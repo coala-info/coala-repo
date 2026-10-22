@@ -1,5 +1,11 @@
 # simple_sv_annotation CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| simple_sv_annotation_simple_sv_annotation.py | PASS | synthetic data: small snpEff-style SV VCF with planted BRCA1 exon loss and an ABL1 fusion; the repo's fusion list, gene panel and exon number files |
+
 ## simple_sv_annotation_simple_sv_annotation.py
 
 ### Tool Description

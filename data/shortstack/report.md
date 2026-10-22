@@ -1,5 +1,11 @@
 # shortstack CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shortstack_ShortStack | PASS |  |
+
 ## shortstack_ShortStack
 
 ### Tool Description

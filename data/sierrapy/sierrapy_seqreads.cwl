@@ -8,9 +8,9 @@ doc: "Run alignment, drug resistance and other analysis for one or more tab-deli
   text files contained codon reads of HIV-1 pol DNA sequences.\n\nTool homepage: https://github.com/hivdb/sierra-client/tree/master/python"
 inputs:
   - id: seqreads
-    type: string
-    doc: One or more tab-delimited text files contained codon reads of HIV-1 pol
-      DNA sequences.
+    type: File
+    doc: A tab-delimited text file (.codfreq) containing codon reads of HIV-1 pol
+      DNA sequences. The report is written beside it as .report.json.
     inputBinding:
       position: 1
   - id: min_codon_reads
@@ -78,9 +78,23 @@ inputs:
       position: 102
       prefix: --virus
 outputs:
+  - id: report
+    type: File
+    doc: JSON report written beside the input file (<name>.report.json)
+    outputBinding:
+      glob: '*.report.json'
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.seqreads.basename)
+        entry: $(inputs.seqreads)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sierrapy:0.4.3--pyh7cba7a3_0

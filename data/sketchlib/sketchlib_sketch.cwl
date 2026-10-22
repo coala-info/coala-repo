@@ -124,10 +124,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: file_list_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: 'Sequence files named in the file list; they are staged in the working directory so that the names in the list resolve (give the list with plain file names)'
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_files
     type:
       type: array
@@ -135,7 +138,10 @@ outputs:
     doc: Files written with the prefix given in output
     outputBinding:
       glob: $(inputs.output)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '${ return inputs.file_list_files ? inputs.file_list_files : []; }'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sketchlib:0.2.4--h4349ce8_0
-stdout: sketchlib_sketch.out

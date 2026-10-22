@@ -10,37 +10,34 @@ inputs:
     type: Directory
     doc: Directory of the input (processed) library
     inputBinding:
-      position: 1
-  - id: apply_jukes_cantor
-    type:
-      - 'null'
-      - boolean
-    doc: Apply Jukes-Cantor transformation to distances. Output 5.0 if not 
-      applicable
+      position: 100
+  - id: output_prefix
+    type: string
+    default: ref-dist-mat
+    doc: Output (distances) prefix
     inputBinding:
-      position: 102
+      position: 1
+      prefix: -o
+  - id: apply_jukes_cantor
+    type: ['null', boolean]
+    doc: Apply Jukes-Cantor transformation to distances. Output 5.0 if not applicable
+    inputBinding:
+      position: 1
       prefix: -t
   - id: max_processors
-    type:
-      - 'null'
-      - int
-    doc: 'Max number of processors to use [1-20]. Default for this machine: 20'
+    type: ['null', int]
+    doc: Max number of processors to use [1-20]
     inputBinding:
-      position: 102
+      position: 1
       prefix: -p
-  - id: output_prefix
-    type:
-      - 'null'
-      - string
-    doc: Output (distances) prefix.
-    inputBinding:
-      position: 102
-      prefix: -o
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: distance_matrix
+    type: ['null', File]
+    doc: Pairwise distance matrix
+    outputBinding:
+      glob: $(inputs.output_prefix)*.txt
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/skmer:3.3.0--pyh086e186_0
-stdout: skmer_distance.out

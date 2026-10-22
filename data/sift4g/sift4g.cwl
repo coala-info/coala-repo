@@ -152,7 +152,7 @@ inputs:
     doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: --out
 outputs:
   - id: out_dir
     type:
@@ -163,6 +163,10 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: '$({class: "Directory", basename: inputs.out_dir_path, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sift4g:2.0.0--h503566f_8

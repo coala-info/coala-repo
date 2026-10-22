@@ -1,5 +1,12 @@
 # singlecellnet-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| singlecellnet-cli_scn-predict.R | PASS |  |
+| singlecellnet-cli_scn-train-model.R | PASS |  |
+
 ## singlecellnet-cli_scn-train-model.R
 
 ### Tool Description

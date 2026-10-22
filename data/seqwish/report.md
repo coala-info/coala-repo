@@ -1,5 +1,11 @@
 # seqwish CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqwish | PASS |  |
+
 ## seqwish
 
 ### Tool Description

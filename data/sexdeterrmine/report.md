@@ -1,5 +1,11 @@
 # sexdeterrmine CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sexdeterrmine | PASS | input depth table made with samtools depth from the Galaxy test BAM; counts match the depth file |
+
 ## sexdeterrmine
 
 ### Tool Description

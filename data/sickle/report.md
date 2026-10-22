@@ -1,38 +1,55 @@
 # sickle CWL Generation Report
 
-## sickle
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sickle_pe | PASS |  |
+| sickle_se | PASS |  |
+
+## sickle_se
 
 ### Tool Description
-Windowed Adaptive Trimming for FASTQ files using quality
+Single-end windowed adaptive trimming of FASTQ files using quality.
 
 ### Metadata
 - **Docker Image**: biocontainers/sickle:v1.33-1b1-deb_cv1
-- **Homepage**: http://github.com/mloesch/sickle
+- **Homepage**: https://github.com/najoshi/sickle
 - **Package**: https://anaconda.org/channels/bioconda/packages/sickle/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/sickle/overview
-- **Total Downloads**: 30.7K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/mloesch/sickle
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'biocontainers/sickle:v1.33-1b1-deb_cv1' locally
-v1.33-1b1-deb_cv1: Pulling from biocontainers/sickle
-f02c85e8286d: Pulling fs layer
-59c73d8d8027: Pulling fs layer
-f48e474aa75e: Pulling fs layer
-3474c491ae21: Pulling fs layer
-f6c1b00d55fa: Pulling fs layer
-67c6c901a29b: Pulling fs layer
-5e8f799efe63: Pulling fs layer
-3474c491ae21: Waiting
-f6c1b00d55fa: Waiting
-67c6c901a29b: Waiting
-5e8f799efe63: Waiting
-docker: write /var/lib/docker/tmp/GetImageBlob1613700569: no space left on device
 
-Run 'docker run --help' for more information
+Usage: sickle se [options] -f <fastq sequence file> -t <quality type> -o <trimmed fastq file>
+
+Options:
+-f, --fastq-file, Input fastq file (required)
+-t, --qual-type, Type of quality values (solexa (CASAVA < 1.3), illumina (CASAVA 1.3 to 1.7), sanger (which is CASAVA >= 1.8)) (required)
+-o, --output-file, Output trimmed fastq file (required)
+-q, --qual-threshold, Threshold for trimming based on average quality in a window. Default 20.
+-l, --length-threshold, Threshold to keep a read based on length after trimming. Default 20.
+-x, --no-fiveprime, Don't do five prime trimming.
+-n, --trunc-n, Truncate sequences at position of first N.
+-g, --gzip-output, Output gzipped files.
+--quiet, Don't print out any trimming information
+--help, display this help and exit
+--version, output version information and exit
+```
+
+## sickle_pe
+
+### Tool Description
+Paired-end windowed adaptive trimming of FASTQ files using quality.
+
+### Metadata
+- **Docker Image**: biocontainers/sickle:v1.33-1b1-deb_cv1
+- **Homepage**: https://github.com/najoshi/sickle
+- **Package**: https://anaconda.org/channels/bioconda/packages/sickle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
 ```
 

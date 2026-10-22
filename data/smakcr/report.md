@@ -1,5 +1,11 @@
 # smakcr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smakcr | PASS |  |
+
 ## smakcr
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # sidr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sidr_default | PASS |  |
+| sidr_runfile | PASS |  |
+
 ## sidr_default
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # seqyclean CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqyclean | PASS |  |
+
 ## seqyclean
 
 ### Tool Description

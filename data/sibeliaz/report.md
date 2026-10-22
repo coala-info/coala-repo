@@ -1,5 +1,11 @@
 # sibeliaz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sibeliaz | Failed | image problem: busybox find in the image lacks -printf, so the default alignment step writes an empty alignment.maf (only -n block coordinates work) |
+
 ## sibeliaz
 
 ### Tool Description

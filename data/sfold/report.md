@@ -1,5 +1,11 @@
 # sfold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sfold | PASS | Galaxy test sequence gives the expected 10 sampled structures; the Galaxy mfe.ct file fails with -m because the tool needs mfold-style CT text (lower-case 'initially') |
+
 ## sfold
 
 ### Tool Description

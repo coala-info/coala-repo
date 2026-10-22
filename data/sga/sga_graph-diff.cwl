@@ -4,33 +4,38 @@ baseCommand:
   - sga
   - graph-diff
 label: sga_graph-diff
-doc: "Find and report strings only present in the graph of VARIANT when compared to
-  BASE\n\nTool homepage: https://github.com/jts/sga"
+doc: 'Find and report strings only present in the graph of VARIANT when compared to BASE
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: algorithm
     type:
       - 'null'
       - string
-    doc: 'select the assembly algorithm to use from: debruijn, string'
+    doc: 'Select the assembly algorithm: debruijn or string. The tool fails when it is not given.'
     inputBinding:
       position: 101
       prefix: --algorithm
   - id: base_file
-    type: File
-    doc: "use the read set in FILE as the base line for comparison\n             \
-      \                          if this option is not given, reference-based calls
-      will be made"
+    type:
+      - 'null'
+      - File
+    doc: "use the read set in FILE as the base line for comparison\n                                       if this option is not given, reference-based calls will be made"
     inputBinding:
       position: 101
       prefix: --base
+      valueFrom: $(self.basename)
+    secondaryFiles: &id001
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
   - id: genome_size
     type:
       - 'null'
       - int
-    doc: "set the size of the genome to be N bases\n                             \
-      \          this is used to determine the number of bits to use in the bloom
-      filter\n                                       if unset, it will be calculated
-      from the reference genome FASTA file"
+    doc: "set the size of the genome to be N bases\n                                       this is used to determine the number of bits to use in the bloom filter\n                                       if unset, it will be calculated from the reference genome FASTA file"
     inputBinding:
       position: 101
       prefix: --genome-size
@@ -70,25 +75,30 @@ inputs:
     type:
       - 'null'
       - string
-    doc: "precache the named chromosome of the reference genome\n                \
-      \                       If STR is \"all\" the entire reference will be cached"
+    doc: "precache the named chromosome of the reference genome\n                                       If STR is \"all\" the entire reference will be cached"
     inputBinding:
       position: 101
       prefix: --precache-reference
   - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: prefix the output files with NAME
+    type: string
+    doc: Prefix the output files with NAME (required here; output files are NAME.*.vcf, NAME.strings.fa, NAME.evidence.bam).
     inputBinding:
       position: 101
       prefix: --prefix
   - id: reference_file
     type: File
-    doc: use the reference sequence in FILE
+    doc: use the reference sequence in FILE (with .fai and BWT/SAI index files beside it)
     inputBinding:
       position: 101
       prefix: --reference
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - .fai
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
+      - ^.ssa
   - id: threads
     type:
       - 'null'
@@ -103,6 +113,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variant
+      valueFrom: $(self.basename)
+    secondaryFiles: *id001
   - id: verbose
     type:
       - 'null'
@@ -126,3 +138,10 @@ hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1
 stdout: sga_graph-diff.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.variant_file)
+      - $(inputs.reference_file)
+      - '${ return inputs.base_file ? inputs.base_file : []; }'

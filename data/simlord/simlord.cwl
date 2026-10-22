@@ -60,8 +60,9 @@ inputs:
   - id: generate_reference
     type:
       - 'null'
-      - string
-    doc: Generate a random reference with given GC-content and given length
+      - type: array
+        items: string
+    doc: Generate a random reference with given GC-content and given length (two values, GC then LENGTH)
     inputBinding:
       position: 102
       prefix: --generate-reference
@@ -196,7 +197,7 @@ inputs:
   - id: save_reference
     type:
       - 'null'
-      - File
+      - string
     doc: Save the random reference as fasta-file at given PATH. By default, save
       at output path with '_reference.fasta' appended.
     inputBinding:
@@ -234,19 +235,35 @@ inputs:
       position: 102
       prefix: --without-ns
   - id: sam_output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Save the alignments in a sam-file at SAM_OUTPUT. By default, use OUTPUT_PREFIX.sam.
     inputBinding:
       position: 103
       prefix: --sam-output
 outputs:
+  - id: reads
+    type:
+      - 'null'
+      - File
+    doc: Simulated reads (OUTPUT_PREFIX.fastq or OUTPUT_PREFIX.fastq.gz)
+    outputBinding:
+      glob: $(inputs.output_prefix).fastq*
   - id: sam_output
     type:
       - 'null'
       - File
-    doc: Save the alignments in a sam-file at SAM_OUTPUT. By default, use 
-      OUTPUT_PREFIX.sam.
+    doc: Alignments of the simulated reads in SAM format
     outputBinding:
-      glob: $(inputs.sam_output_path)
+      glob: '$(inputs.sam_output_path ? inputs.sam_output_path : inputs.output_prefix + ".sam")'
+  - id: reference_output
+    type:
+      - 'null'
+      - File
+    doc: The generated random reference (fasta)
+    outputBinding:
+      glob: '$(inputs.save_reference ? inputs.save_reference : inputs.output_prefix + "_reference.fasta")'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

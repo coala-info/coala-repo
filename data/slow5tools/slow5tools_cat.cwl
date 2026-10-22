@@ -7,11 +7,11 @@ label: slow5tools_cat
 doc: "Quickly concatenate SLOW5/BLOW5 files of same type (same header, extension,
   compression)\n\nTool homepage: https://github.com/hasindu2008/slow5tools"
 inputs:
-  - id: slow5_file_dir
+  - id: slow5_files
     type:
-      - 'null'
-      - File
-    doc: SLOW5/BLOW5 file or directory to concatenate
+      type: array
+      items: File
+    doc: SLOW5/BLOW5 files of the same type (same header, extension, compression) to concatenate
     inputBinding:
       position: 1
   - id: output_file_path

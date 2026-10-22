@@ -13,7 +13,7 @@ inputs:
   - id: exonnums
     type:
       - 'null'
-      - string
+      - File
     doc: "List of custom exon numbers. A transcript listed in\nthis file will be annotated
       with the numbers found in\nthis file, not the numbers found in the snpEff result"
     inputBinding:

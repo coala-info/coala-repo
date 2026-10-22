@@ -17,6 +17,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: index_file
+    type:
+      - 'null'
+      - File
+    doc: Index file written beside the input (<input>.idx)
+    outputBinding:
+      glob: $(inputs.input_file.basename).idx
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slow5tools:1.4.0--hee927d3_0

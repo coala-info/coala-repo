@@ -1,5 +1,14 @@
 # smafa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smafa_cluster | PASS |  |
+| smafa_count | PASS |  |
+| smafa_makedb | PASS |  |
+| smafa_query | PASS |  |
+
 ## smafa_makedb
 
 ### Tool Description

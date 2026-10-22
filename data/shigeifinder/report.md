@@ -1,5 +1,11 @@
 # shigeifinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shigeifinder | PASS |  |
+
 ## shigeifinder
 
 ### Tool Description

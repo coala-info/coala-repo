@@ -43,6 +43,9 @@ inputs:
       - type: array
         items: File
     doc: path to the control bam file (e.g. normal, must be indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 101
       prefix: --control-bam
@@ -213,6 +216,9 @@ inputs:
       type: array
       items: File
     doc: path to one or multiple target bam files (e.g. tumor, must be indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 101
       prefix: --target-bam

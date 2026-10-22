@@ -9,10 +9,8 @@ doc: "Display the read entry for each specified read id from a slow5 file. With 
   https://github.com/hasindu2008/slow5tools"
 inputs:
   - id: slow5_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the SLOW5 file
+    type: File
+    doc: Path to the SLOW5/BLOW5 file (an index is created beside it when missing)
     inputBinding:
       position: 1
   - id: read_ids
@@ -104,6 +102,10 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.slow5_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slow5tools:1.4.0--hee927d3_0

@@ -1,5 +1,11 @@
 # slclust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| slclust | PASS | Rewritten to read pairs from stdin and write clusters to stdout; the tool's own test pairs gave the expected clusters (test2 split into 2 clusters with -j 0.6). |
+
 ## slclust
 
 ### Tool Description

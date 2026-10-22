@@ -2,79 +2,100 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: serotypefinder
 label: serotypefinder
-doc: "SerotypeFinder identifies serotypes in total or partial genome sequences of
-  E. coli.\n\nTool homepage: https://bitbucket.org/genomicepidemiology/serotypefinder"
+doc: 'SerotypeFinder identifies the serotype (O and H antigen genes) of Escherichia coli from assembled genomes or reads.
+
+
+  Tool homepage: https://bitbucket.org/genomicepidemiology/serotypefinder'
 inputs:
+  - id: infile
+    type: File[]
+    doc: FASTA or FASTQ input files.
+    inputBinding:
+      position: 1
+      prefix: --infile
+  - id: output_path
+    type: string
+    doc: Output directory (created before the run).
+    inputBinding:
+      position: 2
+      prefix: --outputPath
+  - id: tmp_dir
+    type:
+      - 'null'
+      - string
+    doc: Temporary directory for storage of the results from the external software.
+    inputBinding:
+      position: 3
+      prefix: --tmp_dir
+  - id: method_path
+    type:
+      - 'null'
+      - string
+    doc: Path to method to use (kma or blastn).
+    inputBinding:
+      position: 4
+      prefix: --methodPath
   - id: database_path
     type:
       - 'null'
       - Directory
-    doc: Path to the SerotypeFinder database.
+    doc: Path to the databases.
     inputBinding:
-      position: 101
-      prefix: --db_path
-  - id: ext_db_path
+      position: 5
+      prefix: --databasePath
+  - id: databases
     type:
       - 'null'
       - string
-    doc: Specific databases to search (e.g., 'o_antigen,h_antigen').
+    doc: Databases chosen to search in - if none is specified all is used.
     inputBinding:
-      position: 101
+      position: 6
       prefix: --databases
-  - id: input_file
-    type:
-      type: array
-      items: File
-    doc: Input file (FASTA or FASTQ). Multiple files can be provided.
-    inputBinding:
-      position: 101
-      prefix: --inputfile
-  - id: kmer_threshold
+  - id: mincov
     type:
       - 'null'
       - float
-    doc: Threshold for k-mer based identification.
+    doc: Minimum coverage.
     inputBinding:
-      position: 101
-      prefix: --kmer_threshold
-  - id: min_length
-    type:
-      - 'null'
-      - float
-    doc: Minimum coverage (0.00-1.00).
-    inputBinding:
-      position: 101
+      position: 7
       prefix: --mincov
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Disable output to stdout.
-    inputBinding:
-      position: 101
-      prefix: --quiet
   - id: threshold
     type:
       - 'null'
       - float
-    doc: Threshold for identity (0.00-1.00).
+    doc: Minimum threshold for identity.
     inputBinding:
-      position: 101
+      position: 8
       prefix: --threshold
-  - id: output_directory_path
-    type: string
-    doc: Output or path parameter `output_directory_path`
+  - id: extented_output
+    type:
+      - 'null'
+      - boolean
+    doc: Give extended output with alignment files, template and query hits in fasta and a tab separated file with gene profile results.
     inputBinding:
-      position: 102
-      prefix: --output-directory
+      position: 9
+      prefix: --extented_output
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Quiet mode.
+    inputBinding:
+      position: 10
+      prefix: --quiet
 outputs:
   - id: output_directory
     type: Directory
-    doc: Directory to save the output files.
+    doc: Output directory.
     outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/serotypefinder:2.0.2--py312hdfd78af_1

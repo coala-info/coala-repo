@@ -4,70 +4,69 @@ baseCommand:
   - sequenza-utils
   - pileup2acgt
 label: sequenza-utils_pileup2acgt
-doc: "Converts a pileup file to ACGT format.\n\nTool homepage: http://sequenza-utils.readthedocs.org"
+doc: 'Parse the format from the samtools mpileup command, and report the occurrence of the 4 nucleotides in each position.
+
+
+  Tool homepage: http://sequenza-utils.readthedocs.org'
 inputs:
-  - id: input_file
+  - id: mpileup
     type: File
-    doc: Input pileup file.
+    doc: The input mpileup (SAMtools) file. Gzip is detected by the .gz extension.
     inputBinding:
       position: 1
-  - id: include_indels
-    type:
-      - 'null'
-      - boolean
-    doc: Include indels in the output. Default is False.
+      prefix: --mpileup
+  - id: output_name
+    type: string
+    doc: Name of the output file. To use gzip compression name the file ending in .gz. Default STDOUT.
     inputBinding:
-      position: 102
-      prefix: --include-indels
-  - id: min_base_quality
-    type:
-      - 'null'
-      - int
-    doc: Minimum base quality to consider a base. Default is 20.
-    inputBinding:
-      position: 102
-      prefix: --min-base-quality
+      position: 2
+      prefix: --output
   - id: min_depth
     type:
       - 'null'
       - int
-    doc: Minimum depth to consider a position. Default is 1.
+    doc: The minimum required read depth on a position to test for mutation. Default 1.
     inputBinding:
-      position: 102
-      prefix: --min-depth
-  - id: min_mapping_quality
+      position: 3
+      prefix: -n
+  - id: qlimit
     type:
       - 'null'
       - int
-    doc: Minimum mapping quality to consider a read. Default is 20.
+    doc: Minimum nucleotide quality score filter. Default 20.
     inputBinding:
-      position: 102
-      prefix: --min-mapping-quality
-  - id: reference_sequence
+      position: 4
+      prefix: --qlimit
+  - id: no_end
     type:
       - 'null'
-      - File
-    secondaryFiles:
-      - .fai
-    doc: Reference sequence FASTA file. If provided, the output will include the
-      reference base at each position.
+      - boolean
+    doc: Discard the base located at the end of the read.
     inputBinding:
-      position: 102
-      prefix: --reference-sequence
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+      position: 5
+      prefix: --no-end
+  - id: no_start
+    type:
+      - 'null'
+      - boolean
+    doc: Discard the base located at the start of the read.
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 6
+      prefix: --no-start
+  - id: qformat
+    type:
+      - 'null'
+      - string
+    doc: Quality format, "sanger" or "illumina". Default "sanger".
+    inputBinding:
+      position: 7
+      prefix: --qformat
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output ACGT file. If not specified, output will be written to stdout.
+  - id: output_acgt
+    type: File
+    doc: Output ACGT file.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_name)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

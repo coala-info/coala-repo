@@ -1,31 +1,36 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seshat_merge
+baseCommand:
+  - seshat
+  - merge
 label: seshat_merge
-doc: "Merge VCF files with annotations.\n\nTool homepage: https://github.com/clintval/tp53"
+doc: 'Merge Seshat annotations with a VCF file.
+
+
+  Tool homepage: https://github.com/clintval/tp53'
 inputs:
-  - id: annotations
-    type: File
-    doc: The annotation text file output from Seshat.
-    inputBinding:
-      position: 101
-      prefix: --annotations
   - id: input_vcf
     type: File
     doc: The path to the input VCF file.
     inputBinding:
-      position: 101
+      position: 1
       prefix: --input
+  - id: annotations
+    type: File
+    doc: The annotation text file output from Seshat.
+    inputBinding:
+      position: 2
+      prefix: --annotations
   - id: output_vcf_path
     type: string
     doc: The path to the output VCF file.
     inputBinding:
-      position: 102
+      position: 3
       prefix: --output
 outputs:
   - id: output_vcf
     type: File
-    doc: The path to the output VCF file.
+    doc: The annotated VCF file.
     outputBinding:
       glob: $(inputs.output_vcf_path)
 requirements:

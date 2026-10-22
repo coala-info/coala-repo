@@ -1,5 +1,11 @@
 # smaca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smaca | Failed | image problem: smaca crashes with numpy AttributeError (np.float removed) in the image |
+
 ## smaca
 
 ### Tool Description

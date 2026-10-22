@@ -1,5 +1,11 @@
 # slimfastq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| slimfastq | PASS | Rewritten; the tool's sample FASTQ (50 reads) compressed, then decompressed to a file and to stdout, both identical to the original. |
+
 ## slimfastq
 
 ### Tool Description

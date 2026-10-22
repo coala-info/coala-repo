@@ -106,17 +106,17 @@ inputs:
       prefix: -L
   - id: long_reads_files
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
+      inputBinding:
+        prefix: -i
     doc: Long reads sequences file(s)
     inputBinding:
       position: 101
-      prefix: -i
   - id: long_reads_retained_region
     type:
       - 'null'
-      - string
+      - File
     doc: 'Long reads retained region, often from wtobt, Format: read_name\toffset\tlength\toriginal_len'
     inputBinding:
       position: 101
@@ -204,13 +204,13 @@ inputs:
       prefix: -r
   - id: overlap_files
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
+      inputBinding:
+        prefix: -j
     doc: 'Overlap file(s), Format: reads1\t+/-\tlen1\tbeg1\tend1\treads2\t+/-\tlen2\tbeg2\tend2\tscore'
     inputBinding:
       position: 101
-      prefix: -j
   - id: refine_alignment
     type:
       - 'null'

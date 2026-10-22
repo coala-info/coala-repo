@@ -4,43 +4,43 @@ baseCommand:
   - sequenza-utils
   - seqz_merge
 label: sequenza-utils_seqz_merge
-doc: "Merge multiple Sequenza .seqz files into a single file.\n\nTool homepage: http://sequenza-utils.readthedocs.org"
+doc: 'Merge two seqz files.
+
+
+  Tool homepage: http://sequenza-utils.readthedocs.org'
 inputs:
-  - id: input_files
-    type:
-      type: array
-      items: File
-    doc: List of .seqz files to merge.
+  - id: seqz1
+    type: File
+    doc: First input file. If both input files contain the same line, the information in the first file is used.
     inputBinding:
       position: 1
-  - id: force
-    type:
-      - 'null'
-      - boolean
-    doc: Overwrite output file if it exists.
-    inputBinding:
-      position: 102
-      prefix: --force
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for merging.
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+      prefix: --seqz1
+  - id: seqz2
     type: File
-    doc: Path to the output merged .seqz file.
+    doc: Second input file.
+    inputBinding:
+      position: 2
+      prefix: --seqz2
+  - id: output_name
+    type: string
+    doc: Output file. For gzip compressed output name the file ending in .gz. Default STDOUT.
+    inputBinding:
+      position: 3
+      prefix: --output
+  - id: tabix
+    type:
+      - 'null'
+      - string
+    doc: Path of the tabix binary. Default "tabix".
+    inputBinding:
+      position: 4
+      prefix: --tabix
+outputs:
+  - id: output_seqz
+    type: File
+    doc: Merged seqz file.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_name)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

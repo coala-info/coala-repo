@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sherpas_SHERPAS
+baseCommand: SHERPAS
 label: sherpas_SHERPAS
 doc: "Screening Historical Events of Recombination in a Phylogeny via Ancestral Sequences\n\
   \nTool homepage: https://github.com/phylo42/sherpas"
@@ -38,7 +38,7 @@ inputs:
       position: 101
       prefix: -l
   - id: phylo_kmer_database
-    type: Directory
+    type: File
     doc: Path to the phylo-kmer database
     inputBinding:
       position: 101

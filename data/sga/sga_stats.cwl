@@ -4,20 +4,31 @@ baseCommand:
   - sga
   - stats
 label: sga_stats
-doc: "Print statistics about the read set. Currently this only prints a histogram\n\
-  of the k-mer counts\n\nTool homepage: https://github.com/jts/sga"
+doc: 'Print statistics about the read set. Currently this only prints a histogram
+
+  of the k-mer counts
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: readsfile
     type: File
     doc: Input read set file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
   - id: branch_cutoff
     type:
       - 'null'
       - int
-    doc: "stop the overlap search at N branches. This lowers the compute time but
-      will bias the statistics\naway from repetitive reads"
+    doc: 'stop the overlap search at N branches. This lowers the compute time but will bias the statistics
+
+      away from repetitive reads'
     inputBinding:
       position: 102
       prefix: --branch-cutoff
@@ -41,8 +52,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Suppress the overlap-based error statistics (faster if you only want 
-      the k-mer distribution)
+    doc: Suppress the overlap-based error statistics (faster if you only want the k-mer distribution)
     inputBinding:
       position: 102
       prefix: --no-overlap
@@ -74,9 +84,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: "use occurrence array sample rate of N in the FM-index. Higher values use
-      significantly\nless memory at the cost of higher runtime. This value must be
-      a power of 2"
+    doc: 'use occurrence array sample rate of N in the FM-index. Higher values use significantly
+
+      less memory at the cost of higher runtime. This value must be a power of 2'
     inputBinding:
       position: 102
       prefix: --sample-rate
@@ -104,3 +114,8 @@ hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1
 stdout: sga_stats.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.readsfile)

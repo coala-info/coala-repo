@@ -1,5 +1,13 @@
 # slow5curl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| slow5curl_get | PASS | Real BLOW5 file on GitHub (slow5curl test file, fetched with NetworkAccess); output is byte-identical to the repo's expected result. |
+| slow5curl_head | PASS | Real BLOW5 file on GitHub (slow5curl test file, fetched with NetworkAccess); output is byte-identical to the repo's expected result. |
+| slow5curl_reads | PASS | Real BLOW5 file on GitHub (slow5curl test file, fetched with NetworkAccess); output is byte-identical to the repo's expected result. |
+
 ## slow5curl_get
 
 ### Tool Description

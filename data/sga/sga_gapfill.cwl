@@ -4,8 +4,10 @@ baseCommand:
   - sga
   - gapfill
 label: sga_gapfill
-doc: "Fill in scaffold gaps using walks through a de Bruijn graph\n\nTool homepage:
-  https://github.com/jts/sga"
+doc: 'Fill in scaffold gaps using walks through a de Bruijn graph
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: scaffolds_fa
     type: File
@@ -40,9 +42,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: use occurrence array sample rate of N in the FM-index. Higher values 
-      use significantly less memory at the cost of higher runtime. This value 
-      must be a power of 2
+    doc: use occurrence array sample rate of N in the FM-index. Higher values use significantly less memory at the cost of higher runtime. This value must be a power of 2
     inputBinding:
       position: 102
       prefix: --sample-rate
@@ -70,11 +70,29 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: index_reads
+    type: File
+    doc: Reads file whose FM-index (.bwt, .rbwt, .sai, .rsai) is used to fill the gaps. Staged in the working directory; give its name without extension as prefix.
+    secondaryFiles:
+      - ^.bwt
+      - ^.rbwt
+      - ^.sai
+      - ^.rsai
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: filled_scaffolds
+    type: File
+    doc: Scaffolds with gaps filled.
+    outputBinding:
+      glob: '*.gapfill.fa'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1
 stdout: sga_gapfill.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.index_reads)

@@ -8,16 +8,22 @@ doc: "Calculate pairwise distances using sketches\n\nTool homepage: https://gith
 inputs:
   - id: ref_db
     type: File
-    doc: The .skm file used as the reference
+    secondaryFiles:
+      - ^.skd
+    doc: The .skm file used as the reference (its .skd data file must sit beside it)
     inputBinding:
       position: 1
+      valueFrom: $(self.path.replace(/\.skm$/, ''))
   - id: query_db
     type:
       - 'null'
       - File
-    doc: The .skm file used as the query (omit for ref v ref)
+    secondaryFiles:
+      - ^.skd
+    doc: The .skm file used as the query (omit for ref v ref). The tool needs the database basename, so the .skm suffix is removed on the command line.
     inputBinding:
       position: 2
+      valueFrom: $(self.path.replace(/\.skm$/, ''))
   - id: ani
     type:
       - 'null'

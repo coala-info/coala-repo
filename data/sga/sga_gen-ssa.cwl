@@ -4,14 +4,20 @@ baseCommand:
   - sga
   - gen-ssa
 label: sga_gen-ssa
-doc: "Build a sampled suffix array for the reads in READSFILE using the BWT\n\nTool
-  homepage: https://github.com/jts/sga"
+doc: 'Build a sampled suffix array for the reads in READSFILE using the BWT
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: readsfile
     type: File
     doc: Reads file
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - ^.bwt
+      - ^.rbwt?
   - id: check
     type:
       - 'null'
@@ -48,7 +54,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: ssa
+    type:
+      - 'null'
+      - File
+    doc: Sampled suffix array.
+    outputBinding:
+      glob: '*.ssa'
+  - id: sai
+    type:
+      - 'null'
+      - File
+    doc: Lexicographic index (with --sai-only).
+    outputBinding:
+      glob: '*.sai'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1
 stdout: sga_gen-ssa.out
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.readsfile)

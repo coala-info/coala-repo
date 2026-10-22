@@ -88,20 +88,24 @@ inputs:
       prefix: --virus
   - id: output_file_path
     type: string
-    doc: File path to store the JSON result.
+    doc: File path to store the JSON result. The name gets an index suffix
+      unless no_sharding is set.
     inputBinding:
       position: 103
       prefix: --output
 outputs:
-  - id: output_file
+  - id: output_files
     type:
-      - 'null'
-      - File
-    doc: File path to store the JSON result.
+      type: array
+      items: File
+    doc: JSON result files. Unless no_sharding is set, the name gets an index
+      suffix (result.0.json, result.1.json, ...).
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: '*.json'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sierrapy:0.4.3--pyh7cba7a3_0

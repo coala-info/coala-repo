@@ -37,6 +37,9 @@ inputs:
       prefix: --genes
   - id: input_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: Input BAM file, aligned against the reference
     inputBinding:
       position: 101

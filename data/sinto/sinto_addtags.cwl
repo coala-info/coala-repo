@@ -8,6 +8,8 @@ doc: "Add read tags to reads from individual cells\n\nTool homepage: https://tim
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input bam file (must be indexed)
     inputBinding:
       position: 101

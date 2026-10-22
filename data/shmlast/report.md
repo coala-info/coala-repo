@@ -1,5 +1,12 @@
 # shmlast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| shmlast_crbl | PASS |  |
+| shmlast_rbl | PASS |  |
+
 ## shmlast_rbl
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # seurat-scripts CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seurat-scripts_seurat-run-umap.R | PASS | input built with the image's own read-10x, normalise, variable-genes, scale and PCA scripts from real 10x data; output holds a 11089 x 2 UMAP embedding |
+
 ## Metadata
 - **Skill**: generated
 

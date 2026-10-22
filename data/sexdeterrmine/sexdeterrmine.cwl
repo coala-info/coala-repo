@@ -16,7 +16,7 @@ inputs:
   - id: sample_list
     type:
       - 'null'
-      - string
+      - File
     doc: A list of samples/bams that were in the depth file. One per line. 
       Should be in the order of the samtools depth output.
     inputBinding:
@@ -25,7 +25,12 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Tab-separated table with SNP counts, read counts and X and Y rates with errors.
+  - id: json_report
+    type: File
+    doc: JSON report written by the tool.
+    outputBinding:
+      glob: sexdeterrmine.json
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sexdeterrmine:1.1.2--hdfd78af_1

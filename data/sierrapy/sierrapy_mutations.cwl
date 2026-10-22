@@ -62,6 +62,8 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sierrapy:0.4.3--pyh7cba7a3_0

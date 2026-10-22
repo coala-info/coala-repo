@@ -4,19 +4,27 @@ baseCommand:
   - sga
   - correct
 label: sga_correct
-doc: "Correct sequencing errors in all the reads in READSFILE\n\nTool homepage: https://github.com/jts/sga"
+doc: 'Correct sequencing errors in all the reads in READSFILE
+
+
+  Tool homepage: https://github.com/jts/sga'
 inputs:
   - id: readsfile
     type: File
     doc: Input file containing reads
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
+    secondaryFiles:
+      - ^.bwt
+      - ^.sai
+      - ^.rbwt?
+      - ^.rsai?
   - id: algorithm
     type:
       - 'null'
       - string
-    doc: specify the correction algorithm to use. STR must be one of kmer, 
-      hybrid, overlap.
+    doc: specify the correction algorithm to use. STR must be one of kmer, hybrid, overlap.
     inputBinding:
       position: 102
       prefix: --algorithm
@@ -32,10 +40,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: stop the overlap search at N branches. This parameter is used to 
-      control the search time for highly-repetitive reads. If the number of 
-      branches exceeds N, the search stops and the read will not be corrected. 
-      This is not enabled by default.
+    doc: stop the overlap search at N branches. This parameter is used to control the search time for highly-repetitive reads. If the number of branches exceeds N, the search stops and the read will not be corrected. This is not enabled by default.
     inputBinding:
       position: 102
       prefix: --branch-cutoff
@@ -43,8 +48,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: use INT as the threshold to detect a conflicted base in the 
-      multi-overlap
+    doc: use INT as the threshold to detect a conflicted base in the multi-overlap
     inputBinding:
       position: 102
       prefix: --conflict
@@ -52,8 +56,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: When correcting a kmer, require the count of the new kmer is at least 
-      +N higher than the count of the old kmer.
+    doc: When correcting a kmer, require the count of the new kmer is at least +N higher than the count of the old kmer.
     inputBinding:
       position: 102
       prefix: --count-offset
@@ -69,8 +72,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: the maximum error rate allowed between two sequences to consider them 
-      overlapped
+    doc: the maximum error rate allowed between two sequences to consider them overlapped
     inputBinding:
       position: 102
       prefix: --error-rate
@@ -102,17 +104,15 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Attempt to learn the k-mer correction threshold (experimental). 
-      Overrides -x parameter.
+    doc: Attempt to learn the k-mer correction threshold (experimental). Overrides -x parameter.
     inputBinding:
       position: 102
       prefix: --learn
   - id: metrics
     type:
       - 'null'
-      - File
-    doc: collect error correction metrics (error rate by position in read, etc) 
-      and write them to FILE
+      - string
+    doc: Collect error correction metrics (error rate by position in read, etc) and write them to FILE.
     inputBinding:
       position: 102
       prefix: --metrics
@@ -120,9 +120,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum count of the base that has the highest count in overlap 
-      correction. The base of the read is only corrected if the maximum base has
-      at least this count. Should avoid mis-corrections in low coverage regions
+    doc: minimum count of the base that has the highest count in overlap correction. The base of the read is only corrected if the maximum base has at least this count. Should avoid mis-corrections in low coverage regions
     inputBinding:
       position: 102
       prefix: --min-count-max-base
@@ -154,9 +152,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: use occurrence array sample rate of N in the FM-index. Higher values 
-      use significantly less memory at the cost of higher runtime. This value 
-      must be a power of 2
+    doc: use occurrence array sample rate of N in the FM-index. Higher values use significantly less memory at the cost of higher runtime. This value must be a power of 2
     inputBinding:
       position: 102
       prefix: --sample-rate
@@ -164,11 +160,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: force the seed length to be LEN. By default, the seed length in the 
-      overlap step is calculated to guarantee all overlaps with --error-rate 
-      differences are found. This option removes the guarantee but will be 
-      (much) faster. As SGA can tolerate some missing edges, this option may be 
-      preferable for some data sets.
+    doc: force the seed length to be LEN. By default, the seed length in the overlap step is calculated to guarantee all overlaps with --error-rate differences are found. This option removes the guarantee but will be (much) faster. As SGA can tolerate some missing edges, this option may be preferable for some data sets.
     inputBinding:
       position: 102
       prefix: --seed-length
@@ -176,9 +168,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: force the seed stride to be LEN. This parameter will be ignored unless 
-      --seed-length is specified (see above). This parameter defaults to the 
-      same value as --seed-length
+    doc: force the seed stride to be LEN. This parameter will be ignored unless --seed-length is specified (see above). This parameter defaults to the same value as --seed-length
     inputBinding:
       position: 102
       prefix: --seed-stride
@@ -206,14 +196,22 @@ inputs:
       prefix: --outfile
 outputs:
   - id: outfile
+    type: File
+    doc: Corrected reads.
+    outputBinding:
+      glob: $(inputs.outfile_path)
+  - id: metrics_out
     type:
       - 'null'
       - File
-    doc: write the corrected reads to FILE
+    doc: Error correction metrics.
     outputBinding:
-      glob: $(inputs.outfile_path)
+      glob: $(inputs.metrics)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.readsfile)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

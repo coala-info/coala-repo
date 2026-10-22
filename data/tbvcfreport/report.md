@@ -1,5 +1,11 @@
 # tbvcfreport CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tbvcfreport_generate | Not completed | needs the COMBAT-TB NeoDB server (neodb.sanbi.ac.za:7687); it accepts the connection but every query hangs, so no report is written (real Galaxy test VCF and TB-Profiler JSON) |
+
 ## tbvcfreport_generate
 
 ### Tool Description

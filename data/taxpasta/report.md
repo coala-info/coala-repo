@@ -1,5 +1,12 @@
 # taxpasta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| taxpasta_merge | PASS | two Galaxy kraken2 reports merged (wide and long, summarise at genus: Homo 23 and 152); fixed the missing samplesheet-format flag and added the long option |
+| taxpasta_standardise | PASS | Galaxy kraken2 report: yeast and human counts match the direct read counts; names, ranks and lineages added from the NCBI taxdump |
+
 ## taxpasta_standardise
 
 ### Tool Description

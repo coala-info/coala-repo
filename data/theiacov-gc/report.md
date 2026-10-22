@@ -1,5 +1,11 @@
 # theiacov-gc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| theiacov-gc | Not completed | skipped: WDL/Cromwell |
+
 ## theiacov-gc
 
 ### Tool Description

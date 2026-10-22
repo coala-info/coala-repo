@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 13901; PASS: 10863; Failed: 1671; Not completed: 1367
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14178; PASS: 11082; Failed: 1704; Not completed: 1392
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -13901,3 +13901,280 @@ symbiontscreener	symbiontscreener_density_k21	Not completed	needs the step01.k21
 symbiontscreener	symbiontscreener_density_s40	Not completed	needs the step01.s40 output of build_s40, which fails in this image (jellyfish path check).
 symbiontscreener	symbiontscreener_trio_result_k21	Not completed	needs the step01.k21 output of build_k21, which fails in this image (old meryl).
 symbiontscreener	symbiontscreener_trio_result_s40	Not completed	needs the step01.s40 output of build_s40, which fails in this image (jellyfish path check).
+syngap	syngap_custom	Failed	image problem: SwissProt.tar.gz is unpacked into the read-only install dir as non-root; function step fails and output differs from a root run
+syngap	syngap_dual	Failed	image problem: SwissProt.tar.gz is unpacked into the read-only install dir as non-root; function step fails and output differs from a root run
+syngap	syngap_evi	PASS	synthetic data: gene pairs and expression tables are simulated; evi crashes on small inputs (SEG file never closed)
+syngap	syngap_eviplot	PASS	synthetic data: EVI table is the evi output of simulated expression
+syngap	syngap_genepair	PASS	
+syngap	syngap_initdb	Not completed	needs the masterdb .tar.gz (large external download) and writes into the image install dir
+syngap	syngap_master	Not completed	needs the masterdb database (large download imported with initdb into the image directory)
+syngap	syngap_triple	Failed	image problem: SwissProt.tar.gz cannot be unpacked in the read-only install dir as non-root; run then crashes
+syny	syny_run_syny.pl	PASS	ran on lambda and HK97 phage GenBank files with circos plots turned off; protein counts (73, 61) and cluster tables are correct
+syri	syri	Failed	image problem: syri crashes with 'buffer source array is read-only' (pandas copy-on-write in the image) on the Galaxy yeast test alignment
+t-coffee	t-coffee_t_coffee	Failed	tool bug: -output fasta_aln with the default input order writes the wrong description on each sequence header (aligned order is correct); clustalw alignment and guide tree are correct
+t1k	t1k_run-t1k	PASS	KIR example reads from the T1K repo give the expected genotype table
+t1k	t1k_t1k-build.pl	PASS	built the KIR2DL1 allele reference (421 alleles) from IPD-KIR kir.dat
+tabix	tabix	PASS	
+table2asn	table2asn	PASS	
+tabulate	tabulate	PASS	real KIR genotype table printed as pipe table and html; -o is used because the tool's --output option takes no value
+tabview	tabview	Not completed	interactive curses viewer, needs a terminal and key input
+taco	taco_taco_refcomp	PASS	compared the 700 transfrags of the taco NOC2L test locus with Ensembl GRCh37 protein-coding transcripts; all 700 classified
+tadlib	tadlib_domaincaller	PASS	real Drosophila Hi-C mcool from HiCExplorer test data gives 275 domains and a DI track over all bins
+tadlib	tadlib_hitad	PASS	real Drosophila Hi-C mcool gives hierarchical domains (297 rows with levels)
+tadrep	tadrep_characterize	PASS	chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content
+tadrep	tadrep_cluster	PASS	chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content
+tadrep	tadrep_database	Not completed	downloads the full RefSeq or PLSDB plasmid database (very large)
+tadrep	tadrep_detect	PASS	chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content
+tadrep	tadrep_extract	PASS	chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content
+tadrep	tadrep_setup	Failed	image problem: tadrep setup runs git clone, but git is not installed in the image
+tadrep	tadrep_visualize	PASS	chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content
+tadtool	tadtool_plot	Not completed	interactive matplotlib window, needs a display and mouse input
+tadtool	tadtool_subset	PASS	works with an .npy matrix (201 regions for a 5 Mb window); the documented sparse text matrix crashes (ValueError instead of IOError in the image's numpy)
+tadtool	tadtool_tads	PASS	tadtool example chr12 Hi-C matrix gives 15 TAD intervals; the cutoff must suit the matrix scale
+taeper	taeper	PASS	20 real SARS-CoV-2 nanopore fast5 files from nf-core test-datasets were indexed and copied in sequencing order
+tag	tag_bae	PASS	output matches the expected file from the tag test data (real gene annotations)
+tag	tag_bcollapse	PASS	output matches the expected file from the tag test data (real gene annotations)
+tag	tag_gff3	PASS	output matches the expected file from the tag test data (real gene annotations)
+tag	tag_locuspocus	PASS	output matches the expected file from the tag test data (real gene annotations)
+tag	tag_merge	PASS	output matches the expected file from the tag test data (real gene annotations)
+tag	tag_occ	PASS	output matches the expected file from the tag test data (real gene annotations)
+tag	tag_pep2nuc	PASS	output matches the expected file from the tag test data (real gene annotations)
+tag	tag_pmrna	PASS	output matches the expected file from the tag test data (real gene annotations)
+tag	tag_sum	PASS	output matches the expected file from the tag test data (real gene annotations)
+tagbam	tagbam	PASS	
+tagore	tagore	Failed	image problem: tagore exits at start with 'Could not find rsvg or rsvg-convert in PATH' (rsvg-convert missing in image), so no ideogram is written
+tajimas_d	tajimas_d	PASS	
+talon	talon	PASS	
+talon	talon_abundance	PASS	
+talon	talon_create_GTF	PASS	
+talon	talon_create_adata	PASS	
+talon	talon_fetch_reads	PASS	
+talon	talon_filter_transcripts	PASS	
+talon	talon_get_sjs	PASS	
+talon	talon_initialize_database	PASS	
+talon	talon_label_reads	PASS	
+talon	talon_longest_end	PASS	
+talon	talon_reformat_gtf	PASS	
+talon	talon_summarize	PASS	
+tandem	tandem	PASS	
+tandem-genotypes	tandem-genotypes	PASS	
+tandem-genotypes	tandem-genotypes-join	PASS	
+tandem-genotypes	tandem-genotypes-merge	Not completed	needs the original reads and a last-train alignment-parameter file that the test data does not include
+tandem-genotypes	tandem-genotypes-plot	Failed	tool bug: the plot script starts R but does not wait for it, so the container exits before the PDF is written
+tandemtwister	tandemtwister_assembly	Failed	tool bug: assembly mode creates a directory with the output name, then cannot write the merged .vcf.gz there and exits 1 (tested on the repo example BAM)
+tandemtwister	tandemtwister_germline	PASS	
+tandemtwister	tandemtwister_somatic	PASS	
+tango	tango_assign	PASS	--blobout crashes in the tool (KeyError in write_blobout); main assignment and --taxidout work
+tango	tango_build	PASS	
+tango	tango_download	Not completed	NCBI FTP downloads hang inside the Docker container (no data), so the taxonomy download could not be tested
+tango	tango_format	PASS	
+tango	tango_search	PASS	
+tango	tango_transfer	PASS	synthetic data: one ORF per contig, ORF ids made from contig ids
+tango	tango_update	PASS	synthetic data: id map planted from 5 real accessions
+tantan	tantan	PASS	
+tapestry	tapestry_clean	Not completed	needs the CSV written by weave (and the matching assembly), and weave crashes at start
+tapestry	tapestry_weave	Failed	tool bug: weave stops at its own 'samtools --version | head -n 1' check (SIGPIPE, exit -13) before any analysis
+tardis	tardis	PASS	
+targetscan	targetscan_targetscan_70.pl	PASS	
+targqc	targqc	Failed	image problem: bundled QualiMap (Java) crashes with a font-configuration NullPointerException, so no report is written
+tasmanian-mismatch	tasmanian-mismatch_run_intersections	PASS	synthetic data: BED regions planted over the real read region
+tasmanian-mismatch	tasmanian-mismatch_run_tasmanian	PASS	
+tatajuba	tatajuba	PASS	
+taxadb	taxadb_create	PASS	taxa division only; sqlite has 3,023,134 taxa, Homo sapiens (9606) present
+taxadb	taxadb_download	PASS	taxa division only (NCBI taxdump over HTTPS)
+taxator-tk	taxator-tk_alignments-filter	PASS	
+taxator-tk	taxator-tk_binner	Not completed	runs on real reads and taxator output, but with the small reference almost all reads are placed at the root (taxon 1), so the binning could not be shown.
+taxator-tk	taxator-tk_fasta-strip-identifier	PASS	
+taxator-tk	taxator-tk_taxator	PASS	
+taxator-tk	taxator-tk_taxknife	PASS	
+taxburst	taxburst	PASS	csv_summary, SingleM, krona and json inputs work; --fail-on-error stops on the example because its tree check fails, by design
+taxmapper	taxmapper_count	PASS	synthetic data: counts made from the synthetic map output; totals checked by hand
+taxmapper	taxmapper_filter	PASS	synthetic data: hand-made RAPSearch alignment files; output values checked by hand
+taxmapper	taxmapper_map	PASS	synthetic data: hand-made RAPSearch alignment files; output values checked by hand
+taxmapper	taxmapper_plot	PASS	synthetic data: counts made from the synthetic map output; totals checked by hand
+taxmapper	taxmapper_run	Failed	image problem: rapsearch is not in the image, so all reads give empty output; also fixed the missing -m flag
+taxmapper	taxmapper_search	Failed	image problem: rapsearch is not in the image, so the tool crashes with FileNotFoundError
+taxmyphage	taxmyphage_install	Failed	tool bug: the database downloads fail (VMR gives HTTP 403 to the tool, version-specific database files are gone) yet exit code is 0; also made the folder a string output and added NetworkAccess
+taxmyphage	taxmyphage_mash	Not completed	needs the ICTV database (about 400 MB, install step of this version cannot download it)
+taxmyphage	taxmyphage_run	Not completed	needs the ICTV database (about 400 MB, install step of this version cannot download it)
+taxmyphage	taxmyphage_similarity	PASS	T7, T3 and lambda genomes from NCBI: T7 vs T3 gave 66 percent similarity, lambda unrelated, three clusters
+taxonkit	taxonkit_cami-filter	PASS	CAMI profile made from profile2cami: removing Mammalia dropped human rows and renormalised to 60/40
+taxonkit	taxonkit_create-taxdump	PASS	synthetic data: 5-species lineage table gave a 31-node taxdump with names, nodes, merged and delnodes files
+taxonkit	taxonkit_filter	PASS	NCBI taxdump: equal-to species kept 9606, 562, 10090, 1773, 7227 and dropped domain 2; needs a rank file input
+taxonkit	taxonkit_lca	PASS	NCBI taxdump: LCA of human and mouse is 314146, E. coli and M. tuberculosis is 2, human and chimp is 207598
+taxonkit	taxonkit_lineage	PASS	NCBI taxdump: human, E. coli, mouse, M. tuberculosis lineages and ranks correct, unknown taxid left empty
+taxonkit	taxonkit_list	PASS	NCBI taxdump: subtree of genus Homo (9605) lists H. sapiens and neanderthalensis; the ids option crashes when stdin is empty, so a file input was added
+taxonkit	taxonkit_name2taxid	PASS	NCBI taxdump: names gave 9606, 562, 1773, 10090; unknown name left empty
+taxonkit	taxonkit_profile2cami	PASS	NCBI taxdump: 3-species profile (50/30/20) converted to CAMI with summed higher ranks; abundance table is synthetic data
+taxonkit	taxonkit_reformat	PASS	NCBI taxdump: lineages reformatted with prefixes and filled ranks; kingdom slot is unclassified because NCBI now uses domain
+taxonkit	taxonkit_reformat2	PASS	NCBI taxdump: seven-rank lineages and lineage taxids correct (human 2759;7711;40674;9443;9604;9605;9606)
+taxonkit	taxonkit_taxid-changelog	PASS	real NCBI archives 2014-08-01 and 2014-09-01: changelog has NEW, MERGE, DELETE, CHANGE_NAME events
+taxor	taxor_build	PASS	synthetic data: index of phages T7, T3 and lambda from NCBI built; baseCommand fixed from taxor-build to taxor build
+taxor	taxor_profile	PASS	synthetic data: profile of the search result gave 71 percent T7 and T3, 29 percent lambda, as expected from genome sizes
+taxor	taxor_search	PASS	synthetic data: 120 reads cut from the three phage genomes with 2 percent errors were all assigned to the right phage
+taxpasta	taxpasta_merge	PASS	two Galaxy kraken2 reports merged (wide and long, summarise at genus: Homo 23 and 152); fixed the missing samplesheet-format flag and added the long option
+taxpasta	taxpasta_standardise	PASS	Galaxy kraken2 report: yeast and human counts match the direct read counts; names, ranks and lineages added from the NCBI taxdump
+taxsbp	taxsbp	Failed	image problem: the taxsbp command exits with status 1 on success (sys.exit(True) in the console script), although the bins in the output are correct
+taxtastic	taxtastic_taxit_check	PASS	the 16S refpkg validates with exit 0 and no message
+taxtastic	taxtastic_taxit_create	PASS	refpkg built from 8 real RefSeq 16S sequences, a MAFFT alignment, a FastTree tree and the NCBI taxonomy (rppr is not in the image, so no-reroot is used)
+taxtastic	taxtastic_taxit_get_descendants	PASS	descendants of Sarbecovirus and Escherichia: 5907 tax_ids including 2697049, 511145, 562
+taxtastic	taxtastic_taxit_get_lineage	PASS	lineages of 511145 and 2697049 are correct (Escherichia coli, Betacoronavirus pandemicum, Coronaviridae)
+taxtastic	taxtastic_taxit_info	Failed	tool bug: the lengths option prints only the header because the file is closed before it is read; seq-names and tally work
+taxtastic	taxtastic_taxit_lineage_table	PASS	csv lineage table for E. coli and SARS-CoV-2 is correct; the MOTHUR table works for E. coli but crashes (TypeError) for the virus lineage that lacks some ranks
+taxtastic	taxtastic_taxit_named	Failed	tool bug: the ranked option returns only the no-rank tax_ids (inverted, it should ignore them); without it all four tax_ids are kept
+taxtastic	taxtastic_taxit_new_database	PASS	real NCBI taxdump downloaded by the tool and loaded into a 1.3 GB SQLite database (2 minutes); network access added
+taxtastic	taxtastic_taxit_strip	PASS	refpkg copy stripped: log gets a new Stripped entry and the files are unchanged; the folder is staged writable
+taxtastic	taxtastic_taxit_taxids	Failed	tool bug: crashes with AttributeError 'Engine' object has no attribute 'execute' (taxtastic 0.12.0 with SQLAlchemy 2)
+taxtastic	taxtastic_taxit_taxtable	PASS	E. coli K-12 MG1655 (511145) and SARS-CoV-2 (2697049) gave 25 lineage rows with the right ranks; also built the table for 8 16S taxa
+taxtastic	taxtastic_taxit_update_taxids	PASS	obsolete 469598 replaced by 562, unknown id 999999999 dropped and written to the unknowns file
+tb-ml	tb-ml	Not completed	framework that starts other tools as Docker containers (needs Docker inside Docker and large tool images and reads), skipped
+tb-profiler	tb-profiler_batch	PASS	two Galaxy test read sets run in parallel from a CSV: both RR-TB with rpoB p.Asp435Val; read files are now staged
+tb-profiler	tb-profiler_collate	PASS	two profile result folders collated: both samples RR-TB with rpoB p.Asp435Val; command word fixed from tb-profiler_collate and options rewritten from the help
+tb-profiler	tb-profiler_create_db	PASS	database built from the tbdb GitHub files (48797 mutations parsed), 14 files in the new library folder; needs genome, gff, snpEff and variables files staged
+tb-profiler	tb-profiler_lineage	PASS	Galaxy rif_resistant BAM: lineage2, 2.2, 2.2.2 at 100 percent, same as profile; barcode SNPs dumped
+tb-profiler	tb-profiler_list_db	PASS	lists the bundled tbdb database, and a loaded custom database when db_dir is given
+tb-profiler	tb-profiler_load_library	PASS	library folder made by create_db loaded into a new database folder and listed by list_db
+tb-profiler	tb-profiler_profile	PASS	Galaxy test reads (rif_resistant) and BAM: lineage2.2.2, RR-TB, rpoB p.Asp435Val as expected; the spoligotype option fails because FastK is missing
+tb-profiler	tb-profiler_reformat	PASS	result JSON of the rpoB sample reformatted to txt and csv; needs a results folder staged beforehand
+tb-profiler	tb-profiler_spoligotype	Failed	image problem: the default k-mer counter FastK is not in the image (Cant find programs: FastK)
+tb-profiler	tb-profiler_update_tbdb	PASS	downloaded and built the tbdb database from GitHub in about one minute (network access added)
+tb_variant_filter	tb_variant_filter	PASS	output matches the Galaxy expected VCFs for region, indel, alt-percentage, depth and SNV filters
+tbl2asn	tbl2asn	Failed	image problem: tbl2asn 25.8 exits 1 on every real run (even clean input; prints 'copy is more than a year old'), so cwltool reports permanentFail; run on real phiX174 data
+tbl2asn-forever	tbl2asn-forever_tbl2asn	PASS	
+tbox-scan	tbox-scan	Failed	image problem: Biopython in the image has no Bio.Alphabet, so pipeline_master.py crashes with ImportError after the INFERNAL step (real B. subtilis tyrS leader)
+tbpore	tbpore_cluster	PASS	consensus FASTAs from two real tbpore process runs (ERR12328581, ERR12328557); clusters.txt separates the two unrelated isolates
+tbpore	tbpore_download	Not completed	the tool's download URL (figshare.com/ndownloader/files/36708444) returns an empty bot-check page (HTTP 202), so the hash check fails; the same 5 GB file downloads with curl from ndownloader.figshare.com
+tbpore	tbpore_process	PASS	real ONT M. tuberculosis reads (ENA ERR12328581) with the real decontamination database; mykrobe calls lineage1.2.1 and a consensus FASTA is written; needs about 10 GB memory for the index
+tbtamr	tbtamr_annotate	Not completed	snpEff cannot download its Mycobacterium tuberculosis database (snpeff.blob.core.windows.net unreachable), so the annotated VCF is empty
+tbtamr	tbtamr_fq2vcf	Not completed	mapping and variant calling work on real ERR12118069 reads, but snpEff cannot download its database (snpeff.blob.core.windows.net unreachable), so the annotated VCF is empty
+tbtamr	tbtamr_full	PASS	ran from the real ERR12118069 annotated VCF; read-based route needs the snpEff database
+tbtamr	tbtamr_predict	PASS	
+tbtamr	tbtamr_search	PASS	
+tbvcfreport	tbvcfreport_generate	Not completed	needs the COMBAT-TB NeoDB server (neodb.sanbi.ac.za:7687); it accepts the connection but every query hangs, so no report is written (real Galaxy test VCF and TB-Profiler JSON)
+tcdemux	tcdemux	PASS	ran on the real repo test reads (5 samples); paired r1/r2 files with equal read counts and stats tables; needs at least 5 threads
+tcfinder	tcfinder	PASS	real repo test tree and targets; 4 clusters match an independent check
+td2	td2_TD2.LongOrfs	PASS	real repo test transcripts (A2M, NAT2, ACADM); 8 ORFs found
+td2	td2_TD2.Predict	PASS	real repo test transcripts; predicted proteins have the known lengths of A2M, NAT2 and ACADM
+tdrmapper	tdrmapper_TdrMappingScripts.pl	Failed	image problem: Rscript is missing in the image, so the documented top-50 coverage PDF plots are never made (mapping and tRF tables are correct on real human small RNA-seq)
+te-aid	te-aid_TE-Aid	Failed	image problem: TE-Aid looks for Run-c2g.R in /usr/local/bin (it is in /usr/local/share/te-aid-1.0.0-0), writes a db folder next to itself on a read-only path, and the image has no join command; no plot is made (real Gypsy2 consensus, D. melanogaster chr4)
+tecount	tecount_TEcount	PASS	real repo test mouse chr19 BAM and RepeatMasker bed; class, family and subfamily counts plausible (SINE, LINE, LTR); added .bai secondaryFiles
+tedna	tedna	PASS	real S. cerevisiae paired reads (500k pairs, ENA ERR1015146); 30 TE contigs of 1-8 kb with Ty-like sizes; needs --insert with paired input and uncompressed FASTQ
+telescope	telescope_assign	PASS	real repo test BAM and GTF; report columns match the repo reference report; output folder now created before the run
+telescope	telescope_resume	PASS	resumed from the checkpoint of the real assign run; report counts consistent; output folder now created before the run
+teloclip	teloclip_extend	PASS	real repo test BAM and contigs; extended FASTA (6073 B vs 5503 B input) and stats report written
+teloclip	teloclip_extract	PASS	real repo test SAM; overhang reads written per contig end; extract_dir is now a required output folder name (tool crashes without it)
+teloclip	teloclip_filter	PASS	real repo test SAM; keeps the read with a TTAGGG overhang at the contig04 end
+telogator2	telogator2	PASS	real repo test HG002 ONT reads; tlens_by_allele.tsv has chr1p alleles with plausible lengths and plots; fixed output prefix to -o and passed --minimap2 minimap2
+telometer	telometer	PASS	real repo minimal_tels.bam (ONT telomere reads); 736 telomere measurements with plausible lengths (about 5 kb); added .bai secondaryFiles
+teloscope	teloscope	PASS	real Galaxy test chromosome (zebra finch chr33); terminal telomere BED identical to the expected file; output folder now created before the run
+telosearchlr	telosearchlr_TeloSearchLR.py	Failed	image problem: the TideHunter binary in the image crashes with an illegal instruction (exit 132) on this CPU, so no repeats are found and plotting fails
+telr	telr	Failed	image problem: RepeatMasker in the image must rebuild its library under root-owned /usr/local/share and fails (permission denied / read-only), so telr stops after the long-read alignment
+telseq	telseq	PASS	
+tepid	tepid_tepid-discover	PASS	
+tepid	tepid_tepid-map	PASS	
+tepid	tepid_tepid-map-se	PASS	
+tepid	tepid_tepid-refine	Not completed	synthetic data: collapsed variant lists built from the real discover output; the tool runs but both ambiguous files come out empty (test BAM has about 0x coverage), so the output cannot be checked
+terminus	terminus_collapse	PASS	
+terminus	terminus_group	PASS	
+terrace	terrace	PASS	
+tesorter	tesorter_TEsorter	PASS	
+tesseract	tesseract	PASS	image changed to the bioconda tesseract image (the old jitesoft image ran tesseract as its entrypoint, so the command was doubled); tested on tesseract's own eurotext.png test image with txt and tsv output.
+tetranscripts	tetranscripts_TEtranscripts	PASS	synthetic data: four pseudo-replicates made by splitting one real nf-core RNA-seq BAM (chr6 HLA region) with real UCSC hg19 gene and RepeatMasker annotations
+tetrimmer	tetrimmer_TEtrimmer	Failed	image problem: TEtrimmer changes permissions of its own install folder /usr/local/share/tetrimmer and stops on the read-only file system; it also downloads the Pfam database at start
+tetyper	tetyper_TETyper.py	PASS	
+tgsgapcloser	tgsgapcloser	PASS	
+tgsgapcloser	tgsgapcloser_tgsgapcandidate	PASS	
+tgsgapcloser	tgsgapcloser_tgsseqgen	PASS	
+tgsgapcloser	tgsgapcloser_tgsseqsplit	PASS	
+tgtools	tgtools_import_hmmIBD	PASS	
+tgtools	tgtools_import_snp-distance	PASS	
+tgtools	tgtools_import_transphylo	PASS	
+tgv	tgv_download	Not completed	needs the UCSC MySQL server; every download stops with connection reset by peer on this network
+tgv	tgv_list	PASS	plain list works; --more and --all stop with a connection reset from the UCSC MySQL server on this network
+thapbi-pict	thapbi-pict_assess	PASS	
+thapbi-pict	thapbi-pict_classify	PASS	
+thapbi-pict	thapbi-pict_conflicts	PASS	
+thapbi-pict	thapbi-pict_denoise	PASS	
+thapbi-pict	thapbi-pict_dump	PASS	
+thapbi-pict	thapbi-pict_edit-graph	PASS	
+thapbi-pict	thapbi-pict_ena-submit	PASS	
+thapbi-pict	thapbi-pict_fasta-nr	PASS	
+thapbi-pict	thapbi-pict_import	PASS	
+thapbi-pict	thapbi-pict_load-tax	PASS	
+thapbi-pict	thapbi-pict_prepare-reads	PASS	
+thapbi-pict	thapbi-pict_sample-tally	PASS	
+thapbi-pict	thapbi-pict_summary	PASS	
+theiacov-gc	theiacov-gc	Not completed	skipped: WDL/Cromwell
+themis	themis_build-custom	PASS	synthetic data: single SARS-CoV-2 genome with a tiny taxonomy built from its NCBI lineage
+themis	themis_profile	Not completed	synthetic data: the tiny test database gives a species table (92 percent SARS-CoV-2) but the strain step stops with 'No strain_taxid read from the ganon strain file'; a real strain-level database is needed
+thermorawfileparser	thermorawfileparser	PASS	
+thermorawfileparser	thermorawfileparser_query	PASS	
+thermorawfileparser	thermorawfileparser_xic	PASS	
+theseus	theseus	PASS	
+tiara	tiara	PASS	
+tiddit	tiddit	PASS	real HG002 Illumina 60x reads (GIAB) around a known 4.7 kb homozygous deletion on chr22; deletion found within 70 bp
+tiddit	tiddit_cov	PASS	
+tidehunter	tidehunter_TideHunter	PASS	
+tides-ml	tides-ml_tides	PASS	
+tidk	tidk_explore	PASS	
+tidk	tidk_find	Not completed	needs the clade database from tidk build, which downloads data at run time; no network in the run
+tidk	tidk_plot	PASS	
+tidk	tidk_search	PASS	
+tidyp	tidyp	PASS	
+tigmint	tigmint_tigmint-arcs-tsv	PASS	synthetic data: small planted ARCS graph and FASTA
+tigmint	tigmint_tigmint-cut	PASS	
+tigmint	tigmint_tigmint-filter-paf	PASS	
+tigmint	tigmint_tigmint-ntlink-map	Failed	image problem: ntLink is not installed in the image (FileNotFoundError: ntLink)
+tigmint	tigmint_tigmint_estimate_dist.py	PASS	
+tigmint	tigmint_tigmint_molecule.py	PASS	
+tigmint	tigmint_tigmint_molecule_paf.py	PASS	
+tigr-glimmer	tigr-glimmer_anomaly	PASS	synthetic data: real lambda genes plus planted bad regions to trigger the checks
+tigr-glimmer	tigr-glimmer_build-fixed	PASS	
+tigr-glimmer	tigr-glimmer_build-icm	PASS	
+tigr-glimmer	tigr-glimmer_entropy-profile	Failed	image problem: entropy-profile segfaults (exit 139) on any input
+tigr-glimmer	tigr-glimmer_entropy-score	PASS	
+tigr-glimmer	tigr-glimmer_extract	PASS	
+tigr-glimmer	tigr-glimmer_glimmer3	PASS	
+tigr-glimmer	tigr-glimmer_long-orfs	PASS	
+tigr-glimmer	tigr-glimmer_multi-extract	PASS	
+tigr-glimmer	tigr-glimmer_score-fixed	PASS	
+tigr-glimmer	tigr-glimmer_start-codon-distrib	PASS	
+tigr-glimmer	tigr-glimmer_uncovered	PASS	
+tigr-glimmer	tigr-glimmer_window-acgt	PASS	
+tinker	tinker_analyze	PASS	
+tinker	tinker_dynamic	PASS	
+tinker	tinker_minimize	PASS	
+tinker	tinker_newton	PASS	
+tinker	tinker_pdbxyz	PASS	
+tinker	tinker_vibrate	PASS	
+tinker	tinker_xyzpdb	PASS	
+tinscan	tinscan_tinscan-align	Failed	image problem: lastz is not installed in the image (LASTZ executable was not found)
+tinscan	tinscan_tinscan-find	PASS	alignment input made with lastz from a helper image (tinscan-align cannot run), same lastz options as the wrapper
+tinscan	tinscan_tinscan-prep	PASS	
+tiny-count	tiny-count	PASS	real chrI small RNA reads from the tool's tests with Ensembl chrI genes; read and sequence counts match the input
+tinysink	tinysink	Not completed	needs a remote server with ssh login; it loops rsync to the server
+tipp	tipp_TIPPo.v2.3.pl	Not completed	pipeline, skipped (de novo organelle assembly with tiara, flye and KMC3 needs large HiFi read sets)
+tiptoft	tiptoft	PASS	tool's own test reads; finds the expected rep1.1 replicon
+tir-learner	tir-learner_TIR-Learner	PASS	annotation matches the tool's sample result for the rice test genome
+tirmite	tirmite_legacy	Failed	image problem: hmmpress and nhmmer (HMMER) are not installed in the image
+tirmite	tirmite_pair	PASS	real rice genome and nhmmer hits from a helper hmmer image (pair needs precomputed hits); elements found include known TIR-Learner DTT elements
+tirmite	tirmite_seed	Failed	image problem: blastn, makeblastdb and mafft are not installed in the image
+titan-gc	titan-gc	Not completed	skipped: WDL/Cromwell
+titan-gc	titan-gc_titan-gc-organize.py	Not completed	needs the Cromwell metadata.json of a Titan GC run (WDL/Cromwell skipped)
+titan-gc	titan-gc_titan-gc-prepare.py	PASS	real SARS-CoV-2 paired reads and primer file from the tool's tests
+tksm	tksm_abundance	PASS	real MCF7 nanopore cDNA reads mapped to chr22 transcripts; TPM values sum to 1e6
+tksm	tksm_filter	PASS	synthetic data by design: 204 molecules split into 123 and 81 by size
+tksm	tksm_flip	PASS	synthetic data by design: strands flipped for about half of the molecules
+tksm	tksm_head	PASS	synthetic data by design: first 3 molecules printed
+tksm	tksm_model-errors	Failed	image problem: the module only prints its description; Badread is not installed in the image
+tksm	tksm_model-qscores	Failed	image problem: the module only prints its description; Badread is not installed in the image
+tksm	tksm_model-truncation	PASS	real MCF7 nanopore cDNA reads mapped to chr22 transcripts (minimap2 helper image); KDE model written
+tksm	tksm_polyA	PASS	synthetic data by design: polyA tails added to all 204 molecules
+tksm	tksm_sequence	PASS	synthetic data by design: 204 simulated reads, mean identity 84 percent as set by the default model
+tksm	tksm_transcribe	PASS	synthetic data by design: 204 molecules from the real abundance table and chr22 GTF
+tksm	tksm_truncate	PASS	synthetic data by design: molecules truncated with the model trained on real reads
+tmalign	tmalign_TMalign	PASS	
+tmalign	tmalign_TMalign_dir	PASS	
+tmalign	tmalign_TMalign_dir1	PASS	
+tmalign	tmalign_TMalign_dir2	PASS	
+tmalign	tmalign_TMscore	PASS	

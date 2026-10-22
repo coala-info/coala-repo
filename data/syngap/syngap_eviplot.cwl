@@ -46,7 +46,7 @@ inputs:
       prefix: --highlightid
   - id: outgraph_path
     type: string
-    doc: The output graph file (output format determined by the
+    doc: The output graph file (output format determined by the file suffix)
     inputBinding:
       position: 102
       prefix: --outgraph

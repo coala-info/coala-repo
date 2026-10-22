@@ -6,123 +6,121 @@ baseCommand:
 label: taxonkit_lineage
 doc: "Query taxonomic lineage of given TaxIds\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:
-  - id: input_file
+  - id: input_files
     type:
-      - 'null'
-      - File
-    doc: List of TaxIds, one TaxId per line, or tab-delimited format. Supporting
-      (gzipped) file or STDIN.
+      type: array
+      items: File
+    doc: 'File(s) with TaxIds, one per line or in a tab-separated column (see taxid_field)'
     inputBinding:
       position: 1
-  - id: data_dir
-    type:
-      - 'null'
-      - Directory
-    doc: directory containing nodes.dmp and names.dmp
-    inputBinding:
-      position: 102
-      prefix: --data-dir
   - id: delimiter
     type:
       - 'null'
       - string
-    doc: field delimiter in lineage
+    doc: 'Field delimiter in lineage (default '';'')'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --delimiter
-  - id: line_buffered
-    type:
-      - 'null'
-      - boolean
-    doc: use line buffering on output, i.e., immediately writing to stdin/file 
-      for every line of output
-    inputBinding:
-      position: 102
-      prefix: --line-buffered
   - id: no_lineage
     type:
       - 'null'
       - boolean
-    doc: do not show lineage, when user just want names or/and ranks
+    doc: 'Do not show lineage, when user just want names or/and ranks'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --no-lineage
   - id: show_lineage_ranks
     type:
       - 'null'
       - boolean
-    doc: appending ranks of all levels
+    doc: 'Appending ranks of all levels'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --show-lineage-ranks
   - id: show_lineage_taxids
     type:
       - 'null'
       - boolean
-    doc: appending lineage consisting of taxids
+    doc: 'Appending lineage consisting of taxids'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --show-lineage-taxids
   - id: show_name
     type:
       - 'null'
       - boolean
-    doc: appending scientific name
+    doc: 'Appending scientific name'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --show-name
   - id: show_rank
     type:
       - 'null'
       - boolean
-    doc: appending rank of taxids
+    doc: 'Appending rank of taxids'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --show-rank
   - id: show_status_code
     type:
       - 'null'
       - boolean
-    doc: show status code before lineage
+    doc: 'Show status code before lineage'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --show-status-code
   - id: taxid_field
     type:
       - 'null'
       - int
-    doc: field index of taxid. input data should be tab-separated
+    doc: 'Field index of taxid. Input data should be tab-separated (default 1)'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --taxid-field
+  - id: data_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Directory containing nodes.dmp and names.dmp (NCBI taxdump files)'
+    inputBinding:
+      position: 101
+      prefix: --data-dir
+  - id: line_buffered
+    type:
+      - 'null'
+      - boolean
+    doc: 'Use line buffering on output, i.e., immediately writing to stdin/file for every line of output'
+    inputBinding:
+      position: 101
+      prefix: --line-buffered
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of CPUs. 4 is enough
+    doc: 'Number of CPUs. 4 is enough'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --threads
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: print verbose information
+    doc: 'Print verbose information'
     inputBinding:
-      position: 102
+      position: 101
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
+    doc: 'Output file name (suffix .gz for gzipped output)'
     inputBinding:
-      position: 103
+      position: 102
       prefix: --out-file
 outputs:
   - id: out_file
     type:
       - 'null'
       - File
-    doc: out file ("-" for stdout, suffix .gz for gzipped out)
+    doc: Output file
     outputBinding:
       glob: $(inputs.out_file_path)
 requirements:

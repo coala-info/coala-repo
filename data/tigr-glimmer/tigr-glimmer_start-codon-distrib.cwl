@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: start-codon-distrib
+baseCommand:
+  - tigr-glimmer
+  - start-codon-distrib
 label: tigr-glimmer_start-codon-distrib
 doc: "Read fasta-format <sequence-file> and count the number of different start codons
   for the genes specified in <coords>. By default, <coords> is the name of a file

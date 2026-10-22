@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: uncovered
+baseCommand:
+  - tigr-glimmer
+  - uncovered
 label: tigr-glimmer_uncovered
 doc: Read fasta-format <sequence-file> and extract from it the subsequences not 
   covered by regions specified in <coords>.

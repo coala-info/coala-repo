@@ -12,7 +12,7 @@ inputs:
     doc: a filename of the file with tabular data; if "-" or missing, read data 
       from stdin.
     inputBinding:
-      position: 1
+      position: 200
   - id: float_format
     type:
       - 'null'
@@ -47,12 +47,17 @@ inputs:
       position: 102
       prefix: --sep
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'print table to FILE (default: stdout)'
     inputBinding:
       position: 103
-      prefix: --output
+      prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Table printed to standard output (empty when --output is used)
   - id: output_file
     type:
       - 'null'
@@ -65,3 +70,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tabulate:0.7.5--py36_0
+stdout: tabulate.out

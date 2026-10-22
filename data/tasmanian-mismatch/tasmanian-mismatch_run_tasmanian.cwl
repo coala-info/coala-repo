@@ -1,9 +1,12 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tasmanian-mismatch_run_tasmanian
+baseCommand: run_tasmanian
 label: tasmanian-mismatch_run_tasmanian
 doc: "Run Tasmanian mismatch caller\n\nTool homepage: https://github.com/nebiolabs/tasmanian-mismatch"
 inputs:
+  - id: sam_input
+    type: File
+    doc: Coordinate-sorted SAM text of the alignments, read from standard input (for example samtools view -h sample.bam)
   - id: base_quality
     type:
       - 'null'
@@ -77,9 +80,7 @@ inputs:
       position: 101
       prefix: --ont
   - id: output_prefix
-    type:
-      - 'null'
-      - string
+    type: string
     doc: use this prefix for the output and logging files
     inputBinding:
       position: 101
@@ -132,3 +133,4 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tasmanian-mismatch:1.0.9--pyhdfd78af_0
 stdout: tasmanian-mismatch_run_tasmanian.out
+stdin: $(inputs.sam_input.path)

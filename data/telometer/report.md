@@ -1,5 +1,11 @@
 # telometer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| telometer | PASS | real repo minimal_tels.bam (ONT telomere reads); 736 telomere measurements with plausible lengths (about 5 kb); added .bai secondaryFiles |
+
 ## telometer
 
 ### Tool Description

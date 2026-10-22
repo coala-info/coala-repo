@@ -36,12 +36,17 @@ inputs:
       position: 103
       prefix: --keep-prot
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: file to which output will be written; by default,
     inputBinding:
       position: 104
       prefix: --out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: GFF3 written to the terminal when no output file is given
   - id: output_file
     type:
       - 'null'
@@ -55,3 +60,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tag:0.5.1--py_0
+stdout: tag_pep2nuc.out

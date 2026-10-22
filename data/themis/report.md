@@ -1,5 +1,12 @@
 # themis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| themis_build-custom | PASS | synthetic data: single SARS-CoV-2 genome with a tiny taxonomy built from its NCBI lineage |
+| themis_profile | Not completed | synthetic data: the tiny test database gives a species table (92 percent SARS-CoV-2) but the strain step stops with 'No strain_taxid read from the ganon strain file'; a real strain-level database is needed |
+
 ## themis_build-custom
 
 ### Tool Description
@@ -134,29 +141,4 @@ options:
 
 ## Metadata
 - **Skill**: generated
-
-## themis
-
-### Tool Description
-Themis: a robust and accurate species-level metagenomic profiler.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/themis:0.1.0--py314h0cb7dc8_0
-- **Homepage**: https://github.com/xujialupaoli/Themis
-- **Package**: https://anaconda.org/channels/bioconda/packages/themis/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-usage: themis [-h] <command> ...
-
-Themis: a robust and accurate species-level metagenomic profiler.
-
-positional arguments:
-  <command>
-    build-custom  Build custom themis databases.
-    profile       Profile reads against custom databases.
-
-options:
-  -h, --help      show this help message and exit
-```
 

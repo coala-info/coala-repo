@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: entropy-score
+baseCommand:
+  - tigr-glimmer
+  - entropy-score
 label: tigr-glimmer_entropy-score
 doc: Read fasta-format <sequence-file> and then score regions in it specified by
   <coords>. By default, <coords> is the name of a file containing lines of the 

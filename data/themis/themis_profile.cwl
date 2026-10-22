@@ -25,11 +25,25 @@ inputs:
     type:
       type: array
       items: File
+      inputBinding:
+        prefix: --reads
     doc: 'For paired-end data, specify mates consecutively: -r R1.fq -r R2.fq. For
       single-end data, use --single and give one -r per file.'
     inputBinding:
       position: 101
-      prefix: --reads
+  - id: db_files
+    type:
+      type: array
+      items: File
+    doc: Database files written by themis build-custom (staged in the working
+      directory so that the db prefix resolves)
+  - id: genome_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Genome FASTA files named in the genome_path column of the reference
+      info file (staged in the working directory)
   - id: ref_info
     type: File
     doc: 'Tab-separated reference metadata file. Fields: strain_name <tab> strain_taxid
@@ -54,20 +68,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
-  - id: output_dir_path
+  - id: output_path
     type: string
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory
     doc: Output directory for profiling results.
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.db_files.concat(inputs.genome_files || []))"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/themis:0.1.0--py314h0cb7dc8_0

@@ -19,7 +19,8 @@ inputs:
     type:
       type: array
       items: Directory
-    doc: direcotories to read the group files from
+    doc: salmon quantification directories (one per sample) whose names match the
+      per-sample group directories under the output prefix
     inputBinding:
       position: 101
       prefix: --dirs
@@ -32,22 +33,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: group_results
+    type: Directory
+    doc: output folder of 'terminus group' holding one sub-folder per sample with
+      groups.txt; it is staged under the output prefix name
   - id: out_path
     type: string
-    doc: prefix where output would be written
+    doc: prefix where output would be written; must be the folder holding the
+      per-sample group results
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: out
-    type:
-      type: array
-      items: File
+    type: Directory
     doc: prefix where output would be written
     outputBinding:
       glob: $(inputs.out_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.out_path)
+        entry: $(inputs.group_results)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/terminus:v0.1.0--h2db0a6b_0

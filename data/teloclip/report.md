@@ -1,5 +1,13 @@
 # teloclip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| teloclip_extend | PASS | real repo test BAM and contigs; extended FASTA (6073 B vs 5503 B input) and stats report written |
+| teloclip_extract | PASS | real repo test SAM; overhang reads written per contig end; extract_dir is now a required output folder name (tool crashes without it) |
+| teloclip_filter | PASS | real repo test SAM; keeps the read with a TTAGGG overhang at the contig04 end |
+
 ## teloclip_extend
 
 ### Tool Description

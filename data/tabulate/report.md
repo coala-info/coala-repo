@@ -1,5 +1,11 @@
 # tabulate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tabulate | PASS | real KIR genotype table printed as pipe table and html; -o is used because the tool's --output option takes no value |
+
 ## tabulate
 
 ### Tool Description

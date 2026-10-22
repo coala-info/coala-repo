@@ -1,5 +1,11 @@
 # tiptoft CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tiptoft | PASS | tool's own test reads; finds the expected rep1.1 replicon |
+
 ## tiptoft
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # tetyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tetyper_TETyper.py | PASS |  |
+
 ## tetyper_TETyper.py
 
 ### Tool Description

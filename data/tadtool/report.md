@@ -1,5 +1,13 @@
 # tadtool CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tadtool_plot | Not completed | interactive matplotlib window, needs a display and mouse input |
+| tadtool_subset | PASS | works with an .npy matrix (201 regions for a 5 Mb window); the documented sparse text matrix crashes (ValueError instead of IOError in the image's numpy) |
+| tadtool_tads | PASS | tadtool example chr12 Hi-C matrix gives 15 TAD intervals; the cutoff must suit the matrix scale |
+
 ## tadtool_plot
 
 ### Tool Description

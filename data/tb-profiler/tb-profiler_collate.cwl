@@ -1,121 +1,130 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tb-profiler_collate
+baseCommand:
+  - tb-profiler
+  - collate
 label: tb-profiler_collate
-doc: "Collate results from TBProfiler runs.\n\nTool homepage: https://github.com/jodyphelan/TBProfiler"
+doc: "Collate results from several samples into summary tables\n\nTool homepage: https://github.com/jodyphelan/TBProfiler"
 inputs:
-  - id: barcode_file
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: 'Output prefix (default: tbprofiler)'
+    inputBinding:
+      position: 101
+      prefix: --prefix
+  - id: samples
     type:
       - 'null'
       - File
-    doc: Path to the barcode BED file.
+    doc: 'File with samples (one per line)'
     inputBinding:
       position: 101
-      prefix: --barcode_file
-  - id: bed_file
+      prefix: --samples
+  - id: itol
     type:
       - 'null'
-      - File
-    doc: Path to the genes BED file.
+      - boolean
+    doc: 'Generate itol config files'
     inputBinding:
       position: 101
-      prefix: --bed_file
-  - id: bedmask_file
+      prefix: --itol
+  - id: full
     type:
       - 'null'
-      - File
-    doc: Path to the mask BED file.
+      - boolean
+    doc: 'Output mutations in main result file'
     inputBinding:
       position: 101
-      prefix: --bedmask_file
-  - id: gff_file
+      prefix: --full
+  - id: all_variants
     type:
       - 'null'
-      - File
-    doc: Path to the GFF file.
+      - boolean
+    doc: 'Output all variants in variant matrix'
     inputBinding:
       position: 101
-      prefix: --gff_file
-  - id: json_db
+      prefix: --all_variants
+  - id: mark_missing
     type:
       - 'null'
-      - File
-    doc: Path to the mutations JSON database file.
+      - boolean
+    doc: 'An asterisk will be used to mark predictions which are affected by missing data at a drug resistance position'
     inputBinding:
       position: 101
-      prefix: --json_db
-  - id: ref_file
+      prefix: --mark_missing
+  - id: add_positions
     type:
       - 'null'
-      - File
-    doc: Path to the reference genome FASTA file.
+      - boolean
+    doc: 'Add variant positions to the transmission graph output'
     inputBinding:
       position: 101
-      prefix: --ref_file
-  - id: results_dir
+      prefix: --add_positions
+  - id: db
+    type:
+      - 'null'
+      - string
+    doc: 'Mutation panel name (default: tbdb)'
+    inputBinding:
+      position: 101
+      prefix: --db
+  - id: format
+    type:
+      - 'null'
+      - string
+    doc: 'Format of the output: txt or csv (default: txt)'
+    inputBinding:
+      position: 101
+      prefix: --format
+  - id: external_db
+    type:
+      - 'null'
+      - string
+    doc: 'Path to db files prefix (overrides the db option)'
+    inputBinding:
+      position: 101
+      prefix: --external_db
+  - id: result_dirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: 'Directories with the per-sample result files written by tb-profiler profile (default: results)'
+    inputBinding:
+      position: 101
+      prefix: --dir
+  - id: temp
+    type:
+      - 'null'
+      - string
+    doc: 'Temp directory to process all files (default: .)'
+    inputBinding:
+      position: 101
+      prefix: --temp
+  - id: db_dir
     type:
       - 'null'
       - Directory
-    doc: Directory containing the TBProfiler results to collate.
+    doc: 'Database directory (default: bundled database in the image)'
     inputBinding:
       position: 101
-      prefix: --results_dir
-  - id: rules_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the rules YAML file.
-    inputBinding:
-      position: 101
-      prefix: --rules_file
-  - id: snpEff_config
-    type:
-      - 'null'
-      - File
-    doc: Path to the snpEff_config file.
-    inputBinding:
-      position: 101
-      prefix: --snpEff_config
-  - id: spoligotype_annotations
-    type:
-      - 'null'
-      - File
-    doc: Path to the spoligotype_annotations CSV file.
-    inputBinding:
-      position: 101
-      prefix: --spoligotype_annotations
-  - id: spoligotype_spacers
-    type:
-      - 'null'
-      - File
-    doc: Path to the spoligotype_spacers file.
-    inputBinding:
-      position: 101
-      prefix: --spoligotype_spacers
-  - id: variables_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the variables JSON file.
-    inputBinding:
-      position: 101
-      prefix: --variables_file
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 102
-      prefix: --output-dir
+      prefix: --db_dir
 outputs:
-  - id: output_dir
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: collate_files
     type:
-      - 'null'
-      - Directory
-    doc: Directory to save the collated results.
+      type: array
+      items: File
+    doc: 'Collated result files'
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $((inputs.prefix || 'tbprofiler') + '.*')
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tb-profiler:6.6.6--pyhdfd78af_0
+stdout: tb-profiler_collate.out

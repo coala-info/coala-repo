@@ -1,5 +1,11 @@
 # taxsbp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| taxsbp | Failed | image problem: the taxsbp command exits with status 1 on success (sys.exit(True) in the console script), although the bins in the output are correct |
+
 ## taxsbp
 
 ### Tool Description

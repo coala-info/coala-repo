@@ -1,9 +1,17 @@
 # tgtools CWL Generation Report
 
-## tgtools_import
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tgtools_import_hmmIBD | PASS |  |
+| tgtools_import_snp-distance | PASS |  |
+| tgtools_import_transphylo | PASS |  |
+
+## tgtools_import_snp-distance
 
 ### Tool Description
-Import data for various phylogenetic analyses.
+Convert snp-distance output to trjson format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tgtools:0.0.4--pyhdfd78af_0
@@ -11,22 +19,61 @@ Import data for various phylogenetic analyses.
 - **Package**: https://anaconda.org/channels/bioconda/packages/tgtools/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/tgtools/overview
-- **Total Downloads**: 100
-- **Last updated**: 2025-06-24
-- **GitHub**: https://github.com/jodyphelan/tgtools
-- **Stars**: N/A
 ### Original Help Text
 ```text
-usage: tgtools import [-h] {snp-distance,transphylo,hmmIBD} ...
-
-positional arguments:
-  {snp-distance,transphylo,hmmIBD}
-    snp-distance        import snp-distance help
-    transphylo          import transphylo help
-    hmmIBD              import snp-distance help
+usage: tgtools import snp-distance [-h] -i INPUT -o OUTPUT -d MAX_DIST
 
 options:
   -h, --help            show this help message and exit
+  -i, --input INPUT     input file
+  -o, --output OUTPUT   output file
+  -d, --max-dist MAX_DIST
+                        Maximum snp distance
+```
+
+## tgtools_import_transphylo
+
+### Tool Description
+Convert transphylo output to trjson format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/tgtools:0.0.4--pyhdfd78af_0
+- **Homepage**: https://github.com/jodyphelan/tgtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/tgtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: tgtools import transphylo [-h] -i INPUT -o OUTPUT -p MIN_PROBABILITY
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input INPUT     input file
+  -o, --output OUTPUT   output file
+  -p, --min-probability MIN_PROBABILITY
+                        Minimum probability for edge
+```
+
+## tgtools_import_hmmIBD
+
+### Tool Description
+Convert hmmIBD output to trjson format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/tgtools:0.0.4--pyhdfd78af_0
+- **Homepage**: https://github.com/jodyphelan/tgtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/tgtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: tgtools import hmmIBD [-h] -i INPUT -o OUTPUT -d MIN_IBD
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input INPUT     input file
+  -o, --output OUTPUT   output file
+  -d, --min-ibd MIN_IBD
+                        Minimum IBD value
 ```
 

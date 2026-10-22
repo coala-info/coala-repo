@@ -1,5 +1,11 @@
 # telosearchlr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| telosearchlr_TeloSearchLR.py | Failed | image problem: the TideHunter binary in the image crashes with an illegal instruction (exit 132) on this CPU, so no repeats are found and plotting fails |
+
 ## telosearchlr_TeloSearchLR.py
 
 ### Tool Description

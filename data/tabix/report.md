@@ -1,5 +1,11 @@
 # tabix CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tabix | PASS |  |
+
 ## tabix
 
 ### Tool Description

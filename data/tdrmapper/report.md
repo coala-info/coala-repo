@@ -1,5 +1,11 @@
 # tdrmapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tdrmapper_TdrMappingScripts.pl | Failed | image problem: Rscript is missing in the image, so the documented top-50 coverage PDF plots are never made (mapping and tRF tables are correct on real human small RNA-seq) |
+
 ## tdrmapper_TdrMappingScripts.pl
 
 ### Tool Description

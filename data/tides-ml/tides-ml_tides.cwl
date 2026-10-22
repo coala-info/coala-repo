@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tides.py
+baseCommand: tides
 label: tides-ml_tides
 doc: "TIdeS (Transcript Isoform Discovery and Expression Simulator)\n\nTool homepage:
   https://github.com/xxmalcala/TIdeS"
@@ -189,6 +189,22 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Results folder named after the taxon/output name (taxon_TIdeS)
+    outputBinding:
+      glob: $(inputs.taxon)_TIdeS
+  - id: output_archive
+    type:
+      - 'null'
+      - File
+    doc: Gzipped tar archive of the results when gzip is used
+    outputBinding:
+      glob: $(inputs.taxon)_TIdeS.tar.gz
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tides-ml:1.3.5--pyhdfd78af_0

@@ -31,6 +31,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+      valueFrom: $(self.basename)
   - id: gff_out
     type:
       - 'null'
@@ -268,6 +269,11 @@ outputs:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.genome.basename)
+        entry: $(inputs.genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tirmite:1.3.0--pyhdfd78af_0

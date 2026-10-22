@@ -1,5 +1,23 @@
 # tigr-glimmer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tigr-glimmer_anomaly | PASS | synthetic data: real lambda genes plus planted bad regions to trigger the checks |
+| tigr-glimmer_build-fixed | PASS |  |
+| tigr-glimmer_build-icm | PASS |  |
+| tigr-glimmer_entropy-profile | Failed | image problem: entropy-profile segfaults (exit 139) on any input |
+| tigr-glimmer_entropy-score | PASS |  |
+| tigr-glimmer_extract | PASS |  |
+| tigr-glimmer_glimmer3 | PASS |  |
+| tigr-glimmer_long-orfs | PASS |  |
+| tigr-glimmer_multi-extract | PASS |  |
+| tigr-glimmer_score-fixed | PASS |  |
+| tigr-glimmer_start-codon-distrib | PASS |  |
+| tigr-glimmer_uncovered | PASS |  |
+| tigr-glimmer_window-acgt | PASS |  |
+
 ## tigr-glimmer_anomaly
 
 ### Tool Description
@@ -624,6 +642,38 @@ Options:
     Print this message
  -p  or  --percent
     Output percentages instead of counts
+```
+
+## tigr-glimmer_entropy-profile
+
+### Tool Description
+Translate gene sequences and print the natural and entropy distributions of the amino acids
+
+### Metadata
+- **Docker Image**: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1
+- **Homepage**: https://ccb.jhu.edu/software/glimmer/
+- **Package**: https://anaconda.org/channels/bioconda/packages/tigr-glimmer/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+USAGE:  entropy-profile [options] < input-file
+
+Read multi-fasta-format gene sequences from stdin.
+Translate each to its protein product and then print
+the natural and entropy distributions of the amino acids
+Output goes to stdout
+
+Options:
+ -b
+ --brief
+    Brief output:  3 columns with header line
+ -h
+ --help
+    Print this message
+ -l <n>
+ --minlen <n>
+    Don't output any sequence shorter than <n> characters
 ```
 
 ## Metadata

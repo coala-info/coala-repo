@@ -24,14 +24,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --first_stage_kmer
-  - id: gz
-    type:
-      - 'null'
-      - boolean
-    doc: Whether to gzip results or not.
-    inputBinding:
-      position: 101
-      prefix: --gz
   - id: gzip
     type:
       - 'null'
@@ -46,22 +38,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
-  - id: k1
-    type:
-      - 'null'
-      - int
-    doc: k-mer length used in the first stage of classification.
-    inputBinding:
-      position: 101
-      prefix: --k1
-  - id: k2
-    type:
-      - 'null'
-      - int
-    doc: k-mer length used in the second stage of classification.
-    inputBinding:
-      position: 101
-      prefix: --k2
   - id: min_len
     type:
       - 'null'
@@ -71,15 +47,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min_len
-  - id: pr
-    type:
-      - 'null'
-      - boolean
-    doc: Whether to write probabilities of individual classes for each sequence 
-      to the output.
-    inputBinding:
-      position: 101
-      prefix: --pr
   - id: probabilities
     type:
       - 'null'
@@ -97,18 +64,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --second_stage_kmer
-  - id: tf
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: 'Write sequences to fasta files specified in the arguments to this option.
-      The arguments are: mit - mitochondria, pla - plastid, bac - bacteria, arc -
-      archaea, euk - eukarya, unk - unknown, pro - prokarya, all - all classes present
-      in input fasta (to separate fasta files).'
-    inputBinding:
-      position: 101
-      prefix: --tf
   - id: threads
     type:
       - 'null'
@@ -152,6 +107,20 @@ outputs:
       stdout.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file written next to the output file
+    outputBinding:
+      glob: log_$(inputs.output_path)
+  - id: class_fastas
+    type:
+      type: array
+      items: File
+    doc: Sequences of each class, written when to_fasta is used
+    outputBinding:
+      glob: "*_$(inputs.input.basename)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

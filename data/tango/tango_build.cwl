@@ -30,15 +30,18 @@ inputs:
       position: 104
       prefix: --cpus
   - id: dbfile
-    type:
-      - 'null'
-      - File
-    doc: Name of diamond database file. Defaults to diamond.dmnd in same 
-      directory as the protein fasta file
+    type: string
+    default: diamond.dmnd
+    doc: Name of diamond database file. The tool default is diamond.dmnd in the directory of the protein fasta file, which is read-only when staged, so a name in the working directory is used.
     inputBinding:
       position: 104
       prefix: --dbfile
 outputs:
+  - id: diamond_db
+    type: File
+    doc: Diamond database file
+    outputBinding:
+      glob: $(inputs.dbfile)
   - id: stdout
     type: stdout
     doc: Standard output

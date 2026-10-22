@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/lib/tigr-glimmer/score-fixed
+baseCommand:
+  - tigr-glimmer
+  - score-fixed
 label: tigr-glimmer_score-fixed
 doc: 'Read sequences from stdin and score them using fixed-length model in file <model>.
   Output scores to stdout. Output columns are: sequence number, positive total score,
@@ -20,8 +22,6 @@ inputs:
   - id: input_file
     type: File
     doc: Input file (reads from stdin)
-    inputBinding:
-      position: 3
   - id: output_simple_format
     type:
       - 'null'
@@ -54,3 +54,4 @@ hints:
   - class: DockerRequirement
     dockerPull: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1
 stdout: tigr-glimmer_score-fixed.out
+stdin: $(inputs.input_file.path)

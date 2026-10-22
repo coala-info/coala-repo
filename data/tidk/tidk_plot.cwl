@@ -55,9 +55,9 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output filename for the SVG (without extension)
+    doc: SVG plot, written as <output>.svg
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path || 'tidk-plot').svg
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # tetranscripts CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tetranscripts_TEtranscripts | PASS | synthetic data: four pseudo-replicates made by splitting one real nf-core RNA-seq BAM (chr6 HLA region) with real UCSC hg19 gene and RepeatMasker annotations |
+
 ## tetranscripts_TEtranscripts
 
 ### Tool Description

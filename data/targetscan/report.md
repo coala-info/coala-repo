@@ -1,5 +1,11 @@
 # targetscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| targetscan_targetscan_70.pl | PASS |  |
+
 ## targetscan_targetscan_70.pl
 
 ### Tool Description

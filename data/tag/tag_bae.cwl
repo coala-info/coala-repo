@@ -48,12 +48,17 @@ inputs:
       position: 102
       prefix: --relax
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: write output in GFF3 to FILE; default is terminal
     inputBinding:
       position: 103
       prefix: --out
 outputs:
+  - id: stdout
+    type: stdout
+    doc: GFF3 written to the terminal when no output file is given
   - id: output_file
     type:
       - 'null'
@@ -66,3 +71,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tag:0.5.1--py_0
+stdout: tag_bae.out

@@ -7,6 +7,8 @@ doc: "Count reads mapping on Transposable Elements subfamilies, families and cla
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: scRNA-seq reads aligned to a reference genome
     inputBinding:
       position: 101

@@ -8,7 +8,7 @@ inputs:
     type: string
     doc: command to run
     inputBinding:
-      position: 1
+      position: 201
   - id: command_arguments
     type:
       - 'null'
@@ -16,7 +16,18 @@ inputs:
         items: string
     doc: command arguments
     inputBinding:
-      position: 2
+      position: 202
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input files named in the command arguments (staged in the working directory so the names resolve)
+  - id: result_pattern
+    type:
+      - 'null'
+      - string
+    doc: Glob pattern for the result files written by the wrapped command (collected as result_files)
   - id: batonfile
     type:
       - 'null'
@@ -150,7 +161,7 @@ inputs:
   - id: rootdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: create the tardis working folder under DIR. If no working root is 
       specified, a default location is used.
     inputBinding:
@@ -218,9 +229,31 @@ inputs:
       position: 103
       prefix: --userconfig
 outputs:
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Result files written by the wrapped command (selected with result_pattern)
+    outputBinding:
+      glob: $(inputs.result_pattern)
+  - id: working_dir
+    type:
+      - 'null'
+      - Directory
+    doc: tardis working folder (rootdir) with job scripts, logs and chunks
+    outputBinding:
+      glob: $(inputs.rootdir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_files)
+      - entryname: "$(inputs.rootdir ? inputs.rootdir : 'tardis_work')"
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tardis:1.0.19--py27ha92aebf_0

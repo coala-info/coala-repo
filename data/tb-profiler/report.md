@@ -1,5 +1,20 @@
 # tb-profiler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tb-profiler_batch | PASS | two Galaxy test read sets run in parallel from a CSV: both RR-TB with rpoB p.Asp435Val; read files are now staged |
+| tb-profiler_collate | PASS | two profile result folders collated: both samples RR-TB with rpoB p.Asp435Val; command word fixed from tb-profiler_collate and options rewritten from the help |
+| tb-profiler_create_db | PASS | database built from the tbdb GitHub files (48797 mutations parsed), 14 files in the new library folder; needs genome, gff, snpEff and variables files staged |
+| tb-profiler_lineage | PASS | Galaxy rif_resistant BAM: lineage2, 2.2, 2.2.2 at 100 percent, same as profile; barcode SNPs dumped |
+| tb-profiler_list_db | PASS | lists the bundled tbdb database, and a loaded custom database when db_dir is given |
+| tb-profiler_load_library | PASS | library folder made by create_db loaded into a new database folder and listed by list_db |
+| tb-profiler_profile | PASS | Galaxy test reads (rif_resistant) and BAM: lineage2.2.2, RR-TB, rpoB p.Asp435Val as expected; the spoligotype option fails because FastK is missing |
+| tb-profiler_reformat | PASS | result JSON of the rpoB sample reformatted to txt and csv; needs a results folder staged beforehand |
+| tb-profiler_spoligotype | Failed | image problem: the default k-mer counter FastK is not in the image (Cant find programs: FastK) |
+| tb-profiler_update_tbdb | PASS | downloaded and built the tbdb database from GitHub in about one minute (network access added) |
+
 ## tb-profiler_profile
 
 ### Tool Description

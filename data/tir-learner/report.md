@@ -1,5 +1,11 @@
 # tir-learner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tir-learner_TIR-Learner | PASS | annotation matches the tool's sample result for the rice test genome |
+
 ## tir-learner_TIR-Learner
 
 ### Tool Description

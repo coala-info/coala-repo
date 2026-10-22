@@ -1,5 +1,11 @@
 # tipp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tipp_TIPPo.v2.3.pl | Not completed | pipeline, skipped (de novo organelle assembly with tiara, flye and KMC3 needs large HiFi read sets) |
+
 ## tipp_TIPPo.v2.3.pl
 
 ### Tool Description

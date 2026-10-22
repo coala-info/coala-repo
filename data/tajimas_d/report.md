@@ -1,5 +1,11 @@
 # tajimas_d CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tajimas_d | PASS |  |
+
 ## tajimas_d
 
 ### Tool Description

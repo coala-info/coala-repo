@@ -1,5 +1,11 @@
 # tides-ml CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tides-ml_tides | PASS |  |
+
 ## tides-ml_tides
 
 ### Tool Description

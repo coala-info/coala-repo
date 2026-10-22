@@ -1,5 +1,12 @@
 # t1k CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| t1k_run-t1k | PASS | KIR example reads from the T1K repo give the expected genotype table |
+| t1k_t1k-build.pl | PASS | built the KIR2DL1 allele reference (421 alleles) from IPD-KIR kir.dat |
+
 ## t1k_t1k-build.pl
 
 ### Tool Description

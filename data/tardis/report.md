@@ -1,5 +1,11 @@
 # tardis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tardis | PASS |  |
+
 ## tardis
 
 ### Tool Description

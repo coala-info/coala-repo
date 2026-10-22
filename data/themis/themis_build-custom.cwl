@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - ganon
+  - themis
   - build-custom
 label: themis_build-custom
 doc: "Build a custom database for Ganon.\n\nTool homepage: https://github.com/xujialupaoli/Themis"
@@ -55,7 +55,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items:
+          - File
+          - Directory
     doc: Input file(s) and/or folder(s). Mutually exclusive --input-file.
     inputBinding:
       position: 101
@@ -69,6 +71,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-extension
+  - id: referenced_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Sequence files named in the input file table (staged in the working
+      directory so the relative names resolve)
   - id: input_file
     type:
       - 'null'
@@ -257,6 +266,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_files
+    type:
+      type: array
+      items: File
+    doc: Database files written with the db prefix (for example prefix.hibf or prefix.ibf, prefix.tax)
+    outputBinding:
+      glob: $(inputs.db_prefix).*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.referenced_files || [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/themis:0.1.0--py314h0cb7dc8_0

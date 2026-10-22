@@ -596,7 +596,7 @@ inputs:
     doc: Output or path parameter `cleanup_log_file_path`
     inputBinding:
       position: 102
-      prefix: --cleanup-log-file
+      prefix: -z
   - id: output_file_path
     type:
       - 'null'
@@ -604,7 +604,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 106
-      prefix: --output-file
+      prefix: -o
   - id: logfile_path
     type:
       - 'null'

@@ -6,13 +6,17 @@ doc: "Builds a T1K database from EMBL-ENA dat files, plain gene sequence files, 
   download links.\n\nTool homepage: https://github.com/mourisl/T1K"
 inputs:
   - id: download_dat_file
-    type: string
+    type:
+      - 'null'
+      - string
     doc: IPD-IMGT/HLA or IPD-KIR or user-specified dat file download link
     inputBinding:
       position: 101
       prefix: --download
   - id: embl_ena_dat_file
-    type: string
+    type:
+      - 'null'
+      - File
     doc: EMBL-ENA dat file
     inputBinding:
       position: 101
@@ -26,7 +30,9 @@ inputs:
       position: 101
       prefix: --prefix
   - id: gene_sequence_file
-    type: string
+    type:
+      - 'null'
+      - File
     doc: plain gene sequence file
     inputBinding:
       position: 101
@@ -34,7 +40,7 @@ inputs:
   - id: genome_annotation_file
     type:
       - 'null'
-      - string
+      - File
     doc: genome annotation file
     inputBinding:
       position: 101

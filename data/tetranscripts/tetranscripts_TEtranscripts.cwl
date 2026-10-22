@@ -12,6 +12,7 @@ inputs:
     doc: Sample files in group 1 (e.g. treatment/mutant)
     inputBinding:
       position: 1
+      prefix: -t
   - id: control_samples
     type:
       type: array
@@ -19,6 +20,7 @@ inputs:
     doc: Sample files in group 2 (e.g. control/wildtype)
     inputBinding:
       position: 2
+      prefix: -c
   - id: foldchange
     type:
       - 'null'
@@ -182,6 +184,17 @@ outputs:
     doc: Directory for output files.
     outputBinding:
       glob: $(inputs.outdir)
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Count table and differential expression results written to the working directory
+    outputBinding:
+      glob:
+        - '*.cntTable'
+        - '*_analysis.txt'
+        - '*_sigdiff_*.txt'
+        - '*.R'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tetranscripts:2.2.3--pyh7cba7a3_0

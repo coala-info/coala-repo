@@ -1,5 +1,11 @@
 # telogator2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| telogator2 | PASS | real repo test HG002 ONT reads; tlens_by_allele.tsv has chr1p alleles with plausible lengths and plots; fixed output prefix to -o and passed --minimap2 minimap2 |
+
 ## telogator2
 
 ### Tool Description

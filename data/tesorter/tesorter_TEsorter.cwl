@@ -10,14 +10,6 @@ inputs:
     doc: input TE/LTR or genome sequences in fasta format
     inputBinding:
       position: 1
-  - id: citation
-    type:
-      - 'null'
-      - boolean
-    doc: print the citation and exit
-    inputBinding:
-      position: 102
-      prefix: --citation
   - id: db_hmm
     type:
       - 'null'
@@ -193,7 +185,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$(inputs.prefix ? inputs.prefix + '*' : inputs.sequence.basename + '.*')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tesorter:1.5.1--pyhdfd78af_0

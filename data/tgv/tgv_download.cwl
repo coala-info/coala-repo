@@ -4,7 +4,7 @@ baseCommand:
   - tgv
   - download
 label: tgv_download
-doc: "Download command\n\nTool homepage: https://github.com/zeqianli/tgv"
+doc: "Download a reference genome from UCSC into a local cache folder\n\nTool homepage: https://github.com/zeqianli/tgv"
 inputs:
   - id: reference
     type: string
@@ -12,9 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: cache_dir
-    type:
-      - 'null'
-      - Directory
+    type: string
     doc: Cache directory
     inputBinding:
       position: 102
@@ -23,6 +21,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: cache
+    type: Directory
+    doc: Cache directory holding the downloaded reference
+    outputBinding:
+      glob: $(inputs.cache_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tgv:0.1.0--h521fa98_0

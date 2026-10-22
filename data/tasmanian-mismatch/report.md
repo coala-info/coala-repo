@@ -1,5 +1,12 @@
 # tasmanian-mismatch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tasmanian-mismatch_run_intersections | PASS | synthetic data: BED regions planted over the real read region |
+| tasmanian-mismatch_run_tasmanian | PASS |  |
+
 ## tasmanian-mismatch_run_intersections
 
 ### Tool Description

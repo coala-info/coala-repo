@@ -1,5 +1,11 @@
 # table2asn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| table2asn | PASS |  |
+
 ## table2asn
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # tetrimmer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tetrimmer_TEtrimmer | Failed | image problem: TEtrimmer changes permissions of its own install folder /usr/local/share/tetrimmer and stops on the read-only file system; it also downloads the Pfam database at start |
+
 ## tetrimmer_TEtrimmer
 
 ### Tool Description

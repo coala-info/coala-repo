@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: long-orfs
+baseCommand:
+  - tigr-glimmer
+  - long-orfs
 label: tigr-glimmer_long-orfs
 doc: Read DNA sequence in <sequence-file> and find and output the coordinates of
   long, non-overlapping orfs in it.

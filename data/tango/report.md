@@ -1,5 +1,17 @@
 # tango CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tango_assign | PASS | --blobout crashes in the tool (KeyError in write_blobout); main assignment and --taxidout work |
+| tango_build | PASS |  |
+| tango_download | Not completed | NCBI FTP downloads hang inside the Docker container (no data), so the taxonomy download could not be tested |
+| tango_format | PASS |  |
+| tango_search | PASS |  |
+| tango_transfer | PASS | synthetic data: one ORF per contig, ORF ids made from contig ids |
+| tango_update | PASS | synthetic data: id map planted from 5 real accessions |
+
 ## tango_download
 
 ### Tool Description
@@ -74,24 +86,6 @@ optional arguments:
                         database). Ids longer than this are written to a file
                         with the original id
   --tmpdir TMPDIR       Temporary directory for writing fasta files
-```
-
-## tango_map
-
-### Tool Description
-Tango is a tool for mapping and analyzing genomic data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tango:0.5.7--py_0
-- **Homepage**: https://github.com/johnne/tango
-- **Package**: https://anaconda.org/channels/bioconda/packages/tango/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: tango [-h] [-v]
-             {download,format,update,build,search,assign,transfer} ...
-tango: error: invalid choice: 'map' (choose from 'download', 'format', 'update', 'build', 'search', 'assign', 'transfer')
 ```
 
 ## tango_update

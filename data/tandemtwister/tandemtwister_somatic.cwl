@@ -49,6 +49,8 @@ inputs:
   - id: input_bam
     type: File
     doc: Path to the BAM file containing aligned reads
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam
@@ -226,9 +228,11 @@ inputs:
 outputs:
   - id: output_file
     type: File
-    doc: Output file for region, motif, and haplotype copy numbers
+    doc: Output VCF (the tool appends .vcf.gz to the output file name) with region, motif, and haplotype copy numbers
+    secondaryFiles:
+      - .tbi
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).vcf.gz
   - id: output_file_statistics
     type:
       - 'null'

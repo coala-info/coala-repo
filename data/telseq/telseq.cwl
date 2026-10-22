@@ -21,7 +21,7 @@ inputs:
       <in.bam>. When specified, <in.bam> are ignored.
     inputBinding:
       position: 102
-      prefix: --bamlist
+      prefix: -f
   - id: exome_bed
     type:
       - 'null'
@@ -29,7 +29,7 @@ inputs:
     doc: specifiy exome regions in BED format. These regions will be excluded
     inputBinding:
       position: 102
-      prefix: --exomebed
+      prefix: -e
   - id: ignore_read_groups
     type:
       - 'null'
@@ -101,22 +101,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: -z
-  - id: output_dir_path
+  - id: output_file_path
     type: string
     doc: output file for results. Ignored when input is from stdin, in which 
       case output will be stdout.
     inputBinding:
       position: 103
-      prefix: --output_dir
+      prefix: -o
 outputs:
-  - id: output_dir
-    type:
-      - 'null'
-      - Directory
-    doc: output file for results. Ignored when input is from stdin, in which 
-      case output will be stdout.
+  - id: output_file
+    type: File
+    doc: tab-separated telomere length estimates, one row per read group
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.output_file_path)
+  - id: stdout
+    type: stdout
+    doc: Scan log messages
+stdout: telseq.log
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -1,5 +1,11 @@
 # tagbam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tagbam | PASS |  |
+
 ## tagbam
 
 ### Tool Description

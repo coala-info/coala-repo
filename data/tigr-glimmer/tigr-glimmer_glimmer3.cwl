@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: glimmer3
+baseCommand:
+  - tigr-glimmer
+  - glimmer3
 label: tigr-glimmer_glimmer3
 doc: "Read DNA sequences in <sequence-file> and predict genes\nin them using the Interpolated
   Context Model in <icm-file>.\nOutput details go to file <tag>.detail and predictions
@@ -183,6 +185,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: detail
+    type: File
+    doc: Output details, written to <tag>.detail
+    outputBinding:
+      glob: $(inputs.tag).detail
+  - id: predict
+    type: File
+    doc: Gene predictions, written to <tag>.predict
+    outputBinding:
+      glob: $(inputs.tag).predict
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1

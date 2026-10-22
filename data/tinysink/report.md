@@ -1,5 +1,11 @@
 # tinysink CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tinysink | Not completed | needs a remote server with ssh login; it loops rsync to the server |
+
 ## tinysink
 
 ### Tool Description

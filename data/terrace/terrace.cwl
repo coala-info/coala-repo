@@ -11,10 +11,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
-  - id: feature_file
+  - id: feature_file_path
     type:
       - 'null'
-      - File
+      - string
     doc: feature_file
     inputBinding:
       position: 101
@@ -42,7 +42,9 @@ inputs:
       position: 101
       prefix: -r
   - id: reference_genome
-    type: File
+    type:
+      - 'null'
+      - File
     doc: reference-genome.fa
     inputBinding:
       position: 101
@@ -52,13 +54,20 @@ inputs:
     doc: Output or path parameter `gtf_file_path`
     inputBinding:
       position: 102
-      prefix: --gtf-file
+      prefix: -o
 outputs:
   - id: gtf_file
     type: File
     doc: gtf-file.gtf
     outputBinding:
       glob: $(inputs.gtf_file_path)
+  - id: feature_file
+    type:
+      - 'null'
+      - File
+    doc: feature file with circRNA features used for score generation (written when feature_file_path is set)
+    outputBinding:
+      glob: $(inputs.feature_file_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

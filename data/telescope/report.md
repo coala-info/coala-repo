@@ -1,5 +1,12 @@
 # telescope CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| telescope_assign | PASS | real repo test BAM and GTF; report columns match the repo reference report; output folder now created before the run |
+| telescope_resume | PASS | resumed from the checkpoint of the real assign run; report counts consistent; output folder now created before the run |
+
 ## telescope_assign
 
 ### Tool Description
@@ -200,23 +207,6 @@ Model Parameters:
   --max_iter MAX_ITER   EM Algorithm maximum iterations (default: 100)
   --use_likelihood      Use difference in log-likelihood as convergence
                         criteria. (default: False)
-```
-
-
-## telescope_test
-
-### Tool Description
-Assigns reads to genomic features.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/telescope:1.0.3--py36h14c3975_0
-- **Homepage**: https://github.com/mlbendall/telescope
-- **Package**: https://anaconda.org/channels/bioconda/packages/telescope/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-telescope assign /usr/local/lib/python3.6/site-packages/telescope/data/alignment.bam /usr/local/lib/python3.6/site-packages/telescope/data/annotation.gtf
 ```
 
 

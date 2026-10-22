@@ -171,6 +171,10 @@ outputs:
       glob: $(inputs.taxidout_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.taxdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tango:0.5.7--py_0

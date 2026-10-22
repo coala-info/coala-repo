@@ -6,29 +6,28 @@ baseCommand:
 label: taxonkit_filter
 doc: "Filter TaxIds by taxonomic rank range\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: 'File(s) with TaxIds, one per line or in a tab-separated column (see taxid_field)'
+    inputBinding:
+      position: 1
   - id: black_list
     type:
       - 'null'
       - type: array
         items: string
-    doc: black list of ranks to discard, e.g., '-B "no rank" -B "clade"'
+    doc: 'Black list of ranks to discard, e.g., ''no rank'' and ''clade'''
     inputBinding:
       position: 101
       prefix: --black-list
-  - id: data_dir
-    type:
-      - 'null'
-      - string
-    doc: directory containing nodes.dmp and names.dmp
-    inputBinding:
-      position: 101
-      prefix: --data-dir
+      itemSeparator: ','
   - id: discard_noranks
     type:
       - 'null'
       - boolean
-    doc: discard all ranks without order, type "taxonkit filter --help" for 
-      details
+    doc: 'Discard all ranks without order'
     inputBinding:
       position: 101
       prefix: --discard-noranks
@@ -36,7 +35,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: discard root taxid, defined by --root-taxid
+    doc: 'Discard root taxid, defined by --root-taxid'
     inputBinding:
       position: 101
       prefix: --discard-root
@@ -45,34 +44,24 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: output TaxIds with rank equal to some ranks, multiple values can be 
-      separated with comma "," (e.g., -E "genus,species"), or give multiple 
-      times (e.g., -E genus -E species)
+    doc: 'Output TaxIds with rank equal to some ranks, e.g., genus and species'
     inputBinding:
       position: 101
       prefix: --equal-to
+      itemSeparator: ','
   - id: higher_than
     type:
       - 'null'
       - string
-    doc: output TaxIds with rank higher than a rank, exclusive with --lower-than
+    doc: 'Output TaxIds with rank higher than a rank, exclusive with --lower-than'
     inputBinding:
       position: 101
       prefix: --higher-than
-  - id: line_buffered
-    type:
-      - 'null'
-      - boolean
-    doc: use line buffering on output, i.e., immediately writing to stdin/file 
-      for every line of output
-    inputBinding:
-      position: 101
-      prefix: --line-buffered
   - id: list_order
     type:
       - 'null'
       - boolean
-    doc: list user defined ranks in order, from "$HOME/.taxonkit/ranks.txt"
+    doc: 'List user defined ranks in order, from the built-in ranks.txt'
     inputBinding:
       position: 101
       prefix: --list-order
@@ -80,7 +69,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: list ordered ranks in taxonomy database, sorted in user defined order
+    doc: 'List ordered ranks in taxonomy database, sorted in user defined order'
     inputBinding:
       position: 101
       prefix: --list-ranks
@@ -88,16 +77,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output TaxIds with rank lower than a rank, exclusive with --higher-than
+    doc: 'Output TaxIds with rank lower than a rank, exclusive with --higher-than'
     inputBinding:
       position: 101
       prefix: --lower-than
   - id: rank_file
     type:
       - 'null'
-      - string
-    doc: user-defined ordered taxonomic ranks, type "taxonkit filter --help" for
-      details
+      - File
+    doc: 'User-defined ordered taxonomic ranks (needed when data_dir is read-only: without it taxonkit tries to write ranks.txt into the data directory)'
     inputBinding:
       position: 101
       prefix: --rank-file
@@ -105,7 +93,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: root taxid
+    doc: 'Root taxid (default 1)'
     inputBinding:
       position: 101
       prefix: --root-taxid
@@ -113,8 +101,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: do not discard some special ranks without order when using -L, where 
-      rank of the closest higher node is still lower than rank cutoff
+    doc: 'Do not discard some special ranks without order when using --lower-than, where rank of the closest higher node is still lower than rank cutoff'
     inputBinding:
       position: 101
       prefix: --save-predictable-norank
@@ -122,15 +109,31 @@ inputs:
     type:
       - 'null'
       - int
-    doc: field index of taxid. input data should be tab-separated
+    doc: 'Field index of taxid. Input data should be tab-separated (default 1)'
     inputBinding:
       position: 101
       prefix: --taxid-field
+  - id: data_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Directory containing nodes.dmp and names.dmp (NCBI taxdump files)'
+    inputBinding:
+      position: 101
+      prefix: --data-dir
+  - id: line_buffered
+    type:
+      - 'null'
+      - boolean
+    doc: 'Use line buffering on output, i.e., immediately writing to stdin/file for every line of output'
+    inputBinding:
+      position: 101
+      prefix: --line-buffered
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of CPUs. 4 is enough
+    doc: 'Number of CPUs. 4 is enough'
     inputBinding:
       position: 101
       prefix: --threads
@@ -138,13 +141,13 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: print verbose information
+    doc: 'Print verbose information'
     inputBinding:
       position: 101
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
+    doc: 'Output file name (suffix .gz for gzipped output)'
     inputBinding:
       position: 102
       prefix: --out-file
@@ -153,7 +156,7 @@ outputs:
     type:
       - 'null'
       - File
-    doc: out file ("-" for stdout, suffix .gz for gzipped out)
+    doc: Output file
     outputBinding:
       glob: $(inputs.out_file_path)
 requirements:

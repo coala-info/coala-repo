@@ -48,9 +48,7 @@ inputs:
       prefix: --out
 outputs:
   - id: out
-    type:
-      type: array
-      items: File
+    type: Directory
     doc: prefix where output would be written
     outputBinding:
       glob: $(inputs.out_path)*

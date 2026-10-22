@@ -82,7 +82,7 @@ inputs:
   - id: output_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to output results, default=./{transcripts}
     inputBinding:
       position: 101
@@ -139,6 +139,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: orfs_dir
+    type: Directory
+    doc: Output folder with longest_orfs.cds, longest_orfs.pep and longest_orfs.gff3
+    outputBinding:
+      glob: $(inputs.output_dir || inputs.transcripts.nameroot)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/td2:1.0.7--pyhdfd78af_0

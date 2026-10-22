@@ -1,5 +1,13 @@
 # tbpore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tbpore_cluster | PASS | consensus FASTAs from two real tbpore process runs (ERR12328581, ERR12328557); clusters.txt separates the two unrelated isolates |
+| tbpore_download | Not completed | the tool's download URL (figshare.com/ndownloader/files/36708444) returns an empty bot-check page (HTTP 202), so the hash check fails; the same 5 GB file downloads with curl from ndownloader.figshare.com |
+| tbpore_process | PASS | real ONT M. tuberculosis reads (ENA ERR12328581) with the real decontamination database; mykrobe calls lineage1.2.1 and a consensus FASTA is written; needs about 10 GB memory for the index |
+
 ## tbpore_cluster
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # tiara CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tiara | PASS |  |
+
 ## tiara
 
 ### Tool Description

@@ -1,12 +1,18 @@
 # tesseract CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tesseract | PASS | image changed to the bioconda tesseract image (the old jitesoft image ran tesseract as its entrypoint, so the command was doubled); tested on tesseract's own eurotext.png test image with txt and tsv output. |
+
 ## tesseract
 
 ### Tool Description
 Tesseract Open Source OCR Engine
 
 ### Metadata
-- **Docker Image**: jitesoft/tesseract-ocr:5-5.5.2
+- **Docker Image**: quay.io/biocontainers/tesseract:5.5.1
 - **Homepage**: https://github.com/tesseract-ocr/tesseract
 - **Package**: Not found
 - **Validation**: PASS

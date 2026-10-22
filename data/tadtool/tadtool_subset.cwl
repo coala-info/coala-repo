@@ -27,17 +27,29 @@ inputs:
       \  <chromosome>:<start>-<end>, e.g. chr12:31000000-33000000"
     inputBinding:
       position: 3
+  - id: output_matrix_path
+    type: string
+    doc: Output matrix file.
+    inputBinding:
+      position: 4
+  - id: output_regions_path
+    type: string
+    doc: Output regions file.
+    inputBinding:
+      position: 5
 outputs:
   - id: output_matrix
     type: File
     doc: Output matrix file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_matrix_path)
   - id: output_regions
     type: File
     doc: Output regions file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_regions_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tadtool:0.84--pyh7cba7a3_0

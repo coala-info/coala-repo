@@ -69,10 +69,10 @@ inputs:
     inputBinding:
       position: 102
       prefix: -asxml
-  - id: error_file
+  - id: error_file_path
     type:
       - 'null'
-      - File
+      - string
     doc: write errors and warnings to the specified <file>
     inputBinding:
       position: 102
@@ -325,8 +325,18 @@ outputs:
     doc: write output to the specified <file>
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: error_file
+    type:
+      - 'null'
+      - File
+    doc: Errors and warnings written with -file
+    outputBinding:
+      glob: $(inputs.error_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+successCodes:
+  - 0
+  - 1
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tidyp:1.04--h7b50bb2_9

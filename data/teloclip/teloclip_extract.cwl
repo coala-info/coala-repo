@@ -32,9 +32,7 @@ inputs:
       position: 102
       prefix: --count-motifs
   - id: extract_dir
-    type:
-      - 'null'
-      - Directory
+    type: string
     doc: 'Write extracted reads to this directory. Default: cwd.'
     inputBinding:
       position: 102
@@ -150,13 +148,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+  - id: extract_dir_out
+    type: Directory
+    doc: Directory with the extracted reads
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.extract_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/teloclip:0.3.4--pyhdfd78af_0

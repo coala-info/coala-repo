@@ -4,44 +4,46 @@ baseCommand:
   - tb-profiler
   - list_db
 label: tb-profiler_list_db
-doc: "List available databases\n\nTool homepage: https://github.com/jodyphelan/TBProfiler"
+doc: "List the mutation databases that are loaded\n\nTool homepage: https://github.com/jodyphelan/TBProfiler"
 inputs:
-  - id: database_directory
-    type:
-      - 'null'
-      - Directory
-    doc: Database directory
-    inputBinding:
-      position: 101
-      prefix: --db_dir
-  - id: logging_level
+  - id: dir
     type:
       - 'null'
       - string
-    doc: Logging level
-    inputBinding:
-      position: 101
-      prefix: --logging
-  - id: storage_directory
-    type:
-      - 'null'
-      - Directory
-    doc: Storage directory
+    doc: 'Storage directory (default: .)'
     inputBinding:
       position: 101
       prefix: --dir
-  - id: temp_directory
+  - id: temp
     type:
       - 'null'
       - string
-    doc: Temp firectory to process all files
+    doc: 'Temp directory to process all files (default: .)'
     inputBinding:
       position: 101
       prefix: --temp
+  - id: db_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Database directory (default: bundled database in the image)'
+    inputBinding:
+      position: 101
+      prefix: --db_dir
+  - id: logging
+    type:
+      - 'null'
+      - string
+    doc: 'Logging level: DEBUG, INFO, WARNING, ERROR or CRITICAL (default: INFO)'
+    inputBinding:
+      position: 101
+      prefix: --logging
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tb-profiler:6.6.6--pyhdfd78af_0

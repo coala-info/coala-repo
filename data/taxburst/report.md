@@ -1,5 +1,11 @@
 # taxburst CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| taxburst | PASS | csv_summary, SingleM, krona and json inputs work; --fail-on-error stops on the example because its tree check fails, by design |
+
 ## taxburst
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # tiny-count CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tiny-count | PASS | real chrI small RNA reads from the tool's tests with Ensembl chrI genes; read and sequence counts match the input |
+
 ## tiny-count
 
 ### Tool Description

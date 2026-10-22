@@ -7,8 +7,10 @@ label: tbvcfreport_generate
 doc: "Generate an interactive HTML-based VCF report.\n\nTool homepage: http://github.com/COMBAT-TB/tbvcfreport"
 inputs:
   - id: vcf_dir
-    type: Directory
-    doc: Directory containing VCF files
+    type:
+      - File
+      - Directory
+    doc: A VCF file, or a directory containing VCF files
     inputBinding:
       position: 1
   - id: db_url
@@ -47,6 +49,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: variants_reports
+    type: File[]
+    doc: HTML and text variants and drug resistance reports
+    outputBinding:
+      glob: '*_report.*'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tbvcfreport:1.0.1--pyhdfd78af_0

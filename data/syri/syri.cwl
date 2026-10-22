@@ -281,10 +281,47 @@ inputs:
       position: 101
       prefix: --unip
 outputs:
+  - id: syri_out
+    type:
+      - 'null'
+      - File
+    doc: Structural rearrangements and variants in the syri tabular format
+    outputBinding:
+      glob: $((inputs.prefix || '') + 'syri.out')
+  - id: syri_vcf
+    type:
+      - 'null'
+      - File
+    doc: All variants in VCF format
+    outputBinding:
+      glob: $((inputs.prefix || '') + 'syri.vcf')
+  - id: syri_summary
+    type:
+      - 'null'
+      - File
+    doc: Summary of the annotated variants
+    outputBinding:
+      glob: $((inputs.prefix || '') + 'syri.summary')
+  - id: syri_log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $((inputs.prefix || '') + 'syri.log')
+  - id: mapids
+    type:
+      - 'null'
+      - File
+    doc: Chromosome pairs matched between the two genomes
+    outputBinding:
+      glob: $((inputs.prefix || '') + 'mapids.txt')
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/syri:1.7.1--py311hcf77733_1
-stdout: syri.out
+stdout: syri_stdout.txt

@@ -38,13 +38,12 @@ inputs:
       position: 101
       prefix: -G
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: same output directory from LongOrfs
     inputBinding:
       position: 101
       prefix: -O
+      valueFrom: $(self.basename)
   - id: precise
     type:
       - 'null'
@@ -147,6 +146,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: predictions
+    type: File[]
+    doc: Final ORFs (.TD2.bed, .TD2.cds, .TD2.gff3 and .TD2.pep)
+    outputBinding:
+      glob: '*.TD2.*'
+  - id: predict_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The TD2.LongOrfs output folder, with the PSAURON scores added
+    outputBinding:
+      glob: $(inputs.output_dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.output_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/td2:1.0.7--pyhdfd78af_0

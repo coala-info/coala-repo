@@ -1,5 +1,11 @@
 # tbl2asn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tbl2asn | Failed | image problem: tbl2asn 25.8 exits 1 on every real run (even clean input; prints 'copy is more than a year old'), so cwltool reports permanentFail; run on real phiX174 data |
+
 ## tbl2asn
 
 ### Tool Description

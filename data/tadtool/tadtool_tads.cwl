@@ -55,14 +55,27 @@ inputs:
     inputBinding:
       position: 105
       prefix: --write-values
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Optional output file to save TADs.
+    inputBinding:
+      position: 5
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: Optional output file to save TADs.
+    doc: Output file with the TADs (or index values with --write-values)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tadtool:0.84--pyh7cba7a3_0
+stdout: tadtool_tads.out

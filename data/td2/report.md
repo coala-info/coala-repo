@@ -1,5 +1,12 @@
 # td2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| td2_TD2.LongOrfs | PASS | real repo test transcripts (A2M, NAT2, ACADM); 8 ORFs found |
+| td2_TD2.Predict | PASS | real repo test transcripts; predicted proteins have the known lengths of A2M, NAT2 and ACADM |
+
 ## td2_TD2.LongOrfs
 
 ### Tool Description

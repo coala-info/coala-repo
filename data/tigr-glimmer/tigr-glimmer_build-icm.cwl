@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: build-icm
+baseCommand:
+  - tigr-glimmer
+  - build-icm
 label: tigr-glimmer_build-icm
 doc: Read sequences from standard input and output to output-file the 
   interpolated context model built from them.
@@ -11,12 +13,8 @@ inputs:
     inputBinding:
       position: 1
   - id: input_file
-    type:
-      - 'null'
-      - File
-    doc: input file
-    inputBinding:
-      position: 2
+    type: File
+    doc: Input sequences, read from standard input
   - id: depth
     type:
       - 'null'
@@ -88,3 +86,4 @@ hints:
   - class: DockerRequirement
     dockerPull: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1
 stdout: tigr-glimmer_build-icm.out
+stdin: $(inputs.input_file.path)

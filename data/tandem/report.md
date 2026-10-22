@@ -1,5 +1,11 @@
 # tandem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tandem | PASS |  |
+
 ## tandem
 
 ### Tool Description

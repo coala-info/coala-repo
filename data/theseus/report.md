@@ -1,5 +1,11 @@
 # theseus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| theseus | PASS |  |
+
 ## theseus
 
 ### Tool Description

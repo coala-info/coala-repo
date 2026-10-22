@@ -1,5 +1,11 @@
 # tbox-scan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tbox-scan | Failed | image problem: Biopython in the image has no Bio.Alphabet, so pipeline_master.py crashes with ImportError after the INFERNAL step (real B. subtilis tyrS leader) |
+
 ## tbox-scan
 
 ### Tool Description

@@ -1,19 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - python
-  - /usr/local/bin/TeloSearchLR.py
+  - TeloSearchLR.py
 label: telosearchlr_TeloSearchLR.py
 doc: "TELOomeric repeat motif SEARCH using Long Reads\n\nTool homepage: https://github.com/gchchung/TeloSearchLR"
 inputs:
   - id: K_value
-    type: int
+    type:
+      - 'null'
+      - int
     doc: longest repeat period (≥k) to consider by TideHunter
     inputBinding:
       position: 101
       prefix: --K_value
   - id: Mth_pattern
-    type: int
+    type:
+      - 'null'
+      - int
     doc: rank of the least frequent motif to plot (≥m)
     inputBinding:
       position: 101
@@ -41,13 +44,17 @@ inputs:
       position: 101
       prefix: --fasta
   - id: k_value
-    type: int
+    type:
+      - 'null'
+      - int
     doc: shortest repeat period (>0) to consider by TideHunter
     inputBinding:
       position: 101
       prefix: --k_value
   - id: mth_pattern
-    type: int
+    type:
+      - 'null'
+      - int
     doc: rank of the most frequent motif to plot (>0)
     inputBinding:
       position: 101
@@ -76,7 +83,9 @@ inputs:
       position: 101
       prefix: --terminal
   - id: tidehunter_output
-    type: string
+    type:
+      - 'null'
+      - File
     doc: a TideHunter (>=v1.5.4) tabular output
     inputBinding:
       position: 101
@@ -93,6 +102,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the occupancy plots and tables
+    outputBinding:
+      glob: TeloSearchLR.*.results
+  - id: tables
+    type:
+      type: array
+      items: File
+    doc: Ranked and unranked repeat tables and TideHunter tables
+    outputBinding:
+      glob: TeloSearchLR.*.txt
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/telosearchlr:1.0.1--pyhdfd78af_0

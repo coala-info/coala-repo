@@ -13,6 +13,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --cpu-core
+  - id: cool_files
+    type:
+      type: array
+      items: File
+    doc: Cool files named in the metadata file (staged writable, because hitad writes the DI track into the cool file)
   - id: datasets
     type: File
     doc: "Metadata file describing Hi-C datasets. Refer to our\n                 \
@@ -40,7 +45,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Logging file name.
     inputBinding:
       position: 101
@@ -91,8 +96,19 @@ outputs:
     doc: Output file name.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log_file || 'hitad.log')
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.cool_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tadlib:0.4.5.post1--pyhdfd78af_1

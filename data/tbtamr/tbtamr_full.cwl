@@ -1,446 +1,179 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tbtamr_full
+baseCommand:
+  - tbtamr
+  - full
 label: tbtamr_full
-doc: "Runs the full tbtamr pipeline, including mutAMR for VCF generation and BWA MEM
-  for alignment.\n\nTool homepage: https://github.com/MDU-PHL/tbtamr"
+doc: "Predict AMR results from reads or vcf\n\nTool homepage: https://github.com/MDU-PHL/tbtamr"
 inputs:
-  - id: reference_fasta
-    type: File
-    doc: Reference FASTA file for BWA indexing
-    secondaryFiles:
-      - .fai
+  - id: seq_id
+    type:
+      - 'null'
+      - string
+    doc: 'Sequence name (default tbtamr). The output folder has this name.'
     inputBinding:
-      position: 1
-  - id: input_reads_1
-    type: File
-    doc: First FASTQ file of paired-end reads
-    inputBinding:
-      position: 2
-  - id: input_reads_2
+      position: 101
+      prefix: --seq_id
+  - id: vcf
     type:
       - 'null'
       - File
-    doc: Second FASTQ file of paired-end reads
+    doc: 'VCF file generated using the H37rV v3 reference genome'
     inputBinding:
-      position: 3
-  - id: append_fasta_fastq_comment
-    type:
-      - 'null'
-      - boolean
-    doc: append FASTA/FASTQ comment to SAM output
-    inputBinding:
-      position: 104
-      prefix: -C
-  - id: band_width
-    type:
-      - 'null'
-      - int
-    doc: band width for banded alignment
-    inputBinding:
-      position: 104
-      prefix: -w
-  - id: discard_seeded_bases_shorter_than
-    type:
-      - 'null'
-      - int
-    doc: discard a chain if seeded bases shorter than INT
-    inputBinding:
-      position: 104
-      prefix: -W
-  - id: dont_modify_mapq_supplementary
-    type:
-      - 'null'
-      - boolean
-    doc: don't modify mapQ of supplementary alignments
-    inputBinding:
-      position: 104
-      prefix: -q
-  - id: drop_chains_fraction
-    type:
-      - 'null'
-      - float
-    doc: drop chains shorter than FLOAT fraction of the longest overlapping 
-      chain
-    inputBinding:
-      position: 104
-      prefix: -D
-  - id: end_clipping_penalty
-    type:
-      - 'null'
-      - string
-    doc: penalty for 5'- and 3'-end clipping
-    inputBinding:
-      position: 104
-      prefix: -L
-  - id: gap_extension_penalty
-    type:
-      - 'null'
-      - string
-    doc: gap extension penalty; a gap of size k cost '{-O} + {-E}*k'
-    inputBinding:
-      position: 104
-      prefix: -E
-  - id: gap_open_penalties
-    type:
-      - 'null'
-      - string
-    doc: gap open penalties for deletions and insertions
-    inputBinding:
-      position: 104
-      prefix: -O
-  - id: header_insert
-    type:
-      - 'null'
-      - string
-    doc: insert STR to header if it starts with @; or insert lines in FILE
-    inputBinding:
-      position: 104
-      prefix: -H
-  - id: insert_size_distribution
-    type:
-      - 'null'
-      - string
-    doc: specify the mean, standard deviation (10% of the mean if absent), max 
-      (4 sigma from the mean if absent) and min of the insert size distribution.
-      FR orientation only.
-    inputBinding:
-      position: 104
-      prefix: -I
-  - id: mark_shorter_split_hits_secondary
-    type:
-      - 'null'
-      - boolean
-    doc: mark shorter split hits as secondary
-    inputBinding:
-      position: 104
-      prefix: -M
-  - id: max_clip_length
-    type:
-      - 'null'
-      - int
-    doc: Maximum clipping length for samclip
-    inputBinding:
-      position: 104
-      prefix: --max-clip-length
-  - id: max_mate_rescues
-    type:
-      - 'null'
-      - int
-    doc: perform at most INT rounds of mate rescues for each read
-    inputBinding:
-      position: 104
-      prefix: -m
-  - id: max_score_fraction_h
-    type:
-      - 'null'
-      - float
-    doc: The fraction of the max score to use with -h
-    inputBinding:
-      position: 104
-      prefix: -z
-  - id: memory_samtools_sort
-    type:
-      - 'null'
-      - string
-    doc: Memory per thread for samtools sort
-    inputBinding:
-      position: 104
-      prefix: --memory-samtools-sort
-  - id: min_score_output
-    type:
-      - 'null'
-      - int
-    doc: minimum score to output
-    inputBinding:
-      position: 104
-      prefix: -T
-  - id: min_seed_length
-    type:
-      - 'null'
-      - int
-    doc: minimum seed length
-    inputBinding:
-      position: 104
-      prefix: -k
-  - id: mismatch_penalty
-    type:
-      - 'null'
-      - int
-    doc: penalty for a mismatch
-    inputBinding:
-      position: 104
-      prefix: -B
-  - id: off_diagonal_x_dropoff
-    type:
-      - 'null'
-      - int
-    doc: off-diagonal X-dropoff
-    inputBinding:
-      position: 104
-      prefix: -d
-  - id: output_all_hits_xa
-    type:
-      - 'null'
-      - string
-    doc: if there are <INT hits with score >80.00% of the max score, output all 
-      in XA
-    inputBinding:
-      position: 104
-      prefix: -h
-  - id: output_all_se_unpaired_pe
-    type:
-      - 'null'
-      - boolean
-    doc: output all alignments for SE or unpaired PE
-    inputBinding:
-      position: 104
-      prefix: -a
-  - id: output_reference_header_xr
-    type:
-      - 'null'
-      - boolean
-    doc: output the reference FASTA header in the XR tag
-    inputBinding:
-      position: 104
-      prefix: -V
-  - id: output_xb_instead_of_xa
-    type:
-      - 'null'
-      - boolean
-    doc: output XB instead of XA; XB is XA with the alignment score and mapping 
-      quality added.
-    inputBinding:
-      position: 104
-      prefix: -u
-  - id: process_input_bases_batch
-    type:
-      - 'null'
-      - int
-    doc: process INT input bases in each batch regardless of nThreads (for 
-      reproducibility)
-    inputBinding:
-      position: 104
-      prefix: -K
-  - id: read_group_header
-    type:
-      - 'null'
-      - string
-    doc: read group header line such as '@RG\tID:foo\tSM:bar'
-    inputBinding:
-      position: 104
-      prefix: -R
-  - id: read_type
-    type:
-      - 'null'
-      - string
-    doc: read type. Setting -x changes multiple parameters unless overridden
-    inputBinding:
-      position: 104
-      prefix: -x
-  - id: reference_catalog
+      position: 101
+      prefix: --vcf
+  - id: read1
     type:
       - 'null'
       - File
-    doc: Path to the reference catalog file
+    doc: 'Path to read 1 - not required if vcf is supplied'
     inputBinding:
-      position: 104
-      prefix: --reference-catalog
-  - id: seed_occurrence_factor
+      position: 101
+      prefix: --read1
+  - id: read2
+    type:
+      - 'null'
+      - File
+    doc: 'Path to read 2 - not required if vcf is supplied'
+    inputBinding:
+      position: 101
+      prefix: --read2
+  - id: catalog
+    type:
+      - 'null'
+      - File
+    doc: 'csv variant catalog (default is the WHO v2 catalog in the image)'
+    inputBinding:
+      position: 101
+      prefix: --catalog
+  - id: catalog_config
+    type:
+      - 'null'
+      - File
+    doc: 'json file indicating the relevant column settings for interpretation of the catalog file'
+    inputBinding:
+      position: 101
+      prefix: --catalog_config
+  - id: interpretation_criteria
+    type:
+      - 'null'
+      - File
+    doc: 'csv file with rules for predicting resistance profiles from genomic data'
+    inputBinding:
+      position: 101
+      prefix: --interpretation_criteria
+  - id: barcode
+    type:
+      - 'null'
+      - File
+    doc: 'Barcode to use for lineage calling and speciation'
+    inputBinding:
+      position: 101
+      prefix: --barcode
+  - id: reference_file
+    type:
+      - 'null'
+      - File
+    doc: 'Reference file to use for calling lineage'
+    inputBinding:
+      position: 101
+      prefix: --reference_file
+  - id: classification_criteria
+    type:
+      - 'null'
+      - File
+    doc: 'csv file with rules for predicting resistance profiles from genomic data'
+    inputBinding:
+      position: 101
+      prefix: --classification_criteria
+  - id: call_lineage
+    type:
+      - 'null'
+      - boolean
+    doc: 'Use pathogen profiler to call lineage'
+    inputBinding:
+      position: 101
+      prefix: --call_lineage
+  - id: min_depth
+    type:
+      - 'null'
+      - int
+    doc: 'Minimum depth to call a variant - only required if reads supplied as input (default 20)'
+    inputBinding:
+      position: 101
+      prefix: --min_depth
+  - id: min_frac
     type:
       - 'null'
       - float
-    doc: look for internal seeds inside a seed longer than {-k} * FLOAT
+    doc: 'Minimum proportion to call a variant (0-1) - only required if reads supplied as input (default 0.1)'
     inputBinding:
-      position: 104
-      prefix: -r
-  - id: seed_occurrence_third_round
-    type:
-      - 'null'
-      - int
-    doc: seed occurrence for the 3rd round seeding
-    inputBinding:
-      position: 104
-      prefix: -y
-  - id: sequence_match_score
-    type:
-      - 'null'
-      - int
-    doc: score for a sequence match, which scales options -TdBOELU unless 
-      overridden
-    inputBinding:
-      position: 104
-      prefix: -A
-  - id: skip_mate_rescue
-    type:
-      - 'null'
-      - boolean
-    doc: skip mate rescue
-    inputBinding:
-      position: 104
-      prefix: -S
-  - id: skip_pairing
-    type:
-      - 'null'
-      - boolean
-    doc: skip pairing; mate rescue performed unless -S also in use
-    inputBinding:
-      position: 104
-      prefix: -P
-  - id: skip_seeds_occurrence
-    type:
-      - 'null'
-      - int
-    doc: skip seeds with more than INT occurrences
-    inputBinding:
-      position: 104
-      prefix: -c
-  - id: smart_pairing
-    type:
-      - 'null'
-      - boolean
-    doc: smart pairing (ignoring in2.fq)
-    inputBinding:
-      position: 104
-      prefix: -p
+      position: 101
+      prefix: --min_frac
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of threads
+    doc: 'Threads to use for generation of vcf file (default 8)'
     inputBinding:
-      position: 104
-      prefix: -t
-  - id: threads_samclip
+      position: 101
+      prefix: --threads
+  - id: ram
     type:
       - 'null'
       - int
-    doc: Number of threads for samclip
+    doc: 'Max ram to use (default 8)'
     inputBinding:
-      position: 104
-      prefix: --threads-samclip
-  - id: threads_samtools_fixmate
-    type:
-      - 'null'
-      - int
-    doc: Number of threads for samtools fixmate
-    inputBinding:
-      position: 104
-      prefix: --threads-samtools-fixmate
-  - id: threads_samtools_markdup
-    type:
-      - 'null'
-      - int
-    doc: Number of threads for samtools markdup
-    inputBinding:
-      position: 104
-      prefix: --threads-samtools-markdup
-  - id: threads_samtools_sort
-    type:
-      - 'null'
-      - int
-    doc: Number of threads for samtools sort
-    inputBinding:
-      position: 104
-      prefix: --threads-samtools-sort
-  - id: tmp_dir
-    type:
-      - 'null'
-      - string
-    doc: Temporary directory for samtools operations
-    inputBinding:
-      position: 104
-      prefix: --tmp-dir
-  - id: treat_alt_contigs_as_primary
+      position: 101
+      prefix: --ram
+  - id: keep
     type:
       - 'null'
       - boolean
-    doc: treat ALT contigs as part of the primary assembly (i.e. ignore 
-      <idxbase>.alt file)
+    doc: 'Keep accessory files generated from alignment for further use.'
     inputBinding:
-      position: 104
-      prefix: -j
-  - id: unpaired_read_pair_penalty
-    type:
-      - 'null'
-      - int
-    doc: penalty for an unpaired read pair
-    inputBinding:
-      position: 104
-      prefix: -U
-  - id: use_smallest_query_coordinate
+      position: 101
+      prefix: --keep
+  - id: force
     type:
       - 'null'
       - boolean
-    doc: for split alignment, take the alignment with the smallest query (not 
-      genomic) coordinate as primary
+    doc: 'Force replace an existing folder.'
     inputBinding:
-      position: 104
-      prefix: '-5'
-  - id: use_soft_clipping_supplementary
+      position: 101
+      prefix: --force
+  - id: cascade
     type:
       - 'null'
       - boolean
-    doc: use soft clipping for supplementary alignments
+    doc: 'If you would like to apply cascade reporting structure.'
     inputBinding:
-      position: 104
-      prefix: -Y
-  - id: verbosity_level
-    type:
-      - 'null'
-      - int
-    doc: 'verbosity level: 1=error, 2=warning, 3=message, 4+=debugging'
-    inputBinding:
-      position: 104
-      prefix: -v
-  - id: output_bam_file_path
+      position: 101
+      prefix: --cascade
+  - id: tmp
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bam_file_path`
+    doc: 'temp directory to use (default /tmp)'
     inputBinding:
-      position: 105
-      prefix: --output-bam-file
-  - id: output_sam_file_path
-    type:
-      - 'null'
-      - string
-    doc: sam file to output results to [stdout]
-    inputBinding:
-      position: 106
-      prefix: -o
-  - id: output_vcf_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_vcf_file_path`
-    inputBinding:
-      position: 107
-      prefix: --output-vcf-file
+      position: 101
+      prefix: --tmp
 outputs:
-  - id: output_sam_file
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: result_dir
     type:
       - 'null'
-      - File
-    doc: sam file to output results to
+      - Directory
+    doc: Output folder named after the sequence id (reports, variants, logs)
     outputBinding:
-      glob: $(inputs.output_sam_file_path)
-  - id: output_bam_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the output BAM file
-    outputBinding:
-      glob: $(inputs.output_bam_file_path)
-  - id: output_vcf_file
-    type:
-      - 'null'
-      - File
-    doc: Path to the output VCF file
-    outputBinding:
-      glob: $(inputs.output_vcf_file_path)
+      glob: $(inputs.seq_id || 'tbtamr')
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tbtamr:1.0.3--pyhdfd78af_0
+stdout: tbtamr_full.out

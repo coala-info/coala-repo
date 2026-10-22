@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: extract
+baseCommand:
+  - tigr-glimmer
+  - extract
 label: tigr-glimmer_extract
 doc: Read fasta-format <sequence-file> and extract from it the subsequences 
   specified by <coords>. By default, <coords> is the name of a file containing 

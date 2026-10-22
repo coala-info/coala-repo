@@ -7,7 +7,7 @@ inputs:
   - id: config
     type:
       - 'null'
-      - string
+      - File
     doc: Custom backend profile to use
     inputBinding:
       position: 101
@@ -21,7 +21,7 @@ inputs:
       position: 101
       prefix: --cromwell_jar
   - id: inputs
-    type: string?
+    type: File
     doc: The JSON file to be used with Cromwell for inputs.
     inputBinding:
       position: 101
@@ -29,13 +29,13 @@ inputs:
   - id: options
     type:
       - 'null'
-      - string
+      - File
     doc: JSON file containing Cromwell options
     inputBinding:
       position: 101
       prefix: --options
   - id: outdir
-    type: string?
+    type: string
     doc: Output directory to store the final results in.
     inputBinding:
       position: 101

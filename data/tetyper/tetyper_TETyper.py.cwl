@@ -195,13 +195,58 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: outprefix_files
+  - id: summary
+    type: File
+    doc: Final summary table (flanks, structural and SNP variants)
+    outputBinding:
+      glob: $(inputs.outprefix)_summary.txt
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Pipeline log file
+    outputBinding:
+      glob: $(inputs.outprefix).log
+  - id: alignment
+    type:
+      - 'null'
+      - File
+    doc: Reads mapped to the reference
+    outputBinding:
+      glob: $(inputs.outprefix).bam
+  - id: variants
+    type:
+      - 'null'
+      - File
+    doc: Variants called against the reference
+    outputBinding:
+      glob: $(inputs.outprefix).vcf
+  - id: blast_results
+    type:
+      - 'null'
+      - File
+    doc: BLAST hits of the assembly against the reference
+    outputBinding:
+      glob: $(inputs.outprefix)_blast.txt
+  - id: mapped_reads
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in outprefix
+    doc: Reads that mapped to the reference
     outputBinding:
-      glob: $(inputs.outprefix)*
+      glob: $(inputs.outprefix)_mappedreads_*.fq
+  - id: assembly_dir
+    type:
+      - 'null'
+      - Directory
+    doc: SPAdes assembly folder
+    outputBinding:
+      glob: $(inputs.outprefix)_spades
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.ref)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tetyper:1.1--0

@@ -1,5 +1,12 @@
 # tapestry CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tapestry_clean | Not completed | needs the CSV written by weave (and the matching assembly), and weave crashes at start |
+| tapestry_weave | Failed | tool bug: weave stops at its own 'samtools --version \| head -n 1' check (SIGPIPE, exit -13) before any analysis |
+
 ## tapestry_weave
 
 ### Tool Description

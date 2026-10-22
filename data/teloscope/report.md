@@ -1,5 +1,11 @@
 # teloscope CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| teloscope | PASS | real Galaxy test chromosome (zebra finch chr33); terminal telomere BED identical to the expected file; output folder now created before the run |
+
 ## teloscope
 
 ### Tool Description

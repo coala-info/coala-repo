@@ -1,15 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/lib/tigr-glimmer/build-fixed
+baseCommand:
+  - tigr-glimmer
+  - build-fixed
 label: tigr-glimmer_build-fixed
 doc: Read sequences from stdin and output to stdout the fixed-length 
   interpolated context model built from them
 inputs:
   - id: input_file
     type: File
-    doc: Input file
-    inputBinding:
-      position: 1
+    doc: Input sequences, read from standard input
   - id: depth
     type:
       - 'null'
@@ -61,10 +61,10 @@ inputs:
       prefix: -v
 outputs:
   - id: output_file
-    type: File
-    doc: Output file
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Fixed-length interpolated context model written to standard output
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1
+stdin: $(inputs.input_file.path)
+stdout: tigr-glimmer_build-fixed.out

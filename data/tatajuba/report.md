@@ -1,5 +1,11 @@
 # tatajuba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tatajuba | PASS |  |
+
 ## tatajuba
 
 ### Tool Description

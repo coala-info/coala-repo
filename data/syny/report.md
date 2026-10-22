@@ -1,5 +1,11 @@
 # syny CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| syny_run_syny.pl | PASS | ran on lambda and HK97 phage GenBank files with circos plots turned off; protein counts (73, 61) and cluster tables are correct |
+
 ## syny_run_syny.pl
 
 ### Tool Description

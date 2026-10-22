@@ -2,49 +2,99 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: taeper
 label: taeper
-doc: "taeper: a tool for simulating RNA-seq data by tapering existing data.\n\nTool
-  homepage: https://github.com/mbhall88/taeper"
+doc: "Simulate the real-time depositing of Nanopore reads into a given folder, conserving
+  the order they were processed during sequencing. If pass and fail folders do not
+  exist in output_dir they will be created if detected in the file path for the fast5
+  file.\n\nTool homepage: https://github.com/mbhall88/taeper"
 inputs:
-  - id: input_files
+  - id: input_dir
+    type: Directory
+    doc: Directory where files are located.
+    inputBinding:
+      position: 101
+      prefix: --input_dir
+  - id: index
     type:
       - 'null'
-      - type: array
-        items: File
-    doc: Input FASTQ files to be tapered
+      - File
+    doc: Provide a prebuilt index file to skip indexing. Paths within an index file
+      are relative to the current working directory when they were built.
     inputBinding:
-      position: 1
-  - id: name
+      position: 101
+      prefix: --index
+  - id: output
     type:
       - 'null'
       - string
-    doc: Name to prepend to the output files
+    doc: Directory to copy the files to. If not specified, will generate the index
+      file only.
     inputBinding:
-      position: 102
-      prefix: --name
+      position: 101
+      prefix: --output
   - id: scale
     type:
       - 'null'
       - float
-    doc: Scale factor for the number of reads to keep
+    doc: Amount to scale the timing by. i.e scale of 10 will deposit the reads 10x
+      faster than they were generated. (Default = 1.0)
     inputBinding:
-      position: 102
+      position: 101
       prefix: --scale
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+  - id: dump_index
+    type:
+      - 'null'
+      - string
+    doc: Path to save index as. Default is 'taeper_index.npy' in current working
+      directory.
     inputBinding:
-      position: 103
-      prefix: --output-dir
+      position: 101
+      prefix: --dump_index
+  - id: no_index
+    type:
+      - 'null'
+      - boolean
+    doc: Dont write the index list to file. This will mean it needs regenerating
+      for this dataset on each run.
+    inputBinding:
+      position: 101
+      prefix: --no_index
+  - id: log_level
+    type:
+      - 'null'
+      - int
+    doc: Level of logging. 0 is none, 5 is for debugging. Default is 4.
+    inputBinding:
+      position: 101
+      prefix: --log_level
+  - id: no_progress_bar
+    type:
+      - 'null'
+      - boolean
+    doc: Do not display progress bar.
+    inputBinding:
+      position: 101
+      prefix: --no_progress_bar
 outputs:
   - id: output_dir
     type:
       - 'null'
       - Directory
-    doc: Directory to write the tapered files to
+    doc: Directory the reads were copied to
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.output)
+  - id: index_file
+    type:
+      - 'null'
+      - File
+    doc: Index file written by taeper
+    outputBinding:
+      glob: $(inputs.dump_index || 'taeper_index.npy')
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/taeper:0.1.0--py36_0
+stdout: taeper.out

@@ -1,5 +1,19 @@
 # tag CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tag_bae | PASS | output matches the expected file from the tag test data (real gene annotations) |
+| tag_bcollapse | PASS | output matches the expected file from the tag test data (real gene annotations) |
+| tag_gff3 | PASS | output matches the expected file from the tag test data (real gene annotations) |
+| tag_locuspocus | PASS | output matches the expected file from the tag test data (real gene annotations) |
+| tag_merge | PASS | output matches the expected file from the tag test data (real gene annotations) |
+| tag_occ | PASS | output matches the expected file from the tag test data (real gene annotations) |
+| tag_pep2nuc | PASS | output matches the expected file from the tag test data (real gene annotations) |
+| tag_pmrna | PASS | output matches the expected file from the tag test data (real gene annotations) |
+| tag_sum | PASS | output matches the expected file from the tag test data (real gene annotations) |
+
 ## tag_bae
 
 ### Tool Description

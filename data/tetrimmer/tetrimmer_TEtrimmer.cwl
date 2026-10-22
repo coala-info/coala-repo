@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: TEtrimmer.py
+baseCommand: TEtrimmer
 label: tetrimmer_TEtrimmer
 doc: "TEtrimmer is designed to automate the manual curation of transposable elements
   (TEs).\n\nTool homepage: https://github.com/qjiangzhao/TETrimmer.git"

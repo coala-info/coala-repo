@@ -1,5 +1,12 @@
 # tadlib CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tadlib_domaincaller | PASS | real Drosophila Hi-C mcool from HiCExplorer test data gives 275 domains and a DI track over all bins |
+| tadlib_hitad | PASS | real Drosophila Hi-C mcool gives hierarchical domains (297 rows with levels) |
+
 ## tadlib_hitad
 
 ### Tool Description

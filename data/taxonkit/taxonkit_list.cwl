@@ -6,19 +6,27 @@ baseCommand:
 label: taxonkit_list
 doc: "List taxonomic subtrees of given TaxIds\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:
-  - id: data_dir
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: 'File(s) with TaxIds, one per line (alternative to ids)'
+    inputBinding:
+      position: 1
+  - id: ids
     type:
       - 'null'
       - string
-    doc: directory containing nodes.dmp and names.dmp
+    doc: 'TaxId(s), multiple values should be separated by comma'
     inputBinding:
       position: 101
-      prefix: --data-dir
+      prefix: --ids
   - id: indent
     type:
       - 'null'
       - string
-    doc: indent
+    doc: 'Indent (default two spaces)'
     inputBinding:
       position: 101
       prefix: --indent
@@ -26,25 +34,15 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: "output in JSON format. you can save the result in file with suffix \".json\"\
-      \ and\n                        open with modern text editor"
+    doc: 'Output in JSON format'
     inputBinding:
       position: 101
       prefix: --json
-  - id: line_buffered
-    type:
-      - 'null'
-      - boolean
-    doc: "use line buffering on output, i.e., immediately writing to stdin/file for\n\
-      \                          every line of output"
-    inputBinding:
-      position: 101
-      prefix: --line-buffered
   - id: show_name
     type:
       - 'null'
       - boolean
-    doc: output scientific name
+    doc: 'Output scientific name'
     inputBinding:
       position: 101
       prefix: --show-name
@@ -52,25 +50,31 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: output rank
+    doc: 'Output rank'
     inputBinding:
       position: 101
       prefix: --show-rank
-  - id: taxids
+  - id: data_dir
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: TaxId(s), multiple values should be separated by comma
+      - Directory
+    doc: 'Directory containing nodes.dmp and names.dmp (NCBI taxdump files)'
     inputBinding:
       position: 101
-      prefix: --ids
-      itemSeparator: ','
+      prefix: --data-dir
+  - id: line_buffered
+    type:
+      - 'null'
+      - boolean
+    doc: 'Use line buffering on output, i.e., immediately writing to stdin/file for every line of output'
+    inputBinding:
+      position: 101
+      prefix: --line-buffered
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of CPUs. 4 is enough
+    doc: 'Number of CPUs. 4 is enough'
     inputBinding:
       position: 101
       prefix: --threads
@@ -78,13 +82,13 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: print verbose information
+    doc: 'Print verbose information'
     inputBinding:
       position: 101
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
+    doc: 'Output file name (suffix .gz for gzipped output)'
     inputBinding:
       position: 102
       prefix: --out-file
@@ -93,7 +97,7 @@ outputs:
     type:
       - 'null'
       - File
-    doc: out file ("-" for stdout, suffix .gz for gzipped out)
+    doc: Output file
     outputBinding:
       glob: $(inputs.out_file_path)
 requirements:

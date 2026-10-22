@@ -1,5 +1,13 @@
 # tandemtwister CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tandemtwister_assembly | Failed | tool bug: assembly mode creates a directory with the output name, then cannot write the merged .vcf.gz there and exits 1 (tested on the repo example BAM) |
+| tandemtwister_germline | PASS |  |
+| tandemtwister_somatic | PASS |  |
+
 ## tandemtwister_germline
 
 ### Tool Description

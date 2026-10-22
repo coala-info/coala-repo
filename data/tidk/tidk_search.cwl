@@ -40,10 +40,10 @@ inputs:
     inputBinding:
       position: 103
       prefix: --dir
-  - id: log_path
+  - id: log
     type:
       - 'null'
-      - string
+      - boolean
     doc: Output a log file
     inputBinding:
       position: 104
@@ -57,21 +57,21 @@ inputs:
 outputs:
   - id: output
     type: File
-    doc: Output filename for the TSVs (without extension)
+    doc: Telomeric repeat window table, written as <dir>/<output>_telomeric_repeat_windows.<extension>
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.dir_path)/$(inputs.output_path)_telomeric_repeat_windows.*
   - id: dir
     type: Directory
     doc: Output directory to write files to
     outputBinding:
       glob: $(inputs.dir_path)
-  - id: log
+  - id: log_file
     type:
       - 'null'
       - File
-    doc: Output a log file
+    doc: Log file written as <dir>/<output>.log
     outputBinding:
-      glob: $(inputs.log_path)
+      glob: $(inputs.dir_path)/$(inputs.output_path).log
 requirements:
   - class: InlineJavascriptRequirement
 hints:

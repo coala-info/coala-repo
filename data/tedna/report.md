@@ -1,5 +1,11 @@
 # tedna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tedna | PASS | real S. cerevisiae paired reads (500k pairs, ENA ERR1015146); 30 TE contigs of 1-8 kb with Ty-like sizes; needs --insert with paired input and uncompressed FASTQ |
+
 ## tedna
 
 ### Tool Description

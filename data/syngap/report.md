@@ -1,5 +1,18 @@
 # syngap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| syngap_custom | Failed | image problem: SwissProt.tar.gz is unpacked into the read-only install dir as non-root; function step fails and output differs from a root run |
+| syngap_dual | Failed | image problem: SwissProt.tar.gz is unpacked into the read-only install dir as non-root; function step fails and output differs from a root run |
+| syngap_evi | PASS | synthetic data: gene pairs and expression tables are simulated; evi crashes on small inputs (SEG file never closed) |
+| syngap_eviplot | PASS | synthetic data: EVI table is the evi output of simulated expression |
+| syngap_genepair | PASS |  |
+| syngap_initdb | Not completed | needs the masterdb .tar.gz (large external download) and writes into the image install dir |
+| syngap_master | Not completed | needs the masterdb database (large download imported with initdb into the image directory) |
+| syngap_triple | Failed | image problem: SwissProt.tar.gz cannot be unpacked in the read-only install dir as non-root; run then crashes |
+
 ## syngap_initdb
 
 ### Tool Description

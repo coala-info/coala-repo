@@ -97,7 +97,7 @@ inputs:
       prefix: --taxonomy
   - id: output_path
     type: string
-    doc: PATH                  The desired output    │
+    doc: The desired output file.
     inputBinding:
       position: 103
       prefix: --output

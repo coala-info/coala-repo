@@ -5,12 +5,16 @@ label: tabix
 doc: Generic indexer for TAB-delimited genome position files
 inputs:
   - id: file
-    type:
-      - 'null'
-      - File
-    doc: Input TAB-delimited file
+    type: File
+    doc: Input TAB-delimited file (bgzip-compressed for indexing and queries)
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: regions
     type:
       - 'null'
@@ -171,10 +175,34 @@ inputs:
     inputBinding:
       position: 103
       prefix: --separate-regions
+  - id: verbosity
+    type:
+      - 'null'
+      - int
+    doc: set verbosity
+    inputBinding:
+      position: 103
+      prefix: --verbosity
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (query results, header lines or chromosome names)
+  - id: index
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Index file (.tbi or .csi) written next to the input file
+    outputBinding:
+      glob:
+        - $(inputs.file.basename).tbi
+        - $(inputs.file.basename).csi
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tabix:1.11--hdfd78af_0

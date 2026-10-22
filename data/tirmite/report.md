@@ -1,5 +1,13 @@
 # tirmite CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tirmite_legacy | Failed | image problem: hmmpress and nhmmer (HMMER) are not installed in the image |
+| tirmite_pair | PASS | real rice genome and nhmmer hits from a helper hmmer image (pair needs precomputed hits); elements found include known TIR-Learner DTT elements |
+| tirmite_seed | Failed | image problem: blastn, makeblastdb and mafft are not installed in the image |
+
 ## tirmite_legacy
 
 ### Tool Description

@@ -190,9 +190,20 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
+  - id: results
+    type: Directory
+    doc: Results directory (symlinks resolved)
+    outputBinding:
+      glob: syngap_results
   - id: stdout
     type: stdout
     doc: Standard output
+arguments:
+  - position: 200
+    shellQuote: false
+    valueFrom: '&& cp -rL SynGAP_custom_*/SynGAP_*/results syngap_results'
+requirements:
+  - class: ShellCommandRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/syngap:1.2.5--py312hdfd78af_0

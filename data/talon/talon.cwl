@@ -7,9 +7,7 @@ doc: "TALON takes transcripts from one or more long read datasets (SAM format) a
   Novel events are assigned new identifiers.\n\nTool homepage: https://github.com/mortazavilab/TALON"
 inputs:
   - id: config_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: 'Dataset config file: dataset name, sample description, platform, sam file
       (comma-delimited)'
     inputBinding:
@@ -18,24 +16,26 @@ inputs:
   - id: create_novel_spliced_genes
     type:
       - 'null'
-      - string
+      - boolean
     doc: Make novel genes with the intergenic novelty label for transcripts that
       don't share splice junctions with any other models
     inputBinding:
       position: 101
       prefix: --nsg
   - id: database
-    type:
-      - 'null'
-      - File
-    doc: TALON database. Created using talon_initialize_database
+    type: File
+    doc: TALON database. Created using talon_initialize_database (modified in place)
     inputBinding:
       position: 101
       prefix: --db
-  - id: genome_build
+  - id: sam_files
     type:
       - 'null'
-      - string
+      - type: array
+        items: File
+    doc: SAM files named in the config file (staged next to it so the names resolve)
+  - id: genome_build
+    type: string
     doc: Genome build (i.e. hg38) to use. Must be in the database.
     inputBinding:
       position: 101
@@ -57,9 +57,7 @@ inputs:
       position: 101
       prefix: --identity
   - id: outprefix
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Prefix for output files
     inputBinding:
       position: 101
@@ -101,6 +99,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: updated_database
+    type: File
+    doc: TALON database, annotated in place
+    outputBinding:
+      glob: $(inputs.database.basename)
   - id: outprefix_files
     type:
       type: array
@@ -108,6 +111,13 @@ outputs:
     doc: Files written with the prefix given in outprefix
     outputBinding:
       glob: $(inputs.outprefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.database)
+        writable: true
+      - $(inputs.sam_files)
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0

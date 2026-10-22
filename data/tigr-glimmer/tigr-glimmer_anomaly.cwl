@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: anomaly
+baseCommand:
+  - tigr-glimmer
+  - anomaly
 label: tigr-glimmer_anomaly
 doc: Read DNA sequence in <sequence-file> and for each region specified by the 
   coordinates in <coord-file>, check whether the region represents a normal 

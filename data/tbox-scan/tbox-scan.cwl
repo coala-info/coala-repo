@@ -19,7 +19,7 @@ inputs:
   - id: infernal_output_file
     type:
       - 'null'
-      - File
+      - string
     doc: save INFERNAL output predictions to .txt file
     inputBinding:
       position: 101
@@ -33,7 +33,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: save a .txt log file of pipeline output
     inputBinding:
       position: 101
@@ -63,11 +63,13 @@ inputs:
       position: 101
       prefix: -v
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: save final results in file as .csv (default out.csv)
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:
@@ -75,7 +77,21 @@ outputs:
       - File
     doc: save final results in file as .csv
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path || 'out.csv')
+  - id: infernal_output
+    type:
+      - 'null'
+      - File
+    doc: INFERNAL output predictions (.txt)
+    outputBinding:
+      glob: $(inputs.infernal_output_file || 'INFERNAL.txt')
+  - id: log_output
+    type:
+      - 'null'
+      - File
+    doc: log of pipeline output
+    outputBinding:
+      glob: $(inputs.log_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

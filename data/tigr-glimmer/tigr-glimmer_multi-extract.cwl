@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: multi-extract
+baseCommand:
+  - tigr-glimmer
+  - multi-extract
 label: tigr-glimmer_multi-extract
 doc: Read multi-fasta-format <sequence-file> and extract from it the 
   subsequences specified by <coords>

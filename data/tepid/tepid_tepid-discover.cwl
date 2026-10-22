@@ -2,85 +2,143 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tepid-discover
 label: tepid_tepid-discover
-doc: "TEPID (Transposable Element Polymorphism Identification Detector) discovery
-  step. Identifies transposable element polymorphisms (insertions and deletions) using
-  split-read and discordant read pair analysis.\n\nTool homepage: https://github.com/ListerLab/TEPID"
+doc: "TEPID -- transposable element polymorphism identification. Finds TE
+  insertions and deletions from bowtie2 (concordant) and yaha (split read)
+  alignments.\n\nTool homepage: https://github.com/ListerLab/TEPID"
 inputs:
-  - id: bam_file
-    type: File
-    doc: Coordinate sorted BAM file
+  - id: keep
+    type:
+      - 'null'
+      - boolean
+    doc: keep all intermediate files
     inputBinding:
       position: 101
-      prefix: --bam
-  - id: insert_size
+      prefix: --keep
+  - id: deletions_only
+    type:
+      - 'null'
+      - boolean
+    doc: find deletions only
+    inputBinding:
+      position: 101
+      prefix: --deletions
+  - id: insertions_only
+    type:
+      - 'null'
+      - boolean
+    doc: find insertions only
+    inputBinding:
+      position: 101
+      prefix: --insertions
+  - id: strict
+    type:
+      - 'null'
+      - boolean
+    doc: Report high-confidence variants only
+    inputBinding:
+      position: 101
+      prefix: --strict
+  - id: mask
+    type:
+      - 'null'
+      - string
+    doc: Mask chromosomes in comma separated list or file
+    inputBinding:
+      position: 101
+      prefix: --mask
+  - id: discordant
+    type:
+      - 'null'
+      - File
+    doc: Supply discordant reads bam file
+    inputBinding:
+      position: 101
+      prefix: --discordant
+  - id: proc
     type:
       - 'null'
       - int
-    doc: Average insert size
+    doc: number of processors
     inputBinding:
       position: 101
-      prefix: --insert
-  - id: mismatches
-    type:
-      - 'null'
-      - int
-    doc: Number of mismatches allowed
-    inputBinding:
-      position: 101
-      prefix: --mismatches
-  - id: processors
-    type:
-      - 'null'
-      - int
-    doc: Number of processors to use
-    inputBinding:
-      position: 101
-      prefix: --processor
-  - id: reference_fasta
-    type: File
-    secondaryFiles:
-      - .fai
-    doc: Reference genome fasta file
-    inputBinding:
-      position: 101
-      prefix: --ref
+      prefix: --proc
   - id: sample_name
     type: string
-    doc: Sample name
+    doc: sample name
     inputBinding:
       position: 101
       prefix: --name
-  - id: split_reads_bam
+  - id: conc
     type: File
-    doc: Split reads BAM file
+    doc: bam file from bowtie2
+    secondaryFiles:
+      - .bai
+    inputBinding:
+      position: 101
+      prefix: --conc
+  - id: split
+    type: File
+    doc: split reads bam file from yaha
     inputBinding:
       position: 101
       prefix: --split
-  - id: standard_deviation
+  - id: te
+    type: File
+    doc: TE annotation bedfile
+    inputBinding:
+      position: 101
+      prefix: --te
+  - id: single_end
     type:
       - 'null'
-      - int
-    doc: Standard deviation of insert size
+      - boolean
+    doc: Run in single-end mode
     inputBinding:
       position: 101
-      prefix: --sd
-  - id: te_bed
-    type: File
-    doc: TE annotation bed file
-    inputBinding:
-      position: 101
-      prefix: --te_bed
-  - id: te_ref_fasta
-    type: File
-    doc: TE reference fasta file
-    inputBinding:
-      position: 101
-      prefix: --te_ref
+      prefix: --se
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: insertions
+    type:
+      - 'null'
+      - File
+    doc: TE insertions bed file
+    outputBinding:
+      glob: insertions_$(inputs.sample_name).bed
+  - id: deletions
+    type:
+      - 'null'
+      - File
+    doc: TE deletions bed file (TE present in reference but not in sample)
+    outputBinding:
+      glob: deletions_$(inputs.sample_name).bed
+  - id: insertion_reads
+    type:
+      - 'null'
+      - File
+    doc: names of reads providing evidence for insertions
+    outputBinding:
+      glob: insertion_reads_$(inputs.sample_name).txt
+  - id: deletion_reads
+    type:
+      - 'null'
+      - File
+    doc: names of reads providing evidence for deletions
+    outputBinding:
+      glob: deletion_reads_$(inputs.sample_name).txt
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: tepid-discover log
+    outputBinding:
+      glob: tepid_discover_log_$(inputs.sample_name).txt
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.conc)
+        writable: true
+      - entry: $(inputs.split)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tepid:0.10--py_0
-stdout: tepid_tepid-discover.out

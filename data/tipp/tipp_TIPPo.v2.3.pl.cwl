@@ -30,7 +30,7 @@ inputs:
       position: 101
       prefix: -y
   - id: hifi_reads
-    type: boolean
+    type: File
     doc: HiFi reads (required).
     inputBinding:
       position: 101

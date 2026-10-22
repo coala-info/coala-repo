@@ -23,6 +23,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+      valueFrom: $(self.basename)
   - id: genome_list
     type:
       - 'null'
@@ -135,6 +136,13 @@ outputs:
     doc: Output directory for results
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: '$(inputs.genome ? inputs.genome.basename : "genome_unused")'
+        entry: '$(inputs.genome ? inputs.genome : null)'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tirmite:1.3.0--pyhdfd78af_0

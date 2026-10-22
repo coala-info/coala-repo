@@ -6,6 +6,8 @@ doc: "Calculate telomere length from a BAM file.\n\nTool homepage: https://githu
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: The path to the sorted BAM file.
     inputBinding:
       position: 101

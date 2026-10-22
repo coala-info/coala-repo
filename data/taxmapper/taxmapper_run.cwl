@@ -23,6 +23,7 @@ inputs:
     doc: Maximum read length
     inputBinding:
       position: 101
+      prefix: -m
   - id: reverse
     type:
       - 'null'

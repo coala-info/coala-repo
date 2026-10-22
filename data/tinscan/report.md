@@ -1,5 +1,13 @@
 # tinscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tinscan_tinscan-align | Failed | image problem: lastz is not installed in the image (LASTZ executable was not found) |
+| tinscan_tinscan-find | PASS | alignment input made with lastz from a helper image (tinscan-align cannot run), same lastz options as the wrapper |
+| tinscan_tinscan-prep | PASS |  |
+
 ## tinscan_tinscan-prep
 
 ### Tool Description

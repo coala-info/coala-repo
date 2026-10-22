@@ -1,5 +1,11 @@
 # tesorter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tesorter_TEsorter | PASS |  |
+
 ## tesorter_TEsorter
 
 ### Tool Description

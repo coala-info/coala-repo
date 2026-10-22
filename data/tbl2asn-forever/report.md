@@ -1,5 +1,11 @@
 # tbl2asn-forever CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tbl2asn-forever_tbl2asn | PASS |  |
+
 ## tbl2asn-forever_tbl2asn
 
 ### Tool Description

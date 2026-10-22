@@ -1,5 +1,21 @@
 # taxonkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| taxonkit_cami-filter | PASS | CAMI profile made from profile2cami: removing Mammalia dropped human rows and renormalised to 60/40 |
+| taxonkit_create-taxdump | PASS | synthetic data: 5-species lineage table gave a 31-node taxdump with names, nodes, merged and delnodes files |
+| taxonkit_filter | PASS | NCBI taxdump: equal-to species kept 9606, 562, 10090, 1773, 7227 and dropped domain 2; needs a rank file input |
+| taxonkit_lca | PASS | NCBI taxdump: LCA of human and mouse is 314146, E. coli and M. tuberculosis is 2, human and chimp is 207598 |
+| taxonkit_lineage | PASS | NCBI taxdump: human, E. coli, mouse, M. tuberculosis lineages and ranks correct, unknown taxid left empty |
+| taxonkit_list | PASS | NCBI taxdump: subtree of genus Homo (9605) lists H. sapiens and neanderthalensis; the ids option crashes when stdin is empty, so a file input was added |
+| taxonkit_name2taxid | PASS | NCBI taxdump: names gave 9606, 562, 1773, 10090; unknown name left empty |
+| taxonkit_profile2cami | PASS | NCBI taxdump: 3-species profile (50/30/20) converted to CAMI with summed higher ranks; abundance table is synthetic data |
+| taxonkit_reformat | PASS | NCBI taxdump: lineages reformatted with prefixes and filled ranks; kingdom slot is unclassified because NCBI now uses domain |
+| taxonkit_reformat2 | PASS | NCBI taxdump: seven-rank lineages and lineage taxids correct (human 2759;7711;40674;9443;9604;9605;9606) |
+| taxonkit_taxid-changelog | PASS | real NCBI archives 2014-08-01 and 2014-09-01: changelog has NEW, MERGE, DELETE, CHANGE_NAME events |
+
 ## taxonkit_cami-filter
 
 ### Tool Description
@@ -207,64 +223,6 @@ Flags:
   -n, --save-predictable-norank   do not discard some special ranks without order when using -L, where
                                   rank of the closest higher node is still lower than rank cutoff
   -i, --taxid-field int           field index of taxid. input data should be tab-separated (default 1)
-
-Global Flags:
-      --data-dir string   directory containing nodes.dmp and names.dmp (default "/root/.taxonkit")
-      --line-buffered     use line buffering on output, i.e., immediately writing to stdin/file for
-                          every line of output
-  -o, --out-file string   out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
-  -j, --threads int       number of CPUs. 4 is enough (default 4)
-      --verbose           print verbose information
-```
-
-
-## taxonkit_genautocomplete
-
-### Tool Description
-generate shell autocompletion script
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/taxonkit:0.20.0--h9ee0642_1
-- **Homepage**: https://github.com/shenwei356/taxonkit
-- **Package**: https://anaconda.org/channels/bioconda/packages/taxonkit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-generate shell autocompletion script
-
-Supported shell: bash|zsh|fish|powershell
-
-Bash:
-
-    # generate completion shell
-    taxonkit genautocomplete --shell bash
-
-    # configure if never did.
-    # install bash-completion if the "complete" command is not found.
-    echo "for bcfile in ~/.bash_completion.d/* ; do source \$bcfile; done" >> ~/.bash_completion
-    echo "source ~/.bash_completion" >> ~/.bashrc
-
-Zsh:
-
-    # generate completion shell
-    taxonkit genautocomplete --shell zsh --file ~/.zfunc/_taxonkit
-
-    # configure if never did
-    echo 'fpath=( ~/.zfunc "${fpath[@]}" )' >> ~/.zshrc
-    echo "autoload -U compinit; compinit" >> ~/.zshrc
-
-fish:
-
-    taxonkit genautocomplete --shell fish --file ~/.config/fish/completions/taxonkit.fish
-
-Usage:
-  taxonkit genautocomplete [flags] 
-
-Flags:
-      --file string    autocompletion file (default "/root/.bash_completion.d/taxonkit.sh")
-  -h, --help           help for genautocomplete
-      --shell string   autocompletion type (bash|zsh|fish|powershell) (default "bash")
 
 Global Flags:
       --data-dir string   directory containing nodes.dmp and names.dmp (default "/root/.taxonkit")
@@ -897,39 +855,6 @@ Global Flags:
   -o, --out-file string   out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
   -j, --threads int       number of CPUs. 4 is enough (default 4)
       --verbose           print verbose information
-```
-
-
-## taxonkit_version
-
-### Tool Description
-Prints the version of taxonkit
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/taxonkit:0.20.0--h9ee0642_1
-- **Homepage**: https://github.com/shenwei356/taxonkit
-- **Package**: https://anaconda.org/channels/bioconda/packages/taxonkit/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Error: unknown shorthand flag: 'e' in -elp
-Usage:
-  taxonkit version [flags] 
-
-Flags:
-  -u, --check-update   check update
-  -h, --help           help for version
-
-Global Flags:
-      --data-dir string   directory containing nodes.dmp and names.dmp (default "/root/.taxonkit")
-      --line-buffered     use line buffering on output, i.e., immediately writing to stdin/file for
-                          every line of output
-  -o, --out-file string   out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
-  -j, --threads int       number of CPUs. 4 is enough (default 4)
-      --verbose           print verbose information
-
-unknown shorthand flag: 'e' in -elp
 ```
 
 

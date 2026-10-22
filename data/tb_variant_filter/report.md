@@ -1,5 +1,11 @@
 # tb_variant_filter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tb_variant_filter | PASS | output matches the Galaxy expected VCFs for region, indel, alt-percentage, depth and SNV filters |
+
 ## tb_variant_filter
 
 ### Tool Description

@@ -8,7 +8,7 @@ inputs:
   - id: gffout
     type:
       - 'null'
-      - File
+      - string
     doc: Write features to this file as gff3.
     inputBinding:
       position: 101
@@ -100,6 +100,15 @@ outputs:
     doc: 'Optional: Directory to write output to.'
     outputBinding:
       glob: $(inputs.outdir)
+  - id: gff_file
+    type:
+      - 'null'
+      - File
+    doc: Features written as gff3
+    outputBinding:
+      glob: '$((inputs.outdir ? inputs.outdir + "/" : "") + inputs.gffout)'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tinscan:0.2.1--pyhdfd78af_0

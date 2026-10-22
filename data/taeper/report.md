@@ -1,5 +1,11 @@
 # taeper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| taeper | PASS | 20 real SARS-CoV-2 nanopore fast5 files from nf-core test-datasets were indexed and copied in sequencing order |
+
 ## taeper
 
 ### Tool Description

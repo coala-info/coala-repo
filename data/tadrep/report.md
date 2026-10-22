@@ -1,5 +1,17 @@
 # tadrep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tadrep_characterize | PASS | chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content |
+| tadrep_cluster | PASS | chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content |
+| tadrep_database | Not completed | downloads the full RefSeq or PLSDB plasmid database (very large) |
+| tadrep_detect | PASS | chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content |
+| tadrep_extract | PASS | chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content |
+| tadrep_setup | Failed | image problem: tadrep setup runs git clone, but git is not installed in the image |
+| tadrep_visualize | PASS | chained on real plasmids from NCBI (pO157, F, R100) and an E. coli O157 Sakai draft; outputs match known plasmid content |
+
 ## tadrep_database
 
 ### Tool Description
@@ -211,6 +223,25 @@ Gradient:
 Omit:
   --omit-ratio [0-100]  Omit contigs shorter than X percent of plasmid length
                         from plot (default = 1%)
+```
+
+## tadrep_setup
+
+### Tool Description
+Download and prepare inc-types (PlasmidFinder incompatibility groups).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/tadrep:0.9.2--pyhdfd78af_0
+- **Homepage**: https://github.com/oschwengers/tadrep
+- **Package**: https://anaconda.org/channels/bioconda/packages/tadrep/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: TaDReP setup [-h]
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## Metadata

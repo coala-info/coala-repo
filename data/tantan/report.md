@@ -1,5 +1,11 @@
 # tantan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tantan | PASS |  |
+
 ## tantan
 
 ### Tool Description

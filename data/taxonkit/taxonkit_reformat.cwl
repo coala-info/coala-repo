@@ -6,36 +6,34 @@ baseCommand:
 label: taxonkit_reformat
 doc: "Reformat lineage in canonical ranks\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: 'File(s) with a lineage column (or a TaxId column, see taxid_field), tab-separated'
+    inputBinding:
+      position: 1
   - id: add_prefix
     type:
       - 'null'
       - boolean
-    doc: add prefixes for all ranks, single prefix for a rank is defined by flag
-      --prefix-X
+    doc: 'Add prefixes for all ranks, single prefix for a rank is defined by the prefix_* options'
     inputBinding:
       position: 101
       prefix: --add-prefix
-  - id: data_dir
-    type:
-      - 'null'
-      - Directory
-    doc: directory containing nodes.dmp and names.dmp
-    inputBinding:
-      position: 101
-      prefix: --data-dir
   - id: delimiter
     type:
       - 'null'
       - string
-    doc: field delimiter in input lineage
+    doc: 'Field delimiter in input lineage (default '';'')'
     inputBinding:
       position: 101
-      prefix: -d
+      prefix: --delimiter
   - id: fill_miss_rank
     type:
       - 'null'
       - boolean
-    doc: fill missing rank with lineage information of the next higher rank
+    doc: 'Fill missing rank with lineage information of the next higher rank'
     inputBinding:
       position: 101
       prefix: --fill-miss-rank
@@ -43,24 +41,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output format, placeholders of rank are needed
+    doc: 'Output format, placeholders of rank are needed (default ''{k};{p};{c};{o};{f};{g};{s}'')'
     inputBinding:
       position: 101
-      prefix: -f
-  - id: line_buffered
-    type:
-      - 'null'
-      - boolean
-    doc: use line buffering on output, i.e., immediately writing to stdin/file 
-      for every line of output
-    inputBinding:
-      position: 101
-      prefix: --line-buffered
+      prefix: --format
   - id: lineage_field
     type:
       - 'null'
       - int
-    doc: field index of lineage. data should be tab-separated
+    doc: 'Field index of lineage. Data should be tab-separated (default 2)'
     inputBinding:
       position: 101
       prefix: --lineage-field
@@ -68,7 +57,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: replacement string for missing rank
+    doc: 'Replacement string for missing rank'
     inputBinding:
       position: 101
       prefix: --miss-rank-repl
@@ -76,7 +65,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for estimated taxon names
+    doc: 'Prefix for estimated taxon names (default ''unclassified '')'
     inputBinding:
       position: 101
       prefix: --miss-rank-repl-prefix
@@ -84,8 +73,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: suffix for estimated taxon names. "rank" for rank name, "" for no 
-      suffix
+    doc: 'Suffix for estimated taxon names. ''rank'' for rank name, '''' for no suffix (default ''rank'')'
     inputBinding:
       position: 101
       prefix: --miss-rank-repl-suffix
@@ -93,7 +81,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: replacement string for missing taxid
+    doc: 'Replacement string for missing taxid'
     inputBinding:
       position: 101
       prefix: --miss-taxid-repl
@@ -101,7 +89,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: output one of the ambigous result
+    doc: 'Output one of the ambiguous result'
     inputBinding:
       position: 101
       prefix: --output-ambiguous-result
@@ -109,7 +97,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for cellular root, used along with flag -P/--add-prefix
+    doc: 'Prefix for cellular root, used along with add_prefix (default ''d__'')'
     inputBinding:
       position: 101
       prefix: --prefix-C
@@ -117,7 +105,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for kingdom, used along with flag -P/--add-prefix
+    doc: 'Prefix for kingdom, used along with add_prefix (default ''K__'')'
     inputBinding:
       position: 101
       prefix: --prefix-K
@@ -125,7 +113,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for subspecies, used along with flag -P/--add-prefix
+    doc: 'Prefix for subspecies, used along with add_prefix (default ''S__'')'
     inputBinding:
       position: 101
       prefix: --prefix-S
@@ -133,7 +121,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for strain, used along with flag -P/--add-prefix
+    doc: 'Prefix for strain, used along with add_prefix (default ''T__'')'
     inputBinding:
       position: 101
       prefix: --prefix-T
@@ -141,7 +129,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for acellular root, used along with flag -P/--add-prefix
+    doc: 'Prefix for acellular root, used along with add_prefix (default ''d__'')'
     inputBinding:
       position: 101
       prefix: --prefix-a
@@ -149,7 +137,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for class, used along with flag -P/--add-prefix
+    doc: 'Prefix for class, used along with add_prefix (default ''c__'')'
     inputBinding:
       position: 101
       prefix: --prefix-c
@@ -157,7 +145,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for domain, used along with flag -P/--add-prefix
+    doc: 'Prefix for domain, used along with add_prefix (default ''d__'')'
     inputBinding:
       position: 101
       prefix: --prefix-d
@@ -165,7 +153,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for family, used along with flag -P/--add-prefix
+    doc: 'Prefix for family, used along with add_prefix (default ''f__'')'
     inputBinding:
       position: 101
       prefix: --prefix-f
@@ -173,7 +161,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for genus, used along with flag -P/--add-prefix
+    doc: 'Prefix for genus, used along with add_prefix (default ''g__'')'
     inputBinding:
       position: 101
       prefix: --prefix-g
@@ -181,7 +169,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for superkingdom, used along with flag -P/--add-prefix
+    doc: 'Prefix for superkingdom, used along with add_prefix (default ''k__'')'
     inputBinding:
       position: 101
       prefix: --prefix-k
@@ -189,7 +177,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for order, used along with flag -P/--add-prefix
+    doc: 'Prefix for order, used along with add_prefix (default ''o__'')'
     inputBinding:
       position: 101
       prefix: --prefix-o
@@ -197,7 +185,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for phylum, used along with flag -P/--add-prefix
+    doc: 'Prefix for phylum, used along with add_prefix (default ''p__'')'
     inputBinding:
       position: 101
       prefix: --prefix-p
@@ -205,7 +193,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for realm, used along with flag -P/--add-prefix
+    doc: 'Prefix for realm, used along with add_prefix (default ''r__'')'
     inputBinding:
       position: 101
       prefix: --prefix-r
@@ -213,7 +201,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for species, used along with flag -P/--add-prefix
+    doc: 'Prefix for species, used along with add_prefix (default ''s__'')'
     inputBinding:
       position: 101
       prefix: --prefix-s
@@ -221,7 +209,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: prefix for subspecies/strain, used along with flag -P/--add-prefix
+    doc: 'Prefix for subspecies/strain, used along with add_prefix (default ''t__'')'
     inputBinding:
       position: 101
       prefix: --prefix-t
@@ -229,9 +217,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: use the node with lowest rank as strain name, only if which rank is 
-      lower than "species" and not "subpecies" nor "strain". It affects {t}, 
-      {S}, {T}. This flag needs flag -F
+    doc: 'Use the node with lowest rank as strain name, only if which rank is lower than species and not subspecies nor strain. Needs fill_miss_rank'
     inputBinding:
       position: 101
       prefix: --pseudo-strain
@@ -239,7 +225,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: show corresponding taxids of reformated lineage
+    doc: 'Show corresponding taxids of reformatted lineage'
     inputBinding:
       position: 101
       prefix: --show-lineage-taxids
@@ -247,38 +233,53 @@ inputs:
     type:
       - 'null'
       - int
-    doc: field index of taxid. input data should be tab-separated. it overrides 
-      -i/--lineage-field
+    doc: 'Field index of taxid. Input data should be tab-separated. It overrides lineage_field'
     inputBinding:
       position: 101
       prefix: --taxid-field
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: number of CPUs. 4 is enough
-    inputBinding:
-      position: 101
-      prefix: --threads
   - id: trim
     type:
       - 'null'
       - boolean
-    doc: do not fill or add prefix for missing rank lower than current rank
+    doc: 'Do not fill or add prefix for missing rank lower than current rank'
     inputBinding:
       position: 101
       prefix: --trim
+  - id: data_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Directory containing nodes.dmp and names.dmp (NCBI taxdump files)'
+    inputBinding:
+      position: 101
+      prefix: --data-dir
+  - id: line_buffered
+    type:
+      - 'null'
+      - boolean
+    doc: 'Use line buffering on output, i.e., immediately writing to stdin/file for every line of output'
+    inputBinding:
+      position: 101
+      prefix: --line-buffered
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: 'Number of CPUs. 4 is enough'
+    inputBinding:
+      position: 101
+      prefix: --threads
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: print verbose information
+    doc: 'Print verbose information'
     inputBinding:
       position: 101
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
+    doc: 'Output file name (suffix .gz for gzipped output)'
     inputBinding:
       position: 102
       prefix: --out-file
@@ -287,7 +288,7 @@ outputs:
     type:
       - 'null'
       - File
-    doc: out file ("-" for stdout, suffix .gz for gzipped out)
+    doc: Output file
     outputBinding:
       glob: $(inputs.out_file_path)
 requirements:

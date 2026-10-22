@@ -6,11 +6,11 @@ baseCommand:
 label: taxonkit_taxid-changelog
 doc: "Create TaxId changelog from dump archives\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:
-  - id: archive_dir
+  - id: archive
     type:
       - 'null'
       - Directory
-    doc: directory containing uncompressed dumped archives
+    doc: 'Directory containing uncompressed dumped archives (one sub-directory per version with names.dmp, nodes.dmp, merged.dmp, delnodes.dmp)'
     inputBinding:
       position: 101
       prefix: --archive
@@ -18,7 +18,7 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: directory containing nodes.dmp and names.dmp
+    doc: 'Directory containing nodes.dmp and names.dmp (NCBI taxdump files)'
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -26,8 +26,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: use line buffering on output, i.e., immediately writing to stdin/file 
-      for every line of output
+    doc: 'Use line buffering on output, i.e., immediately writing to stdin/file for every line of output'
     inputBinding:
       position: 101
       prefix: --line-buffered
@@ -35,7 +34,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of CPUs. 4 is enough
+    doc: 'Number of CPUs. 4 is enough'
     inputBinding:
       position: 101
       prefix: --threads
@@ -43,13 +42,13 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: print verbose information
+    doc: 'Print verbose information'
     inputBinding:
       position: 101
       prefix: --verbose
   - id: out_file_path
     type: string
-    doc: out file ("-" for stdout, suffix .gz for gzipped out) (default "-")
+    doc: 'Output file name (suffix .gz for gzipped output)'
     inputBinding:
       position: 102
       prefix: --out-file
@@ -58,7 +57,7 @@ outputs:
     type:
       - 'null'
       - File
-    doc: out file ("-" for stdout, suffix .gz for gzipped out)
+    doc: Output file
     outputBinding:
       glob: $(inputs.out_file_path)
 requirements:

@@ -1,5 +1,11 @@
 # taco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| taco_taco_refcomp | PASS | compared the 700 transfrags of the taco NOC2L test locus with Ensembl GRCh37 protein-coding transcripts; all 700 classified |
+
 ## taco_taco_refcomp
 
 ### Tool Description

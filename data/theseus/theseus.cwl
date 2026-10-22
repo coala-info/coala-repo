@@ -160,6 +160,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Superposition results (superimposed PDB files, average structure, transformations, residuals, variances) written with the root name
+    outputBinding:
+      glob: "$((inputs.output_root_name ? inputs.output_root_name : 'theseus') + '_*')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/theseus:v3.3.0-8-deb_cv1

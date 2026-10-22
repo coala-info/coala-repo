@@ -12,6 +12,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --genome
+      valueFrom: $(self.basename)
   - id: gff_out
     type:
       - 'null'
@@ -197,11 +198,12 @@ outputs:
     doc: Standard output
   - id: prefix_files
     type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+      - 'null'
+      - type: array
+        items: File
+    doc: Output files (hits, paired termini, elements and GFF3) written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: '$((inputs.outdir ? inputs.outdir + "/" : "") + (inputs.prefix || "") + "*")'
   - id: outdir_dir
     type:
       - 'null'
@@ -209,6 +211,13 @@ outputs:
     doc: Output directory.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.genome.basename)
+        entry: $(inputs.genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tirmite:1.3.0--pyhdfd78af_0

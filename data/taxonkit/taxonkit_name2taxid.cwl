@@ -6,19 +6,18 @@ baseCommand:
 label: taxonkit_name2taxid
 doc: "Convert taxon names to TaxIds\n\nTool homepage: https://github.com/shenwei356/taxonkit"
 inputs:
-  - id: data_dir
+  - id: input_files
     type:
-      - 'null'
-      - Directory
-    doc: directory containing nodes.dmp and names.dmp
+      type: array
+      items: File
+    doc: 'File(s) with taxon names, one per line or in a tab-separated column (see name_field)'
     inputBinding:
-      position: 101
-      prefix: --data-dir
+      position: 1
   - id: fuzzy
     type:
       - 'null'
       - boolean
-    doc: allow fuzzy match
+    doc: 'Allow fuzzy match'
     inputBinding:
       position: 101
       prefix: --fuzzy
@@ -26,32 +25,23 @@ inputs:
     type:
       - 'null'
       - int
-    doc: choose top n matches in fuzzy search
+    doc: 'Choose top n matches in fuzzy search (default 1)'
     inputBinding:
       position: 101
       prefix: --fuzzy-top-n
-  - id: line_buffered
-    type:
-      - 'null'
-      - boolean
-    doc: use line buffering on output, i.e., immediately writing to stdin/file 
-      for every line of output
-    inputBinding:
-      position: 101
-      prefix: --line-buffered
   - id: name_field
     type:
       - 'null'
       - int
-    doc: field index of name. data should be tab-separated
+    doc: 'Field index of name. Data should be tab-separated (default 1)'
     inputBinding:
       position: 101
       prefix: --name-field
-  - id: scientific_names_only
+  - id: sci_name
     type:
       - 'null'
       - boolean
-    doc: only searching scientific names
+    doc: 'Only searching scientific names'
     inputBinding:
       position: 101
       prefix: --sci-name
@@ -59,15 +49,31 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: show rank
+    doc: 'Show rank'
     inputBinding:
       position: 101
       prefix: --show-rank
+  - id: data_dir
+    type:
+      - 'null'
+      - Directory
+    doc: 'Directory containing nodes.dmp and names.dmp (NCBI taxdump files)'
+    inputBinding:
+      position: 101
+      prefix: --data-dir
+  - id: line_buffered
+    type:
+      - 'null'
+      - boolean
+    doc: 'Use line buffering on output, i.e., immediately writing to stdin/file for every line of output'
+    inputBinding:
+      position: 101
+      prefix: --line-buffered
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of CPUs. 4 is enough
+    doc: 'Number of CPUs. 4 is enough'
     inputBinding:
       position: 101
       prefix: --threads
@@ -75,24 +81,24 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: print verbose information
+    doc: 'Print verbose information'
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: output_file_path
+  - id: out_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: 'Output file name (suffix .gz for gzipped output)'
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --out-file
 outputs:
-  - id: output_file
+  - id: out_file
     type:
       - 'null'
       - File
-    doc: out file ("-" for stdout, suffix .gz for gzipped out)
+    doc: Output file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.out_file_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

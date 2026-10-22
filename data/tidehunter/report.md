@@ -1,5 +1,11 @@
 # tidehunter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tidehunter_TideHunter | PASS |  |
+
 ## tidehunter_TideHunter
 
 ### Tool Description

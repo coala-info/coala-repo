@@ -1,5 +1,12 @@
 # taxadb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| taxadb_create | PASS | taxa division only; sqlite has 3,023,134 taxa, Homo sapiens (9606) present |
+| taxadb_download | PASS | taxa division only (NCBI taxdump over HTTPS) |
+
 ## taxadb_download
 
 ### Tool Description

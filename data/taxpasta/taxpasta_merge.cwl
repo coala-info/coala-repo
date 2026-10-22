@@ -78,15 +78,24 @@ inputs:
     inputBinding:
       position: 102
       prefix: --output-format
-  - id: output_mode
+  - id: wide
     type:
       - 'null'
       - boolean
-    doc: Output merged abundance data in either wide or (tidy) long format. 
-      Ignored when the desired output format is BIOM.
+    doc: Output merged abundance data in wide format (default). Ignored when the
+      desired output format is BIOM.
     inputBinding:
       position: 102
       prefix: --wide
+  - id: long
+    type:
+      - 'null'
+      - boolean
+    doc: Output merged abundance data in (tidy) long format. Ignored when the
+      desired output format is BIOM.
+    inputBinding:
+      position: 102
+      prefix: --long
   - id: profiler
     type: string
     doc: The taxonomic profiler used. All provided profiles must come from the 
@@ -114,6 +123,7 @@ inputs:
       sheet file name but can be set explicitly.
     inputBinding:
       position: 102
+      prefix: --samplesheet-format
   - id: summarise_at
     type:
       - 'null'
@@ -140,7 +150,7 @@ inputs:
       prefix: --taxonomy
   - id: output_path
     type: string
-    doc: PATH                The desired output  │
+    doc: The desired output file.
     inputBinding:
       position: 103
       prefix: --output

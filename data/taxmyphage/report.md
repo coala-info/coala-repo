@@ -1,5 +1,14 @@
 # taxmyphage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| taxmyphage_install | Failed | tool bug: the database downloads fail (VMR gives HTTP 403 to the tool, version-specific database files are gone) yet exit code is 0; also made the folder a string output and added NetworkAccess |
+| taxmyphage_mash | Not completed | needs the ICTV database (about 400 MB, install step of this version cannot download it) |
+| taxmyphage_run | Not completed | needs the ICTV database (about 400 MB, install step of this version cannot download it) |
+| taxmyphage_similarity | PASS | T7, T3 and lambda genomes from NCBI: T7 vs T3 gave 66 percent similarity, lambda unrelated, three clusters |
+
 ## taxmyphage_install
 
 ### Tool Description

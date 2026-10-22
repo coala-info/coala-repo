@@ -1,5 +1,12 @@
 # tgv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tgv_download | Not completed | needs the UCSC MySQL server; every download stops with connection reset by peer on this network |
+| tgv_list | PASS | plain list works; --more and --all stop with a connection reset from the UCSC MySQL server on this network |
+
 ## tgv_download
 
 ### Tool Description

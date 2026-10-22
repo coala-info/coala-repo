@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: window-acgt
+baseCommand:
+  - tigr-glimmer
+  - window-acgt
 label: tigr-glimmer_window-acgt
 doc: Read multi-fasta-format file from standard input. Print the acgt-content of
   windows in each sequence.
@@ -18,8 +20,6 @@ inputs:
   - id: input_file
     type: File
     doc: Input file in multi-fasta format (reads from stdin)
-    inputBinding:
-      position: 3
   - id: percent
     type:
       - 'null'
@@ -36,3 +36,4 @@ hints:
   - class: DockerRequirement
     dockerPull: biocontainers/tigr-glimmer:v3.02b-2-deb_cv1
 stdout: tigr-glimmer_window-acgt.out
+stdin: $(inputs.input_file.path)

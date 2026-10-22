@@ -1,5 +1,11 @@
 # te-aid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| te-aid_TE-Aid | Failed | image problem: TE-Aid looks for Run-c2g.R in /usr/local/bin (it is in /usr/local/share/te-aid-1.0.0-0), writes a db folder next to itself on a read-only path, and the image has no join command; no plot is made (real Gypsy2 consensus, D. melanogaster chr4) |
+
 ## te-aid_TE-Aid
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # syri CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| syri | Failed | image problem: syri crashes with 'buffer source array is read-only' (pandas copy-on-write in the image) on the Galaxy yeast test alignment |
+
 ## syri
 
 ### Tool Description

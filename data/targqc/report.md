@@ -1,5 +1,11 @@
 # targqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| targqc | Failed | image problem: bundled QualiMap (Java) crashes with a font-configuration NullPointerException, so no report is written |
+
 ## targqc
 
 ### Tool Description

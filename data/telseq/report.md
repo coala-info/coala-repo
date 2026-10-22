@@ -1,5 +1,11 @@
 # telseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| telseq | PASS |  |
+
 ## telseq
 
 ### Tool Description

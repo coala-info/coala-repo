@@ -1,261 +1,201 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: TMalign
+baseCommand:
+  - TMalign
 label: tmalign_TMalign
-doc: "protein structure alignment\n\nTool homepage: https://zhanglab.ccmb.med.umich.edu/TM-align/"
+doc: "TM-align: protein structure alignment of two PDB (or mmCIF) files\n\nTool homepage: https://zhanglab.ccmb.med.umich.edu/TM-align/"
 inputs:
   - id: pdb1
     type: File
-    doc: First PDB file
+    doc: "First structure (chain1) in PDB format"
     inputBinding:
       position: 1
   - id: pdb2
     type: File
-    doc: Second PDB file
+    doc: "Second structure (chain2) in PDB format"
     inputBinding:
       position: 2
-  - id: chain_list_for_all_vs_all
-    type:
-      - 'null'
-      - File
-    doc: List of PDB chains for all-against-all alignment
-    inputBinding:
-      position: 3
-  - id: chain1_list
-    type:
-      - 'null'
-      - File
-    doc: List of PDB chains for chain1
-    inputBinding:
-      position: 4
-  - id: chain2_for_dir1
-    type:
-      - 'null'
-      - File
-    doc: Chain2 to search against chain1 list
-    inputBinding:
-      position: 5
-  - id: chain2_list
-    type:
-      - 'null'
-      - File
-    doc: List of PDB chains for chain2
-    inputBinding:
-      position: 6
-  - id: chain1_for_dir2
-    type:
-      - 'null'
-      - File
-    doc: Chain1 to search against chain2 list
-    inputBinding:
-      position: 7
-  - id: align_by_residue_index
-    type:
-      - 'null'
-      - int
-    doc: Whether to assume residue index correspondence between the two 
-      structures.
-    inputBinding:
-      position: 108
-      prefix: -byresi
-  - id: align_hetatm
-    type:
-      - 'null'
-      - int
-    doc: Whether to align residues marked as 'HETATM' in addition to 'ATOM  '
-    inputBinding:
-      position: 108
-      prefix: -het
-  - id: align_mirror_image
-    type:
-      - 'null'
-      - int
-    doc: Whether to align the mirror image of input structure
-    inputBinding:
-      position: 108
-      prefix: -mirror
-  - id: all_vs_all_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Perform all-against-all alignment among the list of PDB chains listed 
-      by 'chain_list' under 'chain_folder'.
-    inputBinding:
-      position: 108
-      prefix: -dir
-  - id: atom_name
-    type:
-      - 'null'
-      - string
-    doc: 4-character atom name used to represent a residue.
-    inputBinding:
-      position: 108
-      prefix: -atom
-  - id: avg_length_norm
-    type:
-      - 'null'
-      - boolean
-    doc: TM-score normalized by the average length of two structures
-    inputBinding:
-      position: 108
-      prefix: -a
-  - id: chain1_folder
-    type:
-      - 'null'
-      - Directory
-    doc: Folder for chain1 list
-    inputBinding:
-      position: 108
-      prefix: -dir1
-  - id: chain2_folder
-    type:
-      - 'null'
-      - Directory
-    doc: Folder for chain2 list
-    inputBinding:
-      position: 108
-      prefix: -dir2
-  - id: circular_permutation
-    type:
-      - 'null'
-      - boolean
-    doc: Alignment with circular permutation
-    inputBinding:
-      position: 108
-      prefix: -cp
-  - id: d0_value
+  - id: u_length
     type:
       - 'null'
       - float
-    doc: TM-score scaled by an assigned d0, e.g. 5 Angstroms
+    doc: "TM-score normalized by user assigned length (the same as -L); it should be >= the minimum length of the two structures"
     inputBinding:
-      position: 108
-      prefix: -d
-  - id: fast_alignment
+      position: 100
+      prefix: -u
+  - id: l_length
     type:
       - 'null'
-      - boolean
-    doc: Fast but slightly inaccurate alignment by fTM-align algorithm
+      - float
+    doc: "TM-score normalized by user assigned length (the same as -u)"
     inputBinding:
-      position: 108
-      prefix: -fast
-  - id: file_suffix
+      position: 101
+      prefix: -L
+  - id: avg_length_norm
     type:
       - 'null'
       - string
-    doc: Add file name suffix to files listed by chain1_list or chain2_list
+    doc: "TM-score normalized by the average length of two structures, T or F (default F)"
     inputBinding:
-      position: 108
-      prefix: -suffix
+      position: 102
+      prefix: -a
   - id: initial_alignment_file
     type:
       - 'null'
       - File
-    doc: Start with an alignment specified in fasta file 'align.txt'
+    doc: "Start with an alignment specified in a fasta file"
+    inputBinding:
+      position: 103
+      prefix: -i
+  - id: stick_to_alignment_file
+    type:
+      - 'null'
+      - File
+    doc: "Stick to the alignment specified in a fasta file"
+    inputBinding:
+      position: 104
+      prefix: -I
+  - id: rotation_matrix
+    type:
+      - 'null'
+      - string
+    doc: "Output TM-align rotation matrix to this file name"
+    inputBinding:
+      position: 105
+      prefix: -m
+  - id: d0_value
+    type:
+      - 'null'
+      - float
+    doc: "TM-score scaled by an assigned d0, e.g. 5 Angstroms"
+    inputBinding:
+      position: 106
+      prefix: -d
+  - id: superposition_prefix
+    type:
+      - 'null'
+      - string
+    doc: "Output the superposition to <prefix>* files"
+    inputBinding:
+      position: 107
+      prefix: -o
+  - id: fast_alignment
+    type:
+      - 'null'
+      - boolean
+    doc: "Fast but slightly inaccurate alignment by fTM-align algorithm"
     inputBinding:
       position: 108
-      prefix: -i
+      prefix: -fast
+  - id: circular_permutation
+    type:
+      - 'null'
+      - boolean
+    doc: "Alignment with circular permutation"
+    inputBinding:
+      position: 109
+      prefix: -cp
+  - id: atom_name
+    type:
+      - 'null'
+      - string
+    doc: "4-character atom name used to represent a residue. Default is ' CA ' for proteins (note the spaces before and after CA)"
+    inputBinding:
+      position: 110
+      prefix: -atom
+  - id: ter_marker
+    type:
+      - 'null'
+      - int
+    doc: "Strings to mark the end of a chain: 3 (default) TER, ENDMDL, END or different chain ID; 2 ENDMDL, END, or different chain ID; 1 ENDMDL or END; 0 end of file"
+    inputBinding:
+      position: 111
+      prefix: -ter
+  - id: split_pdb
+    type:
+      - 'null'
+      - int
+    doc: "Whether to split PDB file into multiple chains: 0 (default) one single chain; 1 each MODEL a separate chain (-ter should be 0); 2 each chain a separate chain (-ter should be <=1)"
+    inputBinding:
+      position: 112
+      prefix: -split
+  - id: output_format
+    type:
+      - 'null'
+      - int
+    doc: "Output format: 0 (default) full output, 1 fasta format compact output, 2 tabular format very compact output, -1 full output without version or citation information"
+    inputBinding:
+      position: 113
+      prefix: -outfmt
+  - id: align_by_residue_index
+    type:
+      - 'null'
+      - int
+    doc: "Assume residue index correspondence between the two structures: 0 (default) sequence independent alignment; 1 sequence-dependent superposition (same as TMscore); 2 by residue index and chain ID (use with -ter <=1); 3 by residue index and order of chain (use with -ter <=1)"
+    inputBinding:
+      position: 114
+      prefix: -byresi
+  - id: tmcut
+    type:
+      - 'null'
+      - float
+    doc: "-1 (default) do not consider TMcut; values in [0.5,1): do not proceed with TM-align for this structure pair if the TM-score is unlikely to reach TMcut"
+    inputBinding:
+      position: 115
+      prefix: -TMcut
+  - id: align_mirror_image
+    type:
+      - 'null'
+      - int
+    doc: "Whether to align the mirror image of input structure: 0 (default) no, 1 align mirror of chain1 to chain2"
+    inputBinding:
+      position: 116
+      prefix: -mirror
+  - id: align_hetatm
+    type:
+      - 'null'
+      - int
+    doc: "Whether to align residues marked as HETATM in addition to ATOM: 0 (default) no, 1 yes"
+    inputBinding:
+      position: 117
+      prefix: -het
   - id: input_format1
     type:
       - 'null'
       - int
-    doc: Input format for chain1
+    doc: "Input format for chain1: -1 (default) detect PDB or PDBx/mmCIF; 0 PDB; 1 SPICKER; 2 xyz; 3 PDBx/mmCIF"
     inputBinding:
-      position: 108
+      position: 118
       prefix: -infmt1
   - id: input_format2
     type:
       - 'null'
       - int
-    doc: Input format for chain2
+    doc: "Input format for chain2: -1 (default) detect PDB or PDBx/mmCIF; 0 PDB; 1 SPICKER; 2 xyz; 3 PDBx/mmCIF"
     inputBinding:
-      position: 108
+      position: 119
       prefix: -infmt2
-  - id: output_format
-    type:
-      - 'null'
-      - int
-    doc: Output format
-    inputBinding:
-      position: 108
-      prefix: -outfmt
-  - id: output_rotation_matrix
-    type:
-      - 'null'
-      - File
-    doc: Output TM-align rotation matrix
-    inputBinding:
-      position: 108
-      prefix: -m
-  - id: split_pdb
-    type:
-      - 'null'
-      - int
-    doc: Whether to split PDB file into multiple chains
-    inputBinding:
-      position: 108
-      prefix: -split
-  - id: stick_to_alignment_file
-    type:
-      - 'null'
-      - File
-    doc: Stick to the alignment specified in 'align.txt'
-    inputBinding:
-      position: 108
-      prefix: -I
-  - id: ter_marker
-    type:
-      - 'null'
-      - int
-    doc: Strings to mark the end of a chain
-    inputBinding:
-      position: 108
-      prefix: -ter
-  - id: tmcut_normalization
-    type:
-      - 'null'
-      - int
-    doc: 'TMcut is normalized is set by -a option: -2: normalized by longer structure
-      length, -1: normalized by shorter structure length, 0: (default, same as F)
-      normalized by second structure, 1: same as T, normalized by average structure
-      length'
-    inputBinding:
-      position: 108
-      prefix: -TMcut
-  - id: tmcut_value
-    type:
-      - 'null'
-      - float
-    doc: '-1: (default) do not consider TMcut. Values in [0.5,1): Do not proceed with
-      TM-align for this structure pair if TM-score is unlikely to reach TMcut.'
-    inputBinding:
-      position: 108
-      prefix: -TMcut
-  - id: user_length_norm
-    type:
-      - 'null'
-      - boolean
-    doc: TM-score normalized by user assigned length (the same as -L)
-    inputBinding:
-      position: 108
-      prefix: -u
-  - id: output_superposition_prefix_path
-    type: string
-    doc: Output or path parameter `output_superposition_prefix_path`
-    inputBinding:
-      position: 109
-      prefix: --output-superposition-prefix
 outputs:
-  - id: output_superposition_prefix
+  - id: superposition_files
     type:
       - 'null'
-      - type: array
-        items: File
-    doc: Output the superposition to 'TM_sup*'
+      - File[]
+    doc: "Superposition files written with -o"
     outputBinding:
-      glob: $(inputs.output_superposition_prefix_path)*
+      glob: "$(inputs.superposition_prefix)*"
+  - id: rotation_matrix_file
+    type:
+      - 'null'
+      - File
+    doc: "Rotation matrix written with -m"
+    outputBinding:
+      glob: "$(inputs.rotation_matrix)"
+  - id: stdout
+    type: stdout
+    doc: Alignment report written to standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tmalign:20220227--h9948957_0
+stdout: tmalign_TMalign.out

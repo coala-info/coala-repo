@@ -38,11 +38,17 @@ inputs:
       position: 101
       prefix: --removeCache
   - id: uri
-    type: string
-    doc: Cool URI.
+    type: File
+    doc: Cool file (single-resolution .cool, or a .mcool with uri_group)
     inputBinding:
       position: 101
       prefix: --uri
+      valueFrom: "$(self.path + (inputs.uri_group ? '::' + inputs.uri_group : ''))"
+  - id: uri_group
+    type:
+      - 'null'
+      - string
+    doc: Group inside a multi-resolution .mcool file, e.g. resolutions/10000
   - id: weight_col
     type:
       - 'null'
@@ -60,9 +66,7 @@ inputs:
       position: 102
       prefix: --DI-output
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 103
       prefix: --output
@@ -79,6 +83,13 @@ outputs:
     doc: DI output file
     outputBinding:
       glob: $(inputs.di_output_path)
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log_file || 'domaincaller.log')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

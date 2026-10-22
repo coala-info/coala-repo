@@ -1,5 +1,12 @@
 # terminus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| terminus_collapse | PASS |  |
+| terminus_group | PASS |  |
+
 ## terminus_collapse
 
 ### Tool Description

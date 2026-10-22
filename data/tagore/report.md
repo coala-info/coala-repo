@@ -1,5 +1,11 @@
 # tagore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tagore | Failed | image problem: tagore exits at start with 'Could not find rsvg or rsvg-convert in PATH' (rsvg-convert missing in image), so no ideogram is written |
+
 ## tagore
 
 ### Tool Description

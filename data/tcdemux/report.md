@@ -1,5 +1,11 @@
 # tcdemux CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tcdemux | PASS | ran on the real repo test reads (5 samples); paired r1/r2 files with equal read counts and stats tables; needs at least 5 threads |
+
 ## tcdemux
 
 ### Tool Description

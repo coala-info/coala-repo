@@ -203,6 +203,10 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: USER
+        envValue: targqc
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/targqc:1.8.1--py37hb3f55d8_0

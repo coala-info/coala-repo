@@ -1,22 +1,42 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tbpore_download
+baseCommand:
+  - tbpore
+  - download
 label: tbpore_download
-doc: "Downloads and validates the decontamination database for TBpore.\n\nTool homepage:
-  https://github.com/mbhall88/tbpore/"
+doc: "Download and validate the decontamination database\n\nTool homepage: https://github.com/mbhall88/tbpore/"
 inputs:
-  - id: download_dir
+  - id: output_db
     type:
       - 'null'
-      - Directory
-    doc: Directory to download the decontamination database to.
+      - string
+    doc: Download database to a specified filepath (default is /root/.tbpore/decontamination_db/remove_contam.map-ont.mmi)
     inputBinding:
       position: 101
-      prefix: --download-dir
+      prefix: --output
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: Force overwrite if the database already exists
+    inputBinding:
+      position: 101
+      prefix: --force
 outputs:
+  - id: decontamination_db
+    type:
+      - 'null'
+      - File
+    doc: The downloaded decontamination database index
+    outputBinding:
+      glob: $(inputs.output_db)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tbpore:0.7.1--pyhdfd78af_0

@@ -26,9 +26,7 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
-    doc: reference genome file in fasta format, if absent from GFF3
+    doc: reference genome file in fasta format, if absent from GFF3 (BWA index files are written next to it, so it is staged writable)
     inputBinding:
       position: 102
       prefix: --fasta
@@ -125,6 +123,11 @@ outputs:
     doc: output directory, or 'random' for generating random dir name
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome_fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tatajuba:1.0.4--h577a1d6_4

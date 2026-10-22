@@ -7,10 +7,8 @@ label: tango_download
 doc: "Download databases for tango.\n\nTool homepage: https://github.com/johnne/tango"
 inputs:
   - id: database
-    type:
-      - 'null'
-      - string
-    doc: Database to download. Defaults to 'uniref100'
+    type: string
+    doc: Database to download (uniref100, uniref90, uniref50, nr, taxonomy or idmap)
     inputBinding:
       position: 1
   - id: download_directory
@@ -92,6 +90,9 @@ outputs:
       current directory
     outputBinding:
       glob: $(inputs.taxdir)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tango:0.5.7--py_0

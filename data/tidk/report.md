@@ -1,5 +1,14 @@
 # tidk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tidk_explore | PASS |  |
+| tidk_find | Not completed | needs the clade database from tidk build, which downloads data at run time; no network in the run |
+| tidk_plot | PASS |  |
+| tidk_search | PASS |  |
+
 ## tidk_find
 
 ### Tool Description

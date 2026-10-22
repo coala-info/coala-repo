@@ -1,5 +1,11 @@
 # tcfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tcfinder | PASS | real repo test tree and targets; 4 clusters match an independent check |
+
 ## tcfinder
 
 ### Tool Description

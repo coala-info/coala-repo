@@ -8,7 +8,7 @@ inputs:
   - id: adir
     type:
       - 'null'
-      - Directory
+      - string
     doc: A genome sub-directory within outdir
     inputBinding:
       position: 101
@@ -16,7 +16,7 @@ inputs:
   - id: bdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: B genome sub-directory within outdir
     inputBinding:
       position: 101
@@ -24,7 +24,7 @@ inputs:
   - id: outdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Write split directories within this directory.
     inputBinding:
       position: 101
@@ -45,6 +45,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: a_genome_dir
+    type: Directory
+    doc: Directory with one FASTA file per A genome (target) sequence
+    outputBinding:
+      glob: '$((inputs.outdir ? inputs.outdir + "/" : "") + (inputs.adir || "A_target_split"))'
+  - id: b_genome_dir
+    type: Directory
+    doc: Directory with one FASTA file per B genome (query) sequence
+    outputBinding:
+      glob: '$((inputs.outdir ? inputs.outdir + "/" : "") + (inputs.bdir || "B_query_split"))'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tinscan:0.2.1--pyhdfd78af_0

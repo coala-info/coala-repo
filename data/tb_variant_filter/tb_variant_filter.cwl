@@ -10,6 +10,11 @@ inputs:
     doc: VCF input file (relative to H37Rv)
     inputBinding:
       position: 1
+  - id: output_file_name
+    type: string
+    doc: Output file (VCF format)
+    inputBinding:
+      position: 2
   - id: close_to_indel_filter
     type:
       - 'null'
@@ -78,12 +83,12 @@ inputs:
       prefix: --snv_only_filter
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output file (VCF format)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file_name)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tb_variant_filter:0.4.0--pyhdfd78af_0

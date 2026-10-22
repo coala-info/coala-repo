@@ -1,5 +1,16 @@
 # taxmapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| taxmapper_count | PASS | synthetic data: counts made from the synthetic map output; totals checked by hand |
+| taxmapper_filter | PASS | synthetic data: hand-made RAPSearch alignment files; output values checked by hand |
+| taxmapper_map | PASS | synthetic data: hand-made RAPSearch alignment files; output values checked by hand |
+| taxmapper_plot | PASS | synthetic data: counts made from the synthetic map output; totals checked by hand |
+| taxmapper_run | Failed | image problem: rapsearch is not in the image, so all reads give empty output; also fixed the missing -m flag |
+| taxmapper_search | Failed | image problem: rapsearch is not in the image, so the tool crashes with FileNotFoundError |
+
 ## taxmapper_search
 
 ### Tool Description

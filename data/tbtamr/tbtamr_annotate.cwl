@@ -27,6 +27,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder named after the sequence id
+    outputBinding:
+      glob: $(inputs.seq_id || 'tbtamr')
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tbtamr:1.0.3--pyhdfd78af_0

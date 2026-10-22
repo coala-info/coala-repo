@@ -15,9 +15,8 @@ inputs:
       position: 101
       prefix: --chunk
   - id: database_name
-    type:
-      - 'null'
-      - string
+    type: string
+    default: taxadb
     doc: name of the database
     inputBinding:
       position: 101
@@ -103,6 +102,11 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: database
+    type: File
+    doc: SQLite database file named by database_name (for --dbtype sqlite)
+    outputBinding:
+      glob: $(inputs.database_name)
   - id: stdout
     type: stdout
     doc: Standard output

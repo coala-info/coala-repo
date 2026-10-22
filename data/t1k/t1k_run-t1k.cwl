@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./run-t1k
+baseCommand: run-t1k
 label: t1k_run-t1k
 doc: "T1K v1.0.9-r251\n\nTool homepage: https://github.com/mourisl/T1K"
 inputs:
@@ -37,7 +37,9 @@ inputs:
       position: 101
       prefix: --alleleWhitelist
   - id: bam_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: path to BAM file
     inputBinding:
       position: 101
@@ -50,27 +52,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --barcode
-  - id: barcode_range_end
+  - id: barcode_range
     type:
       - 'null'
-      - int
-    doc: start, end(-1 for length-1), strand in a barcode is the true barcode
-    inputBinding:
-      position: 101
-      prefix: --barcodeRange
-  - id: barcode_range_start
-    type:
-      - 'null'
-      - int
-    doc: start, end(-1 for length-1), strand in a barcode is the true barcode
-    inputBinding:
-      position: 101
-      prefix: --barcodeRange
-  - id: barcode_range_strand
-    type:
-      - 'null'
-      - string
-    doc: start, end(-1 for length-1), strand in a barcode is the true barcode
+      - type: array
+        items: string
+    doc: start, end(-1 for length-1), strand in a barcode is the true barcode (three values, for example 0 -1 +)
     inputBinding:
       position: 101
       prefix: --barcodeRange
@@ -115,7 +102,9 @@ inputs:
       position: 101
       prefix: -c
   - id: interleaved_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: path to interleaved read file
     inputBinding:
       position: 101
@@ -195,50 +184,36 @@ inputs:
     inputBinding:
       position: 101
       prefix: --preset
-  - id: read1_files
+  - id: read1_file
     type:
-      type: array
-      items: string
-    doc: path to paired-end read files
+      - 'null'
+      - File
+    doc: path to the first read file of paired-end reads
     inputBinding:
       position: 101
       prefix: '-1'
-  - id: read1_range_end
+  - id: read1_range
     type:
       - 'null'
-      - int
+      - type: array
+        items: int
     doc: start, end(-1 for length-1) in -1/-u files for genomic sequence
     inputBinding:
       position: 101
       prefix: --read1Range
-  - id: read1_range_start
+  - id: read2_file
     type:
       - 'null'
-      - int
-    doc: start, end(-1 for length-1) in -1/-u files for genomic sequence
-    inputBinding:
-      position: 101
-      prefix: --read1Range
-  - id: read2_files
-    type:
-      type: array
-      items: string
-    doc: path to paired-end read files
+      - File
+    doc: path to the second read file of paired-end reads
     inputBinding:
       position: 101
       prefix: '-2'
-  - id: read2_range_end
+  - id: read2_range
     type:
       - 'null'
-      - int
-    doc: start, end(-1 for length-1) in -2 files for genomic sequence
-    inputBinding:
-      position: 101
-      prefix: --read2Range
-  - id: read2_range_start
-    type:
-      - 'null'
-      - int
+      - type: array
+        items: int
     doc: start, end(-1 for length-1) in -2 files for genomic sequence
     inputBinding:
       position: 101
@@ -258,7 +233,9 @@ inputs:
       position: 101
       prefix: --relaxIntronAlign
   - id: single_end_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: path to single-end read file
     inputBinding:
       position: 101
@@ -308,7 +285,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$(inputs.output_prefix ? inputs.output_prefix + '*' : '*_genotype.tsv')"
   - id: output_directory_dir
     type:
       - 'null'
@@ -316,6 +293,8 @@ outputs:
     doc: the directory for output files.
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/t1k:1.0.9--h5ca1c30_0

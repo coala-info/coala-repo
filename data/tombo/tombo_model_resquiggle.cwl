@@ -60,6 +60,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: include_event_stdev
     type:
       - 'null'
@@ -154,20 +156,42 @@ inputs:
       position: 101
       prefix: --tombo-model-filename
   - id: failed_reads_filename_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --failed-reads-filename
 outputs:
+  - id: resquiggled_fast5_dirs
+    type:
+      type: array
+      items: Directory
+    doc: FAST5 directories with the new corrected group written by 
+      model_resquiggle
+    outputBinding:
+      glob: $(inputs.fast5_basedirs.map(function(d) { return d.basename; }))
+  - id: tombo_index_files
+    type:
+      type: array
+      items: File
+    doc: Tombo index files (hidden files named .<fast5 directory>.<corrected 
+      group>.tombo.index) written beside the fast5 directories.
+    outputBinding:
+      glob: .*.tombo.index
   - id: failed_reads_filename
     type:
       - 'null'
       - File
-    doc: Output failed read filenames with assoicated error.
+    doc: Output failed read filenames with associated error.
     outputBinding:
       glob: $(inputs.failed_reads_filename_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fast5_basedirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

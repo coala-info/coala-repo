@@ -15,8 +15,8 @@ inputs:
   - id: log_colors
     type:
       - 'null'
-      - boolean
-    doc: Enable or disable colored logging.
+      - string
+    doc: Enable or disable colored logging (True or False).
     inputBinding:
       position: 102
       prefix: --logColors
@@ -47,7 +47,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: File to log in.
     inputBinding:
       position: 102

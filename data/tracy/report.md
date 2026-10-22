@@ -1,5 +1,16 @@
 # tracy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tracy_align | PASS |  |
+| tracy_assemble | PASS |  |
+| tracy_basecall | PASS |  |
+| tracy_consensus | PASS |  |
+| tracy_decompose | PASS |  |
+| tracy_index | PASS |  |
+
 ## tracy_index
 
 ### Tool Description

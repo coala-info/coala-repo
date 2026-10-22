@@ -1,5 +1,11 @@
 # ucsc-autosql CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-autosql_autoSql | PASS |  |
+
 ## ucsc-autosql_autoSql
 
 ### Tool Description

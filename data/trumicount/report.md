@@ -1,5 +1,11 @@
 # trumicount CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trumicount | Failed | image problem: the main --input-bam mode fails because umi_tools is not in the image; only the --input-umitools-group-out mode works. |
+
 ## trumicount
 
 ### Tool Description

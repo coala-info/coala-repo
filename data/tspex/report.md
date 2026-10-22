@@ -1,5 +1,11 @@
 # tspex CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tspex | PASS | tau value checked by hand on the repository test matrix |
+
 ## tspex
 
 ### Tool Description

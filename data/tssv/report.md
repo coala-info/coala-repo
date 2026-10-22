@@ -1,5 +1,11 @@
 # tssv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tssv | PASS | repository test reads and flanking library: 9 reads, 7 matched pairs, new alleles found |
+
 ## tssv
 
 ### Tool Description

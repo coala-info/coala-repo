@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treetime_arg
+baseCommand: [treetime, arg]
 label: treetime_arg
 doc: "Calculates the root-to-tip regression and quantifies the 'clock-i-ness' of the
   tree. It will reroot the tree to maximize the clock-like signal and recalculate

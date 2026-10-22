@@ -1,5 +1,11 @@
 # tr-trimmer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tr-trimmer | PASS |  |
+
 ## tr-trimmer
 
 ### Tool Description

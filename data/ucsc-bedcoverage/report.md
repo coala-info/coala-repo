@@ -1,5 +1,11 @@
 # ucsc-bedcoverage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bedcoverage | PASS | rewritten (baseCommand was not a real command); needs network access to the UCSC public MySQL server for hg18 |
+
 ## ucsc-bedcoverage
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # treekin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| treekin | PASS | synthetic data: short RNA landscape built with ViennaRNA and barriers; --bar and --ratesfile fixed to File |
+
 ## treekin
 
 ### Tool Description

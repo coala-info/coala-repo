@@ -1,112 +1,162 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: TranscriptClean.py
+baseCommand: TranscriptClean
 label: transcriptclean
-doc: "TranscriptClean is a Python program that corrects SMRT-seq reads for mismatches,
-  microindels, and non-canonical splice junctions.\n\nTool homepage: https://github.com/mortazavilab/TranscriptClean"
+doc: "TranscriptClean corrects mismatches, microindels and non-canonical splice junctions in long-read transcript alignments (SAM), using the reference genome and optional variant and splice junction files.\n\nTool homepage: https://github.com/mortazavilab/TranscriptClean"
 inputs:
-  - id: canon_only
-    type:
-      - 'null'
-      - boolean
-    doc: If this option is set, TranscriptClean will only output transcripts 
-      that are canonical or match the provided splice annotation.
-    inputBinding:
-      position: 101
-      prefix: --canonOnly
-  - id: genome
-    type: File
-    doc: Reference genome fasta file.
-    inputBinding:
-      position: 101
-      prefix: --genome
-  - id: max_len_indel
-    type:
-      - 'null'
-      - int
-    doc: 'Maximum size indel to correct (Default: 5 bp).'
-    inputBinding:
-      position: 101
-      prefix: --maxLenIndel
-  - id: max_num_mismatches
-    type:
-      - 'null'
-      - int
-    doc: 'Maximum number of mismatches to correct (Default: 2).'
-    inputBinding:
-      position: 101
-      prefix: --maxNumMismatches
-  - id: mismatch_annot
-    type:
-      - 'null'
-      - File
-    doc: 'Optional: Mismatch annotation file (produced by TranscriptClean helper script).'
-    inputBinding:
-      position: 101
-      prefix: --mismatchAnnot
-  - id: primary_only
-    type:
-      - 'null'
-      - boolean
-    doc: If this option is set, TranscriptClean will only output primary 
-      alignments.
-    inputBinding:
-      position: 101
-      prefix: --primaryOnly
   - id: sam
     type: File
-    doc: Input SAM file containing transcripts to clean.
+    doc: "Input SAM file containing transcripts to correct. Must contain a header."
     inputBinding:
-      position: 101
       prefix: --sam
-  - id: spliceannot
-    type:
-      - 'null'
-      - File
-    doc: 'Optional: GTF file containing known splice junctions.'
+  - id: genome
+    type: File
+    doc: "Reference genome fasta file. Should be the same one used during mapping to generate the provided SAM file. It is staged in the working directory because the tool writes its index files next to it."
     inputBinding:
-      position: 101
-      prefix: --spliceannot
-  - id: ss
-    type:
-      - 'null'
-      - File
-    doc: 'Optional: Splicing annotation file (produced by TranscriptClean helper script).'
-    inputBinding:
-      position: 101
-      prefix: --ss
+      prefix: --genome
+      valueFrom: $(self.basename)
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use.
+    doc: "Number of threads to run program with."
     inputBinding:
-      position: 101
       prefix: --threads
-  - id: variant_file
+  - id: splice_jns
     type:
       - 'null'
       - File
-    doc: VCF file containing known variants.
+    doc: "Splice junction file obtained by mapping Illumina reads to the genome using STAR, or alternately, extracted from a GTF using the accessory script."
     inputBinding:
-      position: 101
-      prefix: --variantFile
-  - id: outprefix_path
-    type: string
-    doc: Output or path parameter `outprefix_path`
-    inputBinding:
-      position: 102
-      prefix: --outprefix
-outputs:
-  - id: outprefix
+      prefix: --spliceJns
+  - id: variants
     type:
-      type: array
-      items: File
-    doc: Prefix for output files.
+      - 'null'
+      - File
+    doc: "VCF formatted file of variants to avoid correcting away in the data (optional)."
+    inputBinding:
+      prefix: --variants
+  - id: max_len_indel
+    type:
+      - 'null'
+      - int
+    doc: "Maximum size indel to correct (Default: 5 bp)"
+    inputBinding:
+      prefix: --maxLenIndel
+  - id: max_sj_offset
+    type:
+      - 'null'
+      - int
+    doc: "Maximum distance from annotated splice junction to correct (Default: 5 bp)"
+    inputBinding:
+      prefix: --maxSJOffset
+  - id: outprefix
+    type: string
+    doc: "Output file prefix. _clean plus a file extension will be added to the end."
+    inputBinding:
+      prefix: --outprefix
+  - id: correct_mismatches
+    type:
+      - 'null'
+      - string
+    doc: "If set to false, TranscriptClean will skip mismatch correction. Default: true"
+    inputBinding:
+      prefix: --correctMismatches
+  - id: correct_indels
+    type:
+      - 'null'
+      - string
+    doc: "If set to false, TranscriptClean will skip indel correction. Default: true"
+    inputBinding:
+      prefix: --correctIndels
+  - id: correct_sjs
+    type:
+      - 'null'
+      - string
+    doc: "If set to false, TranscriptClean will skip splice junction correction. Default: true, but you must provide a splice junction annotation file in order for it to work."
+    inputBinding:
+      prefix: --correctSJs
+  - id: dry_run
+    type:
+      - 'null'
+      - boolean
+    doc: "If this option is set, TranscriptClean will read in the sam file and record all insertions, deletions, and mismatches, but it will skip correction."
+    inputBinding:
+      prefix: --dryRun
+  - id: primary_only
+    type:
+      - 'null'
+      - boolean
+    doc: "If this option is set, TranscriptClean will only output primary mappings of transcripts (ie it will filter out unmapped and multimapped lines from the SAM input."
+    inputBinding:
+      prefix: --primaryOnly
+  - id: canon_only
+    type:
+      - 'null'
+      - boolean
+    doc: "If this option is set, TranscriptClean will output only canonical transcripts and transcripts containing annotated noncanonical junctions to the clean SAM file at the end of the run."
+    inputBinding:
+      prefix: --canonOnly
+  - id: tmp_dir
+    type:
+      - 'null'
+      - string
+    doc: "If you would like the tmp files to be written somewhere different than the final output, provide the path to that location here."
+    inputBinding:
+      prefix: --tmpDir
+  - id: buffer_size
+    type:
+      - 'null'
+      - int
+    doc: "Number of lines to output to file at once by each thread during run. Default = 100"
+    inputBinding:
+      prefix: --bufferSize
+  - id: delete_tmp
+    type:
+      - 'null'
+      - boolean
+    doc: "If this option is set, the temporary directory generated by TranscriptClean (TC_tmp) will be removed at the end of the run."
+    inputBinding:
+      prefix: --deleteTmp
+outputs:
+  - id: clean_sam
+    type: File
+    doc: Corrected alignments
     outputBinding:
-      glob: $(inputs.outprefix_path)*
+      glob: $(inputs.outprefix)_clean.sam
+  - id: clean_fasta
+    type:
+      - 'null'
+      - File
+    doc: Corrected transcript sequences
+    outputBinding:
+      glob: $(inputs.outprefix)_clean.fa
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.outprefix)_clean.log
+  - id: transcript_log
+    type:
+      - 'null'
+      - File
+    doc: Per-transcript correction log
+    outputBinding:
+      glob: $(inputs.outprefix)_clean.TE.log
+  - id: tmp_output
+    type:
+      - 'null'
+      - Directory
+    doc: Temporary directory kept by the tool (TC_tmp) unless deleted
+    outputBinding:
+      glob: TC_tmp
 requirements:
-  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genome)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/transcriptclean:v2.0.2_cv1

@@ -1,5 +1,12 @@
 # tmb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tmb_pyEffGenomeSize.py | PASS |  |
+| tmb_pyTMB.py | PASS |  |
+
 ## tmb_pyTMB.py
 
 ### Tool Description
@@ -69,6 +76,52 @@ options:
                         False)
   --export              Export a VCF with the considered variants (default:
                         False)
+  --version             Version number
+```
+
+## tmb_pyEffGenomeSize.py
+
+### Tool Description
+Calculates the effective genome size of a capture design from a BED file and a GTF annotation.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/tmb:1.5.0--pyhdfd78af_1
+- **Homepage**: https://github.com/bioinfo-pf-curie/TMB
+- **Package**: https://anaconda.org/channels/bioconda/packages/tmb/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: pyEffGenomeSize.py [-h] --bed BED --gtf GTF [--bam BAM] [--mosdepth]
+                          [--minCoverage MINCOVERAGE] [--minMapq MINMAPQ]
+                          [--filterNonCoding] [--filterCoding]
+                          [--featureTypes FEATURETYPES [FEATURETYPES ...]]
+                          [--saveIntermediates] [-t THREAD]
+                          [--oprefix OPREFIX] [--verbose] [--version]
+
+options:
+  -h, --help            show this help message and exit
+  --bed BED             BED file (.bed) (default: None)
+  --gtf GTF             GTF file for genome annotation (.gtf) (default: None)
+  --bam BAM             BAM file for mapping statistics (.bam) (default: None)
+  --mosdepth            enable mosdepth processing, require .bam file
+                        (default: False)
+  --minCoverage MINCOVERAGE
+                        minimum coverage of the region (default: 0)
+  --minMapq MINMAPQ     minimum coverage of the region (default: 0)
+  --filterNonCoding     Filter regions associated with non coding annotations
+                        (default: False)
+  --filterCoding        Filter regions associated with coding annotations
+                        (default: False)
+  --featureTypes FEATURETYPES [FEATURETYPES ...]
+                        List of Features (exon, gene, transcript, UTR, CDS) to
+                        keep (3rd column from gtf/gff). Required with
+                        --filterCoding argument (default: [])
+  --saveIntermediates   Save mosdepth intermediate files (default: False)
+  -t THREAD, --thread THREAD
+                        Number of threads for mosdepth run (default: 1)
+  --oprefix OPREFIX     Suffix for filtered bed (default: pyeffg)
+  --verbose             Active verbose mode (default: False)
   --version             Version number
 ```
 

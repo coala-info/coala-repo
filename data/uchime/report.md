@@ -1,5 +1,11 @@
 # uchime CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| uchime | PASS | synthetic data: chimera planted from two real NCBI 16S sequences; flagged in reference and de novo mode |
+
 ## uchime
 
 ### Tool Description

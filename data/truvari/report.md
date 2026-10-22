@@ -1,5 +1,11 @@
 # truvari CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| truvari | PASS | wraps truvari bench; rewritten from the help; real_small SV VCFs give TP+FN=base count and TP+FP=comp count |
+
 ## truvari
 
 ### Tool Description

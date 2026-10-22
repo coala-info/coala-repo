@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - checkm2
 label: tooldistillator_checkm2
 doc: "Extract information from output(s) of checkm2 (quality_report.tsv)\n\nTool homepage:

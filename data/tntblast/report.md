@@ -1,5 +1,11 @@
 # tntblast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tntblast | PASS |  |
+
 ## tntblast
 
 ### Tool Description

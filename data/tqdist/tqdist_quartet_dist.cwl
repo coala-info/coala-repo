@@ -23,7 +23,7 @@ inputs:
       of quartets, quartet distance, normalized quartet distance, and quartet 
       agreement/unresolved statistics
     inputBinding:
-      position: 103
+      position: 0
       prefix: -v
 outputs:
   - id: stdout

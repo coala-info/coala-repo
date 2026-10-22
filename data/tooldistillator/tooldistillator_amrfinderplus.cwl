@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - amrfinderplus
 label: tooldistillator_amrfinderplus
 doc: "Extract information from output(s) of amrfinderplus (report.tsv)\n\nTool homepage:

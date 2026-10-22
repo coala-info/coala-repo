@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ErrorCorrection.py
+baseCommand: uc-echo
 label: uc-echo
 doc: "Error correction tool\n\nTool homepage: https://github.com/dh-orko/Help-me-get-rid-of-unhumans"
 inputs:
@@ -53,7 +53,7 @@ inputs:
   - id: log_filename
     type:
       - 'null'
-      - File
+      - string
     doc: Log file name
     inputBinding:
       position: 102
@@ -143,6 +143,13 @@ outputs:
     doc: Output file name
     outputBinding:
       glob: $(inputs.output_filename_path)
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log_filename)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

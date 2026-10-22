@@ -1,5 +1,21 @@
 # toil CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| toil_clean | PASS |  |
+| toil_config | Failed | tool bug: toil config 7.0.0 writes only the line 'config_version: 1.0' instead of a config file with all default options |
+| toil_debug-file | PASS |  |
+| toil_debug-job | PASS |  |
+| toil_destroy-cluster | Not completed | needs a cloud account and a running cluster (AWS or other provisioner) |
+| toil_kill | PASS |  |
+| toil_launch-cluster | Not completed | needs a cloud account and a running cluster (AWS or other provisioner) |
+| toil_rsync-cluster | Not completed | needs a cloud account and a running cluster (AWS or other provisioner) |
+| toil_ssh-cluster | Not completed | needs a cloud account and a running cluster (AWS or other provisioner) |
+| toil_stats | PASS |  |
+| toil_status | PASS |  |
+
 ## toil_clean
 
 ### Tool Description

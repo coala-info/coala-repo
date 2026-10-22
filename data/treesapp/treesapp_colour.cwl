@@ -1,115 +1,114 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - treesapp
-  - colour
+baseCommand: [treesapp, colour]
 label: treesapp_colour
-doc: "Generates colour style and strip files for visualizing a reference package's
-  phylogeny in iTOL based on taxonomic or phenotypic data.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
+doc: "Generates colour style and strip files for visualizing a reference package's phylogeny in iTOL based on taxonomic or phenotypic data.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
 inputs:
   - id: refpkg_path
     type:
       type: array
       items: File
-    doc: Path to the reference package pickle (.pkl) file.
+    doc: "Path to the reference package pickle (.pkl) file(s)."
     inputBinding:
-      position: 1
+      position: 101
+      prefix: --refpkg_path
   - id: attribute
     type:
       - 'null'
       - string
-    doc: The reference package attribute to colour by. Either 'taxonomy' or a 
-      reference package's layering annotation name.
+    doc: "The reference package attribute to colour by. Either 'taxonomy' or a layering annotation name. [ DEFAULT = 'taxonomy' ]"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --attribute
-  - id: min_proportion
-    type:
-      - 'null'
-      - float
-    doc: Minimum proportion of sequences a group contains to be coloured
-    inputBinding:
-      position: 102
-      prefix: --min_proportion
-  - id: no_polyphyletic
-    type:
-      - 'null'
-      - boolean
-    doc: Flag forcing the omission of all polyphyletic taxa from the colours 
-      file.
-    inputBinding:
-      position: 102
-      prefix: --no_polyphyletic
-  - id: overwrite
-    type:
-      - 'null'
-      - boolean
-    doc: Overwrites previously written output files and directories
-    inputBinding:
-      position: 102
-      prefix: --overwrite
-  - id: palette
+  - id: output_dir
     type:
       - 'null'
       - string
-    doc: The Seaborn colour palette to use
+    doc: "Path to the output directory to write the output files. [ DEFAULT = ./ ]"
+    default: output
     inputBinding:
-      position: 102
-      prefix: --palette
+      position: 101
+      prefix: --output_dir
   - id: rank_level
     type:
       - 'null'
       - string
-    doc: The rank to generate unique colours for
+    doc: "The rank to generate unique colours for: domain, phylum, class, order, family, genus or species. [ DEFAULT = 'order' ]"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --rank_level
+  - id: palette
+    type:
+      - 'null'
+      - string
+    doc: "The Seaborn colour palette to use [ DEFAULT = BrBG ]"
+    inputBinding:
+      position: 101
+      prefix: --palette
+  - id: unknown_colour
+    type:
+      - 'null'
+      - string
+    doc: "Colour of the 'Unknown' category."
+    inputBinding:
+      position: 101
+      prefix: --unknown_colour
+  - id: min_proportion
+    type:
+      - 'null'
+      - float
+    doc: "Minimum proportion of sequences a group contains to be coloured [ DEFAULT = 0 ]"
+    inputBinding:
+      position: 101
+      prefix: --min_proportion
   - id: taxa_filter
     type:
       - 'null'
       - string
-    doc: Keywords for excluding specific taxa from the colour palette.
+    doc: "Keywords for excluding specific taxa from the colour palette. [ DEFAULT is no filter ]"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --filter
   - id: taxa_set_operation
     type:
       - 'null'
       - string
-    doc: When multiple reference packages are provided, should the union (u) or 
-      intersection (i) of all labelled taxa (post-filtering) be coloured?
+    doc: "With several reference packages, colour the union (u) or intersection (i) of labelled taxa. [ DEFAULT = u ]"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --taxa_set_operation
-  - id: unknown_colour
+  - id: no_polyphyletic
     type:
       - 'null'
-      - string
-    doc: Colour of the 'Unknown' category.
+      - boolean
+    doc: "Omit all polyphyletic taxa from the colours file."
     inputBinding:
-      position: 102
-      prefix: --unknown_colour
+      position: 101
+      prefix: --no_polyphyletic
+  - id: overwrite
+    type:
+      - 'null'
+      - boolean
+    doc: "Overwrites previously written output files and directories"
+    inputBinding:
+      position: 101
+      prefix: --overwrite
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Prints a more verbose runtime log
+    doc: "Prints a more verbose runtime log"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --verbose
-  - id: output_dir_path
-    type: string
-    inputBinding:
-      position: 103
-      prefix: --output_dir
 outputs:
   - id: output_dir
     type:
       - 'null'
       - Directory
-    doc: Path to the output directory to write the output files.
+    doc: "Directory with iTOL colour style and strip files"
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

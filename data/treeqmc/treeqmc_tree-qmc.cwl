@@ -228,7 +228,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 102
-      prefix: --output-file
+      prefix: --output
   - id: write_table_path
     type:
       - 'null'
@@ -236,7 +236,7 @@ inputs:
     doc: Output or path parameter `write_table_path`
     inputBinding:
       position: 103
-      prefix: --write-table
+      prefix: --writetable
 outputs:
   - id: output_file
     type:

@@ -17,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: sample2file
-    type: string
+    type: File
     doc: 'Mapping from samples to fasta files (also see gitHub help): sample1_file_name{tab}sample1_name
       sample2_file_name{tab}sample2_name'
     inputBinding:

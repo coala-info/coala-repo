@@ -22,7 +22,7 @@ inputs:
     doc: If used, reports detailed numbers including leaf count, triplet count, 
       distance, normalized distance, and resolved/unresolved triplet statistics.
     inputBinding:
-      position: 103
+      position: 0
       prefix: -v
 outputs:
   - id: stdout

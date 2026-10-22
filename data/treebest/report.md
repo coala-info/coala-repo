@@ -1,5 +1,32 @@
 # treebest CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| treebest_backtrans | PASS |  |
+| treebest_best | PASS |  |
+| treebest_distmat | PASS |  |
+| treebest_estlen | PASS |  |
+| treebest_export | PASS |  |
+| treebest_filter | PASS |  |
+| treebest_format | PASS |  |
+| treebest_leaf | PASS |  |
+| treebest_mfa2aln | PASS |  |
+| treebest_mmerge | PASS |  |
+| treebest_nj | PASS |  |
+| treebest_ortho | PASS |  |
+| treebest_phyml | PASS |  |
+| treebest_pwalign | PASS | baseCommand fixed to treebest pwalign; the -m option crashes visibly (double free) but the main mode works |
+| treebest_root | PASS |  |
+| treebest_sdi | PASS |  |
+| treebest_simulate | PASS |  |
+| treebest_sortleaf | PASS |  |
+| treebest_subtree | PASS |  |
+| treebest_trans | PASS |  |
+| treebest_treedist | PASS |  |
+| treebest_trimpoor | PASS |  |
+
 ## treebest_nj
 
 ### Tool Description
@@ -625,6 +652,22 @@ INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDI
 INFO:    Using cached SIF image
 WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
 [tr_get_fp] fail to open file --help
+```
+
+## treebest_ortho
+
+### Tool Description
+Ortholog and paralog inference from a gene tree.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/treebest:1.9.2_ep78--hfc679d8_2
+- **Homepage**: https://github.com/lh3/treebest
+- **Package**: https://anaconda.org/channels/bioconda/packages/treebest/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: treebest ortho <tree>
 ```
 
 ## Metadata

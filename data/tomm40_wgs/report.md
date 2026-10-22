@@ -1,5 +1,11 @@
 # tomm40_wgs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tomm40_wgs_TOMM40_WGS | Not completed | pipeline (Snakemake workflow that also needs a reference genome and whole-genome BAM or CRAM files), skipped |
+
 ## tomm40_wgs_TOMM40_WGS
 
 ### Tool Description

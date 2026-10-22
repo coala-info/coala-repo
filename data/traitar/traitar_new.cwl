@@ -37,6 +37,11 @@ inputs:
     inputBinding:
       position: 6
 outputs:
+  - id: archive
+    type: File
+    doc: The new phenotype model archive (<archive_name>.tar.gz)
+    outputBinding:
+      glob: $(inputs.archive_name).tar.gz
   - id: stdout
     type: stdout
     doc: Standard output

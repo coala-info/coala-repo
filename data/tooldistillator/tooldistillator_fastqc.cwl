@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - fastqc
 label: tooldistillator_fastqc
 doc: "Extract information from output(s) of fastqc (report.txt)\n\nTool homepage:

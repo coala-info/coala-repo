@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - quast
 label: tooldistillator_quast
 doc: "Extract information from output(s) of quast (report.tsv)\n\nTool homepage: https://gitlab.com/ifb-elixirfr/abromics"

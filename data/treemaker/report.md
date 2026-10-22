@@ -1,5 +1,11 @@
 # treemaker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| treemaker | PASS |  |
+
 ## treemaker
 
 ### Tool Description

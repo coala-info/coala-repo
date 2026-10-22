@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ToulligQC
+baseCommand: toulligqc
 label: toulligqc
 doc: "ToulligQC is a tool for quality control of Oxford Nanopore sequencing data.\n\
   \nTool homepage: https://github.com/GenomicParisCentre/toulligQC"

@@ -1,5 +1,11 @@
 # ucsc-axtswap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-axtswap | PASS |  |
+
 ## ucsc-axtswap
 
 ### Tool Description

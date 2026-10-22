@@ -1,5 +1,11 @@
 # treeqmc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| treeqmc_tree-qmc | PASS | fixed --output and --writetable flags |
+
 ## Metadata
 - **Skill**: generated
 

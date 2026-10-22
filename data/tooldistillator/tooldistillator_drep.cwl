@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - drep
 label: tooldistillator_drep
 doc: "Extract information from output(s) of drep (quality_and_cluster_summary.csv)\n\

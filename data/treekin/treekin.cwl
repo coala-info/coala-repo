@@ -23,7 +23,7 @@ inputs:
   - id: bar
     type:
       - 'null'
-      - string
+      - File
     doc: Read barriers input from file instead of standard input. Required in 
       case "-m I" (rates kinetics) AND "-a" (absorbing state) is given
     inputBinding:
@@ -237,7 +237,7 @@ inputs:
   - id: ratesfile
     type:
       - 'null'
-      - string
+      - File
     doc: Read transition rates from file instead of standard input.
     inputBinding:
       position: 102
@@ -330,6 +330,38 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: equil_file_out
+    type:
+      - 'null'
+      - File
+    doc: Equilibrium distribution file
+    outputBinding:
+      glob: $(inputs.equil_file)
+  - id: fpt_file_out
+    type:
+      - 'null'
+      - File
+    doc: First passage time file
+    outputBinding:
+      glob: $(inputs.fptfile)
+  - id: visualize_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Rate graph visualization files (.dot and .eps)
+    outputBinding:
+      glob: $(inputs.visualize + '.*')
+  - id: matrix_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Transition matrix and eigenvalue dumps (mx.txt, mxMat.txt)
+    outputBinding:
+      glob: ["mx*.txt", "mx.bin"]
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treekin:0.5.1--hf3d7b6d_4

@@ -1,5 +1,11 @@
 # t_coffee CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| t_coffee | PASS |  |
+
 ## t_coffee
 
 ### Tool Description

@@ -354,7 +354,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: List of sequences in any acceptable format
     inputBinding:
       position: 101
@@ -363,7 +363,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: List of sequences in any acceptable format
     inputBinding:
       position: 101
@@ -390,7 +390,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: List of sequences in any acceptable format
     inputBinding:
       position: 101
@@ -399,7 +399,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: Input one or many MSA that will be treated as profiles
     inputBinding:
       position: 101
@@ -407,7 +407,7 @@ inputs:
   - id: profile1
     type:
       - 'null'
-      - string
+      - File
     doc: Input one profile (ClustalW option)
     inputBinding:
       position: 101
@@ -415,7 +415,7 @@ inputs:
   - id: profile2
     type:
       - 'null'
-      - string
+      - File
     doc: Input a profile (ClustalW option)
     inputBinding:
       position: 101
@@ -1293,7 +1293,7 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
     doc: File containing the name of the sequences to keep when triming OR a 
       list of names)
     inputBinding:
@@ -1552,7 +1552,7 @@ outputs:
   - id: output_quiet
     type:
       - 'null'
-      - Directory
+      - File
     doc: Defines the file in which the log output is written
     outputBinding:
       glob: $(inputs.quiet)
@@ -1605,12 +1605,31 @@ outputs:
     doc: Name of the output alignment
     outputBinding:
       glob: $(inputs.outfile)
+  - id: output_default_files
+    type:
+      - 'null'
+      - File[]
+    doc: Alignment, guide tree and other files written under their default names
+      (<sequence file name>.aln, .dnd, .html and the other -output formats)
+    outputBinding:
+      glob:
+        - '*.aln'
+        - '*.dnd'
+        - '*.html'
+        - '*.msf'
+        - '*.phylip'
+        - '*.fasta_aln'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement
+    envDef:
+      - envName: TMP_4_TCOFFEE
+        envValue: /tmp
+      - envName: LOCKDIR_4_TCOFFEE
+        envValue: /tmp
+      - envName: CACHE_4_TCOFFEE
+        envValue: /tmp
 hints:
   - class: DockerRequirement
     dockerPull: 
       quay.io/biocontainers/t-coffee:13.46.2.7c9e712d--pl5321hb2a3317_0
-s:url: https://github.com/jashkenas/coffee-script-tmbundle
-$namespaces:
-  s: https://schema.org/

@@ -14,6 +14,7 @@ inputs:
     doc: path to query signature
     inputBinding:
       position: 1
+      prefix: --input
   - id: consensus
     type:
       - 'null'

@@ -1,5 +1,15 @@
 # trgt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trgt_deepdive | PASS | TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added |
+| trgt_genotype | PASS | TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added |
+| trgt_merge | PASS | TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added |
+| trgt_plot | PASS | TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added |
+| trgt_validate | PASS | TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added |
+
 ## trgt_genotype
 
 ### Tool Description

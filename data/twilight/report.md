@@ -1,5 +1,11 @@
 # twilight CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| twilight | Failed | image problem: twilight crashes with illegal instruction (exit 132) on this CPU when aligning 20 SARS-CoV-2 genomes |
+
 ## twilight
 
 ### Tool Description

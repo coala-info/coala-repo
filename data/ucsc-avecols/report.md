@@ -1,5 +1,11 @@
 # ucsc-avecols CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-avecols | PASS |  |
+
 ## ucsc-avecols
 
 ### Tool Description

@@ -7,11 +7,11 @@ label: toil_debug-file
 doc: "Debug and manage files within a Toil job store.\n\nTool homepage: https://toil.ucsc-cgl.org/"
 inputs:
   - id: job_store
-    type: string
-    doc: The location of the job store for the workflow. A job store holds 
-      persistent information about the jobs, stats, and files in a workflow.
+    type: Directory
+    doc: 'The job store directory of the workflow (a file job store). A job store holds persistent information about the jobs, stats, and files in a workflow.'
     inputBinding:
       position: 1
+      valueFrom: $(runtime.outdir + '/' + self.basename)
   - id: fetch
     type:
       - 'null'
@@ -26,23 +26,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Prints a list of the current files in the jobStore.
+    doc: Prints a list of the current files in the jobStore (True or False); the list is written to jobstore_files.txt.
     inputBinding:
       position: 102
       prefix: --listFilesInJobStore
   - id: local_file_path
     type:
       - 'null'
-      - Directory
-    doc: Location to which to copy job store files.
+      - string
+    doc: Location (directory name) to which to copy job store files. The directory is created before the run.
     inputBinding:
       position: 102
       prefix: --localFilePath
   - id: log_colors
     type:
       - 'null'
-      - boolean
-    doc: Enable or disable colored logging.
+      - string
+    doc: Enable or disable colored logging (True or False).
     inputBinding:
       position: 102
       prefix: --logColors
@@ -129,11 +129,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --useSymlinks
-  - id: fetch_entire_job_store_path
+  - id: fetch_entire_job_store
     type:
       - 'null'
       - string
-    doc: ' Copy all job store files into a local directory. (default: None)'
+    doc: 'Copy all job store files into the --localFilePath directory (True or False).'
     inputBinding:
       position: 103
       prefix: --fetchEntireJobStore
@@ -146,13 +146,23 @@ inputs:
       position: 104
       prefix: --logFile
 outputs:
-  - id: fetch_entire_job_store
+  - id: local_files
     type:
       - 'null'
       - Directory
-    doc: Copy all job store files into a local directory.
+    doc: Directory to which job store files were copied (--localFilePath)
     outputBinding:
-      glob: $(inputs.fetch_entire_job_store_path)
+      glob: $(inputs.local_file_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: jobstore_files
+    type:
+      - 'null'
+      - File
+    doc: List of the files in the job store (written with --listFilesInJobStore)
+    outputBinding:
+      glob: jobstore_files.txt
   - id: log_file
     type:
       - 'null'
@@ -162,6 +172,14 @@ outputs:
       glob: $(inputs.log_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.job_store)
+        writable: true
+      - entry: |-
+          ${ return inputs.local_file_path ? {class: 'Directory', basename: inputs.local_file_path, listing: []} : null; }
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/toil:7.0.0--pyhdfd78af_0
+stdout: toil_debug-file.out

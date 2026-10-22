@@ -49,10 +49,20 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: cluster_dirs_out
+    type:
+      type: array
+      items: Directory
+    doc: The cluster directories with the partitioned reads (4_reads.fastq) added
+    outputBinding:
+      glob: |
+        ${ return inputs.cluster_dirs.map(function(d) { return d.basename; }); }
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.cluster_dirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trycycler:0.5.6--pyhdfd78af_0
-stdout: trycycler_partition.out

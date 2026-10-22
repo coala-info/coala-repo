@@ -1,5 +1,11 @@
 # transcriptclean CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| transcriptclean | PASS |  |
+
 ## transcriptclean
 
 ### Tool Description

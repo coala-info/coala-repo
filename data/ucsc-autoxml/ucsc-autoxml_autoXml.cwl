@@ -67,10 +67,18 @@ inputs:
       prefix: -textField=
       separate: false
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_c
+    type: File
+    doc: Generated C structures and parser (root.c)
+    outputBinding:
+      glob: $(inputs.root_name).c
+  - id: output_h
+    type: File
+    doc: Generated C header (root.h)
+    outputBinding:
+      glob: $(inputs.root_name).h
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-autoxml:482--h0b57e2e_0
-stdout: ucsc-autoxml_autoXml.out

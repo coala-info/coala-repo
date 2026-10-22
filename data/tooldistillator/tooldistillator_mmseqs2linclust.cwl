@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - mmseqs2linclust
 label: tooldistillator_mmseqs2linclust
 doc: "Extract information from output(s) of mmseqs2linclust (contig.fasta)\n\nTool

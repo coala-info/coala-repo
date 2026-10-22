@@ -14,8 +14,8 @@ inputs:
       position: 101
       prefix: --alternate-model-base
   - id: alternate_model_filename
-    type: File
-    doc: Tombo model for alternative likelihood ratio significance testing.
+    type: string
+    doc: Output file name for the estimated alternative base tombo model.
     inputBinding:
       position: 101
       prefix: --alternate-model-filename
@@ -53,6 +53,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: min_alt_base_percentage
     type:
       - 'null'
@@ -100,10 +102,17 @@ inputs:
       position: 101
       prefix: --tombo-model-filename
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: alternate_model
+    type: File
+    doc: Estimated alternative base tombo model file
+    outputBinding:
+      glob: $(inputs.alternate_model_filename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fast5_basedirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0
-stdout: tombo_estimate_alt_reference.out

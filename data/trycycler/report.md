@@ -1,5 +1,17 @@
 # trycycler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trycycler_cluster | PASS |  |
+| trycycler_consensus | PASS |  |
+| trycycler_dotplot | PASS |  |
+| trycycler_msa | PASS |  |
+| trycycler_partition | PASS |  |
+| trycycler_reconcile | PASS |  |
+| trycycler_subsample | PASS |  |
+
 ## trycycler_subsample
 
 ### Tool Description

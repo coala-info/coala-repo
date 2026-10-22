@@ -1,5 +1,11 @@
 # ucsc-autodtd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-autodtd_autoDtd | PASS |  |
+
 ## ucsc-autodtd_autoDtd
 
 ### Tool Description

@@ -49,6 +49,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: fishers_method_context
     type:
       - 'null'
@@ -118,6 +120,7 @@ inputs:
       prefix: --tombo-model-filename
   - id: pdf_filename_path
     type: string
+    default: tombo_results.per_read_stats.pdf
     inputBinding:
       position: 102
       prefix: --pdf-filename
@@ -131,6 +134,10 @@ outputs:
       glob: $(inputs.pdf_filename_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fast5_basedirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

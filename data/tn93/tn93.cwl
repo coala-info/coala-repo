@@ -11,7 +11,7 @@ inputs:
       - File
     doc: read sequences to compare from this file (default=stdin)
     inputBinding:
-      position: 1
+      position: 200
   - id: ambigs
     type:
       - 'null'
@@ -180,12 +180,17 @@ inputs:
       position: 102
       prefix: -t
   - id: output_file_path
-    type: string?
+    type:
+      - 'null'
+      - string
     doc: direct the output to a file named OUTPUT (default=stdout)
     inputBinding:
       position: 103
       prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Distances written to standard output (when -o is not used)
   - id: output_file
     type:
       - 'null'
@@ -198,3 +203,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tn93:1.0.15--h9948957_0
+stdout: tn93.out

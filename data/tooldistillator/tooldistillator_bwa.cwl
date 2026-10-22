@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - bwa
 label: tooldistillator_bwa
 doc: "Extract information from output(s) of bwa (input.bam)\n\nTool homepage: https://gitlab.com/ifb-elixirfr/abromics"

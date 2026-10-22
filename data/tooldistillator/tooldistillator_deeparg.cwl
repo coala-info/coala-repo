@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - deeparg
 label: tooldistillator_deeparg
 doc: "Extract information from output(s) of deeparg (report.txt)\n\nTool homepage:

@@ -1,5 +1,11 @@
 # toulligqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| toulligqc | Failed | image problem: toulligqc 2.8.3 crashes in compute_NXX with 'ValueError: sort array is read-only' (pandas/numpy version clash) on both summary and FASTQ input |
+
 ## toulligqc
 
 ### Tool Description

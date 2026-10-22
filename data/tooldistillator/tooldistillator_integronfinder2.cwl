@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - integronfinder2
 label: tooldistillator_integronfinder2
 doc: "Extract information from output(s) of integronfinder2 (OUTPUT.integrons, OUTPUT.summary)\n\

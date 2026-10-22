@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - megahit
 label: tooldistillator_megahit
 doc: "Extract information from output(s) of megahit (contig.fasta)\n\nTool homepage:
@@ -39,7 +39,7 @@ inputs:
   - id: intermediate_contig_folder_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Intermediate contig folder for Megahit assembly for megahit
     inputBinding:
       position: 102

@@ -12,18 +12,23 @@ inputs:
     doc: Feature matrix in HDF5 format.
     inputBinding:
       position: 1
+  - id: output_correlation_path
+    type: string
+    doc: Output sparse COO correlation matrix in HDF5 format.
+    inputBinding:
+      position: 2
   - id: tempfile
     type:
       - 'null'
-      - File
+      - string
     doc: Path to temporary file to use.
     inputBinding:
-      position: 2
+      position: 3
   - id: dataset
     type:
       - 'null'
       - string
-    doc: Name of dataset in input HDF5 file.
+    doc: 'Name of dataset in input HDF5 file. (Default: X)'
     inputBinding:
       position: 103
       prefix: --dataset
@@ -31,7 +36,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Suppress abs correlations below this number.
+    doc: 'Suppress abs correlations below this number. (Default: 0.8)'
     inputBinding:
       position: 103
       prefix: --lower-bound
@@ -54,9 +59,11 @@ inputs:
 outputs:
   - id: output_correlation
     type: File
-    doc: Output sparse COO correlation matrix in HDF5 format.
+    doc: Output sparse COO correlation matrix in HDF5 format
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_correlation_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/turbocor:0.1.1--h5177ac6_0

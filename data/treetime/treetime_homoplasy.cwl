@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: 'TreeTime: Maximum Likelihood Phylodynamics homoplasy'
+baseCommand: [treetime, homoplasy]
 label: treetime_homoplasy
 doc: "Reconstructs ancestral sequences and maps mutations to the tree. The tree is
   then scanned for homoplasies. An excess number of homoplasies might suggest contamination,
@@ -142,6 +142,9 @@ inputs:
       position: 102
       prefix: --outdir
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Homoplasy report printed to the console
   - id: output_directory
     type:
       - 'null'
@@ -154,3 +157,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treetime:0.11.4--pyhdfd78af_0
+stdout: treetime_homoplasy.out

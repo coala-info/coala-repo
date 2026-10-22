@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
+  - treebest
   - pwalign
 label: treebest_pwalign
 doc: "PairWise ALIGNment tool for nt2nt, aa2aa, nt2aa, or splice alignments\n\nTool

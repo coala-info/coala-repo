@@ -1,5 +1,11 @@
 # trf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trf | PASS | added outputs for .dat and .mask files; real FMR1 CGG repeat found |
+
 ## trf
 
 ### Tool Description

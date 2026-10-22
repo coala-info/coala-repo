@@ -1,5 +1,11 @@
 # uc-echo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| uc-echo | PASS | baseCommand fixed to uc-echo (the real command on PATH); 10000 enterovirus reads corrected, 2 bases changed |
+
 ## uc-echo
 
 ### Tool Description

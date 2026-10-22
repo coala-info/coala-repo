@@ -1,5 +1,11 @@
 # ucsc-bamtopsl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bamtopsl | PASS |  |
+
 ## ucsc-bamtopsl
 
 ### Tool Description

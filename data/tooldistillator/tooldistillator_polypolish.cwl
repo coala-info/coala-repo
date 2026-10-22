@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - polypolish
 label: tooldistillator_polypolish
 doc: "Extract information from output(s) of polypolish (contig.fasta)\n\nTool homepage:

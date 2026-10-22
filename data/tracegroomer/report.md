@@ -1,5 +1,11 @@
 # tracegroomer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tracegroomer | PASS |  |
+
 ## tracegroomer
 
 ### Tool Description

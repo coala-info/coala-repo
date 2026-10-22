@@ -1,5 +1,13 @@
 # tracknado CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tracknado_create | PASS |  |
+| tracknado_merge | Not completed | merge needs the original track files at the absolute paths stored in each config, which no longer exist after the create run ended |
+| tracknado_validate | Failed | image problem: UCSC hubCheck is not in the image, so validate exits with an error |
+
 ## tracknado_create
 
 ### Tool Description

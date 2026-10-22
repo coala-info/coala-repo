@@ -1,73 +1,72 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: translatorx_translatorx.pl
+baseCommand: translatorx
 label: translatorx_translatorx.pl
-doc: "TranslatorX is a tool to align nucleotide sequences based on their amino acid
-  translation.\n\nTool homepage: http://pc16141.mncn.csic.es/"
+doc: "TranslatorX aligns nucleotide sequences guided by their amino acid translation: it translates the sequences, aligns the proteins, and back-translates the alignment to codons.\n\nTool homepage: http://pc16141.mncn.csic.es/"
 inputs:
-  - id: exclude_sequences
+  - id: nt_file
+    type: File
+    doc: the file containing the nucleotide sequences in FASTA format (Required)
+    inputBinding:
+      prefix: -i
+  - id: output
+    type:
+      - 'null'
+      - string
+    default: translatorx_res
+    doc: 'output file prefix (Optional). Default: "translatorx_res".'
+    inputBinding:
+      prefix: -o
+  - id: aa_file
     type:
       - 'null'
       - File
-    doc: File containing names of sequences to be excluded
+    doc: file containing the amino acid sequence alignment (Optional)
     inputBinding:
-      position: 101
-      prefix: -e
+      prefix: -a
+  - id: program
+    type:
+      - 'null'
+      - string
+    doc: "program to build the multiple alignment (Optional). Available options are: M/C/F/P, standing for Muscle, Clustalw, Prank, and maFft. Default: Muscle"
+    inputBinding:
+      prefix: -p
   - id: genetic_code
     type:
       - 'null'
       - int
-    doc: 'Genetic code table number (default 1: Standard)'
+    doc: "genetic code to translate the sequences (Optional), as an NCBI table number (1 Standard, 2 Vertebrate Mitochondrial, 3 Yeast Mitochondrial, 4 Mold/Protozoan Mitochondrial, 5 Invertebrate Mitochondrial, 6 Ciliate Nuclear, 9 Echinoderm/Flatworm Mitochondrial, 10 Euplotid Nuclear, 11 Bacterial and Plant Plastid, and others). Default: 1 (Standard code)"
     inputBinding:
-      position: 101
       prefix: -c
-  - id: input_file
-    type: File
-    doc: Input file (FASTA format) containing nucleotide sequences
+  - id: genetic_codes_file
+    type:
+      - 'null'
+      - File
+    doc: "file containing alternative genetic codes for each taxon. (Optional) File format: Taxon<TAB>genetic_code[number]"
     inputBinding:
-      position: 101
-      prefix: -i
-  - id: output_format
+      prefix: -j
+  - id: gblocks_params
     type:
       - 'null'
       - string
-    doc: 'Output format: [fasta|phylip|clustal]'
+    doc: 'parameters for GBlocks (Optional). Example: "-b2 x -b3 x -b4 x..."'
     inputBinding:
-      position: 101
-      prefix: -w
-  - id: protein_alignment_program
+      prefix: -g
+  - id: guess_reading_frame
     type:
       - 'null'
       - string
-    doc: 'Protein alignment program: [mafft|muscle|clustal|t_coffee]'
+    doc: "F/T. Guess reading frame (Optional)[default F]"
     inputBinding:
-      position: 101
-      prefix: -p
-  - id: trim_alignment
-    type:
-      - 'null'
-      - boolean
-    doc: Trim the alignment using GBlocks
-    inputBinding:
-      position: 101
       prefix: -t
-  - id: output_prefix_path
-    type: string
-    doc: Output or path parameter `output_prefix_path`
-    inputBinding:
-      position: 102
-      prefix: --output-prefix
 outputs:
-  - id: output_prefix
+  - id: result_files
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Output file prefix
+      type: array
+      items: File
+    doc: Alignments (nucleotide and amino acid), HTML report and log written with the output prefix
     outputBinding:
-      glob: $(inputs.output_prefix_path)*
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/translatorx:1.1--pl5.22.0_0

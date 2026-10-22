@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - sylphtax
 label: tooldistillator_sylphtax
 doc: "Extract information from output(s) of sylphtax (merge_report.tsv)\n\nTool homepage:
@@ -47,7 +47,7 @@ inputs:
   - id: taxonomic_profile_folder_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Taxonomic profile folder for sylph-tax for sylphtax
     inputBinding:
       position: 102

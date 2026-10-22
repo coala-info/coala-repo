@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - eggnogmapper
 label: tooldistillator_eggnogmapper
 doc: "Extract information from output(s) of eggnogmapper (annotations_report.tsv)\n\

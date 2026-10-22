@@ -1,5 +1,11 @@
 # treemix CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| treemix | PASS | CWL rewritten from help (-o, -tf, -micro, -cor_mig, -seed, -n_warn); input built from real HapMap3 allele frequencies |
+
 ## treemix
 
 ### Tool Description

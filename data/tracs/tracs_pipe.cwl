@@ -32,7 +32,7 @@ inputs:
       \       if the distance between them is below this threshold."
     inputBinding:
       position: 101
-      prefix: --cluster_threshold
+      prefix: -c
   - id: consensus
     type:
       - 'null'
@@ -44,7 +44,7 @@ inputs:
       position: 101
       prefix: --consensus
   - id: database
-    type: string
+    type: File
     doc: path to database signatures
     inputBinding:
       position: 101
@@ -217,7 +217,7 @@ inputs:
       \        of intermediate hosts <= K"
     inputBinding:
       position: 101
-      prefix: --trans_threshold
+      prefix: -K
   - id: trim
     type:
       - 'null'

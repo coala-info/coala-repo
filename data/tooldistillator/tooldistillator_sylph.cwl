@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - sylph
 label: tooldistillator_sylph
 doc: "Extract information from output(s) of sylph (report.tsv)\n\nTool homepage: https://gitlab.com/ifb-elixirfr/abromics"

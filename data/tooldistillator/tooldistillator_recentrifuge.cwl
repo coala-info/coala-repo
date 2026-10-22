@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - recentrifuge
 label: tooldistillator_recentrifuge
 doc: "Extract information from output(s) of recentrifuge (data.tsv)\n\nTool homepage:

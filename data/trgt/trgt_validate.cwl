@@ -25,6 +25,8 @@ inputs:
       prefix: --flank-len
   - id: genome
     type: File
+    secondaryFiles:
+      - .fai
     doc: Path to reference genome FASTA
     inputBinding:
       position: 101
@@ -38,8 +40,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Specify multiple times to increase verbosity level (e.g., -vv for more verbosity)
     inputBinding:
       position: 101

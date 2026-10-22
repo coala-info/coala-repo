@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treetime_clock
+baseCommand: [treetime, clock]
 label: treetime_clock
 doc: "Calculates the root-to-tip regression and quantifies the 'clock-i-ness' of the
   tree. It will reroot the tree to maximize the clock-like signal and recalculate
@@ -99,7 +99,7 @@ inputs:
   - id: plot_rtt
     type:
       - 'null'
-      - File
+      - string
     doc: filename to save the plot to. Suffix will determine format (choices 
       pdf, png, svg, default=pdf)
     inputBinding:

@@ -1,5 +1,16 @@
 # transanno CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| transanno_chain-to-bed-vcf | PASS |  |
+| transanno_left-align | PASS |  |
+| transanno_liftbed | PASS |  |
+| transanno_liftgene | PASS |  |
+| transanno_liftvcf | PASS |  |
+| transanno_minimap2chain | PASS |  |
+
 ## transanno_left-align
 
 ### Tool Description

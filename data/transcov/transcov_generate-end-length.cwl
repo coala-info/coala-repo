@@ -4,42 +4,46 @@ baseCommand:
   - transcov
   - generate-end-length
 label: transcov_generate-end-length
-doc: "Generate end-length distributions from BAM and BED files.\n\nTool homepage:
-  https://github.com/hogfeldt/transcov"
+doc: "Generate an end-length tensor from a BAM file and a BED file\n\nTool homepage: https://github.com/hogfeldt/transcov"
 inputs:
   - id: bam_file
     type: File
-    doc: Input BAM file
+    secondaryFiles:
+      - pattern: '.bai'
+        required: true
+    doc: "Sorted and indexed BAM file"
     inputBinding:
       position: 1
   - id: bed_file
     type: File
-    doc: Input BED file
+    doc: "BED file with the regions (for example transcription start sites)"
     inputBinding:
       position: 2
+  - id: output_file
+    type:
+      - 'null'
+      - string
+    default: end_length_tensor.npy
+    doc: "Output file name"
+    inputBinding:
+      prefix: --output-file
   - id: max_length
     type:
       - 'null'
       - int
-    doc: Maximum length for distributions
+    default: 500
+    doc: "Maximum fragment length"
     inputBinding:
-      position: 103
       prefix: --max-length
-  - id: output_file_path
-    type: string
-    inputBinding:
-      position: 104
-      prefix: --output-file
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file path
+  - id: output_matrix
+    type: File
+    secondaryFiles:
+      - pattern: '^.index'
+        required: true
+    doc: "End-length tensor (.npy) with its index file"
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transcov:1.1.3--py_0

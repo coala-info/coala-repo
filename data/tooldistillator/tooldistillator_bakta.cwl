@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - bakta
 label: tooldistillator_bakta
 doc: "Extract information from output(s) of bakta (OUTPUT.json)\n\nTool homepage:

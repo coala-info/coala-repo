@@ -17,7 +17,7 @@ inputs:
     inputBinding:
       position: 2
   - id: sample2file
-    type: string
+    type: File
     doc: 'Mapping from samples to fasta files (also see gitHub help): sample1_file_name{tab}sample1_name
       sample2_file_name{tab}sample2_name'
     inputBinding:
@@ -34,6 +34,13 @@ inputs:
     doc: 'Output directory (default: phenolyzer_output)'
     inputBinding:
       position: 5
+  - id: previous_output
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory of an earlier annotation, copied into the working directory
+      under the output_dir name (needed for the from_annotation_summary mode, which
+      reads annotation/pfam/summary.dat from it)
   - id: cpus
     type:
       - 'null'
@@ -129,6 +136,13 @@ outputs:
     doc: 'Output directory (default: phenolyzer_output)'
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir)
+        entry: '$(inputs.previous_output ? inputs.previous_output : {"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/traitar:3.0.1--pyhdfd78af_0

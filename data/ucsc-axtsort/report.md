@@ -1,5 +1,11 @@
 # ucsc-axtsort CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-axtsort | PASS |  |
+
 ## ucsc-axtsort
 
 ### Tool Description

@@ -213,10 +213,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --umitools-option
     doc: pass UMITOOLSOPT to `umi_tools group` (see `umi_tools group --help`)
     inputBinding:
       position: 101
-      prefix: --umitools-option
   - id: variance_estimator
     type:
       - 'null'

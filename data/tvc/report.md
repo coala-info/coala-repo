@@ -1,5 +1,11 @@
 # tvc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tvc | Not completed | needs an Ion Torrent BAM with flow order and flow signals; no small public test data found, an Illumina BAM stops with 'read group 1 does not have a flow order' |
+
 ## tvc
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # trand CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trand | PASS |  |
+
 ## trand
 
 ### Tool Description

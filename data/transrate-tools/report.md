@@ -1,5 +1,11 @@
 # transrate-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| transrate-tools_bam-read | PASS |  |
+
 ## transrate-tools_bam-read
 
 ### Tool Description

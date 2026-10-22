@@ -14,6 +14,7 @@ inputs:
     doc: Input fasta files formatted by the align and merge functions
     inputBinding:
       position: 1
+      prefix: --msa
   - id: clock_rate
     type:
       - 'null'
@@ -98,7 +99,7 @@ inputs:
       hosts <= K
     inputBinding:
       position: 102
-      prefix: --trans_threshold
+      prefix: -K
   - id: output_file_path
     type: string
     inputBinding:

@@ -1,5 +1,11 @@
 # troika-tb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| troika-tb_troika | Not completed | pipeline, skipped (Snakemake pipeline that starts TB-profiler, Snippy and Kraken containers itself) |
+
 ## troika-tb_troika
 
 ### Tool Description

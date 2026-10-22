@@ -80,7 +80,8 @@ inputs:
     type: File
     doc: (gzipped) fasta or wildtype ab1 file
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 102
       prefix: --reference

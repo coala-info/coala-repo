@@ -1,5 +1,11 @@
 # topas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| topas_consensusseqlfromvcfs | PASS |  |
+
 ## topas_consensusseqlfromvcfs
 
 ### Tool Description

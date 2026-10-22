@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - kraken2
 label: tooldistillator_kraken2
 doc: "Extract information from output(s) of kraken2 (report.tsv)\n\nTool homepage:

@@ -4,23 +4,38 @@ baseCommand:
   - transcov
   - generate-read-ends
 label: transcov_generate-read-ends
-doc: "Generate read ends from BAM and BED files.\n\nTool homepage: https://github.com/hogfeldt/transcov"
+doc: "Generate a read-ends matrix from a BAM file and a BED file\n\nTool homepage: https://github.com/hogfeldt/transcov"
 inputs:
   - id: bam_file
     type: File
-    doc: Input BAM file
+    secondaryFiles:
+      - pattern: '.bai'
+        required: true
+    doc: "Sorted and indexed BAM file"
     inputBinding:
       position: 1
   - id: bed_file
     type: File
-    doc: Input BED file
+    doc: "BED file with the regions (for example transcription start sites)"
     inputBinding:
       position: 2
+  - id: output_file
+    type:
+      - 'null'
+      - string
+    default: read_ends_matrix.npy
+    doc: "Output file name"
+    inputBinding:
+      prefix: --output-file
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_matrix
+    type: File
+    secondaryFiles:
+      - pattern: '^.index'
+        required: true
+    doc: "Read-ends matrix (.npy) with its index file"
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transcov:1.1.3--py_0
-stdout: transcov_generate-read-ends.out

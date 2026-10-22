@@ -5,7 +5,7 @@ label: triqler
 doc: "Triqler version 0.9.1\n\nTool homepage: https://github.com/statisticalbiotechnology/triqler"
 inputs:
   - id: in_file
-    type: string
+    type: File
     doc: List of PSMs with abundances (not log transformed!) and search engine 
       score. See README for a detailed description of the columns.
     inputBinding:
@@ -92,7 +92,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Path to output file (writing in TSV format). N.B. if
+    doc: Path to output file (writing in TSV format). N.B. if more than 2 
+      treatment groups are present, suffixes will be added before the file 
+      extension.
     inputBinding:
       position: 103
       prefix: --out_file
@@ -121,12 +123,16 @@ outputs:
   - id: out_file
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Path to output file (writing in TSV format). N.B. if more than 2 
       treatment groups are present, suffixes will be added before the file 
-      extension.
+      extension (one file per pair of groups).
     outputBinding:
-      glob: $(inputs.out_file_path)
+      glob: |
+        ${ var p = inputs.out_file_path ? inputs.out_file_path : "proteins.tsv";
+           var m = p.match(/^(.*?)(\.[^.\/]*)?$/);
+           return m[1] + "*" + (m[2] ? m[2] : ""); }
   - id: write_protein_posteriors
     type:
       - 'null'
@@ -151,8 +157,20 @@ outputs:
       format.
     outputBinding:
       glob: $(inputs.write_fold_change_posteriors_path)
+  - id: peptide_quant_rows
+    type:
+      - 'null'
+      - File
+    doc: Peptide quantification rows written next to the input file 
+      (<in_file>.pqr.tsv).
+    outputBinding:
+      glob: $(inputs.in_file.basename).pqr.tsv
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.in_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/triqler:0.9.1--pyhdfd78af_0

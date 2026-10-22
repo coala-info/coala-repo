@@ -4,13 +4,6 @@ baseCommand: twilight
 label: twilight
 doc: "TWILIGHT Command Line Arguments:\n\nTool homepage: https://github.com/TurakhiaLab/TWILIGHT"
 inputs:
-  - id: add_new_sequences_to_existing_msa
-    type:
-      - 'null'
-      - boolean
-    doc: Add New Sequences to Existing MSA
-    inputBinding:
-      position: 101
   - id: backbone_alignments
     type:
       - 'null'
@@ -27,13 +20,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --blosum
-  - id: build_msa_from_unaligned_sequences
-    type:
-      - 'null'
-      - boolean
-    doc: Build MSA From Unaligned Sequences
-    inputBinding:
-      position: 101
   - id: check_alignment
     type:
       - 'null'
@@ -183,13 +169,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --max-subtree
-  - id: merge_multiple_msas
-    type:
-      - 'null'
-      - boolean
-    doc: Merge Multiple MSAs
-    inputBinding:
-      position: 101
   - id: min_sequence_length
     type:
       - 'null'

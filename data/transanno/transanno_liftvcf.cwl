@@ -63,6 +63,9 @@ inputs:
       prefix: --ignore-fasta-length-mismatch
   - id: new_assembly
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: New assembly FASTA (.fai file is required)
     inputBinding:
       position: 101
@@ -118,6 +121,9 @@ inputs:
       prefix: --noswap
   - id: original_assembly
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: Original assembly FASTA (.fai file is required)
     inputBinding:
       position: 101

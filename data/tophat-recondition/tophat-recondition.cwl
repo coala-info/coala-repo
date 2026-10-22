@@ -13,8 +13,8 @@ inputs:
   - id: mapped_file
     type:
       - 'null'
-      - File
-    doc: Name of the file containing mapped reads
+      - string
+    doc: Name of the file containing mapped reads (default accepted_hits.bam)
     inputBinding:
       position: 102
       prefix: --mapped-file
@@ -29,8 +29,8 @@ inputs:
   - id: unmapped_file
     type:
       - 'null'
-      - File
-    doc: Name of the file containing unmapped reads
+      - string
+    doc: Name of the file containing unmapped reads (default unmapped.bam)
     inputBinding:
       position: 102
       prefix: --unmapped-file
@@ -38,13 +38,15 @@ inputs:
     type:
       - 'null'
       - string
+    doc: log file (optional, default result_dir/tophat-recondition.log)
     inputBinding:
       position: 103
       prefix: --logfile
   - id: result_dir_path
-    type:
-      - 'null'
-      - string
+    type: string
+    default: recondition_out
+    doc: Name of the directory to write unmapped_fixup.bam to. It is created before
+      the run (the input directory is read-only).
     inputBinding:
       position: 104
       prefix: --result_dir
@@ -53,18 +55,23 @@ outputs:
     type:
       - 'null'
       - File
-    doc: 'log file (optional, (default: result_dir/tophat-recondition.log)'
+    doc: log file
     outputBinding:
-      glob: $(inputs.logfile_path)
+      glob: "$(inputs.logfile_path ? inputs.logfile_path : inputs.result_dir_path + '/tophat-recondition.log')"
   - id: result_dir
     type:
       - 'null'
       - Directory
-    doc: 'directory to write unmapped_fixup.bam to (default: tophat_output_dir)'
+    doc: directory with unmapped_fixup.bam
     outputBinding:
       glob: $(inputs.result_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.result_dir_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tophat-recondition:1.4--py35_0

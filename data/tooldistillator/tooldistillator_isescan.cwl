@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - isescan
 label: tooldistillator_isescan
 doc: "Extract information from output(s) of isescan (OUTPUT.tsv)\n\nTool homepage:

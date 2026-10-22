@@ -5,11 +5,6 @@ label: trinotate_Trinotate
 doc: "Trinotate: Annotation of,\"Trinity\"-assembled Transcriptome sequences.\n\n\
   Tool homepage: https://trinotate.github.io/"
 inputs:
-  - id: command
-    type: string
-    doc: Command to execute
-    inputBinding:
-      position: 1
   - id: blast_type
     type:
       - 'null'
@@ -180,9 +175,8 @@ inputs:
   - id: run
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Run specific annotation computes or ALL
+      - string
+    doc: Run specific annotation computes or ALL (several values in one quoted string, separated by spaces)
     inputBinding:
       position: 102
       prefix: --run
@@ -221,7 +215,17 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (the report when --report is used)
+  - id: db_out
+    type: File
+    doc: The Trinotate sqlite database after the step (updated in place)
+    outputBinding:
+      glob: $(inputs.db.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.db)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trinotate:4.0.2--pl5321hdfd78af_0

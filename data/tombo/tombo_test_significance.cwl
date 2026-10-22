@@ -45,6 +45,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: corrected_group
     type:
       - 'null'
@@ -61,6 +63,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: fishers_method_context
     type:
       - 'null'
@@ -108,7 +112,7 @@ inputs:
   - id: single_read_threshold
     type:
       - 'null'
-      - string
+      - float
     doc: P-value or log likelihood ratio threshold when computing fraction of 
       significant reads at each genomic position.
     inputBinding:
@@ -129,14 +133,22 @@ inputs:
       position: 102
       prefix: --statistics-file-basename
 outputs:
-  - id: statistics_file_basename
-    type: File
-    doc: File base name to save base by base statistics from testing. Filenames 
-      will be [--statistics-file-basename].[--alternate-bases]?.tombo.stats
+  - id: statistics_files
+    type:
+      type: array
+      items: File
+    doc: Base by base statistics files (<basename>.tombo.stats, or 
+      <basename>.<alternate base>.tombo.stats)
     outputBinding:
-      glob: $(inputs.statistics_file_basename_path)
+      glob: $(inputs.statistics_file_basename_path + '*.tombo.stats')
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.control_fast5_basedirs)
+        writable: true
+      - entry: $(inputs.fast5_basedirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

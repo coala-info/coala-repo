@@ -13,10 +13,9 @@ inputs:
       recursively within this base directory will be processed.
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: genome_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: Path to fasta file for mapping.
     inputBinding:
       position: 2
@@ -67,7 +66,7 @@ inputs:
   - id: bwa_mem_executable
     type:
       - 'null'
-      - File
+      - string
     doc: Path to bwa-mem executable.
     inputBinding:
       position: 103
@@ -91,7 +90,7 @@ inputs:
   - id: graphmap_executable
     type:
       - 'null'
-      - File
+      - string
     doc: Path to graphmap executable.
     inputBinding:
       position: 103
@@ -107,7 +106,7 @@ inputs:
   - id: minimap2_executable
     type:
       - 'null'
-      - File
+      - string
     doc: Path to minimap2 executable.
     inputBinding:
       position: 103
@@ -210,20 +209,40 @@ inputs:
       position: 103
       prefix: --timeout
   - id: failed_reads_filename_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 104
       prefix: --failed-reads-filename
 outputs:
+  - id: resquiggled_fast5_dir
+    type: Directory
+    doc: FAST5 directory with re-squiggled reads (corrected group added in 
+      place)
+    outputBinding:
+      glob: $(inputs.fast5_basedir.basename)
+  - id: tombo_index_files
+    type:
+      type: array
+      items: File
+    doc: Tombo index files (hidden files named .<fast5 directory>.<corrected 
+      group>.tombo.index) written beside the fast5 directories.
+    outputBinding:
+      glob: .*.tombo.index
   - id: failed_reads_filename
     type:
       - 'null'
       - File
-    doc: Output failed read filenames with assoicated error.
+    doc: Output failed read filenames with associated error.
     outputBinding:
       glob: $(inputs.failed_reads_filename_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fast5_basedir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

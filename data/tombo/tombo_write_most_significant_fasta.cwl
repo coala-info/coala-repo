@@ -34,13 +34,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: genome_fasta
     type:
       - 'null'
       - File
     doc: FASTA file used to re-squiggle. For faster sequence access.
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --genome-fasta
@@ -93,6 +93,7 @@ inputs:
       prefix: --statistics-filename
   - id: sequences_filename_path
     type: string
+    default: tombo_results.significant_regions.fasta
     inputBinding:
       position: 102
       prefix: --sequences-filename
@@ -107,6 +108,10 @@ outputs:
       glob: $(inputs.sequences_filename_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fast5_basedirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

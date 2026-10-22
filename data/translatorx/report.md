@@ -1,5 +1,11 @@
 # translatorx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| translatorx_translatorx.pl | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

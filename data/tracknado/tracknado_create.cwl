@@ -88,11 +88,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --input-files
     doc: A list of local track files (bigWig, bigBed, BAM, etc.) to include in 
       the hub.
     inputBinding:
       position: 101
-      prefix: --input-files
   - id: metadata
     type:
       - 'null'
@@ -142,11 +143,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --supergroup-by
     doc: One or more metadata columns to use for top-level track grouping 
       (SuperTracks).
     inputBinding:
       position: 101
-      prefix: --supergroup-by
   - id: twobit
     type:
       - 'null'
@@ -168,7 +170,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: PATH  The directory where the staged hub and        │
+    doc: The directory where the staged hub and tracknado_config.json will be created.
     inputBinding:
       position: 102
       prefix: --output
@@ -176,7 +178,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: PATH  Create a template metadata file at the        │
+    doc: Create a template metadata file at the specified path and exit.
     inputBinding:
       position: 103
       prefix: --template
@@ -198,6 +200,10 @@ outputs:
       glob: $(inputs.template_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.input_files ? inputs.input_files : [])"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tracknado:0.3.1--pyhdfd78af_0

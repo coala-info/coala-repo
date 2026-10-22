@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - plasmidfinder
 label: tooldistillator_plasmidfinder
 doc: "Extract information from output(s) of plasmidfinder (plasmidfinder.tsv)\n\n\

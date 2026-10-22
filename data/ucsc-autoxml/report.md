@@ -1,5 +1,11 @@
 # ucsc-autoxml CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-autoxml_autoXml | PASS |  |
+
 ## ucsc-autoxml_autoXml
 
 ### Tool Description

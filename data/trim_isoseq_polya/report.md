@@ -1,9 +1,15 @@
 # trim_isoseq_polya CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trim_isoseq_polya | PASS | new CWL for trim_isoseq_polyA; nf-core isoseq lima output converted to FASTA, all 104 polyA tails removed |
+
 ## trim_isoseq_polya
 
 ### Tool Description
-Trim polyA tails from Iso-Seq reads.
+Trims the polyA tail from the 3-prime ends of FASTA sequences (Iso-seq) using an HMM.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/trim_isoseq_polya:0.0.3--h7c8eefc_0
@@ -11,27 +17,27 @@ Trim polyA tails from Iso-Seq reads.
 - **Package**: https://anaconda.org/channels/bioconda/packages/trim_isoseq_polya/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/trim_isoseq_polya/overview
-- **Total Downloads**: 3.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/PacificBiosciences/trim_isoseq_polyA
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/trim_isoseq_polya:0.0.3--h7c8eefc_0' locally
-0.0.3--h7c8eefc_0: Pulling from biocontainers/trim_isoseq_polya
-1dbcab28ce46: Already exists
-cfb1ba34637d: Already exists
-ace2d8a63dd5: Already exists
-75c080ef15eb: Already exists
-316957f8baaf: Already exists
-dbd31e1d863d: Already exists
-2f8531d5a6ec: Already exists
-1dbcab28ce46: Already exists
-2e178fd72baf: Already exists
-f2c8c09b1af7: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob2861467501: no space left on device
-
-Run 'docker run --help' for more information
+Error: the option '--input' is required but missing
+this program trims the polyA tail specifically from the 3' ends of fasta files:
+  -h [ --help ]                   display this help message and exit
+  -i [ --input ] arg              The input fasta file with polyA, can be 
+                                  compressed by gzip or bzip2
+  -m [ --model ] arg              HMM model file to use; if not specified, will
+                                  use default values
+  -a [ --polyA_training ] arg     Fasta file with polyA sequences for training 
+                                  with maximum-likelihood estimation
+  -b [ --non_polyA_training ] arg Fasta file with non-polyA sequences for 
+                                  training with maximum-likelihood estimation
+  -n [ --new_model ] arg          New trained model file to output
+  -c [ --color ]                  To color polyA sequences in the output 
+                                  instead of trimming away them
+  -t [ --thread ] arg (=8)        Number of threads to use
+  -G [ --generic ]                Input is generic fasta format; By default, 
+                                  this script adjusts the coordinate in the 
+                                  header section of output fasta format for 
+                                  Iso-seq input. This option switches off this 
+                                  behavior.
 ```
 

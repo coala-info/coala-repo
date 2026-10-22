@@ -106,6 +106,30 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Tandem repeat data files (written with -d)
+    outputBinding:
+      glob: '*.dat'
+  - id: masked_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Masked sequence files (written with -m)
+    outputBinding:
+      glob: '*.mask'
+  - id: html_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: HTML report files (written unless -h is given)
+    outputBinding:
+      glob: '*.html'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trf:4.10.0rc2--h7b50bb2_0

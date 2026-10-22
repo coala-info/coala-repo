@@ -4,34 +4,42 @@ baseCommand:
   - transcov
   - collapse
 label: transcov_collapse
-doc: "\nTool homepage: https://github.com/hogfeldt/transcov"
+doc: "Collapse (sum) several matrices or tensors of the same shape into one\n\nTool homepage: https://github.com/hogfeldt/transcov"
 inputs:
   - id: matrices
     type:
       - 'null'
-      - type: array
-        items: string
+      - File[]
+    secondaryFiles:
+      - pattern: '^.index'
+        required: true
+    doc: "Matrices or tensors (.npy), each with its .index file"
     inputBinding:
       position: 1
   - id: output_file
     type:
       - 'null'
       - string
+    default: collapsed_sample.npy
+    doc: "Output file name"
     inputBinding:
-      position: 102
       prefix: --output-file
   - id: uint32
     type:
       - 'null'
       - boolean
+    doc: "Change the data type to uint32"
     inputBinding:
-      position: 102
       prefix: --uint32
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_matrix
+    type: File
+    secondaryFiles:
+      - pattern: '^.index'
+        required: true
+    doc: "Collapsed matrix (.npy) with its index file"
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transcov:1.1.3--py_0
-stdout: transcov_collapse.out

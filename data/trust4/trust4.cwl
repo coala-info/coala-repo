@@ -140,17 +140,16 @@ inputs:
       position: 101
       prefix: --UMI
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_prefix_files
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Files written with the prefix given in output_prefix (default prefix 
+      trust)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$((inputs.output_prefix ? inputs.output_prefix : 'trust') + '_*')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trust4:1.1.8--h5ca1c30_0
-stdout: trust4.out

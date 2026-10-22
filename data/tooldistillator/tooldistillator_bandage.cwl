@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - bandage
 label: tooldistillator_bandage
 doc: "Extract information from output(s) of bandage (OUTPUT.txt)\n\nTool homepage:

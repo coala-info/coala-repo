@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - filtlong
 label: tooldistillator_filtlong
 doc: "Extract information from output(s) of filtlong (input.fastq)\n\nTool homepage:

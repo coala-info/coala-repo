@@ -167,6 +167,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --skipgaps2
+  - id: no_skipgaps
+    type:
+      - 'null'
+      - boolean
+    doc: Columns containing gaps count as diffs (--noskipgaps).
+    inputBinding:
+      position: 101
+      prefix: --noskipgaps
+  - id: no_skipgaps2
+    type:
+      - 'null'
+      - boolean
+    doc: Columns adjacent to a gap count as diffs (--noskipgaps2).
+    inputBinding:
+      position: 101
+      prefix: --noskipgaps2
   - id: ucl
     type:
       - 'null'

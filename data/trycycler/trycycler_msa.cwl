@@ -45,10 +45,16 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: cluster_dir_out
+    type: Directory
+    doc: The cluster directory with the results of this step added
+    outputBinding:
+      glob: $(inputs.cluster_dir.basename)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.cluster_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trycycler:0.5.6--pyhdfd78af_0
-stdout: trycycler_msa.out

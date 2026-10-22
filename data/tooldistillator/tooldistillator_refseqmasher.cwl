@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - refseqmasher
 label: tooldistillator_refseqmasher
 doc: "Extract information from output(s) of refseqmasher (OUTPUT.tsv)\n\nTool homepage:

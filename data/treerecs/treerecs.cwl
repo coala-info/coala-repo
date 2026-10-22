@@ -89,10 +89,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --output-format
     doc: 'output format(s): newick, nhx, phyloxml, recphyloxml or svg.'
     inputBinding:
       position: 101
-      prefix: --output-format
   - id: output_without_description
     type:
       - 'null'

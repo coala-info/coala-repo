@@ -1,5 +1,11 @@
 # trnascan-se CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trnascan-se | PASS |  |
+
 ## trnascan-se
 
 ### Tool Description

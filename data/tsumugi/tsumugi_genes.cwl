@@ -9,7 +9,7 @@ inputs:
   - id: drop_gene_symbol
     type:
       - 'null'
-      - string
+      - File
     doc: Drop annotations with gene symbols or gene pairs listed in a text file
     inputBinding:
       position: 101
@@ -34,7 +34,7 @@ inputs:
   - id: keep_gene_symbol
     type:
       - 'null'
-      - string
+      - File
     doc: Keep ONLY annotations with gene symbols or gene pairs listed in a text 
       file
     inputBinding:

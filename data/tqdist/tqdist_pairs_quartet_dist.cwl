@@ -24,17 +24,28 @@ inputs:
       number of leaves, triplets, triplet distance, normalized distance, and 
       resolved/unresolved triplet counts
     inputBinding:
-      position: 103
+      position: 0
       prefix: -v
+  - id: output_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Name of a file to write the output to; if not specified, output is written
+      to stdout.
+    inputBinding:
+      position: 3
 outputs:
   - id: output_filename
     type:
       - 'null'
       - File
-    doc: File to write the output to; if not specified, output is written to 
-      stdout
+    doc: Output file, when an output filename is given
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_filename_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output (the distances when no output filename is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
+stdout: tqdist_pairs_quartet_dist.out

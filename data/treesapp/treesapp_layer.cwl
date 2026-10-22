@@ -1,49 +1,53 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - treesapp
-  - layer
+baseCommand: [treesapp, layer]
 label: treesapp_layer
-doc: "This script adds extra feature annotations, such as Subgroup and Metabolic Pathway,
-  to an existing classification table made by treesapp assign. A new column is bound
-  to the table for each feature.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
+doc: "Adds extra feature annotations, such as Subgroup and Metabolic Pathway, to an existing classification table made by treesapp assign.\n\nTool homepage: https://github.com/hallamlab/TreeSAPP"
 inputs:
-  - id: overwrite
-    type:
-      - 'null'
-      - boolean
-    doc: Overwrites previously written output files and directories
+  - id: treesapp_output
+    type: Directory
+    doc: "The TreeSAPP output directory (staged writable; the classification table is updated)."
     inputBinding:
       position: 101
-      prefix: --overwrite
+      prefix: --treesapp_output
+      valueFrom: $(inputs.treesapp_output.basename)
   - id: refpkg_dir
     type:
       - 'null'
       - Directory
-    doc: Path to the directory containing reference package pickle (.pkl) files.
+    doc: "Path to the directory containing reference package pickle (.pkl) files. [ DEFAULT = treesapp/data/ ]"
     inputBinding:
       position: 101
       prefix: --refpkg_dir
+  - id: overwrite
+    type:
+      - 'null'
+      - boolean
+    doc: "Overwrites previously written output files and directories"
+    inputBinding:
+      position: 101
+      prefix: --overwrite
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Prints a more verbose runtime log
+    doc: "Prints a more verbose runtime log"
     inputBinding:
       position: 101
       prefix: --verbose
-  - id: output_path
-    type: string
-    inputBinding:
-      position: 102
-      prefix: --treesapp_output
 outputs:
-  - id: output
-    type: Directory
-    doc: The TreeSAPP output directory.
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: "TreeSAPP output directory with the layered classification table"
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.treesapp_output.basename)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.treesapp_output)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

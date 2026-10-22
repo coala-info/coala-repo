@@ -1,5 +1,12 @@
 # tritimap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tritimap_init | PASS |  |
+| tritimap_run | Not completed | pipeline, skipped (Snakemake pipeline for wheat QTL mapping and assembly) |
+
 ## tritimap_init
 
 ### Tool Description

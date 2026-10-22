@@ -1,5 +1,11 @@
 # translate-gard CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| translate-gard | Failed | tool bug: the value given to -j is silently ignored (the tool always uses INPUT.json); with -j set to that name the output matches the upstream test values (661 models, score 8787.1). |
+
 ## translate-gard
 
 ### Tool Description

@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - tabular_file
 label: tooldistillator_tabular_file
 doc: "Extract information from output(s) of tabular_file (report.tsv)\n\nTool homepage:

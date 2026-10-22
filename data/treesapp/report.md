@@ -1,5 +1,21 @@
 # treesapp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| treesapp_abundance | PASS | rewritten from help; ran on shipped assign output with paired reads |
+| treesapp_assign | Failed | image problem: treesapp crashes in jplace_parser (json.load encoding keyword, Python 3.9) |
+| treesapp_colour | PASS | rewritten from help |
+| treesapp_create | Failed | image problem: java is missing in the image (BMGE.jar in the default training step); only --stage support finishes |
+| treesapp_evaluate | Failed | image problem: the assign step inside evaluate crashes in jplace_parser (json.load encoding keyword), so no classification table is written |
+| treesapp_layer | Failed | image problem: treesapp crashes in jplace_parser (json.load encoding keyword, Python 3.9) |
+| treesapp_package | PASS | rewritten from help; view and rename tested |
+| treesapp_phylotu | Failed | image problem: treesapp crashes in jplace_parser (json.load encoding keyword, Python 3.9) |
+| treesapp_purity | Failed | image problem: the assign step inside purity crashes in jplace_parser (json.load encoding keyword), so no classification table is written |
+| treesapp_train | Failed | image problem: java is missing in the image (BMGE.jar trimming step) |
+| treesapp_update | PASS | rewritten from help; ran on the shipped PuhA assign output with --cluster |
+
 ## treesapp_abundance
 
 ### Tool Description

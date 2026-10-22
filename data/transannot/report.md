@@ -1,5 +1,11 @@
 # transannot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| transannot_easytransannot | Not completed | needs the Pfam-A.full, eggNOG and SwissProt MMseqs2 databases (many GB) and the Plass assembler, which is not in the image |
+
 ## transannot_easytransannot
 
 ### Tool Description

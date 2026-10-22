@@ -1,5 +1,11 @@
 # ucsc-axttomaf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-axttomaf | PASS |  |
+
 ## ucsc-axttomaf
 
 ### Tool Description

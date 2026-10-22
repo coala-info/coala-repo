@@ -26,6 +26,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: corrected_group
     type:
       - 'null'
@@ -42,6 +44,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: num_bases
     type:
       - 'null'
@@ -87,6 +91,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: tombo_results.max_difference.pdf
     inputBinding:
       position: 102
       prefix: --pdf-filename
@@ -115,6 +120,12 @@ outputs:
       glob: $(inputs.sequences_filename_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.control_fast5_basedirs)
+        writable: true
+      - entry: $(inputs.fast5_basedirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

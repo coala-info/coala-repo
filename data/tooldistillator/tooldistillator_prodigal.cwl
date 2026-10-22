@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - prodigal
 label: tooldistillator_prodigal
 doc: "Extract information from output(s) of prodigal (gene_coordinates.tsv)\n\nTool

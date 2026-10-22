@@ -2,99 +2,91 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: transrate
 label: transrate
-doc: "Transrate is a tool for assessing the quality of RNA-Seq assemblies.\n\nTool
-  homepage: https://github.com/blahah/transrate/"
+doc: "Analyse a de-novo transcriptome assembly using three kinds of metrics: sequence based (if --assembly is given), read mapping based (if --left and --right are given) and reference based (if --reference is given).\n\nTool homepage: http://hibberdlab.com/transrate"
 inputs:
-  - id: input_reads
-    type: File
-    doc: Input FASTQ file(s) of RNA-Seq reads.
-    inputBinding:
-      position: 1
-  - id: input_assembly
-    type: File
-    doc: Input assembly file (e.g., FASTA format).
-    inputBinding:
-      position: 2
-  - id: kmer_size
+  - id: assembly
     type:
       - 'null'
-      - int
-    doc: Size of k-mers to use for analysis.
+      - type: array
+        items: File
+    doc: Assembly file(s) in FASTA format, comma-separated
     inputBinding:
-      position: 103
-      prefix: --kmer-size
-  - id: min_contig_length
+      prefix: --assembly
+      itemSeparator: ','
+  - id: left
     type:
       - 'null'
-      - int
-    doc: Minimum contig length to consider for analysis.
+      - type: array
+        items: File
+    doc: Left reads file(s) in FASTQ format, comma-separated
     inputBinding:
-      position: 103
-      prefix: --min-contig-length
-  - id: min_kmer_coverage
+      prefix: --left
+      itemSeparator: ','
+  - id: right
     type:
       - 'null'
-      - int
-    doc: Minimum k-mer coverage to consider a k-mer as valid.
+      - type: array
+        items: File
+    doc: Right reads file(s) in FASTQ format, comma-separated
     inputBinding:
-      position: 103
-      prefix: --min-kmer-coverage
-  - id: min_read_length
+      prefix: --right
+      itemSeparator: ','
+  - id: reference
     type:
       - 'null'
-      - int
-    doc: Minimum read length to consider for analysis.
+      - File
+    doc: Reference proteome or transcriptome file in FASTA format
     inputBinding:
-      position: 103
-      prefix: --min-read-length
-  - id: no_quality_filter
-    type:
-      - 'null'
-      - boolean
-    doc: Do not filter reads based on quality scores.
-    inputBinding:
-      position: 103
-      prefix: --no-quality-filter
-  - id: no_reverse_complement
-    type:
-      - 'null'
-      - boolean
-    doc: Do not consider the reverse complement of contigs.
-    inputBinding:
-      position: 103
-      prefix: --no-reverse-complement
+      prefix: --reference
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use for computation.
+    doc: "Number of threads to use (default: 8)"
     inputBinding:
-      position: 103
       prefix: --threads
-  - id: verbose
+  - id: merge_assemblies
     type:
       - 'null'
-      - boolean
-    doc: Enable verbose output.
+      - string
+    doc: Merge best contigs from multiple assemblies into file
     inputBinding:
-      position: 103
-      prefix: --verbose
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+      prefix: --merge-assemblies
+  - id: output
+    type:
+      - 'null'
+      - string
+    default: transrate_results
+    doc: "Directory where results are output (will be created) (default: transrate_results)"
     inputBinding:
-      position: 104
-      prefix: --output-dir
+      prefix: --output
+  - id: loglevel
+    type:
+      - 'null'
+      - string
+    doc: "Log level. One of [error, info, warn, debug] (default: info)"
+    inputBinding:
+      prefix: --loglevel
+  - id: install_deps
+    type:
+      - 'null'
+      - string
+    doc: "Install any missing dependencies. One of [read, ref, all]"
+    inputBinding:
+      prefix: --install-deps
 outputs:
   - id: output_dir
+    type: Directory
+    doc: Results directory (assembly scores, contig scores, and files written for the merged assembly)
+    outputBinding:
+      glob: $(inputs.output)
+  - id: merged_assembly
     type:
       - 'null'
-      - Directory
-    doc: Directory to write the output reports and files.
+      - File
+    doc: Merged assembly written when merge_assemblies is set
     outputBinding:
-      glob: $(inputs.output_dir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.merge_assemblies)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transrate:1.0.3--h516909a_0

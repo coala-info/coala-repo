@@ -1,5 +1,11 @@
 # tophat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tophat | PASS |  |
+
 ## tophat
 
 ### Tool Description

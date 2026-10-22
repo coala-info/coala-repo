@@ -12,6 +12,12 @@ inputs:
     doc: Input protein structure model file
     inputBinding:
       position: 1
+  - id: output_path
+    type: string
+    default: tortoize_output.json
+    doc: Output file for validation results (JSON)
+    inputBinding:
+      position: 2
   - id: dict
     type:
       - 'null'
@@ -47,7 +53,7 @@ outputs:
       - File
     doc: Output file for validation results
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_path)
   - id: log
     type:
       - 'null'

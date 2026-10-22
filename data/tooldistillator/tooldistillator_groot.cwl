@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - groot
 label: tooldistillator_groot
 doc: "Extract information from output(s) of groot (report.tsv)\n\nTool homepage: https://gitlab.com/ifb-elixirfr/abromics"

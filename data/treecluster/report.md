@@ -1,5 +1,11 @@
 # treecluster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| treecluster_TreeCluster.py | PASS |  |
+
 ## treecluster_TreeCluster.py
 
 ### Tool Description

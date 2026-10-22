@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: toil
+baseCommand:
+  - toil
+  - config
 label: toil_config
 doc: "Generate a configuration file for Toil.\n\nTool homepage: https://toil.ucsc-cgl.org/"
 inputs:
@@ -12,8 +14,8 @@ inputs:
   - id: log_colors
     type:
       - 'null'
-      - boolean
-    doc: Enable or disable colored logging.
+      - string
+    doc: Enable or disable colored logging (True or False).
     inputBinding:
       position: 101
       prefix: --logColors
@@ -44,7 +46,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: File to log in.
     inputBinding:
       position: 101

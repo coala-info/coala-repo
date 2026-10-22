@@ -1,5 +1,11 @@
 # ucsc-bedcommonregions CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bedcommonregions | PASS |  |
+
 ## ucsc-bedcommonregions
 
 ### Tool Description

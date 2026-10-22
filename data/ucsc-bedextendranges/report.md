@@ -1,5 +1,11 @@
 # ucsc-bedextendranges CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bedextendranges | PASS | needs network access to the UCSC public MySQL server (hg18 chrom sizes) |
+
 ## ucsc-bedextendranges
 
 ### Tool Description

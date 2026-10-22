@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - shovill
 label: tooldistillator_shovill
 doc: "Extract information from output(s) of shovill (contig.fasta)\n\nTool homepage:

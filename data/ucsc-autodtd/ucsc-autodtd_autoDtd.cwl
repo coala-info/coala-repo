@@ -2,14 +2,24 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: autoDtd
 label: ucsc-autodtd_autoDtd
-doc: "Give this a XML document to look at and it will come up with a DTD to describe
-  it.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Give this a XML document to look at and it will come up with a DTD to describe\
+  \ it.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
   - id: input_xml
     type: File
     doc: XML document to process
     inputBinding:
       position: 1
+  - id: output_dtd_path
+    type: string
+    doc: Name of the output DTD file
+    inputBinding:
+      position: 2
+  - id: output_stats_path
+    type: string
+    doc: Name of the output statistics file
+    inputBinding:
+      position: 3
   - id: output_attributed_tree_path
     type:
       - 'null'
@@ -33,12 +43,12 @@ outputs:
     type: File
     doc: Output DTD file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_dtd_path)
   - id: output_stats
     type: File
     doc: Output statistics file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_stats_path)
   - id: output_tree
     type:
       - 'null'

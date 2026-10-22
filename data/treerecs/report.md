@@ -1,5 +1,11 @@
 # treerecs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| treerecs | PASS | fixed --output-format for several formats |
+
 ## treerecs
 
 ### Tool Description

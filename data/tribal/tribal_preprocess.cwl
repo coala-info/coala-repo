@@ -23,7 +23,7 @@ inputs:
   - id: dataframe
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to where the filtered dataframe with additional sequences and 
       isotype encodings should be saved.
     inputBinding:
@@ -72,12 +72,23 @@ inputs:
       position: 102
       prefix: --out
 outputs:
+  - id: dataframe_file
+    type:
+      - 'null'
+      - File
+    doc: filtered dataframe with additional sequences and isotype encodings
+    outputBinding:
+      glob: $(inputs.dataframe)
   - id: out
-    type: Directory
+    type: File
     doc: path to where pickled clonotype dictionary input should be saved
     outputBinding:
       glob: $(inputs.out_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.encoding)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

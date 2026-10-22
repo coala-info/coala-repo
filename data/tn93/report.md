@@ -1,5 +1,11 @@
 # tn93 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tn93 | PASS |  |
+
 ## tn93
 
 ### Tool Description

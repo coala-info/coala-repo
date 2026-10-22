@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - maxbin2
 label: tooldistillator_maxbin2
 doc: "Extract information from output(s) of maxbin2 (bin_summary.tsv)\n\nTool homepage:

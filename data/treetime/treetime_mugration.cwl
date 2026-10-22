@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: treetime_mugration
+baseCommand: [treetime, mugration]
 label: treetime_mugration
 doc: "Reconstructs discrete ancestral states, for example geographic location, host,
   or similar. In addition to ancestral states, a GTR model of state transitions is

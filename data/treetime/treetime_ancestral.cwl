@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: 'TreeTime: Maximum Likelihood Phylodynamics ancestral'
+baseCommand: [treetime, ancestral]
 label: treetime_ancestral
 doc: "Reconstructs ancestral sequences and maps mutations to the tree. The output
   consists of a file 'ancestral.fasta' with ancestral sequences and a tree 'annotated_tree.nexus'

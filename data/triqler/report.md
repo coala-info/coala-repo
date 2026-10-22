@@ -1,5 +1,11 @@
 # triqler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| triqler | PASS |  |
+
 ## triqler
 
 ### Tool Description

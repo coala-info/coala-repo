@@ -1,5 +1,31 @@
 # tombo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tombo_clear_filters | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; filter flags of the index file reset, 0 of 34 reads filtered |
+| tombo_cluster_most_significant | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; signal cluster PDF and R data file written for the WT-vs-KO stats |
+| tombo_estimate_alt_reference | Not completed | needs a deep spiked-in sample: even all 464 WT and KO transcript reads leave some 5-mers unobserved (tombo needs 50 per k-mer) |
+| tombo_estimate_kmer_reference | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; 3-mer model file with 64 k-mers written from WT and KO reads (output model path was typed as input File and is now a string) |
+| tombo_event_resquiggle | Not completed | no usable data: needs albacore basecall events plus raw signal; the available reads have none and tombo failed all 39 reads |
+| tombo_filter_stuck | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; filter stored in the staged index file: 33 of 34 reads flagged as filtered |
+| tombo_model_resquiggle | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; RawModelCorrected_000 group added to 34 re-squiggled reads with the same bases and new boundaries |
+| tombo_plot_correction | Not completed | no usable data: needs reads re-squiggled with event_resquiggle; tombo found no readable reads and wrote no PDF |
+| tombo_plot_genome_location | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF with the raw signal at one transcript position written |
+| tombo_plot_kmer | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; k-mer signal distribution PDF and R data file written from WT and KO reads with 1-mers |
+| tombo_plot_max_coverage | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; two-page PDF with raw signal written, also with control reads |
+| tombo_plot_max_difference | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF and sequences FASTA written for WT against KO |
+| tombo_plot_most_significant | Failed | tool bug: --sequences-filename writes no file in single-sample mode (it works only with control reads); the PDF itself is correct |
+| tombo_plot_motif_centered | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF of signal centred on the AAA motif written |
+| tombo_plot_motif_with_stats | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF written with control reads or with --tombo-model-filename; the plain single-sample mode crashes in tombo 1.0 (TypeError, reg_data.seq is None) |
+| tombo_plot_multi_correction | Not completed | no usable data: needs reads re-squiggled with event_resquiggle; tombo crashes on the standard re-squiggle output |
+| tombo_plot_per_read | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF of per-read statistics at one position written with --plot-standard-model |
+| tombo_resquiggle | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; 34 of 39 WT and 34 of 40 KO reads re-squiggled, corrected group and index file present; basecalls were added to the fast5 files first with the ont-tombo image |
+| tombo_test_significance | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; de novo and WT-vs-KO control stats files written with plausible p-values; --alternate-bases 5mC stops with an error because tombo 1.0 has no RNA 5mC model |
+| tombo_write_most_significant_fasta | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; 10 regions written from the de novo stats, all sequences found in the transcript FASTA, with --genome-fasta and with --fast5-basedirs |
+| tombo_write_wiggles | PASS | ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; coverage, fraction and statistic wig files written for plus and minus strand, also sample and control signal wigs |
+
 ## tombo_resquiggle
 
 ### Tool Description
@@ -1679,25 +1705,6 @@ FAST5 Data Arguments:
 Miscellaneous Arguments:
   --quiet, -q           Don't print status information.
   --help, -h            Print this help message and exit
-```
-
-
-## tombo
-### Tool Description
-Tombo is a suite of tools primarily for the identification of modified nucleotides from nanopore sequencing data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tombo:1.0--py27_0
-- **Homepage**: https://github.com/nanoporetech/tombo
-- **Package**: https://anaconda.org/channels/bioconda/packages/tombo/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: tombo [-h] [-v]
-             {resquiggle,test_significance,write_wiggles,write_most_significant_fasta,plot_max_coverage,plot_genome_location,plot_motif_centered,plot_max_difference,plot_most_significant,plot_motif_with_stats,plot_per_read,plot_correction,plot_multi_correction,cluster_most_significant,plot_kmer,clear_filters,filter_stuck,event_resquiggle,model_resquiggle,estimate_kmer_reference,estimate_alt_reference}
-             ...
-tombo: error: invalid choice: 'Additional' (choose from 'resquiggle', 'test_significance', 'write_wiggles', 'write_most_significant_fasta', 'plot_max_coverage', 'plot_genome_location', 'plot_motif_centered', 'plot_max_difference', 'plot_most_significant', 'plot_motif_with_stats', 'plot_per_read', 'plot_correction', 'plot_multi_correction', 'cluster_most_significant', 'plot_kmer', 'clear_filters', 'filter_stuck', 'event_resquiggle', 'model_resquiggle', 'estimate_kmer_reference', 'estimate_alt_reference')
 ```
 
 

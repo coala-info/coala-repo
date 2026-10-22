@@ -11,7 +11,7 @@ inputs:
     inputBinding:
       position: 1
   - id: library
-    type: string
+    type: File
     doc: library of flanking sequences
     inputBinding:
       position: 2
@@ -83,6 +83,15 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.output_directory)
+  - id: report
+    type:
+      - 'null'
+      - File
+    doc: Report file (written when report_file is given, otherwise the report goes to standard output)
+    outputBinding:
+      glob: $(inputs.report_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tssv:1.1.2--py312h0fa9677_6

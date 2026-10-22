@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - dastool
 label: tooldistillator_dastool
 doc: "Extract information from output(s) of dastool (summary.tsv)\n\nTool homepage:
@@ -47,7 +47,7 @@ inputs:
   - id: fasta_bin_zip_folder_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Bin fasta format ZIP folder for DasTool for dastool
     inputBinding:
       position: 102

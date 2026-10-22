@@ -100,7 +100,8 @@ inputs:
       - File
     doc: reference-guided assembly (optional)
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 102
       prefix: --reference

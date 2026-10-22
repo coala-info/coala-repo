@@ -4,42 +4,48 @@ baseCommand:
   - transcov
   - preprocess
 label: transcov_preprocess
-doc: "Preprocess annotation file for TransCov\n\nTool homepage: https://github.com/hogfeldt/transcov"
+doc: "Find the transcription start site of every transcript in a GENCODE GFF3 annotation and write a BED file and a TSS table\n\nTool homepage: https://github.com/hogfeldt/transcov"
 inputs:
   - id: annotation_file
     type: File
-    doc: Annotation file
+    doc: "GENCODE annotation file (GFF3)"
     inputBinding:
       position: 1
-  - id: bed_file
-    type:
-      - 'null'
-      - File
-    doc: BED file for regions
-    inputBinding:
-      position: 102
-      prefix: --bed-file
   - id: region_size
     type:
       - 'null'
-      - string
-    doc: Region size (e.g., '1000' or '1kb')
+      - int
+    default: 10000
+    doc: "Size of the region around each transcription start site"
     inputBinding:
-      position: 102
       prefix: --region-size
+  - id: bed_file
+    type:
+      - 'null'
+      - string
+    default: transcription_start_sites.bed
+    doc: "Output BED file name"
+    inputBinding:
+      prefix: --bed-file
   - id: tss_file
     type:
       - 'null'
-      - File
-    doc: TSS file for regions
+      - string
+    default: transcription_start_sites.tsv
+    doc: "Output TSS table file name"
     inputBinding:
-      position: 102
       prefix: --tss-file
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: bed_output
+    type: File
+    doc: "BED file with the regions around the transcription start sites"
+    outputBinding:
+      glob: $(inputs.bed_file)
+  - id: tss_output
+    type: File
+    doc: "Table with transcription start sites"
+    outputBinding:
+      glob: $(inputs.tss_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transcov:1.1.3--py_0
-stdout: transcov_preprocess.out

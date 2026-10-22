@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - flye
 label: tooldistillator_flye
 doc: "Extract information from output(s) of flye (contig.fasta)\n\nTool homepage:

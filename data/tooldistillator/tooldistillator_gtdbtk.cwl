@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - gtdbtk
 label: tooldistillator_gtdbtk
 doc: "Extract information from output(s) of gtdbtk (tax_summary.tsv)\n\nTool homepage:
@@ -23,7 +23,7 @@ inputs:
   - id: align_directory_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Align ZIP directory path for gtdbtk
     inputBinding:
       position: 102
@@ -47,7 +47,7 @@ inputs:
   - id: classify_directory_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Classify ZIP directory path for gtdbtk
     inputBinding:
       position: 102
@@ -71,7 +71,7 @@ inputs:
   - id: identify_directory_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Identify ZIP directory path for gtdbtk
     inputBinding:
       position: 102

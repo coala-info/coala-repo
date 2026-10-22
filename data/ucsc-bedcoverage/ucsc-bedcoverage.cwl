@@ -1,75 +1,60 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-bedcoverage
+baseCommand: [chmod, '600', .hg.conf]
+arguments:
+  - position: 0
+    shellQuote: false
+    valueFrom: '&&'
+  - position: 1
+    valueFrom: bedCoverage
 label: ucsc-bedcoverage
-doc: "Calculates the coverage of a BED file across a genome.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Analyse coverage by bed files - chromosome by chromosome and genome-wide. The\
+  \ chromosome sizes are read from a UCSC MySQL database (the public UCSC server\
+  \ is set in a .hg.conf file in the working directory), so the tool needs network\
+  \ access. The bed file must be sorted by chromosome.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+stdout: $(inputs.output_name)
 inputs:
-  - id: input_bed
-    type: File
-    doc: Input BED file
+  - id: database
+    type: string
+    doc: UCSC database (genome assembly) name, e.g. hg18, hg19, mm10
     inputBinding:
-      position: 1
-  - id: input_chromsizes
+      position: 11
+  - id: bed_file
     type: File
-    doc: 'File containing chromosome sizes (two columns: chromosome name and size)'
+    doc: Input BED file, sorted by chromosome
+    inputBinding:
+      position: 12
+  - id: restrict
+    type:
+      - 'null'
+      - File
+    doc: Restrict to parts in this BED file
     inputBinding:
       position: 2
-  - id: bins
-    type:
-      - 'null'
-      - int
-    doc: Number of bins to divide the genome into for coverage calculation
-    inputBinding:
-      position: 103
-      prefix: --bins
-  - id: genome_file
-    type:
-      - 'null'
-      - File
-    doc: A FASTA file of the genome (alternative to chromsizes)
-    inputBinding:
-      position: 103
-      prefix: --genome-file
-  - id: max_coverage
-    type:
-      - 'null'
-      - int
-    doc: 'Maximum coverage to report (default: unlimited)'
-    inputBinding:
-      position: 103
-      prefix: --max-coverage
-  - id: min_coverage
-    type:
-      - 'null'
-      - int
-    doc: 'Minimum coverage to report (default: 1)'
-    inputBinding:
-      position: 103
-      prefix: --min-coverage
-  - id: no_header
-    type:
-      - 'null'
-      - boolean
-    doc: Do not print a header line in the output
-    inputBinding:
-      position: 103
-      prefix: --no-header
-  - id: output_coverage_path
-    type: string
-    doc: Output or path parameter `output_coverage_path`
-    inputBinding:
-      position: 104
-      prefix: --output-coverage
+      prefix: -restrict=
+      separate: false
+  - id: output_name
+    type: ['null', string]
+    default: bedCoverage.txt
+    doc: Name of the output file (standard output of the tool)
 outputs:
   - id: output_coverage
-    type:
-      - 'null'
-      - File
-    doc: 'Output file for coverage data (default: stdout)'
+    type: File
+    doc: Coverage report, chromosome by chromosome and genome-wide
     outputBinding:
-      glob: $(inputs.output_coverage_path)
+      glob: $(inputs.output_name)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: .hg.conf
+        entry: |
+          db.host=genome-mysql.soe.ucsc.edu
+          db.user=genome
+          db.password=
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bedcoverage:482--h0b57e2e_0

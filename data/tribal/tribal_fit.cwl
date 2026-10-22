@@ -62,7 +62,7 @@ inputs:
   - id: score
     type:
       - 'null'
-      - File
+      - string
     doc: filename where the objective values file should be saved
     inputBinding:
       position: 101
@@ -86,7 +86,7 @@ inputs:
   - id: thresh
     type:
       - 'null'
-      - string
+      - float
     doc: theshold for convergence in during fitting
     inputBinding:
       position: 101
@@ -130,6 +130,13 @@ inputs:
       position: 104
       prefix: --write-results
 outputs:
+  - id: score_file
+    type:
+      - 'null'
+      - File
+    doc: objective values file
+    outputBinding:
+      glob: $(inputs.score)
   - id: transmat_infer
     type:
       - 'null'
@@ -147,7 +154,7 @@ outputs:
   - id: write_results
     type:
       - 'null'
-      - File
+      - Directory
     doc: path where all optimal solution results are saved
     outputBinding:
       glob: $(inputs.write_results_path)

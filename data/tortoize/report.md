@@ -1,5 +1,11 @@
 # tortoize CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tortoize | PASS |  |
+
 ## tortoize
 
 ### Tool Description

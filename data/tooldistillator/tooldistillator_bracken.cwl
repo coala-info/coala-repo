@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - bracken
 label: tooldistillator_bracken
 doc: "Extract information from output(s) of bracken (report.tsv)\n\nTool homepage:

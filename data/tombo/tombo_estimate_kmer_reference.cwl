@@ -58,6 +58,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: kmer_specific_sd
     type:
       - 'null'
@@ -112,9 +114,9 @@ inputs:
       position: 101
       prefix: --quiet
   - id: tombo_model_filename
-    type: File
-    doc: Tombo model for event-less resquiggle and significance testing. If no 
-      model is provided the default DNA or RNA tombo model will be used.
+    type: string
+    doc: Output file name for the estimated tombo k-mer model (tombo writes the 
+      model to this path).
     inputBinding:
       position: 101
       prefix: --tombo-model-filename
@@ -127,10 +129,17 @@ inputs:
       position: 101
       prefix: --upstream-bases
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: tombo_model
+    type: File
+    doc: Estimated tombo k-mer model file
+    outputBinding:
+      glob: $(inputs.tombo_model_filename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fast5_basedirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0
-stdout: tombo_estimate_kmer_reference.out

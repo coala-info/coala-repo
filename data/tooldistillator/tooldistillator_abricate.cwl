@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - abricate
 label: tooldistillator_abricate
 doc: "Extract information from output(s) of abricate (OUTPUT.tsv)\n\nTool homepage:

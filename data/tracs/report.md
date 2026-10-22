@@ -1,5 +1,18 @@
 # tracs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tracs_align | PASS |  |
+| tracs_build-db | PASS |  |
+| tracs_cluster | PASS | data: distances from the repo's ambig.aln test |
+| tracs_combine | PASS |  |
+| tracs_distance | PASS | data: the repo's ambig.aln test with dates (matches the repo test values) |
+| tracs_pipe | Not completed | pipeline, skipped |
+| tracs_plot | PASS |  |
+| tracs_threshold | Failed | tool bug: --output file is never written, the threshold is only printed to the log |
+
 ## tracs_align
 
 ### Tool Description

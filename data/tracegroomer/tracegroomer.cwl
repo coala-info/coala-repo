@@ -121,21 +121,87 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_internal_standard
-  - id: output_files_extension_path
-    type: string
+  - id: no_alternative_div_amount_material
+    type:
+      - 'null'
+      - boolean
+    doc: "Turn off also multiplying by mean(amountMaterial) when dividing by the amount of material"
     inputBinding:
-      position: 102
-      prefix: --output_files_extension
-outputs:
+      position: 101
+      prefix: --no-alternative_div_amount_material
+  - id: no_div_isotopologues_by_amount_material
+    type:
+      - 'null'
+      - boolean
+    doc: "Turn off normalization by the amount of material at the isotopologue level (only total abundances are normalized)"
+    inputBinding:
+      position: 101
+      prefix: --no-div_isotopologues_by_amount_material
+  - id: no_isotopologues_preview
+    type:
+      - 'null'
+      - boolean
+    doc: Do not plot isotopologue values (default)
+    inputBinding:
+      position: 101
+      prefix: --no-isotopologues_preview
+  - id: no_fractions_stomp_values
+    type:
+      - 'null'
+      - boolean
+    doc: "Turn off stomping of fractional contributions and isotopologue proportions to the range 0.0 to 1.0"
+    inputBinding:
+      position: 101
+      prefix: --no-fractions_stomp_values
+  - id: no_under_detection_limit_set_nan
+    type:
+      - 'null'
+      - boolean
+    doc: "Turn off setting abundances below the limit of detection to NaN"
+    inputBinding:
+      position: 101
+      prefix: --no-under_detection_limit_set_nan
+  - id: no_subtract_blankavg
+    type:
+      - 'null'
+      - boolean
+    doc: "Turn off subtracting the average of the blanks"
+    inputBinding:
+      position: 101
+      prefix: --no-subtract_blankavg
   - id: output_files_extension
     type:
       - 'null'
-      - File
-    doc: 'Extension for the output files, must be one of the following: csv|tsv|txt'
+      - string
+    doc: 'Extension for the output files, must be one of the following: csv|tsv|txt
+      (default csv)'
+    inputBinding:
+      position: 101
+      prefix: --output_files_extension
+  - id: extra_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the configuration file (for example the sample metadata file)
+      that must sit in the working directory
+outputs:
+  - id: groomed_files
+    type:
+      type: array
+      items: File
+    doc: Groomed and normalized tables, written as <name>.<extension>
     outputBinding:
-      glob: $(inputs.output_files_extension_path)
+      glob: "$('*.' + (inputs.output_files_extension ? inputs.output_files_extension : 'csv'))"
+      outputEval: |
+        ${
+          var staged = (inputs.extra_files || []).map(function(f) { return f.basename; });
+          return self.filter(function(f) { return staged.indexOf(f.basename) < 0; });
+        }
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.extra_files ? inputs.extra_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tracegroomer:0.1.4--pyhdfd78af_0

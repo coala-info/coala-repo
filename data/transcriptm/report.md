@@ -1,5 +1,11 @@
 # transcriptm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| transcriptm | Not completed | pipeline, skipped (runs trimming, rRNA removal, mapping and counting in one command) |
+
 ## transcriptm
 
 ### Tool Description

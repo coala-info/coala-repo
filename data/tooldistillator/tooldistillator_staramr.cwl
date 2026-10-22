@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - staramr
 label: tooldistillator_staramr
 doc: "Extract information from output(s) of staramr (resfinder.tsv)\n\nTool homepage:

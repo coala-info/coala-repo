@@ -1,5 +1,52 @@
 # tooldistillator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tooldistillator_abricate | PASS |  |
+| tooldistillator_amrfinderplus | PASS |  |
+| tooldistillator_argnorm | PASS |  |
+| tooldistillator_bakta | PASS |  |
+| tooldistillator_bandage | PASS |  |
+| tooldistillator_bracken | PASS |  |
+| tooldistillator_bwa | PASS |  |
+| tooldistillator_checkm2 | PASS |  |
+| tooldistillator_concoct | PASS |  |
+| tooldistillator_coreprofiler | PASS |  |
+| tooldistillator_coverm | PASS |  |
+| tooldistillator_dastool | PASS |  |
+| tooldistillator_deeparg | PASS |  |
+| tooldistillator_drep | PASS |  |
+| tooldistillator_eggnogmapper | PASS |  |
+| tooldistillator_fastp | PASS |  |
+| tooldistillator_fastqc | PASS |  |
+| tooldistillator_filtlong | PASS |  |
+| tooldistillator_flye | PASS |  |
+| tooldistillator_groot | PASS |  |
+| tooldistillator_gtdbtk | PASS |  |
+| tooldistillator_integronfinder2 | Failed | image problem: pandas 3.0 in the image crashes on the integrons file (fillna with empty string on float column) |
+| tooldistillator_isescan | PASS |  |
+| tooldistillator_kraken2 | PASS |  |
+| tooldistillator_maxbin2 | PASS |  |
+| tooldistillator_megahit | PASS |  |
+| tooldistillator_metabat2 | PASS |  |
+| tooldistillator_mmseqs2linclust | PASS |  |
+| tooldistillator_mmseqs2taxonomy | PASS |  |
+| tooldistillator_multiqc | PASS |  |
+| tooldistillator_plasmidfinder | PASS |  |
+| tooldistillator_polypolish | PASS |  |
+| tooldistillator_prodigal | PASS |  |
+| tooldistillator_quast | PASS |  |
+| tooldistillator_recentrifuge | PASS |  |
+| tooldistillator_refseqmasher | PASS |  |
+| tooldistillator_shovill | PASS |  |
+| tooldistillator_staramr | PASS |  |
+| tooldistillator_summarize | PASS |  |
+| tooldistillator_sylph | PASS |  |
+| tooldistillator_sylphtax | PASS |  |
+| tooldistillator_tabular_file | PASS |  |
+
 ## tooldistillator_abricate
 
 ### Tool Description
@@ -1863,37 +1910,6 @@ options:
                         DB version for tabular_file
   --analysis_software_version ANALYSIS_SOFTWARE_VERSION
                         Software version to the input file for tabular_file
-```
-
-
-## tooldistillator_tooltest
-
-### Tool Description
-Extract information from output(s) of tooltest (unitest)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tooldistillator:1.0.5--pyh7e72e81_0
-- **Homepage**: https://gitlab.com/ifb-elixirfr/abromics
-- **Package**: https://anaconda.org/channels/bioconda/packages/tooldistillator/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-usage: tooldistillator.py tooltest <options>
-
-Extract information from output(s) of tooltest (unitest)
-
-positional arguments:
-  report                Path to report(s)
-
-options:
-  -h, --help            show this help message and exit
-  -o, --output OUTPUT   Output location
-  --analysis_software_version ANALYSIS_SOFTWARE_VERSION
-                        abricate version for tooltest
-  --reference_database_version REFERENCE_DATABASE_VERSION
-                        DB version for tooltest
-  --hid HID             historic ID for abricate file from galaxy for tooltest
 ```
 
 

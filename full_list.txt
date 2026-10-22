@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14178; PASS: 11082; Failed: 1704; Not completed: 1392
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14490; PASS: 11338; Failed: 1737; Not completed: 1415
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -13914,6 +13914,7 @@ syri	syri	Failed	image problem: syri crashes with 'buffer source array is read-o
 t-coffee	t-coffee_t_coffee	Failed	tool bug: -output fasta_aln with the default input order writes the wrong description on each sequence header (aligned order is correct); clustalw alignment and guide tree are correct
 t1k	t1k_run-t1k	PASS	KIR example reads from the T1K repo give the expected genotype table
 t1k	t1k_t1k-build.pl	PASS	built the KIR2DL1 allele reference (421 alleles) from IPD-KIR kir.dat
+t_coffee	t_coffee	PASS	
 tabix	tabix	PASS	
 table2asn	table2asn	PASS	
 tabulate	tabulate	PASS	real KIR genotype table printed as pipe table and html; -o is used because the tool's --output option takes no value
@@ -14178,3 +14179,314 @@ tmalign	tmalign_TMalign_dir	PASS
 tmalign	tmalign_TMalign_dir1	PASS	
 tmalign	tmalign_TMalign_dir2	PASS	
 tmalign	tmalign_TMscore	PASS	
+tmb	tmb_pyEffGenomeSize.py	PASS	
+tmb	tmb_pyTMB.py	PASS	
+tmhg	tmhg_add	Failed	tool bug: with old nodes to reuse it crashes (TypeError in tMHGFinderAddGenome.py: concat_fasta now returns a tuple but is used as a dict)
+tmhg	tmhg_find	PASS	
+tmux	tmux	PASS	
+tn93	tn93	PASS	
+tntblast	tntblast	PASS	
+toil	toil_clean	PASS	
+toil	toil_config	Failed	tool bug: toil config 7.0.0 writes only the line 'config_version: 1.0' instead of a config file with all default options
+toil	toil_debug-file	PASS	
+toil	toil_debug-job	PASS	
+toil	toil_destroy-cluster	Not completed	needs a cloud account and a running cluster (AWS or other provisioner)
+toil	toil_kill	PASS	
+toil	toil_launch-cluster	Not completed	needs a cloud account and a running cluster (AWS or other provisioner)
+toil	toil_rsync-cluster	Not completed	needs a cloud account and a running cluster (AWS or other provisioner)
+toil	toil_ssh-cluster	Not completed	needs a cloud account and a running cluster (AWS or other provisioner)
+toil	toil_stats	PASS	
+toil	toil_status	PASS	
+tombo	tombo_clear_filters	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; filter flags of the index file reset, 0 of 34 reads filtered
+tombo	tombo_cluster_most_significant	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; signal cluster PDF and R data file written for the WT-vs-KO stats
+tombo	tombo_estimate_alt_reference	Not completed	needs a deep spiked-in sample: even all 464 WT and KO transcript reads leave some 5-mers unobserved (tombo needs 50 per k-mer)
+tombo	tombo_estimate_kmer_reference	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; 3-mer model file with 64 k-mers written from WT and KO reads (output model path was typed as input File and is now a string)
+tombo	tombo_event_resquiggle	Not completed	no usable data: needs albacore basecall events plus raw signal; the available reads have none and tombo failed all 39 reads
+tombo	tombo_filter_stuck	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; filter stored in the staged index file: 33 of 34 reads flagged as filtered
+tombo	tombo_model_resquiggle	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; RawModelCorrected_000 group added to 34 re-squiggled reads with the same bases and new boundaries
+tombo	tombo_plot_correction	Not completed	no usable data: needs reads re-squiggled with event_resquiggle; tombo found no readable reads and wrote no PDF
+tombo	tombo_plot_genome_location	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF with the raw signal at one transcript position written
+tombo	tombo_plot_kmer	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; k-mer signal distribution PDF and R data file written from WT and KO reads with 1-mers
+tombo	tombo_plot_max_coverage	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; two-page PDF with raw signal written, also with control reads
+tombo	tombo_plot_max_difference	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF and sequences FASTA written for WT against KO
+tombo	tombo_plot_most_significant	Failed	tool bug: --sequences-filename writes no file in single-sample mode (it works only with control reads); the PDF itself is correct
+tombo	tombo_plot_motif_centered	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF of signal centred on the AAA motif written
+tombo	tombo_plot_motif_with_stats	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF written with control reads or with --tombo-model-filename; the plain single-sample mode crashes in tombo 1.0 (TypeError, reg_data.seq is None)
+tombo	tombo_plot_multi_correction	Not completed	no usable data: needs reads re-squiggled with event_resquiggle; tombo crashes on the standard re-squiggle output
+tombo	tombo_plot_per_read	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; PDF of per-read statistics at one position written with --plot-standard-model
+tombo	tombo_resquiggle	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; 34 of 39 WT and 34 of 40 KO reads re-squiggled, corrected group and index file present; basecalls were added to the fast5 files first with the ont-tombo image
+tombo	tombo_test_significance	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; de novo and WT-vs-KO control stats files written with plausible p-values; --alternate-bases 5mC stops with an error because tombo 1.0 has no RNA 5mC model
+tombo	tombo_write_most_significant_fasta	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; 10 regions written from the de novo stats, all sequences found in the transcript FASTA, with --genome-fasta and with --fast5-basedirs
+tombo	tombo_write_wiggles	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq WT and METTL3-KO, 39-40 reads each) with the transcript FASTA; coverage, fraction and statistic wig files written for plus and minus strand, also sample and control signal wigs
+tomm40_wgs	tomm40_wgs_TOMM40_WGS	Not completed	pipeline (Snakemake workflow that also needs a reference genome and whole-genome BAM or CRAM files), skipped
+tooldistillator	tooldistillator_abricate	PASS	
+tooldistillator	tooldistillator_amrfinderplus	PASS	
+tooldistillator	tooldistillator_argnorm	PASS	
+tooldistillator	tooldistillator_bakta	PASS	
+tooldistillator	tooldistillator_bandage	PASS	
+tooldistillator	tooldistillator_bracken	PASS	
+tooldistillator	tooldistillator_bwa	PASS	
+tooldistillator	tooldistillator_checkm2	PASS	
+tooldistillator	tooldistillator_concoct	PASS	
+tooldistillator	tooldistillator_coreprofiler	PASS	
+tooldistillator	tooldistillator_coverm	PASS	
+tooldistillator	tooldistillator_dastool	PASS	
+tooldistillator	tooldistillator_deeparg	PASS	
+tooldistillator	tooldistillator_drep	PASS	
+tooldistillator	tooldistillator_eggnogmapper	PASS	
+tooldistillator	tooldistillator_fastp	PASS	
+tooldistillator	tooldistillator_fastqc	PASS	
+tooldistillator	tooldistillator_filtlong	PASS	
+tooldistillator	tooldistillator_flye	PASS	
+tooldistillator	tooldistillator_groot	PASS	
+tooldistillator	tooldistillator_gtdbtk	PASS	
+tooldistillator	tooldistillator_integronfinder2	Failed	image problem: pandas 3.0 in the image crashes on the integrons file (fillna with empty string on float column)
+tooldistillator	tooldistillator_isescan	PASS	
+tooldistillator	tooldistillator_kraken2	PASS	
+tooldistillator	tooldistillator_maxbin2	PASS	
+tooldistillator	tooldistillator_megahit	PASS	
+tooldistillator	tooldistillator_metabat2	PASS	
+tooldistillator	tooldistillator_mmseqs2linclust	PASS	
+tooldistillator	tooldistillator_mmseqs2taxonomy	PASS	
+tooldistillator	tooldistillator_multiqc	PASS	
+tooldistillator	tooldistillator_plasmidfinder	PASS	
+tooldistillator	tooldistillator_polypolish	PASS	
+tooldistillator	tooldistillator_prodigal	PASS	
+tooldistillator	tooldistillator_quast	PASS	
+tooldistillator	tooldistillator_recentrifuge	PASS	
+tooldistillator	tooldistillator_refseqmasher	PASS	
+tooldistillator	tooldistillator_shovill	PASS	
+tooldistillator	tooldistillator_staramr	PASS	
+tooldistillator	tooldistillator_summarize	PASS	
+tooldistillator	tooldistillator_sylph	PASS	
+tooldistillator	tooldistillator_sylphtax	PASS	
+tooldistillator	tooldistillator_tabular_file	PASS	
+topas	topas_consensusseqlfromvcfs	PASS	
+tophat	tophat	PASS	
+tophat-recondition	tophat-recondition	PASS	
+toppred	toppred	PASS	
+tortoize	tortoize	PASS	
+toulligqc	toulligqc	Failed	image problem: toulligqc 2.8.3 crashes in compute_NXX with 'ValueError: sort array is read-only' (pandas/numpy version clash) on both summary and FASTQ input
+tpmcalculator	tpmcalculator_TPMCalculator	PASS	
+tqdist	tqdist_all_pairs_quartet_dist	PASS	synthetic data: hand-made 4-leaf trees with checkable answers
+tqdist	tqdist_all_pairs_triplet_dist	PASS	synthetic data: hand-made 4-leaf trees with checkable answers
+tqdist	tqdist_pairs_quartet_dist	PASS	synthetic data: hand-made 4-leaf trees with checkable answers
+tqdist	tqdist_pairs_triplet_dist	PASS	synthetic data: hand-made 4-leaf trees with checkable answers
+tqdist	tqdist_quartet_dist	PASS	real tqDist example trees (tree1 and tree2) from the tqDistpy repo.
+tqdist	tqdist_triplet_dist	PASS	real tqDist example trees (tree1 and tree2) from the tqDistpy repo.
+tqdm	tqdm	PASS	
+tr-trimmer	tr-trimmer	PASS	
+trace2dbest	trace2dbest_rename_file	PASS	
+tracegroomer	tracegroomer	PASS	
+tracknado	tracknado_create	PASS	
+tracknado	tracknado_merge	Not completed	merge needs the original track files at the absolute paths stored in each config, which no longer exist after the create run ended
+tracknado	tracknado_validate	Failed	image problem: UCSC hubCheck is not in the image, so validate exits with an error
+tracs	tracs_align	PASS	
+tracs	tracs_build-db	PASS	
+tracs	tracs_cluster	PASS	data: distances from the repo's ambig.aln test
+tracs	tracs_combine	PASS	
+tracs	tracs_distance	PASS	data: the repo's ambig.aln test with dates (matches the repo test values)
+tracs	tracs_pipe	Not completed	pipeline, skipped
+tracs	tracs_plot	PASS	
+tracs	tracs_threshold	Failed	tool bug: --output file is never written, the threshold is only printed to the log
+tracy	tracy_align	PASS	
+tracy	tracy_assemble	PASS	
+tracy	tracy_basecall	PASS	
+tracy	tracy_consensus	PASS	
+tracy	tracy_decompose	PASS	
+tracy	tracy_index	PASS	
+traitar	traitar_annotate	Failed	tool bug: annotate does not pass pfam_dir to Traitar, so it always crashes with TypeError on a None path
+traitar	traitar_evaluate	Failed	tool bug: crashes with NameError: name 'evaluation' is not defined (missing import)
+traitar	traitar_new	Failed	tool bug: crashes in modify.create_tar with AttributeError: StringIO has no attribute StringIO (Python 2 code)
+traitar	traitar_pfam	Not completed	the download mode needs the network and the 1.5 GB Pfam-A database; only the --local file check was run
+traitar	traitar_phenotype	Failed	tool bug: primary and secondary predictions overwrite the same files, feature tracks and heatmaps are skipped as not supported, and 16 of 134 combined predictions differ from the repo reference
+traitar	traitar_remove	Failed	tool bug: crashes in modify.remove with TypeError: data type 'string' not understood (old pandas/numpy code)
+traitar	traitar_show	PASS	data: the phenotype models packaged in the image (no input files)
+trand	trand	PASS	
+transabyss	transabyss	Failed	image problem: transabyss stops with 'environment is not sufficient' because bin/skip_psl_self.awk is missing under site-packages
+transabyss	transabyss_transabyss-merge	Failed	image problem: same missing site-packages/bin awk scripts check stops the merge
+transanno	transanno_chain-to-bed-vcf	PASS	
+transanno	transanno_left-align	PASS	
+transanno	transanno_liftbed	PASS	
+transanno	transanno_liftgene	PASS	
+transanno	transanno_liftvcf	PASS	
+transanno	transanno_minimap2chain	PASS	
+transannot	transannot_easytransannot	Not completed	needs the Pfam-A.full, eggNOG and SwissProt MMseqs2 databases (many GB) and the Plass assembler, which is not in the image
+transcov	transcov_collapse	PASS	
+transcov	transcov_cut-tails	PASS	
+transcov	transcov_generate-coverage	PASS	
+transcov	transcov_generate-end-length	PASS	
+transcov	transcov_generate-length	PASS	
+transcov	transcov_generate-read-ends	PASS	
+transcov	transcov_pick-subset	PASS	
+transcov	transcov_plot-coverage-dist	PASS	
+transcov	transcov_plot-tensor-dist	PASS	
+transcov	transcov_preprocess	PASS	
+transcriptclean	transcriptclean	PASS	
+transcriptm	transcriptm	Not completed	pipeline, skipped (runs trimming, rRNA removal, mapping and counting in one command)
+transdecoder	transdecoder_TransDecoder.LongOrfs	PASS	
+transdecoder	transdecoder_TransDecoder.Predict	PASS	
+transdecoder	transdecoder_cdna_alignment_orf_to_genome_orf	PASS	
+transdecoder	transdecoder_gff3_file_to_proteins	PASS	
+transdecoder	transdecoder_gtf_genome_to_cdna_fasta	PASS	
+transdecoder	transdecoder_gtf_to_alignment_gff3	PASS	
+transindel	transindel_transIndel_build_DNA.py	Failed	tool bug: script writes the BAM then crashes with NameError 'remove' is not defined (exit 1)
+transindel	transindel_transIndel_build_RNA.py	PASS	synthetic data: planted 40 bp deletion; 28 chimeric reads merged into 59M40D41M
+transindel	transindel_transIndel_call.py	PASS	
+translate-gard	translate-gard	Failed	tool bug: the value given to -j is silently ignored (the tool always uses INPUT.json); with -j set to that name the output matches the upstream test values (661 models, score 8787.1).
+translatorx	translatorx_translatorx.pl	PASS	
+transposcope	transposcope_align	Not completed	no usable test data: needs MELT or TIPseqHunter output, a BAM, a LINE-1 reference and host chromosome FASTAs; no sample set is published
+transposonpsi	transposonpsi	PASS	
+transrate	transrate	Failed	image problem: transrate stops with 'could not find snap in the path' (only a snap binary exists) and salmon fails to load libboost_iostreams.so.1.60.0
+transrate-tools	transrate-tools_bam-read	PASS	
+tree-puzzle	tree-puzzle	PASS	primates example gives the expected tree; menu keystrokes come from stdin; -randseed crashes visibly with seed 1 but works with 7
+tree-qmc	tree-qmc	PASS	
+treebest	treebest_backtrans	PASS	
+treebest	treebest_best	PASS	
+treebest	treebest_distmat	PASS	
+treebest	treebest_estlen	PASS	
+treebest	treebest_export	PASS	
+treebest	treebest_filter	PASS	
+treebest	treebest_format	PASS	
+treebest	treebest_leaf	PASS	
+treebest	treebest_mfa2aln	PASS	
+treebest	treebest_mmerge	PASS	
+treebest	treebest_nj	PASS	
+treebest	treebest_ortho	PASS	
+treebest	treebest_phyml	PASS	
+treebest	treebest_pwalign	PASS	baseCommand fixed to treebest pwalign; the -m option crashes visibly (double free) but the main mode works
+treebest	treebest_root	PASS	
+treebest	treebest_sdi	PASS	
+treebest	treebest_simulate	PASS	
+treebest	treebest_sortleaf	PASS	
+treebest	treebest_subtree	PASS	
+treebest	treebest_trans	PASS	
+treebest	treebest_treedist	PASS	
+treebest	treebest_trimpoor	PASS	
+treecluster	treecluster_TreeCluster.py	PASS	
+treekin	treekin	PASS	synthetic data: short RNA landscape built with ViennaRNA and barriers; --bar and --ratesfile fixed to File
+treemaker	treemaker	PASS	
+treemix	treemix	PASS	CWL rewritten from help (-o, -tf, -micro, -cor_mig, -seed, -n_warn); input built from real HapMap3 allele frequencies
+treeqmc	treeqmc_tree-qmc	PASS	fixed --output and --writetable flags
+treerecs	treerecs	PASS	fixed --output-format for several formats
+treesapp	treesapp_abundance	PASS	rewritten from help; ran on shipped assign output with paired reads
+treesapp	treesapp_assign	Failed	image problem: treesapp crashes in jplace_parser (json.load encoding keyword, Python 3.9)
+treesapp	treesapp_colour	PASS	rewritten from help
+treesapp	treesapp_create	Failed	image problem: java is missing in the image (BMGE.jar in the default training step); only --stage support finishes
+treesapp	treesapp_evaluate	Failed	image problem: the assign step inside evaluate crashes in jplace_parser (json.load encoding keyword), so no classification table is written
+treesapp	treesapp_layer	Failed	image problem: treesapp crashes in jplace_parser (json.load encoding keyword, Python 3.9)
+treesapp	treesapp_package	PASS	rewritten from help; view and rename tested
+treesapp	treesapp_phylotu	Failed	image problem: treesapp crashes in jplace_parser (json.load encoding keyword, Python 3.9)
+treesapp	treesapp_purity	Failed	image problem: the assign step inside purity crashes in jplace_parser (json.load encoding keyword), so no classification table is written
+treesapp	treesapp_train	Failed	image problem: java is missing in the image (BMGE.jar trimming step)
+treesapp	treesapp_update	PASS	rewritten from help; ran on the shipped PuhA assign output with --cluster
+treetime	treetime	PASS	new CWL for the default time tree command
+treetime	treetime_ancestral	PASS	fixed baseCommand to treetime ancestral
+treetime	treetime_arg	PASS	synthetic data: one H3N2 tree and alignment split into two segments, one MCC; baseCommand fixed to treetime arg
+treetime	treetime_clock	PASS	fixed baseCommand; plot_rtt changed from File to string
+treetime	treetime_homoplasy	PASS	fixed baseCommand to treetime homoplasy; report goes to stdout, now captured
+treetime	treetime_mugration	PASS	fixed baseCommand to treetime mugration
+trf	trf	PASS	added outputs for .dat and .mask files; real FMR1 CGG repeat found
+trgt	trgt_deepdive	PASS	TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added
+trgt	trgt_genotype	PASS	TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added
+trgt	trgt_merge	PASS	TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added
+trgt	trgt_plot	PASS	TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added
+trgt	trgt_validate	PASS	TRGT example BAM and repeat catalog; verbose fixed to boolean, index secondary files added
+tribal	tribal_fit	PASS	TRIBAL example data; output types fixed
+tribal	tribal_preprocess	PASS	TRIBAL example data; output types fixed, encoding file staged writable
+trim_isoseq_polya	trim_isoseq_polya	PASS	new CWL for trim_isoseq_polyA; nf-core isoseq lima output converted to FASTA, all 104 polyA tails removed
+trimadap	trimadap_trimadap-mt	Failed	image problem: trimadap-mt cannot start, libz.so.1 is missing in the image
+trimal	trimal	PASS	fixed -out and -htmlout flags; gappyout output equals the dataset's expected MSA
+trimal	trimal_readal	PASS	new CWL for readal; format conversion and info checked on dataset example
+trimal	trimal_statal	PASS	new CWL for statal; gap distribution and column identity checked
+trimmomatic	trimmomatic	PASS	SE output equals the Galaxy expected file; PE with ILLUMINACLIP also run
+trimnami	trimnami_config	PASS	wrote the default config file and profile
+trimnami	trimnami_run	Not completed	pipeline, skipped
+trimnami	trimnami_testnp	Not completed	pipeline, skipped
+trinculo	trinculo_multinom	PASS	synthetic data: nf-core gwas genotypes with a 3-class phenotype cut from a quantitative trait; new CWL for trinculo multinom
+trinculo	trinculo_ordinal	PASS	synthetic data: nf-core gwas genotypes with a 3-class phenotype cut from a quantitative trait; new CWL for trinculo ordinal
+trinotate	trinotate_Trinotate	Failed	image problem: Trinotate --init and --report call /usr/local/bin/util/... scripts that the image keeps flat in /usr/local/bin (Can't exec util/trinotateSeqLoader/TrinotateSeqLoader.pl); CWL fixed (removed invented command argument, db staged writable)
+triqler	triqler	PASS	
+tritimap	tritimap_init	PASS	
+tritimap	tritimap_run	Not completed	pipeline, skipped (Snakemake pipeline for wheat QTL mapping and assembly)
+trnascan-se	trnascan-se	PASS	
+troika-tb	troika-tb_troika	Not completed	pipeline, skipped (Snakemake pipeline that starts TB-profiler, Snippy and Kraken containers itself)
+trumicount	trumicount	Failed	image problem: the main --input-bam mode fails because umi_tools is not in the image; only the --input-umitools-group-out mode works.
+trust4	trust4	PASS	assembled the real example reads into 84 contigs; option -b is documented but the trust4 binary prints usage for it (use bam-extractor)
+trust4	trust4_BuildDatabaseFa	PASS	real human chr22 slice with its GTF (grouped by transcript); sequences equal an independent exon extraction
+trust4	trust4_BuildImgtAnnot	PASS	downloads the current IMGT file (6 MB, NetworkAccess); 1017 of the 1069 gene names in the shipped human_IMGT+C.fa are found
+trust4	trust4_BuildImgtVquestAnnot	Failed	image problem: the script calls wget -r, but the image wget is BusyBox and has no -r option
+trust4	trust4_FilterAnnotatedAssembly	Failed	tool bug: the script expects an old annotation format and dies with 'Wrong format' on the current annotator output
+trust4	trust4_annotator	PASS	
+trust4	trust4_bam-extractor	PASS	
+trust4	trust4_fastq-extractor	PASS	
+trust4	trust4_run-trust4	PASS	
+trust4	trust4_trust-airr	PASS	
+trust4	trust4_trust-barcoderep	Not completed	no barcoded single-cell data; ran on the bulk example CDR3 file and got one empty-barcode row only
+trust4	trust4_trust-cluster	Failed	image problem: the script has no working interpreter line and the image has no python3 (sh syntax error)
+trust4	trust4_trust-simplerep	PASS	
+trust4	trust4_trust-smartseq	PASS	one cell of the repository example reads; its top clone is in the run-trust4 report; option --cgeneEnd is documented but the script dies with 'Unknown parameter --cgeneEnd'
+trust4	trust4_trust-stats	Failed	image problem: python3 is not installed in the image (env: can't execute 'python3')
+truvari	truvari	PASS	wraps truvari bench; rewritten from the help; real_small SV VCFs give TP+FN=base count and TP+FP=comp count
+trycycler	trycycler_cluster	PASS	
+trycycler	trycycler_consensus	PASS	
+trycycler	trycycler_dotplot	PASS	
+trycycler	trycycler_msa	PASS	
+trycycler	trycycler_partition	PASS	
+trycycler	trycycler_reconcile	PASS	
+trycycler	trycycler_subsample	PASS	
+tsebra	tsebra	PASS	output identical to the Galaxy test output for braker.gtf and hintsfile.gff
+tsebra	tsebra_best_by_compleasm	Not completed	needs a BRAKER result folder, compleasm and a BUSCO lineage database
+tsebra	tsebra_fix_gtf_ids	PASS	output identical to the repository example files
+tsebra	tsebra_get_longest_isoform	PASS	one transcript per gene locus on two real BRAKER gene sets
+tsebra	tsebra_get_overlapping_genes	PASS	
+tsebra	tsebra_rename_gtf	PASS	
+tspex	tspex	PASS	tau value checked by hand on the repository test matrix
+tssv	tssv	PASS	repository test reads and flanking library: 9 reads, 7 matched pairs, new alleles found
+tsumugi	tsumugi_build-graphml	PASS	real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release) with the full genewise annotations; GraphML written
+tsumugi	tsumugi_build-webapp	PASS	real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release), score >= 70 subset (the tool allows at most 150 nodes); web app folder written
+tsumugi	tsumugi_count	PASS	real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); pairwise and genewise modes ran
+tsumugi	tsumugi_genes	PASS	real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); keep list fixed to a File input; pair count for one gene checked
+tsumugi	tsumugi_life-stage	PASS	real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); Early count checked
+tsumugi	tsumugi_mp	PASS	real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); include MP:0005508 with the packaged mp.obo
+tsumugi	tsumugi_run	Not completed	needs the very large IMPC statistical-results-ALL.csv.gz release file
+tsumugi	tsumugi_score	PASS	real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); score >= 30 count checked
+tsumugi	tsumugi_sex	PASS	real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); Male count checked
+tsumugi	tsumugi_zygosity	PASS	real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); Homo count checked
+tsv-utils	tsv-utils_csv2tsv	PASS	rewritten from the help; matches the repository gold output for the repository test files
+tsv-utils	tsv-utils_keep-header	PASS	new CWL; matches the repository gold output
+tsv-utils	tsv-utils_number-lines	PASS	new CWL; matches the repository gold output
+tsv-utils	tsv-utils_tsv-append	PASS	rewritten from the help; matches the repository gold output, including header, source header and --file sources
+tsv-utils	tsv-utils_tsv-filter	PASS	rewritten from the help (all test operators wrapped as repeatable options); matches the repository gold output for numeric, regex, count and label tests
+tsv-utils	tsv-utils_tsv-join	PASS	rewritten from the help; matches the repository gold output for append, prefix and exclude
+tsv-utils	tsv-utils_tsv-pretty	PASS	new CWL; matches the repository gold output
+tsv-utils	tsv-utils_tsv-sample	PASS	new CWL; matches the repository gold output with a static seed
+tsv-utils	tsv-utils_tsv-select	PASS	new CWL; matches the repository gold output
+tsv-utils	tsv-utils_tsv-split	PASS	new CWL; split by line count and by key on the repository test files, part files checked by hand
+tsv-utils	tsv-utils_tsv-summarize	PASS	new CWL; values match the repository gold output (column order follows the CWL option order, not the command-line order)
+tsv-utils	tsv-utils_tsv-uniq	PASS	new CWL; matches the repository gold output
+tttrlib	tttrlib_image_export	PASS	new CWL; real PicoQuant imaging file (beads.ptu) gives a 49x50 count image
+tttrlib	tttrlib_trace_correlate	Failed	tool bug: the command passes method 'default' to the Correlator, which prints 'Correlation mode not recognized!' and every correlation value is zero
+turbocor	turbocor_compute	PASS	fixed missing output argument and temp file type; real TCGA expression matrix (3000 genes) converted to HDF5; 14028 pairs equal a numpy check; --transpose also checked
+turbocor	turbocor_topk	PASS	top-5 pairs have correlation 1.0, confirmed with numpy
+tvc	tvc	Not completed	needs an Ion Torrent BAM with flow order and flow signals; no small public test data found, an Illumina BAM stops with 'read group 1 does not have a flow order'
+twilight	twilight	Failed	image problem: twilight crashes with illegal instruction (exit 132) on this CPU when aligning 20 SARS-CoV-2 genomes
+twobitreader	twobitreader_extract	PASS	
+twopaco	twopaco	PASS	
+twopaco	twopaco_graphdump	PASS	
+uc-echo	uc-echo	PASS	baseCommand fixed to uc-echo (the real command on PATH); 10000 enterovirus reads corrected, 2 bases changed
+uchime	uchime	PASS	synthetic data: chimera planted from two real NCBI 16S sequences; flagged in reference and de novo mode
+ucsc-autodtd	ucsc-autodtd_autoDtd	PASS	
+ucsc-autosql	ucsc-autosql_autoSql	PASS	
+ucsc-autoxml	ucsc-autoxml_autoXml	PASS	
+ucsc-avecols	ucsc-avecols	PASS	
+ucsc-axtchain	ucsc-axtchain	PASS	
+ucsc-axtsort	ucsc-axtsort	PASS	
+ucsc-axtswap	ucsc-axtswap	PASS	
+ucsc-axttomaf	ucsc-axttomaf	PASS	
+ucsc-axttopsl	ucsc-axttopsl	PASS	
+ucsc-bamtopsl	ucsc-bamtopsl	PASS	
+ucsc-bedclip	ucsc-bedclip	PASS	
+ucsc-bedcommonregions	ucsc-bedcommonregions	PASS	
+ucsc-bedcoverage	ucsc-bedcoverage	PASS	rewritten (baseCommand was not a real command); needs network access to the UCSC public MySQL server for hg18
+ucsc-bedextendranges	ucsc-bedextendranges	PASS	needs network access to the UCSC public MySQL server (hg18 chrom sizes)

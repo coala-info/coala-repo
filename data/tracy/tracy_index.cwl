@@ -10,7 +10,8 @@ inputs:
     type: File
     doc: Input genome fasta file (e.g., genome.fa.gz)
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 1
   - id: output_path

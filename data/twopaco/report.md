@@ -1,5 +1,12 @@
 # twopaco CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| twopaco | PASS |  |
+| twopaco_graphdump | PASS |  |
+
 ## twopaco
 
 ### Tool Description
@@ -74,5 +81,57 @@ Where:
 
    Program for construction of the condensed de Bruijn graph from complete
    genomes
+```
+
+## twopaco_graphdump
+
+### Tool Description
+This utility converts the binary output of TwoPaCo to another format
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/twopaco:1.1.0--hc252753_1
+- **Homepage**: https://github.com/medvedevgroup/TwoPaCo
+- **Package**: https://anaconda.org/channels/bioconda/packages/twopaco/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+USAGE: 
+
+   graphdump  -k <integer> [-s <>] ...  -f <seq|group|dot|gfa1|gfa2|fasta>
+              [--prefix] [--] [--version] [-h] <file name>
+
+
+Where: 
+
+   -k <integer>,  --kvalue <integer>
+     (required)  Value of k
+
+   -s <>,  --seqfile <>  (accepted multiple times)
+     sequences file name
+
+   -f <seq|group|dot|gfa1|gfa2|fasta>,  --format <seq|group|dot|gfa1|gfa2
+      |fasta>
+     (required)  Output format
+
+   --prefix
+     Add a prefix to segments in GFA (in case if you have genomes with
+     identical FASTA headers)
+
+   --,  --ignore_rest
+     Ignores the rest of the labeled arguments following this flag.
+
+   --version
+     Displays version information and exits.
+
+   -h,  --help
+     Displays usage information and exits.
+
+   <file name>
+     (required)  input file name
+
+
+   This utility converts the binary output of TwoPaCo to another format
 ```
 

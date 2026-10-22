@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - coreprofiler
 label: tooldistillator_coreprofiler
 doc: "Extract information from output(s) of coreprofiler (results.tsv)\n\nTool homepage:

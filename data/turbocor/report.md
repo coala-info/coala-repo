@@ -1,5 +1,12 @@
 # turbocor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| turbocor_compute | PASS | fixed missing output argument and temp file type; real TCGA expression matrix (3000 genes) converted to HDF5; 14028 pairs equal a numpy check; --transpose also checked |
+| turbocor_topk | PASS | top-5 pairs have correlation 1.0, confirmed with numpy |
+
 ## turbocor_compute
 
 ### Tool Description

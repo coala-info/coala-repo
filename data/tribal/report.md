@@ -1,5 +1,12 @@
 # tribal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tribal_fit | PASS | TRIBAL example data; output types fixed |
+| tribal_preprocess | PASS | TRIBAL example data; output types fixed, encoding file staged writable |
+
 ## tribal_preprocess
 
 ### Tool Description

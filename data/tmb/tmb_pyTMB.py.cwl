@@ -22,7 +22,7 @@ inputs:
       position: 101
       prefix: --cancerDb
   - id: db_config
-    type: string
+    type: File
     doc: Databases config file
     inputBinding:
       position: 101
@@ -180,7 +180,7 @@ inputs:
       position: 101
       prefix: --vaf
   - id: var_config
-    type: string
+    type: File
     doc: Variant calling config file
     inputBinding:
       position: 101
@@ -203,6 +203,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: export_vcf
+    type:
+      - 'null'
+      - File
+    doc: VCF with the considered variants (with --export)
+    outputBinding:
+      glob: '*_export.vcf.gz'
+  - id: debug_vcf
+    type:
+      - 'null'
+      - File
+    doc: Original VCF with TMB_FILTER tag (with --debug)
+    outputBinding:
+      glob: '*_debug.vcf.gz'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tmb:1.5.0--pyhdfd78af_1

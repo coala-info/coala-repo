@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - concoct
 label: tooldistillator_concoct
 doc: "Extract information from output(s) of concoct (merge_cluster.tsv)\n\nTool homepage:
@@ -80,7 +80,7 @@ inputs:
   - id: fasta_bin_zip_folder_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Bin fasta format ZIP folder for Concoct for concoct
     inputBinding:
       position: 102

@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - metabat2
 label: tooldistillator_metabat2
 doc: "Extract information from output(s) of metabat2 (depth.txt)\n\nTool homepage:
@@ -31,7 +31,7 @@ inputs:
   - id: fasta_bin_zip_folder_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Bin fasta format ZIP folder for Metabat2 for metabat2
     inputBinding:
       position: 102

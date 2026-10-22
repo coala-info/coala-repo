@@ -1,5 +1,11 @@
 # toppred CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| toppred | PASS |  |
+
 ## toppred
 
 ### Tool Description

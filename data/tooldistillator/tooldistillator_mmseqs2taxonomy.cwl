@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - mmseqs2taxonomy
 label: tooldistillator_mmseqs2taxonomy
 doc: "Extract information from output(s) of mmseqs2taxonomy (tax_report.tsv)\n\nTool

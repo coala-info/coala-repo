@@ -27,10 +27,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --awsEc2ExtraSecurityGroupId
     doc: Any additional security groups to attach to EC2 instances.
     inputBinding:
       position: 102
-      prefix: --awsEc2ExtraSecurityGroupId
   - id: aws_ec2_profile_arn
     type:
       - 'null'
@@ -92,8 +93,8 @@ inputs:
   - id: log_colors
     type:
       - 'null'
-      - boolean
-    doc: Enable or disable colored logging.
+      - string
+    doc: Enable or disable colored logging (True or False).
     inputBinding:
       position: 102
       prefix: --logColors
@@ -208,11 +209,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --tag
     doc: 'Tags are added to the AWS cluster for this node and all of its children.
       Tags are of the form: -t key1=value1'
     inputBinding:
       position: 102
-      prefix: --tag
   - id: temp_dir_root
     type:
       - 'null'

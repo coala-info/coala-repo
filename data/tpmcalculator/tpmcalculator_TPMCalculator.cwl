@@ -104,6 +104,30 @@ inputs:
       position: 101
       prefix: -t
 outputs:
+  - id: genes_out
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Gene level TPM values (*_genes.out)
+    outputBinding:
+      glob: '*_genes.out'
+  - id: genes_ent
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Gene level read counts per feature (*_genes.ent)
+    outputBinding:
+      glob: '*_genes.ent'
+  - id: transcripts_out
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Transcript level TPM values (*_transcripts.out), written with -e
+    outputBinding:
+      glob: '*_transcripts.out'
   - id: stdout
     type: stdout
     doc: Standard output

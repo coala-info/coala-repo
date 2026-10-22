@@ -1,5 +1,11 @@
 # tophat-recondition CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tophat-recondition | PASS |  |
+
 ## tophat-recondition
 
 ### Tool Description

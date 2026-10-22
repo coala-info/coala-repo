@@ -66,10 +66,23 @@ inputs:
       position: 103
       prefix: -withNull
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_sql
+    type: File
+    doc: SQL table definition (outRoot.sql)
+    outputBinding:
+      glob: $(inputs.out_root).sql
+  - id: output_c
+    type: File
+    doc: C code to load and save the structure (outRoot.c)
+    outputBinding:
+      glob: $(inputs.out_root).c
+  - id: output_h
+    type: File
+    doc: C header for the structure (outRoot.h)
+    outputBinding:
+      glob: $(inputs.out_root).h
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-autosql:482--h0b57e2e_0
-stdout: ucsc-autosql_autoSql.out

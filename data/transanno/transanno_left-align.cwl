@@ -13,12 +13,18 @@ inputs:
       position: 1
   - id: new
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: New assembly FASTA (.fai file is required)
     inputBinding:
       position: 102
       prefix: --new
   - id: original
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: Original assembly FASTA (.fai file is required)
     inputBinding:
       position: 102

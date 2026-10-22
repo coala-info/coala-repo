@@ -1,5 +1,17 @@
 # traitar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| traitar_annotate | Failed | tool bug: annotate does not pass pfam_dir to Traitar, so it always crashes with TypeError on a None path |
+| traitar_evaluate | Failed | tool bug: crashes with NameError: name 'evaluation' is not defined (missing import) |
+| traitar_new | Failed | tool bug: crashes in modify.create_tar with AttributeError: StringIO has no attribute StringIO (Python 2 code) |
+| traitar_pfam | Not completed | the download mode needs the network and the 1.5 GB Pfam-A database; only the --local file check was run |
+| traitar_phenotype | Failed | tool bug: primary and secondary predictions overwrite the same files, feature tracks and heatmaps are skipped as not supported, and 16 of 134 combined predictions differ from the repo reference |
+| traitar_remove | Failed | tool bug: crashes in modify.remove with TypeError: data type 'string' not understood (old pandas/numpy code) |
+| traitar_show | PASS | data: the phenotype models packaged in the image (no input files) |
+
 ## traitar_phenotype
 
 ### Tool Description

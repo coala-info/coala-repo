@@ -2,26 +2,31 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bam-read
 label: transrate-tools_bam-read
-doc: "Reads BAM file and outputs a CSV file.\n\nTool homepage: https://github.com/blahah/transrate-tools"
+doc: "Reads a BAM file of paired-end reads aligned to a transcriptome and writes per-contig read-mapping statistics to a CSV file.\n\nTool homepage: https://github.com/blahah/transrate-tools"
 inputs:
   - id: bam_file
     type: File
     doc: Input BAM file
     inputBinding:
       position: 1
+  - id: output_csv
+    type: string
+    doc: Output CSV file name
+    inputBinding:
+      position: 2
   - id: nullprior
     type:
       - 'null'
       - float
-    doc: Null prior value (optional)
+    doc: "nullprior (optional), for example 0.95"
     inputBinding:
-      position: 2
+      position: 3
 outputs:
-  - id: output_csv
+  - id: csv
     type: File
-    doc: Output CSV file
+    doc: CSV file with the read-mapping statistics
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_csv)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/transrate-tools:v1.0.0-2-deb_cv1

@@ -1,5 +1,20 @@
 # tsumugi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tsumugi_build-graphml | PASS | real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release) with the full genewise annotations; GraphML written |
+| tsumugi_build-webapp | PASS | real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release), score >= 70 subset (the tool allows at most 150 nodes); web app folder written |
+| tsumugi_count | PASS | real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); pairwise and genewise modes ran |
+| tsumugi_genes | PASS | real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); keep list fixed to a File input; pair count for one gene checked |
+| tsumugi_life-stage | PASS | real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); Early count checked |
+| tsumugi_mp | PASS | real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); include MP:0005508 with the packaged mp.obo |
+| tsumugi_run | Not completed | needs the very large IMPC statistical-results-ALL.csv.gz release file |
+| tsumugi_score | PASS | real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); score >= 30 count checked |
+| tsumugi_sex | PASS | real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); Male count checked |
+| tsumugi_zygosity | PASS | real IMPC TSUMUGI gene pairs (first 20000 pairs of the public release); Homo count checked |
+
 ## tsumugi_run
 
 ### Tool Description

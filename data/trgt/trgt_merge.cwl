@@ -124,8 +124,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Specify multiple times to increase verbosity level (e.g., -vv for more 
       verbosity)
     inputBinding:

@@ -63,17 +63,11 @@ inputs:
       position: 101
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: out_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.out_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trycycler:0.5.6--pyhdfd78af_0
-stdout: trycycler_cluster.out

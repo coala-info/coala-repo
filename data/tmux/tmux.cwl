@@ -10,7 +10,7 @@ inputs:
       - string
     doc: Command to execute
     inputBinding:
-      position: 1
+      position: 101
   - id: flags
     type:
       - 'null'
@@ -18,14 +18,14 @@ inputs:
         items: string
     doc: Flags for the command
     inputBinding:
-      position: 2
+      position: 102
   - id: _colors
     type:
       - 'null'
       - boolean
     doc: Declare the terminal to be "256-colour"
     inputBinding:
-      position: 103
+      position: 1
       prefix: '-2'
   - id: config_file
     type:
@@ -33,7 +33,7 @@ inputs:
       - File
     doc: Use file as configuration file
     inputBinding:
-      position: 103
+      position: 1
       prefix: -f
   - id: curses
     type:
@@ -41,7 +41,7 @@ inputs:
       - boolean
     doc: Use curses instead of the terminfo database
     inputBinding:
-      position: 103
+      position: 1
       prefix: -C
   - id: lock
     type:
@@ -49,7 +49,7 @@ inputs:
       - boolean
     doc: Lock the server
     inputBinding:
-      position: 103
+      position: 1
       prefix: -l
   - id: shell_command
     type:
@@ -57,7 +57,7 @@ inputs:
       - string
     doc: Execute shell-command
     inputBinding:
-      position: 103
+      position: 1
       prefix: -c
   - id: socket_name
     type:
@@ -65,7 +65,7 @@ inputs:
       - string
     doc: Specify socket name
     inputBinding:
-      position: 103
+      position: 1
       prefix: -L
   - id: socket_path
     type:
@@ -73,7 +73,7 @@ inputs:
       - File
     doc: Specify socket path
     inputBinding:
-      position: 103
+      position: 1
       prefix: -S
   - id: user_mode
     type:
@@ -81,7 +81,7 @@ inputs:
       - boolean
     doc: Set user mode
     inputBinding:
-      position: 103
+      position: 1
       prefix: -u
   - id: verbose
     type:
@@ -89,7 +89,7 @@ inputs:
       - boolean
     doc: Set verbose mode
     inputBinding:
-      position: 103
+      position: 1
       prefix: -v
 outputs:
   - id: stdout

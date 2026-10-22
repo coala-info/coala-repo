@@ -12,7 +12,9 @@ inputs:
     inputBinding:
       position: 1
   - id: filename
-    type: string
+    type:
+      - 'null'
+      - string
     doc: The file to which the output is written. If not specified, output is 
       written to stdout.
     inputBinding:
@@ -26,6 +28,10 @@ outputs:
       written to stdout.
     outputBinding:
       glob: '$(inputs.filename)'
+  - id: stdout
+    type: stdout
+    doc: Standard output (the matrix when no output filename is given)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
+stdout: tqdist_all_pairs_triplet_dist.out

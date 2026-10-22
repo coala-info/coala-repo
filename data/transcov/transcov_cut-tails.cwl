@@ -4,49 +4,51 @@ baseCommand:
   - transcov
   - cut-tails
 label: transcov_cut-tails
-doc: "Cut tails of coverage profiles.\n\nTool homepage: https://github.com/hogfeldt/transcov"
+doc: "Remove the tails of the coverage distribution of a matrix\n\nTool homepage: https://github.com/hogfeldt/transcov"
 inputs:
   - id: input_matrix
     type: File
-    doc: Input coverage matrix file.
+    doc: "Input matrix (.npy)"
     inputBinding:
       position: 1
   - id: index_file
     type: File
-    doc: Index file for the coverage matrix.
+    doc: "Index file of the input matrix"
     inputBinding:
       position: 2
-  - id: cut
+  - id: output_file
     type:
       - 'null'
       - string
-    doc: Cut range (e.g., '0.1-0.9').
+    default: tail_cutted_matrix.npy
+    doc: "Output file name"
     inputBinding:
-      position: 103
+      prefix: --output-file
+  - id: cut
+    type:
+      - 'null'
+      - float
+    default: 0.05
+    doc: "Fraction to remove from each selected tail (0 to 1)"
+    inputBinding:
       prefix: --cut
   - id: mode
     type:
       - 'null'
       - string
-    doc: "Mode for cutting tails: 'both', 'left', or 'right'."
+    default: both
+    doc: "Which tail to remove: both, left or right"
     inputBinding:
-      position: 103
       prefix: --mode
-  - id: output_file_path
-    type: string
-    inputBinding:
-      position: 104
-      prefix: --output-file
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file path.
+  - id: output_matrix
+    type: File
+    secondaryFiles:
+      - pattern: '^.index'
+        required: true
+    doc: "Matrix (.npy) without the cut tails, with its index file"
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transcov:1.1.3--py_0

@@ -4,70 +4,48 @@ baseCommand:
   - treebest
   - simulate
 label: treebest_simulate
-doc: "Simulate gene trees given a species tree using a duplication-loss model.\n\n\
-  \ Tool homepage: https://github.com/lh3/treebest"
+doc: "Simulate a gene tree.\n\nTool homepage: https://github.com/lh3/treebest"
 inputs:
-  - id: species_tree
-    type: File
-    doc: Input species tree in Newick format
-    inputBinding:
-      position: 1
-  - id: duplication_rate
+  - id: duplication_probability
     type:
       - 'null'
       - float
-    doc: Gene duplication rate
+    doc: "duplication probability [0.05]"
     inputBinding:
-      position: 102
       prefix: -d
-  - id: loss_rate
+  - id: loss_probability
     type:
       - 'null'
       - float
-    doc: Gene loss rate
+    doc: "loss probability [0.01]"
     inputBinding:
-      position: 102
       prefix: -l
-  - id: num_trees
-    type:
-      - 'null'
-      - int
-    doc: Number of gene trees to simulate
-    inputBinding:
-      position: 102
-      prefix: -n
-  - id: rate_scale
+  - id: loss_after_duplication_probability
     type:
       - 'null'
       - float
-    doc: Substitution rate scale (branch length scaling factor)
+    doc: "loss probability after duplication [0.25]"
     inputBinding:
-      position: 102
-      prefix: -s
-  - id: seed
+      prefix: -p
+  - id: max_height
     type:
       - 'null'
-      - int
-    doc: Random seed for simulation
+      - float
+    doc: "max height [0.25]"
     inputBinding:
-      position: 102
-      prefix: -S
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+      prefix: -m
+  - id: no_internal_names
+    type:
+      - 'null'
+      - boolean
+    doc: "not show internal name"
     inputBinding:
-      position: 103
-      prefix: --output-file
+      prefix: -n
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file to write simulated trees
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: Simulated gene tree in NH format
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treebest:1.9.2_ep78--hfc679d8_2
+stdout: treebest_simulate.out

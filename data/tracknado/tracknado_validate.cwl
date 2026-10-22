@@ -9,8 +9,8 @@ doc: "Validate a local hub directory or hub.txt file. Performs structural checks
   and accessible.\n\nTool homepage: https://pypi.org/project/tracknado/"
 inputs:
   - id: hub_path
-    type: File
-    doc: Path to a hub directory or a 'hub.txt' file to check for errors.
+    type: Directory
+    doc: Path to a hub directory to check for errors (a 'hub.txt' file inside it is checked).
     inputBinding:
       position: 1
   - id: strict

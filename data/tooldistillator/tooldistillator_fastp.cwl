@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - tooldistillator.py
+  - tooldistillator
   - fastp
 label: tooldistillator_fastp
 doc: "Extract information from output(s) of fastp (report.json)\n\nTool homepage:

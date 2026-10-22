@@ -29,11 +29,16 @@ inputs:
     doc: Target database file
     inputBinding:
       position: 4
+  - id: output_name
+    type: string
+    doc: Output file name (result table)
+    inputBinding:
+      position: 5
   - id: tmp_dir
     type: string
     doc: Temporary directory
     inputBinding:
-      position: 5
+      position: 6
   - id: compressed_output
     type:
       - 'null'
@@ -122,10 +127,12 @@ inputs:
       prefix: -v
 outputs:
   - id: output_file
-    type: File
-    doc: Output file
+    type:
+      type: array
+      items: File
+    doc: Result files written with the output name
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transannot:4.0.0--pl5321hd6d6fdc_2

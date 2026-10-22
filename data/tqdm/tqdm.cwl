@@ -5,12 +5,9 @@ label: tqdm
 doc: "A fast, extensible progress bar for Python and CLI\n\nTool homepage: https://github.com/tqdm/tqdm"
 inputs:
   - id: input
-    type:
-      - 'null'
-      - File
-    doc: Input file to read and pipe to stdout while showing a progress bar
-    inputBinding:
-      position: 1
+    type: File
+    doc: Input file; its lines are read from standard input and copied to standard
+      output while the progress bar is shown on standard error
   - id: ascii
     type:
       - 'null'
@@ -93,11 +90,80 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unit_scale
+  - id: bar_format
+    type:
+      - 'null'
+      - string
+    doc: Custom bar string formatting
+    inputBinding:
+      position: 102
+      prefix: --bar_format
+  - id: buf_size
+    type:
+      - 'null'
+      - int
+    doc: String buffer size in bytes (default 256), used when delim is specified
+    inputBinding:
+      position: 102
+      prefix: --buf_size
+  - id: delim
+    type:
+      - 'null'
+      - string
+    doc: Delimiting character (default newline)
+    inputBinding:
+      position: 102
+      prefix: --delim
+  - id: disable
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to disable the entire progress bar wrapper
+    inputBinding:
+      position: 102
+      prefix: --disable
+  - id: dynamic_ncols
+    type:
+      - 'null'
+      - boolean
+    doc: Constantly alter ncols to the environment
+    inputBinding:
+      position: 102
+      prefix: --dynamic_ncols
+  - id: initial
+    type:
+      - 'null'
+      - int
+    doc: The initial counter value
+    inputBinding:
+      position: 102
+      prefix: --initial
+  - id: position
+    type:
+      - 'null'
+      - int
+    doc: Line offset to print this bar (starting from 0)
+    inputBinding:
+      position: 102
+      prefix: --position
+  - id: smoothing
+    type:
+      - 'null'
+      - float
+    doc: Exponential moving average smoothing factor for speed estimates
+    inputBinding:
+      position: 102
+      prefix: --smoothing
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (a copy of the input)
+  - id: progress
+    type: stderr
+    doc: Progress bar text written to standard error
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tqdm:4.7.2--py36_0
+stdin: $(inputs.input.path)
 stdout: tqdm.out
+stderr: tqdm.err

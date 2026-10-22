@@ -82,7 +82,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log file name for logging processing events to file.
     inputBinding:
       position: 102
@@ -156,27 +156,28 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
-    inputBinding:
-      position: 103
-      prefix: --output-dir
-outputs:
-  - id: output_dir
+  - id: outdir
     type:
       - 'null'
-      - Directory
-    doc: Output directory, created if missing.
+      - string
+    default: trand_out
+    doc: "Output directory, created if missing."
+    inputBinding:
+      position: 102
+      prefix: --outdir
+outputs:
+  - id: output_dir
+    type: Directory
+    doc: Output directory with the TranD result tables and plots.
     outputBinding:
-      glob: $(inputs.output_dir_path)
-  - id: prefix_files
+      glob: $(inputs.outdir)
+  - id: log_output
     type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+      - 'null'
+      - File
+    doc: Log file written when log_file is set.
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: $(inputs.log_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

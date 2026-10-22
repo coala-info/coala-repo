@@ -12,10 +12,8 @@ inputs:
     inputBinding:
       position: 1
   - id: phenotypes
-    type:
-      type: array
-      items: string
-    doc: phenotypes to be removed
+    type: File
+    doc: file with the phenotype ids to be removed, one id per line (first column)
     inputBinding:
       position: 2
   - id: out_f

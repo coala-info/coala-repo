@@ -8,12 +8,11 @@ doc: "The location of the job store for the workflow. A job store holds persiste
   information about the jobs, stats, and files in a workflow.\n\nTool homepage: https://toil.ucsc-cgl.org/"
 inputs:
   - id: job_store
-    type: string
-    doc: The location of the job store for the workflow. A job store holds 
-      persistent information about the jobs, stats, and files in a workflow. Can
-      be file:<path>, aws:<region>:<prefix>, or google:<project_id>:<prefix>.
+    type: Directory
+    doc: 'The job store directory of the workflow (a file job store). A job store holds persistent information about the jobs, stats, and files in a workflow.'
     inputBinding:
       position: 1
+      valueFrom: $(runtime.outdir + '/' + self.basename)
   - id: categories
     type:
       - 'null'
@@ -26,8 +25,8 @@ inputs:
   - id: log_colors
     type:
       - 'null'
-      - boolean
-    doc: Enable or disable colored logging.
+      - string
+    doc: Enable or disable colored logging (True or False).
     inputBinding:
       position: 102
       prefix: --logColors
@@ -58,7 +57,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: File to log in.
     inputBinding:
       position: 102
@@ -161,6 +160,16 @@ inputs:
       position: 103
       prefix: --outputFile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: log_file_out
+    type:
+      - 'null'
+      - File
+    doc: Log file written with --logFile
+    outputBinding:
+      glob: $(inputs.log_file)
   - id: output_file
     type:
       - 'null'
@@ -170,6 +179,11 @@ outputs:
       glob: $(inputs.output_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.job_store)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/toil:7.0.0--pyhdfd78af_0
+stdout: toil_stats.out

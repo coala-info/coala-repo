@@ -1,5 +1,11 @@
 # transrate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| transrate | Failed | image problem: transrate stops with 'could not find snap in the path' (only a snap binary exists) and salmon fails to load libboost_iostreams.so.1.60.0 |
+
 ## transrate
 
 ### Tool Description

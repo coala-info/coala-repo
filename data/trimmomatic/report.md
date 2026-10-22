@@ -1,5 +1,11 @@
 # trimmomatic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trimmomatic | PASS | SE output equals the Galaxy expected file; PE with ILLUMINACLIP also run |
+
 ## trimmomatic
 
 ### Tool Description

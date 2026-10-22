@@ -21,13 +21,17 @@ inputs:
       position: 102
       prefix: --abundance
   - id: filtermemory
-    type: float
+    type:
+      - 'null'
+      - float
     doc: Memory in GBs allocated for the filter
     inputBinding:
       position: 102
       prefix: --filtermemory
   - id: filtersize
-    type: int
+    type:
+      - 'null'
+      - int
     doc: Size of the filter
     inputBinding:
       position: 102

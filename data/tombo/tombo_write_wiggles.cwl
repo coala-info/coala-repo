@@ -27,6 +27,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --control-fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: corrected_group
     type:
       - 'null'
@@ -43,6 +45,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fast5-basedirs
+      valueFrom: '$(self === null ? null : self.map(function(d) { return d.basename;
+        }))'
   - id: quiet
     type:
       - 'null'
@@ -71,6 +75,7 @@ inputs:
       prefix: --wiggle-types
   - id: wiggle_basename_path
     type: string
+    default: tombo_results
     inputBinding:
       position: 102
       prefix: --wiggle-basename
@@ -86,6 +91,12 @@ outputs:
       glob: $(inputs.wiggle_basename_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.control_fast5_basedirs)
+        writable: true
+      - entry: $(inputs.fast5_basedirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

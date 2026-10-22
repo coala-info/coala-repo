@@ -1,5 +1,13 @@
 # trimal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trimal | PASS | fixed -out and -htmlout flags; gappyout output equals the dataset's expected MSA |
+| trimal_readal | PASS | new CWL for readal; format conversion and info checked on dataset example |
+| trimal_statal | PASS | new CWL for statal; gap distribution and column identity checked |
+
 ## trimal
 
 ### Tool Description
@@ -172,6 +180,138 @@ Some Examples:
    trimal -in <inputfile> -out <outputfile> -clusters 5
 ```
 
+
+## trimal_readal
+
+### Tool Description
+Convert alignment formats and report basic information about sequence files (readAl, part of trimAl).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/trimal:1.5.1--h9948957_0
+- **Homepage**: https://trimal.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/trimal/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+readAl v1.5.rev1 build[2025-11-25]. 2009-2020. Victor Fernández-Rodríguez, Toni Gabaldón, and Salvador Capella-Gutiérrez
+
+readAl webpage: https://trimal.readthedocs.io
+
+This program is free software: you can redistribute it and/or modify 
+it under the terms of the GNU General Public License as published by 
+the Free Software Foundation, the last available version.
+
+Basic usage
+	readal -in <inputfile> -out <outputfile> [options].
+
+	-h                   Show this information.
+	--version            Show readAl version.
+
+	-in <inputfile>      Input file in several formats.
+	-out <outputfile>    Output file name (default STDOUT).
+
+	-format              Print information about input file format and if sequences are aligned or not.
+	-type                Print information about biological sequences datatype (e.g. nucleotides:dna, nucleotides:rna, aminoacids, etc)
+	-info                Print information about sequences number, average sequence length, max & min sequence length
+
+	-onlyseqs            Generate output with only residues from input file
+
+	-html                Output residues colored according their physicochemical properties. HTML file.
+
+	-reverse             Output the reverse of sequences in input file.
+
+	-nbrf                Output file in NBRF/PIR format
+	-mega                Output file in MEGA format
+	-nexus               Output file in NEXUS format
+	-clustal             Output file in CLUSTAL format
+
+	-fasta               Output file in FASTA format
+	-fasta_m10           Output file in FASTA format. Sequences name up to 10 characters.
+
+	-phylip              Output file in PHYLIP/PHYLIP4 format
+	-phylip_m10          Output file in PHYLIP/PHYLIP4 format. Sequences name up to 10 characters.
+	-phylip_paml         Output file in PHYLIP format compatible with PAML
+	-phylip_paml_m10     Output file in PHYLIP format compatible with PAML. Sequences name up to 10 characters.
+	-phylip3.2           Output file in PHYLIP3.2 format
+	-phylip3.2_m10       Output file in PHYLIP3.2 format. Sequences name up to 10 characters.
+```
+
+## trimal_statal
+
+### Tool Description
+Compute alignment statistics: gap, similarity, consistency and identity scores (statAl, part of trimAl).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/trimal:1.5.1--h9948957_0
+- **Homepage**: https://trimal.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/trimal/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+statAl v1.5.rev1 build[2025-11-25]. 2009-2020. Victor Fernández-Rodríguez, Toni Gabaldón, and Salvador Capella-Gutiérrez
+
+statAl webpage: https://trimal.readthedocs.io
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by the
+Free Software Foundation, the last available version.
+
+Please cite:
+	trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses.
+	Salvador Capella-Gutierrez; Jose M. Silla-Martinez; Toni Gabaldon. Bioinformatics 2009, 25:1972-1973.
+
+Basic usage:
+	statal -in <inputfile> (options).
+
+Available options:
+
+    -h --help                Print this information and show some examples.
+    -v --version             Print the trimAl version.
+
+    -i -in <inputfile>       Input file in several formats (clustal, fasta, nexus, phylip, etc).
+
+    -compareset <inputfile>     Input list of paths for the alignments to compare.
+    -forceselect <inputfile>    Force selection of a given file as reference for being compare with others.
+
+    -matrix <inpufile>          Input file for user-defined similarity matrix (default: Blosum62).
+    --alternative_matrix <name> Select an alternative similarity matrix already loaded. 
+                                Only available 'degenerated_nt_identity'
+
+    -sgc                        Print gap score per column from input alignment.
+    -sgt                        Print accumulated gap scores distribution from input alignment.
+
+    -ssc                        Print similarity score per column from input alignment.
+    -sst                        Print accumulated similarity scores distribution for input alignment.
+
+    -sfc                        Print sum-of-pairs score per column for the selected alignment
+    -sft                        Print accumulated sum-of-pairs scores distribution for the selected alignment
+
+    -sident                     Print identity scores for sequences in the alignemnt.
+    -scolidentt                 Print general descriptive statistics for column identity scores from input alignemnt.
+
+    -w <n>                      (half) Window size, score of position i is the average of the window (i - n) to (i + n).
+    -gw <n>                     (half) Window size only applies to statistics based on Gaps.
+    -sw <n>                     (half) Window size only applies to statistics based on Similarity.
+    -cw <n>                     (half) Window size only applies to statistics based on Consistency.
+
+Some Examples:
+
+1) Get information about gaps distribution for input alignment
+   statal -in <inputfile> -sgt
+
+2) Get information about consistency score per column for the most consistent input alignment, if more than one is provided
+   statal -in <inputfile> -sfc
+
+3) Get general descriptive statistics for columns identity
+   statal -in <inputfile> -scolidentt
+
+4) Change the windows size for computing similarity score per column
+   statal -in <inputfile> -sw 3 -ssc
+```
 
 ## Metadata
 - **Skill**: generated

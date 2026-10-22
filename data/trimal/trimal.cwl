@@ -472,7 +472,7 @@ inputs:
     doc: Output or path parameter `html_output_path`
     inputBinding:
       position: 102
-      prefix: --html-output
+      prefix: -htmlout
   - id: output_file_path
     type:
       - 'null'
@@ -480,7 +480,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -out
 outputs:
   - id: output_file
     type:

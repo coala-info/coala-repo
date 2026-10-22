@@ -1,5 +1,16 @@
 # tqdist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tqdist_all_pairs_quartet_dist | PASS | synthetic data: hand-made 4-leaf trees with checkable answers |
+| tqdist_all_pairs_triplet_dist | PASS | synthetic data: hand-made 4-leaf trees with checkable answers |
+| tqdist_pairs_quartet_dist | PASS | synthetic data: hand-made 4-leaf trees with checkable answers |
+| tqdist_pairs_triplet_dist | PASS | synthetic data: hand-made 4-leaf trees with checkable answers |
+| tqdist_quartet_dist | PASS | real tqDist example trees (tree1 and tree2) from the tqDistpy repo. |
+| tqdist_triplet_dist | PASS | real tqDist example trees (tree1 and tree2) from the tqDistpy repo. |
+
 ## tqdist_triplet_dist
 
 ### Tool Description

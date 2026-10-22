@@ -1,5 +1,11 @@
 # tree-puzzle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| tree-puzzle | PASS | primates example gives the expected tree; menu keystrokes come from stdin; -randseed crashes visibly with seed 1 but works with 7 |
+
 ## tree-puzzle
 
 ### Tool Description

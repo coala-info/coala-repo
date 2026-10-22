@@ -1,68 +1,99 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: srnamapper
+baseCommand: srnaMapper
 label: srnamapper
-doc: "A tool for specifically mapping small RNA reads to a reference genome, allowing
-  for a user-defined number of mismatches.\n\nTool homepage: https://github.com/mzytnicki/srnaMapper"
+doc: "Map small RNA reads (FASTQ) to a reference genome indexed with bwa, with a 
+  user-defined number of errors, and write SAM files.\n\nTool homepage: https://github.com/mzytnicki/srnaMapper"
 inputs:
-  - id: all_matches
+  - id: reads
     type:
-      - 'null'
-      - boolean
-    doc: Report all matches for each read
+      type: array
+      items: File
+      inputBinding:
+        prefix: -r
+    doc: Input read files in FASTQ format (one -r per input file)
     inputBinding:
-      position: 101
-      prefix: -a
-  - id: best_match
-    type:
-      - 'null'
-      - boolean
-    doc: Report only the best matches for each read
-    inputBinding:
-      position: 101
-      prefix: -b
-  - id: input_file
+      position: 1
+  - id: genome
     type: File
-    doc: Input file containing small RNA reads (FASTA/FASTQ format)
+    doc: Genome FASTA file; its bwa index files (.amb, .ann, .bwt, .pac, .sa) 
+      must sit beside it (prefix of the genome database produced by bwa index)
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     inputBinding:
-      position: 101
-      prefix: -i
-  - id: mismatches
+      position: 2
+      prefix: -g
+  - id: output_files
+    type:
+      type: array
+      items: string
+      inputBinding:
+        prefix: -o
+    doc: Output files in SAM format (one -o per input file, or a single file with 
+      --unique)
+    inputBinding:
+      position: 3
+  - id: max_errors
     type:
       - 'null'
       - int
-    doc: Number of allowed mismatches
+    doc: Maximum number of errors (default 2)
     inputBinding:
-      position: 101
-      prefix: -m
-  - id: reference_file
-    type: File
-    doc: Reference genome file (FASTA format)
-    inputBinding:
-      position: 101
-      prefix: -r
+      position: 4
+      prefix: -e
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use
+    doc: Number of threads (default 1)
     inputBinding:
-      position: 101
+      position: 4
       prefix: -t
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 102
-      prefix: --output-file
-outputs:
-  - id: output_file
+  - id: max_hits
     type:
       - 'null'
-      - File
-    doc: Output file name (SAM format)
+      - int
+    doc: Discard reads when they map more than n times (default 5)
+    inputBinding:
+      position: 4
+      prefix: -n
+  - id: low_complexity
+    type:
+      - 'null'
+      - int
+    doc: Low complexity threshold, more is more lenient (default 6)
+    inputBinding:
+      position: 4
+      prefix: -f
+  - id: unique_sam
+    type:
+      - 'null'
+      - boolean
+    doc: Print all the mapped reads in a unique SAM file (with the counts for 
+      each sample)
+    inputBinding:
+      position: 4
+      prefix: -u
+  - id: seed
+    type:
+      - 'null'
+      - int
+    doc: Set the random seed (time otherwise)
+    inputBinding:
+      position: 4
+      prefix: -s
+outputs:
+  - id: sam_files
+    type:
+      type: array
+      items: File
+    doc: Output SAM files
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_files)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -7,7 +7,7 @@ inputs:
   - id: counts
     type:
       - 'null'
-      - string
+      - File
     doc: Input (cell x gene) counts matrix as df.npz, tab delimited text file, 
       or anndata file (h5ad)
     inputBinding:
@@ -24,6 +24,7 @@ inputs:
   - id: reference
     type:
       - 'null'
+      - File
       - string
     doc: File containing a reference set of GEPs by genes (*.tsv/.csv/.txt) OR 
       the name of a default reference to use (ex. TCAT.V1).
@@ -40,7 +41,9 @@ inputs:
       position: 101
       prefix: --scores
   - id: output_dir_path
-    type: string?
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -54,6 +57,15 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |
+        ${
+          if (inputs.output_dir_path) {
+            return [{"entryname": inputs.output_dir_path, "entry": {"class": "Directory", "basename": inputs.output_dir_path, "listing": []}, "writable": true}];
+          }
+          return [];
+        }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/starcatpy:1.0.9--pyh7e72e81_0

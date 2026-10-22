@@ -8,10 +8,32 @@ doc: "SWIPE 2.1.1 [Dec 14 2024 05:52:37]\n\nReference: T. Rognes (2011) Faster S
 inputs:
   - id: database
     type: File
-    doc: sequence database base name (required)
+    doc: BLAST protein or nucleotide database made with makeblastdb. Give the index file (.pin or .nin); the other database files are staged with it. The base name (without extension) goes to --db.
+    secondaryFiles:
+      - pattern: ^.phr
+        required: false
+      - pattern: ^.psq
+        required: false
+      - pattern: ^.nhr
+        required: false
+      - pattern: ^.nsq
+        required: false
+      - pattern: ^.pdb
+        required: false
+      - pattern: ^.pot
+        required: false
+      - pattern: ^.ptf
+        required: false
+      - pattern: ^.pto
+        required: false
+      - pattern: ^.pos
+        required: false
+      - pattern: ^.pog
+        required: false
     inputBinding:
       position: 101
       prefix: --db
+      valueFrom: $(self.path.replace(/\.[^.\/]+$/, ''))
   - id: db_gencode
     type:
       - 'null'

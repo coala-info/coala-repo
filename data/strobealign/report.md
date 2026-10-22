@@ -1,5 +1,11 @@
 # strobealign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| strobealign | PASS |  |
+
 ## strobealign
 
 ### Tool Description

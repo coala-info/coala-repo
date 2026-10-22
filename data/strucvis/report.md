@@ -1,5 +1,11 @@
 # strucvis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| strucvis_strucVis | PASS |  |
+
 ## strucvis_strucVis
 
 ### Tool Description

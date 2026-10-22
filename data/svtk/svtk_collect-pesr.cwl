@@ -4,8 +4,10 @@ baseCommand:
   - svtk
   - collect-pesr
 label: svtk_collect-pesr
-doc: "Collect split read and discordant pair data from a bam alignment.\n\nTool homepage:
-  https://github.com/talkowski-lab/svtk"
+doc: 'Collect split read and discordant pair data from a bam alignment.
+
+
+  Tool homepage: https://github.com/talkowski-lab/svtk'
 inputs:
   - id: bam
     type: File
@@ -18,12 +20,12 @@ inputs:
     inputBinding:
       position: 2
   - id: splitfile
-    type: File
+    type: string
     doc: Output split counts.
     inputBinding:
       position: 3
   - id: discfile
-    type: File
+    type: string
     doc: Output discordant pairs.
     inputBinding:
       position: 4
@@ -52,10 +54,18 @@ inputs:
       position: 105
       prefix: --region
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_splitfile
+    type: File[]
+    doc: Output split counts.
+    outputBinding:
+      glob: $(inputs.splitfile)*
+  - id: out_discfile
+    type: File[]
+    doc: Output discordant pairs.
+    outputBinding:
+      glob: $(inputs.discfile)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7
-stdout: svtk_collect-pesr.out

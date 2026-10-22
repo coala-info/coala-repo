@@ -1,5 +1,25 @@
 # surpyvor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| surpyvor_carrierplot | PASS |  |
+| surpyvor_fixref | Failed | image problem: ModuleNotFoundError, no module named pyfaidx |
+| surpyvor_fixvcf | PASS |  |
+| surpyvor_haplomerge | PASS |  |
+| surpyvor_highconf | PASS |  |
+| surpyvor_highsens | Failed | tool bug: a gzipped VCF input silently gives an empty result; plain VCF inputs give the correct union of calls. |
+| surpyvor_lengthplot | PASS |  |
+| surpyvor_merge | PASS |  |
+| surpyvor_minlen | PASS |  |
+| surpyvor_prf | PASS | precision, recall, F-measure and --venn work; the --bar option crashes with a numpy error |
+| surpyvor_purge2d | Failed | image problem: ModuleNotFoundError, no module named pysam |
+| surpyvor_svlentruncate | PASS |  |
+| surpyvor_upset | PASS |  |
+| surpyvor_varcount | PASS |  |
+| surpyvor_venn | PASS |  |
+
 ## surpyvor_merge
 
 ### Tool Description

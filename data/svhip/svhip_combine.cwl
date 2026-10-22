@@ -1,11 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svhip.py
+baseCommand:
+  - svhip
+  - combine
 label: svhip_combine
 doc: "Combine feature vectors from multiple files.\n\nTool homepage: https://github.com/chrisBioInf/Svhip"
 inputs:
   - id: input_file
-    type: File
+    type: Directory
     doc: The input directory or file (Required).
     inputBinding:
       position: 101
@@ -27,10 +29,10 @@ inputs:
       prefix: --outfile
 outputs:
   - id: outfile
-    type: Directory
-    doc: Name for the output directory (Required).
+    type: File
+    doc: Combined feature table (the tool adds .tsv to the name when missing).
     outputBinding:
-      glob: $(inputs.outfile_path)
+      glob: $(inputs.outfile_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -21,15 +21,14 @@ inputs:
       position: 101
       prefix: --outdir
   - id: prefix
-    type:
-      - 'null'
-      - string
+    type: string
+    default: nwss-batch
     doc: Prefix to use for output files
     inputBinding:
       position: 101
       prefix: --prefix
   - id: results
-    type: string
+    type: File
     doc: A TSV (or CSV) file with the dPCR results
     inputBinding:
       position: 101
@@ -51,7 +50,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: yaml
-    type: string
+    type: File
     doc: A YAML formatted file containing constant information for NWSS fields.
     inputBinding:
       position: 101
@@ -66,7 +65,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + inputs.prefix + '*')"
   - id: outdir_dir
     type:
       - 'null'
@@ -74,6 +73,8 @@ outputs:
     doc: Directory to write output
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/steamboat:1.1.1--pyhdfd78af_0

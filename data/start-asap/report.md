@@ -1,5 +1,11 @@
 # start-asap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| start-asap | Failed | tool bug: the script parses --project-name as a flag without a value, so the sheet shows Name 1; other options and the JSON route work. baseCommand fixed to start-asap |
+
 ## start-asap
 
 ### Tool Description

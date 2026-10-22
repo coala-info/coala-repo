@@ -1,5 +1,11 @@
 # svync CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svync | PASS |  |
+
 ## svync
 
 ### Tool Description

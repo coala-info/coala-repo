@@ -1,5 +1,13 @@
 # srahunter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| srahunter_download | PASS |  |
+| srahunter_fullmetadata | PASS |  |
+| srahunter_metadata | PASS |  |
+
 ## srahunter_download
 
 ### Tool Description

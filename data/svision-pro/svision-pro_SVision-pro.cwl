@@ -70,7 +70,10 @@ inputs:
       position: 101
       prefix: --force_cluster
   - id: genome_path
-    type: Directory
+    type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: Absolute path to your reference genome (.fai required in the directory)
     inputBinding:
       position: 101
@@ -146,7 +149,7 @@ inputs:
       position: 101
       prefix: --model_path
   - id: out_path
-    type: Directory
+    type: string
     doc: Absolute path to output
     inputBinding:
       position: 101
@@ -235,6 +238,11 @@ inputs:
       position: 101
       prefix: --unet_cpu_num
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Output directory with the VCF and logs
+    outputBinding:
+      glob: $(inputs.out_path)
   - id: stdout
     type: stdout
     doc: Standard output

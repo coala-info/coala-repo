@@ -1,5 +1,11 @@
 # stellar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stellar | PASS | seqan repo test data: GFF identical to expected 5e-2.gff (500 matches); --outDisabled flag fixed |
+
 ## stellar
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ssake CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ssake | PASS | Fixed on/off flags to send 1 or 0; SSAKE Herpesvirus test reads assembled into two contigs covering the 60 kb reference, and seeded mode worked |
+
 ## ssake
 
 ### Tool Description

@@ -98,6 +98,17 @@ outputs:
     doc: Output folder
     outputBinding:
       glob: $(inputs.output_folder)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |
+        ${
+          if (inputs.output_folder) {
+            return [{"entryname": inputs.output_folder, "entry": {"class": "Directory", "basename": inputs.output_folder, "listing": []}, "writable": true}];
+          }
+          return [];
+        }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stream_atac:0.3.5--py_5

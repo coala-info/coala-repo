@@ -1,5 +1,12 @@
 # staden_io_lib CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| staden_io_lib_scram_flagstat | PASS |  |
+| staden_io_lib_scramble | PASS |  |
+
 ## staden_io_lib_scramble
 
 ### Tool Description

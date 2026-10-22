@@ -1,5 +1,11 @@
 # survindel2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| survindel2_survindel2.py | PASS |  |
+
 ## survindel2_survindel2.py
 
 ### Tool Description

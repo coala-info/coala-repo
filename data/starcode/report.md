@@ -1,5 +1,11 @@
 # starcode CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| starcode | PASS | repo test files: 35 sequences into 5 clusters, sphere clusters, paired non-redundant fastq |
+
 ## starcode
 
 ### Tool Description

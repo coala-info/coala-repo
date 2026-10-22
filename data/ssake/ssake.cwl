@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -u
+      valueFrom: '$(self ? "1" : "0")'
   - id: break_tie_random_base
     type:
       - 'null'
@@ -22,6 +23,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -q
+      valueFrom: '$(self ? "1" : "0")'
   - id: error_percent_mean_distance
     type:
       - 'null'
@@ -39,6 +41,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -y
+      valueFrom: '$(self ? "1" : "0")'
   - id: ignore_read_name_header
     type:
       - 'null'
@@ -48,6 +51,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -h
+      valueFrom: '$(self ? "1" : "0")'
   - id: independent_assembly
     type:
       - 'null'
@@ -159,6 +163,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -c
+      valueFrom: '$(self ? "1" : "0")'
   - id: trim_bases
     type:
       - 'null'
@@ -184,6 +189,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -p
+      valueFrom: '$(self ? "1" : "0")'
   - id: verbose
     type:
       - 'null'
@@ -192,6 +198,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+      valueFrom: '$(self ? "1" : "0")'
 outputs:
   - id: stdout
     type: stdout
@@ -203,6 +210,8 @@ outputs:
     doc: Files written with the prefix given in output_basename
     outputBinding:
       glob: $(inputs.output_basename)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/ssake:v4.0-2-deb_cv1

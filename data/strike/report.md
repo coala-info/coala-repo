@@ -1,5 +1,11 @@
 # strike CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| strike | PASS |  |
+
 ## strike
 
 ### Tool Description

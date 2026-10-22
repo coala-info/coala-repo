@@ -1,5 +1,11 @@
 # swipe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| swipe | PASS |  |
+
 ## swipe
 
 ### Tool Description

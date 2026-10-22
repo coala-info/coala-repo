@@ -1,5 +1,11 @@
 # strdust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| strdust_STRdust | PASS | repo test data (chr7 reference, phased long-read BAM, README region): one VCF record with a phased 1\|2 genotype supported by 14 and 12 reads; index secondary files added |
+
 ## strdust_STRdust
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # straitrazor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| straitrazor_str8rzr | PASS | synthetic data: 30 reads cut from real hg38 chr22 at D22S1045 (20 forward, 10 reverse) give 1 haplotype, 17 repeats, count 20/10; fastq order and -o option fixed |
+
 ## straitrazor_str8rzr
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ssdrippipeline CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ssdrippipeline_ssDRIPSeqAnalysis.py | Not completed | pipeline, skipped: whole DRIP-seq analysis driven by a JSON config with genome indexes and many read sets |
+
 ## ssdrippipeline_ssDRIPSeqAnalysis.py
 
 ### Tool Description

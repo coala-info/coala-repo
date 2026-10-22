@@ -9,8 +9,8 @@ doc: "This command provides info on potentially segmented viruses based on the t
   structured comment.\n\nTool homepage: https://github.com/LanderDC/suvtk"
 inputs:
   - id: database
-    type: File
-    doc: The suvtk database path.
+    type: Directory
+    doc: The suvtk database path (needs nodes.dmp and names.dmp).
     inputBinding:
       position: 101
       prefix: --database

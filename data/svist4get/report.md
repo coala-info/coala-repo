@@ -1,5 +1,11 @@
 # svist4get CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svist4get | PASS |  |
+
 ## svist4get
 
 ### Tool Description

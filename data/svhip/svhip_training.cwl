@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svhip.py
+baseCommand:
+  - svhip
+  - training
 label: svhip_training
 doc: "svhip.py\n\nTool homepage: https://github.com/chrisBioInf/Svhip"
 inputs:
@@ -139,7 +141,7 @@ inputs:
   - id: optimize_hyperparameters
     type:
       - 'null'
-      - boolean
+      - string
     doc: Select if a parameter optimization should be performed for the ML 
       model. Default is on.
     inputBinding:

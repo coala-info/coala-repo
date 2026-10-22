@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svhip.py
+baseCommand:
+  - svhip
+  - evaluate
 label: svhip_evaluate
 doc: "Evaluate SVHIP models or make predictions.\n\nTool homepage: https://github.com/chrisBioInf/Svhip"
 inputs:

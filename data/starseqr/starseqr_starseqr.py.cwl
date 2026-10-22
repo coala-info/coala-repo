@@ -22,6 +22,8 @@ inputs:
       prefix: --bed_file
   - id: fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: indexed fasta (.fa)
     inputBinding:
       position: 101
@@ -94,6 +96,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Aligned.sortedByCoord.out.bam file produced by STAR. Must contain 
       chimeric reads with ch tag.
     inputBinding:
@@ -143,8 +148,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: verbose level... repeat up to three times.
     inputBinding:
       position: 101
@@ -153,6 +157,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: prefix_outputs
+    type:
+      type: array
+      items:
+        - File
+        - Directory
+    doc: Result files and directories written with the prefix
+    outputBinding:
+      glob: $(inputs.prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/starseqr:0.6.7--py36h7eb728f_0

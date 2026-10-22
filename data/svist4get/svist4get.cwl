@@ -132,7 +132,7 @@ inputs:
       - string
     doc: Visualization an arbitrary genomic window using genomic coordinates
     inputBinding:
-      position: 101
+      position: 102
       prefix: -w
   - id: debug
     type:
@@ -148,7 +148,7 @@ inputs:
       - int
     doc: End coordinate for arbitrary genomic window visualization
     inputBinding:
-      position: 101
+      position: 104
   - id: gene_id
     type:
       - 'null'
@@ -302,7 +302,7 @@ inputs:
       - int
     doc: Start coordinate for arbitrary genomic window visualization
     inputBinding:
-      position: 101
+      position: 103
   - id: transcript_id
     type:
       - 'null'
@@ -343,22 +343,22 @@ inputs:
       site|translation initiation site of a particular transcript (using GFF 
       transcript_id) with a fixed offsets upstream and downstream
     inputBinding:
-      position: 101
-      prefix: -t
+      position: 102
+      prefix: -w
   - id: tss_tis_downstream
     type:
       - 'null'
       - int
     doc: Downstream offset for tss|tis visualization
     inputBinding:
-      position: 101
+      position: 104
   - id: tss_tis_upstream
     type:
       - 'null'
       - int
     doc: Upstream offset for tss|tis visualization
     inputBinding:
-      position: 101
+      position: 103
   - id: verbose
     type:
       - 'null'
@@ -379,18 +379,18 @@ inputs:
     type: string
     doc: Output or path parameter `output_file_path`
     inputBinding:
-      position: 102
-      prefix: --output-file
+      position: 110
+      prefix: -o
 outputs:
   - id: output_file
     type:
-      - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output file name. Generates a pdf (vector) or png (raster) file based 
       on the provided extension. Both png and pdf will be generated if the 
       extension is not specified.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -97,8 +97,20 @@ outputs:
     doc: Save merged vcf file.
     outputBinding:
       glob: $(inputs.keepmerged_path)
+  - id: metrics
+    type: stdout
+    doc: Precision, recall and F-measure (and the confusion matrix with --matrix)
+  - id: plots
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Plots written with --venn and --bar
+    outputBinding:
+      glob: '*.png'
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/surpyvor:0.15.0--pyhdfd78af_0
+stdout: surpyvor_prf.out

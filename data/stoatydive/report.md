@@ -1,5 +1,11 @@
 # stoatydive CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stoatydive_StoatyDive.py | PASS | repo test data (broad peaks, README example 1): CV table matches the expected file to 5 decimals; output folder now created |
+
 ## stoatydive_StoatyDive.py
 
 ### Tool Description

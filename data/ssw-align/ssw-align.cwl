@@ -9,12 +9,12 @@ inputs:
     type: File
     doc: Target FASTA file
     inputBinding:
-      position: 1
+      position: 201
   - id: query_file
     type: File
     doc: Query FASTA or FASTQ file
     inputBinding:
-      position: 2
+      position: 202
   - id: best_alignment_reverse_complement
     type:
       - 'null'
@@ -60,7 +60,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output in SAM format.
+    doc: Output in SAM format (the tool needs -c together with -s).
     inputBinding:
       position: 103
       prefix: -s

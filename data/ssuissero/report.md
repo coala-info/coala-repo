@@ -1,5 +1,11 @@
 # ssuissero CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ssuissero | PASS | Rewrote CWL for SsuisSero.sh (-i -o -s -x); S. suis P1/7 genome gave serotype 2 as expected (FASTA mode only) |
+
 ## ssuissero
 
 ### Tool Description

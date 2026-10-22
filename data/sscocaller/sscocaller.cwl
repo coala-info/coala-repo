@@ -7,11 +7,18 @@ inputs:
   - id: bam
     type: File
     doc: the read alignment file with records of single-cell DNA reads
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 1
   - id: vcf
     type: File
     doc: the variant call file with records of SNPs
+    secondaryFiles:
+      - pattern: .csi
+        required: false
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 2
   - id: barcode_file

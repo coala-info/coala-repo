@@ -7,7 +7,7 @@ inputs:
   - id: assembly
     type:
       - 'null'
-      - string
+      - File
     doc: Input assembly (FASTA format), directory of assemblies to predict 
       SCCmec. (Cannot be used with --staphopia)
     inputBinding:

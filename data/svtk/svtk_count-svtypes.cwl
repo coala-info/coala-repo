@@ -4,8 +4,10 @@ baseCommand:
   - svtk
   - count-svtypes
 label: svtk_count-svtypes
-doc: "Count the instances of each SVTYPE observed in each sample in a VCF.\n\nTool
-  homepage: https://github.com/talkowski-lab/svtk"
+doc: 'Count the instances of each SVTYPE observed in each sample in a VCF.
+
+
+  Tool homepage: https://github.com/talkowski-lab/svtk'
 inputs:
   - id: vcf
     type: File
@@ -38,12 +40,9 @@ inputs:
       prefix: --total-variants
 outputs:
   - id: fout
-    type:
-      - 'null'
-      - File
-    doc: Output file
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: 'Counts: sample, svtype, count'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7
+stdout: svtk_count-svtypes.txt

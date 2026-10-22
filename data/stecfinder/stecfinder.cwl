@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: STECFinder.py
+baseCommand: stecfinder
 label: stecfinder
 doc: "STECFinder.py is a tool for identifying Shiga toxin-producing E. coli (STEC)
   strains.\n\nTool homepage: https://github.com/LanLab/STECFinder"
@@ -49,7 +49,7 @@ inputs:
   - id: input_data
     type:
       type: array
-      items: string
+      items: File
     doc: path/to/input_data
     inputBinding:
       position: 101

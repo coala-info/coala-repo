@@ -1,5 +1,11 @@
 # star CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| star_STAR | PASS | genomeGenerate on 40 kb chr22 slice then alignReads of 4159 real RNA-seq pairs: 69% unique, 144 splices; CWL rewritten for genome_dir and outputs |
+
 ## star_STAR
 
 ### Tool Description

@@ -12,6 +12,13 @@ inputs:
     doc: Input file (optional, defaults to stdin)
     inputBinding:
       position: 1
+  - id: output_file_name
+    type:
+      - 'null'
+      - string
+    doc: Output file name (optional, defaults to stdout)
+    inputBinding:
+      position: 2
   - id: compress_with_fqzcomp
     type:
       - 'null'
@@ -27,7 +34,7 @@ inputs:
     doc: Set compression level (1-9).
     inputBinding:
       position: 102
-      prefix: '-9'
+      valueFrom: $("-" + self)
   - id: convert_to_bam_with_index
     type:
       - 'null'
@@ -177,6 +184,9 @@ inputs:
       - 'null'
       - File
     doc: '[Cram] Specifies the reference file.'
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 102
       prefix: -r
@@ -227,7 +237,7 @@ outputs:
       - File
     doc: Output file (optional, defaults to stdout)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file_name)
   - id: output_bam_index
     type:
       - 'null'

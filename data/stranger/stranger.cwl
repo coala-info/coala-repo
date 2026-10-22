@@ -8,25 +8,46 @@ doc: "Stranger is a tool for annotating STR (Short Tandem Repeat) variants in VC
 inputs:
   - id: vcf
     type: File
-    doc: VCF file containing STR variants to be annotated
+    doc: VCF with STR variants (ExpansionHunter or TRGT)
     inputBinding:
       position: 1
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 101
-      prefix: --output
-outputs:
-  - id: output
+  - id: repeats_file
     type:
       - 'null'
       - File
-    doc: Write output to file instead of stdout
-    outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+    doc: Path to a file with repeat definitions (default is the GRCh37 variant catalog packaged with stranger)
+    inputBinding:
+      position: 101
+      prefix: --repeats-file
+  - id: family_id
+    type:
+      - 'null'
+      - string
+    doc: Family id to add to the output
+    inputBinding:
+      position: 101
+      prefix: --family_id
+  - id: trgt
+    type:
+      - 'null'
+      - boolean
+    doc: File was produced with TRGT
+    inputBinding:
+      position: 101
+      prefix: --trgt
+  - id: loglevel
+    type:
+      - 'null'
+      - string
+    doc: Set the level of log output (DEBUG, INFO, WARNING, ERROR, CRITICAL).
+    inputBinding:
+      position: 101
+      prefix: --loglevel
+outputs:
+  - id: annotated_vcf
+    type: stdout
+    doc: Annotated VCF written to standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stranger:0.10.0--pyhdfd78af_0
+stdout: stranger.annotated.vcf

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: SSPACE_Basic_v2.0.pl
+baseCommand: sspace
 label: sspace
 doc: "SSPACE Basic is a tool for scaffolding genome assemblies using paired-end sequencing
   data.\n\nTool homepage: https://github.com/imhuay/sspace"
@@ -30,6 +30,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: -x
+      valueFrom: '$(self ? "1" : "0")'
+  - id: library_reads
+    type:
+      type: array
+      items: File
+    doc: Read files named in the library file; they are staged in the working 
+      directory so the names in the library file resolve
   - id: library_file
     type: File
     doc: Library file containing two paired read files with insert size, error 
@@ -45,6 +52,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -p
+      valueFrom: '$(self ? "1" : "0")'
   - id: max_bowtie_gaps
     type:
       - 'null'
@@ -148,6 +156,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+      valueFrom: '$(self ? "1" : "0")'
 outputs:
   - id: stdout
     type: stdout
@@ -159,6 +168,10 @@ outputs:
     doc: Files written with the prefix given in output_basename
     outputBinding:
       glob: $(inputs.output_basename)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.library_reads)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sspace:v2.1.1dfsg-4-deb_cv1

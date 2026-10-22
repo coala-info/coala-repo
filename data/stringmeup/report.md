@@ -1,5 +1,11 @@
 # stringmeup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stringmeup | PASS |  |
+
 ## stringmeup
 
 ### Tool Description

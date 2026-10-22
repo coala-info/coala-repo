@@ -12,9 +12,9 @@ inputs:
     doc: SNP matrix (in DGRP format)
     inputBinding:
       position: 1
-  - id: distance_file
-    type: File
-    doc: File to store computed distances
+  - id: dist
+    type: string
+    doc: Output file for the Hamming distances
     inputBinding:
       position: 2
   - id: hist
@@ -23,6 +23,11 @@ inputs:
     inputBinding:
       position: 3
 outputs:
+  - id: distance_file
+    type: File
+    doc: Hamming distances between the sequences
+    outputBinding:
+      glob: $(inputs.dist)
   - id: histogram_file
     type: File
     doc: File to store the distances histogram

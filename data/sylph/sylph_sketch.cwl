@@ -192,6 +192,16 @@ inputs:
       position: 102
       prefix: --trace
 outputs:
+  - id: database_sketch
+    type: ['null', File]
+    doc: Genome database sketch (.syldb)
+    outputBinding:
+      glob: $((inputs.db_out_name || 'database') + '.syldb')
+  - id: sample_sketches
+    type: File[]
+    doc: Read sample sketches (.sylsp)
+    outputBinding:
+      glob: "$(inputs.sample_output_directory ? inputs.sample_output_directory + '/*.sylsp' : '*.sylsp')"
   - id: stdout
     type: stdout
     doc: Standard output
@@ -202,6 +212,8 @@ outputs:
     doc: Output directory for sample sketches
     outputBinding:
       glob: $(inputs.sample_output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sylph:0.9.0--ha6fb395_0

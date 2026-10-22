@@ -592,16 +592,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --weighted-trees
-  - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: "{nexus,newick,phylip,nexml}, --output-tree-format {nexus,newick,phylip,nexml}
-      Format of the output tree file (if not specifed, defaults to input format, if
-      this has been explicitly specified, or 'nexus' otherwise)."
-    inputBinding:
-      position: 103
-      prefix: -F
   - id: output_tree_filepath_path
     type:
       - 'null'
@@ -617,15 +607,20 @@ outputs:
     doc: Path to output file (if not specified, will print to standard output).
     outputBinding:
       glob: $(inputs.output_tree_filepath_path)
-  - id: output_file
+  - id: extended_output_files
     type:
       - 'null'
-      - File
-    doc: Path to output file (if not specified, will print to standard output).
+      - type: array
+        items: File
+    doc: Extended output files written with --extended-output (files starting with the given prefix)
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.extended_output ? inputs.extended_output + '*' : '__none__')"
+  - id: stdout
+    type: stdout
+    doc: Summarized trees when no output file is given
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sumtrees:v4.4.0-1-deb_cv1
+stdout: sumtrees.out

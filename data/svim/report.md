@@ -1,5 +1,12 @@
 # svim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svim_alignment | PASS | real COLO829 nanopore chr22 slice from nf-core; deletions and insertion called at known positions |
+| svim_reads | PASS | real COLO829 nanopore chr22 reads mapped with minimap2; same DEL/INS calls as svim alignment |
+
 ## svim_reads
 
 ### Tool Description

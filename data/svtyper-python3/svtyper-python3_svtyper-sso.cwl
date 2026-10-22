@@ -2,8 +2,11 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: svtyper-sso
 label: svtyper-python3_svtyper-sso
-doc: "Compute genotype of structural variants based on breakpoint depth on a SINGLE
-  sample\n\nTool homepage: https://github.com/hall-lab/svtyper"
+doc: 'Compute genotype of structural variants based on breakpoint depth on a SINGLE
+  sample
+
+
+  Tool homepage: https://github.com/hall-lab/svtyper'
 inputs:
   - id: bam_file
     type:
@@ -14,6 +17,9 @@ inputs:
       position: 101
       prefix: --bam
       itemSeparator: ','
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: batch_size
     type:
       - 'null'
@@ -66,8 +72,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: maximum number of reads to assess at any variant (reduces processing 
-      time in high-depth regions)
+    doc: maximum number of reads to assess at any variant (reduces processing time
+      in high-depth regions)
     inputBinding:
       position: 101
       prefix: --max_reads
@@ -93,8 +99,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of reads to sample from BAM file for building insert size 
-      distribution
+    doc: number of reads to sample from BAM file for building insert size distribution
     inputBinding:
       position: 101
       prefix: -n

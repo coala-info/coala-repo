@@ -1,5 +1,11 @@
 # starseqr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| starseqr_starseqr.py | Failed | image problem: bamfilternames, STAR, salmon, velvet and bedtools are not in the image, so starseqr.py quits with 'bamfilternamesexe not found' |
+
 ## starseqr_starseqr.py
 
 ### Tool Description

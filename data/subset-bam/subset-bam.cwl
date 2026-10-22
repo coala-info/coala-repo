@@ -7,6 +7,9 @@ inputs:
   - id: bam_file
     type: File
     doc: Cellranger BAM file.
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 101
       prefix: --bam

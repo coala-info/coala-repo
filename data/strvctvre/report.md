@@ -1,5 +1,11 @@
 # strvctvre CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| strvctvre_StrVCTVRE.py | Not completed | needs the 9.9 GB hg38.phyloP100way.bw file and a data/ folder (exon bed, trained model) that is not in the image |
+
 ## strvctvre_StrVCTVRE.py
 
 ### Tool Description

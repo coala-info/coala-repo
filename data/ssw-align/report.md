@@ -1,5 +1,11 @@
 # ssw-align CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ssw-align | PASS | Moved options before the file arguments (options after them were ignored); 100 SARS-CoV-2 reads aligned to the genome with valid SAM output (-s needs -c) |
+
 ## ssw-align
 
 ### Tool Description

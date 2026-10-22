@@ -17,17 +17,11 @@ inputs:
     inputBinding:
       position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output file/directory for statistics
     outputBinding:
       glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainest:1.2.4--py35_0
-stdout: strainest_mapstats.out

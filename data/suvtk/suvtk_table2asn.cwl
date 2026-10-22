@@ -9,7 +9,8 @@ doc: "This command generates a .sqn file that you can send to gb-sub@ncbi.nlm.ni
 inputs:
   - id: comments_file
     type: File
-    doc: Structured comment file (.cmt) with MIUVIG information
+    doc: Structured comment file (.cmt) with MIUVIG information. suvtk updates
+      this file in place, so it is staged writable.
     inputBinding:
       position: 101
       prefix: --comments
@@ -55,6 +56,11 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.comments_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/suvtk:0.1.6--pyh64700be_0

@@ -1,5 +1,11 @@
 # srnapipe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| srnapipe | Not completed | pipeline, skipped: whole small RNA pipeline needing genome plus transcript, TE, miRNA, snRNA, rRNA and tRNA FASTA sets |
+
 ## srnapipe
 
 ### Tool Description

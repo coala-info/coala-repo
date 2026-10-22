@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: start-asap.pl
+baseCommand: start-asap
 label: start-asap
 doc: "Create a config.xml file for the ASA3P pipeline\n\nTool homepage: http://github.com/quadram-institute-bioscience/start-asap/"
 inputs:

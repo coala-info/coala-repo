@@ -10,7 +10,7 @@ inputs:
     inputBinding:
       position: 1
   - id: workdir
-    type: Directory
+    type: string
     doc: Working directory for Surveyor to use.
     inputBinding:
       position: 2
@@ -126,9 +126,21 @@ inputs:
       position: 104
       prefix: --threads
 outputs:
+  - id: workdir_out
+    type: Directory
+    doc: Working directory with the SurVIndel2 results (out.pass.vcf.gz, out.vcf.gz, stats).
+    outputBinding:
+      glob: $(inputs.workdir)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.workdir)
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/survindel2:1.1.4--h503566f_0

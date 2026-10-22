@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: StrainScan.py
+baseCommand: strainscan
 label: strainscan
 doc: "A kmer-based strain-level identification tool.\n\nTool homepage: https://github.com/liaoherui/StrainScan"
 inputs:

@@ -8,25 +8,31 @@ doc: "SVIM-ASM is a tool for structural variant detection in diploid genomes.\n\
   Tool homepage: https://github.com/eldariont/svim-asm"
 inputs:
   - id: working_dir
-    type: Directory
+    type: string
     doc: Working and output directory. Existing files in the directory are 
       overwritten. If the directory does not exist, it is created.
     inputBinding:
       position: 1
   - id: bam_file1
     type: File
+    secondaryFiles:
+      - .bai
     doc: SAM/BAM file with alignment of query assembly's first haplotype to 
       reference assembly (needs to be coordinate-sorted and indexed)
     inputBinding:
       position: 2
   - id: bam_file2
     type: File
+    secondaryFiles:
+      - .bai
     doc: SAM/BAM file with alignment of query assembly's second haplotype to 
       reference assembly (needs to be coordinate-sorted and indexed)
     inputBinding:
       position: 3
   - id: genome
     type: File
+    secondaryFiles:
+      - .fai?
     doc: Reference genome file that the assembly was aligned to (FASTA)
     inputBinding:
       position: 4
@@ -210,6 +216,11 @@ inputs:
       position: 105
       prefix: --verbose
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Working and output directory with variants.vcf, the SVIM-asm log and plots.
+    outputBinding:
+      glob: $(inputs.working_dir)
   - id: stdout
     type: stdout
     doc: Standard output

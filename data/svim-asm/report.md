@@ -1,5 +1,12 @@
 # svim-asm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svim-asm_diploid | PASS | real COLO829 nanopore reads split in two sets aligned as stand-in haplotype contigs; DEL/INS called |
+| svim-asm_haploid | PASS | real COLO829 nanopore reads aligned as stand-in contigs (no small real assembly available); DEL/INS called |
+
 ## svim-asm_haploid
 
 ### Tool Description

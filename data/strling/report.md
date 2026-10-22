@@ -1,5 +1,15 @@
 # strling CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| strling_call | PASS |  |
+| strling_extract | PASS |  |
+| strling_index | PASS |  |
+| strling_merge | PASS |  |
+| strling_pull_region | PASS |  |
+
 ## strling_extract
 
 ### Tool Description
@@ -180,24 +190,4 @@ Options:
 
 ## Metadata
 - **Skill**: not generated
-
-## strling
-
-### Tool Description
-STRling is a tool for analyzing short tandem repeats (STRs) in sequencing data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/strling:0.6.0--h7b50bb2_0
-- **Homepage**: https://github.com/quinlan-lab/STRling
-- **Package**: https://anaconda.org/channels/bioconda/packages/strling/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-extract      :   extract informative STR reads from a BAM/CRAM. This is a required first step.
-  merge        :   merge putitive STR loci from multiple samples. Only required for joint calling.
-  call         :   call STRs
-  index        :   identify large STRs in the reference genome, to produce ref.fasta.str.
-  pull_region  :   for debugging; pull all reads (and mates) for a given regions
-unknown program '-help'
-```
 

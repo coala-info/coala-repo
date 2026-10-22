@@ -1,14 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: srprism
+baseCommand:
+  - srprism
+  - search
 label: srprism_search
 doc: "Fast Short Read Aligner\n\nTool homepage: https://github.com/ncbi/SRPRISM"
 inputs:
-  - id: cmd
-    type: string
-    doc: 'Action to perform. Possible values are: help, search, mkindex.'
-    inputBinding:
-      position: 1
   - id: batch
     type:
       - 'null'
@@ -50,11 +47,22 @@ inputs:
       position: 102
       prefix: --extra-tags
   - id: index
-    type: string
-    doc: Base name for database index files.
+    type: File
+    doc: Database index (the .idx file made by mkindex; the other index files 
+      with the same base name must sit beside it)
+    secondaryFiles:
+      - ^.amp
+      - ^.imp
+      - ^.map
+      - ^.pmp
+      - ^.rmp
+      - ^.ss
+      - ^.ssa
+      - ^.ssd
     inputBinding:
       position: 102
       prefix: --index
+      valueFrom: $(self.path.replace(/\.idx$/, ''))
   - id: input
     type:
       type: array
@@ -66,6 +74,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --input
+      itemSeparator: ','
   - id: input_compression
     type:
       - 'null'
@@ -89,7 +98,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: File for storing diagnostic messages. Default is standard error.
     inputBinding:
       position: 102
@@ -179,7 +188,7 @@ inputs:
   - id: plog
     type:
       - 'null'
-      - File
+      - string
     doc: File name where the ordinal ids of queries participating in paired 
       search passes are written.
     inputBinding:
@@ -243,7 +252,7 @@ inputs:
   - id: skip_unmapped
     type:
       - 'null'
-      - boolean
+      - string
     doc: If "true", do not generate records for unmapped queries in SAM output.
     inputBinding:
       position: 102
@@ -267,6 +276,7 @@ inputs:
       prefix: --trace-level
   - id: output_path
     type: string
+    doc: File name for program output.
     inputBinding:
       position: 103
       prefix: --output
@@ -279,6 +289,20 @@ outputs:
       will be used.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Diagnostic messages file
+    outputBinding:
+      glob: $(inputs.log_file)
+  - id: plog_out
+    type:
+      - 'null'
+      - File
+    doc: File with the ordinal ids of queries participating in paired search passes
+    outputBinding:
+      glob: $(inputs.plog)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

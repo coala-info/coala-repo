@@ -42,16 +42,16 @@ inputs:
       prefix: --taxonomy
   - id: output_path
     type: string
-    doc: Output filename.  [required]
+    doc: Output filename; suvtk appends .cmt.
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
     type: File
-    doc: Output filename.
+    doc: Structured comment file (output name plus .cmt).
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path).cmt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

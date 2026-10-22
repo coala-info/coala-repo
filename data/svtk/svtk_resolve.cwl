@@ -4,8 +4,10 @@ baseCommand:
   - svtk
   - resolve
 label: svtk_resolve
-doc: "Resolve complex SV from inversion/translocation breakpoints and CNV intervals.\n\
-  \nTool homepage: https://github.com/talkowski-lab/svtk"
+doc: 'Resolve complex SV from inversion/translocation breakpoints and CNV intervals.
+
+
+  Tool homepage: https://github.com/talkowski-lab/svtk'
 inputs:
   - id: raw
     type: File
@@ -13,7 +15,7 @@ inputs:
     inputBinding:
       position: 1
   - id: resolved
-    type: File
+    type: string
     doc: Resolved simple and complex variants.
     inputBinding:
       position: 2
@@ -27,8 +29,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Scraped discordant pairs. Required to attempt to resolve single-ender 
-      inversions.
+    doc: Scraped discordant pairs. Required to attempt to resolve single-ender inversions.
     inputBinding:
       position: 103
       prefix: --discfile
@@ -58,8 +59,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Tabix indexed bed of blacklisted regions. Any anomalous pair falling 
-      inside one of these regions is excluded from PE rescanning.
+    doc: Tabix indexed bed of blacklisted regions. Any anomalous pair falling inside
+      one of these regions is excluded from PE rescanning.
     inputBinding:
       position: 103
       prefix: --pe-blacklist
@@ -82,16 +83,26 @@ inputs:
   - id: unresolved
     type:
       - 'null'
-      - File
+      - string
     doc: Unresolved complex breakpoints and CNV.
     inputBinding:
       position: 103
       prefix: --unresolved
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_resolved
+    type: File
+    doc: Resolved simple and complex variants.
+    outputBinding:
+      glob: $(inputs.resolved)
+  - id: out_unresolved
+    type:
+      - 'null'
+      - File
+    doc: Unresolved complex breakpoints and CNV.
+    outputBinding:
+      glob: $(inputs.unresolved)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7
-stdout: svtk_resolve.out

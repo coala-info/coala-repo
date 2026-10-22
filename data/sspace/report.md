@@ -1,5 +1,11 @@
 # sspace CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sspace | PASS | Fixed command to sspace, on/off flags to send 1 or 0, and staged read files; nf-core Bacteroides contigs and paired reads scaffolded 272 contigs into 268 scaffolds |
+
 ## sspace
 
 ### Tool Description

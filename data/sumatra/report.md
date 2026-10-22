@@ -1,5 +1,11 @@
 # sumatra CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sumatra | PASS |  |
+
 ## sumatra
 
 ### Tool Description

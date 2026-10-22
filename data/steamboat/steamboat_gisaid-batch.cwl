@@ -35,7 +35,7 @@ inputs:
       position: 101
       prefix: --max-ns
   - id: metadata
-    type: string
+    type: File
     doc: A TSV or CSV file of metadata associated with input samples
     inputBinding:
       position: 101
@@ -65,15 +65,14 @@ inputs:
       position: 101
       prefix: --pipeline
   - id: prefix
-    type:
-      - 'null'
-      - string
+    type: string
+    default: gisaid-batch
     doc: Prefix to use for output files
     inputBinding:
       position: 101
       prefix: --prefix
   - id: results
-    type: string
+    type: File
     doc: A CSV or TSV file with the results of pipeline analysis
     inputBinding:
       position: 101
@@ -109,7 +108,7 @@ inputs:
       position: 101
       prefix: --verbose
   - id: yaml
-    type: string
+    type: File
     doc: A YAML formatted file containing constant information for GISAID 
       fields.
     inputBinding:
@@ -125,7 +124,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$((inputs.outdir ? inputs.outdir + '/' : '') + inputs.prefix + '*')"
   - id: outdir_dir
     type:
       - 'null'
@@ -133,6 +132,8 @@ outputs:
     doc: Directory to write output
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/steamboat:1.1.1--pyhdfd78af_0

@@ -517,7 +517,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --chroot-ops
-  - id: class
+  - id: stressor_class
     type:
       - 'null'
       - string
@@ -2073,7 +2073,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log messages to a log file
     inputBinding:
       position: 101
@@ -5545,7 +5545,7 @@ inputs:
   - id: yaml
     type:
       - 'null'
-      - File
+      - string
     doc: output results to YAML formatted filed
     inputBinding:
       position: 101
@@ -5676,6 +5676,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: yaml_out
+    type:
+      - 'null'
+      - File
+    doc: YAML formatted results written with --yaml
+    outputBinding:
+      glob: $(inputs.yaml)
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: Log file written with --log-file
+    outputBinding:
+      glob: $(inputs.log_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stress-ng:0.12.04

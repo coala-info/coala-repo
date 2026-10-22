@@ -1,5 +1,11 @@
 # stecfinder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stecfinder | PASS | E. coli O157:H7 Sakai genome: O157:H7, stx1a,stx2a called correctly; baseCommand fixed to stecfinder, input typed File |
+
 ## stecfinder
 
 ### Tool Description

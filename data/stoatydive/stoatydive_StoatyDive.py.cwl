@@ -148,6 +148,11 @@ outputs:
       glob: $(inputs.output_folder_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_folder_path)
+        entry: "$({class: 'Directory', basename: inputs.output_folder_path, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stoatydive:1.1.1--pyh5e36f6f_0

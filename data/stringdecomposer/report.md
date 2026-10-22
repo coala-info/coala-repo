@@ -1,5 +1,11 @@
 # stringdecomposer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stringdecomposer | PASS |  |
+
 ## stringdecomposer
 
 ### Tool Description

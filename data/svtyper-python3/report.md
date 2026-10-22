@@ -1,5 +1,12 @@
 # svtyper-python3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svtyper-python3_svtyper | PASS |  |
+| svtyper-python3_svtyper-sso | PASS |  |
+
 ## svtyper-python3_svtyper
 
 ### Tool Description

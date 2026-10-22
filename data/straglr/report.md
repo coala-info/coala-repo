@@ -1,5 +1,11 @@
 # straglr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| straglr | PASS | repo test BAM on hg38 chr22: genotype run identical to expected tsv and bed, genome scan bed identical; CWL rewritten (out_prefix, outputs, all options) |
+
 ## straglr
 
 ### Tool Description

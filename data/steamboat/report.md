@@ -1,5 +1,12 @@
 # steamboat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| steamboat_gisaid-batch | PASS | synthetic data: made-up metadata with real SARS-CoV-2 genome; 1 sample formatted, 1 excluded for low coverage and many Ns; file inputs fixed to File |
+| steamboat_nwss-batch | PASS | synthetic data: the tool's own unit-test row; output matches (18.89 C, 9466.67); file inputs fixed to File |
+
 ## steamboat_gisaid-batch
 
 ### Tool Description

@@ -7,7 +7,7 @@ label: svim_reads
 doc: "SVIM is a structural variant caller for long reads.\n\nTool homepage: https://github.com/eldariont/svim"
 inputs:
   - id: working_dir
-    type: Directory
+    type: string
     doc: Working and output directory. Existing files in the directory are 
       overwritten. If the directory does not exist, it is created.
     inputBinding:
@@ -22,6 +22,8 @@ inputs:
       position: 2
   - id: genome
     type: File
+    secondaryFiles:
+      - .fai?
     doc: Reference genome file (FASTA)
     inputBinding:
       position: 3
@@ -370,6 +372,11 @@ inputs:
       position: 104
       prefix: --zmws
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Working and output directory with variants.vcf and the SVIM logs and plots.
+    outputBinding:
+      glob: $(inputs.working_dir)
   - id: stdout
     type: stdout
     doc: Standard output

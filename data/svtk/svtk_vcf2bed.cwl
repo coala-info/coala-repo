@@ -1,8 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svtk
+baseCommand:
+  - svtk
+  - vcf2bed
 label: svtk_vcf2bed
-doc: "Convert a VCF to a BED.\n\nTool homepage: https://github.com/talkowski-lab/svtk"
+doc: 'Convert a VCF to a BED.
+
+
+  Tool homepage: https://github.com/talkowski-lab/svtk'
 inputs:
   - id: vcf
     type: File
@@ -27,14 +32,14 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: INFO field to include as column in output. May be specified more than 
-      once. To include all INFO fields, specify `--info ALL`. INFO fields are 
-      reported in the order in which they are requested. If ALL INFO fields are 
-      requested, they are reported in the order in which they appear in the VCF 
-      header.
+        inputBinding:
+          prefix: --info
+    doc: INFO field to include as column in output. May be specified more than once.
+      To include all INFO fields, specify `--info ALL`. INFO fields are reported in
+      the order in which they are requested. If ALL INFO fields are requested, they
+      are reported in the order in which they appear in the VCF header.
     inputBinding:
       position: 102
-      prefix: --info
   - id: no_header
     type:
       - 'null'
@@ -96,7 +101,7 @@ outputs:
     type: File
     doc: Converted bed. Specify `-` or `stdout` to write to stdout.
     outputBinding:
-      glob: '$(inputs.bed)'
+      glob: $(inputs.bed)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

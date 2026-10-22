@@ -1,5 +1,19 @@
 # svhip CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svhip_codon_conservation | Failed | image problem: the image has blosum 2.0.2 (nested dict) but svhip needs flat keys, so codon conservation raises TypeError; the command crashes on the tool example alignment |
+| svhip_combine | PASS | feature tables from the data step; files with the prefix were merged |
+| svhip_data | Failed | image problem: the image has blosum 2.0.2 (nested dict) but svhip needs flat keys, so codon conservation raises TypeError; the error is swallowed so z-score, hexamer and codon columns of the training table are silently 0 |
+| svhip_evaluate | Failed | tool bug: evaluate crashes with TypeError, unpack_features() missing argument 'structure' |
+| svhip_features | Failed | image problem: the image has blosum 2.0.2 (nested dict) but svhip needs flat keys, so codon conservation raises TypeError; the error is swallowed so z-score, hexamer and codon columns are silently 0 |
+| svhip_hexcalibrate | PASS | real coding sequences of potato virus X and TMV with the tRNA example (U changed to T); 4096-hexamer model written |
+| svhip_index | Failed | tool bug: the GTF written from predictions has a numeric type column (-1/1) and also lists windows predicted OTHER |
+| svhip_predict | Not completed | runs, but its input features have the z-score, hexamer and codon columns silently set to 0 by the image's blosum problem in svhip features/data, so the model cannot be judged. |
+| svhip_training | Not completed | runs, but its input features have the z-score, hexamer and codon columns silently set to 0 by the image's blosum problem in svhip features/data, so the model cannot be judged. |
+
 ## svhip_data
 
 ### Tool Description

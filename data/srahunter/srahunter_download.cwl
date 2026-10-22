@@ -21,9 +21,8 @@ inputs:
       position: 101
       prefix: --maxsize
   - id: path
-    type:
-      - 'null'
-      - Directory
+    type: string
+    default: tmp_srahunter
     doc: Path to where to download .sra files
     inputBinding:
       position: 101
@@ -37,20 +36,30 @@ inputs:
       position: 101
       prefix: -t
   - id: outdir_path
-    type: string?
+    type: string
+    default: srahunter_fastq
+    doc: Path to where to download .fastq files
     inputBinding:
       position: 102
       prefix: --outdir
 outputs:
   - id: outdir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to where to download .fastq files
     outputBinding:
       glob: $(inputs.outdir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
+      - entryname: $(inputs.outdir_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/srahunter:0.0.9--pyhdfd78af_0

@@ -1,5 +1,11 @@
 # stranger CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stranger | PASS | repo ExpansionHunter test VCF: 24 variants annotated (21 normal, 1 pre_mutation, 2 full_mutation), TRGT VCF also works; CWL fixed (no --output option, output is stdout) |
+
 ## stranger
 
 ### Tool Description

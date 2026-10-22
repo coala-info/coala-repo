@@ -84,7 +84,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: 'Path to log file (Default: STDOUT).'
     inputBinding:
       position: 101
@@ -115,7 +115,7 @@ inputs:
       position: 101
       prefix: --normalise_output
   - id: output_directory
-    type: Directory
+    type: string
     doc: Path to output files
     inputBinding:
       position: 101
@@ -164,13 +164,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+  - id: output_dir_out
+    type: Directory
+    doc: Output directory with the functional tables (output_*.xls and binning files)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: $(inputs.output_directory)
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/super-focus:1.6--pyhdfd78af_1

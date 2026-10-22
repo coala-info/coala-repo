@@ -1,5 +1,11 @@
 # srnamapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| srnamapper | PASS | Rewrote CWL from help (binary is srnaMapper; flags -r/-g/-o/-e); small RNA reads from nf-core smrnaseq mapped to bwa-indexed genome gave 69 valid SAM alignments |
+
 ## srnamapper
 
 ### Tool Description

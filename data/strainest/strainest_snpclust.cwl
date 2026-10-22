@@ -18,6 +18,16 @@ inputs:
     doc: Distance matrix
     inputBinding:
       position: 2
+  - id: snp_out_name
+    type: string
+    doc: Output SNP matrix with the representative profiles
+    inputBinding:
+      position: 3
+  - id: clust_name
+    type: string
+    doc: Output cluster file
+    inputBinding:
+      position: 4
   - id: distance_threshold
     type:
       - 'null'
@@ -31,12 +41,12 @@ outputs:
     type: File
     doc: SNP matrix containing the representative profiles
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.snp_out_name)
   - id: clust
     type: File
     doc: Cluster file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.clust_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainest:1.2.4--py35_0

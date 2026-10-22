@@ -20,7 +20,9 @@ inputs:
       position: 101
       prefix: --pe-reads-dir
   - id: popmap
-    type: File
+    type:
+      - 'null'
+      - File
     doc: population map.
     inputBinding:
       position: 101
@@ -30,10 +32,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --sample
     doc: name of one sample.
     inputBinding:
       position: 101
-      prefix: --sample
   - id: threads
     type:
       - 'null'
@@ -43,9 +46,20 @@ inputs:
       position: 101
       prefix: -t
 outputs:
+  - id: in_dir_out
+    type: Directory
+    doc: input directory with the .matches.bam files written into it
+    outputBinding:
+      glob: $(inputs.in_dir.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.in_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stacks:2.68--h077b44d_3

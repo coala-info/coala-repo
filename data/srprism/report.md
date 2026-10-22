@@ -1,5 +1,12 @@
 # srprism CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| srprism_mkindex | PASS | Fixed: subcommand moved into baseCommand, index outputs collected; built index of nf-core smrnaseq genome |
+| srprism_search | PASS | Fixed: subcommand moved into baseCommand, index staged with secondary files; small RNA reads aligned to the genome gave valid SAM records |
+
 ## srprism_search
 
 ### Tool Description

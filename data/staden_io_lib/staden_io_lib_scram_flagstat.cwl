@@ -32,6 +32,9 @@ inputs:
       - 'null'
       - File
     doc: '[Cram] Specifies the reference file.'
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 102
       prefix: -r

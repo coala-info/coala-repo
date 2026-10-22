@@ -1,5 +1,11 @@
 # swalign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| swalign | PASS |  |
+
 ## swalign
 
 ### Tool Description

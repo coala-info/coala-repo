@@ -1,5 +1,11 @@
 # sumaclust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sumaclust | PASS |  |
+
 ## sumaclust
 
 ### Tool Description

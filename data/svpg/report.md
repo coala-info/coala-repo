@@ -1,5 +1,13 @@
 # svpg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svpg_augment | Failed | image problem: minigraph and bcftools are missing from the image (augment runs them) |
+| svpg_call | Failed | image problem: minigraph command not found in the image (call mode runs it) |
+| svpg_graph-call | Not completed | no small real pangenome with SVs found; the run works but gives a header-only VCF with 0 SVs |
+
 ## svpg_call
 
 ### Tool Description

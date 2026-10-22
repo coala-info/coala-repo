@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 13618; PASS: 10646; Failed: 1637; Not completed: 1335
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 13901; PASS: 10863; Failed: 1671; Not completed: 1367
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -13618,3 +13618,286 @@ sra-tools	sra-tools_sam-dump	PASS
 sra-tools	sra-tools_sra-stat	PASS	
 sra-tools	sra-tools_vdb-validate	PASS	
 sracat	sracat	PASS	
+srahunter	srahunter_download	PASS	
+srahunter	srahunter_fullmetadata	PASS	
+srahunter	srahunter_metadata	PASS	
+srax	srax_sraX	Failed	image problem: with the default muscle aligner the SNP step fails, because the image has muscle 5 and srax expects the older syntax; with msa: mafft the run completes correctly.
+srf-n-trf	srf-n-trf_monomers	PASS	
+srf-n-trf	srf-n-trf_motifs	PASS	
+srf-n-trf	srf-n-trf_regions	PASS	
+srnamapper	srnamapper	PASS	Rewrote CWL from help (binary is srnaMapper; flags -r/-g/-o/-e); small RNA reads from nf-core smrnaseq mapped to bwa-indexed genome gave 69 valid SAM alignments
+srnapipe	srnapipe	Not completed	pipeline, skipped: whole small RNA pipeline needing genome plus transcript, TE, miRNA, snRNA, rRNA and tRNA FASTA sets
+srprism	srprism_mkindex	PASS	Fixed: subcommand moved into baseCommand, index outputs collected; built index of nf-core smrnaseq genome
+srprism	srprism_search	PASS	Fixed: subcommand moved into baseCommand, index staged with secondary files; small RNA reads aligned to the genome gave valid SAM records
+srst2	srst2	Failed	image problem: bowtie2 2.3.4.3 in the image fails srst2's version check (needs 2.1.0 to 2.2.9)
+ssake	ssake	PASS	Fixed on/off flags to send 1 or 0; SSAKE Herpesvirus test reads assembled into two contigs covering the 60 kb reference, and seeded mode worked
+sscocaller	sscocaller	PASS	Added index secondary files; repo test BAM and VCF gave count and segment files identical to the expected ones
+ssdrippipeline	ssdrippipeline_ssDRIPSeqAnalysis.py	Not completed	pipeline, skipped: whole DRIP-seq analysis driven by a JSON config with genome indexes and many read sets
+sshash	sshash_build	PASS	Rewrote CWL from help (-i, -k, -m, -o flags); built index of Salmonella unitigs and the built-in check printed EVERYTHING OK
+sshash	sshash_permute	PASS	Rewrote CWL from help (-i, -k, -o); weighted Salmonella unitigs permuted to 651 sequences with fewer weight runs
+sshash	sshash_query	PASS	New CWL for sshash query; the index answered FASTQ reads and a multi-line FASTA with 97 percent positive k-mers for the same species
+sshmm	sshmm_draw_model_graph	Failed	image problem: graphviz in the image cannot write PNG (pango plugin missing), and no model XML can be made to draw
+sshmm	sshmm_preprocess_dataset	Failed	image problem: bedtools is missing from the image
+sshmm	sshmm_train_seqstructhmm	Failed	image problem: graphviz pango plugin cannot load so the model graph step crashes and no model file is written (also needed output folder created in CWL)
+sspace	sspace	PASS	Fixed command to sspace, on/off flags to send 1 or 0, and staged read files; nf-core Bacteroides contigs and paired reads scaffolded 272 contigs into 268 scaffolds
+ssu-align	ssu-align	PASS	Staged input writable and put options before arguments; four real rRNA sequences (E. coli, B. subtilis, archaeon, yeast) sorted into bacteria 2, archaea 1, eukarya 1
+ssu-align	ssu-build	PASS	New CWL for ssu-build; built a covariance model from the default archaea seed alignment and from a Stockholm alignment
+ssu-align	ssu-draw	PASS	New CWL for ssu-draw; made PostScript structure diagrams and drawtab files (no PDF because ps2pdf is not in the image)
+ssu-align	ssu-mask	PASS	New CWL for ssu-mask; default masks made masked alignments for archaea, bacteria and eukarya, and -a --stk2afa made aligned FASTA
+ssu-align	ssu-merge	PASS	New CWL for ssu-merge; merged two bacteria alignments with --list (the ssu-prep directory mode was not run)
+ssu-align	ssu-prep	PASS	New CWL for ssu-prep; split four rRNA sequences into two job files and wrote the job shell script
+ssuissero	ssuissero	PASS	Rewrote CWL for SsuisSero.sh (-i -o -s -x); S. suis P1/7 genome gave serotype 2 as expected (FASTA mode only)
+ssw-align	ssw-align	PASS	Moved options before the file arguments (options after them were ignored); 100 SARS-CoV-2 reads aligned to the genome with valid SAM output (-s needs -c)
+stacks	stacks_clone_filter	PASS	synthetic data (Galaxy stacks2 test reads): fixed output flag to -o, added -I; single-end run output is identical to the Galaxy expected file
+stacks	stacks_convert_stacks.pl	Not completed	New CWL not run: the script only converts old Stacks 1 style files (sample.catalog.tags.tsv), none available
+stacks	stacks_cstacks	PASS	synthetic data (Galaxy stacks2 test reads): fixed output flag to -o, added -P/-M and -s/-o modes with staged files; catalog consensus sequences match the Galaxy expected catalog
+stacks	stacks_extract_interpop_chars.pl	Not completed	New CWL not run: needs an old interspecies tag file and barcode list, no test data found
+stacks	stacks_gstacks	PASS	synthetic data (Galaxy stacks2 test reads): fixed output flag to -O; 583 sites and the same 6 SNPs with the same genotypes as the Galaxy expected VCF
+stacks	stacks_kmer_filter	PASS	synthetic data (Galaxy stacks2 test reads): new CWL; rare and abundant k-mer filtering with k 16 gave output identical to the Galaxy expected file
+stacks	stacks_phasedstacks	Not completed	New CWL not run: needs fastPHASE or Beagle phased output of Stacks data, no test data found
+stacks	stacks_populations	PASS	synthetic data (Galaxy stacks2 test reads): chained de novo run gave 3 loci and 6 variant sites as in the Galaxy log; output folder created
+stacks	stacks_process_radtags	PASS	synthetic data (Galaxy stacks2 test reads): fixed output flag to --out-path and -D, created output folder; retained 1375 of 2176 reads as in the Galaxy log
+stacks	stacks_process_shortreads	PASS	synthetic data (Galaxy stacks2 test reads): fixed output flag to -o and created output folder; 2176 reads split into 40 barcode files
+stacks	stacks_sstacks	PASS	synthetic data (Galaxy stacks2 test reads): added writable -P/-M mode and -c/-s/-o mode; matches agree with the Galaxy expected files
+stacks	stacks_stacks-count-reads-per-sample-per-locus	PASS	synthetic data (Galaxy stacks2 test reads): new CWL; made the per-locus read count table and PDF for 3 loci in 2 samples
+stacks	stacks_stacks-dist-extract	PASS	New CWL; listed and printed sections of a gstacks distribs file; the --out-path option crashes in the tool (opens the file without write mode)
+stacks	stacks_stacks-hist2d-loci-samples-coverage	PASS	synthetic data (Galaxy stacks2 test reads): new CWL; drew the histogram PDF from the read count table
+stacks	stacks_stacks-integrate-alignments	Not completed	New CWL not run: needs a BAM of the catalog loci aligned to a reference genome, which the test data does not have
+stacks	stacks_tsv2bam	PASS	synthetic data (Galaxy stacks2 test reads): input folder staged writable and collected; two matches.bam files written with paired-end reads
+stacks	stacks_ustacks	PASS	synthetic data (Galaxy stacks2 test reads): created output folder; 66 reads gave 3 loci with the same consensus sequences as the Galaxy expected files
+staden_io_lib	staden_io_lib_scram_flagstat	PASS	
+staden_io_lib	staden_io_lib_scramble	PASS	
+staphopia-sccmec	staphopia-sccmec	PASS	assembly input fixed to File; test assembly from the package, type IV hamming 0
+star	star_STAR	PASS	genomeGenerate on 40 kb chr22 slice then alignReads of 4159 real RNA-seq pairs: 69% unique, 144 splices; CWL rewritten for genome_dir and outputs
+star-fusion	star-fusion_STAR-Fusion	PASS	mini CTAT lib on nf-core chr4 slice (GTF shifted to slice coordinates) with FusionCatcher test reads: FGFR3--TACC3 found (278 junction, 445 spanning reads); baseCommand fixed to STAR-Fusion, absolute link removed from output
+starcatpy	starcatpy_starcat	PASS	TCAT.V1 reference on 15000-cell COMBAT h5ad: 52 programs, usages sum to 1; input types fixed, output dir created
+starcode	starcode	PASS	repo test files: 35 sequences into 5 clusters, sphere clusters, paired non-redundant fastq
+stark	stark	PASS	real SPAdes k=19 graph from sarscov2 reads: overlaps removed (0M links), merge type 2 ok; stark crashes with a division by zero on graphs with fewer than 10 nodes
+starseqr	starseqr_starseqr.py	Failed	image problem: bamfilternames, STAR, salmon, velvet and bedtools are not in the image, so starseqr.py quits with 'bamfilternamesexe not found'
+start-asap	start-asap	Failed	tool bug: the script parses --project-name as a flag without a value, so the sheet shows Name 1; other options and the JSON route work. baseCommand fixed to start-asap
+steamboat	steamboat_gisaid-batch	PASS	synthetic data: made-up metadata with real SARS-CoV-2 genome; 1 sample formatted, 1 excluded for low coverage and many Ns; file inputs fixed to File
+steamboat	steamboat_nwss-batch	PASS	synthetic data: the tool's own unit-test row; output matches (18.89 C, 9466.67); file inputs fixed to File
+stecfinder	stecfinder	PASS	E. coli O157:H7 Sakai genome: O157:H7, stx1a,stx2a called correctly; baseCommand fixed to stecfinder, input typed File
+stellar	stellar	PASS	seqan repo test data: GFF identical to expected 5e-2.gff (500 matches); --outDisabled flag fixed
+stoatydive	stoatydive_StoatyDive.py	PASS	repo test data (broad peaks, README example 1): CV table matches the expected file to 5 decimals; output folder now created
+straglr	straglr	PASS	repo test BAM on hg38 chr22: genotype run identical to expected tsv and bed, genome scan bed identical; CWL rewritten (out_prefix, outputs, all options)
+strainest	strainest_est	PASS	SARS-CoV-2 amplicon BAM with 3-genome SNP matrix: abundances sum to 1 (R 0.83); default identity threshold keeps no genome so --max-ident-thr 0.4 used; output is a directory (CWL fixed); SNP matrix built with a helper
+strainest	strainest_map2snp	Failed	image problem: Python 3 bytes/str error in the FASTA parser (IndexError in map2snp)
+strainest	strainest_mapgenomes	Failed	image problem: nucmer (MUMmer) is not in the image, and the code also has a bytes/str error
+strainest	strainest_mapstats	Failed	image problem: Python 3 bytes/str error in the FASTA parser (IndexError in mapstats)
+strainest	strainest_snpclust	Failed	image problem: Python 3 bytes/str error when writing the cluster file (TypeError in snpclust)
+strainest	strainest_snpdist	PASS	Hamming distances match an independent calculation, histogram PDF written; distance output added to the CWL
+strainr2	strainr2_Plot.R	PASS	new CWL; abundance summary identical to the StrainR run on the mock reads
+strainr2	strainr2_PreProcessR	Failed	image problem: bc is not in the image, so hashcounter gets no subcontig count and PreProcessR stops with 'Hashing failed'
+strainr2	strainr2_StrainR	PASS	StrainR2 test genomes and mock reads: 8 strains found at about equal abundance, JEB00052 low, as in the README; database built with a helper
+strainr2	strainr2_hashcounter	PASS	new CWL; KmerContent.report matches the repo expected file
+strainr2	strainr2_subcontig	PASS	new CWL; 8 test genomes give 157 subcontigs, same as PreProcessR
+strainscan	strainscan	PASS	repo test data: DB from 11 test genomes, simulated reads of GCF_003812785 give that strain (cluster C4, depth 3.8x), as in Output_Example; baseCommand fixed to strainscan
+strainscan	strainscan_strainscan_build	PASS	new CWL; builds a database from the 11 repo test genomes (cluster, k-mer set and tree folders) and strainscan runs on it
+strainy	strainy	PASS	repo toy set (HiFi reads, collapsed GFA with 9 unitigs): 6 unitigs phased into 22 strain unitigs, 15 strain contigs, 420 variant lines
+straitrazor	straitrazor_str8rzr	PASS	synthetic data: 30 reads cut from real hg38 chr22 at D22S1045 (20 forward, 10 reverse) give 1 haplotype, 17 repeats, count 20/10; fastq order and -o option fixed
+stranger	stranger	PASS	repo ExpansionHunter test VCF: 24 variants annotated (21 normal, 1 pre_mutation, 2 full_mutation), TRGT VCF also works; CWL fixed (no --output option, output is stdout)
+strcount	strcount_STRcount	Failed	image problem: the STRcount launcher in /usr/local/bin shadows the STRcount package (ModuleNotFoundError), and GraphAligner is not in the image
+strdust	strdust_STRdust	PASS	repo test data (chr7 reference, phased long-read BAM, README region): one VCF record with a phased 1|2 genotype supported by 14 and 12 reads; index secondary files added
+stream_atac	stream_atac	PASS	synthetic data: 60 made-up cells over 1500 real hg19 chr1 windows; 512 5-mer deviation z-score rows, scaled scores and adata.h5ad written; output folder is now created; tool exits 0 even when preprocessing fails
+stress-ng	stress-ng	PASS	
+strike	strike	PASS	
+stringdecomposer	stringdecomposer	PASS	
+stringmeup	stringmeup	PASS	
+stringmlst	stringmlst_buildDB	PASS	
+stringmlst	stringmlst_getMLST	PASS	
+stringmlst	stringmlst_predict	PASS	
+stringtie	stringtie	PASS	
+stringtie	stringtie_merge	PASS	
+stripepy-hic	stripepy-hic_call	PASS	
+stripepy-hic	stripepy-hic_download	PASS	
+stripepy-hic	stripepy-hic_plot_contact-map	PASS	
+stripepy-hic	stripepy-hic_plot_pseudodistribution	PASS	
+stripepy-hic	stripepy-hic_plot_stripe-hist	PASS	
+stripepy-hic	stripepy-hic_view	PASS	
+strling	strling_call	PASS	
+strling	strling_extract	PASS	
+strling	strling_index	PASS	
+strling	strling_merge	PASS	
+strling	strling_pull_region	PASS	
+strobealign	strobealign	PASS	
+structureharvester	structureharvester_structureHarvester.py	PASS	summary.txt and clumpp files match Galaxy expected lines; the --evanno option exits 1 on this example data because the standard deviation at K=3 is zero (a documented tool limit)
+strucvis	strucvis_strucVis	PASS	
+strvctvre	strvctvre_StrVCTVRE.py	Not completed	needs the 9.9 GB hg38.phyloP100way.bw file and a data/ folder (exon bed, trained model) that is not in the image
+stxtyper	stxtyper	PASS	
+subread	subread_exactSNP	PASS	
+subread	subread_featureCounts	PASS	
+subread	subread_flattenGTF	PASS	
+subread	subread_genRandomReads	PASS	
+subread	subread_propmapped	PASS	
+subread	subread_qualityScores	PASS	
+subread	subread_removeDup	PASS	
+subread	subread_repair	PASS	
+subread	subread_subindel	PASS	synthetic data: planted 15 bp deletion in simulated reads is found at position 4999; the real reads have no long indels
+subread	subread_subjunc	PASS	
+subread	subread_sublong	PASS	
+subread	subread_subread-align	PASS	
+subread	subread_subread-buildindex	PASS	
+subread	subread_subread-fullscan	PASS	
+subset-bam	subset-bam	PASS	
+suitename	suitename	Failed	image problem: suitename aborts with 'buffer overflow detected' on real RNA dihedral angles from tRNA 1EHZ, both residue input and -suitein; only hand-made cluster-centre lines run
+sumaclust	sumaclust	PASS	
+sumatra	sumatra	PASS	
+sumtrees	sumtrees	PASS	
+super-focus	super-focus_superfocus	PASS	synthetic data: diamond run against a 20-protein toy database built from the repository test fixtures; the full SUPER-FOCUS database was not downloaded
+super_distance	super_distance	PASS	
+superstr	superstr	PASS	
+superstr	superstr_superstr-multiparse.py	PASS	the CWL writes a manifest copy with absolute paths because the script compares absolute paths with the manifest text
+superstr	superstr_superstr-outliers.py	PASS	
+superstr	superstr_superstr-screen.py	Failed	image problem: script crashes with AttributeError, DataFrame has no attribute append (pandas 2 in the image)
+superstr	superstr_superstr-visualise.py	Failed	image problem: script crashes with AttributeError, DataFrame has no attribute append (pandas 2 in the image)
+suppa	suppa_clusterEvents	PASS	
+suppa	suppa_diffSplice	PASS	
+suppa	suppa_generateEvents	PASS	
+suppa	suppa_joinFiles	PASS	
+suppa	suppa_psiPerEvent	PASS	
+suppa	suppa_psiPerIsoform	PASS	
+surpyvor	surpyvor_carrierplot	PASS	
+surpyvor	surpyvor_fixref	Failed	image problem: ModuleNotFoundError, no module named pyfaidx
+surpyvor	surpyvor_fixvcf	PASS	
+surpyvor	surpyvor_haplomerge	PASS	
+surpyvor	surpyvor_highconf	PASS	
+surpyvor	surpyvor_highsens	Failed	tool bug: a gzipped VCF input silently gives an empty result; plain VCF inputs give the correct union of calls.
+surpyvor	surpyvor_lengthplot	PASS	
+surpyvor	surpyvor_merge	PASS	
+surpyvor	surpyvor_minlen	PASS	
+surpyvor	surpyvor_prf	PASS	precision, recall, F-measure and --venn work; the --bar option crashes with a numpy error
+surpyvor	surpyvor_purge2d	Failed	image problem: ModuleNotFoundError, no module named pysam
+surpyvor	surpyvor_svlentruncate	PASS	
+surpyvor	surpyvor_upset	PASS	
+surpyvor	surpyvor_varcount	PASS	
+surpyvor	surpyvor_venn	PASS	
+survindel2	survindel2_survindel2.py	PASS	
+survivor	survivor_SURVIVOR_bedpetovcf	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); BEDPE from vcftobed converted back to 60 VCF records
+survivor	survivor_SURVIVOR_bedtovcf	PASS	two hand-written bed intervals converted to DEL records with correct END and SVLEN
+survivor	survivor_SURVIVOR_bincov	Failed	tool bug: the last low-coverage region is never printed, so the output is silently incomplete; the other regions from the real COLO829 chr22 BAM slice are correct.
+survivor	survivor_SURVIVOR_eval	PASS	synthetic data: SURVIVOR simSV truth VCF against its own bed; Overall line 7 simulated, 1 DEL, 2 DUP, 4 INV found, none missed
+survivor	survivor_SURVIVOR_filter	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); region and size filters removed calls (60 to 56 by region, 43 with min size 50)
+survivor	survivor_SURVIVOR_genComp	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); 2x2 pairwise overlap matrix written
+survivor	survivor_SURVIVOR_merge	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); 66 calls merged to 60, 5 supported by both callers
+survivor	survivor_SURVIVOR_scanreads	PASS	real COLO829 nanopore chr22 slice (nf-core) with MD tags added by samtools calmd; error profile from 163 reads
+survivor	survivor_SURVIVOR_simSV	PASS	synthetic data: SVs simulated on a 180 kb chr22 slice (nf-core); fasta, bed and vcf written (7 SVs)
+survivor	survivor_SURVIVOR_simreads	PASS	synthetic data: reads simulated on a 180 kb chr22 slice from the COLO829 error profile; 14 reads at coverage 2
+survivor	survivor_SURVIVOR_stats	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); merged set summarised (11 DEL, 7 INS, 42 TRA)
+survivor	survivor_SURVIVOR_vcftobed	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); 60 BEDPE rows written
+suvtk	suvtk_co-occurrence	PASS	synthetic data: small abundance table with one planted correlated contig pair
+suvtk	suvtk_comments	PASS	synthetic data: MIUVIG and assembly tables written from the suvtk documentation examples; taxonomy table is real virus-info output
+suvtk	suvtk_download-database	Not completed	database archive from Zenodo is 3.1 GB, too large to download for a test
+suvtk	suvtk_features	Not completed	needs the 3 GB suvtk database (bfvd), which is too large to download
+suvtk	suvtk_gbk2tbl	Failed	tool bug: join() locations are written as one start-end span (phiX174 CDS join(3981..5386,1..136) becomes 1..5386); simple potato virus X and TMV features convert correctly
+suvtk	suvtk_table2asn	PASS	synthetic data: potato virus X sequence with a hand-written feature table, source file and template; sqn and val files made
+suvtk	suvtk_taxonomy	Not completed	needs the 3 GB suvtk database (ictv_nr_db), which is too large to download
+suvtk	suvtk_virus-info	PASS	synthetic data: hand-written one-line taxonomy file for phiX174 and a reduced real NCBI taxdump (nodes.dmp and names.dmp lines for the phiX174 lineage)
+sv2	sv2	Not completed	needs a full hg19/hg38 reference FASTA (about 3 GB) and a 250 MB resource download; too large for a test
+svaba	svaba_refilter	PASS	
+svaba	svaba_run	PASS	
+svaba	svaba_tovcf	PASS	
+svclone	svclone_annotate	PASS	synthetic data: simulated example from the SVclone repository (100 deletions at 80 percent purity); clone proportion 0.8 recovered
+svclone	svclone_cluster	PASS	synthetic data: simulated example from the SVclone repository (100 deletions at 80 percent purity); clone proportion 0.8 recovered
+svclone	svclone_count	PASS	synthetic data: simulated example from the SVclone repository (100 deletions at 80 percent purity); clone proportion 0.8 recovered
+svclone	svclone_filter	PASS	synthetic data: simulated example from the SVclone repository (100 deletions at 80 percent purity); clone proportion 0.8 recovered
+svclone	svclone_postassign	PASS	synthetic data: simulated example from the SVclone repository (100 deletions at 80 percent purity); clone proportion 0.8 recovered
+svdb	svdb_build	PASS	
+svdb	svdb_export	PASS	
+svdb	svdb_merge	PASS	
+svdb	svdb_query	PASS	
+svdss	svdss_call	PASS	real COLO829 nanopore chr22 slice (nf-core) with hg38 chr22; DEL/INS calls match svim (SVDSS is designed for HiFi reads)
+svdss	svdss_index	PASS	real COLO829 nanopore chr22 slice (nf-core) with hg38 chr22; DEL/INS calls match svim (SVDSS is designed for HiFi reads)
+svdss	svdss_run_svdss	PASS	real COLO829 nanopore chr22 slice (nf-core) with hg38 chr22; genotyped DEL and INS written (SVDSS is designed for HiFi reads)
+svdss	svdss_search	PASS	real COLO829 nanopore chr22 slice (nf-core) with hg38 chr22; DEL/INS calls match svim (SVDSS is designed for HiFi reads)
+svdss	svdss_smooth	PASS	real COLO829 nanopore chr22 slice (nf-core) with hg38 chr22; DEL/INS calls match svim (SVDSS is designed for HiFi reads)
+svhip	svhip_codon_conservation	Failed	image problem: the image has blosum 2.0.2 (nested dict) but svhip needs flat keys, so codon conservation raises TypeError; the command crashes on the tool example alignment
+svhip	svhip_combine	PASS	feature tables from the data step; files with the prefix were merged
+svhip	svhip_data	Failed	image problem: the image has blosum 2.0.2 (nested dict) but svhip needs flat keys, so codon conservation raises TypeError; the error is swallowed so z-score, hexamer and codon columns of the training table are silently 0
+svhip	svhip_evaluate	Failed	tool bug: evaluate crashes with TypeError, unpack_features() missing argument 'structure'
+svhip	svhip_features	Failed	image problem: the image has blosum 2.0.2 (nested dict) but svhip needs flat keys, so codon conservation raises TypeError; the error is swallowed so z-score, hexamer and codon columns are silently 0
+svhip	svhip_hexcalibrate	PASS	real coding sequences of potato virus X and TMV with the tRNA example (U changed to T); 4096-hexamer model written
+svhip	svhip_index	Failed	tool bug: the GTF written from predictions has a numeric type column (-1/1) and also lists windows predicted OTHER
+svhip	svhip_predict	Not completed	runs, but its input features have the z-score, hexamer and codon columns silently set to 0 by the image's blosum problem in svhip features/data, so the model cannot be judged.
+svhip	svhip_training	Not completed	runs, but its input features have the z-score, hexamer and codon columns silently set to 0 by the image's blosum problem in svhip features/data, so the model cannot be judged.
+svict	svict	PASS	real SurVIndel2 demo slice; known 101 bp tandem duplication at chr:80000 called
+svim	svim_alignment	PASS	real COLO829 nanopore chr22 slice from nf-core; deletions and insertion called at known positions
+svim	svim_reads	PASS	real COLO829 nanopore chr22 reads mapped with minimap2; same DEL/INS calls as svim alignment
+svim-asm	svim-asm_diploid	PASS	real COLO829 nanopore reads split in two sets aligned as stand-in haplotype contigs; DEL/INS called
+svim-asm	svim-asm_haploid	PASS	real COLO829 nanopore reads aligned as stand-in contigs (no small real assembly available); DEL/INS called
+svision-pro	svision-pro_SVision-pro	PASS	
+svist4get	svist4get	PASS	
+svjedi	svjedi_svjedi.py	PASS	
+svjedi-graph	svjedi-graph_svjedi-graph.py	PASS	
+svmlight	svmlight_svm_classify	PASS	
+svmlight	svmlight_svm_learn	PASS	
+svpg	svpg_augment	Failed	image problem: minigraph and bcftools are missing from the image (augment runs them)
+svpg	svpg_call	Failed	image problem: minigraph command not found in the image (call mode runs it)
+svpg	svpg_graph-call	Not completed	no small real pangenome with SVs found; the run works but gives a header-only VCF with 0 SVs
+svsolver	svsolver	Not completed	needs a SimVascular mesh and svpre output (geombc, restart files); no small real case is available
+svsolver	svsolver_svpost	Not completed	needs restart files from a real svsolver run; no small real case is available
+svsolver	svsolver_svpre	Not completed	needs a real SimVascular mesh-complete model and .svpre file; no small real case is available
+svtk	svtk_annotate	Not completed	needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists
+svtk	svtk_bedcluster	PASS	
+svtk	svtk_bincov	PASS	
+svtk	svtk_collect-pesr	PASS	main mode checked on a real BAM; the --region and --bgzip options crash (pysam region bytes error; bgzip missing in the image)
+svtk	svtk_count-svtypes	PASS	
+svtk	svtk_pe-test	Not completed	needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists
+svtk	svtk_rdtest2vcf	Failed	image problem: the bundled VCF header template is rejected by the image's pysam, so it crashes before reading input
+svtk	svtk_resolve	Not completed	needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists
+svtk	svtk_sr-test	Not completed	needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists
+svtk	svtk_standardize	Failed	image problem: the bundled VCF header template is rejected by the image's pysam, so it crashes before reading input
+svtk	svtk_vcf2bed	Not completed	needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists
+svtk	svtk_vcfcluster	Not completed	needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists
+svtools	svtools_afreq	PASS	
+svtools	svtools_bedpesort	Failed	image problem: sort in the image is BusyBox and rejects the -k1,1V key the script uses
+svtools	svtools_bedpetobed12	PASS	
+svtools	svtools_bedpetovcf	PASS	
+svtools	svtools_classify	PASS	
+svtools	svtools_copynumber	Not completed	needs the CNVnator program and a CNVnator .root histogram file; neither is in the image or in test data
+svtools	svtools_create_coordinates	PASS	
+svtools	svtools_genotype	PASS	
+svtools	svtools_lmerge	PASS	output equals the expected file up to float rounding (relative difference below 1e-11)
+svtools	svtools_lsort	PASS	
+svtools	svtools_prune	PASS	
+svtools	svtools_svtools_vcftobedpe	PASS	
+svtools	svtools_varlookup	PASS	
+svtools	svtools_vcfpaste	PASS	
+svtools	svtools_vcfsort	Failed	image problem: sort in the image is BusyBox and rejects the -k1,1V key the script uses
+svtopo	svtopo	PASS	
+svtopovz	svtopovz	PASS	
+svtyper	svtyper	PASS	
+svtyper-python3	svtyper-python3_svtyper	PASS	
+svtyper-python3	svtyper-python3_svtyper-sso	PASS	
+svviz	svviz	PASS	
+svync	svync	PASS	
+swalign	swalign	PASS	
+swarm	swarm	PASS	
+swga	swga_activate	PASS	
+swga	swga_count	PASS	
+swga	swga_export	PASS	
+swga	swga_filter	PASS	
+swga	swga_find_sets	PASS	
+swga	swga_init	PASS	
+swga	swga_score	PASS	
+swga	swga_summary	PASS	ran on a populated workspace; it reports 70152 primers, 42 active and 51 sets, matching the database
+swiftlink	swiftlink	PASS	
+swipe	swipe	PASS	
+sword	sword	PASS	
+sylph	sylph_inspect	PASS	
+sylph	sylph_profile	PASS	
+sylph	sylph_query	PASS	
+sylph	sylph_sketch	PASS	
+sylph-tax	sylph-tax_download	PASS	
+sylph-tax	sylph-tax_merge	PASS	
+sylph-tax	sylph-tax_taxprof	PASS	
+symbiontscreener	symbiontscreener_build_k21	Failed	image problem: meryl in the image is the old version (-B/-S/-M syntax), but the script calls meryl count, so it stops with Unknown option.
+symbiontscreener	symbiontscreener_build_s40	Failed	image problem: the script tests that a file named jellyfish exists in the working directory, so it stops although jellyfish is on PATH.
+symbiontscreener	symbiontscreener_cluster_k21	Not completed	needs the step01.k21 output of build_k21, which fails in this image (old meryl).
+symbiontscreener	symbiontscreener_cluster_s40	Not completed	needs the step01.s40 output of build_s40, which fails in this image (jellyfish path check).
+symbiontscreener	symbiontscreener_consensus_cluster_k21	Not completed	needs the step01.k21 output of build_k21, which fails in this image (old meryl).
+symbiontscreener	symbiontscreener_consensus_cluster_s40	Not completed	needs the step01.s40 output of build_s40, which fails in this image (jellyfish path check).
+symbiontscreener	symbiontscreener_density_k21	Not completed	needs the step01.k21 output of build_k21, which fails in this image (old meryl).
+symbiontscreener	symbiontscreener_density_s40	Not completed	needs the step01.s40 output of build_s40, which fails in this image (jellyfish path check).
+symbiontscreener	symbiontscreener_trio_result_k21	Not completed	needs the step01.k21 output of build_k21, which fails in this image (old meryl).
+symbiontscreener	symbiontscreener_trio_result_s40	Not completed	needs the step01.s40 output of build_s40, which fails in this image (jellyfish path check).

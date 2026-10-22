@@ -4,13 +4,23 @@ baseCommand:
   - svtk
   - vcfcluster
 label: svtk_vcfcluster
-doc: "Intersect SV called by PE/SR-based algorithms.\n\nTool homepage: https://github.com/talkowski-lab/svtk"
+doc: 'Intersect SV called by PE/SR-based algorithms.
+
+
+  Tool homepage: https://github.com/talkowski-lab/svtk'
 inputs:
   - id: filelist
     type: File
     doc: List of paths to standardized VCFS
     inputBinding:
       position: 1
+  - id: vcf_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Standardized VCFs named in the file list; staged in the working directory
+      so the listed names resolve
   - id: fout
     type: string
     doc: Clustered VCF.
@@ -97,8 +107,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: "Minimum sample overlap for two variants to be\n                        clustered
-      together."
+    doc: "Minimum sample overlap for two variants to be\n                        clustered\
+      \ together."
     inputBinding:
       position: 102
       prefix: --sample-overlap
@@ -123,7 +133,11 @@ outputs:
     type: File
     doc: Clustered VCF.
     outputBinding:
-      glob: '$(inputs.fout)'
+      glob: $(inputs.fout)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.vcf_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

@@ -14,6 +14,11 @@ inputs:
       position: 1
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: BAM file
     inputBinding:
       position: 2
@@ -83,9 +88,9 @@ inputs:
       position: 103
       prefix: --threads
 outputs:
-  - id: output_file
-    type: File
-    doc: Output file
+  - id: output_dir
+    type: Directory
+    doc: Output directory (abund.txt, max_ident.txt, info.txt, counts.txt, mse.pdf)
     outputBinding:
       glob: '$(inputs.output)'
 hints:

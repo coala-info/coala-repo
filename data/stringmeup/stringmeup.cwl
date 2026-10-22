@@ -95,7 +95,9 @@ outputs:
       - File
     doc: File to save the Kraken 2 read classifications in.
     outputBinding:
-      glob: $(inputs.output_classifications_path)
+      glob:
+        - $(inputs.output_classifications_path)
+        - $(inputs.output_classifications_path).gz
   - id: output_verbose
     type:
       - 'null'
@@ -106,7 +108,9 @@ outputs:
       name, (7) original rank, (8) new rank, (9) distance travelled (how many 
       nodes was it lifted upwards in the taxonomy).
     outputBinding:
-      glob: $(inputs.output_verbose_path)
+      glob:
+        - $(inputs.output_verbose_path)
+        - $(inputs.output_verbose_path).gz
 requirements:
   - class: InlineJavascriptRequirement
 hints:

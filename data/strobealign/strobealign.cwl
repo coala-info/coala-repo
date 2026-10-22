@@ -7,10 +7,9 @@ inputs:
   - id: reference
     type: File
     doc: Reference in FASTA format
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: reads1
     type:
       - 'null'
@@ -151,7 +150,7 @@ inputs:
   - id: index_statistics
     type:
       - 'null'
-      - File
+      - string
     doc: Print statistics of indexing to PATH
     inputBinding:
       position: 104
@@ -369,6 +368,11 @@ inputs:
     inputBinding:
       position: 104
       prefix: -U
+  - id: index_file
+    type:
+      - 'null'
+      - File
+    doc: Pre-generated index (.sti file written by --create-index) matching the reference; staged next to the reference
   - id: use_index
     type:
       - 'null'
@@ -407,8 +411,28 @@ outputs:
     doc: redirect output to file [stdout]
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: index_statistics_out
+    type:
+      - 'null'
+      - File
+    doc: Statistics of indexing
+    outputBinding:
+      glob: $(inputs.index_statistics)
+  - id: index_out
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Strobemer index written by --create-index (next to the reference)
+    outputBinding:
+      glob: '*.sti'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
+      - $(inputs.index_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strobealign:0.17.0--h5ca1c30_0

@@ -1,5 +1,13 @@
 # srf-n-trf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| srf-n-trf_monomers | PASS |  |
+| srf-n-trf_motifs | PASS |  |
+| srf-n-trf_regions | PASS |  |
+
 ## srf-n-trf_monomers
 
 ### Tool Description

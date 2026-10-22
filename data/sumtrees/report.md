@@ -1,5 +1,11 @@
 # sumtrees CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sumtrees | PASS |  |
+
 ## sumtrees
 
 ### Tool Description

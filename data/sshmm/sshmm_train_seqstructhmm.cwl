@@ -96,20 +96,25 @@ inputs:
       position: 103
       prefix: --threshold
   - id: output_directory_path
-    type: string?
+    type: string
+    default: sshmm_output
+    doc: directory to write output files to (created before the run)
     inputBinding:
       position: 104
       prefix: --output_directory
 outputs:
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: directory to write output files to
     outputBinding:
       glob: $(inputs.output_directory_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sshmm:1.0.7--py27_0

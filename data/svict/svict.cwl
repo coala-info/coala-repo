@@ -192,7 +192,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: '$((inputs.output_prefix ? inputs.output_prefix : "out") + "*")'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svict:1.0.1--h077b44d_6

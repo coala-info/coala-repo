@@ -1,5 +1,11 @@
 # svtopovz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svtopovz | PASS |  |
+
 ## svtopovz
 
 ### Tool Description

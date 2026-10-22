@@ -1,5 +1,27 @@
 # stacks CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stacks_clone_filter | PASS | synthetic data (Galaxy stacks2 test reads): fixed output flag to -o, added -I; single-end run output is identical to the Galaxy expected file |
+| stacks_convert_stacks.pl | Not completed | New CWL not run: the script only converts old Stacks 1 style files (sample.catalog.tags.tsv), none available |
+| stacks_cstacks | PASS | synthetic data (Galaxy stacks2 test reads): fixed output flag to -o, added -P/-M and -s/-o modes with staged files; catalog consensus sequences match the Galaxy expected catalog |
+| stacks_extract_interpop_chars.pl | Not completed | New CWL not run: needs an old interspecies tag file and barcode list, no test data found |
+| stacks_gstacks | PASS | synthetic data (Galaxy stacks2 test reads): fixed output flag to -O; 583 sites and the same 6 SNPs with the same genotypes as the Galaxy expected VCF |
+| stacks_kmer_filter | PASS | synthetic data (Galaxy stacks2 test reads): new CWL; rare and abundant k-mer filtering with k 16 gave output identical to the Galaxy expected file |
+| stacks_phasedstacks | Not completed | New CWL not run: needs fastPHASE or Beagle phased output of Stacks data, no test data found |
+| stacks_populations | PASS | synthetic data (Galaxy stacks2 test reads): chained de novo run gave 3 loci and 6 variant sites as in the Galaxy log; output folder created |
+| stacks_process_radtags | PASS | synthetic data (Galaxy stacks2 test reads): fixed output flag to --out-path and -D, created output folder; retained 1375 of 2176 reads as in the Galaxy log |
+| stacks_process_shortreads | PASS | synthetic data (Galaxy stacks2 test reads): fixed output flag to -o and created output folder; 2176 reads split into 40 barcode files |
+| stacks_sstacks | PASS | synthetic data (Galaxy stacks2 test reads): added writable -P/-M mode and -c/-s/-o mode; matches agree with the Galaxy expected files |
+| stacks_stacks-count-reads-per-sample-per-locus | PASS | synthetic data (Galaxy stacks2 test reads): new CWL; made the per-locus read count table and PDF for 3 loci in 2 samples |
+| stacks_stacks-dist-extract | PASS | New CWL; listed and printed sections of a gstacks distribs file; the --out-path option crashes in the tool (opens the file without write mode) |
+| stacks_stacks-hist2d-loci-samples-coverage | PASS | synthetic data (Galaxy stacks2 test reads): new CWL; drew the histogram PDF from the read count table |
+| stacks_stacks-integrate-alignments | Not completed | New CWL not run: needs a BAM of the catalog loci aligned to a reference genome, which the test data does not have |
+| stacks_tsv2bam | PASS | synthetic data (Galaxy stacks2 test reads): input folder staged writable and collected; two matches.bam files written with paired-end reads |
+| stacks_ustacks | PASS | synthetic data (Galaxy stacks2 test reads): created output folder; 66 reads gave 3 loci with the same consensus sequences as the Galaxy expected files |
+
 ## stacks_process_radtags
 
 ### Tool Description
@@ -519,6 +541,238 @@ Additional options:
   --log-fst-comp: log components of Fst/Phi_st calculations to a file.
 ```
 
+
+## stacks_kmer_filter
+
+### Tool Description
+Filter and normalize reads based on the frequency of their k-mers.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/stacks:2.68--h077b44d_3
+- **Homepage**: https://catchenlab.life.illinois.edu/stacks/
+- **Package**: https://anaconda.org/channels/bioconda/packages/stacks/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+kmer_filter 2.68
+kmer_filter [-f in_file_1 [-f in_file_2...] | -p in_dir] [-1 pair_1 -2 pair_2 [-1 pair_1...]] -o out_dir [-i type] [-y type] [-D] [-h]
+  f: path to the input file if processing single-end seqeunces.
+  i: input file type, either 'bustard' for the Illumina BUSTARD output files, 'fasta', 'fastq', 'gzfasta', or 'gzfastq' (default 'fastq').
+  p: path to a directory of files (for single-end files only).
+  1: specify the first in a pair of files to be processed together.
+  2: specify the second in a pair of files to be processed together.
+  o: path to output the processed files.
+  y: output type, either 'fastq' or 'fasta' (default fastq).
+  D: capture discarded reads to a file.
+  h: display this help messsage.
+
+  Filtering options:
+    --rare: turn on filtering based on rare k-mers.
+    --abundant: turn on filtering based on abundant k-mers.
+    --k-len <len>: specify k-mer size (default 15).
+
+  Advanced filtering options:
+    --max-k-freq <value>: specify the number of times a kmer must occur to be considered abundant (default 20,000).
+    --min-lim <value>: specify number of rare kmers occuring in a row required to discard a read (default 80% of the k-mer length).
+    --max-lim <value>: specify number of abundant kmers required to discard a read (default 80% of the k-mers in a read).
+
+  Normalize data:
+    --normalize <depth>: normalize read depth according to k-mer coverage.
+
+  Characterizing K-mers:
+    --write-k-freq: write kmers along with their frequency of occurrence and exit.
+    --k-dist: print k-mer frequency distribution and exit.
+
+  Advanced input options:
+    --read-k-freq <path>: read a set of kmers along with their frequencies of occurrence instead of reading raw input files.
+```
+
+## stacks_stacks-dist-extract
+
+### Tool Description
+Export a particular section of a Stacks log or distribs file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/stacks:2.68--h077b44d_3
+- **Homepage**: https://catchenlab.life.illinois.edu/stacks/
+- **Package**: https://anaconda.org/channels/bioconda/packages/stacks/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: 
+    stacks-dist-extract logfile [section]
+    stacks-dist-extract [--pretty] [--out-path path] logfile [section]
+    cat logfile | stacks-dist-extract [--pretty] [--section section]
+
+Export a paricular section of a Stacks log or distribs file. If you supply a
+log path alone, stacks-dist-extract will print the available sections to
+output. The log file can also be supplied via stdin.
+
+options:
+  -h, --help            show this help message and exit
+  -p, --pretty          Output data as a table with columns lined up.
+  -o, --out-path path   Path to output file.
+  -s, --section section
+                        Name of section to output from the log file.
+```
+
+## stacks_stacks-count-reads-per-sample-per-locus
+
+### Tool Description
+Tally the number of samples and reads present at all loci of the catalog from the matches.bam files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/stacks:2.68--h077b44d_3
+- **Homepage**: https://catchenlab.life.illinois.edu/stacks/
+- **Package**: https://anaconda.org/channels/bioconda/packages/stacks/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/stacks-count-reads-per-sample-per-locus: line 19: cd: -h: invalid option
+cd: usage: cd [-L|[-P [-e]] [-@]] [dir]
+```
+
+## stacks_stacks-hist2d-loci-samples-coverage
+
+### Tool Description
+Draw a 2D histogram of loci by number of samples and coverage.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/stacks:2.68--h077b44d_3
+- **Homepage**: https://catchenlab.life.illinois.edu/stacks/
+- **Package**: https://anaconda.org/channels/bioconda/packages/stacks/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Error: 
+usage: stacks-hist2d-loci-samples-coverage reads_per_sample_per_locus.tsv
+
+Input is a table of read counts per sample (columns) per locus (row)
+e.g. the output of stacks-count-reads-per-sample-per-locus.
+Execution halted
+```
+
+## stacks_stacks-integrate-alignments
+
+### Tool Description
+Integrate genomic alignment coordinates of the catalog loci into Stacks output files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/stacks:2.68--h077b44d_3
+- **Homepage**: https://catchenlab.life.illinois.edu/stacks/
+- **Package**: https://anaconda.org/channels/bioconda/packages/stacks/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: stacks-integrate-alignments [-h] -P path -B path -O path [-q MIN_MAPQ]
+                                   [-a MIN_ALNCOV] [-p MIN_PCTID] [--verbose]
+                                   [--version]
+
+Extracts the coordinates of the RAD loci from the given BAM file into a
+'locus_coordinates.tsv' table, then rewrites the 'catalog.fa.gz' and
+'catalog.calls' files so that they include the genomic coordinates given in
+the input BAM file.
+
+options:
+  -h, --help            show this help message and exit
+  -P, --in-path path    Path to a directory containing Stacks ouput files.
+  -B, --bam-path path   Path to a SAM or BAM file containing alignment of de
+                        novo catalog loci to a reference genome.
+  -O, --out-path path   Path to write the integrated ouput files.
+  -q, --min_mapq MIN_MAPQ
+                        Minimum mapping quality as listed in the BAM file
+                        (default 20).
+  -a, --min_alncov MIN_ALNCOV
+                        Minimum fraction of the de novo catalog locus that
+                        must participate in the alignment (default 0.6).
+  -p, --min_pctid MIN_PCTID
+                        Minimum BLAST-style percent identity of the largest
+                        alignment fragment for a de novo catalog locus
+                        (default 0.6).
+  --verbose             Provide verbose output.
+  --version             show program's version number and exit
+```
+
+## stacks_convert_stacks.pl
+
+### Tool Description
+Convert Stacks output files between Stacks versions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/stacks:2.68--h077b44d_3
+- **Homepage**: https://catchenlab.life.illinois.edu/stacks/
+- **Package**: https://anaconda.org/channels/bioconda/packages/stacks/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+convert_stacks.pl _VERSION_
+convert_stacks.pl -p path -s path -o path [-t type] [-d] [-h]
+    p: path to the Stacks output files.
+    o: path to output the converted Stacks files.
+    h: display this help message.
+    d: turn on debug output.
+```
+
+## stacks_extract_interpop_chars.pl
+
+### Tool Description
+Extract inter-population characters from a file of interspecies tags.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/stacks:2.68--h077b44d_3
+- **Homepage**: https://catchenlab.life.illinois.edu/stacks/
+- **Package**: https://anaconda.org/channels/bioconda/packages/stacks/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+extract-interpop-chars.pl -f in_file -b barcodes [-o path] [-p limit] [-d] [-h]
+  f: input file containing interspecies tags.
+  b: list of barcodes to process (one barcode per population).
+  o: output file.
+  p: minimum number of populations required before recording a marker.
+  h: display this help message.
+  d: turn on debug output.
+```
+
+## stacks_phasedstacks
+
+### Tool Description
+Calculate D' statistics and haplotype blocks from phased Stacks data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/stacks:2.68--h077b44d_3
+- **Homepage**: https://catchenlab.life.illinois.edu/stacks/
+- **Package**: https://anaconda.org/channels/bioconda/packages/stacks/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+phasedstacks 2.68
+phasedstacks -b id -S path -P path -t file_type [-p threads] [-M popmap] [-v] [-h]
+  b: Stacks batch ID.
+  P: path to the phased output files.
+  S: path to the Stacks output files.
+  t: input file type. Supported types: fastphase, and beagle.
+  p: number of processes to run in parallel sections of code.
+  M: path to the population map, a tab separated file describing which individuals belong in which population.
+  v: print program version.
+  h: display this help messsage.
+  --haplotypes: data were phased as RAD locus haplotypes.
+  --dprime-bin-size: size of buckets for binning SNPs at a particular distance to calculate the mean D' value.
+  --dprime-threshold <val>: if D' values fall above <val>, set the D' to 1, otherwise set D' to 0.
+
+  Filtering options:
+  --skip-zeros: do not include D' values of zero in the D' output.
+  --minor-allele-freq: specify a minimum minor allele frequency required to process a nucleotide site (0 < a < 0.5).
+  --min-inform-pairs: when building D' haplotype blocks, the minimum number of informative D' measures to combine two blocks (default 0.9).
+```
 
 ## Metadata
 - **Skill**: generated

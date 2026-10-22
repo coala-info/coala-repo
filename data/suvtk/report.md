@@ -1,5 +1,18 @@
 # suvtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| suvtk_co-occurrence | PASS | synthetic data: small abundance table with one planted correlated contig pair |
+| suvtk_comments | PASS | synthetic data: MIUVIG and assembly tables written from the suvtk documentation examples; taxonomy table is real virus-info output |
+| suvtk_download-database | Not completed | database archive from Zenodo is 3.1 GB, too large to download for a test |
+| suvtk_features | Not completed | needs the 3 GB suvtk database (bfvd), which is too large to download |
+| suvtk_gbk2tbl | Failed | tool bug: join() locations are written as one start-end span (phiX174 CDS join(3981..5386,1..136) becomes 1..5386); simple potato virus X and TMV features convert correctly |
+| suvtk_table2asn | PASS | synthetic data: potato virus X sequence with a hand-written feature table, source file and template; sqn and val files made |
+| suvtk_taxonomy | Not completed | needs the 3 GB suvtk database (ictv_nr_db), which is too large to download |
+| suvtk_virus-info | PASS | synthetic data: hand-written one-line taxonomy file for phiX174 and a reduced real NCBI taxdump (nodes.dmp and names.dmp lines for the phiX174 lineage) |
+
 ## suvtk_download-database
 
 ### Tool Description

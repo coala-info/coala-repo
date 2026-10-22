@@ -9,24 +9,24 @@ inputs:
     type: File
     doc: File containing the examples to classify
     inputBinding:
-      position: 1
+      position: 101
   - id: model_file
     type: File
     doc: File containing the trained SVM model
     inputBinding:
-      position: 2
+      position: 102
   - id: output_file
     type: string
     doc: File to write the classification results to
     inputBinding:
-      position: 3
+      position: 103
   - id: output_format
     type:
       - 'null'
       - int
     doc: '0: old output format of V1.0, 1: output the value of decision function (default)'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -f
   - id: verbosity_level
     type:
@@ -34,7 +34,7 @@ inputs:
       - int
     doc: verbosity level (default 2)
     inputBinding:
-      position: 103
+      position: 1
       prefix: -v
 outputs:
   - id: out_output_file

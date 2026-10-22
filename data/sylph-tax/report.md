@@ -1,5 +1,13 @@
 # sylph-tax CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sylph-tax_download | PASS |  |
+| sylph-tax_merge | PASS |  |
+| sylph-tax_taxprof | PASS |  |
+
 ## sylph-tax_taxprof
 
 ### Tool Description

@@ -304,7 +304,7 @@ inputs:
     doc: Output or path parameter `out_dir_path`
     inputBinding:
       position: 102
-      prefix: --out-dir
+      prefix: -o
 outputs:
   - id: out_dir
     type: Directory
@@ -313,6 +313,11 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.out_dir_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stacks:2.68--h077b44d_3

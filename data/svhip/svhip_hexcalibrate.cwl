@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svhip.py
+baseCommand:
+  - svhip
+  - hexcalibrate
 label: svhip_hexcalibrate
 doc: "Options:\n\nTool homepage: https://github.com/chrisBioInf/Svhip"
 inputs:

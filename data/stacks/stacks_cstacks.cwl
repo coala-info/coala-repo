@@ -21,8 +21,10 @@ inputs:
       position: 101
       prefix: --disable-gapped
   - id: in_dir
-    type: Directory
-    doc: path to the directory containing Stacks files.
+    type:
+      - 'null'
+      - Directory
+    doc: path to the directory containing Stacks files (copied writable; the catalog files are written into it with -P/-M)
     inputBinding:
       position: 101
       prefix: --in-path
@@ -69,7 +71,9 @@ inputs:
       position: 101
       prefix: --threads
   - id: popmap
-    type: File
+    type:
+      - 'null'
+      - File
     doc: path to a population map file.
     inputBinding:
       position: 101
@@ -82,29 +86,57 @@ inputs:
     inputBinding:
       position: 101
       prefix: --report-mmatches
+  - id: sample_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: sample files (.tags.tsv, .snps.tsv, .alleles.tsv) named by the -s prefixes; they are staged in the working directory
   - id: sample_prefix
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -s
     doc: sample prefix from which to load loci into the catalog.
     inputBinding:
       position: 101
-      prefix: -s
   - id: output_path_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: ': output path to write results.'
     inputBinding:
       position: 102
-      prefix: --outpath
+      prefix: -o
 outputs:
+  - id: in_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: input directory with the catalog files written into it (-P/-M mode)
+    outputBinding:
+      glob: '${ return inputs.in_dir ? inputs.in_dir.basename : []; }'
   - id: output_path
-    type: Directory
+    type:
+      - 'null'
+      - Directory
     doc: output path to write results.
     outputBinding:
-      glob: $(inputs.output_path_path)
+      glob: '${ return inputs.output_path_path ? inputs.output_path_path : []; }'
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |-
+      ${
+        var l = [];
+        if (inputs.in_dir) { l.push({"entry": inputs.in_dir, "writable": true}); }
+        if (inputs.sample_files) { for (var i = 0; i < inputs.sample_files.length; i++) { l.push({"entry": inputs.sample_files[i], "writable": true}); } }
+        if (inputs.catalog) { l.push({"entry": inputs.catalog, "writable": true}); }
+        if (inputs.output_path_path) { l.push({"entryname": inputs.output_path_path, "entry": {"class": "Directory", "listing": []}, "writable": true}); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stacks:2.68--h077b44d_3

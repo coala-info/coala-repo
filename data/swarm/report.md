@@ -1,5 +1,11 @@
 # swarm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| swarm | PASS |  |
+
 ## swarm
 
 ### Tool Description

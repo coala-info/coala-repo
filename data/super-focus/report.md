@@ -1,5 +1,11 @@
 # super-focus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| super-focus_superfocus | PASS | synthetic data: diamond run against a 20-protein toy database built from the repository test fixtures; the full SUPER-FOCUS database was not downloaded |
+
 ## super-focus_superfocus
 
 ### Tool Description

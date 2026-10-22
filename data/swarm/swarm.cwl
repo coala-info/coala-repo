@@ -2,7 +2,10 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: swarm
 label: swarm
-doc: "Swarm 3.1.6\n\nTool homepage: https://github.com/torognes/swarm"
+doc: 'Swarm 3.1.6
+
+
+  Tool homepage: https://github.com/torognes/swarm'
 inputs:
   - id: fasta_file
     type:
@@ -10,7 +13,7 @@ inputs:
       - File
     doc: Input FASTA file
     inputBinding:
-      position: 1
+      position: 101
   - id: append_abundance
     type:
       - 'null'
@@ -86,7 +89,7 @@ inputs:
   - id: internal_structure
     type:
       - 'null'
-      - File
+      - string
     doc: write internal cluster structure to file
     inputBinding:
       position: 102
@@ -94,7 +97,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: log to file, not to stderr
     inputBinding:
       position: 102
@@ -126,7 +129,7 @@ inputs:
   - id: network_file
     type:
       - 'null'
-      - File
+      - string
     doc: dump sequence network to file
     inputBinding:
       position: 102
@@ -142,7 +145,7 @@ inputs:
   - id: seeds
     type:
       - 'null'
-      - File
+      - string
     doc: write cluster representatives to FASTA file
     inputBinding:
       position: 102
@@ -150,7 +153,7 @@ inputs:
   - id: statistics_file
     type:
       - 'null'
-      - File
+      - string
     doc: dump cluster statistics to file
     inputBinding:
       position: 102
@@ -166,7 +169,7 @@ inputs:
   - id: uclust_file
     type:
       - 'null'
-      - File
+      - string
     doc: output using UCLUST-like format to file
     inputBinding:
       position: 102
@@ -186,13 +189,55 @@ inputs:
       position: 103
       prefix: --output-file
 outputs:
-  - id: output_file
+  - id: out_output_file
     type:
       - 'null'
       - File
-    doc: output result to file (stdout)
+    doc: Cluster result
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: out_internal_structure
+    type:
+      - 'null'
+      - File
+    doc: Output file written with --internal-structure
+    outputBinding:
+      glob: $(inputs.internal_structure)
+  - id: out_log_file
+    type:
+      - 'null'
+      - File
+    doc: Output file written with --log
+    outputBinding:
+      glob: $(inputs.log_file)
+  - id: out_network_file
+    type:
+      - 'null'
+      - File
+    doc: Output file written with --network-file
+    outputBinding:
+      glob: $(inputs.network_file)
+  - id: out_seeds
+    type:
+      - 'null'
+      - File
+    doc: Output file written with --seeds
+    outputBinding:
+      glob: $(inputs.seeds)
+  - id: out_statistics_file
+    type:
+      - 'null'
+      - File
+    doc: Output file written with --statistics-file
+    outputBinding:
+      glob: $(inputs.statistics_file)
+  - id: out_uclust_file
+    type:
+      - 'null'
+      - File
+    doc: Output file written with --uclust-file
+    outputBinding:
+      glob: $(inputs.uclust_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

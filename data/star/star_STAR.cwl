@@ -37,12 +37,17 @@ inputs:
       position: 101
       prefix: --runThreadN
   - id: genome_dir
-    type: Directory
-    doc: path to the directory where genome files are stored or will be 
-      generated
-    inputBinding:
-      position: 101
-      prefix: --genomeDir
+    type:
+      - 'null'
+      - Directory
+    doc: path to an existing directory where genome files are stored (for
+      --runMode alignReads)
+  - id: genome_dir_name
+    type:
+      - 'null'
+      - string
+    doc: name of the directory that is generated (for --runMode genomeGenerate);
+      used for --genomeDir when genome_dir is not given
   - id: genome_load
     type:
       - 'null'
@@ -196,16 +201,135 @@ inputs:
     inputBinding:
       position: 101
       prefix: --soloCBwhitelist
-outputs:
-  - id: output_out_file_name_prefix
+  - id: genome_sa_index_nbases
+    type:
+      - 'null'
+      - int
+    doc: length (bases) of the SA pre-indexing string; for small genomes scale down to min(14, log2(GenomeLength)/2 - 1)
+    inputBinding:
+      position: 101
+      prefix: --genomeSAindexNbases
+  - id: limit_bam_sort_ram
+    type:
+      - 'null'
+      - int
+    doc: maximum available RAM (bytes) for sorting BAM
+    inputBinding:
+      position: 101
+      prefix: --limitBAMsortRAM
+  - id: out_sam_strand_field
+    type:
+      - 'null'
+      - string
+    doc: Cufflinks-like strand field flag (None, intronMotif)
+    inputBinding:
+      position: 101
+      prefix: --outSAMstrandField
+  - id: out_sam_attr_rg_line
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: SAM/BAM read group line; the first word must start with "ID:"
+    inputBinding:
+      position: 101
+      prefix: --outSAMattrRGline
+  - id: out_wig_type
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: type of signal output, e.g. "bedGraph" or "bedGraph read1_5p"; requires sorted BAM
+    inputBinding:
+      position: 101
+      prefix: --outWigType
+  - id: chim_multimap_n_max
+    type:
+      - 'null'
+      - int
+    doc: maximum number of chimeric multi-alignments
+    inputBinding:
+      position: 101
+      prefix: --chimMultimapNmax
+  - id: wasp_output_mode
+    type:
+      - 'null'
+      - string
+    doc: WASP allele-specific output type (None, SAMtag)
+    inputBinding:
+      position: 101
+      prefix: --waspOutputMode
+  - id: bam_remove_duplicates_type
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: "mark duplicates in the BAM file (UniqueIdentical or UniqueIdenticalNotMulti)"
+    inputBinding:
+      position: 101
+      prefix: --bamRemoveDuplicatesType
+  - id: genome_chain_files
     type:
       - 'null'
       - File
-    doc: output files name prefix (including full or relative path)
+    doc: chain file for genomic liftover (--runMode liftOver)
+    inputBinding:
+      position: 101
+      prefix: --genomeChainFiles
+arguments:
+  - prefix: --genomeDir
+    position: 101
+    valueFrom: "$(inputs.genome_dir ? inputs.genome_dir.path : (inputs.genome_dir_name ? inputs.genome_dir_name : './GenomeDir/'))"
+outputs:
+  - id: genome_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: generated genome index directory (--runMode genomeGenerate)
     outputBinding:
-      glob: $(inputs.out_file_name_prefix)
+      glob: $(inputs.genome_dir_name)
+  - id: aligned_files
+    type:
+      type: array
+      items: File
+    doc: alignments (Aligned.* files), signal tracks and chimeric junction files
+    outputBinding:
+      glob:
+        - $((inputs.out_file_name_prefix || '') + 'Aligned.*')
+        - $((inputs.out_file_name_prefix || '') + 'Signal.*')
+        - $((inputs.out_file_name_prefix || '') + 'Chimeric.out.junction')
+  - id: log_files
+    type:
+      type: array
+      items: File
+    doc: Log.out, Log.final.out and Log.progress.out
+    outputBinding:
+      glob: $((inputs.out_file_name_prefix || '') + 'Log*.out')
+  - id: splice_junctions
+    type:
+      - 'null'
+      - File
+    doc: high confidence collapsed splice junctions (SJ.out.tab)
+    outputBinding:
+      glob: $((inputs.out_file_name_prefix || '') + 'SJ.out.tab')
+  - id: gene_counts
+    type:
+      - 'null'
+      - File
+    doc: gene counts (--quantMode GeneCounts)
+    outputBinding:
+      glob: $((inputs.out_file_name_prefix || '') + 'ReadsPerGene.out.tab')
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - |
+        ${
+          if (inputs.genome_dir_name) {
+            return [{"entryname": inputs.genome_dir_name, "entry": {"class": "Directory", "basename": inputs.genome_dir_name, "listing": []}, "writable": true}];
+          }
+          return [];
+        }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/star:2.7.0b--0

@@ -2,8 +2,10 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: svtyper
 label: svtyper
-doc: "Compute genotype of structural variants based on breakpoint depth\n\nTool homepage:
-  https://github.com/hall-lab/svtyper"
+doc: 'Compute genotype of structural variants based on breakpoint depth
+
+
+  Tool homepage: https://github.com/hall-lab/svtyper'
 inputs:
   - id: bam
     type:
@@ -14,6 +16,9 @@ inputs:
       position: 101
       prefix: --bam
       itemSeparator: ','
+    secondaryFiles:
+      - pattern: .bai
+        required: false
   - id: disc_weight
     type:
       - 'null'
@@ -67,8 +72,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of reads to sample from BAM file for building insert size 
-      distribution
+    doc: number of reads to sample from BAM file for building insert size distribution
     inputBinding:
       position: 101
       prefix: -n

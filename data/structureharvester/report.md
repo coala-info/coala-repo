@@ -1,5 +1,11 @@
 # structureharvester CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| structureharvester_structureHarvester.py | PASS | summary.txt and clumpp files match Galaxy expected lines; the --evanno option exits 1 on this example data because the standard deviation at K=3 is zero (a documented tool limit) |
+
 ## structureharvester_structureHarvester.py
 
 ### Tool Description

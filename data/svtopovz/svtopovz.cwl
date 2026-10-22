@@ -2,16 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: svtopovz
 label: svtopovz
-doc: "Visualize structural variant calls from svtopo\n\nTool homepage: https://github.com/PacificBiosciences/HiFi-SVTopo"
+doc: 'Visualize structural variant calls from svtopo
+
+
+  Tool homepage: https://github.com/PacificBiosciences/HiFi-SVTopo'
 inputs:
   - id: annotation_bed
     type:
       - 'null'
       - type: array
         items: File
-    doc: space delimited list of one or more paths to genome annotations in BED 
-      file format - optionally allows annotation title in column 4 and strand 
-      (+/-) in column 5
+    doc: space delimited list of one or more paths to genome annotations in BED file
+      format - optionally allows annotation title in column 4 and strand (+/-) in
+      column 5
     inputBinding:
       position: 101
       prefix: --annotation-bed
@@ -19,8 +22,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: single path to gene annotations in GFF3 or GTF format (based on GENCODE
-      v45 annotations)
+    doc: single path to gene annotations in GFF3 or GTF format (based on GENCODE v45
+      annotations)
     inputBinding:
       position: 101
       prefix: --genes
@@ -36,8 +39,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: does not skip simple single-breakpoint events, such as deletions, 
-      duplications, and nonreciprocal translocations
+    doc: does not skip simple single-breakpoint events, such as deletions, duplications,
+      and nonreciprocal translocations
     inputBinding:
       position: 101
       prefix: --include-simple-breakpoints
@@ -51,11 +54,12 @@ inputs:
       prefix: --max-gap-size-mb
   - id: svtopo_dir
     type: Directory
-    doc: path to directory containing one or more svtopo output file pairs (in 
-      json and bed format). GZIP allowed.
+    doc: path to directory containing one or more svtopo output file pairs (in json
+      and bed format). GZIP allowed.
     inputBinding:
       position: 101
       prefix: --svtopo-dir
+      valueFrom: $(self.basename)
   - id: verbose
     type:
       - 'null'
@@ -65,9 +69,19 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: out_svtopo_dir
+    type: Directory
+    doc: The svtopo directory with the generated images and index.html
+    outputBinding:
+      glob: $(inputs.svtopo_dir.basename)
   - id: stdout
     type: stdout
-    doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.svtopo_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtopovz:0.3.0--pyhdfd78af_0

@@ -121,6 +121,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: The reference genome used for pangenome construction (.fa), is also 
       serves as the coordinate system for SVPG’s SV call output.
     inputBinding:
@@ -154,9 +157,7 @@ inputs:
       position: 101
       prefix: --ultra_split_size
   - id: working_dir
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Specify the working directory to store output files.
     inputBinding:
       position: 101
@@ -174,7 +175,7 @@ outputs:
       - File
     doc: VCF output file name
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.working_dir)/$(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -168,7 +168,7 @@ inputs:
     doc: Output or path parameter `out_disabled_path`
     inputBinding:
       position: 105
-      prefix: --out-disabled
+      prefix: --outDisabled
 outputs:
   - id: out
     type:

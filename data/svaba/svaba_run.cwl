@@ -45,6 +45,8 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - .bai?
     doc: Case BAM/CRAM/SAM file (eg tumor). Can input multiple.
     inputBinding:
       position: 101
@@ -63,6 +65,8 @@ inputs:
       - 'null'
       - type: array
         items: File
+    secondaryFiles:
+      - .bai?
     doc: (optional) Control BAM/CRAM/SAM file (eg normal). Can input multiple.
     inputBinding:
       position: 101
@@ -336,6 +340,13 @@ inputs:
       prefix: --read-tracking
   - id: reference_genome
     type: File
+    secondaryFiles:
+      - .fai
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     doc: Path to indexed reference genome to be used by BWA-MEM.
     inputBinding:
       position: 101
@@ -417,6 +428,13 @@ inputs:
       position: 101
       prefix: --z-dropoff
 outputs:
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Files written with the analysis id as prefix (vcf, bps.txt.gz, contigs.bam, log).
+    outputBinding:
+      glob: $(inputs.id_string).*
   - id: stdout
     type: stdout
     doc: Standard output

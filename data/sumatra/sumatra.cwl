@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: sumatra
 label: sumatra
 doc: "Computes all the pairwise LCS (Longest Common Subsequence) scores of one nucleotide
-  dataset or between two nucleotide datasets.\n\nTool homepage: https://github.com/sumatrapdfreader/sumatrapdf"
+  dataset or between two nucleotide datasets.\n\nTool homepage: http://metabarcoding.org/sumatra"
 inputs:
   - id: dataset1
     type:

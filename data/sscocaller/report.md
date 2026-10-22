@@ -1,5 +1,11 @@
 # sscocaller CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sscocaller | PASS | Added index secondary files; repo test BAM and VCF gave count and segment files identical to the expected ones |
+
 ## sscocaller
 
 ### Tool Description

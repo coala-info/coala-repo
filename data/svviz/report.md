@@ -1,5 +1,11 @@
 # svviz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svviz | PASS |  |
+
 ## svviz
 
 ### Tool Description

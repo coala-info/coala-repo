@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: srax
+baseCommand: sraX
 label: srax_sraX
 doc: "sraX is designed to read assembled sequence files in FASTA format and systematically
   detect the presence of antimicrobial resistance genes (ARGs). The complete resistome
@@ -104,8 +104,7 @@ inputs:
       prefix: --user_sq
   - id: output_dir_path
     type: string
-    doc: "output\tDirectory to store obtained results [/path/to/output_dir]. While
-      not"
+    doc: Directory to store obtained results.
     inputBinding:
       position: 102
       prefix: -o
@@ -120,6 +119,8 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/srax:1.5--pl5321h05cac1d_4

@@ -2,7 +2,10 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: svviz
 label: svviz
-doc: "svviz version 1.6.2\n\nTool homepage: https://github.com/svviz/svviz"
+doc: 'svviz version 1.6.2
+
+
+  Tool homepage: https://github.com/svviz/svviz'
 inputs:
   - id: demo
     type:
@@ -17,8 +20,8 @@ inputs:
       - File
     secondaryFiles:
       - .fai
-    doc: reference fasta file (a .faidx index file will be created if it doesn't
-      exist so you need write permissions for this directory)
+    doc: reference fasta file (a .faidx index file will be created if it doesn't exist
+      so you need write permissions for this directory)
     inputBinding:
       position: 2
   - id: breakpoints
@@ -26,16 +29,15 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: information about the breakpoint to be analyzed; see below for 
-      information
+    doc: information about the breakpoint to be analyzed; see below for information
     inputBinding:
       position: 3
   - id: aln_quality
     type:
       - 'null'
       - int
-    doc: minimum score of the Smith-Waterman alignment against the ref or alt 
-      allele in order to be considered (multiplied by 2)
+    doc: minimum score of the Smith-Waterman alignment against the ref or alt allele
+      in order to be considered (multiplied by 2)
     inputBinding:
       position: 104
       prefix: --aln-quality
@@ -43,9 +45,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: 'minimum difference in scores between ref alignment score and alt alignment
+    doc: minimum difference in scores between ref alignment score and alt alignment
       score to be assigned to one allele (use an integer to specify a hard score difference
-      threshold, or a float to specify a score difference relative to the read size;'
+      threshold, or a float to specify a score difference relative to the read size;
     inputBinding:
       position: 104
       prefix: --aln-score-delta
@@ -54,12 +56,12 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: bed or gtf file containing annotations to plot; will be compressed and 
-      indexed using samtools tabix in place if needed (can specify multiple 
-      annotations files)
+        inputBinding:
+          prefix: --annotations
+    doc: bed or gtf file containing annotations to plot; will be compressed and indexed
+      using samtools tabix in place if needed (can specify multiple annotations files)
     inputBinding:
       position: 104
-      prefix: --annotations
   - id: bam_files
     type:
       - 'null'
@@ -68,16 +70,19 @@ inputs:
         inputBinding:
           prefix: --bam
           separate: true
-    doc: sorted, indexed bam file containing reads of interest to plot; can be 
-      specified multiple times to load multiple samples
+    doc: sorted, indexed bam file containing reads of interest to plot; can be specified
+      multiple times to load multiple samples
     inputBinding:
       position: 104
+    secondaryFiles:
+      - pattern: .bai
+        required: true
   - id: context
     type:
       - 'null'
       - int
-    doc: Number of additional nucleotides of genomic context to either side of 
-      the visualization (useful for showing nearby annotations)
+    doc: Number of additional nucleotides of genomic context to either side of the
+      visualization (useful for showing nearby annotations)
     inputBinding:
       position: 104
       prefix: --context
@@ -94,9 +99,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: generate dotplots to show sequence homology within the aligned region; 
-      requires some additional optional python libraries (scipy and PIL) and may
-      take several minutes for longer variants
+    doc: generate dotplots to show sequence homology within the aligned region; requires
+      some additional optional python libraries (scipy and PIL) and may take several
+      minutes for longer variants
     inputBinding:
       position: 104
       prefix: --dotplots
@@ -141,9 +146,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: file export format, either svg, png or pdf; by default, this is pdf 
-      (batch mode) or automatically identified from the file extension of 
-      --export
+    doc: file export format, either svg, png or pdf; by default, this is pdf (batch
+      mode) or automatically identified from the file extension of --export
     inputBinding:
       position: 104
       prefix: --format
@@ -160,8 +164,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: An additional indexable fasta file specifying insertion sequences (eg 
-      mobile element sequences)
+    doc: An additional indexable fasta file specifying insertion sequences (eg mobile
+      element sequences)
     inputBinding:
       position: 104
       prefix: --fasta
@@ -169,10 +173,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: lowers the minimum alignment quality, showing reads even when 
-      breakpoints are only approximately correct, or reads of lower quality (eg 
-      PacBio); and requires a larger difference in alignment scores in order to 
-      assign a read to an allele
+    doc: lowers the minimum alignment quality, showing reads even when breakpoints
+      are only approximately correct, or reads of lower quality (eg PacBio); and requires
+      a larger difference in alignment scores in order to assign a read to an allele
     inputBinding:
       position: 104
       prefix: --lenient
@@ -180,8 +183,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: "deletion size above which the deletion is analyzed in breakend mode (default:
-      don't convert to breakend mode)"
+    doc: 'deletion size above which the deletion is analyzed in breakend mode (default:
+      don''t convert to breakend mode)'
     inputBinding:
       position: 104
       prefix: --max-deletion-size
@@ -284,8 +287,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Reads are shown with thicker lines, potentially overlapping one 
-      another, but increasing contrast when zoomed out
+    doc: Reads are shown with thicker lines, potentially overlapping one another,
+      but increasing contrast when zoomed out
     inputBinding:
       position: 104
       prefix: --thicker-lines
@@ -297,30 +300,51 @@ inputs:
     inputBinding:
       position: 104
       prefix: --verbose
-outputs:
   - id: save_reads_path
     type:
       - 'null'
-      - File
-    doc: save relevant reads to this file (bam)
-    outputBinding:
-      glob: $(inputs.save_reads_path)
+      - string
+    doc: Save relevant reads to this file (bam)
+    inputBinding:
+      position: 104
+      prefix: --save-reads
   - id: export
     type:
       - 'null'
-      - File
-    doc: export view to file; in single variant-mode, the exported file format 
-      is determined from the filename extension unless --format is specified; in
-      batch mode, this should be the name of a directory into which to save the 
-      files (use --format to set format); setting --export automatically sets 
-      --no-web
-    outputBinding:
-      glob: $(inputs.export)
+      - string
+    doc: Export view to file; in single variant-mode, the exported file format is
+      determined from the filename extension unless --format is specified
+    inputBinding:
+      position: 104
+      prefix: --export
   - id: summary_file
     type:
       - 'null'
+      - string
+    doc: Save summary statistics to this (tab-delimited) file
+    inputBinding:
+      position: 104
+      prefix: --summary
+outputs:
+  - id: out_saved_reads
+    type:
+      - 'null'
       - File
-    doc: save summary statistics to this (tab-delimited) file
+    doc: Relevant reads saved with --save-reads
+    outputBinding:
+      glob: $(inputs.save_reads_path)
+  - id: out_export
+    type:
+      - 'null'
+      - File
+    doc: Exported view
+    outputBinding:
+      glob: $(inputs.export)
+  - id: out_summary
+    type:
+      - 'null'
+      - File
+    doc: Summary statistics
     outputBinding:
       glob: $(inputs.summary_file)
 hints:

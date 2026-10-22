@@ -9,6 +9,9 @@ inputs:
   - id: bam
     type: File
     doc: bam file to filter
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 1
   - id: verbose

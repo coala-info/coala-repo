@@ -15,17 +15,20 @@ inputs:
       position: 1
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference genome
     inputBinding:
       position: 2
-outputs:
   - id: mapped
+    type: string
+    doc: Output file for mapped genomes (FASTA)
+    inputBinding:
+      position: 3
+outputs:
+  - id: mapped_file
     type: File
     doc: Output file for mapped genomes
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.mapped)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainest:1.2.4--py35_0

@@ -9,13 +9,22 @@ inputs:
   - id: bam
     type: File
     doc: path to bam file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
     inputBinding:
-      position: 1
+      position: 101
   - id: bin
     type: File
     doc: bin file previously created by `strling extract`
     inputBinding:
-      position: 2
+      position: 102
   - id: bounds
     type:
       - 'null'
@@ -23,15 +32,18 @@ inputs:
     doc: STRling -bounds.txt file (usually produced by strling merge) specifying
       additional STR loci to genotype.
     inputBinding:
-      position: 103
+      position: 1
       prefix: --bounds
   - id: fasta
     type:
       - 'null'
       - File
     doc: path to fasta file
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
-      position: 103
+      position: 1
       prefix: --fasta
   - id: loci
     type:
@@ -40,7 +52,7 @@ inputs:
     doc: 'Annoated bed file specifying additional STR loci to genotype. Format is:
       chr start stop repeatunit [name]'
     inputBinding:
-      position: 103
+      position: 1
       prefix: --loci
   - id: min_clip
     type:
@@ -48,7 +60,7 @@ inputs:
       - int
     doc: minimum number of supporting clipped reads for each side of a locus
     inputBinding:
-      position: 103
+      position: 1
       prefix: --min-clip
   - id: min_clip_total
     type:
@@ -56,7 +68,7 @@ inputs:
       - int
     doc: minimum total number of supporting clipped reads for a locus
     inputBinding:
-      position: 103
+      position: 1
       prefix: --min-clip-total
   - id: min_mapq
     type:
@@ -64,7 +76,7 @@ inputs:
       - int
     doc: minimum mapping quality (does not apply to STR reads)
     inputBinding:
-      position: 103
+      position: 1
       prefix: --min-mapq
   - id: min_support
     type:
@@ -72,7 +84,7 @@ inputs:
       - int
     doc: minimum number of supporting reads for a locus to be reported
     inputBinding:
-      position: 103
+      position: 1
       prefix: --min-support
   - id: output_prefix
     type:
@@ -80,14 +92,15 @@ inputs:
       - string
     doc: prefix for output files
     inputBinding:
-      position: 103
+      position: 1
       prefix: --output-prefix
   - id: verbose
     type:
       - 'null'
       - boolean
+    doc: verbose output
     inputBinding:
-      position: 103
+      position: 1
       prefix: --verbose
 outputs:
   - id: stdout
@@ -99,7 +112,9 @@ outputs:
       items: File
     doc: Files written with the prefix given in output_prefix
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: "$((inputs.output_prefix || 'strling') + '*')"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strling:0.6.0--h7b50bb2_0

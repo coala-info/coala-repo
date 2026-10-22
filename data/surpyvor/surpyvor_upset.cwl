@@ -25,7 +25,7 @@ inputs:
   - id: keepmerged
     type:
       - 'null'
-      - File
+      - string
     doc: Save merged vcf file
     inputBinding:
       position: 101
@@ -77,6 +77,13 @@ outputs:
     doc: Name of output plot
     outputBinding:
       glob: $(inputs.plotout_path)
+  - id: keepmerged_out
+    type:
+      - 'null'
+      - File
+    doc: Merged VCF file written with --keepmerged
+    outputBinding:
+      glob: $(inputs.keepmerged)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

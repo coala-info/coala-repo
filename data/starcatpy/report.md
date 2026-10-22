@@ -1,5 +1,11 @@
 # starcatpy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| starcatpy_starcat | PASS | TCAT.V1 reference on 15000-cell COMBAT h5ad: 52 programs, usages sum to 1; input types fixed, output dir created |
+
 ## starcatpy_starcat
 
 ### Tool Description

@@ -1,5 +1,22 @@
 # svtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svtk_annotate | Not completed | needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists |
+| svtk_bedcluster | PASS |  |
+| svtk_bincov | PASS |  |
+| svtk_collect-pesr | PASS | main mode checked on a real BAM; the --region and --bgzip options crash (pysam region bytes error; bgzip missing in the image) |
+| svtk_count-svtypes | PASS |  |
+| svtk_pe-test | Not completed | needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists |
+| svtk_rdtest2vcf | Failed | image problem: the bundled VCF header template is rejected by the image's pysam, so it crashes before reading input |
+| svtk_resolve | Not completed | needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists |
+| svtk_sr-test | Not completed | needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists |
+| svtk_standardize | Failed | image problem: the bundled VCF header template is rejected by the image's pysam, so it crashes before reading input |
+| svtk_vcf2bed | Not completed | needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists |
+| svtk_vcfcluster | Not completed | needs a standardized SV VCF with CHR2/STRANDS fields; svtk standardize crashes in the image, so no valid input exists |
+
 ## svtk_standardize
 
 ### Tool Description

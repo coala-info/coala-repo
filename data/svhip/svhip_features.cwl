@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svhip.py
+baseCommand:
+  - svhip
+  - features
 label: svhip_features
 doc: "Calculate features for SVHIP.\n\nTool homepage: https://github.com/chrisBioInf/Svhip"
 inputs:
@@ -58,10 +60,10 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Name for the output file. Optional here, as features can also be 
+    doc: Name for the output file (the tool adds .tsv when missing). Optional here, as features can also be 
       printed to stdout.
     outputBinding:
-      glob: $(inputs.outfile_path)
+      glob: $(inputs.outfile_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

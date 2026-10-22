@@ -7,12 +7,11 @@ doc: "Processes fastq files to identify STRs based on a configuration file.\n\nT
 inputs:
   - id: input_fastq_files
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Uncompressed fastq files to process
+      type: array
+      items: File
+    doc: uncompressed fastq files (options and the config file come first on the command line)
     inputBinding:
-      position: 1
+      position: 200
   - id: config_file
     type: File
     doc: the locus config file used to define the STRs
@@ -88,12 +87,17 @@ inputs:
       position: 102
       prefix: -v
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: haplotype table (written to standard output unless -o is used)
   - id: output_file
     type:
       - 'null'
@@ -106,3 +110,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/straitrazor:3.0.1--h7d875b9_3
+stdout: straitrazor_str8rzr.out

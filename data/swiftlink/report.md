@@ -1,5 +1,11 @@
 # swiftlink CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| swiftlink | PASS |  |
+
 ## swiftlink
 
 ### Tool Description

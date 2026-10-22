@@ -1,5 +1,11 @@
 # strcount CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| strcount_STRcount | Failed | image problem: the STRcount launcher in /usr/local/bin shadows the STRcount package (ModuleNotFoundError), and GraphAligner is not in the image |
+
 ## strcount_STRcount
 
 ### Tool Description

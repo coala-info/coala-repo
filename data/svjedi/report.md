@@ -1,5 +1,11 @@
 # svjedi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svjedi_svjedi.py | PASS |  |
+
 ## svjedi_svjedi.py
 
 ### Tool Description

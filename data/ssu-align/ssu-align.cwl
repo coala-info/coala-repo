@@ -8,12 +8,12 @@ inputs:
     type: File
     doc: sequence file
     inputBinding:
-      position: 1
+      position: 201
   - id: output_dir
     type: string
     doc: output dir
     inputBinding:
-      position: 2
+      position: 202
   - id: align_best_cm_name
     type:
       - 'null'
@@ -169,6 +169,11 @@ outputs:
     doc: output dir
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.sequence_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ssu-align:0.1.1--h7b50bb2_7

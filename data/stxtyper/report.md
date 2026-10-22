@@ -1,5 +1,11 @@
 # stxtyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stxtyper | PASS |  |
+
 ## stxtyper
 
 ### Tool Description

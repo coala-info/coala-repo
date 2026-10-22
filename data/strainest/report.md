@@ -1,5 +1,16 @@
 # strainest CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| strainest_est | PASS | SARS-CoV-2 amplicon BAM with 3-genome SNP matrix: abundances sum to 1 (R 0.83); default identity threshold keeps no genome so --max-ident-thr 0.4 used; output is a directory (CWL fixed); SNP matrix built with a helper |
+| strainest_map2snp | Failed | image problem: Python 3 bytes/str error in the FASTA parser (IndexError in map2snp) |
+| strainest_mapgenomes | Failed | image problem: nucmer (MUMmer) is not in the image, and the code also has a bytes/str error |
+| strainest_mapstats | Failed | image problem: Python 3 bytes/str error in the FASTA parser (IndexError in mapstats) |
+| strainest_snpclust | Failed | image problem: Python 3 bytes/str error when writing the cluster file (TypeError in snpclust) |
+| strainest_snpdist | PASS | Hamming distances match an independent calculation, histogram PDF written; distance output added to the CWL |
+
 ## strainest_est
 
 ### Tool Description

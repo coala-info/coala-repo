@@ -1,14 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: srprism
+baseCommand:
+  - srprism
+  - mkindex
 label: srprism_mkindex
 doc: "Fast Short Read Aligner\n\nTool homepage: https://github.com/ncbi/SRPRISM"
 inputs:
-  - id: cmd
-    type: string
-    doc: 'Action to perform. Possible values are: help, search, mkindex'
-    inputBinding:
-      position: 1
   - id: al_extend
     type:
       - 'null'
@@ -68,7 +65,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: File for storing diagnostic messages. Default is standard error.
     inputBinding:
       position: 102
@@ -120,10 +117,29 @@ inputs:
       position: 102
       prefix: --trace-level
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: index
+    type: File
+    doc: Database index files with the given base name (.idx is the primary file)
+    secondaryFiles:
+      - ^.amp
+      - ^.imp
+      - ^.map
+      - ^.pmp
+      - ^.rmp
+      - ^.ss
+      - ^.ssa
+      - ^.ssd
+    outputBinding:
+      glob: $(inputs.output).idx
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Diagnostic messages file
+    outputBinding:
+      glob: $(inputs.log_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/srprism:2.4.24--hd6d6fdc_6
-stdout: srprism_mkindex.out

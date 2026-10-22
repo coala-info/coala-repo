@@ -6,14 +6,18 @@ doc: "Run SVDSS for structural variant detection.\n\nTool homepage: https://gith
 inputs:
   - id: reference_fa
     type: File
-    doc: reference file in FASTA format
+    secondaryFiles:
+      - .fai
+    doc: reference file in FASTA format (with its .fai index; the script cannot write one next to a staged reference)
     inputBinding:
-      position: 1
+      position: 201
   - id: alignments_bam
     type: File
+    secondaryFiles:
+      - .bai?
     doc: alignments in BAM format
     inputBinding:
-      position: 2
+      position: 202
   - id: accuracy_percentile
     type:
       - 'null'
@@ -26,7 +30,10 @@ inputs:
     type:
       - 'null'
       - File
-    doc: use this FMD index/store it here
+      - string
+    doc: use this FMD index/store it here (give an existing File to reuse it, or a
+      new file name to build and store the index there; by default the index is
+      written next to the reference)
     inputBinding:
       position: 103
       prefix: -i
@@ -105,6 +112,17 @@ outputs:
     doc: output directory
     outputBinding:
       glob: $(inputs.output_dir)
+  - id: final_vcf
+    type:
+      - 'null'
+      - File
+    doc: Final genotyped SV calls (variations-final.vcf.gz), when no output directory is given.
+    secondaryFiles:
+      - .tbi?
+    outputBinding:
+      glob: variations-final.vcf.gz
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svdss:2.1.0--h9013031_0

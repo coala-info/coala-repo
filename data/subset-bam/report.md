@@ -1,5 +1,11 @@
 # subset-bam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| subset-bam | PASS |  |
+
 ## subset-bam
 
 ### Tool Description

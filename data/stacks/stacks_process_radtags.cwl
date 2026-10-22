@@ -356,46 +356,33 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window-size
-  - id: discarded_reads_file_path
+  - id: capture_discarded_reads
     type:
       - 'null'
-      - string
-    doc: ': capture discarded reads to a file.'
+      - boolean
+    doc: capture discarded reads to a file.
+    inputBinding:
+      position: 101
+      prefix: -D
+  - id: output_directory_path
+    type: string
+    doc: path to output the processed files.
     inputBinding:
       position: 102
-      prefix: --discards
-  - id: output_directory_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_directory_path`
-    inputBinding:
-      position: 103
-      prefix: --output-directory
+      prefix: --out-path
 outputs:
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Path to output the processed files.
     outputBinding:
       glob: $(inputs.output_directory_path)
-  - id: discarded_reads_file
-    type:
-      - 'null'
-      - File
-    doc: Capture discarded reads to a file.
-    outputBinding:
-      glob: $(inputs.discarded_reads_file_path)
-  - id: output_basename_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_basename
-    outputBinding:
-      glob: $(inputs.output_basename)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stacks:2.68--h077b44d_3

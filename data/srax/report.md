@@ -1,5 +1,11 @@
 # srax CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| srax_sraX | Failed | image problem: with the default muscle aligner the SNP step fails, because the image has muscle 5 and srax expects the older syntax; with msa: mafft the run completes correctly. |
+
 ## srax_sraX
 
 ### Tool Description

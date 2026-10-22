@@ -6,11 +6,20 @@ doc: "Tool to genotype STRs from long reads\n\nTool homepage: https://github.com
 inputs:
   - id: fasta
     type: File
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     doc: reference genome
     inputBinding:
       position: 1
   - id: bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: BAM or CRAM file to call STRs in
     inputBinding:
       position: 2

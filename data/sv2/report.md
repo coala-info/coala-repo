@@ -1,5 +1,11 @@
 # sv2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sv2 | Not completed | needs a full hg19/hg38 reference FASTA (about 3 GB) and a 250 MB resource download; too large for a test |
+
 ## sv2
 
 ### Tool Description

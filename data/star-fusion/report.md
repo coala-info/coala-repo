@@ -1,5 +1,11 @@
 # star-fusion CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| star-fusion_STAR-Fusion | PASS | mini CTAT lib on nf-core chr4 slice (GTF shifted to slice coordinates) with FusionCatcher test reads: FGFR3--TACC3 found (278 junction, 445 spanning reads); baseCommand fixed to STAR-Fusion, absolute link removed from output |
+
 ## star-fusion_STAR-Fusion
 
 ### Tool Description

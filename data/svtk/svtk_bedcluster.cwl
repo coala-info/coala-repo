@@ -4,14 +4,21 @@ baseCommand:
   - svtk
   - bedcluster
 label: svtk_bedcluster
-doc: "Cluster a bed of structural variants based on reciprocal overlap.\n\nTool homepage:
-  https://github.com/talkowski-lab/svtk"
+doc: 'Cluster a bed of structural variants based on reciprocal overlap.
+
+
+  Tool homepage: https://github.com/talkowski-lab/svtk'
 inputs:
   - id: bed
     type: File
     doc: 'SV calls to cluster. Columns: #chr, start, end, name, sample, svtype'
     inputBinding:
       position: 1
+  - id: fout
+    type: string
+    doc: Clustered bed.
+    inputBinding:
+      position: 2
   - id: frac
     type:
       - 'null'
@@ -32,8 +39,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Report median of start and end positions in each cluster as final 
-      coordinates of cluster.
+    doc: Report median of start and end positions in each cluster as final coordinates
+      of cluster.
     inputBinding:
       position: 102
       prefix: --merge-coordinates
@@ -62,13 +69,13 @@ inputs:
       position: 102
       prefix: --tmpdir
 outputs:
-  - id: fout
-    type:
-      - 'null'
-      - File
+  - id: out_fout
+    type: File
     doc: Clustered bed.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.fout)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

@@ -71,6 +71,11 @@ inputs:
       position: 102
       prefix: --taxonomy-metadata
 outputs:
+  - id: taxonomy_profiles
+    type: File[]
+    doc: Taxonomy profiles, one .sylphmpa file per sample
+    outputBinding:
+      glob: '*.sylphmpa'
   - id: stdout
     type: stdout
     doc: Standard output

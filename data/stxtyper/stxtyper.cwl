@@ -31,7 +31,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: Error log file, appended, opened on application start
     inputBinding:
       position: 101
@@ -99,6 +99,13 @@ outputs:
     doc: Output nucleotide FASTA file of reported nucleotide sequences
     outputBinding:
       glob: $(inputs.nucleotide_output_path)
+  - id: log_out
+    type:
+      - 'null'
+      - File
+    doc: Error log file written with --log
+    outputBinding:
+      glob: $(inputs.log)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

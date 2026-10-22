@@ -1,5 +1,11 @@
 # stream_atac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stream_atac | PASS | synthetic data: 60 made-up cells over 1500 real hg19 chr1 windows; 512 5-mer deviation z-score rows, scaled scores and adata.h5ad written; output folder is now created; tool exits 0 even when preprocessing fails |
+
 ## stream_atac
 
 ### Tool Description

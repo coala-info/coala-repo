@@ -2,8 +2,11 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: svtopo
 label: svtopo
-doc: "svtopo is a tool for analyzing structural variants from PacBio HiFi sequencing
-  data.\n\nTool homepage: https://github.com/PacificBiosciences/HiFi-SVTopo"
+doc: 'svtopo is a tool for analyzing structural variants from PacBio HiFi sequencing
+  data.
+
+
+  Tool homepage: https://github.com/PacificBiosciences/HiFi-SVTopo'
 inputs:
   - id: bam
     type: File
@@ -11,6 +14,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: --bam
+    secondaryFiles:
+      - pattern: .bai
+        required: true
   - id: exclude_regions
     type: File
     doc: BED file of regions to exclude from analysis. GZIP files allowed
@@ -21,8 +27,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Filter threshold for maximum coverage, to remove regions with coverage 
-      spikes due to e.g. alignment issues
+    doc: Filter threshold for maximum coverage, to remove regions with coverage spikes
+      due to e.g. alignment issues
     inputBinding:
       position: 101
       prefix: --max-coverage
@@ -41,7 +47,7 @@ inputs:
   - id: variant_readnames
     type:
       - 'null'
-      - string
+      - File
     doc: json with readnames for variant IDs from VCF. Requires `--vcf`
     inputBinding:
       position: 101
@@ -67,12 +73,17 @@ outputs:
     type: stdout
     doc: Standard output
   - id: svtopo_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory path
     outputBinding:
       glob: $(inputs.svtopo_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.svtopo_dir)
+        entry: '$({class: ''Directory'', basename: inputs.svtopo_dir, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtopo:0.3.0--h9ee0642_0

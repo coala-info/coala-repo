@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svhip.py
+baseCommand:
+  - svhip
+  - predict
 label: svhip_predict
 doc: "Predicts structural variations using a trained model.\n\nTool homepage: https://github.com/chrisBioInf/Svhip"
 inputs:
@@ -39,7 +41,7 @@ inputs:
       prefix: --model-path
   - id: outfile
     type: string
-    doc: Name for the output directory (Required).
+    doc: Name for the output file (Required).
     inputBinding:
       position: 101
       prefix: --outfile
@@ -65,11 +67,9 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: outfile_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Name for the output directory (Required).
+  - id: predictions
+    type: File
+    doc: Feature table with a Prediction column (the --outfile name).
     outputBinding:
       glob: $(inputs.outfile)
 hints:

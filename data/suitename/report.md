@@ -1,5 +1,11 @@
 # suitename CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| suitename | Failed | image problem: suitename aborts with 'buffer overflow detected' on real RNA dihedral angles from tRNA 1EHZ, both residue input and -suitein; only hand-made cluster-centre lines run |
+
 ## suitename
 
 ### Tool Description

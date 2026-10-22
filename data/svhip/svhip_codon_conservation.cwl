@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svhip.py
+baseCommand:
+  - svhip
+  - codon_conservation
 label: svhip_codon_conservation
 doc: "Calculates codon conservation scores for SVHIP analysis.\n\nTool homepage: https://github.com/chrisBioInf/Svhip"
 inputs:
@@ -17,13 +19,12 @@ inputs:
       position: 102
       prefix: --outfile
 outputs:
-  - id: output_file
-    type: Directory
-    doc: Name for the output directory (Required).
-    outputBinding:
-      glob: $(inputs.output_file_path)
+  - id: stdout
+    type: stdout
+    doc: Codon conservation score printed by the tool.
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svhip:1.0.9--hdfd78af_0
+stdout: svhip_codon_conservation.out

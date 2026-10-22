@@ -13,9 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: output_basename
-    type:
-      - 'null'
-      - string
+    type: string
     doc: base name of the index to be created
     inputBinding:
       position: 102
@@ -70,11 +68,11 @@ inputs:
 outputs:
   - id: output_output_basename
     type:
-      - 'null'
-      - File[]
-    doc: base name of the index to be created
+      type: array
+      items: File
+    doc: index files with the given base name
     outputBinding:
-      glob: $(inputs.output_basename)*
+      glob: "$(inputs.output_basename)*"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

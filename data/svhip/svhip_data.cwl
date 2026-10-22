@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: svhip.py
+baseCommand:
+  - svhip
+  - data
 label: svhip_data
 doc: "Processes input data for svhip, potentially generating control datasets and
   optimizing alignments.\n\nTool homepage: https://github.com/chrisBioInf/Svhip"
@@ -51,7 +53,7 @@ inputs:
   - id: no_structural_filter
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Set this flag to True if no filtering of alignment windows for statistical
       significance of structure should occur (Default: False).'
     inputBinding:
@@ -127,13 +129,22 @@ inputs:
       position: 102
       prefix: --outfile
 outputs:
-  - id: output_file
-    type: Directory
-    doc: Name for the output directory (Required).
+  - id: training_data
+    type: File
+    doc: Feature table with class labels (<outfile>_trainingdata.tsv).
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)_trainingdata.tsv
+  - id: report
+    type: Directory
+    doc: Feature plots and correlation report (<outfile>_report).
+    outputBinding:
+      glob: $(inputs.output_file_path)_report
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svhip:1.0.9--hdfd78af_0

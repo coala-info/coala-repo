@@ -1,5 +1,11 @@
 # srst2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| srst2 | Failed | image problem: bowtie2 2.3.4.3 in the image fails srst2's version check (needs 2.1.0 to 2.2.9) |
+
 ## srst2
 
 ### Tool Description

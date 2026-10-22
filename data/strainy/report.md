@@ -1,5 +1,11 @@
 # strainy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| strainy | PASS | repo toy set (HiFi reads, collapsed GFA with 9 unitigs): 6 unitigs phased into 22 strain unitigs, 15 strain contigs, 420 variant lines |
+
 ## strainy
 
 ### Tool Description

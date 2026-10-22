@@ -9,7 +9,7 @@ inputs:
     doc: Alignment File
     inputBinding:
       position: 101
-      prefix: --alignment
+      prefix: -a
   - id: normalize
     type:
       - 'null'
@@ -17,18 +17,24 @@ inputs:
     doc: Normalizes the score
     inputBinding:
       position: 101
-      prefix: --normalize
+      prefix: -n
   - id: template_file
     type: File
-    doc: Connection File
+    doc: Connection File (lines of 'sequence_name pdb_file chain')
     inputBinding:
       position: 101
-      prefix: --template_file
+      prefix: -c
   - id: out_file_path
     type: string
     inputBinding:
       position: 102
-      prefix: --out_file
+      prefix: -o
+  - id: structure_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: PDB files named in the connection file; staged in the working directory so the names resolve
 outputs:
   - id: out_file
     type: File
@@ -37,6 +43,8 @@ outputs:
       glob: $(inputs.out_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.structure_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strike:1.2--h9948957_6

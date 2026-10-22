@@ -1,5 +1,11 @@
 # sword CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sword | PASS |  |
+
 ## sword
 
 ### Tool Description

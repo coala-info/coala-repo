@@ -1,5 +1,11 @@
 # svtyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svtyper | PASS |  |
+
 ## svtyper
 
 ### Tool Description

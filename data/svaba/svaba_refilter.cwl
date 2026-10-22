@@ -8,6 +8,8 @@ doc: "Refilter SVABA results\n\nTool homepage: https://github.com/walaj/svaba"
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai?
     doc: BAM file used to grab header from
     inputBinding:
       position: 101
@@ -98,6 +100,13 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: vcf_files
+    type:
+      type: array
+      items: File
+    doc: VCF files written by the command.
+    outputBinding:
+      glob: "*.vcf*"
   - id: stdout
     type: stdout
     doc: Standard output

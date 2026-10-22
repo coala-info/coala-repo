@@ -188,8 +188,12 @@ outputs:
     doc: 'Output in FASTA format is written to file ### instead of standard output.'
     outputBinding:
       glob: $(inputs.fasta_output_file_path)
+  - id: stdout
+    type: stdout
+    doc: FASTA output with cluster information (when -F is not given)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sumaclust:v1.0.31-2-deb_cv1
+stdout: sumaclust.out

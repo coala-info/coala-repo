@@ -4,8 +4,10 @@ baseCommand:
   - svtk
   - pe-test
 label: svtk_pe-test
-doc: "Calculate enrichment of discordant pairs at SV breakpoints.\n\nTool homepage:
-  https://github.com/talkowski-lab/svtk"
+doc: 'Calculate enrichment of discordant pairs at SV breakpoints.
+
+
+  Tool homepage: https://github.com/talkowski-lab/svtk'
 inputs:
   - id: vcf
     type: File
@@ -34,8 +36,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Tabix index of discordant pair file. Required if discordant pair file 
-      is hosted remotely.
+    doc: Tabix index of discordant pair file. Required if discordant pair file is
+      hosted remotely.
     inputBinding:
       position: 103
       prefix: --index
@@ -51,16 +53,16 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Median coverage statistics for each library (optional). If provided, 
-      each sample's split counts will be normalized accordingly. Same format as 
-      RdTest, one column per sample.
+    doc: Median coverage statistics for each library (optional). If provided, each
+      sample's split counts will be normalized accordingly. Same format as RdTest,
+      one column per sample.
     inputBinding:
       position: 103
       prefix: --medianfile
   - id: samples
     type:
       - 'null'
-      - string
+      - File
     doc: Whitelist of samples to restrict testing to.
     inputBinding:
       position: 103
@@ -86,7 +88,7 @@ outputs:
     type: File
     doc: Output table of PE counts.
     outputBinding:
-      glob: '$(inputs.fout)'
+      glob: $(inputs.fout)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtk:0.0.20190615--py39hbcbf7aa_7

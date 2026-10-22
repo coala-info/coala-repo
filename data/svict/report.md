@@ -1,5 +1,11 @@
 # svict CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svict | PASS | real SurVIndel2 demo slice; known 101 bp tandem duplication at chr:80000 called |
+
 ## svict
 
 ### Tool Description

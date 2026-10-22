@@ -1,5 +1,11 @@
 # stark CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| stark | PASS | real SPAdes k=19 graph from sarscov2 reads: overlaps removed (0M links), merge type 2 ok; stark crashes with a division by zero on graphs with fewer than 10 nodes |
+
 ## stark
 
 ### Tool Description

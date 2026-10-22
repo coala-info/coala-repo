@@ -1,5 +1,11 @@
 # staphopia-sccmec CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| staphopia-sccmec | PASS | assembly input fixed to File; test assembly from the package, type IV hamming 0 |
+
 ## staphopia-sccmec
 
 ### Tool Description

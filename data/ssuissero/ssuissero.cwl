@@ -1,52 +1,54 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ssuissero
+baseCommand: SsuisSero.sh
 label: ssuissero
-doc: "Rapid serotyping of Streptococcus suis from assemblies\n\nTool homepage: https://github.com/jimmyliu1326/SsuisSero"
+doc: "Rapid serotyping of Streptococcus suis from assemblies (FASTA) or from nanopore
+  reads (FASTQ).\n\nTool homepage: https://github.com/jimmyliu1326/SsuisSero"
 inputs:
   - id: input
     type: File
-    doc: Input FASTA file
+    doc: input file
     inputBinding:
       position: 101
-      prefix: --input
-  - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: Prefix for output files
+      prefix: -i
+  - id: sample_name
+    type: string
+    doc: sample name
     inputBinding:
       position: 101
-      prefix: --prefix
+      prefix: -s
+  - id: input_type
+    type: string
+    doc: "input type [fasta or fastq]"
+    inputBinding:
+      position: 101
+      prefix: -x
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads to use
+    doc: "number of threads [Default: 4]"
     inputBinding:
       position: 101
       prefix: --threads
   - id: outdir_path
     type: string
-    doc: Output or path parameter `outdir_path`
+    doc: path to output directory
     inputBinding:
       position: 102
-      prefix: --outdir
+      prefix: -o
 outputs:
   - id: outdir
     type: Directory
-    doc: Output directory
+    doc: Output directory with the serotyping result table
     outputBinding:
       glob: $(inputs.outdir_path)
-  - id: prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in prefix
-    outputBinding:
-      glob: $(inputs.prefix)*
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ssuissero:1.0.1--hdfd78af_1
+stdout: ssuissero.out

@@ -1,5 +1,13 @@
 # svaba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| svaba_refilter | PASS |  |
+| svaba_run | PASS |  |
+| svaba_tovcf | PASS |  |
+
 ## svaba_run
 
 ### Tool Description

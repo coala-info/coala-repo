@@ -2,90 +2,71 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: strucVis
 label: strucvis_strucVis
-doc: "strucVis\n\nTool homepage: https://github.com/MikeAxtell/strucVis"
+doc: "strucVis draws the predicted secondary structure (RNAfold) of a genomic locus with the coverage of aligned small RNA reads on it.\n\nTool homepage: https://github.com/MikeAxtell/strucVis"
 inputs:
-  - id: program_args
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Program arguments
-    inputBinding:
-      position: 1
   - id: bam_file
     type: File
-    doc: BAM file
+    doc: PATH to sorted and indexed file of aligned small RNA reads
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
-      position: 102
+      position: 1
       prefix: -b
-  - id: c_option
-    type:
-      - 'null'
-      - string
-    doc: Option -c
+  - id: genome
+    type: File
+    doc: PATH to genome in FASTA format (indexed with samtools faidx)
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
-      position: 102
-      prefix: -c
-  - id: g_option
-    type:
-      - 'null'
-      - string
-    doc: Option -g
-    inputBinding:
-      position: 102
+      position: 2
       prefix: -g
-  - id: h_flag
-    type:
-      - 'null'
-      - boolean
-    doc: Boolean option -h
+  - id: coordinates
+    type: string
+    doc: Coordinates of interest in format Chr:Start-Stop, one-based, inclusive
     inputBinding:
-      position: 102
-      prefix: -h
-  - id: n_option
-    type:
-      - 'null'
-      - string
-    doc: Option -n
+      position: 3
+      prefix: -c
+  - id: strand
+    type: string
+    doc: Genomic strand of interest. Must be 'plus' or 'minus'
     inputBinding:
-      position: 102
-      prefix: -n
-  - id: p_option
-    type:
-      - 'null'
-      - string
-    doc: Option -p
-    inputBinding:
-      position: 102
-      prefix: -p
-  - id: s_option
-    type:
-      - 'null'
-      - string
-    doc: Option -s
-    inputBinding:
-      position: 102
+      position: 4
       prefix: -s
-  - id: v_flag
+  - id: output_basename
+    type: string
+    doc: Output pdf file base name (not including the .pdf suffix)
+    inputBinding:
+      position: 5
+      prefix: -p
+  - id: locus_name
+    type:
+      - 'null'
+      - string
+    doc: Name of the locus. Defaults to 'Unnamed Locus' if not provided
+    inputBinding:
+      position: 6
+      prefix: -n
+  - id: suppress_details
     type:
       - 'null'
       - boolean
-    doc: Boolean option -v
+    doc: Suppress printing of job details on the pdf file
     inputBinding:
-      position: 102
-      prefix: -v
-  - id: x_flag
-    type:
-      - 'null'
-      - boolean
-    doc: Boolean option -x
-    inputBinding:
-      position: 102
+      position: 7
       prefix: -x
 outputs:
+  - id: pdf
+    type: File
+    doc: Output PDF with the structure and read coverage
+    outputBinding:
+      glob: $(inputs.output_basename + '.pdf')
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strucvis:0.9--hdfd78af_0

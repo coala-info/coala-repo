@@ -13,6 +13,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -D
+  - id: interleaved
+    type:
+      - 'null'
+      - boolean
+    doc: specify that the paired-end reads are interleaved in single files (with -p).
+    inputBinding:
+      position: 101
+      prefix: -I
   - id: index_index
     type:
       - 'null'
@@ -171,7 +179,7 @@ inputs:
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type: Directory
@@ -180,6 +188,11 @@ outputs:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stacks:2.68--h077b44d_3

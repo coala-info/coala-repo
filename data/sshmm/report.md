@@ -1,5 +1,13 @@
 # sshmm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sshmm_draw_model_graph | Failed | image problem: graphviz in the image cannot write PNG (pango plugin missing), and no model XML can be made to draw |
+| sshmm_preprocess_dataset | Failed | image problem: bedtools is missing from the image |
+| sshmm_train_seqstructhmm | Failed | image problem: graphviz pango plugin cannot load so the model graph step crashes and no model file is written (also needed output folder created in CWL) |
+
 ## sshmm_preprocess_dataset
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # super_distance CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| super_distance | PASS |  |
+
 ## super_distance
 
 ### Tool Description

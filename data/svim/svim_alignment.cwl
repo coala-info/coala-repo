@@ -7,18 +7,22 @@ label: svim_alignment
 doc: "SVIM alignment\n\nTool homepage: https://github.com/eldariont/svim"
 inputs:
   - id: working_dir
-    type: Directory
+    type: string
     doc: Working and output directory. Existing files in the directory are 
       overwritten. If the directory does not exist, it is created.
     inputBinding:
       position: 1
   - id: bam_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: Coordinate-sorted and indexed BAM file with aligned long reads
     inputBinding:
       position: 2
   - id: genome
     type: File
+    secondaryFiles:
+      - .fai?
     doc: Reference genome file that the long reads were aligned to (FASTA)
     inputBinding:
       position: 3
@@ -343,6 +347,11 @@ inputs:
       position: 104
       prefix: --zmws
 outputs:
+  - id: output_dir
+    type: Directory
+    doc: Working and output directory with variants.vcf and the SVIM logs and plots.
+    outputBinding:
+      glob: $(inputs.working_dir)
   - id: stdout
     type: stdout
     doc: Standard output

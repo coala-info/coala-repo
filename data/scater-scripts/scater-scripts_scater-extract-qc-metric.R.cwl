@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/scater-extract-qc-metric.R
+baseCommand: scater-extract-qc-metric.R
 label: scater-scripts_scater-extract-qc-metric.R
 doc: "Extracts a specified quality control metric from a singleCellExperiment object
   and saves it to a file.\n\nTool homepage: https://github.com/ebi-gene-expression-group/bioconductor-scater-scripts"

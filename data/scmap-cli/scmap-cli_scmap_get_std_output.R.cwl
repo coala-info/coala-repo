@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/scmap_get_std_output.R
+baseCommand: scmap_get_std_output.R
 label: scmap-cli_scmap_get_std_output.R
 doc: "Get standard output from scmap predictions\n\nTool homepage: https://github.com/ebi-gene-expression-group/scmap-cli"
 inputs:

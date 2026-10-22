@@ -11,6 +11,22 @@ inputs:
     doc: Input FASTA/FASTQ file
     inputBinding:
       position: 1
+  - id: bed_file
+    type:
+      - 'null'
+      - File
+    doc: Restrict composition to the regions in this BED file
+    inputBinding:
+      position: 102
+      prefix: -r
+  - id: upper_case_only
+    type:
+      - 'null'
+      - boolean
+    doc: Count only upper-case bases
+    inputBinding:
+      position: 102
+      prefix: -u
 outputs:
   - id: stdout
     type: stdout

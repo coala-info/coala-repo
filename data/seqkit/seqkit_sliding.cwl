@@ -146,6 +146,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:

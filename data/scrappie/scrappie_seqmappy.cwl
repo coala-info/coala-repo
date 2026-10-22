@@ -1,123 +1,79 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqmappy
+baseCommand: [scrappie, seqmappy]
 label: scrappie_seqmappy
-doc: "Scrappie seqmappy (local-global)\n\nTool homepage: https://github.com/nanoporetech/scrappie"
+doc: "Scrappie seqmappy (local-global): map signal to sequence via basecall posteriors\n\nTool homepage: https://github.com/nanoporetech/scrappie"
 inputs:
   - id: fasta_file
     type: File
-    doc: Input FASTA file
+    doc: "Input fasta file"
     inputBinding:
-      position: 1
+      position: 200
   - id: fast5_file
     type: File
-    doc: Input FAST5 file
+    doc: "Input fast5 file"
     inputBinding:
-      position: 2
-  - id: licence
-    type:
-      - 'null'
-      - boolean
-    doc: Print licensing information
-    inputBinding:
-      position: 103
-      prefix: --licence
-  - id: license
-    type:
-      - 'null'
-      - boolean
-    doc: Print licensing information
-    inputBinding:
-      position: 103
-      prefix: --license
+      position: 201
   - id: localpen
-    type:
-      - 'null'
-      - float
-    doc: Penalty for local matching
+    type: ['null', double]
+    doc: "Penalty for local matching"
     inputBinding:
-      position: 103
       prefix: --localpen
   - id: min_prob
-    type:
-      - 'null'
-      - float
-    doc: Minimum bound on probability of match
+    type: ['null', double]
+    doc: "Minimum bound on probability of match"
     inputBinding:
-      position: 103
       prefix: --min_prob
-  - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: Prefix to append to name of read
+  - id: output
+    type: ['null', string]
+    doc: "Write to file rather than stdout"
     inputBinding:
-      position: 103
+      prefix: --output
+  - id: prefix
+    type: ['null', string]
+    doc: "Prefix to append to name of read"
+    inputBinding:
       prefix: --prefix
   - id: segmentation
-    type:
-      - 'null'
-      - string
-    doc: Chunk size and percentile for variance based segmentation
+    type: ['null', string]
+    doc: "Chunk size and percentile for variance based segmentation (chunk:percentile)"
     inputBinding:
-      position: 103
       prefix: --segmentation
   - id: skip
-    type:
-      - 'null'
-      - float
-    doc: Penalty for skipping a base
+    type: ['null', double]
+    doc: "Penalty for skipping a base"
     inputBinding:
-      position: 103
       prefix: --skip
-  - id: stay
-    type:
-      - 'null'
-      - float
-    doc: Penalty for staying
-    inputBinding:
-      position: 103
-      prefix: --stay
   - id: temperature1
-    type:
-      - 'null'
-      - float
-    doc: Temperature for softmax weights
+    type: ['null', double]
+    doc: "Temperature for softmax weights"
     inputBinding:
-      position: 103
       prefix: --temperature1
   - id: temperature2
-    type:
-      - 'null'
-      - float
-    doc: Temperature for softmax bias
+    type: ['null', double]
+    doc: "Temperature for softmax bias"
     inputBinding:
-      position: 103
       prefix: --temperature2
   - id: trim
-    type:
-      - 'null'
-      - string
-    doc: Number of samples to trim, as start:end
+    type: ['null', string]
+    doc: "Number of samples to trim, as start:end"
     inputBinding:
-      position: 103
       prefix: --trim
-  - id: output_path
-    type: string
-    doc: Write to file rather than stdout
+  - id: stay
+    type: ['null', double]
+    doc: "Penalty for staying"
     inputBinding:
-      position: 104
-      prefix: --output
+      prefix: --stay
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: Write to file rather than stdout
+  - id: stdout
+    type: stdout
+    doc: Standard output (used when --output is not set)
+  - id: output_file
+    type: ['null', File]
+    doc: Output file written with --output
     outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7
+stdout: scrappie_seqmappy.out

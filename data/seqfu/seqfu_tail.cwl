@@ -1,17 +1,51 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tail
+baseCommand:
+  - seqfu
+  - tail
 label: seqfu_tail
-doc: "Print the last sequences of files\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
+doc: "View the last sequences of FASTA/FASTQ files\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
-  - id: inputfile
+  - id: input_files
     type:
       - 'null'
       - type: array
         items: File
-    doc: Input files
+    doc: Input FASTA/FASTQ files
     inputBinding:
       position: 1
+  - id: num
+    type:
+      - 'null'
+      - int
+    doc: 'Print the last NUM sequences [default: 10]'
+    inputBinding:
+      position: 102
+      prefix: --num
+  - id: skip
+    type:
+      - 'null'
+      - int
+    doc: 'Print one sequence every SKIP [default: 0]'
+    inputBinding:
+      position: 102
+      prefix: --skip
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: Rename sequences with prefix + incremental number
+    inputBinding:
+      position: 102
+      prefix: --prefix
+  - id: strip_comments
+    type:
+      - 'null'
+      - boolean
+    doc: Remove comments
+    inputBinding:
+      position: 102
+      prefix: --strip-comments
   - id: basename
     type:
       - 'null'
@@ -36,54 +70,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --fastq
-  - id: fastq_qual
-    type:
-      - 'null'
-      - int
-    doc: FASTQ default quality
-    inputBinding:
-      position: 102
-      prefix: --fastq-qual
-  - id: num
-    type:
-      - 'null'
-      - int
-    doc: Print the first NUM sequences
-    inputBinding:
-      position: 102
-      prefix: --num
-  - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: Rename sequences with prefix + incremental number
-    inputBinding:
-      position: 102
-      prefix: --prefix
   - id: sep
     type:
       - 'null'
       - string
-    doc: Sequence name fields separator
+    doc: 'Sequence name fields separator [default: _]'
     inputBinding:
       position: 102
       prefix: --sep
-  - id: skip
+  - id: fastq_qual
     type:
       - 'null'
       - int
-    doc: Print one sequence every SKIP
+    doc: 'FASTQ default quality [default: 33]'
     inputBinding:
       position: 102
-      prefix: --skip
-  - id: strip_comments
-    type:
-      - 'null'
-      - boolean
-    doc: Remove comments
-    inputBinding:
-      position: 102
-      prefix: --strip-comments
+      prefix: --fastq-qual
   - id: verbose
     type:
       - 'null'

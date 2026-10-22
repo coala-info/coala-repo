@@ -1,5 +1,12 @@
 # scte CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scte_scTE | Failed | image problem: samtools is not in the image ("sh: samtools: command not found"), so scTE cannot read the BAM |
+| scte_scTE_build | PASS |  |
+
 ## scte_scTE_build
 
 ### Tool Description

@@ -7,7 +7,9 @@ label: segway_train
 doc: "Train a Segway model.\n\nTool homepage: http://segway.hoffmanlab.org/"
 inputs:
   - id: genomedata
-    type: string
+    type: 
+      - File
+      - Directory
     doc: Genomic data to train on
     inputBinding:
       position: 1

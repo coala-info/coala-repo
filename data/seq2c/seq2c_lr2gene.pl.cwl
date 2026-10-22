@@ -14,7 +14,7 @@ inputs:
     doc: The coverage output file from cov2lr.pl script. Can also take from 
       standard in or more than one file.
     inputBinding:
-      position: 1
+      position: 201
   - id: cohort_count_threshold
     type:
       - 'null'

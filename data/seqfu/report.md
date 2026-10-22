@@ -1,5 +1,30 @@
 # seqfu CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqfu_bases | PASS |  |
+| seqfu_cat | PASS |  |
+| seqfu_check | PASS |  |
+| seqfu_count | PASS |  |
+| seqfu_deinterleave | PASS |  |
+| seqfu_derep | PASS |  |
+| seqfu_grep | PASS |  |
+| seqfu_head | PASS |  |
+| seqfu_interleave | PASS |  |
+| seqfu_lanes | PASS |  |
+| seqfu_list | PASS |  |
+| seqfu_metadata | PASS |  |
+| seqfu_rc | PASS |  |
+| seqfu_rotate | PASS |  |
+| seqfu_sort | PASS |  |
+| seqfu_stats | PASS |  |
+| seqfu_tab | PASS |  |
+| seqfu_tail | PASS |  |
+| seqfu_tofasta | PASS |  |
+| seqfu_view | Failed | tool bug: --nocolor does not remove the colour codes around oligo matches, so the output still contains terminal escape codes; the plain view of the real sarscov2 reads is correct. |
+
 ## seqfu_bases
 
 ### Tool Description

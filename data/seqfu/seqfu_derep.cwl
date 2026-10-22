@@ -1,8 +1,10 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: derep
+baseCommand:
+  - seqfu
+  - derep
 label: seqfu_derep
-doc: "Dereplicate sequences based on their content.\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
+doc: "Feature-rich dereplication of FASTA/FASTQ files\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
   - id: input_files
     type:
@@ -12,23 +14,6 @@ inputs:
     doc: Input FASTA/FASTQ files
     inputBinding:
       position: 1
-  - id: add_len
-    type:
-      - 'null'
-      - boolean
-    doc: Add length to sequence
-    inputBinding:
-      position: 102
-      prefix: --add-len
-  - id: ignore_size
-    type:
-      - 'null'
-      - boolean
-    doc: Do not count 'size=INT;' annotations (they will be stripped in any 
-      case)
-    inputBinding:
-      position: 102
-      prefix: --ignore-size
   - id: keep_name
     type:
       - 'null'
@@ -37,22 +22,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --keep-name
-  - id: line_width
+  - id: ignore_size
+    type:
+      - 'null'
+      - boolean
+    doc: Do not count 'size=INT;' annotations (they will be stripped in any case)
+    inputBinding:
+      position: 102
+      prefix: --ignore-size
+  - id: min_size
     type:
       - 'null'
       - int
-    doc: 'FASTA line width (0: unlimited)'
+    doc: 'Print clusters with size equal or bigger than INT sequences [default: 0]'
     inputBinding:
       position: 102
-      prefix: --line-width
-  - id: max_length
+      prefix: --min-size
+  - id: prefix
     type:
       - 'null'
-      - int
-    doc: Discard sequences longer than MAX_LEN
+      - string
+    doc: 'Sequence name prefix [default: seq]'
     inputBinding:
       position: 102
-      prefix: --max-length
+      prefix: --prefix
   - id: md5
     type:
       - 'null'
@@ -61,38 +54,46 @@ inputs:
     inputBinding:
       position: 102
       prefix: --md5
-  - id: min_length
-    type:
-      - 'null'
-      - int
-    doc: Discard sequences shorter than MIN_LEN
-    inputBinding:
-      position: 102
-      prefix: --min-length
-  - id: min_size
-    type:
-      - 'null'
-      - int
-    doc: Print clusters with size equal or bigger than INT sequences
-    inputBinding:
-      position: 102
-      prefix: --min-size
-  - id: prefix
+  - id: json_file_path
     type:
       - 'null'
       - string
-    doc: Sequence name prefix
+    doc: Save dereplication metadata to JSON file
     inputBinding:
       position: 102
-      prefix: --prefix
+      prefix: --json
   - id: separator
     type:
       - 'null'
       - string
-    doc: Sequence name separator
+    doc: 'Sequence name separator [default: .]'
     inputBinding:
       position: 102
       prefix: --separator
+  - id: line_width
+    type:
+      - 'null'
+      - int
+    doc: 'FASTA line width (0: unlimited) [default: 0]'
+    inputBinding:
+      position: 102
+      prefix: --line-width
+  - id: min_length
+    type:
+      - 'null'
+      - int
+    doc: 'Discard sequences shorter than MIN_LEN [default: 0]'
+    inputBinding:
+      position: 102
+      prefix: --min-length
+  - id: max_length
+    type:
+      - 'null'
+      - int
+    doc: 'Discard sequences longer than MAX_LEN [default: 0]'
+    inputBinding:
+      position: 102
+      prefix: --max-length
   - id: size_as_comment
     type:
       - 'null'
@@ -101,6 +102,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --size-as-comment
+  - id: add_len
+    type:
+      - 'null'
+      - boolean
+    doc: Add length to sequence
+    inputBinding:
+      position: 102
+      prefix: --add-len
   - id: verbose
     type:
       - 'null'
@@ -109,18 +118,15 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
-  - id: json_file_path
-    type: string
-    doc: Save dereplication metadata to JSON file
-    inputBinding:
-      position: 103
-      prefix: --json
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: json_file
     type:
       - 'null'
       - File
-    doc: Save dereplication metadata to JSON file
+    doc: Dereplication metadata (JSON)
     outputBinding:
       glob: $(inputs.json_file_path)
 requirements:
@@ -128,3 +134,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqfu:1.23.0--hfd12232_0
+stdout: seqfu_derep.out

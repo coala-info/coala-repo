@@ -22,8 +22,8 @@ inputs:
   - id: get_spikes
     type:
       - 'null'
-      - boolean
-    doc: Logical specifying wether to perform spike-ins filtering(FALSE) or not 
+      - string
+    doc: (TRUE or FALSE) Logical specifying wether to perform spike-ins filtering(FALSE) or not 
       (TRUE).
     inputBinding:
       position: 101

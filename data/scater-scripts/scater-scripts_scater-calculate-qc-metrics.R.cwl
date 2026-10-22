@@ -70,6 +70,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-spikes
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
   - id: output_object_file_path
     type: string
     inputBinding:

@@ -1,5 +1,11 @@
 # sequencetools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sequencetools_pileupCaller | PASS | fixed: added missing pileup input (stdin), prefix outputs, --vcf flag, stdout; tested on the sequenceTools repo test pileup |
+
 ## sequencetools_pileupCaller
 
 ### Tool Description
@@ -182,80 +188,6 @@ Available options:
                            it is applied to all samples, if multiple are given,
                            their number must match the the number of samples
                            (default: Left "Unknown")
-```
-
-
-## sequencetools_samtools
-
-### Tool Description
-Tools for alignments in the SAM format
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sequencetools:1.6.0.0--hebebf5b_0
-- **Homepage**: https://github.com/stschiff/sequenceTools
-- **Package**: https://anaconda.org/channels/bioconda/packages/sequencetools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Program: samtools (Tools for alignments in the SAM format)
-Version: 1.21 (using htslib 1.21)
-
-Usage:   samtools <command> [options]
-
-Commands:
-  -- Indexing
-     dict           create a sequence dictionary file
-     faidx          index/extract FASTA
-     fqidx          index/extract FASTQ
-     index          index alignment
-
-  -- Editing
-     calmd          recalculate MD/NM tags and '=' bases
-     fixmate        fix mate information
-     reheader       replace BAM header
-     targetcut      cut fosmid regions (for fosmid pool only)
-     addreplacerg   adds or replaces RG tags
-     markdup        mark duplicates
-     ampliconclip   clip oligos from the end of reads
-
-  -- File operations
-     collate        shuffle and group alignments by name
-     cat            concatenate BAMs
-     consensus      produce a consensus Pileup/FASTA/FASTQ
-     merge          merge sorted alignments
-     mpileup        multi-way pileup
-     sort           sort alignment file
-     split          splits a file by read group
-     quickcheck     quickly check if SAM/BAM/CRAM file appears intact
-     fastq          converts a BAM to a FASTQ
-     fasta          converts a BAM to a FASTA
-     import         Converts FASTA or FASTQ files to SAM/BAM/CRAM
-     reference      Generates a reference from aligned data
-     reset          Reverts aligner changes in reads
-
-  -- Statistics
-     bedcov         read depth per BED region
-     coverage       alignment depth and percent coverage
-     depth          compute the depth
-     flagstat       simple stats
-     idxstats       BAM index stats
-     cram-size      list CRAM Content-ID and Data-Series sizes
-     phase          phase heterozygotes
-     stats          generate stats (former bamcheck)
-     ampliconstats  generate amplicon specific stats
-
-  -- Viewing
-     flags          explain BAM flags
-     head           header viewer
-     tview          text alignment viewer
-     view           SAM<->BAM<->CRAM conversion
-     depad          convert padded BAM to unpadded BAM
-     samples        list the samples in a set of SAM/BAM/CRAM files
-
-  -- Misc
-     help [cmd]     display this help message or help for [cmd]
-     version        detailed version information
 ```
 
 

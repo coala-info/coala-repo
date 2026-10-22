@@ -22,7 +22,7 @@ inputs:
   - id: input_format
     type:
       - 'null'
-      - File
+      - string
     doc: Input format for sequence file
     inputBinding:
       position: 102

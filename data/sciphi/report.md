@@ -1,5 +1,11 @@
 # sciphi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sciphi | PASS | SCIPhIN example mpileup (25 cells), 10000 iterations |
+
 ## sciphi
 
 ### Tool Description

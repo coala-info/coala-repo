@@ -1,29 +1,66 @@
 # sed CWL Generation Report
 
-## sed_build
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sed | PASS | GNU sed in debian:bookworm-20251229-slim (pinned; no bioconda image): two -e expressions on a real GFF3 replaced all 23 'gene' words; the input had no comment lines to delete. |
+
+## sed
 
 ### Tool Description
-Build SIF format images from OCI blobs or Docker URIs.
+GNU sed, a stream editor to filter and transform text.
 
 ### Metadata
-- **Docker Image**: ubuntu:latest
+- **Docker Image**: debian:bookworm-20251229-slim
 - **Homepage**: https://www.gnu.org/software/sed/
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/sed/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/sed/overview
-- **Total Downloads**: 2.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: N/A
-- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://ubuntu:latest uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a3629ac5b9f4680dc2032439ff2354e73b06aecc2e68f0035a2d7c001c8b4114: unpack entry: usr/lib/x86_64-linux-gnu/perl-base/auto/re/re.so: unpack to regular file: short write: write /tmp/build-temp-3118747812/rootfs/usr/lib/x86_64-linux-gnu/perl-base/auto/re/re.so: no space left on device
+Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+  -n, --quiet, --silent
+                 suppress automatic printing of pattern space
+      --debug
+                 annotate program execution
+  -e script, --expression=script
+                 add the script to the commands to be executed
+  -f script-file, --file=script-file
+                 add the contents of script-file to the commands to be executed
+  --follow-symlinks
+                 follow symlinks when processing in place
+  -i[SUFFIX], --in-place[=SUFFIX]
+                 edit files in place (makes backup if SUFFIX supplied)
+  -l N, --line-length=N
+                 specify the desired line-wrap length for the `l' command
+  --posix
+                 disable all GNU extensions.
+  -E, -r, --regexp-extended
+                 use extended regular expressions in the script
+                 (for portability use POSIX -E).
+  -s, --separate
+                 consider files as separate rather than as a single,
+                 continuous long stream.
+      --sandbox
+                 operate in sandbox mode (disable e/r/w commands).
+  -u, --unbuffered
+                 load minimal amounts of data from the input files and flush
+                 the output buffers more often
+  -z, --null-data
+                 separate lines by NUL characters
+      --help     display this help and exit
+      --version  output version information and exit
+
+If no -e, --expression, -f, or --file option is given, then the first
+non-option argument is taken as the sed script to interpret.  All
+remaining arguments are names of input files; if no input files are
+specified, then the standard input is read.
+
+GNU sed home page: <https://www.gnu.org/software/sed/>.
+General help using GNU software: <https://www.gnu.org/gethelp/>.
+E-mail bug reports to: <bug-sed@gnu.org>.
 ```
 
 ## Metadata

@@ -1,19 +1,36 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rc
+baseCommand:
+  - seqfu
+  - rc
 label: seqfu_rc
-doc: "Print the reverse complementary of sequences in files or sequences given as
-  parameters. Can read FASTA/FASTQ also from STDIN, but not naked strings.\n\nTool
-  homepage: http://github.com/quadram-institute-bioscience/seqfu/"
+doc: "Print the reverse complementary of sequences in files or sequences\ngiven as parameters. Can read\
+  \ FASTA/FASTQ also from STDIN, but not\nnaked strings.\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
-  - id: strings_or_files
+  - id: sequences
     type:
       - 'null'
       - type: array
         items: string
-    doc: Sequences or files to process
+    doc: DNA strings to reverse complement
     inputBinding:
       position: 1
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: FASTA/FASTQ files to reverse complement
+    inputBinding:
+      position: 2
+  - id: seq_name
+    type:
+      - 'null'
+      - string
+    doc: 'Sequence name if coming as string [default: dna]'
+    inputBinding:
+      position: 102
+      prefix: --seq-name
   - id: only_rev
     type:
       - 'null'
@@ -22,14 +39,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --only-rev
-  - id: seq_name
-    type:
-      - 'null'
-      - string
-    doc: Sequence name if coming as string
-    inputBinding:
-      position: 102
-      prefix: --seq-name
   - id: strip_comments
     type:
       - 'null'

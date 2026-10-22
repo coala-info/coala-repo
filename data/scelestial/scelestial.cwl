@@ -7,9 +7,7 @@ doc: "Scelestial considers all k-subsets of samples for min-k <= k <= max-k.\n\n
 inputs:
   - id: input
     type: File
-    doc: Input file
-    inputBinding:
-      position: 1
+    doc: Input file with the site data of the samples (read from standard input)
   - id: include_root
     type:
       - 'null'
@@ -57,10 +55,12 @@ inputs:
       prefix: -root
 outputs:
   - id: output
-    type: File
-    doc: Output file
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Inferred tree and sample sequences
+stdin: $(inputs.input.path)
+stdout: scelestial.out
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scelestial:1.2--h9948957_4

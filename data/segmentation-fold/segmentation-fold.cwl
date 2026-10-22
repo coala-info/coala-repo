@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: segmentation-fold
 label: segmentation-fold
 doc: "Calculates RNA secondary structure and folding parameters.\n\nTool homepage:
-  https://github.com/shreyapamecha/Speed-Estimation-of-Vehicles-with-Plate-Detection"
+  https://github.com/yhoogstrate/segmentation-fold"
 inputs:
   - id: default_xml
     type:
@@ -16,8 +16,8 @@ inputs:
   - id: enable_segment
     type:
       - 'null'
-      - boolean
-    doc: Enable/disable segment functionality
+      - int
+    doc: Enable/disable segment functionality [1/0]
     inputBinding:
       position: 101
       prefix: -p

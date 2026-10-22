@@ -8,8 +8,13 @@ inputs:
   - id: input_file
     type: File
     doc: Input CRAM or BAM file.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
-      position: 1
+      position: 200
   - id: min_soft_clipped_bases
     type:
       - 'null'

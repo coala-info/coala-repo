@@ -13,6 +13,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --centre-size-factors
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
   - id: exprs_values
     type:
       - 'null'
@@ -47,6 +48,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --return-log
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
   - id: output_object_file_path
     type: string
     inputBinding:

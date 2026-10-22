@@ -35,6 +35,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --extracted_contigs
+      valueFrom: $(self.basename)
   - id: read_cov
     type:
       - 'null'
@@ -58,6 +59,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.extracted_contigs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/secapr:2.2.8--pyh5e36f6f_0

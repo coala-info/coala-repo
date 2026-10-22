@@ -164,6 +164,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: -U
+  - id: fake_quality
+    type:
+      - 'null'
+      - string
+    doc: Fake FASTQ quality character
+    inputBinding:
+      position: 102
+      prefix: -F
+  - id: output_both_strands
+    type:
+      - 'null'
+      - boolean
+    doc: Output both forward and reverse complement
+    inputBinding:
+      position: 102
+      prefix: -R
+  - id: lowercase_to_mask_char
+    type:
+      - 'null'
+      - boolean
+    doc: Convert all lowercases to the mask character (-n)
+    inputBinding:
+      position: 102
+      prefix: -x
 outputs:
   - id: stdout
     type: stdout

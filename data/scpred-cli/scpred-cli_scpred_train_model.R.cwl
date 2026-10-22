@@ -7,16 +7,16 @@ inputs:
   - id: allow_parallel
     type:
       - 'null'
-      - boolean
-    doc: Should parallel processing be allowed?
+      - string
+    doc: (TRUE or FALSE) Should parallel processing be allowed?
     inputBinding:
       position: 101
       prefix: --allow-parallel
   - id: get_scpred
     type:
       - 'null'
-      - boolean
-    doc: Should scpred object be extracted from Seurat object after model 
+      - string
+    doc: (TRUE or FALSE) Should scpred object be extracted from Seurat object after model 
       training?
     inputBinding:
       position: 101
@@ -100,8 +100,8 @@ inputs:
   - id: return_data
     type:
       - 'null'
-      - boolean
-    doc: If TRUE, training data is returned within scPred object.
+      - string
+    doc: (TRUE or FALSE) If TRUE, training data is returned within scPred object.
     inputBinding:
       position: 101
       prefix: --return-data
@@ -132,9 +132,7 @@ inputs:
       position: 101
       prefix: --tune-length
   - id: output_path_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output-path
@@ -147,9 +145,7 @@ inputs:
       prefix: --train-probs-plot
 outputs:
   - id: output_path
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path for the output scPred object in .rds format
     outputBinding:
       glob: $(inputs.output_path_path)

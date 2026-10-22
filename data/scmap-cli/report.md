@@ -1,5 +1,18 @@
 # scmap-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scmap-cli_scmap-index-cell.R | PASS | yan example data of the scmap package (made with scmap-make-test-data.R) |
+| scmap-cli_scmap-index-cluster.R | PASS | yan example data of the scmap package (made with scmap-make-test-data.R) |
+| scmap-cli_scmap-make-test-data.R | PASS | yan example data of the scmap package (made with scmap-make-test-data.R) |
+| scmap-cli_scmap-preprocess-sce.R | PASS | yan example data of the scmap package (made with scmap-make-test-data.R) |
+| scmap-cli_scmap-scmap-cell.R | PASS | yan example data of the scmap package (made with scmap-make-test-data.R) |
+| scmap-cli_scmap-scmap-cluster.R | PASS | yan example data of the scmap package (made with scmap-make-test-data.R) |
+| scmap-cli_scmap-select-features.R | PASS | yan example data of the scmap package (made with scmap-make-test-data.R) |
+| scmap-cli_scmap_get_std_output.R | PASS | yan example data of the scmap package (made with scmap-make-test-data.R) |
+
 ## scmap-cli_scmap-preprocess-sce.R
 
 ### Tool Description
@@ -278,6 +291,30 @@ Options:
 		Show this help message and exit
 ```
 
+
+## scmap-cli_scmap-make-test-data.R
+
+### Tool Description
+Creates a test SingleCellExperiment object from the example dataset of the scmap R package.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scmap-cli:0.1.0--hdfd78af_0
+- **Homepage**: https://github.com/ebi-gene-expression-group/scmap-cli
+- **Package**: https://anaconda.org/channels/bioconda/packages/scmap-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/scmap-make-test-data.R [options]
+
+
+Options:
+	-o OUTPUT-OBJECT-FILE, --output-object-file=OUTPUT-OBJECT-FILE
+		file name in which to store serialized R object of type 'SingleCellExperiment'.
+
+	-h, --help
+		Show this help message and exit
+```
 
 ## Metadata
 - **Skill**: generated

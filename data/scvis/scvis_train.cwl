@@ -36,14 +36,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --normalize
-  - id: pretrained_model_file
+  - id: pretrained_model_files
     type:
       - 'null'
-      - File
-    doc: A pretrained scvis model, continue to train this model
-    inputBinding:
-      position: 101
-      prefix: --pretrained_model_file
+      - type: array
+        items: File
+    doc: 'A pretrained scvis model, continue to train this model: the three files of the saved model (.ckpt.index, .ckpt.meta and .ckpt.data-00000-of-00001) made by scvis train, found in the model folder of its output.'
   - id: show_plot
     type:
       - 'null'
@@ -74,6 +72,15 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out_dir
+arguments:
+  - position: 101
+    valueFrom: |
+      ${
+        var fs = inputs.pretrained_model_files;
+        if (!fs) { return []; }
+        var idx = fs.filter(function (f) { return f.basename.endsWith('.index'); })[0];
+        return ['--pretrained_model_file', idx.basename.replace(/\.index$/, '')];
+      }
 outputs:
   - id: out_dir
     type:
@@ -84,6 +91,8 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$(inputs.pretrained_model_files ? inputs.pretrained_model_files : [])"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scvis:0.1.0--scvis_0

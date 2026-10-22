@@ -11,7 +11,7 @@ inputs:
       - File
     doc: Name of tree file [default = trees on stdin]
     inputBinding:
-      position: 1
+      position: 110
   - id: ancestral_sequence_index
     type:
       - 'null'
@@ -102,10 +102,11 @@ inputs:
       - 'null'
       - string
     doc: 'Output file format: p (PHYLIP), r (relaxed PHYLIP), n (NEXUS), f (FASTA),
-      s (Separate files)'
+      s (Separate files); letters are joined, for example fs'
     inputBinding:
       position: 102
       prefix: -o
+      separate: false
   - id: partitions_per_sequence
     type:
       - 'null'
@@ -174,22 +175,29 @@ inputs:
     inputBinding:
       position: 102
       prefix: -w
+      separate: false
   - id: output_filename_path
-    type: string
-    doc: Output or path parameter `output_filename_path`
-    inputBinding:
-      position: 103
-      prefix: --output-filename
-outputs:
-  - id: output_filename
     type:
       - 'null'
-      - File
-    doc: Name of output file [default = to stdout, required for FASTA]
+      - string
+    doc: Name (prefix) of the output file [default = to stdout, required for FASTA]
+    inputBinding:
+      position: 103
+      prefix: -y
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the alignment when -y is not used with PHYLIP, relaxed PHYLIP or NEXUS output)
+  - id: output_filename
+    type:
+      type: array
+      items: File
+    doc: Output files named by -y (FASTA output writes one file per dataset, <name>_<N>.fasta); without -y seq-gen names them output_<N>.<suffix>
     outputBinding:
-      glob: $(inputs.output_filename_path)
+      glob: "$(inputs.output_filename_path ? inputs.output_filename_path + '*' : 'output_*')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq-gen:1.3.5--h7b50bb2_0
+stdout: seq-gen.out

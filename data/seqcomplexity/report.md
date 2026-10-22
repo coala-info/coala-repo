@@ -1,5 +1,11 @@
 # seqcomplexity CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqcomplexity | PASS | nf-core SARS-CoV-2 reads (100 reads counted) and Galaxy test reads; per-read mode checked |
+
 ## seqcomplexity
 
 ### Tool Description

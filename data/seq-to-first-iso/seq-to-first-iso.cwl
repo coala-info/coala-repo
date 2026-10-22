@@ -29,20 +29,24 @@ inputs:
       position: 104
       prefix: --unlabelled-aa
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Name of the output file without extension (the tool adds .tsv). Default is
+      the input file name plus _stfi
     inputBinding:
       position: 105
       prefix: --output
 outputs:
   - id: output
-    type:
-      - 'null'
-      - File
-    doc: name of output file
+    type: File
+    doc: Table with the added formula, mass and first isotopologue intensities
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "$(inputs.output_path ? inputs.output_path + '.tsv' : inputs.input_file_name.nameroot + '_stfi.tsv')"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq-to-first-iso:1.1.0--py_0

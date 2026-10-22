@@ -34,7 +34,9 @@ inputs:
       position: 101
       prefix: --in-place
   - id: input
-    type: File
+    type:
+      - File
+      - Directory
     doc: File(s) to sanitize. Can be a single file or a directory of files
     inputBinding:
       position: 101

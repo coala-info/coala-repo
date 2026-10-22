@@ -14,7 +14,9 @@ inputs:
       position: 101
       prefix: --assay-type
   - id: d_value
-    type: int
+    type:
+      - 'null'
+      - int
     doc: An integer scalar specifying the number of dimensions to use for the 
       search.
     inputBinding:
@@ -23,8 +25,8 @@ inputs:
   - id: get_spikes
     type:
       - 'null'
-      - boolean
-    doc: Logical specifying wether to perform spike-ins filtering(FALSE) or not 
+      - string
+    doc: (TRUE or FALSE) Logical specifying wether to perform spike-ins filtering(FALSE) or not 
       (TRUE).
     inputBinding:
       position: 101
@@ -36,7 +38,9 @@ inputs:
       position: 101
       prefix: --input-sce-object
   - id: k_value
-    type: int
+    type:
+      - 'null'
+      - int
     doc: An integer scalar specifying the number of nearest neighbors to 
       consider during graph construction.
     inputBinding:

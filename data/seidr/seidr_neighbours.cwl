@@ -10,6 +10,8 @@ inputs:
   - id: in_file
     type: File
     doc: Input SeidrFile
+    secondaryFiles:
+      - .sfi
     inputBinding:
       position: 1
   - id: case_insensitive
@@ -33,10 +35,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Gene names to search
+    doc: Gene names to search (joined with commas)
     inputBinding:
       position: 102
       prefix: --genes
+      itemSeparator: ','
   - id: index
     type:
       - 'null'
@@ -92,6 +95,9 @@ inputs:
       position: 103
       prefix: --outfile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Edges printed to standard output (seidr prints to stdout, not to --outfile, when --genes is used)
   - id: outfile
     type:
       - 'null'
@@ -104,3 +110,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+stdout: seidr_neighbours.out

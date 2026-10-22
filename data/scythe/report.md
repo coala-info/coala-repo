@@ -1,5 +1,11 @@
 # scythe CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scythe | PASS |  |
+
 ## scythe
 
 ### Tool Description

@@ -1,5 +1,12 @@
 # scvis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scvis_map | PASS |  |
+| scvis_train | PASS | trained on 500 real retina bipolar cells (PCA input) with a small config; the pretrained-model option was not run |
+
 ## scvis_train
 
 ### Tool Description
@@ -96,36 +103,4 @@ optional arguments:
 
 ## Metadata
 - **Skill**: not generated
-
-## scvis
-
-### Tool Description
-Learning a parametric mapping for high-dimensional single cell data or mapping high-dimensional single cell data to a low-dimensional space given a pretrained mapping
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/scvis:0.1.0--scvis_0
-- **Homepage**: https://bitbucket.org/jerry00/scvis-dev/commits/all
-- **Package**: https://anaconda.org/channels/bioconda/packages/scvis/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
-For more information, please see:
-  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
-  * https://github.com/tensorflow/addons
-If you depend on functionality not listed there, please file an issue.
-
-usage: scvis [-h] [--version] {train,map} ...
-
-positional arguments:
-  {train,map}
-    train      Learning a parametric mapping for high-dimensional single cell
-               data
-    map        Mapping high-dimensional single cell data to a low-dimensional
-               space given a pretrained mapping
-
-optional arguments:
-  -h, --help   show this help message and exit
-  --version    show program's version number and exit
-```
 

@@ -1,5 +1,11 @@
 # scar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scar | PASS | 5 epochs on 1500 real cells x 2000 genes (counts built from nf-core scRNA-seq data) |
+
 ## scar
 
 ### Tool Description

@@ -383,6 +383,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: modified_files
+    type:
+      type: array
+      items: File
+    doc: The sequence files, modified in place
+    outputBinding:
+      glob: |
+        ${ return inputs.sequence_file.map(function(f) { return f.basename; }); }
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.sequence_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqmagick:0.8.6--pyhdfd78af_0

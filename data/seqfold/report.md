@@ -1,5 +1,11 @@
 # seqfold CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqfold | PASS | tool example sequences; MFE values equal the seqfold column of examples/dna.csv (-13.4, -17.8) |
+
 ## seqfold
 
 ### Tool Description

@@ -126,9 +126,9 @@ inputs:
       position: 101
       prefix: --reads
   - id: reference
-    type: File
-    secondaryFiles:
-      - .fai
+    type:
+      - File
+      - Directory
     doc: When choosing "alignment-consensus" or "sample-specific" as 
       reference_type, this flag calls the folder containing the alignment files 
       for your target loci (fasta-format). In case of "user-ref-lib" as 
@@ -137,6 +137,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reference
+      valueFrom: $(self.basename)
   - id: reference_type
     type:
       - 'null'
@@ -183,6 +184,10 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/secapr:2.2.8--pyh5e36f6f_0

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/scpred_get_std_output.R
+baseCommand: scpred_get_std_output.R
 label: scpred-cli_scpred_get_std_output.R
 doc: "Get standard output from SCPRED predictions.\n\nTool homepage: https://github.com/ebi-gene-expression-group/scPred-cli"
 inputs:

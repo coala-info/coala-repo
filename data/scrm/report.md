@@ -1,5 +1,11 @@
 # scrm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scrm | PASS | simulated output by design; shape checked: ms format, one haplotype row per sample, local tree lengths sum to the locus length |
+
 ## scrm
 
 ### Tool Description

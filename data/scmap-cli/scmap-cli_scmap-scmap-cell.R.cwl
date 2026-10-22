@@ -24,14 +24,18 @@ inputs:
       position: 101
       prefix: --index-object-file
   - id: nearest_neighbours_threshold
-    type: int
+    type:
+      - 'null'
+      - int
     doc: A positive integer specifying the number of matching nearest neighbours
       required to label a cell.
     inputBinding:
       position: 101
       prefix: --nearest-neighbours-threshold
   - id: number_nearest_neighbours
-    type: int
+    type:
+      - 'null'
+      - int
     doc: A positive integer specifying the number of nearest neighbours to find.
     inputBinding:
       position: 101

@@ -1,5 +1,12 @@
 # schema-salad CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| schema-salad_schema-salad-doc | PASS | basket example schema from the schema_salad repo tests |
+| schema-salad_schema-salad-tool | PASS | basket example schema from the schema_salad repo tests |
+
 ## schema-salad_schema-salad-tool
 
 ### Tool Description

@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 12612; PASS: 9838; Failed: 1535; Not completed: 1239
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 13055; PASS: 10211; Failed: 1581; Not completed: 1263
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -12612,3 +12612,446 @@ scaden	scaden_simulate	PASS	synthetic data: random example dataset from scaden e
 scaden	scaden_train	PASS	synthetic data: random example dataset from scaden example
 scaffold_builder	scaffold_builder_scaffold_builder.py	PASS	
 scala	scala	PASS	
+scallop	scallop	PASS	
+scallop-lr	scallop-lr	PASS	synthetic data: ccs header file built from real nanopore spliced BAM read names
+scallop-umi	scallop-umi	PASS	
+scallop2	scallop2	PASS	
+scalop	scalop_SCALOP	PASS	
+scanindel	scanindel_ScanIndel.py	Failed	image problem: ScanIndel.py calls /usr/local/bin/tools/vcf-combine.py, which is missing in the image, so the merged VCF is empty (mapping and assembly VCFs are correct)
+scanpy-scripts	scanpy-scripts_scanpy-cli_cluster_leiden	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_diffexp	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_embed_umap	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_filter	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_hvg	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_neighbor	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_norm	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_pca	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_plot_embed	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_read	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_scale	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scapp	scapp	PASS	
+scar	scar	PASS	5 epochs on 1500 real cells x 2000 genes (counts built from nf-core scRNA-seq data)
+scarap	scarap_build	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scarap	scarap_checkgenomes	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scarap	scarap_checkgroups	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scarap	scarap_concat	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scarap	scarap_core	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scarap	scarap_fetch	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scarap	scarap_filter	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scarap	scarap_pan	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scarap	scarap_sample	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scarap	scarap_search	PASS	3 Mycoplasma proteomes from UniProt (real data)
+scater-scripts	scater-scripts_scater-calculate-cpm.R	PASS	
+scater-scripts	scater-scripts_scater-calculate-qc-metrics.R	PASS	
+scater-scripts	scater-scripts_scater-extract-qc-metric.R	PASS	
+scater-scripts	scater-scripts_scater-filter.R	PASS	
+scater-scripts	scater-scripts_scater-is-outlier.R	Failed	tool bug: the script ignores --nmads, --type, --log and --min-diff and always calls isOutlier with defaults (same 17 outliers for any setting)
+scater-scripts	scater-scripts_scater-normalize.R	PASS	
+scater-scripts	scater-scripts_scater-plot-reduced-dim.R	PASS	plot text uses missing fonts in the image, shapes are correct
+scater-scripts	scater-scripts_scater-run-pca.R	PASS	
+scater-scripts	scater-scripts_scater-run-tsne.R	PASS	
+sccaf	sccaf	PASS	assessment mode works on real scRNA-seq data (clusters from scanpy louvain); --optimise crashes in the image (scanpy has no _utils)
+sccaller	sccaller	PASS	NA12878 chr21 BAM used as both cell and bulk (no single-cell data); dbSNP sites
+sccmec	sccmec	PASS	
+sccmec	sccmec-regions	PASS	
+sccmec	sccmec-targets	PASS	
+scelestial	scelestial	PASS	tree matches the repo example output; the -include-root option crashes (segmentation fault) in the tool
+scelestial	scelestial-synthesis	PASS	synthetic data: the tool is a simulator; output has the requested 30 loci for 8 cells
+scelvis	scelvis_convert	PASS	Cell Ranger example hgmm_1k from the scelvis repo
+scelvis	scelvis_run	Not completed	long-running web server; not run
+scenicplus	scenicplus_AUCell	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_TF_to_gene	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_create_scplus_mudata	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_download_genome_annotations	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_eGRN	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_init_snakemake	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_motif_enrichment_cistarget	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_motif_enrichment_dem	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_prepare_GEX_ACC	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_prepare_menr	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_region_to_gene	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scenicplus	scenicplus_search_spance	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
+scepia	scepia_area27	Failed	image problem: scepia crashes at import (numba SystemError: initialization of _internal failed)
+scepia	scepia_infer_motifs	Failed	image problem: scepia crashes at import (numba SystemError: initialization of _internal failed)
+scg	scg_run_dirichlet_mixture_model	PASS	example data from the scg repo, 20 iterations
+scg	scg_run_doublet_model	PASS	example data from the scg repo, 20 iterations
+scg	scg_run_singlet_model	PASS	example data from the scg repo, 20 iterations
+schavott	schavott	Not completed	watches a directory for new MinION reads and runs until stopped; needs a live sequencing run
+schema-salad	schema-salad_schema-salad-doc	PASS	basket example schema from the schema_salad repo tests
+schema-salad	schema-salad_schema-salad-tool	PASS	basket example schema from the schema_salad repo tests
+schicexplorer	schicexplorer_scHicAdjustMatrix	PASS	keep and remove match the repo expected files; --createSubmatrix crashes (AttributeError: no attribute regions)
+schicexplorer	schicexplorer_scHicCluster	PASS	
+schicexplorer	schicexplorer_scHicClusterCompartments	PASS	
+schicexplorer	schicexplorer_scHicClusterMinHash	PASS	
+schicexplorer	schicexplorer_scHicClusterMinHashHyperopt	PASS	
+schicexplorer	schicexplorer_scHicClusterSVL	PASS	
+schicexplorer	schicexplorer_scHicConsensusMatrices	PASS	
+schicexplorer	schicexplorer_scHicConvertFormat	PASS	
+schicexplorer	schicexplorer_scHicCorrectMatrices	Failed	image problem: crashes when saving the corrected scool (hicmatrix scool.save: TypeError unhashable type csr_matrix); the repo test for this tool is also disabled
+schicexplorer	schicexplorer_scHicCorrelate	Failed	tool bug: --outFileNameScatter is a required option but the scatter plot is never written (only the heatmap is)
+schicexplorer	schicexplorer_scHicCreateBulkMatrix	PASS	
+schicexplorer	schicexplorer_scHicDemultiplex	PASS	
+schicexplorer	schicexplorer_scHicInfo	PASS	
+schicexplorer	schicexplorer_scHicManageScool	PASS	
+schicexplorer	schicexplorer_scHicMergeMatrixBins	PASS	
+schicexplorer	schicexplorer_scHicMergeToSCool	PASS	
+schicexplorer	schicexplorer_scHicNormalize	PASS	
+schicexplorer	schicexplorer_scHicPlotClusterProfiles	PASS	
+schicexplorer	schicexplorer_scHicPlotConsensusMatrices	PASS	
+schicexplorer	schicexplorer_scHicQualityControl	PASS	
+schicexplorer	schicexplorer_scHicTxtToSCool	PASS	
+sciphi	sciphi	PASS	SCIPhIN example mpileup (25 cells), 10000 iterations
+sciphin	sciphin	PASS	SCIPhIN example mpileup (25 cells), 1000 iterations
+scmap-cli	scmap-cli_scmap-index-cell.R	PASS	yan example data of the scmap package (made with scmap-make-test-data.R)
+scmap-cli	scmap-cli_scmap-index-cluster.R	PASS	yan example data of the scmap package (made with scmap-make-test-data.R)
+scmap-cli	scmap-cli_scmap-make-test-data.R	PASS	yan example data of the scmap package (made with scmap-make-test-data.R)
+scmap-cli	scmap-cli_scmap-preprocess-sce.R	PASS	yan example data of the scmap package (made with scmap-make-test-data.R)
+scmap-cli	scmap-cli_scmap-scmap-cell.R	PASS	yan example data of the scmap package (made with scmap-make-test-data.R)
+scmap-cli	scmap-cli_scmap-scmap-cluster.R	PASS	yan example data of the scmap package (made with scmap-make-test-data.R)
+scmap-cli	scmap-cli_scmap-select-features.R	PASS	yan example data of the scmap package (made with scmap-make-test-data.R)
+scmap-cli	scmap-cli_scmap_get_std_output.R	PASS	yan example data of the scmap package (made with scmap-make-test-data.R)
+scnic	scnic_between	PASS	
+scnic	scnic_modules	PASS	
+scnic	scnic_within	PASS	
+scoary	scoary	PASS	
+scorpio	scorpio_classify	PASS	
+scorpio	scorpio_define	PASS	
+scorpio	scorpio_haplotype	PASS	
+scorpio	scorpio_list	PASS	
+scpred-cli	scpred-cli_scpred_get_feature_space.R	PASS	
+scpred-cli	scpred-cli_scpred_get_std_output.R	PASS	
+scpred-cli	scpred-cli_scpred_predict.R	PASS	
+scpred-cli	scpred-cli_scpred_train_model.R	Failed	tool bug: --reclassify is ignored by the script (it passes reclassify = NULL); training on real PBMC data works
+scramble	scramble_cluster_identifier	PASS	
+scramble	scramble_scramble.sh	PASS	
+scran-cli	scran-cli_igraph_extract_clusters.R	PASS	
+scran-cli	scran-cli_scran-build-snn-graph.R	Failed	tool bug: --transposed is ignored by the script; shared=FALSE calls a missing function; main SNN graph works
+scran-cli	scran-cli_scran-cli-filter-sce.R	PASS	
+scran-cli	scran-cli_scran-compute-spike-factors.R	PASS	
+scran-cli	scran-cli_scran-compute-sum-factors.R	Failed	tool bug: --clusters is ignored (the script reads opt$custers); main mode works
+scran-cli	scran-cli_scran-convert-to.R	PASS	
+scran-cli	scran-cli_scran-correlate-genes.R	PASS	
+scran-cli	scran-cli_scran-correlate-pairs.R	Failed	tool bug: --iters and --use-dimred are ignored by the script; main mode works only with the counts assay
+scran-cli	scran-cli_scran-denoise-pca.R	PASS	
+scran-cli	scran-cli_scran-find-markers.R	Failed	tool bug: the output file is a copy of the input SCE object, not the marker table
+scran-cli	scran-cli_scran-model-gene-var.R	Failed	image problem: the scran version in the image has no modelGeneVar function
+scran-cli	scran-cli_scran-trend-var.R	PASS	
+scrapling	extract_delete	PASS	
+scrapling	extract_fetch	Failed	image problem: the browser is installed under /root/.cache, which the non-root container user cannot read
+scrapling	extract_get	PASS	
+scrapling	extract_post	PASS	
+scrapling	extract_put	PASS	
+scrappie	scrappie_event_table	PASS	
+scrappie	scrappie_events	PASS	
+scrappie	scrappie_mappy	PASS	
+scrappie	scrappie_raw	PASS	
+scrappie	scrappie_seqmappy	PASS	
+scrappie	scrappie_squiggle	PASS	
+screed	screed_db	PASS	
+screed	screed_dump_fasta	PASS	
+screed	screed_dump_fastq	PASS	
+scripps-msms	scripps-msms_msms	PASS	
+scripps-msms	scripps-msms_pdb_to_xyzr	PASS	
+scripps-msms	scripps-msms_pdb_to_xyzrn	PASS	
+scrm	scrm	PASS	simulated output by design; shape checked: ms format, one haplotype row per sample, local tree lengths sum to the locus length
+scrubby	scrubby_scrub-reads	Failed	tool bug: --extract returns the same non-matching reads as depletion instead of the matching reads; depletion with Kraken2 and minimap2 works
+scssim	scssim_genreads	Not completed	the run never finished: genreads stays in the MALBAC amplification step with no output on a 20 kb, a 100 kb and a 16 Mb genome (1 to 15 minutes)
+scssim	scssim_learn	Failed	image problem: samtools is not in the image ("samtools: command not found"), so the profile has nan rates
+scssim	scssim_simuvars	PASS	reference is real chr20 (first 16 Mb); the variation list is the tool's own example list
+sctagger	sctagger_extract_lr_bc	PASS	
+sctagger	sctagger_extract_sr_bc	PASS	
+sctagger	sctagger_extract_sr_bc_from_lr	PASS	
+sctagger	sctagger_match_trie	PASS	
+scte	scte_scTE	Failed	image problem: samtools is not in the image ("sh: samtools: command not found"), so scTE cannot read the BAM
+scte	scte_scTE_build	PASS	
+scvis	scvis_map	PASS	
+scvis	scvis_train	PASS	trained on 500 real retina bipolar cells (PCA input) with a small config; the pretrained-model option was not run
+scythe	scythe	PASS	
+sdm	sdm	PASS	synthetic data: repo ONT fixture reads trimmed so barcodes start the read; 4 of 6 reads demultiplexed to S0/S1 and PacBio quality filter kept 24 of 25 reads (help lists -base_map but only -map works, so the CWL wraps -map)
+sdust	sdust	PASS	ran on a 1.8 MB human chr21 FASTA slice from nf-core test-datasets; 7074 low-complexity BED intervals
+seabreeze-genomics	seabreeze-genomics_batch	Failed	image problem: seabreeze always runs snakemake --use-conda but the image has no conda command (conda: command not found)
+seabreeze-genomics	seabreeze-genomics_run	Failed	image problem: seabreeze always runs snakemake --use-conda but the image has no conda command (conda: command not found)
+seacr	seacr	Failed	image problem: the image has no bedtools, so the control bedgraph mode crashes (SEACR_1.3.sh: bedtools: command not found); numeric threshold mode matched Galaxy output (46 peaks)
+searchgui	searchgui_fasta_cli	PASS	ran on the bioconda tiny target FASTA (12 proteins); -decoy wrote a concatenated target/decoy FASTA with 24 entries
+searchgui	searchgui_identification_parameters_cli	PASS	created a .par file; tolerances, enzyme, fixed and variable modifications match the options given
+searchgui	searchgui_search_cli	PASS	ran X!Tandem on the bioconda tiny MGF (21 spectra) and FASTA; zip holds an X!Tandem result with 21 spectrum groups
+seaview	seaview_align	PASS	aligned 6 beta-globin proteins from UniProt (muscle/clustal in the image); gaps look right
+seaview	seaview_build_tree	PASS	built a Poisson-distance NJ tree with 10 bootstrap replicates from the globin alignment; tree groups human, gorilla and horse together
+seaview	seaview_concatenate	PASS	concatenated two copies of the globin alignment; each sequence is 294 sites (2 x 147)
+seaview	seaview_convert	PASS	converted the 6-sequence globin alignment from fasta to nexus (NTAX=6, 147 sites)
+secapr	secapr_add_missing_sequences	PASS	synthetic data: one sample removed from half of 10 tutorial alignments; it was added back as N sequence in all 10 files
+secapr	secapr_align_sequences	PASS	mafft alignment of 40 tutorial loci from 4 samples gave 40 alignment files
+secapr	secapr_assemble_reads	PASS	SPAdes assembly of 10000 real sarscov2 test read pairs gave 3 contigs (59.8 kb); reads were renamed to the clean-READ names because clean_reads needs fastp
+secapr	secapr_automate_all	Not completed	pipeline, skipped
+secapr	secapr_clean_reads	Failed	image problem: fastp is not installed in the image (FileNotFoundError: 'fastp')
+secapr	secapr_concatenate_alignments	PASS	joined 40 tutorial alignments into one file with 4 samples of 51760 sites each
+secapr	secapr_find_target_contigs	PASS	SECAPR tutorial contigs (T_pyra1) against the 2525-locus tutorial library: 2090 loci extracted; removed unused .fai secondary file
+secapr	secapr_join_exons	PASS	synthetic data: tutorial alignments renamed to gene_exon_part names; 4 files joined into 2 genes, missing sample padded with ?
+secapr	secapr_locus_selection	PASS	selected the best locus from the reference assembly result of the sarscov2 reads; BAM, fasta and coverage table written (needs --reference because the stored path is container-local)
+secapr	secapr_paralogs_to_ref	PASS	tutorial contigs T_pyra1: 433 paralogous loci aligned to the library (433 collections and alignments); needs non-numeric reference ids
+secapr	secapr_phase_alleles	Not completed	no usable test data: the tutorial BAM files are not public and the haploid sarscov2 reads give empty allele fasta files
+secapr	secapr_plot_sequence_yield	PASS	wrote the contig and alignment yield plot from tutorial data; the --read_cov option crashed with an array size mismatch when given the tutorial coverage table for 4 samples with one sample of contigs
+secapr	secapr_quality_check	PASS	ran FastQC on nf-core sarscov2 test reads; 2 reports and 2 summary PDFs written
+secapr	secapr_reference_assembly	PASS	mapped nf-core sarscov2 test reads (user-ref-lib) with bwa: 196 of 201 reads mapped, coverage 0.9; staged reference writable for bwa index
+secedo	secedo	Not completed	no usable test data: secedo needs pileups of many single cells; the 3 tiny repo BAMs give only an empty significant_positions file. Fixed -o (was invented --output-dir), file-typed options and output folder creation
+secedo	secedo_pileup	PASS	repo test BAMs (3 cells, chromosome 1) gave .pileup.bin/.txt/.map files with per-position base counts when quality cut-offs were set to 0; default cut-offs give empty files for these tiny BAMs
+sed	sed	PASS	GNU sed in debian:bookworm-20251229-slim (pinned; no bioconda image): two -e expressions on a real GFF3 replaced all 23 'gene' words; the input had no comment lines to delete.
+seedme	seedme	Not completed	needs a SeedMe.org account and web service; the -dry run only checked the input and made no upload
+seer	seer	PASS	repo tests 1, 3, 5 and 6 (basic, print_samples, population structure, covariates) give output identical to the expected files
+seer	seer_blast_top_hits	PASS	reduced a blastn table (446 hits, helper blast image) to 129 top hits, one per query
+seer	seer_blastn_to_phandango	Not completed	needs fastlmm-format association results; seer output gives a perl 'beta is not numeric' error and no real fastlmm file is available
+seer	seer_combine_kmers	PASS	synthetic data: two random 2 kb sequences' 21-mer counts; union output comb.gz keeps kmers seen in both samples with --min_samples 2
+seer	seer_filter_seer	PASS	repo test 7 (--pos_beta) output identical to the expected file
+seer	seer_hits_to_fastq	PASS	made a 174-read fastq from the repo test seer output
+seer	seer_kmds	PASS	filtered and subsampled the repo example kmers (3068 samples); wrote .dsm, .dsm.samples and kmers.gz
+seer	seer_map_back	PASS	repo test 8 output identical to the expected file (kmer mapped to 6259_5_16:342-361)
+seer	seer_mapping_to_phandango	PASS	bwa-mapped kmer reads (helper image) against the repo genome; 144 plot lines written
+seer	seer_mash2matrix	PASS	converted mash dist output for 3 real genomes to a 3x3 distance matrix
+seer	seer_r_mds	Failed	image problem: R is not installed in the image (Can't exec R), so no structure file is written
+seer	seer_reformat_output	PASS	reformatted the repo test 7 kmers with the pheno file into a tsv with per-sample columns
+seg-suite	seg-suite_seg-import	PASS	11 repo test cases (bed, genePred, gtf, maf, chain, sam, rmsk, psl with -i/-c/-p/-5/-3/-a/-f) give output identical to seg-test.txt
+seg-suite	seg-suite_seg-join	PASS	9 repo test cases (-c, -f, -n, -x, -v, -w) give output identical to seg-test.txt; the repeated -c option of two tests is not wrapped
+seg-suite	seg-suite_seg-mask	PASS	repo tests with chrM (default, -c, -x n) identical to expected output
+seg-suite	seg-suite_seg-merge	PASS	repo test (hg38Yrg.seg first 3 columns) identical to expected output
+seg-suite	seg-suite_seg-seq	PASS	repo test with chrM.seg and chrM.fa identical to expected output
+seg-suite	seg-suite_seg-shift	PASS	-g 5 on the repo chrM.seg widened every segment by 5 at both ends (286/29 became 281/39)
+seg-suite	seg-suite_seg-sort	PASS	sorted the repo cutqry.seg; output identical to host LC_ALL=C sort -b -k2,2 -k3n
+seg-suite	seg-suite_seg-swap	PASS	repo tests (default, -n3, -s) on hg38Yaln3.seg identical to expected output
+segalign-full	segalign-full_run_segalign	Not completed	needs a GPU: without GPU access in Docker the run exits with 'No alignment generated'
+segalign-full	segalign-full_run_segalign_repeat_masker	Not completed	needs a GPU: without GPU access in Docker the run exits with 'No alignment generated'
+segalign-galaxy	segalign-galaxy_run_segalign	Not completed	needs a GPU: without GPU access in Docker the run exits with 'No alignment generated'
+segalign-galaxy	segalign-galaxy_run_segalign_repeat_masker	Not completed	needs a GPU: without GPU access in Docker the run exits with 'No alignment generated'
+segemehl	segemehl	PASS	mapped 100 nf-core sarscov2 read pairs: 200 of 200 alignments (MAPQ 48), index generation, bam output with splits and bisulfite mode (two indexes) also ran; baseCommand fixed to segemehl (the image has no segemehl.x) and all options wrapped
+segemehl	segemehl_haarz_callmethyl	PASS	called methylation on a bisulfite bam made by segemehl from nf-core sarscov2 methylated reads: 11332 VCF records with methylation ratios; added .fai and .bai secondary files
+segemehl	segemehl_haarz_methylstring	PASS	annotated the same bisulfite bam: SAM records carry the ZM:Z methylation string
+segemehl	segemehl_haarz_split	Not completed	no usable test data: sarscov2 reads have no splice junctions, so the summary only has the header line
+segmentation-fold	segmentation-fold	Failed	tool bug: -f folds only the first record of a multi-FASTA file (also on stdin); -s works (85 nt K-turn RNA: 2 segments, -60.91 kcal/mole); fixed -p to take 1/0 and the homepage
+segmentation-fold	segmentation-fold_utils_add_read_counts	PASS	repo test output matches the expected file (read counts 20, 1, 2); only the BAM path text in headers differs because of staging
+segmentation-fold	segmentation-fold_utils_estimate_energy	PASS	repo XML test gives a 7-line dbn file with transition energies, as the repo test expects
+segmentation-fold	segmentation-fold_utils_extract_boxed_sequences	PASS	repo tests 1 and 3 (--max-inner-dist 90 and 10) output identical to the expected files; staged the FASTA writable so pysam can build its index
+segmentation-fold	segmentation-fold_utils_filter_annotated_entries	PASS	repo test gives the expected overlapping and non-overlapping dbn files; only the bed path text in one header differs because of staging
+segmentation-fold	segmentation-fold_utils_filter_by_energy	PASS	repo test with --energy 0 gives both output files identical to the expected ones
+segmentation-fold	segmentation-fold_utils_find_boxes	PASS	repo genome test with both strands gives a bed file identical to the expected one; staged the FASTA writable so pysam can build its index
+segmentation-fold	segmentation-fold_utils_fix_fasta_headers	PASS	repo test output identical to the expected FASTA
+segul	segul_align_concat	PASS	concatenated 5 tutorial UCE alignments: 4 taxa x 6341 sites (sum of 1286+1286+1147+1322+1300) plus a raxml partition file with the 5 loci
+segul	segul_align_convert	PASS	converted 5 real UCE locus alignments (SECAPR tutorial, 4 taxa) from fasta to nexus; ntax=4 nchar=1286 for locus_0
+segul	segul_align_filter	PASS	--min-len 1250 kept 4 of 5 tutorial alignments (the 1147 bp locus was dropped); segul adds the setting to the output folder name
+segul	segul_align_summary	PASS	per-locus summary of 5 tutorial alignments: csv with per-taxon missing data and base counts (total_chars 1286, 227 missing for T_pella5)
+segul	segul_align_trim	PASS	--missing-data 0.5 trimmed tutorial alignments (locus_1 1286 to 1133 sites); trimming_summary.csv matches the output lengths
+segul	segul_partition_convert	Failed	tool bug: --output is ignored (result is always written beside the input as <input>_partition.<ext>, failing on read-only input); raxml to nexus conversion content was correct once the input was staged writable
+segul	segul_read_summary	PASS	complete read summary of the nf-core sarscov2 test_1.fastq: 100 reads, 13897 bases, mean length 138.97, matching a direct count
+segul	segul_sequence_extract	PASS	extracted 2 taxa (T_pyra1;T_pella5) from 5 tutorial alignments
+segul	segul_sequence_rename	PASS	replaced T_ with Taxon_ in all sequence IDs of 5 tutorial alignments
+segul	segul_sequence_translate	PASS	translated 3 real sarscov2 CDS starts (300 nt, nf-core genome) to protein; orf1ab gives MESLVPGFNEKTHVQLSL...
+segway	segway_annotate	Failed	image problem: gmtkTriangulate cannot load libcrypto.so.3 (exit 127), so segway stops at its GMTK version check; genomedata input type fixed to File/Directory
+segway	segway_posterior	Failed	image problem: gmtkTriangulate cannot load libcrypto.so.3 (exit 127), so segway stops at its GMTK version check; genomedata input type fixed to File/Directory
+segway	segway_train	Failed	image problem: gmtkTriangulate cannot load libcrypto.so.3 (exit 127), so segway stops at its GMTK version check; genomedata input type fixed to File/Directory
+segzoo	segzoo	Not completed	pipeline, skipped: runs a Snakemake workflow that downloads large genome annotation data
+seidr	seidr_adjacency	PASS	
+seidr	seidr_aggregate	PASS	
+seidr	seidr_anoverence	Not completed	no real experiment metadata: with planted all-NA metadata the tool writes only nan, and the docs say it is not recommended
+seidr	seidr_backbone	PASS	
+seidr	seidr_cluster-enrichment	PASS	
+seidr	seidr_compare	PASS	
+seidr	seidr_convert	PASS	
+seidr	seidr_correlation	PASS	
+seidr	seidr_el-ensemble	PASS	
+seidr	seidr_genie3	PASS	
+seidr	seidr_graphstats	PASS	
+seidr	seidr_import	PASS	
+seidr	seidr_index	PASS	
+seidr	seidr_llr-ensemble	PASS	
+seidr	seidr_mi	PASS	
+seidr	seidr_narromi	PASS	
+seidr	seidr_neighbours	Failed	tool bug: with --genes the edges go to standard output and the --outfile file is left empty, so the documented output option is silently ignored; the default mode is correct.
+seidr	seidr_pcor	PASS	
+seidr	seidr_plsnet	PASS	
+seidr	seidr_reheader	PASS	
+seidr	seidr_resolve	PASS	
+seidr	seidr_roc	PASS	
+seidr	seidr_sample	PASS	
+seidr	seidr_stats	PASS	
+seidr	seidr_svm-ensemble	PASS	
+seidr	seidr_threshold	PASS	
+seidr	seidr_tigress	PASS	
+seidr	seidr_tomsimilarity	PASS	
+seidr	seidr_view	PASS	
+seismic-rna	seismic-rna_seismic_align	PASS	synthetic data: seismic-rna tutorial amplicon reads made by seismic sim (two DMS replicates, HIV RRE); BAMs pass quickcheck, 92 percent of read pairs aligned
+seismic-rna	seismic-rna_seismic_cluster	PASS	synthetic data: tutorial amplicon reads; two clusters found with 73 and 27 percent of reads, as the tutorial expects
+seismic-rna	seismic-rna_seismic_export	PASS	synthetic data: tutorial amplicon reads; SEISMICgraph JSON written with the folded structure included
+seismic-rna	seismic-rna_seismic_fold	PASS	synthetic data: tutorial amplicon reads; MFE structure of 179 nt with balanced brackets (-163.2 kcal/mol)
+seismic-rna	seismic-rna_seismic_graph	PASS	synthetic data: tutorial amplicon reads; per-position mutation ratio CSV and HTML written (only seismic graph profile is wrapped)
+seismic-rna	seismic-rna_seismic_join	PASS	synthetic data: tutorial amplicon reads; regions 26-100 and 101-204 joined into 179 positions with the same mean mutation rate
+seismic-rna	seismic-rna_seismic_mask	PASS	synthetic data: tutorial amplicon reads; primer region 26-204 masked, G bases masked and A mutation rate about 8 percent
+seismic-rna	seismic-rna_seismic_pool	PASS	synthetic data: tutorial amplicon reads; pooled coverage and mutation counts equal the sum of the two samples
+seismic-rna	seismic-rna_seismic_relate	PASS	synthetic data: tutorial amplicon reads; relate tables written for both samples
+seismic-rna	seismic-rna_seismic_table	PASS	synthetic data: tutorial amplicon reads; per-read table has one row per read pair (21883)
+selectfasta	selectfasta_selectFasta	PASS	
+selectsequencesfrommsa	selectsequencesfrommsa	PASS	
+selene-sdk	selene-sdk_selene_sdk	PASS	trained a small CNN on real 5' UTR reporter data (GSM3130435 subset, 3000 sequences): test r2 0.65
+selscan	selscan	PASS	tool example data; p1.tped and p1.vcf.gz have duplicate positions and cannot be used
+sem	sem	PASS	SEM repository test BAM (mouse MNase-seq); 3 nucleosome subtypes and about 3650 nucleosomes called
+semibin	semibin_bin	PASS	SemiBin repository test data
+semibin	semibin_bin_long	PASS	SemiBin repository test data (short-read features); needs --minfasta-kbs 20 to get bins
+semibin	semibin_concatenate_fasta	PASS	contigs of the SemiBin test data split into two files
+semibin	semibin_generate_sequence_features_multi	PASS	SemiBin repository test data
+semibin	semibin_generate_sequence_features_single	PASS	SemiBin repository test data
+semibin	semibin_multi_easy_bin	PASS	SemiBin repository test data; needs --minfasta-kbs 20 to get bins on this tiny data
+semibin	semibin_single_easy_bin	PASS	SemiBin repository test data
+semibin	semibin_split_contigs	PASS	SemiBin repository test data
+semibin	semibin_train_self	PASS	SemiBin repository test data
+sensv	sensv	Not completed	needs the full GRCh37 human reference (about 3 GB) and human long-read data; too heavy
+seq-gen	seq-gen	Failed	tool bug: with -y the output file name loses its prefix (FASTA, the default format, is written to _1.fasta and PHYLIP to a hidden .phy file); PHYLIP and NEXUS to stdout work
+seq-hasher	seq-hasher	PASS	synthetic data: first 3 kb of the real SARS-CoV-2 genome with a planted rotated copy; circular options give the same hash for the rotation
+seq-to-first-iso	seq-to-first-iso	PASS	tool test data; output identical to the reference file for -u A (needs network access for UniMod)
+seq2c	seq2c_cov2lr.pl	PASS	tool test data (HG00306 exome coverage); gender prediction matches the expected file
+seq2c	seq2c_lr2gene.pl	PASS	tool test data (HG00306 exome); output identical to the expected file
+seq2c	seq2c_seq2cov.pl	Failed	image problem: samtools is missing in the image, so seq2cov.pl reports depth 0 for every region
+seq2onehot	seq2onehot	PASS	tool example FASTA files; one-hot shapes and values checked for dna, rna, protein and ambiguous modes
+seq2science	seq2science_explain	Not completed	pipeline, skipped: seq2science is a Snakemake workflow
+seq2science	seq2science_init	Not completed	pipeline, skipped: seq2science is a Snakemake workflow
+seq2science	seq2science_run	Not completed	pipeline, skipped: seq2science is a Snakemake workflow
+seqbuster	seqbuster_miraligner	PASS	tool test data and bundled miRBase files; canonical let-7a-5p read annotated with no changes
+seqcomplexity	seqcomplexity	PASS	nf-core SARS-CoV-2 reads (100 reads counted) and Galaxy test reads; per-read mode checked
+seqerakit	seqerakit	Not completed	needs a Seqera Platform account and access token
+seqfold	seqfold	PASS	tool example sequences; MFE values equal the seqfold column of examples/dna.csv (-13.4, -17.8)
+seqforge	seqforge_extract	PASS	5 Portiera protein regions extracted and translated
+seqforge	seqforge_extract-contig	PASS	full Portiera contig extracted for the query hits
+seqforge	seqforge_fasta-metrics	PASS	nf-core Portiera and Haemophilus genomes; lengths 358242 and 1890469 bp, GC 26.17 and 38.05 percent
+seqforge	seqforge_makedb	PASS	nf-core Portiera and Haemophilus genomes (nucleotide) and Portiera proteome (protein)
+seqforge	seqforge_query	PASS	Portiera proteins searched against two genomes; DnaK found at 100 percent in Portiera; motif search checked on a protein database
+seqforge	seqforge_sanitize	PASS	file names with spaces and brackets sanitized (input type widened to File or Directory)
+seqforge	seqforge_search	PASS	real GenBank records; note: a requested field missing in a GenBank record is written under a column named field
+seqforge	seqforge_split-fasta	PASS	nf-core Portiera proteome (258 sequences) split into 3 fragments
+seqforge	seqforge_unique-headers	PASS	nf-core Portiera and Haemophilus genomes; headers got unique suffixes
+seqfu	seqfu_bases	PASS	
+seqfu	seqfu_cat	PASS	
+seqfu	seqfu_check	PASS	
+seqfu	seqfu_count	PASS	
+seqfu	seqfu_deinterleave	PASS	
+seqfu	seqfu_derep	PASS	
+seqfu	seqfu_grep	PASS	
+seqfu	seqfu_head	PASS	
+seqfu	seqfu_interleave	PASS	
+seqfu	seqfu_lanes	PASS	
+seqfu	seqfu_list	PASS	
+seqfu	seqfu_metadata	PASS	
+seqfu	seqfu_rc	PASS	
+seqfu	seqfu_rotate	PASS	
+seqfu	seqfu_sort	PASS	
+seqfu	seqfu_stats	PASS	
+seqfu	seqfu_tab	PASS	
+seqfu	seqfu_tail	PASS	
+seqfu	seqfu_tofasta	PASS	
+seqfu	seqfu_view	Failed	tool bug: --nocolor does not remove the colour codes around oligo matches, so the output still contains terminal escape codes; the plain view of the real sarscov2 reads is correct.
+seqhax	seqhax_anon	PASS	
+seqhax	seqhax_clihist	PASS	
+seqhax	seqhax_convert	PASS	
+seqhax	seqhax_filter	PASS	
+seqhax	seqhax_pairs	PASS	
+seqhax	seqhax_pecheck	PASS	
+seqhax	seqhax_preapp	PASS	
+seqhax	seqhax_randseq	PASS	
+seqhax	seqhax_rebarcode	PASS	synthetic data: Illumina index added to real read headers
+seqhax	seqhax_stats	PASS	
+seqhax	seqhax_trunc	PASS	
+seqkit	seqkit_amplicon	PASS	
+seqkit	seqkit_bam	PASS	
+seqkit	seqkit_common	PASS	
+seqkit	seqkit_concat	PASS	
+seqkit	seqkit_convert	PASS	
+seqkit	seqkit_duplicate	PASS	
+seqkit	seqkit_fa2fq	PASS	
+seqkit	seqkit_faidx	PASS	
+seqkit	seqkit_fish	PASS	
+seqkit	seqkit_fq2fa	PASS	
+seqkit	seqkit_fx2tab	PASS	
+seqkit	seqkit_grep	PASS	
+seqkit	seqkit_head	PASS	
+seqkit	seqkit_head-genome	PASS	
+seqkit	seqkit_locate	PASS	
+seqkit	seqkit_merge-slides	PASS	
+seqkit	seqkit_mutate	PASS	
+seqkit	seqkit_pair	PASS	
+seqkit	seqkit_range	PASS	
+seqkit	seqkit_rename	PASS	
+seqkit	seqkit_replace	PASS	
+seqkit	seqkit_restart	PASS	
+seqkit	seqkit_rmdup	PASS	
+seqkit	seqkit_sample	PASS	
+seqkit	seqkit_sana	PASS	
+seqkit	seqkit_scat	PASS	
+seqkit	seqkit_seq	PASS	
+seqkit	seqkit_shuffle	PASS	
+seqkit	seqkit_sliding	PASS	
+seqkit	seqkit_sort	PASS	
+seqkit	seqkit_split	PASS	
+seqkit	seqkit_split2	PASS	
+seqkit	seqkit_stats	PASS	
+seqkit	seqkit_subseq	PASS	
+seqkit	seqkit_sum	PASS	
+seqkit	seqkit_tab2fx	PASS	
+seqkit	seqkit_translate	PASS	
+seqkit	seqkit_watch	PASS	
+seqmagick	seqmagick_backtrans-align	PASS	
+seqmagick	seqmagick_convert	PASS	
+seqmagick	seqmagick_extract-ids	PASS	
+seqmagick	seqmagick_info	PASS	
+seqmagick	seqmagick_mogrify	PASS	
+seqmagick	seqmagick_quality-filter	PASS	
+seqmap	seqmap	PASS	CWL rewritten from help (output file argument and options were wrong); 20 real SARS-CoV-2 read probes mapped to genome
+seqnado	seqnado_config	Not completed	needs a genome config with real index paths; non-interactive run stops (preset genome paths point to a cluster)
+seqnado	seqnado_design	PASS	4 real SARS-CoV-2 FASTQ files (2 samples) gave a correct design CSV
+seqnado	seqnado_download	Not completed	pipeline, skipped (runs a Snakemake SRA download workflow)
+seqnado	seqnado_init	PASS	new CWL; creates genome config and Snakemake profiles from presets
+seqnado	seqnado_pipeline	Not completed	pipeline, skipped
+seqnado	seqnado_tools	PASS	--list prints the tool catalogue
+seqprep	seqprep	PASS	CWL rewritten from help (command is lowercase seqprep, options were invented); 100 real SARS-CoV-2 pairs: 74 merged, 26 kept
+seqsero	seqsero	Failed	image problem: SeqSero crashes (Biopython has no Seq.tostring, isPcr binary missing) and reports O-?:?:? for a Typhimurium genome; CWL input type fixed to File
+seqsero2	seqsero2	PASS	CWL rewritten from help (options were invented); Salmonella assembly gives Typhimurium 4:i:1,2, non-Salmonella reads give 'cannot be identified', as in Galaxy tests
+seqspec	seqspec_build	Not completed	needs an OpenAI API key (LLM agent)
+seqspec	seqspec_check	PASS	DOGMAseq-DIG spec: remote and local onlists found, only the 9 absent FASTQ files reported (needs network, added to CWL)
+seqspec	seqspec_file	PASS	
+seqspec	seqspec_find	PASS	
+seqspec	seqspec_format	PASS	
+seqspec	seqspec_index	PASS	kb index 0,0,16:0,16,28:1,0,102 for DOGMAseq-DIG rna
+seqspec	seqspec_info	PASS	
+seqspec	seqspec_init	PASS	
+seqspec	seqspec_insert	Failed	tool bug: -s region inserts a read instead of a region (source tests selector against 'reads'); read insert works
+seqspec	seqspec_methods	PASS	
+seqspec	seqspec_modify	PASS	
+seqspec	seqspec_onlist	PASS	joined two real local onlists (product) as expected
+seqspec	seqspec_print	PASS	
+seqspec	seqspec_split	PASS	one spec per modality written (output folder is created by the CWL)
+seqspec	seqspec_upgrade	Failed	tool bug: real 0.0.0 and 0.2.0 specs from the seqspec repo are rejected as invalid; only the 0.3.0 no-op works
+seqspec	seqspec_version	PASS	
+seqstats	seqstats	PASS	
+seqstr	seqstr	Failed	tool bug: --download saves the genome in the working directory and ignores --dir; sequence retrieval from UCSC works and matches the expected output
+seqtk	seqtk_comp	PASS	
+seqtk	seqtk_cutN	PASS	
+seqtk	seqtk_dropse	PASS	
+seqtk	seqtk_famask	PASS	
+seqtk	seqtk_fqchk	PASS	
+seqtk	seqtk_gap	PASS	
+seqtk	seqtk_gc	PASS	
+seqtk	seqtk_hety	PASS	
+seqtk	seqtk_hpc	PASS	
+seqtk	seqtk_listhet	PASS	
+seqtk	seqtk_mergefa	PASS	
+seqtk	seqtk_mergepe	PASS	
+seqtk	seqtk_mutfa	PASS	
+seqtk	seqtk_randbase	PASS	
+seqtk	seqtk_rename	PASS	
+seqtk	seqtk_sample	PASS	
+seqtk	seqtk_seq	PASS	
+seqtk	seqtk_size	PASS	
+seqtk	seqtk_split	PASS	
+seqtk	seqtk_subseq	PASS	
+seqtk	seqtk_telo	PASS	
+seqtk	seqtk_trimfq	PASS	
+sequali	sequali	PASS	note: --images-zip crashes in the tool when given a bare file name without a directory; works with a path like imgs/images.zip
+sequali	sequali_report	PASS	
+sequencetools	sequencetools_pileupCaller	PASS	fixed: added missing pileup input (stdin), prefix outputs, --vcf flag, stdout; tested on the sequenceTools repo test pileup
+sequenoscope	sequenoscope_analyze	PASS	
+sequenoscope	sequenoscope_filter_ONT	PASS	
+sequenoscope	sequenoscope_plot	PASS	

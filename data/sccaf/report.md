@@ -1,5 +1,11 @@
 # sccaf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sccaf | PASS | assessment mode works on real scRNA-seq data (clusters from scanpy louvain); --optimise crashes in the image (scanpy has no _utils) |
+
 ## sccaf
 
 ### Tool Description

@@ -1,5 +1,24 @@
 # secapr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| secapr_add_missing_sequences | PASS | synthetic data: one sample removed from half of 10 tutorial alignments; it was added back as N sequence in all 10 files |
+| secapr_align_sequences | PASS | mafft alignment of 40 tutorial loci from 4 samples gave 40 alignment files |
+| secapr_assemble_reads | PASS | SPAdes assembly of 10000 real sarscov2 test read pairs gave 3 contigs (59.8 kb); reads were renamed to the clean-READ names because clean_reads needs fastp |
+| secapr_automate_all | Not completed | pipeline, skipped |
+| secapr_clean_reads | Failed | image problem: fastp is not installed in the image (FileNotFoundError: 'fastp') |
+| secapr_concatenate_alignments | PASS | joined 40 tutorial alignments into one file with 4 samples of 51760 sites each |
+| secapr_find_target_contigs | PASS | SECAPR tutorial contigs (T_pyra1) against the 2525-locus tutorial library: 2090 loci extracted; removed unused .fai secondary file |
+| secapr_join_exons | PASS | synthetic data: tutorial alignments renamed to gene_exon_part names; 4 files joined into 2 genes, missing sample padded with ? |
+| secapr_locus_selection | PASS | selected the best locus from the reference assembly result of the sarscov2 reads; BAM, fasta and coverage table written (needs --reference because the stored path is container-local) |
+| secapr_paralogs_to_ref | PASS | tutorial contigs T_pyra1: 433 paralogous loci aligned to the library (433 collections and alignments); needs non-numeric reference ids |
+| secapr_phase_alleles | Not completed | no usable test data: the tutorial BAM files are not public and the haploid sarscov2 reads give empty allele fasta files |
+| secapr_plot_sequence_yield | PASS | wrote the contig and alignment yield plot from tutorial data; the --read_cov option crashed with an array size mismatch when given the tutorial coverage table for 4 samples with one sample of contigs |
+| secapr_quality_check | PASS | ran FastQC on nf-core sarscov2 test reads; 2 reports and 2 summary PDFs written |
+| secapr_reference_assembly | PASS | mapped nf-core sarscov2 test reads (user-ref-lib) with bwa: 196 of 201 reads mapped, coverage 0.9; staged reference writable for bwa index |
+
 ## secapr_quality_check
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # seqbuster CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqbuster_miraligner | PASS | tool test data and bundled miRBase files; canonical let-7a-5p read annotated with no changes |
+
 ## seqbuster_miraligner
 
 ### Tool Description
@@ -11,11 +17,6 @@ miraligner is a tool for microRNA alignment and isomiR identification.
 - **Package**: https://anaconda.org/channels/bioconda/packages/seqbuster/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/seqbuster/overview
-- **Total Downloads**: 49.9K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/lpantano/seqbuster
-- **Stars**: N/A
 ### Original Help Text
 ```text
 Usage: <main class> [options] 

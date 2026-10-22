@@ -93,6 +93,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --scale-features
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
   - id: use_dimred
     type:
       - 'null'

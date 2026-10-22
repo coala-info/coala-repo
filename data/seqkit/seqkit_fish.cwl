@@ -64,8 +64,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: "file of input files list (one file per line), if given, they are\n     \
-      \                                   appended to files from cli arguments"
+    doc: file of input files list (one file per line), if given, they are 
+      appended to files from cli arguments
     inputBinding:
       position: 101
       prefix: --infile-list
@@ -93,11 +93,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min-qual
-  - id: out_file
+  - id: out_file_path
     type:
       - 'null'
       - string
-    doc: out file ("-" for stdout, suffix .gz for gzipped out)
+    doc: out file ("-" for stdout, suffix .gz for gzipped out). Only the pass-through
+      output (--pass) goes here; the match table is written to standard error
     inputBinding:
       position: 101
       prefix: --out-file
@@ -201,12 +202,32 @@ inputs:
       position: 101
       prefix: --validate-seq
   - id: out_bam_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: save aligmnets to this BAM file (memory intensive)
     inputBinding:
       position: 102
       prefix: --out-bam
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
+  - id: hits
+    type: stderr
+    doc: match table (Ref, RefStart, RefEnd, Query, QueryStart, QueryEnd, Strand, ...)
+      and alignments with --print-aln; seqkit fish writes them to standard error
+  - id: out_file
+    type:
+      - 'null'
+      - File
+    doc: out file ("-" for stdout, suffix .gz for gzipped out)
+    outputBinding:
+      glob: $(inputs.out_file_path)
   - id: out_bam
     type:
       - 'null'
@@ -219,3 +240,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1
+stderr: seqkit_fish_hits.tsv

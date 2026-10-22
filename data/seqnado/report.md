@@ -1,5 +1,16 @@
 # seqnado CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqnado_config | Not completed | needs a genome config with real index paths; non-interactive run stops (preset genome paths point to a cluster) |
+| seqnado_design | PASS | 4 real SARS-CoV-2 FASTQ files (2 samples) gave a correct design CSV |
+| seqnado_download | Not completed | pipeline, skipped (runs a Snakemake SRA download workflow) |
+| seqnado_init | PASS | new CWL; creates genome config and Snakemake profiles from presets |
+| seqnado_pipeline | Not completed | pipeline, skipped |
+| seqnado_tools | PASS | --list prints the tool catalogue |
+
 ## seqnado_config
 
 ### Tool Description
@@ -302,6 +313,36 @@ Usage: seqnado pipeline [OPTIONS] [ASSAY]
 │ --help                                                     Show this message │
 │                                                            and exit.         │
 ╰──────────────────────────────────────────────────────────────────────────────╯
+```
+
+## seqnado_init
+
+### Tool Description
+Initialize SeqNado user environment: copies Snakemake profiles and creates the genome config file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seqnado:1.0.4--pyhdfd78af_0
+- **Homepage**: https://alsmith151.github.io/SeqNado/
+- **Package**: https://anaconda.org/channels/bioconda/packages/seqnado/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                                                                                                        
+ Usage: seqnado init [OPTIONS]                                                                                          
+                                                                                                                        
+ Initialize SeqNado user environment.                                                                                   
+                                                                                                                        
+ - Logs the current Conda environment if active (optional).                                                             
+ - Runs packaged Apptainer/Singularity init (if `apptainer` on PATH).                                                   
+ - Ensures ~/.config/seqnado/genome_config.json exists (template or preset).                                            
+                                                                                                                        
+╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --preset       --no-preset      Use packaged preset genomes instead of the editable template. [default: no-preset]   │
+│ --dry-run  -n                   Show actions without executing them.                                                 │
+│ --verbose  -v                   Increase logging verbosity.                                                          │
+│ --help                          Show this message and exit.                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Metadata

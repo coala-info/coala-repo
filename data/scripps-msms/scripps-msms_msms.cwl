@@ -38,9 +38,7 @@ inputs:
       position: 101
       prefix: -hdensity
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: sphere input file
     inputBinding:
       position: 101
@@ -147,7 +145,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'filename        : area file'
+    doc: area file
     inputBinding:
       position: 102
       prefix: -af
@@ -155,18 +153,19 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_file_path`
+    doc: output for triangulated surface (msms adds the extensions .vert and .face)
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -of
 outputs:
   - id: output_file
     type:
       - 'null'
-      - File
-    doc: output for triangulated surface
+      - type: array
+        items: File
+    doc: triangulated surface written by msms, as <name>.vert and <name>.face
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).*
   - id: area_file
     type:
       - 'null'

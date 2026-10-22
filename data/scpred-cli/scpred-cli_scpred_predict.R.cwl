@@ -5,9 +5,7 @@ label: scpred-cli_scpred_predict.R
 doc: "Predicts cell types using scPred.\n\nTool homepage: https://github.com/ebi-gene-expression-group/scPred-cli"
 inputs:
   - id: input_object
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to the input object of scPred or seurat class in .rds format
     inputBinding:
       position: 101
@@ -33,15 +31,13 @@ inputs:
   - id: normalise_data
     type:
       - 'null'
-      - boolean
-    doc: Should the predicted expression data be normalised?
+      - string
+    doc: (TRUE or FALSE) Should the predicted expression data be normalised?
     inputBinding:
       position: 101
       prefix: --normalise-data
   - id: pred_data
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Path to the input prediction matrix in .rds format
     inputBinding:
       position: 101
@@ -57,16 +53,16 @@ inputs:
   - id: recompute_alignment
     type:
       - 'null'
-      - boolean
-    doc: Recompute alignment? Useful if scPredict() has already been run.
+      - string
+    doc: (TRUE or FALSE) Recompute alignment? Useful if scPredict() has already been run.
     inputBinding:
       position: 101
       prefix: --recompute-alignment
   - id: reference_scaling
     type:
       - 'null'
-      - boolean
-    doc: Scale new dataset based on means and stdevs from reference dataset 
+      - string
+    doc: (TRUE or FALSE) Scale new dataset based on means and stdevs from reference dataset 
       before alignment.
     inputBinding:
       position: 101
@@ -89,9 +85,7 @@ inputs:
       position: 101
       prefix: --threshold-level
   - id: output_path_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output-path
@@ -104,9 +98,7 @@ inputs:
       prefix: --plot-path
 outputs:
   - id: output_path
-    type:
-      - 'null'
-      - Directory
+    type: File
     doc: Output path for Seurat object holding predicted values
     outputBinding:
       glob: $(inputs.output_path_path)

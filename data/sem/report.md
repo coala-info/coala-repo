@@ -1,5 +1,11 @@
 # sem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sem | PASS | SEM repository test BAM (mouse MNase-seq); 3 nucleosome subtypes and about 3650 nucleosomes called |
+
 ## sem
 
 ### Tool Description

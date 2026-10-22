@@ -29,11 +29,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --chr
     doc: select limited sequence with sequence IDs when using --gtf or --bed 
       (multiple value supported, case ignored)
     inputBinding:
       position: 101
-      prefix: --chr
   - id: compress_level
     type:
       - 'null'
@@ -56,11 +57,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --feature
     doc: select limited feature types (multiple value supported, case ignored, 
       only works with GTF)
     inputBinding:
       position: 101
-      prefix: --feature
   - id: gtf_file
     type:
       - 'null'
@@ -193,6 +195,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:
@@ -203,6 +212,10 @@ outputs:
       glob: $(inputs.out_file_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1

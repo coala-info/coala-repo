@@ -19,7 +19,7 @@ inputs:
   - id: cell_coloring_batch
     type:
       - 'null'
-      - string
+      - File
     doc: A two column list, first colum the cell names as stored in the scool 
       file, second column the associated coloring for the scatter plot
     inputBinding:
@@ -28,7 +28,7 @@ inputs:
   - id: cell_coloring_type
     type:
       - 'null'
-      - string
+      - File
     doc: A two column list, first colum the cell names as stored in the scool 
       file, second column the associated coloring for the scatter plot
     inputBinding:
@@ -97,7 +97,8 @@ inputs:
   - id: figuresize
     type:
       - 'null'
-      - string
+      - type: array
+        items: float
     doc: Fontsize in the plot for x and y axis.
     inputBinding:
       position: 101
@@ -175,6 +176,20 @@ outputs:
     doc: File name to save the resulting clusters
     outputBinding:
       glob: $(inputs.out_file_name_path)
+  - id: scatter_plot
+    type:
+      - 'null'
+      - File
+    doc: Scatter plot of the clustering
+    outputBinding:
+      glob: $(inputs.create_scatter_plot)
+  - id: latex_table_file
+    type:
+      - 'null'
+      - File
+    doc: Overlap statistics as latex table
+    outputBinding:
+      glob: $(inputs.latex_table)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

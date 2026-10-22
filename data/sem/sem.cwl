@@ -176,17 +176,16 @@ inputs:
       prefix: --verbose
   - id: out_path
     type: string
+    doc: Output file prefix; SEM creates a directory with this name
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: out
-    type:
-      type: array
-      items: File
-    doc: output file prefix
+    type: Directory
+    doc: Output directory named by --out (SEM writes its results into it)
     outputBinding:
-      glob: $(inputs.out_path)*
+      glob: $(inputs.out_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

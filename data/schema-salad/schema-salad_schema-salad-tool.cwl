@@ -7,14 +7,14 @@ inputs:
   - id: schema
     type:
       - 'null'
-      - string
+      - File
     doc: Schema file
     inputBinding:
       position: 1
   - id: document
     type:
       - 'null'
-      - string
+      - File
     doc: Document file
     inputBinding:
       position: 2

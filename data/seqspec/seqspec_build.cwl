@@ -48,7 +48,7 @@ inputs:
   - id: trace_jsonl
     type:
       - 'null'
-      - File
+      - string
     doc: Write OpenTelemetry spans to this JSONL file for later viewing
     inputBinding:
       position: 101
@@ -69,6 +69,13 @@ inputs:
       position: 102
       prefix: --output
 outputs:
+  - id: trace
+    type:
+      - 'null'
+      - File
+    doc: OpenTelemetry spans (JSONL)
+    outputBinding:
+      glob: $(inputs.trace_jsonl)
   - id: output
     type:
       - 'null'

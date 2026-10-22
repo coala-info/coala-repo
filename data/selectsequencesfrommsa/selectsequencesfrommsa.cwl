@@ -1,64 +1,117 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: selectsequencesfrommsa
+baseCommand:
+  - SelectSequencesFromMSA
 label: selectsequencesfrommsa
-doc: "Selects sequences from a multiple sequence alignment based on a list of sequence
-  identifiers.\n\nTool homepage: https://github.com/eggzilla/SelectSequencesFromMSA"
+doc: "Selects a representative subset of sequences from a multiple sequence alignment
+  in Clustal format. Inspired by the SelectSequences.pl script of RNAz.\n\nTool homepage:
+  https://github.com/eggzilla/SelectSequencesFromMSA"
 inputs:
-  - id: input_msa
+  - id: input_clustal
     type: File
-    doc: Input multiple sequence alignment file (e.g., FASTA, PHYLIP).
+    doc: Path to input clustal file
     inputBinding:
       position: 1
-  - id: sequence_ids
-    type:
-      type: array
-      items: string
-    doc: File containing a list of sequence identifiers to select, one per line.
-    inputBinding:
-      position: 2
-  - id: format
+      prefix: -c
+  - id: output_path
     type:
       - 'null'
       - string
-    doc: Output format for the selected sequences (e.g., fasta, phylip).
+    doc: Path to output directory. Default current working directory
     inputBinding:
-      position: 103
-      prefix: --format
-  - id: ignore_case
-    type:
-      - 'null'
-      - boolean
-    doc: Ignore case when matching sequence identifiers.
-    inputBinding:
-      position: 103
-      prefix: --ignore-case
-  - id: invert_selection
-    type:
-      - 'null'
-      - boolean
-    doc: Invert the selection, i.e., select sequences NOT in the provided list.
-    inputBinding:
-      position: 103
-      prefix: --invert
-  - id: output_file_path
+      position: 1
+      prefix: -o
+  - id: output_filename
     type: string
-    doc: Output or path parameter `output_file_path`
+    default: results.selected
+    doc: Output filename
     inputBinding:
-      position: 104
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 1
+      prefix: -f
+  - id: toggle_external_selectsequences
     type:
       - 'null'
-      - File
-    doc: Output file for the selected sequences. If not specified, output will 
-      be to stdout.
+      - boolean
+    doc: Use only replacement of alignment characters and external 'selectSequence.pl'
+    inputBinding:
+      position: 1
+      prefix: -e
+  - id: sequence_number
+    type:
+      - 'null'
+      - int
+    doc: Number of sequences in the output alignment. (Default 6)
+    inputBinding:
+      position: 1
+      prefix: -n
+  - id: optimal_identity
+    type:
+      - 'null'
+      - float
+    doc: Optimize for this percentage of mean pairwise identity (Default 80)
+    inputBinding:
+      position: 1
+      prefix: -i
+  - id: maximal_identity
+    type:
+      - 'null'
+      - float
+    doc: Sequences with a higher percentage of pairwise Identity will be removed.
+      (Default 95)
+    inputBinding:
+      position: 1
+      prefix: -m
+  - id: reference_sequence
+    type:
+      - 'null'
+      - boolean
+    doc: The first sequence (=reference sequence) is always present in the output
+      alignment per default
+    inputBinding:
+      position: 1
+      prefix: -x
+  - id: distance_matrix_path
+    type:
+      - 'null'
+      - string
+    doc: Path to distance matrix output file, only internal for internal sequence
+      selection, e.g. /home/user/distmat
+    inputBinding:
+      position: 1
+      prefix: -d
+  - id: reformat_id_option
+    type:
+      - 'null'
+      - string
+    doc: Defines how sequence id is reformated, e.g. fitting for RNAcode or not
+      (Default RNAcode)
+    inputBinding:
+      position: 1
+      prefix: -r
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Loud verbosity
+    inputBinding:
+      position: 1
+      prefix: -v
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Quiet verbosity
+    inputBinding:
+      position: 1
+      prefix: -q
+outputs:
+  - id: selected_alignment
+    type: File
+    doc: Selected sequences as a Clustal alignment
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: "$(inputs.output_path ? inputs.output_path + '/' + inputs.output_filename : inputs.output_filename)"
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: 
-      quay.io/biocontainers/selectsequencesfrommsa:1.0.5--pl526h9ebf644_0
+    dockerPull: quay.io/biocontainers/selectsequencesfrommsa:1.0.5--pl526h9ebf644_0

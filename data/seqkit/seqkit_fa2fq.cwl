@@ -111,6 +111,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTQ file(s) to retrieve records from (read from standard input if none)
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:

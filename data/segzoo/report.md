@@ -1,5 +1,11 @@
 # segzoo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| segzoo | Not completed | pipeline, skipped: runs a Snakemake workflow that downloads large genome annotation data |
+
 ## segzoo
 
 ### Tool Description

@@ -1,5 +1,79 @@
 # scripps-msms CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scripps-msms_msms | PASS |  |
+| scripps-msms_pdb_to_xyzr | PASS |  |
+| scripps-msms_pdb_to_xyzrn | PASS |  |
+
+## scripps-msms_pdb_to_xyzr
+
+### Tool Description
+Extract x, y, z from a PDB file and give the radius of each atom, as sphere input for msms
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scripps-msms:2.6.1--h9ee0642_0
+- **Homepage**: https://ccsb.scripps.edu/msms/
+- **Package**: https://anaconda.org/channels/bioconda/packages/scripps-msms/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+# extract x,y,z from PDB file, generate radius of each atom
+# Hydrogens are presumed to be missing ("united atom" approach) unless -h given
+# later: options for alternate radius and pattern files
+# --- Mike Pique, The Scripps Research Institute
+#
+# input: pdb file as argument or stdin
+# output: new xyzr file to stdout
+#
+# Options:
+#
+# -h: use explicit hydrogen radii instead of default united atom radii
+#
+# examples:
+#   pdb_to_xyzr  crambin.pdb > crambin.xyzr
+#
+#   foo_to_pdb -h mol.foo  | pdb_to_xyzr > mol.xyzr
+#
+#   foo_to_pdb mol.foo  | pdb_to_xyzr | awk '{print $4}' >   mol.r
+```
+
+## scripps-msms_pdb_to_xyzrn
+
+### Tool Description
+Extract x, y, z, radius and atom name from a PDB file, as sphere input for msms
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scripps-msms:2.6.1--h9ee0642_0
+- **Homepage**: https://ccsb.scripps.edu/msms/
+- **Package**: https://anaconda.org/channels/bioconda/packages/scripps-msms/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+# extract x,y,z from PDB file, generate radius of each atom
+# Hydrogens are presumed to be missing ("united atom" approach) unless -h given
+# later: options for alternate radius and pattern files
+# --- Mike Pique, The Scripps Research Institute
+#
+# input: pdb file as argument or stdin
+# output: new xyzr file to stdout
+#
+# Options:
+#
+# -h: use explicit hydrogen radii instead of default united atom radii
+#
+# examples:
+#   pdb_to_xyzr  crambin.pdb > crambin.xyzr
+#
+#   foo_to_pdb -h mol.foo  | pdb_to_xyzr > mol.xyzr
+#
+#   foo_to_pdb mol.foo  | pdb_to_xyzr | awk '{print $4}' >   mol.r
+```
+
 ## Metadata
 - **Skill**: generated
 

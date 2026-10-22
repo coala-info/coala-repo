@@ -1,5 +1,11 @@
 # seqprep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqprep | PASS | CWL rewritten from help (command is lowercase seqprep, options were invented); 100 real SARS-CoV-2 pairs: 74 merged, 26 kept |
+
 ## seqprep
 
 ### Tool Description

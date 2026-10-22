@@ -23,7 +23,7 @@ inputs:
   - id: input_data
     type:
       type: array
-      items: string
+      items: File
     doc: path/to/input_data
     inputBinding:
       position: 101

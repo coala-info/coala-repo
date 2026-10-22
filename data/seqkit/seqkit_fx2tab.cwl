@@ -38,22 +38,24 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --base-content
     doc: "print base content. (case ignored, multiple values supported) e.g. -B AT\n\
       \                               -B N. Note that the denominator is the sequence
       length"
     inputBinding:
       position: 101
-      prefix: --base-content
   - id: base_count
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --base-count
     doc: print base count. (case ignored, multiple values supported) e.g. -C AT 
       -C N
     inputBinding:
       position: 101
-      prefix: --base-count
   - id: case_sensitive
     type:
       - 'null'
@@ -116,9 +118,9 @@ inputs:
   - id: infile_list
     type:
       - 'null'
-      - string
-    doc: "file of input files list (one file per line), if given, they are\n     \
-      \                                   appended to files from cli arguments"
+      - File
+    doc: file of input files list (one file per line), if given, they are 
+      appended to files from cli arguments
     inputBinding:
       position: 101
       prefix: -X
@@ -219,6 +221,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:

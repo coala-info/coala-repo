@@ -35,8 +35,6 @@ inputs:
     type:
       - 'null'
       - File
-    secondaryFiles:
-      - .fai
     doc: Path to reference library fasta file (secapr will find it by itself if 
       the reference assembly was executed with secapr).
     inputBinding:

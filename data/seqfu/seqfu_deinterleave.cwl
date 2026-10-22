@@ -1,14 +1,38 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dei
+baseCommand:
+  - seqfu
+  - dei
 label: seqfu_deinterleave
-doc: "interleave FASTQ files\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
+doc: "Deinterleave a FASTQ file into two files (output_R1.fq and output_R2.fq)\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
   - id: interleaved_fastq
     type: File
-    doc: interleaved FASTQ file
+    doc: Interleaved FASTQ file (use - to read from STDIN)
     inputBinding:
       position: 1
+  - id: output_basename
+    type: string
+    doc: save output to output_R1.fq and output_R2.fq
+    inputBinding:
+      position: 102
+      prefix: --output-basename
+  - id: for_ext
+    type:
+      - 'null'
+      - string
+    doc: 'extension for R1 file [default: _R1.fq]'
+    inputBinding:
+      position: 102
+      prefix: --for-ext
+  - id: rev_ext
+    type:
+      - 'null'
+      - string
+    doc: 'extension for R2 file [default: _R2.fq]'
+    inputBinding:
+      position: 102
+      prefix: --rev-ext
   - id: check
     type:
       - 'null'
@@ -17,44 +41,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --check
-  - id: output_basename
-    type: string
-    doc: save output to output_R1.fq and output_R2.fq
-    inputBinding:
-      position: 102
-      prefix: --output-basename
-  - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: rename sequences (append a progressive number)
-    inputBinding:
-      position: 102
-      prefix: --prefix
-  - id: r1_extension
-    type:
-      - 'null'
-      - string
-    doc: extension for R1 file
-    inputBinding:
-      position: 102
-      prefix: --for-ext
-  - id: r2_extension
-    type:
-      - 'null'
-      - string
-    doc: extension for R2 file
-    inputBinding:
-      position: 102
-      prefix: --rev-ext
-  - id: strip_comments
-    type:
-      - 'null'
-      - boolean
-    doc: skip comments
-    inputBinding:
-      position: 102
-      prefix: --strip-comments
   - id: verbose
     type:
       - 'null'
@@ -63,17 +49,42 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: strip_comments
+    type:
+      - 'null'
+      - boolean
+    doc: skip comments
+    inputBinding:
+      position: 102
+      prefix: --strip-comments
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: rename sequences (append a progressive number)
+    inputBinding:
+      position: 102
+      prefix: --prefix
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_basename_dir
+  - id: forward_reads
     type:
       - 'null'
-      - Directory
-    doc: save output to output_R1.fq and output_R2.fq
+      - File
+    doc: Forward reads file
     outputBinding:
-      glob: $(inputs.output_basename)
+      glob: '$(inputs.output_basename)$(inputs.for_ext ? inputs.for_ext : ''_R1.fq'')'
+  - id: reverse_reads
+    type:
+      - 'null'
+      - File
+    doc: Reverse reads file
+    outputBinding:
+      glob: '$(inputs.output_basename)$(inputs.rev_ext ? inputs.rev_ext : ''_R2.fq'')'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqfu:1.23.0--hfd12232_0

@@ -1,5 +1,26 @@
 # seqspec CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqspec_build | Not completed | needs an OpenAI API key (LLM agent) |
+| seqspec_check | PASS | DOGMAseq-DIG spec: remote and local onlists found, only the 9 absent FASTQ files reported (needs network, added to CWL) |
+| seqspec_file | PASS |  |
+| seqspec_find | PASS |  |
+| seqspec_format | PASS |  |
+| seqspec_index | PASS | kb index 0,0,16:0,16,28:1,0,102 for DOGMAseq-DIG rna |
+| seqspec_info | PASS |  |
+| seqspec_init | PASS |  |
+| seqspec_insert | Failed | tool bug: -s region inserts a read instead of a region (source tests selector against 'reads'); read insert works |
+| seqspec_methods | PASS |  |
+| seqspec_modify | PASS |  |
+| seqspec_onlist | PASS | joined two real local onlists (product) as expected |
+| seqspec_print | PASS |  |
+| seqspec_split | PASS | one spec per modality written (output folder is created by the CWL) |
+| seqspec_upgrade | Failed | tool bug: real 0.0.0 and 0.2.0 specs from the seqspec repo are rejected as invalid; only the 0.3.0 no-op works |
+| seqspec_version | PASS |  |
+
 ## seqspec_build
 
 ### Tool Description

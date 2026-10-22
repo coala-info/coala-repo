@@ -1,5 +1,11 @@
 # seqmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqmap | PASS | CWL rewritten from help (output file argument and options were wrong); 20 real SARS-CoV-2 read probes mapped to genome |
+
 ## seqmap
 
 ### Tool Description

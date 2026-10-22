@@ -135,6 +135,27 @@ outputs:
     doc: PDF file output path for all optimisation plots.
     outputBinding:
       glob: $(inputs.optimisation_plots_output_path)
+  - id: roc_curve
+    type:
+      - 'null'
+      - File
+    doc: ROC curve plot of the first assessment
+    outputBinding:
+      glob: roc-curve.png
+  - id: optimised_roc_curve
+    type:
+      - 'null'
+      - File
+    doc: ROC curve plot after the optimisation
+    outputBinding:
+      glob: optim.png
+  - id: rounds_summary
+    type:
+      - 'null'
+      - File
+    doc: List of the clustering rounds (with --produce-rounds-summary)
+    outputBinding:
+      glob: rounds.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:

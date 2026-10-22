@@ -1,5 +1,11 @@
 # seq-hasher CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seq-hasher | PASS | synthetic data: first 3 kb of the real SARS-CoV-2 genome with a planted rotated copy; circular options give the same hash for the rotation |
+
 ## seq-hasher
 
 ### Tool Description

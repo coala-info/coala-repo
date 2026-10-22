@@ -1,32 +1,15 @@
 # seqmagick CWL Generation Report
 
-## seqmagick_help
+## Real Data Test
 
-### Tool Description
-Show help for seqmagick actions.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/seqmagick:0.8.6--pyhdfd78af_0
-- **Homepage**: http://github.com/fhcrc/seqmagick
-- **Package**: https://anaconda.org/channels/bioconda/packages/seqmagick/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/seqmagick/overview
-- **Total Downloads**: 29.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/fhcrc/seqmagick
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: seqmagick help [-h] action
-
-positional arguments:
-  action
-
-options:
-  -h, --help  show this help message and exit
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| seqmagick_backtrans-align | PASS |  |
+| seqmagick_convert | PASS |  |
+| seqmagick_extract-ids | PASS |  |
+| seqmagick_info | PASS |  |
+| seqmagick_mogrify | PASS |  |
+| seqmagick_quality-filter | PASS |  |
 
 ## seqmagick_convert
 

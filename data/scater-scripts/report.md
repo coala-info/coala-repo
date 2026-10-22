@@ -1,5 +1,19 @@
 # scater-scripts CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scater-scripts_scater-calculate-cpm.R | PASS |  |
+| scater-scripts_scater-calculate-qc-metrics.R | PASS |  |
+| scater-scripts_scater-extract-qc-metric.R | PASS |  |
+| scater-scripts_scater-filter.R | PASS |  |
+| scater-scripts_scater-is-outlier.R | Failed | tool bug: the script ignores --nmads, --type, --log and --min-diff and always calls isOutlier with defaults (same 17 outliers for any setting) |
+| scater-scripts_scater-normalize.R | PASS |  |
+| scater-scripts_scater-plot-reduced-dim.R | PASS | plot text uses missing fonts in the image, shapes are correct |
+| scater-scripts_scater-run-pca.R | PASS |  |
+| scater-scripts_scater-run-tsne.R | PASS |  |
+
 ## scater-scripts_scater-calculate-qc-metrics.R
 
 ### Tool Description
@@ -335,6 +349,101 @@ Options:
 		Show this help message and exit
 ```
 
+
+## scater-scripts_scater-calculate-cpm.R
+
+### Tool Description
+Calculates counts per million (CPM) for a SingleCellExperiment object.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scater-scripts:0.0.5--0
+- **Homepage**: https://github.com/ebi-gene-expression-group/bioconductor-scater-scripts
+- **Package**: https://anaconda.org/channels/bioconda/packages/scater-scripts/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] scater-calculate-cpm.R: ok via scater-calculate-cpm.R --help (--help=ok, -h=ok, -help=no_options, (no args)=ok)
+Usage: /usr/local/bin/scater-calculate-cpm.R [options]
+
+
+Options:
+	-i INPUT-OBJECT-FILE, --input-object-file=INPUT-OBJECT-FILE
+		File name containing serialized SingleCellExperiment object or count matrix.
+
+	-e EXPRS-VALUES, --exprs-values=EXPRS-VALUES
+		A string specifying the assay of ‘object’ containing the count matrix, if ‘object’ is a SingleCellExperiment.
+
+	-s SIZE-FACTORS, --size-factors=SIZE-FACTORS
+		A logical scalar indicating whether size factors in object should be used to compute effective library sizes. If not, all size factors are deleted and librarysize-based factors are used instead (seelibrarySizeFactors). Alternatively, a numeric vector containing a size factor for each cell, which is used in place ofsizeFactor(object).
+
+	-o OUTPUT-OBJECT-FILE, --output-object-file=OUTPUT-OBJECT-FILE
+		File name in which to store serialized R object of type 'Scater'.'
+
+	-t OUTPUT-TEXT-FILE, --output-text-file=OUTPUT-TEXT-FILE
+		File name in which to store CPM values.
+
+	-h, --help
+		Show this help message and exit
+```
+
+## scater-scripts_scater-plot-reduced-dim.R
+
+### Tool Description
+Plots a reduced dimension result (for example PCA or t-SNE) of a SingleCellExperiment object to a PNG file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scater-scripts:0.0.5--0
+- **Homepage**: https://github.com/ebi-gene-expression-group/bioconductor-scater-scripts
+- **Package**: https://anaconda.org/channels/bioconda/packages/scater-scripts/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[help] scater-plot-reduced-dim.R: ok via scater-plot-reduced-dim.R --help (--help=ok, -h=ok, -help=no_options, (no args)=ok)
+Usage: /usr/local/bin/scater-plot-reduced-dim.R [options]
+
+
+Options:
+	-i INPUT-OBJECT-FILE, --input-object-file=INPUT-OBJECT-FILE
+		singleCellExperiment object containing expression values and experimental information. Must have been appropriately prepared.
+
+	-d USE-DIMRED, --use-dimred=USE-DIMRED
+		A string or integer scalar indicating the reduced dimension result in reducedDims(object) to plot.
+
+	-n NCOMPONENTS, --ncomponents=NCOMPONENTS
+		A numeric scalar indicating the number of dimensions to plot, starting from the first dimension. Alternatively, a comma-separated specifying the dimensions to be plotted.
+
+	-p PERCENT-VAR, --percent-var=PERCENT-VAR
+		A comma-separated string giving the proportion of variance in expression explained by each reduced dimension. Only expected to be used in PCA settings, e.g., in the plotPCA function.
+
+	-c COLOUR-BY, --colour-by=COLOUR-BY
+		Specification of a column metadata field or a feature to colour by.
+
+	-s SHAPE-BY, --shape-by=SHAPE-BY
+		Specification of a column metadata field or a feature to shape by.
+
+	-z SIZE-BY, --size-by=SIZE-BY
+		Specification of a column metadata field or a feature to shape by.
+
+	-e BY_EXPRS-VALUES, --by_exprs-values=BY_EXPRS-VALUES
+		A string or integer scalar specifying which assay to obtain expression values from, for use in point aesthetics.
+
+	-b BY_SHOW_SINGLE, --by_show_single=BY_SHOW_SINGLE
+		Logical scalar specifying whether single-level factors should be used for point aesthetics.
+
+	-w PNG-WIDTH, --png-width=PNG-WIDTH
+		Width of png (px).
+
+	-j PNG-HEIGHT, --png-height=PNG-HEIGHT
+		Height of png file (px).
+
+	-o OUTPUT-IMAGE-FILE, --output-image-file=OUTPUT-IMAGE-FILE
+		File name in which to save the PCA image
+
+	-h, --help
+		Show this help message and exit
+```
 
 ## Metadata
 - **Skill**: generated

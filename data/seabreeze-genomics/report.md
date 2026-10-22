@@ -1,10 +1,16 @@
 # seabreeze-genomics CWL Generation Report
 
-## seabreeze-genomics_seabreeze
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seabreeze-genomics_batch | Failed | image problem: seabreeze always runs snakemake --use-conda but the image has no conda command (conda: command not found) |
+| seabreeze-genomics_run | Failed | image problem: seabreeze always runs snakemake --use-conda but the image has no conda command (conda: command not found) |
+
+## seabreeze-genomics_run
 
 ### Tool Description
-seabreeze is a tool for comprehensively analyzing genetic variation among
-bacterial genomes caused by structural mutations.
+Execute given workflow for single sample
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/seabreeze-genomics:1.5.0--pyhdfd78af_0
@@ -12,30 +18,63 @@ bacterial genomes caused by structural mutations.
 - **Package**: https://anaconda.org/channels/bioconda/packages/seabreeze-genomics/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/seabreeze-genomics/overview
-- **Total Downloads**: 190
-- **Last updated**: 2025-07-16
-- **GitHub**: https://github.com/barricklab/seabreeze
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Usage: seabreeze [OPTIONS] COMMAND [ARGS]...
+Usage: seabreeze run [OPTIONS] {analyse_genome_sizes|predict_IS_elements|predi
+                     ct_structural_variants|predict_replichore_balance|predict
+                     _SV_mechanism|annotate_SV_regions|run_all}
+                     [SNAKEMAKE_ARGS]...
 
-  seabreeze is a tool for comprehensively analyzing genetic variation among
-  bacterial genomes caused by structural mutations. To get help, run
-  `seabreeze --help`
-
-  Please see documentation at https://barrick.github.io/seabreeze Report bugs,
-  errors and request features at https://github.com/barricklab/seabreeze
-
-  seabreeze was developed at the Barrick Lab at UT Austin
+  Execute given workflow for single sample
 
 Options:
-  --version   Show the version and exit.
-  -h, --help  Show this message and exit.
+  -d, --dir PATH     Set working directory. Default is current working
+                     directory
+  --ancestor PATH    Path to FASTA file of the ancestor or reference sequence
+  --assembly PATH    Path to FASTA file of the assembly or query sequence
+  --threads INTEGER  Resources to be used.  [default: 4]
+  --ori TEXT         Sequence of the origin. Must use IUPAC bases, and be
+                     unique in both the ancestor and assembly. Required for
+                     predict_replichore_balance or run_all workflows
+  --dif TEXT         Sequence of the terminus. Must use standard IUPAC bases,
+                     and be unique in both the ancestor and assembly.
+                     Required for predict_replichore_balance or run_all
+                     workflows
+  --masked           Mask insertion sequences
+  -h, --help         Show this message and exit.
+```
 
-Commands:
-  batch  Run seabreeze in batch mode to process multiple samples at once
-  run    Run seabreeze for a single sample pair
+## seabreeze-genomics_batch
+
+### Tool Description
+Execute given workflow for batch processing
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seabreeze-genomics:1.5.0--pyhdfd78af_0
+- **Homepage**: https://github.com/barricklab/seabreeze
+- **Package**: https://anaconda.org/channels/bioconda/packages/seabreeze-genomics/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: seabreeze batch [OPTIONS] {analyse_genome_sizes|predict_IS_elements|pre
+                       dict_structural_variants|predict_replichore_balance|pre
+                       dict_SV_mechanism|annotate_SV_regions|run_all}
+                       [SNAKEMAKE_ARGS]...
+
+  Execute given workflow for batch processing
+
+Options:
+  -d, --dir PATH     Set working directory where output will be created.
+                     Default is current working directory
+  -b, --data PATH    Path to data.csv file. Default is data.csv in current
+                     working dir
+  --oridif PATH      Path to csv file with sequences for the origin and
+                     terminus. Default is ori_dif_coords.csv in the current
+                     working dir. Required for predict_replichore_balance or
+                     run_all workflows
+  --threads INTEGER  Resources to be used.  [default: 4]
+  --masked           Mask insertion sequences
+  -h, --help         Show this message and exit.
 ```
 

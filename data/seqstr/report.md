@@ -1,5 +1,11 @@
 # seqstr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqstr | Failed | tool bug: --download saves the genome in the working directory and ignores --dir; sequence retrieval from UCSC works and matches the expected output |
+
 ## seqstr
 
 ### Tool Description

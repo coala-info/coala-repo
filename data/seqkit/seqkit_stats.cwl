@@ -11,11 +11,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --N
     doc: append other N50-like stats as new columns. value range [0, 100], 
       multiple values supported, e.g., -N 50,90 or -N 50 -N 90
     inputBinding:
       position: 101
-      prefix: --N
   - id: all_statistics
     type:
       - 'null'
@@ -86,7 +87,7 @@ inputs:
   - id: infile_list
     type:
       - 'null'
-      - string
+      - File
     doc: file of input files list (one file per line), if given, they are 
       appended to files from cli arguments
     inputBinding:
@@ -163,6 +164,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:

@@ -25,8 +25,8 @@ inputs:
   - id: get_spikes
     type:
       - 'null'
-      - boolean
-    doc: If get-spikes = FALSE, spike-in transcripts are automatically removed. 
+      - string
+    doc: (TRUE or FALSE) If get-spikes = FALSE, spike-in transcripts are automatically removed. 
       If get.spikes=TRUE, no filtering on the spike-in transcripts will be 
       performed.
     inputBinding:

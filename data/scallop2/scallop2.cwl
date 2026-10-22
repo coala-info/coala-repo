@@ -122,7 +122,7 @@ inputs:
     doc: Output or path parameter `gtf_file_path`
     inputBinding:
       position: 102
-      prefix: --gtf-file
+      prefix: -o
 outputs:
   - id: gtf_file
     type: File

@@ -1,5 +1,11 @@
 # seqstats CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqstats | PASS |  |
+
 ## seqstats
 
 ### Tool Description

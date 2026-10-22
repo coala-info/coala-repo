@@ -83,7 +83,7 @@ inputs:
   - id: infile_list
     type:
       - 'null'
-      - string
+      - File
     doc: file of input files list (one file per line), if given, they are 
       appended to files from cli arguments
     inputBinding:
@@ -145,6 +145,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:
@@ -153,6 +160,20 @@ outputs:
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     outputBinding:
       glob: $(inputs.out_file_path)
+  - id: dup_num_out
+    type:
+      - 'null'
+      - File
+    doc: file with numbers and ID lists of duplicated seqs
+    outputBinding:
+      glob: $(inputs.dup_num_file)
+  - id: dup_seqs_out
+    type:
+      - 'null'
+      - File
+    doc: file with duplicated seqs
+    outputBinding:
+      glob: $(inputs.dup_seqs_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

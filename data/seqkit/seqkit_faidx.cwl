@@ -85,7 +85,7 @@ inputs:
     doc: file of input files list (one file per line), if given, they are 
       appended to files from cli arguments
     inputBinding:
-      position: 103
+      position: 101
       prefix: --infile-list
   - id: line_width
     type:
@@ -168,8 +168,21 @@ outputs:
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     outputBinding:
       glob: $(inputs.out_file_path)
+  - id: fai_file
+    type:
+      - 'null'
+      - File
+    doc: FASTA index file (.fai, or .seqkit.fai with --full-head)
+    outputBinding:
+      glob:
+        - $(inputs.fasta_file.basename).fai
+        - $(inputs.fasta_file.basename).seqkit.fai
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.fasta_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1

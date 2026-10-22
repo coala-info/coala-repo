@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seidr_stats
+baseCommand:
+  - seidr
+  - stats
 label: seidr_stats
 doc: "Calculate network centrality statistics\n\nTool homepage: https://github.com/bschiffthaler/seidr"
 inputs:
@@ -9,6 +11,7 @@ inputs:
     doc: Input SeidrFile
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: directed
     type:
       - 'null'
@@ -82,10 +85,17 @@ inputs:
       position: 102
       prefix: --weight-rank
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: stats_file
+    type: File
+    doc: The input SeidrFile with the centrality statistics added (seidr stats modifies the file in place; view them with seidr view --centrality)
+    outputBinding:
+      glob: $(inputs.in_file.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.in_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
-stdout: seidr_stats.out

@@ -1,5 +1,11 @@
 # seedme CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seedme | Not completed | needs a SeedMe.org account and web service; the -dry run only checked the input and made no upload |
+
 ## seedme
 
 ### Tool Description

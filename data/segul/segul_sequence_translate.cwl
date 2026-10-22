@@ -1,0 +1,101 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand: [segul, sequence, translate]
+label: segul_sequence_translate
+doc: "Translate DNA to amino acid sequences\n\nTool homepage: https://github.com/hhandika/segul"
+inputs:
+  - id: dir
+    type: ['null', Directory]
+    doc: "Input a directory"
+    inputBinding:
+      position: 1
+      prefix: "--dir"
+  - id: input
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: "Input path(s) (wildcards are expanded by the tool, so give files)"
+    inputBinding:
+      position: 1
+      prefix: "--input"
+  - id: force
+    type: ['null', boolean]
+    doc: "Force overwriting existing output files/directory"
+    inputBinding:
+      position: 1
+      prefix: "--force"
+  - id: input_format
+    type: ['null', string]
+    doc: "Input format: auto, fasta, nexus, phylip (default auto)"
+    inputBinding:
+      position: 1
+      prefix: "--input-format"
+  - id: datatype
+    type: ['null', string]
+    doc: "Sequence datatype: dna, aa, ignore (default dna)"
+    inputBinding:
+      position: 1
+      prefix: "--datatype"
+  - id: output_format
+    type: ['null', string]
+    doc: "Output format: fasta, nexus, phylip, fasta-int, nexus-int, phylip-int (default nexus)"
+    inputBinding:
+      position: 1
+      prefix: "--output-format"
+  - id: log
+    type: string
+    default: "segul.log"
+    doc: "Log file path"
+    inputBinding:
+      position: 1
+      prefix: "--log"
+  - id: output
+    type: string
+    default: "Sequence-Translate"
+    doc: "Output path"
+    inputBinding:
+      position: 1
+      prefix: "--output"
+  - id: show_tables
+    type: ['null', boolean]
+    doc: "Show supported NCBI translation tables"
+    inputBinding:
+      position: 1
+      prefix: "--show-tables"
+  - id: reading_frame
+    type: ['null', int]
+    doc: "Reading frame: 1, 2 or 3 (default 1)"
+    inputBinding:
+      position: 1
+      prefix: "--reading-frame"
+  - id: auto_read
+    type: ['null', boolean]
+    doc: "Automatically detect reading frame"
+    inputBinding:
+      position: 1
+      prefix: "--auto-read"
+  - id: table
+    type: ['null', int]
+    doc: "NCBI translation table number (default 1)"
+    inputBinding:
+      position: 1
+      prefix: "--table"
+outputs:
+  - id: output_path
+    type: [File, Directory]
+    doc: Output file or directory
+    outputBinding:
+      glob: $(inputs.output)
+  - id: log_file
+    type: ['null', File]
+    doc: Log file
+    outputBinding:
+      glob: $(inputs.log)
+  - id: stdout
+    type: stdout
+    doc: Standard output
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/segul:0.23.2--hc1c3326_0
+stdout: segul_sequence_translate.out

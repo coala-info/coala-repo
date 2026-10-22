@@ -5,7 +5,7 @@ label: schema-salad_schema-salad-doc
 doc: "Generates documentation from schema-salad schemas.\n\nTool homepage: https://github.com/common-workflow-language/schema_salad"
 inputs:
   - id: schema
-    type: string
+    type: File
     doc: The schema file to process.
     inputBinding:
       position: 1

@@ -1,110 +1,367 @@
 # scarap CWL Generation Report
 
-## scarap
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scarap_build | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+| scarap_checkgenomes | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+| scarap_checkgroups | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+| scarap_concat | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+| scarap_core | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+| scarap_fetch | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+| scarap_filter | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+| scarap_pan | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+| scarap_sample | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+| scarap_search | PASS | 3 Mycoplasma proteomes from UniProt (real data) |
+
+## scarap_pan
 
 ### Tool Description
-scarap: error: unrecognized arguments: -elp
+Infer a pangenome from a set of faa files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
-- **Homepage**: https://pypi.org/project/scarap
+- **Homepage**: https://github.com/SWittouck/SCARAP
 - **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/scarap/overview
-- **Total Downloads**: 712
-- **Last updated**: 2026-02-23
-- **GitHub**: https://github.com/swittouck/scarap
-- **Stars**: N/A
 ### Original Help Text
 ```text
-/usr/local/lib/python3.12/site-packages/ete3/coretype/tree.py:387: SyntaxWarning: invalid escape sequence '\-'
-  \--- H |
-/usr/local/lib/python3.12/site-packages/ete3/coretype/tree.py:458: SyntaxWarning: invalid escape sequence '\-'
-  #       /F|      \-B
-/usr/local/lib/python3.12/site-packages/ete3/coretype/tree.py:1527: SyntaxWarning: invalid escape sequence '\-'
-  #     |    |     \---|     \-b
-/usr/local/lib/python3.12/site-packages/ete3/parser/newick.py:51: SyntaxWarning: invalid escape sequence '\['
-  _ILEGAL_NEWICK_CHARS = ":;(),\[\]\t\n\r="
-/usr/local/lib/python3.12/site-packages/ete3/parser/newick.py:54: SyntaxWarning: invalid escape sequence '\['
-  _NHX_RE = "\[&&NHX:[^\]]*\]"
-/usr/local/lib/python3.12/site-packages/ete3/parser/newick.py:55: SyntaxWarning: invalid escape sequence '\s'
-  _FLOAT_RE = "\s*[+-]?\d+\.?\d*(?:[eE][-+]?\d+)?\s*"
-/usr/local/lib/python3.12/site-packages/ete3/parser/newick.py:402: SyntaxWarning: invalid escape sequence '\s'
-  matcher_str= '^\s*%s\s*%s\s*(%s)?\s*$' % (FIRST_MATCH, SECOND_MATCH, _NHX_RE)
-/usr/local/lib/python3.12/site-packages/ete3/utils.py:82: SyntaxWarning: invalid escape sequence '\['
-  return re.sub("\\033\[[^m]+m", "", string)
-/usr/local/lib/python3.12/site-packages/ete3/treeview/main.py:64: SyntaxWarning: invalid escape sequence '\d'
-  _COLOR_MATCH = re.compile("^#[A-Fa-f\d]{6}$")
-/usr/local/lib/python3.12/site-packages/ete3/treeview/main.py:712: SyntaxWarning: invalid escape sequence '\d'
-  compatible_code = re.sub('font-size="(\d+)"', 'font-size="\\1pt"', compatible_code)
-/usr/local/lib/python3.12/site-packages/ete3/treeview/main.py:714: SyntaxWarning: invalid escape sequence '\s'
-  compatible_code = re.sub('<g [^>]+>\s*</g>', '', compatible_code)
-/usr/local/lib/python3.12/site-packages/ete3/treeview/faces.py:178: SyntaxWarning: invalid escape sequence '\_'
-  :param 0 (inner\_)border.type: 0=solid, 1=dashed, 2=dotted
-/usr/local/lib/python3.12/site-packages/ete3/parser/phylip.py:76: SyntaxWarning: invalid escape sequence '\s'
-  m = re.match("^\s*(\d+)\s+(\d+)",line)
-/usr/local/lib/python3.12/site-packages/ete3/parser/phylip.py:108: SyntaxWarning: invalid escape sequence '\s'
-  SG.id2seq[id_counter] += re.sub("\s","", line)
-/usr/local/lib/python3.12/site-packages/ete3/parser/phylip.py:123: SyntaxWarning: invalid escape sequence '\s'
-  seq = re.sub("\s","",m.groups()[1])
-/usr/local/lib/python3.12/site-packages/ete3/parser/phylip.py:138: SyntaxWarning: invalid escape sequence '\s'
-  seq = re.sub("\s", "", line)
-/usr/local/lib/python3.12/site-packages/ete3/phylo/phylotree.py:132: SyntaxWarning: invalid escape sequence '\d'
-  id_match = re.compile("([^0-9])?(\d+)([^0-9])?")
-/usr/local/lib/python3.12/site-packages/ete3/phylo/phylotree.py:188: SyntaxWarning: invalid escape sequence '\d'
-  id_match = re.compile("([^0-9])(\d+)([^0-9])")
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:74: SyntaxWarning: invalid escape sequence '\('
-  k = int(re.sub ('.* \(K=([0-9]+)\)\n', '\\1', line))
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:78: SyntaxWarning: invalid escape sequence '\d'
-  re.match ('^[a-z]+.*(\d+\.\d{5} *){'+ str(k) +'}', line):
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:82: SyntaxWarning: invalid escape sequence '\d'
-  classes[var] = [float(v) for v in re.findall('\d+\.\d{5}', line)]
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:86: SyntaxWarning: invalid escape sequence '\d'
-  k = int(re.sub('.*for (\d+) classes.*\n', '\\1', line))
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:92: SyntaxWarning: invalid escape sequence '\d'
-  k = int(re.sub('.*for (\d+) classes.*\n', '\\1', line))
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:217: SyntaxWarning: invalid escape sequence '\('
-  model._tree = EvolTree (re.findall ('\(.*\);', ''.join(all_lines))[2])
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:227: SyntaxWarning: invalid escape sequence '\d'
-  line = list(map (float, re.findall ('\d\.\d+', all_lines [i+j+1])))
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:240: SyntaxWarning: invalid escape sequence '\d'
-  line = re.sub ('.* np: *(\d+)\): +(-\d+\.\d+).*',
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:245: SyntaxWarning: invalid escape sequence '\d'
-  line = re.sub ('.* np: *(\d+)\): +(nan).*',
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:252: SyntaxWarning: invalid escape sequence '\d'
-  labels = re.findall ('\d+\.\.\d+', line + ' ')
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:258: SyntaxWarning: invalid escape sequence '\d'
-  model.stats ['kappa'] = float (re.sub ('.*(\d+\.\d+).*',
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:264: SyntaxWarning: invalid escape sequence '\d'
-  if not re.match (' +\d+\.\.\d+ +\d+\.\d+ ', line):
-/usr/local/lib/python3.12/site-packages/ete3/evol/parser/codemlparser.py:265: SyntaxWarning: invalid escape sequence '\d'
-  if re.match (' +( +\d+\.\d+){8}', all_lines [i+1]):
-/usr/local/lib/python3.12/site-packages/ete3/evol/evoltree.py:468: SyntaxWarning: invalid escape sequence '\['
-  nwk += sub('\[&&NHX:mark=([ #0-9.]*)\]', r'\1',
-/usr/local/lib/python3.12/site-packages/ete3/evol/evoltree.py:471: SyntaxWarning: invalid escape sequence '\['
-  nwk = sub('\[&&NHX:mark=([ #0-9.]*)\]', r'\1',
-/usr/local/lib/python3.12/site-packages/ete3/tools/utils.py:28: SyntaxWarning: invalid escape sequence '\['
-  return re.sub("\\033\[[^m]+m", "", string)
-/usr/local/lib/python3.12/site-packages/ete3/evol/model.py:367: SyntaxWarning: invalid escape sequence '\.'
-  if sub('\..*', '', model) in AVAIL:
-/usr/local/lib/python3.12/site-packages/ete3/evol/model.py:368: SyntaxWarning: invalid escape sequence '\.'
-  return model, AVAIL [sub('\..*', '', model)]
-/usr/local/lib/python3.12/site-packages/ete3/phylomedb/phylomeDB3.py:75: SyntaxWarning: invalid escape sequence '\w'
-  ID_PATTERN = re.compile("^[Pp][Hh][Yy]\w{7}(_\w{2,7})?$")
-/usr/local/lib/python3.12/site-packages/ete3/phylomedb/phylomeDB3.py:153: SyntaxWarning: invalid escape sequence '\w'
-  m = re.search("Phy(\w{7})_[\w\d]+", name)
-/usr/local/lib/python3.12/site-packages/ete3/phylomedb/phylomeDB3.py:500: SyntaxWarning: invalid escape sequence '\w'
-  QUERY_OLD_REGEXP_FILTER = "^\w{3}\d{1,}$"
-/usr/local/lib/python3.12/site-packages/ete3/phylomedb/phylomeDB3.py:756: SyntaxWarning: invalid escape sequence '\w'
-  QUERY_GEN_REGEXP_FILTER = "^[\w\d\-_,;:.|#@\/\\\()'<>!]+$"
-/usr/local/lib/python3.12/site-packages/ete3/phylomedb/phylomeDB3.py:757: SyntaxWarning: invalid escape sequence '\w'
-  QUERY_OLD_REGEXP_FILTER = "^\w{3}\d{1,}$"
-/usr/local/lib/python3.12/site-packages/ete3/phylomedb/phylomeDB3.py:758: SyntaxWarning: invalid escape sequence '\w'
-  QUERY_INT_REGEXP_FILTER = "^[Pp][Hh][Yy]\w{7}(_\w{2,7})?$"
-usage: scarap [-h]
-              {pan,core,build,search,concat,sample,checkgenomes,checkgroups,filter,fetch}
-              ...
-scarap: error: unrecognized arguments: -elp
+usage: scarap pan [-h] [-d {H,FH,FT,H-nl,T-nl,P,O-B,O-D,S}] [-i MIN_REPS]
+                  [-a MAX_REPS] [-x MAX_ALIGN] [-s SPECIES] [-t THREADS] [-c]
+                  faa-files outfolder
+
+positional arguments:
+  faa-files             folder with one fasta file with amino acid sequences
+                        (faa file) per genome, or file with paths to faa files
+  outfolder             output folder
+
+options:
+  -h, --help            show this help message and exit
+  -d {H,FH,FT,H-nl,T-nl,P,O-B,O-D,S}, --method {H,FH,FT,H-nl,T-nl,P,O-B,O-D,S}
+                        pangenome inference method [default: FH]
+  -i MIN_REPS, --min-reps MIN_REPS
+                        minimum number of representative sequences to use for
+                        multiple sequence alignment [default 32]
+  -a MAX_REPS, --max-reps MAX_REPS
+                        maximum number of representative sequences to use for
+                        multiple sequence alignment [default MIN_REPS * 1.25]
+  -x MAX_ALIGN, --max-align MAX_ALIGN
+                        maximum number of sequences to use for multiple
+                        sequence alignment [default MAX_REPS * 16]
+  -s SPECIES, --species SPECIES
+                        input file with species of genomes; if given, a
+                        hierarchical pangenome strategy will be used for final
+                        database selection
+  -t THREADS, --threads THREADS
+                        number of threads to use
+  -c, --cont            continue in existing output folder [default False]
+```
+
+## scarap_core
+
+### Tool Description
+Infer a core genome from a set of faa files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/SWittouck/SCARAP
+- **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scarap core [-h] [-d {H,FH,FT,H-nl,T-nl,P,O-B,O-D,S}] [-i MIN_REPS]
+                   [-a MAX_REPS] [-x MAX_ALIGN] [-e SEEDS] [-p CORE_PREFILTER]
+                   [-f CORE_FILTER] [-m MAX_CORE_GENES] [-t THREADS] [-c]
+                   faa-files outfolder
+
+positional arguments:
+  faa-files             folder with one fasta file with amino acid sequences
+                        (faa file) per genome, or file with paths to faa files
+  outfolder             output folder
+
+options:
+  -h, --help            show this help message and exit
+  -d {H,FH,FT,H-nl,T-nl,P,O-B,O-D,S}, --method {H,FH,FT,H-nl,T-nl,P,O-B,O-D,S}
+                        pangenome inference method [default: FH]
+  -i MIN_REPS, --min-reps MIN_REPS
+                        minimum number of representative sequences to use for
+                        multiple sequence alignment [default 32]
+  -a MAX_REPS, --max-reps MAX_REPS
+                        maximum number of representative sequences to use for
+                        multiple sequence alignment [default MIN_REPS * 1.25]
+  -x MAX_ALIGN, --max-align MAX_ALIGN
+                        maximum number of sequences to use for multiple
+                        sequence alignment [default MAX_REPS * 16]
+  -e SEEDS, --seeds SEEDS
+                        number of seed genomes to use [default 100]
+  -p CORE_PREFILTER, --core-prefilter CORE_PREFILTER
+                        minimum relative frequency of single-copy presence to
+                        be used for initial database construction [default
+                        0.90]
+  -f CORE_FILTER, --core-filter CORE_FILTER
+                        minimum relative frequency of single-copy presence to
+                        be used for [default 0.95]
+  -m MAX_CORE_GENES, --max-core-genes MAX_CORE_GENES
+                        maximum number of core genes to retrieve (0 = no
+                        maximum) [default 0]
+  -t THREADS, --threads THREADS
+                        number of threads to use
+  -c, --cont            continue in existing output folder [default False]
+```
+
+## scarap_build
+
+### Tool Description
+Build a profile database for a core genome or pangenome.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/SWittouck/SCARAP
+- **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scarap build [-h] [-p CORE_PREFILTER] [-f CORE_FILTER]
+                    [-m MAX_CORE_GENES] [-t THREADS] [-c]
+                    faa-files pangenome outfolder
+
+positional arguments:
+  faa-files             folder with one fasta file with amino acid sequences
+                        (faa file) per genome, or file with paths to faa files
+  pangenome             input file with pangenome
+  outfolder             output folder
+
+options:
+  -h, --help            show this help message and exit
+  -p CORE_PREFILTER, --core-prefilter CORE_PREFILTER
+                        minimum relative frequency of single-copy presence to
+                        be used for initial database construction [default 0]
+  -f CORE_FILTER, --core-filter CORE_FILTER
+                        minimum relative frequency of single-copy presence to
+                        be used for [default 0]
+  -m MAX_CORE_GENES, --max-core-genes MAX_CORE_GENES
+                        maximum number of core genes to retrieve (0 = no
+                        maximum) [default 0]
+  -t THREADS, --threads THREADS
+                        number of threads to use
+  -c, --cont            continue in existing output folder [default False]
+```
+
+## scarap_search
+
+### Tool Description
+Search query genes in a profile database.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/SWittouck/SCARAP
+- **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scarap search [-h] [-t THREADS] [-c] faa-files db outfolder
+
+positional arguments:
+  faa-files             folder with one fasta file with amino acid sequences
+                        (faa file) per genome, or file with paths to faa files
+  db                    input database containing alignments and profile score
+                        cutoffs
+  outfolder             output folder
+
+options:
+  -h, --help            show this help message and exit
+  -t THREADS, --threads THREADS
+                        number of threads to use
+  -c, --cont            continue in existing output folder [default False]
+```
+
+## scarap_checkgenomes
+
+### Tool Description
+Assess the genomes in a core genome.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/SWittouck/SCARAP
+- **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scarap checkgenomes [-h] [-c] coregenome outfolder
+
+positional arguments:
+  coregenome  input file with a core genome
+  outfolder   output folder
+
+options:
+  -h, --help  show this help message and exit
+  -c, --cont  continue in existing output folder [default False]
+```
+
+## scarap_checkgroups
+
+### Tool Description
+Assess the orthogroups in a core genome.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/SWittouck/SCARAP
+- **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scarap checkgroups [-h] [-c] coregenome outfolder
+
+positional arguments:
+  coregenome  input file with a core genome
+  outfolder   output folder
+
+options:
+  -h, --help  show this help message and exit
+  -c, --cont  continue in existing output folder [default False]
+```
+
+## scarap_filter
+
+### Tool Description
+Filter the genomes or orthogroups in a pangenome.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/SWittouck/SCARAP
+- **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scarap filter [-h] [-g GENOMES] [-o ORTHOGROUPS] [-c]
+                     pangenome outfolder
+
+positional arguments:
+  pangenome             input file with pangenome
+  outfolder             output folder
+
+options:
+  -h, --help            show this help message and exit
+  -g GENOMES, --genomes GENOMES
+                        input file with genomes to extract from pangenome
+  -o ORTHOGROUPS, --orthogroups ORTHOGROUPS
+                        input file with orthogroups to extract from pangenome
+  -c, --cont            continue in existing output folder [default False]
+```
+
+## scarap_concat
+
+### Tool Description
+Construct a concatenated core orthogroup alignment from a core genome.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/SWittouck/SCARAP
+- **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scarap concat [-h] [-f CORE_FILTER] [-m MAX_CORE_GENES] [-n FFN_FILES]
+                     [-t THREADS] [-c]
+                     faa-files pangenome outfolder
+
+positional arguments:
+  faa-files             folder with one fasta file with amino acid sequences
+                        (faa file) per genome, or file with paths to faa files
+  pangenome             input file with pangenome
+  outfolder             output folder
+
+options:
+  -h, --help            show this help message and exit
+  -f CORE_FILTER, --core-filter CORE_FILTER
+                        minimum relative frequency of single-copy presence to
+                        be used for [default 0]
+  -m MAX_CORE_GENES, --max-core-genes MAX_CORE_GENES
+                        maximum number of core genes to retrieve (0 = no
+                        maximum) [default 0]
+  -n FFN_FILES, --ffn-files FFN_FILES
+                        file with paths to or folder with ffn files of
+                        genomes; if given, a nucleotide supermatrix will be
+                        constructed in addition to the amino acid suprmatrix
+  -t THREADS, --threads THREADS
+                        number of threads to use
+  -c, --cont            continue in existing output folder [default False]
+```
+
+## scarap_sample
+
+### Tool Description
+Sample a subset of representative genomes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/SWittouck/SCARAP
+- **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scarap sample [-h] [-m MAX_GENOMES] [-i IDENTITY] [-d METHOD] [-x]
+                     [-t THREADS] [-c]
+                     fasta-files pangenome outfolder
+
+positional arguments:
+  fasta-files           folder with one fasta file with amino acid sequences
+                        (faa file) or one fasta file with nucleic acid
+                        sequences (ffn file) per genome, or a file with paths
+                        to faa/ffn files
+  pangenome             input file with pangenome
+  outfolder             output folder
+
+options:
+  -h, --help            show this help message and exit
+  -m MAX_GENOMES, --max-genomes MAX_GENOMES
+                        maximum number of genomes to sample (0 = no maximum)
+                        [default 0]
+  -i IDENTITY, --identity IDENTITY
+                        maximum sequence identity between sampled genomes
+                        [default 1]
+  -d METHOD, --method METHOD
+                        genome-genome comparison method [default: mean]
+  -x, --exact           perform full alignments [default False]
+  -t THREADS, --threads THREADS
+                        number of threads to use
+  -c, --cont            continue in existing output folder [default False]
+```
+
+## scarap_fetch
+
+### Tool Description
+Fetch sequences and store them in a fasta file per orthogroup.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scarap:1.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/SWittouck/SCARAP
+- **Package**: https://anaconda.org/channels/bioconda/packages/scarap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: scarap fetch [-h] [-c] fasta-files pangenome outfolder
+
+positional arguments:
+  fasta-files  folder with one fasta file with amino acid sequences (faa file)
+               or one fasta file with nucleic acid sequences (ffn file) per
+               genome, or a file with paths to faa/ffn files
+  pangenome    input file with pangenome
+  outfolder    output folder
+
+options:
+  -h, --help   show this help message and exit
+  -c, --cont   continue in existing output folder [default False]
 ```
 

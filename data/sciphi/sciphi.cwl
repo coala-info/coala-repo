@@ -6,6 +6,11 @@ doc: "SCIPhI: Single-cell Identification of Polymorphism in Heterogeneous Inter-
   populations. A tool for tree reconstruction and variant calling from single-cell
   sequencing data.\n\nTool homepage: https://github.com/cbg-ethz/SCIPhI"
 inputs:
+  - id: mpileup
+    type: File
+    doc: Sequencing information of all cells in mpileup format (same cell order as in the file given with --in)
+    inputBinding:
+      position: 1
   - id: bulk_alt_skip_threshold
     type:
       - 'null'
@@ -318,7 +323,9 @@ outputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items:
+          - File
+          - Directory
     doc: Prefix of output files.
     outputBinding:
       glob: $(inputs.output_prefix_path)*

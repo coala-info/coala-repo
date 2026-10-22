@@ -1,5 +1,11 @@
 # scanindel CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scanindel_ScanIndel.py | Failed | image problem: ScanIndel.py calls /usr/local/bin/tools/vcf-combine.py, which is missing in the image, so the merged VCF is empty (mapping and assembly VCFs are correct) |
+
 ## scanindel_ScanIndel.py
 
 ### Tool Description

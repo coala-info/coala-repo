@@ -1,107 +1,79 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mappy
+baseCommand: [scrappie, mappy]
 label: scrappie_mappy
-doc: "Scrappie squiggler\n\nTool homepage: https://github.com/nanoporetech/scrappie"
+doc: "Scrappie squiggler: map signal to approximate squiggle\n\nTool homepage: https://github.com/nanoporetech/scrappie"
 inputs:
   - id: fasta_file
     type: File
-    doc: Input FASTA file
+    doc: "Input fasta file"
     inputBinding:
-      position: 1
+      position: 200
   - id: fast5_file
     type: File
-    doc: Input FAST5 file
+    doc: "Input fast5 file"
     inputBinding:
-      position: 2
+      position: 201
+  - id: model
+    type: ['null', string]
+    doc: "Squiggle model to use: \"squiggle_r94\", \"squiggle_r10\""
+    inputBinding:
+      prefix: --model
   - id: backprob
-    type:
-      - 'null'
-      - float
-    doc: Probability of backwards movement
+    type: ['null', double]
+    doc: "Probability of backwards movement"
     inputBinding:
-      position: 103
       prefix: --backprob
-  - id: localpen
-    type:
-      - 'null'
-      - float
-    doc: Penalty for local matching
+  - id: skippen
+    type: ['null', double]
+    doc: "Penalty for skipping position"
     inputBinding:
-      position: 103
+      prefix: --skippen
+  - id: localpen
+    type: ['null', double]
+    doc: "Penalty for local matching"
+    inputBinding:
       prefix: --localpen
   - id: minscore
-    type:
-      - 'null'
-      - float
-    doc: Minimum possible score for matching emission
+    type: ['null', double]
+    doc: "Minimum possible score for matching emission"
     inputBinding:
-      position: 103
       prefix: --minscore
-  - id: model
-    type:
-      - 'null'
-      - string
-    doc: 'Squiggle model to use: "squiggle_r94", "squiggle_r10"'
+  - id: output
+    type: ['null', string]
+    doc: "Write to file rather than stdout"
     inputBinding:
-      position: 103
-      prefix: --model
+      prefix: --output
   - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: Prefix to append to name of read
+    type: ['null', string]
+    doc: "Prefix to append to name of read"
     inputBinding:
-      position: 103
       prefix: --prefix
   - id: rate
-    type:
-      - 'null'
-      - float
-    doc: Translocation rate of read relative to standard squiggle
+    type: ['null', double]
+    doc: "Translocation rate of read relative to standard squiggle"
     inputBinding:
-      position: 103
       prefix: --rate
   - id: segmentation
-    type:
-      - 'null'
-      - string
-    doc: Chunk size and percentile for variance based segmentation
+    type: ['null', string]
+    doc: "Chunk size and percentile for variance based segmentation (chunk:percentile)"
     inputBinding:
-      position: 103
       prefix: --segmentation
-  - id: skippen
-    type:
-      - 'null'
-      - float
-    doc: Penalty for skipping position
-    inputBinding:
-      position: 103
-      prefix: --skippen
   - id: trim
-    type:
-      - 'null'
-      - string
-    doc: Number of samples to trim, as start:end
+    type: ['null', string]
+    doc: "Number of samples to trim, as start:end"
     inputBinding:
-      position: 103
       prefix: --trim
-  - id: output_file_path
-    type: string
-    doc: Write to file rather than stdout
-    inputBinding:
-      position: 104
-      prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (used when --output is not set)
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Write to file rather than stdout
+    type: ['null', File]
+    doc: Output file written with --output
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7
+stdout: scrappie_mappy.out

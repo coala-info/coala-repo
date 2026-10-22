@@ -1,5 +1,32 @@
 # seqtk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqtk_comp | PASS |  |
+| seqtk_cutN | PASS |  |
+| seqtk_dropse | PASS |  |
+| seqtk_famask | PASS |  |
+| seqtk_fqchk | PASS |  |
+| seqtk_gap | PASS |  |
+| seqtk_gc | PASS |  |
+| seqtk_hety | PASS |  |
+| seqtk_hpc | PASS |  |
+| seqtk_listhet | PASS |  |
+| seqtk_mergefa | PASS |  |
+| seqtk_mergepe | PASS |  |
+| seqtk_mutfa | PASS |  |
+| seqtk_randbase | PASS |  |
+| seqtk_rename | PASS |  |
+| seqtk_sample | PASS |  |
+| seqtk_seq | PASS |  |
+| seqtk_size | PASS |  |
+| seqtk_split | PASS |  |
+| seqtk_subseq | PASS |  |
+| seqtk_telo | PASS |  |
+| seqtk_trimfq | PASS |  |
+
 ## seqtk_seq
 
 ### Tool Description
@@ -424,6 +451,28 @@ A tool for processing biological sequences (HPC version).
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
 INFO:    Using cached SIF image
 [E::stk_hpc] failed to open the input file/stream.
+```
+
+## seqtk_telo
+
+### Tool Description
+Identify telomere repeats in assemblies or long reads
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seqtk:1.5--h577a1d6_1
+- **Homepage**: https://github.com/lh3/seqtk
+- **Package**: https://anaconda.org/channels/bioconda/packages/seqtk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: seqtk telo [options] <in.fq>
+Options:
+  -m STR     motif [CCCTAA]
+  -p INT     penalty [1]
+  -d INT     max drop [2000]
+  -s INT     min score [300]
+  -P         print scoring
 ```
 
 ## Metadata

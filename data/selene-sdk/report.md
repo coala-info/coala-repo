@@ -1,5 +1,11 @@
 # selene-sdk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| selene-sdk_selene_sdk | PASS | trained a small CNN on real 5' UTR reporter data (GSM3130435 subset, 3000 sequences): test r2 0.65 |
+
 ## selene-sdk_selene_sdk
 
 ### Tool Description

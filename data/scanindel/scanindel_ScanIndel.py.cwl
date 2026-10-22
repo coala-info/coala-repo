@@ -7,14 +7,22 @@ doc: "ScanIndel is a tool for indel calling.\n\nTool homepage: https://github.co
 inputs:
   - id: config_file
     type: File
-    doc: Configuration file
+    doc: Config file with the BWA, BLAT and FreeBayes reference paths (relative to the working directory)
     inputBinding:
       position: 1
+      prefix: -p
   - id: sample_file
     type: File
-    doc: Sample file
+    doc: Sample list file (name and FASTQ or BAM paths, relative to the working directory)
     inputBinding:
       position: 2
+      prefix: -i
+  - id: input_files
+    type: File[]
+    doc: Read files (FASTQ or BAM) named in the sample file, staged in the working directory
+  - id: reference_dir
+    type: Directory
+    doc: Directory with the reference FASTA (with .fai), the BWA index and a BLAT folder with a .2bit file, as named in the config file
   - id: assembly_only
     type:
       - 'null'
@@ -148,6 +156,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: indel_vcfs
+    type:
+      type: array
+      items: File
+    outputBinding:
+      glob: '*.indel.vcf'
+  - id: realigned_bams
+    type:
+      type: array
+      items: File
+    outputBinding:
+      glob:
+        - '*.reads.bam'
+        - '*.contigs.bam'
   - id: output_dir_dir
     type:
       - 'null'
@@ -155,6 +177,12 @@ outputs:
     doc: setting the output directory
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_files)
+      - $(inputs.reference_dir)
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scanindel:1.3--py27_0

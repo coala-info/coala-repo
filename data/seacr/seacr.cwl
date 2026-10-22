@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: SEACR.sh
+baseCommand: SEACR_1.3.sh
 label: seacr
 doc: "SEACR is a highly selective peak caller for CUT&RUN tool that uses the global
   distribution of background signal to determine a threshold for peak calling.\n\n
@@ -12,7 +12,9 @@ inputs:
     inputBinding:
       position: 1
   - id: control
-    type: string
+    type:
+      - File
+      - string
     doc: Control (IgG) data bedgraph file OR a numeric threshold (0-1) representing
       the fraction of the top percentage of peaks to retain
     inputBinding:
@@ -28,12 +30,17 @@ inputs:
     doc: "Stringency level for peak calling. Options: 'relaxed' or 'stringent'"
     inputBinding:
       position: 4
-outputs:
   - id: output_prefix
+    type: string
+    doc: Output prefix
+    inputBinding:
+      position: 5
+outputs:
+  - id: peaks
     type: File
-    doc: Prefix for the output files
+    doc: Bed file of enriched regions (<output prefix>.<stringent|relaxed>.bed)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_prefix).*.bed
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seacr:1.3--hdfd78af_2

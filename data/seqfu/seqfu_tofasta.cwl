@@ -1,14 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tofasta
+baseCommand:
+  - seqfu
+  - tofasta
 label: seqfu_tofasta
-doc: "Convert various sequence formats to FASTA format.\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
+doc: "Convert various sequence formats (FASTA, FASTQ, GenBank, EMBL, GFF, GFA, Clustal,\nStockholm) to\
+  \ FASTA format.\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
   - id: input_files
     type:
       type: array
       items: File
-    doc: Input files in various sequence formats
+    doc: Input files (can be gzip compressed)
     inputBinding:
       position: 1
   - id: replace_iupac
@@ -35,6 +38,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --to-uppercase
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: 'Write output to FILE (default: stdout); checks for duplicate IDs across all files'
+    inputBinding:
+      position: 102
+      prefix: --output
   - id: verbose
     type:
       - 'null'
@@ -43,22 +54,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: 'Write output to FILE (default: stdout)'
-    inputBinding:
-      position: 103
-      prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_file
     type:
       - 'null'
       - File
-    doc: 'Write output to FILE (default: stdout)'
+    doc: FASTA output file
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqfu:1.23.0--hfd12232_0
+stdout: seqfu_tofasta.out

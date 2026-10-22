@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sccmec-main
+baseCommand: sccmec
 label: sccmec
 doc: "typing SCCmec cassettes in assemblies\n\nTool homepage: https://github.com/rpetit3/sccmec"
 inputs:
@@ -67,7 +67,9 @@ inputs:
       position: 101
       prefix: --prefix
   - id: regions
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Query regions in FASTA format
     inputBinding:
       position: 101
@@ -81,7 +83,9 @@ inputs:
       position: 101
       prefix: --silent
   - id: targets
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Query targets in FASTA format
     inputBinding:
       position: 101
@@ -95,13 +99,17 @@ inputs:
       position: 101
       prefix: --verbose
   - id: yaml_regions
-    type: File
+    type:
+      - 'null'
+      - File
     doc: YAML file documenting the regions and types
     inputBinding:
       position: 101
       prefix: --yaml-regions
   - id: yaml_targets
-    type: File
+    type:
+      - 'null'
+      - File
     doc: YAML file documenting the targets and types
     inputBinding:
       position: 101
@@ -116,7 +124,7 @@ outputs:
       items: File
     doc: Files written with the prefix given in prefix
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: "$((inputs.prefix ? inputs.prefix : 'sccmec') + '*')"
   - id: outdir_dir
     type:
       - 'null'
@@ -124,6 +132,8 @@ outputs:
     doc: Directory to write output
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sccmec:1.2.0--hdfd78af_0

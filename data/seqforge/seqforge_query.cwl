@@ -170,6 +170,15 @@ outputs:
     doc: Path to directory to store results.
     outputBinding:
       glob: $(inputs.output_dir_path)
+  - id: figures
+    type:
+      type: array
+      items: File
+    doc: Figures (sequence logos, heatmaps) that SeqForge writes into the working directory with --visualize
+    outputBinding:
+      glob:
+        - '*.png'
+        - '*.pdf'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

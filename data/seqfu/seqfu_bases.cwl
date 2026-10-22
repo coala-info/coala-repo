@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bases
+baseCommand:
+  - seqfu
+  - bases
 label: seqfu_bases
 doc: "Print the DNA bases, and %GC content, in the input files\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
@@ -9,57 +11,9 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input files
+    doc: Input FASTA/FASTQ files
     inputBinding:
       position: 1
-  - id: abspath
-    type:
-      - 'null'
-      - boolean
-    doc: Print absolute path
-    inputBinding:
-      position: 102
-      prefix: --abspath
-  - id: basename
-    type:
-      - 'null'
-      - boolean
-    doc: Print the basename of the file
-    inputBinding:
-      position: 102
-      prefix: --basename
-  - id: debug
-    type:
-      - 'null'
-      - boolean
-    doc: Debug output
-    inputBinding:
-      position: 102
-      prefix: --debug
-  - id: digits
-    type:
-      - 'null'
-      - int
-    doc: Number of digits to print
-    inputBinding:
-      position: 102
-      prefix: --digits
-  - id: header
-    type:
-      - 'null'
-      - boolean
-    doc: Print header
-    inputBinding:
-      position: 102
-      prefix: --header
-  - id: nice
-    type:
-      - 'null'
-      - boolean
-    doc: Print terminal table
-    inputBinding:
-      position: 102
-      prefix: --nice
   - id: raw_counts
     type:
       - 'null'
@@ -76,6 +30,46 @@ inputs:
     inputBinding:
       position: 102
       prefix: --thousands
+  - id: abspath
+    type:
+      - 'null'
+      - boolean
+    doc: Print absolute path
+    inputBinding:
+      position: 102
+      prefix: --abspath
+  - id: basename
+    type:
+      - 'null'
+      - boolean
+    doc: Print the basename of the file
+    inputBinding:
+      position: 102
+      prefix: --basename
+  - id: nice
+    type:
+      - 'null'
+      - boolean
+    doc: Print terminal table
+    inputBinding:
+      position: 102
+      prefix: --nice
+  - id: digits
+    type:
+      - 'null'
+      - int
+    doc: 'Number of digits to print [default: 2]'
+    inputBinding:
+      position: 102
+      prefix: --digits
+  - id: header
+    type:
+      - 'null'
+      - boolean
+    doc: Print header
+    inputBinding:
+      position: 102
+      prefix: --header
   - id: verbose
     type:
       - 'null'
@@ -84,6 +78,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Debug output
+    inputBinding:
+      position: 102
+      prefix: --debug
 outputs:
   - id: stdout
     type: stdout

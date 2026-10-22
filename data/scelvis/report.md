@@ -1,5 +1,12 @@
 # scelvis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scelvis_convert | PASS | Cell Ranger example hgmm_1k from the scelvis repo |
+| scelvis_run | Not completed | long-running web server; not run |
+
 ## scelvis_convert
 
 ### Tool Description

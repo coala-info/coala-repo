@@ -1,15 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: count
+baseCommand:
+  - seqfu
+  - count
 label: seqfu_count
 doc: "Count sequences in paired-end aware format\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
-  - id: inputfile
+  - id: input_files
     type:
       - 'null'
       - type: array
         items: File
-    doc: Input files
+    doc: Input FASTA/FASTQ files
     inputBinding:
       position: 1
   - id: abs_path
@@ -28,30 +30,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --basename
-  - id: for_tag
-    type:
-      - 'null'
-      - string
-    doc: Forward tag
-    inputBinding:
-      position: 102
-      prefix: --for-tag
-  - id: rev_tag
-    type:
-      - 'null'
-      - string
-    doc: Reverse tag
-    inputBinding:
-      position: 102
-      prefix: --rev-tag
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Working threads
-    inputBinding:
-      position: 102
-      prefix: --threads
   - id: unpair
     type:
       - 'null'
@@ -60,6 +38,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unpair
+  - id: for_tag
+    type:
+      - 'null'
+      - string
+    doc: 'Forward tag [default: auto]'
+    inputBinding:
+      position: 102
+      prefix: --for-tag
+  - id: rev_tag
+    type:
+      - 'null'
+      - string
+    doc: 'Reverse tag [default: auto]'
+    inputBinding:
+      position: 102
+      prefix: --rev-tag
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: 'Working threads [default: 4]'
+    inputBinding:
+      position: 102
+      prefix: --threads
   - id: verbose
     type:
       - 'null'
@@ -72,6 +74,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.input_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqfu:1.23.0--hfd12232_0

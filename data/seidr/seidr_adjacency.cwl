@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seidr_adjacency
+baseCommand:
+  - seidr
+  - adjacency
 label: seidr_adjacency
 doc: "Transform a SeidrFile into an adjacency matrix\n\nTool homepage: https://github.com/bschiffthaler/seidr"
 inputs:

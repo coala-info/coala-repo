@@ -1,5 +1,16 @@
 # scrappie CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scrappie_event_table | PASS |  |
+| scrappie_events | PASS |  |
+| scrappie_mappy | PASS |  |
+| scrappie_raw | PASS |  |
+| scrappie_seqmappy | PASS |  |
+| scrappie_squiggle | PASS |  |
+
 ## scrappie_events
 
 ### Tool Description
@@ -52,44 +63,6 @@ Mandatory or optional arguments to long options are also mandatory or optional
 for any corresponding short options.
 
 Report bugs to <tim.massingham@nanoporetech.com>.
-```
-
-## scrappie
-### Tool Description
-Scrappie is a technology demonstrator for the Oxford Nanopore Technologies Limited Research Algorithms group.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7
-- **Homepage**: https://github.com/nanoporetech/scrappie
-- **Package**: https://anaconda.org/channels/bioconda/packages/scrappie/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Scrappie is a technology demonstrator for the Oxford Nanopore Technologies
-Limited Research Algorithms group.
-
-Basic usage:
-* scrappie events        Base call from event based data.
-* scrappie help          Print general help or help about specific Scrappie command.
-* scrappie licence       Print licensing information.
-* scrappie raw           Base call directly from raw signal.
-* scrappie version       Print version information.
-* scrappie squiggle      Create approximate squiggle for sequence
-* scrappie mappy         Map signal to approximate squiggle
-* scrappie seqmappy      Map signal to sequence via basecall posteriors
-* scrappie event_table   Output table of events for read
-
-This project began life as a proof (bet) that a base caller could be written
-in a low level language in under 8 hours.  Some of the poor and just plain odd
-design decisions, along with the lack of documentation, are a result of its
-inception. In keeping with ONT's fish naming policy, the project was originally
-called Crappie.
-
-Scrappie's purpose is to demonstrate the next generation of base calling and, as
-such, may change drastically between releases and breaks backwards
-compatibility.  Newer versions may drop support of current features or change their
-behaviour.
 ```
 
 ## scrappie_raw

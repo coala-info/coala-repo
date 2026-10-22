@@ -1,27 +1,45 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: grep
+baseCommand:
+  - seqfu
+  - grep
 label: seqfu_grep
-doc: "Print sequences selected if they match patterns or contain oligonucleotides
-  using regular expressions.\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
+doc: "Print sequences selected if they match patterns or contain oligonucleotides\nusing regular expressions.\n\
+  \nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
   - id: input_files
     type:
       - 'null'
       - type: array
         items: File
-    doc: Input files containing sequences
+    doc: Input FASTA/FASTQ files
     inputBinding:
       position: 1
-  - id: append_positions
+  - id: name
+    type:
+      - 'null'
+      - string
+    doc: String required inside the sequence name (see -f)
+    inputBinding:
+      position: 102
+      prefix: --name
+  - id: regex
+    type:
+      - 'null'
+      - string
+    doc: Pattern to be matched in sequence name
+    inputBinding:
+      position: 102
+      prefix: --regex
+  - id: comment
     type:
       - 'null'
       - boolean
-    doc: Append matching positions to the sequence comment
+    doc: Also search -n and -r in the comment
     inputBinding:
       position: 102
-      prefix: --append-pos
-  - id: full_match
+      prefix: --comment
+  - id: full
     type:
       - 'null'
       - boolean
@@ -29,6 +47,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --full
+  - id: word
+    type:
+      - 'null'
+      - boolean
+    doc: The string or pattern is a whole word
+    inputBinding:
+      position: 102
+      prefix: --word
   - id: ignore_case
     type:
       - 'null'
@@ -37,6 +63,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ignore-case
+  - id: oligo
+    type:
+      - 'null'
+      - string
+    doc: Oligonucleotide required in the sequence, using ambiguous bases and reverse complement
+    inputBinding:
+      position: 102
+      prefix: --oligo
+  - id: append_pos
+    type:
+      - 'null'
+      - boolean
+    doc: Append matching positions to the sequence comment
+    inputBinding:
+      position: 102
+      prefix: --append-pos
+  - id: max_mismatches
+    type:
+      - 'null'
+      - int
+    doc: 'Maximum mismatches allowed [default: 0]'
+    inputBinding:
+      position: 102
+      prefix: --max-mismatches
+  - id: min_matches
+    type:
+      - 'null'
+      - int
+    doc: 'Minimum number of matches [default: oligo-length]'
+    inputBinding:
+      position: 102
+      prefix: --min-matches
   - id: invert_match
     type:
       - 'null'
@@ -45,55 +103,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --invert-match
-  - id: max_mismatches
-    type:
-      - 'null'
-      - int
-    doc: Maximum mismatches allowed
-    inputBinding:
-      position: 102
-      prefix: --max-mismatches
-  - id: min_matches
-    type:
-      - 'null'
-      - string
-    doc: Minimum number of matches
-    inputBinding:
-      position: 102
-      prefix: --min-matches
-  - id: name_string
-    type:
-      - 'null'
-      - string
-    doc: String required inside the sequence name (see -f)
-    inputBinding:
-      position: 102
-      prefix: --name
-  - id: oligo_sequence
-    type:
-      - 'null'
-      - string
-    doc: Oligonucleotide required in the sequence, using ambiguous bases and 
-      reverse complement
-    inputBinding:
-      position: 102
-      prefix: --oligo
-  - id: regex_pattern
-    type:
-      - 'null'
-      - string
-    doc: Pattern to be matched in sequence name
-    inputBinding:
-      position: 102
-      prefix: --regex
-  - id: search_comment
-    type:
-      - 'null'
-      - boolean
-    doc: Also search -n and -r in the comment
-    inputBinding:
-      position: 102
-      prefix: --comment
   - id: verbose
     type:
       - 'null'
@@ -102,14 +111,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
-  - id: word_match
-    type:
-      - 'null'
-      - boolean
-    doc: The string or pattern is a whole word
-    inputBinding:
-      position: 102
-      prefix: --word
 outputs:
   - id: stdout
     type: stdout

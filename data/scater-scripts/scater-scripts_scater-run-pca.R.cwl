@@ -14,6 +14,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --detect-outliers
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
   - id: exprs_values
     type:
       - 'null'
@@ -73,6 +74,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --scale-features
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
   - id: selected_variables
     type:
       - 'null'
@@ -91,6 +93,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-coldata
+      valueFrom: '$(self ? "TRUE" : "FALSE")'
   - id: output_object_file_path
     type: string
     inputBinding:

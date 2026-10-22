@@ -1,5 +1,12 @@
 # scelestial CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scelestial | PASS | tree matches the repo example output; the -include-root option crashes (segmentation fault) in the tool |
+| scelestial-synthesis | PASS | synthetic data: the tool is a simulator; output has the requested 30 loci for 8 cells |
+
 ## scelestial
 
 ### Tool Description
@@ -29,5 +36,45 @@ usage: scelestial [options] <input >output
                          In the output line "u v w" u is the parent and v is the child node.
   -no-internal-sample    Move all samples to leaf nodes.
                          If -root is also present, a neighbor of root-index is chosen as the root.
+```
+
+## scelestial-synthesis
+
+### Tool Description
+Simulates single-cell tumor sequencing data (clone tree, true and noisy sequences) for testing Scelestial.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scelestial:1.2--h9948957_4
+- **Homepage**: https://github.com/hzi-bifo/scelestial-paper-materials-devel
+- **Package**: https://anaconda.org/channels/bioconda/packages/scelestial/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Allowed options:
+  --help                                produce help message
+  --sample arg                          number of sampled cells
+  --step arg                            number of simulation steps
+  --locus arg                           number of locuses
+  --aic arg                             advantage increase rate
+  --adc arg                             advantage decrease rate
+  --akc arg                             advantage keep rate
+  --seed arg (=7)                       random seed number
+  --seed-error arg (=7)                 random seed for sequencing error
+  --step-mutation-rate arg (=100)       average number of mutations in each 
+                                        step
+  --ais arg (=1)                        advantage increase step
+  --ads arg (=1)                        advantage decrease step
+  --fclone arg                          clones file name
+  --fseq arg                            seq file name
+  --fseqtrue arg                        seq (without error) filename
+  --ftree arg                           tree file name
+  --mvrate arg (=0.20000000000000001)   missing value rate
+  --zorate arg (=0.10000000000000001)   zero to one rate
+  --ozrate arg (=0.20000000000000001)   one to zero rate
+  --remove-dup arg (=0)                 remove duplicate sequences
+  --treeGrowFilterOutChildSize arg (=0) max child number of the clone tree, 
+                                        0=inactive
+  --samplingMethod arg (=0)             Sampling method: advantage/uniform
 ```
 

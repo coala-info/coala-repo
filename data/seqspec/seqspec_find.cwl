@@ -12,7 +12,9 @@ inputs:
     inputBinding:
       position: 1
   - id: id
-    type: string
+    type:
+      - 'null'
+      - string
     doc: ID to search for
     inputBinding:
       position: 102

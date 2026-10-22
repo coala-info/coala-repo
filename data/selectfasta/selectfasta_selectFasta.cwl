@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/selectFasta
+baseCommand: selectFasta
 label: selectfasta_selectFasta
 doc: "Select fastQ or fasta reads from list, -list or -random is required\n\nTool
   homepage: https://github.com/andvides/selectFasta/"

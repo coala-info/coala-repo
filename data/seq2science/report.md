@@ -1,5 +1,13 @@
 # seq2science CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seq2science_explain | Not completed | pipeline, skipped: seq2science is a Snakemake workflow |
+| seq2science_init | Not completed | pipeline, skipped: seq2science is a Snakemake workflow |
+| seq2science_run | Not completed | pipeline, skipped: seq2science is a Snakemake workflow |
+
 ## seq2science_init
 
 ### Tool Description

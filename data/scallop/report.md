@@ -1,5 +1,11 @@
 # scallop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scallop | PASS |  |
+
 ## scallop
 
 ### Tool Description

@@ -1,5 +1,39 @@
 # seidr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seidr_adjacency | PASS |  |
+| seidr_aggregate | PASS |  |
+| seidr_anoverence | Not completed | no real experiment metadata: with planted all-NA metadata the tool writes only nan, and the docs say it is not recommended |
+| seidr_backbone | PASS |  |
+| seidr_cluster-enrichment | PASS |  |
+| seidr_compare | PASS |  |
+| seidr_convert | PASS |  |
+| seidr_correlation | PASS |  |
+| seidr_el-ensemble | PASS |  |
+| seidr_genie3 | PASS |  |
+| seidr_graphstats | PASS |  |
+| seidr_import | PASS |  |
+| seidr_index | PASS |  |
+| seidr_llr-ensemble | PASS |  |
+| seidr_mi | PASS |  |
+| seidr_narromi | PASS |  |
+| seidr_neighbours | Failed | tool bug: with --genes the edges go to standard output and the --outfile file is left empty, so the documented output option is silently ignored; the default mode is correct. |
+| seidr_pcor | PASS |  |
+| seidr_plsnet | PASS |  |
+| seidr_reheader | PASS |  |
+| seidr_resolve | PASS |  |
+| seidr_roc | PASS |  |
+| seidr_sample | PASS |  |
+| seidr_stats | PASS |  |
+| seidr_svm-ensemble | PASS |  |
+| seidr_threshold | PASS |  |
+| seidr_tigress | PASS |  |
+| seidr_tomsimilarity | PASS |  |
+| seidr_view | PASS |  |
+
 ## seidr_import
 
 ### Tool Description
@@ -600,6 +634,640 @@ Common Options:
   -T [ --tempdir ] arg (=auto)  Directory to store temporary data
 ```
 
+
+## seidr_anoverence
+
+### Tool Description
+ANOVERENCE network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+ANOVERENCE implementation for Seidr:
+
+Required Options:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+  -e [ --features ] arg                 File containing experiment metadata
+
+ANOVERENCE specific Options:
+  -w [ --weight ] arg (=1.0)            Weight for knockout genes
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=anova_scores.tsv)
+                                        Output file path
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_correlation
+
+### Tool Description
+Pearson/Spearman correlation network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Pearson/Spearman correlation for Seidr:
+
+Required Options:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+Correlation specific Options:
+  -m [ --method ] arg (=pearson)        Correlation method
+  -a [ --absolute ]                     Report absolute values
+  -s [ --scale ]                        (deprecated) Transform data to z-scores
+  --no-scale                            Do not transform data to z-scores
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=<method>_scores.tsv)
+                                        Output file path
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_el-ensemble
+
+### Tool Description
+Elastic net ensemble network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Elastic net ensemble implementation for Seidr:
+
+Required Options:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+ElNet Options:
+  -s [ --scale ]                        (deprecated) Transform data to z-scores
+  --no-scale                            Do not transform data to z-scores
+  -n [ --nlambda ] arg (=10)            The maximum number of lambda values
+  -l [ --min-lambda ] arg (=0.3)        The minimum lambda as a fraction of the
+                                        maximum.
+  -a [ --alpha ] arg (=0.3)             The elastic net mixing value alpha. 1.0
+                                        is LASSO, 0 is Ridge.
+
+Bootstrap Options:
+  -e [ --ensemble ] arg (=1000)         The ensemble size
+  -p [ --min-predictor-size ] arg (=20% of predictors)
+                                        The minimum absolute number of 
+                                        predictors (genes) to be sampled.
+  -P [ --max-predictor-size ] arg (=80% of predictors)
+                                        The maximum absolute number of 
+                                        predictors (genes) to be sampled
+  -x [ --min-experiment-size ] arg (=20% of experiments)
+                                        The minimum absolute number of 
+                                        experiments (samples) to be sampled
+  -X [ --max-experiment-size ] arg (=80% of experiments)
+                                        The maximum absolute number of 
+                                        experiments (samples) to be sampled
+
+MPI Options:
+  -B [ --batch-size ] arg (=0)          Number of genes in MPI batch
+  -T [ --tempdir ] arg                  Temporary directory path
+
+OpenMP Options:
+  -O [ --threads ] arg (=20)            Number of OpenMP threads per MPI task
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=elnet_scores.tsv)
+                                        Output file path
+  --save-resume arg                     Path to a file that stores job resume 
+                                        info.
+  --resume-from arg                     Try to resume job from this file.
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_genie3
+
+### Tool Description
+GENIE3 random forest network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+GENIE3 implementation for Seidr:
+
+Required:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+GENIE3 Options:
+  -s [ --scale ]                        (deprecated) Transform data to z-scores
+  --no-scale                            Do not transform data to z-scores
+  -N [ --min-node-size ] arg (=5)       Minimum node size
+  -p [ --min-prop ] arg (=0.1)          Minimal proportion in random forest
+  -a [ --alpha ] arg (=0.5)             Alpha value for random forests
+
+Bootstrap Options:
+  -n [ --ntree ] arg (=1000)            Number of random forest trees to grow
+  -m [ --mtry ] arg (=sqrt(m))          Number of features to sample in each 
+                                        tree
+
+MPI Options:
+  -B [ --batch-size ] arg (=0)          Number of genes in MPI batch
+  -T [ --tempdir ] arg                  Temporary directory path
+
+OpenMP Options:
+  -O [ --threads ] arg (=20)            Number of OpenMP threads per MPI task
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=genie3_scores.tsv)
+                                        Output file path
+  --save-resume arg                     Path to a file that stores job resume 
+                                        info.
+  --resume-from arg                     Try to resume job from this file.
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_llr-ensemble
+
+### Tool Description
+Linear support vector regression (LLR) ensemble network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+NIMEFI SVM implementation for Seidr:
+
+Required Options:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+SVM options:
+  -s [ --scale ]                        (deprecated) Transform data to z-scores
+  --no-scale                            Do not transform data to z-scores
+  -C [ --penalty ] arg (=1)             Penalty C value
+  -l [ --tol ] arg (=0.001)             Epsilon/tolerance (stopping criterion)
+  -E [ --eps ] arg (=0.1)               Epsilon (for EPSILON_SVR)
+  -S [ --solver ] arg (=L2R_L2LOSS_SVR) SVM solver to use [L2R_L2LOSS_SVR, 
+                                        L2R_L2LOSS_SVR_DUAL, 
+                                        L2R_L1LOSS_SVR_DUAL]
+
+Bootstrap Options:
+  -e [ --ensemble ] arg (=1000)         The ensemble size
+  -p [ --min-predictor-size ] arg (=20% of predictors)
+                                        The minimum absolute number of 
+                                        predictors (genes) to be sampled.
+  -P [ --max-predictor-size ] arg (=80% of predictors)
+                                        The maximum absolute number of 
+                                        predictors (genes) to be sampled
+  -x [ --min-experiment-size ] arg (=20% of experiments)
+                                        The minimum absolute number of 
+                                        experiments (samples) to be sampled
+  -X [ --max-experiment-size ] arg (=80% of experiments)
+                                        The maximum absolute number of 
+                                        experiments (samples) to be sampled
+
+MPI Options:
+  -B [ --batch-size ] arg (=0)          Number of genes in MPI batch
+  -T [ --tempdir ] arg                  Temporary directory path
+
+OpenMP Options:
+  -O [ --threads ] arg (=20)            Number of OpenMP threads per MPI task
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=llr_scores.tsv)
+                                        Output file path
+  --save-resume arg                     Path to a file that stores job resume 
+                                        info.
+  --resume-from arg                     Try to resume job from this file.
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_mi
+
+### Tool Description
+Mutual information based network inference for Seidr (RAW, CLR, ARACNE)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+MI based algorithms for seidr.
+These include post processing schemes like CLR or DPI (==ARACNE).:
+
+Required:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+MI Options:
+  -s [ --spline ] arg (=3)              Spline order
+  -b [ --bins ] arg (=auto)             Number of bins
+  -M [ --mi-file ] arg                  Save/load raw MI to/from this file
+  -m [ --mode ] arg (=RAW)              Post processing [RAW, CLR, ARACNE]
+
+MPI Options:
+  -B [ --batch-size ] arg (=0)          Number of genes in MPI batch
+  -T [ --tempdir ] arg                  Temporary directory path
+
+OpenMP Options:
+  -O [ --threads ] arg (=20)            Number of OpenMP threads per MPI task
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=mi_scores.tsv) Output file path
+  --save-resume arg                     Path to a file that stores job resume 
+                                        info.
+  --resume-from arg                     Try to resume job from this file.
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_narromi
+
+### Tool Description
+NARROMI network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Narromi implementation for Seidr:
+
+Required:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+NARROMI Options:
+  -m [ --algorithm ] arg (=simplex)     Method for linear programming 
+                                        optimisaton. One of 'interior-point' or
+                                        'simplex'.
+  -a [ --alpha ] arg (=0.05)            Alpha cutoff for MI selection.
+
+MPI Options:
+  -B [ --batch-size ] arg (=0)          Number of genes in MPI batch
+  -T [ --tempdir ] arg                  Temporary directory path
+
+OpenMP Options:
+  -O [ --threads ] arg (=20)            Number of OpenMP threads per MPI task
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=narromi_scores.tsv)
+                                        Output file path
+  --save-resume arg                     Path to a file that stores job resume 
+                                        info.
+  --resume-from arg                     Try to resume job from this file.
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_pcor
+
+### Tool Description
+Partial correlation network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Partial correlation for Seidr:
+
+Required Options:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+PCor Options:
+  -a [ --absolute ]                     Report absolute values
+  -s [ --scale ]                        (deprecated) Transform data to z-scores
+  --no-scale                            Do not transform data to z-scores
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=pcor_scores.tsv)
+                                        Output file path
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_plsnet
+
+### Tool Description
+PLSNET partial least squares network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+PLSNET implementation for Seidr:
+
+Required Options:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+PLSNET Options:
+  -s [ --scale ]                        (deprecated) Transform data to z-scores
+  -S [ --no-scale ]                     Do not transform data to z-scores
+  -c [ --components ] arg (=5)          The number of PLS components to be 
+                                        considered
+
+Bootstrap Options:
+  -e [ --ensemble ] arg (=1000)         The ensemble size
+  -p [ --predictor-size ] arg (=sqrt(m))
+                                        The number of predictors (genes) to be 
+                                        sampled.
+
+MPI Options:
+  -B [ --batch-size ] arg (=0)          Number of genes in MPI batch
+  -T [ --tempdir ] arg                  Temporary directory path
+
+OpenMP Options:
+  -O [ --threads ] arg (=20)            Number of OpenMP threads per MPI task
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=plsnet_scores.tsv)
+                                        Output file path
+  --save-resume arg                     Path to a file that stores job resume 
+                                        info.
+  --resume-from arg                     Try to resume job from this file.
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_svm-ensemble
+
+### Tool Description
+SVM ensemble network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+NIMEFI SVM implementation for Seidr:
+
+Required:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+SVM options:
+  -s [ --scale ]                        (deprecated) Transform data to z-scores
+  --no-scale                            Do not transform data to z-scores
+  -y [ --type ] arg (=EPSILON_SVR)      SVM type [NU_SVR, EPSILON_SVR]
+  -k [ --kernel ] arg (=LINEAR)         SVM kernel [LINEAR, POLY, RBF, SIGMOID]
+  -d [ --degree ] arg (=3)              Polynomial degree (for POLY kernel)
+  -G [ --gamma ] arg (=0.01)            Kernel coefficient for POLY/RBF/SIGMOID
+                                        kernels
+  -c [ --coef ] arg (=0.01)             Independent term in kernel function 
+                                        (for POLY/SIGMOID kernels)
+  -n [ --nu ] arg (=0.5)                nu value (for NU_SVR)
+  -C [ --penalty ] arg (=1)             Penalty C value
+  -l [ --tol ] arg (=0.001)             Epsilon/tolerance (stopping criterion)
+  -E [ --eps ] arg (=0.1)               Epsilon (for EPSILON_SVR)
+  -S [ --shrinking ] arg (=1)           Whether to use the shrinking heuristic 
+                                        [0: off, 1: on]
+
+Bootstrap Options:
+  -e [ --ensemble ] arg (=1000)         The ensemble size
+  -p [ --min-predictor-size ] arg (=20% of predictors)
+                                        The minimum absolute number of 
+                                        predictors (genes) to be sampled.
+  -P [ --max-predictor-size ] arg (=80% of predictors)
+                                        The maximum absolute number of 
+                                        predictors (genes) to be sampled
+  -x [ --min-experiment-size ] arg (=20% of experiments)
+                                        The minimum absolute number of 
+                                        experiments (samples) to be sampled
+  -X [ --max-experiment-size ] arg (=80% of experiments)
+                                        The maximum absolute number of 
+                                        experiments (samples) to be sampled
+
+MPI Options:
+  -B [ --batch-size ] arg (=0)          Number of genes in MPI batch
+  -T [ --tempdir ] arg                  Temporary directory path
+
+OpenMP Options:
+  -O [ --threads ] arg (=20)            Number of OpenMP threads per MPI task
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=svm_scores.tsv)
+                                        Output file path
+  --save-resume arg                     Path to a file that stores job resume 
+                                        info.
+  --resume-from arg                     Try to resume job from this file.
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_tigress
+
+### Tool Description
+TIGRESS network inference for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+TIGRESS implementation for Seidr:
+
+Required Options:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+TIGRESS Options:
+  -s [ --scale ]                        (deprecated) Transform data to z-scores
+  -S [ --no-scale ]                     Do not transform data to z-scores
+  -n [ --nlambda ] arg (=10)            The maximum number of lambda values
+  -l [ --min-lambda ] arg (=0.3)        The minimum lambda as a fraction of the
+                                        maximum.
+  --allow-low-var                       Disable low variance filter when 
+                                        subsampling data (at your own risk)
+
+Bootstrap Options:
+  -e [ --ensemble ] arg (=1000)         The ensemble size
+
+MPI Options:
+  -B [ --batch-size ] arg (=0)          Number of genes in MPI batch
+  -T [ --tempdir ] arg                  Temporary directory path
+
+OpenMP Options:
+  -O [ --threads ] arg (=20)            Number of OpenMP threads per MPI task
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=tigress_scores.tsv)
+                                        Output file path
+  --save-resume arg                     Path to a file that stores job resume 
+                                        info.
+  --resume-from arg                     Try to resume job from this file.
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -V [ --version ]                      Print the program version
+```
+
+## seidr_tomsimilarity
+
+### Tool Description
+Topological overlap matrix as implemented in WGCNA, for Seidr
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seidr:0.14.2--mpi_mpich_h0475154
+- **Homepage**: https://github.com/bschiffthaler/seidr
+- **Package**: https://anaconda.org/channels/bioconda/packages/seidr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Topological overlap matrix as implemented in WGCNA:
+
+Required Options:
+  -i [ --infile ] arg                   The expression table (without headers)
+  -g [ --genes ] arg                    File containing gene names
+
+Correlation specific Options:
+  -m [ --method ] arg (=pearson)        Correlation method: [bicor, pearson]
+  -a [ --absolute ]                     Report absolute values
+  -s [ --scale ]                        (deprecated) Transform data to z-scores
+  -S [ --no-scale ]                     Do not transform data to z-scores
+  -b [ --sft ] arg (=0)                 Soft threshold to apply (0 for 
+                                        autodetection)
+  -M [ --max-power ] arg (=30)          Maximum power to check for SFT test in 
+                                        auto detection mode
+  -c [ --sft-cutoff ] arg (=0.8)        Soft threshold R^2 cutoff in 
+                                        autodetection mode
+  -T [ --tom-type ] arg (=signed)       TOM type: unsigned, signed, 
+                                        signed-hybrid
+
+Common Options:
+  -h [ --help ]                         Show this help message
+  -t [ --targets ] arg                  File containing gene names of genes of 
+                                        interest. The network will only be 
+                                        calculated using these as the sources 
+                                        of potential connections.
+  -o [ --outfile ] arg (=tom_scores.tsv)
+                                        Output file path
+  -v [ --verbosity ] arg (=3)           Verbosity level (lower is less verbose)
+  -f [ --force ]                        Force overwrite if output already 
+                                        exists
+  -V [ --version ]                      Print the program version
+```
 
 ## Metadata
 - **Skill**: generated

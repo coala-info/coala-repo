@@ -1,9 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - miraligner.jar
+  - miraligner
 label: seqbuster_miraligner
 doc: "miraligner is a tool for microRNA alignment and isomiR identification.\n\nTool
   homepage: https://github.com/lpantano/seqbuster"
@@ -92,16 +90,30 @@ inputs:
       prefix: -trim
   - id: output_path
     type: string
-    doc: ' output'
+    doc: Output prefix; the tool writes <output>.mirna, <output>.mirna.opt and <output>.mirna.nomap
     inputBinding:
       position: 102
       prefix: -o
 outputs:
   - id: output
     type: File
-    doc: output file
+    doc: Annotated isomiR table (<output>.mirna)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path).mirna
+  - id: track_file
+    type:
+      - 'null'
+      - File
+    doc: Track file with information about the process (<output>.mirna.opt)
+    outputBinding:
+      glob: $(inputs.output_path).mirna.opt
+  - id: nomap_file
+    type:
+      - 'null'
+      - File
+    doc: Sequences that could not be annotated (<output>.mirna.nomap)
+    outputBinding:
+      glob: $(inputs.output_path).mirna.nomap
 requirements:
   - class: InlineJavascriptRequirement
 hints:

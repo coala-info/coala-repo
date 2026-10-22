@@ -1,5 +1,11 @@
 # scapp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scapp | PASS |  |
+
 ## scapp
 
 ### Tool Description

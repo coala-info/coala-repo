@@ -36,8 +36,6 @@ inputs:
       prefix: --min_identity
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: The fasta-file containing the reference sequences (one sequence per 
       targeted locus).
     inputBinding:

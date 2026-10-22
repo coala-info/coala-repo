@@ -2,117 +2,91 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: scTE
 label: scte_scTE
-doc: "hahaha...\n\nTool homepage: https://github.com/JiekaiLab/scTE"
+doc: "Single-cell transposable element expression: count genes and transposable elements per cell from a sorted CellRanger or STARsolo BAM file.\n\nTool homepage: https://github.com/JiekaiLab/scTE"
 inputs:
   - id: input_files
     type:
       type: array
       items: File
-    doc: "Input file: BAM/SAM file from CellRanger or STARsolo,\nthe file must be
-      sorted by chromosome position"
+    doc: Input BAM/SAM file from CellRanger or STARsolo; the file must be sorted by chromosome position
     inputBinding:
-      position: 1
+      prefix: -i
   - id: annotation_index
     type:
       type: array
       items: File
-    doc: "The filename of the index for the reference genome\nannotation."
+    doc: The index of the reference genome annotation made by scTE_build
     inputBinding:
-      position: 2
+      prefix: -x
   - id: genome
     type: string
     doc: '"hg38" for human, "mm10" for mouse'
     inputBinding:
-      position: 3
+      prefix: -g
   - id: output_prefix
     type: string
     doc: Output file prefix
     inputBinding:
-      position: 4
-  - id: expect_cells
-    type:
-      - 'null'
-      - int
-    doc: Expected number of cells.
+      prefix: -o
+  - id: min_genes
+    type: ['null', int]
+    doc: 'Minimum number of genes expressed required for a cell to pass filtering. Default: 200'
     inputBinding:
-      position: 105
+      prefix: --min_genes
+  - id: min_counts
+    type: ['null', int]
+    doc: 'Minimum number of counts required for a cell to pass filtering. Default: 2*min_genes'
+    inputBinding:
+      prefix: --min_counts
+  - id: expect_cells
+    type: ['null', int]
+    doc: 'Expected number of cells. Default: 10000'
+    inputBinding:
       prefix: --expect-cells
   - id: input_file_format
-    type:
-      - 'null'
-      - string
-    doc: 'Input file format: BAM or SAM. DEFAULT: BAM'
+    type: ['null', string]
+    doc: 'Input file format: BAM or SAM. Default: BAM'
     inputBinding:
-      position: 105
-      prefix: --format
-  - id: keep_tmp
-    type:
-      - 'null'
-      - boolean
-    doc: "Keep the _scTEtmp file, which is useful for debugging.\nDefault: False"
-    inputBinding:
-      position: 105
-      prefix: --keeptmp
-  - id: min_counts
-    type:
-      - 'null'
-      - int
-    doc: "Minimum number of counts required for a cell to pass\nfiltering."
-    inputBinding:
-      position: 105
-      prefix: --min_counts
-  - id: min_genes
-    type:
-      - 'null'
-      - int
-    doc: "Minimum number of genes expressed required for a cell\nto pass filtering."
-    inputBinding:
-      position: 105
-      prefix: --min_genes
-  - id: save_hdf5
-    type:
-      - 'null'
-      - boolean
-    doc: "Save the output as .h5ad formatted file instead of csv\nfile. Default: False"
-    inputBinding:
-      position: 105
-      prefix: --hdf5
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: 'Number of threads to use, Default: 1'
-    inputBinding:
-      position: 105
-      prefix: --thread
+      prefix: -f
   - id: use_cell_barcodes
-    type:
-      - 'null'
-      - boolean
-    doc: "Set to false to ignore for cell barcodes, it is useful\nfor SMART-seq. If
-      you set CB=False, it also will set\nUMI=False by default, Default: True"
+    type: ['null', string]
+    doc: 'True or False. Set to False to ignore cell barcodes, useful for SMART-seq; this also sets UMI to False by default. Default: True'
     inputBinding:
-      position: 105
       prefix: -CB
   - id: use_umi
-    type:
-      - 'null'
-      - boolean
-    doc: "Set to false to ignore for UMI, it is useful for\nSMART-seq. Default: True"
+    type: ['null', string]
+    doc: 'True or False. Set to False to ignore UMI, useful for SMART-seq. Default: True'
     inputBinding:
-      position: 105
       prefix: -UMI
+  - id: keep_tmp
+    type: ['null', string]
+    doc: 'True or False. Keep the _scTEtmp file, which is useful for debugging. Default: False'
+    inputBinding:
+      prefix: --keeptmp
+  - id: save_hdf5
+    type: ['null', string]
+    doc: 'True or False. Save the output as .h5ad formatted file instead of csv file. Default: False'
+    inputBinding:
+      prefix: --hdf5
+  - id: threads
+    type: ['null', int]
+    doc: 'Number of threads to use. Default: 1'
+    inputBinding:
+      prefix: --thread
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
   - id: output_prefix_files
-    type:
-      type: array
-      items: File
-    doc: Files written with the prefix given in output_prefix
+    type: File[]
+    doc: Count table written with the output prefix (.csv, or .h5ad with --hdf5 True)
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: ["$(inputs.output_prefix).csv", "$(inputs.output_prefix).h5ad"]
+  - id: tmp_dir
+    type: ['null', Directory]
+    doc: Temporary directory kept with --keeptmp True
+    outputBinding:
+      glob: $(inputs.output_prefix)_scTEtmp
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scte:1.0.0--pyhdfd78af_0

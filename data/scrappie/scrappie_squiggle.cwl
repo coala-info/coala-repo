@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: squiggle
+baseCommand: [scrappie, squiggle]
 label: scrappie_squiggle
 doc: "Scrappie squiggler\n\nTool homepage: https://github.com/nanoporetech/scrappie"
 inputs:
@@ -8,81 +8,49 @@ inputs:
     type:
       type: array
       items: File
-    doc: Input FASTA files
+    doc: "Input fasta files"
     inputBinding:
-      position: 1
-  - id: licence
-    type:
-      - 'null'
-      - boolean
-    doc: Print licensing information
-    inputBinding:
-      position: 102
-      prefix: --licence
-  - id: license
-    type:
-      - 'null'
-      - boolean
-    doc: Print licensing information
-    inputBinding:
-      position: 102
-      prefix: --license
+      position: 200
   - id: limit
-    type:
-      - 'null'
-      - int
-    doc: Maximum number of reads to call (0 is unlimited)
+    type: ['null', int]
+    doc: "Maximum number of reads to call (0 is unlimited)"
     inputBinding:
-      position: 102
       prefix: --limit
   - id: model
-    type:
-      - 'null'
-      - string
-    doc: 'Squiggle model to use: "squiggle_r94", "squiggle_r94_rna", "squiggle_r10"'
+    type: ['null', string]
+    doc: "Squiggle model to use: \"squiggle_r94\", \"squiggle_r94_rna\", \"squiggle_r10\""
     inputBinding:
-      position: 102
       prefix: --model
-  - id: no_rescale
-    type:
-      - 'null'
-      - boolean
-    doc: Rescale network output
+  - id: output
+    type: ['null', string]
+    doc: "Write to file rather than stdout"
     inputBinding:
-      position: 102
-      prefix: --no-rescale
+      prefix: --output
   - id: prefix
-    type:
-      - 'null'
-      - string
-    doc: Prefix to append to name of each read
+    type: ['null', string]
+    doc: "Prefix to append to name of each read"
     inputBinding:
-      position: 102
       prefix: --prefix
   - id: rescale
-    type:
-      - 'null'
-      - boolean
-    doc: Rescale network output
+    type: ['null', boolean]
+    doc: "Rescale network output"
     inputBinding:
-      position: 102
       prefix: --rescale
-  - id: output_file_path
-    type: string
-    doc: Write to file rather than stdout
+  - id: no_rescale
+    type: ['null', boolean]
+    doc: "Do not rescale network output"
     inputBinding:
-      position: 103
-      prefix: --output
+      prefix: --no-rescale
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (used when --output is not set)
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Write to file rather than stdout
+    type: ['null', File]
+    doc: Output file written with --output
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7
+stdout: scrappie_squiggle.out

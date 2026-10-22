@@ -1,5 +1,19 @@
 # seqforge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqforge_extract | PASS | 5 Portiera protein regions extracted and translated |
+| seqforge_extract-contig | PASS | full Portiera contig extracted for the query hits |
+| seqforge_fasta-metrics | PASS | nf-core Portiera and Haemophilus genomes; lengths 358242 and 1890469 bp, GC 26.17 and 38.05 percent |
+| seqforge_makedb | PASS | nf-core Portiera and Haemophilus genomes (nucleotide) and Portiera proteome (protein) |
+| seqforge_query | PASS | Portiera proteins searched against two genomes; DnaK found at 100 percent in Portiera; motif search checked on a protein database |
+| seqforge_sanitize | PASS | file names with spaces and brackets sanitized (input type widened to File or Directory) |
+| seqforge_search | PASS | real GenBank records; note: a requested field missing in a GenBank record is written under a column named field |
+| seqforge_split-fasta | PASS | nf-core Portiera proteome (258 sequences) split into 3 fragments |
+| seqforge_unique-headers | PASS | nf-core Portiera and Haemophilus genomes; headers got unique suffixes |
+
 ## seqforge_makedb
 
 ### Tool Description

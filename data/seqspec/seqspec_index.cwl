@@ -13,7 +13,9 @@ inputs:
     inputBinding:
       position: 1
   - id: ids
-    type: string
+    type:
+      - 'null'
+      - string
     doc: IDs
     inputBinding:
       position: 102

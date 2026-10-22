@@ -87,8 +87,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: "file of input files list (one file per line), if given, they are\n     \
-      \                                   appended to files from cli arguments"
+    doc: file of input files list (one file per line), if given, they are 
+      appended to files from cli arguments
     inputBinding:
       position: 101
       prefix: --infile-list
@@ -227,6 +227,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:

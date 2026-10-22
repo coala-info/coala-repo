@@ -19,8 +19,10 @@ inputs:
       position: 101
       prefix: --input-object
   - id: prediction_column
-    type: string
-    doc: Name of the metadata column that contains cell labels
+    type:
+      - 'null'
+      - string
+    doc: 'Name of the metadata column that contains cell labels (default: cell_type)'
     inputBinding:
       position: 101
       prefix: --prediction-column

@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/scmap-index-cluster.R
+baseCommand: scmap-index-cluster.R
 label: scmap-cli_scmap-index-cluster.R
 doc: "Index clustering information for scmap\n\nTool homepage: https://github.com/ebi-gene-expression-group/scmap-cli"
 inputs:

@@ -1,5 +1,14 @@
 # scpred-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scpred-cli_scpred_get_feature_space.R | PASS |  |
+| scpred-cli_scpred_get_std_output.R | PASS |  |
+| scpred-cli_scpred_predict.R | PASS |  |
+| scpred-cli_scpred_train_model.R | Failed | tool bug: --reclassify is ignored by the script (it passes reclassify = NULL); training on real PBMC data works |
+
 ## scpred-cli_scpred_get_feature_space.R
 
 ### Tool Description

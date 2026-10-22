@@ -99,7 +99,7 @@ inputs:
       - float
     doc: Set the exponential growth rate of all populations to a
     inputBinding:
-      position: 103
+      position: 4
       prefix: -G
   - id: global_population_size
     type:
@@ -117,7 +117,7 @@ inputs:
         items: float
     doc: Set the exponential growth rate of population i to a
     inputBinding:
-      position: 103
+      position: 4
       prefix: -g
   - id: init_file
     type:
@@ -135,7 +135,7 @@ inputs:
     doc: Use an island model with npop populations, where s1 to sn individuals are
       sampled each population. Optionally assume a symmetric migration rate of M.
     inputBinding:
-      position: 103
+      position: 3
       prefix: -I
   - id: migration_ij
     type:
@@ -144,7 +144,7 @@ inputs:
         items: float
     doc: Set the migration rate from population j to population i to M
     inputBinding:
-      position: 103
+      position: 4
       prefix: -m
   - id: migration_matrix
     type:
@@ -153,7 +153,7 @@ inputs:
         items: float
     doc: Sets the (backwards) migration matrix
     inputBinding:
-      position: 103
+      position: 4
       prefix: -ma
   - id: migration_rate
     type:
@@ -161,7 +161,7 @@ inputs:
       - float
     doc: Assume a symmetric migration rate of M/(npop-1)
     inputBinding:
-      position: 103
+      position: 4
       prefix: -M
   - id: mutation_rate
     type:
@@ -198,7 +198,7 @@ inputs:
         items: float
     doc: Set the present day size of population i to n*N0
     inputBinding:
-      position: 103
+      position: 4
       prefix: -n
   - id: print_model
     type:

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seidr_convert
+baseCommand:
+  - seidr
+  - convert
 label: seidr_convert
 doc: "Convert different text based formats\n\nTool homepage: https://github.com/bschiffthaler/seidr"
 inputs:

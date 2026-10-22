@@ -1,6 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: SCALOP
+stdout: scalop_stdout.txt
 label: scalop_SCALOP
 doc: "Sequence-based antibody Canonical LOoP structure annotation\n\nTool homepage:
   https://github.com/oxpig/SCALOP"
@@ -54,6 +55,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --hc
+  - id: input_file
+    type:
+      - 'null'
+      - File
+    doc: FASTA file with the antibody sequence(s)
+    inputBinding:
+      position: 100
+      prefix: -i
   - id: input_sequence
     type:
       - 'null'
@@ -144,12 +153,16 @@ inputs:
       position: 101
       prefix: --update
   - id: output_dir_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
+  - id: console_output
+    type: stdout
   - id: output_dir
     type:
       - 'null'

@@ -139,8 +139,7 @@ inputs:
   - id: infile_list
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: file of input files list (one file per line), if given, they are 
       appended to files from cli arguments
     inputBinding:
@@ -332,7 +331,28 @@ inputs:
     inputBinding:
       position: 105
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input BAM file(s); a .bai index next to the file is used when present
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    inputBinding:
+      position: 200
 outputs:
+  - id: report
+    type: stderr
+    doc: BAM statistics (--stat), histogram data (--dump) or plots; seqkit bam writes them
+      to standard error
+  - id: count_out
+    type:
+      - 'null'
+      - File
+    doc: read counts per reference saved with --count
+    outputBinding:
+      glob: $(inputs.count_file)
   - id: img_file
     type:
       - 'null'
@@ -359,3 +379,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1
+stderr: seqkit_bam_report.txt

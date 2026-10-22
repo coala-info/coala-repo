@@ -2,14 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - seqhax
-  - pair
+  - pairs
 label: seqhax_pairs
-doc: "Process and split paired-end sequence files in FASTA or FASTQ format.\n\nTool
-  homepage: https://github.com/kdmurray91/seqhax"
+doc: "(De)interleave paired end reads. Reads one interleaved file, or two files, and writes pairs, unpaired\
+  \ reads and statistics.\n\nTool homepage: https://github.com/kdmurray91/seqhax"
 inputs:
   - id: input_file
     type: File
-    doc: Input sequence file in FASTA or FASTQ format
+    doc: Sequence file in FASTA or FASTQ format
     inputBinding:
       position: 1
   - id: input_file_2
@@ -23,75 +23,78 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Force output to existing files
+    doc: Force output to existing files.
     inputBinding:
-      position: 103
+      position: 102
       prefix: -f
   - id: min_length
     type:
       - 'null'
       - int
-    doc: Minimum length of each read
+    doc: Minimum length of each read. [default 1]
     inputBinding:
-      position: 103
+      position: 102
       prefix: -l
-  - id: output_broken_paired_path
+  - id: output_mate_1_path
     type:
       - 'null'
       - string
-    doc: '"Broken paired" output, all reads'
+    doc: Pair first mate output
     inputBinding:
-      position: 104
-      prefix: -b
+      position: 102
+      prefix: '-1'
+  - id: output_mate_2_path
+    type:
+      - 'null'
+      - string
+    doc: Pair second mate output
+    inputBinding:
+      position: 102
+      prefix: '-2'
   - id: output_interleaved_pairs_path
     type:
       - 'null'
       - string
     doc: Interleaved pairs-only output
     inputBinding:
-      position: 105
+      position: 102
       prefix: -p
-  - id: output_mate_1_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_mate_1_path`
-    inputBinding:
-      position: 106
-      prefix: --output-mate-1
-  - id: output_mate_2_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_mate_2_path`
-    inputBinding:
-      position: 107
-      prefix: --output-mate-2
-  - id: output_statistics_path
-    type:
-      - 'null'
-      - string
-    doc: Output statistics to FILE.
-    inputBinding:
-      position: 108
-      prefix: -y
-  - id: output_strict_interleaved_path
-    type:
-      - 'null'
-      - string
-    doc: '"Strict interleaved" output, all reads'
-    inputBinding:
-      position: 109
-      prefix: -s
   - id: output_unpaired_path
     type:
       - 'null'
       - string
     doc: Unpaired read output
     inputBinding:
-      position: 110
+      position: 102
       prefix: -u
+  - id: output_strict_interleaved_path
+    type:
+      - 'null'
+      - string
+    doc: '"Strict interleaved" output, all reads'
+    inputBinding:
+      position: 102
+      prefix: -s
+  - id: output_broken_paired_path
+    type:
+      - 'null'
+      - string
+    doc: '"Broken paired" output, all reads'
+    inputBinding:
+      position: 102
+      prefix: -b
+  - id: output_statistics_path
+    type:
+      - 'null'
+      - string
+    doc: Output statistics to FILE.
+    inputBinding:
+      position: 102
+      prefix: -y
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output_mate_1
     type:
       - 'null'
@@ -138,7 +141,7 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output statistics to FILE
+    doc: Statistics output
     outputBinding:
       glob: $(inputs.output_statistics_path)
 requirements:
@@ -146,3 +149,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqhax:0.8.6--h43eeafb_1
+stdout: seqhax_pairs.out

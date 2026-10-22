@@ -86,6 +86,10 @@ outputs:
       glob: $(inputs.output_path)*
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scssim:1.0--h9948957_5

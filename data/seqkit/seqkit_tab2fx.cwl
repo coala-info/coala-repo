@@ -61,7 +61,7 @@ inputs:
   - id: infile_list
     type:
       - 'null'
-      - string
+      - File
     doc: file of input files list (one file per line), if given, they are 
       appended to files from cli arguments
     inputBinding:
@@ -115,6 +115,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input tabular file(s) with 2 or 3 columns
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:

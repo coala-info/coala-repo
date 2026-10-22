@@ -97,6 +97,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --follow-redirects
+  - id: no_follow_redirects
+    type:
+      - 'null'
+      - boolean
+    doc: Do not follow redirects
+    inputBinding:
+      position: 103
+      prefix: --no-follow-redirects
   - id: verify
     type:
       - 'null'
@@ -105,6 +113,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verify
+  - id: no_verify
+    type:
+      - 'null'
+      - boolean
+    doc: Do not verify SSL certificates
+    inputBinding:
+      position: 103
+      prefix: --no-verify
   - id: impersonate
     type:
       - 'null'
@@ -122,6 +138,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --stealthy-headers
+  - id: no_stealthy_headers
+    type:
+      - 'null'
+      - boolean
+    doc: Do not use stealthy browser headers
+    inputBinding:
+      position: 103
+      prefix: --no-stealthy-headers
   - id: ai_targeted
     type:
       - 'null'

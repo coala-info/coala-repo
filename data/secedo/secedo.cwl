@@ -25,7 +25,7 @@ inputs:
   - id: clustering
     type:
       - 'null'
-      - string
+      - File
     doc: If provided read the clustering from this file and only perform variant
       calling
     inputBinding:
@@ -61,7 +61,7 @@ inputs:
   - id: flagfile
     type:
       - 'null'
-      - string
+      - File
     doc: load flags from file
     inputBinding:
       position: 101
@@ -118,7 +118,7 @@ inputs:
   - id: map_file
     type:
       - 'null'
-      - string
+      - File
     doc: If not empty, maps positions in --reference_genome to positions in the 
       haploid genome that --reference_genome is based on (e.g. to GRCh38)
     inputBinding:
@@ -153,7 +153,7 @@ inputs:
   - id: merge_file
     type:
       - 'null'
-      - string
+      - File
     doc: File containing cell grouping. Cells in the same group are treated as 
       if they were a single cell. Useful for artificially increasing coverage 
       for testing.
@@ -197,7 +197,7 @@ inputs:
   - id: pos_file
     type:
       - 'null'
-      - string
+      - File
     doc: When present, only consider positions in this file. The file must have 
       2 columns, first one is chromosome id, second is position.
     inputBinding:
@@ -206,7 +206,7 @@ inputs:
   - id: reference_genome
     type:
       - 'null'
-      - string
+      - File
     doc: The genome against which variants are called, if provided. The fasta 
       file must have 2x24 sections, with the maternal chromosome being followed 
       by the paternal chromosome
@@ -280,7 +280,7 @@ inputs:
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type: Directory
@@ -288,6 +288,11 @@ outputs:
     outputBinding:
       glob: $(inputs.output_dir_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir_path)
+        entry: "$({class: 'Directory', listing: []})"
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

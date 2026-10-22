@@ -1,5 +1,13 @@
 # scssim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scssim_genreads | Not completed | the run never finished: genreads stays in the MALBAC amplification step with no output on a 20 kb, a 100 kb and a 16 Mb genome (1 to 15 minutes) |
+| scssim_learn | Failed | image problem: samtools is not in the image ("samtools: command not found"), so the profile has nan rates |
+| scssim_simuvars | PASS | reference is real chr20 (first 16 Mb); the variation list is the tool's own example list |
+
 ## scssim_simuvars
 
 ### Tool Description

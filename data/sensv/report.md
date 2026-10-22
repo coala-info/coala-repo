@@ -1,5 +1,11 @@
 # sensv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sensv | Not completed | needs the full GRCh37 human reference (about 3 GB) and human long-read data; too heavy |
+
 ## sensv
 
 ### Tool Description

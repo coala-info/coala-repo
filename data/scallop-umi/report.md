@@ -1,5 +1,11 @@
 # scallop-umi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scallop-umi | PASS |  |
+
 ## scallop-umi
 
 ### Tool Description

@@ -194,6 +194,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_dir
+    type: Directory
+    doc: directory to search recursively for FASTQ/FASTA files to concatenate and stream
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:

@@ -19,12 +19,17 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: File
-    doc: Path to output files
+    type: Directory
+    doc: Output directory with one spec file per modality (<output>.<modality>.yaml)
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_path)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqspec:0.4.0--pyhdfd78af_0

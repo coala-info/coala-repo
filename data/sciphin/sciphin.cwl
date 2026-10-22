@@ -8,7 +8,7 @@ inputs:
   - id: bam_names
     type:
       - 'null'
-      - string
+      - File
     doc: Name of the BAM files used to create the mpileup.
     inputBinding:
       position: 101
@@ -115,7 +115,7 @@ inputs:
   - id: loss_score
     type:
       - 'null'
-      - boolean
+      - int
     doc: Compute the loss score = allow a mutation to be lost in a subtree.
     inputBinding:
       position: 101
@@ -238,7 +238,7 @@ inputs:
   - id: parallel_score
     type:
       - 'null'
-      - boolean
+      - int
     doc: Compute the parallel score = allow a mutation to be acquired twice 
       independently in the tree.
     inputBinding:
@@ -349,7 +349,7 @@ inputs:
     doc: Output or path parameter `output_intermediate_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-intermediate-dir
+      prefix: --ol
   - id: output_prefix_path
     type:
       - 'null'
@@ -370,7 +370,9 @@ outputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items:
+          - File
+          - Directory
     doc: Prefix of output files.
     outputBinding:
       glob: $(inputs.output_prefix_path)*

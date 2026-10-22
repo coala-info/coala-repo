@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sort
+baseCommand:
+  - seqfu
+  - sort
 label: seqfu_sort
 doc: "Sort sequences by size printing only unique sequences\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
@@ -9,17 +11,9 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input files
+    doc: Input FASTA/FASTQ files
     inputBinding:
       position: 1
-  - id: asc
-    type:
-      - 'null'
-      - boolean
-    doc: Ascending order
-    inputBinding:
-      position: 102
-      prefix: --asc
   - id: prefix
     type:
       - 'null'
@@ -36,6 +30,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --strip-comments
+  - id: asc
+    type:
+      - 'null'
+      - boolean
+    doc: Ascending order
+    inputBinding:
+      position: 102
+      prefix: --asc
   - id: verbose
     type:
       - 'null'

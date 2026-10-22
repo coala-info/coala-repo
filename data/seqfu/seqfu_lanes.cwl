@@ -1,28 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: lanes
+baseCommand:
+  - seqfu
+  - lanes
 label: seqfu_lanes
-doc: "This tool supports up to 8 lanes of Illumina-formatted output files.\nMerged
-  lane output files will be in an uncompressed format.\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
+doc: "Merge Illumina lanes. This tool supports up to 8 lanes of Illumina-formatted\noutput files. Merged\
+  \ lane output files will be in an uncompressed format.\n\nTool homepage: http://github.com/quadram-institute-bioscience/seqfu/"
 inputs:
   - id: input_directory
     type: Directory
     doc: Input directory
     inputBinding:
       position: 1
-  - id: comment_separator
-    type:
-      - 'null'
-      - string
-    doc: String separating sequence name and its comment
+  - id: outdir
+    type: string
+    doc: Output directory
     inputBinding:
       position: 102
-      prefix: --comment-separator
+      prefix: --outdir
   - id: extension
     type:
       - 'null'
       - string
-    doc: File extension
+    doc: 'File extension [default: .fastq]'
     inputBinding:
       position: 102
       prefix: --extension
@@ -30,16 +30,18 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Field separator in filenames
+    doc: 'Field separator in filenames [default: _]'
     inputBinding:
       position: 102
       prefix: --file-separator
-  - id: outdir
-    type: string?
-    doc: Output directory
+  - id: comment_separator
+    type:
+      - 'null'
+      - string
+    doc: 'String separating sequence name and its comment [default: TAB]'
     inputBinding:
       position: 102
-      prefix: --outdir
+      prefix: --comment-separator
   - id: verbose
     type:
       - 'null'
@@ -52,13 +54,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: outdir_dir
+  - id: merged_dir
     type:
       - 'null'
       - Directory
-    doc: Output directory
+    doc: Directory with merged lane files
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.outdir)
+        entry: '$({class: ''Directory'', basename: inputs.outdir, listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqfu:1.23.0--hfd12232_0

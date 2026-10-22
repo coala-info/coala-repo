@@ -1,5 +1,11 @@
 # seqsero2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqsero2 | PASS | CWL rewritten from help (options were invented); Salmonella assembly gives Typhimurium 4:i:1,2, non-Salmonella reads give 'cannot be identified', as in Galaxy tests |
+
 ## seqsero2
 
 ### Tool Description

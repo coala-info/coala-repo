@@ -1,5 +1,14 @@
 # seaview CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seaview_align | PASS | aligned 6 beta-globin proteins from UniProt (muscle/clustal in the image); gaps look right |
+| seaview_build_tree | PASS | built a Poisson-distance NJ tree with 10 bootstrap replicates from the globin alignment; tree groups human, gorilla and horse together |
+| seaview_concatenate | PASS | concatenated two copies of the globin alignment; each sequence is 294 sites (2 x 147) |
+| seaview_convert | PASS | converted the 6-sequence globin alignment from fasta to nexus (NTAX=6, 147 sites) |
+
 ## seaview_convert
 
 ### Tool Description

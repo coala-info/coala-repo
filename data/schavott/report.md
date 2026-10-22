@@ -1,5 +1,11 @@
 # schavott CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| schavott | Not completed | watches a directory for new MinION reads and runs until stopped; needs a live sequencing run |
+
 ## schavott
 
 ### Tool Description

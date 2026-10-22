@@ -1,5 +1,13 @@
 # seq2c CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seq2c_cov2lr.pl | PASS | tool test data (HG00306 exome coverage); gender prediction matches the expected file |
+| seq2c_lr2gene.pl | PASS | tool test data (HG00306 exome); output identical to the expected file |
+| seq2c_seq2cov.pl | Failed | image problem: samtools is missing in the image, so seq2cov.pl reports depth 0 for every region |
+
 ## seq2c_seq2cov.pl
 
 ### Tool Description

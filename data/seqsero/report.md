@@ -1,5 +1,11 @@
 # seqsero CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqsero | Failed | image problem: SeqSero crashes (Biopython has no Seq.tostring, isPcr binary missing) and reports O-?:?:? for a Typhimurium genome; CWL input type fixed to File |
+
 ## seqsero
 
 ### Tool Description

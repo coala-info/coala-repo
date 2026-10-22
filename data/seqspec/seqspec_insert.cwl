@@ -7,7 +7,7 @@ label: seqspec_insert
 doc: "Draft spec to modify\n\nTool homepage: https://github.com/sbooeshaghi/seqspec"
 inputs:
   - id: yaml
-    type: string
+    type: File
     doc: Draft spec to modify
     inputBinding:
       position: 1

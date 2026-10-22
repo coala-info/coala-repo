@@ -1,9 +1,16 @@
 # scepia CWL Generation Report
 
-## scepia
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scepia_area27 | Failed | image problem: scepia crashes at import (numba SystemError: initialization of _internal failed) |
+| scepia_infer_motifs | Failed | image problem: scepia crashes at import (numba SystemError: initialization of _internal failed) |
+
+## scepia_area27
 
 ### Tool Description
-SCEPIA: Single-cell RNA sequencing data analysis pipeline
+Determine the enhancer-based regulatory potential (ERP) score per gene from H3K27ac signal.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scepia:0.5.1--pyhdfd78af_1
@@ -11,32 +18,54 @@ SCEPIA: Single-cell RNA sequencing data analysis pipeline
 - **Package**: https://anaconda.org/channels/bioconda/packages/scepia/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/scepia/overview
-- **Total Downloads**: 8.6K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/vanheeringen-lab/scepia
-- **Stars**: N/A
 ### Original Help Text
 ```text
-Traceback (most recent call last):
-  File "/usr/local/bin/scepia", line 7, in <module>
-    from scepia.cli import cli
-  File "/usr/local/lib/python3.9/site-packages/scepia/cli.py", line 5, in <module>
-    from scepia.sc import full_analysis
-  File "/usr/local/lib/python3.9/site-packages/scepia/sc.py", line 20, in <module>
-    import scanpy as sc
-  File "/usr/local/lib/python3.9/site-packages/scanpy/__init__.py", line 6, in <module>
-    from ._utils import check_versions
-  File "/usr/local/lib/python3.9/site-packages/scanpy/_utils/__init__.py", line 29, in <module>
-    from .compute.is_constant import is_constant
-  File "/usr/local/lib/python3.9/site-packages/scanpy/_utils/compute/is_constant.py", line 5, in <module>
-    from numba import njit
-  File "/usr/local/lib/python3.9/site-packages/numba/__init__.py", line 43, in <module>
-    from numba.np.ufunc import (vectorize, guvectorize, threading_layer,
-  File "/usr/local/lib/python3.9/site-packages/numba/np/ufunc/__init__.py", line 3, in <module>
-    from numba.np.ufunc.decorators import Vectorize, GUVectorize, vectorize, guvectorize
-  File "/usr/local/lib/python3.9/site-packages/numba/np/ufunc/decorators.py", line 3, in <module>
-    from numba.np.ufunc import _internal
-SystemError: initialization of _internal failed without raising an exception
+Usage: scepia area27 [OPTIONS] BAMFILE OUTFILE
+
+  Determine the enhancer-based regulatory potential (ERP) score per gene.
+  This approach is based on the method developed by Wang et al., 2016.
+  There is one difference. In this implementation the score is calculated
+  based only on H3K27ac signal in enhancers. We use log-transformed, z-score
+  normalized H3K27ac read counts in 2kb windows centered at enhancer
+  locations.
+
+Options:
+  -w, --window TEXT    window
+  -N, --nthreads TEXT  Number of threads.
+  -h, --help           Show this message and exit.
+
+(Reconstructed from the scepia source code: the image crashes at import, so the
+program cannot print its own help.)
+```
+
+## scepia_infer_motifs
+
+### Tool Description
+Run SCEPIA motif inference on any scanpy-compatible file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scepia:0.5.1--pyhdfd78af_1
+- **Homepage**: https://github.com/vanheeringen-lab/scepia
+- **Package**: https://anaconda.org/channels/bioconda/packages/scepia/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: scepia infer_motifs [OPTIONS] INFILE OUTDIR
+
+  Infer motifs.
+
+Options:
+  --transpose              Transpose matrix.
+  -c, --cluster TEXT       cluster name (default checks for 'louvain' or 'leiden').
+  -d, --dataset TEXT       Reference dataset (ENCODE.H3K27ac.human).
+  -n, --n_top_genes INTEGER  Maximum number of variable genes that is used (2000).
+  -p, --pfmfile TEXT       Name of motif PFM file or GimmeMotifs database name.
+  -a, --min_annotated INTEGER  Minimum number of cells per cell type (50).
+  -e, --num_enhancers INTEGER  Number of enhancers to use for motif activity (10000).
+  -h, --help               Show this message and exit.
+
+(Reconstructed from the scepia source code: the image crashes at import, so the
+program cannot print its own help.)
 ```
 

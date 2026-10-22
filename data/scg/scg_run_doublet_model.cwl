@@ -1,9 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: scg_run_doublet_model
+baseCommand:
+  - scg
+  - run_doublet_model
 label: scg_run_doublet_model
 doc: "Run the doublet model.\n\nTool homepage: https://bitbucket.org/aroth85/scg/wiki/Home"
 inputs:
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data files (for example SNV and breakpoint tables) named in the config file, staged in the working directory
   - id: config_file
     type: File
     doc: Path to YAML format configuration file.
@@ -95,6 +103,8 @@ outputs:
       glob: $(inputs.out_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "$((inputs.data_files ? inputs.data_files : []).concat(inputs.out_dir_path ? [{'entryname': inputs.out_dir_path, 'entry': {'class': 'Directory', 'listing': []}, 'writable': true}] : []))"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scg:0.3.1--py27_0

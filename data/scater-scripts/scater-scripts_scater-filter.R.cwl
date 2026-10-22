@@ -16,6 +16,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --cells-discard
+      itemSeparator: ','
   - id: cells_use
     type:
       - 'null'
@@ -26,6 +27,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --cells-use
+      itemSeparator: ','
   - id: features_use
     type:
       - 'null'
@@ -37,6 +39,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --features-use
+      itemSeparator: ','
   - id: high_cell_thresholds
     type:
       - 'null'

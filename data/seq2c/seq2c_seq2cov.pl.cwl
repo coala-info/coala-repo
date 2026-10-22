@@ -10,7 +10,7 @@ inputs:
     type: File
     doc: Input region information file (e.g., refGene.txt or BED file)
     inputBinding:
-      position: 1
+      position: 201
   - id: amplicon_params
     type:
       - 'null'
@@ -25,6 +25,9 @@ inputs:
       - 'null'
       - File
     doc: The indexed BAM file
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     inputBinding:
       position: 102
       prefix: -b

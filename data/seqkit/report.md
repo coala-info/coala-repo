@@ -1,5 +1,48 @@
 # seqkit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqkit_amplicon | PASS |  |
+| seqkit_bam | PASS |  |
+| seqkit_common | PASS |  |
+| seqkit_concat | PASS |  |
+| seqkit_convert | PASS |  |
+| seqkit_duplicate | PASS |  |
+| seqkit_fa2fq | PASS |  |
+| seqkit_faidx | PASS |  |
+| seqkit_fish | PASS |  |
+| seqkit_fq2fa | PASS |  |
+| seqkit_fx2tab | PASS |  |
+| seqkit_grep | PASS |  |
+| seqkit_head | PASS |  |
+| seqkit_head-genome | PASS |  |
+| seqkit_locate | PASS |  |
+| seqkit_merge-slides | PASS |  |
+| seqkit_mutate | PASS |  |
+| seqkit_pair | PASS |  |
+| seqkit_range | PASS |  |
+| seqkit_rename | PASS |  |
+| seqkit_replace | PASS |  |
+| seqkit_restart | PASS |  |
+| seqkit_rmdup | PASS |  |
+| seqkit_sample | PASS |  |
+| seqkit_sana | PASS |  |
+| seqkit_scat | PASS |  |
+| seqkit_seq | PASS |  |
+| seqkit_shuffle | PASS |  |
+| seqkit_sliding | PASS |  |
+| seqkit_sort | PASS |  |
+| seqkit_split | PASS |  |
+| seqkit_split2 | PASS |  |
+| seqkit_stats | PASS |  |
+| seqkit_subseq | PASS |  |
+| seqkit_sum | PASS |  |
+| seqkit_tab2fx | PASS |  |
+| seqkit_translate | PASS |  |
+| seqkit_watch | PASS |  |
+
 ## seqkit_faidx
 
 ### Tool Description

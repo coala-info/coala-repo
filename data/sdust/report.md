@@ -1,5 +1,11 @@
 # sdust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sdust | PASS | ran on a 1.8 MB human chr21 FASTA slice from nf-core test-datasets; 7074 low-complexity BED intervals |
+
 ## sdust
 
 ### Tool Description

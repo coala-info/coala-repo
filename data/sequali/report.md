@@ -1,5 +1,12 @@
 # sequali CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sequali | PASS | note: --images-zip crashes in the tool when given a bare file name without a directory; works with a path like imgs/images.zip |
+| sequali_report | PASS |  |
+
 ## sequali
 
 ### Tool Description
@@ -120,5 +127,28 @@ options:
                         additional thread for gzip decompression will be used.
                         Default: 2.
   --version             show program's version number and exit
+```
+
+## sequali_report
+
+### Tool Description
+Create an HTML report from a Sequali JSON file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sequali:1.0.2--py310h1fe012e_0
+- **Homepage**: https://github.com/rhpvorderman/sequali
+- **Package**: https://anaconda.org/channels/bioconda/packages/sequali/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: sequali-report [-h] [-o HTML] JSON
+
+positional arguments:
+  JSON                  Sequali JSON file
+
+options:
+  -h, --help            show this help message and exit
+  -o HTML, --html HTML  Output html file default: <input>.html
 ```
 

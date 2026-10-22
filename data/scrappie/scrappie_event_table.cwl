@@ -1,64 +1,41 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: event_table
+baseCommand: [scrappie, event_table]
 label: scrappie_event_table
-doc: "Scrappie basecaller -- basecall via events\n\nTool homepage: https://github.com/nanoporetech/scrappie"
+doc: "Scrappie basecaller -- output table of events for read\n\nTool homepage: https://github.com/nanoporetech/scrappie"
 inputs:
   - id: fast5_files
     type:
       type: array
       items: File
-    doc: FAST5 files to process
+    doc: "Input fast5 files"
     inputBinding:
-      position: 1
-  - id: licence
-    type:
-      - 'null'
-      - boolean
-    doc: Print licensing information
+      position: 200
+  - id: output
+    type: ['null', string]
+    doc: "Write to file rather than stdout"
     inputBinding:
-      position: 102
-      prefix: --licence
-  - id: license
-    type:
-      - 'null'
-      - boolean
-    doc: Print licensing information
-    inputBinding:
-      position: 102
-      prefix: --license
+      prefix: --output
   - id: segmentation
-    type:
-      - 'null'
-      - string
-    doc: Chunk size and percentile for variance based segmentation
+    type: ['null', string]
+    doc: "Chunk size and percentile for variance based segmentation (chunk:percentile)"
     inputBinding:
-      position: 102
       prefix: --segmentation
   - id: trim
-    type:
-      - 'null'
-      - string
-    doc: Number of events to trim, as start:end
+    type: ['null', string]
+    doc: "Number of events to trim, as start:end"
     inputBinding:
-      position: 102
       prefix: --trim
-  - id: output_file_path
-    type: string
-    doc: Write to file rather than stdout
-    inputBinding:
-      position: 103
-      prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (used when --output is not set)
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Write to file rather than stdout
+    type: ['null', File]
+    doc: Output file written with --output
     outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7
+stdout: scrappie_event_table.out

@@ -1,5 +1,11 @@
 # seq-gen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seq-gen | Failed | tool bug: with -y the output file name loses its prefix (FASTA, the default format, is written to _1.fasta and PHYLIP to a hidden .phy file); PHYLIP and NEXUS to stdout work |
+
 ## seq-gen
 
 ### Tool Description

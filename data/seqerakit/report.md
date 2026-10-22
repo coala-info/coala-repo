@@ -1,5 +1,11 @@
 # seqerakit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seqerakit | Not completed | needs a Seqera Platform account and access token |
+
 ## seqerakit
 
 ### Tool Description

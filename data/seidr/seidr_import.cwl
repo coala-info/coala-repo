@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seidr_import
+baseCommand:
+  - seidr
+  - import
 label: seidr_import
 doc: "Convert various text based network representations to SeidrFiles\n\nTool homepage:
   https://github.com/bschiffthaler/seidr"

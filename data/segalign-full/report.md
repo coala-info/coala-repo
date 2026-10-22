@@ -1,5 +1,12 @@
 # segalign-full CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| segalign-full_run_segalign | Not completed | needs a GPU: without GPU access in Docker the run exits with 'No alignment generated' |
+| segalign-full_run_segalign_repeat_masker | Not completed | needs a GPU: without GPU access in Docker the run exits with 'No alignment generated' |
+
 ## segalign-full_run_segalign
 
 ### Tool Description

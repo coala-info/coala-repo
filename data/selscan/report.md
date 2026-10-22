@@ -1,5 +1,11 @@
 # selscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| selscan | PASS | tool example data; p1.tped and p1.vcf.gz have duplicate positions and cannot be used |
+
 ## selscan
 
 ### Tool Description

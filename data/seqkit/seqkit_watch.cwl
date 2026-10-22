@@ -201,7 +201,24 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
+  - id: report
+    type: stderr
+    doc: histogram plot or data (with --dump); seqkit watch writes them to standard error
+  - id: image
+    type:
+      - 'null'
+      - File
+    doc: histogram image or PDF saved with --img
+    outputBinding:
+      glob: $(inputs.save_image)
   - id: out_file
     type:
       - 'null'
@@ -214,3 +231,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1
+stderr: seqkit_watch_report.txt

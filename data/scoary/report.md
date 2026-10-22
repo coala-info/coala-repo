@@ -1,5 +1,11 @@
 # scoary CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scoary | PASS |  |
+
 ## scoary
 
 ### Tool Description

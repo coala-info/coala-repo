@@ -7,7 +7,9 @@ label: segway_annotate
 doc: "Annotates genomic data using a trained model.\n\nTool homepage: http://segway.hoffmanlab.org/"
 inputs:
   - id: genomedata
-    type: string
+    type: 
+      - File
+      - Directory
     doc: Genomic data to annotate
     inputBinding:
       position: 1

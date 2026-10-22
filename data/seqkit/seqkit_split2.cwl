@@ -129,7 +129,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: output directory (default value is $infile.split)
+    default: seqkit_split2_out
+    doc: output directory (default value is $infile.split, which is not writable in a
+      container, so this wrapper defaults to seqkit_split2_out)
     inputBinding:
       position: 101
       prefix: --out-dir
@@ -200,10 +202,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: input_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: out_file_out
     type:
       - 'null'
@@ -221,4 +228,3 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1
-stdout: seqkit_split2.out

@@ -4,24 +4,24 @@ baseCommand: scythe
 label: scythe
 doc: "A Bayesian adapter trimmer that uses a Naive Bayes classifier to determine the
   most likely point of adapter contamination in sequence reads.\n\nTool homepage:
-  https://github.com/michaelfeathers/scythe"
+  https://github.com/vsbuffalo/scythe"
 inputs:
   - id: input_fastq
     type: File
     doc: Input FASTQ file
     inputBinding:
-      position: 1
+      position: 200
   - id: adapters
     type: File
     doc: Adapter file (FASTA format)
     inputBinding:
       position: 102
-      prefix: --adapters
+      prefix: -a
   - id: matches_file
     type:
       - 'null'
-      - File
-    doc: File to write matching information to
+      - string
+    doc: 'File to write matching information to (default: no output)'
     inputBinding:
       position: 102
       prefix: --matches-file
@@ -75,11 +75,18 @@ inputs:
       prefix: --tag
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Output trimmed sequences file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
+  - id: matches_output
+    type:
+      - 'null'
+      - File
+    doc: Matches file written with --matches-file
+    outputBinding:
+      glob: $(inputs.matches_file)
   - id: output_file
     type:
       - 'null'

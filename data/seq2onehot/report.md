@@ -1,5 +1,11 @@
 # seq2onehot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| seq2onehot | PASS | tool example FASTA files; one-hot shapes and values checked for dna, rna, protein and ambiguous modes |
+
 ## seq2onehot
 
 ### Tool Description

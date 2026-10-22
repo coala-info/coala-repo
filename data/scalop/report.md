@@ -1,5 +1,11 @@
 # scalop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scalop_SCALOP | PASS |  |
+
 ## scalop_SCALOP
 
 ### Tool Description

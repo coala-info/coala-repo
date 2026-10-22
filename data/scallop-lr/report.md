@@ -1,5 +1,11 @@
 # scallop-lr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scallop-lr | PASS | synthetic data: ccs header file built from real nanopore spliced BAM read names |
+
 ## scallop-lr
 
 ### Tool Description

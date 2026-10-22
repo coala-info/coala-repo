@@ -1,5 +1,12 @@
 # secedo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| secedo | Not completed | no usable test data: secedo needs pileups of many single cells; the 3 tiny repo BAMs give only an empty significant_positions file. Fixed -o (was invented --output-dir), file-typed options and output folder creation |
+| secedo_pileup | PASS | repo test BAMs (3 cells, chromosome 1) gave .pileup.bin/.txt/.map files with per-position base counts when quality cut-offs were set to 0; default cut-offs give empty files for these tiny BAMs |
+
 ## secedo
 
 ### Tool Description
@@ -122,5 +129,60 @@ secedo: secedo -i <input_dir> -o <output_dir> arguments
       default: false
     -helpxml (produce an xml version of help) type: bool default: false
     -version (show version and build info and exit) type: bool default: false
+```
+
+## secedo_pileup
+
+### Tool Description
+Creates pileup files from a directory of single-cell BAM files, as input for secedo.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/secedo:1.0.7--ha041835_4
+- **Homepage**: https://github.com/ratschlab/secedo
+- **Package**: https://anaconda.org/channels/bioconda/packages/secedo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+pileup: Warning: SetUsageMessage() never called
+
+  Flags from /opt/conda/conda-bld/secedo_1759410852252/work/pileup_main.cpp:
+    -chromosomes (1,2,3,4,5,6,7,8,9,10,11,12,13.14,15,16,17,18,19,20,21,22,X,Y)
+      type: string default: "The chromosomes on which to run the algorithm"
+    -i (Input directory containing BAM files) type: string default: ""
+    -log_level (The log verbosity: debug, trace, info, warn, error, critical,
+      off) type: string default: "trace"
+    -max_coverage (Positions with higher coverage are considered anomalies and
+      discarded during preprocessing (also at clustering time)) type: uint32
+      default: 100
+    -min_base_quality (Minimum Phred quality score for the sequencer. A quality
+      score of 20 corresponds to a sequencing error rate of 0.01) type: uint32
+      default: 30
+    -min_different (Minimum number of bases that need to differ from the
+      majority in order to add the locus to the pileup) type: uint32 default: 3
+    -min_map_quality (Minimum score for the mapping quality (how certain bowtie
+      is that it mapped the read to the right part of the genome. A quality
+      score of 10 corresponds to a mapping error rate of 0.1) type: uint32
+      default: 30
+    -min_map_score (Minimum score for a read to be accepted. The score measures
+      how close the read is to the sequence in the genome that is being mapped
+      to (each mismatch/insert/del is penalized. Datasets are inconsistent on
+      how this value is being used, so make sure you take a good look at the
+      dataset before setting a value.) type: uint32 default: 0
+    -num_threads (Number of threads to use) type: uint32 default: 8
+    -o (File prefix where the pileup output will be written. Written files will
+      be of the form <out_prefix>_<chromosome_id>.pileup.bin) type: string
+      default: "./"
+
+
+
+  Flags from /opt/conda/conda-bld/secedo_1759410852252/work/third_party/gflags/src/gflags.cc:
+    -flagfile (load flags from file) type: string default: ""
+    -fromenv (set flags from the environment [use 'export FLAGS_flag1=value'])
+      type: string default: ""
+    -tryfromenv (set flags from the environment if present) type: string
+      default: ""
+    -undefok (comma-separated list of flag names that it is okay to specify on
+      the command line even if the program does not define a flag with that
 ```
 

@@ -12,6 +12,9 @@ doc: "PileupCaller is a tool to create genotype calls from bam files using read-
   is very important to reduce reference bias in low coverage data.\n\nTool homepage:
   https://github.com/stschiff/sequenceTools"
 inputs:
+  - id: pileup
+    type: File
+    doc: mpileup-format file, read from standard input
   - id: down_sampling
     type:
       - 'null'
@@ -143,6 +146,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --samplePopName
+      itemSeparator: ','
   - id: single_strand_mode
     type:
       - 'null'
@@ -229,10 +233,10 @@ inputs:
     inputBinding:
       position: 103
       prefix: --plinkOut
-  - id: vcf_path
+  - id: vcf
     type:
       - 'null'
-      - string
+      - boolean
     doc: output VCF format to stdout
     inputBinding:
       position: 104
@@ -241,34 +245,26 @@ outputs:
   - id: eigenstrat_out
     type:
       - 'null'
-      - File
-    doc: "Set Eigenstrat as output format. Specify the filenames for the EigenStrat
-      SNP, IND and GENO file outputs: <FILE_PREFIX>.snp, <FILE_PREFIX>.ind and <FILE_PREFIX>.geno.
-      If not set, output will be FreqSum (Default). Note that freqSum format, described
-      at https://rarecoal-docs.readthedocs.io/en/latest/rarecoal-tools.html#vcf2freqsum,
-      is useful for testing your pipeline, since it's output to standard out"
+      - type: array
+        items: File
+    doc: Eigenstrat SNP, IND and GENO files (<FILE_PREFIX>.snp, .ind and .geno, with .gz when zipped)
     outputBinding:
-      glob: $(inputs.eigenstrat_out_path)
+      glob: $(inputs.eigenstrat_out_path)*
   - id: plink_out
     type:
       - 'null'
-      - File
-    doc: "Set Plink as output format. Specify the filenames for the Plink BIM, FAM
-      and BED file outputs: <FILE_PREFIX>.bim, <FILE_PREFIX>.fam and <FILE_PREFIX>.bed.
-      If not set, output will be FreqSum (Default). Note that freqSum format, described
-      at https://rarecoal-docs.readthedocs.io/en/latest/rarecoal-tools.html#vcf2freqsum,
-      is useful for testing your pipeline, since it's output to standard out"
+      - type: array
+        items: File
+    doc: Plink BIM, FAM and BED files (<FILE_PREFIX>.bim, .fam and .bed)
     outputBinding:
-      glob: $(inputs.plink_out_path)
-  - id: vcf
-    type:
-      - 'null'
-      - File
-    doc: output VCF format to stdout
-    outputBinding:
-      glob: $(inputs.vcf_path)
+      glob: $(inputs.plink_out_path)*
+  - id: stdout
+    type: stdout
+    doc: FreqSum (default) or VCF output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sequencetools:1.6.0.0--hebebf5b_0
+stdout: pileupCaller.out
+stdin: $(inputs.pileup.path)

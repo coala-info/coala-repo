@@ -11,7 +11,7 @@ inputs:
     doc: 'A file containing # of mapped or sequenced reads for samples. First is the
       sample name, 2nd is the number of mapped or sequenced reads.'
     inputBinding:
-      position: 1
+      position: 201
   - id: coverage_txt
     type:
       type: array
@@ -19,7 +19,7 @@ inputs:
     doc: The coverage output file from seq2cov.pl script. Can also take from 
       standard in or more than one file.
     inputBinding:
-      position: 2
+      position: 202
   - id: adjust_mad
     type:
       - 'null'
@@ -83,24 +83,36 @@ inputs:
     inputBinding:
       position: 103
       prefix: -G
-  - id: output_frozen_path
-    type: string
-    doc: ndicate to output the frozen_file and all parameters into file 
+  - id: output_frozen
+    type:
+      - 'null'
+      - boolean
+    doc: Indicate to output the frozen_file and all parameters into file 
       Seq2C.frozen.txt
     inputBinding:
       position: 104
       prefix: -Z
 outputs:
-  - id: output_frozen
+  - id: stdout
+    type: stdout
+    doc: Copy number profile (log2 ratios per sample and gene or amplicon)
+  - id: gender_predicted
     type:
       - 'null'
       - File
-    doc: Indicate to output the frozen_file and all parameters into file 
-      Seq2C.frozen.txt
+    doc: Gender prediction table (written when sample gender is not supplied with -G)
     outputBinding:
-      glob: $(inputs.output_frozen_path)
+      glob: gender_predicted.txt
+  - id: frozen_output
+    type:
+      - 'null'
+      - File
+    doc: Frozen file with all parameters, written when -Z is set
+    outputBinding:
+      glob: Seq2C.frozen.txt
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq2c:2019.05.30--pl526_0
+stdout: seq2c_cov2lr.pl.out

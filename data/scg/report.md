@@ -1,5 +1,13 @@
 # scg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scg_run_dirichlet_mixture_model | PASS | example data from the scg repo, 20 iterations |
+| scg_run_doublet_model | PASS | example data from the scg repo, 20 iterations |
+| scg_run_singlet_model | PASS | example data from the scg repo, 20 iterations |
+
 ## scg_run_doublet_model
 
 ### Tool Description

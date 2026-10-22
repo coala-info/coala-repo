@@ -73,8 +73,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: "file of input files list (one file per line), if given, they are\n     \
-      \                             appended to files from cli arguments"
+    doc: file of input files list (one file per line), if given, they are 
+      appended to files from cli arguments
     inputBinding:
       position: 101
       prefix: --infile-list
@@ -131,12 +131,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --point
     doc: "point mutation: changing base at given position. e.g., -p 2:C for setting\n\
       \                              2nd base as C, -p -1:A for change last base as
       A"
     inputBinding:
       position: 101
-      prefix: --point
   - id: quiet
     type:
       - 'null'
@@ -186,6 +187,13 @@ inputs:
     inputBinding:
       position: 102
       prefix: --out-file
+  - id: input_files
+    type:
+      - type: array
+        items: File
+    doc: input FASTA/Q file(s) (gzip, xz, zstd and bzip2 compressed files are supported)
+    inputBinding:
+      position: 200
 outputs:
   - id: out_file
     type:

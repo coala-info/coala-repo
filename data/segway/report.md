@@ -1,5 +1,13 @@
 # segway CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| segway_annotate | Failed | image problem: gmtkTriangulate cannot load libcrypto.so.3 (exit 127), so segway stops at its GMTK version check; genomedata input type fixed to File/Directory |
+| segway_posterior | Failed | image problem: gmtkTriangulate cannot load libcrypto.so.3 (exit 127), so segway stops at its GMTK version check; genomedata input type fixed to File/Directory |
+| segway_train | Failed | image problem: gmtkTriangulate cannot load libcrypto.so.3 (exit 127), so segway stops at its GMTK version check; genomedata input type fixed to File/Directory |
+
 ## segway_train
 
 ### Tool Description

@@ -22,7 +22,7 @@ inputs:
   - id: color_map
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Color map to use for the heatmap. Available values can be seen here: http://matplotlib.org/examples/color/colormaps_reference.html'
     inputBinding:
       position: 101
@@ -30,7 +30,8 @@ inputs:
   - id: figure_size
     type:
       - 'null'
-      - string
+      - type: array
+        items: float
     doc: Fontsize in the plot for x and y axis.
     inputBinding:
       position: 101
@@ -140,26 +141,20 @@ inputs:
       position: 101
       prefix: --zMin
   - id: out_file_name_heatmap_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output or path parameter `out_file_name_heatmap_path`
     inputBinding:
       position: 102
-      prefix: --out-file-name-heatmap
+      prefix: --outFileNameHeatmap
   - id: out_file_name_scatter_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output or path parameter `out_file_name_scatter_path`
     inputBinding:
       position: 103
-      prefix: --out-file-name-scatter
+      prefix: --outFileNameScatter
 outputs:
   - id: out_file_name_heatmap
-    type:
-      - 'null'
-      - File
+    type: File
     doc: File name to save the resulting heatmap plot.
     outputBinding:
       glob: $(inputs.out_file_name_heatmap_path)

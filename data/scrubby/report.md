@@ -1,37 +1,10 @@
 # scrubby CWL Generation Report
 
-## scrubby
-### Tool Description
-Scrubby command-line application
+## Real Data Test
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/scrubby:0.2.1--h715e4b3_0
-- **Homepage**: https://github.com/esteinig/scrubby
-- **Package**: https://anaconda.org/channels/bioconda/packages/scrubby/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/scrubby/overview
-- **Total Downloads**: 726
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/esteinig/scrubby
-- **Stars**: N/A
-### Original Help Text
-```text
-scrubby 0.2.1
-Scrubby command-line application
-
-USAGE:
-    scrubby <SUBCOMMAND>
-
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
-
-SUBCOMMANDS:
-    help           Prints this message or the help of the given subcommand(s)
-    scrub-reads    Clean sequence reads by removing background taxa (Kraken2) or aligning reads (Minimap2)
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| scrubby_scrub-reads | Failed | tool bug: --extract returns the same non-matching reads as depletion instead of the matching reads; depletion with Kraken2 and minimap2 works |
 
 ## scrubby_scrub-reads
 

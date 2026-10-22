@@ -1,5 +1,13 @@
 # screed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| screed_db | PASS |  |
+| screed_dump_fasta | PASS |  |
+| screed_dump_fastq | PASS |  |
+
 ## screed_db
 
 ### Tool Description

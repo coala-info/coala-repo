@@ -9,6 +9,9 @@ inputs:
   - id: in_file
     type: File
     doc: Input SeidrFile
+    secondaryFiles:
+      - pattern: .sfi
+        required: false
     inputBinding:
       position: 1
   - id: binary

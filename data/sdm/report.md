@@ -1,5 +1,11 @@
 # sdm CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sdm | PASS | synthetic data: repo ONT fixture reads trimmed so barcodes start the read; 4 of 6 reads demultiplexed to S0/S1 and PacBio quality filter kept 24 of 25 reads (help lists -base_map but only -map works, so the CWL wraps -map) |
+
 ## sdm
 
 ### Tool Description
@@ -11,11 +17,6 @@ sdm (simple demultiplexer) is a fast, memory efficient program to demultiplex fa
 - **Package**: https://anaconda.org/channels/bioconda/packages/sdm/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/sdm/overview
-- **Total Downloads**: 56.4K
-- **Last updated**: 2026-01-27
-- **GitHub**: https://github.com/hildebra/sdm
-- **Stars**: N/A
 ### Original Help Text
 ```text
 ------------------------------
@@ -34,7 +35,6 @@ For more information, please visit the sdm github page: https://github.com/hilde
 If you find bugs, please report them there.
 If you have questions, please contact me at:  falk.hildebrand@gmail.com
 ```
-
 
 ## Metadata
 - **Skill**: generated

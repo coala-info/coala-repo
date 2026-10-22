@@ -54,8 +54,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: "file of input files list (one file per line), if given, they are\n     \
-      \                                   appended to files from cli arguments"
+    doc: file of input files list (one file per line), if given, they are 
+      appended to files from cli arguments
     inputBinding:
       position: 101
       prefix: --infile-list

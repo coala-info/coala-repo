@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: seqtk_hpc
+baseCommand:
+  - seqtk
+  - hpc
 label: seqtk_hpc
 doc: "A tool for processing biological sequences (HPC version).\n\nTool homepage:
   https://github.com/lh3/seqtk"

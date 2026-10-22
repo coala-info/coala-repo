@@ -7,7 +7,9 @@ label: segway_posterior
 doc: "Compute posterior probabilities for Segway segmentation.\n\nTool homepage: http://segway.hoffmanlab.org/"
 inputs:
   - id: archives
-    type: string
+    type: 
+      - File
+      - Directory
     doc: Archives of genomic data
     inputBinding:
       position: 1

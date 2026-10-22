@@ -1,5 +1,22 @@
 # scran-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| scran-cli_igraph_extract_clusters.R | PASS |  |
+| scran-cli_scran-build-snn-graph.R | Failed | tool bug: --transposed is ignored by the script; shared=FALSE calls a missing function; main SNN graph works |
+| scran-cli_scran-cli-filter-sce.R | PASS |  |
+| scran-cli_scran-compute-spike-factors.R | PASS |  |
+| scran-cli_scran-compute-sum-factors.R | Failed | tool bug: --clusters is ignored (the script reads opt$custers); main mode works |
+| scran-cli_scran-convert-to.R | PASS |  |
+| scran-cli_scran-correlate-genes.R | PASS |  |
+| scran-cli_scran-correlate-pairs.R | Failed | tool bug: --iters and --use-dimred are ignored by the script; main mode works only with the counts assay |
+| scran-cli_scran-denoise-pca.R | PASS |  |
+| scran-cli_scran-find-markers.R | Failed | tool bug: the output file is a copy of the input SCE object, not the marker table |
+| scran-cli_scran-model-gene-var.R | Failed | image problem: the scran version in the image has no modelGeneVar function |
+| scran-cli_scran-trend-var.R | PASS |  |
+
 ## scran-cli_scran-compute-sum-factors.R
 
 ### Tool Description
@@ -325,6 +342,207 @@ Options:
 		Show this help message and exit
 ```
 
+
+## scran-cli_scran-cli-filter-sce.R
+
+### Tool Description
+Filter cells and genes of a SingleCellExperiment object, add spike-in genes and optionally log-transform counts
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1
+- **Homepage**: https://github.com/ebi-gene-expression-group/scran-cli
+- **Package**: https://anaconda.org/channels/bioconda/packages/scran-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/scran-cli-filter-sce.R [options]
+
+
+Options:
+	-i INPUT-SCE-OBJECT, --input-sce-object=INPUT-SCE-OBJECT
+		Path to the input SCE object in rds format.
+
+	-e EXPRS-VALUES, --exprs-values=EXPRS-VALUES
+		String indicating which assay contains the count data that should be used to compute log-transformed expression values.
+
+	--min-genes=MIN-GENES
+		Minimum number of genes to be expressed per cell to pass filtering.
+
+	--min-cells=MIN-CELLS
+		Minimum number of cells for a gene to be expressed to pass filtering.
+
+	-k SPIKES, --spikes=SPIKES
+		String or integer scalar specifying the alternative experiment containing the spike-in transcripts. Default; "ERCC"
+
+	-n N-SPIKES, --n-spikes=N-SPIKES
+		Integer specifying the number of genes to add as spike-ins in case there is are no spike-ins in the "ERCC" slot. Default: 25.
+
+	-l LOG, --log=LOG
+		Logical specifying wether log-transformation of CPM counts should be performed.
+
+	-o OUTPUT-SCE-OBJECT, --output-sce-object=OUTPUT-SCE-OBJECT
+		File name in which to store serialized R object of type 'SingleCellExperiment'.
+
+	-h, --help
+		Show this help message and exit
+```
+
+## scran-cli_scran-trend-var.R
+
+### Tool Description
+Fit a mean-dependent trend to the gene-specific variances in single-cell RNA-seq data
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1
+- **Homepage**: https://github.com/ebi-gene-expression-group/scran-cli
+- **Package**: https://anaconda.org/channels/bioconda/packages/scran-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/scran-trend-var.R [options]
+
+
+Options:
+	-i INPUT-SCE-OBJECT, --input-sce-object=INPUT-SCE-OBJECT
+		Path to the input SCE object in rds format.
+
+	-m MIN-MEAN, --min-mean=MIN-MEAN
+		A numeric scalar specifying the minimum mean to use for trend fitting.
+
+	-t METHOD, --method=METHOD
+		A string specifying the algorithm to use for smooth trend fitting.
+
+	-p PARAMETRIC, --parametric=PARAMETRIC
+		A logical scalar indicating whether a parametric fit should be attempted.
+
+	-a ASSAY-TYPE, --assay-type=ASSAY-TYPE
+		String or integer scalar specifying the assay containing the log-expression values. Default: "logcounts"
+
+	-k USE-SPIKES, --use-spikes=USE-SPIKES
+		If FALSE only the rows not labelled as spike-in transcripts will be used. If TRUE, nly rows labelled as spike-ins with isSpike(x) will be used.
+
+	-o OUTPUT-TREND-VAR, --output-trend-var=OUTPUT-TREND-VAR
+		Path to the RDS object with named list containing: mean, var, resid.df, block, design, trend, df2.
+
+	-h, --help
+		Show this help message and exit
+```
+
+## scran-cli_scran-correlate-pairs.R
+
+### Tool Description
+Identify pairs of genes with significant correlations (correlatePairs)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1
+- **Homepage**: https://github.com/ebi-gene-expression-group/scran-cli
+- **Package**: https://anaconda.org/channels/bioconda/packages/scran-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/scran-correlate-pairs.R [options]
+
+
+Options:
+	-i INPUT-SCE-OBJECT, --input-sce-object=INPUT-SCE-OBJECT
+		Path to the input SCE object in rds format.
+
+	-b BLOCK, --block=BLOCK
+		A factor specifying the blocking levels for each cell in sce, for instance a donor covariate. If specified, correlations are computed separately within each block and statistics are combined across blocks.
+
+	-d DESIGN, --design=DESIGN
+		A numeric design matrix containing uninteresting factors to be ignored.
+
+	-a ASSAY-TYPE, --assay-type=ASSAY-TYPE
+		A character specifying which assay values to use.
+
+	-k ITERS, --iters=ITERS
+		Integer scalar specifying the number of iterations to use in correlateNull to build the null distribution.
+
+	-u USE-NAMES, --use-names=USE-NAMES
+		A logical scalar specifying whether the row names of x should be used in the output. Alternatively, a character vector containing the names to use.
+
+	-s SUBSET_ROW, --subset_row=SUBSET_ROW
+		Logical, integer or character vector specifying the rows for which to model the variance. Defaults to all genes in x.
+
+	-g GET-SPIKES, --get-spikes=GET-SPIKES
+		Logical specifying wether to perform spike-ins filtering(FALSE) or not (TRUE).
+
+	-m USE-DIMRED, --use-dimred=USE-DIMRED
+		A string specifying whether existing values in reducedDims(x) should be used.
+
+	-o OUTPUT-PAIRS-DF, --output-pairs-df=OUTPUT-PAIRS-DF
+		Path to the output dataframe with one row per gene pair (rows order by increasing p-values) in txt format.
+
+	-h, --help
+		Show this help message and exit
+```
+
+## scran-cli_scran-correlate-genes.R
+
+### Tool Description
+Get per-gene correlation statistics from the gene-pair table made by correlatePairs
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1
+- **Homepage**: https://github.com/ebi-gene-expression-group/scran-cli
+- **Package**: https://anaconda.org/channels/bioconda/packages/scran-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/scran-correlate-genes.R [options]
+
+
+Options:
+	-i INPUT-CORR-PAIRS, --input-corr-pairs=INPUT-CORR-PAIRS
+		Path to the  DataFrame of pairwise correlation statistics, returned by correlatePairs.
+
+	-o OUTPUT-CORR-GENES, --output-corr-genes=OUTPUT-CORR-GENES
+		A DataFrame with one row per unique gene in stats and containing the fields: gene, rho, p.value, FDR, limited.
+
+	-h, --help
+		Show this help message and exit
+```
+
+## scran-cli_scran-convert-to.R
+
+### Tool Description
+Convert a SingleCellExperiment object to an edgeR, DESeq2 or monocle object
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1
+- **Homepage**: https://github.com/ebi-gene-expression-group/scran-cli
+- **Package**: https://anaconda.org/channels/bioconda/packages/scran-cli/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/scran-convert-to.R [options]
+
+
+Options:
+	-i INPUT-SCE-OBJECT, --input-sce-object=INPUT-SCE-OBJECT
+		Path to the input SCE object in rds format.
+
+	-t TYPE, --type=TYPE
+		A string specifying the analysis for which the object should be prepared. Any of: "edgeR", "DESeq2", "monocle".
+
+	-a ASSAY-TYPE, --assay-type=ASSAY-TYPE
+		A string specifying which assay of x should be put in the returned object. For edgeR and DESeq2, assay is set to "counts" such that count data is stored in the output object
+
+	-g GET-SPIKES, --get-spikes=GET-SPIKES
+		Logical specifying wether to perform spike-ins filtering(FALSE) or not (TRUE).
+
+	-o OUTPUT-CONVERTED, --output-converted=OUTPUT-CONVERTED
+		Path to the converted object stored as RDS.
+
+	-h, --help
+		Show this help message and exit
+```
 
 ## Metadata
 - **Skill**: generated

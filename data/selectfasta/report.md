@@ -1,5 +1,11 @@
 # selectfasta CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| selectfasta_selectFasta | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

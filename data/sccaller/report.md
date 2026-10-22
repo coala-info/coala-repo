@@ -1,5 +1,11 @@
 # sccaller CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sccaller | PASS | NA12878 chr21 BAM used as both cell and bulk (no single-cell data); dbSNP sites |
+
 ## sccaller
 
 ### Tool Description

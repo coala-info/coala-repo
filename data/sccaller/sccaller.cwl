@@ -7,6 +7,9 @@ doc: "SCcaller, v2.0.0; Xiao Dong, biosinodx@gmail.com, xiao.dong@einstein.yu.ed
 inputs:
   - id: bam_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: bamfile of a single cell
     inputBinding:
       position: 101
@@ -24,6 +27,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: bamfile of bulk DNA sequencing
     inputBinding:
       position: 101
@@ -62,6 +68,9 @@ inputs:
       prefix: --cpu_num
   - id: fasta_file
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     doc: fasta file of reference genome
     inputBinding:
       position: 101

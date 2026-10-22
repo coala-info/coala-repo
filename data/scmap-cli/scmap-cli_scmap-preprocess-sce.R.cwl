@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/scmap-preprocess-sce.R
+baseCommand: scmap-preprocess-sce.R
 label: scmap-cli_scmap-preprocess-sce.R
 doc: "Preprocesses a SingleCellExperiment object for scmap.\n\nTool homepage: https://github.com/ebi-gene-expression-group/scmap-cli"
 inputs:

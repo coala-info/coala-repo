@@ -43,7 +43,7 @@ inputs:
       position: 101
       prefix: --outputFolder
   - id: srr_to_sample_file
-    type: string
+    type: File
     doc: The mappings from SRR number to sample id as given in the barcode file.
     inputBinding:
       position: 101

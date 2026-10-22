@@ -1,5 +1,11 @@
 # snpick CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snpick | PASS |  |
+
 ## snpick
 
 ### Tool Description

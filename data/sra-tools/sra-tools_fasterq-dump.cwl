@@ -6,7 +6,10 @@ doc: A tool for dumping data from SRA accessions or paths in FASTQ/FASTA format,
   designed for speed and efficiency.
 inputs:
   - id: input
-    type: string
+    type:
+      - File
+      - Directory
+      - string
     doc: Path or accession to process
     inputBinding:
       position: 1
@@ -19,13 +22,17 @@ inputs:
       position: 102
       prefix: --format
   - id: outfile
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output-file
     inputBinding:
       position: 102
       prefix: --outfile
   - id: outdir
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output-dir
     inputBinding:
       position: 102
@@ -360,6 +367,13 @@ outputs:
     doc: output-dir
     outputBinding:
       glob: $(inputs.outdir)
+  - id: sequence_files
+    type:
+      type: array
+      items: File
+    doc: FASTQ or FASTA files written to the working directory or --outdir
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/*.fast[aq]' : '*.fast[aq]')"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

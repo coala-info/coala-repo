@@ -32,6 +32,13 @@ inputs:
       position: 102
       prefix: --threads
 outputs:
+  - id: split_bams
+    type:
+      type: array
+      items: File
+    doc: Split BAM files, named <number>.<input file name>
+    outputBinding:
+      glob: '*.bam'
   - id: stdout
     type: stdout
     doc: Standard output

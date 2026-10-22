@@ -1,5 +1,11 @@
 # snakemake CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snakemake | Not completed | pipeline engine, skipped |
+
 ## snakemake
 
 ### Tool Description

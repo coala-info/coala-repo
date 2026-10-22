@@ -1,5 +1,11 @@
 # soda-gallery CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| soda-gallery_soda | Not completed | needs a running UCSC Genome Browser session (session ID, network and browser account); cannot be tested offline |
+
 ## soda-gallery_soda
 
 ### Tool Description

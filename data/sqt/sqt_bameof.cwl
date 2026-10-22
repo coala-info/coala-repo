@@ -5,7 +5,7 @@ baseCommand:
   - bameof
 label: sqt_bameof
 doc: "Check whether the EOF marker is present in BAM files. If it's not, this may
-  be a sign that the BAM file was corrupted.\n\nTool homepage: https://github.com/tdjsnelling/sqtracker"
+  be a sign that the BAM file was corrupted.\n\nTool homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: bam_files
     type:
@@ -20,7 +20,7 @@ inputs:
       - boolean
     doc: Don't print anything, just set the exit code.
     inputBinding:
-      position: 102
+      position: 0
       prefix: --quiet
 outputs:
   - id: stdout
@@ -30,3 +30,6 @@ hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sqt:v0.8.0-3-deb-py3_cv1
 stdout: sqt_bameof.out
+successCodes:
+  - 0
+  - 1

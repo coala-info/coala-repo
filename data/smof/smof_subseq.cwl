@@ -4,76 +4,66 @@ baseCommand:
   - smof
   - subseq
 label: smof_subseq
-doc: "Extract subsequences from FASTA files, optionally with reverse complement, GFF
-  input, or coloring.\n\nTool homepage: https://github.com/incertae-sedis/smof"
+doc: "Extract a subsequence from each entry (reverse complement if a<b is reversed).\n\nTool homepage: https://github.com/incertae-sedis/smof"
 inputs:
-  - id: input_fasta
+  - id: bounds
+    type:
+      - 'null'
+      - type: array
+        items: int
+    doc: "From and to values (indexed from 1)"
+    inputBinding:
+      position: 100
+      prefix: --bounds
+  - id: gff
     type:
       - 'null'
       - File
-    doc: input fasta sequence
+    doc: "Get bounds from this gff3 file"
     inputBinding:
-      position: 1
-  - id: annotate
+      position: 101
+      prefix: --gff
+  - id: keep
     type:
       - 'null'
       - boolean
-    doc: Append the subsequence interval to the defline
+    doc: "With --gff, keep sequences with no matches"
     inputBinding:
       position: 102
-      prefix: --annotate
+      prefix: --keep
   - id: color
     type:
       - 'null'
       - string
-    doc: Color subsequence (do not extract)
+    doc: "Color subsequence (do not extract)"
     inputBinding:
-      position: 102
+      position: 103
       prefix: --color
+  - id: annotate
+    type:
+      - 'null'
+      - boolean
+    doc: "Append the subsequence interval to the defline"
+    inputBinding:
+      position: 104
+      prefix: --annotate
   - id: force_color
     type:
       - 'null'
       - boolean
-    doc: Print in color even to non-tty (DANGEROUS)
+    doc: "Print in color even to non-tty (DANGEROUS)"
     inputBinding:
-      position: 102
+      position: 105
       prefix: --force-color
-  - id: gff_file
-    type:
-      - 'null'
-      - File
-    doc: Get bounds from this gff3 file
+  - id: input_file
+    type: File
+    doc: "Input FASTA file (smof reads standard input by default)"
     inputBinding:
-      position: 102
-      prefix: --gff
-  - id: keep_no_matches
-    type:
-      - 'null'
-      - boolean
-    doc: With --gff, keep sequences with no matches
-    inputBinding:
-      position: 102
-      prefix: --keep
-  - id: start
-    type:
-      - 'null'
-      - int
-    doc: Start position (indexed from 1)
-    inputBinding:
-      position: 102
-      prefix: --bounds
-  - id: stop
-    type:
-      - 'null'
-      - int
-    doc: Stop position (indexed from 1)
-    inputBinding:
-      position: 102
-      prefix: --bounds
+      position: 200
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smof:2.22.4--pyhdfd78af_0

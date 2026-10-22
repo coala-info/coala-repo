@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smoove
+baseCommand:
+  - smoove
+  - duphold
 label: smoove_duphold
 doc: "Call germline structural variants from sequencing data.\n\nTool homepage: https://github.com/brentp/smoove"
 inputs:
@@ -8,11 +10,20 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: paths to sample BAM/CRAMs
     inputBinding:
       position: 1
   - id: fasta
     type: File
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     doc: fasta file.
     inputBinding:
       position: 102

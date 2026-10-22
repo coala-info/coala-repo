@@ -1,5 +1,21 @@
 # solvebio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| solvebio_create-dataset | Not completed | needs a SolveBio account and API key; without login the tool stops with 'client is not logged in' |
+| solvebio_download | Not completed | needs a SolveBio account and API key; without login the tool stops with 'client is not logged in' |
+| solvebio_import | Not completed | needs a SolveBio account and API key; without login the tool stops with 'client is not logged in' |
+| solvebio_login | Not completed | needs a SolveBio account (interactive login); no credentials entered |
+| solvebio_logout | Not completed | runs but only reports 'You are not logged-in'; there is no SolveBio session to log out of |
+| solvebio_ls | Not completed | needs a SolveBio account and API key; without login the tool stops with 'client is not logged in' |
+| solvebio_queue | Not completed | needs a SolveBio account and API key; without login the tool stops with 'client is not logged in' |
+| solvebio_shell | Not completed | interactive shell, not testable |
+| solvebio_tag | Not completed | needs a SolveBio account and API key; without login the tool stops with 'client is not logged in' |
+| solvebio_upload | Not completed | needs a SolveBio account and API key; without login the tool stops with 'client is not logged in' |
+| solvebio_whoami | Not completed | needs a SolveBio account and API key; without login the tool stops with 'client is not logged in' |
+
 ## solvebio_login
 
 ### Tool Description

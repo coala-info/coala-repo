@@ -9,6 +9,13 @@ doc: "extract genotype-like information for a single-sample at selected sites\n\
 inputs:
   - id: sample_file
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: .tbi
+        required: false
     doc: single-sample CRAM/BAM/GVCF file or multi/single-sample VCF from which 
       to extract
     inputBinding:
@@ -17,6 +24,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: path to reference fasta file
     inputBinding:
       position: 102
@@ -25,7 +35,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: path to output directory
+    default: somalier_extract
+    doc: path to output directory (default .)
     inputBinding:
       position: 102
       prefix: --out-dir
@@ -56,6 +67,15 @@ outputs:
     doc: path to output directory
     outputBinding:
       glob: $(inputs.out_dir)
+  - id: extracted_files
+    type:
+      type: array
+      items: File
+    doc: Extracted .somalier file of the sample
+    outputBinding:
+      glob: $(inputs.out_dir)/*.somalier
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/somalier:0.3.1--hc78c8e0_0

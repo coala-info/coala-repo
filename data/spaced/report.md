@@ -1,5 +1,11 @@
 # spaced CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spaced | Failed | tool bug: with the default reverse-complement mode, two identical sequences get a non-zero distance (JS 0.31); with -r they get 0 |
+
 ## spaced
 
 ### Tool Description

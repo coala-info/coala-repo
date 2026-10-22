@@ -260,6 +260,15 @@ outputs:
     doc: Output directory.
     outputBinding:
       glob: $(inputs.output_dir)
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Plot (and SNP table with --write-snps) written with the output file name stem
+    outputBinding:
+      glob: "$(function() { var d = inputs.output_dir ? inputs.output_dir + '/' : ''; var n = inputs.output_file ? inputs.output_file : 'snp_plot'; return [d + n + '.*', d + 'snps.csv']; }())"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snipit:1.7--pyhdfd78af_0

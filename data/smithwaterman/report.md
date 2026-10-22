@@ -1,5 +1,11 @@
 # smithwaterman CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smithwaterman | Failed | tool bug: --bandwidth (banded mode) always prints score 0.000000 for a perfect 20-base match; default mode works; -r (repeat gap extend penalty) fixed to an optional float on -r and tested (score 445.5 at -r 1, 449.0 at -r 8 vs 438.34 default); long --print-alignment also demands an argument, so CWL uses -p and -z |
+
 ## smithwaterman
 
 ### Tool Description

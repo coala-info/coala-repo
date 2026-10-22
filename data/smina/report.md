@@ -1,5 +1,11 @@
 # smina CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smina | PASS | rewritten from help (--out, --flex/--flexres fixed, no_vdw removed); docked HIV protease 1HSG with indinavir, best score -11.8 kcal/mol |
+
 ## smina
 
 ### Tool Description

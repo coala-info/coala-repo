@@ -1,5 +1,11 @@
 # splitp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| splitp | PASS | synthetic data: real SPLiT-seq R2 reads (SRR6750041, 100 reads) with a barcode map built from barcodes seen in them |
+
 ## splitp
 
 ### Tool Description

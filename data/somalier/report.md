@@ -1,5 +1,15 @@
 # somalier CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| somalier_ancestry | PASS | baseCommand fixed from pca to ancestry and query files added after ++; 149 labelled 1000 Genomes digests plus the nf-core whole-genome digest: 146 of 149 labelled samples get their given ancestry back |
+| somalier_extract | PASS | nf-core human chr22 test BAMs with a sites VCF of SNVs from dbSNP give .somalier files for testN and testT; made index files optional, set default output dir and collected the .somalier file |
+| somalier_find-sites | PASS | nf-core gnomAD chr22 VCF gives 59 SNV sites with AF 0.05 or more and at least 100 bases apart |
+| somalier_pedrel | PASS | nf-core family.ped gives normal and tumour relatedness 0.49 (siblings) |
+| somalier_relate | PASS | relate runs on two extracted files and on the nf-core normal and tumour pair with groups and ped; outputs html, pairs and samples tables; the pair shows 0.92 hom concordance (relatedness 0.000 because the digests have no het sites) |
+
 ## somalier_extract
 
 ### Tool Description

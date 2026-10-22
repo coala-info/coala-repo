@@ -78,7 +78,7 @@ inputs:
   - id: exclude
     type:
       - 'null'
-      - string
+      - File
     doc: 'List of compounds to exclude from calculations (e.g.: inorganic compounds).'
     inputBinding:
       position: 102

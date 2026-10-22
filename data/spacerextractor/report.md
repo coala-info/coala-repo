@@ -1,5 +1,17 @@
 # spacerextractor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spacerextractor_build_database | PASS | Rewrote CWL; added the 2 cctyper arrays to the downloaded repeat database (581889 repeats, array repeat present) |
+| spacerextractor_create_target_db | PASS | Rewrote CWL; built a bowtie target database from the Listeria phage A118 genome (AJ242593) |
+| spacerextractor_download_database | PASS | Rewrote CWL (creates the folder, network access); downloaded and unpacked the 18 MB repeat database |
+| spacerextractor_extract_spacers | PASS | synthetic data: reads simulated from the Listeria CRISPR array region; 1083 spacers extracted, assigned to Listeria |
+| spacerextractor_filter_hq_spacers | PASS | synthetic data: filtered the extract_spacers output to 194 high-quality spacers; wdir staged writable |
+| spacerextractor_map_to_target | PASS | Rewrote CWL (database staged writable); a Listeria spacer mapped to the phage genome at 18563-18598, as spacepharer also finds |
+| spacerextractor_run_cctyper | PASS | Rewrote CWL (genome_id_prefix is a flag); CRISPRCasTyper found 2 type I-B arrays in Listeria contig JNGQ01000029 |
+
 ## spacerextractor_download_database
 
 ### Tool Description

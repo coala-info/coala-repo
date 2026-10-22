@@ -1,5 +1,12 @@
 # spapros CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spapros_evaluation | PASS | Rewrote CWL; evaluated 2 of the selected probesets on small_data with the repo parameters file and got a summary table with all metrics |
+| spapros_selection | PASS | Rewrote CWL (output is a folder, global options before the subcommand); the repo's small_data example gave selection tables with 2000 genes and a plot |
+
 ## spapros_evaluation
 
 ### Tool Description

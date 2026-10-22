@@ -24,62 +24,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --db_dir
-  - id: debug
-    type:
-      - 'null'
-      - boolean
-    doc: Turn on debugging
-    inputBinding:
-      position: 103
-      prefix: --debug
-  - id: max_bases_from_ends
-    type:
-      - 'null'
-      - int
-    doc: Only look at this number of bases from start and end of fragment
-    inputBinding:
-      position: 103
-      prefix: --max_bases_from_ends
-  - id: min_alignment_length
-    type:
-      - 'null'
-      - int
-    doc: Minimum alignment length
-    inputBinding:
-      position: 103
-      prefix: --min_alignment_length
-  - id: min_bit_score
-    type:
-      - 'null'
-      - int
-    doc: Minimum bit score
-    inputBinding:
-      position: 103
-      prefix: --min_bit_score
-  - id: new_fragments
-    type:
-      - 'null'
-      - File
-    doc: Filename for novel fragments
-    inputBinding:
-      position: 103
-      prefix: --new_fragments
-  - id: not_circular
-    type:
-      - 'null'
-      - boolean
-    doc: Assume chromosome is not circularised
-    inputBinding:
-      position: 103
-      prefix: -c
-  - id: novel_profiles
-    type:
-      - 'null'
-      - File
-    doc: Filename for novel profiles
-    inputBinding:
-      position: 103
-      prefix: --novel_profiles
   - id: threads
     type:
       - 'null'
@@ -88,14 +32,98 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
-  - id: top_blast_hits
+  - id: output_file_path
     type:
       - 'null'
-      - File
+      - string
+    doc: Output filename, defaults to STDOUT
+    inputBinding:
+      position: 104
+      prefix: --output_file
+  - id: output_plot_file_path
+    type:
+      - 'null'
+      - string
+    doc: Filename of plot of genome structure (default genome_structure.pdf)
+    default: genome_structure.pdf
+    inputBinding:
+      position: 105
+      prefix: --output_plot_file
+  - id: novel_profiles_path
+    type:
+      - 'null'
+      - string
+    doc: Filename for novel profiles (default profile.txt.novel)
+    default: profile.txt.novel
+    inputBinding:
+      position: 105
+      prefix: --novel_profiles
+  - id: new_fragments_path
+    type:
+      - 'null'
+      - string
+    doc: Filename for novel fragments (default novel_fragments.fa)
+    default: novel_fragments.fa
+    inputBinding:
+      position: 105
+      prefix: --new_fragments
+  - id: top_blast_hits_path
+    type:
+      - 'null'
+      - string
     doc: Filename for top blast hits
     inputBinding:
-      position: 103
+      position: 105
       prefix: --top_blast_hits
+  - id: output_operon_directions_file_path
+    type:
+      - 'null'
+      - string
+    doc: Filename of directions of operons (default operon_directions.txt)
+    default: operon_directions.txt
+    inputBinding:
+      position: 105
+      prefix: --output_operon_directions_file
+  - id: max_bases_from_ends
+    type:
+      - 'null'
+      - int
+    doc: Only look at this number of bases from start and end of fragment
+    inputBinding:
+      position: 103
+      prefix: --max_bases_from_ends
+  - id: not_circular
+    type:
+      - 'null'
+      - boolean
+    doc: Assume chromosome is not circularised
+    inputBinding:
+      position: 103
+      prefix: -c
+  - id: min_bit_score
+    type:
+      - 'null'
+      - int
+    doc: Minimum bit score (default 100)
+    inputBinding:
+      position: 103
+      prefix: --min_bit_score
+  - id: min_alignment_length
+    type:
+      - 'null'
+      - int
+    doc: Minimum alignment length (default 100)
+    inputBinding:
+      position: 103
+      prefix: --min_alignment_length
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Turn on debugging
+    inputBinding:
+      position: 103
+      prefix: --debug
   - id: verbose
     type:
       - 'null'
@@ -104,28 +132,10 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
-  - id: output_file_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 104
-      prefix: --output_file
-  - id: output_operon_directions_file_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 105
-      prefix: --output_operon_directions_file
-  - id: output_plot_file_path
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 106
-      prefix: --output_plot_file
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Typing result (STDOUT when no output file is given)
   - id: output_file
     type:
       - 'null'
@@ -140,6 +150,27 @@ outputs:
     doc: Filename of plot of genome structure
     outputBinding:
       glob: $(inputs.output_plot_file_path)
+  - id: novel_profiles
+    type:
+      - 'null'
+      - File
+    doc: Filename for novel profiles
+    outputBinding:
+      glob: $(inputs.novel_profiles_path)
+  - id: new_fragments
+    type:
+      - 'null'
+      - File
+    doc: Filename for novel fragments
+    outputBinding:
+      glob: $(inputs.new_fragments_path)
+  - id: top_blast_hits
+    type:
+      - 'null'
+      - File
+    doc: Filename for top blast hits
+    outputBinding:
+      glob: $(inputs.top_blast_hits_path)
   - id: output_operon_directions_file
     type:
       - 'null'
@@ -152,3 +183,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/socru:2.2.5--pyhdfd78af_0
+stdout: socru.out

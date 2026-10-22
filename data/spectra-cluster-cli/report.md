@@ -1,5 +1,11 @@
 # spectra-cluster-cli CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spectra-cluster-cli | PASS | Rewrote CWL (invented flags, output is a file not a folder); 210 repo test spectra gave 157 clusters in a valid .clustering file |
+
 ## spectra-cluster-cli
 
 ### Tool Description

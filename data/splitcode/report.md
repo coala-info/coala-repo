@@ -1,5 +1,11 @@
 # splitcode CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| splitcode | PASS |  |
+
 ## splitcode
 
 ### Tool Description

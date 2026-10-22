@@ -1,47 +1,17 @@
 # snipe CWL Generation Report
 
-## snipe_ops
+## Real Data Test
 
-### Tool Description
-Perform operations on SnipeSig signatures.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/snipe:0.1.6--pyhdfd78af_0
-- **Homepage**: https://github.com/snipe-bio/snipe
-- **Package**: https://anaconda.org/channels/bioconda/packages/snipe/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/snipe/overview
-- **Total Downloads**: 1.7K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/snipe-bio/snipe
-- **Stars**: N/A
-### Original Help Text
-```text
-Usage: snipe ops [OPTIONS] COMMAND [ARGS]...
-
-  Perform operations on SnipeSig signatures.
-
-  Subcommands:     1. `sum`        Merge multiple signatures by summing their
-  abundances.     2. `intersect`  Compute the intersection of multiple
-  signatures.     3. `union`      Compute the union of multiple signatures.
-  4. `subtract`   Subtract one signature from another.     5. `common`
-  Extract hashes common to all input signatures.
-
-  Use 'snipe ops <subcommand> --help' for more information on a command.
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  common        Extract hashes that are common to all input signatures.
-  guided-merge  Guide signature merging by groups.
-  intersect     Intersect multiple sigs and retain abundance of first one.
-  subtract      Subtract one signature from another.
-  sum           Merge multiple signatures by summing their abundances.
-  union         Merge multiple signatures by taking the union of hashes.
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| snipe_ops_common | PASS |  |
+| snipe_ops_guided-merge | PASS |  |
+| snipe_ops_intersect | PASS |  |
+| snipe_ops_subtract | Failed | tool bug: the image calls a missing method (SnipeSig has no attribute 'subtract'), so the command always errors |
+| snipe_ops_sum | PASS |  |
+| snipe_ops_union | PASS |  |
+| snipe_qc | PASS |  |
+| snipe_sketch | PASS |  |
 
 ## snipe_qc
 
@@ -430,6 +400,284 @@ Options:
   --help                    Show this message and exit.
 ```
 
+
+## snipe_ops_common
+
+### Tool Description
+Extract hashes that are common to all input signatures.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snipe:0.1.6--pyhdfd78af_0
+- **Homepage**: https://github.com/snipe-bio/snipe
+- **Package**: https://anaconda.org/channels/bioconda/packages/snipe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: snipe ops common [OPTIONS] [SIG_FILES]...
+
+  Extract hashes that are common to all input signatures.
+
+  This command identifies hashes that are present in **every** input signature
+  and creates a new signature containing only these common hashes. The
+  abundance values from the first signature are retained.
+
+  **Example:**
+
+      snipe ops common sample1.sig.zip sample2.sig.zip sample3.sig.zip -o
+      common_hashes.sig.zip
+
+  This command will:   1. Load `sample1.sig.zip`, `sample2.sig.zip`, and
+  `sample3.sig.zip`.   2. Apply any specified operations.   3. Identify hashes
+  common to all signatures.   4. Retain abundance values from
+  `sample1.sig.zip` for these common hashes.   5. Export the resulting common
+  hashes signature to `common_hashes.sig.zip`.
+
+Options:
+  -n, --name TEXT         Name for the output signature.  [required]
+  -o, --output-file TEXT  Output file with .zip or .sig extension.  [required]
+  --trim-below-median     Trim hashes below the median abundance.
+  --max-abund INTEGER     Keep hashes with abundance <= this value.
+  --min-abund INTEGER     Keep hashes with abundance >= this value.
+  --trim-singletons       Trim singletons from all input signatures.
+  --reset-abundance       Reset abundance for all input signatures to 1.
+  --sigs-from-file PATH   File containing signature paths (one per line).
+  --debug                 Enable debugging and detailed logging.
+  --force                 Overwrite the output file if it already exists.
+  --help                  Show this message and exit.
+```
+
+## snipe_ops_guided-merge
+
+### Tool Description
+Guide signature merging by groups.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snipe:0.1.6--pyhdfd78af_0
+- **Homepage**: https://github.com/snipe-bio/snipe
+- **Package**: https://anaconda.org/channels/bioconda/packages/snipe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: snipe ops guided-merge [OPTIONS]
+
+  Guide signature merging by groups.
+
+  This command reads a table file (CSV or TSV) where each line contains a
+  signature file path and an experiment name. It groups signatures by
+  experiment, applies specified operations, sums the signatures within each
+  group, and saves the merged signatures as
+  `{output_dir}/{experiment_name}.zip`.
+
+  **Example:**
+
+      snipe ops guided-merge --table mapping.tsv --output-dir merged_sigs
+      --reset-abundance --force --cores 4
+
+  **Example Table File (`mapping.tsv`):**
+
+      /path/to/sig1.zip    exp1     /path/to/sig2.zip    exp1
+      /path/to/sig3.zip    exp2     /path/to/sig4.zip    exp2
+      /path/to/sig5.zip    exp3
+
+Options:
+  -t, --table FILE            Tabular file (CSV or TSV) with two columns:
+                              <signature_path> <experiment_name>  [required]
+  -d, --output-dir DIRECTORY  Directory to save merged signature files.
+                              [required]
+  --reset-abundance           Reset abundance for all input signatures to 1.
+  --trim-singletons           Trim singletons from all input signatures.
+  --min-abund INTEGER         Keep hashes with abundance >= this value.
+  --max-abund INTEGER         Keep hashes with abundance <= this value.
+  --trim-below-median         Trim hashes below the median abundance.
+  --debug                     Enable debugging and detailed logging.
+  --force                     Overwrite existing files in the output
+                              directory.
+  --cores INTEGER             Number of cores to use for processing
+                              experiments in parallel.
+  --help                      Show this message and exit.
+```
+
+## snipe_ops_intersect
+
+### Tool Description
+Intersect multiple sigs and retain abundance of first one.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snipe:0.1.6--pyhdfd78af_0
+- **Homepage**: https://github.com/snipe-bio/snipe
+- **Package**: https://anaconda.org/channels/bioconda/packages/snipe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: snipe ops intersect [OPTIONS] [SIG_FILES]...
+
+  Intersect multiple sigs and retain abundance of first one.
+
+  This command identifies hashes that are present in **all** input signatures
+  and retains their abundance from the first signature.
+
+  **Example:**
+
+      snipe ops intersect sample1.sig.zip sample2.sig.zip -o
+      intersection.sig.zip
+
+  This command will:   1. Load `sample1.sig.zip` and `sample2.sig.zip`.   2.
+  Apply any specified operations.   3. Retain only hashes common to both
+  signatures.   4. Use the abundance values from `sample1.sig.zip` for the
+  common hashes.   5. Export the resulting intersection to
+  `intersection.sig.zip`.
+
+Options:
+  -n, --name TEXT         Name for the output signature.  [required]
+  -o, --output-file TEXT  Output file with .zip or .sig extension.  [required]
+  --trim-below-median     Trim hashes below the median abundance.
+  --max-abund INTEGER     Keep hashes with abundance <= this value.
+  --min-abund INTEGER     Keep hashes with abundance >= this value.
+  --trim-singletons       Trim singletons from all input signatures.
+  --reset-abundance       Reset abundance for all input signatures to 1.
+  --sigs-from-file PATH   File containing signature paths (one per line).
+  --debug                 Enable debugging and detailed logging.
+  --force                 Overwrite the output file if it already exists.
+  --help                  Show this message and exit.
+```
+
+## snipe_ops_subtract
+
+### Tool Description
+Subtract one signature from another.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snipe:0.1.6--pyhdfd78af_0
+- **Homepage**: https://github.com/snipe-bio/snipe
+- **Package**: https://anaconda.org/channels/bioconda/packages/snipe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: snipe ops subtract [OPTIONS] [SIG_FILES]...
+
+  Subtract one signature from another.
+
+  This command removes the hashes present in the second signature from the
+  first signature. The resulting signature will contain only the hashes that
+  are unique to the first signature.
+
+  **Example:**
+
+      snipe ops subtract sample1.sig.zip sample2.sig.zip -o subtracted.sig.zip
+
+  This command will:   1. Load `sample1.sig.zip` and `sample2.sig.zip`.   2.
+  Apply any specified operations.   3. Subtract the hashes of
+  `sample2.sig.zip` from `sample1.sig.zip`.   4. Export the resulting
+  signature to `subtracted.sig.zip`.
+
+Options:
+  -n, --name TEXT         Name for the output signature.  [required]
+  -o, --output-file TEXT  Output file with .zip or .sig extension.  [required]
+  --trim-below-median     Trim hashes below the median abundance.
+  --max-abund INTEGER     Keep hashes with abundance <= this value.
+  --min-abund INTEGER     Keep hashes with abundance >= this value.
+  --trim-singletons       Trim singletons from all input signatures.
+  --reset-abundance       Reset abundance for all input signatures to 1.
+  --sigs-from-file PATH   File containing signature paths (one per line).
+  --debug                 Enable debugging and detailed logging.
+  --force                 Overwrite the output file if it already exists.
+  --help                  Show this message and exit.
+```
+
+## snipe_ops_sum
+
+### Tool Description
+Merge multiple signatures by summing their abundances.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snipe:0.1.6--pyhdfd78af_0
+- **Homepage**: https://github.com/snipe-bio/snipe
+- **Package**: https://anaconda.org/channels/bioconda/packages/snipe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: snipe ops sum [OPTIONS] [SIG_FILES]...
+
+  Merge multiple signatures by summing their abundances.
+
+  This command loads multiple signature files, applies specified operations
+  (like resetting abundances), and then sums them to create a new signature
+  where the abundance of each hash is the sum of its abundances across all
+  input signatures.
+
+  **Example:**
+
+      snipe ops sum sample1.sig.zip sample2.sig.zip -o summed.sig.zip --reset-
+      abundance
+
+  This command will:   1. Load `sample1.sig.zip` and `sample2.sig.zip`.   2.
+  Reset the abundance of each hash in both signatures to 1.   3. Sum the
+  signatures, resulting in `summed.sig.zip` where each hash has an abundance
+  of 2.
+
+Options:
+  -n, --name TEXT         Name for the output signature.  [required]
+  -o, --output-file TEXT  Output file with .zip or .sig extension.  [required]
+  --trim-below-median     Trim hashes below the median abundance.
+  --max-abund INTEGER     Keep hashes with abundance <= this value.
+  --min-abund INTEGER     Keep hashes with abundance >= this value.
+  --trim-singletons       Trim singletons from all input signatures.
+  --reset-abundance       Reset abundance for all input signatures to 1.
+  --sigs-from-file PATH   File containing signature paths (one per line).
+  --debug                 Enable debugging and detailed logging.
+  --force                 Overwrite the output file if it already exists.
+  --help                  Show this message and exit.
+```
+
+## snipe_ops_union
+
+### Tool Description
+Merge multiple signatures by taking the union of hashes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snipe:0.1.6--pyhdfd78af_0
+- **Homepage**: https://github.com/snipe-bio/snipe
+- **Package**: https://anaconda.org/channels/bioconda/packages/snipe/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: snipe ops union [OPTIONS] [SIG_FILES]...
+
+  Merge multiple signatures by taking the union of hashes.
+
+  This command combines multiple signatures, retaining all unique hashes from
+  each. If a hash appears in multiple signatures, its abundance in the
+  resulting signature is the sum of its abundances across all input
+  signatures.
+
+  **Example:**
+
+      snipe ops union sample1.sig.zip sample2.sig.zip -o union.sig.zip
+
+  This command will:   1. Load `sample1.sig.zip` and `sample2.sig.zip`.   2.
+  Apply any specified operations.   3. Combine the signatures, summing
+  abundances for overlapping hashes.   4. Export the resulting union signature
+  to `union.sig.zip`.
+
+Options:
+  -n, --name TEXT         Name for the output signature.  [required]
+  -o, --output-file TEXT  Output file with .zip or .sig extension.  [required]
+  --trim-below-median     Trim hashes below the median abundance.
+  --max-abund INTEGER     Keep hashes with abundance <= this value.
+  --min-abund INTEGER     Keep hashes with abundance >= this value.
+  --trim-singletons       Trim singletons from all input signatures.
+  --reset-abundance       Reset abundance for all input signatures to 1.
+  --sigs-from-file PATH   File containing signature paths (one per line).
+  --debug                 Enable debugging and detailed logging.
+  --force                 Overwrite the output file if it already exists.
+  --help                  Show this message and exit.
+```
 
 ## Metadata
 - **Skill**: generated

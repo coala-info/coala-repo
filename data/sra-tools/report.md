@@ -1,5 +1,16 @@
 # sra-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sra-tools_fasterq-dump | PASS |  |
+| sra-tools_fastq-dump | PASS |  |
+| sra-tools_prefetch | Failed | image problem: the image has no CA certificate bundle, so prefetch cannot verify the NCBI server (TLS error 0x8) and cannot download |
+| sra-tools_sam-dump | PASS |  |
+| sra-tools_sra-stat | PASS |  |
+| sra-tools_vdb-validate | PASS |  |
+
 ## sra-tools_prefetch
 
 ### Tool Description

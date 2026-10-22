@@ -1,5 +1,11 @@
 # snap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snap | PASS |  |
+
 ## snap
 
 ### Tool Description

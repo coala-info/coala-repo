@@ -1,18 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sprai_ezez4qsub_vx1.pl
+baseCommand: ezez4qsub_vx1.pl
 label: sprai_ezez4qsub_vx1.pl
 doc: "Error correction and assembly pipeline\n\nTool homepage: http://zombie.cb.k.u-tokyo.ac.jp/sprai/"
 inputs:
   - id: ec_spec
-    type: string
+    type: File
     doc: Error correction specification file
     inputBinding:
       position: 1
   - id: asm_spec
     type:
       - 'null'
-      - string
+      - File
     doc: Assembly specification file
     inputBinding:
       position: 2

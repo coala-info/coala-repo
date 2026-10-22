@@ -1,5 +1,11 @@
 # snakefmt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snakefmt | PASS |  |
+
 ## snakefmt
 
 ### Tool Description

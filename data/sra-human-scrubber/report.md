@@ -1,5 +1,11 @@
 # sra-human-scrubber CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sra-human-scrubber_scrub.sh | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

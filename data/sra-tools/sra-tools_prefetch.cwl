@@ -158,7 +158,9 @@ inputs:
       position: 102
       prefix: --rows
   - id: perm
-    type: File
+    type:
+      - 'null'
+      - File
     doc: PATH to jwt cart file.
     inputBinding:
       position: 102
@@ -196,7 +198,9 @@ inputs:
       position: 102
       prefix: --ascp-options
   - id: output_directory
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Save files to DIRECTORY/
     inputBinding:
       position: 102
@@ -235,6 +239,8 @@ outputs:
       glob: $(inputs.output_directory)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sra-tools:3.4.1--2_linux_64

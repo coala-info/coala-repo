@@ -4,36 +4,33 @@ baseCommand:
   - smof
   - wc
 label: smof_wc
-doc: "Outputs the total number of entries and the total sequence length (TAB\n delimited).\n\
-  \nTool homepage: https://github.com/incertae-sedis/smof"
+doc: "Output the total number of entries and the total sequence length (TAB delimited).\n\nTool homepage: https://github.com/incertae-sedis/smof"
 inputs:
-  - id: input
-    type:
-      - 'null'
-      - File
-    doc: input fasta sequence (default = stdin)
-    inputBinding:
-      position: 1
   - id: chars
     type:
       - 'null'
       - boolean
-    doc: writes the summed length of all sequences
+    doc: "Write the summed length of all sequences"
     inputBinding:
-      position: 102
+      position: 100
       prefix: --chars
   - id: lines
     type:
       - 'null'
       - boolean
-    doc: writes the total number of sequences
+    doc: "Write the total number of sequences"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --lines
+  - id: input_file
+    type: File
+    doc: "Input FASTA file (smof reads standard input by default)"
+    inputBinding:
+      position: 200
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smof:2.22.4--pyhdfd78af_0

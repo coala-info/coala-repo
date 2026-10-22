@@ -81,10 +81,23 @@ inputs:
       position: 104
       prefix: -ylim
 outputs:
+  - id: plots
+    type:
+      type: array
+      items: File
+    doc: Smudgeplot figures (and the JSON report with --json_report).
+    outputBinding:
+      glob: $((inputs.output_pattern || 'smudgeplot') + '_*')
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error (progress messages)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smudgeplot:0.5.3--py314h577a1d6_0
 stdout: smudgeplot_plot.out
+stderr: smudgeplot_plot.err

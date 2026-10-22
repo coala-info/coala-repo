@@ -1,5 +1,11 @@
 # spingo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spingo | PASS |  |
+
 ## spingo
 
 ### Tool Description

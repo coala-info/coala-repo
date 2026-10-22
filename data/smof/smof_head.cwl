@@ -4,52 +4,41 @@ baseCommand:
   - smof
   - head
 label: smof_head
-doc: "`smof head` is modeled after GNU tail and follows the same basic conventions
-  except it is entry-based rather than line-based. By default, `smof head` outputs
-  ONE sequence (rather than the 10 line default for `head`)\n\nTool homepage: https://github.com/incertae-sedis/smof"
+doc: "Write the first entries of a FASTA file (entry-based; one entry by default).\n\nTool homepage: https://github.com/incertae-sedis/smof"
 inputs:
-  - id: k_entries
-    type:
-      - 'null'
-      - int
-    doc: print first K entries
-    inputBinding:
-      position: 1
-  - id: input_fasta
-    type:
-      - 'null'
-      - File
-    doc: input fasta sequence
-    inputBinding:
-      position: 2
   - id: entries
     type:
       - 'null'
-      - int
-    doc: print first K entries; or use -n -K to print all but the last K entries
+      - string
+    doc: "Print first K entries; or use -n -K to print all but the last K entries"
     inputBinding:
-      position: 103
+      position: 100
       prefix: --entries
-  - id: first_letters
+  - id: first
     type:
       - 'null'
       - int
-    doc: print first K letters of each sequence
+    doc: "Print first K letters of each sequence"
     inputBinding:
-      position: 103
+      position: 101
       prefix: --first
-  - id: last_letters
+  - id: last
     type:
       - 'null'
       - int
-    doc: print last K letters of each sequence
+    doc: "Print last K letters of each sequence"
     inputBinding:
-      position: 103
+      position: 102
       prefix: --last
+  - id: input_file
+    type: File
+    doc: "Input FASTA file (smof reads standard input by default)"
+    inputBinding:
+      position: 200
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smof:2.22.4--pyhdfd78af_0

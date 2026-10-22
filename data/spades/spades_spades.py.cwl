@@ -154,48 +154,33 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: file with forward reads for high-quality mate-pair library number <#>
-    inputBinding:
-      position: 101
-      prefix: --hqmp-1
+    doc: file with forward reads for high-quality mate-pair library number <#> (library numbers follow the list order, starting at 1)
   - id: hqmp_interlaced_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with interlaced reads for high-quality mate-pair library number 
+    doc: file with interlaced reads for high-quality mate-pair library number (library numbers follow the list order, starting at 1)
       <#>
-    inputBinding:
-      position: 101
-      prefix: --hqmp-12
   - id: hqmp_orientation
     type:
       - 'null'
       - type: array
         items: string
-    doc: orientation of reads for high-quality mate-pair library number <#> 
+    doc: orientation of reads for high-quality mate-pair library number <#> (library numbers follow the list order, starting at 1)
       (<or> = fr, rf, ff)
-    inputBinding:
-      position: 101
-      prefix: --hqmp-or
   - id: hqmp_reverse_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with reverse reads for high-quality mate-pair library number <#>
-    inputBinding:
-      position: 101
-      prefix: --hqmp-2
+    doc: file with reverse reads for high-quality mate-pair library number <#> (library numbers follow the list order, starting at 1)
   - id: hqmp_unpaired_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with unpaired reads for high-quality mate-pair library number <#>
-    inputBinding:
-      position: 101
-      prefix: --hqmp-s
+    doc: file with unpaired reads for high-quality mate-pair library number <#> (library numbers follow the list order, starting at 1)
   - id: interlaced_reads_12
     type:
       - 'null'
@@ -276,47 +261,32 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: file with forward reads for mate-pair library number <#>
-    inputBinding:
-      position: 101
-      prefix: --mp-1
+    doc: file with forward reads for mate-pair library number <#> (library numbers follow the list order, starting at 1)
   - id: mp_interlaced_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with interlaced reads for mate-pair library number <#>
-    inputBinding:
-      position: 101
-      prefix: --mp-12
+    doc: file with interlaced reads for mate-pair library number <#> (library numbers follow the list order, starting at 1)
   - id: mp_orientation
     type:
       - 'null'
       - type: array
         items: string
-    doc: orientation of reads for mate-pair library number <#> (<or> = fr, rf, 
+    doc: orientation of reads for mate-pair library number <#> (<or> = fr, rf, (library numbers follow the list order, starting at 1)
       ff)
-    inputBinding:
-      position: 101
-      prefix: --mp-or
   - id: mp_reverse_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with reverse reads for mate-pair library number <#>
-    inputBinding:
-      position: 101
-      prefix: --mp-2
+    doc: file with reverse reads for mate-pair library number <#> (library numbers follow the list order, starting at 1)
   - id: mp_unpaired_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with unpaired reads for mate-pair library number <#>
-    inputBinding:
-      position: 101
-      prefix: --mp-s
+    doc: file with unpaired reads for mate-pair library number <#> (library numbers follow the list order, starting at 1)
   - id: nanopore_reads
     type:
       - 'null'
@@ -360,56 +330,38 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: file with forward reads for paired-end library number <#>
-    inputBinding:
-      position: 101
-      prefix: --pe-1
+    doc: file with forward reads for paired-end library number <#> (library numbers follow the list order, starting at 1)
   - id: pe_interlaced_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with interlaced reads for paired-end library number <#>
-    inputBinding:
-      position: 101
-      prefix: --pe-12
+    doc: file with interlaced reads for paired-end library number <#> (library numbers follow the list order, starting at 1)
   - id: pe_merged_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with merged reads for paired-end library number <#>
-    inputBinding:
-      position: 101
-      prefix: --pe-m
+    doc: file with merged reads for paired-end library number <#> (library numbers follow the list order, starting at 1)
   - id: pe_orientation
     type:
       - 'null'
       - type: array
         items: string
-    doc: orientation of reads for paired-end library number <#> (<or> = fr, rf, 
+    doc: orientation of reads for paired-end library number <#> (<or> = fr, rf, (library numbers follow the list order, starting at 1)
       ff)
-    inputBinding:
-      position: 101
-      prefix: --pe-or
   - id: pe_reverse_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with reverse reads for paired-end library number <#>
-    inputBinding:
-      position: 101
-      prefix: --pe-2
+    doc: file with reverse reads for paired-end library number <#> (library numbers follow the list order, starting at 1)
   - id: pe_unpaired_reads
     type:
       - 'null'
       - type: array
         items: File
-    doc: file with unpaired reads for paired-end library number <#>
-    inputBinding:
-      position: 101
-      prefix: --pe-s
+    doc: file with unpaired reads for paired-end library number <#> (library numbers follow the list order, starting at 1)
   - id: phred_offset
     type:
       - 'null'
@@ -488,10 +440,7 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: file with unpaired reads for single reads library number <#>
-    inputBinding:
-      position: 101
-      prefix: --s
+    doc: file with unpaired reads for single reads library number <#> (library numbers follow the list order, starting at 1)
   - id: test
     type:
       - 'null'
@@ -551,6 +500,60 @@ outputs:
     doc: directory to store all the resulting files (required)
     outputBinding:
       glob: $(inputs.output_dir)
+arguments:
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.pe_interlaced_reads||[]; for (var i=0;i<a.length;i++){ r.push('--pe-12'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.pe_forward_reads||[]; for (var i=0;i<a.length;i++){ r.push('--pe-1'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.pe_reverse_reads||[]; for (var i=0;i<a.length;i++){ r.push('--pe-2'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.pe_unpaired_reads||[]; for (var i=0;i<a.length;i++){ r.push('--pe-s'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.pe_merged_reads||[]; for (var i=0;i<a.length;i++){ r.push('--pe-m'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.pe_orientation||[]; for (var i=0;i<a.length;i++){ r.push('--pe-or'); r.push(String(i+1)); r.push(a[i]); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.mp_interlaced_reads||[]; for (var i=0;i<a.length;i++){ r.push('--mp-12'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.mp_forward_reads||[]; for (var i=0;i<a.length;i++){ r.push('--mp-1'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.mp_reverse_reads||[]; for (var i=0;i<a.length;i++){ r.push('--mp-2'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.mp_unpaired_reads||[]; for (var i=0;i<a.length;i++){ r.push('--mp-s'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.mp_orientation||[]; for (var i=0;i<a.length;i++){ r.push('--mp-or'); r.push(String(i+1)); r.push(a[i]); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.hqmp_interlaced_reads||[]; for (var i=0;i<a.length;i++){ r.push('--hqmp-12'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.hqmp_forward_reads||[]; for (var i=0;i<a.length;i++){ r.push('--hqmp-1'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.hqmp_reverse_reads||[]; for (var i=0;i<a.length;i++){ r.push('--hqmp-2'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.hqmp_unpaired_reads||[]; for (var i=0;i<a.length;i++){ r.push('--hqmp-s'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.hqmp_orientation||[]; for (var i=0;i<a.length;i++){ r.push('--hqmp-or'); r.push(String(i+1)); r.push(a[i]); } return r; }
+  - position: 102
+    valueFrom: |-
+      ${ var r=[]; var a=inputs.single_unpaired_reads||[]; for (var i=0;i<a.length;i++){ r.push('--s'); r.push(String(i+1)); r.push(a[i].path); } return r; }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spades:4.2.0--h8d6e82b_2

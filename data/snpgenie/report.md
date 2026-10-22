@@ -1,5 +1,16 @@
 # snpgenie CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snpgenie_fasta2revcom.pl | PASS |  |
+| snpgenie_gtf2revcom.pl | PASS |  |
+| snpgenie_snpgenie.pl | PASS |  |
+| snpgenie_snpgenie_between_group.pl | Failed | image problem: Parallel::ForkManager in the image does not work with the script; the default fails with 'Missing required arguments: max_proc' and --procs_per_node=1 hangs |
+| snpgenie_snpgenie_within_group.pl | Failed | image problem: Parallel::ForkManager in the image does not work with the script; the default fails with 'Missing required arguments: max_proc' and --procs_per_node=1 hangs |
+| snpgenie_vcf2revcom.pl | PASS |  |
+
 ## snpgenie_snpgenie.pl
 
 ### Tool Description
@@ -155,6 +166,23 @@ Converts a VCF format 1 SNP report to a reverse complement sequence.
 ## (2) The exact length of the sequence in the FASTA file.
 
 ## For example: vcfformat1_to_revcom.pl my_snp_report.vcf 248956422
+```
+
+## snpgenie_snpgenie_between_group.pl
+
+### Tool Description
+SNPGenie between-group analysis of two or more groups of aligned sequences.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snpgenie:1.0--hdfd78af_1
+- **Homepage**: https://github.com/chasewnelson/SNPGenie
+- **Package**: https://anaconda.org/channels/bioconda/packages/snpgenie/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: snpgenie_between_group.pl --gtf_file=<CDS_annotations>.gtf [--num_bootstraps=N] [--procs_per_node=N]
+(all FASTA files in the working directory are read as groups)
 ```
 
 ## Metadata

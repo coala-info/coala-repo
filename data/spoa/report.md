@@ -1,5 +1,11 @@
 # spoa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spoa | PASS |  |
+
 ## spoa
 
 ### Tool Description

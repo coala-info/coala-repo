@@ -1,5 +1,19 @@
 # snaptools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snaptools_align-paired-end | Failed | image problem: bwa (and the other aligners) is not installed in the image, snaptools stops with 'bwa does not exist' |
+| snaptools_align-single-end | Failed | image problem: bwa (and the other aligners) is not installed in the image, snaptools stops with 'bwa does not exist' |
+| snaptools_dex-fastq | PASS |  |
+| snaptools_index-genome | Failed | image problem: bwa (and the other aligners) is not installed in the image, snaptools stops with 'bwa does not exist' |
+| snaptools_snap-add-bmat | PASS |  |
+| snaptools_snap-add-gmat | Failed | tool bug: snaptools 1.4.8 writes fragment chromosome names as b'chr21' (Python 3 bytes), so no fragment overlaps and the matrix has zero counts |
+| snaptools_snap-add-pmat | Failed | tool bug: snaptools 1.4.8 writes fragment chromosome names as b'chr21' (Python 3 bytes), so no fragment overlaps and the matrix has zero counts |
+| snaptools_snap-del | PASS |  |
+| snaptools_snap-pre | PASS |  |
+
 ## snaptools_dex-fastq
 
 ### Tool Description

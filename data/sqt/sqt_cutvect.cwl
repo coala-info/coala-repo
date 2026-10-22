@@ -4,7 +4,7 @@ baseCommand:
   - sqt
   - cutvect
 label: sqt_cutvect
-doc: "Remove vector sequence\n\nTool homepage: https://github.com/tdjsnelling/sqtracker"
+doc: "Remove vector sequence\n\nTool homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: vector
     type: File

@@ -1,5 +1,11 @@
 # spestimator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spestimator | PASS | Fixed folder inputs and added network access and outputs; update_db built the 16S BLAST database, and 16S sequences of S. aureus, B. subtilis and Salmonella matched their RefSeq assemblies at 100% identity |
+
 ## spestimator
 
 ### Tool Description

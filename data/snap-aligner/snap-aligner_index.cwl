@@ -58,12 +58,13 @@ inputs:
   - id: build_histogram
     type:
       - 'null'
-      - File
+      - string
     doc: Build a histogram of seed popularity. Specify the histogram file name 
       directly after -H without leaving a space.
     inputBinding:
       position: 103
       prefix: -H
+      separate: false
   - id: build_larger_index
     type:
       - 'null'
@@ -83,6 +84,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -B
+      separate: false
   - id: compute_exact_hash_sizes
     type:
       - 'null'
@@ -163,6 +165,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -p
+      separate: false
   - id: quiet_mode
     type:
       - 'null'
@@ -207,6 +210,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -t
+      separate: false
   - id: use_temp_file_for_memory
     type:
       - 'null'
@@ -226,6 +230,15 @@ outputs:
     doc: Output directory for the index
     outputBinding:
       glob: $(inputs.output_dir)
+  - id: seed_histogram
+    type:
+      - 'null'
+      - File
+    doc: Histogram of seed popularity (-H).
+    outputBinding:
+      glob: $(inputs.build_histogram)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snap-aligner:2.0.5--h077b44d_2

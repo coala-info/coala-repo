@@ -104,6 +104,10 @@ outputs:
       glob: $(inputs.output_fp_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sr2silo:1.8.0--pyhdfd78af_0

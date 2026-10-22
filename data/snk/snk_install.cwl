@@ -7,8 +7,11 @@ label: snk_install
 doc: "Install a workflow.\n\nTool homepage: https://snk.wytamma.com"
 inputs:
   - id: workflow
-    type: string
-    doc: Path, URL or Github name (user/repo) of the workflow to install.
+    type:
+      - string
+      - Directory
+    doc: Path, URL or Github name (user/repo) of the workflow to install. A local
+      workflow is given as a Directory.
     inputBinding:
       position: 1
   - id: commit
@@ -117,6 +120,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: installed_workflows
+    type: Directory
+    doc: The snk workflow store (.local/snk) written in the home directory by the install
+    outputBinding:
+      glob: .local/snk
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snk:0.31.1--pyhdfd78af_0

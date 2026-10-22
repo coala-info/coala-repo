@@ -1,5 +1,12 @@
 # snakealtpromoter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snakealtpromoter_Genomesetup | Not completed | pipeline, skipped |
+| snakealtpromoter_Snakealtpromoter | Not completed | pipeline, skipped |
+
 ## snakealtpromoter_Genomesetup
 
 ### Tool Description

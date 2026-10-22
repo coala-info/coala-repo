@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: SourcePredict
+baseCommand: sourcepredict
 label: sourcepredict
 doc: "Coprolite source classification\n\nTool homepage: https://github.com/maxibor/sourcepredict"
 inputs:
@@ -147,6 +147,9 @@ outputs:
     doc: Output embedding csv file.
     outputBinding:
       glob: $(inputs.embed)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sourcepredict:0.5.1--pyhdfd78af_0

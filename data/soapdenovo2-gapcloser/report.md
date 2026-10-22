@@ -1,5 +1,11 @@
 # soapdenovo2-gapcloser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| soapdenovo2-gapcloser_GapCloser | Not completed | CWL runs and writes outputs, but the tool closed no gap (finish gap count 0) on real SARS-CoV-2 reads with a planted gap, so the result is not confirmed; added library file staging and outputs |
+
 ## soapdenovo2-gapcloser_GapCloser
 
 ### Tool Description

@@ -7,7 +7,10 @@ inputs:
   - id: path_to_run
     type:
       type: array
-      items: string
+      items:
+        - File
+        - Directory
+        - string
     doc: Path to SRA run(s)
     inputBinding:
       position: 1
@@ -52,7 +55,9 @@ inputs:
       position: 102
       prefix: --header
   - id: header_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: take all headers from this file
     inputBinding:
       position: 102
@@ -70,10 +75,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --header-comment
     doc: Add comment to header. Use multiple times for several lines. Use quotes
     inputBinding:
       position: 102
-      prefix: --header-comment
   - id: aligned_region
     type:
       - 'null'
@@ -230,7 +236,9 @@ inputs:
       position: 102
       prefix: --report
   - id: output_file
-    type: string
+    type:
+      - 'null'
+      - string
     doc: print output into this file (instead of STDOUT)
     inputBinding:
       position: 102
@@ -312,7 +320,9 @@ inputs:
       position: 102
       prefix: --rna-splice-level
   - id: rna_splice_log
-    type: string
+    type:
+      - 'null'
+      - string
     doc: file, into which rna-splice events are written
     inputBinding:
       position: 102
@@ -389,11 +399,15 @@ outputs:
     doc: file, into which rna-splice events are written
     outputBinding:
       glob: $(inputs.rna_splice_log)
+  - id: stdout
+    type: stdout
+    doc: SAM output (when --output-file is not used)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sra-tools:3.4.1--2_linux_64
+stdout: sra-tools_sam-dump.out
 s:url: https://github.com/ncbi/sra-tools
 $namespaces:
   s: https://schema.org/

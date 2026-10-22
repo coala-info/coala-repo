@@ -1,5 +1,11 @@
 # somatic-sniper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| somatic-sniper | PASS | nf-core human chr22 test (normal) and test2 (tumor) BAMs give a VCF with 11 candidate sites and SS/SSC fields; rewrote inputs from help (output file positional, -L/-G flags, -f required) |
+
 ## somatic-sniper
 
 ### Tool Description

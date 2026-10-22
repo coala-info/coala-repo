@@ -1,5 +1,11 @@
 # snp-dists CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snp-dists | PASS |  |
+
 ## snp-dists
 
 ### Tool Description

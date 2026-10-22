@@ -1,5 +1,11 @@
 # spring CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spring | PASS |  |
+
 ## spring
 
 ### Tool Description

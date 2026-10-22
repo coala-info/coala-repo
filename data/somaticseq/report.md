@@ -1,5 +1,12 @@
 # somaticseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| somaticseq_paired | PASS | Consensus VCFs from 5 callers on the tiny example, 75 SNV and 53 indel calls |
+| somaticseq_single | PASS | Consensus VCFs from 3 callers on the tiny example, 77 SNV calls |
+
 ## somaticseq_paired
 
 ### Tool Description

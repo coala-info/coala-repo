@@ -7,69 +7,93 @@ doc: "Pairwise SNP distance matrix from a FASTA sequence alignment\n\nTool homep
 inputs:
   - id: input_fasta
     type: File
-    doc: Input FASTA alignment file
+    doc: Input FASTA alignment file (may be gzipped)
     inputBinding:
-      position: 1
-  - id: blank
-    type:
-      - 'null'
-      - boolean
-    doc: Blank top-left corner (for PHYLIP compatibility)
-    inputBinding:
-      position: 102
-      prefix: -b
-  - id: csv
-    type:
-      - 'null'
-      - boolean
-    doc: Output CSV instead of TSV
-    inputBinding:
-      position: 102
-      prefix: -c
-  - id: keep_all_bases
-    type:
-      - 'null'
-      - boolean
-    doc: Keep all bases (don't ignore non-ACGT characters)
-    inputBinding:
-      position: 102
-      prefix: -k
-  - id: melt
-    type:
-      - 'null'
-      - boolean
-    doc: Melted format (sample1, sample2, distance)
-    inputBinding:
-      position: 102
-      prefix: -m
-  - id: pair
-    type:
-      - 'null'
-      - boolean
-    doc: Format as a list of pairs
-    inputBinding:
-      position: 102
-      prefix: -p
-  - id: quiet
-    type:
-      - 'null'
-      - boolean
-    doc: Quiet mode; check if any SNPs, return 0 or 1
-    inputBinding:
-      position: 102
-      prefix: -q
+      position: 2
   - id: threads
     type:
       - 'null'
       - int
-    doc: Number of threads
+    doc: Threads to use
     inputBinding:
-      position: 102
+      position: 1
       prefix: -j
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Quiet mode; no progress messages
+    inputBinding:
+      position: 1
+      prefix: -q
+  - id: count_all
+    type:
+      - 'null'
+      - boolean
+    doc: Count all differences not just [AGTC]
+    inputBinding:
+      position: 1
+      prefix: -a
+  - id: keep_case
+    type:
+      - 'null'
+      - boolean
+    doc: Keep case, don't uppercase all letters
+    inputBinding:
+      position: 1
+      prefix: -k
+  - id: molten
+    type:
+      - 'null'
+      - boolean
+    doc: Output MOLTEN instead of TSV
+    inputBinding:
+      position: 1
+      prefix: -m
+  - id: lower_triangle
+    type:
+      - 'null'
+      - boolean
+    doc: Output lower-triangle only (unique pairs)
+    inputBinding:
+      position: 1
+      prefix: -L
+  - id: molten_header
+    type:
+      - 'null'
+      - boolean
+    doc: Add header to MOLTEN output
+    inputBinding:
+      position: 1
+      prefix: -t
+  - id: csv
+    type:
+      - 'null'
+      - boolean
+    doc: Use comma instead of tab in output
+    inputBinding:
+      position: 1
+      prefix: -c
+  - id: blank
+    type:
+      - 'null'
+      - boolean
+    doc: Blank top left corner cell
+    inputBinding:
+      position: 1
+      prefix: -b
+  - id: max_distance
+    type:
+      - 'null'
+      - int
+    doc: Stop counting distance beyond this value
+    inputBinding:
+      position: 1
+      prefix: -x
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Distance matrix
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snp-dists:1.2.0--h577a1d6_0

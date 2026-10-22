@@ -55,10 +55,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --contig
+          separate: true
     doc: Only process the specified contigs. May be given more than once.
     inputBinding:
       position: 101
-      prefix: --contig
   - id: genotype_vcf
     type:
       - 'null'
@@ -75,6 +77,13 @@ inputs:
       format) file containing aligned reads. - OR - For multi-sample calling: Multiple
       .snf files (generated before by running Sniffles2 for individual samples with
       --snf)'
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .csi
+        required: false
+      - pattern: .crai
+        required: false
     inputBinding:
       position: 101
       prefix: --input

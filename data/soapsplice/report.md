@@ -1,5 +1,12 @@
 # soapsplice CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| soapsplice | PASS | rewritten from help (index as prefix plus staged index files, real flags, -o prefix outputs); nf-core human RNA-seq pairs give 9 junctions, all with GT-AG or CT-AC splice motifs |
+| soapsplice_2bwt-builder | PASS | new CWL; builds the 16 index files for the nf-core human chr22 genome slice, used by soapsplice |
+
 ## soapsplice
 
 ### Tool Description
@@ -35,6 +42,24 @@ docker: write /var/lib/docker/tmp/GetImageBlob4270919604: no space left on devic
 Run 'docker run --help' for more information
 ```
 
+
+## soapsplice_2bwt-builder
+
+### Tool Description
+2BWT-Builder builds the reference index used by SOAPsplice from a sequence file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/soapsplice:1.10--2
+- **Homepage**: http://soap.genomics.org.cn/soapsplice.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/soapsplice/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+2BWT-Builder, version 1.6
+
+Usage: 2bwt-builder <sequence file> [output index prefix]
+```
 
 ## Metadata
 - **Skill**: not generated

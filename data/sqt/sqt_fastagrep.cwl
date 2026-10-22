@@ -7,7 +7,7 @@ label: sqt_fastagrep
 doc: "Search for a IUPAC string in the sequences of a FASTA file.\n\nPrints matching
   entries in the fasta file to standard output.\nIf <FASTA> is not provided, read
   from standard input.\n\nIf output is a terminal, the first occurrence of the pattern\n\
-  in each sequence is highlighted.\n\nTool homepage: https://github.com/tdjsnelling/sqtracker"
+  in each sequence is highlighted.\n\nTool homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: pattern
     type: string

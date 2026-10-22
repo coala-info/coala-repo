@@ -12,7 +12,7 @@ inputs:
   - id: additional_mask
     type:
       - 'null'
-      - string
+      - File
     doc: Masking additional sites provided as a csv. Needs columns `Maximum` and
       `Minimum` in 1-base.
     inputBinding:
@@ -45,7 +45,7 @@ inputs:
   - id: assembly_refs
     type:
       - 'null'
-      - string
+      - File
     doc: References to check for `calls to reference` against.
     inputBinding:
       position: 102
@@ -255,7 +255,7 @@ inputs:
   - id: sequence_mask
     type:
       - 'null'
-      - string
+      - File
     doc: Mask sites in specific sequences in the alignment as a csv, rather than
       the whole alignment column. Needs `sequence` and `site` (1-based) column.
     inputBinding:

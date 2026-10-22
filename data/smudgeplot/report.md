@@ -1,5 +1,16 @@
 # smudgeplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smudgeplot_all | PASS | synthetic data: simulated diploid reads (1 Mb, 25x), FastK k-mer table |
+| smudgeplot_cutoff | PASS | synthetic data: simulated diploid reads (1 Mb, 25x), FastK k-mer table |
+| smudgeplot_extract | Failed | image problem: Symmex from FastK is not in the image, so extract fails on a normal FastK table (works only when the table is already symmetrized with Symmex) |
+| smudgeplot_hetmers | Failed | image problem: Symmex from FastK is not in the image, so hetmers fails on a normal FastK table (synthetic data; works only when the table is already symmetrized with Symmex) |
+| smudgeplot_peak_aggregation | PASS | synthetic data: simulated diploid reads (1 Mb, 25x), FastK k-mer table |
+| smudgeplot_plot | Not completed | the smudge size file has no producer in smudgeplot 0.5.3; ran only with a hand-made size file |
+
 ## smudgeplot_cutoff
 
 ### Tool Description

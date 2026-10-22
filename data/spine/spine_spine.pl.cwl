@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spine_spine.pl
+baseCommand: spine.pl
 label: spine_spine.pl
 doc: "This is a wrapper script to run the Spine algorithm\n\nTool homepage: https://github.com/egonozer/Spine"
 inputs:
@@ -61,14 +61,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --file
-  - id: license
+  - id: genome_files
     type:
       - 'null'
-      - boolean
-    doc: print license information and quit
-    inputBinding:
-      position: 101
-      prefix: --license
+      - type: array
+        items: File
+    doc: Sequence files named in the --file list. They are staged in the working
+      directory so the relative paths in the list resolve.
   - id: maxdist
     type:
       - 'null'
@@ -164,6 +163,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: output
     doc: Output prefix
     inputBinding:
       position: 101
@@ -198,6 +198,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --refs
+      itemSeparator: ','
   - id: threads
     type:
       - 'null'
@@ -221,6 +222,9 @@ outputs:
     doc: Files written with the prefix given in prefix
     outputBinding:
       glob: $(inputs.prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.genome_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spine:0.3.2--pl526_0

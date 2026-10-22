@@ -103,10 +103,23 @@ inputs:
       position: 102
       prefix: -ylim
 outputs:
+  - id: all_outputs
+    type:
+      type: array
+      items: File
+    doc: Plots, centrality table, annotated smudge file (.sma) and smudge report (.tsv), named by the output pattern.
+    outputBinding:
+      glob: $((inputs.output_pattern || 'smudgeplot') + '*')
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error (progress messages)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smudgeplot:0.5.3--py314h577a1d6_0
 stdout: smudgeplot_all.out
+stderr: smudgeplot_all.err

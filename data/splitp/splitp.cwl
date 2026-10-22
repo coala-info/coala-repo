@@ -5,7 +5,7 @@ label: splitp
 doc: "Streaming SPLiT-seq read pre-processing\n\nTool homepage: https://github.com/COMBINE-lab/splitp"
 inputs:
   - id: bc_map
-    type: string
+    type: File
     doc: the map of oligo-dT to random hexamers
     inputBinding:
       position: 1

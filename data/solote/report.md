@@ -1,5 +1,11 @@
 # solote CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| solote_SoloTE_RepeatMasker_to_BED.py | Failed | image problem: SoloTE_RepeatMasker_to_BED.py on PATH has no shebang line (exec format error); CWL rewritten from the script source with --genome, --list and NetworkAccess |
+
 ## solote_SoloTE_RepeatMasker_to_BED.py
 
 ### Tool Description

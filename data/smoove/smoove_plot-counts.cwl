@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smoove_plot-counts
+baseCommand:
+  - smoove
+  - plot-counts
 label: smoove_plot-counts
 doc: "Generate an HTML report of counts from smoove\n\nTool homepage: https://github.com/brentp/smoove"
 inputs:

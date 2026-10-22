@@ -1,5 +1,14 @@
 # sphae CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sphae_annotate | Not completed | pipeline, skipped (CWL rewritten from bare snakemake to sphae annotate) |
+| sphae_config | PASS | Added the config file as an output; sphae config copied the template config (valid YAML with resources, params, db and args) |
+| sphae_install | Not completed | pipeline, skipped; downloads large databases (CWL rewritten from bare snakemake to sphae install) |
+| sphae_run | Not completed | pipeline, skipped (CWL rewritten from bare snakemake to sphae run) |
+
 ## sphae_run
 
 ### Tool Description

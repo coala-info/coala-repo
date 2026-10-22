@@ -4,16 +4,20 @@ baseCommand:
   - sqt
   - align
 label: sqt_align
-doc: "Compare two strings\n\nTool homepage: https://github.com/tdjsnelling/sqtracker"
+doc: "Compare two strings\n\nTool homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: sequence1
-    type: string
+    type:
+      - string
+      - File
     doc: "Sequence or path to FASTA file. If FASTA, only the\n                   \
       \     first sequence is used."
     inputBinding:
       position: 1
   - id: sequence2
-    type: string
+    type:
+      - string
+      - File
     doc: "Sequence or path to FASTA file. If FASTA, only the\n                   \
       \     first sequence is used."
     inputBinding:

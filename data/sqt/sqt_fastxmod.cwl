@@ -5,7 +5,7 @@ baseCommand:
   - fastxmod
 label: sqt_fastxmod
 doc: "Modify FASTA and FASTQ files by picking subsets and modifying individual entries.\n\
-  \nTool homepage: https://github.com/tdjsnelling/sqtracker"
+  \nTool homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: input_file
     type: File

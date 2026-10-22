@@ -1,5 +1,11 @@
 # spatyper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spatyper_spaTyper | PASS | Added the missing --output file as an output; S. aureus NCTC 8325 genome gave spa type t211, the known type of this strain |
+
 ## spatyper_spaTyper
 
 ### Tool Description

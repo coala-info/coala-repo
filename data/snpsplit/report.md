@@ -1,5 +1,11 @@
 # snpsplit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snpsplit | PASS | tool's own test fixtures (single-end and paired-end); output matches expected files; fixed outdir flag, writable input, outputs |
+
 ## snpsplit
 
 ### Tool Description

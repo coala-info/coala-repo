@@ -1,5 +1,11 @@
 # squigulator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| squigulator | PASS |  |
+
 ## squigulator
 
 ### Tool Description

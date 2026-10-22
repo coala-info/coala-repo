@@ -1,5 +1,18 @@
 # snp2cell CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snp2cell_add-score | PASS |  |
+| snp2cell_combine-scores | PASS |  |
+| snp2cell_contrast-scores | PASS |  |
+| snp2cell_create-gene2pos-mapping | Failed | tool bug: pybiomart in the image cannot read the current Ensembl BioMart (redirect and renamed columns), so no mapping is written |
+| snp2cell_create-object | PASS |  |
+| snp2cell_export-locations | Failed | tool bug: the command crashes with AttributeError ('SNP2CELL' object has no attribute 'util'), so no locations file is written |
+| snp2cell_score-de | PASS |  |
+| snp2cell_score-snp | PASS |  |
+
 ## snp2cell_create-gene2pos-mapping
 
 ### Tool Description
@@ -1070,6 +1083,33 @@ Usage: snp2cell combine-scores [OPTIONS] S2C_OBJ [GROUPBY] [SNP_SCORE_KEY]
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+
+## snp2cell_create-object
+
+### Tool Description
+Create an initial SNP2CELL object holding a network. This can be used as an input for other sub-commands.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snp2cell:0.3.0--pyhdfd78af_0
+- **Homepage**: https://github.com/Teichlab/snp2cell
+- **Package**: https://anaconda.org/channels/bioconda/packages/snp2cell/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                                                                                                                                                                                        
+ Usage: snp2cell create-object [OPTIONS] NX_GRAPH OUT_NAME                                                                                                                                              
+                                                                                                                                                                                                        
+ Create an initial SNP2CELL object holding a network. This can be used as an input for other sub-commands.                                                                                              
+                                                                                                                                                                                                        
+╭─ Arguments ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ *    nx_graph      PATH  path to pickled networkx graph [default: None] [required]                                                                                                                   │
+│ *    out_name      PATH  output path for SNP2CELL object [default: None] [required]                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
 
 ## Metadata
 - **Skill**: generated

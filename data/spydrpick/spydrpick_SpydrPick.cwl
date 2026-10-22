@@ -299,6 +299,32 @@ inputs:
       position: 103
       prefix: --aracne-outputfile
 outputs:
+  - id: edges
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Descending list of MI values and pairs of position indices (pos1 pos2 
+      genome_distance ARACNE MI)
+    outputBinding:
+      glob: '*edges'
+  - id: outliers
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Position pairs with MI above the outlier threshold
+    outputBinding:
+      glob: '*.outliers'
+  - id: additional_outputs
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Other files written by the options (alignments, loci lists, state 
+      frequencies, sample weights, sample distance matrix)
+    outputBinding:
+      glob: ['*.fasta', '*.loci', '*weights*', '*frequencies*', '*distance*', '*.txt']
   - id: outputfile
     type:
       - 'null'

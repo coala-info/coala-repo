@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smoove
+baseCommand:
+  - smoove
+  - genotype
 label: smoove_genotype
 doc: "Call genotypes for a given set of BAM files.\n\nTool homepage: https://github.com/brentp/smoove"
 inputs:
@@ -8,6 +10,11 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: path to bam to call.
     inputBinding:
       position: 1
@@ -21,6 +28,10 @@ inputs:
       prefix: --duphold
   - id: fasta
     type: File
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     doc: fasta file.
     inputBinding:
       position: 102
@@ -56,17 +67,15 @@ inputs:
       position: 102
       prefix: --removepr
   - id: vcf
-    type:
-      - 'null'
-      - File
+    type: File
     doc: vcf to genotype (use - for stdin).
     inputBinding:
       position: 102
       prefix: --vcf
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: log
+    type: stderr
+    doc: Log messages written by smoove to standard error
   - id: outdir_dir
     type:
       - 'null'
@@ -74,7 +83,13 @@ outputs:
     doc: output directory.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.outdir ? {'class': 'Directory', 'basename': inputs.outdir, 'listing': []} : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smoove:0.2.8--h9ee0642_1
-stdout: smoove_genotype.out
+stderr: smoove_genotype.log

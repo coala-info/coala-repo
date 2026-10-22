@@ -69,7 +69,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error (format detection messages are written here)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/squizz:v0.99ddfsg-2-deb_cv1
 stdout: squizz.out
+stderr: squizz.err

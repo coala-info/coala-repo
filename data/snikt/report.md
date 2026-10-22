@@ -1,5 +1,11 @@
 # snikt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snikt_snikt.R | PASS |  |
+
 ## snikt_snikt.R
 
 ### Tool Description

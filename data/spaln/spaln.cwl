@@ -1,570 +1,460 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: spaln
+baseCommand:
+  - spaln
 label: spaln
-doc: "SPALN is a tool for aligning sequences, particularly for gene prediction and
-  mapping.\n\nTool homepage: http://www.genome.ist.i.kyoto-u.ac.jp/~aln_user/spaln/"
+doc: "Align cDNA or protein sequences to a genomic sequence (spliced alignment), with optional map-and-align against a spaln genome or amino acid database.\n\nTool homepage: https://github.com/ogotoh/spaln"
 inputs:
-  - id: aadb_faa
-    type:
-      - 'null'
-      - File
-    doc: AAdb FAA file (for writing block info)
-    inputBinding:
-      position: 1
-  - id: genome_mfa
-    type:
-      - 'null'
-      - File
-    doc: Genome MFA file (for writing block info)
-    inputBinding:
-      position: 2
   - id: genomic_segment
     type:
       - 'null'
-      - string
-    doc: Genomic segment (for alignment)
-    inputBinding:
-      position: 3
-  - id: cDNA_fa
-    type:
-      - 'null'
       - File
-    doc: cDNA FASTA file (for alignment)
+    doc: "Genomic sequence in FASTA format to align to (not used with the genome_db or aadb modes)"
     inputBinding:
-      position: 4
-  - id: protein_fa
+      position: 200
+      valueFrom: '$(inputs.segment_start ? self.path + " " + inputs.segment_start + " " + inputs.segment_end : self.path)'
+  - id: segment_start
     type:
       - 'null'
-      - File
-    doc: Protein FASTA file (for alignment)
-    inputBinding:
-      position: 5
-  - id: region
+      - int
+    doc: "Start position of the genomic segment (with segment_end; 1-based)"
+  - id: segment_end
     type:
       - 'null'
-      - string
-    doc: Region to extract (e.g., 'chr1.fa 10001 40000')
+      - int
+    doc: "End position of the genomic segment"
+  - id: query
+    type: File
+    doc: "cDNA (nucleotide) or protein sequences in FASTA format"
     inputBinding:
-      position: 6
-  - id: aadb_bka
+      position: 201
+  - id: db_files
     type:
       - 'null'
-      - File
-    doc: AAdb block information file (for writing AA db info)
-    inputBinding:
-      position: 107
-      prefix: -W
-  - id: aadb_db
+      - type: array
+        items: File
+    doc: Files of the spaln database(s) named by genome_db, genome_db_in_memory, aadb or aadb_in_memory (made by spaln_makdb), staged into the working directory
+  - id: simd_mode
     type:
       - 'null'
-      - string
-    doc: Specify AAdb database (must run makeidx.pl -ia beforehand)
+      - int
+    doc: "-A[0-3]: 0: scalar, 1..3: simd; 1: rigorous, 2: intermediate, 3: fast"
     inputBinding:
-      position: 107
-      prefix: -a
-  - id: aadb_db_tag
-    type:
-      - 'null'
-      - string
-    doc: Specify AAdb database tag
-    inputBinding:
-      position: 107
-      prefix: -a
-  - id: aadb_memory
-    type:
-      - 'null'
-      - string
-    doc: Same as -a but db sequences are stored in memory
-    inputBinding:
-      position: 107
+      position: 10
       prefix: -A
-  - id: abundance_factor
+      separate: false
+  - id: min_score_report
     type:
       - 'null'
-      - float
-    doc: Abundance factor
+      - int
+    doc: "Minimum score for report (35)"
     inputBinding:
-      position: 107
-      prefix: -Xa
-  - id: alignment_mode
-    type:
-      - 'null'
-      - string
-    doc: Semi-global or local alignment
-    inputBinding:
-      position: 107
-      prefix: -L
-  - id: alignment_mode_ls
+      position: 10
+      prefix: -H
+      separate: false
+  - id: local_alignment
     type:
       - 'null'
       - boolean
-    doc: Semi-global alignment
+    doc: "Semi-global or local alignment (-L)"
     inputBinding:
-      position: 107
-      prefix: -LS
+      position: 10
+      prefix: -L
+      separate: false
+  - id: local_alignment_variant
+    type:
+      - 'null'
+      - string
+    doc: "-LS or -L#: variant of semi-global or local alignment (value glued to -L, e.g. S)"
+    inputBinding:
+      position: 10
+      prefix: -L
+      separate: false
+  - id: num_outputs
+    type:
+      - 'null'
+      - string
+    doc: "Number of outputs per query (1) (4 if # is omitted); #2 (4) specifies the max number of candidate loci. Effective only for map-and-align modes. Format #[,#2]"
+    inputBinding:
+      position: 10
+      prefix: -M
+      separate: false
+  - id: output_format
+    type:
+      - 'null'
+      - string
+    doc: "Output format(s), e.g. 0: Gff3_gene; 1: alignment; 2: Gff3_match; 3: Bed; 4: exon-inf; 5: intron-inf; 6: cDNA; 7: translated; 8: block-only; 10: SAM; 12: binary; 15: query+GS (4). Comma-separated list allowed"
+    inputBinding:
+      position: 10
+      prefix: -O
+      separate: false
+  - id: search_mode
+    type:
+      - 'null'
+      - int
+    doc: "0:DP; 1-3:HSP-Search; 4-7; Block-Search (3)"
+    inputBinding:
+      position: 10
+      prefix: -Q
+      separate: false
+  - id: orientation
+    type:
+      - 'null'
+      - int
+    doc: "Orientation. 0:annotation; 1:forward; 2:reverse; 3:both (3)"
+    inputBinding:
+      position: 10
+      prefix: -S
+      separate: false
+  - id: species_params
+    type:
+      - 'null'
+      - string
+    doc: "Subdirectory where species-specific parameters reside"
+    inputBinding:
+      position: 10
+      prefix: -T
+      separate: false
+  - id: aadb
+    type:
+      - 'null'
+      - string
+    doc: "Specify AAdb (name of an amino acid database made with spaln -W -KA)"
+    inputBinding:
+      position: 10
+      prefix: -a
+      separate: false
+  - id: aadb_in_memory
+    type:
+      - 'null'
+      - string
+    doc: "Same as -a but db sequences are stored in memory"
+    inputBinding:
+      position: 10
+      prefix: -A
+      separate: false
+  - id: genome_db
+    type:
+      - 'null'
+      - string
+    doc: "Specify genome (name of a database made with spaln -W -KD or -KP)"
+    inputBinding:
+      position: 10
+      prefix: -d
+      separate: false
+  - id: genome_db_in_memory
+    type:
+      - 'null'
+      - string
+    doc: "Same as -d but db sequences are stored in memory"
+    inputBinding:
+      position: 10
+      prefix: -D
+      separate: false
+  - id: gzipped_output
+    type:
+      - 'null'
+      - boolean
+    doc: "gzipped output in combination with -O12"
+    inputBinding:
+      position: 10
+      prefix: -g
+      separate: false
+  - id: chars_per_line
+    type:
+      - 'null'
+      - int
+    doc: "Number of characters per line in alignment (60)"
+    inputBinding:
+      position: 10
+      prefix: -l
+      separate: false
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: "File/directory/prefix where results are written (stdout)"
+    inputBinding:
+      position: 10
+      prefix: -o
+      separate: false
+  - id: remove_polya
+    type:
+      - 'null'
+      - int
+    doc: "Remove 3' poly A >= # (0: don't remove)"
+    inputBinding:
+      position: 10
+      prefix: -pa
+      separate: false
+  - id: output_full_fasta_name
+    type:
+      - 'null'
+      - boolean
+    doc: "Output full Fasta entry name"
+    inputBinding:
+      position: 10
+      prefix: -pF
+      separate: false
+  - id: suppress_splice_junction_info
+    type:
+      - 'null'
+      - boolean
+    doc: "Suppress splice junction information with -O[6|7]"
+    inputBinding:
+      position: 10
+      prefix: -pj
+      separate: false
+  - id: retain_existing_output
+    type:
+      - 'null'
+      - boolean
+    doc: "Retain existing output file"
+    inputBinding:
+      position: 10
+      prefix: -pn
+      separate: false
+  - id: overwrite_existing_output
+    type:
+      - 'null'
+      - boolean
+    doc: "Overwrite existing output file"
+    inputBinding:
+      position: 10
+      prefix: -po
+      separate: false
+  - id: report_below_threshold
+    type:
+      - 'null'
+      - boolean
+    doc: "Report results even if the score is below the threshold"
+    inputBinding:
+      position: 10
+      prefix: -pw
+      separate: false
+  - id: exclude_termination_codon
+    type:
+      - 'null'
+      - boolean
+    doc: "Exclude termination codon from CDS"
+    inputBinding:
+      position: 10
+      prefix: -pT
+      separate: false
+  - id: gap_extension_penalty
+    type:
+      - 'null'
+      - int
+    doc: "Gap-extension penalty (3)"
+    inputBinding:
+      position: 10
+      prefix: -u
+      separate: false
+  - id: gap_open_penalty
+    type:
+      - 'null'
+      - int
+    doc: "Gap-open penalty (8)"
+    inputBinding:
+      position: 10
+      prefix: -v
+      separate: false
+  - id: dp_band_width
+    type:
+      - 'null'
+      - int
+    doc: "Band width for DP matrix scan (100)"
+    inputBinding:
+      position: 10
+      prefix: -w
+      separate: false
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: "Multi-thread operation with # threads"
+    inputBinding:
+      position: 10
+      prefix: -t
+      separate: false
+  - id: splice_site_stringency
+    type:
+      - 'null'
+      - int
+    doc: "Stringency of splice site. 0->3:strong->weak"
+    inputBinding:
+      position: 10
+      prefix: -ya
+      separate: false
+  - id: double_affine_gap_penalty
+    type:
+      - 'null'
+      - boolean
+    doc: "Double affine gap penalty"
+    inputBinding:
+      position: 10
+      prefix: -yl3
+      separate: false
+  - id: nucleotide_match_score
+    type:
+      - 'null'
+      - int
+    doc: "Nucleotide match score (2)"
+    inputBinding:
+      position: 10
+      prefix: -ym
+      separate: false
+  - id: nucleotide_mismatch_score
+    type:
+      - 'null'
+      - int
+    doc: "Nucleotide mismatch score (-6)"
+    inputBinding:
+      position: 10
+      prefix: -yn
+      separate: false
+  - id: premature_termination_codon_penalty
+    type:
+      - 'null'
+      - int
+    doc: "Penalty for a premature termination codon (100)"
+    inputBinding:
+      position: 10
+      prefix: -yo
+      separate: false
+  - id: frame_shift_penalty
+    type:
+      - 'null'
+      - int
+    doc: "Penalty for a frame shift error (100)"
+    inputBinding:
+      position: 10
+      prefix: -yx
+      separate: false
+  - id: splice_site_signal_weight
+    type:
+      - 'null'
+      - int
+    doc: "Weight for splice site signal (8)"
+    inputBinding:
+      position: 10
+      prefix: -yy
+      separate: false
+  - id: coding_potential_weight
+    type:
+      - 'null'
+      - int
+    doc: "Weight for coding potential (2)"
+    inputBinding:
+      position: 10
+      prefix: -yz
+      separate: false
+  - id: branch_point_signal_weight
+    type:
+      - 'null'
+      - int
+    doc: "Weight for branch point signal (0)"
+    inputBinding:
+      position: 10
+      prefix: -yB
+      separate: false
+  - id: intron_length_distribution
+    type:
+      - 'null'
+      - string
+    doc: "Intron length distribution"
+    inputBinding:
+      position: 10
+      prefix: -yI
+      separate: false
+  - id: min_expected_intron_length
+    type:
+      - 'null'
+      - int
+    doc: "Minimum expected length of intron (30)"
+    inputBinding:
+      position: 10
+      prefix: -yL
+      separate: false
+  - id: max_intron_length
+    type:
+      - 'null'
+      - int
+    doc: "Maximum length of intron (unset)"
+    inputBinding:
+      position: 10
+      prefix: -yM
+      separate: false
+  - id: species_specific_params
+    type:
+      - 'null'
+      - string
+    doc: "Use species-specific parameter set (0.0/0.5); value optional"
+    inputBinding:
+      position: 10
+      prefix: -yS
+      separate: false
+  - id: no_cross_species_params
+    type:
+      - 'null'
+      - boolean
+    doc: "Don't use parameter set for cross-species comparison"
+    inputBinding:
+      position: 10
+      prefix: -yX0
+      separate: false
+  - id: intron_potential_weight
+    type:
+      - 'null'
+      - int
+    doc: "Weight for intron potential (0)"
+    inputBinding:
+      position: 10
+      prefix: -yZ
+      separate: false
+  - id: max_expected_gene_size
+    type:
+      - 'null'
+      - string
+    doc: "Reset maximum expected gene size, suffix k or M is effective"
+    inputBinding:
+      position: 10
+      prefix: -XG
+      separate: false
   - id: block_info_file
     type:
       - 'null'
       - File
     doc: Read block information file *.bkn, *.bkp or *.bka
     inputBinding:
-      position: 107
+      position: 10
       prefix: -R
-  - id: block_size
-    type:
-      - 'null'
-      - int
-    doc: Block size (inferred from genome|db size)
-    inputBinding:
-      position: 107
-      prefix: -Xb
-  - id: branch_point_signal_weight
-    type:
-      - 'null'
-      - int
-    doc: Weight for branch point signal
-    inputBinding:
-      position: 107
-      prefix: -yB
-  - id: chars_per_line
-    type:
-      - 'null'
-      - int
-    doc: Number of characters per line in alignment
-    inputBinding:
-      position: 107
-      prefix: -l
-  - id: coding_potential_weight
-    type:
-      - 'null'
-      - int
-    doc: Weight for coding potential
-    inputBinding:
-      position: 107
-      prefix: -yz
-  - id: double_affine_gap_penalty
-    type:
-      - 'null'
-      - boolean
-    doc: Double affine gap penalty
-    inputBinding:
-      position: 107
-      prefix: -yl3
-  - id: dp_band_width
-    type:
-      - 'null'
-      - int
-    doc: Band width for DP matrix scan
-    inputBinding:
-      position: 107
-      prefix: -w
-  - id: exclude_termination_codon
-    type:
-      - 'null'
-      - boolean
-    doc: Exclude termination codon from CDS
-    inputBinding:
-      position: 107
-      prefix: -pT
-  - id: frame_shift_error_penalty
-    type:
-      - 'null'
-      - int
-    doc: Penalty for a frame shift error
-    inputBinding:
-      position: 107
-      prefix: -yx
-  - id: gap_extension_penalty
-    type:
-      - 'null'
-      - int
-    doc: Gap-extension penalty
-    inputBinding:
-      position: 107
-      prefix: -u
-  - id: gap_open_penalty
-    type:
-      - 'null'
-      - int
-    doc: Gap-open penalty
-    inputBinding:
-      position: 107
-      prefix: -v
-  - id: genome_bkn
-    type:
-      - 'null'
-      - File
-    doc: Genome block information file (for writing block info)
-    inputBinding:
-      position: 107
-      prefix: -W
-  - id: genome_bkp
-    type:
-      - 'null'
-      - File
-    doc: Genome block information file (for writing block info)
-    inputBinding:
-      position: 107
-      prefix: -W
-  - id: genome_db
-    type:
-      - 'null'
-      - string
-    doc: Specify genome database (must run makeidx.pl -i[n|p] beforehand)
-    inputBinding:
-      position: 107
-      prefix: -d
-  - id: genome_db_tag
-    type:
-      - 'null'
-      - string
-    doc: Specify genome database tag
-    inputBinding:
-      position: 107
-      prefix: -d
-  - id: genome_memory
-    type:
-      - 'null'
-      - string
-    doc: Same as -d but db sequences are stored in memory
-    inputBinding:
-      position: 107
-      prefix: -D
-  - id: genome_mfa_or_aadb_faa
-    type:
-      - 'null'
-      - File
-    doc: Genome MFA or AAdb FAA file (alternative to makdbs)
-    inputBinding:
-      position: 107
-      prefix: -W
-  - id: gzipped_output
-    type:
-      - 'null'
-      - boolean
-    doc: Gzipped output
-    inputBinding:
-      position: 107
-      prefix: -g
-  - id: gzipped_output_o12
-    type:
-      - 'null'
-      - boolean
-    doc: Gzipped output in combination with -O12
-    inputBinding:
-      position: 107
-      prefix: -g
-  - id: hsp_search_mode
-    type:
-      - 'null'
-      - int
-    doc: '0:DP; 1-3:HSP-Search; 4-7: Block-Search'
-    inputBinding:
-      position: 107
-      prefix: -Q
-  - id: intron_length_distribution
-    type:
-      - 'null'
-      - string
-    doc: Intron length distribution
-    inputBinding:
-      position: 107
-      prefix: -yI
-  - id: intron_potential_weight
-    type:
-      - 'null'
-      - int
-    doc: Weight for intron potential
-    inputBinding:
-      position: 107
-      prefix: -yZ
-  - id: max_candidate_loci
-    type:
-      - 'null'
-      - int
-    doc: Max number of candidate loci (effective only for map-and-align modes)
-    inputBinding:
-      position: 107
-      prefix: -M
-  - id: max_expected_gene_size
-    type:
-      - 'null'
-      - string
-    doc: Maximum expected gene size (inferred from genome|db size)
-    inputBinding:
-      position: 107
-      prefix: -XG
-  - id: max_intron_length
-    type:
-      - 'null'
-      - string
-    doc: Maximum length of intron (unset)
-    inputBinding:
-      position: 107
-      prefix: -yM
-  - id: min_expected_intron_length
-    type:
-      - 'null'
-      - int
-    doc: Minimum expected length of intron
-    inputBinding:
-      position: 107
-      prefix: -yL
-  - id: min_orf_length_kp
-    type:
-      - 'null'
-      - int
-    doc: Minimum ORF length with -KP
-    inputBinding:
-      position: 107
-      prefix: -Xr
-  - id: min_score_report
-    type:
-      - 'null'
-      - int
-    doc: Minimum score for report
-    inputBinding:
-      position: 107
-      prefix: -H
-  - id: multi_thread_operation
-    type:
-      - 'null'
-      - int
-    doc: 'Multi-thread operation with # threads'
-    inputBinding:
-      position: 107
-      prefix: -t
-  - id: no_cross_species_comparison
-    type:
-      - 'null'
-      - boolean
-    doc: Don't use parameter set for cross-species comparison
-    inputBinding:
-      position: 107
-      prefix: -yX0
-  - id: nucleotide_match_score
-    type:
-      - 'null'
-      - int
-    doc: Nucleotide match score
-    inputBinding:
-      position: 107
-      prefix: -ym
-  - id: nucleotide_mismatch_score
-    type:
-      - 'null'
-      - int
-    doc: Nucleotide mismatch score
-    inputBinding:
-      position: 107
-      prefix: -yn
-  - id: num_bit_patterns
-    type:
-      - 'null'
-      - int
-    doc: Number of bit patterns
-    inputBinding:
-      position: 107
-      prefix: -XC
-  - id: num_outputs_per_query
-    type:
-      - 'null'
-      - string
-    doc: Number of outputs per query
-    inputBinding:
-      position: 107
-      prefix: -M
-  - id: orientation
-    type:
-      - 'null'
-      - int
-    doc: Orientation. 0:annotation; 1:forward; 2:reverse; 3:both
-    inputBinding:
-      position: 107
-      prefix: -S
-  - id: output_formats
-    type:
-      - 'null'
-      - string
-    doc: Output formats (Gff3_gene, alignment, Gff3_match, Bed, exon-inf, 
-      intron-inf, cDNA, translated, block-only, SAM, binary, query+GS for GvsA; 
-      statistics, alignment, Sugar, Psl, XYL, srat+XYL, Cigar, Vulgar, SAM for 
-      AvsA)
-    inputBinding:
-      position: 107
-      prefix: -O
-  - id: output_full_fasta_name
-    type:
-      - 'null'
-      - boolean
-    doc: Output full Fasta entry name
-    inputBinding:
-      position: 107
-      prefix: -pF
-  - id: overwrite_existing_output
-    type:
-      - 'null'
-      - boolean
-    doc: Overwrite existing output file
-    inputBinding:
-      position: 107
-      prefix: -po
-  - id: premature_termination_codon_penalty
-    type:
-      - 'null'
-      - int
-    doc: Penalty for a premature termination codon
-    inputBinding:
-      position: 107
-      prefix: -yo
-  - id: remove_poly_a
-    type:
-      - 'null'
-      - int
-    doc: "Remove 3' poly A >= # (0: don't remove)"
-    inputBinding:
-      position: 107
-      prefix: -pa
-  - id: report_below_threshold
-    type:
-      - 'null'
-      - boolean
-    doc: Report results even if the score is below the threshold
-    inputBinding:
-      position: 107
-      prefix: -pw
-  - id: report_block_data_info
+      separate: false
+  - id: report_block_data_file
     type:
       - 'null'
       - File
     doc: Report information about block data file
     inputBinding:
-      position: 107
+      position: 10
       prefix: -r
-  - id: reset_max_expected_gene_size
-    type:
-      - 'null'
-      - string
-    doc: Reset maximum expected gene size, suffix k or M is effective
-    inputBinding:
-      position: 107
-      prefix: -XG
-  - id: retain_existing_output
-    type:
-      - 'null'
-      - boolean
-    doc: Retain existing output file
-    inputBinding:
-      position: 107
-      prefix: -pn
-  - id: simd_type
-    type:
-      - 'null'
-      - string
-    doc: '0: scalar, 1..3: simd; 1: rigorous, 2: intermediate, 3: fast'
-    inputBinding:
-      position: 107
-      prefix: -A
-  - id: species_params_subdir
-    type:
-      - 'null'
-      - Directory
-    doc: Subdirectory where species-specific parameters reside
-    inputBinding:
-      position: 107
-      prefix: -T
-  - id: species_params_tag
-    type:
-      - 'null'
-      - string
-    doc: Species-specific parameter tag
-    inputBinding:
-      position: 107
-      prefix: -TT
-  - id: splice_site_signal_weight
-    type:
-      - 'null'
-      - int
-    doc: Weight for splice site signal
-    inputBinding:
-      position: 107
-      prefix: -yy
-  - id: splice_site_stringency
-    type:
-      - 'null'
-      - int
-    doc: Stringency of splice site. 0->3:strong->weak
-    inputBinding:
-      position: 107
-      prefix: -ya
-  - id: suppress_splice_junction_info
-    type:
-      - 'null'
-      - boolean
-    doc: Suppress splice junction information with -O[6|7]
-    inputBinding:
-      position: 107
-      prefix: -pj
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: 'Multi-thread operation with # threads'
-    inputBinding:
-      position: 107
-      prefix: -t
-  - id: use_species_specific_params
-    type:
-      - 'null'
-      - string
-    doc: Use species-specific parameter set
-    inputBinding:
-      position: 107
-      prefix: -yS
-  - id: word_size
-    type:
-      - 'null'
-      - int
-    doc: Word size (inferred from genome|db size)
-    inputBinding:
-      position: 107
-      prefix: -Xk
-  - id: output_file_dir_prefix_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_file_dir_prefix_path`
-    inputBinding:
-      position: 108
-      prefix: --output-file-dir-prefix
-  - id: output_prefix_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_prefix_path`
-    inputBinding:
-      position: 109
-      prefix: --output-prefix
+      separate: false
 outputs:
-  - id: output_file_dir_prefix
+  - id: stdout
+    type: stdout
+    doc: Alignment output (stdout)
+  - id: output_files
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: File/directory/prefix where results are written
+      type: array
+      items: File
+    doc: Result files written with -o (file, directory content or prefix)
     outputBinding:
-      glob: $(inputs.output_file_dir_prefix_path)*
-  - id: output_prefix
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Prefix for output files/directories
-    outputBinding:
-      glob: $(inputs.output_prefix_path)*
+      glob: "$(inputs.output ? inputs.output + '*' : '__no_output_option__')"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.db_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spaln:3.0.7--pl5321h077b44d_1
+stdout: spaln.out

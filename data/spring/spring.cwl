@@ -124,7 +124,8 @@ inputs:
   - id: quality_opts
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: "quality mode: possible modes are\n                                  1. -q
       lossless (default)\n                                  2. -q qvz qv_ratio (QVZ
       lossy compression, \n                                  parameter qv_ratio roughly
@@ -155,13 +156,14 @@ outputs:
   - id: output_file
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: "output file name (for paired end \n                                  decompression,
       if only one file is specified, \n                                  two output
       files will be created by suffixing\n                                  .1 and
       .2.)"
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

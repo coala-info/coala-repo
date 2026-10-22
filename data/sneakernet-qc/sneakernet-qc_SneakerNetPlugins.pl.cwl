@@ -56,11 +56,13 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --no
+          separate: true
     doc: Specify a regex of which plugins to skip. Can provide multiple 
       instances. E.g., --no email --no transfer --no save. Case insensitive.
     inputBinding:
       position: 102
-      prefix: --no
   - id: tempdir
     type:
       - 'null'
@@ -82,7 +84,24 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error (the plugin commands and progress messages are written here)
+  - id: run_dirs
+    type:
+      type: array
+      items: Directory
+    doc: The run directories after the plugins wrote their results into them
+    outputBinding:
+      glob: $(inputs.dirs.map(function(d) { return d.basename; }))
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.dirs)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sneakernet-qc:0.27.2--pl5321hdfd78af_0
 stdout: sneakernet-qc_SneakerNetPlugins.pl.out
+stderr: sneakernet-qc_SneakerNetPlugins.pl.err

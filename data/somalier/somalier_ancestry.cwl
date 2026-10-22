@@ -2,19 +2,30 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - somalier
-  - pca
+  - ancestry
 label: somalier_ancestry
-doc: "dimensionality reduction\n\nTool homepage: https://github.com/brentp/somalier"
+doc: "Perform ancestry prediction (PCA and neural network) on query samples, given
+  a set of labelled samples.\n\nTool homepage: https://github.com/brentp/somalier"
+arguments:
+  - position: 2
+    valueFrom: ++
 inputs:
   - id: extracted_files
     type:
-      - 'null'
-      - type: array
-        items: File
-    doc: $sample.somalier files for each sample. place labelled samples first 
-      followed by '++' then *.somalier for query samples
+      type: array
+      items: File
+    doc: $sample.somalier files of the labelled samples (placed before the '++'
+      separator)
     inputBinding:
       position: 1
+  - id: query_files
+    type:
+      type: array
+      items: File
+    doc: $sample.somalier files of the query samples (placed after the '++'
+      separator)
+    inputBinding:
+      position: 3
   - id: labels
     type:
       - 'null'
@@ -57,6 +68,8 @@ inputs:
       prefix: --nn-test-samples
   - id: output_prefix_path
     type: string
+    default: somalier-ancestry
+    doc: prefix for output files (default somalier-ancestry)
     inputBinding:
       position: 103
       prefix: --output-prefix

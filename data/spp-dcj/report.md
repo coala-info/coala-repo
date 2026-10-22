@@ -1,5 +1,15 @@
 # spp-dcj CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spp-dcj_draw | PASS |  |
+| spp-dcj_heuristic | PASS |  |
+| spp-dcj_ilp | PASS |  |
+| spp-dcj_newick2table | PASS |  |
+| spp-dcj_sol2adj | PASS | solution file was the heuristic warm-start solution, as Gurobi is not available |
+
 ## spp-dcj_heuristic
 
 ### Tool Description

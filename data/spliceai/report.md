@@ -1,5 +1,11 @@
 # spliceai CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spliceai | PASS |  |
+
 ## spliceai
 
 ### Tool Description

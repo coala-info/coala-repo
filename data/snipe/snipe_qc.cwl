@@ -76,10 +76,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --sample
+          separate: true
     doc: Sample signature file. Can be provided multiple times.
     inputBinding:
       position: 101
-      prefix: --sample
   - id: samples_from_file
     type:
       - 'null'

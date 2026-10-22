@@ -4,93 +4,89 @@ baseCommand:
   - smof
   - uniq
 label: smof_uniq
-doc: "Emulates the GNU uniq command. Two entries are considered equivalent only if
-  their sequences AND headers are exactly equal. Newlines are ignored but all comparisons
-  are case-sensitive. The pack/unpack option is designed to be compatible with the
-  conventions used in the NCBI-BLAST non-redundant databases: entries with identical
-  sequences are merged and their headers are joined with SOH (0x01) as a delimiter
-  (by default).\n\nTool homepage: https://github.com/incertae-sedis/smof"
+doc: "Count, omit, or merge repeated entries (emulates GNU uniq).\n\nTool homepage: https://github.com/incertae-sedis/smof"
 inputs:
-  - id: input
-    type:
-      - 'null'
-      - File
-    doc: input fasta sequence
-    inputBinding:
-      position: 1
   - id: count
     type:
       - 'null'
       - boolean
-    doc: writes (count|header) in tab-delimited format
+    doc: "Write (count|header) in tab-delimited format"
     inputBinding:
-      position: 102
+      position: 100
       prefix: --count
-  - id: first_header
-    type:
-      - 'null'
-      - boolean
-    doc: remove entries with duplicate headers (keep only the first)
-    inputBinding:
-      position: 102
-      prefix: --first-header
-  - id: pack
-    type:
-      - 'null'
-      - boolean
-    doc: combine redundant sequences by concatenating the headers
-    inputBinding:
-      position: 102
-      prefix: --pack
-  - id: pack_sep
-    type:
-      - 'null'
-      - string
-    doc: set delimiting string for pack/unpack operations (SOH, 0x01, by 
-      default)
-    inputBinding:
-      position: 102
-      prefix: --pack-sep
   - id: repeated
     type:
       - 'null'
       - boolean
-    doc: print only repeated entries
+    doc: "Print only repeated entries"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --repeated
   - id: uniq
     type:
       - 'null'
       - boolean
-    doc: print only unique entries
+    doc: "Print only unique entries"
     inputBinding:
       position: 102
       prefix: --uniq
+  - id: pack
+    type:
+      - 'null'
+      - boolean
+    doc: "Combine redundant sequences by concatenating the headers"
+    inputBinding:
+      position: 103
+      prefix: --pack
   - id: unpack
     type:
       - 'null'
       - boolean
-    doc: reverse the pack operation
+    doc: "Reverse the pack operation"
     inputBinding:
-      position: 102
+      position: 104
       prefix: --unpack
-  - id: removed_file_path
-    type: string
-    doc: With -f, store removed sequences in FILE
-    inputBinding:
-      position: 103
-      prefix: --removed
-outputs:
-  - id: removed_file
+  - id: pack_sep
     type:
       - 'null'
-      - File
-    doc: With -f, store removed sequences in FILE
+      - string
+    doc: "Set delimiting string for pack/unpack operations (SOH, 0x01, by default)"
+    inputBinding:
+      position: 105
+      prefix: --pack-sep
+  - id: first_header
+    type:
+      - 'null'
+      - boolean
+    doc: "Remove entries with duplicate headers (keep only the first)"
+    inputBinding:
+      position: 106
+      prefix: --first-header
+  - id: removed_path
+    type:
+      - 'null'
+      - string
+    doc: "With --first-header, store removed sequences in this file"
+    inputBinding:
+      position: 107
+      prefix: --removed
+  - id: input_file
+    type: File
+    doc: "Input FASTA file (smof reads standard input by default)"
+    inputBinding:
+      position: 200
+outputs:
+  - id: stdout
+    type: stdout
+    doc: "Standard output"
+  - id: removed
+    type: ['null', File]
+    doc: Removed sequences (with --first-header and --removed)
     outputBinding:
-      glob: $(inputs.removed_file_path)
+      glob: $(inputs.removed_path)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smof:2.22.4--pyhdfd78af_0
+stdout: smof_uniq.out

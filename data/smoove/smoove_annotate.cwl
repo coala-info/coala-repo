@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smoove
+baseCommand:
+  - smoove
+  - annotate
 label: smoove_annotate
 doc: "GFF3 annotation files can be downloaded from Ensembl:\nftp://ftp.ensembl.org/pub/current_gff3/homo_sapiens/\n\
   ftp://ftp.ensembl.org/pub/grch37/release-84/gff3/homo_sapiens/\n\nTool homepage:

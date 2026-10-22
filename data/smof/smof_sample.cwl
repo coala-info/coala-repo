@@ -4,36 +4,33 @@ baseCommand:
   - smof
   - sample
 label: smof_sample
-doc: "Randomly sample entries. `sample` reads the entire file into memory, so should
-  not be used for extremely large files.\n\nTool homepage: https://github.com/incertae-sedis/smof"
+doc: "Randomly sample entries from a FASTA file.\n\nTool homepage: https://github.com/incertae-sedis/smof"
 inputs:
-  - id: input
-    type:
-      - 'null'
-      - File
-    doc: input fasta sequence
-    inputBinding:
-      position: 1
   - id: number
     type:
       - 'null'
       - int
-    doc: sample size
+    doc: "Sample size (default=1)"
     inputBinding:
-      position: 102
+      position: 100
       prefix: --number
   - id: seed
     type:
       - 'null'
-      - int
-    doc: set random seed (for reproducibility/debugging)
+      - string
+    doc: "Set random seed (for reproducibility/debugging)"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --seed
+  - id: input_file
+    type: File
+    doc: "Input FASTA file (smof reads standard input by default)"
+    inputBinding:
+      position: 200
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smof:2.22.4--pyhdfd78af_0

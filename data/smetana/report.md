@@ -1,5 +1,11 @@
 # smetana CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smetana | PASS |  |
+
 ## smetana
 
 ### Tool Description

@@ -1,36 +1,37 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof_cut
+baseCommand:
+  - smof
+  - cut
 label: smof_cut
-doc: "Cut fields from SMOF files.\n\nTool homepage: https://github.com/incertae-sedis/smof"
+doc: "Print sequences by index (emulates the UNIX cut command, where fields are entries).\n\nTool homepage: https://github.com/incertae-sedis/smof"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input SMOF file
-    inputBinding:
-      position: 1
   - id: fields
-    type: string
-    doc: Comma-separated list of fields to cut
-    inputBinding:
-      position: 102
-      prefix: --fields
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
     type:
       - 'null'
-      - File
-    doc: Output file to write results to
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - string
+    doc: "Indices to print, comma delimited, with ranges"
+    inputBinding:
+      position: 100
+      prefix: --fields
+  - id: complement
+    type:
+      - 'null'
+      - boolean
+    doc: "Invert selection"
+    inputBinding:
+      position: 101
+      prefix: --complement
+  - id: input_file
+    type: File
+    doc: "Input FASTA file (smof reads standard input by default)"
+    inputBinding:
+      position: 200
+outputs:
+  - id: stdout
+    type: stdout
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smof:2.22.4--pyhdfd78af_0
+stdout: smof_cut.out

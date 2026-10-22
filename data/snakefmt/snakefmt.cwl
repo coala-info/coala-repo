@@ -4,12 +4,12 @@ baseCommand: snakefmt
 label: snakefmt
 doc: "A tool for formatting Snakemake files.\n\nTool homepage: https://github.com/snakemake/snakefmt"
 inputs:
-  - id: path
+  - id: src
     type:
-      - 'null'
       - type: array
         items: File
-    doc: The path to the Snakemake files or directories to format.
+    doc: The Snakemake files to format. Files are staged writable and formatted in
+      place; the formatted files are returned as outputs.
     inputBinding:
       position: 1
   - id: check
@@ -21,14 +21,15 @@ inputs:
     inputBinding:
       position: 102
       prefix: --check
-  - id: compact_code
+  - id: compact_diff
     type:
       - 'null'
       - boolean
-    doc: Format code in a compact way.
+    doc: Same as --diff but only shows lines that would change plus a few lines of
+      context.
     inputBinding:
       position: 102
-      prefix: --compact-code
+      prefix: --compact-diff
   - id: config
     type:
       - 'null'
@@ -67,15 +68,44 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The maximum line length.
+    doc: 'Lines longer than INT will be wrapped. [default: 88]'
     inputBinding:
       position: 102
       prefix: --line-length
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Turns on debug-level logger.
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
+  - id: formatted_files
+    type:
+      type: array
+      items: File
+    doc: The input files after formatting (unchanged when --check, --diff or --compact-diff
+      is used).
+    outputBinding:
+      glob: $(inputs.src.map(function(f) { return f.basename; }))
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (the diff when --diff or --compact-diff is used)
+  - id: stderr
+    type: stderr
+    doc: Standard error (snakefmt reports the files it reformatted here)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.src)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snakefmt:0.11.3--pyha6daafd_0
 stdout: snakefmt.out
+stderr: snakefmt.err
+successCodes:
+  - 0
+  - 1

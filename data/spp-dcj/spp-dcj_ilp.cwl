@@ -103,20 +103,26 @@ inputs:
       position: 103
       prefix: --warm-start-sol
   - id: output_id_mapping_path
-    type: string
+    type:
+      - 'null'
+      - string
     inputBinding:
       position: 104
       prefix: --output_id_mapping
 outputs:
+  - id: stdout
+    type: stdout
+    doc: The ILP in LP format
   - id: output_id_mapping
     type:
       - 'null'
       - File
     doc: writs a table with ID-to-gene extremity mapping
     outputBinding:
-      glob: $(inputs.output_id_mapping_path)
+      glob: "$(inputs.output_id_mapping_path ? inputs.output_id_mapping_path : [])"
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spp-dcj:2.0.0--pyh7e72e81_0
+stdout: spp-dcj_ilp.out

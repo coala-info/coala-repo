@@ -44,9 +44,20 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: updated_snap_file
+    type: File
+    doc: The input snap file with the new session added (the file is modified in place on a writable copy).
+    outputBinding:
+      glob: $(inputs.snap_file.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.snap_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snaptools:1.4.8--py_0

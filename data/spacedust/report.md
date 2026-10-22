@@ -1,5 +1,14 @@
 # spacedust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spacedust_aa2foldseek | Not completed | needs a set database from createsetdb (cannot run in this image) and a large Foldseek reference database |
+| spacedust_clusterdb | Not completed | needs a set database from createsetdb, which cannot run in this image (no join command) |
+| spacedust_clustersearch | Not completed | needs set databases from createsetdb, which cannot run in this image (no join command) |
+| spacedust_createsetdb | Failed | image problem: createsetdb stops with 'Please make sure that join is in $PATH' because the image has no join command |
+
 ## spacedust_createsetdb
 
 ### Tool Description

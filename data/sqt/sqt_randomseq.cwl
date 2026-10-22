@@ -4,7 +4,7 @@ baseCommand:
   - sqt
   - randomseq
 label: sqt_randomseq
-doc: "Generate random sequences in FASTA format\n\nTool homepage: https://github.com/tdjsnelling/sqtracker"
+doc: "Generate random sequences in FASTA format\n\nTool homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: n
     type: int

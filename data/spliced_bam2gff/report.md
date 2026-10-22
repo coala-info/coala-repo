@@ -1,5 +1,11 @@
 # spliced_bam2gff CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spliced_bam2gff | PASS |  |
+
 ## spliced_bam2gff
 
 ### Tool Description

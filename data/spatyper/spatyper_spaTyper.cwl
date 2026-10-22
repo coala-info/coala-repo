@@ -91,6 +91,15 @@ outputs:
     doc: Folder to save downloaded files from Ridom/Spa server
     outputBinding:
       glob: $(inputs.folder)
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Output file written with --output
+    outputBinding:
+      glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spatyper:0.3.3--pyhdfd78af_3

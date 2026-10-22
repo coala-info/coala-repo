@@ -1,5 +1,11 @@
 # sourcepredict CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sourcepredict | PASS | Fixed the command name to sourcepredict and added network access for the taxonomy download; dog sample gave a valid source table (E. coli 0.37, unknown 0.63) on the repo's small test sources |
+
 ## sourcepredict
 
 ### Tool Description

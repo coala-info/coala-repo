@@ -1,5 +1,12 @@
 # sr2silo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sr2silo_process-from-vpipe | Failed | image problem: the image lacks the paired_end_read_merger and diamond programs the tool calls, so it crashes on real covid data |
+| sr2silo_submit-to-loculus | Not completed | needs a running Loculus server and user account to upload to |
+
 ## sr2silo_process-from-vpipe
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # snp-mutator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snp-mutator | PASS |  |
+
 ## snp-mutator
 
 ### Tool Description

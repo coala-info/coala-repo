@@ -5,7 +5,10 @@ label: sra-tools_sra-stat
 doc: Display table statistics
 inputs:
   - id: table
-    type: string
+    type:
+      - File
+      - Directory
+      - string
     doc: The table to display statistics for
     inputBinding:
       position: 1
@@ -98,13 +101,17 @@ inputs:
       position: 102
       prefix: --show_progress
   - id: ngc
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path to ngc file.
     inputBinding:
       position: 102
       prefix: --ngc
   - id: xml_log
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Produce XML-formatted log file.
     inputBinding:
       position: 102
@@ -159,11 +166,15 @@ outputs:
     doc: Produce XML-formatted log file.
     outputBinding:
       glob: $(inputs.xml_log)
+  - id: stdout
+    type: stdout
+    doc: Statistics (text or XML)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sra-tools:3.4.1--2_linux_64
+stdout: sra-tools_sra-stat.out
 s:url: https://github.com/ncbi/sra-tools
 $namespaces:
   s: https://schema.org/

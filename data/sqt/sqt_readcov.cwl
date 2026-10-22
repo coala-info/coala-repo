@@ -4,10 +4,13 @@ baseCommand:
   - sqt
   - readcov
 label: sqt_readcov
-doc: "Print a report for individual reads in a SAM/BAM file.\n\nTool homepage: https://github.com/tdjsnelling/sqtracker"
+doc: "Print a report for individual reads in a SAM/BAM file.\n\nTool homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: sam_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Name of a SAM or BAM file
     inputBinding:
       position: 1

@@ -1,5 +1,11 @@
 # spades CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spades_spades.py | PASS | Fixed numbered library options (--pe-1 N file); E. coli 1K paired reads gave the expected single 1000 bp contig |
+
 ## spades_spades.py
 
 ### Tool Description

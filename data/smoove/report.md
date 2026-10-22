@@ -1,5 +1,18 @@
 # smoove CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smoove_annotate | PASS | added missing 'annotate' subcommand; smoove repo test VCF and GFF give the expected exon:1:749 annotation |
+| smoove_call | PASS | added missing 'call' subcommand and index files; ran on the smoove repo NA24385 CRAM slice and gave 147 SV calls (INV, DUP, BND, DEL); --genotype not tested because bcftools in the image is broken |
+| smoove_duphold | Failed | image problem: smoove duphold stops because bcftools in the image cannot load libopenblas.so.0 |
+| smoove_genotype | Failed | image problem: smoove genotype stops because bcftools in the image cannot load libopenblas.so.0 |
+| smoove_hipstr | Failed | image problem: smoove hipstr stops with 'can't find hipstr executable'; the image has no HipSTR |
+| smoove_merge | PASS | added missing 'merge' subcommand and output folder creation; merged the call VCF into a sites VCF with 147 records |
+| smoove_paste | Failed | image problem: smoove paste stops because bcftools in the image cannot load libopenblas.so.0 |
+| smoove_plot-counts | PASS | baseCommand fixed to 'smoove plot-counts'; html counts match the call log (13212 split, 10839 discordant reads before filtering) |
+
 ## smoove_call
 
 ### Tool Description

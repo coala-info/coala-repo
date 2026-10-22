@@ -53,7 +53,7 @@ inputs:
   - id: profile
     type:
       - 'null'
-      - string
+      - File
     doc: Optional path to a timing profile (.snakesee-profile.json) for 
       bootstrapping estimates. If not specified, will auto-discover.
     inputBinding:

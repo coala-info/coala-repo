@@ -14,6 +14,7 @@ inputs:
     doc: Output SLOW5/BLOW5 file
     inputBinding:
       position: 2
+      prefix: -o
   - id: amp_noise
     type:
       - 'null'
@@ -75,7 +76,7 @@ inputs:
   - id: fasta_output
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA file to write simulated reads with no errors
     inputBinding:
       position: 102
@@ -205,7 +206,7 @@ inputs:
   - id: paf_output
     type:
       - 'null'
-      - File
+      - string
     doc: PAF file to write the alignment of simulated reads
     inputBinding:
       position: 102
@@ -246,7 +247,7 @@ inputs:
   - id: sam_output
     type:
       - 'null'
-      - File
+      - string
     doc: SAM file to write the alignment of simulated reads
     inputBinding:
       position: 102
@@ -300,27 +301,33 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
-  - id: output_file_path
-    type:
-      - 'null'
-      - string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
 outputs:
   - id: out_out_signal_blow5
     type: File
     doc: Output SLOW5/BLOW5 file
     outputBinding:
       glob: '$(inputs.out_signal_blow5)'
-  - id: output_file
+  - id: out_fasta
     type:
       - 'null'
       - File
-    doc: SLOW5/BLOW5 file to write
+    doc: FASTA file with simulated reads with no errors
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.fasta_output)
+  - id: out_paf
+    type:
+      - 'null'
+      - File
+    doc: PAF file with the alignment of simulated reads
+    outputBinding:
+      glob: $(inputs.paf_output)
+  - id: out_sam
+    type:
+      - 'null'
+      - File
+    doc: SAM file with the alignment of simulated reads
+    outputBinding:
+      glob: $(inputs.sam_output)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

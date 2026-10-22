@@ -1,5 +1,11 @@
 # snp-sites CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snp-sites | PASS |  |
+
 ## snp-sites
 
 ### Tool Description

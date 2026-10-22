@@ -1,5 +1,11 @@
 # spacerplacer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spacerplacer | PASS | Output path was typed Directory (now a string with an output folder); reconstruction of the repo's group5 spacer arrays finished with results table |
+
 ## spacerplacer
 
 ### Tool Description

@@ -60,7 +60,8 @@ inputs:
   - id: family_bounds
     type:
       - 'null'
-      - string
+      - File
+    doc: Family bounds table (tab-separated genome, family, lower bound, upper bound)
     inputBinding:
       position: 104
       prefix: --family-bounds

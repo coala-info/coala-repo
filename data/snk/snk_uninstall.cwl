@@ -19,10 +19,27 @@ inputs:
     inputBinding:
       position: 102
       prefix: --force
+  - id: snk_store
+    type:
+      - 'null'
+      - Directory
+    doc: Existing snk workflow store (the .local/snk folder written by snk install),
+      staged into the home directory so that installed workflows can be found.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: remaining_workflows
+    type: Directory
+    doc: The snk workflow store after the uninstall
+    outputBinding:
+      glob: .local/snk
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: .local/snk
+        entry: $(inputs.snk_store)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snk:0.31.1--pyhdfd78af_0

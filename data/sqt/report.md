@@ -1,5 +1,22 @@
 # sqt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sqt_align | Failed | tool bug: sqt align calls 'stty size' and crashes when there is no terminal |
+| sqt_bam2fastq | PASS |  |
+| sqt_bameof | PASS | exit code 1 means all files have the EOF marker, so successCodes 0 and 1 are set |
+| sqt_chars | PASS |  |
+| sqt_cutvect | Failed | tool bug: on a read with the vector inside, the second piece still holds part of the vector (synthetic data: pUC19 planted in SARS-CoV-2 sequence) |
+| sqt_fastagrep | PASS |  |
+| sqt_fastxmod | PASS |  |
+| sqt_qgramfreq | PASS | default q-gram length works; the -q option crashes (value is read as a string) |
+| sqt_randomseq | PASS |  |
+| sqt_readcov | PASS |  |
+| sqt_readlenhisto | PASS |  |
+| sqt_samsetop | Failed | tool bug: Python 2 code in a Python 3 image ('dict' has no 'has_key'; output path crashes on args[3]) |
+
 ## sqt_align
 
 ### Tool Description

@@ -39,8 +39,8 @@ inputs:
   - id: aa
     type:
       - 'null'
-      - boolean
-    doc: report proteins to FASTA files
+      - string
+    doc: Create FASTA file of proteins (output file name).
     inputBinding:
       position: 103
       prefix: -aa
@@ -48,7 +48,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: change output to ACEDB
+    doc: Output annotation as ACED.
     inputBinding:
       position: 103
       prefix: -ace
@@ -56,7 +56,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: change output to GFF
+    doc: Output annotation as GFF.
     inputBinding:
       position: 103
       prefix: -gff
@@ -64,15 +64,47 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: use -lcmask to prevent exons from appearing in masked DNA
+    doc: Treat lowercase as N.
     inputBinding:
       position: 103
       prefix: -lcmask
-  - id: tx
+  - id: minus
     type:
       - 'null'
       - boolean
-    doc: report transcripts to FASTA files
+    doc: Predict on minus strand only.
+    inputBinding:
+      position: 103
+      prefix: -minus
+  - id: name
+    type:
+      - 'null'
+      - string
+    doc: 'Name for the gene [default snap].'
+    inputBinding:
+      position: 103
+      prefix: -name
+  - id: plus
+    type:
+      - 'null'
+      - boolean
+    doc: Predict on plus strand only.
+    inputBinding:
+      position: 103
+      prefix: -plus
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Do not send progress to STDERR.
+    inputBinding:
+      position: 103
+      prefix: -quiet
+  - id: tx
+    type:
+      - 'null'
+      - string
+    doc: Create FASTA file of transcripts (output file name).
     inputBinding:
       position: 103
       prefix: -tx
@@ -80,15 +112,35 @@ inputs:
     type:
       - 'null'
       - File
-    doc: External definitions ZFF file
+    doc: External definitions (ZFF file).
     inputBinding:
       position: 103
       prefix: -xdef
 outputs:
+  - id: proteins
+    type:
+      - 'null'
+      - File
+    doc: FASTA file of predicted proteins (-aa).
+    outputBinding:
+      glob: $(inputs.aa)
+  - id: transcripts
+    type:
+      - 'null'
+      - File
+    doc: FASTA file of predicted transcripts (-tx).
+    outputBinding:
+      glob: $(inputs.tx)
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Predicted gene annotation (ZFF, or GFF/ACEDB with -gff/-ace).
+  - id: stderr
+    type: stderr
+    doc: Progress messages.
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snap:2017_03_01--h7b50bb2_0
 stdout: snap.out
+stderr: snap.err

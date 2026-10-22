@@ -1,5 +1,11 @@
 # snp-pileup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snp-pileup | PASS |  |
+
 ## snp-pileup
 
 ### Tool Description

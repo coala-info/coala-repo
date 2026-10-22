@@ -1,5 +1,11 @@
 # squizz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| squizz | PASS |  |
+
 ## squizz
 
 ### Tool Description

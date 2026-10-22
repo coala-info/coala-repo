@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 13342; PASS: 10455; Failed: 1602; Not completed: 1285
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 13618; PASS: 10646; Failed: 1637; Not completed: 1335
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -13342,3 +13342,279 @@ smartmap	smartmap_SmartMap	PASS
 smartmap	smartmap_SmartMapPrep	PASS	
 smartmap	smartmap_SmartMapRNAPrep	PASS	
 smashpp	smashpp	PASS	
+smeg	smeg_build_species	Failed	image problem: smeg stops at its dependency check with 'ERROR: gcc missing' (also bc not found)
+smeg	smeg_growth_est	Failed	image problem: smeg stops at its dependency check with 'ERROR: gcc missing' (also bc not found)
+smetana	smetana	PASS	
+smina	smina	PASS	rewritten from help (--out, --flex/--flexres fixed, no_vdw removed); docked HIV protease 1HSG with indinavir, best score -11.8 kcal/mol
+smithwaterman	smithwaterman	Failed	tool bug: --bandwidth (banded mode) always prints score 0.000000 for a perfect 20-base match; default mode works; -r (repeat gap extend penalty) fixed to an optional float on -r and tested (score 445.5 at -r 1, 449.0 at -r 8 vs 438.34 default); long --print-alignment also demands an argument, so CWL uses -p and -z
+smncopynumbercaller	smncopynumbercaller_smn_caller.py	Not completed	no usable test data: tool needs a genome-wide WGS BAM for depth normalisation; the repo test BAMs cover only a short region (tool stops with a TypeError); slicing a public WGS BAM was too slow; CWL rewritten to write the manifest from a bams input
+smof	smof_clean	PASS	rewritten as 'smof clean' (old baseCommand smof_clean did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_consensus	PASS	rewritten as 'smof consensus' (old baseCommand smof_consensus did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_cut	PASS	rewritten as 'smof cut' (old baseCommand smof_cut did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_filter	PASS	rewritten as 'smof filter' (old baseCommand smof_filter did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_grep	PASS	rewritten as 'smof grep' (old baseCommand smof_grep did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_head	PASS	rewritten as 'smof head' (old baseCommand smof_head did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_md5sum	PASS	rewritten as 'smof md5sum' (old baseCommand smof_md5sum did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_permute	PASS	rewritten as 'smof permute' (old baseCommand smof_permute did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_reverse	PASS	rewritten as 'smof reverse' (old baseCommand smof_reverse did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_sample	PASS	rewritten as 'smof sample' (old baseCommand smof_sample did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_sniff	PASS	rewritten as 'smof sniff' (old baseCommand smof_sniff did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_sort	PASS	rewritten as 'smof sort' (old baseCommand smof_sort did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_split	PASS	rewritten as 'smof split' (old baseCommand smof_split did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_stat	PASS	rewritten as 'smof stat' (old baseCommand smof_stat did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_subseq	PASS	rewritten as 'smof subseq' (old baseCommand smof_subseq did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_tail	PASS	rewritten as 'smof tail' (old baseCommand smof_tail did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_translate	PASS	rewritten as 'smof translate' (old baseCommand smof_translate did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_uniq	PASS	rewritten as 'smof uniq' (old baseCommand smof_uniq did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smof	smof_wc	PASS	rewritten as 'smof wc' (old baseCommand smof_wc did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked
+smoothxg	smoothxg	PASS	rewritten from help (old file had invented flags); smoothed nf-core pangenome seqwish GFA gives the same graph as the nf-core expected smoothxg GFA
+smoove	smoove_annotate	PASS	added missing 'annotate' subcommand; smoove repo test VCF and GFF give the expected exon:1:749 annotation
+smoove	smoove_call	PASS	added missing 'call' subcommand and index files; ran on the smoove repo NA24385 CRAM slice and gave 147 SV calls (INV, DUP, BND, DEL); --genotype not tested because bcftools in the image is broken
+smoove	smoove_duphold	Failed	image problem: smoove duphold stops because bcftools in the image cannot load libopenblas.so.0
+smoove	smoove_genotype	Failed	image problem: smoove genotype stops because bcftools in the image cannot load libopenblas.so.0
+smoove	smoove_hipstr	Failed	image problem: smoove hipstr stops with 'can't find hipstr executable'; the image has no HipSTR
+smoove	smoove_merge	PASS	added missing 'merge' subcommand and output folder creation; merged the call VCF into a sites VCF with 147 records
+smoove	smoove_paste	Failed	image problem: smoove paste stops because bcftools in the image cannot load libopenblas.so.0
+smoove	smoove_plot-counts	PASS	baseCommand fixed to 'smoove plot-counts'; html counts match the call log (13212 split, 10839 discordant reads before filtering)
+smudgeplot	smudgeplot_all	PASS	synthetic data: simulated diploid reads (1 Mb, 25x), FastK k-mer table
+smudgeplot	smudgeplot_cutoff	PASS	synthetic data: simulated diploid reads (1 Mb, 25x), FastK k-mer table
+smudgeplot	smudgeplot_extract	Failed	image problem: Symmex from FastK is not in the image, so extract fails on a normal FastK table (works only when the table is already symmetrized with Symmex)
+smudgeplot	smudgeplot_hetmers	Failed	image problem: Symmex from FastK is not in the image, so hetmers fails on a normal FastK table (synthetic data; works only when the table is already symmetrized with Symmex)
+smudgeplot	smudgeplot_peak_aggregation	PASS	synthetic data: simulated diploid reads (1 Mb, 25x), FastK k-mer table
+smudgeplot	smudgeplot_plot	Not completed	the smudge size file has no producer in smudgeplot 0.5.3; ran only with a hand-made size file
+snakealtpromoter	snakealtpromoter_Genomesetup	Not completed	pipeline, skipped
+snakealtpromoter	snakealtpromoter_Snakealtpromoter	Not completed	pipeline, skipped
+snakebids	snakebids_boutiques	Failed	tool bug: boutiques descriptor generation is disabled in snakebids 0.15.0 and always exits 1
+snakebids	snakebids_create	Failed	image problem: git is not installed in the image, so copier fails with CommandNotFound git
+snakefmt	snakefmt	PASS	
+snakemake	snakemake	Not completed	pipeline engine, skipped
+snakemake-minimal	snakemake-minimal_snakemake	Not completed	pipeline engine, skipped
+snakemake-minimal_7.25.0--pyhdfd78af_0-test	snakemake-minimal_7.25.0--pyhdfd78af_0-test_snakemake	Not completed	pipeline engine, skipped
+snakemake-minimal_7.25.0-pyhdfd78af_0	snakemake-minimal_7.25.0-pyhdfd78af_0_snakemake	Not completed	pipeline engine, skipped
+snakemake-minimal_7.25.0-pyhdfd78af_0-test	snakemake-minimal_7.25.0-pyhdfd78af_0-test_snakemake	Not completed	pipeline engine, skipped
+snakesee	snakesee_profile-export	PASS	
+snakesee	snakesee_profile-show	PASS	
+snakesee	snakesee_status	PASS	
+snakesee	snakesee_watch	Not completed	interactive terminal dashboard (TUI), needs a terminal and runs until quit
+snap	snap	PASS	
+snap-aligner	snap-aligner_index	PASS	
+snap-aligner	snap-aligner_paired	PASS	
+snap-aligner	snap-aligner_single	PASS	
+snaptools	snaptools_align-paired-end	Failed	image problem: bwa (and the other aligners) is not installed in the image, snaptools stops with 'bwa does not exist'
+snaptools	snaptools_align-single-end	Failed	image problem: bwa (and the other aligners) is not installed in the image, snaptools stops with 'bwa does not exist'
+snaptools	snaptools_dex-fastq	PASS	
+snaptools	snaptools_index-genome	Failed	image problem: bwa (and the other aligners) is not installed in the image, snaptools stops with 'bwa does not exist'
+snaptools	snaptools_snap-add-bmat	PASS	
+snaptools	snaptools_snap-add-gmat	Failed	tool bug: snaptools 1.4.8 writes fragment chromosome names as b'chr21' (Python 3 bytes), so no fragment overlaps and the matrix has zero counts
+snaptools	snaptools_snap-add-pmat	Failed	tool bug: snaptools 1.4.8 writes fragment chromosome names as b'chr21' (Python 3 bytes), so no fragment overlaps and the matrix has zero counts
+snaptools	snaptools_snap-del	PASS	
+snaptools	snaptools_snap-pre	PASS	
+sneakernet-qc	sneakernet-qc_SneakerNet.roRun.pl	PASS	
+sneakernet-qc	sneakernet-qc_SneakerNetPlugins.pl	PASS	
+sniffles	sniffles	PASS	
+snikt	snikt_snikt.R	PASS	
+snipe	snipe_ops_common	PASS	
+snipe	snipe_ops_guided-merge	PASS	
+snipe	snipe_ops_intersect	PASS	
+snipe	snipe_ops_subtract	Failed	tool bug: the image calls a missing method (SnipeSig has no attribute 'subtract'), so the command always errors
+snipe	snipe_ops_sum	PASS	
+snipe	snipe_ops_union	PASS	
+snipe	snipe_qc	PASS	
+snipe	snipe_sketch	PASS	
+snipit	snipit	PASS	
+snippy	snippy	PASS	
+snk	snk_create	PASS	
+snk	snk_edit	PASS	
+snk	snk_install	PASS	
+snk	snk_list	PASS	
+snk	snk_uninstall	PASS	
+snkmt	snkmt_console	Not completed	interactive terminal console, needs a terminal and a Snakemake monitoring database
+snkmt	snkmt_db_config_add	PASS	synthetic data: empty database created with the snkmt API
+snkmt	snkmt_db_config_discover	Not completed	asks a yes/no question that needs a terminal, so it fails without one
+snkmt	snkmt_db_config_list	PASS	synthetic data: empty database created with the snkmt API
+snkmt	snkmt_db_info	PASS	synthetic data: empty database created with the snkmt API
+snkmt	snkmt_db_migrate	PASS	synthetic data: empty database created with the snkmt API
+snkmt	snkmt_db_stamp	PASS	synthetic data: empty database created with the snkmt API
+snoscan	snoscan	PASS	
+snoscan	snoscan_sort-snos	PASS	
+snp-dists	snp-dists	PASS	
+snp-mutator	snp-mutator	PASS	
+snp-pileup	snp-pileup	PASS	
+snp-sites	snp-sites	PASS	
+snp2cell	snp2cell_add-score	PASS	
+snp2cell	snp2cell_combine-scores	PASS	
+snp2cell	snp2cell_contrast-scores	PASS	
+snp2cell	snp2cell_create-gene2pos-mapping	Failed	tool bug: pybiomart in the image cannot read the current Ensembl BioMart (redirect and renamed columns), so no mapping is written
+snp2cell	snp2cell_create-object	PASS	
+snp2cell	snp2cell_export-locations	Failed	tool bug: the command crashes with AttributeError ('SNP2CELL' object has no attribute 'util'), so no locations file is written
+snp2cell	snp2cell_score-de	PASS	
+snp2cell	snp2cell_score-snp	PASS	
+snpeff	snpeff_build	PASS	
+snpeff	snpeff_cds	PASS	synthetic data: CDS FASTA headers rewritten to the transcript IDs the command needs
+snpeff	snpeff_closest	PASS	
+snpeff	snpeff_count	PASS	
+snpeff	snpeff_databases	PASS	
+snpeff	snpeff_download	PASS	
+snpeff	snpeff_dump	PASS	
+snpeff	snpeff_genes2bed	PASS	
+snpeff	snpeff_len	Failed	tool bug: the command crashes with a NullPointerException (no predictor loaded) on a valid database
+snpeff	snpeff_protein	PASS	
+snpeff	snpeff_seq	PASS	
+snpeff	snpeff_show	PASS	
+snpeff	snpeff_snpEff	PASS	
+snpgenie	snpgenie_fasta2revcom.pl	PASS	
+snpgenie	snpgenie_gtf2revcom.pl	PASS	
+snpgenie	snpgenie_snpgenie.pl	PASS	
+snpgenie	snpgenie_snpgenie_between_group.pl	Failed	image problem: Parallel::ForkManager in the image does not work with the script; the default fails with 'Missing required arguments: max_proc' and --procs_per_node=1 hangs
+snpgenie	snpgenie_snpgenie_within_group.pl	Failed	image problem: Parallel::ForkManager in the image does not work with the script; the default fails with 'Missing required arguments: max_proc' and --procs_per_node=1 hangs
+snpgenie	snpgenie_vcf2revcom.pl	PASS	
+snpick	snpick	PASS	
+snpiphy	snpiphy	Not completed	pipeline, skipped (snippy, gubbins and RAxML SNP phylogeny pipeline)
+snpsplit	snpsplit	PASS	tool's own test fixtures (single-end and paired-end); output matches expected files; fixed outdir flag, writable input, outputs
+snver	snver	PASS	fixed baseCommand to snver, added index files and default prefix; SARS-CoV-2 nf-core BAM gives one 1/1 SNP
+snver	snver_pool	PASS	new CWL; SARS-CoV-2 nf-core BAM directory gives the same SNP as snver
+snvphyl-tools	snvphyl-tools_snv_matrix.pl	PASS	tool's own test input; matrix equals expected output; fixed -o flag and made input required
+soapdenovo2-gapcloser	soapdenovo2-gapcloser_GapCloser	Not completed	CWL runs and writes outputs, but the tool closed no gap (finish gap count 0) on real SARS-CoV-2 reads with a planted gap, so the result is not confirmed; added library file staging and outputs
+soapdenovo2-prepare	soapdenovo2-prepare_finalFusion	PASS	new CWL replacing junk; data prepare mode (-D) on the SARS-CoV-2 nf-core genome gives a contig file of 29829 bases; mapping, bundling and scaffolding modes not run
+soapsnp	soapsnp	PASS	SARS-CoV-2 nf-core BAM converted to SOAP format; consensus has the T to C SNP at 18807 that snver also finds; made output path required and dropped .fai
+soapsplice	soapsplice	PASS	rewritten from help (index as prefix plus staged index files, real flags, -o prefix outputs); nf-core human RNA-seq pairs give 9 junctions, all with GT-AG or CT-AC splice motifs
+soapsplice	soapsplice_2bwt-builder	PASS	new CWL; builds the 16 index files for the nf-core human chr22 genome slice, used by soapsplice
+socru	socru	PASS	E. coli K-12 MG1655 (NCBI efetch) is typed GS1.0 with all seven fragments; fixed output file inputs typed File and added outputs
+socru	socru_create	PASS	new CWL; E. coli K-12 MG1655 gives seven fragments and profile with GS1.0, dnaA fragment 3, dif fragment 1
+socru	socru_rebuild_profile	PASS	new CWL; bundled E. coli profile is rebuilt and renumbered (13 rows, duplicate row merged)
+socru	socru_shrink_database	PASS	new CWL; bundled E. coli database shrunk with blast hits from E. coli K-12 into a new database with 7 fragments and profile
+socru	socru_species	PASS	new CWL; lists 433 species including Escherichia_coli
+socru	socru_update_profile	PASS	new CWL; E. coli K-12 result (known GS1.0) leaves the bundled profile unchanged, no novel profile tested
+soda-gallery	soda-gallery_soda	Not completed	needs a running UCSC Genome Browser session (session ID, network and browser account); cannot be tested offline
+sodar-cli	sodar-cli_landingzone_create	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_landingzone_list	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_landingzone_move	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_landingzone_retrieve	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_landingzone_validate	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_project_create	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_project_list	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_project_retrieve	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_project_update	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_samplesheet_export	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_samplesheet_import	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+sodar-cli	sodar-cli_samplesheet_retrieve	Not completed	new CWL replacing junk; needs a SODAR server and API token (command line is accepted and the tool tries to connect)
+solote	solote_SoloTE_RepeatMasker_to_BED.py	Failed	image problem: SoloTE_RepeatMasker_to_BED.py on PATH has no shebang line (exec format error); CWL rewritten from the script source with --genome, --list and NetworkAccess
+solvebio	solvebio_create-dataset	Not completed	needs a SolveBio account and API key; without login the tool stops with 'client is not logged in'
+solvebio	solvebio_download	Not completed	needs a SolveBio account and API key; without login the tool stops with 'client is not logged in'
+solvebio	solvebio_import	Not completed	needs a SolveBio account and API key; without login the tool stops with 'client is not logged in'
+solvebio	solvebio_login	Not completed	needs a SolveBio account (interactive login); no credentials entered
+solvebio	solvebio_logout	Not completed	runs but only reports 'You are not logged-in'; there is no SolveBio session to log out of
+solvebio	solvebio_ls	Not completed	needs a SolveBio account and API key; without login the tool stops with 'client is not logged in'
+solvebio	solvebio_queue	Not completed	needs a SolveBio account and API key; without login the tool stops with 'client is not logged in'
+solvebio	solvebio_shell	Not completed	interactive shell, not testable
+solvebio	solvebio_tag	Not completed	needs a SolveBio account and API key; without login the tool stops with 'client is not logged in'
+solvebio	solvebio_upload	Not completed	needs a SolveBio account and API key; without login the tool stops with 'client is not logged in'
+solvebio	solvebio_whoami	Not completed	needs a SolveBio account and API key; without login the tool stops with 'client is not logged in'
+somalier	somalier_ancestry	PASS	baseCommand fixed from pca to ancestry and query files added after ++; 149 labelled 1000 Genomes digests plus the nf-core whole-genome digest: 146 of 149 labelled samples get their given ancestry back
+somalier	somalier_extract	PASS	nf-core human chr22 test BAMs with a sites VCF of SNVs from dbSNP give .somalier files for testN and testT; made index files optional, set default output dir and collected the .somalier file
+somalier	somalier_find-sites	PASS	nf-core gnomAD chr22 VCF gives 59 SNV sites with AF 0.05 or more and at least 100 bases apart
+somalier	somalier_pedrel	PASS	nf-core family.ped gives normal and tumour relatedness 0.49 (siblings)
+somalier	somalier_relate	PASS	relate runs on two extracted files and on the nf-core normal and tumour pair with groups and ped; outputs html, pairs and samples tables; the pair shows 0.92 hom concordance (relatedness 0.000 because the digests have no het sites)
+somatic-sniper	somatic-sniper	PASS	nf-core human chr22 test (normal) and test2 (tumor) BAMs give a VCF with 11 candidate sites and SS/SSC fields; rewrote inputs from help (output file positional, -L/-G flags, -f required)
+somaticseq	somaticseq_paired	PASS	Consensus VCFs from 5 callers on the tiny example, 75 SNV and 53 indel calls
+somaticseq	somaticseq_single	PASS	Consensus VCFs from 3 callers on the tiny example, 77 SNV calls
+sonicparanoid	sonicparanoid	Failed	image problem: the tool needs its own blastp copy in its read-only package folder, which the image lacks, so every run stops at start-up
+souporcell	souporcell_consensus.py	PASS	New CWL (output folder created by the wrapper); ambient RNA estimate 27.7% and genotypes for 66 variants
+souporcell	souporcell_renamer.py	PASS	New CWL; made a barcode-tagged fastq of 134898 reads from the real hadge chr21 single-cell BAM slice
+souporcell	souporcell_retag.py	PASS	New CWL; restored CB and UB tags on 143276 remapped reads (checked in the BAM)
+souporcell	souporcell_shared_samples.py	Not completed	needs two full souporcell run folders with shared samples; no such pair could be made here
+souporcell	souporcell_souporcell	PASS	New CWL; 500 cells x 66 chr21 variants (bcftools calls, vartrix matrices) gave 2 clusters that match the reference souporcell donor calls for 454 of 455 cells
+souporcell	souporcell_souporcell_pipeline.py	Failed	image problem: freebayes in the image stops with a libvcflib undefined symbol error, so the pipeline fails after remapping (re-checked)
+souporcell	souporcell_troublet	PASS	New CWL; doublet calls for the 500 cells (439 singlet, 8 doublet, 53 unassigned)
+sourcepredict	sourcepredict	PASS	Fixed the command name to sourcepredict and added network access for the taxonomy download; dog sample gave a valid source table (E. coli 0.37, unknown 0.63) on the repo's small test sources
+spaced	spaced	Failed	tool bug: with the default reverse-complement mode, two identical sequences get a non-zero distance (JS 0.31); with -r they get 0
+spacedust	spacedust_aa2foldseek	Not completed	needs a set database from createsetdb (cannot run in this image) and a large Foldseek reference database
+spacedust	spacedust_clusterdb	Not completed	needs a set database from createsetdb, which cannot run in this image (no join command)
+spacedust	spacedust_clustersearch	Not completed	needs set databases from createsetdb, which cannot run in this image (no join command)
+spacedust	spacedust_createsetdb	Failed	image problem: createsetdb stops with 'Please make sure that join is in $PATH' because the image has no join command
+spacepharer	spacepharer_createsetdb	PASS	New CWL; built target, control and spacer set databases from the repo examples
+spacepharer	spacepharer_easy-predict	PASS	Two spacer sets matched phages AY369265.2 and AJ242593.1 as in the repo example; rewrote CWL to stage database files
+spacepharer	spacepharer_parsespacer	PASS	New CWL; parsed 56 spacers from CRISPRDetect and PILER-CR example files
+spacepharer	spacepharer_predictmatch	PASS	New CWL; same two phage-host matches as easy-predict
+spacerextractor	spacerextractor_build_database	PASS	Rewrote CWL; added the 2 cctyper arrays to the downloaded repeat database (581889 repeats, array repeat present)
+spacerextractor	spacerextractor_create_target_db	PASS	Rewrote CWL; built a bowtie target database from the Listeria phage A118 genome (AJ242593)
+spacerextractor	spacerextractor_download_database	PASS	Rewrote CWL (creates the folder, network access); downloaded and unpacked the 18 MB repeat database
+spacerextractor	spacerextractor_extract_spacers	PASS	synthetic data: reads simulated from the Listeria CRISPR array region; 1083 spacers extracted, assigned to Listeria
+spacerextractor	spacerextractor_filter_hq_spacers	PASS	synthetic data: filtered the extract_spacers output to 194 high-quality spacers; wdir staged writable
+spacerextractor	spacerextractor_map_to_target	PASS	Rewrote CWL (database staged writable); a Listeria spacer mapped to the phage genome at 18563-18598, as spacepharer also finds
+spacerextractor	spacerextractor_run_cctyper	PASS	Rewrote CWL (genome_id_prefix is a flag); CRISPRCasTyper found 2 type I-B arrays in Listeria contig JNGQ01000029
+spacerplacer	spacerplacer	PASS	Output path was typed Directory (now a string with an output folder); reconstruction of the repo's group5 spacer arrays finished with results table
+spades	spades_spades.py	PASS	Fixed numbered library options (--pe-1 N file); E. coli 1K paired reads gave the expected single 1000 bp contig
+spaln	spaln	PASS	Rewrote CWL (options are glued, no invented flags); protein NP_001121846.1 mapped to its Danio genome scaffold with 9 exons, translation of the exons matches the protein; Galaxy reference file is from an older version
+spaln	spaln_canonical.pl	PASS	New CWL; all 8 introns are GT..AG (100% GTAG)
+spaln	spaln_catchr.pl	PASS	New CWL; renamed the genome scaffold to Pre_Un_1 with prefix and number options
+spaln	spaln_clade.pl	PASS	New CWL; spaln protein-vs-protein distances for 10 globins gave beta-globin, myoglobin and alpha-globin clades
+spaln	spaln_eij2ild.pl	PASS	New CWL; intron length table for the 8 introns found by spaln (65 to 6584 bp); two extra rows come from trailer lines in the input
+spaln	spaln_eij4mer.pl	PASS	New CWL; counted GTAG 8 times for the 8 introns (two extra rows come from trailer lines in the input)
+spaln	spaln_makblk.pl	PASS	New CWL; built genome.bkn (51303 B) from the makdbs .grp database, same size as spaln -W -KD
+spaln	spaln_makdb	PASS	New CWL for spaln -W; built -KD, -KP and -KA databases from the Galaxy test data; the -KP database then worked with spaln -d
+spaln	spaln_makdbs	PASS	New CWL; formatted the Galaxy test genome into .ent/.grp/.idx/.seq files (seq file 29972 B, same as spaln -W)
+spaln	spaln_makeidx.pl	PASS	New CWL; made .bka block file and index files for 10 real globin proteins from UniProt
+spaln	spaln_makmdm	PASS	New CWL; wrote mdm_cmp and mdm_mtx matrices for the PAM series (output folder created by the wrapper)
+spaln	spaln_sortgrcd	PASS	New CWL; sorted spaln -O12 binary results into the same GFF3 gene model as the direct run
+spapros	spapros_evaluation	PASS	Rewrote CWL; evaluated 2 of the selected probesets on small_data with the repo parameters file and got a summary table with all metrics
+spapros	spapros_selection	PASS	Rewrote CWL (output is a folder, global options before the subcommand); the repo's small_data example gave selection tables with 2000 genes and a plot
+sparseassembler	sparseassembler_SparseAssembler	PASS	Fixed the command name and the repeated f inputs; E. coli 1K paired reads gave one 1000 bp contig
+spatyper	spatyper_spaTyper	PASS	Added the missing --output file as an output; S. aureus NCTC 8325 genome gave spa type t211, the known type of this strain
+spclust	spclust	PASS	Rewrote CWL to run under mpiexec with the real -out option; 17 bacterial 16S sequences gave clusters of Bacillus, Staphylococcus and Enterobacteriaceae (commas in FASTA headers confuse the tool)
+spectra-cluster-cli	spectra-cluster-cli	PASS	Rewrote CWL (invented flags, output is a file not a folder); 210 repo test spectra gave 157 clusters in a valid .clustering file
+spectrassembler	spectrassembler_gen_cons_from_poa	Failed	tool bug: --contig is read as text but later used with %d, so every run stops with a TypeError
+spectrassembler	spectrassembler_spectral_layout_from_minimap	PASS	New CWL; 138 real PacBio HiFi plastid reads gave a 127-read layout with POA windows (crashes on some inputs: duplicate overlaps early in the PAF file hit a list index bug)
+spestimator	spestimator	PASS	Fixed folder inputs and added network access and outputs; update_db built the 16S BLAST database, and 16S sequences of S. aureus, B. subtilis and Salmonella matched their RefSeq assemblies at 100% identity
+sphae	sphae_annotate	Not completed	pipeline, skipped (CWL rewritten from bare snakemake to sphae annotate)
+sphae	sphae_config	PASS	Added the config file as an output; sphae config copied the template config (valid YAML with resources, params, db and args)
+sphae	sphae_install	Not completed	pipeline, skipped; downloads large databases (CWL rewritten from bare snakemake to sphae install)
+sphae	sphae_run	Not completed	pipeline, skipped (CWL rewritten from bare snakemake to sphae run)
+spine	spine_spine.pl	Failed	image problem: spine.pl looks for nucmer_multi.pl in a scripts folder next to it, which the image does not have
+spingo	spingo	PASS	
+splash	splash	PASS	
+spliceai	spliceai	PASS	
+spliceai-wrapper	spliceai-wrapper	Failed	image problem: spliceai-wrapper fails on start with ModuleNotFoundError: No module named 'vcfpy'
+spliced_bam2gff	spliced_bam2gff	PASS	
+splitcode	splitcode	PASS	
+splitp	splitp	PASS	synthetic data: real SPLiT-seq R2 reads (SRR6750041, 100 reads) with a barcode map built from barcodes seen in them
+splitubam	splitubam	PASS	
+spoa	spoa	PASS	
+spp-dcj	spp-dcj_draw	PASS	
+spp-dcj	spp-dcj_heuristic	PASS	
+spp-dcj	spp-dcj_ilp	PASS	
+spp-dcj	spp-dcj_newick2table	PASS	
+spp-dcj	spp-dcj_sol2adj	PASS	solution file was the heuristic warm-start solution, as Gurobi is not available
+sprai	sprai_check_circularity.pl	PASS	synthetic data: real T7 phage genome with its first 2000 bases appended to make a circular contig
+sprai	sprai_ezez4qsub_vx1.pl	Not completed	pipeline, skipped: it writes and submits qsub jobs for the whole sprai pipeline
+sprai	sprai_ezez_vx1.pl	Not completed	pipeline, skipped: it runs the whole sprai error-correction and assembly pipeline
+spring	spring	PASS	
+spyder	spyder	Not completed	GUI: Spyder is a Python IDE that needs a display
+spydrpick	spydrpick_SpydrPick	PASS	
+sqlite	sqlite	PASS	
+sqt	sqt_align	Failed	tool bug: sqt align calls 'stty size' and crashes when there is no terminal
+sqt	sqt_bam2fastq	PASS	
+sqt	sqt_bameof	PASS	exit code 1 means all files have the EOF marker, so successCodes 0 and 1 are set
+sqt	sqt_chars	PASS	
+sqt	sqt_cutvect	Failed	tool bug: on a read with the vector inside, the second piece still holds part of the vector (synthetic data: pUC19 planted in SARS-CoV-2 sequence)
+sqt	sqt_fastagrep	PASS	
+sqt	sqt_fastxmod	PASS	
+sqt	sqt_qgramfreq	PASS	default q-gram length works; the -q option crashes (value is read as a string)
+sqt	sqt_randomseq	PASS	
+sqt	sqt_readcov	PASS	
+sqt	sqt_readlenhisto	PASS	
+sqt	sqt_samsetop	Failed	tool bug: Python 2 code in a Python 3 image ('dict' has no 'has_key'; output path crashes on args[3])
+squeegee	squeegee	Not completed	needs a large Kraken database with genome library and several metagenome samples; no small real set exists
+squigulator	squigulator	PASS	
+squirrel	squirrel	PASS	
+squizz	squizz	PASS	
+sr2silo	sr2silo_process-from-vpipe	Failed	image problem: the image lacks the paired_end_read_merger and diamond programs the tool calls, so it crashes on real covid data
+sr2silo	sr2silo_submit-to-loculus	Not completed	needs a running Loculus server and user account to upload to
+sra-human-scrubber	sra-human-scrubber_scrub.sh	PASS	
+sra-tools	sra-tools_fasterq-dump	PASS	
+sra-tools	sra-tools_fastq-dump	PASS	
+sra-tools	sra-tools_prefetch	Failed	image problem: the image has no CA certificate bundle, so prefetch cannot verify the NCBI server (TLS error 0x8) and cannot download
+sra-tools	sra-tools_sam-dump	PASS	
+sra-tools	sra-tools_sra-stat	PASS	
+sra-tools	sra-tools_vdb-validate	PASS	
+sracat	sracat	PASS	

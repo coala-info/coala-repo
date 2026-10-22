@@ -63,11 +63,12 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: 'result mode: 0 - consensus (FASTA), 1 - multiple sequence alignment (FASTA),
-      2 - 0 & 1 (FASTA), 3 - partial order graph (GFA), 4 - 0 & 3 (GFA)'
+    doc: 'result mode (option can be used multiple times): 0 - consensus (FASTA),
+      1 - multiple sequence alignment (FASTA), 2 - 0 & 1 (FASTA), 3 - partial order
+      graph (GFA), 4 - 0 & 3 (GFA)'
     inputBinding:
       position: 102
-      prefix: --result
+      valueFrom: $(self.reduce(function(a, x) { return a.concat(['--result', String(x)]); }, []))
   - id: second_gap_extend_penalty
     type:
       - 'null'
@@ -95,12 +96,17 @@ inputs:
       position: 102
       prefix: --strand-ambiguous
   - id: dot_output_file_path
-    type: string
-    doc: Output or path parameter `dot_output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: output file for the partial order graph in DOT format
     inputBinding:
       position: 103
-      prefix: --dot-output-file
+      prefix: --dot
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Consensus, alignment or graph (depending on result_mode)
   - id: dot_output_file
     type:
       - 'null'
@@ -113,3 +119,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spoa:4.1.5--h077b44d_0
+stdout: spoa.out

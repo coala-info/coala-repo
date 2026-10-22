@@ -6,9 +6,7 @@ doc: "Constructs a snv matrix from the snv_alignment file of the pipeline\n\nToo
   homepage: https://github.com/phac-nml/snvphyl-tools"
 inputs:
   - id: snv_align_phy
-    type:
-      - 'null'
-      - File
+    type: File
     doc: snv_align.phy
     inputBinding:
       position: 1
@@ -22,10 +20,10 @@ inputs:
       prefix: -v
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: Prints matrix to passed file
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -6,13 +6,15 @@ doc: "SpacerPlacer: An Ancestral Reconstruction Algorithm for CRISPR Arrays\n\nT
   homepage: https://github.com/fbaumdicker/SpacerPlacer"
 inputs:
   - id: input_path
-    type: File
+    type:
+      - File
+      - Directory
     doc: "Path to input file or folder containing input files.\nThe required input
       format is described in the readme."
     inputBinding:
       position: 1
   - id: output_path
-    type: Directory
+    type: string
     doc: "Path to output folder. The output folder will be\ncreated, if it does not
       exist. The output folder will\ncontain files as described in the readme."
     inputBinding:
@@ -320,6 +322,7 @@ inputs:
     type:
       - 'null'
       - File
+      - Directory
     doc: "Path to tree json file or folder with newick files. If\nnone is provided,
       trees are estimated by SpacerPlacer.\nThe trees can be given in a newick format
       or as a\ndictionary in a json file (such a json file is also\nreturned by SpacerPlacer)."
@@ -339,6 +342,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Output folder with the reconstruction results
+    outputBinding:
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spacerplacer:1.0.1--pyhdfd78af_0

@@ -12,6 +12,13 @@ inputs:
       per line'
     inputBinding:
       position: 1
+  - id: fastq_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Sequence files named in the input file. They are staged in the working
+      directory so the relative paths in the input file resolve.
   - id: allow_strange_cbc_umi_reads
     type:
       - 'null'
@@ -615,6 +622,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Result tables and logs written in the working directory
+    outputBinding:
+      glob: ['*.tsv', '*.txt', '*.json', '*.satc', '*.log']
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.fastq_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/splash:2.11.0--py313h9ee0642_0

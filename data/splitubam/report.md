@@ -1,5 +1,11 @@
 # splitubam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| splitubam | PASS |  |
+
 ## splitubam
 
 ### Tool Description

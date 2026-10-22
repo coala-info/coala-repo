@@ -25,7 +25,7 @@ inputs:
   - id: profile
     type:
       - 'null'
-      - string
+      - File
     doc: Optional path to a timing profile for bootstrapping estimates.
     inputBinding:
       position: 102

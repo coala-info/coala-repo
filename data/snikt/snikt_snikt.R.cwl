@@ -119,7 +119,7 @@ inputs:
   - id: workdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: Path to generate QC file and report.
     inputBinding:
       position: 102
@@ -158,9 +158,12 @@ outputs:
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in out
+    doc: Cleaned reads (.fastq) and contamination report (.html) written with the
+      prefix given in out
     outputBinding:
-      glob: $(inputs.out)*
+      glob: "$(function() { var d = inputs.workdir ? inputs.workdir + '/' : ''; return inputs.out ? [d + inputs.out + '*'] : [d + '*.fastq', d + '*.html']; }())"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snikt:0.5.0--r44hdfd78af_3

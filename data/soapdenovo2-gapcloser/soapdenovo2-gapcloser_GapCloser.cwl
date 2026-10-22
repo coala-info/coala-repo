@@ -16,6 +16,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: -a
+  - id: library_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Read files named in the library info file (staged next to the library
+      info file so the names resolve)
   - id: max_read_length
     type:
       - 'null'
@@ -50,6 +57,23 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: closed_scaffold
+    type: File
+    doc: Scaffold file with closed gaps
+    outputBinding:
+      glob: $(inputs.output_file)
+  - id: gap_info
+    type:
+      - 'null'
+      - File
+    doc: Gap filling information file
+    outputBinding:
+      glob: $(inputs.output_file).fill
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.library_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/soapdenovo2-gapcloser:1.12--h077b44d_3

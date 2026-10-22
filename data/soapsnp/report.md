@@ -1,5 +1,11 @@
 # soapsnp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| soapsnp | PASS | SARS-CoV-2 nf-core BAM converted to SOAP format; consensus has the T to C SNP at 18807 that snver also finds; made output path required and dropped .fai |
+
 ## soapsnp
 
 ### Tool Description

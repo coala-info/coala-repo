@@ -1,5 +1,11 @@
 # spclust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spclust | PASS | Rewrote CWL to run under mpiexec with the real -out option; 17 bacterial 16S sequences gave clusters of Bacillus, Staphylococcus and Enterobacteriaceae (commas in FASTA headers confuse the tool) |
+
 ## spclust
 
 ### Tool Description

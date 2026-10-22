@@ -1,5 +1,11 @@
 # spliceai-wrapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spliceai-wrapper | Failed | image problem: spliceai-wrapper fails on start with ModuleNotFoundError: No module named 'vcfpy' |
+
 ## spliceai-wrapper
 
 ### Tool Description

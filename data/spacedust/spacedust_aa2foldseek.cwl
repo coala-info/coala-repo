@@ -8,12 +8,12 @@ doc: "By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdit
   \nTool homepage: https://github.com/soedinglab/spacedust"
 inputs:
   - id: input_db
-    type: string
+    type: File
     doc: inputDB
     inputBinding:
       position: 1
   - id: target_db
-    type: string
+    type: File
     doc: targetDB
     inputBinding:
       position: 2

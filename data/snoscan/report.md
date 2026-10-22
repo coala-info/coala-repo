@@ -1,5 +1,12 @@
 # snoscan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snoscan | PASS |  |
+| snoscan_sort-snos | PASS |  |
+
 ## snoscan
 
 ### Tool Description
@@ -43,6 +50,37 @@ Available options:
 -V             : verbose output
 ```
 
+
+## snoscan_sort-snos
+
+### Tool Description
+Sort snoRNA hits by overall score
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snoscan:1.0--pl5321h031d066_5
+- **Homepage**: http://lowelab.ucsc.edu/snoscan
+- **Package**: https://anaconda.org/channels/bioconda/packages/snoscan/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sort-snos [options] <snoRNA hits file>
+
+   Sort snoRNA hits by overall score
+
+   where -P        :  sort snos by Position of complementarity on rRNA
+         -H        :  sort snos by position of hit in query sequence
+         -R        :  sort snos by position & Remove lower-scoring duplicate hits
+                       (both start & end bounds must match
+         -r        :  same as -R, but only start bound must match to count as duplicate
+         -M        :  sort snos, output only hits to Mapped sites
+         -U        :  sort snos, output only hits to Unmapped sites
+         -T <int>  :  sort snos, output only top <int> hits per meth site (def=50)
+         -S <score>:  sort snos, require minimum score
+         -m <score>:  sort snos, don't include hits _over_ max <score>
+         -e <expr> :  Extract only snos with <expr> in header line
+         -F        :  Don't sort -- just filter & output in same order
+```
 
 ## Metadata
 - **Skill**: generated

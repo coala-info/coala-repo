@@ -1,5 +1,11 @@
 # spyder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spyder | Not completed | GUI: Spyder is a Python IDE that needs a display |
+
 ## spyder
 
 ### Tool Description

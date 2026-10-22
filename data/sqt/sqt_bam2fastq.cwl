@@ -5,17 +5,21 @@ baseCommand:
   - bam2fastq
 label: sqt_bam2fastq
 doc: "Extract all reads from a BAM file that map to a certain location, but try hard
-  to extract them even if hard clipping is used.\n\nTool homepage: https://github.com/tdjsnelling/sqtracker"
+  to extract them even if hard clipping is used.\n\nTool homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: sam_bam
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: Name of a SAM or BAM file
     inputBinding:
       position: 1
   - id: region
     type:
-      type: array
-      items: string
+      - 'null'
+      - type: array
+        items: string
     doc: Region
     inputBinding:
       position: 2

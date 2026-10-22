@@ -1,5 +1,13 @@
 # snap-aligner CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snap-aligner_index | PASS |  |
+| snap-aligner_paired | PASS |  |
+| snap-aligner_single | PASS |  |
+
 ## snap-aligner_index
 
 ### Tool Description

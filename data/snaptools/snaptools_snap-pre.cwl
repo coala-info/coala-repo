@@ -177,6 +177,13 @@ outputs:
     doc: output snap file.
     outputBinding:
       glob: $(inputs.output_snap_path)
+  - id: qc_report
+    type:
+      - 'null'
+      - File
+    doc: Master quality control file (<output snap>.qc), written when --qc-file is True.
+    outputBinding:
+      glob: $(inputs.output_snap_path + '.qc')
 requirements:
   - class: InlineJavascriptRequirement
 hints:

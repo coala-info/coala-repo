@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: /usr/local/bin/sqlite3
+baseCommand: sqlite3
 label: sqlite
 doc: FILENAME is the name of an SQLite database. A new database is created if 
   the file does not previously exist.
@@ -10,14 +10,19 @@ inputs:
     doc: Name of an SQLite database. A new database is created if the file does 
       not previously exist.
     inputBinding:
-      position: 1
+      position: 10
   - id: sql
     type:
       - 'null'
       - string
     doc: SQL statement to execute
     inputBinding:
-      position: 2
+      position: 11
+  - id: sql_script
+    type:
+      - 'null'
+      - File
+    doc: SQL script (and dot-commands) read from standard input
   - id: archive
     type:
       - 'null'
@@ -25,7 +30,7 @@ inputs:
         items: string
     doc: run ".archive ARGS" and exit
     inputBinding:
-      position: 103
+      position: 1
       prefix: -A
   - id: append
     type:
@@ -33,7 +38,7 @@ inputs:
       - boolean
     doc: append the database to the end of the file
     inputBinding:
-      position: 103
+      position: 1
       prefix: -append
   - id: ascii
     type:
@@ -41,7 +46,7 @@ inputs:
       - boolean
     doc: set output mode to 'ascii'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -ascii
   - id: bail
     type:
@@ -49,7 +54,7 @@ inputs:
       - boolean
     doc: stop after hitting an error
     inputBinding:
-      position: 103
+      position: 1
       prefix: -bail
   - id: batch
     type:
@@ -57,7 +62,7 @@ inputs:
       - boolean
     doc: force batch I/O
     inputBinding:
-      position: 103
+      position: 1
       prefix: -batch
   - id: box
     type:
@@ -65,7 +70,7 @@ inputs:
       - boolean
     doc: set output mode to 'box'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -box
   - id: column
     type:
@@ -73,7 +78,7 @@ inputs:
       - boolean
     doc: set output mode to 'column'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -column
   - id: cmd
     type:
@@ -81,7 +86,7 @@ inputs:
       - string
     doc: run "COMMAND" before reading stdin
     inputBinding:
-      position: 103
+      position: 1
       prefix: -cmd
   - id: csv
     type:
@@ -89,7 +94,7 @@ inputs:
       - boolean
     doc: set output mode to 'csv'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -csv
   - id: echo
     type:
@@ -97,7 +102,7 @@ inputs:
       - boolean
     doc: print commands before execution
     inputBinding:
-      position: 103
+      position: 1
       prefix: -echo
   - id: init
     type:
@@ -105,7 +110,7 @@ inputs:
       - File
     doc: read/process named file
     inputBinding:
-      position: 103
+      position: 1
       prefix: -init
   - id: header
     type:
@@ -113,7 +118,7 @@ inputs:
       - boolean
     doc: turn headers on
     inputBinding:
-      position: 103
+      position: 1
       prefix: -header
   - id: noheader
     type:
@@ -121,7 +126,7 @@ inputs:
       - boolean
     doc: turn headers off
     inputBinding:
-      position: 103
+      position: 1
       prefix: -noheader
   - id: html
     type:
@@ -129,7 +134,7 @@ inputs:
       - boolean
     doc: set output mode to HTML
     inputBinding:
-      position: 103
+      position: 1
       prefix: -html
   - id: interactive
     type:
@@ -137,7 +142,7 @@ inputs:
       - boolean
     doc: force interactive I/O
     inputBinding:
-      position: 103
+      position: 1
       prefix: -interactive
   - id: json
     type:
@@ -145,7 +150,7 @@ inputs:
       - boolean
     doc: set output mode to 'json'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -json
   - id: line
     type:
@@ -153,7 +158,7 @@ inputs:
       - boolean
     doc: set output mode to 'line'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -line
   - id: list
     type:
@@ -161,7 +166,7 @@ inputs:
       - boolean
     doc: set output mode to 'list'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -list
   - id: lookaside
     type:
@@ -170,7 +175,7 @@ inputs:
         items: int
     doc: use N entries of SZ bytes for lookaside memory
     inputBinding:
-      position: 103
+      position: 1
       prefix: -lookaside
   - id: markdown
     type:
@@ -178,7 +183,7 @@ inputs:
       - boolean
     doc: set output mode to 'markdown'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -markdown
   - id: memtrace
     type:
@@ -186,7 +191,7 @@ inputs:
       - boolean
     doc: trace all memory allocations and deallocations
     inputBinding:
-      position: 103
+      position: 1
       prefix: -memtrace
   - id: mmap
     type:
@@ -194,7 +199,7 @@ inputs:
       - int
     doc: default mmap size set to N
     inputBinding:
-      position: 103
+      position: 1
       prefix: -mmap
   - id: newline
     type:
@@ -202,7 +207,7 @@ inputs:
       - string
     doc: "set output row separator. Default: '\\n'"
     inputBinding:
-      position: 103
+      position: 1
       prefix: -newline
   - id: nofollow
     type:
@@ -210,7 +215,7 @@ inputs:
       - boolean
     doc: refuse to open symbolic links to database files
     inputBinding:
-      position: 103
+      position: 1
       prefix: -nofollow
   - id: nullvalue
     type:
@@ -218,7 +223,7 @@ inputs:
       - string
     doc: set text string for NULL values. Default ''
     inputBinding:
-      position: 103
+      position: 1
       prefix: -nullvalue
   - id: pagecache
     type:
@@ -227,7 +232,7 @@ inputs:
         items: int
     doc: use N slots of SZ bytes each for page cache memory
     inputBinding:
-      position: 103
+      position: 1
       prefix: -pagecache
   - id: quote
     type:
@@ -235,7 +240,7 @@ inputs:
       - boolean
     doc: set output mode to 'quote'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -quote
   - id: readonly
     type:
@@ -243,7 +248,7 @@ inputs:
       - boolean
     doc: open the database read-only
     inputBinding:
-      position: 103
+      position: 1
       prefix: -readonly
   - id: separator
     type:
@@ -251,7 +256,7 @@ inputs:
       - string
     doc: "set output column separator. Default: '|'"
     inputBinding:
-      position: 103
+      position: 1
       prefix: -separator
   - id: stats
     type:
@@ -259,7 +264,7 @@ inputs:
       - boolean
     doc: print memory stats before each finalize
     inputBinding:
-      position: 103
+      position: 1
       prefix: -stats
   - id: table
     type:
@@ -267,7 +272,7 @@ inputs:
       - boolean
     doc: set output mode to 'table'
     inputBinding:
-      position: 103
+      position: 1
       prefix: -table
   - id: vfs
     type:
@@ -275,7 +280,7 @@ inputs:
       - string
     doc: use NAME as the default VFS
     inputBinding:
-      position: 103
+      position: 1
       prefix: -vfs
   - id: zip
     type:
@@ -283,16 +288,30 @@ inputs:
       - boolean
     doc: open the file as a ZIP Archive
     inputBinding:
-      position: 103
+      position: 1
       prefix: -zip
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database
+    type:
+      - 'null'
+      - File
+    doc: The database file after the statements ran
+    outputBinding:
+      glob: $(inputs.filename.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.filename)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sqlite:3.33.0
 stdout: sqlite3.out
-s:url: https://github.com/sqlitebrowser/sqlitebrowser
+stdin: "$(inputs.sql_script ? inputs.sql_script.path : null)"
+s:url: https://www.sqlite.org
 $namespaces:
   s: https://schema.org/

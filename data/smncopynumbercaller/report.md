@@ -1,5 +1,11 @@
 # smncopynumbercaller CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smncopynumbercaller_smn_caller.py | Not completed | no usable test data: tool needs a genome-wide WGS BAM for depth normalisation; the repo test BAMs cover only a short region (tool stops with a TypeError); slicing a public WGS BAM was too slow; CWL rewritten to write the manifest from a bams input |
+
 ## smncopynumbercaller_smn_caller.py
 
 ### Tool Description

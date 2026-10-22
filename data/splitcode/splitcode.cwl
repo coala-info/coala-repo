@@ -32,7 +32,7 @@ inputs:
   - id: barcode_encode
     type:
       - 'null'
-      - boolean
+      - string
     doc: Optimize barcode assignment using a sequence of group names (e.g. 
       group1,group2,group3)
     inputBinding:
@@ -55,14 +55,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --bclen
-  - id: cite
-    type:
-      - 'null'
-      - boolean
-    doc: Prints citation information
-    inputBinding:
-      position: 102
-      prefix: --cite
   - id: com_names
     type:
       - 'null'
@@ -573,7 +565,7 @@ inputs:
   - id: summary
     type:
       - 'null'
-      - File
+      - string
     doc: File where summary statistics will be written to
     inputBinding:
       position: 102
@@ -663,10 +655,11 @@ outputs:
   - id: output
     type:
       - 'null'
-      - File
-    doc: FASTQ file(s) where output will be written (comma-separated)
+      - type: array
+        items: File
+    doc: FASTQ file(s) where output will be written
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: "$(inputs.output_path ? inputs.output_path.split(',') : [])"
   - id: outb
     type:
       - 'null'
@@ -677,11 +670,11 @@ outputs:
   - id: unassigned
     type:
       - 'null'
-      - File
-    doc: FASTQ file(s) where output of unassigned reads will be written 
-      (comma-separated)
+      - type: array
+        items: File
+    doc: FASTQ file(s) where output of unassigned reads will be written
     outputBinding:
-      glob: $(inputs.unassigned_path)
+      glob: "$(inputs.unassigned_path ? inputs.unassigned_path.split(',') : [])"
   - id: mapping_out
     type:
       - 'null'
@@ -690,8 +683,19 @@ outputs:
       will be written
     outputBinding:
       glob: $(inputs.mapping)
+  - id: summary_out
+    type:
+      - 'null'
+      - File
+    doc: File where summary statistics are written
+    outputBinding:
+      glob: $(inputs.summary)
+  - id: stdout
+    type: stdout
+    doc: Standard output (reads when pipe is set)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/splitcode:0.31.6--h077b44d_0
+stdout: splitcode.out

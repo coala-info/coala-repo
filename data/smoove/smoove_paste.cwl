@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smoove
+baseCommand:
+  - smoove
+  - paste
 label: smoove_paste
 doc: "square VCF files from different samples with the same number of records\n\n\
   Tool homepage: https://github.com/brentp/smoove"
@@ -27,9 +29,9 @@ inputs:
       position: 102
       prefix: --outdir
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: log
+    type: stderr
+    doc: Log messages written by smoove to standard error
   - id: outdir_dir
     type:
       - 'null'
@@ -37,7 +39,13 @@ outputs:
     doc: output directory.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$(inputs.outdir ? {'class': 'Directory', 'basename': inputs.outdir, 'listing': []} : null)"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smoove:0.2.8--h9ee0642_1
-stdout: smoove_paste.out
+stderr: smoove_paste.log

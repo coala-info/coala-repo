@@ -116,7 +116,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

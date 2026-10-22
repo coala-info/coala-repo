@@ -1,5 +1,11 @@
 # snpiphy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snpiphy | Not completed | pipeline, skipped (snippy, gubbins and RAxML SNP phylogeny pipeline) |
+
 ## snpiphy
 
 ### Tool Description

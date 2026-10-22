@@ -33,7 +33,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Extra headers EXCEPTതിനു CHROMOSOME FIELD specified in GLFv2 output. 
+    doc: Extra headers EXCEPT CHROMOSOME FIELD specified in GLFv2 output. 
       Format is "TypeName1:DataName1:TypeName2:DataName2"
     inputBinding:
       position: 101
@@ -130,8 +130,6 @@ inputs:
   - id: reference_sequence
     type: File
     doc: Reference Sequence in fasta format
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: -d
@@ -192,9 +190,7 @@ inputs:
       position: 101
       prefix: -a
   - id: output_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output consensus file
     inputBinding:
       position: 102

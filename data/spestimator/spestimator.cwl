@@ -20,6 +20,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --db-dir
+  - id: db_dir_new
+    type:
+      - 'null'
+      - string
+    doc: "Folder (created by the wrapper) where the BLAST database is written when update_db is used; bound to --db-dir"
+    inputBinding:
+      position: 101
+      prefix: --db-dir
   - id: db_name
     type:
       - 'null'
@@ -31,7 +39,7 @@ inputs:
   - id: download_genomes
     type:
       - 'null'
-      - Directory
+      - string
     doc: Download found genomes. Defaults to 'genomes/' if flag is used without 
       a path.
     inputBinding:
@@ -117,6 +125,20 @@ inputs:
       position: 102
       prefix: --output
 outputs:
+  - id: db_dir_output
+    type:
+      - 'null'
+      - Directory
+    doc: Database folder written with update_db
+    outputBinding:
+      glob: $(inputs.db_dir_new)
+  - id: genomes_output
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the downloaded genomes
+    outputBinding:
+      glob: $(inputs.download_genomes)
   - id: output
     type:
       - 'null'
@@ -126,6 +148,13 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.db_dir_new || 'unused_db_dir')
+        entry: '$({class: "Directory", listing: []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spestimator:0.3.0.233--pyhdfd78af_0

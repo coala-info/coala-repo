@@ -1,17 +1,12 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snpEff
+baseCommand:
+  - snpEff
+  - ann
 label: snpeff_snpEff
 doc: "SnpEff version SnpEff 5.4a (build 2025-11-25 12:22), by Pablo Cingolani\n\n\
   Tool homepage: http://snpeff.sourceforge.net/"
 inputs:
-  - id: ann
-    type:
-      - 'null'
-      - string
-    doc: Annotation command (e.g., 'ann')
-    inputBinding:
-      position: 1
   - id: genome_version
     type: string
     doc: Genome version
@@ -84,7 +79,7 @@ inputs:
   - id: csv_stats_file
     type:
       - 'null'
-      - File
+      - string
     doc: Create CSV summary file.
     inputBinding:
       position: 104
@@ -94,11 +89,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -interval
+          separate: true
     doc: Use a custom intervals in TXT/BED/BigBed/VCF/GFF file (you may use this
       option many times)
     inputBinding:
       position: 104
-      prefix: -interval
   - id: data_dir
     type:
       - 'null'
@@ -126,7 +123,7 @@ inputs:
   - id: fasta_prot_file
     type:
       - 'null'
-      - File
+      - string
     doc: Create an output file containing the resulting protein sequences.
     inputBinding:
       position: 104
@@ -153,11 +150,13 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: -fi
+          separate: true
     doc: Only analyze changes that intersect with the intervals specified in 
       this file (you may use this option many times)
     inputBinding:
       position: 104
-      prefix: -fi
   - id: format_eff
     type:
       - 'null'
@@ -209,7 +208,7 @@ inputs:
   - id: html_stats_file
     type:
       - 'null'
-      - File
+      - string
     doc: Create HTML summary file. Default is 'snpEff_summary.html'
     inputBinding:
       position: 104
@@ -284,10 +283,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -no
+          separate: true
     doc: Do not show 'EffectType'. This option can be used several times.
     inputBinding:
       position: 104
-      prefix: -no
   - id: no_expand_iub
     type:
       - 'null'
@@ -482,10 +483,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: -reg
+          separate: true
     doc: Regulation track to use (this option can be used add several times).
     inputBinding:
       position: 104
-      prefix: -reg
   - id: sequence_ontology
     type:
       - 'null'
@@ -568,8 +571,42 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Annotated variants (VCF by default)
+  - id: stderr
+    type: stderr
+    doc: Standard error (progress messages)
+  - id: html_stats
+    type:
+      - 'null'
+      - File
+    doc: HTML summary file
+    outputBinding:
+      glob: "$(inputs.html_stats_file ? inputs.html_stats_file : 'snpEff_summary.html')"
+  - id: genes_stats
+    type:
+      - 'null'
+      - File
+    doc: Gene summary table written next to the HTML summary
+    outputBinding:
+      glob: "$(inputs.html_stats_file ? inputs.html_stats_file.replace(/\\.html$/, '.genes.txt') : 'snpEff_genes.txt')"
+  - id: csv_stats
+    type:
+      - 'null'
+      - File
+    doc: CSV summary file
+    outputBinding:
+      glob: $(inputs.csv_stats_file)
+  - id: fasta_prot
+    type:
+      - 'null'
+      - File
+    doc: Protein sequences
+    outputBinding:
+      glob: $(inputs.fasta_prot_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snpeff:5.4.0a--hdfd78af_0
 stdout: snpeff_snpEff.out
+stderr: snpeff_snpEff.err

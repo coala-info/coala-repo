@@ -1,5 +1,11 @@
 # spine CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spine_spine.pl | Failed | image problem: spine.pl looks for nucmer_multi.pl in a scripts folder next to it, which the image does not have |
+
 ## spine_spine.pl
 
 ### Tool Description

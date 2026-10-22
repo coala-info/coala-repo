@@ -1,5 +1,29 @@
 # smof CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smof_clean | PASS | rewritten as 'smof clean' (old baseCommand smof_clean did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_consensus | PASS | rewritten as 'smof consensus' (old baseCommand smof_consensus did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_cut | PASS | rewritten as 'smof cut' (old baseCommand smof_cut did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_filter | PASS | rewritten as 'smof filter' (old baseCommand smof_filter did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_grep | PASS | rewritten as 'smof grep' (old baseCommand smof_grep did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_head | PASS | rewritten as 'smof head' (old baseCommand smof_head did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_md5sum | PASS | rewritten as 'smof md5sum' (old baseCommand smof_md5sum did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_permute | PASS | rewritten as 'smof permute' (old baseCommand smof_permute did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_reverse | PASS | rewritten as 'smof reverse' (old baseCommand smof_reverse did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_sample | PASS | rewritten as 'smof sample' (old baseCommand smof_sample did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_sniff | PASS | rewritten as 'smof sniff' (old baseCommand smof_sniff did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_sort | PASS | rewritten as 'smof sort' (old baseCommand smof_sort did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_split | PASS | rewritten as 'smof split' (old baseCommand smof_split did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_stat | PASS | rewritten as 'smof stat' (old baseCommand smof_stat did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_subseq | PASS | rewritten as 'smof subseq' (old baseCommand smof_subseq did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_tail | PASS | rewritten as 'smof tail' (old baseCommand smof_tail did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_translate | PASS | rewritten as 'smof translate' (old baseCommand smof_translate did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_uniq | PASS | rewritten as 'smof uniq' (old baseCommand smof_uniq did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+| smof_wc | PASS | rewritten as 'smof wc' (old baseCommand smof_wc did not exist); ran on smof sample protein FASTA or SARS-CoV-2 gene FASTA and output checked |
+
 ## smof_cut
 
 ### Tool Description

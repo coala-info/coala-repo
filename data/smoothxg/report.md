@@ -1,5 +1,11 @@
 # smoothxg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smoothxg | PASS | rewritten from help (old file had invented flags); smoothed nf-core pangenome seqwish GFA gives the same graph as the nf-core expected smoothxg GFA |
+
 ## smoothxg
 
 ### Tool Description

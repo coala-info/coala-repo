@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - SNVerIndividual.jar
+baseCommand: snver
 label: snver
 doc: "SNVerIndividual Usage\n\nTool homepage: http://snver.sourceforge.net/"
 inputs:
@@ -57,6 +54,8 @@ inputs:
       prefix: -u
   - id: input_file
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input file must be a standard bam file
     inputBinding:
       position: 101
@@ -97,12 +96,15 @@ inputs:
     type:
       - 'null'
       - string
+    default: snver_out
     doc: prefix output file
     inputBinding:
       position: 101
       prefix: -o
   - id: reference_file
     type: File
+    secondaryFiles:
+      - .fai
     doc: reference file
     inputBinding:
       position: 101

@@ -6,58 +6,30 @@ baseCommand:
 label: solvebio_queue
 doc: "Show the status of tasks in the queue.\n\nTool homepage: https://github.com/solvebio/solvebio-python"
 inputs:
-  - id: all
-    type:
-      - 'null'
-      - boolean
-    doc: Show all tasks, regardless of status.
-    inputBinding:
-      position: 101
-      prefix: --all
-  - id: limit
-    type:
-      - 'null'
-      - int
-    doc: Limit the number of tasks to display.
-    inputBinding:
-      position: 101
-      prefix: --limit
-  - id: offset
-    type:
-      - 'null'
-      - int
-    doc: Offset the task list by a specified number.
-    inputBinding:
-      position: 101
-      prefix: --offset
-  - id: sort
+  - id: access_token
     type:
       - 'null'
       - string
-    doc: Sort tasks by a specified field and direction (e.g., 'created_at:asc').
+    doc: Manually provide a SolveBio OAuth2 access token
     inputBinding:
       position: 101
-      prefix: --sort
-  - id: statuses
+      prefix: --access-token
+  - id: api_host
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: Filter tasks by status (e.g., pending, running, completed, failed). 
-      Multiple statuses can be provided as a comma-separated string or by 
-      repeating the flag.
+      - string
+    doc: Override the default SolveBio API host
     inputBinding:
       position: 101
-      prefix: --statuses
-      itemSeparator: ','
-  - id: verbose
+      prefix: --api-host
+  - id: api_key
     type:
       - 'null'
-      - boolean
-    doc: Show verbose output, including task details.
+      - string
+    doc: Manually provide a SolveBio API key
     inputBinding:
       position: 101
-      prefix: --verbose
+      prefix: --api-key
 outputs:
   - id: stdout
     type: stdout

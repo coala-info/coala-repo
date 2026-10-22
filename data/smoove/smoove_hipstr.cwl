@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smoove
+baseCommand:
+  - smoove
+  - hipstr
 label: smoove_hipstr
 doc: "Call STRs in BAM files\n\nTool homepage: https://github.com/brentp/smoove"
 inputs:
@@ -8,11 +10,20 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: bams in which to call STRs
     inputBinding:
       position: 1
   - id: fasta
     type: File
+    secondaryFiles:
+      - .fai
+      - pattern: .gzi
+        required: false
     doc: path to reference fasta file
     inputBinding:
       position: 102

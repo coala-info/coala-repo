@@ -1,5 +1,11 @@
 # squeegee CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| squeegee | Not completed | needs a large Kraken database with genome library and several metagenome samples; no small real set exists |
+
 ## squeegee
 
 ### Tool Description

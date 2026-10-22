@@ -1,39 +1,29 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: smof
+baseCommand:
+  - smof
+  - consensus
 label: smof_consensus
-doc: "Calculates the consensus sequence from a set of sequences.\n\nTool homepage:
-  https://github.com/incertae-sedis/smof"
+doc: "Find the most common character in each column of an aligned FASTA file; ties are resolved alphabetically.\n\nTool homepage: https://github.com/incertae-sedis/smof"
 inputs:
-  - id: generator
-    type: string
-    doc: A generator of sequences (e.g., a FASTA file).
-    inputBinding:
-      position: 1
-  - id: transpose
+  - id: table
     type:
       - 'null'
       - boolean
-    doc: Transpose the output matrix.
+    doc: "Print count table instead of consensus"
     inputBinding:
-      position: 102
-      prefix: --transpose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+      position: 100
+      prefix: --table
+  - id: input_file
+    type: File
+    doc: "Input FASTA file (smof reads standard input by default)"
     inputBinding:
-      position: 103
-      prefix: --output-file
+      position: 200
 outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Path to write the consensus sequence to.
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+  - id: stdout
+    type: stdout
+    doc: "Standard output"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smof:2.22.4--pyhdfd78af_0
+stdout: smof_consensus.out

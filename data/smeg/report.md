@@ -1,5 +1,12 @@
 # smeg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| smeg_build_species | Failed | image problem: smeg stops at its dependency check with 'ERROR: gcc missing' (also bc not found) |
+| smeg_growth_est | Failed | image problem: smeg stops at its dependency check with 'ERROR: gcc missing' (also bc not found) |
+
 ## smeg_build_species
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # sniffles CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sniffles | PASS |  |
+
 ## sniffles
 
 ### Tool Description

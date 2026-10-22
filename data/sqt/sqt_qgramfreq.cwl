@@ -5,7 +5,7 @@ baseCommand:
   - qgramfreq
 label: sqt_qgramfreq
 doc: "Print q-gram (also called k-mer) frequencies in a FASTA or FASTQ file.\n\nTool
-  homepage: https://github.com/tdjsnelling/sqtracker"
+  homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: fasta_fastq
     type: File

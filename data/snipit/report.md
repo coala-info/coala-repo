@@ -1,5 +1,11 @@
 # snipit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snipit | PASS |  |
+
 ## snipit
 
 ### Tool Description

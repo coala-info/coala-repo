@@ -1,16 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ./spaced
+baseCommand: spaced
 label: spaced
 doc: "Alignment-free sequence comparison tool using spaced word frequencies\n\nTool
-  homepage: https://github.com/spacedriveapp/spacedrive"
+  homepage: http://spaced.gobics.de/"
 inputs:
   - id: sequence_file
     type: File
     doc: Sequence file
     inputBinding:
-      position: 1
-  - id: consider_reverse_complement
+      position: 200
+  - id: no_reverse_complement
     type:
       - 'null'
       - boolean

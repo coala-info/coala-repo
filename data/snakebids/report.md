@@ -1,5 +1,12 @@
 # snakebids CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snakebids_boutiques | Failed | tool bug: boutiques descriptor generation is disabled in snakebids 0.15.0 and always exits 1 |
+| snakebids_create | Failed | image problem: git is not installed in the image, so copier fails with CommandNotFound git |
+
 ## snakebids_create
 
 ### Tool Description

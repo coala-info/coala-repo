@@ -1,5 +1,11 @@
 # snvphyl-tools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snvphyl-tools_snv_matrix.pl | PASS | tool's own test input; matrix equals expected output; fixed -o flag and made input required |
+
 ## snvphyl-tools_snv_matrix.pl
 
 ### Tool Description

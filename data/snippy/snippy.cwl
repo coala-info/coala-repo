@@ -4,22 +4,6 @@ baseCommand: snippy
 label: snippy
 doc: fast bacterial variant calling from NGS reads
 inputs:
-  - id: citation
-    type:
-      - 'null'
-      - boolean
-    doc: Print citation for referencing snippy
-    inputBinding:
-      position: 101
-      prefix: --citation
-  - id: check
-    type:
-      - 'null'
-      - boolean
-    doc: Check dependences are installed then exit
-    inputBinding:
-      position: 101
-      prefix: --check
   - id: force
     type:
       - 'null'
@@ -65,8 +49,6 @@ inputs:
       - 'null'
       - File
     doc: Reference genome. Supports FASTA, GenBank, EMBL (not GFF)
-    secondaryFiles:
-      - .fai
     inputBinding:
       position: 101
       prefix: --reference
@@ -254,13 +236,6 @@ outputs:
     doc: Output folder
     outputBinding:
       glob: $(inputs.outdir)
-  - id: output_prefix
-    type:
-      - 'null'
-      - File[]
-    doc: Prefix for output files
-    outputBinding:
-      glob: $(inputs.prefix)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

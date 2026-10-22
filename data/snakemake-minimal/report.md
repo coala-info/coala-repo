@@ -1,5 +1,11 @@
 # snakemake-minimal CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snakemake-minimal_snakemake | Not completed | pipeline engine, skipped |
+
 ## snakemake-minimal_snakemake
 
 ### Tool Description

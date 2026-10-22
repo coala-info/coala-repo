@@ -5,10 +5,13 @@ label: sra-tools_vdb-validate
 doc: Examine directories, files and VDB objects, reporting any problems that can
   be detected. Components md5s are always checked if present.
 inputs:
-  - id: path
+  - id: input_path
     type:
       type: array
-      items: string
+      items:
+        - File
+        - Directory
+        - string
     doc: Path to directories, files or VDB objects to examine
     inputBinding:
       position: 1
@@ -72,7 +75,9 @@ inputs:
       position: 102
       prefix: --sdc:plen_thold
   - id: ngc
-    type: File
+    type:
+      - 'null'
+      - File
     doc: path to ngc file
     inputBinding:
       position: 102
@@ -122,10 +127,14 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error (vdb-validate writes its report here)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sra-tools:3.4.1--2_linux_64
 stdout: sra-tools_vdb-validate.out
+stderr: sra-tools_vdb-validate.err
 s:url: https://github.com/ncbi/sra-tools
 $namespaces:
   s: https://schema.org/

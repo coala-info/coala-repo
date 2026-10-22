@@ -1,5 +1,11 @@
 # splash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| splash | PASS |  |
+
 ## splash
 
 ### Tool Description

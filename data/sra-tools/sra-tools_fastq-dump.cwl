@@ -7,7 +7,10 @@ inputs:
   - id: input_path
     type:
       type: array
-      items: string
+      items:
+        - File
+        - Directory
+        - string
     doc: Path to SRA data or accession number
     inputBinding:
       position: 1
@@ -61,6 +64,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: --spot-groups
+      itemSeparator: ','
   - id: clip
     type:
       - 'null'
@@ -146,7 +150,9 @@ inputs:
       position: 102
       prefix: --skip-technical
   - id: outdir
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output directory
     inputBinding:
       position: 102
@@ -346,11 +352,22 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+  - id: sequence_files
+    type:
+      type: array
+      items: File
+    doc: FASTQ or FASTA files written to the working directory or --outdir
+    outputBinding:
+      glob: "$(inputs.outdir ? inputs.outdir + '/*.fast[aq]*' : '*.fast[aq]*')"
+  - id: stdout
+    type: stdout
+    doc: Standard output (used with --stdout)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sra-tools:3.4.1--2_linux_64
+stdout: sra-tools_fastq-dump.out
 s:url: https://github.com/ncbi/sra-tools
 $namespaces:
   s: https://schema.org/

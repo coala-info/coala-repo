@@ -51,11 +51,32 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: ktab_parts
+    type:
+      type: array
+      items: File
+    doc: Hidden part files of the FastK table (.<name>.ktab.1, .<name>.ktab.2, ...) that
+      FastK writes next to the .ktab file. They are staged beside the table.
 outputs:
+  - id: kmer_pairs
+    type: File
+    doc: Table of k-mer pair coverages (<output pattern>.smu).
+    outputBinding:
+      glob: $((inputs.output_pattern || 'kmerpairs') + '.smu')
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: stderr
+    type: stderr
+    doc: Standard error (progress messages)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.infile)
+      - $(inputs.ktab_parts)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smudgeplot:0.5.3--py314h577a1d6_0
 stdout: smudgeplot_hetmers.out
+stderr: smudgeplot_hetmers.err

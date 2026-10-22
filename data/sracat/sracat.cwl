@@ -8,7 +8,10 @@ inputs:
   - id: sra_input
     type:
       type: array
-      items: string
+      items:
+        - File
+        - Directory
+        - string
     doc: SRA accession/file
     inputBinding:
       position: 1
@@ -40,6 +43,15 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Files written when an output prefix is given
+    outputBinding:
+      glob: "$(inputs.output_prefix ? inputs.output_prefix + '*' : [])"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sracat:0.2--h077b44d_3

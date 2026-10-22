@@ -2,12 +2,11 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - sqt
-  - readlen
-  - histo
+  - readlenhisto
 label: sqt_readlenhisto
 doc: "Print and optionally plot a read length histogram of one or more FASTA or FASTQ
   files. If more than one file is given, a total is also printed.\n\nTool homepage:
-  https://github.com/tdjsnelling/sqtracker"
+  https://github.com/marcelm/sqt"
 inputs:
   - id: input_files
     type:
@@ -72,6 +71,9 @@ inputs:
       position: 103
       prefix: --plot
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Read length histogram table
   - id: plot_file
     type:
       - 'null'
@@ -85,3 +87,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sqt:v0.8.0-3-deb-py3_cv1
+stdout: sqt_readlenhisto.out

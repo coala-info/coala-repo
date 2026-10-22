@@ -1,5 +1,11 @@
 # snakemake-minimal_7.25.0--pyhdfd78af_0-test CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| snakemake-minimal_7.25.0--pyhdfd78af_0-test_snakemake | Not completed | pipeline engine, skipped |
+
 ## snakemake-minimal_7.25.0--pyhdfd78af_0-test_snakemake
 
 ### Tool Description

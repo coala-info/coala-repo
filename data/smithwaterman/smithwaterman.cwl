@@ -31,7 +31,7 @@ inputs:
     doc: enable entropy scaling of the gap open penalty
     inputBinding:
       position: 103
-      prefix: --entropy-gap-open-penalty
+      prefix: -z
   - id: gap_extend_penalty
     type:
       - 'null'
@@ -71,15 +71,16 @@ inputs:
     doc: print out the alignment
     inputBinding:
       position: 103
-      prefix: --print-alignment
+      prefix: -p
   - id: repeat_gap_extend_penalty
     type:
       - 'null'
-      - boolean
-    doc: use repeat information when generating gap extension penalties
+      - float
+    doc: use repeat information when generating gap extension penalties (takes
+      the repeat gap extend penalty value)
     inputBinding:
       position: 103
-      prefix: --repeat-gap-extend-penalty
+      prefix: -r
   - id: reverse_complement
     type:
       - 'null'

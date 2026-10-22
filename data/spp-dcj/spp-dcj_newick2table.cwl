@@ -7,7 +7,7 @@ label: spp-dcj_newick2table
 doc: "Converts a Newick tree to a table format.\n\nTool homepage: https://github.com/codialab/spp-dcj"
 inputs:
   - id: tree
-    type: string
+    type: File
     doc: tree in newick format
     inputBinding:
       position: 1

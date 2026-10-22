@@ -4,7 +4,7 @@ baseCommand:
   - sqt
   - chars
 label: sqt_chars
-doc: "Print the number of characters in a string.\n\nTool homepage: https://github.com/tdjsnelling/sqtracker"
+doc: "Print the number of characters in a string.\n\nTool homepage: https://github.com/marcelm/sqt"
 inputs:
   - id: string
     type: string

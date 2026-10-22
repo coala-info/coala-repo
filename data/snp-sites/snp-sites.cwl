@@ -13,18 +13,34 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Only output columns containing entirely ACGT
+    doc: Only output columns containing exclusively ACGT
     inputBinding:
       position: 102
       prefix: -c
-  - id: output_fasta
+  - id: output_pseudo_reference
     type:
       - 'null'
       - boolean
-    doc: Output internal multi-fasta alignment file with only SNP sites
+    doc: Output internal pseudo reference sequence
     inputBinding:
       position: 102
       prefix: -r
+  - id: output_multi_fasta
+    type:
+      - 'null'
+      - boolean
+    doc: Output a multi fasta alignment file (default)
+    inputBinding:
+      position: 102
+      prefix: -m
+  - id: constant_site_counts
+    type:
+      - 'null'
+      - boolean
+    doc: Only output count of constant sites (suitable for IQ-TREE -fconst) and nothing else
+    inputBinding:
+      position: 102
+      prefix: -C
   - id: output_monomorphic
     type:
       - 'null'
@@ -50,12 +66,17 @@ inputs:
       position: 102
       prefix: -v
   - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
+    type:
+      - 'null'
+      - string
+    doc: Output filename
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (the result when no output file name is given)
   - id: output_file
     type:
       - 'null'
@@ -68,3 +89,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snp-sites:2.5.1--h577a1d6_7
+stdout: snp-sites.out

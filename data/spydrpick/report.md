@@ -1,5 +1,11 @@
 # spydrpick CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| spydrpick_SpydrPick | PASS |  |
+
 ## spydrpick_SpydrPick
 
 ### Tool Description

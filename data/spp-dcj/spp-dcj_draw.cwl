@@ -8,14 +8,14 @@ doc: "Draws candidate adjacencies of the genomes in the phylogeny.\n\nTool homep
   https://github.com/codialab/spp-dcj"
 inputs:
   - id: candidate_adjacencies
-    type: string
+    type: File
     doc: candidate adjacencies of the genomes in the phylogeny
     inputBinding:
       position: 1
   - id: highlight
     type:
       - 'null'
-      - string
+      - File
     doc: highlight adjacencies in visualization
     inputBinding:
       position: 102
@@ -27,4 +27,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spp-dcj:2.0.0--pyh7e72e81_0
-stdout: spp-dcj_draw.out
+stdout: spp-dcj_draw.pdf

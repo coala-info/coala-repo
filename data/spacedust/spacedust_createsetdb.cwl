@@ -14,11 +14,22 @@ inputs:
       TSV file listing FASTA files.
     inputBinding:
       position: 1
+  - id: set_db
+    type: string
+    doc: Output set database name (prefix of the database files).
+    inputBinding:
+      position: 2
   - id: tmp_dir
     type: string
     doc: Temporary directory for intermediate files.
     inputBinding:
-      position: 2
+      position: 3
+  - id: gff_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: GFF3 files named in the gff_dir list file (staged into the working directory).
   - id: add_orf_stop
     type:
       - 'null'
@@ -103,8 +114,8 @@ inputs:
   - id: gff_dir
     type:
       - 'null'
-      - string
-    doc: Path to gff dir file.
+      - File
+    doc: File that lists the paths of the GFF3 files, one per line, in the order of the FASTA files.
     inputBinding:
       position: 103
       prefix: --gff-dir
@@ -242,10 +253,16 @@ inputs:
       prefix: --write-lookup
 outputs:
   - id: output_db
-    type: Directory
-    doc: Output directory for the database.
+    type:
+      type: array
+      items: File
+    doc: Files of the output set database.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.set_db)*
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.gff_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spacedust:2.e56c505--hd6d6fdc_0

@@ -56,6 +56,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: somalier
     doc: output prefix for results.
     inputBinding:
       position: 102
@@ -99,6 +100,8 @@ outputs:
     doc: Files written with the prefix given in output_prefix
     outputBinding:
       glob: $(inputs.output_prefix)*
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/somalier:0.3.1--hc78c8e0_0

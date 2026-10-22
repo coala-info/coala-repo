@@ -1,5 +1,11 @@
 # sonicparanoid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sonicparanoid | Failed | image problem: the tool needs its own blastp copy in its read-only package folder, which the image lacks, so every run stops at start-up |
+
 ## sonicparanoid
 
 ### Tool Description

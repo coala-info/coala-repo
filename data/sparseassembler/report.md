@@ -1,5 +1,11 @@
 # sparseassembler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| sparseassembler_SparseAssembler | PASS | Fixed the command name and the repeated f inputs; E. coli 1K paired reads gave one 1000 bp contig |
+
 ## sparseassembler_SparseAssembler
 
 ### Tool Description

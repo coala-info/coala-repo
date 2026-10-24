@@ -90,7 +90,8 @@ inputs:
       - file names in extFile are typically: "../trash/ct/..."'
     inputBinding:
       position: 101
-      prefix: -topDir
+      prefix: -topDir=
+      separate: false
   - id: verbose
     type:
       - 'null'
@@ -101,10 +102,25 @@ inputs:
       position: 101
       prefix: -verbose=
       separate: false
+  - id: hg_conf
+    type:
+      - 'null'
+      - File
+    doc: hg.conf file with the db.host, db.user and db.password of the MySQL
+      server. It is staged as ~/.hg.conf and must only allow user access (mode
+      600).
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: .hg.conf
+        entry: $(inputs.hg_conf)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-dbtrash:482--h0b57e2e_0

@@ -1,5 +1,11 @@
 # ucsc-blasttopsl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-blasttopsl | PASS |  |
+
 ## ucsc-blasttopsl
 
 ### Tool Description

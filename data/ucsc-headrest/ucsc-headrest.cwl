@@ -1,25 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: headrest
+baseCommand: headRest
 label: ucsc-headrest
-doc: "Copy all but the first N lines of a file.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
+doc: "Return all but the first N lines of a file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: num_lines
+  - id: count
     type: int
-    doc: Number of lines to skip from the beginning of the file
+    doc: Number of lines to skip at the start of the file
     inputBinding:
       position: 1
-  - id: files
-    type:
-      type: array
-      items: File
-    doc: Input file(s) to process
+  - id: file_name
+    type: File
+    doc: Input file
     inputBinding:
       position: 2
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Input file without its first N lines
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-headrest:482--h0b57e2e_0

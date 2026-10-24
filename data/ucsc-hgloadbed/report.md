@@ -1,5 +1,11 @@
 # ucsc-hgloadbed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgloadbed | PASS | Tested with -noLoad (no database needed) on the kent test BED files: bed.tab checksums equal kent's expected values for bed4, bed6, bed9, bed14, bedPlus, bedGraph and bedDetail; database loading not tested (CWL rewritten with the real options) |
+
 ## ucsc-hgloadbed
 
 ### Tool Description

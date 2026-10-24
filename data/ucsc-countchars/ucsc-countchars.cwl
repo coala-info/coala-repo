@@ -1,30 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-countchars
+baseCommand: countChars
 label: ucsc-countchars
-doc: "Counts characters in a FASTA or FASTQ file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Count the number of occurrences of a particular char. The char can either be
+  a two digit hexadecimal value or a single letter literal character.\n\nTool homepage:
+  https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_file
-    type: File
-    doc: Input FASTA or FASTQ file
+  - id: char
+    type: string
+    doc: Character to count, a two digit hexadecimal value or a single literal letter.
     inputBinding:
       position: 1
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 101
-      prefix: --output-file
-outputs:
-  - id: output_file
+  - id: files
     type:
-      - 'null'
-      - File
-    doc: Output file to write counts to
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      type: array
+      items: File
+    doc: Input file(s).
+    inputBinding:
+      position: 2
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Count of the character
+stdout: ucsc-countchars.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-countchars:482--h0b57e2e_0

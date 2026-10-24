@@ -1,5 +1,11 @@
 # ucsc-chainsplit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainsplit_chainSplit | PASS |  |
+
 ## ucsc-chainsplit_chainSplit
 
 ### Tool Description

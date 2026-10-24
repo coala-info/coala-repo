@@ -1,5 +1,11 @@
 # ucsc-fastqtofa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fastqtofa | PASS |  |
+
 ## ucsc-fastqtofa
 
 ### Tool Description

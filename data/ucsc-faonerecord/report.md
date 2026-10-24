@@ -1,5 +1,11 @@
 # ucsc-faonerecord CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-faonerecord | PASS |  |
+
 ## ucsc-faonerecord
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-chromgraphtobin CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chromgraphtobin | PASS |  |
+
 ## ucsc-chromgraphtobin
 
 ### Tool Description

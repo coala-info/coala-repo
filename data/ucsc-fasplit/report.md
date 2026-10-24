@@ -1,5 +1,11 @@
 # ucsc-fasplit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fasplit | PASS |  |
+
 ## ucsc-fasplit
 
 ### Tool Description

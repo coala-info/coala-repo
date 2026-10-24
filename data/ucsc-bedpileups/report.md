@@ -1,5 +1,11 @@
 # ucsc-bedpileups CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bedpileups | PASS |  |
+
 ## ucsc-bedpileups
 
 ### Tool Description
@@ -18,14 +24,18 @@ Create a pileup of BED files, showing the number of features covering each base 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/ucsc-bedpileups:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedpileups
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-6e1d2ae0b622: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob3300104849: no space left on device
+bedPileUps - Find (exact) overlaps if any in bed input
+usage:
+   bedPileUps in.bed
+Where in.bed is in one of the ascii bed formats.
+The in.bed file must be sorted by chromosome,start,
+  to sort a bed file, use the unix sort command:
+     sort -k1,1 -k2,2n unsorted.bed > sorted.bed
 
-Run 'docker run --help' for more information
+Options:
+  -name - include BED name field 4 when evaluating uniqueness
+  -tab  - use tabs to parse fields
+  -verbose=2 - show the location and size of each pileUp
 ```
 
 

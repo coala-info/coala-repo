@@ -1,5 +1,11 @@
 # ucsc-bigmaftomaf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bigmaftomaf | PASS |  |
+
 ## ucsc-bigmaftomaf
 
 ### Tool Description

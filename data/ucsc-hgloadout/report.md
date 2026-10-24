@@ -1,5 +1,11 @@
 # ucsc-hgloadout CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgloadout_hgLoadOut | PASS | Tested with -tabFile (no database needed) on the kent test RepeatMasker .out.gz: tab file identical to kent's expected file; database loading not tested (CWL fixed: tabFile is an output name, hg.conf added) |
+
 ## ucsc-hgloadout_hgLoadOut
 
 ### Tool Description

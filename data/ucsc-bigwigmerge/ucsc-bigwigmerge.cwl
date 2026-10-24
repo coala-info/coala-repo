@@ -2,45 +2,69 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bigWigMerge
 label: ucsc-bigwigmerge
-doc: "Merge together multiple bigWig files into a bedGraph.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Merge together multiple bigWigs into a single output bedGraph.\nYou'll have to run bedGraphToBigWig to make the output bigWig.\nThe signal values are just added together to merge them.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
   - id: input_files
     type:
       type: array
       items: File
-    doc: Input bigWig files to be merged
+    doc: "Input bigWig files (or files listing bigWig names when in_list is set)"
     inputBinding:
       position: 1
-  - id: adjust
-    type:
-      - 'null'
-      - float
-    doc: Multiply all values by this factor
+  - id: output_bedgraph
+    type: string
+    doc: "Name of the output bedGraph file"
     inputBinding:
-      position: 102
-      prefix: -adjust
-  - id: max_output
-    type:
-      - 'null'
-      - boolean
-    doc: Output the maximum value instead of the sum
-    inputBinding:
-      position: 102
-      prefix: -maxOutput
+      position: 2
   - id: threshold
     type:
       - 'null'
       - float
-    doc: Only output values above this threshold
+    doc: "Don't output values at or below this threshold. Default is 0.0"
     inputBinding:
-      position: 102
-      prefix: -threshold
+      position: 101
+      prefix: -threshold=
+      separate: false
+  - id: adjust
+    type:
+      - 'null'
+      - float
+    doc: "Add adjustment to each value"
+    inputBinding:
+      position: 101
+      prefix: -adjust=
+      separate: false
+  - id: clip
+    type:
+      - 'null'
+      - float
+    doc: "Values higher than this are clipped to this value"
+    inputBinding:
+      position: 101
+      prefix: -clip=
+      separate: false
+  - id: in_list
+    type:
+      - 'null'
+      - boolean
+    doc: "Input files are lists of file names of bigWigs"
+    inputBinding:
+      position: 101
+      prefix: -inList
+  - id: max
+    type:
+      - 'null'
+      - boolean
+    doc: "Merged value is maximum from input files rather than sum"
+    inputBinding:
+      position: 101
+      prefix: -max
 outputs:
-  - id: output_file
+  - id: out_output_bedgraph
     type: File
-    doc: Output bedGraph file
+    doc: "Merged bedGraph file"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_bedgraph)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bigwigmerge:482--h0b57e2e_0

@@ -1,5 +1,11 @@
 # ucsc-dbtrash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-dbtrash_dbTrash | Not completed | needs a writable UCSC MySQL database with a metaInfo table (customTrash); the public read-only server has none, so only the connection step was reached |
+
 ## ucsc-dbtrash_dbTrash
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-chainsort CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainsort | PASS |  |
+
 ## ucsc-chainsort
 
 ### Tool Description

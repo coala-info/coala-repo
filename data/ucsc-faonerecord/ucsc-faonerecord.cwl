@@ -2,9 +2,10 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: faOneRecord
 label: ucsc-faonerecord
-doc: "Extract a single record from a FASTA file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Extract a single record from a .FA file. The record is written to standard
+  output.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_fasta
+  - id: in_fa
     type: File
     doc: The input FASTA file.
     inputBinding:
@@ -16,10 +17,9 @@ inputs:
       position: 2
 outputs:
   - id: output_fasta
-    type: File
-    doc: The output FASTA file containing the single record.
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: The FASTA record, written to standard output.
+stdout: ucsc-faonerecord.fa
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-faonerecord:482--h0b57e2e_0

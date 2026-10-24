@@ -1,5 +1,11 @@
 # ucsc-chainbridge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainbridge_chainBridge | PASS |  |
+
 ## ucsc-chainbridge_chainBridge
 
 ### Tool Description

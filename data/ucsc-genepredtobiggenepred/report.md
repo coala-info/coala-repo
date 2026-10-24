@@ -1,5 +1,11 @@
 # ucsc-genepredtobiggenepred CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-genepredtobiggenepred | PASS |  |
+
 ## ucsc-genepredtobiggenepred
 
 ### Tool Description

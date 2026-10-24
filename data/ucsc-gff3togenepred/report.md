@@ -1,5 +1,11 @@
 # ucsc-gff3togenepred CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-gff3togenepred | PASS | CWL rewritten from the help (output name and real options were missing); kent test GFF3 files give genePred and attribute outputs identical to kent's expected files |
+
 ## ucsc-gff3togenepred
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-chainantirepeat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainantirepeat | PASS |  |
+
 ## ucsc-chainantirepeat
 
 ### Tool Description

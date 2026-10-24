@@ -14,6 +14,11 @@ inputs:
     doc: File containing a list of records to extract
     inputBinding:
       position: 2
+  - id: output_name
+    type: string
+    doc: Name of the output FASTA file
+    inputBinding:
+      position: 3
   - id: exclude
     type:
       - 'null'
@@ -27,7 +32,7 @@ outputs:
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-fasomerecords:482--h0b57e2e_0

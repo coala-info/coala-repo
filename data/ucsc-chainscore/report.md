@@ -1,5 +1,11 @@
 # ucsc-chainscore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainscore | PASS |  |
+
 ## ucsc-chainscore
 
 ### Tool Description

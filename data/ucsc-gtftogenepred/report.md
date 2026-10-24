@@ -1,5 +1,11 @@
 # ucsc-gtftogenepred CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-gtftogenepred | PASS | kent test GTF files give genePred and info outputs identical to kent's expected files for the main options (-simple only checks columns and writes an empty file by design) |
+
 ## ucsc-gtftogenepred
 
 ### Tool Description

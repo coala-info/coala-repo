@@ -12,8 +12,10 @@ inputs:
   - id: tables
     type:
       type: array
-      items: string
-    doc: Table(s) to correlate
+      items:
+        - string
+        - File
+    doc: Table(s) to correlate; bed, bigBed, psl or chain files can be used (the file suffix must be .bed, .bb, .psl or .chain)
     inputBinding:
       position: 2
   - id: bed_region_in
@@ -179,36 +181,42 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bed_region_out_path`
+    doc: Write a bed file of bin counts in specific regions from bedRegionIn
     inputBinding:
-      position: 104
-      prefix: --bed-region-out
+      position: 103
+      prefix: -bedRegionOut=
+      separate: false
   - id: bin_output_file_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `bin_output_file_path`
+    doc: Put bin counts in output file
     inputBinding:
-      position: 105
-      prefix: --bin-output-file
+      position: 103
+      prefix: -bin=
+      separate: false
   - id: output_bed_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_bed_path`
+    doc: Put intersection into bed format
     inputBinding:
-      position: 106
-      prefix: --output-bed
+      position: 103
+      prefix: -bed=
+      separate: false
   - id: output_fa_path
     type:
       - 'null'
       - string
-    doc: =output.fa     Put sequence in intersection into .fa file
+    doc: Put sequence in intersection into .fa file
     inputBinding:
-      position: 107
+      position: 103
       prefix: -fa=
       separate: false
 outputs:
+  - id: summary
+    type: stderr
+    doc: Bit counts and percentages (featureBits writes its summary to stderr)
   - id: output_bed
     type:
       - 'null'
@@ -242,3 +250,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-featurebits:482--h0b57e2e_0
+stderr: featurebits_summary.txt

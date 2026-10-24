@@ -1,5 +1,11 @@
 # ucsc-hgloadsqltab CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgloadsqltab_hgLoadSqlTab | Not completed | Needs a writable UCSC MySQL database; the command line is accepted and the program reaches the database connection (CWL fixed: hg.conf and network access added, -oldTable and -append kept) |
+
 ## ucsc-hgloadsqltab_hgLoadSqlTab
 
 ### Tool Description

@@ -11,9 +11,7 @@ inputs:
     inputBinding:
       position: 1
   - id: chrom_sizes
-    type:
-      - 'null'
-      - File
+    type: File
     doc: 'Two-column file/URL: <chromosome name> <size in bases>'
     inputBinding:
       position: 2
@@ -62,8 +60,6 @@ outputs:
     doc: Output indexed big wig file
     outputBinding:
       glob: $(inputs.out_bw)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bedgraphtobigwig:482--hdc0a859_0

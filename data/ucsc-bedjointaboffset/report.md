@@ -1,5 +1,11 @@
 # ucsc-bedjointaboffset CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bedjointaboffset | Failed | image problem: bedJoinTabOffset is a Python 2 script run by Python 3.7 in the image and crashes with AttributeError: module 'string' has no attribute 'split'. |
+
 ## ucsc-bedjointaboffset
 
 ### Tool Description
@@ -18,20 +24,16 @@ Joins two BED files, aligning them by tab and offset.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/ucsc-bedjointaboffset:377--h199ee4e_0' locally
-377--h199ee4e_0: Pulling from biocontainers/ucsc-bedjointaboffset
-a3ed95caeb02: Already exists
-b0dc45cd432d: Already exists
-3aaade50789a: Already exists
-ddd482ea7b54: Already exists
-7ff999a2256f: Already exists
-e7c454e5167d: Already exists
-dfda3e01f2b6: Already exists
-a3ed95caeb02: Already exists
-10c3bb32200b: Already exists
-c2741db69648: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob2355575715: no space left on device
+Usage: bedJoinTabOffset [options] inTabFile inBedFile outBedFile - given a bed file and tab file where each have a column with matching values: first get the value of column0, the offset and line length from inTabFile. Then go over the bed file, use the name field and append its offset and length to the bed file as two separate fields. Write the new bed file to outBed.
 
-Run 'docker run --help' for more information
+Options:
+  -h, --help            show this help message and exit
+  -d, --debug           show debug messages
+  -t TABKEYFIELD, --tabKeyField=TABKEYFIELD
+                        the index of the key field in the tab file that
+                        matches the key field in the bed file. default 0
+  -b BEDKEYFIELD, --bedKeyField=BEDKEYFIELD
+                        the index of the key field in the bed file that
+                        matches the key field in the tab file. default 3
 ```
 

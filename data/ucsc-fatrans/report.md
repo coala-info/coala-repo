@@ -1,5 +1,11 @@
 # ucsc-fatrans CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fatrans | PASS |  |
+
 ## ucsc-fatrans
 
 ### Tool Description

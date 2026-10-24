@@ -2,31 +2,41 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: colTransform
 label: ucsc-coltransform
-doc: "Transform a column in a file using various mathematical operations.\n\nTool
-  homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Add and/or multiply column by constant.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: in_file
-    type: File
-    doc: The input file containing the data to be transformed.
-    inputBinding:
-      position: 1
   - id: column
     type: int
-    doc: The 1-based column number to transform.
+    doc: The column to transform, starting with 1.
+    inputBinding:
+      position: 1
+  - id: in_tab
+    type: File
+    doc: Tab-delimited input file.
     inputBinding:
       position: 2
-  - id: operation
-    type: string
-    doc: The transformation operation to apply (e.g., log, log10, log2, exp, 
-      exp10, exp2, sqrt, abs, round, ceil, floor).
+  - id: add_factor
+    type: double
+    doc: What to add. Use 0 to not change anything.
     inputBinding:
       position: 3
+  - id: mul_factor
+    type: double
+    doc: What to multiply by. Use 1 to not change anything.
+    inputBinding:
+      position: 4
+  - id: out_tab
+    type: string
+    doc: Tab-delimited output file name.
+    inputBinding:
+      position: 5
 outputs:
-  - id: out_file
+  - id: output_tab
     type: File
-    doc: The output file where the transformed data will be written.
+    doc: Tab-delimited output file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_tab)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-coltransform:482--h0b57e2e_0

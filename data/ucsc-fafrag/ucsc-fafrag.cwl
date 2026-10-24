@@ -1,33 +1,43 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-fafrag
+baseCommand: faFrag
 label: ucsc-fafrag
-doc: "Extracts a fragment from a FASTA file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Extract a piece of DNA from a .fa file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: fasta_file
+  - id: in_fa
     type: File
-    doc: Input FASTA file
+    doc: Input fasta file
     inputBinding:
-      position: 1
-  - id: region
+      position: 10
+  - id: start
+    type: int
+    doc: Start position of the piece to extract.
+    inputBinding:
+      position: 11
+  - id: end
+    type: int
+    doc: End position of the piece to extract.
+    inputBinding:
+      position: 12
+  - id: out_fa
     type: string
-    doc: Region to extract (e.g., chr1:100-200)
+    doc: Output fasta file name
     inputBinding:
-      position: 2
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 101
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 13
+  - id: mixed
     type:
       - 'null'
-      - File
-    doc: Output file name [stdout]
+      - boolean
+    doc: Preserve mixed-case in FASTA file.
+    inputBinding:
+      position: 1
+      prefix: -mixed
+outputs:
+  - id: output_fa
+    type: File
+    doc: Output fasta file with the extracted piece
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.out_fa)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

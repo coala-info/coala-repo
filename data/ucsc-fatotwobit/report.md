@@ -1,5 +1,11 @@
 # ucsc-fatotwobit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fatotwobit | PASS |  |
+
 ## ucsc-fatotwobit
 
 ### Tool Description

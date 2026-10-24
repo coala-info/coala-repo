@@ -2,20 +2,26 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: chromGraphToBin
 label: ucsc-chromgraphtobin
-doc: "Converts a chromGraph format file to binary format for use with the chromGraphData
-  and chromGraphView tools.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Make binary version of chromGraph.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_file
+  - id: in_tab
     type: File
-    doc: Input chromGraph file (tab-separated format with chrom, pos, value).
+    doc: Input chromGraph tab-separated file (chrom, position, value).
     inputBinding:
       position: 1
+  - id: out_chrom_graph
+    type: string
+    doc: Output binary chromGraph file name.
+    inputBinding:
+      position: 2
 outputs:
-  - id: output_file
+  - id: output_chrom_graph
     type: File
-    doc: Output binary file.
+    doc: Output binary chromGraph file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_chrom_graph)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-chromgraphtobin:482--h0b57e2e_0

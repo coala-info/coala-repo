@@ -2,18 +2,27 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: faPolyASizes
 label: ucsc-fapolyasizes
-doc: "Count polyA tail sizes in sequences of a fasta file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Get poly A sizes. The output file has four columns: id seqSize tailPolyASize
+  headPolyTSize.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_fasta
+  - id: in_fa
     type: File
     doc: Input FASTA file to analyze
     inputBinding:
       position: 1
+  - id: out_tab
+    type: string
+    doc: Output tab-separated file name
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_tab
+    type: File
+    doc: Output table with id, seqSize, tailPolyASize and headPolyTSize
+    outputBinding:
+      glob: $(inputs.out_tab)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-fapolyasizes:482--h0b57e2e_0
-stdout: ucsc-fapolyasizes.out

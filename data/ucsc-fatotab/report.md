@@ -1,5 +1,11 @@
 # ucsc-fatotab CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fatotab | PASS |  |
+
 ## ucsc-fatotab
 
 ### Tool Description

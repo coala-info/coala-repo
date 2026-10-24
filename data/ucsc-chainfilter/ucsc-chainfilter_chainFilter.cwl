@@ -170,6 +170,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -q=
+      itemSeparator: ','
       separate: false
   - id: restrict_query_not_named
     type:
@@ -180,6 +181,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -notQ=
+      itemSeparator: ','
       separate: false
   - id: restrict_target_named
     type:
@@ -190,6 +192,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t=
+      itemSeparator: ','
       separate: false
   - id: restrict_target_not_named
     type:
@@ -200,6 +203,7 @@ inputs:
     inputBinding:
       position: 102
       prefix: -notT=
+      itemSeparator: ','
       separate: false
   - id: strand
     type:

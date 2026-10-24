@@ -1,5 +1,11 @@
 # ucsc-checkhgfindspec CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-checkhgfindspec | Not completed | needs a UCSC central database with cart tables (hgcentral userDb): the public read-only server does not give them, so the tool stops with a cart tables error |
+
 ## ucsc-checkhgfindspec
 
 ### Tool Description

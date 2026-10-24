@@ -1,5 +1,11 @@
 # ucsc-chainfilter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainfilter_chainFilter | PASS |  |
+
 ## ucsc-chainfilter_chainFilter
 
 ### Tool Description

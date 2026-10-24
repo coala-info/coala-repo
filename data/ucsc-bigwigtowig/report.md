@@ -1,5 +1,11 @@
 # ucsc-bigwigtowig CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bigwigtowig | PASS |  |
+
 ## ucsc-bigwigtowig
 
 ### Tool Description

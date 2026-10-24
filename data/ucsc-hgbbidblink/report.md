@@ -1,5 +1,11 @@
 # ucsc-hgbbidblink CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgbbidblink_hgBbiDbLink | Not completed | Needs a writable UCSC MySQL database; the command line is accepted and the program reaches the database connection (CWL fixed: file name is a recorded string, hg.conf and network access added) |
+
 ## ucsc-hgbbidblink_hgBbiDbLink
 
 ### Tool Description

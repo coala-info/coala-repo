@@ -1,20 +1,27 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedSort
+baseCommand:
+  - bedSort
 label: ucsc-bedsort
-doc: "Sort a BED file by chromosome and start position.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Sort a .bed file by chrom,chromStart. The input and output may be the same file.\n\
+  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_file
+  - id: in_bed
     type: File
-    doc: The input BED file to be sorted.
+    doc: Input BED file.
     inputBinding:
       position: 1
+  - id: out_bed
+    type: string
+    doc: Name of the sorted output BED file.
+    inputBinding:
+      position: 2
 outputs:
-  - id: output_file
+  - id: output_bed
     type: File
-    doc: The destination for the sorted BED file.
+    doc: BED file sorted by chrom and chromStart.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_bed)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bedsort:482--h0b57e2e_0

@@ -1,5 +1,11 @@
 # ucsc-bigbedinfo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bigbedinfo | PASS |  |
+
 ## ucsc-bigbedinfo
 
 ### Tool Description

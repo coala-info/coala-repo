@@ -26,6 +26,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: -tab
+  - id: very_detailed
+    type:
+      - 'null'
+      - boolean
+    doc: Outputs name, size, #Ns, #real, #upper, #lower of each record
+    inputBinding:
+      position: 102
+      prefix: -veryDetailed
 outputs:
   - id: stdout
     type: stdout

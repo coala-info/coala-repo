@@ -1,5 +1,11 @@
 # ucsc-gmtime CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-gmtime_gmtime | PASS | Timestamp 1700000000 gives 2023-11-14 22:13:20, matching GNU date |
+
 ## ucsc-gmtime_gmtime
 
 ### Tool Description

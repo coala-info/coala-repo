@@ -1,5 +1,11 @@
 # ucsc-hgloadchain CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgloadchain_hgLoadChain | PASS | Tested with -test (no database needed) on a real hg19 chrM to susScr3 chain: chain.tab and link.tab match an independent parse (97 link blocks, score, bin, qPrefix, normScore); database loading not tested (CWL fixed: sqlTable is a File, hg.conf added) |
+
 ## ucsc-hgloadchain_hgLoadChain
 
 ### Tool Description

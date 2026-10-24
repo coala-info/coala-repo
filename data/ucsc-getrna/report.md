@@ -1,5 +1,11 @@
 # ucsc-getrna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-getrna | Not completed | Command line accepted and the public UCSC MySQL server was reached (CWL fixed: command is getRna, accFile and outfa added), but getRna needs the GenBank sequence files of a full UCSC database and reports sequence not in database |
+
 ## ucsc-getrna
 
 ### Tool Description

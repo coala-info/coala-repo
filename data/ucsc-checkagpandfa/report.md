@@ -1,5 +1,11 @@
 # ucsc-checkagpandfa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-checkagpandfa | PASS |  |
+
 ## ucsc-checkagpandfa
 
 ### Tool Description

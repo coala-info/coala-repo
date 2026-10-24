@@ -1,5 +1,11 @@
 # ucsc-bigbednameditems CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bigbednameditems | PASS |  |
+
 ## ucsc-bigbednameditems
 
 ### Tool Description

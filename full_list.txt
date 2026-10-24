@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14490; PASS: 11338; Failed: 1737; Not completed: 1415
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14590; PASS: 11427; Failed: 1741; Not completed: 1422
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -14490,3 +14490,103 @@ ucsc-bedclip	ucsc-bedclip	PASS
 ucsc-bedcommonregions	ucsc-bedcommonregions	PASS	
 ucsc-bedcoverage	ucsc-bedcoverage	PASS	rewritten (baseCommand was not a real command); needs network access to the UCSC public MySQL server for hg18
 ucsc-bedextendranges	ucsc-bedextendranges	PASS	needs network access to the UCSC public MySQL server (hg18 chrom sizes)
+ucsc-bedgeneparts	ucsc-bedgeneparts	PASS	
+ucsc-bedgraphpack	ucsc-bedgraphpack	PASS	
+ucsc-bedgraphtobigwig	ucsc-bedgraphtobigwig	PASS	
+ucsc-bedintersect	ucsc-bedintersect	PASS	
+ucsc-beditemoverlapcount	ucsc-beditemoverlapcount	PASS	
+ucsc-bedjointaboffset	ucsc-bedjointaboffset	Failed	image problem: bedJoinTabOffset is a Python 2 script run by Python 3.7 in the image and crashes with AttributeError: module 'string' has no attribute 'split'.
+ucsc-bedpileups	ucsc-bedpileups	PASS	
+ucsc-bedremoveoverlap	ucsc-bedremoveoverlap	PASS	
+ucsc-bedrestricttopositions	ucsc-bedrestricttopositions	PASS	
+ucsc-bedsort	ucsc-bedsort	PASS	
+ucsc-bedtogenepred	ucsc-bedtogenepred	PASS	
+ucsc-bedtopsl	ucsc-bedtopsl	Failed	tool bug: the main mode matches the tool's expected output, but with -keepQuery the PSL matches column is the chromosome size (40001) instead of the block total (617).
+ucsc-bedweedoverlapping	ucsc-bedweedoverlapping	PASS	
+ucsc-bigbedinfo	ucsc-bigbedinfo	PASS	
+ucsc-bigbednameditems	ucsc-bigbednameditems	PASS	
+ucsc-bigbedtobed	ucsc-bigbedtobed	PASS	
+ucsc-bigmaftomaf	ucsc-bigmaftomaf	PASS	
+ucsc-bigpsltopsl	ucsc-bigpsltopsl	PASS	
+ucsc-bigwigaverageoverbed	ucsc-bigwigaverageoverbed	PASS	
+ucsc-bigwigcat	ucsc-bigwigcat	PASS	
+ucsc-bigwigcorrelate	ucsc-bigwigcorrelate	PASS	
+ucsc-bigwiginfo	ucsc-bigwiginfo	PASS	
+ucsc-bigwigmerge	ucsc-bigwigmerge	PASS	
+ucsc-bigwigsummary	ucsc-bigwigsummary	PASS	
+ucsc-bigwigtobedgraph	ucsc-bigwigtobedgraph	PASS	
+ucsc-bigwigtowig	ucsc-bigwigtowig	PASS	
+ucsc-blasttopsl	ucsc-blasttopsl	PASS	
+ucsc-blat	ucsc-blat_blat	PASS	
+ucsc-catdir	ucsc-catdir	PASS	
+ucsc-catuncomment	ucsc-catuncomment	PASS	
+ucsc-chainantirepeat	ucsc-chainantirepeat	PASS	
+ucsc-chainbridge	ucsc-chainbridge_chainBridge	PASS	
+ucsc-chainfilter	ucsc-chainfilter_chainFilter	PASS	
+ucsc-chainmergesort	ucsc-chainmergesort	PASS	
+ucsc-chainprenet	ucsc-chainprenet_chainPreNet	PASS	
+ucsc-chainscore	ucsc-chainscore	PASS	
+ucsc-chainsort	ucsc-chainsort	PASS	
+ucsc-chainsplit	ucsc-chainsplit_chainSplit	PASS	
+ucsc-chainstitchid	ucsc-chainstitchid	PASS	
+ucsc-chainswap	ucsc-chainswap	PASS	
+ucsc-chaintoaxt	ucsc-chaintoaxt_chainToAxt	PASS	
+ucsc-chaintopsl	ucsc-chaintopsl	PASS	
+ucsc-chaintopslbasic	ucsc-chaintopslbasic	PASS	
+ucsc-checkagpandfa	ucsc-checkagpandfa	PASS	
+ucsc-checkhgfindspec	ucsc-checkhgfindspec	Not completed	needs a UCSC central database with cart tables (hgcentral userDb): the public read-only server does not give them, so the tool stops with a cart tables error
+ucsc-checktablecoords	ucsc-checktablecoords	Not completed	runs on public hg19 tables via the read-only UCSC MySQL server; clean tables print nothing and no table with bad coordinates was found, so the check itself could not be shown.
+ucsc-chopfalines	ucsc-chopfalines	Failed	tool bug: chopFaLines prints 'All for now', exits 255 and writes an empty output file on every input
+ucsc-chromgraphfrombin	ucsc-chromgraphfrombin	PASS	
+ucsc-chromgraphtobin	ucsc-chromgraphtobin	PASS	
+ucsc-coltransform	ucsc-coltransform	PASS	
+ucsc-countchars	ucsc-countchars	PASS	
+ucsc-crtreeindexbed	ucsc-crtreeindexbed	PASS	
+ucsc-dbtrash	ucsc-dbtrash_dbTrash	Not completed	needs a writable UCSC MySQL database with a metaInfo table (customTrash); the public read-only server has none, so only the connection step was reached
+ucsc-endsinlf	ucsc-endsinlf	PASS	files that end in a line feed exit 0; a file without one exits 255 (checked), and -zeroOk accepts an empty file
+ucsc-estorient	ucsc-estorient_estOrient	PASS	synthetic data: real blat PSL of nf-core transcripts with a planted estOrientInfo file (-fileInput mode); strand flips and dropped ESTs match; database mode not tested
+ucsc-expmatrixtobarchartbed	ucsc-expmatrixtobarchartbed_expMatrixToBarchartBed	Failed	image problem: the script crashes with TypeError: NamedTemporaryFile() got an unexpected keyword argument 'bufsize' (Python 3.13 in the image)
+ucsc-facmp	ucsc-facmp_faCmp	PASS	same files exit 0, planted base difference reported at the right base (exit 1 accepted by successCodes as documented), -softMask works
+ucsc-facount	ucsc-facount	PASS	
+ucsc-fafilter	ucsc-fafilter	PASS	
+ucsc-fafiltern	ucsc-fafiltern	PASS	synthetic data: N-rich records planted into real transcripts; N filter, -uniq with a blat self PSL and -out with a planted RepeatMasker file all checked
+ucsc-fafrag	ucsc-fafrag	PASS	
+ucsc-faonerecord	ucsc-faonerecord	PASS	
+ucsc-fapolyasizes	ucsc-fapolyasizes	PASS	synthetic data: polyA tails and polyT heads planted on real transcripts; sizes agree with the planted lengths (the tool leaves the last base and is conservative, so counts are a little lower)
+ucsc-farc	ucsc-farc_faRc	PASS	
+ucsc-fasize	ucsc-fasize	PASS	
+ucsc-fasomerecords	ucsc-fasomerecords_faSomeRecords	PASS	
+ucsc-fasplit	ucsc-fasplit	PASS	
+ucsc-fastqtofa	ucsc-fastqtofa	PASS	
+ucsc-fatofastq	ucsc-fatofastq	PASS	
+ucsc-fatotab	ucsc-fatotab	PASS	
+ucsc-fatotwobit	ucsc-fatotwobit	PASS	
+ucsc-fatovcf	ucsc-fatovcf_faToVcf	PASS	
+ucsc-fatrans	ucsc-fatrans	PASS	
+ucsc-featurebits	ucsc-featurebits_featureBits	PASS	
+ucsc-fetchchromsizes	ucsc-fetchchromsizes	PASS	
+ucsc-gaptolift	ucsc-gaptolift	PASS	
+ucsc-genepredcheck	ucsc-genepredcheck_genePredCheck	PASS	
+ucsc-genepredfilter	ucsc-genepredfilter	PASS	
+ucsc-genepredtobed	ucsc-genepredtobed	PASS	
+ucsc-genepredtobiggenepred	ucsc-genepredtobiggenepred	PASS	
+ucsc-genepredtofakepsl	ucsc-genepredtofakepsl	PASS	
+ucsc-genepredtogtf	ucsc-genepredtogtf	PASS	
+ucsc-genepredtomafframes	ucsc-genepredtomafframes	PASS	Ran on kent test MAF with two gene sets; mafFrames output identical to the kent expected file (CWL rewritten: output file name and gene set pairs were missing)
+ucsc-genepredtoprot	ucsc-genepredtoprot	PASS	New CWL for genePredToProt; protein and CDS from a human chr22 slice (genePred from the nf-core GTF) match an independent translation
+ucsc-getrna	ucsc-getrna	Not completed	Command line accepted and the public UCSC MySQL server was reached (CWL fixed: command is getRna, accFile and outfa added), but getRna needs the GenBank sequence files of a full UCSC database and reports sequence not in database
+ucsc-gff3togenepred	ucsc-gff3togenepred	PASS	CWL rewritten from the help (output name and real options were missing); kent test GFF3 files give genePred and attribute outputs identical to kent's expected files
+ucsc-gff3topsl	ucsc-gff3topsl	PASS	CWL rewritten (chrom sizes inputs, output name, -dropQ/-dropT were missing); kent GRCh38-to-GRCh37 patch alignment gives PSL identical to kent's expected file after sorting
+ucsc-gmtime	ucsc-gmtime_gmtime	PASS	Timestamp 1700000000 gives 2023-11-14 22:13:20, matching GNU date
+ucsc-gtftogenepred	ucsc-gtftogenepred	PASS	kent test GTF files give genePred and info outputs identical to kent's expected files for the main options (-simple only checks columns and writes an empty file by design)
+ucsc-headrest	ucsc-headrest	PASS	CWL fixed (command is headRest, one input file); output equals tail -n +13 of the nf-core GTF
+ucsc-hgbbidblink	ucsc-hgbbidblink_hgBbiDbLink	Not completed	Needs a writable UCSC MySQL database; the command line is accepted and the program reaches the database connection (CWL fixed: file name is a recorded string, hg.conf and network access added)
+ucsc-hgfakeagp	ucsc-hgfakeagp_hgFakeAgp	PASS	Real human chr22 slices with N gaps (nf-core GRCh37 chr22): AGP gap and contig coordinates match an independent N-run calculation, including -minContigGap, -minScaffoldGap and -singleContigs
+ucsc-hgfindspec	ucsc-hgfindspec_hgFindSpec	Not completed	Needs a writable UCSC MySQL database; the command line is accepted, the kent trackDb.ra is read and the program reaches the database connection (CWL fixed: organism is a string and hgRoot is a directory; hg.conf and network access added)
+ucsc-hggcpercent	ucsc-hggcpercent_hgGcPercent	PASS	CWL fixed (real flags are -file= and -bedRegionOut=, genome is a 2bit File); kent test 2bit output identical to kent expected files; window GC values and region GC counts on the nf-core chr22 slice match an independent count
+ucsc-hggoldgapgl	ucsc-hggoldgapgl_hgGoldGapGl	PASS	Tested in -noLoad mode (no database needed) on an AGP made from real chr22 slices; gold.tab and gap.tab rows match the AGP with zero-based starts and UCSC bins (CWL fixed: input is an AGP file or directory, -verbose=, hg.conf optional); database loading not tested
+ucsc-hgloadbed	ucsc-hgloadbed	PASS	Tested with -noLoad (no database needed) on the kent test BED files: bed.tab checksums equal kent's expected values for bed4, bed6, bed9, bed14, bedPlus, bedGraph and bedDetail; database loading not tested (CWL rewritten with the real options)
+ucsc-hgloadchain	ucsc-hgloadchain_hgLoadChain	PASS	Tested with -test (no database needed) on a real hg19 chrM to susScr3 chain: chain.tab and link.tab match an independent parse (97 link blocks, score, bin, qPrefix, normScore); database loading not tested (CWL fixed: sqlTable is a File, hg.conf added)
+ucsc-hgloadout	ucsc-hgloadout_hgLoadOut	PASS	Tested with -tabFile (no database needed) on the kent test RepeatMasker .out.gz: tab file identical to kent's expected file; database loading not tested (CWL fixed: tabFile is an output name, hg.conf added)
+ucsc-hgloadoutjoined	ucsc-hgloadoutjoined_hgLoadOutJoined	PASS	Tested with -tabFile (no database needed) on the kent test RepeatMasker .out.gz (an older-style file; 198 rows, score, coordinates and divergence match an independent parse); database loading not tested (CWL fixed: tabFile is an output name, hg.conf added)
+ucsc-hgloadsqltab	ucsc-hgloadsqltab_hgLoadSqlTab	Not completed	Needs a writable UCSC MySQL database; the command line is accepted and the program reaches the database connection (CWL fixed: hg.conf and network access added, -oldTable and -append kept)

@@ -1,5 +1,11 @@
 # ucsc-chainmergesort CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainmergesort | PASS |  |
+
 ## ucsc-chainmergesort
 
 ### Tool Description

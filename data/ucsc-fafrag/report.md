@@ -1,5 +1,11 @@
 # ucsc-fafrag CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fafrag | PASS |  |
+
 ## ucsc-fafrag
 
 ### Tool Description

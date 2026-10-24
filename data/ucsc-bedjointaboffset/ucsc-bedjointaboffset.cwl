@@ -1,46 +1,61 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-bedjointaboffset
+baseCommand:
+  - bedJoinTabOffset
 label: ucsc-bedjointaboffset
-doc: "Joins two BED files, aligning them by tab and offset.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
+doc: "Given a bed file and tab file where each have a column with matching values:
+  first get the value of column0, the offset and line length from inTabFile. Then
+  go over the bed file, use the name field and append its offset and length to the
+  bed file as two separate fields. Write the new bed file to outBed.\n\nTool homepage:
+  http://hgdownload.cse.ucsc.edu/admin/exe/"
 inputs:
-  - id: file1
+  - id: in_tab_file
     type: File
-    doc: The first BED file.
+    doc: Tab-separated file with the key column.
     inputBinding:
       position: 1
-  - id: file2
+  - id: in_bed_file
     type: File
-    doc: The second BED file.
+    doc: Input BED file.
     inputBinding:
       position: 2
-  - id: offset
+  - id: out_bed_file
+    type: string
+    doc: Name of the output BED file.
+    inputBinding:
+      position: 3
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Show debug messages.
+    inputBinding:
+      position: 0
+      prefix: -d
+  - id: tab_key_field
     type:
       - 'null'
       - int
-    doc: The offset to apply to the second file's coordinates. A positive offset
-      shifts the second file's regions to the right, and a negative offset 
-      shifts them to the left. Defaults to 0.
+    doc: The index of the key field in the tab file that matches the key field in
+      the bed file (default 0).
     inputBinding:
-      position: 103
-      prefix: --offset
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 104
-      prefix: --output
-outputs:
-  - id: output
+      position: 0
+      prefix: -t
+  - id: bed_key_field
     type:
       - 'null'
-      - File
-    doc: The output file to write the joined BED data to. If not specified, the 
-      output will be written to standard output.
+      - int
+    doc: The index of the key field in the bed file that matches the key field in
+      the tab file (default 3).
+    inputBinding:
+      position: 0
+      prefix: -b
+outputs:
+  - id: output_bed
+    type: File
+    doc: BED file with the offset and length of each key appended.
     outputBinding:
-      glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out_bed_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bedjointaboffset:377--h199ee4e_0

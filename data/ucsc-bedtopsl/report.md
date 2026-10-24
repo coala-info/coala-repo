@@ -1,5 +1,11 @@
 # ucsc-bedtopsl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bedtopsl | Failed | tool bug: the main mode matches the tool's expected output, but with -keepQuery the PSL matches column is the chromosome size (40001) instead of the block total (617). |
+
 ## ucsc-bedtopsl
 
 ### Tool Description
@@ -18,82 +24,22 @@ Convert BED format to PSL format.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedtopsl
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-90e8670e6ee4: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob4244108476: no space left on device
+bedToPsl - convert bed format files to psl format
+usage:
+   bedToPsl [options] chromSizes bedFile pslFile
 
-Run 'docker run --help' for more information
+Convert a BED file to a PSL file. This the result is an alignment.
+ It is intended to allow processing by tools that operate on PSL.
+If the BED has at least 12 columns, then a PSL with blocks is created.
+Otherwise single-exon PSLs are created.
+
+Options:
+-tabs        -  use tab as a separator
+-keepQuery   -  instead of creating a fake query, create PSL with identical query and
+                target specs. Useful if bed features are to be lifted with pslMap and one 
+                wants to keep the source location in the lift result.
 ```
 
 ## Metadata
 - **Skill**: generated
-
-## ucsc-bedtopsl_fetchChromSizes
-
-### Tool Description
-Fetch chromosome sizes for a specified UCSC genome database (e.g., hg38, mm10).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-bedtopsl/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-Unable to find image 'quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedtopsl
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-90e8670e6ee4: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob4281756085: no space left on device
-
-Run 'docker run --help' for more information
-```
-
-## ucsc-bedtopsl_bedSort
-
-### Tool Description
-Sort a BED file. The input and output can be the same file.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-bedtopsl/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-Unable to find image 'quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedtopsl
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-90e8670e6ee4: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob3119306363: no space left on device
-
-Run 'docker run --help' for more information
-```
-
-## ucsc-bedtopsl_pslCheck
-
-### Tool Description
-Check PSL files for correctness.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-bedtopsl/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-Unable to find image 'quay.io/biocontainers/ucsc-bedtopsl:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedtopsl
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-90e8670e6ee4: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob2954274840: no space left on device
-
-Run 'docker run --help' for more information
-```
 

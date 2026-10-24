@@ -1,5 +1,11 @@
 # ucsc-chainswap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainswap | PASS |  |
+
 ## ucsc-chainswap
 
 ### Tool Description
@@ -30,26 +36,4 @@ Run 'docker run --help' for more information
 
 ## Metadata
 - **Skill**: generated
-
-## ucsc-chainswap_netChainSubset
-
-### Tool Description
-Create a chain file from a net file and the original chains. This tool subsets a chain file based on the alignments that were kept in a corresponding net file.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-chainswap:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-chainswap/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-Unable to find image 'quay.io/biocontainers/ucsc-chainswap:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-chainswap
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-613785aeeb49: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob3120584432: no space left on device
-
-Run 'docker run --help' for more information
-```
 

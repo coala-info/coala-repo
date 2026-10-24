@@ -1,5 +1,11 @@
 # ucsc-genepredtofakepsl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-genepredtofakepsl | PASS |  |
+
 ## ucsc-genepredtofakepsl
 
 ### Tool Description

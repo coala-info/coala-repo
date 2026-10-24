@@ -1,5 +1,11 @@
 # ucsc-checktablecoords CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-checktablecoords | Not completed | runs on public hg19 tables via the read-only UCSC MySQL server; clean tables print nothing and no table with bad coordinates was found, so the check itself could not be shown. |
+
 ## ucsc-checktablecoords
 
 ### Tool Description

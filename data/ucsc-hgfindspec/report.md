@@ -1,5 +1,11 @@
 # ucsc-hgfindspec CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgfindspec_hgFindSpec | Not completed | Needs a writable UCSC MySQL database; the command line is accepted, the kent trackDb.ra is read and the program reaches the database connection (CWL fixed: organism is a string and hgRoot is a directory; hg.conf and network access added) |
+
 ## ucsc-hgfindspec_hgFindSpec
 
 ### Tool Description

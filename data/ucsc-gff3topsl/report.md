@@ -1,5 +1,11 @@
 # ucsc-gff3topsl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-gff3topsl | PASS | CWL rewritten (chrom sizes inputs, output name, -dropQ/-dropT were missing); kent GRCh38-to-GRCh37 patch alignment gives PSL identical to kent's expected file after sorting |
+
 ## ucsc-gff3topsl
 
 ### Tool Description

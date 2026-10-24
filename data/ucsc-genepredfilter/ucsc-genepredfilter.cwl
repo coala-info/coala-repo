@@ -2,43 +2,55 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: genePredFilter
 label: ucsc-genepredfilter
-doc: "Filter genePred files based on various criteria.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Filter a genePred file, dropping invalid entries.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
   - id: gene_pred_in
     type: File
     doc: Input genePred file
     inputBinding:
       position: 1
+  - id: gene_pred_out_name
+    type: string
+    doc: Name of the output filtered genePred file
+    inputBinding:
+      position: 2
   - id: db
     type:
       - 'null'
       - string
-    doc: Get gene names from this database
+    doc: If specified, this database is used to get chromosome sizes
     inputBinding:
-      position: 102
-      prefix: -db
-  - id: exclude
+      position: 101
+      prefix: -db=
+      separate: false
+  - id: chrom_sizes
     type:
       - 'null'
       - File
-    doc: File of gene names to exclude
+    doc: Use chrom sizes from this tab separated file (name, size) instead of from the chromInfo table in the specified db
     inputBinding:
-      position: 102
-      prefix: -exclude
-  - id: include
+      position: 101
+      prefix: -chromSizes=
+      separate: false
+  - id: verbose
     type:
       - 'null'
-      - File
-    doc: File of gene names to include
+      - int
+    doc: Level >= 2 prints out errors for each problem found
     inputBinding:
-      position: 102
-      prefix: -include
+      position: 101
+      prefix: -verbose=
+      separate: false
 outputs:
   - id: gene_pred_out
     type: File
     doc: Output filtered genePred file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.gene_pred_out_name)
+  - id: messages
+    type: stderr
+    doc: Messages about dropped entries
+stderr: ucsc-genepredfilter.err
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-genepredfilter:482--h0b57e2e_0

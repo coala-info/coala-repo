@@ -1,5 +1,11 @@
 # ucsc-bedgraphtobigwig CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bedgraphtobigwig | PASS |  |
+
 ## ucsc-bedgraphtobigwig
 
 ### Tool Description

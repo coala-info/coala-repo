@@ -1,69 +1,52 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: faFilter
+baseCommand: faFilterN
 label: ucsc-fafiltern
-doc: "Filter a fasta file based on various criteria such as name, size, or N content.\n\
-  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Get rid of sequences with too many N's.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_fa
+  - id: in_fa
     type: File
-    doc: Input FASTA file
+    doc: Input fasta file
+    inputBinding:
+      position: 10
+  - id: out_fa
+    type: string
+    doc: Output fasta file name
+    inputBinding:
+      position: 11
+  - id: max_percent_n
+    type: double
+    doc: Maximum percent of N's allowed in a sequence. Must start with a digit.
+    inputBinding:
+      position: 12
+  - id: out
+    type:
+      - 'null'
+      - File
+    doc: RepeatMasker .out file (in.fa.out); the N content of each sequence is then
+      taken from the ranges listed in it.
     inputBinding:
       position: 1
-  - id: max_n
+      prefix: -out=
+      separate: false
+  - id: uniq
     type:
       - 'null'
-      - int
-    doc: Keep sequences with at most this many N's
+      - File
+    doc: PSL file of sequences aligned to themselves (self.psl); a sequence that overlaps
+      an already written sequence is removed.
     inputBinding:
-      position: 102
-      prefix: -maxN
-  - id: max_size
-    type:
-      - 'null'
-      - int
-    doc: Keep sequences at most this big
-    inputBinding:
-      position: 102
-      prefix: -maxSize
-  - id: min_size
-    type:
-      - 'null'
-      - int
-    doc: Keep sequences at least this big
-    inputBinding:
-      position: 102
-      prefix: -minSize
-  - id: name
-    type:
-      - 'null'
-      - string
-    doc: Keep sequences with this name
-    inputBinding:
-      position: 102
-      prefix: -name
-  - id: not_name
-    type:
-      - 'null'
-      - string
-    doc: Keep sequences not with this name
-    inputBinding:
-      position: 102
-      prefix: -notName
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Verbose output
-    inputBinding:
-      position: 102
-      prefix: -v
+      position: 2
+      prefix: -uniq=
+      separate: false
 outputs:
   - id: output_fa
     type: File
-    doc: Output filtered FASTA file
+    doc: Output fasta file without the sequences that have too many N's
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_fa)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-fafiltern:482--h0b57e2e_0

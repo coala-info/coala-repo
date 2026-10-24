@@ -1,5 +1,11 @@
 # ucsc-chainstitchid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainstitchid | PASS |  |
+
 ## ucsc-chainstitchid
 
 ### Tool Description

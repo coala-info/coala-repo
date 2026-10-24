@@ -1,5 +1,11 @@
 # ucsc-genepredtomafframes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-genepredtomafframes | PASS | Ran on kent test MAF with two gene sets; mafFrames output identical to the kent expected file (CWL rewritten: output file name and gene set pairs were missing) |
+
 ## ucsc-genepredtomafframes
 
 ### Tool Description

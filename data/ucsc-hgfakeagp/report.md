@@ -1,5 +1,11 @@
 # ucsc-hgfakeagp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgfakeagp_hgFakeAgp | PASS | Real human chr22 slices with N gaps (nf-core GRCh37 chr22): AGP gap and contig coordinates match an independent N-run calculation, including -minContigGap, -minScaffoldGap and -singleContigs |
+
 ## ucsc-hgfakeagp_hgFakeAgp
 
 ### Tool Description

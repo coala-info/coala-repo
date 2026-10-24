@@ -1,5 +1,11 @@
 # ucsc-fafilter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fafilter | PASS |  |
+
 ## ucsc-fafilter
 
 ### Tool Description

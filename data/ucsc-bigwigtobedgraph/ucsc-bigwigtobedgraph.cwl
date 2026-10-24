@@ -2,51 +2,60 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bigWigToBedGraph
 label: ucsc-bigwigtobedgraph
-doc: "Convert bigWig to bedGraph format.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Convert from bigWig to bedGraph format.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_big_wig
+  - id: input_bigwig
     type: File
-    doc: The input bigWig file.
+    doc: "Input bigWig file"
     inputBinding:
       position: 1
+  - id: output_file
+    type: string
+    doc: "Name of the output bedGraph file"
+    inputBinding:
+      position: 2
   - id: chrom
     type:
       - 'null'
       - string
-    doc: Restrict output to a specific chromosome.
+    doc: "If set restrict output to given chromosome"
     inputBinding:
-      position: 102
-      prefix: -chrom
-  - id: end
-    type:
-      - 'null'
-      - int
-    doc: Restrict output to portion of chromosome ending at end.
-    inputBinding:
-      position: 102
-      prefix: -end
+      position: 101
+      prefix: -chrom=
+      separate: false
   - id: start
     type:
       - 'null'
       - int
-    doc: Restrict output to portion of chromosome starting at start.
+    doc: "If set, restrict output to only that over start"
     inputBinding:
-      position: 102
-      prefix: -start
+      position: 101
+      prefix: -start=
+      separate: false
+  - id: end
+    type:
+      - 'null'
+      - int
+    doc: "If set, restrict output to only that under end"
+    inputBinding:
+      position: 101
+      prefix: -end=
+      separate: false
   - id: udc_dir
     type:
       - 'null'
-      - Directory
-    doc: Specifies the directory where the UDC cache is located.
+      - string
+    doc: "Place to put cache for remote bigBed/bigWigs"
     inputBinding:
-      position: 102
-      prefix: -udcDir
+      position: 101
+      prefix: -udcDir=
+      separate: false
 outputs:
-  - id: output_bed_graph
+  - id: out_output_file
     type: File
-    doc: The output bedGraph file.
+    doc: "Output bedGraph file"
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bigwigtobedgraph:482--h0b57e2e_0

@@ -1,5 +1,11 @@
 # ucsc-countchars CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-countchars | PASS |  |
+
 ## ucsc-countchars
 
 ### Tool Description

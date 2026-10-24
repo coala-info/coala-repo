@@ -1,5 +1,11 @@
 # ucsc-blat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-blat_blat | PASS |  |
+
 ## ucsc-blat_blat
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-coltransform CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-coltransform | PASS |  |
+
 ## ucsc-coltransform
 
 ### Tool Description

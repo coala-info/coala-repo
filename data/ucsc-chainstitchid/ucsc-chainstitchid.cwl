@@ -2,22 +2,26 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: chainStitchId
 label: ucsc-chainstitchid
-doc: "A UCSC Genome Browser tool used to join chain fragments into larger chains and
-  assign unique IDs. (Note: The provided help text was incomplete due to a system
-  error, but the tool is part of the UCSC Genome Browser chain/net utility suite.)\n\
-  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Join chain fragments with the same chain ID into a single chain per ID. Chain
+  fragments must be from same original chain but must not overlap. Chain fragment
+  scores are summed.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_chain
+  - id: in_chain
     type: File
     doc: Input chain file
     inputBinding:
       position: 1
+  - id: out_chain
+    type: string
+    doc: Name of the output chain file
+    inputBinding:
+      position: 2
 outputs:
   - id: output_chain
     type: File
-    doc: Output chain file with stitched IDs
+    doc: Output chain file with one chain per ID
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_chain)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-chainstitchid:482--h0b57e2e_0

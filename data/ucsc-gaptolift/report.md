@@ -1,5 +1,11 @@
 # ucsc-gaptolift CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-gaptolift | PASS |  |
+
 ## ucsc-gaptolift
 
 ### Tool Description

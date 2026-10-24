@@ -1,5 +1,11 @@
 # ucsc-fasize CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fasize | PASS |  |
+
 ## ucsc-fasize
 
 ### Tool Description

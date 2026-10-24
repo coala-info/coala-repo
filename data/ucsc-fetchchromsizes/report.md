@@ -1,5 +1,11 @@
 # ucsc-fetchchromsizes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fetchchromsizes | PASS |  |
+
 ## ucsc-fetchchromsizes
 
 ### Tool Description

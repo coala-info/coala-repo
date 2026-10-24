@@ -1,5 +1,11 @@
 # ucsc-facount CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-facount | PASS |  |
+
 ## ucsc-facount
 
 ### Tool Description

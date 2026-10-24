@@ -1,5 +1,11 @@
 # ucsc-bigpsltopsl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bigpsltopsl | PASS |  |
+
 ## ucsc-bigpsltopsl
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-hggcpercent CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hggcpercent_hgGcPercent | PASS | CWL fixed (real flags are -file= and -bedRegionOut=, genome is a 2bit File); kent test 2bit output identical to kent expected files; window GC values and region GC counts on the nf-core chr22 slice match an independent count |
+
 ## ucsc-hggcpercent_hgGcPercent
 
 ### Tool Description

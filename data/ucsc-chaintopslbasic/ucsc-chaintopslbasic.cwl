@@ -2,19 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: chainToPslBasic
 label: ucsc-chaintopslbasic
-doc: "Convert a chain file to a PSL file (basic version).\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Basic conversion of a chain file to psl format. If you need match and mismatch
+  stats updated, pipe the output through pslRecalcMatch.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_chain
+  - id: in_chain
     type: File
     doc: Input chain file
     inputBinding:
       position: 1
+  - id: out_psl
+    type: string
+    doc: Name of the output psl file
+    inputBinding:
+      position: 2
 outputs:
   - id: output_psl
     type: File
-    doc: Output PSL file
+    doc: Output psl file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_psl)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-chaintopslbasic:482--h0b57e2e_0

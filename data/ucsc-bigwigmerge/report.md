@@ -1,5 +1,11 @@
 # ucsc-bigwigmerge CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bigwigmerge | PASS |  |
+
 ## ucsc-bigwigmerge
 
 ### Tool Description

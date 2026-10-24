@@ -1,33 +1,27 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedGraphPack
+baseCommand:
+  - bedGraphPack
 label: ucsc-bedgraphpack
-doc: "Pack a bedGraph file into a more compact form.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Pack together adjacent records representing same value. The input needs to be
+  sorted by chrom and this is checked.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: database
-    type: string
-    doc: The database name (e.g., hg19)
+  - id: in_bedgraph
+    type: File
+    doc: Input bedGraph file, sorted by chrom.
     inputBinding:
       position: 1
-  - id: input_bedgraph
-    type: File
-    doc: Input bedGraph file
+  - id: out_bedgraph
+    type: string
+    doc: Name of the output bedGraph file.
     inputBinding:
       position: 2
-  - id: bed_format
-    type:
-      - 'null'
-      - boolean
-    doc: Output in bed format
-    inputBinding:
-      position: 103
-      prefix: -bed
 outputs:
-  - id: output_bedgraphpack
+  - id: output_bedgraph
     type: File
-    doc: Output packed bedGraph file
+    doc: Packed bedGraph file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_bedgraph)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bedgraphpack:482--h0b57e2e_0

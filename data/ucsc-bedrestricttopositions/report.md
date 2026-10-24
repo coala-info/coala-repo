@@ -1,5 +1,11 @@
 # ucsc-bedrestricttopositions CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bedrestricttopositions | PASS |  |
+
 ## ucsc-bedrestricttopositions
 
 ### Tool Description
@@ -18,12 +24,11 @@ Restrict BED features to positions in another BED file. Note: The provided input
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-bedrestricttopositions:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:92e548c3c28750d18e7e461581cbaaa68cac6891273fe8798dc64a48882d7160: unpack entry: usr/local/lib/libquadmath.so.0.0.0: unpack to regular file: short write: write /tmp/build-temp-3464942766/rootfs/usr/local/lib/libquadmath.so.0.0.0: no space left on device
+bedRestrictToPositions - Filter bed file, restricting to only ones that match chrom/start/ends specified in restrict.bed file.
+usage:
+   bedRestrictToPositions in.bed restrict.bed out.bed
+options:
+   -xxx=XXX
 ```
 
 ## Metadata

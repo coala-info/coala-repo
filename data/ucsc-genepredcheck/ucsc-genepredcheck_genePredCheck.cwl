@@ -7,8 +7,8 @@ inputs:
   - id: file_tbl
     type:
       type: array
-      items: string
-    doc: File or table to check
+      items: File
+    doc: genePred file(s) to check
     inputBinding:
       position: 1
   - id: chrom_sizes
@@ -35,7 +35,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: summary
+    type: stderr
+    doc: Check summary (genePredCheck writes the checked and failed counts to stderr)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-genepredcheck:482--h0b57e2e_0
 stdout: ucsc-genepredcheck_genePredCheck.out
+stderr: ucsc-genepredcheck_genePredCheck.err

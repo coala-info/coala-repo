@@ -1,5 +1,11 @@
 # ucsc-bedtogenepred CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-bedtogenepred | PASS |  |
+
 ## ucsc-bedtogenepred
 
 ### Tool Description
@@ -18,34 +24,15 @@ Convert a BED file to a genePred file.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-bedtogenepred:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:bb370aa66711a632dd558d1cd4488ededeb81b432288ac8528d7893c3934b649: unpack entry: usr/local/lib/libmysqlclient.so.18.4.0: unpack to regular file: short write: write /tmp/build-temp-2617389654/rootfs/usr/local/lib/libmysqlclient.so.18.4.0: no space left on device
+bedToGenePred - convert bed format files to genePred format
+usage:
+   bedToGenePred bedFile genePredFile
+
+Convert a bed file to a genePred file. If BED has at least 12 columns,
+then a genePred with blocks is created. Otherwise single-exon genePreds are
+created.
 ```
 
 ## Metadata
 - **Skill**: not generated
-
-## ucsc-bedtogenepred_genePredCheck
-
-### Tool Description
-Validate genePred files, checking for various errors such as overlapping exons, invalid coordinates, and consistency with chromosome sizes.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-bedtogenepred:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-bedtogenepred/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-bedtogenepred:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:bb370aa66711a632dd558d1cd4488ededeb81b432288ac8528d7893c3934b649: unpack entry: usr/local/lib/libmysqlclient.so.18.4.0: unpack to regular file: short write: write /tmp/build-temp-3684581816/rootfs/usr/local/lib/libmysqlclient.so.18.4.0: no space left on device
-```
 

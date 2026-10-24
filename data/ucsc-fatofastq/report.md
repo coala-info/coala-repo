@@ -1,5 +1,11 @@
 # ucsc-fatofastq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fatofastq | PASS |  |
+
 ## ucsc-fatofastq
 
 ### Tool Description

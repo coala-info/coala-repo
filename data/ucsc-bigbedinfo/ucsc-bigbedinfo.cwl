@@ -9,30 +9,55 @@ inputs:
     doc: The bigBed file to provide information for.
     inputBinding:
       position: 1
+  - id: udc_dir
+    type:
+      - 'null'
+      - string
+    doc: Place to put cache for remote bigBed/bigWigs
+    inputBinding:
+      position: 101
+      prefix: -udcDir=
+      separate: false
   - id: chroms
     type:
       - 'null'
       - boolean
-    doc: List all chromosomes in the file.
+    doc: List all chromosomes and their sizes.
     inputBinding:
-      position: 102
+      position: 101
       prefix: -chroms
+  - id: zooms
+    type:
+      - 'null'
+      - boolean
+    doc: List all zoom levels and their sizes.
+    inputBinding:
+      position: 101
+      prefix: -zooms
+  - id: as
+    type:
+      - 'null'
+      - boolean
+    doc: Get autoSql spec.
+    inputBinding:
+      position: 101
+      prefix: -as
+  - id: as_out
+    type:
+      - 'null'
+      - boolean
+    doc: Output only autoSql spec.
+    inputBinding:
+      position: 101
+      prefix: -asOut
   - id: extra_index
     type:
       - 'null'
       - boolean
-    doc: List all extra indices.
+    doc: List all the extra indexes.
     inputBinding:
-      position: 102
+      position: 101
       prefix: -extraIndex
-  - id: udc_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Place to keep udc cache.
-    inputBinding:
-      position: 102
-      prefix: -udcDir
 outputs:
   - id: stdout
     type: stdout

@@ -1,5 +1,11 @@
 # ucsc-chaintopslbasic CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chaintopslbasic | PASS |  |
+
 ## ucsc-chaintopslbasic
 
 ### Tool Description

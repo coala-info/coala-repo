@@ -1,5 +1,11 @@
 # ucsc-headrest CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-headrest | PASS | CWL fixed (command is headRest, one input file); output equals tail -n +13 of the nf-core GTF |
+
 ## ucsc-headrest
 
 ### Tool Description

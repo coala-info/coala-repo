@@ -18,6 +18,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: -ambiguousToN
+  - id: output_name
+    type: string
+    doc: Name of the output VCF file
+    inputBinding:
+      position: 2
   - id: exclude_file
     type:
       - 'null'
@@ -156,7 +161,7 @@ outputs:
     type: File
     doc: Output VCF file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-fatovcf:482--hdc0a859_1

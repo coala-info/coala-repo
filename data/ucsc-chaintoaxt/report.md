@@ -1,5 +1,11 @@
 # ucsc-chaintoaxt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chaintoaxt_chainToAxt | PASS |  |
+
 ## ucsc-chaintoaxt_chainToAxt
 
 ### Tool Description

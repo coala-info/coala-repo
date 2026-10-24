@@ -1,5 +1,11 @@
 # ucsc-fatovcf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fatovcf_faToVcf | PASS |  |
+
 ## ucsc-fatovcf_faToVcf
 
 ### Tool Description

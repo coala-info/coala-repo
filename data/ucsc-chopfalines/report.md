@@ -1,5 +1,11 @@
 # ucsc-chopfalines CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chopfalines | Failed | tool bug: chopFaLines prints 'All for now', exits 255 and writes an empty output file on every input |
+
 ## ucsc-chopfalines
 
 ### Tool Description

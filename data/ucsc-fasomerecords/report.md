@@ -1,5 +1,11 @@
 # ucsc-fasomerecords CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fasomerecords_faSomeRecords | PASS |  |
+
 ## ucsc-fasomerecords_faSomeRecords
 
 ### Tool Description

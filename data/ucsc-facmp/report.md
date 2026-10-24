@@ -1,5 +1,11 @@
 # ucsc-facmp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-facmp_faCmp | PASS | same files exit 0, planted base difference reported at the right base (exit 1 accepted by successCodes as documented), -softMask works |
+
 ## ucsc-facmp_faCmp
 
 ### Tool Description

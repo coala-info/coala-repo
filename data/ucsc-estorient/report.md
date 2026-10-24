@@ -1,5 +1,11 @@
 # ucsc-estorient CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-estorient_estOrient | PASS | synthetic data: real blat PSL of nf-core transcripts with a planted estOrientInfo file (-fileInput mode); strand flips and dropped ESTs match; database mode not tested |
+
 ## ucsc-estorient_estOrient
 
 ### Tool Description

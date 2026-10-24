@@ -1,5 +1,11 @@
 # ucsc-genepredtogtf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-genepredtogtf | PASS |  |
+
 ## ucsc-genepredtogtf
 
 ### Tool Description

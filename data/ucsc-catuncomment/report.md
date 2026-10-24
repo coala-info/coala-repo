@@ -1,5 +1,11 @@
 # ucsc-catuncomment CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-catuncomment | PASS |  |
+
 ## ucsc-catuncomment
 
 ### Tool Description

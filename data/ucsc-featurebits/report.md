@@ -1,5 +1,11 @@
 # ucsc-featurebits CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-featurebits_featureBits | PASS |  |
+
 ## ucsc-featurebits_featureBits
 
 ### Tool Description

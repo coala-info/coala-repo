@@ -1,5 +1,11 @@
 # ucsc-fapolyasizes CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fapolyasizes | PASS | synthetic data: polyA tails and polyT heads planted on real transcripts; sizes agree with the planted lengths (the tool leaves the last base and is conservative, so counts are a little lower) |
+
 ## ucsc-fapolyasizes
 
 ### Tool Description

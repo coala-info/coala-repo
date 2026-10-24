@@ -1,27 +1,32 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bedRestrictToPositions
+baseCommand:
+  - bedRestrictToPositions
 label: ucsc-bedrestricttopositions
-doc: "Restrict BED features to positions in another BED file. Note: The provided input
-  text was a system error log; this definition is based on the standard usage of the
-  tool.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Filter bed file, restricting to only ones that match chrom/start/ends specified
+  in restrict.bed file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
   - id: in_bed
     type: File
-    doc: Input BED file containing features to be restricted.
+    doc: Input BED file to filter.
     inputBinding:
       position: 1
-  - id: positions_bed
+  - id: restrict_bed
     type: File
-    doc: BED file containing positions to restrict to.
+    doc: BED file with the chrom/start/end positions to keep.
     inputBinding:
       position: 2
-outputs:
   - id: out_bed
+    type: string
+    doc: Name of the output BED file.
+    inputBinding:
+      position: 3
+outputs:
+  - id: output_bed
     type: File
-    doc: Output BED file.
+    doc: Records of the input whose chrom/start/end are in the restrict file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_bed)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bedrestricttopositions:482--h0b57e2e_0

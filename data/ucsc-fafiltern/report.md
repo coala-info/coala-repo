@@ -1,5 +1,11 @@
 # ucsc-fafiltern CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-fafiltern | PASS | synthetic data: N-rich records planted into real transcripts; N filter, -uniq with a blat self PSL and -out with a planted RepeatMasker file all checked |
+
 ## ucsc-fafiltern
 
 ### Tool Description

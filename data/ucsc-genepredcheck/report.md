@@ -1,5 +1,11 @@
 # ucsc-genepredcheck CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-genepredcheck_genePredCheck | PASS |  |
+
 ## ucsc-genepredcheck_genePredCheck
 
 ### Tool Description

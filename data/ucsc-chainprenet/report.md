@@ -1,5 +1,11 @@
 # ucsc-chainprenet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-chainprenet_chainPreNet | PASS |  |
+
 ## ucsc-chainprenet_chainPreNet
 
 ### Tool Description

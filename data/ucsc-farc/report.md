@@ -1,5 +1,11 @@
 # ucsc-farc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-farc_faRc | PASS |  |
+
 ## ucsc-farc_faRc
 
 ### Tool Description

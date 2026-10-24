@@ -1,5 +1,11 @@
 # ucsc-endsinlf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-endsinlf | PASS | files that end in a line feed exit 0; a file without one exits 255 (checked), and -zeroOk accepts an empty file |
+
 ## ucsc-endsinlf
 
 ### Tool Description

@@ -6,17 +6,13 @@ doc: "Standalone BLAT v. 39x1 fast sequence search command line tool\n\nTool hom
   http://hgdownload.cse.ucsc.edu/admin/exe/"
 inputs:
   - id: database
-    type:
-      type: array
-      items: File
-    doc: Database file(s) (.fa, .nib, or .2bit)
+    type: File
+    doc: Database file (.fa, .nib or .2bit), or a list of these files with one file name per line
     inputBinding:
       position: 1
   - id: query
-    type:
-      type: array
-      items: File
-    doc: Query file(s) (.fa, .nib, or .2bit)
+    type: File
+    doc: Query file (.fa, .nib or .2bit), or a list of these files with one file name per line
     inputBinding:
       position: 2
   - id: output_psl
@@ -71,8 +67,8 @@ inputs:
   - id: make_ooc
     type:
       - 'null'
-      - File
-    doc: Make overused tile file. Target needs to be complete genome.
+      - string
+    doc: Name of the overused tile file to make (N.ooc). Target needs to be complete genome.
     inputBinding:
       position: 103
       prefix: -makeOoc=
@@ -187,15 +183,6 @@ inputs:
       position: 103
       prefix: -ooc=
       separate: false
-  - id: ooc_tile_file
-    type:
-      - 'null'
-      - File
-    doc: Use overused tile file N.ooc
-    inputBinding:
-      position: 103
-      prefix: -ooc=
-      separate: false
   - id: output_format
     type:
       - 'null'
@@ -294,6 +281,13 @@ outputs:
     doc: Name of the output PSL file
     outputBinding:
       glob: '$(inputs.output_psl)'
+  - id: out_make_ooc
+    type:
+      - 'null'
+      - File
+    doc: Overused tile file written by -makeOoc
+    outputBinding:
+      glob: $(inputs.make_ooc)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-blat:482--hdc0a859_0

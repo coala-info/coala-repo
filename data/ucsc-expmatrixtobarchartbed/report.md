@@ -1,5 +1,11 @@
 # ucsc-expmatrixtobarchartbed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-expmatrixtobarchartbed_expMatrixToBarchartBed | Failed | image problem: the script crashes with TypeError: NamedTemporaryFile() got an unexpected keyword argument 'bufsize' (Python 3.13 in the image) |
+
 ## ucsc-expmatrixtobarchartbed_expMatrixToBarchartBed
 
 ### Tool Description

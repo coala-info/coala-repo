@@ -1,5 +1,11 @@
 # ucsc-hgloadoutjoined CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgloadoutjoined_hgLoadOutJoined | PASS | Tested with -tabFile (no database needed) on the kent test RepeatMasker .out.gz (an older-style file; 198 rows, score, coordinates and divergence match an independent parse); database loading not tested (CWL fixed: tabFile is an output name, hg.conf added) |
+
 ## ucsc-hgloadoutjoined_hgLoadOutJoined
 
 ### Tool Description

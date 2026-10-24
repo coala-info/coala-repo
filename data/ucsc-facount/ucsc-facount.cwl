@@ -1,46 +1,45 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-facount
+baseCommand: faCount
 label: ucsc-facount
-doc: "Count features in a FASTA file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Count base statistics and CpGs in FA files.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: fasta_file
-    type: File
-    doc: Input FASTA file
-    inputBinding:
-      position: 1
-  - id: threads
+  - id: files
     type:
-      - 'null'
-      - int
-    doc: Number of threads to use [1]
+      type: array
+      items: File
+    doc: Input FASTA file(s).
     inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbose
+      position: 10
+  - id: summary
     type:
       - 'null'
       - boolean
-    doc: Print verbose output
+    doc: Show only summary statistics.
     inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
+      position: 1
+      prefix: -summary
+  - id: dinuc
     type:
       - 'null'
-      - File
-    doc: Output file name [stdout]
-    outputBinding:
-      glob: $(inputs.output_file_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      - boolean
+    doc: Include statistics on dinucleotide frequencies.
+    inputBinding:
+      position: 2
+      prefix: -dinuc
+  - id: strands
+    type:
+      - 'null'
+      - boolean
+    doc: Count bases on both strands.
+    inputBinding:
+      position: 3
+      prefix: -strands
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Table of base counts per sequence
+stdout: ucsc-facount.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-facount:482--h0b57e2e_0

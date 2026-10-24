@@ -1,5 +1,11 @@
 # ucsc-hggoldgapgl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hggoldgapgl_hgGoldGapGl | PASS | Tested in -noLoad mode (no database needed) on an AGP made from real chr22 slices; gold.tab and gap.tab rows match the AGP with zero-based starts and UCSC bins (CWL fixed: input is an AGP file or directory, -verbose=, hg.conf optional); database loading not tested |
+
 ## ucsc-hggoldgapgl_hgGoldGapGl
 
 ### Tool Description

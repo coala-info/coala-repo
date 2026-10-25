@@ -14,12 +14,17 @@ inputs:
     doc: File with one species per line specifying the order
     inputBinding:
       position: 2
-outputs:
   - id: maf_out
+    type: string
+    doc: Output MAF file name
+    inputBinding:
+      position: 3
+outputs:
+  - id: out_maf_out
     type: File
     doc: Output MAF file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.maf_out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-maforder:482--h0b57e2e_0

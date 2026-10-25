@@ -1,5 +1,11 @@
 # ucsc-qacagplift CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-qacagplift | PASS | synthetic data: AGP file written by hand over real read quality scores |
+
 ## ucsc-qacagplift
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-maftosnpbed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-maftosnpbed_mafToSnpBed | Failed | tool bug: on the real LAST MAF it reports matching soft-masked (lowercase vs uppercase) bases as SNPs; the same MAF in uppercase gives no SNPs and a planted SNP is found |
+
 ## ucsc-maftosnpbed_mafToSnpBed
 
 ### Tool Description

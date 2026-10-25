@@ -1,5 +1,11 @@
 # ucsc-pslpartition CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslpartition | PASS |  |
+
 ## ucsc-pslpartition
 
 ### Tool Description

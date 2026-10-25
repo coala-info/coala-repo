@@ -22,12 +22,17 @@ inputs:
       column of the output
     inputBinding:
       position: 3
-outputs:
   - id: out_tsv
+    type: string
+    doc: output tsv file name
+    inputBinding:
+      position: 4
+outputs:
+  - id: out_out_tsv
     type: File
     doc: output tsv file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_tsv)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-matrixmarkettotsv:482--h0b57e2e_0

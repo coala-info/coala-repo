@@ -1,5 +1,11 @@
 # ucsc-lavtoaxt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-lavtoaxt | PASS |  |
+
 ## ucsc-lavtoaxt
 
 ### Tool Description
@@ -18,14 +24,17 @@ Convert lav format to axt format. targetDir and queryDir can be either a directo
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/ucsc-lavtoaxt:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-lavtoaxt
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-0bfd133f769f: Pulling fs layer
-0bfd133f769f: Waiting
-docker: write /var/lib/docker/tmp/GetImageBlob1817164444: no space left on device
-
-Run 'docker run --help' for more information
+lavToAxt - Convert blastz lav file to an axt file (which includes sequence)
+usage:
+   lavToAxt in.lav tNibDir qNibDir out.axt
+Where tNibDir/qNibDir are either directories full of nib files, or a single
+twoBit file
+options:
+   -fa  qNibDir is interpreted as a fasta file of multiple dna seq instead of directory of nibs
+   -tfa tNibDir is interpreted as a fasta file of multiple dna seq instead of directory of nibs
+   -dropSelf  drops alignment blocks on the diagonal for self alignments
+   -scoreScheme=fileName Read the scoring matrix from a blastz-format file.
+                (only used in conjunction with -dropSelf, to rescore 
+                alignments when blocks are dropped)
 ```
 

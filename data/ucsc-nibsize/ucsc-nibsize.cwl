@@ -4,9 +4,11 @@ baseCommand: nibSize
 label: ucsc-nibsize
 doc: "Find the size of a .nib file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: nib_file
-    type: File
-    doc: The .nib file to check the size of.
+  - id: nib_files
+    type:
+      type: array
+      items: File
+    doc: One or more .nib files to print the size of.
     inputBinding:
       position: 1
 outputs:

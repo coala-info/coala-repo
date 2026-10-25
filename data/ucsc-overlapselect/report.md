@@ -1,5 +1,11 @@
 # ucsc-overlapselect CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-overlapselect | Failed | tool bug: image build 482 finds no overlaps even for chr1:100-200 vs chr1:150-250 (the real kent test data also gives empty output); CWL was rewritten from the help and runs without error. |
+
 ## ucsc-overlapselect
 
 ### Tool Description

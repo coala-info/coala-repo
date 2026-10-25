@@ -5,7 +5,7 @@ label: ucsc-paranodestop_paraNodeStop
 doc: "Shut down parasol node daemons on a list of machines.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
 inputs:
   - id: machine_list
-    type: string
+    type: File
     doc: List of machines
     inputBinding:
       position: 1

@@ -1,5 +1,11 @@
 # ucsc-netchainsubset CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-netchainsubset_netChainSubset | PASS | Real chainNet net and chain slice; chains split at net fills as expected, gap file written; -type crashes on a net without type fields (net from chainNet). |
+
 ## ucsc-netchainsubset_netChainSubset
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-paranodestatus CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-paranodestatus_paraNodeStatus | Not completed | needs a Parasol cluster: no paraNode is running to report on (command line is accepted, reports 0 running). |
+
 ## ucsc-paranodestatus_paraNodeStatus
 
 ### Tool Description

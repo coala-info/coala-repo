@@ -1,5 +1,11 @@
 # ucsc-parahub CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-parahub_paraHub | Not completed | needs a Parasol cluster: paraHub starts as a long-running server and accepts the command line, but no nodes or jobs exist to test. |
+
 ## ucsc-parahub_paraHub
 
 ### Tool Description

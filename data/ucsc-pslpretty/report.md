@@ -1,5 +1,11 @@
 # ucsc-pslpretty CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslpretty | PASS |  |
+
 ## ucsc-pslpretty
 
 ### Tool Description

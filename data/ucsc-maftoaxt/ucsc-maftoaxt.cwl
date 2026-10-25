@@ -2,53 +2,43 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mafToAxt
 label: ucsc-maftoaxt
-doc: "Convert MAF file to AXT file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Convert from maf to axt format\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_maf
+  - id: in_maf
     type: File
     doc: Input MAF file
     inputBinding:
       position: 1
-  - id: target_dir
-    type: Directory
-    doc: Directory containing target sequences (usually .2bit or .fa files)
+  - id: t_name
+    type: string
+    doc: Name of the target sequence. It should be the maf target since it must always
+      be oriented in "+" direction. Use 'first' to always use the first sequence.
     inputBinding:
       position: 2
-  - id: query_dir
-    type: Directory
-    doc: Directory containing query sequences
+  - id: q_name
+    type: string
+    doc: Name of the query sequence
     inputBinding:
       position: 3
-  - id: bed_query
-    type:
-      - 'null'
-      - File
-    doc: Only include regions in this BED file for the query
+  - id: output
+    type: string
+    doc: Output AXT file name
     inputBinding:
-      position: 104
-      prefix: -bedQuery
-  - id: bed_target
-    type:
-      - 'null'
-      - File
-    doc: Only include regions in this BED file for the target
-    inputBinding:
-      position: 104
-      prefix: -bedTarget
+      position: 4
   - id: strip_db
     type:
       - 'null'
       - boolean
-    doc: Strip database name from sequence names
+    doc: Strip names from start to first period.
     inputBinding:
-      position: 104
+      position: 101
       prefix: -stripDb
 outputs:
-  - id: output_axt
+  - id: out_output
     type: File
     doc: Output AXT file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-maftoaxt:482--h0b57e2e_0

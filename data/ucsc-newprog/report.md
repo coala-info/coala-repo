@@ -1,5 +1,11 @@
 # ucsc-newprog CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-newprog_newProg | PASS | Fixed output (directory with generated skeleton, not stdout); progName.c and makefile created, -cgi and -jkhgap change the skeleton. |
+
 ## ucsc-newprog_newProg
 
 ### Tool Description

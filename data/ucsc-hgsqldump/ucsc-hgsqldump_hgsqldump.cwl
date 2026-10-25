@@ -44,11 +44,12 @@ inputs:
   - id: tab
     type:
       - 'null'
-      - Directory
-    doc: Directory for tab-separated output files
+      - string
+    doc: Directory for tab-separated output files (must be writable by mysql)
     inputBinding:
       position: 103
-      prefix: --tab
+      prefix: --tab=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

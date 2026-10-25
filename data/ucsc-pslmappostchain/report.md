@@ -1,5 +1,11 @@
 # ucsc-pslmappostchain CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslmappostchain | Not completed | runs on real blat PSL and a real chain slice, but with this simple chain the output equals the input, so the post-chaining could not be shown. |
+
 ## ucsc-pslmappostchain
 
 ### Tool Description

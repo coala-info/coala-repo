@@ -1,5 +1,11 @@
 # ucsc-maffrags CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-maffrags_mafFrags | PASS |  |
+
 ## ucsc-maffrags_mafFrags
 
 ### Tool Description

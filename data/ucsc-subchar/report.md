@@ -1,5 +1,11 @@
 # ucsc-subchar CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-subchar | PASS |  |
+
 ## ucsc-subchar
 
 ### Tool Description

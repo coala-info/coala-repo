@@ -50,7 +50,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log to file instead of syslog.
     inputBinding:
       position: 102

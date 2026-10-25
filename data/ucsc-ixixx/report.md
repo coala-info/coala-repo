@@ -1,5 +1,11 @@
 # ucsc-ixixx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-ixixx | PASS |  |
+
 ## ucsc-ixixx
 
 ### Tool Description
@@ -18,11 +24,16 @@ Create indices for word searches. The input is a text file where each line start
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-ixixx:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+ixIxx - Create indices for simple line-oriented file of format 
+<symbol> <free text>
+usage:
+   ixIxx in.text out.ix out.ixx
+Where out.ix is a word index, and out.ixx is an index into the index.
+options:
+   -prefixSize=N Size of prefix to index on in ixx.  Default is 5.
+   -binSize=N Size of bins in ixx.  Default is 64k.
+   -maxWordLength=N Maximum allowed word length. 
+     Words with more characters than this limit are ignored and will not appear in index or be searchable.  Default is 31.
 ```
 
 

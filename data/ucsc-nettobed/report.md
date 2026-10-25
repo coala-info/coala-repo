@@ -1,5 +1,11 @@
 # ucsc-nettobed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-nettobed | PASS | Rewrote CWL (output bed argument, -maxGap, -minFill); real net gives bed lines matching the net fill coordinates, and -maxGap breaks at the 150000 gap. |
+
 ## ucsc-nettobed
 
 ### Tool Description

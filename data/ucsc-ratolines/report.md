@@ -1,5 +1,11 @@
 # ucsc-ratolines CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-ratolines_raToLines | PASS |  |
+
 ## ucsc-ratolines_raToLines
 
 ### Tool Description

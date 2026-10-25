@@ -1,5 +1,11 @@
 # ucsc-positionaltblcheck CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-positionaltblcheck_positionalTblCheck | PASS |  |
+
 ## ucsc-positionaltblcheck_positionalTblCheck
 
 ### Tool Description

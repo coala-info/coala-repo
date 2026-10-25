@@ -1,5 +1,11 @@
 # ucsc-mafsinregion CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-mafsinregion | PASS |  |
+
 ## ucsc-mafsinregion
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-parafetch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-parafetch | PASS | Rewrote CWL (retries argument, outPath, -newer, -progress, NetworkAccess); real UCSC chain file downloaded with 2 connections is identical to the earlier copy. |
+
 ## ucsc-parafetch
 
 ### Tool Description

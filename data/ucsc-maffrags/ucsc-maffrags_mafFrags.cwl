@@ -25,6 +25,19 @@ inputs:
     doc: Output MAF file
     inputBinding:
       position: 4
+  - id: hg_conf
+    type: File
+    doc: hg.conf file (mode 600) with the db.host, db.user and db.password of the
+      UCSC MySQL server that holds the database and the track table. It is staged
+      as .hg.conf in the working directory. Add gbdbLoc1=gbdb/ to it when the
+      gbdb input is used.
+  - id: gbdb
+    type:
+      - 'null'
+      - Directory
+    doc: Local copy of the /gbdb tree (for example gbdb/hg38/hg38.2bit and the MAF
+      files of the track). It is staged as gbdb in the working directory, so
+      gbdbLoc1=gbdb/ in hg.conf points to it.
   - id: bed12
     type:
       - 'null'
@@ -81,6 +94,16 @@ outputs:
     doc: Output MAF file
     outputBinding:
       glob: '$(inputs.out_maf)'
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: .hg.conf
+        entry: $(inputs.hg_conf)
+      - entryname: gbdb
+        entry: $(inputs.gbdb)
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-maffrags:482--h0b57e2e_0

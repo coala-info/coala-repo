@@ -1,5 +1,11 @@
 # ucsc-mktime CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-mktime_mktime | PASS |  |
+
 ## ucsc-mktime_mktime
 
 ### Tool Description

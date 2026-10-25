@@ -1,5 +1,11 @@
 # ucsc-qatoqac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-qatoqac_qaToQac | PASS |  |
+
 ## ucsc-qatoqac_qaToQac
 
 ### Tool Description

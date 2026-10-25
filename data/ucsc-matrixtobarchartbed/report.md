@@ -1,5 +1,11 @@
 # ucsc-matrixtobarchartbed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-matrixtobarchartbed | PASS | synthetic data: the mapping BED has made-up coordinates for the 25 rows of a real nf-core 10x expression matrix. |
+
 ## ucsc-matrixtobarchartbed
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-mafcoverage CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-mafcoverage | PASS |  |
+
 ## ucsc-mafcoverage
 
 ### Tool Description
@@ -18,14 +24,13 @@ Extract coverage information from a MAF file.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/ucsc-mafcoverage:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-mafcoverage
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-48533acdfeec: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob3778207898: no space left on device
-
-Run 'docker run --help' for more information
+mafCoverage - Analyse coverage by maf files - chromosome by 
+chromosome and genome-wide.
+usage:
+   mafCoverage database mafFile
+Note maf file must be sorted by chromosome,tStart
+   -restrict=restrict.bed Restrict to parts in restrict.bed
+   -count=N Number of matching species to count coverage. Default = 3
 ```
 
 

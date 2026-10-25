@@ -1,5 +1,11 @@
 # ucsc-splitfilebycolumn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-splitfilebycolumn_splitFileByColumn | PASS |  |
+
 ## ucsc-splitfilebycolumn_splitFileByColumn
 
 ### Tool Description

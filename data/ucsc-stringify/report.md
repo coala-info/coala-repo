@@ -1,5 +1,11 @@
 # ucsc-stringify CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-stringify_stringify | PASS |  |
+
 ## ucsc-stringify_stringify
 
 ### Tool Description

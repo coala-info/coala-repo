@@ -10,18 +10,24 @@ inputs:
     inputBinding:
       position: 1
   - id: maf_table
-    type: string
-    doc: name of maf file table or bigMaf if ends in .bigMaf or .bb
+    type:
+      - string
+      - File
+    doc: name of maf file table (string), or a bigMaf file if its name ends in .bigMaf
+      or .bb
     inputBinding:
       position: 2
   - id: gene_pred_table
-    type: string
-    doc: name of the genePred table or file if useFile is on or ends in .gp
+    type:
+      - string
+      - File
+    doc: name of the genePred table (string), or a genePred file if useFile is on
+      or its name ends in .gp
     inputBinding:
       position: 3
   - id: species_list
-    type: string
-    doc: list of species names
+    type: File
+    doc: file with the list of species names
     inputBinding:
       position: 4
   - id: output
@@ -132,10 +138,13 @@ inputs:
       position: 106
       prefix: -useFile
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_output
+    type: File
+    doc: Output file with the protein alignments
+    outputBinding:
+      glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-mafgene:490--ha62e71f_1
-stdout: ucsc-mafgene_mafGene.out

@@ -2,38 +2,52 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pslMrnaCover
 label: ucsc-pslmrnacover
-doc: "Calculate mRNA coverage from PSLs. Note: The provided input text contained a
-  system error (no space left on device) rather than the help text; the following
-  arguments are based on the standard UCSC pslMrnaCover utility.\n\nTool homepage:
-  https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Make histogram of coverage percentage of mRNA in psl.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: psl_in
+  - id: mrna_psl
     type: File
-    doc: Input PSL file
+    doc: "PSL file of mRNA alignments."
     inputBinding:
       position: 1
-  - id: ignore_size
-    type:
-      - 'null'
-      - boolean
-    doc: Ignore mRNA size in PSL
-    inputBinding:
-      position: 102
-      prefix: -ignoreSize
-  - id: min_cover
-    type:
-      - 'null'
-      - float
-    doc: Minimum coverage to keep (0.0 to 1.0)
-    inputBinding:
-      position: 102
-      prefix: -minCover
-outputs:
-  - id: out_psl
+  - id: mrna_fa
     type: File
-    doc: Output PSL file
+    doc: "FASTA file of the mRNAs."
+    inputBinding:
+      position: 2
+  - id: min_size
+    type:
+      - 'null'
+      - int
+    doc: "Minimum size of mRNA considered (default 100)."
+    inputBinding:
+      position: 0
+      prefix: "-minSize="
+      separate: false
+  - id: list_zero
+    type:
+      - 'null'
+      - string
+    doc: "List accessions that do not align in this file."
+    inputBinding:
+      position: 0
+      prefix: "-listZero="
+      separate: false
+outputs:
+  - id: zero_list
+    type:
+      - 'null'
+      - File
+    doc: "Accessions that do not align."
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.list_zero)
+  - id: stdout
+    type: stdout
+    doc: "Standard output"
+  - id: stderr
+    type: stderr
+    doc: "Standard error"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-pslmrnacover:482--h0b57e2e_0
+stdout: ucsc-pslmrnacover.out
+stderr: ucsc-pslmrnacover.err

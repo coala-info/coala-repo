@@ -1,5 +1,11 @@
 # ucsc-psltobed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-psltobed | PASS |  |
+
 ## ucsc-psltobed
 
 ### Tool Description

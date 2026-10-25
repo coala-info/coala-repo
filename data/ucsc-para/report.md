@@ -1,5 +1,11 @@
 # ucsc-para CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-para_para | Not completed | needs a Parasol cluster: para create waits for a paraHub that is not running (command line is accepted). |
+
 ## ucsc-para_para
 
 ### Tool Description

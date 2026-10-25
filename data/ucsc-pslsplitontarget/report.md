@@ -1,5 +1,11 @@
 # ucsc-pslsplitontarget CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslsplitontarget | PASS |  |
+
 ## ucsc-pslsplitontarget
 
 ### Tool Description

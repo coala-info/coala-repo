@@ -2,26 +2,32 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: oligoMatch
 label: ucsc-oligomatch
-doc: "Find perfect matches of oligos in a sequence. The tool searches for occurrences
-  of short DNA sequences (oligos) within a larger genomic sequence and outputs the
-  results in BED format.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "find perfect matches in sequence. The oligos and the sequence can be .fa, .nib,
+  or .2bit files. The oligos may contain IUPAC codes.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: oligo_file
+  - id: oligos
     type: File
-    doc: Input file containing oligos (one per line or in FASTA format)
+    doc: Oligos as a .fa, .nib or .2bit file (may contain IUPAC codes)
     inputBinding:
       position: 1
-  - id: sequence_file
+  - id: sequence
     type: File
-    doc: Sequence file to search in (FASTA, nib, or 2bit format)
+    doc: Sequence to search in, as a .fa, .nib or .2bit file
     inputBinding:
       position: 2
+  - id: out_bed
+    type: string
+    doc: Output bed file
+    inputBinding:
+      position: 3
 outputs:
   - id: output_file
     type: File
-    doc: Output file (usually in BED format)
+    doc: Output bed file with the matches
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_bed)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-oligomatch:482--h0b57e2e_0

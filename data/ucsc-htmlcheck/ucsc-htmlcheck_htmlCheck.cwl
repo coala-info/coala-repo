@@ -34,6 +34,8 @@ inputs:
       <cookieName><space><value><newLine>
     inputBinding:
       position: 103
+      prefix: -cookies=
+      separate: false
   - id: with_src
     type:
       - 'null'
@@ -41,10 +43,14 @@ inputs:
     doc: causes the get and checkLinks commands to also include SRC= links.
     inputBinding:
       position: 103
+      prefix: -withSrc
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-htmlcheck:482--h0b57e2e_0

@@ -1,5 +1,11 @@
 # ucsc-paranode CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-paranode_paraNode | Not completed | needs a Parasol cluster: paraNode starts as a long-running server and accepts the command line, but no hub exists to send jobs. |
+
 ## ucsc-paranode_paraNode
 
 ### Tool Description

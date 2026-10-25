@@ -7,7 +7,7 @@ doc: "finds SNPs in MAF and builds a bed with their functional consequence\n\nTo
 inputs:
   - id: database
     type: string
-    doc: database
+    doc: Database (genome assembly) name, used to fetch sequence and gene information
     inputBinding:
       position: 1
   - id: input_maf
@@ -17,7 +17,7 @@ inputs:
       position: 2
   - id: input_gp
     type: File
-    doc: input.gp
+    doc: input.gp (gene predictions)
     inputBinding:
       position: 3
   - id: output_bed
@@ -25,20 +25,12 @@ inputs:
     doc: output.bed
     inputBinding:
       position: 4
-  - id: xxx
-    type:
-      - 'null'
-      - string
-    inputBinding:
-      position: 104
-      prefix: -xxx=
-      separate: false
 outputs:
   - id: out_output_bed
     type: File
     doc: output.bed
     outputBinding:
-      glob: '$(inputs.output_bed)'
+      glob: $(inputs.output_bed)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-maftosnpbed:482--h0b57e2e_0

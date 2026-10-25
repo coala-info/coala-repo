@@ -1,5 +1,11 @@
 # ucsc-htmlcheck CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-htmlcheck_htmlCheck | PASS |  |
+
 ## ucsc-htmlcheck_htmlCheck
 
 ### Tool Description

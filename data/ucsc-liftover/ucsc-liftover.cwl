@@ -11,9 +11,7 @@ inputs:
     inputBinding:
       position: 1
   - id: map_chain
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The map.chain file has the old genome as the target and the new genome 
       as the query
     inputBinding:
@@ -156,7 +154,8 @@ inputs:
       (default 0)
     inputBinding:
       position: 105
-      prefix: -minChainT
+      prefix: -minChainT=
+      separate: false
   - id: min_chain_q
     type:
       - 'null'
@@ -165,7 +164,8 @@ inputs:
       (default 0)
     inputBinding:
       position: 105
-      prefix: -minChainQ
+      prefix: -minChainQ=
+      separate: false
   - id: min_size_t
     type:
       - 'null'
@@ -173,7 +173,8 @@ inputs:
     doc: deprecated synonym for -minChainT (ENCODE compat.)
     inputBinding:
       position: 105
-      prefix: -minSizeT
+      prefix: -minSizeT=
+      separate: false
   - id: min_size_q
     type:
       - 'null'
@@ -181,7 +182,8 @@ inputs:
     doc: Min matching region size in query with -multiple.
     inputBinding:
       position: 105
-      prefix: -minSizeQ
+      prefix: -minSizeQ=
+      separate: false
   - id: chain_table
     type:
       - 'null'
@@ -190,7 +192,8 @@ inputs:
       (preserves dups)
     inputBinding:
       position: 105
-      prefix: -chainTable
+      prefix: -chainTable=
+      separate: false
   - id: error_help
     type:
       - 'null'

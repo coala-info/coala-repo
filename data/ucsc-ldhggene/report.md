@@ -1,5 +1,11 @@
 # ucsc-ldhggene CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-ldhggene_ldHgGene | PASS |  |
+
 ## ucsc-ldhggene_ldHgGene
 
 ### Tool Description

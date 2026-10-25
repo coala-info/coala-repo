@@ -1,5 +1,11 @@
 # ucsc-netclass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-netclass | PASS | Rewrote CWL (database args, hg.conf for public UCSC MySQL, -noAr); real net classified for hg19/hg38; N counts match the 2bit. |
+
 ## ucsc-netclass
 
 ### Tool Description

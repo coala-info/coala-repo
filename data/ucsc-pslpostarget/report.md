@@ -1,5 +1,11 @@
 # ucsc-pslpostarget CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslpostarget | PASS |  |
+
 ## ucsc-pslpostarget
 
 ### Tool Description

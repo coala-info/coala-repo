@@ -1,5 +1,11 @@
 # ucsc-hgsqldump CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgsqldump_hgsqldump | Failed | image problem: hgsqldump calls mysqldump, which is not in the image (sqlExecProgProfile: exec failed). |
+
 ## ucsc-hgsqldump_hgsqldump
 
 ### Tool Description

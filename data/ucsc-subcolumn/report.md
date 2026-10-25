@@ -1,5 +1,11 @@
 # ucsc-subcolumn CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-subcolumn | PASS |  |
+
 ## ucsc-subcolumn
 
 ### Tool Description

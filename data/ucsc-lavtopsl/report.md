@@ -1,5 +1,11 @@
 # ucsc-lavtopsl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-lavtopsl_lavToPsl | PASS |  |
+
 ## ucsc-lavtopsl_lavToPsl
 
 ### Tool Description

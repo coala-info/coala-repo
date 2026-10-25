@@ -1,5 +1,11 @@
 # ucsc-pslswap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslswap | PASS |  |
+
 ## ucsc-pslswap
 
 ### Tool Description

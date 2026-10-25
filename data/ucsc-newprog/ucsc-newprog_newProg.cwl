@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: newProg
 label: ucsc-newprog_newProg
-doc: "make a new C source skeleton.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
+doc: "make a new C source skeleton. This makes a directory 'progName' and a file in it 'progName.c' with a standard skeleton.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
 inputs:
   - id: prog_name
     type: string
@@ -33,10 +33,13 @@ inputs:
       position: 103
       prefix: -jkhgap
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: program_dir
+    type: Directory
+    doc: Directory named after the program, holding the generated C skeleton
+    outputBinding:
+      glob: $(inputs.prog_name)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-newprog:482--h0b57e2e_0
-stdout: ucsc-newprog_newProg.out

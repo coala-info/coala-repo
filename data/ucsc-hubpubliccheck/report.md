@@ -1,5 +1,11 @@
 # ucsc-hubpubliccheck CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hubpubliccheck_hubPublicCheck | PASS |  |
+
 ## ucsc-hubpubliccheck_hubPublicCheck
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-oligomatch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-oligomatch | PASS | Rewrote CWL (output bed argument); IUPAC oligos on real hg19 chrM found at the expected plus and minus strand positions. |
+
 ## ucsc-oligomatch
 
 ### Tool Description

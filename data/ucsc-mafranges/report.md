@@ -1,5 +1,11 @@
 # ucsc-mafranges CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-mafranges | PASS |  |
+
 ## ucsc-mafranges
 
 ### Tool Description

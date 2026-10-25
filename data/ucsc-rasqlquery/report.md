@@ -1,5 +1,11 @@
 # ucsc-rasqlquery CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-rasqlquery | PASS |  |
+
 ## ucsc-rasqlquery
 
 ### Tool Description

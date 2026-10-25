@@ -1,5 +1,11 @@
 # ucsc-pslhisto CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslhisto_pslHisto | PASS |  |
+
 ## ucsc-pslhisto_pslHisto
 
 ### Tool Description

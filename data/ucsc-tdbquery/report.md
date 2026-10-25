@@ -1,5 +1,11 @@
 # ucsc-tdbquery CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-tdbquery_tdbQuery | PASS |  |
+
 ## ucsc-tdbquery_tdbQuery
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-maketablelist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-maketablelist_makeTableList | Not completed | needs a writable UCSC MySQL database: the command line is accepted and reads the public server, but CREATE TABLE is denied |
+
 ## ucsc-maketablelist_makeTableList
 
 ### Tool Description

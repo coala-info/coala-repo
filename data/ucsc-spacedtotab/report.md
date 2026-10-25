@@ -1,5 +1,11 @@
 # ucsc-spacedtotab CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-spacedtotab | PASS |  |
+
 ## ucsc-spacedtotab
 
 ### Tool Description

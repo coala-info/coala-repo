@@ -1,5 +1,11 @@
 # ucsc-localtime CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-localtime | PASS |  |
+
 ## ucsc-localtime
 
 ### Tool Description
@@ -18,13 +24,8 @@ Converts a Unix timestamp (seconds since Jan 1, 1970) to a human-readable local 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-Unable to find image 'quay.io/biocontainers/ucsc-localtime:482--h0b57e2e_0' locally
-482--h0b57e2e_0: Pulling from biocontainers/ucsc-localtime
-0cacab098358: Already exists
-bd9ddc54bea9: Already exists
-b4f7ec4a638e: Pulling fs layer
-docker: write /var/lib/docker/tmp/GetImageBlob1505677756: no space left on device
-
-Run 'docker run --help' for more information
+localtime - convert unix timestamp to date string
+usage: localtime <time stamp>
+	<time stamp> - integer 0 to 2147483647
 ```
 

@@ -1,5 +1,11 @@
 # ucsc-newpythonprog CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-newpythonprog_newPythonProg | PASS | Fixed output (directory with generated python skeleton, not stdout); removed placeholder -xxx option; skeleton and makefile created. |
+
 ## ucsc-newpythonprog_newPythonProg
 
 ### Tool Description

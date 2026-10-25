@@ -1,5 +1,11 @@
 # ucsc-matrixclustercolumns CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-matrixclustercolumns | Failed | tool bug: -median gives wrong values (about half of the cells differ from numpy medians, with stale values reused across rows); mean mode, -makeIndex and extra clusterings are correct |
+
 ## ucsc-matrixclustercolumns
 
 ### Tool Description

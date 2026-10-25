@@ -14,20 +14,14 @@ inputs:
     doc: The usage statement for the program
     inputBinding:
       position: 2
-  - id: xxx
-    type:
-      - 'null'
-      - string
-    doc: An option with a placeholder value
-    inputBinding:
-      position: 103
-      prefix: -xxx=
-      separate: false
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: program_dir
+    type: Directory
+    doc: Directory named after the program, holding the generated python skeleton
+    outputBinding:
+      glob: $(inputs.program_name)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-newpythonprog:482--h0b57e2e_2
-stdout: ucsc-newpythonprog_newPythonProg.out

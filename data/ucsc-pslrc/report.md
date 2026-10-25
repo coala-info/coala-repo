@@ -1,5 +1,11 @@
 # ucsc-pslrc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslrc_pslRc | PASS |  |
+
 ## ucsc-pslrc_pslRc
 
 ### Tool Description

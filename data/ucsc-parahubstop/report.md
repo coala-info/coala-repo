@@ -1,5 +1,11 @@
 # ucsc-parahubstop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-parahubstop_paraHubStop | Not completed | needs a Parasol cluster: no paraHub is running to stop (command line is accepted, request times out). |
+
 ## ucsc-parahubstop_paraHubStop
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-liftover CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-liftover | PASS |  |
+
 ## ucsc-liftover
 
 ### Tool Description

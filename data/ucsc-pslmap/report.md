@@ -1,5 +1,11 @@
 # ucsc-pslmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslmap_pslMap | PASS |  |
+
 ## ucsc-pslmap_pslMap
 
 ### Tool Description

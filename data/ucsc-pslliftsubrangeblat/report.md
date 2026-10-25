@@ -1,5 +1,11 @@
 # ucsc-pslliftsubrangeblat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslliftsubrangeblat | PASS |  |
+
 ## ucsc-pslliftsubrangeblat
 
 ### Tool Description

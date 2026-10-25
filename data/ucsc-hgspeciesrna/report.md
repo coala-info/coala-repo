@@ -1,5 +1,11 @@
 # ucsc-hgspeciesrna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgspeciesrna_hgSpeciesRna | Not completed | Needs a UCSC genbank database (organism and gbCdnaInfo tables plus /gbdb sequence files) that the public read-only server does not provide. |
+
 ## ucsc-hgspeciesrna_hgSpeciesRna
 
 ### Tool Description

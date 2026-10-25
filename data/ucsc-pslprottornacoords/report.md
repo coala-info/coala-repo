@@ -1,5 +1,11 @@
 # ucsc-pslprottornacoords CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslprottornacoords | PASS |  |
+
 ## ucsc-pslprottornacoords
 
 ### Tool Description

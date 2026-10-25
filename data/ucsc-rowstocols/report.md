@@ -1,5 +1,11 @@
 # ucsc-rowstocols CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-rowstocols | PASS |  |
+
 ## ucsc-rowstocols
 
 ### Tool Description

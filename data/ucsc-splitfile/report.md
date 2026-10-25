@@ -1,5 +1,11 @@
 # ucsc-splitfile CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-splitfile | PASS |  |
+
 ## ucsc-splitfile
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-hgtrackdb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgtrackdb_hgTrackDb | Not completed | Needs a writable UCSC MySQL database to create the trackDb table. |
+
 ## ucsc-hgtrackdb_hgTrackDb
 
 ### Tool Description

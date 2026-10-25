@@ -1,5 +1,11 @@
 # ucsc-maskoutfa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-maskoutfa | PASS |  |
+
 ## ucsc-maskoutfa
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-mafaddqrows CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-mafaddqrows_mafAddQRows | Not completed | Needs per-species .qac quality files with a .qdx index for the MAF species; no small real quality set matching a real MAF is available. CWL fixed: quality_files input added. |
+
 ## ucsc-mafaddqrows_mafAddQRows
 
 ### Tool Description

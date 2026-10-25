@@ -1,5 +1,11 @@
 # ucsc-psltochain CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-psltochain | PASS |  |
+
 ## ucsc-psltochain
 
 ### Tool Description

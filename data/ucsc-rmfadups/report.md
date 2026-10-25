@@ -1,5 +1,11 @@
 # ucsc-rmfadups CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-rmfadups | PASS |  |
+
 ## ucsc-rmfadups
 
 ### Tool Description

@@ -31,11 +31,12 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: add environment variable to jobs.  Maybe repeated.
+        inputBinding:
+          prefix: -env=
+          separate: false
+    doc: add environment variable to jobs as name=value.  Maybe repeated.
     inputBinding:
       position: 102
-      prefix: -env=
-      separate: false
   - id: hub
     type:
       - 'null'
@@ -57,7 +58,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: Log to file instead of syslog.
     inputBinding:
       position: 102

@@ -1,5 +1,11 @@
 # ucsc-paratestjob CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-paratestjob_paraTestJob | PASS |  |
+
 ## ucsc-paratestjob_paraTestJob
 
 ### Tool Description

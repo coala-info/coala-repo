@@ -1,5 +1,11 @@
 # ucsc-nettoaxt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-nettoaxt | PASS | Rewrote CWL (output axt and options); real net, chain and 2bit files give axt whose target sequence matches the 2bit. |
+
 ## ucsc-nettoaxt
 
 ### Tool Description

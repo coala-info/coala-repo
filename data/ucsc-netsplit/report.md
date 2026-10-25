@@ -1,5 +1,11 @@
 # ucsc-netsplit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-netsplit | PASS | Rewrote CWL (out dir argument); real net split into chr21.net and chrM.net with correct content. |
+
 ## ucsc-netsplit
 
 ### Tool Description

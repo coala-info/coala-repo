@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14590; PASS: 11427; Failed: 1741; Not completed: 1422
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14690; PASS: 11509; Failed: 1747; Not completed: 1434
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -14590,3 +14590,103 @@ ucsc-hgloadchain	ucsc-hgloadchain_hgLoadChain	PASS	Tested with -test (no databas
 ucsc-hgloadout	ucsc-hgloadout_hgLoadOut	PASS	Tested with -tabFile (no database needed) on the kent test RepeatMasker .out.gz: tab file identical to kent's expected file; database loading not tested (CWL fixed: tabFile is an output name, hg.conf added)
 ucsc-hgloadoutjoined	ucsc-hgloadoutjoined_hgLoadOutJoined	PASS	Tested with -tabFile (no database needed) on the kent test RepeatMasker .out.gz (an older-style file; 198 rows, score, coordinates and divergence match an independent parse); database loading not tested (CWL fixed: tabFile is an output name, hg.conf added)
 ucsc-hgloadsqltab	ucsc-hgloadsqltab_hgLoadSqlTab	Not completed	Needs a writable UCSC MySQL database; the command line is accepted and the program reaches the database connection (CWL fixed: hg.conf and network access added, -oldTable and -append kept)
+ucsc-hgspeciesrna	ucsc-hgspeciesrna_hgSpeciesRna	Not completed	Needs a UCSC genbank database (organism and gbCdnaInfo tables plus /gbdb sequence files) that the public read-only server does not provide.
+ucsc-hgsqldump	ucsc-hgsqldump_hgsqldump	Failed	image problem: hgsqldump calls mysqldump, which is not in the image (sqlExecProgProfile: exec failed).
+ucsc-hgtrackdb	ucsc-hgtrackdb_hgTrackDb	Not completed	Needs a writable UCSC MySQL database to create the trackDb table.
+ucsc-hgvstovcf	ucsc-hgvstovcf_hgvsToVcf	Not completed	Needs a UCSC central database and /gbdb hg38.2bit; the public server denies the hgcentral userDb table. CWL fixed: output file argument and -noLeftShift added.
+ucsc-htmlcheck	ucsc-htmlcheck_htmlCheck	PASS	
+ucsc-hubpubliccheck	ucsc-hubpubliccheck_hubPublicCheck	PASS	
+ucsc-ixixx	ucsc-ixixx	PASS	
+ucsc-lavtoaxt	ucsc-lavtoaxt	PASS	
+ucsc-lavtopsl	ucsc-lavtopsl_lavToPsl	PASS	
+ucsc-ldhggene	ucsc-ldhggene_ldHgGene	PASS	
+ucsc-liftover	ucsc-liftover	PASS	
+ucsc-liftup	ucsc-liftup	PASS	
+ucsc-linestora	ucsc-linestora_linesToRa	PASS	
+ucsc-localtime	ucsc-localtime	PASS	
+ucsc-mafaddqrows	ucsc-mafaddqrows_mafAddQRows	Not completed	Needs per-species .qac quality files with a .qdx index for the MAF species; no small real quality set matching a real MAF is available. CWL fixed: quality_files input added.
+ucsc-mafcoverage	ucsc-mafcoverage	PASS	
+ucsc-maffrags	ucsc-maffrags_mafFrags	PASS	
+ucsc-mafgene	ucsc-mafgene_mafGene	PASS	
+ucsc-maforder	ucsc-maforder_mafOrder	PASS	
+ucsc-mafranges	ucsc-mafranges	PASS	
+ucsc-mafsinregion	ucsc-mafsinregion	PASS	
+ucsc-mafspecieslist	ucsc-mafspecieslist	PASS	
+ucsc-mafspeciessubset	ucsc-mafspeciessubset	PASS	
+ucsc-mafsplit	ucsc-mafsplit_mafSplit	PASS	
+ucsc-maftoaxt	ucsc-maftoaxt	PASS	
+ucsc-maftobigmaf	ucsc-maftobigmaf	PASS	
+ucsc-maftopsl	ucsc-maftopsl	PASS	
+ucsc-maftosnpbed	ucsc-maftosnpbed_mafToSnpBed	Failed	tool bug: on the real LAST MAF it reports matching soft-masked (lowercase vs uppercase) bases as SNPs; the same MAF in uppercase gives no SNPs and a planted SNP is found
+ucsc-maketablelist	ucsc-maketablelist_makeTableList	Not completed	needs a writable UCSC MySQL database: the command line is accepted and reads the public server, but CREATE TABLE is denied
+ucsc-maskoutfa	ucsc-maskoutfa	PASS	
+ucsc-matrixclustercolumns	ucsc-matrixclustercolumns	Failed	tool bug: -median gives wrong values (about half of the cells differ from numpy medians, with stale values reused across rows); mean mode, -makeIndex and extra clusterings are correct
+ucsc-matrixmarkettotsv	ucsc-matrixmarkettotsv_matrixMarketToTsv	PASS	
+ucsc-matrixtobarchartbed	ucsc-matrixtobarchartbed	PASS	synthetic data: the mapping BED has made-up coordinates for the 25 rows of a real nf-core 10x expression matrix.
+ucsc-mktime	ucsc-mktime_mktime	PASS	
+ucsc-mrnatogene	ucsc-mrnatogene	Failed	tool bug: -allCds on a minus-strand alignment moves the CDS start 25 bases inside the transcript (getCdsAll reverses the range twice); -cdsFile mode gives the correct CDS
+ucsc-netchainsubset	ucsc-netchainsubset_netChainSubset	PASS	Real chainNet net and chain slice; chains split at net fills as expected, gap file written; -type crashes on a net without type fields (net from chainNet).
+ucsc-netclass	ucsc-netclass	PASS	Rewrote CWL (database args, hg.conf for public UCSC MySQL, -noAr); real net classified for hg19/hg38; N counts match the 2bit.
+ucsc-netsplit	ucsc-netsplit	PASS	Rewrote CWL (out dir argument); real net split into chr21.net and chrM.net with correct content.
+ucsc-nettoaxt	ucsc-nettoaxt	PASS	Rewrote CWL (output axt and options); real net, chain and 2bit files give axt whose target sequence matches the 2bit.
+ucsc-nettobed	ucsc-nettobed	PASS	Rewrote CWL (output bed argument, -maxGap, -minFill); real net gives bed lines matching the net fill coordinates, and -maxGap breaks at the 150000 gap.
+ucsc-newprog	ucsc-newprog_newProg	PASS	Fixed output (directory with generated skeleton, not stdout); progName.c and makefile created, -cgi and -jkhgap change the skeleton.
+ucsc-newpythonprog	ucsc-newpythonprog_newPythonProg	PASS	Fixed output (directory with generated python skeleton, not stdout); removed placeholder -xxx option; skeleton and makefile created.
+ucsc-nibfrag	ucsc-nibfrag	PASS	nib files made with a small python script from real hg19 sequence (no faToNib in bioconda); plus and minus strand, -masked, -hardMasked, -upper, -name, -dbHeader outputs match the source sequence.
+ucsc-nibsize	ucsc-nibsize	PASS	Changed input to a list of nib files; sizes 16571 and 100000 match the source sequences.
+ucsc-oligomatch	ucsc-oligomatch	PASS	Rewrote CWL (output bed argument); IUPAC oligos on real hg19 chrM found at the expected plus and minus strand positions.
+ucsc-overlapselect	ucsc-overlapselect	Failed	tool bug: image build 482 finds no overlaps even for chr1:100-200 vs chr1:150-250 (the real kent test data also gives empty output); CWL was rewritten from the help and runs without error.
+ucsc-para	ucsc-para_para	Not completed	needs a Parasol cluster: para create waits for a paraHub that is not running (command line is accepted).
+ucsc-parafetch	ucsc-parafetch	PASS	Rewrote CWL (retries argument, outPath, -newer, -progress, NetworkAccess); real UCSC chain file downloaded with 2 connections is identical to the earlier copy.
+ucsc-parahub	ucsc-parahub_paraHub	Not completed	needs a Parasol cluster: paraHub starts as a long-running server and accepts the command line, but no nodes or jobs exist to test.
+ucsc-parahubstop	ucsc-parahubstop_paraHubStop	Not completed	needs a Parasol cluster: no paraHub is running to stop (command line is accepted, request times out).
+ucsc-paranode	ucsc-paranode_paraNode	Not completed	needs a Parasol cluster: paraNode starts as a long-running server and accepts the command line, but no hub exists to send jobs.
+ucsc-paranodestatus	ucsc-paranodestatus_paraNodeStatus	Not completed	needs a Parasol cluster: no paraNode is running to report on (command line is accepted, reports 0 running).
+ucsc-paranodestop	ucsc-paranodestop_paraNodeStop	Not completed	needs a Parasol cluster: no paraNode is running to stop (command line is accepted).
+ucsc-parasync	ucsc-parasync	PASS	
+ucsc-paratestjob	ucsc-paratestjob_paraTestJob	PASS	
+ucsc-positionaltblcheck	ucsc-positionaltblcheck_positionalTblCheck	PASS	
+ucsc-pslcdnafilter	ucsc-pslcdnafilter	PASS	
+ucsc-pslcheck	ucsc-pslcheck	PASS	
+ucsc-psldropoverlap	ucsc-psldropoverlap	PASS	
+ucsc-pslfilter	ucsc-pslfilter	PASS	
+ucsc-pslhisto	ucsc-pslhisto_pslHisto	PASS	
+ucsc-pslliftsubrangeblat	ucsc-pslliftsubrangeblat	PASS	
+ucsc-pslmap	ucsc-pslmap_pslMap	PASS	
+ucsc-pslmappostchain	ucsc-pslmappostchain	Not completed	runs on real blat PSL and a real chain slice, but with this simple chain the output equals the input, so the post-chaining could not be shown.
+ucsc-pslmrnacover	ucsc-pslmrnacover	PASS	
+ucsc-pslpairs	ucsc-pslpairs	PASS	synthetic pairing: clone ends cut from real mRNAs and aligned with blat
+ucsc-pslpartition	ucsc-pslpartition	PASS	
+ucsc-pslpostarget	ucsc-pslpostarget	PASS	
+ucsc-pslpretty	ucsc-pslpretty	PASS	
+ucsc-pslprottornacoords	ucsc-pslprottornacoords	PASS	
+ucsc-pslrc	ucsc-pslrc_pslRc	PASS	
+ucsc-pslrecalcmatch	ucsc-pslrecalcmatch	PASS	
+ucsc-pslreps	ucsc-pslreps_pslReps	PASS	
+ucsc-pslselect	ucsc-pslselect	PASS	
+ucsc-pslsomerecords	ucsc-pslsomerecords	PASS	
+ucsc-pslsplicejunctions	ucsc-pslsplicejunctions	PASS	
+ucsc-pslsplitontarget	ucsc-pslsplitontarget	PASS	
+ucsc-pslswap	ucsc-pslswap	PASS	
+ucsc-psltobed	ucsc-psltobed	PASS	
+ucsc-psltobigpsl	ucsc-psltobigpsl	PASS	
+ucsc-psltochain	ucsc-psltochain	PASS	
+ucsc-psltopslx	ucsc-psltopslx	PASS	
+ucsc-pslxtofa	ucsc-pslxtofa	PASS	
+ucsc-qacagplift	ucsc-qacagplift	PASS	synthetic data: AGP file written by hand over real read quality scores
+ucsc-qactoqa	ucsc-qactoqa	PASS	
+ucsc-qactowig	ucsc-qactowig_qacToWig	PASS	
+ucsc-qatoqac	ucsc-qatoqac_qaToQac	PASS	
+ucsc-randomlines	ucsc-randomlines	Failed	tool bug: the -decomment option is accepted but ignored (the source never uses it); random line picking with -seed works.
+ucsc-rasqlquery	ucsc-rasqlquery	PASS	
+ucsc-ratolines	ucsc-ratolines_raToLines	PASS	
+ucsc-rmfadups	ucsc-rmfadups	PASS	
+ucsc-rowstocols	ucsc-rowstocols	PASS	
+ucsc-spacedtotab	ucsc-spacedtotab	PASS	
+ucsc-splitfile	ucsc-splitfile	PASS	
+ucsc-splitfilebycolumn	ucsc-splitfilebycolumn_splitFileByColumn	PASS	
+ucsc-stringify	ucsc-stringify_stringify	PASS	
+ucsc-subchar	ucsc-subchar	PASS	
+ucsc-subcolumn	ucsc-subcolumn	PASS	
+ucsc-taillines	ucsc-taillines_tailLines	PASS	
+ucsc-tdbquery	ucsc-tdbquery_tdbQuery	PASS	

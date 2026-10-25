@@ -76,10 +76,21 @@ inputs:
       position: 104
       prefix: -useSequenceName
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_mafs
+    type:
+      type: array
+      items: File
+    doc: Split MAF files (outRoot plus the split name or number, .maf)
+    outputBinding:
+      glob: $(inputs.out_root)*.maf
+  - id: out_subdirs
+    type:
+      - 'null'
+      - type: array
+        items: Directory
+    doc: Numbered output directories created by outDirDepth
+    outputBinding:
+      glob: '[0-9]*'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-mafsplit:482--h0b57e2e_0
-stdout: ucsc-mafsplit_mafSplit.out

@@ -1,5 +1,11 @@
 # ucsc-mafsplit CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-mafsplit_mafSplit | PASS |  |
+
 ## ucsc-mafsplit_mafSplit
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-pslpairs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslpairs | PASS | synthetic pairing: clone ends cut from real mRNAs and aligned with blat |
+
 ## ucsc-pslpairs
 
 ### Tool Description

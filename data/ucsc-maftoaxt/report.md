@@ -1,5 +1,11 @@
 # ucsc-maftoaxt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-maftoaxt | PASS |  |
+
 ## ucsc-maftoaxt
 
 ### Tool Description

@@ -20,6 +20,13 @@ inputs:
     doc: Output MAF file
     inputBinding:
       position: 3
+  - id: quality_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: The <species>.qac and <species>.qdx files named by species.lst. They are staged
+      in the working directory, so a directory field of . in species.lst finds them.
   - id: divisor
     type:
       - 'null'
@@ -35,6 +42,10 @@ outputs:
     doc: Output MAF file
     outputBinding:
       glob: '$(inputs.out_maf)'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.quality_files)
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-mafaddqrows:482--h0b57e2e_0

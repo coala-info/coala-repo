@@ -1,5 +1,11 @@
 # ucsc-pslcdnafilter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslcdnafilter | PASS |  |
+
 ## ucsc-pslcdnafilter
 
 ### Tool Description

@@ -14,12 +14,25 @@ inputs:
     doc: Input file containing HGVS terms
     inputBinding:
       position: 2
+  - id: out_vcf
+    type: string
+    doc: Output VCF file name
+    inputBinding:
+      position: 3
+  - id: no_left_shift
+    type:
+      - 'null'
+      - boolean
+    doc: Don't do the VCF-conventional left shifting of ambiguous placements
+    inputBinding:
+      position: 101
+      prefix: -noLeftShift
 outputs:
   - id: vcf_out
     type: File
     doc: Output VCF file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_vcf)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-hgvstovcf:377--h199ee4e_0

@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: splitFile
 label: ucsc-splitfile
-doc: "Split a file into pieces of a given size.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Split up a file into pieces with a given number of lines. Output files are named by the base name plus a two-digit number.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
   - id: input_file
     type: File
@@ -11,26 +11,40 @@ inputs:
       position: 1
   - id: lines_per_file
     type: int
-    doc: The number of lines per output chunk.
+    doc: The number of lines per output piece.
     inputBinding:
       position: 2
   - id: out_root
     type: string
-    doc: The prefix/root name for the output files.
+    doc: The base name for the output files.
     inputBinding:
       position: 3
+  - id: head
+    type:
+      - 'null'
+      - File
+    doc: Put the contents of this file in front of each output
+    inputBinding:
+      position: 0
+      prefix: -head=
+      separate: false
+  - id: tail
+    type:
+      - 'null'
+      - File
+    doc: Put the contents of this file at the end of each output
+    inputBinding:
+      position: 0
+      prefix: -tail=
+      separate: false
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: out_root_files
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in out_root
+    doc: Files written with the base name given in out_root
     outputBinding:
       glob: $(inputs.out_root)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-splitfile:482--h0b57e2e_0
-stdout: ucsc-splitfile.out

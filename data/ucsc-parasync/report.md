@@ -1,5 +1,11 @@
 # ucsc-parasync CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-parasync | PASS |  |
+
 ## ucsc-parasync
 
 ### Tool Description

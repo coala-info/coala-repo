@@ -1,5 +1,11 @@
 # ucsc-mafgene CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-mafgene_mafGene | PASS |  |
+
 ## ucsc-mafgene_mafGene
 
 ### Tool Description

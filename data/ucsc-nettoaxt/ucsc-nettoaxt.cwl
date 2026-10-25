@@ -2,51 +2,84 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: netToAxt
 label: ucsc-nettoaxt
-doc: "Convert net and chain files to axt format, which is a format for representing
-  alignments between two sequences.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Convert net (and chain) to axt.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: net_file
+  - id: in_net
     type: File
-    doc: Input net file.
+    doc: Input net file
     inputBinding:
       position: 1
-  - id: chain_file
+  - id: in_chain
     type: File
-    doc: Input chain file.
+    doc: Input chain file
     inputBinding:
       position: 2
-  - id: target_db
+  - id: target_2bit
     type: File
-    doc: Target 2bit file or directory of nib files.
+    doc: Target 2bit file (a directory of .nib files, an older format, may also 
+      be used)
     inputBinding:
       position: 3
-  - id: query_db
+  - id: query_2bit
     type: File
-    doc: Query 2bit file or directory of nib files.
+    doc: Query 2bit file (a directory of .nib files, an older format, may also 
+      be used)
     inputBinding:
       position: 4
+  - id: out_axt
+    type: string
+    doc: Output axt file
+    inputBinding:
+      position: 5
+  - id: q_chain
+    type:
+      - 'null'
+      - boolean
+    doc: net is with respect to the q side of chains.
+    inputBinding:
+      position: 0
+      prefix: -qChain
   - id: max_gap
     type:
       - 'null'
       - int
-    doc: Maximum gap size to allow in axt.
+    doc: maximum size of gap before breaking. Default 100
     inputBinding:
-      position: 105
-      prefix: -maxGap
-  - id: verbose
+      position: 0
+      prefix: -maxGap=
+      separate: false
+  - id: gap_out
     type:
       - 'null'
-      - int
-    doc: Set verbosity level (e.g., -verbose=2).
+      - string
+    doc: Output gap sizes to file (gap.tab)
     inputBinding:
-      position: 105
-      prefix: -verbose
+      position: 0
+      prefix: -gapOut=
+      separate: false
+  - id: no_split
+    type:
+      - 'null'
+      - boolean
+    doc: Don't split chain when there is an insertion of another chain
+    inputBinding:
+      position: 0
+      prefix: -noSplit
 outputs:
   - id: output_axt
     type: File
-    doc: Output axt file.
+    doc: Output axt file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_axt)
+  - id: gap_out_file
+    type:
+      - 'null'
+      - File
+    doc: Gap size table written by -gapOut
+    outputBinding:
+      glob: $(inputs.gap_out)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-nettoaxt:482--h0b57e2e_0

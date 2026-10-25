@@ -1,5 +1,11 @@
 # ucsc-mrnatogene CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-mrnatogene | Failed | tool bug: -allCds on a minus-strand alignment moves the CDS start 25 bases inside the transcript (getCdsAll reverses the range twice); -cdsFile mode gives the correct CDS |
+
 ## ucsc-mrnatogene
 
 ### Tool Description

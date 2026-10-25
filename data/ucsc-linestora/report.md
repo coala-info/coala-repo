@@ -1,5 +1,11 @@
 # ucsc-linestora CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-linestora_linesToRa | PASS |  |
+
 ## ucsc-linestora_linesToRa
 
 ### Tool Description

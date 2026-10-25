@@ -1,5 +1,11 @@
 # ucsc-pslmrnacover CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslmrnacover | PASS |  |
+
 ## ucsc-pslmrnacover
 
 ### Tool Description

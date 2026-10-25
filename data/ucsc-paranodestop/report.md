@@ -1,5 +1,11 @@
 # ucsc-paranodestop CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-paranodestop_paraNodeStop | Not completed | needs a Parasol cluster: no paraNode is running to stop (command line is accepted). |
+
 ## ucsc-paranodestop_paraNodeStop
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-nibfrag CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-nibfrag | PASS | nib files made with a small python script from real hg19 sequence (no faToNib in bioconda); plus and minus strand, -masked, -hardMasked, -upper, -name, -dbHeader outputs match the source sequence. |
+
 ## ucsc-nibfrag
 
 ### Tool Description

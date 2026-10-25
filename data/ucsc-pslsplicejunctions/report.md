@@ -1,5 +1,11 @@
 # ucsc-pslsplicejunctions CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslsplicejunctions | PASS |  |
+
 ## ucsc-pslsplicejunctions
 
 ### Tool Description

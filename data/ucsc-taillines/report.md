@@ -1,5 +1,11 @@
 # ucsc-taillines CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-taillines_tailLines | PASS |  |
+
 ## ucsc-taillines_tailLines
 
 ### Tool Description

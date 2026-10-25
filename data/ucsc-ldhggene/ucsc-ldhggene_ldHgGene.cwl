@@ -103,9 +103,11 @@ inputs:
       position: 104
       prefix: -requireCDS
   - id: output_gene_pred_file_path
-    type: string
-    doc: =gpfile  write output, in genePred format, instead of loading table. 
-      Database is ignored.
+    type:
+      - 'null'
+      - string
+    doc: Name of the file to write the output to, in genePred format, instead of
+      loading the table. Database is ignored.
     inputBinding:
       position: 105
       prefix: -out=

@@ -1,25 +1,43 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: qaCagpLift
+baseCommand: qacAgpLift
 label: ucsc-qacagplift
-doc: "Check that an AGP file and a lift file are consistent.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Use an AGP file to combine per-scaffold qac files into a per-chromosome qac
+  file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: agp_file
+  - id: scaffold_to_chrom_agp
     type: File
-    doc: The AGP file to check.
+    doc: AGP file describing how scaffolds are placed on chromosomes.
+    inputBinding:
+      position: 10
+  - id: scaffolds_qac
+    type: File
+    doc: Input per-scaffold quality score file (.qac).
+    inputBinding:
+      position: 11
+  - id: chrom_qac
+    type: string
+    doc: Output per-chromosome quality score file name (.qac).
+    inputBinding:
+      position: 12
+  - id: m_score
+    type:
+      - 'null'
+      - int
+    doc: Score to use for missing data (otherwise fail); range 0-99, recommended
+      values are 98 (low quality) or 99 (high quality).
     inputBinding:
       position: 1
-  - id: lift_file
-    type: File
-    doc: The lift file to check.
-    inputBinding:
-      position: 2
+      prefix: -mScore=
+      separate: false
 outputs:
-  - id: qa_file
+  - id: chrom_qac_file
     type: File
-    doc: The output QA file.
+    doc: Output per-chromosome quality score file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.chrom_qac)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-qacagplift:482--h0b57e2e_0

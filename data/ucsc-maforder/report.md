@@ -1,5 +1,11 @@
 # ucsc-maforder CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-maforder_mafOrder | PASS |  |
+
 ## ucsc-maforder_mafOrder
 
 ### Tool Description

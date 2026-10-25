@@ -1,5 +1,11 @@
 # ucsc-hgvstovcf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-hgvstovcf_hgvsToVcf | Not completed | Needs a UCSC central database and /gbdb hg38.2bit; the public server denies the hgcentral userDb table. CWL fixed: output file argument and -noLeftShift added. |
+
 ## Metadata
 - **Skill**: generated
 
@@ -15,10 +21,12 @@ Convert HGVS terms to VCF format.
 - **Validation**: PASS
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-hgvstovcf:377--h199ee4e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+hgvsToVcf - Convert HGVS terms to VCF tab-separated output
+usage:
+   hgvsToVcf db input.hgvs output.vcf
+options:
+   -noLeftShift        Don't do the VCF-conventional left shifting of ambiguous placements
+db is a UCSC database such as hg19, hg38 etc.
+Only nucleotide HGVS terms (g., c., n., m.) are supported, not protein (p.).
 ```
 

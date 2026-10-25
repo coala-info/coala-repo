@@ -1,5 +1,11 @@
 # ucsc-mafspecieslist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-mafspecieslist | PASS |  |
+
 ## ucsc-mafspecieslist
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ucsc-nibsize CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-nibsize | PASS | Changed input to a list of nib files; sizes 16571 and 100000 match the source sequences. |
+
 ## ucsc-nibsize
 
 ### Tool Description

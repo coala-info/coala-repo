@@ -1,5 +1,11 @@
 # ucsc-pslxtofa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-pslxtofa | PASS |  |
+
 ## ucsc-pslxtofa
 
 ### Tool Description

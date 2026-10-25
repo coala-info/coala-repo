@@ -1,5 +1,11 @@
 # ucsc-randomlines CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-randomlines | Failed | tool bug: the -decomment option is accepted but ignored (the source never uses it); random line picking with -seed works. |
+
 ## ucsc-randomlines
 
 ### Tool Description

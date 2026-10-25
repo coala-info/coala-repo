@@ -1,5 +1,11 @@
 # ucsc-maftopsl CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-maftopsl | PASS |  |
+
 ## ucsc-maftopsl
 
 ### Tool Description

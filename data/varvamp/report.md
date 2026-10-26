@@ -1,5 +1,13 @@
 # varvamp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| varvamp_qpcr | PASS | Galaxy test alignment and settings; primers and amplicons found; fixed positional order (options before alignment) |
+| varvamp_single | PASS | Galaxy test alignment and settings; primers and amplicons found; fixed positional order (options before alignment) |
+| varvamp_tiled | PASS | Galaxy test alignment and settings; primers and amplicons found; fixed positional order (options before alignment) |
+
 ## varvamp_single
 
 ### Tool Description

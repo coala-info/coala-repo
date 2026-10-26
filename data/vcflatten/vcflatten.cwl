@@ -80,13 +80,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: filename_prefix_files
+  - id: tsv_files
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in filename_prefix
+    doc: TSV files written, one per sample (or one file with --one-file)
     outputBinding:
-      glob: $(inputs.filename_prefix)*
+      glob: '*.tsv'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcflatten:0.5.2--1

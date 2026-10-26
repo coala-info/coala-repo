@@ -1,5 +1,11 @@
 # vawk CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vawk | PASS | nf-core VCF; filter with --var variables kept 32 records, matching an independent awk count; fixed --var prefix per item and homepage |
+
 ## vawk
 
 ### Tool Description

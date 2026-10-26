@@ -60,6 +60,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --quiet
+  - id: source_version
+    type:
+      - 'null'
+      - string
+    doc: Version string for this source
+    inputBinding:
+      position: 102
+      prefix: --version
   - id: type
     type:
       - 'null'

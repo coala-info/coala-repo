@@ -1,5 +1,11 @@
 # vcfdist CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcfdist | Not completed | runs on the repository demo, but 2 INDEL true positives differ from the repo's expected output (874 vs 876); the expected file is from an older version, so the result could not be confirmed. |
+
 ## vcfdist
 
 ### Tool Description

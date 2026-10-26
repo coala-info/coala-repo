@@ -1,5 +1,11 @@
 # vdjer CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vdjer | Failed | image problem: vdjer segfaults (exit 139) right after printing its parameters, on the repository demo BAM with the official IGH reference |
+
 ## vdjer
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # uscdc-datasets-sars-cov-2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| uscdc-datasets-sars-cov-2_GenFSGopher.pl | PASS | downloaded a real SARS-CoV-2 genome from NCBI and the sha256 check passed; read download from SRA fails in the image because the sra toolkit is not configured |
+
 ## uscdc-datasets-sars-cov-2_GenFSGopher.pl
 
 ### Tool Description

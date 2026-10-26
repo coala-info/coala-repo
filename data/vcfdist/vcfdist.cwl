@@ -17,19 +17,9 @@ inputs:
       position: 2
   - id: ref_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: FASTA file containing draft reference sequence
     inputBinding:
       position: 3
-  - id: advanced
-    type:
-      - 'null'
-      - boolean
-    doc: show advanced options, not recommended for most users
-    inputBinding:
-      position: 104
-      prefix: --advanced
   - id: bed_file
     type:
       - 'null'
@@ -38,14 +28,6 @@ inputs:
     inputBinding:
       position: 104
       prefix: --bed
-  - id: citation
-    type:
-      - 'null'
-      - boolean
-    doc: please cite vcfdist if used in your analyses. Thanks :)
-    inputBinding:
-      position: 104
-      prefix: --citation
   - id: credit_threshold
     type:
       - 'null'
@@ -63,6 +45,7 @@ inputs:
     inputBinding:
       position: 104
       prefix: --filter
+      itemSeparator: ','
   - id: gap_extend_penalty
     type:
       - 'null'
@@ -106,7 +89,7 @@ inputs:
   - id: max_ram
     type:
       - 'null'
-      - string
+      - float
     doc: (approximate) maximum RAM to use for precision/recall alignment
     inputBinding:
       position: 104
@@ -144,9 +127,8 @@ inputs:
       position: 104
       prefix: --no-output-files
   - id: output_prefix
-    type:
-      - 'null'
-      - string
+    type: string
+    default: vcfdist_
     doc: prefix for output files (directory needs a trailing slash)
     inputBinding:
       position: 104

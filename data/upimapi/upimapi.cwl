@@ -101,7 +101,7 @@ inputs:
   - id: input
     type:
       - 'null'
-      - string
+      - File
     doc: 'Input filename - can be: 1. a file containing a list of IDs (comma-separated
       values, no spaces) 2. a BLAST TSV result file (requires to be specified with
       the --blast parameter 3. a protein FASTA file to be annotated (requires the
@@ -260,11 +260,25 @@ inputs:
       position: 101
       prefix: --to-db
   - id: output_table_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Filename of table output, where UniProt info is stored
     inputBinding:
       position: 102
       prefix: --output-table
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Folder with the outputs
+    outputBinding:
+      glob: |
+        ${ return inputs.output ? inputs.output : []; }
   - id: output_table
     type:
       - 'null'
@@ -272,16 +286,21 @@ outputs:
     doc: Filename of table output, where UniProt info is stored. If set, will 
       override 'output' parameter just for that specific file
     outputBinding:
-      glob: $(inputs.output_table_path)
+      glob: |
+        ${ return inputs.output_table_path ? inputs.output_table_path : []; }
   - id: resources_directory_dir
     type:
       - 'null'
       - Directory
     doc: Directory to store resources of UPIMAPI
     outputBinding:
-      glob: $(inputs.resources_directory)
+      glob: |
+        ${ return inputs.resources_directory ? inputs.resources_directory : []; }
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/upimapi:1.13.3--hdfd78af_0
+stdout: upimapi.out

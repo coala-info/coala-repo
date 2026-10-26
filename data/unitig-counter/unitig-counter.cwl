@@ -36,6 +36,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: -output
+  - id: strain_files
+    type:
+      type: array
+      items: File
+    doc: Fasta files of the strains named in the strains file; they are staged in the working directory so the paths in the strains file resolve
   - id: strains
     type: File
     doc: 'A text file describing the strains containing 2 columns: 1) ID of the strain;
@@ -44,6 +49,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -strains
+      valueFrom: $(self.basename)
   - id: verbose
     type:
       - 'null'
@@ -56,6 +62,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: folder with the final unitig files and the graph
+    outputBinding:
+      glob: |
+        ${ return inputs.output ? inputs.output : 'output'; }
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.strain_files)
+      - $(inputs.strains)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unitig-counter:1.1.0--h5ca1c30_2

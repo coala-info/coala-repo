@@ -7,14 +7,18 @@ doc: "Creates unique sketch from a list of fasta reference files. A list of file
   https://github.com/amazon-science/uniqsketch"
 inputs:
   - id: list_files
-    type: File
-    doc: A list of files containing file names in each row (prefixed with @)
+    type:
+      - 'null'
+      - File
+    doc: A list of files containing file names in each row (passed with the @ prefix)
     inputBinding:
       position: 1
+      valueFrom: '@$(self.basename)'
   - id: files
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Fasta reference files
     inputBinding:
       position: 2
@@ -37,8 +41,8 @@ inputs:
   - id: entropy
     type:
       - 'null'
-      - boolean
-    doc: sets the aggregate entropy rate threshold
+      - float
+    doc: sets the aggregate entropy rate threshold [0.65]
     inputBinding:
       position: 103
       prefix: --entropy
@@ -70,15 +74,15 @@ inputs:
     type:
       - 'null'
       - string
-    doc: the output sketch file name
+    doc: the output sketch file name [sketch_uniq.tsv]
     inputBinding:
       position: 103
       prefix: --out
   - id: outdir
     type:
       - 'null'
-      - Directory
-    doc: dir for universe unique k-mers
+      - string
+    doc: dir for universe unique k-mers [outdir_uniqsketch]
     inputBinding:
       position: 103
       prefix: --outdir
@@ -94,7 +98,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: the output unique kmer stat file name
+    doc: the output unique kmer stat file name [db_uniq_count.tsv]
     inputBinding:
       position: 103
       prefix: --stat
@@ -118,6 +122,40 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: sketch
+    type:
+      - 'null'
+      - File
+    doc: unique sketch file
+    outputBinding:
+      glob: |
+        ${ return inputs.out ? inputs.out : 'sketch_uniq.tsv'; }
+  - id: unique_kmer_stat
+    type:
+      - 'null'
+      - File
+    doc: unique k-mer statistics file
+    outputBinding:
+      glob: |
+        ${ return inputs.stat ? inputs.stat : 'db_uniq_count.tsv'; }
+  - id: unique_kmers_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory with the unique k-mers of each reference
+    outputBinding:
+      glob: |
+        ${ return inputs.outdir ? inputs.outdir : 'outdir_uniqsketch'; }
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.files) { l = l.concat(inputs.files); }
+        if (inputs.list_files) { l.push(inputs.list_files); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/uniqsketch:1.1.0--h077b44d_0

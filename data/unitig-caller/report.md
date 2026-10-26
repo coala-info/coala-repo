@@ -1,5 +1,11 @@
 # unitig-caller CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unitig-caller | PASS |  |
+
 ## unitig-caller
 
 ### Tool Description

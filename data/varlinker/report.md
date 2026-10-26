@@ -1,5 +1,13 @@
 # varlinker CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| varlinker_variant-linker | Failed | tool bug: it downloads a 1.9 GB GENCODE file and assigns genes from other chromosomes (chr21:6120101 gets CHD5 from chr1), so the annotation is wrong |
+| varlinker_variant-taltanno | Not completed | reads the annotation files that variant-linker builds from a 1.9 GB GENCODE download, and that annotation is wrong, so the output cannot be confirmed |
+| varlinker_variant-trefanno | Not completed | reads the annotation files that variant-linker builds from a 1.9 GB GENCODE download, and that annotation is wrong, so the output cannot be confirmed |
+
 ## varlinker_variant-linker
 
 ### Tool Description

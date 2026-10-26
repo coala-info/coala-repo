@@ -13,12 +13,17 @@ inputs:
     inputBinding:
       position: 1
   - id: umi_histogram_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Output a count of each UMI for each cellular barcode
     inputBinding:
       position: 101
       prefix: --umi_histogram
 outputs:
+  - id: cb_histogram
+    type: stdout
+    doc: Number of reads for each cellular barcode.
   - id: umi_histogram
     type:
       - 'null'
@@ -31,3 +36,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5
+stdout: umis_cb_histogram.out

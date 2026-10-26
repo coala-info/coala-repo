@@ -1,5 +1,12 @@
 # vcontact3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcontact3_prepare_databases | Not completed | downloads the vConTACT3 reference database (several GB); only --list-versions was run, and it prints to stderr |
+| vcontact3_run | Not completed | needs the vConTACT3 reference database (several GB), too large for this test |
+
 ## vcontact3_prepare_databases
 
 ### Tool Description

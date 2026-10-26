@@ -8,13 +8,10 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: File
+        items: bam_sample_rec
         inputBinding:
           prefix: --bam
-          separate: true
-    doc: A sample name and a BAM file. Can be used multiple times to input 
-      multiple samples and multiple BAM files. The same sample name can be used 
-      multiple times with different BAMs, this will treated as replicates.
+    doc: A sample name and a BAM file. Can be used multiple times to input multiple samples and multiple BAM files. The same sample name can be used multiple times with different BAMs, this will treated as replicates.
     inputBinding:
       position: 101
   - id: base_call_quality
@@ -77,28 +74,20 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: float
+        items: purity_rec
         inputBinding:
           prefix: --purity
-          separate: true
-    doc: A sample name and a tumor purity value. Can be used multiple times to 
-      input multiple samples in combination with --bam. If no purity is provided
-      for a given sample the default value is 1.0
+    doc: A sample name and a tumor purity value. Can be used multiple times to input multiple samples in combination with --bam. If no purity is provided for a given sample the default value is 1.0
     inputBinding:
       position: 101
   - id: tumor_ploidy
     type:
       - 'null'
       - type: array
-        items: string
+        items: tumor_ploidy_rec
         inputBinding:
           prefix: --tumor-ploidy
-          separate: true
-    doc: 'A sample name and a tumor ploidy. Can be used multiple times to input multiple
-      samples in combination with --bam. The tumor ploidy can be provided as a genome-wide
-      value (eg: --tumor-ploidy primary 2) or as local copy numbers in a BED file
-      (eg: --tumor-ploidy primary /path/to/copy_numbers.bed), see the documentation
-      for expected BED format'
+    doc: 'A sample name and a tumor ploidy. Can be used multiple times to input multiple samples in combination with --bam. The tumor ploidy can be provided as a genome-wide value (eg: --tumor-ploidy primary 2) or as local copy numbers in a BED file (eg: --tumor-ploidy primary /path/to/copy_numbers.bed), see the documentation for expected BED format'
     inputBinding:
       position: 101
   - id: output_vcf_path
@@ -113,6 +102,43 @@ outputs:
     outputBinding:
       glob: $(inputs.output_vcf_path)
 requirements:
+  - class: SchemaDefRequirement
+    types:
+      - name: bam_sample_rec
+        type: record
+        fields:
+          - name: sample_name
+            type: string
+            inputBinding:
+              position: 1
+          - name: bam
+            type: File
+            secondaryFiles:
+              - .bai
+            inputBinding:
+              position: 2
+      - name: purity_rec
+        type: record
+        fields:
+          - name: sample_name
+            type: string
+            inputBinding:
+              position: 1
+          - name: purity
+            type: float
+            inputBinding:
+              position: 2
+      - name: tumor_ploidy_rec
+        type: record
+        fields:
+          - name: sample_name
+            type: string
+            inputBinding:
+              position: 1
+          - name: tumor_ploidy
+            type: string
+            inputBinding:
+              position: 2
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

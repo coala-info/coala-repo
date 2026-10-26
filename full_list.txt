@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14690; PASS: 11509; Failed: 1747; Not completed: 1434
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14964; PASS: 11714; Failed: 1775; Not completed: 1475
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -14690,3 +14690,277 @@ ucsc-subchar	ucsc-subchar	PASS
 ucsc-subcolumn	ucsc-subcolumn	PASS	
 ucsc-taillines	ucsc-taillines_tailLines	PASS	
 ucsc-tdbquery	ucsc-tdbquery_tdbQuery	PASS	
+ucsc-texthistogram	ucsc-texthistogram	PASS	
+ucsc-ticktodate	ucsc-ticktodate_tickToDate	PASS	
+ucsc-tolower	ucsc-tolower	PASS	
+ucsc-toupper	ucsc-toupper	PASS	
+ucsc-transmappsltogenepred	ucsc-transmappsltogenepred	PASS	
+ucsc-twobitdup	ucsc-twobitdup_twoBitDup	PASS	
+ucsc-twobitinfo	ucsc-twobitinfo	PASS	
+ucsc-twobitmask	ucsc-twobitmask_twoBitMask	PASS	
+ucsc-twobittofa	ucsc-twobittofa	PASS	
+ucsc-validatemanifest	ucsc-validatemanifest	Failed	image problem: validateManifest calls validateFiles, which is not in the image (command not found)
+ucsc-wigcorrelate	ucsc-wigcorrelate	PASS	
+ucsc-wigtobigwig	ucsc-wigtobigwig	PASS	
+ucsc-wordline	ucsc-wordline	PASS	
+ucsc-xmlcat	ucsc-xmlcat	PASS	
+ufcg	ufcg_align	PASS	
+ufcg	ufcg_convert	PASS	
+ufcg	ufcg_download	Failed	image problem: the tool checks the connection with ping, which the non-root container user cannot run, so it reports no internet connection.
+ufcg	ufcg_profile	Failed	image problem: needs the config and core database inside the read-only install folder (auto-download fails, ping not allowed for the non-root user), and the file command is missing.
+ufcg	ufcg_profile-pro	Failed	image problem: needs the config and core database inside the read-only install folder (auto-download fails, ping not allowed for the non-root user), and the file command is missing.
+ufcg	ufcg_profile-rna	Failed	image problem: needs the config and core database inside the read-only install folder (auto-download fails, ping not allowed for the non-root user), and the file command is missing.
+ufcg	ufcg_prune	PASS	
+ufcg	ufcg_train	Failed	image problem: train runs profile steps that need config/ppx.cfg in the read-only install folder (not in the image), so it stops with an AUGUSTUS-PPX config error.
+ufcg	ufcg_tree	PASS	
+ultra	ultra	PASS	
+ultraplex	ultraplex	PASS	
+umi-transfer	umi-transfer_external	PASS	
+umis	umis_add_uid	PASS	
+umis	umis_bamtag	PASS	
+umis	umis_cb_filter	PASS	
+umis	umis_cb_histogram	PASS	
+umis	umis_demultiplex_cells	PASS	
+umis	umis_demultiplex_samples	PASS	
+umis	umis_fastqtransform	PASS	Matches the repo's expected outputs for 9 transform examples; dual cell barcode input (Klein inDrop, STRT dual index) crashes in this umis 1.0.9 with KeyError MB1.
+umis	umis_fasttagcount	Failed	image problem: --cb_histogram fails with a pandas read_csv squeeze error, and without it the tool crashes with a None histogram.
+umis	umis_kallisto	PASS	
+umis	umis_mb_filter	PASS	
+umis	umis_sb_filter	PASS	
+umis	umis_sparse	PASS	
+umis	umis_subset_bamfile	Failed	tool bug: crashes with AttributeError on track.next() with the pysam in the image, on SAM and BAM.
+umis	umis_tagcount	PASS	Plain and --sparse runs match expected output; --cb_histogram (pandas read_csv squeeze error), --output_evidence_table and --minevidence crash in this image.
+umis	umis_umi_histogram	PASS	
+umitools	umitools_mark_duplicates	PASS	
+umitools	umitools_reformat_fastq	PASS	
+umitools	umitools_reformat_sra_fastq	PASS	
+umitools	umitools_simulator	PASS	
+unassigner	unassigner	PASS	
+unfazed	unfazed	PASS	
+unicore	unicore_cluster	PASS	rewritten: database input with its index files; 32 proteins fall into 8 clusters of 4; output prefix needs a directory part such as ./clu
+unicore	unicore_config	PASS	check mode reports tool versions
+unicore	unicore_createdb	PASS	rewritten: database output files and ProstT5 model directory; 32 proteins from 4 spirochete genomes (8 shared genes, subset of the project's example data)
+unicore	unicore_easy-core	PASS	rewritten: ProstT5 model directory; runs createdb, cluster, profile and tree in one go on the same 4 genomes
+unicore	unicore_gene-tree	PASS	rewritten: writable tree directory; 8 gene trees made
+unicore	unicore_profile	PASS	rewritten: database input with index files; 8 core structures found
+unicore	unicore_search	PASS	rewritten: database inputs with index files; self search gives 128 hits (32 proteins x 4 family members)
+unicore	unicore_tree	PASS	rewritten: database input with index files, profile directory input; tree groups the two Treponema species
+unicycler	unicycler	PASS	assembled phiX short reads into one circular 5386 bp contig
+unifeb	unifeb	PASS	new CWL for the default mode without subcommand
+unifeb	unifeb_hnsw	PASS	fixed: global options now come before the hnsw subcommand; added all global options
+unifire	unifire	PASS	
+unifire	unifire_pirsr	Failed	tool bug: pirsr exits 0 with empty output (NullPointerException on md5) on the project's own test file PIRSR-input-iprscan.xml; added mkdir of output dir
+unifrac	unifrac_faithpd	PASS	output flag changed to -o as in the help; result matches expected faith values
+unifrac	unifrac_ssu	PASS	fixed missing --subsample-depth flag
+unifrac-binaries	unifrac-binaries_faithpd	PASS	output flag changed to -o as in the help; result matches expected faith values
+unifrac-binaries	unifrac-binaries_ssu	PASS	output flag changed to -o; --normalize-sample-counts takes true/false; matches expected matrices
+unikmer	unikmer_common	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_concat	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_count	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_decode	PASS	rewritten from the help; round trip view-dump-encode-decode gives the same k-mers
+unikmer	unikmer_diff	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_dump	PASS	rewritten from the help; round trip view-dump-encode-decode gives the same k-mers
+unikmer	unikmer_encode	PASS	rewritten from the help; round trip view-dump-encode-decode gives the same k-mers
+unikmer	unikmer_filter	PASS	rewritten from the help; outputs checked (filter and its inverse sum to the input count; locate and map give BED)
+unikmer	unikmer_grep	Failed	tool bug: grep with several --query values returns only the last query (a single query and --query-unik-file work)
+unikmer	unikmer_head	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_info	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_inter	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_locate	PASS	rewritten from the help; outputs checked (filter and its inverse sum to the input count; locate and map give BED)
+unikmer	unikmer_map	PASS	rewritten from the help; outputs checked (filter and its inverse sum to the input count; locate and map give BED)
+unikmer	unikmer_merge	PASS	rewritten from the help; chunk counts add up to the input; sort -u of concat equals union count
+unikmer	unikmer_num	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_rfilter	PASS	rewritten from the help; test used a small subset of the NCBI taxonomy (real rows for E. coli and A. muciniphila lineages) as data dir
+unikmer	unikmer_sample	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_sort	PASS	rewritten from the help; chunk counts add up to the input; sort -u of concat equals union count
+unikmer	unikmer_split	PASS	rewritten from the help; chunk counts add up to the input; sort -u of concat equals union count
+unikmer	unikmer_tsplit	PASS	rewritten from the help; test used a small subset of the NCBI taxonomy (real rows for E. coli and A. muciniphila lineages) as data dir
+unikmer	unikmer_union	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikmer	unikmer_view	PASS	rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent
+unikseq	unikseq_unikseq.pl	PASS	
+unikseq	unikseq_writeBloom.pl	Failed	tool bug: writeBloom.pl writes the Bloom filter correctly but always exits with status 1 (the script ends with exit 1)
+unimap	unimap	PASS	
+uniprot-id-mapper	uniprot-id-mapper_protmap	PASS	
+uniqsketch	uniqsketch	PASS	
+uniqsketch	uniqsketch_comparesketch	PASS	
+uniqsketch	uniqsketch_querysketch	PASS	
+unitem	unitem_bin	PASS	
+unitem	unitem_consensus	Not completed	needs the output of unitem profile as input, and profile fails because prodigal is missing in the image
+unitem	unitem_greedy	Not completed	needs the output of unitem profile as input, and profile fails because prodigal is missing in the image
+unitem	unitem_profile	Failed	image problem: prodigal is not installed in the image, so unitem profile stops with 'prodigal is not on the system path'
+unitem	unitem_unanimous	Not completed	needs the output of unitem profile as input, and profile fails because prodigal is missing in the image
+unitig-caller	unitig-caller	PASS	
+unitig-counter	unitig-counter	PASS	
+unitig-counter	unitig-counter_cdbg-ops_dist	PASS	
+unitig-counter	unitig-counter_cdbg-ops_extend	PASS	
+univariate	univariate	PASS	
+unmerge	unmerge	PASS	
+updio	updio	PASS	UPD call correct on the example trio (maternal UPD on chr2); the png plot step crashes in the image (awk: bad regex) after the results are written
+upimapi	upimapi	PASS	
+uropa	uropa	PASS	
+uropa	uropa_uropa2gtf.R	PASS	
+uropa	uropa_uropa_summary.R	PASS	
+usalign	usalign_HwRMSD	PASS	alignment and matrix output correct; the -o option crashes with a segmentation fault
+usalign	usalign_MMalign	PASS	
+usalign	usalign_NWalign	PASS	
+usalign	usalign_TMalign	PASS	
+usalign	usalign_TMscore	PASS	
+usalign	usalign_USalign	PASS	
+usalign	usalign_addChainID	PASS	
+usalign	usalign_cif2pdb	PASS	
+usalign	usalign_pdb2fasta	PASS	
+usalign	usalign_pdb2ss	PASS	
+usalign	usalign_pdb2xyz	PASS	
+usalign	usalign_pdbAtomName	PASS	
+usalign	usalign_qTMclust	PASS	
+usalign	usalign_se	PASS	
+usalign	usalign_xyz_sfetch	PASS	
+uscdc-datasets-sars-cov-2	uscdc-datasets-sars-cov-2_GenFSGopher.pl	PASS	downloaded a real SARS-CoV-2 genome from NCBI and the sha256 check passed; read download from SRA fails in the image because the sra toolkit is not configured
+usher	usher	PASS	
+ushuffle	ushuffle	PASS	
+uvaia	uvaia	PASS	
+uvaia	uvaia_uvaia_legacy	PASS	
+uvaia	uvaia_uvaiaball	PASS	
+uvaia	uvaia_uvaiaclust	PASS	
+uvaia	uvaia_uvaialign	PASS	
+uvp	uvp	Not completed	pipeline, skipped: uvp runs a whole alignment and variant calling pipeline (bwa, GATK) for M. tuberculosis reads
+vadr	vadr_v-annotate.pl	PASS	real SARS-CoV-2 genomes (NC_045512.2 and MT520263.1) classified and annotated with the sarscov2 model that ships in the image; the run takes about 5 minutes
+vadr	vadr_v-build.pl	PASS	built a model of hepatitis B virus (NC_003977, 3.2 kb) in about 2 minutes; the accession must be given without a version suffix
+vadr	vadr_vadr-map-model-coords.pl	PASS	real VADR .alt.list and .alt output for MW691153.1 (NC_045512-del28254 model) mapped to NC_045512 with the official sarscov2.mmap; coordinates after the deleted position 28254 shift by 1 as expected
+vadr	vadr_vadr-map-two-complete-models.pl	PASS	NC_045512-MW422255 to NC_045512 map from the official sarscov2.mmap; 29884 positions, the 9 base gap after position 11287 is mapped correctly
+vafator	vafator	PASS	
+vafator	vafator_hatchet2bed	PASS	
+vafator	vafator_multiallelics-filter	PASS	
+vafator	vafator_vafator2decifer	PASS	
+valet	valet_valet.py	Not completed	runs end to end, but the result differs from the Galaxy expected summary: breakpoints are not reported for the reference, relocation and reloc-dup assemblies and the duplication low coverage count is 693 instead of 692
+vamb	vamb_bin_default	PASS	real minigut contigs and two BAM files: 136 contigs clustered into 117 bins, one bin over 100 kb written as fasta
+vamb	vamb_bin_taxvamb	Not completed	needs a contig taxonomy table from mmseqs taxonomy against a large reference database; no small real taxonomy is available
+vamb	vamb_recluster	PASS	k-means reclustering with the marker gene hmm on the minigut contigs; output clusters and markers written
+vamb	vamb_taxometer	Not completed	needs a contig taxonomy table from mmseqs taxonomy against a large reference database; no small real taxonomy is available
+vamos	vamos_contig	Not completed	runs only on the demo read BAM; no assembly-alignment (contig) or tumor/normal (somatic) test data was available, so this mode could not be shown.
+vamos	vamos_read	PASS	577 VNTR calls with motif annotation on the repository demo BAM (chr1 1-3 Mb loci)
+vamos	vamos_somatic	Not completed	runs only on the demo read BAM; no assembly-alignment (contig) or tumor/normal (somatic) test data was available, so this mode could not be shown.
+vapor	vapor_vapor.py	PASS	
+var-agg	var-agg	PASS	
+varcode	varcode	Not completed	needs a large Ensembl genome annotation download (GTF and FASTA, hundreds of MB) that the offline container cannot fetch
+varda2-client	varda2-client_annotate	Not completed	needs a running Varda server and account, which is not available
+varda2-client	varda2-client_mnv	Not completed	needs a running Varda server and account, which is not available
+varda2-client	varda2-client_monitor	Not completed	needs a running Varda server and account, which is not available
+varda2-client	varda2-client_sample	Not completed	needs a running Varda server and account, which is not available
+varda2-client	varda2-client_seq	Not completed	needs a running Varda server and account, which is not available
+varda2-client	varda2-client_snv	Not completed	needs a running Varda server and account, which is not available
+varda2-client	varda2-client_stab	Not completed	needs a running Varda server and account, which is not available
+varda2-client	varda2-client_submit	Not completed	needs a running Varda server and account, which is not available
+varda2-client	varda2-client_task	Not completed	needs a running Varda server and account, which is not available
+vardict	vardict	Failed	image problem: samtools is missing from the image, so vardict prints no calls (Can't exec samtools); CWL flags were corrected from the help
+vardict	vardict_testsomatic.R	PASS	
+vardict	vardict_teststrandbias.R	PASS	
+vardict	vardict_var2vcf_paired.pl	PASS	
+vardict	vardict_var2vcf_valid.pl	PASS	
+vardict-java	vardict-java_testsomatic.R	PASS	
+vardict-java	vardict-java_teststrandbias.R	PASS	
+vardict-java	vardict-java_var2vcf_paired.pl	PASS	
+vardict-java	vardict-java_var2vcf_valid.pl	PASS	
+vardict-java	vardict-java_vardict-java	PASS	
+varfish-server-worker	varfish-server-worker_seqvars_aggregate	PASS	
+varfish-server-worker	varfish-server-worker_seqvars_ingest	Not completed	needs a mehari transcript database (large download; the test copy in the repository is a git-lfs stub)
+varfish-server-worker	varfish-server-worker_seqvars_prefilter	PASS	
+varfish-server-worker	varfish-server-worker_seqvars_query	Not completed	needs the worker annotation database and inhouse database (large downloads; test copies are git-lfs stubs)
+varfish-server-worker	varfish-server-worker_strucvars_aggregate	PASS	
+varfish-server-worker	varfish-server-worker_strucvars_ingest	PASS	
+varfish-server-worker	varfish-server-worker_strucvars_query	Not completed	needs the worker annotation database (large download; test copy is a git-lfs stub)
+varfish-server-worker	varfish-server-worker_strucvars_txt-to-bin	PASS	
+vargeno	vargeno_geno	Failed	tool bug: with the repository test data vargeno geno writes only the VCF header; the expected output has 5 genotype records
+vargeno	vargeno_index	Failed	tool bug: vargeno index writes empty .ref.dict and .snp.dict files, so genotyping has no data
+variabel	variabel	PASS	
+variantbam	variantbam_variant	PASS	
+variantbreak	variantbreak	PASS	synthetic data: simulated chr21 structural variants (SURVIVOR, from nf-core) as variant BED files with real GENCODE chr21 annotation
+varifier	varifier_make_truth_vcf	PASS	
+varifier	varifier_vcf_eval	PASS	
+varlinker	varlinker_variant-linker	Failed	tool bug: it downloads a 1.9 GB GENCODE file and assigns genes from other chromosomes (chr21:6120101 gets CHD5 from chr1), so the annotation is wrong
+varlinker	varlinker_variant-taltanno	Not completed	reads the annotation files that variant-linker builds from a 1.9 GB GENCODE download, and that annotation is wrong, so the output cannot be confirmed
+varlinker	varlinker_variant-trefanno	Not completed	reads the annotation files that variant-linker builds from a 1.9 GB GENCODE download, and that annotation is wrong, so the output cannot be confirmed
+varlociraptor	varlociraptor_call_variants_generic	PASS	
+varlociraptor	varlociraptor_call_variants_tumor-normal	PASS	
+varlociraptor	varlociraptor_decode-phred	PASS	
+varlociraptor	varlociraptor_estimate_alignment-properties	PASS	
+varlociraptor	varlociraptor_estimate_contamination	Not completed	runs and writes a posterior table and plot, but the 11-site test input gives a flat posterior, so the estimate cannot be confirmed
+varlociraptor	varlociraptor_estimate_mutational-burden	PASS	
+varlociraptor	varlociraptor_filter-calls_control-fdr	PASS	
+varlociraptor	varlociraptor_filter-calls_posterior-odds	PASS	
+varlociraptor	varlociraptor_genotype	PASS	
+varlociraptor	varlociraptor_methylation-candidates	PASS	
+varlociraptor	varlociraptor_plot_scatter	PASS	
+varlociraptor	varlociraptor_plot_variant-calling-prior	PASS	
+varlociraptor	varlociraptor_preprocess_variants	PASS	
+varpubs	varpubs_deploy-db	PASS	
+varpubs	varpubs_summarize-variants	Not completed	needs a running LLM server (OpenAI-format API); command line ran only on a variant with no articles
+varpubs	varpubs_update-cache	PASS	synthetic data: one planted summary row in a cache made with the tool's own classes; merged output contains it
+vartovcf	vartovcf	PASS	matches the tool's own expected VCF (v1.4.0 test data)
+vartrix	vartrix	PASS	repo test BAM/VCF; consensus matrix identical to expected, coverage matrices equal (row order differs)
+varvamp	varvamp_qpcr	PASS	Galaxy test alignment and settings; primers and amplicons found; fixed positional order (options before alignment)
+varvamp	varvamp_single	PASS	Galaxy test alignment and settings; primers and amplicons found; fixed positional order (options before alignment)
+varvamp	varvamp_tiled	PASS	Galaxy test alignment and settings; primers and amplicons found; fixed positional order (options before alignment)
+vase	vase	PASS	nf-core SnpEff-annotated VCF; --snpeff --impact filter kept the 39 expected SNV records
+vawk	vawk	PASS	nf-core VCF; filter with --var variables kept 32 records, matching an independent awk count; fixed --var prefix per item and homepage
+vcf-annotator	vcf-annotator	PASS	tool's own test VCF and GenBank; output identical to expected annotated VCF; fixed baseCommand to vcf-annotator
+vcf-pg-loader	vcf-pg-loader_annotate	Not completed	needs a PostgreSQL server (the image has none and cannot start one)
+vcf-pg-loader	vcf-pg-loader_annotation-query	Not completed	needs a PostgreSQL server (the image has none and cannot start one)
+vcf-pg-loader	vcf-pg-loader_benchmark	PASS	parsing-only benchmark on nf-core VCF; reported 74 variants, matching the file
+vcf-pg-loader	vcf-pg-loader_init-db	Not completed	needs a PostgreSQL server (the image has none and cannot start one)
+vcf-pg-loader	vcf-pg-loader_list-annotations	Not completed	needs a PostgreSQL server (the image has none and cannot start one)
+vcf-pg-loader	vcf-pg-loader_load	Not completed	needs a PostgreSQL server (the image has none and cannot start one)
+vcf-pg-loader	vcf-pg-loader_load-annotation	Not completed	needs a PostgreSQL server (the image has none and cannot start one)
+vcf-pg-loader	vcf-pg-loader_validate	Not completed	needs a PostgreSQL server (the image has none and cannot start one)
+vcf-reformatter	vcf-reformatter	PASS	nf-core SnpEff VCF; TSV has 74 rows (one per variant), MAF split mode has all transcripts; added output collection for files in the working directory
+vcf-validator	vcf-validator_vcf_assembly_checker	PASS	nf-core VCF and chr21 FASTA; 74/74 records match; fixed baseCommand to vcf_assembly_checker, assembly as File, fai, output directory creation
+vcf-validator	vcf-validator_vcf_validator	PASS	nf-core VCF; reported valid with one real warning (no reference header); added output directory creation
+vcf2circos	vcf2circos	Not completed	needs the separate Static assembly/config folder (download page returns Forbidden); without it the tool crashes with KeyError 'Variants'
+vcf2cytosure	vcf2cytosure	PASS	nf-core chr21 SV VCF with --genome 38; CGH file wrote 136 variants, matching the input; fixed baseCommand to vcf2cytosure
+vcf2db	vcf2db_vcf2db.py	PASS	tool's own test VCF and PED; database has 6 variants, 9 samples and expanded genotype tables; fixed baseCommand to vcf2db.py, db path as output, repeated options
+vcf2maf	vcf2maf_maf2maf.pl	Not completed	needs VEP and its large offline cache; the image has no vep program
+vcf2maf	vcf2maf_vcf2maf.pl	PASS	nf-core VEP-annotated VCF with its reference slice, --inhibit-vep mode: 783 variants gave 783 MAF rows; VEP run mode not tested (no VEP in image); added missing advanced options and writable VCF staging
+vcf2maf-umccr	vcf2maf-umccr_maf2maf.pl	Not completed	needs VEP and its large offline cache; the image has no vep program
+vcf2maf-umccr	vcf2maf-umccr_vcf2maf.pl	PASS	nf-core VEP-annotated VCF with its reference slice, --inhibit-vep mode: 783 variants gave 783 MAF rows; VEP run mode not tested (no VEP in image); added missing advanced options and writable VCF staging
+vcf2parquet	vcf2parquet_convert	PASS	nf-core VCF; Parquet has 74 rows matching the VCF; rewrote so global --input and options come before the convert subcommand
+vcf2parquet	vcf2parquet_split	PASS	nf-core VCF with batch size 30; three Parquet files with 30, 30 and 14 rows (74 total); rewrote so global --input and options come before the split subcommand
+vcf2tsvpy	vcf2tsvpy	PASS	
+vcf2variants	vcf2variants	PASS	
+vcfanno	vcfanno	PASS	
+vcfbub	vcfbub	PASS	
+vcfdist	vcfdist	Not completed	runs on the repository demo, but 2 INDEL true positives differ from the repo's expected output (874 vs 876); the expected file is from an older version, so the result could not be confirmed.
+vcferr	vcferr	PASS	
+vcfexpress	vcfexpress_filter	PASS	
+vcfkit	vcfkit_vk_calc_genotypes	PASS	
+vcfkit	vcfkit_vk_calc_sample_hom_gt	PASS	
+vcfkit	vcfkit_vk_calc_spectrum	PASS	
+vcfkit	vcfkit_vk_call	Failed	image problem: vk call needs the genome folder inside the installed package, which is read-only for the container user
+vcfkit	vcfkit_vk_filter	PASS	
+vcfkit	vcfkit_vk_geno_het_polarization	Failed	image problem: vk geno stops with ModuleNotFoundError for vcfkit.vk
+vcfkit	vcfkit_vk_geno_transfer_filter	Failed	image problem: vk geno stops with ModuleNotFoundError for vcfkit.vk
+vcfkit	vcfkit_vk_genome	Failed	image problem: vk genome writes .genome_directory inside the installed package folder, which is read-only for the container user
+vcfkit	vcfkit_vk_hmm	Failed	image problem: python module pomegranate is missing
+vcfkit	vcfkit_vk_phylo_fasta	PASS	
+vcfkit	vcfkit_vk_phylo_tree	PASS	
+vcfkit	vcfkit_vk_primer_indel	Failed	image problem: python module logzero is missing
+vcfkit	vcfkit_vk_primer_sanger	Failed	image problem: python module logzero is missing
+vcfkit	vcfkit_vk_primer_snip	Failed	image problem: python module logzero is missing
+vcfkit	vcfkit_vk_primer_template	Failed	image problem: python module logzero is missing
+vcfkit	vcfkit_vk_rename	PASS	
+vcfkit	vcfkit_vk_tajima	PASS	
+vcfkit	vcfkit_vk_vcf2tsv	PASS	
+vcflatten	vcflatten	PASS	
+vcflib	vcflib_vcfhethomratio	Failed	tool bug: vcfhethomratio counts missing genotypes (./.) as homozygous non-reference, so the ratio is too low (tested with a 4-site file: gives 0.33, expected 0.5)
+vcfsamplecompare	vcfsamplecompare_vcfSampleCompare.pl	PASS	
+vcfsim	vcfsim	PASS	
+vclean	vclean	Not completed	needs the CheckV and Pfam databases (several GB), too large for this test
+vclean	vclean_download_database	Not completed	downloads the CheckV and Pfam databases (several GB), too large for this test
+vclust	vclust_align	PASS	
+vclust	vclust_cluster	PASS	
+vclust	vclust_deduplicate	PASS	
+vclust	vclust_prefilter	PASS	
+vcontact2	vcontact2	Failed	image problem: the image has no ClusterONE jar, Java, MCL or DIAMOND, so vcontact2 stops with 'Could not find ClusterONE java file'
+vcontact3	vcontact3_prepare_databases	Not completed	downloads the vConTACT3 reference database (several GB); only --list-versions was run, and it prints to stderr
+vcontact3	vcontact3_run	Not completed	needs the vConTACT3 reference database (several GB), too large for this test
+vdjer	vdjer	Failed	image problem: vdjer segfaults (exit 139) right after printing its parameters, on the repository demo BAM with the official IGH reference
+vechat	vechat	PASS	

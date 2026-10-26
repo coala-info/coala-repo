@@ -1,5 +1,11 @@
 # ucsc-wigcorrelate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-wigcorrelate | PASS |  |
+
 ## ucsc-wigcorrelate
 
 ### Tool Description

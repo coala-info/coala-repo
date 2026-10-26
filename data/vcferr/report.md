@@ -1,5 +1,11 @@
 # vcferr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcferr | PASS |  |
+
 ## vcferr
 
 ### Tool Description

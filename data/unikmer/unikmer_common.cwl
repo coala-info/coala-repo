@@ -4,128 +4,119 @@ baseCommand:
   - unikmer
   - common
 label: unikmer_common
-doc: "Find k-mers shared by most of the binary files\n\nTool homepage: https://github.com/shenwei356/unikmer"
+doc: |-
+  Find k-mers shared by most of the binary files
+
+  Tool homepage: https://github.com/shenwei356/unikmer
 inputs:
-  - id: compact
-    type:
-      - 'null'
-      - boolean
-    doc: write compact binary file with little loss of speed
+  - id: mix_taxid
+    type: ['null', boolean]
+    doc: "allow part of files being whithout taxids"
     inputBinding:
-      position: 101
+      position: 10
+      prefix: --mix-taxid
+  - id: number
+    type: ['null', int]
+    doc: "minimum number of files that share a k-mer (overides -p/--proportion)"
+    inputBinding:
+      position: 10
+      prefix: --number
+  - id: proportion
+    type: ['null', double]
+    doc: "minimum proportion of files that share a k-mer"
+    inputBinding:
+      position: 10
+      prefix: --proportion
+  - id: compact
+    type: ['null', boolean]
+    doc: "write compact binary file with little loss of speed"
+    inputBinding:
+      position: 10
       prefix: --compact
   - id: compression_level
-    type:
-      - 'null'
-      - int
-    doc: compression level
+    type: ['null', int]
+    doc: "compression level"
     inputBinding:
-      position: 101
+      position: 10
       prefix: --compression-level
   - id: data_dir
-    type:
-      - 'null'
-      - Directory
-    doc: directory containing NCBI Taxonomy files, including nodes.dmp, 
-      names.dmp, merged.dmp and delnodes.dmp
+    type: ['null', Directory]
+    doc: "directory containing NCBI Taxonomy files, including nodes.dmp, names.dmp, merged.dmp and delnodes.dmp"
     inputBinding:
-      position: 101
+      position: 10
       prefix: --data-dir
   - id: ignore_taxid
-    type:
-      - 'null'
-      - boolean
-    doc: ignore taxonomy information
+    type: ['null', boolean]
+    doc: "ignore taxonomy information"
     inputBinding:
-      position: 101
+      position: 10
       prefix: --ignore-taxid
   - id: infile_list
-    type:
-      - 'null'
-      - File
-    doc: file of input files list (one file per line), if given, they are 
-      appended to files from cli arguments
+    type: ['null', File]
+    doc: "file of input files list (one file per line), if given, they are appended to files from cli arguments (names inside must match the staged files; give them also in listed_files)"
     inputBinding:
-      position: 101
+      position: 10
       prefix: --infile-list
   - id: max_taxid
-    type:
-      - 'null'
-      - string
-    doc: for smaller TaxIds, we can use less space to store TaxIds. default 
-      value is 1<<32-1, that's enough for NCBI Taxonomy TaxIds
+    type: ['null', long]
+    doc: "for smaller TaxIds, we can use less space to store TaxIds. default value is 1<<32-1, that's enough for NCBI Taxonomy TaxIds"
     inputBinding:
-      position: 101
+      position: 10
       prefix: --max-taxid
-  - id: mix_taxid
-    type:
-      - 'null'
-      - boolean
-    doc: allow part of files being whithout taxids
-    inputBinding:
-      position: 101
-      prefix: --mix-taxid
   - id: no_compress
-    type:
-      - 'null'
-      - boolean
-    doc: do not compress binary file (not recommended)
+    type: ['null', boolean]
+    doc: "do not compress binary file (not recommended)"
     inputBinding:
-      position: 101
+      position: 10
       prefix: --no-compress
   - id: nocheck_file
-    type:
-      - 'null'
-      - boolean
-    doc: do not check binary file, when using process substitution or named pipe
+    type: ['null', boolean]
+    doc: "do not check binary file, when using process substitution or named pipe"
     inputBinding:
-      position: 101
+      position: 10
       prefix: --nocheck-file
-  - id: number
-    type:
-      - 'null'
-      - int
-    doc: minimum number of files that share a k-mer (overides -p/--proportion)
-    inputBinding:
-      position: 101
-      prefix: --number
-  - id: out_prefix
-    type:
-      - 'null'
-      - string
-    doc: out file prefix ("-" for stdout)
-    inputBinding:
-      position: 101
-      prefix: --out-prefix
-  - id: proportion
-    type:
-      - 'null'
-      - float
-    doc: minimum proportion of files that share a k-mer
-    inputBinding:
-      position: 101
-      prefix: --proportion
   - id: threads
-    type:
-      - 'null'
-      - int
-    doc: number of CPUs to use
+    type: ['null', int]
+    doc: "number of CPUs to use"
     inputBinding:
-      position: 101
+      position: 10
       prefix: --threads
   - id: verbose
+    type: ['null', boolean]
+    doc: "print verbose information"
+    inputBinding:
+      position: 10
+      prefix: --verbose
+  - id: unik_files
     type:
       - 'null'
-      - boolean
-    doc: print verbose information
+      - type: array
+        items: File
+    doc: "Input k-mer binary (.unik) files. Required unless --infile-list is given."
     inputBinding:
-      position: 101
-      prefix: --verbose
+      position: 200
+  - id: out_prefix
+    type: string
+    doc: "Output file prefix (the wrapper requires a name; '-' for stdout is not supported)"
+    inputBinding:
+      position: 10
+      prefix: --out-prefix
+  - id: listed_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: "Files named in the --infile-list file (staged into the working directory so the names resolve)."
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_unik
+    type: File
+    doc: Output k-mer binary file (<out-prefix>.unik)
+    outputBinding:
+      glob: $(inputs.out_prefix)*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.listed_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unikmer:0.20.0--h9ee0642_0
-stdout: unikmer_common.out

@@ -1,5 +1,11 @@
 # ucsc-transmappsltogenepred CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-transmappsltogenepred | PASS |  |
+
 ## ucsc-transmappsltogenepred
 
 ### Tool Description

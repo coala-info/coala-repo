@@ -1,5 +1,12 @@
 # vargeno CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vargeno_geno | Failed | tool bug: with the repository test data vargeno geno writes only the VCF header; the expected output has 5 genotype records |
+| vargeno_index | Failed | tool bug: vargeno index writes empty .ref.dict and .snp.dict files, so genotyping has no data |
+
 ## vargeno_index
 
 ### Tool Description

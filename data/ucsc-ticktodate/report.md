@@ -1,5 +1,11 @@
 # ucsc-ticktodate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-ticktodate_tickToDate | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

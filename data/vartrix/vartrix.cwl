@@ -7,6 +7,8 @@ inputs:
   - id: bam_file
     type: File
     doc: Cellranger BAM file
+    secondaryFiles:
+      - .bai
     inputBinding:
       position: 101
       prefix: --bam
@@ -27,6 +29,8 @@ inputs:
   - id: fasta_file
     type: File
     doc: Genome fasta file
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --fasta

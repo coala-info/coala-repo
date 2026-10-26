@@ -1,5 +1,25 @@
 # umis CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| umis_add_uid | PASS |  |
+| umis_bamtag | PASS |  |
+| umis_cb_filter | PASS |  |
+| umis_cb_histogram | PASS |  |
+| umis_demultiplex_cells | PASS |  |
+| umis_demultiplex_samples | PASS |  |
+| umis_fastqtransform | PASS | Matches the repo's expected outputs for 9 transform examples; dual cell barcode input (Klein inDrop, STRT dual index) crashes in this umis 1.0.9 with KeyError MB1. |
+| umis_fasttagcount | Failed | image problem: --cb_histogram fails with a pandas read_csv squeeze error, and without it the tool crashes with a None histogram. |
+| umis_kallisto | PASS |  |
+| umis_mb_filter | PASS |  |
+| umis_sb_filter | PASS |  |
+| umis_sparse | PASS |  |
+| umis_subset_bamfile | Failed | tool bug: crashes with AttributeError on track.next() with the pysam in the image, on SAM and BAM. |
+| umis_tagcount | PASS | Plain and --sparse runs match expected output; --cb_histogram (pandas read_csv squeeze error), --output_evidence_table and --minevidence crash in this image. |
+| umis_umi_histogram | PASS |  |
+
 ## umis_add_uid
 
 ### Tool Description

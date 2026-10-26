@@ -1,5 +1,12 @@
 # unikseq CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unikseq_unikseq.pl | PASS |  |
+| unikseq_writeBloom.pl | Failed | tool bug: writeBloom.pl writes the Bloom filter correctly but always exits with status 1 (the script ends with exit 1) |
+
 ## unikseq_unikseq.pl
 
 ### Tool Description

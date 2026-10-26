@@ -1,5 +1,12 @@
 # vcf2maf-umccr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf2maf-umccr_maf2maf.pl | Not completed | needs VEP and its large offline cache; the image has no vep program |
+| vcf2maf-umccr_vcf2maf.pl | PASS | nf-core VEP-annotated VCF with its reference slice, --inhibit-vep mode: 783 variants gave 783 MAF rows; VEP run mode not tested (no VEP in image); added missing advanced options and writable VCF staging |
+
 ## vcf2maf-umccr_vcf2maf.pl
 
 ### Tool Description

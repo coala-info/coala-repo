@@ -80,7 +80,7 @@ inputs:
   - id: filter_attribute
     type:
       - 'null'
-      - boolean
+      - string
     doc: Filter on 9th column of GTF
     inputBinding:
       position: 101
@@ -96,7 +96,7 @@ inputs:
   - id: internals
     type:
       - 'null'
-      - boolean
+      - float
     doc: Set minimum overlap fraction for internal feature annotations. 0 
       equates to internals=False and 1 equates to internals=True. Default is 
       False.
@@ -106,7 +106,7 @@ inputs:
   - id: log_file
     type:
       - 'null'
-      - File
+      - string
     doc: 'Log file name for messages and warnings (default: log is written to stdout)'
     inputBinding:
       position: 101
@@ -148,7 +148,7 @@ inputs:
   - id: strand
     type:
       - 'null'
-      - boolean
+      - string
     doc: Desired strand of annotated feature relative to peak
     inputBinding:
       position: 101
@@ -170,20 +170,36 @@ inputs:
       position: 101
       prefix: --threads
   - id: outdir_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: 'Output directory for output files (default: current dir)'
     inputBinding:
       position: 102
       prefix: --outdir
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: outdir
     type:
       - 'null'
       - Directory
-    doc: 'Output directory for output files (default: current dir)'
+    doc: Output directory for output files
     outputBinding:
-      glob: $(inputs.outdir_path)
+      glob: |
+        ${ return inputs.outdir_path ? inputs.outdir_path : []; }
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: |
+        ${ return inputs.log_file ? inputs.log_file : []; }
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/uropa:4.0.3--pyhdfd78af_0
+stdout: uropa.out

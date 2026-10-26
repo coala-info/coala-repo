@@ -1,5 +1,11 @@
 # vartrix CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vartrix | PASS | repo test BAM/VCF; consensus matrix identical to expected, coverage matrices equal (row order differs) |
+
 ## vartrix
 
 ### Tool Description

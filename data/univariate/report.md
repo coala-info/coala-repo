@@ -1,5 +1,11 @@
 # univariate CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| univariate | PASS |  |
+
 ## univariate
 
 ### Tool Description

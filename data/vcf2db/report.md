@@ -1,5 +1,11 @@
 # vcf2db CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf2db_vcf2db.py | PASS | tool's own test VCF and PED; database has 6 variants, 9 samples and expanded genotype tables; fixed baseCommand to vcf2db.py, db path as output, repeated options |
+
 ## vcf2db_vcf2db.py
 
 ### Tool Description

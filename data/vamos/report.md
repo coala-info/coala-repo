@@ -1,5 +1,13 @@
 # vamos CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vamos_contig | Not completed | runs only on the demo read BAM; no assembly-alignment (contig) or tumor/normal (somatic) test data was available, so this mode could not be shown. |
+| vamos_read | PASS | 577 VNTR calls with motif annotation on the repository demo BAM (chr1 1-3 Mb loci) |
+| vamos_somatic | Not completed | runs only on the demo read BAM; no assembly-alignment (contig) or tumor/normal (somatic) test data was available, so this mode could not be shown. |
+
 ## vamos_contig
 
 ### Tool Description

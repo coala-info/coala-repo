@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: vawk
 label: vawk
-doc: "An awk-like VCF parser\n\nTool homepage: https://www.gnu.org/software/gawk/"
+doc: "An awk-like VCF parser\n\nTool homepage: https://github.com/cc2qe/vawk"
 inputs:
   - id: cmd
     type: string
@@ -36,10 +36,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --var
     doc: 'declare an external variable (e.g.: SIZE=10000)'
     inputBinding:
       position: 103
-      prefix: --var
   - id: info_column
     type:
       - 'null'

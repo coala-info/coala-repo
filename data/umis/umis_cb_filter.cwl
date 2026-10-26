@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 1
   - id: bc1
-    type: string
+    type: File
     doc: Barcode 1
     inputBinding:
       position: 102
@@ -21,7 +21,7 @@ inputs:
   - id: bc2
     type:
       - 'null'
-      - string
+      - File
     doc: Barcode 2
     inputBinding:
       position: 102
@@ -29,7 +29,7 @@ inputs:
   - id: bc3
     type:
       - 'null'
-      - string
+      - File
     doc: Barcode 3
     inputBinding:
       position: 102

@@ -1,5 +1,11 @@
 # updio CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| updio | PASS | UPD call correct on the example trio (maternal UPD on chr2); the png plot step crashes in the image (awk: bad regex) after the results are written |
+
 ## updio
 
 ### Tool Description

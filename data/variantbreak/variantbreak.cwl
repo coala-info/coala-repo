@@ -9,13 +9,15 @@ doc: "VariantBreak is a structural variant (SV) breakend analyzer that intersect
   https://github.com/cytham/variantbreak"
 inputs:
   - id: variant_path
-    type: File
+    type:
+      - File
+      - Directory
     doc: 'path to single variant file or directory containing variant files of VCF
       (NanoVar-v1.3.6 or above) or BED formats. Formats: .vcf/.bed'
     inputBinding:
       position: 1
   - id: working_directory
-    type: Directory
+    type: string
     doc: path to working directory. Directory will be created if it does not 
       exist.
     inputBinding:
@@ -24,6 +26,7 @@ inputs:
     type:
       - 'null'
       - File
+      - Directory
     doc: 'path to single annotation file or directory containing annotation files
       of GTF/GFF or BED formats. Formats: .gtf/.gff/.gff3/.bed'
     inputBinding:
@@ -75,6 +78,7 @@ inputs:
     type:
       - 'null'
       - File
+      - Directory
     doc: 'path to single filter file or directory containing filter files of BED format.
       Format: .bed'
     inputBinding:
@@ -123,9 +127,24 @@ inputs:
       position: 103
       prefix: --sep
 outputs:
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Working directory with the output files (output.csv, legend.txt and
+      the HDF5 file)
+    outputBinding:
+      glob: $(inputs.working_directory)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.working_directory)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/variantbreak:1.0.4--py_0

@@ -1,15 +1,12 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vamos
+baseCommand:
+  - vamos
+  - --contig
 label: vamos_contig
 doc: "Vamos is a tool for detecting tandem repeats in sequencing data.\n\nTool homepage:
   https://github.com/ChaissonLab/vamos"
 inputs:
-  - id: subcommand
-    type: string
-    doc: Subcommand to run (contig, read, somatic, or -m for motif version)
-    inputBinding:
-      position: 1
   - id: debug
     type:
       - 'null'

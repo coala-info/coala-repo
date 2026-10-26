@@ -1,5 +1,11 @@
 # unicycler CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unicycler | PASS | assembled phiX short reads into one circular 5386 bp contig |
+
 ## unicycler
 
 ### Tool Description

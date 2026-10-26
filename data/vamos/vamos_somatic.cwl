@@ -1,14 +1,11 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vamos
+baseCommand:
+  - vamos
+  - --somatic
 label: vamos_somatic
 doc: "Vamos is a tool for VNTR analysis.\n\nTool homepage: https://github.com/ChaissonLab/vamos"
 inputs:
-  - id: subcommand
-    type: string
-    doc: Subcommand to run (contig, read, somatic, or -m for version)
-    inputBinding:
-      position: 1
   - id: debug
     type:
       - 'null'

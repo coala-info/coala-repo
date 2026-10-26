@@ -11,12 +11,12 @@ inputs:
     type: File
     doc: Input alignment file
     inputBinding:
-      position: 1
+      position: 201
   - id: output_dir
     type: string
     doc: Output directory
     inputBinding:
-      position: 2
+      position: 202
   - id: compatible_primers
     type:
       - 'null'

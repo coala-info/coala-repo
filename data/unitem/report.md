@@ -1,5 +1,15 @@
 # unitem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unitem_bin | PASS |  |
+| unitem_consensus | Not completed | needs the output of unitem profile as input, and profile fails because prodigal is missing in the image |
+| unitem_greedy | Not completed | needs the output of unitem profile as input, and profile fails because prodigal is missing in the image |
+| unitem_profile | Failed | image problem: prodigal is not installed in the image, so unitem profile stops with 'prodigal is not on the system path' |
+| unitem_unanimous | Not completed | needs the output of unitem profile as input, and profile fails because prodigal is missing in the image |
+
 ## unitem_bin
 
 ### Tool Description

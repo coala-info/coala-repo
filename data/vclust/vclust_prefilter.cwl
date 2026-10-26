@@ -17,7 +17,9 @@ inputs:
       position: 101
       prefix: --batch-size
   - id: input_file
-    type: File
+    type:
+      - File
+      - Directory
     doc: Input FASTA file or directory of files (gzipped or uncompressed)
     inputBinding:
       position: 101

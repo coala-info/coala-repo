@@ -9,7 +9,7 @@ doc: "Transform input reads to the tagcounts compatible read layout using regula
   homepage: https://github.com/vals/umis"
 inputs:
   - id: transform
-    type: string
+    type: File
     doc: Transform file defining regular expressions
     inputBinding:
       position: 1
@@ -94,6 +94,9 @@ inputs:
       position: 108
       prefix: --fastq2out
 outputs:
+  - id: transformed
+    type: stdout
+    doc: Transformed reads (standard output; empty when --fastq1out is used).
   - id: fastq1out
     type:
       - 'null'
@@ -113,3 +116,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5
+stdout: umis_fastqtransform.out

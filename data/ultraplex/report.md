@@ -1,5 +1,11 @@
 # ultraplex CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ultraplex | PASS |  |
+
 ## ultraplex
 
 ### Tool Description

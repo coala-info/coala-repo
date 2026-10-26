@@ -1,5 +1,11 @@
 # uvp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| uvp | Not completed | pipeline, skipped: uvp runs a whole alignment and variant calling pipeline (bwa, GATK) for M. tuberculosis reads |
+
 ## uvp
 
 ### Tool Description

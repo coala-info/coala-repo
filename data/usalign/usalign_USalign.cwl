@@ -6,12 +6,16 @@ doc: "Universal Structure Alignment of Proteins and Nucleic Acids\n\nTool homepa
   https://zhanggroup.org/US-align"
 inputs:
   - id: pdb1
-    type: File
+    type:
+      - 'null'
+      - File
     doc: First PDB file
     inputBinding:
       position: 1
   - id: pdb2
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Second PDB file
     inputBinding:
       position: 2
@@ -43,6 +47,13 @@ inputs:
     inputBinding:
       position: 103
       prefix: -I
+  - id: all_vs_all_chain_list
+    type:
+      - 'null'
+      - File
+    doc: File listing the chain file names, used with -dir
+    inputBinding:
+      position: 111
   - id: all_vs_all_alignment_folder
     type:
       - 'null'
@@ -50,7 +61,7 @@ inputs:
     doc: Perform all-against-all alignment among the list of PDB chains listed 
       by 'chain_list' under 'chain_folder'.
     inputBinding:
-      position: 103
+      position: 110
       prefix: -dir
   - id: atom_name
     type:
@@ -237,12 +248,19 @@ inputs:
   - id: rotation_matrix_output
     type:
       - 'null'
-      - File
+      - string
     doc: Output rotation matrix for superposition, e.g., '-m matrix.txt' prints 
       the matrix to 'matrix.txt'; '-m -' prints to stdout.
     inputBinding:
       position: 103
       prefix: -m
+  - id: search_list_chain1_list
+    type:
+      - 'null'
+      - File
+    doc: File listing the chain file names, used with -dir1
+    inputBinding:
+      position: 113
   - id: search_list_folder
     type:
       - 'null'
@@ -250,8 +268,15 @@ inputs:
     doc: Use chain2 to search a list of PDB chains listed by 'chain1_list' under
       'chain1_folder'.
     inputBinding:
-      position: 103
+      position: 112
       prefix: -dir1
+  - id: search_list_chain2_list
+    type:
+      - 'null'
+      - File
+    doc: File listing the chain file names, used with -dir2
+    inputBinding:
+      position: 115
   - id: search_list_folder2
     type:
       - 'null'
@@ -259,12 +284,12 @@ inputs:
     doc: Use chain1 to search a list of PDB chains listed by 'chain2_list' under
       'chain2_folder'.
     inputBinding:
-      position: 103
+      position: 114
       prefix: -dir2
   - id: show_full_pairwise_alignment
     type:
       - 'null'
-      - boolean
+      - string
     doc: Whether to show full pairwise alignment of individual chains for -mm 2 
       or 4. T or F, (default F).
     inputBinding:
@@ -295,7 +320,7 @@ inputs:
   - id: tmscore_normalized_avg_length
     type:
       - 'null'
-      - boolean
+      - string
     doc: TM-score normalized by the average length of two structures. T or F, 
       (default F). -a does not change the final alignment.
     inputBinding:
@@ -319,14 +344,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: -d
-  - id: output_aligned_residue_distances_path
+  - id: output_aligned_residue_distances
     type:
       - 'null'
-      - string
-    doc: Output or path parameter `output_aligned_residue_distances_path`
+      - boolean
+    doc: Output distance of aligned residue pairs
     inputBinding:
       position: 104
-      prefix: --output-aligned-residue-distances
+      prefix: -do
   - id: output_superposed_structure1_path
     type:
       - 'null'
@@ -344,10 +369,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Output or path parameter `output_superposed_structure1_chimerax_path`
+    doc: Output superposed structure1 to sup.* for ChimeraX viewing.
     inputBinding:
       position: 106
-      prefix: --output-superposed-structure1-chimerax
+      prefix: -chimerax
   - id: output_superposed_structure1_rasmol_path
     type:
       - 'null'
@@ -362,36 +387,47 @@ inputs:
       position: 107
       prefix: -rasmol
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output with the alignment result
   - id: output_superposed_structure1
     type:
       - 'null'
-      - File
-    doc: Output superposed structure1 to sup.* for PyMOL viewing.
+      - type: array
+        items: File
+    doc: Superposed structure files written by -o (PyMOL scripts and coordinates)
     outputBinding:
-      glob: $(inputs.output_superposed_structure1_path)
+      glob: |
+        ${ return inputs.output_superposed_structure1_path ? inputs.output_superposed_structure1_path + '*' : []; }
   - id: output_superposed_structure1_rasmol
     type:
       - 'null'
-      - File
-    doc: Output superposed structure1 to sup.* for RasMol viewing.
+      - type: array
+        items: File
+    doc: Superposed structure files written by -rasmol
     outputBinding:
-      glob: $(inputs.output_superposed_structure1_rasmol_path)
+      glob: |
+        ${ return inputs.output_superposed_structure1_rasmol_path ? inputs.output_superposed_structure1_rasmol_path + '*' : []; }
   - id: output_superposed_structure1_chimerax
     type:
       - 'null'
-      - File
-    doc: Output superposed structure1 to sup.* for ChimeraX viewing.
+      - type: array
+        items: File
+    doc: Superposed structure files written by -chimerax
     outputBinding:
-      glob: $(inputs.output_superposed_structure1_chimerax_path)
-  - id: output_aligned_residue_distances
+      glob: |
+        ${ return inputs.output_superposed_structure1_chimerax_path ? inputs.output_superposed_structure1_chimerax_path + '*' : []; }
+  - id: rotation_matrix
     type:
       - 'null'
       - File
-    doc: Output distance of aligned residue pairs
+    doc: Rotation matrix written by -m
     outputBinding:
-      glob: $(inputs.output_aligned_residue_distances_path)
+      glob: |
+        ${ return inputs.rotation_matrix_output && inputs.rotation_matrix_output != '-' ? inputs.rotation_matrix_output : []; }
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/usalign:20241201--h503566f_0
+stdout: usalign_USalign.out

@@ -84,6 +84,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --refs
+      valueFrom: $(self.basename)
   - id: rtab
     type:
       - 'null'
@@ -100,6 +101,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --simple
+  - id: ref_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Genome files named in the refs file; they are staged in the working directory so the names in the refs file resolve
   - id: threads
     type:
       - 'null'
@@ -134,7 +141,18 @@ outputs:
       items: File
     doc: Files written with the prefix given in out
     outputBinding:
-      glob: $(inputs.out)*
+      glob: |
+        ${ return (inputs.out ? inputs.out : 'unitig_caller') + '*'; }
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [];
+        if (inputs.ref_files) { l = l.concat(inputs.ref_files.map(function(f) { return {'entry': f, 'writable': true}; })); }
+        if (inputs.refs) { l.push(inputs.refs); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unitig-caller:1.3.1--py311heec5c76_1

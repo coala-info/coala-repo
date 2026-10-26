@@ -2,12 +2,12 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tickToDate
 label: ucsc-ticktodate_tickToDate
-doc: "Converts a 32-bit Unix timestamp (ticks) to a human-readable date string.\n\n
+doc: "Convert seconds since 1970 to time and date.\n\n
   Tool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
   - id: tick
-    type: int
-    doc: The Unix timestamp (seconds since Jan 1, 1970) to convert.
+    type: string
+    doc: Seconds since 1970 to convert; use 'now' for the current ticks and date.
     inputBinding:
       position: 1
 outputs:

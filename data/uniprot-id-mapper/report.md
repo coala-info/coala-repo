@@ -1,5 +1,11 @@
 # uniprot-id-mapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| uniprot-id-mapper_protmap | PASS |  |
+
 ## uniprot-id-mapper_protmap
 
 ### Tool Description

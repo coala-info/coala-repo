@@ -9,17 +9,18 @@ inputs:
     type:
       type: array
       items: File
-    doc: Wig files to correlate
+    doc: Wig or bigWig files to correlate
     inputBinding:
-      position: 1
+      position: 2
   - id: clamp_max
     type:
       - 'null'
       - float
-    doc: Values greater than this are set to this
+    doc: Values larger than this are clipped to this value
     inputBinding:
-      position: 102
-      prefix: -clampMax
+      position: 1
+      prefix: -clampMax=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

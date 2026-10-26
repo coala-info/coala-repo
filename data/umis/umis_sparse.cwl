@@ -28,6 +28,20 @@ outputs:
     doc: Output sparse matrix file
     outputBinding:
       glob: $(inputs.sparse_file)
+  - id: colnames_out
+    type:
+      - 'null'
+      - File
+    doc: Column names companion file.
+    outputBinding:
+      glob: $(inputs.sparse_file).colnames
+  - id: rownames_out
+    type:
+      - 'null'
+      - File
+    doc: Row names companion file.
+    outputBinding:
+      glob: $(inputs.sparse_file).rownames
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5

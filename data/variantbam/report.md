@@ -1,5 +1,11 @@
 # variantbam CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| variantbam_variant | PASS |  |
+
 ## variantbam_variant
 
 ### Tool Description

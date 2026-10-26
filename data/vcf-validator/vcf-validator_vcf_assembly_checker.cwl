@@ -1,13 +1,13 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vcf-assembly-checker
+baseCommand: vcf_assembly_checker
 label: vcf-validator_vcf_assembly_checker
 doc: "vcf-assembly-checker version 0.10.2\n\nTool homepage: https://github.com/EBIVariation/vcf-validator"
 inputs:
   - id: assembly
     type:
       - 'null'
-      - string
+      - File
     doc: Path to the input assembly report used for contig synonym mapping
     inputBinding:
       position: 101
@@ -19,6 +19,8 @@ inputs:
     doc: Path to the input FASTA file; please note that the index file (from 
       samtools faidx) must have the same name as the FASTA file and saved with a
       .fai extension
+    secondaryFiles:
+      - .fai
     inputBinding:
       position: 101
       prefix: --fasta
@@ -65,6 +67,11 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "${if (inputs.outdir) { return [{entryname: inputs.outdir, entry: {class:
+      'Directory', listing: []}, writable: true}]; } return [];}"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf-validator:0.10.2--h7a61d87_0

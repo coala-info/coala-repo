@@ -29,7 +29,7 @@ inputs:
       - 'null'
       - string
     doc: Delimiter to use when joining the UMIs to the read name. Defaults to 
-      `.`.
+      `:`.
     inputBinding:
       position: 101
       prefix: --delim

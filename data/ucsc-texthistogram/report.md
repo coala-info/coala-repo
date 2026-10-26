@@ -1,5 +1,11 @@
 # ucsc-texthistogram CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-texthistogram | PASS |  |
+
 ## ucsc-texthistogram
 
 ### Tool Description

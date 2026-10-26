@@ -1,5 +1,11 @@
 # ucsc-xmlcat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-xmlcat | PASS |  |
+
 ## ucsc-xmlcat
 
 ### Tool Description

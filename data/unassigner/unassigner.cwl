@@ -28,11 +28,9 @@ inputs:
       position: 102
       prefix: --num_cpus
   - id: output_dir
-    type:
-      - 'null'
-      - string
-    doc: "Output directory (default: basename of query sequences FASTA file, plus
-      '_unassigned')."
+    type: string
+    doc: "Output directory name (the tool default is the basename of the query
+      FASTA file plus '_unassigned')."
     inputBinding:
       position: 102
       prefix: --output_dir
@@ -82,18 +80,16 @@ inputs:
       position: 102
       prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: "Output directory (default: basename of query sequences FASTA file, plus
-      '_unassigned')."
+    type: Directory
+    doc: Output directory with unassigner_output.tsv and algorithm_output.tsv
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.type_strain_fasta)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unassigner:1.1.0--pyh7e72e81_0
-stdout: unassigner.out

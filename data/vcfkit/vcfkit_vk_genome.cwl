@@ -7,14 +7,16 @@ label: vcfkit_vk_genome
 doc: "Manage genome data\n\nTool homepage: https://github.com/AndersenLab/VCF-kit"
 inputs:
   - id: command
-    type: string
-    doc: Subcommand to run (location, list, search, ncbi, wormbase)
-    inputBinding:
-      position: 1
-  - id: path
     type:
       - 'null'
-      - Directory
+      - string
+    doc: Subcommand to run (location, list, ncbi, wormbase); leave empty with search_term
+    inputBinding:
+      position: 1
+  - id: genome_path
+    type:
+      - 'null'
+      - string
     doc: Path to genome data
     inputBinding:
       position: 2
@@ -29,17 +31,21 @@ inputs:
   - id: genome_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Set Genome Directory
     inputBinding:
       position: 103
-      prefix: --directory
+      prefix: --directory=
+      separate: false
   - id: ref
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Assembly name for NCBI or Wormbase
     inputBinding:
       position: 103
-      prefix: --ref
+      prefix: --ref=
+      separate: false
   - id: search_term
     type:
       - 'null'
@@ -47,7 +53,8 @@ inputs:
     doc: Search term for genomes
     inputBinding:
       position: 103
-      prefix: --search
+      prefix: --search=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

@@ -1,5 +1,12 @@
 # unifire CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unifire | PASS |  |
+| unifire_pirsr | Failed | tool bug: pirsr exits 0 with empty output (NullPointerException on md5) on the project's own test file PIRSR-input-iprscan.xml; added mkdir of output dir |
+
 ## unifire
 
 ### Tool Description
@@ -96,5 +103,37 @@ usage: unifire -i <INPUT_FILE> -o <OUTPUT_FILE> -r <RULE_URML_FILE> [-f <OUTPUT_
                                             (default: 4096 MB).
      -h,--help                              Print this usage.
 --------------------------------------------
+```
+
+## unifire_pirsr
+
+### Tool Description
+Run hmmalign of PIRSR site rule HMMs on InterProScan results and write enhanced facts XML.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/unifire:1.0.1--hdfd78af_0
+- **Homepage**: https://github.com/cmatKhan/unifire/
+- **Package**: https://anaconda.org/channels/bioconda/packages/unifire/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+04:57:50.232 ERROR o.p.p.PIRSRApp - Missing required options: d, i, o 
+usage: pirsr -a <HMMALIGN> -d <PIRSR_DATA_DIR> -i <INPUT_FILE> -o <OUTPUT_DIR> [-t <INPUT_TYPE>]
+       [-h]
+----------------------------------------------------------------------------------------------------
+     -a,--hmmalign <HMMALIGN>                 Path to hmmalign command.
+     -d,--pirsr_data_dir <PIRSR_DATA_DIR>     Directory for PIRSR data.
+     -i,--input_file <INPUT_FILE>             Input file (path) containing the proteins to annotate
+                                              and required data in InterProScan Output XML format.
+     -o,--output_dir <OUTPUT_DIR>             Directory for SRHMM hmmalign result and enhanced
+                                              IPRScan Facts XML file.
+     -t,--input_type <INPUT_TYPE>             Type of the input file provided by -i option.
+                                              Supported Input types are
+                                              - InterProScan (InterProScan Output XML)
+                                              - XML (Input Fact XML)
+                                              (default: InterProScan)
+     -h,--help                                Print this usage.
+----------------------------------------------------------------------------------------------------
 ```
 

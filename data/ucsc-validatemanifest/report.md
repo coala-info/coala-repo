@@ -1,5 +1,11 @@
 # ucsc-validatemanifest CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-validatemanifest | Failed | image problem: validateManifest calls validateFiles, which is not in the image (command not found) |
+
 ## ucsc-validatemanifest
 
 ### Tool Description

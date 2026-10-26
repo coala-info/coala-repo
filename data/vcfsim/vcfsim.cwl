@@ -69,13 +69,13 @@ inputs:
       position: 101
       prefix: --Ne
   - id: percent_missing_genotypes
-    type: string
+    type: float
     doc: Percent of samples missing from your VCF
     inputBinding:
       position: 101
       prefix: --percent_missing_genotypes
   - id: percent_missing_sites
-    type: string
+    type: float
     doc: Percent of rows missing from your VCF
     inputBinding:
       position: 101
@@ -91,9 +91,8 @@ inputs:
   - id: population_mode
     type:
       - 'null'
-      - string
-    doc: "1 = single population (default), 2 = population C\n                    \
-      \    splits into A and B at given time"
+      - int
+    doc: 1 = single population (default), 2 = population C splits into A and B at given time
     inputBinding:
       position: 101
       prefix: --population_mode
@@ -108,7 +107,7 @@ inputs:
   - id: sample_size
     type:
       - 'null'
-      - string
+      - int
     doc: Number of samples to simulate
     inputBinding:
       position: 101
@@ -118,10 +117,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: List of sample names to simulate
+    doc: List of sample names to simulate (passed as one comma-separated string)
     inputBinding:
       position: 101
       prefix: --samples
+      itemSeparator: ','
   - id: samples_file
     type:
       - 'null'
@@ -131,7 +131,7 @@ inputs:
       position: 101
       prefix: --samples_file
   - id: seed
-    type: string
+    type: int
     doc: Random seed for VCFSim to use
     inputBinding:
       position: 101
@@ -147,25 +147,23 @@ inputs:
   - id: time
     type:
       - 'null'
-      - string
+      - float
     doc: Time of split (only used if --population_mode is 2)
     inputBinding:
       position: 101
       prefix: --time
   - id: output_file_path
     type: string
+    doc: Filename prefix of the output VCF; the tool appends the seed
     inputBinding:
       position: 102
       prefix: --output_file
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: "Filename of outputed vcf, will automatically be\n                      \
-      \  followed by seed"
+    type: File[]
+    doc: Simulated VCF files. The tool appends the seed to the output file name.
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path)*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

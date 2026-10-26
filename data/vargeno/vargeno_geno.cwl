@@ -1,40 +1,48 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vargeno
+baseCommand:
+  - vargeno
+  - geno
 label: vargeno_geno
-doc: "vargeno <option> [option parameters ...]\n\nTool homepage: https://github.com/medvedevgroup/vargeno"
+doc: "Perform SNP genotyping from FASTQ reads with a VarGeno index.\n\nTool homepage:\
+  \ https://github.com/medvedevgroup/vargeno"
 inputs:
-  - id: option
-    type: string
-    doc: The subcommand to run (index or geno)
-    inputBinding:
-      position: 1
-  - id: input_fasta
-    type: File
-    doc: Input FASTA file for index subcommand
-    inputBinding:
-      position: 2
-  - id: input_fastq
-    type: File
-    doc: Input FASTQ file for geno subcommand
-    inputBinding:
-      position: 3
-  - id: input_snps_vcf_index
-    type: File
-    doc: Input SNPs in VCF file for index subcommand
-    inputBinding:
-      position: 4
   - id: index_prefix
     type: string
-    doc: Prefix for the index file for index subcommand
+    doc: Prefix of the index files made by vargeno index
     inputBinding:
-      position: 5
-outputs:
-  - id: output_file
+      position: 1
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files written by vargeno index (staged so that the prefix resolves)
+  - id: input_fastq
     type: File
-    doc: Output file in VCF format for geno subcommand
+    doc: Input reads in FASTQ format
+    inputBinding:
+      position: 2
+  - id: input_snps_vcf
+    type: File
+    doc: Input SNPs in VCF format
+    inputBinding:
+      position: 3
+  - id: output_vcf_path
+    type: string
+    doc: Output file in VCF format
+    inputBinding:
+      position: 4
+outputs:
+  - id: output_vcf
+    type: File
+    doc: Genotyped VCF file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.index_files)
+  - class: ResourceRequirement
+    ramMin: 8000
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vargeno:1.0.3--h9948957_6

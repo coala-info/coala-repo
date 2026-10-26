@@ -1,5 +1,12 @@
 # unifrac-binaries CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unifrac-binaries_faithpd | PASS | output flag changed to -o as in the help; result matches expected faith values |
+| unifrac-binaries_ssu | PASS | output flag changed to -o; --normalize-sample-counts takes true/false; matches expected matrices |
+
 ## unifrac-binaries_ssu
 
 ### Tool Description

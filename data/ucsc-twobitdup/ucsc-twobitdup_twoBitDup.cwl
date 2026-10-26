@@ -13,20 +13,25 @@ inputs:
   - id: udc_dir
     type:
       - 'null'
-      - Directory
+      - string
     doc: place to put cache for remote bigBed/bigWigs
     inputBinding:
       position: 102
       prefix: -udcDir=
       separate: false
   - id: key_list_path
-    type: string
-    doc: '=file - file to write a key list, two columns: md5sum and sequenceName'
+    type:
+      - 'null'
+      - string
+    doc: 'file to write a key list, two columns: md5sum and sequenceName'
     inputBinding:
       position: 103
       prefix: -keyList=
       separate: false
 outputs:
+  - id: report
+    type: stdout
+    doc: Messages about identical sequences
   - id: key_list
     type:
       - 'null'
@@ -36,6 +41,7 @@ outputs:
       glob: $(inputs.key_list_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: ucsc-twobitdup.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-twobitdup:482--h0b57e2e_0

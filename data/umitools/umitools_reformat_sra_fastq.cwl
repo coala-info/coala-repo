@@ -56,16 +56,12 @@ inputs:
       position: 101
       prefix: --verbose
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --output
   - id: pcr_duplicate_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 103
       prefix: --pcr-duplicate

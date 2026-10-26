@@ -1,5 +1,11 @@
 # vartovcf CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vartovcf | PASS | matches the tool's own expected VCF (v1.4.0 test data) |
+
 ## vartovcf
 
 ### Tool Description

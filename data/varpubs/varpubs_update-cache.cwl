@@ -31,13 +31,16 @@ inputs:
       prefix: --output
 outputs:
   - id: output
-    type: Directory
+    type: File
     doc: Path to the cache file for storing new summary results. Will be created
       if it doesn't exist.
     outputBinding:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "${return inputs.cache.map(function(f) { return {entryname: f.basename,
+      entry: f, writable: true}; });}"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/varpubs:0.5.0--pyhdfd78af_0

@@ -1,5 +1,13 @@
 # varpubs CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| varpubs_deploy-db | PASS |  |
+| varpubs_summarize-variants | Not completed | needs a running LLM server (OpenAI-format API); command line ran only on a variant with no articles |
+| varpubs_update-cache | PASS | synthetic data: one planted summary row in a cache made with the tool's own classes; merged output contains it |
+
 ## varpubs_deploy-db
 
 ### Tool Description

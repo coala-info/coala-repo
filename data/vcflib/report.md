@@ -1,5 +1,11 @@
 # vcflib CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcflib_vcfhethomratio | Failed | tool bug: vcfhethomratio counts missing genotypes (./.) as homozygous non-reference, so the ratio is too low (tested with a 4-site file: gives 0.33, expected 0.5) |
+
 ## Metadata
 - **Skill**: generated
 

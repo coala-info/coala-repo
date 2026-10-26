@@ -1,5 +1,15 @@
 # vardict CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vardict | Failed | image problem: samtools is missing from the image, so vardict prints no calls (Can't exec samtools); CWL flags were corrected from the help |
+| vardict_testsomatic.R | PASS |  |
+| vardict_teststrandbias.R | PASS |  |
+| vardict_var2vcf_paired.pl | PASS |  |
+| vardict_var2vcf_valid.pl | PASS |  |
+
 ## vardict
 
 ### Tool Description
@@ -198,6 +208,175 @@ VarDict is a variant calling program for SNV, MNV, indels (<120 bp default, but 
     --chimeric
        Indicate to turn off chimeric reads filtering.  Chimeric reads are artifacts from library construction, where a read can be split
        into two segments, each will be aligned within 1-2 read length distance, but in opposite direction.
+
+AUTHOR
+       Written by Zhongwu Lai, AstraZeneca, Boston, USA
+
+REPORTING BUGS
+       Report bugs to zhongwu@yahoo.com
+
+COPYRIGHT
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
+```
+
+## vardict_teststrandbias.R
+
+### Tool Description
+Test strand bias of VarDict variants with Fisher exact test (standard input to standard output).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vardict:2019.06.04--pl526_0
+- **Homepage**: https://github.com/AstraZeneca-NGS/VarDict
+- **Package**: https://anaconda.org/channels/bioconda/packages/vardict/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+teststrandbias.R reads the VarDict variant table on standard input and writes it to standard output with Fisher exact strand bias p-value and odds ratio columns added. It has no command-line options.
+```
+
+## vardict_testsomatic.R
+
+### Tool Description
+Test somatic status of paired VarDict output with Fisher exact test (standard input to standard output).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vardict:2019.06.04--pl526_0
+- **Homepage**: https://github.com/AstraZeneca-NGS/VarDict
+- **Package**: https://anaconda.org/channels/bioconda/packages/vardict/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+testsomatic.R reads the paired VarDict variant table on standard input and writes it to standard output with the somatic status and Fisher exact test p-value columns added. It has no command-line options.
+```
+
+## vardict_var2vcf_valid.pl
+
+### Tool Description
+Convert VarDict output into a validated VCF file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vardict:2019.06.04--pl526_0
+- **Homepage**: https://github.com/AstraZeneca-NGS/VarDict
+- **Package**: https://anaconda.org/channels/bioconda/packages/vardict/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/var2vcf_valid.pl [-hHS] [-p pos] [-q qual] [-d depth] [-v depth] [-f frequency] [-F frequency] vars.txt
+
+The program will convert the variant output from checkVar.pl script into validated VCF file.
+
+Options are:
+    -h Print this usage.
+    -H Print this usage.
+    -S If set, variants that didn't pass filters will not be present in VCF file
+    -a For amplicon based variant calling.  Variant not supported by all amplicons will be considered false positve, with filter set to "AMPBIAS".
+    -A Indicate to output all variants at the same position.  By default, only the variant with the highest allele frequency is converted to VCF.
+    -c  int
+        If two seemingly high quality SNV variants are within {int} bp, they're both filtered.  Default: 0, or no filtering
+    -I  int
+        The maximum non-monomer MSI allowed for a HT variant with AF < 0.5.  By default, 12, or any variants with AF < 0.5 in a region
+        with >6 non-monomer MSI will be considered false positive.  For monomers, that number is 13.
+    -m  double
+        The maximum mean mismatches allowed.  Default: 5.25, or if a variant is supported by reads with more than 5.25 mean mismathes, it'll be considered
+        false positive.  Mismatches don't includes indels in the alignment.
+    -p  float
+    	The minimum mean position of variants in the read.  Default: 8.
+    -P  0 or 1
+        Whehter to filter variants with pstd = 0.  Default: 1 or yes.  Set it to 0 for targeted PCR based sequencing, where pstd is expected.
+    -q  float
+    	The minimum mean base quality.  Default to 22.5 for Illumina sequencing
+    -Q  float
+    	The minimum mapping quality.  Default to 10.0 for Illumina sequencing.  Variants with lower quality (<10) will be kept only if af >= 0.8
+    -d  integer
+    	The minimum total depth.  Default to 3, might consider lower depth if (high quality variant count)*af >= 0.5
+    -v  integer
+    	The minimum high quality variant depth.  Default to 2.  Would consider lower depth (high quality variant count)*af >= 0.5
+    -f  float
+    	The minimum allele frequency.  Default to 0.02
+    -o  signal/noise
+    	The minimum signal to noise, or the ratio of hi/(lo+0.5).  Default to 1.5, that is both 2 variant reads are high quality.
+    -F  float
+    	The minimum allele frequency to consider to be homozygous.  Default to 0.2.  Thus frequency < 0.2 will 
+	be considered homozygous REF, while frequency > 0.2 will be considered homozygous ALT.
+    -N  string
+        The sample name to be used directly.
+    -E  If set, do not print END tag
+    -T  integer
+        The minimum number of split reads for SV.  Default: 1.  Change to 0 if you want SV called from discordant pairs only.
+	-b  Path to the *.bed file which is used to generate contigs in the header
+
+AUTHOR
+       Written by Zhongwu Lai, AstraZeneca, Boston, USA
+
+REPORTING BUGS
+       Report bugs to zhongwu@yahoo.com
+
+COPYRIGHT
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
+```
+
+## vardict_var2vcf_paired.pl
+
+### Tool Description
+Convert paired VarDict output into a validated VCF file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vardict:2019.06.04--pl526_0
+- **Homepage**: https://github.com/AstraZeneca-NGS/VarDict
+- **Package**: https://anaconda.org/channels/bioconda/packages/vardict/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/var2vcf_paired.pl [-hHS] [-p pos] [-q qual] [-d depth] [-v depth] [-f frequency] [-F frequency] vars.txt
+
+The program will convert the variant output from checkVar.pl script into validated VCF file.
+
+Options are:
+
+    -h	Print this usage.
+    -H	Print this usage.
+    -C  If set, chrosomes will have names of 1,2,3,...,X,Y, instead of chr1, chr2, ..., chrX, chrY
+    -S	If set, variants that didn't pass filters will not be present in VCF file
+    -M  If set, output only candidate somatic
+    -A  Indicate to output all variants at the same position.  By default, only the variant with the highest allele frequency is converted to VCF.
+    -D  float (0-1) # Deprecated
+        The minimum allele frequency difference between two samples required in addition to p-value.  Not compitable
+	with -M option.  It's for interest of identifying variants with different AF, not just somatic.
+    -c  int
+        If two somatic candidates are within {int} bp, they're both filtered.  Default: 0 or no filtering
+    -I  int
+        The maximum non-monomer MSI allowed for a HT variant with AF < 0.6.  By default, 12, or any variants with AF < 0.6 in a region
+	with > 12 non-monomer MSI will be considered false positive.  For monomers, that number is 10.
+    -m  int
+        The maximum mean mismatches allowed.  Default: 5.25, or if a variant is supported by reads with more than 5.25 mismathes, it'll be considered
+	false positive.  Mismatches don't includes indels in the alignment.
+    -N  Name(s)
+        The sample name(s).  If only one name is given, the matched will be simply names as "name-match".  Two names
+	are given separated by "|", such as "tumor|blood".
+    -P  float
+        The maximum p-value.  Default to 0.05.
+    -p	float
+    	The minimum mean position of variants in the read.  Default: 5.
+    -q	float
+    	The minimum mean base quality.  Default to 22.5 for Illumina sequencing
+    -Q	float
+    	The minimum mapping quality.  Default to 0 for Illumina sequencing
+    -d	integer
+    	The minimum total depth.  Default to 5
+    -v	integer
+    	The minimum variant depth.  Default to 3
+    -f	float
+    	The minimum allele frequency.  Default to 0.02
+    -o	signal/noise
+    	The minimum signal to noise, or the ratio of hi/(lo+0.5).  Default to 1.5.  Set it higher for deep sequencing.
+    -F	float
+    	The minimum allele frequency to consider to be homozygous.  Default to 0.2.  Thus frequency > 0.8 (1-0.2) will 
+	be considered homozygous "1/1", between 0.5 - (1-0.2) will be "1/0", between (-f) - 0.5 will be "0/1",
+	below (-f) will be "0/0".
 
 AUTHOR
        Written by Zhongwu Lai, AstraZeneca, Boston, USA

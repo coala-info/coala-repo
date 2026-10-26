@@ -47,7 +47,9 @@ inputs:
       position: 101
       prefix: --filter-threshold
   - id: input_file
-    type: File
+    type:
+      - File
+      - Directory
     doc: Input FASTA file or directory of files (gzipped or uncompressed)
     inputBinding:
       position: 101
@@ -178,6 +180,11 @@ outputs:
     doc: Output filename
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: ids_file
+    type: File
+    doc: Sequence identifiers table written next to the output file (input of vclust cluster --ids)
+    outputBinding:
+      glob: $(inputs.output_file_path.replace(/\.[^.]*$/, '') + '.ids.tsv')
   - id: out_aln
     type:
       - 'null'

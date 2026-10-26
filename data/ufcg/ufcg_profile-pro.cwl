@@ -40,7 +40,7 @@ inputs:
       position: 101
       prefix: --info
   - id: input_file
-    type: string
+    type: File
     doc: File containing fungal protein sequences
     inputBinding:
       position: 101

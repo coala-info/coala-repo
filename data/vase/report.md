@@ -1,5 +1,11 @@
 # vase CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vase | PASS | nf-core SnpEff-annotated VCF; --snpeff --impact filter kept the 39 expected SNV records |
+
 ## vase
 
 ### Tool Description

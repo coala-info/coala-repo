@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vamos
+baseCommand:
+  - vamos
+  - --read
 label: vamos_read
 doc: "Vamos is a tool for VNTR analysis.\n\nTool homepage: https://github.com/ChaissonLab/vamos"
 inputs:

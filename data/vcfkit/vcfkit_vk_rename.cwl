@@ -18,16 +18,19 @@ inputs:
     doc: Prefix to add to sample names
     inputBinding:
       position: 102
-      prefix: --prefix
+      prefix: --prefix=
+      separate: false
   - id: subst
     type:
       - 'null'
       - type: array
         items: string
-    doc: Substitution rules in the format 'old=new'
+        inputBinding:
+          prefix: --subst=
+          separate: false
+    doc: Substitution rules in the format 'old=new' (old:new or old,new also work)
     inputBinding:
       position: 102
-      prefix: --subst
   - id: suffix
     type:
       - 'null'
@@ -35,7 +38,8 @@ inputs:
     doc: Suffix to add to sample names
     inputBinding:
       position: 102
-      prefix: --suffix
+      prefix: --suffix=
+      separate: false
 outputs:
   - id: stdout
     type: stdout

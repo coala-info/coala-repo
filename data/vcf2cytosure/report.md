@@ -1,5 +1,11 @@
 # vcf2cytosure CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf2cytosure | PASS | nf-core chr21 SV VCF with --genome 38; CGH file wrote 136 variants, matching the input; fixed baseCommand to vcf2cytosure |
+
 ## vcf2cytosure
 
 ### Tool Description

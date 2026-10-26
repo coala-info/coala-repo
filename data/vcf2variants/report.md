@@ -1,5 +1,11 @@
 # vcf2variants CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf2variants | PASS |  |
+
 ## vcf2variants
 
 ### Tool Description

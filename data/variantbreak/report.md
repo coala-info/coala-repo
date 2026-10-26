@@ -1,5 +1,11 @@
 # variantbreak CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| variantbreak | PASS | synthetic data: simulated chr21 structural variants (SURVIVOR, from nf-core) as variant BED files with real GENCODE chr21 annotation |
+
 ## variantbreak
 
 ### Tool Description

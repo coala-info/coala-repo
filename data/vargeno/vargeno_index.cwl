@@ -1,50 +1,38 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vargeno
+baseCommand:
+  - vargeno
+  - index
 label: vargeno_index
-doc: "vargeno\n\nTool homepage: https://github.com/medvedevgroup/vargeno"
+doc: "Generate the VarGeno index of a reference FASTA and a SNP list in VCF format.\n\
+  \nTool homepage: https://github.com/medvedevgroup/vargeno"
 inputs:
-  - id: geno_index_prefix
-    type: string
-    doc: index_prefix
+  - id: input_fasta
+    type: File
+    doc: Input reference FASTA
     inputBinding:
       position: 1
-  - id: index_input_fasta
+  - id: input_snps_vcf
     type: File
-    doc: input FASTA
+    doc: Input SNPs in VCF format
     inputBinding:
       position: 2
-  - id: geno_input_fastq
-    type: File
-    doc: input FASTQ
-    inputBinding:
-      position: 3
-  - id: index_input_snps_vcf
-    type: File
-    doc: input SNPs in VCF
-    inputBinding:
-      position: 4
-  - id: geno_input_snps_vcf
-    type: File
-    doc: input SNPs in VCF
-    inputBinding:
-      position: 5
   - id: index_prefix
     type: string
-    doc: index_prefix
+    doc: Prefix of the index files to write
     inputBinding:
-      position: 6
-  - id: option
-    type: string
-    doc: Option to choose between index and geno
-    inputBinding:
-      position: 107
+      position: 3
 outputs:
-  - id: geno_output_file
-    type: File
-    doc: output file in VCF
+  - id: index_files
+    type:
+      type: array
+      items: File
+    doc: Index files written with the given prefix
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.index_prefix)*
+requirements:
+  - class: ResourceRequirement
+    ramMin: 8000
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vargeno:1.0.3--h9948957_6

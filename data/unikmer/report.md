@@ -1,74 +1,32 @@
 # unikmer CWL Generation Report
 
-## unikmer_autocompletion
+## Real Data Test
 
-### Tool Description
-Generate shell autocompletion script
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/unikmer:0.20.0--h9ee0642_0
-- **Homepage**: https://github.com/shenwei356/unikmer
-- **Package**: https://anaconda.org/channels/bioconda/packages/unikmer/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/unikmer/overview
-- **Total Downloads**: 4.7K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/shenwei356/unikmer
-- **Stars**: N/A
-### Original Help Text
-```text
-Generate shell autocompletion script
-
-Supported shell: bash|zsh|fish|powershell
-
-Bash:
-
-    # generate completion shell
-    unikmer autocompletion --shell bash
-
-    # configure if never did.
-    # install bash-completion if the "complete" command is not found.
-    echo "for bcfile in ~/.bash_completion.d/* ; do source \$bcfile; done" >> ~/.bash_completion
-    echo "source ~/.bash_completion" >> ~/.bashrc
-
-Zsh:
-
-    # generate completion shell
-    unikmer autocompletion --shell zsh --file ~/.zfunc/_unikmer
-
-    # configure if never did
-    echo 'fpath=( ~/.zfunc "${fpath[@]}" )' >> ~/.zshrc
-    echo "autoload -U compinit; compinit" >> ~/.zshrc
-
-fish:
-
-    unikmer autocompletion --shell fish --file ~/.config/fish/completions/unikmer.fish
-
-Usage:
-  unikmer autocompletion [flags] 
-
-Flags:
-      --file string    autocompletion file (default "/root/.bash_completion.d/unikmer.sh")
-  -h, --help           help for autocompletion
-      --shell string   autocompletion type (bash|zsh|fish|powershell) (default "bash")
-
-Global Flags:
-  -c, --compact                 write compact binary file with little loss of speed
-      --compression-level int   compression level (default -1)
-      --data-dir string         directory containing NCBI Taxonomy files, including nodes.dmp,
-                                names.dmp, merged.dmp and delnodes.dmp (default "/root/.unikmer")
-  -I, --ignore-taxid            ignore taxonomy information
-  -i, --infile-list string      file of input files list (one file per line), if given, they are
-                                appended to files from cli arguments
-      --max-taxid uint32        for smaller TaxIds, we can use less space to store TaxIds. default value
-                                is 1<<32-1, that's enough for NCBI Taxonomy TaxIds (default 4294967295)
-  -C, --no-compress             do not compress binary file (not recommended)
-      --nocheck-file            do not check binary file, when using process substitution or named pipe
-  -j, --threads int             number of CPUs to use (default 4)
-      --verbose                 print verbose information
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| unikmer_common | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_concat | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_count | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_decode | PASS | rewritten from the help; round trip view-dump-encode-decode gives the same k-mers |
+| unikmer_diff | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_dump | PASS | rewritten from the help; round trip view-dump-encode-decode gives the same k-mers |
+| unikmer_encode | PASS | rewritten from the help; round trip view-dump-encode-decode gives the same k-mers |
+| unikmer_filter | PASS | rewritten from the help; outputs checked (filter and its inverse sum to the input count; locate and map give BED) |
+| unikmer_grep | Failed | tool bug: grep with several --query values returns only the last query (a single query and --query-unik-file work) |
+| unikmer_head | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_info | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_inter | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_locate | PASS | rewritten from the help; outputs checked (filter and its inverse sum to the input count; locate and map give BED) |
+| unikmer_map | PASS | rewritten from the help; outputs checked (filter and its inverse sum to the input count; locate and map give BED) |
+| unikmer_merge | PASS | rewritten from the help; chunk counts add up to the input; sort -u of concat equals union count |
+| unikmer_num | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_rfilter | PASS | rewritten from the help; test used a small subset of the NCBI taxonomy (real rows for E. coli and A. muciniphila lineages) as data dir |
+| unikmer_sample | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_sort | PASS | rewritten from the help; chunk counts add up to the input; sort -u of concat equals union count |
+| unikmer_split | PASS | rewritten from the help; chunk counts add up to the input; sort -u of concat equals union count |
+| unikmer_tsplit | PASS | rewritten from the help; test used a small subset of the NCBI taxonomy (real rows for E. coli and A. muciniphila lineages) as data dir |
+| unikmer_union | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
+| unikmer_view | PASS | rewritten from the help: input files, output name and all options wrapped; k-mer counts consistent |
 
 ## unikmer_common
 

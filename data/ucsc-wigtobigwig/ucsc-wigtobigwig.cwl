@@ -12,9 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: chrom_sizes
-    type:
-      - 'null'
-      - File
+    type: File
     doc: 'chrom.sizes is a two-column file/URL: <chromosome name> <size in bases>'
     inputBinding:
       position: 2
@@ -86,6 +84,3 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-wigtobigwig:482--hdc0a859_1
-s:url: https://hgdownload.cse.ucsc.edu/admin/exe
-$namespaces:
-  s: https://schema.org/

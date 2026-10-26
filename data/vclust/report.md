@@ -1,5 +1,14 @@
 # vclust CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vclust_align | PASS |  |
+| vclust_cluster | PASS |  |
+| vclust_deduplicate | PASS |  |
+| vclust_prefilter | PASS |  |
+
 ## vclust_deduplicate
 
 ### Tool Description

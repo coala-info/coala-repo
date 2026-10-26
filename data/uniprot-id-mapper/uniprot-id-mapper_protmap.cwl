@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: UniProtMapper
+baseCommand: protmap
 label: uniprot-id-mapper_protmap
 doc: "Retrieve data from UniProt using UniProt's RESTful API. For a list of all\n\
   available fields, see: https://www.uniprot.org/help/return_fields.\nAlternatively,
@@ -78,12 +78,17 @@ inputs:
       position: 101
       prefix: --to-db
   - id: output_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Path to the output file to write the returned fields.
     inputBinding:
       position: 102
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output
     type:
       - 'null'
@@ -94,6 +99,9 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/uniprot-id-mapper:1.1.4--pyh7e72e81_0
+stdout: protmap.out

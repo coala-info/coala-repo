@@ -47,6 +47,13 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.out_dir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: '$(inputs.out_dir ? inputs.out_dir : ".")'
+        entry: '${ return inputs.out_dir ? {"class": "Directory", "basename": inputs.out_dir, "listing": []} : null; }'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5

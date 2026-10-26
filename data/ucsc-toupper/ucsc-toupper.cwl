@@ -1,20 +1,26 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: toupper
+baseCommand: toUpper
 label: ucsc-toupper
-doc: "Converts all characters in a file to uppercase.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+doc: "Convert lower case to upper case in file. Leave other chars alone.\n\nTool homepage:
+  https://hgdownload.cse.ucsc.edu/admin/exe"
 inputs:
-  - id: input_file
+  - id: in_file
     type: File
-    doc: Input file to be converted to uppercase
+    doc: Input file.
     inputBinding:
       position: 1
+  - id: out_file
+    type: string
+    doc: Output file name.
+    inputBinding:
+      position: 2
 outputs:
   - id: output_file
     type: File
-    doc: Output file with uppercase text
+    doc: Converted output file.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-toupper:482--h0b57e2e_0

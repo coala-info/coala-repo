@@ -25,7 +25,7 @@ inputs:
   - id: download_directory
     type:
       - 'null'
-      - Directory
+      - string
     doc: Download directory
     inputBinding:
       position: 101
@@ -47,9 +47,7 @@ inputs:
       position: 101
       prefix: --notime
   - id: target
-    type:
-      type: array
-      items: string
+    type: string
     doc: Target to download (full, minimum, config, core, busco, sample)
     inputBinding:
       position: 101
@@ -66,6 +64,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: download_dir_out
+    type:
+      - 'null'
+      - Directory
+    doc: Directory with the downloaded resources.
+    outputBinding:
+      glob: $(inputs.download_directory)
+requirements:
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ufcg:1.0.6--hdfd78af_0

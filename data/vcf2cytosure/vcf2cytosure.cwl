@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: VCF2cytosure
+baseCommand: vcf2cytosure
 label: vcf2cytosure
 doc: "convert SV vcf files to cytosure\n\nTool homepage: https://github.com/NBISweden/vcf2cytosure"
 inputs:
@@ -119,7 +119,9 @@ inputs:
       position: 101
       prefix: --vcf
   - id: out_path
-    type: string?
+    type:
+      - 'null'
+      - string
     doc: output file (default = the prefix of the input vcf)
     inputBinding:
       position: 102

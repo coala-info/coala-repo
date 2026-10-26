@@ -8,7 +8,7 @@ doc: "DeployDBArgs ['args']: Command-line arguments for deploying the PubMed var
   database.\n\nTool homepage: https://github.com/koesterlab/varpubs"
 inputs:
   - id: db_path
-    type: Directory
+    type: string
     doc: Path to the DuckDB database file to be created or updated.
     inputBinding:
       position: 101
@@ -30,9 +30,18 @@ inputs:
       position: 101
       prefix: --vcf_paths
 outputs:
+  - id: db_file
+    type: File
+    doc: The DuckDB database file that was created or updated.
+    outputBinding:
+      glob: $(inputs.db_path)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/varpubs:0.5.0--pyhdfd78af_0

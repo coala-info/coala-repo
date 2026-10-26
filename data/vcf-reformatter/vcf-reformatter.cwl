@@ -112,6 +112,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Output TSV or MAF files written to the working directory.
+    outputBinding:
+      glob:
+        - '*.tsv'
+        - '*.maf'
+        - '*.tsv.gz'
+        - '*.maf.gz'
   - id: output_dir_dir
     type:
       - 'null'

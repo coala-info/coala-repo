@@ -1,5 +1,11 @@
 # vcfbub CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcfbub | PASS |  |
+
 ## vcfbub
 
 ### Tool Description

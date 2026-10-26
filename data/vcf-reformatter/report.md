@@ -1,5 +1,11 @@
 # vcf-reformatter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf-reformatter | PASS | nf-core SnpEff VCF; TSV has 74 rows (one per variant), MAF split mode has all transcripts; added output collection for files in the working directory |
+
 ## vcf-reformatter
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # upimapi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| upimapi | PASS |  |
+
 ## upimapi
 
 ### Tool Description

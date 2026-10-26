@@ -19,13 +19,13 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: Directory
+        items: File
     doc: Path to cache file to look up summary results instead of LLM usage
     inputBinding:
       position: 101
       prefix: --cache
   - id: db_path
-    type: Directory
+    type: File
     doc: Path to the existing DuckDB database file.
     inputBinding:
       position: 101
@@ -100,12 +100,19 @@ outputs:
   - id: output_cache
     type:
       - 'null'
-      - Directory
+      - File
     doc: Optional path to save the cache file for storing new summary results.
     outputBinding:
       glob: $(inputs.output_cache_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.db_path.basename)
+        entry: $(inputs.db_path)
+        writable: true
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/varpubs:0.5.0--pyhdfd78af_0

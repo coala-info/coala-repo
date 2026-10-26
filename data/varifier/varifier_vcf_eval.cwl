@@ -13,6 +13,8 @@ inputs:
       position: 1
   - id: vcf_fasta
     type: File
+    secondaryFiles:
+      - .fai
     doc: FASTA file corresponding to vcf_file
     inputBinding:
       position: 2

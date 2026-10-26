@@ -11,12 +11,12 @@ inputs:
     type: File
     doc: Input alignment file (e.g., BAM, SAM)
     inputBinding:
-      position: 1
+      position: 201
   - id: output_dir
     type: string
     doc: Directory to save the output files
     inputBinding:
-      position: 2
+      position: 202
   - id: compatible_primers
     type:
       - 'null'

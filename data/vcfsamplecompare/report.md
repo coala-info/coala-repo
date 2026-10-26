@@ -1,5 +1,11 @@
 # vcfsamplecompare CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcfsamplecompare_vcfSampleCompare.pl | PASS |  |
+
 ## vcfsamplecompare_vcfSampleCompare.pl
 
 ### Tool Description

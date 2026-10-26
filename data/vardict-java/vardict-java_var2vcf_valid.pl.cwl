@@ -1,31 +1,107 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - var2vcf_valid.pl
+baseCommand: var2vcf_valid.pl
 label: vardict-java_var2vcf_valid.pl
-doc: Convert VarDict output to VCF format with validation filtering
+doc: 'Convert VarDict output (after teststrandbias.R) into a validated VCF file.
+
+
+  Tool homepage: https://github.com/AstraZeneca-NGS/VarDictJava'
 inputs:
-  - id: input_files
+  - id: input_file
+    type: File
+    doc: Variant table from the VarDict pipeline (output of teststrandbias.R).
+    inputBinding:
+      position: 200
+  - id: somatic_filter_only
     type:
       - 'null'
-      - type: array
-        items: File
-    doc: Input VarDict variant file(s)
+      - boolean
+    doc: If set, variants that did not pass filters will not be present in VCF file
     inputBinding:
-      position: 1
-  - id: p_mean_end_distance
+      position: 102
+      prefix: -S
+  - id: amplicon
+    type:
+      - 'null'
+      - boolean
+    doc: For amplicon based variant calling. Variant not supported by all amplicons
+      will be considered false positive, with filter set to "AMPBIAS".
+    inputBinding:
+      position: 102
+      prefix: -a
+  - id: all_variants
+    type:
+      - 'null'
+      - boolean
+    doc: Indicate to output all variants at the same position. By default, only the
+      variant with the highest allele frequency is converted to VCF.
+    inputBinding:
+      position: 102
+      prefix: -A
+  - id: cluster_distance
+    type:
+      - 'null'
+      - int
+    doc: 'If two seemingly high quality SNV variants are within {int} bp, they are
+      both filtered. Default: 0, or no filtering'
+    inputBinding:
+      position: 102
+      prefix: -c
+  - id: max_msi
+    type:
+      - 'null'
+      - int
+    doc: The maximum non-monomer MSI allowed for a HT variant with AF < 0.5. By default,
+      12.
+    inputBinding:
+      position: 102
+      prefix: -I
+  - id: max_mean_mismatches
     type:
       - 'null'
       - float
-    doc: The mean distance to the nearest 5 or 3 prime read end filter
+    doc: 'The maximum mean mismatches allowed. Default: 5.25'
+    inputBinding:
+      position: 102
+      prefix: -m
+  - id: min_mean_position
+    type:
+      - 'null'
+      - float
+    doc: 'The minimum mean position of variants in the read. Default: 8.'
+    inputBinding:
+      position: 102
+      prefix: -p
+  - id: filter_pstd
+    type:
+      - 'null'
+      - int
+    doc: 'Whether to filter variants with pstd = 0 (0 or 1). Default: 1 or yes. Set
+      it to 0 for targeted PCR based sequencing.'
     inputBinding:
       position: 102
       prefix: -P
+  - id: min_mean_base_quality
+    type:
+      - 'null'
+      - float
+    doc: The minimum mean base quality. Default to 22.5 for Illumina sequencing
+    inputBinding:
+      position: 102
+      prefix: -q
+  - id: min_mapping_quality
+    type:
+      - 'null'
+      - float
+    doc: The minimum mapping quality. Default to 10.0 for Illumina sequencing.
+    inputBinding:
+      position: 102
+      prefix: -Q
   - id: min_total_depth
     type:
       - 'null'
       - int
-    doc: Minimum total depth
+    doc: The minimum total depth. Default to 3
     inputBinding:
       position: 102
       prefix: -d
@@ -33,7 +109,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum variant depth
+    doc: The minimum high quality variant depth. Default to 2.
     inputBinding:
       position: 102
       prefix: -v
@@ -41,226 +117,68 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum allele frequency
+    doc: The minimum allele frequency. Default to 0.02
     inputBinding:
       position: 102
       prefix: -f
-  - id: min_mean_position
+  - id: min_signal_noise
     type:
       - 'null'
       - float
-    doc: Minimum mean position in reads
-    inputBinding:
-      position: 102
-      prefix: -p
-  - id: min_mean_base_quality
-    type:
-      - 'null'
-      - float
-    doc: Minimum mean base quality
-    inputBinding:
-      position: 102
-      prefix: -q
-  - id: min_strand_bias_p_value
-    type:
-      - 'null'
-      - float
-    doc: Strand bias Fisher p-value filter threshold
-    inputBinding:
-      position: 102
-      prefix: -F
-  - id: min_mapping_quality
-    type:
-      - 'null'
-      - float
-    doc: Minimum mean mapping quality
-    inputBinding:
-      position: 102
-      prefix: -Q
-  - id: strand_bias_odds_ratio
-    type:
-      - 'null'
-      - float
-    doc: Strand bias odds ratio threshold
+    doc: The minimum signal to noise, or the ratio of hi/(lo+0.5). Default to 1.5.
     inputBinding:
       position: 102
       prefix: -o
+  - id: min_homozygous_frequency
+    type:
+      - 'null'
+      - float
+    doc: The minimum allele frequency to consider to be homozygous. Default to 0.2.
+    inputBinding:
+      position: 102
+      prefix: -F
   - id: sample_name
     type:
       - 'null'
       - string
-    doc: Sample name
+    doc: The sample name to be used directly.
     inputBinding:
       position: 102
       prefix: -N
-  - id: min_mismatches
-    type:
-      - 'null'
-      - float
-    doc: Mean mismatches in reads threshold
-    inputBinding:
-      position: 102
-      prefix: -m
-  - id: max_msi
-    type:
-      - 'null'
-      - int
-    doc: Microsatellite (MSI) filter threshold
-    inputBinding:
-      position: 102
-      prefix: -I
-  - id: cluster_distance
-    type:
-      - 'null'
-      - int
-    doc: Distance between variants for clustering filter
-    inputBinding:
-      position: 102
-      prefix: -c
-  - id: min_ref_reads
-    type:
-      - 'null'
-      - int
-    doc: Minimum reference reads threshold
-    inputBinding:
-      position: 102
-      prefix: -r
-  - id: min_sn_ratio
-    type:
-      - 'null'
-      - float
-    doc: Signal to noise threshold
-    inputBinding:
-      position: 102
-      prefix: -O
-  - id: max_extension
-    type:
-      - 'null'
-      - int
-    doc: Extension threshold
-    inputBinding:
-      position: 102
-      prefix: -X
-  - id: keep_flag
-    type:
-      - 'null'
-      - string
-    doc: Key/filter option
-    inputBinding:
-      position: 102
-      prefix: -k
-  - id: strict_var_depth
-    type:
-      - 'null'
-      - int
-    doc: Strict variant depth filter
-    inputBinding:
-      position: 102
-      prefix: -V
-  - id: max_homopolymer
-    type:
-      - 'null'
-      - int
-    doc: Maximum homopolymer length
-    inputBinding:
-      position: 102
-      prefix: -M
-  - id: max_nm
-    type:
-      - 'null'
-      - float
-    doc: Maximum mismatches in reads
-    inputBinding:
-      position: 102
-      prefix: -x
-  - id: amplicon_threshold
-    type:
-      - 'null'
-      - int
-    doc: Amplicon filter threshold
-    inputBinding:
-      position: 102
-      prefix: -T
-  - id: bed_overlap
-    type:
-      - 'null'
-      - int
-    doc: Bed overlap buffer
-    inputBinding:
-      position: 102
-      prefix: -b
-  - id: filter_gt
-    type:
-      - 'null'
-      - string
-    doc: Genotype filter option
-    inputBinding:
-      position: 102
-      prefix: -G
-  - id: filter_unmapped
+  - id: no_end_tag
     type:
       - 'null'
       - boolean
-    doc: Indicate unmapped/unique filter
-    inputBinding:
-      position: 102
-      prefix: -u
-  - id: trim_bases
-    type:
-      - 'null'
-      - boolean
-    doc: Trim bases
-    inputBinding:
-      position: 102
-      prefix: -t
-  - id: amplicon_mode
-    type:
-      - 'null'
-      - boolean
-    doc: Indicate amplicon-based sequencing
-    inputBinding:
-      position: 102
-      prefix: -a
-  - id: print_header
-    type:
-      - 'null'
-      - boolean
-    doc: Print header only
-    inputBinding:
-      position: 102
-      prefix: -H
-  - id: filter_somatic
-    type:
-      - 'null'
-      - boolean
-    doc: Filter strictly for somatic variants
-    inputBinding:
-      position: 102
-      prefix: -S
-  - id: compress_complex
-    type:
-      - 'null'
-      - boolean
-    doc: Indicate if complex variants should be compressed
-    inputBinding:
-      position: 102
-      prefix: -C
-  - id: extended_output
-    type:
-      - 'null'
-      - boolean
-    doc: Extended output info
+    doc: If set, do not print END tag
     inputBinding:
       position: 102
       prefix: -E
-  - id: all_variants
+  - id: min_split_reads
     type:
       - 'null'
-      - boolean
-    doc: Output all variants including those failing filters
+      - int
+    doc: 'The minimum number of split reads for SV. Default: 1. Change to 0 if you
+      want SV called from discordant pairs only.'
     inputBinding:
       position: 102
-      prefix: -A
+      prefix: -T
+  - id: bed_file
+    type:
+      - 'null'
+      - File
+    doc: Path to the *.bed file which is used to generate contigs in the header
+    inputBinding:
+      position: 102
+      prefix: -b
+  - id: genome_fasta
+    type:
+      - 'null'
+      - File
+    doc: Path to the *.fasta (*.fa) file which is used to generate reference tag in
+      the header
+    inputBinding:
+      position: 102
+      prefix: -G
 outputs:
   - id: stdout
     type: stdout
@@ -269,6 +187,3 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vardict-java:1.8.3--hdfd78af_0
 stdout: var2vcf_valid.pl.out
-s:url: https://github.com/joachimwolff/VarDictJava
-$namespaces:
-  s: https://schema.org/

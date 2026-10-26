@@ -1,5 +1,11 @@
 # vcf2tsvpy CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf2tsvpy | PASS |  |
+
 ## vcf2tsvpy
 
 ### Tool Description

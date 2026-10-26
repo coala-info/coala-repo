@@ -1,5 +1,11 @@
 # vcf2circos CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf2circos | Not completed | needs the separate Static assembly/config folder (download page returns Forbidden); without it the tool crashes with KeyError 'Variants' |
+
 ## vcf2circos
 
 ### Tool Description

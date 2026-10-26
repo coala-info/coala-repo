@@ -134,7 +134,7 @@ inputs:
     doc: Don't output reads (used for profiling with -q)
     inputBinding:
       position: 102
-      prefix: --no-output
+      prefix: -x
   - id: output_bam
     type:
       - 'null'
@@ -167,7 +167,7 @@ inputs:
     doc: Output a qc file that contains information about BAM
     inputBinding:
       position: 102
-      prefix: --qc-file
+      prefix: -q
   - id: read_group
     type:
       - 'null'

@@ -186,13 +186,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_prefix_files
+  - id: demultiplexed_fastqs
     type:
       type: array
       items: File
-    doc: Files written with the prefix given in output_prefix
+    doc: Demultiplexed FASTQ files (in the output directory when one is given).
     outputBinding:
-      glob: $(inputs.output_prefix)*
+      glob: '$((inputs.output_directory ? inputs.output_directory + "/" : "") + "*.fastq.gz")'
+  - id: log_files
+    type:
+      type: array
+      items: File
+    doc: Ultraplex log files.
+    outputBinding:
+      glob: '$((inputs.output_directory ? inputs.output_directory + "/" : "") + "ultraplex_*.log")'
   - id: output_directory_dir
     type:
       - 'null'
@@ -200,6 +207,8 @@ outputs:
     doc: optional output directory
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ultraplex:1.2.10--py39hbcbf7aa_0

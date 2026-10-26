@@ -1,5 +1,18 @@
 # vcf-pg-loader CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf-pg-loader_annotate | Not completed | needs a PostgreSQL server (the image has none and cannot start one) |
+| vcf-pg-loader_annotation-query | Not completed | needs a PostgreSQL server (the image has none and cannot start one) |
+| vcf-pg-loader_benchmark | PASS | parsing-only benchmark on nf-core VCF; reported 74 variants, matching the file |
+| vcf-pg-loader_init-db | Not completed | needs a PostgreSQL server (the image has none and cannot start one) |
+| vcf-pg-loader_list-annotations | Not completed | needs a PostgreSQL server (the image has none and cannot start one) |
+| vcf-pg-loader_load | Not completed | needs a PostgreSQL server (the image has none and cannot start one) |
+| vcf-pg-loader_load-annotation | Not completed | needs a PostgreSQL server (the image has none and cannot start one) |
+| vcf-pg-loader_validate | Not completed | needs a PostgreSQL server (the image has none and cannot start one) |
+
 ## vcf-pg-loader_load
 
 ### Tool Description

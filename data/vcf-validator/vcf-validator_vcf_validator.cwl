@@ -55,6 +55,11 @@ outputs:
     doc: Output directory
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "${if (inputs.outdir) { return [{entryname: inputs.outdir, entry: {class:
+      'Directory', listing: []}, writable: true}]; } return [];}"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf-validator:0.10.2--h7a61d87_0

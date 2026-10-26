@@ -201,9 +201,8 @@ inputs:
       position: 101
       prefix: --optimize
   - id: output_dir
-    type:
-      - 'null'
-      - string
+    type: string
+    default: vcontact2_output
     doc: Output directory
     inputBinding:
       position: 101
@@ -404,9 +403,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Output directory
     outputBinding:
       glob: $(inputs.output_dir)

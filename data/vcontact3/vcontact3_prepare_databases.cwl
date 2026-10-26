@@ -4,29 +4,47 @@ baseCommand:
   - vcontact3
   - prepare_databases
 label: vcontact3_prepare_databases
-doc: "Prepare vContact2 databases\n\nTool homepage: https://bitbucket.org/MAVERICLab/vcontact3"
+doc: "Download and prepare the vConTACT3 reference databases.\n\nTool homepage: https://bitbucket.org/MAVERICLab/vcontact3"
 inputs:
-  - id: available_dbs
+  - id: list_versions
     type:
       - 'null'
-      - File
-    doc: Path to a JSON file listing available database versions and their 
-      download URLs. Defaults to ~/.vcontact/available_dbs.json
+      - boolean
+    doc: View available database versions and exit.
     inputBinding:
       position: 101
-      prefix: --available-dbs
-  - id: download_path
+      prefix: --list-versions
+  - id: get_version
     type:
       - 'null'
-      - Directory
-    doc: Path to download databases to. Defaults to ~/.vcontact/databases
+      - string
+    doc: Download specified database version (default latest).
     inputBinding:
       position: 101
-      prefix: --download-path
+      prefix: --get-version
+  - id: download_location
+    type:
+      - 'null'
+      - string
+    doc: Download path (default is the current directory).
+    inputBinding:
+      position: 101
+      prefix: --set-location
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory the database was downloaded to
+    outputBinding:
+      glob: $(inputs.download_location)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcontact3:3.1.6--pyhdfd78af_0

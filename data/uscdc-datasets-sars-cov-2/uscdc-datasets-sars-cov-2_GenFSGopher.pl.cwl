@@ -93,6 +93,10 @@ outputs:
     doc: The output directory
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: 

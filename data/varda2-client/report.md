@@ -1,5 +1,19 @@
 # varda2-client CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| varda2-client_annotate | Not completed | needs a running Varda server and account, which is not available |
+| varda2-client_mnv | Not completed | needs a running Varda server and account, which is not available |
+| varda2-client_monitor | Not completed | needs a running Varda server and account, which is not available |
+| varda2-client_sample | Not completed | needs a running Varda server and account, which is not available |
+| varda2-client_seq | Not completed | needs a running Varda server and account, which is not available |
+| varda2-client_snv | Not completed | needs a running Varda server and account, which is not available |
+| varda2-client_stab | Not completed | needs a running Varda server and account, which is not available |
+| varda2-client_submit | Not completed | needs a running Varda server and account, which is not available |
+| varda2-client_task | Not completed | needs a running Varda server and account, which is not available |
+
 ## varda2-client_submit
 
 ### Tool Description

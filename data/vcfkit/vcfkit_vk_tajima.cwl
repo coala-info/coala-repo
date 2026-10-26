@@ -12,8 +12,10 @@ inputs:
     inputBinding:
       position: 1
   - id: step_size
-    type: int
-    doc: Distance to move window.
+    type:
+      - 'null'
+      - int
+    doc: Distance to move window. Leave empty when using --sliding
     inputBinding:
       position: 2
   - id: vcf

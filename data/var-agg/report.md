@@ -1,5 +1,11 @@
 # var-agg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| var-agg | PASS |  |
+
 ## var-agg
 
 ### Tool Description

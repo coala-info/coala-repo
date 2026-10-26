@@ -1,5 +1,11 @@
 # vcfexpress CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcfexpress_filter | PASS |  |
+
 ## vcfexpress_filter
 
 ### Tool Description

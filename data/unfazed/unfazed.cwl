@@ -51,9 +51,7 @@ inputs:
       position: 101
       prefix: --bam-pairs
   - id: build
-    type:
-      - 'null'
-      - string
+    type: string
     doc: human genome build, used to determine sex chromosome pseudoautosomal 
       regions. If `na` option is chosen, sex chromosomes will not be 
       auto-phased. HG19/GRCh37 interchangeable
@@ -233,8 +231,8 @@ inputs:
       position: 101
       prefix: --verbose
   - id: outfile_path
-    type: string?
-    doc: 'name for output file. Defaults to stdout (default:'
+    type: ['null', string]
+    doc: name for output file. Defaults to stdout
     inputBinding:
       position: 102
       prefix: --outfile
@@ -246,8 +244,12 @@ outputs:
     doc: name for output file. Defaults to stdout
     outputBinding:
       glob: $(inputs.outfile_path)
+  - id: stdout
+    type: stdout
+    doc: Result table when --outfile is not set
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unfazed:1.0.2--pyh3252c3a_0
+stdout: unfazed.out

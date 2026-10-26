@@ -73,16 +73,12 @@ inputs:
       position: 101
       prefix: --verbose
   - id: left_out_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 102
       prefix: --left-out
   - id: right_out_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 103
       prefix: --right-out

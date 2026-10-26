@@ -62,6 +62,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: pruned_tree
+    type: File
+    doc: Tree with replaced labels (replaced.<gene>.nwk).
+    outputBinding:
+      glob: replaced.$(inputs.gene_name).nwk
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ufcg:1.0.6--hdfd78af_0

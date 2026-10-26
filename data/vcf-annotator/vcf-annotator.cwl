@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vcf-annotator.py
+baseCommand: vcf-annotator
 label: vcf-annotator
 doc: "Annotate variants from a VCF file using the reference genome's GenBank file.\n\
   \nTool homepage: https://github.com/rpetit3/vcf-annotator"
@@ -16,12 +16,17 @@ inputs:
     inputBinding:
       position: 2
   - id: output_path
-    type: string?
+    type:
+      - 'null'
+      - string
     doc: File to write VCF output to (Default STDOUT).
     inputBinding:
       position: 101
       prefix: --output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: output
     type:
       - 'null'
@@ -31,6 +36,7 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+stdout: vcf-annotator.out
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf-annotator:0.7--hdfd78af_0

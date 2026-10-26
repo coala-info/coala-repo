@@ -91,7 +91,7 @@ inputs:
   - id: umi_matrix
     type:
       - 'null'
-      - File
+      - string
     doc: "Save a sparse matrix of counts without UMI deduping to\n               \
       \        this file."
     inputBinding:
@@ -103,6 +103,13 @@ outputs:
     doc: Output file
     outputBinding:
       glob: '$(inputs.out)'
+  - id: umi_matrix_out
+    type:
+      - 'null'
+      - File
+    doc: Sparse matrix of counts without UMI deduping.
+    outputBinding:
+      glob: $(inputs.umi_matrix)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5

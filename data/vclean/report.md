@@ -1,5 +1,12 @@
 # vclean CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vclean | Not completed | needs the CheckV and Pfam databases (several GB), too large for this test |
+| vclean_download_database | Not completed | downloads the CheckV and Pfam databases (several GB), too large for this test |
+
 ## vclean
 ### Tool Description
 Run vClean

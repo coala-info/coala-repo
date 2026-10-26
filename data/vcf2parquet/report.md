@@ -1,5 +1,12 @@
 # vcf2parquet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf2parquet_convert | PASS | nf-core VCF; Parquet has 74 rows matching the VCF; rewrote so global --input and options come before the convert subcommand |
+| vcf2parquet_split | PASS | nf-core VCF with batch size 30; three Parquet files with 30, 30 and 14 rows (74 total); rewrote so global --input and options come before the split subcommand |
+
 ## vcf2parquet_convert
 
 ### Tool Description

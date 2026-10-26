@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vcf2db_vcf2db.py
+baseCommand: vcf2db.py
 label: vcf2db_vcf2db.py
 doc: "Take a VCF and create a gemini compatible database\n\nTool homepage: https://github.com/quinlan-lab/vcf2db"
 inputs:
@@ -13,7 +13,7 @@ inputs:
     inputBinding:
       position: 2
   - id: database_file
-    type: File
+    type: string
     inputBinding:
       position: 3
   - id: a_ok
@@ -21,31 +21,35 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --a-ok
     doc: list of info names to include even with Number=A (will error if they 
       have > 1 value
     inputBinding:
       position: 104
-      prefix: --a-ok
   - id: expand
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --expand
     doc: sample columns to expand into their own tables
     inputBinding:
       position: 104
-      prefix: --expand
   - id: impacts_field
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --impacts-field
     doc: this field should be propagated to the variant_impacts table. by 
       default, only CSQ/EFF/ANN fields are added. the field can be suffixed with
       a type of ':i' or ':f' to indicate int or float to override the default of
       string. e.g. AF:f
     inputBinding:
       position: 104
-      prefix: --impacts-field
   - id: info_exclude
     type:
       - 'null'
@@ -65,9 +69,16 @@ inputs:
       position: 104
       prefix: --legacy-compression
 outputs:
+  - id: database
+    type: File
+    doc: The gemini compatible database file that was created.
+    outputBinding:
+      glob: $(inputs.database_file)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf2db:2020.02.24--pl5321hdfd78af_3

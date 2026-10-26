@@ -1,5 +1,11 @@
 # vcflatten CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcflatten | PASS |  |
+
 ## vcflatten
 
 ### Tool Description

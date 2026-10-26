@@ -1,5 +1,12 @@
 # varifier CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| varifier_make_truth_vcf | PASS |  |
+| varifier_vcf_eval | PASS |  |
+
 ## varifier_make_truth_vcf
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # ushuffle CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ushuffle | PASS |  |
+
 ## ushuffle
 
 ### Tool Description

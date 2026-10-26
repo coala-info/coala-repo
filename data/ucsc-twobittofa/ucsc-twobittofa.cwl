@@ -101,18 +101,8 @@ outputs:
     doc: output fasta file
     outputBinding:
       glob: $(inputs.output_fa)
-  - id: output_udc_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Place to put cache for remote bigBed/bigWigs.
-    outputBinding:
-      glob: $(inputs.udc_dir)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-twobittofa:482--hdc0a859_0
-s:url: https://hgdownload.cse.ucsc.edu/admin/exe
-$namespaces:
-  s: https://schema.org/

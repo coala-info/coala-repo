@@ -118,9 +118,9 @@ inputs:
   - id: normalize_sample_counts
     type:
       - 'null'
-      - boolean
-    doc: 'Should it normalize sample counts?: true : [DEFAULT] Do normalize, i.e.
-      standard unifrac. false : Do not normalize, i.e. absolute quant mode.'
+      - string
+    doc: 'Should it normalize sample counts? Value true (DEFAULT) or false (absolute
+      quant mode).'
     inputBinding:
       position: 101
       prefix: --normalize-sample-counts
@@ -223,7 +223,7 @@ inputs:
     doc: Output or path parameter `output_distance_matrix_path`
     inputBinding:
       position: 102
-      prefix: --output-distance-matrix
+      prefix: -o
 outputs:
   - id: output_distance_matrix
     type: File

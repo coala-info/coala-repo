@@ -75,14 +75,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -n
-  - id: type
-    type:
-      type: array
-      items: string
-    doc: Type of marker
-    inputBinding:
-      position: 101
-      prefix: -s
   - id: verbose
     type:
       - 'null'
@@ -96,7 +88,7 @@ inputs:
     doc: Output or path parameter `output_dir_path`
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: -o
 outputs:
   - id: output_dir
     type: Directory

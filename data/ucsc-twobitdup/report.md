@@ -1,5 +1,11 @@
 # ucsc-twobitdup CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-twobitdup_twoBitDup | PASS |  |
+
 ## ucsc-twobitdup_twoBitDup
 
 ### Tool Description

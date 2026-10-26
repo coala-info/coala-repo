@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vclean
+baseCommand:
+  - vclean
+  - run
 label: vclean
 doc: "Run vClean\n\nTool homepage: https://github.com/TsumaR/vclean"
 inputs:
@@ -45,6 +47,7 @@ inputs:
     type:
       - 'null'
       - File
+    doc: Nucleotide gene fasta file (-n/--nucleotide)
     inputBinding:
       position: 102
       prefix: --nucleotide

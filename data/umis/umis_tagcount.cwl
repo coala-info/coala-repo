@@ -112,6 +112,27 @@ outputs:
     doc: Output file
     outputBinding:
       glob: '$(inputs.out)'
+  - id: evidence_table_out
+    type:
+      - 'null'
+      - File
+    doc: Evidence table.
+    outputBinding:
+      glob: $(inputs.output_evidence_table)
+  - id: colnames_out
+    type:
+      - 'null'
+      - File
+    doc: Column names written next to the output with --sparse.
+    outputBinding:
+      glob: $(inputs.out).colnames
+  - id: rownames_out
+    type:
+      - 'null'
+      - File
+    doc: Row names written next to the output with --sparse.
+    outputBinding:
+      glob: $(inputs.out).rownames
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5

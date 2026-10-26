@@ -1,5 +1,14 @@
 # umitools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| umitools_mark_duplicates | PASS |  |
+| umitools_reformat_fastq | PASS |  |
+| umitools_reformat_sra_fastq | PASS |  |
+| umitools_simulator | PASS |  |
+
 ## umitools_reformat_fastq
 
 ### Tool Description
@@ -147,15 +156,10 @@ reformat_sra_fastq
 ```
 
 
-## umitools_simulate
+## umitools_simulator
 
 ### Tool Description
-See https://github.com/weng-lab/umitools for more information.
-              For UMI RNA-seq: First, use umitools reformat_fastq to identify
-              UMIs in UMI RNA-seq. Then, use umitools mark_duplicates to mark
-              PCR duplicates. For UMI small RNA-seq: Use umitools
-              reformat_sra_fastq to identify UMIs and PCR duplicates. To
-              simulate UMIs, use umitools simulate.
+A simple in silico PCR simulator for UMI duplicates.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/umitools:0.3.4--py36_0
@@ -165,21 +169,44 @@ See https://github.com/weng-lab/umitools for more information.
 
 ### Original Help Text
 ```text
-simulate
-usage: umitools [-h] subcommand
+usage: umi_simulator [-h] [-p PCR_CYCLE] [-l UMI_LENGTH] [-s POOL_SIZE]
+                     [-o OUTPUT_SIZE] [-a AMPLIFICATION_RATE]
+                     [--pcr-error PCR_ERROR]
+                     [--sequencing-error SEQUENCING_ERROR] [--task TASK]
+                     [--task-rep TASK_REP] [--cpu CPU] [--seed SEED]
 
-positional arguments:
-  subcommand  See https://github.com/weng-lab/umitools for more information.
-              For UMI RNA-seq: First, use umitools reformat_fastq to identify
-              UMIs in UMI RNA-seq. Then, use umitools mark_duplicates to mark
-              PCR duplicates. For UMI small RNA-seq: Use umitools
-              reformat_sra_fastq to identify UMIs and PCR duplicates. To
-              simulate UMIs, use umitools simulate.
+A simple in silico PCR simulator. It creates an initial set of molecules for
+one locus, simulates PCR and sequencing and outputs the stats. It is necessary
+to specify the seed, since by default, this simulator uses 0 as the seed
 
 optional arguments:
-  -h, --help  show this help message and exit
+  -h, --help            show this help message and exit
+  -p PCR_CYCLE, --pcr-cycle PCR_CYCLE
+                        number of PCR cycles (default: 10)
+  -l UMI_LENGTH, --umi-length UMI_LENGTH
+                        length of UMI (default: 18)
+  -s POOL_SIZE, --pool-size POOL_SIZE
+                        initial pool size (number of molecules before PCR)
+                        (default: 100)
+  -o OUTPUT_SIZE, --output-size OUTPUT_SIZE
+                        final pool size (sequencing depth, i.e. number of
+                        reads sampled from the PCR amplified pool) (default:
+                        100)
+  -a AMPLIFICATION_RATE, --amplification-rate AMPLIFICATION_RATE
+                        successful rate of PCR amplification. The actual
+                        amplification rate is uniformally distributed between
+                        this number and 1 (default: 0.8)
+  --pcr-error PCR_ERROR
+                        error rate of PCR amplification (default: 3e-05)
+  --sequencing-error SEQUENCING_ERROR
+                        error rate of sequencing (default: 0.001)
+  --task TASK           tasks to simulate multiple conditions. Other PCR-
+                        related arguments are ignored when this option is used
+                        (default: None)
+  --task-rep TASK_REP   number of replicates when doing tasks (default: 100)
+  --cpu CPU             Tasks supporting multiprocessing. (default: 16)
+  --seed SEED           starting seed (default: 0)
 ```
-
 
 ## Metadata
 - **Skill**: generated

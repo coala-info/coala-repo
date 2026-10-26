@@ -1,5 +1,11 @@
 # vcf-annotator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf-annotator | PASS | tool's own test VCF and GenBank; output identical to expected annotated VCF; fixed baseCommand to vcf-annotator |
+
 ## vcf-annotator
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # unitig-counter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unitig-counter | PASS |  |
+| unitig-counter_cdbg-ops_dist | PASS |  |
+| unitig-counter_cdbg-ops_extend | PASS |  |
+
 ## unitig-counter
 
 ### Tool Description
@@ -30,5 +38,81 @@ ERROR: Option '-strains' is mandatory
        -verbose  (1 arg) :    verbosity level  [default '1']
        -version  (0 arg) :    version
        -help     (0 arg) :    help
+```
+
+## unitig-counter_cdbg-ops_dist
+
+### Tool Description
+Calculate distance between two nodes of the compacted de Bruijn graph.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/unitig-counter:1.1.0--h5ca1c30_2
+- **Homepage**: https://github.com/johnlees/unitig-counter
+- **Package**: https://anaconda.org/channels/bioconda/packages/unitig-counter/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+cdbg-ops dist: Calculate distance between two nodes
+cdbg-ops extend: Extend sequence around a node by finding paths through it
+
+Graph options:
+  --graph arg            Prefix of graph files
+  --nodes arg            Name of .node file
+  --edges arg            Name of .edges.dbg file
+
+Distance options:
+  --source arg           Sequence of source node
+  --source-list arg      File containing sequences of source nodes
+  --target arg           Sequence of target node
+  --all                  Generate distances to all other unitigs
+
+Extending options:
+  --unitigs arg          File containing unitigs to extend
+  --length arg (=100)    Maximum extension length
+  --repeats              Allow loops in extensions
+
+Other options:
+  --mode arg             Mode of operation
+  --version              prints version and exits
+  -h [ --help ]          full help message
+```
+
+## unitig-counter_cdbg-ops_extend
+
+### Tool Description
+Extend sequence around a node by finding paths through it.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/unitig-counter:1.1.0--h5ca1c30_2
+- **Homepage**: https://github.com/johnlees/unitig-counter
+- **Package**: https://anaconda.org/channels/bioconda/packages/unitig-counter/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+cdbg-ops dist: Calculate distance between two nodes
+cdbg-ops extend: Extend sequence around a node by finding paths through it
+
+Graph options:
+  --graph arg            Prefix of graph files
+  --nodes arg            Name of .node file
+  --edges arg            Name of .edges.dbg file
+
+Distance options:
+  --source arg           Sequence of source node
+  --source-list arg      File containing sequences of source nodes
+  --target arg           Sequence of target node
+  --all                  Generate distances to all other unitigs
+
+Extending options:
+  --unitigs arg          File containing unitigs to extend
+  --length arg (=100)    Maximum extension length
+  --repeats              Allow loops in extensions
+
+Other options:
+  --mode arg             Mode of operation
+  --version              prints version and exits
+  -h [ --help ]          full help message
 ```
 

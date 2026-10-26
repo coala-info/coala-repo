@@ -107,6 +107,158 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: any_allele
+    type:
+      - 'null'
+      - boolean
+    doc: When reporting co-located variants, allow mismatched variant alleles too
+    inputBinding:
+      position: 101
+      prefix: --any-allele
+  - id: min_hom_vaf
+    type:
+      - 'null'
+      - float
+    doc: If GT undefined in VCF, minimum allele fraction to call a variant homozygous
+    inputBinding:
+      position: 101
+      prefix: --min-hom-vaf
+  - id: maf_center
+    type:
+      - 'null'
+      - string
+    doc: Variant calling center to report in MAF
+    inputBinding:
+      position: 101
+      prefix: --maf-center
+  - id: custom_enst
+    type:
+      - 'null'
+      - string
+    doc: Comma-delimited list of custom ENST IDs that override canonical selection
+    inputBinding:
+      position: 101
+      prefix: --custom-enst
+  - id: retain_info
+    type:
+      - 'null'
+      - string
+    doc: Comma-delimited names of INFO fields to retain as extra columns in MAF
+    inputBinding:
+      position: 101
+      prefix: --retain-info
+  - id: retain_fmt
+    type:
+      - 'null'
+      - string
+    doc: Comma-delimited names of FORMAT fields to retain as extra columns in MAF
+    inputBinding:
+      position: 101
+      prefix: --retain-fmt
+  - id: retain_ann
+    type:
+      - 'null'
+      - string
+    doc: Comma-delimited names of VEP annotations (within the VEP CSQ/ANN) to retain as extra columns in MAF
+    inputBinding:
+      position: 101
+      prefix: --retain-ann
+  - id: vep_custom
+    type:
+      - 'null'
+      - string
+    doc: String to pass into VEP's --custom option
+    inputBinding:
+      position: 101
+      prefix: --vep-custom
+  - id: vep_config
+    type:
+      - 'null'
+      - File
+    doc: VEP config file to pass into vep's --config option
+    inputBinding:
+      position: 101
+      prefix: --vep-config
+  - id: inhibit_vep
+    type:
+      - 'null'
+      - boolean
+    doc: Skip running VEP, but extract VEP annotation in VCF if found
+    inputBinding:
+      position: 101
+      prefix: --inhibit-vep
+  - id: vep_path
+    type:
+      - 'null'
+      - string
+    doc: Folder containing the vep script
+    inputBinding:
+      position: 101
+      prefix: --vep-path
+  - id: vep_data
+    type:
+      - 'null'
+      - Directory
+    doc: VEP's base cache/plugin directory
+    inputBinding:
+      position: 101
+      prefix: --vep-data
+  - id: vep_forks
+    type:
+      - 'null'
+      - int
+    doc: Number of forked processes to use when running VEP
+    inputBinding:
+      position: 101
+      prefix: --vep-forks
+  - id: vep_overwrite
+    type:
+      - 'null'
+      - boolean
+    doc: Allow VEP to overwrite annotated output (if it exists)
+    inputBinding:
+      position: 101
+      prefix: --vep-overwrite
+  - id: vep_stats
+    type:
+      - 'null'
+      - boolean
+    doc: Allow VEP to generate stats (slower, disabled by default)
+    inputBinding:
+      position: 101
+      prefix: --vep-stats
+  - id: buffer_size
+    type:
+      - 'null'
+      - int
+    doc: Number of variants VEP loads at a time; reduce this for low memory systems
+    inputBinding:
+      position: 101
+      prefix: --buffer-size
+  - id: samtools_exec
+    type:
+      - 'null'
+      - string
+    doc: Path to the samtools executable
+    inputBinding:
+      position: 101
+      prefix: --samtools-exec
+  - id: tabix_exec
+    type:
+      - 'null'
+      - string
+    doc: Path to the tabix executable
+    inputBinding:
+      position: 101
+      prefix: --tabix-exec
+  - id: liftover_exec
+    type:
+      - 'null'
+      - string
+    doc: Path to the liftover executable
+    inputBinding:
+      position: 101
+      prefix: --liftover-exec
   - id: output_maf_path
     type: string
     inputBinding:
@@ -120,6 +272,11 @@ outputs:
       glob: $(inputs.output_maf_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.input_vcf.basename)
+        entry: $(inputs.input_vcf)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf2maf:1.6.22--hdfd78af_2

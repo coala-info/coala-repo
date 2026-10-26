@@ -1,5 +1,11 @@
 # ucsc-tolower CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-tolower | PASS |  |
+
 ## ucsc-tolower
 
 ### Tool Description

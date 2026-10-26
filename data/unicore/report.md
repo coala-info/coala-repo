@@ -1,5 +1,18 @@
 # unicore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unicore_cluster | PASS | rewritten: database input with its index files; 32 proteins fall into 8 clusters of 4; output prefix needs a directory part such as ./clu |
+| unicore_config | PASS | check mode reports tool versions |
+| unicore_createdb | PASS | rewritten: database output files and ProstT5 model directory; 32 proteins from 4 spirochete genomes (8 shared genes, subset of the project's example data) |
+| unicore_easy-core | PASS | rewritten: ProstT5 model directory; runs createdb, cluster, profile and tree in one go on the same 4 genomes |
+| unicore_gene-tree | PASS | rewritten: writable tree directory; 8 gene trees made |
+| unicore_profile | PASS | rewritten: database input with index files; 8 core structures found |
+| unicore_search | PASS | rewritten: database inputs with index files; self search gives 128 hits (32 proteins x 4 family members) |
+| unicore_tree | PASS | rewritten: database input with index files, profile directory input; tree groups the two Treponema species |
+
 ## unicore_easy-core
 
 ### Tool Description

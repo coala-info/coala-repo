@@ -1,5 +1,11 @@
 # ucsc-twobittofa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-twobittofa | PASS |  |
+
 ## ucsc-twobittofa
 
 ### Tool Description

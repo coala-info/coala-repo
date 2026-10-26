@@ -1,5 +1,14 @@
 # vadr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vadr_v-annotate.pl | PASS | real SARS-CoV-2 genomes (NC_045512.2 and MT520263.1) classified and annotated with the sarscov2 model that ships in the image; the run takes about 5 minutes |
+| vadr_v-build.pl | PASS | built a model of hepatitis B virus (NC_003977, 3.2 kb) in about 2 minutes; the accession must be given without a version suffix |
+| vadr_vadr-map-model-coords.pl | PASS | real VADR .alt.list and .alt output for MW691153.1 (NC_045512-del28254 model) mapped to NC_045512 with the official sarscov2.mmap; coordinates after the deleted position 28254 shift by 1 as expected |
+| vadr_vadr-map-two-complete-models.pl | PASS | NC_045512-MW422255 to NC_045512 map from the official sarscov2.mmap; 29884 positions, the 9 base gap after position 11287 is mapped correctly |
+
 ## vadr_v-annotate.pl
 
 ### Tool Description
@@ -235,10 +244,10 @@ other expert options:
 ```
 
 
-## vadr_v-test.pl
+## vadr_v-build.pl
 
 ### Tool Description
-test VADR scripts
+Build homology model of a single sequence for feature annotation.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vadr:1.6.4--pl5321h031d066_0
@@ -248,31 +257,121 @@ test VADR scripts
 
 ### Original Help Text
 ```text
-# v-test.pl :: test VADR scripts [TEST SCRIPT]
+# v-build.pl :: build homology model of a single sequence for feature annotation
 # VADR 1.6.4 (Jun 2024)
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# date:    Wed Feb 25 03:58:19 2026
+# date:    Mon Oct 26 05:26:26 2026
 #
-Usage: v-test.pl [-options] <input test file e.g. testfiles/testin.1> <output directory to create>
+Usage: v-build.pl [-options] <accession> <path to output directory to create>
 
 basic options:
-  -f : force; if dir <output directory> exists, overwrite it
-  -v : be verbose; output commands to stdout as they're run
-  -s : skip commands, they were already run, just compare files
-  -m : benchmark mode: compare certain fields, do not diff files
+  -f             : force; if dir <output directory> exists, overwrite it
+  -v             : be verbose; output commands to stdout as they're run
+  --stk <s>      : read single sequence stockholm 'alignment' from <s>
+  --infa <s>     : read single sequence fasta file from <s>, don't fetch it
+  --inft <s>     : read feature table file from <s>, don't fetch it
+  --ftfetch1     : fetch feature table with efetch -format ft
+  --ftfetch2     : fetch feature table with efetch -format gbc | xml2tbl
+  --gb           : parse a genbank file, not a feature table file
+  --ingb <s>     : read genbank file from <s>, don't fetch it
+  --addminfo <s> : add feature info from model info file <s>
+  --forcelong    : allow long models > 25Kb in length
+  --keep         : do not remove intermediate files, keep them all on disk
 
-options for defining variables in testing files:
+options for controlling what feature types are stored in model info file
+[default set is: CDS,gene,mat_peptide,sig_peptide]:
+  --fall      : store info for all feature types (except those in --fskip)
+  --fadd <s>  : also store feature types in comma separated string <s>
+  --fskip <s> : do not store info for feature types in comma separated string <s>
 
-other options:
-  --rmout      : if output files listed in testin file already exist, remove them
-  --keep       : do not remove intermediate files, keep them all on disk
-  --noteamcity : do not output teamcity test info
-  --skipmsg    : do not compare errors and warning lines
+options for controlling what qualifiers are stored in model info file
+[default set is:product,gene,exception]:
+  --qall        : store info for all qualifiers (except those in --qskip)
+  --qadd <s>    : also store info for qualifiers in comma separated string <s>
+  --qftradd <s> : --qadd <s2> only applies for feature types in comma separated string <s>
+  --qskip <s>   : do not store info for qualifiers in comma separated string <s>
+  --noaddgene   : do not add gene qualifiers from gene features to overlapping features
+  --nosplice    : do not check and add valid splice sites qualifiers for CDS
+  --ssplice     : exit if any noncanonical splice sites exist in any CDS
+
+options for including additional model attributes:
+  --group <s>    : specify model group is <s>
+  --subgroup <s> : specify model subgroup is <s>
+
+options for controlling CDS translation step:
+  --ttbl <n> : use NCBI translation table <n> to translate CDS [1]
+
+options for controlling cmbuild step:
+  --cmn <n>       : set number of seqs for glocal fwd HMM calibration to <n>
+  --cmp7ml        : set CM's filter p7 HMM as the ML p7 HMM
+  --cmere <x>     : set CM relative entropy target to <x>
+  --cmeset <x>    : set CM eff seq # for CM to <x>
+  --cmemaxseq <x> : set CM maximum alowed eff seq # for CM to <x>
+  --cmnoh3pri     : do not use --noh3pri option with cmbuild
+  --cminfile <s>  : read cmbuild options from file <s>, one per line
+
+options for skipping stages:
+  --skipbuild : skip the cmbuild and blastn db creation steps
+  --onlyurl   : output genbank file url for accession and exit
+
+optional output files:
+  --ftrinfo : create file with internal feature information
+  --sgminfo : create file with internal segment information
 
 other expert options:
   --execname <s> : define executable name of this script as <s>
+  --nosig2mat    : do not treat sig_peptide as mat_peptide
+  --intlen <n>   : set min length of intron to check for splice sites to <n> [40]
 ```
 
+## vadr_vadr-map-model-coords.pl
+
+### Tool Description
+Map model coordinates in a VADR .alt.list/.alt file to another model of the library using an mmap file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vadr:1.6.4--pl5321h031d066_0
+- **Homepage**: https://github.com/ncbi/vadr
+- **Package**: https://anaconda.org/channels/bioconda/packages/vadr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+vadr-map-model-coords.pl
+
+Usage:
+
+perl vadr-map-model-coords.pl [OPTIONS]
+	<detailed-error-report.tsv or .alt.list file path>
+	<mmap file path>
+	<model to map positions to>
+
+	OPTIONS:
+		--alt : file listed in first argument is an .alt file (not a detailed-error-report.tsv or .alt.list file)
+```
+
+## vadr_vadr-map-two-complete-models.pl
+
+### Tool Description
+Print the position map of one complete model onto another from an mmap file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vadr:1.6.4--pl5321h031d066_0
+- **Homepage**: https://github.com/ncbi/vadr
+- **Package**: https://anaconda.org/channels/bioconda/packages/vadr/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+vadr-map-two-complete-models.pl
+
+Usage:
+
+perl vadr-map-two-complete-models.pl [OPTIONS]
+	<mmap file path>
+	<model to map positions from>
+	<model to map positions to>
+```
 
 ## Metadata
 - **Skill**: generated

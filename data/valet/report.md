@@ -1,5 +1,11 @@
 # valet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| valet_valet.py | Not completed | runs end to end, but the result differs from the Galaxy expected summary: breakpoints are not reported for the reference, relocation and reloc-dup assemblies and the duplication low coverage count is 693 instead of 692 |
+
 ## Metadata
 - **Skill**: generated
 

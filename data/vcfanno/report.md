@@ -1,5 +1,11 @@
 # vcfanno CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcfanno | PASS |  |
+
 ## vcfanno
 
 ### Tool Description

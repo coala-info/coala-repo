@@ -2,76 +2,93 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: variabel
 label: variabel
-doc: "Variant calling from long-read sequencing data\n\nTool homepage: https://gitlab.com/treangenlab/variabel"
+doc: "Variabel applies a complexity filter and an allele frequency filter to VCF files\
+  \ to eliminate noise and retain true variants.\n\nTool homepage: https://gitlab.com/treangenlab/variabel"
 inputs:
-  - id: input
+  - id: input_vcfs
+    type:
+      type: array
+      items: File
+    doc: The input vcf file(s). If single input .txt is provided instead, it is
+      expected to be a list of vcf file paths.
+    inputBinding:
+      position: 100
+  - id: ref
     type: File
-    doc: Input BAM file
+    doc: The reference genome to use (fasta format)
     inputBinding:
       position: 101
-      prefix: --input
-  - id: model
+  - id: out
+    type: string
+    doc: The output vcf directory
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: min_af_change
     type:
       - 'null'
-      - File
-    doc: Model file
+      - float
+    doc: The minimum observed allele frequency change required to keep a variant
     inputBinding:
-      position: 101
-      prefix: --model
-  - id: parameters
-    type:
-      - 'null'
-      - File
-    doc: Parameters file
-    inputBinding:
-      position: 101
-      prefix: --parameters
-  - id: reference
-    type: File
-    secondaryFiles:
-      - .fai
-    doc: Reference FASTA file
-    inputBinding:
-      position: 101
-      prefix: --ref
-  - id: sample
-    type:
-      - 'null'
-      - string
-    doc: Sample name
-    inputBinding:
-      position: 101
-      prefix: --sample
-  - id: threads
+      position: 102
+      prefix: --min-af-change
+  - id: min_samp_count
     type:
       - 'null'
       - int
-    doc: Number of threads
+    doc: The minimum number of samples a variant must appear in
     inputBinding:
-      position: 101
-      prefix: --threads
+      position: 102
+      prefix: --min-samp-count
+  - id: safe_freq_thresh
+    type:
+      - 'null'
+      - float
+    doc: Any variant occuring in a sample with AF greater than this threshold 
+      will not be discarded in the AF filtering step
+    inputBinding:
+      position: 102
+      prefix: --safe-freq-thresh
+  - id: complexity_k
+    type:
+      - 'null'
+      - int
+    doc: Window for shannon entropy calculation. For an indel at position i with
+      length d, the two entropy windows will be [i-(k-1)*d] and [i+1, i+k*d+1]
+    inputBinding:
+      position: 102
+      prefix: --complexity-k
+  - id: min_entropy_cutoff
+    type:
+      - 'null'
+      - float
+    doc: The shannon entropy below which indel variants are discarded
+    inputBinding:
+      position: 102
+      prefix: --min-entropy-cutoff
+  - id: lofreq_filter
+    type:
+      - 'null'
+      - boolean
+    doc: Preprocess VCF files with LoFreq's set of defaults filters. This 
+      includes strand bias.
+    inputBinding:
+      position: 102
+      prefix: --lofreq-filter
   - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Verbose output
-    inputBinding:
-      position: 101
-      prefix: --verbose
-  - id: output_dir_path
-    type: string
-    doc: Output or path parameter `output_dir_path`
+    doc: More verbose output
     inputBinding:
       position: 102
-      prefix: --output-dir
+      prefix: --verbose
 outputs:
   - id: output_dir
     type: Directory
-    doc: Output directory
+    doc: The output vcf directory
     outputBinding:
-      glob: $(inputs.output_dir_path)
-requirements:
-  - class: InlineJavascriptRequirement
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/variabel:1.0.0--hdfd78af_0

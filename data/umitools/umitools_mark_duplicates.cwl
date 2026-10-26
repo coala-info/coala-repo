@@ -38,10 +38,19 @@ inputs:
       position: 101
       prefix: --processes
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: marked_bam
+    type: File
+    doc: BAM file with duplicates marked (written beside the input as <input
+      without .bam>.deumi.sorted.bam)
+    secondaryFiles:
+      - .bai
+    outputBinding:
+      glob: '*.deumi.sorted.bam'
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_bam_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umitools:0.3.4--py36_0
-stdout: umitools_mark_duplicates.out

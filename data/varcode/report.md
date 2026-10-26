@@ -1,5 +1,11 @@
 # varcode CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| varcode | Not completed | needs a large Ensembl genome annotation download (GTF and FASTA, hundreds of MB) that the offline container cannot fetch |
+
 ## varcode
 
 ### Tool Description

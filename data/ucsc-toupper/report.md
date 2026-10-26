@@ -1,5 +1,11 @@
 # ucsc-toupper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-toupper | PASS |  |
+
 ## ucsc-toupper
 
 ### Tool Description

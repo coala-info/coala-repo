@@ -1,5 +1,12 @@
 # vcf-validator CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcf-validator_vcf_assembly_checker | PASS | nf-core VCF and chr21 FASTA; 74/74 records match; fixed baseCommand to vcf_assembly_checker, assembly as File, fai, output directory creation |
+| vcf-validator_vcf_validator | PASS | nf-core VCF; reported valid with one real warning (no reference header); added output directory creation |
+
 ## vcf-validator_vcf_validator
 
 ### Tool Description

@@ -1,5 +1,13 @@
 # uropa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| uropa | PASS |  |
+| uropa_uropa2gtf.R | PASS |  |
+| uropa_uropa_summary.R | PASS |  |
+
 ## uropa
 
 ### Tool Description
@@ -77,5 +85,48 @@ Kondili M, Fust A, Preussner J, Kuenne C, Braun T and Looso M. UROPA: A tool for
 Scientific Reports 7 (2017), doi: 10.1038/s41598-017-02464-y
 
 Please visit http://uropa-manual.readthedocs.io/config.html for detailed information on configuration.
+```
+
+## uropa_uropa_summary.R
+
+### Tool Description
+Create a summary pdf with graphs from the result tables of a UROPA run.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/uropa:4.0.3--pyhdfd78af_0
+- **Homepage**: https://github.com/loosolab/UROPA
+- **Package**: https://anaconda.org/channels/bioconda/packages/uropa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/uropa_summary.R [-[-finalhits|f] <character>] [-[-config|c] <character>] [-[-output|o] [<character>]] [-[-allhits|b] [<character>]] [-[-call|a] [<character>]] [-[-help|h]]
+    -f|--finalhits    file containing the final hits from UROPA.
+    -c|--config       file containing the json formatted configuration from the UROPA run.
+    -o|--output       file name of output file [summary.pdf].
+    -b|--allhits      file containing all hits from UROPA.
+    -a|--call         original command line call.
+    -h|--help         Provides command line help.
+```
+
+## uropa_uropa2gtf.R
+
+### Tool Description
+Reformat UROPA result tables (or any table with chr, start, end columns) to gtf file format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/uropa:4.0.3--pyhdfd78af_0
+- **Homepage**: https://github.com/loosolab/UROPA
+- **Package**: https://anaconda.org/channels/bioconda/packages/uropa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/uropa2gtf.R [-[-input|i] <character>] [-[-gtf_source|s] [<character>]] [-[-feature|f] [<character>]] [-[-threads|t] [<integer>]] [-[-help|h]]
+    -i|--input         file or folder with input table(s) which should be reformatted to gtf file format
+    -s|--gtf_source    gtf_source
+    -f|--feature       feature
+    -t|--threads       cores to be used for reformatting
+    -h|--help          Provides command line help.
 ```
 

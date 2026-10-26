@@ -13,7 +13,9 @@ inputs:
       position: 101
       prefix: --am
   - id: c_region_locus
-    type: string
+    type:
+      - 'null'
+      - string
     doc: C region locus
     inputBinding:
       position: 101
@@ -56,6 +58,8 @@ inputs:
       prefix: --ins
   - id: input_bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input BAM must be specified
     inputBinding:
       position: 101
@@ -163,7 +167,9 @@ inputs:
       position: 101
       prefix: --t
   - id: v_region_locus
-    type: string
+    type:
+      - 'null'
+      - string
     doc: V region locus (chr:start-stop)
     inputBinding:
       position: 101
@@ -193,10 +199,19 @@ inputs:
       position: 101
       prefix: --ws
 outputs:
-  - id: stdout
+  - id: reads_sam
     type: stdout
-    doc: Standard output
+    doc: Reads aligned to the assembled contigs (SAM, standard output)
+  - id: log
+    type: stderr
+    doc: Run log (standard error)
+  - id: vdj_contigs
+    type: File
+    doc: Assembled V(D)J contigs
+    outputBinding:
+      glob: vdj_contigs.fa
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vdjer:0.12--h5ca1c30_8
-stdout: vdjer.out
+stdout: vdjer.sam
+stderr: vdjer.log

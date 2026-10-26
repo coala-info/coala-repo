@@ -1,5 +1,11 @@
 # vcfsim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vcfsim | PASS |  |
+
 ## vcfsim
 
 ### Tool Description

@@ -192,6 +192,7 @@ inputs:
       (required for mode==multi, optional for one-off)
     inputBinding:
       position: 101
+      prefix: --subsample-depth
   - id: subsample_replacement
     type:
       - 'null'

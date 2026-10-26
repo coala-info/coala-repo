@@ -1,40 +1,13 @@
 # vamb CWL Generation Report
 
-## vamb_bin
+## Real Data Test
 
-### Tool Description
-Binning module of VAMB
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vamb:5.0.4--pyhdfd78af_0
-- **Homepage**: https://github.com/RasmussenLab/vamb
-- **Package**: https://anaconda.org/channels/bioconda/packages/vamb/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/vamb/overview
-- **Total Downloads**: 22.1K
-- **Last updated**: 2025-04-29
-- **GitHub**: https://github.com/RasmussenLab/vamb
-- **Stars**: N/A
-### Original Help Text
-```text
-usage: vamb bin [-h] [--version] {default,taxvamb,avamb} ...
-
-positional arguments:
-  {default,taxvamb,avamb}
-    default             default binner based on a variational autoencoder. See
-                        the paper 'Improved metagenome binning and assembly
-                        using deep variational autoencoders'
-    taxvamb             taxonomy informed binner based on a bi-modal
-                        variational autoencoder. See the paper 'TaxVAMB:
-                        taxonomic annotations improve metagenome binning'
-    avamb               ==SUPPRESS==
-
-Help and version:
-  -h, --help            Print help and exit
-  --version             show program's version number and exit
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| vamb_bin_default | PASS | real minigut contigs and two BAM files: 136 contigs clustered into 117 bins, one bin over 100 kb written as fasta |
+| vamb_bin_taxvamb | Not completed | needs a contig taxonomy table from mmseqs taxonomy against a large reference database; no small real taxonomy is available |
+| vamb_recluster | PASS | k-means reclustering with the marker gene hmm on the minigut contigs; output clusters and markers written |
+| vamb_taxometer | Not completed | needs a contig taxonomy table from mmseqs taxonomy against a large reference database; no small real taxonomy is available |
 
 ## vamb_taxometer
 
@@ -153,6 +126,108 @@ Taxonomy input:
   --no_predictor    Do not complete input taxonomy with Taxometer [False]
 ```
 
+
+## vamb_bin_default
+
+### Tool Description
+Default binner based on a variational autoencoder (vamb bin default).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vamb:5.0.4--pyhdfd78af_0
+- **Homepage**: https://github.com/RasmussenLab/vamb
+- **Package**: https://anaconda.org/channels/bioconda/packages/vamb/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: vamb bin default [options]
+
+Bin using a VAE that merges composition and abundance information.
+
+Required arguments: Outdir, at least one composition input and at least one abundance input
+
+Help and version:
+  -h, --help        Print help and exit
+  --version         show program's version number and exit
+
+Output:
+  --outdir          Output directory to create
+
+General optional arguments:
+  -m                Ignore contigs shorter than this [2000]
+  -p                number of threads to use where customizable [8]
+  --norefcheck      Skip reference name hashing check [False]
+  --cuda            Use GPU to train & cluster [False]
+  --seed            Random seed (determinism not guaranteed)
+
+Composition input:
+  --fasta           Path to fasta file
+  --composition     Path to .npz of composition
+
+Abundance input:
+  --bamdir          Dir with .bam files to use
+  --abundance_tsv   Path to TSV file of precomputed abundances with header
+                    being "contigname(\t<samplename>)*"
+  --abundance       Path to .npz of abundances
+
+Bin output options:
+  --minfasta        Minimum bin size to output as fasta [None = no files]
+  -o []             Binsplit separator [C if present] (pass empty string to
+                    disable)
+```
+
+## vamb_bin_taxvamb
+
+### Tool Description
+Taxonomy informed binner based on a bi-modal variational autoencoder (vamb bin taxvamb).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vamb:5.0.4--pyhdfd78af_0
+- **Homepage**: https://github.com/RasmussenLab/vamb
+- **Package**: https://anaconda.org/channels/bioconda/packages/vamb/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: vamb bin taxvamb [options]
+
+Bin using a semi-supervised VAEVAE model that merges composition, abundance and taxonomic information.
+
+Required arguments: Outdir, taxonomy, at least one composition input and at least one abundance input
+
+Help and version:
+  -h, --help        Print help and exit
+  --version         show program's version number and exit
+
+Output:
+  --outdir          Output directory to create
+
+General optional arguments:
+  -m                Ignore contigs shorter than this [2000]
+  -p                number of threads to use where customizable [8]
+  --norefcheck      Skip reference name hashing check [False]
+  --cuda            Use GPU to train & cluster [False]
+  --seed            Random seed (determinism not guaranteed)
+
+Composition input:
+  --fasta           Path to fasta file
+  --composition     Path to .npz of composition
+
+Abundance input:
+  --bamdir          Dir with .bam files to use
+  --abundance_tsv   Path to TSV file of precomputed abundances with header
+                    being "contigname(\t<samplename>)*"
+  --abundance       Path to .npz of abundances
+
+Taxonomy input:
+  --taxonomy        Path to the taxonomy file
+  --no_predictor    Do not complete input taxonomy with Taxometer [False]
+
+Bin output options:
+  --minfasta        Minimum bin size to output as fasta [None = no files]
+  -o []             Binsplit separator [C if present] (pass empty string to
+                    disable)
+```
 
 ## Metadata
 - **Skill**: generated

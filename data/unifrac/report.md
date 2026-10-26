@@ -1,5 +1,12 @@
 # unifrac CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unifrac_faithpd | PASS | output flag changed to -o as in the help; result matches expected faith values |
+| unifrac_ssu | PASS | fixed missing --subsample-depth flag |
+
 ## unifrac_ssu
 
 ### Tool Description

@@ -188,7 +188,10 @@ inputs:
       position: 101
       prefix: --write-uncondensed-final-tree
   - id: save_mutation_annotated_tree_path
-    type: string
+    type:
+      - 'null'
+      - string
+    doc: Save output mutation-annotated tree object to the specified filename
     inputBinding:
       position: 102
       prefix: --save-mutation-annotated-tree
@@ -199,14 +202,16 @@ outputs:
       - File
     doc: Save output mutation-annotated tree object to the specified filename
     outputBinding:
-      glob: $(inputs.save_mutation_annotated_tree_path)
+      glob: |
+        ${ return inputs.save_mutation_annotated_tree_path ? inputs.save_mutation_annotated_tree_path : []; }
   - id: outdir_dir
     type:
       - 'null'
       - Directory
     doc: Output directory to dump output and log files
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: |
+        ${ return inputs.outdir ? inputs.outdir : []; }
 requirements:
   - class: InlineJavascriptRequirement
 hints:

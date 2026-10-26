@@ -26,6 +26,16 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: forward
+    type: File
+    doc: forward reads
+    outputBinding:
+      glob: forward.fq
+  - id: reverse
+    type: File
+    doc: reverse reads
+    outputBinding:
+      glob: reverse.fq
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unmerge:1.0--h503566f_5

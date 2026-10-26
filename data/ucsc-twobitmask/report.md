@@ -1,5 +1,11 @@
 # ucsc-twobitmask CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ucsc-twobitmask_twoBitMask | PASS |  |
+
 ## ucsc-twobitmask_twoBitMask
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # unfazed CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| unfazed | PASS |  |
+
 ## unfazed
 
 ### Tool Description

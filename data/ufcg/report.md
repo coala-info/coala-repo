@@ -1,5 +1,19 @@
 # ufcg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| ufcg_align | PASS |  |
+| ufcg_convert | PASS |  |
+| ufcg_download | Failed | image problem: the tool checks the connection with ping, which the non-root container user cannot run, so it reports no internet connection. |
+| ufcg_profile | Failed | image problem: needs the config and core database inside the read-only install folder (auto-download fails, ping not allowed for the non-root user), and the file command is missing. |
+| ufcg_profile-pro | Failed | image problem: needs the config and core database inside the read-only install folder (auto-download fails, ping not allowed for the non-root user), and the file command is missing. |
+| ufcg_profile-rna | Failed | image problem: needs the config and core database inside the read-only install folder (auto-download fails, ping not allowed for the non-root user), and the file command is missing. |
+| ufcg_prune | PASS |  |
+| ufcg_train | Failed | image problem: train runs profile steps that need config/ppx.cfg in the read-only install folder (not in the image), so it stops with an AUGUSTUS-PPX config error. |
+| ufcg_tree | PASS |  |
+
 ## ufcg_profile
 
 ### Tool Description

@@ -5,13 +5,13 @@ label: visceral-evaluatesegmentation_EvaluateSegmentation
 doc: "Evaluate a segmentation against a ground truth.\n\nTool homepage: https://github.com/Visceral-Project/EvaluateSegmentation"
 inputs:
   - id: groundtruth_path
-    type: string
+    type: File
     doc: Path (or URL) to groundtruth image. URLs should be enclosed with 
       quotations
     inputBinding:
       position: 1
   - id: segment_path
-    type: string
+    type: File
     doc: Path (or URL) to image being evaluated. URLs should be enclosed with 
       quotations
     inputBinding:
@@ -53,8 +53,10 @@ inputs:
       position: 103
       prefix: -use
   - id: xml_path_path
-    type: string
-    doc: =path to xml file where result should be saved
+    type:
+      - 'null'
+      - string
+    doc: Path to xml file where result should be saved
     inputBinding:
       position: 104
       prefix: -xml
@@ -66,9 +68,13 @@ outputs:
     doc: Path to xml file where result should be saved
     outputBinding:
       glob: $(inputs.xml_path_path)
+  - id: stdout
+    type: stdout
+    doc: Standard output
 requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 
       quay.io/biocontainers/visceral-evaluatesegmentation:2021.03.25--h287ed61_0
+stdout: visceral-evaluatesegmentation_EvaluateSegmentation.out

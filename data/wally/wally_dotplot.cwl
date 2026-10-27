@@ -8,13 +8,17 @@ doc: "Generates dot plots for sequence alignment visualization.\n\nTool homepage
   https://github.com/tobiasrausch/wally"
 inputs:
   - id: sample_bam
-    type: File
-    doc: Sample BAM file (in BAM mode)
+    type:
+      - 'null'
+      - File
+    doc: Sample BAM file (BAM mode; use with genome_fasta and reads_list_file, read_to_display, region or region_list_file)
     inputBinding:
       position: 1
   - id: sample_fa
-    type: File
-    doc: Sample FASTA file (in FASTA mode)
+    type:
+      - 'null'
+      - File
+    doc: Sample FASTA file (FASTA mode)
     inputBinding:
       position: 2
   - id: flatten_mapping_segments
@@ -34,7 +38,9 @@ inputs:
       position: 103
       prefix: --flip
   - id: genome_fasta
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Genome FASTA file
     secondaryFiles:
       - .fai
@@ -98,7 +104,9 @@ inputs:
       position: 103
       prefix: --read
   - id: reads_list_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: File with reads to display
     inputBinding:
       position: 103
@@ -120,12 +128,19 @@ inputs:
       position: 103
       prefix: --reglist
   - id: sequence_output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: sequence output file [optional]
     inputBinding:
       position: 104
       prefix: --seqfile
 outputs:
+  - id: plot_images
+    type: File[]
+    doc: Dot plot images (named <read1>_<read2>.png or <seq1>_<seq2>.png)
+    outputBinding:
+      glob: '*.png'
   - id: sequence_output_file
     type:
       - 'null'

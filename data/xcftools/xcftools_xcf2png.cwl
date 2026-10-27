@@ -6,113 +6,197 @@ doc: "Convert GIMP XCF files to PNG format\n\nTool homepage: https://github.com/
 inputs:
   - id: xcf_file
     type: File
-    doc: The input XCF file
+    doc: The input XCF file (optionally compressed, see gzip/bzip/unpack).
     inputBinding:
-      position: 1
+      position: 2
   - id: layers
     type:
       - 'null'
       - type: array
         items: string
-    doc: Specific layers to include
+    doc: Layer names to select; default is the whole image.
     inputBinding:
-      position: 2
-  - id: alpha
+      position: 4
+  - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Keep the alpha channel
+    doc: Show progress messages.
     inputBinding:
-      position: 103
-      prefix: --alpha
+      position: 1
+      prefix: -v
+  - id: bzip
+    type:
+      - 'null'
+      - boolean
+    doc: Input is bzip2 compressed.
+    inputBinding:
+      position: 1
+      prefix: -j
+  - id: gzip
+    type:
+      - 'null'
+      - boolean
+    doc: Input is gzip compressed.
+    inputBinding:
+      position: 1
+      prefix: -z
+  - id: unpack
+    type:
+      - 'null'
+      - string
+    doc: Use 'command' to decompress input.
+    inputBinding:
+      position: 1
+      prefix: -Z
+  - id: utf8
+    type:
+      - 'null'
+      - boolean
+    doc: Use UTF-8 for layer names.
+    inputBinding:
+      position: 1
+      prefix: -u
   - id: background
     type:
       - 'null'
       - string
-    doc: Use this color as the background
+    doc: Select background color.
     inputBinding:
-      position: 103
-      prefix: --background
+      position: 1
+      prefix: -b
+  - id: force_alpha
+    type:
+      - 'null'
+      - boolean
+    doc: Force alpha channel in output.
+    inputBinding:
+      position: 1
+      prefix: -A
   - id: color
     type:
       - 'null'
       - boolean
-    doc: Force color output
+    doc: Select color output.
     inputBinding:
-      position: 103
-      prefix: --color
-  - id: dissolve
-    type:
-      - 'null'
-      - boolean
-    doc: Handle 'dissolve' mode layers
-    inputBinding:
-      position: 103
-      prefix: --dissolve
-  - id: flatten
-    type:
-      - 'null'
-      - boolean
-    doc: Flatten the image before converting
-    inputBinding:
-      position: 103
-      prefix: --flatten
+      position: 1
+      prefix: -c
   - id: gray
     type:
       - 'null'
       - boolean
-    doc: Force grayscale output
+    doc: Select grayscale output.
     inputBinding:
-      position: 103
-      prefix: --gray
-  - id: offset
-    type:
-      - 'null'
-      - string
-    doc: Crop image at offset (X,Y)
-    inputBinding:
-      position: 103
-      prefix: --offset
-  - id: size
-    type:
-      - 'null'
-      - string
-    doc: Crop image to size (WxH)
-    inputBinding:
-      position: 103
-      prefix: --size
+      position: 1
+      prefix: -g
   - id: truecolor
     type:
       - 'null'
       - boolean
-    doc: Force truecolor output
+    doc: Treat indexed images as RGB for flattening.
     inputBinding:
-      position: 103
-      prefix: --truecolor
-  - id: zip
+      position: 1
+      prefix: -T
+  - id: for_gif
     type:
       - 'null'
       - boolean
-    doc: Use deflate compression in PNG
+    doc: Disallow partial transparency.
     inputBinding:
-      position: 103
-      prefix: --zip
-  - id: output_path
-    type: string
-    doc: Output or path parameter `output_path`
-    inputBinding:
-      position: 104
-      prefix: --output
-outputs:
-  - id: output
+      position: 1
+      prefix: -G
+  - id: dissolve
     type:
       - 'null'
-      - File
-    doc: Write output to FILE
+      - boolean
+    doc: Dissolve partial transparency.
+    inputBinding:
+      position: 1
+      prefix: -D
+  - id: full_image
+    type:
+      - 'null'
+      - boolean
+    doc: Flatten to memory; then analyse.
+    inputBinding:
+      position: 1
+      prefix: -f
+  - id: size
+    type:
+      - 'null'
+      - string
+    doc: Crop image while converting (WxH).
+    inputBinding:
+      position: 1
+      prefix: -S
+  - id: offset
+    type:
+      - 'null'
+      - string
+    doc: Translate converted part of image (x,y).
+    inputBinding:
+      position: 1
+      prefix: -O
+  - id: autocrop
+    type:
+      - 'null'
+      - boolean
+    doc: Autocrop to visible layer boundaries.
+    inputBinding:
+      position: 1
+      prefix: -C
+  - id: layer_mode
+    type:
+      - 'null'
+      - string
+    doc: Set layer mode (applies to the last layer named; the option must follow a layer name).
+    inputBinding:
+      position: 5
+      prefix: --mode
+  - id: percent
+    type:
+      - 'null'
+      - int
+    doc: Set opacity in percent.
+    inputBinding:
+      position: 5
+      prefix: --percent
+  - id: opacity
+    type:
+      - 'null'
+      - int
+    doc: Set opacity in 1/255 units.
+    inputBinding:
+      position: 5
+      prefix: --opacity
+  - id: mask
+    type:
+      - 'null'
+      - boolean
+    doc: Enable layer mask.
+    inputBinding:
+      position: 5
+      prefix: --mask
+  - id: nomask
+    type:
+      - 'null'
+      - boolean
+    doc: Disable layer mask.
+    inputBinding:
+      position: 5
+      prefix: --nomask
+  - id: output_path
+    type: string
+    doc: Name of the output file.
+    inputBinding:
+      position: 1
+      prefix: -o
+outputs:
+  - id: output
+    type: File
+    doc: The converted image.
     outputBinding:
       glob: $(inputs.output_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/xcftools:1.0.7--0

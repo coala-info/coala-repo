@@ -1,136 +1,132 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: voronota_score-contacts-potential
+baseCommand:
+  - voronota
+  - score-contacts-potential
 label: voronota_score-contacts-potential
-doc: "Calculates potential values for contacts based on various input files and outputs
-  summary statistics.\n\nTool homepage: https://www.voronota.com/"
+doc: "Calculates a knowledge-based potential from contacts.
+
+Tool homepage: https://www.voronota.com/"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
-  - id: stdin_contacts
+  - id: input_contacts
+    type: File
+    doc: "list of contacts with conditions (stdin)"
+  - id: input_file_list
     type:
       - 'null'
-      - File
-    doc: "list of contacts (line format: 'annotation1 annotation2 conditions area')"
+      - boolean
+    doc: "flag to read file list from stdin"
     inputBinding:
-      position: 1
+      position: 101
+      prefix: --input-file-list
   - id: input_contributions
     type:
       - 'null'
       - File
-    doc: file path to input contact types contributions
+    doc: "file path to input contact types contributions"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --input-contributions
   - id: input_fixed_types
     type:
       - 'null'
       - File
-    doc: file path to input fixed types
+    doc: "file path to input fixed types"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --input-fixed-types
   - id: input_seq_pairs_stats
     type:
       - 'null'
       - File
-    doc: file path to input sequence pairings statistics
+    doc: "file path to input sequence pairings statistics"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --input-seq-pairs-stats
-  - id: multiply_areas
-    type:
-      - 'null'
-      - float
-    doc: coefficient to multiply output areas
-    inputBinding:
-      position: 102
-      prefix: --multiply-areas
-  - id: read_file_list_from_stdin
-    type:
-      - 'null'
-      - boolean
-    doc: flag to read file list from stdin
-    inputBinding:
-      position: 102
-      prefix: --input-file-list
-  - id: toggling_list
-    type:
-      - 'null'
-      - string
-    doc: list of toggling subtags
-    inputBinding:
-      position: 102
-      prefix: --toggling-list
-  - id: contributions_file_path
-    type:
-      - 'null'
-      - string
-    doc: file path to output contact types contributions
-    inputBinding:
-      position: 103
-      prefix: --contributions-file
   - id: potential_file_path
     type:
       - 'null'
       - string
-    doc: file path to output potential values
+    doc: "file path to output potential values"
     inputBinding:
-      position: 104
+      position: 101
       prefix: --potential-file
   - id: probabilities_file_path
     type:
       - 'null'
       - string
-    doc: file path to output observed and expected probabilities
+    doc: "file path to output observed and expected probabilities"
     inputBinding:
-      position: 105
+      position: 101
       prefix: --probabilities-file
   - id: single_areas_file_path
     type:
       - 'null'
       - string
-    doc: file path to output single type total areas
+    doc: "file path to output single type total areas"
     inputBinding:
-      position: 106
+      position: 101
       prefix: --single-areas-file
+  - id: contributions_file_path
+    type:
+      - 'null'
+      - string
+    doc: "file path to output contact types contributions"
+    inputBinding:
+      position: 101
+      prefix: --contributions-file
+  - id: multiply_areas
+    type:
+      - 'null'
+      - float
+    doc: "coefficient to multiply output areas"
+    inputBinding:
+      position: 101
+      prefix: --multiply-areas
+  - id: toggling_list
+    type:
+      - 'null'
+      - string
+    doc: "list of toggling subtags"
+    inputBinding:
+      position: 101
+      prefix: --toggling-list
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: potential_file
     type:
       - 'null'
       - File
-    doc: file path to output potential values
+    doc: "file path to output potential values"
     outputBinding:
       glob: $(inputs.potential_file_path)
   - id: probabilities_file
     type:
       - 'null'
       - File
-    doc: file path to output observed and expected probabilities
+    doc: "file path to output observed and expected probabilities"
     outputBinding:
       glob: $(inputs.probabilities_file_path)
   - id: single_areas_file
     type:
       - 'null'
       - File
-    doc: file path to output single type total areas
+    doc: "file path to output single type total areas"
     outputBinding:
       glob: $(inputs.single_areas_file_path)
   - id: contributions_file
     type:
       - 'null'
       - File
-    doc: file path to output contact types contributions
+    doc: "file path to output contact types contributions"
     outputBinding:
       glob: $(inputs.contributions_file_path)
-  - id: stdout_summaries
-    type:
-      - 'null'
-      - File
-    doc: "line of contact type area summaries (line format: 'annotation1 annotation2
-      conditions area')"
-    outputBinding:
-      glob: '*.out'
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0
+stdin: $(inputs.input_contacts.path)
+stdout: voronota_score-contacts-potential.out

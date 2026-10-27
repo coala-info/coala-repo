@@ -5,7 +5,7 @@ baseCommand:
   - cat
 label: vt_cat
 doc: "Concatenate VCF files. Individuals must be in the same order.\n\nTool homepage:
-  https://github.com/Aikoyori/ProgrammingVTuberLogos"
+  https://github.com/atks/vt"
 inputs:
   - id: input_vcfs
     type:

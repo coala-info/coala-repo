@@ -1,5 +1,13 @@
 # viguno CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viguno_convert | PASS |  |
+| viguno_query | PASS |  |
+| viguno_server_schema | PASS |  |
+
 ## viguno_convert
 
 ### Tool Description
@@ -58,10 +66,10 @@ Options:
   -V, --version                            Print version
 ```
 
-## viguno_server
+## viguno_server_schema
 
 ### Tool Description
-Clap sub command below "server"
+Dump the OpenAPI schema of the viguno server
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/viguno:0.4.0--h13c227e_0
@@ -71,38 +79,16 @@ Clap sub command below "server"
 
 ### Original Help Text
 ```text
-Clap sub command below "server"
+Dump the schema
 
-Usage: viguno server [OPTIONS] <COMMAND>
-
-Commands:
-  run     Run the server
-  schema  Dump the schema
-  help    Print this message or the help of the given subcommand(s)
+Usage: viguno server schema [OPTIONS]
 
 Options:
-  -v, --verbose...  Increase logging verbosity
-  -q, --quiet...    Decrease logging verbosity
-  -h, --help        Print help
-```
-
-## viguno
-### Tool Description
-A tool for processing and analyzing biological sequences.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/viguno:0.4.0--h13c227e_0
-- **Homepage**: https://github.com/bihealth/viguno
-- **Package**: https://anaconda.org/channels/bioconda/packages/viguno/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-error: unrecognized subcommand 'Print'
-
-Usage: viguno [OPTIONS] <COMMAND>
-
-For more information, try '--help'.
+      --output-file <OUTPUT_FILE>  Path to the output file.  Use stdout if missing
+  -v, --verbose...                 Increase logging verbosity
+  -q, --quiet...                   Decrease logging verbosity
+  -h, --help                       Print help
+  -V, --version                    Print version
 ```
 
 ## Metadata

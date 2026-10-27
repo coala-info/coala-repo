@@ -1,5 +1,11 @@
 # virheat CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| virheat | PASS |  |
+
 ## virheat
 
 ### Tool Description

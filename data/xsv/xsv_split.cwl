@@ -55,7 +55,9 @@ inputs:
       position: 103
       prefix: --size
   - id: output_file_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Write output to <file> instead of stdout.
     inputBinding:
       position: 104

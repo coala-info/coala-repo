@@ -44,7 +44,7 @@ inputs:
   - id: image
     type:
       - 'null'
-      - File
+      - string
     doc: Filename of SVG illustration of masked regions (optional)
     inputBinding:
       position: 101
@@ -112,6 +112,13 @@ outputs:
     doc: Filename of masked whole-genome pseudo-alignment
     outputBinding:
       glob: $(inputs.out_alignment_path)
+  - id: image_file
+    type:
+      - 'null'
+      - File
+    doc: SVG illustration of masked regions (when image is given)
+    outputBinding:
+      glob: $(inputs.image)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

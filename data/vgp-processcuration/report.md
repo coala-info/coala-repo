@@ -1,5 +1,13 @@
 # vgp-processcuration CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vgp-processcuration_chromosome_assignment | PASS | synthetic data: the sorted FASTA and AGP were hand-made (the AGP came from the real split_agp run on synthetic input; no real input). It renamed scaffolds to SUPER_1 and SUPER_2 and wrote inter_chr.tsv and hap.chr_level.fa as expected. |
+| vgp-processcuration_sak_generation | PASS | synthetic data: hand-made inter_chr.tsv files (from the real chromosome_assignment runs), AGP and Mashmap table with a planted reversed pair; no real input. It wrote orientation.tsv and reversing_renaming.sak with RVCP only for the pair marked reversed, as expected. |
+| vgp-processcuration_split_agp | PASS | synthetic data: all inputs were hand-made (a 4-sequence FASTA of random bases and a 4-line PretextView-style AGP with Hap_1/Hap_2 tags; no real input). It wrote corrected.agp and split the scaffolds into Hap_1 and Hap_2 AGPs (2 lines each) as expected. |
+
 ## vgp-processcuration_split_agp
 
 ### Tool Description

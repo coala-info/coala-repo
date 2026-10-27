@@ -1,5 +1,29 @@
 # vt CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vt_annotate_1000g | PASS |  |
+| vt_annotate_regions | PASS | synthetic data: hand-made BED regions on real chr22 dbSNP records; 217 of 2174 variants got the REG flag and all 217 lie in the two BED regions |
+| vt_annotate_variants | PASS | synthetic data: hand-made coding and low-complexity BED files on real chr22 dbSNP records and reference; 173 variants got the LC, RL or frameshift flags and none lay outside the low-complexity region |
+| vt_cat | PASS |  |
+| vt_compute_concordance | Failed | tool bug: all concordance counts are 0 and the s.txt and m.txt files stay empty, even when the same indexed VCF with 3 samples is given twice |
+| vt_compute_features | PASS |  |
+| vt_decompose | PASS |  |
+| vt_discover | PASS |  |
+| vt_genotype | Failed | tool bug: vt genotype says 8 SNPs were genotyped but writes no variant records (checked with VCF, BCF, bgzipped input and BAM from nf-core test data) |
+| vt_index | PASS |  |
+| vt_multi_partition | PASS |  |
+| vt_normalize | PASS |  |
+| vt_partition | PASS |  |
+| vt_paste | Failed | tool bug: vt paste crashes with a segmentation fault or abort on every real VCF input tried (vcf.gz, BCF, one or two files) |
+| vt_peek | PASS | default text summary is correct on the real VCF (194 indels, 89 ins and 105 del, as in the tex output); the -x output (PDF) fails because pdflatex is missing from the image |
+| vt_sort | PASS |  |
+| vt_subset | PASS |  |
+| vt_uniq | PASS |  |
+| vt_view | PASS |  |
+
 ## vt_view
 
 ### Tool Description

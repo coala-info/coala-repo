@@ -1,5 +1,11 @@
 # velvetoptimiser CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| velvetoptimiser | PASS | Optimised assembly of paired reads (Galaxy velvet test data) gave contigs; image lacks the free command so memory estimate prints 0 GB, harmless |
+
 ## velvetoptimiser
 
 ### Tool Description

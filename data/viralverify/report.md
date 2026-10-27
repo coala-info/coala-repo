@@ -1,5 +1,12 @@
 # viralverify CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viralverify | PASS |  |
+| viralverify_training_script | PASS |  |
+
 ## viralverify
 
 ### Tool Description
@@ -35,5 +42,33 @@ optional arguments:
   --thr THR  Sensitivity threshold (minimal absolute score to classify
              sequence, default = 7)
   -p         Output predicted plasmids separately
+```
+
+## viralverify_training_script
+
+### Tool Description
+Training script for viralVerify
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/viralverify:1.1--hdfd78af_0
+- **Homepage**: https://github.com/ablab/viralVerify
+- **Package**: https://anaconda.org/channels/bioconda/packages/viralverify/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: training_script [-h] -v V -nv NV [--hmm HMM] -o O [-p P] [-t T]
+
+Training script for viralVerify
+
+required arguments:
+  -v V       File with viral nucleotide sequences in fasta format
+  -nv NV     File with chromosomal nucleotide sequences in fasta format
+  --hmm HMM  Path to HMM database
+  -o O       Output directory
+
+optional arguments:
+  -p P       File with plasmid nucleotide sequences in fasta format
+  -t T       Number of threads
 ```
 

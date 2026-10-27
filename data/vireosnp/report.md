@@ -1,5 +1,12 @@
 # vireosnp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vireosnp_GTbarcode | PASS |  |
+| vireosnp_vireo | PASS |  |
+
 ## vireosnp_vireo
 
 ### Tool Description
@@ -68,5 +75,41 @@ Options:
     -p NPROC, --nproc=NPROC
                         Number of subprocesses for computing - this sacrifices
                         memory for speedups [default: 1]
+```
+
+## vireosnp_GTbarcode
+
+### Tool Description
+Select a genotype barcode from a donor VCF file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vireosnp:0.5.9--pyh7e72e81_0
+- **Homepage**: https://github.com/huangyh09/vireoSNP
+- **Package**: https://anaconda.org/channels/bioconda/packages/vireosnp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: GTbarcode [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -i VCF_FILE, --vcfFile=VCF_FILE
+                        The VCF file for genotype of samples
+  -o OUT_FILE, --outFile=OUT_FILE
+                        Output file [default: $vcfFile/GTbarcode.tsv]
+
+  Optional arguments:
+    -t GENO_TAG, --genoTag=GENO_TAG
+                        The tag for donor genotype: GT, GP, PL [default: GT]
+    --noHomoAlt         Filter out variants with homozygous ALT.
+    --noPlot            Turn off the plot for the barcode.
+    --figSize=FIG_SIZE  Size for the output figure, comma separated [default:
+                        4,2].
+    --figFormat=FIG_FORMAT
+                        Format of output figure: png or pdf [default: png].
+    --randSeed=RAND_SEED
+                        Seed for random pick variants with same information
+                        gain [default: none]
 ```
 

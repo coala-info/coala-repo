@@ -8,6 +8,8 @@ doc: "Produce accuracy statistics of the input BAM file. Calculates global accur
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input BAM file.
     inputBinding:
       position: 1
@@ -30,7 +32,7 @@ inputs:
   - id: global_tsv
     type:
       - 'null'
-      - File
+      - string
     doc: Tab separated file to save global statistics
     inputBinding:
       position: 102
@@ -55,7 +57,7 @@ inputs:
   - id: read_tsv
     type:
       - 'null'
-      - File
+      - string
     doc: Tab separated file to save per-read statistics
     inputBinding:
       position: 102
@@ -71,7 +73,7 @@ inputs:
   - id: report_pdf
     type:
       - 'null'
-      - File
+      - string
     doc: Report PDF
     inputBinding:
       position: 102
@@ -79,7 +81,7 @@ inputs:
   - id: results_pickle
     type:
       - 'null'
-      - File
+      - string
     doc: Save pickled results in this file
     inputBinding:
       position: 102
@@ -88,6 +90,36 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: global_tsv_file
+    type:
+      - 'null'
+      - File
+    doc: Global statistics table
+    outputBinding:
+      glob: $(inputs.global_tsv)
+  - id: read_tsv_file
+    type:
+      - 'null'
+      - File
+    doc: Per-read statistics table
+    outputBinding:
+      glob: $(inputs.read_tsv)
+  - id: report_pdf_file
+    type:
+      - 'null'
+      - File
+    doc: Report PDF
+    outputBinding:
+      glob: '${ return inputs.report_pdf ? inputs.report_pdf : "bam_accuracy.pdf"; }'
+  - id: results_pickle_file
+    type:
+      - 'null'
+      - File
+    doc: Pickled results
+    outputBinding:
+      glob: $(inputs.results_pickle)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wub:0.5.1--pyh3252c3a_0

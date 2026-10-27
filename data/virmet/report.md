@@ -1,5 +1,14 @@
 # virmet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| virmet_covplot | Not completed | needs a wolfpack results folder, and wolfpack needs the human, bovine and bacterial databases (many GB); CWL flags were corrected from the help |
+| virmet_fetch | Not completed | downloads the full NCBI viral, human, bovine or bacterial databases (many GB); too large to test |
+| virmet_index | PASS |  |
+| virmet_update | Not completed | downloads new viral sequences from NCBI into a full Virmet database (many GB); too large to test |
+
 ## virmet_fetch
 
 ### Tool Description

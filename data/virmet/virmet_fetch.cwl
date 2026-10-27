@@ -26,7 +26,7 @@ inputs:
   - id: dbdir
     type:
       - 'null'
-      - Directory
+      - string
     doc: path to store the new Virmet database
     inputBinding:
       position: 101
@@ -59,6 +59,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: database_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The Virmet database directory
+    outputBinding:
+      glob: $(inputs.dbdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virmet:2.0.1--pyhdfd78af_0

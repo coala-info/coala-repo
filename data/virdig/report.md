@@ -1,5 +1,11 @@
 # virdig CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| virdig | PASS |  |
+
 ## virdig
 
 ### Tool Description

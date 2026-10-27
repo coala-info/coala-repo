@@ -1,29 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xtermcolor
+baseCommand:
+  - xtermcolor
+  - convert
 label: xtermcolor_convert
-doc: "256 terminal color library\n\nTool homepage: https://github.com/broadinstitute/xtermcolor"
+doc: "256 terminal color library: convert a color to the closest ANSI terminal color\n\nTool homepage: https://github.com/broadinstitute/xtermcolor"
 inputs:
-  - id: action
-    type: string
-    doc: Actions
-    inputBinding:
-      position: 1
   - id: color
-    type:
-      - 'null'
-      - string
-    doc: Color to convert
+    type: string
+    doc: Color to convert, as a hexadecimal RGB value (for example 0xff0000 or #ff0000)
     inputBinding:
-      position: 102
+      position: 2
       prefix: --color
   - id: compat
     type:
       - 'null'
       - string
-    doc: Compatibility mode. Defaults to xterm.
+    doc: Compatibility mode, xterm or vt100. Defaults to xterm.
     inputBinding:
-      position: 102
+      position: 2
       prefix: --compat
 outputs:
   - id: stdout

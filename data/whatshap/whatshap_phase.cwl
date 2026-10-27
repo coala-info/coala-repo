@@ -17,6 +17,19 @@ inputs:
       items: File
     doc: BAM, CRAM, VCF or BCF file(s) with phase information, either through 
       sequencing reads (BAM, CRAM) or through phased blocks (VCF, BCF)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 2
   - id: algorithm
@@ -30,7 +43,7 @@ inputs:
   - id: changed_genotype_list
     type:
       - 'null'
-      - File
+      - string
     doc: Write list of changed genotypes to FILE.
     inputBinding:
       position: 103
@@ -79,10 +92,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Name of chromosome not to phase.
+        inputBinding:
+          prefix: --exclude-chromosome
+    doc: Name of chromosome not to phase. Can be used multiple times.
     inputBinding:
       position: 103
-      prefix: --exclude-chromosome
   - id: genmap
     type:
       - 'null'
@@ -194,7 +208,7 @@ inputs:
   - id: output_read_list
     type:
       - 'null'
-      - File
+      - string
     doc: Write reads that have been used for phasing to FILE.
     inputBinding:
       position: 103
@@ -212,7 +226,7 @@ inputs:
   - id: recombination_list
     type:
       - 'null'
-      - File
+      - string
     doc: Write putative recombination events to FILE.
     inputBinding:
       position: 103
@@ -220,7 +234,7 @@ inputs:
   - id: recombrate
     type:
       - 'null'
-      - string
+      - float
     doc: 'Recombination rate in cM/Mb (used with --ped). If given, a constant recombination
       rate is assumed (default: 1.26cM/Mb).'
     inputBinding:
@@ -319,6 +333,27 @@ outputs:
       omitted, use standard output.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_read_list_file
+    type:
+      - 'null'
+      - File
+    doc: Reads used for phasing
+    outputBinding:
+      glob: $(inputs.output_read_list)
+  - id: changed_genotype_list_file
+    type:
+      - 'null'
+      - File
+    doc: List of changed genotypes
+    outputBinding:
+      glob: $(inputs.changed_genotype_list)
+  - id: recombination_list_file
+    type:
+      - 'null'
+      - File
+    doc: Putative recombination events
+    outputBinding:
+      glob: $(inputs.recombination_list)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

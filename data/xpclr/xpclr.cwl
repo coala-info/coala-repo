@@ -31,6 +31,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: input file vcf or hdf5
     inputBinding:
       position: 101
@@ -106,6 +109,7 @@ inputs:
     type:
       - 'null'
       - string
+      - File
     doc: Samples comprising population A. Comma separated list or path to file 
       with each ID on a line
     inputBinding:
@@ -115,6 +119,7 @@ inputs:
     type:
       - 'null'
       - string
+      - File
     doc: Samples comprising population B. Comma separated list or path to file 
       with each ID on a line
     inputBinding:

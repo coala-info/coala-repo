@@ -1,5 +1,12 @@
 # wham CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wham | PASS | rewritten: the command is 'wham' with short options (WHAM-BAM is not on PATH); ran on the nf-core yeast paired-end BAM and genome and gave valid VCF soft-clip calls |
+| wham_whamg | Not completed | new CWL runs and gives a valid VCF header, but the small real BAMs (nf-core yeast, human chr21) contain no SV calls, so output cannot be confirmed |
+
 ## wham
 
 ### Tool Description
@@ -43,5 +50,62 @@ Contact: zev.kronenberg [at] gmail.com
 Notes  : -If you find a bug, please open a report on github!
          -The options -m,-q, and -p, control the sensitivity and specificity
          -If you have exome data use the -e option for best performance
+```
+
+## wham_whamg
+
+### Tool Description
+WHAM-GRAPHENING: structural variant caller.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/wham:1.8.0.1.2017.05.03--hd28b015_0
+- **Homepage**: https://github.com/zeeev/wham
+- **Package**: https://anaconda.org/channels/bioconda/packages/wham/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+FATAL: no reference fasta provided.
+
+ Basic usage:  
+       whamg -f my.bam -a my.fasta \ 
+             -e M,GL000207.1 2> wham.err > wham.vcf
+
+ Required:  
+          -f  <STRING>  Comma separated list of bam files or a file with    
+                        one bam (full path) per line.                       
+          -a  <STRING>  The reference genome (indexed fasta).               
+
+ Optional:  Recommended flags are noted with : *                            
+          -s  <FLAG>    Exits the program after the stats are               
+                        gathered. [false]                                   
+          -g  <STRING>  File to write graph to (very large output). [false] 
+  *|-c    -e  <STRING>  Comma sep. list of seqids to skip [false].          
+  *|-e    -c  <STRING>  Comma sep. list of seqids to keep [false].          
+          -r  <STRING>  Region in format: seqid:start-end [whole genome]    
+  *       -x  <INT>     Number of CPUs to use [1 CPU].                      
+          -m  <INT>     Mapping quality filter [20].                        
+          -i  <STRING>  non standard split read tag [SA]                    
+          -z  <FLAG>    Sample reads until success. [false]                 
+          -d  <INT>     Minimum number of matching bases (both reads).[100] 
+
+ Output:  
+        STDERR: Run statistics and bam stats                                
+        STOUT : SV calls in VCF                                             
+
+ Details:  
+        -z  <FLAG>    WHAM-GRAPHENING can fail if does not sample           
+                      enough reads. This flag prevents whamg                
+                      from exiting. If your bam header has seqids not in    
+                      the bam (e.g. split by region) use -z.                
+        -i  <STRING>  WHAM-GRAPHENING uses the optional bwa-mem SA tag.     
+                      Older version of bwa-mem used XP.                     
+     -e|-c  <STRING>  A list of seqids to include or exclude while          
+                      sampling insert and depth.  For humans you should     
+                      use the standard chromosomes 1,2,3...X,Y.             
+
+Version: v1.7.0-311-g4e8c-dirty
+Contact: zev.kronenberg [at] gmail.com 
+Notes  : -If you find a bug, please open a report on github!
 ```
 

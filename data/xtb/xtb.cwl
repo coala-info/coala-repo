@@ -24,13 +24,14 @@ inputs:
   - id: alpb
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: analytical linearized Poisson-Boltzmann (ALPB) model, available 
       solvents are acetone, acetonitrile, aniline, benzaldehyde, benzene, 
       ch2cl2, chcl3, cs2, dioxane, dmf, dmso, ether, ethylacetate, furane, 
       hexandecane, hexane, methanol, nitromethane, octanol, woctanol, phenol, 
       toluene, thf, water. The solvent input is not case-sensitive. The Gsolv 
-      reference state can be chosen as reference or bar1M (default).
+      reference state can be chosen as reference or bar1M (default). Give the solvent, and optionally the reference state, as separate items (for example water bar1M).
     inputBinding:
       position: 102
       prefix: --alpb
@@ -60,14 +61,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --chrg
-  - id: citation
-    type:
-      - 'null'
-      - boolean
-    doc: print citation and terminate
-    inputBinding:
-      position: 102
-      prefix: --citation
   - id: cma
     type:
       - 'null'
@@ -129,13 +122,14 @@ inputs:
   - id: gbsa
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: generalized born (GB) model with solvent accessable surface (SASA) 
       model, available solvents are acetone, acetonitrile, benzene (only 
       GFN1-xTB), CH2Cl2, CHCl3, CS2, DMF (only GFN2-xTB), DMSO, ether, H2O, 
       methanol, n-hexane (only GFN2-xTB), THF and toluene. The solvent input is 
       not case-sensitive. The Gsolv reference state can be chosen as reference 
-      or bar1M (default).
+      or bar1M (default). Give the solvent, and optionally the reference state, as separate items (for example h2o reference).
     inputBinding:
       position: 102
       prefix: --gbsa
@@ -195,14 +189,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --json
-  - id: license
-    type:
-      - 'null'
-      - boolean
-    doc: print license and terminate
-    inputBinding:
-      position: 102
-      prefix: --license
   - id: lmo
     type:
       - 'null'
@@ -300,12 +286,13 @@ inputs:
   - id: oniom
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
     doc: use subtractive embedding via ONIOM method. 'METHOD' is given as 
       'inner:outer' where 'inner' can be 'orca', 'turbomole', 'gfn2', 'gfn1', or
       'gfnff' and 'outer' can be 'gfn2', 'gfn1', or 'gfnff'. The inner region is
       given as a comma separated indices directly in the commandline or in a 
-      file with each index on a separate line.
+      file with each index on a separate line. Give METHOD ('inner:outer') and then the inner region (indices or a file name) as separate items.
     inputBinding:
       position: 102
       prefix: --oniom
@@ -496,6 +483,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: Files written by xtb in the working directory (optimized geometry
+      xtbopt.xyz, charges, wbo, xtbrestart, hessian, molden.input, xtbout.json
+      and others, depending on the options used).
+    outputBinding:
+      glob: '*'
+      outputEval: |
+        ${
+          var skip = {};
+          skip["xtb.out"] = 1;
+          ["geometry", "input", "vparam", "xparam", "path"].forEach(function (k) {
+            if (inputs[k]) { skip[inputs[k].basename] = 1; }
+          });
+          return self.filter(function (f) { return f.class == "File" && !skip[f.basename]; });
+        }
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/xtb:6.6.1

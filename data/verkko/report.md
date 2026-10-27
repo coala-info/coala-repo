@@ -1,5 +1,11 @@
 # verkko CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| verkko | PASS | HiFi-only assembly of real Arabidopsis plastid HiFi reads gave 2 contigs (137 kb); bc is missing in the image but only a warning |
+
 ## verkko
 
 ### Tool Description

@@ -73,10 +73,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --introns
     doc: intron file(s) in bed format
     inputBinding:
       position: 102
-      prefix: --introns
   - id: max_node_length
     type:
       - 'null'
@@ -147,10 +148,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --transcripts
     doc: transcript file(s) in gtf/gff format
     inputBinding:
       position: 102
-      prefix: --transcripts
   - id: use_hap_ref
     type:
       - 'null'
@@ -192,6 +194,9 @@ inputs:
       position: 106
       prefix: --write-info
 outputs:
+  - id: splicing_graph
+    type: stdout
+    doc: Splicing graph written to standard output
   - id: write_gbwt
     type:
       - 'null'
@@ -226,3 +231,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0
+stdout: vg_rna.vg

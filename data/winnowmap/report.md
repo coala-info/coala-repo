@@ -1,5 +1,11 @@
 # winnowmap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| winnowmap | PASS |  |
+
 ## winnowmap
 
 ### Tool Description

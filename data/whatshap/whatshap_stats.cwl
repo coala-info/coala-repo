@@ -101,6 +101,9 @@ outputs:
     doc: Write statistics in tab-separated value format to FILE
     outputBinding:
       glob: $(inputs.tsv)
+  - id: stdout
+    type: stdout
+    doc: Standard output (report)
 requirements:
   - class: InlineJavascriptRequirement
 hints:
@@ -109,3 +112,4 @@ hints:
 s:url: https://whatshap.readthedocs.io
 $namespaces:
   s: https://schema.org/
+stdout: whatshap_stats.out

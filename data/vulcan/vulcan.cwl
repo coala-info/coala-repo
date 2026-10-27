@@ -144,15 +144,16 @@ inputs:
       prefix: --work_dir
   - id: output_path
     type: string
+    doc: vulcan's output's prefix, the output will be prefix_{percentile}.bam
     inputBinding:
       position: 102
       prefix: --output
 outputs:
   - id: output
-    type: File
-    doc: vulcan's output's prefix, the output will be prefix_{percentile}.bam
+    type: File[]
+    doc: Sorted BAM files, one per percentile (prefix_{percentile}.bam)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path)_*.bam
 requirements:
   - class: InlineJavascriptRequirement
 hints:

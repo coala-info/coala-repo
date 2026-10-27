@@ -13,8 +13,6 @@ inputs:
       position: 1
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference .npz, as previously created with newref
     inputBinding:
       position: 2
@@ -137,6 +135,43 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: bins_bed
+    type:
+      - 'null'
+      - File
+    doc: Per-bin results (written with --bed)
+    outputBinding:
+      glob: $(inputs.outid)_bins.bed
+  - id: segments_bed
+    type:
+      - 'null'
+      - File
+    doc: Segments (written with --bed)
+    outputBinding:
+      glob: $(inputs.outid)_segments.bed
+  - id: aberrations_bed
+    type:
+      - 'null'
+      - File
+    doc: Called aberrations (written with --bed)
+    outputBinding:
+      glob: $(inputs.outid)_aberrations.bed
+  - id: statistics_txt
+    type:
+      - 'null'
+      - File
+    doc: Statistics (written with --bed)
+    outputBinding:
+      glob: $(inputs.outid)_statistics.txt
+  - id: plots_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Plots (written with --plot)
+    outputBinding:
+      glob: $(inputs.outid).plots
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wisecondorx:1.2.9--pyhdfd78af_0

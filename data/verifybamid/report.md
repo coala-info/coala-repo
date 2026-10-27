@@ -1,5 +1,11 @@
 # verifybamid CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| verifybamid | PASS |  |
+
 ## verifybamid
 
 ### Tool Description

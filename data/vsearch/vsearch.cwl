@@ -47,7 +47,7 @@ inputs:
   - id: biomout
     type:
       - 'null'
-      - File
+      - string
     doc: filename for OTU table output in biom 1.0 format
     inputBinding:
       position: 101
@@ -55,7 +55,7 @@ inputs:
   - id: blast6out
     type:
       - 'null'
-      - File
+      - string
     doc: filename for blast-like tab-separated output
     inputBinding:
       position: 101
@@ -63,7 +63,7 @@ inputs:
   - id: borderline
     type:
       - 'null'
-      - File
+      - string
     doc: output borderline chimeric sequences to file
     inputBinding:
       position: 101
@@ -79,7 +79,7 @@ inputs:
   - id: centroids
     type:
       - 'null'
-      - File
+      - string
     doc: output centroid sequences to FASTA file
     inputBinding:
       position: 101
@@ -199,7 +199,7 @@ inputs:
   - id: consout
     type:
       - 'null'
-      - File
+      - string
     doc: output cluster consensus sequences to FASTA file
     inputBinding:
       position: 101
@@ -239,7 +239,7 @@ inputs:
   - id: dbmatched
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA file for matching database sequences
     inputBinding:
       position: 101
@@ -247,7 +247,7 @@ inputs:
   - id: dbnotmatched
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA file for non-matching database sequences
     inputBinding:
       position: 101
@@ -311,7 +311,7 @@ inputs:
   - id: eetabbedout
     type:
       - 'null'
-      - File
+      - string
     doc: output error statistics to specified file
     inputBinding:
       position: 101
@@ -351,7 +351,7 @@ inputs:
   - id: fastaout_discarded
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA filename for non-matching sequences
     inputBinding:
       position: 101
@@ -359,7 +359,7 @@ inputs:
   - id: fastaout_discarded_rev
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA filename for non-matching, reverse compl.
     inputBinding:
       position: 101
@@ -367,7 +367,7 @@ inputs:
   - id: fastaout_notmerged_fwd
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA filename for non-merged forward sequences
     inputBinding:
       position: 101
@@ -375,7 +375,7 @@ inputs:
   - id: fastaout_notmerged_rev
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA filename for non-merged reverse sequences
     inputBinding:
       position: 101
@@ -383,7 +383,7 @@ inputs:
   - id: fastaout_rev
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA filename for fragments on reverse strand
     inputBinding:
       position: 101
@@ -391,7 +391,7 @@ inputs:
   - id: fastapairs
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA file with pairs of query and target
     inputBinding:
       position: 101
@@ -687,7 +687,7 @@ inputs:
   - id: fastqout
     type:
       - 'null'
-      - File
+      - string
     doc: output converted sequences to given FASTQ file
     inputBinding:
       position: 101
@@ -695,7 +695,7 @@ inputs:
   - id: fastqout_discarded
     type:
       - 'null'
-      - File
+      - string
     doc: output non-subsampled sequences to FASTQ file
     inputBinding:
       position: 101
@@ -703,7 +703,7 @@ inputs:
   - id: fastqout_discarded_rev
     type:
       - 'null'
-      - File
+      - string
     doc: FASTQ filename for discarded reverse sequences
     inputBinding:
       position: 101
@@ -711,7 +711,7 @@ inputs:
   - id: fastqout_notmerged_fwd
     type:
       - 'null'
-      - File
+      - string
     doc: FASTQ filename for non-merged forward sequences
     inputBinding:
       position: 101
@@ -719,7 +719,7 @@ inputs:
   - id: fastqout_notmerged_rev
     type:
       - 'null'
-      - File
+      - string
     doc: FASTQ filename for non-merged reverse sequences
     inputBinding:
       position: 101
@@ -727,7 +727,7 @@ inputs:
   - id: fastqout_rev
     type:
       - 'null'
-      - File
+      - string
     doc: FASTQ filename for passed reverse sequences
     inputBinding:
       position: 101
@@ -879,7 +879,7 @@ inputs:
   - id: lcaout
     type:
       - 'null'
-      - File
+      - string
     doc: output LCA of matching sequences to file
     inputBinding:
       position: 101
@@ -903,7 +903,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: write messages, timing and memory info to file
     inputBinding:
       position: 101
@@ -935,7 +935,7 @@ inputs:
   - id: matched
     type:
       - 'null'
-      - File
+      - string
     doc: FASTA file for matching query sequences
     inputBinding:
       position: 101
@@ -1183,7 +1183,7 @@ inputs:
   - id: mothur_shared_out
     type:
       - 'null'
-      - File
+      - string
     doc: filename for OTU table output in mothur format
     inputBinding:
       position: 101
@@ -1191,7 +1191,7 @@ inputs:
   - id: msaout
     type:
       - 'null'
-      - File
+      - string
     doc: output multiple seq. alignments to FASTA file
     inputBinding:
       position: 101
@@ -1215,7 +1215,7 @@ inputs:
   - id: nonchimeras
     type:
       - 'null'
-      - File
+      - string
     doc: output non-chimeric sequences to file
     inputBinding:
       position: 101
@@ -1247,7 +1247,7 @@ inputs:
   - id: otutabout
     type:
       - 'null'
-      - File
+      - string
     doc: filename for OTU table output in classic format
     inputBinding:
       position: 101
@@ -1279,7 +1279,7 @@ inputs:
   - id: profile
     type:
       - 'null'
-      - File
+      - string
     doc: output sequence profile of each cluster to file
     inputBinding:
       position: 101
@@ -1399,7 +1399,7 @@ inputs:
   - id: samout
     type:
       - 'null'
-      - File
+      - string
     doc: filename for SAM format output
     inputBinding:
       position: 101
@@ -1591,7 +1591,7 @@ inputs:
   - id: uc
     type:
       - 'null'
-      - File
+      - string
     doc: specify filename for UCLUST-like output
     inputBinding:
       position: 101
@@ -1647,7 +1647,7 @@ inputs:
   - id: uchimeout
     type:
       - 'null'
-      - File
+      - string
     doc: output to chimera info to tab-separated file
     inputBinding:
       position: 101
@@ -1663,8 +1663,8 @@ inputs:
   - id: udb2fasta
     type:
       - 'null'
-      - string
-    doc: output FASTA file from given UDB file
+      - File
+    doc: UDB file to convert to FASTA (write FASTA with output)
     inputBinding:
       position: 101
       prefix: --udb2fasta
@@ -1711,7 +1711,7 @@ inputs:
   - id: userout
     type:
       - 'null'
-      - File
+      - string
     doc: filename for user-defined tab-separated output
     inputBinding:
       position: 101
@@ -1772,72 +1772,283 @@ outputs:
     type:
       - 'null'
       - File
-    doc: output chimera alignments to file
+    doc: output chimera alignments / human-readable alignments to file
     outputBinding:
       glob: $(inputs.alnout)
+  - id: biomout_out
+    type:
+      - 'null'
+      - File
+    doc: OTU table output in biom 1.0 format
+    outputBinding:
+      glob: $(inputs.biomout)
+  - id: blast6out_out
+    type:
+      - 'null'
+      - File
+    doc: blast-like tab-separated output
+    outputBinding:
+      glob: $(inputs.blast6out)
+  - id: borderline_out
+    type:
+      - 'null'
+      - File
+    doc: borderline chimeric sequences
+    outputBinding:
+      glob: $(inputs.borderline)
+  - id: centroids_out
+    type:
+      - 'null'
+      - File
+    doc: centroid sequences (FASTA)
+    outputBinding:
+      glob: $(inputs.centroids)
   - id: chimeras_out
     type:
       - 'null'
       - File
-    doc: output chimeric sequences to file
+    doc: chimeric sequences
     outputBinding:
       glob: $(inputs.chimeras)
+  - id: consout_out
+    type:
+      - 'null'
+      - File
+    doc: cluster consensus sequences (FASTA)
+    outputBinding:
+      glob: $(inputs.consout)
+  - id: dbmatched_out
+    type:
+      - 'null'
+      - File
+    doc: matching database sequences (FASTA)
+    outputBinding:
+      glob: $(inputs.dbmatched)
+  - id: dbnotmatched_out
+    type:
+      - 'null'
+      - File
+    doc: non-matching database sequences (FASTA)
+    outputBinding:
+      glob: $(inputs.dbnotmatched)
+  - id: eetabbedout_out
+    type:
+      - 'null'
+      - File
+    doc: error statistics for merged pairs
+    outputBinding:
+      glob: $(inputs.eetabbedout)
   - id: fastaout_out
     type:
       - 'null'
       - File
-    doc: output FASTA file (for fastx_uniques)
+    doc: FASTA output
     outputBinding:
       glob: $(inputs.fastaout)
+  - id: fastaout_discarded_out
+    type:
+      - 'null'
+      - File
+    doc: discarded FASTA sequences
+    outputBinding:
+      glob: $(inputs.fastaout_discarded)
+  - id: fastaout_discarded_rev_out
+    type:
+      - 'null'
+      - File
+    doc: discarded reverse FASTA sequences
+    outputBinding:
+      glob: $(inputs.fastaout_discarded_rev)
+  - id: fastaout_notmerged_fwd_out
+    type:
+      - 'null'
+      - File
+    doc: non-merged forward FASTA sequences
+    outputBinding:
+      glob: $(inputs.fastaout_notmerged_fwd)
+  - id: fastaout_notmerged_rev_out
+    type:
+      - 'null'
+      - File
+    doc: non-merged reverse FASTA sequences
+    outputBinding:
+      glob: $(inputs.fastaout_notmerged_rev)
+  - id: fastaout_rev_out
+    type:
+      - 'null'
+      - File
+    doc: reverse FASTA output
+    outputBinding:
+      glob: $(inputs.fastaout_rev)
   - id: fastqout_out
     type:
       - 'null'
       - File
-    doc: output FASTQ file (for fastx_uniques)
+    doc: FASTQ output
     outputBinding:
       glob: $(inputs.fastqout)
+  - id: fastqout_discarded_out
+    type:
+      - 'null'
+      - File
+    doc: discarded FASTQ sequences
+    outputBinding:
+      glob: $(inputs.fastqout_discarded)
+  - id: fastqout_discarded_rev_out
+    type:
+      - 'null'
+      - File
+    doc: discarded reverse FASTQ sequences
+    outputBinding:
+      glob: $(inputs.fastqout_discarded_rev)
+  - id: fastqout_notmerged_fwd_out
+    type:
+      - 'null'
+      - File
+    doc: non-merged forward FASTQ sequences
+    outputBinding:
+      glob: $(inputs.fastqout_notmerged_fwd)
+  - id: fastqout_notmerged_rev_out
+    type:
+      - 'null'
+      - File
+    doc: non-merged reverse FASTQ sequences
+    outputBinding:
+      glob: $(inputs.fastqout_notmerged_rev)
+  - id: fastqout_rev_out
+    type:
+      - 'null'
+      - File
+    doc: reverse FASTQ output
+    outputBinding:
+      glob: $(inputs.fastqout_rev)
+  - id: fastapairs_out
+    type:
+      - 'null'
+      - File
+    doc: FASTA file with pairs of query and target
+    outputBinding:
+      glob: $(inputs.fastapairs)
+  - id: lcaout_out
+    type:
+      - 'null'
+      - File
+    doc: LCA of matching sequences
+    outputBinding:
+      glob: $(inputs.lcaout)
   - id: log_out
     type:
       - 'null'
       - File
-    doc: output file for fastq_stats statistics
+    doc: log file with messages and statistics
     outputBinding:
       glob: $(inputs.log)
+  - id: matched_out
+    type:
+      - 'null'
+      - File
+    doc: matching query sequences (FASTA)
+    outputBinding:
+      glob: $(inputs.matched)
+  - id: mothur_shared_out_out
+    type:
+      - 'null'
+      - File
+    doc: OTU table in mothur format
+    outputBinding:
+      glob: $(inputs.mothur_shared_out)
+  - id: msaout_out
+    type:
+      - 'null'
+      - File
+    doc: multiple sequence alignments (FASTA)
+    outputBinding:
+      glob: $(inputs.msaout)
+  - id: nonchimeras_out
+    type:
+      - 'null'
+      - File
+    doc: non-chimeric sequences
+    outputBinding:
+      glob: $(inputs.nonchimeras)
   - id: notmatched_out
     type:
       - 'null'
       - File
-    doc: output filename for undetermined sequences
+    doc: non-matching or undetermined sequences
     outputBinding:
       glob: $(inputs.notmatched)
+  - id: otutabout_out
+    type:
+      - 'null'
+      - File
+    doc: OTU table in classic format
+    outputBinding:
+      glob: $(inputs.otutabout)
   - id: output_out
     type:
       - 'null'
       - File
-    doc: output FASTA file (not for fastx_uniques)
+    doc: output FASTA, UDB or statistics file
     outputBinding:
       glob: $(inputs.output)
+  - id: profile_out
+    type:
+      - 'null'
+      - File
+    doc: sequence profile of each cluster
+    outputBinding:
+      glob: $(inputs.profile)
+  - id: samout_out
+    type:
+      - 'null'
+      - File
+    doc: SAM format output
+    outputBinding:
+      glob: $(inputs.samout)
   - id: tabbedout_out
     type:
       - 'null'
       - File
-    doc: output filename for result information
+    doc: tab-separated result information
     outputBinding:
       glob: $(inputs.tabbedout)
+  - id: uc_out
+    type:
+      - 'null'
+      - File
+    doc: UCLUST-like output
+    outputBinding:
+      glob: $(inputs.uc)
   - id: uchimealns_out
     type:
       - 'null'
       - File
-    doc: output chimera alignments to file
+    doc: chimera alignments
     outputBinding:
       glob: $(inputs.uchimealns)
-  - id: udb2fasta_out
+  - id: uchimeout_out
     type:
       - 'null'
       - File
-    doc: output FASTA file from given UDB file
+    doc: chimera info (tab-separated)
     outputBinding:
-      glob: $(inputs.udb2fasta)
+      glob: $(inputs.uchimeout)
+  - id: userout_out
+    type:
+      - 'null'
+      - File
+    doc: user-defined tab-separated output
+    outputBinding:
+      glob: $(inputs.userout)
+  - id: clusters_out
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: one FASTA file per cluster (files named with the clusters prefix)
+    outputBinding:
+      glob: $(inputs.clusters)*
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vsearch:2.30.4--hd6d6fdc_0

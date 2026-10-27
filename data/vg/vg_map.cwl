@@ -6,18 +6,6 @@ baseCommand:
 label: vg_map
 doc: "Align reads to a graph.\n\nTool homepage: https://github.com/vgteam/vg"
 inputs:
-  - id: input1
-    type: File
-    doc: First input FASTQ file
-    inputBinding:
-      position: 1
-  - id: input2
-    type:
-      - 'null'
-      - File
-    doc: Second input FASTQ file for paired-end reads
-    inputBinding:
-      position: 2
   - id: alignment_model
     type:
       - 'null'
@@ -160,11 +148,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --fastq
     doc: input FASTQ or (2-line format) FASTA, maybe compressed; two allowed, 
       one for each mate
     inputBinding:
       position: 103
-      prefix: --fastq
   - id: fixed_frag_model
     type:
       - 'null'
@@ -251,6 +240,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .lcp
+        required: false
     doc: use this GCSA2 index [<graph>.gcsa]
     inputBinding:
       position: 103
@@ -601,12 +593,9 @@ inputs:
       prefix: --xg-name
 outputs:
   - id: output_gam
-    type:
-      - 'null'
-      - File
-    doc: Output GAM file
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Alignments (GAM by default) written to standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0
+stdout: vg_map.gam

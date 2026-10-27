@@ -39,6 +39,7 @@ inputs:
   - id: reference
     type:
       - 'null'
+      - File
       - string
     doc: 'Optional: Provide reference option or FASTA file. If neither are given,
       no -r option, then a TB/Brucella/paraTB best reference are searched'
@@ -65,6 +66,46 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: step1_vcf
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: VCF files written by step 1 (alignment folder)
+    outputBinding:
+      glob: alignment/*.vcf
+  - id: step1_bam
+    type:
+      - 'null'
+      - File
+    doc: Sorted BAM file written by step 1
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+    outputBinding:
+      glob: alignment/*.bam
+  - id: step1_stats
+    type:
+      - 'null'
+      - File
+    doc: Statistics workbook written by step 1
+    outputBinding:
+      glob: '*_alignment_vcf_stats.xlsx'
+  - id: unmapped_reads
+    type:
+      - 'null'
+      - Directory
+    doc: Unmapped reads and assembled contigs
+    outputBinding:
+      glob: unmapped_reads
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.read1)
+        writable: true
+      - entry: $(inputs.read2)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vsnp:2.03--hdfd78af_2

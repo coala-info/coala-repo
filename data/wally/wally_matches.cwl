@@ -9,6 +9,9 @@ inputs:
   - id: input_bam
     type: File
     doc: Input BAM file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: disable_node_labeling
@@ -136,6 +139,11 @@ outputs:
     doc: plot output file
     outputBinding:
       glob: $(inputs.plot_output_file_path)
+  - id: separate_plot_images
+    type: File[]
+    doc: Plot images (one per read when separate_plots is set, named <read>.png)
+    outputBinding:
+      glob: '*.png'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

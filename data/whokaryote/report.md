@@ -1,5 +1,11 @@
 # whokaryote CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| whokaryote_whokaryote.py | PASS |  |
+
 ## whokaryote_whokaryote.py
 
 ### Tool Description

@@ -10,11 +10,37 @@ inputs:
   - id: vcf
     type: File
     doc: VCF file with variants to phase (must be gzip-compressed and indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 1
   - id: alignments
     type: File
     doc: BAM/CRAM file with alignments tagged by haplotype and phase set
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 2
   - id: chromosome

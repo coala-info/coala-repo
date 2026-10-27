@@ -1,5 +1,20 @@
 # vg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vg_augment | PASS | graph grew from 9477 to 10305 nodes with read-supported edits |
+| vg_autoindex | PASS | giraffe workflow gave gbz, distance, minimizer and zipcode files |
+| vg_call | PASS | VCF with calls from the pack, including a het call with 265 reads at chr22:1982 |
+| vg_construct | PASS | real chr22 40 kb reference + gnomAD VCF (nf-core): graph with 9477 nodes |
+| vg_giraffe | PASS | 5603 of 5642 real reads aligned |
+| vg_index | PASS | XG, GCSA2 and distance indexes built from the real graph |
+| vg_map | PASS | 5640 of 5642 real reads aligned |
+| vg_mpmap | PASS | 5642 multipath alignments (GAMP) written |
+| vg_pack | PASS | coverage pack from the real read alignments, mean coverage about 8 |
+| vg_rna | PASS | splicing graph, transcript FASTA, info table and GBWT from the real chr22 GTF |
+
 ## vg_autoindex
 
 ### Tool Description

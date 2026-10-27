@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - sort
 label: vt_sort
-doc: "Sorts a VCF or BCF or VCF.GZ file.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "Sorts a VCF or BCF or VCF.GZ file.\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: input_vcf
     type: File

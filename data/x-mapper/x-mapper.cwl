@@ -1,9 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - java
-  - -jar
-  - x-mapper.jar
+baseCommand: x-mapper
 label: x-mapper
 doc: "Aligns genomic sequences quickly and accurately using relatively high amounts
   of memory\n\nTool homepage: https://github.com/mathjeff/mapper"
@@ -42,15 +39,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --cache-dir
-  - id: distinguish_query_ends
-    type:
-      - 'null'
-      - float
-    doc: In the output vcf file, we separately display which queries aligned at 
-      each position with <fraction> of the end of the query and which didn't.
-    inputBinding:
-      position: 101
-      prefix: --distinguish-query-ends
   - id: extend_indel_penalty
     type:
       - 'null'
@@ -59,66 +47,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --extend-indel-penalty
-  - id: indel_continue_threshold_supporting_depth_fraction
-    type:
-      - 'null'
-      - float
-    doc: The minimum total (middle) depth and minimum supporting depth fraction 
-      required at a position to report support for a continuation of an 
-      insertion or deletion
-    inputBinding:
-      position: 101
-      prefix: --indel-continue-threshold
-  - id: indel_continue_threshold_total_depth
-    type:
-      - 'null'
-      - int
-    doc: The minimum total (middle) depth and minimum supporting depth fraction 
-      required at a position to report support for a continuation of an 
-      insertion or deletion
-    inputBinding:
-      position: 101
-      prefix: --indel-continue-threshold
-  - id: indel_start_threshold_supporting_depth_fraction
-    type:
-      - 'null'
-      - float
-    doc: The minimum total (middle) depth and minimum supporting depth fraction 
-      required at a position to report support for the start of an insertion or 
-      deletion
-    inputBinding:
-      position: 101
-      prefix: --indel-start-threshold
-  - id: indel_start_threshold_total_depth
-    type:
-      - 'null'
-      - int
-    doc: The minimum total (middle) depth and minimum supporting depth fraction 
-      required at a position to report support for the start of an insertion or 
-      deletion
-    inputBinding:
-      position: 101
-      prefix: --indel-start-threshold
-  - id: indel_threshold_supporting_depth_frequency
-    type:
-      - 'null'
-      - float
-    doc: Alias for --indel-start-threshold <min total depth> <min supporting 
-      depth frequency> and --indel-continue-threshold <min total depth> <min 
-      supporting depth frequency>
-    inputBinding:
-      position: 101
-      prefix: --indel-threshold
-  - id: indel_threshold_total_depth
-    type:
-      - 'null'
-      - int
-    doc: Alias for --indel-start-threshold <min total depth> <min supporting 
-      depth frequency> and --indel-continue-threshold <min total depth> <min 
-      supporting depth frequency>
-    inputBinding:
-      position: 101
-      prefix: --indel-threshold
   - id: infer_ancestors
     type:
       - 'null'
@@ -205,49 +133,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --num-threads
-  - id: paired_queries_file1
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Illumina-style paired-end reads to align to the reference. For each 
-      read <r1> in <file1> and the corresponding <r2> in <file2>, the alignment 
-      position of <r1> is expected to be slightly before the alignment position 
-      of the reverse complement of <r2>.
-    inputBinding:
-      position: 101
-      prefix: --paired-queries
-  - id: paired_queries_file2
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: Illumina-style paired-end reads to align to the reference. For each 
-      read <r1> in <file1> and the corresponding <r2> in <file2>, the alignment 
-      position of <r1> is expected to be slightly before the alignment position 
-      of the reverse complement of <r2>.
-    inputBinding:
-      position: 101
-      prefix: --paired-queries
-  - id: queries
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: the reads to align to the reference. Should be in .fastq or .fasta 
-      format.
-    inputBinding:
-      position: 101
-      prefix: --queries
-  - id: reference
-    type:
-      type: array
-      items: File
-    doc: the reference to use. Should be in .fasta/.fa/.fna or .fastq/.fq format
-      or a .gz of one of those formats.
-    inputBinding:
-      position: 101
-      prefix: --reference
   - id: snp_penalty
     type:
       - 'null'
@@ -256,44 +141,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --snp-penalty
-  - id: snp_threshold_supporting_depth_fraction
-    type:
-      - 'null'
-      - float
-    doc: The minimum total depth and minimum supporting depth fraction required 
-      at a position to report the support for the mutation
-    inputBinding:
-      position: 101
-      prefix: --snp-threshold
-  - id: snp_threshold_total_depth
-    type:
-      - 'null'
-      - int
-    doc: The minimum total depth and minimum supporting depth fraction required 
-      at a position to report the support for the mutation
-    inputBinding:
-      position: 101
-      prefix: --snp-threshold
-  - id: spacing_distance_per_penalty
-    type:
-      - 'null'
-      - int
-    doc: That additional penalty equals (the difference between the actual 
-      distance and <expected>) divided by <distancePerPenalty>, unless the two 
-      query sequence alignments would overlap, in which case the additional 
-      penalty is 0.
-    inputBinding:
-      position: 101
-      prefix: --spacing
-  - id: spacing_expected
-    type:
-      - 'null'
-      - int
-    doc: Any query alignment whose inner distance deviates from <expected> has 
-      an additional penalty added.
-    inputBinding:
-      position: 101
-      prefix: --spacing
   - id: split_queries_past_size
     type:
       - 'null'
@@ -309,7 +156,7 @@ inputs:
     doc: if set, the output vcf file will exclude positions where no mutations 
       were detected
     inputBinding:
-      position: 101
+      position: 110
       prefix: --vcf-exclude-non-mutations
   - id: vcf_omit_support_reads
     type:
@@ -319,7 +166,7 @@ inputs:
       reads for each variant. If set, the output vcf file will hide the 
       supporting reads for each variant.
     inputBinding:
-      position: 101
+      position: 110
       prefix: --vcf-omit-support-reads
   - id: verbose
     type:
@@ -366,36 +213,178 @@ inputs:
       - 'null'
       - string
     inputBinding:
-      position: 103
+      position: 106
       prefix: --out-mutations
   - id: out_refs_map_count_path
     type:
       - 'null'
       - string
     inputBinding:
-      position: 104
+      position: 103
       prefix: --out-refs-map-count
   - id: out_sam_path
     type:
       - 'null'
       - string
     inputBinding:
-      position: 105
+      position: 104
       prefix: --out-sam
   - id: out_unaligned_path
     type:
       - 'null'
       - string
     inputBinding:
-      position: 106
+      position: 105
       prefix: --out-unaligned
   - id: out_vcf_path
     type:
       - 'null'
       - string
     inputBinding:
-      position: 107
+      position: 108
       prefix: --out-vcf
+  - id: paired_queries
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Illumina-style paired-end reads to align to the reference. Give two files
+      (<file1> <file2>). For each read <r1> in <file1> and the corresponding <r2>
+      in <file2>, the alignment position of <r1> is expected to be slightly before
+      the alignment position of the reverse complement of <r2>.
+    inputBinding:
+      position: 99
+      prefix: --paired-queries
+  - id: spacing
+    type:
+      - 'null'
+      - type: array
+        items: int
+    doc: '<expected> <distancePerPenalty> (default 100 50). Any query alignment whose
+      inner distance deviates from <expected> has an additional penalty added, equal
+      to the difference divided by <distancePerPenalty>.'
+    inputBinding:
+      position: 100
+      prefix: --spacing
+  - id: queries
+    type:
+      - 'null'
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --queries
+    doc: the reads to align to the reference. Should be in .fastq or .fasta format.
+      Each file gets its own --queries.
+    inputBinding:
+      position: 101
+  - id: reference
+    type:
+      type: array
+      items: File
+      inputBinding:
+        prefix: --reference
+    doc: the reference to use. Should be in .fasta/.fa/.fna or .fastq/.fq format
+      or a .gz of one of those formats. Each file gets its own --reference.
+    inputBinding:
+      position: 101
+  - id: mutations_snp_threshold
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: '(for the --out-mutations output) <min total depth> <min supporting depth fraction>: minimum total depth and
+      supporting depth fraction required at a position to report the mutation.'
+    inputBinding:
+      position: 107
+      prefix: --snp-threshold
+  - id: vcf_snp_threshold
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: '(for the --out-vcf output) <min total depth> <min supporting depth fraction>: minimum total depth and
+      supporting depth fraction required at a position to report the mutation.'
+    inputBinding:
+      position: 109
+      prefix: --snp-threshold
+  - id: mutations_indel_start_threshold
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: '(for the --out-mutations output) <min total depth> <min supporting depth fraction> required to report the
+      start of an insertion or deletion.'
+    inputBinding:
+      position: 107
+      prefix: --indel-start-threshold
+  - id: vcf_indel_start_threshold
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: '(for the --out-vcf output) <min total depth> <min supporting depth fraction> required to report the
+      start of an insertion or deletion.'
+    inputBinding:
+      position: 109
+      prefix: --indel-start-threshold
+  - id: mutations_indel_continue_threshold
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: '(for the --out-mutations output) <min total depth> <min supporting depth fraction> required to report a
+      continuation of an insertion or deletion.'
+    inputBinding:
+      position: 107
+      prefix: --indel-continue-threshold
+  - id: vcf_indel_continue_threshold
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: '(for the --out-vcf output) <min total depth> <min supporting depth fraction> required to report a
+      continuation of an insertion or deletion.'
+    inputBinding:
+      position: 109
+      prefix: --indel-continue-threshold
+  - id: mutations_indel_threshold
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: '(for the --out-mutations output) Alias for --indel-start-threshold and --indel-continue-threshold: <min
+      total depth> <min supporting depth fraction>.'
+    inputBinding:
+      position: 107
+      prefix: --indel-threshold
+  - id: vcf_indel_threshold
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: '(for the --out-vcf output) Alias for --indel-start-threshold and --indel-continue-threshold: <min
+      total depth> <min supporting depth fraction>.'
+    inputBinding:
+      position: 109
+      prefix: --indel-threshold
+  - id: mutations_distinguish_query_ends
+    type:
+      - 'null'
+      - float
+    doc: (for the --out-mutations output) In the output vcf file, we separately display which queries aligned at 
+      each position with <fraction> of the end of the query and which didn't.
+    inputBinding:
+      position: 107
+      prefix: --distinguish-query-ends
+  - id: vcf_distinguish_query_ends
+    type:
+      - 'null'
+      - float
+    doc: (for the --out-vcf output) In the output vcf file, we separately display which queries aligned at 
+      each position with <fraction> of the end of the query and which didn't.
+    inputBinding:
+      position: 109
+      prefix: --distinguish-query-ends
 outputs:
   - id: out_mutations
     type:

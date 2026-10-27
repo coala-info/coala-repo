@@ -10,9 +10,13 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: sorted bam format alignment file
     inputBinding:
       position: 1
+      prefix: -b
   - id: reference_fasta
     type: File
     secondaryFiles:
@@ -20,6 +24,7 @@ inputs:
     doc: reference genome in fasta format
     inputBinding:
       position: 2
+      prefix: -f
   - id: alpha
     type:
       - 'null'
@@ -98,6 +103,25 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: snvs_csv
+    type:
+      type: array
+      items: File
+    doc: Called SNVs in csv format
+    outputBinding:
+      glob: SNVs_*.csv
+  - id: snvs_vcf
+    type:
+      type: array
+      items: File
+    doc: Called SNVs in vcf format
+    outputBinding:
+      glob: SNVs_*.vcf
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/viloca:1.1.0--pyhdfd78af_0

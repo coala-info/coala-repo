@@ -145,11 +145,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --fastq-in
     doc: read and align these FASTQ/FASTA-format reads (two are allowed, one for
       each mate)
     inputBinding:
       position: 101
-      prefix: --fastq-in
   - id: fragment_gap_scale
     type:
       - 'null'
@@ -920,11 +921,12 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --set-reference
     doc: include this sample as a reference in the personalized graph (may 
       repeat)
     inputBinding:
       position: 101
-      prefix: --set-reference
   - id: set_refpos
     type:
       - 'null'
@@ -1111,12 +1113,8 @@ inputs:
       prefix: --zipcode-tree-score-threshold
 outputs:
   - id: output_gam
-    type:
-      - 'null'
-      - File
-    doc: output GAM file
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Alignments (GAM by default; see output_format) written to standard output
   - id: output_basename_dir
     type:
       - 'null'
@@ -1128,3 +1126,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0
+stdout: vg_giraffe.gam

@@ -14,8 +14,6 @@ inputs:
       position: 1
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference .npz, as previously created with newref
     inputBinding:
       position: 2

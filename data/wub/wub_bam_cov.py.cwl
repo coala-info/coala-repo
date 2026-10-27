@@ -6,6 +6,8 @@ doc: "Produce refrence coverage table.\n\nTool homepage: https://github.com/nano
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input BAM file.
     inputBinding:
       position: 1
@@ -42,8 +44,10 @@ inputs:
       position: 102
       prefix: -c
   - id: output_tsv_path
-    type: string?
-    doc: tsv        Output TSV (bam_cov.tsv).
+    type:
+      - 'null'
+      - string
+    doc: Output TSV (bam_cov.tsv).
     inputBinding:
       position: 103
       prefix: -t
@@ -54,7 +58,7 @@ outputs:
       - File
     doc: Output TSV
     outputBinding:
-      glob: $(inputs.output_tsv_path)
+      glob: '${ return inputs.output_tsv_path ? inputs.output_tsv_path : "bam_cov.tsv"; }'
 requirements:
   - class: InlineJavascriptRequirement
 hints:

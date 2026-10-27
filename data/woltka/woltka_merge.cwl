@@ -9,12 +9,15 @@ inputs:
   - id: input_paths
     type:
       type: array
-      items: Directory
+      items:
+        - File
+        - Directory
+      inputBinding:
+        prefix: --input
     doc: Path to input profiles or directories containing profiles. Can accept 
       multiple paths.
     inputBinding:
       position: 101
-      prefix: --input
   - id: output_file_path
     type: string
     doc: Path to output profile.  [required]

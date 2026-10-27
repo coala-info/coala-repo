@@ -42,20 +42,31 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: 'Logging level [-v: Info, -vv: Debug, -vvv: Trace, defalut: Warn]'
+      - boolean
+    doc: 'Logging level: -v gives Info (default: Warn)'
     inputBinding:
       position: 102
-      prefix: --verbose
+      prefix: -v
   - id: outfile_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: 'Output file ("-" for stdout), file name ending in .gz/.bz2/.xz will be compressed
       automatically [default: -]'
     inputBinding:
       position: 103
       prefix: --outfile
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Validation report (when outfile_path is not set)
+  - id: fix_output
+    type:
+      - 'null'
+      - File
+    doc: Fixed PAF file
+    outputBinding:
+      glob: $(inputs.fix_output_file)
   - id: outfile
     type:
       - 'null'
@@ -69,3 +80,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wgatools:1.1.0--hf6a8760_0
+stdout: wgatools_validate.out

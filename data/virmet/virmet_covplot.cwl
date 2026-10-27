@@ -4,81 +4,32 @@ baseCommand:
   - virmet
   - covplot
 label: virmet_covplot
-doc: "Generate coverage plots for viral genomes.\n\nTool homepage: https://github.com/medvir/VirMet"
+doc: "Create coverage plots by realigning all viral reads found by wolfpack for one organism.\n\nTool homepage: https://github.com/medvir/VirMet"
 inputs:
-  - id: genome_fasta
-    type:
-      - 'null'
-      - File
-    secondaryFiles:
-      - .fai
-    doc: Optional FASTA file of the reference genome.
+  - id: outdir
+    type: Directory
+    doc: path with the results of virmet wolfpack (it holds viral_reads.fastq.gz and orgs_list.tsv); the plots are written inside it
     inputBinding:
       position: 101
-      prefix: --genome-fasta
-  - id: input_bam
-    type: File
-    doc: Input BAM file containing coverage data.
-    inputBinding:
-      position: 101
-      prefix: --input-bam
-  - id: max_coverage
-    type:
-      - 'null'
-      - int
-    doc: Maximum coverage depth to consider for plotting.
-    inputBinding:
-      position: 101
-      prefix: --max-coverage
-  - id: min_coverage
-    type:
-      - 'null'
-      - int
-    doc: Minimum coverage depth to consider for plotting.
-    inputBinding:
-      position: 101
-      prefix: --min-coverage
+      prefix: --outdir
   - id: organism
     type: string
-    doc: Name of the organism to plot coverage for.
+    doc: ssciname of the organism of interest
     inputBinding:
       position: 101
       prefix: --organism
-  - id: output_dir
+  - id: dbdir
     type:
       - 'null'
-      - string
-    doc: Directory to save the output plots.
+      - Directory
+    doc: path to find and use the Virmet database
     inputBinding:
       position: 101
-      prefix: --output-dir
-  - id: plot_format
-    type:
-      - 'null'
-      - string
-    doc: Format of the output plots (e.g., png, svg, pdf).
-    inputBinding:
-      position: 101
-      prefix: --plot-format
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for processing.
-    inputBinding:
-      position: 101
-      prefix: --threads
+      prefix: --dbdir
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Directory to save the output plots.
-    outputBinding:
-      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virmet:2.0.1--pyhdfd78af_0

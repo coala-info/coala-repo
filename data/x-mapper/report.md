@@ -1,5 +1,11 @@
 # x-mapper CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| x-mapper | PASS |  |
+
 ## x-mapper
 
 ### Tool Description

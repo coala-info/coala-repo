@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - view
 label: vt_view
-doc: "Views a VCF or BCF or VCF.GZ file.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "Views a VCF or BCF or VCF.GZ file.\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: input_vcf
     type: File
@@ -80,7 +80,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - genotype
 label: vt_genotype
-doc: "Genotypes variants for each sample.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "Genotypes variants for each sample.\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: input_vcf
     type: File

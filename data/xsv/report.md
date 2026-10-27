@@ -1,5 +1,28 @@
 # xsv CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xsv_cat | PASS |  |
+| xsv_count | PASS |  |
+| xsv_fixlengths | PASS |  |
+| xsv_flatten | PASS |  |
+| xsv_fmt | PASS |  |
+| xsv_frequency | PASS |  |
+| xsv_headers | PASS |  |
+| xsv_index | PASS |  |
+| xsv_input | PASS |  |
+| xsv_join | PASS |  |
+| xsv_sample | PASS |  |
+| xsv_search | PASS |  |
+| xsv_select | PASS |  |
+| xsv_slice | PASS |  |
+| xsv_sort | PASS |  |
+| xsv_split | PASS |  |
+| xsv_stats | PASS |  |
+| xsv_table | PASS |  |
+
 ## xsv_cat
 
 ### Tool Description

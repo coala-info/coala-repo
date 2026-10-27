@@ -12,6 +12,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --config
+  - id: dataprep_dirs
+    type:
+      type: array
+      items: Directory
+    doc: The dataprep output directories named in the data section of the config
+      file. They are staged next to the config file under their own names, so
+      the config must refer to them as ./<name>.
   - id: ids
     type:
       - 'null'
@@ -46,10 +53,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --save_models
+  - id: out_dir
+    type: string
+    default: out
+    doc: Name of the output directory, the same as the out entry of the config
+      file. It is used only to collect the results.
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: diffmod_dir
+    type: Directory
+    doc: The output directory of xpore diffmod (diffmod.table and logs).
+    outputBinding:
+      glob: $(inputs.out_dir)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.dataprep_dirs)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/xpore:2.1--pyh5e36f6f_0

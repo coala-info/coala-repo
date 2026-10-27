@@ -17,6 +17,19 @@ inputs:
       type: array
       items: File
     doc: BAM or CRAM with sequencing reads.
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 2
   - id: block_cut_sensitivity
@@ -55,10 +68,11 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Name of chromosome not to phase.
+        inputBinding:
+          prefix: --exclude-chromosome
+    doc: Name of chromosome not to phase. Can be used multiple times.
     inputBinding:
       position: 103
-      prefix: --exclude-chromosome
   - id: ignore_read_groups
     type:
       - 'null'

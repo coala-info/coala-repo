@@ -48,10 +48,12 @@ inputs:
       prefix: --ignore_indels
   - id: in_dir
     type: Directory
-    doc: Directory containing assemblies in FASTA format
+    doc: Directory containing assemblies in FASTA format (staged writable, because minimap2
+      indices are written beside the assemblies)
     inputBinding:
       position: 101
       prefix: --in_dir
+      valueFrom: $(self.basename)
   - id: index_options
     type:
       - 'null'
@@ -144,6 +146,12 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.in_dir)
+        entryname: $(inputs.in_dir.basename)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/verticall:0.4.3--pyhdfd78af_0

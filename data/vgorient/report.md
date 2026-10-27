@@ -1,5 +1,12 @@
 # vgorient CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vgorient_jaccard_dit_wrapper.py | PASS |  |
+| vgorient_noisify.py | Failed | image problem: noisify.py in the image has no shebang line, so the shell runs it as sh and fails (CWL was rewritten from the script's real options; old baseCommand vgorient_noisify.py does not exist) |
+
 ## vgorient_jaccard_dit_wrapper.py
 
 ### Tool Description

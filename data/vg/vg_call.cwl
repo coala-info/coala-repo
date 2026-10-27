@@ -195,19 +195,21 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --ref-offset
     doc: offset in reference path (may repeat; 1 per path)
     inputBinding:
       position: 102
-      prefix: --ref-offset
   - id: ref_path
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ref-path
     doc: reference path to call on (may repeat; default all)
     inputBinding:
       position: 102
-      prefix: --ref-path
   - id: ref_sample
     type:
       - 'null'
@@ -278,12 +280,9 @@ inputs:
       prefix: --vcf
 outputs:
   - id: output_vcf
-    type:
-      - 'null'
-      - File
-    doc: Output VCF file
-    outputBinding:
-      glob: '*.out'
+    type: stdout
+    doc: Called variants in VCF format, written to standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0
+stdout: vg_call.vcf

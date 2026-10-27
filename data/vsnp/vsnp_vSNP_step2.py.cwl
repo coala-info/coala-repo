@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vsnp_vSNP_step2.py
+baseCommand: vSNP_step2.py
 label: vsnp_vSNP_step2.py
 doc: "Current working directory used by default, but can specify working directory
   with -w. Directory must contain VCF files with file extension \".vcf\"\n\nTool homepage:
@@ -70,6 +70,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --table
+  - id: vcf_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: VCF files (extension .vcf) to compare, staged in the working directory
   - id: working_directory
     type:
       - 'null'
@@ -82,6 +88,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: step2_results
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Tables, trees and summaries written to the working directory
+    outputBinding:
+      glob: ['*.xlsx', '*.tre', '*.newick', '*.html', '*.fasta', '*.txt', '*.json']
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: >-
+      $((inputs.vcf_files ? inputs.vcf_files : []).map(function(f) { return {"entry": f, "writable": true}; }))
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vsnp:2.03--hdfd78af_2

@@ -5,82 +5,93 @@ label: vibrant_VIBRANT_run.py
 doc: "VIBRANT: Virus Identification By iteRative ANnoTation. Used for automated recovery
   and annotation of viruses from metagenomic assemblies.\n\nTool homepage: https://github.com/AnantharamanLab/VIBRANT"
 inputs:
-  - id: format
-    type:
-      - 'null'
-      - string
-    doc: input format (nucl or prot)
-    inputBinding:
-      position: 101
-      prefix: -f
   - id: input
     type: File
     doc: input fasta file
     inputBinding:
       position: 101
       prefix: -i
-  - id: lim_orf
+  - id: format
     type:
       - 'null'
-      - int
-    doc: minimum number of ORFs per scaffold
+      - type: enum
+        symbols:
+          - prot
+          - nucl
+    doc: format of input [default="nucl"]
     inputBinding:
       position: 101
-      prefix: -n
-  - id: lim_size
+      prefix: -f
+  - id: folder
     type:
       - 'null'
-      - int
-    doc: length limit (bp) for input scaffolds
+      - string
+    doc: path to deposit output folder and temporary files, will create if doesn't exist [default= working directory]
     inputBinding:
       position: 101
-      prefix: -l
-  - id: model_directory
-    type:
-      - 'null'
-      - Directory
-    doc: path to VIBRANT_setup.py model directory
-    inputBinding:
-      position: 101
-      prefix: -m
-  - id: no_ann
-    type:
-      - 'null'
-      - boolean
-    doc: do not perform annotation
-    inputBinding:
-      position: 101
-      prefix: -no_ann
+      prefix: -folder
   - id: threads
     type:
       - 'null'
       - int
-    doc: number of threads
+    doc: number of parallel VIBRANT runs, each occupies 1 CPU [default=1, max of 1 CPU per scaffold]
     inputBinding:
       position: 101
       prefix: -t
+  - id: lim_size
+    type:
+      - 'null'
+      - int
+    doc: length in basepairs to limit input sequences [default=1000, can increase but not decrease]
+    inputBinding:
+      position: 101
+      prefix: -l
+  - id: lim_orf
+    type:
+      - 'null'
+      - int
+    doc: number of ORFs per scaffold to limit input sequences [default=4, can increase but not decrease]
+    inputBinding:
+      position: 101
+      prefix: -o
   - id: virome
     type:
       - 'null'
       - boolean
-    doc: use virome settings (increased sensitivity)
+    doc: use this setting if dataset is known to be comprised mainly of viruses. More sensitive to viruses, less sensitive to false identifications [default=off]
     inputBinding:
       position: 101
       prefix: -virome
-  - id: output_folder_path
-    type: string
-    doc: Output or path parameter `output_folder_path`
-    inputBinding:
-      position: 102
-      prefix: --output-folder
-outputs:
-  - id: output_folder
+  - id: no_plot
     type:
       - 'null'
-      - File
-    doc: output folder name
+      - boolean
+    doc: suppress the generation of summary plots [default=off]
+    inputBinding:
+      position: 101
+      prefix: -no_plot
+  - id: databases_directory
+    type:
+      - 'null'
+      - Directory
+    doc: path to original "databases" directory that contains .HMM files (if moved from default location)
+    inputBinding:
+      position: 101
+      prefix: -d
+  - id: model_directory
+    type:
+      - 'null'
+      - Directory
+    doc: path to original "files" directory that contains .tsv and model files (if moved from default location)
+    inputBinding:
+      position: 101
+      prefix: -m
+outputs:
+  - id: output_folder
+    type: Directory
+    doc: VIBRANT_<input name> results folder, inside the -folder directory when given
     outputBinding:
-      glob: $(inputs.output_folder_path)
+      glob: "${ return (inputs.folder ? inputs.folder.replace(/\\/+$/, '') + '/' : '') + 'VIBRANT_*'; }"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

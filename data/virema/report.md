@@ -1,5 +1,12 @@
 # virema CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| virema_Compiler_Module.py | Not completed | needs an uncompiled results file from a ViReMa run, and ViReMa cannot run in this image (bowtie broken) |
+| virema_ViReMa.py | Failed | image problem: bowtie and bowtie-build in the image fail with missing libstdc++.so.6, so ViReMa cannot index or align |
+
 ## virema_ViReMa.py
 
 ### Tool Description

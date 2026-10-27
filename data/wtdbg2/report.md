@@ -1,5 +1,12 @@
 # wtdbg2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wtdbg2 | PASS | Assembled Arabidopsis plastid HiFi reads into two contig layouts, 115 kb in total. |
+| wtdbg2_wtpoa-cns | PASS | Consensus of the wtdbg2 layout gave two contigs, 131 kb in total. |
+
 ## wtdbg2
 
 ### Tool Description
@@ -177,5 +184,45 @@ Options:
  --no-chainning-clip
    Defaultly, performs alignments chainning in read clipping
    ** If '--aln-bestn 0 --no-read-clip', alignments will be parsed directly, and less RAM spent on recording alignments
+```
+
+## wtdbg2_wtpoa-cns
+
+### Tool Description
+Consensuser for wtdbg using PO-MSA.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/wtdbg2:2.0--h470a237_0
+- **Homepage**: https://github.com/ruanjue/wtdbg2
+- **Package**: https://anaconda.org/channels/bioconda/packages/wtdbg2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+WTPOA-CNS: Consensuser for wtdbg using PO-MSA
+Author: Jue Ruan <ruanjue@gmail.com>
+Version: 1.0
+Usage: wtpoa-cns [options]
+Options:
+ -t <int>    Number of threads, [4]
+ -i <string> Input file(s) *.ctg.lay from wtdbg, +, [STDIN]
+ -o <string> Output files, [STDOUT]
+ -f          Force overwrite
+ -j <int>    Expected max length of node, or say the overlap length of two adjacent units in layout file, [1500] bp
+ -M <int>    Match score, [2]
+ -X <int>    Mismatch score, [-5]
+ -I <int>    Insertion score, [-2]
+ -D <int>    Deletion score, [-4]
+ -B <int>    Bandwidth, [96]
+ -W <int>    Window size in the middle of the first read for fast align remaining reads, [200]
+             If $W is negative, will disable fast align, but use the abs($W) as Band align score cutoff
+ -w <int>    Min size of aligned size in window, [$W * 0.5]
+ -A          Abort TriPOA when any read cannot be fast aligned, then try POA
+ -R <int>    Realignment bandwidth, 0: disable, [16]
+ -C <int>    Min count of bases to call a consensus base, [3]
+ -F <float>  Min frequency of non-gap bases to call a consensus base, [0.5]
+ -N <int>    Max number of reads in PO-MSA, [20]
+             Keep in mind that I am not going to generate high accurate consensus sequences here
+ -v          Verbose
 ```
 

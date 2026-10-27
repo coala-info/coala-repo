@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - compute_features
 label: vt_compute_features
-doc: "Compute features for variants.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "Compute features for variants.\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: in_vcf
     type: File

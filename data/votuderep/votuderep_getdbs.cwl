@@ -8,6 +8,10 @@ doc: "Download geNomad, CheckV, and PHROGs databases.\nDownloads and extracts vi
   classification and quality control databases\nrequired for viral metagenomics analysis.\n\
   The command is resumable: if interrupted, it will skip already downloaded and\n\
   extracted files when re-run.\n\nTool homepage: https://github.com/quadram-institute-bioscience/votuderep"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 inputs:
   - id: db
     type:
@@ -30,12 +34,17 @@ inputs:
       position: 101
       prefix: --force
   - id: outdir
-    type: Directory
+    type: string
     doc: Directory where to download and extract databases
     inputBinding:
       position: 101
       prefix: --outdir
 outputs:
+  - id: outdir_out
+    type: Directory
+    doc: Directory with the downloaded and extracted databases
+    outputBinding:
+      glob: $(inputs.outdir)
   - id: stdout
     type: stdout
     doc: Standard output

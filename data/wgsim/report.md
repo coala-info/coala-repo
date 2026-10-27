@@ -1,5 +1,11 @@
 # wgsim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wgsim | PASS |  |
+
 ## wgsim
 
 ### Tool Description

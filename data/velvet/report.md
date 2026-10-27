@@ -1,5 +1,12 @@
 # velvet CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| velvet_velvetg | PASS |  |
+| velvet_velveth | PASS |  |
+
 ## velvet_velveth
 
 ### Tool Description

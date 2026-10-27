@@ -188,12 +188,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: gen_file
+    type: string
+    doc: simulated output file (name of the FASTQ file to write)
+    inputBinding:
+      position: 102
 outputs:
   - id: output_file
     type: File
     doc: simulated output file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.gen_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/xs-sim:2--hec16e2b_0

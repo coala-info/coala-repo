@@ -1,24 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
-  - java
-  - -jar
-  - wdltool.jar
+  - wdltool
+  - highlight
 label: wdltool_highlight
-doc: "Performs various operations on WDL files.\n\nTool homepage: https://github.com/broadinstitute/wdltool"
+doc: "Reformats and colorizes/tags a WDL file. The output type is html (span tags around elements) or console (colorized terminal text).\n\nTool homepage: https://github.com/broadinstitute/wdltool"
 inputs:
-  - id: action
-    type: string
-    doc: The action to perform (validate, inputs, highlight, parse, graph, 
-      womgraph)
+  - id: wdl_file
+    type: File
+    doc: WDL file
     inputBinding:
       position: 1
-  - id: parameters
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Parameters specific to the chosen action
+  - id: output_type
+    type: string
+    doc: Output type, html or console
     inputBinding:
       position: 2
 outputs:

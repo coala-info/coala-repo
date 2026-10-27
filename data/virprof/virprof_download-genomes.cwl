@@ -39,7 +39,9 @@ inputs:
       position: 101
       prefix: --ncbi-api-key
   - id: ncbi_taxonomy
-    type: File
+    type:
+      - File
+      - Directory
     doc: Path to NCBI taxonomy (tree or raw)
     inputBinding:
       position: 101
@@ -111,6 +113,8 @@ outputs:
       glob: $(inputs.out_gb_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virprof:0.9.2--pyhdfd78af_0

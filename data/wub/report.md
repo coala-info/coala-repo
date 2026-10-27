@@ -1,5 +1,13 @@
 # wub CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wub_bam_accuracy.py | PASS |  |
+| wub_bam_cov.py | PASS |  |
+| wub_bam_frag_coverage.py | PASS |  |
+
 ## wub_bam_accuracy.py
 
 ### Tool Description

@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - normalize
 label: vt_normalize
-doc: "normalizes variants in a VCF file\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "normalizes variants in a VCF file\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: input_vcf
     type: File
@@ -73,7 +73,7 @@ inputs:
     doc: Output or path parameter `output_vcf_path`
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: -o
 outputs:
   - id: output_vcf
     type:

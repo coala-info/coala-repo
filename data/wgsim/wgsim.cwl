@@ -9,6 +9,16 @@ inputs:
     doc: Input reference FASTA file
     inputBinding:
       position: 1
+  - id: output_read1_path
+    type: string
+    doc: Output FASTQ file name for read 1
+    inputBinding:
+      position: 2
+  - id: output_read2_path
+    type: string
+    doc: Output FASTQ file name for read 2
+    inputBinding:
+      position: 3
   - id: ambiguous_base_fraction_threshold
     type:
       - 'null'
@@ -110,12 +120,18 @@ outputs:
     type: File
     doc: Output FASTQ file for read 1
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_read1_path)
   - id: output_read2_fq
     type: File
     doc: Output FASTQ file for read 2
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_read2_path)
+  - id: mutations
+    type: stdout
+    doc: List of simulated mutations (standard output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wgsim:1.0--h577a1d6_10
+stdout: wgsim_mutations.txt

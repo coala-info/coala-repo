@@ -1,5 +1,16 @@
 # wdltool CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wdltool_graph | PASS | rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run) |
+| wdltool_highlight | PASS | rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run) |
+| wdltool_inputs | PASS | rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run) |
+| wdltool_parse | PASS | rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run) |
+| wdltool_validate | PASS | rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run) |
+| wdltool_womgraph | PASS | rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run) |
+
 ## wdltool_validate
 
 ### Tool Description

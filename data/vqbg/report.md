@@ -1,5 +1,11 @@
 # vqbg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vqbg_VQBG | Failed | image problem: VQBG crashes with a segmentation fault (exit 139) at the merge step on real HIV and SARS-CoV-2 reads; CWL base command also fixed to VQBG |
+
 ## vqbg_VQBG
 
 ### Tool Description

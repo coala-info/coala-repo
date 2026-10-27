@@ -1,5 +1,11 @@
 # vphaser2 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vphaser2 | PASS |  |
+
 ## vphaser2
 
 ### Tool Description

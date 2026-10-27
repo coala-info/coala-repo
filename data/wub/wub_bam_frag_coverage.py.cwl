@@ -7,6 +7,8 @@ doc: "Produce aggregated and individual plots of fragment coverage.\n\nTool home
 inputs:
   - id: bam
     type: File
+    secondaryFiles:
+      - .bai
     doc: Input BAM file.
     inputBinding:
       position: 1
@@ -29,7 +31,7 @@ inputs:
   - id: cov80_tsv
     type:
       - 'null'
-      - File
+      - string
     doc: Tab separated file with per-chromosome cov80 scores. Requires the -x 
       option to be specified.
     inputBinding:
@@ -38,7 +40,7 @@ inputs:
   - id: glob_cov80_tsv
     type:
       - 'null'
-      - File
+      - string
     doc: Tab separated file with global cov80 score
     inputBinding:
       position: 102
@@ -102,7 +104,7 @@ inputs:
   - id: report_pdf
     type:
       - 'null'
-      - File
+      - string
     doc: Report PDF
     inputBinding:
       position: 102
@@ -110,7 +112,7 @@ inputs:
   - id: results_pickle
     type:
       - 'null'
-      - File
+      - string
     doc: Save pickled results in this file
     inputBinding:
       position: 102
@@ -119,6 +121,36 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: cov80_tsv_file
+    type:
+      - 'null'
+      - File
+    doc: Per-chromosome cov80 scores
+    outputBinding:
+      glob: $(inputs.cov80_tsv)
+  - id: glob_cov80_tsv_file
+    type:
+      - 'null'
+      - File
+    doc: Global cov80 score
+    outputBinding:
+      glob: $(inputs.glob_cov80_tsv)
+  - id: report_pdf_file
+    type:
+      - 'null'
+      - File
+    doc: Report PDF
+    outputBinding:
+      glob: '${ return inputs.report_pdf ? inputs.report_pdf : "bam_frag_coverage.pdf"; }'
+  - id: results_pickle_file
+    type:
+      - 'null'
+      - File
+    doc: Pickled results
+    outputBinding:
+      glob: $(inputs.results_pickle)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wub:0.5.1--pyh3252c3a_0

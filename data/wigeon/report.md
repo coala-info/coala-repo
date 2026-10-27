@@ -1,5 +1,11 @@
 # wigeon CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wigeon | Failed | image problem: megablast is missing from the image, so every query gives UNKNOWN. |
+
 ## wigeon
 
 ### Tool Description

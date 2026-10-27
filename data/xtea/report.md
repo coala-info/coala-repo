@@ -1,5 +1,11 @@
 # xtea CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xtea | Not completed | Needs the large xTea repeat library (rep_lib_annotation, hundreds of MB), a human reference genome, gene annotation and a whole-genome BAM; too heavy for this test. |
+
 ## xtea
 
 ### Tool Description

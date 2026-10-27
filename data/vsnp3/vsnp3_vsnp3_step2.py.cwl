@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vsnp3_vsnp3_step2.py
+baseCommand: vsnp3_step2.py
 label: vsnp3_vsnp3_step2.py
 doc: "Store VCF files from vSNP step1 to step 2 directory. VCF files must be stored
   by reference type. Make a VCF file directory database that will build over time

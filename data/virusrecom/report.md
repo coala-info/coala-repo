@@ -1,5 +1,11 @@
 # virusrecom CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| virusrecom | PASS |  |
+
 ## virusrecom
 
 ### Tool Description

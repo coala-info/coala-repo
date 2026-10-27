@@ -15,7 +15,7 @@ inputs:
   - id: block_abs_lim
     type:
       - 'null'
-      - string
+      - int
     doc: gVCF non-variant block absolute range limit
     inputBinding:
       position: 101
@@ -23,7 +23,7 @@ inputs:
   - id: block_rel_lim
     type:
       - 'null'
-      - string
+      - float
     doc: gVCF non-variant block relative range limit coefficient
     inputBinding:
       position: 101
@@ -54,6 +54,13 @@ inputs:
       prefix: --gvcf
   - id: in
     type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.bai
+        required: false
     doc: Sorted and indexed input BAM or CRAM file
     inputBinding:
       position: 101
@@ -85,7 +92,7 @@ inputs:
   - id: min_p_value
     type:
       - 'null'
-      - boolean
+      - float
     doc: Minimum logit P-value to report variants
     inputBinding:
       position: 101
@@ -122,6 +129,9 @@ inputs:
       prefix: --prefix
   - id: ref
     type: File
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: Reference genome in FASTA format
     inputBinding:
       position: 101

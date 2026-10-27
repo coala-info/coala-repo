@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: verse
 label: verse
-doc: "Count reads mapped to features in an annotation file.\n\nTool homepage: https://github.com/OpenBMB/AgentVerse"
+doc: "Count reads mapped to features in an annotation file.\n\nTool homepage: https://github.com/qinzhu/VERSE"
 inputs:
   - id: input_file
     type: File
@@ -302,13 +302,13 @@ inputs:
       position: 103
       prefix: -o
 outputs:
-  - id: output_file
-    type: File
-    doc: Give the general name of the output file, e.g., 'Sample_A'. The summary
-      file will be named 'Sample_A.summary.txt.' The file containing gene counts
-      will be named 'Sample_A.exon.txt', 'Sample_A.intron.txt', etc.
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: "Summary file (<name>.summary.txt) and per-feature-type count files (<name>.exon.txt, <name>.intron.txt, ...), plus <name>.CRs.txt when -R is used"
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path).*
 requirements:
   - class: InlineJavascriptRequirement
 hints:

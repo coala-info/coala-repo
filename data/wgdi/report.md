@@ -1,5 +1,11 @@
 # wgdi CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wgdi | PASS | mode options now take config files; ran -d dotplot, -icl collinearity and -bi blockinfo on the wgdi-example Amborella vs AEK data (outputs match the repo's) |
+
 ## wgdi
 
 ### Tool Description

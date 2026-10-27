@@ -86,6 +86,12 @@ outputs:
     doc: Output directory name
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/viralrecall:3.0.2--pyhdfd78af_0

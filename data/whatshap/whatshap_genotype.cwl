@@ -18,6 +18,19 @@ inputs:
       items: File
     doc: BAM or VCF file(s) with phase information, either through sequencing 
       reads (BAM) or through phased blocks (VCF)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 2
   - id: affine_gap
@@ -197,7 +210,7 @@ inputs:
   - id: prioroutput
     type:
       - 'null'
-      - File
+      - string
     doc: output prior genotype likelihoods to the given file.
     inputBinding:
       position: 103
@@ -264,6 +277,13 @@ outputs:
       omitted, use standard output.
     outputBinding:
       glob: $(inputs.output_path)
+  - id: prioroutput_file
+    type:
+      - 'null'
+      - File
+    doc: Prior genotype likelihoods
+    outputBinding:
+      glob: $(inputs.prioroutput)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

@@ -17,6 +17,11 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: .crai
+        required: false
     doc: Bam or Cram file for the sample[Required if --PileupFile not specified]
     inputBinding:
       position: 101
@@ -148,6 +153,7 @@ inputs:
       - 'null'
       - string
     doc: Prefix of output files[optional]
+    default: result
     inputBinding:
       position: 101
       prefix: --Output
@@ -179,7 +185,10 @@ inputs:
   - id: reference
     type: File
     secondaryFiles:
-      - .fai
+      - pattern: .fai
+        required: false
+      - pattern: .gzi
+        required: false
     doc: Reference file[Required]
     inputBinding:
       position: 101
@@ -192,6 +201,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --Seed
+  - id: svd_files
+    type:
+      type: array
+      items: File
+    doc: SVD resource files (.UD, .mu, .bed and .V) that share the prefix in svd_prefix.
+      They are staged in the working directory.
   - id: svd_prefix
     type: string
     doc: SVD related files prefix(normally shared by .UD, .mu and .bed 
@@ -234,7 +249,10 @@ outputs:
       items: File
     doc: Files written with the prefix given in output
     outputBinding:
-      glob: $(inputs.output)*
+      glob: $(inputs.output).*
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.svd_files)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/verifybamid2:2.0.1--h345183b_12

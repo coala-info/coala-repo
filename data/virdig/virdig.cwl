@@ -13,9 +13,7 @@ inputs:
       position: 101
       prefix: -k
   - id: left_reads_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: left reads file name (.fasta)
     inputBinding:
       position: 101
@@ -55,9 +53,7 @@ inputs:
       position: 101
       prefix: --ref_genome_len
   - id: right_reads_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: right reads file name (.fasta)
     inputBinding:
       position: 101
@@ -72,20 +68,23 @@ inputs:
       prefix: -t
   - id: output_directory_path
     type: string
-    doc: ': output directory.'
+    doc: Output directory. The tool appends file names directly to this value, so it is passed with a trailing slash; the directory is created before the run.
     inputBinding:
       position: 102
       prefix: -o
+      valueFrom: "$(self.replace(/\\/+$/, '') + '/')"
 outputs:
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_directory_path)
+      glob: "${ return inputs.output_directory_path.replace(/\\/+$/, ''); }"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.output_directory_path.replace(/\\/+$/, ''), listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virdig:1.0.0--h5ca1c30_0

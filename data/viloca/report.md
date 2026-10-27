@@ -1,5 +1,12 @@
 # viloca CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viloca_run | PASS |  |
+| viloca_snv | Failed | tool bug: viloca snv always crashes with AttributeError 'inference_type' in cli.py, before any SNV calling |
+
 ## viloca_run
 
 ### Tool Description

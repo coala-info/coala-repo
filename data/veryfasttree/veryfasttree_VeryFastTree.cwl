@@ -63,14 +63,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: -nosupport
-  - id: exclude_slow
-    type:
-      - 'null'
-      - boolean
-    doc: 'Excludes: -slow'
-    inputBinding:
-      position: 103
-      prefix: -slow
   - id: expert_mode
     type:
       - 'null'
@@ -120,7 +112,7 @@ inputs:
     doc: with -intree to optimize branch lengths for a fixed topology
     inputBinding:
       position: 103
-      prefix: -nome -mllen
+      prefix: -mllen
   - id: rate_categories
     type:
       - 'null'
@@ -242,7 +234,7 @@ inputs:
     doc: Output or path parameter `output_tree_path`
     inputBinding:
       position: 104
-      prefix: --output-tree
+      prefix: -out
 outputs:
   - id: output_tree
     type:

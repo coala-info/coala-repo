@@ -29,14 +29,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --aln-kmer-sampling
-  - id: aln_max_var
-    type:
-      - 'null'
-      - float
-    doc: See -s 0.2
-    inputBinding:
-      position: 101
-      prefix: --aln-max-var
   - id: aln_maxhit
     type:
       - 'null'
@@ -45,15 +37,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --aln-maxhit
-  - id: aln_min_match
-    type:
-      - 'null'
-      - int
-    doc: See -m 200. Here the num of matches counting basepair of the matched 
-      kmer's regions
-    inputBinding:
-      position: 101
-      prefix: --aln-min-match
   - id: aln_strand
     type:
       - 'null'
@@ -105,38 +88,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ctg-min-nodes
-  - id: dp_max_gap
-    type:
-      - 'null'
-      - int
-    doc: See -X 4
-    inputBinding:
-      position: 101
-      prefix: --dp-max-gap
-  - id: dp_max_var
-    type:
-      - 'null'
-      - int
-    doc: See -Y 4
-    inputBinding:
-      position: 101
-      prefix: --dp-max-var
-  - id: dp_penalty_gap
-    type:
-      - 'null'
-      - int
-    doc: See -x -7
-    inputBinding:
-      position: 101
-      prefix: --dp-penalty-gap
-  - id: dp_penalty_var
-    type:
-      - 'null'
-      - int
-    doc: See -y -21
-    inputBinding:
-      position: 101
-      prefix: --dp-penalty-var
   - id: drop_low_cov_edges
     type:
       - 'null'
@@ -164,25 +115,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: --err-free-nodes
-  - id: err_free_seq
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: See -I. Error-free sequences will be firstly token for nodes, if 
-      --err-free-nodes is specified, only select nodes from those sequences
-    inputBinding:
-      position: 101
-      prefix: --err-free-seq
   - id: error_free_sequences_file
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
+        inputBinding:
+          prefix: -I
     doc: Error-free sequences file (can be multiple)
     inputBinding:
       position: 101
-      prefix: -I
   - id: filter_high_freq_kmers
     type:
       - 'null'
@@ -208,15 +150,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --force
-  - id: input
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: See -i
-    inputBinding:
-      position: 101
-      prefix: --input
   - id: keep_contained_reads
     type:
       - 'null'
@@ -233,14 +166,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --keep-isolated-nodes
-  - id: kmer_depth_min_filter
-    type:
-      - 'null'
-      - boolean
-    doc: See -F
-    inputBinding:
-      position: 101
-      prefix: --kmer-depth-min-filter
   - id: kmer_fsize
     type:
       - 'null'
@@ -277,7 +202,9 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
+        inputBinding:
+          prefix: --load-alignments
     doc: "`wtdbg` output reads' alignments into <--prefix>.alignments, program can
       load them to fastly build assembly graph. Or you can offer other source of alignments
       to `wtdbg`. When --load-alignment, will only reading long sequences but skip
@@ -285,7 +212,6 @@ inputs:
       load alignments from many files"
     inputBinding:
       position: 101
-      prefix: --load-alignments
   - id: load_clips
     type:
       - 'null'
@@ -320,11 +246,12 @@ inputs:
   - id: long_reads_file
     type:
       type: array
-      items: string
+      items: File
+      inputBinding:
+        prefix: -i
     doc: Long reads sequences file (REQUIRED; can be multiple)
     inputBinding:
       position: 101
-      prefix: -i
   - id: max_bin_in_deviation
     type:
       - 'null'
@@ -368,7 +295,7 @@ inputs:
   - id: min_matched_length
     type:
       - 'null'
-      - float
+      - int
     doc: Min matched, counting basepair of the matched kmer's regions
     inputBinding:
       position: 101
@@ -570,8 +497,7 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Verbose (can be multiple)
     inputBinding:
       position: 101

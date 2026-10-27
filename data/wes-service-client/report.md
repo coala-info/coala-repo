@@ -1,5 +1,11 @@
 # wes-service-client CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wes-service-client_wes-client | Not completed | needs a running WES server and no public test server is available |
+
 ## wes-service-client_wes-client
 
 ### Tool Description

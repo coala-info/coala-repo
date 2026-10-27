@@ -1,127 +1,134 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: voronota_calculate-contacts
+baseCommand:
+  - voronota
+  - calculate-contacts
 label: voronota_calculate-contacts
-doc: "Calculates contacts between balls.\n\nTool homepage: https://www.voronota.com/"
+doc: "Calculates contacts between balls.
+
+Tool homepage: https://www.voronota.com/"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: input_balls
     type: File
-    doc: list of balls (stdin)
-    inputBinding:
-      position: 1
-  - id: add_mirrored
-    type:
-      - 'null'
-      - boolean
-    doc: flag to add mirrored contacts to non-annnotated output
-    inputBinding:
-      position: 102
-      prefix: --add-mirrored
+    doc: "list of balls (stdin)"
   - id: annotated
     type:
       - 'null'
       - boolean
-    doc: flag to enable annotated mode
+    doc: "flag to enable annotated mode"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --annotated
-  - id: draw
+  - id: probe
     type:
       - 'null'
-      - boolean
-    doc: flag to output graphics for annotated contacts
+      - float
+    doc: "probe radius"
     inputBinding:
-      position: 102
-      prefix: --draw
+      position: 101
+      prefix: --probe
   - id: exclude_hidden_balls
     type:
       - 'null'
       - boolean
-    doc: flag to exclude hidden input balls
+    doc: "flag to exclude hidden input balls"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --exclude-hidden-balls
-  - id: probe_radius
+  - id: step
     type:
       - 'null'
       - float
-    doc: probe radius
+    doc: "curve step length"
     inputBinding:
-      position: 102
-      prefix: --probe
+      position: 101
+      prefix: --step
   - id: projections
     type:
       - 'null'
       - int
-    doc: curve optimization depth
+    doc: "curve optimization depth"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --projections
   - id: sih_depth
     type:
       - 'null'
       - int
-    doc: spherical surface optimization depth
+    doc: "spherical surface optimization depth"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --sih-depth
-  - id: step
+  - id: add_mirrored
     type:
       - 'null'
-      - float
-    doc: curve step length
+      - boolean
+    doc: "flag to add mirrored contacts to non-annnotated output"
     inputBinding:
-      position: 102
-      prefix: --step
+      position: 101
+      prefix: --add-mirrored
+  - id: draw
+    type:
+      - 'null'
+      - boolean
+    doc: "flag to output graphics for annotated contacts"
+    inputBinding:
+      position: 101
+      prefix: --draw
   - id: tag_centrality
     type:
       - 'null'
       - boolean
-    doc: flag to tag contacts centrality
+    doc: "flag to tag contacts centrality"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --tag-centrality
   - id: tag_peripherial
     type:
       - 'null'
       - boolean
-    doc: flag to tag peripherial contacts
+    doc: "flag to tag peripherial contacts"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --tag-peripherial
   - id: old_contacts_output_path
     type:
       - 'null'
       - string
-    doc: file path to output spherical contacts
+    doc: "file path to output spherical contacts"
     inputBinding:
-      position: 103
+      position: 101
       prefix: --old-contacts-output
   - id: volumes_output_path
     type:
       - 'null'
       - string
-    doc: file path to output constrained cells volumes
+    doc: "file path to output constrained cells volumes"
     inputBinding:
-      position: 104
+      position: 101
       prefix: --volumes-output
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
   - id: old_contacts_output
     type:
       - 'null'
       - File
-    doc: file path to output spherical contacts
+    doc: "file path to output spherical contacts"
     outputBinding:
       glob: $(inputs.old_contacts_output_path)
   - id: volumes_output
     type:
       - 'null'
       - File
-    doc: file path to output constrained cells volumes
+    doc: "file path to output constrained cells volumes"
     outputBinding:
       glob: $(inputs.volumes_output_path)
-requirements:
-  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0
+stdin: $(inputs.input_balls.path)
+stdout: voronota_calculate-contacts.out

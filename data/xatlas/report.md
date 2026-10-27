@@ -1,5 +1,11 @@
 # xatlas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xatlas | PASS |  |
+
 ## xatlas
 
 ### Tool Description

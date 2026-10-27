@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - discover
 label: vt_discover
-doc: "Discovers variants from reads in a BAM file.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "Discovers variants from reads in a BAM file.\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: base_quality_cutoff
     type:

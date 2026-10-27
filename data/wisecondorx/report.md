@@ -1,5 +1,14 @@
 # wisecondorx CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wisecondorx_convert | PASS |  |
+| wisecondorx_gender | Not completed | needs a reference of at least 10 genome-wide low-coverage samples; the small real BAMs gave a degenerate reference (NaN values), so the result cannot be judged. |
+| wisecondorx_newref | Not completed | needs a reference of at least 10 genome-wide low-coverage samples; the small real BAMs gave a degenerate reference (NaN values), so the result cannot be judged. |
+| wisecondorx_predict | Not completed | needs a reference of at least 10 genome-wide low-coverage samples; the small real BAMs gave a degenerate reference (NaN values), so the result cannot be judged. |
+
 ## wisecondorx_convert
 
 ### Tool Description

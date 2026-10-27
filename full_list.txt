@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 14964; PASS: 11714; Failed: 1775; Not completed: 1475
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 15303; PASS: 11987; Failed: 1806; Not completed: 1510
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -14964,3 +14964,342 @@ vcontact3	vcontact3_prepare_databases	Not completed	downloads the vConTACT3 refe
 vcontact3	vcontact3_run	Not completed	needs the vConTACT3 reference database (several GB), too large for this test
 vdjer	vdjer	Failed	image problem: vdjer segfaults (exit 139) right after printing its parameters, on the repository demo BAM with the official IGH reference
 vechat	vechat	PASS	
+velvet	velvet_velvetg	PASS	
+velvet	velvet_velveth	PASS	
+velvetoptimiser	velvetoptimiser	PASS	Optimised assembly of paired reads (Galaxy velvet test data) gave contigs; image lacks the free command so memory estimate prints 0 GB, harmless
+vembrane	vembrane_annotate	Failed	tool bug: vembrane 2.4.0 annotate crashes with NotImplementedError (pysam add_meta) even with --backend cyvcf2, and rejects absolute config paths
+vembrane	vembrane_fhir	PASS	
+vembrane	vembrane_filter	PASS	
+vembrane	vembrane_sort	PASS	
+vembrane	vembrane_structured	PASS	
+vembrane	vembrane_table	PASS	
+vembrane	vembrane_tag	PASS	
+verifybamid	verifybamid	PASS	
+verifybamid2	verifybamid2	PASS	
+verifyidintensity	verifyidintensity_verifyIDintensity	Not completed	no usable test data: needs a pre-computed Illumina intensity .adpc.bin file and none is published with the tool
+verkko	verkko	PASS	HiFi-only assembly of real Arabidopsis plastid HiFi reads gave 2 contigs (137 kb); bc is missing in the image but only a warning
+verse	verse	PASS	
+versionix	versionix	PASS	versionix --registered lists the registered tools (DESeq2, aragorn, art_illumina, ...); versionix python prints 3.13.5, the Python version in the image
+verticall	verticall_mask	PASS	the tool's own tiny test files (alignment.fasta and unambiguous_ref.tsv): horizontal regions became N and an SVG was written
+verticall	verticall_matrix	PASS	PHYLIP distance matrix from the real pairwise result
+verticall	verticall_pairwise	PASS	3 real E. coli K-12 genomes (NCBI): pairwise TSV with 6 rows, closest pair MG1655 vs W3110
+verticall	verticall_repair	PASS	real DH10B genome: ambiguous bases R and Y were replaced
+verticall	verticall_summary	PASS	region table printed for MG1655 from the real pairwise result
+verticall	verticall_view	Not completed	view only opens an interactive plot window; no file output to check
+veryfasttree	veryfasttree_VeryFastTree	PASS	protein tree of 138 real sequences (nf-core epang) and nucleotide GTR tree of 4 real COI sequences
+vg	vg_augment	PASS	graph grew from 9477 to 10305 nodes with read-supported edits
+vg	vg_autoindex	PASS	giraffe workflow gave gbz, distance, minimizer and zipcode files
+vg	vg_call	PASS	VCF with calls from the pack, including a het call with 265 reads at chr22:1982
+vg	vg_construct	PASS	real chr22 40 kb reference + gnomAD VCF (nf-core): graph with 9477 nodes
+vg	vg_giraffe	PASS	5603 of 5642 real reads aligned
+vg	vg_index	PASS	XG, GCSA2 and distance indexes built from the real graph
+vg	vg_map	PASS	5640 of 5642 real reads aligned
+vg	vg_mpmap	PASS	5642 multipath alignments (GAMP) written
+vg	vg_pack	PASS	coverage pack from the real read alignments, mean coverage about 8
+vg	vg_rna	PASS	splicing graph, transcript FASTA, info table and GBWT from the real chr22 GTF
+vgan	vgan_duprm	Failed	tool bug: vgan duprm exits with status 1 after a correct run (128 identical reads reduced to 1)
+vgan	vgan_euka	Not completed	needs the euka database, which is not in the image and is a large download
+vgan	vgan_gam2prof	Not completed	needs the euka database (euka_dir/euka_db.og), which is not in the image
+vgan	vgan_haplocart	Failed	image problem: no reads map even for the rCRS reference FASTA, so haplocart stops with 'no reads mapped'; the image hcfiles have no zipcodes file
+vgan	vgan_soibean	Not completed	needs a soibean taxon database (soibean_dir, made by make_graph_files.sh), which is not in the image
+vgorient	vgorient_jaccard_dit_wrapper.py	PASS	
+vgorient	vgorient_noisify.py	Failed	image problem: noisify.py in the image has no shebang line, so the shell runs it as sh and fails (CWL was rewritten from the script's real options; old baseCommand vgorient_noisify.py does not exist)
+vgp-processcuration	vgp-processcuration_chromosome_assignment	PASS	synthetic data: the sorted FASTA and AGP were hand-made (the AGP came from the real split_agp run on synthetic input; no real input). It renamed scaffolds to SUPER_1 and SUPER_2 and wrote inter_chr.tsv and hap.chr_level.fa as expected.
+vgp-processcuration	vgp-processcuration_sak_generation	PASS	synthetic data: hand-made inter_chr.tsv files (from the real chromosome_assignment runs), AGP and Mashmap table with a planted reversed pair; no real input. It wrote orientation.tsv and reversing_renaming.sak with RVCP only for the pair marked reversed, as expected.
+vgp-processcuration	vgp-processcuration_split_agp	PASS	synthetic data: all inputs were hand-made (a 4-sequence FASTA of random bases and a 4-line PretextView-style AGP with Hap_1/Hap_2 tags; no real input). It wrote corrected.agp and split the scaffolds into Hap_1 and Hap_2 AGPs (2 lines each) as expected.
+vibrant	vibrant_VIBRANT_run.py	Not completed	needs the VIBRANT HMM databases (about 11 GB download); CWL flags were corrected from the help
+viennarna	viennarna_RNAcofold	PASS	
+viewbs	viewbs_BisNonConvRate	PASS	
+viewbs	viewbs_GlobalMethLev	PASS	
+viewbs	viewbs_MethCoverage	PASS	
+viewbs	viewbs_MethGeno	PASS	
+viewbs	viewbs_MethHeatmap	PASS	
+viewbs	viewbs_MethLevDist	PASS	
+viewbs	viewbs_MethOneRegion	PASS	
+viewbs	viewbs_MethOverRegion	PASS	
+viguno	viguno_convert	PASS	
+viguno	viguno_query	PASS	
+viguno	viguno_server_schema	PASS	
+viloca	viloca_run	PASS	
+viloca	viloca_snv	Failed	tool bug: viloca snv always crashes with AttributeError 'inference_type' in cli.py, before any SNV calling
+vinalc	vinalc	PASS	
+viral-host-hunter	viral-host-hunter_vhh-predict	Not completed	needs the 11 GB ProtT5 model download plus the trained model archive, and a GPU is strongly recommended
+viral-ngs	viral-ngs_assembly_deambig_fasta	PASS	real SARS-CoV-2 sequence with 2276 N; all N replaced by A/C/G/T, length unchanged
+viral-ngs	viral-ngs_assembly_filter_short_seqs	PASS	
+viral-ngs	viral-ngs_assembly_trim_fasta	PASS	
+viral-ngs	viral-ngs_assembly_vcf_to_fasta	PASS	input VCF was made with bcftools mpileup/call from the real nf-core SARS-CoV-2 BAM and genome (viral-ngs needs the AD field); output has the 9 called variants and N elsewhere, ends trimmed
+viral-ngs	viral-ngs_interhost_align_mafft	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing MafftTool' (it ignores the mafft on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_intrahost_vphaser_one_sample	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_bam_to_fastq	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_fastq_to_bam	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
+viral-ngs	viral-ngs_read_utils_filter_bam_mapped_only	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_index_fasta_samtools	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_merge_bams	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
+viral-ngs	viral-ngs_read_utils_sort_bam	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
+viral-ngs	viral-ngs_reports_alignment_summary	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing MuscleTool' (muscle is not found or installable in the image), so the command cannot run
+viral-ngs	viral-ngs_reports_plot_coverage	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viralflye	viralflye_viralFlye.py	Not completed	needs the Pfam-A HMM database (about 1.5 GB) and a metaFlye assembly of long reads; post-assembly pipeline wrapper, skipped
+viralmsa	viralmsa_ViralMSA.py	PASS	
+viralrecall	viralrecall	PASS	
+viralrecall	viralrecall_database	PASS	
+viralverify	viralverify	PASS	
+viralverify	viralverify_training_script	PASS	
+viramp-hub	viramp-hub_scheme-convert	PASS	
+virdig	virdig	PASS	
+virema	virema_Compiler_Module.py	Not completed	needs an uncompiled results file from a ViReMa run, and ViReMa cannot run in this image (bowtie broken)
+virema	virema_ViReMa.py	Failed	image problem: bowtie and bowtie-build in the image fail with missing libstdc++.so.6, so ViReMa cannot index or align
+vireosnp	vireosnp_GTbarcode	PASS	
+vireosnp	vireosnp_vireo	PASS	
+virheat	virheat	PASS	
+virmet	virmet_covplot	Not completed	needs a wolfpack results folder, and wolfpack needs the human, bovine and bacterial databases (many GB); CWL flags were corrected from the help
+virmet	virmet_fetch	Not completed	downloads the full NCBI viral, human, bovine or bacterial databases (many GB); too large to test
+virmet	virmet_index	PASS	
+virmet	virmet_update	Not completed	downloads new viral sequences from NCBI into a full Virmet database (many GB); too large to test
+viroconstrictor	viroconstrictor	Not completed	pipeline, skipped (Snakemake-based workflow)
+viromeqc	viromeqc_viromeQC.py	Not completed	needs the SILVA and Amphora databases (about 1.2 GB), which the tool installs into its own script folder; that folder is read-only in the container and the path has no option
+virprof	virprof_blast-classify	PASS	
+virprof	virprof_blastbin	PASS	
+virprof	virprof_download-genomes	PASS	
+virprof	virprof_export-fasta	Failed	tool bug: the default --fasta-id-format ({bin_name}_{qacc} {bp} bp) crashes with KeyError qacc on blastbin output; with an explicit format such as {bin_name}_{acc} {bp} bp it works and exports the 6 expected bins
+virprof	virprof_fasta-qc	PASS	
+virprof	virprof_filter-blast	PASS	
+virprof	virprof_find-bins	PASS	
+virprof	virprof_index-tree	PASS	
+virprof	virprof_init-test	PASS	
+virprof	virprof_prepare-phylo	PASS	main mode with an input FASTA works (network); the species-only mode (--species without input FASTA) crashes with AttributeError (tool bug)
+virprof	virprof_ymp	Not completed	pipeline, skipped (ymp is the Snakemake-based pipeline runner)
+virsorter	virsorter_config	Not completed	config is written to the container home and lost after the run; --show fails without a prior init, so nothing can be checked in one run
+virsorter	virsorter_run	Not completed	needs the large (about 13 GB) VirSorter database from setup
+virsorter	virsorter_setup	Not completed	downloads the large (about 13 GB) database; too heavy
+virsorter	virsorter_train-feature	Not completed	needs the initialised config and database (fails with config template missing)
+virsorter	virsorter_train-model	Not completed	needs the initialised config and database plus feature files from train-feature
+virstrain	virstrain	PASS	
+virstrain	virstrain_build	PASS	
+virstrain	virstrain_contig	PASS	
+virstrain	virstrain_merge	PASS	
+virulign	virulign	PASS	
+virusrecom	virusrecom	PASS	
+visceral-evaluatesegmentation	visceral-evaluatesegmentation_EvaluateSegmentation	PASS	
+vispr	vispr_archive	PASS	
+vispr	vispr_config	PASS	
+vispr	vispr_plot	Failed	image problem: pandas version clash (Interval vs float) makes vispr plot crash in plot_pvals after writing 6 plots
+vispr	vispr_server	Not completed	web server only; it serves a viewer and does not exit
+vispr	vispr_test	Not completed	web server only, and it downloads its test data from bitbucket
+vkmz	vkmz_formula	PASS	
+vkmz	vkmz_tabular	PASS	json, sql and metadata outputs each work alone; using --sql with --metadata together crashes in the tool (sqlite Metadata column error)
+vkmz	vkmz_w4m-xcms	PASS	
+vmatch	vmatch	PASS	index staged at the fixed path /vmatch_work
+vmatch	vmatch_chain2dim	PASS	
+vmatch	vmatch_matchcluster	PASS	index must be staged at the same fixed path /vmatch_work as in the vmatch run that wrote the match file
+vmatch	vmatch_mkdna6idx	PASS	
+vmatch	vmatch_mkvtree	PASS	
+vmatch	vmatch_repfind	PASS	
+vmatch	vmatch_vendian	PASS	
+vmatch	vmatch_vmatchselect	PASS	index must be staged at the same fixed path /vmatch_work as in the vmatch run that wrote the match file
+vmatch	vmatch_vmatchtrans	PASS	
+vmatch	vmatch_vseqinfo	PASS	
+vmatch	vmatch_vseqselect	PASS	
+vmatch	vmatch_vstree2tex	PASS	
+vmatch	vmatch_vsubseqselect	PASS	
+voronota	voronota_calculate-contacts	PASS	
+voronota	voronota_calculate-vertices	PASS	
+voronota	voronota_calculate-vertices-in-parallel	PASS	
+voronota	voronota_compare-contacts	PASS	
+voronota	voronota_draw-contacts	PASS	
+voronota	voronota_expand-descriptors	PASS	
+voronota	voronota_get-balls-from-atoms-file	PASS	
+voronota	voronota_query-balls	PASS	
+voronota	voronota_query-balls-clashes	PASS	
+voronota	voronota_query-contacts	PASS	
+voronota	voronota_run-script	PASS	
+voronota	voronota_score-contacts-energy	PASS	input contacts were reformatted with awk/tr as in the voronota-voromqa script, after calculate-contacts and query-contacts runs
+voronota	voronota_score-contacts-potential	PASS	input contacts were reformatted with awk/tr as in the voronota-voromqa script, after calculate-contacts and query-contacts runs
+voronota	voronota_score-contacts-quality	PASS	
+voronota	voronota_write-balls-to-atoms-file	PASS	
+votuderep	votuderep_derep	PASS	
+votuderep	votuderep_filter	PASS	
+votuderep	votuderep_getdbs	Not completed	downloads multi-gigabyte geNomad, CheckV and PHROGs databases; too heavy
+votuderep	votuderep_splitcoverm	PASS	
+votuderep	votuderep_tabulate	PASS	
+votuderep	votuderep_trainingdata	Not completed	downloads full sequencing read sets and an assembly from the internet; too heavy
+vphaser2	vphaser2	PASS	
+vqbg	vqbg_VQBG	Failed	image problem: VQBG crashes with a segmentation fault (exit 139) at the merge step on real HIV and SARS-CoV-2 reads; CWL base command also fixed to VQBG
+vrhyme	vrhyme_vRhyme	PASS	
+vsearch	vsearch	PASS	
+vsnp	vsnp_vSNP_step1.py	PASS	
+vsnp	vsnp_vSNP_step2.py	Failed	image problem: the image bundles no reference option directory (Mycobacterium_AF2122 is missing), so step 2 crashes with AttributeError 'Ref_Options' has no attribute 'gbk'; base command also fixed
+vsnp	vsnp_vsnp_path_adder.py	Failed	image problem: --cwd must write /usr/local/dependencies/reference_options_paths.txt inside the image, which is read-only; base command also fixed
+vsnp3	vsnp3_vsnp3_path_adder.py	Failed	image problem: --cwd must write /usr/local/dependencies/reference_options_paths.txt inside the image, which is read-only, so the path is not added (exit code 0); base command also fixed
+vsnp3	vsnp3_vsnp3_step1.py	PASS	
+vsnp3	vsnp3_vsnp3_step2.py	PASS	
+vt	vt_annotate_1000g	PASS	
+vt	vt_annotate_regions	PASS	synthetic data: hand-made BED regions on real chr22 dbSNP records; 217 of 2174 variants got the REG flag and all 217 lie in the two BED regions
+vt	vt_annotate_variants	PASS	synthetic data: hand-made coding and low-complexity BED files on real chr22 dbSNP records and reference; 173 variants got the LC, RL or frameshift flags and none lay outside the low-complexity region
+vt	vt_cat	PASS	
+vt	vt_compute_concordance	Failed	tool bug: all concordance counts are 0 and the s.txt and m.txt files stay empty, even when the same indexed VCF with 3 samples is given twice
+vt	vt_compute_features	PASS	
+vt	vt_decompose	PASS	
+vt	vt_discover	PASS	
+vt	vt_genotype	Failed	tool bug: vt genotype says 8 SNPs were genotyped but writes no variant records (checked with VCF, BCF, bgzipped input and BAM from nf-core test data)
+vt	vt_index	PASS	
+vt	vt_multi_partition	PASS	
+vt	vt_normalize	PASS	
+vt	vt_partition	PASS	
+vt	vt_paste	Failed	tool bug: vt paste crashes with a segmentation fault or abort on every real VCF input tried (vcf.gz, BCF, one or two files)
+vt	vt_peek	PASS	default text summary is correct on the real VCF (194 indels, 89 ins and 105 del, as in the tex output); the -x output (PDF) fails because pdflatex is missing from the image
+vt	vt_sort	PASS	
+vt	vt_subset	PASS	
+vt	vt_uniq	PASS	
+vt	vt_view	PASS	
+vtools	vtools_vtools-evaluate	PASS	
+vtools	vtools_vtools-filter	PASS	
+vtools	vtools_vtools-gcoverage	PASS	
+vtools	vtools_vtools-stats	PASS	
+vuegen	vuegen	PASS	
+vulcan	vulcan	PASS	
+wally	wally_dotplot	PASS	
+wally	wally_matches	PASS	
+wally	wally_region	PASS	
+watchdog	watchdog_tricks-generate-yaml	PASS	stdout mode generates correct tricks YAML; the --append-to-file option crashes in this version (tool bug: bytes/str TypeError)
+wbuild	wbuild_demo	PASS	
+wbuild	wbuild_init	PASS	
+wbuild	wbuild_update	PASS	
+wdltool	wdltool_graph	PASS	rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run)
+wdltool	wdltool_highlight	PASS	rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run)
+wdltool	wdltool_inputs	PASS	rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run)
+wdltool	wdltool_parse	PASS	rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run)
+wdltool	wdltool_validate	PASS	rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run)
+wdltool	wdltool_womgraph	PASS	rewritten from the real wdltool usage; ran on a small real draft-2 WDL (parse/inspect only, no workflow run)
+weblogo	weblogo	PASS	
+wepp	wepp_detectpeaks	Not completed	baseCommand fixed to 'wepp detectPeaks'; internal step of the run-wepp pipeline that needs pipeline intermediates (aligned reads, variants, depth) and a large UShER tree; no small test set
+wepp	wepp_sam2pb	Not completed	baseCommand fixed to 'wepp sam2PB'; internal step of the run-wepp pipeline that needs an aligned SAM in the pipeline folder layout and a large UShER tree; no small test set
+wes-service-client	wes-service-client_wes-client	Not completed	needs a running WES server and no public test server is available
+wfmash	wfmash	PASS	
+wg-blimp	wg-blimp_create-config	PASS	ran with two small real SARS-CoV-2 FASTQ pairs and the genome (genome_build None); config YAML content is correct
+wg-blimp	wg-blimp_delete-all-output	Failed	image problem: tool writes to its own install folder (site-packages/snakemake_wrapper/conda), which is read-only for a non-root container user
+wg-blimp	wg-blimp_run-shiny	Not completed	long-running Shiny GUI server
+wg-blimp	wg-blimp_run-snakemake	Not completed	pipeline, skipped
+wg-blimp	wg-blimp_run-snakemake-from-config	Not completed	pipeline, skipped
+wgatools	wgatools_validate	PASS	
+wgdi	wgdi	PASS	mode options now take config files; ran -d dotplot, -icl collinearity and -bi blockinfo on the wgdi-example Amborella vs AEK data (outputs match the repo's)
+wgfast	wgfast	Failed	image problem: the bundled GATK 3.4 jar fails with 'Could not find walker UnifiedGenotyper' (not run with a matching Java), so no BAM or VCF is made
+wgfast	wgfast_prep	PASS	new CWL; builds a valid RAxML tree with all 99 taxa and a PARAMS file from the repo's NASP matrix (tree topology differs from the repo's, as RAxML starts from a random tree)
+wgsim	wgsim	PASS	
+wham	wham	PASS	rewritten: the command is 'wham' with short options (WHAM-BAM is not on PATH); ran on the nf-core yeast paired-end BAM and genome and gave valid VCF soft-clip calls
+wham	wham_whamg	Not completed	new CWL runs and gives a valid VCF header, but the small real BAMs (nf-core yeast, human chr21) contain no SV calls, so output cannot be confirmed
+whatsgnu	whatsgnu_database_customizer	PASS	new CWL; concatenated 3 repo genomes (13353 proteins) with renamed locus tags
+whatsgnu	whatsgnu_main	PASS	new CWL; built a database from 3 repo test genomes and scored NCTC8325 and CT18 (GNU scores >= 1 for proteins present in the database)
+whatsgnu	whatsgnu_plotter	PASS	new CWL; GNU score histograms made from two real reports
+whatshap	whatshap_compare	PASS	compare report and tsv/bed outputs are correct; the --plot-blocksizes and --plot-sum-of-blocksizes options crash because the image has no matplotlib
+whatshap	whatshap_find_snv_candidates	PASS	58 candidate SNVs on the repo's PacBio test BAM; 46 overlap the repo's known Illumina variants
+whatshap	whatshap_genotype	PASS	
+whatshap	whatshap_hapcut2vcf	PASS	
+whatshap	whatshap_haplotag	PASS	haplotag list is identical to the repo's expected haplotags.txt
+whatshap	whatshap_haplotagphase	PASS	unphased counts match the repo's test (4 unphased; 6 with --no-mav)
+whatshap	whatshap_learn	PASS	output identical to the repo's expected.txt
+whatshap	whatshap_phase	PASS	output records identical to the repo's expected phased.vcf
+whatshap	whatshap_polyphase	PASS	synthetic data: the repo's pseudo-tetraploid test set (merged human chr22 reads); all 42 variants phased with ploidy 4
+whatshap	whatshap_polyphasegenetic	PASS	synthetic data: pedigree file written for the repo's tiny test VCFs (64 progeny); phased 135 variants with --sample Parent_A; without --sample the tool crashes (AssertionError) on Parent_B, which has no simplex-nulliplex variants
+whatshap	whatshap_split	PASS	
+whatshap	whatshap_stats	PASS	
+whatshap	whatshap_unphase	PASS	
+wheezy.template	wheezy.template	PASS	
+whokaryote	whokaryote_whokaryote.py	PASS	
+wigeon	wigeon	Failed	image problem: megablast is missing from the image, so every query gives UNKNOWN.
+wiggletools	wiggletools_apply	PASS	
+wiggletools	wiggletools_entropy	Failed	tool bug: the entropy reducer returns the standard deviation (reducers.c uses StdDevReductionPop for entropy).
+wiggletools	wiggletools_mean	PASS	
+wiggletools	wiggletools_median	PASS	
+wiggletools	wiggletools_min	PASS	
+wiggletools	wiggletools_nearest	PASS	Distances to the nearest exon match an independent calculation except a one-base convention difference downstream of regions.
+wiggletools	wiggletools_ratio	PASS	
+wiggletools	wiggletools_stddev	PASS	
+wiggletools	wiggletools_ttest	Failed	tool bug: p-values differ from Welch's t-test by up to 0.09 because the tool uses population variance.
+wiggletools	wiggletools_wilcoxon	Failed	tool bug: output is a signed 2*erf(z) value between -2 and 0, not a p-value (integer division in sigma, missing sqrt 2).
+winnowmap	winnowmap	PASS	
+wipertools	wipertools_fastqgather	PASS	
+wipertools	wipertools_fastqscatter	PASS	
+wipertools	wipertools_fastqwiper	PASS	
+wipertools	wipertools_reportgather	PASS	
+wise2	wise2_dba	PASS	Human INS cDNA aligned to the INS gene with the intron gap.
+wise2	wise2_dnal	PASS	Local alignment of human and mouse insulin promoter regions gave a score and blocks.
+wise2	wise2_estwise	PASS	Protein translation of the INS cDNA alignment equals the INS protein.
+wise2	wise2_estwisedb	PASS	INS protein found the INS cDNA in a small cDNA set.
+wise2	wise2_genewise	PASS	Gene model of human INS on its genomic DNA gave the exact INS protein.
+wise2	wise2_genewisedb	PASS	INS protein found the INS gene; GFF gene model matches genewise.
+wise2	wise2_promoterwise	PASS	
+wise2	wise2_psw	PASS	Human and pig insulin aligned with expected identity.
+wise2	wise2_pswdb	PASS	Human insulin ranked itself first, then pig, cow and mouse insulin.
+wisecondorx	wisecondorx_convert	PASS	
+wisecondorx	wisecondorx_gender	Not completed	needs a reference of at least 10 genome-wide low-coverage samples; the small real BAMs gave a degenerate reference (NaN values), so the result cannot be judged.
+wisecondorx	wisecondorx_newref	Not completed	needs a reference of at least 10 genome-wide low-coverage samples; the small real BAMs gave a degenerate reference (NaN values), so the result cannot be judged.
+wisecondorx	wisecondorx_predict	Not completed	needs a reference of at least 10 genome-wide low-coverage samples; the small real BAMs gave a degenerate reference (NaN values), so the result cannot be judged.
+woltka	woltka_classify	PASS	
+woltka	woltka_collapse	PASS	
+woltka	woltka_coverage	PASS	
+woltka	woltka_filter	PASS	
+woltka	woltka_merge	PASS	
+woltka	woltka_normalize	PASS	
+womtool	womtool_graph	PASS	real draft-2 hello.wdl: prints a DOT digraph wf_hello with node CALL_hello; no workflow run
+womtool	womtool_highlight	PASS	real draft-2 hello.wdl with --highlight-mode console: prints the WDL source with ANSI colour codes on keywords and types; no workflow run
+womtool	womtool_inputs	PASS	real draft-2 hello.wdl: prints the inputs JSON {"wf_hello.hello.addressee": "String"}; no workflow run
+womtool	womtool_outputs	PASS	real draft-2 hello.wdl: prints the outputs JSON {"wf_hello.hello.salutation": "String"}; no workflow run
+womtool	womtool_parse	PASS	real draft-2 hello.wdl: prints the parse tree (Namespace with task hello, declaration addressee, raw command); no workflow run
+womtool	womtool_upgrade	PASS	real draft-2 scatter2.wdl and hello_in.wdl: prints valid WDL 1.0 with input blocks and typed outputs (Array[Int] ints = printInt.out kept); note: the shorthand draft-2 workflow output in hello.wdl (hello.salutation) is dropped; no workflow run
+womtool	womtool_validate	PASS	Static validation of a small real WDL file only; no workflow was run.
+womtool	womtool_womgraph	PASS	real draft-2 hello.wdl: prints a DOT digraph with call wf_hello.hello and its String addressee and hello.salutation ports; no workflow run
+wtdbg	wtdbg_wtdbg2	PASS	Assembled Arabidopsis plastid HiFi reads into a 158 kb contig set (expected genome 154 kb).
+wtdbg	wtdbg_wtpoa-cns	PASS	Consensus of the wtdbg2 layout gave 4 contigs, 158 kb in total.
+wtdbg2	wtdbg2	PASS	Assembled Arabidopsis plastid HiFi reads into two contig layouts, 115 kb in total.
+wtdbg2	wtdbg2_wtpoa-cns	PASS	Consensus of the wtdbg2 layout gave two contigs, 131 kb in total.
+wub	wub_bam_accuracy.py	PASS	
+wub	wub_bam_cov.py	PASS	
+wub	wub_bam_frag_coverage.py	PASS	
+x-mapper	x-mapper	PASS	
+xatlas	xatlas	PASS	
+xcftools	xcftools_xcf2png	PASS	
+xcftools	xcftools_xcf2pnm	PASS	
+xcftools	xcftools_xcfinfo	PASS	
+xmlstarlet	xmlstarlet_c14n	PASS	
+xmlstarlet	xmlstarlet_ed	PASS	
+xmlstarlet	xmlstarlet_el	PASS	
+xmlstarlet	xmlstarlet_esc	PASS	
+xmlstarlet	xmlstarlet_fo	PASS	Formats the XML correctly; the -o (omit declaration) option makes the tool exit with a random non-zero code (tool bug) while the output is right.
+xmlstarlet	xmlstarlet_ls	PASS	
+xmlstarlet	xmlstarlet_p2x	PASS	
+xmlstarlet	xmlstarlet_pyx	PASS	
+xmlstarlet	xmlstarlet_sel	PASS	
+xmlstarlet	xmlstarlet_tr	PASS	
+xmlstarlet	xmlstarlet_unesc	PASS	
+xmlstarlet	xmlstarlet_val	PASS	
+xpclr	xpclr	PASS	
+xpore	xpore_dataprep	PASS	
+xpore	xpore_diffmod	PASS	
+xpore	xpore_postprocessing	PASS	
+xs-sim	xs-sim_XS	PASS	
+xsd	xsd_cxx-parser	PASS	
+xsd	xsd_cxx-tree	PASS	
+xsv	xsv_cat	PASS	
+xsv	xsv_count	PASS	
+xsv	xsv_fixlengths	PASS	
+xsv	xsv_flatten	PASS	
+xsv	xsv_fmt	PASS	
+xsv	xsv_frequency	PASS	
+xsv	xsv_headers	PASS	
+xsv	xsv_index	PASS	
+xsv	xsv_input	PASS	
+xsv	xsv_join	PASS	
+xsv	xsv_sample	PASS	
+xsv	xsv_search	PASS	
+xsv	xsv_select	PASS	
+xsv	xsv_slice	PASS	
+xsv	xsv_sort	PASS	
+xsv	xsv_split	PASS	
+xsv	xsv_stats	PASS	
+xsv	xsv_table	PASS	
+xtandem	xtandem	PASS	
+xtb	xtb	PASS	
+xtea	xtea	Not completed	Needs the large xTea repeat library (rep_lib_annotation, hundreds of MB), a human reference genome, gene annotation and a whole-genome BAM; too heavy for this test.
+xtermcolor	xtermcolor_convert	PASS	
+xtermcolor	xtermcolor_list	PASS	
+xxmotif	xxmotif_XXmotif	PASS	Found a polypyrimidine-like motif in U2AF2 binding sites with the default mode; the --revcomp option crashes with 'In no man's land' on some inputs (tool bug).

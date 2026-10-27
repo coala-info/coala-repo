@@ -1,5 +1,17 @@
 # vembrane CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vembrane_annotate | Failed | tool bug: vembrane 2.4.0 annotate crashes with NotImplementedError (pysam add_meta) even with --backend cyvcf2, and rejects absolute config paths |
+| vembrane_fhir | PASS |  |
+| vembrane_filter | PASS |  |
+| vembrane_sort | PASS |  |
+| vembrane_structured | PASS |  |
+| vembrane_table | PASS |  |
+| vembrane_tag | PASS |  |
+
 ## vembrane_filter
 
 ### Tool Description

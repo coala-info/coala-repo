@@ -6,6 +6,9 @@ doc: "Calculate statistics for VCF files.\n\nTool homepage: https://github.com/L
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Input VCF file
     inputBinding:
       position: 101

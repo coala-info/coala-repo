@@ -1,5 +1,11 @@
 # viralmsa CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viralmsa_ViralMSA.py | PASS |  |
+
 ## viralmsa_ViralMSA.py
 
 ### Tool Description

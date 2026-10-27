@@ -1,5 +1,11 @@
 # xpclr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xpclr | PASS |  |
+
 ## xpclr
 
 ### Tool Description

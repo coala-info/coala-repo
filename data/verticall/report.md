@@ -1,5 +1,16 @@
 # verticall CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| verticall_mask | PASS | the tool's own tiny test files (alignment.fasta and unambiguous_ref.tsv): horizontal regions became N and an SVG was written |
+| verticall_matrix | PASS | PHYLIP distance matrix from the real pairwise result |
+| verticall_pairwise | PASS | 3 real E. coli K-12 genomes (NCBI): pairwise TSV with 6 rows, closest pair MG1655 vs W3110 |
+| verticall_repair | PASS | real DH10B genome: ambiguous bases R and Y were replaced |
+| verticall_summary | PASS | region table printed for MG1655 from the real pairwise result |
+| verticall_view | Not completed | view only opens an interactive plot window; no file output to check |
+
 ## verticall_pairwise
 
 ### Tool Description

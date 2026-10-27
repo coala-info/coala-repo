@@ -46,11 +46,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --fastq
     doc: input FASTQ (possibly gzipped), can be given twice for paired ends (for
       stdin use -)
     inputBinding:
       position: 101
-      prefix: --fastq
   - id: frag_mean
     type:
       - 'null'
@@ -112,6 +113,9 @@ inputs:
       prefix: --gap-open
   - id: gcsa_name
     type: File
+    secondaryFiles:
+      - pattern: .lcp
+        required: true
     doc: use this GCSA2 (FILE) & LCP (FILE.lcp) index pair for MEMs (required; 
       see `vg index`)
     inputBinding:

@@ -194,10 +194,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --input
     doc: Long reads sequences file (REQUIRED; can be multiple)
     inputBinding:
       position: 101
-      prefix: --input
   - id: keep_isolated_nodes
     type:
       - 'null'
@@ -268,13 +269,14 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --load-alignments
     doc: "`wtdbg` output reads' alignments into <--prefix>.alignments, program can
       load them to fastly build assembly graph. Or you can offer other source of alignments
       to `wtdbg`. When --load-alignment, will only reading long sequences but skip
       building kbm index"
     inputBinding:
       position: 101
-      prefix: --load-alignments
   - id: load_clips
     type:
       - 'null'
@@ -413,7 +415,7 @@ inputs:
       position: 101
       prefix: --node-ovl
   - id: output_prefix
-    type: string?
+    type: string
     doc: Prefix of output files (REQUIRED)
     inputBinding:
       position: 101
@@ -583,12 +585,59 @@ inputs:
   - id: verbose
     type:
       - 'null'
-      - type: array
-        items: boolean
+      - boolean
     doc: Verbose (can be multiple)
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: aln_kmer_sampling
+    type:
+      - 'null'
+      - int
+    doc: "Select no more than n seeds in a query bin, default 256"
+    inputBinding:
+      position: 101
+      prefix: --aln-kmer-sampling
+  - id: dp_max_gap
+    type:
+      - 'null'
+      - int
+    doc: "Max number of bin(256bp) in one gap, default 4"
+    inputBinding:
+      position: 101
+      prefix: --dp-max-gap
+  - id: dp_max_var
+    type:
+      - 'null'
+      - int
+    doc: "Max number of bin(256bp) in one deviation, default 4"
+    inputBinding:
+      position: 101
+      prefix: --dp-max-var
+  - id: dp_penalty_gap
+    type:
+      - 'null'
+      - int
+    doc: "Penalty for BIN gap, default -7"
+    inputBinding:
+      position: 101
+      prefix: --dp-penalty-gap
+  - id: dp_penalty_var
+    type:
+      - 'null'
+      - int
+    doc: "Penalty for BIN deviation, default -21"
+    inputBinding:
+      position: 101
+      prefix: --dp-penalty-var
+  - id: kbm_parts
+    type:
+      - 'null'
+      - int
+    doc: "Split total reads into multiple parts, index one part by one to save memory, default 1"
+    inputBinding:
+      position: 101
+      prefix: --kbm-parts
 outputs:
   - id: stdout
     type: stdout

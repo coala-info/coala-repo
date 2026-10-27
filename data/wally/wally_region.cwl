@@ -11,13 +11,19 @@ inputs:
       type: array
       items: File
     doc: Sorted BAM files to display
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     inputBinding:
       position: 1
   - id: bed_annotation_file
     type:
       - 'null'
       - File
-    doc: BED annotation file (optional)
+    doc: BED annotation file (optional; bgzip-compressed files need a .tbi index)
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     inputBinding:
       position: 102
       prefix: --bed
@@ -126,6 +132,11 @@ inputs:
       position: 102
       prefix: --supplementary
 outputs:
+  - id: region_images
+    type: File[]
+    doc: Plot images, one per region (named <region>.png)
+    outputBinding:
+      glob: '*.png'
   - id: stdout
     type: stdout
     doc: Standard output

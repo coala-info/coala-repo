@@ -1,5 +1,11 @@
 # vibrant CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vibrant_VIBRANT_run.py | Not completed | needs the VIBRANT HMM databases (about 11 GB download); CWL flags were corrected from the help |
+
 ## Metadata
 - **Skill**: generated
 

@@ -1,5 +1,11 @@
 # virulign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| virulign | PASS |  |
+
 ## virulign
 
 ### Tool Description

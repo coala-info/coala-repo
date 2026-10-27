@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vsnp_vsnp_path_adder.py
+baseCommand: vsnp_path_adder.py
 label: vsnp_vsnp_path_adder.py
 doc: "Using no arguments or -s option show the same output.\n\nTool homepage: https://github.com/USDA-VS/vSNP"
 inputs:

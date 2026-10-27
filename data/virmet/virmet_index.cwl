@@ -23,10 +23,8 @@ inputs:
       position: 101
       prefix: --bovine
   - id: dbdir
-    type:
-      - 'null'
-      - Directory
-    doc: path to store the indexed Virmet database
+    type: Directory
+    doc: path with the Virmet database to index; the indexes are written inside it, so it is staged writable
     inputBinding:
       position: 101
       prefix: --dbdir
@@ -50,6 +48,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: indexed_dbdir
+    type: Directory
+    doc: The database directory with the new indexes
+    outputBinding:
+      glob: $(inputs.dbdir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.dbdir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virmet:2.0.1--pyhdfd78af_0

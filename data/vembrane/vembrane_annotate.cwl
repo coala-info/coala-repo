@@ -12,6 +12,13 @@ inputs:
     doc: The configuration file.
     inputBinding:
       position: 1
+  - id: annotation_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Table files named in the configuration file. They are staged in the working
+      directory so that the names in the configuration resolve.
   - id: vcf
     type:
       - 'null'
@@ -36,10 +43,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --aux
     doc: Path to an auxiliary file containing a set of symbols
     inputBinding:
       position: 103
-      prefix: --aux
   - id: backend
     type:
       - 'null'
@@ -98,23 +106,25 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --overwrite-number-format
     doc: "Overwrite the number specification for FORMAT fields\n                 \
       \       given in the VCF header. Example: `--overwrite-number-\n           \
       \             format DP=2`"
     inputBinding:
       position: 103
-      prefix: --overwrite-number-format
   - id: overwrite_number_info
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --overwrite-number-info
     doc: "Overwrite the number specification for INFO fields\n                   \
       \     given in the VCF header. Example: `--overwrite-number\n              \
       \          cosmic_CNT=.`"
     inputBinding:
       position: 103
-      prefix: --overwrite-number-info
   - id: output_path
     type: string?
     inputBinding:
@@ -131,6 +141,8 @@ outputs:
       glob: $(inputs.output_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: ${ return inputs.annotation_files || []; }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vembrane:2.4.0--pyhdfd78af_0

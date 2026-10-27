@@ -22,7 +22,9 @@ inputs:
       position: 101
       prefix: --majority
   - id: ncbi_taxonomy
-    type: Directory
+    type:
+      - File
+      - Directory
     doc: Path to NCBI taxonomy (tree or raw)
     inputBinding:
       position: 101

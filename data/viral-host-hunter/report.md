@@ -1,5 +1,11 @@
 # viral-host-hunter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viral-host-hunter_vhh-predict | Not completed | needs the 11 GB ProtT5 model download plus the trained model archive, and a GPU is strongly recommended |
+
 ## viral-host-hunter_vhh-predict
 
 ### Tool Description

@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wepp_detectpeaks
+baseCommand:
+  - wepp
+  - detectPeaks
 label: wepp_detectpeaks
 doc: "Detects Peaks from the MAT\n\nTool homepage: https://github.com/TurakhiaLab/WEPP"
 inputs:

@@ -7,9 +7,10 @@ doc: "de Bruijn graph construction, error removal and repeat resolution\n\nTool 
 inputs:
   - id: directory
     type: Directory
-    doc: working directory name
+    doc: working directory name (the velveth output directory)
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: alignments
     type:
       - 'null'
@@ -225,9 +226,20 @@ inputs:
       position: 102
       prefix: -very_clean
 outputs:
+  - id: output_directory
+    type: Directory
+    doc: Working directory with contigs.fa, stats.txt, LastGraph and Log
+    outputBinding:
+      glob: $(inputs.directory.basename)
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.directory)
+        entryname: $(inputs.directory.basename)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/velvet:1.2.10--h577a1d6_9

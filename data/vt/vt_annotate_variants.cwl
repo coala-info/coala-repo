@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - annotate_variants
 label: vt_annotate_variants
-doc: "annotates variants in a VCF file\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "annotates variants in a VCF file\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: in_vcf
     type: File

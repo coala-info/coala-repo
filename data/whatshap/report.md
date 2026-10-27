@@ -1,5 +1,23 @@
 # whatshap CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| whatshap_compare | PASS | compare report and tsv/bed outputs are correct; the --plot-blocksizes and --plot-sum-of-blocksizes options crash because the image has no matplotlib |
+| whatshap_find_snv_candidates | PASS | 58 candidate SNVs on the repo's PacBio test BAM; 46 overlap the repo's known Illumina variants |
+| whatshap_genotype | PASS |  |
+| whatshap_hapcut2vcf | PASS |  |
+| whatshap_haplotag | PASS | haplotag list is identical to the repo's expected haplotags.txt |
+| whatshap_haplotagphase | PASS | unphased counts match the repo's test (4 unphased; 6 with --no-mav) |
+| whatshap_learn | PASS | output identical to the repo's expected.txt |
+| whatshap_phase | PASS | output records identical to the repo's expected phased.vcf |
+| whatshap_polyphase | PASS | synthetic data: the repo's pseudo-tetraploid test set (merged human chr22 reads); all 42 variants phased with ploidy 4 |
+| whatshap_polyphasegenetic | PASS | synthetic data: pedigree file written for the repo's tiny test VCFs (64 progeny); phased 135 variants with --sample Parent_A; without --sample the tool crashes (AssertionError) on Parent_B, which has no simplex-nulliplex variants |
+| whatshap_split | PASS |  |
+| whatshap_stats | PASS |  |
+| whatshap_unphase | PASS |  |
+
 ## whatshap_compare
 
 ### Tool Description

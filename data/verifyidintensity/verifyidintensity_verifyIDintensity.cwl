@@ -7,7 +7,7 @@ inputs:
   - id: abf
     type:
       - 'null'
-      - string
+      - File
     doc: Allele frequency file (ABF), which is a plain text file with SNP_ID and
       Allele_B frequency
     inputBinding:
@@ -22,7 +22,7 @@ inputs:
       position: 101
       prefix: --ignore_rest
   - id: input_intensity
-    type: string
+    type: File
     doc: Input intensity (.adpc.bin) file
     inputBinding:
       position: 101
@@ -72,6 +72,13 @@ inputs:
       position: 101
       prefix: --verbose
 outputs:
+  - id: stat_file
+    type:
+      - 'null'
+      - File
+    doc: Statistics file written when stat is given
+    outputBinding:
+      glob: $(inputs.stat)
   - id: stdout
     type: stdout
     doc: Standard output

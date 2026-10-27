@@ -21,7 +21,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Path to the output directory
+    doc: "Path to the output directory (default: current directory). Give it with a trailing slash, for example results/, because the tool appends file names directly."
     inputBinding:
       position: 101
       prefix: --output
@@ -35,7 +35,48 @@ outputs:
       - Directory
     doc: Path to the output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: "${ return (inputs.output_dir ? inputs.output_dir : './').replace(/\\/+$/, ''); }"
+  - id: corrected_agp
+    type: File
+    doc: Curated AGP file corrected for sequence lengths.
+    outputBinding:
+      glob: "${ return (inputs.output_dir ? inputs.output_dir : './').replace(/\\/+$/, '') + '/corrected.agp'; }"
+  - id: hap1_agp
+    type: File
+    doc: AGP file for Haplotype 1.
+    outputBinding:
+      glob: "${ return (inputs.output_dir ? inputs.output_dir : './').replace(/\\/+$/, '') + '/Hap_1/hap1.agp'; }"
+  - id: hap2_agp
+    type: File
+    doc: AGP file for Haplotype 2.
+    outputBinding:
+      glob: "${ return (inputs.output_dir ? inputs.output_dir : './').replace(/\\/+$/, '') + '/Hap_2/hap2.agp'; }"
+  - id: hap1_unlocs_no_hapdups_agp
+    type: File
+    doc: AGP file for Haplotype 1 with assigned unlocs and purged of duplicated haplotigs.
+    outputBinding:
+      glob: "${ return (inputs.output_dir ? inputs.output_dir : './').replace(/\\/+$/, '') + '/Hap_1/hap.unlocs.no_hapdups.agp'; }"
+  - id: hap2_unlocs_no_hapdups_agp
+    type: File
+    doc: AGP file for Haplotype 2 with assigned unlocs and purged of duplicated haplotigs.
+    outputBinding:
+      glob: "${ return (inputs.output_dir ? inputs.output_dir : './').replace(/\\/+$/, '') + '/Hap_2/hap.unlocs.no_hapdups.agp'; }"
+  - id: hap1_haplotigs_agp
+    type:
+      - 'null'
+      - File
+    doc: AGP file containing the haplotig duplications removed from Haplotype 1.
+    outputBinding:
+      glob: "${ return (inputs.output_dir ? inputs.output_dir : './').replace(/\\/+$/, '') + '/Hap_1/haplotigs.agp'; }"
+  - id: hap2_haplotigs_agp
+    type:
+      - 'null'
+      - File
+    doc: AGP file containing the haplotig duplications removed from Haplotype 2.
+    outputBinding:
+      glob: "${ return (inputs.output_dir ? inputs.output_dir : './').replace(/\\/+$/, '') + '/Hap_2/haplotigs.agp'; }"
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vgp-processcuration:1.1--pyhdfd78af_0

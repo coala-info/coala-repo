@@ -1,5 +1,11 @@
 # verifyidintensity CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| verifyidintensity_verifyIDintensity | Not completed | no usable test data: needs a pre-computed Illumina intensity .adpc.bin file and none is published with the tool |
+
 ## verifyidintensity_verifyIDintensity
 
 ### Tool Description

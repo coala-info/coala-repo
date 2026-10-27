@@ -1,5 +1,13 @@
 # xpore CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xpore_dataprep | PASS |  |
+| xpore_diffmod | PASS |  |
+| xpore_postprocessing | PASS |  |
+
 ## xpore_dataprep
 
 ### Tool Description

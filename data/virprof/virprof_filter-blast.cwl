@@ -14,7 +14,7 @@ inputs:
       prefix: --in-blast7
   - id: in_fasta
     type: File
-    doc: input blast7 format file
+    doc: Input FASTA file with the contigs (must be gzip-compressed)
     inputBinding:
       position: 101
       prefix: --in-fasta
@@ -36,14 +36,14 @@ inputs:
       prefix: --min-unaligned-bp
   - id: out_path
     type: string
-    doc: Output CSV file containing final calls (one row
+    doc: Output FASTA file (gzip-compressed) without the sequences covered by BLAST hits
     inputBinding:
       position: 102
       prefix: --out
 outputs:
   - id: out
     type: File
-    doc: output blast7 format file
+    doc: Filtered FASTA output (gzip-compressed)
     outputBinding:
       glob: $(inputs.out_path)
 requirements:

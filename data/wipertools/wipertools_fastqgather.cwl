@@ -30,12 +30,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --prefix
+  - id: out_fastq_path
+    type: string
+    doc: Name of the resulting fastq file
+    inputBinding:
+      position: 103
+      prefix: --out_fastq
 outputs:
   - id: out_fastq
     type: File
     doc: Name of the resulting fastq file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out_fastq_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wipertools:1.1.5--pyhdfd78af_0

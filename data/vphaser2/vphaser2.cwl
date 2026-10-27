@@ -37,9 +37,10 @@ inputs:
       position: 101
       prefix: -ig
   - id: input_bam
-    type:
-      - 'null'
-      - File
+    type: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: input sorted bam file
     inputBinding:
       position: 101
@@ -101,14 +102,19 @@ inputs:
       prefix: -o
 outputs:
   - id: output_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: output directory
     outputBinding:
       glob: $(inputs.output_dir_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_dir_path)
+        entry: '$({"class": "Directory", "basename": inputs.output_dir_path, "listing": []})'
+        writable: true
+      - entry: $(inputs.input_bam)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vphaser2:2.0--h2bd4fab_16

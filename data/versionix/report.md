@@ -1,6 +1,12 @@
 # versionix CWL Generation Report
 
-## versionix_fastqc
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| versionix | PASS | versionix --registered lists the registered tools (DESeq2, aragorn, art_illumina, ...); versionix python prints 3.13.5, the Python version in the image |
+
+## versionix
 
 ### Tool Description
 Versionix returns the version of bioinformatics software.
@@ -11,11 +17,6 @@ Versionix returns the version of bioinformatics software.
 - **Package**: https://anaconda.org/channels/bioconda/packages/versionix/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/versionix/overview
-- **Total Downloads**: 7.4K
-- **Last updated**: 2025-09-02
-- **GitHub**: https://github.com/sequana/versionix
-- **Stars**: N/A
 ### Original Help Text
 ```text
 Usage: versionix [OPTIONS] [STANDALONE]                                        

@@ -6,10 +6,19 @@ doc: "WGDI(Whole-Genome Duplication Integrated): A user-friendly toolkit for evo
   analyses of whole-genome duplications and ancestral karyotypes.\n\nTool homepage:
   https://github.com/SunPengChuan/wgdi"
 inputs:
+  - id: data_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files named in the configuration file (gff, lens, blast, collinearity,
+      blockinfo, ks tables, ...). They are staged in the working directory by
+      their base names, so the configuration file must refer to them without a
+      directory part.
   - id: alignment
     type:
       - 'null'
-      - string
+      - File
     doc: Show event-related genomic alignment in a dotplot
     inputBinding:
       position: 101
@@ -17,7 +26,7 @@ inputs:
   - id: alignment_trees
     type:
       - 'null'
-      - string
+      - File
     doc: Collinear genes construct phylogenetic trees
     inputBinding:
       position: 101
@@ -25,7 +34,7 @@ inputs:
   - id: ancestral_karyotype
     type:
       - 'null'
-      - string
+      - File
     doc: Generation of ancestral karyotypes from chromosomes that retain same 
       structures in genomes
     inputBinding:
@@ -34,7 +43,7 @@ inputs:
   - id: ancestral_karyotype_repertoire
     type:
       - 'null'
-      - string
+      - File
     doc: Incorporate genes from collinearity blocks into the ancestral karyotype
       repertoire
     inputBinding:
@@ -43,7 +52,7 @@ inputs:
   - id: block_info
     type:
       - 'null'
-      - string
+      - File
     doc: Collinearity and Ks speculate whole genome duplication
     inputBinding:
       position: 101
@@ -51,7 +60,7 @@ inputs:
   - id: blockks
     type:
       - 'null'
-      - string
+      - File
     doc: Show Ks of blocks in a dotplot
     inputBinding:
       position: 101
@@ -59,7 +68,7 @@ inputs:
   - id: calks
     type:
       - 'null'
-      - string
+      - File
     doc: Calculate Ka/Ks for homologous gene pairs by YN00
     inputBinding:
       position: 101
@@ -67,7 +76,7 @@ inputs:
   - id: circos
     type:
       - 'null'
-      - string
+      - File
     doc: A simple way to run circos
     inputBinding:
       position: 101
@@ -83,7 +92,7 @@ inputs:
   - id: correspondence
     type:
       - 'null'
-      - string
+      - File
     doc: Extract event-related genomic alignment
     inputBinding:
       position: 101
@@ -91,7 +100,7 @@ inputs:
   - id: dotplot
     type:
       - 'null'
-      - string
+      - File
     doc: Show homologous gene dotplot
     inputBinding:
       position: 101
@@ -99,7 +108,7 @@ inputs:
   - id: fusion_positions_database
     type:
       - 'null'
-      - string
+      - File
     doc: Extract the fusion positions dataset
     inputBinding:
       position: 101
@@ -107,7 +116,7 @@ inputs:
   - id: fusions_detection
     type:
       - 'null'
-      - string
+      - File
     doc: Determine whether these fusion events occur in other genomes
     inputBinding:
       position: 101
@@ -115,7 +124,7 @@ inputs:
   - id: improved_collinearity
     type:
       - 'null'
-      - string
+      - File
     doc: Improved version of ColinearScan
     inputBinding:
       position: 101
@@ -123,7 +132,7 @@ inputs:
   - id: karyotype
     type:
       - 'null'
-      - string
+      - File
     doc: Show genome evolution from reconstructed ancestors
     inputBinding:
       position: 101
@@ -131,7 +140,7 @@ inputs:
   - id: karyotype_mapping
     type:
       - 'null'
-      - string
+      - File
     doc: Mapping from the known karyotype result to this species
     inputBinding:
       position: 101
@@ -139,7 +148,7 @@ inputs:
   - id: ks_figure
     type:
       - 'null'
-      - string
+      - File
     doc: A simple way to draw ks distribution map
     inputBinding:
       position: 101
@@ -147,7 +156,7 @@ inputs:
   - id: kspeaks
     type:
       - 'null'
-      - string
+      - File
     doc: A simple way to get ks peaks
     inputBinding:
       position: 101
@@ -155,7 +164,7 @@ inputs:
   - id: peaks_fit
     type:
       - 'null'
-      - string
+      - File
     doc: Gaussian fitting of ks distribution
     inputBinding:
       position: 101
@@ -163,7 +172,7 @@ inputs:
   - id: pindex
     type:
       - 'null'
-      - string
+      - File
     doc: Polyploidy-index characterize the degree of divergence between 
       subgenomes of a polyploidy
     inputBinding:
@@ -172,7 +181,7 @@ inputs:
   - id: ploidy_classification
     type:
       - 'null'
-      - string
+      - File
     doc: Polyploid distinguish among subgenomes
     inputBinding:
       position: 101
@@ -180,7 +189,7 @@ inputs:
   - id: retain
     type:
       - 'null'
-      - string
+      - File
     doc: Show subgenomes in gene retention or genome fractionation
     inputBinding:
       position: 101
@@ -188,7 +197,7 @@ inputs:
   - id: shared_fusion
     type:
       - 'null'
-      - string
+      - File
     doc: Quickly find shared fusions between species
     inputBinding:
       position: 101
@@ -197,6 +206,26 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: results
+    type: File[]
+    doc: Files written by wgdi (figures, csv tables, collinearity files); the
+      files named in savefile or savefig of the configuration file.
+    outputBinding:
+      glob: '*'
+      outputEval: |
+        ${
+          var skip = ['wgdi.out'];
+          var all = (inputs.data_files || []).slice();
+          for (var k in inputs) {
+            if (inputs[k] && inputs[k].class === 'File') { all.push(inputs[k]); }
+          }
+          all.forEach(function(f) { skip.push(f.basename); });
+          return self.filter(function(f) { return skip.indexOf(f.basename) < 0; });
+        }
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.data_files || [])
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wgdi:0.75--pyhdfd78af_0

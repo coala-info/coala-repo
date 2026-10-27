@@ -6,6 +6,9 @@ doc: "Collect coverage metrics from VCF files.\n\nTool homepage: https://github.
 inputs:
   - id: input_gvcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Path to input VCF file
     inputBinding:
       position: 101

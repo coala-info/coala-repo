@@ -1,5 +1,11 @@
 # wfmash CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wfmash | PASS |  |
+
 ## wfmash
 
 ### Tool Description

@@ -1,5 +1,11 @@
 # viroconstrictor CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viroconstrictor | Not completed | pipeline, skipped (Snakemake-based workflow) |
+
 ## viroconstrictor
 
 ### Tool Description

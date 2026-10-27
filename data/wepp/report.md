@@ -1,5 +1,12 @@
 # wepp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wepp_detectpeaks | Not completed | baseCommand fixed to 'wepp detectPeaks'; internal step of the run-wepp pipeline that needs pipeline intermediates (aligned reads, variants, depth) and a large UShER tree; no small test set |
+| wepp_sam2pb | Not completed | baseCommand fixed to 'wepp sam2PB'; internal step of the run-wepp pipeline that needs an aligned SAM in the pipeline folder layout and a large UShER tree; no small test set |
+
 ## wepp_detectpeaks
 
 ### Tool Description

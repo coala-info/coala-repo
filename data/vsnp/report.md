@@ -1,5 +1,13 @@
 # vsnp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vsnp_vSNP_step1.py | PASS |  |
+| vsnp_vSNP_step2.py | Failed | image problem: the image bundles no reference option directory (Mycobacterium_AF2122 is missing), so step 2 crashes with AttributeError 'Ref_Options' has no attribute 'gbk'; base command also fixed |
+| vsnp_vsnp_path_adder.py | Failed | image problem: --cwd must write /usr/local/dependencies/reference_options_paths.txt inside the image, which is read-only; base command also fixed |
+
 ## vsnp_vSNP_step1.py
 
 ### Tool Description

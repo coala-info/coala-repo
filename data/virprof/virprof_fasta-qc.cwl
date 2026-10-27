@@ -25,7 +25,7 @@ inputs:
       prefix: --hmin
   - id: in_fasta
     type: File
-    doc: FASTA file containing contigs
+    doc: FASTA file containing contigs (must be gzip-compressed)
     inputBinding:
       position: 101
       prefix: --in-fasta

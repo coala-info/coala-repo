@@ -1,5 +1,11 @@
 # xxmotif CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xxmotif_XXmotif | PASS | Found a polypyrimidine-like motif in U2AF2 binding sites with the default mode; the --revcomp option crashes with 'In no man's land' on some inputs (tool bug). |
+
 ## xxmotif_XXmotif
 
 ### Tool Description

@@ -5,7 +5,7 @@ baseCommand:
   - decompose
 label: vt_decompose
 doc: "decomposes multiallelic variants into biallelic in a VCF file.\n\nTool homepage:
-  https://github.com/Aikoyori/ProgrammingVTuberLogos"
+  https://github.com/atks/vt"
 inputs:
   - id: input_vcf
     type: File

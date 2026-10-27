@@ -40,10 +40,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --aux
     doc: Path to an auxiliary file containing a set of symbols
     inputBinding:
       position: 104
-      prefix: --aux
   - id: backend
     type:
       - 'null'
@@ -144,23 +145,25 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --overwrite-number-format
     doc: "Overwrite the number specification for FORMAT fields\n                 \
       \       in the VCF header. Example: `--overwrite-number-\n                 \
       \       format DP=2`"
     inputBinding:
       position: 104
-      prefix: --overwrite-number-format
   - id: overwrite_number_info
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --overwrite-number-info
     doc: "Overwrite the number specification for INFO fields\n                   \
       \     given in the VCF header. Example: `--overwrite-number\n              \
       \          cosmic_CNT=.`"
     inputBinding:
       position: 104
-      prefix: --overwrite-number-info
   - id: profile
     type: string
     doc: "The FHIR profile to use for generating the output, see\n               \

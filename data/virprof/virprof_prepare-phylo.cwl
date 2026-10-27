@@ -11,7 +11,7 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input FASTA files
+    doc: Input FASTA files (gzip-compressed; the species is taken from the file name, such as Rhinovirus_C.fasta.gz, unless species is given)
     inputBinding:
       position: 1
   - id: add_all_genomes
@@ -156,6 +156,8 @@ outputs:
       glob: $(inputs.out_fasta_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virprof:0.9.2--pyhdfd78af_0

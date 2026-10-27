@@ -76,6 +76,11 @@ inputs:
       - File
     doc: File with progeny genotypes. If not specified, information is taken 
       from main input file.
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 103
       prefix: --progeny_file

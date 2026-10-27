@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: VueGen
+baseCommand: vuegen
 label: vuegen
 doc: "Please provide a configuration file or directory path:\n\nTool homepage: https://github.com/Multiomics-Analytics-Group/vuegen"
 inputs:
@@ -55,10 +55,13 @@ inputs:
       position: 101
       prefix: --streamlit_autorun
   - id: output_dir_path
-    type: string?
+    type:
+      - 'null'
+      - string
+    doc: Path to the output directory for the generated report.
     inputBinding:
       position: 102
-      prefix: -output_dir
+      prefix: --output_directory
 outputs:
   - id: output_dir
     type:

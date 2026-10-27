@@ -1,5 +1,14 @@
 # wipertools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wipertools_fastqgather | PASS |  |
+| wipertools_fastqscatter | PASS |  |
+| wipertools_fastqwiper | PASS |  |
+| wipertools_reportgather | PASS |  |
+
 ## wipertools_fastqwiper
 
 ### Tool Description

@@ -10,9 +10,13 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .bai
+        required: true
     doc: sorted bam format alignment file
     inputBinding:
       position: 1
+      prefix: -b
   - id: reference_fasta
     type: File
     secondaryFiles:
@@ -20,6 +24,7 @@ inputs:
     doc: reference genome in fasta format
     inputBinding:
       position: 2
+      prefix: -f
   - id: NO_strand_bias_filter
     type:
       - 'null'
@@ -248,6 +253,60 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: snvs_csv
+    type:
+      type: array
+      items: File
+    doc: Called SNVs in csv format
+    outputBinding:
+      glob: SNVs_*.csv
+  - id: snvs_vcf
+    type:
+      type: array
+      items: File
+    doc: Called SNVs in vcf format
+    outputBinding:
+      glob: SNVs_*.vcf
+  - id: cooccurring_mutations
+    type:
+      - 'null'
+      - File
+    doc: Co-occurring mutations
+    outputBinding:
+      glob: cooccurring_mutations.csv
+  - id: coverage
+    type:
+      - 'null'
+      - File
+    doc: Coverage per window
+    outputBinding:
+      glob: coverage.txt
+  - id: haplotypes
+    type:
+      - 'null'
+      - Directory
+    doc: Reconstructed haplotype support files
+    outputBinding:
+      glob: haplotypes
+  - id: work_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Intermediate files (kept with --keep_files)
+    outputBinding:
+      glob: work
+  - id: log
+    type:
+      - 'null'
+      - File
+    doc: Log file
+    outputBinding:
+      glob: viloca.log
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.bam_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/viloca:1.1.0--pyhdfd78af_0

@@ -1,62 +1,36 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wiggletools_entropy
+baseCommand: wiggletools
 label: wiggletools_entropy
-doc: "Calculate the entropy of a wiggle track.\n\nTool homepage: https://github.com/Ensembl/WiggleTools"
-inputs:
-  - id: input_file
-    type: File
-    doc: Input wiggle track file
-    inputBinding:
-      position: 1
-  - id: bins
-    type:
-      - 'null'
-      - int
-    doc: Number of bins to use for entropy calculation
-    inputBinding:
-      position: 102
-      prefix: --bins
-  - id: log_scale
-    type:
-      - 'null'
-      - boolean
-    doc: Use log scale for entropy calculation
-    inputBinding:
-      position: 102
-      prefix: --log-scale
-  - id: max_value
-    type:
-      - 'null'
-      - float
-    doc: Maximum value to consider for entropy calculation
-    inputBinding:
-      position: 102
-      prefix: --max-value
-  - id: min_value
-    type:
-      - 'null'
-      - float
-    doc: Minimum value to consider for entropy calculation
-    inputBinding:
-      position: 102
-      prefix: --min-value
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file for the entropy track
-    outputBinding:
-      glob: $(inputs.output_file_path)
+doc: "Entropy of several tracks at each position (reducer entropy).\n\nTool homepage: https://github.com/Ensembl/WiggleTools"
 requirements:
   - class: InlineJavascriptRequirement
+arguments:
+  - position: 1
+    valueFrom: "$(inputs.write_bedgraph ? 'write_bg' : 'write')"
+  - position: 2
+    valueFrom: $(inputs.output_name)
+  - position: 3
+    valueFrom: entropy
+inputs:
+  - id: input_files
+    type: File[]
+    doc: Input tracks (wig, bigWig, bedGraph, bed, bigBed, bam, cram, vcf, bcf), recognised by suffix.
+    inputBinding:
+      position: 4
+  - id: output_name
+    type: string
+    doc: Output file name (the 'write' operator; a wiggle file, or bedGraph with write_bedgraph).
+    default: out.wig
+  - id: write_bedgraph
+    type: ['null', boolean]
+    doc: Use the 'write_bg' operator, which writes bedGraph instead of wiggle.
+outputs:
+  - id: output_file
+    type: File
+    doc: The track written by the 'write' operator.
+    outputBinding:
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wiggletools:1.2.11--h7118728_10

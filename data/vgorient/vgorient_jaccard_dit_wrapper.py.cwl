@@ -38,7 +38,7 @@ inputs:
   - id: log
     type:
       - 'null'
-      - File
+      - string
     doc: Log file name for recording execution details and timings.
     inputBinding:
       position: 102
@@ -103,9 +103,13 @@ outputs:
       - Directory
     doc: Output directory for VG_diterative.py
     outputBinding:
-      glob: $(inputs.vg_output_dir_path)
+      glob: "$((inputs.vg_output_dir_path ? inputs.vg_output_dir_path : 'vg_output') + '_w' + (inputs.band_width ? inputs.band_width : 512) + '_m' + (inputs.min_match_length ? inputs.min_match_length : 512))"
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_files)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0

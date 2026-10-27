@@ -40,10 +40,12 @@ inputs:
       prefix: --ignore_indels
   - id: in_dir
     type: Directory
-    doc: Directory containing assemblies in FASTA format
+    doc: Directory containing assemblies in FASTA format (staged writable, because minimap2
+      indices are written beside the assemblies)
     inputBinding:
       position: 101
       prefix: --in_dir
+      valueFrom: $(self.basename)
   - id: index_only
     type:
       - 'null'
@@ -148,6 +150,11 @@ outputs:
     outputBinding:
       glob: $(inputs.out_file_path)
 requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.in_dir)
+        entryname: $(inputs.in_dir.basename)
+        writable: true
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

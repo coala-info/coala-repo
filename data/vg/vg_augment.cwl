@@ -166,13 +166,9 @@ inputs:
       position: 105
       prefix: --translation
 outputs:
-  - id: augmented_graph_vg_file
-    type:
-      - 'null'
-      - File
-    doc: Output augmented graph file
-    outputBinding:
-      glob: '*.out'
+  - id: augmented_graph
+    type: stdout
+    doc: Augmented graph written to standard output
   - id: translation_file
     type:
       - 'null'
@@ -192,3 +188,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0
+stdout: vg_augment.vg

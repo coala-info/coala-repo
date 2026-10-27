@@ -1,5 +1,16 @@
 # votuderep CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| votuderep_derep | PASS |  |
+| votuderep_filter | PASS |  |
+| votuderep_getdbs | Not completed | downloads multi-gigabyte geNomad, CheckV and PHROGs databases; too heavy |
+| votuderep_splitcoverm | PASS |  |
+| votuderep_tabulate | PASS |  |
+| votuderep_trainingdata | Not completed | downloads full sequencing read sets and an assembly from the internet; too heavy |
+
 ## votuderep_derep
 
 ### Tool Description
@@ -234,6 +245,36 @@ Usage: votuderep trainingdata [OPTIONS]
 │                     [default: virome]                                        │
 │ --help    -h        Show this message and exit.                              │
 ╰──────────────────────────────────────────────────────────────────────────────╯
+```
+
+## votuderep_splitcoverm
+
+### Tool Description
+Split a CoverM TSV by metric into separate TSVs, one per metric.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/votuderep:0.6.0--pyhdfd78af_0
+- **Homepage**: https://github.com/quadram-institute-bioscience/votuderep
+- **Package**: https://anaconda.org/channels/bioconda/packages/votuderep/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+ Usage: votuderep splitcoverm [OPTIONS]
+
+ Split a CoverM TSV by metric into separate TSVs, one per metric.
+ Reads a CoverM output table containing multiple metrics across samples and splits it into individual TSV files, one for each metric. Each output file will have the format: <basename>_<metric>.tsv
+ The input TSV is expected to have columns formatted as: "Contig", "<sample1> <metric1>", "<sample1> <metric2>", ...
+ Example:
+   votuderep splitcoverm -i coverage.tsv -o output/cov
+   votuderep splitcoverm -i coverage.tsv.gz -o results/sample
+
+╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ *  --input            -i  FILE  Input CoverM TSV (optionally gzipped: .gz) [required]                                                                                                                │
+│ *  --output-basename  -o  TEXT  Output basename/prefix for generated files [required]                                                                                                                │
+│    --help             -h        Show this message and exit.                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Metadata

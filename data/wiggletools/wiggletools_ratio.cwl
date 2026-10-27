@@ -1,43 +1,41 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wiggletools_ratio
+baseCommand: wiggletools
 label: wiggletools_ratio
-doc: "Calculates the ratio of two wiggle files.\n\nTool homepage: https://github.com/Ensembl/WiggleTools"
-inputs:
-  - id: wiggle_file1
-    type: File
-    doc: The first wiggle file.
-    inputBinding:
-      position: 1
-  - id: wiggle_file2
-    type: File
-    doc: The second wiggle file.
-    inputBinding:
-      position: 2
-  - id: compress
-    type:
-      - 'null'
-      - boolean
-    doc: Compress output using gzip.
-    inputBinding:
-      position: 103
-      prefix: --compress
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 104
-      prefix: --output-file
-outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file name. If not specified, output to stdout.
-    outputBinding:
-      glob: $(inputs.output_file_path)
+doc: "Ratio of two tracks, first divided by second (binary operator ratio).\n\nTool homepage: https://github.com/Ensembl/WiggleTools"
 requirements:
   - class: InlineJavascriptRequirement
+arguments:
+  - position: 1
+    valueFrom: "$(inputs.write_bedgraph ? 'write_bg' : 'write')"
+  - position: 2
+    valueFrom: $(inputs.output_name)
+  - position: 3
+    valueFrom: ratio
+inputs:
+  - id: numerator
+    type: File
+    doc: First track (numerator).
+    inputBinding:
+      position: 4
+  - id: denominator
+    type: File
+    doc: Second track (denominator).
+    inputBinding:
+      position: 5
+  - id: output_name
+    type: string
+    doc: Output file name (the 'write' operator; a wiggle file, or bedGraph with write_bedgraph).
+    default: out.wig
+  - id: write_bedgraph
+    type: ['null', boolean]
+    doc: Use the 'write_bg' operator, which writes bedGraph instead of wiggle.
+outputs:
+  - id: output_file
+    type: File
+    doc: The track written by the 'write' operator.
+    outputBinding:
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wiggletools:1.2.11--h7118728_10

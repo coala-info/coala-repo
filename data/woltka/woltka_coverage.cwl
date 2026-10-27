@@ -30,7 +30,7 @@ inputs:
   - id: names_path
     type:
       - 'null'
-      - Directory
+      - File
     doc: Names of feature groups to append to the coverage table.
     inputBinding:
       position: 101

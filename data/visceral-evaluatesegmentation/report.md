@@ -1,5 +1,11 @@
 # visceral-evaluatesegmentation CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| visceral-evaluatesegmentation_EvaluateSegmentation | PASS |  |
+
 ## visceral-evaluatesegmentation_EvaluateSegmentation
 
 ### Tool Description

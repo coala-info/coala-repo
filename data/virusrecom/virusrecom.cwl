@@ -36,7 +36,7 @@ inputs:
   - id: breakpoint
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Possible breakpoint scan of recombination. ‘-b y’ means yes, ‘-b n’ means
       no. Note: this option only takes effect when ‘-m p’ has been specified.'
     inputBinding:
@@ -54,7 +54,7 @@ inputs:
   - id: cumulative
     type:
       - 'null'
-      - boolean
+      - string
     doc: Simply using the max cumulative WIC of all sites to identify the major 
       parent. Off by default. If required, specify ‘-cu y’.
     inputBinding:
@@ -72,7 +72,7 @@ inputs:
   - id: export_name
     type:
       - 'null'
-      - string
+      - File
     doc: Export all sequence name of a *.fasta file.
     inputBinding:
       position: 101
@@ -150,7 +150,7 @@ inputs:
   - id: only_wic
     type:
       - 'null'
-      - boolean
+      - string
     doc: Only calculate site WIC value. Off by default. If required, please 
       specify ‘-owic y’.
     inputBinding:

@@ -43,11 +43,12 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --hap-tx-gff
     doc: GTF/GFF file with transcript annotations of a named haplotype (may 
       repeat)
     inputBinding:
       position: 101
-      prefix: --hap-tx-gff
   - id: ins_fasta
     type:
       - 'null'
@@ -78,10 +79,14 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --ref-fasta
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: FASTA file with the reference sequence (may repeat)
     inputBinding:
       position: 101
-      prefix: --ref-fasta
   - id: target_mem
     type:
       - 'null'
@@ -111,19 +116,26 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --tx-gff
     doc: GTF/GFF file with transcript annotations (may repeat)
     inputBinding:
       position: 101
-      prefix: --tx-gff
   - id: vcf
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --vcf
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: VCF file with sequence names matching -r (may repeat)
     inputBinding:
       position: 101
-      prefix: --vcf
   - id: verbosity
     type:
       - 'null'
@@ -137,10 +149,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --workflow
     doc: workflow to produce indexes for (may repeat)
     inputBinding:
       position: 101
-      prefix: --workflow
 outputs:
   - id: stdout
     type: stdout

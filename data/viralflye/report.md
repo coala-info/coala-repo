@@ -1,5 +1,11 @@
 # viralflye CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viralflye_viralFlye.py | Not completed | needs the Pfam-A HMM database (about 1.5 GB) and a metaFlye assembly of long reads; post-assembly pipeline wrapper, skipped |
+
 ## viralflye_viralFlye.py
 
 ### Tool Description

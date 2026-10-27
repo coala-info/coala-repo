@@ -9,11 +9,37 @@ inputs:
   - id: vcf
     type: File
     doc: VCF file with phased variants (must be gzip-compressed and indexed)
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 1
   - id: alignments
     type: File
     doc: BAM/CRAM file with alignments to be tagged by haplotype
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 2
   - id: ignore_linked_read
@@ -60,15 +86,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --no-supplementary-strand-match
-  - id: out_threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use for output file writing (passed to pysam). For
-      optimal performance, instead pipe output into 'samtools view' to compress.
-    inputBinding:
-      position: 103
-      prefix: --out-threads
   - id: output_threads
     type:
       - 'null'
@@ -151,9 +168,7 @@ inputs:
       position: 103
       prefix: --tag-supplementary
   - id: output_path
-    type:
-      - 'null'
-      - string
+    type: string
     inputBinding:
       position: 104
       prefix: --output

@@ -1,5 +1,11 @@
 # wheezy.template CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wheezy.template | PASS |  |
+
 ## wheezy.template
 
 ### Tool Description

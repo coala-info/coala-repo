@@ -1,5 +1,11 @@
 # wgatools CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wgatools_validate | PASS |  |
+
 ## wgatools_validate
 
 ### Tool Description

@@ -1,37 +1,49 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: voronota_run-script
+baseCommand:
+  - voronota
+  - run-script
 label: voronota_run-script
-doc: "Run a script with Voronota\n\nTool homepage: https://www.voronota.com/"
+doc: "Runs a Voronota script.
+
+Tool homepage: https://www.voronota.com/"
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: '$(inputs.data_files ? inputs.data_files : [])'
 inputs:
-  - id: script
+  - id: input_script
     type: File
-    doc: script as plain text
-    inputBinding:
-      position: 1
-  - id: exit_on_first_failure
+    doc: "script as plain text (stdin)"
+  - id: data_files
     type:
       - 'null'
-      - boolean
-    doc: flag to terminate script when a command fails
-    inputBinding:
-      position: 102
-      prefix: --exit-on-first-failure
+      - type: array
+        items: File
+    doc: "Files used by the script (staged in the working directory so the script can name them)"
   - id: interactive
     type:
       - 'null'
       - boolean
-    doc: flag for interactive mode
+    doc: "flag for interactive mode"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --interactive
+  - id: exit_on_first_failure
+    type:
+      - 'null'
+      - boolean
+    doc: "flag to terminate script when a command fails"
+    inputBinding:
+      position: 101
+      prefix: --exit-on-first-failure
   - id: max_unfolding
     type:
       - 'null'
       - int
-    doc: maximum level of output unfolding
+    doc: "maximum level of output unfolding, default is 6"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --max-unfolding
 outputs:
   - id: stdout
@@ -40,4 +52,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0
+stdin: $(inputs.input_script.path)
 stdout: voronota_run-script.out

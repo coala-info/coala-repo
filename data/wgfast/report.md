@@ -1,5 +1,12 @@
 # wgfast CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wgfast | Failed | image problem: the bundled GATK 3.4 jar fails with 'Could not find walker UnifiedGenotyper' (not run with a matching Java), so no BAM or VCF is made |
+| wgfast_prep | PASS | new CWL; builds a valid RAxML tree with all 99 taxa and a PARAMS file from the repo's NASP matrix (tree topology differs from the repo's, as RAxML starts from a random tree) |
+
 ## wgfast
 
 ### Tool Description
@@ -58,6 +65,33 @@ Options:
                         EMIT_ALL_CONFIDENT_SITES, can be EMIT_ALL_SITES
 ```
 
+
+## wgfast_prep
+
+### Tool Description
+Prepare the reference files for wgfast: builds a RAxML tree and PARAMS file from a NASP SNP matrix.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/wgfast:1.0.4--py_0
+- **Homepage**: https://github.com/FofanovLab/wgfast
+- **Package**: https://anaconda.org/channels/bioconda/packages/wgfast/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: wgfast_prep [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -m MATRIX, --snp_matrix=MATRIX
+                        path to NASP snp_matrix [REQUIRED]
+  -o MODEL, --model=MODEL
+                        model for RAxML, defaults to ASC_GTRGAMMA, can also be
+                        GTRGAMMA
+  -p PROCESSORS, --processors=PROCESSORS
+                        number of processors to use with GTRGAMMA, defaults to
+                        4
+```
 
 ## Metadata
 - **Skill**: generated

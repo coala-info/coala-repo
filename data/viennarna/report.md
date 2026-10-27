@@ -1,5 +1,11 @@
 # viennarna CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viennarna_RNAcofold | PASS |  |
+
 ## Metadata
 - **Skill**: generated
 

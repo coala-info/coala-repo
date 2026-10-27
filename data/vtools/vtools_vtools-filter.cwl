@@ -20,6 +20,9 @@ inputs:
       prefix: --index-sample
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: Path to input VCF file
     inputBinding:
       position: 101
@@ -40,7 +43,7 @@ inputs:
       position: 101
       prefix: --params-file
   - id: trash_file
-    type: File
+    type: string
     doc: Path to trash VCF file
     inputBinding:
       position: 101
@@ -57,6 +60,11 @@ outputs:
     doc: Path to output (filtered) VCF file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: trash_vcf
+    type: File
+    doc: Path to trash VCF file (variants removed by the filters)
+    outputBinding:
+      glob: $(inputs.trash_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

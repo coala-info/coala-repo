@@ -119,20 +119,25 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --reference
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     doc: input FASTA reference (may repeat)
     inputBinding:
       position: 101
-      prefix: --reference
   - id: region
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --region
     doc: specify a VCF contig name or 1-based inclusive region (may repeat, if 
       on different contigs)
     inputBinding:
       position: 101
-      prefix: --region
   - id: region_is_chrom
     type:
       - 'null'
@@ -155,10 +160,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --rename
     doc: match contig V in the VCFs to contig F in the FASTAs (may repeat)
     inputBinding:
       position: 101
-      prefix: --rename
   - id: threads
     type:
       - 'null'
@@ -172,10 +178,16 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --vcf
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     doc: input VCF (may repeat)
     inputBinding:
       position: 101
-      prefix: --vcf
 outputs:
   - id: stdout
     type: stdout

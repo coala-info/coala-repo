@@ -30,10 +30,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --aux
     doc: Path to an auxiliary file containing a set of symbols
     inputBinding:
       position: 102
-      prefix: --aux
   - id: backend
     type:
       - 'null'
@@ -87,31 +88,34 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --overwrite-number-format
     doc: 'Overwrite the number specification for FORMAT fields given in the VCF header.
       Example: `--overwrite-number- format DP=2`'
     inputBinding:
       position: 102
-      prefix: --overwrite-number-format
   - id: overwrite_number_info
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --overwrite-number-info
     doc: 'Overwrite the number specification for INFO fields given in the VCF header.
       Example: `--overwrite-number cosmic_CNT=.`'
     inputBinding:
       position: 102
-      prefix: --overwrite-number-info
   - id: tag
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --tag
     doc: "Tag records using the FILTER field. Note: tag names cannot contain `;` or
       whitespace and must not be '0'. Example: `--tag q_above_30=\"not (QUAL<=30)\"\
       `"
     inputBinding:
       position: 102
-      prefix: --tag
   - id: tag_mode
     type:
       - 'null'

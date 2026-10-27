@@ -16,6 +16,17 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: postprocessed_dir
+    type: Directory
+    doc: The diffmod directory with the added postprocessing result files.
+    outputBinding:
+      glob: $(inputs.diffmod_dir.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.diffmod_dir)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/xpore:2.1--pyh5e36f6f_0

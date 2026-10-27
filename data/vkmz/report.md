@@ -1,5 +1,13 @@
 # vkmz CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vkmz_formula | PASS |  |
+| vkmz_tabular | PASS | json, sql and metadata outputs each work alone; using --sql with --metadata together crashes in the tool (sqlite Metadata column error) |
+| vkmz_w4m-xcms | PASS |  |
+
 ## vkmz_tabular
 
 ### Tool Description

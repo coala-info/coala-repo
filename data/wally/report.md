@@ -1,5 +1,13 @@
 # wally CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wally_dotplot | PASS |  |
+| wally_matches | PASS |  |
+| wally_region | PASS |  |
+
 ## wally_region
 
 ### Tool Description

@@ -5,11 +5,12 @@ label: weblogo
 doc: "Create sequence logos from biological sequence alignments.\n\nTool homepage:
   https://github.com/WebLogo/weblogo"
 inputs:
-  - id: sequence_data
+  - id: fin
     type: File
     doc: Sequence input file
     inputBinding:
       position: 1
+      prefix: --fin
   - id: alphabet
     type:
       - 'null'
@@ -41,8 +42,8 @@ inputs:
   - id: box
     type:
       - 'null'
-      - boolean
-    doc: Draw boxes around symbols?
+      - string
+    doc: Draw boxes around symbols? (yes or no)
     inputBinding:
       position: 102
       prefix: --box
@@ -50,12 +51,11 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: Specify symbol colors, e.g. --color black AG 'Purine' --color red TC 
-      'Pyrimidine'
-    inputBinding:
-      position: 102
-      prefix: --color
+        items: color_rule
+        inputBinding:
+          prefix: --color
+    doc: Specify symbol colors, one rule per --color (color, symbols, description), e.g. 
+      black AG Purine
   - id: color_scheme
     type:
       - 'null'
@@ -96,8 +96,8 @@ inputs:
   - id: debug
     type:
       - 'null'
-      - boolean
-    doc: 'Output additional diagnostic information. (Default: False)'
+      - string
+    doc: 'Output additional diagnostic information. (Default: False) (yes or no)'
     inputBinding:
       position: 102
       prefix: --debug
@@ -136,19 +136,11 @@ inputs:
   - id: errorbars
     type:
       - 'null'
-      - boolean
-    doc: Display error bars?
+      - string
+    doc: Display error bars? (yes or no)
     inputBinding:
       position: 102
       prefix: --errorbars
-  - id: fin
-    type:
-      - 'null'
-      - File
-    doc: Sequence input file
-    inputBinding:
-      position: 102
-      prefix: --fin
   - id: fineprint
     type:
       - 'null'
@@ -274,24 +266,24 @@ inputs:
   - id: reverse_stacks
     type:
       - 'null'
-      - boolean
-    doc: Draw stacks with largest letters on top?
+      - string
+    doc: Draw stacks with largest letters on top? (yes or no)
     inputBinding:
       position: 102
       prefix: --reverse-stacks
   - id: rotate_numbers
     type:
       - 'null'
-      - boolean
-    doc: Draw X-axis numbers with vertical orientation
+      - string
+    doc: Draw X-axis numbers with vertical orientation (yes or no)
     inputBinding:
       position: 102
       prefix: --rotate-numbers
   - id: scale_width
     type:
       - 'null'
-      - boolean
-    doc: 'Scale the visible stack width by the fraction of symbols in the column?
+      - string
+    doc: 'Scale the visible stack width by the fraction of symbols in the column? (yes or no)
       (I.e. columns with many gaps of unknowns are narrow.) (Default: yes)'
     inputBinding:
       position: 102
@@ -315,24 +307,24 @@ inputs:
   - id: show_ends
     type:
       - 'null'
-      - boolean
-    doc: Label the ends of the sequence?
+      - string
+    doc: Label the ends of the sequence? (yes or no)
     inputBinding:
       position: 102
       prefix: --show-ends
   - id: show_xaxis
     type:
       - 'null'
-      - boolean
-    doc: Display sequence numbers along x-axis?
+      - string
+    doc: Display sequence numbers along x-axis? (yes or no)
     inputBinding:
       position: 102
       prefix: --show-xaxis
   - id: show_yaxis
     type:
       - 'null'
-      - boolean
-    doc: Display entropy scale along y-axis?
+      - string
+    doc: Display entropy scale along y-axis? (yes or no)
     inputBinding:
       position: 102
       prefix: --show-yaxis
@@ -460,7 +452,7 @@ inputs:
       prefix: --ylabel
   - id: fout_path
     type: string
-    doc: 'Output file (default: stdout)'
+    doc: Output file
     inputBinding:
       position: 103
       prefix: --fout
@@ -469,11 +461,28 @@ outputs:
     type:
       - 'null'
       - File
-    doc: Output file
+    doc: Output logo file
     outputBinding:
       glob: $(inputs.fout_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - name: color_rule
+        type: record
+        fields:
+          - name: color
+            type: string
+            inputBinding:
+              position: 1
+          - name: symbols
+            type: string
+            inputBinding:
+              position: 2
+          - name: description
+            type: string
+            inputBinding:
+              position: 3
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/weblogo:3.7.9--pyhdfd78af_0

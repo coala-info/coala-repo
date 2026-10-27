@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - partition
 label: vt_partition
-doc: "partition variants from two data sets.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "partition variants from two data sets.\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: input_vcfs
     type:
@@ -16,7 +16,7 @@ inputs:
   - id: filter
     type:
       - 'null'
-      - boolean
+      - string
     doc: filter
     inputBinding:
       position: 102
@@ -49,7 +49,19 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: summary
+    type: stderr
+    doc: Partition summary (vt writes it to standard error)
+  - id: partitioned_variants
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Partitioned variants (a-b.bcf, a&b1.bcf, a&b2.bcf, b-a.bcf), written with -w
+    outputBinding:
+      glob: '*.bcf'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vt:2015.11.10--2
 stdout: vt_partition.out
+stderr: vt_partition.err

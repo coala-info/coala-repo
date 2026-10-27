@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: versionix
-label: versionix_fastqc
+label: versionix
 doc: "Versionix returns the version of bioinformatics software.\n\nTool homepage:
   https://github.com/sequana/versionix"
 inputs:
@@ -35,4 +35,4 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/versionix:0.99.3--pyhdfd78af_0
-stdout: versionix_fastqc.out
+stdout: versionix.out

@@ -16,8 +16,6 @@ inputs:
       position: 1
   - id: reference_fasta
     type: File
-    secondaryFiles:
-      - .fai
     doc: Path to the reference FASTA file
     inputBinding:
       position: 2
@@ -33,12 +31,12 @@ inputs:
       position: 4
   - id: output_dir
     type: string
-    doc: Output directory for the config file
+    doc: Output directory of the pipeline (recorded in the config as output_dir; not created by this command)
     inputBinding:
       position: 5
   - id: target_yaml
     type: string
-    doc: Output YAML file name
+    doc: Path of the config YAML file to write
     inputBinding:
       position: 6
   - id: aligner
@@ -77,19 +75,10 @@ outputs:
     type: stdout
     doc: Standard output
   - id: target_yaml_out
-    type:
-      - 'null'
-      - File
-    doc: Output YAML file name
+    type: File
+    doc: The written config YAML file
     outputBinding:
       glob: $(inputs.target_yaml)
-  - id: output_dir_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Output directory for the config file
-    outputBinding:
-      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wg-blimp:0.10.0--pyh5e36f6f_0

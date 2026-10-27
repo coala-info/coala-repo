@@ -1,10 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vinalc
+baseCommand:
+  - mpiexec
 label: vinalc
-doc: "Command line parse error: unrecognised option '-help'\n\nCorrect usage:\n\n\
-  Tool homepage: https://github.com/XiaohuaZhangLLNL/VinaLC"
+doc: "MPI and multi-threading mix parallel AutoDock Vina (virtual screening of ligand lists against receptor lists). VinaLC needs at least 2 MPI processes, so it is started with mpiexec.\n\nTool homepage: https://github.com/XiaohuaZhangLLNL/VinaLC"
 inputs:
+  - id: mpi_processes
+    type:
+      - 'null'
+      - int
+    doc: Number of MPI processes (mpiexec -n); VinaLC needs at least 2
+    default: 2
+    inputBinding:
+      position: 1
+      prefix: -n
+  - id: list_members
+    type:
+      type: array
+      items: File
+    doc: Receptor, flexible receptor and ligand files named inside the list files; they are staged in the working directory next to the list files so the names resolve. The tool writes its results next to the receptor and ligand list files.
   - id: energy_range
     type:
       - 'null'
@@ -31,14 +45,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fleList
+      valueFrom: $(self.basename)
   - id: geo_list
-    type:
-      - 'null'
-      - File
+    type: File
     doc: receptor geometry file
     inputBinding:
       position: 101
       prefix: --geoList
+      valueFrom: $(self.basename)
   - id: granularity
     type:
       - 'null'
@@ -48,13 +62,12 @@ inputs:
       position: 101
       prefix: --granularity
   - id: lig_list
-    type:
-      - 'null'
-      - File
+    type: File
     doc: ligand list file
     inputBinding:
       position: 101
       prefix: --ligList
+      valueFrom: $(self.basename)
   - id: num_modes
     type:
       - 'null'
@@ -72,13 +85,12 @@ inputs:
       position: 101
       prefix: --randomize
   - id: rec_list
-    type:
-      - 'null'
-      - File
+    type: File
     doc: receptor list file
     inputBinding:
       position: 101
       prefix: --recList
+      valueFrom: $(self.basename)
   - id: score_cf
     type:
       - 'null'
@@ -109,6 +121,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: poses
+    type:
+      type: array
+      items: File
+    doc: Docked poses (gzip-compressed pdbqt)
+    outputBinding:
+      glob: '*.pdbqt.gz'
+  - id: logs
+    type:
+      type: array
+      items: File
+    doc: Docking logs (gzip-compressed)
+    outputBinding:
+      glob: '*.log.gz'
+arguments:
+  - position: 2
+    valueFrom: vinalc
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "${ var l = inputs.list_members.concat([inputs.rec_list, inputs.lig_list, inputs.geo_list]); if (inputs.fle_list) { l.push(inputs.fle_list); } return l; }"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vinalc:1.4.2--h01b65b2_0

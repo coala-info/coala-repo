@@ -104,7 +104,7 @@ inputs:
       position: 101
       prefix: -p
   - id: input_scaffolds
-    type: string
+    type: File
     doc: input nucleotide scaffolds
     inputBinding:
       position: 101

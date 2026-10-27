@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - annotate_regions
 label: vt_annotate_regions
-doc: "annotates regions in a VCF file\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "annotates regions in a VCF file\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: input_vcf
     type: File

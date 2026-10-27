@@ -1,5 +1,11 @@
 # vinalc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vinalc | PASS |  |
+
 ## vinalc
 
 ### Tool Description

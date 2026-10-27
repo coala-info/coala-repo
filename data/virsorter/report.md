@@ -1,5 +1,15 @@
 # virsorter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| virsorter_config | Not completed | config is written to the container home and lost after the run; --show fails without a prior init, so nothing can be checked in one run |
+| virsorter_run | Not completed | needs the large (about 13 GB) VirSorter database from setup |
+| virsorter_setup | Not completed | downloads the large (about 13 GB) database; too heavy |
+| virsorter_train-feature | Not completed | needs the initialised config and database (fails with config template missing) |
+| virsorter_train-model | Not completed | needs the initialised config and database plus feature files from train-feature |
+
 ## virsorter_config
 
 ### Tool Description

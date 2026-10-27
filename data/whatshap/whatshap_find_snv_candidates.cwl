@@ -9,13 +9,27 @@ inputs:
   - id: ref
     type: File
     doc: FASTA with reference genome
+    secondaryFiles:
+      - pattern: .fai
+        required: false
     inputBinding:
       position: 1
   - id: bam
-    type:
-      - 'null'
-      - File
+    type: File
     doc: BAM file
+    secondaryFiles:
+      - pattern: .bai
+        required: false
+      - pattern: ^.bai
+        required: false
+      - pattern: .crai
+        required: false
+      - pattern: ^.crai
+        required: false
+      - pattern: .tbi
+        required: false
+      - pattern: .csi
+        required: false
     inputBinding:
       position: 2
   - id: minabs
@@ -61,9 +75,7 @@ inputs:
       position: 103
       prefix: --chromosome
   - id: output
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Output VCF file.
     inputBinding:
       position: 103

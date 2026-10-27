@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vsnp3_vsnp3_path_adder.py
+baseCommand: vsnp3_path_adder.py
 label: vsnp3_vsnp3_path_adder.py
 doc: "vsnp3_path_adder.py is used to add reference types.\n\nTool homepage: https://github.com/USDA-VS/vsnp3"
 inputs:

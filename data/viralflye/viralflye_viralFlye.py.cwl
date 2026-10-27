@@ -20,7 +20,7 @@ inputs:
       position: 101
       prefix: --dir
   - id: hmm
-    type: string
+    type: File
     doc: Path to Pfam-A HMM database for viralVerify script
     inputBinding:
       position: 101
@@ -50,10 +50,8 @@ inputs:
       position: 101
       prefix: --min_viral_length
   - id: outdir
-    type:
-      - 'null'
-      - string
-    doc: output directory
+    type: string
+    doc: output directory (the tool default is the metaFlye output directory, which is read-only when staged, so always give one)
     inputBinding:
       position: 101
       prefix: --outdir
@@ -66,7 +64,7 @@ inputs:
       position: 101
       prefix: --raven
   - id: reads
-    type: File?
+    type: File
     doc: Path to long reads
     inputBinding:
       position: 101
@@ -84,9 +82,7 @@ outputs:
     type: stdout
     doc: Standard output
   - id: outdir_dir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: output directory
     outputBinding:
       glob: $(inputs.outdir)

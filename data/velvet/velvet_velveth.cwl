@@ -5,7 +5,7 @@ label: velvet_velveth
 doc: "simple hashing program\n\nTool homepage: https://github.com/dzerbino/velvet"
 inputs:
   - id: directory
-    type: Directory
+    type: string
     doc: directory name for output files
     inputBinding:
       position: 1
@@ -24,14 +24,14 @@ inputs:
         items: File
     doc: path to sequence file or - for standard input
     inputBinding:
-      position: 3
+      position: 4
   - id: bam
     type:
       - 'null'
       - boolean
     doc: Use BAM file format
     inputBinding:
-      position: 104
+      position: 3
       prefix: -bam
   - id: create_binary
     type:
@@ -39,7 +39,7 @@ inputs:
       - boolean
     doc: 'create binary CnyUnifiedSeq file (default: off)'
     inputBinding:
-      position: 104
+      position: 3
       prefix: -create_binary
   - id: fasta
     type:
@@ -47,7 +47,7 @@ inputs:
       - boolean
     doc: Use FASTA file format
     inputBinding:
-      position: 104
+      position: 3
       prefix: -fasta
   - id: fasta_gz
     type:
@@ -55,7 +55,7 @@ inputs:
       - boolean
     doc: Use gzipped FASTA file format
     inputBinding:
-      position: 104
+      position: 3
       prefix: -fasta.gz
   - id: fastq
     type:
@@ -63,7 +63,7 @@ inputs:
       - boolean
     doc: Use FASTQ file format
     inputBinding:
-      position: 104
+      position: 3
       prefix: -fastq
   - id: fastq_gz
     type:
@@ -71,30 +71,15 @@ inputs:
       - boolean
     doc: Use gzipped FASTQ file format
     inputBinding:
-      position: 104
+      position: 3
       prefix: -fastq.gz
-  - id: file_format
-    type:
-      - 'null'
-      - string
-    doc: File format option
-    inputBinding:
-      position: 104
-      prefix: -file_format
-  - id: file_layout
-    type:
-      - 'null'
-      - string
-    doc: File layout option for paired reads
-    inputBinding:
-      position: 104
   - id: fmt_auto
     type:
       - 'null'
       - boolean
     doc: Auto-detect FASTA or FASTQ file format
     inputBinding:
-      position: 104
+      position: 3
       prefix: -fmtAuto
   - id: interleaved
     type:
@@ -102,7 +87,7 @@ inputs:
       - boolean
     doc: Paired reads are interleaved in one file
     inputBinding:
-      position: 104
+      position: 3
       prefix: -interleaved
   - id: long
     type:
@@ -110,7 +95,7 @@ inputs:
       - boolean
     doc: Long single-end reads
     inputBinding:
-      position: 104
+      position: 3
       prefix: -long
   - id: long_paired
     type:
@@ -118,7 +103,7 @@ inputs:
       - boolean
     doc: Long paired-end reads
     inputBinding:
-      position: 104
+      position: 3
       prefix: -longPaired
   - id: no_hash
     type:
@@ -127,7 +112,7 @@ inputs:
     doc: 'simply prepare Sequences file, do not hash reads or prepare Roadmaps file
       (default: off)'
     inputBinding:
-      position: 104
+      position: 3
       prefix: -noHash
   - id: raw
     type:
@@ -135,7 +120,7 @@ inputs:
       - boolean
     doc: Use RAW file format
     inputBinding:
-      position: 104
+      position: 3
       prefix: -raw
   - id: raw_gz
     type:
@@ -143,23 +128,15 @@ inputs:
       - boolean
     doc: Use gzipped RAW file format
     inputBinding:
-      position: 104
+      position: 3
       prefix: -raw.gz
-  - id: read_type
-    type:
-      - 'null'
-      - string
-    doc: Read type option
-    inputBinding:
-      position: 104
-      prefix: -read_type
   - id: reference
     type:
       - 'null'
       - boolean
     doc: Reference sequence
     inputBinding:
-      position: 104
+      position: 3
       prefix: -reference
   - id: reuse_binary
     type:
@@ -168,7 +145,7 @@ inputs:
     doc: 'reuse binary sequences file (or link) already in directory (no need to provide
       original filenames in this case (default: off)'
     inputBinding:
-      position: 104
+      position: 3
       prefix: -reuse_binary
   - id: reuse_sequences
     type:
@@ -177,7 +154,7 @@ inputs:
     doc: 'reuse Sequences file (or link) already in directory (no need to provide
       original filenames in this case (default: off)'
     inputBinding:
-      position: 104
+      position: 3
       prefix: -reuse_Sequences
   - id: sam
     type:
@@ -185,7 +162,7 @@ inputs:
       - boolean
     doc: Use SAM file format
     inputBinding:
-      position: 104
+      position: 3
       prefix: -sam
   - id: separate
     type:
@@ -193,7 +170,7 @@ inputs:
       - boolean
     doc: Paired reads are in separate files
     inputBinding:
-      position: 104
+      position: 3
       prefix: -separate
   - id: short
     type:
@@ -201,7 +178,7 @@ inputs:
       - boolean
     doc: Short single-end reads
     inputBinding:
-      position: 104
+      position: 3
       prefix: -short
   - id: short2
     type:
@@ -209,7 +186,7 @@ inputs:
       - boolean
     doc: Short single-end reads (channel 2)
     inputBinding:
-      position: 104
+      position: 3
       prefix: -short2
   - id: short3
     type:
@@ -217,7 +194,7 @@ inputs:
       - boolean
     doc: Short single-end reads (channel 3)
     inputBinding:
-      position: 104
+      position: 3
       prefix: -short3
   - id: short4
     type:
@@ -225,7 +202,7 @@ inputs:
       - boolean
     doc: Short single-end reads (channel 4)
     inputBinding:
-      position: 104
+      position: 3
       prefix: -short4
   - id: short_paired
     type:
@@ -233,7 +210,7 @@ inputs:
       - boolean
     doc: Short paired-end reads
     inputBinding:
-      position: 104
+      position: 3
       prefix: -shortPaired
   - id: short_paired2
     type:
@@ -241,7 +218,7 @@ inputs:
       - boolean
     doc: Short paired-end reads (channel 2)
     inputBinding:
-      position: 104
+      position: 3
       prefix: -shortPaired2
   - id: short_paired3
     type:
@@ -249,7 +226,7 @@ inputs:
       - boolean
     doc: Short paired-end reads (channel 3)
     inputBinding:
-      position: 104
+      position: 3
       prefix: -shortPaired3
   - id: short_paired4
     type:
@@ -257,7 +234,7 @@ inputs:
       - boolean
     doc: Short paired-end reads (channel 4)
     inputBinding:
-      position: 104
+      position: 3
       prefix: -shortPaired4
   - id: strand_specific
     type:
@@ -265,9 +242,14 @@ inputs:
       - boolean
     doc: 'for strand specific transcriptome sequencing data (default: off)'
     inputBinding:
-      position: 104
+      position: 3
       prefix: -strand_specific
 outputs:
+  - id: output_directory
+    type: Directory
+    doc: Directory with the Roadmaps and Sequences files
+    outputBinding:
+      glob: $(inputs.directory)
   - id: stdout
     type: stdout
     doc: Standard output

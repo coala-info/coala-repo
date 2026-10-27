@@ -309,7 +309,7 @@ inputs:
   - id: max_multiple_sequences
     type:
       - 'null'
-      - float
+      - int
     doc: maximum number of sequences used in an alignment
     inputBinding:
       position: 103
@@ -317,7 +317,7 @@ inputs:
   - id: max_pos_set_size
     type:
       - 'null'
-      - float
+      - int
     doc: maximum number of sequences from the positive set used
     inputBinding:
       position: 103

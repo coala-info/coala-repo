@@ -37,10 +37,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --aux
     doc: Path to an auxiliary file containing a set of symbols
     inputBinding:
       position: 103
-      prefix: --aux
   - id: backend
     type:
       - 'null'
@@ -102,21 +103,23 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --overwrite-number-format
     doc: "Overwrite the number specification for FORMAT fields\ngiven in the VCF header.
       Example: `--overwrite-number-\nformat DP=2`"
     inputBinding:
       position: 103
-      prefix: --overwrite-number-format
   - id: overwrite_number_info
     type:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --overwrite-number-info
     doc: "Overwrite the number specification for INFO fields\ngiven in the VCF header.
       Example: `--overwrite-number\ncosmic_CNT=.`"
     inputBinding:
       position: 103
-      prefix: --overwrite-number-info
   - id: preserve_order
     type:
       - 'null'

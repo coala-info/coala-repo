@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wepp_sam2pb
+baseCommand:
+  - wepp
+  - sam2PB
 label: wepp_sam2pb
 doc: "Applies QC before running WEPP\n\nTool homepage: https://github.com/TurakhiaLab/WEPP"
 inputs:

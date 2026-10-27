@@ -21,6 +21,7 @@ inputs:
     doc: Algorithm used
     inputBinding:
       position: 103
+      prefix: -alg
   - id: alln_prob
     type:
       - 'null'
@@ -28,6 +29,7 @@ inputs:
     doc: Probability of matching a NNN codon
     inputBinding:
       position: 103
+      prefix: -alln
   - id: codon_table
     type:
       - 'null'
@@ -35,6 +37,7 @@ inputs:
     doc: Codon file
     inputBinding:
       position: 103
+      prefix: -codon
   - id: compare_both_strands
     type:
       - 'null'
@@ -90,6 +93,7 @@ inputs:
     doc: implicitly cache dy matrix usage
     inputBinding:
       position: 103
+      prefix: -dycache
   - id: dydebug
     type:
       - 'null'
@@ -161,6 +165,7 @@ inputs:
     doc: gene statistics file
     inputBinding:
       position: 103
+      prefix: -genestats
   - id: gw_edge_query_expand
     type:
       - 'null'
@@ -168,6 +173,7 @@ inputs:
     doc: at start/end, amount of protein area to expand
     inputBinding:
       position: 103
+      prefix: -gw_edgequery
   - id: gw_edge_target_expand
     type:
       - 'null'
@@ -175,6 +181,7 @@ inputs:
     doc: at start/end, amount of DNA area to expand
     inputBinding:
       position: 103
+      prefix: -gw_edgetarget
   - id: gw_splicesite_spread
     type:
       - 'null'
@@ -182,6 +189,7 @@ inputs:
     doc: spread around splice sites in codons
     inputBinding:
       position: 103
+      prefix: -gw_splicespread
   - id: gwdebug
     type:
       - 'null'
@@ -197,6 +205,7 @@ inputs:
     doc: startend policy for the HMM/protein
     inputBinding:
       position: 103
+      prefix: -init
   - id: insert_model
     type:
       - 'null'
@@ -204,6 +213,7 @@ inputs:
     doc: Use protein insert model
     inputBinding:
       position: 103
+      prefix: -insert
   - id: insertion_deletion_error_rate
     type:
       - 'null'
@@ -211,6 +221,7 @@ inputs:
     doc: Insertion/deletion error rate
     inputBinding:
       position: 103
+      prefix: -indel
   - id: is_embl_file
     type:
       - 'null'
@@ -250,6 +261,7 @@ inputs:
     doc: implicitly cache dy matrix usage
     inputBinding:
       position: 103
+      prefix: -nodycache
   - id: no_gwhsp
     type:
       - 'null'
@@ -257,6 +269,7 @@ inputs:
     doc: use heuristics for proteins
     inputBinding:
       position: 103
+      prefix: -nogwhsp
   - id: no_new_gene
     type:
       - 'null'
@@ -264,6 +277,7 @@ inputs:
     doc: use new gene stats (default), no for reverting to old system
     inputBinding:
       position: 103
+      prefix: -nonewgene
   - id: no_splice_gtag
     type:
       - 'null'
@@ -271,6 +285,7 @@ inputs:
     doc: make just gtag splice sites (default is gtag, ie no model)
     inputBinding:
       position: 103
+      prefix: -nosplice_gtag
   - id: null_model
     type:
       - 'null'
@@ -278,6 +293,7 @@ inputs:
     doc: Random Model as synchronous or flat
     inputBinding:
       position: 103
+      prefix: -null
   - id: paldebug
     type:
       - 'null'
@@ -301,6 +317,7 @@ inputs:
     doc: Intron positions and phases
     inputBinding:
       position: 103
+      prefix: -phase_file
   - id: phase_marked_intron_prob
     type:
       - 'null'
@@ -308,6 +325,7 @@ inputs:
     doc: Probability of marked introns
     inputBinding:
       position: 103
+      prefix: -phase_marked
   - id: phase_unmarked_intron_prob
     type:
       - 'null'
@@ -315,6 +333,7 @@ inputs:
     doc: Probability of unmarked introns
     inputBinding:
       position: 103
+      prefix: -phase_unmarked
   - id: pretty_output
     type:
       - 'null'
@@ -531,6 +550,7 @@ inputs:
       -splice_gtag]
     inputBinding:
       position: 103
+      prefix: -splice
   - id: substitution_error_rate
     type:
       - 'null'
@@ -538,6 +558,7 @@ inputs:
     doc: Substitution error rate
     inputBinding:
       position: 103
+      prefix: -subs
   - id: use_hmmer_filename_as_name
     type:
       - 'null'
@@ -553,6 +574,7 @@ inputs:
     doc: use new gene stats (default), no for reverting to old system
     inputBinding:
       position: 103
+      prefix: -newgene
   - id: use_protein_heuristics
     type:
       - 'null'
@@ -560,10 +582,16 @@ inputs:
     doc: use heuristics for proteins
     inputBinding:
       position: 103
+      prefix: -gwhsp
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: WISECONFIGDIR
+        envValue: /usr/local/share/wise2/wisecfg
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wise2:2.4.1--h08bb679_0

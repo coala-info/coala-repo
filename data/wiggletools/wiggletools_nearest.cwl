@@ -1,67 +1,41 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wiggletools_nearest
+baseCommand: wiggletools
 label: wiggletools_nearest
-doc: "Find the nearest feature in a wiggle file.\n\nTool homepage: https://github.com/Ensembl/WiggleTools"
-inputs:
-  - id: input_wiggle
-    type: File
-    doc: Input wiggle file
-    inputBinding:
-      position: 1
-  - id: input_features
-    type: File
-    doc: Input features file (e.g., BED, GFF)
-    inputBinding:
-      position: 2
-  - id: distance
-    type:
-      - 'null'
-      - boolean
-    doc: Output the distance to the nearest feature
-    inputBinding:
-      position: 103
-      prefix: --distance
-  - id: downstream
-    type:
-      - 'null'
-      - boolean
-    doc: Only consider downstream features
-    inputBinding:
-      position: 103
-      prefix: --downstream
-  - id: max_distance
-    type:
-      - 'null'
-      - int
-    doc: Maximum distance to consider
-    inputBinding:
-      position: 103
-      prefix: --max-distance
-  - id: upstream
-    type:
-      - 'null'
-      - boolean
-    doc: Only consider upstream features
-    inputBinding:
-      position: 103
-      prefix: --upstream
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 104
-      prefix: --output-file
-outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: Output file name
-    outputBinding:
-      glob: $(inputs.output_file_path)
+doc: "For the first track, take the nearest regions of the second track (binary operator nearest).\n\nTool homepage: https://github.com/Ensembl/WiggleTools"
 requirements:
   - class: InlineJavascriptRequirement
+arguments:
+  - position: 1
+    valueFrom: "$(inputs.write_bedgraph ? 'write_bg' : 'write')"
+  - position: 2
+    valueFrom: $(inputs.output_name)
+  - position: 3
+    valueFrom: nearest
+inputs:
+  - id: first_input
+    type: File
+    doc: First track.
+    inputBinding:
+      position: 4
+  - id: second_input
+    type: File
+    doc: Second track.
+    inputBinding:
+      position: 5
+  - id: output_name
+    type: string
+    doc: Output file name (the 'write' operator; a wiggle file, or bedGraph with write_bedgraph).
+    default: out.wig
+  - id: write_bedgraph
+    type: ['null', boolean]
+    doc: Use the 'write_bg' operator, which writes bedGraph instead of wiggle.
+outputs:
+  - id: output_file
+    type: File
+    doc: The track written by the 'write' operator.
+    outputBinding:
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wiggletools:1.2.11--h7118728_10

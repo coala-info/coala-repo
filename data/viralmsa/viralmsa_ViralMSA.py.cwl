@@ -56,8 +56,6 @@ inputs:
       prefix: --quiet
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference
     inputBinding:
       position: 101

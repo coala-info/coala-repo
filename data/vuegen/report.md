@@ -1,5 +1,11 @@
 # vuegen CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vuegen | PASS |  |
+
 ## vuegen
 
 ### Tool Description

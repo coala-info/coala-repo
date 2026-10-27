@@ -9,15 +9,16 @@ doc: "Creates an index on the specified graph or graphs. All graphs indexed must
 inputs:
   - id: graphs
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Graph file(s) to index
     inputBinding:
       position: 1
   - id: dist_name
     type:
       - 'null'
-      - File
+      - string
     doc: use this file to store a snarl-based distance index
     inputBinding:
       position: 102
@@ -118,11 +119,12 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --upweight-node
     doc: upweight the node with ID N to push it to be part of a top-level chain 
       (may repeat)
     inputBinding:
       position: 102
-      prefix: --upweight-node
   - id: verify_index
     type:
       - 'null'
@@ -139,29 +141,61 @@ inputs:
     inputBinding:
       position: 102
       prefix: --xg-alts
-  - id: xg_name
+  - id: xg_in
     type:
       - 'null'
       - File
+    doc: existing XG index to read for GCSA or distance indexing (use instead of
+      graphs)
+    inputBinding:
+      position: 102
+      prefix: --xg-name
+  - id: xg_name
+    type:
+      - 'null'
+      - string
     doc: use this file to store a succinct, queryable version of graph(s), or 
       read for GCSA or distance indexing
     inputBinding:
       position: 102
       prefix: --xg-name
   - id: gcsa_out_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output GCSA2 (FILE) & LCP (FILE.lcp) indexes
     inputBinding:
       position: 103
       prefix: --gcsa-out
 outputs:
+  - id: xg_out
+    type:
+      - 'null'
+      - File
+    doc: XG index written when xg_name is given
+    outputBinding:
+      glob: $(inputs.xg_name)
+  - id: dist_out
+    type:
+      - 'null'
+      - File
+    doc: Snarl-based distance index written when dist_name is given
+    outputBinding:
+      glob: $(inputs.dist_name)
   - id: gcsa_out
     type:
       - 'null'
       - File
-    doc: output GCSA2 (FILE) & LCP (FILE.lcp) indexes
+    doc: GCSA2 index written when gcsa_out_path is given
     outputBinding:
       glob: $(inputs.gcsa_out_path)
+  - id: gcsa_lcp_out
+    type:
+      - 'null'
+      - File
+    doc: LCP file of the GCSA2 index (<gcsa_out_path>.lcp)
+    outputBinding:
+      glob: "${ return inputs.gcsa_out_path ? inputs.gcsa_out_path + '.lcp' : []; }"
 requirements:
   - class: InlineJavascriptRequirement
 hints:

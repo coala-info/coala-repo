@@ -1,5 +1,16 @@
 # woltka CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| woltka_classify | PASS |  |
+| woltka_collapse | PASS |  |
+| woltka_coverage | PASS |  |
+| woltka_filter | PASS |  |
+| woltka_merge | PASS |  |
+| woltka_normalize | PASS |  |
+
 ## woltka_collapse
 
 ### Tool Description
@@ -157,6 +168,120 @@ Options:
   -h, --help                     Show this message and exit.
 ```
 
+
+## woltka_classify
+
+### Tool Description
+Main classification workflow: Alignments => profile(s).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/woltka:0.1.7--pyhdfd78af_0
+- **Homepage**: https://github.com/qiyunzhu/woltka
+- **Package**: https://anaconda.org/channels/bioconda/packages/woltka/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: woltka classify [OPTIONS]
+
+  Main classification workflow: Alignments => profile(s).
+
+Options:
+  -i, --input PATH                Path to input alignment file or directory of
+                                  alignment files. Enter "-" for stdin.
+                                  [required]
+  -o, --output PATH               Path to output profile file or directory of
+                                  profile files.  [required]
+  -f, --format [sam|b6o|paf|map]  Format of read alignments: "sam": SAM
+                                  format, "b6o": BLAST tabular format, "paf":
+                                  PAF format, "map": simple query-to-subject
+                                  map. If not specified, program will
+                                  automatically infer from file content.
+  -e, --filext TEXT               Input filename extension following sample
+                                  ID.
+  -s, --samples TEXT              Sample IDs to include in the analysis. Can
+                                  be a comma-separated string or path to a
+                                  list file. Also defines the order of samples
+                                  in the output.
+  --demux / --no-demux            Demultiplex alignment by first underscore in
+                                  query identifier.
+  -x, --exclude TEXT              Subject IDs to exclude while parsing
+                                  alignments. Can be a comma-separated string
+                                  or path to a list file. If an alignment is
+                                  hit, the entire query (and its paired mate,
+                                  if any) will be dropped.
+  --trim-sub TEXT                 Trim subject IDs at the last given
+                                  delimiter. Default: "_", or enter a custom
+                                  value.
+  --nodes PATH                    Hierarchies defined by NCBI nodes.dmp or
+                                  compatible formats.
+  --newick PATH                   Hierarchies defined by a tree in Newick
+                                  format.
+  --lineage PATH                  Lineage strings. Can accept Greengenes-style
+                                  rank prefix.
+  --columns PATH                  Table of classification units per rank
+                                  (column).
+  -m, --map PATH                  Mapping of lower classification units to
+                                  higher ones.
+  --map-as-rank / --map-no-rank   Extract rank name from map filename.
+  -n, --names PATH                Names of classification units as defined by
+                                  NCBI names.dmp or a simple map.
+  -r, --rank TEXT                 Classify sequences at this rank. Enter
+                                  "none" to directly report subjects; enter
+                                  "free" for free-rank classification. Can
+                                  specify multiple comma-separated ranks.
+  --uniq                          One sequence can only be assigned to one
+                                  classification unit, or remain unassigned if
+                                  there is ambiguity. Otherwise, all candidate
+                                  units are reported and their counts are
+                                  normalized.
+  --major INTEGER RANGE           In given-rank classification, use majority
+                                  rule at this percentage threshold to
+                                  determine assignment when there are multiple
+                                  candidates.  [51<=x<=99]
+  --above                         In given-rank classification, allow
+                                  assigning a sequence to a higher rank if it
+                                  cannot be assigned to the current rank.
+  --subok                         In free-rank classification, allow assigning
+                                  a sequence to its direct subject, if
+                                  applicable, before going up in hierarchy.
+  -c, --coords PATH               Reference gene coordinates on genomes.
+  --overlap INTEGER RANGE         Read/gene overlapping percentage threshold.
+                                  [default: 80; 1<=x<=100]
+  -t, --stratify PATH             Directory of read-to-feature maps for
+                                  stratification.
+  -z, --sizes PATH                Divide counts by subject sizes. Can provide
+                                  a mapping file, or type "." to calculate
+                                  from gene coordinates.
+  --frac                          Divide counts by total count of each sample
+                                  (i.e., fractions).
+  --scale TEXT                    Scale counts by this factor. Accepts "k",
+                                  "M" suffixes.
+  --digits INTEGER RANGE          Round counts to this number of digits after
+                                  the decimal point.  [0<=x<=10]
+  --to-biom / --to-tsv            Output profile format (BIOM or TSV).
+  --unassigned                    Report unassigned sequences.
+  --name-as-id                    Replace feature IDs with names.
+  --add-rank                      Append feature ranks to table.
+  --add-lineage                   Append lineage strings to table.
+  -u, --outmap PATH               Write read-to-feature maps to this
+                                  directory.
+  --zipmap [none|gz|bz2|xz]       Compress read-to-feature maps using this
+                                  algorithm.
+  --outcov PATH                   Write subject coverage maps to this
+                                  directory.
+  --cov-fmt [bed|gff|0e|1e|0i|1i]
+                                  Format of subject coverage coordinates.
+                                  Default is BED-like (0-based, exclusive
+                                  end).
+  --chunk INTEGER                 Number of queries to read and parse in each
+                                  chunk of alignment.
+  --cache INTEGER                 Number of recent results to cache for faster
+                                  classification.
+  --no-exe                        Disable calling external programs for
+                                  decompression.
+  -h, --help                      Show this message and exit.
+```
 
 ## Metadata
 - **Skill**: generated

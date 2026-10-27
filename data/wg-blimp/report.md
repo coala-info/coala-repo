@@ -1,5 +1,15 @@
 # wg-blimp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wg-blimp_create-config | PASS | ran with two small real SARS-CoV-2 FASTQ pairs and the genome (genome_build None); config YAML content is correct |
+| wg-blimp_delete-all-output | Failed | image problem: tool writes to its own install folder (site-packages/snakemake_wrapper/conda), which is read-only for a non-root container user |
+| wg-blimp_run-shiny | Not completed | long-running Shiny GUI server |
+| wg-blimp_run-snakemake | Not completed | pipeline, skipped |
+| wg-blimp_run-snakemake-from-config | Not completed | pipeline, skipped |
+
 ## wg-blimp_create-config
 
 ### Tool Description

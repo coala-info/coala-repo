@@ -5,7 +5,7 @@ baseCommand:
   - annotate_1000g
 label: vt_annotate_1000g
 doc: "annotates variants that are present in 1000 Genomes variant set\n\nTool homepage:
-  https://github.com/Aikoyori/ProgrammingVTuberLogos"
+  https://github.com/atks/vt"
 inputs:
   - id: input_vcf
     type: File
@@ -14,6 +14,9 @@ inputs:
       position: 1
   - id: data_set_vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: false
     doc: 1000G data set VCF file
     inputBinding:
       position: 102
@@ -47,7 +50,7 @@ inputs:
     doc: Output or path parameter `output_vcf_path`
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: -o
 outputs:
   - id: output_vcf
     type:

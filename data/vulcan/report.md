@@ -1,5 +1,11 @@
 # vulcan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vulcan | PASS |  |
+
 ## vulcan
 
 ### Tool Description

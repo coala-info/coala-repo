@@ -1,5 +1,11 @@
 # vsearch CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vsearch | PASS |  |
+
 ## vsearch
 
 ### Tool Description

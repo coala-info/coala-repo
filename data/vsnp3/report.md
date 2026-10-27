@@ -1,5 +1,13 @@
 # vsnp3 CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vsnp3_vsnp3_path_adder.py | Failed | image problem: --cwd must write /usr/local/dependencies/reference_options_paths.txt inside the image, which is read-only, so the path is not added (exit code 0); base command also fixed |
+| vsnp3_vsnp3_step1.py | PASS |  |
+| vsnp3_vsnp3_step2.py | PASS |  |
+
 ## vsnp3_vsnp3_path_adder.py
 
 ### Tool Description

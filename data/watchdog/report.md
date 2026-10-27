@@ -1,33 +1,49 @@
 # watchdog CWL Generation Report
 
-## watchdog
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| watchdog_tricks-generate-yaml | PASS | stdout mode generates correct tricks YAML; the --append-to-file option crashes in this version (tool bug: bytes/str TypeError) |
+
+## watchdog_tricks-generate-yaml
 
 ### Tool Description
-Periodically write to watchdog device DEV
+Generate Yaml configuration for tricks named on the command line.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/watchdog:0.8.3--py36_0
 - **Homepage**: https://github.com/gorakhargosh/watchdog
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/watchdog/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/watchdog/overview
-- **Total Downloads**: 7.2K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/gorakhargosh/watchdog
-- **Stars**: N/A
 ### Original Help Text
 ```text
-BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+usage: watchmedo tricks-generate-yaml [-h] [--python-path PYTHON_PATH]
+                                      [--append-to-file APPEND_TO_FILE] [-a]
+                                      [trick_paths [trick_paths ...]]
 
-Usage: watchdog [-t N[ms]] [-T N[ms]] [-F] DEV
+    Subcommand to generate Yaml configuration for tricks named on the command
+    line.
 
-Periodically write to watchdog device DEV
+    :param args:
+        Command line argument options.
+    
 
-	-T N	Reboot after N seconds if not reset (default 60)
-	-t N	Reset every N seconds (default 30)
-	-F	Run in foreground
+positional arguments:
+  trick_paths           Dotted paths for all the tricks you want to generate
+                        (default: -)
 
-Use 500ms to specify period in milliseconds
+optional arguments:
+  -h, --help            show this help message and exit
+  --python-path PYTHON_PATH
+                        paths separated by / to add to the python path
+                        (default: '.')
+  --append-to-file APPEND_TO_FILE
+                        appends the generated tricks YAML to a file; if not
+                        specified, prints to standard output (default: -)
+  -a, --append-only     if --append-to-file is not specified, produces output
+                        for appending instead of a complete tricks yaml file.
+                        (default: False)
 ```
 

@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wdltool
+baseCommand:
+  - wdltool
+  - validate
 label: wdltool_validate
-doc: "Validates a WDL file.\n\nTool homepage: https://github.com/broadinstitute/wdltool"
+doc: "Performs full validation of the WDL file including syntax and semantic checking.\n\nTool homepage: https://github.com/broadinstitute/wdltool"
 inputs:
   - id: wdl_file
     type: File
-    doc: The WDL file to validate.
+    doc: WDL file
     inputBinding:
       position: 1
 outputs:

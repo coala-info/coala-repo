@@ -13,22 +13,14 @@ inputs:
     doc: Input sequence file(s)
     inputBinding:
       position: 1
-  - id: detailed_help
+  - id: verbose
     type:
       - 'null'
       - boolean
-    doc: Print help, including all details and hidden options, and exit
+    doc: Be verbose.
     inputBinding:
       position: 102
-      prefix: --detailed-help
-  - id: full_help
-    type:
-      - 'null'
-      - boolean
-    doc: Print help, including hidden options, and exit
-    inputBinding:
-      position: 102
-      prefix: --full-help
+      prefix: --verbose
   - id: jobs
     type:
       - 'null'
@@ -243,6 +235,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: ps_files
+    type:
+      type: array
+      items: File
+    doc: PostScript structure plots and dot plots written by the tool
+    outputBinding:
+      glob: '*.ps'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/viennarna:2.7.2--py310pl5321haba5358_0

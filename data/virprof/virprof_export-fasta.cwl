@@ -84,16 +84,14 @@ inputs:
   - id: out_bins
     type:
       - 'null'
-      - File
+      - string
     doc: Output list of created bins
     inputBinding:
       position: 101
       prefix: --out-bins
   - id: out_scaffolds
-    type:
-      - 'null'
-      - File
-    doc: Metadata for scaffolds (CSV)
+    type: string
+    doc: Metadata for scaffolds (CSV); the tool crashes when it is missing
     inputBinding:
       position: 101
       prefix: --out-scaffolds
@@ -109,6 +107,27 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_fasta
+    type:
+      type: array
+      items: File
+    doc: FASTA file(s) with the exported bins (gzip-compressed)
+    outputBinding:
+      glob: '*.fasta.gz'
+  - id: out_bins_file
+    type:
+      - 'null'
+      - File
+    doc: List of created bins
+    outputBinding:
+      glob: $(inputs.out_bins)
+  - id: out_scaffolds_file
+    type: File
+    doc: Metadata for scaffolds (CSV)
+    outputBinding:
+      glob: $(inputs.out_scaffolds)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virprof:0.9.2--pyhdfd78af_0

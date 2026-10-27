@@ -13,7 +13,7 @@ inputs:
       position: 101
       prefix: --db
   - id: hmm_database
-    type: File?
+    type: File
     doc: Path to HMM database
     inputBinding:
       position: 101

@@ -4,7 +4,7 @@ baseCommand:
   - wipertools
   - fastqwiper
 label: wipertools_fastqwiper
-doc: "Wipes quality scores from a FASTQ file.\n\nTool homepage: https://github.com/mazzalab/fastqwiper"
+doc: "Fixes a damaged FASTQ file: drops or repairs malformed records.\n\nTool homepage: https://github.com/mazzalab/fastqwiper"
 inputs:
   - id: alphabet
     type:
@@ -31,7 +31,7 @@ inputs:
   - id: report
     type:
       - 'null'
-      - File
+      - string
     doc: File name of the final quality report. Print on screen if not specified
     inputBinding:
       position: 101
@@ -42,6 +42,13 @@ inputs:
       position: 102
       prefix: --fastq_out
 outputs:
+  - id: report_file
+    type:
+      - 'null'
+      - File
+    doc: Final quality report
+    outputBinding:
+      glob: $(inputs.report)
   - id: fastq_out
     type: File
     doc: Wiped FASTQ file

@@ -5,7 +5,7 @@ baseCommand:
   - paste
 label: vt_paste
 doc: "Pastes VCF files like the unix paste functions. This is used after the per sample
-  genotyping step in vt.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+  genotyping step in vt.\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: input_vcfs
     type:

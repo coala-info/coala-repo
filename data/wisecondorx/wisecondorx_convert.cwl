@@ -8,6 +8,11 @@ doc: "Convert and filter a aligned reads to .npz\n\nTool homepage: https://githu
 inputs:
   - id: infile
     type: File
+    secondaryFiles:
+      - .bai?
+      - ^.bai?
+      - .crai?
+      - ^.crai?
     doc: aligned reads input for conversion
     inputBinding:
       position: 1

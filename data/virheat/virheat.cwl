@@ -37,7 +37,7 @@ inputs:
   - id: genome_length
     type:
       - 'null'
-      - string
+      - int
     doc: Length of the genome (needed if gff3 is not provided)
     inputBinding:
       position: 102
@@ -101,6 +101,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --name
+  - id: output_dir_path
+    type: string
+    doc: Output directory (second positional argument; the plot is written into it)
+    inputBinding:
+      position: 2
   - id: reference_id
     type: string
     doc: Reference identifier
@@ -112,17 +117,15 @@ inputs:
       - 'null'
       - type: array
         items: string
-        inputBinding:
-          prefix: --scores
-          separate: true
-    doc: Experimental setting (specific for SARS-CoV-2)! Specify scores to be 
-      added to the plot by providing a CSV file containing scores, along with 
-      its column for amino-acid positions, its column for scores, and 
-      descriptive score names (e.g., expression, binding, antibody escape, 
-      etc.). This option can be used multiple times to include multiple sets of 
-      scores.
+    doc: 'Experimental setting (specific for SARS-CoV-2)! Give four values: the scores CSV file name, its column for amino-acid positions, its column for scores, and a descriptive score name. The CSV file must be staged in the working directory (see scores_file).'
     inputBinding:
       position: 102
+      prefix: --scores
+  - id: scores_file
+    type:
+      - 'null'
+      - File
+    doc: Scores CSV file named in the scores option; it is staged in the working directory.
   - id: sort
     type:
       - 'null'
@@ -151,9 +154,13 @@ inputs:
 outputs:
   - id: output_dir
     type: Directory
-    doc: Output directory
+    doc: Output directory with the heatmap plot
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: "${ var l = []; if (inputs.scores_file) { l.push(inputs.scores_file); } return l; }"
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virheat:0.7.6--pyhdfd78af_0

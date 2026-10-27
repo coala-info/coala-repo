@@ -12,9 +12,7 @@ inputs:
     inputBinding:
       position: 1
   - id: list
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Tab-separated list with (at least) two columns <readname> and 
       <haplotype> (can be gzipped). Currently, the haplotypes have to be named 
       H1, H2, etc. (or none). Alternatively, the output of the "haplotag" 
@@ -41,7 +39,10 @@ inputs:
   - id: output
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --output
     doc: Output haplotype reads to FILE. Use this option as many times as there 
       are haplotypes in the input. The first -o is used for H1, second for H2 
       etc.
@@ -110,12 +111,13 @@ outputs:
   - id: output_output
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
     doc: Output haplotype reads to FILE. Use this option as many times as there 
       are haplotypes in the input. The first -o is used for H1, second for H2 
       etc.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output || [])
   - id: output_output_untagged
     type:
       - 'null'

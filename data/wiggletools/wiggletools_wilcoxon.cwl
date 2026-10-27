@@ -1,56 +1,43 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wiggletools_wilcoxon
+baseCommand: wiggletools
 label: wiggletools_wilcoxon
-doc: "Performs a Wilcoxon rank-sum test on wiggle files.\n\nTool homepage: https://github.com/Ensembl/WiggleTools"
-inputs:
-  - id: input_files
-    type:
-      type: array
-      items: File
-    doc: Two or more wiggle files to compare.
-    inputBinding:
-      position: 1
-  - id: group_size
-    type:
-      - 'null'
-      - int
-    doc: The number of files to group together for comparison. Defaults to 2.
-    inputBinding:
-      position: 102
-      prefix: --group-size
-  - id: paired
-    type:
-      - 'null'
-      - boolean
-    doc: Perform a paired Wilcoxon test. Requires an even number of input files.
-    inputBinding:
-      position: 102
-      prefix: --paired
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: Print verbose output.
-    inputBinding:
-      position: 102
-      prefix: --verbose
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 103
-      prefix: --output-file
-outputs:
-  - id: output_file
-    type:
-      - 'null'
-      - File
-    doc: File to write the results to. Defaults to stdout.
-    outputBinding:
-      glob: $(inputs.output_file_path)
+doc: "Wilcoxon rank-sum test between two sets of tracks at each position (set comparison wilcoxon).\n\nTool homepage: https://github.com/Ensembl/WiggleTools"
 requirements:
   - class: InlineJavascriptRequirement
+arguments:
+  - position: 1
+    valueFrom: "$(inputs.write_bedgraph ? 'write_bg' : 'write')"
+  - position: 2
+    valueFrom: $(inputs.output_name)
+  - position: 3
+    valueFrom: wilcoxon
+  - position: 5
+    valueFrom: ':'
+inputs:
+  - id: group1_files
+    type: File[]
+    doc: First set of tracks (at least 3 files for ttest; the sets are separated by ':').
+    inputBinding:
+      position: 4
+  - id: group2_files
+    type: File[]
+    doc: Second set of tracks.
+    inputBinding:
+      position: 6
+  - id: output_name
+    type: string
+    doc: Output file name (the 'write' operator; a wiggle file, or bedGraph with write_bedgraph).
+    default: out.wig
+  - id: write_bedgraph
+    type: ['null', boolean]
+    doc: Use the 'write_bg' operator, which writes bedGraph instead of wiggle.
+outputs:
+  - id: output_file
+    type: File
+    doc: The track written by the 'write' operator.
+    outputBinding:
+      glob: $(inputs.output_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wiggletools:1.2.11--h7118728_10

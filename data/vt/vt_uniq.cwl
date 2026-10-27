@@ -5,7 +5,7 @@ baseCommand:
   - uniq
 label: vt_uniq
 doc: "Drops duplicate variants that appear later in the the VCF file.\n\nTool homepage:
-  https://github.com/Aikoyori/ProgrammingVTuberLogos"
+  https://github.com/atks/vt"
 inputs:
   - id: in_vcf
     type: File
@@ -33,7 +33,7 @@ inputs:
     doc: Output or path parameter `output_vcf_path`
     inputBinding:
       position: 103
-      prefix: --output-vcf
+      prefix: -o
 outputs:
   - id: output_vcf
     type:

@@ -16,35 +16,34 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fasta
-  - id: output_dir_path
-    type:
-      - 'null'
-      - string
+  - id: output_dir
+    type: string
+    doc: Output directory (created before the run; the tool writes into it)
     inputBinding:
       position: 102
-      prefix: --output
+      prefix: --output_dir
 outputs:
-  - id: output_dir
+  - id: out_directory
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_dir_path)
+      glob: $(inputs.output_dir)
   - id: inter_chr_tsv
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Table mapping the scaffolds to their chromosomal assignment.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_dir)/inter_chr.tsv
   - id: hap_chr_level_fa
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Fasta file with chromosomal level sequences.
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_dir)/hap.chr_level.fa
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: "$({class: 'Directory', basename: inputs.output_dir, listing: []})"
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vgp-processcuration:1.1--pyhdfd78af_0

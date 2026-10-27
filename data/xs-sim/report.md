@@ -1,5 +1,11 @@
 # xs-sim CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xs-sim_XS | PASS |  |
+
 ## xs-sim_XS
 
 ### Tool Description

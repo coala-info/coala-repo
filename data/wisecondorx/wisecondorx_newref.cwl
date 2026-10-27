@@ -45,7 +45,7 @@ inputs:
   - id: plotyfrac
     type:
       - 'null'
-      - File
+      - string
     doc: Path to yfrac .png plot for --yfrac optimization (e.g. 
       path/to/plot.png); software will stop after plotting after which --yfrac 
       can be set manually
@@ -70,10 +70,21 @@ inputs:
       prefix: --yfrac
 outputs:
   - id: out_outfile
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Path and filename for the reference output (e.g. path/to/myref.npz)
     outputBinding:
       glob: '$(inputs.outfile)'
+  - id: out_plotyfrac
+    type:
+      - 'null'
+      - File
+    doc: Y read fraction plot written when --plotyfrac is given
+    outputBinding:
+      glob: $(inputs.plotyfrac)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wisecondorx:1.2.9--pyhdfd78af_0

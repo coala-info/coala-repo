@@ -4,7 +4,7 @@ baseCommand:
   - vt
   - peek
 label: vt_peek
-doc: "Summarizes the variants in a VCF file\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+doc: "Summarizes the variants in a VCF file\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: input_vcf
     type: File
@@ -58,8 +58,11 @@ inputs:
     doc: Output or path parameter `output_pdf_path`
     inputBinding:
       position: 103
-      prefix: --output-pdf
+      prefix: -y
 outputs:
+  - id: summary
+    type: stderr
+    doc: Text summary of the variants (vt writes it to standard error)
   - id: output_pdf
     type:
       - 'null'
@@ -79,3 +82,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vt:2015.11.10--2
+stderr: vt_peek.err

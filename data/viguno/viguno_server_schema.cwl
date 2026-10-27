@@ -3,14 +3,18 @@ class: CommandLineTool
 baseCommand:
   - viguno
   - server
-label: viguno_server
-doc: "Clap sub command below \"server\"\n\nTool homepage: https://github.com/bihealth/viguno"
+  - schema
+label: viguno_server_schema
+doc: "Dump the schema\n\nTool homepage: https://github.com/bihealth/viguno"
 inputs:
-  - id: command
-    type: string
-    doc: The command to run (run, schema, help)
+  - id: output_file
+    type:
+      - 'null'
+      - string
+    doc: Path to the output file. Use stdout if missing
     inputBinding:
-      position: 1
+      position: 101
+      prefix: --output-file
   - id: quiet
     type:
       - 'null'
@@ -18,7 +22,7 @@ inputs:
         items: boolean
     doc: Decrease logging verbosity
     inputBinding:
-      position: 102
+      position: 101
       prefix: --quiet
   - id: verbose
     type:
@@ -27,13 +31,22 @@ inputs:
         items: boolean
     doc: Increase logging verbosity
     inputBinding:
-      position: 102
+      position: 101
       prefix: --verbose
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: schema_file
+    type:
+      - 'null'
+      - File
+    doc: Schema file written when output_file is given
+    outputBinding:
+      glob: $(inputs.output_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/viguno:0.4.0--h13c227e_0
-stdout: viguno_server.out
+stdout: viguno_server_schema.out

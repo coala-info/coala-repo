@@ -7,8 +7,6 @@ doc: "Aligns sequences to a reference genome, identifying mutations and structur
 inputs:
   - id: reference
     type: File
-    secondaryFiles:
-      - .fai
     doc: Reference FASTA file or ORF description XML file
     inputBinding:
       position: 1
@@ -37,7 +35,7 @@ inputs:
   - id: export_reference_sequence
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Include reference sequence in the export: yes or no'
     inputBinding:
       position: 103
@@ -45,7 +43,7 @@ inputs:
   - id: export_with_insertions
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Include insertions in the export: yes or no'
     inputBinding:
       position: 103
@@ -85,7 +83,7 @@ inputs:
   - id: progress
     type:
       - 'null'
-      - boolean
+      - string
     doc: 'Show progress: yes or no'
     inputBinding:
       position: 103
@@ -109,6 +107,13 @@ outputs:
     doc: Directory for nucleotide debug output
     outputBinding:
       glob: $(inputs.nt_debug_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: '$(inputs.nt_debug_directory ? inputs.nt_debug_directory : "none")'
+        entry: '$(inputs.nt_debug_directory ? {"class": "Directory", "listing": []} : null)'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virulign:1.1.1--hf316886_6

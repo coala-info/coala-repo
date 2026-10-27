@@ -1,96 +1,96 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: voronota_get-balls-from-atoms-file
+baseCommand:
+  - voronota
+  - get-balls-from-atoms-file
 label: voronota_get-balls-from-atoms-file
-doc: "Reads atoms from a PDB or mmCIF file and computes Voronoi tessellation balls.\n\
-  \nTool homepage: https://www.voronota.com/"
+doc: "Reads atoms from a PDB or mmCIF file and writes the list of balls.
+
+Tool homepage: https://www.voronota.com/"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
-  - id: input_file
+  - id: input_atoms
     type: File
-    doc: file in PDB or mmCIF format
-    inputBinding:
-      position: 1
+    doc: "PDB or mmCIF atoms file (stdin)"
   - id: annotated
     type:
       - 'null'
       - boolean
-    doc: flag to enable annotated mode
+    doc: "flag to enable annotated mode"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --annotated
-  - id: default_radius
-    type:
-      - 'null'
-      - float
-    doc: default atomic radius
-    inputBinding:
-      position: 102
-      prefix: --default-radius
-  - id: hull_offset
-    type:
-      - 'null'
-      - float
-    doc: positive offset distance enables adding artificial hull balls
-    inputBinding:
-      position: 102
-      prefix: --hull-offset
   - id: include_heteroatoms
     type:
       - 'null'
       - boolean
-    doc: flag to include heteroatoms
+    doc: "flag to include heteroatoms"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --include-heteroatoms
   - id: include_hydrogens
     type:
       - 'null'
       - boolean
-    doc: flag to include hydrogen atoms
+    doc: "flag to include hydrogen atoms"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --include-hydrogens
+  - id: multimodel_chains
+    type:
+      - 'null'
+      - boolean
+    doc: "flag to read multiple models in PDB format and rename chains accordingly"
+    inputBinding:
+      position: 101
+      prefix: --multimodel-chains
   - id: input_format
     type:
       - 'null'
       - string
     doc: "input format, variants are: 'pdb' (default), 'mmcif', 'detect'"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --input-format
-  - id: multimodel_chains
+  - id: radii_file
     type:
       - 'null'
-      - boolean
-    doc: flag to read multiple models in PDB format and rename chains 
-      accordingly
+      - string
+    doc: "path to radii configuration file"
     inputBinding:
-      position: 102
-      prefix: --multimodel-chains
+      position: 101
+      prefix: --radii-file
+  - id: default_radius
+    type:
+      - 'null'
+      - float
+    doc: "default atomic radius"
+    inputBinding:
+      position: 101
+      prefix: --default-radius
   - id: only_default_radius
     type:
       - 'null'
       - boolean
-    doc: flag to make all radii equal to the default radius
+    doc: "flag to make all radii equal to the default radius"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --only-default-radius
-  - id: radii_file
+  - id: hull_offset
     type:
       - 'null'
-      - File
-    doc: path to radii configuration file
+      - float
+    doc: "positive offset distance enables adding artificial hull balls"
     inputBinding:
-      position: 102
-      prefix: --radii-file
+      position: 101
+      prefix: --hull-offset
 outputs:
-  - id: output_balls
-    type:
-      - 'null'
-      - File
-    doc: list of balls
-    outputBinding:
-      glob: '*.out'
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0
+stdin: $(inputs.input_atoms.path)
+stdout: voronota_get-balls-from-atoms-file.out

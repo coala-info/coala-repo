@@ -5,7 +5,7 @@ baseCommand:
   - subset
 label: vt_subset
 doc: "Subsets a VCF file to a set of variants that are polymorphic on a selected set
-  of individuals.\n\nTool homepage: https://github.com/Aikoyori/ProgrammingVTuberLogos"
+  of individuals.\n\nTool homepage: https://github.com/atks/vt"
 inputs:
   - id: in_vcf
     type: File
@@ -47,7 +47,7 @@ inputs:
     doc: Output or path parameter `output_file_path`
     inputBinding:
       position: 103
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
     type:

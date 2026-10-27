@@ -1,5 +1,12 @@
 # wtdbg CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| wtdbg_wtdbg2 | PASS | Assembled Arabidopsis plastid HiFi reads into a 158 kb contig set (expected genome 154 kb). |
+| wtdbg_wtpoa-cns | PASS | Consensus of the wtdbg2 layout gave 4 contigs, 158 kb in total. |
+
 ## wtdbg_wtdbg2
 
 ### Tool Description

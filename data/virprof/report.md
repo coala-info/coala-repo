@@ -1,5 +1,21 @@
 # virprof CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| virprof_blast-classify | PASS |  |
+| virprof_blastbin | PASS |  |
+| virprof_download-genomes | PASS |  |
+| virprof_export-fasta | Failed | tool bug: the default --fasta-id-format ({bin_name}_{qacc} {bp} bp) crashes with KeyError qacc on blastbin output; with an explicit format such as {bin_name}_{acc} {bp} bp it works and exports the 6 expected bins |
+| virprof_fasta-qc | PASS |  |
+| virprof_filter-blast | PASS |  |
+| virprof_find-bins | PASS |  |
+| virprof_index-tree | PASS |  |
+| virprof_init-test | PASS |  |
+| virprof_prepare-phylo | PASS | main mode with an input FASTA works (network); the species-only mode (--species without input FASTA) crashes with AttributeError (tool bug) |
+| virprof_ymp | Not completed | pipeline, skipped (ymp is the Snakemake-based pipeline runner) |
+
 ## virprof_blast-classify
 
 ### Tool Description

@@ -1,13 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wdltool_parse
+baseCommand:
+  - wdltool
+  - parse
 label: wdltool_parse
-doc: "Parses a WDL file and prints its Abstract Syntax Tree (AST).\n\nTool homepage:
-  https://github.com/broadinstitute/wdltool"
+doc: "Compares a WDL file against the grammar and prints out an abstract syntax tree if it is valid, and a syntax error otherwise.\n\nTool homepage: https://github.com/broadinstitute/wdltool"
 inputs:
   - id: wdl_file
     type: File
-    doc: The WDL file to parse.
+    doc: WDL file
     inputBinding:
       position: 1
 outputs:

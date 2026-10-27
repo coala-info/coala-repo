@@ -1,5 +1,11 @@
 # xtandem CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| xtandem | PASS |  |
+
 ## xtandem
 
 ### Tool Description

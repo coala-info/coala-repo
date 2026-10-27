@@ -1,44 +1,48 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: voronota_query-balls-clashes
+baseCommand:
+  - voronota
+  - query-balls-clashes
 label: voronota_query-balls-clashes
-doc: "Query Voronota output for ball clashes.\n\nTool homepage: https://www.voronota.com/"
+doc: "Finds clashes between balls.
+
+Tool homepage: https://www.voronota.com/"
+requirements:
+  - class: InlineJavascriptRequirement
 inputs:
   - id: input_balls
     type: File
-    doc: "list of balls (line format: 'annotation x y z r')"
-    inputBinding:
-      position: 1
+    doc: "list of annotated balls (stdin)"
   - id: clash_distance
     type:
       - 'null'
       - float
-    doc: clash distance threshold in angstroms
+    doc: "clash distance threshold in angstroms, default is 3.0"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --clash-distance
-  - id: init_radius_for_bsh
-    type:
-      - 'null'
-      - float
-    doc: initial radius for bounding sphere hierarchy
-    inputBinding:
-      position: 102
-      prefix: --init-radius-for-BSH
   - id: min_seq_sep
     type:
       - 'null'
       - int
-    doc: minimum residue sequence separation
+    doc: "minimum residue sequence separation, default is 2"
     inputBinding:
-      position: 102
+      position: 101
       prefix: --min-seq-sep
+  - id: init_radius_for_BSH
+    type:
+      - 'null'
+      - float
+    doc: "initial radius for bounding sphere hierarchy"
+    inputBinding:
+      position: 101
+      prefix: --init-radius-for-BSH
 outputs:
-  - id: output_clashes
-    type: File
-    doc: "list of clashes (line format: 'annotation1 annotation2 distance min-distance-between-balls')"
-    outputBinding:
-      glob: '*.out'
+  - id: stdout
+    type: stdout
+    doc: Standard output
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0
+stdin: $(inputs.input_balls.path)
+stdout: voronota_query-balls-clashes.out

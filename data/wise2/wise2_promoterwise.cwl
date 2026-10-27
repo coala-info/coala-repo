@@ -5,12 +5,12 @@ label: wise2_promoterwise
 doc: "Seed restriction\n\nTool homepage: https://www.ebi.ac.uk/~birney/wise2/"
 inputs:
   - id: query_sequence
-    type: string
+    type: File
     doc: Query sequence
     inputBinding:
       position: 1
   - id: target_sequence
-    type: string
+    type: File
     doc: Target sequence
     inputBinding:
       position: 2
@@ -257,7 +257,7 @@ inputs:
   - id: query_end_restriction
     type:
       - 'null'
-      - boolean
+      - int
     doc: query end position restriction
     inputBinding:
       position: 103
@@ -265,7 +265,7 @@ inputs:
   - id: query_start_restriction
     type:
       - 'null'
-      - boolean
+      - int
     doc: query start position restriction
     inputBinding:
       position: 103
@@ -289,7 +289,7 @@ inputs:
   - id: target_end_restriction
     type:
       - 'null'
-      - boolean
+      - int
     doc: target end position restriction
     inputBinding:
       position: 103
@@ -297,7 +297,7 @@ inputs:
   - id: target_start_restriction
     type:
       - 'null'
-      - boolean
+      - int
     doc: target start position restriction
     inputBinding:
       position: 103
@@ -363,6 +363,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+requirements:
+  - class: EnvVarRequirement
+    envDef:
+      - envName: WISECONFIGDIR
+        envValue: /usr/local/share/wise2/wisecfg
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wise2:2.4.1--h08bb679_0

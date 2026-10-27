@@ -75,10 +75,11 @@ inputs:
       - 'null'
       - type: array
         items: int
+        inputBinding:
+          prefix: --node
     doc: write table for only specified node(s)
     inputBinding:
       position: 101
-      prefix: --node
   - id: node_list
     type:
       - 'null'
@@ -92,10 +93,11 @@ inputs:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --packs-in
     doc: begin by summing coverage packs from each provided FILE
     inputBinding:
       position: 101
-      prefix: --packs-in
   - id: threads
     type:
       - 'null'

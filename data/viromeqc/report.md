@@ -1,5 +1,11 @@
 # viromeqc CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viromeqc_viromeQC.py | Not completed | needs the SILVA and Amphora databases (about 1.2 GB), which the tool installs into its own script folder; that folder is read-only in the container and the path has no option |
+
 ## viromeqc_viromeQC.py
 
 ### Tool Description

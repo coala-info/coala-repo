@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: VirStrain.py
+baseCommand: virstrain
 label: virstrain
 doc: "An RNA virus strain-level identification tool for short reads.\n\nTool homepage:
   https://github.com/liaoherui/VirStrain"

@@ -1,5 +1,11 @@
 # weblogo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| weblogo | PASS |  |
+
 ## weblogo
 
 ### Tool Description

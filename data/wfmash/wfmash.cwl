@@ -6,14 +6,20 @@ doc: "wfmash [target.fa] [query.fa] {OPTIONS}\n\nTool homepage: https://github.c
 inputs:
   - id: target_fa
     type: File
-    doc: target sequences (required)
+    doc: target sequences (required); needs a .fai index beside it
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 1
   - id: query_fa
     type:
       - 'null'
       - File
-    doc: 'query sequences (default: self-map)'
+    doc: 'query sequences (default: self-map); needs a .fai index beside it'
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 2
   - id: align_paf
@@ -379,18 +385,30 @@ inputs:
   - id: write_index
     type:
       - 'null'
-      - File
+      - string
     doc: save index to FILE
     inputBinding:
       position: 103
       prefix: --write-index
   - id: scaffold_out_path
-    type: string
+    type:
+      - 'null'
+      - string
     doc: output scaffold mappings to FILE
     inputBinding:
       position: 104
       prefix: --scaffold-out
 outputs:
+  - id: paf_or_sam
+    type: stdout
+    doc: Mappings or alignments in PAF (default) or SAM format (standard output)
+  - id: index_out
+    type:
+      - 'null'
+      - File
+    doc: saved index file
+    outputBinding:
+      glob: $(inputs.write_index)
   - id: scaffold_out
     type:
       - 'null'
@@ -403,3 +421,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wfmash:0.24.2--h27bdcc9_0
+stdout: wfmash.out

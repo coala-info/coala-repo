@@ -24,7 +24,7 @@ inputs:
   - id: database
     type:
       - 'null'
-      - Directory
+      - File
     doc: Define path to custom database of known formula-mass pairs
     inputBinding:
       position: 101
@@ -105,15 +105,43 @@ inputs:
       prefix: --variable-metadata
   - id: output_path
     type: string
+    doc: Specify output file path (the tool adds the extensions)
     inputBinding:
       position: 102
       prefix: --output
 outputs:
-  - id: output
+  - id: output_tabular
     type: File
-    doc: Specify output file path
+    doc: Tabular output (output path plus .tabular)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path).tabular
+  - id: output_html
+    type: File
+    doc: Interactive van Krevelen diagram (output path plus .html)
+    outputBinding:
+      glob: $(inputs.output_path).html
+  - id: output_json
+    type:
+      - 'null'
+      - File
+    doc: JSON output (output path plus .json), written with --json
+    outputBinding:
+      glob: $(inputs.output_path).json
+  - id: output_sql
+    type:
+      - 'null'
+      - File
+    doc: SQLite database (output path plus .db), written with --sql
+    outputBinding:
+      glob: $(inputs.output_path).db
+  - id: output_metadata
+    type:
+      - 'null'
+      - File
+    doc: Argument metadata (output path plus _metadata.tabular), written with
+      --metadata
+    outputBinding:
+      glob: $(inputs.output_path)_metadata.tabular
 requirements:
   - class: InlineJavascriptRequirement
 hints:

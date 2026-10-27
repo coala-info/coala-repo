@@ -1,5 +1,15 @@
 # vispr CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vispr_archive | PASS |  |
+| vispr_config | PASS |  |
+| vispr_plot | Failed | image problem: pandas version clash (Interval vs float) makes vispr plot crash in plot_pvals after writing 6 plots |
+| vispr_server | Not completed | web server only; it serves a viewer and does not exit |
+| vispr_test | Not completed | web server only, and it downloads its test data from bitbucket |
+
 ## vispr_config
 
 ### Tool Description

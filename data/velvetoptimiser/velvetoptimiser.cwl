@@ -115,6 +115,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --velvetgoptions
+  - id: reads
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Read files named in velveth_files. They are staged in the working directory so
+      that the names in velveth_files resolve.
   - id: velveth_files
     type:
       - 'null'
@@ -135,13 +142,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
-  - id: prefix_files
+  - id: logfile
+    type:
+      - 'null'
+      - File
+    doc: Log file of the optimisation run (<prefix>_logfile.txt)
+    outputBinding:
+      glob: '*_logfile.txt'
+  - id: assembly_directories
     type:
       type: array
-      items: File
-    doc: Files written with the prefix given in prefix
+      items: Directory
+    doc: Assembly directories per hash value (<prefix>_data_<hash>)
     outputBinding:
-      glob: $(inputs.prefix)*
+      glob: '*_data_*'
   - id: dir_final_dir
     type:
       - 'null'
@@ -149,6 +163,9 @@ outputs:
     doc: The name of the directory to put the final output into.
     outputBinding:
       glob: $(inputs.dir_final)
+requirements:
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.reads)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/velvetoptimiser:v2.2.6-2-deb_cv1

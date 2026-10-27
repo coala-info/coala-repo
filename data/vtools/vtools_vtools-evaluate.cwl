@@ -8,12 +8,16 @@ inputs:
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --call-samples
     doc: Sample(s) in call-vcf to consider. May be called multiple times
     inputBinding:
       position: 101
-      prefix: --call-samples
   - id: call_vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     doc: Path to VCF with calls to be evaluated
     inputBinding:
       position: 101
@@ -38,12 +42,16 @@ inputs:
     type:
       type: array
       items: string
+      inputBinding:
+        prefix: --positive-samples
     doc: Sample(s) in positive-vcf to consider. May be called multiple times
     inputBinding:
       position: 101
-      prefix: --positive-samples
   - id: positive_vcf
     type: File
+    secondaryFiles:
+      - pattern: .tbi
+        required: true
     doc: Path to VCF with known calls
     inputBinding:
       position: 101

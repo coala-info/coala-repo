@@ -1,5 +1,11 @@
 # veryfasttree CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| veryfasttree_VeryFastTree | PASS | protein tree of 138 real sequences (nf-core epang) and nucleotide GTR tree of 4 real COI sequences |
+
 ## veryfasttree_VeryFastTree
 
 ### Tool Description

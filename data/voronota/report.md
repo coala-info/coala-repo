@@ -1,5 +1,25 @@
 # voronota CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| voronota_calculate-contacts | PASS |  |
+| voronota_calculate-vertices | PASS |  |
+| voronota_calculate-vertices-in-parallel | PASS |  |
+| voronota_compare-contacts | PASS |  |
+| voronota_draw-contacts | PASS |  |
+| voronota_expand-descriptors | PASS |  |
+| voronota_get-balls-from-atoms-file | PASS |  |
+| voronota_query-balls | PASS |  |
+| voronota_query-balls-clashes | PASS |  |
+| voronota_query-contacts | PASS |  |
+| voronota_run-script | PASS |  |
+| voronota_score-contacts-energy | PASS | input contacts were reformatted with awk/tr as in the voronota-voromqa script, after calculate-contacts and query-contacts runs |
+| voronota_score-contacts-potential | PASS | input contacts were reformatted with awk/tr as in the voronota-voromqa script, after calculate-contacts and query-contacts runs |
+| voronota_score-contacts-quality | PASS |  |
+| voronota_write-balls-to-atoms-file | PASS |  |
+
 ## voronota_get-balls-from-atoms-file
 
 ### Tool Description

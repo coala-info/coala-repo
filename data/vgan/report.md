@@ -1,5 +1,15 @@
 # vgan CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| vgan_duprm | Failed | tool bug: vgan duprm exits with status 1 after a correct run (128 identical reads reduced to 1) |
+| vgan_euka | Not completed | needs the euka database, which is not in the image and is a large download |
+| vgan_gam2prof | Not completed | needs the euka database (euka_dir/euka_db.og), which is not in the image |
+| vgan_haplocart | Failed | image problem: no reads map even for the rCRS reference FASTA, so haplocart stops with 'no reads mapped'; the image hcfiles have no zipcodes file |
+| vgan_soibean | Not completed | needs a soibean taxon database (soibean_dir, made by make_graph_files.sh), which is not in the image |
+
 ## vgan_euka
 
 ### Tool Description

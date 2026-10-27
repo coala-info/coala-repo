@@ -23,7 +23,8 @@ inputs:
   - id: cell_data
     type:
       - 'null'
-      - string
+      - File
+      - Directory
     doc: The cell genotype file in VCF format or cellSNP folder with sparse 
       matrices.
     inputBinding:
@@ -122,10 +123,8 @@ inputs:
       position: 101
       prefix: --nproc
   - id: out_dir
-    type:
-      - 'null'
-      - Directory
-    doc: Dirtectory for output files
+    type: string
+    doc: Directory for output files (the tool default, a folder next to the cell data, is read-only when staged, so always give one)
     inputBinding:
       position: 101
       prefix: --outDir
@@ -150,6 +149,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: out_directory
+    type: Directory
+    doc: Output directory with the donor assignments
+    outputBinding:
+      glob: $(inputs.out_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vireosnp:0.5.9--pyh7e72e81_0

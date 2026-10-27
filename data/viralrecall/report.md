@@ -1,5 +1,12 @@
 # viralrecall CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| viralrecall | PASS |  |
+| viralrecall_database | PASS |  |
+
 ## viralrecall
 
 ### Tool Description
@@ -49,6 +56,34 @@ optional arguments:
                         available cores)
   -h, --help            show this help message and exit
   -v, --version         show program's version number and exit
+
+*******************************************************************
+
+*******************************************************************
+```
+
+## viralrecall_database
+
+### Tool Description
+Download the HMM database for Viralrecall
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/viralrecall:3.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/abdealijivaji/ViralRecall_3.0
+- **Package**: https://anaconda.org/channels/bioconda/packages/viralrecall/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: viralrecall_database [-h] [-d DB_DIR] [-n NAME]
+
+Download database for Viralrecall
+
+options:
+  -h, --help           show this help message and exit
+  -d, --db_dir DB_DIR  Directory to download the HMM database. Default is
+                       current working directory
+  -n, --name NAME      Name to give the database directory. Default is "hmm"
 
 *******************************************************************
 

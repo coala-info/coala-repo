@@ -15,13 +15,16 @@
 | krona_ktImportFCP | PASS | synthetic data: planted FCP table with real taxon names; counts 12, 8, 5 and 3 match |
 | krona_ktImportGalaxy | PASS | synthetic data: planted Galaxy taxonomic representation with real taxon names; counts match |
 | krona_ktImportKrona | PASS | real BLAST Krona chart re-imported; renamed root shows 50 reads |
+| krona_ktImportMETAREP-BLAST | PASS | synthetic data: real BLAST hits (SARS-CoV-2) rewritten into the METAREP blast.tab layout; chart has 50 reads under Viruses with correct lineage |
+| krona_ktImportMETAREP-EC | PASS | synthetic data: real E. coli EC numbers rewritten into the METAREP annotation.tab layout; chart has 25 reads and 8 transferases |
 | krona_ktImportMGRAST | PASS | synthetic data: planted MG-RAST table export (live MG-RAST service did not answer); abundances 40 and 25 match |
 | krona_ktImportPhymmBL | PASS | synthetic data: planted PhymmBL results.03 table; counts 6 and 4 match |
 | krona_ktImportRDP | PASS | real RDP Classifier output for three NCBI 16S rRNA sequences; E. coli, Bacillus and Pseudomonas genera found; also run with minimum confidence |
+| krona_ktImportRDPComparison | PASS | synthetic data: planted RDP comparison table with real genera; both library counts (20/8 and 10/17) match |
 | krona_ktImportTaxonomy | PASS | taxonomy database was the tiny nf-core krona_taxonomy.tab |
 | krona_ktImportText | PASS |  |
 | krona_ktImportXML | PASS | XML taken from a real BLAST Krona chart; chart has root with 50 reads and the SARS-CoV-2 lineage |
-| krona_ktUpdateTaxonomy.sh | Not completed | needs download of the NCBI taxonomy (large, network); baseCommand fixed to ktUpdateTaxonomy.sh |
+| krona_ktUpdateTaxonomy.sh | Not completed | needs download of the NCBI taxonomy; the FTP server did not answer from this machine (timeout) |
 
 ## krona_ktUpdateTaxonomy.sh
 
@@ -1104,6 +1107,196 @@ Options:
    [-f] <integer>  Field of accessions. [Default: '1']
 
    [-tax <string>  Path to directory containing a taxonomy database to use.
+```
+
+## krona_ktImportMETAREP-BLAST
+
+### Tool Description
+Creates a Krona chart by classifying reads based on BLAST results in METAREP data folders.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/krona:2.8.1--pl5321hdfd78af_1
+- **Homepage**: https://github.com/marbl/Krona
+- **Package**: https://anaconda.org/channels/bioconda/packages/krona/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                  __________________________________________
+_________________________________/ KronaTools 2.8.1 - ktImportMETAREP-BLAST \___
+
+Creates a Krona chart by classifying reads based on BLAST results in METAREP
+data folders.
+                                                                     _______
+____________________________________________________________________/ Usage \___
+
+ktImportMETAREP-BLAST \
+   [options] \
+   metarep_folder_1[,name_1] \
+   [metarep_folder_2[,name_2]] \
+   ...
+
+   metarep_folder  Unpacked METAREP data folder. By default, separate datasets
+                   will be created for each input (see [-c]).
+
+   name            A name to show in the list of datasets in the Krona chart
+                   (if multiple input files are present and [-c] is not
+                   specified). By default, the basename of the file will be
+                   used.
+                                                                   _________
+__________________________________________________________________/ Options \___
+
+   [-o <string>]    Output file name. [Default: 'metarep-blast.krona.html']
+
+   [-n <string>]    Name of the highest level. [Default: 'root']
+
+   [-r]             Pick from the best hits randomly instead of finding the
+                    lowest common ancestor.
+
+   [-p]             Use percent identity for average scores instead of log[10]
+                    e-value.
+
+   [-b]             Use bit score for average scores instead of log[10]
+                    e-value.
+
+   [-c]             Combine data from each file, rather than creating separate
+                    datasets within the chart.
+
+   [-d <integer>]   Maximum depth of wedges to include in the chart.
+
+   [-k]             Show the "cellular organisms" taxon (collapsed by
+                    default).
+
+   [-K]             Collapse assignments to taxa with ranks labeled "no rank"
+                    by moving up to parent.
+
+   [-x <integer>]   Hue (0-360) for "bad" scores. [Default: '0']
+
+   [-y <integer>]   Hue (0-360) for "good" scores. [Default: '120']
+
+   [-u <string>]    URL of Krona resources to use instead of bundling them
+                    with the chart (e.g. "http://krona.sourceforge.net").
+                    Reduces size of charts and allows updates, though charts
+                    will not work without access to this URL.
+
+   [-qp <string>]   Url to send query IDs to (instead of listing them) for
+                    each wedge. The query IDs will be sent as a comma separated
+                    list in the POST variable "queries", with the current
+                    dataset index (from 0) in the POST variable "dataset". The
+                    url can include additional variables encoded via GET.
+
+   [-tax <string>]  Path to directory containing a taxonomy database to use.
+                    [Default: '/usr/local/opt/krona/taxonomy']
+
+   [-v]             Verbose.
+```
+
+## krona_ktImportMETAREP-EC
+
+### Tool Description
+Creates a Krona chart of abundances of EC (Enzyme Commission) numbers in METAREP data folders.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/krona:2.8.1--pl5321hdfd78af_1
+- **Homepage**: https://github.com/marbl/Krona
+- **Package**: https://anaconda.org/channels/bioconda/packages/krona/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                     _______________________________________
+____________________________________/ KronaTools 2.8.1 - ktImportMETAREP-EC \___
+
+Creates a Krona chart of abundances of EC (Enzyme Commission) numbers in
+METAREP data folders. By default, queries with no EC number will be ignored
+(see -i).
+                                                                     _______
+____________________________________________________________________/ Usage \___
+
+ktImportMETAREP-EC \
+   [options] \
+   metarep_folder_1[,name_1] \
+   [metarep_folder_2[,name_2]] \
+   ...
+
+   metarep_folder  Unpacked METAREP data folder. By default, separate datasets
+                   will be created for each input (see [-c]).
+
+   name            A name to show in the list of datasets in the Krona chart
+                   (if multiple input files are present and [-c] is not
+                   specified). By default, the basename of the file will be
+                   used.
+                                                                   _________
+__________________________________________________________________/ Options \___
+
+   [-o <string>]   Output file name. [Default: 'metarep-ec.krona.html']
+
+   [-n <string>]   Name of the highest level. [Default: 'root']
+
+   [-c]            Combine data from each file, rather than creating separate
+                   datasets within the chart.
+
+   [-i]            Include a wedge for queries with no hits.
+
+   [-d <integer>]  Maximum depth of wedges to include in the chart.
+
+   [-u <string>]   URL of Krona resources to use instead of bundling them with
+                   the chart (e.g. "http://krona.sourceforge.net"). Reduces
+                   size of charts and allows updates, though charts will not
+                   work without access to this URL.
+
+   [-qp <string>]  Url to send query IDs to (instead of listing them) for each
+                   wedge. The query IDs will be sent as a comma separated list
+                   in the POST variable "queries", with the current dataset
+                   index (from 0) in the POST variable "dataset". The url can
+                   include additional variables encoded via GET.
+
+   [-v]            Verbose.
+```
+
+## krona_ktImportRDPComparison
+
+### Tool Description
+Creates a Krona chart from an RDP library comparison.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/krona:2.8.1--pl5321hdfd78af_1
+- **Homepage**: https://github.com/marbl/Krona
+- **Package**: https://anaconda.org/channels/bioconda/packages/krona/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                  __________________________________________
+_________________________________/ KronaTools 2.8.1 - ktImportRDPComparison \___
+
+Creates a Krona chart from an RDP library comparison.
+                                                                     _______
+____________________________________________________________________/ Usage \___
+
+ktImportRDPComparison [options] rdp_comparison [name1] [name2]
+
+   rdp_comparison  RDP comparison result downloaded as text.
+
+   name            A name for each library to appear in the chart. The default
+                   is "Library [1/2]".
+                                                                   _________
+__________________________________________________________________/ Options \___
+
+   [-o <string>]   Output file name. [Default: 'rdp.comp.krona.html']
+
+   [-n <string>]   Name of the highest level. [Default: 'root']
+
+   [-d <integer>]  Maximum depth of wedges to include in the chart.
+
+   [-x <integer>]  Hue (0-360) for "bad" scores. [Default: '0']
+
+   [-y <integer>]  Hue (0-360) for "good" scores. [Default: '120']
+
+   [-u <string>]   URL of Krona resources to use instead of bundling them with
+                   the chart (e.g. "http://krona.sourceforge.net"). Reduces
+                   size of charts and allows updates, though charts will not
+                   work without access to this URL.
 ```
 
 ## Metadata

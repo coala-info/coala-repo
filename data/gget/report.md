@@ -24,6 +24,7 @@
 | gget_ref | PASS |  |
 | gget_search | Failed | image problem: gget search cannot connect to the Ensembl MySQL server because the mysql_native_password plugin is missing in the image |
 | gget_seq | PASS |  |
+| gget_setup | PASS | tested with module elm (downloads the ELM database files, 4 non-empty files); the other modules install pip packages or large model files. |
 
 ## gget_ref
 
@@ -1006,6 +1007,33 @@ optional arguments:
   -q, --quiet           Does not print progress information.
   -nc, --no_confirm     Skip confirmation before downloading data.
   -sh, --show           Show the plot in a window
+```
+
+## gget_setup
+
+### Tool Description
+Install third-party dependencies for a specified gget module.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gget:0.29.0--pyhdfd78af_0
+- **Homepage**: https://github.com/pachterlab/gget
+- **Package**: https://anaconda.org/channels/bioconda/packages/gget/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gget setup [-h] [-q] [-o OUT] {alphafold,gpt,cellxgene,elm,cbio}
+
+Install third-party dependencies for a specified gget module.
+
+positional arguments:
+  {alphafold,gpt,cellxgene,elm,cbio}
+                        gget module for which dependencies should be installed, e.g. 'alphafold'
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -q, --quiet           Does not print progress information.
+  -o OUT, --out OUT     Path to folder where downloaded files are saved (currently only applies when module='elm'). Default: Files are saved inside the gget installation folder.
 ```
 
 ## Metadata

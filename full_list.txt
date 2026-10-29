@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 15407; PASS: 12054; Failed: 1823; Not completed: 1530
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 15696; PASS: 12290; Failed: 1844; Not completed: 1562
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -6041,15 +6041,24 @@ get_homologues	get_homologues_parse_pangenome_matrix.pl	PASS	core and soft-core 
 get_homologues	get_homologues_plot_pancore_matrix.pl	PASS	synthetic data: core-genome curves computed from the repo sample matrix; fits and plots written
 get_mnv	get_mnv	Failed	tool bug: v1.0.0 gives wrong amino acid changes for minus-strand genes (Rv0387c 467516 reported Pro162Arg, codon check gives Ser162Ser); CWL fixed to collect the .MNV.tsv
 get_orfs	get_orfs	PASS	repo seq.fasta: ORF translation of frame +1 checked by hand; genome JQ995537 gives ORFs of at least 100 aa
+getorganelle	getorganelle_check_annotations.py	PASS	real data: Arabidopsis plastome GenBank checked against the Haematoxylum plastome; known odd ndhD start and low-similarity genes reported, check log written
+getorganelle	getorganelle_disentangle_organelle_assembly.py	PASS	real data: slimmed SPAdes graph of the Galaxy Arabidopsis reads gives two circular 154478 bp path sequences
+getorganelle	getorganelle_evaluate_assembly_using_mapping.py	PASS	real data: Galaxy Arabidopsis reads mapped back to the assembled plastome; all 10000 pairs mapped, about 19x coverage; --draw crashes because matplotlib is missing in the image
 getorganelle	getorganelle_fastg_to_gfa.py	PASS	SPAdes graph from the plastome run converted; segment counts match
+getorganelle	getorganelle_get_annotated_regions_from_gb.py	Failed	image problem: biopython is not installed, so the script stops before writing anything
 getorganelle	getorganelle_get_organelle_config.py	PASS	downloaded the embplant_pt databases (config_dir now a string, network access added)
 getorganelle	getorganelle_get_organelle_from_assembly.py	PASS	slimmed and disentangled the SPAdes graph into a 154478 bp plastome (expected sizes now comma-joined)
 getorganelle	getorganelle_get_organelle_from_reads.py	PASS	Galaxy Arabidopsis reads assembled a complete 154478 bp plastome (run with -s and --genes from one database type)
+getorganelle	getorganelle_get_pair_reads.py	PASS	real data: Galaxy Arabidopsis read pair split; all 10000 pairs kept as paired, no unpaired reads
 getorganelle	getorganelle_gfa_to_fasta.py	PASS	SPAdes graph from the plastome run converted; segment counts match
 getorganelle	getorganelle_gfa_to_fastg.py	PASS	SPAdes graph from the plastome run converted; segment counts match
+getorganelle	getorganelle_join_spades_fastg_by_blast.py	PASS	real data: SPAdes graph from a 15 percent subsample of the Arabidopsis reads joined against the plastome; gap and overlap nodes added (282 to 1350 records)
+getorganelle	getorganelle_make_batch_for_get_organelle.py	PASS	script written with correct get_organelle_from_reads.py commands per sample folder; default search can swap the two read files, --strict keeps the order
+getorganelle	getorganelle_make_batch_for_iteratively_mapping_assembling.py	PASS	five-round bowtie2 and SPAdes batch script written with the expected commands and run folders
 getorganelle	getorganelle_plastome_arch_info.py	PASS	assembled plastome gives LSC 84170, SSC 17780, IR 26264
 getorganelle	getorganelle_reconstruct_graph_from_fasta.py	PASS	plastome fasta rebuilt into a GFA graph
 getorganelle	getorganelle_rm_low_coverage_duplicated_contigs.py	Failed	tool bug: script crashes with AttributeError treat_no_hits for any input
+getorganelle	getorganelle_round_statistics.py	PASS	real data: per-round reads from a plastome assembly run; seed 99.6 percent and cumulative 99.96 percent of sites covered at depth above 0
 getorganelle	getorganelle_slim_graph.py	PASS	SPAdes graph slimmed with the embplant_pt label fasta; hit contigs and csv written
 getorganelle	getorganelle_summary_get_organelle_output.py	PASS	summary csv of the plastome run has organelle type, length 154478 and coverage
 gfa1	gfa1_falcon2gfa	Not completed	no usable test data (needs a real FALCON, fermi or Supernova assembly graph)
@@ -6137,6 +6146,7 @@ gget	gget_pdb	PASS
 gget	gget_ref	PASS	
 gget	gget_search	Failed	image problem: gget search cannot connect to the Ensembl MySQL server because the mysql_native_password plugin is missing in the image
 gget	gget_seq	PASS	
+gget	gget_setup	PASS	tested with module elm (downloads the ELM database files, 4 non-empty files); the other modules install pip packages or large model files.
 gia	gia_bam_convert	PASS	bed conversion works; the fastq option fails visibly because the tool does not implement it
 gia	gia_bam_coverage	PASS	
 gia	gia_bam_filter	PASS	
@@ -7755,13 +7765,16 @@ krona	krona_ktImportEC	PASS	25 real E. coli EC numbers from UniProt; counts matc
 krona	krona_ktImportFCP	PASS	synthetic data: planted FCP table with real taxon names; counts 12, 8, 5 and 3 match
 krona	krona_ktImportGalaxy	PASS	synthetic data: planted Galaxy taxonomic representation with real taxon names; counts match
 krona	krona_ktImportKrona	PASS	real BLAST Krona chart re-imported; renamed root shows 50 reads
+krona	krona_ktImportMETAREP-BLAST	PASS	synthetic data: real BLAST hits (SARS-CoV-2) rewritten into the METAREP blast.tab layout; chart has 50 reads under Viruses with correct lineage
+krona	krona_ktImportMETAREP-EC	PASS	synthetic data: real E. coli EC numbers rewritten into the METAREP annotation.tab layout; chart has 25 reads and 8 transferases
 krona	krona_ktImportMGRAST	PASS	synthetic data: planted MG-RAST table export (live MG-RAST service did not answer); abundances 40 and 25 match
 krona	krona_ktImportPhymmBL	PASS	synthetic data: planted PhymmBL results.03 table; counts 6 and 4 match
 krona	krona_ktImportRDP	PASS	real RDP Classifier output for three NCBI 16S rRNA sequences; E. coli, Bacillus and Pseudomonas genera found; also run with minimum confidence
+krona	krona_ktImportRDPComparison	PASS	synthetic data: planted RDP comparison table with real genera; both library counts (20/8 and 10/17) match
 krona	krona_ktImportTaxonomy	PASS	taxonomy database was the tiny nf-core krona_taxonomy.tab
 krona	krona_ktImportText	PASS	
 krona	krona_ktImportXML	PASS	XML taken from a real BLAST Krona chart; chart has root with 50 reads and the SARS-CoV-2 lineage
-krona	krona_ktUpdateTaxonomy.sh	Not completed	needs download of the NCBI taxonomy (large, network); baseCommand fixed to ktUpdateTaxonomy.sh
+krona	krona_ktUpdateTaxonomy.sh	Not completed	needs download of the NCBI taxonomy; the FTP server did not answer from this machine (timeout)
 kronos	kronos_init	PASS	no biological data; made a pipeline script from a config made by make_config
 kronos	kronos_make_component	PASS	no biological data; template made by kronos itself, USER set in the CWL
 kronos	kronos_make_config	PASS	no biological data; run on components made by make_component, USER and PYTHONPATH set in the CWL
@@ -8860,18 +8873,126 @@ mmft	mmft_trans	PASS
 mmlong2	mmlong2	Not completed	pipeline, skipped
 mmlong2-lite	mmlong2-lite	Not completed	pipeline, skipped
 mmquant	mmquant	PASS	
+mmseqs2	mmseqs2_addtaxonomy	PASS	3 real proteins (SARS-CoV, human, E. coli) searched against an 11-protein taxonomy database made with createtaxdb; result gained taxon id, rank, name and lineage columns
+mmseqs2	mmseqs2_aggregatetax	PASS	387 translated ORFs of the SARS-CoV-2 genome (4 hit an 11-protein taxonomy database) grouped as one set gave contig taxon SARS-CoV-2 (387 ORFs, 4 assigned, agreement 1.0)
+mmseqs2	mmseqs2_aliasdb	PASS	alias of a 100-protein database; the links resolve and give the same entries as the source
+mmseqs2	mmseqs2_align	PASS	100 queries against 3000 UniProt proteins (MMseqs2 examples): prefilter hits aligned, 368 alignments with E-values
+mmseqs2	mmseqs2_alignall	PASS	3000 proteins aligned inside their clusters: 7817 alignment rows
+mmseqs2	mmseqs2_alignbykmer	PASS	100 queries against 3000 proteins gave 197 k-mer based alignments with CIGAR strings
+mmseqs2	mmseqs2_apply	PASS	wc -c run on each entry of a 100-sequence database; entry 0 gives 58 = sequence length 57 plus newline
+mmseqs2	mmseqs2_besthitperset	PASS	synthetic split of the real SARS-CoV-2 genome into contig sets (multihitdb, multihitsearch); output is byte-identical to the aggregate step of multihitsearch
+mmseqs2	mmseqs2_clust	PASS	3000 proteins (self prefilter result) clustered into 1087 clusters that cover all 3000 members
 mmseqs2	mmseqs2_cluster	PASS	20000 proteins gave 5763 clusters; createtsv lists all 20000 members
+mmseqs2	mmseqs2_clusterupdate	PASS	old clustering of 3000 proteins updated with a database that lost 20 and gained 10 sequences: 2990 members in 1972 clusters
+mmseqs2	mmseqs2_clusthash	PASS	3000 proteins: 3000 self matches; 77 non-self matches at 99% identity or more
+mmseqs2	mmseqs2_combinepvalperset	Failed	tool bug: the usage line lists 4 paths but the tool asks for 5 and crashes (exit 139) with the documented arguments
+mmseqs2	mmseqs2_compress	PASS	compressed database is about half the size and gives the same entries as the source
+mmseqs2	mmseqs2_concatdbs	PASS	100 + 3000 sequences joined into 3100 entries
+mmseqs2	mmseqs2_convert2fasta	PASS	100 sequences written back with the same headers and sequences as the input FASTA (order differs because createdb shuffles)
 mmseqs2	mmseqs2_convertalis	PASS	alignment database converted to a BLAST-tab table with headers (694 hits); self hits at 100% identity
+mmseqs2	mmseqs2_convertca3m	Not completed	no cA3M test database: result2msa refuses to write cA3M for the test data (indexed target message)
+mmseqs2	mmseqs2_convertkb	PASS	4 real UniProtKB entries (REST download) gave a database with 17 column databases; AC column lists the accessions
+mmseqs2	mmseqs2_convertmsa	PASS	real Pfam seed alignment PF00013 (Stockholm) gave a one-entry MSA database with the aligned sequences
+mmseqs2	mmseqs2_convertprofiledb	PASS	real HH-suite HHM database (nf-core test data, 2 entries; .ffdata and .ffindex renamed to data and .index) gave profile and header entries
+mmseqs2	mmseqs2_countkmer	PASS	3-mer counts of 100 proteins: 8000 rows; counts sum to 44856, the total number of 3-mers
+mmseqs2	mmseqs2_cpdb	PASS	copy of a 3000-protein database is byte-identical to the source
+mmseqs2	mmseqs2_createbintaxonomy	PASS	64-node taxdump gave a binary taxonomy file that createtaxdb and createdmptaxonomy can read
 mmseqs2	mmseqs2_createdb	PASS	20000-protein UniProt FASTA gave a database with 20000 entries, headers and lookup file
+mmseqs2	mmseqs2_createdmptaxonomy	PASS	names.dmp identical to the source taxdump (64 names); node ids, parents and ranks identical
 mmseqs2	mmseqs2_createindex	PASS	built the k-mer index (db.idx) for the 20000-protein database; a search on it gives the same hits as without index; index is about 970 MB
+mmseqs2	mmseqs2_createlinindex	PASS	built the linsearch index (tdb.linidx); easy-linsearch on it gives 21 hits, all also found by normal search
+mmseqs2	mmseqs2_createseqfiledb	PASS	559 clusters with 2 or more members, the same count as in the cluster table
+mmseqs2	mmseqs2_createsubdb	PASS	keys 0,1,2,5,10 gave 5 entries with headers; subsetting by the keys of a result database also works (ancillary links are copied by the wrapper)
+mmseqs2	mmseqs2_createtaxdb	PASS	tiny taxonomy set (11 real UniProt proteins, 64-node taxdump): mapping and taxonomy files written; taxonomy search labels SARS-CoV-2, human and E. coli correctly
 mmseqs2	mmseqs2_createtsv	PASS	cluster database written as a table; give the target database to get sequence names instead of numeric keys
+mmseqs2	mmseqs2_databases	PASS	Resfinder downloaded and converted: 101298 sequences with headers
+mmseqs2	mmseqs2_db2tar	Failed	tool bug: an output named .tar.gz is written as a plain uncompressed tar (the tar itself lists the 100 entries)
+mmseqs2	mmseqs2_decompress	PASS	decompressed copy of a compressed database gives the same entries as the original
+mmseqs2	mmseqs2_diffseqdbs	PASS	old 3000 vs new 2990 sequences: 20 removed, 2980 kept, 10 new, as planted
 mmseqs2	mmseqs2_easy-cluster	PASS	20000 proteins clustered into 5760 clusters; cluster table, all-sequence and representative FASTA files all agree
 mmseqs2	mmseqs2_easy-linclust	PASS	20000 proteins clustered into 15119 clusters by linear-time clustering; table and FASTA files agree
+mmseqs2	mmseqs2_easy-linsearch	Failed	tool bug: with a FASTA target it returns no hits even for identical sequences; only a precomputed linidx database gives hits (21)
+mmseqs2	mmseqs2_easy-rbh	PASS	100 queries against 3000 proteins gave 69 reciprocal best hits; 67 of the 69 pairs are also in a normal search
 mmseqs2	mmseqs2_easy-search	PASS	30 real UniProt queries against 20000 UniProt proteins (MMseqs2 examples) gave 694 hits in 28 queries; the same pairs as search plus convertalis; self hits at 100% identity
 mmseqs2	mmseqs2_easy-taxonomy	PASS	synthetic data: tiny taxonomy database (11 real UniProt proteins, 64-node taxdump) made with createtaxdb; SARS-CoV spike, human ACE2 and E. coli HslV got the right taxa
+mmseqs2	mmseqs2_expand2profile	PASS	100 profiles (one per query) built from a search result expanded with target self alignments
+mmseqs2	mmseqs2_expandaln	PASS	559 expanded alignments, more than the 477 of the input search
+mmseqs2	mmseqs2_extractdomains	PASS	self alignments plus FASTA MSA database: 4 non-empty entries with domain rows (needs -e 10; default thresholds give empty entries)
+mmseqs2	mmseqs2_extractframes	PASS	SARS-CoV-2 genome (30 kb) gave 6 translated frames
+mmseqs2	mmseqs2_extractorfs	PASS	SARS-CoV-2 genome (nf-core sarscov2, 30 kb) gave 387 ORFs, same as a direct mmseqs run
+mmseqs2	mmseqs2_filterdb	PASS	protein alignment database filtered to the top hit per query: 51 alignments became 30, one per query
+mmseqs2	mmseqs2_filterresult	PASS	re-filter of 51 alignments with max_seq_id 0.5 kept 13 hits, none above 50% identity
+mmseqs2	mmseqs2_filtertaxdb	PASS	synthetic data: tiny taxonomy database (11 real UniProt proteins); taxon list 9606 kept only the human hit
+mmseqs2	mmseqs2_filtertaxseqdb	PASS	synthetic data: tiny taxonomy database (11 real UniProt proteins); taxon list 2697049 kept the 3 SARS-CoV-2 proteins
+mmseqs2	mmseqs2_fwbw	PASS	30 real UniProt queries against 500 proteins: forward-backward realignment gave 51 alignments, same pairs as align; self hits at 100% identity
+mmseqs2	mmseqs2_gappedprefilter	PASS	30 real UniProt queries against 500 proteins gave 68 candidate pairs, all 30 self hits found
+mmseqs2	mmseqs2_gff2db	PASS	12 CDS features of the SARS-CoV-2 GFF3 extracted from the genome as 12 sequences (first one 13203 nt, starts with ATG)
+mmseqs2	mmseqs2_kmermatcher	PASS	500 real UniProt proteins gave a k-mer match database with 519 pairs
+mmseqs2	mmseqs2_kmersearch	PASS	30 real UniProt queries against a k-mer index of 500 proteins (made with createlinindex) gave 33 target entries; needs kmer_per_seq above 0 and a matching seed_sub_mat
+mmseqs2	mmseqs2_lca	PASS	synthetic data: tiny taxonomy database (11 real UniProt proteins); SARS-CoV-2, E. coli K12 and human queries got the right taxa with lineages
+mmseqs2	mmseqs2_lcaalign	PASS	synthetic data: tiny taxonomy database; the 3 queries gave gapped alignments at 98%, 94% and 98% identity
 mmseqs2	mmseqs2_linclust	PASS	20000 proteins gave 15118 clusters at 90% identity; createtsv lists all 20000 members
+mmseqs2	mmseqs2_linsearch	Failed	tool bug: gives empty results even for identical sequences (30 empty entries); easy-linsearch gives the same, the internal filterdb step removes every candidate
+mmseqs2	mmseqs2_lndb	PASS	30-protein database linked to a new name; the wrapper turns the links into real files and the data equals the source
+mmseqs2	mmseqs2_majoritylca	PASS	synthetic data: tiny taxonomy database; SARS-CoV-2, E. coli K12 and human queries got the same taxa as lca
+mmseqs2	mmseqs2_map	PASS	30 real UniProt queries against 500 proteins gave 34 hits in 30 queries, all 30 self hits at 100% identity
+mmseqs2	mmseqs2_maskbygff	Failed	tool bug: stops with "GFF entry not found in input database" for accessions that are in the database lookup (gff2db finds them in the same files)
+mmseqs2	mmseqs2_masksequence	PASS	30 real proteins: 232 residues in 5 sequences soft-masked (lower case), the sequences are otherwise unchanged
+mmseqs2	mmseqs2_mergeclusters	PASS	cascaded linclust and cluster steps on 500 proteins merged into 463 clusters covering all 500 members
+mmseqs2	mmseqs2_mergedbs	PASS	500-entry sequence database merged with its header database: each entry is sequence plus header
+mmseqs2	mmseqs2_mergeresultsbyset	PASS	ORF alignments of the SARS-CoV-2 genome (387 ORF entries) merged by set into 1 contig entry holding the best hit
+mmseqs2	mmseqs2_msa2profile	PASS	30 MSAs (from result2msa) converted to 30 profiles; same data as a direct mmseqs run
+mmseqs2	mmseqs2_msa2result	PASS	30 MSAs converted to a sequence database (81 entries) and a profile database (30 entries)
+mmseqs2	mmseqs2_multihitdb	PASS	SARS-CoV-2 genome gave a set database with 387 ORFs in 1 set and the helper databases
+mmseqs2	mmseqs2_multihitsearch	PASS	set database of the SARS-CoV-2 genome searched against itself gave 1 result entry with hits and p-values
+mmseqs2	mmseqs2_mvdb	PASS	30-protein database moved to a new name; data equals the source
+mmseqs2	mmseqs2_nrtotaxmapping	PASS	synthetic data: 11 UniProt accessions mapped to taxon ids with a 4-column accession2taxid file; the tool reads names.dmp, nodes.dmp and merged.dmp from the working directory (now inputs)
+mmseqs2	mmseqs2_offsetalignment	PASS	ORF alignment of the SARS-CoV-2 genome moved to contig coordinates (positions 27886-28245 of the 29829 nt contig); same as a direct mmseqs run
+mmseqs2	mmseqs2_orftocontig	PASS	387 ORFs mapped to contig coordinates, e.g. ORF 0 at 23866-24030 of the 29829 nt contig
+mmseqs2	mmseqs2_pickconsensusrep	PASS	500 proteins in 493 linclust clusters got 492 consensus-based representatives
+mmseqs2	mmseqs2_prefilter	PASS	30 real UniProt queries against 500 proteins gave 63 candidate pairs, same as a direct mmseqs run; all 30 self hits found
+mmseqs2	mmseqs2_prefixid	PASS	30-protein database got the prefix Q_ added to every entry
+mmseqs2	mmseqs2_profile2consensus	PASS	30 profiles gave 30 consensus sequences (first starts MDNKRTSIFIAG, the query sequence)
+mmseqs2	mmseqs2_profile2neff	PASS	30 profiles gave one line of Neff scores each (1.0 per position for single-sequence profiles)
+mmseqs2	mmseqs2_profile2pssm	PASS	30 profiles written as a position-specific scoring matrix table (13741 lines, 20 amino acid columns)
+mmseqs2	mmseqs2_profile2repseq	PASS	30 profiles gave 30 representative sequences with headers
+mmseqs2	mmseqs2_proteinaln2nucl	PASS	10 translated sequence alignments of SARS-CoV-2 genome pieces became nucleotide alignments (3000M, 100% identity, nucleotide coordinates)
+mmseqs2	mmseqs2_rbh	PASS	30 proteins against the 20000-protein database gave 30 reciprocal-best-hit entries with expected hits and E-values
+mmseqs2	mmseqs2_renamedbkeys	PASS	30-entry sequence database written with keys renamed 0..29 to 1000..1029 and the sequences unchanged
+mmseqs2	mmseqs2_rescorediagonal	PASS	prefilter hits of 30 proteins rescored into a 30-entry result database with scores and diagonals
+mmseqs2	mmseqs2_result2dnamsa	PASS	10 nucleotide pieces of the SARS-CoV-2 genome gave a 10-entry DNA MSA database with FASTA-format alignments
 mmseqs2	mmseqs2_result2flat	PASS	cluster sequence file (from createseqfiledb) written as FASTA with 20000 members under 5763 cluster headers
+mmseqs2	mmseqs2_result2msa	PASS	30 protein search results gave a 30-entry MSA database in aligned FASTA format
+mmseqs2	mmseqs2_result2profile	PASS	30-entry profile database; profile2pssm shows consensus residues equal to the query sequences
+mmseqs2	mmseqs2_result2rbh	PASS	merged best-hit result of the rbh workflow gave 30 reciprocal best hit entries, equal to the rbh workflow output
+mmseqs2	mmseqs2_result2repseq	PASS	cluster result of 20000 proteins gave 5763 representative sequences
+mmseqs2	mmseqs2_result2stats	PASS	mean statistic written for 30 entries of a result database
+mmseqs2	mmseqs2_reverseseq	PASS	30 protein sequences reversed; the output is the input read backwards
+mmseqs2	mmseqs2_rmdb	PASS	sequence database files removed from a copy of the directory; only the separate header database files stay
 mmseqs2	mmseqs2_search	PASS	30 queries against the 20000-protein database gave an alignment database with 30 entries
+mmseqs2	mmseqs2_sequence2profile	Not completed	profile database written, but profile2pssm shows the best residue at only about 5% of positions equal to the query and a search with it finds almost no hits, so the output could not be confirmed
+mmseqs2	mmseqs2_setextendeddbtype	PASS	database type file changed from 0 to extended type 2 in a copy of the database; sequences unchanged
+mmseqs2	mmseqs2_sortresult	PASS	30-entry alignment result database sorted, hits listed by decreasing score
+mmseqs2	mmseqs2_splitdb	PASS	20000 proteins split into 3 databases of 6666, 6666 and 6668 entries
+mmseqs2	mmseqs2_splitsequence	PASS	29903-base SARS-CoV-2 genome split into 10 sequences of at most 3000 bases
+mmseqs2	mmseqs2_subtractdbs	PASS	alignment result minus its 10-query subset gave a 30-entry database with those 10 entries now empty
+mmseqs2	mmseqs2_suffixid	PASS	every line of the 10 result entries has its entry key appended as last column
+mmseqs2	mmseqs2_summarizealis	PASS	30 alignment entries summarized to one row each (coverage, mean identity)
+mmseqs2	mmseqs2_summarizeheaders	Not completed	cluster header summaries came out with empty Representative and Members fields for UniProt and UniRef style headers; could not confirm the output
+mmseqs2	mmseqs2_summarizeresult	PASS	30 search results with backtraces summarized into a 30-entry alignment database; note: the tool crashes (double free) on a plain align-module result database
+mmseqs2	mmseqs2_summarizetabs	PASS	BLAST-tab hits of 30 proteins grouped per query gave a summarized domain database with expected lines
+mmseqs2	mmseqs2_swapdb	PASS	30-query alignment database transposed into 544 target-keyed entries
+mmseqs2	mmseqs2_swapresults	PASS	30-query alignment database swapped into 20000 target entries
+mmseqs2	mmseqs2_tar2db	PASS	tar archive of 3 FASTA files became a 3-entry database holding the SARS-CoV, SARS-CoV-2 and human sequences
+mmseqs2	mmseqs2_taxonomy	PASS	synthetic data: tiny taxonomy database (11 real UniProt proteins, 64-node taxdump); SARS-CoV-2, human and E. coli K12 queries got the right taxa
+mmseqs2	mmseqs2_taxonomyreport	PASS	synthetic data: tiny taxonomy database; Kraken report from the taxonomy result lists the three correct lineages
+mmseqs2	mmseqs2_transitivealign	PASS	30-protein self-alignment result transferred into a 30-entry alignment database
+mmseqs2	mmseqs2_translateaa	PASS	30 proteins converted into 30 nucleotide codon sequences of the right length
+mmseqs2	mmseqs2_translatenucs	PASS	10 SARS-CoV-2 genome pieces translated to 10 protein sequences with stop marks
+mmseqs2	mmseqs2_tsv2db	PASS	cluster table of 20000 proteins became a 5763-entry database, one entry per cluster
+mmseqs2	mmseqs2_ungappedprefilter	PASS	30 proteins against the 20000-protein database gave a 30-entry prefilter result with ungapped scores
+mmseqs2	mmseqs2_unpackdb	PASS	30-entry sequence database unpacked into 30 files named by accession, each holding one sequence
+mmseqs2	mmseqs2_view	PASS	entries 0, 1 and 2 of the 30-protein database printed to standard output as sequences
 mmult	mmult_bbglm	PASS	
 mmult	mmult_cpgcdifenrich	PASS	
 mmult	mmult_vmcvmrnme	PASS	
@@ -8918,9 +9039,11 @@ montreal-forced-aligner	montreal-forced-aligner_mfa_align_hf	PASS
 montreal-forced-aligner	montreal-forced-aligner_mfa_align_one	PASS	
 montreal-forced-aligner	montreal-forced-aligner_mfa_align_one_hf	PASS	
 montreal-forced-aligner	montreal-forced-aligner_mfa_compare_alignments	Failed	tool bug: mfa compare_alignments crashes on MFA's own TextGrids (KeyError for words/phones tiers, then sqlite NOT NULL error on phone_interval.begin).
+montreal-forced-aligner	montreal-forced-aligner_mfa_configure	PASS	
 montreal-forced-aligner	montreal-forced-aligner_mfa_diarize	Not completed	needs a PostgreSQL server (mfa says diarization requires --use_postgres true); no server in the one-container run.
 montreal-forced-aligner	montreal-forced-aligner_mfa_find_oovs	PASS	
 montreal-forced-aligner	montreal-forced-aligner_mfa_g2p	PASS	
+montreal-forced-aligner	montreal-forced-aligner_mfa_history	Failed	tool bug: mfa history prints nothing even with a valid command history file (history_cli writes through a logger that is never set up).
 montreal-forced-aligner	montreal-forced-aligner_mfa_model_add_words	PASS	
 montreal-forced-aligner	montreal-forced-aligner_mfa_model_create_hf_model	PASS	
 montreal-forced-aligner	montreal-forced-aligner_mfa_model_download	PASS	
@@ -9151,6 +9274,23 @@ mumemto	mumemto_lengths	PASS
 mumemto	mumemto_merge	PASS	
 mumemto	mumemto_viz	PASS	
 mummer	mummer	Failed	image problem: in mummer 3.23, -mum and -mumreference (the default) segfault or print no matches; only -maxmatch works
+mummer	mummer_combineMUMs	PASS	
+mummer	mummer_delta-filter	PASS	
+mummer	mummer_dnadiff	PASS	
+mummer	mummer_exact-tandems	Failed	image problem: the script needs csh, which is not in the image (shebang '#! -f'), so it exits 127 with 'cannot execute: required file not found'.
+mummer	mummer_mapview	PASS	
+mummer	mummer_mgaps	PASS	
+mummer	mummer_mummerplot	Failed	image problem: gnuplot is not installed in the image, so no plot image is made (only the .gp script and .fplot/.rplot data files).
+mummer	mummer_nucmer	Failed	image problem: in mummer 3.23 the default anchors and --mum give an empty delta file or an error; only --maxmatch works (checked: 1 alignment block, correct coordinates).
+mummer	mummer_promer	Failed	image problem: in mummer 3.23 the default anchors give an empty delta file; only --maxmatch works (checked: alignments in 6 frames with 80-95 percent identity).
+mummer	mummer_repeat-match	PASS	
+mummer	mummer_run-mummer1	Failed	image problem: the script needs csh, which is not in the image (shebang '#! -f'), so it exits 127 with 'cannot execute: required file not found'.
+mummer	mummer_run-mummer3	Failed	image problem: the script needs csh, which is not in the image (shebang '#! -f'), so it exits 127 with 'cannot execute: required file not found'.
+mummer	mummer_show-aligns	PASS	
+mummer	mummer_show-coords	PASS	
+mummer	mummer_show-diff	PASS	
+mummer	mummer_show-snps	PASS	
+mummer	mummer_show-tiling	PASS	
 mummer2circos	mummer2circos	Failed	tool bug: with two query genomes the second one is missing from the plot (one query works); added outputs for the PNG and SVG
 mummer4	mummer4_annotate	Not completed	no usable gap file and data file pair found; the gap file from mgaps is rejected (it asks for a file name)
 mummer4	mummer4_combineMUMs	PASS	
@@ -12013,7 +12153,86 @@ relecov-tools	relecov-tools_update-db	Not completed	needs an iSkyLIMS/relecov da
 relecov-tools	relecov-tools_upload-to-ena	Not completed	needs ENA account credentials and submission server
 relecov-tools	relecov-tools_upload-to-gisaid	Not completed	needs GISAID credentials and submission server
 relecov-tools	relecov-tools_validate	PASS	validated the read-lab-metadata output against the relecov schema: 6 of 13 samples valid, validated JSON and invalid-sample report written
+relion	relion_relion_align_symmetry	PASS	
+relion	relion_relion_align_tiltseries	Not completed	needs IMOD batchruntomo or AreTomo2 (and a GPU for AreTomo2), which are not in the image, and a tilt-series set
+relion	relion_relion_autopick	PASS	
+relion	relion_relion_backproject_2d	PASS	3 class averages written from a 2-iteration 2D classification of 244 extracted particles
+relion	relion_relion_class_ranker	Not completed	needs the class_averages.star of a RELION Select job (backup_selection.star) and the Python class-ranker network, not available for a small test
+relion	relion_relion_convert_star	PASS	synthetic data: a RELION-3.0 style STAR file built from the extracted particles; output has the optics group table and 244 particles with pixel size 3.54
+relion	relion_relion_convert_to_tiff	PASS	cropped 1024x1024 49-frame movie from EMPIAR-10204 converted to TIFF; frame statistics identical to the MRCS input (lossless)
+relion	relion_relion_ctf_mask_test	PASS	synthetic data: assumed defocus 15000 A added to the extracted particles
+relion	relion_relion_ctf_refine	Not completed	needs the result of a RELION 3D refinement (half maps, mask, post-process FSC, refined particle STAR file); no such small real run available
+relion	relion_relion_ctf_toolbox	PASS	
+relion	relion_relion_delete_blobs_2d	Not completed	needs micrograph blob outlines from a previous blob-detection step, not available
+relion	relion_relion_demodulate	Failed	tool bug: stops with 'rlnImageName missing in meta_data_table' on valid RELION 5 particle STAR files (relion_preprocess output and relion_convert_star output)
+relion	relion_relion_estimate_gain	PASS	one movie only (cropped EMPIAR-10204 movie, 49 frames); estimated gain has mean 1.03 as expected
+relion	relion_relion_external_reconstruct	Not completed	internal helper called by relion_refine with an external reconstruction program; no standalone input
+relion	relion_relion_filament_selection	Failed	image problem: the script has an empty shebang so the shell runs it and fails with syntax errors, and python numpy/pandas are not installed in the image
+relion	relion_relion_find_tiltpairs	PASS	synthetic data: tilted coordinates are the picked coordinates shifted by (+6,-4) px; the program recovered the shift (6,-6) and matched all 244 pairs
+relion	relion_relion_flex_analyse	Not completed	needs the output of a RELION multi-body refinement run
+relion	relion_relion_helix_inimodel2d	Not completed	needs 2D class averages or segments of a helical specimen with a known crossover distance; the test data has no helical segments
+relion	relion_relion_helix_toolbox	PASS	
+relion	relion_relion_helix_vote_classes	Not completed	needs helical segment coordinates and 2D classes of filaments; the test data has no helical segments
+relion	relion_relion_image_handler	PASS	
+relion	relion_relion_import	PASS	
+relion	relion_relion_localsym	PASS	tested the --transform function only (rotate the haemoglobin map EMD-3488)
+relion	relion_relion_mask_create	PASS	
+relion	relion_relion_merge_particles	PASS	merged 244 + 488 particles into 732
+relion	relion_relion_motion_refine	Not completed	needs the result of a RELION 3D refinement plus the original movies and post-process FSC for Bayesian polishing; no small real run available
+relion	relion_relion_movie_reconstruct	Not completed	needs refined particles with motion-corrected movies and trajectories from a full RELION refinement run
+relion	relion_relion_mrc2vtk	PASS	
+relion	relion_relion_particle_reposition	PASS	class averages from 2D classification put back on the micrograph at 244 particle positions
+relion	relion_relion_particle_select	Failed	tool bug: stops with 'rlnMicrographName missing from MetaDataTable' on valid RELION 5 particle STAR files, although the column is present
+relion	relion_relion_particle_subtract	Not completed	needs the optimiser STAR file of a RELION 3D refinement or classification of the particles
+relion	relion_relion_particle_symmetry_expand	PASS	
+relion	relion_relion_plot_delocalisation	PASS	synthetic data: assumed defocus 15000 A added to the extracted particles
+relion	relion_relion_postprocess	PASS	actin half maps (EMD-10365) gave final resolution 3.2 A with a mask made by relion_mask_create; --auto_mask is rejected by this RELION version
+relion	relion_relion_preprocess	PASS	
+relion	relion_relion_project	PASS	
+relion	relion_relion_pseudotomo_expansion	Not completed	needs RELION tomography particle, tomogram and motion STAR files; no small real tomography set available
+relion	relion_relion_reconstruct	PASS	synthetic data: 60 projections of the EMD-3061 map (64 px) made with relion_project; the reconstruction has correlation 0.86 with the source map
 relion	relion_relion_refine	PASS	synthetic data: noisy projections of the EMD-2788 apoferritin map made with relion_project; 3D refinement for 2 iterations gave a map with correlation 0.62 to the source map
+relion	relion_relion_run_align_tiltseries	Not completed	needs the external program IMOD or AreTomo2, which is not in the image
+relion	relion_relion_run_ctffind	Not completed	needs an external CTFFIND executable, which is not in the image
+relion	relion_relion_run_motioncorr	PASS	synthetic data: 60 projection images used as movie frames; own motion correction wrote the micrograph and corrected_micrographs.star (ghostscript is missing, so the PDF logs are empty)
+relion	relion_relion_stack_create	PASS	synthetic data: projections of EMD-3061; wrote a 60-image stack (stk.mrcs) and a matching STAR file
+relion	relion_relion_star_datablock_ctfdat	PASS	synthetic data: one-line CTFDAT and ctfparam file; output has defocus and Q0 with reversed sign as documented
+relion	relion_relion_star_datablock_singlefiles	PASS	printed one row for each of three staged files that match the wildcard, with the extra values
+relion	relion_relion_star_datablock_stack	PASS	printed 3 rows 000001@my_images.mrcs to 000003 with the extra values
+relion	relion_relion_star_handler	PASS	synthetic data: selected the 39 of 60 particles with defocus U of 17000 or more; note: --split writes the split files but then reports an error about RELION_OUTPUT_NODES.star
+relion	relion_relion_star_loopheader	PASS	printed the STAR loop header for three labels
+relion	relion_relion_star_printtable	Failed	image problem: the script calls the join command, which is not in the image; the output is empty
+relion	relion_relion_suggest_tvalue	PASS	synthetic data: EMD-3061 map and mask; suggested T-values 4.16 and 4.17
+relion	relion_relion_tiltpair_plot	PASS	synthetic data: 60 particle pairs with a 15 degree tilt offset (RELION-3.0 style STAR files; files with an optics table give an empty plot); EPS plot draws the pairs
+relion	relion_relion_tomo_Wiener_divide	PASS	synthetic data: data and weight terms from the particle reconstruction; the output matches that average (correlation 0.99)
+relion	relion_relion_tomo_add_spheres	Not completed	needs sphere files fitted to a real tomogram; none available
+relion	relion_relion_tomo_align	PASS	synthetic data: tilt series without planted shifts; the frame shifts found are 0.4 pixel on average
+relion	relion_relion_tomo_bin_stack	PASS	synthetic data: 21-view tilt stack from EMD-3061 projections; output has 21 images of 32x32 with the same mean
+relion	relion_relion_tomo_catalogue_tomos	Not completed	format of the tomogram list is not documented; the program crashes (exit 139) on a tomograms STAR file
+relion	relion_relion_tomo_compute_FCC	PASS	synthetic data: FCC curve is about 0.93 to 0.97 over the low-frequency shells
+relion	relion_relion_tomo_convert_projections	PASS	synthetic data: hand-written IMOD newst.com and tilt.com for a 21-view stack; wrote 21 projection matrices with the expected sine and cosine of the tilt angles
+relion	relion_relion_tomo_dark_erase	PASS	synthetic data: planted dark patches in two frames were filled with noise-like values around zero
+relion	relion_relion_tomo_delete_blobs	Not completed	needs sphere files fitted to a real tomogram; none available
+relion	relion_relion_tomo_discover_motif	PASS	synthetic data: planted hexagonal lattice of 400 points; wrote 5 motifs with 60 degree neighbour geometry
+relion	relion_relion_tomo_find_fiducials	Not completed	synthetic tomogram has no gold beads; it found 0 beads
+relion	relion_relion_tomo_find_lattice	Not completed	synthetic data has no lattice, so all maxima and minima files are empty
+relion	relion_relion_tomo_fit_bfactors	Not completed	ran on synthetic data without noise or motion, so the B-factor fit cannot be checked
+relion	relion_relion_tomo_fit_blobs_3d	Not completed	needs a tomogram with membranes or spheres; none available
+relion	relion_relion_tomo_import_coordinates	PASS	synthetic data: three planted coordinates were written to particles.star under the tomogram name
+relion	relion_relion_tomo_local_particle_refine	Not completed	needs a RELION tomography optimisation set (tomograms, particle set, motion, references); no small real set available
+relion	relion_relion_tomo_make_optimisation_set	PASS	synthetic data: wrote an optimisation set STAR file that names the particle and tomogram sets
+relion	relion_relion_tomo_powspec	PASS	synthetic data: tilt stack of EMD-3061 projections; wrote a 32-point radial power spectrum that falls from 9.7e6 to small values
+relion	relion_relion_tomo_predict_tilt_series	PASS	synthetic data: the predicted tilt series has per-frame correlation 0.6 to 0.8 with the input series
+relion	relion_relion_tomo_reconstruct_particle	PASS	synthetic data: same tilt series and four particles (SNR 0.1, no CTF); the average has correlation 0.72 with the source map
+relion	relion_relion_tomo_reconstruct_tomogram	PASS	synthetic data: 41-view tilt series of four copies of the EMD-3061 map; tomogram has correlation magnitude 0.62 with the source volume
+relion	relion_relion_tomo_refine_ctf	Not completed	synthetic images have no CTF, so refined defocus values cannot be checked
+relion	relion_relion_tomo_refine_mag	Not completed	ran on synthetic data, but the magnification matrix (off-diagonals up to 0.09) cannot be confirmed
+relion	relion_relion_tomo_sample_manifold	Not completed	needs manifolds fitted to a real tomogram; none available
+relion	relion_relion_tomo_split_optics	Not completed	synthetic project has one tilt series, so the split output cannot be checked
+relion	relion_relion_tomo_subtomo	PASS	synthetic data: wrote 4 pseudo-subtomograms with weights; the first has correlation 0.48 with the source map
+relion	relion_relion_tomo_taper	PASS	synthetic data: the map faces were tapered to zero at the edge
+relion	relion_relion_tomo_template_pick	Not completed	ran on the synthetic tomogram but wrote only debug maps and no picks
+relion	relion_relion_tomo_tomo_ctf	Not completed	no real tilt series with Thon rings; the synthetic tilt series gave an empty output image
 relion-bin-plusgui	relion-bin-plusgui_relion_preprocess	Failed	tool bug: the normalised stack is written as <o>.mrcs.mrcs while the output STAR file names <o>.mrcs, so the STAR file points to a missing stack
 relion-bin-plusmpi	relion-bin-plusmpi_relion_refine_mpi	PASS	synthetic data: noisy projections of the EMD-2788 apoferritin map; run through mpirun with 3 processes; map correlation to the source map rose from 0.43 to 0.61 in 2 iterations
 relion-bin-plusmpi-plusgui	relion-bin-plusmpi-plusgui_relion_preprocess	Failed	tool bug: the normalised stack is written as <o>.mrcs.mrcs while the output STAR file names <o>.mrcs, so the STAR file points to a missing stack
@@ -13777,13 +13996,17 @@ survindel2	survindel2_survindel2.py	PASS
 survivor	survivor_SURVIVOR_bedpetovcf	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); BEDPE from vcftobed converted back to 60 VCF records
 survivor	survivor_SURVIVOR_bedtovcf	PASS	two hand-written bed intervals converted to DEL records with correct END and SVLEN
 survivor	survivor_SURVIVOR_bincov	Failed	tool bug: the last low-coverage region is never printed, so the output is silently incomplete; the other regions from the real COLO829 chr22 BAM slice are correct.
+survivor	survivor_SURVIVOR_compMUMMer	Failed	tool bug: it reopens the VCF by the sample name in the header, so any VCF whose sample name is not its own path gives no output file
+survivor	survivor_SURVIVOR_convertAssemblytics	PASS	real Assemblytics Drosophila output; 290 of 293 variants kept at minimum size 50, matching a count made from the bed file
 survivor	survivor_SURVIVOR_eval	PASS	synthetic data: SURVIVOR simSV truth VCF against its own bed; Overall line 7 simulated, 1 DEL, 2 DUP, 4 INV found, none missed
 survivor	survivor_SURVIVOR_filter	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); region and size filters removed calls (60 to 56 by region, 43 with min size 50)
 survivor	survivor_SURVIVOR_genComp	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); 2x2 pairwise overlap matrix written
+survivor	survivor_SURVIVOR_hapcuttovcf	PASS	real data: HapCUT2 run on nf-core NA12878 chr22 reads and GIAB variants; all 21 phased variants converted, same relative phase as the HapCUT2 phased VCF
 survivor	survivor_SURVIVOR_merge	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); 66 calls merged to 60, 5 supported by both callers
 survivor	survivor_SURVIVOR_scanreads	PASS	real COLO829 nanopore chr22 slice (nf-core) with MD tags added by samtools calmd; error profile from 163 reads
 survivor	survivor_SURVIVOR_simSV	PASS	synthetic data: SVs simulated on a 180 kb chr22 slice (nf-core); fasta, bed and vcf written (7 SVs)
 survivor	survivor_SURVIVOR_simreads	PASS	synthetic data: reads simulated on a 180 kb chr22 slice from the COLO829 error profile; 14 reads at coverage 2
+survivor	survivor_SURVIVOR_smaptovcf	PASS	real Bionano smap (E. coli, 10 SVs); all 10 converted with correct positions and types; beta tool writes no VCF header and gives meaningless SVLEN for translocations
 survivor	survivor_SURVIVOR_stats	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); merged set summarised (11 DEL, 7 INS, 42 TRA)
 survivor	survivor_SURVIVOR_vcftobed	PASS	real SK-N-AS nanopore SV calls from Severus and Sniffles (nf-core); 60 BEDPE rows written
 suvtk	suvtk_co-occurrence	PASS	synthetic data: small abundance table with one planted correlated contig pair
@@ -14431,6 +14654,32 @@ trust4	trust4_trust-simplerep	PASS
 trust4	trust4_trust-smartseq	PASS	one cell of the repository example reads; its top clone is in the run-trust4 report; option --cgeneEnd is documented but the script dies with 'Unknown parameter --cgeneEnd'
 trust4	trust4_trust-stats	Failed	image problem: python3 is not installed in the image (env: can't execute 'python3')
 truvari	truvari	PASS	wraps truvari bench; rewritten from the help; real_small SV VCFs give TP+FN=base count and TP+FP=comp count
+truvari	truvari_anno_addid	PASS	
+truvari	truvari_anno_bpovl	PASS	
+truvari	truvari_anno_chunks	PASS	
+truvari	truvari_anno_density	PASS	
+truvari	truvari_anno_dpcnt	PASS	
+truvari	truvari_anno_gcpct	PASS	
+truvari	truvari_anno_grm	Failed	image problem: bwapy is not installed in the image (tool prints 'bwapy isn't available')
+truvari	truvari_anno_grpaf	PASS	
+truvari	truvari_anno_gtcnt	PASS	
+truvari	truvari_anno_hompct	PASS	
+truvari	truvari_anno_lcr	PASS	
+truvari	truvari_anno_numneigh	PASS	
+truvari	truvari_anno_remap	Failed	image problem: bwapy is not installed in the image (tool prints 'bwapy isn't available')
+truvari	truvari_anno_repmask	Not completed	RepeatMasker is not in the image; only the repo's fake test script could be used (output matches the repo answer key)
+truvari	truvari_anno_svinfo	PASS	
+truvari	truvari_anno_trf	PASS	real trf binary from the repo test files; annotations match the repo answer key; repeats file re-bgzipped (repo copy is plain gzip)
+truvari	truvari_collapse	PASS	
+truvari	truvari_consistency	PASS	
+truvari	truvari_divide	PASS	
+truvari	truvari_ga4gh	PASS	
+truvari	truvari_phab	PASS	
+truvari	truvari_refine	PASS	
+truvari	truvari_segment	PASS	
+truvari	truvari_stratify	PASS	
+truvari	truvari_stratp	PASS	
+truvari	truvari_vcf2df	PASS	
 trycycler	trycycler_cluster	PASS	
 trycycler	trycycler_consensus	PASS	
 trycycler	trycycler_dotplot	PASS	
@@ -15011,7 +15260,47 @@ vgp-processcuration	vgp-processcuration_chromosome_assignment	PASS	synthetic dat
 vgp-processcuration	vgp-processcuration_sak_generation	PASS	synthetic data: hand-made inter_chr.tsv files (from the real chromosome_assignment runs), AGP and Mashmap table with a planted reversed pair; no real input. It wrote orientation.tsv and reversing_renaming.sak with RVCP only for the pair marked reversed, as expected.
 vgp-processcuration	vgp-processcuration_split_agp	PASS	synthetic data: all inputs were hand-made (a 4-sequence FASTA of random bases and a 4-line PretextView-style AGP with Hap_1/Hap_2 tags; no real input). It wrote corrected.agp and split the scaffolds into Hap_1 and Hap_2 AGPs (2 lines each) as expected.
 vibrant	vibrant_VIBRANT_run.py	Not completed	needs the VIBRANT HMM databases (about 11 GB download); CWL flags were corrected from the help
+viennarna	viennarna_AnalyseDists	PASS	
+viennarna	viennarna_AnalyseSeqs	PASS	
+viennarna	viennarna_Kinfold	PASS	
+viennarna	viennarna_RNA2Dfold	PASS	
+viennarna	viennarna_RNALalifold	PASS	
+viennarna	viennarna_RNALfold	PASS	
+viennarna	viennarna_RNAPKplex	PASS	
+viennarna	viennarna_RNAaliduplex	PASS	
+viennarna	viennarna_RNAalifold	PASS	
 viennarna	viennarna_RNAcofold	PASS	
+viennarna	viennarna_RNAconsensus_hardcons	PASS	
+viennarna	viennarna_RNAdistance	PASS	
+viennarna	viennarna_RNAdos	PASS	
+viennarna	viennarna_RNAduplex	PASS	
+viennarna	viennarna_RNAeval	PASS	
+viennarna	viennarna_RNAfold	PASS	
+viennarna	viennarna_RNAforester	PASS	
+viennarna	viennarna_RNAheat	PASS	
+viennarna	viennarna_RNAinverse	PASS	
+viennarna	viennarna_RNAlocmin	PASS	
+viennarna	viennarna_RNAmultifold	PASS	
+viennarna	viennarna_RNApaln	Failed	tool bug: without -B (--printAlignment) the score printed for every pair is -9999, even for two identical sequences; with -B the score is correct
+viennarna	viennarna_RNAparconv	PASS	--dump mode only (writes the built-in Vienna 1.8.4 parameters in 2.0 format); the conversion of an old parameter file was not tested (no Vienna 1.8.4 parameter file available)
+viennarna	viennarna_RNApdist	PASS	
+viennarna	viennarna_RNAplex	PASS	
+viennarna	viennarna_RNAplfold	PASS	
+viennarna	viennarna_RNAplot	PASS	
+viennarna	viennarna_RNApvmin	PASS	
+viennarna	viennarna_RNAsnoop	PASS	
+viennarna	viennarna_RNAsubopt	PASS	
+viennarna	viennarna_RNAup	PASS	
+viennarna	viennarna_b2ct	PASS	
+viennarna	viennarna_b2mt	PASS	
+viennarna	viennarna_coloraln	PASS	
+viennarna	viennarna_ct2db	PASS	
+viennarna	viennarna_dpzoom	PASS	
+viennarna	viennarna_kinwalker	PASS	default dangle (0) segfaults on most real sequences; ran on let-7a-1 precursor with --dangle=1
+viennarna	viennarna_mountain	PASS	
+viennarna	viennarna_popt	PASS	
+viennarna	viennarna_relplot	PASS	
+viennarna	viennarna_rotate_ss	PASS	
 viewbs	viewbs_BisNonConvRate	PASS	
 viewbs	viewbs_GlobalMethLev	PASS	
 viewbs	viewbs_MethCoverage	PASS	

@@ -11,9 +11,11 @@
 | montreal-forced-aligner_mfa_align_one | PASS |  |
 | montreal-forced-aligner_mfa_align_one_hf | PASS |  |
 | montreal-forced-aligner_mfa_compare_alignments | Failed | tool bug: mfa compare_alignments crashes on MFA's own TextGrids (KeyError for words/phones tiers, then sqlite NOT NULL error on phone_interval.begin). |
+| montreal-forced-aligner_mfa_configure | PASS |  |
 | montreal-forced-aligner_mfa_diarize | Not completed | needs a PostgreSQL server (mfa says diarization requires --use_postgres true); no server in the one-container run. |
 | montreal-forced-aligner_mfa_find_oovs | PASS |  |
 | montreal-forced-aligner_mfa_g2p | PASS |  |
+| montreal-forced-aligner_mfa_history | Failed | tool bug: mfa history prints nothing even with a valid command history file (history_cli writes through a logger that is never set up). |
 | montreal-forced-aligner_mfa_model_add_words | PASS |  |
 | montreal-forced-aligner_mfa_model_create_hf_model | PASS |  |
 | montreal-forced-aligner_mfa_model_download | PASS |  |
@@ -1389,6 +1391,73 @@ Traceback (most recent call last):
                           ~~~~~~~~~~^^
   File "<string>", line 17, in __init__
 TypeError: Path.copy() missing 1 required positional argument: 'target'
+```
+
+## montreal-forced-aligner_mfa_history
+
+### Tool Description
+Show previously run mfa commands.
+
+### Metadata
+- **Docker Image**: mmcauliffe/montreal-forced-aligner:v3.4.3
+- **Homepage**: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner
+- **Package**: https://anaconda.org/channels/bioconda/packages/montreal-forced-aligner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                                                                                                                                                                                        
+ Usage: mfa history [OPTIONS]                                                                                                                                                                           
+                                                                                                                                                                                                        
+ Show previously run mfa commands                                                                                                                                                                       
+                                                                                                                                                                                                        
+╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --depth                         INTEGER  Number of commands to list, defaults to 10                                                                                                                  │
+│ --verbose/--no_verbose  -v/-nv           Output debug messages, default is False                                                                                                                     │
+│ --help                  -h               Show this message and exit.                                                                                                                                 │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+## montreal-forced-aligner_mfa_configure
+
+### Tool Description
+Set global defaults for MFA so you do not have to set them every time you call an MFA command.
+
+### Metadata
+- **Docker Image**: mmcauliffe/montreal-forced-aligner:v3.4.3
+- **Homepage**: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner
+- **Package**: https://anaconda.org/channels/bioconda/packages/montreal-forced-aligner/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+                                                                                                                                                                                                        
+ Usage: mfa configure [OPTIONS]                                                                                                                                                                         
+                                                                                                                                                                                                        
+ The configure command is used to set global defaults for MFA so you don't have to set them every time you call an MFA command.                                                                         
+                                                                                                                                                                                                        
+╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --profile                                             -p  TEXT     Configuration profile to use, defaults to "global"                                                                                │
+│ --temporary_directory                                 -t  TEXT     Set the default temporary directory.Currently defaults to /mfa                                                                    │
+│ --num_jobs                                            -j  INTEGER  Set the number of processes to use by default. Currently defaults to 3                                                            │
+│ --always_clean/--never_clean                                       Turn on/off mode where MFA will clean temporary files before each run. Currently defaults to True.                                │
+│ --always_final_clean/--never_final_clean                           Turn on/off mode where MFA will clean temporary files at the end of each run. Currently defaults to False.                        │
+│ --always_verbose/--never_verbose                                   Turn on/off verbose mode where MFA will print more output. Currently defaults to False.                                           │
+│ --always_quiet/--never_quiet                                       Turn on/off quiet mode where MFA will not print any output. Currently defaults to False.                                          │
+│ --always_debug/--never_debug                                       Turn on/off extra debugging functionality. Currently defaults to False.                                                           │
+│ --always_overwrite/--never_overwrite                               Turn on/off overwriting export files. Currently defaults to False.                                                                │
+│ --enable_mp/--disable_mp                                           Turn on/off multiprocessing. Multiprocessing is recommended will allow for faster executions. Currently defaults to True.         │
+│ --enable_textgrid_cleanup/--disable_textgrid_cleanup               Turn on/off post-processing of TextGrids that cleans up silences and recombines compound words and clitics. Currently defaults to │
+│                                                                    True.                                                                                                                             │
+│ --enable_auto_server/--disable_auto_server                         If auto_server is enabled, MFA will start a server at the beginning of a command and close it at the end. If turned off, use the  │
+│                                                                    `mfa server` commands to initialize, start, and stop a profile's server. Currently defaults to True.                              │
+│ --enable_use_postgres/--disable_use_postgres                       If use_postgres is enabled, MFA will use PostgreSQL as the database backend instead of sqlite. Currently defaults to False.       │
+│ --blas_num_threads                                        INTEGER  Number of threads to use for BLAS libraries, 1 is recommended due to how much MFA relies on multiprocessing. Currently defaults   │
+│                                                                    to 1.                                                                                                                             │
+│ --github_token                                            TEXT     Github token to use for model downloading.                                                                                        │
+│ --seed                                                    INTEGER  Random seed to set for various pseudorandom processes.                                                                            │
+│ --help                                                -h           Show this message and exit.                                                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Metadata

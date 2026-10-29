@@ -4,15 +4,24 @@
 
 | Tool | Result | Reason |
 |---|---|---|
+| getorganelle_check_annotations.py | PASS | real data: Arabidopsis plastome GenBank checked against the Haematoxylum plastome; known odd ndhD start and low-similarity genes reported, check log written |
+| getorganelle_disentangle_organelle_assembly.py | PASS | real data: slimmed SPAdes graph of the Galaxy Arabidopsis reads gives two circular 154478 bp path sequences |
+| getorganelle_evaluate_assembly_using_mapping.py | PASS | real data: Galaxy Arabidopsis reads mapped back to the assembled plastome; all 10000 pairs mapped, about 19x coverage; --draw crashes because matplotlib is missing in the image |
 | getorganelle_fastg_to_gfa.py | PASS | SPAdes graph from the plastome run converted; segment counts match |
+| getorganelle_get_annotated_regions_from_gb.py | Failed | image problem: biopython is not installed, so the script stops before writing anything |
 | getorganelle_get_organelle_config.py | PASS | downloaded the embplant_pt databases (config_dir now a string, network access added) |
 | getorganelle_get_organelle_from_assembly.py | PASS | slimmed and disentangled the SPAdes graph into a 154478 bp plastome (expected sizes now comma-joined) |
 | getorganelle_get_organelle_from_reads.py | PASS | Galaxy Arabidopsis reads assembled a complete 154478 bp plastome (run with -s and --genes from one database type) |
+| getorganelle_get_pair_reads.py | PASS | real data: Galaxy Arabidopsis read pair split; all 10000 pairs kept as paired, no unpaired reads |
 | getorganelle_gfa_to_fasta.py | PASS | SPAdes graph from the plastome run converted; segment counts match |
 | getorganelle_gfa_to_fastg.py | PASS | SPAdes graph from the plastome run converted; segment counts match |
+| getorganelle_join_spades_fastg_by_blast.py | PASS | real data: SPAdes graph from a 15 percent subsample of the Arabidopsis reads joined against the plastome; gap and overlap nodes added (282 to 1350 records) |
+| getorganelle_make_batch_for_get_organelle.py | PASS | script written with correct get_organelle_from_reads.py commands per sample folder; default search can swap the two read files, --strict keeps the order |
+| getorganelle_make_batch_for_iteratively_mapping_assembling.py | PASS | five-round bowtie2 and SPAdes batch script written with the expected commands and run folders |
 | getorganelle_plastome_arch_info.py | PASS | assembled plastome gives LSC 84170, SSC 17780, IR 26264 |
 | getorganelle_reconstruct_graph_from_fasta.py | PASS | plastome fasta rebuilt into a GFA graph |
 | getorganelle_rm_low_coverage_duplicated_contigs.py | Failed | tool bug: script crashes with AttributeError treat_no_hits for any input |
+| getorganelle_round_statistics.py | PASS | real data: per-round reads from a plastome assembly run; seed 99.6 percent and cumulative 99.96 percent of sites covered at depth above 0 |
 | getorganelle_slim_graph.py | PASS | SPAdes graph slimmed with the embplant_pt label fasta; hit contigs and csv written |
 | getorganelle_summary_get_organelle_output.py | PASS | summary csv of the plastome run has organelle type, length 154478 and coverage |
 
@@ -1004,6 +1013,485 @@ options:
   -t THREADS, --threads THREADS
                         Threads for blastn.
   -v, --version         show program's version number and exit
+```
+
+## getorganelle_check_annotations.py
+
+### Tool Description
+Checks the reliability of automatically annotated tRNA and CDS against a reference GenBank file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: python this_script.py Query.gb -r Reference.gb
+
+This script only checks the mainly check the reliability of automatically annotated tRNA and CDS.
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+
+NECESSARY OPTIONS:
+  query                 Input a list of *.gb files as the query (split the
+                        files by spaces).
+  -r REFERENCE_GB       input reference *.gb file
+
+ALTERNATION of NECESSARY OPTIONS:
+  -d REFERENCE_FASTA    input reference fasta file exported exported by
+                        "Extract Annotations"-"Export"-"Selected
+                        Documents"-fasta in Geneious, remember to choose
+                        "Replace spaces in sequence name with underscores"
+
+OPTIONAL OPTIONS:
+  --t-ends ENDS_TRNA    Default=10. The length to check at the both ends of
+                        tRNA.
+  --c-ends ENDS_CDS     Default:not activated. Activate this calculation and
+                        assign the length to check at the both ends of CDS.
+  --a-ends ENDS_ALL     Default:not activated. Activate this calculation and
+                        assign the length to check at the both ends of
+                        annotated all regions.
+  --l-threshold LENGTH  Default=0.9. Length threshold to report warning.
+  --similarity          Default=False. Choose to enable similarity
+                        calculation.
+  --s-threshold SIMILARITY
+                        Default=0.9. Similarity threshold to report warning.
+                        Should be < length threshold.
+```
+
+## getorganelle_disentangle_organelle_assembly.py
+
+### Tool Description
+Disentangles organelle genomes from a slimmed assembly graph (fastg and csv from slim_graph.py).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: disentangle_organelle_assembly.py -F embplant_pt -g input.fastg -t input.tab -o output_dir
+       [-h] [-g FASTG_FILE] [-t TAB_FILE] [-o OUTPUT_DIRECTORY] [-F MODE]
+       [--linear] [--weight-f WEIGHT_FACTOR] [--depth-f DEPTH_FACTOR]
+       [--type-f TYPE_FACTOR] [--contamination-depth CONTAMINATION_DEPTH]
+       [--contamination-similarity CONTAMINATION_SIMILARITY] [--no-degenerate]
+       [--degenerate-depth DEGENERATE_DEPTH]
+       [--degenerate-similarity DEGENERATE_SIMILARITY]
+       [--expected-max-size EXPECTED_MAX_SIZE]
+       [--expected-min-size EXPECTED_MIN_SIZE] [--reverse-lsc]
+       [--max-paths-num MAX_PATHS_NUM] [--keep-all-polymorphic]
+       [--min-sigma MIN_SIGMA_FACTOR] [--min-depth MIN_COV]
+       [--max-depth MAX_COV] [--max-multiplicity MAX_MULTIPLICITY]
+       [--prefix PREFIX] [--keep-temp] [--time-limit TIME_LIMIT]
+       [--random-seed RANDOM_SEED] [--continue] [-v] [--verbose] [--debug]
+
+options:
+  -h, --help            show this help message and exit
+  -g FASTG_FILE         input fastg format file.
+  -t TAB_FILE           input tab format file (*.csv; the postfix 'csv' was in
+                        conformity with Bandage) produced by slim_graph.py.
+  -o OUTPUT_DIRECTORY   output directory.
+  -F MODE               organelle type: embplant_pt/other_pt/embplant_mt/embpl
+                        ant_nr/animal_mt/fungus_mt/fungus_nr/anonym.
+  --linear              By default, this script would only disentangle the
+                        circular graph (the complete circular organelle
+                        genome), and would directly give up linear/broken
+                        graphs. Choose this option to try for linear/broken
+                        cases.
+  --weight-f WEIGHT_FACTOR
+                        weight factor for excluding non-target contigs.
+                        Default:100.0
+  --depth-f DEPTH_FACTOR
+                        Depth factor for excluding non-target contigs.
+                        Default:10.0
+  --type-f TYPE_FACTOR  Type factor for identifying genome type tag.
+                        Default:3.0
+  --contamination-depth CONTAMINATION_DEPTH
+                        Depth factor for confirming contaminating contigs.
+                        Default:3.0
+  --contamination-similarity CONTAMINATION_SIMILARITY
+                        Similarity threshold for confirming contaminating
+                        contigs. Default:0.9
+  --no-degenerate       Disable making consensus from parallel contig based on
+                        nucleotide degenerate table.
+  --degenerate-depth DEGENERATE_DEPTH
+                        Depth factor for confirming parallel contigs.
+                        Default:1.5
+  --degenerate-similarity DEGENERATE_SIMILARITY
+                        Similarity threshold for confirming parallel contigs.
+                        Default:0.98
+  --expected-max-size EXPECTED_MAX_SIZE
+                        Expected maximum target genome size. Default: 200000
+                        (-F embplant_pt/fungus_mt), 25000 (-F
+                        embplant_nr/animal_mt/fungus_nr), 600000 (-F
+                        embplant_mt/other_pt)
+  --expected-min-size EXPECTED_MIN_SIZE
+                        Expected mininum target genome size. Default: 10000
+  --reverse-lsc         For '-F embplant_pt' with complete circular result, by
+                        default, the direction of the starting contig (usually
+                        the LSC contig) is determined as the direction with
+                        less ORFs. Choose this option to reverse the direction
+                        of the starting contig when result is circular.
+                        Actually, both directions are biologically equivalent
+                        to each other. The reordering of the direction is only
+                        for easier downstream analysis.
+  --max-paths-num MAX_PATHS_NUM
+                        Repeats would dramatically increase the number of
+                        potential isomers (paths). This option was used to
+                        export a certain amount of paths out of all possible
+                        paths per assembly graph. Default: 1000
+  --keep-all-polymorphic
+                        By default, this script would pick the contig with
+                        highest coverage among all parallel (polymorphic)
+                        contigs when degenerating was not applicable. Choose
+                        this flag to export all combinations.
+  --min-sigma MIN_SIGMA_FACTOR
+                        Minimum deviation factor for excluding non-target
+                        contigs. Default:0.1
+  --min-depth MIN_COV   Minimum coverage for a contig to be included in
+                        disentangling. Default:0.0
+  --max-depth MAX_COV   Minimum coverage for a contig to be included in
+                        disentangling. Default:inf
+  --max-multiplicity MAX_MULTIPLICITY
+                        Maximum multiplicity of contigs for disentangling
+                        genome paths. Should be 1~12. Default:8
+  --prefix PREFIX       Prefix of output files inside output directory.
+                        Default:target
+  --keep-temp           export intermediate graph file.
+  --time-limit TIME_LIMIT
+                        time limit for the disentangling process. Default:3600
+  --random-seed RANDOM_SEED
+                        Random seed (only for disentangling at this moment).
+                        Default: 12345
+  --continue            continue mode.
+  -v, --version         show program's version number and exit
+  --verbose             verbose logging.
+  --debug               for debug.
+```
+
+## getorganelle_evaluate_assembly_using_mapping.py
+
+### Tool Description
+Evaluates an assembly fasta by mapping the original reads back with Bowtie2.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: evaluate_assembly_using_mapping.py -f fasta_file -1 RAW_1.fq -2 RAW_2.fq -o output
+       [-h] [-f FASTA] [-1 ORIGINAL_FQ_1] [-2 ORIGINAL_FQ_2]
+       [-u UNPAIRED_FQ_FILES] [-X MAX_LIB_LEN] [-c IS_CIRCULAR]
+       [-o OUTPUT_BASE] [-t THREADS] [--continue] [--seed RANDOM_SEED]
+       [--draw] [--plot-format PLOT_FORMAT] [--plot-title PLOT_TITLE]
+       [--plot-subtitle PLOT_SUBTITLE] [--plot-transparent]
+       [--plot-x-density PLOT_X_DENSITY] [--plot-x-gap-dots GAP_LEN]
+       [--plot-figure-height FIGURE_HEIGHT] [--plot-y-lim Y_LIM]
+       [--plot-font PLOT_FONT] [--disable-customized-error-rate]
+       [--which-bowtie2 WHICH_BOWTIE2] [--bowtie2-mode BOWTIE2_MODE]
+       [--bowtie2-options OTHER_BOWTIE2_OPTIONS] [--stat-mode STAT_MODE]
+       [--debug] [-v]
+
+options:
+  -h, --help            show this help message and exit
+  -f FASTA              input assembly fasta file.
+  -1 ORIGINAL_FQ_1
+  -2 ORIGINAL_FQ_2
+  -u UNPAIRED_FQ_FILES  Input file(s) with unpaired (single-end) reads to be
+                        added to the pool. files could be comma-separated
+                        lists such as 'seq1,seq2'.
+  -X MAX_LIB_LEN, --max-lib-len MAX_LIB_LEN
+                        Corresponding to '-X' option in Bowtie2. Default:
+                        1200.
+  -c IS_CIRCULAR        (yes/no/auto) input fasta is circular. If auto was
+                        chosen, the input fasta would be treated as circular
+                        when the sequence name ends with '(circular)'.
+                        Default: auto
+  -o OUTPUT_BASE        output folder.
+  -t THREADS            threads.
+  --continue
+  --seed RANDOM_SEED    Seed for random number generator. Default: 12345
+  --draw                Draw density plot using matplotlib, which should be
+                        installed.
+  --plot-format PLOT_FORMAT
+                        Default: pdf,png
+  --plot-title PLOT_TITLE
+                        Default: `the file name of the input fasta`
+  --plot-subtitle PLOT_SUBTITLE
+                        A 4-space indicates a line break. Default: None
+  --plot-transparent    Default: False
+  --plot-x-density PLOT_X_DENSITY
+                        Default: 12000.0
+  --plot-x-gap-dots GAP_LEN
+                        Number of sites added in-between isolated contigs.
+                        Default: 3000
+  --plot-figure-height FIGURE_HEIGHT
+                        Default: 5.0
+  --plot-y-lim Y_LIM    Y axis value limit.
+  --plot-font PLOT_FONT
+                        For plot of unicode characters in some environments.
+                        Use 'Times New Roman','Arial' etc. Default: None.
+  --disable-customized-error-rate
+  --which-bowtie2 WHICH_BOWTIE2
+                        Assign the path to Bowtie2 binary files if not added
+                        to the path. Default: try
+                        GetOrganelleDep/linux/bowtie2 first, then $PATH
+  --bowtie2-mode BOWTIE2_MODE
+                        Default: --sensitive
+  --bowtie2-options OTHER_BOWTIE2_OPTIONS
+                        Default: --no-discordant --dovetail
+  --stat-mode STAT_MODE
+                        Statistical mode for counting multiple hits of a
+                        single read: best/all. The all mode is meaningful only
+                        when '-k <INT>' was included in '--bowtie2-options'.
+                        Default: best
+  --debug               Turn on debug mode.
+  -v, --version         show program's version number and exit
+```
+
+## getorganelle_join_spades_fastg_by_blast.py
+
+### Tool Description
+Joins SPAdes fastg contigs according to a reference, adding gap (N) and overlap nodes (beta version).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+This script would join the spades fastg contigs according to the reference.
+It would add extra gap nodes (N) and/or overlap nodes (?) in between the connectible nodes and generate  a new fastg file.
+
+This is a BETA version:
+Although it will not produce wrong connections, it usually replicates the same right connection.
+Don't be surprised if you find any other bugs.
+usage: python join_spades_fastg_by_blast.py -g input.fastg -f refernce.fasta
+
+options:
+  -h, --help            show this help message and exit
+  -g IN_FASTG_FILE      followed by your input fastg file
+  -f REFERENCE_FA_BASE  followed by Fasta index format
+  --keep-temp           Choose to disable deleting temp files produced by
+                        blast and this script
+  --bt BLAST_HITS_THRESHOLD
+                        Default: 0.60
+  --max-gap MAX_GAP_TO_ADD
+                        Default: 1500
+  --con-all             Choose to activate connecting all possible contigs.
+                        Default: False
+  --depth DEPTH_TO_CONNECT
+                        Default: 1.0
+  --which-blast WHICH_BLAST
+                        Assign the path to BLAST binary files if not added to
+                        the path. Default: try GetOrganelleDep/linux/ncbi-
+                        blast first, then $PATH
+  -v, --version         show program's version number and exit
+```
+
+## getorganelle_make_batch_for_get_organelle.py
+
+### Tool Description
+Makes a batch file that runs get_organelle_from_reads.py on sample folders.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: Note: you may also want to use the for loop to create you batch rather than using this old-fashioned script originally designed for certain form of organized dataset with sometimes multiple pairs of fastq reads.
+make_batch_for_get_organelle.py -o basename -p "-F embplant_pt" [a_list_of_directories_containing_balanced_fastq_file]
+
+positional arguments:
+  sample_dirs         Input a list of folders (split the files by spaces).
+                      Each folder should include a/several pair(s) of fastq
+                      files.
+
+options:
+  -h, --help          show this help message and exit
+  -o OUTPUT_BASE      output base name for each sample
+  -p OTHER_ARGUMENTS  Other arguments that get_organelle_from_reads.py would
+                      take.Use double quotation marks to include all the
+                      arguments. Example: "-s plastome.fasta -a
+                      mitochondrial.fasta -F embplant_pt -w 105"
+  --all               Choose to make command for all samples including samples
+                      with results.Default: skip those with results.
+  --skip-comment      Choose to treat #-commented command as skipped.Default:
+                      False.
+  --strict            Choose to only search for the fastq with the same base
+                      name with the directory (*/*_1.fq). Default: relaxed
+                      searching.
+```
+
+## getorganelle_make_batch_for_iteratively_mapping_assembling.py
+
+### Tool Description
+Makes a batch file for iteratively mapping with bowtie2 and assembling with SPAdes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+This is a script for making batch file for iteratively mapping with bowtie2 and assemblying with SPAdes.
+
+usage: 
+make_batch_for_iteratively_mapping_assembling.py -1 original_1.fq -2 original_2.fq -s seed.fasta -R 5 -k 21,45,65,85,105 -o output_base
+
+options:
+  -h, --help            show this help message and exit
+  -1 FASTQ_FILE_1       Input 1st fastq format file as pool
+  -2 FASTQ_FILE_2       Input 2nd fastq format file as pool
+  -s SEED_DIR           Input fasta format file as initial seed
+  -R ROUNDS             How many iterations would you like to have? Default=3
+  -t THREADS            theads used for bowtie2 and SPAdes. Default=1
+  -k SPADES_KMER        SPAdes k-mer settings. Use the same format as in
+                        SPAdes. Default=21,45,65,85,105
+  -o OUTPUT_SH_FILE     Executable output batch file.
+  --un                  Try to map and assembly without paired information.
+  --random-seed RANDOM_SEED
+                        seed for random generator for bowtie2. Default: 12345
+  --which-bowtie2 WHICH_BOWTIE2
+                        Assign the path to Bowtie2 binary files if not added
+                        to the path. Default: try
+                        GetOrganelleDep/linux/bowtie2 first, then $PATH
+  --which-spades WHICH_SPADES
+                        Assign the path to SPAdes binary files if not added to
+                        the path. Default: try GetOrganelleDep/linux/SPAdes
+                        first, then $PATH
+  -v, --version         show program's version number and exit
+```
+
+## getorganelle_round_statistics.py
+
+### Tool Description
+Maps the reads of each extending round to a reference fasta and reports covered fractions per round.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: round_statistics.py -f fasta_file -d output_per_round_folder -i Initial_mapped.fq -o output
+       [-h] [-f FASTA] [-d OUTPUT_PER_ROUND_DIR] [-i INITIAL_MAPPED]
+       [-o OUTPUT_BASE] [-R ROUND] [-t THREADS]
+       [--which-bowtie2 WHICH_BOWTIE2] [--random-seed RANDOM_SEED]
+       [--threshold THRESHOLD] [--continue] [--keep-temp] [--draw]
+       [--max-coverage-tick MAX_COV_TICK] [--debug DEBUG] [-v]
+
+options:
+  -h, --help            show this help message and exit
+  -f FASTA              input fasta file.
+  -d OUTPUT_PER_ROUND_DIR
+                        output per round directory.
+  -i INITIAL_MAPPED     seed fastq.
+  -o OUTPUT_BASE        output folder.
+  -R ROUND              rounds to check. default:automatic stop!
+  -t THREADS            threads.
+  --which-bowtie2 WHICH_BOWTIE2
+                        Assign the path to Bowtie2 binary files if not added
+                        to the path. Default: try
+                        GetOrganelleDep/linux/bowtie2 first, then $PATH
+  --random-seed RANDOM_SEED
+                        seed for random generator for bowtie2. Default: 12345
+  --threshold THRESHOLD
+                        sites with coverage above the threshold would be
+                        marked as covered. default: 0,10
+  --continue
+  --keep-temp
+  --draw                Draw density plot using matplotlib, which should be
+                        installed.
+  --max-coverage-tick MAX_COV_TICK
+  --debug DEBUG         Debug mode.
+  -v, --version         show program's version number and exit
+```
+
+## getorganelle_get_pair_reads.py
+
+### Tool Description
+Splits two fastq files into paired and unpaired reads.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+
+Usage: get_pair_reads.py *_1.fq *_2.fq
+```
+
+## getorganelle_get_annotated_regions_from_gb.py
+
+### Tool Description
+Extracts annotated regions (CDS, tRNA, rRNA, intergenic) of GenBank files into fasta files per gene.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0
+- **Homepage**: http://github.com/Kinggerm/GetOrganelle
+- **Package**: https://anaconda.org/channels/bioconda/packages/getorganelle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: get_annotated_regions_from_gb.py gb_files -o out_dir
+
+Options:
+  -h, --help            show this help message and exit
+  -o OUT_PUT            Output.
+  -t GENE_TYPES         Annotation type taken as gene. Default: CDS,tRNA,rRNA
+  --separate-copy       By default, only keep one copy (see '--copy-mode' for
+                        more) if there are several regions with the same name.
+                        Exception: if there are one copy with intron(s) and
+                        another copy without intron, they would be both kept.
+                        This exception was specially made for the convenience
+                        of commonly-incorrectly-annotated rps12 gene of
+                        plastome.
+  --copy-mode=COPY_MODE
+                        first|longest|leastN|leastN_longest (default).
+  --separate-exon       By default, combining exons.
+  --keys=GENE_KEYS      The key to the gene name: gene, label, product or
+                        other keys in the qualifiers region.Default:
+                        gene,label,product,note.
+  --mix                 Mix different genes into a single fasta file. In this
+                        mode, the sequence header will be >gene_name - gb_info
+  --case-mode=CASE_TREATMENT
+                        first: Gene name case-non-sensitive. Consistent to the
+                        first appearance.  lower: Gene name case-non-
+                        sensitive. All gene name set to lower case.  upper:
+                        Gene name case-non-sensitive. All gene name set to
+                        Upper case.  raw: Gene name case-sensitive.
+  --ignore-format-error
+                        Skip the Error: key "*" not found in annotation. Not
+                        suggested.
+  --translate-to-product
+                        Translate the tRNA gene name to the form of their
+                        product. Default: False
+  --overwrite           Choose to overwrite previous result.
 ```
 
 ## Metadata

@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 15696; PASS: 12290; Failed: 1844; Not completed: 1562
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 15972; PASS: 12500; Failed: 1905; Not completed: 1567
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -4478,16 +4478,24 @@ ffq	ffq	PASS	ran with network access on one small accession; --split combined wi
 fgap	fgap_FGAP	PASS	
 fgbio	fgbio_AnnotateBamWithUmis	PASS	
 fgbio	fgbio_AssessPhasing	PASS	
+fgbio	fgbio_AssignPrimers	PASS	synthetic data: primer coordinates planted around real UMI read-pair ends; 45% of pairs were assigned to the two amplicons.
+fgbio	fgbio_AutoGenerateReadGroupsByName	PASS	read names taken from the Illumina ID in a real FASTQ header; four read groups were created from flowcell and lane.
 fgbio	fgbio_CallCodecConsensusReads	Not completed	no CODEC test data; it runs on duplex-seq read pairs, but that output cannot confirm CODEC consensus calls.
 fgbio	fgbio_CallDuplexConsensusReads	PASS	
 fgbio	fgbio_CallMolecularConsensusReads	PASS	
+fgbio	fgbio_CallOverlappingConsensusBases	PASS	
 fgbio	fgbio_ClipBam	PASS	
 fgbio	fgbio_CollectAlternateContigNames	PASS	
 fgbio	fgbio_CollectDuplexSeqMetrics	PASS	
+fgbio	fgbio_CollectErccMetrics	PASS	synthetic data: no ERCC BAM available, so a real RNA-seq BAM was used with a planted concentration file; metrics and plot were written.
+fgbio	fgbio_CopyUmiFromReadName	PASS	
 fgbio	fgbio_CorrectUmis	PASS	
 fgbio	fgbio_DemuxFastqs	PASS	
 fgbio	fgbio_DownsampleAndNormalizeBam	PASS	
+fgbio	fgbio_DownsampleVcf	PASS	
 fgbio	fgbio_ErrorRateByReadPosition	PASS	
+fgbio	fgbio_EstimatePoolingFractions	PASS	two real BAMs merged as the pool; estimated fractions 0.48 and 0.52 for the two pooled samples.
+fgbio	fgbio_EstimateRnaSeqInsertSize	PASS	real human RNA-seq BAM with a UCSC refGene refFlat for chr6; the tool writes .rnaseq_insert_size files, not the .rna_seq_ names in its help.
 fgbio	fgbio_ExtractBasecallingParamsForPicard	PASS	
 fgbio	fgbio_ExtractIlluminaRunInfo	PASS	
 fgbio	fgbio_ExtractUmisFromBam	PASS	
@@ -4495,14 +4503,31 @@ fgbio	fgbio_FastqToBam	PASS
 fgbio	fgbio_FilterBam	PASS	
 fgbio	fgbio_FilterConsensusReads	PASS	
 fgbio	fgbio_FilterSomaticVcf	PASS	ran on germline GIAB calls with a matching NA12878 BAM (no somatic test data); ATAP and ERFAP annotations added
+fgbio	fgbio_FindSwitchbackReads	PASS	
+fgbio	fgbio_FindTechnicalReads	PASS	
+fgbio	fgbio_FixVcfPhaseSet	PASS	
+fgbio	fgbio_GenerateRegionsFromFasta	PASS	the tool ignores its --output option and prints to standard output, so the CWL captures standard output.
 fgbio	fgbio_GroupReadsByUmi	PASS	
+fgbio	fgbio_HapCutToVcf	PASS	342 variants written and 237 phased, matching the counts in the fgbio test for this data.
 fgbio	fgbio_HardMaskFasta	PASS	
+fgbio	fgbio_MakeMixtureVcf	PASS	
+fgbio	fgbio_MakeTwoSampleMixtureVcf	PASS	input limited to bi-allelic sites with genotypes in both samples; the tool crashes on multi-allelic records.
+fgbio	fgbio_PickIlluminaIndices	PASS	no input data needed; 8 indices of length 6 were picked.
+fgbio	fgbio_PickLongIndices	PASS	no input data needed; 20 indices of length 12 were picked.
+fgbio	fgbio_RandomizeBam	PASS	the tool requires its input file to be writable, so the CWL stages the input in the work directory.
+fgbio	fgbio_RemoveSamTags	PASS	
+fgbio	fgbio_ReviewConsensusVariants	PASS	
 fgbio	fgbio_SetMateInformation	PASS	
 fgbio	fgbio_SortBam	PASS	
 fgbio	fgbio_SortFastq	PASS	
 fgbio	fgbio_SortSequenceDictionary	PASS	
+fgbio	fgbio_SplitBam	PASS	
+fgbio	fgbio_SplitTag	PASS	
+fgbio	fgbio_StripFastqReadNumbers	PASS	
+fgbio	fgbio_SummarizeGff	PASS	synthetic data: real RefSeq GFF with a stand-in reference holding only the contig name; counts match the GFF gene biotypes.
 fgbio	fgbio_TrimFastq	PASS	
 fgbio	fgbio_TrimPrimers	PASS	synthetic data: primer coordinates planted at the ends of real read pairs; primers trimmed and mate fields updated
+fgbio	fgbio_UpdateDelimitedFileContigNames	PASS	synthetic data: contig alias 17 added by hand to the dictionary to rename a real VCF from 17 to chr17.
 fgbio	fgbio_UpdateFastaContigNames	PASS	
 fgbio	fgbio_UpdateGffContigNames	PASS	
 fgbio	fgbio_UpdateIntervalListContigNames	PASS	
@@ -9128,7 +9153,141 @@ mrs	mrs_vacuum	Failed	tool bug: mrs vacuum crashes with exit 139 (Error writing 
 mrs	mrs_validate	PASS	silent on success; it fails with an error on a corrupted index file
 mrsfast	mrsfast	Failed	tool bug: -u file is ignored (unmapped reads go to <out>.nohit) and paired mode with --seq1/--seq2 segfaults; single-end and interleaved --pe mapping work
 mrsfast	mrsfast_index	PASS	
+mrtrix3	mrtrix3_5tt2gmwmi	PASS	
+mrtrix3	mrtrix3_5tt2vis	PASS	
+mrtrix3	mrtrix3_5ttcheck	PASS	
+mrtrix3	mrtrix3_5ttedit	PASS	
+mrtrix3	mrtrix3_5ttgen_freesurfer	PASS	uses a FreeSurfer parcellation and its colour table, passed with -lut
+mrtrix3	mrtrix3_5ttgen_fsl	Failed	image problem: FSL is not in the image (FSLDIR is not set; the script stops at once)
+mrtrix3	mrtrix3_5ttgen_gif	Not completed	no Geodesic Information Flow segmentation image available as test data (the script stops on a wrong input)
+mrtrix3	mrtrix3_5ttgen_hsvs	Not completed	needs a FreeSurfer subject directory (not available as test data) and FreeSurfer and FSL tools that the image does not contain
+mrtrix3	mrtrix3_afdconnectivity	PASS	
+mrtrix3	mrtrix3_amp2response	PASS	
+mrtrix3	mrtrix3_amp2sh	PASS	
+mrtrix3	mrtrix3_connectome2tck	PASS	
+mrtrix3	mrtrix3_connectomeedit	PASS	
+mrtrix3	mrtrix3_connectomestats	PASS	
+mrtrix3	mrtrix3_convert_bruker	Not completed	no Bruker 2dseq dataset (with its parameter files) available as test data
+mrtrix3	mrtrix3_dcmedit	PASS	
+mrtrix3	mrtrix3_dcminfo	PASS	
+mrtrix3	mrtrix3_dirflip	PASS	
+mrtrix3	mrtrix3_dirgen	PASS	
+mrtrix3	mrtrix3_dirmerge	PASS	
+mrtrix3	mrtrix3_dirorder	PASS	
+mrtrix3	mrtrix3_dirsplit	PASS	
+mrtrix3	mrtrix3_dirstat	PASS	
+mrtrix3	mrtrix3_dwi2adc	PASS	
+mrtrix3	mrtrix3_dwi2fod	PASS	
+mrtrix3	mrtrix3_dwi2mask	PASS	
+mrtrix3	mrtrix3_dwi2response_dhollander	PASS	
+mrtrix3	mrtrix3_dwi2response_fa	PASS	
+mrtrix3	mrtrix3_dwi2response_manual	PASS	
+mrtrix3	mrtrix3_dwi2response_msmt_5tt	PASS	synthetic data: the 5TT image is derived from the real multi-shell tissue maps (no real co-registered 5TT exists in the test data)
+mrtrix3	mrtrix3_dwi2response_tax	PASS	
+mrtrix3	mrtrix3_dwi2response_tournier	PASS	
+mrtrix3	mrtrix3_dwi2tensor	PASS	
+mrtrix3	mrtrix3_dwibiascorrect_ants	Failed	image problem: ANTs N4BiasFieldCorrection is not in the image
+mrtrix3	mrtrix3_dwibiascorrect_fsl	Failed	image problem: FSL is not in the image (FSLDIR is not set; the script stops at once)
+mrtrix3	mrtrix3_dwicat	PASS	
+mrtrix3	mrtrix3_dwidenoise	PASS	
+mrtrix3	mrtrix3_dwiextract	PASS	
+mrtrix3	mrtrix3_dwifslpreproc	Failed	image problem: FSL (eddy, topup) is not in the image (FSLDIR is not set; the script stops at once)
+mrtrix3	mrtrix3_dwigradcheck	PASS	
+mrtrix3	mrtrix3_dwinormalise_group	PASS	
+mrtrix3	mrtrix3_dwinormalise_individual	PASS	
+mrtrix3	mrtrix3_dwishellmath	PASS	
+mrtrix3	mrtrix3_fixel2peaks	PASS	
+mrtrix3	mrtrix3_fixel2sh	PASS	
+mrtrix3	mrtrix3_fixel2tsf	PASS	
+mrtrix3	mrtrix3_fixel2voxel	PASS	
 mrtrix3	mrtrix3_fixelcfestats	PASS	
+mrtrix3	mrtrix3_fixelconnectivity	PASS	
+mrtrix3	mrtrix3_fixelconvert	PASS	
+mrtrix3	mrtrix3_fixelcorrespondence	PASS	
+mrtrix3	mrtrix3_fixelcrop	PASS	
+mrtrix3	mrtrix3_fixelfilter	PASS	
+mrtrix3	mrtrix3_fixelreorient	PASS	
+mrtrix3	mrtrix3_fod2dec	PASS	
+mrtrix3	mrtrix3_fod2fixel	PASS	
+mrtrix3	mrtrix3_for_each	PASS	
+mrtrix3	mrtrix3_gen_scheme	PASS	
+mrtrix3	mrtrix3_label2colour	PASS	
+mrtrix3	mrtrix3_label2mesh	PASS	
+mrtrix3	mrtrix3_labelconvert	PASS	
+mrtrix3	mrtrix3_labelsgmfix	Failed	image problem: FSL (FIRST) is not in the image; the script stops with FSLDIR is not set
+mrtrix3	mrtrix3_labelstats	PASS	
+mrtrix3	mrtrix3_maskdump	PASS	
+mrtrix3	mrtrix3_maskfilter	PASS	
+mrtrix3	mrtrix3_mesh2voxel	PASS	
+mrtrix3	mrtrix3_meshconvert	PASS	
+mrtrix3	mrtrix3_meshfilter	PASS	
+mrtrix3	mrtrix3_mraverageheader	PASS	
+mrtrix3	mrtrix3_mrcalc	PASS	
+mrtrix3	mrtrix3_mrcat	PASS	
+mrtrix3	mrtrix3_mrcentroid	PASS	
+mrtrix3	mrtrix3_mrcheckerboardmask	PASS	
+mrtrix3	mrtrix3_mrclusterstats	PASS	synthetic data: six scaled copies of a real FA map with a planted group effect; the planted effect was recovered
+mrtrix3	mrtrix3_mrcolour	PASS	
+mrtrix3	mrtrix3_mrconvert	PASS	
+mrtrix3	mrtrix3_mrdegibbs	PASS	
+mrtrix3	mrtrix3_mrdump	PASS	
+mrtrix3	mrtrix3_mredit	PASS	
+mrtrix3	mrtrix3_mrfilter	PASS	
+mrtrix3	mrtrix3_mrgrid	PASS	
+mrtrix3	mrtrix3_mrhistmatch	PASS	synthetic data: target is the real FA map multiplied by 2; scale matching works
+mrtrix3	mrtrix3_mrhistogram	PASS	
+mrtrix3	mrtrix3_mrinfo	PASS	
+mrtrix3	mrtrix3_mrmath	PASS	
+mrtrix3	mrtrix3_mrmetric	PASS	synthetic data: compares a real FA map with a copy multiplied by 2
+mrtrix3	mrtrix3_mrregister	PASS	synthetic data: real FA map shifted by 3 mm; the rigid registration recovered the shift
+mrtrix3	mrtrix3_mrstats	PASS	
+mrtrix3	mrtrix3_mrthreshold	PASS	
+mrtrix3	mrtrix3_mrtransform	PASS	
+mrtrix3	mrtrix3_mrtrix_cleanup	PASS	synthetic data: planted temporary files; test mode lists them
+mrtrix3	mrtrix3_mtnormalise	PASS	
+mrtrix3	mrtrix3_peaks2amp	PASS	
+mrtrix3	mrtrix3_peaks2fixel	PASS	
+mrtrix3	mrtrix3_population_template	PASS	
+mrtrix3	mrtrix3_responsemean	PASS	
+mrtrix3	mrtrix3_sh2amp	PASS	
+mrtrix3	mrtrix3_sh2peaks	PASS	
+mrtrix3	mrtrix3_sh2power	PASS	
+mrtrix3	mrtrix3_sh2response	PASS	
+mrtrix3	mrtrix3_shbasis	PASS	
+mrtrix3	mrtrix3_shconv	PASS	
+mrtrix3	mrtrix3_tck2connectome	PASS	
+mrtrix3	mrtrix3_tck2fixel	PASS	
+mrtrix3	mrtrix3_tckconvert	PASS	
+mrtrix3	mrtrix3_tckdfc	PASS	
+mrtrix3	mrtrix3_tckedit	PASS	
+mrtrix3	mrtrix3_tckgen	PASS	
+mrtrix3	mrtrix3_tckglobal	PASS	
+mrtrix3	mrtrix3_tckinfo	PASS	
+mrtrix3	mrtrix3_tckmap	PASS	
+mrtrix3	mrtrix3_tckresample	PASS	
+mrtrix3	mrtrix3_tcksample	PASS	
+mrtrix3	mrtrix3_tcksift	PASS	
+mrtrix3	mrtrix3_tcksift2	PASS	
+mrtrix3	mrtrix3_tckstats	PASS	
+mrtrix3	mrtrix3_tcktransform	PASS	
+mrtrix3	mrtrix3_tensor2metric	PASS	
+mrtrix3	mrtrix3_transformcalc	PASS	
+mrtrix3	mrtrix3_transformcompose	PASS	
+mrtrix3	mrtrix3_transformconvert	PASS	
+mrtrix3	mrtrix3_tsfdivide	PASS	
+mrtrix3	mrtrix3_tsfinfo	PASS	
+mrtrix3	mrtrix3_tsfmult	PASS	
+mrtrix3	mrtrix3_tsfsmooth	PASS	
+mrtrix3	mrtrix3_tsfthreshold	PASS	
+mrtrix3	mrtrix3_tsfvalidate	PASS	
+mrtrix3	mrtrix3_vectorstats	PASS	
+mrtrix3	mrtrix3_voxel2fixel	PASS	
+mrtrix3	mrtrix3_voxel2mesh	PASS	
+mrtrix3	mrtrix3_warp2metric	PASS	
+mrtrix3	mrtrix3_warpconvert	PASS	
+mrtrix3	mrtrix3_warpcorrect	PASS	
+mrtrix3	mrtrix3_warpinit	PASS	
+mrtrix3	mrtrix3_warpinvert	PASS	
 ms2pip	ms2pip_annotate-spectra	Failed	tool bug: ms2pip 4.1.0 annotate-spectra crashes with TypeError in PurePath.with_suffix() (no suffix given) on every run
 ms2pip	ms2pip_correlate	PASS	
 ms2pip	ms2pip_get-training-data	PASS	
@@ -9892,11 +10051,35 @@ ont-fast5-api	ont-fast5-api_compress_fast5	PASS	ran on the repo's multi-read and
 ont-fast5-api	ont-fast5-api_fast5_subset	PASS	ran on the repo's multi-read and single-read test fast5 files; read ids and counts are right
 ont-fast5-api	ont-fast5-api_multi_to_single_fast5	PASS	ran on the repo's multi-read and single-read test fast5 files; read ids and counts are right
 ont-fast5-api	ont-fast5-api_single_to_multi_fast5	PASS	ran on the repo's multi-read and single-read test fast5 files; read ids and counts are right
+ont-tombo	ont-tombo_build_model_estimate_alt_reference	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, WT against KO control); 5mC alternative model written with the 3-mer model estimated from the same reads
+ont-tombo	ont-tombo_build_model_estimate_motif_alt_reference	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq); alternative model for motif AAA position 2 written (attributes checked)
+ont-tombo	ont-tombo_build_model_estimate_reference	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, WT and KO re-squiggled); 3-mer model file written and read back as a standard model (central_pos 1)
+ont-tombo	ont-tombo_build_model_estimate_scale	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq); global scale estimate 103.9 printed (tool writes it to standard error, captured; warns that few reads are present)
+ont-tombo	ont-tombo_build_model_event_resquiggle	Not completed	needs reads with a basecaller event table (Albacore); the real direct RNA reads here have only raw signal and FASTQ, and the tool reports success but writes no re-squiggle group
 ont-tombo	ont-tombo_detect_modifications_aggregate_per_read_stats	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; aggregated the per-read stats from alternative_model into a genomic stats file
 ont-tombo	ont-tombo_detect_modifications_alternative_model	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; 5mC model on the re-squiggled reads; stats and per-read stats written
 ont-tombo	ont-tombo_detect_modifications_de_novo	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; chained from resquiggle output; stats and per-read stats files written
 ont-tombo	ont-tombo_detect_modifications_level_sample_compare	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; WT against KO control; stats file written
+ont-tombo	ont-tombo_detect_modifications_model_sample_compare	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, WT against METTL3-KO); stats and per-read stats files written
+ont-tombo	ont-tombo_filter_clear_filters	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled reads); index written with 0 reads filtered
+ont-tombo	ont-tombo_filter_genome_locations	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled reads); keeping one transcript filtered 21 of 39 reads in the index
+ont-tombo	ont-tombo_filter_level_coverage	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled reads); 25 percent setting filtered 9 of 39 reads in the index
+ont-tombo	ont-tombo_filter_q_score	Failed	tool bug: reads the Fastq with ds[:], which raises on this scalar dataset (h5py 2.9), and a bare except then marks every read as failed; all 39 reads filtered at q-score 1 although their mean q-score is 8.6 to 10.9
+ont-tombo	ont-tombo_filter_raw_signal_matching	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled reads); score 1.5 filtered 3 of 39 reads in the index
+ont-tombo	ont-tombo_filter_stuck	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled reads); 99th percentile 300 observations per base filtered 20 of 39 reads in the index
+ont-tombo	ont-tombo_plot_cluster_most_significant	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled WT reads and its transcriptome FASTA); PDF 1 page and R data file
+ont-tombo	ont-tombo_plot_genome_locations	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled WT reads and its transcriptome FASTA); PDF 1 page
+ont-tombo	ont-tombo_plot_kmer	Failed	image problem: rpy2 in the image rejects the read-id tuple in r.StrVector (TypeError in plot_kmer_dist), so no PDF is written
 ont-tombo	ont-tombo_plot_max_coverage	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; PDF written; --control-fast5-basedirs crashes in this image (NameError _R_DF, R plotting missing), the main mode works
+ont-tombo	ont-tombo_plot_max_difference	Failed	image problem: rpy2 in the image cannot build _R_DF (r.DataFrame fails at import), so every two-sample plot stops with NameError _R_DF
+ont-tombo	ont-tombo_plot_most_significant	Failed	tool bug: --sequences-filename writes no file in single-sample mode (also with the standard model); the PDF itself is correct, 2 pages
+ont-tombo	ont-tombo_plot_motif_centered	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled WT reads and its transcriptome FASTA); PDF 2 pages
+ont-tombo	ont-tombo_plot_motif_with_stats	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled WT reads and its transcriptome FASTA); PDF 1 page
+ont-tombo	ont-tombo_plot_per_read	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled WT reads and its transcriptome FASTA); PDF 1 page
+ont-tombo	ont-tombo_plot_per_read_roc	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled WT reads and its transcriptome FASTA); PDF 3 pages
+ont-tombo	ont-tombo_plot_roc	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled WT reads and its transcriptome FASTA); PDF 2 pages
+ont-tombo	ont-tombo_plot_sample_compare_per_read_roc	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled WT reads and its transcriptome FASTA); PDF 3 pages
+ont-tombo	ont-tombo_plot_sample_compare_roc	PASS	real HEK293T direct RNA fast5 reads (nf-core nanoseq, 39 re-squiggled WT reads and its transcriptome FASTA); PDF 2 pages
 ont-tombo	ont-tombo_preprocess_annotate_raw_with_fastqs	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; basecalls added to all 40 reads; fast5 directory staged writable
 ont-tombo	ont-tombo_resquiggle	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; 37 of 40 reads re-squiggled, resquiggle groups present in the output fast5
 ont-tombo	ont-tombo_text_output_browser_files	PASS	ran on real HEK293T direct RNA fast5 reads (nf-core nanoseq, 40 WT and 40 METTL3-KO) with its transcriptome FASTA; coverage, fraction and statistic wig/bedGraph files written from the de_novo stats
@@ -13422,7 +13605,17 @@ sinto	sinto_tagtoname	PASS
 sinto	sinto_tagtorg	PASS	
 sinto	sinto_tagtotag	PASS	
 sipros	sipros	PASS	
+sirius-csifingerid	sirius-csifingerid_sirius_decomp	PASS	SIRIUS demo mass 368.1136 ([M+H]+, 5 ppm, CHNOP) gives 50 formulas including the known C20H17NO6 (Bicuculline) with its mass error
+sirius-csifingerid	sirius-csifingerid_sirius_formula	PASS	5 demo compounds (SIRIUS repo .ms and .mgf files) give the right top formulas: C20H17NO6 Bicuculline, C15H10O6 Kaempferol, C10H13N5O4 Adenosine, C21H27NO4 Laudanosine; output is a project-space folder (a .sirius zip project fails with a Java error in this image)
+sirius-csifingerid	sirius-csifingerid_sirius_ftree_export	PASS	json and dot files for the top fragmentation tree of each of the 5 compounds (10 files)
+sirius-csifingerid	sirius-csifingerid_sirius_lcms_align	Not completed	no small metabolomics LC-MS mzML found; the only small real mzML is proteomics data and gives an empty project-space
 sirius-csifingerid	sirius-csifingerid_sirius_login	Not completed	needs a SIRIUS web service account to log in; only the --show option ran (Not logged in)
+sirius-csifingerid	sirius-csifingerid_sirius_mgf_export	PASS	mgf with 6 spectra (4 MS1 and 2 merged MS2) for the Bicuculline and Kaempferol demo compounds
+sirius-csifingerid	sirius-csifingerid_sirius_passatutto	PASS	decoy spectra file written for each compound of the formula project
+sirius-csifingerid	sirius-csifingerid_sirius_project_space	PASS	--keep-by-name keeps the 2 compounds Kaempferol and Adenosine of the 5 in the project-space folder
+sirius-csifingerid	sirius-csifingerid_sirius_similarity	PASS	cosine and fragmentation tree alignment matrices for 2 demo compounds; diagonal 1.0 for cosine; input project staged writable because SIRIUS writes into it
+sirius-csifingerid	sirius-csifingerid_sirius_write_summaries	PASS	summary tables written from the ZODIAC project: formula_identifications.tsv has the 5 top formulas with SiriusScore and ZodiacScore
+sirius-csifingerid	sirius-csifingerid_sirius_zodiac	PASS	ZODIAC run on the formula project of the 5 demo compounds gives ZodiacScore values (0.99 for the correct Bicuculline and Adenosine formulas); needs at least about 5 compounds, with 2 it fails
 sistr_cmd	sistr_cmd	PASS	
 sizemeup	sizemeup	PASS	
 ska	ska_align	PASS	
@@ -15316,20 +15509,86 @@ viloca	viloca_run	PASS
 viloca	viloca_snv	Failed	tool bug: viloca snv always crashes with AttributeError 'inference_type' in cli.py, before any SNV calling
 vinalc	vinalc	PASS	
 viral-host-hunter	viral-host-hunter_vhh-predict	Not completed	needs the 11 GB ProtT5 model download plus the trained model archive, and a GPU is strongly recommended
+viral-ngs	viral-ngs_assembly_assemble_trinity	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
 viral-ngs	viral-ngs_assembly_deambig_fasta	PASS	real SARS-CoV-2 sequence with 2276 N; all N replaced by A/C/G/T, length unchanged
+viral-ngs	viral-ngs_assembly_dpdiff	PASS	real SARS-CoV-2 single-sample VCF (nf-core, bgzip+tabix); 94 rows with dp_info 48 matching INFO DP and dp_sample 0 (no DP in the sample column); note: the tool crashes on VCFs with an INFO flag such as INDEL
 viral-ngs	viral-ngs_assembly_filter_short_seqs	PASS	
+viral-ngs	viral-ngs_assembly_impute_from_reference	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing MuscleTool' (it ignores the muscle on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_assembly_modify_contig	PASS	two real SARS-CoV-2 sequences from an nf-core alignment; contig renamed, end gaps trimmed to the reference, output length 29884 equals the ungapped contig
+viral-ngs	viral-ngs_assembly_order_and_orient	Failed	image problem: viral-ngs cannot find its MUMmer tool (TypeError: stat can't specify None for path; it ignores nucmer on PATH), so the command cannot run
+viral-ngs	viral-ngs_assembly_refine_assembly	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
 viral-ngs	viral-ngs_assembly_trim_fasta	PASS	
+viral-ngs	viral-ngs_assembly_trim_rmdup_subsamp	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
 viral-ngs	viral-ngs_assembly_vcf_to_fasta	PASS	input VCF was made with bcftools mpileup/call from the real nf-core SARS-CoV-2 BAM and genome (viral-ngs needs the AD field); output has the 9 called variants and N elsewhere, ends trimmed
+viral-ngs	viral-ngs_broad_utils_get_all_names	PASS	synthetic data: a planted run file and barcode file (Broad-internal formats); the sample names were listed correctly
+viral-ngs	viral-ngs_broad_utils_get_bustard_dir	PASS	synthetic data: a planted Picard folder with a run JSON file (Broad-internal format); the run folder path was printed correctly
+viral-ngs	viral-ngs_broad_utils_get_run_date	PASS	synthetic data: a planted Picard folder with a run JSON file (Broad-internal format); the run date was printed correctly
+viral-ngs	viral-ngs_illumina_common_barcodes	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), (with a planted tab sample sheet; the nf-core NovaSeq sample sheet is not readable by the tool) so the command cannot run
+viral-ngs	viral-ngs_illumina_extract_fc_metadata	PASS	MiSeq run folder from the viral-ngs test data (the nf-core NovaSeq folder has a sample sheet the tool cannot read); RunInfo.xml and SampleSheet.csv copied out unchanged; a tar.gz input fails because the image has only BusyBox tar
+viral-ngs	viral-ngs_illumina_illumina_demux	Failed	image problem: the BusyBox tar in the image rejects the options viral-ngs uses to read a tar.gz run folder, and the real nf-core NovaSeq run folder stops on its RunInfo.xml date format (empty Exception)
+viral-ngs	viral-ngs_illumina_miseq_fastq_to_bam	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
 viral-ngs	viral-ngs_interhost_align_mafft	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing MafftTool' (it ignores the mafft on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_interhost_multichr_mafft	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing MafftTool' (it ignores the mafft on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_intrahost_merge_to_vcf	PASS	synthetic data: a planted vPhaser2 SNP line and a two-sequence alignment of the real nf-core SARS-CoV-2 genome; the VCF has the SNP (REF C, ALT A) with GT, AF, DP, NL and LB fields
+viral-ngs	viral-ngs_intrahost_tabfile_rename	PASS	real SARS-CoV-2 primer BED file (nf-core) with a planted map file; column 0 renamed on all rows after the header line, as documented
+viral-ngs	viral-ngs_intrahost_vphaser	PASS	real nf-core SARS-CoV-2 paired-end BAM (input staged writable with its index); a headerless table of 2 low-frequency variants was written
 viral-ngs	viral-ngs_intrahost_vphaser_one_sample	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_metagenomics_align_rna	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_metagenomics_diamond	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_metagenomics_kraken	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_metagenomics_krona	Failed	image problem: viral-ngs cannot find its Krona tool (AttributeError on a None path; it ignores ktImportTaxonomy on PATH), so the command cannot run
+viral-ngs	viral-ngs_metagenomics_report_merge	PASS	Kraken per-read report from the viral-ngs test data; the by-query output has all 100 lines; note: --outSummaryReport crashes (image problem: it cannot install Kraken) and --krakenDB must be a file
+viral-ngs	viral-ngs_ncbi_fetch_fastas	PASS	downloaded SARS-CoV-2 MT192765.1 from NCBI (network access); the sequence is identical to the nf-core genome.fasta
+viral-ngs	viral-ngs_ncbi_fetch_feature_tables	PASS	downloaded the feature table of SARS-CoV-2 MT192765.1 from NCBI (network access); it lists the 5'UTR, orf1ab, S and other features
+viral-ngs	viral-ngs_ncbi_fetch_genbank_records	PASS	downloaded the GenBank record of SARS-CoV-2 MT192765.1 from NCBI (network access); it is a valid flat file (LOCUS MT192765, 29829 bp)
+viral-ngs	viral-ngs_ncbi_prep_genbank_files	Failed	image problem: viral-ngs tries to download tbl2asn from the NCBI ftp site into its read-only install folder and the image has no tbl2asn, so the command cannot run
+viral-ngs	viral-ngs_ncbi_prep_sra_table	PASS	synthetic data: planted library, BioSample and md5 files (the md5 is of a real nf-core BAM); the table has the right columns and values
+viral-ngs	viral-ngs_ncbi_tbl_transfer	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing MuscleTool' (it ignores the muscle on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_ncbi_tbl_transfer_prealigned	PASS	synthetic data: a planted pairwise alignment of the real SARS-CoV-2 genome (3 substitutions) and its real NCBI feature table; the transferred table has the features for the new sequence
+viral-ngs	viral-ngs_read_utils_align_and_fix	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
 viral-ngs	viral-ngs_read_utils_bam_to_fastq	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_bwamem_idxstats	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_dup_remove_mvicuna	Failed	image problem: the mvicuna program bundled in the image crashes with a floating point exception (exit 136), even on the viral-ngs test reads, so the command cannot run
 viral-ngs	viral-ngs_read_utils_fastq_to_bam	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
+viral-ngs	viral-ngs_read_utils_fastq_to_fasta	PASS	real SARS-CoV-2 reads (plain fastq, 100 reads); 100 fasta records, same read names; the tool cannot read gzip input
+viral-ngs	viral-ngs_read_utils_filter_bam	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
 viral-ngs	viral-ngs_read_utils_filter_bam_mapped_only	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_gatk_realign	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing GATKTool' (the GATK jar is not in the image and it tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_gatk_ug	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing GATKTool' (the GATK jar is not in the image and it tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_index_fasta_picard	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
 viral-ngs	viral-ngs_read_utils_index_fasta_samtools	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
 viral-ngs	viral-ngs_read_utils_merge_bams	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
+viral-ngs	viral-ngs_read_utils_mkdup_picard	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
+viral-ngs	viral-ngs_read_utils_novoalign	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_novoindex	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing NovoalignTool' (it ignores the novoindex on PATH and tries to download and install its own copy; Novoalign also needs a licence), so the command cannot run
+viral-ngs	viral-ngs_read_utils_picard	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
+viral-ngs	viral-ngs_read_utils_purge_unmated	Failed	image problem: viral-ngs cannot find its helper script mergeShuffledFastqSeqs.pl (missing file in the image), so the command cannot run
+viral-ngs	viral-ngs_read_utils_reheader_bam	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_reheader_bams	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_revert_bam_picard	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_rmdup_mvicuna_bam	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_rmdup_prinseq_fastq	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing PrinseqTool' (it ignores the prinseq-lite.pl on PATH and tries to download and install its own copy), so the command cannot run
 viral-ngs	viral-ngs_read_utils_sort_bam	Failed	image problem: viral-ngs tries to download Picard 2.5.0 into its read-only install folder (conda is not installed in the image), so the command cannot run
+viral-ngs	viral-ngs_read_utils_split_bam	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_read_utils_split_reads	PASS	real SARS-CoV-2 reads; 100 reads split into 2 chunks of 50 reads; chunks joined equal the input
+viral-ngs	viral-ngs_reports_align_and_plot_coverage	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing Bwa' (it ignores the bwa on PATH and tries to download and install its own copy), so the command cannot run
 viral-ngs	viral-ngs_reports_alignment_summary	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing MuscleTool' (muscle is not found or installable in the image), so the command cannot run
+viral-ngs	viral-ngs_reports_assembly_stats	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_reports_consolidate_fastqc	PASS	FastQC summary folders made from the real SARS-CoV-2 BAM files; table has one row per sample with 11 module results
+viral-ngs	viral-ngs_reports_consolidate_spike_count	PASS	synthetic data: two hand-written spike count reports in the tool's format; output has the expected sample, spike and count rows
 viral-ngs	viral-ngs_reports_plot_coverage	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_blastn_build_db	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing MakeblastdbTool' (it ignores the makeblastdb on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_bmtagger_build_db	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing BmtoolTool' (it ignores the bmtool on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_deplete_bam_bmtagger	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_deplete_blastn	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing BlastnTool' (it ignores the blastn on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_deplete_blastn_bam	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_deplete_blastn_paired	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing BlastnTool' (it ignores the blastn on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_deplete_human	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_filter_lastal	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing Lastal' (it ignores the lastal on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_filter_lastal_bam	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing SamtoolsTool' (it ignores the samtools on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_lastal_build_db	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing Lastdb' (it ignores the lastdb on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_partition_bmtagger	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing BmtaggerShTool' (it ignores the bmtagger.sh on PATH and tries to download and install its own copy), so the command cannot run
+viral-ngs	viral-ngs_taxon_filter_trim_trimmomatic	Failed	image problem: viral-ngs reports NameError 'unsuccessful in installing TrimmomaticTool' (it ignores the trimmomatic on PATH and tries to download and install its own copy), so the command cannot run
 viralflye	viralflye_viralFlye.py	Not completed	needs the Pfam-A HMM database (about 1.5 GB) and a metaFlye assembly of long reads; post-assembly pipeline wrapper, skipped
 viralmsa	viralmsa_ViralMSA.py	PASS	
 viralrecall	viralrecall	PASS	
@@ -15472,6 +15731,23 @@ wg-blimp	wg-blimp_delete-all-output	Failed	image problem: tool writes to its own
 wg-blimp	wg-blimp_run-shiny	Not completed	long-running Shiny GUI server
 wg-blimp	wg-blimp_run-snakemake	Not completed	pipeline, skipped
 wg-blimp	wg-blimp_run-snakemake-from-config	Not completed	pipeline, skipped
+wgatools	wgatools_call	Failed	tool bug: soft-masked (lowercase) bases in the real LAST MAF are called as SNPs with REF equal to ALT (A to A); other SNPs and the INV calls are right. The chain format option is not supported
+wgatools	wgatools_chain2maf	PASS	real chain ShiftBack.chain with chrM and shifted chrM FASTA gives MAF rows with equal target and query sequence (8569 and 8000 bp)
+wgatools	wgatools_chain2paf	PASS	real chain ShiftBack.chain (Sarek, chrM) gives two PAF records with correct coordinates
+wgatools	wgatools_chunk	PASS	chunks of 5000 give 11 blocks; aligned target bases total 30201, same as the input
+wgatools	wgatools_dotplot	PASS	csv overview mode gives one row per PAF block with correct coordinates and identity
+wgatools	wgatools_filter	PASS	min block size 1000 keeps the 2 PAF records of 8649 and 20948 bp and drops the 4 short ones
+wgatools	wgatools_maf2chain	Failed	tool bug: for minus-strand queries the chain query end is wrong (end 20973 for a 20948 bp block), so the chain header does not match its block sizes
+wgatools	wgatools_maf2paf	PASS	LAST MAF to PAF on the nf-core SARS-CoV-2 contigs; 6 blocks, paf2maf rebuilds the original MAF exactly; note: lowercase (soft-masked) bases count as mismatches in NM and cg
+wgatools	wgatools_maf2sam	Failed	tool bug: DEV command writes a fixed example SAM (sq0 to sq2 with a noodles-sam comment) that ignores the input MAF
+wgatools	wgatools_maf_ext	PASS	region MT192765.1:100-200 gives 2 blocks; the target row equals the genome bases 100-200
+wgatools	wgatools_maf_index	PASS	index JSON written next to the MAF lists 4 sequences and the 6 aligned intervals
+wgatools	wgatools_paf2chain	Failed	tool bug: for minus-strand queries the chain query end is wrong (same fault as maf2chain)
+wgatools	wgatools_paf2maf	PASS	PAF from maf2paf plus real genome and contig FASTA gives a MAF identical to the original LAST MAF
+wgatools	wgatools_pafcov	Failed	tool bug: per-base coverage skips mismatch (X) bases, so 12 of 30201 aligned bases get coverage 0
+wgatools	wgatools_pafpseudo	PASS	pseudo-MAF of the target with the 3 contigs placed on it; contig bases and mismatches match the PAF (combined FASTA with .fai)
+wgatools	wgatools_rename	PASS	prefixes ref_ and ctg_ are added to the sequence names of all rows
+wgatools	wgatools_stat	PASS	per-block table: 3 or 6 mismatches match the PAF CIGARs; note: the chain format is not implemented (visible error); lowercase bases count as mismatches
 wgatools	wgatools_validate	PASS	
 wgdi	wgdi	PASS	mode options now take config files; ran -d dotplot, -icl collinearity and -bi blockinfo on the wgdi-example Amborella vs AEK data (outputs match the repo's)
 wgfast	wgfast	Failed	image problem: the bundled GATK 3.4 jar fails with 'Could not find walker UnifiedGenotyper' (not run with a matching Java), so no BAM or VCF is made

@@ -19,7 +19,7 @@ inputs:
   - id: plot_format
     type:
       - 'null'
-      - boolean
+      - string
     doc: "File format of the coverage plot. By default it is inferred from the file extension of out_plot_file."
     inputBinding:
       position: 20
@@ -27,7 +27,7 @@ inputs:
   - id: plot_data_style
     type:
       - 'null'
-      - boolean
+      - string
     doc: "The plot data display style. Valid options: filled, line, dots (default: filled)"
     inputBinding:
       position: 20
@@ -35,7 +35,7 @@ inputs:
   - id: plot_style
     type:
       - 'null'
-      - boolean
+      - string
     doc: "The plot visual style (default: ggplot)"
     inputBinding:
       position: 20

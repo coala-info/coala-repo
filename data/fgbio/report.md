@@ -6,16 +6,24 @@
 |---|---|---|
 | fgbio_AnnotateBamWithUmis | PASS |  |
 | fgbio_AssessPhasing | PASS |  |
+| fgbio_AssignPrimers | PASS | synthetic data: primer coordinates planted around real UMI read-pair ends; 45% of pairs were assigned to the two amplicons. |
+| fgbio_AutoGenerateReadGroupsByName | PASS | read names taken from the Illumina ID in a real FASTQ header; four read groups were created from flowcell and lane. |
 | fgbio_CallCodecConsensusReads | Not completed | no CODEC test data; it runs on duplex-seq read pairs, but that output cannot confirm CODEC consensus calls. |
 | fgbio_CallDuplexConsensusReads | PASS |  |
 | fgbio_CallMolecularConsensusReads | PASS |  |
+| fgbio_CallOverlappingConsensusBases | PASS |  |
 | fgbio_ClipBam | PASS |  |
 | fgbio_CollectAlternateContigNames | PASS |  |
 | fgbio_CollectDuplexSeqMetrics | PASS |  |
+| fgbio_CollectErccMetrics | PASS | synthetic data: no ERCC BAM available, so a real RNA-seq BAM was used with a planted concentration file; metrics and plot were written. |
+| fgbio_CopyUmiFromReadName | PASS |  |
 | fgbio_CorrectUmis | PASS |  |
 | fgbio_DemuxFastqs | PASS |  |
 | fgbio_DownsampleAndNormalizeBam | PASS |  |
+| fgbio_DownsampleVcf | PASS |  |
 | fgbio_ErrorRateByReadPosition | PASS |  |
+| fgbio_EstimatePoolingFractions | PASS | two real BAMs merged as the pool; estimated fractions 0.48 and 0.52 for the two pooled samples. |
+| fgbio_EstimateRnaSeqInsertSize | PASS | real human RNA-seq BAM with a UCSC refGene refFlat for chr6; the tool writes .rnaseq_insert_size files, not the .rna_seq_ names in its help. |
 | fgbio_ExtractBasecallingParamsForPicard | PASS |  |
 | fgbio_ExtractIlluminaRunInfo | PASS |  |
 | fgbio_ExtractUmisFromBam | PASS |  |
@@ -23,14 +31,31 @@
 | fgbio_FilterBam | PASS |  |
 | fgbio_FilterConsensusReads | PASS |  |
 | fgbio_FilterSomaticVcf | PASS | ran on germline GIAB calls with a matching NA12878 BAM (no somatic test data); ATAP and ERFAP annotations added |
+| fgbio_FindSwitchbackReads | PASS |  |
+| fgbio_FindTechnicalReads | PASS |  |
+| fgbio_FixVcfPhaseSet | PASS |  |
+| fgbio_GenerateRegionsFromFasta | PASS | the tool ignores its --output option and prints to standard output, so the CWL captures standard output. |
 | fgbio_GroupReadsByUmi | PASS |  |
+| fgbio_HapCutToVcf | PASS | 342 variants written and 237 phased, matching the counts in the fgbio test for this data. |
 | fgbio_HardMaskFasta | PASS |  |
+| fgbio_MakeMixtureVcf | PASS |  |
+| fgbio_MakeTwoSampleMixtureVcf | PASS | input limited to bi-allelic sites with genotypes in both samples; the tool crashes on multi-allelic records. |
+| fgbio_PickIlluminaIndices | PASS | no input data needed; 8 indices of length 6 were picked. |
+| fgbio_PickLongIndices | PASS | no input data needed; 20 indices of length 12 were picked. |
+| fgbio_RandomizeBam | PASS | the tool requires its input file to be writable, so the CWL stages the input in the work directory. |
+| fgbio_RemoveSamTags | PASS |  |
+| fgbio_ReviewConsensusVariants | PASS |  |
 | fgbio_SetMateInformation | PASS |  |
 | fgbio_SortBam | PASS |  |
 | fgbio_SortFastq | PASS |  |
 | fgbio_SortSequenceDictionary | PASS |  |
+| fgbio_SplitBam | PASS |  |
+| fgbio_SplitTag | PASS |  |
+| fgbio_StripFastqReadNumbers | PASS |  |
+| fgbio_SummarizeGff | PASS | synthetic data: real RefSeq GFF with a stand-in reference holding only the contig name; counts match the GFF gene biotypes. |
 | fgbio_TrimFastq | PASS |  |
 | fgbio_TrimPrimers | PASS | synthetic data: primer coordinates planted at the ends of real read pairs; primers trimmed and mate fields updated |
+| fgbio_UpdateDelimitedFileContigNames | PASS | synthetic data: contig alias 17 added by hand to the dictionary to rename a real VCF from 17 to chr17. |
 | fgbio_UpdateFastaContigNames | PASS |  |
 | fgbio_UpdateGffContigNames | PASS |  |
 | fgbio_UpdateIntervalListContigNames | PASS |  |
@@ -3377,6 +3402,1422 @@ AssessPhasing Arguments:
                               [Default: false].
 ```
 
+
+## fgbio_AssignPrimers
+
+### Tool Description
+Assigns reads to primers post-alignment. Takes in a BAM file of aligned reads and a tab-delimited file with five
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+AssignPrimers
+------------------------------------------------------------------------------------------------------------------------
+Assigns reads to primers post-alignment. Takes in a BAM file of aligned reads and a tab-delimited file with five
+columns ('chrom', 'left_start', 'left_end', 'right_start', and 'right_end') which provide the 1-based inclusive start
+and end positions of the primers for each amplicon. The primer file must include headers, e.g:
+
+  chrom  left_start  left_end  right_start right_end
+  chr1   1010873     1010894   1011118     1011137
+
+Optionally, a sixth column column 'id' may be given with a unique name for the amplicon. If not given, the coordinates
+of the amplicon's primers will be used: '<chrom>:<left_start>-<left_end>,<chrom>:<right_start>:<right_end>'
+
+Each read is assigned independently of its mate (for paired end reads). The primer for a read is assumed to be located
+at the start of the read in 5' sequencing order. Therefore, a positive strand read will use its aligned start position
+to match against the amplicon's left-most coordinate, while a negative strand read will use its aligned end position to
+match against the amplicon's right-most coordinate.
+
+For paired end reads, the assignment for mate will also be stored in the current read, using the same procedure as
+above but using the mate's coordinates. This requires the input BAM have the mate-cigar ("MC") SAM tag. Read pairs must
+have both ends mapped in forward/reverse configuration to have an assignment. Furthermore, the amplicon assignment may
+be different for a read and its mate. This may occur, for example, if tiling nearby amplicons and a large deletion
+occurs over a given primer and therefore "skipping" an amplicon. This may also occur if there are translocations across
+amplicons.
+
+The output will have the following tags added:
+
+  * ap: the assigned primer coordinates (ex. 'chr1:1010873-1010894')
+  * am: the mate's assigned primer coordinates (ex. 'chr1:1011118-1011137')
+  * ip: the assigned amplicon id
+  * im: the mate's assigned amplicon id (or '=' if the same as the assigned amplicon)
+
+The read sequence of the primer is not checked against the expected reference sequence at the primer's genomic
+coordinates.
+
+In some cases, large deletions within one end of a read pair may cause a primary and supplementary alignments to be
+produced by the aligner, with the supplementary alignment containing the primer end of the read (5' sequencing order).
+In this case, the primer may not be assigned for this end of the read pair. Therefore, it is recommended to prefer or
+choose the primary alignment that has the closest aligned read base to the 5' end of the read in sequencing order. For
+example, from 'bwa' version '0.7.16' onwards, the '-5' option may be used. Consider also using the '-q' option for
+'bwa' '0.7.16' as well, which is standard in '0.7.17' onwards when the '-5' option is used.
+
+The '--annotate-all' option may be used to annotate all alignments for a given read end (eg. R1) with the same
+assignment. If the assignment differs across alignments for the same read end, no assignment is given. Furthermore, if
+the input BAM is neither 'queryname' sorted nor 'query' grouped, it will be sorted into queryname order to assign all
+alignments cross a template simultaneously. The output is written in coordinate order.
+
+AssignPrimers Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToBam, --input=PathToBam
+                              Input BAM file. 
+-o PathToBam, --output=PathToBam
+                              Output BAM file. 
+-m FilePath, --metrics=FilePath
+                              Output metrics file. 
+-p FilePath, --primers=FilePath
+                              File with primer locations. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-S Int, --slop=Int            Match to primer locations +/- this many bases. [Default: 5]. 
+-U [[true|false]], --unclipped-coordinates[[=true|false]]
+                              True to based on the unclipped coordinates (adjust based on hard/soft clipping),
+                              otherwise the aligned bases [Default: true]. 
+--primer-coordinates-tag=String
+                              The SAM tag for the assigned primer coordinate. [Default: rp]. 
+--mate-primer-coordinates-tag=String
+                              The SAM tag for the mate's assigned primer coordinate. [Default: mp]. 
+--amplicon-identifier-tag=String
+                              The SAM tag for the assigned amplicon identifier. [Default: ra]. 
+--mate-amplicon-identifier-tag=String
+                              The SAM tag for the mate's assigned amplicon identifier. [Default: ma].
+                              
+--annotate-all[[=true|false]] Annotate all R1 (or R2) with same value. [Default: false].
+```
+
+## fgbio_AutoGenerateReadGroupsByName
+
+### Tool Description
+Adds read groups to a BAM file for a single sample by parsing the read names.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+AutoGenerateReadGroupsByName
+------------------------------------------------------------------------------------------------------------------------
+Adds read groups to a BAM file for a single sample by parsing the read names.
+
+Will add one or more read groups by parsing the read names. The read names should be of the form:
+
+  <instrument>:<run number>:<flowcell ID>:<lane>:<tile>:<xpos>:<y-pos>
+
+Each unique combination of '<instrument>:<run number>:<flowcell ID>:<lane>' will be its own read group. The ID of the
+read group will be an integer and the platform unit will be '<flowcell-id>.<lane>'.
+
+The input is assumed to contain reads for one sample and library. Therefore, the sample and library must be given and
+will be applied to all read groups. Read groups will be replaced if present.
+
+Two passes will be performed on the input: first to gather all the read groups, and second to write the output BAM
+file.
+
+AutoGenerateReadGroupsByName Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToBam, --input=PathToBam
+                              Input SAM or BAM file 
+-o PathToBam, --output=PathToBam
+                              Output SAM or BAM file 
+-s String, --sample=String    The sample to insert into the read groups 
+-l String, --library=String   The library to insert into the read groups 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+--sequencing-center=String    The sequencing center from which the data originated [Optional]. 
+--predicted-insert-size=Integer
+                              Predicted median insert size, to insert into the read groups [Optional].
+                              
+--program-group=String        Program group to insert into the read groups [Optional]. 
+--platform-model=String       Platform model to insert into the groups (free-form text providing further details of the
+                              platform/technology used) [Optional]. 
+--description=String          Description inserted into the read groups [Optional]. 
+--run-date=Iso8601Date        Date the run was produced (ISO 8601: 'YYYY-MM-DD' ), to insert into the read groups
+                              [Optional]. 
+--comments=String*            Comment(s) to include in the merged output file's header. [Optional]. 
+--sort-order=SamOrder         The sort order for the output sam/bam file. [Optional]. Options:
+                              Coordinate, Queryname, Random, RandomQuery, TemplateCoordinate, Unsorted, Unknown.
+```
+
+## fgbio_CallOverlappingConsensusBases
+
+### Tool Description
+Consensus calls overlapping bases in read pairs.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+CallOverlappingConsensusBases
+------------------------------------------------------------------------------------------------------------------------
+Consensus calls overlapping bases in read pairs.
+
+Inputs and Outputs
+------------------
+
+In order to correctly correct reads by template, the input BAM must be either 'queryname' sorted or 'query' grouped.
+The sort can be done in streaming fashion with:
+
+  samtools sort -n -u in.bam | fgbio CallOverlappingConsensusBases -i /dev/stdin ...
+
+The output sort order may be specified with '--sort-order'. If not given, then the output will be in the same order as
+input.
+
+The reference FASTA must be given so that any existing 'NM', 'UQ' and 'MD' tags can be repaired.
+
+Correction
+----------
+
+Only mapped read pairs with overlapping bases will be eligible for correction.
+
+Each read base from the read and its mate that map to same position in the reference will be used to create a consensus
+base as follows:
+
+  1. If the base agree, then the chosen agreement strategy ('--agreement-strategy') will be used.
+  2. If the base disagree, then the chosen disagreement strategy ('--disagreement-strategy') will be used.
+
+The agreement strategies are as follows:
+
+  * Consensus: Call the consensus base and return a new base quality that is the sum of the two base qualities.
+  * MaxQual: Call the consensus base and return a new base quality that is the maximum of the two base qualities.
+  * PassThrough: Leave the bases and base qualities unchanged.
+
+In the context of disagreement strategies, masking a base will make the base an "N" with base quality phred-value "2".
+The disagreement strategies are as follows:
+
+  * MaskBoth: Mask both bases.
+  * MaskLowerQual: Mask the base with the lowest base quality, with the other base unchanged. If the base qualities are
+    the same, mask both bases.
+  * Consensus: Consensus call the base. If the base qualities are the same, mask both bases. Otherwise, call the base
+    with the highest base quality and return a new base quality that is the difference between the highest and lowest
+    base quality.
+
+CallOverlappingConsensusBases Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToBam, --input=PathToBam
+                              Input SAM or BAM file of aligned reads. 
+-o PathToBam, --output=PathToBam
+                              Output SAM or BAM file. 
+-m FilePath, --metrics=FilePath
+                              Output metrics file. 
+-r PathToFasta, --ref=PathToFasta
+                              Reference sequence fasta file. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+--threads=Int                 The number of threads to use while consensus calling. [Default: 1]. 
+-S SamOrder, --sort-order=SamOrder
+                              The sort order of the output. If not given, output will be in the same order as input if
+                              the input. [Optional]. Options: Coordinate, Queryname, Random, RandomQuery,
+                              TemplateCoordinate, Unsorted, Unknown.
+--agreement-strategy=AgreementStrategy
+                              The strategy to consensus call when both bases agree. See the usage for more details
+                              [Default: Consensus]. Options: Consensus, MaxQual, PassThrough.
+--disagreement-strategy=DisagreementStrategy
+                              The strategy to consensus call when both bases disagree. See the usage for more details
+                              [Default: Consensus]. Options: MaskBoth, MaskLowerQual, Consensus.
+```
+
+## fgbio_CollectErccMetrics
+
+### Tool Description
+Collects metrics for ERCC spike-ins for RNA-Seq experiments.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+CollectErccMetrics
+------------------------------------------------------------------------------------------------------------------------
+Collects metrics for ERCC spike-ins for RNA-Seq experiments.
+
+Currently calculates per-transcript ERCC metrics and summarizes dose response, but does not calculate fold-change
+response.
+
+The input BAM should contain reads mapped to a reference containing the ERCC transcripts. The reference may have
+additional contigs, for example, when concatenating the sample's reference genome and the ERCC transcripts. The BAM
+should have sequence lines in the header matching the ERCC ids (ex. ERCC-00130 or ERCC-00004).
+
+The standard ERCC transcripts, including their unique IDs and concentrations, are taken from here
+(https://assets.thermofisher.com/TFS-Assets/LSG/manuals/cms_095046.txt). The second column lists the ERCC transcript
+identifier which should be present as a sequence line in the BAM header, while columns four and five give the
+concentration of the transcript for mixtures #1 and #2.
+
+The choice of mixture to use can be specified with the '--mixture-name' option (either 'Mix1' or 'Mix2'), or with a
+file containing a custom list of transcripts and concentrations using the '--custom-mixture' option as follows. The
+custom mixture file should be tab-delimited file containing the following columns:
+
+  1. ERCC ID - each ERCC ID should match a contig/reference-sequence name in the input SAM/BAM header.
+  2. Concentration - the concentration (in 'attomoles/ul'). The custom mixture file should contain a header line with
+     names for each column, though the actual values will be ignored.
+
+Three outputs will be produced:
+
+  1. <output>.ercc_summary_metrics.txt - summary statistics for total # of reads mapping to the ERCC transcripts and
+     dose response metrics.
+  2. <output>.ercc_detailed_metrics.txt - gives a per-ERCC-transcript expected concentration and observed fragment
+     count.
+  3. <output>.ercc_metrics.pdf - plots the expected concentration versus the observed fragment count.
+
+Secondary andsupplementary reads will be ignored. A read pair mapping to an ERCC transcript is counted only if both
+ends of the pair map to the same ERCC transcript. A minimum mapping quality can be required for reads to be counted as
+mapped to an ERCC transcript.
+
+CollectErccMetrics Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToBam, --input=PathToBam
+                              Input SAM or BAM file of aligned reads in coordinate order. 
+-o PathPrefix, --output=PathPrefix
+                              Output prefix. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-m ErccMixture, --mixture-name=ErccMixture
+                              The name of the standard ERCC mixture. [Optional]. Options: Mix1, Mix2.
+                              Cannot be used in conjunction with argument(s): customMixture
+--custom-mixture=FilePath     Tab-delimited file containing ERCC IDs and expected concentrations. [Optional].
+                              Cannot be used in conjunction with argument(s): mixtureName (m)
+-c Int, --min-transcript-count=Int
+                              Minimum # of counts required to include an ERCC transcript. [Default: 3].
+                              
+-M Int, --minimum-mapping-quality=Int
+                              The minimum mapping quality [Default: 10].
+```
+
+## fgbio_CopyUmiFromReadName
+
+### Tool Description
+Copies the UMI at the end of the BAM's read name to the RX tag.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+CopyUmiFromReadName
+------------------------------------------------------------------------------------------------------------------------
+Copies the UMI at the end of the BAM's read name to the RX tag.
+
+The read name is split on ':' characters with the last field assumed to be the UMI sequence. The UMI will be copied to
+the 'RX' tag as per the SAM specification. If any read does not have a UMI composed of valid bases (ACGTN), the program
+will report the error and fail.
+
+If a read name contains multiple UMIs they may be delimited (typically by a hyphen ('-') or plus ('+')). The
+'--umi-delimiter' option specifies the delimiter on which to split. The resulting UMI in the 'RX' tag will always be
+hyphen delimited.
+
+Some tools (e.g. BCL Convert) may reverse-complement UMIs on R2 and add an 'r' prefix to indicate that the sequence has
+been reverse-complemented. By default, the 'r' prefix is removed and the sequence is reverse-complemented back to the
+forward orientation. The '--override-reverse-complement-umis' disables the latter behavior, such that the 'r' prefix is
+removed but the UMI sequence is left as reverse-complemented.
+
+CopyUmiFromReadName Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToBam, --input=PathToBam
+                              The input BAM file. 
+-o PathToBam, --output=PathToBam
+                              The output BAM file. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+--remove-umi[[=true|false]]   Remove the UMI from the read name. [Default: false]. 
+--field-delimiter=Char        Delimiter between the read name and UMI. [Default: :]. 
+--umi-delimiter=Char          Delimiter between UMI sequences. [Default: +]. 
+--override-reverse-complement-umis[[=true|false]]
+                              Do not reverse-complement UMIs prefixed with 'r'. [Default: false].
+```
+
+## fgbio_DownsampleVcf
+
+### Tool Description
+Re-genotypes a VCF after downsampling the allele counts.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+DownsampleVcf
+------------------------------------------------------------------------------------------------------------------------
+Re-genotypes a VCF after downsampling the allele counts.
+
+The input VCF must have at least one sample.
+
+If the input VCF contains a single sample, the downsampling target may be specified as a proportion of the original
+read depth using '--proportion=(0..1)', or as the combination of the original and target number of sequenced bases
+('--originalBases' and '--downsampleToBases'). For multi-sample VCFs, the downsampling target must be specified using
+'--downsampleToBases', and a metadata file with the total number of sequenced bases per sample is required as well. The
+metadata file must follow the [https://www.internationalgenome.org/category/meta-data/ 1000 Genomes index format], but
+the only required columns are 'SAMPLE_NAME' and 'BASE_COUNT'. A propportion for each sample is calculated by dividing
+the target number of sequenced bases by the original number of sequenced bases.
+
+The tool first (optionally) winnows the VCF file to remove variants within a distance to each other specified by
+'--window-size' (the default value of '0' disables winnowing). Next, each sample at each variant is examined
+independently. The allele depths per-genotype are randoml downsampled given the proportion. The downsampled allele
+depths are then used to re-compute allele likelhoods and produce a new genotype. In the event that the downsampled
+allele depth is below minAdHomref (for HOMREF calls) or minAdHomvar (for HOMVAR calls), the new genotype will be set to
+NOCALL. minAdHomvar has a default value of 3 to prevent downsampled VCFs from having an excess proportion of HOMVAR
+calls (that a variant caller would likely not call on such weak evidence). minAdHomref has a default value of 1 (i.e.
+no HOMREF calls are rejected).
+
+The tool outputs a downsampled VCF file with the winnowed variants removed, and with the genotype calls and 'DP', 'AD',
+and 'PL' tags updated for each sample at each retained variant.
+
+DownsampleVcf Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToVcf, --input=PathToVcf
+                              The vcf to downsample. 
+-o PathToVcf, --output=PathToVcf
+                              Output file name. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-p Double, --proportion=DoubleProportion of bases to retain (for single-sample VCF). [Optional]. 
+-b Double, --original-bases=Double
+                              Original number of bases (for single-sample VCF). [Optional]. 
+-m FilePath, --metadata=FilePath
+                              Index file with bases per sample. [Optional]. 
+-n Double, --downsample-to-bases=Double
+                              Target number of bases to downsample to. [Optional]. 
+-w Int, --window-size=Int     Winnowing window size. [Default: 0]. 
+-e Double, --epsilon=Double   Sequencing Error rate for genotyping. [Default: 0.01]. 
+-v Int, --min-ad-homvar=Int   Minimum allele depth to call HOMVAR (otherwise NO-CALL) [Default: 3]. 
+-r Int, --min-ad-homref=Int   Minimum allele depth to call HOMREF (otherwise NO-CALL) [Default: 1]. 
+-c [[true|false]], --write-no-call[[=true|false]]
+                              True to write out no-calls. [Default: false]. 
+-s Int, --seed=Int            Random seed value. [Default: 42].
+```
+
+## fgbio_EstimatePoolingFractions
+
+### Tool Description
+Examines sequence data generated from a pooled sample and estimates the fraction of sequence data coming from each
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+EstimatePoolingFractions
+------------------------------------------------------------------------------------------------------------------------
+Examines sequence data generated from a pooled sample and estimates the fraction of sequence data coming from each
+constituent sample. Uses a VCF of known genotypes for the samples within the mixture along with a BAM of sequencing
+data derived from the pool. Performs a multiple regression for the alternative allele fractions at each SNP locus,
+using as inputs the individual sample's genotypes. Only SNPs that are bi-allelic within the pooled samples are used.
+
+Each sample's contribution of REF vs. ALT alleles at each site is derived in one of two ways: (1) if the sample's
+genotype in the VCF has the 'AF' attribute then the value from that field will be used, (2) if the genotype has no 'AF'
+attribute then the contribution is estimated based on the genotype (e.g. 0/0 will be 100% ref, 0/1 will be 50% ref and
+50% alt, etc.).
+
+Various filtering parameters can be used to control which loci are used:
+
+  * --intervals will restrict analysis to variants within the described intervals
+  * --min-genotype-quality will filter out any site with any genotype with GQ < n
+  * --min-mean-sample-coverage requires that the coverage of a site in the BAM be >= 'min-mean-sample-coverage *
+    n_samples'
+  * --min-mapping-quality filters out reads in the BAM with MQ < n
+  * --min-base-quality filters out bases in the BAM with Q < n
+
+EstimatePoolingFractions Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-v PathToVcf, --vcf=PathToVcf VCF of individual sample genotypes. 
+-b PathToBam, --bam=PathToBam Path to BAM file of sequencing data. 
+-o FilePath, --output=FilePathOutput file to write with pooling fractions. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-l PathToIntervals*, --intervals=PathToIntervals*
+                              Zero or more set of regions to restrict analysis to. [Optional]. 
+-s String*, --samples=String* Optional subset of samples from VCF to use. [Optional]. 
+-n String+, --non-autosomes=String+
+                              Non-autosomal chromosomes to avoid. [Default: M, chrM, MT, X, chrX, Y, chrY].
+                              
+-g Int, --min-genotype-quality=Int
+                              Minimum genotype quality. Use -1 to disable. [Default: 30]. 
+-c Int, --min-mean-sample-coverage=Int
+                              Minimum (sequencing coverage @ SNP site / n_samples). [Default: 6]. 
+-m Int, --min-mapping-quality=Int
+                              Minimum mapping quality. [Default: 20]. 
+-q Int, --min-base-quality=IntMinimum base quality. [Default: 5].
+```
+
+## fgbio_EstimateRnaSeqInsertSize
+
+### Tool Description
+Computes the insert size for RNA-Seq experiments.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+EstimateRnaSeqInsertSize
+------------------------------------------------------------------------------------------------------------------------
+Computes the insert size for RNA-Seq experiments.
+
+Computes the insert size by counting the # of bases sequenced in transcript space. The insert size is defined as the
+distance between the first bases sequenced of each pair respectively (5' sequencing ends).
+
+This tool skips reads that overlap multiple genes, reads that aren't fully enclosed in a gene, and reads where the
+insert size would disagree across transcripts from the same gene. Also skips reads that are unpaired, failed QC,
+secondary, supplementary, pairs without both ends mapped, duplicates, and pairs whose reads map to different
+chromosomes. Finally, skips transcripts where too few mapped read bases overlap exonic sequence.
+
+This tool requires each mapped pair to have the mate cigar ('MC') tag. Use 'SetMateInformation' to add the mate cigar.
+
+The output metric file will have the extension '.rna_seq_insert_size.txt' and the output histogram file will have the
+extension '.rna_seq_insert_size_histogram.txt'. The histogram file gives for each orientation ('FR', 'RF', 'tandem'),
+the number of read pairs that had the given insert size.
+
+EstimateRnaSeqInsertSize Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToBam, --input=PathToBam
+                              Input BAM file. 
+-r FilePath, --ref-flat=FilePath
+                              Input gene annotations in RefFlat
+                              (http://genome.ucsc.edu/goldenPath/gbdDescriptionsOld.html#RefFlat) form 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-p PathPrefix, --prefix=PathPrefix
+                              Output prefix file. The file will have the extension '.rna_seq_insert_size.txt' if not
+                              given [Optional]. 
+-d [[true|false]], --include-duplicates[[=true|false]]
+                              Include duplicates [Default: false]. 
+-D Double, --deviations=DoubleGenerate mean and standard deviation by filtering to 'median +
+                              deviations*median_absolute_deviation'. This is done because insert size data typically
+                              includes enough anomalous values from chimeras and other artifacts to make the mean and
+                              sd grossly misleading regarding the real distribution. " [Default: 10.0].
+                              
+-q Int, --minimum-mapping-quality=Int
+                              Ignore reads with mapping quality less than this value. [Default: 30]. 
+-m Double, --minimum-overlap=Double
+                              The minimum fraction of read bases that must overlap exonic sequence in a transcript
+                              [Default: 0.95].
+```
+
+## fgbio_FindSwitchbackReads
+
+### Tool Description
+Finds reads where a template switch occurred during library construction. Some library construction methods, notably
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+FindSwitchbackReads
+------------------------------------------------------------------------------------------------------------------------
+Finds reads where a template switch occurred during library construction. Some library construction methods, notably
+ultra-low-input shotgun methods, are prone to template switching events that create molecules (templates, inserts) that
+instead of being a linear copy of a segment of genomic DNA, instead are chimeras formed by starting on one strand of
+DNA and then, switching to the opposite strand. Frequently when the switch occurs there may be a small offset between
+where the first strand was departed and the opposite strand joined.
+
+Algorithm
+---------
+
+Templates that contain strand switch events (switch-backs) are found by this tool in two different ways:
+
+  1. By looking at reads that contain soft-clipped bases at their 5' end that, when reverse complemented, matches the
+     genome proximal to the 5'-most mapped base of the read. We call these matches "read based switchbacks". Finding read
+     based switchbacks is based on several parameters:
+    1. 'max-offset' controls how far away to search for the reverse-complemented sequence. The default value of '35'
+       allows matches to be found when the soft-clipped sequence matches the genome starting at most 35bp from the 5'
+       mapped position of the read, and reading in the opposite direction.
+    2. 'min-length' controls the minimum number of soft-clipped bases that must exist to trigger the search. Given that
+       the search looks at '2 * max-offset' locations (default=70) it is important that 'min-length' is set such that
+       '4^min-length >> 2 * 'max-offset` in order to avoid false positives.
+    3. 'max-error-rate' allows for some mismatches to exist between the soft-clipped sequence and the genome when
+       matching.
+  2. By identifying templates with 'FF' or 'RR' (aka tandem) orientation where it is surmised that the template switch
+     occurred in the un-sequenced region of the template between R1 and R2. We call these 'tandem based switchbacks'. This
+     is controlled by a single parameter, 'max-gap', which causes the tool to only identify a tandem read pair as a
+     switch-back if the gap between the end of the first read and the start of the second read is '+/- max-gap'.
+
+By default, when a switch-back template is identified, the primary reads are made unmapped (and the original alignment
+stored in the OA tag) and all secondary and supplementary alignments are discarded. This can be disabled with the
+'--dont-unmap' or '-d' option.
+
+All reads from a switch-back template are also tagged with an 'sb' tag that describes the nature of the switchback. If
+the template was identified base on soft-clipped sequence within a read the format is:
+
+'sb:Z:r,[read|mate],{offset},{length}'
+
+If the template is identified due to it's tandem pair orientation then the format is:
+
+'sb:Z:t,{gap}'
+
+Inputs and Outputs
+------------------
+
+The tool takes as input a SAM or BAM file, and by default consumes from 'stdin'. The primary output is also a SAM or
+BAM file, and defaults to compressed BAM on 'stdout'. This allows the tool to be run immediately after an aligner in a
+pipe, e.g. 'bwa mem ref.fa r1.fq r2.fq | fgbio -Xmx8g --ref=ref.fa | ...'.
+
+If the input is neither 'queryname' sorted nor 'queryname' grouped (i.e. all reads with the same name grouped together)
+it will be sorted into 'queryname' order by the tool before processing.
+
+By default the output BAM is produced in the order the reads were processed (i.e. the input ordering or queryname
+sorted if sorting was required). This can be overridden with the '--sort-order' option.
+
+A number of text files are also produced if the '--metrics' option is specified. E.g. when specifying
+'--metrics=s1.switchback' the following files are produced:
+
+  1. 's1.switchback.summary.txt': A table of summary metrics describing the number of reads, switchbacks, etc.
+  2. 's1.switchback.lengths.txt': A table of the distribution of observed switchback lengths in read-based switchbacks.
+  3. 's1.switchback.offsets.txt': A table of the distribution of observed offsets in read-based switchbacks.
+  4. 's1.switchback.gaps.txt': A table of the distribution of gap lengths in tampl
+  5. 's1.switchback.plots.pdf': A PDF containing plots of the distributions from 2-4.
+
+Note: because this tool accesses the reference genome in a random manner it pre-loads the entire reference fasta into
+memory. As a result the tool is best run with '-Xmx8g' to give it sufficient memory.
+
+FindSwitchbackReads Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-r PathToFasta, --ref=PathToFasta
+                              Reference genome fasta file. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+-i PathToBam, --input=PathToBam
+                              Input BAM file. [Default: /dev/stdin]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-o PathToBam, --output=PathToBam
+                              Output BAM file. [Default: /dev/stdout]. 
+-m PathPrefix, --metrics=PathPrefix
+                              Metrics output file. [Optional]. 
+-s SamOrder, --sort-order=SamOrder
+                              Output sort order. [Optional]. Options: Coordinate, Queryname, Random,
+                              RandomQuery, TemplateCoordinate, Unsorted, Unknown.
+-O Int, --max-offset=Int      Maximum offset between end the two segments of the read on the reference. Set to 0 to
+                              disable read-based checks. [Default: 35]. 
+-g Int, --max-gap=Int         Maximum gap between R1 and R2 of tandem reads to call a template a switchback. Set to 0
+                              to disable tandem-based checks. [Default: 500]. 
+-l Int, --min-length=Int      Minimum match length of the switched back segment. [Default: 6]. 
+-e Double, --max-error-rate=Double
+                              Maximum mismatch error rate of switchback match to genome. [Default: 0.1].
+                              
+-d [[true|false]], --dont-unmap[[=true|false]]
+                              IF true, do NOT unmap reads from switchback templates. [Default: false].
+```
+
+## fgbio_FindTechnicalReads
+
+### Tool Description
+Find reads that are from technical or synthetic sequences in a BAM file. Takes in a BAM file, extracts the read pairs
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+FindTechnicalReads
+------------------------------------------------------------------------------------------------------------------------
+Find reads that are from technical or synthetic sequences in a BAM file. Takes in a BAM file, extracts the read pairs
+and fragment reads that are unmapped, and tests them to see if they are likely generated from a technical sequence
+(e.g. adapter dimer).
+
+The identification of reads is done by testing the first N bases (controlled by the match-length parameter) of each
+read against all sub-sequences of length N from the technical sequences. Sub-sequences are generated from both the
+sequences and the reverse complement of the sequences, ignoring any sub-sequences that include 'N's.
+
+By default the output BAM file will contain all reads that matched to a sub-sequence of the technical sequences and, if
+the read is paired, the read's mate pair. An option is available to apply a tag to matched reads (--tag/-t), and if
+specified each matching read will be tagged with the 0-based index of the sequence to which it matched. In combination
+with tagging it is possible to output all reads (-a/--all-reads) which will re-create the input BAM with the addition
+of tags on matching reads.
+
+The default set of sequences include a range of different Illumina adapter sequences with the sample index/barcode
+region masked to Ns.
+
+FindTechnicalReads Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToBam, --input=PathToBam
+                              Input SAM or BAM file 
+-o PathToBam, --output=PathToBam
+                              Output SAM or BAM file 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-m Int, --match-length=Int    The number of bases at the start of the read to match against. [Default: 15].
+                              
+-e Int, --max-errors=Int      The maximum number of errors in the matched region. [Default: 1]. 
+-s String+, --sequences=String+
+                              The set of technical sequences to look for. [Default:
+                              AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACGCCTCCCTCGCGCCATCAGAGATGTGTATAAGAGACAG,
+                              CTGTCTCTTATACACATCTCTGAGCGGGCTGGCAAGGCAGACCGNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACNNNNNNNNTCGTCGGCAGCGTCAGATGTGTATAAGAGACAG,
+                              CTGTCTCTTATACACATCTCCGAGCCCACGAGACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACNNNNNNNNACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG]. 
+-a [[true|false]], --all-reads[[=true|false]]
+                              Output all reads. [Default: false]. 
+-t String, --tag=String       Tag to set to indicate a read is a technical sequence. [Optional].
+```
+
+## fgbio_FixVcfPhaseSet
+
+### Tool Description
+Adds/fixes the phase set (PS) genotype field.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+FixVcfPhaseSet
+------------------------------------------------------------------------------------------------------------------------
+Adds/fixes the phase set (PS) genotype field.
+
+The VCF specification allows phased genotypes to be annotated with the 'PS' (phase set) 'FORMAT' field. The value
+should be a non-negative integer, corresponding to the position of the first variant in the phase set. Some tools will
+output a non-integer value, as well as describe this field as having non-Integer type in the VCF header. This tool will
+update the phase set ('PS') 'FORMAT' field to be VCF spec-compliant.
+
+The handling of unphased genotypes with phase-sets is controlled by the '-x' option:
+
+  * If '-x' is used the genotype will be converted to a phased genotype (e.g. '0/1' => '0|1')
+  * Otherwise the phase-set ('PS') will be removed from the genotype
+
+The '--keep-original' option may be used to store the original 'PS' value in a new 'OPS' field. The type described in
+the header will match the original.
+
+This tool cannot fix phased variants without a phase set, or phased variant sets who have different phase set values.
+
+In some cases, VCFs (e.g. from GIAB/NIST or Platinum Genomes) have illegal header lines, for example, a 'PEDIGREE'
+header line without a 'ID' key-value field. The '-z' option can be used to remove those lines. This option is included
+in this tool for convenience as those example VCFs in some cases have these illegal header lines, and it is convenient
+to fix the phase set in addition to removing those illegal header lines.
+
+FixVcfPhaseSet Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToVcf, --input=PathToVcf
+                              Input VCF. 
+-o PathToVcf, --output=PathToVcf
+                              Output VCF. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-k [[true|false]], --keep-original[[=true|false]]
+                              Store the original phase set in the 'OPS' field. [Default: false]. 
+-x [[true|false]], --phase-genotypes-with-phase-set[[=true|false]]
+                              Set unphased genotypes with a PS FORMAT value to be phased. [Default: false].
+                              
+-z [[true|false]], --remove-no-id-header-lines[[=true|false]]
+                              Remove header lines that do not contain an ID key-value, which is required in VCF.
+                              [Default: false].
+```
+
+## fgbio_GenerateRegionsFromFasta
+
+### Tool Description
+Generates a list of 'freebayes'/'bamtools' region specifiers.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+GenerateRegionsFromFasta
+------------------------------------------------------------------------------------------------------------------------
+Generates a list of 'freebayes'/'bamtools' region specifiers.
+
+GenerateRegionsFromFasta Arguments:
+------------------------------------------------------------------------------------------------------------------------
+--input=PathToFasta           The input FASTA. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+--output=Path                 The output. [Default: /dev/stdout]. 
+--region-size=Int             The size of the regions to output. [Default: 100000].
+```
+
+## fgbio_HapCutToVcf
+
+### Tool Description
+Converts the output of 'HAPCUT' ('HapCut1'/'HapCut2') to a VCF.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+HapCutToVcf
+------------------------------------------------------------------------------------------------------------------------
+Converts the output of 'HAPCUT' ('HapCut1'/'HapCut2') to a VCF.
+
+The output of 'HAPCUT' does not include all input variants, but simply those variants that are in phased blocks. This
+tool takes the original VCF and the output of 'HAPCUT', and produces a VCF containing both the variants that were
+phased and the variants that were not phased, such that all variants in the original file are in the output.
+
+The original VCF provided to 'HAPCUT' is assumed to contain a single sample, as 'HAPCUT' only supports a single sample.
+
+By default, all phased genotypes are annotated with the 'PS' (phase set) 'FORMAT' tag, which by convention is the
+position of the first variant in the phase set (see the VCF specification). Furthermore, this tool formats the alleles
+of a phased genotype using the '|' separator instead of the '/' separator, where the latter indicates the genotype is
+unphased. If the option to output phased variants in GATK's 'ReadBackedPhasing' format is used, then the first variant
+in a phase set will have '/' instead of '|' separating its alleles. Also, all phased variants will have 'PASS' set in
+its 'FILTER' column, while unphased variants will have 'NotPhased' set in their 'FILTER' column. Unlike GATK's
+'ReadBackedPhasing', homozygous variants will always be unphased.
+
+More information about the purpose and operation of GATK's Read-backed phasing, including its output format, can be
+found in the GATK Forum
+(http://gatkforums.broadinstitute.org/gatk/discussion/45/purpose-and-operation-of-read-backed-phasing)
+
+Additional 'FORMAT' fields for phased variants are provided corresponding to per-genotype information produced by
+'HapCut1':
+
+  1. The 'RC' tag gives the counts of calls supporting 'allele0' and 'allele1' respectively.
+  2. The 'LC' tag gives the change in likelihood if this SNP is made homozygous or removed.
+  3. The 'MCL' tag gives the maximum change in likelihood if this SNP is made homozygous or removed.
+  4. The 'RMEC' tag gives the reduction in 'MEC' score if we remove this variant altogether.
+
+Additional 'FORMAT' fields for phased variants are provided corresponding to per-genotype information produced by
+'HapCut2':
+
+  1. The 'PR' tag is '1' if 'HapCut2' pruned this variant, '0' otherwise.
+  2. The 'SE' tag gives the confidence ('log10') that there is not a switch error occurring immediately before the SNV
+     (closer to zero means that a switch error is more likely).
+  3. The 'NE' tag gives the confidence ('log10') that the SNV is not a mismatch (single SNV) error (closer to zero
+     means a mismatch is more likely).
+
+HapCut2 should not be run with '--call-homozygous' as the genotypes may be different than the input and so is not
+currently supported.
+
+For more information about 'HapCut1', see the source code or paper below. source code:
+https://github.com/vibansal/hapcut HapCut1 paper: An efficient and accurate algorithm for the haplotype assembly
+problem Bioinformatics. 2008 Aug 15;24(16):i153-9.
+
+For more information about 'HapCut2', see the source code (https://github.com/vibansal/HapCUT2) below.
+
+HapCutToVcf Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-v PathToVcf, --vcf=PathToVcf The original VCF provided to 'HapCut1'/'HapCut2'. 
+-i FilePath, --input=FilePath The file produced by 'HapCut1'/'HapCut2'. 
+-o PathToVcf, --output=PathToVcf
+                              The output VCF with both phased and unphased variants. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-r [[true|false]], --gatk-phasing-format[[=true|false]]
+                              Output phased variants in GATK's 'ReadBackedPhasing' format. [Default: false].
+                              
+--fix-ambiguous-reference-alleles[[=true|false]]
+                              Fix IUPAC codes in the original VCF to be VCF 4.3 spec-compliant (ex 'R' -> 'A'). Does
+                              not support BCF inputs. [Default: false].
+```
+
+## fgbio_MakeMixtureVcf
+
+### Tool Description
+Creates a VCF with one sample whose genotypes are a mixture of other samples'.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+MakeMixtureVcf
+------------------------------------------------------------------------------------------------------------------------
+Creates a VCF with one sample whose genotypes are a mixture of other samples'.
+
+The input VCF must contain all samples to be mixed, and may optionally contain other samples. Sample mixtures can be
+specified in one of several ways:
+
+  1. '--samples s1 s2 s3': specifies that the samples with names 's1', 's'2 and 's3' should be mixed equally.
+  2. ' --samples s1@0.1 s2@0.1 s3@0.8': specifies that the three samples should be mixed at '0.1', '0.1', and '0.8'
+     respectively
+  3. '--samples s1@0.1 s2 s3': specifies that 's1' should form '0.1' of the mixture and that the remaining ('0.9')
+     should be equally split amongst 's2' and s'3'
+  4. If no sample names are given, all samples in the input VCF will be used, mixing equally
+
+The input samples are assumed to be diploid with the allele fraction defined by the genotype ('0/0', '0/1' or '1/1').
+The '--allele-fraction-field' option may be specified, in which case the allele fraction of the input genotypes will be
+retrieved from the specified 'FORMAT' field in the VCF genotypes. All genotypes except hom-ref and no-call genotypes
+must have this field present if supplied.
+
+If the --'no-call-is-hom-ref' flag is 'true' (the default) then no-call genotypes in the input VCF are interpreted as
+hom-ref genotypes. If it is 'false', any location with a no-call genotype will be emitted as a no-call in the mixture,
+and will be filtered.
+
+MakeMixtureVcf Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToVcf, --input=PathToVcf
+                              Input VCF containing genotypes for the samples to be mixed. 
+-o PathToVcf, --output=PathToVcf
+                              Output VCF of mixture sample. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-s String*, --samples=String* Samples to mix. See general usage for format and examples. [Optional]. 
+-S String, --output-sample-name=String
+                              Output sample name. [Default: mixture]. 
+-N [[true|false]], --no-call-is-hom-ref[[=true|false]]
+                              Treat no-calls for samples as hom-ref genotypes. [Default: true]. 
+-a String, --allele-fraction-field=String
+                              Format field containing allele fraction. [Optional]. 
+-p Int, --precision=Int       Digits of precision in generated allele fractions. [Default: 5].
+```
+
+## fgbio_MakeTwoSampleMixtureVcf
+
+### Tool Description
+Creates a simulated tumor or tumor/normal VCF by in-silico mixing genotypes from two samples.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+MakeTwoSampleMixtureVcf
+------------------------------------------------------------------------------------------------------------------------
+Creates a simulated tumor or tumor/normal VCF by in-silico mixing genotypes from two samples.
+
+The tumor genotypes are created by mixing the incoming genotypes for the for the 'tumor' sample and the incoming
+genotypes for the 'normal' samples with the 'tumor' alleles accounting for 'tumorFraction' of the resulting mixture and
+the 'normal' alleles accounting for '1 - tumorFraction' of the resulting mixture (see '--tumor-fraction'). E.g. if the
+'tumor' genotype is 'A/C', the 'normal' genotype is 'C/C', and 'tumorFraction' is set at 0.5, then the resulting tumor
+genotype will be 'A/C' with an allele fraction of '0.75'. The resulting allele fraction is written to the 'AF' info
+field in the VCF.
+
+In tumor-only mode ('--tumor-only') only tumor genotypes are output. In tumor/normal mode genotypes for the 'normal'
+samples are also emitted, and match the genotypes from the input sample.
+
+All loci (potentially restricted by intervals) that are variant in one or both samples are written to the output VCF,
+though in several cases the variants will be filtered:
+
+  * If either of the tumor or normal sample is no-called the resulting locus will have the 'unknown_gt' filter applied
+  * If the tumor and the normal have more than one alternative allele between them the 'multi_allelic' filter will be
+    applied
+  * In tumor/normal mode (as opposed to tumor-only) loci that have an alt allele in the normal sample will have the
+    'alt_allele_in_normal' filter applied
+
+MakeTwoSampleMixtureVcf Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToVcf, --input=PathToVcf
+                              Input VCF file. 
+-o PathToVcf, --output=PathToVcf
+                              Output VCF file. 
+-t String, --tumor=String     Name of the 'tumor' sample in the input VCF. 
+-n String, --normal=String    Name of the 'normal' sample in the input VCF. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-f Double, --tumor-fraction=Double
+                              What fraction of the mixture comes from the 'tumor' sample. [Default: 0.5].
+                              
+-T [[true|false]], --tumor-only[[=true|false]]
+                              Tumor only mode - only output tumor genotypes and don't filter sites. [Default:
+                              false]. 
+-N [[true|false]], --no-call-is-hom-ref[[=true|false]]
+                              Treat no-calls for either sample as hom-ref genotypes. [Default: true].
+                              
+-l PathToIntervals, --intervals=PathToIntervals
+                              Optional set of intervals to restrict to. [Optional].
+```
+
+## fgbio_PickIlluminaIndices
+
+### Tool Description
+Picks a set of molecular indices that should work well together.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+PickIlluminaIndices
+------------------------------------------------------------------------------------------------------------------------
+Picks a set of molecular indices that should work well together.
+
+The indexes to evaluate are generated randomly, unless the '--candidates' option is given. The latter specifies a path
+to a file with one index per line from which indices are picked.
+
+PickIlluminaIndices Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-n Int, --indices=Int         The number of indices desired. 
+-o FilePath, --output=FilePathFile to write indices to. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+-l Int, --length=Int          The length of each barcode sequence. [Default: 8]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-e Int, --edit-distance=Int   The minimum edit distance between two indices in the set. [Default: 3].
+                              
+--allow-reverses[[=true|false]]
+                              Allow indices that are lexical reverses of one another [Default: false].
+                              
+--allow-reverse-complements[[=true|false]]
+                              Allow indices that are reverse complements of one another [Default: false].
+                              
+--allow-palindromes[[=true|false]]
+                              Allow indices that are palindromic ('bases == rev(bases)'). [Default: false].
+                              
+--max-homopolymer=Int         Reject indices with a homopolymer of greater than this length. [Default: 2].
+                              
+--min-gc=Double               The minimum GC fraction for a barcode to be accepted. [Default: 0.0]. 
+--max-gc=Double               The maximum GC fraction for a barcode to be accepted. [Default: 0.7]. 
+-t Int, --threads=Int         Number of threads to use. [Default: 4]. 
+--vienna-rna-dir=DirPath      The installation directory for 'ViennaRNA'. [Optional]. 
+--min-delta-g=Double          The lowest acceptable secondary structure 'deltaG'. [Default: -10.0]. 
+--adapters=String+            The indexed adapter sequence into which the indices will be integrated. [Default:
+                              AATGATACGGCGACCACCGAGATCTACACNNNNNNNNACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG]. 
+--avoid-sequence=String+      Sequences that should be avoided. Any kmer of 'length' that appears in these sequences
+                              and their reverse complements will be thrown out. [Default:
+                              AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACGCCTCCCTCGCGCCATCAGAGATGTGTATAAGAGACAG,
+                              CTGTCTCTTATACACATCTCTGAGCGGGCTGGCAAGGCAGACCGNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACNNNNNNNNTCGTCGGCAGCGTCAGATGTGTATAAGAGACAG,
+                              CTGTCTCTTATACACATCTCCGAGCCCACGAGACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACNNNNNNNNACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG]. 
+--candidates=FilePath         The candidate indices from which to choose with one index per line (nothing else),
+                              otherwise generate all possible indices [Optional].
+```
+
+## fgbio_PickLongIndices
+
+### Tool Description
+Picks a set of molecular indices that have at least a given number of mismatches between them. Whereas
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+PickLongIndices
+------------------------------------------------------------------------------------------------------------------------
+Picks a set of molecular indices that have at least a given number of mismatches between them. Whereas
+'PickIlluminaIndices' attempts to pick a near-optimal set of indices, 'PickLongIndices' implements a significantly more
+efficient method based on generation of random indices that can generate a large set of satisfactory indices in a small
+amount of time and memory even for index lengths '>> 10bp'.
+
+Many options exist for controlling aspects of the indices picked, including length, edit distance (mismatches only), gc
+range, homopolymer content, secondary structure etc.
+
+Secondary structure is predicted using ViennaRNA's 'RNAfold' in DNA mode. To enable structure checking both the
+'--vienna-rna-dir' and '--adapters' must be specified. Adapters must be strings of A, C, G, and T with a single block
+of Ns (e.g. 'ACGTNNNN' or 'ACNNNNGT'). At runtime the Ns are replaced with indices, and 'deltaG' of the
+index-containing sequence is calculated.
+
+The number of indices requested may not be possible to produce given other constraints. When this is the case the tool
+will output as many indices as possible, though less than the requested number. In such cases it may be useful to try
+different values for '--attempt'. This parameter controls how many attempts are made to find the next valid index
+before quitting and outputting the accumulated indices. Higher values will yield incrementally more indices but require
+significantly longer runtimes.
+
+A file of existing indices may be provided. Existing indices must be of the same length as requested indices and
+composed of A, C, G and Ts, but are subject to no other constraints. Index picking will then built a set comprised of
+the existing indices, and new indices which satisfy all constraints. Existing indices are included in the generated
+output file.
+
+PickLongIndices Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-n Int, --number-of-indices=Int
+                              The number of indices desired. 
+-o FilePath, --output=FilePathFile to write indices to. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+-l Int, --length=Int          The length of each index sequence. [Default: 8]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-e Int, --edit-distance=Int   The minimum edit distance between two indices in the set. [Default: 3].
+                              
+--allow-reverses[[=true|false]]
+                              Allow indices that are lexical reverses of one another [Default: false].
+                              
+--allow-reverse-complements[[=true|false]]
+                              Allow indices that are reverse complements of one another [Default: false].
+                              
+--allow-palindromes[[=true|false]]
+                              Allow indices that are palindromic ('index == revcomp(index)'). [Default:
+                              false]. 
+--max-homopolymer=Int         Reject indices with a homopolymer of greater than this length. [Default: 2].
+                              
+-g Double, --min-gc=Double    The minimum GC fraction for an index to be accepted. [Default: 0.2]. 
+-G Double, --max-gc=Double    The maximum GC fraction for an index to be accepted. [Default: 0.8]. 
+--existing=FilePath           File of existing index sequences to integrate, one per line. [Optional].
+                              
+-s Long, --seed=Long          Random seed value. [Default: 1]. 
+-a Int, --attempts=Int        Attempts to pick the next index before quitting. [Default: 100000]. 
+--vienna-rna-dir=DirPath      The installation directory for 'ViennaRNA'. [Optional]. 
+-t Double, --temperature=Double
+                              The temperature at which to predict secondary structure. [Default: 25.0].
+                              
+--min-delta-g=Double          The lowest acceptable secondary structure 'deltaG'. [Default: -10.0]. 
+--adapters=String*            Adapter sequence(s) into which indices will be inserted. [Optional]. 
+--avoid-sequence=String+      Any index sequence that appears in an avoid sequence or its reverse complement will be
+                              discarded. [Default: AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACGCCTCCCTCGCGCCATCAGAGATGTGTATAAGAGACAG,
+                              CTGTCTCTTATACACATCTCTGAGCGGGCTGGCAAGGCAGACCGNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACNNNNNNNNTCGTCGGCAGCGTCAGATGTGTATAAGAGACAG,
+                              CTGTCTCTTATACACATCTCCGAGCCCACGAGACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG,
+                              AATGATACGGCGACCACCGAGATCTACACNNNNNNNNACACTCTTTCCCTACACGACGCTCTTCCGATCT,
+                              AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG].
+```
+
+## fgbio_RandomizeBam
+
+### Tool Description
+Randomizes the order of reads in a SAM or BAM file. Randomization is done by sorting on a hash of the 'queryname' (and
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+RandomizeBam
+------------------------------------------------------------------------------------------------------------------------
+Randomizes the order of reads in a SAM or BAM file. Randomization is done by sorting on a hash of the 'queryname' (and
+bases and quals if not query-grouping). By default reads with the same query name are grouped together in the output
+file; this can be turned off by specifying --query-group=false.
+
+RandomizeBam Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+-i PathToBam, --input=PathToBam
+                              The input SAM or BAM file. [Default: /dev/stdin]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-o PathToBam, --output=PathToBam
+                              The output SAM or BAM file. [Default: /dev/stdout]. 
+-s Int, --seed=Int            Random seed. [Default: 42]. 
+-q [[true|false]], --query-group[[=true|false]]
+                              Group together reads by queryname. [Default: true].
+```
+
+## fgbio_RemoveSamTags
+
+### Tool Description
+Removes SAM tags from a SAM or BAM file. If no tags to remove are given, the original file is produced.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+RemoveSamTags
+------------------------------------------------------------------------------------------------------------------------
+Removes SAM tags from a SAM or BAM file. If no tags to remove are given, the original file is produced.
+
+RemoveSamTags Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToBam, --input=PathToBam
+                              Input SAM or BAM. 
+-o PathToBam, --output=PathToBam
+                              Output SAM or BAM. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-t String*, --tags-to-remove=String*
+                              The tags to remove. [Optional].
+```
+
+## fgbio_ReviewConsensusVariants
+
+### Tool Description
+Extracts data to make reviewing of variant calls from consensus reads easier. Creates a list of variant sites from the
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+ReviewConsensusVariants
+------------------------------------------------------------------------------------------------------------------------
+Extracts data to make reviewing of variant calls from consensus reads easier. Creates a list of variant sites from the
+input VCF (SNPs only) or IntervalList then extracts all the consensus reads that do not contain a reference allele at
+the the variant sites, and all raw reads that contributed to those consensus reads. This will include consensus reads
+that carry the alternate allele, a third allele, a no-call or a spanning deletion at the variant site.
+
+Reads are correlated between consensus and grouped BAMs using a molecule ID stored in an optional attribute, 'MI' by
+default. In order to support paired molecule IDs where two or more molecule IDs are related (e.g. see the Paired
+assignment strategy in GroupReadsByUmi) the molecule ID is truncated at the last '/' if present (e.g. '1/A => 1' and '2
+=> 2').
+
+Both input BAMs must be coordinate sorted and indexed.
+
+A pair of output BAMs named '<output>.consensus.bam' and '<output>.grouped.bam' are created with the relevant reads
+from each input BAM, and a review file '<output>.txt' is created. The review file contains details on each variant
+position along with detailed information on each consensus read that supports the variant. If the sample-name argument
+is supplied and the input is VCF, genotype information for that sample will be retrieved. If the sample-name isn't
+supplied and the VCF contains only a single sample then those genotypes will be used.
+
+ReviewConsensusVariants Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i FilePath, --input=FilePath Input VCF or IntervalList of variant locations. 
+-c PathToBam, --consensus-bam=PathToBam
+                              BAM file of consensus reads used to call variants. 
+-g PathToBam, --grouped-bam=PathToBam
+                              BAM file of grouped raw reads used to build consensuses. 
+-r PathToFasta, --ref=PathToFasta
+                              Reference fasta file. 
+-o PathPrefix, --output=PathPrefix
+                              Basename of output files to create. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-s String, --sample=String    Name of the sample being reviewed. [Optional]. 
+-N [[true|false]], --ignore-ns-in-consensus-reads[[=true|false]]
+                              Ignore N bases in the consensus reads. [Default: false]. 
+-m Double, --maf=Double       Only output detailed information for variants at maf and below. [Default: 0.05].
+```
+
+## fgbio_SplitBam
+
+### Tool Description
+Splits a BAM into multiple BAMs, one per-read group (or library).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+SplitBam
+------------------------------------------------------------------------------------------------------------------------
+Splits a BAM into multiple BAMs, one per-read group (or library).
+
+The resulting BAMs will be named '<output-prefix>.<read-group-id>.bam', or '<output-prefix>.<library-name>.bam' when
+splitting by the library. All reads without a read group, or without a library when splitting by library, will be
+written to '<output-prefix>.unknown.bam'. If no such reads exist, then no such file will exist.
+
+By default, async writing of BAM files is controlled by the '--async-io' common tool option to increase performance. If
+the input BAM has significantly more read groups (or libraries) than your system has CPUs it is recommended to disable
+this feature for this tool using '--no-async-writing'. Asynchronous reading is not affected.
+
+SplitBam Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToBam, --input=PathToBam
+                              Input SAM or BAM file. 
+-o PathPrefix, --output=PathPrefix
+                              Output prefix for all SAM or BAM files (ex. output/sample-name). 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-s SplitType, --split-by=SplitType
+                              Split by library instead of read group [Default: ReadGroup]. Options:
+                              Library, ReadGroup.
+-u String, --unknown=String   The name to use for the unknown file [Default: unknown]. 
+--no-async-writing[[=true|false]]
+                              Do not write the records asynchronously. Use this to reduce memory usage when many read
+                              groups/libraries are present. [Default: false].
+```
+
+## fgbio_SplitTag
+
+### Tool Description
+Splits an optional tag in a SAM or BAM into multiple optional tags.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+SplitTag
+------------------------------------------------------------------------------------------------------------------------
+Splits an optional tag in a SAM or BAM into multiple optional tags.
+
+SplitTag Arguments:
+------------------------------------------------------------------------------------------------------------------------
+--input=PathToBam             Input SAM or BAM. 
+--output=PathToBam            Output SAM or BAM. 
+--tag-to-split=String         Tag to split. 
+--tags-to-output=String+      Tag(s) to output. There should be one per produced token. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+--delimiter=String            The delimiter used to split the string. [Default: -].
+```
+
+## fgbio_StripFastqReadNumbers
+
+### Tool Description
+Removes trailing /# from read names in fastq. Read names that end in a slash and a single digit will have the slash and
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+StripFastqReadNumbers
+------------------------------------------------------------------------------------------------------------------------
+Removes trailing /# from read names in fastq. Read names that end in a slash and a single digit will have the slash and
+digit removed. Read names that do not end with a slash and a number will be untouched.
+
+StripFastqReadNumbers Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i PathToFastq, --input=PathToFastq
+                              Input fastq file. 
+-o PathToFastq, --output=PathToFastq
+                              Output fastq file. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false].
+```
+
+## fgbio_SummarizeGff
+
+### Tool Description
+Takes in a RefSeq GFF and produces some summary statistics.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+SummarizeGff
+------------------------------------------------------------------------------------------------------------------------
+Takes in a RefSeq GFF and produces some summary statistics.
+
+SummarizeGff Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i FilePath, --input=FilePath Input RefSeq GFF 
+-r PathToFasta, --ref=PathToFasta
+                              Reference sequence fasta. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false].
+```
+
+## fgbio_UpdateDelimitedFileContigNames
+
+### Tool Description
+Updates the contig names in columns of a delimited data file (e.g. CSV, TSV).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fgbio:3.1.1--hdfd78af_0
+- **Homepage**: https://github.com/fulcrumgenomics/fgbio
+- **Package**: https://anaconda.org/channels/bioconda/packages/fgbio/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+UpdateDelimitedFileContigNames
+------------------------------------------------------------------------------------------------------------------------
+Updates the contig names in columns of a delimited data file (e.g. CSV, TSV).
+
+The name of each sequence must match one of the names (including aliases) in the given sequence dictionary. The new
+name will be the primary (non-alias) name in the sequence dictionary. Use '--skip-missing' to ignore lines where a
+contig name could not be updated (i.e. missing from the sequence dictionary).
+
+UpdateDelimitedFileContigNames Arguments:
+------------------------------------------------------------------------------------------------------------------------
+-i FilePath, --input=FilePath Input delimited data file. 
+-d PathToSequenceDictionary, --dict=PathToSequenceDictionary
+                              The path to the sequence dictionary with contig aliases. 
+-c Int+, --columns=Int+       The column indices for the contig names (0-based). 
+-o FilePath, --output=FilePathOutput delimited data file. 
+-h [[true|false]], --help[[=true|false]]
+                              Display the help message. [Default: false]. 
+--version[[=true|false]]      Display the version number for this tool. [Default: false]. 
+-T Char, --delimiter=Char     The delimiter [Default: \t]. 
+-H String, --comment=String   Treat lines with this starting string as comments (always printed) [Default: #].
+                              
+-n Int, --output-first-num-lines=Int
+                              Output the first 'N' lines as-is (always printed). [Default: 0]. 
+--skip-missing[[=true|false]] Skip contigs in the delimited file that are not found in the sequence dictionary.
+                              [Default: false]. 
+-s SortOrder, --sort-order=SortOrder
+                              Sort the output based on the following order. [Default: Unsorted]. Options:
+                              Unsorted, ByContigOnly, ByCoordinate.
+--contig=Int                  The column index for the contig (0-based) for sorting. Use the first column if not given.
+                              [Optional]. 
+--position=Int                The column index for the genomic position (0-based) for sorting by coordinate.
+                              [Optional]. 
+--max-objects-in-ram=Int      The maximum number of objects to store in memory [Default: 1000000].
+```
 
 ## Metadata
 - **Skill**: generated

@@ -5,8 +5,8 @@
 | Tool | Result | Reason |
 |---|---|---|
 | sccmec | PASS |  |
-| sccmec-regions | PASS |  |
-| sccmec-targets | PASS |  |
+| sccmec_sccmec-regions | PASS |  |
+| sccmec_sccmec-targets | PASS |  |
 
 ## sccmec
 
@@ -75,7 +75,7 @@ Usage: sccmec-main [OPTIONS]
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-## sccmec-targets
+## sccmec_sccmec-targets
 
 ### Tool Description
 Classify SCCmec cassettes in assemblies using BLAST against individual genes (targets).
@@ -120,7 +120,7 @@ Classify SCCmec cassettes in assemblies using BLAST against individual genes (ta
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-## sccmec-regions
+## sccmec_sccmec-regions
 
 ### Tool Description
 Classify SCCmec cassettes in assemblies using BLAST against larger genomic regions.

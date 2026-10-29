@@ -4,13 +4,13 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| extract_delete | PASS |  |
-| extract_fetch | Failed | image problem: the browser is installed under /root/.cache, which the non-root container user cannot read |
-| extract_get | PASS |  |
-| extract_post | PASS |  |
-| extract_put | PASS |  |
+| scrapling_extract_delete | PASS |  |
+| scrapling_extract_fetch | Failed | image problem: the browser is installed under /root/.cache, which the non-root container user cannot read |
+| scrapling_extract_get | PASS |  |
+| scrapling_extract_post | PASS |  |
+| scrapling_extract_put | PASS |  |
 
-## extract_get
+## scrapling_extract_get
 
 ### Tool Description
 Perform a GET request and save the content to a file. The output file path can be an HTML file, a Markdown file of the HTML content, or the text content itself. Use file extensions (.html/.md/.txt) respectively.
@@ -63,7 +63,7 @@ Uninstalled 1 package in 5ms
 Installed 1 package in 2ms
 ```
 
-## extract_post
+## scrapling_extract_post
 
 ### Tool Description
 Perform a POST request and save the content to a file. The output file path can be an HTML file, a Markdown file of the HTML content, or the text content itself.
@@ -120,7 +120,7 @@ Uninstalled 1 package in 5ms
 Installed 1 package in 1ms
 ```
 
-## extract_put
+## scrapling_extract_put
 
 ### Tool Description
 Perform a PUT request and save the content to a file. The output file path can be an HTML file, a Markdown file of the HTML content, or the text content itself.
@@ -177,7 +177,7 @@ Uninstalled 1 package in 4ms
 Installed 1 package in 1ms
 ```
 
-## extract_delete
+## scrapling_extract_delete
 
 ### Tool Description
 Perform a DELETE request and save the content to a file. The output file path can be an HTML file, a Markdown file of the HTML content, or the text content itself. Use file extensions (.html/.md/.txt) respectively.
@@ -230,7 +230,7 @@ Uninstalled 1 package in 4ms
 Installed 1 package in 1ms
 ```
 
-## extract_fetch
+## scrapling_extract_fetch
 
 ### Tool Description
 Use StealthyFetcher to fetch content with advanced stealth features

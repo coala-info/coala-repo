@@ -5,8 +5,8 @@
 | Tool | Result | Reason |
 |---|---|---|
 | jali | PASS |  |
-| jscan | PASS |  |
-| jsearch | PASS |  |
+| jali_jscan | PASS |  |
+| jali_jsearch | PASS |  |
 
 ## jali
 
@@ -41,7 +41,7 @@ Options:
 ```
 
 
-## jsearch
+## jali_jsearch
 
 ### Tool Description
 Compares all proteins of a protein database to a multiple alignment of a protein family with jumping alignments, and outputs the database sorted by alignment score.
@@ -67,7 +67,7 @@ Options:
   -h                       //print this help message
 ```
 
-## jscan
+## jali_jscan
 
 ### Tool Description
 Compares a protein sequence to a database of multiple alignments (PRODOM format) with jumping alignments, and outputs the cluster names with their scores.

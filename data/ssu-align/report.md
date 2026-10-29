@@ -5,11 +5,11 @@
 | Tool | Result | Reason |
 |---|---|---|
 | ssu-align | PASS | Staged input writable and put options before arguments; four real rRNA sequences (E. coli, B. subtilis, archaeon, yeast) sorted into bacteria 2, archaea 1, eukarya 1 |
-| ssu-build | PASS | New CWL for ssu-build; built a covariance model from the default archaea seed alignment and from a Stockholm alignment |
-| ssu-draw | PASS | New CWL for ssu-draw; made PostScript structure diagrams and drawtab files (no PDF because ps2pdf is not in the image) |
-| ssu-mask | PASS | New CWL for ssu-mask; default masks made masked alignments for archaea, bacteria and eukarya, and -a --stk2afa made aligned FASTA |
-| ssu-merge | PASS | New CWL for ssu-merge; merged two bacteria alignments with --list (the ssu-prep directory mode was not run) |
-| ssu-prep | PASS | New CWL for ssu-prep; split four rRNA sequences into two job files and wrote the job shell script |
+| ssu-align_ssu-build | PASS | New CWL for ssu-build; built a covariance model from the default archaea seed alignment and from a Stockholm alignment |
+| ssu-align_ssu-draw | PASS | New CWL for ssu-draw; made PostScript structure diagrams and drawtab files (no PDF because ps2pdf is not in the image) |
+| ssu-align_ssu-mask | PASS | New CWL for ssu-mask; default masks made masked alignments for archaea, bacteria and eukarya, and -a --stk2afa made aligned FASTA |
+| ssu-align_ssu-merge | PASS | New CWL for ssu-merge; merged two bacteria alignments with --list (the ssu-prep directory mode was not run) |
+| ssu-align_ssu-prep | PASS | New CWL for ssu-prep; split four rRNA sequences into two job files and wrote the job shell script |
 
 ## ssu-align
 
@@ -70,7 +70,7 @@ expert options for tuning the alignment stage:
   --mxsize <f>  : increase mx size for cmalign to <f> Mb [default: 4096]
 ```
 
-## ssu-build
+## ssu-align_ssu-build
 
 ### Tool Description
 Build SSU rRNA covariance models from a Stockholm alignment or a default ssu-align seed alignment.
@@ -124,7 +124,7 @@ expert options for model construction:
   --ere <x>       : with --eent, set target relative entropy as <x>
 ```
 
-## ssu-draw
+## ssu-align_ssu-draw
 
 ### Tool Description
 Draw SSU rRNA secondary structure diagrams of ssu-align alignments.
@@ -195,7 +195,7 @@ options for omitting sections of the diagrams:
   --no-foot : do not draw footers
 ```
 
-## ssu-mask
+## ssu-align_ssu-mask
 
 ### Tool Description
 Mask SSU rRNA alignments, convert them to aligned FASTA, or list and remove sequences.
@@ -254,7 +254,7 @@ options for listing, converting, or removing sequences (no masking will be done)
   --seq-r <f> : with -a, remove sequences with names listed in file <f>
 ```
 
-## ssu-merge
+## ssu-align_ssu-merge
 
 ### Tool Description
 Merge SSU rRNA alignments.
@@ -288,7 +288,7 @@ options that only work with --list:
   --dna     : output alignments as DNA, default is RNA (even if input is DNA)
 ```
 
-## ssu-prep
+## ssu-align_ssu-prep
 
 ### Tool Description
 Split a sequence file and write a shell script that runs ssu-align jobs in parallel.

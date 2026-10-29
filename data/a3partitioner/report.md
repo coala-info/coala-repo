@@ -4,9 +4,9 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| A3Partitioner | PASS |  |
+| a3partitioner_A3Partitioner | PASS |  |
 
-## A3Partitioner
+## a3partitioner_A3Partitioner
 
 ### Tool Description
 Create APOBEC3 and non-APOBEC3 partitions from sequence alignments

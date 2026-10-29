@@ -5,9 +5,9 @@
 | Tool | Result | Reason |
 |---|---|---|
 | bowtie2 | PASS |  |
-| bowtie2-build | PASS |  |
+| bowtie2_bowtie2-build | PASS |  |
 
-## bowtie2-build
+## bowtie2_bowtie2-build
 
 ### Tool Description
 Builds a Bowtie 2 index from a set of DNA sequences.

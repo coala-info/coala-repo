@@ -5,7 +5,7 @@
 | Tool | Result | Reason |
 |---|---|---|
 | scelestial | PASS | tree matches the repo example output; the -include-root option crashes (segmentation fault) in the tool |
-| scelestial-synthesis | PASS | synthetic data: the tool is a simulator; output has the requested 30 loci for 8 cells |
+| scelestial_scelestial-synthesis | PASS | synthetic data: the tool is a simulator; output has the requested 30 loci for 8 cells |
 
 ## scelestial
 
@@ -38,7 +38,7 @@ usage: scelestial [options] <input >output
                          If -root is also present, a neighbor of root-index is chosen as the root.
 ```
 
-## scelestial-synthesis
+## scelestial_scelestial-synthesis
 
 ### Tool Description
 Simulates single-cell tumor sequencing data (clone tree, true and noisy sequences) for testing Scelestial.

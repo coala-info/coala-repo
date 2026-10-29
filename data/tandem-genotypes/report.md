@@ -5,9 +5,9 @@
 | Tool | Result | Reason |
 |---|---|---|
 | tandem-genotypes | PASS |  |
-| tandem-genotypes-join | PASS |  |
-| tandem-genotypes-merge | Not completed | needs the original reads and a last-train alignment-parameter file that the test data does not include |
-| tandem-genotypes-plot | Failed | tool bug: the plot script starts R but does not wait for it, so the container exits before the PDF is written |
+| tandem-genotypes_tandem-genotypes-join | PASS |  |
+| tandem-genotypes_tandem-genotypes-merge | Not completed | needs the original reads and a last-train alignment-parameter file that the test data does not include |
+| tandem-genotypes_tandem-genotypes-plot | Failed | tool bug: the plot script starts R but does not wait for it, so the container exits before the PDF is written |
 
 ## tandem-genotypes
 
@@ -52,7 +52,7 @@ Options:
   -v, --verbose         show more details
 ```
 
-## tandem-genotypes-join
+## tandem-genotypes_tandem-genotypes-join
 
 ### Tool Description
 Join and re-rank outputs of tandem-genotypes.
@@ -81,7 +81,7 @@ Options:
   -v, --verbose       show more details
 ```
 
-## tandem-genotypes-plot
+## tandem-genotypes_tandem-genotypes-plot
 
 ### Tool Description
 Draw graphs of tandem-genotypes output.
@@ -110,7 +110,7 @@ Options:
   -v, --verbose         show more details
 ```
 
-## tandem-genotypes-merge
+## tandem-genotypes_tandem-genotypes-merge
 
 ### Tool Description
 Merge the DNA reads of each tandem-repeat allele into a consensus sequence.

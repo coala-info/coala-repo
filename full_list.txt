@@ -3,7 +3,7 @@ package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
 3seq	3seq	PASS	
-a3partitioner	A3Partitioner	PASS	
+a3partitioner	a3partitioner_A3Partitioner	PASS	
 aacon	aacon	PASS	
 aardvark	aardvark_compare	PASS	
 aardvark	aardvark_merge	PASS	
@@ -22,7 +22,7 @@ abricate	abricate_abricate-get_db	PASS
 abritamr	abritamr_report	PASS	
 abritamr	abritamr_run	PASS	
 abruijn	abruijn	Failed	the abruijn 2.1b image lacks BLASR, which ABruijn needs ('Error: BLASR is not installed'). CWL fixed: the required out_dir positional was missing
-absense	Run_abSENSE.py	PASS	
+absense	absense_Run_abSENSE.py	PASS	
 abundancebin	abundancebin	PASS	
 abyss	abyss_abyss-fatoagp	PASS	
 abyss	abyss_abyss-pe	PASS	
@@ -1533,7 +1533,7 @@ boquila	boquila	PASS
 borf	borf	PASS	
 bowtie	bowtie_bowtie-build	PASS	
 bowtie2	bowtie2	PASS	
-bowtie2	bowtie2-build	PASS	
+bowtie2	bowtie2_bowtie2-build	PASS	
 bpipe	bpipe_archive	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
 bpipe	bpipe_autoarchive	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
 bpipe	bpipe_checks	Not completed	Pipeline, skipped: Bpipe is a workflow engine; this command runs or manages Bpipe pipeline runs.
@@ -6811,16 +6811,16 @@ hictk	hictk_rename-chromosomes	PASS	New CWL. Renamed seq1/seq2 to chrseq1/chrseq
 hictk	hictk_validate	PASS	Validated the test .cool with index and pixel checks; report says valid cooler. CWL fixed: uri typed File.
 hictk	hictk_zoomify	PASS	Made a .mcool with 1, 2 and 5 kb resolutions from the test .cool; each level keeps all 10000 contacts. CWL fixed: stdout removed.
 hicup	hicup	PASS	
-hicup	hicup2fithic	PASS	
-hicup	hicup2gothic	PASS	
-hicup	hicup2hicpipe	PASS	
-hicup	hicup2homer	Failed	tool bug: hicup2homer 0.9.2 crashes with Undefined subroutine get_csome_position (not exported by hicup_module) and writes an empty file
-hicup	hicup2juicer	PASS	
-hicup	hicup2ncc	PASS	
 hicup	hicup_capture	PASS	synthetic data: baits planted on two regions of the real yeast Hi-C di-tags
 hicup	hicup_deduplicator	PASS	
 hicup	hicup_digester	PASS	
 hicup	hicup_filter	PASS	
+hicup	hicup_hicup2fithic	PASS	
+hicup	hicup_hicup2gothic	PASS	
+hicup	hicup_hicup2hicpipe	PASS	
+hicup	hicup_hicup2homer	Failed	tool bug: hicup2homer 0.9.2 crashes with Undefined subroutine get_csome_position (not exported by hicup_module) and writes an empty file
+hicup	hicup_hicup2juicer	PASS	
+hicup	hicup_hicup2ncc	PASS	
 hicup	hicup_mapper	PASS	
 hicup	hicup_truncater	PASS	
 hiddendomains	hiddendomains_binReads.pl	Failed	image problem: samtools in the image lacks libcrypto.so.1.0.0, so the default BAM input gives empty output; BED input (-B) works
@@ -6854,12 +6854,12 @@ hisat-3n	hisat-3n	PASS
 hisat-3n	hisat-3n_hisat-3n-build	PASS	
 hisat-3n	hisat-3n_hisat-3n-table	PASS	
 hisat2	hisat2	PASS	output matches the Galaxy test result for paired phiX reads with trimming
-hisat2	hisat2-build	PASS	
-hisat2	hisat2-inspect	PASS	
 hisat2	hisat2_extract_exons.py	PASS	
 hisat2	hisat2_extract_snps_haplotypes_UCSC.py	Not completed	no usable test data: needs a UCSC snp table (large download) that is not available here
 hisat2	hisat2_extract_snps_haplotypes_VCF.py	PASS	
 hisat2	hisat2_extract_splice_sites.py	PASS	
+hisat2	hisat2_hisat2-build	PASS	
+hisat2	hisat2_hisat2-inspect	PASS	
 hisat2	hisat2_read_statistics.py	PASS	
 hisat2	hisat2_simulate_reads.py	Failed	image problem: the script calls Random.shuffle(random=...), which Python 3.11 in the image no longer accepts
 hisat2-pipeline	hisat2-pipeline	Not completed	pipeline, skipped
@@ -6884,7 +6884,7 @@ hmmcopy	hmmcopy_gcCounter	PASS
 hmmcopy	hmmcopy_generateMap.pl	PASS	
 hmmcopy	hmmcopy_mapCounter	PASS	
 hmmcopy	hmmcopy_readCounter	PASS	
-hmmer	alimask	PASS	
+hmmer	hmmer_alimask	PASS	
 hmmer	hmmer_hmmalign	PASS	
 hmmer	hmmer_hmmbuild	PASS	
 hmmer	hmmer_hmmconvert	PASS	
@@ -7348,8 +7348,8 @@ jaeger-bio	jaeger-bio_run	PASS
 jaffa	jaffa_jaffa-assembly	Not completed	pipeline, skipped; needs large reference and annotation files
 jaffa	jaffa_jaffa-hybrid	Not completed	pipeline, skipped; needs large reference and annotation files
 jali	jali	PASS	
-jali	jscan	PASS	
-jali	jsearch	PASS	
+jali	jali_jscan	PASS	
+jali	jali_jsearch	PASS	
 jamm	jamm_JAMM.sh	Failed	image problem: peak calling stops with the R error 'EXPR must be a length 1 vector' from mclust (checkModelName) on real ChIP-seq reads, and the peak file is empty
 jamm	jamm_SignalGenerator.sh	PASS	
 jannovar-cli	jannovar-cli_jannovar_annotate-csv	PASS	
@@ -9316,10 +9316,10 @@ ncbi-acc-download	ncbi-acc-download	PASS
 ncbi-amrfinderplus	ncbi-amrfinderplus_amrfinder	PASS	
 ncbi-amrfinderplus	ncbi-amrfinderplus_amrfinder_index	PASS	
 ncbi-amrfinderplus	ncbi-amrfinderplus_amrfinder_update	PASS	
-ncbi-datasets-cli	datasets_download_gene	PASS	
-ncbi-datasets-cli	datasets_download_genome	PASS	
-ncbi-datasets-cli	datasets_summary_gene	PASS	
-ncbi-datasets-cli	datasets_summary_genome	PASS	
+ncbi-datasets-cli	ncbi-datasets-cli_datasets_download_gene	PASS	
+ncbi-datasets-cli	ncbi-datasets-cli_datasets_download_genome	PASS	
+ncbi-datasets-cli	ncbi-datasets-cli_datasets_summary_gene	PASS	
+ncbi-datasets-cli	ncbi-datasets-cli_datasets_summary_genome	PASS	
 ncbi-datasets-cli	ncbi-datasets-cli_rehydrate	PASS	
 ncbi-genome-download	ncbi-genome-download	PASS	
 ncbi-stxtyper	ncbi-stxtyper_stxtyper	PASS	
@@ -9454,23 +9454,23 @@ nf-core	nf-core_pipelines_create	PASS
 nf-core	nf-core_pipelines_lint	PASS	
 nf-core	nf-core_subworkflows_create	PASS	
 nf-core	nf-core_subworkflows_lint	PASS	
-nf-demultiplex	demultiplex_demux	PASS	
-nf-demultiplex	demultiplex_guess	PASS	
-nf-demultiplex	demultiplex_match	PASS	
-nf-isoseq	isoseq_bcstats	PASS	synthetic data: planted barcodes on real reads; counts match planted counts
-nf-isoseq	isoseq_cluster	PASS	
-nf-isoseq	isoseq_cluster2	PASS	
-nf-isoseq	isoseq_collapse	PASS	
-nf-isoseq	isoseq_correct	PASS	synthetic data: planted barcodes on real reads; corrected barcode equals planted barcode for all reads
-nf-isoseq	isoseq_dedup	Not completed	runs to success on real Iso-Seq reads with planted barcodes, but no duplicates were present, so all 44 reads were kept and the deduplication cannot be confirmed.
-nf-isoseq	isoseq_groupdedup	Not completed	runs to success on real Iso-Seq reads with planted barcodes, but no duplicates were present, so all 44 reads were kept and the deduplication cannot be confirmed.
-nf-isoseq	isoseq_refine	PASS	
-nf-isoseq	isoseq_summarize	PASS	
-nf-isoseq	isoseq_tag	PASS	synthetic data: UMI and barcode bases planted on real Iso-Seq reads; all tags recovered exactly
-nf-sopa	sopa_aggregate	PASS	synthetic data: sopa built-in toy dataset (400 cells); rebuilt table equals the toy table
-nf-sopa	sopa_convert	Not completed	no small real raw spatial dataset (Xenium, MERSCOPE, CosMx) available; wsi reader also lacks tiffslide in the image
-nf-sopa	sopa_report	PASS	synthetic data: sopa built-in toy dataset; HTML report lists 400 cells
-nf-sopa	sopa_scanpy-preprocess	Failed	image problem: python igraph package missing, leiden clustering step raises ImportError
+nf-demultiplex	nf-demultiplex_demultiplex_demux	PASS	
+nf-demultiplex	nf-demultiplex_demultiplex_guess	PASS	
+nf-demultiplex	nf-demultiplex_demultiplex_match	PASS	
+nf-isoseq	nf-isoseq_isoseq_bcstats	PASS	synthetic data: planted barcodes on real reads; counts match planted counts
+nf-isoseq	nf-isoseq_isoseq_cluster	PASS	
+nf-isoseq	nf-isoseq_isoseq_cluster2	PASS	
+nf-isoseq	nf-isoseq_isoseq_collapse	PASS	
+nf-isoseq	nf-isoseq_isoseq_correct	PASS	synthetic data: planted barcodes on real reads; corrected barcode equals planted barcode for all reads
+nf-isoseq	nf-isoseq_isoseq_dedup	Not completed	runs to success on real Iso-Seq reads with planted barcodes, but no duplicates were present, so all 44 reads were kept and the deduplication cannot be confirmed.
+nf-isoseq	nf-isoseq_isoseq_groupdedup	Not completed	runs to success on real Iso-Seq reads with planted barcodes, but no duplicates were present, so all 44 reads were kept and the deduplication cannot be confirmed.
+nf-isoseq	nf-isoseq_isoseq_refine	PASS	
+nf-isoseq	nf-isoseq_isoseq_summarize	PASS	
+nf-isoseq	nf-isoseq_isoseq_tag	PASS	synthetic data: UMI and barcode bases planted on real Iso-Seq reads; all tags recovered exactly
+nf-sopa	nf-sopa_sopa_aggregate	PASS	synthetic data: sopa built-in toy dataset (400 cells); rebuilt table equals the toy table
+nf-sopa	nf-sopa_sopa_convert	Not completed	no small real raw spatial dataset (Xenium, MERSCOPE, CosMx) available; wsi reader also lacks tiffslide in the image
+nf-sopa	nf-sopa_sopa_report	PASS	synthetic data: sopa built-in toy dataset; HTML report lists 400 cells
+nf-sopa	nf-sopa_sopa_scanpy-preprocess	Failed	image problem: python igraph package missing, leiden clustering step raises ImportError
 nf-test	nf-test_generate_function	Failed	tool bug: on real nf-core code it also generates bogus test cases for local variable assignments inside functions (7 of 10 tests), some uncompilable
 nf-test	nf-test_generate_pipeline	PASS	
 nf-test	nf-test_generate_process	PASS	
@@ -11847,8 +11847,8 @@ rapmap	rapmap_quasimap	PASS	10000 read pairs give 28506 alignment lines on the R
 rapmap-example-data	rapmap-example-data_quasiindex	PASS	
 rapmap-example-data	rapmap-example-data_quasimap	PASS	same alignments as the rapmap package (new CWLs on the example-data image)
 rappas	rappas	PASS	built a database from a 10-sequence cytb alignment and tree, then each query is placed on its own leaf edge (real sequences; tree from rapidnj)
-rapsearch	prerapsearch	PASS	database from the 12 SARS-CoV-2 proteins searched successfully with rapsearch
 rapsearch	rapsearch	PASS	all 100 SARS-CoV-2 reads hit the SARS-CoV-2 proteins at 100% identity
+rapsearch	rapsearch_prerapsearch	PASS	database from the 12 SARS-CoV-2 proteins searched successfully with rapsearch
 raptor	raptor_build	PASS	Raptor repository test files (small simulated sequences); index built from a list and from a layout
 raptor	raptor_layout	PASS	Raptor repository test files (small simulated sequences)
 raptor	raptor_prepare	PASS	Raptor repository test files (small simulated sequences); minimiser files written
@@ -12654,10 +12654,10 @@ scater-scripts	scater-scripts_scater-run-tsne.R	PASS
 sccaf	sccaf	PASS	assessment mode works on real scRNA-seq data (clusters from scanpy louvain); --optimise crashes in the image (scanpy has no _utils)
 sccaller	sccaller	PASS	NA12878 chr21 BAM used as both cell and bulk (no single-cell data); dbSNP sites
 sccmec	sccmec	PASS	
-sccmec	sccmec-regions	PASS	
-sccmec	sccmec-targets	PASS	
+sccmec	sccmec_sccmec-regions	PASS	
+sccmec	sccmec_sccmec-targets	PASS	
 scelestial	scelestial	PASS	tree matches the repo example output; the -include-root option crashes (segmentation fault) in the tool
-scelestial	scelestial-synthesis	PASS	synthetic data: the tool is a simulator; output has the requested 30 loci for 8 cells
+scelestial	scelestial_scelestial-synthesis	PASS	synthetic data: the tool is a simulator; output has the requested 30 loci for 8 cells
 scelvis	scelvis_convert	PASS	Cell Ranger example hgmm_1k from the scelvis repo
 scelvis	scelvis_run	Not completed	long-running web server; not run
 scenicplus	scenicplus_AUCell	Failed	image problem: running the command fails with ModuleNotFoundError: No module named 'mudata'
@@ -12737,11 +12737,11 @@ scran-cli	scran-cli_scran-denoise-pca.R	PASS
 scran-cli	scran-cli_scran-find-markers.R	Failed	tool bug: the output file is a copy of the input SCE object, not the marker table
 scran-cli	scran-cli_scran-model-gene-var.R	Failed	image problem: the scran version in the image has no modelGeneVar function
 scran-cli	scran-cli_scran-trend-var.R	PASS	
-scrapling	extract_delete	PASS	
-scrapling	extract_fetch	Failed	image problem: the browser is installed under /root/.cache, which the non-root container user cannot read
-scrapling	extract_get	PASS	
-scrapling	extract_post	PASS	
-scrapling	extract_put	PASS	
+scrapling	scrapling_extract_delete	PASS	
+scrapling	scrapling_extract_fetch	Failed	image problem: the browser is installed under /root/.cache, which the non-root container user cannot read
+scrapling	scrapling_extract_get	PASS	
+scrapling	scrapling_extract_post	PASS	
+scrapling	scrapling_extract_put	PASS	
 scrappie	scrappie_event_table	PASS	
 scrappie	scrappie_events	PASS	
 scrappie	scrappie_mappy	PASS	
@@ -13642,11 +13642,11 @@ sshmm	sshmm_preprocess_dataset	Failed	image problem: bedtools is missing from th
 sshmm	sshmm_train_seqstructhmm	Failed	image problem: graphviz pango plugin cannot load so the model graph step crashes and no model file is written (also needed output folder created in CWL)
 sspace	sspace	PASS	Fixed command to sspace, on/off flags to send 1 or 0, and staged read files; nf-core Bacteroides contigs and paired reads scaffolded 272 contigs into 268 scaffolds
 ssu-align	ssu-align	PASS	Staged input writable and put options before arguments; four real rRNA sequences (E. coli, B. subtilis, archaeon, yeast) sorted into bacteria 2, archaea 1, eukarya 1
-ssu-align	ssu-build	PASS	New CWL for ssu-build; built a covariance model from the default archaea seed alignment and from a Stockholm alignment
-ssu-align	ssu-draw	PASS	New CWL for ssu-draw; made PostScript structure diagrams and drawtab files (no PDF because ps2pdf is not in the image)
-ssu-align	ssu-mask	PASS	New CWL for ssu-mask; default masks made masked alignments for archaea, bacteria and eukarya, and -a --stk2afa made aligned FASTA
-ssu-align	ssu-merge	PASS	New CWL for ssu-merge; merged two bacteria alignments with --list (the ssu-prep directory mode was not run)
-ssu-align	ssu-prep	PASS	New CWL for ssu-prep; split four rRNA sequences into two job files and wrote the job shell script
+ssu-align	ssu-align_ssu-build	PASS	New CWL for ssu-build; built a covariance model from the default archaea seed alignment and from a Stockholm alignment
+ssu-align	ssu-align_ssu-draw	PASS	New CWL for ssu-draw; made PostScript structure diagrams and drawtab files (no PDF because ps2pdf is not in the image)
+ssu-align	ssu-align_ssu-mask	PASS	New CWL for ssu-mask; default masks made masked alignments for archaea, bacteria and eukarya, and -a --stk2afa made aligned FASTA
+ssu-align	ssu-align_ssu-merge	PASS	New CWL for ssu-merge; merged two bacteria alignments with --list (the ssu-prep directory mode was not run)
+ssu-align	ssu-align_ssu-prep	PASS	New CWL for ssu-prep; split four rRNA sequences into two job files and wrote the job shell script
 ssuissero	ssuissero	PASS	Rewrote CWL for SsuisSero.sh (-i -o -s -x); S. suis P1/7 genome gave serotype 2 as expected (FASTA mode only)
 ssw-align	ssw-align	PASS	Moved options before the file arguments (options after them were ignored); 100 SARS-CoV-2 reads aligned to the genome with valid SAM output (-s needs -c)
 stacks	stacks_clone_filter	PASS	synthetic data (Galaxy stacks2 test reads): fixed output flag to -o, added -I; single-end run output is identical to the Galaxy expected file
@@ -13960,9 +13960,9 @@ talon	talon_reformat_gtf	PASS
 talon	talon_summarize	PASS	
 tandem	tandem	PASS	
 tandem-genotypes	tandem-genotypes	PASS	
-tandem-genotypes	tandem-genotypes-join	PASS	
-tandem-genotypes	tandem-genotypes-merge	Not completed	needs the original reads and a last-train alignment-parameter file that the test data does not include
-tandem-genotypes	tandem-genotypes-plot	Failed	tool bug: the plot script starts R but does not wait for it, so the container exits before the PDF is written
+tandem-genotypes	tandem-genotypes_tandem-genotypes-join	PASS	
+tandem-genotypes	tandem-genotypes_tandem-genotypes-merge	Not completed	needs the original reads and a last-train alignment-parameter file that the test data does not include
+tandem-genotypes	tandem-genotypes_tandem-genotypes-plot	Failed	tool bug: the plot script starts R but does not wait for it, so the container exits before the PDF is written
 tandemtwister	tandemtwister_assembly	Failed	tool bug: assembly mode creates a directory with the output name, then cannot write the merged .vcf.gz there and exits 1 (tested on the repo example BAM)
 tandemtwister	tandemtwister_germline	PASS	
 tandemtwister	tandemtwister_somatic	PASS	

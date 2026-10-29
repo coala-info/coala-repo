@@ -4,9 +4,9 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| demultiplex_demux | PASS |  |
-| demultiplex_guess | PASS |  |
-| demultiplex_match | PASS |  |
+| nf-demultiplex_demultiplex_demux | PASS |  |
+| nf-demultiplex_demultiplex_guess | PASS |  |
+| nf-demultiplex_demultiplex_match | PASS |  |
 
 ## Metadata
 

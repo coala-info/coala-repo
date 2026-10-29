@@ -4,7 +4,7 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| alimask | PASS |  |
+| hmmer_alimask | PASS |  |
 | hmmer_hmmalign | PASS |  |
 | hmmer_hmmbuild | PASS |  |
 | hmmer_hmmconvert | PASS |  |

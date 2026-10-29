@@ -5,8 +5,8 @@
 | Tool | Result | Reason |
 |---|---|---|
 | hisat2 | PASS | output matches the Galaxy test result for paired phiX reads with trimming |
-| hisat2-build | PASS |  |
-| hisat2-inspect | PASS |  |
+| hisat2_hisat2-build | PASS |  |
+| hisat2_hisat2-inspect | PASS |  |
 | hisat2_extract_exons.py | PASS |  |
 | hisat2_extract_snps_haplotypes_UCSC.py | Not completed | no usable test data: needs a UCSC snp table (large download) that is not available here |
 | hisat2_extract_snps_haplotypes_VCF.py | PASS |  |
@@ -181,7 +181,7 @@ Command: /usr/local/bin/hisat2-align-s --wrapper basic-0 --h
 ## Metadata
 - **Skill**: generated
 
-## hisat2-build
+## hisat2_hisat2-build
 
 ### Tool Description
 Build HISAT2 index from reference sequences
@@ -258,7 +258,7 @@ options:
   -v, --verbose  also print some statistics to stderr
 ```
 
-## hisat2-inspect
+## hisat2_hisat2-inspect
 
 ### Tool Description
 Inspect a HISAT2 index.

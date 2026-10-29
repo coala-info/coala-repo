@@ -4,7 +4,7 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| prerapsearch | PASS | database from the 12 SARS-CoV-2 proteins searched successfully with rapsearch |
+| rapsearch_prerapsearch | PASS | database from the 12 SARS-CoV-2 proteins searched successfully with rapsearch |
 | rapsearch | PASS | all 100 SARS-CoV-2 reads hit the SARS-CoV-2 proteins at 100% identity |
 
 ## rapsearch
@@ -32,7 +32,7 @@ Usage: prerapsearch -d database -n swift-file(base name only)
 Example: prerapsearch -d nr -n nr
 ```
 
-## prerapsearch
+## rapsearch_prerapsearch
 
 ### Tool Description
 Usage: prerapsearch -d database -n swift-file(base name only)

@@ -4,10 +4,10 @@
 
 | Tool | Result | Reason |
 |---|---|---|
-| datasets_download_gene | PASS |  |
-| datasets_download_genome | PASS |  |
-| datasets_summary_gene | PASS |  |
-| datasets_summary_genome | PASS |  |
+| ncbi-datasets-cli_datasets_download_gene | PASS |  |
+| ncbi-datasets-cli_datasets_download_genome | PASS |  |
+| ncbi-datasets-cli_datasets_summary_gene | PASS |  |
+| ncbi-datasets-cli_datasets_summary_genome | PASS |  |
 | ncbi-datasets-cli_rehydrate | PASS |  |
 
 ## ncbi-datasets-cli_rehydrate
@@ -45,7 +45,7 @@ Global Flags
 ## Metadata
 - **Skill**: generated
 
-## datasets_summary_gene
+## ncbi-datasets-cli_datasets_summary_gene
 
 ### Tool Description
 Print a data report containing gene metadata. The data report is returned in JSON format.
@@ -96,7 +96,7 @@ Global Flags
 Use datasets summary gene <command> --help for detailed help about a command.
 ```
 
-## datasets_summary_genome
+## ncbi-datasets-cli_datasets_summary_genome
 
 ### Tool Description
 Print a data report containing genome metadata. The data report is returned in JSON format.
@@ -162,7 +162,7 @@ Global Flags
 Use datasets summary genome <command> --help for detailed help about a command.
 ```
 
-## datasets_download_gene
+## ncbi-datasets-cli_datasets_download_gene
 
 ### Tool Description
 Download a gene data package. Gene data packages include gene, transcript and protein sequences and one or more data reports. Data packages are downloaded as a zip archive.
@@ -215,7 +215,7 @@ Global Flags
 Use datasets download gene <command> --help for detailed help about a command.
 ```
 
-## datasets_download_genome
+## ncbi-datasets-cli_datasets_download_genome
 
 ### Tool Description
 Download a genome data package. Genome data packages may include genome, transcript and protein sequences, annotation and one or more data reports. Data packages are downloaded as a zip archive.

@@ -68,14 +68,13 @@ inputs:
       position: 101
       prefix: --offrate
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory name for annotation output. Defaults to the current 
       directory, with this directory name as the project name.
     inputBinding:
       position: 101
       prefix: --output_directory
+      valueFrom: $(self.basename)
   - id: override
     type:
       - 'null'
@@ -87,11 +86,13 @@ inputs:
   - id: trimmed_libraries
     type:
       - 'null'
-      - File
+      - type: array
+        items: File
+        inputBinding:
+          prefix: --trimmed_libraries
     doc: Path to trimmed libraries. Accepts wildcards (*).
     inputBinding:
       position: 101
-      prefix: --trimmed_libraries
   - id: unique_locality
     type:
       - 'null'
@@ -104,6 +105,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_directory
+    type: Directory
+    doc: Project directory with the files this step wrote
+    outputBinding:
+      glob: $(inputs.output_directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{entry: inputs.output_directory, writable: true}];
+        if (inputs.genome_file) { l.push({entry: inputs.genome_file, writable: true}); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yasma:1.1.0--pyh7e72e81_0

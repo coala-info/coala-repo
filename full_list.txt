@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 15303; PASS: 11987; Failed: 1806; Not completed: 1510
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 15407; PASS: 12054; Failed: 1823; Not completed: 1530
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -5849,6 +5849,7 @@ xyalign	xyalign_prepare_reference	PASS	real chr21/chr22 reference; chr22 fully m
 xyalign	xyalign_remapping	PASS	real NA12878 chr21/chr22 reads; chr21 and chr22 used as stand-in sex chromosomes; remapped BAM is valid and has about the same read count
 xyalign	xyalign_strip_reads	PASS	real NA12878 chr21/chr22 reads; paired fastq read counts match the BAM within repair.sh losses
 ffmpeg	ffmpeg	PASS	
+fgwas	fgwas	PASS	
 file	file	PASS	
 fiona	fiona_fio_bounds	PASS	
 fiona	fiona_fio_calc	Failed	image problem: shapely cannot load libc (OSError), so fio calc crashes
@@ -14281,6 +14282,7 @@ tracegroomer	tracegroomer	PASS
 tracknado	tracknado_create	PASS	
 tracknado	tracknado_merge	Not completed	merge needs the original track files at the absolute paths stored in each config, which no longer exist after the create run ended
 tracknado	tracknado_validate	Failed	image problem: UCSC hubCheck is not in the image, so validate exits with an error
+trackplot	trackplot	PASS	
 tracs	tracs_align	PASS	
 tracs	tracs_build-db	PASS	
 tracs	tracs_cluster	PASS	data: distances from the repo's ambig.aln test
@@ -14380,6 +14382,7 @@ treesapp	treesapp_phylotu	Failed	image problem: treesapp crashes in jplace_parse
 treesapp	treesapp_purity	Failed	image problem: the assign step inside purity crashes in jplace_parser (json.load encoding keyword), so no classification table is written
 treesapp	treesapp_train	Failed	image problem: java is missing in the image (BMGE.jar trimming step)
 treesapp	treesapp_update	PASS	rewritten from help; ran on the shipped PuhA assign output with --cluster
+treeshrink	treeshrink_run_treeshrink.py	PASS	
 treetime	treetime	PASS	new CWL for the default time tree command
 treetime	treetime_ancestral	PASS	fixed baseCommand to treetime ancestral
 treetime	treetime_arg	PASS	synthetic data: one H3N2 tree and alignment split into two segments, one MCC; baseCommand fixed to treetime arg
@@ -15303,3 +15306,104 @@ xtea	xtea	Not completed	Needs the large xTea repeat library (rep_lib_annotation,
 xtermcolor	xtermcolor_convert	PASS	
 xtermcolor	xtermcolor_list	PASS	
 xxmotif	xxmotif_XXmotif	PASS	Found a polypyrimidine-like motif in U2AF2 binding sites with the default mode; the --revcomp option crashes with 'In no man's land' on some inputs (tool bug).
+yacrd	yacrd	PASS	
+yacrd	yacrd_extract	PASS	
+yacrd	yacrd_filter	PASS	
+yacrd	yacrd_scrubb	PASS	
+yacrd	yacrd_split	PASS	
+yaggo	yaggo	PASS	
+yaha	yaha	PASS	
+yaha	yaha_index	PASS	
+yahs	yahs	PASS	
+yahs	yahs_agp_to_fasta	PASS	
+yahs	yahs_juicer_post	PASS	
+yahs	yahs_juicer_pre	PASS	
+yak	yak_count	PASS	
+yak	yak_inspect	PASS	
+yak	yak_qv	PASS	
+yak	yak_triobin	PASS	
+yak	yak_trioeval	PASS	
+yamda	yamda_erase_annoying_sequences.py	PASS	
+yamda	yamda_run_em.py	PASS	
+yame	yame_binarize	PASS	
+yame	yame_chunk	PASS	chunk size that divides the row count exactly exits 1 with 'Slicing negative span' after writing chunks; other sizes work
+yame	yame_chunkchar	PASS	
+yame	yame_dsample	PASS	
+yame	yame_hprint	PASS	
+yame	yame_index	PASS	
+yame	yame_info	PASS	
+yame	yame_mask	PASS	
+yame	yame_pack	PASS	
+yame	yame_pairwise	PASS	
+yame	yame_rowop	PASS	
+yame	yame_rowsub	PASS	
+yame	yame_split	PASS	
+yame	yame_subset	PASS	
+yame	yame_summary	PASS	
+yame	yame_unpack	PASS	
+yamllint	yamllint	PASS	real YAML files from public repos: a clean pair gives no problems (exit 0); main.yml with line-length max 40 gives 13 parsable warnings and errors (exit 1); successCodes [0, 1] because yamllint exits 1 when it reports lint errors; a missing input file still fails (exit 255)
+yanagiba	yanagiba	PASS	Summary mode matches the expected 814 reads; without a summary file the tool crashes unless tailtrim is set (tool bug).
+yapc	yapc	PASS	
+yasm	yasm	PASS	
+yasma	yasma_adapter	PASS	
+yasma	yasma_align	Failed	tool bug: passes -f (FASTA) to bowtie for FASTQ libraries, so the FASTQ output of yasma trim gives zero aligned reads (exit 0); FASTA reads align
+yasma	yasma_count	PASS	
+yasma	yasma_coverage	PASS	
+yasma	yasma_download	PASS	
+yasma	yasma_hairpin	Failed	image problem: samtools is missing in the image (requirements not met)
+yasma	yasma_inputs	PASS	
+yasma	yasma_jbrowse	Failed	image problem: rsync is missing in the image (FileNotFoundError)
+yasma	yasma_size-profile	PASS	
+yasma	yasma_tradeoff	Failed	tool bug: finds loci but crashes at the end with TypeError (PosixPath not JSON serializable) when writing inputs.json, exit 1
+yasma	yasma_trim	PASS	
+yass	yass	PASS	
+yleaf	yleaf_Yleaf	Failed	image problem: the package data folder (yleaf/data/hg38 reference tables) is missing in the image, so Yleaf stops at check_reference; samtools is also not on PATH
+yleaf	yleaf_predict_haplogroup	Failed	image problem: the package data folder (yleaf/data/hg_prediction_tables) is missing in the image (FileNotFoundError); tested with a small synthetic Yleaf-format marker table because no Yleaf output could be made
+yleaf-pipelines	yleaf-pipelines_Yleaf	Failed	image problem: the package data folder (yleaf/data/hg38 reference tables) is missing in the image, so Yleaf stops at check_reference; samtools is also not on PATH even with custom reference options (not a duplicate of yleaf: newer version, extra reference options)
+yleaf-pipelines	yleaf-pipelines_predict_haplogroup	Failed	image problem: the package data folder (yleaf/data/hg_prediction_tables) is missing in the image (FileNotFoundError); tested with a small synthetic Yleaf-format marker table because no Yleaf output could be made
+ymp	ymp_env_activate	Not completed	needs network to create the conda environment first
+ymp	ymp_env_clean	Failed	tool bug: ymp env clean crashes with TypeError (clean() got an unexpected keyword argument envnames)
+ymp	ymp_env_export	Not completed	needs an installed conda environment to export; none can be installed offline
+ymp	ymp_env_install	Not completed	real install needs conda downloads; only a dry run worked
+ymp	ymp_env_list	PASS	
+ymp	ymp_env_prepare	Not completed	pipeline, skipped: builds conda environments for a Snakemake target
+ymp	ymp_env_remove	Not completed	needs an installed conda environment to remove; none can be installed offline
+ymp	ymp_env_run	Not completed	needs an installed conda environment, which needs network
+ymp	ymp_env_update	Not completed	needs installed conda environments, which need network
+ymp	ymp_init_cluster	Failed	image problem: ymp saves its config into the package folder inside the image, which is read-only
+ymp	ymp_init_demo	PASS	
+ymp	ymp_init_project	Failed	image problem: ymp saves its config into the package folder inside the image, which is read-only
+ymp	ymp_make	Not completed	pipeline, skipped: runs Snakemake workflow stages
+ymp	ymp_scan	PASS	real demo reads, files renamed to the Illumina names that ymp scan expects
+ymp	ymp_show	PASS	
+ymp	ymp_stage_list	PASS	
+ymp	ymp_submit	Not completed	pipeline, skipped: submits Snakemake jobs to a cluster
+zagros	zagros	PASS	
+zalign	zalign	PASS	
+zamp	zamp_db	Not completed	pipeline, skipped: runs Snakemake rules that need Singularity or conda environments
+zamp	zamp_insilico	Not completed	pipeline, skipped: runs Snakemake rules that need Singularity or conda environments
+zamp	zamp_run	Not completed	pipeline, skipped: runs Snakemake rules that need Singularity or conda environments
+zarp	zarp	Not completed	pipeline, skipped: zarp launches the ZARP Snakemake workflow
+zavolan-multiqc-plugins	zavolan-multiqc-plugins_multiqc	PASS	
+zdb	zdb_export	PASS	synthetic data: planted zDB results folder; a real run needs the Nextflow pipeline
+zdb	zdb_import	PASS	synthetic data: archive made by zdb export from a planted results folder
+zdb	zdb_run	Not completed	pipeline, skipped: zdb run starts a Nextflow workflow
+zdb	zdb_setup	Not completed	needs large reference database downloads and a Nextflow pipeline with containers
+zdb	zdb_webapp	Not completed	long-running web server, cannot be tested as a batch job
+zenodo_get	zenodo_get	PASS	
+zeroc-ice	zeroc-ice_slice2py	PASS	
+zerone	zerone	PASS	
+zga	zga	Failed	tool bug: default run always fails because the output folder is checked twice; with --force it runs through the assembly step on the SPAdes E. coli test reads
+zmwfilter	zmwfilter	PASS	
+zol	zol	Failed	image problem: hmmbuild in the image lacks libopenblas.so.0, so zol stops at the profile step
+zol	zol_abon	Not completed	needs antiSMASH or GECCO results; no such real results available
+zol	zol_apos	Not completed	needs MOB-suite or geNomad results; no such real results available
+zol	zol_atpoc	Not completed	needs PhiSpy, VIBRANT or geNomad results; no such real results available
+zol	zol_cgc	Failed	image problem: needs zol results, and zol stops at hmmbuild (libopenblas.so.0 missing)
+zol	zol_cgcg	Failed	image problem: needs zol results, and zol stops at hmmbuild (libopenblas.so.0 missing)
+zol	zol_fai	PASS	
+zol	zol_prepTG	PASS	
+zol	zol_salt	Failed	image problem: step 4 needs the ribosomal protein HMM database, which the image does not ship; zol tries to download it into the read-only image db folder and curl fails on write; with fai results staged at the same fixed path (/zol_work) salt gets through step 3
+zol	zol_zol-scape	Not completed	needs BiG-SCAPE input and results; none available
+zorro	zorro	Failed	tool bug: zorro exits with status 1 after a correct run (88 column scores written), so cwltool reports failure
+zstd	zstd	PASS	

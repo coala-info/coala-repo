@@ -1,5 +1,11 @@
 # zalign CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zalign | PASS |  |
+
 ## zalign
 
 ### Tool Description

@@ -10,6 +10,9 @@ doc: "Subset a multi-sample .cx by sample names (requires an index), or (with -s
 inputs:
   - id: input_cx
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input .cx file
     inputBinding:
       position: 1
@@ -70,6 +73,13 @@ outputs:
       generated. If omitted, writes to stdout (no index).
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_index
+    type:
+      - 'null'
+      - File
+    doc: Sample index written beside the output file
+    outputBinding:
+      glob: $(inputs.output_file_path).idx
 requirements:
   - class: InlineJavascriptRequirement
 hints:

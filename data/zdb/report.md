@@ -1,5 +1,15 @@
 # zdb CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zdb_export | PASS | synthetic data: planted zDB results folder; a real run needs the Nextflow pipeline |
+| zdb_import | PASS | synthetic data: archive made by zdb export from a planted results folder |
+| zdb_run | Not completed | pipeline, skipped: zdb run starts a Nextflow workflow |
+| zdb_setup | Not completed | needs large reference database downloads and a Nextflow pipeline with containers |
+| zdb_webapp | Not completed | long-running web server, cannot be tested as a batch job |
+
 ## zdb_setup
 
 ### Tool Description

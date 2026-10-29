@@ -1,5 +1,11 @@
 # yass CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| yass | PASS |  |
+
 ## yass
 
 ### Tool Description

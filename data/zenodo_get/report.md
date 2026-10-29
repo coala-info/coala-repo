@@ -1,5 +1,11 @@
 # zenodo_get CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zenodo_get | PASS |  |
+
 ## zenodo_get
 
 ### Tool Description

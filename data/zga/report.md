@@ -1,5 +1,11 @@
 # zga CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zga | Failed | tool bug: default run always fails because the output folder is checked twice; with --force it runs through the assembly step on the SPAdes E. coli test reads |
+
 ## zga
 
 ### Tool Description

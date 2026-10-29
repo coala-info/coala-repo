@@ -8,6 +8,9 @@ doc: "Chunk a .cx file into smaller pieces.\n\nTool homepage: https://github.com
 inputs:
   - id: input_cx_file
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input .cx file
     inputBinding:
       position: 1
@@ -43,6 +46,13 @@ outputs:
     doc: Output directory for chunks
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.output_directory)
+        entry: '$({"class": "Directory", "listing": []})'
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yame:1.8--ha83d96e_0

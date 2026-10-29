@@ -44,4 +44,5 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yamllint:1.2.1--py35_0
+successCodes: [0, 1]
 stdout: yamllint.out

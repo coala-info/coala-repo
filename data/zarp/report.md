@@ -1,5 +1,11 @@
 # zarp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zarp | Not completed | pipeline, skipped: zarp launches the ZARP Snakemake workflow |
+
 ## zarp
 
 ### Tool Description

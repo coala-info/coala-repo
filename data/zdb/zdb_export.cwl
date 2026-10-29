@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: zdb_export
+baseCommand:
+  - zdb
+  - export
 label: zdb_export
 doc: "Exports the results of a given run name into an archive to make sharing easier\n\
   \nTool homepage: https://github.com/metagenlab/zDB/"
@@ -12,7 +14,8 @@ inputs:
     doc: specify the directory where the analysis was run
     inputBinding:
       position: 101
-      prefix: --dir
+      prefix: --dir=
+      separate: false
   - id: name
     type:
       - 'null'
@@ -20,8 +23,16 @@ inputs:
     doc: specify the run to be exported
     inputBinding:
       position: 101
-      prefix: --name
+      prefix: --name=
+      separate: false
 outputs:
+  - id: archive
+    type:
+      - 'null'
+      - File
+    doc: exported run archive
+    outputBinding:
+      glob: '*.tar.gz'
   - id: stdout
     type: stdout
     doc: Standard output

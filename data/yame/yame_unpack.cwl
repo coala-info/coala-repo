@@ -10,6 +10,9 @@ doc: "Print selected records from a .cx file as a tab-delimited table.\nEach out
 inputs:
   - id: input_cx_file
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input .cx file
     inputBinding:
       position: 1

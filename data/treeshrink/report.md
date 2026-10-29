@@ -1,5 +1,11 @@
 # treeshrink CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| treeshrink_run_treeshrink.py | PASS |  |
+
 ## treeshrink_run_treeshrink.py
 
 ### Tool Description

@@ -7,21 +7,34 @@ label: yasma_jbrowse
 doc: "Build coverage and config files for jbrowse2\n\nTool homepage: https://github.com/NateyJay/YASMA"
 inputs:
   - id: alignment_file
-    type: File
-    doc: Alignment file input (bam or cram).
+    type:
+      - 'null'
+      - string
+    default: align/alignment.bam
+    doc: Alignment file input (bam or cram). Give the path inside the project directory (output_directory); the depth table and index of the alignment must sit beside it.
     inputBinding:
       position: 101
       prefix: --alignment_file
+      valueFrom: $(inputs.output_directory.basename)/$(self)
   - id: annotation_conditions
-    type: string
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --annotation_conditions
     doc: List of conditions names which will be included in the annotation. 
       Defaults to use all libraries, though this is likely not what you want if 
       you have multiple groups.
     inputBinding:
       position: 101
-      prefix: --annotation_conditions
   - id: conditions
-    type: string
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --conditions
     doc: Values denoting condition groups (sets of replicate libraries) for 
       projects with multiple tissues/treatments/genotypes. Can be entered here 
       as space sparated duplexes, with the library base_name and condition 
@@ -29,7 +42,6 @@ inputs:
       SRR1111113:mut SRR1111114:mut
     inputBinding:
       position: 101
-      prefix: --conditions
   - id: force
     type:
       - 'null'
@@ -65,6 +77,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --jbrowse_directory
+      valueFrom: $(self.basename)
   - id: max_size
     type:
       - 'null'
@@ -88,6 +101,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --output_directory
+      valueFrom: $(self.basename)
   - id: override
     type:
       - 'null'
@@ -126,6 +140,28 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_directory
+    type: Directory
+    doc: Project directory with the files this step wrote
+    outputBinding:
+      glob: $(inputs.output_directory.basename)
+  - id: jbrowse_output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Updated jbrowse working directory
+    outputBinding:
+      glob: $(inputs.jbrowse_directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{entry: inputs.output_directory, writable: true}];
+        if (inputs.genome_file) { l.push({entry: inputs.genome_file, writable: true}); }
+        if (inputs.jbrowse_directory) { l.push({entry: inputs.jbrowse_directory, writable: true}); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yasma:1.1.0--pyh7e72e81_0

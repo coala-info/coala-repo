@@ -742,6 +742,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --y-limit
+  - id: track_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Data files (bam with index, bigWig, bed, ...) named in the list files 
+      (--density, --line, --heatmap, --igv, --hic, --interval). They are staged
+      in the working directory, so the list files must use plain file names.
   - id: output_path
     type: string
     doc: Path to output graph file
@@ -765,6 +773,15 @@ outputs:
       glob: $(inputs.plots)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = (inputs.track_files || []).slice();
+        if (inputs.annotation) {
+          l.push({entry: inputs.annotation, writable: true});
+        }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trackplot:0.5.7--pyhdfd78af_0

@@ -9,6 +9,9 @@ doc: "Compute a per-site differential-methylation set between two format-3 (M/U)
 inputs:
   - id: mu1_cx
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Format-3 input (M/U counts). The first record is used as sample 1.
     inputBinding:
       position: 1
@@ -16,6 +19,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Optional second format-3 input. If omitted, sample 2 is read as the 
       SECOND record from MU1.cx (i.e., the top 2 samples in the same file).
     inputBinding:

@@ -186,6 +186,15 @@ outputs:
       glob: $(inputs.outputdirc_path)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{entry: inputs.input, writable: true}];
+        if (inputs.input2) {
+          l.push({entry: inputs.input2, writable: true});
+        }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yamda:0.1.00e9c9d--py_0

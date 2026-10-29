@@ -8,11 +8,17 @@ doc: "Masking tool for CG files\n\nTool homepage: https://github.com/zhou-lab/YA
 inputs:
   - id: input_cg_file
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input CG file
     inputBinding:
       position: 1
   - id: mask_cx_file
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Mask CX file
     inputBinding:
       position: 2
@@ -47,6 +53,13 @@ outputs:
     doc: output cx file name. if missing, output to stdout without index.
     outputBinding:
       glob: $(inputs.output_cx_file_path)
+  - id: output_index
+    type:
+      - 'null'
+      - File
+    doc: Sample index written beside the output file
+    outputBinding:
+      glob: $(inputs.output_cx_file_path).idx
 requirements:
   - class: InlineJavascriptRequirement
 hints:

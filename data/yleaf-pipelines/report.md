@@ -4,6 +4,8 @@
 
 | Tool | Result | Reason |
 |---|---|---|
+| yleaf-pipelines_Yleaf | Failed | image problem: the package data folder (yleaf/data/hg38 reference tables) is missing in the image, so Yleaf stops at check_reference; samtools is also not on PATH even with custom reference options (not a duplicate of yleaf: newer version, extra reference options) |
+| yleaf-pipelines_predict_haplogroup | Failed | image problem: the package data folder (yleaf/data/hg_prediction_tables) is missing in the image (FileNotFoundError); tested with a small synthetic Yleaf-format marker table because no Yleaf output could be made |
 
 ## yleaf-pipelines_Yleaf
 
@@ -108,5 +110,37 @@ optional arguments:
   -maf FLOAT, --minor_allele_frequency FLOAT
                         Maximum rate of minor allele for it to be considered
                         as a private mutation. (default=0.01)
+```
+
+## yleaf-pipelines_predict_haplogroup
+
+### Tool Description
+Y-haplogroup prediction from a Yleaf output file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/yleaf-pipelines:3.3.0--pyh7e72e81_0
+- **Homepage**: https://github.com/trianglegrrl/Yleaf-pipelines
+- **Package**: https://anaconda.org/channels/bioconda/packages/yleaf-pipelines/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: predict_haplogroup [-h] -i FILE [-ms MINIMUM_SCORE] -o FILE
+                          [-t THREADS]
+
+Erasmus MC: Genetic Identification Y-Haplogroup Prediction
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i FILE, --input FILE
+                        Output file or path produced from Yleaf
+  -ms MINIMUM_SCORE, --minimum_score MINIMUM_SCORE
+                        Minimum score needed in order for a prediction to be
+                        consideredfor inclusion in the final data
+                        (default=0.7).
+  -o FILE, --outfile FILE
+                        Output file name
+  -t THREADS, --threads THREADS
+                        Number of threads to use (default=1).
 ```
 

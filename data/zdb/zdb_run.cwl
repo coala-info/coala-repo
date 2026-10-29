@@ -38,7 +38,8 @@ inputs:
     doc: number of parallel processes allowed (default 16)
     inputBinding:
       position: 101
-      prefix: --cpu
+      prefix: --cpu=
+      separate: false
   - id: docker
     type:
       - 'null'
@@ -61,7 +62,8 @@ inputs:
       analsysis
     inputBinding:
       position: 101
-      prefix: --input
+      prefix: --input=
+      separate: false
   - id: ko
     type:
       - 'null'
@@ -77,7 +79,8 @@ inputs:
     doc: max memory usage allowed (default 8GB)
     inputBinding:
       position: 101
-      prefix: --mem
+      prefix: --mem=
+      separate: false
   - id: name
     type:
       - 'null'
@@ -86,7 +89,8 @@ inputs:
       run is also named latest"
     inputBinding:
       position: 101
-      prefix: --name
+      prefix: --name=
+      separate: false
   - id: num_missing
     type:
       - 'null'
@@ -95,7 +99,8 @@ inputs:
       (default 0)
     inputBinding:
       position: 101
-      prefix: --num_missing
+      prefix: --num_missing=
+      separate: false
   - id: og_seq_aligner
     type:
       - 'null'
@@ -104,7 +109,8 @@ inputs:
       diamond, defaults to diamond)
     inputBinding:
       position: 101
-      prefix: --og_seq_aligner
+      prefix: --og_seq_aligner=
+      separate: false
   - id: pfam
     type:
       - 'null'
@@ -120,7 +126,8 @@ inputs:
     doc: directory where the reference databases were setup up (default zdb_ref)
     inputBinding:
       position: 101
-      prefix: --ref_dir
+      prefix: --ref_dir=
+      separate: false
   - id: refseq
     type:
       - 'null'
@@ -146,7 +153,8 @@ inputs:
       singularity in current directory)
     inputBinding:
       position: 101
-      prefix: --singularity_dir
+      prefix: --singularity_dir=
+      separate: false
   - id: swissprot
     type:
       - 'null'
@@ -163,7 +171,8 @@ inputs:
       60%.
     inputBinding:
       position: 101
-      prefix: --vf_coverage
+      prefix: --vf_coverage=
+      separate: false
   - id: vf_evalue
     type:
       - 'null'
@@ -171,7 +180,8 @@ inputs:
     doc: evalue cutoff for the blast against the VF database. Defaults to 1e-10.
     inputBinding:
       position: 101
-      prefix: --vf_evalue
+      prefix: --vf_evalue=
+      separate: false
   - id: vf_seqid
     type:
       - 'null'
@@ -179,7 +189,8 @@ inputs:
     doc: sequence id cutoff for filtering VF blast results. Defaults to 60%.
     inputBinding:
       position: 101
-      prefix: --vf_seqid
+      prefix: --vf_seqid=
+      separate: false
   - id: vfdb
     type:
       - 'null'
@@ -188,11 +199,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vfdb
+  - id: og_n_core
+    type:
+      - 'null'
+      - int
+    doc: number of cores for orthogroup computation
+    inputBinding:
+      position: 101
+      prefix: --og_n_core=
+      separate: false
   - id: out_path
     type: string
     inputBinding:
       position: 102
-      prefix: --out
+      prefix: --out=
+      separate: false
 outputs:
   - id: out
     type:

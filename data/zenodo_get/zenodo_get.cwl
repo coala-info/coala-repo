@@ -44,7 +44,9 @@ inputs:
       position: 102
       prefix: --md5
   - id: wget
-    type: string
+    type:
+      - 'null'
+      - string
     doc: Create URL list for download managers. (Files will not be downloaded.)
     inputBinding:
       position: 102
@@ -99,6 +101,7 @@ inputs:
       prefix: --time-out
   - id: output_dir
     type: string
+    default: zenodo_out
     doc: 'Output directory, created if necessary. Default: current directory.'
     inputBinding:
       position: 102
@@ -182,7 +185,8 @@ outputs:
       - File
     doc: Create URL list for download managers. (Files will not be downloaded.)
     outputBinding:
-      glob: $(inputs.wget)
+      glob: |-
+        ${ return inputs.wget ? inputs.wget : []; }
   - id: output_output_dir
     type:
       - 'null'
@@ -192,6 +196,8 @@ outputs:
       glob: $(inputs.output_dir)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: hubentu/zenodo-get

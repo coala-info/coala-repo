@@ -5,10 +5,8 @@ label: yasm
 doc: "Assemble source files into object files.\n\nTool homepage: https://github.com/yasm/yasm"
 inputs:
   - id: input_file
-    type:
-      type: array
-      items: File
-    doc: Assembly source files to be assembled.
+    type: File
+    doc: Assembly source file to be assembled (yasm processes only one input file).
     inputBinding:
       position: 1
   - id: add_include_path
@@ -42,7 +40,8 @@ inputs:
     doc: select architecture (list with -a help)
     inputBinding:
       position: 102
-      prefix: --arch
+      prefix: --arch=
+      separate: false
   - id: debug_format
     type:
       - 'null'
@@ -50,7 +49,8 @@ inputs:
     doc: select debugging format (list with -g help)
     inputBinding:
       position: 102
-      prefix: --dformat
+      prefix: --dformat=
+      separate: false
   - id: debug_format_short
     type:
       - 'null'
@@ -62,11 +62,12 @@ inputs:
   - id: enable_disable_warnings
     type:
       - 'null'
-      - boolean
-    doc: enables/disables warning
+      - string
+    doc: enables/disables a warning, for example no-unrecognized-char
     inputBinding:
       position: 102
       prefix: -W
+      separate: false
   - id: error_warning_style
     type:
       - 'null'
@@ -86,15 +87,16 @@ inputs:
   - id: list_file
     type:
       - 'null'
-      - File
+      - string
     doc: name of list-file output
     inputBinding:
       position: 102
-      prefix: --list
+      prefix: --list=
+      separate: false
   - id: list_file_short
     type:
       - 'null'
-      - File
+      - string
     doc: name of list-file output
     inputBinding:
       position: 102
@@ -106,7 +108,8 @@ inputs:
     doc: select list format (list with -L help)
     inputBinding:
       position: 102
-      prefix: --lformat
+      prefix: --lformat=
+      separate: false
   - id: list_format_short
     type:
       - 'null'
@@ -122,7 +125,8 @@ inputs:
     doc: select machine (list with -m help)
     inputBinding:
       position: 102
-      prefix: --machine
+      prefix: --machine=
+      separate: false
   - id: machine_short
     type:
       - 'null'
@@ -154,7 +158,8 @@ inputs:
     doc: select object format (list with -f help)
     inputBinding:
       position: 102
-      prefix: --oformat
+      prefix: --oformat=
+      separate: false
   - id: output_format_short
     type:
       - 'null'
@@ -170,7 +175,8 @@ inputs:
     doc: select parser (list with -p help)
     inputBinding:
       position: 102
-      prefix: --parser
+      prefix: --parser=
+      separate: false
   - id: parser_short
     type:
       - 'null'
@@ -218,7 +224,8 @@ inputs:
     doc: select preprocessor (list with -r help)
     inputBinding:
       position: 102
-      prefix: --preproc
+      prefix: --preproc=
+      separate: false
   - id: preprocessor_short
     type:
       - 'null'
@@ -242,7 +249,8 @@ inputs:
     doc: append argument to name of all external symbols
     inputBinding:
       position: 102
-      prefix: --postfix
+      prefix: --postfix=
+      separate: false
   - id: symbol_prefix
     type:
       - 'null'
@@ -250,7 +258,8 @@ inputs:
     doc: prepend argument to name of all external symbols
     inputBinding:
       position: 102
-      prefix: --prefix
+      prefix: --prefix=
+      separate: false
   - id: symbol_suffix
     type:
       - 'null'
@@ -258,7 +267,8 @@ inputs:
     doc: append argument to name of all external symbols
     inputBinding:
       position: 102
-      prefix: --suffix
+      prefix: --suffix=
+      separate: false
   - id: undefine_macro
     type:
       - 'null'
@@ -282,7 +292,8 @@ inputs:
     doc: name of map-file output
     inputBinding:
       position: 103
-      prefix: --mapfile
+      prefix: --mapfile=
+      separate: false
   - id: object_file_path
     type:
       - 'null'
@@ -290,15 +301,16 @@ inputs:
     doc: name of object-file output
     inputBinding:
       position: 104
-      prefix: --objfile
+      prefix: --objfile=
+      separate: false
   - id: object_file_short_path
     type:
       - 'null'
       - string
-    doc: Output or path parameter `object_file_short_path`
+    doc: name of object-file output
     inputBinding:
       position: 105
-      prefix: --object-file-short
+      prefix: -o
   - id: redirect_error_file_path
     type:
       - 'null'
@@ -308,6 +320,9 @@ inputs:
       position: 106
       prefix: -E
 outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output (Makefile dependencies with -M, preprocessed text with -e, errors with -s)
   - id: object_file
     type:
       - 'null'
@@ -322,6 +337,20 @@ outputs:
     doc: name of object-file output
     outputBinding:
       glob: $(inputs.object_file_short_path)
+  - id: list_file_output
+    type:
+      - 'null'
+      - File
+    doc: name of list-file output
+    outputBinding:
+      glob: $(inputs.list_file)
+  - id: list_file_short_output
+    type:
+      - 'null'
+      - File
+    doc: name of list-file output
+    outputBinding:
+      glob: $(inputs.list_file_short)
   - id: map_file
     type:
       - 'null'
@@ -341,3 +370,4 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yasm:1.3.0--0
+stdout: yasm.out

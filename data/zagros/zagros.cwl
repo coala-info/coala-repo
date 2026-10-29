@@ -6,8 +6,8 @@ doc: "Finds motifs in DNA sequences based on cross-linking data.\n\nTool homepag
   https://github.com/Aryvyo/Zagros"
 inputs:
   - id: target_regions_sequences
-    type: string
-    doc: Target regions or sequences
+    type: File
+    doc: Target regions (BED, needs chrom_dir) or sequences (FASTA)
     inputBinding:
       position: 1
   - id: chrom_dir
@@ -119,14 +119,19 @@ outputs:
       - File
     doc: output file name
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: |-
+        ${ return inputs.output_file_path ? inputs.output_file_path : []; }
+  - id: stdout_text
+    type: stdout
+    doc: Motifs printed to standard output when no output file is given
   - id: indicator_probabilities_file
     type:
       - 'null'
       - File
     doc: output indicator probabilities for each sequence and motif to this file
     outputBinding:
-      glob: $(inputs.indicator_probabilities_file_path)
+      glob: |-
+        ${ return inputs.indicator_probabilities_file_path ? inputs.indicator_probabilities_file_path : []; }
 requirements:
   - class: InlineJavascriptRequirement
 hints:

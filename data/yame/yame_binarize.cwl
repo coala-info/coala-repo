@@ -9,6 +9,9 @@ doc: "Convert per-site M/U counts (format 3) into a packed binary-with-universe 
 inputs:
   - id: input_cx
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input format 3 (.cx) with per-site (M,U) stored as uint64.
     inputBinding:
       position: 1
@@ -50,6 +53,13 @@ outputs:
     doc: Write output to file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_index
+    type:
+      - 'null'
+      - File
+    doc: Sample index written beside the output file
+    outputBinding:
+      glob: $(inputs.output_file_path).idx
 requirements:
   - class: InlineJavascriptRequirement
 hints:

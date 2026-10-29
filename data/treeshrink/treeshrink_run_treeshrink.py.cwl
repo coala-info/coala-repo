@@ -96,10 +96,10 @@ inputs:
   - id: output_directory
     type:
       - 'null'
-      - Directory
-    doc: "Output directory. Default: If the input directory is specified, outputs
-      will be placed in that input directory. Otherwise, a directory with the suffix
-      'treeshrink' will be created in the same place as the input trees"
+      - string
+    default: treeshrink_out
+    doc: "Output directory name (created by the tool in the working directory).
+      Without this option the tool writes next to the input trees."
     inputBinding:
       position: 101
       prefix: --outdir
@@ -116,8 +116,9 @@ inputs:
   - id: quantiles
     type:
       - 'null'
-      - float
-    doc: The quantile(s) to set threshold.
+      - string
+    doc: The quantile(s) to set threshold. Separate several values with spaces,
+      for example "0.01 0.05 0.1". Default is 0.05
     inputBinding:
       position: 101
       prefix: --quantiles
@@ -133,10 +134,12 @@ inputs:
   - id: tree
     type:
       - 'null'
+      - File
       - string
     doc: The name of the input tree/trees. If the input directory is specified 
       (see -i option), each subdirectory under it must contain a tree with this 
-      name. Otherwise, all the trees can be included in this one file.
+      name (give a string). Otherwise, all the trees can be included in this one 
+      file (give a File).
     inputBinding:
       position: 101
       prefix: --tree
@@ -144,6 +147,13 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory with the filtered trees, removed-leaf lists and summary
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treeshrink:1.3.9--pyhdfd78af_1

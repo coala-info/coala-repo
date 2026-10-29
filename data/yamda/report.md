@@ -1,5 +1,12 @@
 # yamda CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| yamda_erase_annoying_sequences.py | PASS |  |
+| yamda_run_em.py | PASS |  |
+
 ## yamda_erase_annoying_sequences.py
 
 ### Tool Description

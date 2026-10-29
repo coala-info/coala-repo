@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fgwas
+requirements:
+  - class: InlineJavascriptRequirement
 label: fgwas
 doc: "fgwas v. 0.3.6\nby Joe Pickrell (jkpickrell@nygenome.org)\n\nTool homepage:
   https://github.com/joepickrell/fgwas"
@@ -85,9 +87,7 @@ inputs:
       position: 101
       prefix: -fine
   - id: input_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: input file w/ Z-scores
     inputBinding:
       position: 101
@@ -130,17 +130,23 @@ inputs:
       - type: array
         items: float
     doc: variance of prior on normalized effect size. To average priors, 
-      separate with commas
-      - 0.01
-      - 0.1
-      - 0.5
+      separate with commas (default 0.01,0.1,0.5)
     inputBinding:
       position: 101
       prefix: -v
+      itemSeparator: ','
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: result_files
+    type:
+      type: array
+      items: File
+    doc: output files (.params, .llk, .ridgeparams, and with -print .bfs.gz and 
+      .segbfs.gz) named after the output stem (default fgwas)
+    outputBinding:
+      glob: $((inputs.output_stem || 'fgwas') + '.*')
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fgwas:0.3.6--ha172671_9

@@ -11,6 +11,9 @@ inputs:
     type:
       type: array
       items: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: 'Query feature file(s). Supported query formats: 0/1 (binary), 2 (state),
       3 (MU counts), 4 (float), 6 (set+universe), 7 (genomic coordinates).'
     inputBinding:
@@ -45,6 +48,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Optional mask feature file (can be multi-sample). If provided, every 
       query sample is summarized against every mask sample (cartesian product).
     inputBinding:

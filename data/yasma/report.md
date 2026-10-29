@@ -1,5 +1,21 @@
 # yasma CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| yasma_adapter | PASS |  |
+| yasma_align | Failed | tool bug: passes -f (FASTA) to bowtie for FASTQ libraries, so the FASTQ output of yasma trim gives zero aligned reads (exit 0); FASTA reads align |
+| yasma_count | PASS |  |
+| yasma_coverage | PASS |  |
+| yasma_download | PASS |  |
+| yasma_hairpin | Failed | image problem: samtools is missing in the image (requirements not met) |
+| yasma_inputs | PASS |  |
+| yasma_jbrowse | Failed | image problem: rsync is missing in the image (FileNotFoundError) |
+| yasma_size-profile | PASS |  |
+| yasma_tradeoff | Failed | tool bug: finds loci but crashes at the end with TypeError (PosixPath not JSON serializable) when writing inputs.json, exit 1 |
+| yasma_trim | PASS |  |
+
 ## yasma_inputs
 
 ### Tool Description

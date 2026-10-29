@@ -10,6 +10,9 @@ doc: "Downsample methylation data for format 3 or 6.\n  - For format 3, downsamp
 inputs:
   - id: input_cx_file
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input .cx file
     inputBinding:
       position: 1
@@ -57,23 +60,13 @@ inputs:
       position: 102
       prefix: -s
   - id: output_file_path
-    type:
-      - 'null'
-      - string
+    type: string
     doc: '[PATH] output .cx file name. If missing, write to stdout (no index will
       be written).'
     inputBinding:
       position: 103
       prefix: -o
 outputs:
-  - id: output_cx_file
-    type:
-      - 'null'
-      - File
-    doc: Output .cx file name. If missing, write to stdout (no index will be 
-      written).
-    outputBinding:
-      glob: '*.out'
   - id: output_file
     type:
       - 'null'
@@ -81,6 +74,13 @@ outputs:
     doc: output .cx file name.
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: output_index
+    type:
+      - 'null'
+      - File
+    doc: Sample index written beside the output file
+    outputBinding:
+      glob: $(inputs.output_file_path).idx
 requirements:
   - class: InlineJavascriptRequirement
 hints:

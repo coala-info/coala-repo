@@ -8,16 +8,20 @@ inputs:
     type:
       type: array
       items: File
-    doc: given file is a mock control
+    doc: given file is a mock control (BAM or SAM; several files are comma separated)
     inputBinding:
       position: 1
+      prefix: --mock
+      itemSeparator: ','
   - id: input_files_chip
     type:
       type: array
       items: File
-    doc: given file is a ChIP-seq experiment
+    doc: given file is a ChIP-seq experiment (BAM or SAM; several files are comma separated)
     inputBinding:
       position: 2
+      prefix: --chip
+      itemSeparator: ','
   - id: confidence
     type:
       - 'null'
@@ -26,7 +30,8 @@ inputs:
       intervals accordingly in list output"
     inputBinding:
       position: 103
-      prefix: --confidence
+      prefix: --confidence=
+      separate: false
   - id: list_output
     type:
       - 'null'

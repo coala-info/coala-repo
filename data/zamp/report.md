@@ -1,5 +1,13 @@
 # zamp CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zamp_db | Not completed | pipeline, skipped: runs Snakemake rules that need Singularity or conda environments |
+| zamp_insilico | Not completed | pipeline, skipped: runs Snakemake rules that need Singularity or conda environments |
+| zamp_run | Not completed | pipeline, skipped: runs Snakemake rules that need Singularity or conda environments |
+
 ## zamp_db
 
 ### Tool Description

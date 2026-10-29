@@ -1,5 +1,11 @@
 # yaggo CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| yaggo | PASS |  |
+
 ## yaggo
 
 ### Tool Description

@@ -7,16 +7,22 @@ label: yasma_count
 doc: "Gets counts for all readgroups, loci, strand, and sizes.\n\nTool homepage: https://github.com/NateyJay/YASMA"
 inputs:
   - id: alignment_file
-    type: File
-    doc: Alignment file input (bam or cram).
+    type:
+      - 'null'
+      - string
+    default: align/alignment.bam
+    doc: Alignment file input (bam or cram). Give the path inside the project directory (output_directory); the depth table and index of the alignment must sit beside it.
     inputBinding:
       position: 101
       prefix: --alignment_file
+      valueFrom: $(inputs.output_directory.basename)/$(self)
   - id: annotation_files
     type:
       - 'null'
       - type: array
         items: File
+        inputBinding:
+          prefix: --annotation_files
     doc: "Locus annotations to count in gff, gff3,\n                             \
       \     gtf, bed, or tabular format. Tabular\n                               \
       \   requires contig:start-stop and locus_name in\n                         \
@@ -25,11 +31,13 @@ inputs:
       \                    associated with annotations."
     inputBinding:
       position: 101
-      prefix: --annotation_files
   - id: conditions
     type:
       - 'null'
-      - string
+      - type: array
+        items: string
+        inputBinding:
+          prefix: --conditions
     doc: "Values denoting condition groups (sets of\n                            \
       \      replicate libraries) for projects with\n                            \
       \      multiple tissues/treatments/genotypes. Can\n                        \
@@ -40,7 +48,6 @@ inputs:
       \                SRR1111114:mut"
     inputBinding:
       position: 101
-      prefix: --conditions
   - id: include_zeros
     type:
       - 'null'
@@ -61,10 +68,24 @@ inputs:
     inputBinding:
       position: 101
       prefix: --output_directory
+      valueFrom: $(self.basename)
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_directory
+    type: Directory
+    doc: Project directory with the files this step wrote
+    outputBinding:
+      glob: $(inputs.output_directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{entry: inputs.output_directory, writable: true}];
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yasma:1.1.0--pyh7e72e81_0

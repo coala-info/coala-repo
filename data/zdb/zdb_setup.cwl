@@ -1,6 +1,8 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: zdb_setup
+baseCommand:
+  - zdb
+  - setup
 label: zdb_setup
 doc: "Downloads and sets up the reference database used by the analysis pipeline,
   as well as the zDB base database.\n\nTool homepage: https://github.com/metagenlab/zDB/"
@@ -28,7 +30,8 @@ inputs:
     doc: directory where to store the reference databases
     inputBinding:
       position: 101
-      prefix: --dir
+      prefix: --dir=
+      separate: false
   - id: docker
     type:
       - 'null'
@@ -85,7 +88,8 @@ inputs:
     doc: the directory where the singularity images are downloaded
     inputBinding:
       position: 101
-      prefix: --singularity_dir
+      prefix: --singularity_dir=
+      separate: false
   - id: swissprot
     type:
       - 'null'

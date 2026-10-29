@@ -48,27 +48,40 @@ inputs:
       position: 101
       prefix: --min_length
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory name for annotation output. Defaults to the current 
       directory, with this directory name as the project name.
     inputBinding:
       position: 101
       prefix: --output_directory
+      valueFrom: $(self.basename)
   - id: untrimmed_libraries
     type:
       - 'null'
       - type: array
-        items: string
+        items: File
+        inputBinding:
+          prefix: --untrimmed_libraries
     doc: Path to untrimmed libraries. Accepts wildcards (*).
     inputBinding:
       position: 101
-      prefix: --untrimmed_libraries
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_directory
+    type: Directory
+    doc: Project directory with the files this step wrote
+    outputBinding:
+      glob: $(inputs.output_directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{entry: inputs.output_directory, writable: true}];
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yasma:1.1.0--pyh7e72e81_0

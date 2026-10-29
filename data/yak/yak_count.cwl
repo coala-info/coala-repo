@@ -68,15 +68,13 @@ inputs:
       prefix: -t
   - id: output_file_path
     type: string
-    doc: Output or path parameter `output_file_path`
+    doc: dump the count hash table to FILE
     inputBinding:
       position: 104
-      prefix: --output-file
+      prefix: -o
 outputs:
   - id: output_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: dump the count hash table to FILE
     outputBinding:
       glob: $(inputs.output_file_path)

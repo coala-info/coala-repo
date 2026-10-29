@@ -1,84 +1,26 @@
 # ymp CWL Generation Report
 
-## ymp_env
+## Real Data Test
 
-### Tool Description
-Manipulate conda software environments
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
-- **Homepage**: https://ymp.readthedocs.io
-- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/ymp/overview
-- **Total Downloads**: 6.8K
-- **Last updated**: 2025-10-16
-- **GitHub**: https://github.com/epruesse/ymp
-- **Stars**: N/A
-### Original Help Text
-```text
-Usage: ymp env [OPTIONS] COMMAND [ARGS]...
-
-  Manipulate conda software environments
-
-  These commands allow accessing the conda software environments managed by
-  YMP. Use e.g.
-
-  >>> $(ymp env activate multiqc)
-
-  to enter the software environment for ``multiqc``.
-
-Options:
-  -P, --pdb        Drop into debugger on uncaught exception
-  -q, --quiet      Decrease log verbosity
-  -v, --verbose    Increase log verbosity
-  --log-file TEXT  Specify a log file
-  -h, --help       Show this message and exit.
-
-Commands:
-  activate  source activate environment
-  clean     Remove unused conda environments
-  export    Export conda environments
-  install   Install conda software environments
-  list      List conda environments
-  prepare   Create envs needed to build target
-  remove    Remove conda environments
-  run       Execute COMMAND with activated environment ENV
-  update    Update conda environments
-```
-
-
-## ymp_init
-
-### Tool Description
-Initialize YMP workspace
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
-- **Homepage**: https://ymp.readthedocs.io
-- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: ymp init [OPTIONS] COMMAND [ARGS]...
-
-  Initialize YMP workspace
-
-Options:
-  -P, --pdb        Drop into debugger on uncaught exception
-  -q, --quiet      Decrease log verbosity
-  -v, --verbose    Increase log verbosity
-  --log-file TEXT  Specify a log file
-  -h, --help       Show this message and exit.
-
-Commands:
-  cluster  Set up cluster
-  demo     Copies YMP tutorial data into the current working directory
-  project
-```
-
+| Tool | Result | Reason |
+|---|---|---|
+| ymp_env_activate | Not completed | needs network to create the conda environment first |
+| ymp_env_clean | Failed | tool bug: ymp env clean crashes with TypeError (clean() got an unexpected keyword argument envnames) |
+| ymp_env_export | Not completed | needs an installed conda environment to export; none can be installed offline |
+| ymp_env_install | Not completed | real install needs conda downloads; only a dry run worked |
+| ymp_env_list | PASS |  |
+| ymp_env_prepare | Not completed | pipeline, skipped: builds conda environments for a Snakemake target |
+| ymp_env_remove | Not completed | needs an installed conda environment to remove; none can be installed offline |
+| ymp_env_run | Not completed | needs an installed conda environment, which needs network |
+| ymp_env_update | Not completed | needs installed conda environments, which need network |
+| ymp_init_cluster | Failed | image problem: ymp saves its config into the package folder inside the image, which is read-only |
+| ymp_init_demo | PASS |  |
+| ymp_init_project | Failed | image problem: ymp saves its config into the package folder inside the image, which is read-only |
+| ymp_make | Not completed | pipeline, skipped: runs Snakemake workflow stages |
+| ymp_scan | PASS | real demo reads, files renamed to the Illumina names that ymp scan expects |
+| ymp_show | PASS |  |
+| ymp_stage_list | PASS |  |
+| ymp_submit | Not completed | pipeline, skipped: submits Snakemake jobs to a cluster |
 
 ## ymp_make
 
@@ -201,35 +143,6 @@ Properties available:
 ```
 
 
-## ymp_stage
-
-### Tool Description
-Manipulate YMP stages
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
-- **Homepage**: https://ymp.readthedocs.io
-- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-Usage: ymp stage [OPTIONS] COMMAND [ARGS]...
-
-  Manipulate YMP stages
-
-Options:
-  -P, --pdb        Drop into debugger on uncaught exception
-  -q, --quiet      Decrease log verbosity
-  -v, --verbose    Increase log verbosity
-  --log-file TEXT  Specify a log file
-  -h, --help       Show this message and exit.
-
-Commands:
-  list  List available stages
-```
-
-
 ## ymp_submit
 
 ### Tool Description
@@ -314,6 +227,408 @@ Options:
   -h, --help                      Show this message and exit.
 ```
 
+
+## ymp_env_activate
+
+### Tool Description
+source activate environment
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp env activate [OPTIONS] ENVNAME
+
+  source activate environment
+
+  Usage: $(ymp activate env [ENVNAME])
+
+Options:
+  -P, --pdb        Drop into debugger on uncaught exception
+  -q, --quiet      Decrease log verbosity
+  -v, --verbose    Increase log verbosity
+  --log-file TEXT  Specify a log file
+  -h, --help       Show this message and exit.
+```
+
+## ymp_env_clean
+
+### Tool Description
+Remove unused conda environments
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp env clean [OPTIONS] [ENVNAMES]...
+
+  Remove unused conda environments
+
+Options:
+  -P, --pdb        Drop into debugger on uncaught exception
+  -q, --quiet      Decrease log verbosity
+  -v, --verbose    Increase log verbosity
+  --log-file TEXT  Specify a log file
+  -a, --all        Delete all environments
+  -h, --help       Show this message and exit.
+```
+
+## ymp_env_export
+
+### Tool Description
+Export conda environments
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp env export [OPTIONS] [ENVNAMES]...
+
+  Export conda environments
+
+  Resolved package specifications for the selected conda environments can be
+  exported either in YAML format suitable for use with ``conda env create -f
+  FILE`` or in TXT format containing a list of URLs suitable for use with
+  ``conda create --file FILE``. Please note that the TXT format is platform
+  specific.
+
+  If other formats are desired, use ``ymp env list`` to view the environments'
+  installation path ("prefix" in conda lingo) and export the specification
+  with the ``conda`` command line utlity directly.
+
+  Note:
+    Environments must be installed before they can be exported. This is due
+    to limitations of the conda utilities.  Use the "--create" flag to
+    automatically install missing environments.
+
+Options:
+  -P, --pdb                 Drop into debugger on uncaught exception
+  -q, --quiet               Decrease log verbosity
+  -v, --verbose             Increase log verbosity
+  --log-file TEXT           Specify a log file
+  -d, --dest FILE           Destination file or directory. If a directory,
+                            file names will be derived from environment names
+                            and selected export format. Default: print to
+                            standard output.
+  -f, --overwrite           Overwrite existing files
+  -c, --create-missing      Create environments not yet installed
+  -s, --skip-missing        Skip environments not yet installed
+  -t, --filetype [yml|txt]  Select export format. Default: yml unless FILE
+                            ends in '.txt'
+  -h, --help                Show this message and exit.
+```
+
+## ymp_env_install
+
+### Tool Description
+Install conda software environments
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp env install [OPTIONS] [ENVNAMES]...
+
+  Install conda software environments
+
+Options:
+  -P, --pdb                  Drop into debugger on uncaught exception
+  -q, --quiet                Decrease log verbosity
+  -v, --verbose              Increase log verbosity
+  --log-file TEXT            Specify a log file
+  -p, --conda-prefix TEXT    Override location for conda environments
+  -e, --conda-env-spec TEXT  Override conda env specs settings
+  -n, --dry-run              Only show what would be done
+  -r, --reinstall            Delete existing environment and reinstall
+  --no-spec                  Don't use conda env spec even if present
+  --no-archive               Delete existing archives before install
+  --fresh                    Create fresh install. Implies reinstall, no-spec
+                             and no-archve
+  -h, --help                 Show this message and exit.
+```
+
+## ymp_env_list
+
+### Tool Description
+List conda environments
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp env list [OPTIONS] [ENVNAMES]...
+
+  List conda environments
+
+Options:
+  -P, --pdb                       Drop into debugger on uncaught exception
+  -q, --quiet                     Decrease log verbosity
+  -v, --verbose                   Increase log verbosity
+  --log-file TEXT                 Specify a log file
+  -s, --sort [label|hash|address|installed]
+                                  Sort by column
+  -r, --reverse                   Reverse sort order
+  --installed / --not-installed   List only installed/not installed
+                                  environments
+  -e, --extra TEXT                Show additional fields (all: everything)
+  --csv                           Output as machine readable CSV
+  -h, --help                      Show this message and exit.
+```
+
+## ymp_env_prepare
+
+### Tool Description
+Create envs needed to build target
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp env prepare [OPTIONS] TARGET_FILES
+
+  Create envs needed to build target
+
+Options:
+  -P, --pdb                       Drop into debugger on uncaught exception
+  -q, --quiet                     Decrease log verbosity
+  -v, --verbose                   Increase log verbosity
+  --log-file TEXT                 Specify a log file
+  -n, --dryrun                    Only show what would be done
+  -p, --printshellcmds            Print shell commands to be executed on shell
+  -k, --keepgoing                 Don't stop after failed job
+  --lock / --no-lock              Use/don't use locking to prevent clobbering
+                                  of files by parallel instances of YMP
+                                  running
+  --rerun-incomplete, --ri        Re-run jobs left incomplete in last run
+  --rerun-triggers [mtime|params|input|software-env|code]
+                                  Select reasons for reruns. Default changed
+                                  from Snakemake toonly mtime for performance
+                                  reasons.
+  --scheduler TEXT                ILP or greedy
+  -F, --forceall                  Force rebuilding of all stages leading to
+                                  target
+  -f, --force                     Force rebuilding of target
+  --notemp                        Do not remove temporary files
+  -t, --touch                     Only touch files, faking update
+  --shadow-prefix TEXT            Directory to place data for shadowed rules
+  -r, --reason                    Print reason for executing rule
+  -N, --nohup                     Don't die once the terminal goes away.
+  --reinstall                     Delete existing environment and reinstall
+  --no-spec                       Don't use conda env spec even if present
+  --no-archive                    Delete existing archives before install
+  --fresh                         Create fresh install. Implies reinstall, no-
+                                  spec and no-archve
+  -h, --help                      Show this message and exit.
+```
+
+## ymp_env_remove
+
+### Tool Description
+Remove conda environments
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp env remove [OPTIONS] [ENVNAMES]...
+
+  Remove conda environments
+
+Options:
+  -P, --pdb        Drop into debugger on uncaught exception
+  -q, --quiet      Decrease log verbosity
+  -v, --verbose    Increase log verbosity
+  --log-file TEXT  Specify a log file
+  -h, --help       Show this message and exit.
+```
+
+## ymp_env_run
+
+### Tool Description
+Execute COMMAND with activated environment ENV
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp env run [OPTIONS] ENVNAME [COMMAND]...
+
+  Execute COMMAND with activated environment ENV
+
+  Usage: ymp env run <ENV> [--] <COMMAND...>
+
+  (Use the "--" if your command line contains option type parameters
+  beginning with - or --)
+
+Options:
+  -P, --pdb        Drop into debugger on uncaught exception
+  -q, --quiet      Decrease log verbosity
+  -v, --verbose    Increase log verbosity
+  --log-file TEXT  Specify a log file
+  -h, --help       Show this message and exit.
+```
+
+## ymp_env_update
+
+### Tool Description
+Update conda environments
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp env update [OPTIONS] [ENVNAMES]...
+
+  Update conda environments
+
+Options:
+  -P, --pdb        Drop into debugger on uncaught exception
+  -q, --quiet      Decrease log verbosity
+  -v, --verbose    Increase log verbosity
+  --log-file TEXT  Specify a log file
+  -h, --help       Show this message and exit.
+```
+
+## ymp_init_cluster
+
+### Tool Description
+Set up cluster
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp init cluster [OPTIONS]
+
+  Set up cluster
+
+Options:
+  -P, --pdb        Drop into debugger on uncaught exception
+  -q, --quiet      Decrease log verbosity
+  -v, --verbose    Increase log verbosity
+  --log-file TEXT  Specify a log file
+  -y, --yes        Confirm every prompt
+  -h, --help       Show this message and exit.
+```
+
+## ymp_init_demo
+
+### Tool Description
+Copies YMP tutorial data into the current working directory
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp init demo [OPTIONS]
+
+  Copies YMP tutorial data into the current working directory
+
+Options:
+  -P, --pdb        Drop into debugger on uncaught exception
+  -q, --quiet      Decrease log verbosity
+  -v, --verbose    Increase log verbosity
+  --log-file TEXT  Specify a log file
+  -h, --help       Show this message and exit.
+```
+
+## ymp_init_project
+
+### Tool Description
+Options:
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp init project [OPTIONS] [NAME]
+
+Options:
+  -P, --pdb        Drop into debugger on uncaught exception
+  -q, --quiet      Decrease log verbosity
+  -v, --verbose    Increase log verbosity
+  --log-file TEXT  Specify a log file
+  -y, --yes        Confirm every prompt
+  -h, --help       Show this message and exit.
+```
+
+## ymp_stage_list
+
+### Tool Description
+List available stages
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ymp:0.3.2--pyhdfd78af_0
+- **Homepage**: https://ymp.readthedocs.io
+- **Package**: https://anaconda.org/channels/bioconda/packages/ymp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: ymp stage list [OPTIONS] STAGE
+
+  List available stages
+
+Options:
+  -P, --pdb        Drop into debugger on uncaught exception
+  -q, --quiet      Decrease log verbosity
+  -v, --verbose    Increase log verbosity
+  --log-file TEXT  Specify a log file
+  -l, --long       Show full stage descriptions
+  -s, --short      Show only stage names
+  -c, --code       Show definition file name and line number
+  -t, --types      Show input/output types
+  -p, --params     Show parameters
+  -h, --help       Show this message and exit.
+```
 
 ## Metadata
 - **Skill**: generated

@@ -55,7 +55,7 @@ inputs:
   - id: tailtrim
     type:
       - 'null'
-      - string
+      - int
     doc: Trim x bases from end of each read.
     inputBinding:
       position: 101

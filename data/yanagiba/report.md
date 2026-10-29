@@ -1,5 +1,11 @@
 # yanagiba CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| yanagiba | PASS | Summary mode matches the expected 814 reads; without a summary file the tool crashes unless tailtrim is set (tool bug). |
+
 ## yanagiba
 
 ### Tool Description

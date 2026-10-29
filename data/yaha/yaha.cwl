@@ -2,8 +2,49 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: yaha
 label: yaha
-doc: "YAHA is a fast and sensitive DNA sequence aligner.\n\nTool homepage: https://github.com/jannson/yaha"
+doc: "YAHA is a fast and sensitive DNA sequence aligner (align queries against a YAHA index).\n\nTool homepage: https://github.com/jannson/yaha"
 inputs:
+  - id: yaha_index_file
+    type: File
+    doc: YAHA index file (made by yaha_index); the .nib2 file of the same genome must be beside it
+    secondaryFiles:
+      - pattern: ^.nib2
+        required: true
+    inputBinding:
+      position: 101
+      prefix: -x
+  - id: max_hits
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of hits per query word (650)
+    inputBinding:
+      position: 101
+      prefix: -H
+  - id: output_modified_blast8
+    type:
+      - 'null'
+      - string
+    doc: Output file name; produces alignment output in modified Blast8 format
+    inputBinding:
+      position: 101
+      prefix: -o8
+  - id: output_sam_hard_clipping
+    type:
+      - 'null'
+      - string
+    doc: Output file name; produces alignment output in SAM format with hard clipping
+    inputBinding:
+      position: 101
+      prefix: -osh
+  - id: output_sam_soft_clipping
+    type:
+      - 'null'
+      - string
+    doc: Output file name; produces alignment output in SAM format with soft clipping
+    inputBinding:
+      position: 101
+      prefix: -oss
   - id: affine_gap_scoring
     type:
       - 'null'
@@ -28,14 +69,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -BP
-  - id: detailed_help
-    type:
-      - 'null'
-      - boolean
-    doc: For a more detailed help message
-    inputBinding:
-      position: 101
-      prefix: -xh
   - id: gap_extension_cost
     type:
       - 'null'
@@ -52,12 +85,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -GOC
-  - id: genome_filename
-    type: File
-    doc: Genome filename (FASTA or nib2)
-    inputBinding:
-      position: 101
-      prefix: -g
   - id: include_secondary_alignments
     type:
       - 'null'
@@ -98,22 +125,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -MGDP
-  - id: max_hits_align
-    type:
-      - 'null'
-      - int
-    doc: Maximum number of hits for alignment
-    inputBinding:
-      position: 101
-      prefix: -H
-  - id: max_hits_index
-    type:
-      - 'null'
-      - int
-    doc: Maximum number of hits for indexing
-    inputBinding:
-      position: 101
-      prefix: -H
   - id: min_match
     type:
       - 'null'
@@ -154,30 +165,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -OQC
-  - id: output_modified_blast8
-    type:
-      - 'null'
-      - boolean
-    doc: Produces alignment output in modified Blast8 format.
-    inputBinding:
-      position: 101
-      prefix: -o8
-  - id: output_sam_hard_clipping
-    type:
-      - 'null'
-      - boolean
-    doc: Produces alignment output in SAM format with hard clipping.
-    inputBinding:
-      position: 101
-      prefix: -osh
-  - id: output_sam_soft_clipping
-    type:
-      - 'null'
-      - boolean
-    doc: Produces alignment output in SAM format with soft clipping.
-    inputBinding:
-      position: 101
-      prefix: -oss
   - id: percent_reciprocal_length
     type:
       - 'null'
@@ -210,22 +197,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -RC
-  - id: skip_distance
-    type:
-      - 'null'
-      - int
-    doc: Skip-distance for indexing
-    inputBinding:
-      position: 101
-      prefix: -S
-  - id: word_len
-    type:
-      - 'null'
-      - int
-    doc: Word length for indexing
-    inputBinding:
-      position: 101
-      prefix: -L
   - id: xdropoff
     type:
       - 'null'
@@ -234,26 +205,32 @@ inputs:
     inputBinding:
       position: 101
       prefix: -X
-  - id: yaha_index_file
-    type: File
-    doc: YAHA index file
-    inputBinding:
-      position: 101
-      prefix: -x
-  - id: output_file_path
-    type: string
-    doc: Output or path parameter `output_file_path`
-    inputBinding:
-      position: 102
-      prefix: --output-file
 outputs:
-  - id: output_file
+  - id: blast8_output
     type:
       - 'null'
       - File
-    doc: Output file (stdout if not specified)
+    doc: Alignments in modified Blast8 format
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_modified_blast8)
+  - id: sam_hard_clipping_output
+    type:
+      - 'null'
+      - File
+    doc: Alignments in SAM format with hard clipping
+    outputBinding:
+      glob: $(inputs.output_sam_hard_clipping)
+  - id: sam_soft_clipping_output
+    type:
+      - 'null'
+      - File
+    doc: Alignments in SAM format with soft clipping
+    outputBinding:
+      glob: $(inputs.output_sam_soft_clipping)
+  - id: stdout
+    type: stdout
+    doc: Alignments written to standard output when no output file is given
+stdout: yaha.out
 requirements:
   - class: InlineJavascriptRequirement
 hints:

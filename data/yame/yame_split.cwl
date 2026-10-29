@@ -9,6 +9,9 @@ doc: "Split a cx file into multiple files based on sample names.\n\nTool homepag
 inputs:
   - id: input_cx_file
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input cx file
     inputBinding:
       position: 1
@@ -20,8 +23,8 @@ inputs:
   - id: sample_name_list
     type:
       - 'null'
-      - boolean
-    doc: sample name list
+      - File
+    doc: sample name list (file with one name per line; names the output files)
     inputBinding:
       position: 103
       prefix: -s

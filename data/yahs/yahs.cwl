@@ -6,7 +6,10 @@ doc: "Scaffold contigs using Hi-C data\n\nTool homepage: https://github.com/c-zh
 inputs:
   - id: contigs_fa
     type: File
-    doc: Input FASTA file of contigs
+    doc: Input FASTA file of contigs (with its .fai index, for example from samtools faidx)
+    secondaryFiles:
+      - pattern: .fai
+        required: true
     inputBinding:
       position: 1
   - id: hic_data
@@ -74,6 +77,7 @@ inputs:
     type:
       - 'null'
       - string
+    default: yahs.out
     doc: prefix of output files
     inputBinding:
       position: 103
@@ -95,6 +99,7 @@ inputs:
     inputBinding:
       position: 103
       prefix: -r
+      itemSeparator: ','
   - id: restriction_enzyme
     type:
       - 'null'

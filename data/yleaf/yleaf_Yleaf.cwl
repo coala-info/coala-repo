@@ -18,6 +18,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .bai
+        required: false
     doc: input BAM file
     inputBinding:
       position: 101
@@ -140,9 +143,7 @@ inputs:
       position: 101
       prefix: --reanalyze
   - id: reference_genome
-    type:
-      - 'null'
-      - string
+    type: string
     doc: The reference genome build to be used. If no reference is available 
       they will be downloaded. If you added references in your config.txt file 
       these will be used instead as reference or the location will be used to 
@@ -180,6 +181,11 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_directory
+    type: Directory
+    doc: Folder with the Yleaf results (haplogroup predictions, marker tables)
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yleaf:3.2.1--pyh1286868_0

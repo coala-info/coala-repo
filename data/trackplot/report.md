@@ -1,5 +1,11 @@
 # trackplot CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| trackplot | PASS |  |
+
 ## trackplot
 
 ### Tool Description

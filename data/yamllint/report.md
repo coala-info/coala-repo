@@ -1,5 +1,11 @@
 # yamllint CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| yamllint | PASS | real YAML files from public repos: a clean pair gives no problems (exit 0); main.yml with line-length max 40 gives 13 parsable warnings and errors (exit 1); successCodes [0, 1] because yamllint exits 1 when it reports lint errors; a missing input file still fails (exit 255) |
+
 ## yamllint
 
 ### Tool Description

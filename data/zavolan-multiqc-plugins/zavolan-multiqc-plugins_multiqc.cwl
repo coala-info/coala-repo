@@ -62,10 +62,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --exclude
     doc: Do not use this module. Can specify multiple times.
     inputBinding:
       position: 102
-      prefix: --exclude
   - id: export_plots
     type:
       - 'null'
@@ -77,9 +78,9 @@ inputs:
   - id: file_list
     type:
       - 'null'
-      - File
+      - boolean
     doc: Supply a file containing a list of file paths to be searched, one per 
-      row
+      row (the analysis path argument is then that file)
     inputBinding:
       position: 102
       prefix: --file-list
@@ -120,10 +121,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --ignore
     doc: Ignore analysis files (glob expression)
     inputBinding:
       position: 102
-      prefix: --ignore
   - id: ignore_samples
     type:
       - 'null'
@@ -161,10 +163,11 @@ inputs:
       - 'null'
       - type: array
         items: string
+        inputBinding:
+          prefix: --module
     doc: Use only this module. Can specify multiple times.
     inputBinding:
       position: 102
-      prefix: --module
   - id: no_ansi
     type:
       - 'null'
@@ -299,6 +302,7 @@ inputs:
       prefix: --zip-data-dir
   - id: outdir_path
     type: string
+    default: multiqc_out
     doc: Create report in the specified output
     inputBinding:
       position: 103

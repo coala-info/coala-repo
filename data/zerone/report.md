@@ -1,5 +1,11 @@
 # zerone CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zerone | PASS |  |
+
 ## zerone
 
 ### Tool Description

@@ -1,5 +1,26 @@
 # yame CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| yame_binarize | PASS |  |
+| yame_chunk | PASS | chunk size that divides the row count exactly exits 1 with 'Slicing negative span' after writing chunks; other sizes work |
+| yame_chunkchar | PASS |  |
+| yame_dsample | PASS |  |
+| yame_hprint | PASS |  |
+| yame_index | PASS |  |
+| yame_info | PASS |  |
+| yame_mask | PASS |  |
+| yame_pack | PASS |  |
+| yame_pairwise | PASS |  |
+| yame_rowop | PASS |  |
+| yame_rowsub | PASS |  |
+| yame_split | PASS |  |
+| yame_subset | PASS |  |
+| yame_summary | PASS |  |
+| yame_unpack | PASS |  |
+
 ## yame_pack
 
 ### Tool Description

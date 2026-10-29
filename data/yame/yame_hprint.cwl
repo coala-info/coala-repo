@@ -8,6 +8,9 @@ doc: "Print data transposed / horizontally.\n\nTool homepage: https://github.com
 inputs:
   - id: binary_cg
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input binary file
     inputBinding:
       position: 1

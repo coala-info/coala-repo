@@ -31,6 +31,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: chunks_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Directory <input>_chunks with the text chunks
+    outputBinding:
+      glob: $(inputs.input_file.basename)_chunks
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yame:1.8--ha83d96e_0

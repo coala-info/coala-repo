@@ -19,9 +19,11 @@ inputs:
     type:
       - 'null'
       - type: array
-        items: string
-    doc: Name of the condition, BigWig files of first and second replicates; all
-      separated by spaces.
+        items:
+          - string
+          - File
+    doc: Name of the condition (string), then the BigWig files of the first and
+      second replicates (File); repeat for each condition.
     inputBinding:
       position: 2
   - id: fixed_peak_halfwidth

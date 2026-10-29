@@ -10,11 +10,13 @@ inputs:
   - id: alignment_file
     type:
       - 'null'
-      - File
-    doc: Alignment file input (bam or cram).
+      - string
+    default: align/alignment.bam
+    doc: Alignment file input (bam or cram). Give the path inside the project directory (output_directory); the depth table and index of the alignment must sit beside it.
     inputBinding:
       position: 101
       prefix: --alignment_file
+      valueFrom: $(inputs.output_directory.basename)/$(self)
   - id: annotation_folder
     type:
       - 'null'
@@ -82,13 +84,12 @@ inputs:
       position: 101
       prefix: --name
   - id: output_directory
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: Directory name for annotation output.
     inputBinding:
       position: 101
       prefix: --output_directory
+      valueFrom: $(self.basename)
   - id: silent
     type:
       - 'null'
@@ -112,6 +113,20 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: project_directory
+    type: Directory
+    doc: Project directory with the files this step wrote
+    outputBinding:
+      glob: $(inputs.output_directory.basename)
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${
+        var l = [{entry: inputs.output_directory, writable: true}];
+        if (inputs.genome_file) { l.push({entry: inputs.genome_file, writable: true}); }
+        return l;
+      }
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yasma:1.1.0--pyh7e72e81_0

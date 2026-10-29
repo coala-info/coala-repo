@@ -8,6 +8,9 @@ doc: "Report information about a YAME file.\n\nTool homepage: https://github.com
 inputs:
   - id: input_file
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input YAME file
     inputBinding:
       position: 1

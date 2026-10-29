@@ -1,5 +1,11 @@
 # zmwfilter CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zmwfilter | PASS |  |
+
 ## zmwfilter
 
 ### Tool Description

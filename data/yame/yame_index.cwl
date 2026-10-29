@@ -39,6 +39,18 @@ outputs:
   - id: stdout
     type: stdout
     doc: Standard output
+  - id: output_index
+    type:
+      - 'null'
+      - File
+    doc: The index file written beside the cx file (<in.cx>.idx)
+    outputBinding:
+      glob: $(inputs.input_cx_file.basename).idx
+requirements:
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.input_cx_file)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yame:1.8--ha83d96e_0

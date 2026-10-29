@@ -38,8 +38,8 @@ inputs:
   - id: man_file
     type:
       - 'null'
-      - File
-    doc: Display or write manpage
+      - string
+    doc: Display or write manpage (name of the manpage file to write)
     inputBinding:
       position: 102
       prefix: --man
@@ -54,7 +54,7 @@ inputs:
   - id: zsh_completion_file
     type:
       - 'null'
-      - File
+      - string
     doc: Write zsh completion file
     inputBinding:
       position: 102
@@ -73,6 +73,20 @@ outputs:
     doc: Output file
     outputBinding:
       glob: $(inputs.output_file_path)
+  - id: zsh_completion
+    type:
+      - 'null'
+      - File
+    doc: Zsh completion file
+    outputBinding:
+      glob: $(inputs.zsh_completion_file)
+  - id: manpage
+    type:
+      - 'null'
+      - File
+    doc: Manpage file
+    outputBinding:
+      glob: $(inputs.man_file)
 requirements:
   - class: InlineJavascriptRequirement
 hints:

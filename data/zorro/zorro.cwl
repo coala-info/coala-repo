@@ -6,9 +6,10 @@ doc: "ZORRO Options\n\nTool homepage: https://sourceforge.net/projects/probmask/
 inputs:
   - id: filename
     type: File
-    doc: Input filename
+    doc: Input filename (alignment in FASTA format)
     inputBinding:
       position: 1
+      valueFrom: $(self.basename)
   - id: guide_treefile
     type:
       - 'null'
@@ -71,7 +72,20 @@ inputs:
 outputs:
   - id: stdout
     type: stdout
-    doc: Standard output
+    doc: Standard output (column confidence scores)
+  - id: guide_tree
+    type:
+      - 'null'
+      - File
+    doc: Guide tree written beside the input alignment
+    outputBinding:
+      glob: '*.zorro.tre'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.filename)
+        writable: true
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/zorro:2011.12.01--h7b50bb2_5

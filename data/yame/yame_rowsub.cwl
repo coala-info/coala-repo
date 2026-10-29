@@ -9,6 +9,9 @@ doc: "Subset (slice) rows from each dataset (record) in a CX stream. Output is a
 inputs:
   - id: input_cx
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input CX stream
     inputBinding:
       position: 1
@@ -60,6 +63,9 @@ inputs:
     type:
       - 'null'
       - File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Mask file (format 0/1 only). Rows with bit=1 are kept.
     inputBinding:
       position: 102
@@ -72,14 +78,17 @@ inputs:
     inputBinding:
       position: 102
       prefix: -R
+  - id: output_file_name
+    type: string
+    default: rowsub_out.cx
+    doc: Name of the file that receives the CX stream written to stdout
 outputs:
   - id: output_cx
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Output CX stream (written to stdout)
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yame:1.8--ha83d96e_0
+stdout: $(inputs.output_file_name)

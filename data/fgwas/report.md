@@ -1,5 +1,11 @@
 # fgwas CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| fgwas | PASS |  |
+
 ## fgwas
 
 ### Tool Description

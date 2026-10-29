@@ -1,5 +1,11 @@
 # zstd CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zstd | PASS |  |
+
 ## zstd
 
 ### Tool Description

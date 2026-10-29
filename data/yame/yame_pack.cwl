@@ -11,6 +11,11 @@ inputs:
     doc: Input tab-delimited text file
     inputBinding:
       position: 1
+  - id: output_file_name
+    type: string
+    doc: Output compressed cx file name
+    inputBinding:
+      position: 2
   - id: bytes_per_unit
     type:
       - 'null'
@@ -40,7 +45,7 @@ outputs:
     type: File
     doc: Output compressed cx file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.output_file_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yame:1.8--ha83d96e_0

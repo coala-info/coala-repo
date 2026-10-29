@@ -1,5 +1,11 @@
 # zavolan-multiqc-plugins CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zavolan-multiqc-plugins_multiqc | PASS |  |
+
 ## zavolan-multiqc-plugins_multiqc
 
 ### Tool Description

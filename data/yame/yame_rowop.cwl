@@ -10,6 +10,9 @@ doc: "Perform row-wise operations across multiple records (samples) in a CX file
 inputs:
   - id: input_cx_file
     type: File
+    secondaryFiles:
+      - pattern: .idx
+        required: false
     doc: Input CX file
     inputBinding:
       position: 1
@@ -86,6 +89,13 @@ inputs:
       position: 103
       prefix: -v
 outputs:
+  - id: output_cx
+    type:
+      - 'null'
+      - File
+    doc: CX output of the binasum and musum operations (the out argument)
+    outputBinding:
+      glob: $(inputs.output)
   - id: stdout
     type: stdout
     doc: Standard output

@@ -1,5 +1,11 @@
 # zorro CWL Generation Report
 
+## Real Data Test
+
+| Tool | Result | Reason |
+|---|---|---|
+| zorro | Failed | tool bug: zorro exits with status 1 after a correct run (88 column scores written), so cwltool reports failure |
+
 ## zorro
 
 ### Tool Description

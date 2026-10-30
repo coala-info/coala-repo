@@ -5,22 +5,43 @@
 | Tool | Result | Reason |
 |---|---|---|
 | pyfastaq_fastaq_acgtn_only | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_add_indels | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_caf_to_fastq | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_capillary_to_pairs | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_chunker | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_count_sequences | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_deinterleave | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_enumerate_names | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_expand_nucleotides | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_fasta_to_fastq | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_filter | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_get_ids | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_get_seq_flanking_gaps | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_interleave | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_make_random_contigs | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_merge | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_replace_bases | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_reverse_complement | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_scaffolds_to_contigs | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_search_for_seq | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_sequence_trim | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_sort_by_name | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_sort_by_size | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_split_by_base_count | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_strip_illumina_suffix | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_to_boulderio | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_to_fake_qual | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_to_fasta | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_to_mira_xml | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_to_orfs_gff | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_to_perfect_reads | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_to_random_subset | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_to_tiling_bam | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_to_unique_by_id | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_translate | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 | pyfastaq_fastaq_trim_Ns_at_end | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_trim_contigs | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
+| pyfastaq_fastaq_trim_ends | Failed | image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13) |
 
 ## pyfastaq_fastaq_acgtn_only
 
@@ -481,6 +502,625 @@ positional arguments:
 options:
   -h, --help       show this help message and exit
   --frame {0,1,2}  Frame to translate [0]
+```
+
+## pyfastaq_fastaq_add_indels
+
+### Tool Description
+Deletes or inserts bases at given position(s)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq add_indels [options] <infile> <outfile>
+
+positional arguments:
+  infile                Name of input file
+  outfile               Name of output file
+
+options:
+  -h, --help            show this help message and exit
+  -d, --delete Name:start:bases
+                        Delete the given bases from the given sequence. Format
+                        same as samtools view: name:start-end. This option can
+                        be used multiple times (once for each region to
+                        delete). Overlapping coords will be merged before
+                        deleting
+  --delete_range P,start,step
+                        Deletes bases starting at position P in each sequence
+                        of the input file. Deletes start + (n-1)*step bases
+                        from sequence n.
+  -i, --insert Name:start:bases
+                        Insert a random string of bases at the given position.
+                        Format is name:position:number_to_add. Bases are added
+                        after the position. This option can be used multiple
+                        times
+  --insert_range P,start,step
+                        Inserts random bases starting after position P in each
+                        sequence of the input file. Inserts start + (n-1)*step
+                        bases into sequence n.
+```
+
+## pyfastaq_fastaq_caf_to_fastq
+
+### Tool Description
+Converts CAF file to FASTQ format
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq caf_to_fastq [options] <infile> <outfile>
+
+Converts CAF file to FASTQ format
+
+positional arguments:
+  infile                Name of input CAF file.
+  outfile               Name of output FASTQ file
+
+options:
+  -h, --help            show this help message and exit
+  -c, --clip            Use clipping info to clip reads, if present in the
+                        input CAF file (as lines of the form "Clipping QUAL
+                        start end"). Default is to not clip
+  -l, --min_length INT  Minimum length of sequence to output [1]
+```
+
+## pyfastaq_fastaq_capillary_to_pairs
+
+### Tool Description
+Given a file of capillary reads, makes an interleaved file of read pairs (where more than read from same ligation, takes the longest read) and a file of unpaired reads. Replaces the .p1k/.q1k part of read names to denote fwd/rev reads with /1 and /2
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq capillary_to_pairs <infile> <outfiles prefix>
+
+Given a file of capillary reads, makes an interleaved file of read pairs
+(where more than read from same ligation, takes the longest read) and a file
+of unpaired reads. Replaces the .p1k/.q1k part of read names to denote fwd/rev
+reads with /1 and /2
+
+positional arguments:
+  infile           Name of input fasta/q file
+  outfiles prefix  Prefix of output files
+
+options:
+  -h, --help       show this help message and exit
+```
+
+## pyfastaq_fastaq_chunker
+
+### Tool Description
+Splits a multi sequence file into separate files. Splits sequences into chunks of a fixed size. Aims for chunk_size chunks in each file, but allows a little extra, so chunk can be up to (chunk_size + tolerance), to prevent tiny chunks made from the ends of sequences
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq chunker [options] <infile> <out> <chunk size> <tolerance>
+
+Splits a multi sequence file into separate files. Splits sequences into chunks
+of a fixed size. Aims for chunk_size chunks in each file, but allows a little
+extra, so chunk can be up to (chunk_size + tolerance), to prevent tiny chunks
+made from the ends of sequences
+
+positional arguments:
+  infile         Name of input file to be split
+  out            Prefix of output file. If --onefile used, then name of single
+                 output file
+  chunk_size     Size of each chunk
+  tolerance      Tolerance allowed in chunk size
+
+options:
+  -h, --help     show this help message and exit
+  --onefile      Output all the sequences in one file
+  --skip_all_Ns  Do not output any sequence that consists of all Ns
+```
+
+## pyfastaq_fastaq_enumerate_names
+
+### Tool Description
+Renames sequences in a file, calling them 1,2,3... etc
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq enumerate_names [options] <infile> <outfile>
+
+Renames sequences in a file, calling them 1,2,3... etc
+
+positional arguments:
+  infile                Name of fasta/q file to be read
+  outfile               Name of output fasta/q file
+
+options:
+  -h, --help            show this help message and exit
+  --start_index START_INDEX
+                        Starting number [1]
+  --rename_file RENAME_FILE
+                        If used, will write a file of old name to new name
+  --keep_suffix         Use this to keep a /1 or /2 suffix at the end of each
+                        name
+  --suffix SUFFIX       Add the given string to the end of every name
+```
+
+## pyfastaq_fastaq_expand_nucleotides
+
+### Tool Description
+Makes all combinations of sequences in input file by using all possibilities of redundant bases. e.g. ART could be AAT or AGT. Assumes input is nucleotides, not amino acids
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq expand_nucleotides <infile> <outfile>
+
+Makes all combinations of sequences in input file by using all possibilities
+of redundant bases. e.g. ART could be AAT or AGT. Assumes input is
+nucleotides, not amino acids
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
+
+options:
+  -h, --help  show this help message and exit
+```
+
+## pyfastaq_fastaq_get_ids
+
+### Tool Description
+Gets IDs from each sequence in input file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq get_ids <infile> <outfile>
+
+Gets IDs from each sequence in input file
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
+
+options:
+  -h, --help  show this help message and exit
+```
+
+## pyfastaq_fastaq_get_seq_flanking_gaps
+
+### Tool Description
+Gets the sequences flanking gaps
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq get_seq_flanking_gaps [options] <infile> <outfile>
+
+positional arguments:
+  infile       Name of input file
+  outfile      Name of output file
+
+options:
+  -h, --help   show this help message and exit
+  --left INT   Number of bases to get to left of gap [25]
+  --right INT  Number of bases to get to right of gap [25]
+```
+
+## pyfastaq_fastaq_make_random_contigs
+
+### Tool Description
+Makes a multi-FASTA file of random sequences, all of the same length. Each base has equal chance of being A,C,G or T
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq make_random_contigs [options] <contigs> <length> <outfile>
+
+Makes a multi-FASTA file of random sequences, all of the same length. Each
+base has equal chance of being A,C,G or T
+
+positional arguments:
+  contigs               Number of contigs to make
+  length                Length of each contig
+  outfile               Name of output file
+
+options:
+  -h, --help            show this help message and exit
+  --first_number FIRST_NUMBER
+                        If numbering the sequences, the first sequence gets
+                        this number [1]
+  --name_by_letters     Name the contigs A,B,C,... will start at A again if
+                        you get to Z
+  --prefix PREFIX       Prefix to add to start of every sequence name
+  --seed SEED           Seed for random number generator. Default is to use
+                        python's default
+```
+
+## pyfastaq_fastaq_merge
+
+### Tool Description
+Converts multi sequence file to a single sequence
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq merge [options] <infile> <outfile>
+
+positional arguments:
+  infile           Name of input file
+  outfile          Name of output file
+
+options:
+  -h, --help       show this help message and exit
+  -n, --name NAME  Name of sequence in output file [union]
+```
+
+## pyfastaq_fastaq_replace_bases
+
+### Tool Description
+Replaces all occurrences of one letter with another
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq replace_bases <infile> <outfile> <old> <new>
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output file
+  old         Base to be replaced
+  new         Replace with this letter
+
+options:
+  -h, --help  show this help message and exit
+```
+
+## pyfastaq_fastaq_search_for_seq
+
+### Tool Description
+Searches for an exact match on a given string and its reverse complement, in every sequence of input sequence file. Case insensitive. Guaranteed to find all hits
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq search_for_seq [options] <infile> <outfile> <search_string>
+
+Searches for an exact match on a given string and its reverse complement, in
+every sequence of input sequence file. Case insensitive. Guaranteed to find
+all hits
+
+positional arguments:
+  infile         Name of input file
+  outfile        Name of outputfile. Tab-delimited output: sequence name,
+                 position, strand
+  search_string  String to search for in the sequences
+
+options:
+  -h, --help     show this help message and exit
+```
+
+## pyfastaq_fastaq_sequence_trim
+
+### Tool Description
+Trims sequences off the start of all sequences in a pair of sequence files, whenever there is a perfect match. Only keeps a read pair if both reads of the pair are at least a minimum length after any trimming
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq sequence_trim [options] <infile_1> <infile_2> <outfile_1> <outfile_2> <trim_seqs>
+
+Trims sequences off the start of all sequences in a pair of sequence files,
+whenever there is a perfect match. Only keeps a read pair if both reads of the
+pair are at least a minimum length after any trimming
+
+positional arguments:
+  infile_1          Name of forward fasta/q file to be trimmed
+  infile_2          Name of reverse fasta/q file to be trimmed
+  outfile_1         Name of output forward fasta/q file
+  outfile_2         Name of output reverse fasta/q file
+  trim_seqs         Name of file of sequences to search for at the start of
+                    each input sequence
+
+options:
+  -h, --help        show this help message and exit
+  --min_length INT  Minimum length of output sequences [50]
+  --revcomp         Trim the end of each sequence if it matches the reverse
+                    complement. This option is intended for PCR primer
+                    trimming
+```
+
+## pyfastaq_fastaq_split_by_base_count
+
+### Tool Description
+Splits a multi sequence file into separate files. Does not split sequences. Puts up to max_bases into each split file. The exception is that any sequence longer than max_bases is put into its own file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq split_by_base_count [options] <infile> <outprefix> <max_bases>
+
+Splits a multi sequence file into separate files. Does not split sequences.
+Puts up to max_bases into each split file. The exception is that any sequence
+longer than max_bases is put into its own file.
+
+positional arguments:
+  infile          Name of input file to be split
+  outprefix       Name of output file
+  max_bases       Max bases in each output split file
+
+options:
+  -h, --help      show this help message and exit
+  --max_seqs INT  Max number of sequences in each output split file [no limit]
+```
+
+## pyfastaq_fastaq_to_boulderio
+
+### Tool Description
+Converts input sequence file into \"Boulder-IO\" format, which is used by primer3
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq to_boulderio <infile> <outfile>
+
+Converts input sequence file into "Boulder-IO" format, which is used by
+primer3
+
+positional arguments:
+  infile      Name of input file
+  outfile     Name of output files
+
+options:
+  -h, --help  show this help message and exit
+```
+
+## pyfastaq_fastaq_to_mira_xml
+
+### Tool Description
+Create an xml file from a file of reads, for use with Mira assembler
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq to_mira_xml <infile> <xml_out>
+
+positional arguments:
+  infile      Name of input fasta/q file
+  xml_out     Name of output xml file
+
+options:
+  -h, --help  show this help message and exit
+```
+
+## pyfastaq_fastaq_to_orfs_gff
+
+### Tool Description
+Writes a GFF file of open reading frames from a sequence file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq to_orfs_gff [options] <infile> <outfile>
+
+Writes a GFF file of open reading frames from a sequence file
+
+positional arguments:
+  infile            Name of input file
+  outfile           Name of output GFF file
+
+options:
+  -h, --help        show this help message and exit
+  --min_length INT  Minimum length of ORF, in nucleotides [300]
+```
+
+## pyfastaq_fastaq_to_perfect_reads
+
+### Tool Description
+Makes perfect paired end fastq reads from a sequence file, with insert sizes sampled from a normal distribution. Read orientation is innies. Output is an interleaved FASTQ file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq to_perfect_reads [options] <infile> <outfile> <mean insert size> <insert std deviation> <mean coverage> <read length>
+
+Makes perfect paired end fastq reads from a sequence file, with insert sizes
+sampled from a normal distribution. Read orientation is innies. Output is an
+interleaved FASTQ file.
+
+positional arguments:
+  infile                Name of input file
+  outfile               Name of output file
+  mean insert size      Mean insert size of read pairs
+  insert std deviation  Standard devation of insert size
+  mean coverage         Mean coverage of the reads
+  read length           Length of each read
+
+options:
+  -h, --help            show this help message and exit
+  --fragments FILENAME  Write FASTA sequences of fragments (i.e. read pairs
+                        plus sequences in between them) to the given filename
+  --no_n                Don't allow any N or n characters in the reads
+  --seed INT            Seed for random number generator. Default is to use
+                        python's default
+```
+
+## pyfastaq_fastaq_to_tiling_bam
+
+### Tool Description
+Takes a sequence file. Makes a BAM file containing perfect (unpaired) reads tiling the whole genome
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq to_tiling_bam [options] <infile> <read_length> <read_step> <read_prefix> <outfile>
+
+Takes a sequence file. Makes a BAM file containing perfect (unpaired) reads
+tiling the whole genome
+
+positional arguments:
+  infile                Name of input fasta/q file
+  read_length           Length of reads
+  read_step             Distance between start of each read
+  read_prefix           Prefix of read names
+  outfile               Name of output BAM file
+
+options:
+  -h, --help            show this help message and exit
+  --qual_char QUAL_CHAR
+                        Character to use for quality score [I]
+  --read_group READ_GROUP
+                        Add the given read group ID to all reads [42]
+
+Important: assumes that samtools is in your path
+```
+
+## pyfastaq_fastaq_trim_contigs
+
+### Tool Description
+Trims a set number of bases off the end of every contig, so gaps get bigger and contig ends are removed. Bases are replaced with Ns. Any sequence that ends up as all Ns is lost
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq trim_contigs [options] <infile> <outfile>
+
+Trims a set number of bases off the end of every contig, so gaps get bigger
+and contig ends are removed. Bases are replaced with Ns. Any sequence that
+ends up as all Ns is lost
+
+positional arguments:
+  infile                Name of input file
+  outfile               Name of output file
+
+options:
+  -h, --help            show this help message and exit
+  --trim_number TRIM_NUMBER
+                        Number of bases to trim around each gap, and off ends
+                        of each sequence [100]
+```
+
+## pyfastaq_fastaq_trim_ends
+
+### Tool Description
+Trim fixed number of bases of start and/or end of every sequence
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pyfastaq:3.18.0--pyhdfd78af_0
+- **Homepage**: https://github.com/sanger-pathogens/Fastaq
+- **Package**: https://anaconda.org/channels/bioconda/packages/pyfastaq/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: fastaq trim_ends <infile> <bases off start> <bases off end> <outfile>
+
+positional arguments:
+  infile      Name of input file
+  start_trim  Number of bases to trim off start
+  end_trim    Number of bases to trim off end
+  outfile     Name of output file
+
+options:
+  -h, --help  show this help message and exit
 ```
 
 ## Metadata

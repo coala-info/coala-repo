@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 15972; PASS: 12500; Failed: 1905; Not completed: 1567
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 16264; PASS: 12757; Failed: 1934; Not completed: 1573
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -6059,11 +6059,22 @@ gerp	gerp_gerpcol	PASS	synthetic data: simulated alignment, command fixed from g
 gerp	gerp_gerpelem	PASS	synthetic data: planted conserved block 200-400 found; command fixed to gerpelem
 get_fasta_info	get_fasta_info	PASS	gaps.fna from the tool repo gives the gap fractions 0.47 and 0.37 shown in its README
 get_fasta_info	get_fasta_info_get_fastq_info	PASS	repo fastq.fastq: 4 reads of 150 bp with average quality 36
+get_homologues	get_homologues_add_pancore_matrices.pl	PASS	repo core and pan curve tables (12 genomes, 20 samples) sum to the expected values (58+58=116, 42+63=105)
+get_homologues	get_homologues_add_pangenome_matrices.pl	PASS	two compare_clusters matrices of the repo plasmid BDBH and COG cluster dirs join into 7 taxa by 48 clusters
+get_homologues	get_homologues_annotate_cluster.pl	PASS	repo sample_cluster.fna (18 transcripts) gives a 1946-column alignment of all 18 sequences with SNP and parsimony-informative sites
+get_homologues	get_homologues_check_BDBHs.pl	Not completed	needs the all.bpo and all.p2o.csv files of a get_homologues.pl run, and that run fails in this image (busybox sort has no --buffer-size)
 get_homologues	get_homologues_compare_clusters.pl	PASS	repo plasmid BDBH and COG cluster dirs give 24 intersection clusters, venn files and pangenome matrix
+get_homologues	get_homologues_download_genomes_ncbi.pl	Not completed	needs the NCBI FTP site: the tool first calls wget on ftp.ncbi.nlm.nih.gov, which hangs for over 20 minutes here, so the e-utils step is never reached
 get_homologues	get_homologues_get_homologues-est.pl	Failed	image problem: busybox sort has no --buffer-size, so the BLAST result sort step fails
 get_homologues	get_homologues_get_homologues.pl	Failed	image problem: busybox sort has no --buffer-size, so the BLAST result sort step fails
+get_homologues	get_homologues_hcluster_pangenome_matrix.sh	PASS	repo sample_intersection matrix (12 plasmid genomes) gives a gower distance matrix, a newick tree with all 12 taxa, heatmap and silhouette plots
+get_homologues	get_homologues_make_nr_pangenome_matrix.pl	PASS	compare_clusters matrix of the repo plasmid cluster dirs gives 24 clusters kept as 24 non-redundant (distinct genes), 7 taxa, median-sequence FASTA and BLAST table
 get_homologues	get_homologues_parse_pangenome_matrix.pl	PASS	core and soft-core lists equal the expected lists in the tool repo
+get_homologues	get_homologues_pfam_enrich.pl	Not completed	needs the Pfam mappings (tmp/all.pfam) of a get_homologues.pl -D run, which needs the Pfam-A database and a get_homologues.pl run that fails in this image
+get_homologues	get_homologues_plot_matrix_heatmap.sh	Not completed	needs an Avg_identity.tab matrix made by get_homologues.pl -A, and that run fails in this image (busybox sort); no other real square matrix with the expected header exists
 get_homologues	get_homologues_plot_pancore_matrix.pl	PASS	synthetic data: core-genome curves computed from the repo sample matrix; fits and plots written
+get_homologues	get_homologues_transcripts2cds.pl	Failed	image problem: perl module DB_File is missing, so the TransDecoder step dies
+get_homologues	get_homologues_transcripts2cdsCPP.pl	Failed	image problem: perl module Inline is missing (the script needs Inline::CPP, which upstream says is not available in bioconda)
 get_mnv	get_mnv	Failed	tool bug: v1.0.0 gives wrong amino acid changes for minus-strand genes (Rv0387c 467516 reported Pro162Arg, codon check gives Ser162Ser); CWL fixed to collect the .MNV.tsv
 get_orfs	get_orfs	PASS	repo seq.fasta: ORF translation of frame +1 checked by hand; genome JQ995537 gives ORFs of at least 100 aa
 getorganelle	getorganelle_check_annotations.py	PASS	real data: Arabidopsis plastome GenBank checked against the Haematoxylum plastome; known odd ndhD start and low-similarity genes reported, check log written
@@ -8289,6 +8300,34 @@ mbgc	mbgc_d	PASS	extracting a 2-file archive segfaults with more than 1 thread (
 mbgc	mbgc_i	PASS	
 mbgc	mbgc_r	PASS	repack of one remaining file segfaults in the tool; multi-file repack works
 mbuffer	mbuffer	PASS	
+mccortex	mccortex_breakpoints	PASS	Called breakpoints of the sample against the phiX174 reference; calls written.
+mccortex	mccortex_bubbles	PASS	Found 40 bubbles between the phiX reference and sample colours.
+mccortex	mccortex_build	PASS	Built a phiX174 graph from 1,451 real read pairs (ENA ERR266411); k=31 graph with 17,709 k-mers.
+mccortex	mccortex_calls2vcf	PASS	Converted the breakpoint calls to VCF with the four known phiX174 strain SNPs (833, 2731, 2811, 3133).
+mccortex	mccortex_check	PASS	Checked the phiX graph; the report log shows it loaded and passed.
+mccortex	mccortex_clean	PASS	Cleaned the phiX graph to 5,386 k-mers (genome size); coverage and length histograms written.
+mccortex	mccortex_contigs	PASS	Assembled phiX contigs with a link file; 96.6% of 31-mers match phiX174, the rest are real strain SNPs.
+mccortex	mccortex_correct	PASS	Corrected the phiX read pairs against the graph with links; corrected FASTA files and gap histogram written.
+mccortex	mccortex_coverage	PASS	Coverage of the phiX genome in the cleaned graph written.
+mccortex	mccortex_dist	PASS	Distance matrix of the 2-colour phiX graph shows 5,356 and 5,201 shared k-mers.
+mccortex	mccortex_index	PASS	Indexed the sorted phiX graph; index file written. Note: --force crashes (segmentation fault) in this build.
+mccortex	mccortex_inferedges	PASS	Added edges to the cleaned phiX graph and wrote a new graph.
+mccortex	mccortex_join	PASS	Joined the reference and sample phiX graphs into a 2-colour graph.
+mccortex	mccortex_links	PASS	Cleaned and listed links of the k=13 phiX graph; list, threshold and coverage histogram written.
+mccortex	mccortex_pjoin	PASS	Merged two link files from the k=13 phiX graph into a 2-colour link file. Note: --graph gives Out of memory and --noredundant swallows the next argument in this build.
+mccortex	mccortex_popbubbles	PASS	Popped bubbles in the raw phiX graph: 17,709 to 17,425 k-mers.
+mccortex	mccortex_pview	PASS	Viewed the links of the k=13 phiX graph as text.
+mccortex	mccortex_reads	PASS	Filtered phiX read pairs by the reference graph; 1,428 of 1,451 pairs kept.
+mccortex	mccortex_rmsubstr	PASS	Reduced 1,451 reads plus a seed to 1,357 sequences.
+mccortex	mccortex_server	PASS	Answered info and k-mer queries read from a file; the k-mer answer shows coverage 37.
+mccortex	mccortex_sort	PASS	Sorted the raw phiX graph; k-mers come out in order.
+mccortex	mccortex_subgraph	PASS	Pulled 41 k-mers around one seed (31-mer plus 20 each side).
+mccortex	mccortex_thread	PASS	Threaded the phiX read pairs through the graph; link file and gap and fragment size histograms written.
+mccortex	mccortex_uniqkmers	PASS	Produced 5 random 31-mers that are not in the phiX graph.
+mccortex	mccortex_unitigs	PASS	Wrote the phiX unitig as GFA (one circular unitig of about 5.4 kb).
+mccortex	mccortex_vcfcov	PASS	Added k-mer coverage to the four phiX SNPs; alt allele coverage 32 to 36.
+mccortex	mccortex_vcfgeno	PASS	Genotyped the four phiX SNPs as haploid alt calls.
+mccortex	mccortex_view	PASS	Printed header and k-mers of the phiX graph; 17,709 k-mers listed.
 mcl	mcl	PASS	
 mcroni	mcroni	PASS	
 mcscanx	mcscanx_MCScanX	PASS	
@@ -9781,31 +9820,113 @@ nglview	nglview	Not completed	launches a Jupyter notebook server (interactive, l
 ngmaster	ngmaster	PASS	
 ngmerge	ngmerge_NGmerge	PASS	
 ngmlr	ngmlr	PASS	
+ngs-bits	ngs-bits_BamCleanHaloplex	PASS	
 ngs-bits	ngs-bits_BamClipOverlap	PASS	
+ngs-bits	ngs-bits_BamDownsample	PASS	
+ngs-bits	ngs-bits_BamExtract	PASS	
 ngs-bits	ngs-bits_BamFilter	PASS	
+ngs-bits	ngs-bits_BamInfo	PASS	
+ngs-bits	ngs-bits_BamRemoveVariants	PASS	
 ngs-bits	ngs-bits_BamToFastq	PASS	
+ngs-bits	ngs-bits_BedAdd	PASS	
+ngs-bits	ngs-bits_BedAnnotateFreq	PASS	
+ngs-bits	ngs-bits_BedAnnotateFromBed	PASS	
 ngs-bits	ngs-bits_BedAnnotateGC	PASS	
 ngs-bits	ngs-bits_BedAnnotateGenes	Not completed	needs an NGSD database (MySQL) with gene annotations; no usable test database
+ngs-bits	ngs-bits_BedChunk	PASS	
 ngs-bits	ngs-bits_BedCoverage	PASS	
+ngs-bits	ngs-bits_BedExtend	PASS	
 ngs-bits	ngs-bits_BedHighCoverage	PASS	
+ngs-bits	ngs-bits_BedInfo	PASS	
+ngs-bits	ngs-bits_BedIntersect	PASS	
+ngs-bits	ngs-bits_BedLiftOver	PASS	
 ngs-bits	ngs-bits_BedLowCoverage	PASS	
+ngs-bits	ngs-bits_BedMerge	PASS	
+ngs-bits	ngs-bits_BedReadCount	PASS	
+ngs-bits	ngs-bits_BedShrink	PASS	
 ngs-bits	ngs-bits_BedSort	PASS	
+ngs-bits	ngs-bits_BedSubtract	PASS	
+ngs-bits	ngs-bits_BedToEpigen	PASS	
+ngs-bits	ngs-bits_BedToFasta	PASS	
+ngs-bits	ngs-bits_BedpeAnnotateBreakpointDensity	PASS	
+ngs-bits	ngs-bits_BedpeAnnotateCnvOverlap	PASS	
+ngs-bits	ngs-bits_BedpeAnnotateFromBed	PASS	
+ngs-bits	ngs-bits_BedpeExtractGenotype	PASS	
+ngs-bits	ngs-bits_BedpeExtractInfoField	PASS	
+ngs-bits	ngs-bits_BedpeFilter	PASS	
+ngs-bits	ngs-bits_BedpeSort	PASS	
+ngs-bits	ngs-bits_BedpeToBed	PASS	
+ngs-bits	ngs-bits_CfDnaQC	PASS	
+ngs-bits	ngs-bits_CnvFilterAnnotations	PASS	
+ngs-bits	ngs-bits_CnvReferenceCohort	PASS	
+ngs-bits	ngs-bits_ExtractMethylationData	PASS	
 ngs-bits	ngs-bits_FastaFromBam	PASS	synthetic data: M5 tag added to the header of a real BAM; output sequence equals the reference
+ngs-bits	ngs-bits_FastaInfo	PASS	
+ngs-bits	ngs-bits_FastaMask	PASS	
+ngs-bits	ngs-bits_FastqAddBarcode	PASS	
+ngs-bits	ngs-bits_FastqCheckUMI	PASS	
+ngs-bits	ngs-bits_FastqConcat	PASS	
+ngs-bits	ngs-bits_FastqConvert	PASS	
+ngs-bits	ngs-bits_FastqDownsample	PASS	
+ngs-bits	ngs-bits_FastqExtract	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_FastqExtractBarcode	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_FastqExtractUMI	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_FastqFormat	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_FastqList	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_FastqMidParser	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_FastqToFasta	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_FastqTrim	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_GenePrioritization	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_GraphStringDb	PASS	output identical to the ngs-bits repo expected test output
+ngs-bits	ngs-bits_MantaVcfFix	PASS	output identical to the ngs-bits repo expected test output
 ngs-bits	ngs-bits_MappingQC	PASS	ROI mode checked on SARS-CoV-2 data (mapped 98.5 percent, depth 0.93 match samtools); -wgs with -build non_human prints -inf depth
 ngs-bits	ngs-bits_QcToTsv	PASS	
 ngs-bits	ngs-bits_ReadQC	PASS	
+ngs-bits	ngs-bits_RnaQC	PASS	ran on nf-core RNA BAM with a merged exon BED from the nf-core chr22 GTF
 ngs-bits	ngs-bits_RohHunter	PASS	
 ngs-bits	ngs-bits_SampleAncestry	PASS	
 ngs-bits	ngs-bits_SampleGender	PASS	
 ngs-bits	ngs-bits_SampleSimilarity	PASS	VCF mode matches the repo expected output; BAM mode gave zero overlap without an hg38 reference (not verified)
 ngs-bits	ngs-bits_SeqPurge	PASS	
+ngs-bits	ngs-bits_SnifflesVcfFix	PASS	
+ngs-bits	ngs-bits_SomaticQC	PASS	ran on ngs-bits test BAMs; qcML matches the expected file except the linked-file path
+ngs-bits	ngs-bits_SvFilterAnnotations	PASS	
+ngs-bits	ngs-bits_TrioMaternalContamination	PASS	
+ngs-bits	ngs-bits_TrioMendelianErrors	PASS	
+ngs-bits	ngs-bits_TsvDiff	PASS	exit code 1 on differences is allowed (successCodes)
+ngs-bits	ngs-bits_TsvFilter	PASS	
+ngs-bits	ngs-bits_TsvInfo	PASS	
+ngs-bits	ngs-bits_TsvMerge	PASS	
+ngs-bits	ngs-bits_TsvSlice	PASS	
+ngs-bits	ngs-bits_TsvToQC	PASS	
 ngs-bits	ngs-bits_UpdHunter	PASS	
+ngs-bits	ngs-bits_VariantAnnotateASE	PASS	ran on nf-core RNA BAM with dbSNP SNVs (het genotype column added) from the same chr22 slice
+ngs-bits	ngs-bits_VariantAnnotateFrequency	PASS	ran on nf-core DNA BAM with dbSNP SNVs from the same chr22 slice
+ngs-bits	ngs-bits_VariantFilterAnnotations	PASS	
+ngs-bits	ngs-bits_VariantFilterRegions	PASS	
 ngs-bits	ngs-bits_VariantQC	PASS	
 ngs-bits	ngs-bits_VcfAdd	PASS	
 ngs-bits	ngs-bits_VcfAnnotateConsequence	Not completed	needs the hg38 reference genome FASTA (about 3 GB) that goes with the repo test data; no small Ensembl-style test set available
 ngs-bits	ngs-bits_VcfAnnotateFromBed	PASS	
+ngs-bits	ngs-bits_VcfAnnotateFromBigWig	PASS	
 ngs-bits	ngs-bits_VcfAnnotateFromVcf	PASS	
+ngs-bits	ngs-bits_VcfAnnotateHexplorer	PASS	ran on the chr21/chr22 variants of the ngs-bits test VCF with a chr21/22 hg38 FASTA
+ngs-bits	ngs-bits_VcfAnnotateMaxEntScan	PASS	ran on the chr21/chr22 variants of the ngs-bits test VCF with a chr21/22 hg38 FASTA
+ngs-bits	ngs-bits_VcfBreakMulti	PASS	
+ngs-bits	ngs-bits_VcfCalculatePRS	PASS	ran on chr21/chr22 subset of the ngs-bits test data (real PGS000004 weights) with a chr21/22 hg38 FASTA
+ngs-bits	ngs-bits_VcfCheck	PASS	ran on nf-core dbSNP chr22 slice; tool exits 1 when it finds errors
+ngs-bits	ngs-bits_VcfExtractSamples	PASS	
+ngs-bits	ngs-bits_VcfFilter	PASS	ran with a small genome FASTA (nf-core chr22 slice) because the tool requires -ref; -reg also tested with a BED file (File or string input): 23 of 59 variants kept, the same count as a direct check of the region
+ngs-bits	ngs-bits_VcfLeftNormalize	PASS	ran on nf-core dbSNP chr22 slice with its matching small genome FASTA
+ngs-bits	ngs-bits_VcfReplaceSamples	PASS	
 ngs-bits	ngs-bits_VcfSort	PASS	
+ngs-bits	ngs-bits_VcfSplit	PASS	
+ngs-bits	ngs-bits_VcfStreamSort	PASS	
+ngs-bits	ngs-bits_VcfStrip	PASS	
+ngs-bits	ngs-bits_VcfSubtract	PASS	
+ngs-bits	ngs-bits_VcfToBed	PASS	
+ngs-bits	ngs-bits_VcfToBedpe	PASS	
+ngs-bits	ngs-bits_VcfToTsv	PASS	
 ngs-chew	ngs-chew_compare	PASS	
 ngs-chew	ngs-chew_fingerprint	PASS	
 ngs-chew	ngs-chew_plot-compare	PASS	
@@ -11378,12 +11499,29 @@ polymutt	polymutt	PASS
 polypolish	polypolish_filter	PASS	
 polypolish	polypolish_polish	PASS	
 pomoxis	pomoxis_assess_assembly	PASS	
+pomoxis	pomoxis_assess_homopolymers_analyse	PASS	Analysed the homopolymer counts; tables and plots written (4-mer homopolymers called correctly about 67% of the time).
+pomoxis	pomoxis_assess_homopolymers_count	PASS	Counted homopolymers in 2,500 real ONT reads (Portiera, ENA ERR3772599) aligned to the genome; counts and plots written.
+pomoxis	pomoxis_catalogue_errors_analyse	PASS	Analysed the error counts; summary tables and plots written.
+pomoxis	pomoxis_catalogue_errors_count	PASS	Catalogued errors of 179 real ONT reads aligned to Portiera; error summary tables and counts written.
+pomoxis	pomoxis_common_errors_from_bam	Failed	tool bug: pomoxis 0.3.16 stops with a TypeError (stats_from_aligned_read takes 1 argument but 3 were given) after trimmed assembly alignments were supplied.
+pomoxis	pomoxis_coverage_from_bam	PASS	Depth table and summary for 2,500 real ONT reads on the 358 kb Portiera genome; mean depth about 10. Region and one-file options also tested.
+pomoxis	pomoxis_coverage_from_fastx	PASS	Estimated 13.6x coverage from 4.88 Mb of reads and the 358 kb genome; both a file and a length string work.
+pomoxis	pomoxis_fast_convert	PASS	Converted 100 real ONT reads from fastq to fasta (qa).
 pomoxis	pomoxis_filter_bam	PASS	
+pomoxis	pomoxis_find_indels	PASS	Listed 5,378 indels of at least 5 bp from the real ONT alignments, with a bed file.
 pomoxis	pomoxis_intersect_assembly_errors	Failed	tool bug: the script calls stats_from_bam --bam, an option that stats_from_bam 0.3.16 in the same image rejects, so it stops after trimming
+pomoxis	pomoxis_long_fastx	PASS	Split 2,500 real ONT reads: the longest 10% (250 reads) and the other 2,250.
 pomoxis	pomoxis_mini_align	PASS	
 pomoxis	pomoxis_mini_assemble	PASS	
+pomoxis	pomoxis_qscores_from_summary	PASS	Median Q scores from the summary; Q(acc) 9.94 matches the summary median.
+pomoxis	pomoxis_ref_seqs_from_bam	PASS	Extracted the reference segment of each of 2,500 aligned reads; segments match the genome.
+pomoxis	pomoxis_reverse_bed	PASS	Converted two bed intervals to reverse strand coordinates; values are correct (length minus stop and start).
+pomoxis	pomoxis_split_fastx	PASS	Split 100 real ONT reads into chunks of at most 1,000 bases.
 pomoxis	pomoxis_stats_from_bam	PASS	
 pomoxis	pomoxis_subsample_bam	PASS	
+pomoxis	pomoxis_summary_from_stats	PASS	Summarised stats_from_bam output of real ONT reads; mean error about 12.7%.
+pomoxis	pomoxis_tag_bam	PASS	Added an integer tag to all alignments (the tool needs an integer value); tag is present in the output bam.
+pomoxis	pomoxis_trim_alignments	PASS	Trimmed four real overlapping ONT alignments, and also two assembly alignments, to a common window; trimmed queries and reference written.
 poolsnp	poolsnp_PoolSNP.sh	PASS	
 popdel	popdel_call	PASS	baseCommand fixed to popdel call; ran on 4 real chr20 BAMs from nf-core
 popdel	popdel_profile	PASS	baseCommand fixed to popdel profile; ran on 4 real chr20 BAMs from nf-core
@@ -11819,22 +11957,43 @@ pyfasta	pyfasta_flatten	PASS
 pyfasta	pyfasta_info	Failed	image problem: pyfasta calls numpy memmap.tostring(), which the image's newer numpy no longer has (AttributeError)
 pyfasta	pyfasta_split	Failed	image problem: pyfasta calls numpy memmap.tostring(), which the image's newer numpy no longer has (AttributeError)
 pyfastaq	pyfastaq_fastaq_acgtn_only	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_add_indels	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_caf_to_fastq	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_capillary_to_pairs	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_chunker	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_count_sequences	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_deinterleave	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_enumerate_names	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_expand_nucleotides	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_fasta_to_fastq	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_filter	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_get_ids	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_get_seq_flanking_gaps	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_interleave	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_make_random_contigs	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_merge	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_replace_bases	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_reverse_complement	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_scaffolds_to_contigs	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_search_for_seq	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_sequence_trim	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_sort_by_name	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_sort_by_size	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_split_by_base_count	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_strip_illumina_suffix	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_to_boulderio	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_to_fake_qual	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_to_fasta	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_to_mira_xml	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_to_orfs_gff	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_to_perfect_reads	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_to_random_subset	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_to_tiling_bam	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_to_unique_by_id	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_translate	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastaq	pyfastaq_fastaq_trim_Ns_at_end	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_trim_contigs	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
+pyfastaq	pyfastaq_fastaq_trim_ends	Failed	image problem: every fastaq subcommand stops with NameError: name 'pyfastaq' is not defined (exec scoping in the image's Python 3.13)
 pyfastx	pyfastx_extract	PASS	
 pyfastx	pyfastx_fq2fa	PASS	
 pyfastx	pyfastx_index	PASS	
@@ -14559,12 +14718,69 @@ tigr-glimmer	tigr-glimmer_score-fixed	PASS
 tigr-glimmer	tigr-glimmer_start-codon-distrib	PASS	
 tigr-glimmer	tigr-glimmer_uncovered	PASS	
 tigr-glimmer	tigr-glimmer_window-acgt	PASS	
+tinker	tinker_alchemy	Failed	tool bug: segmentation fault right after the lambda coupling is set, on ethanol and on a water box with the ligand keyword
 tinker	tinker_analyze	PASS	
+tinker	tinker_anneal	PASS	
+tinker	tinker_arcedit	PASS	
+tinker	tinker_bar	PASS	
+tinker	tinker_correlate	PASS	
+tinker	tinker_critical	PASS	
+tinker	tinker_crystal	PASS	
+tinker	tinker_diffuse	PASS	
+tinker	tinker_distgeom	Failed	tool bug: the embedding step fails to converge (DEFLATE eigenvalue warnings) and the program writes NaN coordinates then aborts, or segfaults, on ethanol and benzene
 tinker	tinker_dynamic	PASS	
+tinker	tinker_freefix	PASS	
+tinker	tinker_gda	PASS	
+tinker	tinker_intedit	PASS	
+tinker	tinker_intxyz	PASS	
 tinker	tinker_minimize	PASS	
+tinker	tinker_minirot	PASS	
+tinker	tinker_minrigid	PASS	
+tinker	tinker_mol2xyz	PASS	
+tinker	tinker_molxyz	PASS	
+tinker	tinker_monte	PASS	
 tinker	tinker_newton	PASS	
+tinker	tinker_newtrot	PASS	
+tinker	tinker_nucleic	PASS	
+tinker	tinker_optimize	PASS	
+tinker	tinker_optirot	PASS	
+tinker	tinker_optrigid	PASS	
+tinker	tinker_path	PASS	
 tinker	tinker_pdbxyz	PASS	
+tinker	tinker_polarize	PASS	
+tinker	tinker_poledit	PASS	
+tinker	tinker_potential	PASS	
+tinker	tinker_prmedit	PASS	
+tinker	tinker_protein	PASS	
+tinker	tinker_pss	PASS	
+tinker	tinker_pssrigid	PASS	
+tinker	tinker_pssrot	PASS	
+tinker	tinker_radial	PASS	
+tinker	tinker_saddle	PASS	
+tinker	tinker_scan	PASS	
+tinker	tinker_sniffer	PASS	
+tinker	tinker_spacefill	PASS	
+tinker	tinker_spectrum	PASS	
+tinker	tinker_superpose	PASS	
+tinker	tinker_testgrad	PASS	
+tinker	tinker_testhess	PASS	
+tinker	tinker_testpair	PASS	
+tinker	tinker_testpol	PASS	
+tinker	tinker_testrot	PASS	
+tinker	tinker_testsurf	PASS	
+tinker	tinker_testvir	PASS	
+tinker	tinker_timer	PASS	
+tinker	tinker_timerot	PASS	
+tinker	tinker_torsfit	Not completed	no usable test data: needs Gaussian output logs of several conformations; none available
+tinker	tinker_valence	Not completed	no usable test data: needs a Gaussian output log with frequencies and Hessian; none available (argument order checked only)
+tinker	tinker_vibbig	PASS	
 tinker	tinker_vibrate	PASS	
+tinker	tinker_vibrot	PASS	
+tinker	tinker_xtalfit	PASS	
+tinker	tinker_xtalmin	PASS	
+tinker	tinker_xyzedit	PASS	
+tinker	tinker_xyzint	PASS	
+tinker	tinker_xyzmol2	PASS	
 tinker	tinker_xyzpdb	PASS	
 tinscan	tinscan_tinscan-align	Failed	image problem: lastz is not installed in the image (LASTZ executable was not found)
 tinscan	tinscan_tinscan-find	PASS	alignment input made with lastz from a helper image (tinscan-align cannot run), same lastz options as the wrapper
@@ -15262,6 +15478,26 @@ usalign	usalign_se	PASS
 usalign	usalign_xyz_sfetch	PASS	
 uscdc-datasets-sars-cov-2	uscdc-datasets-sars-cov-2_GenFSGopher.pl	PASS	downloaded a real SARS-CoV-2 genome from NCBI and the sha256 check passed; read download from SRA fails in the image because the sra toolkit is not configured
 usher	usher	PASS	
+usher	usher_check_samples_place	PASS	
+usher	usher_compareVCF	PASS	
+usher	usher_faToVcf	PASS	
+usher	usher_matOptimize	Failed	tool bug: the documented --epps_on_branch_len option silently leaves the output tree empty (only the Newick file is written); the default run works
+usher	usher_matUtils_annotate	PASS	
+usher	usher_matUtils_extract	PASS	
+usher	usher_matUtils_fix	PASS	tree had no grandparent reversions, so the output tree equals the input
+usher	usher_matUtils_introduce	PASS	tested with country labels taken from the sample names
+usher	usher_matUtils_mask	PASS	
+usher	usher_matUtils_merge	PASS	
+usher	usher_matUtils_summary	PASS	
+usher	usher_matUtils_uncertainty	PASS	
+usher	usher_ripples	PASS	
+usher	usher_ripples-fast	PASS	
+usher	usher_ripplesInit	PASS	
+usher	usher_transpose_vcf	PASS	
+usher	usher_transposed_vcf_print_name	PASS	
+usher	usher_transposed_vcf_to_fa	PASS	output is always gzip-compressed, even without a .gz name
+usher	usher_transposed_vcf_to_vcf	PASS	output is always gzip-compressed, even without a .gz name
+usher	usher_usher-sampled	PASS	tested with an uncompressed VCF; the tiny .gz test VCF crashes the tool
 ushuffle	ushuffle	PASS	
 uvaia	uvaia	PASS	
 uvaia	uvaia_uvaia_legacy	PASS	
@@ -15774,16 +16010,72 @@ whatshap	whatshap_unphase	PASS
 wheezy.template	wheezy.template	PASS	
 whokaryote	whokaryote_whokaryote.py	PASS	
 wigeon	wigeon	Failed	image problem: megablast is missing from the image, so every query gives UNKNOWN.
+wiggletools	wiggletools_AUC	PASS	
+wiggletools	wiggletools_CV	PASS	Uses the population standard deviation; matches an independent calculation.
+wiggletools	wiggletools_CVI	PASS	Uses the sample standard deviation; matches an independent calculation.
+wiggletools	wiggletools_abs	PASS	
 wiggletools	wiggletools_apply	PASS	
+wiggletools	wiggletools_apply_paste	PASS	Output equals the tool's own expected test output; regions without data give nan for meanI.
+wiggletools	wiggletools_bin	PASS	
+wiggletools	wiggletools_cat	Failed	tool bug: a file on the same chromosome as the first one is silently dropped (concatenation of a.bg and a_next.bg gives 201 lines, not 400, and repeats the last line); only files on different chromosomes are concatenated.
+wiggletools	wiggletools_compress	PASS	
+wiggletools	wiggletools_coverage	PASS	
+wiggletools	wiggletools_default	PASS	Output equals the input track; the default value only matters inside other operators.
+wiggletools	wiggletools_diff	PASS	
+wiggletools	wiggletools_energy	PASS	
 wiggletools	wiggletools_entropy	Failed	tool bug: the entropy reducer returns the standard deviation (reducers.c uses StdDevReductionPop for entropy).
+wiggletools	wiggletools_exp	PASS	
+wiggletools	wiggletools_extend	PASS	
+wiggletools	wiggletools_fillIn	PASS	
+wiggletools	wiggletools_floor	PASS	
+wiggletools	wiggletools_ftest	Failed	tool bug: the output is 0 at every position on 3 vs 3 real tracks (expected p-values near 1); the source uses the wrong loop variable (index instead of index2) in the group-mean and variance loops.
+wiggletools	wiggletools_gt	PASS	
+wiggletools	wiggletools_gte	PASS	
+wiggletools	wiggletools_histogram	PASS	The tool says the histogram is approximate: bin midpoints and the total count of 200 are right, but bin counts are fractional and differ from exact counts.
+wiggletools	wiggletools_isZero	PASS	The tool prints nothing and only sets an exit status, so the wrapper saves the status; gives 1 for a non-zero track and 0 for an all-zero track.
+wiggletools	wiggletools_ln	PASS	
+wiggletools	wiggletools_log	PASS	
+wiggletools	wiggletools_lt	PASS	
+wiggletools	wiggletools_lte	PASS	
+wiggletools	wiggletools_max	PASS	
+wiggletools	wiggletools_maxI	PASS	
 wiggletools	wiggletools_mean	PASS	
+wiggletools	wiggletools_meanI	PASS	
 wiggletools	wiggletools_median	PASS	
 wiggletools	wiggletools_min	PASS	
+wiggletools	wiggletools_minI	PASS	
+wiggletools	wiggletools_mult	PASS	The help lists this reducer as product, but the program only accepts mult; wrapped as mult.
+wiggletools	wiggletools_mwrite	PASS	
+wiggletools	wiggletools_mwrite_bg	PASS	
+wiggletools	wiggletools_ndpearson	PASS	
 wiggletools	wiggletools_nearest	PASS	Distances to the nearest exon match an independent calculation except a one-base convention difference downstream of regions.
+wiggletools	wiggletools_noverlaps	PASS	
+wiggletools	wiggletools_offset	PASS	
+wiggletools	wiggletools_overlaps	PASS	
+wiggletools	wiggletools_pearson	PASS	
+wiggletools	wiggletools_pow	PASS	
+wiggletools	wiggletools_print	PASS	
+wiggletools	wiggletools_profile	PASS	Output equals the tool's own expected test output for its test files, and matches an independent simulation on the real data (the last half bin of a region is dropped by the tool's rounding).
+wiggletools	wiggletools_profiles	PASS	Output equals the tool's own expected test output for its test files, and matches an independent simulation on the real data.
 wiggletools	wiggletools_ratio	PASS	
+wiggletools	wiggletools_read_count	PASS	Counts every alignment record that has a position, including unmapped reads placed at their mate (200 reads); matches an independent BAM parse.
+wiggletools	wiggletools_scale	PASS	
+wiggletools	wiggletools_seek	PASS	Region is 1-based and the end position is excluded; matches an independent calculation.
+wiggletools	wiggletools_shiftPos	PASS	
+wiggletools	wiggletools_smooth	PASS	Centered window; the output also extends one base beyond the data, with missing positions counted as 0.
 wiggletools	wiggletools_stddev	PASS	
+wiggletools	wiggletools_stddevI	PASS	Sample standard deviation (n-1); matches an independent calculation.
+wiggletools	wiggletools_sum	PASS	
+wiggletools	wiggletools_toInt	PASS	
+wiggletools	wiggletools_trim	PASS	
+wiggletools	wiggletools_trimFill	PASS	
 wiggletools	wiggletools_ttest	Failed	tool bug: p-values differ from Welch's t-test by up to 0.09 because the tool uses population variance.
+wiggletools	wiggletools_unit	PASS	
+wiggletools	wiggletools_var	PASS	The reducer divides by n (population variance); matches an independent calculation at all 200 positions.
+wiggletools	wiggletools_varI	PASS	Sample variance (divides by n-1); matches an independent calculation.
 wiggletools	wiggletools_wilcoxon	Failed	tool bug: output is a signed 2*erf(z) value between -2 and 0, not a p-value (integer division in sigma, missing sqrt 2).
+wiggletools	wiggletools_write	PASS	
+wiggletools	wiggletools_write_bg	PASS	
 winnowmap	winnowmap	PASS	
 wipertools	wipertools_fastqgather	PASS	
 wipertools	wipertools_fastqscatter	PASS	

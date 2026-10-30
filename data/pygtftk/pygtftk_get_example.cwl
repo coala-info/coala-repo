@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand:
   - gtftk
   - get_example
-label: pygtftk_gtftk_get_example
+label: pygtftk_get_example
 doc: "Print example files including GTF.\n\nTool homepage: http://github.com/dputhier/pygtftk"
 inputs:
   - id: add_chr

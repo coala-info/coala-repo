@@ -1,0 +1,58 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand:
+  - taxit
+  - refpkg_intersection
+label: taxtastic_taxit_refpkg_intersection
+doc: "Find the intersection of a taxtable and a refpkg's taxonomy.\n\nTool homepage: https://github.com/fhcrc/taxtastic"
+inputs:
+  - id: refpkg
+    type: Directory
+    doc: "refpkg to insert into"
+    inputBinding:
+      position: 1
+      prefix: "--refpkg"
+  - id: ranks
+    type: string
+    doc: "ranks to list in the output"
+    inputBinding:
+      position: 1
+      prefix: "--ranks"
+  - id: all_ranks
+    type:
+      - 'null'
+      - boolean
+    doc: "don't filter by the lowest rank; list all intersections"
+    inputBinding:
+      position: 1
+      prefix: "--all-ranks"
+  - id: out
+    type:
+      - 'null'
+      - string
+    doc: "output file in csv format (default is stdout)"
+    inputBinding:
+      position: 1
+      prefix: "--out"
+  - id: infile
+    type: File
+    doc: "taxtable to compare against"
+    inputBinding:
+      position: 101
+outputs:
+  - id: out_file
+    type:
+      - 'null'
+      - File
+    doc: "Intersection table (only with --out)"
+    outputBinding:
+      glob: "$(inputs.out)"
+  - id: stdout
+    type: stdout
+    doc: "Standard output"
+requirements:
+  - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+stdout: taxtastic_taxit_refpkg_intersection.out

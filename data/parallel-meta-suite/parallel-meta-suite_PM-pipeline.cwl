@@ -7,8 +7,8 @@ inputs:
   - id: asv_denoising
     type:
       - 'null'
-      - boolean
-    doc: ASV denoising, T(rue) or F(alse)
+      - string
+    doc: 'T or F. ASV denoising, T(rue) or F(alse)'
     inputBinding:
       position: 101
       prefix: -v
@@ -103,16 +103,16 @@ inputs:
   - id: paired_samples
     type:
       - 'null'
-      - boolean
-    doc: If the samples are paired, T(rue) or F(alse)
+      - string
+    doc: 'T or F. If the samples are paired, T(rue) or F(alse)'
     inputBinding:
       position: 101
       prefix: -E
   - id: rRNA_copy_number_correction
     type:
       - 'null'
-      - boolean
-    doc: rRNA copy number correction, T(rue) or F(alse)
+      - string
+    doc: 'T or F. rRNA copy number correction, T(rue) or F(alse)'
     inputBinding:
       position: 101
       prefix: -r
@@ -127,8 +127,8 @@ inputs:
   - id: rarefaction_curve
     type:
       - 'null'
-      - boolean
-    doc: Rarefaction curve, T(rue) or F(alse)
+      - string
+    doc: 'T or F. Rarefaction curve, T(rue) or F(alse)'
     inputBinding:
       position: 101
       prefix: -R
@@ -160,8 +160,8 @@ inputs:
   - id: sequence_format_check
     type:
       - 'null'
-      - boolean
-    doc: Sequence format check, T(rue) or F(alse)
+      - string
+    doc: 'T or F. Sequence format check, T(rue) or F(alse)'
     inputBinding:
       position: 101
       prefix: -k

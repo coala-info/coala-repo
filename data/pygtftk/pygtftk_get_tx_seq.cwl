@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand:
   - gtftk
   - get_tx_seq
-label: pygtftk_gtftk_get_tx_seq
+label: pygtftk_get_tx_seq
 doc: "Get transcripts sequences in a flexible fasta format from a GTF file.\n\nTool
   homepage: http://github.com/dputhier/pygtftk"
 inputs:

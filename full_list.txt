@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 16264; PASS: 12757; Failed: 1934; Not completed: 1573
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 16631; PASS: 13049; Failed: 1987; Not completed: 1595
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -6858,16 +6858,24 @@ hictk	hictk_validate	PASS	Validated the test .cool with index and pixel checks; 
 hictk	hictk_zoomify	PASS	Made a .mcool with 1, 2 and 5 kb resolutions from the test .cool; each level keeps all 10000 contacts. CWL fixed: stdout removed.
 hicup	hicup	PASS	
 hicup	hicup_capture	PASS	synthetic data: baits planted on two regions of the real yeast Hi-C di-tags
+hicup	hicup_checker	Failed	tool bug: hicup_checker 0.9.2 dies with Illegal division by zero when an expected value is 0, even when both inputs are the same real HiCUP summary report (it needs --expected and --new, not the positional files shown in its help)
 hicup	hicup_deduplicator	PASS	
 hicup	hicup_digester	PASS	
 hicup	hicup_filter	PASS	
+hicup	hicup_find_common_fragment_interactions	PASS	compared the fragment matrices of the full and a partial real yeast Hi-C run: 1491 common, 1566 not common, matching the file sizes
 hicup	hicup_hicup2fithic	PASS	
 hicup	hicup_hicup2gothic	PASS	
 hicup	hicup_hicup2hicpipe	PASS	
 hicup	hicup_hicup2homer	Failed	tool bug: hicup2homer 0.9.2 crashes with Undefined subroutine get_csome_position (not exported by hicup_module) and writes an empty file
 hicup	hicup_hicup2juicer	PASS	
 hicup	hicup_hicup2ncc	PASS	
+hicup	hicup_make_hic_array	PASS	real yeast Hi-C reads (hicup output, 3076 pairs) turned into a fragment interaction matrix with counts summing to 3076
 hicup	hicup_mapper	PASS	
+hicup	hicup_reporter	PASS	collated the real yeast Hi-C run summaries (20000 pairs) into HiCUP_summary_report text files; the HTML step fails in the image (pandoc lacks libgmp) but the tool still exits 0
+hicup	hicup_scribl_capture	PASS	synthetic data: baits planted on two regions of the real yeast Hi-C di-tags (hicup run on 20000 read pairs); summary reports 3076 di-tags (38 both, 67 forward, 56 reverse captured)
+hicup	hicup_scribl_capture_ditag_sorter	PASS	synthetic data: baits planted on two regions of the real yeast Hi-C di-tags (hicup run on 20000 read pairs); summary counts 6152 reads and per-bait read files were written (the tool's header has one column fewer than its values)
+hicup	hicup_scribl_capture_region_breakdown	PASS	synthetic data: baits planted on two regions of the real yeast Hi-C di-tags (hicup run on 20000 read pairs); summary counts 6152 reads per bait region
+hicup	hicup_scribler	PASS	synthetic data: baits planted on two regions of the real yeast Hi-C di-tags (hicup run on 20000 read pairs); both/one/no-read captured counts add up to the 3076 di-tags and a SeqMonk digest annotation was written
 hicup	hicup_truncater	PASS	
 hiddendomains	hiddendomains_binReads.pl	Failed	image problem: samtools in the image lacks libcrypto.so.1.0.0, so the default BAM input gives empty output; BED input (-B) works
 hiddendomains	hiddendomains_domainsMergeToBed.pl	PASS	
@@ -8012,7 +8020,26 @@ lrsim	lrsim	PASS	fixed -g (comma list of haploid FASTAs) and the reference/prefi
 ls-gkm	ls-gkm_gkmpredict	PASS	
 ls-gkm	ls-gkm_gkmtrain	PASS	
 ls-gkm	ls-gkm_gkmtrain-svr	PASS	scores in the test table are synthetic (GC fraction) on real training sequences; the model file is written and parses
+lsabgc	lsabgc_GSeeF	PASS	Run with the unedited lsaBGC-Pan listings; the lsaBGC-Pan results must be staged at /w as in the lsaBGC-Pan run.
+lsabgc	lsabgc_abon	PASS	Default fai mode works on a duplicate-free GenBank (MIBiG Epa cluster as region file, E. faecalis/faecium genomes); on the lsaBGC-Pan GECCO GenBank (duplicated CDS features) it fails, and the simple BLASTp mode works.
+lsabgc	lsabgc_apos	Not completed	Needs MOB-suite or geNomad results, and neither program is in the image.
+lsabgc	lsabgc_atpoc	Not completed	Needs PhiSpy, VIBRANT or geNomad results, and none of these programs is in the image.
+lsabgc	lsabgc_cgc	PASS	
+lsabgc	lsabgc_cgcg	PASS	
+lsabgc	lsabgc_fai	PASS	
+lsabgc	lsabgc_lsaBGC-Cluster	PASS	Run with the unedited lsaBGC-Pan listings; the lsaBGC-Pan results must be staged at /w as in the lsaBGC-Pan run.
+lsabgc	lsabgc_lsaBGC-ComprehenSeeIve	PASS	Run with the unedited lsaBGC-Pan listings; the lsaBGC-Pan results must be staged at /w as in the lsaBGC-Pan run.
+lsabgc	lsabgc_lsaBGC-MIBiGMapper	Not completed	Needs the MIBiG annotation database (setup of the zol databases), which is not in the image.
 lsabgc	lsabgc_lsaBGC-Pan	Not completed	pipeline, skipped (also needs 4 or more genomes, GECCO/antiSMASH results and OrthoFinder/Panaroo)
+lsabgc	lsabgc_lsaBGC-Reconcile	PASS	Run with the unedited lsaBGC-Pan listings; the lsaBGC-Pan results must be staged at /w as in the lsaBGC-Pan run.
+lsabgc	lsabgc_lsaBGC-See	PASS	The --create_gcf_phylogeny option crashes (NameError in the program); main mode works. Run with the unedited lsaBGC-Pan listings; the lsaBGC-Pan results must be staged at /w as in the lsaBGC-Pan run.
+lsabgc	lsabgc_lsaBGC-Sociate	PASS	Run with the unedited lsaBGC-Pan listings; the lsaBGC-Pan results must be staged at /w as in the lsaBGC-Pan run.
+lsabgc	lsabgc_phylogenate	PASS	Run with the unedited lsaBGC-Pan listings; the lsaBGC-Pan results must be staged at /w as in the lsaBGC-Pan run.
+lsabgc	lsabgc_popstrat	PASS	
+lsabgc	lsabgc_prepTG	PASS	
+lsabgc	lsabgc_salt	Not completed	Needs MGE annotation databases and fai results that keep absolute paths of the original run folder; fails when the fai folder is moved.
+lsabgc	lsabgc_zol	PASS	
+lsabgc	lsabgc_zol-scape	Not completed	Needs BiG-SCAPE results, and BiG-SCAPE is not in the image.
 lua	lua	PASS	ran a base-count script on the SARS-CoV-2 genome (counts match shell counts) and -e
 luciphor2	luciphor2	PASS	baseCommand fixed to the luciphor2 wrapper; 8 real OpenMS test PSMs scored, all 8 localisations equal the OpenMS expected result
 lucy	lucy	PASS	rewritten from the man page (two -output names, optional cdna and debug values, positional files last); the real lucy test set gives a cleavage table identical to the shipped lucy.debug
@@ -9365,7 +9392,45 @@ msoma	msoma_merge-counts	PASS	tool crashes on non-numeric chromosome names such 
 msoma	msoma_mle	PASS	
 msp2db	msp2db	PASS	baseCommand fixed from PROG to msp2db; 14 spectra loaded
 msprime	msprime_mspms	PASS	simulator without input files; ms-format output checked; repeated options and event order are fixed by the wrapper
+msproteomicstools	msproteomicstools_MSE2mzML.py	Failed	image problem: pyopenms is not installed in the image (ImportError)
+msproteomicstools	msproteomicstools_MSE_split.py	PASS	synthetic data: a small MSE text file was split into 3 files at the FUNCTION lines
+msproteomicstools	msproteomicstools_NISTParser.py	Not completed	no real NIST msp library in the test data; the SpectraST text library of the repo tests crashes the parser (IndexError)
+msproteomicstools	msproteomicstools_ProtFDRTraML2Fasta.py	Failed	image problem: the script has no interpreter line, so it cannot start (exec format error)
+msproteomicstools	msproteomicstools_ProtFDRmProphet2Mayu.py	Failed	image problem: the script has no interpreter line, so it cannot start (exec format error)
+msproteomicstools	msproteomicstools_add_protein_annotation.py	PASS	synthetic data: a 3-row table with real FASTA ids; descriptions added, unknown protein gets NA
+msproteomicstools	msproteomicstools_compute_full_matrix.py	PASS	peakgroup matrix from the repo test input matches the expected output (only the last digits of one float differ)
+msproteomicstools	msproteomicstools_convertFromPeakview.py	PASS	converted the Peakview library made by spectrast2tsv and filterPeakview into an OpenSWATH library with the expected columns
+msproteomicstools	msproteomicstools_convertMassLynxTomzML.py	Failed	image problem: pyopenms is not installed in the image (ImportError)
+msproteomicstools	msproteomicstools_convertNISTLibraryToTSV.py	Not completed	no real NIST msp library in the test data; the SpectraST text library of the repo tests crashes the parser (IndexError)
+msproteomicstools	msproteomicstools_copy_accesion.py	Failed	image problem: the script has no interpreter line, so it cannot start (exec format error)
+msproteomicstools	msproteomicstools_count_pep_prot.py	PASS	counted 54 precursors, 1 peptide and 1 protein in the repo test table
+msproteomicstools	msproteomicstools_extract_matrix.py	PASS	wrote a matrix with Intensity, RT and m_score from a feature_alignment output
+msproteomicstools	msproteomicstools_fdr_cutoff.py	PASS	kept 15 rows of the repo test table up to the FDR cutoff and added the FDREstimate column
+msproteomicstools	msproteomicstools_feature_alignment.py	PASS	id and matrix outputs equal the repo expected files (matrix differs only in the last digit of two floats); transformation files collected
+msproteomicstools	msproteomicstools_featurealigner2msstats.py	PASS	converted the feature_alignment output to an MSstats csv with one row per fragment ion
+msproteomicstools	msproteomicstools_filterChrom.py	Failed	image problem: pyopenms is not installed in the image (ImportError)
+msproteomicstools	msproteomicstools_filterPeakview.py	PASS	filtered the Peakview library made by spectrast2tsv and added the UniProtID column
+msproteomicstools	msproteomicstools_filterSqMass.py	PASS	kept only PEPTIDEA with --chrom_filter and only the listed chromatograms with --tsv_filter on the repo sqMass test files
+msproteomicstools	msproteomicstools_fix_sonar.py	Not completed	no SONAR mzML test file available
 msproteomicstools	msproteomicstools_fix_swath_windows.py	PASS	synthetic data: MS2 scans planted into a real test mzXML; baseCommand fixed to fix_swath_windows.py and output path added
+msproteomicstools	msproteomicstools_makeSwathFile.py	Failed	image problem: the script has a Python syntax error (SyntaxError), so it cannot run
+msproteomicstools	msproteomicstools_mergeSqMass.py	Failed	image problem: the script has no interpreter line, so it cannot start (exec format error)
+msproteomicstools	msproteomicstools_pepxml2csv.py	PASS	converted the repo test pepXML to a tab-delimited csv next to the input
+msproteomicstools	msproteomicstools_pepxml2csv_simple.py	PASS	output equals the repo expected csv exactly
+msproteomicstools	msproteomicstools_plot_alignment_tree.py	Failed	image problem: the script has no interpreter line, so it cannot start (exec format error)
+msproteomicstools	msproteomicstools_preprocess_peakview.py	Failed	image problem: the script has no interpreter line, so it cannot start (exec format error)
+msproteomicstools	msproteomicstools_proteinDBmasses.py	PASS	synthetic data: abundance file; weights and peptide counts for 9 proteins are plausible (the help says -a is optional but the script exits without it)
+msproteomicstools	msproteomicstools_proteinDigest.py	Failed	image problem: the script has no interpreter line, so it cannot start (exec format error)
+msproteomicstools	msproteomicstools_proteins_not_in_library.py	PASS	synthetic data: a 1-row table; listed the one FASTA entry that is not in it
+msproteomicstools	msproteomicstools_pseudoreverseDB.py	PASS	output equals the repo expected pseudo-reversed FASTA
+msproteomicstools	msproteomicstools_requantAlignedValues.py	Failed	tool bug: the default lowess re-alignment crashes (UnboundLocalError); single-run mode works and its output matches the repo's expected files
+msproteomicstools	msproteomicstools_spectrast2spectrast_irt.py	Not completed	no test library with Biognosys RT-kit peptides in each run; the repo test library gives 'run does not contain any RT-kit peptides'
+msproteomicstools	msproteomicstools_spectrast2tsv.py	PASS	OpenSWATH output equals the repo expected file; Peakview output also written
+msproteomicstools	msproteomicstools_spectrast_cluster.py	Failed	image problem: scikit-learn (sklearn) is not installed in the image (ImportError)
+msproteomicstools	msproteomicstools_spectrast_updateiRTs.py	PASS	synthetic data: hand-written iRT model file; RetentionTime values changed as a*RT+b (6210.1 -> 114.202)
+msproteomicstools	msproteomicstools_splitMSE.py	PASS	synthetic data: a small MSE text file was split into 3 files at the FUNCTION lines
+msproteomicstools	msproteomicstools_split_mzXML_intoSwath.py	Failed	image problem: the script has a Python syntax error (from __future__ import after other code), so it cannot run
+msproteomicstools	msproteomicstools_trafoXML_visualize.py	Failed	image problem: the script has no interpreter line, so it cannot start (exec format error)
 msproteomicstools	msproteomicstools_tsv2spectrast.py	PASS	synthetic data: header-renamed real library table; baseCommand fixed to tsv2spectrast.py
 msstitch	msstitch_concat	PASS	
 msstitch	msstitch_conffilt	PASS	
@@ -10074,7 +10139,33 @@ oatk	oatk_path_to_fasta	PASS
 oatk	oatk_pathfinder	PASS	
 oatk	oatk_syncasm	PASS	
 obitools	obitools_obiclean	PASS	
+obitools4	obitools4_obiannotate	PASS	
+obitools4	obitools4_obiclean	PASS	
+obitools4	obitools4_obicleandb	Failed	tool bug: the program has no --taxonomy option in this build and always stops with: species is not a valid rank.
+obitools4	obitools4_obicomplement	PASS	
+obitools4	obitools4_obiconsensus	PASS	
 obitools4	obitools4_obiconvert	PASS	
+obitools4	obitools4_obicount	PASS	
+obitools4	obitools4_obicsv	PASS	
+obitools4	obitools4_obidemerge	PASS	
+obitools4	obitools4_obidistribute	PASS	
+obitools4	obitools4_obigrep	PASS	
+obitools4	obitools4_obijoin	PASS	
+obitools4	obitools4_obikmermatch	PASS	
+obitools4	obitools4_obikmersimcount	PASS	
+obitools4	obitools4_obilandmark	PASS	
+obitools4	obitools4_obimatrix	PASS	
+obitools4	obitools4_obimicrosat	PASS	
+obitools4	obitools4_obimultiplex	PASS	
+obitools4	obitools4_obipairing	PASS	
+obitools4	obitools4_obipcr	PASS	
+obitools4	obitools4_obiscript	PASS	
+obitools4	obitools4_obisplit	PASS	
+obitools4	obitools4_obisummary	PASS	The --map option crashes with a nil pointer error; the main summary mode works.
+obitools4	obitools4_obitag	PASS	
+obitools4	obitools4_obitagpcr	PASS	
+obitools4	obitools4_obitaxonomy	PASS	
+obitools4	obitools4_obiuniq	PASS	
 ococo	ococo	PASS	
 octopusv	octopusv_benchmark	PASS	
 octopusv	octopusv_correct	PASS	
@@ -10401,7 +10492,23 @@ paragraph	paragraph_paragraph2dot.py	PASS
 paragraph	paragraph_vcf2paragraph.py	PASS	
 parallel	parallel	PASS	
 parallel-fastq-dump	parallel-fastq-dump	Failed	image problem: sra-tools 2.10.9 in the image has no CA bundle (TLS error 'certificate is not correctly signed'), so sra-stat and fastq-dump cannot reach NCBI.
+parallel-meta-suite	parallel-meta-suite_PM-comp-corr	PASS	Feature and meta-data correlations on the same OTU table plus real example meta data; one Pearson value matches numpy. The network plot needs R scripts that are not in the image.
+parallel-meta-suite	parallel-meta-suite_PM-comp-func	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
+parallel-meta-suite	parallel-meta-suite_PM-comp-taxa	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
+parallel-meta-suite	parallel-meta-suite_PM-extract-rna	Not completed	The tool runs but needs hidden Markov models from the missing database folder, so it finds 0 rRNA reads; models are not in the image.
+parallel-meta-suite	parallel-meta-suite_PM-format-seq	PASS	Checked a real 16S FASTA of 3430 reads; reported it as OK and wrote it back unchanged.
+parallel-meta-suite	parallel-meta-suite_PM-parallel-meta	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
 parallel-meta-suite	parallel-meta-suite_PM-pipeline	Not completed	pipeline, skipped (it also needs a reference database that is not in the image).
+parallel-meta-suite	parallel-meta-suite_PM-plot-taxa	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
+parallel-meta-suite	parallel-meta-suite_PM-predict-func	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
+parallel-meta-suite	parallel-meta-suite_PM-predict-func-contribute	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
+parallel-meta-suite	parallel-meta-suite_PM-predict-func-nsti	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
+parallel-meta-suite	parallel-meta-suite_PM-rand-rare	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
+parallel-meta-suite	parallel-meta-suite_PM-rare-curv	PASS	Rarefaction tables from a 4-sample OTU count table (OTUs clustered from real 16S reads with vsearch); the plot step fails because the R scripts are not in the image.
+parallel-meta-suite	parallel-meta-suite_PM-select-func	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
+parallel-meta-suite	parallel-meta-suite_PM-select-taxa	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
+parallel-meta-suite	parallel-meta-suite_PM-split-seq	PASS	Split a 4-sample QIIME-format FASTA (real 16S reads) into 4 files; per-sample read counts match the input.
+parallel-meta-suite	parallel-meta-suite_PM-update-taxa	Not completed	Needs the reference database, which is not in the image; the installer download server is unreachable.
 parallel-virfinder	parallel-virfinder_parallel-virfinder.py	PASS	
 paraphase	paraphase	Failed	image problem: samtools and minimap2 are missing from the image, so paraphase stops with 'samtools is not found' (exit code 0, no output).
 parasail	parasail_parasail_aligner	PASS	
@@ -11750,17 +11857,33 @@ proteomiqon-proteininference	proteomiqon-proteininference	PASS	output equals the
 proteomiqon-psmbasedquantification	proteomiqon-psmbasedquantification	PASS	same peptide ions as the repo reference; Quant values agree within 0.1% (reference is from an older release with a different mz refinement)
 proteomiqon-psmstatistics	proteomiqon-psmstatistics	PASS	
 protgraph	protgraph	PASS	graph statistics CSV and peptide FASTA checked; the --export_peptide_sqlite option prints that it is skipped because the image lacks the apsw module
+protk	protk_add_retention_times.rb	PASS	synthetic data: small pepXML skeleton for the protk repo tiny.mgf spectra (scan=4 to 6); retention times 2760, 2760 and 5269.998 s added, matching RTINSECONDS in the mgf
+protk	protk_augustus_to_proteindb.rb	PASS	Ran on the protk repo Augustus sample GFF; 12 protein records written with CDS coordinates in the headers
+protk	protk_filter_psms.rb	PASS	Ran on protk repo X!Tandem pepXML (97 spectrum queries); kept the 19 whose top hit is a DROME protein
 protk	protk_interprophet.rb	PASS	
 protk	protk_make_decoy.rb	PASS	
+protk	protk_maker_to_proteindb.rb	Failed	image problem: samtools is not in the image, so no protein sequences are fetched and only the FASTA headers are written
 protk	protk_mascot_search.rb	Not completed	Needs a Mascot server with network access and an account; not available.
+protk	protk_mascot_to_pepxml.rb	PASS	Ran on the protk repo Mascot results file; pepXML with 240 spectrum queries written (the FASTA given with --database does not hold the hit proteins)
 protk	protk_msgfplus_search.rb	Failed	image problem: the image has no MSGFPlus.jar, so msgfplus_search.rb stops with 'Could not find MSGFPlus.jar'.
+protk	protk_mzid_to_pepxml.rb	Failed	tool bug: protk 1.4.4 calls SpectrumQuery.from_mzid with one argument but it needs two, so it stops with ArgumentError
+protk	protk_mzid_to_protxml.rb	PASS	Ran on the protk repo PeptideShaker mzIdentML file; protXML with one protein group and 17 peptides written
+protk	protk_omssa_search.rb	Failed	image problem: the image has no omssacl and no makeblastdb, so the search cannot run
 protk	protk_peptide_prophet.rb	PASS	
 protk	protk_pepxml_to_table.rb	PASS	
 protk	protk_protein_prophet.rb	PASS	Ran on tandem pepXML data from the protk repo; protein groups match the repo reference (database path in the input pepXML was made relative and the FASTA staged beside it).
 protk	protk_protxml_to_gff.rb	Failed	image problem: the image has no makeblastdb, so protxml_to_gff.rb stops with ENOENT when it indexes the FASTA database.
+protk	protk_protxml_to_psql.rb	Failed	image problem: libsqlite3 is missing, so the sqlite3 Ruby gem cannot load and the command stops at start
 protk	protk_protxml_to_table.rb	PASS	
+protk	protk_repair_run_summary.rb	PASS	Ran on protk repo X!Tandem pepXML; msms_run_summary base_name and raw_data changed to the values given
 protk	protk_sixframe.rb	PASS	
+protk	protk_spectrast_create.rb	PASS	Ran on protk repo iProphet pepXML with two mzML files; library of 251 spectra written (.splib, .spidx, .pepidx)
+protk	protk_spectrast_filter.rb	PASS	Filtered the library made by spectrast_create with Charge==2; 95 of 251 spectra kept, all charge 2
+protk	protk_swissprot_to_table.rb	PASS	Ran on protk repo UniProt flat file and its query list; table with one row per query (190 rows) written
 protk	protk_tandem_search.rb	Failed	image problem: the image has no X!Tandem binary, so tandem_search.rb stops with 'Unable to locate tandem'.
+protk	protk_tandem_to_pepxml.rb	PASS	Ran on a protk repo X!Tandem result file; pepXML with 97 spectrum queries written
+protk	protk_unimod_to_loc.rb	PASS	Ran on the protk repo unimod.xml; mascot_mods.loc with 74 modification names written
+protk	protk_uniprot_mapper.rb	Failed	tool bug: protk uses the retired www.uniprot.org/mapping service, which now answers 301 Moved Permanently
 protmapper	protmapper	PASS	
 prottest	prottest	Failed	image problem: ProtTest 3.4.2 cannot read the output of the PhyML 3.3 in the image ('Stats file does not exist'), so no model table is produced. CWL fixed: baseCommand is prottest (not prottest3) and matrices are flags like -JTT.
 provean	provean	Not completed	Needs the huge NCBI nr protein database with gi numbers; on a small p53-family BLAST database PROVEAN found no supporting sequences and printed nan. CWL fixed (tool paths as strings, database index files, scores captured).
@@ -12014,8 +12137,66 @@ pygenomeviz	pygenomeviz_pgv-mummer	Failed	image problem: MUMmer is not installed
 pygenomeviz	pygenomeviz_pgv-pmauve	Failed	image problem: progressiveMauve is not installed in the image, so the tool stops with 'alignment is not available in this environment'
 pygenomeviz	pygenomeviz_pgv-simpleplot	PASS	
 pygmes	pygmes	Not completed	needs the licensed GeneMark-ES program (not in the image) and a large diamond database
-pygtftk	pygtftk_gtftk_get_example	PASS	
-pygtftk	pygtftk_gtftk_get_tx_seq	PASS	
+pygtftk	pygtftk_add_exon_nb	PASS	
+pygtftk	pygtftk_add_prefix	PASS	
+pygtftk	pygtftk_apropos	PASS	stdout starts with 4 harmless tabulate warning lines from the image; related command list is correct
+pygtftk	pygtftk_bed_to_gtf	PASS	
+pygtftk	pygtftk_bigwig_to_bed	Failed	tool bug: --outputfile is opened read-only so it always errors; stdout, the only working output, starts with 4 tabulate error lines from the image
+pygtftk	pygtftk_closest_genes	PASS	
+pygtftk	pygtftk_col_from_tab	PASS	
+pygtftk	pygtftk_convergent	PASS	
+pygtftk	pygtftk_convert	PASS	
+pygtftk	pygtftk_convert_ensembl	PASS	
+pygtftk	pygtftk_count	PASS	
+pygtftk	pygtftk_count_key_values	PASS	
+pygtftk	pygtftk_coverage	PASS	
+pygtftk	pygtftk_del_attr	PASS	
+pygtftk	pygtftk_discretize_key	Failed	image problem: default mode (no --labels) crashes with pandas 2 "can't set attribute"; works only when --labels is given
+pygtftk	pygtftk_divergent	PASS	
+pygtftk	pygtftk_exon_sizes	PASS	
+pygtftk	pygtftk_feature_size	PASS	
+pygtftk	pygtftk_get_5p_3p_coords	PASS	
+pygtftk	pygtftk_get_attr_list	PASS	
+pygtftk	pygtftk_get_attr_value_list	PASS	
+pygtftk	pygtftk_get_ceas_records	PASS	synthetic data: small CEAS-style sqlite built from simple.gtf (no real CEAS file available); GTF-like records written correctly
+pygtftk	pygtftk_get_example	PASS	
+pygtftk	pygtftk_get_feat_seq	PASS	
+pygtftk	pygtftk_get_feature_list	PASS	
+pygtftk	pygtftk_get_tx_seq	PASS	
+pygtftk	pygtftk_great_reg_domains	PASS	
+pygtftk	pygtftk_intergenic	PASS	
+pygtftk	pygtftk_intron_sizes	PASS	
+pygtftk	pygtftk_intronic	PASS	
+pygtftk	pygtftk_join_attr	PASS	
+pygtftk	pygtftk_join_multi_file	PASS	
+pygtftk	pygtftk_merge_attr	PASS	
+pygtftk	pygtftk_midpoints	PASS	
+pygtftk	pygtftk_mk_matrix	Failed	image problem: gtftk crashes in the default mode (pandas 2.3.1 rejects the positional axis in DataFrame.drop in mk_matrix.py line 503).
+pygtftk	pygtftk_nb_exons	PASS	
+pygtftk	pygtftk_nb_transcripts	PASS	
+pygtftk	pygtftk_ologram_merge_runs	PASS	
+pygtftk	pygtftk_ologram_modl_treeify	PASS	
+pygtftk	pygtftk_overlapping	PASS	
+pygtftk	pygtftk_random_list	PASS	
+pygtftk	pygtftk_random_tx	PASS	
+pygtftk	pygtftk_rm_dup_tss	PASS	
+pygtftk	pygtftk_select_by_go	PASS	needs network (Ensembl BioMart); tested on mini_real example GTF, 63 genes selected.
+pygtftk	pygtftk_select_by_intron_size	PASS	
+pygtftk	pygtftk_select_by_key	PASS	
+pygtftk	pygtftk_select_by_loc	PASS	
+pygtftk	pygtftk_select_by_max_exon_nb	PASS	
+pygtftk	pygtftk_select_by_nb_exon	PASS	
+pygtftk	pygtftk_select_by_numeric_value	PASS	
+pygtftk	pygtftk_select_by_regexp	PASS	
+pygtftk	pygtftk_select_by_tx_size	PASS	
+pygtftk	pygtftk_select_most_5p_tx	PASS	
+pygtftk	pygtftk_seqid_list	PASS	
+pygtftk	pygtftk_shift	PASS	
+pygtftk	pygtftk_short_long	PASS	
+pygtftk	pygtftk_splicing_site	PASS	
+pygtftk	pygtftk_tabulate	PASS	
+pygtftk	pygtftk_tss_dist	PASS	
+pygtftk	pygtftk_tss_numbering	PASS	
 pygvcf2coverage	pygvcf2coverage	Failed	image problem: the cyvcf2 import is commented out in the package, so the tool stops with NameError: name 'VCF' is not defined
 pyhmmsearch	pyhmmsearch	PASS	matches HMMER 3.4 hmmsearch on 124 BUSCO bacteria models and 4977 proteins (115 hits)
 pyhmmsearch	pyhmmsearch_reformat_pyhmmsearch	PASS	
@@ -12029,16 +12210,27 @@ pyloh	pyloh_PyLOH.py_BAF_heatmap	PASS	synthetic data: stand-in normal/tumor pair
 pyloh	pyloh_PyLOH.py_preprocess	PASS	synthetic data: two real 1000 Genomes BAMs (HG00349, HG00350, chr20 100 kb) used as a stand-in normal/tumor pair
 pyloh	pyloh_PyLOH.py_run_model	PASS	synthetic data: one real BAM (HG00349) used as both normal and tumor, giving copy number 2 and purity 0.01 as expected
 pylprotpredictor	pylprotpredictor	PASS	test scaffold genome from the tool repo; UniProt archaeal Swiss-Prot proteins as reference FASTA instead of UniRef90 (290 CDS, 17 TAG-ending, 7 with homologs)
+pymlst	pymlst_claMLST_create	PASS	built a classical MLST database from the 7 real A. baumannii allele files and the ST table in the pyMLST tests; info shows species and version
 pymlst	pymlst_claMLST_import	PASS	imported the PubMLST Pasteur scheme for Acinetobacter baumannii (needs --mlst)
+pymlst	pymlst_claMLST_info	PASS	printed name, species, version and the allele counts of the database made by create
+pymlst	pymlst_claMLST_remove	PASS	removed gltA allele 186; info afterwards shows 185 gltA alleles
 pymlst	pymlst_claMLST_search	PASS	two real genomes typed as ST25 with all 7 Pasteur loci found
+pymlst	pymlst_claMLST_search2	Failed	tool bug: pyMLST 2.2.2 crashes after KMA finishes (read_genome gets a file name string: AttributeError 'str' object has no attribute 'seekable'); tested on simulated reads
 pymlst	pymlst_pyTyper_search	Failed	image problem: pytyper.db is created inside the read-only install directory on first use, so it fails for a non-root user (works only as root)
 pymlst	pymlst_wgMLST_add	PASS	4 real A. baumannii genomes added in turn; database grew each time
+pymlst	pymlst_wgMLST_add2	Failed	tool bug: pyMLST 2.2.2 crashes after KMA finishes (read_genome gets a file name string: AttributeError 'str' object has no attribute 'seekable'); tested on simulated reads
 pymlst	pymlst_wgMLST_create	PASS	real A. baumannii cgMLST scheme (2386 genes) from the pyMLST tests
 pymlst	pymlst_wgMLST_distance	PASS	symmetric 4x4 allele distance matrix, consistent with the MLST table
+pymlst	pymlst_wgMLST_gene	PASS	listed 2324 genes present in all 4 real A. baumannii strains with --mincover 4
 pymlst	pymlst_wgMLST_import	PASS	imported the A. baumannii scheme from cgmlst.org (2390 genes)
 pymlst	pymlst_wgMLST_mlst	PASS	allele table of 4 strains over 2386 genes
 pymlst	pymlst_wgMLST_msa	PASS	4 aligned sequences written (mafft)
+pymlst	pymlst_wgMLST_recombination	PASS	variation count per gene for 2324 genes from the gene list and the alignment of 4 real strains (fails with a division by zero if a listed gene is missing in the first strain)
+pymlst	pymlst_wgMLST_remove	PASS	removing strain 14A543 left 3 strains; removing 2 genes with --file --genes left 2384 core genes
+pymlst	pymlst_wgMLST_sequence	PASS	wrote 2506 allele sequences in fasta, each named with its gene, allele number and strains
 pymlst	pymlst_wgMLST_stats	PASS	reports 2386 core genes and 4 strains
+pymlst	pymlst_wgMLST_strain	PASS	listed the 4 strains with their gene counts (2338 to 2343 of 2386)
+pymlst	pymlst_wgMLST_subgraph	PASS	grouped the 4 strains at distance threshold 30 into 2 groups (3 close strains and 16A1524) in group and count modes
 pymochi	pymochi_demo_mochi.py	PASS	demo project of the tool (built-in demo data), 5 epochs
 pymochi	pymochi_run_mochi.py	PASS	MoCHI demo model design with its fitness data, 5 epochs; all outputs written (weights, predictions, reports)
 pymsaviz	pymsaviz	PASS	
@@ -13181,15 +13373,34 @@ scallop2	scallop2	PASS
 scalop	scalop_SCALOP	PASS	
 scanindel	scanindel_ScanIndel.py	Failed	image problem: ScanIndel.py calls /usr/local/bin/tools/vcf-combine.py, which is missing in the image, so the merged VCF is empty (mapping and assembly VCFs are correct)
 scanpy-scripts	scanpy-scripts_scanpy-cli_cluster_leiden	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_cluster_louvain	PASS	real 10x PBMC counts (1000 cells x 1000 genes) after neighbours; Louvain labels in obs and in the exported table
 scanpy-scripts	scanpy-scripts_scanpy-cli_diffexp	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_dpt	PASS	real 10x PBMC counts (1000 cells x 1000 genes) diffusion map with root cluster 0; dpt_pseudotime written
+scanpy-scripts	scanpy-scripts_scanpy-cli_embed_diffmap	Failed	tool bug: the default run (no --n-comps) crashes; with --n-comps 15 it writes X_diffmap on real 10x PBMC counts (1000 cells x 1000 genes) after Leiden clustering
+scanpy-scripts	scanpy-scripts_scanpy-cli_embed_fdg	PASS	real 10x PBMC counts (1000 cells x 1000 genes) after the chain to neighbours; X_draw_graph_fa written
+scanpy-scripts	scanpy-scripts_scanpy-cli_embed_tsne	PASS	real 10x PBMC counts (1000 cells x 1000 genes) after norm, hvg, scale, pca; X_tsne written for 1000 cells
 scanpy-scripts	scanpy-scripts_scanpy-cli_embed_umap	PASS	10x hgmm_1k example (1046 cells), chained read to plot
 scanpy-scripts	scanpy-scripts_scanpy-cli_filter	PASS	10x hgmm_1k example (1046 cells), chained read to plot
 scanpy-scripts	scanpy-scripts_scanpy-cli_hvg	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_integrate_bbknn	PASS	real 10x PBMC counts (1000 cells x 1000 genes) PCA with batch column; batch-balanced neighbours graph written
+scanpy-scripts	scanpy-scripts_scanpy-cli_integrate_combat	PASS	real 10x PBMC counts (1000 cells x 1000 genes) normalised then ComBat on batch; combat layer written
+scanpy-scripts	scanpy-scripts_scanpy-cli_integrate_harmony	PASS	real 10x PBMC counts (1000 cells x 1000 genes) PCA with 3 text batch labels; X_pca_harmony written (an integer batch column crashes harmonypy)
+scanpy-scripts	scanpy-scripts_scanpy-cli_integrate_mnn	Failed	image problem: mnnpy dies with illegal instruction (exit 132) after the image warns that its mnnpy install seems faulty
+scanpy-scripts	scanpy-scripts_scanpy-cli_multiplet_scrublet	PASS	real 10x PBMC counts (1000 cells x 1000 genes) with 3 text batch labels; doublet_score and predicted_doublet written, plus the score table (an integer batch column cannot be written to h5ad)
+scanpy-scripts	scanpy-scripts_scanpy-cli_multiplet_scrublet_simulate_doublets	PASS	real 10x PBMC counts (1000 cells x 1000 genes) simulated 1000 doublets, output holds 2000 cells with doublet_parents
 scanpy-scripts	scanpy-scripts_scanpy-cli_neighbor	PASS	10x hgmm_1k example (1046 cells), chained read to plot
 scanpy-scripts	scanpy-scripts_scanpy-cli_norm	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_paga	PASS	real 10x PBMC counts (1000 cells x 1000 genes) after Leiden clustering; uns paga graph written for the leiden groups
 scanpy-scripts	scanpy-scripts_scanpy-cli_pca	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_plot_dot	PASS	real 10x PBMC counts (1000 cells x 1000 genes) dot plot of the top 2 ranked genes per Leiden cluster; diagonal pattern as expected
 scanpy-scripts	scanpy-scripts_scanpy-cli_plot_embed	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_plot_heat	PASS	real 10x PBMC counts (1000 cells x 1000 genes) heat map of the top 2 ranked genes per Leiden cluster drawn as PNG
+scanpy-scripts	scanpy-scripts_scanpy-cli_plot_matrix	PASS	real 10x PBMC counts (1000 cells x 1000 genes) mean expression matrix plot per Leiden cluster drawn as PNG
+scanpy-scripts	scanpy-scripts_scanpy-cli_plot_paga	PASS	real 10x PBMC counts (1000 cells x 1000 genes) PAGA graph drawn from the paga output as PNG
+scanpy-scripts	scanpy-scripts_scanpy-cli_plot_scrublet	PASS	real 10x PBMC counts (1000 cells x 1000 genes) histogram of doublet scores drawn from the scrublet output
+scanpy-scripts	scanpy-scripts_scanpy-cli_plot_sviol	PASS	real 10x PBMC counts (1000 cells x 1000 genes) stacked violin of the top 2 ranked genes per Leiden cluster drawn as PNG
 scanpy-scripts	scanpy-scripts_scanpy-cli_read	PASS	10x hgmm_1k example (1046 cells), chained read to plot
+scanpy-scripts	scanpy-scripts_scanpy-cli_regress	PASS	real 10x PBMC counts (1000 cells x 1000 genes) normalised, then regressed on the batch column; output scaled (mean 0)
 scanpy-scripts	scanpy-scripts_scanpy-cli_scale	PASS	10x hgmm_1k example (1046 cells), chained read to plot
 scapp	scapp	PASS	
 scar	scar	PASS	5 epochs on 1500 real cells x 2000 genes (counts built from nf-core scRNA-seq data)
@@ -13398,11 +13609,19 @@ segmentation-fold	segmentation-fold_utils_fix_fasta_headers	PASS	repo test outpu
 segul	segul_align_concat	PASS	concatenated 5 tutorial UCE alignments: 4 taxa x 6341 sites (sum of 1286+1286+1147+1322+1300) plus a raxml partition file with the 5 loci
 segul	segul_align_convert	PASS	converted 5 real UCE locus alignments (SECAPR tutorial, 4 taxa) from fasta to nexus; ntax=4 nchar=1286 for locus_0
 segul	segul_align_filter	PASS	--min-len 1250 kept 4 of 5 tutorial alignments (the 1147 bp locus was dropped); segul adds the setting to the output folder name
+segul	segul_align_split	PASS	split the concatenated 5-locus UCE alignment with its raxml partition file back into 5 loci (4 taxa; locus_0 4631 bases, same as the original)
 segul	segul_align_summary	PASS	per-locus summary of 5 tutorial alignments: csv with per-taxon missing data and base counts (total_chars 1286, 227 missing for T_pella5)
 segul	segul_align_trim	PASS	--missing-data 0.5 trimmed tutorial alignments (locus_1 1286 to 1133 sites); trimming_summary.csv matches the output lengths
+segul	segul_align_unalign	PASS	unaligned 5 real tutorial UCE alignments (4 taxa each) to fasta; locus_0 keeps 4631 non-gap bases, matching the aligned input
+segul	segul_contig_summary	PASS	summary of 2 real contig sets (nf-core bacteroides 272 contigs, 1739120 bases; moth mitogenome 2 contigs, 71449 bases) matches the FASTA headers
+segul	segul_maf_maf	Failed	tool bug: on the real LAST MAF (nf-core sarscov2, 6 blocks on one reference) it writes the first block then panics with 'File exists', even with --force; a gzipped MAF silently gives no output
 segul	segul_partition_convert	Failed	tool bug: --output is ignored (result is always written beside the input as <input>_partition.<ext>, failing on read-only input); raxml to nexus conversion content was correct once the input was staged writable
 segul	segul_read_summary	PASS	complete read summary of the nf-core sarscov2 test_1.fastq: 100 reads, 13897 bases, mean length 138.97, matching a direct count
+segul	segul_sequence_add	PASS	synthetic data: one extra sequence (T_extra1, copied from a real UCE locus) added to locus_0 of 5 real alignments; locus_0 now has 5 taxa, the others stay at 4
 segul	segul_sequence_extract	PASS	extracted 2 taxa (T_pyra1;T_pella5) from 5 tutorial alignments
+segul	segul_sequence_filter	PASS	--min-length 1100 on 5 real UCE alignments kept the 2 of 4 taxa with long enough sequences in locus_0 (the tool allows only one filter option at a time)
+segul	segul_sequence_id	PASS	sample ID mapping across 5 real UCE alignments: 4 shared taxa listed and a presence table for all loci
+segul	segul_sequence_remove	PASS	removed taxon T_pyra1 from 5 real UCE alignments (locus_0 4 to 3 taxa)
 segul	segul_sequence_rename	PASS	replaced T_ with Taxon_ in all sequence IDs of 5 tutorial alignments
 segul	segul_sequence_translate	PASS	translated 3 real sarscov2 CDS starts (300 nt, nf-core genome) to protein; orf1ab gives MESLVPGFNEKTHVQLSL...
 segway	segway_annotate	Failed	image problem: gmtkTriangulate cannot load libcrypto.so.3 (exit 127), so segway stops at its GMTK version check; genomedata input type fixed to File/Directory
@@ -13439,14 +13658,46 @@ seidr	seidr_tigress	PASS
 seidr	seidr_tomsimilarity	PASS	
 seidr	seidr_view	PASS	
 seismic-rna	seismic-rna_seismic_align	PASS	synthetic data: seismic-rna tutorial amplicon reads made by seismic sim (two DMS replicates, HIV RRE); BAMs pass quickcheck, 92 percent of read pairs aligned
+seismic-rna	seismic-rna_seismic_cleanfa	PASS	synthetic data: tutorial amplicon reads made by seismic sim; reference FASTA rewritten into the out folder with the same name and sequence
 seismic-rna	seismic-rna_seismic_cluster	PASS	synthetic data: tutorial amplicon reads; two clusters found with 73 and 27 percent of reads, as the tutorial expects
+seismic-rna	seismic-rna_seismic_ct2db	PASS	synthetic data: tutorial amplicon reads made by seismic sim; dot-bracket file written from the folded CT file (179 nt, balanced brackets)
+seismic-rna	seismic-rna_seismic_db2ct	PASS	synthetic data: tutorial amplicon reads made by seismic sim; CT file rebuilt from the dot-bracket file with the same base pairs (numbering restarts at 1)
+seismic-rna	seismic-rna_seismic_demult	Failed	image problem: demult calls seqkit, which is not in the image; all barcode counts are 0 (read names were relabelled in Illumina style to reach that step)
+seismic-rna	seismic-rna_seismic_draw	Failed	image problem: RNArtistCore is not in the image and jgo cannot write its cache in /usr/local/jgo, so no drawing is made
+seismic-rna	seismic-rna_seismic_ensembles	PASS	synthetic data: tutorial amplicon reads made by seismic sim; two regions (26-204 and 114-178) masked and clustered with 2 clusters each, tables written
 seismic-rna	seismic-rna_seismic_export	PASS	synthetic data: tutorial amplicon reads; SEISMICgraph JSON written with the folded structure included
 seismic-rna	seismic-rna_seismic_fold	PASS	synthetic data: tutorial amplicon reads; MFE structure of 179 nt with balanced brackets (-163.2 kcal/mol)
 seismic-rna	seismic-rna_seismic_graph	PASS	synthetic data: tutorial amplicon reads; per-position mutation ratio CSV and HTML written (only seismic graph profile is wrapped)
+seismic-rna	seismic-rna_seismic_graph_abundance	PASS	synthetic data: tutorial amplicon reads made by seismic sim; cluster abundance CSV and HTML written (K=2: two clusters, 33 and 67 percent of reads)
+seismic-rna	seismic-rna_seismic_graph_aucroll	PASS	synthetic data: tutorial amplicon reads made by seismic sim; rolling AUC-ROC CSV and HTML written against the folded structure
+seismic-rna	seismic-rna_seismic_graph_corroll	PASS	synthetic data: tutorial amplicon reads made by seismic sim; rolling Pearson correlation between samples dms1 and dms2 written as CSV and HTML
+seismic-rna	seismic-rna_seismic_graph_delprof	PASS	synthetic data: tutorial amplicon reads made by seismic sim; per-position difference between samples dms1 and dms2 written as CSV and HTML
+seismic-rna	seismic-rna_seismic_graph_giniroll	PASS	synthetic data: tutorial amplicon reads made by seismic sim; rolling Gini coefficient CSV and HTML written
+seismic-rna	seismic-rna_seismic_graph_histpos	PASS	synthetic data: tutorial amplicon reads made by seismic sim; histogram of mutation ratios per position written as CSV and HTML
+seismic-rna	seismic-rna_seismic_graph_histread	PASS	synthetic data: tutorial amplicon reads made by seismic sim; histogram of mutation ratios per read written as CSV and HTML
+seismic-rna	seismic-rna_seismic_graph_mutdist	PASS	synthetic data: tutorial amplicon reads made by seismic sim; distribution of distances between mutations written as CSV and HTML
+seismic-rna	seismic-rna_seismic_graph_poscorr	PASS	synthetic data: tutorial amplicon reads made by seismic sim; position-by-position phi correlation matrix written as CSV and HTML
+seismic-rna	seismic-rna_seismic_graph_roc	PASS	synthetic data: tutorial amplicon reads made by seismic sim; ROC curve CSV and HTML written against the folded structure
+seismic-rna	seismic-rna_seismic_graph_scatter	PASS	synthetic data: tutorial amplicon reads made by seismic sim; scatter data of dms1 against dms2 mutation ratios written as CSV and HTML
+seismic-rna	seismic-rna_seismic_graph_snrroll	PASS	synthetic data: tutorial amplicon reads made by seismic sim; rolling signal-to-noise ratio CSV and HTML written
 seismic-rna	seismic-rna_seismic_join	PASS	synthetic data: tutorial amplicon reads; regions 26-100 and 101-204 joined into 179 positions with the same mean mutation rate
+seismic-rna	seismic-rna_seismic_list	PASS	synthetic data: tutorial amplicon reads made by seismic sim; relate-position-list.csv names positions 1-8, which have fewer than 30000 informative bases
 seismic-rna	seismic-rna_seismic_mask	PASS	synthetic data: tutorial amplicon reads; primer region 26-204 masked, G bases masked and A mutation rate about 8 percent
+seismic-rna	seismic-rna_seismic_migrate	Not completed	no v0.23 output directory available; the run on a v0.24 folder only copied it
 seismic-rna	seismic-rna_seismic_pool	PASS	synthetic data: tutorial amplicon reads; pooled coverage and mutation counts equal the sum of the two samples
 seismic-rna	seismic-rna_seismic_relate	PASS	synthetic data: tutorial amplicon reads; relate tables written for both samples
+seismic-rna	seismic-rna_seismic_renumct	Failed	tool bug: renumct without --inplace crashes with TypeError (PosixPath is not iterable) and writes nothing; --inplace renumbers correctly
+seismic-rna	seismic-rna_seismic_sim_abstract	PASS	synthetic data: tutorial amplicon reads made by seismic sim; parameters abstracted from the masked pooled sample against the folded structure (printed as seismic sim options)
+seismic-rna	seismic-rna_seismic_sim_clusts	PASS	synthetic data: simulator output; clusts CSV written next to the simulated CT file
+seismic-rna	seismic-rna_seismic_sim_ends	PASS	synthetic data: simulator output; read end proportions CSV written next to the simulated CT file
+seismic-rna	seismic-rna_seismic_sim_fastq	PASS	synthetic data: simulator output; paired FASTQ files of about 1800 reads written from the parameter files
+seismic-rna	seismic-rna_seismic_sim_fold	PASS	synthetic data: simulator output; MFE structure of the simulated reference written as a CT file
+seismic-rna	seismic-rna_seismic_sim_muts	PASS	synthetic data: simulator output; mutation rate CSV written next to the simulated CT file
+seismic-rna	seismic-rna_seismic_sim_params	PASS	synthetic data: simulator output; ends, muts and clusts parameter files written for the simulated structure
+seismic-rna	seismic-rna_seismic_sim_ref	PASS	synthetic data: simulator output; one 150 nt reference written to a FASTA file
+seismic-rna	seismic-rna_seismic_sim_relate	PASS	synthetic data: simulator output; relate report and batches written for sample s1
+seismic-rna	seismic-rna_seismic_sim_total	PASS	synthetic data: simulator output; reference, structure, parameters and paired FASTQ files made in one run
+seismic-rna	seismic-rna_seismic_splitbam	PASS	synthetic data: tutorial amplicon reads made by seismic sim; aligned BAM split into one BAM per reference (rre.bam) with a split report
 seismic-rna	seismic-rna_seismic_table	PASS	synthetic data: tutorial amplicon reads; per-read table has one row per read pair (21883)
 selectfasta	selectfasta_selectFasta	PASS	
 selectsequencesfrommsa	selectsequencesfrommsa	PASS	
@@ -13633,7 +13884,29 @@ seshat	seshat_merge	PASS	synthetic data: real SARS-CoV-2 VCF with a hand-made an
 seshat	seshat_round-trip	Not completed	needs the external Seshat web service and a Gmail account with Google OAuth credentials
 seshat	seshat_upload-vcf	Not completed	needs the external Seshat web service and a Gmail account with Google OAuth credentials
 setsimilaritysearch	setsimilaritysearch_all_pairs.py	PASS	same four pairs and similarities as the repo example output; only the order inside two pairs differs
+seurat-scripts	seurat-scripts_seurat-classify-against-reference.R	PASS	synthetic data: query is a copy of pbmc_small with renamed barcodes (names must differ from the reference); 80 query cells got predicted cluster labels and an anchor set was saved (--transfer-dims crashes because the script passes it as text)
+seurat-scripts	seurat-scripts_seurat-convert.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, Seurat object converted to a SingleCellExperiment RDS
+seurat-scripts	seurat-scripts_seurat-dim-plot.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, t-SNE plot coloured by cluster written as a 1000 x 1000 PNG
+seurat-scripts	seurat-scripts_seurat-export-cellbrowser.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, Cell Browser folder with expression matrix, t-SNE coordinates, metadata and config (--markers-file crashes: file_ext is missing in the script)
+seurat-scripts	seurat-scripts_seurat-filter-cells.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, --low-thresholds on nFeature_RNA kept 53 of 80 cells (--cells-use crashes: the script calls a missing check_cells function)
+seurat-scripts	seurat-scripts_seurat-find-clusters.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, 3 clusters for 53 cells, written to the object and the text file
+seurat-scripts	seurat-scripts_seurat-find-conserved-markers.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, markers of cluster 0 conserved across the groups g1 and g2 of the pbmc_small metadata
+seurat-scripts	seurat-scripts_seurat-find-markers.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, ranked marker table per cluster (CST3, LYZ, HLA-DRA among the top genes)
+seurat-scripts	seurat-scripts_seurat-find-neighbours.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, RNA_nn and RNA_snn graphs added (--reduction must be given when --dims is used)
+seurat-scripts	seurat-scripts_seurat-find-variable-genes.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, 100 variable genes stored and listed in the text file
+seurat-scripts	seurat-scripts_seurat-get-random-genes.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, 5 reproducible random genes written, one per line
+seurat-scripts	seurat-scripts_seurat-hover-locator.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, interactive HTML hover plot made from the DimPlot RDS (3.7 MB, self-contained)
+seurat-scripts	seurat-scripts_seurat-integration.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, 2 objects (cells split by nFeature_RNA) integrated: integrated assay of 80 features x 79 cells
+seurat-scripts	seurat-scripts_seurat-map-query.R	PASS	synthetic data: query is a copy of pbmc_small with renamed barcodes; the query was mapped onto a reference UMAP model, giving ref.pca, ref.umap and predicted labels for 80 cells
+seurat-scripts	seurat-scripts_seurat-normalise-data.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, log-normalised the filtered object
+seurat-scripts	seurat-scripts_seurat-plot.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, DimPlot on the t-SNE coordinates written as PNG and as RDS (the documented --plot-format PNG is rejected by ggsave; leave it unset)
+seurat-scripts	seurat-scripts_seurat-read-10x.R	PASS	pbmc_small (SeuratObject, real PBMC data) exported to 10x files; read into a Seurat object of 230 genes x 80 cells, also with a cell metadata table
+seurat-scripts	seurat-scripts_seurat-run-pca.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, PCA reduction added; embeddings, loadings and stdev files written
+seurat-scripts	seurat-scripts_seurat-run-tsne.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, tsne reduction and embeddings table written for 53 cells
 seurat-scripts	seurat-scripts_seurat-run-umap.R	PASS	input built with the image's own read-10x, normalise, variable-genes, scale and PCA scripts from real 10x data; output holds a 11089 x 2 UMAP embedding
+seurat-scripts	seurat-scripts_seurat-scale-data.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, scaled the variable-gene object
+seurat-scripts	seurat-scripts_seurat-select-integration-features.R	PASS	pbmc_small (SeuratObject, 80 cells x 230 genes) exported to 10x files, 80 integration features selected across 2 objects (cells split by nFeature_RNA)
+seurat-scripts	seurat-scripts_seurat-split-object.R	Failed	tool bug: the script calls CreateSeuratObject on the object it just read, which fails with an as.sparse error for a Seurat RDS and for a SingleCellExperiment
 severus	severus	PASS	ran on the nf-core COLO829 tumour and normal chr22 subset; all_SVs VCF has 4 SV records, no somatic calls at this low coverage
 sexdeterrmine	sexdeterrmine	PASS	input depth table made with samtools depth from the Galaxy test BAM; counts match the depth file
 sff2fastq	sff2fastq	PASS	
@@ -14592,17 +14865,30 @@ taxor	taxor_search	PASS	synthetic data: 120 reads cut from the three phage genom
 taxpasta	taxpasta_merge	PASS	two Galaxy kraken2 reports merged (wide and long, summarise at genus: Homo 23 and 152); fixed the missing samplesheet-format flag and added the long option
 taxpasta	taxpasta_standardise	PASS	Galaxy kraken2 report: yeast and human counts match the direct read counts; names, ranks and lineages added from the NCBI taxdump
 taxsbp	taxsbp	Failed	image problem: the taxsbp command exits with status 1 on success (sys.exit(True) in the console script), although the bins in the output are correct
+taxtastic	taxtastic_taxit_add_nodes	PASS	synthetic data: two new nodes in a yaml file were added to a small real NCBI taxonomy database (built with new_database); extract_nodes then returned both nodes.
+taxtastic	taxtastic_taxit_add_to_taxtable	PASS	synthetic data: one planted species row was added to the real 16S taxtable; the new row has the correct lineage columns.
 taxtastic	taxtastic_taxit_check	PASS	the 16S refpkg validates with exit 0 and no message
+taxtastic	taxtastic_taxit_composition	PASS	Genus composition of the real tiny 16S reference package: 8 genera, one sequence each.
 taxtastic	taxtastic_taxit_create	PASS	refpkg built from 8 real RefSeq 16S sequences, a MAFFT alignment, a FastTree tree and the NCBI taxonomy (rppr is not in the image, so no-reroot is used)
+taxtastic	taxtastic_taxit_extract_nodes	PASS	Extracted the two nodes added by add_nodes from the updated database, in yaml.
+taxtastic	taxtastic_taxit_findcompany	PASS	On the small real NCBI database it returned 564 for species 562 (with --cut) and 564 and 1281 for 562 and 1280; tax_ids without siblings in the reduced database crash the tool.
 taxtastic	taxtastic_taxit_get_descendants	PASS	descendants of Sarbecovirus and Escherichia: 5907 tax_ids including 2697049, 511145, 562
 taxtastic	taxtastic_taxit_get_lineage	PASS	lineages of 511145 and 2697049 are correct (Escherichia coli, Betacoronavirus pandemicum, Coronaviridae)
 taxtastic	taxtastic_taxit_info	Failed	tool bug: the lengths option prints only the header because the file is closed before it is read; seq-names and tally work
 taxtastic	taxtastic_taxit_lineage_table	PASS	csv lineage table for E. coli and SARS-CoV-2 is correct; the MOTHUR table works for E. coli but crashes (TypeError) for the virus lineage that lacks some ranks
+taxtastic	taxtastic_taxit_lonelynodes	PASS	Listed lonely nodes of the real 16S taxtable and of the reference package with a rank filter; both are correct.
 taxtastic	taxtastic_taxit_named	Failed	tool bug: the ranked option returns only the no-rank tax_ids (inverted, it should ignore them); without it all four tax_ids are kept
+taxtastic	taxtastic_taxit_namelookup	PASS	Looked up Escherichia coli (562) and Bacillus subtilis (1423) in the small real NCBI database; unmatched name kept with --include-unmatched.
 taxtastic	taxtastic_taxit_new_database	PASS	real NCBI taxdump downloaded by the tool and loaded into a 1.3 GB SQLite database (2 minutes); network access added
+taxtastic	taxtastic_taxit_refpkg_intersection	PASS	Intersected a taxtable with the real tiny 16S reference package; shared genus and species tax_ids are marked.
+taxtastic	taxtastic_taxit_reroot	Failed	image problem: the rppr program (from pplacer) is not in the image, so the command stops with FileNotFoundError.
+taxtastic	taxtastic_taxit_rollback	PASS	Rolled back a metadata update on the tiny 16S reference package; author and version returned to the old values.
+taxtastic	taxtastic_taxit_rollforward	PASS	Rolled the undone update forward again; author and version returned to the new values.
+taxtastic	taxtastic_taxit_rp	PASS	Printed the path of the tree file in the tiny 16S reference package.
 taxtastic	taxtastic_taxit_strip	PASS	refpkg copy stripped: log gets a new Stripped entry and the files are unchanged; the folder is staged writable
 taxtastic	taxtastic_taxit_taxids	Failed	tool bug: crashes with AttributeError 'Engine' object has no attribute 'execute' (taxtastic 0.12.0 with SQLAlchemy 2)
 taxtastic	taxtastic_taxit_taxtable	PASS	E. coli K-12 MG1655 (511145) and SARS-CoV-2 (2697049) gave 25 lineage rows with the right ranks; also built the table for 8 16S taxa
+taxtastic	taxtastic_taxit_update	PASS	Updated metadata (author, version) and added a readme file to the tiny 16S reference package; CONTENTS.json shows both.
 taxtastic	taxtastic_taxit_update_taxids	PASS	obsolete 469598 replaced by 562, unknown id 999999999 dropped and written to the unknowns file
 tb-ml	tb-ml	Not completed	framework that starts other tools as Docker containers (needs Docker inside Docker and large tool images and reads), skipped
 tb-profiler	tb-profiler_batch	PASS	two Galaxy test read sets run in parallel from a CSV: both RR-TB with rpoB p.Asp435Val; read files are now staged
@@ -15915,10 +16201,47 @@ vrhyme	vrhyme_vRhyme	PASS
 vsearch	vsearch	PASS	
 vsnp	vsnp_vSNP_step1.py	PASS	
 vsnp	vsnp_vSNP_step2.py	Failed	image problem: the image bundles no reference option directory (Mycobacterium_AF2122 is missing), so step 2 crashes with AttributeError 'Ref_Options' has no attribute 'gbk'; base command also fixed
+vsnp	vsnp_vsnp_alignment_vcf.py	PASS	real SARS-CoV-2 test reads and reference (paired and single-end runs)
+vsnp	vsnp_vsnp_best_reference.py	PASS	synthetic data: reads built from the tool's own M. bovis oligos give TB group, Mycobacterium_AF2122
+vsnp	vsnp_vsnp_bruc_mlst.py	PASS	synthetic data: reads tiled from the tool's ST1 reference give MLST type 01
+vsnp	vsnp_vsnp_chromosome_reference.py	PASS	real M. bovis VCF gives Mycobacterium_AF2122
+vsnp	vsnp_vsnp_excel_merge_files.py	Failed	image problem: pandas 1.2.3 with xlrd 2.0.1 cannot read .xlsx files (openpyxl missing)
+vsnp	vsnp_vsnp_fasta_gbk_gff_by_acc.py	PASS	downloaded phage lambda NC_001416 FASTA, GenBank and GFF (48,502 bp)
+vsnp	vsnp_vsnp_fasta_to_snps_table.py	PASS	synthetic data: SNPs planted into the real M. bovis reference; tree groups the planted clades
+vsnp	vsnp_vsnp_fastq_quality.py	PASS	real SARS-CoV-2 reads; crashes on reads whose quality line contains the character ^
+vsnp	vsnp_vsnp_file_management.py	Failed	image problem: pandas 1.2.3 with xlrd 2.0.1 cannot read the .xlsx genotype code file (openpyxl missing)
+vsnp	vsnp_vsnp_filter_finder.py	Failed	image problem: the -f Excel filter file cannot be read (xlrd 2.0.1, no openpyxl); the error is caught and printed
+vsnp	vsnp_vsnp_group_reporter.py	Failed	image problem: the image bundles no reference option directory (Mycobacterium_AF2122 missing), so it crashes with AttributeError: no attribute excel
+vsnp	vsnp_vsnp_merge_vcf_into_fasta.py	PASS	real M. bovis VCF merged into the reference; the one high-quality SNP (A to G at 1057) is applied
 vsnp	vsnp_vsnp_path_adder.py	Failed	image problem: --cwd must write /usr/local/dependencies/reference_options_paths.txt inside the image, which is read-only; base command also fixed
+vsnp	vsnp_vsnp_remove_from_analysis.py	Failed	image problem: pandas 1.2.3 with xlrd 2.0.1 cannot read the .xlsx list file (openpyxl missing)
+vsnp	vsnp_vsnp_spoligotype.py	PASS	synthetic data: reads built from the tool's spacer table give SB0001
+vsnp3	vsnp3_vsnp3_alignment_vcf.py	PASS	synthetic data: reads simulated from the real lambda phage genome with 10 planted SNPs; all 10 SNPs are called, 99.99% coverage
+vsnp3	vsnp3_vsnp3_annotation.py	PASS	lambda phage position 3745 gives portal protein R304W, same as the VCF annotation
+vsnp3	vsnp3_vsnp3_assembly.py	PASS	simulated lambda phage reads assemble into one 48,499 bp contig (genome is 48,502 bp)
+vsnp3	vsnp3_vsnp3_best_reference_sourmash.py	PASS	real SARS-CoV-2 reads: top sourmash hit is NC_045512.2 (Wuhan-Hu-1)
+vsnp3	vsnp3_vsnp3_bruc_mlst.py	Failed	image problem: picard is not in the image (exit code 127), so no BAM or VCF is made and the script ends with KeyError POS
+vsnp3	vsnp3_vsnp3_download_GCA_fasta_get_metadata.py	Failed	image problem: the NCBI datasets program is not in the image (datasets: command not found)
+vsnp3	vsnp3_vsnp3_download_fasta_gbk_gff_by_acc.py	PASS	downloaded phage lambda NC_001416 FASTA, GenBank and GFF (48,502 bp)
+vsnp3	vsnp3_vsnp3_excel_merge_defining_snps.py	Failed	tool bug: the output file name format string has a stray { so the script always ends with ValueError after reading both files
+vsnp3	vsnp3_vsnp3_excel_merge_files.py	PASS	merged a seqkit statistics workbook and an alignment statistics workbook into one with both rows
+vsnp3	vsnp3_vsnp3_fasta_to_fastq.py	PASS	lambda phage FASTA gives 9,700 read pairs of 100 bp at 20X, matching the log
+vsnp3	vsnp3_vsnp3_fasta_to_snps_table.py	PASS	synthetic data: aligned FASTA of simulated strains with planted SNPs; the tree groups the planted clades
+vsnp3	vsnp3_vsnp3_fastq_stats_seqkit.py	PASS	simulated lambda phage reads: 9,700 reads of 100 bp in each file
+vsnp3	vsnp3_vsnp3_group_on_defining_snps.py	PASS	synthetic data: step 2 pickle of 7 lambda strains; group on one SNP gives the 4 strains that carry it with a tree and tables
+vsnp3	vsnp3_vsnp3_group_reporter.py	Failed	image problem: the image bundles no reference option directory, so the defining SNP file is missing (ValueError: path is None)
+vsnp3	vsnp3_vsnp3_html_tree.py	Failed	tool bug: the -o output file name is ignored; the page is always written as <input>_position_tree.html (main mode works)
+vsnp3	vsnp3_vsnp3_kernel_plots.py	Failed	image problem: seaborn is not installed (ModuleNotFoundError)
+vsnp3	vsnp3_vsnp3_kraken2_wrapper.py	Failed	image problem: the kraken2 program is not in the image (No such file or directory: kraken2)
 vsnp3	vsnp3_vsnp3_path_adder.py	Failed	image problem: --cwd must write /usr/local/dependencies/reference_options_paths.txt inside the image, which is read-only, so the path is not added (exit code 0); base command also fixed
+vsnp3	vsnp3_vsnp3_remove_from_analysis.py	PASS	two listed strains (S1b, S3) are removed; the other VCF files stay
+vsnp3	vsnp3_vsnp3_spoligotype.py	PASS	synthetic data: reads built from the tool's spacer table give SB0001, octal 477777777413071
 vsnp3	vsnp3_vsnp3_step1.py	PASS	
 vsnp3	vsnp3_vsnp3_step2.py	PASS	
+vsnp3	vsnp3_vsnp3_table_compare.py	PASS	all-strain table against a one-clade table lists the 3 samples and 26 positions found only in the first table
+vsnp3	vsnp3_vsnp3_vcf_annotation.py	PASS	13 annotated records written, for example portal protein at position 3745
+vsnp3	vsnp3_vsnp3_vcf_merge_to_fasta.py	PASS	merged FASTA equals the original strain FASTA (10 planted SNPs applied)
+vsnp3	vsnp3_vsnp3_zero_coverage.py	PASS	3 zero coverage positions added; 10 quality SNPs kept
 vt	vt_annotate_1000g	PASS	
 vt	vt_annotate_regions	PASS	synthetic data: hand-made BED regions on real chr22 dbSNP records; 217 of 2174 variants got the REG flag and all 217 lie in the two BED regions
 vt	vt_annotate_variants	PASS	synthetic data: hand-made coding and low-complexity BED files on real chr22 dbSNP records and reference; 173 variants got the LC, RL or frameshift flags and none lay outside the low-complexity region
@@ -16112,9 +16435,53 @@ wtdbg	wtdbg_wtdbg2	PASS	Assembled Arabidopsis plastid HiFi reads into a 158 kb c
 wtdbg	wtdbg_wtpoa-cns	PASS	Consensus of the wtdbg2 layout gave 4 contigs, 158 kb in total.
 wtdbg2	wtdbg2	PASS	Assembled Arabidopsis plastid HiFi reads into two contig layouts, 115 kb in total.
 wtdbg2	wtdbg2_wtpoa-cns	PASS	Consensus of the wtdbg2 layout gave two contigs, 131 kb in total.
+wub	wub_add_errors.py	PASS	
+wub	wub_annotate_length.py	PASS	
 wub	wub_bam_accuracy.py	PASS	
+wub	wub_bam_alignment_length.py	PASS	
+wub	wub_bam_alignment_qc.py	PASS	tested on primary and supplementary alignments; the script crashes on secondary alignments that have no sequence
+wub	wub_bam_alignments_compare.py	Failed	image problem: the script calls odict.values()[0] (Python 2 code), which raises TypeError after the comparison; no report or tsv is written (tested on SAM input, BAM input needs an index that name-sorted BAM cannot have)
+wub	wub_bam_count_reads.py	PASS	option -g crashes on secondary alignments that have no sequence; tested without them
 wub	wub_bam_cov.py	PASS	
+wub	wub_bam_fill_unaligned.py	PASS	
 wub	wub_bam_frag_coverage.py	PASS	
+wub	wub_bam_gc_vs_qual.py	PASS	tested on primary and supplementary alignments; the script crashes on secondary alignments that have no sequence
+wub	wub_bam_multi_qc.py	PASS	
+wub	wub_bam_ref_base_coverage.py	PASS	
+wub	wub_bam_ref_tab.py	PASS	
+wub	wub_bam_score_filter.py	PASS	
+wub	wub_bam_soft_clips_tab.py	PASS	
+wub	wub_bias_explorer.py	PASS	
+wub	wub_calculate_coverage.py	PASS	
+wub	wub_compare_genomes_dnadiff.py	Failed	image problem: the dnadiff program (MUMmer) is not installed in the image
+wub	wub_compare_genomes_lastal.py	Failed	image problem: the lastal program is not installed in the image
+wub	wub_convert_alphabet.py	PASS	
+wub	wub_correlate_counts.py	PASS	
+wub	wub_fasta_to_mock_fastq.py	PASS	
+wub	wub_fastq_qual_tab.py	PASS	
+wub	wub_fastq_time_slice.py	PASS	
+wub	wub_fastq_time_tab.py	PASS	
+wub	wub_fastx_ends_tab.py	PASS	
+wub	wub_fastx_grep.py	PASS	
+wub	wub_fastx_length_tab.py	PASS	
+wub	wub_length_normalise_counts.py	PASS	
+wub	wub_merge_tsvs.py	PASS	
+wub	wub_multi_length_hist.py	Failed	image problem: the script calls close() on the Biopython sequence iterator, which no longer has it (AttributeError), for fastq and fasta input
+wub	wub_pickle_cat.py	PASS	
+wub	wub_plot_counts_correlation.py	Failed	image problem: the script passes stat_func to seaborn jointplot, which the installed seaborn rejects (TypeError)
+wub	wub_plot_gffcmp_stats.py	PASS	
+wub	wub_plot_qualities.py	PASS	
+wub	wub_plot_sequence_properties.py	PASS	
+wub	wub_reads_across_time.py	PASS	
+wub	wub_reads_stats.py	PASS	
+wub	wub_reverse_fastq.py	PASS	
+wub	wub_sequence_filter.py	Failed	tool bug: option -c (reverse complement) drops the read names and writes '<unknown id>' headers; filtering without -c is correct
+wub	wub_sequence_subtract.py	PASS	
+wub	wub_simulate_errors.py	PASS	
+wub	wub_simulate_genome.py	PASS	
+wub	wub_simulate_sequences.py	PASS	
+wub	wub_simulate_sequencing_simple.py	PASS	
+wub	wub_split_fastx.py	PASS	
 x-mapper	x-mapper	PASS	
 xatlas	xatlas	PASS	
 xcftools	xcftools_xcf2png	PASS	

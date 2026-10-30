@@ -4,17 +4,30 @@
 
 | Tool | Result | Reason |
 |---|---|---|
+| taxtastic_taxit_add_nodes | PASS | synthetic data: two new nodes in a yaml file were added to a small real NCBI taxonomy database (built with new_database); extract_nodes then returned both nodes. |
+| taxtastic_taxit_add_to_taxtable | PASS | synthetic data: one planted species row was added to the real 16S taxtable; the new row has the correct lineage columns. |
 | taxtastic_taxit_check | PASS | the 16S refpkg validates with exit 0 and no message |
+| taxtastic_taxit_composition | PASS | Genus composition of the real tiny 16S reference package: 8 genera, one sequence each. |
 | taxtastic_taxit_create | PASS | refpkg built from 8 real RefSeq 16S sequences, a MAFFT alignment, a FastTree tree and the NCBI taxonomy (rppr is not in the image, so no-reroot is used) |
+| taxtastic_taxit_extract_nodes | PASS | Extracted the two nodes added by add_nodes from the updated database, in yaml. |
+| taxtastic_taxit_findcompany | PASS | On the small real NCBI database it returned 564 for species 562 (with --cut) and 564 and 1281 for 562 and 1280; tax_ids without siblings in the reduced database crash the tool. |
 | taxtastic_taxit_get_descendants | PASS | descendants of Sarbecovirus and Escherichia: 5907 tax_ids including 2697049, 511145, 562 |
 | taxtastic_taxit_get_lineage | PASS | lineages of 511145 and 2697049 are correct (Escherichia coli, Betacoronavirus pandemicum, Coronaviridae) |
 | taxtastic_taxit_info | Failed | tool bug: the lengths option prints only the header because the file is closed before it is read; seq-names and tally work |
 | taxtastic_taxit_lineage_table | PASS | csv lineage table for E. coli and SARS-CoV-2 is correct; the MOTHUR table works for E. coli but crashes (TypeError) for the virus lineage that lacks some ranks |
+| taxtastic_taxit_lonelynodes | PASS | Listed lonely nodes of the real 16S taxtable and of the reference package with a rank filter; both are correct. |
 | taxtastic_taxit_named | Failed | tool bug: the ranked option returns only the no-rank tax_ids (inverted, it should ignore them); without it all four tax_ids are kept |
+| taxtastic_taxit_namelookup | PASS | Looked up Escherichia coli (562) and Bacillus subtilis (1423) in the small real NCBI database; unmatched name kept with --include-unmatched. |
 | taxtastic_taxit_new_database | PASS | real NCBI taxdump downloaded by the tool and loaded into a 1.3 GB SQLite database (2 minutes); network access added |
+| taxtastic_taxit_refpkg_intersection | PASS | Intersected a taxtable with the real tiny 16S reference package; shared genus and species tax_ids are marked. |
+| taxtastic_taxit_reroot | Failed | image problem: the rppr program (from pplacer) is not in the image, so the command stops with FileNotFoundError. |
+| taxtastic_taxit_rollback | PASS | Rolled back a metadata update on the tiny 16S reference package; author and version returned to the old values. |
+| taxtastic_taxit_rollforward | PASS | Rolled the undone update forward again; author and version returned to the new values. |
+| taxtastic_taxit_rp | PASS | Printed the path of the tree file in the tiny 16S reference package. |
 | taxtastic_taxit_strip | PASS | refpkg copy stripped: log gets a new Stripped entry and the files are unchanged; the folder is staged writable |
 | taxtastic_taxit_taxids | Failed | tool bug: crashes with AttributeError 'Engine' object has no attribute 'execute' (taxtastic 0.12.0 with SQLAlchemy 2) |
 | taxtastic_taxit_taxtable | PASS | E. coli K-12 MG1655 (511145) and SARS-CoV-2 (2697049) gave 25 lineage rows with the right ranks; also built the table for 8 16S taxa |
+| taxtastic_taxit_update | PASS | Updated metadata (author, version) and added a readme file to the tiny 16S reference package; CONTENTS.json shows both. |
 | taxtastic_taxit_update_taxids | PASS | obsolete 469598 replaced by 562, unknown id 999999999 dropped and written to the unknowns file |
 
 ## taxtastic_taxit_new_database
@@ -559,5 +572,485 @@ positional arguments:
 
 options:
   -h, --help  show this help message and exit
+```
+
+## taxtastic_taxit_add_nodes
+
+### Tool Description
+Add nodes and names to a database
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit add_nodes [-h] [--schema SCHEMA] [--source-name SOURCE_NAME]
+                       [url] FILE
+
+Add nodes and names to a database
+
+The input file specifies new nodes (type: node) and names (type: name)
+in yaml format (see
+http://fhcrc.github.io/taxtastic/commands.html#add-nodes).
+
+positional arguments:
+  url                   Database string URI or filename. If no database scheme
+                        specified "sqlite:///" will be prepended.
+                        [sqlite:///ncbi_taxonomy.db]
+  FILE                  yaml file specifying new nodes
+
+options:
+  -h, --help            show this help message and exit
+  --source-name SOURCE_NAME
+                        Provides the default source name for new nodes. The
+                        value is overridden by "source_name" in the input
+                        file. If not provided, "source_name" is required in
+                        each node or name definition. This source name is
+                        created if it does not exist.
+
+database options:
+  --schema SCHEMA       Name of SQL schema in database to query (if database
+                        flavor supports this).
+```
+
+## taxtastic_taxit_add_to_taxtable
+
+### Tool Description
+Add nodes to an existing taxtable csv
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit add_to_taxtable [-h] [-o CSV] CSV CSV
+
+Add nodes to an existing taxtable csv
+
+positional arguments:
+  CSV            A taxtable to augment
+  CSV            A CSV file containing nodes to add to taxtable. Must contain
+                 columns 'tax_id', 'tax_name', 'rank', and 'parent_id'. Each
+                 record must have a parent_id already in the taxtable, or
+                 defined on an earlier row.
+
+options:
+  -h, --help     show this help message and exit
+  -o, --out CSV  Destination for output taxtable [default: stdout]
+```
+
+## taxtastic_taxit_composition
+
+### Tool Description
+Show taxonomic composition of a reference package
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit composition [-h] [-t csv file] [-i csv file] [-r RANK] [-o OUT]
+                         [refpkg]
+
+Show taxonomic composition of a reference package
+
+positional arguments:
+  refpkg                the reference package to operate on
+
+options:
+  -h, --help            show this help message and exit
+  -t, --taxonomy csv file
+                        Path to taxtable (ignored if refpkg is provided,
+                        required otherwise)
+  -i, --seq_info csv file
+                        Path to seq_info (ignored if refpkg is provided,
+                        required otherwise)
+  -r, --rank RANK       show composition at RANK [species]
+  -o, --out OUT         rank at which to show composition. Use --rank=tax_id
+                        to show original classifications [stdout]
+```
+
+## taxtastic_taxit_extract_nodes
+
+### Tool Description
+Extract nodes from a given source in yaml format
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit extract_nodes [-h] [--schema SCHEMA] [-o OUTFILE]
+                           [url] source_name
+
+Extract nodes from a given source in yaml format
+
+positional arguments:
+  url                   Database string URI or filename. If no database scheme
+                        specified "sqlite:///" will be prepended.
+                        [sqlite:///ncbi_taxonomy.db]
+  source_name           name of source identifying names and nodes to extract
+
+options:
+  -h, --help            show this help message and exit
+  -o, --outfile OUTFILE
+
+database options:
+  --schema SCHEMA       Name of SQL schema in database to query (if database
+                        flavor supports this).
+```
+
+## taxtastic_taxit_findcompany
+
+### Tool Description
+Find company for lonely nodes
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit findcompany [-h] [-c] [-i INPUT] [-o OUT] taxdb [tax_ids ...]
+
+Find company for lonely nodes
+
+A command meant to follow ``lonelynodes``. Given a list of tax_ids
+produced by ``taxit lonelynodes``, produces another list of species
+tax_ids that can be added to the taxtable that would render those
+tax_ids no longer lonely.
+
+positional arguments:
+  taxdb              Taxonomy database to work from
+  tax_ids            Tax IDs to look up
+
+options:
+  -h, --help         show this help message and exit
+  -c, --cut          Produce only one output tax_id per input tax_id, whether
+                     or not the output species would themselves be lonely.
+  -i, --input INPUT  Text file to read Tax IDs from, one per line
+  -o, --out OUT      Output file for new taxids
+```
+
+## taxtastic_taxit_lonelynodes
+
+### Tool Description
+Extracts tax ids of all lonely nodes in a taxtable
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit lonelynodes [-h] [-o OUT] [-r RANKS] taxtable_or_refpkg
+
+Extracts tax ids of all lonely nodes in a taxtable
+
+Find nodes in ``target`` (which can be a CSV file extracted by ``taxit
+taxtable`` or a RefPkg containing such a file) which are lonely; that
+is, whose parents have only one child. Print them, one per line, to
+``stdout`` or to the file specified by the ``-o`` option.
+
+positional arguments:
+  taxtable_or_refpkg  A taxtable or a refpkg containing a taxtable
+
+options:
+  -h, --help          show this help message and exit
+  -o, --out OUT       Write output to given file [default: stdout]
+  -r, --ranks RANKS   Comma separated list of ranks to consider [default: all
+                      ranks]
+```
+
+## taxtastic_taxit_namelookup
+
+### Tool Description
+Find primary name and tax_id from taxonomic names
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit namelookup [-h] [--schema SCHEMA] [-i FILE | -n NAMES] [-o FILE]
+                        [--include-unmatched]
+                        [url]
+
+Find primary name and tax_id from taxonomic names
+
+positional arguments:
+  url                  Database string URI or filename. If no database scheme
+                       specified "sqlite:///" will be prepended.
+                       [sqlite:///ncbi_taxonomy.db]
+
+options:
+  -h, --help           show this help message and exit
+
+database options:
+  --schema SCHEMA      Name of SQL schema in database to query (if database
+                       flavor supports this).
+
+Input options:
+  -i, --infile FILE    file containing a list of taxonomic names, one per line
+  -n, --names NAMES    one or more taxonomic names provided as a comma-
+                       delimited list on the command line
+
+Output options:
+  -o, --outfile FILE   output file
+  --include-unmatched  include names with no match
+```
+
+## taxtastic_taxit_refpkg_intersection
+
+### Tool Description
+Find the intersection of a taxtable and a refpkg's taxonomy.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit refpkg_intersection [-h] -c REFPKG -r RANKS [--all-ranks]
+                                 [-o OUT]
+                                 infile
+
+Find the intersection of a taxtable and a refpkg's taxonomy.
+
+positional arguments:
+  infile               taxtable to compare against
+
+options:
+  -h, --help           show this help message and exit
+  -c, --refpkg REFPKG  refpkg to insert into
+  -r, --ranks RANKS    ranks to list in the output
+  --all-ranks          don't filter by the lowest rank; list all intersections
+  -o, --out OUT        output file in csv format (default is stdout)
+```
+
+## taxtastic_taxit_reroot
+
+### Tool Description
+Taxonomically reroots a reference package
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit reroot [-h] [--rppr RPPR] [-p] refpkg
+
+Taxonomically reroots a reference package
+
+Calls ``rppr reroot`` to generate a rerooted tree from the tree in
+``refpkg`` and writes it back to the refpkg.  The refpkg ``refpkg``
+must contain the necessary inputs for ``pplacer`` for this to work.
+
+positional arguments:
+  refpkg         the reference package to operate on
+
+options:
+  -h, --help     show this help message and exit
+  --rppr RPPR    specify the rppr binary to call to perform the rerooting
+  -p, --pretend  don't save the rerooted tree; just attempt the rerooting.
+```
+
+## taxtastic_taxit_rollback
+
+### Tool Description
+Undo an operation performed on a refpkg
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit rollback [-h] [-n int] refpkg
+
+Undo an operation performed on a refpkg
+
+Rollback ``N`` operations on ``refpkg`` (default to 1 operation if
+``-n`` is omitted).  This is equivalent to calling the ``rollback()``
+method of ``taxtastic.refpkg.Refpkg``.  If there are not at least
+``N`` operations that can be rolled back, an error is returned and no
+changes are made to the refpkg.
+
+positional arguments:
+  refpkg      the reference package to operate on
+
+options:
+  -h, --help  show this help message and exit
+  -n int      Number of operations to roll back
+```
+
+## taxtastic_taxit_rollforward
+
+### Tool Description
+Restore a change to a refpkg immediately after being reverted
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit rollforward [-h] [-n int] refpkg
+
+Restore a change to a refpkg immediately after being reverted
+
+Restore the last ``N`` rolled back operations on ``refpkg``, or the
+last operation if ``-n`` is omitted.  If there are not at least ``N``
+operations that can be rolled forward on this refpkg, then an error is
+returned and no changes are made to the refpkg.
+
+Note that operations can only be rolled forward immediately after
+being rolled back.  If any operation besides a rollback occurs, all
+roll forward information is removed.
+
+positional arguments:
+  refpkg      the reference package to operate on
+
+options:
+  -h, --help  show this help message and exit
+  -n int      Number of operations to roll back
+```
+
+## taxtastic_taxit_rp
+
+### Tool Description
+Resolve path; get the path to a file in the reference package
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit rp [-h] refpkg KEY
+
+Resolve path; get the path to a file in the reference package
+
+See online documentation for ``taxit create`` for a list of
+permissible values for ``KEY``
+
+For example, write the absolute path to the file containing the
+phylogenetic tree in ``my.refpkg`` to stdout::
+
+  taxit rp my.refpkg tree
+
+Examine the contents of the seq_info file::
+
+  less $(taxit rp my.refpkg seq_info)
+
+positional arguments:
+  refpkg      the reference package to operate on
+  KEY         show the path for file identified by KEY
+
+options:
+  -h, --help  show this help message and exit
+```
+
+## taxtastic_taxit_update
+
+### Tool Description
+Add or modify files or metadata in a refpkg
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/taxtastic:0.12.0--pyhdfd78af_0
+- **Homepage**: https://github.com/fhcrc/taxtastic
+- **Package**: https://anaconda.org/channels/bioconda/packages/taxtastic/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: taxit update [-h] [--metadata]
+                    [--stats-type {PhyML,FastTree,RAxML,IQTREE}]
+                    [--frequency-type {empirical,model}]
+                    refpkg [key=value ...]
+
+Add or modify files or metadata in a refpkg
+
+Update ``refpkg`` to set ``key`` to ``some value``.  If ``--metadata``
+is specified, the update is done to the metadata.  Otherwise ``some
+value`` is treated as the path to a file, and that file is updated in
+``refpkg``.  An arbitrary of "key=value" pairs can be specified on the
+command line.  If the same key is specified twice, the later
+occurrence dominates.
+
+All updates specified to an instance of this command are run as a
+single operation, and will all be undone by a single rollback.
+
+For example::
+
+  taxit update my-refpkg meep=../otherdir/boris hilda=abcd
+
+If a file already exists under a given key, it is overwritten.
+
+The --metadata option causes a change to the metadata instead of
+files.  For example, to set the author field to "Genghis Khan" and the
+version to 0.4.3::
+
+  taxit update --metadata "author=Genghis Khan" version=0.4.3
+
+Other examples:
+
+Set the author in my_refpkg::
+
+  taxit update my_refpkg --metadata "author=Boris the mad baboon"
+
+Set the author and version at once::
+
+  taxit update my_refpkg --metadata "author=Bill" "package_version=1.7.2"
+
+Insert a file into the refpkg::
+
+  taxit update my_refpkg "aln_fasta=/path/to/a/file.fasta"
+
+positional arguments:
+  refpkg                the reference package to operate on
+  key=value             keys to update, in key=some_file format
+
+options:
+  -h, --help            show this help message and exit
+  --metadata            Update metadata instead of files
+
+Tree inference log file parsing (for updating `tree_stats`):
+  --stats-type {PhyML,FastTree,RAxML,IQTREE}
+                        stats file type [default: attempt to guess from file
+                        contents]
+  --frequency-type {empirical,model}
+                        Residue frequency type from the model. Required for
+                        PhyML Amino Acid alignments.
 ```
 

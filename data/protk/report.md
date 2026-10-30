@@ -4,17 +4,33 @@
 
 | Tool | Result | Reason |
 |---|---|---|
+| protk_add_retention_times.rb | PASS | synthetic data: small pepXML skeleton for the protk repo tiny.mgf spectra (scan=4 to 6); retention times 2760, 2760 and 5269.998 s added, matching RTINSECONDS in the mgf |
+| protk_augustus_to_proteindb.rb | PASS | Ran on the protk repo Augustus sample GFF; 12 protein records written with CDS coordinates in the headers |
+| protk_filter_psms.rb | PASS | Ran on protk repo X!Tandem pepXML (97 spectrum queries); kept the 19 whose top hit is a DROME protein |
 | protk_interprophet.rb | PASS |  |
 | protk_make_decoy.rb | PASS |  |
+| protk_maker_to_proteindb.rb | Failed | image problem: samtools is not in the image, so no protein sequences are fetched and only the FASTA headers are written |
 | protk_mascot_search.rb | Not completed | Needs a Mascot server with network access and an account; not available. |
+| protk_mascot_to_pepxml.rb | PASS | Ran on the protk repo Mascot results file; pepXML with 240 spectrum queries written (the FASTA given with --database does not hold the hit proteins) |
 | protk_msgfplus_search.rb | Failed | image problem: the image has no MSGFPlus.jar, so msgfplus_search.rb stops with 'Could not find MSGFPlus.jar'. |
+| protk_mzid_to_pepxml.rb | Failed | tool bug: protk 1.4.4 calls SpectrumQuery.from_mzid with one argument but it needs two, so it stops with ArgumentError |
+| protk_mzid_to_protxml.rb | PASS | Ran on the protk repo PeptideShaker mzIdentML file; protXML with one protein group and 17 peptides written |
+| protk_omssa_search.rb | Failed | image problem: the image has no omssacl and no makeblastdb, so the search cannot run |
 | protk_peptide_prophet.rb | PASS |  |
 | protk_pepxml_to_table.rb | PASS |  |
 | protk_protein_prophet.rb | PASS | Ran on tandem pepXML data from the protk repo; protein groups match the repo reference (database path in the input pepXML was made relative and the FASTA staged beside it). |
 | protk_protxml_to_gff.rb | Failed | image problem: the image has no makeblastdb, so protxml_to_gff.rb stops with ENOENT when it indexes the FASTA database. |
+| protk_protxml_to_psql.rb | Failed | image problem: libsqlite3 is missing, so the sqlite3 Ruby gem cannot load and the command stops at start |
 | protk_protxml_to_table.rb | PASS |  |
+| protk_repair_run_summary.rb | PASS | Ran on protk repo X!Tandem pepXML; msms_run_summary base_name and raw_data changed to the values given |
 | protk_sixframe.rb | PASS |  |
+| protk_spectrast_create.rb | PASS | Ran on protk repo iProphet pepXML with two mzML files; library of 251 spectra written (.splib, .spidx, .pepidx) |
+| protk_spectrast_filter.rb | PASS | Filtered the library made by spectrast_create with Charge==2; 95 of 251 spectra kept, all charge 2 |
+| protk_swissprot_to_table.rb | PASS | Ran on protk repo UniProt flat file and its query list; table with one row per query (190 rows) written |
 | protk_tandem_search.rb | Failed | image problem: the image has no X!Tandem binary, so tandem_search.rb stops with 'Unable to locate tandem'. |
+| protk_tandem_to_pepxml.rb | PASS | Ran on a protk repo X!Tandem result file; pepXML with 97 spectrum queries written |
+| protk_unimod_to_loc.rb | PASS | Ran on the protk repo unimod.xml; mascot_mods.loc with 74 modification names written |
+| protk_uniprot_mapper.rb | Failed | tool bug: protk uses the retired www.uniprot.org/mapping service, which now answers 301 Moved Permanently |
 
 ## protk_tandem_search.rb
 
@@ -399,6 +415,413 @@ Usage: sixframe.rb [options] genome.fasta
         --gff3                       Output gff3 instead of fasta [false]
 ```
 
+
+## protk_add_retention_times.rb
+
+### Tool Description
+Look up retention times in a raw file and add them to a pepxml file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Look up retention times in a raw file and add them to a pepxml file.
+
+Usage: add_retention_times.rb [options] file1.pep.xml file2.mgf
+    -h, --help                       Display this screen
+    -r, --replace-output             Dont skip analyses for which the output file already exists [false]
+    -o, --output out                 An explicitly named output file.
+```
+
+## protk_augustus_to_proteindb.rb
+
+### Tool Description
+Create a protein database from Augustus gene prediction output that is suitable for later processing by proteogenomics tools.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Create a protein database from Augustus gene prediction output that is suitable for later processing by proteogenomics tools.
+
+Usage: augustus_to_proteindb.rb [options] augustus.gff3
+    -h, --help                       Display this screen
+    -o, --output out                 An explicitly named output file. \
+  The default is to write to standard output
+        --info                       Include CDS Coordinates [false]
+```
+
+## protk_filter_psms.rb
+
+### Tool Description
+Filter psms in a pepxml file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Filter psms in a pepxml file.
+
+Usage: filter_psms.rb [options] expression file.pepxml
+    -h, --help                       Display this screen
+    -o, --output out                 An explicitly named output file.
+        --debug                      Run in debug mode [false]
+    -A, --attribute name             Match expression against a specific search_hit attribute [protein]
+    -C, --check-alternatives         Also match expression against to alternative_proteins [false]
+    -R, --reject                     Keep mismatches instead of matches [false]
+```
+
+## protk_maker_to_proteindb.rb
+
+### Tool Description
+Create a protein database from Maker gene prediction output that is suitable for later processing by proteogenomics tools.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Create a protein database from Maker gene prediction output that is suitable for later processing by proteogenomics tools.
+
+Usage: maker_to_proteindb.rb [options] maker.gff3
+    -h, --help                               Display this screen
+    -o, --output out                         An explicitly named output file.
+        --debug                              Run in debug mode [false]
+        --info                               Include CDS Coordinates [false]
+    -p, --prot-fasta proteins                A fasta file \
+	containing protein sequences for each transcript
+```
+
+## protk_mascot_to_pepxml.rb
+
+### Tool Description
+Convert mascot dat files to pep.xml files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Convert mascot dat files to pep.xml files.
+
+Usage: mascot_to_pepxml.rb [options] file1.dat file2.dat ... 
+    -h, --help                               Display this screen
+    -r, --replace-output                     Dont skip analyses for which the output file already exists [false]
+    -o, --output out                         An explicitly named output file.
+    -d, --database dbname                    Specify the database to use for this search. Can be a named protk database or the path to a fasta file [sphuman]
+        --enzyme enz                         Enzyme [Trypsin]
+        --shortid                            Use short protein id as per Mascot result (default uses full protein ids in fasta file) [false]
+```
+
+## protk_mzid_to_pepxml.rb
+
+### Tool Description
+Convert an mzIdentML file to pep.xml
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Convert an mzIdentML file to pep.xml
+
+Usage: mzid_to_pepxml.rb [options] file1.mzid
+    -h, --help                       Display this screen
+    -o, --output out                 An explicitly named output file.
+        --debug                      Run in debug mode [false]
+```
+
+## protk_mzid_to_protxml.rb
+
+### Tool Description
+Convert an mzIdentML file to protXML.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Convert an mzIdentML file to protXML.
+
+Usage: mzid_to_protxml.rb [options] file1.mzid
+    -h, --help                       Display this screen
+    -o, --output out                 An explicitly named output file.
+        --debug                      Run in debug mode [false]
+        --minprob mp                 Minimum probability for protein to be included in the output [0.05]
+```
+
+## protk_omssa_search.rb
+
+### Tool Description
+Run an OMSSA msms search on a set of mgf input files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Run an OMSSA msms search on a set of mgf input files.
+
+Usage: omssa_search.rb [options] file1.mgf file2.mgf ...
+    -h, --help                               Display this screen
+    -r, --replace-output                     Dont skip analyses for which the output file already exists [false]
+    -o, --output out                         An explicitly named output file.
+    -n, --threads num                        Number of processing threads to use. Set to 0 to autodetect an appropriate value [1]
+    -d, --database dbname                    Specify the database to use for this search. Can be a named protk database or the path to a fasta file [sphuman]
+        --enzyme enz                         Enzyme [Trypsin]
+        --var-mods vm                        Variable modifications. These should be provided in a comma separated list
+        --fix-mods fm                        Fixed modifications. These should be provided in a comma separated list
+        --instrument instrument              Instrument [ESI-QUAD-TOF]
+        --fragment-ion-tol-units tolu        Fragment ion mass tolerance units (Da or mmu). [Da]
+        --precursor-ion-tol-units tolu       Precursor ion mass tolerance units (ppm or Da). [ppm]
+    -f, --fragment-ion-tol tol               Fragment ion mass tolerance (unit dependent). [0.65]
+    -p, --precursor-ion-tol tol              Precursor ion mass tolerance. [200]
+    -a, --search-type type                   Use monoisotopic or average precursor masses. (monoisotopic or average) [monoisotopic]
+    -v, --num-missed-cleavages num           Number of missed cleavages allowed [2]
+    -q, --respect-charges                    Dont respect charges in the input file. Instead impute them by trying various options [false]
+        --searched-ions si                   Ion series to search
+        --num-peaks-for-multi-isotope-search np
+                                             Number of peaks to include in multi-isotope search [0]
+    -g, --glyco                              Expect N-Glycosylation modifications as variable mod in a search or as a parameter when building statistical models [false]
+    -m, --methionineo                        Expect Oxidised Methionine modifications as variable mod in a search [false]
+    -c, --carbamidomethyl                    Expect Carbamidomethyl C modifications as fixed mod in a search [false]
+    -R, --no-add-retention-times             Don't post process the output to add retention times [true]
+        --max-hit-expect exp                 Expect values less than this are considered to be hits [1]
+        --intensity-cut-off co               Peak intensity cut-off as a fraction of maximum peak intensity [0.0005]
+        --galaxy-index-dir dir               Specify galaxy index directory, will search for mods file there.
+        --omx-output path                    Specify path for additional OMX output (optional).
+        --logfile path                       Send OMSSA stdout to a logfile
+```
+
+## protk_protxml_to_psql.rb
+
+### Tool Description
+Convert a protXML file to a sqlite database.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Convert a protXML file to a sqlite database.
+
+Usage: protxml_to_psql.rb [options] file1.protXML
+    -h, --help                       Display this screen
+    -o, --output out                 An explicitly named output file.
+    -r, --replace-output             Dont skip analyses for which the output file already exists [false]
+    -d, --database path              A Fasta file where full protein sequences can be looked up
+
+(Help text taken from the protk 1.4.4 source, bin/protxml_to_psql.rb. Running the command with --help fails
+in this image because libsqlite3 is missing. Further arguments after the protXML file are mzML spectrum files.)
+```
+
+## protk_repair_run_summary.rb
+
+### Tool Description
+Repair msms_run_summary tag in a pepXML file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Repair msms_run_summary tag in a pepXML file.
+
+Usage: repair_run_summary.rb [options] file1.pepXML
+    -h, --help                       Display this screen
+    -N, --base-name mzmlfile         Original MSMS spectrum file used for search
+    -R, --raw-type type              Raw data type used for search
+        --omssa-itol fitol           Add a fragment ion tolerance parameter to the omssa search summary
+```
+
+## protk_spectrast_create.rb
+
+### Tool Description
+Create a spectral library from pep.xml input files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Create a spectral library from pep.xml input files.
+
+Usage: spectrast_create.rb [options] file1.pep.xml file1.pep.xml ...
+    -h, --help                       Display this screen
+    -o, --output out                 An explicitly named output file.
+        --spectrum-files sf          Paths to raw spectrum files. These should be provided in a comma separated list
+    -B, --binary-output              Produce spectral libraries in binary format rather than ASCII [false]
+        --predicate pred             Keep only spectra satifying predicate pred. Should be a C-style predicate
+        --p-thresh val               Probability threshold below which spectra are discarded [0.99]
+        --instrument-acquisition setting
+                                     Set the instrument and acquisition settings of the spectra (in case not specified in data files).
+	                             Examples: CID, ETD, CID-QTOF, HCD. The latter two are treated as high-mass accuracy spectra. [CID]
+```
+
+## protk_spectrast_filter.rb
+
+### Tool Description
+Manipulate splib files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Manipulate splib files.
+
+Usage: spectrast_filter.rb [options] file1.splib file1.splib ...
+    -h, --help                       Display this screen
+    -o, --output out                 An explicitly named output file.
+    -B, --binary-output              Produce spectral libraries in binary format rather than ASCII [false]
+        --predicate pred             Keep only spectra satifying predicate pred. Should be a C-style predicate
+        --merge method               How to combine multiple splib files (if provided). Options are U,S,H
+				     U: Union. Include all the peptide ions in all the files.
+				     S: Subtraction. Only include peptide ions in the first file 
+				     	that are not present in any of the other files.
+				     H: Subtraction of homologs. Only include peptide ions in the
+				     	first file that do not have any homologs with 
+				     	same charge and similar m/z in any of the other files.
+				     A: Appending. Each peptide ion is added from only one library: 
+				     	the first file in the argument list that contains that peptide ion.
+				     	Useful for keeping existing consensus spectra unchanged while adding
+				     	only previously unseen peptide ions. [U]
+        --replicates method          How to derive a single spectrum from replicates. Options are None, C,B
+				     C: Consensus. Create the consensus spectrum of all replicate spectra of each peptide ion.
+				     B: Best replicate. Pick the best replicate of each peptide ion. [None]
+```
+
+## protk_swissprot_to_table.rb
+
+### Tool Description
+Query a swissprot flat file and output to tab delimited table.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Query a swissprot flat file and output to tab delimited table.
+
+Usage: swissprot_to_table.rb [options] -d flatfile.dat queries.txt
+    -h, --help                       Display this screen
+    -o, --output out                 An explicitly named output file.
+        --debug                      Run in debug mode [false]
+    -d, --database file              Uniprot flatfile database containing full records for proteins
+    -K, --keys keys                  Filter output to only the specified keys (comma separated)
+        --show-keys                  Print a list of possible values for the keys field and exit [false]
+    -S, --separator sep              Separator character for output, default (tab) [	]
+    -A, --array-separator sep        Array Separator character, default , [,]
+        --query-separator sep        Separator character for queries.txt, default is tab [	]
+        --id-column num              Column in queries.txt in which Uniprot Accessions are found [1]
+```
+
+## protk_tandem_to_pepxml.rb
+
+### Tool Description
+Convert tandem files to pep.xml files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Convert tandem files to pep.xml files.
+
+Usage: tandem_to_pepxml.rb [options] file1.dat file2.dat ... 
+    -h, --help                               Display this screen
+    -b, --output-prefix pref                 A string to prepend to the name of output files
+    -r, --replace-output                     Dont skip analyses for which the output file already exists [false]
+    -o, --output out                         An explicitly named output file.
+```
+
+## protk_unimod_to_loc.rb
+
+### Tool Description
+Reads a unimod xml file (eg from a Mascot installation) and produces a loc file with names of allowable chemical modifications.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Reads a unimod xml file (eg from a Mascot installation) and produces a loc file with names of allowable chemical modifications.
+
+Usage: unimod_to_loc.rb unimod.xml
+    (no options; the result is written to mascot_mods.loc in the current directory)
+
+(Help text taken from the protk 1.4.4 source, bin/unimod_to_loc.rb. The command has no --help option.)
+```
+
+## protk_uniprot_mapper.rb
+
+### Tool Description
+Given a set of IDs convert them to a different type of ID
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/protk:1.4.4a--hc9114bc_1
+- **Homepage**: https://github.com/iracooke/protk
+- **Package**: https://anaconda.org/channels/bioconda/packages/protk/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Given a set of IDs convert them to a different type of ID
+
+Usage: uniprot_mapper.rb input_file.txt fromID_type
+    -h, --help                       Display this screen
+    -o, --output out                 An explicitly named output file.
+        --id-column num              Specify a column for ids (default is column 1)
+        --to-id id                   Specify an ID to output. Can be used multiple times.
+```
 
 ## Metadata
 - **Skill**: generated

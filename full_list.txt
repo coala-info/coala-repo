@@ -1,4 +1,4 @@
-# Real-data test results of coala-repo CWL files (Docker). Tools tested: 16631; PASS: 13049; Failed: 1987; Not completed: 1595
+# Real-data test results of coala-repo CWL files (Docker). Tools tested: 16810; PASS: 13197; Failed: 2013; Not completed: 1600
 package	tool	result	reason
 10x_bamtofastq	10x_bamtofastq	PASS	
 3d-dna	3d-dna	Not completed	no real Hi-C test data (draft assembly + Juicer merged_nodups); on synthetic data 3d-dna stops in its finalize step
@@ -5020,26 +5020,52 @@ garnett-cli	garnett-cli_update_marker_file.R	PASS	synthetic data: a small marker
 gatk	gatk_ASEReadCounter	PASS	
 gatk	gatk_AccumulateQualityYieldMetrics	PASS	
 gatk	gatk_AccumulateVariantCallingMetrics	PASS	
+gatk	gatk_AddCommentsToBam	PASS	the CWL stages the input writable because the tool asserts the input BAM is writable; both @CO comments are in the output header
 gatk	gatk_AddFlowBaseQuality	Not completed	flow-based (Ultima) tool; no flow-based test data available
 gatk	gatk_AddFlowSNVQuality	Not completed	flow-based (Ultima) tool; no flow-based test data available
+gatk	gatk_AddOATag	PASS	
+gatk	gatk_AddOrReplaceReadGroups	PASS	
+gatk	gatk_AddOriginalAlignmentTags	PASS	
+gatk	gatk_AlleleFrequencyQC	PASS	synthetic data: a sampleAlias header line was added to a HaplotypeCaller VCF (the tool requires it)
 gatk	gatk_AnalyzeCovariates	PASS	
 gatk	gatk_AnalyzeSaturationMutagenesis	Not completed	needs paired-end saturation mutagenesis amplicon reads with codon coordinates; no matching test data
 gatk	gatk_AnnotateIntervals	PASS	
+gatk	gatk_AnnotateVcfWithBamDepth	PASS	
+gatk	gatk_AnnotateVcfWithExpectedAlleleFraction	PASS	synthetic data: hand-written mixing fractions table (CalculateMixingFractions gave NaN on the test data)
+gatk	gatk_ApplyBQSR	PASS	
+gatk	gatk_ApplyBQSRSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); NetworkAccess is set in the CWL, so the failure is the same as in the other Spark tools
+gatk	gatk_ApplyVQSR	PASS	real nf-core sites VCFs; the recalibration used the AF annotation (the test VCFs have no QD or MQ)
+gatk	gatk_BQSRPipelineSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); NetworkAccess is set in the CWL, so the failure is the same as in the other Spark tools
+gatk	gatk_BaitDesigner	PASS	
 gatk	gatk_BamIndexStats	PASS	
+gatk	gatk_BamToBfq	PASS	
+gatk	gatk_BaseRecalibrator	PASS	
+gatk	gatk_BaseRecalibratorSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); NetworkAccess is set in the CWL, so the failure is the same as in the other Spark tools
 gatk	gatk_BedToIntervalList	PASS	
 gatk	gatk_BpmToNormalizationManifestCsv	Not completed	needs an Illumina array BPM manifest file; no test data available
+gatk	gatk_BuildBamIndex	PASS	
+gatk	gatk_BwaAndMarkDuplicatesPipelineSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); NetworkAccess is set in the CWL, so the failure is the same as in the other Spark tools
+gatk	gatk_BwaMemIndexImageCreator	PASS	
+gatk	gatk_BwaSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); NetworkAccess is set in the CWL, so the failure is the same as in the other Spark tools
+gatk	gatk_CRAMIssue8768Detector	PASS	
 gatk	gatk_CalcMetadataSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user
 gatk	gatk_CalculateAverageCombinedAnnotations	PASS	synthetic data: planted RAW_GT_COUNT and SUM_QD annotations; the average is correct (30 / 5 = 6)
 gatk	gatk_CalculateContamination	PASS	
 gatk	gatk_CalculateFingerprintMetrics	PASS	
+gatk	gatk_CalculateGenotypePosteriors	PASS	
+gatk	gatk_CalculateMixingFractions	Not completed	ran and wrote the table, but both fractions are NaN: the test samples have no informative sites, so the numbers cannot be confirmed
 gatk	gatk_CalculateReadGroupChecksum	PASS	
+gatk	gatk_CalibrateDragstrModel	PASS	the 40 kb test region has too few repeat sites, so the default run writes default parameters; with --force-estimation the file holds estimated values
 gatk	gatk_CallCopyRatioSegments	PASS	synthetic data: a header row was added to the nf-core copy-ratio table and ModelSegments (same image) made the .cr.seg input
 gatk	gatk_CallableLoci	PASS	
 gatk	gatk_CheckDuplicateMarking	PASS	synthetic data: planted inconsistent duplicate flag; exit 4 (accepted as success) and the read name is listed
 gatk	gatk_CheckFingerprint	PASS	synthetic data: one planted genotype at the single haplotype-map site; LOD is positive and the haplotype matches
 gatk	gatk_CheckIlluminaDirectory	PASS	the test flowcell holds only tile 1101, so the tool correctly reports the other tiles as missing (exit 4, accepted as success)
 gatk	gatk_CheckPileup	PASS	
+gatk	gatk_CheckReferenceCompatibility	PASS	
 gatk	gatk_CheckTerminatorBlock	PASS	
+gatk	gatk_CleanSam	PASS	
+gatk	gatk_ClipReads	PASS	
 gatk	gatk_ClusterCrosscheckMetrics	PASS	input made by CrosscheckFingerprints from the two test BAMs in the same image
 gatk	gatk_CollectAlignmentSummaryMetrics	PASS	
 gatk	gatk_CollectAllelicCounts	PASS	
@@ -5047,6 +5073,7 @@ gatk	gatk_CollectAllelicCountsSpark	Failed	image problem: Spark/Hadoop login fai
 gatk	gatk_CollectArraysVariantCallingMetrics	Not completed	needs an Illumina genotyping-array VCF with array annotations; no test data available
 gatk	gatk_CollectBaseDistributionByCycle	PASS	
 gatk	gatk_CollectBaseDistributionByCycleSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CollectQualityYieldMetricsSpark, which works only with cwltool --no-match-user
+gatk	gatk_CollectDuplicateMetrics	PASS	
 gatk	gatk_CollectF1R2Counts	PASS	
 gatk	gatk_CollectGcBiasMetrics	PASS	
 gatk	gatk_CollectHiSeqXPfFailMetrics	PASS	
@@ -5068,6 +5095,7 @@ gatk	gatk_CollectRawWgsMetrics	PASS
 gatk	gatk_CollectReadCounts	PASS	
 gatk	gatk_CollectRnaSeqMetrics	PASS	
 gatk	gatk_CollectRrbsMetrics	Not completed	needs bisulfite (RRBS) aligned reads; no small RRBS test data available
+gatk	gatk_CollectSVEvidence	PASS	
 gatk	gatk_CollectSamErrorMetrics	PASS	
 gatk	gatk_CollectSequencingArtifactMetrics	PASS	
 gatk	gatk_CollectTargetedPcrMetrics	PASS	
@@ -5075,6 +5103,7 @@ gatk	gatk_CollectUmiPrevalenceMetrics	PASS	contig renamed in a copy of the refer
 gatk	gatk_CollectVariantCallingMetrics	PASS	
 gatk	gatk_CollectWgsMetrics	PASS	
 gatk	gatk_CollectWgsMetricsWithNonZeroCoverage	PASS	
+gatk	gatk_CombineGVCFs	PASS	
 gatk	gatk_CombineGenotypingArrayVcfs	Not completed	needs genotyping-array VCFs from Illumina GTC files; no test data available
 gatk	gatk_CombineSegmentBreakpoints	PASS	synthetic data: two small planted segment tables; the combined breakpoints are correct
 gatk	gatk_CompareBaseQualities	PASS	
@@ -5082,73 +5111,223 @@ gatk	gatk_CompareDuplicatesSpark	Failed	image problem: Spark/Hadoop login fails 
 gatk	gatk_CompareGtcFiles	Not completed	needs Illumina GTC genotype files; no test data available
 gatk	gatk_CompareIntervalLists	Failed	tool bug: crashes with NoSuchElementException whenever the two interval lists differ, which is the tool's main use; only identical lists compare.
 gatk	gatk_CompareMetrics	PASS	different metric files give exit 4 (accepted as success) with the differences listed
+gatk	gatk_CompareReferences	PASS	
 gatk	gatk_CompareSAMs	PASS	different BAMs give exit 4 (accepted as success) and ARE_EQUAL N with the correct missing-read counts
+gatk	gatk_ComposeSTRTableFile	PASS	
+gatk	gatk_Concordance	PASS	
+gatk	gatk_CondenseDepthEvidence	PASS	output matches the GATK test file merged.rd.txt
+gatk	gatk_ConvertCountsToDepthFile	PASS	output matches the GATK test file expected_output.rd.txt.gz
 gatk	gatk_ConvertHaplotypeDatabaseToVcf	PASS	
+gatk	gatk_ConvertHeaderlessHadoopBamShardToBam	PASS	synthetic data: headerless shard cut from the nf-core BAM; the converted BAM has all 5644 reads
 gatk	gatk_ConvertSequencingArtifactToOxoG	PASS	
 gatk	gatk_CountBases	PASS	
+gatk	gatk_CountBasesInReference	PASS	
 gatk	gatk_CountBasesSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
+gatk	gatk_CountFalsePositives	PASS	
 gatk	gatk_CountReads	PASS	
 gatk	gatk_CountReadsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); works only with cwltool --no-match-user
+gatk	gatk_CountVariants	PASS	
+gatk	gatk_CountVariantsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_CpxVariantReInterpreterSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
 gatk	gatk_CreateBafRegressMetricsFile	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
 gatk	gatk_CreateExtendedIlluminaManifest	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_CreateHadoopBamSplittingIndex	PASS	
 gatk	gatk_CreateReadCountPanelOfNormals	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); works only with cwltool --no-match-user
+gatk	gatk_CreateSequenceDictionary	PASS	
+gatk	gatk_CreateSomaticPanelOfNormals	PASS	panel built from two Mutect2 tumor-only runs via GenomicsDBImport; 3 sites seen in both samples
 gatk	gatk_CreateVerifyIDIntensityContaminationMetricsFile	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
 gatk	gatk_CrosscheckFingerprints	PASS	exit code 4 (fingerprint mismatch found by design) is accepted as success
+gatk	gatk_CrosscheckReadGroupFingerprints	PASS	exit code 4 (mismatch reported by design) is accepted as success
 gatk	gatk_DenoiseReadCounts	PASS	
 gatk	gatk_DepthOfCoverage	PASS	
 gatk	gatk_DetermineGermlineContigPloidy	PASS	
+gatk	gatk_DiscoverVariantsFromContigAlignmentsSAMSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_DownsampleByDuplicateSet	PASS	synthetic data: nf-core BAM with planted MI tags sorted by molecule number; about half of the sets kept (2688 of 5644 reads, whole pairs)
+gatk	gatk_DownsampleSam	PASS	
 gatk	gatk_DumpTabixIndex	PASS	
 gatk	gatk_EstimateLibraryComplexity	PASS	
+gatk	gatk_EvaluateInfoFieldConcordance	PASS	
 gatk	gatk_ExampleMultiFeatureWalker	Not completed	example developer tool: the run finishes but it writes no output to check
 gatk	gatk_ExtractFingerprint	PASS	
 gatk	gatk_ExtractIlluminaBarcodes	PASS	synthetic data: barcode list taken from the first 8 bases of the real reads
+gatk	gatk_ExtractOriginalAlignmentRecordsByNameSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); NetworkAccess is set in the CWL, so the failure is the same as in the other Spark tools
+gatk	gatk_ExtractSVEvidenceSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_ExtractSequences	PASS	
+gatk	gatk_ExtractVariantAnnotations	PASS	real nf-core sites VCFs; only the AF and AC annotations exist, so those were extracted
+gatk	gatk_FastaAlternateReferenceMaker	PASS	
+gatk	gatk_FastaReferenceMaker	PASS	
+gatk	gatk_FastqToSam	PASS	
+gatk	gatk_FifoBuffer	PASS	
+gatk	gatk_FilterAlignmentArtifacts	Failed	tool bug: --bam-output writes an empty 0-byte BAM and index; the filtered VCF is correct
+gatk	gatk_FilterFuncotations	PASS	synthetic data: input is the Funcotator output from the one-gene data source; all variants got NOT_CLINSIG
 gatk	gatk_FilterIntervals	PASS	
+gatk	gatk_FilterMutectCalls	PASS	
+gatk	gatk_FilterSamReads	PASS	input is the nf-core BAM sorted by read name with SortSam and with secondary/supplementary reads removed (the tool rejects them); 5640 aligned reads kept
+gatk	gatk_FilterVariantTranches	PASS	
+gatk	gatk_FilterVcf	PASS	
+gatk	gatk_FindBadGenomicKmersSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_FindBreakpointEvidenceSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_FindMendelianViolations	PASS	
+gatk	gatk_FixMateInformation	PASS	
+gatk	gatk_FixMisencodedBaseQualityReads	PASS	synthetic data: nf-core BAM with every base quality shifted by +31; the tool restored the original qualities
+gatk	gatk_FixVcfHeader	PASS	
 gatk	gatk_FlagStat	PASS	
 gatk	gatk_FlagStatSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
 gatk	gatk_FlowFeatureMapper	Not completed	experimental flow-based (Ultima) tool: no matching flow-sequencing test data
 gatk	gatk_FlowPairHMMAlignReadsToHaplotypes	Not completed	experimental flow-based (Ultima) tool: no matching flow-sequencing test data
+gatk	gatk_FuncotateSegments	PASS	synthetic data: one-gene data source and a hand-written segment file on the chr22 test region; gene and exon overlaps checked
+gatk	gatk_Funcotator	PASS	synthetic data: one-gene data source built on the chr22 test region (GATK repo small data sources need an hg19 chr3 reference that is not available); the three variants in the gene came out as MISSENSE with correct codon changes
+gatk	gatk_FuncotatorDataSourceDownloader	Not completed	downloads the multi-gigabyte Broad data source bundle from Google Cloud; too heavy to run here
+gatk	gatk_GatherBQSRReports	PASS	
+gatk	gatk_GatherBamFiles	PASS	
 gatk	gatk_GatherNormalArtifactData	PASS	
 gatk	gatk_GatherPileupSummaries	PASS	
+gatk	gatk_GatherTranches	Not completed	no usable test data: the tool needs version 6 VQSLOD tranche files; the GATK repo only has version 5 files, which the tool rejects
+gatk	gatk_GatherVcfs	PASS	
+gatk	gatk_GatherVcfsCloud	PASS	
 gatk	gatk_GeneExpressionEvaluation	Not completed	runs, but the counts (fractional, near zero) cannot be confirmed: the annotation had to be shifted by hand to fit the small test slice
+gatk	gatk_GenomicsDBImport	PASS	
+gatk	gatk_GenotypeConcordance	PASS	
+gatk	gatk_GenotypeGVCFs	PASS	
 gatk	gatk_GermlineCNVCaller	PASS	
 gatk	gatk_GetNormalArtifactData	PASS	
 gatk	gatk_GetPileupSummaries	PASS	
 gatk	gatk_GetSampleName	PASS	
+gatk	gatk_GnarlyGenotyper	PASS	works from a GenomicsDB workspace of reblocked GVCFs (3 genotyped sites); a CombineGVCFs file as input crashes inside the tool (IndexOutOfBoundsException)
 gatk	gatk_GroundTruthReadsBuilder	Not completed	experimental flow-based (Ultima) tool: no matching flow-sequencing test data
 gatk	gatk_GroundTruthScorer	Not completed	experimental flow-based (Ultima) tool: no matching flow-sequencing test data
+gatk	gatk_GroupedSVCluster	PASS	input VCF subset to records without other-contig partners because only a chr22 reference is available
 gatk	gatk_GtcToVcf	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_GtfToBed	PASS	input is the nf-core chr21 GENCODE GTF (272 genes in, 272 BED rows out); the tool needs --sequence-dictionary
+gatk	gatk_HaplotypeBasedVariantRecaller	PASS	experimental tool; wrote the haplotype likelihood matrix CSV from the HaplotypeCaller haplotype BAM and VCF
+gatk	gatk_HaplotypeCaller	PASS	
+gatk	gatk_HaplotypeCallerSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
 gatk	gatk_HtsgetReader	Not completed	needs a reachable htsget server and record id; no public endpoint could be reached from this machine
 gatk	gatk_IdentifyContaminant	PASS	
 gatk	gatk_IlluminaBasecallsToFastq	PASS	
 gatk	gatk_IlluminaBasecallsToSam	PASS	
+gatk	gatk_IndexFeatureFile	PASS	
 gatk	gatk_IntervalListToBed	PASS	
 gatk	gatk_IntervalListTools	PASS	
+gatk	gatk_JointGermlineCNVSegmentation	PASS	
+gatk	gatk_LearnReadOrientationModel	PASS	
+gatk	gatk_LeftAlignAndTrimVariants	PASS	
+gatk	gatk_LeftAlignIndels	PASS	
 gatk	gatk_LiftOverHaplotypeMap	PASS	synthetic data: target dictionary made by renaming chr22 to chrY to match the nf-core chain file
 gatk	gatk_LiftOverIntervalList	PASS	synthetic data: target dictionary made by renaming chr22 to chrY to match the nf-core chain file
+gatk	gatk_LiftoverVcf	PASS	synthetic data: the target reference is the nf-core chr22 FASTA with its contig renamed to chrY to fit the nf-core chain file
 gatk	gatk_LocalAssembler	PASS	
+gatk	gatk_MTLowHeteroplasmyFilterTool	PASS	runs and passes all sites unchanged; no mitochondrial-style site with allele fraction below 0.1 passed the other filters, so the low-heteroplasmy filter itself was not triggered
+gatk	gatk_MakeSitesOnlyVcf	PASS	
+gatk	gatk_MakeVcfSampleNameMap	PASS	
+gatk	gatk_MarkDuplicates	PASS	
+gatk	gatk_MarkDuplicatesSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); NetworkAccess is set in the CWL, so the failure is the same as in the other Spark tools
+gatk	gatk_MarkDuplicatesWithMateCigar	PASS	
 gatk	gatk_MarkIlluminaAdapters	PASS	
 gatk	gatk_MeanQualityByCycle	PASS	
 gatk	gatk_MeanQualityByCycleSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
 gatk	gatk_MergeAnnotatedRegions	PASS	
 gatk	gatk_MergeAnnotatedRegionsByAnnotation	Not completed	runs to success, but the only real input gives one segment, so nothing is merged and the merge cannot be confirmed.
+gatk	gatk_MergeBamAlignment	PASS	chained data: RevertSam of the nf-core sarscov2 paired BAM was the unmapped input; MC, MQ and UQ tags added and read group restored, 200 reads, 197 mapped
+gatk	gatk_MergeMutect2CallsWithMC3	PASS	synthetic data: truth VCF is the Mutect2 test VCF with a CENTERS header line added (no MC3 file available)
+gatk	gatk_MergeMutectStats	PASS	callable counts 977 + 956 merge to 1933
 gatk	gatk_MergePedIntoVcf	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_MergeSamFiles	PASS	
+gatk	gatk_MergeVcfs	PASS	
+gatk	gatk_MethylationTypeCaller	PASS	all 281 records match the GATK expected VCF
 gatk	gatk_ModelSegments	PASS	
+gatk	gatk_Mutect2	PASS	tumor-only run gives 6 real calls (chr22:1982 A>G also called by HaplotypeCaller); tumor-normal gives 0 calls because the two samples share the variants
+gatk	gatk_NVScoreVariants	PASS	CNN_1D score added to all 5 HaplotypeCaller calls
+gatk	gatk_NonNFastaSize	PASS	
+gatk	gatk_NormalizeFasta	PASS	
+gatk	gatk_NuMTFilterTool	PASS	input must come from FilterMutectCalls (needs AS_FilterStatus)
+gatk	gatk_ParallelCopyGCSDirectoryIntoHDFSSpark	Not completed	needs a Google Cloud Storage bucket and a Hadoop file system; not available here
 gatk	gatk_PathSeqBuildKmers	PASS	
 gatk	gatk_PathSeqBuildReferenceTaxonomy	Not completed	needs the NCBI taxonomy dump and RefSeq catalog (large downloads); no small real set
+gatk	gatk_PathSeqBwaSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_PathSeqFilterSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_PathSeqPipelineSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_PathSeqScoreSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
 gatk	gatk_Pileup	PASS	
 gatk	gatk_PileupSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
 gatk	gatk_PlotDenoisedCopyRatios	PASS	
 gatk	gatk_PlotModeledSegments	PASS	
+gatk	gatk_PositionBasedDownsampleSam	PASS	
+gatk	gatk_PostProcessReadsForRSEM	PASS	output is queryname ordered with mates adjacent (176 of 200 reads kept)
 gatk	gatk_PostprocessGermlineCNVCalls	PASS	
 gatk	gatk_PreprocessIntervals	PASS	
+gatk	gatk_PrintBGZFBlockInformation	PASS	
+gatk	gatk_PrintDistantMates	PASS	with mate-too-distant-length 100 the 58 reads with distant mates are unmapped
+gatk	gatk_PrintFileDiagnostics	PASS	
+gatk	gatk_PrintReadCounts	PASS	output counts file is identical to the input counts file
+gatk	gatk_PrintReads	PASS	
+gatk	gatk_PrintReadsHeader	PASS	
+gatk	gatk_PrintReadsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_PrintSVEvidence	PASS	output matches the GATK test file output.test_hg38.sr.txt.gz
+gatk	gatk_PrintVariantsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
 gatk	gatk_QualityScoreDistribution	PASS	
 gatk	gatk_QualityScoreDistributionSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name); same failure as CountReadsSpark, which works only with cwltool --no-match-user
+gatk	gatk_RampedHaplotypeCaller	PASS	
+gatk	gatk_ReadAnonymizer	PASS	
+gatk	gatk_ReadsPipelineSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_ReblockGVCF	PASS	
+gatk	gatk_ReferenceBlockConcordance	PASS	
+gatk	gatk_RemoveNearbyIndels	PASS	
+gatk	gatk_RenameSampleInVcf	PASS	
+gatk	gatk_ReorderSam	PASS	
+gatk	gatk_ReplaceSamHeader	PASS	synthetic data: a comment line was added to the header file; the input has to be staged writable, as the tool checks that it can write to the input
+gatk	gatk_RevertBaseQualityScores	PASS	synthetic data: OQ tag set from the original quality and QUAL replaced; the tool restored QUAL from OQ
+gatk	gatk_RevertOriginalBaseQualitiesAndAddMateCigar	PASS	synthetic data: OQ tag set from the original quality and QUAL replaced; QUAL restored from OQ
+gatk	gatk_RevertSam	PASS	
+gatk	gatk_RevertSamSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_SVAnnotate	PASS	
+gatk	gatk_SVCluster	PASS	depth-only input (pesr input needs a full hg38 reference)
+gatk	gatk_SVConcordance	PASS	
+gatk	gatk_SVStratify	PASS	
+gatk	gatk_SamFormatConverter	PASS	
+gatk	gatk_SamToFastq	PASS	
+gatk	gatk_SamToFastqWithTags	PASS	
+gatk	gatk_ScatterIntervalsByNs	PASS	
+gatk	gatk_ScoreVariantAnnotations	PASS	real nf-core sites VCFs; model trained on AF and AC (SNP only); 3451 PASS and 49 LOW_SCORE
+gatk	gatk_SelectVariants	PASS	
+gatk	gatk_SetNmAndUqTags	PASS	
+gatk	gatk_SetNmMdAndUqTags	PASS	NM and MD values match samtools calmd
+gatk	gatk_ShiftFasta	PASS	
+gatk	gatk_SimpleMarkDuplicatesWithMateCigar	PASS	
+gatk	gatk_SiteDepthtoBAF	PASS	output matches the GATK test file test2.baf.txt
+gatk	gatk_SortGff	PASS	
+gatk	gatk_SortSam	PASS	
+gatk	gatk_SortSamSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_SortVcf	PASS	
 gatk	gatk_SplitCRAM	PASS	
 gatk	gatk_SplitIntervals	PASS	
+gatk	gatk_SplitNCigarReads	PASS	the reference is a trimmed chr21 whose length differs from the reads (sequence dictionary check disabled); 44 spliced reads were split, no N remains in the CIGAR strings
+gatk	gatk_SplitReads	PASS	
+gatk	gatk_SplitSamByLibrary	PASS	
+gatk	gatk_SplitSamByNumberOfReads	PASS	
+gatk	gatk_SplitVcfs	PASS	
+gatk	gatk_StructuralVariantDiscoverer	Not completed	needs alignments of assembled contigs; only a name-sorted read BAM was available (it ran and called one inversion breakend pair, but that is not the tool's input type)
+gatk	gatk_StructuralVariationDiscoveryPipelineSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
+gatk	gatk_SvDiscoverFromLocalAssemblyContigAlignmentsSpark	Failed	image problem: Spark/Hadoop login fails for a user id with no passwd entry in the image (NullPointerException invalid null input: name)
 gatk	gatk_TagGermlineEvents	PASS	
+gatk	gatk_TrainVariantAnnotationsModel	PASS	python isolation-forest backend; SNP model files written
+gatk	gatk_TransferReadTags	PASS	synthetic data: BC tag removed from the nf-core 10x BAM and restored from the reverted BAM; all 5000 values match
+gatk	gatk_UmiAwareMarkDuplicatesWithMateCigar	PASS	synthetic data: constant RX tag added to the nf-core duplicate-marked BAM; the 1656 duplicates are marked
+gatk	gatk_UnmarkDuplicates	PASS	
+gatk	gatk_UpdateVCFSequenceDictionary	PASS	
+gatk	gatk_UpdateVcfSequenceDictionary_picard	PASS	
+gatk	gatk_VCFComparator	PASS	the wrapper passes the two VCFs as --variant:expected and --variant:actual (GATK tags); identical GVCFs compared without differences
+gatk	gatk_ValidateBasicSomaticShortMutations	PASS	the two test BAMs were used as tumour and normal stand-ins; validation table, summary and annotated VCF checked
 gatk	gatk_ValidateSamFile	PASS	
+gatk	gatk_ValidateVariants	PASS	no output file; the tool validated the VCF and exited 0
+gatk	gatk_VariantAnnotator	PASS	
 gatk	gatk_VariantEval	PASS	
+gatk	gatk_VariantFiltration	PASS	
+gatk	gatk_VariantRecalibrator	PASS	real nf-core sites VCFs with dbSNP as training and truth set; the AF annotation was used because the test VCFs have no QD or MQ
+gatk	gatk_VariantsToTable	PASS	
+gatk	gatk_VcfFormatConverter	PASS	
 gatk	gatk_VcfToAdpc	Not completed	no usable test data: needs Illumina genotyping array files (GTC, BPM, cluster or tool output) that are not in nf-core or Galaxy test sets
+gatk	gatk_VcfToIntervalList	PASS	
 gatk	gatk_ViewSam	PASS	
 gatk-framework	gatk-framework	PASS	
 gbdraw	gbdraw_circular	PASS	

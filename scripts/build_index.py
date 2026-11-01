@@ -424,6 +424,23 @@ def skill_overview(skill_path: Path) -> str:
     return first_para[:500] if first_para else ""
 
 
+def command_names(tool_id: str, cwl_files: list[str]) -> list[str]:
+    """Subcommands a package's tool files expose, without the package prefix.
+
+    ``subread_featureCounts.cwl`` gives ``featureCounts``. coala-client matches these whole
+    (never as substrings), so ``coala search featurecounts`` finds ``subread``, whose name and
+    description never mention featureCounts. A file named after the package adds nothing.
+    """
+    prefix = f"{tool_id}_".lower()
+    out: list[str] = []
+    for f in cwl_files:
+        stem = f[:-4] if f.endswith(".cwl") else f
+        name = stem[len(prefix):] if stem.lower().startswith(prefix) else stem
+        if name and name.lower() != tool_id.lower() and name not in out:
+            out.append(name)
+    return out
+
+
 def build_tool(tool_id: str, tool_path: Path) -> dict | None:
     """Build per-tool data and copy static files. Returns tool record for index and full data for tools/{id}.json."""
     report_path = tool_path / "report.md"
@@ -477,6 +494,10 @@ def build_tool(tool_id: str, tool_path: Path) -> dict | None:
         "has_skill": has_skill,
         "runtime_summary": parsed.get("runtime_summary_table", []),
     }
+    if label == "CLI":
+        commands = command_names(tool_id, cwl_files)
+        if commands:
+            index_entry["commands"] = commands
 
     # Repo links (GitHub tree) when DATA_REPO_URL is set
     skills_repo_link = None

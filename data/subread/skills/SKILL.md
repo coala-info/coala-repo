@@ -54,6 +54,30 @@ featureCounts -p --countReadPairs -a annotation.gtf -o counts.txt mapping_result
 featureCounts -s 1 -a annotation.gtf -o counts.txt mapping_results.bam
 ```
 
+#### Before you trust the counts: three checks
+`featureCounts` defaults silently drop reads. Run these on one BAM before counting all samples, and read the `.summary` after every run.
+
+1. **Multi-mapping reads (`-M`, tool input `multi_mapping`).** By default every read with `NH > 1` is skipped as `Unassigned_MultiMapping`. In assemblies with duplicated regions, gene families or paralogs, most reads can be multi-mapped, and the default then counts a minority of reads and misses most expressed genes. Check the `NH` distribution first:
+   ```bash
+   samtools view -F 256 sample.bam | head -200000 | grep -o 'NH:i:[0-9]*' | sort | uniq -c | sort -rn | head
+   ```
+   When a large share of reads has `NH > 1`, count them and say how:
+   ```bash
+   # each multi-mapped read once, at its primary alignment (integer counts for edgeR/DESeq2/limma)
+   featureCounts -M --primary -a annotation.gtf -o counts.txt sample.bam
+   # or split each multi-mapped read across its alignments (fractional counts)
+   featureCounts -M --fraction -a annotation.gtf -o counts.txt sample.bam
+   ```
+   Keeping the default is a choice too: state it, with the share of reads it discards.
+
+2. **Strandedness (`-s`, tool input `strand`).** Do not assume `-s 0`. Count one BAM with `-s 0`, `-s 1` and `-s 2` and compare `Assigned`: the right setting assigns about as many reads as `-s 0`, and the wrong strand assigns almost none (stranded libraries such as 3'-tag protocols). Use the stranded setting that wins; `-s 0` on a stranded library counts antisense reads to overlapping genes.
+
+3. **Duplicates and UMIs.** If the BAM records carry UMI tags (`UB`, `UR` or `RX`), PCR duplicates are in the file and read counts overstate molecules. Deduplicate first (`umi_tools dedup --umi-tag=UR --extract-umi-method=tag`, or the tag the aligner wrote) or count UMIs per gene (`umi_tools count`), and state which. `--ignoreDup` uses the duplicate flag, not UMIs, and only helps if duplicates were marked.
+
+**Read the `.summary`.** Report `Assigned` as a percentage of all reads per sample. Typical bulk RNA-seq assigns 60-80%. When most samples sit far below that, the problem is the pipeline (multi-mapping, strand, annotation feature type or attribute, reference mismatch), not the samples: find the largest `Unassigned_*` row, fix the parameter behind it, and recount. Do not compensate downstream by dropping samples or relaxing gene filters.
+
+**Gene-level counts from an NCBI RefSeq GFF3:** `-F GFF -t exon -g gene` gives gene symbols and `LOC` IDs (`-g gene_id` is for GTF). For paired-end data add `-p --countReadPairs`.
+
 ### 4. SNP Calling (exactSNP)
 `exactSNP` discovers SNPs by testing signals against local background noise.
 ```bash
@@ -65,6 +89,7 @@ exactSNP -i mapping_results.bam -g reference.fa -o called_snps.vcf
 *   **Aligner Selection**: Use `subread-align` for standard RNA-seq gene expression quantification (it is faster). Use `subjunc` only if you need to analyze alternative splicing or require the full alignment of exon-spanning reads.
 *   **Memory Management**: If working on a memory-constrained system, `subread-buildindex` has been optimized in recent versions (1.6.5+) to reduce its memory footprint.
 *   **Multi-threading**: Most subread tools support the `-T` flag. Always utilize this for significant speedups in alignment and counting.
+*   **Counting defaults drop reads**: `featureCounts` skips multi-mapped reads unless `-M` is given and counts unstranded unless `-s` is given. Check the `NH` distribution, the strand and the `.summary` before counting all samples (see *Before you trust the counts*).
 *   **Annotation Formats**: `featureCounts` supports both GTF/GFF and the Simplified Annotation Format (SAF). SAF is useful for custom features (Columns: GeneID, Chr, Start, End, Strand).
 *   **Structural Variants**: To detect structural variants during alignment, add the `--sv` flag to your `subread-align` command.
 *   **Long Reads**: For Nanopore or PacBio data, use the `sublong` tool included in the suite.

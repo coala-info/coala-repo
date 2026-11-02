@@ -55,13 +55,13 @@ featureCounts -s 1 -a annotation.gtf -o counts.txt mapping_results.bam
 ```
 
 #### Before you trust the counts: three checks
-`featureCounts` defaults silently drop reads. Run these on one BAM before counting all samples, and read the `.summary` after every run.
+`featureCounts` defaults silently drop reads. Run these on one of the supplied BAMs before counting all samples — one made the same way as the rest, never a BAM you aligned yourself beside supplied ones, which can map very differently — and read the `.summary` after every run, the full run included.
 
 1. **Multi-mapping reads (`-M`, tool input `multi_mapping`).** By default every read with `NH > 1` is skipped as `Unassigned_MultiMapping`. In assemblies with duplicated regions, gene families or paralogs, most reads can be multi-mapped, and the default then counts a minority of reads and misses most expressed genes. Check the `NH` distribution first:
    ```bash
    samtools view -F 256 sample.bam | head -200000 | grep -o 'NH:i:[0-9]*' | sort | uniq -c | sort -rn | head
    ```
-   When a large share of reads has `NH > 1`, count them and say how:
+   When more than about a fifth of reads have `NH > 1`, count them and say how:
    ```bash
    # each multi-mapped read once, at its primary alignment (integer counts for edgeR/DESeq2/limma)
    featureCounts -M --primary -a annotation.gtf -o counts.txt sample.bam
@@ -74,7 +74,7 @@ featureCounts -s 1 -a annotation.gtf -o counts.txt mapping_results.bam
 
 3. **Duplicates and UMIs.** If the BAM records carry UMI tags (`UB`, `UR` or `RX`), PCR duplicates are in the file and read counts overstate molecules. Deduplicate first (`umi_tools dedup --umi-tag=UR --extract-umi-method=tag`, or the tag the aligner wrote) or count UMIs per gene (`umi_tools count`), and state which. `--ignoreDup` uses the duplicate flag, not UMIs, and only helps if duplicates were marked.
 
-**Read the `.summary`.** Report `Assigned` as a percentage of all reads per sample. Typical bulk RNA-seq assigns 60-80%. When most samples sit far below that, the problem is the pipeline (multi-mapping, strand, annotation feature type or attribute, reference mismatch), not the samples: find the largest `Unassigned_*` row, fix the parameter behind it, and recount. Do not compensate downstream by dropping samples or relaxing gene filters.
+**Read the `.summary`.** After the full run, print `Assigned` as a percentage of all reads per sample (and the largest `Unassigned_*` row) and report it; when you call `featureCounts` from your own script, print its log rather than capturing and discarding it. Typical bulk RNA-seq assigns 60-80%. When most samples sit far below that, the problem is the pipeline (multi-mapping, strand, annotation feature type or attribute, reference mismatch), not the samples: find the largest `Unassigned_*` row, fix the parameter behind it, and recount. Do not compensate downstream by dropping samples or relaxing gene filters.
 
 **Gene-level counts from an NCBI RefSeq GFF3:** `-F GFF -t exon -g gene` gives gene symbols and `LOC` IDs (`-g gene_id` is for GTF). For paired-end data add `-p --countReadPairs`.
 

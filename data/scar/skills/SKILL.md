@@ -21,48 +21,41 @@ scAR (single-cell Ambient Remover) is a deep learning model designed to denoise 
 
 ## Usage Instructions
 
-scAR is typically used via its command-line interface (CLI). The primary function is to process input data (e.g., count matrices) and output denoised data.
+The image `quay.io/biocontainers/scar:0.7.0--pyhdfd78af_0` has the `scar` command and the Python package. Training runs on CPU when no GPU is present: about 3 to 4 minutes for 400 epochs on 1,700 cells by 3,000 genes.
 
-### Installation
-
-Install scAR using conda from the bioconda channel:
-```bash
-conda install bioconda::scar
-```
-
-### Core Functionality
-
-The main command for running scAR is `scar`. While specific command-line arguments can vary based on the version and desired output, a common pattern involves specifying input data and output paths.
-
-**General Command Structure:**
+### Command line
 
 ```bash
-scar --input <input_file_path> --output <output_file_path> [options]
+scar <count_matrix> -ap <ambient_profile> -ft mRNA -o <out_dir> [-epo 400] [-d cpu]
 ```
 
-**Key Considerations and Tips:**
+- `<count_matrix>`: either a `filtered_feature_bc_matrix.h5` from Cell Ranger, or a `.pickle` of a pandas DataFrame with cells as rows and genes as columns. There is no `--input`, `--output` file, `--model` or `--use_gpu` option.
+- `-ap`: a `.pickle` of the ambient profile, a one-row DataFrame of gene frequencies (summing to 1) with the same genes as the matrix. Build it from the empty droplets of the same channel. Without it, scAR estimates the profile from the cells themselves.
+- `-ft`: `mRNA`, `ADT`, `sgRNA`, `tag`, `CMO` or `ATAC`.
+- `-bk`: a batch key, to train one model over several channels.
+- Output for a `.pickle` input: `<out_dir>/denoised_counts.pickle` and `noise_ratio.pickle` (and `BayesFactor.pickle`, `native_frequency.pickle` where they apply). For an `.h5` input: `<out_dir>/filtered_feature_bc_matrix_denoised_<feature_type>.h5ad`, with the noise ratio in `obs["noise_ratio"]`.
 
-*   **Input Data Format**: scAR typically expects count matrices. Ensure your input data is in a compatible format (e.g., `.h5ad`, `.mtx` with associated gene/cell metadata). Refer to the official documentation for precise format requirements.
-*   **Output Data**: The output will be the denoised count matrix. The format will depend on the options used, but often it's compatible with standard single-cell analysis workflows.
-*   **Model Selection**: scAR utilizes deep learning models. Depending on the data type (e.g., RNA, protein), specific pre-trained models or configurations might be available or recommended. Consult the documentation for details on model selection.
-*   **Parameters**: Explore parameters related to:
-    *   **`--model`**: Specify the model to use (e.g., `rna`, `cite`, `atac`).
-    *   **`--n_epochs`**: Number of training epochs (if training is part of the workflow).
-    *   **`--batch_size`**: Batch size for training.
-    *   **`--learning_rate`**: Learning rate for the optimizer.
-    *   **`--use_gpu`**: Flag to enable GPU acceleration.
-*   **Reproducibility**: For reproducible results, consider setting random seeds for PyTorch and NumPy if you are involved in training or fine-tuning. The repository mentions `torch.manual_seed` and `numpy.random.seed` in its issues, suggesting these are relevant for reproducibility.
-*   **Troubleshooting**: If you encounter errors, check the GitHub issues for similar problems. Common issues might relate to data shapes, dependencies, or GPU availability.
+### Python
 
-**Example (Conceptual - actual arguments may vary):**
-
-To denoise an RNA count matrix:
-
-```bash
-scar --input counts.h5ad --output denoised_counts.h5ad --model rna --use_gpu
+```python
+import numpy as np, pandas as pd
+from scar import model
+m = model(raw_count=counts_df,            # cells x genes, filtered cells of one channel
+          ambient_profile=profile_df,      # 1 x genes, empty-droplet frequencies; or None
+          feature_type="mRNA", device="cpu")
+m.train(epochs=400)
+m.inference()                              # adjust="micro", round_to_int="stochastic_rounding"
+native = m.native_counts                   # cells x genes, often a scipy sparse matrix
+rho = np.asarray(m.noise_ratio.toarray()).ravel()   # per-cell ambient fraction (sparse too)
 ```
 
-For detailed command-line arguments and advanced usage, always refer to the official scAR documentation and the tool's help output (`scar --help`).
+### Tips
+
+- Run one model per 10x channel with that channel's empty-droplet profile, or one model over all channels with `batch_key`.
+- `native_counts` and `noise_ratio` come back as sparse matrices. Convert them before `np.ravel` or arithmetic.
+- Inference uses stochastic rounding, so two runs differ slightly. Set `torch.manual_seed` and `numpy.random.seed` first for a repeatable result.
+- `clip_to_obs=False` (the default) returns counts above the observed count, also where the observed count is 0: in one test about a third of the nonzero output entries were above the input. Pass `clip_to_obs=True` to `inference`, or clip with `np.minimum(native, observed)`, when the corrected matrix must not exceed the input.
+- Check the result: the share of counts removed per channel, and the noise ratio against the share each cell lost. A model trained too briefly removes most of the counts.
 
 ## Reference documentation
 - [scAR Overview (Anaconda.org)](./references/anaconda_org_channels_bioconda_packages_scar_overview.md)

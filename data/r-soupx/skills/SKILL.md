@@ -2,8 +2,6 @@
 name: r-soupx
 description: This tool removes ambient RNA contamination from droplet-based single-cell RNA sequencing data to improve expression accuracy. Use when user asks to estimate contamination fractions, remove background RNA from single-cell datasets, or generate decontaminated count matrices.
 homepage: https://cran.r-project.org/web/packages/SoupX/index.html
-metadata:
-  docker_image: "quay.io/biocontainers/bioconductor-bsgenome.cneoformansvargrubiikn99.ncbi.asm221672v1:1.0.0--r45hdfd78af_4"
 ---
 
 
@@ -12,6 +10,16 @@ metadata:
 ## Overview
 
 The `SoupX` R package addresses the ubiquitous problem of ambient RNA contamination in droplet-based single-cell experiments. This "soup" consists of cell-free mRNA from lysed cells that gets encapsulated into droplets, leading to false-positive expression (e.g., hemoglobin in T-cells). This skill provides the procedural workflow to estimate the contamination fraction (`rho`) and generate a decontaminated count matrix while preserving true endogenous signals.
+
+## Installation
+
+No BioContainers image ships SoupX (it is a CRAN package, not on Bioconda). Use an R image and install it from CRAN, which needs network and pulls in Seurat (several minutes):
+
+```bash
+docker run --rm -it rocker/r-ver:4.4 R -e 'install.packages("SoupX"); library(SoupX)'
+```
+
+Install into a library folder you keep (`.libPaths(c("/path/rlib", .libPaths()))`) so later scripts can load it without a new install.
 
 ## Core Workflow
 
@@ -64,6 +72,9 @@ out = adjustCounts(sc, roundToInt = TRUE)
 *   **Clustering is Essential:** While `SoupX` can run without clusters, the results are significantly more accurate when cells are grouped. Clusters allow the algorithm to aggregate signal and distinguish between low-level endogenous expression and background soup.
 *   **Visual Sanity Checks:** Use `plotMarkerMap(sc, "GENE_NAME")` to visualize the ratio of observed counts to expected soup counts. If a gene's expression in a cluster is blue/cold, it is likely entirely soup-derived.
 *   **Plausible Rho Values:** In fresh tissue 10X experiments, `rho` is typically between 0.02 (2%) and 0.10 (10%). Values above 0.20 indicate very high contamination, often seen in solid tumors or low-viability samples.
+*   **One channel at a time:** each 10x channel (each GEM well or batch) has its own soup. Build one `SoupChannel` per channel from that channel's droplets; do not pool batches.
+*   **One rho per channel:** `autoEstCont` and `setContaminationFraction` give one contamination fraction for the whole channel. `adjustCounts` removes about that share from every cell. If you need a per-cell contamination estimate, compute it from the result as `1 - corrected / observed` per cell, and know that it follows the channel value, not each cell's own level.
+*   **When `autoEstCont` stops with "No plausible marker genes found":** this happens when no gene is both specific to some clusters and high in the soup, for example with few or weak markers, or few empty droplets. Lower `tfidfMin` (default 1.0, try 0.5) and, if it still fails, `soupQuantile` (default 0.9, try 0.5). Check the result: the estimate can then differ several-fold between channels of the same experiment. Otherwise set the fraction yourself with `setContaminationFraction`.
 *   **Handling Homogeneous Data:** If your sample is a single cell line, `autoEstCont` may fail due to a lack of distinct marker genes. In these cases, manually set a fixed contamination fraction based on similar experiments using `setContaminationFraction(sc, 0.05)`.
 *   **Soup Profile:** The soup profile is calculated from "empty" droplets (low UMI counts). If you only have the filtered count matrix, you can estimate the soup by the aggregate expression of all cells, though this is a fallback and less ideal than using the raw/all-droplets matrix.
 

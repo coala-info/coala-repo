@@ -1,6 +1,6 @@
 ---
 name: plmc
-description: plmc infers evolutionary couplings from multiple sequence alignments by estimating the parameters of a Potts model. Use when user asks to calculate coupling scores, infer protein or RNA models, or identify direct residue interactions in biological sequences.
+description: plmc infers evolutionary couplings from multiple sequence alignments by estimating the parameters of a Potts model, and its model scores amino-acid substitutions (EVmutation statistical energy) for mutation effect and variant effect prediction and protein fitness ranking. Use when user asks to calculate coupling scores, predict the effect of mutations from a homolog alignment, rank protein variants, infer protein or RNA models, or identify direct residue interactions in biological sequences.
 homepage: https://github.com/debbiemarkslab/plmc
 metadata:
   docker_image: "quay.io/biocontainers/plmc:20221105--hec16e2b_0"
@@ -30,6 +30,48 @@ plmc -o model.params -le 16.0 -lh 0.01 -m 100 -g -f FOCUS_SEQ_ID alignment.a2m
 *   `-g`: Ignores gaps (models only the coding portions).
 *   `-f`: Focus mode; select a specific sequence ID to define the coordinate system and filter columns.
 
+### Score substitutions (EVmutation)
+The fitted model gives each sequence a statistical energy `E(x) = sum_i h_i(x_i) + sum_{i<j} J_ij(x_i, x_j)`.
+The score of a variant is `dE = E(variant) - E(focus sequence)`; higher means more like the family,
+and in deep mutational scans it ranks variants by fitness (Hopf et al. 2017, the EVmutation paper).
+
+1. Fit with a focus sequence: `plmc -o model.params -le 16.0 -lh 0.01 -m 200 -t 0.2 -g -n max -f FOCUS_ID alignment.a2m`.
+   `FOCUS_ID` is the focus sequence's header without `>`. With `-f`, only the focus sequence's
+   uppercase, non-gapped columns are modelled; lowercase (insert) columns are left out.
+   Run time grows with sequences x columns squared: about 30 minutes for 17,000 sequences and
+   380 columns on 8 threads, so start it early and in the background.
+2. Read the binary file (the BioContainers build writes float32; check that no bytes are left over):
+```python
+import numpy as np
+def read_plmc(path, prec="float32"):
+    with open(path, "rb") as f:
+        L, q, n_valid, n_invalid, n_iter = np.fromfile(f, "int32", 5)
+        np.fromfile(f, prec, 5)                               # theta, lambdas, N_eff
+        alphabet = np.fromfile(f, "S1", q).astype("U1")
+        np.fromfile(f, prec, n_valid + n_invalid)             # sequence weights
+        target = np.fromfile(f, "S1", L).astype("U1")         # focus residues
+        index = np.fromfile(f, "int32", L)                    # residue number of each column
+        np.fromfile(f, prec, L * q)                           # f_i
+        h = np.fromfile(f, prec, L * q).reshape(L, q)
+        np.fromfile(f, prec, L * (L - 1) // 2 * q * q)        # f_ij
+        J = np.zeros((L, L, q, q), prec)
+        for i in range(L - 1):
+            b = np.fromfile(f, prec, (L - 1 - i) * q * q).reshape(L - 1 - i, q, q)
+            J[i, i + 1:], J[i + 1:, i] = b, b.transpose(0, 2, 1)
+        assert not f.read(), "bytes left over: wrong precision or format"
+    return alphabet, target, index, h, J
+```
+   Check that `target` equals the focus sequence at the residue numbers in `index`.
+3. Single-substitution table: `S[i, a] = h_i(a) - h_i(wt_i) + sum_j (J_ij(a, wt_j) - J_ij(wt_i, wt_j))`,
+   an L x q array. The sum of `S` over a variant's substitutions ranks variants with a few
+   substitutions almost exactly as the full `dE` does (the pair terms between substitutions are
+   small), and it is small enough to ship inside a model file. Positions outside the modelled
+   columns get 0.
+4. With measured variants, use `dE` as one feature next to the measured data rather than alone:
+   ridge regression on one-hot substitution features plus `dE` (the "augmented" model of
+   Hsu et al. 2022) beats either part when labels are few. Check any choice on held-out
+   measured variants, and check `dE` against the measurements you have before relying on it.
+
 ### RNA Coupling Inference
 When working with RNA, you must override the default protein alphabet:
 ```bash
@@ -40,7 +82,7 @@ plmc -c output.couplings -a .ACGU -le 20.0 -lh 0.01 -m 50 alignment.fasta
 ## Expert Tips and Best Practices
 
 ### Focus Mode Requirements
-When using the `-f` (focus) option, ensure the alignment contains only columns that are present in the focus sequence. If the alignment includes columns that are gaps in the focus sequence, the output offsets will be incorrect. In focus mode, lowercase letters in the focus sequence are discarded.
+With `-f`, plmc models only the columns where the focus sequence has an uppercase residue (the a2m convention); columns where it is lowercase or a gap are left out, and `index` in the parameter file gives the residue number of each modelled column. The focus header's `/start-end` suffix sets the numbering.
 
 ### Performance Optimization
 *   **Multithreading**: Use `-n <number>` or `-n max` to specify the number of CPU cores for OpenMP acceleration.

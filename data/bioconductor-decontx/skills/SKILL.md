@@ -43,9 +43,8 @@ sce <- decontX(sce, background = sce_raw)
 ```
 
 It does not always help. With few or shallow empty droplets the profile is noisy and the
-estimates can rise: on one three-channel data set with about 220 low-depth empty droplets per
-channel, the mean contamination went from 0.14 to 0.21. Run both, compare the mean
-contamination and the share of counts removed, and keep the one your checks favour.
+estimates can rise. Run both, compare the mean contamination and the share of counts removed,
+and keep the one your checks favour.
 
 ### 3. Cell Clustering
 `decontX` performs heuristic clustering by default. If you have pre-defined cell labels, provide them via the `z` parameter to improve accuracy.
@@ -83,7 +82,7 @@ On sparse data, compute only where `O > 0`: an entry that is 0 stays 0.
 - SoupX takes the per-cell vector too: `setContaminationFraction(sc, rho_named_by_barcode,
   forceAccept = TRUE)`, then `adjustCounts(sc, roundToInt = TRUE)`. Its subtraction keeps
   removing counts from other genes when a gene reaches zero, so it removes more than the
-  floor-at-zero form (12.7% against 9.0% of counts on that data set). Compare both.
+  floor-at-zero form. Compare both.
 - When a task states its own correction formula, apply that formula as stated, with these
   estimates.
 - Report the DecontX fraction as the per-cell contamination.

@@ -66,9 +66,37 @@ Ambient RNA differs between channels (10x lanes; in aggregated data the barcode 
 `-2`, ... names the channel). Run `decontX` on each channel's cells separately, with
 `set.seed()` before each call: results move a little between seeds.
 
+## Doublets and cells between clusters
+DecontX explains a cell as its own cluster's profile plus contamination built from the other
+clusters' profiles. A doublet, or a cell between two states, carries a second expression
+program. When that cell sits in a cluster of ordinary cells, DecontX counts the second program
+as contamination and its fraction comes out far too high. This happens with labels passed as
+`z`, and with DecontX's own clustering when such cells are too few to form clusters.
+
+Tested on simulated counts (6 cell types, the same true fraction of 0.12 for every kind of
+cell, 4% doublets, 5% cells between two types):
+- Labels passed as `z`: single cells 0.10, doublets 0.53, in-between cells 0.38. Subtracting
+  with these fractions left the doublets further from the truth than no correction.
+- Own clustering, 3,000 cells: the doublets formed small clusters of their own and their
+  fractions were right. Own clustering, 1,000 cells: about a third of them were inflated.
+
+Check every run: compare each cell's fraction with the median of its cluster. A group of cells
+several times above their cluster, often with a high total count and with marker genes of a
+second cluster, is this effect and not soup.
+
+Cap the fraction before you subtract, per channel and cluster:
+```r
+cap <- ave(rho, channel, cluster, FUN = function(x) median(x) + 3 * mad(x))
+rho <- pmin(rho, cap)
+```
+In the simulation the cap changed 2 to 9% of the cells, left single cells as they were, and
+brought the doublets closer to the truth than no correction. Use the capped fraction for the
+subtraction and for the reported per-cell contamination.
+
 ## Per-cell contamination with the channel's own soup
-DecontX estimates each cell's contamination fraction well (`$contamination`, or
-`colData(sce)$decontX_contamination`). Its corrected counts, however, remove a mixture of the
+DecontX estimates the contamination fraction of ordinary single cells well (`$contamination`,
+or `colData(sce)$decontX_contamination`); see the section above for doublets and cells between
+clusters. Its corrected counts, however, remove a mixture of the
 other clusters' native profiles, not the soup measured in the channel's empty droplets. When
 the ambient profile carries channel-specific genes, use the two parts separately: the soup
 profile from the channel's empty droplets, the fraction from DecontX. This is SoupX's model
@@ -89,9 +117,11 @@ On sparse data, compute only where `O > 0`: an entry that is 0 stays 0.
   floor-at-zero form. Compare both.
 - When a task states its own correction formula, apply that formula as stated, with these
   estimates.
-- Report the DecontX fraction as the per-cell contamination.
+- Report the DecontX fraction, capped as above, as the per-cell contamination.
 
 ## Checks after a correction
+- Each cell's fraction against its cluster's median: no group of cells far above it is left
+  uncapped (doublets, cells between clusters).
 - The share of counts removed in each channel against the mean contamination fraction.
 - Genes enriched in one channel's soup over the other channels: their counts in that
   channel's cells should fall.

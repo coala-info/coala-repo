@@ -2,6 +2,8 @@
 name: bioconductor-decontx
 description: bioconductor-decontx identifies and removes ambient RNA and background protein contamination from single-cell sequencing datasets and estimates a contamination fraction for each cell. Use when user asks to decontaminate scRNA-seq or CITE-seq data, correct ambient RNA or soup, estimate per-cell contamination, or remove background noise from count matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/decontX.html
+metadata:
+  docker_image: "quay.io/biocontainers/bioconductor-decontx:1.8.0--r45ha27e39d_0"
 ---
 
 # bioconductor-decontx
@@ -43,8 +45,10 @@ sce <- decontX(sce, background = sce_raw)
 ```
 
 It does not always help. With few or shallow empty droplets the profile is noisy and the
-estimates can rise. Run both, compare the mean contamination and the share of counts removed,
-and keep the one your checks favour.
+estimates can rise. Removing more is not better: a version that removes more counts can be
+further from the truth. Choose between versions with a known-truth test: mix counts drawn from
+the channel's soup into its cells at fractions you set per cell, run each version, and keep the
+one whose estimated fractions and corrected counts come closest to what you added.
 
 ### 3. Cell Clustering
 `decontX` performs heuristic clustering by default. If you have pre-defined cell labels, provide them via the `z` parameter to improve accuracy.
@@ -94,10 +98,14 @@ On sparse data, compute only where `O > 0`: an entry that is 0 stays 0.
 - Markers of one population in cells of another population should fall; markers in their
   own population should not.
 - No cell or gene dropped, every corrected count at most the observed count.
+- When you compare versions, use the known-truth test above, not the amount removed.
 
 ## Installation
-Tested: image `bioconductor/bioconductor_docker:RELEASE_3_20` with
-`BiocManager::install("decontX")` into a writable library (`.libPaths(c("/rlib", .libPaths()))`).
+Tested: image `quay.io/biocontainers/bioconductor-decontx:1.8.0--r45ha27e39d_0` has R and
+decontX ready (`Rscript`, `library(decontX)`; a plain counts matrix works, the result is a list
+with `$contamination` and `$decontXcounts`). Without that image:
+`bioconductor/bioconductor_docker:RELEASE_3_20` with `BiocManager::install("decontX")` into a
+writable library (`.libPaths(c("/rlib", .libPaths()))`).
 
 ## Workflow for Protein Data (decontPro)
 

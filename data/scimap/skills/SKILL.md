@@ -124,7 +124,7 @@ label. When the panel has the marker and the cluster is clearly positive, do nam
 | Any T | proliferating: Ki-67 as the cluster's main distinguishing feature; gamma-delta: TCRγδ; double-negative: CD3 without CD4 or CD8 |
 | NK | CD56-bright: CD56 high, CD16 low; CD56-dim: CD16 high |
 | B | germinal center: BCL6 or CD10; plasma cell: CD138 or IRF4 high with CD20 low; memory: CD27; naive: IgD |
-| Macrophage | M2-like: CD163 or CD206; M1-like: iNOS, CD86 or HLA-DR high without CD163/CD206; plain macrophage when only CD68 |
+| Macrophage | M2-like: CD163 or CD206 positive; M1-like: CD68 positive with CD163 and CD206 negative, when the panel has CD163 or CD206 (iNOS, CD86 or HLA-DR high supports it); plain macrophage only when the panel has neither CD163 nor CD206 |
 | Dendritic | plasmacytoid: CD123 or BDCA2; cDC1: CLEC9A or XCR1; cDC2: CD1c; follicular dendritic cell: CD21 or CD35 without CD20 |
 | Endothelium | lymphatic: podoplanin or LYVE1; high endothelial venule: PNAd (MECA-79) |
 | Fibroblast | follicular reticular: podoplanin with αSMA in lymphoid tissue; cancer-associated: FAP or αSMA in tumor stroma |

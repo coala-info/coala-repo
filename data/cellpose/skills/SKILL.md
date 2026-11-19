@@ -24,13 +24,13 @@ The CLI is the primary method for batch processing large datasets.
 ### Basic Segmentation
 To run segmentation on a directory of images using the generalist `cyto3` model:
 ```bash
-python -m cellpose --dir /path/to/images --pretrained_model cyto3 --diameter 30. --save_png
+python -m cellpose --dir /path/to/images --pretrained_model cyto3 --diameter D --save_png
 ```
 
 ### Nuclear Segmentation
 For images containing only nuclei:
 ```bash
-python -m cellpose --dir /path/to/images --pretrained_model nuclei --diameter 10. --save_png
+python -m cellpose --dir /path/to/images --pretrained_model nuclei --diameter D --save_png
 ```
 
 ### 3D Segmentation
@@ -46,7 +46,7 @@ python -m cellpose --dir /path/to/images --pretrained_model cyto3 --restore_type
 ```
 
 ## Key Parameters and Best Practices
-- **Diameter**: This is the most critical parameter. If set to 0, the model will attempt to auto-estimate the size, but providing an approximate pixel diameter (e.g., `--diameter 30.0`) usually yields more consistent results.
+- **Diameter**: This is the most critical parameter, in pixels. Measure it on your images: the object size in micrometres divided by the pixel size from the file metadata, or a few objects measured by hand. Never copy an example value; the right diameter differs by more than tenfold between data sets. With 0, the model estimates the size; check the estimate against your measurement.
 - **Channels**: Specify which channels to use for segmentation.
   - `--chan 0`: Grayscale
   - `--chan 1`: Red (Cytoplasm/Membrane)

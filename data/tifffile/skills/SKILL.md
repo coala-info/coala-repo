@@ -34,12 +34,29 @@ The most common way to interact with tifffile is through its Python interface.
     tifffile.imwrite('large.tif', data, bigtiff=True)
     ```
 *   **Advanced Inspection**: Use the `TiffFile` class to access metadata and individual pages without loading the entire image into memory.
-    ```with tifffile.TiffFile('image.tif') as tif:
+    ```python
+    with tifffile.TiffFile('image.tif') as tif:
         for page in tif.pages:
             shape = page.shape
             dtype = page.dtype
             metadata = page.tags
     ```
+
+### Pixel size, axes and physical units
+Read the axes and the pixel size before any size-based step:
+```python
+with tifffile.TiffFile("image.tif") as tif:
+    print(tif.series[0].axes, tif.series[0].shape)   # e.g. 'ZCYX'
+    page = tif.pages[0]
+    num, den = page.tags["XResolution"].value          # pixels per unit, as a fraction
+    um_per_px = den / num                               # if the unit is micrometres
+    ij = tif.imagej_metadata or {}                      # ImageJ files: 'unit', 'spacing' (z step)
+    ome = tif.ome_metadata                              # OME-TIFF: PhysicalSizeX/Y/Z in the XML
+```
+- `ResolutionUnit` 1 (none) is how ImageJ files store micrometres; the unit name is in
+  `imagej_metadata["unit"]`. A resolution of exactly 1 usually means no calibration was saved.
+- Write a calibrated ImageJ file with
+  `tifffile.imwrite(path, data, imagej=True, resolution=(1/um_per_px, 1/um_per_px), metadata={"unit": "um", "axes": "CYX"})`.
 
 ### Command Line Interface
 

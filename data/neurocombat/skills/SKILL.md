@@ -11,8 +11,9 @@ ComBat models each feature as `y = alpha + X*beta + gamma_site + delta_site * er
 biological covariates that must be kept (subject, age, sex, diagnosis). `gamma_site` is the additive
 site effect and `delta_site` the multiplicative one. Empirical Bayes (EB) shrinks each site's
 estimates toward that site's mean across all features, which steadies them when a site has few scans.
-neuroCombat 0.2.12 (MIT licence) is a single Python function on numpy and pandas:
-`pip install neuroCombat`. No container image is published.
+neuroCombat 0.2.12 (MIT licence) is a single Python function on numpy and pandas. The package
+declares no dependencies, so install them with it: `pip install neuroCombat pandas numpy`.
+Without pandas, `import neuroCombat` fails. No container image is published.
 
 ## Fit
 ```python

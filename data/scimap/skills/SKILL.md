@@ -96,11 +96,13 @@ For each cluster, print the lineage markers with their share of positive cells, 
 | B cells, plasma cells | CD20, CD19, CD79a; CD138 (plasma) |
 | NK cells | CD56, CD57, CD7, without CD3 |
 | Monocytes, macrophages, dendritic cells | CD68, CD163, CD206, CD14, CD16, CD64, CD11b, CD11c; CD123 (plasmacytoid DC) |
-| Neutrophils | CD15, CD66b, MPO |
+| Neutrophils | CD15, CD66b, MPO (CD15 without CD30) |
 | Fibroblasts, smooth muscle, pericytes | αSMA, PDGFRβ, FAP, Collagen I |
 | Endothelium | CD31, CD34, vWF; podoplanin (lymphatics) |
 | Carcinoma | pan-cytokeratin, E-cadherin, EpCAM |
 | Melanoma | SOX10, MelanA (MART-1), S100, HMB45, PMEL, tyrosinase |
+| Hodgkin (Reed–Sternberg) tumor cells | CD30 with CD15, IRF4 (MUM1), weak PAX5; CD45, CD20 and CD3 low or absent |
+| Other lymphoma tumor cells | the B-cell or T-cell lineage markers plus a clonal or aberrant marker the panel names (for example BCL2 or BCL6 on CD20+ cells, CD30 on T cells) |
 
 Not lineage markers on their own:
 
@@ -109,9 +111,27 @@ Not lineage markers on their own:
 - Vimentin is on fibroblasts, immune cells, endothelium and mesenchymal-like tumor cells.
 - AXL is on dedifferentiated melanoma and on macrophages.
 
+## Subtype markers (inside a lineage)
+
+Decide the lineage first. Then name a subtype only when the panel has its defining marker and
+the cluster is clearly positive for it; with no defining marker in the panel, keep the lineage
+label. When the panel has the marker and the cluster is clearly positive, do name the subtype.
+
+| Lineage | Subtype: defining markers |
+|---|---|
+| CD4 T | regulatory: FOXP3 (with CD25); T follicular helper: PD-1 high with CXCR5, BCL6 or ICOS; Th1: T-bet (TBX21); Th2: GATA3; Th17: RORγt; type 1 regulatory: LAG3 with CD49b, FOXP3 negative; cytotoxic CD4: granzyme B or perforin |
+| CD8 T | cytotoxic: granzyme B or perforin; exhausted: PD-1 with TIM3, LAG3 or TOX; naive: CD45RA with CCR7; central memory: CD45RO with CCR7; effector memory: CD45RO without CCR7; tissue-resident: CD103 or CD69 |
+| Any T | proliferating: Ki-67 as the cluster's main distinguishing feature; gamma-delta: TCRγδ; double-negative: CD3 without CD4 or CD8 |
+| NK | CD56-bright: CD56 high, CD16 low; CD56-dim: CD16 high |
+| B | germinal center: BCL6 or CD10; plasma cell: CD138 or IRF4 high with CD20 low; memory: CD27; naive: IgD |
+| Macrophage | M2-like: CD163 or CD206; M1-like: iNOS, CD86 or HLA-DR high without CD163/CD206; plain macrophage when only CD68 |
+| Dendritic | plasmacytoid: CD123 or BDCA2; cDC1: CLEC9A or XCR1; cDC2: CD1c; follicular dendritic cell: CD21 or CD35 without CD20 |
+| Endothelium | lymphatic: podoplanin or LYVE1; high endothelial venule: PNAd (MECA-79) |
+| Fibroblast | follicular reticular: podoplanin with αSMA in lymphoid tissue; cancer-associated: FAP or αSMA in tumor stroma |
+
 ## State markers are not lineage markers
 
-These follow a cell's state or location, not its lineage. Never use them to decide a cluster's class:
+These follow a cell's state or location, not its lineage. Never use them to decide a cluster's lineage (inside a lineage, some of them define a subtype; see the table above):
 
 - **Hypoxia and angiogenesis:** CAIX, HIF-1α, GLUT1, VEGF. Macrophages in hypoxic tumor regions carry them, and so do fibroblasts and tumor cells.
 - **Proliferation:** Ki-67, PCNA, phospho-histone H3. Proliferating T cells and macrophages carry them too.

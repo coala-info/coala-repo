@@ -1,6 +1,6 @@
 ---
 name: bioconductor-edger
-description: This tool performs differential expression analysis of digital gene expression data using negative binomial models. Use when user asks to perform differential expression analysis, normalize read counts using TMM, estimate dispersions, or conduct statistical testing for RNA-seq, ChIP-seq, or CRISPR screen data.
+description: This tool performs differential expression analysis of digital gene expression data using negative binomial models. Use when user asks to perform differential expression analysis, normalize read counts using TMM or a spike-in (external) normalisation, estimate dispersions, or conduct statistical testing for RNA-seq, ChIP-seq, or CRISPR screen data.
 homepage: https://bioconductor.org/packages/release/bioc/html/edgeR.html
 ---
 
@@ -77,9 +77,44 @@ topTags(qlf)
 - `goana(qlf)` / `kegga(qlf)`: Gene Ontology and KEGG pathway enrichment.
 - `glmTreat(fit, lfc = 1)`: Tests for differential expression relative to a minimum fold-change threshold.
 
+## Fixed external normalisation (spike-in; a global change may be real)
+TMM (`normLibSizes`) assumes most features do not change. When a treatment can raise or lower
+the signal everywhere (ChIP-seq of a histone mark after an inhibitor, total RNA changes), TMM
+removes that global change. Use a scale measured outside the host features instead (a spike-in,
+external reference or exogenous standard), as a fixed exposure per library, and learn no extra
+factor from the host counts:
+
+```r
+y <- DGEList(counts)                                  # all features, unfiltered if each needs a result
+y$samples$lib.size <- exposure                        # one external exposure per library
+y$samples$norm.factors <- 1
+y$offset <- matrix(log(exposure), nrow(y), ncol(y), byrow = TRUE)
+design <- model.matrix(~ replicate + condition, data = meta)   # matched pairs: block on the pair
+y <- estimateDisp(y, design, robust = TRUE)
+fit <- glmQLFit(y, design, robust = TRUE)              # shares information across sparse features
+res <- glmQLFTest(fit, coef = "conditionperturbed")
+res$table$FDR <- p.adjust(res$table$PValue, "BH")    # BH within each experiment
+```
+
+- Tested in `quay.io/biocontainers/bioconductor-edger:4.10.7--r45h262fe30_0` on simulated
+  counts with a true global loss: these offsets keep it, TMM moves the median log fold change to 0.
+- A single aberrant count in one library: `estimateGLMRobustDisp(y, design)` gives observation
+  weights, then `glmFit` and `glmLRT`. It needs enough replicates to tell an outlier apart.
+- Effect sizes per matched pair: `cpm(y, log = TRUE, prior.count = 2)` uses the exposures, so the
+  perturbed minus control difference within each pair is on the external scale. Summarise the
+  pairs with a median when one pair may be bad.
+- Global change: per pair, log2 of (host total / exposure) perturbed minus control; test the
+  pair values with a one-sample t-test.
+- ChIP-seq with spike-in chromatin and inputs: a library's exposure is proportional to its host
+  input depth times its spike-in enrichment (spike-in IP over spike-in input), taken as a robust
+  summary (median of region log ratios) over spike-in regions that behave alike across samples.
+  Check the spike-in first: compare each library's region-wise spike-in IP/input profile with its
+  matched peers; a library whose profile departs is not a sound scaling anchor, and removing it
+  usually means removing its whole matched pair.
+
 ## Tips for Success
 - **Raw Counts**: Always input raw, untransformed integer counts. Do not use RPKM, FPKM, or TPM.
-- **Filtering**: Always use `filterByExpr` to remove noise and improve statistical power.
+- **Filtering**: Use `filterByExpr` to remove noise and improve statistical power, unless every feature needs a reported result.
 - **No Replicates**: If you have no replicates, you must manually provide a `dispersion` value (e.g., `0.1` or `0.4`) to `exactTest` or `glmLRT`, as dispersion cannot be estimated from a single sample.
 
 ## Reference documentation

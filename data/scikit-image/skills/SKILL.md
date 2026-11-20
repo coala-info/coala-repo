@@ -81,7 +81,7 @@ for p in measure.regionprops(nuclei):
         nuclei[p.slice][sub == 2] = nuclei.max() + 1
 ```
 - One nucleus has a flat depth; an overlapping pair has two levels, and its spread equals the
-  depth gap. On simulated stacks (nine slices, Poisson noise) single nuclei had a spread of 0.07
+  depth gap. On simulated stacks with Poisson noise, single nuclei had a spread of 0.07
   slice and pairs two slices or more apart had 2 to 4.
 - In that simulation the 2D recipe merged 36 such pairs. The check flagged all 36 and flagged
   nothing in 12 stacks without a depth gap. The split gave both nuclei at IoU 0.5 or more in 33;

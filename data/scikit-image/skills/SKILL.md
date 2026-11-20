@@ -59,35 +59,52 @@ nuclei = segmentation.watershed(-dist, seeds, mask=fg)   # or peak_local_max(min
   Seeds closer than a radius split one nucleus into several; seeds too far apart merge touching ones.
 
 Nuclei that overlap in a projection. Two nuclei at different depths can overlap in XY. A max
-projection shows them as one object with no waist, and no seed setting splits it. Check the depth
-of every object before you trust the labels (`stack` is the nuclear channel, ZYX):
+projection shows them as one object with no waist, and no seed setting splits it. After the 2D
+labels, compare a depth map with them (`stack` is the nuclear channel, ZYX):
 
 ```python
 sm = ndi.gaussian_filter(stack.astype(float), (0.7, 2, 2))
 sm = np.clip(sm - np.median(sm), 0, None)
 depth = (sm * np.arange(len(sm))[:, None, None]).sum(0) / (sm.sum(0) + 1e-9)   # mean z per pixel
-spread = {p.label: np.ptp(np.percentile(depth[p.slice][p.image], [5, 95]))
-          for p in measure.regionprops(nuclei)}
-for p in measure.regionprops(nuclei):
-    if spread[p.label] < 1.0:                      # under one slice: one nucleus
+props = measure.regionprops(nuclei)
+spread = {p.label: np.ptp(np.percentile(depth[p.slice][p.image], [5, 95])) for p in props}
+level = {p.label: np.median(depth[p.slice][p.image]) for p in props}
+v = np.array(list(spread.values()))
+cut = np.median(v) + 5 * 1.4826 * np.median(np.abs(v - np.median(v)))   # far above the others
+for p in props:
+    if spread[p.label] <= cut:
         continue
-    d, obj = depth[p.slice], p.image               # two depth levels: split along the step
+    d, obj = depth[p.slice], p.image               # two depth levels: cut along the step
     hi = obj & (d > filters.threshold_otsu(d[obj]))
     seeds = np.zeros(obj.shape, int)
     for k, part in enumerate((obj & ~hi, hi), 1):
         seeds[morphology.binary_erosion(part, morphology.disk(3))] = k
     sub = segmentation.watershed(filters.sobel(d), seeds, mask=obj)
-    if min((sub == 1).sum(), (sub == 2).sum()) >= 0.3 * np.pi * r_px ** 2:   # a rim is no nucleus
-        nuclei[p.slice][sub == 2] = nuclei.max() + 1
+    z = [np.median(d[sub == k]) for k in (1, 2)]
+    small = 1 + int((sub == 2).sum() < (sub == 1).sum())
+    part = np.zeros(nuclei.shape, bool); part[p.slice] = sub == small
+    ring = morphology.binary_dilation(part, morphology.disk(3)) & ~part
+    near = [n for n in np.unique(nuclei[ring]) if n not in (0, p.label)]
+    owner = [n for n in near if abs(level[n] - z[small - 1]) < abs(z[0] - z[1]) / 2]
+    what = "kept whole"
+    if owner:                                      # the 2D border was in the wrong place
+        nuclei[part] = owner[0]; what = f"part given to neighbour {owner[0]}"
+    elif part.sum() >= 0.3 * np.pi * r_px ** 2:    # a second nucleus
+        nuclei[part] = nuclei.max() + 1; what = "split in two"
+    print(p.label, round(spread[p.label], 2), what)
 ```
-- One nucleus has a flat depth; an overlapping pair has two levels, and its spread equals the
-  depth gap. On simulated stacks with Poisson noise, single nuclei had a spread of 0.07
-  slice and pairs two slices or more apart had 2 to 4.
-- In that simulation the 2D recipe merged 36 such pairs. The check flagged all 36 and flagged
-  nothing in 12 stacks without a depth gap. The split gave both nuclei at IoU 0.5 or more in 33;
-  the three misses had centres half a radius apart.
-- Print the spread per object, and look at `depth` as a picture for any object you split. Two
-  nuclei at the same depth cannot be split this way.
+- Compare each spread with the other objects, not with a fixed number. A single nucleus is
+  tilted and domed, so its depth already varies: on simulated stacks with tilt and noise, single
+  nuclei had a spread of about 1 slice (up to 1.5), and pairs two to four slices apart had more.
+- A flagged object has three outcomes. Its smaller part belongs to a neighbour at the same depth
+  (give it back), or it is a second nucleus (nucleus-sized part, no such neighbour), or it is one
+  nucleus with a small bright body on it (leave it whole). Splitting every flagged object makes
+  false nuclei.
+- In that simulation the 2D recipe merged 36 pairs at two depths. This step split 24 of them
+  correctly, changed no single nucleus, and changed nothing in 12 stacks without a depth gap. A
+  strip of one nucleus given to its neighbour by a wrong 2D border went back to its owner.
+- Look at `depth` and at a few z slices as pictures for every flagged object. Two nuclei at the
+  same depth cannot be split this way.
 
 Thin, sparse objects (cilia, filaments, fibres) in a low-count channel need a different threshold:
 ```python

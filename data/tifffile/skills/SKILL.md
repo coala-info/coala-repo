@@ -57,6 +57,12 @@ with tifffile.TiffFile("image.tif") as tif:
   `imagej_metadata["unit"]`. A resolution of exactly 1 usually means no calibration was saved.
 - Write a calibrated ImageJ file with
   `tifffile.imwrite(path, data, imagej=True, resolution=(1/um_per_px, 1/um_per_px), metadata={"unit": "um", "axes": "CYX"})`.
+- A projection over Z loses depth. Objects at different depths that overlap in XY become one
+  object in a max projection, and no 2D method separates them afterwards. Keep the stack, and
+  compare a depth map with your labels before you count objects:
+  `depth = (stack * np.arange(len(stack))[:, None, None]).sum(0) / stack.sum(0)` (mean z per
+  pixel, one channel, ZYX, background removed first). An object with two depth levels is two
+  objects; the scikit-image skill has the check and the split.
 
 ### Command Line Interface
 

@@ -171,6 +171,12 @@ print("background loci:", background)
   background locus of another.
 - A background locus that gates only some determinants shows no drop of the trait to zero among
   isolates without it. Only the per-pair test (`needs`) finds it.
+- This block answers which genes cause the trait. It is not the model that predicts the trait.
+  To predict the trait, or a related trait that has no labels of its own (for example another
+  drug of the same class), fit a regularised model on all genes and keep it apart from the
+  ranking. Do not build the predictor from the determinants alone. A related trait shares only
+  part of the determinants, and its own determinants often travel with genes this block leaves
+  out, so passengers and background loci still carry signal for prediction.
 - Cost grows with isolates x genes x `shortlist`. If it is slow, lower `shortlist` first.
 
 ## Reference documentation

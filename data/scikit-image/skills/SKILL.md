@@ -60,7 +60,8 @@ nuclei = segmentation.watershed(-dist, seeds, mask=fg)   # or peak_local_max(min
 
 Nuclei that overlap in a projection. Two nuclei at different depths can overlap in XY. A max
 projection shows them as one object with no waist, and no seed setting splits it. After the 2D
-labels, compare a depth map with them (`stack` is the nuclear channel, ZYX):
+labels, run this whole block (`stack` is the nuclear channel, ZYX). The flag alone changes
+nothing; the loop decides what each flagged object is and fixes the labels:
 
 ```python
 sm = ndi.gaussian_filter(stack.astype(float), (0.7, 2, 2))
@@ -97,13 +98,15 @@ for p in props:
   tilted and domed, so its depth already varies; how much depends on the sample and the z step.
 - A flagged object has three outcomes. Its smaller part belongs to a neighbour at the same depth
   (give it back), or it is a second nucleus (nucleus-sized part, no such neighbour), or it is one
-  nucleus with a small bright body on it (leave it whole). Splitting every flagged object makes
-  false nuclei.
+  nucleus with a small bright body on it (leave it whole). The loop picks the outcome from the
+  data. Splitting every flagged object makes false nuclei; stopping at the flag leaves the merge.
 - In that simulation the 2D recipe merged 36 pairs at two depths. This step split 24 of them
   correctly, changed no single nucleus, and changed nothing in 12 stacks without a depth gap. A
   strip of one nucleus given to its neighbour by a wrong 2D border went back to its owner.
-- Look at `depth` and at a few z slices as pictures for every flagged object. Two nuclei at the
-  same depth cannot be split this way.
+- Do not overrule the loop from single z slices. Two overlapping nuclei look like one nucleus in
+  every slice, because each slice shows the one that lies at that depth. Check the result
+  instead: draw the new border on the `depth` picture; it should follow the step between the two
+  levels. Two nuclei at the same depth cannot be split this way.
 
 Thin, sparse objects (cilia, filaments, fibres) in a low-count channel need a different threshold:
 ```python

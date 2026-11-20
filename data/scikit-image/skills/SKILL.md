@@ -94,8 +94,7 @@ for p in props:
     print(p.label, round(spread[p.label], 2), what)
 ```
 - Compare each spread with the other objects, not with a fixed number. A single nucleus is
-  tilted and domed, so its depth already varies: on simulated stacks with tilt and noise, single
-  nuclei had a spread of about 1 slice (up to 1.5), and pairs two to four slices apart had more.
+  tilted and domed, so its depth already varies; how much depends on the sample and the z step.
 - A flagged object has three outcomes. Its smaller part belongs to a neighbour at the same depth
   (give it back), or it is a second nucleus (nucleus-sized part, no such neighbour), or it is one
   nucleus with a small bright body on it (leave it whole). Splitting every flagged object makes

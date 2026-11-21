@@ -226,8 +226,10 @@ normal_of = {t: mm.loc[t, normals].idxmin() for t in tumors}     # each tumor's 
 print("pairs by lowest mismatch:", normal_of)
 scan = carryover_scan(ref, alt, normal_of)
 pd.set_option("display.width", 250); pd.set_option("display.max_columns", 40)
-print(scan[scan.called].to_string())
 print(scan.head(30).to_string())
+called = scan[scan.called]
+print(called.to_string())
+print(len(called), "carryover findings to report, one per row above")
 ```
 - `mismatch` near 0 means two samples of one person. A submitted pair with a high value, where
   each sample has a near-0 partner elsewhere in the batch, is a sample or manifest error. Report
@@ -237,6 +239,12 @@ print(scan.head(30).to_string())
 - The donor is a person. `donor` lists that person's samples. Name one of them as the source
   only when `source` names it (reads at alleles only that sample has). Otherwise give both.
 - `source` "own ..." means the donor is the affected sample's own tumor: tumor-in-normal.
+- Write the carryover findings from `called` in code, one output row per row of `called`. Do
+  not retype them by hand: a typed list loses rows. Check that your output holds as many
+  carryover rows as the block printed.
+- A swapped pair and carryover are separate findings. A called row stays a finding when its
+  samples were re-paired in step 2, and when the donor is the sample's own tumor. Report it
+  next to the swap, under the record of the affected sample or of its repaired partner.
 - Use the calls as they come. Do not add a pair by eye because its `minor_af` looks raised: a
   row that is not called is explained by another donor or by read errors. Do not drop a called
   row because the share is small.
